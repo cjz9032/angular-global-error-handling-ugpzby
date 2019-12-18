@@ -1,5 +1,5 @@
 import {
-	Injectable, EventEmitter
+	Injectable
 } from '@angular/core';
 import {
 	DeviceService
@@ -10,8 +10,8 @@ import { privacyPolicyLinks } from 'src/assets/privacy-policy-links/policylinks.
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { BetaService } from '../beta/beta.service';
 import { LoggerService } from '../logger/logger.service';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { Observable, BehaviorSubject } from 'rxjs';
+// import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+// import { Observable, BehaviorSubject } from 'rxjs';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { SegmentConst } from '../self-select/self-select.service';
@@ -42,8 +42,8 @@ export class ConfigService {
 	showCHS = false;
 	wifiSecurity: WifiSecurity;
 	securityAdvisor: SecurityAdvisor;
-	public readonly menuItemNotification: Observable<AppNotification>;
-	private menuItemSubject: BehaviorSubject<AppNotification>;
+	// public readonly menuItemNotification: Observable<AppNotification>;
+	// private menuItemSubject: BehaviorSubject<AppNotification>;
 	windowsHello: WindowsHello;
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 
@@ -55,10 +55,10 @@ export class ConfigService {
 		private localInfoService: LocalInfoService,
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService) {
-		this.menuItemSubject = new BehaviorSubject<AppNotification>(
-			new AppNotification(MenuItem.MenuItemChange, 'init')
-		);
-		this.menuItemNotification = this.menuItemSubject;
+		// this.menuItemSubject = new BehaviorSubject<AppNotification>(
+		// 	new AppNotification(MenuItem.MenuItemChange, 'init')
+		// );
+		// this.menuItemNotification = this.menuItemSubject;
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (this.securityAdvisor) {
 			this.wifiSecurity = this.securityAdvisor.wifiSecurity;
@@ -214,8 +214,9 @@ export class ConfigService {
 	}
 
 	notifyMenuChange(payload?) {
-		const appNotification = new AppNotification(MenuItem.MenuItemChange, payload);
-		this.menuItemSubject.next(appNotification);
+		this.commonService.sendNotification(MenuItem.MenuItemChange, payload);
+		// const appNotification = new AppNotification(MenuItem.MenuItemChange, payload);
+		// this.menuItemSubject.next(appNotification);
 	}
 
 	public canShowPrivacy(): Promise<boolean> {

@@ -1108,14 +1108,14 @@
                         "FCCText": "De {{before}} Wh à {{after}} Wh",
                         "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Terminé : La réinitialisation a abouti.",
+                            "ERROR_SUCCESS": "Terminé : la réinitialisation est effectuée.",
                             "ERROR_SHUTDOWN": "Échec : Le système a été arrêté.",
-                            "ERROR_LOGOFF": "Échec : Utilisateur déconnecté.",
+                            "ERROR_LOGOFF": "Échec : l'utilisateur s'est déconnecté.",
                             "ERROR_BATTERY_REMOVE": "Échec : La batterie a été retirée.",
                             "ERROR_BATTERY_REPLACE": "Échec : La batterie a été remplacée.",
                             "ERROR_AC_DETTACH": "Échec : Le boîtier d'alimentation a été débranché.",
                             "ERROR_USER_CANCEL": "Échec : Annulé par l'utilisateur.",
-                            "ERROR_UNEXPECTED": "Échec : Une erreur inattendue est survenue."
+                            "ERROR_UNEXPECTED": "Échec : une erreur inattendue est survenue."
                         },
                         "popup": {
                             "description1": "Le processus de réinitialisation est le suivant :<br>Charge complète de la batterie  -->  Décharge complète de la batterie  -->  Recharge complète de la batterie",

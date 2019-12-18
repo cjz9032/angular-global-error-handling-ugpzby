@@ -1108,9 +1108,9 @@
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Tamamlandı: Başarılı sıfırlama.",
+                            "ERROR_SUCCESS": "Tamamlandı: Başarıyla sıfırlandı.",
                             "ERROR_SHUTDOWN": "Başarısız: Sistem kapatıldı.",
-                            "ERROR_LOGOFF": "Başarısız: Kullanıcı oturumu kapatıldı.",
+                            "ERROR_LOGOFF": "Başarısız: Kullanıcı oturumu kapattı.",
                             "ERROR_BATTERY_REMOVE": "Başarısız: Pil çıkarıldı.",
                             "ERROR_BATTERY_REPLACE": "Başarısız: Pil değiştirildi.",
                             "ERROR_AC_DETTACH": "Başarısız: AC güç bağdaştırıcısı çıkarıldı.",

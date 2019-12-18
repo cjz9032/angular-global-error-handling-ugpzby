@@ -1108,14 +1108,14 @@
                         "FCCText": "Sa {{before}} Wh na {{after}} Wh",
                         "note": "Napomena: pre nego što resetujete pokazivač napunjenosti baterije, obavezno povežite računar sa napajanjem naizmeničnom strujom. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Završeno: Uspešan reset.",
+                            "ERROR_SUCCESS": "Dovršeno: uspostavljanje početnih vrednosti je uspešno.",
                             "ERROR_SHUTDOWN": "Neuspelo: Sistem se isključio.",
-                            "ERROR_LOGOFF": "Neuspelo: Korisnik se odjavio.",
+                            "ERROR_LOGOFF": "Neuspelo: korisnik se odjavio.",
                             "ERROR_BATTERY_REMOVE": "Neuspelo: Baterija je uklonjena.",
                             "ERROR_BATTERY_REPLACE": "Neuspelo: Baterija je zamenjena.",
                             "ERROR_AC_DETTACH": "Neuspelo: Adapter za naizmeničnu struju je otkačen.",
                             "ERROR_USER_CANCEL": "Neuspelo: Otkazano od strane korisnika.",
-                            "ERROR_UNEXPECTED": "Neuspelo: Došlo je do neočekivane greške."
+                            "ERROR_UNEXPECTED": "Neuspelo: došlo je do neočekivane greške."
                         },
                         "popup": {
                             "description1": "Proces resetovanja je sledeći:<br>napunite bateriju-do kraja  -->  potpuno ispraznite bateriju  -->  ponovo potpuno napunite bateriju",
