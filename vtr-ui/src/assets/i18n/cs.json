@@ -1108,7 +1108,7 @@
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Před resetováním ukazatele stavu baterie nezapomeňte připojit počítač k napájení ze sítě. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Dokončeno: Reset proběhl úspěšně.",
+                            "ERROR_SUCCESS": "Dokončeno: úspěšný reset.",
                             "ERROR_SHUTDOWN": "Selhání: Systém byl vypnut.",
                             "ERROR_LOGOFF": "Selhání: Uživatel se odhlásil.",
                             "ERROR_BATTERY_REMOVE": "Selhání: Byla vyňata baterie.",

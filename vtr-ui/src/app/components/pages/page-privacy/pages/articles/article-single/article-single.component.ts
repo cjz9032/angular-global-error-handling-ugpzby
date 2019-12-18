@@ -43,7 +43,6 @@ export class ArticleSingleComponent implements OnInit {
 			return;
 		}
 		this.router.navigate([`/${RoutersName.PRIVACY}/${RoutersName.ARTICLEDETAILS}`], {queryParams: {articleId}});
-		this.commonService.scrollTop();
 	}
 
 }

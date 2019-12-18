@@ -1108,7 +1108,7 @@
                         "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
                         "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Kész: Sikeres nullázás",
+                            "ERROR_SUCCESS": "Kész: Sikeres visszaállítás.",
                             "ERROR_SHUTDOWN": "Sikertelen: A rendszer leállt.",
                             "ERROR_LOGOFF": "Sikertelen: A felhasználó kilépett.",
                             "ERROR_BATTERY_REMOVE": "Sikertelen: Akkumulátor eltávolítva.",

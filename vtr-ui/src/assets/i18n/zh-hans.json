@@ -1108,7 +1108,7 @@
                         "FCCText": "从 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重置电池电量表之前，请确保将计算机连接到交流电源。",
                         "resetLog": {
-                            "ERROR_SUCCESS": "已完成：已成功重置。",
+                            "ERROR_SUCCESS": "完成：重置已成功完成。",
                             "ERROR_SHUTDOWN": "失败：系统已关闭。",
                             "ERROR_LOGOFF": "失败：用户已注销。",
                             "ERROR_BATTERY_REMOVE": "失败：已卸下电池。",
