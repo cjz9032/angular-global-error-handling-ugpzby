@@ -4,47 +4,23 @@
 	margin-top: 2rem;
 
 	.title {
-		color: $main_darker;
-		font-size: 2rem;
-		text-transform: uppercase;
-		font-weight: $weight_bold;
+		color: $shade_blue;
+		font-size: $fontsize_xl;
+		font-weight: $weight_600;
+		@media #{$breakpoint_lg} {
+			font-size: 1.9rem;
+		}
 	}
 	.description {
 		display: flex;
 		justify-content: space-between;
-		font-size: 1.2rem;
-		font-weight: $weight_bold;
+		font-size: $fontsize_xs2;
+		font-weight: $weight_light;
 
 		.subtitle {
-			color: $shade_darker;
+			color: $shade_blue;
 		}
-		.result-code{
-			width: 50%;
-			text-align: right;
-			.result-code-value-text {
-				color: $shade_dark;
-			}
-			.left-code-result{
-				.result-code-complete-text {
-					color: $shade_darker;
-					text-transform: uppercase;
-				}
 
-				.result-code-icon {
-					margin-left: 0.5rem;
-					margin-right: 0.5rem;
-					font-size: 1.4rem;
-					color: $main;
-					cursor: pointer;
-
-					&:hover {
-						color: $highlight;
-					}
-
-
-				}
-			}
-		}
 
 		.details {
 			color: $shade_darker;
@@ -81,6 +57,39 @@
 			  display: inline-block;
 			  // cursor: pointer;
 			  padding: 0 2.5rem;
+			}
+		}
+	}
+	.result-code {
+		width: 100%;
+		text-align: right;
+		padding-right: 1.2rem;
+		.result-code-value-text {
+			color: $shade_blue;
+			line-height: 3.3rem;
+			font-size: $fontsize_xs2;
+			font-weight: $weight_600;
+		}
+		.left-code-result {
+			.result-code-complete-text {
+				color: $shade_blue;
+				text-transform: uppercase;
+				font-size: $fontsize_xs2;
+				font-weight: $weight_light;
+			}
+
+			.result-code-icon {
+				margin-left: 0.5rem;
+				margin-right: 0.5rem;
+				font-size: 1.8rem;
+				color: $main;
+				cursor: pointer;
+
+				&:hover {
+					color: $highlight;
+				}
+
+
 			}
 		}
 	}
