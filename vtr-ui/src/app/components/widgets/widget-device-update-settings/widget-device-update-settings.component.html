@@ -14,7 +14,7 @@
 							<li class="list-group-item" *ngIf="item.isVisible">
 								<div class="media pl-3 align-items-center">
 									<fa-icon *ngIf="item.leftImageSource" [icon]="item.leftImageSource"></fa-icon>
-									<div class="media-body pb-0 mb-0 small pl-3">
+									<div class="media-body pb-0 mb-0 small pl-3 w-100">
 										<div class="d-flex justify-content-between align-items-center w-100"
 											[ngClass]="{collapsible: item.isCollapsible}">
 											<div class="update-title" id="{{'cold'+in}}"
@@ -40,10 +40,10 @@
 											</a>
 											<a tabindex="-1" href="javascript:void();" *ngIf="item.isSwitchVisible"
 												class="d-flex no-pointer">
-												<vtr-ui-toggle (toggle)="onToggleOnOff($event)"  [focus]="item.focus || false" [label]="item.ariaLabel"
+												<vtr-ui-toggle (toggle)="onToggleOnOff($event)"
+													[focus]="item.focus || false" [label]="item.ariaLabel"
 													[toggleId]="item.id" [name]="item.type" [onOffSwitchId]="item.name"
-													[value]="item.isChecked"
-													[notChange]="item.readonly">
+													[value]="item.isChecked" [notChange]="item.readonly">
 												</vtr-ui-toggle>
 
 												<vtr-ui-popover *ngIf="item.isPopup" [item]="item"
