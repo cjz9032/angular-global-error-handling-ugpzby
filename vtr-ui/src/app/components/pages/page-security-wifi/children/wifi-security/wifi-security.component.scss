@@ -86,9 +86,9 @@
 			&.good {
 				.bullet-icon {
 					.icon-bkg {
-						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-						background-color: $go_dark;
-						border-color: $go_dark;
+						background: linear-gradient($gradient_angle, $green_darker 0%, $green-light 100%);
+						background-color: $green_darker;
+						border-color: $green_darker;
 					}
 				}
 			}
@@ -96,9 +96,9 @@
 			&.bad {
 				.bullet-icon {
 					.icon-bkg {
-						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-						background-color: $stop_dark;
-						border-color: $stop_dark;
+						background: linear-gradient($gradient_angle, $button_red_start 0%, $button_red_end 100%);
+						background-color: $button_red_start;
+						border-color: $button_red_start;
 					}
 				}
 
@@ -262,12 +262,12 @@
 					}
 
 					.circle {
-						background-color: $go;
-						background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
+						background-color: $green_darker;
+						background-image: linear-gradient(135deg, $green_darker 25%, $green-light 100%);
 						// height: 1.5em;
 						width: 1.5rem;
 						border-radius: 2rem;
-						border: 0.1rem solid $go_dark;
+						border: 0.1rem solid $green_darker;
 						line-height: 0.9rem;
 						display: inline-block;
 						position: absolute;
@@ -284,9 +284,9 @@
 						}
 
 						&.red {
-							background-color: $stop;
-							background-image: linear-gradient(315deg, $stop_light 25%, $stop 100%);
-							border: 0.1rem solid $stop_dark;
+							background-color: $button_red_start;
+							background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
+							border: 0.1rem solid $button_red_start;
 							fa-icon {
 								left: 0.4rem;
 								top: 0.2rem;
@@ -348,12 +348,21 @@
 					line-height: 2rem;
 					font-size: 1.2rem;
 				}
-				.wifisecurity-container-enable span{
-					display: inline-block;
-					overflow: hidden;
-					white-space: nowrap;
-					text-overflow: ellipsis;
-					font-size: 1.2rem;
+				.wifisecurity-container-enable {
+					line-height: 1;
+					span{
+						display: inline-block;
+						overflow: hidden;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						font-size: 1.2rem;
+						&.badge-success {
+							background-color: $green_dark;
+						}
+						&.badge-danger {
+							background-color: $button_red_start;
+						}
+					}
 				}
 			}
 		}
@@ -431,12 +440,12 @@
 			// width: 50%;
 			// justify-content: flex-start;
 			.circle {
-				background-color: $go;
-				background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
+				background-color: $green_darker;
+				background-image: linear-gradient(135deg, $green_darker 25%, $green-light 100%);
 				height: 2rem;
 				width: 2rem;
 				border-radius: 100%;
-				border: 0.1rem solid $go_dark;
+				border: 0.1rem solid $green_darker;
 				text-align: center;
 				display: inline-block;
 				margin-right: 1rem;
@@ -448,20 +457,20 @@
 				}
 
 				&.red {
-					background-color: $stop;
-					background-image: linear-gradient(315deg, $stop_light 25%, $stop 100%);
-					border: 0.1rem solid $stop_dark;
+					background-color: $button_red_start;
+					background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
+					border: 0.1rem solid $button_red_start;
 				}
 			}
-			.line-height-2-5 {
-				line-height: 2.5rem;
-				height: 2.5rem;
+			.line-height-2 {
+				line-height: 2rem;
+				height: 2rem;
 			}
 
 			h3 {
 				font-weight: $weight_bold;
 				text-transform: uppercase;
-				// margin-right: 2.5rem;
+				line-height: 1;
 			}
 		}
 	}
@@ -516,6 +525,11 @@
 
 		vtr-ui-switch-onoff {
 			display: inline-block;
+			::ng-deep .checkbox {
+				input.wifi-checked + .switch {
+					background: linear-gradient($gradient_angle, $green_darker 0%, $green-light 100%);
+				}
+			}
 		}
 		.switch-disable {
 			opacity: 0.3;

@@ -776,7 +776,9 @@ export class VantageShellService {
 					const p2 = new Promise((resolve) => { });
 					return Promise.all([p1, p2]);
 				},
-				cancelGetWifiSecurityState() { }
+				cancelGetWifiSecurityState() { },
+				getWifiHistory() { },
+				cancelGetWifiHistory() { }
 			},
 			windowsActivation: {
 				mitt: null,
