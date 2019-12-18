@@ -17,9 +17,9 @@
 		</div>
 	</div>
 
-	<div class="p-5 hardware-scan-items">
+	<div class="hardware-scan-items">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12 px-0">
 				<div class="header">
 					<div
 						[ngClass]="{'heading1': !isScanExecuting() || isRecoverExecuting(), 'heading2': isScanExecuting() && !isRecoverExecuting()}">
@@ -27,24 +27,24 @@
 					<a class="action-anchor" (click)="isScanExecuting() ? onViewResults() : onViewResultsRecover()"
 						*ngIf="getEnableViewResults()" [routerLink]="viewResultsPath"
 						routerLinkActive="active"
-						vtrMetrics 
-						metricsEvent="FeatureClick" 
+						vtrMetrics
+						metricsEvent="FeatureClick"
 						metricsParent="{{itemParentSummary}}"
 						metricsItem="{{itemNameSummary}}">{{viewResultsText}}
 					</a>
 
-					<a class="refresh-button" 
+					<a class="refresh-button"
 						*ngIf="!isRefreshingModules() && !isScanExecuting() && !isRecoverExecuting()"
-						vtrMetrics 
-						metricsEvent="FeatureClick" 
+						vtrMetrics
+						metricsEvent="FeatureClick"
 						metricsParent="HardwareScan"
-						metricsItem="HardwareScan.RefreshModules" 
+						metricsItem="HardwareScan.RefreshModules"
 						[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
 						[ngClass]="{'action-anchor': !startScanClicked, 'disabled-anchor': startScanClicked}"
 						(click)="refreshModules()">{{refreshText}}
-						<fa-icon class="refresh-icon" 
-							placement="auto" 
-							[icon]="['fal', 'redo']" 
+						<fa-icon class="refresh-icon"
+							placement="auto"
+							[icon]="['fal', 'redo']"
 							container="body">
 						</fa-icon>
 					</a>
