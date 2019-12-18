@@ -27,11 +27,11 @@
 											{{'homeSecurity.title' | translate}}
 										</h3>
 										<h3 class="homesecurity-container-enable mb-0 overflow-hidden"><span
-												class="badge badge-pill badge-success line-height-2-5 p-0 pl-3 pr-3 w-100"
+												class="badge badge-pill badge-success line-height-2 p-0 pl-3 pr-3 w-100"
 												title="{{'security.homeprotection.homeStatus.protected' | translate}}"
 												*ngIf="homeSecurity?.account?.state === 'trial' || homeSecurity?.account?.state === 'standard'"
 												[innerHTML]="'security.homeprotection.homeStatus.protected' | translate"></span>
-											<span class="badge badge-pill badge-danger line-height-2-5 p-0 pl-3 pr-3 w-100"
+											<span class="badge badge-pill badge-danger line-height-2 p-0 pl-3 pr-3 w-100"
 												title="{{'security.homeprotection.homeStatus.notProtected' | translate}}"
 												*ngIf="homeSecurity?.account?.state !== 'trial' && homeSecurity?.account?.state !== 'standard'"
 												[innerHTML]="'security.homeprotection.homeStatus.notProtected' | translate"></span>
