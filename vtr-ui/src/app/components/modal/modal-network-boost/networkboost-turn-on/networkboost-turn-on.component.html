@@ -26,17 +26,15 @@
         </div>
         <hr>
         <div class="row">
-          <div>
+          <div class="action-container">
             <button class="btn enable-button"
               (click)="turnOnAction(true)"
               tabindex="1" attr.aria-label="{{'gaming.narrator.networkBoost.turnOnModal.turnOnButton' | translate}}"
 			  (keyup.enter)="turnOnAction(true)">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
-			  <div class="nextbuton">
             <a (click)="notNowAction(false)"
               class="cancel-link active"
               tabindex="1" attr.aria-label="{{'gaming.narrator.networkBoost.turnOnModal.notOnButton' | translate}}" role="button"
 			   (keyup.enter)="notNowAction(false)" (keydown)="keydownFn($event)">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
-			   </div>
           </div>
         </div>
       </div>
