@@ -363,6 +363,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	onMenuItemClick(item, event?) {
+		window.getSelection().empty();
 		this.showMenu = false;
 		if (item.id === 'app-search') {
 			this.updateSearchBoxState(!this.showSearchBox);
