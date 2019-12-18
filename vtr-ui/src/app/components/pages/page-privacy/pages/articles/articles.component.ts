@@ -20,7 +20,6 @@ export class ArticlesComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.commonService.scrollTop();
 	}
 
 	openArticle(articleId: string) {

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-landing',
@@ -8,11 +7,10 @@ import { CommonService } from 'src/app/services/common/common.service';
 })
 export class LandingComponent implements OnInit {
 
-	constructor(private commonService: CommonService) {
+	constructor() {
 	}
 
 	ngOnInit() {
-		this.commonService.scrollTop();
 	}
 
 }
