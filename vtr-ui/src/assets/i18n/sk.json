@@ -1108,9 +1108,9 @@
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Pred resetovaním ukazovateľa batérie pripojte počítač k zdroju napájania. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Dokončené: Úspešné vynulovanie.",
+                            "ERROR_SUCCESS": "Dokončené: Reset bol úspešný.",
                             "ERROR_SHUTDOWN": "Zlyhanie: Vypnutie systému.",
-                            "ERROR_LOGOFF": "Zlyhanie: Odhlásenie používateľa.",
+                            "ERROR_LOGOFF": "Zlyhanie: Používateľ sa odhlásil.",
                             "ERROR_BATTERY_REMOVE": "Zlyhanie: Batéria bola vybratá.",
                             "ERROR_BATTERY_REPLACE": "Zlyhanie: Batéria bola vymenená.",
                             "ERROR_AC_DETTACH": "Zlyhanie: Napájací adaptér bol odpojený.",

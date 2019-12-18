@@ -1108,14 +1108,14 @@
                         "FCCText": "Van {{before}} Wh tot {{after}} Wh",
                         "note": "Opmerking: voordat u de batterijmeter opnieuw instelt, zorg ervoor dat de computer is aangesloten op de netvoeding. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Voltooid: Opnieuw ingesteld.",
+                            "ERROR_SUCCESS": "Voltooid: opnieuw instellen geslaagd.",
                             "ERROR_SHUTDOWN": "Mislukt: Systeem is afgesloten.",
-                            "ERROR_LOGOFF": "Mislukt: Gebruiker is afgemeld.",
+                            "ERROR_LOGOFF": "Mislukt: gebruiker is afgemeld.",
                             "ERROR_BATTERY_REMOVE": "Mislukt: Batterij is verwijderd.",
                             "ERROR_BATTERY_REPLACE": "Mislukt: Batterij is vervangen.",
                             "ERROR_AC_DETTACH": "Mislukt: Netvoedingsadapter is ontkoppeld.",
                             "ERROR_USER_CANCEL": "Mislukt: Geannuleerd door gebruiker.",
-                            "ERROR_UNEXPECTED": "Mislukt: Er is een onverwachte fout opgetreden."
+                            "ERROR_UNEXPECTED": "Mislukt: er is een onverwachte fout opgetreden."
                         },
                         "popup": {
                             "description1": "Het proces voor opnieuw instellen verloopt als volgt:<br>de batterij wordt volledig opgeladen  -->  de batterij wordt volledig ontladen  -->  de batterij wordt opnieuw volledig opgeladen",

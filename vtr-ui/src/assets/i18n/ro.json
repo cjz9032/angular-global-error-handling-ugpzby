@@ -1108,14 +1108,14 @@
                         "FCCText": "De la {{before}} Wh la {{after}} Wh",
                         "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Finalizată: Resetare reuşită.",
+                            "ERROR_SUCCESS": "Finalizat: resetare reușită.",
                             "ERROR_SHUTDOWN": "Nereuşit: sistemul s-a închis.",
-                            "ERROR_LOGOFF": "Nereuşit: utilizatorul s-a deconectat.",
+                            "ERROR_LOGOFF": "Nereușit: utilizatorul s-a deconectat.",
                             "ERROR_BATTERY_REMOVE": "Nereuşit: bateria a fost scoasă.",
                             "ERROR_BATTERY_REPLACE": "Nereuşit: bateria a fost înlocuită.",
                             "ERROR_AC_DETTACH": "Nereuşit: adaptorul de alimentare cu c.a. a fost deconectat.",
                             "ERROR_USER_CANCEL": "Nereuşit: anulat de utilizator.",
-                            "ERROR_UNEXPECTED": "Nereuşit: a apărut o eroare neaşteptată."
+                            "ERROR_UNEXPECTED": "Nereușit: a apărut o eroare neașteptată."
                         },
                         "popup": {
                             "description1": "Procesul de resetare este următorul:<br>Încărcaţi complet bateria  -->  Descărcaţi complet bateria  -->  Reîncărcaţi complet bateria",

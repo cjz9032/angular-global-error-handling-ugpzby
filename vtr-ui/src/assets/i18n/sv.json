@@ -1108,7 +1108,7 @@
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Klart: Återställningen lyckades.",
+                            "ERROR_SUCCESS": "Klart: Återställningen har slutförts.",
                             "ERROR_SHUTDOWN": "Misslyckades: Systemet stängdes av.",
                             "ERROR_LOGOFF": "Misslyckades: Användaren loggade ut.",
                             "ERROR_BATTERY_REMOVE": "Misslyckades: Batteriet togs bort.",

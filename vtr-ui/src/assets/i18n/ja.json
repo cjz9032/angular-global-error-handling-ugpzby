@@ -1108,7 +1108,7 @@
                         "FCCText": "{{before}} Wh から {{after}} Wh",
                         "note": "注: バッテリー・ゲージをリセットする前に、コンピューターを AC 電源に接続してください。",
                         "resetLog": {
-                            "ERROR_SUCCESS": "完了しました: リセットに成功しました。",
+                            "ERROR_SUCCESS": "完了: 正常にリセットされました。",
                             "ERROR_SHUTDOWN": "失敗: システムがシャットダウンしました。",
                             "ERROR_LOGOFF": "失敗: ユーザーがログオフしました。",
                             "ERROR_BATTERY_REMOVE": "失敗: バッテリーが取り外されました。",

@@ -100,6 +100,7 @@ export class PageSmartAssistComponent
 	cardContentPositionA: any = {};
 	private machineType: number;
 	private smartAssistCapability: SmartAssistCapability = undefined;
+	public jumpTosettingsTitle: string;
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -114,6 +115,7 @@ export class PageSmartAssistComponent
 		private router: Router,
 		private vantageShellService: VantageShellService
 	) {
+		this.jumpTosettingsTitle = this.translate.instant('device.smartAssist.jumpTo.title');
 		// VAN-5872, server switch feature on language change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
@@ -187,19 +189,24 @@ export class PageSmartAssistComponent
 			console.log('initVisibility: ', this.smartAssistCapability);
 			if (!this.smartAssistCapability.isIntelligentSecuritySupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
+				this.checkMenuItemsLength();
 			}
 			this.lenovoVoice.available = this.smartAssistCapability.isLenovoVoiceSupported;
 			if (!this.smartAssistCapability.isLenovoVoiceSupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'voice');
+				this.checkMenuItemsLength();
 			}
 			if (!this.smartAssistCapability.isIntelligentMediaSupported.available) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
+				this.checkMenuItemsLength();
 			}
 			if (!this.smartAssistCapability.isIntelligentScreenSupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen');
+				this.checkMenuItemsLength();
 			}
 			if (!this.smartAssistCapability.isAPSSupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
+				this.checkMenuItemsLength();
 			}
 		} catch (error) {
 			console.log('initVisibility', error.message);
@@ -324,6 +331,7 @@ export class PageSmartAssistComponent
 
 				if (!this.isAPSAvailable) {
 					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
+					this.checkMenuItemsLength();
 				}
 				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
 				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
@@ -352,6 +360,7 @@ export class PageSmartAssistComponent
 			if (!(this.intelligentScreen.isIntelligentScreenVisible &&
 				this.smartAssistCapability.isIntelligentScreenSupported)) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen');
+				this.checkMenuItemsLength();
 			}
 
 			this.smartAssistCache.intelligentScreen = this.intelligentScreen;
@@ -418,7 +427,7 @@ export class PageSmartAssistComponent
 			if (!this.intelligentSecurity.isIntelligentSecuritySupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
 				this.intelligentSecurity.isIntelligentSecuritySupported = false;
-
+				this.checkMenuItemsLength();
 			}
 			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
@@ -628,6 +637,7 @@ export class PageSmartAssistComponent
 					this.isIntelligentMediaLoading = false;
 					if (!this.intelligentMedia.available) {
 						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
+						this.checkMenuItemsLength();
 					}
 				}
 
@@ -641,6 +651,7 @@ export class PageSmartAssistComponent
 
 						if (!response.available) {
 							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
+							this.checkMenuItemsLength();
 						}
 						this.smartAssistCache.intelligentMedia = this.intelligentMedia;
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
@@ -735,5 +746,10 @@ export class PageSmartAssistComponent
 			console.error('getSuperResolutionStatus' + error.message);
 		}
 	}
-
+	public checkMenuItemsLength() {
+		if (this.headerMenuItems.length === 1) {
+			this.headerMenuItems = [];
+			this.jumpTosettingsTitle = '';
+		}
+	}
 }

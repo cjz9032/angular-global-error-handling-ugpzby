@@ -1108,7 +1108,7 @@
                         "FCCText": "Da {{before}} Wh a {{after}} Wh",
                         "note": "Nota: prima di reimpostare l'indicatore della batteria, assicurarsi di collegare il computer all'alimentazione CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Operazione completata: Reimpostazione riuscita.",
+                            "ERROR_SUCCESS": "Operazione completata: reimpostazione completata correttamente.",
                             "ERROR_SHUTDOWN": "Operazione non riuscita: arresto del sistema.",
                             "ERROR_LOGOFF": "Operazione non riuscita: utente scollegato.",
                             "ERROR_BATTERY_REMOVE": "Operazione non riuscita: batteria rimossa.",

@@ -1108,9 +1108,9 @@
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fuldført: Nulstilling lykkedes.",
+                            "ERROR_SUCCESS": "Fuldført: Nulstilling udført.",
                             "ERROR_SHUTDOWN": "Mislykkedes: Nedlukning af system.",
-                            "ERROR_LOGOFF": "Mislykkedes: Bruger logget af.",
+                            "ERROR_LOGOFF": "Mislykkedes: Bruger har logget af.",
                             "ERROR_BATTERY_REMOVE": "Mislykkedes: Batteriet blev fjernet.",
                             "ERROR_BATTERY_REPLACE": "Mislykkedes: Batteriet blev udskiftet.",
                             "ERROR_AC_DETTACH": "Mislykkedes: Vekselstrømsadapteren blev fjernet.",
