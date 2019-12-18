@@ -1149,7 +1149,18 @@
 			 background-repeat: repeat;
 			 background-size: 100% 100%;
 			// padding: 0 8.5rem 4rem 4rem;
-
+			&::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                right: -100%;
+                background-image: url("./assets/images/gaming/GradientLine@1x.png");
+                background-repeat: repeat;
+                background-size: 100% 100%;
+                z-index: 1;
+            }
 			 @media #{$small-screen} {
 			// 	margin-top: -0.1rem;
 			// 	padding: 6rem 3rem 1.5rem 3rem !important;

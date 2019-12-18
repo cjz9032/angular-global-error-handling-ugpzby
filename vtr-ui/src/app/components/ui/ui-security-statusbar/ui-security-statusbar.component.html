@@ -3,7 +3,7 @@
 		*ngFor="let list of statusList">
 		<div class="row align-items-center">
 			<div class="col-auto px-3 flex-shrink-0">
-				<div *ngIf="list.status!=='loading' && list.status!=='installing'" class="bullet-icon">
+				<div *ngIf="list.status!=='loading' && list.status!=='installing'" class="bullet-icon d-flex align-items-center">
 					<div class="icon-bkg"
 						[ngClass]="list.status | iconClass">
 						<fa-icon [icon]="list.status | iconName"></fa-icon>

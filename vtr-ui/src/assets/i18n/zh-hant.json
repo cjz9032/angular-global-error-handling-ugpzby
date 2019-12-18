@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "顯示",
-					"displayColorTemperature": {
-						"title": "顯示器色溫",
-						"description": "您可以調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。在日落到日出期間，將顯示器調整為暖色，以幫助您入睡。",
-						"link": {
-							"click": "按一下",
-							"here": "這裡",
-							"rest": "以變更色溫。"
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "顯示器色溫",
+                        "description": "您可以調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。在日落到日出期間，將顯示器調整為暖色，以幫助您入睡。",
+                        "link": {
+                            "click": "按一下",
+                            "here": "這裡",
+                            "rest": "以變更色溫。"
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "護眼模式",
                         "checkbox": "安排從日落到日出的護眼模式",
@@ -1362,7 +1362,9 @@
                             "minutes": "分",
                             "alwaysOn": "保持開啟",
                             "never": "永不",
-                            "halfTime": "顯示器關閉計時器的一半時間"
+                            "halfTime": "顯示器關閉計時器的一半時間",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "工作列調光器",
                         "backgroundDimmer": "背景調光器",

@@ -7,6 +7,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subject, Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
+import { TaskType, TaskStep } from 'src/app/beta/hardware-scan/enums/hardware-scan-metrics.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -57,6 +58,10 @@ export class HardwareScanService {
 	private hardwareModulesLoaded = new Subject<boolean>();
 	private pluginInfoPromise: any = undefined;
 	private pluginVersion: string;
+
+	// Used to store information related to metrics
+	private currentTaskType: TaskType;
+	private currentTaskStep: TaskStep;
 
 	private iconByModule = {
 		'cpu': 'icon_hardware_processor.svg',
@@ -1295,5 +1300,21 @@ export class HardwareScanService {
 	 */
 	public isHardwareModulesLoaded(): Observable<boolean> {
 		return this.hardwareModulesLoaded.pipe(first())
+	}
+
+	public getCurrentTaskType() {
+		return this.currentTaskType;
+	}
+
+	public setCurrentTaskType(taskType: TaskType) {
+		this.currentTaskType = taskType;
+	}
+
+	public getCurrentTaskStep() {
+		return this.currentTaskStep;
+	}
+
+	public setCurrentTaskStep(taskStep: TaskStep) {
+		this.currentTaskStep = taskStep;
 	}
 }

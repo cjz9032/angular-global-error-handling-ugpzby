@@ -79,7 +79,7 @@ ui-popover-apps {
 			overflow-y: auto;
 			overflow-x: hidden;
 			touch-action: none;
-			max-height: 51vh;
+			max-height: 44vh;
 			@media #{$breakpoint_sm} {
 				padding: 2rem 1rem;
 			}
