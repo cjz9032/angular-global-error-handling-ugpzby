@@ -14,10 +14,12 @@ export class UiMacrokeyPopupComponent implements OnInit {
 	ngOnInit() {
 		const popupFocus = document.getElementById('close');
 		popupFocus.focus();
+		this.hiddenScroll(true);
 	}
 
 	submitAction(isConfirm: boolean = false) {
 		this.action.emit(isConfirm);
+		this.hiddenScroll(isConfirm);
 		document.getElementById('main-wrapper').focus();
 	}
 
@@ -25,6 +27,14 @@ export class UiMacrokeyPopupComponent implements OnInit {
 		if (event.which === 9) {
 			const txt1 = document.getElementById('close');
 			txt1.focus();
+		}
+	}
+
+	hiddenScroll(action: boolean) {
+		if (action) {
+			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = 'hidden';
+		} else {
+			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = '';
 		}
 	}
 }

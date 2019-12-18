@@ -163,12 +163,13 @@
 			::ng-deep{
 				ui-gaming-driver-popup {
 					right: calc(100% - 1rem);
-					top: -3rem;
+					top: -4rem;
 					@media #{$medium-screen}{
+						min-width: 45rem;
 						right: auto;
 						left: 50%;
 						transform: translateX(-50%);
-						top: -23rem;
+						top: -24.5rem;
 						&::after {
 							top: calc(100% - 1.6rem);
 							right: calc(50% - 1.5rem);
@@ -185,6 +186,13 @@
 							right: calc(50% - 1.5rem);
 							transform: rotate(45deg);
 						}
+					}
+					@media #{$breakpoint_md} {
+						min-width: 45rem;
+						top: -24.5rem;
+					}
+					@media #{$breakpoint_sm} {
+						top: -23rem;
 					}
 				}
 			}

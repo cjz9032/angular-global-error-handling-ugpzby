@@ -4,25 +4,48 @@
 			<div class="title" [innerHTML]="dccTitle"></div>
 		</div>
 		<div class="img-medium">
-			<div class="link-content">
-				<div class="link-icons">
-					<a href="https://support.lenovo.com" target="_blank" class="button-dcc">
-						<img src="/assets/images/dcc/icon-dcc-cloud.jpg" />
-					</a>
-					<a href="https://support.lenovo.com" target="_blank" class="button-dcc">
-						<img src="/assets/images/dcc/icon-dcc-photoshop.jpg" />
-					</a>
-					<a href="https://support.lenovo.com" target="_blank" class="button-dcc">
+			<div class="row">
+				<div class="col-6 subtitle">
+					{{dccSubTitle11}}
+				</div>
+				<div class="col-6 subtitle">
+					{{dccSubTitle12}}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6 icons">
+					<a href="" class="button">
 						<img src="/assets/images/dcc/icon-dcc-illustrator.jpg" />
 					</a>
-					<a href="https://support.lenovo.com" target="_blank" class="button-dcc">
+				</div>
+				<div class="col-6 icons">
+					<a href="" class="button">
+						<img src="/assets/images/dcc/icon-dcc-photoshop.jpg" />
+					</a>
+					<a href="" class="button">
 						<img src="/assets/images/dcc/icon-dcc-lightroom.jpg" />
 					</a>
 				</div>
 			</div>
-			<div class="text-content">
-				<div class="subtitle1">{{dccSubTitle1}}</div>
-				<div class="body1" [innerHTML]="dccBody1"> </div>
+			<div class="row">
+				<div class="col-6 body" [innerHTML]="dccBody11">
+				</div>
+				<div class="col-6 body" [innerHTML]="dccBody12">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6 flex-column button white-button">
+					<vtr-ui-button linkId="dcc-link-select" metricsEvent="itemClick"
+						metricsItem="btn.select" metricsParent="dcc.detail" upperCaseLabel=false
+						btnHeight=true label="Select" href="https://support.lenovo.com">
+					</vtr-ui-button>
+				</div>
+				<div class="col-6 flex-column button white-button">
+					<vtr-ui-button linkId="dcc-link-select" metricsEvent="itemClick"
+						metricsItem="btn.select" metricsParent="dcc.detail" upperCaseLabel=false
+						btnHeight=true label="Select" href="https://support.lenovo.com">
+					</vtr-ui-button>
+				</div>
 			</div>
 		</div>
 		<div class="img-bottom">
@@ -32,15 +55,8 @@
 			</div>
 		</div>
 	</div>
-	<a href="javascript:;"
-		role="button"
-		class="close-btn"
-		aria-hidden="true"
-		vtrMetrics
-		metricsItem="DccCloseButton"
-		metricsEvent="FeatureClick"
-		metricsParent="{{ metricsParent }}"
-	 (click)="closeModal()">
+	<a href="javascript:;" role="button" class="close-btn" aria-hidden="true" vtrMetrics metricsItem="DccCloseButton"
+		metricsEvent="FeatureClick" metricsParent="{{ metricsParent }}" (click)="closeModal()">
 		<img [src]=" '/assets/images/dcc/icon-close-white.png'" alt="" srcset="">
 	</a>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef, ElementRef, ViewChild, ViewRef } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
@@ -11,7 +11,7 @@ import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail
 import { BatteryConditionsEnum, BatteryStatus } from 'src/app/enums/battery-conditions.enum';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { Subscription, EMPTY } from 'rxjs';
+import { EMPTY, Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -35,11 +35,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	batteryConditionsEnum = BatteryConditionsEnum;
 	batteryConditionNotes: string[];
 	batteryStatus = BatteryStatus;
-	// percentageLimitation: Store Limitation Percentage
-	percentageLimitation = 60;
 	batteryHealth = 0;
-	batteryIndex = 0;
-	chargeThresholdInfo: any; // ChargeThresholdInfo
 	batteryConditionStatus: string;
 	private powerSupplyStatusEventRef: any;
 	private remainingPercentageEventRef: any;
@@ -48,7 +44,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public isLoading = true;
 	public acAdapterInfoParams: any;
 	public param: any;
-	remainingPercentages: number[];
 	notificationSubscription: Subscription;
 	shortAcErrNote = true;
 	isModalShown = false;
@@ -100,6 +95,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryConditions[0] = new BatteryConditionModel(BatteryConditionsEnum.NotDetected, BatteryStatus.Poor);
 			maininfo.percentage = 0;
 			this.batteryIndicator.percent = 0;
+			this.batteryIndicator.batteryNotDetected = true;
 		}
 		this.batteryIndicator.convertMin(time);
 		this.batteryIndicator.timeText = timetype;
@@ -114,16 +110,12 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.updateMainBatteryTime();
 		this.batteryIndicator.charging = this.getAcAttachedStatus();
 		this.isLoading = false;
-		try {
-			const conditions = JSON.parse(window.localStorage.getItem('batteryCondition'));
-			if (Array.isArray(conditions) && conditions.length > 0) {
-				conditions.forEach((condition: BatteryConditionModel, index) => {
-					conditions[index] = new BatteryConditionModel(condition.condition, condition.conditionStatus);
-				});
-				this.batteryConditions = conditions;
-			}
-		} catch (e) {
-			console.log(e);
+		const conditions = this.commonService.getLocalStorageValue(LocalStorageKey.BatteryCondition);
+		if (Array.isArray(conditions) && conditions.length > 0) {
+			conditions.forEach((condition: BatteryConditionModel, index) => {
+				conditions[index] = new BatteryConditionModel(condition.condition, condition.conditionStatus);
+			});
+			this.batteryConditions = conditions;
 		}
 		this.setConditionTips();
 		this.isWinRTLoading = false;
@@ -253,11 +245,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryInfo.forEach((info) => {
 				remainingPercentages.push(info.remainingPercent);
 			});
-			this.remainingPercentages = remainingPercentages;
 			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 			// this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
 			this.batteryService.isAcAttached = this.batteryGauge.isAttached;
-			this.batteryService.remainingPercentages = this.remainingPercentages;
+			this.batteryService.remainingPercentages = remainingPercentages;
 		} else {
 			this.batteryIndicator.batteryNotDetected = false;
 		}
@@ -342,7 +333,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryIndicator.batteryNotDetected = false;
 			}
 
-			this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
+			this.batteryInfo[0].batteryCondition.forEach((condition) => {
 				switch (condition.toLocaleLowerCase()) {
 					case 'normal':
 						batteryConditions.push(new BatteryConditionModel(healthCondition,
@@ -359,12 +350,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 						break;
 					case 'permanenterror':
 						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.PermanentError, BatteryStatus.Poor));
-						break;
-					case 'hardwareauthenticationerror':
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.UnsupportedBattery, BatteryStatus.Fair));
-						break;
-					case 'nonthinkpadbattery':
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.UnsupportedBattery, BatteryStatus.Fair));
 						break;
 					case 'unsupportedbattery':
 						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.UnsupportedBattery, BatteryStatus.Fair));
@@ -406,28 +391,19 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 
 		// temp cache battery condition
-		window.localStorage.setItem('batteryCondition', JSON.stringify(this.batteryConditions));
+		this.commonService.setLocalStorageValue(LocalStorageKey.BatteryCondition, this.batteryConditions);
 	}
 
 	setConditionTips() {
 		this.batteryConditionNotes = [];
-		let count = 0;
-		this.batteryConditions.forEach((batteryCondition) => {
 
+		this.batteryConditions.forEach((batteryCondition) => {
 			let translation = batteryCondition.getBatteryConditionTip(batteryCondition.condition);
 			if (batteryCondition.conditionStatus === this.batteryStatus.AcAdapterStatus && batteryCondition.condition !== this.batteryConditionsEnum.FullACAdapterSupport
 				&& !this.shortAcErrNote) {
 				translation += 'Detail';
 			}
-			if (batteryCondition.condition === BatteryConditionsEnum.UnsupportedBattery) {
-				if (count === 0) {
-					this.batteryConditionNotes.push(translation);
-				}
-				count++;
-
-			} else {
-				this.batteryConditionNotes.push(translation);
-			}
+			this.batteryConditionNotes.push(translation);
 		});
 	}
 

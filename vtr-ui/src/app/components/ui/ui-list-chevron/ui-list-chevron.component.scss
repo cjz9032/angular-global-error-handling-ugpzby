@@ -168,14 +168,14 @@
 				.title {
 					cursor: pointer;
 					font-size: $fontsize_xs;
-					font-weight: $weight_600;
+					font-weight: $weight_bold;
 					float: left;
 					padding-top: 0.1rem;
 					padding-right: 0.5rem;
 					overflow: hidden;
 					text-overflow: ellipsis;
 					white-space: nowrap;
-					color: $blue-dark;
+					color: $shade_blue;
 					width: 13rem;
 
 					&.light-title {
