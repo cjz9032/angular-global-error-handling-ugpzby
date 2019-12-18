@@ -36,6 +36,7 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 	}
 
 	ngOnInit() {
+		window.getSelection().empty();
 		this.enterTime = new Date().getTime();
 		this.articleTitle = '';
 		this.articleImage = '';

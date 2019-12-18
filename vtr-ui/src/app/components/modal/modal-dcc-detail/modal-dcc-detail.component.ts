@@ -17,8 +17,11 @@ export class ModalDccDetailComponent implements OnInit, AfterViewInit {
 	metricsParent = '';
 
 	dccTitle = 'LENOVO EXCLUSIVE OFFER OF<br/>ADOBE DESIGNER SUITE';
-	dccSubTitle1 = 'Power Up the Tools You Use';
-	dccBody1 = 'Version to version and in the time in-between, Intel works with leading companies to ensure the creative software you rely on performs at its best.';
+	dccSubTitle11 = 'Premiere Pro';
+	dccBody11 = 'Premiere Pro is the leading video editing software for film, TV and the web. Premiere Pro includes Premiere Rush, an all-in-one app that works across all your devices to share your video with your network.';
+	dccSubTitle12 = 'Creative Cloud Photography plan';
+	dccBody12 = 'Use Lightroom to easily edit, organize, store, and share your photos from anywhere, and Photoshop so you can transform your images to anything you can imagine.';
+	dccButtonText = 'Select';
 	dccSubTitle2 = 'All-in-Ones: Streamlined';
 	dccBody2 = 'All-in-One PCs with 9th Gen Intel® Core™ processors give you all the power of a desktop packaged in a sleek display — for less clutter, hardware-based security, and a hi-res display.';
 
