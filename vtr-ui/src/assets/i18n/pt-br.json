@@ -1108,7 +1108,7 @@
                         "FCCText": "De {{before}} Wh para {{after}} Wh",
                         "note": "Nota: Antes de redefinir o medidor da bateria, certifique-se de conectar o computador à energia CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Concluído: Êxito na redefinição.",
+                            "ERROR_SUCCESS": "Concluído: redefinição com êxito.",
                             "ERROR_SHUTDOWN": "Falha: desligamento do sistema.",
                             "ERROR_LOGOFF": "Falha: o usuário fez logoff.",
                             "ERROR_BATTERY_REMOVE": "Falha: a bateria foi removida.",

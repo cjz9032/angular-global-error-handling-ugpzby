@@ -1108,7 +1108,7 @@
                         "FCCText": "{{before}} Wh에서 {{after}} Wh",
                         "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "완료되었습니다: 리셋에 성공했습니다.",
+                            "ERROR_SUCCESS": "완료: 재설정되었습니다.",
                             "ERROR_SHUTDOWN": "실패: 시스템이 종료되었습니다.",
                             "ERROR_LOGOFF": "실패: 사용자가 로그아웃했습니다.",
                             "ERROR_BATTERY_REMOVE": "실패: 배터리가 제거되었습니다.",
