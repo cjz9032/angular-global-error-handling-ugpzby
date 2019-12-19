@@ -29,6 +29,7 @@ ui-popover-turn-on {
 	@media #{$breakpoint_sm} {
 		width: 90%;
 		height: 42rem;
+		padding: 3rem 4rem;
 	}
 	@media #{$black-on-white}{
 		border:0.1rem solid $dark;
@@ -124,25 +125,21 @@ ui-popover-turn-on {
 			}
 		}
 	}
-	.enable-button {
+	.action-container{
+		.enable-button {
 		background: $gradient_main;
 		border-radius: 3rem;
 		color: $light;
 		font-size: 2rem;
 		padding: 1rem 3rem;
 		margin-top: 1rem;
+		margin-right: 3rem;
 		font-weight: $weight_600;
 		&:active {
 			transform: scale(0.95);
 		}
 	}
-	.nextbuton {
-		display: inline-block;
-		@media #{$breakpoint_sm} {
-			display: block;
-		}
-	}
-	.cancel-link {
+		.cancel-link {
 		height: 3.2rem;
 		color: $btn_secondary_color;
 		font-size: 2rem;
@@ -150,7 +147,6 @@ ui-popover-turn-on {
 		padding: 0 0.5rem;
 		font-weight: $weight_600;
 		margin-top: 1.8rem;
-		margin-left: 3rem;
 		border-bottom: 2px solid $btn_secondary_color;
 		display: inline-block;
 		cursor: pointer;
@@ -162,8 +158,7 @@ ui-popover-turn-on {
 		&:active {
 			transform: scale(0.95);
 		}
-		@media #{$breakpoint_sm} {
-			margin-left: 0;
-		}
 	}
+	}
+	
 }

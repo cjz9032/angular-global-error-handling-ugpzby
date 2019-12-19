@@ -29,6 +29,7 @@ ui-popover-turn-on {
 	@media #{$breakpoint_sm} {
 		width: 90%;
 		height: 42rem;
+		padding: 3rem 4rem;
 	}
 	@media #{$white-on-black} {
 		border: 0.1rem solid $light;
@@ -184,7 +185,9 @@ ui-popover-turn-on {
 			}
 		}
 	}
-	.enable-button {
+	.action-container{
+		width: 100%;
+		.enable-button {
 		background: $gradient_main;
 		border-radius: 3rem;
 		color: $light;
@@ -192,14 +195,9 @@ ui-popover-turn-on {
 		padding: 1rem 3rem;
 		margin-top: 1rem;
 		font-weight: $weight_600;
+		margin-right: 3rem;
 		&:active {
 			transform: scale(0.95);
-		}
-	}
-	.nextbuton1 {
-		display: inline-block;
-		@media #{$breakpoint_sm} {
-			display: block;
 		}
 	}
 	.cancel-link {
@@ -210,7 +208,6 @@ ui-popover-turn-on {
 		padding: 0 0.5rem;
 		font-weight: $weight_600;
 		margin-top: 1.8rem;
-		margin-left: 3rem;
 		border-bottom: 2px solid $btn_secondary_color;
 		display: inline-block;
 		cursor: pointer;
@@ -222,8 +219,7 @@ ui-popover-turn-on {
 		&:active {
 			transform: scale(0.95);
 		}
-		@media #{$breakpoint_sm} {
-			margin-left: 0;
-		}
 	}
+	}
+	
 }
