@@ -7,7 +7,7 @@
 	padding: 1.6rem 0;
 	text-overflow: ellipsis;
 	overflow: hidden;
-	@media #{$mediaquery_11} {
+	@media #{$breakpoint_md} {
 		font-size: 3.2rem;
 	}
 	span {
