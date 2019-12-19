@@ -152,6 +152,7 @@
 					// 	}
 					// }
 					.hd-item {
+						width:30%;
 						@media #{$breakpoint_md} {
 						 max-width: 35rem;
 						 margin: auto;
@@ -849,10 +850,10 @@
 						.hd-item {
 							text-align: center;
 							.gaming-tooltip {
-								min-width: 30rem;
+								min-width: 20rem;
 								top: -5rem;
-								left: 50%;
-								transform: translate(-50%);
+								left: 49%;
+								transform: translate(-49%);
 								@media #{$breakpoint_sm}{
 									transform: translate(0);
 									left: 0;
@@ -861,7 +862,7 @@
 									margin-right: auto;
 								}
 								@media #{$breakpoint_md}{
-									min-width: 30rem;
+									min-width: 20rem;
 									transform: translate(0);
 									left: 0;
 									right: 0;
@@ -886,6 +887,7 @@
 								}
 							}
 							.hd-item-label {
+								width:50%;
 								//display: block;
 								text-align: center;
 								// @media #{$only-small-screen} {
@@ -960,6 +962,7 @@
 					}
 					.hd-item {
 						margin-bottom: 3.4rem;
+						width:100%;
 						position: relative;
 						@media #{$breakpoint_xl3} {
 							margin-bottom: 2.4rem;
@@ -994,10 +997,12 @@
 						.gaming-tooltip {
 							top: -6rem;
 							left: 50%;
+							min-width:20rem;
 							transform: translate(-50%);
 							@media #{$breakpoint_sm}{
 								transform: translate(-50%);
 								left: 50%;
+								min-width:20rem;
 							}
 						}
 						&:hover {
@@ -1027,7 +1032,7 @@
 							padding-left: 1rem;
 							vertical-align: middle;
 							text-align: left;
-							width: 50%;
+							
 							// @media #{$only-small-screen} {
 							// 	display: flex;
 							// 	justify-content: space-between;
