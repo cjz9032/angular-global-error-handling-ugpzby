@@ -67,20 +67,26 @@
   }
 
   .footer {
+    @media #{$mediaquery_md} {
+      display: none;
+    }
     margin-top: 3rem;
     .text-regular {
       font-size: 1.6rem;
       color: $main_shade;
-    }
-
-    .read-more-text {
-      font-size: 1.4rem;
+      @media #{$mediaquery_X46} {
+        font-size: 1.3rem;
+			}
     }
 
     .mcafee-logo {
       width: 14rem;
       padding-top: 1rem;
       margin-right: 2rem;
+      @media #{$mediaquery_X46} {
+        width: 9rem;
+        margin-right: 1rem;
+			}
     }
 
     a {
