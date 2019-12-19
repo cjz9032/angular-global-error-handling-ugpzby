@@ -52,10 +52,10 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		});
 		this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
 			this.pluginSupport = result === 'true';
-			}).catch((e) => {
-				this.pluginSupport = false;
-			}).finally(() => {
-				this.showUac();
+		}).catch((e) => {
+			this.pluginSupport = false;
+		}).finally(() => {
+			this.showUac();
 		});
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
