@@ -221,6 +221,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				const contentEnd: any = new Date();
 				const contentUseTime = contentEnd - this.contentStartTime;
 				if (response && response.length > 0) {
+					response = response.filter(r => r.Page === 'support');
 					response.forEach(article => {
 						if (article.FeatureImage) {
 							article.FeatureImage = article.FeatureImage.replace('(', '%28').replace(')', '%29');

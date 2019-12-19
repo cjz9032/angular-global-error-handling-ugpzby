@@ -396,7 +396,7 @@
 					<div class="row py-5 smart-assist-card"
 						id="screen"
 						*ngIf="intelligentScreen.isIntelligentScreenVisible">
-						<div class="col-12 mx-auto">
+						<div class="col-12 px-0">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentScreen'"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.intelligentScreen.title' | translate"
@@ -498,7 +498,7 @@
 					<div class="row py-5 smart-assist-card"
 						id="aps"
 						*ngIf='isAPSAvailable'>
-						<div class="col-12 mx-auto">
+						<div class="col-12 px-0">
 							<vtr-container-collapsible [collapseLinkId]="'activeProtection'"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.activeProtectionSystem.title' | translate"
@@ -517,7 +517,7 @@
 					<div class="row py-5 smart-assist-card"
 						id="voice"
 						*ngIf="lenovoVoice.available">
-						<div class="col-12 mx-auto">
+						<div class="col-12 px-0">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentVoice'"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.voice.title' | translate"
@@ -548,9 +548,8 @@
 						[action]="cardContentPositionA.Action"
 						[actionType]="cardContentPositionA.ActionType"
 						[actionLink]="cardContentPositionA.ActionLink"
-						[type]="'corner-article'"
-						[ratioX]="4"
-						[ratioY]="2"
+						[type]="'subpage-corner'"
+						[ratio]="2"
 						order="1"
 						sideFlag='r'
 						[cornerShift]="'large'">
