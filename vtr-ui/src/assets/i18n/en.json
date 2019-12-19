@@ -3148,8 +3148,7 @@
             "systemEvent": "Test aborted because a system event that could compromise the outcome has happened.",
             "systemPasswordProtected": "Device may be password protected. Try disabling the password protection.",
             "popup": {
-				"description": "The execution of scan and repair can cause data loss. It is recommended to make a backup before execute this operation.",
-				"question": "Are you sure you want to proceed?",
+				"description": "The execution of scan and repair can cause data loss. It is recommended to make a backup before execute this operation. <br> <div class='question'>Are you sure you want to proceed?</div>",
                 "yes": "Yes",
                 "no": "No"
             },
