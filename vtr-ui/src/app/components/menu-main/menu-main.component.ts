@@ -390,9 +390,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.updateSearchBoxState(false);
 	}
 
-	menuItemClick(event, path) {
+	menuItemKeyDown(path: string, subpath?: string) {
 		if (path) {
-			this.router.navigateByUrl(path);
+			if (!subpath || subpath === 'null') {
+				this.router.navigateByUrl(`/${path}`);
+			} else {
+				this.router.navigateByUrl(`/${path}/${subpath}`);
+			}
 		}
 	}
 

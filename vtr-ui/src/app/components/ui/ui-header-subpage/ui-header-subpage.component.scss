@@ -4,15 +4,15 @@
 	margin-bottom: 4rem;
 	h2 {
 		&.title {
-			color: $main_shade;
-			font-size: $page_header;
+			color: $light;
+			font-size: $fontsize_xl4;
 			font-weight: $weight_light;
 			margin-bottom: 3rem;
 		}
 	}
 	.caption {
-		color: $main_shade;
-		font-size: $body;
+		color: $purple_navy;
+		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 		line-height: 1.8em;
 		margin-bottom: 2rem;
@@ -20,16 +20,16 @@
 	.left-border {
 		border-left: 0.7rem solid $main;
 		.menu-title {
-			color: $main_dark;
+			color: $purple_navy;
 			font-size: $base;
 			font-weight: $weight_bold;
 			margin: 1rem 0;
 			text-transform: uppercase;
 		}
 		.menu-item {
-			font-size: $body;
+			font-size: $fontsize_xs;
 			font-weight: $weight_light;
-			color: $main;
+			color: $menu_hover;
 			cursor: pointer;
 			padding-bottom: .2rem;
 			border-bottom: 1px solid $main;
