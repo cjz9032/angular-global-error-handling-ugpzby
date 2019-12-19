@@ -1,36 +1,36 @@
 <div [ngSwitch]="supportType$ | async">
 	<vtr-ui-row-switch
 		*ngSwitchCase="backlightLevelEnum.ONE_LEVEL"
-		[title]="'device.deviceSettings.inputAccessories.inputAccessory.Backlight.title' | translate"
+		[title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"
 		componentName="Input Accessories"
-		[caption]="'device.deviceSettings.inputAccessories.inputAccessory.Backlight.description.base' | translate"
+		[caption]="'device.deviceSettings.inputAccessories.backlight.description.base' | translate"
 		[leftIcon]="['fal', 'keyboard']"
 		[theme]="'white'"
 		[isLastChild]="isLastChild"
 		[isSwitchVisible]="true"
-		[isSwitchChecked]="false"
+		[isSwitchChecked]="isSwitchChecked"
 		(toggleOnOff)="onToggleOnOff($event)"
-		[switchId]="'inputAccessories-Backlight'"
-		automationId="[Backlight.title, Backlight.description.base]">
+		[switchId]="'inputAccessories-backlight'"
+		automationId="[backlight.title, backlight.description.base]">
 	</vtr-ui-row-switch>
 	<vtr-ui-row-switch
 		*ngSwitchCase="backlightLevelEnum.TWO_LEVELS"
-		[title]="'device.deviceSettings.inputAccessories.inputAccessory.Backlight.title' | translate"
+		[title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"
 		componentName="Input Accessories"
-		[caption]="'device.deviceSettings.inputAccessories.inputAccessory.Backlight.description.base' | translate"
+		[caption]="'device.deviceSettings.inputAccessories.backlight.description.base' | translate"
 		[leftIcon]="['fal', 'keyboard']"
 		[showChildContent]="true"
 		[theme]="'white'"
 		[isLastChild]="isLastChild"
-		[switchId]="'inputAccessories-Backlight'"
-		automationId="[Backlight.title, Backlight.description.base]">
+		[switchId]="'inputAccessories-backlight'"
+		automationId="[backlight.title, backlight.description.base]">
 		<vtr-ui-circle-radio-with-checkbox
-			*ngFor="let mode of modes$ | async"
-			[theme]="'blue'"
-			[radioId]="'backlightMode' + mode | removeSpace"
+			*ngFor="let mode of modes"
+			[theme]="'white'"
+			[radioId]="'backlightMode' + mode.value | removeSpace"
 			[group]="'backlight'"
-			[label]="mode.title"
-			[value]='mode.value'
+			[label]="mode.title | translate"
+			[value]="mode.value"
 			[checked]="mode.checked"
 			(change)="update$.next(mode)"
 			[disabled]="mode.value === backlightStatusEnum.DISABLED_OFF"
@@ -40,27 +40,29 @@
 	</vtr-ui-row-switch>
 	<vtr-ui-row-switch
 		*ngSwitchCase="backlightLevelEnum.TWO_LEVELS_AUTO"
-		[title]="'device.deviceSettings.inputAccessories.inputAccessory.Backlight.title' | translate"
+		[title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"
 		componentName="Input Accessories"
-		[caption]="'device.deviceSettings.inputAccessories.inputAccessory.Backlight.description.auto' | translate"
+		[caption]="'device.deviceSettings.inputAccessories.backlight.description.auto' | translate"
 		[leftIcon]="['fal', 'keyboard']"
 		[showChildContent]="true"
 		[theme]="'white'"
 		[isLastChild]="isLastChild"
-		[switchId]="'inputAccessories-Backlight'"
-		automationId="[Backlight.title, Backlight.description.auto]">
-		<vtr-ui-circle-radio-with-checkbox
-			*ngFor="let mode of modes$ | async"
-			[theme]="'blue'"
-			[radioId]="'backlightMode' + mode | removeSpace"
-			[group]="'backlight'"
-			[label]="mode.title"
-			[value]='mode.value'
-			[checked]="mode.checked"
-			(change)="update$.next(mode)"
-			[disabled]="mode.value === backlightStatusEnum.DISABLED_OFF"
-			[processIcon]="true"
-			[textId]="'myDevice-settings-inputAccessories-backlight'">
-		</vtr-ui-circle-radio-with-checkbox>
+		[switchId]="'inputAccessories-backlight'"
+		automationId="[backlight.title, backlight.description.auto]">
+		<div class="row no-gutters">
+			<vtr-ui-circle-radio-with-checkbox
+				*ngFor="let mode of modes"
+				[theme]="'white'"
+				[radioId]="'backlightMode' + mode.value | removeSpace"
+				[group]="'backlight'"
+				[label]="mode.title | translate"
+				[value]='mode.value'
+				[checked]="mode.checked"
+				(change)="update$.next(mode)"
+				[disabled]="mode.value === backlightStatusEnum.DISABLED_OFF"
+				[processIcon]="true"
+				[textId]="'myDevice-settings-inputAccessories-backlight'">
+			</vtr-ui-circle-radio-with-checkbox>
+		</div>
 	</vtr-ui-row-switch>
 </div>

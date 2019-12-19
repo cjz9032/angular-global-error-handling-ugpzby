@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { from, Observable } from 'rxjs';
+import { from, Observable, Subject } from 'rxjs';
 import { Backlight, BacklightLevel, BacklightMode, BacklightStatus } from './backlight.interface';
 import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
-import { map, shareReplay } from 'rxjs/operators';
+import { map, shareReplay, takeUntil } from 'rxjs/operators';
 
 const CACHE_SIZE = 1;
 
@@ -11,7 +11,8 @@ const CACHE_SIZE = 1;
 })
 export class BacklightService {
 	private backlightFeature: Backlight;
-	private backlight$: Observable<Array<BacklightStatus | BacklightLevel>>;
+	private cache$: Observable<Array<BacklightStatus | BacklightLevel>>;
+	private reload$ = new Subject();
 
 	constructor(
 		private shellService: VantageShellService
@@ -20,12 +21,13 @@ export class BacklightService {
 	}
 
 	get backlight(): Observable<Array<BacklightStatus | BacklightLevel>> {
-		if (!this.backlight$) {
-			this.backlight$ = this.requestBacklight().pipe(
+		if (!this.cache$) {
+			this.cache$ = this.requestBacklight().pipe(
+				takeUntil(this.reload$),
 				shareReplay(CACHE_SIZE)
 			);
 		}
-		return this.backlight$;
+		return this.cache$;
 	}
 
 	requestBacklight(): Observable<Array<BacklightStatus | BacklightLevel>> {
@@ -35,7 +37,13 @@ export class BacklightService {
 			);
 	}
 
+	forceReload() {
+		this.reload$.next();
+		this.cache$ = null;
+	}
+
 	setBacklight(mode: BacklightMode) {
+		console.log(JSON.stringify(mode));
 		return from(this.backlightFeature.setBacklight({
 			settingList: {
 				setting: [
