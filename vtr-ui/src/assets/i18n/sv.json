@@ -1014,7 +1014,7 @@
                             "title3": "Prestandaläge",
                             "desc3": "Reglaget är skjutet längst åt höger. Fläkthastighet och tillåten yttemperatur ökas för maximal prestanda."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Vissa av lägena kan justeras automatiskt i ett större prestandaintervall baserat på din aktivitet. Tryck på Fn+ T för att inaktivera automatiskt läge."
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
                     "subTitle2": "Ange vilken tid du använder datorn mest",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda START tiden och i viloläge när den inte har använts under en viss tid på batterikraft. Denna tidsperiod optimeras utifrån schemat du har angett. Datorn övergår från viloläge till modernt vänteläge endast på schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "HANTERING AV STYRPLATTA",
                     "control2": "HANTERING AV MUS",
                     "control3": "TRACKPOINT-KONTROLLER",
-                    "less": "LESS"
+                    "less": "MINDRE"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Inställningar för automatisk uppdatering",
-            "subtitle": "INSTALLERA UPPDATERINGAR AUTOMATISKT",
+            "subtitle": "Installera uppdateringar automatiskt",
             "critical": {
                 "title": "Kritiska uppdateringar",
                 "tooltip": "Kritiska uppdateringar kan förhindra allvarliga problem, större felfunktioner, maskinvarufel och skadade data."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "Genomsökningen och reparationen kan resultera i att data går förlorade. Vi rekommenderar att du skapar en säkerhetskopia innan du utför denna åtgärd. Vill du fortsätta?",
                 "yes": "Ja",
-                "no": "Nej"
+                "no": "Nej",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

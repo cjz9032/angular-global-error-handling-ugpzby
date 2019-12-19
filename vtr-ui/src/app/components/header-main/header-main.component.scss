@@ -41,7 +41,7 @@
 		}
 
 		@media #{$breakpoint_xl} {
-			padding-left: $padding_side_sm;
+			padding-left: $padding_side;
 		}
 		// RESPONSIVE EFFORT
 		// @media #{$mediaquery_X4} {
@@ -52,7 +52,7 @@
 		// }
 		.title {
 			color: $light;
-			font-size: $page_header;
+			font-size: $fontsize_xl4;
 			font-weight: $weight_light;
 			margin: 0;
 			position: relative;
@@ -80,7 +80,7 @@
 		}
 		.back {
 			color: $light;
-			font-size: $base;
+			font-size: $fontsize_xs2;
 			font-weight: $weight_bold;
 			margin: 0;
 			display: table;

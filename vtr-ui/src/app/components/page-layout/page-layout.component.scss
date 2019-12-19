@@ -18,22 +18,22 @@
 			padding-bottom: 0;
 			&.vtr-page-left-column {
 				padding-left: $padding_side;
-				padding-right: 3rem;
+				padding-right: 2.4rem;
 				background-color: $shade_extralight;
 				@media #{$breakpoint_xl} {
-					padding-left: $padding_side_sm;
+					padding-left: $padding_side;
 				}
 				@media #{$breakpoint_lg} {
-					padding-left: $padding_side_sm;
-					padding-right: $padding_side_sm;
+					padding-left: $padding_side;
+					padding-right: $padding_side;
 				}
 			}
 			&.vtr-page-right-column {
 				padding-right: $padding_side;
-				padding-left: 3rem;
+				padding-left: 2.4rem;
 				background-color: $light;
 				@media #{$breakpoint_xl} {
-					padding-right: $padding_side_sm;
+					padding-right: $padding_side;
 				}
 				@media #{$breakpoint_lg} {
 					padding-left: $padding_side_sm;

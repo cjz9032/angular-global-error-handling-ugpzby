@@ -1014,7 +1014,7 @@
                             "title3": "Режим производительности",
                             "desc3": "Ползунок в крайнем правом положении. Скорость вращения вентиляторов и допустимая температура поверхности увеличены для максимальной производительности."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Некоторые режимы могут автоматически изменяться в широком диапазоне производительности в зависимости от вашей активности. Чтобы выключить автоматический режим, нажмите сочетание клавиш Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого запуска в часы интенсивного использования.",
                     "subTitle2": "Укажите время, когда вы обычно используете этот компьютер",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Если функция интеллектуального режима ожидания включена, компьютер переключается в текущий режим ожидания до запланированного времени НАЧАЛА РАБОТЫ, а при неактивности в течение определенного периода времени при питании от аккумулятора переходит в режим гибернации. Этот период времени оптимизируется на основе заданного расписания. Компьютер переключается из режима гибернации в текущий режим ожидания только в запланированные дни и не переключается при неактивности в течение нескольких запланированных дней подряд."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ СЕНСОРНОЙ ПАНЕЛИ",
                     "control2": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ МЫШИ",
                     "control3": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ TRACKPOINT",
-                    "less": "LESS"
+                    "less": "МЕНЬШЕ"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Параметры автоматического обновления",
-            "subtitle": "УСТАНАВЛИВАТЬ ОБНОВЛЕНИЯ АВТОМАТИЧЕСКИ",
+            "subtitle": "Устанавливать обновления автоматически",
             "critical": {
                 "title": "Критические обновления",
                 "tooltip": "Критические обновления могут предотвращать значительные проблемы, серьезные сбои, сбои оборудования и повреждение данных."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "Выполнение сканирования и восстановления может привести к потере данных. Перед выполнением этой операции рекомендуется создать резервную копию. Продолжить?",
                 "yes": "Да",
-                "no": "Нет"
+                "no": "Нет",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

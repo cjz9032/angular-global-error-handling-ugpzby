@@ -19,8 +19,7 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	@Input() actionType = '';
 	@Input() actionLink = '';
 	@Input() type = '';
-	@Input() ratioX = 1;
-	@Input() ratioY = 1;
+	@Input() ratio = 0.5;
 	@Input() cornerShift = '';
 	@Input() order: number;
 	@Input() itemID: string;
@@ -31,12 +30,7 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	@Input() isOfflineArm = false;
 
 	isLoading = true;
-
-	ratio = 1;
-	containerHeight = 100;
 	isOnline = true;
-
-	resizeListener;
 
 	constructor(
 		private commonService: CommonService,
@@ -45,7 +39,6 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 
 	ngOnInit() {
 		this.handleLoading();
-		this.ratio = this.ratioY / this.ratioX;
 		this.isOnline = this.commonService.isOnline;
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -53,7 +46,7 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	}
 
 	handleLoading() {
-		console.log(this.img, '+++++++++---------');
+		// console.log(this.img, '+++++++++---------');
 		if (this.img) {
 			this.isLoading = false;
 		} else {
