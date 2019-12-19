@@ -38,9 +38,9 @@
 				<div *ngIf="item.Title"
 					class="col col-12 content">
 					<div href="javascript:;"
-						class="title"
+						class="title text-two-ellipsis"
 						[title]="item.Title | htmlText"
-						[style.font-size.px]="articleItemDiv.clientWidth * 28 / 430"
+						[style.font-size.px]="articleItemDiv.clientWidth * 26 / 430"
 						[style.height.px]="articleItemDiv.clientWidth * 72 / 430"
 						[style.line-height.px]="articleItemDiv.clientWidth * 36 / 430"
 						[innerHTML]="item.Title"></div>
@@ -99,9 +99,9 @@
 				</div>
 				<div *ngIf="item.Title"
 					class="col col-12 content">
-					<div class="title"
+					<div class="title text-two-ellipsis"
 						[title]="item.Title | htmlText"
-						[style.font-size.px]="articleItemDiv.clientWidth * 28 / 430"
+						[style.font-size.px]="articleItemDiv.clientWidth * 26 / 430"
 						[style.height.px]="articleItemDiv.clientWidth * 72 / 430"
 						[style.line-height.px]="articleItemDiv.clientWidth * 36 / 430"
 						[innerHTML]="item.Title"></div>
