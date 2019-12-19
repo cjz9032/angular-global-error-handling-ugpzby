@@ -10,9 +10,7 @@ export enum BatteryConditionsEnum {
 	TrickleCharge,
 	OverheatedBattery,
 	PermanentError,
-	HardwareAuthenticationError,
 	UnsupportedBattery,
-	NonThinkPadBattery,
 
 	MissingDriver,
 

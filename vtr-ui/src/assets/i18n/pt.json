@@ -841,7 +841,7 @@
                 "hour": "hora",
                 "minutes": "minutos",
                 "minute": "minuto",
-                "charge": "TEMPO ATÉ CARGA COMPLETA",
+                "charge": "Tempo até a carga completa",
                 "button": "VER DETALHES DA BATERIA",
                 "details": {
                     "title": "Detalhes da Bateria",
@@ -1110,7 +1110,7 @@
                         "resetLog": {
                             "ERROR_SUCCESS": "Concluído: Reposição com êxito.",
                             "ERROR_SHUTDOWN": "Falha: Encerramento do sistema.",
-                            "ERROR_LOGOFF": "Falha: Utilizador com sessão terminada.",
+                            "ERROR_LOGOFF": "Falha: O utilizador terminou sessão.",
                             "ERROR_BATTERY_REMOVE": "Falha: Bateria removida.",
                             "ERROR_BATTERY_REPLACE": "Falha: Bateria substituída.",
                             "ERROR_AC_DETTACH": "Falha: Transformador CA desligado.",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Ecrã",
-					"displayColorTemperature": {
-						"title": "Temperatura de cor do ecrã",
-						"description": "É possível ajustar a temperatura de cor do ecrã para filtrar a luz azul e reduzir o cansaço dos olhos. Ajusta os ecrãs para cores mais quentes durante o pôr do sol até ao nascer do sol para o ajudar a dormir.",
-						"link": {
-							"click": "Clique",
-							"here": "aqui",
-							"rest": "para alterar a temperatura de cor."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Temperatura de cor do ecrã",
+                        "description": "É possível ajustar a temperatura de cor do ecrã para filtrar a luz azul e reduzir o cansaço dos olhos. Ajusta os ecrãs para cores mais quentes durante o pôr do sol até ao nascer do sol para o ajudar a dormir.",
+                        "link": {
+                            "click": "Clique",
+                            "here": "aqui",
+                            "rest": "para alterar a temperatura de cor."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Modo de Cuidados com a Visão",
                         "checkbox": "Programe o Modo de Cuidados com a Visão do pôr ao nascer do sol",
@@ -1362,7 +1362,9 @@
                             "minutes": "minutos",
                             "alwaysOn": "Sempre ligado",
                             "never": "nunca",
-                            "halfTime": "Intervalo de tempo de exibição do temporizador"
+                            "halfTime": "Intervalo de tempo de exibição do temporizador",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DA BARRA DE TAREFAS",
                         "backgroundDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DE SEGUNDO PLANO",

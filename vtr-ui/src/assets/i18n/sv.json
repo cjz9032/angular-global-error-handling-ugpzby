@@ -841,7 +841,7 @@
                 "hour": "timme",
                 "minutes": "minuter",
                 "minute": "minut",
-                "charge": "TID TILLS BATTERIET ÄR LADDAT",
+                "charge": "Tid till full laddning",
                 "button": "SE BATTERIINFORMATION",
                 "details": {
                     "title": "Batteriuppgifter",
@@ -1108,7 +1108,7 @@
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Klart: Återställningen lyckades.",
+                            "ERROR_SUCCESS": "Klart: Återställningen har slutförts.",
                             "ERROR_SHUTDOWN": "Misslyckades: Systemet stängdes av.",
                             "ERROR_LOGOFF": "Misslyckades: Användaren loggade ut.",
                             "ERROR_BATTERY_REMOVE": "Misslyckades: Batteriet togs bort.",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Skärm",
-					"displayColorTemperature": {
-						"title": "Bildskärmens färgtemperatur",
-						"description": "Du kan justera bildskärmens färgtemperatur för att minska avgivningen av blått ljus och därmed belastningen på ögonen. Bildskärmen justeras till varmare färger från solnedgång till soluppgång för att hjälpa dig att sova.",
-						"link": {
-							"click": "Klicka",
-							"here": "här",
-							"rest": "för att ändra färgtemperaturen."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Bildskärmens färgtemperatur",
+                        "description": "Du kan justera bildskärmens färgtemperatur för att minska avgivningen av blått ljus och därmed belastningen på ögonen. Bildskärmen justeras till varmare färger från solnedgång till soluppgång för att hjälpa dig att sova.",
+                        "link": {
+                            "click": "Klicka",
+                            "here": "här",
+                            "rest": "för att ändra färgtemperaturen."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Ögonskyddsläge",
                         "checkbox": "Schemalägg ögonskyddsläge från morgon till kväll",
@@ -1362,7 +1362,9 @@
                             "minutes": "minuter",
                             "alwaysOn": "Alltid på",
                             "never": "aldrig",
-                            "halfTime": "Halv tid innan bildskärmen stängs av"
+                            "halfTime": "Halv tid innan bildskärmen stängs av",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "AKTIVITETSFÄLTSDIMMER",
                         "backgroundDimmer": "BAKGRUNDSDIMMER",

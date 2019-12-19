@@ -841,7 +841,7 @@
                 "hour": "tunti",
                 "minutes": "minuuttia",
                 "minute": "minuutti",
-                "charge": "TÄYTEEN LATAUKSEEN KULUVA AIKA",
+                "charge": "Täyteen lataukseen kuluva aika",
                 "button": "KATSO AKUN TIEDOT",
                 "details": {
                     "title": "Akun tiedot",
@@ -1108,14 +1108,14 @@
                         "FCCText": "{{before}}Wh- {{after}} Wh",
                         "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Valmis: Nollaus onnistui.",
+                            "ERROR_SUCCESS": "Valmis: Palautus onnistui.",
                             "ERROR_SHUTDOWN": "Epäonnistui: Järjestelmä sammui.",
-                            "ERROR_LOGOFF": "Epäonnistui: Käyttäjä kirjautui ulos.",
+                            "ERROR_LOGOFF": "Epäonnistui: Käyttäjä on kirjautunut ulos.",
                             "ERROR_BATTERY_REMOVE": "Epäonnistui: Akku poistettiin.",
                             "ERROR_BATTERY_REPLACE": "Epäonnistui: Akku vaihdettiin.",
                             "ERROR_AC_DETTACH": "Epäonnistui: Verkkolaite irrotettiin.",
                             "ERROR_USER_CANCEL": "Epäonnistui: Käyttäjä peruutti toiminnon.",
-                            "ERROR_UNEXPECTED": "Epäonnistui: On tapahtunut odottamaton virhe."
+                            "ERROR_UNEXPECTED": "Epäonnistui: Tapahtui odottamaton virhe."
                         },
                         "popup": {
                             "description1": "Nollausprosessi on seuraavanlainen:<br>Akun lataus täyteen varaukseen  -->  Akun varauksen purku kokonaan  -->  Akun lataus täyteen",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Näyttö",
-					"displayColorTemperature": {
-						"title": "Näytön värilämpötila",
-						"description": "Voit säätää näytön värilämpötilaa suodattamaan sinistä valoa niin, että rasitus silmille vähenee Säätää näytön värit lämpimämmiksi auringonlaskusta auringonnousuun helpottamaan nukkumista.",
-						"link": {
-							"click": "Napsauta",
-							"here": "tätä",
-							"rest": "muuttaaksesi värilämpötilaa."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Näytön värilämpötila",
+                        "description": "Voit säätää näytön värilämpötilaa suodattamaan sinistä valoa niin, että rasitus silmille vähenee Säätää näytön värit lämpimämmiksi auringonlaskusta auringonnousuun helpottamaan nukkumista.",
+                        "link": {
+                            "click": "Napsauta",
+                            "here": "tätä",
+                            "rest": "muuttaaksesi värilämpötilaa."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Silmien hoitotila",
                         "checkbox": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
@@ -1362,7 +1362,9 @@
                             "minutes": "minuuttia",
                             "alwaysOn": "Jatkuva",
                             "never": "ei koskaan",
-                            "halfTime": "Näytön käytöstä poistamisen ajastimen puoliaika"
+                            "halfTime": "Näytön käytöstä poistamisen ajastimen puoliaika",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "TEHTÄVÄPALKIN HIMMENNYSTOIMINTO",
                         "backgroundDimmer": "TAUSTAN HIMMENNYSTOIMINTO",

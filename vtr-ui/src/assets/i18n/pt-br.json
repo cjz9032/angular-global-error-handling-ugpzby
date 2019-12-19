@@ -841,7 +841,7 @@
                 "hour": "hora",
                 "minutes": "minutos",
                 "minute": "minuto",
-                "charge": "TEMPO PARA A CARGA TOTAL",
+                "charge": "Tempo para a carga máxima",
                 "button": "VER DETALHES DA BATERIA",
                 "details": {
                     "title": "Detalhes da bateria",
@@ -1108,7 +1108,7 @@
                         "FCCText": "De {{before}} Wh para {{after}} Wh",
                         "note": "Nota: Antes de redefinir o medidor da bateria, certifique-se de conectar o computador à energia CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Concluído: Êxito na redefinição.",
+                            "ERROR_SUCCESS": "Concluído: redefinição com êxito.",
                             "ERROR_SHUTDOWN": "Falha: desligamento do sistema.",
                             "ERROR_LOGOFF": "Falha: o usuário fez logoff.",
                             "ERROR_BATTERY_REMOVE": "Falha: a bateria foi removida.",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Exibir",
-					"displayColorTemperature": {
-						"title": "Temperatura das cores do monitor",
-						"description": "Você pode ajustar a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular. Ajusta os monitores para cores mais quentes durante o pôr do sol até o nascer do sol para ajudá-lo a dormir.",
-						"link": {
-							"click": "Clique",
-							"here": "aqui",
-							"rest": "para alterar a temperatura das cores."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Temperatura das cores do monitor",
+                        "description": "Você pode ajustar a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular. Ajusta os monitores para cores mais quentes durante o pôr do sol até o nascer do sol para ajudá-lo a dormir.",
+                        "link": {
+                            "click": "Clique",
+                            "here": "aqui",
+                            "rest": "para alterar a temperatura das cores."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Modo Proteção Ocular",
                         "checkbox": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
@@ -1362,7 +1362,9 @@
                             "minutes": "minutos",
                             "alwaysOn": "Sempre ativo",
                             "never": "nunca",
-                            "halfTime": "Metade do tempo do temporizador de desligamento da tela"
+                            "halfTime": "Metade do tempo do temporizador de desligamento da tela",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "REGULADOR DE LUZ DA BARRA DE TAREFAS",
                         "backgroundDimmer": "REGULADOR DE LUZ EM SEGUNDO PLANO",

@@ -841,7 +841,7 @@
                 "hour": "godzina",
                 "minutes": "minut(y)",
                 "minute": "minuta",
-                "charge": "CZAS CAŁKOWITEGO NAŁADOWANIA",
+                "charge": "Czas całkowitego ładowania",
                 "button": "ZOBACZ INFORMACJE DOTYCZĄCE AKUMULATORA",
                 "details": {
                     "title": "Informacje dotyczące akumulatora",
@@ -1108,14 +1108,14 @@
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Ukończono: Resetowanie zakończyło się powodzeniem.",
+                            "ERROR_SUCCESS": "Ukończone: resetowanie powiodło się.",
                             "ERROR_SHUTDOWN": "Niepowodzenie: System zostanie zamknięty.",
-                            "ERROR_LOGOFF": "Niepowodzenie: Wylogowano użytkownika.",
+                            "ERROR_LOGOFF": "Niepowodzenie: wylogowano użytkownika.",
                             "ERROR_BATTERY_REMOVE": "Niepowodzenie: Wyjęto akumulator.",
                             "ERROR_BATTERY_REPLACE": "Niepowodzenie: Wymieniono akumulator.",
                             "ERROR_AC_DETTACH": "Niepowodzenie: Odłączono zasilacz.",
                             "ERROR_USER_CANCEL": "Niepowodzenie: Zadanie anulowane przez użytkownika.",
-                            "ERROR_UNEXPECTED": "Niepowodzenie: Wystąpił nieoczekiwany błąd."
+                            "ERROR_UNEXPECTED": "Niepowodzenie: wystąpił nieoczekiwany błąd."
                         },
                         "popup": {
                             "description1": "Proces resetowania wygląda następująco:<br> Całkowicie naładuj akumulator  -->  Całkowicie rozładuj akumulator  -->  Całkowicie naładuj akumulator",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Wyświetlanie",
-					"displayColorTemperature": {
-						"title": "Temperatura barwowa ekranu",
-						"description": "Możesz dostosowywać temperaturę barwową ekranu, odfiltrowując niebieskie światło męczące oczy. Z kolei w okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
-						"link": {
-							"click": "Kliknij",
-							"here": "tutaj",
-							"rest": "aby zmienić temperaturę barwową."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Temperatura barwowa ekranu",
+                        "description": "Możesz dostosowywać temperaturę barwową ekranu, odfiltrowując niebieskie światło męczące oczy. Z kolei w okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
+                        "link": {
+                            "click": "Kliknij",
+                            "here": "tutaj",
+                            "rest": "aby zmienić temperaturę barwową."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Tryb ochrony oczu",
                         "checkbox": "Ustaw tryb ochrony oczu od zachodu do wschodu słońca",
@@ -1362,7 +1362,9 @@
                             "minutes": "minut(y)",
                             "alwaysOn": "Zawsze włączone",
                             "never": "nigdy",
-                            "halfTime": "Połowa czasu wyłączenia wyświetlacza"
+                            "halfTime": "Połowa czasu wyłączenia wyświetlacza",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "PRZYCIEMNIANIE PASKA ZADAŃ",
                         "backgroundDimmer": "PRZYCIEMNIANIE TŁA",

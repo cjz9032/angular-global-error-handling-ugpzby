@@ -841,7 +841,7 @@
                 "hour": "heure",
                 "minutes": "minutes",
                 "minute": "minute",
-                "charge": "DURÉE NÉCESSAIRE POUR CHARGER COMPLÈTEMENT LA BATTERIE",
+                "charge": "Durée nécessaire pour recharger complètement la batterie",
                 "button": "AFFICHER LES DÉTAILS DE LA BATTERIE",
                 "details": {
                     "title": "Détails de la batterie",
@@ -1108,14 +1108,14 @@
                         "FCCText": "De {{before}} Wh à {{after}} Wh",
                         "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Terminé : La réinitialisation a abouti.",
+                            "ERROR_SUCCESS": "Terminé : la réinitialisation est effectuée.",
                             "ERROR_SHUTDOWN": "Échec : Le système a été arrêté.",
-                            "ERROR_LOGOFF": "Échec : Utilisateur déconnecté.",
+                            "ERROR_LOGOFF": "Échec : l'utilisateur s'est déconnecté.",
                             "ERROR_BATTERY_REMOVE": "Échec : La batterie a été retirée.",
                             "ERROR_BATTERY_REPLACE": "Échec : La batterie a été remplacée.",
                             "ERROR_AC_DETTACH": "Échec : Le boîtier d'alimentation a été débranché.",
                             "ERROR_USER_CANCEL": "Échec : Annulé par l'utilisateur.",
-                            "ERROR_UNEXPECTED": "Échec : Une erreur inattendue est survenue."
+                            "ERROR_UNEXPECTED": "Échec : une erreur inattendue est survenue."
                         },
                         "popup": {
                             "description1": "Le processus de réinitialisation est le suivant :<br>Charge complète de la batterie  -->  Décharge complète de la batterie  -->  Recharge complète de la batterie",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Affichage",
-					"displayColorTemperature": {
-						"title": "Température de couleur de l'écran",
-						"description": "Vous pouvez régler la température des couleurs de votre écran pour filtrer la lumière bleue et réduire la fatigue oculaire. Permet d'ajuster les couleurs de l'écran pour qu'elles soient plus chaudes du coucher du soleil jusqu'à l'aube pour vous aider à dormir.",
-						"link": {
-							"click": "Cliquez",
-							"here": "ici",
-							"rest": "pour changer la température des couleurs."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Température de couleur de l'écran",
+                        "description": "Vous pouvez régler la température des couleurs de votre écran pour filtrer la lumière bleue et réduire la fatigue oculaire. Permet d'ajuster les couleurs de l'écran pour qu'elles soient plus chaudes du coucher du soleil jusqu'à l'aube pour vous aider à dormir.",
+                        "link": {
+                            "click": "Cliquez",
+                            "here": "ici",
+                            "rest": "pour changer la température des couleurs."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Mode Protection des yeux",
                         "checkbox": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
@@ -1362,7 +1362,9 @@
                             "minutes": "minutes",
                             "alwaysOn": "Toujours Activé",
                             "never": "jamais",
-                            "halfTime": "Demi-durée de la minuterie d'affichage"
+                            "halfTime": "Demi-durée de la minuterie d'affichage",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "RÉDUCTION DE LA LUMINOSITÉ DE LA BARRE DES TÂCHES",
                         "backgroundDimmer": "RÉDUCTION DE LA LUMINOSITÉ EN ARRIÈRE-PLAN",

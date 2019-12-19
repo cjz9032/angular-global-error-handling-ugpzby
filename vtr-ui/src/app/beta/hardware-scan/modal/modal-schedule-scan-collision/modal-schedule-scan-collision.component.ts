@@ -12,6 +12,7 @@ export class ModalScheduleScanCollisionComponent implements OnInit {
 	@Input() buttonText = this.translate.instant('hardwareScan.ok');
 	@Input() error = this.translate.instant('hardwareScan.scheduledScan.error');
 	@Input() description = this.translate.instant('hardwareScan.scheduledScan.scheduleIntervalLimit');
+	question: string;
 
 	@Input() ItemParent: string;
 	@Input() CancelItemName: string;

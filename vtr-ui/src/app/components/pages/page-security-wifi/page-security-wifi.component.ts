@@ -95,6 +95,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		if (this.wifiSecurity) {
 			this.wifiSecurity.refresh();
 			this.wifiSecurity.getWifiSecurityState();
+			this.wifiSecurity.getWifiHistory();
 			this.wifiSecurity.getWifiState().then((res) => { }, (error) => {
 				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 			});
@@ -124,8 +125,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
-		if (this.router.routerState.snapshot.url.indexOf('security') === -1) {
-			if (this.securityAdvisor.wifiSecurity) {
+		if (this.securityAdvisor.wifiSecurity) {
+			this.securityAdvisor.wifiSecurity.cancelGetWifiHistory();
+			if (this.router.routerState.snapshot.url.indexOf('security') === -1) {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
 		}

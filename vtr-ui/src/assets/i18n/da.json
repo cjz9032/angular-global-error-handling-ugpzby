@@ -841,7 +841,7 @@
                 "hour": "time",
                 "minutes": "minutter",
                 "minute": "minut",
-                "charge": "TID TIL FULD OPLADNING",
+                "charge": "Tid til fuld opladning",
                 "button": "SE BATTERIOPLYSNINGER",
                 "details": {
                     "title": "Batterioplysninger",
@@ -1108,9 +1108,9 @@
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fuldført: Nulstilling lykkedes.",
+                            "ERROR_SUCCESS": "Fuldført: Nulstilling udført.",
                             "ERROR_SHUTDOWN": "Mislykkedes: Nedlukning af system.",
-                            "ERROR_LOGOFF": "Mislykkedes: Bruger logget af.",
+                            "ERROR_LOGOFF": "Mislykkedes: Bruger har logget af.",
                             "ERROR_BATTERY_REMOVE": "Mislykkedes: Batteriet blev fjernet.",
                             "ERROR_BATTERY_REPLACE": "Mislykkedes: Batteriet blev udskiftet.",
                             "ERROR_AC_DETTACH": "Mislykkedes: Vekselstrømsadapteren blev fjernet.",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Skærm",
-					"displayColorTemperature": {
-						"title": "Skærmens farvetemperatur",
-						"description": "Du kan justere skærmens farvetemperatur, så blåt lys filtreres ud, og dine øjne belastes mindre. Justerer skærme til varmere farver fra solnedgang til solopgang, så du lettere kan sove.",
-						"link": {
-							"click": "Klik",
-							"here": "her",
-							"rest": "for at ændre farvetemperaturen."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Skærmens farvetemperatur",
+                        "description": "Du kan justere skærmens farvetemperatur, så blåt lys filtreres ud, og dine øjne belastes mindre. Justerer skærme til varmere farver fra solnedgang til solopgang, så du lettere kan sove.",
+                        "link": {
+                            "click": "Klik",
+                            "here": "her",
+                            "rest": "for at ændre farvetemperaturen."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Øjenbeskyttelsestilstand",
                         "checkbox": "Planlæg øjenbeskyttelsestilstand fra solnedgang til solopgang",
@@ -1362,7 +1362,9 @@
                             "minutes": "minutter",
                             "alwaysOn": "Altid tændt",
                             "never": "aldrig",
-                            "halfTime": "Halv tid for tidsindstilling for slukket skærm"
+                            "halfTime": "Halv tid for tidsindstilling for slukket skærm",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "PROCESLINJEDÆMPER",
                         "backgroundDimmer": "BAGGRUNDSDÆMPER",

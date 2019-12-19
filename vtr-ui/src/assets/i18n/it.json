@@ -841,7 +841,7 @@
                 "hour": "ora",
                 "minutes": "minuti",
                 "minute": "minuto",
-                "charge": "TEMPO PER LA CARICA COMPLETA",
+                "charge": "Tempo per la carica completa",
                 "button": "VEDI DETTAGLI BATTERIA",
                 "details": {
                     "title": "Dettagli batteria",
@@ -1108,7 +1108,7 @@
                         "FCCText": "Da {{before}} Wh a {{after}} Wh",
                         "note": "Nota: prima di reimpostare l'indicatore della batteria, assicurarsi di collegare il computer all'alimentazione CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Operazione completata: Reimpostazione riuscita.",
+                            "ERROR_SUCCESS": "Operazione completata: reimpostazione completata correttamente.",
                             "ERROR_SHUTDOWN": "Operazione non riuscita: arresto del sistema.",
                             "ERROR_LOGOFF": "Operazione non riuscita: utente scollegato.",
                             "ERROR_BATTERY_REMOVE": "Operazione non riuscita: batteria rimossa.",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Visualizza",
-					"displayColorTemperature": {
-						"title": "Temperatura colore schermo",
-						"description": "È possibile regolare la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi. Consente di regolare gli schermi con colori più caldi dal tramonto all'alba, per favorire il riposo notturno.",
-						"link": {
-							"click": "Fare clic",
-							"here": "qui",
-							"rest": "per modificare la temperatura del colore."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Temperatura colore schermo",
+                        "description": "È possibile regolare la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi. Consente di regolare gli schermi con colori più caldi dal tramonto all'alba, per favorire il riposo notturno.",
+                        "link": {
+                            "click": "Fare clic",
+                            "here": "qui",
+                            "rest": "per modificare la temperatura del colore."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Modalità Comfort Visivo",
                         "checkbox": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
@@ -1362,7 +1362,9 @@
                             "minutes": "minuti",
                             "alwaysOn": "Sempre attivo",
                             "never": "mai",
-                            "halfTime": "Timer di spegnimento dello schermo (50% rimanente)"
+                            "halfTime": "Timer di spegnimento dello schermo (50% rimanente)",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "RIDUZIONE LUMINOSITÀ BARRA DELLE APPLICAZIONI",
                         "backgroundDimmer": "RIDUZIONE LUMINOSITÀ SFONDO",

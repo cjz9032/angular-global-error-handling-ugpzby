@@ -116,11 +116,12 @@ export class GuardService {
 	}
 
 	canDeactivate(component: object, activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+		window.getSelection().empty();
 		this.pageContext = activatedRouteSnapshot.data.pageContent;
 		if (this.pageContext && this.pageContext.indexOf('[LocalStorageKey]') !== -1) {
 			this.pageContext = this.commonService.getLocalStorageValue(this.pageContext);
 		}
-		//const time = this.timerService.stop();
+		// const time = this.timerService.stop();
 		const focusDuration = this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
 		const blurDuration = this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;
 

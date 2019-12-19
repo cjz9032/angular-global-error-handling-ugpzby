@@ -841,7 +841,7 @@
                 "hour": "oră",
                 "minutes": "minute",
                 "minute": "minut",
-                "charge": "TIMP PÂNĂ LA ÎNCĂRCAREA COMPLETĂ",
+                "charge": "Timp până la încărcarea completă",
                 "button": "VEDEȚI DETALIILE BATERIEI",
                 "details": {
                     "title": "Detalii baterie",
@@ -1108,14 +1108,14 @@
                         "FCCText": "De la {{before}} Wh la {{after}} Wh",
                         "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Finalizată: Resetare reuşită.",
+                            "ERROR_SUCCESS": "Finalizat: resetare reușită.",
                             "ERROR_SHUTDOWN": "Nereuşit: sistemul s-a închis.",
-                            "ERROR_LOGOFF": "Nereuşit: utilizatorul s-a deconectat.",
+                            "ERROR_LOGOFF": "Nereușit: utilizatorul s-a deconectat.",
                             "ERROR_BATTERY_REMOVE": "Nereuşit: bateria a fost scoasă.",
                             "ERROR_BATTERY_REPLACE": "Nereuşit: bateria a fost înlocuită.",
                             "ERROR_AC_DETTACH": "Nereuşit: adaptorul de alimentare cu c.a. a fost deconectat.",
                             "ERROR_USER_CANCEL": "Nereuşit: anulat de utilizator.",
-                            "ERROR_UNEXPECTED": "Nereuşit: a apărut o eroare neaşteptată."
+                            "ERROR_UNEXPECTED": "Nereușit: a apărut o eroare neașteptată."
                         },
                         "popup": {
                             "description1": "Procesul de resetare este următorul:<br>Încărcaţi complet bateria  -->  Descărcaţi complet bateria  -->  Reîncărcaţi complet bateria",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Afișaj",
-					"displayColorTemperature": {
-						"title": "Temperatură culoare afișaj",
-						"description": "Puteți ajusta temperatura culorii ecranului dvs. pentru a filtra lumina albastră protejându-vă ochii. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
-						"link": {
-							"click": "Clic",
-							"here": "aici",
-							"rest": "pentru a modifica temperatura culorii."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Temperatură culoare afișaj",
+                        "description": "Puteți ajusta temperatura culorii ecranului dvs. pentru a filtra lumina albastră protejându-vă ochii. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
+                        "link": {
+                            "click": "Clic",
+                            "here": "aici",
+                            "rest": "pentru a modifica temperatura culorii."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Modul de îngrijire a ochilor",
                         "checkbox": "Programați modul de protejare a ochilor de la apus până la răsărit",
@@ -1362,7 +1362,9 @@
                             "minutes": "minute",
                             "alwaysOn": "Mereu pornit",
                             "never": "niciodată",
-                            "halfTime": "Jumătate din timpul pentru dezactivarea afișajului"
+                            "halfTime": "Jumătate din timpul pentru dezactivarea afișajului",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "ESTOMPAREA BAREI DE ACTIVITĂȚI",
                         "backgroundDimmer": "ESTOMPAREA FUNDALULUI",

@@ -841,7 +841,7 @@
                 "hour": "Stunde",
                 "minutes": "Minuten",
                 "minute": "Minute",
-                "charge": "DAUER ZUR VOLLSTÄNDIGEN AUFLADUNG",
+                "charge": "Dauer der vollständigen Aufladung",
                 "button": "AKKUDETAILS ANSEHEN",
                 "details": {
                     "title": "Akkudetails",
@@ -1108,7 +1108,7 @@
                         "FCCText": "Von {{before}} Wh auf {{after}} Wh",
                         "note": "Hinweis: Vor dem Zurücksetzen des Akkustandsanzeigers muss Ihr Computer an die Stromversorgung angeschlossen werden. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fertig: Erfolgreich zurückgesetzt.",
+                            "ERROR_SUCCESS": "Fertig: Wiederherstellung erfolgreich abgeschlossen.",
                             "ERROR_SHUTDOWN": "Fehlgeschlagen: System heruntergefahren.",
                             "ERROR_LOGOFF": "Fehlgeschlagen: Der Benutzer ist abgemeldet.",
                             "ERROR_BATTERY_REMOVE": "Fehlgeschlagen: Der Akku wurde entfernt.",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Anzeigen",
-					"displayColorTemperature": {
-						"title": "Farbtemperatur der Anzeige",
-						"description": "Sie können die Farbtemperatur der Anzeige so anpassen, dass blaues Licht gefiltert und Ihre Augen geschont werden. Stellt die Farbtemperatur der Anzeige in der Zeit zwischen Sonnenuntergang und ‑aufgang auf wärmere Farben ein, um Ihnen das Einschlafen zu erleichtern.",
-						"link": {
-							"click": "Klicken Sie",
-							"here": "hier",
-							"rest": "um die Farbtemperatur zu ändern."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Farbtemperatur der Anzeige",
+                        "description": "Sie können die Farbtemperatur der Anzeige so anpassen, dass blaues Licht gefiltert und Ihre Augen geschont werden. Stellt die Farbtemperatur der Anzeige in der Zeit zwischen Sonnenuntergang und ‑aufgang auf wärmere Farben ein, um Ihnen das Einschlafen zu erleichtern.",
+                        "link": {
+                            "click": "Klicken Sie",
+                            "here": "hier",
+                            "rest": "um die Farbtemperatur zu ändern."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Modus \"Augen schonen\"",
                         "checkbox": "Modus \"Augen schonen\" von Sonnenuntergang bis Sonnenaufgang planen",
@@ -1362,7 +1362,9 @@
                             "minutes": "Minuten",
                             "alwaysOn": "Immer aktiviert",
                             "never": "nie",
-                            "halfTime": "Halbzeit beim Timer zum Ausschalten der Anzeige"
+                            "halfTime": "Halbzeit beim Timer zum Ausschalten der Anzeige",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "HELLIGKEITSREGLER FÜR DIE TASKLEISTE",
                         "backgroundDimmer": "HELLIGKEITSREGLER FÜR DEN HINTERGRUND",

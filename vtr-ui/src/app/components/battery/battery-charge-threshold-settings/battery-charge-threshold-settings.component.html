@@ -20,7 +20,7 @@
 				<div class="inputSection">
 					<div class="row">
 						<!--start of left dropdown box for action in row-->
-						<div class="col-8 px-20 pb-4"
+						<div class="col-12 px-20 pb-4"
 							[class.disabled]="isCheckedAuto || isGaugeResetRunning">
 							<div class="btn-group btn-block dropdown-left"
 								ngbDropdown
@@ -33,7 +33,7 @@
 									id="{{textId}}-start-dropdown"
 									attr.aria-label="{{textId}}-start-dropdown">
 									<div class="row d-flex justify-content-between">
-										<div class="col-auto pl-1 pr-1">
+										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
 												id="{{textId}}-startcharge"
 												attr.aria-label="{{textId}}-startcharge">
@@ -46,7 +46,7 @@
 												{{selectedStartAtCharge}}%
 											</div>
 										</div>
-										<div class="col-auto pl-0 pr-1">
+										<div class="col-1 pl-1 pr-1">
 											<div class="dropdown-icon">
 												<fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
 											</div>
@@ -71,7 +71,7 @@
 					</div>
 					<div class="row">
 						<!--start of right dropdown box for action in row-->
-						<div class="col-8 px-20 pb-4"
+						<div class="col-12 px-20 pb-4"
 							[class.disabled]="isGaugeResetRunning">
 							<div class="btn-group btn-block dropdown-right"
 								ngbDropdown
@@ -83,7 +83,7 @@
 									id="{{textId}}-stop-dropdown"
 									attr.aria-label="{{textId}}-stop-dropdown">
 									<div class="row d-flex justify-content-between">
-										<div class="col-auto pl-1 pr-1">
+										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
 												id="{{textId}}-stopcharge"
 												attr.aria-label="{{textId}}-stopcharge">
@@ -95,7 +95,7 @@
 												{{selectedStopAtCharge}}%
 											</div>
 										</div>
-										<div class="col-auto pl-0 pr-1">
+										<div class="col-1 pl-0 pr-1">
 											<div class="dropdown-icon">
 												<fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
 											</div>

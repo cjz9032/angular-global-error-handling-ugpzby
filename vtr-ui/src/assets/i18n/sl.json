@@ -841,7 +841,7 @@
                 "hour": "ura",
                 "minutes": "minut",
                 "minute": "minuta",
-                "charge": "ČAS, POTREBEN, DA JE BATERIJA POPOLNOMA NAPOLNJENA",
+                "charge": "Čas, potreben, da je baterija popolnoma napolnjena",
                 "button": "OGLEJTE SI PODROBNOSTI O BATERIJI",
                 "details": {
                     "title": "Podrobnosti baterije",
@@ -1108,7 +1108,7 @@
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Opomba: pred ponastavitvijo merilnika za baterijo poskrbite, da bo računalnik priključen na izmenično napajanje. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Končano: Uspešna ponastavitev",
+                            "ERROR_SUCCESS": "Dokončano: Uspešna ponastavitev.",
                             "ERROR_SHUTDOWN": "Neuspešno: Sistem se je zaustavil.",
                             "ERROR_LOGOFF": "Neuspešno: Uporabnik se je odjavil.",
                             "ERROR_BATTERY_REMOVE": "Neuspešno: Baterija je bila odstranjena.",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Prikaz",
-					"displayColorTemperature": {
-						"title": "Barvna temperatura zaslona",
-						"description": "Barvno temperaturo zaslona lahko prilagodite, tako da filtrirate modro svetlobo in zmanjšate utrujenost oči. Sistem prilagodi zaslon na toplejše barve med sončnim zahodom in sončnim vzhodom, da lažje zaspite.",
-						"link": {
-							"click": "Kliknite",
-							"here": "tukaj",
-							"rest": "da spremenite barvno temperaturo."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Barvna temperatura zaslona",
+                        "description": "Barvno temperaturo zaslona lahko prilagodite, tako da filtrirate modro svetlobo in zmanjšate utrujenost oči. Sistem prilagodi zaslon na toplejše barve med sončnim zahodom in sončnim vzhodom, da lažje zaspite.",
+                        "link": {
+                            "click": "Kliknite",
+                            "here": "tukaj",
+                            "rest": "da spremenite barvno temperaturo."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Očem prijazen način",
                         "checkbox": "Načrtujte očem prijazen način od sončnega zahoda do sončnega vzhoda",
@@ -1362,7 +1362,9 @@
                             "minutes": "minut",
                             "alwaysOn": "Vedno vklopljeno",
                             "never": "nikoli",
-                            "halfTime": "Polovica časa časovnika za izklop zaslona"
+                            "halfTime": "Polovica časa časovnika za izklop zaslona",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "ZATEMNJEVALNIK OPRAVILNE VRSTICE",
                         "backgroundDimmer": "ZATEMNJEVALNIK OZADJA",

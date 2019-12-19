@@ -841,7 +841,7 @@
                 "hour": "h",
                 "minutes": "min",
                 "minute": "min",
-                "charge": "VRIJEME POTREBNO DO POTPUNOG PUNJENJA",
+                "charge": "Vrijeme za potpuno punjenje",
                 "button": "POGLEDAJTE DETALJE O BATERIJI",
                 "details": {
                     "title": "Detalji o bateriji",
@@ -1108,14 +1108,14 @@
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Napomena: Prije ponovnog postavljanja prikaza napunjenosti baterije obavezno povežite računalo na izmjenično napajanje. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Dovršeno: Ponovno je postavljanje uspjelo.",
+                            "ERROR_SUCCESS": "Dovršeno: ponovno postavljanje uspješno.",
                             "ERROR_SHUTDOWN": "Neuspješno: sustav se isključuje.",
-                            "ERROR_LOGOFF": "Neuspješno: korisnik se odjavio.",
+                            "ERROR_LOGOFF": "Neuspjeh: korisnik se odjavio.",
                             "ERROR_BATTERY_REMOVE": "Neuspješno: baterija je uklonjena.",
                             "ERROR_BATTERY_REPLACE": "Nauspješno: baterija je zamijenjena.",
                             "ERROR_AC_DETTACH": "Nauspješno: ispravljač za struju odspojen.",
                             "ERROR_USER_CANCEL": "Neuspješno: korisnik je otkazao.",
-                            "ERROR_UNEXPECTED": "Neuspješno: došlo je do neočekivane pogreške."
+                            "ERROR_UNEXPECTED": "Neuspjeh: došlo je do neočekivane pogreške."
                         },
                         "popup": {
                             "description1": "Postupak ponovnog postavljanja je sljedeći:<br>Potpuno napunite bateriju  -->  Potpuno ispraznite bateriju  -->  Potpuno napunite bateriju",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Prikaz",
-					"displayColorTemperature": {
-						"title": "Temperatura boje prikaza",
-						"description": "Možete prilagoditi temperaturu boje vašeg zaslona da filtrira plavu svjetlost čime se smanjuje naprezanje očiju. Prilagođava zaslon toplijim bojama tijekom zalaska sunca do izlaska sunca kako bi vam to pomoglo da zaspite.",
-						"link": {
-							"click": "Kliknite",
-							"here": "ovdje",
-							"rest": "za promjenu temperature boje."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Temperatura boje prikaza",
+                        "description": "Možete prilagoditi temperaturu boje vašeg zaslona da filtrira plavu svjetlost čime se smanjuje naprezanje očiju. Prilagođava zaslon toplijim bojama tijekom zalaska sunca do izlaska sunca kako bi vam to pomoglo da zaspite.",
+                        "link": {
+                            "click": "Kliknite",
+                            "here": "ovdje",
+                            "rest": "za promjenu temperature boje."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Način rada ugodan za oči",
                         "checkbox": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
@@ -1362,7 +1362,9 @@
                             "minutes": "min",
                             "alwaysOn": "Uvijek uključeno",
                             "never": "nikad",
-                            "halfTime": "Pola vremena isključivanja zaslona"
+                            "halfTime": "Pola vremena isključivanja zaslona",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "ZATAMNJIVANJE PROGRAMSKE TRAKE",
                         "backgroundDimmer": "ZATAMNJIVANJE POZADINE",

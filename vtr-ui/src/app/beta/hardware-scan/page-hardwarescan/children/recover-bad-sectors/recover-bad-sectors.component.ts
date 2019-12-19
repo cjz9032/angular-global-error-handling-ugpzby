@@ -74,6 +74,7 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 
 			(<ModalScheduleScanCollisionComponent>modal.componentInstance).error = this.translate.instant('hardwareScan.warning');
 			(<ModalScheduleScanCollisionComponent>modal.componentInstance).description = this.translate.instant('hardwareScan.recoverBadSectors.popup.description');
+			(<ModalScheduleScanCollisionComponent>modal.componentInstance).question = this.translate.instant('hardwareScan.recoverBadSectors.popup.question');
 			(<ModalScheduleScanCollisionComponent>modal.componentInstance).ItemParent = "HardwareScan.ConfirmRecoverBadSectors";
 			(<ModalScheduleScanCollisionComponent>modal.componentInstance).CancelItemName = "ConfirmRecoverBadSectors.Close";
 			(<ModalScheduleScanCollisionComponent>modal.componentInstance).ConfirmItemName = "ConfirmRecoverBadSectors.Confirm";

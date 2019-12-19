@@ -1,7 +1,7 @@
 <div class="vtr-recover-bad-sectors">
-	<div class="p-5">
+	<div class="container">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12 px-0">
 				<div class="header">
 					<div class="heading1">{{title}}</div>
 				</div>
@@ -14,7 +14,7 @@
 
 		<div class="row" *ngIf="devices">
 			<div class="errorMessage">{{ errorMessage }}</div>
-			<div class="col-12">
+			<div class="col-12 px-0">
 				<vtr-ui-hardware-list-checkbox [devices]="devices">
 				</vtr-ui-hardware-list-checkbox>
 			</div>
@@ -23,10 +23,10 @@
 		<div class="row" *ngIf="devices">
 			<div class="button-row">
 				<button class="col btn action-button"
-					vtrMetrics 
-					metricsEvent="ItemClick" 
+					vtrMetrics
+					metricsEvent="ItemClick"
 					metricsParent="HardwareScan.RecoverBadSectors"
-					metricsItem="RecoverBadSectors.RunRecoverBadSectors" 
+					metricsItem="RecoverBadSectors.RunRecoverBadSectors"
 					(click)="startRecover()" [disabled]="!isSelectedItem()">
 					{{textButton}}
 				</button>
