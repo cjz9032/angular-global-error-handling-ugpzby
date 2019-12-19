@@ -849,11 +849,11 @@
 						// }
 						.hd-item {
 							text-align: center;
-							.gaming-tooltip {
-								min-width: 20rem;
+							.gaming-tooltip {								
+								min-width: 20rem;							
 								top: -5rem;
-								left: 49%;
-								transform: translate(-49%);
+								left: 50%;
+								transform: translate(-50%);
 								@media #{$breakpoint_sm}{
 									transform: translate(0);
 									left: 0;
@@ -872,10 +872,8 @@
 								@media #{$breakpoint_lg}{
 									min-width: 20rem;
 									transform: translate(0);
-									left: 0;
+									left: -4.5%;
 									right: 0;
-									margin-left: auto;
-									margin-right: auto;
 									padding: 1.4rem;
 								}
 							}
@@ -999,6 +997,7 @@
 							left: 50%;
 							min-width:20rem;
 							transform: translate(-50%);
+							
 							@media #{$breakpoint_sm}{
 								transform: translate(-50%);
 								left: 50%;
