@@ -48,6 +48,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	shortAcErrNote = true;
 	isModalShown = false;
 	isWinRTLoading = true;
+	isUnsupportedBattery = false;
 
 	constructor(
 		private modalService: NgbModal,
@@ -352,7 +353,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.PermanentError, BatteryStatus.Poor));
 						break;
 					case 'unsupportedbattery':
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.UnsupportedBattery, BatteryStatus.Fair));
+						if (!this.isUnsupportedBattery) {
+							batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.UnsupportedBattery, BatteryStatus.Fair));
+							this.isUnsupportedBattery = true;
+						}
 						break;
 				}
 			});

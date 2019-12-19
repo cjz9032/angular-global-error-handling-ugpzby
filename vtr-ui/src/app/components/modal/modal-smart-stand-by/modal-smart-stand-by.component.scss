@@ -36,12 +36,12 @@
 		font-weight: $weight_bold;
 	}
 	.legends-row {
-		max-width: 96rem;
+		max-width: 93.5%;
 		.graph-legend{
 			display: block;
 			border: 0.1rem solid $dark;
 			width: 0.6rem;
-			height: 1.2rem;
+            height: 1.2rem;
 			margin-top: 0.2rem;
 			border-width: thin;
 		}
