@@ -51,12 +51,11 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			this.showVpn();
 		});
 		this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
-			if (result === 'true') {
-				this.pluginSupport = true;
-			} else {
+			this.pluginSupport = result === 'true';
+			}).catch((e) => {
 				this.pluginSupport = false;
-			}
-			this.showUac();
+			}).finally(() => {
+				this.showUac();
 		});
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
