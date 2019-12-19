@@ -7,6 +7,9 @@
 	padding: 0 2rem;
 	margin-top: 2.7rem;
 	margin-bottom: 2rem;
+	@media #{$mediaquery_X46} {
+		padding: 1rem;
+	}
 
 	.group-item {
 		border-bottom: 0.1rem dashed $shade_light;
@@ -17,15 +20,27 @@
 			padding-bottom: 0;
 		}
 
+		.windows-padding {
+			@media #{$mediaquery_X46} {
+				padding-right: 0.7rem !important;
+			}
+		}
+
 		.text-color {
 			color: $go_dark;
 			font-size: 1.3rem;
 			font-weight: 600;
+			@media #{$mediaquery_X46} {
+				font-size: 1.1rem;
+			}
 		}
 
 		.text-d-color {
 			color: red;
 			font-size: 1.3rem;
+			@media #{$mediaquery_X46} {
+				font-size: 1.1rem;
+			}
 		}
 	}
 
@@ -113,6 +128,10 @@
 		padding: 1rem 0;
 		font-size: 1.8rem;
 		font-weight: $weight_bold;
+
+		@media #{$mediaquery_X46} {
+			font-size: 1.4rem;
+		}
 	}
 
 	span:hover {
@@ -128,11 +147,18 @@
 			border-width: 0.3rem;
 			border-style: solid;
 			text-align: center;
-
+			@media #{$mediaquery_X46} {
+				height: 2.7rem;
+				width: 2.7rem;
+			}
 			fa-icon {
 				font-size: 1.6rem;
 				line-height: 2.7rem;
 				color: $light;
+				@media #{$mediaquery_X46} {
+					font-size: 1.3rem;
+					line-height: 2.2rem;
+				}
 			}
 		}
 
