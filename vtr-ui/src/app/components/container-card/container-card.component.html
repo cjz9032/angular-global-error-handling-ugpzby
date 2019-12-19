@@ -1,6 +1,7 @@
 <div *ngIf="isLoading && isOnline">
 	<div class="container-card"
-		[style.height.px]="containerHeight">
+		#containerCardLoading
+		[style.height.px]="containerCardLoading.clientWidth / ratio">
 		<div class="container-fluid position-relative">
 			<div class="loader center-block">
 				<div class="spinner-border text-secondary progress-spinner"
@@ -11,10 +12,10 @@
 </div>
 
 <div *ngIf="!isLoading || !isOnline">
-	<div class="container-card card-{{type}}"
+	<div class="container-card card-corner"
 		*ngIf="type === 'corner'"
 		#containerCardCorner
-		[style.height.px]="containerCardCorner.clientWidth * ratio">
+		[style.height.px]="containerCardCorner.clientWidth / ratio">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
@@ -33,7 +34,7 @@
 						rel="noopener"
 						class="card-image"
 						[style.background-image]="'url(' + img + ')'"
-						[style.height.px]="containerCardCorner.clientWidth * ratio - 1">
+						[style.height.px]="containerCardCorner.clientWidth / ratio">
 						<div class="inner-content"
 							*ngIf="!isOfflineArm">
 							<div *ngIf="title"
@@ -65,10 +66,10 @@
 		</div>
 	</div>
 
-	<div class="container-card card-{{type}}"
+	<div class="container-card card-android"
 		*ngIf="type === 'android'"
 		#containerCardAndroid
-		[style.height.px]="containerCardAndroid.clientWidth * ratio * 2">
+		[style.height.px]="containerCardAndroid.clientWidth / ratio * 2">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
@@ -85,7 +86,7 @@
 							rel="noopener"
 							class="card-image"
 							[style.background-image]="'url(' + img + ')'"
-							[style.height.px]="containerCardAndroid.clientWidth * ratio * 2">
+							[style.height.px]="containerCardAndroid.clientWidth / ratio * 2">
 						</a>
 						<div class="inner-content">
 							<div *ngIf="title"
@@ -140,100 +141,10 @@
 		</div>
 	</div>
 
-	<div class="container-card card-{{type}}"
-		*ngIf="type === 'corner-article'"
-		#containerCardCornerArticle
-		[style.height.px]="containerCardCornerArticle.clientWidth * ratio">
-		<div class="container-fluid">
-			<div class="row"
-				*ngIf="isOnline">
-				<div class="col col-12 content">
-					<a *ngIf="isOnline"
-						tabindex="0"
-						attr.aria-label="{{ title }} . {{ caption }}"
-						[attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
-						(click)="linkClicked(actionType, actionLink)"
-						target="_blank"
-						rel="noopener"
-						class="card-image"
-						vtrMetrics
-						metricsEvent="ArticleClick"
-						metricsItemCategory="corner-article"
-						[metricsItemPosition]="sideFlag + order"
-						[metricsItemID]="itemID"
-						[style.background-image]="'url(' + img + ')'"
-						[style.height.px]="containerCardCornerArticle.clientWidth * ratio"
-						id="{{containerCardId+'-article_link'}}">
-						<div class="inner-content">
-							<div *ngIf="title"
-								class="title"
-								[title]="title | htmlText"
-								[innerHtml]="title"
-								id="{{containerCardId+'-title'}}"
-								role="link"></div>
-							<div *ngIf="caption"
-								class="caption">
-								<div [title]="caption | htmlText"
-									[innerHtml]="caption"
-									id="{{containerCardId+'-caption'}}"
-									role="link"></div>
-							</div>
-							<div *ngIf="logo || logoText"
-								class="logo">
-								<span class="logo-img">
-									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
-								</span>
-								<span class="logo-text"
-								id="{{containerCardId+'-logo-text'}}"
-								role="textbox">{{logoText}}</span>
-							</div>
-						</div>
-					</a>
-					<div *ngIf="!isOnline"
-						class="card-image default-cursor"
-						[style.background-image]="'url(' + img + ')'">
-						<div class="inner-content">
-							<div *ngIf="title"
-								class="title"
-								[title]="title | htmlText"
-								[innerHtml]="title"
-								id="{{containerCardId+'-title'}}"
-								role="link"></div>
-							<div *ngIf="caption"
-								class="caption">
-								<div [title]="caption | htmlText"
-									[innerHtml]="caption"
-									id="{{containerCardId+'-caption'}}"
-									role="link"></div>
-
-							</div>
-							<div *ngIf="logo || logoText"
-								class="logo">
-								<span class="logo-img">
-									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
-								</span>
-								<span class="logo-text"
-									id="{{containerCardId+'-logo-text'}}"
-									role="text">{{logoText}}</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row offline-icon col col-12"
-				id="{{containerCardId+'-offline-icon'}}"
-				aria-label="offline-icon"
-				role="img"
-				*ngIf="!isOnline">
-				<fa-icon [icon]="['fal', 'wifi-slash']"></fa-icon>
-			</div>
-		</div>
-	</div>
-
-	<div class="container-card card-{{type}}"
+	<div class="container-card card-highlight"
 		*ngIf="type === 'highlight'"
 		#containerCardHighlight
-		[style.height.px]="containerCardHighlight.clientWidth * ratio">
+		[style.height.px]="containerCardHighlight.clientWidth / ratio">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
@@ -250,7 +161,7 @@
 						class="card-image"
 						[class.default-cursor]="isOfflineArm"
 						[style.background-image]="'url(' + img + ')'"
-						[style.height.px]="containerCardHighlight.clientWidth * ratio"
+						[style.height.px]="containerCardHighlight.clientWidth / ratio"
 						style="background-color: #2f3447;">
 						<div class="inner-content">
 							<div *ngIf="title && !isOfflineArm"
@@ -266,10 +177,10 @@
 		</div>
 	</div>
 
-	<div class="container-card card-{{type}}"
+	<div class="container-card card-article"
 		*ngIf="type === 'article'"
 		#containerCardArticle
-		[style.height.px]="containerCardArticle.clientWidth * ratio">
+		[style.height.px]="containerCardArticle.clientWidth / ratio">
 		<div class="container-fluid">
 			<a class="article-content"
 				[class.default-cursor]="isOfflineArm"
@@ -326,15 +237,141 @@
 		</div>
 	</div>
 
-	<div class="container-card card-{{type}}"
-		*ngIf="type === 'partnerarticle'"
-		#containerCardPartnerArticle
-		[style.height.px]="containerCardPartnerArticle.clientWidth * ratio">
+	<div class="container-card card-article card-subpage-article"
+		*ngIf="type === 'subpage-article'"
+		#containerCardArticle
+		[style.height.px]="containerCardArticle.clientWidth / ratio">
+		<div class="container-fluid">
+			<a class="article-content"
+				[class.default-cursor]="isOfflineArm"
+				[attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
+				(click)="linkClicked(actionType, actionLink)"
+				metricsItemCategory="article"
+				vtrMetrics
+				id="{{containerCardId+'_card_article'}}"
+				metricsEvent="docClick"
+				[metricsItemPosition]="sideFlag + order"
+				[metricsItemID]="itemID"
+				target="_blank"
+				rel="noopener">
+				<div class="row">
+					<div class="card-image"
+						[style.background-image]="'url(' + img + ')'">
+						<div *ngIf="logo || logoText"
+							class="logo">
+							<span class="logo-img">
+								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+							</span>
+							<span class="logo-text"
+							id="{{containerCardId+'-logo-text'}}"
+							role="textbox">{{logoText}}</span>
+						</div>
+					</div>
+					<div class="row w-100">
+						<div class="col col-12 content">
+							<div *ngIf="title && !isOfflineArm"
+								class="title"
+								[title]="title | htmlText"
+								[innerHtml]="title"
+								id="{{containerCardId+'-title'}}"
+								[style.margin-top.px]="containerCardArticle.clientWidth * 13 / 436"
+								[style.font-size.px]="containerCardArticle.clientWidth * 24 / 436"
+								[style.height.px]="containerCardArticle.clientWidth * 54 / 430"
+								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
+								role="link"></div>
+							<div *ngIf="actionLink && !isOfflineArm"
+								[style.font-size.px]="containerCardArticle.clientWidth * 14 / 436"
+								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
+								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
+								class="read-more">
+								<span class="link-label"
+									role="link"
+									id="{{containerCardId+'-caption'}}"
+									[innerHTML]="action"></span>
+								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+			<div class="row offline-icon col col-12"
+				id="{{containerCardId+'-offline-icon'}}"
+				aria-label="offline-icon"
+				role="img"
+				*ngIf="!isOnline">
+				<fa-icon [icon]="['fal', 'wifi-slash']"></fa-icon>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-card card-subpage-corner"
+		*ngIf="type === 'subpage-corner'"
+		#containerCardCornerArticle
+		[style.height.px]="containerCardCornerArticle.clientWidth / ratio">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col col-12 content">
+					<a tabindex="0"
+						attr.aria-label="{{ title }} . {{ caption }}"
+						[attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
+						(click)="linkClicked(actionType, actionLink)"
+						target="_blank"
+						rel="noopener"
+						class="card-image"
+						vtrMetrics
+						metricsEvent="ArticleClick"
+						metricsItemCategory="corner-article"
+						[metricsItemPosition]="sideFlag + order"
+						[metricsItemID]="itemID"
+						[style.background-image]="'url(' + img + ')'"
+						[style.height.px]="containerCardCornerArticle.clientWidth / ratio"
+						id="{{containerCardId+'-article_link'}}">
+						<div class="inner-content">
+							<div *ngIf="title"
+								class="title"
+								[title]="title | htmlText"
+								[innerHtml]="title"
+								id="{{containerCardId+'-title'}}"
+								role="link"></div>
+							<div *ngIf="caption"
+								class="caption">
+								<div [title]="caption | htmlText"
+									[innerHtml]="caption"
+									id="{{containerCardId+'-caption'}}"
+									role="link"></div>
+							</div>
+							<div *ngIf="logo || logoText"
+								class="logo">
+								<span class="logo-img">
+									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+								</span>
+								<span class="logo-text"
+								id="{{containerCardId+'-logo-text'}}"
+								role="textbox">{{logoText}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="row offline-icon col col-12"
+				id="{{containerCardId+'-offline-icon'}}"
+				aria-label="offline-icon"
+				role="img"
+				*ngIf="!isOnline">
+				<fa-icon [icon]="['fal', 'wifi-slash']"></fa-icon>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-card card-subpage-partner-corner"
+		*ngIf="type === 'subpage-partner-corner'"
+		#containerCardSidebarPartnerCorner
+		[style.height.px]="containerCardSidebarPartnerCorner.clientWidth / ratio">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 image"
 					[style.background-image]="'url('+img+')'"
-					[style.height.px]="containerCardPartnerArticle.clientWidth * ratio">
+					[style.height.px]="containerCardSidebarPartnerCorner.clientWidth / ratio">
 					<div *ngIf="logo || logoText"
 						class="logo">
 						<span class="logo-img">
@@ -345,8 +382,7 @@
 						role="textbox">{{logoText}}</span>
 					</div>
 					<div class="row">
-						<a *ngIf="isOnline"
-							[attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
+						<a [attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
 							target="_blank"
 							rel="noopener"
 							vtrMetrics
@@ -367,21 +403,15 @@
 								</div>
 							</div>
 						</a>
-						<div *ngIf="!isOnline"
-							class="offline-a">
-							<div class="col col-12 content">
-								<div *ngIf="title"
-									class="title"
-									[innerHtml]="title"
-									id="{{containerCardId+'-title'}}"
-									role="link"></div>
-								<div *ngIf="actionLink"
-									class="read-more">
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
+			</div>
+			<div class="row offline-icon col col-12"
+				id="{{containerCardId+'-offline-icon'}}"
+				aria-label="offline-icon"
+				role="img"
+				*ngIf="!isOnline">
+				<fa-icon [icon]="['fal', 'wifi-slash']"></fa-icon>
 			</div>
 		</div>
 	</div>
