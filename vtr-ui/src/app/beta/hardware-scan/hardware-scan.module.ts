@@ -27,7 +27,7 @@ import { SharedModule } from 'src/app/modules/shared.module';
 import { HeaderMainComponent } from './header-main/header-main.component';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { UiButtonModule } from './ui/ui-button/ui-button.module';
-import { ContainerCardModule } from './container-card/container-card.module';
+import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { MetricsModule } from 'src/app/directives/metrics.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
