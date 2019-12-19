@@ -1014,7 +1014,7 @@
                             "title3": "Modo de desempenho",
                             "desc3": "O controlo de deslize está na extremidade direita. A velocidade da ventoinha e a temperatura superficial permitida são superiores para obter o máximo desempenho."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Alguns dos modos podem ser ajustados automaticamente ao longo de uma gama mais ampla de desempenho em função da sua atividade. Para desativar o modo automático, prima Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Esta funcionalidade programa a otimização da poupança de energia da bateria do computador durante períodos de inatividade sem prejudicar um tempo de arranque rápido durante horas de utilização mais intensa.",
                     "subTitle2": "Hora definida em que geralmente utiliza este computador",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Quando o Modo de Suspensão Inteligente está ativado, o computador muda para o Modo de Suspensão Moderno antes da hora de INÍCIO agendada e entra em hibernação quando estiver inativo durante um determinado período de tempo quando alimentado pela bateria. Este período de tempo é otimizado com base no agendamento definido pelo utilizador. O computador muda do modo de hibernação para o Modo de Suspensão Moderno apenas em dias agendados e não muda quando está inativo por dias agendados consecutivos."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "CONTROLOS DO PAINEL TÁTIL",
                     "control2": "CONTROLOS DO RATO",
                     "control3": "CONTROLOS DO TRACKPOINT",
-                    "less": "LESS"
+                    "less": "MENOS"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Definições da atualização automática",
-            "subtitle": "INSTALAR ATUALIZAÇÕES AUTOMATICAMENTE",
+            "subtitle": "Instalar atualizações automaticamente",
             "critical": {
                 "title": "Atualizações Críticas",
                 "tooltip": "As atualizações críticas podem evitar problemas significativos, avarias graves, falhas de hardware ou dados danificados."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "A execução da verificação e reparação pode originar perda de dados. É recomendado efetuar uma cópia de segurança antes de executar esta operação. Tem a certeza de que pretende continuar?",
                 "yes": "Sim",
-                "no": "Não"
+                "no": "Não",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

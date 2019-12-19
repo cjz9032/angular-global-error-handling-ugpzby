@@ -7,20 +7,19 @@
 	}
 
 	.hidden-keyboard-text {
-		margin-left: 2rem;
-		font-size: 1.9rem;
-		color: $main_darker;
-		padding-left: 2rem;
-		padding-right: 2rem;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
+		color: $grey_dark;
 	}
 
 	.keys-row {
 		margin-top: 13px;
 
 		.caption-tittle {
-			color: #667481;
-			font-weight: bold;
-			font-size: $base;
+			color: $grey_dark;
+			font-weight: $weight_bold;
+			font-size: $fontsize_xs;
+			line-height: 2.8rem;
 		}
 	}
 
