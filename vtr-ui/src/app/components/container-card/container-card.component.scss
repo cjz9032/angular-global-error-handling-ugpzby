@@ -321,7 +321,6 @@
 				.inner-content {
 					position: relative;
 					z-index: 1;
-					height: 100%;
 					display: flex;
 					padding: 2rem 2.5rem;
 					// justify-content: flex-end;
@@ -330,7 +329,6 @@
 					.title {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-						text-overflow: ellipsis;
 						cursor: pointer;
 					}
 				}
@@ -397,12 +395,6 @@
 
 					&:hover {
 						text-decoration: underline;
-					}
-
-					@media #{$mediaquery_7} {
-						overflow: hidden;
-						text-overflow: ellipsis;
-						white-space: nowrap;
 					}
 				}
 
@@ -485,13 +477,6 @@
 				font-weight: $weight_light;
 				line-height: 1.4;
 				cursor: pointer;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				display: -webkit-box;
-				-webkit-line-clamp: 2;
-				white-space: normal;
-				/* autoprefixer: off */
-				-webkit-box-orient: vertical;
 			}
 
 			.read-more {
@@ -562,9 +547,6 @@
 			font-weight: $weight_light;
 			line-height: 1.4;
 			width: 100%;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
 		}
 
 		.description {
@@ -579,32 +561,6 @@
 			line-height: 1.1em;
 			padding-top: 1rem;
 			width: 100%;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			display: -webkit-box;
-			-webkit-line-clamp: 2;
-			/* autoprefixer: off */
-			-webkit-box-orient: vertical;
-
-			/*@media #{$mediaquery_X4} {
-				font-size: 1.8rem;
-			}
-
-			@media #{$mediaquery_X7} {
-				font-size: 1.7rem;
-			}
-
-			@media #{$mediaquery_X11} {
-				font-size: 1.8rem;
-			}
-
-			@media #{$mediaquery_17} {
-				font-size: 1.8rem;
-			}
-
-			@media #{$mediaquery_X3} {
-				font-size: 1.6rem;
-			}*/
 		}
 
 		.logo {

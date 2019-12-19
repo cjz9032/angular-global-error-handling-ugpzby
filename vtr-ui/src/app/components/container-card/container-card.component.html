@@ -38,13 +38,13 @@
 						<div class="inner-content"
 							*ngIf="!isOfflineArm">
 							<div *ngIf="title"
-								class="title"
+								class="title text-ellipsis"
 								id="{{containerCardId+'-title'}}"
 								role="link"
 								[title]="title | htmlText"
 								[innerHTML]="title"></div>
 							<div *ngIf="caption"
-								class="caption"
+								class="caption text-two-ellipsis"
 								id="{{containerCardId+'-caption'}}"
 								role="link"
 								[title]="caption | htmlText"
@@ -90,12 +90,12 @@
 						</a>
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title"
+								class="title text-ellipsis"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
 								role="link"></div>
 							<div *ngIf="caption"
-								class="caption"
+								class="caption text-two-ellipsis"
 								id="{{containerCardId+'-caption'}}"
 								role="link"
 								[innerHtml]="caption"></div>
@@ -116,12 +116,12 @@
 						</div>
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title default-cursor"
+								class="title text-ellipsis default-cursor"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
 								role="link"></div>
-							<div *ngIf="caption"
-								class="caption default-cursor"
+							<div *ngIf="caption text-two-ellipsis"
+								class="caption text-two-ellipsis default-cursor"
 								id="{{containerCardId+'-caption'}}"
 								role="link"
 								[innerHtml]="caption"></div>
@@ -166,7 +166,7 @@
 						<div class="inner-content">
 							<div *ngIf="title && !isOfflineArm"
 								[title]="title | htmlText"
-								class="title"
+								class="title text-ellipsis"
 								id="{{containerCardId+'-title'}}"
 								role="link"
 								[innerHtml]="title"></div>
@@ -210,7 +210,7 @@
 					<div class="row w-100">
 						<div class="col col-12 content">
 							<div *ngIf="title && !isOfflineArm"
-								class="title"
+								class="title text-ellipsis"
 								[title]="title | htmlText"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
@@ -270,7 +270,7 @@
 					<div class="row w-100">
 						<div class="col col-12 content">
 							<div *ngIf="title && !isOfflineArm"
-								class="title"
+								class="title text-ellipsis"
 								[title]="title | htmlText"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
@@ -328,13 +328,13 @@
 						id="{{containerCardId+'-article_link'}}">
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title"
+								class="title text-ellipsis"
 								[title]="title | htmlText"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
 								role="link"></div>
 							<div *ngIf="caption"
-								class="caption">
+								class="caption text-two-ellipsis">
 								<div [title]="caption | htmlText"
 									[innerHtml]="caption"
 									id="{{containerCardId+'-caption'}}"
@@ -393,7 +393,7 @@
 							metricsItemCategory="partnerarticle">
 							<div class="col col-12 content">
 								<div *ngIf="title"
-									class="title"
+									class="title text-two-ellipsis"
 									[title]="title | htmlText"
 									[innerHtml]="title"
 									id="{{containerCardId+'-title'}}"
