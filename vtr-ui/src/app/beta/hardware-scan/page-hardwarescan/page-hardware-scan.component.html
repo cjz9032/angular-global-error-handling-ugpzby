@@ -53,9 +53,7 @@
 						[textButton]="'hardwareScan.recoverBadSectors.title' | translate"
 						[recoverPath]="'/beta/hardware-scan/recover-bad-sectors'"
 						[disable]="!hasDevicesToRecoverBadSectors() || disable()"
-						[tooltipText]="((!hasDevicesToRecoverBadSectors() || disable())
-										?('hardwareScan.recoverBadSectors.waitAvailability' | translate)
-										:('hardwareScan.recoverBadSectors.title' | translate))">
+						[tooltipText]="('hardwareScan.recoverBadSectors.title' | translate)">
 					</vtr-widget-recover-bad-sectors>
 				</div>
 			</div>
