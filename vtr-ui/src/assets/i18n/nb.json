@@ -1014,7 +1014,7 @@
                             "title3": "Ytelsesmodus",
                             "desc3": "Glidebryteren er helt til høyre. Viftehastigheten og den tillatte overflatetemperaturen er høyere for maksimal ytelse."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Noen av modusene kan justeres automatisk på tvers av et bredere ytelsesspekter basert på din aktivitet. Du kan deaktivere automatisk modus ved å trykke på Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
                     "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "PEKEPLATEKONTROLLER",
                     "control2": "MUSEKONTROLLER",
                     "control3": "TRACKPOINT-KONTROLLER",
-                    "less": "LESS"
+                    "less": "MINDRE"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Innstillinger for automatiske oppdateringer",
-            "subtitle": "INSTALLER OPPDATERINGER AUTOMATISK",
+            "subtitle": "Installer oppdateringer automatisk",
             "critical": {
                 "title": "Kritiske oppdateringer",
                 "tooltip": "Kritiske oppdateringer kan forhindre vesentlige problemer, store funksjonssvikt, maskinvarefeil eller ødelagte data."
@@ -2827,7 +2827,8 @@
             "popup": {
                 "yes": "Ja",
                 "no": "Nei",
-                "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?"
+                "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

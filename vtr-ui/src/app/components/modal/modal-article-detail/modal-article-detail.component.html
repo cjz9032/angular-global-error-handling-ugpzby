@@ -5,15 +5,16 @@
 			alt="">
 		<div class="article-body" [innerHTML]="articleBody"> </div>
 	</div>
-	<a href="javascript:;"
+	<div tabindex="0"
 		role="button"
 		class="close-btn"
-		aria-hidden="true"
+		aria-label="Article Close Button"
 		vtrMetrics
 		metricsItem="ArticleCloseButton"
 		metricsEvent="FeatureClick"
 		metricsParent="{{ metricsParent }}"
-	 (click)="closeModal()">
+		(keyup.enter)="closeModal()"
+		(click)="closeModal()">
 		<img [src]=" '/assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-	</a>
+	</div>
 </div>

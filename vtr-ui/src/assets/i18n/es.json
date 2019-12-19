@@ -1014,7 +1014,7 @@
                             "title3": "Modalidad de rendimiento",
                             "desc3": "El graduador está en el extremo derecho. La velocidad del ventilador y la temperatura permisible de la superficie son superiores para obtener el rendimiento máximo."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Algunas de las modalidades pueden ajustarse automáticamente en un rango de rendimiento más amplio en función de su actividad. Para deshabilitar la modalidad automática, presione Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
                     "subTitle2": "Establezca los horarios en los que normalmente utiliza este equipo",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo se optimiza de acuerdo con su planificación establecida. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "CONTROLES DEL ÁREA TÁCTIL",
                     "control2": "CONTROLES DE MOUSE",
                     "control3": "CONTROLES DE TRACKPOINT",
-                    "less": "LESS"
+                    "less": "MENOS"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Valores de actualización automática",
-            "subtitle": "INSTALAR ACTUALIZACIONES AUTOMÁTICAMENTE",
+            "subtitle": "Instalar actualizaciones automáticamente",
             "critical": {
                 "title": "Actualizaciones críticas",
                 "tooltip": "Las actualizaciones críticas pueden evitar problemas importantes, fallos graves de funcionamiento, errores de hardware o que se dañen los datos."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "La ejecución del examen y la reparación pueden producir la pérdida de datos. Se recomienda realizar una copia de seguridad antes de ejecutar esta operación. ¿Seguro que desea continuar?",
                 "yes": "Sí",
-                "no": "No"
+                "no": "No",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

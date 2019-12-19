@@ -634,9 +634,15 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			font-size: 1rem;
 		}
 
+		
+		span {
+			font-size: 1.8rem;
+			margin-bottom: 1rem;
+			word-wrap: break-word;
+		}
+
 		p,
 		li,
-		span,
 		ul {
 			font-size: 1.8rem;
 			color: $light-grey;
@@ -1384,6 +1390,11 @@ vtr-ui-smart-performance-scanning {
 		}
 		.modal-content {
 			border-radius: 1rem;
+			.description {
+				.question {
+					font-weight: $weight_bold;
+				}
+			}
 		}
 	}
 }
@@ -1406,4 +1417,12 @@ vtr-ui-smart-performance-scanning {
 		}
 	}
 
+}
+.installation-history-container {
+	.vtr-container-collapsible.white-theme {
+		border-top-left-radius: 0 !important;
+		border-top-right-radius: 0 !important;
+		border-bottom-left-radius: 0.7rem !important;
+		border-bottom-right-radius: 0.7rem !important;
+	}
 }

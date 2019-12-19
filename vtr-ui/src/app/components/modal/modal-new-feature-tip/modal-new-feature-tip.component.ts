@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewContainerRef, ElementRef, HostListener, OnDestroy } from '@angular/core';
 import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-modal-new-feature-tip',
@@ -26,12 +27,16 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 		'new-feature-tip-mask',
 	];
 
+	metrics: any;
+
 	constructor(
 		private viewContainerRef: ViewContainerRef,
 		private element: ElementRef,
 		newFeatureTipService: NewFeatureTipService,
+		private shellService: VantageShellService,
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
+		this.metrics = this.shellService.getMetrics();
 	}
 
 	ngOnInit() {
@@ -52,18 +57,27 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 		clearInterval(this.positionInterval);
 	}
 
-	nextTips() {
+	nextTips(positionName: string) {
+		const newTipsMetrics = {
+			ItemType: 'FeatureClick',
+			ItemName: positionName,
+			ItemParent: 'New Feature Tips'
+		};
 		if (this.tipId === 'privacy') {
 			const securityMenu = document.querySelector('[new-tip-id=new-tip-security]');
 			if (securityMenu) {
 				this.setDescAndTipId('notification.menu.security', 'security');
 				this.showItemTip(securityMenu);
+				newTipsMetrics.ItemName = this.tipId + newTipsMetrics.ItemName;
+				this.sendMetricsAsync(newTipsMetrics);
 				return;
 			}
 			const chsMenu = document.querySelector('[new-tip-id=new-tip-home-security]');
 			if (chsMenu) {
 				this.setDescAndTipId('notification.menu.connectedHomeSecurity', 'home-security');
 				this.showItemTip(chsMenu);
+				newTipsMetrics.ItemName = this.tipId + newTipsMetrics.ItemName;
+				this.sendMetricsAsync(newTipsMetrics);
 				return;
 			}
 		}
@@ -72,15 +86,28 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 			if (chsMenu) {
 				this.setDescAndTipId('notification.menu.connectedHomeSecurity', 'home-security');
 				this.showItemTip(chsMenu);
+				newTipsMetrics.ItemName = this.tipId + newTipsMetrics.ItemName;
+				this.sendMetricsAsync(newTipsMetrics);
 				return;
 			}
 		}
+		newTipsMetrics.ItemName = this.tipId + newTipsMetrics.ItemName;
+		this.sendMetricsAsync(newTipsMetrics);
 		this.destroyTipsComponent();
 	}
 
 	destroyTipsComponent() {
 		clearInterval(this.positionInterval);
 		this.element.nativeElement.parentNode.removeChild(this.element.nativeElement);
+	}
+
+	sendMetricsAsync(data: any) {
+		if (this.metrics && this.metrics.sendAsync) {
+			console.log('metrics ready!');
+			this.metrics.sendAsync(data);
+		} else {
+			console.log('can not find metrics');
+		}
 	}
 
 	setDescAndTipId(description: string, tipId: string) {
