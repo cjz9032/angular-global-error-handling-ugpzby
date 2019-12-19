@@ -326,6 +326,35 @@
 			@media #{$mediaquery_X5} {
 				padding: 4rem 4rem 4rem 8.5rem;
 			}
+			@media #{$mediaquery_md} {
+				margin-top: 3rem;
+			}
 		}
+
+		right-content{
+			.footer {
+				display: none;
+				margin-top: 2rem;
+				@media #{$mediaquery_md} {
+				  display: flex !important;
+				  flex-direction: row;
+				}
+				.text-regular {
+				  font-size: 1.6rem;
+				  color: $main_shade;
+				}
+			
+				.mcafee-logo {
+				  width: 14rem;
+				  padding-top: 1rem;
+				  margin-right: 2rem;
+				}
+			
+				a {
+				  font-weight: $weight_medium;
+				  text-decoration: underline;
+				}
+			}
+		};
 	}
 }

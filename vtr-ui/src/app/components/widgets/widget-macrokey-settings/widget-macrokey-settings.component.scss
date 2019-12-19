@@ -19,10 +19,6 @@
 		&.numberpad {
 			.numbers-wrapper {
 				width: 17rem;
-				@media #{$breakpoint_xl} {
-					clear: both;
-					width: 100%;
-				}
 				@media #{$breakpoint_lg} {
 					clear: none;
 					float: left;

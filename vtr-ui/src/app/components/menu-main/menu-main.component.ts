@@ -390,9 +390,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.updateSearchBoxState(false);
 	}
 
-	menuItemClick(event, path) {
+	menuItemKeyDown(path: string, subpath?: string) {
 		if (path) {
-			this.router.navigateByUrl(path);
+			if (!subpath || subpath === 'null') {
+				this.router.navigateByUrl(`/${path}`);
+			} else {
+				this.router.navigateByUrl(`/${path}/${subpath}`);
+			}
 		}
 	}
 
@@ -532,13 +536,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getVideoPauseResumeStatus check', error);
 					}
 					// super resolution capability check
-					// try {
-					// 	this.logger.info('MenuMainComponent.showSmartAssist: super resolution capability check');
-					// 	assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
-					// 	this.logger.info('MenuMainComponent.showSmartAssist: super resolution capability check completed');
-					// } catch (error) {
-					// 	this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getSuperResolutionStatus check', error);
-					// }
+					try {
+						this.logger.info('MenuMainComponent.showSmartAssist: super resolution capability check');
+						assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
+						this.logger.info('MenuMainComponent.showSmartAssist: super resolution capability check completed');
+					} catch (error) {
+						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getSuperResolutionStatus check', error);
+					}
 
 					// APS capability check
 					try {
