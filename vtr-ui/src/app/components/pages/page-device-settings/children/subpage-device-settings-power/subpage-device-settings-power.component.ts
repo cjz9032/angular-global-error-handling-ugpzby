@@ -422,8 +422,20 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.smartStandbyCapability = event;
 		if (!event) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartStandby');
-			this.checkMenuItemsEmpty();
+		} else {
+			const status = this.commonService.isPresent(this.headerMenuItems, 'smartStandby');
+			if (!status) {
+				const smartStandByObj = {
+					title: 'device.deviceSettings.power.smartStandby.title',
+					path: 'smartStandby',
+					metricsItem: 'SmartStandby',
+					order: 2
+				};
+				this.headerMenuItems.push(smartStandByObj);
+				this.commonService.sortMenuItems(this.headerMenuItems);
+			}
 		}
+		this.checkMenuItemsEmpty();
 	}
 
 	openContextModal(template: TemplateRef<any>) {
