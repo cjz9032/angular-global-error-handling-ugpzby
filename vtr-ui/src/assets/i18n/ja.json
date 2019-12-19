@@ -1014,7 +1014,7 @@
                             "title3": "パフォーマンス・モード",
                             "desc3": "スライダーを右端に移動します。最高のパフォーマンスを得るために、ファン速度と許容表面温度が高くなります。"
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "一部のモードでは、動作に基づいてより広範にパフォーマンスを自動調整できます。自動モードを無効にするには、Fn+ T を押します。"
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "この機能は、使用頻度の高い時間中の高速スタートアップ時間に影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
                     "subTitle2": "通常このコンピューターを使用する時刻を設定します",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。時間は設定されたスケジュールに基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。"
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "タッチパッド・コントロール",
                     "control2": "マウス・コントロール",
                     "control3": "TRACKPOINT 制御",
-                    "less": "LESS"
+                    "less": "非表示にする"
                 }
             }
         },
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "スキャンと修復を実行すると、データが失われる可能性があります。この操作を実行する前にバックアップを作成することをお勧めします。続行してもよろしいですか",
                 "yes": "はい",
-                "no": "いいえ"
+                "no": "いいえ",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

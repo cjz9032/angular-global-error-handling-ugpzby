@@ -1014,7 +1014,7 @@
                             "title3": "Režim výkonu",
                             "desc3": "Posuvník je zcela vpravo. Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Některé režimy se mohou na základě vaší činnosti automaticky přizpůsobit širšímu rozsahu výkonu. Chcete-li zakázat automatický režim, stiskněte klávesy Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění.",
                     "subTitle2": "Nastavte čas, kdy počítač obvykle používáte",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným ZAČÁTKEM přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové rozmezí se optimalizuje na základě nastaveného plánu. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "OVLÁDÁNÍ DOTYKOVÉ PLOŠKY",
                     "control2": "OVLÁDÁNÍ MYŠI",
                     "control3": "OVLÁDÁNÍ TRACKPOINT",
-                    "less": "LESS"
+                    "less": "MÉNĚ"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Nastavení automatické aktualizace",
-            "subtitle": "AUTOMATICKY INSTALOVAT AKTUALIZACE",
+            "subtitle": "Automaticky instalovat aktualizace",
             "critical": {
                 "title": "Kriticky důležité aktualizace",
                 "tooltip": "Kriticky důležité aktualizace předcházejí vážným problémům,podstatným poruchám funkce, selhání hardwaru nebo poškození dat."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "Během procesu kontroly a opravy může dojít ke ztrátě dat. Před spuštěním této operace proto doporučujeme provést zálohu. Opravdu chcete pokračovat?",
                 "yes": "Ano",
-                "no": "Ne"
+                "no": "Ne",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
