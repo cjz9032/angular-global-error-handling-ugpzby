@@ -88,7 +88,7 @@
 					id="myDevice-settings-battery-condition-tip"
 					role="text"></span>
 				<span
-					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams?.acWattage!=0"
+					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
 					[innerHTML]="batteryConditionNote | translate:acAdapterInfoParams"
 					id="myDevice-settings-battery-condition-tip"
 					role="text"></span>
