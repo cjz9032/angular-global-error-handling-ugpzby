@@ -1014,7 +1014,7 @@
                             "title3": "מצב ביצועים",
                             "desc3": "המחוון נמצא בצד ימין. מהירות המאוורר וטמפרטורת המשטח המותרת גבוהות יותר כדי להשיג את הביצועים הטובים ביותר."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "ניתן לכוונן חלק מהמצבים באופן אוטומטי לטווח רחב יותר של ביצועים בהתאם לפעילות. כדי להשבית את המצב האוטומטי, לוחצים על Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "תכונה זו קובעת זמן למחשב שלכם שבו יבוצע מיטוב של חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, כדי שלא לפגוע בזמן הפעלה מחדש מהירה שנדרש בשעות שבהן נעשה שימוש במחשב.",
                     "subTitle2": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "כאשר תכונת 'המתנה חכמה' פועלת, המחשב עובר ל'המתנה מודרנית' לפני מועד ההתחלה שנקבע, והוא עובר למצב שינה אם הוא בלתי פעיל במשך פרק זמן מסוים כאשר הוא מופעל באמצעות סוללה. פרק הזמן הזה עובר מיטוב לפי לוח הזמנים שקבעתם. המחשב עובר ממצב שינה למצב 'המתנה מודרנית' רק בימים שנקבעו, ואינו עובר כאשר הוא במצב בלתי פעיל במשך כמה ימים ברצף, לפי מה שקבעתם."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "בקרי משטח מגע",
                     "control2": "בקרי עכבר",
                     "control3": "בקרי TRACKPOINT",
-                    "less": "LESS"
+                    "less": "פחות"
                 }
             }
         },
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "ביצוע פעולת סריקה ותיקון עלול לגרום לאובדן נתונים. מומלץ ליצור עותק גיבוי לפני ביצוע הפעולה. האם אתם בטוחים שברצונכם להמשיך?",
                 "yes": "כן",
-                "no": "לא"
+                "no": "לא",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
