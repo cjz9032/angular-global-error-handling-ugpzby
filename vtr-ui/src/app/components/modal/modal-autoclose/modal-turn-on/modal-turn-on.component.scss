@@ -10,25 +10,17 @@
 	background-color: $screen_dark_50;
 }
 ui-popover-turn-on {
-	position: absolute;
-	padding: 3rem 5rem;
+	padding: 3.8rem 5rem;
 	background: #fbfdff;
 	z-index: 9;
 	border-radius: 1rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
-	right: 0;
-	left: 0;
-	margin: auto;
-	top: 0;
-	bottom: 0;
-	height: 35rem;
 	max-width: 56rem;
 	@media #{$breakpoint_xl} {
-		width: 80%;
+		width: 85%;
 	}
 	@media #{$breakpoint_sm} {
 		width: 90%;
-		height: 42rem;
 		padding: 3rem 4rem;
 	}
 	@media #{$white-on-black} {
@@ -99,11 +91,9 @@ ui-popover-turn-on {
 	}
 }
 .vtr-modal-turn-on {
-	padding: 3rem;
-	&.modal-body {
+	.modal-body {
 		padding: 0;
 	}
-
 	.content-body {
 		min-height: 10rem;
 	}
@@ -113,29 +103,6 @@ ui-popover-turn-on {
 			display: inline-block;
 			vertical-align: middle;
 		}
-		// input {
-		// 	opacity: 0;
-		// 	position: absolute;
-		// 	width: 2rem;
-		// 	height: 2rem;
-		// 	& + .status-check {
-		// 		width: 2rem;
-		// 		height: 2rem;
-		// 		border: 1px solid $gaming_light_blue;
-		// 	}
-		// 	&:checked + .status-check {
-		// 		background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='15px' height='15px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
-		// 		background-repeat: no-repeat;
-		// 		background-size: 100% auto;
-		// 		background-color: $gaming_light_blue;
-		// 		@media #{$black-on-white} {
-		// 			background-color: $gaming_light_blue;
-		// 		}
-		// 		@media #{$white-on-black} {
-		// 			background-color: $gaming_light_blue;
-		// 		}
-		// 	}
-		// }
 		.status-text {
 			font-size: 1.6rem;
 			padding-left: 3rem;
@@ -170,6 +137,7 @@ ui-popover-turn-on {
 		font-size: 2.5rem;
 		font-weight: normal;
 		color: $blue-dark;
+		padding-right: 2.5rem;
 	}
 
 	p {
@@ -207,7 +175,7 @@ ui-popover-turn-on {
 		vertical-align: middle;
 		padding: 0 0.5rem;
 		font-weight: $weight_600;
-		margin-top: 1.8rem;
+		margin-top: 1rem;
 		border-bottom: 2px solid $btn_secondary_color;
 		display: inline-block;
 		cursor: pointer;

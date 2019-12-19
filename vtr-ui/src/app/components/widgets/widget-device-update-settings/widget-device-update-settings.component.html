@@ -24,7 +24,7 @@
 												*ngIf="item.isCollapsible" (change)="optionChanged($event,item, in)"
 												(showDropDown)="showDropDown.emit(item)">
 											</vtr-ui-gaming-collapsible-container>
-											<vtr-ui-gaming-driver-popup *ngIf="item.isCollapsible && item.isDriverPopup"
+											<vtr-ui-gaming-driver-popup [ngClass]="{'overclock-driver-popup' : item.id === 'legionedge cpuoverlock'}" *ngIf="item.isCollapsible && item.isDriverPopup"
 												 [showMePartially]="item.isDriverPopup"
 												[descriptionLabel]="item.ariaLabel" [popupText]="item.driverPopupText"
 												(driverpopval)="onClosed(item, in)">
