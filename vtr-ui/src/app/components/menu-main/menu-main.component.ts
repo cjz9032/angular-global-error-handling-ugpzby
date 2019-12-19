@@ -390,9 +390,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.updateSearchBoxState(false);
 	}
 
-	menuItemClick(event, path) {
+	menuItemKeyDown(path: string, subpath?: string) {
 		if (path) {
-			this.router.navigateByUrl(path);
+			if (!subpath || subpath === 'null') {
+				this.router.navigateByUrl(`/${path}`);
+			} else {
+				this.router.navigateByUrl(`/${path}/${subpath}`);
+			}
 		}
 	}
 
@@ -407,6 +411,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	private onNotification(notification: AppNotification) {
 		if (notification) {
+			// this.logger.info(`MenuMainComponent.onNotification: ${notification.type}`, this.items);
 			switch (notification.type) {
 				case 'MachineInfo':
 					this.machineFamilyName = notification.payload.family;
@@ -470,6 +475,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	getMenuItems(): Promise<any> {
 		// remove onfocus showVpn()
 		// need refresh menuItem from config service, don't need localStorage
+		if (this.items && this.items.length > 0) {
+			return Promise.resolve(this.items);
+		}
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
 			this.items = items;
 			return this.items;
@@ -499,7 +507,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
 
 					if (smartAssistCacheValue || this.isSmartAssistAvailable) {
-						this.addSmartAssistMenu(items);
+						this.addSmartAssistMenu();
 					}
 
 					// raj: promise.all breaks if any one function is breaks. adding feature wise capability check
@@ -532,13 +540,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getVideoPauseResumeStatus check', error);
 					}
 					// super resolution capability check
-					// try {
-					// 	this.logger.info('MenuMainComponent.showSmartAssist: super resolution capability check');
-					// 	assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
-					// 	this.logger.info('MenuMainComponent.showSmartAssist: super resolution capability check completed');
-					// } catch (error) {
-					// 	this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getSuperResolutionStatus check', error);
-					// }
+					try {
+						this.logger.info('MenuMainComponent.showSmartAssist: super resolution capability check');
+						assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
+						this.logger.info('MenuMainComponent.showSmartAssist: super resolution capability check completed');
+					} catch (error) {
+						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getSuperResolutionStatus check', error);
+					}
 
 					// APS capability check
 					try {
@@ -561,9 +569,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 						assistCapability.isAPSSupported;
 
 					if (this.isSmartAssistAvailable) {
-						this.addSmartAssistMenu(items);
+						this.addSmartAssistMenu();
 					} else {
-						this.removeSmartAssistMenu(items);
+						this.removeSmartAssistMenu();
 					}
 
 					this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, this.isSmartAssistAvailable);
@@ -575,18 +583,17 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 							isSmartAssistAvailable: this.isSmartAssistAvailable,
 							assistCapability
 						});
-
 				}
 			}
 		});
 	}
 
-	private addSmartAssistMenu(menuItems: any) {
-		const myDeviceItem = menuItems.find((item) => item.id === this.constantDevice);
+	private addSmartAssistMenu() {
+		const myDeviceItem = this.items.find((item) => item.id === this.constantDevice);
 		if (myDeviceItem) {
 			const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
 			if (!smartAssistItem) {
-				myDeviceItem.subitems.splice(4, 0, {
+				myDeviceItem.subitems.splice(3, 0, {
 					id: 'smart-assist',
 					label: 'common.menu.device.sub4',
 					path: 'smart-assist',
@@ -600,17 +607,17 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					subitems: []
 				});
 
-				// this.logger.info('MenuMainComponent.addSmartAssistMenu: adding smart-assist menu', this.items);
+				// this.logger.info('MenuMainComponent.addSmartAssistMenu: adding smart-assist menu');
 			}
 		}
 	}
 
-	private removeSmartAssistMenu(menuItems: any) {
-		const myDeviceItem = menuItems.find((item) => item.id === this.constantDevice);
+	private removeSmartAssistMenu() {
+		const myDeviceItem = this.items.find((item) => item.id === this.constantDevice);
 		if (myDeviceItem) {
 			const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
 			if (smartAssistItem) {
-				// this.logger.info('MenuMainComponent.removeSmartAssistMenu: removing smart-assist menu');
+				this.logger.info('MenuMainComponent.removeSmartAssistMenu: removing smart-assist menu');
 				myDeviceItem.subitems = myDeviceItem.subitems.filter(
 					(item) => item.id !== 'smart-assist'
 				);

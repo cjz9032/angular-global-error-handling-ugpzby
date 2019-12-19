@@ -1014,7 +1014,7 @@
                             "title3": "Modo de desempenho",
                             "desc3": "O controle deslizante está na extremidade à direita. A velocidade do ventilador e a temperatura da superfície permitida são aumentadas para oferecer o máximo de desempenho."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Alguns dos modos podem ser ajustados automaticamente em uma gama mais ampla de desempenho com base em sua atividade. Para desativar o modo automático, pressione Fn + T."
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Esse recurso programa o computador para otimizar a economia de carga da bateria durante horas ociosas sem prejudicar o tempo do início rápido durantes horas de maior uso.",
                     "subTitle2": "Defina a hora em que você geralmente usa este computador",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Quando a Suspensão inteligente estiver ativada, o computador alternará para a Suspensão moderna antes da hora de INÍCIO programada e entrará no modo de hibernação depois que estiver inativo por um certo tempo na carga da bateria. O tempo será otimizado com base no planejamento que você definir. O computador alterna do modo de hibernação para a Suspensão moderna apenas nos dias programados e não alterna quando estiver inativo por dias programados consecutivos."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "CONTROLES DO TOUCHPAD",
                     "control2": "CONTROLES DO MOUSE",
                     "control3": "CONTROLES DE TRACKPOINT",
-                    "less": "LESS"
+                    "less": "MENOS"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Configurações da atualização automática",
-            "subtitle": "INSTALAR ATUALIZAÇÕES AUTOMATICAMENTE",
+            "subtitle": "Instalar atualizações automaticamente",
             "critical": {
                 "title": "Atualizações Críticas",
                 "tooltip": "As atualizações críticas podem evitar problemas significativos, defeitos graves, falha de hardware ou corrompimento de dados."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "A execução de verificação e de reparo pode causar perda de dados. Recomenda-se fazer um backup antes de executar esta operação. Tem certeza que deseja continuar?",
                 "yes": "Sim",
-                "no": "Não"
+                "no": "Não",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

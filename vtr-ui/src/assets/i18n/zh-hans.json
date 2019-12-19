@@ -1014,7 +1014,7 @@
                             "title3": "性能模式",
                             "desc3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "有些模式可以根据您的活动在更广泛的性能范围内进行自动调节。要禁用自动模式，请按 Fn+ T。"
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
                     "subTitle2": "设置通常使用此计算机的时间",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。"
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "触摸板控制",
                     "control2": "鼠标控制",
                     "control3": "TRACKPOINT 控制",
-                    "less": "LESS"
+                    "less": "更少"
                 }
             }
         },
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "执行扫描和修复会导致数据丢失。建议在执行此操作前先进行备份。是否确实要继续？",
                 "yes": "是",
-                "no": "否"
+                "no": "否",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

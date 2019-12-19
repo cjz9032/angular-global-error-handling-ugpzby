@@ -96,7 +96,7 @@
 							routerLinkActive="active"
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
-							(keydown.enter)="onMenuItemClick(item)"
+							(keydown.enter)="onMenuItemClick(item); menuItemKeyDown(item.path)"
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon *ngIf="item.icon[0]!=='icomoon'"
@@ -136,7 +136,7 @@
 							aria-expanded="false"
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item);"
-							(keydown.enter)="onMenuItemClick(item)"
+							(keydown.enter)="onMenuItemClick(item); menuItemKeyDown(item.path)"
 							role="button"
 							*ngIf="item.label | translate">
 							<div class="icon">
@@ -169,7 +169,7 @@
 									rel="noopener"
 									href="javascript:void(0)"
 									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
-									(keyup.enter)="onMenuItemClick(subitem); openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
+									(keydown.enter)="onMenuItemClick(subitem); openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
 								<a ngbDropdownItem
 									*ngIf="!subitem.externallink && showItem(subitem)"
 									vtrMetrics
@@ -184,7 +184,7 @@
 									class="dropdown-item link"
 									routerLink="/{{item.path}}/{{subitem.path}}"
 									(click)="onMenuItemClick(subitem)"
-									(keyup.enter)="onMenuItemClick(subitem)"
+									(keydown.enter)="onMenuItemClick(subitem); menuItemKeyDown(item.path, subitem.path)"
 									href="javascript:void(0)"
 									role="menuitem">{{subitem.label | translate}}</a>
 							</span>
@@ -290,7 +290,7 @@
 								tabindex="1"
 								href="javascript:void(0)"
 								(click)="onMenuItemClick(item, $event)"
-								(keydown.enter)="onMenuItemClick(item, $event)"
+								(keydown.enter)="onMenuItemClick(item, $event); menuItemKeyDown('apps-for-you', appsForYouEnum.AppGuidLenovoMigrationAssistant)"
 								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.lenovoMigrationAssistant' | translate }}
 								<span class="unread-tag"
@@ -306,10 +306,10 @@
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="AdobecRedemptionButton"
-								[routerLink]="['/apps-for-you/'+appsForYouEnum.AppGuidAdobeCreativeCloud]"
+								[routerLink]="['/apps-for-you/'+ appsForYouEnum.AppGuidAdobeCreativeCloud]"
 								href="javascript:void(0)"
 								(click)="onMenuItemClick(item, $event)"
-								(keydown.enter)="onMenuItemClick(item, $event)"
+								(keydown.enter)="onMenuItemClick(item, $event); menuItemKeyDown('/apps-for-you/', appsForYouEnum.AppGuidAdobeCreativeCloud)"
 								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.adobeRedemption' | translate }}
 								<span class="unread-tag"
@@ -355,7 +355,7 @@
 								href="javascript:void(0)"
 								routerLink="settings"
 								(click)="onMenuItemClick(item)"
-								(keydown.enter)="onMenuItemClick(item)">{{ 'settings.preferenceSettings' | translate }}</a>
+								(keydown.enter)="onMenuItemClick(item); menuItemKeyDown('settings')">{{ 'settings.preferenceSettings' | translate }}</a>
 							<a ngbDropdownItem
 								*ngIf="!deviceService.isArm && !userService.auth && !userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 								vtrMetrics

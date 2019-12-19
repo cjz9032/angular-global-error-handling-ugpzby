@@ -72,6 +72,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		private ngZone: NgZone,
 		private vantageShellService: VantageShellService,
 		private router: Router) {
+		this.cameraStatus.permission = false;
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation

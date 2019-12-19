@@ -1014,7 +1014,7 @@
                             "title3": "Tryb wydajności",
                             "desc3": "Suwak znajduje się po prawej stronie. Szybkość wentylatora i dopuszczalna temperatura powierzchni są wyższe dla uzyskania najlepszej wydajności."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Niektóre tryby mogą się automatycznie dostosowywać w szerszym zakresie wydajności zależnie od Twojej aktywności. Aby wyłączyć tryb automatyczny, naciśnij Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
                     "subTitle2": "Ustaw typowe godziny korzystania z komputera",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Okres bezczynności jest optymalizowany na podstawie ustawionego harmonogramu. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowanych dniach, a nie przełącza się w ogóle, jeśli nie jest używany przez kilka kolejnych zaplanowanych dni."
                 }
             },
             "audio": {
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Ustawienia automatycznych aktualizacji",
-            "subtitle": "AUTOMATYCZNA INSTALACJA AKTUALIZACJI",
+            "subtitle": "Automatyczne instalowanie aktualizacji",
             "critical": {
                 "title": "Aktualizacje krytyczne",
                 "tooltip": "Aktualizacje krytyczne mogą zapobiegać poważnym problemom, usterkom, awariom sprzętu lub uszkodzeniu danych."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "Wykonanie skanowania i naprawy może spowodować utratę danych. Zaleca się wykonanie kopii zapasowej przed wykonaniem tej operacji. Czy na pewno chcesz przejść dalej?",
                 "yes": "Tak",
-                "no": "Nie"
+                "no": "Nie",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

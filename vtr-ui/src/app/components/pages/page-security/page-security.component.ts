@@ -143,11 +143,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.showVpn = true;
 		}).finally(() => {
 			this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
-				if (result === 'true') {
-					this.pluginSupport = true;
-				} else {
-					this.pluginSupport = false;
-				}
+				this.pluginSupport = result === 'true';
+			}).catch((e) => {
+				this.pluginSupport = false;
+			}).finally(() => {
 				this.createViewModels();
 			});
 		});

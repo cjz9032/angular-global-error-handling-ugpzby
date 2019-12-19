@@ -31,25 +31,26 @@
 		right: 0;
 		bottom: 0;
 	}
-
 }
 
-.disable-text-selection{
+#main-wrapper {
+	outline: none;
+}
+
+.disable-text-selection {
 	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
-    -moz-user-select: none; /* mozilla browsers */
-    -khtml-user-select: none; /* webkit (konqueror) browsers */
-    -ms-user-select: none; /* IE10+ */
+	-moz-user-select: none; /* mozilla browsers */
+	-khtml-user-select: none; /* webkit (konqueror) browsers */
+	-ms-user-select: none; /* IE10+ */
 }
 
-@media only screen and (max-width:400px) {
+@media only screen and (max-width: 400px) {
 	.vtr-app {
 		zoom: .7;
 	}
-
 }
 
-
-@media only screen and (max-width:800px) {
+@media only screen and (max-width: 800px) {
 	.vtr-app {
 		background-image: none !important;
 		// background: $light;
@@ -61,7 +62,7 @@
 				min-height: 400px;
 				padding-top: 0;
 				background: $shade_lighter;
-				background: linear-gradient(to bottom, $light 0%,$shade_lighter 100%);
+				background: linear-gradient(to bottom, $light 0%, $shade_lighter 100%);
 			}
 			vtr-widget-lower {
 				display: block;
@@ -71,6 +72,4 @@
 			display: none;
 		}
 	}
-
 }
-

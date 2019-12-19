@@ -1014,7 +1014,7 @@
                             "title3": "Suorituskykytila",
                             "desc3": "Liukusäädin on ääriasennossa oikealla. Tuulettimen kierrosnopeus ja sallittu pinnan lämpötila ovat suurempia parhaan suorituskyvyn turvaamiseksi."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Jotkin toimintatilat voivat säätyä automaattisesti laajemman suorituskykyskaalan sisällä eri toimintojen mukaan. Jos haluat poistaa automaattisen tilan käytöstä, paina Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
                     "subTitle2": "Määritä aika, jolloin yleensä käytät tätä tietokonetta",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso optimoidaan määritetyn aikataulun perusteella. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "KOSKETUSLEVYN OHJAIMET",
                     "control2": "HIIRITOIMINNOT",
                     "control3": "TRACKPOINT-TOIMINNOT",
-                    "less": "LESS"
+                    "less": "VÄHEMMÄN"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Automaattisten päivitysten asetukset",
-            "subtitle": "ASENNA PÄIVITYKSET AUTOMAATTISESTI",
+            "subtitle": "Asenna päivitykset automaattisesti",
             "critical": {
                 "title": "Välttämättömät päivitykset",
                 "tooltip": "Välttämättömät päivitykset estävät merkittävien ongelmien, vakavien toimintahäiriöiden ja laitteistohäiriöiden syntymisen sekä tietojen vahingoittumisen."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "Skannauksen ja korjauksen toteutus voi aiheuttaa tietojen katoamisen. Varmuuskopiointi on suositeltavaa tehdä ennen tämän toiminnon suorittamista. Haluatko varmasti jatkaa?",
                 "yes": "Kyllä",
-                "no": "Ei"
+                "no": "Ei",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
