@@ -49,9 +49,12 @@
 				color: $shade_blue;
 			}
 			a {
+				color: $menu_hover;
 				text-decoration: underline;
 				&:hover {
 					text-decoration: underline;
+					color: $menu_hover;
+
 				}
 			}
 			&.screen-lock-note {
@@ -269,8 +272,8 @@
 			border: 1px solid $shade_lighter;
 			padding-right: 1.4rem;
 			span {
-				font-size: $body;
-				color: $main_darker;
+				font-size: $fontsize_xs;
+				color: $shade_blue;
 			}
 		.privacy-button {
 			font-size: $body;
@@ -278,15 +281,17 @@
 			text-align: left;
 			text-decoration: underline;
 			margin-bottom: 0.5rem;
+			color: $menu_hover;
 				&:hover {
 					text-decoration: underline;
+					color: $menu_hover;
 				}
 		}
 	}
 	.facial-recognition {
 		h3 {
 			font-weight: $weight_bold;
-            color: $main_darker;
+            color: $shade_blue;
             font-size:1.4rem !important;
 		}
 		p {

@@ -270,15 +270,39 @@
 						[actionType]="cardContentPositionA.ActionType"
 						[actionLink]="cardContentPositionA.ActionLink"
 						[itemID]="cardContentPositionA.ActionLink"
-						[ratioX]="4"
-						[ratioY]="2"
-						type="corner-article"
+						[ratio]="2"
+						type="subpage-corner"
 						cornerShift="large"
 						order="1"
 						sideFlag="r"
 						[containerCardId]="'sa-av-modal'">
 					</vtr-container-card>
 				</div>
+			</div>
+		</div>
+		<div class="footer row justify-content-center">
+			<div class="row px-0">
+			  <div class="px-0">
+				<img class="mcafee-logo"
+				  [src]=" '/assets/images/mcafee_logo.svg' | svgInline | async" />
+			  </div>
+			  <p class="text-regular mt-10"
+				*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
+				<a id="sa-av-link-privacypolicy"
+				  vtrMetrics
+				  metricsEvent="itemClick"
+				  metricsItem="privacyPolicy"
+				  metricsParent="security.antivirus"
+				  href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+				  target="_blank"></a>
+				<a id="sa-av-link-termsofservices"
+				  vtrMetrics
+				  metricsEvent="itemClick"
+				  metricsItem="termsOfServices"
+				  metricsParent="security.antivirus"
+				  href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+				  target="_blank"></a>
+			  </p>
 			</div>
 		</div>
 	</right-content>
