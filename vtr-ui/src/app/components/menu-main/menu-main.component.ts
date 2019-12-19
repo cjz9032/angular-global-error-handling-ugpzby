@@ -225,7 +225,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					this.removeDeviceSettings();
 				}
 			});
-			this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, false);
+			// this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, false);
 			this.backlightCapabilitySubscription = this.backlightService.backlight.pipe(
 				map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
 				map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY),
