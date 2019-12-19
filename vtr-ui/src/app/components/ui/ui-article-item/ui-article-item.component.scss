@@ -43,14 +43,7 @@
 			font-size: 2.3rem;
 			width: 100%;
 			cursor: pointer;
-			display: block;
 			font-weight: $weight_light;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			display: -webkit-box;
-			-webkit-line-clamp: 2;
-			/* autoprefixer: off */
-			-webkit-box-orient: vertical;
 
 			&:hover {
 				text-decoration: underline;

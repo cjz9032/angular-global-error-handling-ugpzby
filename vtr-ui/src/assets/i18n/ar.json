@@ -1016,7 +1016,7 @@
                             "title3": "وضع الأداء",
                             "desc3": "يوجد شريط التمرير في أقصى اليسار. سرعة المروحة ودرجة حرارة سطح الكمبيوتر المسموحة من أجل الحصول على الأداء الأقصى."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "يمكن ضبط بعض الأوضاع تلقائيًا عبر مجموعة واسعة من إعدادات الأداء استنادًا إلى نشاطك. لتعطيل الوضع التلقائي، اضغط على Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1224,7 +1224,7 @@
                     },
                     "description2": "تعمل هذه الميزة على جدولة الكمبيوتر لتحسين معدلات توفير طاقة البطارية خلال ساعات الخمول دون التضحية بفترة بدء التشغيل السريع خلال ساعات الاستعمال الأكثر كثافة.",
                     "subTitle2": "اضبط الوقت الذي تستخدم فيه هذا الكمبيوتر عادة",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "عند تمكين وضع الاستعداد الذكي، سيتحول الكمبيوتر إلى وضع الاستعداد الحديث قبل وقت البدء المجدول، ويدخل في وضع الإسبات بعد مرور فترة زمنية معينة لم يسجل خلالها أي نشاط أثناء عمله على طاقة البطارية. يتم تحسين هذه المدة الزمنية استنادًا إلى الجدول الزمني الذي حددته. لا يتحول الكمبيوتر من الإسبات إلى الوضع الاحتياطي الحديث إلا في الأيام المجدولة زمنيًا ولا يتم التحول عند عدم النشاط لعدة أيام متتالية مجدولة زمنيًا."
                 }
             },
             "audio": {
@@ -1531,7 +1531,7 @@
                     "control1": "إعدادات تحكم لوحة اللمس",
                     "control2": "إعدادات تحكم الماوس",
                     "control3": "إعدادات تحكم TRACKPOINT",
-                    "less": "LESS"
+                    "less": "أقل"
                 }
             }
         },
@@ -2824,7 +2824,8 @@
             "popup": {
                 "description": "يمكن أن يؤدي تنفيذ الفحص والإصلاح إلى فقد البيانات. يوصى بعمل نسخة احتياطية قبل تنفيذ هذه العملية. هل تريد بالتأكيد المتابعة؟",
                 "yes": "نعم",
-                "no": "لا"
+                "no": "لا",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
