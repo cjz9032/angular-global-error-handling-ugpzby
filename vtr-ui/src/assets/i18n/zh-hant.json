@@ -3224,5 +3224,22 @@
                 "readLess": "較少內容"
             }
         }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo 獨家提供 Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo 數位優惠"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro 是用於電影、電視和網路的頂尖影片編輯軟體。Premiere Pro 包括的 Premiere Rush 是一款一體成型的應用程式，可在所有裝置上搭配網路共用影片。",
+            "subtitle12": "Creative Cloud 攝影計劃",
+            "body12": "使用 Lightroom，您就可以從任何地方和 Photoshop，為您的照片輕鬆進行編輯、組織、儲存和分享，以及將影像轉換為任何想得到的任何畫面。",
+            "selectButton": "在工具列中選取",
+            "subtitle2": "一體成型：簡化",
+            "body2": "一體成型 PC，搭載第 9 代 Intel® Core™ 處理器，將桌面電腦的所有功能都裝入設計時尚的顯示器中 — 干擾更少，符合硬體安全，以及高解析度顯示器。"
+        }
     }
 }

@@ -14,7 +14,7 @@ export class SmartStandbyGraphComponent implements OnInit {
 	public activities: SmartStandbyActivityModel[];
 	private colors = ['#FFFFFF', '#70B5F1', '#3489DF', '#2B77CC', '#14499C'];
 	private days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
-	private legends = [0, 1, 2, 3, 4];
+	private hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
 	constructor(private http: HttpClient) { }
 
 	ngOnInit() {
@@ -34,12 +34,12 @@ export class SmartStandbyGraphComponent implements OnInit {
 	private renderChart(data: SmartStandbyActivityModel[]) {
 		const element = this.chartContainer.nativeElement;
 		const margin: any = { top: 20, bottom: 20, left: 20, right: 20 };
-		const width = element.offsetWidth - (margin.left - margin.right);
-		const height = element.offsetHeight - (margin.top - margin.bottom);
+		// const width = element.offsetWidth - (margin.left - margin.right);
+		// const height = element.offsetHeight - (margin.top - margin.bottom);
 		const boxWidth = Math.floor(35);
 		const boxHeight = 25;
 		const cellWidth = boxWidth / 4;
-		const hours = data[0].activities.map((d) => d.hour);
+		// const hours = data[0].activities.map((d) => d.hour);
 
 		const svg = d3.select(element).append('svg')
 			.attr('width', element.offsetWidth)
@@ -51,11 +51,11 @@ export class SmartStandbyGraphComponent implements OnInit {
 
 		// x-axis labels
 		chart.selectAll('g')
-			.data(hours)
+			.data(this.hours)
 			.enter()
 			.append('text')
 			.text(d => d)
-			.attr('x', (d) => (boxWidth * (d + 1)) + 9)
+			.attr('x', (d) => (boxWidth * (d + 1) - 8))
 			.attr('y', 0)
 			.attr('text-anchor', 'end')
 			.attr('font-size', 16)
