@@ -121,7 +121,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.windowsActive = this.securityAdvisor.windowsActivation;
 		this.bitLocker = this.securityAdvisor.bitLocker;
 		this.isOnline = this.commonService.isOnline;
-
+		this.statusItem = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingLevel);
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -342,6 +342,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		}
 
 		this.statusItem = item;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingLevel, this.statusItem);
 	}
 
 	fetchCMSArticles() {
