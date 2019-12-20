@@ -14,12 +14,12 @@ export class UiMacrokeyPopupComponent implements OnInit {
 	ngOnInit() {
 		const popupFocus = document.getElementById('close');
 		popupFocus.focus();
-		this.hiddenScroll(true);
+		this.hiddenScroll();
 	}
 
 	submitAction(isConfirm: boolean = false) {
 		this.action.emit(isConfirm);
-		this.hiddenScroll(isConfirm);
+		this.hiddenScroll();
 		document.getElementById('main-wrapper').focus();
 	}
 
@@ -30,11 +30,12 @@ export class UiMacrokeyPopupComponent implements OnInit {
 		}
 	}
 
-	hiddenScroll(action: boolean) {
-		if (action) {
-			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = 'hidden';
+	hiddenScroll() {
+		if ((document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow === 'hidden') {
+			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflowY = 'auto';
+			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflowX = 'hidden';
 		} else {
-			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = '';
+			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = 'hidden';
 		}
 	}
 }

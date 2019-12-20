@@ -79,6 +79,9 @@
 					<li class="pt-3" *ngIf="machineType === 0 && fnLockCapability">
 						<vtr-top-row-functions-ideapad></vtr-top-row-functions-ideapad>
 					</li>
+					<li class="pt-3" *ngIf="backlightCapability$ | async">
+						<vtr-backlight [isLastChild]="!showVoipHotkeysSection && !hasUDKCapability"></vtr-backlight>
+					</li>
 					<li class="pt-3 voip" *ngIf="showVoipHotkeysSection">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.title' | translate"

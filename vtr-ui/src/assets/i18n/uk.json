@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "Сканування й виправлення може призвести до втрати даних. Рекомендуємо зробити резервну копію, перш ніж виконувати цю операцію. Справді продовжити?",
                 "yes": "Так",
-                "no": "Ні",
-                "question": "Are you sure you want to proceed?"
+                "no": "Ні"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3222,23 @@
                 "readMore": "Розгорнути",
                 "readLess": "Згорнути"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Ексклюзивна пропозиція Lenovo на набір Adobe для дизайнерів"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Спеціальна пропозиція від Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro – це провідне програмне забезпечення редагування відео для кіно, телебачення та Інтернету. Premiere Pro включає в себе Premiere Rush, універсальну програму, яка ділиться вашими відео в мережі зі всіх пристроїв.",
+            "subtitle12": "План Creative Cloud Photography",
+            "body12": "Редагуйте, впорядковуйте, зберігайте та забезпечуйте спільний доступ до фотографій будь-звідки з Lightroom. Перетворюйте зображення на все, що можете собі уявити, з Photoshop.",
+            "selectButton": "Вибрати",
+            "subtitle2": "Нові обтічні моноблоки",
+            "body2": "Моноблочні комп'ютери з процесорами Intel® Core™ 9-го покоління пропонують потужність великого ПК в тонкому дисплеї. Вибирайте більше порядку, надійніший апаратний захист і дисплей високої роздільної здатності."
         }
     }
 }

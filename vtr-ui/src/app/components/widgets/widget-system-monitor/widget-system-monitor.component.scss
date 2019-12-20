@@ -277,21 +277,7 @@
 							left: 50%;
 							transform: translate(-50%);
 							top: -4rem;
-							@media #{$breakpoint_sm}{
-								top: 50%;
-								transform: translateY(-50%) translateX(-100%);
-								left: -0.5rem;
-								padding: 2rem;
-								min-width: 15rem;
-								&::after {
-									border-bottom: 2rem solid $gaming_lightest;
-									border-left: 2rem solid transparent;
-									left: calc(100% - 1.15rem);
-									transform: rotate(-45deg);
-									bottom: calc(50% - 1rem);
-								}
-							}
-							@media #{$breakpoint_md}{
+							@media #{$breakpoint_lg}{
 								top: 50%;
 								transform: translateY(-50%) translateX(-100%);
 								left: -0.5rem;
@@ -318,25 +304,8 @@
 							min-width: 20rem;
 							left: 50%;
 							transform: translate(-50%);
-							top: -4rem;
-							@media #{$breakpoint_sm}{
-								top: 50%;
-								transform: translateY(-50%) translateX(0);
-								left: 7rem;
-								padding: 2rem;
-								min-width: 15rem;
-								&::after {
-									border-top: 2rem solid $gaming_lightest;
-									border-right: 2rem solid transparent;
-									border-bottom: none;
-									border-left: none;
-									left: -0.85rem;
-									transform: rotate(-45deg);
-									bottom: calc(50% - 1rem);
-								}
-							}
-
-							@media #{$breakpoint_md}{
+							top: -4rem;						
+							@media #{$breakpoint_lg}{
 								top: 50%;
 								transform: translateY(-50%) translateX(0);
 								left: 7rem;
@@ -958,6 +927,7 @@
 							}
 						}
 					}
+					//hd-item-multiple
 					.hd-item {
 						margin-bottom: 3.4rem;
 						width:100%;
@@ -1001,7 +971,7 @@
 							@media #{$breakpoint_sm}{
 								transform: translate(-50%);
 								left: 50%;
-								min-width:20rem;
+								min-width:28rem;
 							}
 						}
 						&:hover {
