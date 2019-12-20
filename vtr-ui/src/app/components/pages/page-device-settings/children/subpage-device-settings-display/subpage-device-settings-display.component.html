@@ -12,6 +12,11 @@
 	<div class="row">
 		<div class="col">
 			<div class="row py-5 smartsettings-card"
+				*ngIf="eyeCareModeStatus.available
+				       || (displayColorTempDataSource && displayColorTempDataSource.available)
+					   || showECMReset
+					   || privacyGuardCapability
+					   || hasOLEDPowerControlCapability"
 				id="display">
 				<div class="col-12 mx-auto  container-card">
 					<!-- Display -->

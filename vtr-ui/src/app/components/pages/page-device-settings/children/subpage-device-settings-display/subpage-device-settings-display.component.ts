@@ -509,25 +509,26 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 						switch (result) {
 							case 'NotSupport':
 								this.showECMReset = true;
-								return false;
+								this.resetEyecaremodeAllSettings();
+								break;
 							case 'NotAvailable':
+								this.eyeCareModeStatus.available = false;
+								this.displayColorTempDataSource = {
+									available: false
+								};
+								break;
 							case 'Support':
-								return true;
+								this.getSunsetToSunrise();
+								this.getEyeCareModeStatus();
+								this.getDisplayColorTemperature();
+								this.getDaytimeColorTemperature();
+								break;
 							case false:
 							default:
 								return result;
 						}
 					})
-					.then(result => {
-						if (result) {
-							this.getSunsetToSunrise();
-							this.getEyeCareModeStatus();
-							this.getDisplayColorTemperature();
-							this.getDaytimeColorTemperature();
-						} else {
-							this.resetEyecaremodeAllSettings();
-						}
-					}).catch(error => {
+					.catch(error => {
 						this.logger.error('initEyecaremodeSettings', error.message);
 					});
 			}
@@ -1127,6 +1128,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			.then(errorCode => {
 				if (errorCode === 0) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus, 'true');
+					this.eyeCareModeStatus.available = false;
+					this.eyeCareModeCache.available = false;
+					this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 				}
 			});
 	}
