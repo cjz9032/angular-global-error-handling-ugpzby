@@ -220,6 +220,16 @@
 
 :host-context(.is-gaming) {
 	.subpage-settings {
+		::ng-deep .vtr-ui-header-subpage {
+			h2 {
+				&.title {
+					color: $gaming_lightest;
+				}
+			}
+			.caption {
+				color: $gaming_lightest;
+			}
+		}
 		.settings-note {
 			color: $gaming_light_05;
 			background-color: $gaming_darker;
