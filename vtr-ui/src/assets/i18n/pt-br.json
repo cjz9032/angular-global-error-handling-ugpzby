@@ -1375,6 +1375,18 @@
                 "desc": "Esse recurso pausará o vídeo quando você deixar o computador e continuará o vídeo quando você voltar.",
                 "tooltip": "Esse recurso não é aplicável a players de vídeo da Web. Os players de vídeo populares, como o Windows Media Player, 5KPlayer, dentre outros, oferecem suporte a esse recurso."
             },
+            "superResolution": {
+                "heading": "Mídia inteligente",
+                "title": "Upscaling da resolução de vídeo",
+                "desc": "<p><label>Esse recurso aprimora a experiência de reprodução de vídeo, melhorando a resolução de vídeo. Funciona especialmente quando o vídeo está em baixa resolução.</label></p> <p style='margin-top:4px;'><label> Essa função pode afetar a vida útil da bateria, a temperatura da bateria e causar ruídos. Quando ativado, é recomendável conectar o computador à energia CA.</label></p>",
+                "tooltip": "O recurso funciona apenas nos seguintes players: <br/> Windows Media player",
+                "note": {
+                    "description": "Esse recurso não funciona quando:",
+                    "description1": "O computador não está conectado à energia CA e a carga da bateria é inferior a 20%.",
+                    "description2": "O computador não está conectado à energia CA e o modo de economia da bateria está ativado.",
+                    "description3": "A temperatura da CPU está muito alta."
+                }
+            },
             "voice": {
                 "title": "Voz",
                 "description": "O Lenovo Voice ajuda a converter sua voz em texto com a função Voz para texto e oferece tradução em tempo real de voz para textos com a função Tradução.",

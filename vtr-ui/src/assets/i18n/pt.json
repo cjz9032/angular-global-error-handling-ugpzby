@@ -1375,6 +1375,18 @@
                 "desc": "Esta funcionalidade irá colocar o vídeo em pausa quando o utilizador deixar o computador e retomar o vídeo quando este voltar.",
                 "tooltip": "Esta funcionalidade não se aplica a leitores de vídeo Web. Os leitores de vídeo locais populares, tais como o Windows Media Player e o 5KPlayer, entre outros, suportam esta funcionalidade."
             },
+            "superResolution": {
+                "heading": "Multimédia Inteligente",
+                "title": "Melhorar a resolução de vídeo",
+                "desc": "<p><label>Esta funcionalidade melhora a experiência de reprodução de vídeo melhorando a resolução de vídeo. Funciona especialmente quando o vídeo tem uma fraca resolução.</label></p> <p style='margin-top:4px;'><label> Esta função poderá ter impacto na duração da bateria, na temperatura da bateria e causar ruídos. Quando ativada, é recomendado ligar o computador à alimentação CA.</label></p>",
+                "tooltip": "A funcionalidade apenas funciona nos seguintes leitores de vídeo: <br/> Windows Media player",
+                "note": {
+                    "description": "Esta funcionalidade não funciona quando:",
+                    "description1": "O computador não está ligado à alimentação CA e a carga da bateria é inferior a 20%.",
+                    "description2": "O computador não está ligado à alimentação CA e o modo de poupança de bateria está ativado.",
+                    "description3": "A temperatura da CPU é demasiado elevada."
+                }
+            },
             "voice": {
                 "title": "Voz",
                 "description": "O Lenovo Voice ajuda a converter a sua voz em texto através da função Voz em texto e fornece tradução em tempo real da voz para o texto com a função de Tradução.",

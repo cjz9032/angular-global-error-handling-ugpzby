@@ -1375,6 +1375,18 @@
                 "desc": "Cette fonctionnalité interrompra la vidéo lorsque vous quittez l'ordinateur et reprendra sa lecture lorsque vous revenez.",
                 "tooltip": "Cette fonction n'est pas applicable aux lecteurs vidéo Web. Les lecteurs vidéo locaux populaires tels que Windows Media Player, 5KPlayer, etc. prennent en charge cette fonction."
             },
+            "superResolution": {
+                "heading": "Support intelligent",
+                "title": "Mise à l'échelle de la résolution vidéo",
+                "desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label> Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Lorsque cette option est activée, il est recommandé de brancher l'ordinateur à l'alimentation secteur.</label></p>",
+                "tooltip": "Cette fonction s'applique uniquement aux lecteurs suivants : <br/> Windows Media player",
+                "note": {
+                    "description": "Cette fonction est inopérante quand :",
+                    "description1": "L'ordinateur n'est pas branché à l'alimentation secteur et la charge de la batterie est inférieure à 20 %.",
+                    "description2": "L'ordinateur n'est pas branché à l'alimentation secteur et le mode économiseur de batterie est activé.",
+                    "description3": "La température de l'unité centrale est trop élevée."
+                }
+            },
             "voice": {
                 "title": "Voix",
                 "description": "Lenovo Voice vous aide à convertir votre voix en texte avec la fonction de la conversion de la parole en texte et vous offre une traduction en temps réel de la parole en texte grâce à la fonction de traduction.",

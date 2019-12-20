@@ -1375,6 +1375,18 @@
                 "desc": "Denne funksjonen setter videoen på pause når du forlater datamaskinen, og fortsetter avspillingen når du kommer tilbake.",
                 "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
             },
+            "superResolution": {
+                "heading": "Intelligent medieavspilling",
+                "title": "Oppskalering av videooppløsning",
+                "desc": "<p><label>Denne funksjonen gir en bedre videoopplevelse ved å forbedre oppløsningen på videoen. Den fungerer spesielt bra når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label> Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Når den er aktivert, anbefales det at du kobler datamaskinen til strømnettet.</label></p>",
+                "tooltip": "Funksjonen fungerer bare på disse spillerne: <br/> Windows Media player",
+                "note": {
+                    "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
+                    "description1": "Datamaskinen er ikke koblet til strømnettet, og batterinivået er lavere enn 20 %.",
+                    "description2": "Datamaskinen er ikke koblet til strømnettet, og batterisparingsmodus er aktivert.",
+                    "description3": "CPU-temperaturen er for høy."
+                }
+            },
             "voice": {
                 "title": "Tale",
                 "description": "Lenovo Voice hjelper deg med å konvertere stemmen din til tekster med funksjonen for tale på tekst, og gir sann tids oversetting fra tale til tekster med Oversettelses funksjonen.",

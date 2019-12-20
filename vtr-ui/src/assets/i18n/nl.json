@@ -1375,6 +1375,18 @@
                 "desc": "Met deze functie wordt de video gepauzeerd wanneer u weggaat bij de computer en hervat wanneer u terugkeert.",
                 "tooltip": "Deze functie is niet van toepassing op webvideospelers. Populaire lokale videospelers, zoals Windows Media Player, 5KPlayer en dergelijke, ondersteunen deze functie."
             },
+            "superResolution": {
+                "heading": "Intelligente media",
+                "title": "Schaalverhoging beeldschermresolutie",
+                "desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label> Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Als u deze functie inschakelt, wordt het aanbevolen om de computer op de netvoeding aan te sluiten.</label></p>",
+                "tooltip": "Deze functie werkt alleen op de volgende spelers: <br/> Windows Media player",
+                "note": {
+                    "description": "Deze functie werkt niet als:",
+                    "description1": "De computer niet is aangesloten op de netvoeding en de batterij minder dan 20% vermogen heeft.",
+                    "description2": "De computer niet is aangesloten op de netvoeding en de batterijbesparing is ingeschakeld.",
+                    "description3": "De CPU-temperatuur te hoog is."
+                }
+            },
             "voice": {
                 "title": "Spraak",
                 "description": "Lenovo Voice helpt bij het converteren van uw stem naar teksten met de functie Stem naar tekst en biedt realtime vertaling van Stem naar tekst met de vertaalfunctie.",

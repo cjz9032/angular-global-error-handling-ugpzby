@@ -1375,6 +1375,18 @@
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
 				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
 			},
+			"superResolution": {
+                "heading": "Intelligent Media",
+                "title": "Video Resolution Upscaling",
+                "desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution.It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label> This function might impact the battery life,battery temperature,and cause noises.When enabled,it is recommended that you connect your computer with ac power.</label></p>",
+                "tooltip": "This feature works only on the following players: <br/> Windows Media player",
+                "note": {
+                    "description": "The feature does not work when:",
+                    "description1": "The computer is not connected to ac power and the battery power is lower than 20%.",
+                    "description2": "The computer is not connected to ac power and the battery saver mode is enabled.",
+                    "description3": "The CPU temperature is too high."
+                }
+            },
 			"voice": {
 				"title": "Voice",
 				"description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",

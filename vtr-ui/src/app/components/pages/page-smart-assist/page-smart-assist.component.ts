@@ -48,6 +48,10 @@ export class PageSmartAssistComponent implements OnInit {
 	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
 	public isAPSAvailable = false;
+
+	public isSuperResolutionLoading = true;
+	public superResolution = new FeatureStatus(false, true);
+
 	public hpdSensorType = 0;
 	smartAssistCache: SmartAssistCache;
 
@@ -203,6 +207,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.initZeroTouchLogin();
 			this.initIntelligentScreen();
 			this.getVideoPauseResumeStatus();
+			this.getSuperResolutionStatus();
 		} else {
 			if (this.smartAssistCapability.isIntelligentSecuritySupported) {
 				this.intelligentSecurity.isIntelligentSecuritySupported = true;
@@ -220,6 +225,11 @@ export class PageSmartAssistComponent implements OnInit {
 				this.intelligentScreen.isIntelligentScreenVisible = true;
 				this.smartAssistCache.intelligentScreen = this.intelligentScreen;
 				this.initIntelligentScreen();
+			}
+			if(this.smartAssistCapability.isSuperResolutionSupported)
+			{
+				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
+				this.getSuperResolutionStatus();
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}
@@ -552,6 +562,22 @@ export class PageSmartAssistComponent implements OnInit {
 			}
 		} catch (error) {
 			console.error('getHPDSensorType' + error.message);
+		}
+	}
+
+	private getSuperResolutionStatus() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getSuperResolutionStatus()
+					.then((response: FeatureStatus) => {
+						this.isSuperResolutionLoading = false;
+						this.superResolution = response;
+					}).catch(error => {
+						console.error('getSuperResolutionStatus.error', error);
+					});
+			}
+		} catch (error) {
+			console.error('getSuperResolutionStatus' + error.message);
 		}
 	}
 }

@@ -1375,6 +1375,18 @@
                 "desc": "此功能将在离开计算机时暂停视频，并在您回来时重新播放视频。",
                 "tooltip": "此功能不适用于 Web 视频播放器。流行的本地视频播放器（例如 Windows Media Player、5KPlayer 等）均支持此功能。"
             },
+            "superResolution": {
+                "heading": "智能媒体",
+                "title": "提高视频分辨率",
+                "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放体验。尤其在视频分辨率较低时，此功能十分有效。</label></p> <p style='margin-top:4px;'><label> 此功能可能会影响电池寿命、电池温度并产生噪音。启用后，建议您使用交流电源连接计算机。</label></p>",
+                "tooltip": "此功能仅适用于以下播放器：<br/> Windows Media player",
+                "note": {
+                    "description": "此功能在以下情况下无效：",
+                    "description1": "计算机未连接交流电源且电池电量低于 20%。",
+                    "description2": "计算机未连接交流电源且已启用电池省电模式。",
+                    "description3": "CPU 温度过高。"
+                }
+            },
             "voice": {
                 "title": "语音",
                 "description": "联想语音可通过语音转文本功能帮助您将语音转换为文本，并通过翻译功能提供从语音到文本的实时翻译。",

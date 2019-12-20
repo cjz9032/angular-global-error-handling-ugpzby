@@ -1375,6 +1375,18 @@
                 "desc": "Bu özellik, bilgisayarın başından ayrıldığınızda videoyu duraklatır ve geri döndüğünüzde videoyu oynatmaya devam eder.",
                 "tooltip": "Bu özellik, Web üzerindeki video oynatıcılar için geçerli değildir. Windows Media Player ya da 5KPlayer gibi popüler yerel video oynatıcılar bu özelliği destekler."
             },
+            "superResolution": {
+                "heading": "Akıllı Medya",
+                "title": "Video Çözünürlüğünü Yükseltme",
+                "desc": "<p><label>Bu özellik, videoyu çözünürlüğünü iyileştirerek video kayıttan yürütme deneyimini geliştirir. Özellikle video çözünürlüğü düşük olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label> Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Etkinleştirildiğinde, bilgisayarınızı bir AC gücüne bağlamanız önerilir.</label></p>",
+                "tooltip": "Özellik yalnızca şu oynatıcılarda çalışır: <br/> Windows Media player",
+                "note": {
+                    "description": "Bu özellik şu durumlarda çalışmaz:",
+                    "description1": "Bilgisayar AC gücüne bağlı değil ve pil gücü %20'den düşük.",
+                    "description2": "Bilgisayar AC gücüne bağlı değil ve pil tasarrufu kipi etkin.",
+                    "description3": "CPU sıcaklığı çok yüksek."
+                }
+            },
             "voice": {
                 "title": "Ses",
                 "description": "Lenovo Voice, Sesten metne işlevi sayesinde sesinizi metne dönüştürmeye yardımcı olur ve Çeviri işlevi sayesinde sesten metne gerçek zamanlı çeviri sağlar.",

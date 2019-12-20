@@ -1234,4 +1234,13 @@ export class VantageShellMockService {
 
 		return inputControlLinks;
 	}
+
+	public getSuperResolution(): any {
+		const superResolution: any = {
+			getSuperResolutionStatus: this.getPromise({ available: true, status: false }),
+			setSuperResolutionStatus: this.getPromise(true)
+		};
+
+		return superResolution;
+	}
 }

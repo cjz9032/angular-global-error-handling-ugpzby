@@ -1375,6 +1375,18 @@
                 "desc": "Ova funkcija će pauzirati video kada odlazite od računara i nastaviti video kada se vratite.",
                 "tooltip": "Ova funkcija nije primenjiva na Web video plejere. Popularni lokalni video plejeri kao što su Windows Media Player, 5KPlayer itd. podržavaju ovu funkciju."
             },
+            "superResolution": {
+                "heading": "Inteligentni mediji",
+                "title": "Poboljšavanje video rezolucije",
+                "desc": "<p><label>Ova funkcija poboljšava doživljaj video reprodukcije tako što poboljšava video rezoluciju. To je posebno korisno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label> Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Kada je omogućena, preporučuje se da računar povežete na napajanje naizmeničnom strujom.</label></p>",
+                "tooltip": "Funkcija funkcioniše samo u sledećim playerima: <br/> Windows Media player",
+                "note": {
+                    "description": "Ova funkcija ne radi kada:",
+                    "description1": "Računar nije povezan na napajanje naizmeničnom strujom i baterija je niža od 20%.",
+                    "description2": "Računar nije povezan na napajanje naizmeničnom strujom i omogućen je režim uštede baterije.",
+                    "description3": "Temperatura procesora je previsoka."
+                }
+            },
             "voice": {
                 "title": "Glas",
                 "description": "Lenovo Voice pomaže da konvertujete glas u tekst pomoću funkcije Glasa u tekst i pomoću funkcije Prevod obezbeđuje prevod iz glasa u tekst u realnom vremenu.",

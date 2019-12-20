@@ -14,6 +14,11 @@ export class IntelligentMediaComponent implements OnInit {
 	@Input() isLoading = true;
 	@Output() videoPlaybackToggle: EventEmitter<any> = new EventEmitter();
 
+	@Input() isSRChecked = false;
+	@Input() isSRLoading = true;
+	@Input() superResolutionAvailable = false;
+	@Output() superResolutionToggle: EventEmitter<any> = new EventEmitter();
+
 	constructor(
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
@@ -38,6 +43,22 @@ export class IntelligentMediaComponent implements OnInit {
 		} catch (error) {
 			this.logger.error('setVideoPauseResumeStatus' + error.message);
 			return EMPTY;
+		}
+	}
+
+	public setSuperResolutionStatus(event) {
+		this.superResolutionToggle.emit(event.value);
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.setSuperResolutionStatus(event.switchValue)
+					.then((value: boolean) => {
+						console.log('setSuperResolutionStatus.then', value);
+					}).catch(error => {
+						console.error('setSuperResolutionStatus', error);
+					});
+			}
+		} catch (error) {
+			console.error('setSuperResolutionStatus' + error.message);
 		}
 	}
 }

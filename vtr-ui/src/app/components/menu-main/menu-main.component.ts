@@ -506,7 +506,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 						this.smartAssist.getIntelligentScreenVisibility(),
 						this.smartAssist.getAPSCapability(),
 						this.smartAssist.getSensorStatus(),
-						this.smartAssist.getHDDStatus()
+						this.smartAssist.getHDDStatus(),
+						this.smartAssist.getSuperResolutionStatus()
 					])
 						.then((responses: any[]) => {
 							this.logger.info('MenuMainComponent.showSmartAssist : promise then', responses);
@@ -517,6 +518,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 							smartAssistCapability.isIntelligentMediaSupported = responses[3];
 							smartAssistCapability.isIntelligentScreenSupported = responses[4];
 							smartAssistCapability.isAPSSupported = responses[5] && responses[6] && responses[7] > 0;
+							smartAssistCapability.isSuperResolutionSupported = responses[8];
 							this.commonService.setLocalStorageValue(
 								LocalStorageKey.SmartAssistCapability,
 								smartAssistCapability
@@ -529,7 +531,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 								responses[2] ||
 								responses[3].available ||
 								responses[4] ||
-								(responses[5] && responses[6] && responses[7] > 0);
+								(responses[5] && responses[6] && responses[7] > 0) || responses[8].available;
 							// const isAvailable = true;
 							this.commonService.setLocalStorageValue(
 								LocalStorageKey.IsSmartAssistSupported,

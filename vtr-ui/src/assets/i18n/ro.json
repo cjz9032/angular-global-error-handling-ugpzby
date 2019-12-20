@@ -1375,6 +1375,18 @@
                 "desc": "Această funcție întrerupe videoclipul atunci când părăsiți computerul și reia redarea atunci când vă întoarceți.",
                 "tooltip": "Această funcție nu se aplică jucătorilor de jocuri video pe web. Cele mai populare playere video locale, cum ar fi Windows Media Player, 5KPlayer și altele, acceptă această funcție."
             },
+            "superResolution": {
+                "heading": "Medii inteligente",
+                "title": "Mărirea rezoluţiei video",
+                "desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label> Această caracteristică ar putea afecta durata de viaţă a bateriei, temperatura bateriei şi poate provoca zgomote. Atunci când este activată, se recomandă să conectaţi computerul la o sursă de c.a.</label></p>",
+                "tooltip": "Caracteristica funcţionează numai în următoarele playere: <br/> Windows Media player",
+                "note": {
+                    "description": "Această caracteristică nu funcţionează când:",
+                    "description1": "computerul nu este conectat la o sursă de c.a. şi energia bateriei este mai mică de 20%.",
+                    "description2": "computerul nu este conectat la o sursă de c.a. şi modul Economisire baterie este activat.",
+                    "description3": "Temperatura procesorului este prea mare."
+                }
+            },
             "voice": {
                 "title": "Voce",
                 "description": "Lenovo Voice vă ajută să vă convertiți vocea în texte cu ajutorul funcției Voce în text și vă oferă traducere în timp real din voce în texte cu ajutorul funcției Traducere.",

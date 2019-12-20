@@ -1375,6 +1375,18 @@
                 "desc": "Questa funzione metterà in pausa il video quando ci si allontana dal computer e riprenderà la riproduzione del video al rientro dell'utente.",
                 "tooltip": "Questa funzione non è applicabile ai lettori video Web. I principali lettori video locali, come Windows Media Player, 5KPlayer e così via supportano questa funzione."
             },
+            "superResolution": {
+                "heading": "Supporti intelligenti",
+                "title": "Upscaling della risoluzione video",
+                "desc": "<p><label>Questa funzione migliora l'esperienza di riproduzione dei video, aumentandone la risoluzione. Risulta particolarmente efficiente con i video in bassa risoluzione.</label></p> <p style='margin-top:4px;'><label> Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Se abilitata, si consiglia di collegare il computer all'alimentazione CA.</label></p>",
+                "tooltip": "La funzione può essere utilizzata solo sui seguenti lettori: <br/> Windows Media player",
+                "note": {
+                    "description": "Questa funzione non può essere utilizzata quando:",
+                    "description1": "Il computer non è collegato all'alimentazione CA e l'alimentazione della batteria è inferiore al 20%.",
+                    "description2": "Il computer non è collegato all'alimentazione CA ed è abilitata la modalità di risparmio batteria.",
+                    "description3": "La temperatura della CPU è elevata."
+                }
+            },
             "voice": {
                 "title": "Voce",
                 "description": "Lenovo Voice consente di convertire la voce in testo con la funzione \"Voce in testo\" e fornisce una traduzione in tempo reale da voce a testo con la funzione \"Traduzione\".",

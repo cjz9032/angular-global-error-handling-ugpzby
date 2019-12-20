@@ -1375,6 +1375,18 @@
                 "desc": "Diese Funktion pausiert das Video, wenn Sie sich vom Computer entfernen, und spielt es weiter ab, wenn Sie zurück sind.",
                 "tooltip": "Diese Funktion funktioniert nicht bei Web-Videoplayern. Bekannte lokale Videoplayer unterstützen diese Funktion, z. B. Windows Media Player, 5KPlayer etc."
             },
+            "superResolution": {
+                "heading": "Intelligente Medien",
+                "title": "Upscaling der Videoauflösung",
+                "desc": "<p><label>Mit dieser Funktion wird die Videowiedergabe durch Verbesserung der Videoauflösung verbessert, insbesondere bei Videos mit schlechter Auflösung.</label></p> <p style='margin-top:4px;'><label> Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Wenn diese Funktion aktiviert ist, sollten Sie den Computer an die Stromversorgung anschließen.</label></p>",
+                "tooltip": "Die Funktion funktioniert nur bei folgenden Playern: <br/> Windows Media player",
+                "note": {
+                    "description": "Diese Funktion funktioniert nicht, wenn:",
+                    "description1": "Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkustand weniger als 20 % beträgt.",
+                    "description2": "Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkusparmodus aktiviert ist.",
+                    "description3": "Die CPU-Temperatur zu hoch ist."
+                }
+            },
             "voice": {
                 "title": "Sprache",
                 "description": "Lenovo Voice hilft Ihnen dabei, Ihre Stimme mit der Funktion \"Sprache zu Text\" in Text umzuwandeln und bietet mit der Übersetzungsfunktion auch die Echtzeit-Übersetzung von Sprache zu Text.",
