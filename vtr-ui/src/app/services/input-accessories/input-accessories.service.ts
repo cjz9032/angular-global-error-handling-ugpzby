@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { VoipResponse } from '../../data-models/input-accessories/voip.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -266,6 +267,29 @@ export class InputAccessoriesService {
 
 	private booleanPromise(value: boolean): Promise<boolean> {
 		return new Promise((resolve) => resolve(value));
+	}
+
+	// Voiphotkeys Feature
+	public getVoipHotkeysSettings(): Promise<VoipResponse> {
+		try {
+			if (this.voipHotkeys) {
+				return this.voipHotkeys.getVOIPHotkeysSettings();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setVoipHotkeysSettings(selectedApp: number): Promise<VoipResponse> {
+		try {
+			if (this.voipHotkeys) {
+				return this.voipHotkeys.setVOIPHotkeysSettings(selectedApp);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
 	}
 	// To Restart Windows
 	public restartMachine() {
