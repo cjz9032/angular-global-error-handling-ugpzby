@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "Die Durchführung von Scans und Reparaturen kann zu Datenverlust führen. Es wird empfohlen, eine Sicherungskopie zu erstellen, bevor Sie diesen Vorgang ausführen. Möchten Sie wirklich fortfahren?",
                 "yes": "Ja",
-                "no": "Nein",
-                "question": "Are you sure you want to proceed?"
+                "no": "Nein"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

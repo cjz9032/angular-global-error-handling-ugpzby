@@ -49,6 +49,13 @@
 
 	ul.list-group {
 		list-style-type: none;
-		padding-bottom: 3rem;
+		//padding-bottom: 3rem;
+		li {
+			&:last-child {
+				::ng-deep .vtr-ui-switch-row {
+					border-bottom: none !important;
+				}
+			}
+		}
 	}
 }
