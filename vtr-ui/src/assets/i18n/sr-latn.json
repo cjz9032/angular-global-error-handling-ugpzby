@@ -1195,6 +1195,19 @@
                         },
                         "showAdvSettings": "PRIKAŽI NAPREDNE POSTAVKE",
                         "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE"
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP funkcije prečica",
+                        "description": {
+                            "main": "Ova funkcija vam omogućava da se javite na VoIP poziv ili ga odbijete pritiskanjem prečica na tastaturi:",
+                            "f10": "F10: javljanje na poziv",
+                            "f11": "F11: odbijanje ili prekidanje poziva"
+                        },
+                        "tooltip": "Ova funkcija je trenutno podržana samo u aplikacijama Skype for Business 2016 i Microsoft Teams 1.0.<br>Da biste koristili ovu funkciju, prvo morate da preuzmete i instalirate aplikacije.",
+                        "hasInstalledAppsDescription": "Izaberite aplikaciju u kojoj želite da koristite prečice:",
+                        "noInstalledAppsDescription": "Ova funkcija podržava samo dolenavedene aplikacije: ",
+                        "hasInstalledAppsNote": "Napomena: Taster F11 ne može da se koristi za prekidanje poziva u aplikaciji Microsoft Teams 1.0.",
+                        "noInstalledAppsNote": "Napomene: Da biste koristili ovu funkciju, prvo morate da preuzmete i instalirate aplikacije."
                     }
                 },
                 "userDefinedKey": {

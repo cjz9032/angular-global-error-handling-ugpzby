@@ -1195,6 +1195,19 @@
                             "reboot": "YENİDEN YÜKLE",
                             "cancel": "ŞİMDİ DEĞİL"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP Kısayol Tuşları İşlevleri",
+                        "description": {
+                            "main": "Bu özellik, klavyenizdeki kısayol tuşlarına basarak bir VoIP aramasını yanıtlamanızı veya reddetmenizi sağlar:",
+                            "f10": "F10: aramayı yanıtla",
+                            "f11": "F11: aramayı reddet veya kapat"
+                        },
+                        "tooltip": "Şu anda, bu özellik yalnızca Skype Kurumsal 2016 ve Microsoft Teams 1.0'da desteklenmektedir.<br>Bu özelliği kullanmak için önce uygulamaları indirip yüklemeniz gerekir.",
+                        "hasInstalledAppsDescription": "Kısayol tuşlarını kullanmak istediğiniz uygulamayı seçin:",
+                        "noInstalledAppsDescription": "Bu özellik yalnızca aşağıdaki uygulamaları desteklemektedir: ",
+                        "hasInstalledAppsNote": "Not: Microsoft Teams 1.0'da F11 tuşu aramayı kapatmak için kullanılamaz.",
+                        "noInstalledAppsNote": "Not: Bu özelliği kullanmak için önce uygulamaları indirip yüklemeniz gerekir."
                     }
                 },
                 "userDefinedKey": {

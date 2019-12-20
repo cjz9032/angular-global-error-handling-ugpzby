@@ -1195,6 +1195,19 @@
                             "reboot": "VNOVIČNI ZAGON",
                             "cancel": "NE ZDAJ"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funkcije bližnjice VoIP",
+                        "description": {
+                            "main": "S to funkcijo lahko z uporabo bližnjice na tipkovnici sprejmete ali zavrnete klic VoIP:",
+                            "f10": "F10: sprejem klica",
+                            "f11": "F11: zavrnitev ali končanje klica"
+                        },
+                        "tooltip": "Trenutno to funkcija podpirata samo Skype za podjetja 2016 in Microsoft Teams 1.0.<br>Če želite uporabljati to funkcijo, morate najprej prenesti in namestiti programe.",
+                        "hasInstalledAppsDescription": "Izberite program, s katerim želite uporabljati bližnjice:",
+                        "noInstalledAppsDescription": "Ta funkcija podpira samo naslednje programe: ",
+                        "hasInstalledAppsNote": "Opomba: v programu Microsoft Teams 1.0 tipke F11 ni mogoče uporabiti za zaključek klica.",
+                        "noInstalledAppsNote": "Opomba: če želite uporabljati to funkcijo, morate najprej prenesti in namestiti programe."
                     }
                 },
                 "userDefinedKey": {

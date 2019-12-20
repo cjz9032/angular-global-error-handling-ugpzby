@@ -1195,6 +1195,19 @@
                             "reboot": "重新启动",
                             "cancel": "暂不"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP 热键功能",
+                        "description": {
+                            "main": "此功能让您可以通过按键盘上的热键来接听或拒绝 VoIP 电话：",
+                            "f10": "F10：接听电话",
+                            "f11": "F11：拒绝或挂断电话"
+                        },
+                        "tooltip": "目前，仅 Skype for Business 2016 和 Microsoft Teams 1.0 支持此功能。<br>要使用此功能，您需要先下载并安装应用程序。",
+                        "hasInstalledAppsDescription": "选择要在其上使用热键的应用程序：",
+                        "noInstalledAppsDescription": "此功能仅支持以下应用程序：",
+                        "hasInstalledAppsNote": "注意：对于 Microsoft Teams 1.0，F11 键不能用于挂断电话。",
+                        "noInstalledAppsNote": "注意：要使用此功能，您需要先下载并安装应用程序。"
                     }
                 },
                 "userDefinedKey": {

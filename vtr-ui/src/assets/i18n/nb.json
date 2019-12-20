@@ -1195,6 +1195,19 @@
                             "reboot": "START PÅ NYTT",
                             "cancel": "IKKE NÅ"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Hurtigtastfunksjoner for VoIP",
+                        "description": {
+                            "main": "Denne funksjonen lar deg besvare eller avvise VoIP-anrop ved å trykke på hurtigtastene på tastaturet:",
+                            "f10": "F10: Besvar anropet",
+                            "f11": "F11: Avvis anropet eller legg på"
+                        },
+                        "tooltip": "For øyeblikket støttes denne funksjonen bare av Skype for Business 2016 og Microsoft Teams 1.0.<br>Du må laste ned og installere appene før du kan bruke funksjonen.",
+                        "hasInstalledAppsDescription": "Velg appen du vil bruke hurtigtastene i:",
+                        "noInstalledAppsDescription": "Denne funksjonen støtter bare appene under: ",
+                        "hasInstalledAppsNote": "Merk: I Microsoft Teams 1.0 kan F11 ikke brukes til å legge på.",
+                        "noInstalledAppsNote": "Merk: Du må laste ned og installere appene før du kan bruke funksjonen."
                     }
                 },
                 "userDefinedKey": {

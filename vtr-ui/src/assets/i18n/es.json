@@ -1195,6 +1195,19 @@
                             "reboot": "REINICIAR",
                             "cancel": "NO AHORA"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funciones de tecla de acceso directo VoIP",
+                        "description": {
+                            "main": "Esta característica le permite contestar o rechazar una llamada de VoIP pulsando las teclas de acceso directo en el teclado:",
+                            "f10": "F10: contestar la llamada",
+                            "f11": "F11: rechazar o cortar la llamada"
+                        },
+                        "tooltip": "Actualmente, esta característica solo es compatible con Skype for Business 2016 y Microsoft Teams 1.0.<br>Para utilizar la característica, debe descargar e instalar primero las aplicaciones.",
+                        "hasInstalledAppsDescription": "Seleccione la aplicación en la que desea usar las teclas de acceso directo:",
+                        "noInstalledAppsDescription": "Esta característica solo admite las aplicaciones siguientes: ",
+                        "hasInstalledAppsNote": "Nota: para Microsoft Teams 1.0, la tecla F11 no se puede utilizar para cortar la llamada.",
+                        "noInstalledAppsNote": "Nota: para utilizar la característica, debe descargar e instalar primero las aplicaciones."
                     }
                 },
                 "userDefinedKey": {

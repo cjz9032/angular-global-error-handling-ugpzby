@@ -1195,6 +1195,19 @@
                             "reboot": "NEU STARTEN",
                             "cancel": "NICHT JETZT"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP Hotkey-Funktionen",
+                        "description": {
+                            "main": "Mit dieser Funktion können Sie einen VoIP-Anruf durch Drücken der Hotkeys auf Ihrer Tastatur annehmen oder ablehnen:",
+                            "f10": "F10: Anruf annehmen",
+                            "f11": "F11: Anruf ablehnen oder auflegen"
+                        },
+                        "tooltip": "Derzeit wird diese Funktion nur von Skype for Business 2016 und Microsoft Teams 1.0 unterstützt.<br>Um die Funktion nutzen zu können, müssen Sie zuerst die Apps herunterladen und installieren.",
+                        "hasInstalledAppsDescription": "Wählen Sie die App aus, für die Sie die Hotkeys verwenden möchten:",
+                        "noInstalledAppsDescription": "Diese Funktion unterstützt nur folgende Anwendungen: ",
+                        "hasInstalledAppsNote": "Hinweis: Bei Microsoft Teams 1.0 kann die Taste F11 nicht zum Auflegen des Anrufs verwendet werden.",
+                        "noInstalledAppsNote": "Hinweis: Um die Funktion nutzen zu können, müssen Sie zuerst die Apps herunterladen und installieren."
                     }
                 },
                 "userDefinedKey": {
