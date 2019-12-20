@@ -47,9 +47,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 
 	@HostListener('window:focus')
 	onFocus(): void {
-		setTimeout(() => {
+		const id = document.activeElement.id;
+		if (id !== 'sa-av-button-launch-mcafee') {
 			this.antiVirus.refresh();
-		}, 0);
+		}
 	}
 
 	constructor(
@@ -65,7 +66,6 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShell.getSecurityAdvisor();
-		this.securityAdvisor.antivirus.refresh();
 		this.antiVirus = this.securityAdvisor.antivirus;
 		this.fetchCMSArticles();
 		this.isOnline = this.commonService.isOnline;
@@ -205,6 +205,9 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		}).on(phoenix.EventTypes.avMcafeeMetricsEvent, (data) => {
 			this.viewModel.metricsList = this.getMcafeeMetric(this.viewModel.metricsList, data);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeMetricList, this.viewModel.metricsList);
+		}).on(phoenix.EventTypes.avMcafeeTrialUrlEvent, (data) => {
+			this.viewModel.mcafee.trialUrl = data;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeTrialUrl, this.viewModel.mcafee.trialUrl);
 		});
 
 		if (!this.guard.previousPageName.startsWith('Security')) {
