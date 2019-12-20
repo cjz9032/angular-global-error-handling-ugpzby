@@ -2824,8 +2824,7 @@
             "popup": {
                 "description": "يمكن أن يؤدي تنفيذ الفحص والإصلاح إلى فقد البيانات. يوصى بعمل نسخة احتياطية قبل تنفيذ هذه العملية. هل تريد بالتأكيد المتابعة؟",
                 "yes": "نعم",
-                "no": "لا",
-                "question": "Are you sure you want to proceed?"
+                "no": "لا"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

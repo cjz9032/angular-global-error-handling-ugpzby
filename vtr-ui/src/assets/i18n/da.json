@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "Udførelsen af scanning og reparation kan medføre tab af data. Det anbefales, at du tager en sikkerhedskopi, før du udfører denne handling. Er du sikker på, at du vil fortsætte?",
                 "yes": "Ja",
-                "no": "Nej",
-                "question": "Are you sure you want to proceed?"
+                "no": "Nej"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

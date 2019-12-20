@@ -26,13 +26,15 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
 import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
-import { StringBooleanEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
-import { catchError } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
 import { CardService } from 'src/app/services/card/card.service';
+import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
+import { StringBooleanEnum } from '../../data-models/common/common.interface';
+import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -85,6 +87,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		iA4OC41LDE5Mi42IDE5NC44LDE5Mi42IAkJIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=
 		`;
 	gamingLogo = '../../../assets/images/gaming/gaming-logo-small.png';
+	private backlightCapabilitySubscription: Subscription;
 
 	get appsForYouEnum() { return AppsForYouEnum; }
 
@@ -113,6 +116,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		private newFeatureTipService: NewFeatureTipService,
 		private viewContainerRef: ViewContainerRef,
 		public cardService: CardService,
+		private backlightService: BacklightService
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
 	}
@@ -221,6 +225,18 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					this.removeDeviceSettings();
 				}
 			});
+			// this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, false);
+			this.backlightCapabilitySubscription = this.backlightService.backlight.pipe(
+				map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
+				map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY),
+				tap(res => {
+					this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, res);
+				}),
+				catchError(() => {
+					window.localStorage.removeItem(LocalStorageKey.BacklightCapability);
+					return undefined;
+				})
+			).subscribe();
 		}
 
 		const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
@@ -287,6 +303,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
 		if (this.commonMenuSubscription) {
 			this.commonMenuSubscription.unsubscribe();
+		}
+		if (this.backlightCapabilitySubscription) {
+			this.backlightCapabilitySubscription.unsubscribe();
 		}
 	}
 
