@@ -3224,5 +3224,22 @@
                 "readLess": "Ler menos"
             }
         }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Promoção exclusiva da Lenovo: Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Promoção digital da Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro é o principal software de edição de vídeo para cinema, televisão e a Web. O Premiere Pro inclui o Premiere Rush, uma aplicação multifunções que funciona em todos os seus dispositivos para partilhar os seus vídeos com a sua rede.",
+            "subtitle12": "Plano Creative Cloud Photography",
+            "body12": "Utilize o Lightroom para editar, organizar, armazenar e partilhar facilmente as suas fotografias em qualquer lugar, e o Photoshop para poder transformar as suas imagens em tudo aquilo que conseguir imaginar.",
+            "selectButton": "Selecionar",
+            "subtitle2": "Multifunções: otimizado",
+            "body2": "Os PCs All-in-One com processadores Intel® Core™ de 9.ª geração oferecem toda a potência de um desktop com um ecrã elegante para desfrutar de uma segurança baseada em hardware simplificada e um ecrã de alta resolução."
+        }
     }
 }

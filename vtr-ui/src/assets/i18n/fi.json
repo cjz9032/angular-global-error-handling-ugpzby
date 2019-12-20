@@ -3224,5 +3224,22 @@
                 "readLess": "Lue vähemmän"
             }
         }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovon ainutlaatuinen Adobe Designer Suite -tarjous"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovon digitaalinen tarjous"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro on johtava videoiden muokkausohjelmisto elokuvia, TV:tä ja Internetiä varten. Premiere Pro sisältää Premiere Rush -sovelluksen, joka toimii kaikissa laitteissa ja jolla voit jakaa videoita verkostossasi.",
+            "subtitle12": "Creative Cloud Photography -tilaus",
+            "body12": "Lightroom-ohjelman avulla voit helposti muokata, järjestää, tallentaa ja jakaa valokuvia mistä tahansa. Photoshop-ohjelman avulla voit muokata kuvia vain mielikuvitus rajana.",
+            "selectButton": "Valitse",
+            "subtitle2": "Kaikki samassa: virtaviivaistettu",
+            "body2": "9. sukupolven Intel® Core™ -suorittimilla varustetut monitoimitietokoneet ovat tehokkaita pöytäkoneita, joissa on tyylikäs, selkeä ja suuritarkkuuksinen näyttö laitteistoperustaisella suojauksella."
+        }
     }
 }

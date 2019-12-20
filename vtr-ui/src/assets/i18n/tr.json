@@ -3224,5 +3224,22 @@
                 "readLess": "Okumayı Daralt"
             }
         }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Adobe tasarımcı paketi için özel Lenovo teklifi"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo dijital teklifi"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro, film, TV ve web için önde gelen bir video düzenleme yazılımıdır. Premiere Pro, videonuzu ağınızla paylaşmak için tüm cihazlarınızda çalışan Premiere Rush hepsi bir arada uygulamasını içerir.",
+            "subtitle12": "Creative Cloud Fotoğrafçılık planı",
+            "body12": "Fotoğraflarınızı istediğiniz yerden kolayca düzenlemek, organize etmek, depolamak ve paylaşmak için Lightroom'u ve resimlerinizi hayal edebileceğiniz here şeye dönüştürebilmeniz için Photoshop'u kullanın.",
+            "selectButton": "Araç çubuğunda",
+            "subtitle2": "Hepsi Bir Arada: Hızlandırılmış",
+            "body2": "9. Nesil Intel® Core™ işlemcili Hepsi Bir Arada Bilgisayarlar, bir masaüstü bilgisayarın tüm gücünü daha az karmaşa, donanım tabanlı güvenlik ve yüksek çözünürlüklü bir ekran için şık bir ekranda bir araya getirerek sunar."
+        }
     }
 }

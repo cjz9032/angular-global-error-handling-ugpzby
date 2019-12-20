@@ -3224,5 +3224,22 @@
                 "readLess": "Kevesebb"
             }
         }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exkluzív Lenovo-ajánlat: Adobe tervezői csomag"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo digitális ajánlat"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "A Premiere Pro a vezető filmes, TV-s és az internetes videószerkesztő szoftver. A Premiere Pro magában foglalja a Premiere Rush többfunkciós alkalmazást, amely minden eszközön működik, hogy megossza videókat a hálózatban.",
+            "subtitle12": "Creative Cloud fotós előfizetés",
+            "body12": "A Lightroom segítségével bárhonnan könnyen szerkesztheti, rendezheti, tárolhatja és megoszthatja fényképeit, a Photoshop programmal pedig bármivé átalakíthatja őket, amit csak el tud képzelni.",
+            "selectButton": "Válassza ki a",
+            "subtitle2": "All-in-One: Egyszerű",
+            "body2": "Az all-in-one számítógépek a 9. generációs Intel® Core™ processzorral az asztali számítógépek minden előnyét biztosítják egy karcsú kijelzőbe csomagolva – kevesebb rendetlenséggel, hardver alapú biztonsággal és nagy felbontású kijelzővel."
+        }
     }
 }

@@ -1,11 +1,26 @@
-import { Antivirus } from '@lenovo/tan-client-bridge';
+import { Antivirus, McAfeeInfo } from '@lenovo/tan-client-bridge';
 import { AppNotification } from '../common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { TranslateService } from '@ngx-translate/core';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 export class AntivirusCommon {
 	antivirus: Antivirus;
+	mcafee: McAfeeInfo = {
+		localName: 'McAfee LiveSafe',
+		subscription: 'unknown',
+		expireAt: 30,
+		registered: false,
+		trialUrl: 'unknown',
+		features: [],
+		firewallStatus: false,
+		status: false,
+		enabled: false,
+		metrics: [],
+		additionalCapabilities: '',
+	};
 	startTrialDisabled = false;
 	isOnline: boolean;
 	nls = new Map([
@@ -30,7 +45,11 @@ export class AntivirusCommon {
 	]);
 	urlGetMcAfee: string;
 	country: string;
-	constructor(antivirus: Antivirus, isOnline: boolean, private localInfoService: LocalInfoService, public translate: TranslateService, ) {
+	constructor(antivirus: Antivirus,
+		isOnline: boolean,
+		private localInfoService: LocalInfoService,
+		private commonService: CommonService,
+		public translate: TranslateService, ) {
 		if (antivirus) {
 			this.antivirus = antivirus;
 		}
@@ -42,23 +61,32 @@ export class AntivirusCommon {
 			this.country = 'us';
 		});
 		this.urlGetMcAfee = `https://home.mcafee.com/root/campaign.aspx?cid=233426&affid=714&culture=${this.getLanguageIdentifier()}`;
+		const cacheMcafee = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfee);
+		if (cacheMcafee) {
+			this.mcafee = cacheMcafee;
+		}
 	}
 
 	launch() {
-		if (this.antivirus && this.antivirus.mcafee
-			&& !this.antivirus.mcafee.registered
-			&& this.antivirus.mcafee.additionalCapabilities
-			&& this.antivirus.mcafee.additionalCapabilities.includes('OpenWSSInContext')) {
-			this.antivirus.openMcAfeeRegistry().then((response) => {
-				if (response && response.result === false) {
+		if (this.antivirus) {
+			if (this.antivirus.mcafee) {
+				this.mcafee = this.antivirus.mcafee;
+			}
+			if (this.mcafee
+				&& !this.mcafee.registered
+				&& this.mcafee.additionalCapabilities
+				&& this.mcafee.additionalCapabilities.includes('OpenWSSInContext')) {
+				this.antivirus.openMcAfeeRegistry().then((response) => {
+					if (response && response.result === false) {
+						this.antivirus.launch();
+					}
+				}).catch(() => {
 					this.antivirus.launch();
-				}
-			}).catch(() => {
+				});
+			}
+			else {
 				this.antivirus.launch();
-			});
-		}
-		else {
-			this.antivirus.launch();
+			}
 		}
 	}
 

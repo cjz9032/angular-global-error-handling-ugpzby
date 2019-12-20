@@ -7,10 +7,12 @@
 	[backId]="'sa-ws-btn-back'">
 
 	<left-content>
-		<vtr-widget-offline-info *ngIf="!isOnline"
-			[title]="'dashboard.offlineInfo.title' | translate"
-			[isSubtitleVisible]="false"
-			[isButtonVisible]="false"></vtr-widget-offline-info>
+		<div class="col-12 p-0 mb-4" *ngIf="!isOnline">
+			<vtr-widget-offline-info
+				[title]="'dashboard.offlineInfo.title' | translate"
+				[isSubtitleVisible]="false"
+				[isButtonVisible]="false"></vtr-widget-offline-info>
+		</div>
 		<wifi-security [data]="wifiHomeViewModel"
 			[vtrAppSearchScroller]="['search-wifi-security']"
 			[isShowHistory]="isShowHistory"

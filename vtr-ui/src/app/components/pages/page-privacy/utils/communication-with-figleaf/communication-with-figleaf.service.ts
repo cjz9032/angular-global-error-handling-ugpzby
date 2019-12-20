@@ -142,7 +142,7 @@ export class CommunicationWithFigleafService {
 
 	private checkIfFigleafInstalled() {
 		return from(FigleafConnector.checkIfFigleafInstalled()).pipe(
-			map(([checkIfFigleafInstalled, isExitFlowActivate]) => checkIfFigleafInstalled > 0 || JSON.parse(isExitFlowActivate)),
+			map((checkIfFigleafInstalled) => checkIfFigleafInstalled > 0),
 			map((res) => res ? {type: 'testfigleafStatus', status: FigleafState.exit} : throwError('ooops'))
 		);
 	}

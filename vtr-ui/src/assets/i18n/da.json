@@ -3224,5 +3224,22 @@
                 "readLess": "Læs færre"
             }
         }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Eksklusivt tilbud fra Lenovo med Adobe-designerpakke"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitalt Lenovo-tilbud"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro er den førende videoredigeringssoftware til film, tv og internettet. Premiere Pro indeholder Premiere Rush, en alt-i-en-app, der fungerer på tværs af alle dine enheder og kan bruges til at dele din video med dit netværk.",
+            "subtitle12": "Creative Cloud Photography-plan",
+            "body12": "Brug Lightroom til nemt at redigere, organisere, gemme og dele dine billeder, uanset hvor de kommer fra – og brug Photoshop, så du kan omdanne dine billeder til alt, hvad du kan forestille dig.",
+            "selectButton": "Vælg",
+            "subtitle2": "Alt-i-en-computere: strømlinet",
+            "body2": "Alt-i-en-pc'er med 9. generations Intel® Core™-processorer giver dig alle kræfterne i en stationær computer i en slank skærm. Du får mindre rod, hardwarebaseret sikkerhed og en skærm med en høj opløsning."
+        }
     }
 }

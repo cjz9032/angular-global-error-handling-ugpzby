@@ -4,13 +4,26 @@
 	.vtr-page-left-column {
 		background: $shade_lightest;
 
-		.offline-article-item {
-			box-shadow: $drop_shadow;
-			border-radius: $border_radius;
-			background-color: $light;
-			position: relative;
-			overflow: hidden;
+		.offline-article {
+			&:nth-child(even) {
+				padding-left: 2rem;
+			}
+			&:nth-child(odd) {
+				padding-right: 2rem;
+			}
+			@media #{$mediaquery_sm} {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+			.offline-article-item {
+				box-shadow: $drop_shadow;
+				border-radius: $border_radius;
+				background-color: $light;
+				position: relative;
+				overflow: hidden;
+			}
 		}
+
 
 		.quick-access {
 			border-radius: $border_radius;
