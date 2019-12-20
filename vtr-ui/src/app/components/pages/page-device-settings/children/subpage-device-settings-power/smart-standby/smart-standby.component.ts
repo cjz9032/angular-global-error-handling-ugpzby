@@ -58,19 +58,20 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	public showSmartStandby() {
-		this.initSmartStandby();
 		if (this.powerService.isShellAvailable) {
 			this.powerService.getSmartStandbyCapability()
 				.then((response: boolean) => {
 					console.log(' getSmartStandbyCapability response', response);
-					this.smartStandby.isCapable = response;
-					this.cache.isCapable = response;
-					this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
-					if (this.smartStandby.isCapable) {
-						this.setSmartStandbySection();
-					}
+					if (response !== this.smartStandby.isCapable) {
+						this.smartStandby.isCapable = response;
+						this.cache.isCapable = response;
+						this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
+						if (this.smartStandby.isCapable) {
+							this.setSmartStandbySection();
+						}
 
-					this.smartStandbyCapability.emit(this.smartStandby.isCapable);
+						this.smartStandbyCapability.emit(this.smartStandby.isCapable);
+					}
 					this.logger.debug('Trying after 30 seconds for smart standby capability');
 					console.log('Trying after 30 seconds for smart standby capability');
 
@@ -81,9 +82,10 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		}
 	}
 	public getSmartStandbyCapability() {
-		this.showSmartStandby()
+		this.initSmartStandby();
+		this.showSmartStandby();
 		this.smartStandByInterval = setInterval(() => {
-			this.showSmartStandby()
+			this.showSmartStandby();
 		}, 30000);
 	}
 

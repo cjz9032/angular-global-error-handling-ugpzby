@@ -1165,7 +1165,8 @@
                     },
                     "gaugeReset": {
                         "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+						"description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+						"percentNote": "Note: During the process, the battery percentage might fluctuate.",
                         "barCode": "Barcode",
                         "progress": "Progress",
                         "remaining": "Remaining",
