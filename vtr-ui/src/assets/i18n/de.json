@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "Die Durchführung von Scans und Reparaturen kann zu Datenverlust führen. Es wird empfohlen, eine Sicherungskopie zu erstellen, bevor Sie diesen Vorgang ausführen. Möchten Sie wirklich fortfahren?",
                 "yes": "Ja",
-                "no": "Nein",
-                "question": "Are you sure you want to proceed?"
+                "no": "Nein"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3222,23 @@
                 "readMore": "Weiterlesen",
                 "readLess": "Weniger lesen"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exklusives Angebot von Lenovo: Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitales Angebot von Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro ist die führende Videobearbeitungssoftware für Film, TV und Webanwendungen. Premiere Pro enthält Premiere Rush, eine All-in-One-App für alle Ihre Einheiten, mit der Sie Ihre Videos im Netzwerk teilen können.",
+            "subtitle12": "Creative Cloud Foto-Abo",
+            "body12": "Mit Lightroom können Sie Fotos mühelos von überall aus bearbeiten, organisieren, speichern und teilen. Verwenden Sie Photoshop, um Ihre Bilder ganz nach Ihren Vorstellungen zu verwandeln.",
+            "selectButton": "Wählen Sie",
+            "subtitle2": "All-in-Ones: Optimiert",
+            "body2": "All-in-One-PCs mit Intel® Core™-Prozessoren der neunten Generation vereinen die volle Leistung eines Desktop-PCs mit einem schlanken Bildschirm – so profitieren Sie von mehr Übersichtlichkeit, hardwarebasierter Sicherheit und einem hochauflösenden Display."
         }
     }
 }

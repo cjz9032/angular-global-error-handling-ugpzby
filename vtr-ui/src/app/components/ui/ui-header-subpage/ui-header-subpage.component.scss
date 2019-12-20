@@ -8,6 +8,7 @@
 			font-size: $fontsize_xl4;
 			font-weight: $weight_light;
 			margin-bottom: 3rem;
+			opacity: 0.8;
 		}
 	}
 	.caption {
@@ -16,6 +17,7 @@
 		font-weight: $weight_light;
 		line-height: 1.8em;
 		margin-bottom: 2rem;
+		opacity: 0.8;
 	}
 	.left-border {
 		border-left: 0.7rem solid $main;

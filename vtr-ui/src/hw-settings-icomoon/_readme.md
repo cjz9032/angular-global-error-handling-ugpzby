@@ -6,7 +6,7 @@ This folder is required for generating icon files from SVG icons. DO NOT rename 
 
 > Folder location : src\hw-settings-icomoon\app-svg-icons\
 
-If you are adding any new icon to icommon font file, don't forget to copy SVG file in above folder location otherwise when we will be new font file, it will be overwritten.
+If you are adding any new icon to icommon font file, don't forget to copy SVG file in above folder location otherwise when we generate new font file, it will be overwritten.
 
 # Note: No need to copy woff file in assets folder instead copy in `src\hw-settings-icomoon\app-svg-icons\fonts`
 

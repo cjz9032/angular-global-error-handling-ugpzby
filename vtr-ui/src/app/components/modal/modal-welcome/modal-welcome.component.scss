@@ -13,27 +13,34 @@
 	box-shadow: $drop_shadow;
 	padding: 0;
 	position: relative;
-	width: 60rem;
 	max-width: 60rem !important;
-	height: 60rem;
+	max-height: 60rem;
+	height: auto;
 	background: $shade_lightest;
 	overflow: hidden;
 	@media #{$breakpoint_md} {
+		width: 100%;
 		height: 100%;
+	}
+
+	@media #{$breakpoint_sm} {
+		width: 100%;
+		height: 42rem;
 	}
 
 	.card-body {
 		display: flex;
 		flex-flow: column;
 		width: 60rem;
-		height: 60rem;
+		max-height: 60rem;
+		height: auto;
 		@media #{$breakpoint_md} {
 			width: 100%;
 			height: 100%;
 		}
 		@media #{$breakpoint_sm} {
 			width: 100%;
-			height: 100%;
+			height: 42rem;
 		}
 	}
 
@@ -42,11 +49,18 @@
 		background-size: cover;
 		background-position: center;
 		width: 100%;
-		height: 22rem;
+		height: 30rem;
 		flex-shrink: 0;
+		@media #{$breakpoint_sm} {
+			height: 17.6rem;
+		}
 
 		.title-alignment {
-			line-height: 6rem;
+			line-height: 4rem;
+			margin-top: 15rem;
+			@media #{$breakpoint_sm} {
+				margin-top: 3.5rem;
+			}
 
 			.title1 {
 				color: $light;
@@ -97,15 +111,16 @@
 		overflow-y: auto;
 		color: $dark;
 		padding: 3rem 4rem 0;
-		height: 100%;
+		height: auto;
 		font-size: 1.5rem;
 		font-weight: $weight_regular;
 		letter-spacing: 0.05rem;
 		@media #{$breakpoint_md} {
-			padding: 3rem 2rem 0;
+			height: 100%;
 		}
 		@media #{$breakpoint_sm} {
 			padding: 3rem 1rem 0;
+			height: 42rem;
 		}
 
 		img {
@@ -222,30 +237,41 @@
 	.content-page-1 {
 		overflow-y: auto;
 		color: $shade_blue;
-		padding: 3rem 4rem 0;
-		height: 100%;
+		padding: 2rem 7.2rem 0;
+		height: auto;
 		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 		letter-spacing: 0.05rem;
-		text-align: center;
+		text-align: left;
+		@media #{$breakpoint_sm} {
+			width: 100%;
+			height: 100%;
+		}
+		@media #{$breakpoint_sm} {
+			width: 100%;
+			height: 42rem;
+		}
 
 		ul {
-			width: 75%;
+			width: 90%;
 			margin: 0 auto;
 			li {
-				margin-bottom: 1.2rem;
+				margin-bottom: 1rem;
 				text-align: left;
 			}
 		}
 
 		div.row:first-child {
-			margin-bottom: 2rem;
+			margin-bottom: 1.5rem;
 		}
 	}
 
 	.next-btn {
 		padding: 0.5rem 0 1.5rem;
 		flex-shrink: 0;
+		@media #{$breakpoint_md} {
+			margin-top: 1rem;
+		}
 	}
 
 	.vtr-progress-bar {

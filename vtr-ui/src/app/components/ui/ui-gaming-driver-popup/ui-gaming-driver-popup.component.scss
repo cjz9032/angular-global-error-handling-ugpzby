@@ -16,7 +16,7 @@ ui-gaming-driver-popup {
 		top: -14rem;
 	}
 	@media #{$breakpoint_sm} {
-		min-width: 36rem;
+		min-width: 37rem;
 	}
 	@media #{$black-on-white} {
 		background: $high-contrast-grey;
@@ -131,5 +131,14 @@ ui-gaming-driver-popup {
 	#gamingDriverPopup {
 		top:-8rem !important;
 		}
-}
 	}
+.networkboost-driver-popup {
+	#gamingDriverPopup {
+		right:7.5rem!important;
+		top:-11.2rem!important;
+			@media #{$breakpoint_sm} {
+				top:-10.5rem!important;
+			}
+		}
+	}
+}
