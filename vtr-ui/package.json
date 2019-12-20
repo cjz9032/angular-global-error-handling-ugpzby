@@ -7,7 +7,7 @@
 		"build:stage": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=stage",
 		"build:prod": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --prod",
 		"ng": "ng",
-		"start": "ng serve --host 10.119.169.31",
+		"start": "ng serve",
 		"build-serve": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve --prod",
 		"build": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng build --prod",
 		"serve": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng serve",
