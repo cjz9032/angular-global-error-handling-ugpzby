@@ -1214,10 +1214,14 @@
                         "title": "APLICAR"
                     },
                     "website": {
-                        "url": "URL DEL SITIO WEB"
+                        "url": "URL DEL SITIO WEB",
+                        "successMessage": "La configuración se aplicó satisfactoriamente.",
+                        "invalidURLMessage": "Ingrese una URL válida.",
+                        "placeholder": "Empiece con http:// o https://"
                     },
                     "enterText": {
-                        "title": "TEXTO QUE SE INGRESARÁ"
+                        "title": "TEXTO QUE SE INGRESARÁ",
+                        "placeholder": "Escríbalo aquí"
                     }
                 },
                 "fnCtrlKey": {

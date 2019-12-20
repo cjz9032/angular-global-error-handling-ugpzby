@@ -1214,10 +1214,14 @@
                         "title": "BRUK"
                     },
                     "website": {
-                        "url": "NETTADRESSE"
+                        "url": "NETTADRESSE",
+                        "successMessage": "Innstillingene er tatt i bruk.",
+                        "invalidURLMessage": "Angi en gyldig URL-adresse.",
+                        "placeholder": "Start med http:// eller https://"
                     },
                     "enterText": {
-                        "title": "TEKST SOM SKAL SKRIVES INN"
+                        "title": "TEKST SOM SKAL SKRIVES INN",
+                        "placeholder": "Skriv her"
                     }
                 },
                 "fnCtrlKey": {

@@ -1214,10 +1214,14 @@
                         "title": "تطبيق"
                     },
                     "website": {
-                        "url": "عنوان URL لموقع الويب"
+                        "url": "عنوان URL لموقع الويب",
+                        "successMessage": "تم تطبيق الإعدادات بنجاح.",
+                        "invalidURLMessage": "يرجى إدخال عنوان URL صالح.",
+                        "placeholder": "يرجى البدء بـ http:// أو https://"
                     },
                     "enterText": {
-                        "title": "النص الذي يجب إدخاله"
+                        "title": "النص الذي يجب إدخاله",
+                        "placeholder": "يرجى الكتابة هنا"
                     }
                 },
                 "fnCtrlKey": {

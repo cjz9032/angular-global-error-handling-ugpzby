@@ -33,6 +33,14 @@
 		font-weight: $weight_light;
 	}
 
+	.udf-set-success {
+		color: $shade_blue;
+	}
+
+	.udf-set-failed {
+		color: $button_red_start;
+	}
+
 	.button {
 		text-transform: uppercase;
 		height: 5rem;
@@ -148,7 +156,7 @@
 		border-image: none;
 		box-shadow: 0px 0px 2.2rem rgba(0, 0, 0, 0.3);
 		font-size: 1.2rem;
-		font-weight: $weight_medium;
+		font-weight: bold;
 		text-transform: uppercase;
 		text-align: left;
 		color: $shade;
@@ -175,13 +183,15 @@
 		font-size: 1.2rem;
 		padding: 1rem;
 		width: 100%;
+		color: $shade_blue;
 
 		&:hover {
 			outline: $dark;
 		}
 
 		&::placeholder {
-			color: $shade_light;
+			color: $grey_dark;
+			font-size: $caption;
 			font-weight: $weight_medium;
 		}
 	}

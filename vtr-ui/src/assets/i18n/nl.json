@@ -1214,10 +1214,14 @@
                         "title": "TOEPASSEN"
                     },
                     "website": {
-                        "url": "WEBSITE-URL"
+                        "url": "WEBSITE-URL",
+                        "successMessage": "De instellingen zijn toegepast.",
+                        "invalidURLMessage": "Voer een geldige URL in.",
+                        "placeholder": "Begin met http:// of https://"
                     },
                     "enterText": {
-                        "title": "IN TE VOEREN TEKST"
+                        "title": "IN TE VOEREN TEKST",
+                        "placeholder": "Typ hier"
                     }
                 },
                 "fnCtrlKey": {

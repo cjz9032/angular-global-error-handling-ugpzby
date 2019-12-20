@@ -1214,10 +1214,14 @@
                         "title": "VERKSTÄLL"
                     },
                     "website": {
-                        "url": "WEBBADRESS"
+                        "url": "WEBBADRESS",
+                        "successMessage": "Inställningarna har tillämpats.",
+                        "invalidURLMessage": "Ange en giltig webbadress.",
+                        "placeholder": "Börja med http:// eller https://"
                     },
                     "enterText": {
-                        "title": "PLATSHÅLLARE FÖR TEXT"
+                        "title": "PLATSHÅLLARE FÖR TEXT",
+                        "placeholder": "Skriv här"
                     }
                 },
                 "fnCtrlKey": {

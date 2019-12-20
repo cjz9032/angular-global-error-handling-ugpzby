@@ -1214,10 +1214,14 @@
                         "title": "ÜBERNEHMEN"
                     },
                     "website": {
-                        "url": "WEBSITE-URL"
+                        "url": "WEBSITE-URL",
+                        "successMessage": "Die Einstellungen wurden erfolgreich angewendet.",
+                        "invalidURLMessage": "Geben Sie eine gültige URL ein.",
+                        "placeholder": "Starten Sie mit http:// oder https://"
                     },
                     "enterText": {
-                        "title": "EINZUGEBENDER TEXT"
+                        "title": "EINZUGEBENDER TEXT",
+                        "placeholder": "Text hier eingeben"
                     }
                 },
                 "fnCtrlKey": {

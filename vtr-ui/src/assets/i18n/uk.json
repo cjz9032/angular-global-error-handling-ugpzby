@@ -1214,10 +1214,14 @@
                         "title": "ЗАСТОСУВАТИ"
                     },
                     "website": {
-                        "url": "URL-АДРЕСА ВЕБСАЙТУ"
+                        "url": "URL-АДРЕСА ВЕБСАЙТУ",
+                        "successMessage": "Настройки успішно застосовано.",
+                        "invalidURLMessage": "Введіть дійсну URL-адресу.",
+                        "placeholder": "Почніть з http:// або https://"
                     },
                     "enterText": {
-                        "title": "ТЕКСТ ДЛЯ ВВЕДЕННЯ"
+                        "title": "ТЕКСТ ДЛЯ ВВЕДЕННЯ",
+                        "placeholder": "Введіть тут"
                     }
                 },
                 "fnCtrlKey": {

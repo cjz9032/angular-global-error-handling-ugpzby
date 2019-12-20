@@ -1214,10 +1214,14 @@
                         "title": "APLICARE"
                     },
                     "website": {
-                        "url": "ADRESĂ URL SITE"
+                        "url": "ADRESĂ URL SITE",
+                        "successMessage": "Setările au fost aplicate cu succes.",
+                        "invalidURLMessage": "Introduceţi o adresă URL validă.",
+                        "placeholder": "Începeţi cu http:// sau https://"
                     },
                     "enterText": {
-                        "title": "TEXT DE INTRODUS"
+                        "title": "TEXT DE INTRODUS",
+                        "placeholder": "Tastaţi aici"
                     }
                 },
                 "fnCtrlKey": {

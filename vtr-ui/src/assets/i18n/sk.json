@@ -1214,10 +1214,14 @@
                         "title": "POUŽIŤ"
                     },
                     "website": {
-                        "url": "ADRESA URL WEBOVEJ LOKALITY"
+                        "url": "ADRESA URL WEBOVEJ LOKALITY",
+                        "successMessage": "Nastavenia sa úspešne použili.",
+                        "invalidURLMessage": "Zadajte platnú adresu URL.",
+                        "placeholder": "Začnite s http:// alebo https://"
                     },
                     "enterText": {
-                        "title": "TEXT, KTORÝ SA MÁ ZADAŤ"
+                        "title": "TEXT, KTORÝ SA MÁ ZADAŤ",
+                        "placeholder": "Tu napíšte"
                     }
                 },
                 "fnCtrlKey": {

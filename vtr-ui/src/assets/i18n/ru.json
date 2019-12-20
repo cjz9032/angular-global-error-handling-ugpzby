@@ -1214,10 +1214,14 @@
                         "title": "ПРИМЕНИТЬ"
                     },
                     "website": {
-                        "url": "URL-АДРЕС ВЕБ-САЙТА"
+                        "url": "URL-АДРЕС ВЕБ-САЙТА",
+                        "successMessage": "Параметры успешно применены.",
+                        "invalidURLMessage": "Введите действительный URL-адрес.",
+                        "placeholder": "Начните с http:// или https://"
                     },
                     "enterText": {
-                        "title": "ВВОДИМЫЙ ТЕКСТ"
+                        "title": "ВВОДИМЫЙ ТЕКСТ",
+                        "placeholder": "Введите адрес здесь"
                     }
                 },
                 "fnCtrlKey": {

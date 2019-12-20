@@ -1214,10 +1214,14 @@
                         "title": "ALKALMAZÁS"
                     },
                     "website": {
-                        "url": "WEBHELY URL-JE"
+                        "url": "WEBHELY URL-JE",
+                        "successMessage": "A beállítások alkalmazása sikeres.",
+                        "invalidURLMessage": "Adjon meg egy érvényes URL-címet.",
+                        "placeholder": "Kezdje a következő begépelésével: http:// vagy https://"
                     },
                     "enterText": {
-                        "title": "MEGADANDÓ SZÖVEG"
+                        "title": "MEGADANDÓ SZÖVEG",
+                        "placeholder": "Írja be ide"
                     }
                 },
                 "fnCtrlKey": {
