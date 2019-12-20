@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, EventEmitter, NgZone } from '@angular/core';
 import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
-import { Subscription, EMPTY } from 'rxjs';
+import { Subscription, EMPTY, Subject } from 'rxjs';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { ChangeContext } from 'ng5-slider';
@@ -145,6 +145,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	isAllInOneMachineFlag = false;
 	cameraSessionId: Subscription;
 	showECMReset = false;
+	removeJumpLink$ = new Subject();
 
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
@@ -518,6 +519,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 								};
 								break;
 							case 'Support':
+							case undefined:
 								this.getSunsetToSunrise();
 								this.getEyeCareModeStatus();
 								this.getDisplayColorTemperature();
