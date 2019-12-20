@@ -1,7 +1,6 @@
 <ui-gaming-driver-popup id="gamingDriverPopup" tabindex="1" vtrOutsideClick (clickOutside)="onOutsideClick()"
  [attr.aria-label]="'Driver Install Required window'">
 	<div class="modal-body vtr-ui-gaming-driver-popup">
-		<div class="row justify-content-end">
 			<div class="btn-close">
 			<a type="button" class="close" aria-hidden="true" (click)="close()"
 			tabindex="1" (keyup.enter)="close()"
@@ -11,7 +10,6 @@
 					<fa-icon [icon]="['fal', 'times']"></fa-icon>
 			</a>
 			</div>
-		</div>
 		<div class="content-body" role="dialog" aria-labelledby="driver_popup" tabindex="-1">
 			<h1>{{'gaming.dashboard.device.legionEdge.driverPopup.headerText' | translate}}</h1>
 			<p *ngIf="!isLightingText">{{popupText | translate}}</p>
@@ -36,7 +34,8 @@
 				class="cancel-link active" id="gaming_driverPopup_cancel" aria-label="gaming driverPopup cancel" role="link">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
 		</div>
 	</div>
-	<span id="driver_popup" style="visibility: hidden;">{{'gaming.dashboard.device.legionEdge.lightingDriverPopup.text' | translate}}</span>
-	<span id="driver_popup_close" style="visibility: hidden;">close</span>
+	<!--Need input from Raghu on this-->
+	<!-- <span id="driver_popup" style="visibility: hidden;">{{'gaming.dashboard.device.legionEdge.lightingDriverPopup.text' | translate}}</span>
+	<span id="driver_popup_close" style="visibility: hidden;">close</span> -->
 </ui-gaming-driver-popup>
 

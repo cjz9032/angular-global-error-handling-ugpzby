@@ -2267,19 +2267,19 @@
             "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
             "vpnContent": "A Virtual Private Network (VPN) uses encryption to keep your online activity secure and private, and helps prevent hackers from stealing your personal information over Wi-Fi.",
             "windows": "Windows Activation",
-            "goAntivirus": "go to antivirus",
+            "goAntivirus": "go to anti-virus",
             "goFirewall": "go to firewall",
-            "goPassword": "go to passwordManger",
-            "goWifi": "go to wifi-security",
+            "goPassword": "go to password health",
+            "goWifi": "go to wifi security",
             "goVpn": "go to VPN security",
             "haveOwn": "I have my own",
             "visitWindows": "Visit Windows Activation",
             "visitFingerprint": "Visit Fingerprint reader",
             "visitUac": "Visit User Account Control",
             "visitHde": "Visit Hard drive encryption",
-            "haveOwnPassword": "I have my own password manager",
+            "haveOwnPassword": "I have my own password health",
             "haveOwnWifi": "I have my own wifi security",
-            "haveOwnVpn": "I have my own wifi security",
+            "haveOwnVpn": "I have my own VPN security",
             "uac": "User Account Control (UAC)",
             "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
@@ -3148,7 +3148,7 @@
             "systemEvent": "Test aborted because a system event that could compromise the outcome has happened.",
             "systemPasswordProtected": "Device may be password protected. Try disabling the password protection.",
             "popup": {
-                "description": "The execution of scan and repair can cause data loss. It is recommended to make a backup before execute this operation. Are you sure you want to proceed?",
+				"description": "The execution of scan and repair can cause data loss. It is recommended to make a backup before execute this operation. <br> <div class='question'>Are you sure you want to proceed?</div>",
                 "yes": "Yes",
                 "no": "No"
             },
@@ -3222,6 +3222,23 @@
                 "readMore": "Read More",
                 "readLess": "Read Less"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo exclusive offer of Adobe designer suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo digital offer"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro is the leading video editing software for film, TV and the web. Premiere Pro includes Premiere Rush, an all-in-one app that works across all your devices to share your video with your network.",
+            "subtitle12": "Creative Cloud Photography plan",
+            "body12": "Use Lightroom to easily edit, organize, store, and share your photos from anywhere, and Photoshop so you can transform your images to anything you can imagine.",
+            "selectButton": "Select",
+            "subtitle2": "All-in-Ones: Streamlined",
+            "body2": "All-in-One PCs with 9th Gen Intel® Core™ processors give you all the power of a desktop packaged in a sleek display — for less clutter, hardware-based security, and a hi-res display."
         }
     }
 }

@@ -121,7 +121,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.windowsActive = this.securityAdvisor.windowsActivation;
 		this.bitLocker = this.securityAdvisor.bitLocker;
 		this.isOnline = this.commonService.isOnline;
-
+		this.statusItem = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingLevel);
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -143,11 +143,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.showVpn = true;
 		}).finally(() => {
 			this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
-				if (result === 'true') {
-					this.pluginSupport = true;
-				} else {
-					this.pluginSupport = false;
-				}
+				this.pluginSupport = result === 'true';
+			}).catch((e) => {
+				this.pluginSupport = false;
+			}).finally(() => {
 				this.createViewModels();
 			});
 		});
@@ -167,8 +166,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	private refreshAll() {
 		this.securityAdvisor.refresh().then(() => {
-			this.updateViewModels();
-			this.updateStatus();
+			this.ngZone.run(() => {
+				this.updateViewModels();
+				this.updateStatus();
+			});
 		});
 	}
 
@@ -343,6 +344,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		}
 
 		this.statusItem = item;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingLevel, this.statusItem);
 	}
 
 	fetchCMSArticles() {

@@ -1014,7 +1014,7 @@
                             "title3": "Režim vysokého výkonu",
                             "desc3": "Jazdec sa nachádza úplne vľavo. Otáčky ventilátora a povolená teplota povrchu počítača sú vyššie s cieľom zaistiť maximálny výkon."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Niektoré režimy sa môžu automaticky upravovať v rámci širšieho rozsahu výkonu na základe vašej činnosti. Ak chcete vypnúť automatický režim, stlačte kombináciu klávesov Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1108,9 +1108,9 @@
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Pred resetovaním ukazovateľa batérie pripojte počítač k zdroju napájania. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Dokončené: Úspešné vynulovanie.",
+                            "ERROR_SUCCESS": "Dokončené: Reset bol úspešný.",
                             "ERROR_SHUTDOWN": "Zlyhanie: Vypnutie systému.",
-                            "ERROR_LOGOFF": "Zlyhanie: Odhlásenie používateľa.",
+                            "ERROR_LOGOFF": "Zlyhanie: Používateľ sa odhlásil.",
                             "ERROR_BATTERY_REMOVE": "Zlyhanie: Batéria bola vybratá.",
                             "ERROR_BATTERY_REPLACE": "Zlyhanie: Batéria bola vymenená.",
                             "ERROR_AC_DETTACH": "Zlyhanie: Napájací adaptér bol odpojený.",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
                     "subTitle2": "Nastavte čas, v ktorom zvyčajne používate počítač",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie sa optimalizuje podľa vami nastaveného plánu. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie keď sa počas nasledujúcich plánovaných dní nevyužíva."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "OVLÁDACIE PRVKY DOTYKOVÉHO PANELA",
                     "control2": "OVLÁDACIE PRVKY MYŠI",
                     "control3": "OVLÁDACIE PRVKY TRACKPOINT",
-                    "less": "LESS"
+                    "less": "MENEJ"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Nastavenia automatických aktualizácií",
-            "subtitle": "AUTOMATICKÁ INŠTALÁCIA AKTUALIZÁCIÍ",
+            "subtitle": "Automatická inštalácia aktualizácií",
             "critical": {
                 "title": "Kritické aktualizácie",
                 "tooltip": "Kritické aktualizácie môžu zabrániť závažnému problému,významným poruchám, zlyhaniu hardvéru alebo poškodeniu údajov."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "Vykonanie kontroly a opravy môže spôsobiť stratu údajov. Pred vykonaním tejto operácie sa odporúča vytvorenie zálohy. Naozaj to chcete pokračovať?",
                 "yes": "Áno",
-                "no": "Nie"
+                "no": "Nie",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3222,6 +3223,23 @@
                 "readMore": "Ďalšie informácie",
                 "readLess": "Menej informácií"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exkluzívna ponuka spoločnosti Lenovo: nástroje Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitálna ponuka spoločnosti Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro je popredný softvér na úpravu videa na filmové, televízne a webové použitie. Premiere Pro obsahuje aplikáciu Premiere Rush, ktorá ponúka všetky nástroje na jednom mieste, funguje na všetkých vašich zariadeniach a umožňuje zdieľať video v sieti.",
+            "subtitle12": "Plán Creative Cloud Fotografia",
+            "body12": "Pomocou aplikácie Lightroom môžete ľahko upravovať, organizovať, ukladať a zdieľať svoje fotografie odkiaľkoľvek a Photoshop vám ich umožní transformovať na čokoľvek, čo si dokážete predstaviť.",
+            "selectButton": "Vybrať",
+            "subtitle2": "Počítače All-in-One: stolové počítače jednoduchšie",
+            "body2": "Počítače All-in-One s procesormi Intel® Core™ 9. generácie vám poskytnú všetok výkon stolového počítača skrytého v elegantnej obrazovke. Vychutnávajte si väčší poriadok na stole, hardvérového zabezpečenie a obrazovku s vysokým rozlíšením."
         }
     }
 }

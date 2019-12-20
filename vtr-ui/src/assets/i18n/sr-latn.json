@@ -1014,7 +1014,7 @@
                             "title3": "Režim učinka",
                             "desc3": "Klizač je sasvim desno. Brzina ventilatora i dozvoljena temperatura površine više su radi najviših performansi."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Neki od režima se mogu automatski prilagoditi većem opsegu performansi na osnovu vaše aktivnosti. Da biste onemogućili automatski režim, pritisnite kombinaciju tastera Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1108,14 +1108,14 @@
                         "FCCText": "Sa {{before}} Wh na {{after}} Wh",
                         "note": "Napomena: pre nego što resetujete pokazivač napunjenosti baterije, obavezno povežite računar sa napajanjem naizmeničnom strujom. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Završeno: Uspešan reset.",
+                            "ERROR_SUCCESS": "Dovršeno: uspostavljanje početnih vrednosti je uspešno.",
                             "ERROR_SHUTDOWN": "Neuspelo: Sistem se isključio.",
-                            "ERROR_LOGOFF": "Neuspelo: Korisnik se odjavio.",
+                            "ERROR_LOGOFF": "Neuspelo: korisnik se odjavio.",
                             "ERROR_BATTERY_REMOVE": "Neuspelo: Baterija je uklonjena.",
                             "ERROR_BATTERY_REPLACE": "Neuspelo: Baterija je zamenjena.",
                             "ERROR_AC_DETTACH": "Neuspelo: Adapter za naizmeničnu struju je otkačen.",
                             "ERROR_USER_CANCEL": "Neuspelo: Otkazano od strane korisnika.",
-                            "ERROR_UNEXPECTED": "Neuspelo: Došlo je do neočekivane greške."
+                            "ERROR_UNEXPECTED": "Neuspelo: došlo je do neočekivane greške."
                         },
                         "popup": {
                             "description1": "Proces resetovanja je sledeći:<br>napunite bateriju-do kraja  -->  potpuno ispraznite bateriju  -->  ponovo potpuno napunite bateriju",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Ova funkcija zakazuje optimizaciju štednje energije računara tokom časova neaktivnosti bez žrtvovanja vremena bryog pokretanja tokom časova intenzivnijeg korišćenja.",
                     "subTitle2": "Podesite vreme kada obično koristite ovaj računar",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Kad je omogućena funkcija Pametno vreme pripravnosti, računar se prebacuje na funkciju Moderno vreme pripravnosti pre zakazanog vremena POČETKA i ulazi u hibernaciju nakon što neko vreme bude neaktivan a napaja se na bateriju. Taj vremenski period je optimizovan na osnovu rasporeda koji ste podesili. Računar se prebacuje iy stanja hibernacije u moderno stanje pripravnosti samo tokom zakazanih dana, a ne prebacuje se kad je neaktivan tokom uzastopnih zakazanih dana."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "KONTROLE DODIRNE TABLE",
                     "control2": "KONTROLE MIŠA",
                     "control3": "KONTROLE ZA TRACKPOINT",
-                    "less": "LESS"
+                    "less": "MANJE"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Postavke automatskog ažuriranja",
-            "subtitle": "AUTOMATSKI INSTALIRAJ AŽURIRANJA",
+            "subtitle": "Automatski instaliraj ažuriranja",
             "critical": {
                 "title": "Kritična ažuriranja",
                 "tooltip": "Kritična ažuriranja mogu da spreče značajan problem, velike kvarove, greške u hardveru ili oštećenje podataka."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "Izvršenje skeniranja i popravke može da prouzrokuje gubitak podataka. Preporučujemo da napravite rezervnu kopiju pre izvršavanja ove operacije. Želite li zaista da nastavite?",
                 "yes": "Da",
-                "no": "Ne"
+                "no": "Ne",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3222,6 +3223,23 @@
                 "readMore": "Pročitaj više",
                 "readLess": "Pročitaj manje"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo ekskluzivna ponuda Adobe paketa za dizajnere"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo digitalna ponuda"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro je vodeći softver za uređivanje video zapisa za film, TV i veb. Premiere Pro sadrži Premiere Rush, sveobuhvatnu aplikaciju koja radi na svim uređajima i omogućava deljenje video zapisa sa vašom mrežom.",
+            "subtitle12": "Creative Cloud Photography plan",
+            "body12": "Koristite Lightroom da biste lako uređivali, organizovali, čuvali i delili fotografije sa bilo kog mesta, kao i Photoshop pomoću kog možete da transformišete svoje slike u sve što zamislite.",
+            "selectButton": "Izaberi",
+            "subtitle2": "Računari „sve u jednom“: unapređeni",
+            "body2": "Računari „sve u jednom“ sa 9. generacijom Gen Intel® Core™ procesorima pružaju vam svu snagu desktop konfiguracije na tankom ekranu – za manje zatrpavanje, bezbednost na nivou hardvera i prikaz visoke rezolucije."
         }
     }
 }

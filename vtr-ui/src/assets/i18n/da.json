@@ -1014,7 +1014,7 @@
                             "title3": "Ydeevnetilstand",
                             "desc3": "Skyderen er helt til højre. Blæserens hastighed og den tilladte overfladetemperatur er højere for at få den optimale ydeevne."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Nogle af tilstandene kan automatisk justeres over et større ydeevneområde baseret på din aktivitet. Tryk på Fn+ T for at deaktivere automatisk tilstand."
                     }
                 },
                 "powerSettings": {
@@ -1108,9 +1108,9 @@
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fuldført: Nulstilling lykkedes.",
+                            "ERROR_SUCCESS": "Fuldført: Nulstilling udført.",
                             "ERROR_SHUTDOWN": "Mislykkedes: Nedlukning af system.",
-                            "ERROR_LOGOFF": "Mislykkedes: Bruger logget af.",
+                            "ERROR_LOGOFF": "Mislykkedes: Bruger har logget af.",
                             "ERROR_BATTERY_REMOVE": "Mislykkedes: Batteriet blev fjernet.",
                             "ERROR_BATTERY_REPLACE": "Mislykkedes: Batteriet blev udskiftet.",
                             "ERROR_AC_DETTACH": "Mislykkedes: Vekselstrømsadapteren blev fjernet.",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
                     "subTitle2": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "KONTROLELEMENTER PÅ NAVIGATIONSPLADE",
                     "control2": "KONTROLELEMENTER PÅ MUS",
                     "control3": "TRACKPOINT-KONTROLELEMENTER",
-                    "less": "LESS"
+                    "less": "FÆRRE"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Opdater indstillinger automatisk",
-            "subtitle": "INSTALLER OPDATERINGER AUTOMATISK",
+            "subtitle": "Installer opdateringer automatisk",
             "critical": {
                 "title": "Vigtige opdateringer",
                 "tooltip": "Vigtige opdateringer kan forhindre større problemer, alvorlige fejl, hardwarefejl eller ødelæggelse af data."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "Udførelsen af scanning og reparation kan medføre tab af data. Det anbefales, at du tager en sikkerhedskopi, før du udfører denne handling. Er du sikker på, at du vil fortsætte?",
                 "yes": "Ja",
-                "no": "Nej"
+                "no": "Nej",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3222,6 +3223,23 @@
                 "readMore": "Læs flere",
                 "readLess": "Læs færre"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Eksklusivt tilbud fra Lenovo med Adobe-designerpakke"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitalt Lenovo-tilbud"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro er den førende videoredigeringssoftware til film, tv og internettet. Premiere Pro indeholder Premiere Rush, en alt-i-en-app, der fungerer på tværs af alle dine enheder og kan bruges til at dele din video med dit netværk.",
+            "subtitle12": "Creative Cloud Photography-plan",
+            "body12": "Brug Lightroom til nemt at redigere, organisere, gemme og dele dine billeder, uanset hvor de kommer fra – og brug Photoshop, så du kan omdanne dine billeder til alt, hvad du kan forestille dig.",
+            "selectButton": "Vælg",
+            "subtitle2": "Alt-i-en-computere: strømlinet",
+            "body2": "Alt-i-en-pc'er med 9. generations Intel® Core™-processorer giver dig alle kræfterne i en stationær computer i en slank skærm. Du får mindre rod, hardwarebaseret sikkerhed og en skærm med en høj opløsning."
         }
     }
 }

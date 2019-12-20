@@ -51,11 +51,10 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			this.showVpn();
 		});
 		this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
-			if (result === 'true') {
-				this.pluginSupport = true;
-			} else {
-				this.pluginSupport = false;
-			}
+			this.pluginSupport = result === 'true';
+		}).catch((e) => {
+			this.pluginSupport = false;
+		}).finally(() => {
 			this.showUac();
 		});
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
@@ -144,10 +143,11 @@ export class WidgetSecurityStatusComponent implements OnInit {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		setTimeout(() => {
+		const id = document.activeElement.id;
+		if (id !== 'sa-av-button-launch-mcafee') {
 			this.securityAdvisor.refresh();
 			this.showVpn();
-		}, 0);
+		}
 	}
 
 }

@@ -10,7 +10,7 @@
 		<div class="container-fluid">
 			<div class="row"
 				*ngIf="!isOnline">
-				<div class="col col-12 p-0">
+				<div class="col col-12 p-0 pb-40">
 					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
 						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
 						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
@@ -65,8 +65,7 @@
 						[dataSource]="cardContentPositionB.DataSource"
 						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionB.isLocal)"
 						[type]="'corner'"
-						[ratioX]="4"
-						[ratioY]="2"
+						[ratio]="2"
 						[cornerShift]="'large'"
 						[containerCardId]="'dashboard-lnk-content-b'"
 						id="dashboard-card-b"
@@ -85,8 +84,7 @@
 						[actionLink]="cardContentPositionC.ActionLink"
 						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionC.isLocal)"
 						[type]="'corner'"
-						[ratioX]="4"
-						[ratioY]="2"
+						[ratio]="2"
 						[containerCardId]="'dashboard-lnk-content-c'"
 						id="dashboard-card-c"
 						aria-label="dashboard-card-c">
@@ -103,8 +101,7 @@
 						[actionLink]="cardContentPositionD.ActionLink"
 						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionD.isLocal)"
 						[type]="'highlight'"
-						[ratioX]="8"
-						[ratioY]="2"
+						[ratio]="4"
 						[containerCardId]="'dashboard-lnk-content-d'"
 						id="dashboard-card-d"
 						aria-label="dashboard-card-d">
@@ -122,8 +119,7 @@
 						[actionLink]="cardContentPositionE.ActionLink"
 						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionE.isLocal)"
 						[type]="'article'"
-						[ratioX]="4"
-						[ratioY]="4"
+						[ratio]="1"
 						[containerCardId]="'dashboard-lnk-content-e'"
 						id="dashboard-card-e"
 						aria-label="dashboard-card-e">
@@ -141,8 +137,7 @@
 						[actionLink]="cardContentPositionF.ActionLink"
 						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionF.isLocal)"
 						[type]="'article'"
-						[ratioX]="4"
-						[ratioY]="4"
+						[ratio]="1"
 						[containerCardId]="'dashboard-lnk-content-f'"
 						id="dashboard-card-f"
 						aria-label="dashboard-card-f">
@@ -156,7 +151,7 @@
 		<div class="container-fluid">
 			<div class="row"
 				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible">
-				<div class="col-sm-12 col-md-12 pb-60">
+				<div class="col-sm-12 col-md-12 pb-60 px-0">
 					<vtr-widget-dashboard-warranty [item]="warrantyData"
 						[isConnected]="isOnline">
 					</vtr-widget-dashboard-warranty>

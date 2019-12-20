@@ -1014,7 +1014,7 @@
                             "title3": "性能模式",
                             "desc3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "有些模式可以根据您的活动在更广泛的性能范围内进行自动调节。要禁用自动模式，请按 Fn+ T。"
                     }
                 },
                 "powerSettings": {
@@ -1108,7 +1108,7 @@
                         "FCCText": "从 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重置电池电量表之前，请确保将计算机连接到交流电源。",
                         "resetLog": {
-                            "ERROR_SUCCESS": "已完成：已成功重置。",
+                            "ERROR_SUCCESS": "完成：重置已成功完成。",
                             "ERROR_SHUTDOWN": "失败：系统已关闭。",
                             "ERROR_LOGOFF": "失败：用户已注销。",
                             "ERROR_BATTERY_REMOVE": "失败：已卸下电池。",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
                     "subTitle2": "设置通常使用此计算机的时间",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。"
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "触摸板控制",
                     "control2": "鼠标控制",
                     "control3": "TRACKPOINT 控制",
-                    "less": "LESS"
+                    "less": "更少"
                 }
             }
         },
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "执行扫描和修复会导致数据丢失。建议在执行此操作前先进行备份。是否确实要继续？",
                 "yes": "是",
-                "no": "否"
+                "no": "否",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3222,6 +3223,23 @@
                 "readMore": "阅读更多",
                 "readLess": "阅读更少"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo 针对 Adobe Designer Suite 的专享优惠"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo 数码优惠"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro 是用于电影、电视和网络的一流的视频编辑软件。Premiere Pro 包括 Premiere Rush，这是一款一体式应用程序，可在所有设备上搭配使用网络共享视频。",
+            "subtitle12": "Creative Cloud Photography 计划",
+            "body12": "使用 Lightroom 可以从任何地方和 Photoshop，轻松编辑、组织、存储和共享照片，让您可以将图片转变为您可以想象的任何画面。",
+            "selectButton": "选择",
+            "subtitle2": "多功能：简化",
+            "body2": "配备第九代 Intel® Core™ 处理器的一体机，将桌面的所有功能都装入设计时尚的显示屏中 - 干扰更少，具有基于硬件的安全性和高分辨率的显示效果。"
         }
     }
 }

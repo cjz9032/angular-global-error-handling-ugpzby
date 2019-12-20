@@ -1014,7 +1014,7 @@
                             "title3": "Leistungsmodus",
                             "desc3": "Der Schieberegler ist ganz rechts. Lüftergeschwindigkeit und zulässige Oberflächentemperatur sind höher für maximale Leistung."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Einige Modi können je nach Aktivität automatisch über einen größeren Leistungsumfang angepasst werden. Um den Automatikmodus zu deaktivieren, drücken Sie die Tastenkombination Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1108,7 +1108,7 @@
                         "FCCText": "Von {{before}} Wh auf {{after}} Wh",
                         "note": "Hinweis: Vor dem Zurücksetzen des Akkustandsanzeigers muss Ihr Computer an die Stromversorgung angeschlossen werden. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fertig: Erfolgreich zurückgesetzt.",
+                            "ERROR_SUCCESS": "Fertig: Wiederherstellung erfolgreich abgeschlossen.",
                             "ERROR_SHUTDOWN": "Fehlgeschlagen: System heruntergefahren.",
                             "ERROR_LOGOFF": "Fehlgeschlagen: Der Benutzer ist abgemeldet.",
                             "ERROR_BATTERY_REMOVE": "Fehlgeschlagen: Der Akku wurde entfernt.",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Hochfahren bei intensiverer Nutzung beeinträchtigt wird.",
                     "subTitle2": "Typische Nutzungszeiten für diesen Computer festlegen",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird auf Grundlage des von Ihnen festgelegten Zeitplans optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "TOUCHPAD-STEUERUNG",
                     "control2": "MAUS-STEUERUNG",
                     "control3": "TRACKPOINT-STEUERUNG",
-                    "less": "LESS"
+                    "less": "WENIGER"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Einstellungen zur autom. Aktualisierung",
-            "subtitle": "UPDATES AUTOMATISCH INSTALLIEREN",
+            "subtitle": "Updates automatisch installieren",
             "critical": {
                 "title": "Kritische Updates",
                 "tooltip": "Kritische Updates verhindern massive Probleme, schwere Störungen, Hardwarefehler oder Datenbeschädigungen."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "Die Durchführung von Scans und Reparaturen kann zu Datenverlust führen. Es wird empfohlen, eine Sicherungskopie zu erstellen, bevor Sie diesen Vorgang ausführen. Möchten Sie wirklich fortfahren?",
                 "yes": "Ja",
-                "no": "Nein"
+                "no": "Nein",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3222,6 +3223,23 @@
                 "readMore": "Weiterlesen",
                 "readLess": "Weniger lesen"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exklusives Angebot von Lenovo: Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitales Angebot von Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro ist die führende Videobearbeitungssoftware für Film, TV und Webanwendungen. Premiere Pro enthält Premiere Rush, eine All-in-One-App für alle Ihre Einheiten, mit der Sie Ihre Videos im Netzwerk teilen können.",
+            "subtitle12": "Creative Cloud Foto-Abo",
+            "body12": "Mit Lightroom können Sie Fotos mühelos von überall aus bearbeiten, organisieren, speichern und teilen. Verwenden Sie Photoshop, um Ihre Bilder ganz nach Ihren Vorstellungen zu verwandeln.",
+            "selectButton": "Wählen Sie",
+            "subtitle2": "All-in-Ones: Optimiert",
+            "body2": "All-in-One-PCs mit Intel® Core™-Prozessoren der neunten Generation vereinen die volle Leistung eines Desktop-PCs mit einem schlanken Bildschirm – so profitieren Sie von mehr Übersichtlichkeit, hardwarebasierter Sicherheit und einem hochauflösenden Display."
         }
     }
 }

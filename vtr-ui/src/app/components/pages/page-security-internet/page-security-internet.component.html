@@ -7,10 +7,12 @@
 	[backId]="'sa-vpn-btn-back'">
 
 	<left-content>
-		<vtr-widget-offline-info *ngIf="!isOnline"
-			[title]="'dashboard.offlineInfo.title' | translate"
-			[isSubtitleVisible]="false"
-			[isButtonVisible]="false"></vtr-widget-offline-info>
+		<div class="col-12 p-0 mb-4" *ngIf="!isOnline">
+			<vtr-widget-offline-info
+				[title]="'dashboard.offlineInfo.title' | translate"
+				[isSubtitleVisible]="false"
+				[isButtonVisible]="false"></vtr-widget-offline-info>
+		</div>
 		<div class="container-fluid p-0">
 			<div class="row security-card p-20">
 				<div class="container-fluid p-0">
@@ -228,12 +230,11 @@
 						[action]="cardContentPositionA.Action"
 						[actionType]="cardContentPositionA.ActionType"
 						[actionLink]="cardContentPositionA.ActionLink"
-						[type]="'corner-article'"
+						[type]="'subpage-corner'"
 						cornerShift="large"
 						order="1"
 						sideFlag="r"
-						[ratioX]="4"
-						[ratioY]="2"
+						[ratio]="2"
 						[cornerShift]="'large'"
 						[containerCardId]="'sa-vpn-modal'">
 					</vtr-container-card>

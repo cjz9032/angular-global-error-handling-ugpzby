@@ -14,7 +14,7 @@
 							{{'gaming.lightingProfile.lightingProfileHeading.heading.title' | translate}}</h5>
 						<div class="multi-state-toggle">
 							<div class="inner-toggle">
-								
+
 								<input type="radio"
 									value="0"
 									name="lighting-porfile"
@@ -29,18 +29,10 @@
 									[checked]="setprofId===0"
 									(change)="SetProfile($event)"
 									(click)="SetProfile($event)">
-								<label *ngIf="defaultLanguage !== 'fr'" for="off_radio"
-									id="off"
+								<label for="off_radio" id="off"
 									[ngClass]="{'toggle-stable': isPopupVisible && setprofId===0, 'gamingTextColor': setprofId==0}">
 									<span>{{'gaming.lightingProfile.lightingProfileHeading.text1.title' | translate}} </span>
 								</label>
-
-									<label *ngIf="defaultLanguage === 'fr'" title="{{'gaming.lightingProfile.lightingProfileHeading.text1.title' | translate}}" for="off_radio"
-									id="off"
-									[ngClass]="{'toggle-stable': isPopupVisible && setprofId===0, 'gamingTextColor': setprofId==0, 'profile-text' : defaultLanguage === 'fr'}">
-									{{'gaming.lightingProfile.lightingProfileHeading.text1.title' | translate}} </label>
-
-
 								<input type="radio"
 									value="1"
 									name="lighting-porfile"
