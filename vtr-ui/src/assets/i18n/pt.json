@@ -602,9 +602,9 @@
                 "notFound": "Atualização do sistema não encontrada",
                 "detail": {
                     "uptoDate": "Procura de atualizações efetuada ",
-					"updatedOn": "procura efetuada a ",
-					"outdated": "Não foram procuradas atualizações recentemente ",
-					"neverRanUpdate": "nunca foram procuradas atualizações"
+                    "updatedOn": "procura efetuada a ",
+                    "outdated": "Não foram procuradas atualizações recentemente ",
+                    "neverRanUpdate": "nunca foram procuradas atualizações"
                 }
             },
             "extendedWarranty": "Garantia alargada",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "O Arrefecimento Inteligente ajusta a velocidade da ventoinha, o desempenho máximo e administra a vida útil da bateria. Este recurso tem 3 modos (Modo silencioso, Modo Equilibrado e Modo de desempenho) e agora é acessível pelo controle deslizante de desempenho do Windows",
-					"nocqldesc": "O Arrefecimento Inteligente permite ajustar o desempenho e a temperatura do sistema. No modo “Desempenho”, otimiza o desempenho do sistema. No modo “Fresco e silencioso” ajuda a manter o sistema mais fresco e silencioso.",
-					"dytc6": {
+                    "nocqldesc": "O Arrefecimento Inteligente permite ajustar o desempenho e a temperatura do sistema. No modo “Desempenho”, otimiza o desempenho do sistema. No modo “Fresco e silencioso” ajuda a manter o sistema mais fresco e silencioso.",
+                    "dytc6": {
                         "desc1": "O Arrefecimento Inteligente ajusta a velocidade da ventoinha, o desempenho máximo e administra a vida útil da bateria.",
                         "desc2": "A funcionalidade tem os modos abaixo listados e agora está ajustada pelo controlo de deslize de energia de desempenho do Windows. Poderá aceder à funcionalidade ao clicar no ícone de bateria no tabuleiro de sistema do Windows.",
                         "desc3": "Alguns dos modos podem ser ajustados automaticamente ao longo de uma gama mais ampla de desempenho em função da sua atividade. Para ativar o modo automático, prima Fn+T.",
@@ -1267,8 +1267,8 @@
                     "more": "MAIS",
                     "control1": "CONTROLOS DO PAINEL TÁTIL",
                     "control2": "CONTROLOS DO RATO",
-					"control3": "CONTROLOS DO TRACKPOINT",
-					"less": "MENOS"
+                    "control3": "CONTROLOS DO TRACKPOINT",
+                    "less": "MENOS"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Promoção exclusiva da Lenovo: Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Promoção digital da Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro é o principal software de edição de vídeo para cinema, televisão e a Web. O Premiere Pro inclui o Premiere Rush, uma aplicação multifunções que funciona em todos os seus dispositivos para partilhar os seus vídeos com a sua rede.",
+            "subtitle12": "Plano Creative Cloud Photography",
+            "body12": "Utilize o Lightroom para editar, organizar, armazenar e partilhar facilmente as suas fotografias em qualquer lugar, e o Photoshop para poder transformar as suas imagens em tudo aquilo que conseguir imaginar.",
+            "selectButton": "Selecionar",
+            "subtitle2": "Multifunções: otimizado",
+            "body2": "Os PCs All-in-One com processadores Intel® Core™ de 9.ª geração oferecem toda a potência de um desktop com um ecrã elegante para desfrutar de uma segurança baseada em hardware simplificada e um ecrã de alta resolução."
         }
     }
 }

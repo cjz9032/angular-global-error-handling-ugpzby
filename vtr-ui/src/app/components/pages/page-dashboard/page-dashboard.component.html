@@ -17,7 +17,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-12 px-40 pb-20" *ngIf="!deviceService.showDemo">
+				<div class="col-sm-12 px-40 pb-20" [hidden]="canShowDccDemo$ | async">
 					<vtr-widget-carousel [data]="heroBannerItems"
 						order="1"
 						source="title"
@@ -33,7 +33,7 @@
 						link="thumbnailUrl">
 					</vtr-widget-carousel>
 				</div>
-				<div class="col-sm-12 px-40 pb-20" *ngIf="deviceService.showDemo">
+				<div class="col-sm-12 px-40 pb-20" [hidden]="!(canShowDccDemo$ | async)">
 					<vtr-widget-carousel [data]="heroBannerDemoItems"
 						order="1"
 						source="title"

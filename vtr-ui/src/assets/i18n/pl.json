@@ -602,9 +602,9 @@
                 "notFound": "Nie znaleziono aktualizacji systemu",
                 "detail": {
                     "uptoDate": "Aktualizacje sprawdzone ",
-					"updatedOn": "sprawdzone ",
-					"outdated": "Ostatnio nie sprawdzano aktualizacji ",
-					"neverRanUpdate": "nigdy nie sprawdzano aktualizacji"
+                    "updatedOn": "sprawdzone ",
+                    "outdated": "Ostatnio nie sprawdzano aktualizacji ",
+                    "neverRanUpdate": "nigdy nie sprawdzano aktualizacji"
                 }
             },
             "extendedWarranty": "Rozszerz gwarancję",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji. Ta funkcja ma trzy tryby (tryb cichy, tryb zrównoważony i tryb wydajności) i jest teraz dostępna za pomocą suwaka wydajności systemu Windows",
-					"nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”.",
-					"dytc6": {
+                    "nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”.",
+                    "dytc6": {
                         "desc1": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji.",
                         "desc2": "Ta funkcja ma tryby wymienione poniżej, a teraz się ją reguluje za pomocą suwaka wydajności systemu Windows. Aby do niej przejść, kliknij ikonę akumulatora na pasku zadań systemu Windows.",
                         "desc3": "Niektóre tryby mogą się automatycznie dostosowywać w szerszym zakresie wydajności zależnie od Twojej aktywności. Aby włączyć tryb automatyczny, naciśnij kombinację klawiszy Fn+T.",
@@ -1267,8 +1267,8 @@
                     "more": "WIĘCEJ",
                     "control1": "PRZYCISKI PANELU DOTYKOWEGO",
                     "control2": "PRZYCISKI MYSZY",
-					"control3": "PRZYCISKI TRACKPOINTA",
-					"less": "LESS"
+                    "control3": "PRZYCISKI TRACKPOINTA",
+                    "less": "LESS"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Ekskluzywna oferta Lenovo na pakiet narzędzi projektowych Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Cyfrowa oferta Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro to wiodące oprogramowanie do edycji wideo do filmów, telewizji i Internetu. Premiere Pro zawiera Premiere Rush — uniwersalną aplikację działającą na wszystkich urządzeniach, która służy do udostępnia wideo w sieci.",
+            "subtitle12": "Plan fotograficzny Creative Cloud",
+            "body12": "W oprogramowaniu Lightroom można łatwo edytować, porządkować, przechowywać i udostępniać swoje zdjęcia z dowolnego miejsca, a w programie Photoshop można je przekształcać, ograniczając się jedynie wyobraźnią.",
+            "selectButton": "Wybierz",
+            "subtitle2": "Komputery All-in-One: optymalizacja",
+            "body2": "Komputery All-in-One z procesorami Intel® Core™ 9. generacji oferują moc komputera stacjonarnego zamkniętą w eleganckim monitorze. Dzięki temu zyskujesz porządek na biurku, wbudowane zabezpieczenia sprzętowe i ekran o dużej rozdzielczości."
         }
     }
 }

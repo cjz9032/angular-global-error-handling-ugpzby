@@ -602,9 +602,9 @@
                 "notFound": "Mise à jour du système introuvable",
                 "detail": {
                     "uptoDate": "Mises à jour vérifiées ",
-					"updatedOn": "vérification effectuée le ",
-					"outdated": "Mises à jour non vérifiées récemment ",
-					"neverRanUpdate": "mises à jour jamais vérifiées"
+                    "updatedOn": "vérification effectuée le ",
+                    "outdated": "Mises à jour non vérifiées récemment ",
+                    "neverRanUpdate": "mises à jour jamais vérifiées"
                 }
             },
             "extendedWarranty": "Garantie prolongée",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie. Cette fonction dispose de 3 modes (mode silencieux, mode équilibré et mode de performances) et est maintenant accessible par le curseur d'alimentation performances Windows",
-					"nocqldesc": "Le refroidissement intelligent vous permet d'ajuster les performances du système et la température. En mode \"Performance\", il permet d'optimiser les performances du système. En mode \"Frais et silencieux\", il permet de garder le système plus frais ou plus silencieux.",
-					"dytc6": {
+                    "nocqldesc": "Le refroidissement intelligent vous permet d'ajuster les performances du système et la température. En mode \"Performance\", il permet d'optimiser les performances du système. En mode \"Frais et silencieux\", il permet de garder le système plus frais ou plus silencieux.",
+                    "dytc6": {
                         "desc1": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie.",
                         "desc2": "La fonctionnalité propose les modes affichés ci-dessous et se règle maintenant avec le curseur de l'alimentation de performances Windows. Vous pouvez y accéder en cliquant sur l'icône de la batterie dans la barre d'état système Windows.",
                         "desc3": "Certains modes peuvent être réglés automatiquement sur une gamme de performances plus vaste en fonction de votre activité. Pour activer le mode automatique, appuyez sur les touches Fn+T.",
@@ -1267,8 +1267,8 @@
                     "more": "PLUS",
                     "control1": "CONTRÔLES DU PAVÉ TACTILE",
                     "control2": "CONTRÔLE DE LA SOURIS",
-					"control3": "PARAMÈTRES TRACKPOINT",
-					"less": "MOINS"
+                    "control3": "PARAMÈTRES TRACKPOINT",
+                    "less": "MOINS"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Offre Lenovo exclusive de la suite Adobe designer"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Offre numérique Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro est le logiciel de montage vidéo leader pour les films, la télévision et le Web. Premiere Pro inclut Premiere Rush, une application tout-en-un fonctionnant sur tous vos appareils pour partager votre vidéo avec votre réseau.",
+            "subtitle12": "Plan de photographie Creative Cloud",
+            "body12": "Utilisez Lightroom pour facilement retoucher, organiser, stocker et partager vos photos depuis n'importe où, et Photoshop pour transformer vos images en tout ce que vous pouvez imaginer.",
+            "selectButton": "Sélectionner",
+            "subtitle2": "Ordinateurs tout en un : simplifié",
+            "body2": "Les PC tout-en-un dotés de la 9ème génération de processeurs Intel® Core™ vous offrent toute la puissance d'un ordinateur de bureau avec un écran élégant : pour une sécurité basée matériel moins encombrante et un écran haute résolution."
         }
     }
 }

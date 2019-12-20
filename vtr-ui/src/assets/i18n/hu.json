@@ -602,9 +602,9 @@
                 "notFound": "A rendszerfrissítés nem található",
                 "detail": {
                     "uptoDate": "Frissítés keresése ",
-					"updatedOn": "keresés ekkor: ",
-					"outdated": "Nem keresett frissítéseket mostanában ",
-					"neverRanUpdate": "soha nem keresett frissítéseket"
+                    "updatedOn": "keresés ekkor: ",
+                    "outdated": "Nem keresett frissítéseket mostanában ",
+                    "neverRanUpdate": "soha nem keresett frissítéseket"
                 }
             },
             "extendedWarranty": "Jótállás kiterjesztése",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát. A funkció három üzemmóddal rendelkezik (Csendes, Kiegyensúlyozott és Teljesítményközpontú mód). A módok között a Windows teljesítmény beállítására szolgáló csúszkájával lehet váltani",
-					"nocqldesc": "Az intelligens hűtés lehetővé teszi a rendszer teljesítményének és hőmérsékletnek a beállítását. „Teljesítmény” módban optimalizálja a rendszer teljesítményét. „Hűvös és csendes” módban pedig elősegíti, hogy a rendszer hűvösebb vagy csendesebb legyen.",
-					"dytc6": {
+                    "nocqldesc": "Az intelligens hűtés lehetővé teszi a rendszer teljesítményének és hőmérsékletnek a beállítását. „Teljesítmény” módban optimalizálja a rendszer teljesítményét. „Hűvös és csendes” módban pedig elősegíti, hogy a rendszer hűvösebb vagy csendesebb legyen.",
+                    "dytc6": {
                         "desc1": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát.",
                         "desc2": "A funkció az alább felsorolt módokban használható, és már a Windows teljesítmény beállítására szolgáló csúszkájával is beállítható. A Windows tálcáján található akkumulátor ikonra kattintva érhető el.",
                         "desc3": "Néhány mód automatikusan szélesebb teljesítményskálát állíthat be az Ön tevékenysége alapján. Az automatikus mód engedélyezéséhez nyomja meg az Fn+T gombokat.",
@@ -1267,8 +1267,8 @@
                     "more": "TOVÁBBIAK",
                     "control1": "ÉRINTŐFELÜLET VEZÉRLŐELEMEI",
                     "control2": "EGÉR VEZÉRLŐELEMEI",
-					"control3": "TRACKPOINT-VEZÉRLŐK",
-					"less": "KEVESEBB"
+                    "control3": "TRACKPOINT-VEZÉRLŐK",
+                    "less": "KEVESEBB"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exkluzív Lenovo-ajánlat: Adobe tervezői csomag"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo digitális ajánlat"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "A Premiere Pro a vezető filmes, TV-s és az internetes videószerkesztő szoftver. A Premiere Pro magában foglalja a Premiere Rush többfunkciós alkalmazást, amely minden eszközön működik, hogy megossza videókat a hálózatban.",
+            "subtitle12": "Creative Cloud fotós előfizetés",
+            "body12": "A Lightroom segítségével bárhonnan könnyen szerkesztheti, rendezheti, tárolhatja és megoszthatja fényképeit, a Photoshop programmal pedig bármivé átalakíthatja őket, amit csak el tud képzelni.",
+            "selectButton": "Válassza ki a",
+            "subtitle2": "All-in-One: Egyszerű",
+            "body2": "Az all-in-one számítógépek a 9. generációs Intel® Core™ processzorral az asztali számítógépek minden előnyét biztosítják egy karcsú kijelzőbe csomagolva – kevesebb rendetlenséggel, hardver alapú biztonsággal és nagy felbontású kijelzővel."
         }
     }
 }

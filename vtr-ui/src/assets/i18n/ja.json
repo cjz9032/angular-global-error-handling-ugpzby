@@ -602,9 +602,9 @@
                 "notFound": "システム更新が見つかりません",
                 "detail": {
                     "uptoDate": "更新を確認しました",
-					"updatedOn": "確認日",
-					"outdated": "更新を最近確認していません",
-					"neverRanUpdate": "更新を確認したことはありません"
+                    "updatedOn": "確認日",
+                    "outdated": "更新を最近確認していません",
+                    "neverRanUpdate": "更新を確認したことはありません"
                 }
             },
             "extendedWarranty": "保証の延長",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "インテリジェント・クーリングは、ファンの速度、最大パフォーマンスを調整し、バッテリー寿命を管理します。この機能には 3 つのモード (静音モード、バランス・モード、パフォーマンス・モード) があり、Windows パフォーマンスの電源のスライダーからアクセスできるようになっています",
-					"nocqldesc": "インテリジェント冷却により、システムのパフォーマンスと温度を調整できます。「パフォーマンス」モードでは、システムのパフォーマンスが最適化されます。「クール & 静音」モードは、システムをより涼しくまたは静かに保つのに役立ちます。",
-					"dytc6": {
+                    "nocqldesc": "インテリジェント冷却により、システムのパフォーマンスと温度を調整できます。「パフォーマンス」モードでは、システムのパフォーマンスが最適化されます。「クール & 静音」モードは、システムをより涼しくまたは静かに保つのに役立ちます。",
+                    "dytc6": {
                         "desc1": "インテリジェント・クーリングは、ファンの速度、最大パフォーマンスを調整し、バッテリー寿命を管理します。",
                         "desc2": "この機能には以下に示すモードがあり、Windows パフォーマンスの電源スライダーから調整できるようになりました。Windows システム・トレイのバッテリー・アイコンをクリックすることでアクセスできます。",
                         "desc3": "一部のモードでは、動作に基づいてより広範にパフォーマンスを自動調整できます。自動モードを有効にするには、Fn+T を押します。",
@@ -1267,8 +1267,8 @@
                     "more": "詳細",
                     "control1": "タッチパッド・コントロール",
                     "control2": "マウス・コントロール",
-					"control3": "TRACKPOINT 制御",
-					"less": "非表示にする"
+                    "control3": "TRACKPOINT 制御",
+                    "less": "非表示にする"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Adobe デザイナー・スイートの Lenovo 限定特典"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo デジタル特典"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro は、映画、テレビ、Web 向けの主要なビデオ編集ソフトウェアです。Premiere Pro には、すべてのデバイスで機能し、ネットワークでビデオを共有するオールインワン・アプリの Premiere Rush が含まれています。",
+            "subtitle12": "Creative Cloud フォト・プラン",
+            "body12": "Lightroom を使用すれば、どこからでも簡単に写真を編集、整理、保存、共有できます。Photoshop があれば、画像を思い通りに変えることができます。",
+            "selectButton": "ツールバーで",
+            "subtitle2": "オールインワン: 簡素化",
+            "body2": "第 9 世代 Intel® Core™ プロセッサーを搭載したオールインワン PC によって、あらゆるデスクトップの強みが光沢のあるディスプレイに詰め込まれていることで、乱雑さが抑えられ、ハードウェアベースのセキュリティーと高解像度のディスプレイが実現されています。"
         }
     }
 }

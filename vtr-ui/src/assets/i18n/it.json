@@ -602,9 +602,9 @@
                 "notFound": "Aggiornamento sistema non rilevato",
                 "detail": {
                     "uptoDate": "Aggiornamenti controllati ",
-					"updatedOn": "controllati in data ",
-					"outdated": "Aggiornamenti non controllati di recente ",
-					"neverRanUpdate": "aggiornamenti mai controllati"
+                    "updatedOn": "controllati in data ",
+                    "outdated": "Aggiornamenti non controllati di recente ",
+                    "neverRanUpdate": "aggiornamenti mai controllati"
                 }
             },
             "extendedWarranty": "Garanzia estesa",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria. Questa funzione dispone di 3 modalità (silenziosa, bilanciata e prestazioni) ed è ora accessibile dal dispositivo di scorrimento delle prestazioni di Windows",
-					"nocqldesc": "Il raffreddamento intelligente consente di regolare la temperatura e le prestazioni del sistema. In modalità \"Prestazioni\" ottimizza le prestazioni del sistema. In modalità \"Raffreddamento e silenzio\" aiuta a mantenere il sistema più fresco o più silenzioso.",
-					"dytc6": {
+                    "nocqldesc": "Il raffreddamento intelligente consente di regolare la temperatura e le prestazioni del sistema. In modalità \"Prestazioni\" ottimizza le prestazioni del sistema. In modalità \"Raffreddamento e silenzio\" aiuta a mantenere il sistema più fresco o più silenzioso.",
+                    "dytc6": {
                         "desc1": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria.",
                         "desc2": "La funzione presenta le modalità elencate di seguito ed è ora accessibile tramite il dispositivo di scorrimento che regola le prestazioni della Modalità risparmio energia di Windows. È possibile accedervi facendo clic sull'icona della batteria nella barra delle applicazioni di Windows.",
                         "desc3": "Le prestazioni di alcune modalità possono essere regolate automaticamente in base all'attività. Per abilitare la modalità automatica, premere Fn+T.",
@@ -1267,8 +1267,8 @@
                     "more": "ALTRO",
                     "control1": "CONTROLLI TOUCHPAD",
                     "control2": "CONTROLLI MOUSE",
-					"control3": "CONTROLLI TRACKPOINT",
-					"less": "MENO"
+                    "control3": "CONTROLLI TRACKPOINT",
+                    "less": "MENO"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Offerta esclusiva Lenovo di Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Offerta digitale Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro è il software di editing video leader del settore per film, TV e Web. Premiere Pro include Premiere Rush, un'applicazione all-in-one compatibile con tutti i dispositivi, che consente di condividere i video in rete.",
+            "subtitle12": "Piano fotografia Creative Cloud",
+            "body12": "Utilizza Lightroom per modificare, organizzare, archiviare e condividere facilmente le tue foto da qualsiasi luogo e Photoshop per trasformare le tue immagini in tutto ciò che vuoi.",
+            "selectButton": "Selezionare",
+            "subtitle2": "All-in-one semplificato",
+            "body2": "I PC all-in-one con processori Intel® Core™ di nona generazione offrono tutte le potenzialità di un desktop con uno elegante design, per un minor ingombro, una protezione basata sull'hardware e uno schermo ad alta risoluzione."
         }
     }
 }

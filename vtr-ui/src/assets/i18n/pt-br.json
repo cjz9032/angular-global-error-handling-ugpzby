@@ -602,9 +602,9 @@
                 "notFound": "Atualização do sistema não encontrada",
                 "detail": {
                     "uptoDate": "Atualizações verificadas ",
-					"updatedOn": "verificadas em ",
-					"outdated": "Atualizações não verificadas recentemente ",
-					"neverRanUpdate": "atualizações nunca verificadas"
+                    "updatedOn": "verificadas em ",
+                    "outdated": "Atualizações não verificadas recentemente ",
+                    "neverRanUpdate": "atualizações nunca verificadas"
                 }
             },
             "extendedWarranty": "Garantia estendida",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria. Este recurso possui 3 modos (modo Silencioso, Equilibrado e de Desempenho) e agora pode ser acessado pelo controle deslizante de energia de desempenho do Windows",
-					"nocqldesc": "O Resfriamento Inteligente permite ajustar o desempenho do sistema e a temperatura térmica. No modo \"Desempenho\", ele otimiza o desempenho do sistema. Enquanto ajuda a manter o sistema mais frio ou mais silencioso no modo \"Refrigerado e silencioso\".",
-					"dytc6": {
+                    "nocqldesc": "O Resfriamento Inteligente permite ajustar o desempenho do sistema e a temperatura térmica. No modo \"Desempenho\", ele otimiza o desempenho do sistema. Enquanto ajuda a manter o sistema mais frio ou mais silencioso no modo \"Refrigerado e silencioso\".",
+                    "dytc6": {
                         "desc1": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria.",
                         "desc2": "O recurso tem os modos listados abaixo e agora é ajustado pelo controle deslizante de energia de desempenho do Windows. Você pode acessá-lo clicando no ícone da bateria na bandeja do sistema do Windows.",
                         "desc3": "Alguns dos modos podem ser ajustados automaticamente em uma gama mais ampla de desempenho com base em sua atividade. Para ativar o modo automático, pressione Fn+T.",
@@ -1267,8 +1267,8 @@
                     "more": "MAIS",
                     "control1": "CONTROLES DO TOUCHPAD",
                     "control2": "CONTROLES DO MOUSE",
-					"control3": "CONTROLES DE TRACKPOINT",
-					"less": "MENOS"
+                    "control3": "CONTROLES DE TRACKPOINT",
+                    "less": "MENOS"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Oferta exclusiva da Lenovo do pacote para designers da Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Oferta digital da Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "O Premiere Pro é o principal software de edição de vídeo para filmes, TV e Web. O Premiere Pro inclui o Premiere Rush, um aplicativo all-in-one que funciona em todos seus dispositivos para compartilhar seu vídeo com sua rede.",
+            "subtitle12": "Plano de Fotografia da Creative Cloud",
+            "body12": "Use o Lightroom para editar, organizar, armazenar e compartilhar facilmente suas fotos de qualquer lugar e o Photoshop para transformar suas imagens em qualquer coisa que você puder imaginar.",
+            "selectButton": "Selecionar",
+            "subtitle2": "All-in-ones: simplificados",
+            "body2": "Os PCs all-in-one com os processadores Intel® Core™ de 9ª geração oferecem todo o poder de um desktop com uma tela elegante – para menos confusão, segurança baseada em hardware e uma tela de alta resolução."
         }
     }
 }

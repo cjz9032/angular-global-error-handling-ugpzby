@@ -602,9 +602,9 @@
                 "notFound": "System Update nicht gefunden",
                 "detail": {
                     "uptoDate": "Updates geprüft ",
-					"updatedOn": "geprüft am ",
-					"outdated": "Updates wurden zuletzt nicht geprüft ",
-					"neverRanUpdate": "updates wurden nie geprüft"
+                    "updatedOn": "geprüft am ",
+                    "outdated": "Updates wurden zuletzt nicht geprüft ",
+                    "neverRanUpdate": "updates wurden nie geprüft"
                 }
             },
             "extendedWarranty": "Garantieverlängerung",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer. Diese Funktion hat drei Modi (Ruhiger Modus, Ausbalancierter Modus und Leistungsmodus) und kann nun über den Windows-Schieberegler für Leistung geändert werden",
-					"nocqldesc": "Mithilfe der intelligenten Kühlung können Sie die Systemleistung und ‑temperatur anpassen. Im Modus \"Leistung\" wird die Systemleistung optimiert. Im Modus \"Kühl und leise\" werden Systemtemperatur und Lüftergeräusche optimiert.",
-					"dytc6": {
+                    "nocqldesc": "Mithilfe der intelligenten Kühlung können Sie die Systemleistung und ‑temperatur anpassen. Im Modus \"Leistung\" wird die Systemleistung optimiert. Im Modus \"Kühl und leise\" werden Systemtemperatur und Lüftergeräusche optimiert.",
+                    "dytc6": {
                         "desc1": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer.",
                         "desc2": "Die Funktion verfügt über die unten aufgeführten Modi und wird nun über den Windows-Leistungsregler angepasst. Sie können darauf zugreifen, indem Sie auf das Akkusymbol in der Windows-Taskleiste klicken.",
                         "desc3": "Einige Modi können je nach Aktivität automatisch über einen größeren Leistungsumfang angepasst werden. Um den Automatikmodus zu aktivieren, drücken Sie die Tastenkombination FN+T.",
@@ -1267,8 +1267,8 @@
                     "more": "MEHR",
                     "control1": "TOUCHPAD-STEUERUNG",
                     "control2": "MAUS-STEUERUNG",
-					"control3": "TRACKPOINT-STEUERUNG",
-					"less": "WENIGER"
+                    "control3": "TRACKPOINT-STEUERUNG",
+                    "less": "WENIGER"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exklusives Angebot von Lenovo: Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitales Angebot von Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro ist die führende Videobearbeitungssoftware für Film, TV und Webanwendungen. Premiere Pro enthält Premiere Rush, eine All-in-One-App für alle Ihre Einheiten, mit der Sie Ihre Videos im Netzwerk teilen können.",
+            "subtitle12": "Creative Cloud Foto-Abo",
+            "body12": "Mit Lightroom können Sie Fotos mühelos von überall aus bearbeiten, organisieren, speichern und teilen. Verwenden Sie Photoshop, um Ihre Bilder ganz nach Ihren Vorstellungen zu verwandeln.",
+            "selectButton": "Wählen Sie",
+            "subtitle2": "All-in-Ones: Optimiert",
+            "body2": "All-in-One-PCs mit Intel® Core™-Prozessoren der neunten Generation vereinen die volle Leistung eines Desktop-PCs mit einem schlanken Bildschirm – so profitieren Sie von mehr Übersichtlichkeit, hardwarebasierter Sicherheit und einem hochauflösenden Display."
         }
     }
 }

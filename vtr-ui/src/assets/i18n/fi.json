@@ -602,9 +602,9 @@
                 "notFound": "Järjestelmän päivitystä ei löydy",
                 "detail": {
                     "uptoDate": "Päivitykset tarkistettu ",
-					"updatedOn": "tarkistuspäivä ",
-					"outdated": "Päivityksiä ei ole tarkistettu äskettäin ",
-					"neverRanUpdate": "päivityksiä ei ole koskaan tarkistettu"
+                    "updatedOn": "tarkistuspäivä ",
+                    "outdated": "Päivityksiä ei ole tarkistettu äskettäin ",
+                    "neverRanUpdate": "päivityksiä ei ole koskaan tarkistettu"
                 }
             },
             "extendedWarranty": "Laajenna takuu",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa. Tämä ominaisuus sisältää kolme tilaa (hiljainen tila, tasapainotettu tila ja suorituskykytila), ja se on nyt käytettävissä Windowsissa näkyvällä suorituskyvyn ohjauksen liukusäätimellä",
-					"nocqldesc": "Älykäs jäähdytys -toiminnon avulla voit säätää järjestelmän suorituskykyä ja lämpötilaa. \"Suorituskykytilassa\" se optimoi järjestelmän suorituskykyä. Toisaalta se auttaa pitämään järjestelmän viileämpänä tai hiljaisempana \"Viileä ja hiljainen\" -tilassa.",
-					"dytc6": {
+                    "nocqldesc": "Älykäs jäähdytys -toiminnon avulla voit säätää järjestelmän suorituskykyä ja lämpötilaa. \"Suorituskykytilassa\" se optimoi järjestelmän suorituskykyä. Toisaalta se auttaa pitämään järjestelmän viileämpänä tai hiljaisempana \"Viileä ja hiljainen\" -tilassa.",
+                    "dytc6": {
                         "desc1": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa.",
                         "desc2": "Tämän ominaisuuden kolme toimintatilaa on lueteltu jäljempänä. Sitä säädetään Windowsissa näkyvällä liukusäätimellä, jolla ohjataan suorituskykyä. Liukusäätimen saa käyttöön napsauttamalla Windowsin järjestelmäalueella näkyvää akun kuvaketta.",
                         "desc3": "Jotkin toimintatilat voivat säätyä automaattisesti laajemman suorituskykyskaalan sisällä eri toimintojen mukaan. Jos haluat ottaa käyttöön automaattisen tilan, paina Fn+T-näppäinyhdistelmää.",
@@ -1267,8 +1267,8 @@
                     "more": "ENEMMÄN",
                     "control1": "KOSKETUSLEVYN OHJAIMET",
                     "control2": "HIIRITOIMINNOT",
-					"control3": "TRACKPOINT-TOIMINNOT",
-					"less": "VÄHEMMÄN"
+                    "control3": "TRACKPOINT-TOIMINNOT",
+                    "less": "VÄHEMMÄN"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovon ainutlaatuinen Adobe Designer Suite -tarjous"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovon digitaalinen tarjous"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro on johtava videoiden muokkausohjelmisto elokuvia, TV:tä ja Internetiä varten. Premiere Pro sisältää Premiere Rush -sovelluksen, joka toimii kaikissa laitteissa ja jolla voit jakaa videoita verkostossasi.",
+            "subtitle12": "Creative Cloud Photography -tilaus",
+            "body12": "Lightroom-ohjelman avulla voit helposti muokata, järjestää, tallentaa ja jakaa valokuvia mistä tahansa. Photoshop-ohjelman avulla voit muokata kuvia vain mielikuvitus rajana.",
+            "selectButton": "Valitse",
+            "subtitle2": "Kaikki samassa: virtaviivaistettu",
+            "body2": "9. sukupolven Intel® Core™ -suorittimilla varustetut monitoimitietokoneet ovat tehokkaita pöytäkoneita, joissa on tyylikäs, selkeä ja suuritarkkuuksinen näyttö laitteistoperustaisella suojauksella."
         }
     }
 }

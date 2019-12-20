@@ -17,18 +17,6 @@
 	@media #{$mediaquery_xl} {
 		//	padding-top: 13rem;
 	}
-	&::before {
-		content: "";
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		position: absolute;
-		width: 100%;
-		background: url(/assets/images/gaming/GamingTopImage.jpg) center center no-repeat;
-		background-size: 100%;
-		opacity: 0.15;
-	}
 	&--navigation-block {
 		padding: 5rem $padding_side 2rem $padding_side;
 	}

@@ -602,9 +602,9 @@
                 "notFound": "Aktualizácia systému sa nenašla",
                 "detail": {
                     "uptoDate": "Aktualizácie boli skontrolované ",
-					"updatedOn": "skontrolované ",
-					"outdated": "Aktualizácie neboli dlho kontrolované ",
-					"neverRanUpdate": "aktualizácie neboli nikdy kontrolované"
+                    "updatedOn": "skontrolované ",
+                    "outdated": "Aktualizácie neboli dlho kontrolované ",
+                    "neverRanUpdate": "aktualizácie neboli nikdy kontrolované"
                 }
             },
             "extendedWarranty": "Rozšíriť záruku",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie. Táto funkcia má 3 režimy (tichý režim, vyvážený režim a režim vysokého výkonu) a teraz je dostupná prostredníctvom jazdca na nastavenie výkonu systému Windows",
-					"nocqldesc": "Inteligentné chladenie vám umožňuje nastaviť výkon systému a teplotu. V režime „Vysoký výkon“ sa optimalizuje výkon systému. Zatiaľ čo režim „Chladný a tichý“ pomáha zaistiť, aby bol systém chladnejší a tichší.",
-					"dytc6": {
+                    "nocqldesc": "Inteligentné chladenie vám umožňuje nastaviť výkon systému a teplotu. V režime „Vysoký výkon“ sa optimalizuje výkon systému. Zatiaľ čo režim „Chladný a tichý“ pomáha zaistiť, aby bol systém chladnejší a tichší.",
+                    "dytc6": {
                         "desc1": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie.",
                         "desc2": "Režimy funkcie sú uvedené nižšie a momentálne ich možno upraviť pomocou jazdca nastavenia výkonu systému Windows. Prístup k nemu získate kliknutím na ikonu batérie na systémovej lište Windows.",
                         "desc3": "Niektoré režimy sa môžu automaticky upravovať v rámci širšieho rozsahu výkonu na základe vašej činnosti. Ak chcete povoliť automatický režim, stlačte kombináciu klávesov Fn+T.",
@@ -1267,8 +1267,8 @@
                     "more": "VIAC",
                     "control1": "OVLÁDACIE PRVKY DOTYKOVÉHO PANELA",
                     "control2": "OVLÁDACIE PRVKY MYŠI",
-					"control3": "OVLÁDACIE PRVKY TRACKPOINT",
-					"less": "MENEJ"
+                    "control3": "OVLÁDACIE PRVKY TRACKPOINT",
+                    "less": "MENEJ"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exkluzívna ponuka spoločnosti Lenovo: nástroje Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitálna ponuka spoločnosti Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro je popredný softvér na úpravu videa na filmové, televízne a webové použitie. Premiere Pro obsahuje aplikáciu Premiere Rush, ktorá ponúka všetky nástroje na jednom mieste, funguje na všetkých vašich zariadeniach a umožňuje zdieľať video v sieti.",
+            "subtitle12": "Plán Creative Cloud Fotografia",
+            "body12": "Pomocou aplikácie Lightroom môžete ľahko upravovať, organizovať, ukladať a zdieľať svoje fotografie odkiaľkoľvek a Photoshop vám ich umožní transformovať na čokoľvek, čo si dokážete predstaviť.",
+            "selectButton": "Vybrať",
+            "subtitle2": "Počítače All-in-One: stolové počítače jednoduchšie",
+            "body2": "Počítače All-in-One s procesormi Intel® Core™ 9. generácie vám poskytnú všetok výkon stolového počítača skrytého v elegantnej obrazovke. Vychutnávajte si väčší poriadok na stole, hardvérového zabezpečenie a obrazovku s vysokým rozlíšením."
         }
     }
 }

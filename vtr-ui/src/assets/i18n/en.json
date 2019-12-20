@@ -790,27 +790,27 @@
 						}
 					},
 					"dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T.",
-                        "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
-                        },
-                        "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
-                        }
-                    },
+						"desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+						"desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+						"desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+						"desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T.",
+						"autoMode": {
+							"title1": "Auto Battery mode",
+							"desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+							"title2": "Auto Performance mode",
+							"desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+							"title3": "Performance mode",
+							"desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+						},
+						"manualMode": {
+							"title1": "Quiet mode",
+							"desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+							"title2": "Balanced mode",
+							"desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+							"title3": "Performance mode",
+							"desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+						}
+					},
 					"nonintelligentCooling": {
 						"options": {
 							"intelligentCooling": "INTELLIGENT COOLING",
@@ -1290,11 +1290,11 @@
 						"url": "WEBSITE URL",
 						"successMessage": "The setting is applied successfully.",
 						"invalidURLMessage": "Please input a valid URL.",
-						"placeholder":"Please start with http:// or https://"
+						"placeholder": "Please start with http:// or https://"
 					},
 					"enterText": {
 						"title": "TEXT TO BE ENTERED",
-						"placeholder":"Please type here"
+						"placeholder": "Please type here"
 					},
 					"dropDown": {
 						"title": "ACTION USER DEFINED KEY",
@@ -1359,16 +1359,16 @@
 						"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
 					},
 					"facialRecognition": {
-                        "title": "FACIAL RECOGNITION",
-                        "caption": "You can enable the facial recognition feature and allow it to access your camera. This tool captures your image in order to accurately recognize your presence or detect when you have left your device unattended. This data is processed locally on your device. Lenovo does not access or use it.",
-                        "checkBox": "Turn on the camera and enable this feature",
-                        "note": {
-                            "permission": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                            "privacyMode": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                            "windowsLink": "Go to Windows Settings to give access",
-                            "privacyLink": "Go to Camera privacy mode to turn it off"
-                        }
-                    }
+						"title": "FACIAL RECOGNITION",
+						"caption": "You can enable the facial recognition feature and allow it to access your camera. This tool captures your image in order to accurately recognize your presence or detect when you have left your device unattended. This data is processed locally on your device. Lenovo does not access or use it.",
+						"checkBox": "Turn on the camera and enable this feature",
+						"note": {
+							"permission": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+							"privacyMode": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+							"windowsLink": "Go to Windows Settings to give access",
+							"privacyLink": "Go to Camera privacy mode to turn it off"
+						}
+					}
 				},
 				"distanceSensitivityAdjusting": {
 					"title": "DISTANCE SENSITIVITY ADJUSTING",
@@ -1470,17 +1470,17 @@
 				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
 			},
 			"superResolution": {
-                "heading": "Intelligent Media",
-                "title": "Video Resolution Upscaling",
-                "desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution.It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label> This function might impact the battery life,battery temperature,and cause noises.When enabled,it is recommended that you connect your computer with ac power.</label></p>",
-                "tooltip": "This feature works only on the following players: <br/> Windows Media player",
-                "note": {
-                    "description": "The feature does not work when:",
-                    "description1": "The computer is not connected to ac power and the battery power is lower than 20%.",
-                    "description2": "The computer is not connected to ac power and the battery saver mode is enabled.",
-                    "description3": "The CPU temperature is too high."
-                }
-            },
+				"heading": "Intelligent Media",
+				"title": "Video Resolution Upscaling",
+				"desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution.It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label> This function might impact the battery life,battery temperature,and cause noises.When enabled,it is recommended that you connect your computer with ac power.</label></p>",
+				"tooltip": "This feature works only on the following players: <br/> Windows Media player",
+				"note": {
+					"description": "The feature does not work when:",
+					"description1": "The computer is not connected to ac power and the battery power is lower than 20%.",
+					"description2": "The computer is not connected to ac power and the battery saver mode is enabled.",
+					"description3": "The CPU temperature is too high."
+				}
+			},
 			"voice": {
 				"title": "Voice",
 				"description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
@@ -2429,7 +2429,7 @@
 		},
 		"question5": {
 			"title": "Use your PC like a tablet",
-			 "description": "<div class='faqInFs4Fb'>Use your PC like a tablet</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touch screen device.</p>\n<h3 class='faqInFs25FbP10'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet mode</strong> .</p>\n<p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 class='faqInFs25FbP10'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, andhow the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of thescreen.</p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.Select the <strong>Start </strong>button, select <strong>Settings </strong>><strong>System </strong>> <strong>Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n<h3 class='faqInFs25FbP10'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n<li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n<li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then drag it to one side to snap it into your divided screen.</li>\n<li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+			"description": "<div class='faqInFs4Fb'>Use your PC like a tablet</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touch screen device.</p>\n<h3 class='faqInFs25FbP10'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet mode</strong> .</p>\n<p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 class='faqInFs25FbP10'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, andhow the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of thescreen.</p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.Select the <strong>Start </strong>button, select <strong>Settings </strong>><strong>System </strong>> <strong>Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n<h3 class='faqInFs25FbP10'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n<li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n<li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then drag it to one side to snap it into your divided screen.</li>\n<li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
 			"heading1": "Use tablet mode",
 			"para2": {
 				"span1": "To turn on tablet mode, select",
@@ -2746,6 +2746,23 @@
 				"readMore": "Read More",
 				"readLess": "Read Less"
 			}
+		}
+	},
+	"dcc": {
+		"heroBanner": {
+			"description": "Lenovo exclusive offer of Adobe designer suite"
+		},
+		"menuText": {
+			"lenovoDigitalOffer": "Lenovo digital offer"
+		},
+		"dccDetails": {
+			"subtitle11": "Premiere Pro",
+			"body11": "Premiere Pro is the leading video editing software for film, TV and the web. Premiere Pro includes Premiere Rush, an all-in-one app that works across all your devices to share your video with your network.",
+			"subtitle12": "Creative Cloud Photography plan",
+			"body12": "Use Lightroom to easily edit, organize, store, and share your photos from anywhere, and Photoshop so you can transform your images to anything you can imagine.",
+			"selectButton": "Select",
+			"subtitle2": "All-in-Ones: Streamlined",
+			"body2": "All-in-One PCs with 9th Gen Intel® Core™ processors give you all the power of a desktop packaged in a sleek display — for less clutter, hardware-based security, and a hi-res display."
 		}
 	}
 }

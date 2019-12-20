@@ -602,9 +602,9 @@
                 "notFound": "找不到系統更新",
                 "detail": {
                     "uptoDate": "已檢查更新",
-					"updatedOn": "檢查時間",
-					"outdated": "最近未檢查更新",
-					"neverRanUpdate": "從未檢查過更新"
+                    "updatedOn": "檢查時間",
+                    "outdated": "最近未檢查更新",
+                    "neverRanUpdate": "從未檢查過更新"
                 }
             },
             "extendedWarranty": "延長保固",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。此功能有 3 種模式（安靜模式、平衡模式和效能模式），而且現在可以透過 Windows 效能電源滑桿進行操作",
-					"nocqldesc": "您可以使用智慧型冷卻功能，調整系統效能與散熱溫度。在「效能」模式下調整，使系統效能達到最佳化。而且可在「冷卻及靜音」模式下調整，維持更低溫或更安靜的系統。",
-					"dytc6": {
+                    "nocqldesc": "您可以使用智慧型冷卻功能，調整系統效能與散熱溫度。在「效能」模式下調整，使系統效能達到最佳化。而且可在「冷卻及靜音」模式下調整，維持更低溫或更安靜的系統。",
+                    "dytc6": {
                         "desc1": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。",
                         "desc2": "此功能具有下列模式，而且現在可透過 Windows 效能電源滑桿進行調整。按一下 Windows 系統匣中的電池圖示即可存取。",
                         "desc3": "部分模式可以根據您的活動在更大的效能範圍內自動調整。若要啟用自動模式，請按 Fn+T。",
@@ -1248,7 +1248,7 @@
                     "apply": {
                         "title": "套用"
                     },
-                   "website": {
+                    "website": {
                         "url": "網站 URL",
                         "successMessage": "已成功套用設定。",
                         "invalidURLMessage": "請輸入有效的 URL。",
@@ -1267,8 +1267,8 @@
                     "more": "其他資訊",
                     "control1": "觸控板控制項",
                     "control2": "滑鼠控制項",
-					"control3": "TRACKPOINT 控制項",
-					"less": "較少"
+                    "control3": "TRACKPOINT 控制項",
+                    "less": "較少"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo 獨家提供 Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo 數位優惠"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro 是用於電影、電視和網路的頂尖影片編輯軟體。Premiere Pro 包括的 Premiere Rush 是一款一體成型的應用程式，可在所有裝置上搭配網路共用影片。",
+            "subtitle12": "Creative Cloud 攝影計劃",
+            "body12": "使用 Lightroom，您就可以從任何地方和 Photoshop，為您的照片輕鬆進行編輯、組織、儲存和分享，以及將影像轉換為任何想得到的任何畫面。",
+            "selectButton": "在工具列中選取",
+            "subtitle2": "一體成型：簡化",
+            "body2": "一體成型 PC，搭載第 9 代 Intel® Core™ 處理器，將桌面電腦的所有功能都裝入設計時尚的顯示器中 — 干擾更少，符合硬體安全，以及高解析度顯示器。"
         }
     }
 }

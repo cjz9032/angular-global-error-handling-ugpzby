@@ -1,6 +1,6 @@
 <div class="vtr-page-{{pageCssClass}} vtr-page container-fluid page-content-bg">
 	<div class="row vtr-page-header">
-		<div class="col vtr-col page-header-bg" [ngClass]="{'dcc': deviceService.showDemo}">
+		<div class="col vtr-col" [ngStyle]="{background: dccService.headerBackground}">
 			<div class="container">
 				<vtr-header-main [title]="pageTitle" [back]="backLinkText" [parentPath]="parentPath"
 					[menuItems]="menuItems" [forwardLink]="" [textId]="textId"></vtr-header-main>

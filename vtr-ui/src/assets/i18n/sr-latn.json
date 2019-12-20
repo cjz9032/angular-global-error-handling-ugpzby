@@ -602,9 +602,9 @@
                 "notFound": "Ažuriranje sistema nije pronađeno",
                 "detail": {
                     "uptoDate": "Ispravke su proverene ",
-					"updatedOn": "provereno ",
-					"outdated": "Ispravke nisu nedavno proverene ",
-					"neverRanUpdate": "ispravke nikada nisu proverene"
+                    "updatedOn": "provereno ",
+                    "outdated": "Ispravke nisu nedavno proverene ",
+                    "neverRanUpdate": "ispravke nikada nisu proverene"
                 }
             },
             "extendedWarranty": "Proširenje garancije",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije. Ova funkcija ima 3 režima (tihi režim, balansirani režim i režim performansi) i sada je pristupačna pomoću klizača za performanse napajanja sistema Windows",
-					"nocqldesc": "Inteligentno hlađenje vam omogućava da podesite performanse sistema i temperaturu. U režimu „Performanse“ ono optimizuje performanse sistema. Istovremeno pomaže da sistem bude hladniji ili tiši u režimu „Hladan i tih“",
-					"dytc6": {
+                    "nocqldesc": "Inteligentno hlađenje vam omogućava da podesite performanse sistema i temperaturu. U režimu „Performanse“ ono optimizuje performanse sistema. Istovremeno pomaže da sistem bude hladniji ili tiši u režimu „Hladan i tih“",
+                    "dytc6": {
                         "desc1": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije.",
                         "desc2": "Ova funkcija ima režime navedene u nastavku i sada je prilagođava klizač za performanse napajanja operativnog sistema Windows. Možete joj pristupiti tako što ćete kliknuti na ikonu baterije na Windows sistemskoj paleti.",
                         "desc3": "Neki od režima se mogu automatski prilagoditi većem opsegu performansi na osnovu vaše aktivnosti. Da biste omogućili automatski režim, pritisnite kombinaciju tastera Fn+T.",
@@ -1267,8 +1267,8 @@
                     "more": "VIŠE",
                     "control1": "KONTROLE DODIRNE TABLE",
                     "control2": "KONTROLE MIŠA",
-					"control3": "KONTROLE ZA TRACKPOINT",
-					"less": "MANJE"
+                    "control3": "KONTROLE ZA TRACKPOINT",
+                    "less": "MANJE"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo ekskluzivna ponuda Adobe paketa za dizajnere"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo digitalna ponuda"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro je vodeći softver za uređivanje video zapisa za film, TV i veb. Premiere Pro sadrži Premiere Rush, sveobuhvatnu aplikaciju koja radi na svim uređajima i omogućava deljenje video zapisa sa vašom mrežom.",
+            "subtitle12": "Creative Cloud Photography plan",
+            "body12": "Koristite Lightroom da biste lako uređivali, organizovali, čuvali i delili fotografije sa bilo kog mesta, kao i Photoshop pomoću kog možete da transformišete svoje slike u sve što zamislite.",
+            "selectButton": "Izaberi",
+            "subtitle2": "Računari „sve u jednom“: unapređeni",
+            "body2": "Računari „sve u jednom“ sa 9. generacijom Gen Intel® Core™ procesorima pružaju vam svu snagu desktop konfiguracije na tankom ekranu – za manje zatrpavanje, bezbednost na nivou hardvera i prikaz visoke rezolucije."
         }
     }
 }

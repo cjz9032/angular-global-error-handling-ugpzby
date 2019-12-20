@@ -28,7 +28,6 @@ export class DeviceService {
 	private isGamingDashboardLoaded = false;
 	public machineInfo: any;
 	public showSearch = false;
-	public showDemo = false;
 	public machineType: number;
 	constructor(
 		private shellService: VantageShellService,
@@ -47,7 +46,6 @@ export class DeviceService {
 		this.initIsArm();
 		this.initshowPrivacy();
 		this.initShowSearch();
-		this.initShowDemo();
 	}
 
 	private initIsArm() {
@@ -100,17 +98,6 @@ export class DeviceService {
 				this.showSearch = ((searchFeature || '').toString() === 'true');
 			}, (error) => {
 				this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
-			});
-		}
-	}
-
-	private initShowDemo() {
-		const filter: Promise<any> = this.shellService.calcDeviceFilter('{"var":"DeviceTags.System.Demo"}');
-		if (filter) {
-			filter.then((hyp) => {
-				if (hyp === 'CES-2019') {
-					this.showDemo = true;
-				}
 			});
 		}
 	}

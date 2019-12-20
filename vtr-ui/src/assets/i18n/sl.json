@@ -602,9 +602,9 @@
                 "notFound": "Posodobitve sistema ni bilo mogoče najti",
                 "detail": {
                     "uptoDate": "Posodobitve preverjene ",
-					"updatedOn": "preverjene ",
-					"outdated": "Posodobitve v zadnjem času niso bile preverjene ",
-					"neverRanUpdate": "posodobitve niso bile nikoli preverjene"
+                    "updatedOn": "preverjene ",
+                    "outdated": "Posodobitve v zadnjem času niso bile preverjene ",
+                    "neverRanUpdate": "posodobitve niso bile nikoli preverjene"
                 }
             },
             "extendedWarranty": "Podaljšanje garancije",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "Pametno hlajenje prilagodi hitrost ventilatorja, največjo zmogljivost in upravlja življenjsko dobo baterije. Ta funkcija ima 3 načine (tihi način, uravnotežen način in način učinkovitosti delovanja) in je zdaj dostopna z drsnikom za zmogljivost sistema Windows",
-					"nocqldesc": "Pametno hlajenje omogoča prilagajanje učinkovitosti delovanja in temperature sistema. V načinu »Učinkovitost delovanja« optimizira učinkovitost delovanja sistema. V načinu »Hladno in tiho« poskrbi za hladnejše in tišje delovanje sistema.",
-					"dytc6": {
+                    "nocqldesc": "Pametno hlajenje omogoča prilagajanje učinkovitosti delovanja in temperature sistema. V načinu »Učinkovitost delovanja« optimizira učinkovitost delovanja sistema. V načinu »Hladno in tiho« poskrbi za hladnejše in tišje delovanje sistema.",
+                    "dytc6": {
                         "desc1": "Pametno hlajenje prilagodi hitrost ventilatorja, največjo zmogljivost in upravlja življenjsko dobo baterije.",
                         "desc2": "Ta funkcija vključuje spodaj navedene načine delovanja in se odslej upravlja z naprednim drsnikom za nastavljanje zmogljivosti sistema Windows. Funkcijo odprete tako, da kliknite ikono baterije v pladnju sistema Windows.",
                         "desc3": "Nekateri načini delovanja se lahko na podlagi vaše dejavnosti samodejno prilagajajo v širšem obsegu zmogljivosti. Če želite omogočiti samodejni način, pritisnite Fn+T.",
@@ -1267,8 +1267,8 @@
                     "more": "VEČ",
                     "control1": "KONTROLNIKI SLEDILNE PLOŠČICE",
                     "control2": "KONTROLNIKI MIŠKE",
-					"control3": "KONTROLNIKI TRACKPOINT",
-					"less": "MANJ"
+                    "control3": "KONTROLNIKI TRACKPOINT",
+                    "less": "MANJ"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Ekskluzivna ponudba družbe Lenovo oblikovalske zbirke Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitalna ponudba družbe Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro je vodilna programska oprema za urejanje videoposnetkov za film, TV in splet. Premiere Pro vključuje Premiere Rush, aplikacijo »vse-v-enem«, ki deluje v vseh vaših napravah za skupno rabo videoposnetka z vašim omrežjem.",
+            "subtitle12": "Paket Creative Cloud Photography",
+            "body12": "Uporabite Lightroom za enostavno urejanje, organiziranje, shranjevanje in deljenje fotografij z drugimi od koder koli ter Photoshop, tako da lahko slike pretvorite v vse, kar si lahko zamislite.",
+            "selectButton": "Izbira",
+            "subtitle2": "Računalniki »vse-v-enem«: učinkovito",
+            "body2": "Računalniki »vse-v-enem« s procesorji Intel® Core™ 9. generacije vam nudijo vso zmogljivost namiznega računalnika, vse pa je zapakirano v eleganten zaslon za manj nereda, varnosti, ki temelji na strojni opremi, in z zaslonom z visoko ločljivostjo."
         }
     }
 }

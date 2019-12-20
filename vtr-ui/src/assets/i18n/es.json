@@ -602,9 +602,9 @@
                 "notFound": "No se encontró la actualización de sistema",
                 "detail": {
                     "uptoDate": "Actualizaciones comprobadas ",
-					"updatedOn": "comprobado el ",
-					"outdated": "Actualizaciones no comprobadas recientemente ",
-					"neverRanUpdate": "las actualizaciones nunca se han comprobado"
+                    "updatedOn": "comprobado el ",
+                    "outdated": "Actualizaciones no comprobadas recientemente ",
+                    "neverRanUpdate": "las actualizaciones nunca se han comprobado"
                 }
             },
             "extendedWarranty": "Ampliar garantía",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "El Enfriado inteligente ajusta la velocidad del ventilador, el máximo rendimiento y administra la duración de su batería. Esta característica tiene 3 modos (modalidad silenciosa, modalidad equilibrada y modalidad de rendimiento) y ahora es accesible mediante el control deslizante de rendimiento de Windows",
-					"nocqldesc": "El Enfriamiento inteligente le permite ajustar el rendimiento del sistema y la temperatura térmica. En modalidad de “Rendimiento”, optimiza el rendimiento del sistema. Mientras que ayuda a mantener el sistema más frío o silencioso en la modalidad de “Fresco y silencioso”.",
-					"dytc6": {
+                    "nocqldesc": "El Enfriamiento inteligente le permite ajustar el rendimiento del sistema y la temperatura térmica. En modalidad de “Rendimiento”, optimiza el rendimiento del sistema. Mientras que ayuda a mantener el sistema más frío o silencioso en la modalidad de “Fresco y silencioso”.",
+                    "dytc6": {
                         "desc1": "El Enfriado inteligente ajusta la velocidad del ventilador, el máximo rendimiento y administra la duración de su batería.",
                         "desc2": "Esta característica cuenta con las modalidades que se indican a continuación y ahora se ajusta mediante el control de rendimiento de Windows. Para acceder a ella, haga clic en el icono de la batería en la bandeja del sistema Windows.",
                         "desc3": "Algunas de las modalidades pueden ajustarse automáticamente en un rango de rendimiento más amplio en función de su actividad. Para habilitar la modalidad automática, presione Fn+T.",
@@ -1267,8 +1267,8 @@
                     "more": "MÁS",
                     "control1": "CONTROLES DEL ÁREA TÁCTIL",
                     "control2": "CONTROLES DE MOUSE",
-					"control3": "CONTROLES DE TRACKPOINT",
-					"less": "MENOS"
+                    "control3": "CONTROLES DE TRACKPOINT",
+                    "less": "MENOS"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Oferta exclusiva de Lenovo para la suite de herramientas de diseño de Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Oferta digital de Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro es el software de edición de video líder para películas, TV y la Web. Premiere Pro incluye Premiere Rush, una aplicación todo en uno que funciona en todos los dispositivos para compartir video en su red.",
+            "subtitle12": "Plan fotográfico de Creative Cloud",
+            "body12": "Utilice Lightroom en combinación con Photoshop para editar, organizar, almacenar y compartir fácilmente sus fotos desde cualquier lugar, de forma que pueda transformar sus imágenes en cualquier elemento que pueda imaginar.",
+            "selectButton": "Seleccione",
+            "subtitle2": "Las PC todo en uno perfeccionadas",
+            "body2": "Las PC todo en uno con los procesadores Intel® Core™ de novena generación le proporcionan toda la potencia de una computadora de escritorio en una pantalla elegante, lo que significa menos desorden, seguridad basada en hardware y una pantalla de alta resolución."
         }
     }
 }

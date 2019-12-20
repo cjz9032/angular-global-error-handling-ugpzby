@@ -602,9 +602,9 @@
                 "notFound": "Finner ikke systemoppdatering",
                 "detail": {
                     "uptoDate": "Oppdateringer sjekket ",
-					"updatedOn": "sjekket den ",
-					"outdated": "Oppdateringer ikke sjekket nylig ",
-					"neverRanUpdate": "oppdateringer aldri sjekket"
+                    "updatedOn": "sjekket den ",
+                    "outdated": "Oppdateringer ikke sjekket nylig ",
+                    "neverRanUpdate": "oppdateringer aldri sjekket"
                 }
             },
             "extendedWarranty": "Utvide garantien",
@@ -795,8 +795,8 @@
                         }
                     },
                     "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse",
-					"nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig».",
-					"dytc6": {
+                    "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig».",
+                    "dytc6": {
                         "desc1": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden.",
                         "desc2": "Funksjonen har modusene som er oppført nedenfor og kan nå justeres med strømglidebryteren i Windows. Du får tilgang til den ved å klikke på batterisymbolet i Windows-systemskuffen.",
                         "desc3": "Noen av modusene kan justeres automatisk på tvers av et bredere ytelsesspekter basert på din aktivitet. Du kan aktivere automatisk modus ved å trykke på Fn+T.",
@@ -1267,8 +1267,8 @@
                     "more": "MER",
                     "control1": "PEKEPLATEKONTROLLER",
                     "control2": "MUSEKONTROLLER",
-					"control3": "TRACKPOINT-KONTROLLER",
-					"less": "MINDRE"
+                    "control3": "TRACKPOINT-KONTROLLER",
+                    "less": "MINDRE"
                 }
             }
         },
@@ -2700,6 +2700,23 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovos eksklusive tilbud på Adobes designserie"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitalt tilbud fra Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro er den ledende programvaren for videoredigering for film, TV og nettet. Premiere Pro inkluderer Premiere Rush, en alt-i-ett-app som fungerer på tvers av alle enheter for å dele videoen din med nettverket ditt.",
+            "subtitle12": "Creative Cloud Fotoplan",
+            "body12": "Bruk Lightroom til enkelt å redigere, organisere, lagre og dele bildene dine fra hvor som helst, og Photoshop slik at du kan forvandle bildene til alt du kan forestille deg.",
+            "selectButton": "Velg",
+            "subtitle2": "Alt-i-ett: strømlinjeformet",
+            "body2": "Alt-i-ett-PC-er med 9. generasjons Intel® Core™-prosessorer gir deg all kraften til en stasjonær PC pakket i en elegant skjerm – for mindre rot, maskinvarebasert sikkerhet og skjerm med høy oppløsning."
         }
     }
 }
