@@ -8,6 +8,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
+import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',

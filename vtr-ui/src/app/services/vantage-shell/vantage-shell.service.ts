@@ -915,6 +915,13 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+	// shellService
+	public getVoipHotkeysObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.voipHotkeys;
+		}
+		return undefined;
+	}
 
 	// =================== Start Hardware Scan
 	public getHardwareScan(): any {
