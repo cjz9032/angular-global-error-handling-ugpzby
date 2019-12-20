@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "Executarea scanării și a reparării poate duce la pierderea datelor. Se recomandă efectuarea unei copii de siguranță înainte de a executa această operație. Sigur doriți să continuați?",
                 "yes": "Da",
-                "no": "Nu",
-                "question": "Are you sure you want to proceed?"
+                "no": "Nu"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

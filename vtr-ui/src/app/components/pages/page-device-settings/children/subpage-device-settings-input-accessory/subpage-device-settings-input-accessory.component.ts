@@ -7,10 +7,13 @@ import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
 import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
-import { EMPTY, Subscription } from 'rxjs';
+import { EMPTY, Observable, Subscription } from 'rxjs';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
-import { StringBooleanEnum } from './top-row-functions-ideapad/top-row-functions-ideapad.interface';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { BacklightService } from './backlight/backlight.service';
+import { map } from 'rxjs/operators';
+import { StringBooleanEnum } from '../../../../../data-models/common/common.interface';
+import { BacklightLevelEnum } from './backlight/backlight.enum';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -55,12 +58,15 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	fnLockCapability = false;
 	private topRowFunctionsIdeapadSubscription: Subscription;
 
+	backlightCapability$: Observable<boolean>;
+
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private keyboardService: InputAccessoriesService,
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private commonService: CommonService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private backlightService: BacklightService
 	) {
 	}
 
@@ -85,6 +91,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 			});
 		});
+		this.backlightCapability$ = this.backlightService.backlight.pipe(
+			map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
+			map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY)
+		);
 	}
 
 	getVoipHotkeysSettings() {
@@ -151,9 +161,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 			} else {
 				this.inputAccessoriesCapability = new InputAccessoriesCapability();
-				this.keyboardService.GetKeyboardMapCapability().then((response=>{
+				this.keyboardService.GetKeyboardMapCapability().then((response => {
 					this.keyboardCompatibility = response;
-				}))
+				}));
 			}
 		} catch (error) {
 			console.log('initHiddenKbdFnFromCache', error);

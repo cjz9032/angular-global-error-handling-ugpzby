@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "A execução de verificação e de reparo pode causar perda de dados. Recomenda-se fazer um backup antes de executar esta operação. Tem certeza que deseja continuar?",
                 "yes": "Sim",
-                "no": "Não",
-                "question": "Are you sure you want to proceed?"
+                "no": "Não"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

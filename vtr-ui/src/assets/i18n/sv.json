@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "Genomsökningen och reparationen kan resultera i att data går förlorade. Vi rekommenderar att du skapar en säkerhetskopia innan du utför denna åtgärd. Vill du fortsätta?",
                 "yes": "Ja",
-                "no": "Nej",
-                "question": "Are you sure you want to proceed?"
+                "no": "Nej"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
