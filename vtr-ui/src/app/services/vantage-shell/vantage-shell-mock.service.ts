@@ -637,6 +637,7 @@ export class VantageShellService {
 	public getSecurityAdvisor(): Phoenix.SecurityAdvisor {
 		const securityAdvisor: Phoenix.SecurityAdvisor = {
 			antivirus: {
+				status: 'success',
 				mitt: null,
 				mcafeeDownloadUrl:
 					'https://www.mcafee.com/consumer/en-us/promos/expiry/l714/mls_430/trial/ab/wb.html?cid=239128&culture=en-us&affid=714&pir=1',

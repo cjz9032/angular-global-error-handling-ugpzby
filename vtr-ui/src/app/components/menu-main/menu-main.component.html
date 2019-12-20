@@ -327,7 +327,7 @@
 								metricsItem="DccRedemptionButton"
 								(click)="onMenuItemClick(item, $event)"
 								href="javascript:void(0)">
-								Lenovo digital offer
+								{{ 'dcc.menuText.lenovoDigitalOffer' | translate }}
 								<span class="unread-tag"
 									*ngIf="!appsForYouService.UnreadMessageCount.dccMenuClicked"></span>
 							</a>
