@@ -40,7 +40,7 @@
                             <ngb-progressbar type="success" [value]="percent" [height]="'0.6rem'"></ngb-progressbar>
                         </div>
                     </div>
-                    <div *ngIf="(percent === 100)" class="col col-12 row status">
+                    <div *ngIf="getFinalResultCode()" class="col col-12 row status">
                         <span>{{statusText}}</span>
                     </div>
 

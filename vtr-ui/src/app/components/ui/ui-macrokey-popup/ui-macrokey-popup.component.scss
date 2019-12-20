@@ -19,40 +19,34 @@
 }
 ui-popover {
 	position: absolute;
-	min-width: 45rem;
-	width: 40%;
-	padding: 3rem 5rem;
+	padding: 3.8rem 5rem;
 	background: #fbfdff;
 	z-index: 9;
 	border-radius: 1rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
-	right: 0;
-	top: 25%;
-	left: 0;
-	margin: auto;
+	max-width: 56rem;
+	@media #{$breakpoint_xl} {
+		width: 85%;
+	}
+	@media #{$breakpoint_sm} {
+		width: 90%;
+		padding: 3rem 4rem;
+	}
 	@media #{$black-on-white} {
 		border: 0.1rem solid $dark;
 	}
 	@media #{$white-on-black} {
 		border: 0.1rem solid $light;
 	}
-	@media #{$small-screen} {
-		max-width: 45rem;
-	}
-	@media #{$medium-screen} {
-		max-width: 50rem;
-	}
 }
 
 .vtr-ui-macrokey-popup {
-	&.modal-body {
+	.modal-body {
 		padding: 0;
 	}
-
 	.content-body {
 		min-height: 10rem;
 	}
-
 	fa-icon {
 		font-size: 3rem;
 		color: $main;
@@ -62,6 +56,7 @@ ui-popover {
 		font-size: 2.5rem;
 		font-weight: normal;
 		color: $blue-dark;
+		padding-right: 2.5rem;
 	}
 
 	p {
@@ -84,10 +79,9 @@ ui-popover {
 		font-size: 2rem;
 		padding: 1rem 3rem;
 		margin-top: 1rem;
+		margin-right: 3rem;
 		font-weight: $weight_bold;
-		//text-transform: uppercase;
 	}
-
 	.cancel-link {
 		height: 3.2rem;
 		color: $main;
@@ -95,8 +89,7 @@ ui-popover {
 		vertical-align: middle;
 		padding: 0 0.5rem;
 		font-weight: $weight_600;
-		margin-top: 1.8rem;
-		margin-left: 3rem;
+		margin-top: 1rem;
 		border-bottom: 2px solid $btn_secondary_color;
 		cursor: pointer;
 		&:hover {

@@ -1,4 +1,4 @@
-<div class="macrokey-wrapper" [ngClass]="{'recording': recording && number}">
+<div class="macrokey-wrapper" [ngClass]="{'recording': recording && number, 'numberpad':isNumberpad}">
 	<div class="header-component" *ngIf="number && !number.status">
 		<div class="title-main">
 			{{ 'gaming.macroKey.recording.title' | translate }} <span
@@ -63,8 +63,9 @@
 	</div>
 	<div class="footer-component text-center" *ngIf="number && !number.status">
 		<div class="start-button">
-			<vtr-ui-button id="gaming_macrokey_startrecording" [tabIndex]="1" aria-label="gaming macrokey startrecording"
-				metricsEvent="featureClick" [metricsItem]="'macrokey_start_recording'" role="button"
+			<vtr-ui-button id="gaming_macrokey_startrecording" [tabIndex]="1"
+				aria-label="gaming macrokey startrecording" metricsEvent="featureClick"
+				[metricsItem]="'macrokey_start_recording'" role="button"
 				[label]="'gaming.macroKey.details.buttons.start' | translate" [btnHeight]=true [isGradient]=true
 				(onClick)="onStartClicked($event)" (keyup.enter)="onStartClicked($event)">
 			</vtr-ui-button>

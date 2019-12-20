@@ -266,7 +266,7 @@
 											</div>
 										</vtr-ui-row-switch>
 										<div *ngIf="sensitivityVisibility" class="pl-5 bold-title no-border-bottom pb-4"
-										[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled">
+										>
 										<vtr-ui-row-switch [switchId]="'thinkpadSensitivity'"
 											[title]="'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate"
 											[isSwitchVisible]="false" [showChildContent]="true"
@@ -396,7 +396,7 @@
 					<div class="row py-5 smart-assist-card"
 						id="screen"
 						*ngIf="intelligentScreen.isIntelligentScreenVisible">
-						<div class="col-12 mx-auto">
+						<div class="col-12 px-0">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentScreen'"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.intelligentScreen.title' | translate"
@@ -498,7 +498,7 @@
 					<div class="row py-5 smart-assist-card"
 						id="aps"
 						*ngIf='isAPSAvailable'>
-						<div class="col-12 mx-auto">
+						<div class="col-12 px-0">
 							<vtr-container-collapsible [collapseLinkId]="'activeProtection'"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.activeProtectionSystem.title' | translate"
@@ -517,7 +517,7 @@
 					<div class="row py-5 smart-assist-card"
 						id="voice"
 						*ngIf="lenovoVoice.available">
-						<div class="col-12 mx-auto">
+						<div class="col-12 px-0">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentVoice'"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.voice.title' | translate"

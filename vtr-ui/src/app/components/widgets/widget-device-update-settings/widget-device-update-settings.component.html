@@ -18,13 +18,14 @@
 										<div class="d-flex justify-content-between align-items-center w-100"
 											[ngClass]="{collapsible: item.isCollapsible}">
 											<div class="update-title" id="{{'cold'+in}}"
-												[innerHTML]="item.header | translate | sanitize : 'html' "></div>
+												[innerHTML]="item.header | translate | sanitize : 'html' "
+												title="{{ item.header | translate }}"></div>
 											<vtr-ui-gaming-collapsible-container id="{{item.id}}"
 												[ariaLabel]="item.ariaLabel" [options]="options"
 												*ngIf="item.isCollapsible" (change)="optionChanged($event,item, in)"
 												(showDropDown)="showDropDown.emit(item)">
 											</vtr-ui-gaming-collapsible-container>
-											<vtr-ui-gaming-driver-popup *ngIf="item.isCollapsible && item.isDriverPopup"
+											<vtr-ui-gaming-driver-popup [ngClass]="{'overclock-driver-popup' : item.id === 'legionedge cpuoverlock'}" *ngIf="item.isCollapsible && item.isDriverPopup"
 												 [showMePartially]="item.isDriverPopup"
 												[descriptionLabel]="item.ariaLabel" [popupText]="item.driverPopupText"
 												(driverpopval)="onClosed(item, in)">

@@ -1014,7 +1014,7 @@
                             "title3": "Performans kipi",
                             "desc3": "Kaydırıcı en sağdadır. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Kiplerden bazıları, etkinliğinize göre otomatik olarak daha geniş bir performans aralığına ayarlanabilir. Otomatik kipi devre dışı bırakmak için Fn+ T tuşlarına basın."
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
                     "subTitle2": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "TOUCHPAD DENETİMLERİ",
                     "control2": "FARE DENETİMLERİ",
                     "control3": "TRACKPOINT KONTROLLERİ",
-                    "less": "LESS"
+                    "less": "DAHA AZ"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Otomatik güncelleme ayarları",
-            "subtitle": "GÜNCELLEMELERİ OTOMATİK OLARAK YÜKLE",
+            "subtitle": "Güncelleştirmeleri otomatik olarak yükle",
             "critical": {
                 "title": "Kritik Güncelleştirmeler",
                 "tooltip": "Kritik güncellemeler önemli sorunları, ciddi hataları, donanım arızalarını veya veri bozulmasını önler."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "Tarama ve onarım işleminin yürütülmesi veri kaybına neden olabilir. Bu işlemi yürütmeden önce yedekleme yapmanız önerilir. Devam etmek istediğinizden emin misiniz?",
                 "yes": "Evet",
-                "no": "Hayır"
+                "no": "Hayır",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

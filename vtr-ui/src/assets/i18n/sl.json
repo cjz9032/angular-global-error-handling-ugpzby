@@ -1014,7 +1014,7 @@
                             "title3": "Zmogljivi način",
                             "desc3": "Drsnik je skrajno desno. Hitrost ventilatorja in dopustna površinska temperatura sta višja za največjo učinkovitost delovanja."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Nekateri načini delovanja se lahko na podlagi vaše dejavnosti samodejno prilagajajo v širšem obsegu zmogljivosti. Če želite onemogočiti samodejni način, pritisnite Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
                     "subTitle2": "Nastavite uro, ko običajno uporabljate ta računalnik",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na urnik, ki ga nastavite. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni."
                 }
             },
             "audio": {
@@ -1529,7 +1529,7 @@
                     "control1": "KONTROLNIKI SLEDILNE PLOŠČICE",
                     "control2": "KONTROLNIKI MIŠKE",
                     "control3": "KONTROLNIKI TRACKPOINT",
-                    "less": "LESS"
+                    "less": "MANJ"
                 }
             }
         },
@@ -1763,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Nastavitve samodejne posodobitve",
-            "subtitle": "SAMODEJNA NAMESTITEV POSODOBITEV",
+            "subtitle": "Samodejna namestitev posodobitev",
             "critical": {
                 "title": "Nujne posodobitve",
                 "tooltip": "Nujne posodobitve preprečujejo resne težave, večje okvare, okvare strojne opreme ali poškodbe podatkov."
@@ -2822,7 +2822,8 @@
             "popup": {
                 "description": "Izvajanje pregleda in popravila lahko povzroči izgubo podatkov. Priporočamo, da pred začetkom tega postopka izdelate varnostno kopijo. Ali ste prepričani, da želite nadaljevati?",
                 "yes": "Da",
-                "no": "Ne"
+                "no": "Ne",
+                "question": "Are you sure you want to proceed?"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
