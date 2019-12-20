@@ -3224,5 +3224,22 @@
                 "readLess": "表示を少なくする"
             }
         }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Adobe デザイナー・スイートの Lenovo 限定特典"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo デジタル特典"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro は、映画、テレビ、Web 向けの主要なビデオ編集ソフトウェアです。Premiere Pro には、すべてのデバイスで機能し、ネットワークでビデオを共有するオールインワン・アプリの Premiere Rush が含まれています。",
+            "subtitle12": "Creative Cloud フォト・プラン",
+            "body12": "Lightroom を使用すれば、どこからでも簡単に写真を編集、整理、保存、共有できます。Photoshop があれば、画像を思い通りに変えることができます。",
+            "selectButton": "ツールバーで",
+            "subtitle2": "オールインワン: 簡素化",
+            "body2": "第 9 世代 Intel® Core™ プロセッサーを搭載したオールインワン PC によって、あらゆるデスクトップの強みが光沢のあるディスプレイに詰め込まれていることで、乱雑さが抑えられ、ハードウェアベースのセキュリティーと高解像度のディスプレイが実現されています。"
+        }
     }
 }

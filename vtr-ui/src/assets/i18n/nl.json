@@ -3224,5 +3224,22 @@
                 "readLess": "Minder weergeven"
             }
         }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exclusieve aanbieding van Lenovo voor Adobe designer-suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitale aanbieding van Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro is de toonaangevende videobewerkingssoftware voor film, tv en het web. Premiere Pro omvat Premiere Rush, een alles-in-één app die werkt op al uw apparaten voor het delen van video op uw netwerk.",
+            "subtitle12": "Creative Cloud Photography-plan",
+            "body12": "Gebruik Lightroom om eenvoudig overal uw foto's te bewerken, organiseren en op te slaan, en Photoshop voor het transformeren van uw afbeeldingen naar alles dat u zich maar kunt voorstellen.",
+            "selectButton": "Selecteren",
+            "subtitle2": "Alles-in-één computers: gestroomlijnd",
+            "body2": "Alles-in-één pc's met 9e generatie Intel® Core™ processoren voorzien u van de kracht van een desktop in een strak design — voor minder volume, op hardware gebaseerde beveiliging en een scherm met hoge resolutie."
+        }
     }
 }
