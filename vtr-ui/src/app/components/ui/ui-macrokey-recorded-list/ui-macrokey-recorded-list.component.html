@@ -19,7 +19,7 @@
 		</div>
 		<div class="col-12" *ngIf="!recordingStatus">
 			<div class="select-wrapper">
-				<vtr-ui-lighting-effect [tooltip_value]= "tooltips_delay | translate" [selectedValue]="delaySelectedValue" [options]="intervalOptions[0]"
+				<vtr-ui-lighting-effect [tooltip_value]= "tooltips_delay | translate" [showDescription]="true" [selectedValue]="delaySelectedValue" [options]="intervalOptions[0]"
 					(change)="onIntervalChanged($event)" [tabindex]="1">
 				</vtr-ui-lighting-effect>
 			</div>

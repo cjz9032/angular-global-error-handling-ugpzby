@@ -3,22 +3,20 @@
 ui-popover {
 	position: absolute;
 	max-width: 56rem;
-	padding: 3rem 5rem;
 	background: $gaming_lightest;
 	z-index: 9;
 	border-radius: 1rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
-	right: 8rem;
-	top: -13rem;
+	right: 7.3rem;
+	top: -11.2rem;
 	width: 35vw;
 	min-width: 56rem;
 	@media #{$breakpoint_md} {
 		min-width: 40rem;
-		top: -14rem;
+		top: -11.2rem;
 	}
 	@media #{$breakpoint_sm} {
-		min-width: 36rem;
-		padding: 3rem;
+		min-width: 37rem;
 	}
 	@media #{$black-on-white} {
 		background: $high-contrast-grey;
@@ -40,7 +38,7 @@ ui-popover {
 		@media #{$black-on-white} {
 			border-bottom: 3rem solid $high-contrast-grey;
 			border-left: 3rem solid transparent;
-		}
+		} 
 		@media #{$white-on-black} {
 			border-bottom: 3rem solid $high-contrast-grey;
 			border-left: 3rem solid transparent;
@@ -48,9 +46,14 @@ ui-popover {
 	}
 	.vtr-ui-popover {
 		&.modal-body {
-			padding: 0;
+			padding: 3.8rem 5rem;
+			@media #{$breakpoint_md} {
+				padding: 3.8rem 4rem;
+			}
+			@media #{$breakpoint_sm} {
+		  padding: 3.8rem 3rem;
+			}
 		}
-
 		.content-body {
 			min-height: 10rem;
 		}
@@ -70,6 +73,7 @@ ui-popover {
 			font-size: 2.5rem;
 			font-weight: normal;
 			color: $blue-dark;
+			padding-right: 2.5rem;
 		}
 
 		p {
@@ -85,8 +89,8 @@ ui-popover {
 			font-size: 2rem;
 			padding: 1rem 3rem;
 			margin-top: 1rem;
+			margin-right: 3rem;
 			font-weight: $weight_bold;
-			// text-transform: uppercase;
 		}
 
 		.cancel-link {
@@ -96,8 +100,7 @@ ui-popover {
 			vertical-align: middle;
 			padding: 0 0.5rem;
 			font-weight: $weight_600;
-			margin-top: 1.8rem;
-			margin-left: 3rem;
+			margin-top: 1rem;
 			border-bottom: 2px solid $btn_secondary_color;
 			cursor: pointer;
 			&:hover{

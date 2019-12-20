@@ -43,10 +43,11 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 	}
 
 	ngOnDestroy() {
-		// if (!this.hardwareScanService.isScanExecuting() && !this.hardwareScanService.isRecoverExecuting()) {
-		// 	this.hardwareScanService.setLoadingStatus(false);
-		// }
 		this.hardwareScanService.setRecoverInProgress(false);
+		// Clearing the last response received from Scan/RBS to ensure that
+		// the Hardware Components page will be shown, since user just clicked
+		// in the back button from the Recover Bad Sectors page.
+		this.hardwareScanService.clearLastResponse();
 	}
 
 	ngOnChanges() {
