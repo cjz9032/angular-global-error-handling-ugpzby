@@ -3223,5 +3223,22 @@
                 "readLess": "Läs mindre"
             }
         }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exklusivt erbjudande på Adobe Designer Suite från Lenovo"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Onlineerbjudande från Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro är det ledande videoredigeringsprogrammet för film, tv och webb. I Premiere Pro ingår Premiere Rush, en allt-i-ett-app för att dela dina videor med ditt sociala nätverk som fungerar på alla dina enheter.",
+            "subtitle12": "Creative Cloud Photography-prenumeration",
+            "body12": "Använd Lightroom för att enkelt redigera, ordna, lagra och dela dina foton från valfri plats, och Photoshop för att bearbeta dina bilder på kreativa sätt.",
+            "selectButton": "Välj",
+            "subtitle2": "Allt-i-ett: smidigt och enkelt",
+            "body2": "Allt-i-ett-datorer med 9:e generationens Intel® Core™-processorer ger dig alla fördelar med en stationär dator förpackade i en slimmad bildskärm – för en renare arbetsyta, maskinvarubaserad säkerhet och högupplöst bild."
+        }
     }
 }

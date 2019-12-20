@@ -3223,5 +3223,22 @@
                 "readLess": "Citiţi maI puţin"
             }
         }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Ofertă Lenovo exclusivă la suitele de proiectare Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Ofertă digitală Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro este software-ul de vârf în domeniu de editare video pentru filme, TV şi web. Premiere Pro include Premiere Rush, o aplicaţie integrată care funcţionează pe toate dispozitivele, pentru a partaja lucrările dvs. video în reţeaua dvs. de prieteni.",
+            "subtitle12": "Planul Creative Cloud Photography",
+            "body12": "Utilizaţi Lightroom pentru a edita, organiza, stoca şi partaja fotografiile cu uşurinţă de oriunde şi Photoshop pentru a transforma imaginile în orice vă puteţi imagina.",
+            "selectButton": "Selectare",
+            "subtitle2": "Echipamente multifuncţionale: acum mai optimizate",
+            "body2": "PC-urile multifuncţionale cu procesoare Intel® Core™ din a 9-a generaţie vă oferă toată puterea unui desktop într-un monitor elegant – pentru mai puţin dezordine, securitate bazată pe hardware şi afişare de înaltă rezoluţie."
+        }
     }
 }

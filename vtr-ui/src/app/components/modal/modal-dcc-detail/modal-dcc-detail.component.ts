@@ -3,6 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { ActivatedRoute } from '@angular/router';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-modal-dcc-detail',
@@ -16,20 +17,14 @@ export class ModalDccDetailComponent implements OnInit, AfterViewInit {
 	enterTime: number;
 	metricsParent = '';
 
-	dccTitle = 'LENOVO EXCLUSIVE OFFER OF<br/>ADOBE DESIGNER SUITE';
-	dccSubTitle11 = 'Premiere Pro';
-	dccBody11 = 'Premiere Pro is the leading video editing software for film, TV and the web. Premiere Pro includes Premiere Rush, an all-in-one app that works across all your devices to share your video with your network.';
-	dccSubTitle12 = 'Creative Cloud Photography plan';
-	dccBody12 = 'Use Lightroom to easily edit, organize, store, and share your photos from anywhere, and Photoshop so you can transform your images to anything you can imagine.';
-	dccButtonText = 'Select';
-	dccSubTitle2 = 'All-in-Ones: Streamlined';
-	dccBody2 = 'All-in-One PCs with 9th Gen Intel® Core™ processors give you all the power of a desktop packaged in a sleek display — for less clutter, hardware-based security, and a hi-res display.';
+	dccTitle = this.translateService.instant('dcc.heroBanner.description').toUpperCase();
 
 	constructor(
 		public activeModal: NgbActiveModal,
 		vantageShellService: VantageShellService,
 		private activatedRoute: ActivatedRoute,
 		private timerService: TimerService,
+		private translateService: TranslateService
 	) {
 		this.metricClient = vantageShellService.getMetrics();
 		this.metricsParent = this.getPageName(activatedRoute) + '.DccDetails';
