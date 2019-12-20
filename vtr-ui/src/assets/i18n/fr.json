@@ -1270,6 +1270,17 @@
                             "slow": "Lent"
                         },
                         "toolTipContent": "Sélectionnez l'option de votre choix pour verrouiller votre écran à une vitesse rapide/moyenne/lente lorsque votre présence n'est pas détectée. Cependant, le moment auquel l'écran sera verrouillé est également influencé par le scénario utilisateur réel, la fonction du capteur et les paramètres Windows de mise en veille de l'écran. Par conséquent, nous vous recommandons vivement de verrouiller votre système au moment où vous le quittez."
+                    },
+                    "facialRecognition": {
+                        "title": "RECONNAISSANCE FACIALE",
+                        "caption": "Vous pouvez activer la fonction de reconnaissance faciale et l'autoriser à accéder à votre caméra. Cet outil capture votre image afin de reconnaître précisément votre présence ou détecter lorsque vous avez laissé votre périphérique sans surveillance. Ces données sont traitées localement sur votre appareil. Lenovo ne peut ni y accéder ni les utiliser.",
+                        "checkBox": "Allumer la caméra et activer cette fonction",
+                        "note": {
+                            "permission": "Lenovo Vantage n'a pas accès à la caméra. La fonction de la case cochée ne fonctionnera pas.",
+                            "privacyMode": "Le mode de confidentialité de la caméra Lenovo Vantage est activé. La fonction de la case cochée ne fonctionnera pas.",
+                            "windowsLink": "Accéder aux paramètres Windows pour donner accès",
+                            "privacyLink": "Accéder au mode de confidentialité de la caméra pour la désactiver"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

@@ -1270,6 +1270,17 @@
                             "slow": "Långsam"
                         },
                         "toolTipContent": "Välj önskat alternativ för att låsa skärmen snabbt/medelsnabbt/långsamt när din närvaro inte identifieras. Tiden när skärmen låses påverkas också av den faktiska användarsituationen, sensorkapaciteten och inställningarna för skärmtidsgräns i Windows. Vi rekommenderar därför att du låser datorn omedelbart innan du lämnar den."
+                    },
+                    "facialRecognition": {
+                        "title": "ANSIKTSIGENKÄNNING",
+                        "caption": "Du kan aktivera funktionen för ansiktsigenkänning och ge den åtkomst till kameran. Verktyget fångar upp din bild och känner igen din närvaro eller upptäcker när du lämnar enheten obevakad. Informationen bearbetas lokalt på datorn. Lenovo har inte till åtkomst till denna information och använder den inte.",
+                        "checkBox": "Sätt på kameran och aktivera funktionen",
+                        "note": {
+                            "permission": "Lenovo Vantage har inte åtkomst till kameran. Kryssrutan fungerar inte.",
+                            "privacyMode": "Sekretessläget för kameran i Lenovo Vantage är aktiverat. Kryssrutan fungerar inte.",
+                            "windowsLink": "Öppna Windows-inställningar för att ge åtkomst",
+                            "privacyLink": "Öppna kamerans sekretessläge för att inaktivera det"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

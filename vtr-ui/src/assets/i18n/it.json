@@ -1270,6 +1270,17 @@
                             "slow": "Lento"
                         },
                         "toolTipContent": "Selezionare l'opzione desiderata per bloccare lo schermo a una velocità Rapida/Media/Lenta quando non viene rilevata la propria presenza. Tuttavia, l'ora in cui lo schermo verrà bloccato è influenzata dallo scenario effettivo dell'utente, dalla capacità del sensore e dalle impostazioni del timeout dello schermo di Windows. Pertanto, si consiglia di bloccare immediatamente il sistema prima di uscire."
+                    },
+                    "facialRecognition": {
+                        "title": "RICONOSCIMENTO FACCIALE",
+                        "caption": "È possibile abilitare la funzione di riconoscimento facciale e consentire l'accesso alla fotocamera. Questo strumento acquisisce l'immagine per riconoscere con precisione l'utente o rilevare se il dispositivo viene lasciato incustodito. Questi dati vengono elaborati in locale sul dispositivo. Lenovo non accede a questi dati o li utilizza.",
+                        "checkBox": "Accendere la fotocamera e abilitare questa funzione",
+                        "note": {
+                            "permission": "Lenovo Vantage non ha accesso alla fotocamera. La casella di controllo non è disponibile.",
+                            "privacyMode": "La modalità privacy della fotocamera di Lenovo Vantage è attiva. La casella di controllo non è disponibile.",
+                            "windowsLink": "Accedere alle impostazioni di Windows per consentire l'accesso",
+                            "privacyLink": "Accedere alla modalità privacy della fotocamera per disattivarla"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

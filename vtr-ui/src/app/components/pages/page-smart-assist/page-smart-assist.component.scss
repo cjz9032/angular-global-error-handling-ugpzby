@@ -188,3 +188,80 @@
 		margin-top: -6rem;
 	}
 }
+.custom-control-input:disabled ~ .custom-control-label {
+	cursor: not-allowed;
+}
+
+.custom-control-label {
+	padding-left: 0.5rem;
+	line-height: 1.15;
+	@media #{$mediaquery_14} {
+	line-height: 1.3;
+	}
+	@media #{$mediaquery_19} {
+	line-height: 1.3;
+	}
+	@media #{$mediaquery_X15} {
+	line-height: 1.3;
+	}
+
+	//color: $dark;
+
+	.disabled {
+	color: $light-grey;
+	}
+	// rounded square-box background
+	&::before {
+	top: 0.2rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	}
+
+	// tick mark
+	&::after {
+	top: 0rem;
+	width: 2rem;
+	height: 2rem;
+	left: -1.7rem;
+	}
+}
+.smart-assist-checkbox {
+	margin: 1rem 0rem 1rem 0rem;
+	font-size: 1.4rem;
+}
+.permission-note {
+	background-color: $shade_lightest;
+		border: 1px solid $shade_lighter;
+		padding-right: 1.4rem;
+		span {
+			font-size: $fontsize_xs;
+			color: $shade_blue;
+		}
+	.privacy-button {
+		font-size: $body;
+		letter-spacing: 0.76px;
+		text-align: left;
+		text-decoration: underline;
+		margin-bottom: 0.5rem;
+		color: $menu_hover;
+			&:hover {
+				text-decoration: underline;
+				color: $menu_hover;
+			}
+	}
+}
+.facial-recognition {
+	h3 {
+		font-weight: $weight_bold;
+		color: $shade_blue;
+		font-size:1.4rem !important;
+	}
+	p {
+		font-size: $body;
+		font-weight: $weight_light;
+	}
+}
+.fac-control {
+	margin-left: 2.5rem;
+	padding-top: 1.5rem;
+}

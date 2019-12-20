@@ -1270,6 +1270,17 @@
                             "slow": "Pomalé"
                         },
                         "toolTipContent": "Vyberte požadovanú možnosť rýchleho, stredne rýchleho alebo pomalého uzamknutia obrazovky, keď sa nezistí vaša prítomnosť. Čas uzamknutia obrazovky však bude ovplyvnený aj aktuálnym používaním, možnosťami senzora a nastaveniami časového limitu obrazovky systému Windows. Preto dôrazne odporúčame, aby ste systém uzamkli bezprostredne pred odchodom."
+                    },
+                    "facialRecognition": {
+                        "title": "ROZPOZNÁVANIE TVÁRE",
+                        "caption": "Môžete povoliť funkciu rozpoznávania tváre a povoliť jej prístup k fotoaparátu. Tento nástroj zaznamená vašu snímku, aby mohol presne rozpoznať vašu prítomnosť alebo zistiť, kedy ste nechali zariadenie bez dozoru. Tieto údaje sa spracúvajú lokálne vo vašom zariadení. Spoločnosť Lenovo k nim nemá prístup a nepoužíva ich.",
+                        "checkBox": "Zapnúť fotoaparát a povoliť túto funkciu",
+                        "note": {
+                            "permission": "Lenovo Vantage nemá prístup k fotoaparátu. Funkcia začiarkavacieho políčka nebude fungovať.",
+                            "privacyMode": "Je zapnutý režim súkromia kamery aplikácie Lenovo Vantage. Funkcia začiarkavacieho políčka nebude fungovať.",
+                            "windowsLink": "Prejdite do nastavení systému Windows a povoľte prístup",
+                            "privacyLink": "Prejdite na režim súkromia kamery a vypnite ho"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

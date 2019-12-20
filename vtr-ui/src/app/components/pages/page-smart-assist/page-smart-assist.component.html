@@ -199,6 +199,72 @@
 											[theme]="'white'"
 											[disabled]="!intelligentSecurity.isHPDEnabled">
 										</vtr-ui-row-switch>
+										<div class="row fac-control">
+											<div class="col mt-10 facial-recognition"
+												*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible">
+												<h3 id="smart-assist-zero-touch-lock-faical-recognition-title"
+													attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-title">
+													{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.title' | translate}}
+												</h3>
+												<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
+													attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-desc">
+													{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
+												</p>
+
+												<div class="custom-control custom-checkbox smart-assist-checkbox">
+													<input id="cb-zero-touch-lock"
+														attr.aria-label="cb-zero-touch-lock"
+														type="checkbox"
+														name="zero-check-lock-checkbox-id"
+														class="custom-control-input"
+														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
+											|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
+														[(ngModel)]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
+														(ngModelChange)='onZeroTouchLockFacialRecoChange()' />
+													<!-- [checked]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"/> -->
+													<label for="cb-zero-touch-lock"
+														class="custom-control-label">
+														{{ 'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate }}
+													</label>
+												</div>
+												<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess || intelligentSecurity.facialRecognitionCameraPrivacyMode" class="permission-note p-4">
+														<div class="row">
+															<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess"
+																class="col">
+																<span class="mb-0 mt-auto"
+																	id="ztl-facial-recognition-permission-note"
+																	attr.aria-label="ztl-facial-recognition-permission-note">
+																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.permission' | translate}}
+																</span>
+																<button type="button"
+																	class="btn btn-link privacy-button pl-0"
+																	(click)="onClick('ms-settings:privacy-webcam')"
+																	id="ztl-facial-recognition-access-url"
+																	attr.aria-label="ztl-facial-recognition-access-url"
+																	[disabled] = "!intelligentSecurity.isZeroTouchLockEnabled">
+																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.windowsLink' | translate}}
+																</button>
+															</div>
+															<div class="col"
+																*ngIf="intelligentSecurity.facilRecognitionCameraAccess && intelligentSecurity.facialRecognitionCameraPrivacyMode">
+																<span class="mb-0 mt-auto"
+																	id="ztl-facial-recognition-privacy-note"
+																	attr.aria-label="ztl-facial-recognition-privacy-note">
+																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyMode' | translate}}
+																</span>
+																<button type="button"
+																	class="btn btn-link privacy-button pl-0"
+																	(click)="onJumpClick()"
+																	id="ztl-facial-recognition-privacy-url"
+																	attr.aria-label="ztl-facial-recognition-privacy-url"
+																	[disabled] ="!intelligentSecurity.isZeroTouchLockEnabled">
+																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyLink' | translate}}
+																</button>
+															</div>
+														</div>
+													</div>
+											</div>
+										</div>
 										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
 											*ngIf="intelligentSecurity.isZeroTouchLockVisible"
 											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled"

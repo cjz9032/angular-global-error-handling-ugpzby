@@ -15,9 +15,13 @@ import { parse } from 'querystring';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { EMPTY } from 'rxjs';
+import { EMPTY, fromEvent } from 'rxjs';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router, NavigationExtras } from '@angular/router';
+import { throttleTime } from 'rxjs/operators';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -50,6 +54,9 @@ export class PageSmartAssistComponent implements OnInit {
 	public isAPSAvailable = false;
 	public hpdSensorType = 0;
 	smartAssistCache: SmartAssistCache;
+	private visibilityChange: any;
+	private Windows: any;
+	private windowsObj: any;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -98,6 +105,9 @@ export class PageSmartAssistComponent implements OnInit {
 		private logger: LoggerService,
 		private commonService: CommonService,
 		private translate: TranslateService,
+		public modalService: NgbModal,
+		private router: Router,
+		private vantageShellService: VantageShellService
 	) {
 		// VAN-5872, server switch feature on language change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -105,6 +115,26 @@ export class PageSmartAssistComponent implements OnInit {
 		});
 
 		this.fetchCMSArticles();
+
+		// below logic required to getZeroTouchLockFacialRecoStatus when window is maximized from minimized state
+		this.visibilityChange = this.onVisibilityChanged.bind(this);
+		document.addEventListener('visibilitychange', this.visibilityChange);
+		fromEvent(document.body, 'mouseenter')
+			.pipe(
+				throttleTime(2500)
+			)
+			.subscribe(() => {
+				this.onMouseEnterEvent();
+			});
+		this.Windows = vantageShellService.getWindows();
+		if (this.Windows) {
+			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
+				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
+
+			this.windowsObj.addEventListener('accesschanged', () => {
+				this.permissionChanged();
+			});
+		}
 	}
 
 	ngOnInit() {
@@ -181,6 +211,10 @@ export class PageSmartAssistComponent implements OnInit {
 		this.intelligentSecurity.isIntelligentSecuritySupported = false;
 		this.intelligentSecurity.isWindowsHelloRegistered = false;
 		this.intelligentSecurity.isDistanceSensitivityVisible = false;
+		this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = false;
+		this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = false;
+		this.intelligentSecurity.facilRecognitionCameraAccess = true;
+		this.intelligentSecurity.facialRecognitionCameraPrivacyMode = false;
 	}
 
 	private setIntelligentScreen() {
@@ -306,7 +340,8 @@ export class PageSmartAssistComponent implements OnInit {
 			this.smartAssist.getSelectedLockTimer(),
 			this.smartAssist.getHPDStatus(),
 			this.smartAssist.getHPDVisibilityInIdeaPad(),
-			this.smartAssist.getHPDVisibilityInThinkPad()
+			this.smartAssist.getHPDVisibilityInThinkPad(),
+			this.getFacialRecognitionStatus()
 		]).then((responses: any[]) => {
 			this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
 			this.intelligentSecurity.isZeroTouchLockEnabled = responses[1];
@@ -509,6 +544,14 @@ export class PageSmartAssistComponent implements OnInit {
 				}
 				console.log('onResetDefaultSettings.resetHPDSetting', isSuccess);
 			});
+			if ( this.intelligentSecurity.isZeroTouchLockFacialRecoVisible) {
+				this.smartAssist.resetFacialRecognitionStatus().then((res) =>{
+					if (this.smartAssist.isShellAvailable) {
+						this.getFacialRecognitionStatus();
+					}
+					console.log(`HPDReset - resetFacialRecognitionStatus ${res}`);
+				})
+			}
 	}
 
 	private getVideoPauseResumeStatus() {
@@ -553,5 +596,61 @@ export class PageSmartAssistComponent implements OnInit {
 		} catch (error) {
 			console.error('getHPDSensorType' + error.message);
 		}
+	}
+
+	public onZeroTouchLockFacialRecoChange() {
+		const value = this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled;
+		this.smartAssist.setZeroTouchLockFacialRecoStatus(value)
+			.then((isSuccess: boolean) => {
+				console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus ${isSuccess} ; ${value}`);
+			});
+	}
+
+	onClick(path) {
+		if (path) {
+			this.deviceService.launchUri(path);
+		}
+	}
+
+	onJumpClick() {
+		const navigationExtras: NavigationExtras = {
+			queryParams: { cameraSession_id: 'camera' },
+			fragment: 'anchor'
+		};
+		// this.router.navigate(['/device/device-settings/display-camera']);
+		this.router.navigate(['/device/device-settings/display-camera'], navigationExtras);
+	}
+
+	getFacialRecognitionStatus() {
+		return this.smartAssist.getZeroTouchLockFacialRecoStatus().then((res: any) => {
+			if (res) {
+				this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = res.available;
+				this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = res.status;
+				this.intelligentSecurity.facilRecognitionCameraAccess = res.cameraPermission;
+				this.intelligentSecurity.facialRecognitionCameraPrivacyMode = res.privacyModeStatus;
+			}
+			console.log(`getFacialRecognitionStatus refresh successed`);
+		});
+	}
+
+	onVisibilityChanged() {
+		if (!document.hidden) {
+			this.getFacialRecognitionStatus();
+			console.log(`zero touch lock facial recognition visibilityChanged - getFacialRecognitionStatus`);
+		}
+	}
+
+	onMouseEnterEvent() {
+		this.getFacialRecognitionStatus();
+		console.log(`zero touch lock facial recognition onMouseEnterEvent - getFacialRecognitionStatus`);
+	}
+
+	permissionChanged() {
+		this.getFacialRecognitionStatus();
+		console.log(`zero touch lock facial recognition permissionChange - getFacialRecognitionStatus`);
+	}
+
+	ngOnDestroy() {
+		document.removeEventListener('visibilitychange', this.visibilityChange);
 	}
 }

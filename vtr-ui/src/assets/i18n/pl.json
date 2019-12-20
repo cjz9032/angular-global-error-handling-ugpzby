@@ -1270,6 +1270,17 @@
                             "slow": "Wolno"
                         },
                         "toolTipContent": "Wybierz żądaną opcję, aby szybko/umiarkowanie/wolno zablokować ekran, gdy Twoja obecność nie zostanie wykryta. W rzeczywistości czas, w którym ekran zostanie zablokowany, zależy również od danego przypadku, możliwości czujnika i ustawienia limitu czasu ekranu systemu Windows. Dlatego przed odejściem od komputera zdecydowanie zalecamy natychmiastowe zablokowanie systemu."
+                    },
+                    "facialRecognition": {
+                        "title": "ROZPOZNAWANIE TWARZY",
+                        "caption": "Możesz włączyć funkcję rozpoznawania twarzy oraz zezwolić na dostęp do kamery. Narzędzie przechwytuje obraz w celu dokładnego rozpoznania twojej twarzy lub wykrycia, czy nie pozostawiłeś urządzenia bez nadzoru. Dane są przetwarzane lokalnie na twoim urządzeniu. Lenovo nie ma do nich dostępu ani z nich nie korzysta.",
+                        "checkBox": "Włącz kamerę i uruchom funkcję",
+                        "note": {
+                            "permission": "Aplikacja Lenovo Vantage nie ma dostępu do kamery. Funkcja rozpoznawania jest wyłączona.",
+                            "privacyMode": "Tryb prywatności kamery w Lenovo Vantage jest włączony. Funkcja rozpoznawania jest wyłączona.",
+                            "windowsLink": "Przejdź do ustawień systemu Windows, aby udzielić dostępu",
+                            "privacyLink": "Przejdź do trybu prywatności kamery, aby go wyłączyć"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

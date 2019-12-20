@@ -1270,6 +1270,17 @@
                             "slow": "Hidas"
                         },
                         "toolTipContent": "Valitse haluamasi vaihtoehto, jos haluat lukita näytön nopeasti, keskinopeasti tai hitaasti, kun läsnäoloasi ei havaita. Aikaan, jolloin näyttö on lukittuna, vaikuttaa myös todellinen käyttäjäskenaario, tunnistimen toimintakyky ja Windowsin näytön aikakatkaisuasetukset. Suosittelemme näin ollen, että lukitset järjestelmän ennen, kuin lähdet tietokoneen luota."
+                    },
+                    "facialRecognition": {
+                        "title": "KASVOJENTUNNISTUS",
+                        "caption": "Voit ottaa kasvojentunnistustoiminnon käyttöön ja sallia sen käyttää kameraasi. Tämä työkalu ottaa sinusta valokuvan, jotta se voi tunnistaa oikein, kun olet puhelimen äärellä tai havaita, milloin olet poistunut sen läheltä. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
+                        "checkBox": "Kytke kameraan virta ja ota tämä toiminto käyttöön",
+                        "note": {
+                            "permission": "Lenovo Vantage ei voi käyttää kameraa. Valintaruudun toiminto ei toimi.",
+                            "privacyMode": "Lenovo Vantage -ohjelman kameran tietosuojatila on käytössä. Valintaruudun toiminto ei toimi.",
+                            "windowsLink": "Siirry Windows-asetuksiin ja anna käyttöoikeus",
+                            "privacyLink": "Poista se käytöstä siirtymällä kameran tietosuojatilaan"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

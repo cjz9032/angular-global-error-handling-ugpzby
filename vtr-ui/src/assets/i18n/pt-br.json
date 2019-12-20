@@ -1270,6 +1270,17 @@
                             "slow": "Lento"
                         },
                         "toolTipContent": "Selecione a opção desejada para bloquear a tela em uma velocidade rápida/média/lenta quando sua presença não for detectada. No entanto, o momento em que a tela será bloqueada também é afetado pelo cenário real do usuário, a capacidade do sensor e as configurações de tempo limite da tela do Windows. Portanto, sugerimos que você bloqueie imediatamente o sistema antes de sair."
+                    },
+                    "facialRecognition": {
+                        "title": "RECONHECIMENTO FACIAL",
+                        "caption": "Você pode ativar o recurso de reconhecimento facial e permitir acesso à câmera. Essa ferramenta captura sua imagem para reconhecer com precisão sua presença ou detectar quando você deixar seu dispositivo sem vigilância. Esses dados são processados localmente no dispositivo. A Lenovo não acessa nem usa esses dados.",
+                        "checkBox": "Ligar a câmera e ativar esse recurso",
+                        "note": {
+                            "permission": "O Lenovo Vantage não tem acesso à câmera. A função da caixa de seleção não funcionará.",
+                            "privacyMode": "O modo de privacidade da câmera do Lenovo Vantage está ativado. A função da caixa de seleção não funcionará.",
+                            "windowsLink": "Ir para as Configurações do Windows para dar acesso",
+                            "privacyLink": "Ir para o modo de privacidade da câmera para desativá-lo"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

@@ -1270,6 +1270,17 @@
                             "slow": "Traag"
                         },
                         "toolTipContent": "Selecteer de gewenste optie om het scherm te vergrendelen met een hoge/gemiddelde/lage snelheid als uw aanwezigheid niet wordt gedetecteerd. Het moment waarop het scherm wordt vergrendeld, wordt echter ook beïnvloed door het feitelijke gebruikersscenario, het sensorvermogen en de Windows-instellingen voor time-out voor het scherm. Het is dus raadzaam om het systeem meteen te vergrendelen voordat u weggaat."
+                    },
+                    "facialRecognition": {
+                        "title": "GEZICHTSHERKENNING",
+                        "caption": "U kunt de gezichtsherkenningsfunctie inschakelen en toegang tot uw camera geven. Met deze tool wordt uw afbeelding vastgelegd om uw aanwezigheid nauwkeurig te herkennen of te detecteren wanneer u het apparaat hebt achtergelaten. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
+                        "checkBox": "Zet de camera aan en schakel deze functie in",
+                        "note": {
+                            "permission": "Lenovo Vantage heeft geen toegang tot de camera. De functie van het selectievakje werkt niet.",
+                            "privacyMode": "De privacymodus van Lenovo Vantage Camera is ingeschakeld. De functie van het selectievakje werkt niet.",
+                            "windowsLink": "Ga naar de Windows-instellingen om toegang te geven",
+                            "privacyLink": "Ga naar de privacymodus van de camera om deze uit te schakelen"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
