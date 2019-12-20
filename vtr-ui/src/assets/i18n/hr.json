@@ -3224,5 +3224,22 @@
                 "readLess": "Pročitajte manje"
             }
         }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo ekskluzivna ponuda dizajnerskog paketa Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo digitalna ponuda"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro je vodeći softver za uređivanje videa za film, TV i web. Premiere Pro uključuje Premiere Rush, sveobuhvatnu aplikaciju koja radi na svim vašim uređajima za dijeljenje videozapisa s vašom mrežom.",
+            "subtitle12": "Plan Creative Cloud Photography",
+            "body12": "Koristite Lightroom da biste jednostavno uređivali, organizirali, pohranjivali i dijelili svoje fotografije s bilo kojeg mjesta a Photoshop kako biste transformirali svoje slike u sve što možete zamisliti.",
+            "selectButton": "Odaberi",
+            "subtitle2": "Sve u jednom: pojednostavljeno",
+            "body2": "Sve-u-jednom osobna računala s procesorima Intel® Core™ 9. generacije daju vam svu snagu stolnog računala upakiranog u elegantan zaslon - za manje nereda, sigurnost zasnovanu na hardveru i prikaz visoke razlučivosti."
+        }
     }
 }

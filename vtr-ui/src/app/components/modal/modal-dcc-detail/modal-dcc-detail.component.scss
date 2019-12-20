@@ -29,7 +29,7 @@
 		.title {
 			font-size: 3.1rem;
 			font-weight: $weight_regular;
-			width: 100%;
+			width: 50%;
 			text-align: center;
 			color: $light;
 			position: relative;
@@ -78,6 +78,7 @@
 		.white-button {
 			display: flex;
 			align-items: center;
+			margin-top: 2rem;
 			.button-box {
 				.button {
 					border: 0.1rem solid $main !important;
