@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "スキャンと修復を実行すると、データが失われる可能性があります。この操作を実行する前にバックアップを作成することをお勧めします。続行してもよろしいですか",
                 "yes": "はい",
-                "no": "いいえ",
-                "question": "Are you sure you want to proceed?"
+                "no": "いいえ"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

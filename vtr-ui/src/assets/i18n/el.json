@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "Η εκτέλεση της σάρωσης και της επισκευής ενδέχεται να προκαλέσει απώλεια δεδομένων. Συνιστάται η δημιουργία αντιγράφου ασφαλείας πριν από την εκτέλεση αυτής της λειτουργίας. Σίγουρα θέλετε να συνεχίσετε;",
                 "yes": "Ναι",
-                "no": "Όχι",
-                "question": "Are you sure you want to proceed?"
+                "no": "Όχι"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

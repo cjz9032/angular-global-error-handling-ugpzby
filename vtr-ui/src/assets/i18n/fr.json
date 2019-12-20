@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "L'exécution d'une analyse et d'une réparation peut entraîner la perte de données. Il est recommandé d'effectuer une sauvegarde avant d'exécuter cette opération. Souhaitez-vous vraiment poursuivre ?",
                 "yes": "Oui",
-                "no": "Non",
-                "question": "Are you sure you want to proceed?"
+                "no": "Non"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

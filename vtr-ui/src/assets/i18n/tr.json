@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "Tarama ve onarım işleminin yürütülmesi veri kaybına neden olabilir. Bu işlemi yürütmeden önce yedekleme yapmanız önerilir. Devam etmek istediğinizden emin misiniz?",
                 "yes": "Evet",
-                "no": "Hayır",
-                "question": "Are you sure you want to proceed?"
+                "no": "Hayır"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

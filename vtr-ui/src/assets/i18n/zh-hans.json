@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "执行扫描和修复会导致数据丢失。建议在执行此操作前先进行备份。是否确实要继续？",
                 "yes": "是",
-                "no": "否",
-                "question": "Are you sure you want to proceed?"
+                "no": "否"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

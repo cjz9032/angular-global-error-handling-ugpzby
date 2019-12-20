@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "Vykonanie kontroly a opravy môže spôsobiť stratu údajov. Pred vykonaním tejto operácie sa odporúča vytvorenie zálohy. Naozaj to chcete pokračovať?",
                 "yes": "Áno",
-                "no": "Nie",
-                "question": "Are you sure you want to proceed?"
+                "no": "Nie"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

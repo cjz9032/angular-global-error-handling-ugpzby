@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "ביצוע פעולת סריקה ותיקון עלול לגרום לאובדן נתונים. מומלץ ליצור עותק גיבוי לפני ביצוע הפעולה. האם אתם בטוחים שברצונכם להמשיך?",
                 "yes": "כן",
-                "no": "לא",
-                "question": "Are you sure you want to proceed?"
+                "no": "לא"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },

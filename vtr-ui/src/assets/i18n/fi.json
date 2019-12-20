@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "Skannauksen ja korjauksen toteutus voi aiheuttaa tietojen katoamisen. Varmuuskopiointi on suositeltavaa tehdä ennen tämän toiminnon suorittamista. Haluatko varmasti jatkaa?",
                 "yes": "Kyllä",
-                "no": "Ei",
-                "question": "Are you sure you want to proceed?"
+                "no": "Ei"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
