@@ -3224,5 +3224,22 @@
                 "readLess": "Menej informácií"
             }
         }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exkluzívna ponuka spoločnosti Lenovo: nástroje Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitálna ponuka spoločnosti Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro je popredný softvér na úpravu videa na filmové, televízne a webové použitie. Premiere Pro obsahuje aplikáciu Premiere Rush, ktorá ponúka všetky nástroje na jednom mieste, funguje na všetkých vašich zariadeniach a umožňuje zdieľať video v sieti.",
+            "subtitle12": "Plán Creative Cloud Fotografia",
+            "body12": "Pomocou aplikácie Lightroom môžete ľahko upravovať, organizovať, ukladať a zdieľať svoje fotografie odkiaľkoľvek a Photoshop vám ich umožní transformovať na čokoľvek, čo si dokážete predstaviť.",
+            "selectButton": "Vybrať",
+            "subtitle2": "Počítače All-in-One: stolové počítače jednoduchšie",
+            "body2": "Počítače All-in-One s procesormi Intel® Core™ 9. generácie vám poskytnú všetok výkon stolového počítača skrytého v elegantnej obrazovke. Vychutnávajte si väčší poriadok na stole, hardvérového zabezpečenie a obrazovku s vysokým rozlíšením."
+        }
     }
 }
