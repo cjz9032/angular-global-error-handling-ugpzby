@@ -97,7 +97,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: false,
 			tooltipText: '',
 			readonly: true,
-			id: 'legionedge networkboost',
+			id: 'legionedge networkboost', // don't change, it has dependency.
 			ariaLabel: 'network boost',
 			type: 'gaming.dashboard.device.legionEdge.networkBoost',
 			routerLink: '/networkboost',

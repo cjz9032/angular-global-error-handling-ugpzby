@@ -2822,8 +2822,7 @@
             "popup": {
                 "description": "Het uitvoeren van scans en herstel kan gegevensverlies tot gevolg hebben. Het verdient aanbeveling een back-up te maken voordat u deze bewerking uitvoert. Weet u zeker dat u wilt doorgaan?",
                 "yes": "Ja",
-                "no": "Nee",
-                "question": "Are you sure you want to proceed?"
+                "no": "Nee"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
