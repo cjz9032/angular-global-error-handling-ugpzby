@@ -29,9 +29,9 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	showDropDown: boolean[];
 	toggleSubscription: Subscription;
 	checkbox = false;
-	isCollapsed = false;
-	public automodeBtnVal = true;
-	public manualmodeBtnVal = false;
+	isCollapsed = true;
+	// public automodeBtnVal = true;
+	// public manualmodeBtnVal = false;
 	public isAutonomicCapability = false;
 	public smartStandByInterval: any;
 	public caption = this.translate.instant('device.deviceSettings.power.smartStandby.description');
@@ -139,6 +139,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	public onSmartStandbyToggle(event: any) {
+		this.showDropDown = [false, false, false];
 		const isEnabled = event.switchValue;
 		try {
 			console.log('setSmartStandbyEnabled entered', event);
@@ -335,16 +336,18 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	onCheckboxClicked(event) {
 		this.checkbox = event;
 		this.setSmartStandbyIsAutonomic(this.checkbox);
+		this.showDropDown = [false, false, false];
 	}
 
 	public onToggle(elem: HTMLElement) {
 		elem.focus();
 		this.isCollapsed = !this.isCollapsed;
+		this.showDropDown = [false, false, false];
 	}
-	public changeMode(automaticMode, manualMode) {
-		this.automodeBtnVal = automaticMode;
-		this.manualmodeBtnVal = manualMode;
-	}
+	// public changeMode(automaticMode, manualMode) {
+	// 	this.automodeBtnVal = automaticMode;
+	// 	this.manualmodeBtnVal = manualMode;
+	// }
 	public showUsageGraph() {
 		if (this.smartStandby.isEnabled) {
 			const modalRef = this.modalService.open(ModalSmartStandByComponent, {
