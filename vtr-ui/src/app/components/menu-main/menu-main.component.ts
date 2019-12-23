@@ -574,7 +574,11 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	initInputAccessories() {
-		Promise.all([this.keyboardService.GetUDKCapability(), this.keyboardService.GetKeyboardMapCapability()])
+		Promise.all([
+			this.keyboardService.GetUDKCapability(), 
+			this.keyboardService.GetKeyboardMapCapability(),
+			this.keyboardService.GetKeyboardVersion()
+		])
 			.then((responses: any[]) => {
 				try {
 					let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
@@ -583,6 +587,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					}
 					inputAccessoriesCapability.isUdkAvailable = responses[0];
 					inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
+					inputAccessoriesCapability.keyboardVersion = responses[2];
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
 						inputAccessoriesCapability
 					);

@@ -21,7 +21,11 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public kbdBlIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
 	public merlynIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
 	public zoomIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
-
+	public imagePath = 'assets/images/keyboard-images/KeyboardMap_Images/';
+	public imagePathGrafEvo = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/';
+	public imagePathCS20 = 'assets/images/keyboard-images/KeyboardMap_Images/CS20/';
+	public imagesArray: string[] = ['Belgium.png', 'French.png', 'French_Canadian.png', 'German.png', 'Italian.png', 'Spanish.png', 'Turkish_F.png', 'Standered.png'];
+ 
 	public image = '';
 	public additionalCapabilitiesObj: any = {};
 	public machineType: number;
@@ -30,6 +34,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public stickyFunStatus = false;
 	public isTouchPadVisible = false;
 	public isMouseVisible = false;
+	public keyboardVersion: string;
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
 
@@ -60,6 +65,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			this.inputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
 			if (this.inputAccessoriesCapability !== undefined) {
 				this.keyboardCompatibility = this.inputAccessoriesCapability.isKeyboardMapAvailable;
+				this.keyboardVersion = this.inputAccessoriesCapability.keyboardVersion;
 				if (this.inputAccessoriesCapability.image && this.inputAccessoriesCapability.image.length > 0) {
 					this.image = this.inputAccessoriesCapability.image;
 				}
@@ -126,6 +132,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 				this.keyboardService.GetKBDMachineType().then((value: any) => {
 					this.getKeyboardMap(layOutName, value);
 					this.inputAccessoriesCapability.image = this.image;
+					this.inputAccessoriesCapability.keyboardVersion = this.keyboardVersion;
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					this.getAdditionalCapabilities();
 				})
@@ -141,86 +148,20 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	}
 	// To display the keyboard map image
 	public getKeyboardMap(layOutName, machineType) {
-		const type = machineType.toLowerCase();
-		this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Standered.png';
-		switch (layOutName.toLowerCase()) {
-			case 'standered':
-				if (type === 'other') {
-
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Standered.png';
-					return this.image;
+		const type = machineType.toLowerCase();	
+		this.imagesArray.forEach(element => {
+			if (element.toLowerCase() === layOutName.toLowerCase() + '.png') {
+				if (this.keyboardVersion === '1') {
+					this.image = this.imagePathCS20 + element;
 				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Standered.png';
-					return this.image;
+					if (type === 'grafevo') {
+						this.image = this.imagePathGrafEvo + element;
+					} else {
+						this.image = this.imagePath + element;
+					}
 				}
-				break;
-			case 'belgium':
-				if (type === 'other') {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Belgium.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Belgium.png';
-					return this.image;
-				}
-				break;
-			case 'french':
-				if (type === 'other') {
-
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/French.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/French.png';
-					return this.image;
-				}
-				break;
-			case 'french_canadian':
-				if (type === 'other') {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/French_Canadian.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/French_Canadian.png';
-					return this.image;
-				}
-				break;
-			case 'german':
-				if (type === 'other') {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/German.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/German.png';
-					return this.image;
-				}
-				break;
-			case 'italian':
-				if (type === 'other') {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Italian.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Italian.png';
-					return this.image;
-				}
-				break;
-			case 'spanish':
-				if (type === 'other') {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Spanish.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Spanish.png';
-					return this.image;
-				}
-				break;
-			case 'turkish_':
-				if (type === 'other') {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Turkish_F.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Turkish_F.png';
-					return this.image;
-				}
-				break;
-			default:
-				this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Standered.png';
-		}
+			}
+		});
 	}
 	// To get Additional Capability Status
 	public getAdditionalCapabilities() {
