@@ -4,22 +4,21 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 
 const routes: Routes = [
-
 	{
 		path: 'dashboard',
-		loadChildren: './hardware-settings/hardware-dashboard.module#HardwareDashboardModule'
+		loadChildren: () => import('./hardware-settings/hardware-dashboard.module').then(mod => mod.HardwareDashboardModule)
 	},
 	{
 		path: 'device-gaming',
-		loadChildren: './gaming-dashboard.module#GamingDashboardModule'
+		loadChildren: () => import('./gaming-dashboard.module').then(mod => mod.GamingDashboardModule)
 	},
 	{
 		path: 'gaming',
-		loadChildren: './gaming.module#GamingModule'
+		loadChildren: () => import('./gaming.module').then(mod => mod.GamingModule)
 	},
 	{
 		path: 'device',
-		loadChildren: './hardware-settings/hardware-settings.module#HardwareSettingsModule'
+		loadChildren: () => import('./hardware-settings/hardware-settings.module').then(mod => mod.HardwareSettingsModule)
 	},
 	{
 		path: 'settings',
@@ -30,35 +29,35 @@ const routes: Routes = [
 	},
 	{
 		path: 'home-security',
-		loadChildren: './connected-home-security/connected-home-security.module#ConnectedHomeSecurityModule'
+		loadChildren: () => import('./connected-home-security/connected-home-security.module').then(mod => mod.ConnectedHomeSecurityModule)
 	},
 	{
 		path: 'privacy',
-		loadChildren: '../components/pages/page-privacy/privacy.module#PrivacyModule'
+		loadChildren: () => import('../components/pages/page-privacy/privacy.module').then(mod => mod.PrivacyModule)
 	},
 	{
 		path: 'security',
-		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
+		loadChildren: () => import('./security-advisor/security-advisor.module').then(mod => mod.SecurityAdvisorModule)
 	},
 	{
 		path: 'support',
-		loadChildren: './support/support.module#SupportModule'
+		loadChildren: () => import('./support/support.module').then(mod => mod.SupportModule)
 	},
 	{
 		path: 'apps-for-you/:id',
-		loadChildren: './apps-for-you/apps-for-you.module#AppsForYouModule'
+		loadChildren: () => import('./apps-for-you/apps-for-you.module').then(mod => mod.AppsForYouModule)
 	},
 	{
 		path: 'android',
-		loadChildren: './android/android-dashboard.module#AndroidDashboardModule'
+		loadChildren: () => import('./android/android-dashboard.module').then(mod => mod.AndroidDashboardModule)
 	},
 	{
 		path: 'beta',
-		loadChildren: '../beta/beta.module#BetaModule'
+		loadChildren: () => import('../beta/beta.module').then(mod => mod.BetaModule)
 	},
 	// {
 	// 	path: 'device/smart-performance',
-	// 	loadChildren: './smart-performance/smart-performance.module#SmartPerformanceModule'
+	// 	loadChildren: () => import('./smart-performance/smart-performance.module').then(mod => mod.SmartPerformanceModule)
 	// },
 	{
 		path: '',
