@@ -1195,6 +1195,19 @@
                             "reboot": "リブート",
                             "cancel": "今はしない"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP ホット・キーの機能",
+                        "description": {
+                            "main": "この機能を使用すると、キーボードのホット・キーを押すことで VoIP 通話に応答または拒否できます。",
+                            "f10": "F10: 通話に応答する",
+                            "f11": "F11: 通話を拒否または終了する"
+                        },
+                        "tooltip": "現在、この機能は Skype for Business 2016 および Microsoft Teams 1.0 でのみサポートされています。<br>この機能を使用するには、最初にアプリをダウンロードしてインストールする必要があります。",
+                        "hasInstalledAppsDescription": "ホット・キーを使用するアプリを選択します。",
+                        "noInstalledAppsDescription": "この機能は、以下のアプリケーションのみをサポートします。",
+                        "hasInstalledAppsNote": "注: Microsoft Teams 1.0 の場合、F11 キーを使用して通話を切ることはできません。",
+                        "noInstalledAppsNote": "注: この機能を使用するには、最初にアプリをダウンロードしてインストールする必要があります。"
                     }
                 },
                 "userDefinedKey": {

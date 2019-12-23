@@ -1195,6 +1195,19 @@
                             "reboot": "REPORNIȚI",
                             "cancel": "NU ACUM"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funcţii tastă rapidă VoIP",
+                        "description": {
+                            "main": "Această caracteristică vă permite să răspundeţi sau să respingeţi un apel VoIP apăsând tastele rapide de pe tastatură:",
+                            "f10": "F10: răspundeţi la apel",
+                            "f11": "F11: respingeţi sau închideţi apelul"
+                        },
+                        "tooltip": "În prezent, această caracteristică este acceptată doar pe Skype for Business 2016 şi pe Microsoft Teams 1.0.<br>Pentru a utiliza caracteristica, mai întâi trebuie să descărcaţi şi să instalaţi aplicaţiile.",
+                        "hasInstalledAppsDescription": "Selectaţi aplicaţia în care doriţi să utilizaţi tastele rapide:",
+                        "noInstalledAppsDescription": "Această caracteristică acceptă doar aplicaţiile de mai jos: ",
+                        "hasInstalledAppsNote": "Notă: Pentru Microsoft Teams 1.0, tasta F11 nu poate fi utilizată pentru a închide apelul.",
+                        "noInstalledAppsNote": "Notă: Pentru a utiliza caracteristica, mai întâi trebuie să descărcaţi şi să instalaţi aplicaţiile."
                     }
                 },
                 "userDefinedKey": {

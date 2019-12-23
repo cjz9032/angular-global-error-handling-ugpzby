@@ -1195,6 +1195,19 @@
                             "reboot": "OPNIEUW OPSTARTEN",
                             "cancel": "NIET NU"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP-sneltoetsfuncties",
+                        "description": {
+                            "main": "Met behulp van deze functie kunt u een VoIP-oproep beantwoorden of weigeren door de sneltoetsen op uw toetsenbord te gebruiken:",
+                            "f10": "F10: de oproep beantwoorden",
+                            "f11": "F11: de oproep weigeren of ophangen"
+                        },
+                        "tooltip": "Momenteel wordt deze functie alleen ondersteund in Skype voor Bedrijven 2016 en Microsoft Teams 1.0.<br>Als u deze functie wilt gebruiken, moet u de apps eerst downloaden en installeren.",
+                        "hasInstalledAppsDescription": "Selecteer de app waarin u de sneltoetsen wilt gebruiken.",
+                        "noInstalledAppsDescription": "Deze functie biedt alleen ondersteuning voor de volgende toepassingen: ",
+                        "hasInstalledAppsNote": "Opmerking: voor Microsoft Teams 1.0 kan de toets F11 niet worden gebruikt voor het ophangen van de oproep.",
+                        "noInstalledAppsNote": "Opmerking: als u deze functie wilt gebruiken, moet u de apps eerst downloaden en installeren."
                     }
                 },
                 "userDefinedKey": {

@@ -1195,6 +1195,19 @@
                             "reboot": "REINICIAR",
                             "cancel": "AGORA NÃO"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funções das teclas de atalho VoIP",
+                        "description": {
+                            "main": "Esta funcionalidade permite-lhe atender ou rejeitar uma chamada VoIP pressionando as teclas de atalho do teclado:",
+                            "f10": "F10: atender a chamada",
+                            "f11": "F11: rejeitar ou desligar a chamada"
+                        },
+                        "tooltip": "Atualmente, esta funcionalidade é suportada apenas no Skype for Business 2016 e Microsoft Teams 1.0.<br>Para utilizar a funcionalidade, tem de transferir e instalar primeiro as aplicações.",
+                        "hasInstalledAppsDescription": "Selecione a aplicação em que pretende utilizar as teclas de atalho:",
+                        "noInstalledAppsDescription": "Esta funcionalidade suporta apenas as seguintes aplicações: ",
+                        "hasInstalledAppsNote": "Nota: Para Microsoft Teams 1.0, a tecla F11 não pode ser utilizada para desligar a chamada.",
+                        "noInstalledAppsNote": "Nota: Para utilizar a funcionalidade, tem de transferir e instalar primeiro as aplicações."
                     }
                 },
                 "userDefinedKey": {

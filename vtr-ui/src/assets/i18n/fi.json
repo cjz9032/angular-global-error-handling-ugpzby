@@ -1195,6 +1195,19 @@
                             "reboot": "KÄYNNISTÄ UUDELLEEN",
                             "cancel": "EI NYT"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP-pikanäppäintoiminnot",
+                        "description": {
+                            "main": "Tämän toiminnon avulla voit vastata VoIP-puheluun tai hylätä sen painamalla näppäimistön pikanäppäimiä:",
+                            "f10": "F10: vastaa puheluun",
+                            "f11": "F11: puhelun hylkääminen tai katkaisu"
+                        },
+                        "tooltip": "Tällä hetkellä tätä toimintoa tuetaan vain Skype for Business 2016- ja Microsoft Teams 1.0 -ohjelmistoissa.<br>Jotta voit käyttää tätä toimintoa, sinun on ensin ladattava ja asennettava sovellukset.",
+                        "hasInstalledAppsDescription": "Valitse sovellus, jossa haluat käyttää pikanäppäimiä:",
+                        "noInstalledAppsDescription": "Tämä ominaisuus tukee vain seuraavia sovelluksia: ",
+                        "hasInstalledAppsNote": "Huomautus: Jos kyseessä on Microsoft Teams 1.0, F11-näppäintä ei voi käyttää puhelun katkaisuun.",
+                        "noInstalledAppsNote": "Huomautus: Jotta voit käyttää tätä toimintoa, sinun on ensin ladattava ja asennettava sovellukset."
                     }
                 },
                 "userDefinedKey": {

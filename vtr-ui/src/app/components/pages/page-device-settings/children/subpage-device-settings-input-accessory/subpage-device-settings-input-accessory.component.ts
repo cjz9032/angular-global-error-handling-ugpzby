@@ -7,6 +7,8 @@ import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
+import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -37,6 +39,14 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public keyboardVersion: string;
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
+	public selectedApp: VoipApp;
+	public installedApps: VoipApp[] = [];
+	public showVoipHotkeysSection = false;
+	public isAppInstalled = false;
+	voipAppName = ['Skype For Business 2016', 'Microsoft Teams'];
+	iconName: string[] = ['icon-s4b', 'icon-teams'];
+
+	hasUDKCapability = false;
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -52,8 +62,54 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			if (this.keyboardCompatibility) {
 				this.getKBDLayoutName();
 			}
+			// udk capability
+			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+			this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
 		}
 		this.getMouseAndTouchPadCapability();
+		this.getVoipHotkeysSettings();
+	}
+
+	getVoipHotkeysSettings() {
+		this.keyboardService.getVoipHotkeysSettings()
+			.then(res => {
+				if (+res.errorCode !== VoipErrorCodeEnum.SUCCEED || !res.capability) {
+					return res;
+				}
+				this.showVoipHotkeysSection = true;
+				res.appList.forEach(app => {
+					if (app.isAppInstalled) {
+						this.isAppInstalled = true;
+					}
+					if (app.isSelected) {
+						this.selectedApp = app;
+					}
+				});
+				if (this.isAppInstalled) {
+					this.installedApps = res.appList;
+				}
+			})
+			.catch(error => {
+				console.log('getVoipHotkeysSettings error', error);
+			});
+	}
+
+	setVoipHotkeysSettings(app: VoipApp) {
+		const prev = this.selectedApp;
+		this.selectedApp = app;
+		this.keyboardService.setVoipHotkeysSettings(app.appName)
+			.then(VoipResponse => {
+				if (+VoipResponse.errorCode !== VoipErrorCodeEnum.SUCCEED) {
+					this.selectedApp.isSelected = false;
+					this.selectedApp = prev;
+					this.selectedApp.isSelected = true;
+					return VoipResponse;
+				}
+				this.installedApps = VoipResponse.appList;
+			})
+			.catch(error => {
+				console.log('setVoipHotkeysSettings error', error);
+			});
 	}
 
 	initDataFromCache() {

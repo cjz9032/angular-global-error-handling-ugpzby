@@ -1195,6 +1195,19 @@
                             "reboot": "RIAVVIA",
                             "cancel": "NON ORA"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funzioni dei tasti di scelta rapida per le chiamate VoIP",
+                        "description": {
+                            "main": "Questa funzione consente di rispondere a una chiamata VoIP o di rifiutarla premendo i tasti di scelta rapida sulla tastiera:",
+                            "f10": "F10: rispondere alla chiamata",
+                            "f11": "F11: rifiutare o interrompere la chiamata"
+                        },
+                        "tooltip": "Attualmente, questa funzione è supportata solo su Skype for Business 2016 e Microsoft Teams 1.0.<br>Per utilizzare la funzione, è necessario innanzitutto scaricare e installare le app.",
+                        "hasInstalledAppsDescription": "Selezionare l'app con cui si desidera utilizzare i tasti di scelta rapida:",
+                        "noInstalledAppsDescription": "Questa funzione supporta solo le app seguenti: ",
+                        "hasInstalledAppsNote": "Nota: per Microsoft Teams 1.0, il tasto F11 non può essere utilizzato per interrompere la chiamata.",
+                        "noInstalledAppsNote": "Nota: per utilizzare la funzione, è necessario innanzitutto scaricare e installare le app."
                     }
                 },
                 "userDefinedKey": {

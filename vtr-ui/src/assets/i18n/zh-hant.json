@@ -1195,6 +1195,19 @@
                             "reboot": "重新開機",
                             "cancel": "現在不要"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP 快速鍵功能",
+                        "description": {
+                            "main": "您可以透過這個功能，在鍵盤上按下快速鍵來接聽或拒接 VoIP 來電。",
+                            "f10": "F10：接聽來電",
+                            "f11": "F11：拒接或掛斷來電"
+                        },
+                        "tooltip": "目前這項功能僅支援 Skype for Business 2016 及 Microsoft Teams 1.0。<br>若要安裝這項功能，首先您必須下載及安裝上述應用程式。",
+                        "hasInstalledAppsDescription": "選取您要在其中使用快速鍵的應用程式：",
+                        "noInstalledAppsDescription": "這項功能僅支援下列應用程式：",
+                        "hasInstalledAppsNote": "附註：用於 Microsoft Teams 1.0 時，使用 F11 鍵無法掛斷通話。",
+                        "noInstalledAppsNote": "附註：若要安裝這項功能，首先您必須下載及安裝上述應用程式。"
                     }
                 },
                 "userDefinedKey": {

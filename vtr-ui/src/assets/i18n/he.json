@@ -1195,6 +1195,19 @@
                             "reboot": "הפעלה מחדש",
                             "cancel": "לא עכשיו"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "פונקציות VoIP Hotkey",
+                        "description": {
+                            "main": "תכונה זו מאפשרת לכם לענות לשיחת VoIP או לדחות אותה על ידי לחיצה על מקשי הקיצור במקלדת:",
+                            "f10": "F10: לענות לשיחה",
+                            "f11": "F11: לדחות או לנתק את השיחה"
+                        },
+                        "tooltip": "נכון לעכשיו, תכונה זו נתמכת רק ב- Skype for Business 2016 וב-Microsoft Teams 1.0.<br>כדי להשתמש בתכונה, ראשית יש להוריד ולהתקין את היישומים האלה.",
+                        "hasInstalledAppsDescription": "יש לבחור את היישום שבו ברצונכם להשתמש במקשי הקיצור:",
+                        "noInstalledAppsDescription": "תכונה זו תומכת רק ביישומים הבאים: ",
+                        "hasInstalledAppsNote": "הערה: עבור Microsoft Teams 1.0, לא ניתן להשתמש במקש F11 כדי לנתק את השיחה.",
+                        "noInstalledAppsNote": "הערה: כדי להשתמש בתכונה, ראשית יש להוריד ולהתקין את היישומים האלה."
                     }
                 },
                 "userDefinedKey": {

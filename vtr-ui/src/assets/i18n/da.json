@@ -1195,6 +1195,19 @@
                             "reboot": "GENSTART",
                             "cancel": "IKKE NU"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP-genvejsfunktioner:",
+                        "description": {
+                            "main": "Med denne funktion kan du besvare eller afvise et VoIP-opkald ved at trykke på genvejstasterne på tastaturet:",
+                            "f10": "F10: Besvar opkaldet",
+                            "f11": "F11: Afvis eller afbryd opkaldet"
+                        },
+                        "tooltip": "Denne funktion understøttes i øjeblikket kun i Skype for Business 2016 og Microsoft Teams 1.0.<br>Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps.",
+                        "hasInstalledAppsDescription": "Vælg den app, som du vil bruge genvejstasterne på:",
+                        "noInstalledAppsDescription": "Funktionen understøtter kun nedenstående programmer: ",
+                        "hasInstalledAppsNote": "Bemærk: for Microsoft Teams 1.0 kan du ikke bruge F11-tasten til at afbryde opkaldet.",
+                        "noInstalledAppsNote": "Bemærk: Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps."
                     }
                 },
                 "userDefinedKey": {

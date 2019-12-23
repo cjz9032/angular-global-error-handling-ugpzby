@@ -1195,6 +1195,19 @@
                             "reboot": "URUCHOM PONOWNIE",
                             "cancel": "NIE TERAZ"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funkcje klawisza dostępu VoIP",
+                        "description": {
+                            "main": "Ta funkcja umożliwia odbieranie lub odrzucanie połączeń VoIP przez naciśnięcie klawiszy dostępu na klawiaturze:",
+                            "f10": "F10: odebranie połączenia",
+                            "f11": "F11: odrzucenie lub zawieszenie połączenia"
+                        },
+                        "tooltip": "Obecnie ta funkcja jest obsługiwana tylko w aplikacji Skype dla firm 2016 i Microsoft Teams 1.0.<br>Aby użyć tej funkcji, należy najpierw pobrać i zainstalować aplikacje.",
+                        "hasInstalledAppsDescription": "Wybierz aplikację, w której chcesz używać klawiszy dostępu:",
+                        "noInstalledAppsDescription": "Ta funkcja obsługuje tylko poniższe aplikacje: ",
+                        "hasInstalledAppsNote": "Uwaga: w przypadku Microsoft Teams 1.0 klawisz F11 nie może być użyty do zawieszenia połączenia.",
+                        "noInstalledAppsNote": "Uwaga: aby użyć tej funkcji, należy najpierw pobrać i zainstalować aplikacje."
                     }
                 },
                 "userDefinedKey": {

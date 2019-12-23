@@ -1195,6 +1195,19 @@
                             "reboot": "PONOVNO POKRETANJE",
                             "cancel": "NE SADA"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funkcije VoIP tipkovničkog prečaca",
+                        "description": {
+                            "main": "Ova značajka omogućuje odgovaranje ili odbijanje VoIP poziva pritiskom na tipkovničke prečace na tipkovnici:",
+                            "f10": "F10: odgovor na poziv",
+                            "f11": "F11: odbijanje ili prekid poziva"
+                        },
+                        "tooltip": "Ova je značajka trenutačno podržana samo na platformama Skypeu for Business 2016 i Microsoft Teams 1.0.<br>Kako biste upotrebljavali značajku, najprije morate preuzeti i instalirati aplikacije.",
+                        "hasInstalledAppsDescription": "Odaberite aplikaciju na kojoj želite koristiti tipkovničke prečace:",
+                        "noInstalledAppsDescription": "Ova značajka podržava samo aplikacije u nastavku: ",
+                        "hasInstalledAppsNote": "Napomena: Na platformi Microsoft Teams 1.0, tipka F11 ne može se upotrebljavati za prekidanje poziva.",
+                        "noInstalledAppsNote": "Napomena: Kako biste upotrebljavali značajku, najprije morate preuzeti i instalirati aplikacije."
                     }
                 },
                 "userDefinedKey": {

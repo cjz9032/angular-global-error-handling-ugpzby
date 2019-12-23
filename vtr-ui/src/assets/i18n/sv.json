@@ -1195,6 +1195,19 @@
                             "reboot": "STARTA OM",
                             "cancel": "INTE NU"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP-snabbtangentsfunktioner",
+                        "description": {
+                            "main": "Med denna funktion kan du besvara eller avvisa ett VoIP-samtal genom att trycka på snabbtangenterna på tangentbordet:",
+                            "f10": "F10: besvara samtalet",
+                            "f11": "F11: avvisa eller avsluta samtalet"
+                        },
+                        "tooltip": "Funktionen stöds för närvarande endast med Skype för företag 2016 och Microsoft Teams 1.0.<br>Du måste ladda ned och installera apparna för att kunna använda funktionen.",
+                        "hasInstalledAppsDescription": "Välj den app där du vill använda snabbtangenterna:",
+                        "noInstalledAppsDescription": "Funktionen kan endast användas med följande program: ",
+                        "hasInstalledAppsNote": "Obs! I Microsoft Teams 1.0 kan du inte använda F11-tangenten för att avsluta samtalet.",
+                        "noInstalledAppsNote": "Obs! Du måste ladda ned och installera apparna för att kunna använda funktionen."
                     }
                 },
                 "userDefinedKey": {

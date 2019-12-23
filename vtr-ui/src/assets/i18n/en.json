@@ -1195,6 +1195,19 @@
 							"reboot": "REBOOT",
 							"cancel": "NOT NOW"
 						}
+					},
+					"VoipHotkeys": {
+						"title": "VoIP Hotkey Functions",
+						"description": {
+							"main": "This feature enables you to answer or reject a VoIP call by pressing the hotkeys on your keyboard:",
+							"f10": "F10: answer the call",
+							"f11": "F11: reject or hang up the call"
+						},
+						"tooltip": "Currently, this feature is supported only on Skype for Business 2016 and Microsoft Teams 1.0.<br>To use the feature, you need to download and install the apps first.",
+						"hasInstalledAppsDescription": "Select the app that you want to use the hotkeys on:",
+						"noInstalledAppsDescription": "This feature only support below applications: ",
+						"hasInstalledAppsNote": "Note: For Microsoft Teams 1.0, the F11 key cannot be used to hang up the call.",
+						"noInstalledAppsNote": "Note: To use the feature, you need to download and install the apps first."
 					}
 				},
 				"userDefinedKey": {

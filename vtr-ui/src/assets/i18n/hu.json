@@ -1195,6 +1195,19 @@
                             "reboot": "ÚJRAINDÍTÁS",
                             "cancel": "NE MOST"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Gyorsbillentyűkhöz kapcsolódó VoIP-funkciók",
+                        "description": {
+                            "main": "A funkció lehetővé teszi, hogy a megfelelő billentyűkkel fogadjon vagy elutasítson egy VoIP-hívást.",
+                            "f10": "F10: hívás fogadása",
+                            "f11": "F11: elutasítás, vagy a hívás befejezése"
+                        },
+                        "tooltip": "Ez a funkció jelenleg csak a Skype for Business 2016 és a Microsoft Teams 1.0 verzióban használható.<br>A funkció használatához le kell tölteni és telepíteni kell a megfelelő alkalmazást.",
+                        "hasInstalledAppsDescription": "Válassza ki, melyik alkalmazással szeretné használni a gyorsbillentyűket:",
+                        "noInstalledAppsDescription": "A funkció csak az alábbi alkalmazásokban áll rendelkezésre: ",
+                        "hasInstalledAppsNote": "Megjegyzés: A Microsoft Teams 1.0 verzióban a hívás nem fejezhető be az F11 billentyűvel.",
+                        "noInstalledAppsNote": "Megjegyzés: A funkció használatához először le kell tölteni és telepíteni kell az alkalmazásokat."
                     }
                 },
                 "userDefinedKey": {

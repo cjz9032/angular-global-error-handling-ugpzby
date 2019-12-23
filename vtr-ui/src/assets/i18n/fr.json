@@ -1195,6 +1195,19 @@
                             "reboot": "REDÉMARRER",
                             "cancel": "PAS MAINTENANT"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Fonctions des touches de raccourci VoIP",
+                        "description": {
+                            "main": "Cette fonction vous permet de répondre à un appel VoIP ou de le rejeter en appuyant sur les touches de raccourci de votre clavier :",
+                            "f10": "F10 : répondre à l'appel",
+                            "f11": "F11 : rejeter ou mettre fin à l'appel"
+                        },
+                        "tooltip": "Cette fonction est actuellement prise en charge par Skype Entreprise 2016 et Microsoft Teams 1.0.<br>Pour utiliser cette fonction, vous devez d'abord télécharger et installer les applications.",
+                        "hasInstalledAppsDescription": "Sélectionnez l'application dans laquelle vous souhaitez utiliser les touches de raccourci :",
+                        "noInstalledAppsDescription": "Cette fonction ne prend en charge que les applications suivantes : ",
+                        "hasInstalledAppsNote": "Remarque : pour Microsoft Teams 1.0, la touche F11 ne peut pas être utilisée pour mettre fin à l'appel.",
+                        "noInstalledAppsNote": "Remarque : pour utiliser cette fonction, vous devez d'abord télécharger et installer les applications."
                     }
                 },
                 "userDefinedKey": {

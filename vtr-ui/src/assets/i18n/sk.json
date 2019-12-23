@@ -1195,6 +1195,19 @@
                             "reboot": "REŠTARTOVAŤ",
                             "cancel": "TERAZ NIE"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funkcie klávesových skratiek VoIP",
+                        "description": {
+                            "main": "Táto funkcia umožňuje prijať alebo odmietnuť hovor VoIP stlačením klávesových skratiek na klávesnici:",
+                            "f10": "F10: prijatie hovoru",
+                            "f11": "F11: odmietnutie alebo ukončenie hovoru"
+                        },
+                        "tooltip": "V súčasnosti sa táto funkcia podporuje iba v programoch Skype for Business 2016 a Microsoft Teams 1.0.<br>Ak chcete používať túto funkciu, musíte si najprv stiahnuť a nainštalovať príslušné aplikácie.",
+                        "hasInstalledAppsDescription": "Vyberte aplikáciu, v ktorej chcete používať klávesové skratky:",
+                        "noInstalledAppsDescription": "Táto funkcia podporuje iba tieto aplikácie: ",
+                        "hasInstalledAppsNote": "Poznámka: V prípade programov Microsoft Teams 1.0 nemožno kláves F11 použiť na ukončenie hovoru.",
+                        "noInstalledAppsNote": "Poznámka: Ak chcete používať túto funkciu, musíte si najprv stiahnuť a nainštalovať príslušné aplikácie."
                     }
                 },
                 "userDefinedKey": {
