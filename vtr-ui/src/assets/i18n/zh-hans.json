@@ -1343,8 +1343,8 @@
                             "alwaysOn": "始终开启",
                             "never": "永不",
                             "halfTime": "显示屏关闭计时器的一半时间",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "选择",
+                            "time": "时间"
                         },
                         "taskBarDimmer": "任务栏调光器",
                         "backgroundDimmer": "背景调光器",
@@ -1530,6 +1530,19 @@
                     "control2": "鼠标控制",
                     "control3": "TRACKPOINT 控制",
                     "less": "更少"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },

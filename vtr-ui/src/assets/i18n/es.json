@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Siempre activo",
                             "never": "nunca",
                             "halfTime": "Mitad del tiempo del temporizador de apagado de pantalla",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Seleccione",
+                            "time": "Hora"
                         },
                         "taskBarDimmer": "ATENUADOR DE BARRA DE TAREAS",
                         "backgroundDimmer": "ATENUADOR DE FONDO",
@@ -1530,6 +1530,19 @@
                     "control2": "CONTROLES DE MOUSE",
                     "control3": "CONTROLES DE TRACKPOINT",
                     "less": "MENOS"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },

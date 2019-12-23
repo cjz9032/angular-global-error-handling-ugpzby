@@ -75,7 +75,7 @@ const testQuestion = {
 
 const router = jasmine.createSpyObj('Router', ['navigate']);
 
-describe('PageSupportDetailComponent', () => {
+xdescribe('PageSupportDetailComponent', () => {
 	let component: PageSupportDetailComponent;
 	let fixture: ComponentFixture<PageSupportDetailComponent>;
 	let qaService: QaService;

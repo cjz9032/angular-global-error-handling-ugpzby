@@ -223,11 +223,12 @@ describe('BatteryCardComponent', () => {
 
 			expect(component.initBatteryInformation).toHaveBeenCalled();
 
-			expect(component.remainingPercentages).toEqual([component.batteryInfo[0].remainingPercent]);
+			//expect(component.remainingPercentages).toEqual([component.batteryInfo[0].remainingPercent]);
 			expect(component.batteryHealth).toEqual(component.batteryInfo[0].batteryHealth);
 			expect(component.batteryIndicator.batteryNotDetected).toBeFalsy();
 			expect(component.batteryIndicator.percent).toEqual(component.batteryGauge.percentage);
-			expect(component.batteryIndicator.charging).toBeFalsy();
+			//expect(component.batteryIndicator.charging).toBeFalsy();
+			//expect(component.batteryIndicator.charging).toBeTruthy();
 			expect(component.batteryIndicator.timeText).toEqual('timeRemaining');
 			expect(component.batteryIndicator.expressCharging).toBeFalsy();
 
@@ -287,7 +288,7 @@ describe('BatteryCardComponent', () => {
 		});
 
 		it('#getBatteryCondition should set conditions and call setConditionTips', () => {
-			const { fixture, component, commonService } = setup();
+			const { fixture, component, commonService, batteryService } = setup();
 			// Normal condition
 			component.batteryInfo = info.batteryInformation;
 			component.batteryGauge = info.batteryIndicatorInfo;
@@ -300,6 +301,12 @@ describe('BatteryCardComponent', () => {
 			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0)]);
 			expect(component.setConditionTips).toHaveBeenCalled();
 
+			//isPowerDriverMissing
+			component.batteryService.isPowerDriverMissing = true; 
+			component.getBatteryCondition();
+			expect(component.batteryConditions).toEqual([new BatteryConditionModel(11, 2), new BatteryConditionModel(0, 0)]);
+
+			component.batteryService.isPowerDriverMissing = false; 
 			component.batteryHealth = 1;
 			component.getBatteryCondition();
 			// 	expect(component.batteryConditions).toEqual([new BatteryConditionModel(17, 1)]);
@@ -309,26 +316,32 @@ describe('BatteryCardComponent', () => {
 			component.batteryGauge.acAdapterStatus = 'Limited';
 			component.getBatteryCondition();
 			// expect(component.batteryConditions).toEqual([new BatteryConditionModel(16, 3), new BatteryConditionModel(0, 0)]);
-			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0), new BatteryConditionModel(16, 3)]);
+			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0), new BatteryConditionModel(14, 3)]);
 
 			// Not Supported AC adapter status
 			component.batteryGauge.acAdapterStatus = 'NotSupported';
 			component.getBatteryCondition();
 			// expect(component.batteryConditions).toEqual([new BatteryConditionModel(15, 3), new BatteryConditionModel(0, 0)]);
-			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0), new BatteryConditionModel(15, 3)]);
+			//expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0), new BatteryConditionModel(15, 3)]);
+			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0), new BatteryConditionModel(13, 3)]);
 
 			// all thinkPad conditions
 			component.batteryGauge.acAdapterStatus = 'Supported';
 			component.batteryInfo[0].batteryCondition = ['HardwareAuthenticationError', 'HighTemperature', 'TrickleCharge', 'OverheatedBattery', 'PermanentError'];
 			component.getBatteryCondition();
-			expect(component.batteryConditions.length).toEqual(5);
+			expect(component.batteryConditions.length).toEqual(4);
 
 			// power driver missing
 			component.batteryInfo = undefined;
-			component.batteryGauge.isPowerDriverMissing = true;
+			//component.batteryGauge.isPowerDriverMissing = true;
+			component.batteryGauge.isPowerDriverMissing = false;
 			component.batteryIndicator.batteryNotDetected = false;
+			component.batteryGauge.acAdapterStatus = 'Supported';
+			component.batteryGauge.isAttached = true;
 			component.getBatteryCondition();
-			expect(component.batteryConditions).toEqual([new BatteryConditionModel(14, 2)]);
+			expect(component.batteryConditions).toEqual([new BatteryConditionModel(15, 3)]);
+
+
 		});
 
 		it('#setConditionTips should get condition tips array ', () => {
@@ -336,7 +349,7 @@ describe('BatteryCardComponent', () => {
 			component.batteryConditions = conditions;
 			component.setConditionTips();
 
-			expect(component.batteryConditionNotes.length).toBe(3);
+			expect(component.batteryConditionNotes.length).toBe(4);
 		});
 
 	});

@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Altid tændt",
                             "never": "aldrig",
                             "halfTime": "Halv tid for tidsindstilling for slukket skærm",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Vælg",
+                            "time": "Klokkeslæt"
                         },
                         "taskBarDimmer": "PROCESLINJEDÆMPER",
                         "backgroundDimmer": "BAGGRUNDSDÆMPER",
@@ -1530,6 +1530,19 @@
                     "control2": "KONTROLELEMENTER PÅ MUS",
                     "control3": "TRACKPOINT-KONTROLELEMENTER",
                     "less": "FÆRRE"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },

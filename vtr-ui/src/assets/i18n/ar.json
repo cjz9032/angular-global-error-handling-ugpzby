@@ -1365,8 +1365,8 @@
                             "alwaysOn": "قيد التشغيل دائمًا",
                             "never": "أبدًا",
                             "halfTime": "نصف وقت مؤقت إيقاف تشغيل جهاز العرض",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "تحديد",
+                            "time": "الوقت"
                         },
                         "taskBarDimmer": "تعتيم شريط المهام",
                         "backgroundDimmer": "تعتيم الخلفية",
@@ -1532,6 +1532,19 @@
                     "control2": "إعدادات تحكم الماوس",
                     "control3": "إعدادات تحكم TRACKPOINT",
                     "less": "أقل"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
