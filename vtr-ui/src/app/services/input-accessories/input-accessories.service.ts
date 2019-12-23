@@ -33,11 +33,11 @@ export class InputAccessoriesService {
 
 	}
 
-	//  Check Keyboard UDK Compatability Status
-	public GetUDKCapability(): Promise<boolean> {
+	//  Check Keyboard UDK Compatability Status and KeyboardMapCapability
+	public GetAllCapability(): Promise<any> {
 		try {
 			if (this.keyboardManager) {
-				const value = this.keyboardManager.GetUDKCapability();
+				const value = this.keyboardManager.GetAllCapability();
 				return value;
 			}
 			return undefined;
@@ -51,20 +51,6 @@ export class InputAccessoriesService {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetUDKTypeList();
-			}
-			return undefined;
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
-
-
-	// Start Hidden keyboard keys
-	public GetKeyboardMapCapability(): Promise<boolean> {
-		try {
-			if (this.keyboardManager) {
-				const response = this.keyboardManager.GetKeyboardMapCapability();
-				return response;
 			}
 			return undefined;
 		} catch (error) {
