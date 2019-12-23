@@ -215,7 +215,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						this.cameraStatus.isLoading = false;
 						this.logger.debug('WidgetQuicksettingsComponent.getCameraPrivacyStatus: response Camera Privacy', featureStatus);
 						this.cameraStatus.available = featureStatus.available;
-						if(!this.cameraStatusChangeBySet && !(this.cameraStatus.status === featureStatus.status)) {
+						if(!this.cameraStatusChangeBySet) {
 							this.cameraStatus.status = featureStatus.status;
 						}
 						this.cameraStatusChangeBySet = false;
