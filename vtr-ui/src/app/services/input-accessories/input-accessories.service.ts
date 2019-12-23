@@ -70,6 +70,18 @@ export class InputAccessoriesService {
 		}
 	}
 
+	public GetKeyboardVersion(): Promise<string> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetKeyboardVersion();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
 	public GetKBDLayoutName(): Promise<any> {
 		try {
 			if (this.keyboardManager) {
