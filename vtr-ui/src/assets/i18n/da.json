@@ -1227,10 +1227,14 @@
                         "title": "ANVEND"
                     },
                     "website": {
-                        "url": "URL TIL WEBSTED"
+                        "url": "URL TIL WEBSTED",
+                        "successMessage": "Indstillingerne er blevet anvendt.",
+                        "invalidURLMessage": "Angiv en gyldig webadresse.",
+                        "placeholder": "Start med http:// eller https://"
                     },
                     "enterText": {
-                        "title": "TEKST, DER SKAL SKRIVES"
+                        "title": "TEKST, DER SKAL SKRIVES",
+                        "placeholder": "Skriv her"
                     }
                 },
                 "fnCtrlKey": {

@@ -1227,10 +1227,14 @@
                         "title": "PRIMENI"
                     },
                     "website": {
-                        "url": "URL ADRESA VEB LOKACIJE"
+                        "url": "URL ADRESA VEB LOKACIJE",
+                        "successMessage": "Postavke se uspešno primenjuju.",
+                        "invalidURLMessage": "Unesite ispravnu URL adresu.",
+                        "placeholder": "Počnite sa http:// ili https://"
                     },
                     "enterText": {
-                        "title": "TEKST KOJI TREBA UNETI"
+                        "title": "TEKST KOJI TREBA UNETI",
+                        "placeholder": "Unesite ovde"
                     }
                 },
                 "fnCtrlKey": {

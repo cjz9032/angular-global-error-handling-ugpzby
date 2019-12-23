@@ -1227,10 +1227,14 @@
                         "title": "APLICAR"
                     },
                     "website": {
-                        "url": "URL DO SÍTIO WEB"
+                        "url": "URL DO SÍTIO WEB",
+                        "successMessage": "As definições foram aplicadas com êxito.",
+                        "invalidURLMessage": "Introduza um URL válido.",
+                        "placeholder": "Comece por http:// ou https://"
                     },
                     "enterText": {
-                        "title": "TEXTO A INSERIR"
+                        "title": "TEXTO A INSERIR",
+                        "placeholder": "Digite aqui"
                     }
                 },
                 "fnCtrlKey": {

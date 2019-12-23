@@ -1227,10 +1227,14 @@
                         "title": "PRIMIJENI"
                     },
                     "website": {
-                        "url": "URL WEB-MJESTA"
+                        "url": "URL WEB-MJESTA",
+                        "successMessage": "Postavke su uspješno primjenjene.",
+                        "invalidURLMessage": "Unesite valjani URL.",
+                        "placeholder": "Započnite s http:// ili https://"
                     },
                     "enterText": {
-                        "title": "TEKST ZA UNOS"
+                        "title": "TEKST ZA UNOS",
+                        "placeholder": "Pišite ovdje"
                     }
                 },
                 "fnCtrlKey": {

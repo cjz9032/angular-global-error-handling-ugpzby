@@ -1227,10 +1227,14 @@
                         "title": "適用"
                     },
                     "website": {
-                        "url": "Web サイトの URL"
+                        "url": "Web サイトの URL",
+                        "successMessage": "設定が正常に適用されました。",
+                        "invalidURLMessage": "有効な URL を入力してください。",
+                        "placeholder": "http:// または https:// から始めてください"
                     },
                     "enterText": {
-                        "title": "入力するテキスト"
+                        "title": "入力するテキスト",
+                        "placeholder": "ここに入力してください"
                     }
                 },
                 "fnCtrlKey": {

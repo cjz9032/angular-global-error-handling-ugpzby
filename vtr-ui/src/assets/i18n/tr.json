@@ -1227,10 +1227,14 @@
                         "title": "UYGULA"
                     },
                     "website": {
-                        "url": "WEB SİTESİ URL'Sİ"
+                        "url": "WEB SİTESİ URL'Sİ",
+                        "successMessage": "Ayarlar başarıyla uygulandı.",
+                        "invalidURLMessage": "Lütfen geçerli bir URL girin.",
+                        "placeholder": "Lütfen http:// veya https:// ile başlayın"
                     },
                     "enterText": {
-                        "title": "GİRİLECEK METİN"
+                        "title": "GİRİLECEK METİN",
+                        "placeholder": "Lütfen buraya yazın"
                     }
                 },
                 "fnCtrlKey": {

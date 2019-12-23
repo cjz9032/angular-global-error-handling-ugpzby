@@ -1227,10 +1227,14 @@
                         "title": "UPORABI"
                     },
                     "website": {
-                        "url": "URL SPLETNEGA MESTA"
+                        "url": "URL SPLETNEGA MESTA",
+                        "successMessage": "Nastavitve so bile uspešno uporabljene.",
+                        "invalidURLMessage": "Vnesite veljaven naslov URL.",
+                        "placeholder": "Začnite s http:// ali https://"
                     },
                     "enterText": {
-                        "title": "BESEDILO BO DODANO"
+                        "title": "BESEDILO BO DODANO",
+                        "placeholder": "Vnesite tukaj"
                     }
                 },
                 "fnCtrlKey": {

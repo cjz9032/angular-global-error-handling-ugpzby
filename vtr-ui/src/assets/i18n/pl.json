@@ -1227,10 +1227,14 @@
                         "title": "ZASTOSUJ"
                     },
                     "website": {
-                        "url": "ADRES URL WITRYNY"
+                        "url": "ADRES URL WITRYNY",
+                        "successMessage": "Ustawienia zostały pomyślnie zastosowane.",
+                        "invalidURLMessage": "Wprowadź prawidłowy adres URL.",
+                        "placeholder": "Zacznij od http:// lub https://"
                     },
                     "enterText": {
-                        "title": "TEKST DO WPROWADZENIA"
+                        "title": "TEKST DO WPROWADZENIA",
+                        "placeholder": "Proszę wpisać tutaj"
                     }
                 },
                 "fnCtrlKey": {

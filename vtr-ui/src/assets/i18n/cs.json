@@ -1227,10 +1227,14 @@
                         "title": "POUŽÍT"
                     },
                     "website": {
-                        "url": "URL STRÁNKY"
+                        "url": "URL STRÁNKY",
+                        "successMessage": "Nastavení proběhlo úspěšně.",
+                        "invalidURLMessage": "Zadejte platnou webovou adresu.",
+                        "placeholder": "Začněte s http:// nebo https://"
                     },
                     "enterText": {
-                        "title": "TEXT K ZADÁNÍ"
+                        "title": "TEXT K ZADÁNÍ",
+                        "placeholder": "Zadejte sem"
                     }
                 },
                 "fnCtrlKey": {

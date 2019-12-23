@@ -1227,10 +1227,14 @@
                         "title": "החל"
                     },
                     "website": {
-                        "url": "URL של אתר האינטרנט"
+                        "url": "URL של אתר האינטרנט",
+                        "successMessage": "ההגדרות הוחלו בהצלחה.",
+                        "invalidURLMessage": "יש להזין כתובת URL חוקית.",
+                        "placeholder": "התחל עם http:// או https://"
                     },
                     "enterText": {
-                        "title": "טקסט להזנה"
+                        "title": "טקסט להזנה",
+                        "placeholder": "הקלד כאן"
                     }
                 },
                 "fnCtrlKey": {

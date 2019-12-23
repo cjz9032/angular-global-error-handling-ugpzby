@@ -1227,10 +1227,14 @@
                         "title": "KÄYTÄ"
                     },
                     "website": {
-                        "url": "VERKKOSIVUSTON URL-OSOITE"
+                        "url": "VERKKOSIVUSTON URL-OSOITE",
+                        "successMessage": "Asetusten käyttöönotto onnistui.",
+                        "invalidURLMessage": "Anna kelvollinen URL-osoite.",
+                        "placeholder": "Aloita kirjoittamalla http:// tai https://"
                     },
                     "enterText": {
-                        "title": "KIRJOITETTAVA TEKSTI"
+                        "title": "KIRJOITETTAVA TEKSTI",
+                        "placeholder": "Kirjoita tähän"
                     }
                 },
                 "fnCtrlKey": {

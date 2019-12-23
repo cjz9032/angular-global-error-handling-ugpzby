@@ -1227,10 +1227,14 @@
                         "title": "APLICAR"
                     },
                     "website": {
-                        "url": "URL DO SITE"
+                        "url": "URL DO SITE",
+                        "successMessage": "Configurações aplicadas com êxito.",
+                        "invalidURLMessage": "Insira uma URL válida.",
+                        "placeholder": "Comece com http:// ou https://"
                     },
                     "enterText": {
-                        "title": "TEXTO A SER INSERIDO"
+                        "title": "TEXTO A SER INSERIDO",
+                        "placeholder": "Digite aqui"
                     }
                 },
                 "fnCtrlKey": {

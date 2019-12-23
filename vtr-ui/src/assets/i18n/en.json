@@ -1218,10 +1218,14 @@
 						"title": "APPLY"
 					},
 					"website": {
-						"url": "WEBSITE URL"
+						"url": "WEBSITE URL",
+						"successMessage": "The setting is applied successfully.",
+						"invalidURLMessage": "Please input a valid URL.",
+						"placeholder":"Please start with http:// or https://"
 					},
 					"enterText": {
-						"title": "TEXT TO BE ENTERED"
+						"title": "TEXT TO BE ENTERED",
+						"placeholder":"Please type here"
 					},
 					"dropDown": {
 						"title": "ACTION USER DEFINED KEY",

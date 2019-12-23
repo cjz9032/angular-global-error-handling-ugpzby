@@ -1226,11 +1226,15 @@
                     "apply": {
                         "title": "套用"
                     },
-                    "website": {
-                        "url": "網站 URL"
+                   "website": {
+                        "url": "網站 URL",
+                        "successMessage": "已成功套用設定。",
+                        "invalidURLMessage": "請輸入有效的 URL。",
+                        "placeholder": "請以 http:// 或 https:// 開頭"
                     },
                     "enterText": {
-                        "title": "要輸入的文字"
+                        "title": "要輸入的文字",
+                        "placeholder": "請在這裡輸入"
                     }
                 },
                 "fnCtrlKey": {
