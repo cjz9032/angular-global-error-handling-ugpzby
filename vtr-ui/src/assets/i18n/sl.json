@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Vedno vklopljeno",
                             "never": "nikoli",
                             "halfTime": "Polovica časa časovnika za izklop zaslona",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Izbira",
+                            "time": "Ura"
                         },
                         "taskBarDimmer": "ZATEMNJEVALNIK OPRAVILNE VRSTICE",
                         "backgroundDimmer": "ZATEMNJEVALNIK OZADJA",
@@ -1530,6 +1530,19 @@
                     "control2": "KONTROLNIKI MIŠKE",
                     "control3": "KONTROLNIKI TRACKPOINT",
                     "less": "MANJ"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Druge licence za programsko opremo",
             "ourWebsite": "Naše spletno mesto",
             "aboutYourDevice": "O vaši napravi",
-            "copyright": "© 2002–2019 Lenovo – vse pravice so pridržane"
+            "copyright": "© 2002–2020 Lenovo – vse pravice so pridržane"
         },
         "quickAccess": {
             "categories": "Kategorije",

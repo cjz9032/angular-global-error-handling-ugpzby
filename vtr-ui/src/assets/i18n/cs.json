@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Vždy zapnuto",
                             "never": "nikdy",
                             "halfTime": "Poloviční čas časovače vypnutí displeje",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Vybrat",
+                            "time": "Čas"
                         },
                         "taskBarDimmer": "ZTMAVOVÁNÍ HLAVNÍHO PANELU",
                         "backgroundDimmer": "ZTMAVOVÁNÍ POZADÍ",
@@ -1530,6 +1530,19 @@
                     "control2": "OVLÁDÁNÍ MYŠI",
                     "control3": "OVLÁDÁNÍ TRACKPOINT",
                     "less": "MÉNĚ"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Ostatní softwarové licence",
             "ourWebsite": "Naše webové stránky",
             "aboutYourDevice": "Informace o vašem zařízení",
-            "copyright": "© 2002–2019 Lenovo všechna práva vyhrazena"
+            "copyright": "© 2002–2020 Lenovo všechna práva vyhrazena"
         },
         "quickAccess": {
             "categories": "Kategorie",
