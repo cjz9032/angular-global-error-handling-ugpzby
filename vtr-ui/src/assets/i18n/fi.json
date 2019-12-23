@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Jatkuva",
                             "never": "ei koskaan",
                             "halfTime": "Näytön käytöstä poistamisen ajastimen puoliaika",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Valitse",
+                            "time": "Aika"
                         },
                         "taskBarDimmer": "TEHTÄVÄPALKIN HIMMENNYSTOIMINTO",
                         "backgroundDimmer": "TAUSTAN HIMMENNYSTOIMINTO",
@@ -1530,6 +1530,19 @@
                     "control2": "HIIRITOIMINNOT",
                     "control3": "TRACKPOINT-TOIMINNOT",
                     "less": "VÄHEMMÄN"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Muut ohjelmistokäyttöoikeudet",
             "ourWebsite": "Verkkosivustomme",
             "aboutYourDevice": "Tietoja laitteesta",
-            "copyright": "© 2002-2019 Lenovo kaikki oikeudet pidätetään"
+            "copyright": "© 2002-2020 Lenovo kaikki oikeudet pidätetään"
         },
         "quickAccess": {
             "categories": "Luokat",

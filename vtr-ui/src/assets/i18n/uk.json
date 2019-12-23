@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Завжди увімк.",
                             "never": "ніколи",
                             "halfTime": "Половина часу до вимкнення дисплея",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Вибрати",
+                            "time": "Час"
                         },
                         "taskBarDimmer": "ЗАТІНЕННЯ ПАНЕЛІ ЗАВДАНЬ",
                         "backgroundDimmer": "ЗАТІНЕННЯ ФОНОВИХ ВІКОН",
@@ -1530,6 +1530,19 @@
                     "control2": "ЕЛЕМЕНТИ КЕРУВАННЯ МИШІ",
                     "control3": "ЕЛЕМЕНТИ КЕРУВАННЯ TRACKPOINT",
                     "less": "МЕНШЕ"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Інші ліцензії на програмне забезпечення",
             "ourWebsite": "Наш веб-сайт",
             "aboutYourDevice": "Відомості про ваш пристрій",
-            "copyright": "© Lenovo, 2002–2019 р. Усі права захищено."
+            "copyright": "© Lenovo, 2002–2020 р. Усі права захищено."
         },
         "quickAccess": {
             "categories": "Категорії",
