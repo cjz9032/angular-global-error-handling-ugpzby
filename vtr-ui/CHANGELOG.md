@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.276](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.275...v1.0.276) (2019-12-23)
+
+
+### Features
+
+* **npm:** bump jsbridge version to 10.1912.1.unstablelatest ([603c5f3](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/603c5f3))
+* voip 3.1.6 ([f97c498](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/f97c498))
+* voip 3.1.6 ([5817985](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/5817985))
+* voip 3.1.6 ([a616c0a](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/a616c0a))
+* voip 3.1.6 has udk ([4d195ec](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/4d195ec))
+* voip 3.1.6 images ([af5690b](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/af5690b))
+* voip 3.1.6 multi languages ([fd009ca](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/fd009ca))
+* voip 3.1.6 multi languages ([4a0396d](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/4a0396d))
+* voip 3.1.6 style ([c4da9e9](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/c4da9e9))
+* voip 3.1.6 style ([b74decd](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/b74decd))
+
+
+
 ## [1.0.275](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.274...v1.0.275) (2019-12-09)
 
 
