@@ -841,7 +841,7 @@
                 "hour": "uur",
                 "minutes": "minuten",
                 "minute": "minuut",
-                "charge": "TIJD OM VOLLEDIG OP TE LADEN",
+                "charge": "Tijd tot volledig opladen",
                 "button": "ZIE BATTERIJDETAILS",
                 "details": {
                     "title": "Batterijdetails",
@@ -1014,7 +1014,7 @@
                             "title3": "Prestatiemodus",
                             "desc3": "De schuifregelaar bevindt zich uiterst rechts. Er worden een hogere ventilatorsnelheid en een hogere temperatuur van de buitenkant van de computer toegelaten voor maximale prestaties."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Sommige modi kunnen automatisch aangepast worden over een breder prestatiebereik gebaseerd op uw activiteit. Druk op Fn+ T om de automatische modus uit te schakelen."
                     }
                 },
                 "powerSettings": {
@@ -1108,14 +1108,14 @@
                         "FCCText": "Van {{before}} Wh tot {{after}} Wh",
                         "note": "Opmerking: voordat u de batterijmeter opnieuw instelt, zorg ervoor dat de computer is aangesloten op de netvoeding. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Voltooid: Opnieuw ingesteld.",
+                            "ERROR_SUCCESS": "Voltooid: opnieuw instellen geslaagd.",
                             "ERROR_SHUTDOWN": "Mislukt: Systeem is afgesloten.",
-                            "ERROR_LOGOFF": "Mislukt: Gebruiker is afgemeld.",
+                            "ERROR_LOGOFF": "Mislukt: gebruiker is afgemeld.",
                             "ERROR_BATTERY_REMOVE": "Mislukt: Batterij is verwijderd.",
                             "ERROR_BATTERY_REPLACE": "Mislukt: Batterij is vervangen.",
                             "ERROR_AC_DETTACH": "Mislukt: Netvoedingsadapter is ontkoppeld.",
                             "ERROR_USER_CANCEL": "Mislukt: Geannuleerd door gebruiker.",
-                            "ERROR_UNEXPECTED": "Mislukt: Er is een onverwachte fout opgetreden."
+                            "ERROR_UNEXPECTED": "Mislukt: er is een onverwachte fout opgetreden."
                         },
                         "popup": {
                             "description1": "Het proces voor opnieuw instellen verloopt als volgt:<br>de batterij wordt volledig opgeladen  -->  de batterij wordt volledig ontladen  -->  de batterij wordt opnieuw volledig opgeladen",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de opstarttijd snel bij zwaarder gebruik.",
                     "subTitle2": "Stel de tijd in waarop u deze computer gewoonlijk gebruikt",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen."
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Weergave",
-					"displayColorTemperature": {
-						"title": "Kleurtemperatuur weergeven",
-						"description": "U kunt de kleurtemperatuur van uw beeldscherm aanpassen om blauw licht uit te filteren en uw ogen minder te belasten. Hiermee kunt u uw beeldscherm tussen zonsondergang en zonsopgang warmere kleuren laten weergeven om u beter te laten slapen.",
-						"link": {
-							"click": "Klik",
-							"here": "hier",
-							"rest": "om de kleurtemperatuur te wijzigen."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Kleurtemperatuur weergeven",
+                        "description": "U kunt de kleurtemperatuur van uw beeldscherm aanpassen om blauw licht uit te filteren en uw ogen minder te belasten. Hiermee kunt u uw beeldscherm tussen zonsondergang en zonsopgang warmere kleuren laten weergeven om u beter te laten slapen.",
+                        "link": {
+                            "click": "Klik",
+                            "here": "hier",
+                            "rest": "om de kleurtemperatuur te wijzigen."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Oogzorg-modus",
                         "checkbox": "Oogzorg-modus voor zonsondergang tot zonsopgang plannen",
@@ -1362,7 +1362,9 @@
                             "minutes": "minuten",
                             "alwaysOn": "Altijd aan",
                             "never": "nooit",
-                            "halfTime": "Timer Helft van de tijd voordat beeldscherm wordt uitgeschakeld"
+                            "halfTime": "Timer Helft van de tijd voordat beeldscherm wordt uitgeschakeld",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "TAAKBALKDIMMER",
                         "backgroundDimmer": "ACHTERGRONDDIMMER",
@@ -1527,7 +1529,7 @@
                     "control1": "TOUCHPAD-BEDIENING",
                     "control2": "MUISBEDIENING",
                     "control3": "TRACKPOINT-BESTURINGSELEMENTEN",
-                    "less": "LESS"
+                    "less": "MINDER"
                 }
             }
         },
@@ -1761,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Instellingen automatisch bijwerken",
-            "subtitle": "UPDATES AUTOMATISCH INSTALLEREN",
+            "subtitle": "Updates automatisch installeren",
             "critical": {
                 "title": "Essentiële updates",
                 "tooltip": "Met de essentiële updates worden aanzienlijke problemen, ernstige storingen in het systeem, storingen in de hardware en beschadiging van gegevens voorkomen."
@@ -3220,6 +3222,23 @@
                 "readMore": "Meer weergeven",
                 "readLess": "Minder weergeven"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exclusieve aanbieding van Lenovo voor Adobe designer-suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitale aanbieding van Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro is de toonaangevende videobewerkingssoftware voor film, tv en het web. Premiere Pro omvat Premiere Rush, een alles-in-één app die werkt op al uw apparaten voor het delen van video op uw netwerk.",
+            "subtitle12": "Creative Cloud Photography-plan",
+            "body12": "Gebruik Lightroom om eenvoudig overal uw foto's te bewerken, organiseren en op te slaan, en Photoshop voor het transformeren van uw afbeeldingen naar alles dat u zich maar kunt voorstellen.",
+            "selectButton": "Selecteren",
+            "subtitle2": "Alles-in-één computers: gestroomlijnd",
+            "body2": "Alles-in-één pc's met 9e generatie Intel® Core™ processoren voorzien u van de kracht van een desktop in een strak design — voor minder volume, op hardware gebaseerde beveiliging en een scherm met hoge resolutie."
         }
     }
 }

@@ -4,11 +4,8 @@
 	tabindex="-1">
 	<div class="tips-mask"
 		id="new-feature-tip-mask"
-		metricsEvent="FeatureClick"
-		metricsParent="New Feature Tips"
-		metricsItem="tipsMask"
-		(click)="nextTips()"
-		(keyup.enter)="nextTips()"
+		(click)="nextTips('TipsMask')"
+		(keyup.enter)="nextTips('TipsMask')"
 		tabindex="0">
 		<div class="mask-bg mask-top"></div>
 		<div class="mask-middle">
@@ -36,11 +33,8 @@
 			[innerHTML]="description | translate"></div>
 		<vtr-ui-button [btnHeight]="true"
 			linkId="new-feature-tip-ok-btn"
-			tabIndex="1"
-			metricsEvent="FeatureClick"
-			metricsParent="New Feature Tips"
-			metricsItem="okButton"
-			(onClick)="nextTips()"
+			[tabIndex]="1"
+			(onClick)="nextTips('TipsOkButton')"
 			label="OK"></vtr-ui-button>
 	</div>
 </div>

@@ -362,14 +362,32 @@ export class AppComponent implements OnInit, OnDestroy {
 		window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
 	}
 
-	// Defect fix VAN-2988
 	@HostListener('window:keydown', ['$event'])
-	disableCtrlA($event: KeyboardEvent) {
-		const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
-
-		if (($event.ctrlKey || $event.metaKey) && $event.keyCode === 65 && !isPrivacyTab) {
+	dialogCtrlA($event: KeyboardEvent) {
+		const dialog: HTMLElement = document.querySelector('ngb-modal-window');
+		if (dialog && ($event.ctrlKey || $event.metaKey) && $event.keyCode === 65) {
+			const activeDom: any = document.activeElement;
+			if (activeDom && (
+				(activeDom.type === 'textarea' && activeDom.tagName === 'TEXTAREA') ||
+				(activeDom.type === 'text' && activeDom.tagName === 'INPUT')
+			)) { return; }
+			this.selectText(dialog);
 			$event.stopPropagation();
 			$event.preventDefault();
+		}
+	}
+
+	selectText(element: any) {
+		if ((document.body as any).createTextRange) {
+			const range = (document.body as any).createTextRange();
+			range.moveToElementText(element);
+			range.select();
+		} else if (window.getSelection) {
+			const selection = window.getSelection();
+			const range = document.createRange();
+			range.selectNodeContents(element);
+			selection.removeAllRanges();
+			selection.addRange(range);
 		}
 	}
 

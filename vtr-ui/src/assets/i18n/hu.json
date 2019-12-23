@@ -841,7 +841,7 @@
                 "hour": "óra",
                 "minutes": "perc",
                 "minute": "perc",
-                "charge": "TELJES FELTÖLTÉSHEZ SZÜKSÉGES IDŐ",
+                "charge": "A teljes töltéshez szükséges idő",
                 "button": "AKKUMULÁTOR RÉSZLETEINEK MEGTEKINTÉSE",
                 "details": {
                     "title": "Az akkumulátor részletei",
@@ -1014,7 +1014,7 @@
                             "title3": "Teljesítményközpontú mód",
                             "desc3": "A csúszka a jobb oldalon van. A ventilátor sebessége és a gép hőmérséklete a megengedett legnagyobb, hogy a gép a legjobb teljesítményt nyújtsa."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Néhány mód automatikusan szélesebb teljesítményskálát állíthat be az Ön tevékenysége alapján. Az automatikus mód letiltásához nyomja meg az Fn+ T gombokat."
                     }
                 },
                 "powerSettings": {
@@ -1108,7 +1108,7 @@
                         "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
                         "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Kész: Sikeres nullázás",
+                            "ERROR_SUCCESS": "Kész: Sikeres visszaállítás.",
                             "ERROR_SHUTDOWN": "Sikertelen: A rendszer leállt.",
                             "ERROR_LOGOFF": "Sikertelen: A felhasználó kilépett.",
                             "ERROR_BATTERY_REMOVE": "Sikertelen: Akkumulátor eltávolítva.",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
                     "subTitle2": "Adja meg, hogy általában mikor használja a számítógépet",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett KEZDÉSI idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időszakot a megadott ütemezés alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre; ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás."
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Megjelenítés",
-					"displayColorTemperature": {
-						"title": "A képernyő színhőmérséklete",
-						"description": "Beállíthatja a képernyő színhőmérsékletét oly módon, hogy a kék fény kiszűrésével csökkentse a szem igénybevételét. Napnyugta és napkelte között állítson be melegebb színeket, hogy segítse az alvást.",
-						"link": {
-							"click": "Kattintson",
-							"here": "innen",
-							"rest": "a színhőmérséklet beállításához."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "A képernyő színhőmérséklete",
+                        "description": "Beállíthatja a képernyő színhőmérsékletét oly módon, hogy a kék fény kiszűrésével csökkentse a szem igénybevételét. Napnyugta és napkelte között állítson be melegebb színeket, hogy segítse az alvást.",
+                        "link": {
+                            "click": "Kattintson",
+                            "here": "innen",
+                            "rest": "a színhőmérséklet beállításához."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Szemvédő mód",
                         "checkbox": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",
@@ -1362,7 +1362,9 @@
                             "minutes": "perc",
                             "alwaysOn": "Mindig bekapcsolva",
                             "never": "soha",
-                            "halfTime": "Képernyő kikapcsolási időzítésének felénél"
+                            "halfTime": "Képernyő kikapcsolási időzítésének felénél",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "TÁLCA ELSÖTÉTÍTÉSE",
                         "backgroundDimmer": "HÁTTÉR ELSÖTÉTÍTÉSE",
@@ -1527,7 +1529,7 @@
                     "control1": "ÉRINTŐFELÜLET VEZÉRLŐELEMEI",
                     "control2": "EGÉR VEZÉRLŐELEMEI",
                     "control3": "TRACKPOINT-VEZÉRLŐK",
-                    "less": "LESS"
+                    "less": "KEVESEBB"
                 }
             }
         },
@@ -1761,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Automatikus frissítés beállításai",
-            "subtitle": "FRISSÍTÉSEK AUTOMATIKUS TELEPÍTÉSE",
+            "subtitle": "Frissítések automatikus telepítése",
             "critical": {
                 "title": "Kritikus frissítések",
                 "tooltip": "A kritikus frissítések megakadályozzák a jelentős problémákat, a hibás működést, a hardverhibákat és az adatvesztést."
@@ -3220,6 +3222,23 @@
                 "readMore": "Továbbiak",
                 "readLess": "Kevesebb"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exkluzív Lenovo-ajánlat: Adobe tervezői csomag"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo digitális ajánlat"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "A Premiere Pro a vezető filmes, TV-s és az internetes videószerkesztő szoftver. A Premiere Pro magában foglalja a Premiere Rush többfunkciós alkalmazást, amely minden eszközön működik, hogy megossza videókat a hálózatban.",
+            "subtitle12": "Creative Cloud fotós előfizetés",
+            "body12": "A Lightroom segítségével bárhonnan könnyen szerkesztheti, rendezheti, tárolhatja és megoszthatja fényképeit, a Photoshop programmal pedig bármivé átalakíthatja őket, amit csak el tud képzelni.",
+            "selectButton": "Válassza ki a",
+            "subtitle2": "All-in-One: Egyszerű",
+            "body2": "Az all-in-one számítógépek a 9. generációs Intel® Core™ processzorral az asztali számítógépek minden előnyét biztosítják egy karcsú kijelzőbe csomagolva – kevesebb rendetlenséggel, hardver alapú biztonsággal és nagy felbontású kijelzővel."
         }
     }
 }

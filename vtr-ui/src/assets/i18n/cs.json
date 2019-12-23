@@ -841,7 +841,7 @@
                 "hour": "hodina",
                 "minutes": "minuty",
                 "minute": "minuta",
-                "charge": "ČAS POTŘEBNÝ K PLNÉMU NABITÍ",
+                "charge": "Čas potřebný k plnému nabití",
                 "button": "ZOBRAZIT PODROBNOSTI O BATERII",
                 "details": {
                     "title": "Podrobnosti o baterii",
@@ -1014,7 +1014,7 @@
                             "title3": "Režim výkonu",
                             "desc3": "Posuvník je zcela vpravo. Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Některé režimy se mohou na základě vaší činnosti automaticky přizpůsobit širšímu rozsahu výkonu. Chcete-li zakázat automatický režim, stiskněte klávesy Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1108,7 +1108,7 @@
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Před resetováním ukazatele stavu baterie nezapomeňte připojit počítač k napájení ze sítě. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Dokončeno: Reset proběhl úspěšně.",
+                            "ERROR_SUCCESS": "Dokončeno: úspěšný reset.",
                             "ERROR_SHUTDOWN": "Selhání: Systém byl vypnut.",
                             "ERROR_LOGOFF": "Selhání: Uživatel se odhlásil.",
                             "ERROR_BATTERY_REMOVE": "Selhání: Byla vyňata baterie.",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění.",
                     "subTitle2": "Nastavte čas, kdy počítač obvykle používáte",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným ZAČÁTKEM přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové rozmezí se optimalizuje na základě nastaveného plánu. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů."
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Displej",
-					"displayColorTemperature": {
-						"title": "Teplota barev displeje",
-						"description": "Můžete upravit teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí. Přizpůsobuje displeje teplejším barvám při západu a východu slunce, aby vám pomohl spát.",
-						"link": {
-							"click": "Kliknutím",
-							"here": "sem",
-							"rest": "změňte teplotu barev."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Teplota barev displeje",
+                        "description": "Můžete upravit teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí. Přizpůsobuje displeje teplejším barvám při západu a východu slunce, aby vám pomohl spát.",
+                        "link": {
+                            "click": "Kliknutím",
+                            "here": "sem",
+                            "rest": "změňte teplotu barev."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Režim Péče o oči",
                         "checkbox": "Naplánovat režim péče o zrak od západu do východu slunce",
@@ -1362,7 +1362,9 @@
                             "minutes": "minuty",
                             "alwaysOn": "Vždy zapnuto",
                             "never": "nikdy",
-                            "halfTime": "Poloviční čas časovače vypnutí displeje"
+                            "halfTime": "Poloviční čas časovače vypnutí displeje",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "ZTMAVOVÁNÍ HLAVNÍHO PANELU",
                         "backgroundDimmer": "ZTMAVOVÁNÍ POZADÍ",
@@ -1527,7 +1529,7 @@
                     "control1": "OVLÁDÁNÍ DOTYKOVÉ PLOŠKY",
                     "control2": "OVLÁDÁNÍ MYŠI",
                     "control3": "OVLÁDÁNÍ TRACKPOINT",
-                    "less": "LESS"
+                    "less": "MÉNĚ"
                 }
             }
         },
@@ -1761,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Nastavení automatické aktualizace",
-            "subtitle": "AUTOMATICKY INSTALOVAT AKTUALIZACE",
+            "subtitle": "Automaticky instalovat aktualizace",
             "critical": {
                 "title": "Kriticky důležité aktualizace",
                 "tooltip": "Kriticky důležité aktualizace předcházejí vážným problémům,podstatným poruchám funkce, selhání hardwaru nebo poškození dat."
@@ -3220,6 +3222,23 @@
                 "readMore": "Další informace",
                 "readLess": "Méně informací"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo exkluzivně nabízí sadu designérských nástrojů Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitální nabídka společnosti Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro je přední software pro střih videa pro film, televizi a web. Premiere Pro zahrnuje komplexní aplikaci Premiere Rush, která funguje na všech vašich zařízení a slouží ke sdílení videa v síti.",
+            "subtitle12": "Plán pro úpravu fotografií Creative Cloud",
+            "body12": "Pomocí aplikace Lightroom můžete snadno upravovat, spravovat, uchovávat a sdílet své fotografie odkudkoli a pomocí aplikace Photoshop můžete převádět své obrazové soubory na cokoli, co si dokážete představit.",
+            "selectButton": "Pomocí tlačítka",
+            "subtitle2": "Počítače all-in-one zjednodušeně",
+            "body2": "Počítače all-in-one s procesory Intel® Core™ 9. generace vám poskytují veškerý výkon stolního počítače zabalený v elegantním displeji. Zabírají méně místa a nabízejí hardwarové zabezpečení a obraz s vysokým rozlišením."
         }
     }
 }

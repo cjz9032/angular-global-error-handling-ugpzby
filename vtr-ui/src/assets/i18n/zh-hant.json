@@ -894,7 +894,7 @@
                 "condition": {
                     "Illegal": "此系統<b>不支援</b>安裝的電池，因此無法充電。請使用此系統適用的正確 Lenovo 電池進行更換。",
                     "Good": "<b>電池狀況良好。</b>",
-                    "Exhaustion": "電池容量已<b>降級</b>。請更換新的電池。",
+                    "Exhaustion": "電池容量已<b>降低</b>。請更換新的電池。",
                     "Bad": "<b>發生電池錯誤。</b>電池無法充電/放電。更換電池。",
                     "NotDetected": "<b>未偵測到電池或未</b>插入電池。",
                     "NotGood": "<b>電池狀況不佳。</b>",
@@ -905,7 +905,7 @@
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
                     "OverheatedBattery": "電池<b>過熱</b>。請將其從電腦中取出，並使其降至室溫。",
-                    "PermanentError": "電池容量已<b>降級</b>。請更換新的電池。",
+                    "PermanentError": "電池容量已<b>降低</b>。請更換新的電池。",
                     "NotSupportACAdapterDetail": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
                     "LimitedACAdapterSupportDetail": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 電源已連接。</b>",
@@ -1014,7 +1014,7 @@
                             "title3": "效能模式",
                             "desc3": "滑桿在最右邊。風扇速度和允許的表面溫度可以提高，以達最佳效能。"
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "部分模式可以根據您的活動在更大的效能範圍內自動調整。若要停用自動模式，請按 Fn+ T。"
                     }
                 },
                 "powerSettings": {
@@ -1108,7 +1108,7 @@
                         "FCCText": "從 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重設電池計量器之前，請確定將電腦連接到 AC 電源。",
                         "resetLog": {
-                            "ERROR_SUCCESS": "完成：已成功重設。",
+                            "ERROR_SUCCESS": "完成：順利重設。",
                             "ERROR_SHUTDOWN": "失敗：系統已關閉。",
                             "ERROR_LOGOFF": "失敗：使用者已登出。",
                             "ERROR_BATTERY_REMOVE": "失敗：電池已取出。",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "這個功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
                     "subTitle2": "設定您一般使用這部電腦的時間",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。"
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "顯示",
-					"displayColorTemperature": {
-						"title": "顯示器色溫",
-						"description": "您可以調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。在日落到日出期間，將顯示器調整為暖色，以幫助您入睡。",
-						"link": {
-							"click": "按一下",
-							"here": "這裡",
-							"rest": "以變更色溫。"
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "顯示器色溫",
+                        "description": "您可以調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。在日落到日出期間，將顯示器調整為暖色，以幫助您入睡。",
+                        "link": {
+                            "click": "按一下",
+                            "here": "這裡",
+                            "rest": "以變更色溫。"
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "護眼模式",
                         "checkbox": "安排從日落到日出的護眼模式",
@@ -1362,7 +1362,9 @@
                             "minutes": "分",
                             "alwaysOn": "保持開啟",
                             "never": "永不",
-                            "halfTime": "顯示器關閉計時器的一半時間"
+                            "halfTime": "顯示器關閉計時器的一半時間",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "工作列調光器",
                         "backgroundDimmer": "背景調光器",
@@ -1527,7 +1529,7 @@
                     "control1": "觸控板控制項",
                     "control2": "滑鼠控制項",
                     "control3": "TRACKPOINT 控制項",
-                    "less": "LESS"
+                    "less": "較少"
                 }
             }
         },
@@ -3220,6 +3222,23 @@
                 "readMore": "較多內容",
                 "readLess": "較少內容"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo 獨家提供 Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo 數位優惠"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro 是用於電影、電視和網路的頂尖影片編輯軟體。Premiere Pro 包括的 Premiere Rush 是一款一體成型的應用程式，可在所有裝置上搭配網路共用影片。",
+            "subtitle12": "Creative Cloud 攝影計劃",
+            "body12": "使用 Lightroom，您就可以從任何地方和 Photoshop，為您的照片輕鬆進行編輯、組織、儲存和分享，以及將影像轉換為任何想得到的任何畫面。",
+            "selectButton": "在工具列中選取",
+            "subtitle2": "一體成型：簡化",
+            "body2": "一體成型 PC，搭載第 9 代 Intel® Core™ 處理器，將桌面電腦的所有功能都裝入設計時尚的顯示器中 — 干擾更少，符合硬體安全，以及高解析度顯示器。"
         }
     }
 }

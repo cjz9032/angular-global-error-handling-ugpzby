@@ -422,8 +422,20 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.smartStandbyCapability = event;
 		if (!event) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartStandby');
-			this.checkMenuItemsEmpty();
+		} else {
+			const status = this.commonService.isPresent(this.headerMenuItems, 'smartStandby');
+			if (!status) {
+				const smartStandByObj = {
+					title: 'device.deviceSettings.power.smartStandby.title',
+					path: 'smartStandby',
+					metricsItem: 'SmartStandby',
+					order: 2
+				};
+				this.headerMenuItems.push(smartStandByObj);
+				this.commonService.sortMenuItems(this.headerMenuItems);
+			}
 		}
+		this.checkMenuItemsEmpty();
 	}
 
 	openContextModal(template: TemplateRef<any>) {
@@ -987,10 +999,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 								throw res;
 							} else {
 								this.isToolBarSetSuccessed = true;
+								this.vantageToolbarStatus = res;
 								return res;
 							}
-						}
-						),
+						}),
 						backoff(3, 200),
 						finalize(() => {
 							if (this.isToolBarSetSuccessed) {
@@ -1130,27 +1142,31 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						}
 					}
 					this.isThresholdWarningMsgShown();
-
-					// cache value
-					this.batteryChargeThresholdCache.available = this.isChargeThresholdAvailable;
-					this.batteryChargeThresholdCache.toggleStatus = this.showBatteryThreshold;
-
-					this.batteryChargeThresholdCache.isPrimaryBatteryAvailable = this.isPrimaryBatteryAvailable;
-					this.batteryChargeThresholdCache.startAt1 = this.selectedStartAtChargeVal;
-					this.batteryChargeThresholdCache.stopAt1 = this.selectedStopAtChargeVal;
-					this.batteryChargeThresholdCache.checkBox1 = this.primaryCheckBox;
-
-					this.batteryChargeThresholdCache.isSecondBatteryAvailable = this.isSecondBatteryAvailable;
-					this.batteryChargeThresholdCache.startAt2 = this.selectedStartAtChargeVal1;
-					this.batteryChargeThresholdCache.stopAt2 = this.selectedStopAtChargeVal1;
-					this.batteryChargeThresholdCache.checkBox2 = this.secondaryCheckBox;
-
-					this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
-
-					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
-					// end cache
+				} else {
+					this.isChargeThresholdAvailable = false;
+					this.showBatteryThreshold = false;
 				}
+
 				this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.showBatteryThreshold);
+
+				// cache value
+				this.batteryChargeThresholdCache.available = this.isChargeThresholdAvailable;
+				this.batteryChargeThresholdCache.toggleStatus = this.showBatteryThreshold;
+
+				this.batteryChargeThresholdCache.isPrimaryBatteryAvailable = this.isPrimaryBatteryAvailable;
+				this.batteryChargeThresholdCache.startAt1 = this.selectedStartAtChargeVal;
+				this.batteryChargeThresholdCache.stopAt1 = this.selectedStopAtChargeVal;
+				this.batteryChargeThresholdCache.checkBox1 = this.primaryCheckBox;
+
+				this.batteryChargeThresholdCache.isSecondBatteryAvailable = this.isSecondBatteryAvailable;
+				this.batteryChargeThresholdCache.startAt2 = this.selectedStartAtChargeVal1;
+				this.batteryChargeThresholdCache.stopAt2 = this.selectedStopAtChargeVal1;
+				this.batteryChargeThresholdCache.checkBox2 = this.secondaryCheckBox;
+
+				this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
+
+				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
+				// end cache
 			} catch (error) {
 				this.logger.error('getBatteryThresholdInformation :: error', error.message);
 				return EMPTY;
@@ -1285,7 +1301,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	hidePowerLink() {
-		if (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available && !this.showFlipToBootSection$.value) {
+		if (this.isDesktopMachine || (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available && !this.showFlipToBootSection$.value)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
 			this.checkMenuItemsEmpty();
 		}

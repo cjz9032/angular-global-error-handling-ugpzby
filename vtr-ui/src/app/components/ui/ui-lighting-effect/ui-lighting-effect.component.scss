@@ -60,14 +60,14 @@
 		white-space: pre-wrap;
 		word-break: keep-all;
 		pointer-events: none;
-		p{
+		p {
 			font-size: $fontsize_xs;
 			line-height: 1.8rem;
 		}
-		@media #{$black-on-white}{
+		@media #{$black-on-white} {
 			background-color: $high-contrast-grey;
 		}
-		@media #{$white-on-black}{
+		@media #{$white-on-black} {
 			background-color: $high-contrast-grey;
 		}
 		&::after {
@@ -81,11 +81,11 @@
 			bottom: -1rem;
 			left: calc(50% - 1.5rem);
 			z-index: -1;
-			@media #{$black-on-white}{
+			@media #{$black-on-white} {
 				border-bottom-color: $high-contrast-grey;
 				border-left-color: transparent;
 			}
-			@media #{$white-on-black}{
+			@media #{$white-on-black} {
 				border-bottom-color: $high-contrast-grey;
 				border-left-color: transparent;
 			}
@@ -98,11 +98,11 @@
 		color: $shade_light;
 		margin-bottom: -1.2rem;
 		.name {
-			@media #{$mediaquery_lg_ex} {
-			max-width: 20rem;
-			white-space: nowrap;
-			text-overflow: ellipsis;
-			overflow: hidden;
+			@media #{$breakpoint_lg} {
+				max-width: calc(100% - 6rem);
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
 			}
 		}
 		.icon {
@@ -207,8 +207,10 @@
 	.select-box {
 		ngb-tooltip-window.tooltip {
 			top: 0.5rem !important;
+			padding-left: 3.5rem !important;
 			.arrow {
 				height: 0.5rem;
+				padding-left: 1rem;
 				&::before {
 					top: 0px;
 					border-width: 1.2rem 1.2rem 0;
@@ -216,8 +218,9 @@
 				}
 			}
 			.tooltip-inner {
-				padding: 2.4rem;
-				min-width: 45rem;
+				width: auto !important;
+				min-width: 26rem;
+				padding: 1.4rem;
 				text-align: center;
 				background-color: #fff;
 				border-radius: 0.4rem;

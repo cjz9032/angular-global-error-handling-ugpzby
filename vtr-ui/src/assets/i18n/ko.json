@@ -1014,7 +1014,7 @@
                             "title3": "성능 모드",
                             "desc3": "슬라이더가 오른쪽 끝에 있습니다. 팬 속도와 허용 표면 온도가 더 높아져 성능을 극대화할 수 있습니다."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "일부 모드는 활동 내용을 기반으로 넓은 성능 범위에서 자동으로 조정될 수 있습니다. 자동 모드를 사용하지 않으려면 Fn+ T를 누르십시오."
                     }
                 },
                 "powerSettings": {
@@ -1108,7 +1108,7 @@
                         "FCCText": "{{before}} Wh에서 {{after}} Wh",
                         "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "완료되었습니다: 리셋에 성공했습니다.",
+                            "ERROR_SUCCESS": "완료: 재설정되었습니다.",
                             "ERROR_SHUTDOWN": "실패: 시스템이 종료되었습니다.",
                             "ERROR_LOGOFF": "실패: 사용자가 로그아웃했습니다.",
                             "ERROR_BATTERY_REMOVE": "실패: 배터리가 제거되었습니다.",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
                     "subTitle2": "이 컴퓨터를 주로 사용하는 시간 설정",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 시간은 사용자가 설정한 스케줄을 토대로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며 비활성화되도록 예약된 날에는 전환되지 않습니다."
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "디스플레이",
-					"displayColorTemperature": {
-						"title": "디스플레이 색상 온도",
-						"description": "디스플레이의 색상 온도를 조절하여 블루라이트를 필터링하고 눈의 피로감을 줄일 수 있습니다. 일몰 때부터 일출 때까지 따뜻한 색상으로 디스플레이를 조정하여 수면에 도움이 됩니다.",
-						"link": {
-							"click": "색 온도를 바꾸려면",
-							"here": "여기",
-							"rest": "를 클릭하십시오."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "디스플레이 색상 온도",
+                        "description": "디스플레이의 색상 온도를 조절하여 블루라이트를 필터링하고 눈의 피로감을 줄일 수 있습니다. 일몰 때부터 일출 때까지 따뜻한 색상으로 디스플레이를 조정하여 수면에 도움이 됩니다.",
+                        "link": {
+                            "click": "색 온도를 바꾸려면",
+                            "here": "여기",
+                            "rest": "를 클릭하십시오."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "아이 케어 모드",
                         "checkbox": "아이 케어 모드를 일몰에서 일출로 예약",
@@ -1362,7 +1362,9 @@
                             "minutes": "분",
                             "alwaysOn": "항상 켜짐",
                             "never": "사용 안 함",
-                            "halfTime": "디스플레이 꺼짐 타이머의 절반 정도의 시간"
+                            "halfTime": "디스플레이 꺼짐 타이머의 절반 정도의 시간",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "작업 표시줄 채광",
                         "backgroundDimmer": "백그라운드 채광",
@@ -1527,7 +1529,7 @@
                     "control1": "터치패드 제어",
                     "control2": "마우스 제어",
                     "control3": "TRACKPOINT 제어",
-                    "less": "LESS"
+                    "less": "간단히"
                 }
             }
         },
@@ -3220,6 +3222,23 @@
                 "readMore": "자세히 읽기",
                 "readLess": "간단하게 읽기"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo Adobe 디자이너 제품군 독점 제공"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo 디지털 서비스"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro는 영화, TV 및 웹을 위한 최고의 비디오 편집 소프트웨어입니다. Premiere Pro에는 모든 장치에서 비디오를 네트워크와 공유할 수 있는 올인원 앱인 Premiere Rush 기능이 포함되어 있습니다.",
+            "subtitle12": "Creative Cloud Photography 요금제",
+            "body12": "Lightroom을 사용하여 사진 편집, 구성, 저장 및 공유가 가능하며, Photoshop을 통해 이미지를 원하는 대로 변형할 수 있습니다.",
+            "selectButton": "선택",
+            "subtitle2": "간소화된 올인원",
+            "body2": "올인원 PC는 9세대 Intel® Core™ 프로세서를 사용하며, 간편함, 하드웨어 기반 보안성 및 고해상도 디스플레이까지 모두 포함하는 데스크탑의 모든 기능을 세련된 디스플레이로 제공합니다."
         }
     }
 }

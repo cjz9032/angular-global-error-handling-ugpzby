@@ -21,6 +21,7 @@ export enum LocalStorageKey {
 	SecurityOtherFirewall = '[LocalStorageKey] SecurityOtherFirewall',
 	SecurityMcAfeeStatusList = '[LocalStorageKey] SecurityMcAfeeStatusList',
 	SecurityMcAfeeMetricList = '[LocalStorageKey] SecurityMcAfeeMetricList',
+	SecurityMcAfeeTrialUrl = '[LocalStorageKey] SecurityMcAfeeTrialUrl',
 	SecurityShowMetricList = '[LocalStorageKey] SecurityShowMetricList',
 	SecurityShowMcafee = '[LocalStorageKey] SecurityShowMcafee',
 	SecurityShowMetricButton = '[LocalStorageKey] SecurityShowMetricButton',
@@ -37,7 +38,7 @@ export enum LocalStorageKey {
 	SecurityLandingAntivirusStatus = '[LocalStorageKey] SecurityLandingAntivirusStatus',
 	SecurityLandingAntivirusFirewallStatus = '[LocalStorageKey] SecurityLandingAntivirusFirewallStatus',
 	SecurityLandingWindowsHelloFingerprintStatus = '[LocalStorageKey] SecurityLandingWindowsHelloFingerprintStatus',
-	SecurityLandingScore = '[LocalStorageKey] SecurityLandingScore',
+	SecurityLandingLevel = '[LocalStorageKey] SecurityLandingLevel',
 	SecurityLandingMaliciousWifi = '[LocalStorageKey] SecurityLandingMaliciousWifi',
 	DesktopMachine = '[LocalStorageKey] DesktopMachine',
 	HadRunApp = '[LocalStorageKey] HadRunApp',
@@ -197,6 +198,7 @@ export enum LocalStorageKey {
 	// App Search
 	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
+	BacklightCapability = '[LocalStorageKey] BacklightCapability',
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
 	IsSubscribed = '[LocalStorageKey] IsSubscribed',
 	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails',
@@ -215,5 +217,8 @@ export enum LocalStorageKey {
 	NewFeatureTipsVersion = '[LocalStorageKey] NewFeatureTipsVersion',
 
 	// Device Settings storage key
-	MicrohoneCapability = '[LocalStorageKey] MicrohoneCapability'
+	MicrohoneCapability = '[LocalStorageKey] MicrohoneCapability',
+
+	// TEMP battery condition
+	BatteryCondition = '[LocalStorageKey] batteryCondition'
 }

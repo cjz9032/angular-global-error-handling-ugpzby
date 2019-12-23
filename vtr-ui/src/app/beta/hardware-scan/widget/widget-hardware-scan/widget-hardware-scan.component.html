@@ -5,10 +5,10 @@
                 <div class="row">
                     <div class="col title">{{title}}</div>
                 </div>
-                <div class="row" *ngIf="showProgress && !(percent === 100)">
+                <div class="row" *ngIf="showProgress && !isScanOrRBSFinished()">
                     <div class="col row1">{{subTitle}}</div>
                 </div>
-                <div class="row" *ngIf="showProgress && !(percent === 100)">
+                <div class="row" *ngIf="showProgress && !isScanOrRBSFinished()">
                     <div class="col row1">{{warningMessage}}</div>
                 </div>
                 <div *ngIf="!showProgress" class="row">
@@ -30,23 +30,23 @@
                 </div>
                 <div *ngIf="showProgress" class="col row hwscan-header">
                     <div class="col col-12 row progress-div">
-                        <div *ngIf="!(percent === 100)" class="col col-12 progress-percent-text">
+                        <div *ngIf="!isScanOrRBSFinished()" class="col col-12 progress-percent-text">
                             <span class="progress-value-text">{{percent}}</span>
                             <span class="progress-complete-text">% {{completeText}}</span>
                         </div>
                     </div>
-                    <div *ngIf="!(percent === 100)" class="col col-12 row progress-bar-div-container">
+                    <div *ngIf="!isScanOrRBSFinished()" class="col col-12 row progress-bar-div-container">
                         <div class="col col-12 progress-bar-div">
                             <ngb-progressbar type="success" [value]="percent" [height]="'0.6rem'"></ngb-progressbar>
                         </div>
                     </div>
-                    <div *ngIf="(percent === 100)" class="col col-12 row status">
+                    <div *ngIf="isScanOrRBSFinished()" class="col col-12 row status">
                         <span>{{statusText}}</span>
                     </div>
 
 
                     <div class="col col-12 row">
-                        <div class="cancel-check" *ngIf="!(percent === 100)" title="{{ disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''}}">
+                        <div class="cancel-check" *ngIf="!isScanOrRBSFinished()" title="{{ disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''}}">
                             <button [ngClass]="{'cancel-button': !disableCancel, 'cancel-button-disable': disableCancel}" 
                                     (click)="onCancel()"
                                     vtrMetrics

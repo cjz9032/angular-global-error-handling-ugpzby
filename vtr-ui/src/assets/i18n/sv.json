@@ -841,7 +841,7 @@
                 "hour": "timme",
                 "minutes": "minuter",
                 "minute": "minut",
-                "charge": "TID TILLS BATTERIET ÄR LADDAT",
+                "charge": "Tid till full laddning",
                 "button": "SE BATTERIINFORMATION",
                 "details": {
                     "title": "Batteriuppgifter",
@@ -1014,7 +1014,7 @@
                             "title3": "Prestandaläge",
                             "desc3": "Reglaget är skjutet längst åt höger. Fläkthastighet och tillåten yttemperatur ökas för maximal prestanda."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Vissa av lägena kan justeras automatiskt i ett större prestandaintervall baserat på din aktivitet. Tryck på Fn+ T för att inaktivera automatiskt läge."
                     }
                 },
                 "powerSettings": {
@@ -1108,7 +1108,7 @@
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Klart: Återställningen lyckades.",
+                            "ERROR_SUCCESS": "Klart: Återställningen har slutförts.",
                             "ERROR_SHUTDOWN": "Misslyckades: Systemet stängdes av.",
                             "ERROR_LOGOFF": "Misslyckades: Användaren loggade ut.",
                             "ERROR_BATTERY_REMOVE": "Misslyckades: Batteriet togs bort.",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
                     "subTitle2": "Ange vilken tid du använder datorn mest",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda START tiden och i viloläge när den inte har använts under en viss tid på batterikraft. Denna tidsperiod optimeras utifrån schemat du har angett. Datorn övergår från viloläge till modernt vänteläge endast på schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad."
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Skärm",
-					"displayColorTemperature": {
-						"title": "Bildskärmens färgtemperatur",
-						"description": "Du kan justera bildskärmens färgtemperatur för att minska avgivningen av blått ljus och därmed belastningen på ögonen. Bildskärmen justeras till varmare färger från solnedgång till soluppgång för att hjälpa dig att sova.",
-						"link": {
-							"click": "Klicka",
-							"here": "här",
-							"rest": "för att ändra färgtemperaturen."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Bildskärmens färgtemperatur",
+                        "description": "Du kan justera bildskärmens färgtemperatur för att minska avgivningen av blått ljus och därmed belastningen på ögonen. Bildskärmen justeras till varmare färger från solnedgång till soluppgång för att hjälpa dig att sova.",
+                        "link": {
+                            "click": "Klicka",
+                            "here": "här",
+                            "rest": "för att ändra färgtemperaturen."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Ögonskyddsläge",
                         "checkbox": "Schemalägg ögonskyddsläge från morgon till kväll",
@@ -1362,7 +1362,9 @@
                             "minutes": "minuter",
                             "alwaysOn": "Alltid på",
                             "never": "aldrig",
-                            "halfTime": "Halv tid innan bildskärmen stängs av"
+                            "halfTime": "Halv tid innan bildskärmen stängs av",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "AKTIVITETSFÄLTSDIMMER",
                         "backgroundDimmer": "BAKGRUNDSDIMMER",
@@ -1527,7 +1529,7 @@
                     "control1": "HANTERING AV STYRPLATTA",
                     "control2": "HANTERING AV MUS",
                     "control3": "TRACKPOINT-KONTROLLER",
-                    "less": "LESS"
+                    "less": "MINDRE"
                 }
             }
         },
@@ -1761,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Inställningar för automatisk uppdatering",
-            "subtitle": "INSTALLERA UPPDATERINGAR AUTOMATISKT",
+            "subtitle": "Installera uppdateringar automatiskt",
             "critical": {
                 "title": "Kritiska uppdateringar",
                 "tooltip": "Kritiska uppdateringar kan förhindra allvarliga problem, större felfunktioner, maskinvarufel och skadade data."
@@ -3220,6 +3222,23 @@
                 "readMore": "Läs mer",
                 "readLess": "Läs mindre"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exklusivt erbjudande på Adobe Designer Suite från Lenovo"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Onlineerbjudande från Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro är det ledande videoredigeringsprogrammet för film, tv och webb. I Premiere Pro ingår Premiere Rush, en allt-i-ett-app för att dela dina videor med ditt sociala nätverk som fungerar på alla dina enheter.",
+            "subtitle12": "Creative Cloud Photography-prenumeration",
+            "body12": "Använd Lightroom för att enkelt redigera, ordna, lagra och dela dina foton från valfri plats, och Photoshop för att bearbeta dina bilder på kreativa sätt.",
+            "selectButton": "Välj",
+            "subtitle2": "Allt-i-ett: smidigt och enkelt",
+            "body2": "Allt-i-ett-datorer med 9:e generationens Intel® Core™-processorer ger dig alla fördelar med en stationär dator förpackade i en slimmad bildskärm – för en renare arbetsyta, maskinvarubaserad säkerhet och högupplöst bild."
         }
     }
 }

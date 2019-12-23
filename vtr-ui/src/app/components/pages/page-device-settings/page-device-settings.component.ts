@@ -37,6 +37,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.power.title',
 			path: 'device-settings/power',
 			icon: 'power',
+			iconClass: 'icomoon-power_nav',
 			canDeactivate: [GuardService],
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
@@ -46,6 +47,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.audio.title',
 			path: 'device-settings/audio',
 			icon: 'audio',
+			iconClass: 'icomoon-audio',
 			canDeactivate: [GuardService],
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
@@ -55,6 +57,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.displayCamera.title',
 			path: 'device-settings/display-camera',
 			icon: 'display-camera',
+			iconClass: 'icomoon-display_camera',
 			canDeactivate: [GuardService],
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
@@ -64,6 +67,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.inputAccessories.title',
 			path: 'device-settings/input-accessories',
 			icon: 'input-accessories',
+			iconClass: 'icomoon-input_accessories',
 			canDeactivate: [GuardService],
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
@@ -197,7 +201,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				}
 				const isVOIPAvailable = this.commonService.getLocalStorageValue(LocalStorageKey.VOIPCapability);
 				const topRowFunctionsIdeapadCapability = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability);
-				if (!isAvailable && !isVOIPAvailable && !topRowFunctionsIdeapadCapability) {
+				const backlightCapability = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability);
+				if (!isAvailable && !isVOIPAvailable && !topRowFunctionsIdeapadCapability && !backlightCapability) {
 					this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
 				}
 			}

@@ -29,7 +29,7 @@
 
 			<div class="row">
 				<div class="col col-12 mb-40">
-					<beta-vtr-container-card vtrMetrics
+					<vtr-container-card vtrMetrics
 						order="1"
 						sideFlag='r'
 						itemID='HardwareScan.DiagnosticsTools'
@@ -38,10 +38,9 @@
 						[action]="'Read More'"
 						[caption]="'hardwareScan.support.subtitle' | translate"
 						[actionLink]="'https://pcsupport.lenovo.com/lenovodiagnosticsolutions/downloads'"
-						[type]="'partnerarticle'"
-						[ratioX]="4"
-						[ratioY]="2">
-					</beta-vtr-container-card>
+						[type]="'subpage-partner-corner'"
+						[ratio]="2">
+					</vtr-container-card>
 				</div>
 			</div>
 
@@ -54,9 +53,7 @@
 						[textButton]="'hardwareScan.recoverBadSectors.title' | translate"
 						[recoverPath]="'/beta/hardware-scan/recover-bad-sectors'"
 						[disable]="!hasDevicesToRecoverBadSectors() || disable()"
-						[tooltipText]="((!hasDevicesToRecoverBadSectors() || disable())
-										?('hardwareScan.recoverBadSectors.waitAvailability' | translate)
-										:('hardwareScan.recoverBadSectors.title' | translate))">
+						[tooltipText]="('hardwareScan.recoverBadSectors.title' | translate)">
 					</vtr-widget-recover-bad-sectors>
 				</div>
 			</div>

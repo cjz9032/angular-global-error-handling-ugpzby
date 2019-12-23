@@ -6,6 +6,9 @@
 	min-height: 70rem;
 	border-radius: 0.8rem;
 	position: relative;
+	&:not(.numberpad) {
+		min-height: 76rem;
+	}
 	&.recording {
 		border: 0.1rem solid $gaming;
 		.header-component {

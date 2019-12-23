@@ -841,7 +841,7 @@
                 "hour": "h",
                 "minutes": "min",
                 "minute": "min",
-                "charge": "VRIJEME POTREBNO DO POTPUNOG PUNJENJA",
+                "charge": "Vrijeme za potpuno punjenje",
                 "button": "POGLEDAJTE DETALJE O BATERIJI",
                 "details": {
                     "title": "Detalji o bateriji",
@@ -1014,7 +1014,7 @@
                             "title3": "Način performansi",
                             "desc3": "Klizač je skroz s desne strane. Brzina ventilatora i dopuštena temperatura površine povećani su za najbolje performanse."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Neki se načini mogu automatski prilagoditi u širem rasponu performansi na temelju vaše aktivnosti. Da biste onemogućili automatski način rada, pritisnite Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1108,14 +1108,14 @@
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Napomena: Prije ponovnog postavljanja prikaza napunjenosti baterije obavezno povežite računalo na izmjenično napajanje. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Dovršeno: Ponovno je postavljanje uspjelo.",
+                            "ERROR_SUCCESS": "Dovršeno: ponovno postavljanje uspješno.",
                             "ERROR_SHUTDOWN": "Neuspješno: sustav se isključuje.",
-                            "ERROR_LOGOFF": "Neuspješno: korisnik se odjavio.",
+                            "ERROR_LOGOFF": "Neuspjeh: korisnik se odjavio.",
                             "ERROR_BATTERY_REMOVE": "Neuspješno: baterija je uklonjena.",
                             "ERROR_BATTERY_REPLACE": "Nauspješno: baterija je zamijenjena.",
                             "ERROR_AC_DETTACH": "Nauspješno: ispravljač za struju odspojen.",
                             "ERROR_USER_CANCEL": "Neuspješno: korisnik je otkazao.",
-                            "ERROR_UNEXPECTED": "Neuspješno: došlo je do neočekivane pogreške."
+                            "ERROR_UNEXPECTED": "Neuspjeh: došlo je do neočekivane pogreške."
                         },
                         "popup": {
                             "description1": "Postupak ponovnog postavljanja je sljedeći:<br>Potpuno napunite bateriju  -->  Potpuno ispraznite bateriju  -->  Potpuno napunite bateriju",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja vremena brzog pokretanja tijekom rada s većim opterećenjem.",
                     "subTitle2": "Postavite vrijeme kada obično koristite računalo",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Kad je omogućeno Pametno stanje pripravnosti, vaše se računalo prebacuje na Suvremeno stanje pripravnosti prije zakazanog vremena POKRETANJA i prelazi u hibernaciju nakon što je određeno vrijeme neaktivno na baterijskom napajanju. To je vrijeme optimizirano na temelju rasporeda koji ste postavili. Računalo će se prebaciti iz hibernacije u moderno stanje mirovanja samo tijekom zakazanih dana i neće se prebaciti kada nije aktivno tijekom uzastopnih zakazanih dana."
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Prikaz",
-					"displayColorTemperature": {
-						"title": "Temperatura boje prikaza",
-						"description": "Možete prilagoditi temperaturu boje vašeg zaslona da filtrira plavu svjetlost čime se smanjuje naprezanje očiju. Prilagođava zaslon toplijim bojama tijekom zalaska sunca do izlaska sunca kako bi vam to pomoglo da zaspite.",
-						"link": {
-							"click": "Kliknite",
-							"here": "ovdje",
-							"rest": "za promjenu temperature boje."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Temperatura boje prikaza",
+                        "description": "Možete prilagoditi temperaturu boje vašeg zaslona da filtrira plavu svjetlost čime se smanjuje naprezanje očiju. Prilagođava zaslon toplijim bojama tijekom zalaska sunca do izlaska sunca kako bi vam to pomoglo da zaspite.",
+                        "link": {
+                            "click": "Kliknite",
+                            "here": "ovdje",
+                            "rest": "za promjenu temperature boje."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Način rada ugodan za oči",
                         "checkbox": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
@@ -1362,7 +1362,9 @@
                             "minutes": "min",
                             "alwaysOn": "Uvijek uključeno",
                             "never": "nikad",
-                            "halfTime": "Pola vremena isključivanja zaslona"
+                            "halfTime": "Pola vremena isključivanja zaslona",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "ZATAMNJIVANJE PROGRAMSKE TRAKE",
                         "backgroundDimmer": "ZATAMNJIVANJE POZADINE",
@@ -1527,7 +1529,7 @@
                     "control1": "KONTROLE DODIRNE PLOČICE",
                     "control2": "KONTROLE MIŠA",
                     "control3": "TRACKPOINT KONTROLE",
-                    "less": "LESS"
+                    "less": "MANJE"
                 }
             }
         },
@@ -1761,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Postavke automatskog ažuriranja",
-            "subtitle": "AUTOMATSKI INSTALIRAJ AŽURIRANJA",
+            "subtitle": "Automatski instalirajte ažuriranja",
             "critical": {
                 "title": "Ključna ažuriranja",
                 "tooltip": "Kritična ažuriranja mogu spriječiti značajne probleme, velike neispravnosti, kvar hardvera ili oštećenje podataka."
@@ -3220,6 +3222,23 @@
                 "readMore": "Pročitajte više",
                 "readLess": "Pročitajte manje"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo ekskluzivna ponuda dizajnerskog paketa Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo digitalna ponuda"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro je vodeći softver za uređivanje videa za film, TV i web. Premiere Pro uključuje Premiere Rush, sveobuhvatnu aplikaciju koja radi na svim vašim uređajima za dijeljenje videozapisa s vašom mrežom.",
+            "subtitle12": "Plan Creative Cloud Photography",
+            "body12": "Koristite Lightroom da biste jednostavno uređivali, organizirali, pohranjivali i dijelili svoje fotografije s bilo kojeg mjesta a Photoshop kako biste transformirali svoje slike u sve što možete zamisliti.",
+            "selectButton": "Odaberi",
+            "subtitle2": "Sve u jednom: pojednostavljeno",
+            "body2": "Sve-u-jednom osobna računala s procesorima Intel® Core™ 9. generacije daju vam svu snagu stolnog računala upakiranog u elegantan zaslon - za manje nereda, sigurnost zasnovanu na hardveru i prikaz visoke razlučivosti."
         }
     }
 }

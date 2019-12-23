@@ -9,7 +9,7 @@
 	}
 
 	.text {
-		color: $shade_extradark;
+		color: $shade_blue;
 		padding: 0.5rem 0;
 		font-size: 1.4rem;
 		font-weight: $weight_bold;
@@ -29,15 +29,15 @@
 	.icon-bkg {
 		display: inline-block;
 		border-radius: 50%;
-		height: 2.3rem;
-		width: 2.3rem;
-		border-width: 0.3rem;
+		height: 2rem;
+		width: 2rem;
+		border-width: 0.2rem;
 		border-style: solid;
 		text-align: center;
 
 		fa-icon {
-			font-size: 1.4rem;
-			line-height: 1.7rem;
+			font-size: 1.2rem;
+			line-height: 1.6rem;
 			color: $light;
 		}
 	}
@@ -63,6 +63,10 @@
 		border-color: $black_light;
 	}
 
+}
+
+.badge {
+	font-size: 1.2rem;
 }
 
 .badge-primary {

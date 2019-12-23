@@ -23,7 +23,7 @@
 	[shiftRightUp]="true">
 
 	<left-content>
-		<div class="mt-5"
+		<div class="mt-2"
 			#hsRouterOutlet>
 			<router-outlet (activate)="onRouteActivate($event, hsRouterOutlet)"></router-outlet>
 		</div>
@@ -64,9 +64,8 @@
 						[action]="cardContentPositionA.Action"
 						[actionType]="cardContentPositionA.ActionType"
 						[actionLink]="cardContentPositionA.ActionLink"
-						[type]="'corner-article'"
-						[ratioX]="4"
-						[ratioY]="2"
+						[type]="'subpage-corner'"
+						[ratio]="2"
 						order="3"
 						sideFlag='r'
 						[cornerShift]="'large'"

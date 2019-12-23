@@ -841,7 +841,7 @@
                 "hour": "oră",
                 "minutes": "minute",
                 "minute": "minut",
-                "charge": "TIMP PÂNĂ LA ÎNCĂRCAREA COMPLETĂ",
+                "charge": "Timp până la încărcarea completă",
                 "button": "VEDEȚI DETALIILE BATERIEI",
                 "details": {
                     "title": "Detalii baterie",
@@ -1014,7 +1014,7 @@
                             "title3": "Mod performanţă",
                             "desc3": "Cursorul este în partea dreaptă. Viteza ventilatorului şi temperatura permisă a suprafeţei sunt mai ridicate – pentru performanţă maximă."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Unele dintre moduri se pot regla automat într-o gamă mai largă de performanţă, în funcţie de activitatea dvs. Pentru a dezactiva modul automat, apăsaţi Fn + T."
                     }
                 },
                 "powerSettings": {
@@ -1108,14 +1108,14 @@
                         "FCCText": "De la {{before}} Wh la {{after}} Wh",
                         "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Finalizată: Resetare reuşită.",
+                            "ERROR_SUCCESS": "Finalizat: resetare reușită.",
                             "ERROR_SHUTDOWN": "Nereuşit: sistemul s-a închis.",
-                            "ERROR_LOGOFF": "Nereuşit: utilizatorul s-a deconectat.",
+                            "ERROR_LOGOFF": "Nereușit: utilizatorul s-a deconectat.",
                             "ERROR_BATTERY_REMOVE": "Nereuşit: bateria a fost scoasă.",
                             "ERROR_BATTERY_REPLACE": "Nereuşit: bateria a fost înlocuită.",
                             "ERROR_AC_DETTACH": "Nereuşit: adaptorul de alimentare cu c.a. a fost deconectat.",
                             "ERROR_USER_CANCEL": "Nereuşit: anulat de utilizator.",
-                            "ERROR_UNEXPECTED": "Nereuşit: a apărut o eroare neaşteptată."
+                            "ERROR_UNEXPECTED": "Nereușit: a apărut o eroare neașteptată."
                         },
                         "popup": {
                             "description1": "Procesul de resetare este următorul:<br>Încărcaţi complet bateria  -->  Descărcaţi complet bateria  -->  Reîncărcaţi complet bateria",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Această caracteristică programează computerul dvs. să optimizeze energaia bateriei în timpul orelor de inactivitate, fără a renunţa la timpul rapid de pornire în orele de utilizare mai intensivă.",
                     "subTitle2": "Setaţi orele la care utilizaţi de obicei acest computer",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru PORNIRE şi intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată pe baza programului pe care îl setaţi dvs. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate şi nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive."
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Afișaj",
-					"displayColorTemperature": {
-						"title": "Temperatură culoare afișaj",
-						"description": "Puteți ajusta temperatura culorii ecranului dvs. pentru a filtra lumina albastră protejându-vă ochii. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
-						"link": {
-							"click": "Clic",
-							"here": "aici",
-							"rest": "pentru a modifica temperatura culorii."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Temperatură culoare afișaj",
+                        "description": "Puteți ajusta temperatura culorii ecranului dvs. pentru a filtra lumina albastră protejându-vă ochii. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
+                        "link": {
+                            "click": "Clic",
+                            "here": "aici",
+                            "rest": "pentru a modifica temperatura culorii."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Modul de îngrijire a ochilor",
                         "checkbox": "Programați modul de protejare a ochilor de la apus până la răsărit",
@@ -1362,7 +1362,9 @@
                             "minutes": "minute",
                             "alwaysOn": "Mereu pornit",
                             "never": "niciodată",
-                            "halfTime": "Jumătate din timpul pentru dezactivarea afișajului"
+                            "halfTime": "Jumătate din timpul pentru dezactivarea afișajului",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "ESTOMPAREA BAREI DE ACTIVITĂȚI",
                         "backgroundDimmer": "ESTOMPAREA FUNDALULUI",
@@ -1527,7 +1529,7 @@
                     "control1": "ELEMENTE DE CONTROL TOUCHPAD",
                     "control2": "ELEMENTE DE CONTROL MOUSE",
                     "control3": "ELEMENTE DE CONTROL TRACKPOINT",
-                    "less": "LESS"
+                    "less": "MAI PUŢIN"
                 }
             }
         },
@@ -1761,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Setări automate de actualizare",
-            "subtitle": "ACTUALIZĂRILE SE INSTALEAZĂ AUTOMAT",
+            "subtitle": "Actualizările se instalează automat",
             "critical": {
                 "title": "Actualizări critice",
                 "tooltip": "Actualizările critice pot împiedica apariția problemelor grave, a defecțiunilor majore, a erorilor de hardware sau a deteriorării datelor."
@@ -3220,6 +3222,23 @@
                 "readMore": "Citiţi mai mult",
                 "readLess": "Citiţi maI puţin"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Ofertă Lenovo exclusivă la suitele de proiectare Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Ofertă digitală Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro este software-ul de vârf în domeniu de editare video pentru filme, TV şi web. Premiere Pro include Premiere Rush, o aplicaţie integrată care funcţionează pe toate dispozitivele, pentru a partaja lucrările dvs. video în reţeaua dvs. de prieteni.",
+            "subtitle12": "Planul Creative Cloud Photography",
+            "body12": "Utilizaţi Lightroom pentru a edita, organiza, stoca şi partaja fotografiile cu uşurinţă de oriunde şi Photoshop pentru a transforma imaginile în orice vă puteţi imagina.",
+            "selectButton": "Selectare",
+            "subtitle2": "Echipamente multifuncţionale: acum mai optimizate",
+            "body2": "PC-urile multifuncţionale cu procesoare Intel® Core™ din a 9-a generaţie vă oferă toată puterea unui desktop într-un monitor elegant – pentru mai puţin dezordine, securitate bazată pe hardware şi afişare de înaltă rezoluţie."
         }
     }
 }

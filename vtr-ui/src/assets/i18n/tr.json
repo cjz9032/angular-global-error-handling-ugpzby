@@ -841,7 +841,7 @@
                 "hour": "saat",
                 "minutes": "dakika",
                 "minute": "dakika",
-                "charge": "TAMAMEN DOLMA SÜRESİ",
+                "charge": "Tamamen dolma süresi",
                 "button": "PİL AYRINTILARINI GÖSTER",
                 "details": {
                     "title": "Pil Ayrıntıları",
@@ -1014,7 +1014,7 @@
                             "title3": "Performans kipi",
                             "desc3": "Kaydırıcı en sağdadır. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Kiplerden bazıları, etkinliğinize göre otomatik olarak daha geniş bir performans aralığına ayarlanabilir. Otomatik kipi devre dışı bırakmak için Fn+ T tuşlarına basın."
                     }
                 },
                 "powerSettings": {
@@ -1108,9 +1108,9 @@
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Tamamlandı: Başarılı sıfırlama.",
+                            "ERROR_SUCCESS": "Tamamlandı: Başarıyla sıfırlandı.",
                             "ERROR_SHUTDOWN": "Başarısız: Sistem kapatıldı.",
-                            "ERROR_LOGOFF": "Başarısız: Kullanıcı oturumu kapatıldı.",
+                            "ERROR_LOGOFF": "Başarısız: Kullanıcı oturumu kapattı.",
                             "ERROR_BATTERY_REMOVE": "Başarısız: Pil çıkarıldı.",
                             "ERROR_BATTERY_REPLACE": "Başarısız: Pil değiştirildi.",
                             "ERROR_AC_DETTACH": "Başarısız: AC güç bağdaştırıcısı çıkarıldı.",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
                     "subTitle2": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez."
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Ekran",
-					"displayColorTemperature": {
-						"title": "Ekran rengi sıcaklığı",
-						"description": "Mavi ışığı filtrelemek ve göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlayabilirsiniz. Uyumanıza yardımcı olmak için ekranları günbatımı ile güneşin doğuşuna kadar daha sıcak renklere ayarlar.",
-						"link": {
-							"click": "Renk sıcaklığını değiştirmek için",
-							"here": "buraya",
-							"rest": "tıklayın."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Ekran rengi sıcaklığı",
+                        "description": "Mavi ışığı filtrelemek ve göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlayabilirsiniz. Uyumanıza yardımcı olmak için ekranları günbatımı ile güneşin doğuşuna kadar daha sıcak renklere ayarlar.",
+                        "link": {
+                            "click": "Renk sıcaklığını değiştirmek için",
+                            "here": "buraya",
+                            "rest": "tıklayın."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Göz Koruması Kipi",
                         "checkbox": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
@@ -1362,7 +1362,9 @@
                             "minutes": "dakika",
                             "alwaysOn": "Her zaman açık",
                             "never": "hiçbir zaman",
-                            "halfTime": "Ekran kapatma zamanlayıcısının yarısı"
+                            "halfTime": "Ekran kapatma zamanlayıcısının yarısı",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "GÖREV ÇUBUĞU KARARTICI",
                         "backgroundDimmer": "ARKA PLAN KARARTICI",
@@ -1527,7 +1529,7 @@
                     "control1": "TOUCHPAD DENETİMLERİ",
                     "control2": "FARE DENETİMLERİ",
                     "control3": "TRACKPOINT KONTROLLERİ",
-                    "less": "LESS"
+                    "less": "DAHA AZ"
                 }
             }
         },
@@ -1761,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Otomatik güncelleme ayarları",
-            "subtitle": "GÜNCELLEMELERİ OTOMATİK OLARAK YÜKLE",
+            "subtitle": "Güncelleştirmeleri otomatik olarak yükle",
             "critical": {
                 "title": "Kritik Güncelleştirmeler",
                 "tooltip": "Kritik güncellemeler önemli sorunları, ciddi hataları, donanım arızalarını veya veri bozulmasını önler."
@@ -3220,6 +3222,23 @@
                 "readMore": "Okumaya Devam Et",
                 "readLess": "Okumayı Daralt"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Adobe tasarımcı paketi için özel Lenovo teklifi"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo dijital teklifi"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro, film, TV ve web için önde gelen bir video düzenleme yazılımıdır. Premiere Pro, videonuzu ağınızla paylaşmak için tüm cihazlarınızda çalışan Premiere Rush hepsi bir arada uygulamasını içerir.",
+            "subtitle12": "Creative Cloud Fotoğrafçılık planı",
+            "body12": "Fotoğraflarınızı istediğiniz yerden kolayca düzenlemek, organize etmek, depolamak ve paylaşmak için Lightroom'u ve resimlerinizi hayal edebileceğiniz here şeye dönüştürebilmeniz için Photoshop'u kullanın.",
+            "selectButton": "Araç çubuğunda",
+            "subtitle2": "Hepsi Bir Arada: Hızlandırılmış",
+            "body2": "9. Nesil Intel® Core™ işlemcili Hepsi Bir Arada Bilgisayarlar, bir masaüstü bilgisayarın tüm gücünü daha az karmaşa, donanım tabanlı güvenlik ve yüksek çözünürlüklü bir ekran için şık bir ekranda bir araya getirerek sunar."
         }
     }
 }

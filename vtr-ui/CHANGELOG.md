@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.36](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.35...v1.2.36) (2019-12-20)
+
+
+### Features
+
+* **VAN-12559:** backlight ([5949349](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/5949349))
+* **VAN-12559:** backlight ([a9c9662](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/a9c9662))
+* **VAN-12559:** backlight icons ([d7fc8cc](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/d7fc8cc))
+* **VAN-12559:** backlight icons ([e258a3d](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/e258a3d))
+* **VAN-12559:** UI appearance story-ALS-base keyboard backlight mode on S950/S750 &ThinkBook 13s/14s G2 ([9a3614e](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/9a3614e))
+* **VAN-12559:** UI appearance story-ALS-base keyboard backlight mode on S950/S750 &ThinkBook 13s/14s G2 ([b82e820](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/b82e820))
+* **VAN-12559:** UI appearance story-ALS-base keyboard backlight mode on S950/S750 &ThinkBook 13s/14s G2 ([d81d08a](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/d81d08a))
+* **VAN-12559:** UI appearance story-ALS-base keyboard backlight mode on S950/S750 &ThinkBook 13s/14s G2 ([330fe68](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/330fe68))
+
+
+
+## [1.2.35](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.34...v1.2.35) (2019-12-19)
+
+
+
+## [1.2.34](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.33...v1.2.34) (2019-12-18)
+
+
+
+## [1.2.33](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.32...v1.2.33) (2019-12-18)
+
+
+
+## [1.2.32](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.31...v1.2.32) (2019-12-17)
+
+
+### Features
+
+* **VAN-12286:** battery not detected should show text instead of percentage ([5912201](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/5912201))
+
+
+
+## [1.2.31](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.30...v1.2.31) (2019-12-17)
+
+
+### Features
+
+* **VAN-10543:** remove eye care mode ([1ac50be](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/1ac50be))
+
+
+
 ## [1.2.30](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.29...v1.2.30) (2019-12-16)
 
 

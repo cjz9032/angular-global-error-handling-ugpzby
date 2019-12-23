@@ -1,17 +1,15 @@
-<div class="modal-main-wrapper">
+<div class="modal-main-wrapper d-flex justify-content-center align-items-center">
 	<ui-popover-turn-on id="closedialog" tabindex="1"
 		attr.aria-label="{{ 'gaming.autoClose.modalTurnAutoClose.title' | translate }} window">
-		<div class="modal-body vtr-modal-turn-on">
+		<div class="vtr-modal-turn-on">
 			<div class="modal-body">
-				<div class="row justify-content-end">
 					<div class="btn-close">
 						<button type="button" class="close" aria-hidden="true" (click)="closeModal(false)"
 							(keyup.enter)="closeModal(false)" tabindex="1" role="button" [attr.aria-label]="'gaming.autoClose.modalTurnAutoCloseNarrator.close' | translate">
 							<fa-icon [icon]="['fal', 'times']"></fa-icon>
 						</button>
 					</div>
-				</div>
-				<div class="content-body">
+				 <div class="content-body">
 					<h1>{{ 'gaming.autoClose.modalTurnAutoClose.title' | translate }}</h1>
 					<p>{{ 'gaming.autoClose.modalTurnAutoClose.body' | translate }}</p>
 				</div>
@@ -26,7 +24,7 @@
 				</div>
 				<hr>
 				<div class="row">
-					<div>
+					<div class="action-container">
 						<button class="btn enable-button" (click)="turnOnAction(true)"
 							(keyup.enter)="turnOnAction(true)" tabindex="1" role="button"
 							[attr.aria-label]="'gaming.autoClose.modalTurnAutoCloseNarrator.turnOn' | translate">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>

@@ -7,10 +7,12 @@
 	[backId]="'sa-vpn-btn-back'">
 
 	<left-content>
-		<vtr-widget-offline-info *ngIf="!isOnline"
-			[title]="'dashboard.offlineInfo.title' | translate"
-			[isSubtitleVisible]="false"
-			[isButtonVisible]="false"></vtr-widget-offline-info>
+		<div class="col-12 p-0 mb-4" *ngIf="!isOnline">
+			<vtr-widget-offline-info
+				[title]="'dashboard.offlineInfo.title' | translate"
+				[isSubtitleVisible]="false"
+				[isButtonVisible]="false"></vtr-widget-offline-info>
+		</div>
 		<div class="container-fluid p-0">
 			<div class="row security-card p-20">
 				<div class="container-fluid p-0">
@@ -29,13 +31,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="row mt-40">
+					<div class="row mt-20">
 						<div class="col get-app-code-box">
 							<vtr-ui-security-statusbar [statusList]="[statusItem]">
 							</vtr-ui-security-statusbar>
 						</div>
 					</div>
-					<div class="row mt-40">
+					<div class="row mt-20">
 						<div class="col text-regular min-width-50 flex-100 d-flex align-items-center">
 							{{'security.vpn.helpKeep' | translate}}
 						</div>
@@ -196,7 +198,7 @@
 				</div>
 			</div>
 			<hr class="d-none d-lg-block">
-			<vtr-widget-powered-by-info class="pb-40 d-none d-lg-block"
+			<vtr-widget-powered-by-info class="d-none d-lg-block"
 				[title]="'security.vpn.poweredBySurfEasy'"
 				[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
 				[imgUrl]="'assets/images/SurfEasy-logo.png'"
@@ -228,19 +230,18 @@
 						[action]="cardContentPositionA.Action"
 						[actionType]="cardContentPositionA.ActionType"
 						[actionLink]="cardContentPositionA.ActionLink"
-						[type]="'corner-article'"
+						[type]="'subpage-corner'"
 						cornerShift="large"
 						order="1"
 						sideFlag="r"
-						[ratioX]="4"
-						[ratioY]="2"
+						[ratio]="2"
 						[cornerShift]="'large'"
 						[containerCardId]="'sa-vpn-modal'">
 					</vtr-container-card>
 				</div>
 			</div>
 			<hr class="d-lg-none">
-			<vtr-widget-powered-by-info class="pb-40 d-lg-none"
+			<vtr-widget-powered-by-info class="d-lg-none"
 				[title]="'security.vpn.poweredBySurfEasy'"
 				[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
 				[imgUrl]="'assets/images/SurfEasy-logo.png'"

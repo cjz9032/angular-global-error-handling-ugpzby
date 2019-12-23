@@ -841,7 +841,7 @@
                 "hour": "hora",
                 "minutes": "minutos",
                 "minute": "minuto",
-                "charge": "TIME DE CARGA COMPLETA",
+                "charge": "Tiempo de carga completa",
                 "button": "VER DETALLES DE BATERÍA",
                 "details": {
                     "title": "Detalles de la batería",
@@ -1014,7 +1014,7 @@
                             "title3": "Modalidad de rendimiento",
                             "desc3": "El graduador está en el extremo derecho. La velocidad del ventilador y la temperatura permisible de la superficie son superiores para obtener el rendimiento máximo."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Algunas de las modalidades pueden ajustarse automáticamente en un rango de rendimiento más amplio en función de su actividad. Para deshabilitar la modalidad automática, presione Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1108,14 +1108,14 @@
                         "FCCText": "De {{before}} Wh a {{after}} Wh",
                         "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Completo: Restablecimiento satisfactorio.",
+                            "ERROR_SUCCESS": "Completado: Restablecer exitosamente.",
                             "ERROR_SHUTDOWN": "Error: Se apagó el sistema.",
-                            "ERROR_LOGOFF": "Error: Se cerró la sesión del usuario.",
+                            "ERROR_LOGOFF": "Error: El usuario cerró la sesión.",
                             "ERROR_BATTERY_REMOVE": "Error: Se extrajo la batería.",
                             "ERROR_BATTERY_REPLACE": "Error: Se sustituyó la batería.",
                             "ERROR_AC_DETTACH": "Error: Se desconectó el adaptador de alimentación de CA.",
                             "ERROR_USER_CANCEL": "Error: Cancelado por el usuario.",
-                            "ERROR_UNEXPECTED": "Error: Ha ocurrido un error inesperado."
+                            "ERROR_UNEXPECTED": "Error: Ocurrió un error inesperado."
                         },
                         "popup": {
                             "description1": "El proceso de restablecimiento es el siguiente:<br>Cargue completamente la batería  -->  Descargue completamente la batería  -->  Recargue totalmente la batería",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
                     "subTitle2": "Establezca los horarios en los que normalmente utiliza este equipo",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo se optimiza de acuerdo con su planificación establecida. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos."
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Pantalla",
-					"displayColorTemperature": {
-						"title": "Temperatura del color de visualización",
-						"description": "Puede ajustar la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos. Ajusta la pantalla a colores más cálidos desde el atardecer al amanecer para ayudarle a dormir.",
-						"link": {
-							"click": "Hacer clic en",
-							"here": "aquí",
-							"rest": "para cambiar la temperatura de color."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Temperatura del color de visualización",
+                        "description": "Puede ajustar la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos. Ajusta la pantalla a colores más cálidos desde el atardecer al amanecer para ayudarle a dormir.",
+                        "link": {
+                            "click": "Hacer clic en",
+                            "here": "aquí",
+                            "rest": "para cambiar la temperatura de color."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Modalidad de cuidado de la visión",
                         "checkbox": "Planificación del modo de cuidado ocular de anochecer a amanecer",
@@ -1362,7 +1362,9 @@
                             "minutes": "minutos",
                             "alwaysOn": "Siempre activo",
                             "never": "nunca",
-                            "halfTime": "Mitad del tiempo del temporizador de apagado de pantalla"
+                            "halfTime": "Mitad del tiempo del temporizador de apagado de pantalla",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "ATENUADOR DE BARRA DE TAREAS",
                         "backgroundDimmer": "ATENUADOR DE FONDO",
@@ -1527,7 +1529,7 @@
                     "control1": "CONTROLES DEL ÁREA TÁCTIL",
                     "control2": "CONTROLES DE MOUSE",
                     "control3": "CONTROLES DE TRACKPOINT",
-                    "less": "LESS"
+                    "less": "MENOS"
                 }
             }
         },
@@ -1761,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Valores de actualización automática",
-            "subtitle": "INSTALAR ACTUALIZACIONES AUTOMÁTICAMENTE",
+            "subtitle": "Instalar actualizaciones automáticamente",
             "critical": {
                 "title": "Actualizaciones críticas",
                 "tooltip": "Las actualizaciones críticas pueden evitar problemas importantes, fallos graves de funcionamiento, errores de hardware o que se dañen los datos."
@@ -3220,6 +3222,23 @@
                 "readMore": "Leer más",
                 "readLess": "Leer menos"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Oferta exclusiva de Lenovo para la suite de herramientas de diseño de Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Oferta digital de Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro es el software de edición de video líder para películas, TV y la Web. Premiere Pro incluye Premiere Rush, una aplicación todo en uno que funciona en todos los dispositivos para compartir video en su red.",
+            "subtitle12": "Plan fotográfico de Creative Cloud",
+            "body12": "Utilice Lightroom en combinación con Photoshop para editar, organizar, almacenar y compartir fácilmente sus fotos desde cualquier lugar, de forma que pueda transformar sus imágenes en cualquier elemento que pueda imaginar.",
+            "selectButton": "Seleccione",
+            "subtitle2": "Las PC todo en uno perfeccionadas",
+            "body2": "Las PC todo en uno con los procesadores Intel® Core™ de novena generación le proporcionan toda la potencia de una computadora de escritorio en una pantalla elegante, lo que significa menos desorden, seguridad basada en hardware y una pantalla de alta resolución."
         }
     }
 }

@@ -17,7 +17,7 @@
 				</div>
 				<div class="col-12 p-0 mb-4">
 					<vtr-widget-security
-						[showWindowsHello]="fingerPrintLandingViewModel? true : false"
+						[isOnline]="isOnline"
 						[statusItem]="statusItem"></vtr-widget-security>
 				</div>
 			</div>
@@ -43,9 +43,8 @@
 						[actionType]="cardContentPositionA.ActionType"
 						[actionLink]="cardContentPositionA.ActionLink"
 						[itemID]="cardContentPositionA.ActionLink"
-						[ratioX]="4"
-						[ratioY]="2"
-						type="corner-article"
+						[ratio]="2"
+						type="subpage-corner"
 						order="1"
 						sideFlag="r"
 						cornerShift="large"

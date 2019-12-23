@@ -1,6 +1,7 @@
 @import "../../../app.theme.scss";
 ::ng-deep {
 	.vtr-page-security-internet {
+		color: $shade_blue;
 		.vtr-subpage {
 			.vtr-widget-offline-info {
 				margin-top: $shift_up_small;
@@ -14,19 +15,16 @@
 		}
 
 		.title {
-			color: $main_dark;
-			font-size: 4.2rem;
-			font-weight: $weight_medium;
-		}
-
-		.heading {
-			color: $main_dark;
-			font-size: 2.5rem;
+			font-size: 3.4rem;
 			font-weight: $weight_regular;
 		}
 
+		.heading {
+			font-size: 2.4rem;
+			font-weight: $weight_600;
+		}
+
 		.sub-heading {
-			color: $main_dark;
 			font-size: 2rem;
 			font-weight: $weight_black;
 			text-transform: uppercase;
@@ -34,7 +32,6 @@
 		}
 
 		.list-heading {
-			color: $main_dark;
 			font-size: 2.4rem;
 			font-weight: $weight_600;
 
@@ -62,8 +59,7 @@
 		}
 
 		.text-regular {
-			color: $main_dark;
-			font-size: 1.6rem;
+			font-size: 1.4rem;
 
 			a {
 				text-decoration: underline;
@@ -104,11 +100,9 @@
 			li {
 				margin: 0;
 				padding: 1rem 1rem 1rem 0;
-				color: $main_dark;
 
 				.text-regular {
-					color: $main_shade;
-					font-size: 1.6rem;
+					font-size: 1.4rem;
 				}
 
 				&.good {
@@ -170,14 +164,12 @@
 			padding: 0;
 
 			.text-regular {
-				color: $main_shade;
 				padding: 0.8rem;
 				font-size: 1.8rem;
 			}
 
 			.serial {
 				font-size: 3.6rem;
-				color: $main_dark;
 			}
 		}
 
@@ -196,7 +188,6 @@
 
 			.sub-heading {
 				margin-top: 2rem;
-				color: $main_dark;
 				font-size: 1.8rem;
 				font-weight: $weight_bold;
 				text-transform: uppercase;
@@ -206,7 +197,6 @@
 			}
 
 			.text-regular {
-				color: $main_dark;
 				font-size: 2rem;
 				font-weight: $weight_light;
 			}

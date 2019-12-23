@@ -34,6 +34,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		window.getSelection().empty();
 		this.http.get(this.url, { responseType: 'text' }).subscribe((results: any) => {
 			if (this.type === 'txt') {
 				this.loading = false;

@@ -7,6 +7,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subject, Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
+import { TaskType, TaskStep } from 'src/app/beta/hardware-scan/enums/hardware-scan-metrics.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -31,6 +32,7 @@ export class HardwareScanService {
 	private deviceInRecover: string;
 	private isViewingRecoverLog = false;
 	private hasDevicesToRecover = false;
+	private scanOrRBSFinished = false;
 
 	private quickScanRequest: any = []; // request modules
 	private quickScanResponse: any = []; // response modules
@@ -57,6 +59,10 @@ export class HardwareScanService {
 	private hardwareModulesLoaded = new Subject<boolean>();
 	private pluginInfoPromise: any = undefined;
 	private pluginVersion: string;
+
+	// Used to store information related to metrics
+	private currentTaskType: TaskType;
+	private currentTaskStep: TaskStep;
 
 	private iconByModule = {
 		'cpu': 'icon_hardware_processor.svg',
@@ -102,6 +108,10 @@ export class HardwareScanService {
 		this.itemsToScanResponse = this.getItemsToScan(this.ALL_MODULES, this.culture);
 		this.refreshingModules = refreshing;
 		this.showComponentList = refreshing;
+	}
+
+	public isScanOrRBSFinished() {
+		return this.scanOrRBSFinished;
 	}
 
 	public getCulture() {
@@ -150,6 +160,10 @@ export class HardwareScanService {
 
 	public getViewResultItems() {
 		return this.viewResultItems;
+	}
+
+	public setScanOrRBSFinished(value: boolean) {
+		this.scanOrRBSFinished = value;
 	}
 
 	public setViewResultItems(items: any) {
@@ -458,6 +472,7 @@ export class HardwareScanService {
 			this.scanExecution = true;
 			this.disableCancel = true;
 			this.workDone.next(false);
+			this.setScanOrRBSFinished(false);
 			this.clearLastResponse();
 
 			// As user has started either a Quick or Custom Scan, it means that the actual
@@ -497,6 +512,7 @@ export class HardwareScanService {
 					}
 
 					this.workDone.next(true);
+					this.setScanOrRBSFinished(true);
 
 					// Retrieve an updated version of Scan's last results
 					this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
@@ -577,6 +593,7 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			this.clearLastResponse();
 			this.cancelRequested = false;
+			this.setScanOrRBSFinished(false);
 			return this.hardwareScanBridge.getRecoverBadSectors(payload, (response: any) => {
 				// Keeping track of the latest response allows the right render when user
 				// navigates to another page and then come back to the Hardware Scan page
@@ -603,6 +620,7 @@ export class HardwareScanService {
 			}).finally(() => {
 				this.setIsScanDone(true);
 				this.cleanUp();
+				this.setScanOrRBSFinished(true);
 			});
 		}
 	}
@@ -1295,5 +1313,21 @@ export class HardwareScanService {
 	 */
 	public isHardwareModulesLoaded(): Observable<boolean> {
 		return this.hardwareModulesLoaded.pipe(first())
+	}
+
+	public getCurrentTaskType() {
+		return this.currentTaskType;
+	}
+
+	public setCurrentTaskType(taskType: TaskType) {
+		this.currentTaskType = taskType;
+	}
+
+	public getCurrentTaskStep() {
+		return this.currentTaskStep;
+	}
+
+	public setCurrentTaskStep(taskStep: TaskStep) {
+		this.currentTaskStep = taskStep;
 	}
 }

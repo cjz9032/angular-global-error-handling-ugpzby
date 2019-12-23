@@ -111,7 +111,7 @@
 									*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 									<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
 										metricsItem="link.subscribe" metricsParent="security.antivirus"
-										href="{{antiVirus.mcafee?.trialUrl}}" target="_blank"></a>
+										href="{{viewModel.mcafee.trialUrl}}" target="_blank"></a>
 								</p>
 							</div>
 							<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
@@ -140,7 +140,7 @@
 										metricsItem="btn.subscribe" metricsParent="security.antivirus"
 										upperCaseLabel=false btnHeight=true [isDisabled]="isOnline === false"
 										[label]="'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
-										[href]="antiVirus.mcafee?.trialUrl"></vtr-ui-button>
+										[href]="viewModel.mcafee.trialUrl"></vtr-ui-button>
 									<vtr-ui-button *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
 										linkId="sa-av-link-subscribe" metricsEvent="itemClick"
 										metricsItem="btn.subscribe" metricsParent="security.antivirus"
@@ -172,7 +172,7 @@
 								*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 								<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
 									metricsItem="link.subscribe500" metricsParent="security.antivirus"
-									href="{{antiVirus.mcafee?.trialUrl}}" target="_blank"></a>
+									href="{{viewModel.mcafee.trialUrl}}" target="_blank"></a>
 							</p>
 						</div>
 						<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'" class="d-block d-xl-none">
@@ -270,15 +270,39 @@
 						[actionType]="cardContentPositionA.ActionType"
 						[actionLink]="cardContentPositionA.ActionLink"
 						[itemID]="cardContentPositionA.ActionLink"
-						[ratioX]="4"
-						[ratioY]="2"
-						type="corner-article"
+						[ratio]="2"
+						type="subpage-corner"
 						cornerShift="large"
 						order="1"
 						sideFlag="r"
 						[containerCardId]="'sa-av-modal'">
 					</vtr-container-card>
 				</div>
+			</div>
+		</div>
+		<div class="footer row justify-content-center">
+			<div class="row px-0">
+			  <div class="px-0">
+				<img class="mcafee-logo"
+				  [src]=" '/assets/images/mcafee_logo.svg' | svgInline | async" />
+			  </div>
+			  <p class="text-regular mt-10"
+				*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
+				<a id="sa-av-link-privacypolicy"
+				  vtrMetrics
+				  metricsEvent="itemClick"
+				  metricsItem="privacyPolicy"
+				  metricsParent="security.antivirus"
+				  href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+				  target="_blank"></a>
+				<a id="sa-av-link-termsofservices"
+				  vtrMetrics
+				  metricsEvent="itemClick"
+				  metricsItem="termsOfServices"
+				  metricsParent="security.antivirus"
+				  href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+				  target="_blank"></a>
+			  </p>
 			</div>
 		</div>
 	</right-content>

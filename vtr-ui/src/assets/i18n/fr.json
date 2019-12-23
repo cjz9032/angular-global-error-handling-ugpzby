@@ -841,7 +841,7 @@
                 "hour": "heure",
                 "minutes": "minutes",
                 "minute": "minute",
-                "charge": "DURÉE NÉCESSAIRE POUR CHARGER COMPLÈTEMENT LA BATTERIE",
+                "charge": "Durée nécessaire pour recharger complètement la batterie",
                 "button": "AFFICHER LES DÉTAILS DE LA BATTERIE",
                 "details": {
                     "title": "Détails de la batterie",
@@ -1014,7 +1014,7 @@
                             "title3": "Mode de performance",
                             "desc3": "Le curseur se trouve à l'extrême droite. La vitesse du ventilateur et la température de la surface autorisée sont plus élevées pour des performances maximales."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Certains modes peuvent être réglés automatiquement sur une gamme de performances plus vaste en fonction de votre activité. Pour désactiver le mode automatique, appuyez sur les touches Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1108,14 +1108,14 @@
                         "FCCText": "De {{before}} Wh à {{after}} Wh",
                         "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Terminé : La réinitialisation a abouti.",
+                            "ERROR_SUCCESS": "Terminé : la réinitialisation est effectuée.",
                             "ERROR_SHUTDOWN": "Échec : Le système a été arrêté.",
-                            "ERROR_LOGOFF": "Échec : Utilisateur déconnecté.",
+                            "ERROR_LOGOFF": "Échec : l'utilisateur s'est déconnecté.",
                             "ERROR_BATTERY_REMOVE": "Échec : La batterie a été retirée.",
                             "ERROR_BATTERY_REPLACE": "Échec : La batterie a été remplacée.",
                             "ERROR_AC_DETTACH": "Échec : Le boîtier d'alimentation a été débranché.",
                             "ERROR_USER_CANCEL": "Échec : Annulé par l'utilisateur.",
-                            "ERROR_UNEXPECTED": "Échec : Une erreur inattendue est survenue."
+                            "ERROR_UNEXPECTED": "Échec : une erreur inattendue est survenue."
                         },
                         "popup": {
                             "description1": "Le processus de réinitialisation est le suivant :<br>Charge complète de la batterie  -->  Décharge complète de la batterie  -->  Recharge complète de la batterie",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
                     "subTitle2": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs."
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Affichage",
-					"displayColorTemperature": {
-						"title": "Température de couleur de l'écran",
-						"description": "Vous pouvez régler la température des couleurs de votre écran pour filtrer la lumière bleue et réduire la fatigue oculaire. Permet d'ajuster les couleurs de l'écran pour qu'elles soient plus chaudes du coucher du soleil jusqu'à l'aube pour vous aider à dormir.",
-						"link": {
-							"click": "Cliquez",
-							"here": "ici",
-							"rest": "pour changer la température des couleurs."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Température de couleur de l'écran",
+                        "description": "Vous pouvez régler la température des couleurs de votre écran pour filtrer la lumière bleue et réduire la fatigue oculaire. Permet d'ajuster les couleurs de l'écran pour qu'elles soient plus chaudes du coucher du soleil jusqu'à l'aube pour vous aider à dormir.",
+                        "link": {
+                            "click": "Cliquez",
+                            "here": "ici",
+                            "rest": "pour changer la température des couleurs."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Mode Protection des yeux",
                         "checkbox": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
@@ -1362,7 +1362,9 @@
                             "minutes": "minutes",
                             "alwaysOn": "Toujours Activé",
                             "never": "jamais",
-                            "halfTime": "Demi-durée de la minuterie d'affichage"
+                            "halfTime": "Demi-durée de la minuterie d'affichage",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "RÉDUCTION DE LA LUMINOSITÉ DE LA BARRE DES TÂCHES",
                         "backgroundDimmer": "RÉDUCTION DE LA LUMINOSITÉ EN ARRIÈRE-PLAN",
@@ -1527,7 +1529,7 @@
                     "control1": "CONTRÔLES DU PAVÉ TACTILE",
                     "control2": "CONTRÔLE DE LA SOURIS",
                     "control3": "PARAMÈTRES TRACKPOINT",
-                    "less": "LESS"
+                    "less": "MOINS"
                 }
             }
         },
@@ -1761,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Paramètres de mise à jour automatique",
-            "subtitle": "INSTALLATION AUTOMATIQUE DES MISES À JOUR",
+            "subtitle": "Installer automatiquement les mises à jour",
             "critical": {
                 "title": "Mises à jour critiques",
                 "tooltip": "Les mises à jour critiques permettent d'éviter les incidents graves, les dysfonctionnements majeurs, les pannes matérielles ou la corruption des données."
@@ -3220,6 +3222,23 @@
                 "readMore": "Afficher plus",
                 "readLess": "Afficher moins"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Offre Lenovo exclusive de la suite Adobe designer"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Offre numérique Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro est le logiciel de montage vidéo leader pour les films, la télévision et le Web. Premiere Pro inclut Premiere Rush, une application tout-en-un fonctionnant sur tous vos appareils pour partager votre vidéo avec votre réseau.",
+            "subtitle12": "Plan de photographie Creative Cloud",
+            "body12": "Utilisez Lightroom pour facilement retoucher, organiser, stocker et partager vos photos depuis n'importe où, et Photoshop pour transformer vos images en tout ce que vous pouvez imaginer.",
+            "selectButton": "Sélectionner",
+            "subtitle2": "Ordinateurs tout en un : simplifié",
+            "body2": "Les PC tout-en-un dotés de la 9ème génération de processeurs Intel® Core™ vous offrent toute la puissance d'un ordinateur de bureau avec un écran élégant : pour une sécurité basée matériel moins encombrante et un écran haute résolution."
         }
     }
 }

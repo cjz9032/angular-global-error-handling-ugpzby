@@ -1014,7 +1014,7 @@
                             "title3": "מצב ביצועים",
                             "desc3": "המחוון נמצא בצד ימין. מהירות המאוורר וטמפרטורת המשטח המותרת גבוהות יותר כדי להשיג את הביצועים הטובים ביותר."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "ניתן לכוונן חלק מהמצבים באופן אוטומטי לטווח רחב יותר של ביצועים בהתאם לפעילות. כדי להשבית את המצב האוטומטי, לוחצים על Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1108,14 +1108,14 @@
                         "FCCText": "מ-{{before}} ואט עד {{after}} ואט",
                         "note": "הערה: לפני איפוס מד הסוללה, הקפידו לחבר את המחשב שלכם לחשמל. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "הושלם: האיפוס בוצע בהצלחה.",
+                            "ERROR_SUCCESS": "מלא: איפוס בהצלחה.",
                             "ERROR_SHUTDOWN": "הפעולה נכשלה: המערכת כבתה.",
-                            "ERROR_LOGOFF": "הפעולה נכשלה: המשתמש התנתק.",
+                            "ERROR_LOGOFF": "נכשל: המשתמש יצא מהמערכת.",
                             "ERROR_BATTERY_REMOVE": "הפעולה נכשלה: הסוללה הוסרה.",
                             "ERROR_BATTERY_REPLACE": "הפעולה נכשלה: הסוללה הוחלפה.",
                             "ERROR_AC_DETTACH": "הפעולה נכשלה: מתאם מתח ה-AC נותק.",
                             "ERROR_USER_CANCEL": "הפעולה נכשלה: ביטול על-ידי המשתמש.",
-                            "ERROR_UNEXPECTED": "הפעולה נכשלה: אירעה שגיאה בלתי צפויה."
+                            "ERROR_UNEXPECTED": "נכשל: ארעה שגיאה בלתי צפויה."
                         },
                         "popup": {
                             "description1": "תהליך האיפוס מתבצע באופן הבא:<br>סוללה טעונה במלואה  -->  פריקה מלאה של הסוללה  -->  סוללה טעונה במלואה",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "תכונה זו קובעת זמן למחשב שלכם שבו יבוצע מיטוב של חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, כדי שלא לפגוע בזמן הפעלה מחדש מהירה שנדרש בשעות שבהן נעשה שימוש במחשב.",
                     "subTitle2": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "כאשר תכונת 'המתנה חכמה' פועלת, המחשב עובר ל'המתנה מודרנית' לפני מועד ההתחלה שנקבע, והוא עובר למצב שינה אם הוא בלתי פעיל במשך פרק זמן מסוים כאשר הוא מופעל באמצעות סוללה. פרק הזמן הזה עובר מיטוב לפי לוח הזמנים שקבעתם. המחשב עובר ממצב שינה למצב 'המתנה מודרנית' רק בימים שנקבעו, ואינו עובר כאשר הוא במצב בלתי פעיל במשך כמה ימים ברצף, לפי מה שקבעתם."
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "תצוגה",
-					"displayColorTemperature": {
-						"title": "טמפרטורת צבע התצוגה",
-						"description": "ניתן להתאים את טמפרטורת הצבע של התצוגה כדי לסנן את האור הכחול ולהפחית את אימוץ העיניים. כוונון התצוגות לצבעים חמים יותר במהלך השקיעה ועד הזריחה כדי לעזור לכם לישון.",
-						"link": {
-							"click": "לחצו",
-							"here": "כאן",
-							"rest": "כדי לשנות את טמפרטורת הצבע."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "טמפרטורת צבע התצוגה",
+                        "description": "ניתן להתאים את טמפרטורת הצבע של התצוגה כדי לסנן את האור הכחול ולהפחית את אימוץ העיניים. כוונון התצוגות לצבעים חמים יותר במהלך השקיעה ועד הזריחה כדי לעזור לכם לישון.",
+                        "link": {
+                            "click": "לחצו",
+                            "here": "כאן",
+                            "rest": "כדי לשנות את טמפרטורת הצבע."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "מצב שמירה על העיניים",
                         "checkbox": "תזמון מצב שמירה על העיניים מהשקיעה עד הזריחה",
@@ -1362,7 +1362,9 @@
                             "minutes": "דקות",
                             "alwaysOn": "פועל תמיד",
                             "never": "לעולם לא",
-                            "halfTime": "חצי מהזמן לטיימר כיבוי הצג"
+                            "halfTime": "חצי מהזמן לטיימר כיבוי הצג",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "עמעם שורת המשימות",
                         "backgroundDimmer": "עמעם רקע",
@@ -1527,7 +1529,7 @@
                     "control1": "בקרי משטח מגע",
                     "control2": "בקרי עכבר",
                     "control3": "בקרי TRACKPOINT",
-                    "less": "LESS"
+                    "less": "פחות"
                 }
             }
         },
@@ -3220,6 +3222,23 @@
                 "readMore": "פרטים נוספים",
                 "readLess": "פחות מידע"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "הצעה בלעדית של Lenovo לחבילת עיצוב של Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "הצעה דיגיטלית של Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro היא תוכנת עריכת הווידיאו המובילה לקולנוע, לטלוויזיה ולאינטרנט. תוכנת Premiere Pro כולל את Premiere Rush, אפליקציית All-in-One הפועלת בכל המכשירים שלכם כדי לשתף את הווידאו עם הרשת שלכם.",
+            "subtitle12": "תוכנית Creative Cloud Photography",
+            "body12": "השתמשו ב-Lightroom כדי לערוך, לארגן, לאחסן ולשתף את התמונות שלכם בקלות מכל מקום, ובתוכנת Photoshop כדי שתוכלו להפוך את התמונות לכל דבר שתוכלו לדמיין.",
+            "selectButton": "בחרו",
+            "subtitle2": "מחשבי All-in-One: יעילות",
+            "body2": "מחשבי All-in-One עם מעבדי ™Intel® Core מדור תשיעי, מעניקים לכם את כל העוצמה של שולחן העבודה ארוזה בתצוגה מלוטשת - לקבלת פחות עומס, אבטחה מבוססת חומרה ותצוגה ברזולוציה גבוהה."
         }
     }
 }

@@ -10,6 +10,7 @@ import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/se
 import { BetaService } from 'src/app/services/beta/beta.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -81,7 +82,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		public selfSelectService: SelfSelectService,
 		private timerService: TimerService,
 		private betaService: BetaService,
-		private localInfoService: LocalInfoService
+		private localInfoService: LocalInfoService,
+		private loggerService: LoggerService
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();
@@ -103,7 +105,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	onNotification(response: AppNotification) {
-		const {type, payload} = response;
+		const { type, payload } = response;
 		switch (type) {
 			case LocalStorageKey.WelcomeTutorial:
 				try {
@@ -126,7 +128,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					if (radioId) {
 						document.getElementById(radioId).click();
 					}
-				} catch (error) {}
+				} catch (error) { }
 				break;
 			default:
 				break;
@@ -202,7 +204,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.isToggleDeviceStatistics = false;
 				}
 			}).catch((error) => {
-				console.error("getAppMetricCollectionSetting failed for exception, will hide the device metric setting.", error);
+				console.error('getAppMetricCollectionSetting failed for exception, will hide the device metric setting.', error);
 				this.isToggleDeviceStatistics = false;
 			});
 		}
@@ -210,17 +212,21 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	getPreferenceSettingsValue() {
 		if (this.preferenceSettings) {
-			this.preferenceSettings.getMessagingPreference('en').then((messageSettings: any) => {
-				if (messageSettings) {
-					this.toggleAppFeature = this.getMassageStettingValue(messageSettings, 'AppFeatures');
-					this.toggleMarketing = this.getMassageStettingValue(messageSettings, 'Marketing');
-					this.toggleActionTriggered = this.getMassageStettingValue(messageSettings, 'ActionTriggered');
-					this.isMessageSettings = true;
-				}
-			}).catch((error) => {
-				console.error("getMessagingPreference failed for exception, will hide the messages setting.", error);
-				this.isMessageSettings = false;
-			});
+			try {
+				this.preferenceSettings.getMessagingPreference('en').then((messageSettings: any) => {
+					if (messageSettings) {
+						this.toggleAppFeature = this.getMassageStettingValue(messageSettings, 'AppFeatures');
+						this.toggleMarketing = this.getMassageStettingValue(messageSettings, 'Marketing');
+						this.toggleActionTriggered = this.getMassageStettingValue(messageSettings, 'ActionTriggered');
+						this.isMessageSettings = true;
+					}
+				}).catch((error) => {
+					console.error('getMessagingPreference failed for exception, will hide the messages setting.', error);
+					this.isMessageSettings = false;
+				});
+			} catch (error) {
+				this.loggerService.exception('PageSettingsComponent.getPreferenceSettingsValue exception', error);
+			}
 		}
 	}
 
@@ -241,7 +247,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleAppFeature = !event.switchValue;
 					this.settingsService.toggleAppFeature = !event.switchValue;
 				}
-			}).catch(() => {});
+			}).catch(() => { });
 		}
 		this.sendSettingMetrics('SettingAppFeatures', event.switchValue);
 	}
@@ -258,7 +264,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleMarketing = !event.switchValue;
 					this.settingsService.toggleMarketing = !event.switchValue;
 				}
-			}).catch(() => {});
+			}).catch(() => { });
 		}
 		this.sendSettingMetrics('SettingMarketing', event.switchValue);
 	}
@@ -275,7 +281,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleActionTriggered = !event.switchValue;
 					this.settingsService.toggleActionTriggered = !event.switchValue;
 				}
-			}).catch(() => {});
+			}).catch(() => { });
 		}
 		this.sendSettingMetrics('SettingActionTriggered', event.switchValue);
 	}
@@ -290,7 +296,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleDeviceStatistics = !event.switchValue;
 					this.settingsService.toggleDeviceStatistics = !event.switchValue;
 				}
-			}).catch(() => {});
+			}).catch(() => { });
 		}
 		this.sendSettingMetrics('SettingDeviceStatistics', event.switchValue);
 	}

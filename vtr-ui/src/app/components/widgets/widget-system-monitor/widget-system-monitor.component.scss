@@ -152,6 +152,7 @@
 					// 	}
 					// }
 					.hd-item {
+						width:30%;
 						@media #{$breakpoint_md} {
 						 max-width: 35rem;
 						 margin: auto;
@@ -276,21 +277,7 @@
 							left: 50%;
 							transform: translate(-50%);
 							top: -4rem;
-							@media #{$breakpoint_sm}{
-								top: 50%;
-								transform: translateY(-50%) translateX(-100%);
-								left: -0.5rem;
-								padding: 2rem;
-								min-width: 15rem;
-								&::after {
-									border-bottom: 2rem solid $gaming_lightest;
-									border-left: 2rem solid transparent;
-									left: calc(100% - 1.15rem);
-									transform: rotate(-45deg);
-									bottom: calc(50% - 1rem);
-								}
-							}
-							@media #{$breakpoint_md}{
+							@media #{$breakpoint_lg}{
 								top: 50%;
 								transform: translateY(-50%) translateX(-100%);
 								left: -0.5rem;
@@ -317,25 +304,8 @@
 							min-width: 20rem;
 							left: 50%;
 							transform: translate(-50%);
-							top: -4rem;
-							@media #{$breakpoint_sm}{
-								top: 50%;
-								transform: translateY(-50%) translateX(0);
-								left: 7rem;
-								padding: 2rem;
-								min-width: 15rem;
-								&::after {
-									border-top: 2rem solid $gaming_lightest;
-									border-right: 2rem solid transparent;
-									border-bottom: none;
-									border-left: none;
-									left: -0.85rem;
-									transform: rotate(-45deg);
-									bottom: calc(50% - 1rem);
-								}
-							}
-
-							@media #{$breakpoint_md}{
+							top: -4rem;						
+							@media #{$breakpoint_lg}{
 								top: 50%;
 								transform: translateY(-50%) translateX(0);
 								left: 7rem;
@@ -848,8 +818,8 @@
 						// }
 						.hd-item {
 							text-align: center;
-							.gaming-tooltip {
-								min-width: 30rem;
+							.gaming-tooltip {								
+								min-width: 20rem;							
 								top: -5rem;
 								left: 50%;
 								transform: translate(-50%);
@@ -861,7 +831,7 @@
 									margin-right: auto;
 								}
 								@media #{$breakpoint_md}{
-									min-width: 30rem;
+									min-width: 20rem;
 									transform: translate(0);
 									left: 0;
 									right: 0;
@@ -871,10 +841,8 @@
 								@media #{$breakpoint_lg}{
 									min-width: 20rem;
 									transform: translate(0);
-									left: 0;
+									left: -4.5%;
 									right: 0;
-									margin-left: auto;
-									margin-right: auto;
 									padding: 1.4rem;
 								}
 							}
@@ -886,6 +854,7 @@
 								}
 							}
 							.hd-item-label {
+								width:50%;
 								//display: block;
 								text-align: center;
 								// @media #{$only-small-screen} {
@@ -958,8 +927,10 @@
 							}
 						}
 					}
+					//hd-item-multiple
 					.hd-item {
 						margin-bottom: 3.4rem;
+						width:100%;
 						position: relative;
 						@media #{$breakpoint_xl3} {
 							margin-bottom: 2.4rem;
@@ -994,10 +965,13 @@
 						.gaming-tooltip {
 							top: -6rem;
 							left: 50%;
+							min-width:20rem;
 							transform: translate(-50%);
+							
 							@media #{$breakpoint_sm}{
 								transform: translate(-50%);
 								left: 50%;
+								min-width:28rem;
 							}
 						}
 						&:hover {
@@ -1027,7 +1001,7 @@
 							padding-left: 1rem;
 							vertical-align: middle;
 							text-align: left;
-							width: 50%;
+							
 							// @media #{$only-small-screen} {
 							// 	display: flex;
 							// 	justify-content: space-between;

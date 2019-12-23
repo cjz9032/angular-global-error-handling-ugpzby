@@ -841,7 +841,7 @@
                 "hour": "ura",
                 "minutes": "minut",
                 "minute": "minuta",
-                "charge": "ČAS, POTREBEN, DA JE BATERIJA POPOLNOMA NAPOLNJENA",
+                "charge": "Čas, potreben, da je baterija popolnoma napolnjena",
                 "button": "OGLEJTE SI PODROBNOSTI O BATERIJI",
                 "details": {
                     "title": "Podrobnosti baterije",
@@ -1014,7 +1014,7 @@
                             "title3": "Zmogljivi način",
                             "desc3": "Drsnik je skrajno desno. Hitrost ventilatorja in dopustna površinska temperatura sta višja za največjo učinkovitost delovanja."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Nekateri načini delovanja se lahko na podlagi vaše dejavnosti samodejno prilagajajo v širšem obsegu zmogljivosti. Če želite onemogočiti samodejni način, pritisnite Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1108,7 +1108,7 @@
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Opomba: pred ponastavitvijo merilnika za baterijo poskrbite, da bo računalnik priključen na izmenično napajanje. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Končano: Uspešna ponastavitev",
+                            "ERROR_SUCCESS": "Dokončano: Uspešna ponastavitev.",
                             "ERROR_SHUTDOWN": "Neuspešno: Sistem se je zaustavil.",
                             "ERROR_LOGOFF": "Neuspešno: Uporabnik se je odjavil.",
                             "ERROR_BATTERY_REMOVE": "Neuspešno: Baterija je bila odstranjena.",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
                     "subTitle2": "Nastavite uro, ko običajno uporabljate ta računalnik",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na urnik, ki ga nastavite. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni."
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Prikaz",
-					"displayColorTemperature": {
-						"title": "Barvna temperatura zaslona",
-						"description": "Barvno temperaturo zaslona lahko prilagodite, tako da filtrirate modro svetlobo in zmanjšate utrujenost oči. Sistem prilagodi zaslon na toplejše barve med sončnim zahodom in sončnim vzhodom, da lažje zaspite.",
-						"link": {
-							"click": "Kliknite",
-							"here": "tukaj",
-							"rest": "da spremenite barvno temperaturo."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Barvna temperatura zaslona",
+                        "description": "Barvno temperaturo zaslona lahko prilagodite, tako da filtrirate modro svetlobo in zmanjšate utrujenost oči. Sistem prilagodi zaslon na toplejše barve med sončnim zahodom in sončnim vzhodom, da lažje zaspite.",
+                        "link": {
+                            "click": "Kliknite",
+                            "here": "tukaj",
+                            "rest": "da spremenite barvno temperaturo."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Očem prijazen način",
                         "checkbox": "Načrtujte očem prijazen način od sončnega zahoda do sončnega vzhoda",
@@ -1362,7 +1362,9 @@
                             "minutes": "minut",
                             "alwaysOn": "Vedno vklopljeno",
                             "never": "nikoli",
-                            "halfTime": "Polovica časa časovnika za izklop zaslona"
+                            "halfTime": "Polovica časa časovnika za izklop zaslona",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "ZATEMNJEVALNIK OPRAVILNE VRSTICE",
                         "backgroundDimmer": "ZATEMNJEVALNIK OZADJA",
@@ -1527,7 +1529,7 @@
                     "control1": "KONTROLNIKI SLEDILNE PLOŠČICE",
                     "control2": "KONTROLNIKI MIŠKE",
                     "control3": "KONTROLNIKI TRACKPOINT",
-                    "less": "LESS"
+                    "less": "MANJ"
                 }
             }
         },
@@ -1761,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Nastavitve samodejne posodobitve",
-            "subtitle": "SAMODEJNA NAMESTITEV POSODOBITEV",
+            "subtitle": "Samodejna namestitev posodobitev",
             "critical": {
                 "title": "Nujne posodobitve",
                 "tooltip": "Nujne posodobitve preprečujejo resne težave, večje okvare, okvare strojne opreme ali poškodbe podatkov."
@@ -3220,6 +3222,23 @@
                 "readMore": "Preberite več",
                 "readLess": "Preberite manj"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Ekskluzivna ponudba družbe Lenovo oblikovalske zbirke Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitalna ponudba družbe Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro je vodilna programska oprema za urejanje videoposnetkov za film, TV in splet. Premiere Pro vključuje Premiere Rush, aplikacijo »vse-v-enem«, ki deluje v vseh vaših napravah za skupno rabo videoposnetka z vašim omrežjem.",
+            "subtitle12": "Paket Creative Cloud Photography",
+            "body12": "Uporabite Lightroom za enostavno urejanje, organiziranje, shranjevanje in deljenje fotografij z drugimi od koder koli ter Photoshop, tako da lahko slike pretvorite v vse, kar si lahko zamislite.",
+            "selectButton": "Izbira",
+            "subtitle2": "Računalniki »vse-v-enem«: učinkovito",
+            "body2": "Računalniki »vse-v-enem« s procesorji Intel® Core™ 9. generacije vam nudijo vso zmogljivost namiznega računalnika, vse pa je zapakirano v eleganten zaslon za manj nereda, varnosti, ki temelji na strojni opremi, in z zaslonom z visoko ločljivostjo."
         }
     }
 }

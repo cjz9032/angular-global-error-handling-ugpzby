@@ -841,7 +841,7 @@
                 "hour": "godzina",
                 "minutes": "minut(y)",
                 "minute": "minuta",
-                "charge": "CZAS CAŁKOWITEGO NAŁADOWANIA",
+                "charge": "Czas całkowitego ładowania",
                 "button": "ZOBACZ INFORMACJE DOTYCZĄCE AKUMULATORA",
                 "details": {
                     "title": "Informacje dotyczące akumulatora",
@@ -1014,7 +1014,7 @@
                             "title3": "Tryb wydajności",
                             "desc3": "Suwak znajduje się po prawej stronie. Szybkość wentylatora i dopuszczalna temperatura powierzchni są wyższe dla uzyskania najlepszej wydajności."
                         },
-                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
+                        "desc3_1": "Niektóre tryby mogą się automatycznie dostosowywać w szerszym zakresie wydajności zależnie od Twojej aktywności. Aby wyłączyć tryb automatyczny, naciśnij Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1108,14 +1108,14 @@
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Ukończono: Resetowanie zakończyło się powodzeniem.",
+                            "ERROR_SUCCESS": "Ukończone: resetowanie powiodło się.",
                             "ERROR_SHUTDOWN": "Niepowodzenie: System zostanie zamknięty.",
-                            "ERROR_LOGOFF": "Niepowodzenie: Wylogowano użytkownika.",
+                            "ERROR_LOGOFF": "Niepowodzenie: wylogowano użytkownika.",
                             "ERROR_BATTERY_REMOVE": "Niepowodzenie: Wyjęto akumulator.",
                             "ERROR_BATTERY_REPLACE": "Niepowodzenie: Wymieniono akumulator.",
                             "ERROR_AC_DETTACH": "Niepowodzenie: Odłączono zasilacz.",
                             "ERROR_USER_CANCEL": "Niepowodzenie: Zadanie anulowane przez użytkownika.",
-                            "ERROR_UNEXPECTED": "Niepowodzenie: Wystąpił nieoczekiwany błąd."
+                            "ERROR_UNEXPECTED": "Niepowodzenie: wystąpił nieoczekiwany błąd."
                         },
                         "popup": {
                             "description1": "Proces resetowania wygląda następująco:<br> Całkowicie naładuj akumulator  -->  Całkowicie rozładuj akumulator  -->  Całkowicie naładuj akumulator",
@@ -1222,7 +1222,7 @@
                     },
                     "description2": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
                     "subTitle2": "Ustaw typowe godziny korzystania z komputera",
-                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
+                    "oldTooltipText": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Okres bezczynności jest optymalizowany na podstawie ustawionego harmonogramu. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowanych dniach, a nie przełącza się w ogóle, jeśli nie jest używany przez kilka kolejnych zaplanowanych dni."
                 }
             },
             "audio": {
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Wyświetlanie",
-					"displayColorTemperature": {
-						"title": "Temperatura barwowa ekranu",
-						"description": "Możesz dostosowywać temperaturę barwową ekranu, odfiltrowując niebieskie światło męczące oczy. Z kolei w okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
-						"link": {
-							"click": "Kliknij",
-							"here": "tutaj",
-							"rest": "aby zmienić temperaturę barwową."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Temperatura barwowa ekranu",
+                        "description": "Możesz dostosowywać temperaturę barwową ekranu, odfiltrowując niebieskie światło męczące oczy. Z kolei w okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
+                        "link": {
+                            "click": "Kliknij",
+                            "here": "tutaj",
+                            "rest": "aby zmienić temperaturę barwową."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Tryb ochrony oczu",
                         "checkbox": "Ustaw tryb ochrony oczu od zachodu do wschodu słońca",
@@ -1362,7 +1362,9 @@
                             "minutes": "minut(y)",
                             "alwaysOn": "Zawsze włączone",
                             "never": "nigdy",
-                            "halfTime": "Połowa czasu wyłączenia wyświetlacza"
+                            "halfTime": "Połowa czasu wyłączenia wyświetlacza",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "PRZYCIEMNIANIE PASKA ZADAŃ",
                         "backgroundDimmer": "PRZYCIEMNIANIE TŁA",
@@ -1761,7 +1763,7 @@
         },
         "autoUpdateSettings": {
             "title": "Ustawienia automatycznych aktualizacji",
-            "subtitle": "AUTOMATYCZNA INSTALACJA AKTUALIZACJI",
+            "subtitle": "Automatyczne instalowanie aktualizacji",
             "critical": {
                 "title": "Aktualizacje krytyczne",
                 "tooltip": "Aktualizacje krytyczne mogą zapobiegać poważnym problemom, usterkom, awariom sprzętu lub uszkodzeniu danych."
@@ -3220,6 +3222,23 @@
                 "readMore": "Dowiedz się więcej",
                 "readLess": "Czytaj mniej"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Ekskluzywna oferta Lenovo na pakiet narzędzi projektowych Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Cyfrowa oferta Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro to wiodące oprogramowanie do edycji wideo do filmów, telewizji i Internetu. Premiere Pro zawiera Premiere Rush — uniwersalną aplikację działającą na wszystkich urządzeniach, która służy do udostępnia wideo w sieci.",
+            "subtitle12": "Plan fotograficzny Creative Cloud",
+            "body12": "W oprogramowaniu Lightroom można łatwo edytować, porządkować, przechowywać i udostępniać swoje zdjęcia z dowolnego miejsca, a w programie Photoshop można je przekształcać, ograniczając się jedynie wyobraźnią.",
+            "selectButton": "Wybierz",
+            "subtitle2": "Komputery All-in-One: optymalizacja",
+            "body2": "Komputery All-in-One z procesorami Intel® Core™ 9. generacji oferują moc komputera stacjonarnego zamkniętą w eleganckim monitorze. Dzięki temu zyskujesz porządek na biurku, wbudowane zabezpieczenia sprzętowe i ekran o dużej rozdzielczości."
         }
     }
 }
