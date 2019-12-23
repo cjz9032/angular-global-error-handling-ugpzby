@@ -43,7 +43,7 @@ export class DccService {
 			null
 		)[0];
 		if (headerImage && headerImage.Title === 'Header Image DCC') {
-			this.headerDccBackground = 'url(' + headerImage.FeatureImage + ')' + this.backgroundProperties;
+			this.headerBackground = 'url(' + headerImage.FeatureImage + ')' + this.backgroundProperties;
 		}
 	}
 
@@ -54,7 +54,6 @@ export class DccService {
 				filter.then((hyp) => {
 					if (hyp === 'true') {
 						this.isDccDevice = true;
-						this.headerBackground = this.headerDccBackground;
 					}
 					resolve(this.isDccDevice);
 				}, (error) => {
