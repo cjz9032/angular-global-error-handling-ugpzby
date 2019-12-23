@@ -41,6 +41,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	voipAppName = ['Skype For Business 2016', 'Microsoft Teams'];
 	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
+	hasUDKCapability = false;
+
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private keyboardService: InputAccessoriesService,
@@ -55,6 +57,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			if (this.keyboardCompatibility) {
 				this.getKBDLayoutName();
 			}
+			// udk capability
+			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+			this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
 		}
 		this.getMouseAndTouchPadCapability();
 		this.getVoipHotkeysSettings();
