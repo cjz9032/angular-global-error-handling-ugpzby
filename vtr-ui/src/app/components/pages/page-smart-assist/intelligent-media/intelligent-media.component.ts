@@ -12,6 +12,7 @@ import { EMPTY } from 'rxjs';
 export class IntelligentMediaComponent implements OnInit {
 	@Input() isChecked = false;
 	@Input() isLoading = true;
+	@Input() intelligentMediaAvailable = false;
 	@Output() videoPlaybackToggle: EventEmitter<any> = new EventEmitter();
 
 	@Input() isSRChecked = false;
