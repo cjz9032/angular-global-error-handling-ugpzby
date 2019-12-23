@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Toujours Activé",
                             "never": "jamais",
                             "halfTime": "Demi-durée de la minuterie d'affichage",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Sélectionner",
+                            "time": "Heur"
                         },
                         "taskBarDimmer": "RÉDUCTION DE LA LUMINOSITÉ DE LA BARRE DES TÂCHES",
                         "backgroundDimmer": "RÉDUCTION DE LA LUMINOSITÉ EN ARRIÈRE-PLAN",
@@ -1530,6 +1530,19 @@
                     "control2": "CONTRÔLE DE LA SOURIS",
                     "control3": "PARAMÈTRES TRACKPOINT",
                     "less": "MOINS"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Autres licences logicielles",
             "ourWebsite": "Notre site Web",
             "aboutYourDevice": "À propos de votre périphérique",
-            "copyright": "© 2002-2019 Lenovo tous droits réservés"
+            "copyright": "© 2002-2020 Lenovo tous droits réservés"
         },
         "quickAccess": {
             "categories": "Catégories",

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModalNewFeatureTipComponent } from './modal-new-feature-tip.component';
 
-describe('ModalNewFeatureTipComponent', () => {
+xdescribe('ModalNewFeatureTipComponent', () => {
 	let component: ModalNewFeatureTipComponent;
 	let fixture: ComponentFixture<ModalNewFeatureTipComponent>;
 

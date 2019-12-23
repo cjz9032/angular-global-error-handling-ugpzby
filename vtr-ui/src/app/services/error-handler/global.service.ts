@@ -14,6 +14,11 @@ export class GlobalErrorHandler implements ErrorHandler {
 		} else {
 			errorMessage = JSON.stringify({ message: error });
 		}
+
+		if (error.rejection !== undefined && error.rejection.name === 'ChunkLoadError') {
+			window.location.reload(true);
+		}
+
 		this.logger.error('GlobalErrorHandler: uncaught exception', errorMessage);
 		console.error('GlobalErrorHandler: uncaught exception', errorMessage);
 	}

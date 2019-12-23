@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateStore } from '@ngx-translate/core';
+import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 
 describe('ModalBatteryChargeThresholdComponent', () => {
 
@@ -16,7 +17,7 @@ describe('ModalBatteryChargeThresholdComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ModalBatteryChargeThresholdComponent],
+			declarations: [ModalBatteryChargeThresholdComponent, SvgInlinePipe],
 			imports: [FontAwesomeModule, TranslationModule],
 			providers: [NgbActiveModal, TranslateStore]
 		}).compileComponents();
@@ -83,7 +84,7 @@ describe('ModalBatteryChargeThresholdComponent', () => {
 			spyOn(component, 'closeModal');
 
 			fixture.detectChanges();//ngOnInit
-			let button = fixture.debugElement.nativeElement.querySelector('button[id="ds-threshold-popup-close-button"]');
+			let button = fixture.debugElement.nativeElement.querySelector('#ds-threshold-popup-close-button');
 			button.click();
 			fixture.whenStable().then(() => {
 				expect(component.closeModal).toHaveBeenCalled();

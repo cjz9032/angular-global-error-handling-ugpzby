@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Sempre ligado",
                             "never": "nunca",
                             "halfTime": "Intervalo de tempo de exibição do temporizador",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Selecionar",
+                            "time": "Hora"
                         },
                         "taskBarDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DA BARRA DE TAREFAS",
                         "backgroundDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DE SEGUNDO PLANO",
@@ -1530,6 +1530,19 @@
                     "control2": "CONTROLOS DO RATO",
                     "control3": "CONTROLOS DO TRACKPOINT",
                     "less": "MENOS"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Outras licenças de software",
             "ourWebsite": "O nosso sítio da Web",
             "aboutYourDevice": "Acerca do dispositivo",
-            "copyright": "© 2002-2019 Lenovo. Todos os direitos reservados"
+            "copyright": "© 2002-2020 Lenovo. Todos os direitos reservados"
         },
         "quickAccess": {
             "categories": "Categorias",
