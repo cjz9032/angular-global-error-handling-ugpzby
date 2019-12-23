@@ -9,8 +9,8 @@ import { menuItemsGaming, menuItems, appSearch, betaItem } from 'src/assets/menu
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { BetaService } from '../beta/beta.service';
 import { LoggerService } from '../logger/logger.service';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { Observable, BehaviorSubject } from 'rxjs';
+// import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+// import { Observable, BehaviorSubject } from 'rxjs';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { SegmentConst } from '../self-select/self-select.service';
@@ -43,8 +43,8 @@ export class ConfigService {
 	securityAdvisor: SecurityAdvisor;
 	windowsHello: WindowsHello;
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
-	public readonly menuItemNotification: Observable<AppNotification>;
-	private menuItemSubject: BehaviorSubject<AppNotification>;
+	// public readonly menuItemNotification: Observable<AppNotification>;
+	// private menuItemSubject: BehaviorSubject<AppNotification>;
 	constructor(
 		private betaService: BetaService,
 		private deviceService: DeviceService,
@@ -54,10 +54,10 @@ export class ConfigService {
 		private vantageShellService: VantageShellService,
 		private windowsHelloService: WindowsHelloService,
 		private commonService: CommonService) {
-		this.menuItemSubject = new BehaviorSubject<AppNotification>(
-			new AppNotification(MenuItem.MenuItemChange, 'init')
-		);
-		this.menuItemNotification = this.menuItemSubject;
+		// this.menuItemSubject = new BehaviorSubject<AppNotification>(
+		// 	new AppNotification(MenuItem.MenuItemChange, 'init')
+		// );
+		// this.menuItemNotification = this.menuItemSubject;
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.windowsHello = this.securityAdvisor.windowsHello;
 		if (!this.windowsHello.fingerPrintStatus) {
@@ -188,7 +188,8 @@ export class ConfigService {
 	}
 
 	notifyMenuChange(payload?) {
-		const appNotification = new AppNotification(MenuItem.MenuItemChange, payload);
-		this.menuItemSubject.next(appNotification);
+		this.commonService.sendNotification(MenuItem.MenuItemChange, payload);
+		// const appNotification = new AppNotification(MenuItem.MenuItemChange, payload);
+		// this.menuItemSubject.next(appNotification);
 	}
 }

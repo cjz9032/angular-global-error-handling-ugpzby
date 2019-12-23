@@ -61,6 +61,16 @@ export class LoggerService {
 		}
 	}
 
+	public exception(message: string, error: Error): void {
+		const errorMessage = JSON.stringify({ message: error.message, stackTrace: error.stack });
+		if (this.isShellAvailable) {
+			this.logger.error(this.getMessage(message, errorMessage));
+		}
+		if (environment.allowMockService) {
+			console.log(this.getMessage(message, errorMessage));
+		}
+	}
+
 	/**
 	 * add console log with ISO date time stamp
 	 * @param message message to log
