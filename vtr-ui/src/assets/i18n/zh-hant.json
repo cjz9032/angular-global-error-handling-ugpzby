@@ -1363,8 +1363,8 @@
                             "alwaysOn": "保持開啟",
                             "never": "永不",
                             "halfTime": "顯示器關閉計時器的一半時間",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "選取",
+                            "time": "時間"
                         },
                         "taskBarDimmer": "工作列調光器",
                         "backgroundDimmer": "背景調光器",
@@ -1530,6 +1530,19 @@
                     "control2": "滑鼠控制項",
                     "control3": "TRACKPOINT 控制項",
                     "less": "較少"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "其他軟體授權",
             "ourWebsite": "我們的網站",
             "aboutYourDevice": "關於您的裝置",
-            "copyright": "© 2002-2019 Lenovo all rights reserved"
+            "copyright": "© 2002-2020 Lenovo all rights reserved"
         },
         "quickAccess": {
             "categories": "類別",
