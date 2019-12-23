@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa. Tämä ominaisuus sisältää kolme tilaa (hiljainen tila, tasapainotettu tila ja suorituskykytila), ja se on nyt käytettävissä Windowsissa näkyvällä suorituskyvyn ohjauksen liukusäätimellä",
-                    "nocqldesc": "Älykäs jäähdytys -toiminnon avulla voit säätää järjestelmän suorituskykyä ja lämpötilaa. \"Suorituskykytilassa\" se optimoi järjestelmän suorituskykyä. Toisaalta se auttaa pitämään järjestelmän viileämpänä tai hiljaisempana \"Viileä ja hiljainen\" -tilassa."
+					"nocqldesc": "Älykäs jäähdytys -toiminnon avulla voit säätää järjestelmän suorituskykyä ja lämpötilaa. \"Suorituskykytilassa\" se optimoi järjestelmän suorituskykyä. Toisaalta se auttaa pitämään järjestelmän viileämpänä tai hiljaisempana \"Viileä ja hiljainen\" -tilassa.",
+					"dytc6": {
+                        "desc1": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa.",
+                        "desc2": "Tämän ominaisuuden kolme toimintatilaa on lueteltu jäljempänä. Sitä säädetään Windowsissa näkyvällä liukusäätimellä, jolla ohjataan suorituskykyä. Liukusäätimen saa käyttöön napsauttamalla Windowsin järjestelmäalueella näkyvää akun kuvaketta.",
+                        "desc3": "Jotkin toimintatilat voivat säätyä automaattisesti laajemman suorituskykyskaalan sisällä eri toimintojen mukaan. Jos haluat ottaa käyttöön automaattisen tilan, paina Fn+T-näppäinyhdistelmää.",
+                        "autoMode": {
+                            "title1": "Automaattinen akkutila",
+                            "desc1": "Liukusäädin sijaitsee vasemmalla. Toimintatila siirtyy dynaamisesti hiljaiseen tilaan tai akkutilaan parhaan tasasähkövirran käyttökokemuksen saavuttamiseksi.",
+                            "title2": "Automaattinen suorituskyvyn tila",
+                            "desc2": "Liukusäädin sijaitsee keskellä tai keskialueen oikealla puolella. Toimintatila siirtyy dynaamisesti hiljaiseen tilaan, tasapainotettuun tilaan tai suorituskyvyn tilaan parhaan verkkovirran käyttökokemuksen saavuttamiseksi.",
+                            "title3": "Suorituskykytila",
+                            "desc3": "Liukusäädin on ääriasennossa oikealla. Tuulettimen kierrosnopeus ja sallittu pinnan lämpötila ovat suurempia parhaan suorituskyvyn turvaamiseksi."
+                        },
+                        "manualMode": {
+                            "title1": "Hiljainen tila",
+                            "desc1": "Liukusäädin sijaitsee vasemmalla. Tuulettimen kierrosnopeutta hidastetaan ja tietokoneen suorituskykyä vähennetään, joten se pysyy viileämpänä ja toimii hiljaisemmin. Samalla akku kestää pidempään.",
+                            "title2": "Tasapainotettu tila",
+                            "desc2": "Liukusäädin sijaitsee keskellä tai keskialueen oikealla puolella. Tuulettimen kierrosnopeus ja tietokoneen suorituskyky tasapainotetaan dynaamisesti parhaan käyttökokemuksen varmistamiseksi.",
+                            "title3": "Suorituskykytila",
+                            "desc3": "Liukusäädin on ääriasennossa oikealla. Tuulettimen kierrosnopeus ja sallittu pinnan lämpötila ovat suurempia parhaan suorituskyvyn turvaamiseksi."
+                        },
+                        "desc3_1": "Jotkin toimintatilat voivat säätyä automaattisesti laajemman suorituskykyskaalan sisällä eri toimintojen mukaan. Jos haluat poistaa automaattisen tilan käytöstä, paina Fn+ T."
+                    }
                 },
                 "powerSettings": {
                     "title": "Virta-asetukset",
@@ -1245,7 +1267,8 @@
                     "more": "ENEMMÄN",
                     "control1": "KOSKETUSLEVYN OHJAIMET",
                     "control2": "HIIRITOIMINNOT",
-                    "control3": "TRACKPOINT-TOIMINNOT"
+					"control3": "TRACKPOINT-TOIMINNOT",
+					"less": "VÄHEMMÄN"
                 }
             }
         },

@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie. Cette fonction dispose de 3 modes (mode silencieux, mode équilibré et mode de performances) et est maintenant accessible par le curseur d'alimentation performances Windows",
-                    "nocqldesc": "Le refroidissement intelligent vous permet d'ajuster les performances du système et la température. En mode \"Performance\", il permet d'optimiser les performances du système. En mode \"Frais et silencieux\", il permet de garder le système plus frais ou plus silencieux."
+					"nocqldesc": "Le refroidissement intelligent vous permet d'ajuster les performances du système et la température. En mode \"Performance\", il permet d'optimiser les performances du système. En mode \"Frais et silencieux\", il permet de garder le système plus frais ou plus silencieux.",
+					"dytc6": {
+                        "desc1": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie.",
+                        "desc2": "La fonctionnalité propose les modes affichés ci-dessous et se règle maintenant avec le curseur de l'alimentation de performances Windows. Vous pouvez y accéder en cliquant sur l'icône de la batterie dans la barre d'état système Windows.",
+                        "desc3": "Certains modes peuvent être réglés automatiquement sur une gamme de performances plus vaste en fonction de votre activité. Pour activer le mode automatique, appuyez sur les touches Fn+T.",
+                        "autoMode": {
+                            "title1": "Mode batterie automatique",
+                            "desc1": "Le curseur se trouve à gauche. Le mode bascule de manière dynamique en mode silencieux ou en mode batterie pour optimiser les performances sur courant continu.",
+                            "title2": "Mode de performance automatique",
+                            "desc2": "Le curseur se trouve au centre ou est centré à droite. Le mode bascule de manière dynamique en mode silencieux, mode équilibré ou mode de performance pour optimiser les performances sur courant alternatif.",
+                            "title3": "Mode de performance",
+                            "desc3": "Le curseur se trouve à l'extrême droite. La vitesse du ventilateur et la température de la surface autorisée sont plus élevées pour des performances maximales."
+                        },
+                        "manualMode": {
+                            "title1": "Mode silencieux",
+                            "desc1": "Le curseur se trouve à gauche. La vitesse du ventilateur et les performances sont réduites pour permettre à l'ordinateur d'être plus froid, plus silencieux et pour une meilleure durée de vie de la batterie.",
+                            "title2": "Mode équilibré",
+                            "desc2": "Le curseur se trouve au centre ou est centré à droite. La vitesse du ventilateur et les performances sont réglées de manière dynamique pour optimiser les performances.",
+                            "title3": "Mode de performance",
+                            "desc3": "Le curseur se trouve à l'extrême droite. La vitesse du ventilateur et la température de la surface autorisée sont plus élevées pour des performances maximales."
+                        },
+                        "desc3_1": "Certains modes peuvent être réglés automatiquement sur une gamme de performances plus vaste en fonction de votre activité. Pour désactiver le mode automatique, appuyez sur les touches Fn+ T."
+                    }
                 },
                 "powerSettings": {
                     "title": "Paramètres d'alimentation",
@@ -1245,7 +1267,8 @@
                     "more": "PLUS",
                     "control1": "CONTRÔLES DU PAVÉ TACTILE",
                     "control2": "CONTRÔLE DE LA SOURIS",
-                    "control3": "PARAMÈTRES TRACKPOINT"
+					"control3": "PARAMÈTRES TRACKPOINT",
+					"less": "MOINS"
                 }
             }
         },

@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát. A funkció három üzemmóddal rendelkezik (Csendes, Kiegyensúlyozott és Teljesítményközpontú mód). A módok között a Windows teljesítmény beállítására szolgáló csúszkájával lehet váltani",
-                    "nocqldesc": "Az intelligens hűtés lehetővé teszi a rendszer teljesítményének és hőmérsékletnek a beállítását. „Teljesítmény” módban optimalizálja a rendszer teljesítményét. „Hűvös és csendes” módban pedig elősegíti, hogy a rendszer hűvösebb vagy csendesebb legyen."
+					"nocqldesc": "Az intelligens hűtés lehetővé teszi a rendszer teljesítményének és hőmérsékletnek a beállítását. „Teljesítmény” módban optimalizálja a rendszer teljesítményét. „Hűvös és csendes” módban pedig elősegíti, hogy a rendszer hűvösebb vagy csendesebb legyen.",
+					"dytc6": {
+                        "desc1": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát.",
+                        "desc2": "A funkció az alább felsorolt módokban használható, és már a Windows teljesítmény beállítására szolgáló csúszkájával is beállítható. A Windows tálcáján található akkumulátor ikonra kattintva érhető el.",
+                        "desc3": "Néhány mód automatikusan szélesebb teljesítményskálát állíthat be az Ön tevékenysége alapján. Az automatikus mód engedélyezéséhez nyomja meg az Fn+T gombokat.",
+                        "autoMode": {
+                            "title1": "Automatikus akkumulátor mód",
+                            "desc1": "A csúszka a bal oldalon van. Az üzemmód dinamikusan átkapcsolt a Csendes módba vagy az Akkumulátor módba a legjobb DC üzemmód nyújtotta élmény érdekében.",
+                            "title2": "Automatikus teljesítményközpontú üzemmód",
+                            "desc2": "A csúszka középen vagy attól kicsit jobbra van. Az üzemmód dinamikusan átkapcsolt a Csendes módba, a Kiegyensúlyozott módba vagy a Teljesítményközpontú módba a legjobb AC üzemmód nyújtotta élmény érdekében.",
+                            "title3": "Teljesítményközpontú mód",
+                            "desc3": "A csúszka a jobb oldalon van. A ventilátor sebessége és a gép hőmérséklete a megengedett legnagyobb, hogy a gép a legjobb teljesítményt nyújtsa."
+                        },
+                        "manualMode": {
+                            "title1": "Csendes mód",
+                            "desc1": "A csúszka a bal oldalon van. A ventilátor sebessége és a teljesítmény kisebb, így a számítógép kevésbé melegszik, csendesebb. Az akkumulátor élettartama ilyenkor a leghosszabb.",
+                            "title2": "Kiegyensúlyozott mód",
+                            "desc2": "A csúszka középen vagy attól kicsit jobbra van. A ventilátor sebességét és a teljesítményt a rendszer dinamikusan kiegyensúlyozza, hogy a felhasználói élmény a legjobb legyen.",
+                            "title3": "Teljesítményközpontú mód",
+                            "desc3": "A csúszka a jobb oldalon van. A ventilátor sebessége és a gép hőmérséklete a megengedett legnagyobb, hogy a gép a legjobb teljesítményt nyújtsa."
+                        },
+                        "desc3_1": "Néhány mód automatikusan szélesebb teljesítményskálát állíthat be az Ön tevékenysége alapján. Az automatikus mód letiltásához nyomja meg az Fn+ T gombokat."
+                    }
                 },
                 "powerSettings": {
                     "title": "Energiagazdálkodási beállítások",
@@ -1245,7 +1267,8 @@
                     "more": "TOVÁBBIAK",
                     "control1": "ÉRINTŐFELÜLET VEZÉRLŐELEMEI",
                     "control2": "EGÉR VEZÉRLŐELEMEI",
-                    "control3": "TRACKPOINT-VEZÉRLŐK"
+					"control3": "TRACKPOINT-VEZÉRLŐK",
+					"less": "KEVESEBB"
                 }
             }
         },

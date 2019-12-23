@@ -16,7 +16,8 @@
         p {
             //opacity: 0.8;
             color: $light;
-            font-size: 1.6rem;
+			font-size: $body;
+			font-weight: $weight_light;
             a {
                 list-style: none;
                 text-decoration: underline;
@@ -73,6 +74,32 @@
 
 	.more-info {
 		cursor: pointer;
+		.more-info-button {
+			background: none;
+			border: none;
+			list-style: none;
+			color: $light;
+			text-decoration: underline;
+			cursor: pointer;
+			font-size: $body;
+			font-weight: $weight_bold;
+			@media #{$black-on-white} {
+				color: $high-contrast-blue;
+			}
+			@media #{$white-on-black} {
+				color: $yellow;
+			}
+			&:hover {
+				list-style: none;
+				color: $light;
+				text-decoration: underline;
+			}
+		}
+		fa-icon {
+			font-size: 1.5rem;
+			color: white;
+			vertical-align: middle;
+		}
 	}
 }
 

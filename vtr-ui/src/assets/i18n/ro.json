@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows",
-                    "nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios."
+					"nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios.",
+					"dytc6": {
+                        "desc1": "Răcirea inteligentă ajustează viteza ventilatorului, performanţa maximă şi gestionează durata de viaţă a bateriei.",
+                        "desc2": "Caracteristica are modurile afişate mai jos şi poate fi reglată acum prin cursorul pentru performanţa de alimentare Windows. O puteţi accesa făcând clic pe pictograma bateriei din bara de sistem Windows.",
+                        "desc3": "Unele dintre moduri se pot regla automat într-o gamă mai largă de performanţă, în funcţie de activitatea dvs. Pentru a activa modul automat, apăsaţi Fn+T.",
+                        "autoMode": {
+                            "title1": "Mod automat baterie",
+                            "desc1": "Cursorul este în partea stângă. Modul este comutat dinamic în modul silenţios sau în modul baterie – pentru cea mai bună experienţă în modul de alimentare cu c.c.",
+                            "title2": "Mod automat performanţă",
+                            "desc2": "Cursorul este în centru sau în centru-dreapta. Modul este comutat dinamic în modul silenţios, în modul echilibrat sau în modul performanţă – pentru cea mai bună experienţă în modul de alimentare cu c.a.",
+                            "title3": "Mod performanţă",
+                            "desc3": "Cursorul este în partea dreaptă. Viteza ventilatorului şi temperatura permisă a suprafeţei sunt mai ridicate – pentru performanţă maximă."
+                        },
+                        "manualMode": {
+                            "title1": "Mod silenţios",
+                            "desc1": "Cursorul este în partea stângă. Viteza şi performanţa ventilatorului sunt mai reduse – pentru un computer mai silenţios, cu o răcire mai bună şi cu cea mai lungă durată de viaţă a bateriei.",
+                            "title2": "Mod echilibrat",
+                            "desc2": "Cursorul este în centru sau în centru-dreapta. Viteza şi performanţa ventilatorului sunt echilibrate dinamic – pentru cea mai bună experienţă.",
+                            "title3": "Mod performanţă",
+                            "desc3": "Cursorul este în partea dreaptă. Viteza ventilatorului şi temperatura permisă a suprafeţei sunt mai ridicate – pentru performanţă maximă."
+                        },
+                        "desc3_1": "Unele dintre moduri se pot regla automat într-o gamă mai largă de performanţă, în funcţie de activitatea dvs. Pentru a dezactiva modul automat, apăsaţi Fn + T."
+                    }
                 },
                 "powerSettings": {
                     "title": "Setări alimentare",
@@ -1245,7 +1267,8 @@
                     "more": "MAI MULTE",
                     "control1": "ELEMENTE DE CONTROL TOUCHPAD",
                     "control2": "ELEMENTE DE CONTROL MOUSE",
-                    "control3": "ELEMENTE DE CONTROL TRACKPOINT"
+					"control3": "ELEMENTE DE CONTROL TRACKPOINT",
+					"less": "MAI PUŢIN"
                 }
             }
         },

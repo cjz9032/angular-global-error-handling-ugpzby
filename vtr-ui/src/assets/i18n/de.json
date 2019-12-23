@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer. Diese Funktion hat drei Modi (Ruhiger Modus, Ausbalancierter Modus und Leistungsmodus) und kann nun über den Windows-Schieberegler für Leistung geändert werden",
-                    "nocqldesc": "Mithilfe der intelligenten Kühlung können Sie die Systemleistung und ‑temperatur anpassen. Im Modus \"Leistung\" wird die Systemleistung optimiert. Im Modus \"Kühl und leise\" werden Systemtemperatur und Lüftergeräusche optimiert."
+					"nocqldesc": "Mithilfe der intelligenten Kühlung können Sie die Systemleistung und ‑temperatur anpassen. Im Modus \"Leistung\" wird die Systemleistung optimiert. Im Modus \"Kühl und leise\" werden Systemtemperatur und Lüftergeräusche optimiert.",
+					"dytc6": {
+                        "desc1": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer.",
+                        "desc2": "Die Funktion verfügt über die unten aufgeführten Modi und wird nun über den Windows-Leistungsregler angepasst. Sie können darauf zugreifen, indem Sie auf das Akkusymbol in der Windows-Taskleiste klicken.",
+                        "desc3": "Einige Modi können je nach Aktivität automatisch über einen größeren Leistungsumfang angepasst werden. Um den Automatikmodus zu aktivieren, drücken Sie die Tastenkombination FN+T.",
+                        "autoMode": {
+                            "title1": "Automatischer Akku-Modus",
+                            "desc1": "Der Schieberegler befindet sich auf der linken Seite. Der Modus wird dynamisch in den \"Ruhemodus\" oder \"Akkumodus\" umgeschaltet, um das beste DC-Modus-Erlebnis zu erzielen.",
+                            "title2": "Automatischer Leistungsmodus",
+                            "desc2": "Der Schieberegler befindet sich in der Mitte oder Mitte rechts. Der Modus wird dynamisch in den \"Ruhemodus\", \"ausbalancierten Modus\" oder \"Leistungsmodus\" umgeschaltet, um das bestmögliche Erlebnis im AC-Modus zu gewährleisten.",
+                            "title3": "Leistungsmodus",
+                            "desc3": "Der Schieberegler ist ganz rechts. Lüftergeschwindigkeit und zulässige Oberflächentemperatur sind höher für maximale Leistung."
+                        },
+                        "manualMode": {
+                            "title1": "Ruhiger Modus",
+                            "desc1": "Der Schieberegler befindet sich auf der linken Seite. Lüftergeschwindigkeit und Leistung werden angepasst, sodass der Computer kühler und leiser läuft und die optimale Akkulebensdauer bietet.",
+                            "title2": "Ausbalancierter Modus",
+                            "desc2": "Der Schieberegler befindet sich in der Mitte oder Mitte rechts. Lüftergeschwindigkeit und Leistung werden dynamisch für die beste Benutzererfahrung ausbalanciert.",
+                            "title3": "Leistungsmodus",
+                            "desc3": "Der Schieberegler ist ganz rechts. Lüftergeschwindigkeit und zulässige Oberflächentemperatur sind höher für maximale Leistung."
+                        },
+                        "desc3_1": "Einige Modi können je nach Aktivität automatisch über einen größeren Leistungsumfang angepasst werden. Um den Automatikmodus zu deaktivieren, drücken Sie die Tastenkombination Fn+ T."
+                    }
                 },
                 "powerSettings": {
                     "title": "Einstellungen für Energieversorgung",
@@ -1245,7 +1267,8 @@
                     "more": "MEHR",
                     "control1": "TOUCHPAD-STEUERUNG",
                     "control2": "MAUS-STEUERUNG",
-                    "control3": "TRACKPOINT-STEUERUNG"
+					"control3": "TRACKPOINT-STEUERUNG",
+					"less": "WENIGER"
                 }
             }
         },

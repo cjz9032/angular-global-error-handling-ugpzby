@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji. Ta funkcja ma trzy tryby (tryb cichy, tryb zrównoważony i tryb wydajności) i jest teraz dostępna za pomocą suwaka wydajności systemu Windows",
-                    "nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”."
+					"nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”.",
+					"dytc6": {
+                        "desc1": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji.",
+                        "desc2": "Ta funkcja ma tryby wymienione poniżej, a teraz się ją reguluje za pomocą suwaka wydajności systemu Windows. Aby do niej przejść, kliknij ikonę akumulatora na pasku zadań systemu Windows.",
+                        "desc3": "Niektóre tryby mogą się automatycznie dostosowywać w szerszym zakresie wydajności zależnie od Twojej aktywności. Aby włączyć tryb automatyczny, naciśnij kombinację klawiszy Fn+T.",
+                        "autoMode": {
+                            "title1": "Automatyczny tryb akumulatora",
+                            "desc1": "Suwak znajduje się po lewej stronie. Tryb jest dynamicznie przełączany na Cichy lub Akumulator, aby uzyskać najlepszy efekt pracy na prądzie stałym.",
+                            "title2": "Automatyczny tryb wydajności",
+                            "desc2": "Suwak znajduje się na środku lub nieco z prawej strony. Tryb jest dynamicznie przełączany na Cichy, Zrównoważony lub Wydajność, aby uzyskać najlepszy efekt pracy na prądzie przemiennym.",
+                            "title3": "Tryb wydajności",
+                            "desc3": "Suwak znajduje się po prawej stronie. Szybkość wentylatora i dopuszczalna temperatura powierzchni są wyższe dla uzyskania najlepszej wydajności."
+                        },
+                        "manualMode": {
+                            "title1": "Tryb cichy",
+                            "desc1": "Suwak znajduje się po lewej stronie. Szybkość wentylatora i wydajność są obniżone, w wyniku czego komputer staje się chłodniejszy i cichszy, a czas pracy akumulatora najdłuższy.",
+                            "title2": "Tryb zrównoważony",
+                            "desc2": "Suwak znajduje się na środku lub nieco z prawej strony. Szybkość wentylatora i wydajność są równoważone według aktualnych potrzeb, aby zapewnić efektywne działanie komputera.",
+                            "title3": "Tryb wydajności",
+                            "desc3": "Suwak znajduje się po prawej stronie. Szybkość wentylatora i dopuszczalna temperatura powierzchni są wyższe dla uzyskania najlepszej wydajności."
+                        },
+                        "desc3_1": "Niektóre tryby mogą się automatycznie dostosowywać w szerszym zakresie wydajności zależnie od Twojej aktywności. Aby wyłączyć tryb automatyczny, naciśnij Fn+ T."
+                    }
                 },
                 "powerSettings": {
                     "title": "Ustawienia zasilania",
@@ -1245,7 +1267,8 @@
                     "more": "WIĘCEJ",
                     "control1": "PRZYCISKI PANELU DOTYKOWEGO",
                     "control2": "PRZYCISKI MYSZY",
-                    "control3": "PRZYCISKI TRACKPOINTA"
+					"control3": "PRZYCISKI TRACKPOINTA",
+					"less": "LESS"
                 }
             }
         },

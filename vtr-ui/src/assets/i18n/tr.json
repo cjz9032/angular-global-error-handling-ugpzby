@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir. Bu özelliğin 3 kipi (Sessiz kip, Dengeli kip ve Performans kipi) vardır ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir",
-                    "nocqldesc": "Akıllı Soğutma, sistem performansını ve termal sıcaklığı ayarlamanıza olanak tanır. “Performans” kipinde, sistem performansını iyileştirir. “Hızlı ve sessiz” kipinde, sistemin daha hızlı veya daha sessiz çalışmasına yardımcı olur."
+					"nocqldesc": "Akıllı Soğutma, sistem performansını ve termal sıcaklığı ayarlamanıza olanak tanır. “Performans” kipinde, sistem performansını iyileştirir. “Hızlı ve sessiz” kipinde, sistemin daha hızlı veya daha sessiz çalışmasına yardımcı olur.",
+					"dytc6": {
+                        "desc1": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir.",
+                        "desc2": "Özellik aşağıda listelenen kiplere sahiptir ve artık Windows performans güç kaydırıcısından ayarlanmaktadır. Windows sistem tepsisindeki pil simgesine tıklayarak erişebilirsiniz.",
+                        "desc3": "Kiplerden bazıları, etkinliğinize göre otomatik olarak daha geniş bir performans aralığına ayarlanabilir. Otomatik kipi etkinleştirmek için Fn+T tuşlarına basın.",
+                        "autoMode": {
+                            "title1": "Otomatik Pil kipi",
+                            "desc1": "Kaydırıcı soldadır. En iyi DC kipi deneyimi için kip dinamik bir şekilde Sessiz veya Pil kipine geçirilir.",
+                            "title2": "Otomatik Performans kipi",
+                            "desc2": "Kaydırıcı ortada veya ortanın sağındadır. En iyi AC kipi deneyimi için kip dinamik bir şekilde Sessiz, Dengeli veya Performans kipine geçirilir.",
+                            "title3": "Performans kipi",
+                            "desc3": "Kaydırıcı en sağdadır. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir."
+                        },
+                        "manualMode": {
+                            "title1": "Sessiz kipi",
+                            "desc1": "Kaydırıcı soldadır. Daha serin, daha sessiz bir bilgisayar ve en iyi pil ömrü için fan hızı ve performans düşürülür.",
+                            "title2": "Dengeli kipi",
+                            "desc2": "Kaydırıcı ortada veya ortanın sağındadır. En iyi deneyim için fan hızı ve performans dinamik olarak dengelenir.",
+                            "title3": "Performans kipi",
+                            "desc3": "Kaydırıcı en sağdadır. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir."
+                        },
+                        "desc3_1": "Kiplerden bazıları, etkinliğinize göre otomatik olarak daha geniş bir performans aralığına ayarlanabilir. Otomatik kipi devre dışı bırakmak için Fn+ T tuşlarına basın."
+                    }
                 },
                 "powerSettings": {
                     "title": "Güç Ayarları",
@@ -1245,7 +1267,8 @@
                     "more": "DAHA FAZLA",
                     "control1": "TOUCHPAD DENETİMLERİ",
                     "control2": "FARE DENETİMLERİ",
-                    "control3": "TRACKPOINT KONTROLLERİ"
+					"control3": "TRACKPOINT KONTROLLERİ",
+					"less": "DAHA AZ"
                 }
             }
         },

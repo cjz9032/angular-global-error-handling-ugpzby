@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie. Táto funkcia má 3 režimy (tichý režim, vyvážený režim a režim vysokého výkonu) a teraz je dostupná prostredníctvom jazdca na nastavenie výkonu systému Windows",
-                    "nocqldesc": "Inteligentné chladenie vám umožňuje nastaviť výkon systému a teplotu. V režime „Vysoký výkon“ sa optimalizuje výkon systému. Zatiaľ čo režim „Chladný a tichý“ pomáha zaistiť, aby bol systém chladnejší a tichší."
+					"nocqldesc": "Inteligentné chladenie vám umožňuje nastaviť výkon systému a teplotu. V režime „Vysoký výkon“ sa optimalizuje výkon systému. Zatiaľ čo režim „Chladný a tichý“ pomáha zaistiť, aby bol systém chladnejší a tichší.",
+					"dytc6": {
+                        "desc1": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie.",
+                        "desc2": "Režimy funkcie sú uvedené nižšie a momentálne ich možno upraviť pomocou jazdca nastavenia výkonu systému Windows. Prístup k nemu získate kliknutím na ikonu batérie na systémovej lište Windows.",
+                        "desc3": "Niektoré režimy sa môžu automaticky upravovať v rámci širšieho rozsahu výkonu na základe vašej činnosti. Ak chcete povoliť automatický režim, stlačte kombináciu klávesov Fn+T.",
+                        "autoMode": {
+                            "title1": "Automatický režim batérie",
+                            "desc1": "Jazdec sa nachádza vľavo. Režim je dynamicky prepínaný do tichého režimu alebo do režimu batérie na dosiahnutie toho najlepšieho sieťového režimu.",
+                            "title2": "Automatický režim výkonu",
+                            "desc2": "Jazdec sa nachádza v strede alebo v strede na pravej strane. Režim je dynamicky prepínaný do tichého režimu, vyváženého režimu alebo do režimu výkonu na dosiahnutie toho najlepšieho sieťového režimu.",
+                            "title3": "Režim vysokého výkonu",
+                            "desc3": "Jazdec sa nachádza úplne vľavo. Otáčky ventilátora a povolená teplota povrchu počítača sú vyššie s cieľom zaistiť maximálny výkon."
+                        },
+                        "manualMode": {
+                            "title1": "Tichý režim",
+                            "desc1": "Jazdec sa nachádza vľavo. Otáčky ventilátora a výkon sa znížia, aby sa zaistilo lepšie chladenie, tichší počítač a tá najlepšia výdrž batérie.",
+                            "title2": "Vyvážený režim",
+                            "desc2": "Jazdec sa nachádza v strede alebo v strede na pravej strane. Otáčky ventilátora a výkon sú dynamicky vyvážené s cieľom zaistiť ten najlepší používateľský zážitok.",
+                            "title3": "Režim vysokého výkonu",
+                            "desc3": "Jazdec sa nachádza úplne vľavo. Otáčky ventilátora a povolená teplota povrchu počítača sú vyššie s cieľom zaistiť maximálny výkon."
+                        },
+                        "desc3_1": "Niektoré režimy sa môžu automaticky upravovať v rámci širšieho rozsahu výkonu na základe vašej činnosti. Ak chcete vypnúť automatický režim, stlačte kombináciu klávesov Fn+ T."
+                    }
                 },
                 "powerSettings": {
                     "title": "Nastavenia napájania",
@@ -1245,7 +1267,8 @@
                     "more": "VIAC",
                     "control1": "OVLÁDACIE PRVKY DOTYKOVÉHO PANELA",
                     "control2": "OVLÁDACIE PRVKY MYŠI",
-                    "control3": "OVLÁDACIE PRVKY TRACKPOINT"
+					"control3": "OVLÁDACIE PRVKY TRACKPOINT",
+					"less": "MENEJ"
                 }
             }
         },

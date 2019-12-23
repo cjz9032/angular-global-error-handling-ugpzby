@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Pametno hlađenje podešava brzinu ventilatora i maksimalne performanse te upravlja trajanjem baterije. Ova značajka ima 3 načina rada (tihi način rada, balansirani način i način performansi), a sada je dostupna putem klizača napajanja sustava Windows",
-                    "nocqldesc": "Inteligentno hlađenje vam omogućava podešavanje performansi sustava i temperature zagrijavanja. U načinu \"Performanse\" optimizira performanse sustava. Isto tako, u načinu \"Hladno i tiho\" pomaže u održavanju hladnijeg ili tišeg rada sustava."
+					"nocqldesc": "Inteligentno hlađenje vam omogućava podešavanje performansi sustava i temperature zagrijavanja. U načinu \"Performanse\" optimizira performanse sustava. Isto tako, u načinu \"Hladno i tiho\" pomaže u održavanju hladnijeg ili tišeg rada sustava.",
+					"dytc6": {
+                        "desc1": "Pametno hlađenje podešava brzinu ventilatora i maksimalne performanse te upravlja trajanjem baterije.",
+                        "desc2": "Značajka ima načine navedene u nastavku, a sada ih podešava klizač napajanja performansi sustava Windows. Možete mu pristupiti klikom na ikonu baterije u programskoj traci sustava Windows.",
+                        "desc3": "Neki se načini mogu automatski prilagoditi u širem rasponu performansi na temelju vaše aktivnosti. Da biste omogućili automatski način rada, pritisnite Fn + T.",
+                        "autoMode": {
+                            "title1": "Automatski način rada baterije",
+                            "desc1": "Klizač je s lijeve strane. Način se dinamički prebacuje u miran način rada ili način rada baterije za najbolji doživljaj istosmjernog načina rada.",
+                            "title2": "Visokoučinkoviti način rada",
+                            "desc2": "Klizač je u sredini ili desno. Način se dinamički prebacuje u miran način rada, uravnoteženi način rada ili način performansi za najbolji doživljaj istosmjernog načina rada.",
+                            "title3": "Način performansi",
+                            "desc3": "Klizač je skroz s desne strane. Brzina ventilatora i dopuštena temperatura površine povećani su za najbolje performanse."
+                        },
+                        "manualMode": {
+                            "title1": "Tih način rada",
+                            "desc1": "Klizač je s lijeve strane. Brzina i performanse ventilatora smanjuju se za hladnije, tiše računalo i najbolji radni vijek baterije.",
+                            "title2": "Uravnoteženi način rada",
+                            "desc2": "Klizač je u sredini ili desno. Brzina i performanse ventilatora dinamički se uravnotežuje za najbolje iskustvo.",
+                            "title3": "Način performansi",
+                            "desc3": "Klizač je skroz s desne strane. Brzina ventilatora i dopuštena temperatura površine povećani su za najbolje performanse."
+                        },
+                        "desc3_1": "Neki se načini mogu automatski prilagoditi u širem rasponu performansi na temelju vaše aktivnosti. Da biste onemogućili automatski način rada, pritisnite Fn+ T."
+                    }
                 },
                 "powerSettings": {
                     "title": "Postavke napajanja",
@@ -1245,7 +1267,8 @@
                     "more": "DODATNO",
                     "control1": "KONTROLE DODIRNE PLOČICE",
                     "control2": "KONTROLE MIŠA",
-                    "control3": "TRACKPOINT KONTROLE"
+					"control3": "TRACKPOINT KONTROLE",
+					"less": "MANJE"
                 }
             }
         },

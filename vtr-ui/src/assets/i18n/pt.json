@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "O Arrefecimento Inteligente ajusta a velocidade da ventoinha, o desempenho máximo e administra a vida útil da bateria. Este recurso tem 3 modos (Modo silencioso, Modo Equilibrado e Modo de desempenho) e agora é acessível pelo controle deslizante de desempenho do Windows",
-                    "nocqldesc": "O Arrefecimento Inteligente permite ajustar o desempenho e a temperatura do sistema. No modo “Desempenho”, otimiza o desempenho do sistema. No modo “Fresco e silencioso” ajuda a manter o sistema mais fresco e silencioso."
+					"nocqldesc": "O Arrefecimento Inteligente permite ajustar o desempenho e a temperatura do sistema. No modo “Desempenho”, otimiza o desempenho do sistema. No modo “Fresco e silencioso” ajuda a manter o sistema mais fresco e silencioso.",
+					"dytc6": {
+                        "desc1": "O Arrefecimento Inteligente ajusta a velocidade da ventoinha, o desempenho máximo e administra a vida útil da bateria.",
+                        "desc2": "A funcionalidade tem os modos abaixo listados e agora está ajustada pelo controlo de deslize de energia de desempenho do Windows. Poderá aceder à funcionalidade ao clicar no ícone de bateria no tabuleiro de sistema do Windows.",
+                        "desc3": "Alguns dos modos podem ser ajustados automaticamente ao longo de uma gama mais ampla de desempenho em função da sua atividade. Para ativar o modo automático, prima Fn+T.",
+                        "autoMode": {
+                            "title1": "Modo Bateria Automática",
+                            "desc1": "O controlo de deslize está à esquerda. O modo é alternado dinamicamente para o Modo silencioso ou o Modo de bateria para proporcionar a melhor experiência do modo CC.",
+                            "title2": "Modo de Desempenho Automático",
+                            "desc2": "O controlo de deslize está ao centro ou centro à direita. O modo é alternado dinamicamente para o Modo silencioso, Modo Equilibrado ou Modo de desempenho para proporcionar a melhor experiência do modo CA.",
+                            "title3": "Modo de desempenho",
+                            "desc3": "O controlo de deslize está na extremidade direita. A velocidade da ventoinha e a temperatura superficial permitida são superiores para obter o máximo desempenho."
+                        },
+                        "manualMode": {
+                            "title1": "Modo silencioso",
+                            "desc1": "O controlo de deslize está à esquerda. O desempenho e a velocidade da ventoinha são reduzidos para arrefecer e diminuir o ruído do computador, e para uma maior duração da bateria.",
+                            "title2": "Modo Equilibrado",
+                            "desc2": "O controlo de deslize está ao centro ou centro à direita. O desempenho e a velocidade da ventoinha são equilibrados de forma dinâmica para obter a melhor experiência.",
+                            "title3": "Modo de desempenho",
+                            "desc3": "O controlo de deslize está na extremidade direita. A velocidade da ventoinha e a temperatura superficial permitida são superiores para obter o máximo desempenho."
+                        },
+                        "desc3_1": "Alguns dos modos podem ser ajustados automaticamente ao longo de uma gama mais ampla de desempenho em função da sua atividade. Para desativar o modo automático, prima Fn+ T."
+                    }
                 },
                 "powerSettings": {
                     "title": "Definições de Alimentação",
@@ -1245,7 +1267,8 @@
                     "more": "MAIS",
                     "control1": "CONTROLOS DO PAINEL TÁTIL",
                     "control2": "CONTROLOS DO RATO",
-                    "control3": "CONTROLOS DO TRACKPOINT"
+					"control3": "CONTROLOS DO TRACKPOINT",
+					"less": "MENOS"
                 }
             }
         },
