@@ -83,6 +83,20 @@ export class SmartAssistService {
 		const option = value ? 'True' : 'False';
 		return this.intelligentSensing.SetHPDPresentLeaveSetting(option);
 	}
+	
+	public getZeroTouchLockFacialRecoStatus(): Promise<boolean> {
+		return this.intelligentSensing.getLockFacialRecognitionSettings();
+	}
+
+	public setZeroTouchLockFacialRecoStatus(value: boolean): Promise<boolean> {
+		const option = value ? 'True' : 'False';
+		return this.intelligentSensing.setLockFacialRecognitionSettings(option);
+
+	}
+
+	public resetFacialRecognitionStatus(): Promise<boolean> {
+		return this.intelligentSensing.resetFacialRecognitionStatus();
+	}
 
 	public getZeroTouchLoginVisibility(): Promise<boolean> {
 		// Get Auto Screen Lock section visibility

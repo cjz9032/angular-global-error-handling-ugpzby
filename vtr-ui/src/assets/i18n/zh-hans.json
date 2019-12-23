@@ -1287,6 +1287,17 @@
                             "slow": "慢"
                         },
                         "toolTipContent": "当未检测到您的存在时，选择希望的方式以较快/中等/较慢的速度来锁定屏幕。然而，屏幕锁定的时间也会受到实际用户场景、传感器功能和 Windows 屏幕超时设置的影响。因此，我们强烈建议您在离开时即锁定系统。"
+                    },
+                    "facialRecognition": {
+                        "title": "面部识别",
+                        "caption": "您可以启用面部识别功能并允许其访问您的摄像头。此工具可拍摄您的图像，从而准确地识别您的在场状态，或检测您的设备是否因您离开而暂时无人照管。此数据将在您的设备上进行本地处理。Lenovo 不会访问或使用它。",
+                        "checkBox": "打开摄像头并启用此功能",
+                        "note": {
+                            "permission": "Lenovo Vantage 无法访问摄像头。复选框的功能将不起作用。",
+                            "privacyMode": "Lenovo Vantage 摄像头隐私模式已开启。复选框的功能将不起作用。",
+                            "windowsLink": "转到 Windows 设置以授予访问权限",
+                            "privacyLink": "转到摄像头隐私模式以将其关闭"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

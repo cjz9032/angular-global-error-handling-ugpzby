@@ -1287,6 +1287,17 @@
                             "slow": "慢"
                         },
                         "toolTipContent": "選取您所需的選項，即可在未偵測到人員在場時以快/中/慢等速度鎖定螢幕。然而，螢幕遭到鎖定的時間也會受到實際使用情況、感應器功能，以及 Windows 螢幕逾時設定的影響。因此、我們強烈建議您在離開座位前立即將系統上鎖。"
+                    },
+                    "facialRecognition": {
+                        "title": "臉部辨識",
+                        "caption": "您可以啟用臉部辨識功能並允許其存取您的攝影機。此工具會拍攝您的影像以便準確辨識您的在場狀態，或是偵測您的裝置是否因您離開而暫時無人看管。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。",
+                        "checkBox": "開啟攝影機並啟用此功能",
+                        "note": {
+                            "permission": "Lenovo Vantage 沒有攝影機的存取權。勾選框的功能無法運作。",
+                            "privacyMode": "Lenovo Vantage 攝影機隱私模式已開啟。勾選框的功能無法運作。",
+                            "windowsLink": "移至 Windows 設定以授與存取權",
+                            "privacyLink": "移至攝影機隱私模式以將其關閉"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

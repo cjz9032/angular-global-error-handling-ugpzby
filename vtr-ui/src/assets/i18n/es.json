@@ -1287,6 +1287,17 @@
                             "slow": "Lento"
                         },
                         "toolTipContent": "Seleccione la opción que desee para bloquear la pantalla a una velocidad rápida/intermedia/lenta cuando detecte su presencia. Sin embargo, el tiempo en el que se bloqueará la pantalla también se ve afectado por la situación real del usuario, la capacidad del sensor y los valores de tiempo de espera de pantalla de Windows. Por lo tanto, recomendamos encarecidamente que bloquee el sistema inmediatamente antes de salir."
+                    },
+                    "facialRecognition": {
+                        "title": "RECONOCIMIENTO FACIAL",
+                        "caption": "Puede activar la función de reconocimiento facial y permitir que acceda a su cámara. Esta herramienta captura su imagen con el fin de reconocer con precisión su presencia o detectar cuando ha dejado su dispositivo desatendido. Estos datos se procesan localmente en su dispositivo. Lenovo no accede a ellos ni los utiliza.",
+                        "checkBox": "Encienda la cámara y active esta función",
+                        "note": {
+                            "permission": "Lenovo Vantage no tiene acceso a la cámara. La función de la casilla de verificación no funcionará.",
+                            "privacyMode": "El modo de Privacidad de cámara de Lenovo Vantage está activado. La función de la casilla de verificación no funcionará.",
+                            "windowsLink": "Vaya a la configuración de Windows para dar acceso",
+                            "privacyLink": "Vaya al modo Privacidad de la cámara para desactivarlo"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

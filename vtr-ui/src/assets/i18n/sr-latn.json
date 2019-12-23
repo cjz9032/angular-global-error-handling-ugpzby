@@ -1287,6 +1287,17 @@
                             "slow": "Sporo"
                         },
                         "toolTipContent": "Izaberite željenu opciju da biste zaključali ekran Brzom/Srednjom/Sporom brzinom kada vaše prisustvo nije otkriveno. Međutim, na vreme kada će ekran biti zaključan utiče i stvarni korisnički scenario, mogućnosti senzora i postavke vremenskog ograničenja ekrana operativnog sistema Windows. Zato vam preporučujemo da smesta zaključate sistem pred odlazak."
+                    },
+                    "facialRecognition": {
+                        "title": "PREPOZNAVANJE LICA",
+                        "caption": "Možete da omogućite funkciju prepoznavanja lica i da joj dozvolite pristup kameri. Ova alatka snima vašu sliku kako bi tačno prepoznala vaše prisustvo ili otkrila kada ste uređaj ostavili bez nadzora. Ovi podaci se obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih koristi.",
+                        "checkBox": "Uključite kameru i omogućite ovu funkciju",
+                        "note": {
+                            "permission": "Lenovo Vantage nema pristup kameri. Funkcija polja za potvrdu ne radi.",
+                            "privacyMode": "Režim privatnosti kamere Lenovo Vantage je uključen. Funkcija polja za potvrdu ne radi.",
+                            "windowsLink": "Idite na postavke operativnog sistema Windows da biste dali pristup",
+                            "privacyLink": "Idite na režim privatnosti kamere da biste ga isključili"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

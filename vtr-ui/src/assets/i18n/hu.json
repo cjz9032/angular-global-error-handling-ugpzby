@@ -1287,6 +1287,17 @@
                             "slow": "Lassú"
                         },
                         "toolTipContent": "Válassza ki, hogyan szeretné zárolni a képernyőt (Gyorsan/Közepes sebességgel/Lassan), ha Ön nincs a közelben. A képernyő zárolási sebességére a tényleges felhasználói alkalmazás, a szenzor tulajdonságai és a Windows képernyőre vonatkozó időtúllépési beállításai is hatással vannak. Ezért határozottan azt javasoljuk, hogy azonnal zárolja a rendszert, amikor magára hagyja az eszközt."
+                    },
+                    "facialRecognition": {
+                        "title": "ARCFELISMERÉS",
+                        "caption": "Engedélyezheti az arcfelismerési funkciót, és lehetővé teheti, hogy hozzáférjen a kamerához. Ez az eszköz rögzíti a képét annak érdekében, hogy pontosan felismerje jelenlétét, vagy észlelje, ha a készüléket felügyelet nélkül hagyta. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
+                        "checkBox": "Kapcsolja be a kamerát, és engedélyezze a funkciót",
+                        "note": {
+                            "permission": "A Lenovo Vantage nem fér hozzá a kamerához. A jelölőnégyzet funkciója nem működik.",
+                            "privacyMode": "A Lenovo Vantage kamera adatvédelmi módja be van kapcsolva. A jelölőnégyzet funkciója nem működik.",
+                            "windowsLink": "A Windows beállításaiban adhatja meg a hozzáférést",
+                            "privacyLink": "Lépjen a Kamera adatvédelmi módba, hogy kikapcsolja"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

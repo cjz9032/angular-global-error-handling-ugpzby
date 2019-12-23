@@ -1287,6 +1287,17 @@
                             "slow": "Počasi"
                         },
                         "toolTipContent": "Izberite želeno možnost, da zaklenete zaslon pri hitro/srednje/počasni hitrosti, ko vaša prisotnost ni zaznana. Na čas, ko bo zaslon zaklenjen, vpliva tudi dejanska situacija uporabnika, zmožnost senzorja in nastavitve časa za izklop zaslona Windows. Zato priporočamo, da sistem takoj zaklenete, preden odidete."
+                    },
+                    "facialRecognition": {
+                        "title": "PREPOZNAVANJE OBRAZA",
+                        "caption": "Omogočite lahko funkcijo prepoznavanja obraza in ji dodelite dostop do kamere. To orodje posname vašo sliko in z njo natančno prepozna vašo prisotnost ali zazna, ko napravo pustite brez nadzora. Ti podatki so obdelani lokalno v vaši napravi. Lenovo do njih ne dostopa in jih ne uporablja.",
+                        "checkBox": "Vklopite kamero in omogočite to funkcijo",
+                        "note": {
+                            "permission": "Lenovo Vantage nima dostopa do kamere. Funkcija potrditvenega polja ne bo delovala.",
+                            "privacyMode": "Zasebnostni način za kamero v programu Lenovo Vantage je vklopljen. Funkcija potrditvenega polja ne bo delovala.",
+                            "windowsLink": "Odprite nastavitve sistema Windows in omogočite dostop",
+                            "privacyLink": "Odprite zasebnostni način za kamero, da ga izklopite"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

@@ -1287,6 +1287,17 @@
                             "slow": "Langsam"
                         },
                         "toolTipContent": "Wählen Sie die gewünschte Option aus, um die Anzeige mit einer schnellen, mittleren oder langsamen Geschwindigkeit zu sperren, wenn Ihre Anwesenheit nicht erkannt wird. Die Zeit, in der der Bildschirm gesperrt wird, wird jedoch auch durch das tatsächliche Benutzerszenario, die Sensorik und die Windows Bildschirmtimeout-Einstellungen beeinflusst. Wir empfehlen Ihnen daher dringend, Ihr System sofort zu sperren, bevor Sie es verlassen."
+                    },
+                    "facialRecognition": {
+                        "title": "GESICHTSERKENNUNG",
+                        "caption": "Sie können die Gesichtserkennungsfunktion aktivieren und ihr den Zugriff auf Ihre Kamera gestatten. Dieses Tool erfasst Ihr Bild, um präzise Ihre Anwesenheit festzustellen oder zu erkennen, wenn Sie Ihr Gerät unbeaufsichtigt lassen. Diese Daten werden lokal auf Ihrem Gerät verarbeitet. Lenovo greift nicht auf diese Daten zu und verwendet sie nicht.",
+                        "checkBox": "Die Kamera einschalten und diese Funktion aktivieren",
+                        "note": {
+                            "permission": "Lenovo Vantage hat keinen Zugriff auf die Kamera. Das Kontrollkästchen reagiert nicht.",
+                            "privacyMode": "Der Kamera-Datenschutzmodus der Lenovo Vantage ist aktiviert. Das Kontrollkästchen reagiert nicht.",
+                            "windowsLink": "Zu Windows-Einstellungen wechseln, um Zugriff zu gewähren",
+                            "privacyLink": "Zum Kamera-Datenschutzmodus wechseln, um ihn auszuschalten"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

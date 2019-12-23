@@ -1287,6 +1287,17 @@
                             "slow": "Langsom"
                         },
                         "toolTipContent": "Velg ønsket alternativ for å låse skjermen på en rask/middels/langsom hastighet når tilstedeværelsen din ikke oppdages. Når skjermen låses, påvirkes også av det faktiske brukerscenarioet, sensorfunksjonaliteten og innstillingene for skjermtidsavbrudd i Windows. Vi anbefaler derfor sterkt at du umiddelbart låser systemet før du forlater det."
+                    },
+                    "facialRecognition": {
+                        "title": "ANSIKTSGJENKJENNING",
+                        "caption": "Du kan aktivere funksjonen for ansiktsgjenkjenning og gi den tilgang til kameraet. Denne funksjonen tar bilde av deg for å vite når du er til stede, og når du har forlatt enheten uten tilsyn. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
+                        "checkBox": "Slå på kameraet og aktiver denne funksjonen",
+                        "note": {
+                            "permission": "Lenovo Vantage har ikke tilgang til kamera. Avmerkingsboksen vil ikke fungere.",
+                            "privacyMode": "Lenovo Vantage Personvernmodus for kamera er på. Avmerkingsboksen vil ikke fungere.",
+                            "windowsLink": "Gå til Windows-innstillingene for å gi tilgang",
+                            "privacyLink": "Gå til Personvernmodus for kamera for å slå av"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

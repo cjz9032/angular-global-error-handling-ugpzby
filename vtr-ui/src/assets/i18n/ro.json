@@ -1287,6 +1287,17 @@
                             "slow": "Lent"
                         },
                         "toolTipContent": "Selectați opțiunea dorită pentru a bloca ecranul la o viteză mică/medie/mare, atunci când nu vi se detectează prezența. Cu toate acestea, timpul în care ecranul va fi blocat este influențat și de scenariul actual al utilizatorului, de abilitatea senzorului și setările Windows de expirare a ecranului. Vă recomandăm să vă blocați imediat sistemul înainte de a pleca."
+                    },
+                    "facialRecognition": {
+                        "title": "RECUNOAȘTEREA FACIALĂ",
+                        "caption": "Puteți activa funcția de recunoaștere facială și îi puteți permite să acceseze camera. Acest instrument captează imaginea dvs. pentru a vă recunoaște cu exactitate prezența sau a detecta când ați lăsat dispozitivul nesupravegheat. Aceste date sunt procesate local pe dispozitivul dvs. Lenovo nu accesează datele și nu le folosește.",
+                        "checkBox": "Porniți camera și activați această caracteristică.",
+                        "note": {
+                            "permission": "Lenovo Vantage nu are acces la cameră. Funcția casetei de selectare nu este activă.",
+                            "privacyMode": "Modul de confidențialitate Lenovo Vantage este activ pentru cameră. Funcția casetei de selectare nu este activă.",
+                            "windowsLink": "Accesați setările Windows pentru a acorda acces.",
+                            "privacyLink": "Accesați modul de confidențialitate al camerei pentru a-l dezactiva."
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

@@ -1287,6 +1287,17 @@
                             "slow": "Yavaş"
                         },
                         "toolTipContent": "Varlığınız algılanmadığında ekranınızı Hızlı/Orta/Yavaş hızda kilitlemek için istediğiniz seçeneği belirleyin. Ancak, ekranın kilitlenme süresi gerçek kullanıcı senaryosu, sensör kapasitesi ve Windows ekranı zaman aşımı ayarlarından da etkilenir. Bu yüzden, bilgisayarınızın başından ayrılmadan önce sisteminizi hemen kilitlemenizi önemle tavsiye ederiz."
+                    },
+                    "facialRecognition": {
+                        "title": "YÜZ TANIMA",
+                        "caption": "Yüz tanıma özelliğini etkinleştirebilir ve kameranıza erişmesine izin verebilirsiniz. Bu araç, varlığınızı doğru bir şekilde algılamak veya cihazınızın başından ayrıldığınızı tespit etmek için görüntünüzü yakalar. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz.",
+                        "checkBox": "Kamerayı açın ve bu özelliği etkinleştirin",
+                        "note": {
+                            "permission": "Lenovo Vantage, Kamera'ya erişemiyor. Onay kutusu işlevsel değildir.",
+                            "privacyMode": "Lenovo Vantage Kamera gizliliği kipi açık. Onay kutusu işlevsel değildir.",
+                            "windowsLink": "Erişim izni vermek için Windows Ayarları bölümüne gidin",
+                            "privacyLink": "Kapatmak için Kamera gizliliği kipi bölümüne gidin"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
