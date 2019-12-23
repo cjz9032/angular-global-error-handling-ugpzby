@@ -11,8 +11,9 @@ export class DccService {
 
 	public showDemo = false;
 	public isDccDevice = false;
-	public headerImageUrl = 'url(/assets/images/HeaderImage.jpg)';
-	private headerDccImageUrl = 'url(/assets/images/HeaderImageDcc.jpg)';
+	private backgroundProperties = ' no-repeat center / cover';
+	public headerBackground = 'url(/assets/images/HeaderImage.jpg)' + this.backgroundProperties;
+	private headerDccBackground = 'url(/assets/images/HeaderImageDcc.jpg)' + this.backgroundProperties;
 
 	constructor(
 		private modalService: NgbModal,
@@ -42,7 +43,7 @@ export class DccService {
 			null
 		)[0];
 		if (headerImage && headerImage.Title === 'Header Image DCC') {
-			this.headerDccImageUrl = 'url(' + headerImage.FeatureImage + ')';
+			this.headerDccBackground = 'url(' + headerImage.FeatureImage + ')' + this.backgroundProperties;
 		}
 	}
 
@@ -53,7 +54,7 @@ export class DccService {
 				filter.then((hyp) => {
 					if (hyp === 'true') {
 						this.isDccDevice = true;
-						this.headerImageUrl = this.headerDccImageUrl;
+						this.headerBackground = this.headerDccBackground;
 					}
 					resolve(this.isDccDevice);
 				}, (error) => {
@@ -71,7 +72,7 @@ export class DccService {
 				filter.then((hyp) => {
 					if (hyp === 'CES-2019') {
 						this.showDemo = true;
-						this.headerImageUrl = this.headerDccImageUrl;
+						this.headerBackground = this.headerDccBackground;
 					}
 					resolve(this.showDemo);
 				}, (error) => {
