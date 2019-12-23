@@ -52,6 +52,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	];
 	private Windows: any;
 	private windowsObj: any;
+	private cameraStatusChangeBySet = false;
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
 
@@ -98,6 +99,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		const cameraState: FeatureStatus = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
 		if (cameraState) {
 			this.cameraStatus.available = cameraState.available;
+			this.cameraStatus.status = cameraState.status;
+			this.cameraStatus.isLoading = false;
+			this.cameraStatus.permission = cameraState.permission;
 		}
 	}
 
@@ -151,7 +155,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public getCameraPermission() {
 		try {
 			if (this.displayService.isShellAvailable) {
-				this.cameraStatus.isLoading = true;
+				// this.cameraStatus.isLoading = true;
 				this.displayService.getCameraSettingsInfo()
 					.then((result) => {
 						this.cameraStatus.isLoading = false;
@@ -199,9 +203,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private getCameraPrivacyStatus() {
 		try {
 			if (this.dashboardService.isShellAvailable) {
-				this.cameraStatus.isLoading = true;
+				// this.cameraStatus.isLoading = true;
 				if (this.cameraStatus.permission) {
-					this.cameraStatus.isLoading = true;
+					// this.cameraStatus.isLoading = true;
 				}
 				this.logger.debug('WidgetQuicksettingsComponent.getCameraPrivacyStatus: invoke Camera Privacy');
 
@@ -210,9 +214,11 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					.then((featureStatus: FeatureStatus) => {
 						this.cameraStatus.isLoading = false;
 						this.logger.debug('WidgetQuicksettingsComponent.getCameraPrivacyStatus: response Camera Privacy', featureStatus);
-						this.cameraStatus = featureStatus;
 						this.cameraStatus.available = featureStatus.available;
-						this.cameraStatus.status = featureStatus.status;
+						if(!this.cameraStatusChangeBySet) {
+							this.cameraStatus.status = featureStatus.status;
+						}
+						this.cameraStatusChangeBySet = false;
 						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, featureStatus);
 						// if privacy available then start monitoring
 						if (featureStatus.available) {
@@ -315,6 +321,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 		this.cameraStatus.isLoading = true;
 		this.quickSettingsWidget[1].state = false;
+		this.cameraStatusChangeBySet = true;
 		try {
 			if (this.dashboardService.isShellAvailable) {
 				this.dashboardService.setCameraStatus($event)
