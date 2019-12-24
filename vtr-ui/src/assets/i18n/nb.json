@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse",
-                    "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig»."
+					"nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig».",
+					"dytc6": {
+                        "desc1": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden.",
+                        "desc2": "Funksjonen har modusene som er oppført nedenfor og kan nå justeres med strømglidebryteren i Windows. Du får tilgang til den ved å klikke på batterisymbolet i Windows-systemskuffen.",
+                        "desc3": "Noen av modusene kan justeres automatisk på tvers av et bredere ytelsesspekter basert på din aktivitet. Du kan aktivere automatisk modus ved å trykke på Fn+T.",
+                        "autoMode": {
+                            "title1": "Automatisk batterimodus",
+                            "desc1": "Glidebryteren er til venstre. Modusen endres dynamisk til Stille modus eller Batterimodus for å få den beste opplevelsen i likestrømmodus.",
+                            "title2": "Modus for automatisk ytelse",
+                            "desc2": "Glidebryteren står på midten eller til høyre for midten. Modusen endres dynamisk til Stille modus, Balansert modus eller Ytelsesmodus for å få den beste opplevelsen i likestrømmodus.",
+                            "title3": "Ytelsesmodus",
+                            "desc3": "Glidebryteren er helt til høyre. Viftehastigheten og den tillatte overflatetemperaturen er høyere for maksimal ytelse."
+                        },
+                        "manualMode": {
+                            "title1": "Stille modus",
+                            "desc1": "Glidebryteren er til venstre. Viftehastighet og ytelse reduseres for å gi en kjøligere og mer stillegående datamaskin og lengst mulig batteritid.",
+                            "title2": "Balansert modus",
+                            "desc2": "Glidebryteren står på midten eller til høyre for midten. Viftehastighet og ytelse balanseres dynamisk for å gi den beste brukeropplevelsen.",
+                            "title3": "Ytelsesmodus",
+                            "desc3": "Glidebryteren er helt til høyre. Viftehastigheten og den tillatte overflatetemperaturen er høyere for maksimal ytelse."
+                        },
+                        "desc3_1": "Noen av modusene kan justeres automatisk på tvers av et bredere ytelsesspekter basert på din aktivitet. Du kan deaktivere automatisk modus ved å trykke på Fn+ T."
+                    }
                 },
                 "powerSettings": {
                     "title": "Strøminnstillinger",
@@ -1245,7 +1267,8 @@
                     "more": "MER",
                     "control1": "PEKEPLATEKONTROLLER",
                     "control2": "MUSEKONTROLLER",
-                    "control3": "TRACKPOINT-KONTROLLER"
+					"control3": "TRACKPOINT-KONTROLLER",
+					"less": "MINDRE"
                 }
             }
         },
@@ -1287,6 +1310,17 @@
                             "slow": "Langsom"
                         },
                         "toolTipContent": "Velg ønsket alternativ for å låse skjermen på en rask/middels/langsom hastighet når tilstedeværelsen din ikke oppdages. Når skjermen låses, påvirkes også av det faktiske brukerscenarioet, sensorfunksjonaliteten og innstillingene for skjermtidsavbrudd i Windows. Vi anbefaler derfor sterkt at du umiddelbart låser systemet før du forlater det."
+                    },
+                    "facialRecognition": {
+                        "title": "ANSIKTSGJENKJENNING",
+                        "caption": "Du kan aktivere funksjonen for ansiktsgjenkjenning og gi den tilgang til kameraet. Denne funksjonen tar bilde av deg for å vite når du er til stede, og når du har forlatt enheten uten tilsyn. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
+                        "checkBox": "Slå på kameraet og aktiver denne funksjonen",
+                        "note": {
+                            "permission": "Lenovo Vantage har ikke tilgang til kamera. Avmerkingsboksen vil ikke fungere.",
+                            "privacyMode": "Lenovo Vantage Personvernmodus for kamera er på. Avmerkingsboksen vil ikke fungere.",
+                            "windowsLink": "Gå til Windows-innstillingene for å gi tilgang",
+                            "privacyLink": "Gå til Personvernmodus for kamera for å slå av"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

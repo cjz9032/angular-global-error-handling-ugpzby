@@ -789,6 +789,28 @@
 							}
 						}
 					},
+					"dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    },
 					"nonintelligentCooling": {
 						"options": {
 							"intelligentCooling": "INTELLIGENT COOLING",
@@ -1290,6 +1312,7 @@
 				},
 				"controlOptions": {
 					"more": "MORE",
+					"less": "LESS",
 					"control1": "TOUCHPAD CONTROLS",
 					"control2": "MOUSE CONTROLS",
 					"control3": "TRACKPOINT CONTROLS"
@@ -1334,7 +1357,18 @@
 							"slow": "Slow"
 						},
 						"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
-					}
+					},
+					"facialRecognition": {
+                        "title": "FACIAL RECOGNITION",
+                        "caption": "You can enable the facial recognition feature and allow it to access your camera. This tool captures your image in order to accurately recognize your presence or detect when you have left your device unattended. This data is processed locally on your device. Lenovo does not access or use it.",
+                        "checkBox": "Turn on the camera and enable this feature",
+                        "note": {
+                            "permission": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+                            "privacyMode": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+                            "windowsLink": "Go to Windows Settings to give access",
+                            "privacyLink": "Go to Camera privacy mode to turn it off"
+                        }
+                    }
 				},
 				"distanceSensitivityAdjusting": {
 					"title": "DISTANCE SENSITIVITY ADJUSTING",

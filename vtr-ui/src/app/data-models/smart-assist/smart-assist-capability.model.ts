@@ -7,4 +7,7 @@ export class SmartAssistCapability {
 	public isIntelligentMediaSupported: FeatureStatus = new FeatureStatus(false, false); // promise is returning object
 	public isAPSSupported = false;
 	public isSuperResolutionSupported: FeatureStatus = new FeatureStatus(false, false);
+	public isAPSCapable = false;
+	public isAPSSensorSupported = false;
+	public isAPSHDDStatus = -1;
 }

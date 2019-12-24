@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie. Tato funkce má 3 režimy (tichý režim, vyvážený režim a režim výkonu) a je nyní přístupná posuvníkem výkonu systému Windows",
-                    "nocqldesc": "Inteligentní chlazení umožňuje upravovat výkon a teplotu systému. V režimu „Výkon“ optimalizuje výkon systému, v režimu „Chladný a tichý“ pomáhá udržovat systém chladnější a tišší."
+					"nocqldesc": "Inteligentní chlazení umožňuje upravovat výkon a teplotu systému. V režimu „Výkon“ optimalizuje výkon systému, v režimu „Chladný a tichý“ pomáhá udržovat systém chladnější a tišší.",
+					"dytc6": {
+                        "desc1": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie.",
+                        "desc2": "Tato funkce má následující režimy a nyní je upravena pomocí posuvníku výkonu systému Windows. Přístup k ní získáte kliknutím na ikonu baterie na hlavním panelu systému Windows.",
+                        "desc3": "Některé režimy se mohou na základě vaší činnosti automaticky přizpůsobit širšímu rozsahu výkonu. Chcete-li povolit automatický režim, stiskněte klávesy Fn+T.",
+                        "autoMode": {
+                            "title1": "Automatický režim baterie",
+                            "desc1": "Posuvník je vlevo. Režim se dynamicky přepíná do tichého režimu nebo do režimu baterie pro nejlepší zážitek z režimu DC.",
+                            "title2": "Automatický režim výkonu",
+                            "desc2": "Posuvník je uprostřed nebo vpravo od středu. Režim se dynamicky přepíná do tichého režimu, vyváženého režimu nebo do režimu výkonu pro nejlepší zážitek z režimu AC.",
+                            "title3": "Režim výkonu",
+                            "desc3": "Posuvník je zcela vpravo. Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon."
+                        },
+                        "manualMode": {
+                            "title1": "Tichý režim",
+                            "desc1": "Posuvník je vlevo. Rychlost a výkon ventilátoru jsou nižší, takže je počítač chladnější, tišší a baterie má nejdelší životnost.",
+                            "title2": "Vyvážený režim",
+                            "desc2": "Posuvník je uprostřed nebo vpravo od středu. Rychlost a výkon ventilátoru jsou dynamicky vyvážené a zajišťují nejvyrovnanější výkon.",
+                            "title3": "Režim výkonu",
+                            "desc3": "Posuvník je zcela vpravo. Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon."
+                        },
+                        "desc3_1": "Některé režimy se mohou na základě vaší činnosti automaticky přizpůsobit širšímu rozsahu výkonu. Chcete-li zakázat automatický režim, stiskněte klávesy Fn+ T."
+                    }
                 },
                 "powerSettings": {
                     "title": "Nastavení napájení",
@@ -1245,7 +1267,8 @@
                     "more": "DALŠÍ",
                     "control1": "OVLÁDÁNÍ DOTYKOVÉ PLOŠKY",
                     "control2": "OVLÁDÁNÍ MYŠI",
-                    "control3": "OVLÁDÁNÍ TRACKPOINT"
+					"control3": "OVLÁDÁNÍ TRACKPOINT",
+					"less": "MÉNĚ"
                 }
             }
         },
@@ -1287,6 +1310,17 @@
                             "slow": "Pomalá"
                         },
                         "toolTipContent": "Výběrem požadované možnosti uzamkněte obrazovku rychle/středně/pomalu, pokud není zjištěna přítomnost. Dobu, za jakou bude obrazovka uzamčena, však ovlivňuje také momentální scénář uživatele, možnosti snímače a nastavení časového limitu obrazovky systému Windows. Proto důrazně doporučujeme, abyste svůj systém okamžitě uzamkli, než jej opustíte."
+                    },
+                    "facialRecognition": {
+                        "title": "ROZPOZNÁVÁNÍ OBLIČEJE",
+                        "caption": "Můžete povolit funkci rozpoznávání obličeje a umožnit jí přístup k fotoaparátu. Tento nástroj zachytí váš snímek, aby přesně rozpoznal vaši přítomnost nebo zjistil, kdy jste zařízení nechali bez dozoru. Tato data jsou ve vašem zařízení zpracovávána lokálně. Lenovo k nim nemá přístup ani je nepoužívá.",
+                        "checkBox": "Zapněte fotoaparát a povolte tuto funkci",
+                        "note": {
+                            "permission": "Lenovo Vantage nemá přístup ke kameře. Funkce zaškrtávacího políčka nebude fungovat.",
+                            "privacyMode": "Režim ochrany osobních údajů fotoaparátu Lenovo Vantage je zapnutý. Funkce zaškrtávacího políčka nebude fungovat.",
+                            "windowsLink": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows",
+                            "privacyLink": "Chcete-li jej vypnout, přejděte do režimu ochrany osobních údajů fotoaparátu"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Pametno hlajenje prilagodi hitrost ventilatorja, največjo zmogljivost in upravlja življenjsko dobo baterije. Ta funkcija ima 3 načine (tihi način, uravnotežen način in način učinkovitosti delovanja) in je zdaj dostopna z drsnikom za zmogljivost sistema Windows",
-                    "nocqldesc": "Pametno hlajenje omogoča prilagajanje učinkovitosti delovanja in temperature sistema. V načinu »Učinkovitost delovanja« optimizira učinkovitost delovanja sistema. V načinu »Hladno in tiho« poskrbi za hladnejše in tišje delovanje sistema."
+					"nocqldesc": "Pametno hlajenje omogoča prilagajanje učinkovitosti delovanja in temperature sistema. V načinu »Učinkovitost delovanja« optimizira učinkovitost delovanja sistema. V načinu »Hladno in tiho« poskrbi za hladnejše in tišje delovanje sistema.",
+					"dytc6": {
+                        "desc1": "Pametno hlajenje prilagodi hitrost ventilatorja, največjo zmogljivost in upravlja življenjsko dobo baterije.",
+                        "desc2": "Ta funkcija vključuje spodaj navedene načine delovanja in se odslej upravlja z naprednim drsnikom za nastavljanje zmogljivosti sistema Windows. Funkcijo odprete tako, da kliknite ikono baterije v pladnju sistema Windows.",
+                        "desc3": "Nekateri načini delovanja se lahko na podlagi vaše dejavnosti samodejno prilagajajo v širšem obsegu zmogljivosti. Če želite omogočiti samodejni način, pritisnite Fn+T.",
+                        "autoMode": {
+                            "title1": "Samodejni baterijski način",
+                            "desc1": "Drsnik je na levi. Način delovanja se samodejno preklopi na Tihi način ali Baterijski način, da vam zagotovi najboljšo izkušnjo uporabe baterijskega napajanja.",
+                            "title2": "Samodejni zmogljivi način",
+                            "desc2": "Drsnik je na sredini ali desno od sredine. Način delovanja se samodejno preklopi na Tihi način, Uravnoteženi način ali Zmogljivi način, da vam zagotovi najboljšo izkušnjo uporabe omrežnega napajanja.",
+                            "title3": "Zmogljivi način",
+                            "desc3": "Drsnik je skrajno desno. Hitrost ventilatorja in dopustna površinska temperatura sta višja za največjo učinkovitost delovanja."
+                        },
+                        "manualMode": {
+                            "title1": "Tihi način",
+                            "desc1": "Drsnik je na levi. Hitrost ventilatorja in zmogljivost se zmanjšata, da se zagotovi tišje in hladnejše delovanje računalnika ter optimalna življenjska doba baterije.",
+                            "title2": "Uravnoteženi način",
+                            "desc2": "Drsnik je na sredini ali desno od sredine. Hitrost ventilatorja in zmogljivost se dinamično uravnotežita za optimalno uporabniško izkušnjo.",
+                            "title3": "Zmogljivi način",
+                            "desc3": "Drsnik je skrajno desno. Hitrost ventilatorja in dopustna površinska temperatura sta višja za največjo učinkovitost delovanja."
+                        },
+                        "desc3_1": "Nekateri načini delovanja se lahko na podlagi vaše dejavnosti samodejno prilagajajo v širšem obsegu zmogljivosti. Če želite onemogočiti samodejni način, pritisnite Fn+ T."
+                    }
                 },
                 "powerSettings": {
                     "title": "Nastavitve napajanja",
@@ -1245,7 +1267,8 @@
                     "more": "VEČ",
                     "control1": "KONTROLNIKI SLEDILNE PLOŠČICE",
                     "control2": "KONTROLNIKI MIŠKE",
-                    "control3": "KONTROLNIKI TRACKPOINT"
+					"control3": "KONTROLNIKI TRACKPOINT",
+					"less": "MANJ"
                 }
             }
         },
@@ -1287,6 +1310,17 @@
                             "slow": "Počasi"
                         },
                         "toolTipContent": "Izberite želeno možnost, da zaklenete zaslon pri hitro/srednje/počasni hitrosti, ko vaša prisotnost ni zaznana. Na čas, ko bo zaslon zaklenjen, vpliva tudi dejanska situacija uporabnika, zmožnost senzorja in nastavitve časa za izklop zaslona Windows. Zato priporočamo, da sistem takoj zaklenete, preden odidete."
+                    },
+                    "facialRecognition": {
+                        "title": "PREPOZNAVANJE OBRAZA",
+                        "caption": "Omogočite lahko funkcijo prepoznavanja obraza in ji dodelite dostop do kamere. To orodje posname vašo sliko in z njo natančno prepozna vašo prisotnost ali zazna, ko napravo pustite brez nadzora. Ti podatki so obdelani lokalno v vaši napravi. Lenovo do njih ne dostopa in jih ne uporablja.",
+                        "checkBox": "Vklopite kamero in omogočite to funkcijo",
+                        "note": {
+                            "permission": "Lenovo Vantage nima dostopa do kamere. Funkcija potrditvenega polja ne bo delovala.",
+                            "privacyMode": "Zasebnostni način za kamero v programu Lenovo Vantage je vklopljen. Funkcija potrditvenega polja ne bo delovala.",
+                            "windowsLink": "Odprite nastavitve sistema Windows in omogočite dostop",
+                            "privacyLink": "Odprite zasebnostni način za kamero, da ga izklopite"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

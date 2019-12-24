@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria. Este recurso possui 3 modos (modo Silencioso, Equilibrado e de Desempenho) e agora pode ser acessado pelo controle deslizante de energia de desempenho do Windows",
-                    "nocqldesc": "O Resfriamento Inteligente permite ajustar o desempenho do sistema e a temperatura térmica. No modo \"Desempenho\", ele otimiza o desempenho do sistema. Enquanto ajuda a manter o sistema mais frio ou mais silencioso no modo \"Refrigerado e silencioso\"."
+					"nocqldesc": "O Resfriamento Inteligente permite ajustar o desempenho do sistema e a temperatura térmica. No modo \"Desempenho\", ele otimiza o desempenho do sistema. Enquanto ajuda a manter o sistema mais frio ou mais silencioso no modo \"Refrigerado e silencioso\".",
+					"dytc6": {
+                        "desc1": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria.",
+                        "desc2": "O recurso tem os modos listados abaixo e agora é ajustado pelo controle deslizante de energia de desempenho do Windows. Você pode acessá-lo clicando no ícone da bateria na bandeja do sistema do Windows.",
+                        "desc3": "Alguns dos modos podem ser ajustados automaticamente em uma gama mais ampla de desempenho com base em sua atividade. Para ativar o modo automático, pressione Fn+T.",
+                        "autoMode": {
+                            "title1": "Modo Bateria Automática",
+                            "desc1": "O controle deslizante está à esquerda. O modo é alternado dinamicamente para o modo Silencioso ou modo Bateria para obter a melhor experiência do modo DC.",
+                            "title2": "Modo de Desempenho Automático",
+                            "desc2": "O controle deslizante está no centro ou centralizado à direita. O modo é alternado dinamicamente para o modo Silencioso, modo Equilibrado ou modo de Desempenho para obter a melhor experiência do modo CA.",
+                            "title3": "Modo de desempenho",
+                            "desc3": "O controle deslizante está na extremidade à direita. A velocidade do ventilador e a temperatura da superfície permitida são aumentadas para oferecer o máximo de desempenho."
+                        },
+                        "manualMode": {
+                            "title1": "Modo silencioso",
+                            "desc1": "O controle deslizante está à esquerda. A velocidade e desempenho do ventilador são diminuídos para oferecer um computador mais frio e silencioso e uma melhor vida útil da bateria.",
+                            "title2": "Modo equilibrado",
+                            "desc2": "O controle deslizante está no centro ou centralizado à direita. A velocidade e desempenho do ventilador são equilibrados dinamicamente para oferecer uma melhor experiência.",
+                            "title3": "Modo de desempenho",
+                            "desc3": "O controle deslizante está na extremidade à direita. A velocidade do ventilador e a temperatura da superfície permitida são aumentadas para oferecer o máximo de desempenho."
+                        },
+                        "desc3_1": "Alguns dos modos podem ser ajustados automaticamente em uma gama mais ampla de desempenho com base em sua atividade. Para desativar o modo automático, pressione Fn + T."
+                    }
                 },
                 "powerSettings": {
                     "title": "Configurações de energia",
@@ -1245,7 +1267,8 @@
                     "more": "MAIS",
                     "control1": "CONTROLES DO TOUCHPAD",
                     "control2": "CONTROLES DO MOUSE",
-                    "control3": "CONTROLES DE TRACKPOINT"
+					"control3": "CONTROLES DE TRACKPOINT",
+					"less": "MENOS"
                 }
             }
         },
@@ -1287,6 +1310,17 @@
                             "slow": "Lento"
                         },
                         "toolTipContent": "Selecione a opção desejada para bloquear a tela em uma velocidade rápida/média/lenta quando sua presença não for detectada. No entanto, o momento em que a tela será bloqueada também é afetado pelo cenário real do usuário, a capacidade do sensor e as configurações de tempo limite da tela do Windows. Portanto, sugerimos que você bloqueie imediatamente o sistema antes de sair."
+                    },
+                    "facialRecognition": {
+                        "title": "RECONHECIMENTO FACIAL",
+                        "caption": "Você pode ativar o recurso de reconhecimento facial e permitir acesso à câmera. Essa ferramenta captura sua imagem para reconhecer com precisão sua presença ou detectar quando você deixar seu dispositivo sem vigilância. Esses dados são processados localmente no dispositivo. A Lenovo não acessa nem usa esses dados.",
+                        "checkBox": "Ligar a câmera e ativar esse recurso",
+                        "note": {
+                            "permission": "O Lenovo Vantage não tem acesso à câmera. A função da caixa de seleção não funcionará.",
+                            "privacyMode": "O modo de privacidade da câmera do Lenovo Vantage está ativado. A função da caixa de seleção não funcionará.",
+                            "windowsLink": "Ir para as Configurações do Windows para dar acesso",
+                            "privacyLink": "Ir para o modo de privacidade da câmera para desativá-lo"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

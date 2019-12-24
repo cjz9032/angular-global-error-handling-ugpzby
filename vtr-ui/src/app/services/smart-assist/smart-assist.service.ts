@@ -38,15 +38,15 @@ export class SmartAssistService {
 	/**
 	 * IdeaPad Only : User Presence Sensing global toggle can be shown on UI
 	 */
-	public getHPDVisibilityInIdeaPad(): Promise<boolean> {
-		// HPD global switch status. true means show, false means hide
-		return this.intelligentSensing.GetHPDCapability();
-	}
+	// public getHPDVisibilityInIdeaPad(): Promise<boolean> {
+	// 	// HPD global switch status. true means show, false means hide
+	// 	return this.intelligentSensing.GetHPDCapability();
+	// }
 
 	/**
 	 * ThinkPad Only : User Presence Sensing global toggle can be shown on UI
 	 */
-	public getHPDVisibilityInThinkPad(): Promise<boolean> {
+	public getHPDVisibility(): Promise<boolean> {
 		// HPD global switch status. true means show, false means hide
 		return this.intelligentSensing.GetHPDCapability();
 	}
@@ -82,6 +82,20 @@ export class SmartAssistService {
 	public setZeroTouchLockStatus(value: boolean): Promise<boolean> {
 		const option = value ? 'True' : 'False';
 		return this.intelligentSensing.SetHPDPresentLeaveSetting(option);
+	}
+
+	public getZeroTouchLockFacialRecoStatus(): Promise<boolean> {
+		return this.intelligentSensing.getLockFacialRecognitionSettings();
+	}
+
+	public setZeroTouchLockFacialRecoStatus(value: boolean): Promise<boolean> {
+		const option = value ? 'True' : 'False';
+		return this.intelligentSensing.setLockFacialRecognitionSettings(option);
+
+	}
+
+	public resetFacialRecognitionStatus(): Promise<boolean> {
+		return this.intelligentSensing.resetFacialRecognitionStatus();
 	}
 
 	public getZeroTouchLoginVisibility(): Promise<boolean> {
@@ -328,7 +342,7 @@ export class SmartAssistService {
 		return undefined;
 	}
 	// HDD Status
-	public getHDDStatus(): Promise<boolean> {
+	public getHDDStatus(): Promise<number> {
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.getHDDStatus();
 		}

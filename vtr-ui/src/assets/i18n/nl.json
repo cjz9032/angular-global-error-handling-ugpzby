@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd. Deze functie heeft drie modi (Stille modus, Gebalanceerde modus en Prestatiemodus) en is nu toegankelijk via de prestatieschuif in Windows",
-                    "nocqldesc": "Intelligent koelen maakt het mogelijk om de systeemprestatie en de thermische temperatuur aan te passen. In de \"Prestatie\"-modus wordt de systeemprestatie geoptimaliseerd. Tegelijkertijd blijft het systeem koeler en stiller in de modus \"Koel & stil\"."
+					"nocqldesc": "Intelligent koelen maakt het mogelijk om de systeemprestatie en de thermische temperatuur aan te passen. In de \"Prestatie\"-modus wordt de systeemprestatie geoptimaliseerd. Tegelijkertijd blijft het systeem koeler en stiller in de modus \"Koel & stil\".",
+					"dytc6": {
+                        "desc1": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd.",
+                        "desc2": "De functie biedt onderstaande modi en is nu aangepast door de prestatieschuif in Windows. U kunt de functie benaderen door te klikken op het batterijpictogram in het systeemvak van Windows.",
+                        "desc3": "Sommige modi kunnen automatisch aangepast worden over een breder prestatiebereik gebaseerd op uw activiteit. Druk op Fn+T om de automatische modus in te schakelen.",
+                        "autoMode": {
+                            "title1": "Automatische batterijmodus",
+                            "desc1": "De schuifregelaar bevindt zich aan de linkerkant. De modus verschuift dynamisch naar Stille modus of Batterijmodus op basis van de best mogelijke DC-ervaring.",
+                            "title2": "Automatische prestatiemodus",
+                            "desc2": "De schuifregelaar bevindt zich in het midden of rechts van het midden. De modus verschuift dynamisch naar Stille modus, Gebalanceerde modus of Prestatiemodus op basis van de best mogelijke AC-ervaring.",
+                            "title3": "Prestatiemodus",
+                            "desc3": "De schuifregelaar bevindt zich uiterst rechts. Er worden een hogere ventilatorsnelheid en een hogere temperatuur van de buitenkant van de computer toegelaten voor maximale prestaties."
+                        },
+                        "manualMode": {
+                            "title1": "Stille modus",
+                            "desc1": "De schuifregelaar bevindt zich aan de linkerkant. Ventilatorsnelheid en prestaties worden verlaagd voor een koelere, stillere computer en een langere batterijduur.",
+                            "title2": "Gebalanceerde modus",
+                            "desc2": "De schuifregelaar bevindt zich in het midden of rechts van het midden. Ventilatorsnelheid en prestaties worden dynamisch gebalanceerd voor een optimale beleving.",
+                            "title3": "Prestatiemodus",
+                            "desc3": "De schuifregelaar bevindt zich uiterst rechts. Er worden een hogere ventilatorsnelheid en een hogere temperatuur van de buitenkant van de computer toegelaten voor maximale prestaties."
+                        },
+                        "desc3_1": "Sommige modi kunnen automatisch aangepast worden over een breder prestatiebereik gebaseerd op uw activiteit. Druk op Fn+ T om de automatische modus uit te schakelen."
+                    }
                 },
                 "powerSettings": {
                     "title": "Energie-instellingen",
@@ -1245,7 +1267,8 @@
                     "more": "MEER",
                     "control1": "TOUCHPAD-BEDIENING",
                     "control2": "MUISBEDIENING",
-                    "control3": "TRACKPOINT-BESTURINGSELEMENTEN"
+					"control3": "TRACKPOINT-BESTURINGSELEMENTEN",
+					"less": "MINDER"
                 }
             }
         },
@@ -1287,6 +1310,17 @@
                             "slow": "Traag"
                         },
                         "toolTipContent": "Selecteer de gewenste optie om het scherm te vergrendelen met een hoge/gemiddelde/lage snelheid als uw aanwezigheid niet wordt gedetecteerd. Het moment waarop het scherm wordt vergrendeld, wordt echter ook beïnvloed door het feitelijke gebruikersscenario, het sensorvermogen en de Windows-instellingen voor time-out voor het scherm. Het is dus raadzaam om het systeem meteen te vergrendelen voordat u weggaat."
+                    },
+                    "facialRecognition": {
+                        "title": "GEZICHTSHERKENNING",
+                        "caption": "U kunt de gezichtsherkenningsfunctie inschakelen en toegang tot uw camera geven. Met deze tool wordt uw afbeelding vastgelegd om uw aanwezigheid nauwkeurig te herkennen of te detecteren wanneer u het apparaat hebt achtergelaten. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
+                        "checkBox": "Zet de camera aan en schakel deze functie in",
+                        "note": {
+                            "permission": "Lenovo Vantage heeft geen toegang tot de camera. De functie van het selectievakje werkt niet.",
+                            "privacyMode": "De privacymodus van Lenovo Vantage Camera is ingeschakeld. De functie van het selectievakje werkt niet.",
+                            "windowsLink": "Ga naar de Windows-instellingen om toegang te geven",
+                            "privacyLink": "Ga naar de privacymodus van de camera om deze uit te schakelen"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden. Funktionen har tre lägen (tyst läge, balanserat läge och prestandaläge) och kan ställas in via energireglaget i Windows",
-                    "nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”."
+					"nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”.",
+					"dytc6": {
+                        "desc1": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden.",
+                        "desc2": "Funktionen har lägena nedan och har nu justerats med reglaget för energifunktioner i Windows. Du kommer åt den genom att klicka på batteriikonen i systemfältet i Windows.",
+                        "desc3": "Vissa av lägena kan justeras automatiskt i ett större prestandaintervall baserat på din aktivitet. Tryck på Fn+T för att aktivera automatiskt läge.",
+                        "autoMode": {
+                            "title1": "Automatiskt batteriläge",
+                            "desc1": "Reglaget är skjutet längst till vänster. Detta läge växlar dynamiskt till tyst läge eller batteriläge för att ge bästa möjliga likströmförbrukning.",
+                            "title2": "Automatiskt prestandaläge",
+                            "desc2": "Reglaget är placerat i mitten eller mitten höger. Detta läge växlar dynamiskt till tyst läge, balanserat läge eller prestandaläge för att ge bästa möjliga växelströmförbrukning.",
+                            "title3": "Prestandaläge",
+                            "desc3": "Reglaget är skjutet längst åt höger. Fläkthastighet och tillåten yttemperatur ökas för maximal prestanda."
+                        },
+                        "manualMode": {
+                            "title1": "Tyst läge",
+                            "desc1": "Reglaget är skjutet längst till vänster. Fläkthastighet och prestanda sänks för att göra datorn svalare och tystare och optimera batteritiden.",
+                            "title2": "Balanserat läge",
+                            "desc2": "Reglaget är placerat i mitten eller mitten höger. Fläkthastighet och prestanda balanseras dynamiskt för bästa möjliga upplevelse.",
+                            "title3": "Prestandaläge",
+                            "desc3": "Reglaget är skjutet längst åt höger. Fläkthastighet och tillåten yttemperatur ökas för maximal prestanda."
+                        },
+                        "desc3_1": "Vissa av lägena kan justeras automatiskt i ett större prestandaintervall baserat på din aktivitet. Tryck på Fn+ T för att inaktivera automatiskt läge."
+                    }
                 },
                 "powerSettings": {
                     "title": "Ströminställningar",
@@ -1245,7 +1267,8 @@
                     "more": "MER",
                     "control1": "HANTERING AV STYRPLATTA",
                     "control2": "HANTERING AV MUS",
-                    "control3": "TRACKPOINT-KONTROLLER"
+					"control3": "TRACKPOINT-KONTROLLER",
+					"less": "MINDRE"
                 }
             }
         },
@@ -1287,6 +1310,17 @@
                             "slow": "Långsam"
                         },
                         "toolTipContent": "Välj önskat alternativ för att låsa skärmen snabbt/medelsnabbt/långsamt när din närvaro inte identifieras. Tiden när skärmen låses påverkas också av den faktiska användarsituationen, sensorkapaciteten och inställningarna för skärmtidsgräns i Windows. Vi rekommenderar därför att du låser datorn omedelbart innan du lämnar den."
+                    },
+                    "facialRecognition": {
+                        "title": "ANSIKTSIGENKÄNNING",
+                        "caption": "Du kan aktivera funktionen för ansiktsigenkänning och ge den åtkomst till kameran. Verktyget fångar upp din bild och känner igen din närvaro eller upptäcker när du lämnar enheten obevakad. Informationen bearbetas lokalt på datorn. Lenovo har inte till åtkomst till denna information och använder den inte.",
+                        "checkBox": "Sätt på kameran och aktivera funktionen",
+                        "note": {
+                            "permission": "Lenovo Vantage har inte åtkomst till kameran. Kryssrutan fungerar inte.",
+                            "privacyMode": "Sekretessläget för kameran i Lenovo Vantage är aktiverat. Kryssrutan fungerar inte.",
+                            "windowsLink": "Öppna Windows-inställningar för att ge åtkomst",
+                            "privacyLink": "Öppna kamerans sekretessläge för att inaktivera det"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {

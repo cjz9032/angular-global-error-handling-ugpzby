@@ -795,7 +795,29 @@
                         }
                     },
                     "description5": "Intelligent køling justerer blæserens hastighed, den maksimale ydeevne og administrerer batterilevetiden. Denne funktion har tre tilstande (stille tilstand, balanceret tilstand og ydeevnetilstand), og den er nu tilgængelig via skyderen til ydeevnebaseret strømstyring i Windows",
-                    "nocqldesc": "Intelligent køling gør det muligt for dig at justere systemets ydeevne og termiske temperaturer. I tilstanden \"Ydeevne\" optimeres systemets ydeevne. I tilstanden \"Kølig og stille\" holdes systemet køligere eller mere stille."
+					"nocqldesc": "Intelligent køling gør det muligt for dig at justere systemets ydeevne og termiske temperaturer. I tilstanden \"Ydeevne\" optimeres systemets ydeevne. I tilstanden \"Kølig og stille\" holdes systemet køligere eller mere stille.",
+					"dytc6": {
+                        "desc1": "Intelligent køling justerer blæserens hastighed, den maksimale ydeevne og administrerer batterilevetiden.",
+                        "desc2": "Denne funktion har de tilstande, der er angivet nedenfor, og den er nu blevet justeret med skyderen til ydeevnebaseret strømstyring i Windows. Du kan få adgang til den ved at klikke på batteriikonet på Windows-proceslinjen.",
+                        "desc3": "Nogle af tilstandene kan automatisk justeres over et større ydeevneområde baseret på din aktivitet. Tryk på Fn+T for at aktivere automatisk tilstand.",
+                        "autoMode": {
+                            "title1": "Automatisk batteritilstand",
+                            "desc1": "Skyderen er til venstre. Denne tilstand skifter dynamisk til Stille tilstand eller Batteritilstand for at opnå den bedste DC-tilstand.",
+                            "title2": "Automatisk ydeevnetilstand",
+                            "desc2": "Skyderen er i midten eller i midten til højre. Denne tilstand skifter dynamisk til Stille tilstand, Balanceret tilstand eller Ydeevnetilstand for at opnå den bedste DC-tilstand.",
+                            "title3": "Ydeevnetilstand",
+                            "desc3": "Skyderen er helt til højre. Blæserens hastighed og den tilladte overfladetemperatur er højere for at få den optimale ydeevne."
+                        },
+                        "manualMode": {
+                            "title1": "Stille tilstand",
+                            "desc1": "Skyderen er til venstre. Blæserens hastighed og ydeevnen reduceres med henblik på at opnå en køligere, mere støjsvag computer og den bedste batterilevetid.",
+                            "title2": "Balanceret tilstand",
+                            "desc2": "Skyderen er i midten eller i midten til højre. Blæserens hastighed og ydeevnen balanceres dynamisk for at opnå den bedste brugeroplevelse.",
+                            "title3": "Ydeevnetilstand",
+                            "desc3": "Skyderen er helt til højre. Blæserens hastighed og den tilladte overfladetemperatur er højere for at få den optimale ydeevne."
+                        },
+                        "desc3_1": "Nogle af tilstandene kan automatisk justeres over et større ydeevneområde baseret på din aktivitet. Tryk på Fn+ T for at deaktivere automatisk tilstand."
+                    }
                 },
                 "powerSettings": {
                     "title": "Strømindstillinger",
@@ -1245,7 +1267,8 @@
                     "more": "FLERE",
                     "control1": "KONTROLELEMENTER PÅ NAVIGATIONSPLADE",
                     "control2": "KONTROLELEMENTER PÅ MUS",
-                    "control3": "TRACKPOINT-KONTROLELEMENTER"
+					"control3": "TRACKPOINT-KONTROLELEMENTER",
+					"less": "FÆRRE"
                 }
             }
         },
@@ -1287,6 +1310,17 @@
                             "slow": "Langsomt"
                         },
                         "toolTipContent": "Vælg den ønskede indstilling for at låse skærmen ved hurtig/mellem/langsom hastighed, når din tilstedeværelse ikke er registreret. Den tid, hvor skærmen er låst, er dog også påvirket af det aktuelle brugerscenarie, sensorfunktionen og Windows-indstillingerne for skærmtimeout. Vi anbefaler derfor, at du øjeblikkeligt låser systemet, før du forlader det."
+                    },
+                    "facialRecognition": {
+                        "title": "ANSIGTSGENKENDELSE",
+                        "caption": "Du kan aktivere ansigtsgenkendelsesfunktionen og tillade, at den får adgang til kameraet. Dette værktøj tager et billede af dig for at kunne registrere din tilstedeværelse med præcision eller registrere, når du har forladt din enhed uden opsyn. Disse data behandles lokalt på din enhed. Lenovo kan ikke få adgang til eller bruge dem.",
+                        "checkBox": "Tænd for kameraet, og aktivér denne funktion",
+                        "note": {
+                            "permission": "Lenovo Vantage har ikke adgang til kamera. Afkrydsningsfeltet fungerer ikke.",
+                            "privacyMode": "Privat kameratilstand er aktiveret for Lenovo Vantage. Afkrydsningsfeltet fungerer ikke.",
+                            "windowsLink": "Gå til Windows-indstillinger for at give adgang",
+                            "privacyLink": "Gå til privat kameratilstand for at slå det fra"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
