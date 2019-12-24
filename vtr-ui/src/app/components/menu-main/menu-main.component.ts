@@ -467,9 +467,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	getMenuItems(): Promise<any> {
 		// remove onfocus showVpn()
 		// need refresh menuItem from config service, don't need localStorage
-		if (this.items && this.items.length > 0) {
-			return Promise.resolve(this.items);
-		}
+
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
 			this.items = items;
 			return this.items;
