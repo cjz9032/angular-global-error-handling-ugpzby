@@ -55,29 +55,30 @@
 		.pc-performance-block {
 			padding: 3rem 3rem 0 3rem;
 			h1 {
-				font-size: $fontsize_xl2;
+				font-size: 3rem;
 				font-weight: $weight_light;
-				color: $shade_darkest;
+				color: $shade_blue;
 				margin-bottom: 2rem;
 			}
 			h2 {
-				font-size: $fontsize_xl;
+				font-size: 2.5rem;
 				font-weight: $weight_light;
-				color: $shade_darkest;
+				color: $shade_blue;
 				margin-bottom: 2rem;
 				padding: 0;
 			}
 			h5 {
 				font-size: $fontsize_sm;
 				font-weight: $weight_light;
-				color: $shade_darkest;
+				color: $shade_blue;
 				line-height: 1.5;
+				max-width: 60rem;
 			}
 			.performance-slider-block {
 				margin: 2rem 0;
-				background: $shade_lightest;
+				background: $grey_lighter;
 				width: 100%;
-				padding: 3.5rem 2rem;
+				padding: 3.5rem 2rem 2rem 2rem;
 
 				.slider {
 					width: 100%;
@@ -87,12 +88,12 @@
 					position: relative;
 					.condition {
 						padding: 0 1.5rem;
-						font-size: 1.2rem;
+						font-size: 1rem;
 						text-transform: uppercase;
 						font-weight: $weight_regular;
 						.critical{
 							top: -18px;
-							color: #D02928;
+							color: #D00707;
 							position: absolute;
 						}
 						.well {
@@ -140,6 +141,7 @@
 						width: calc(61% - 2rem);
 						text-align: center;
 						position: relative;
+						font-weight: $weight_bold;
 						span{
 							position: relative;
 							z-index: 9;
@@ -177,12 +179,18 @@
 				font-weight: bold;
 			  }
 			.smart-features{
+				padding-left: 6rem;
+				padding-right: 6rem;
 				.title{
 					font-weight: $weight_bold;
+					font-size: $fontsize_sm;
+					color: $shade_blue;
 				}
 				p {
 					font-size: $fontsize_sm;
 					color: $shade_blue;
+					margin-top: 1.1rem;
+					font-weight: $weight_light;
 				}
 				> div {
 					position: relative;
@@ -229,14 +237,15 @@
 						.icon {
 							font-size: 2.6rem;
 							margin-right: 0.8rem;
-							color: $main_shade;
+							color: $menu_hover;
 						}
 						p {
-							font-size: 1.4rem;
+							font-size: 1.1rem;
+							font-weight: $weight_medium;
 							max-width: 6rem;
 							margin-top: 0.6rem;
 							line-height: 1.6rem;
-							color: $main_shade;
+							color: #272A3B;
 						}
 					}
 				}
