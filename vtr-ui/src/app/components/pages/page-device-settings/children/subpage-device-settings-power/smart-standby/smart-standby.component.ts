@@ -85,10 +85,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		}
 	}
 	public getSmartStandbyCapability() {
-		this.initSmartStandby();
 		this.showSmartStandby();
 		this.smartStandByInterval = setInterval(() => {
-			this.firstTimeLoad = false;
 			this.showSmartStandby();
 		}, 30000);
 	}
@@ -359,7 +357,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			const modalRef = this.modalService.open(ModalSmartStandByComponent, {
 				backdrop: 'static',
 				centered: true,
-				windowClass: 'smart-standBy-modal'
+				windowClass: 'smart-standBy-modal',
+				size: 'lg'
 			});
 			modalRef.componentInstance.isAutomatic = this.checkbox;
 		}
