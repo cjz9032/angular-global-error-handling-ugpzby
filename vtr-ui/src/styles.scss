@@ -435,9 +435,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 /*.smart-standBy-modal-styles*/
 .smart-standBy-modal {
-	.modal-dialog {
-		max-width: 85%;
-	}
+	// .modal-dialog {
+	// 	max-width: 85%;
+	// }
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
@@ -613,7 +613,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 				margin-bottom: 1rem;
 				word-wrap: break-word;
 			}
-	
+
 			p,
 			li,
 			ul {

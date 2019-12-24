@@ -35,7 +35,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	public smartStandByInterval: any;
 	public caption = this.translate.instant('device.deviceSettings.power.smartStandby.description2');
 	public tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.oldTooltipText');
-
+	firstTimeLoad: boolean;
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
 	constructor(
@@ -49,6 +49,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.firstTimeLoad = true;
 		this.getSmartStandbyCapability();
 		this.showDropDown = [false, false, false];
 		this.toggleSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
@@ -57,33 +58,37 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	public showSmartStandby() {
-		this.initSmartStandby();
 		if (this.powerService.isShellAvailable) {
 			this.powerService.getSmartStandbyCapability()
 				.then((response: boolean) => {
 					console.log(' getSmartStandbyCapability response', response);
-					this.smartStandby.isCapable = response;
-					this.cache.isCapable = response;
-					this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
-					if (this.smartStandby.isCapable) {
-						this.setSmartStandbySection();
+					if (this.firstTimeLoad || response !== this.smartStandby.isCapable) {
+						this.smartStandby.isCapable = response;
+						this.cache.isCapable = response;
+						this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
+						if (this.smartStandby.isCapable) {
+							this.setSmartStandbySection();
+						}
+
+						this.smartStandbyCapability.emit(this.smartStandby.isCapable);
 					}
-					this.smartStandbyCapability.emit(this.smartStandby.isCapable);
+					this.logger.debug('Trying after 30 seconds for smart standby capability');
+					console.log('Trying after 30 seconds for smart standby capability');
+
 				}).catch((error) => {
 					console.log('getSmartStandbyCapability Error', error.message);
 				});
-
 		}
 	}
+
 	public getSmartStandbyCapability() {
-		this.showSmartStandby()
+		this.initSmartStandby();
+		this.showSmartStandby();
 		this.smartStandByInterval = setInterval(() => {
-			this.showSmartStandby()
+			this.firstTimeLoad = false;
+			this.showSmartStandby();
 		}, 30000);
 	}
-
-
-
 
 	async setSmartStandbySection() {
 		if (this.powerService.isShellAvailable) {
