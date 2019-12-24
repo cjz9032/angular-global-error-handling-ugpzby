@@ -15,10 +15,8 @@ export class GlobalErrorHandler implements ErrorHandler {
 			errorMessage = JSON.stringify({ message: error });
 		}
 
-		const chunkFailedMessage = /Loading chunk [\d]+ failed/;
-
-		if (chunkFailedMessage.test(error.message)) {
-			window.location.reload();
+		if (error.rejection !== undefined && error.rejection.name === 'ChunkLoadError') {
+			window.location.reload(true);
 		}
 
 		this.logger.error('GlobalErrorHandler: uncaught exception', errorMessage);

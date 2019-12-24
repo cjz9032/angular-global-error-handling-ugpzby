@@ -26,31 +26,31 @@ describe('AudioService', () => {
           }
 
           
-			it('should call getMicrophoneSettings', () => {
-				const { service } = setup();
+			// it('should call getMicrophoneSettings', () => {
+			// 	const { service } = setup();
 				
-				  spyOn(service.microphone,'getMicrophoneSettings').and.callThrough();
-				  service.getMicrophoneSettings();
-				  expect(service.microphone.getMicrophoneSettings).toHaveBeenCalled();
+			// 	  spyOn(service.microphone,'getMicrophoneSettings').and.callThrough();
+			// 	  service.getMicrophoneSettings();
+			// 	  expect(service.microphone.getMicrophoneSettings).toHaveBeenCalled();
 
-				  service.isShellAvailable=false;
-				  service.getMicrophoneSettings();
-				  expect(service.microphone.getMicrophoneSettings).toHaveBeenCalled();
+			// 	  service.isShellAvailable=false;
+			// 	  service.getMicrophoneSettings();
+			// 	  expect(service.microphone.getMicrophoneSettings).toHaveBeenCalled();
 
-        });
+      //   });
 
-        it('should call getSupportedModes', () => {
-          const { service } = setup();
+        // it('should call getSupportedModes', () => {
+        //   const { service } = setup();
           
-            spyOn(service.microphone,'getSupportedModes').and.callThrough();
-            service.getSupportedModes();
-            expect(service.microphone.getSupportedModes).toHaveBeenCalled();
+        //     spyOn(service.microphone,'getSupportedModes').and.callThrough();
+        //     service.getSupportedModes();
+        //     expect(service.microphone.getSupportedModes).toHaveBeenCalled();
   
-            service.isShellAvailable=false;
-            service.getSupportedModes();
-            expect(service.microphone.getSupportedModes).toHaveBeenCalled();
+        //     service.isShellAvailable=false;
+        //     service.getSupportedModes();
+        //     expect(service.microphone.getSupportedModes).toHaveBeenCalled();
   
-          });
+        //   });
         
         it('should call getDolbyMode', () => {
           const { service } = setup();

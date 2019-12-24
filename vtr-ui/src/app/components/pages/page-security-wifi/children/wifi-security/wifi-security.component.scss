@@ -350,12 +350,14 @@
 				}
 				.wifisecurity-container-enable {
 					line-height: 1;
+					overflow: hidden;
 					span{
 						display: inline-block;
 						overflow: hidden;
 						white-space: nowrap;
 						text-overflow: ellipsis;
 						font-size: 1.2rem;
+						max-width: 100%;
 						&.badge-success {
 							background-color: $green_dark;
 						}

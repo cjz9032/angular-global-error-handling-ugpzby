@@ -11,7 +11,7 @@ import { DeviceService } from '../device/device.service';
 import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell-mock.service';
 
-describe('WarrantyService', () => {
+xdescribe('WarrantyService', () => {
 	beforeEach(() => TestBed.configureTestingModule({
 		imports: [RouterTestingModule, TranslationModule, HttpClientModule, MetricsModule],
 		providers: [TranslateStore, CommonService, DeviceService, VantageShellService, MetricsDirective]

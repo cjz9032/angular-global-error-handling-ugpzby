@@ -151,7 +151,7 @@
 		<div class="container-fluid">
 			<div class="row"
 				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible">
-				<div class="col-sm-12 col-md-12 pb-60 px-0">
+				<div class="col-sm-12 col-md-12 pb-20 px-0">
 					<vtr-widget-dashboard-warranty [item]="warrantyData"
 						[isConnected]="isOnline">
 					</vtr-widget-dashboard-warranty>
@@ -159,7 +159,7 @@
 			</div>
 			<div class="row"
 				*ngIf="!(warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible)">
-				<div class="col-sm-12 px-0 pb-0">
+				<div class="col-sm-12 col-md-12 pb-20 px-0">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
 						[actionName]="'dashboard.feedback.button' | translate"
