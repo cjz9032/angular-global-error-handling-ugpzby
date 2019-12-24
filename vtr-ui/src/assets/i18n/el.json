@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Πάντα ενεργοποιημένη",
                             "never": "ποτέ",
                             "halfTime": "Μισός χρόνος χρονοδιακόπτη απενεργοποίησης οθόνης",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Επιλογή",
+                            "time": "Ώρα"
                         },
                         "taskBarDimmer": "ΜΕΙΩΣΗ ΦΩΤΕΙΝΟΤΗΤΑΣ ΓΡΑΜΜΗΣ ΕΡΓΑΣΙΩΝ",
                         "backgroundDimmer": "ΜΕΙΩΣΗ ΦΩΤΕΙΝΟΤΗΤΑΣ ΦΟΝΤΟΥ",
@@ -1530,6 +1530,19 @@
                     "control2": "ΧΕΙΡΙΣΤΗΡΙΑ ΠΟΝΤΙΚΙΟΥ",
                     "control3": "ΧΕΙΡΙΣΤΗΡΙΑ TRACKPOINT",
                     "less": "ΛΙΓΟΤΕΡΑ"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Άλλες άδειες χρήσης λογισμικού",
             "ourWebsite": "Ο δικτυακός τόπος μας",
             "aboutYourDevice": "Πληροφορίες για τη συσκευή σας",
-            "copyright": "© 2002-2019 Lenovo Με την επιφύλαξη παντός δικαιώματος"
+            "copyright": "© 2002-2020 Lenovo Με την επιφύλαξη παντός δικαιώματος"
         },
         "quickAccess": {
             "categories": "Κατηγορίες",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "Η εκτέλεση της σάρωσης και της επισκευής ενδέχεται να προκαλέσει απώλεια δεδομένων. Συνιστάται η δημιουργία αντιγράφου ασφαλείας πριν από την εκτέλεση αυτής της λειτουργίας. Σίγουρα θέλετε να συνεχίσετε;",
                 "yes": "Ναι",
-                "no": "Όχι",
-                "question": "Are you sure you want to proceed?"
+                "no": "Όχι"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Διαβάστε περισσότερα",
                 "readLess": "Διαβάστε λιγότερα"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Αποκλειστική προσφορά του Adobe designer suite από τη Lenovo"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Ψηφιακή προσφορά της Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Το Premiere Pro είναι το κορυφαίο λογισμικό επεξεργασίας βίντεο για ταινίες, τηλεόραση και web. Το Premiere Pro περιλαμβάνει το Premiere Rush, μια εφαρμογή all-in-one που λειτουργεί σε όλες τις συσκευές σας για κοινή χρήση του βίντεο με το δίκτυό σας.",
+            "subtitle12": "Σχέδιο δημιουργικής φωτογραφίας στο cloud",
+            "body12": "Χρησιμοποιήστε το Lightroom για να επεξεργάζεστε, να οργανώνετε, να αποθηκεύετε και να μοιράζεστε τις φωτογραφίες σας από οπουδήποτε και το Photoshop για να μετατρέπετε τις εικόνες σας σε οτιδήποτε μπορείτε να φανταστείτε.",
+            "selectButton": "Επιλογή",
+            "subtitle2": "Υπολογιστές all-in-one: Βελτιωμένοι",
+            "body2": "Οι υπολογιστές all-in-one με επεξεργαστές Intel® Core™ 9ης γενιάς σας παρέχουν όλη την ισχύ ενός επιτραπέζιου υπολογιστή, συσκευασμένη σε μια κομψή οθόνη — για λιγότερη ακαταστασία, ασφάλεια βάσει υλικού και οθόνη υψηλής ανάλυσης."
         }
     }
 }

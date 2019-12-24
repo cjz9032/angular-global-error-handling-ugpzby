@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Jatkuva",
                             "never": "ei koskaan",
                             "halfTime": "Näytön käytöstä poistamisen ajastimen puoliaika",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Valitse",
+                            "time": "Aika"
                         },
                         "taskBarDimmer": "TEHTÄVÄPALKIN HIMMENNYSTOIMINTO",
                         "backgroundDimmer": "TAUSTAN HIMMENNYSTOIMINTO",
@@ -1530,6 +1530,19 @@
                     "control2": "HIIRITOIMINNOT",
                     "control3": "TRACKPOINT-TOIMINNOT",
                     "less": "VÄHEMMÄN"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Muut ohjelmistokäyttöoikeudet",
             "ourWebsite": "Verkkosivustomme",
             "aboutYourDevice": "Tietoja laitteesta",
-            "copyright": "© 2002-2019 Lenovo kaikki oikeudet pidätetään"
+            "copyright": "© 2002-2020 Lenovo kaikki oikeudet pidätetään"
         },
         "quickAccess": {
             "categories": "Luokat",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "Skannauksen ja korjauksen toteutus voi aiheuttaa tietojen katoamisen. Varmuuskopiointi on suositeltavaa tehdä ennen tämän toiminnon suorittamista. Haluatko varmasti jatkaa?",
                 "yes": "Kyllä",
-                "no": "Ei",
-                "question": "Are you sure you want to proceed?"
+                "no": "Ei"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Lue enemmän",
                 "readLess": "Lue vähemmän"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovon ainutlaatuinen Adobe Designer Suite -tarjous"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovon digitaalinen tarjous"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro on johtava videoiden muokkausohjelmisto elokuvia, TV:tä ja Internetiä varten. Premiere Pro sisältää Premiere Rush -sovelluksen, joka toimii kaikissa laitteissa ja jolla voit jakaa videoita verkostossasi.",
+            "subtitle12": "Creative Cloud Photography -tilaus",
+            "body12": "Lightroom-ohjelman avulla voit helposti muokata, järjestää, tallentaa ja jakaa valokuvia mistä tahansa. Photoshop-ohjelman avulla voit muokata kuvia vain mielikuvitus rajana.",
+            "selectButton": "Valitse",
+            "subtitle2": "Kaikki samassa: virtaviivaistettu",
+            "body2": "9. sukupolven Intel® Core™ -suorittimilla varustetut monitoimitietokoneet ovat tehokkaita pöytäkoneita, joissa on tyylikäs, selkeä ja suuritarkkuuksinen näyttö laitteistoperustaisella suojauksella."
         }
     }
 }

@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Uvijek uključeno",
                             "never": "nikad",
                             "halfTime": "Pola vremena isključivanja zaslona",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Odaberi",
+                            "time": "Vrijeme"
                         },
                         "taskBarDimmer": "ZATAMNJIVANJE PROGRAMSKE TRAKE",
                         "backgroundDimmer": "ZATAMNJIVANJE POZADINE",
@@ -1530,6 +1530,19 @@
                     "control2": "KONTROLE MIŠA",
                     "control3": "TRACKPOINT KONTROLE",
                     "less": "MANJE"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Duge licence za softver",
             "ourWebsite": "Naše web-mjesto",
             "aboutYourDevice": "Informacije o vašem uređaju",
-            "copyright": "© 2002.-2019. Lenovo. Sva prava pridržana."
+            "copyright": "© 2002.-2020. Lenovo. Sva prava pridržana."
         },
         "quickAccess": {
             "categories": "Kategorije",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "Izvođenje skeniranja i popravka može uzrokovati gubitak podataka. Preporučljivo je napraviti sigurnosnu kopiju prije izvođenja ove operacije. Želite li zaista nastaviti?",
                 "yes": "Da",
-                "no": "Ne",
-                "question": "Are you sure you want to proceed?"
+                "no": "Ne"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Pročitajte više",
                 "readLess": "Pročitajte manje"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo ekskluzivna ponuda dizajnerskog paketa Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo digitalna ponuda"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro je vodeći softver za uređivanje videa za film, TV i web. Premiere Pro uključuje Premiere Rush, sveobuhvatnu aplikaciju koja radi na svim vašim uređajima za dijeljenje videozapisa s vašom mrežom.",
+            "subtitle12": "Plan Creative Cloud Photography",
+            "body12": "Koristite Lightroom da biste jednostavno uređivali, organizirali, pohranjivali i dijelili svoje fotografije s bilo kojeg mjesta a Photoshop kako biste transformirali svoje slike u sve što možete zamisliti.",
+            "selectButton": "Odaberi",
+            "subtitle2": "Sve u jednom: pojednostavljeno",
+            "body2": "Sve-u-jednom osobna računala s procesorima Intel® Core™ 9. generacije daju vam svu snagu stolnog računala upakiranog u elegantan zaslon - za manje nereda, sigurnost zasnovanu na hardveru i prikaz visoke razlučivosti."
         }
     }
 }

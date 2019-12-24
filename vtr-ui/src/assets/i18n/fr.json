@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Toujours Activé",
                             "never": "jamais",
                             "halfTime": "Demi-durée de la minuterie d'affichage",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Sélectionner",
+                            "time": "Heur"
                         },
                         "taskBarDimmer": "RÉDUCTION DE LA LUMINOSITÉ DE LA BARRE DES TÂCHES",
                         "backgroundDimmer": "RÉDUCTION DE LA LUMINOSITÉ EN ARRIÈRE-PLAN",
@@ -1530,6 +1530,19 @@
                     "control2": "CONTRÔLE DE LA SOURIS",
                     "control3": "PARAMÈTRES TRACKPOINT",
                     "less": "MOINS"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Autres licences logicielles",
             "ourWebsite": "Notre site Web",
             "aboutYourDevice": "À propos de votre périphérique",
-            "copyright": "© 2002-2019 Lenovo tous droits réservés"
+            "copyright": "© 2002-2020 Lenovo tous droits réservés"
         },
         "quickAccess": {
             "categories": "Catégories",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "L'exécution d'une analyse et d'une réparation peut entraîner la perte de données. Il est recommandé d'effectuer une sauvegarde avant d'exécuter cette opération. Souhaitez-vous vraiment poursuivre ?",
                 "yes": "Oui",
-                "no": "Non",
-                "question": "Are you sure you want to proceed?"
+                "no": "Non"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Afficher plus",
                 "readLess": "Afficher moins"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Offre Lenovo exclusive de la suite Adobe designer"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Offre numérique Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro est le logiciel de montage vidéo leader pour les films, la télévision et le Web. Premiere Pro inclut Premiere Rush, une application tout-en-un fonctionnant sur tous vos appareils pour partager votre vidéo avec votre réseau.",
+            "subtitle12": "Plan de photographie Creative Cloud",
+            "body12": "Utilisez Lightroom pour facilement retoucher, organiser, stocker et partager vos photos depuis n'importe où, et Photoshop pour transformer vos images en tout ce que vous pouvez imaginer.",
+            "selectButton": "Sélectionner",
+            "subtitle2": "Ordinateurs tout en un : simplifié",
+            "body2": "Les PC tout-en-un dotés de la 9ème génération de processeurs Intel® Core™ vous offrent toute la puissance d'un ordinateur de bureau avec un écran élégant : pour une sécurité basée matériel moins encombrante et un écran haute résolution."
         }
     }
 }

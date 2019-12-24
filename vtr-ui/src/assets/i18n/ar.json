@@ -1365,8 +1365,8 @@
                             "alwaysOn": "قيد التشغيل دائمًا",
                             "never": "أبدًا",
                             "halfTime": "نصف وقت مؤقت إيقاف تشغيل جهاز العرض",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "تحديد",
+                            "time": "الوقت"
                         },
                         "taskBarDimmer": "تعتيم شريط المهام",
                         "backgroundDimmer": "تعتيم الخلفية",
@@ -1532,6 +1532,19 @@
                     "control2": "إعدادات تحكم الماوس",
                     "control3": "إعدادات تحكم TRACKPOINT",
                     "less": "أقل"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1912,7 +1925,7 @@
             "otherSoftwareLicenses": "تراخيص برامج أخرى",
             "ourWebsite": "موقعنا على الويب",
             "aboutYourDevice": "حول جهازك",
-            "copyright": "© 2002-2019 Lenovo جميع الحقوق محفوظة"
+            "copyright": "© 2002-2020 Lenovo جميع الحقوق محفوظة"
         },
         "quickAccess": {
             "categories": "الفئات",
@@ -2824,8 +2837,7 @@
             "popup": {
                 "description": "يمكن أن يؤدي تنفيذ الفحص والإصلاح إلى فقد البيانات. يوصى بعمل نسخة احتياطية قبل تنفيذ هذه العملية. هل تريد بالتأكيد المتابعة؟",
                 "yes": "نعم",
-                "no": "لا",
-                "question": "Are you sure you want to proceed?"
+                "no": "لا"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "اقرأ أكثر",
                 "readLess": "اقرأ أقل"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "عرض Lenovo الحصري لـ Adobe designer suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "عرض Lenovo الرقمي"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "يُعد Premiere Pro برنامج تحرير الفيديو الرائد للأفلام والتلفزيون والويب. يتضمن Premiere Pro تطبيق Premiere Rush، وهو تطبيق متكامل يعمل عبر كل أجهزتك لمشاركة الفيديو مع شبكتك.",
+            "subtitle12": "خطة مبتكرة للتصوير الفوتوغرافي بالسحابة",
+            "body12": "استخدم Lightroom لتحرير الصور وتنظيمها وتخزينها ومشاركتها بسهولة من أي مكان، وPhotoshop بحيث يمكنك تحويل الصور إلى أي شيء يمكنك تخيله.",
+            "selectButton": "تحديد",
+            "subtitle2": "الأجهزة المتكاملة: انسيابية",
+            "body2": "تمنحك أجهزة الكمبيوتر الشخصي المتكاملة المزودة بمعالجات Intel® Core™ من الجيل التاسع كل إمكانات الكمبيوتر المكتبي الذي يتم تجميعهم في شاشة أنيقة، وذلك لضمان مستوى أقل من الفوضى والأمان القائم على الأجهزة وشاشة عرض عالية الدقة."
         }
     }
 }

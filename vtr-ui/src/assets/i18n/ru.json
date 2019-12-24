@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Всегда включен",
                             "never": "никогда",
                             "halfTime": "Половина времени таймера выключения",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Выбор",
+                            "time": "Время"
                         },
                         "taskBarDimmer": "РЕГУЛЯТОР ЯРКОСТИ ПАНЕЛИ ЗАДАЧ",
                         "backgroundDimmer": "РЕГУЛЯТОР ЯРКОСТИ ФОНА",
@@ -1530,6 +1530,19 @@
                     "control2": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ МЫШИ",
                     "control3": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ TRACKPOINT",
                     "less": "МЕНЬШЕ"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Другие лицензии на программное обеспечение",
             "ourWebsite": "Наш веб-сайт",
             "aboutYourDevice": "Знакомство с возможностями вашего устройства",
-            "copyright": "© Lenovo, 2002–2019. Все права защищены"
+            "copyright": "© Lenovo, 2002–2020. Все права защищены"
         },
         "quickAccess": {
             "categories": "Категории",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "Выполнение сканирования и восстановления может привести к потере данных. Перед выполнением этой операции рекомендуется создать резервную копию. Продолжить?",
                 "yes": "Да",
-                "no": "Нет",
-                "question": "Are you sure you want to proceed?"
+                "no": "Нет"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Больше",
                 "readLess": "Меньше"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Эксклюзивное предложение набора ПО Adobe для дизайнеров от компании Lenovo"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Цифровое предложение от компании Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro — ведущее программное обеспечение для видеомонтажа в области кинематографа, телевидения и Интернета. В состав Premiere Pro входит Premiere Rush, комплексное приложение, совместимое со всеми устройствами и позволяющее предоставлять общий сетевой доступ к видеоматериалам.",
+            "subtitle12": "План Creative Cloud для работы с фотографиями",
+            "body12": "Lightroom позволяет с легкостью редактировать, систематизировать, хранить и совместно использовать фотографии в любом удобном для вас месте, а Photoshop дает широчайшие возможности по преобразованию фотографий.",
+            "selectButton": "Выбор",
+            "subtitle2": "Компьютеры \"все в одном\": оптимизированные решения",
+            "body2": "Компьютеры \"все в одном\" с процессорами Intel® Core™ 9-го поколения обеспечивают производительность настольного компьютера в формате компактного дисплея. Они занимают меньше места, оснащены аппаратной системой безопасности и дисплеем с высоким разрешением."
         }
     }
 }

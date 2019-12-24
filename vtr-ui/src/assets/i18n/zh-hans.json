@@ -1343,8 +1343,8 @@
                             "alwaysOn": "始终开启",
                             "never": "永不",
                             "halfTime": "显示屏关闭计时器的一半时间",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "选择",
+                            "time": "时间"
                         },
                         "taskBarDimmer": "任务栏调光器",
                         "backgroundDimmer": "背景调光器",
@@ -1530,6 +1530,19 @@
                     "control2": "鼠标控制",
                     "control3": "TRACKPOINT 控制",
                     "less": "更少"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "其他软件许可证",
             "ourWebsite": "我们的网站",
             "aboutYourDevice": "关于您的设备",
-            "copyright": "© 2002-2019 Lenovo All Rights Reserved"
+            "copyright": "© 2002-2020 Lenovo All Rights Reserved"
         },
         "quickAccess": {
             "categories": "类别",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "执行扫描和修复会导致数据丢失。建议在执行此操作前先进行备份。是否确实要继续？",
                 "yes": "是",
-                "no": "否",
-                "question": "Are you sure you want to proceed?"
+                "no": "否"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "阅读更多",
                 "readLess": "阅读更少"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo 针对 Adobe Designer Suite 的专享优惠"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo 数码优惠"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro 是用于电影、电视和网络的一流的视频编辑软件。Premiere Pro 包括 Premiere Rush，这是一款一体式应用程序，可在所有设备上搭配使用网络共享视频。",
+            "subtitle12": "Creative Cloud Photography 计划",
+            "body12": "使用 Lightroom 可以从任何地方和 Photoshop，轻松编辑、组织、存储和共享照片，让您可以将图片转变为您可以想象的任何画面。",
+            "selectButton": "选择",
+            "subtitle2": "多功能：简化",
+            "body2": "配备第九代 Intel® Core™ 处理器的一体机，将桌面的所有功能都装入设计时尚的显示屏中 - 干扰更少，具有基于硬件的安全性和高分辨率的显示效果。"
         }
     }
 }

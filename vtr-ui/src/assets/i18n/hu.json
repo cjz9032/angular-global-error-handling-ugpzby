@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Mindig bekapcsolva",
                             "never": "soha",
                             "halfTime": "Képernyő kikapcsolási időzítésének felénél",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Válassza ki a",
+                            "time": "Idő"
                         },
                         "taskBarDimmer": "TÁLCA ELSÖTÉTÍTÉSE",
                         "backgroundDimmer": "HÁTTÉR ELSÖTÉTÍTÉSE",
@@ -1530,6 +1530,19 @@
                     "control2": "EGÉR VEZÉRLŐELEMEI",
                     "control3": "TRACKPOINT-VEZÉRLŐK",
                     "less": "KEVESEBB"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Egyéb szoftverlicencek",
             "ourWebsite": "Webhelyünk",
             "aboutYourDevice": "Információk az eszközről",
-            "copyright": "© 2002–2019 Lenovo. Minden jog fenntartva."
+            "copyright": "© 2002–2020 Lenovo. Minden jog fenntartva."
         },
         "quickAccess": {
             "categories": "Kategóriák",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "A keresés és javítás adatvesztést okozhat. Javasoljuk, hogy a művelet végrehajtása előtt készítsen biztonsági másolatot. Biztosan folytatja?",
                 "yes": "Igen",
-                "no": "Nem",
-                "question": "Are you sure you want to proceed?"
+                "no": "Nem"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Továbbiak",
                 "readLess": "Kevesebb"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exkluzív Lenovo-ajánlat: Adobe tervezői csomag"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo digitális ajánlat"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "A Premiere Pro a vezető filmes, TV-s és az internetes videószerkesztő szoftver. A Premiere Pro magában foglalja a Premiere Rush többfunkciós alkalmazást, amely minden eszközön működik, hogy megossza videókat a hálózatban.",
+            "subtitle12": "Creative Cloud fotós előfizetés",
+            "body12": "A Lightroom segítségével bárhonnan könnyen szerkesztheti, rendezheti, tárolhatja és megoszthatja fényképeit, a Photoshop programmal pedig bármivé átalakíthatja őket, amit csak el tud képzelni.",
+            "selectButton": "Válassza ki a",
+            "subtitle2": "All-in-One: Egyszerű",
+            "body2": "Az all-in-one számítógépek a 9. generációs Intel® Core™ processzorral az asztali számítógépek minden előnyét biztosítják egy karcsú kijelzőbe csomagolva – kevesebb rendetlenséggel, hardver alapú biztonsággal és nagy felbontású kijelzővel."
         }
     }
 }

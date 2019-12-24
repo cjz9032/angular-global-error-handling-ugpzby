@@ -42,6 +42,7 @@ export class UiButtonComponent implements OnInit {
 	constructor() { }
 
 	onClickButton(event) {
+		window.getSelection().empty();
 		if (this.href) {
 			WinRT.launchUri(this.href);
 			return;

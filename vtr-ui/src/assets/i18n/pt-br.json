@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Sempre ativo",
                             "never": "nunca",
                             "halfTime": "Metade do tempo do temporizador de desligamento da tela",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Selecionar",
+                            "time": "Hora"
                         },
                         "taskBarDimmer": "REGULADOR DE LUZ DA BARRA DE TAREFAS",
                         "backgroundDimmer": "REGULADOR DE LUZ EM SEGUNDO PLANO",
@@ -1530,6 +1530,19 @@
                     "control2": "CONTROLES DO MOUSE",
                     "control3": "CONTROLES DE TRACKPOINT",
                     "less": "MENOS"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Outras licenças de software",
             "ourWebsite": "Nosso site",
             "aboutYourDevice": "Sobre o seu dispositivo",
-            "copyright": "© 2002-2019 Lenovo todos os direitos reservados"
+            "copyright": "© 2002-2020 Lenovo todos os direitos reservados"
         },
         "quickAccess": {
             "categories": "Categorias",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "A execução de verificação e de reparo pode causar perda de dados. Recomenda-se fazer um backup antes de executar esta operação. Tem certeza que deseja continuar?",
                 "yes": "Sim",
-                "no": "Não",
-                "question": "Are you sure you want to proceed?"
+                "no": "Não"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Ler mais",
                 "readLess": "Ler menos"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Oferta exclusiva da Lenovo do pacote para designers da Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Oferta digital da Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "O Premiere Pro é o principal software de edição de vídeo para filmes, TV e Web. O Premiere Pro inclui o Premiere Rush, um aplicativo all-in-one que funciona em todos seus dispositivos para compartilhar seu vídeo com sua rede.",
+            "subtitle12": "Plano de Fotografia da Creative Cloud",
+            "body12": "Use o Lightroom para editar, organizar, armazenar e compartilhar facilmente suas fotos de qualquer lugar e o Photoshop para transformar suas imagens em qualquer coisa que você puder imaginar.",
+            "selectButton": "Selecionar",
+            "subtitle2": "All-in-ones: simplificados",
+            "body2": "Os PCs all-in-one com os processadores Intel® Core™ de 9ª geração oferecem todo o poder de um desktop com uma tela elegante – para menos confusão, segurança baseada em hardware e uma tela de alta resolução."
         }
     }
 }

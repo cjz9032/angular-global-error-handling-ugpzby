@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Vždy zapnutý",
                             "never": "nikdy",
                             "halfTime": "Polovica času, po ktorom sa vypne obrazovka",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Vybrať",
+                            "time": "Čas"
                         },
                         "taskBarDimmer": "ZNÍŽENIE JASU PANELA ÚLOH",
                         "backgroundDimmer": "ZNÍŽENIE JASU POZADIA",
@@ -1530,6 +1530,19 @@
                     "control2": "OVLÁDACIE PRVKY MYŠI",
                     "control3": "OVLÁDACIE PRVKY TRACKPOINT",
                     "less": "MENEJ"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Ďalšie licencie na softvér",
             "ourWebsite": "Naša webová lokalita",
             "aboutYourDevice": "Informácie o vašom zariadení",
-            "copyright": "© 2002 – 2019 Lenovo. Všetky práva vyhradené."
+            "copyright": "© 2002 – 2020 Lenovo. Všetky práva vyhradené."
         },
         "quickAccess": {
             "categories": "Kategórie",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "Vykonanie kontroly a opravy môže spôsobiť stratu údajov. Pred vykonaním tejto operácie sa odporúča vytvorenie zálohy. Naozaj to chcete pokračovať?",
                 "yes": "Áno",
-                "no": "Nie",
-                "question": "Are you sure you want to proceed?"
+                "no": "Nie"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Ďalšie informácie",
                 "readLess": "Menej informácií"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exkluzívna ponuka spoločnosti Lenovo: nástroje Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitálna ponuka spoločnosti Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro je popredný softvér na úpravu videa na filmové, televízne a webové použitie. Premiere Pro obsahuje aplikáciu Premiere Rush, ktorá ponúka všetky nástroje na jednom mieste, funguje na všetkých vašich zariadeniach a umožňuje zdieľať video v sieti.",
+            "subtitle12": "Plán Creative Cloud Fotografia",
+            "body12": "Pomocou aplikácie Lightroom môžete ľahko upravovať, organizovať, ukladať a zdieľať svoje fotografie odkiaľkoľvek a Photoshop vám ich umožní transformovať na čokoľvek, čo si dokážete predstaviť.",
+            "selectButton": "Vybrať",
+            "subtitle2": "Počítače All-in-One: stolové počítače jednoduchšie",
+            "body2": "Počítače All-in-One s procesormi Intel® Core™ 9. generácie vám poskytnú všetok výkon stolového počítača skrytého v elegantnej obrazovke. Vychutnávajte si väčší poriadok na stole, hardvérového zabezpečenie a obrazovku s vysokým rozlíšením."
         }
     }
 }

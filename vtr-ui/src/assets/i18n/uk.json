@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Завжди увімк.",
                             "never": "ніколи",
                             "halfTime": "Половина часу до вимкнення дисплея",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Вибрати",
+                            "time": "Час"
                         },
                         "taskBarDimmer": "ЗАТІНЕННЯ ПАНЕЛІ ЗАВДАНЬ",
                         "backgroundDimmer": "ЗАТІНЕННЯ ФОНОВИХ ВІКОН",
@@ -1530,6 +1530,19 @@
                     "control2": "ЕЛЕМЕНТИ КЕРУВАННЯ МИШІ",
                     "control3": "ЕЛЕМЕНТИ КЕРУВАННЯ TRACKPOINT",
                     "less": "МЕНШЕ"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Інші ліцензії на програмне забезпечення",
             "ourWebsite": "Наш веб-сайт",
             "aboutYourDevice": "Відомості про ваш пристрій",
-            "copyright": "© Lenovo, 2002–2019 р. Усі права захищено."
+            "copyright": "© Lenovo, 2002–2020 р. Усі права захищено."
         },
         "quickAccess": {
             "categories": "Категорії",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "Сканування й виправлення може призвести до втрати даних. Рекомендуємо зробити резервну копію, перш ніж виконувати цю операцію. Справді продовжити?",
                 "yes": "Так",
-                "no": "Ні",
-                "question": "Are you sure you want to proceed?"
+                "no": "Ні"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Розгорнути",
                 "readLess": "Згорнути"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Ексклюзивна пропозиція Lenovo на набір Adobe для дизайнерів"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Спеціальна пропозиція від Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro – це провідне програмне забезпечення редагування відео для кіно, телебачення та Інтернету. Premiere Pro включає в себе Premiere Rush, універсальну програму, яка ділиться вашими відео в мережі зі всіх пристроїв.",
+            "subtitle12": "План Creative Cloud Photography",
+            "body12": "Редагуйте, впорядковуйте, зберігайте та забезпечуйте спільний доступ до фотографій будь-звідки з Lightroom. Перетворюйте зображення на все, що можете собі уявити, з Photoshop.",
+            "selectButton": "Вибрати",
+            "subtitle2": "Нові обтічні моноблоки",
+            "body2": "Моноблочні комп'ютери з процесорами Intel® Core™ 9-го покоління пропонують потужність великого ПК в тонкому дисплеї. Вибирайте більше порядку, надійніший апаратний захист і дисплей високої роздільної здатності."
         }
     }
 }

@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Mereu pornit",
                             "never": "niciodată",
                             "halfTime": "Jumătate din timpul pentru dezactivarea afișajului",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Selectare",
+                            "time": "Oră"
                         },
                         "taskBarDimmer": "ESTOMPAREA BAREI DE ACTIVITĂȚI",
                         "backgroundDimmer": "ESTOMPAREA FUNDALULUI",
@@ -1530,6 +1530,19 @@
                     "control2": "ELEMENTE DE CONTROL MOUSE",
                     "control3": "ELEMENTE DE CONTROL TRACKPOINT",
                     "less": "MAI PUŢIN"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Alte licențe software",
             "ourWebsite": "Site-ul nostru",
             "aboutYourDevice": "Despre dispozitiv",
-            "copyright": "© 2002-2019 Lenovo toate drepturile sunt rezervate"
+            "copyright": "© 2002-2020 Lenovo toate drepturile sunt rezervate"
         },
         "quickAccess": {
             "categories": "Categorii",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "Executarea scanării și a reparării poate duce la pierderea datelor. Se recomandă efectuarea unei copii de siguranță înainte de a executa această operație. Sigur doriți să continuați?",
                 "yes": "Da",
-                "no": "Nu",
-                "question": "Are you sure you want to proceed?"
+                "no": "Nu"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Citiţi mai mult",
                 "readLess": "Citiţi maI puţin"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Ofertă Lenovo exclusivă la suitele de proiectare Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Ofertă digitală Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro este software-ul de vârf în domeniu de editare video pentru filme, TV şi web. Premiere Pro include Premiere Rush, o aplicaţie integrată care funcţionează pe toate dispozitivele, pentru a partaja lucrările dvs. video în reţeaua dvs. de prieteni.",
+            "subtitle12": "Planul Creative Cloud Photography",
+            "body12": "Utilizaţi Lightroom pentru a edita, organiza, stoca şi partaja fotografiile cu uşurinţă de oriunde şi Photoshop pentru a transforma imaginile în orice vă puteţi imagina.",
+            "selectButton": "Selectare",
+            "subtitle2": "Echipamente multifuncţionale: acum mai optimizate",
+            "body2": "PC-urile multifuncţionale cu procesoare Intel® Core™ din a 9-a generaţie vă oferă toată puterea unui desktop într-un monitor elegant – pentru mai puţin dezordine, securitate bazată pe hardware şi afişare de înaltă rezoluţie."
         }
     }
 }

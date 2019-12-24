@@ -32,6 +32,7 @@ export class HardwareScanService {
 	private deviceInRecover: string;
 	private isViewingRecoverLog = false;
 	private hasDevicesToRecover = false;
+	private scanOrRBSFinished = false;
 
 	private quickScanRequest: any = []; // request modules
 	private quickScanResponse: any = []; // response modules
@@ -109,6 +110,10 @@ export class HardwareScanService {
 		this.showComponentList = refreshing;
 	}
 
+	public isScanOrRBSFinished() {
+		return this.scanOrRBSFinished;
+	}
+
 	public getCulture() {
 		return this.culture;
 	}
@@ -155,6 +160,10 @@ export class HardwareScanService {
 
 	public getViewResultItems() {
 		return this.viewResultItems;
+	}
+
+	public setScanOrRBSFinished(value: boolean) {
+		this.scanOrRBSFinished = value;
 	}
 
 	public setViewResultItems(items: any) {
@@ -463,6 +472,7 @@ export class HardwareScanService {
 			this.scanExecution = true;
 			this.disableCancel = true;
 			this.workDone.next(false);
+			this.setScanOrRBSFinished(false);
 			this.clearLastResponse();
 
 			// As user has started either a Quick or Custom Scan, it means that the actual
@@ -502,6 +512,7 @@ export class HardwareScanService {
 					}
 
 					this.workDone.next(true);
+					this.setScanOrRBSFinished(true);
 
 					// Retrieve an updated version of Scan's last results
 					this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
@@ -582,6 +593,7 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			this.clearLastResponse();
 			this.cancelRequested = false;
+			this.setScanOrRBSFinished(false);
 			return this.hardwareScanBridge.getRecoverBadSectors(payload, (response: any) => {
 				// Keeping track of the latest response allows the right render when user
 				// navigates to another page and then come back to the Hardware Scan page
@@ -608,6 +620,7 @@ export class HardwareScanService {
 			}).finally(() => {
 				this.setIsScanDone(true);
 				this.cleanUp();
+				this.setScanOrRBSFinished(true);
 			});
 		}
 	}

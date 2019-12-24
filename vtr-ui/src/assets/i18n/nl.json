@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Altijd aan",
                             "never": "nooit",
                             "halfTime": "Timer Helft van de tijd voordat beeldscherm wordt uitgeschakeld",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Selecteren",
+                            "time": "Tijd"
                         },
                         "taskBarDimmer": "TAAKBALKDIMMER",
                         "backgroundDimmer": "ACHTERGRONDDIMMER",
@@ -1530,6 +1530,19 @@
                     "control2": "MUISBEDIENING",
                     "control3": "TRACKPOINT-BESTURINGSELEMENTEN",
                     "less": "MINDER"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Overige softwarelicenties",
             "ourWebsite": "Onze website",
             "aboutYourDevice": "Info over uw apparaat",
-            "copyright": "© 2002-2019 Lenovo alle rechten voorbehouden"
+            "copyright": "© 2002-2020 Lenovo alle rechten voorbehouden"
         },
         "quickAccess": {
             "categories": "Categorieën",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "Het uitvoeren van scans en herstel kan gegevensverlies tot gevolg hebben. Het verdient aanbeveling een back-up te maken voordat u deze bewerking uitvoert. Weet u zeker dat u wilt doorgaan?",
                 "yes": "Ja",
-                "no": "Nee",
-                "question": "Are you sure you want to proceed?"
+                "no": "Nee"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Meer weergeven",
                 "readLess": "Minder weergeven"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Exclusieve aanbieding van Lenovo voor Adobe designer-suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitale aanbieding van Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro is de toonaangevende videobewerkingssoftware voor film, tv en het web. Premiere Pro omvat Premiere Rush, een alles-in-één app die werkt op al uw apparaten voor het delen van video op uw netwerk.",
+            "subtitle12": "Creative Cloud Photography-plan",
+            "body12": "Gebruik Lightroom om eenvoudig overal uw foto's te bewerken, organiseren en op te slaan, en Photoshop voor het transformeren van uw afbeeldingen naar alles dat u zich maar kunt voorstellen.",
+            "selectButton": "Selecteren",
+            "subtitle2": "Alles-in-één computers: gestroomlijnd",
+            "body2": "Alles-in-één pc's met 9e generatie Intel® Core™ processoren voorzien u van de kracht van een desktop in een strak design — voor minder volume, op hardware gebaseerde beveiliging en een scherm met hoge resolutie."
         }
     }
 }

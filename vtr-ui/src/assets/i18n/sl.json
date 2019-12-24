@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Vedno vklopljeno",
                             "never": "nikoli",
                             "halfTime": "Polovica časa časovnika za izklop zaslona",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Izbira",
+                            "time": "Ura"
                         },
                         "taskBarDimmer": "ZATEMNJEVALNIK OPRAVILNE VRSTICE",
                         "backgroundDimmer": "ZATEMNJEVALNIK OZADJA",
@@ -1530,6 +1530,19 @@
                     "control2": "KONTROLNIKI MIŠKE",
                     "control3": "KONTROLNIKI TRACKPOINT",
                     "less": "MANJ"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Druge licence za programsko opremo",
             "ourWebsite": "Naše spletno mesto",
             "aboutYourDevice": "O vaši napravi",
-            "copyright": "© 2002–2019 Lenovo – vse pravice so pridržane"
+            "copyright": "© 2002–2020 Lenovo – vse pravice so pridržane"
         },
         "quickAccess": {
             "categories": "Kategorije",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "Izvajanje pregleda in popravila lahko povzroči izgubo podatkov. Priporočamo, da pred začetkom tega postopka izdelate varnostno kopijo. Ali ste prepričani, da želite nadaljevati?",
                 "yes": "Da",
-                "no": "Ne",
-                "question": "Are you sure you want to proceed?"
+                "no": "Ne"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Preberite več",
                 "readLess": "Preberite manj"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Ekskluzivna ponudba družbe Lenovo oblikovalske zbirke Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitalna ponudba družbe Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro je vodilna programska oprema za urejanje videoposnetkov za film, TV in splet. Premiere Pro vključuje Premiere Rush, aplikacijo »vse-v-enem«, ki deluje v vseh vaših napravah za skupno rabo videoposnetka z vašim omrežjem.",
+            "subtitle12": "Paket Creative Cloud Photography",
+            "body12": "Uporabite Lightroom za enostavno urejanje, organiziranje, shranjevanje in deljenje fotografij z drugimi od koder koli ter Photoshop, tako da lahko slike pretvorite v vse, kar si lahko zamislite.",
+            "selectButton": "Izbira",
+            "subtitle2": "Računalniki »vse-v-enem«: učinkovito",
+            "body2": "Računalniki »vse-v-enem« s procesorji Intel® Core™ 9. generacije vam nudijo vso zmogljivost namiznega računalnika, vse pa je zapakirano v eleganten zaslon za manj nereda, varnosti, ki temelji na strojni opremi, in z zaslonom z visoko ločljivostjo."
         }
     }
 }

@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Altid tændt",
                             "never": "aldrig",
                             "halfTime": "Halv tid for tidsindstilling for slukket skærm",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Vælg",
+                            "time": "Klokkeslæt"
                         },
                         "taskBarDimmer": "PROCESLINJEDÆMPER",
                         "backgroundDimmer": "BAGGRUNDSDÆMPER",
@@ -1530,6 +1530,19 @@
                     "control2": "KONTROLELEMENTER PÅ MUS",
                     "control3": "TRACKPOINT-KONTROLELEMENTER",
                     "less": "FÆRRE"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Andre softwarelicenser",
             "ourWebsite": "Vores websted",
             "aboutYourDevice": "Om din enhed",
-            "copyright": "© 2002-2019 Lenovo all rights reserved"
+            "copyright": "© 2002-2020 Lenovo all rights reserved"
         },
         "quickAccess": {
             "categories": "Kategorier",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "Udførelsen af scanning og reparation kan medføre tab af data. Det anbefales, at du tager en sikkerhedskopi, før du udfører denne handling. Er du sikker på, at du vil fortsætte?",
                 "yes": "Ja",
-                "no": "Nej",
-                "question": "Are you sure you want to proceed?"
+                "no": "Nej"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Læs flere",
                 "readLess": "Læs færre"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Eksklusivt tilbud fra Lenovo med Adobe-designerpakke"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Digitalt Lenovo-tilbud"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro er den førende videoredigeringssoftware til film, tv og internettet. Premiere Pro indeholder Premiere Rush, en alt-i-en-app, der fungerer på tværs af alle dine enheder og kan bruges til at dele din video med dit netværk.",
+            "subtitle12": "Creative Cloud Photography-plan",
+            "body12": "Brug Lightroom til nemt at redigere, organisere, gemme og dele dine billeder, uanset hvor de kommer fra – og brug Photoshop, så du kan omdanne dine billeder til alt, hvad du kan forestille dig.",
+            "selectButton": "Vælg",
+            "subtitle2": "Alt-i-en-computere: strømlinet",
+            "body2": "Alt-i-en-pc'er med 9. generations Intel® Core™-processorer giver dig alle kræfterne i en stationær computer i en slank skærm. Du får mindre rod, hardwarebaseret sikkerhed og en skærm med en høj opløsning."
         }
     }
 }

@@ -1165,7 +1165,8 @@
                     },
                     "gaugeReset": {
                         "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+						"description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+						"percentNote": "Note: During the process, the battery percentage might fluctuate.",
                         "barCode": "Barcode",
                         "progress": "Progress",
                         "remaining": "Remaining",
@@ -1494,6 +1495,19 @@
                         "noInstalledAppsNote": "Note: To use the feature, you need to download and install the apps first."
                     }
                 },
+				"backlight": {
+					"title": "Keyboard backlight",
+					"description": {
+						"base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+						"auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+					},
+					"level": {
+						"auto": "Auto",
+						"low": "Low",
+						"high": "High",
+						"off": "Off"
+					}
+				},
                 "userDefinedKey": {
                     "title": "User-defined Key",
                     "caption": "The key represented by the star icon allows you to set user defined function",
@@ -2229,7 +2243,7 @@
             "otherSoftwareLicenses": "Other software licenses",
             "ourWebsite": "Our website",
             "aboutYourDevice": "About your device",
-            "copyright": "© 2002-2019 Lenovo all rights reserved"
+            "copyright": "© 2002-2020 Lenovo all rights reserved"
         },
         "quickAccess": {
             "categories": "Categories",
@@ -3222,6 +3236,23 @@
                 "readMore": "Read More",
                 "readLess": "Read Less"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo exclusive offer of Adobe designer suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo digital offer"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro is the leading video editing software for film, TV and the web. Premiere Pro includes Premiere Rush, an all-in-one app that works across all your devices to share your video with your network.",
+            "subtitle12": "Creative Cloud Photography plan",
+            "body12": "Use Lightroom to easily edit, organize, store, and share your photos from anywhere, and Photoshop so you can transform your images to anything you can imagine.",
+            "selectButton": "Select",
+            "subtitle2": "All-in-Ones: Streamlined",
+            "body2": "All-in-One PCs with 9th Gen Intel® Core™ processors give you all the power of a desktop packaged in a sleek display — for less clutter, hardware-based security, and a hi-res display."
         }
     }
 }

@@ -54,6 +54,10 @@ export class WidgetHardwareScanComponent implements OnInit {
 		this.checkCancel.emit();
 	}
 
+	public isScanOrRBSFinished() {
+		return this.hardwareScanService.isScanOrRBSFinished();
+	}
+
 	public getFinalResultCode() {
 		if (this.hardwareScanService) {
 			return this.hardwareScanService.getFinalResultCode();

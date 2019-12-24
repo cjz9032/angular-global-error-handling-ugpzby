@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Sempre ligado",
                             "never": "nunca",
                             "halfTime": "Intervalo de tempo de exibição do temporizador",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Selecionar",
+                            "time": "Hora"
                         },
                         "taskBarDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DA BARRA DE TAREFAS",
                         "backgroundDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DE SEGUNDO PLANO",
@@ -1530,6 +1530,19 @@
                     "control2": "CONTROLOS DO RATO",
                     "control3": "CONTROLOS DO TRACKPOINT",
                     "less": "MENOS"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Outras licenças de software",
             "ourWebsite": "O nosso sítio da Web",
             "aboutYourDevice": "Acerca do dispositivo",
-            "copyright": "© 2002-2019 Lenovo. Todos os direitos reservados"
+            "copyright": "© 2002-2020 Lenovo. Todos os direitos reservados"
         },
         "quickAccess": {
             "categories": "Categorias",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "A execução da verificação e reparação pode originar perda de dados. É recomendado efetuar uma cópia de segurança antes de executar esta operação. Tem a certeza de que pretende continuar?",
                 "yes": "Sim",
-                "no": "Não",
-                "question": "Are you sure you want to proceed?"
+                "no": "Não"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Ler mais",
                 "readLess": "Ler menos"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Promoção exclusiva da Lenovo: Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Promoção digital da Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro é o principal software de edição de vídeo para cinema, televisão e a Web. O Premiere Pro inclui o Premiere Rush, uma aplicação multifunções que funciona em todos os seus dispositivos para partilhar os seus vídeos com a sua rede.",
+            "subtitle12": "Plano Creative Cloud Photography",
+            "body12": "Utilize o Lightroom para editar, organizar, armazenar e partilhar facilmente as suas fotografias em qualquer lugar, e o Photoshop para poder transformar as suas imagens em tudo aquilo que conseguir imaginar.",
+            "selectButton": "Selecionar",
+            "subtitle2": "Multifunções: otimizado",
+            "body2": "Os PCs All-in-One com processadores Intel® Core™ de 9.ª geração oferecem toda a potência de um desktop com um ecrã elegante para desfrutar de uma segurança baseada em hardware simplificada e um ecrã de alta resolução."
         }
     }
 }

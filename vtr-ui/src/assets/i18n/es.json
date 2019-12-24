@@ -1363,8 +1363,8 @@
                             "alwaysOn": "Siempre activo",
                             "never": "nunca",
                             "halfTime": "Mitad del tiempo del temporizador de apagado de pantalla",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Seleccione",
+                            "time": "Hora"
                         },
                         "taskBarDimmer": "ATENUADOR DE BARRA DE TAREAS",
                         "backgroundDimmer": "ATENUADOR DE FONDO",
@@ -1530,6 +1530,19 @@
                     "control2": "CONTROLES DE MOUSE",
                     "control3": "CONTROLES DE TRACKPOINT",
                     "less": "MENOS"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "Otras licencias de software",
             "ourWebsite": "Nuestro sitio web",
             "aboutYourDevice": "Acerca de su dispositivo",
-            "copyright": "© 2002-2019 Lenovo todos los derechos reservados"
+            "copyright": "© 2002-2020 Lenovo todos los derechos reservados"
         },
         "quickAccess": {
             "categories": "Categorías",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "La ejecución del examen y la reparación pueden producir la pérdida de datos. Se recomienda realizar una copia de seguridad antes de ejecutar esta operación. ¿Seguro que desea continuar?",
                 "yes": "Sí",
-                "no": "No",
-                "question": "Are you sure you want to proceed?"
+                "no": "No"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "Leer más",
                 "readLess": "Leer menos"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Oferta exclusiva de Lenovo para la suite de herramientas de diseño de Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Oferta digital de Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro es el software de edición de video líder para películas, TV y la Web. Premiere Pro incluye Premiere Rush, una aplicación todo en uno que funciona en todos los dispositivos para compartir video en su red.",
+            "subtitle12": "Plan fotográfico de Creative Cloud",
+            "body12": "Utilice Lightroom en combinación con Photoshop para editar, organizar, almacenar y compartir fácilmente sus fotos desde cualquier lugar, de forma que pueda transformar sus imágenes en cualquier elemento que pueda imaginar.",
+            "selectButton": "Seleccione",
+            "subtitle2": "Las PC todo en uno perfeccionadas",
+            "body2": "Las PC todo en uno con los procesadores Intel® Core™ de novena generación le proporcionan toda la potencia de una computadora de escritorio en una pantalla elegante, lo que significa menos desorden, seguridad basada en hardware y una pantalla de alta resolución."
         }
     }
 }

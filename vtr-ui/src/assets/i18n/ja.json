@@ -1363,8 +1363,8 @@
                             "alwaysOn": "常にオン",
                             "never": "なし",
                             "halfTime": "ディスプレイ・オフ・タイマーの半分の時間",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "ツールバーで",
+                            "time": "時刻"
                         },
                         "taskBarDimmer": "タスクバーを暗くする",
                         "backgroundDimmer": "バックグラウンドを暗くする",
@@ -1530,6 +1530,19 @@
                     "control2": "マウス・コントロール",
                     "control3": "TRACKPOINT 制御",
                     "less": "非表示にする"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1923,7 @@
             "otherSoftwareLicenses": "その他のソフトウェア・ライセンス",
             "ourWebsite": "当社のウェブサイト",
             "aboutYourDevice": "ご使用のデバイスについて",
-            "copyright": "© 2002-2019 Lenovo all rights reserved"
+            "copyright": "© 2002-2020 Lenovo all rights reserved"
         },
         "quickAccess": {
             "categories": "カテゴリー",
@@ -2822,8 +2835,7 @@
             "popup": {
                 "description": "スキャンと修復を実行すると、データが失われる可能性があります。この操作を実行する前にバックアップを作成することをお勧めします。続行してもよろしいですか",
                 "yes": "はい",
-                "no": "いいえ",
-                "question": "Are you sure you want to proceed?"
+                "no": "いいえ"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -3223,6 +3235,23 @@
                 "readMore": "表示を多くする",
                 "readLess": "表示を少なくする"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Adobe デザイナー・スイートの Lenovo 限定特典"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo デジタル特典"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro は、映画、テレビ、Web 向けの主要なビデオ編集ソフトウェアです。Premiere Pro には、すべてのデバイスで機能し、ネットワークでビデオを共有するオールインワン・アプリの Premiere Rush が含まれています。",
+            "subtitle12": "Creative Cloud フォト・プラン",
+            "body12": "Lightroom を使用すれば、どこからでも簡単に写真を編集、整理、保存、共有できます。Photoshop があれば、画像を思い通りに変えることができます。",
+            "selectButton": "ツールバーで",
+            "subtitle2": "オールインワン: 簡素化",
+            "body2": "第 9 世代 Intel® Core™ プロセッサーを搭載したオールインワン PC によって、あらゆるデスクトップの強みが光沢のあるディスプレイに詰め込まれていることで、乱雑さが抑えられ、ハードウェアベースのセキュリティーと高解像度のディスプレイが実現されています。"
         }
     }
 }
