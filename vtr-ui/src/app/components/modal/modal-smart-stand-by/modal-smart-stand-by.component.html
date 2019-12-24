@@ -1,0 +1,51 @@
+<div class="modal-body vtr-modal-smart-stand-by">
+    <div class="row justify-content-end">
+        <div class="btn-close">
+            <button type="button" role="button" class="close" tabindex="1" aria-hidden="true"
+                aria-label="ds-rsmart-standby-close-button" (click)="closeModal()" (keydown.enter)="closeModal()">
+                <fa-icon [icon]="['fal', 'times']"></fa-icon>
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div *ngFor="let item of items">
+                <div class="pl-2">
+                    <div class="tittle">{{item.tittle | translate}}</div>
+                    <div class="sub-tittle">{{item.subTittle | translate}}</div>
+                </div>
+                <div #chartContainer [id]="'chartContainer-' + item"></div>
+                <div *ngIf="item && item.legends" class="d-flex justify-content-end legends-row">
+                    <span class="mr-1">
+                        {{'device.deviceSettings.power.smartStandby.graph.legends.none' | translate}}
+                    </span>
+                    <!-- <span *ngFor="let bgcolor of item.colors.first" class="graph-legend" [innerHtml]="item.legends" [style.backgroundColor]="bgcolor"></span> -->
+                    <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[0]"></span>
+                    <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[1]"></span>
+                    <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[2]"></span>
+                    <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[3]"></span>
+                        <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[4]"></span>
+                    <span class="ml-1">
+                        {{'device.deviceSettings.power.smartStandby.graph.legends.frequent' | translate}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mt-3" *ngIf="isAutomatic && isSufficient === false">
+            <div class="note pl-4">
+                <h4> {{'device.deviceSettings.power.smartStandby.graph.graphNote' | translate}} </h4>
+            </div>
+        </div>
+        <div>
+            <button id="smart-standby-close" role="button" attr.aria-label="smart-standby-close" tabindex="1"
+                class="btn close-button" (click)="closeModal()"
+                (keydown.enter)="closeModal()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate | uppercase}}
+            </button>
+        </div>
+    </div>
+</div>

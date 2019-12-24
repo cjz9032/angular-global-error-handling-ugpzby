@@ -7,6 +7,11 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
+import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart-stand-by/modal-smart-stand-by.component';
+
 
 @Component({
 	selector: 'vtr-smart-standby',
@@ -14,7 +19,6 @@ import { EMPTY } from 'rxjs';
 	styleUrls: ['./smart-standby.component.scss']
 })
 export class SmartStandbyComponent implements OnInit, OnDestroy {
-
 	public smartStandby = new SmartStandby();
 	cache: SmartStandby;
 	public smartStandbyStartTime: string;
@@ -23,16 +27,29 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	showDiffNote: boolean;
 	showDropDown: boolean[];
 	toggleSubscription: Subscription;
+	checkbox = false;
+	isCollapsed = false;
+	public automodeBtnVal = true;
+	public manualmodeBtnVal = false;
+	public isAutonomicCapability = false;
+	public smartStandByInterval: any;
+	public caption = this.translate.instant('device.deviceSettings.power.smartStandby.description2');
+	public tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.oldTooltipText');
 
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
 	constructor(
+		private modalService: NgbModal,
 		public powerService: PowerService,
 		private logger: LoggerService,
-		public commonService: CommonService) { }
+		public commonService: CommonService,
+		public smartStandbyService: SmartStandbyService,
+		private translate: TranslateService, ) {
+		this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
+	}
 
 	ngOnInit() {
-		this.showSmartStandby();
+		this.getSmartStandbyCapability();
 		this.showDropDown = [false, false, false];
 		this.toggleSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onSmartStandbyNotification(notification);
@@ -51,13 +68,22 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 					if (this.smartStandby.isCapable) {
 						this.setSmartStandbySection();
 					}
-
 					this.smartStandbyCapability.emit(this.smartStandby.isCapable);
 				}).catch((error) => {
 					console.log('getSmartStandbyCapability Error', error.message);
 				});
+
 		}
 	}
+	public getSmartStandbyCapability() {
+		this.showSmartStandby()
+		this.smartStandByInterval = setInterval(() => {
+			this.showSmartStandby()
+		}, 30000);
+	}
+
+
+
 
 	async setSmartStandbySection() {
 		if (this.powerService.isShellAvailable) {
@@ -72,6 +98,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 				this.smartStandby.activeStartEnd = activeStartEnd;
 				this.splitStartEndTime();
 				this.smartStandby.daysOfWeekOff = daysOffWeek;
+				this.smartStandbyService.days = daysOffWeek;
 				this.cache.activeStartEnd = this.smartStandby.activeStartEnd;
 				this.cache.daysOfWeekOff = this.smartStandby.daysOfWeekOff;
 				this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
@@ -83,6 +110,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	initSmartStandby() {
+		this.getSmartStandbyIsAutonomic();
+		this.getIsAutonomicCapability();
 		this.initDataFromCache();
 		this.splitStartEndTime();
 	}
@@ -98,6 +127,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			this.smartStandby.isEnabled = this.cache.isEnabled;
 			this.smartStandby.activeStartEnd = this.cache.activeStartEnd;
 			this.smartStandby.daysOfWeekOff = this.cache.daysOfWeekOff;
+			this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
 		} else {
 			this.cache = new SmartStandby();
 		}
@@ -180,6 +210,9 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	onSetDaysOfWeekOff(event) {
 		const daysOfWeekOff = event;
 		this.smartStandby.daysOfWeekOff = daysOfWeekOff;
+		this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
+		this.cache.daysOfWeekOff = daysOfWeekOff;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
 		try {
 			console.log('setSmartStandbyDaysOfWeekOff entered', event);
 			if (this.powerService.isShellAvailable) {
@@ -238,11 +271,89 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
+	public getIsAutonomicCapability() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService.getIsAutonomicCapability()
+					.then(response => {
+						console.log('===== getIsAutonomicCapability =====:', response);
+						this.isAutonomicCapability = response || false;
+						if (this.isAutonomicCapability) {
+							this.caption = this.translate.instant('device.deviceSettings.power.smartStandby.description');
+							this.tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.tooltip');
+						}
+					}).catch(error => {
+						this.logger.error('getIsAutonomicCapability', error.message);
+						return EMPTY;
+					});
+			}
+		} catch (error) {
+			this.logger.error('getIsAutonomicCapability', error.message);
+			return EMPTY;
+		}
+	}
+	public setSmartStandbyIsAutonomic(onOff) {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService.setSmartStandbyIsAutonomic(onOff)
+					.then((value: number) => {
+						console.log('setSmartStandbyIsAutonomic', value);
+					}).catch(error => {
+						this.logger.error('setSmartStandbyIsAutonomic', error.message);
+						return EMPTY;
+					});
+			}
+		} catch (error) {
+			this.logger.error('setSmartStandbyIsAutonomic' + error.message);
+		}
+	}
+
+	public getSmartStandbyIsAutonomic() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService.getSmartStandbyIsAutonomic()
+					.then((response: boolean) => {
+						this.checkbox = response;
+						console.log('getSmartStandbyIsAutonomic:', response);
+					}).catch(error => {
+						this.logger.error('getSmartStandbyIsAutonomic', error.message);
+						return EMPTY;
+					});
+			}
+		} catch (error) {
+			this.logger.error('getSmartStandbyIsAutonomic', error.message);
+			return EMPTY;
+		}
+	}
+
+	onCheckboxClicked(event) {
+		this.checkbox = event;
+		this.setSmartStandbyIsAutonomic(this.checkbox);
+	}
+
+	public onToggle(elem: HTMLElement) {
+		elem.focus();
+		this.isCollapsed = !this.isCollapsed;
+	}
+	public changeMode(automaticMode, manualMode) {
+		this.automodeBtnVal = automaticMode;
+		this.manualmodeBtnVal = manualMode;
+	}
+	public showUsageGraph() {
+		if (this.smartStandby.isEnabled) {
+			const modalRef = this.modalService.open(ModalSmartStandByComponent, {
+				backdrop: 'static',
+				centered: true,
+				windowClass: 'smart-standBy-modal'
+			});
+			modalRef.componentInstance.isAutomatic = this.checkbox;
+		}
+	}
 
 	ngOnDestroy() {
+		clearTimeout(this.smartStandByInterval);
 		if (this.toggleSubscription) {
 			this.toggleSubscription.unsubscribe();
 		}
 	}
-
 }

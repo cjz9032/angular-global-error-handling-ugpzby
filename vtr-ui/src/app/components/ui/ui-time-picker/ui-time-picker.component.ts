@@ -11,9 +11,10 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 	@Input() time: string;
 	@Input() subHeadingText: string;
 	@Input() id: string;
+	@Input() label: string;
 	@Input() showDropDown: boolean;
 	@Output() setTime = new EventEmitter<string>();
-	@Input() linkId:string;
+	@Input() linkId: string;
 	hour: number;
 	minute: number;
 	amPm: number;
@@ -30,6 +31,19 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 	nextHour: number;
 	prevMinute: number;
 	nextMinute: number;
+
+	// These following instance variables added for Keyboard navigation to radio button.
+	keyCode = Object.freeze({
+		TAB: 9,
+		RETURN: 13,
+		SPACE: 32,
+		END: 35,
+		HOME: 36,
+		LEFT: 37,
+		UP: 38,
+		RIGHT: 39,
+		DOWN: 40
+	});
 
 	constructor(public commonService: CommonService) { }
 
@@ -119,6 +133,17 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 
 		if (this.copyMinute === 3) {
 			this.nextMinute = 0;
+		}
+	}
+
+	handleKBNavigations(event) {
+		console.log(event.keyCode);
+
+		switch (event.keyCode) {
+			case this.keyCode.SPACE:
+			case this.keyCode.RETURN:
+				this.onToggleDropDown();
+				break;
 		}
 	}
 }

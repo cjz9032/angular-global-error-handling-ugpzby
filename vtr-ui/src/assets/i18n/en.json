@@ -824,50 +824,97 @@
 					}
 				},
 				"smartStandby": {
-					"title": "Smart Standby",
-					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
-					"timer": {
-						"heading": "Set time when you typically use this computer",
-						"subHeading1": "start",
-						"subHeading2": "end",
-						"subHeading3": "use this schedule for",
-						"endTimeNote": "END must be within 20 hours from START time",
-						"timeUnits": {
-							"unit1": "Hours",
-							"unit2": "Minutes",
-							"unit3": "AM/PM"
-						},
-						"amPms": {
-							"am": "AM",
-							"pm": "PM"
-						}
-					},
-					"days": {
-						"shortName": {
-							"sun": "Sun",
-							"mon": "Mon",
-							"tue": "Tue",
-							"wed": "Wed",
-							"thurs": "Thurs",
-							"fri": "Fri",
-							"sat": "Sat"
-						},
-						"name": {
-							"sun": "Sunday",
-							"mon": "Monday",
-							"tue": "Tuesday",
-							"wed": "Wednesday",
-							"thurs": "Thursday",
-							"fri": "Friday",
-							"sat": "Saturday"
-						},
-						"everyday": "Everyday",
-						"weekdays": "Weekdays",
-						"weekends": "Weekends"
-					},
-					"warningtip": "Please select at least one day."
-				},
+                    "title": "Smart standby",
+                    "description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> during hours of heavier use.",
+                    "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set, or your computer usage. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+                    "subTitle": "Schedule your computer",
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer",
+                    "subNote": "Your computer is scheduled for quicker resume based on the usage.",
+                    "timer": {
+                        "heading": "The time you typically use this computer:",
+                        "subHeading1": "start",
+                        "subHeading2": "end",
+                        "subHeading3": "use this schedule for",
+                        "endTimeNote": "END time must be within 20 hours from START time",
+                        "timeUnits": {
+                            "unit1": "Hours",
+                            "unit2": "Minutes",
+                            "unit3": "AM/PM"
+                        },
+                        "amPms": {
+                            "am": "AM",
+                            "pm": "PM"
+                        }
+                    },
+                    "days": {
+                        "shortName": {
+                            "sun": "Sun",
+                            "mon": "Mon",
+                            "tue": "Tue",
+                            "wed": "Wed",
+                            "thurs": "Thurs",
+                            "fri": "Fri",
+                            "sat": "Sat",
+                            "thu": "Thu"
+                        },
+                        "name": {
+                            "sun": "Sunday",
+                            "mon": "Monday",
+                            "tue": "Tuesday",
+                            "wed": "Wednesday",
+                            "thurs": "Thursday",
+                            "fri": "Friday",
+                            "sat": "Saturday"
+                        },
+                        "everyday": "Everyday",
+                        "weekdays": "Weekdays",
+                        "weekends": "Weekends",
+                        "noDaySelected": "No day selected"
+                    },
+                    "warningtip": "Please select at least one day.",
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the usage and applied active time",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": "0",
+                            "one": "1",
+                            "two": "2",
+                            "three": "3",
+                            "four": "4",
+                            "five": "5",
+                            "six": "6",
+                            "seven": "7",
+                            "eight": "8",
+                            "nine": "9",
+                            "ten": "10",
+                            "eleven": "11",
+                            "twele": "12",
+                            "thirteen": "13",
+                            "fourteen": "14",
+                            "fifteen": "15",
+                            "sixteen": "16",
+                            "seventeen": "17",
+                            "eighteen": "18",
+                            "nineteen": "19",
+                            "twenty": "20",
+                            "twentyOne": "21",
+                            "twentyTwo": "22",
+                            "twentythree": "23"
+                        }
+                    }
+                },
 				"batterySettings": {
 					"title": "Battery settings",
 					"batteryThreshold": {

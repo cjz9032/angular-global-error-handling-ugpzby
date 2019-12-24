@@ -583,6 +583,52 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
+	public getIsAutonomicCapability(): Promise<boolean> {
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionSmartStandby.getIsAutonomicCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public setSmartStandbyIsAutonomic(value: boolean): Promise<number> {
+		console.log('setSmartStandbyIsAutonomic: ', value);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyIsAutonomic(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getSmartStandbyIsAutonomic(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyIsAutonomic();
+		}
+		return undefined;
+	}
+	public getSmartStandbyPresenceData(): Promise<any> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyPresenceData();
+		}
+		return undefined;
+	}
+	public GetSmartStandbyActiveHours(): Promise<any> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyActiveHours();
+		}
+		return undefined;
+	}
+	public getIsPresenceDataSufficient(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getIsPresenceDataSufficient();
+		}
+		return undefined;
+	}
 
 	public getGaugeResetCapability(): Promise<boolean> {
 		console.log('Battery Gauge Reset Capability');
