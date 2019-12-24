@@ -539,7 +539,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricButton, true);
 			}
 		}
-		return metricsList;
+		return list;
 	}
 
 	private onNotification(notification: AppNotification) {
