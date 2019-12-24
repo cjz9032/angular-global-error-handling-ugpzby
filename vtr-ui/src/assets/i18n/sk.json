@@ -1125,7 +1125,8 @@
                             "yes": "Áno",
                             "description3": "Naozaj chcete zastaviť vynulovanie ukazovateľa batérie?"
                         },
-                        "dual_note": "Poznámka: Resetovať možno vždy len jednu batériu."
+                        "dual_note": "Poznámka: Resetovať možno vždy len jednu batériu.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

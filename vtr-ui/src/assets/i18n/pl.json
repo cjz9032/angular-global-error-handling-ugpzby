@@ -1125,7 +1125,8 @@
                             "yes": "Tak",
                             "description3": "Czy na pewno chcesz zatrzymać resetowanie wskaźnika stanu akumulatora?"
                         },
-                        "dual_note": "Uwaga: Można zresetować tylko jeden akumulator naraz."
+                        "dual_note": "Uwaga: Można zresetować tylko jeden akumulator naraz.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

@@ -1125,7 +1125,8 @@
                             "yes": "Так",
                             "description3": "Дійсно зупинити скидання даних акумуляторного вольтметра?"
                         },
-                        "dual_note": "Примітка: за один раз можна скинути дані лише одного акумулятора."
+                        "dual_note": "Примітка: за один раз можна скинути дані лише одного акумулятора.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

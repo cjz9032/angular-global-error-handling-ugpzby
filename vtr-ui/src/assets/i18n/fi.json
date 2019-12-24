@@ -1125,7 +1125,8 @@
                             "yes": "Kyllä",
                             "description3": "Haluatko varmasti lopettaa akkumittarin nollauksen?"
                         },
-                        "dual_note": "Huomautus: Voit nollata vain yhden akun kerrallaan."
+                        "dual_note": "Huomautus: Voit nollata vain yhden akun kerrallaan.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

@@ -1125,7 +1125,8 @@
                             "yes": "Da",
                             "description3": "Želite li zaista da zaustavite resetovanje pokazivača napunjenosti baterije?"
                         },
-                        "dual_note": "Napomena: Moguće je resetovati samo jednu po jednu bateriju."
+                        "dual_note": "Napomena: Moguće je resetovati samo jednu po jednu bateriju.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

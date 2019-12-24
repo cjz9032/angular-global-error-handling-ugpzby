@@ -1125,7 +1125,8 @@
                             "yes": "Sí",
                             "description3": "¿Está seguro de que desea detener el restablecimiento del indicador de batería?"
                         },
-                        "dual_note": "Nota: solo se puede restablecer una batería a la vez."
+                        "dual_note": "Nota: solo se puede restablecer una batería a la vez.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

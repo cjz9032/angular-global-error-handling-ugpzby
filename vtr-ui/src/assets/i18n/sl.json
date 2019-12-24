@@ -841,7 +841,7 @@
                 "hour": "ura",
                 "minutes": "minut",
                 "minute": "minuta",
-                "charge": "Čas, potreben, da je baterija popolnoma napolnjena",
+                "charge": "Čas za popolno napolnjenost baterije",
                 "button": "OGLEJTE SI PODROBNOSTI O BATERIJI",
                 "details": {
                     "title": "Podrobnosti baterije",
@@ -1125,7 +1125,8 @@
                             "yes": "Da",
                             "description3": "Ali ste prepričani, da želite ustaviti ponastavitev merilnika za baterijo?"
                         },
-                        "dual_note": "Opomba: hkrati lahko ponastavite samo eno baterijo."
+                        "dual_note": "Opomba: hkrati lahko ponastavite samo eno baterijo.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

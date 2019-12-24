@@ -1125,7 +1125,8 @@
                             "yes": "예",
                             "description3": "배터리 게이지 리셋을 중단하시겠습니까?"
                         },
-                        "dual_note": "참고: 한 번에 한 배터리만 리셋할 수 있습니다."
+                        "dual_note": "참고: 한 번에 한 배터리만 리셋할 수 있습니다.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

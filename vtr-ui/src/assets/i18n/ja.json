@@ -1125,7 +1125,8 @@
                             "yes": "はい",
                             "description3": "バッテリー・ゲージのリセットを中止してよろしいですか?"
                         },
-                        "dual_note": "注: 同時にリセットできるのは 1 つのバッテリーのみです。"
+                        "dual_note": "注: 同時にリセットできるのは 1 つのバッテリーのみです。",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

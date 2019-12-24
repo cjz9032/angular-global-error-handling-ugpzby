@@ -1125,7 +1125,8 @@
                             "yes": "כן",
                             "description3": "האם אתם בטוחים שברצונכם לעצור את איפוס מד הסוללה?"
                         },
-                        "dual_note": "הערה: ניתן לאפס סוללה אחת בלבד בכל פעם."
+                        "dual_note": "הערה: ניתן לאפס סוללה אחת בלבד בכל פעם.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

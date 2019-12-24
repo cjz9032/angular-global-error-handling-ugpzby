@@ -1125,7 +1125,8 @@
                             "yes": "Ja",
                             "description3": "Er du sikker på at du vil stoppe tilbakestillingen av batterimåleren?"
                         },
-                        "dual_note": "Merk: Bare ett batteri kan tilbakestilles om gangen."
+                        "dual_note": "Merk: Bare ett batteri kan tilbakestilles om gangen.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

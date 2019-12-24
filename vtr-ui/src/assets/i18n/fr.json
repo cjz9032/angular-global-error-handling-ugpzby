@@ -841,7 +841,7 @@
                 "hour": "heure",
                 "minutes": "minutes",
                 "minute": "minute",
-                "charge": "Durée nécessaire pour recharger complètement la batterie",
+                "charge": "Temps de recharge complète",
                 "button": "AFFICHER LES DÉTAILS DE LA BATTERIE",
                 "details": {
                     "title": "Détails de la batterie",
@@ -1125,7 +1125,8 @@
                             "yes": "Oui",
                             "description3": "Voulez-vous vraiment arrêter la réinitialisation de la jauge de la batterie ?"
                         },
-                        "dual_note": "Remarque : seulement une batterie à la fois peut être réinitialisée."
+                        "dual_note": "Remarque : seulement une batterie à la fois peut être réinitialisée.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

@@ -1125,7 +1125,8 @@
                             "yes": "是",
                             "description3": "您確定要停止電池計量器重設嗎？"
                         },
-                        "dual_note": "附註：一次只能重設一個電池。"
+                        "dual_note": "附註：一次只能重設一個電池。",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

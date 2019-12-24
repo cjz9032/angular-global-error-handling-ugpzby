@@ -1125,7 +1125,8 @@
                             "yes": "Da",
                             "description3": "Jeste li sigurni da želite zaustaviti ponovno postavljanje mjerača baterije?"
                         },
-                        "dual_note": "Napomena: istodobno se može ponovno postaviti samo jedna baterija."
+                        "dual_note": "Napomena: istodobno se može ponovno postaviti samo jedna baterija.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

@@ -1125,7 +1125,8 @@
                             "yes": "Evet",
                             "description3": "Pil göstergesi sıfırlama işlemini durdurmak istediğinizden emin misiniz?"
                         },
-                        "dual_note": "Not: Aynı anda yalnızca bir pil sıfırlanabilir."
+                        "dual_note": "Not: Aynı anda yalnızca bir pil sıfırlanabilir.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

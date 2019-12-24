@@ -1125,7 +1125,8 @@
                             "yes": "Ja",
                             "description3": "Weet u zeker dat u wilt stoppen met het opnieuw instellen van de batterijmeter?"
                         },
-                        "dual_note": "Opmerking: er kan slechts één batterij tegelijk worden gereset."
+                        "dual_note": "Opmerking: er kan slechts één batterij tegelijk worden gereset.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

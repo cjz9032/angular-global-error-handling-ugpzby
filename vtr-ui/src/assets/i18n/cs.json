@@ -1125,7 +1125,8 @@
                             "yes": "Ano",
                             "description3": "Opravdu chcete reset ukazatele stavu baterie přerušit?"
                         },
-                        "dual_note": "Poznámka: Resetovat lze vždy jen jednu baterii."
+                        "dual_note": "Poznámka: Resetovat lze vždy jen jednu baterii.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

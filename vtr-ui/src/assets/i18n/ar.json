@@ -1127,7 +1127,8 @@
                             "yes": "نعم",
                             "description3": "هل تريد بالتأكيد إيقاف عملية إعادة تعيين مقياس البطارية؟"
                         },
-                        "dual_note": "ملاحظة: يمكن إعادة تعيين بطارية واحدة فقط في كل مرة."
+                        "dual_note": "ملاحظة: يمكن إعادة تعيين بطارية واحدة فقط في كل مرة.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {

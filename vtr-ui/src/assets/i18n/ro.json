@@ -1125,7 +1125,8 @@
                             "yes": "Da",
                             "description3": "Sigur opriţi resetarea indicatorului bateriei?"
                         },
-                        "dual_note": "Notă: numai o singură baterie poate fi resetată la un moment dat."
+                        "dual_note": "Notă: numai o singură baterie poate fi resetată la un moment dat.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
