@@ -352,19 +352,14 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.smartAssist.getZeroTouchLockStatus(),
 			this.smartAssist.getSelectedLockTimer(),
 			this.smartAssist.getHPDStatus(),
-			this.smartAssist.getHPDVisibilityInIdeaPad(),
-			this.smartAssist.getHPDVisibilityInThinkPad(),
+			this.smartAssist.getHPDVisibility(),
 			this.getFacialRecognitionStatus()
 		]).then((responses: any[]) => {
 			this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
 			this.intelligentSecurity.isZeroTouchLockEnabled = responses[1];
 			this.intelligentSecurity.autoScreenLockTimer = responses[2].toString();
 			this.intelligentSecurity.isHPDEnabled = responses[3];
-			if (this.machineType === 0) {
-				this.intelligentSecurity.isIntelligentSecuritySupported = responses[4];
-			} else {
-				this.intelligentSecurity.isIntelligentSecuritySupported = responses[5];
-			}
+			this.intelligentSecurity.isIntelligentSecuritySupported = responses[4];
 
 			if (!this.intelligentSecurity.isIntelligentSecuritySupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
