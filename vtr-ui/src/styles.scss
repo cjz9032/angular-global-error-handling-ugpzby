@@ -587,13 +587,21 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			font-size: 1.4rem;
 		}
 
-		p,
-		li,
-		ul {
-			font-size: 1.8rem;
-			color: $light-grey;
-			margin-bottom: 1rem;
-			word-wrap: break-word;
+		.article-content {
+			div,
+			span {
+				margin-bottom: 1rem;
+				word-wrap: break-word;
+			}
+	
+			p,
+			li,
+			ul {
+				font-size: 1.8rem;
+				color: $light-grey;
+				margin-bottom: 1rem;
+				word-wrap: break-word;
+			}
 		}
 
 		img,
@@ -603,20 +611,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			border: none;
 		}
 
-		div,
-		span {
-			margin-bottom: 1rem;
-			word-wrap: break-word;
-		}
-
-		p,
-		li,
-		ul {
-			font-size: 1.8rem;
-			color: $light-grey;
-			margin-bottom: 1rem;
-			word-wrap: break-word;
-		}
 	}
 }
 
