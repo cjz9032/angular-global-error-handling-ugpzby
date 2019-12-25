@@ -34,12 +34,13 @@ export class CommsService {
 	}
 
 
-	callUpeApi(api, queryParams: any = {}, httpOptions: any = {}) {
-		const url = this.env.upeApiRoot + api;
+	callUpeApi(url, queryParams: any = {}, headers: any = {}) {
+		// const url = this.env.upeApiRoot + api;
 
-		const reqHeader = new HttpHeaders({
-			'Content-Type': 'application/json;charset=UTF-8'
-		});
+		// setup header
+		const composeHeaders = headers ? {...headers} : {};
+		composeHeaders['Content-Type'] = 'application/json;charset=UTF-8';
+		const reqHeader = new HttpHeaders(composeHeaders);
 
 		this.devService.writeLog('CALL UPE API: ', url);
 		return this.http.post(url, JSON.stringify(queryParams),

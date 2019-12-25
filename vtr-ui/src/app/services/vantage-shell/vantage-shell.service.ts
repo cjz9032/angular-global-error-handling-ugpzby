@@ -59,6 +59,7 @@ export class VantageShellService {
 				Phoenix.Features.AdPolicy,
 				Phoenix.Features.Registry,
 				Phoenix.Features.SelfSelect,
+				Phoenix.Features.UpeAgent,
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -979,6 +980,13 @@ export class VantageShellService {
 	public getRegistryUtil(): Phoenix.RegistryFeature {
 		if (this.phoenix) {
 			return this.phoenix.registry;
+		}
+		return undefined;
+	}
+
+	public getUpeAgent(): any {
+		if (this.phoenix) {
+			return this.phoenix.upeAgent;
 		}
 		return undefined;
 	}
