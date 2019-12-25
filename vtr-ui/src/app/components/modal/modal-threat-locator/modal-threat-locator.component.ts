@@ -1,8 +1,7 @@
 import {
 	Component,
 	OnInit,
-	HostListener,
-	Inject
+	HostListener
 } from '@angular/core';
 import {
 	NgbActiveModal
@@ -10,7 +9,6 @@ import {
 import {
 	VantageShellService
 } from '../../../services/vantage-shell/vantage-shell.service';
-import { DOCUMENT } from '@angular/common';
 
 @Component({
 	selector: 'vtr-modal-threat-locator',
@@ -21,9 +19,8 @@ export class ModalThreatLocatorComponent implements OnInit {
 	threatLocatorUrl: string;
 	online: boolean;
 	private metrics: any;
-	ratio = 2;
+
 	constructor(
-		@Inject(DOCUMENT) private document: any,
 		public activeModal: NgbActiveModal,
 		private shellService: VantageShellService
 	) {
