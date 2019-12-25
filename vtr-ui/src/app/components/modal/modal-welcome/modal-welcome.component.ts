@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, Input, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -207,5 +207,64 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	ngOnDestroy() {
 		// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
 		// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
+	}
+
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.welcome-modal-size') as HTMLElement;
+		modal.focus();
+	}
+
+	@HostListener('keydown', ['$event'])
+	onKeyDown(event: KeyboardEvent) {
+		const activeId = document.activeElement.id || '';
+		if (event.shiftKey && event.key === 'Tab') {
+			this.focusById(this.getNextIdById(activeId, true));
+			event.preventDefault();
+		} else if (event.key === 'Tab') {
+			this.focusById(this.getNextIdById(activeId));
+			event.preventDefault();
+		}
+	}
+
+	getNextIdById(id: string, reverse?: boolean): string {
+		const idArrayPage1 = ['tutorial_next_btn'];
+		let idArrayPage2 = [
+			'segment-choose-personal-use',
+			'segment-choose-business-use',
+			'segment-choose-custom-use',
+		];
+		this.interests.forEach((interest, index) => {
+			if (index <= 7 || this.hideMoreInterestBtn) {
+				idArrayPage2.push('welcome-interest-' + interest.label);
+			}
+		});
+		if (!this.hideMoreInterestBtn) {
+			idArrayPage2.push('tutorial_hide_moreInterest');
+		}
+		idArrayPage2 = idArrayPage2.concat([
+			'welcome-privacy-label',
+			'welcome-privacy-link',
+			'tutorial_done_btn'
+		]);
+		let idArray = [];
+		if (this.page === 1) {
+			idArray = idArrayPage1;
+		} else {
+			idArray = idArrayPage2;
+		}
+		const idIndex = idArray.indexOf(id);
+		if (!reverse) {
+			if (idIndex === -1 || idIndex === idArray.length - 1) { return idArray[0]; }
+			return idArray[idIndex + 1];
+		} else {
+			if (idIndex === -1 || idIndex === 0) { return idArray[idArray.length - 1]; }
+			return idArray[idIndex - 1];
+		}
+	}
+
+	focusById(id: string) {
+		(document.querySelector('#' + id) as HTMLElement).focus();
 	}
 }

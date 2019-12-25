@@ -30,7 +30,8 @@
 							"src/favicon.ico",
 							"src/assets",
 							"src/mock-api",
-							"src/manifest.webmanifest"
+							"src/manifest.webmanifest",
+							"src/pre-load.js"
 						],
 						"styles": [
 							"src/styles.scss"
