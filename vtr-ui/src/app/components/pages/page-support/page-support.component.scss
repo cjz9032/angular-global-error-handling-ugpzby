@@ -58,9 +58,14 @@
 					@media #{$breakpoint_xl} {
 						width: 50%;
 					}
-
+					@media #{$breakpoint_lg} {
+						width: 25%;
+					}
+					@media #{$breakpoint_md} {
+						width: 50%;
+					}
 					@media #{$breakpoint_sm} {
-						width: 100%;
+						width: 100% !important;
 					}
 
 					.item-con {
