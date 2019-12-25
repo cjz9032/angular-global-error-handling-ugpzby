@@ -1125,7 +1125,8 @@
                             "yes": "Igen",
                             "description3": "Biztosan leállítja az akkumulátormérő nullázását?"
                         },
-                        "dual_note": "Megjegyzés: Egyszerre csak egy elem állítható vissza."
+                        "dual_note": "Megjegyzés: Egyszerre csak egy elem állítható vissza.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1988,7 +1989,7 @@
             "intermediateTitle": "Közepes védelem",
             "intermediateDesc": "Szép munka! Csak egy lépésre áll a komplex védelemtől, próbálja ki az adatok titkosítását és a hálózati biztonsági incidensek figyelését.",
             "advanced": "KOMPLEX",
-            "advancedTtitle": "Komplex védelem",
+            "advancedTitle": "Komplex védelem",
             "advancedDesc": "Gratulálunk! Az eszközön alap-, közepes- vagy komplex biztonsági védelem van engedélyezve, nagyszerű munka!",
             "haveOwn": "Van sajátom",
             "basicSecurity": "ALAP BIZTONSÁG",

@@ -9,6 +9,9 @@ import { LocalInfoService } from '../local-info/local-info.service';
 import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DccService } from 'src/app/services/dcc/dcc.service';
+import { Subscription } from 'rxjs';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 
 export class Category {
 	id: string; 	// app category id
@@ -79,6 +82,7 @@ export class AppsForYouService {
 		this.systemUpdateBridge = vantageShellService.getSystemUpdate();
 	}
 
+	private subscription: Subscription;
 	private isInitialized = false;
 	private cancelToken = undefined;
 	private isCancelInstall = false;
@@ -121,6 +125,10 @@ export class AppsForYouService {
 			});
 		}).catch(e => {
 			this.localInfo = undefined;
+		});
+
+		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
 		});
 	}
 
@@ -388,6 +396,22 @@ export class AppsForYouService {
 		}
 		if (needUpdateLocalStorage) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.UnreadMessageCount, this.UnreadMessageCount);
+		}
+	}
+
+	onNotification(notification: any) {
+		if (notification) {
+			switch (notification.type) {
+				case SelfSelectEvent.SegmentChange:
+					this.localInfoService.getLocalInfo().then(result => {
+						this.localInfo = result;
+					}).catch(e => {
+						this.localInfo = undefined;
+					});
+					break;
+				default:
+					break;
+			}
 		}
 	}
 }

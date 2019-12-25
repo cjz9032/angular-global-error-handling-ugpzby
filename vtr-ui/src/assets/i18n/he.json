@@ -1125,7 +1125,8 @@
                             "yes": "כן",
                             "description3": "האם אתם בטוחים שברצונכם לעצור את איפוס מד הסוללה?"
                         },
-                        "dual_note": "הערה: ניתן לאפס סוללה אחת בלבד בכל פעם."
+                        "dual_note": "הערה: ניתן לאפס סוללה אחת בלבד בכל פעם.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1988,7 +1989,7 @@
             "intermediateTitle": "הגנת ביניים",
             "intermediateDesc": "מעולה! אתם במרחק שלב אחד בלבד מקבלת הגנה מתקדמת. נסו להצפין את הנתונים ולנטר פריצות אבטחה לרשת.",
             "advanced": "מתקדם",
-            "advancedTtitle": "הגנה מתקדמת",
+            "advancedTitle": "הגנה מתקדמת",
             "advancedDesc": "ברכותינו! במכשיר שלכם מופעלות הגנת אבטחה בסיסית, ביניים ומתקדמת. נהדר!",
             "haveOwn": "יש לי משלי",
             "basicSecurity": "אבטחה בסיסית",

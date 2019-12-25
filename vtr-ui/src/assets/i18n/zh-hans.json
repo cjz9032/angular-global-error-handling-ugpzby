@@ -836,7 +836,7 @@
         "deviceSettings": {
             "helpful": "帮助内容",
             "batteryGauge": {
-                "subtitle": "电池运行状况",
+                "subtitle": "电池",
                 "hours": "小时",
                 "hour": "小时",
                 "minutes": "分钟",
@@ -895,7 +895,7 @@
                 "condition": {
                     "Illegal": "系统<b>不支持</b>所安装的电池，电池无法充电。请将该电池更换为用于此系统的正确 Lenovo 电池。",
                     "Good": "<b>电池状况良好。</b>",
-                    "Exhaustion": "电池容量已<b>降级</b>。请更换一个新电池。",
+                    "Exhaustion": "电池容量已<b>降低</b>。请更换一个新电池。",
                     "Bad": "<b>出现电池错误。</b>电池无法充电/放电。更换电池。",
                     "NotDetected": "<b>未检测到电池或未</b>插入电池。",
                     "NotGood": "<b>电池状况不佳。</b>",
@@ -906,7 +906,7 @@
                     "HighTemperature": "<b>由于电池温度过高</b>，电池已停止<b>放电</b>。",
                     "TrickleCharge": "电池已<b>完全放电</b>，需要再次充电。此过程可能耗时 10 小时或更长时间。",
                     "OverheatedBattery": "电池<b>过热</b>。请将其从计算机中卸下并冷却至室温。",
-                    "PermanentError": "电池容量已<b>降级</b>。请更换一个新电池。",
+                    "PermanentError": "电池容量已<b>降低</b>。请更换一个新电池。",
                     "NotSupportACAdapterDetail": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
                     "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 电源已连接。</b>",
@@ -1125,7 +1125,8 @@
                             "yes": "是",
                             "description3": "确定要停止电池量表重置吗？"
                         },
-                        "dual_note": "注意：一次只能重置一块电池。"
+                        "dual_note": "注意：一次只能重置一块电池。",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1988,7 +1989,7 @@
             "intermediateTitle": "中级保护",
             "intermediateDesc": "做得好！还差一步就能享受高级保护了，请尝试加密数据并监视网络安全隐患。",
             "advanced": "高级",
-            "advancedTtitle": "高级保护",
+            "advancedTitle": "高级保护",
             "advancedDesc": "恭喜您！您的设备已启用基本、中级和高级安全保护，非常棒！",
             "haveOwn": "我有自己的",
             "basicSecurity": "基本安全",

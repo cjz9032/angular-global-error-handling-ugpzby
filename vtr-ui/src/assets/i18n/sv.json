@@ -1125,7 +1125,8 @@
                             "yes": "Ja",
                             "description3": "Vill du stoppa återställning av batterimätaren?"
                         },
-                        "dual_note": "Obs: Endast ett batteri kan återställas i taget."
+                        "dual_note": "Obs: Endast ett batteri kan återställas i taget.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1988,7 +1989,7 @@
             "intermediateTitle": "Medelstarkt skydd",
             "intermediateDesc": "Bra! Du är bara ett steg ifrån att få avancerat skydd. Prova att kryptera dina data och övervaka säkerhetsintrången i nätverket.",
             "advanced": "AVANCERAT",
-            "advancedTtitle": "Avancerat skydd",
+            "advancedTitle": "Avancerat skydd",
             "advancedDesc": "Du har tur! Utmärkt, din enhet har grundläggande, medelstarkt och avancerat säkerhetsskydd aktiverat!",
             "haveOwn": "Jag har egen",
             "basicSecurity": "GRUNDLÄGGANDE SÄKERHET",
