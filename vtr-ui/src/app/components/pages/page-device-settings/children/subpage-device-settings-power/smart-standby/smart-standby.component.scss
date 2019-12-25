@@ -111,13 +111,4 @@ ul.list-group {
 	margin-top: 3rem;
 	cursor: default;
 }
-.container-border {
-	@media #{$black-on-white} {
-		border: 0.1rem solid $dark;
-		border-radius: 1rem;
-	}
-	@media #{$white-on-black} {
-		border: 0.1rem solid $light;
-		border-radius: 1rem;
-	}
-}
+

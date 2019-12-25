@@ -7,19 +7,12 @@
 				<div class="dropdown">
 					<input [id]="id"
 						class="dropcheck"
-						type="checkbox"
-						tabindex="-1"
-						[attr.aria-checked]="showDropDown"
+						type="checkbox"						
 						[checked]="showDropDown"
 						(click)="onToggleDropDown()"
-						(keydown.enter)="onToggleDropDown()">
-					<label [for]="id"
-						attr.aria-label="{{label}}, {{hours[hour]}}, 'hours', {{minutes[minute]}}, 'minutes', {{amPms[amPm] | translate}}"
-						[attr.aria-expanded]="showDropDown"
-						tabindex="0"
-						class="dropbtn"
-						role="combobox"
-						(keydown.enter)="onToggleDropDown()">
+						>
+					<label [for]="id"						
+						class="dropbtn">
 						<div class="row">
 							<div class="col align-items-center d-flex justify-content-between">
 								<div class="time-headings">
@@ -63,11 +56,8 @@
 							<div class="timer-block">
 								<div class="row align-items-center d-flex justify-content-between">
 									<div class="hours-block">
-
 										<div class="toggle-icon"
 											(click)="updateHours(false)"
-											(keydown.enter)="updateHours(false)"
-											tabindex="0"
 											role="button"
 											id="smartStandby-{{linkId}}-hours-prev-btn"
 											aria-label="smart standby hours decrease button">
@@ -81,7 +71,6 @@
 										<div class="toggle-icon"
 											(click)="updateHours(true)"
 											(keydown.enter)="updateHours(true)"
-											tabindex="0"
 											role="button"
 											id="smartStandby-{{linkId}}-hours-next-btn"
 											aria-label="smart standby hours increase button">
@@ -95,21 +84,17 @@
 											(click)="updateMinutes(false)"
 											(keydown.enter)="updateMinutes(false)"
 											id="smartStandby-{{linkId}}-minutes-prev-btn"
-											tabindex="0"
 											role="button"
 											aria-label="smart standby minutes decrease button">
 											<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 										</div>
 
 										<span>{{minutes[prevMinute]}}</span><br>
-										<span class="highlight" role="text" tabindex="0" attr.aria-label="{{minutes[copyMinute]}}, 'minutes'">{{minutes[copyMinute]}}</span><br>
+										<span class="highlight">{{minutes[copyMinute]}}</span><br>
 										<span>{{minutes[nextMinute]}}</span>
 
 										<div class="toggle-icon"
-											(click)="updateMinutes(true)"
-											(keydown.enter)="updateMinutes(true)"
-											tabindex="0"
-											role="button"
+											(click)="updateMinutes(true)"											
 											id="smartStandby-{{linkId}}-minutes-next-btn"
 											aria-label="smart standby minutes increase button">
 											<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
@@ -117,16 +102,14 @@
 
 									</div>
 
-									<div class="am-pm highlight" role="radiogroup" tabindex="0">
+									<div class="am-pm highlight" role="radiogroup">
 										<span>
-											<label class="inline-block" for="{{linkId}}-am-radio" attr.aria-label="{{ amPms[0] | translate }}" tabindex="0"
-											[attr.aria-checked]="copyAmPm==0" (keydown.enter)="setAmPm(0)">
+											<label class="inline-block">
 												<input class="label-radio"
 													id="{{linkId}}-am-radio"
 													[name]="'ampmradio'+id"
 													type="radio"
 													value="0"
-													tabindex="-1"
 													[checked]="copyAmPm==0"
 													(click)="setAmPm(0)"
 													 />
@@ -134,12 +117,11 @@
 											</label>
 										</span><br>
 										<span>
-											<label class="inline-block" for="{{linkId}}-pm-radio" attr.aria-label="{{ amPms[1] | translate }}" [attr.aria-checked]="copyAmPm==1" tabindex="0" (keydown.enter)="setAmPm(1)">
+											<label class="inline-block">
 												<input class="label-radio"
 													id="{{linkId}}-pm-radio"
 													[name]="'ampmradio'+id"
 													type="radio"
-													tabindex="-1"
 													value="1"
 													[checked]="copyAmPm==1"
 													(click)="setAmPm(1)"
@@ -154,20 +136,13 @@
 						</div>
 						<div class="d-flex justify-content-end py-3">
 							<div class="select-close">
-								<fa-icon [icon]="['fal', 'check']"
-									tabindex="0"
-									role="button"
-									(click)="setTimer()"
-									(keydown.enter)="setTimer()"
-									id="smartStandby-{{linkId}}-done-icon"
-									aria-label="'confirm changes'"></fa-icon>
-								<fa-icon [icon]="['fal', 'times']"
-									tabindex="0"
-									role="button"
-									(click)="clearSettings()"
-									(keydown.enter)="clearSettings()"
+								<fa-icon [icon]="['fal', 'check']"									
+									(click)="setTimer()"									
+									id="smartStandby-{{linkId}}-done-icon"></fa-icon>
+								<fa-icon [icon]="['fal', 'times']"									
+									(click)="clearSettings()"									
 									id="smartStandby-{{linkId}}-close-icon"
-									aria-label="'cancel changes'"></fa-icon>
+									></fa-icon>
 							</div>
 						</div>
 					</div>

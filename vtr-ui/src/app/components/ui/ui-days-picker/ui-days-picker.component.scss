@@ -41,10 +41,6 @@
       border-left: 1px solid $shade_light;
       border-right: 1px solid $shade_light;
       padding: 0 5rem;
-
-      @media #{$mediaquery_12} {
-        padding: 0 3rem;
-      }
     }
   }
   .select-close {
@@ -182,13 +178,7 @@
     cursor: pointer;
     margin-bottom: 0rem;
     min-height: 6rem;
-    line-height: 3rem;
-    @media #{$black-on-white} {
-      border: 0.1rem solid $dark;
-    }
-    @media #{$white-on-black} {
-      border: 0.1rem solid $light;
-    }
+    line-height: 3rem;   
   }
   .toggle-icon {
 		fa-icon {

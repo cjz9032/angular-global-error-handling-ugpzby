@@ -1,7 +1,7 @@
 <div class="row py-5" id="smartStandby" *ngIf="smartStandby?.isCapable">
 	<div class="col-10 mx-auto">
 		<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
-			[isCollapsed]="false" [collapseLinkId]="'smartrStandby'" [tabIndex]="0">
+			[isCollapsed]="false" [collapseLinkId]="'smartrStandby'">
 			<ul class="list-group list-group-flush">
 				<li>
 					<vtr-ui-row-switch 
@@ -52,9 +52,7 @@
 					</div>
 					<div *ngIf="!checkbox && smartStandby?.isEnabled" class="click-to-change-collapse">
 						<!-- header -->
-						<div *ngIf="isAutonomicCapability" class="collapse-header" (click)="onToggle(timeToggle)"
-							(keydown.enter)="onToggle(timeToggle)" [attr.aria-expanded]="!isCollapsed" #timeToggle
-							tabindex="0" aria-label="smart standby, time picker-toggle button">
+						<div *ngIf="isAutonomicCapability" class="collapse-header" (click)="onToggle(timeToggle)"	#timeToggle						>
 							<div>
 								<div *ngIf="isCollapsed" class="collapse-text">
 									<!-- Expand -->
@@ -80,18 +78,17 @@
 										[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading1'"
 										[id]="'dropcheck1'" [showDropDown]="showDropDown[0]"
 										(setTime)="onSetActiveStartEnd($event, true)"
-										[label]="'smart standby , start time dropdown'" [linkId]="'start'">
+										[linkId]="'start'">
 									</vtr-ui-time-picker>
 									<vtr-ui-time-picker [time]="smartStandbyEndTime"
 										[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading2'"
 										[id]="'dropcheck2'" [showDropDown]="showDropDown[1]"
 										(setTime)="onSetActiveStartEnd($event, false)"
-										[label]="'smart standby , end time dropdown'" [linkId]="'end'">
+										[linkId]="'end'">
 									</vtr-ui-time-picker>
 									<div *ngIf="showDiffNote" class="row">
 										<div class="col-md-12 pl-0">
-											<div class="note align-items-center" id="smartStandby-timer-endTimeNote"
-												aria-label="smartStandby-timer-endTimeNote">
+											<div class="note align-items-center" id="smartStandby-timer-endTimeNote">
 												{{ 'device.deviceSettings.power.smartStandby.timer.endTimeNote' | translate }}
 											</div>
 										</div>
@@ -105,8 +102,7 @@
 						</div>
 						<!-- content end -->
 					</div>
-					<div *ngIf="isAutonomicCapability" [ngClass]="{'disabled': !smartStandby.isEnabled}" class="hyperlink-to-graph" (click)="showUsageGraph()" tabindex="0"
-						attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
+					<div *ngIf="isAutonomicCapability" [ngClass]="{'disabled': !smartStandby.isEnabled}" class="hyperlink-to-graph" (click)="showUsageGraph()" >
 						{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
 					</div>
 				</li>

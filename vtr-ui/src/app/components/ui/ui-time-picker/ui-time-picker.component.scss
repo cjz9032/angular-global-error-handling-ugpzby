@@ -14,13 +14,7 @@
 		.timer-block {
 			width: 100%;
 			margin: 0;
-			padding: 0;
-			// @media #{$mediaquery_12} {
-			// 	width: 80%;
-			// }
-			// @media #{$mediaquery_X42} {
-			// 	width: 75%
-			// }
+			padding: 0;		
 		}
 		.hours-block,
 		.minutes-block,
@@ -59,13 +53,7 @@
 		}
 		.minutes-block {
 			border-left: 1px solid $shade_light;
-			border-right: 1px solid $shade_light;
-			// padding: 0 5rem;
-			// margin-left: 12px;
-			@media #{$mediaquery_12} {
-				// padding: 0 4rem;
-				// margin-left: 0px;
-			}
+			border-right: 1px solid $shade_light;		
 		}
 	}
 	.select-close {
@@ -130,13 +118,7 @@
 		position: relative;
 		display: block;
 		cursor: pointer;
-		margin-bottom: 0rem;
-		@media #{$black-on-white} {
-			border: 0.1rem solid $dark;
-		}
-		@media #{$white-on-black} {
-			border: 0.1rem solid $light;
-		}
+		margin-bottom: 0rem;	
 	}
 
 	.dropdown {

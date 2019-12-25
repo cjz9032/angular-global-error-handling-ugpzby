@@ -6,14 +6,11 @@
 
 			<div class="dropdown">
 				<input id="{{daysId}}"
-					tabindex="-1"
 					class="dropcheck"
 					type="checkbox"
 					[checked]="showDropDown"
 					(click)="onToggleDropDown()">
-				<label for="{{daysId}}" role="combobox"
-					aria-label="'smart standby, schedule dropdown days list'" [attr.aria-expanded]="showDropDown" tabindex="0" (keydown.enter)="onToggleDropDown()"
-					class="dropbtn" #dayslistbox>
+				<label for="{{daysId}}"	class="dropbtn" #dayslistbox>
 					<div class="row align-items-center d-flex justify-content-between pl-5">
 						<h5 id="smartStandby-shedule" attr.aria-label="smartStandby-shedule">{{smartStandbyService.schedule}}</h5>
 						<div class="toggle-icon" id="smartStandby-days-picker-dropDown">
@@ -27,19 +24,17 @@
 					<section class="weekdays-block">
 						<div class="row">
 							<div class="col">
-								<div class="main-block pl-5 pt-5 pb-3" role="radiogroup" tabindex="0">
+								<div class="main-block pl-5 pt-5 pb-3">
 									<div *ngFor="let i of smartStandbyService.allDays">
 										<div class="custom-control custom-checkbox mb-3 ml-3">
 											<input class="custom-control-input"
 												type="checkbox"
-												role="checkbox"
 												value="{{i.shortName}}"
 												id="{{i.shortName}}"
 												[(ngModel)]="i.status"
-												attr.aria-label="{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}"
+												attr.aria-label="{{i .shortName}}"
 												(change)="selectDay($event)">
 											<label class="custom-control-label"
-
 												for="{{i.shortName}}">
 												{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}
 											</label>
@@ -48,31 +43,24 @@
 								</div>
 								<div class="d-flex justify-content-end py-3">
 									<p class="select-close"
-										*ngIf="!smartStandbyService.checkedLength" id="smartStandby-warningtip"
-										aria-label="smartStandby-warningtip">
+										*ngIf="!smartStandbyService.checkedLength">
 										{{ 'device.deviceSettings.power.smartStandby.warningtip' | translate }}</p>
 									<div class="banner-middle">
 
 									</div>
 									<div class="select-close">
 										<fa-icon [icon]="['fal', 'check']"
-											(click)="setOffDays(dayslistbox)"
-											(keydown.enter)="setOffDays(dayslistbox)"
-											role="button"
-											tabindex="0"
+											(click)="setOffDays(dayslistbox)"											
 											id="daysPickerDone"
 											attr.aria-label="daysPickerDone"
 											*ngIf="smartStandbyService.checkedLength > 0"
-											aria-label="'confirm changes'">
+											>
 										</fa-icon>
 										<fa-icon [icon]="['fal', 'times']"
-											id="daysPickerClear"
-											role="button"
-											tabindex="0"
+											id="daysPickerClear"											
 											attr.aria-label="daysPickerClear"
 											(click)="clearSettings(dayslistbox)"
-											(keydonw.enter)="clearSettings(dayslistbox)"
-											aria-label="'cancel changes'">
+											>
 										</fa-icon>
 									</div>
 								</div>
