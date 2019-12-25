@@ -62,6 +62,8 @@ import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
 import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
 import { ModalNewFeatureTipComponent } from '../components/modal/modal-new-feature-tip/modal-new-feature-tip.component';
 import { NewFeatureTipService } from '../services/new-feature-tip/new-feature-tip.service';
+import { HardwareDashboardModule } from './hardware-settings/hardware-dashboard.module';
+import { GamingDashboardModule } from './gaming-dashboard.module';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -102,7 +104,9 @@ import { NewFeatureTipService } from '../services/new-feature-tip/new-feature-ti
 		ReactiveFormsModule,
 		ModernPreloadModule,
 		PageLayoutModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		HardwareDashboardModule,
+		GamingDashboardModule
 	],
 	exports: [
 		NavbarModule,

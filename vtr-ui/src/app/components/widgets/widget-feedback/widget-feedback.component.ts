@@ -6,10 +6,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 	styleUrls: ['./widget-feedback.component.scss']
 })
 export class WidgetFeedbackComponent implements OnInit {
-	@Input() title: string = this.title || '';
-	@Input() description: string = this.description || '';
-	@Input() actionName: string = this.actionName || '';
-	@Input() action: string = this.action || '';
+	@Input() title = '';
+	@Input() description = '';
+	@Input() actionName = '';
+	@Input() isOnline: boolean;
 
 	@Output() feedBackClick = new EventEmitter<Event>();
 
