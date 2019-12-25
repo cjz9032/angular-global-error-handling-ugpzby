@@ -1,19 +1,20 @@
-import { Component, OnInit, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import * as d3 from 'd3';
 import SmartStandbyActivityModel from 'src/app/data-models/smart-standby-graph/smart-standby-activity.model';
 import { PowerService } from 'src/app/services/power/power.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { EMPTY } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import {ActivitiesData} from './activities-data.mock'
+import { ActivitiesData } from './activities-data.mock';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-modal-smart-stand-by',
 	templateUrl: './modal-smart-stand-by.component.html',
 	styleUrls: ['./modal-smart-stand-by.component.scss']
 })
-export class ModalSmartStandByComponent implements OnInit {
-	@ViewChildren('chartContainer') chartContainer: QueryList<ElementRef>;
+export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
+	@ViewChild('chartContainer1', { static: false }) private chartContainer1: ElementRef;
+	@ViewChild('chartContainer2', { static: false }) private chartContainer2: ElementRef;
 
 	public activities: SmartStandbyActivityModel[];
 	public device = 'device.deviceSettings.power.smartStandby.';
@@ -30,19 +31,24 @@ export class ModalSmartStandByComponent implements OnInit {
 	public days = [];
 	public isSufficient = true;
 	public isAutomatic: boolean;
-	// private legends = [0, 1, 2, 3, 4];
+
 	constructor(
 		private powerService: PowerService,
 		public activeModal: NgbActiveModal,
 		private translate: TranslateService,
+		private loggerService: LoggerService
 	) { }
 
 	ngOnInit() {
-		this.activities = ActivitiesData
-		this.getActiviesData();
-		this.getSmartStandbyActiveHours();
+		this.activities = ActivitiesData;
 		this.getDays();
 	}
+
+	ngAfterViewInit() {
+		this.getActivitiesData();
+		this.getSmartStandbyActiveHours();
+	}
+
 	public getDays() {
 		this.days = [];
 		let day: any;
@@ -54,36 +60,34 @@ export class ModalSmartStandByComponent implements OnInit {
 		this.days = week;
 	}
 
-	public renderToFirstChart(data: SmartStandbyActivityModel[]) {
-		console.log('++++++++++++', this.days);
-		const element = this.chartContainer.first.nativeElement;
+	private renderActivityChart(chartContainer: ElementRef, data: SmartStandbyActivityModel[], colors: string[]) {
+		const hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
 		const margin: any = { top: 40, bottom: 30, left: 30, right: 30 };
-		const width = element.offsetWidth - (margin.left - margin.right);
-		const height = element.offsetHeight - (margin.top - margin.bottom);
-		const boxWidth = Math.floor(35);
-		const boxHeight = 25;
+		const boxWidth = 20;
+		const boxHeight = 14;
 		const cellWidth = boxWidth / 4;
-		const hours = data[0].activities.map((d) => d.hour);
+		const cellBorder = 'stroke: #E0E0E0; stroke-width: 1; fill-opacity: 0;';
+		const fontStroke = 'fill: #34495e;';
+
+		console.log('++++++++++++', this.days);
+		const element = chartContainer.nativeElement;
 
 		const svg = d3.select(element).append('svg')
 			.attr('preserveAspectRatio', 'xMinYMin meet')
-			.attr('viewBox', '0 0 960 250');
+			.attr('viewBox', '0 0 540 140');
 
 		// chart plot area
 		const chart = svg.append('g')
-			.attr('transform', `translate(${margin.left}, ${margin.top})`);
+			.attr('transform', `translate(20 20)`);
 		chart.selectAll('g')
 			.data(hours)
 			.enter()
 			.append('text')
 			.text(d => d)
-			.attr('x', (d) => (boxWidth * (d + 1)) + 9)
+			.attr('x', (d) => (boxWidth * (d + 1) + 7))
 			.attr('y', 0)
 			.attr('text-anchor', 'center')
-			.attr('font-size', 10)
-			.attr('font-weight', 550)
-			.attr('font-family', 'Segoe UI')
-			.attr('stroke', '#34495e');
+			.attr('style', fontStroke);
 
 		// y-axis labels
 		chart.selectAll('g')
@@ -92,12 +96,9 @@ export class ModalSmartStandByComponent implements OnInit {
 			.append('text')
 			.text(d => this.translate.instant(d).toUpperCase())
 			.attr('x', margin.left - 10)
-			.attr('y', (d, i) => boxHeight * (i + 1))
+			.attr('y', (d, i) => boxHeight * (i + 1) + 6)
 			.attr('text-anchor', 'end')
-			.attr('font-size', 10)
-			.attr('font-weight', 550)
-			.attr('font-family', 'Segoe UI')
-			.attr('stroke', '#34495e');
+			.attr('style', fontStroke);
 
 		const table = chart.selectAll('g')
 			.append('g')
@@ -122,7 +123,7 @@ export class ModalSmartStandByComponent implements OnInit {
 			.attr('class', 'cell-activity')
 			.attr('width', Math.floor(boxWidth / 4) + 2)
 			.attr('height', boxHeight)
-			.attr('fill', (d, i) => this.colors.first[d])
+			.attr('fill', (d, i) => colors[d])
 			.attr('x', (d, i) => (i * cellWidth));
 
 		// add rect with border, repeat once
@@ -131,129 +132,45 @@ export class ModalSmartStandByComponent implements OnInit {
 			.data([1])
 			.join('rect')
 			.attr('class', 'cell-rect')
-			.attr('width', boxWidth)
+			.attr('width', boxWidth + 2)
 			.attr('height', boxHeight)
-			.attr('style', 'stroke: #000; stroke-width: 1; fill-opacity: 0;')
+			.attr('style', cellBorder)
 			.attr('x', (d, i) => (i * cellWidth));
 	}
 
-	public renderToSecondChart(data: SmartStandbyActivityModel[]) {
-		const element = this.chartContainer.last.nativeElement;
-		const margin: any = { top: 30, bottom: 30, left: 30, right: 30 };
-		const width = element.offsetWidth - (margin.left - margin.right);
-		const height = element.offsetHeight - (margin.top - margin.bottom);
-		const boxWidth = Math.floor(35);
-		const boxHeight = 25;
-		const cellWidth = boxWidth / 4;
-		const hours = data[0].activities.map((d) => d.hour);
-
-		const svg = d3.select(element).append('svg')
-			// .attr('width', '100%')
-			// .attr('height', element.offsetHeight)
-			.attr('preserveAspectRatio', 'xMinYMin meet')
-			.attr('viewBox', '0 0 960 250');
-
-		// chart plot area
-		const chart = svg.append('g')
-			.attr('transform', `translate(${margin.left}, ${margin.top})`);
-		// x-axis labels
-		chart.selectAll('g')
-			.data(hours)
-			.enter()
-			.append('text')
-			.text(d => d)
-			.attr('x', (d) => (boxWidth * (d + 1)) + 9)
-			.attr('y', 0)
-			.attr('text-anchor', 'center')
-			.attr('font-size', 10)
-			.attr('font-weight', 550)
-			.attr('font-family', 'Segoe UI')
-			.attr('stroke', '#34495e');
-
-		// y-axis labels
-		chart.selectAll('g')
-			.data(this.days)
-			.enter()
-			.append('text')
-			.text(d => this.translate.instant(d).toUpperCase())
-			.attr('x', margin.left - 10)
-			.attr('y', (d, i) => boxHeight * (i + 1))
-			.attr('text-anchor', 'end')
-			.attr('font-size', 10)
-			.attr('font-weight', 550)
-			.attr('font-family', 'Segoe UI')
-			.attr('stroke', '#34495e');
-
-		const table = chart.selectAll('g')
-			.append('g')
-			.data(data)
-			.join('g')
-			.attr('transform', (d, i) => `translate(${margin.left}, ${((i) * boxHeight) + 10})`);
-
-		const cells = table
-			.selectAll('g')
-			.data(d => d.activities)
-			.join('g')
-			.attr('width', boxWidth - margin.left)
-			.attr('height', boxHeight)
-			.attr('class', 'cell-container')
-			.attr('transform', (d, i) => `translate(${(i * boxWidth)}, 0)`);
-
-		// draw activity cell for each hour, each hour has 4 cells
-		cells
-			.selectAll('g')
-			.data(d => d.usage)
-			.join('rect')
-			.attr('class', 'cell-activity')
-			.attr('width', Math.floor(boxWidth / 2))
-			.attr('height', boxHeight)
-			.attr('fill', (d, i) => this.colors.second[d])
-			.attr('x', (d, i) => (i * cellWidth));
-
-		// add rect with border, repeat once
-		cells
-			.selectAll('g')
-			.data([1])
-			.join('rect')
-			.attr('class', 'cell-rect')
-			.attr('width', boxWidth)
-			.attr('height', boxHeight)
-			.attr('style', 'stroke: #000; stroke-width: 1; fill-opacity: 0;')
-			.attr('x', (d, i) => (i * cellWidth));
-
-	}
-
-	public getActiviesData() {
+	private getActivitiesData() {
+		// this.renderActivityChart(this.chartContainer1, this.activities, this.colors.first);
 		this.powerService.getSmartStandbyPresenceData().then((data: SmartStandbyActivityModel[]) => {
 			if (data && data.length > 0) {
-				this.renderToFirstChart(data);
+				this.renderActivityChart(this.chartContainer1, data, this.colors.first);
 			} else {
-				this.renderToFirstChart(this.activities)
+				this.renderActivityChart(this.chartContainer1, this.activities, this.colors.first);
 			}
 		}).catch(error => {
-			console.log('getSmartStandbyPresenceData error', error.message);
-			return EMPTY;
+			this.loggerService.exception('ModalSmartStandByComponent.getSmartStandbyPresenceData error', error);
 		});
 	}
 
 	public getSmartStandbyActiveHours() {
+		// this.renderActivityChart(this.chartContainer2, this.activities, this.colors.second);
 		this.powerService.GetSmartStandbyActiveHours().then((data: SmartStandbyActivityModel[]) => {
 			if (data && data.length > 0) {
-				this.renderToSecondChart(data);
-				this.getIsPresenceDataSufficientStatus()
+				this.renderActivityChart(this.chartContainer2, data, this.colors.second);
+				this.getIsPresenceDataSufficientStatus();
 			} else {
-				this.renderToSecondChart(this.activities)
+				this.renderActivityChart(this.chartContainer2, this.activities, this.colors.second);
 			}
 		}).catch(error => {
-			console.log('getSmartStandbyActiveHours error', error.message);
-			return EMPTY;
+			this.loggerService.exception('ModalSmartStandByComponent.getSmartStandbyActiveHours error', error);
 		});
 	}
-	public getIsPresenceDataSufficientStatus(){
-		this.powerService.getIsPresenceDataSufficient().then(value =>{
+
+	public getIsPresenceDataSufficientStatus() {
+		this.powerService.getIsPresenceDataSufficient().then(value => {
 			this.isSufficient = value;
-		})
+		});
 	}
+
 	closeModal() {
 		this.activeModal.close('close');
 	}

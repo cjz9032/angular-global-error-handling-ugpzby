@@ -9,7 +9,6 @@ import ru from '../../assets/i18n/ru.json';
 import zhhans from '../../assets/i18n/zh-hans.json';
 import de from '../../assets/i18n/de.json';
 import fr from '../../assets/i18n/fr.json';
-import it from '../../assets/i18n/it.json';
 
 // this loader will convert JSON files to JS and add HASH during deployment
 export class WebpackTranslateLoader implements TranslateLoader {
@@ -33,8 +32,6 @@ export class WebpackTranslateLoader implements TranslateLoader {
 				return of(de as any);
 			case 'fr':
 				return of(fr as any);
-			case 'it':
-				return of(it as any);
 			default:
 				return from(import(`../../../assets/i18n/${lang}.json`));
 		}
