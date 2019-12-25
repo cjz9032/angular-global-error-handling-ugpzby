@@ -1,6 +1,6 @@
 @import "../../../app.theme";
 
-@mixin theme($name, $background, $color, $icon_color, $border) {
+@mixin theme($name, $background, $font_color, $icon_color, $border) {
 	.vtr-ui-switch-row.#{$name} {
 		.col-auto {
 			height: 100%;
@@ -9,7 +9,7 @@
 			}
 			@media #{$white-on-black} {
 				margin: 0.2rem;
-	}
+			}
 		}
 		.vtr-col-pad {
 			padding: 0 1rem;
@@ -29,8 +29,8 @@
 			}
 		}
 		.vtr-disabled {
-            opacity: 0.65;
-            pointer-events:none !important;
+			opacity: 0.65;
+			pointer-events: none !important;
 		}
 
 		padding: 1.5rem 0.7rem 1.5rem;
@@ -102,16 +102,16 @@
 
 		.title {
 			font-size: $fontsize_md;
-			color: $color;
+			color: $font_color;
 			font-weight: $weight_light;
 			letter-spacing: 0.05rem;
-            text-transform: none;
+			text-transform: none;
 		}
 
 		.caption {
 			font-size: $fontsize_xs;
 			font-weight: $weight_light;
-			color: $grey_dark;
+			color: $font_color;
 			max-width: 60rem;
 		}
 
@@ -144,7 +144,7 @@
 			padding-top: 0.3rem;
 		}
 
-		.tool-tip-icon{
+		.tool-tip-icon {
 			margin-left: 0.9rem;
 			margin-top: 0.3rem;
 		}
@@ -181,12 +181,13 @@
 	list-style: none;
 	fa-icon {
 		color: $dark;
-        font-size: 0.5rem;
-        padding-bottom:5px;
-        vertical-align: middle;
-        display: inline-block;
+		font-size: 0.5rem;
+		padding-bottom: 5px;
+		vertical-align: middle;
+		display: inline-block;
 	}
 }
 
+// @mixin theme($name, $background, $font_color, $icon_color, $border)
 @include theme(white-theme, $light, $main_darker, $menu_hover, $screen_dark_10);
 @include theme(blue-theme, $gradient_main, $light, $light, $screen_light_15);
