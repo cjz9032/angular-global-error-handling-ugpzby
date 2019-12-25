@@ -35,6 +35,7 @@ import { CardService } from 'src/app/services/card/card.service';
 import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
 import { StringBooleanEnum } from '../../data-models/common/common.interface';
 import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
+import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -225,18 +226,24 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					this.removeDeviceSettings();
 				}
 			});
-			// this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, false);
-			this.backlightCapabilitySubscription = this.backlightService.backlight.pipe(
-				map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
-				map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY),
-				tap(res => {
-					this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, res);
-				}),
-				catchError(() => {
-					window.localStorage.removeItem(LocalStorageKey.BacklightCapability);
-					return undefined;
-				})
-			).subscribe();
+			// add try catch for backlight exception; this is temp solution, dongwq2 should add error handle in backlight
+			try {
+				// this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, false);
+				this.backlightCapabilitySubscription = this.backlightService.backlight.pipe(
+					map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
+					map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY),
+					tap(res => {
+						this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, res);
+					}),
+					catchError(() => {
+						window.localStorage.removeItem(LocalStorageKey.BacklightCapability);
+						return undefined;
+					})
+				).subscribe();
+			} catch (error) {
+				console.log('Backlight error: ',error);
+			}
+
 		}
 
 		const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
@@ -452,6 +459,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				case MenuItem.MenuItemChange:
 					this.initComponent();
 					break;
+				case SelfSelectEvent.SegmentChange:
+					this.initComponent();
+					break;
 				default:
 					break;
 			}
@@ -494,9 +504,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	getMenuItems(): Promise<any> {
 		// remove onfocus showVpn()
 		// need refresh menuItem from config service, don't need localStorage
-		if (this.items && this.items.length > 0) {
-			return Promise.resolve(this.items);
-		}
+		// comment cache logic for menu refresh
+		// if (this.items && this.items.length > 0) {
+		// 	return Promise.resolve(this.items);
+		// }
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
 			this.items = items;
 			return this.items;

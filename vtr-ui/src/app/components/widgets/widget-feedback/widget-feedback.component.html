@@ -2,19 +2,37 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<div class="title" *ngIf="title" id="dashboard-give-feedback-title"
-					attr.aria-label="dashboard-give-feedback-title" [innerHTML]="title"></div>
-				<div class="description" *ngIf="description" id="dashboard-give-feedback-description"
-					attr.aria-label="dashboard-give-feedback-description" [innerHTML]="description"></div>
-				<div *ngIf="actionName" class="button-box d-none d-lg-block">
-					<vtr-ui-button (onClick)="feedback($event)" id="widget-btn-feedback"
-						aria-label="widget-btn-feedback" metricsItem="btn.givefeedback" [isFullWidth]="true"
-						[label]="actionName" [linkId]="'dashboard-btn-feedback'"></vtr-ui-button>
+				<div class="title"
+					*ngIf="title"
+					id="dashboard-give-feedback-title"
+					attr.aria-label="dashboard-give-feedback-title"
+					[innerHTML]="title"></div>
+				<div class="description"
+					*ngIf="description"
+					id="dashboard-give-feedback-description"
+					attr.aria-label="dashboard-give-feedback-description"
+					[innerHTML]="description"></div>
+				<div *ngIf="actionName"
+					class="button-box d-none d-lg-block">
+					<vtr-ui-button (onClick)="feedback($event)"
+						id="widget-btn-feedback"
+						aria-label="widget-btn-feedback"
+						metricsItem="btn.givefeedback"
+						[isFullWidth]="true"
+						[label]="actionName"
+						[isDisabled]="!isOnline"
+						[linkId]="'dashboard-btn-feedback'"></vtr-ui-button>
 				</div>
-				<div *ngIf="actionName" class="button-box d-lg-none">
-					<vtr-ui-button (onClick)="feedback($event)" id="widget-btn-feedback"
-						aria-label="widget-btn-feedback" metricsItem="btn.givefeedback" [isFullWidth]="true"
-						[label]="actionName" [linkId]="'dashboard-btn-feedback'"></vtr-ui-button>
+				<div *ngIf="actionName"
+					class="button-box d-lg-none">
+					<vtr-ui-button (onClick)="feedback($event)"
+						id="widget-btn-feedback"
+						aria-label="widget-btn-feedback"
+						metricsItem="btn.givefeedback"
+						[isFullWidth]="true"
+						[label]="actionName"
+						[isDisabled]="!isOnline"
+						[linkId]="'dashboard-btn-feedback'"></vtr-ui-button>
 				</div>
 			</div>
 		</div>

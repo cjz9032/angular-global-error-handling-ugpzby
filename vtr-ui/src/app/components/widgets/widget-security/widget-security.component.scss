@@ -1,5 +1,4 @@
 @import "../../../app.theme";
-@import "../../pages/page-privacy/styles/common-blocks.scss";
 
 .vtr-widget-security {
   .security-background {
@@ -9,20 +8,38 @@
 	color: $light;
     background: linear-gradient(109deg, $hover_dark 0%, $main_darker 100%);
     box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-	padding: 2.5rem;
+	padding: 4.5rem 2.5rem 2.5rem;
 	position: relative;
+	// @media #{$mediaquery_X46} {  // $mediaquery_X46 support 1:1 of screen 768px-992px
+	// 	padding-top: 3.5rem;
+	// }
+	@media #{$mediaquery_X48} {
+		padding-top: 3.5rem;
+	}
 
 	.left-container {
-		position: absolute;
-		left: 0;
-		top: 1.5rem;
+		margin-top: -3rem;
+		// @media #{$mediaquery_X46} {
+		// 	margin-top: -2rem;
+		// }
+		@media #{$mediaquery_X48} {
+			margin-top: -2rem;
+		}
 		.circle-box {
-			background: linear-gradient(109deg, $hover_dark 15%, $main_darker 245%);
-			width: 25rem;
-			height: 27rem;
-			border-radius: 50%;
 			img {
-				width: 18rem;
+				width: 22rem;
+				@media #{$mediaquery_X45} {
+					width: 18rem;
+				}
+				// @media #{$mediaquery_X46} {
+				// 	width: 10rem;
+				// }
+				@media #{$mediaquery_X47} {
+					width: 18rem;
+				}
+				@media #{$mediaquery_X48} {
+					width: 10rem;
+				}
 			}
 		}
 		.circle-desc {
@@ -40,56 +57,74 @@
 			b {
 				font-size: 1.2rem;
 			}
+			@media #{$mediaquery_X45} {
+				width: 10rem;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -5rem;
+				margin-top: -2rem;
+			}
+			// @media #{$mediaquery_X46} {
+			// 	position: initial;
+			// 	width: auto;
+			// 	margin-top: 1rem;
+			// 	margin-left: 0;
+			// }
+			@media #{$mediaquery_X47} {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -5rem;
+				margin-top: -2rem;
+			}
+			@media #{$mediaquery_X48} {
+				position: initial;
+				width: auto;
+				margin-top: 1rem;
+				margin-left: 0;
+			}
+		}
+	}
+
+	.side {
+		margin-left: -1rem;
+		img {
+			width: 3.5rem;
+		}
+	}
+	// @media #{$mediaquery_X46} {
+	// 	.side {
+	// 		margin-left: 0;
+	// 		img {
+	// 			width: 1.5rem;
+	// 		}
+	// 	}
+	// }
+	@media #{$mediaquery_X48} {
+		.side {
+			margin-left: 0;
+			img {
+				width: 1.5rem;
+			}
 		}
 	}
 
 	.right-container {
 		background-color: $main_darker;
-		padding: 3rem 0 3rem 13rem;
-		min-height: 24rem;
+		padding: 2rem;
+		border-radius: 0 0.5rem 0.5rem 0.5rem;
 		.title {
 			font-size: 2rem;
 		}
-		.desc {
-			font-size: 1.4rem;
-		}
-	}
-	@media #{$mediaquery_X45} {
-		.right-container {
-			flex: 0 0 100%;
-			max-width: 100%;
-			padding: 1.5rem;
-			margin-top: 18rem;
-			min-height: auto;
-		}
-		.left-container {
-			left: 50%;
-			top: 0;
-			margin-left: -10rem;
-			.circle-box {
-				background: transparent;
-				width: 20rem;
-				height: 20rem;
-			}
-		}
 	}
 
-	@media #{$breakpoint_lg} {
-		.right-container {
-			padding: 1.5rem;
-			margin-top: 18rem;
-			min-height: auto;
-		}
-		.left-container {
-			left: 50%;
-			top: 0;
-			margin-left: -10rem;
-			.circle-box {
-				background: transparent;
-				width: 20rem;
-				height: 20rem;
-			}
-		}
+	.desc {
+		font-size: 1.4rem;
+	}
+
+	.button {
+		max-width: 50%;
 	}
 
     vtr-ui-button {

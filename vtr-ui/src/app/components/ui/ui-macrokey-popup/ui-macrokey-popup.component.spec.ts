@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UiMacrokeyPopupComponent } from './ui-macrokey-popup.component';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 
-xdescribe('UiMacrokeyPopupComponent', () => {
+describe('UiMacrokeyPopupComponent', () => {
 	let component: UiMacrokeyPopupComponent;
 	let fixture: ComponentFixture<UiMacrokeyPopupComponent>;
 
@@ -24,13 +24,16 @@ xdescribe('UiMacrokeyPopupComponent', () => {
 			headerTitle: 'This is the header',
 			bodyText: 'this is the test body',
 			btnConfirm: 'Confirm'
-		}
+		};
+		let html_x = fixture.debugElement.nativeElement;
+		html_x.classList.add("vtr-app");
 		fixture.detectChanges();
 	});
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+
 	it('should focus on element', async () => {
 		let result: void;
 		try {
@@ -41,6 +44,7 @@ xdescribe('UiMacrokeyPopupComponent', () => {
 		expect(result).toEqual(undefined);
 
 	});
+
 	it('should call key down fun', async () => {
 		let result: void;
 		try {

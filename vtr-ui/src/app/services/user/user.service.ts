@@ -13,6 +13,9 @@ import { LocalInfoService } from '../local-info/local-info.service';
 import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subscription } from 'rxjs';
+import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 
 declare var Windows;
 
@@ -37,6 +40,7 @@ export class UserService {
 	private metrics: any;
 	private lidStarterHelper: LIDStarterHelper;
 	private lidSupported = true;
+	private subscription: Subscription;
 
 	constructor(
 		private cookieService: CookieService,
@@ -67,20 +71,13 @@ export class UserService {
 			this.devService.writeLog('UserService constructor: lid object is undefined');
 		}
 
-		if (typeof Windows !== 'undefined') {
-			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
-			if (packageVersion.minor < 1908) {
-				this.lidSupported = false;
-			}
-		}
-
-		this.localInfoService.getLocalInfo().then(localInfo => {
-			if (localInfo && localInfo.Segment === SegmentConst.Commercial) {
-				this.lidSupported = false;
-			}
-		});
+		this.updateLidSupported();
 
 		this.lidStarterHelper = new LIDStarterHelper(devService, commonService, deviceService, vantageShellService);
+
+		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 	}
 
 	// error is come from response status of LID contact request
@@ -342,4 +339,32 @@ export class UserService {
 		return this.lidSupported;
 	}
 
+	onNotification(notification: any) {
+		if (notification) {
+			switch (notification.type) {
+				case SelfSelectEvent.SegmentChange:
+					this.updateLidSupported();
+					break;
+				default:
+					break;
+			}
+		}
+	}
+
+
+	private updateLidSupported() {
+		let lidSupported = true;
+		if (typeof Windows !== 'undefined') {
+			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+			if (packageVersion.minor < 1908) {
+				lidSupported = false;
+			}
+		}
+		this.localInfoService.getLocalInfo().then(localInfo => {
+			if (localInfo && localInfo.Segment === SegmentConst.Commercial) {
+				lidSupported = false;
+			}
+			this.lidSupported = lidSupported;
+		});
+	}
 }
