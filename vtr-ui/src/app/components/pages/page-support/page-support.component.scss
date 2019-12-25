@@ -35,7 +35,7 @@
 				font-size: 2.5rem;
 				padding: 0 2.4rem;
 				color: $main_dark;
-				font-weight: $weight_medium;
+				font-weight: $weight_600;
 			}
 
 			.quick-access-desc {
@@ -58,9 +58,14 @@
 					@media #{$breakpoint_xl} {
 						width: 50%;
 					}
-
+					@media #{$breakpoint_lg} {
+						width: 25%;
+					}
+					@media #{$breakpoint_md} {
+						width: 50%;
+					}
 					@media #{$breakpoint_sm} {
-						width: 100%;
+						width: 100% !important;
 					}
 
 					.item-con {
@@ -92,7 +97,6 @@
 								position: relative;
 								top: 0;
 								height: 3.6rem;
-								filter: drop-shadow(0px 100px 0px #fff);
 							}
 						}
 
@@ -153,9 +157,7 @@
 							}
 
 							.item-icon {
-								img {
-									top: -100px;
-								}
+								filter: grayscale(100%) invert(100%) contrast(2000%);
 							}
 						}
 					}

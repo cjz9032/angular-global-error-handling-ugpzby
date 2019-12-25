@@ -11,6 +11,7 @@ import { BetaService } from 'src/app/services/beta/beta.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -130,6 +131,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					}
 				} catch (error) { }
 				break;
+			case SelfSelectEvent.SegmentChange:
+				this.getSegment();
+				break
 			default:
 				break;
 		}

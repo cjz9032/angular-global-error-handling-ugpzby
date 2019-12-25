@@ -108,6 +108,7 @@ $black_dark: #101424;
 $black_light: #424b6c;
 $hover_gray: #c2c8ce;
 $hover_dark: #191c28;
+$active_blue : #5671ff;
 
 $light: #fff;
 $dark: #000;
@@ -275,6 +276,8 @@ $mediaquery_X43: "only screen and (min-width: 1366px)";
 $mediaquery_X44: "all and (min-width: 992px)";
 $mediaquery_X45: "only screen and (min-width: 992px) and (max-width: 1200px)";
 $mediaquery_X46: "only screen and (min-width: 768px) and (max-width: 992px)";
+$mediaquery_X47: "only screen and (min-width: 600px) and (max-width: 768px)";
+$mediaquery_X48: "only screen and (max-width: 600px)";
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";
 $dpiquery_2: "max-resolution: 200dpi";
