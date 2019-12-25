@@ -1125,7 +1125,8 @@
                             "yes": "はい",
                             "description3": "バッテリー・ゲージのリセットを中止してよろしいですか?"
                         },
-                        "dual_note": "注: 同時にリセットできるのは 1 つのバッテリーのみです。"
+                        "dual_note": "注: 同時にリセットできるのは 1 つのバッテリーのみです。",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1988,7 +1989,7 @@
             "intermediateTitle": "中程度の保護",
             "intermediateDesc": "お疲れ様でした。高度な保護が実現するまであと一歩です。データを暗号化し、ネットワーク・セキュリティーの侵害を監視してみてください。",
             "advanced": "拡張",
-            "advancedTtitle": "高度な保護",
+            "advancedTitle": "高度な保護",
             "advancedDesc": "おめでとうございます。お使いのデバイスで、すべてのレベル (基本、中程度、高度) のセキュリティー保護が有効になりました。",
             "haveOwn": "次が有効になっています",
             "basicSecurity": "基本的なセキュリティー",

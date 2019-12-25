@@ -3,8 +3,10 @@
 .vtr-widget-landing-security {
   .icomoon {
     font-size: 2rem;
-    color: blue;
-    margin-right: 1.5rem;
+    color: $menu_hover;
+  }
+  .basis-width {
+	  flex: 0 1 3rem;
   }
 
   .landing-content {
@@ -27,38 +29,40 @@
     ::ng-deep {
       .button-box {
         .button {
-          border: 1px solid #667481 !important;
-          color: #34495e !important;
-          background: linear-gradient(90deg, #f5f7f8 0%, #ffffff 100%) !important;
+          border: 1px solid $grey_dark !important;
+          color: $grey_darker !important;
+          background: linear-gradient(90deg, $grey_lighter 0%, $light 100%) !important;
         }
       }
     }
   }
 
   .badge {
-    height: 1.5rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
     text-transform: uppercase;
-    color: #ffffff;
+    color: $light;
     border-radius: 1rem;
     font-size: 1rem;
     padding: 0 1rem;
-    justify-self: end;
+	justify-self: end;
+	max-width: 10rem;
   }
 
   .status-enabled {
-    background: #008035;
+    background: $green_dark;
   }
 
   .status-haveOwn {
-    background: #424b6c;
+    background: $black_light;
   }
 
   .status-loading {
-    background: #424b6c;
+    background: $black_light;
   }
 
   .status-disabled {
-    color: #667481;
+    color: $grey_dark;
   }
 
   .custom-control-label {

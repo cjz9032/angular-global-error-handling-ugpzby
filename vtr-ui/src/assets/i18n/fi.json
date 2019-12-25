@@ -1125,7 +1125,8 @@
                             "yes": "Kyllä",
                             "description3": "Haluatko varmasti lopettaa akkumittarin nollauksen?"
                         },
-                        "dual_note": "Huomautus: Voit nollata vain yhden akun kerrallaan."
+                        "dual_note": "Huomautus: Voit nollata vain yhden akun kerrallaan.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1988,7 +1989,7 @@
             "intermediateTitle": "Keskitason suojaus",
             "intermediateDesc": "Hienoa työtä! Olet vain askeleen päässä edistyneestä suojauksesta. Salaa tietosi ja valvo verkon tietomurtoja.",
             "advanced": "LISÄASETUKSET",
-            "advancedTtitle": "Edistynyt suojaus",
+            "advancedTitle": "Edistynyt suojaus",
             "advancedDesc": "Onnittelut! Laitteessa on käytössä perussuojaus, keskitason suojaus ja edistynyt suojaus. Hienoa työtä!",
             "haveOwn": "Minulla on oma",
             "basicSecurity": "PERUSSUOJAUS",

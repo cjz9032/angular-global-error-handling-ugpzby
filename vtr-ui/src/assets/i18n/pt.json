@@ -1125,7 +1125,8 @@
                             "yes": "Sim",
                             "description3": "Tem a certeza de que pretende parar a reposição do indicador de bateria?"
                         },
-                        "dual_note": "Nota: apenas pode ser reposta uma bateria de cada vez."
+                        "dual_note": "Nota: apenas pode ser reposta uma bateria de cada vez.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1988,7 +1989,7 @@
             "intermediateTitle": "Proteção intermédia",
             "intermediateDesc": "Bom trabalho! Está a apenas um passo de obter proteção avançada, experimente encriptar os seus dados e monitorizar as falhas de segurança da sua rede.",
             "advanced": "AVANÇADAS",
-            "advancedTtitle": "Proteção avançada",
+            "advancedTitle": "Proteção avançada",
             "advancedDesc": "Parabéns! O seu dispositivo tem a proteção de segurança básica, intermédia e avançada ativadas, bom trabalho!",
             "haveOwn": "Tenho a minha própria",
             "basicSecurity": "SEGURANÇA BÁSICA",
