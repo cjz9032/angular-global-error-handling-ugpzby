@@ -111,6 +111,24 @@
 		border: 0.3rem solid $shade_lightest;
 		// transition: all 50ms ease-in;
 	}
+	&.border-disabled {
+		border: 0.2rem solid #e6eaeb;
+		cursor: default;
+		label {
+			.icon-circle {
+				color: $grey_darker;
+			}
+		}
+	}
+	&.border-checked-disabled {
+		border: 0.2rem solid #667481;
+		cursor: default;
+		label {
+			.icon-circle {
+				color: $grey_darker;
+			}
+		}
+	}
 }
 .large-width {
 	width: 29rem;
