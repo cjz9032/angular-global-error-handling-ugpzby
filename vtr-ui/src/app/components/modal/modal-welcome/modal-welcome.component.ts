@@ -320,7 +320,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				idArrayPage2.push('welcome-interest-' + interest.label);
 			}
 		});
-		if (this.hideMoreInterestBtn) {
+		if (!this.hideMoreInterestBtn) {
 			idArrayPage2.push('tutorial_hide_moreInterest');
 		}
 		idArrayPage2 = idArrayPage2.concat([
