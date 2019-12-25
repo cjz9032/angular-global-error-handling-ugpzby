@@ -18,7 +18,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 @Component({
 	selector: 'vtr-ui-lighting-profile',
 	templateUrl: './ui-lighting-profile.component.html',
-	styleUrls: [ './ui-lighting-profile.component.scss' ]
+	styleUrls: ['./ui-lighting-profile.component.scss']
 })
 export class UiLightingProfileComponent implements OnInit {
 	@Input() currentProfileId: number;
@@ -127,7 +127,8 @@ export class UiLightingProfileComponent implements OnInit {
 						id: 'lighting_front_effect_cpu_temperature',
 						label: 'gaming.lightingProfile.lightingeffectnarrator.option6.title',
 						metricitem: 'lighting_front_effect_cpu_temperature',
-						value: 64
+						value: 64,
+						show_tool_tip: true,
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option7.title',
@@ -135,7 +136,8 @@ export class UiLightingProfileComponent implements OnInit {
 						id: 'lighting_front_effect_cpu_utilization',
 						label: 'gaming.lightingProfile.lightingeffectnarrator.option7.title',
 						metricitem: 'lighting_front_effect_cpu_utilization',
-						value: 128
+						value: 128,
+						show_tool_tip: true,
 					}
 				]
 			},
@@ -202,7 +204,8 @@ export class UiLightingProfileComponent implements OnInit {
 						id: 'lighting_side_effect_cpu_temperature',
 						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option6.title',
 						metricitem: 'lighting_side_effect_cpu_temperature',
-						value: 64
+						value: 64,
+						show_tool_tip: true,
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option7.title',
@@ -210,7 +213,8 @@ export class UiLightingProfileComponent implements OnInit {
 						id: 'lighting_side_effect_cpu_utilization',
 						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option7.title',
 						metricitem: 'lighting_side_effect_cpu_utilization',
-						value: 128
+						value: 128,
+						show_tool_tip: true,
 					}
 				]
 			}
@@ -292,7 +296,7 @@ export class UiLightingProfileComponent implements OnInit {
 	];
 	optionsSingleColor = [
 		new Options(1, 'gaming.lightingProfile.lightingSingleLightingOption.option1.title', "'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option1.title'"),
-		new Options(2, 'gaming.lightingProfile.lightingSingleLightingOption.option2.title',"'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option2.title'"),
+		new Options(2, 'gaming.lightingProfile.lightingSingleLightingOption.option2.title', "'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option2.title'"),
 		new Options(3, 'gaming.lightingProfile.lightingSingleLightingOption.option3.title', "'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option3.title'"),
 		new Options(4, 'gaming.lightingProfile.lightingSingleLightingOption.option4.title', "'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option4.title'")
 	];
@@ -306,7 +310,7 @@ export class UiLightingProfileComponent implements OnInit {
 		private gamingAllCapabilities: GamingAllCapabilitiesService,
 		private commonService: CommonService,
 		private deviceService: DeviceService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.deviceService.getMachineInfo().then((value: any) => {
@@ -337,7 +341,7 @@ export class UiLightingProfileComponent implements OnInit {
 					this.updateGetGamingLightingCapabilities(response);
 				});
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 	public getCacheLightingCapabilities(response) {
 		try {
@@ -393,7 +397,7 @@ export class UiLightingProfileComponent implements OnInit {
 				const ledRGB = this.lightingCapabilities.RGBfeature;
 				if (this.lightingCapabilities.LightPanelType.length > 0) {
 					const ledPanel = this.lightingCapabilities.LightPanelType[0];
-					const resultImg = this.panelImageData.filter(function(v, i) {
+					const resultImg = this.panelImageData.filter(function (v, i) {
 						return v.PanelType === ledPanel && v.RGB === ledRGB;
 					});
 					if (resultImg.length > 0) {
@@ -402,7 +406,7 @@ export class UiLightingProfileComponent implements OnInit {
 
 					if (this.lightingCapabilities.LightPanelType.length > 1) {
 						const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
-						const resultImg2 = this.panelImageData.filter(function(v, i) {
+						const resultImg2 = this.panelImageData.filter(function (v, i) {
 							return v.PanelType === ledPanel2 && v.RGB === ledRGB;
 						});
 						if (resultImg2.length > 0) {
@@ -411,7 +415,7 @@ export class UiLightingProfileComponent implements OnInit {
 					}
 				}
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 	public getLightingProfileByIdFromcache(response: any) {
 		try {
@@ -484,7 +488,7 @@ export class UiLightingProfileComponent implements OnInit {
 					}
 				}
 			}
-		} catch (err) {}
+		} catch (err) { }
 	}
 	public updateGetGamingLightingCapabilities(response: any) {
 		try {
@@ -553,7 +557,7 @@ export class UiLightingProfileComponent implements OnInit {
 				const ledRGB = this.lightingCapabilities.RGBfeature;
 				if (this.lightingCapabilities.LightPanelType.length > 0) {
 					const ledPanel = this.lightingCapabilities.LightPanelType[0];
-					const resultImg = this.panelImageData.filter(function(v, i) {
+					const resultImg = this.panelImageData.filter(function (v, i) {
 						return v.PanelType === ledPanel && v.RGB === ledRGB;
 					});
 					if (resultImg.length > 0) {
@@ -562,7 +566,7 @@ export class UiLightingProfileComponent implements OnInit {
 
 					if (this.lightingCapabilities.LightPanelType.length > 1) {
 						const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
-						const resultImg2 = this.panelImageData.filter(function(v, i) {
+						const resultImg2 = this.panelImageData.filter(function (v, i) {
 							return v.PanelType === ledPanel2 && v.RGB === ledRGB;
 						});
 						if (resultImg2.length > 0) {
@@ -624,7 +628,7 @@ export class UiLightingProfileComponent implements OnInit {
 					const ledRGB = this.lightingCapabilities.RGBfeature;
 					if (this.lightingCapabilities.LightPanelType.length > 0) {
 						const ledPanel = this.lightingCapabilities.LightPanelType[0];
-						const resultImg = this.panelImageData.filter(function(v, i) {
+						const resultImg = this.panelImageData.filter(function (v, i) {
 							return v.PanelType === ledPanel && v.RGB === ledRGB;
 						});
 						if (resultImg.length > 0) {
@@ -632,7 +636,7 @@ export class UiLightingProfileComponent implements OnInit {
 						}
 						if (this.lightingCapabilities.LightPanelType.length > 1) {
 							const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
-							const resultImg2 = this.panelImageData.filter(function(v, i) {
+							const resultImg2 = this.panelImageData.filter(function (v, i) {
 								return v.PanelType === ledPanel2 && v.RGB === ledRGB;
 							});
 							if (resultImg2.length > 0) {
@@ -642,7 +646,7 @@ export class UiLightingProfileComponent implements OnInit {
 					}
 				}
 			}
-		} catch (err) {}
+		} catch (err) { }
 	}
 	public optionChangedRGBTop($event, item) {
 		if (this.lightingProfileEffectColorNUmber === undefined) {
@@ -662,11 +666,11 @@ export class UiLightingProfileComponent implements OnInit {
 			} else {
 				this.showHideOverlay = false;
 				this.showHideOverlaySide = false;
-				let res:any;
+				let res: any;
 				if (LocalStorageKey.LightingProfileById !== undefined) {
 					res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
 				}
-				if(res.lightInfo.length>0){
+				if (res.lightInfo.length > 0) {
 					if (
 						res.lightInfo[0].lightEffectType === LightEffectComplexType.Wave ||
 						res.lightInfo[0].lightEffectType === LightEffectComplexType.Smooth ||
@@ -804,11 +808,11 @@ export class UiLightingProfileComponent implements OnInit {
 			} else {
 				this.showHideOverlaySide = false;
 				this.showHideOverlay = false;
-				let res:any;
+				let res: any;
 				if (LocalStorageKey.LightingProfileById !== undefined) {
 					res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
 				}
-				if(res.lightInfo.length>0){
+				if (res.lightInfo.length > 0) {
 					if (
 						res.lightInfo[0].lightEffectType === LightEffectComplexType.Wave ||
 						res.lightInfo[0].lightEffectType === LightEffectComplexType.Smooth ||
@@ -1121,7 +1125,7 @@ export class UiLightingProfileComponent implements OnInit {
 						});
 				}
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 	setLightingBrightness(event) {
 		try {
@@ -1151,7 +1155,7 @@ export class UiLightingProfileComponent implements OnInit {
 					}
 				}
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	public getLightingBrightness() {
@@ -1160,7 +1164,7 @@ export class UiLightingProfileComponent implements OnInit {
 				this.profileBrightness =
 					this.commonService.getLocalStorageValue(LocalStorageKey.ProfileBrightness) || 1;
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	public getLightingProfileById(currProfileId) {
@@ -1338,7 +1342,7 @@ export class UiLightingProfileComponent implements OnInit {
 					}
 				});
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	public getLightEffectOptionName(optionValue: any) {
@@ -1528,7 +1532,7 @@ export class UiLightingProfileComponent implements OnInit {
 					}
 				});
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 	colorEffectChangedFront($event) {
 		this.applyBtnStatus1 = 'loading';

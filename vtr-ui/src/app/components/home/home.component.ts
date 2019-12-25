@@ -1,6 +1,6 @@
 import { DeviceService } from 'src/app/services/device/device.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute, RouteConfigLoadEnd } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
@@ -19,7 +19,6 @@ import { filter } from 'rxjs/operators';
 export class HomeComponent implements OnInit, OnDestroy {
 	private subscription: Subscription;
 	private redirectToUrl: string;
-	private routeSubscription: Subscription;
 
 	constructor(
 		public deviceService: DeviceService,
@@ -69,24 +68,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 		if (this.subscription) {
 			this.subscription.unsubscribe();
 		}
-		if (this.routeSubscription) {
-			this.routeSubscription.unsubscribe();
-		}
 	}
 
 	private vantageLaunch(isGaming: boolean) {
 		this.logger.info(`HomeComponent.vantageLaunch isGamingDevice: `, isGaming);
 		this.route.queryParams.subscribe(params => {
 			try {
-				this.router.navigate([isGaming ? '/device-gaming' : '/dashboard'], { queryParams : params}).then((status) => {
-					if (!status) {
-						this.routeSubscription = this.router.events.subscribe(event => {
-							if (event instanceof RouteConfigLoadEnd && (isGaming ? event.route.path === 'device-gaming' : event.route.path === 'dashboard')) {
-								this.router.navigate([isGaming ? '/device-gaming' : '/dashboard'], { queryParams : params});
-							}
-						});
-					}
-				});
+				this.router.navigateByUrl(isGaming ? '/device-gaming' : '/dashboard', { queryParams : params});
 			} catch (error) {
 				this.logger.error(`HomeComponent.vantageLaunch`, error.message);
 				return EMPTY;

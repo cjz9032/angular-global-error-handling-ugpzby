@@ -1989,7 +1989,7 @@
             "intermediateTitle": "Mittlerer Schutz",
             "intermediateDesc": "Gut gemacht! Sie sind nur einen Schritt entfernt vom erweiterten Schutz. Versuchen Sie, Ihre Daten zu verschlüsseln und Ihre Netzwerk-Sicherheitslücken zu überwachen.",
             "advanced": "ERWEITERT",
-            "advancedTtitle": "Erweiterter Schutz",
+            "advancedTitle": "Erweiterter Schutz",
             "advancedDesc": "Herzlichen Glückwunsch! Auf Ihrem Gerät sind ein grundlegender, ein mittlerer und ein erweiterter Sicherheitsschutz aktiviert, gut gemacht!",
             "haveOwn": "Ich habe meine eigenen",
             "basicSecurity": "BASIS-SICHERHEITSFUNKTIONEN",

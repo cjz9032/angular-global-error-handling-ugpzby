@@ -6,6 +6,9 @@ import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+import { TranslateStore } from '@ngx-translate/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TranslationModule } from 'src/app/modules/translation.module';
 
 const macrokeyServiceMock = jasmine.createSpyObj('MacrokeyService', [
 	'isMacroKeyAvailable',
@@ -59,7 +62,7 @@ const sampleInputData = {
 	}
 };
 
-xdescribe('WidgetMacrokeySettingsComponent', () => {
+describe('WidgetMacrokeySettingsComponent', () => {
 	let component: WidgetMacrokeySettingsComponent;
 	let fixture: ComponentFixture<WidgetMacrokeySettingsComponent>;
 	macrokeyServiceMock.isMacroKeyAvailable.and.returnValue(true);
@@ -84,8 +87,10 @@ xdescribe('WidgetMacrokeySettingsComponent', () => {
 					{ provide: HttpClient },
 					{ provide: Router, useValue: { navigate: (route) => route } },
 					{ provide: MacrokeyService, useValue: macrokeyServiceMock },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock }
-				]
+					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					TranslateStore
+				],
+				imports: [FontAwesomeModule, TranslationModule]
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetMacrokeySettingsComponent);
 			component = fixture.componentInstance;

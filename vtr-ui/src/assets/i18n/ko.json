@@ -1989,7 +1989,7 @@
             "intermediateTitle": "중간 보호",
             "intermediateDesc": "잘 하셨습니다! 고급 보호 기능의 한 단계를 적용한 것일 뿐이며 데이터를 암호화하고 네트워크 보안 침해를 모니터링하는 것이 좋습니다.",
             "advanced": "고급",
-            "advancedTtitle": "고급 보호",
+            "advancedTitle": "고급 보호",
             "advancedDesc": "축하합니다! 장치에 기본, 중간 및 고급 보안 보호 기능이 있습니다.",
             "haveOwn": "내 설정이 있음",
             "basicSecurity": "기본 보안",
