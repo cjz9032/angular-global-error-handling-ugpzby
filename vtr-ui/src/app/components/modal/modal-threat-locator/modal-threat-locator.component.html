@@ -1,6 +1,7 @@
 <div class="modal-body vtr-modal-threat-locator" id="modal-threat-locator" [ngClass]="{'connection-error-modal': !online}">
 	<h1>Threat locator</h1>
-	<div class="iframe-container">
+	<div class="iframe-container"
+	 [style.height.px]="document.body.clientHeight / ratio">
 		<div *ngIf="!online" class="disabled-network p-5">
 			<p class="title">{{ 'security.wifisecurity.threatlocator.connectionError' | translate}}</p>
 			<p class="subscribe">{{ 'security.wifisecurity.threatlocator.tryAgain' | translate}}</p>
