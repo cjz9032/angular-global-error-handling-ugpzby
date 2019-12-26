@@ -50,17 +50,17 @@ export class UPEService {
 
 		if (!this.requestCache[params.position]) {
 			this.requestCache[params.position] = new Observable(subscriber => {	// cache request
-				this.startFetchUpeContentAndRetry(params).then(result => {
+				(async () => {
+					const result = await this.startFetchUpeContentAndRetry(params);
 					if (result.success) {
-						const articles = this.upeHelper.filterUPEContent(result.content);
+						const articles = await this.upeHelper.filterUPEContent(result.content);
 						subscriber.next(articles);
 						subscriber.complete();
 					} else {
 						subscriber.error(result);
 					}
-				}).finally(() => {
 					this.requestCache[params.position] = null;	// release request
-				});
+				})();
 			});
 		}
 
@@ -116,7 +116,7 @@ export class UPEService {
 		let errorCode = '';
 		try {
 			const httpResponse = await this.commsService.callUpeApi(
-				`${upeEssential.upeUrlBase}/upe/recommendation/v2/recommends`, queryParam, {}
+				`${upeEssential.upeUrlBase}/upe/recommendation/v2/recommends`, queryParam
 			).toPromise() as any;
 
 			if (httpResponse.status === 200 && httpResponse.body) {
@@ -146,7 +146,7 @@ export class UPEService {
 
 		const result = await this.httpGetTagsRequest(upeEssential);
 		if (result.success) {
-			this.channelTags = result.content;
+			this.channelTags = result.content ? result.content : [];
 			this.commonService.setLocalStorageValue(LocalStorageKey.UPEChannelTags, this.channelTags);
 		}
 
@@ -159,8 +159,8 @@ export class UPEService {
 		let content = '';
 		let errorCode = '';
 		try {
-			const httpResponse = await this.commsService.callUpeApi(
-				`${upeEssential.upeUrlBase}/row/tag/user_tags/sn/${upeEssential.deviceId}?type=c_tag`, null, header
+			const httpResponse = await this.commsService.makeTagRequest(
+				`${upeEssential.upeUrlBase}/upe/tag/api/row/tag/user_tags/sn/${upeEssential.deviceId}?type=c_tag`, header
 			).toPromise() as any;
 
 			if (httpResponse.status === 200 && httpResponse.body) {

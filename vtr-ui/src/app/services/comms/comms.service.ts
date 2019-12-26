@@ -34,13 +34,12 @@ export class CommsService {
 	}
 
 
-	callUpeApi(url, queryParams: any = {}, headers: any = {}) {
+	callUpeApi(url, queryParams: any = {}) {
 		// const url = this.env.upeApiRoot + api;
 
-		// setup header
-		const composeHeaders = headers ? {...headers} : {};
-		composeHeaders['Content-Type'] = 'application/json;charset=UTF-8';
-		const reqHeader = new HttpHeaders(composeHeaders);
+		const reqHeader = new HttpHeaders({
+			'Content-Type': 'application/json;charset=UTF-8'
+		});
 
 		this.devService.writeLog('CALL UPE API: ', url);
 		return this.http.post(url, JSON.stringify(queryParams),
@@ -50,6 +49,11 @@ export class CommsService {
 			});
 	}
 
+	makeTagRequest(url, customHeadrs: any = {}) {
+		const contentType = { 'Content-Type': 'application/json;charset=UTF-8' };
+		const headers = customHeadrs ? { ...contentType, ...customHeadrs} : contentType;
+		return this.http.get(url, {headers});
+	}
 
 	flatGetCall(url) {
 		const self = this;

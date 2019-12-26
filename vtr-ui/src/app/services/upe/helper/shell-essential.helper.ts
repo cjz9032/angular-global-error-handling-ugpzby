@@ -96,7 +96,7 @@ export class ShellEssentialHelper implements IEssentialHelper {
 
 		try {
 			const response = await this.commsService.callUpeApi(
-				`${upeEssential.upeUrlBase}/upe/auth/registerDevice`, queryParams, {}
+				`${upeEssential.upeUrlBase}/upe/auth/registerDevice`, queryParams
 			).toPromise() as any;
 
 			if (response.status === 200) {
