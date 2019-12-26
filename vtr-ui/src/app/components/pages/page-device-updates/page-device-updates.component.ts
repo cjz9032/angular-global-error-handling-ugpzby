@@ -714,6 +714,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					});
 					break;
 				case UpdateProgress.InstallationComplete:
+					this.isUpdateCheckInProgress = false;
 					this.systemUpdateService.getUpdateHistory();
 					this.getLastUpdateScanDetail();
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
@@ -840,6 +841,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					break;
 				case UpdateProgress.ScheduleUpdateInstallationComplete:
 					this.isCheckingPluginStatus = false;
+					this.isUpdateCheckInProgress = false;
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
