@@ -2,16 +2,18 @@ import { HomeComponent } from './../components/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
+import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
+import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
 
 const routes: Routes = [
 
 	{
 		path: 'dashboard',
-		loadChildren: './hardware-settings/hardware-dashboard.module#HardwareDashboardModule'
+		component: PageDashboardComponent
 	},
 	{
 		path: 'device-gaming',
-		loadChildren: './gaming-dashboard.module#GamingDashboardModule'
+		component: PageDeviceGamingComponent
 	},
 	{
 		path: 'gaming',
