@@ -84,6 +84,7 @@ import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
 import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
 import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faCircle } from '@fortawesome/pro-light-svg-icons/faCircle';
+import { faBriefcase } from '@fortawesome/pro-light-svg-icons/faBriefcase';
 import { faCircle as falCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
@@ -203,5 +204,6 @@ export class HardwareSettingsModule {
 		library.add(faCircleNotch);
 		library.add(faAngleRight);
 		library.add(faCalendarAlt);
+		library.add(faBriefcase);
 	}
 }
