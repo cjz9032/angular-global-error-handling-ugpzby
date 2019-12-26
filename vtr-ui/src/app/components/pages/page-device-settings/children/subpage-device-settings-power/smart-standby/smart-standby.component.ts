@@ -72,9 +72,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						if (this.smartStandby.isCapable) {
 							this.setSmartStandbySection();
 						}
-
-						this.smartStandbyCapability.emit(this.smartStandby.isCapable);
 					}
+					this.smartStandbyCapability.emit(this.smartStandby.isCapable);
 					this.logger.debug('Trying after 30 seconds for smart standby capability');
 					console.log('Trying after 30 seconds for smart standby capability');
 
