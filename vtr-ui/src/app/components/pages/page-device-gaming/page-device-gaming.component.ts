@@ -136,49 +136,6 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 				const callCmsEndTime: any = new Date();
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 				if (response && response.length > 0) {
-					const heroBannerItems = this.cmsService
-						.getOneCMSContent(response, 'home-page-hero-banner', 'position-A')
-						.map((record, index) => {
-							return {
-								albumId: 1,
-								id: index + 1,
-								source: record.Title,
-								title: record.Description,
-								url: record.FeatureImage,
-								ActionLink: record.ActionLink
-							};
-						});
-					if (heroBannerItems && heroBannerItems.length) {
-						this.heroBannerItems = heroBannerItems;
-						this.dashboardService.heroBannerItems = heroBannerItems;
-					}
-
-					const cardContentPositionB = this.cmsService.getOneCMSContent(
-						response,
-						'half-width-title-description-link-image',
-						'position-B'
-					)[0];
-					if (cardContentPositionB) {
-						this.cardContentPositionB = cardContentPositionB;
-						if (this.cardContentPositionB.BrandName) {
-							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
-						}
-						this.dashboardService.cardContentPositionB = cardContentPositionB;
-					}
-
-					const cardContentPositionC = this.cmsService.getOneCMSContent(
-						response,
-						'half-width-title-description-link-image',
-						'position-C'
-					)[0];
-					if (cardContentPositionC) {
-						this.cardContentPositionC = cardContentPositionC;
-						if (this.cardContentPositionC.BrandName) {
-							this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
-						}
-						this.dashboardService.cardContentPositionC = cardContentPositionC;
-					}
-
 					if (!this.dashboardService.cardContentPositionDOnline) {
 						const cardContentPositionD = this.cmsService.getOneCMSContent(
 							response,
@@ -191,26 +148,6 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 						}
 					} else {
 						this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
-					}
-
-					const cardContentPositionE = this.cmsService.getOneCMSContent(
-						response,
-						'half-width-top-image-title-link',
-						'position-E'
-					)[0];
-					if (cardContentPositionE) {
-						this.cardContentPositionE = cardContentPositionE;
-						this.dashboardService.cardContentPositionE = cardContentPositionE;
-					}
-
-					const cardContentPositionF = this.cmsService.getOneCMSContent(
-						response,
-						'half-width-top-image-title-link',
-						'position-F'
-					)[0];
-					if (cardContentPositionF) {
-						this.cardContentPositionF = cardContentPositionF;
-						this.dashboardService.cardContentPositionF = cardContentPositionF;
 					}
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
