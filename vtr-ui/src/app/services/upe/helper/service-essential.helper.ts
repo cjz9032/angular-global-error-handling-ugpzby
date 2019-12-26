@@ -1,9 +1,9 @@
-import { IUpeEssential, IUpeHelper } from '../model/definitions';
+import { IUpeEssential, IEssentialHelper } from '../model/definitions';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { DevService } from '../../dev/dev.service';
 
 
-export class VantageServiceHelper implements IUpeHelper {
+export class ServiceEssentialHelper implements IEssentialHelper {
 	private upeAgent: any;
 
 	constructor(
@@ -18,7 +18,7 @@ export class VantageServiceHelper implements IUpeHelper {
 		try {
 			iUpeEssential = await this.upeAgent.getUpeEssential();
 		} catch (ex) {
-			this.devService.writeLog('get upe essential from upe agent failed', ex);
+			this.devService.writeLog('[service essential helper]get upe essential from upe agent failed', ex);
 		}
 		return iUpeEssential;
 	}
@@ -28,7 +28,7 @@ export class VantageServiceHelper implements IUpeHelper {
 		try {
 			iUpeEssential = await this.upeAgent.registerDevice(essential);
 		} catch (ex) {
-			this.devService.writeLog('get upe essential from upe agent failed', ex);
+			this.devService.writeLog('[service essential helper]get upe essential from upe agent failed', ex);
 		}
 		return iUpeEssential;
 	}

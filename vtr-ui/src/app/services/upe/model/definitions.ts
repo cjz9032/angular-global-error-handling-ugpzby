@@ -7,7 +7,7 @@ export interface IUpeEssential {
 	apiKeySalt?: any;
 }
 
-export interface IUpeHelper {
+export interface IEssentialHelper {
 	getUpeEssential: ()  => any;
 	registerDevice: (upeEssential: IUpeEssential) => any;
 }

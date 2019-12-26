@@ -2,10 +2,10 @@ import { DeviceService } from '../../device/device.service';
 import { CommsService } from '../../comms/comms.service';
 import { UUID } from 'angular2-uuid';
 import { environment } from '../../../../environments/environment';
-import { IUpeEssential, IUpeHelper } from '../model/definitions';
+import { IUpeEssential, IEssentialHelper } from '../model/definitions';
 import { DevService } from '../../dev/dev.service';
 
-export class VantageShellHelper implements IUpeHelper {
+export class ShellEssentialHelper implements IEssentialHelper {
 	private readonly CredNameUPEAPIKey = 'UPEAPIKey';
 	private readonly CredNameUPEUserID = 'UPEUserID';
 
@@ -19,17 +19,20 @@ export class VantageShellHelper implements IUpeHelper {
 	public async getUpeEssential(): Promise<IUpeEssential> {
 		const win: any = window;
 		if (!win.VantageStub || !win.VantageStub.getCredential) {
+			this.devService.writeLog('[shell essential helper] shell not support credential');
 			return null;
 		}
 
 		// check client id
 		if (!environment.upeClientID || !environment.upeSharedKey) {
+			this.devService.writeLog('[shell essential helper] upeClientID/upeSharedKey null');
 			return null;
 		}
 
 		// get device id
 		const deviceInfo = await this.deviceService.getMachineInfo();
 		if (!deviceInfo || !deviceInfo.deviceId) {
+			this.devService.writeLog('[shell essential helper] get device id null');
 			return null;
 		}
 
@@ -99,10 +102,10 @@ export class VantageShellHelper implements IUpeHelper {
 			if (response.status === 200) {
 				return true;
 			} else {
-				this.devService.writeLog('send register request failed(unknown)');
+				this.devService.writeLog('[shell essential helper]send register request failed(unknown)');
 			}
 		} catch (ex) {
-			this.devService.writeLog('send register request failed', ex);
+			this.devService.writeLog('[shell essential helper]send register request failed', ex);
 		}
 
 		return false;
@@ -118,6 +121,7 @@ export class VantageShellHelper implements IUpeHelper {
 		if (!upeEssential.apiKey || !upeEssential.apiKeySalt) {
 			const apiKeySalt = await this.generateAPIKey(upeEssential) as any;
 			if (!apiKeySalt) {
+				this.devService.writeLog(`[shell essential helper]generate API Key failed${JSON.stringify(upeEssential)}`);
 				return null;
 			} else {
 				upeEssential.apiKeySalt = JSON.parse(apiKeySalt);

@@ -1,36 +1,57 @@
-import { CommsService } from '../../comms/comms.service';
-import { DeviceService } from '../../device/device.service';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { IUpeEssential, IUpeHelper } from '../model/definitions';
-import { VantageServiceHelper } from './vantage-service.helper';
-import { VantageShellHelper } from './vantage-shell.helper';
+import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { DevService } from '../../dev/dev.service';
-import { environment } from 'src/environments/environment';
+import { TranslateService } from '@ngx-translate/core';
 
-export class UpeHelper implements IUpeHelper {
-	private iupeHelper: IUpeHelper;
-	public readonly isSupportUpeTag: boolean;
+
+export class UPEHelper {
 	constructor(
-		commsService: CommsService,
-		deviceService: DeviceService,
-		vantageShellService: VantageShellService,
-		devService: DevService
+		private vantageShellService: VantageShellService,
+		private devService: DevService,
+		private translate: TranslateService
 	) {
-		const win = window as any;
-		if (!win.VantageStub.findUPEAPIKey) {	// old version shell and service
-			this.iupeHelper = new VantageShellHelper(commsService, deviceService, devService);
-			this.isSupportUpeTag = false;
-		} else {
-			this.isSupportUpeTag = true;
-			this.iupeHelper = new VantageServiceHelper(vantageShellService, devService);
-		}
 	}
 
-	public async getUpeEssential(): Promise<IUpeEssential> {
-		return await this.iupeHelper.getUpeEssential();
+	public filterUPEContent(results) {
+		return new Promise((resolve, reject) => {
+			const promises = [];
+
+			results.forEach((result) => {
+				promises.push(this.deviceFilter(result.Filters));
+			});
+
+			Promise.all(promises).then((deviceFilterValues) => {
+				const filteredResults = results.filter((result, index) => {
+					return deviceFilterValues[index];
+				});
+
+				resolve(filteredResults);
+			});
+		});
 	}
 
-	public async registerDevice(essential: IUpeEssential): Promise<IUpeEssential> {
-		return await this.iupeHelper.registerDevice(essential);
+	public deviceFilter(filters) {
+		return new Promise((resolve, reject) => {
+			if (!filters) {
+				this.devService.writeLog('vantageShellService.deviceFilter skipped filter call due to empty filter.');
+				return resolve(true);
+			}
+
+			return this.vantageShellService.deviceFilter(filters).then(
+				(result) => {
+					this.devService.writeLog('vantageShellService.deviceFilter ', JSON.stringify(result));
+					resolve(result);
+				},
+				(reason) => {
+					this.devService.writeLog('vantageShellService.deviceFilter error', reason);
+					resolve(false);
+				}
+			);
+		});
+	}
+
+	public getLang() {
+		return this.translate.currentLang
+			? this.translate.currentLang.toLowerCase()
+			: this.translate.defaultLang.toLowerCase();
 	}
 }

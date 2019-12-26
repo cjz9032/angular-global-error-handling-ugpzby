@@ -4,12 +4,13 @@ import { DeviceService } from '../device/device.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { Observable } from 'rxjs';
 import { DevService } from '../dev/dev.service';
-import { UpeHelper } from './helper/upe.helper';
+import { EssentialHelper } from './helper/essential.helper';
 import { IUpeEssential, IGetContentParam, IActionResult } from './model/definitions';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 import { SelfSelectService, SegmentConst } from '../self-select/self-select.service';
 import { TranslateService } from '@ngx-translate/core';
+import { UPEHelper } from './helper/upe.helper';
 
 
 @Injectable({
@@ -17,20 +18,22 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 export class UPEService {
-	private upeEssential: IUpeEssential;
 	private channelTags: any;
-	private upeHelper: UpeHelper;
+	private upeHelper: UPEHelper;
+	private essentialHelper: EssentialHelper;
+	private upeEssential: IUpeEssential;
 	private requestCache = {};
 	constructor(
 		private commsService: CommsService,
-		private vantageShellService: VantageShellService,
-		private deviceService: DeviceService,
-		private devService: DevService,
 		private commonService: CommonService,
 		private selfSelectService: SelfSelectService,
-		private translate: TranslateService
+		private deviceService: DeviceService,
+		vantageShellService: VantageShellService,
+		devService: DevService,
+		translate: TranslateService
 	) {
-		this.upeHelper = new UpeHelper(commsService, deviceService, vantageShellService, devService);
+		this.essentialHelper = new EssentialHelper(commsService, deviceService, vantageShellService, devService);
+		this.upeHelper = new UPEHelper(vantageShellService, devService, translate);
 		this.channelTags = this.commonService.getLocalStorageValue(LocalStorageKey.UPEChannelTags);
 	}
 
@@ -49,7 +52,7 @@ export class UPEService {
 			this.requestCache[params.position] = new Observable(subscriber => {	// cache request
 				this.startFetchUpeContentAndRetry(params).then(result => {
 					if (result.success) {
-						const articles = this.filterUPEContent(result.content);
+						const articles = this.upeHelper.filterUPEContent(result.content);
 						subscriber.next(articles);
 						subscriber.complete();
 					} else {
@@ -65,11 +68,10 @@ export class UPEService {
 	}
 
 	private async startFetchUpeContentAndRetry(params: IGetContentParam): Promise<IActionResult> {
-		const systeminfo = await this.deviceService.getMachineInfo();
 		let result = await this.startFetchUpeContent(params);
 
 		if (result.errorCode === 401) {	// unathenrized, need to registerDevice
-			this.upeEssential = await this.upeHelper.registerDevice(this.upeEssential);
+			this.upeEssential = await this.essentialHelper.registerDevice(this.upeEssential);
 
 			if (this.upeEssential && this.upeEssential.apiKey) {
 				result = await this.startFetchUpeContent(params);
@@ -85,16 +87,16 @@ export class UPEService {
 	}
 
 	private async startFetchUpeContent(params: IGetContentParam): Promise<IActionResult> {
-		let essential = this.upeEssential ? this.upeEssential : await this.upeHelper.getUpeEssential();
+		let essential = this.upeEssential ? this.upeEssential : await this.essentialHelper.getUpeEssential();
 		if (!essential) {
 			return {
 				success: false,
-				content: 'upe not support by shell'
+				content: 'upe not support in current version'
 			};
 		}
 
 		if (!essential.anonUserId || !essential.apiKey) {
-			essential = await this.upeHelper.registerDevice(essential);
+			essential = await this.essentialHelper.registerDevice(essential);
 		}
 
 		this.upeEssential = essential;
@@ -117,7 +119,7 @@ export class UPEService {
 				`${upeEssential.upeUrlBase}/upe/recommendation/v2/recommends`, queryParam, {}
 			).toPromise() as any;
 
-			if (httpResponse.status === 200) {
+			if (httpResponse.status === 200 && httpResponse.body) {
 				return {
 					success: true,
 					content: httpResponse.body.results
@@ -161,7 +163,7 @@ export class UPEService {
 				`${upeEssential.upeUrlBase}/row/tag/user_tags/sn/${upeEssential.deviceId}?type=c_tag`, null, header
 			).toPromise() as any;
 
-			if (httpResponse.status === 200) {
+			if (httpResponse.status === 200 && httpResponse.body) {
 				return {
 					success: true,
 					content: httpResponse.body.results
@@ -198,9 +200,9 @@ export class UPEService {
 			},
 			dId: upeEssential.deviceId,
 			context: {
-				lang: this.getLang(),
+				lang: this.upeHelper.getLang(),
 				Brand: systeminfo.brand,
-				GEO: systeminfo.os,
+				GEO: systeminfo.country,
 				Family: systeminfo.family,
 				MTM: systeminfo.mtm,
 				OEM: systeminfo.manufacturer,
@@ -215,49 +217,5 @@ export class UPEService {
 			positions: [upeParams.position]
 		};
 		return queryParam;
-	}
-
-	private filterUPEContent(results) {
-		return new Promise((resolve, reject) => {
-			const promises = [];
-
-			results.forEach((result) => {
-				promises.push(this.deviceFilter(result.Filters));
-			});
-
-			Promise.all(promises).then((deviceFilterValues) => {
-				const filteredResults = results.filter((result, index) => {
-					return deviceFilterValues[index];
-				});
-
-				resolve(filteredResults);
-			});
-		});
-	}
-
-	private deviceFilter(filters) {
-		return new Promise((resolve, reject) => {
-			if (!filters) {
-				this.devService.writeLog('vantageShellService.deviceFilter skipped filter call due to empty filter.');
-				return resolve(true);
-			}
-
-			return this.vantageShellService.deviceFilter(filters).then(
-				(result) => {
-					this.devService.writeLog('vantageShellService.deviceFilter ', JSON.stringify(result));
-					resolve(result);
-				},
-				(reason) => {
-					this.devService.writeLog('vantageShellService.deviceFilter error', reason);
-					resolve(false);
-				}
-			);
-		});
-	}
-
-	private getLang() {
-		return this.translate.currentLang
-			? this.translate.currentLang.toLowerCase()
-			: this.translate.defaultLang.toLowerCase();
 	}
 }
