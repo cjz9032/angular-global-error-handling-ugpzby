@@ -1125,7 +1125,8 @@
                             "yes": "Da",
                             "description3": "Jeste li sigurni da želite zaustaviti ponovno postavljanje mjerača baterije?"
                         },
-                        "dual_note": "Napomena: istodobno se može ponovno postaviti samo jedna baterija."
+                        "dual_note": "Napomena: istodobno se može ponovno postaviti samo jedna baterija.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1988,7 +1989,7 @@
             "intermediateTitle": "Srednja zaštita",
             "intermediateDesc": "Dobro obavljeno! Na korak ste od ostvarivanja napredne zaštite, pokušajte šifrirati svoje podatke i nadzirati kršenja mrežne sigurnosti.",
             "advanced": "NAPREDNO",
-            "advancedTtitle": "Napredna zaštita",
+            "advancedTitle": "Napredna zaštita",
             "advancedDesc": "Čestitamo! Odlično, vaš uređaj ima omogućenu osnovnu, srednju i naprednu sigurnosnu zaštitu!",
             "haveOwn": "Imam vlastitu",
             "basicSecurity": "OSNOVNU SIGURNOST",

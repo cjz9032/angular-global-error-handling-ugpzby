@@ -4,15 +4,15 @@
 			[isCollapsed]="false" [collapseLinkId]="'smartrStandby'" [tabIndex]="0">
 			<ul class="list-group list-group-flush">
 				<li>
-					<vtr-ui-row-switch 
-						[caption]="caption"						
+					<vtr-ui-row-switch
+						[caption]="caption"
 						[isSwitchVisible]=true [isLastChild]=true [showChildContent]="true"
 						[rightIcon]="['far', 'question-circle']"
 						[tooltipText]="tooltipText"
 						[isSwitchChecked]="smartStandby.isEnabled" (toggleOnOff)="onSmartStandbyToggle($event);isCollapsed = true"
 						[switchId]="'smartStandby'">
 					</vtr-ui-row-switch>
-					<div>			
+					<div>
 						<div *ngIf="isAutonomicCapability" class="schedule_header">
 							<h5>{{ 'device.deviceSettings.power.smartStandby.subTitle' | translate }}</h5>
 							<vtr-ui-rounded-rectangle-radio [radioId]="'automatic_show'" [group]="'smartStandByBtns'"
@@ -105,7 +105,7 @@
 						</div>
 						<!-- content end -->
 					</div>
-					<div *ngIf="isAutonomicCapability" [ngClass]="{'disabled': !smartStandby.isEnabled}" class="hyperlink-to-graph" (click)="showUsageGraph()" tabindex="0"
+					<div class="hyperlink-to-graph" (click)="showUsageGraph()" tabindex="0"
 						attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 						{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
 					</div>

@@ -1,14 +1,33 @@
 <div class="vtr-widget-security">
 	<div class="container-fluid">
-		<div class="row security-background justify-content-end">
-			<div class="right-container col-12 col-lg-10 d-flex flex-column justify-content-around">
-				<div class="level_desc">
-					<h4 class="title mb-4" [innerHTML]="securityLevelInfo[statusItem?.status].title | translate"></h4>
-					<h5 class="desc mb-4" [innerHTML]="securityLevelInfo[statusItem?.status].desc | translate"></h5>
+		<div class="row security-background">
+			<div class="status-container row d-flex flex-nowrap align-items-start mb-3">
+				<div class="left-container">
+					<div class="position-relative">
+						<div class="circle-box d-flex justify-content-center">
+							<img [src]=" images[statusItem?.status][statusItem?.icon] | svgInline | async">
+						</div>
+						<div class="circle-desc">
+							<p class="text-two-ellipsis" [innerHTML]="'security.landing.level' | translate"></p>
+							<b class="text-ellipsis text-uppercase" [innerHTML]="securityLevelInfo[statusItem?.status].status | translate"></b>
+						</div>
+					</div>
 				</div>
-				<div class="row no-gutters align-items-center">
-					<h5 class="col-6 desc mb-0" [innerHTML]="btnDesc[statusItem?.fullyProtected ? 1 : 0] | translate"></h5>
-					<vtr-ui-button class="col-6"
+				<div class="side">
+					<img [src]="'/assets/images/securityAdvisor/side.svg' | svgInline | async" alt="" srcset="">
+				</div>
+				<div class="right-container">
+					<div class="level_desc">
+						<h4 class="title mb-4" [innerHTML]="securityLevelInfo[statusItem?.status].title | translate"></h4>
+						<h5 class="desc mb-0" [innerHTML]="securityLevelInfo[statusItem?.status].desc | translate"></h5>
+					</div>
+				</div>
+
+			</div>
+			<div class="button-container w-100">
+				<div class="row no-gutters align-items-center flex-nowrap justify-content-between">
+					<h5 class="desc mb-0" [innerHTML]="btnDesc[statusItem?.fullyProtected ? 1 : 0] | translate"></h5>
+					<vtr-ui-button class="button"
 						metricsItem="securityAdvisor101"
 						metricsEvent="ArticleClick"
 						metricsItemPosition="1"
@@ -21,17 +40,6 @@
 						btnHeight=true
 						linkId="sa-ov-btn-securityArticle">
 					</vtr-ui-button>
-				</div>
-			</div>
-			<div class="left-container">
-				<div class="position-relative">
-					<div class="circle-box d-flex justify-content-center">
-						<img [src]=" images[statusItem?.status][statusItem?.icon] | svgInline | async">
-					</div>
-					<div class="circle-desc">
-						<p title="" class="text-two-ellipsis" [innerHTML]="'security.landing.level' | translate"></p>
-						<b class="text-ellipsis text-uppercase" [innerHTML]="securityLevelInfo[statusItem?.status].status | translate"></b>
-					</div>
 				</div>
 			</div>
 		</div>

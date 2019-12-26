@@ -71,7 +71,7 @@
 									{{item.title}}
 								</div>
 								<div title="{{item.detail}}"
-									class="col-4 detail word-break-all d-flex align-items-center {{'dirClass' | translate}}"
+									class="col-4 detail word-break-all d-flex align-items-center justify-content-end {{'dirClass' | translate}}"
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)"
 									dir="{{'dir' | translate}}">
@@ -190,7 +190,7 @@
 									{{item.title}}
 								</div>
 								<div title="{{item.detail}}"
-									class="col-4 detail word-break-all d-flex align-items-center"
+									class="col-4 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)">
 									{{item.detail}}
@@ -300,7 +300,7 @@
 									{{item.title}}
 								</div>
 								<div title="{{item.detail}}"
-									class="col-4 detail word-break-all d-flex align-items-center"
+									class="col-4 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)">
 									{{item.detail}}

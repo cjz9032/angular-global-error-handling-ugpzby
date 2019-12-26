@@ -2309,7 +2309,7 @@
             "intermediateTitle": "Intermediate protection",
             "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
-            "advancedTtitle": "Advanced protection",
+            "advancedTitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
             "basicSecurity": "BASIC SECURITY",
             "advancedSecurity": "ADVANCED SECURITY",

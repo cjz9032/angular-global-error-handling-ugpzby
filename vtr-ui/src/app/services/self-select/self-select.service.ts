@@ -43,12 +43,10 @@ export class SelfSelectService {
 		return this._savedSegment;
 	}
 	public set savedSegment(value) {
-		if (!this._savedSegment && value) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, value);
-		}
-		if (this._savedSegment !== value) {
+		if (value && this._savedSegment !== value) {
 			this._savedSegment = value;
-			// this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
+			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, this._savedSegment);
+			this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
 		}
 	}
 	public savedInterests: string[] = [];
