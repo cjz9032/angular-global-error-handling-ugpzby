@@ -26,8 +26,8 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 @Component({
 	selector: 'vtr-page-device-gaming',
 	templateUrl: './page-device-gaming.component.html',
-	styleUrls: ['./page-device-gaming.component.scss'],
-	providers: [NgbModalConfig, NgbModal]
+	styleUrls: [ './page-device-gaming.component.scss' ],
+	providers: [ NgbModalConfig, NgbModal ]
 })
 export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit {
 	public static allCapablitiyFlag = false;
@@ -84,7 +84,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
 					PageDeviceGamingComponent.allCapablitiyFlag = true;
 				})
-				.catch((err) => { });
+				.catch((err) => {});
 		}
 		this.translate
 			.stream([
@@ -111,7 +111,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 	ngDoCheck(): void {
 		const lastAction = this.protocolAction;
 		this.protocolAction = this.activatedRoute.snapshot.queryParams.action;
-		if (this.protocolAction && (lastAction !== this.protocolAction)) {
+		if (this.protocolAction && lastAction !== this.protocolAction) {
 			if (this.protocolAction.toLowerCase() === 'lenovoid') {
 				setTimeout(() => this.dialogService.openLenovoIdDialog());
 			} else if (this.protocolAction.toLowerCase() === 'modernpreload') {
@@ -128,16 +128,9 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 
 	fetchCmsContents(lang?: string) {
 		const callCmsStartTime: any = new Date();
-		let queryOptions: any = {
+		const queryOptions: any = {
 			Page: 'dashboard'
 		};
-		if (lang) {
-			queryOptions = {
-				Page: 'dashboard',
-				Lang: lang,
-				GEO: 'US'
-			};
-		}
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const callCmsEndTime: any = new Date();
@@ -225,11 +218,11 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 					this.fetchCmsContents('en');
 				}
 			},
-			(error) => { }
+			(error) => {}
 		);
 	}
 
-	public onConnectivityClick($event: any) { }
+	public onConnectivityClick($event: any) {}
 
 	private getPreviousContent() {
 		this.heroBannerItems = this.dashboardService.heroBannerItems;
@@ -246,7 +239,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 			.then((value: any) => {
 				this.systemStatus = this.mapSystemInfoResponse(value);
 			})
-			.catch((error) => { });
+			.catch((error) => {});
 	}
 
 	private getSecurityStatus() {
@@ -255,7 +248,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 			.then((value: any) => {
 				this.securityStatus = this.mapSecurityStatusResponse(value);
 			})
-			.catch((error) => { });
+			.catch((error) => {});
 	}
 
 	private mapSystemInfoResponse(response: any): Status[] {
