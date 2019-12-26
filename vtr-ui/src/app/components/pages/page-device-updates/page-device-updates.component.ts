@@ -390,6 +390,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
 			this.isCheckingStatus = false;
+			this.systemUpdateService.percentCompleted = 0;
+			this.percentCompleted = this.systemUpdateService.percentCompleted;
 			this.systemUpdateService.checkForUpdates();
 			this.timeStartSearch = new Date();
 		}
