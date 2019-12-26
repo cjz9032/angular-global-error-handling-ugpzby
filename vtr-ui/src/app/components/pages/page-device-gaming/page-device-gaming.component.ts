@@ -26,8 +26,8 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 @Component({
 	selector: 'vtr-page-device-gaming',
 	templateUrl: './page-device-gaming.component.html',
-	styleUrls: ['./page-device-gaming.component.scss'],
-	providers: [NgbModalConfig, NgbModal]
+	styleUrls: [ './page-device-gaming.component.scss' ],
+	providers: [ NgbModalConfig, NgbModal ]
 })
 export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit {
 	public static allCapablitiyFlag = false;
@@ -84,7 +84,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
 					PageDeviceGamingComponent.allCapablitiyFlag = true;
 				})
-				.catch((err) => { });
+				.catch((err) => {});
 		}
 		this.translate
 			.stream([
@@ -111,7 +111,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 	ngDoCheck(): void {
 		const lastAction = this.protocolAction;
 		this.protocolAction = this.activatedRoute.snapshot.queryParams.action;
-		if (this.protocolAction && (lastAction !== this.protocolAction)) {
+		if (this.protocolAction && lastAction !== this.protocolAction) {
 			if (this.protocolAction.toLowerCase() === 'lenovoid') {
 				setTimeout(() => this.dialogService.openLenovoIdDialog());
 			} else if (this.protocolAction.toLowerCase() === 'modernpreload') {
@@ -128,64 +128,14 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 
 	fetchCmsContents(lang?: string) {
 		const callCmsStartTime: any = new Date();
-		let queryOptions: any = {
+		const queryOptions: any = {
 			Page: 'dashboard'
 		};
-		if (lang) {
-			queryOptions = {
-				Page: 'dashboard',
-				Lang: lang,
-				GEO: 'US'
-			};
-		}
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const callCmsEndTime: any = new Date();
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 				if (response && response.length > 0) {
-					const heroBannerItems = this.cmsService
-						.getOneCMSContent(response, 'home-page-hero-banner', 'position-A')
-						.map((record, index) => {
-							return {
-								albumId: 1,
-								id: index + 1,
-								source: record.Title,
-								title: record.Description,
-								url: record.FeatureImage,
-								ActionLink: record.ActionLink
-							};
-						});
-					if (heroBannerItems && heroBannerItems.length) {
-						this.heroBannerItems = heroBannerItems;
-						this.dashboardService.heroBannerItems = heroBannerItems;
-					}
-
-					const cardContentPositionB = this.cmsService.getOneCMSContent(
-						response,
-						'half-width-title-description-link-image',
-						'position-B'
-					)[0];
-					if (cardContentPositionB) {
-						this.cardContentPositionB = cardContentPositionB;
-						if (this.cardContentPositionB.BrandName) {
-							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
-						}
-						this.dashboardService.cardContentPositionB = cardContentPositionB;
-					}
-
-					const cardContentPositionC = this.cmsService.getOneCMSContent(
-						response,
-						'half-width-title-description-link-image',
-						'position-C'
-					)[0];
-					if (cardContentPositionC) {
-						this.cardContentPositionC = cardContentPositionC;
-						if (this.cardContentPositionC.BrandName) {
-							this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
-						}
-						this.dashboardService.cardContentPositionC = cardContentPositionC;
-					}
-
 					if (!this.dashboardService.cardContentPositionDOnline) {
 						const cardContentPositionD = this.cmsService.getOneCMSContent(
 							response,
@@ -199,37 +149,17 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 					} else {
 						this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
 					}
-
-					const cardContentPositionE = this.cmsService.getOneCMSContent(
-						response,
-						'half-width-top-image-title-link',
-						'position-E'
-					)[0];
-					if (cardContentPositionE) {
-						this.cardContentPositionE = cardContentPositionE;
-						this.dashboardService.cardContentPositionE = cardContentPositionE;
-					}
-
-					const cardContentPositionF = this.cmsService.getOneCMSContent(
-						response,
-						'half-width-top-image-title-link',
-						'position-F'
-					)[0];
-					if (cardContentPositionF) {
-						this.cardContentPositionF = cardContentPositionF;
-						this.dashboardService.cardContentPositionF = cardContentPositionF;
-					}
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
 					this.loggerService.info(msg);
 					this.fetchCmsContents('en');
 				}
 			},
-			(error) => { }
+			(error) => {}
 		);
 	}
 
-	public onConnectivityClick($event: any) { }
+	public onConnectivityClick($event: any) {}
 
 	private getPreviousContent() {
 		this.heroBannerItems = this.dashboardService.heroBannerItems;
@@ -246,7 +176,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 			.then((value: any) => {
 				this.systemStatus = this.mapSystemInfoResponse(value);
 			})
-			.catch((error) => { });
+			.catch((error) => {});
 	}
 
 	private getSecurityStatus() {
@@ -255,7 +185,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 			.then((value: any) => {
 				this.securityStatus = this.mapSecurityStatusResponse(value);
 			})
-			.catch((error) => { });
+			.catch((error) => {});
 	}
 
 	private mapSystemInfoResponse(response: any): Status[] {

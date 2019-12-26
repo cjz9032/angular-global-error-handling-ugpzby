@@ -199,12 +199,7 @@ export class PageAutocloseComponent implements OnInit {
 	fetchCMSArticles() {
 		this.isOnline = this.commonService.isOnline;
 		const queryOptions = {
-			Page: 'dashboard',
-			Lang: 'en',
-			GEO: 'US',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Brand: 'idea'
+			Page: 'auto-close'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionF = this.cmsService.getOneCMSContent(
