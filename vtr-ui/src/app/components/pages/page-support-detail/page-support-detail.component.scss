@@ -114,6 +114,11 @@
 
       //FAQ
       .description-container ::ng-deep {
+        img {
+          max-width: 90%;
+          margin-left: 5%;
+          border: 1px solid #999;
+        }
         .faqInFs4Fb {
             font-size: 4rem;
             font-weight: bold;
