@@ -261,6 +261,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	initDataFromCache() {
 		this.initBatteryLinkFromCache();
+		this.initSmartStandbyLinkFromCache();
 		this.initPowerSmartSettingFromCache();
 		this.initAirplanePowerFromCache();
 		this.initBatteryChargeThresholdFromCache();
@@ -278,6 +279,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.updateBatteryLinkStatus(status);
 	}
 
+	initSmartStandbyLinkFromCache() {
+		const status = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
+		this.onSetSmartStandbyCapability(status.isCapable);
+	}
 	initExpressChargingFromCache() {
 		try {
 			this.expressChargingCache = this.commonService.getLocalStorageValue(LocalStorageKey.ExpressChargingCapability, undefined);
