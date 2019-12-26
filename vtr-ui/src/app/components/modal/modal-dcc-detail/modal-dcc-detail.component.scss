@@ -75,12 +75,13 @@
 			}
 		}
 		.body {
-			font-size: 1.5rem;
+			font-size: 1.8rem;
 			color: $blue-dark;
 		}
 		.white-button {
 			display: flex;
 			align-items: center;
+			margin-top: 2rem;
 			.button-box {
 				.button {
 					border: 0.1rem solid $main !important;

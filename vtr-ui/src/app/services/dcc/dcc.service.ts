@@ -12,6 +12,7 @@ export class DccService {
 
 	public showDemo = false;
 	public isDccDevice = false;
+	private cmsHeaderDccBackgroundUpdated = false;
 	private backgroundProperties = ' no-repeat center / cover';
 	public headerBackground = 'url(/assets/images/HeaderImage.jpg)' + this.backgroundProperties;
 	private headerDccBackground = 'url(/assets/images/HeaderImageDcc.jpg)' + this.backgroundProperties;
@@ -49,6 +50,7 @@ export class DccService {
 			null
 		)[0];
 		if (headerImage && headerImage.Title === 'Header Image DCC') {
+			this.cmsHeaderDccBackgroundUpdated = true;
 			this.headerBackground = 'url(' + headerImage.FeatureImage + ')' + this.backgroundProperties;
 		}
 	}
@@ -60,6 +62,9 @@ export class DccService {
 				filter.then((hyp) => {
 					if (hyp === 'true') {
 						this.isDccDevice = true;
+						if (!this.cmsHeaderDccBackgroundUpdated) {
+							this.headerBackground = '';
+						}
 					}
 					resolve(this.isDccDevice);
 				}, (error) => {

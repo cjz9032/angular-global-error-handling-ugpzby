@@ -2,12 +2,7 @@
 
 .vtr-header-main {
 	// TEMP STYLING TO BE REPLACED WHEN WE HAVE ACTUAL BACKGROUND SPECS
-	background: #289cd0;
-	background: -moz-linear-gradient(left, #72d0bb 0%, #289cd0 100%);
-	background: -webkit-linear-gradient(left, #72d0bb 0%, #289cd0 100%);
-	background: linear-gradient(to right, #72d0bb 0%, #289cd0 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#72d0bb', endColorstr='#289cd0',GradientType=1 );
-
+	
 	position: relative;
 	padding: 5rem $padding_side 8rem $padding_side;
 	height: 100%;
