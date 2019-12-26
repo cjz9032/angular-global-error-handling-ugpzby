@@ -281,8 +281,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	initSmartStandbyLinkFromCache() {
 		const capability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
-		if (capability && capability.isCapable) {
+		if (capability !== undefined) {
 			this.onSetSmartStandbyCapability(capability.isCapable);
+		} else {
+			this.onSetSmartStandbyCapability(false);
 		}
 	}
 	initExpressChargingFromCache() {
