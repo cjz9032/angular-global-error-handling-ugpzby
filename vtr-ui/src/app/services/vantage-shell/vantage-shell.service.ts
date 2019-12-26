@@ -982,4 +982,8 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	getToolbarToastFeature(): any {
+        return this.phoenix.hwsettings.toolbar.ToolbarToast;
+    }
 }
