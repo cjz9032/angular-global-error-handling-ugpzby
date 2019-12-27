@@ -79,7 +79,7 @@ describe('ModalSmartStandByComponent', () => {
 			spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
 			spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
 
-			component.getActiviesData();
+			//component.getActiviesData();
 			fixture.detectChanges();
 
 			expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
