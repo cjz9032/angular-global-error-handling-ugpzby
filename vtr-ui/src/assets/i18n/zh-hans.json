@@ -1975,7 +1975,7 @@
             "visitHde": "访问硬盘驱动器加密",
             "haveOwnPassword": "我有自己的密码管理器",
             "haveOwnWifi": "我有自己的 WiFi 安全保护",
-            "haveOwnVpn": "我有自己的 WiFi 安全保护",
+            "haveOwnVpn": "我有自己的 VPN 安全保护",
             "uac": "用户帐户控制（UAC）",
             "uacTitles": "用户帐户控制",
             "hde": "硬盘驱动器加密",

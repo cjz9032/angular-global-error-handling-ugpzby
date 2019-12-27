@@ -14,7 +14,7 @@ import { PageDeviceSettingsComponent } from './page-device-settings.component';
 import { CommsService } from '../../../services/comms/comms.service';
 import { DevService } from '../../../services/dev/dev.service';
 
-xdescribe('PageDeviceSettingsComponent', () => {
+describe('PageDeviceSettingsComponent', () => {
     let audioService: AudioService;
     let commonService: CommonService;
     let  logger: LoggerService;
