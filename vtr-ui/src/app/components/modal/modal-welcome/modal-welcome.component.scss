@@ -110,10 +110,10 @@
 			}
 
 			label {
-				// font-family: "Segoe UI Bold", Sans-serif;
 				font-size: 1.4rem;
-				width: 94%;
+				width: 100%;
 				height: 100%;
+				padding: 0 2%;
 				line-height: 2rem;
 				align-items: center;
 				display: flex;
@@ -166,17 +166,21 @@
 		}
 
 		.custom-control-label {
-			padding-left: 2rem;
+			padding-left: 3rem;
 			line-height: 1.8rem;
 			font-size: 1.4rem;
 			margin-bottom: 1rem;
 			font-weight: $weight_regular;
+			min-height: 2rem;
 
 			// rounded square-box background
 			&::before {
 				width: 1.8rem;
 				height: 1.8rem;
 				top: 0.1rem;
+				left: 0.2rem;
+				box-shadow: inset 0 0 0 0.1rem $light;
+				border: 0.1rem solid $shade_darker;
 			}
 
 			// tick mark
@@ -184,7 +188,7 @@
 				top: 0;
 				width: 2rem;
 				height: 2rem;
-				left: -1.6rem;
+				left: 0.1rem;
 			}
 		}
 	}
@@ -457,6 +461,9 @@
 		cursor: pointer;
 		color: black;
 		font-weight: bold;
+		&:hover {
+			color: $dark !important;
+		}
 	}
 
 	.html-css {

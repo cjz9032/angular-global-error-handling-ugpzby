@@ -1,13 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { DeviceService } from 'src/app/services/device/device.service';
+import { DccService } from 'src/app/services/dcc/dcc.service';
 
 @Component({
 	selector: 'vtr-header-main',
 	templateUrl: './header-main.component.html',
 	styleUrls: [
-		'./header-main.component.scss',
-		'./header-main.component.gaming.scss'
+		'./header-main.component.scss'
 	]
 })
 export class HeaderMainComponent implements OnInit {
@@ -23,7 +22,7 @@ export class HeaderMainComponent implements OnInit {
 	@Input() isInnerBack = false;
 	@Output() innerBack = new EventEmitter();
 	@Input() textId: string;
-	constructor(private router: Router, public deviceService: DeviceService) {
+	constructor(private router: Router, public dccService: DccService) {
 	}
 
 	ngOnInit() {

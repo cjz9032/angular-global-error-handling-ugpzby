@@ -30,6 +30,7 @@ import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { Subscription, Observable } from 'rxjs';
+import { CardService } from 'src/app/services/card/card.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -66,11 +67,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	isSMode: boolean;
 	segment: string;
 	private isSmartAssistAvailable = false;
-	UnreadMessageCount = {
-		totalMessage: 0,
-		lmaMenuClicked: false,
-		adobeMenuClicked: false
-	};
 
 	get appsForYouEnum() { return AppsForYouEnum; }
 
@@ -96,7 +92,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		public appsForYouService: AppsForYouService,
 		private searchService: AppSearchService,
 		public dashboardService: DashboardService,
-
+		public cardService: CardService
 	) {
 	}
 
@@ -132,11 +128,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	private initComponent() {
-		this.localInfoService
-			.getLocalInfo()
-			.then((result) => {
-				this.initUnreadMessage();
-			});
 		this.getMenuItems();
 		this.router.events.subscribe((ev) => {
 			if (ev instanceof NavigationEnd) {
@@ -220,62 +211,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			const familyName = machineFamily.replace(/\s+/g, '');
 			if (machineType === 1 && familyName !== 'LenovoTablet10') {
 				this.initInputAccessories();
-			}
-		}
-	}
-
-	private initUnreadMessage() {
-		const cacheUnreadMessageCount = this.commonService.getLocalStorageValue(
-			LocalStorageKey.UnreadMessageCount,
-			undefined
-		);
-		if (cacheUnreadMessageCount) {
-			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
-			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
-			let totalMessage = 0;
-			if (this.appsForYouService.showLmaMenu() && !this.UnreadMessageCount.lmaMenuClicked) {
-				totalMessage++;
-			}
-			if (this.appsForYouService.showAdobeMenu() && !this.UnreadMessageCount.adobeMenuClicked) {
-				totalMessage++;
-			}
-			this.UnreadMessageCount.totalMessage = totalMessage;
-		} else if (this.UnreadMessageCount.totalMessage === 0) {
-			if (this.appsForYouService.showLmaMenu()) {
-				this.UnreadMessageCount.totalMessage++;
-			}
-			if (this.appsForYouService.showAdobeMenu()) {
-				this.UnreadMessageCount.totalMessage++;
-			}
-		}
-	}
-
-	updateUnreadMessageCount(item, event?) {
-		this.showMenu = false;
-		if (item.id === 'user') {
-			const target = event.target || event.srcElement || event.currentTarget;
-			const idAttr = target.attributes.id;
-			const id = idAttr.nodeValue;
-			let needUpdateLocalStorage = false;
-			if (id === 'menu-main-lnk-open-lma') {
-				if (!this.UnreadMessageCount.lmaMenuClicked) {
-					if (this.UnreadMessageCount.totalMessage > 0) {
-						this.UnreadMessageCount.totalMessage--;
-					}
-					this.UnreadMessageCount.lmaMenuClicked = true;
-					needUpdateLocalStorage = true;
-				}
-			} else if (id === 'menu-main-lnk-open-adobe') {
-				if (!this.UnreadMessageCount.adobeMenuClicked) {
-					if (this.UnreadMessageCount.totalMessage > 0) {
-						this.UnreadMessageCount.totalMessage--;
-					}
-					this.UnreadMessageCount.adobeMenuClicked = true;
-					needUpdateLocalStorage = true;
-				}
-			}
-			if (needUpdateLocalStorage) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.UnreadMessageCount, this.UnreadMessageCount);
 			}
 		}
 	}
@@ -377,6 +312,18 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.updateSearchBoxState(!this.showSearchBox);
 			if (event) {
 				event.fromSearchMenu = true;
+			}
+		} else if (item.id === 'user' && event) {
+			const target = event.target || event.srcElement || event.currentTarget;
+			const idAttr = target.attributes.id;
+			const id = idAttr.nodeValue;
+			if (id === 'menu-main-lnk-open-lma' ||
+				id === 'menu-main-lnk-open-adobe' ||
+				id === 'menu-main-lnk-open-dcc') {
+				this.appsForYouService.updateUnreadMessageCount(id);
+				if (id === 'menu-main-lnk-open-dcc') {
+					this.cardService.openDccDetailModal();
+				}
 			}
 		}
 	}

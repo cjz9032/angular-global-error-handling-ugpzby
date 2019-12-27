@@ -83,6 +83,7 @@ import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
 import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
 import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faCircle } from '@fortawesome/pro-light-svg-icons/faCircle';
+import { faBriefcase } from '@fortawesome/pro-light-svg-icons/faBriefcase';
 import { faCircle as falCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
@@ -90,6 +91,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 import { BatteryGaugeResetComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/battery-gauge-reset/battery-gauge-reset.component';
 
 library.add(faCheck);
+library.add(faBriefcase);
 library.add(faCheckCircle);
 library.add(faChevronCircleUp);
 library.add(faPlane);
