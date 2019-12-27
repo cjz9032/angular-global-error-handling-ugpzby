@@ -258,6 +258,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	initDataFromCache() {
 		this.initBatteryLinkFromCache();
+		this.initSmartStandBylinkFromCache()
 		this.initPowerSmartSettingFromCache();
 		this.initAirplanePowerFromCache();
 		this.initBatteryChargeThresholdFromCache();
@@ -273,6 +274,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	initBatteryLinkFromCache() {
 		const status = this.commonService.getLocalStorageValue(LocalStorageKey.IsBatteryQuickSettingAvailable, true);
 		this.updateBatteryLinkStatus(status);
+	}
+	initSmartStandBylinkFromCache(){
+		const capability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
+		this.onSetSmartStandbyCapability(capability.isCapable)
 	}
 
 	initExpressChargingFromCache() {
@@ -417,9 +422,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (!event) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartStandby');
 		} else {
-			const capability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
 			const status = this.commonService.isPresent(this.headerMenuItems, 'smartStandby')
-			if(!status && capability.isCapable){
+			if(!status){
 				const smartStandByObj = {
 					title: 'device.deviceSettings.power.smartStandby.title',
 					path: 'smartStandby',
