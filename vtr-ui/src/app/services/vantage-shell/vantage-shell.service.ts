@@ -254,6 +254,8 @@ export class VantageShellService {
 				metricClient.sendAsyncOrignally = metricClient.sendAsync;
 				metricClient.commonService = this.commonService;
 				metricClient.sendAsync = async function sendAsync(data) {
+					const win: any = window;
+
 					try {
 						// automatically fill the OnlineStatus for page view event
 						if (!data.OnlineStatus) {
@@ -263,6 +265,10 @@ export class VantageShellService {
 						const isBeta = that.commonService.getLocalStorageValue(LocalStorageKey.BetaTag, false);
 						if (isBeta) {
 							data.IsBetaUser = true;
+						}
+
+						if (win.VantageStub && win.VantageStub.toastMsgName) {
+							data.launchByToast = win.VantageStub.toastMsgName;
 						}
 
 						data.ItemType = that.normalizeEventName(data.ItemType);
