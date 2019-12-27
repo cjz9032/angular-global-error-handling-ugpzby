@@ -19,7 +19,7 @@ export class EssentialHelper implements IEssentialHelper {
 		devService: DevService
 	) {
 		const win = window as any;
-		if (win.VantageStub.findUPEAPIKey) {	// old version shell and service
+		if (win.VantageStub && win.VantageStub.findUPEAPIKey) {	// old version shell and service
 			this.iessentialHelper = new ShellEssentialHelper(commsService, deviceService, devService);
 			this.isSupportUpeTag = false;
 		} else {

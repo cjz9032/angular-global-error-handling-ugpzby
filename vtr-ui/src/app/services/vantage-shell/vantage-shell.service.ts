@@ -173,7 +173,7 @@ export class VantageShellService {
 	}
 
 	public getShellVersion() {
-		if (Windows) {
+		if (typeof Windows !== 'undefined') {
 			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
 			return `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
 		}
