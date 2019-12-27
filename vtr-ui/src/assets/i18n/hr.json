@@ -1975,7 +1975,7 @@
             "visitHde": "Posjeti Šifriranje tvrdog diska",
             "haveOwnPassword": "Imam vlastiti upravitelj lozinkama",
             "haveOwnWifi": "Imam vlastitu wifi sigurnost",
-            "haveOwnVpn": "Imam vlastitu wifi sigurnost",
+            "haveOwnVpn": "Imam vlastitu VPN sigurnost",
             "uac": "Kontrola korisničkog računa (UAC)",
             "uacTitles": "Kontrola korisničkog računa",
             "hde": "Šifriranje tvrdog diska",

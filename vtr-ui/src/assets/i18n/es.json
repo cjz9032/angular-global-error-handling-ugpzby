@@ -1975,7 +1975,7 @@
             "visitHde": "Visite Cifrado de unidad de disco duro",
             "haveOwnPassword": "Tengo mi propio administrador de contraseñas",
             "haveOwnWifi": "Tengo mi propia seguridad de Wi-Fi",
-            "haveOwnVpn": "Tengo mi propia seguridad de Wi-Fi",
+            "haveOwnVpn": "Tengo mi propia seguridad de VPN",
             "uac": "Control de cuentas de usuario (UAC)",
             "uacTitles": "Control de cuentas de usuario",
             "hde": "Cifrado de unidad de disco duro",
