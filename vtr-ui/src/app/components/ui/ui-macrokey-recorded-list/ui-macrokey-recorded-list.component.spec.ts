@@ -1,8 +1,9 @@
+import { TranslateService, TranslateStore, TranslateLoader, TranslateCompiler, TranslateParser, MissingTranslationHandler } from '@ngx-translate/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 
 import { UiMacrokeyRecordedListComponent } from './ui-macrokey-recorded-list.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
-import { HttpClient } from 'selenium-webdriver/http';
 import { Router } from '@angular/router';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
@@ -35,8 +36,8 @@ const sampleInputData = {
 		]
 	}
 };
-
-xdescribe('UiMacrokeyRecordedListComponent', () => {
+const translateServiceMock = { instant: (name) =>  name};
+describe('UiMacrokeyRecordedListComponent', () => {
 	let component: UiMacrokeyRecordedListComponent;
 	let fixture: ComponentFixture<UiMacrokeyRecordedListComponent>;
 
@@ -50,8 +51,9 @@ xdescribe('UiMacrokeyRecordedListComponent', () => {
 				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
-					{ provide: HttpClient },
-					{ provide: Router },
+					{provide: HttpClient, useValue: HttpClient},
+					HttpClientModule,
+					{ provide: TranslateService, useValue: translateServiceMock},
 					{ provide: MacrokeyService, useValue: macrokeyServiceMock }
 				]
 			}).compileComponents();
