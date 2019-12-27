@@ -31,8 +31,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	isCollapsed = true;	
 	public isAutonomicCapability = false;
 	public smartStandByInterval: any;
-	public caption = this.translate.instant('device.deviceSettings.power.smartStandby.description2');
-	public tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.oldTooltipText');
+	public caption = this.translate.instant('device.deviceSettings.power.smartStandby.description');
+	public tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.tooltip');
 	firstTimeLoad: boolean;
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
@@ -279,9 +279,10 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 					.then(response => {
 						console.log('===== getIsAutonomicCapability =====:', response);
 						this.isAutonomicCapability = response || false;
-						if (this.isAutonomicCapability) {
-							this.caption = this.translate.instant('device.deviceSettings.power.smartStandby.description');
-							this.tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.tooltip');
+						if (!this.isAutonomicCapability) {
+							this.checkbox = false
+							this.caption = this.translate.instant('device.deviceSettings.power.smartStandby.description2');
+							this.tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.oldTooltipText');
 						}
 					}).catch(error => {
 						this.logger.error('getIsAutonomicCapability', error.message);
