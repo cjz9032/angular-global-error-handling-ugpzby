@@ -2,8 +2,11 @@
 	<nav class="navbar navbar-expand-xl pr-0">
 		<div *ngIf="!deviceService.isGaming && !isGamingHome"
 			class="navbar-brand p-0">
+			<img class="menu-main-logo" *ngIf="dashboardService.isDashboardDisplayed"
+				[src]="VantageLogo | sanitize : 'resourceUrl'"
+				alt="L" />
 			<a vtrMetrics
-				*ngIf="items && items.length>0"
+				*ngIf="!dashboardService.isDashboardDisplayed && items && items.length>0"
 				class="menu-main-logo"
 				id="menu-main-lnk-l-logo"
 				aria-label="menu-main-lnk-l-logo"
