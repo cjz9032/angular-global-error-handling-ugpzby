@@ -28,9 +28,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	showDropDown: boolean[];
 	toggleSubscription: Subscription;
 	checkbox = false;
-	isCollapsed = false;
-	public automodeBtnVal = true;
-	public manualmodeBtnVal = false;
+	isCollapsed = true;	
 	public isAutonomicCapability = false;
 	public smartStandByInterval: any;
 	public caption = this.translate.instant('device.deviceSettings.power.smartStandby.description2');
@@ -69,11 +67,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						if (this.smartStandby.isCapable) {
 							this.setSmartStandbySection();
 						}
-
 						this.smartStandbyCapability.emit(this.smartStandby.isCapable);
-					}
-					this.logger.debug('Trying after 30 seconds for smart standby capability');
-					console.log('Trying after 30 seconds for smart standby capability');
+					}			
 
 				}).catch((error) => {
 					console.log('getSmartStandbyCapability Error', error.message);
@@ -139,6 +134,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	public onSmartStandbyToggle(event: any) {
+		this.showDropDown = [false, false, false];
 		const isEnabled = event.switchValue;
 		try {
 			console.log('setSmartStandbyEnabled entered', event);
@@ -332,6 +328,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	onCheckboxClicked(event) {
+		this.showDropDown = [false, false, false];
 		this.checkbox = event;
 		this.setSmartStandbyIsAutonomic(this.checkbox);
 	}
@@ -339,11 +336,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	public onToggle(elem: HTMLElement) {
 		elem.focus();
 		this.isCollapsed = !this.isCollapsed;
-	}
-	public changeMode(automaticMode, manualMode) {
-		this.automodeBtnVal = automaticMode;
-		this.manualmodeBtnVal = manualMode;
-	}
+		this.showDropDown = [false, false, false];
+	}	
 	public showUsageGraph() {
 		if (this.smartStandby.isEnabled) {
 			const modalRef = this.modalService.open(ModalSmartStandByComponent, {
