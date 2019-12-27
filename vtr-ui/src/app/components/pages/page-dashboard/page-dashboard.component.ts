@@ -141,6 +141,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	}
 
 	ngOnInit() {
+		this.dashboardService.isDashboardDisplayed = true;
 		this.getWelcomeText();
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, true);
 		this.commonService.notification.subscribe((notification: AppNotification) => {
@@ -194,6 +195,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	}
 
 	ngOnDestroy() {
+		this.dashboardService.isDashboardDisplayed = false;
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, false);
 		this.qaService.destroyChangeSubscribed();
 	}
