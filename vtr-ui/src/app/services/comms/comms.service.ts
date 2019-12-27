@@ -49,10 +49,8 @@ export class CommsService {
 			});
 	}
 
-	makeTagRequest(url, customHeadrs: any = {}) {
-		const contentType = { 'Content-Type': 'application/json;charset=UTF-8' };
-		const headers = customHeadrs ? { ...contentType, ...customHeadrs} : contentType;
-		return this.http.get(url, {headers});
+	makeTagRequest(url, headers: any = {}) {
+		return this.http.get(url, { observe: 'response', headers });
 	}
 
 	flatGetCall(url) {

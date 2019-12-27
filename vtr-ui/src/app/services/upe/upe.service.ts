@@ -166,7 +166,7 @@ export class UPEService {
 			if (httpResponse.status === 200 && httpResponse.body) {
 				return {
 					success: true,
-					content: httpResponse.body.results
+					content: httpResponse.body.tags
 				};
 			} else {
 				content = `get upe tags failed upon http request(unknown)`;
