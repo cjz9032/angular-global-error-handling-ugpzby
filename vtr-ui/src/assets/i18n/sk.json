@@ -1975,7 +1975,7 @@
             "visitHde": "Navštíviť stránku o šifrovaní pevného disku",
             "haveOwnPassword": "Mám vlastného správcu hesiel",
             "haveOwnWifi": "Mám vlastné zabezpečenie bezdrôtového pripojenia",
-            "haveOwnVpn": "Mám vlastné zabezpečenie bezdrôtového pripojenia",
+            "haveOwnVpn": "Mám vlastné zabezpečenie pomocou VPN",
             "uac": "Kontrola používateľských kont (UAC)",
             "uacTitles": "Kontrola používateľských kont",
             "hde": "Šifrovanie pevného disku",

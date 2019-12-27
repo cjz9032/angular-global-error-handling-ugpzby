@@ -1975,7 +1975,7 @@
             "visitHde": "造訪硬碟加密",
             "haveOwnPassword": "我有自己的 Password Manager",
             "haveOwnWifi": "我有自己的 WiFi 安全性",
-            "haveOwnVpn": "我有自己的 WiFi 安全性",
+            "haveOwnVpn": "我有自己的 VPN 安全性",
             "uac": "使用者帳戶控制 (UAC)",
             "uacTitles": "使用者帳戶控制",
             "hde": "硬碟加密",
@@ -2510,7 +2510,7 @@
         },
         "question4": {
             "title": "檢查電腦的電池使用情況",
-            "description": "<div class='faqInFs4Fb'>    檢查電腦的電池使用情況</div><hr><h3 class='faqInFs25FbP10'>問題狀況</h3><p>Windows 10 包含一個全新的<strong>電池使用情況</strong>螢幕，其中顯示筆記型電腦電量使用情況。從這裡可以明確知道，包括桌上型電腦和 Windows 10「通用」應用程式，哪種應用程式耗用最多電力。</p><h3 class='faqInFs25FbP10'>受影響的品牌</h3><ul>    <li>Lenovo 筆記型電腦、桌上型電腦</li></ul><h3 class='faqInFs25FbP10'>受影響的系統</h3><ul>    <li>所有</li></ul><h3 class='faqInFs25FbP10'>作業系統</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決方案</h3><p>這是 Windows 10 首度推出的新功能，我們需要先找出此功能，因為這個功能並未儲存在傳統<strong>控制面板</strong>檢視中，而是儲存在全新的<strong>設定</strong>應用程式中</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. 找出電池使用情況螢幕</h3></p><p>1.從開始功能表按一下或輕點<strong>設定</strong>選項</p><p>2.在<strong>設定</strong>中，選取<strong>「系統」</strong>，然後選取<strong>「省電功能」。<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.在這個標題下，按一下或輕按<strong>「電池使用情況」</strong>連結以查看詳細資料。</p><p> </p><h3 class='faqInFs25FbP10'>B. 分析電源使用</h3><p>4 電池使用情況螢幕可以變更成顯示從過去 24 小時到過去 48 小時、或從上週開始的電池使用情況</p><p>5 <strong>「系統」</strong>、<strong>「顯示器」</strong>和 <strong>「Wi-Fi」</strong>百分比。這會顯示系統作業，也就是顯示器，使用了多少電池電量；</p><p>6 <strong>「正在使用」</strong>和<strong>「背景」</strong>選項顯示正在使用與背景中的應用程式使用多少電力的比較。</p><p>7 如果應用程式在背景中使用電力，則您可以按一下或輕點<strong>「變更背景應用程式設定」</strong>連接，並將應用程式設定成不在背景執行。這個設定僅適用通用 Windows 10 應用程式。</p><p>8 繼續向下捲動，您將看到一個應用程式清單，而這堪稱此項功能最有用的部分。它將顯示列出該時段內使用電池電量的應用程式清單，並且列出每個應用程式所使用電池電量的百分比</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    檢查電腦的電池使用情況</div><hr><h3 class='faqInFs25FbP10'>問題狀況</h3><p>Windows 10 包含一個全新的<strong>電池使用情況</strong>螢幕，其中顯示筆記型電腦電量使用情況。從這裡可以明確知道，包括桌上型電腦和 Windows 10「通用」應用程式，哪種應用程式耗用最多電力。</p><h3 class='faqInFs25FbP10'>受影響的品牌</h3><ul>    <li>Lenovo 筆記型電腦、桌上型電腦</li></ul><h3 class='faqInFs25FbP10'>受影響的系統</h3><ul>    <li>所有</li></ul><h3 class='faqInFs25FbP10'>作業系統</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決方案</h3><p>這是 Windows 10 首度推出的新功能，我們需要先找出此功能，因為這個功能並未儲存在傳統<strong>控制面板</strong>檢視中，而是儲存在全新的<strong>設定</strong>應用程式中</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. 找出電池使用情況螢幕</h3></p><p>1.從開始功能表按一下或輕點<strong>設定</strong>選項</p><p>2.在<strong>設定</strong>中，選取<strong>「系統」</strong>，然後選取<strong>「省電功能」。<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.在這個標題下，按一下或輕按<strong>「電池使用情況」</strong>連結以查看詳細資料。</p><p> </p><h3 class='faqInFs25FbP10'>B. 分析電源使用</h3><p>4. 電池使用情況螢幕可以變更成顯示從過去 24 小時到過去 48 小時、或從上週開始的電池使用情況</p><p>5. <strong>「系統」</strong>、<strong>「顯示器」</strong>和 <strong>「Wi-Fi」</strong>百分比。這會顯示系統作業，也就是顯示器，使用了多少電池電量；</p><p>6. <strong>「正在使用」</strong>和<strong>「背景」</strong>選項顯示正在使用與背景中的應用程式使用多少電力的比較。</p><p>7. 如果應用程式在背景中使用電力，則您可以按一下或輕點<strong>「變更背景應用程式設定」</strong>連接，並將應用程式設定成不在背景執行。這個設定僅適用通用 Windows 10 應用程式。</p><p>8. 繼續向下捲動，您將看到一個應用程式清單，而這堪稱此項功能最有用的部分。它將顯示列出該時段內使用電池電量的應用程式清單，並且列出每個應用程式所使用電池電量的百分比</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",

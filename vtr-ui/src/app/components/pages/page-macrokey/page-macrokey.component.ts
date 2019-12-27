@@ -28,15 +28,15 @@ export class PageMacrokeyComponent implements OnInit {
 	dynamic_metricsItem: any = 'macrokey_cms_inner_content';
 
 	constructor(
-		private titleService: Title,
+		// private titleService: Title,
 		public dashboardService: DashboardService,
 		private cmsService: CMSService,
 		private shellService: VantageShellService,
 		private commonService: CommonService,
-		private macroKeyService: MacrokeyService,
-		private upeService: UPEService,
-		private loggerService: LoggerService,
-		private hypService: HypothesisService,
+		// private macroKeyService: MacrokeyService,
+		// private upeService: UPEService,
+		// private loggerService: LoggerService,
+		// private hypService: HypothesisService,
 		private translate: TranslateService,
 		public deviceService: DeviceService
 	) {
