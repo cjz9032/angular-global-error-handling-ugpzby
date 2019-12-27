@@ -460,6 +460,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			this.viewModel.showMetricsList = false;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricList, false);
 		} else {
+			this.viewModel.showMetricsList = true;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricList, true);
 		}
 		metricsFeature.forEach((e) => {
@@ -512,6 +513,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricButton, false);
 				return list;
 			} else {
+				this.viewModel.showMetricButton = true;
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricButton, true);
 			}
 		}
