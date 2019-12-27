@@ -19,6 +19,7 @@ export class DashboardService {
 	private sysupdate: any;
 	private warranty: any;
 	public isShellAvailable = false;
+	public isDashboardDisplayed = false;
 	private commonService: CommonService;
 	public heroBannerItems = [];
 	public cardContentPositionA: any = {};
