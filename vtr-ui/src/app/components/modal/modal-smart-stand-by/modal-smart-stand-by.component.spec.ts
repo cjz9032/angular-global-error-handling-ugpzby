@@ -34,8 +34,8 @@ describe('ModalSmartStandByComponent', () => {
 		}
 	];
 
-	//models coverage 
-	let cameraDetail: CameraDetail= new CameraDetail(); 
+	//models coverage
+	let cameraDetail: CameraDetail= new CameraDetail();
 	let cameraSettingsResponse : CameraSettingsResponse = new CameraSettingsResponse ();
 	let sunsetToSunriseStatus  : SunsetToSunriseStatus  = new SunsetToSunriseStatus (false,false,false,'','');
 	let batteryConditionModels  = [];
@@ -43,9 +43,9 @@ describe('ModalSmartStandByComponent', () => {
 	for(i=0;i<=17;i++){
 		batteryConditionModels.push(new BatteryConditionModel (i,0).getBatteryConditionTip(i));
 	}
-	let dolbyModeResponse = new DolbyModeResponse(false,[''],''); 
-	let microphoneOptimizeModes  = new MicrophoneOptimizeModes([''],''); 
-	let microphone   = new Microphone(false,false,0,'',false,false,false,false,false); 
+	let dolbyModeResponse = new DolbyModeResponse(false,[''],'');
+	let microphoneOptimizeModes  = new MicrophoneOptimizeModes([''],'');
+	let microphone   = new Microphone(false,false,0,'',false,false,false,false,false);
 	let inputAccessoriesCapability : InputAccessoriesCapability = new InputAccessoriesCapability ();
 
 
@@ -74,17 +74,17 @@ describe('ModalSmartStandByComponent', () => {
 			expect(component).toBeTruthy();
 		}));
 
-		it('getActiviesData calling powerService', async(() => {
-			const { fixture, component, powerService } = setup();
-			spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
-			spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
+		// it('getActiviesData calling powerService', async(() => {
+		// 	const { fixture, component, powerService } = setup();
+		// 	spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
+		// 	spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
 
-			component.getActiviesData();
-			fixture.detectChanges();
+		// 	component.getActiviesData();
+		// 	fixture.detectChanges();
 
-			expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
-			expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
-		}));
+		// 	expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
+		// 	expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
+		// }));
 
 		it('getSmartStandbyActiveHours calling powerService', async(() => {
 			const { fixture, component, powerService } = setup();
