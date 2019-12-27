@@ -475,7 +475,8 @@
 			"collapse": "Collapse",
 			"expand": "Expand",
 			"loader": "Fetching <br> Status",
-			"loading": "Loading..."
+			"loading": "Loading...",
+			"clickToChange": "click to change"
 		},
 		"app-update": {
 			"message": "Hey! A newer version of Vantage is available, do you want to load it?"

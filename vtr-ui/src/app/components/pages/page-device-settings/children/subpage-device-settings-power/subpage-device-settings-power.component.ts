@@ -258,6 +258,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	initDataFromCache() {
 		this.initBatteryLinkFromCache();
+		this.initSmartStandBylinkFromCache()
 		this.initPowerSmartSettingFromCache();
 		this.initAirplanePowerFromCache();
 		this.initBatteryChargeThresholdFromCache();
@@ -273,6 +274,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	initBatteryLinkFromCache() {
 		const status = this.commonService.getLocalStorageValue(LocalStorageKey.IsBatteryQuickSettingAvailable, true);
 		this.updateBatteryLinkStatus(status);
+	}
+	initSmartStandBylinkFromCache(){
+		const capability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
+		if (capability && capability.isCapable) {
+			this.onSetSmartStandbyCapability(capability.isCapable)
+		}
 	}
 
 	initExpressChargingFromCache() {
@@ -416,8 +423,20 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	onSetSmartStandbyCapability(event: boolean) {
 		if (!event) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartStandby');
-			this.checkMenuItemsEmpty();
+		} else {
+			const status = this.commonService.isPresent(this.headerMenuItems, 'smartStandby')
+			if(!status){
+				const smartStandByObj = {
+					title: 'device.deviceSettings.power.smartStandby.title',
+					path: 'smartStandby',
+					metricsItem: 'SmartStandby',
+					order: 2
+				};
+				this.headerMenuItems.push(smartStandByObj);
+				this.commonService.sortMenuItems(this.headerMenuItems);
+			}
 		}
+		this.checkMenuItemsEmpty();
 	}
 
 	openContextModal(template: TemplateRef<any>) {
