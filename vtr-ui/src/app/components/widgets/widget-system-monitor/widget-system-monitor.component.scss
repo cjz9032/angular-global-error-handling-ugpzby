@@ -34,10 +34,7 @@
 				}
 				@media #{$breakpoint_md} {
 					padding: 2rem 0;
-				}
-				@media only screen and (min-width: 991.99px) and (max-width: 992px){
-					padding-left:2rem!important;
-				}
+				}				
 				@media only screen and (min-width: 572px) and (max-width: 767.9px){
 					padding:2rem 0rem 2rem 0rem!important;
 				}
@@ -109,17 +106,17 @@
 					height: 18rem;
 				}
 				&.hds {
-					//position: absolute; //removed as it is breaking in some points 
+					position:absolute;
 					width: 100%;
 					border: 1px solid $gaming_darkest;
 					.hd-item {
-						width:30%;
+						//width:30%;
 						@media #{$breakpoint_md} {
-						 max-width: 35rem;
+						 //max-width: 35rem;
 						 margin: auto;
 					 }
 					 @media #{$breakpoint_sm} {
-						 max-width: 30rem;
+						// max-width: 30rem;
 					 }
 					}
 					&.expanded {
@@ -626,13 +623,28 @@
 					}
 				}
 				.hd-list {
-					padding: 2rem 2.50rem;
-					@media #{$breakpoint_xl} {
-						text-align: center;
+					padding: 2rem 0;
+					width:70%;		
+					margin:auto;
+					text-align:left;
+					@media screen and (max-width: 567.9px){
+						padding: 2rem 0rem;						
+						width:40%;
+						}
+					@media screen  and (min-width: 568px)and (max-width: 767px){
+					padding: 2rem 0rem;					
+					width:32%;			
 					}
+				
+					@media screen and (min-width: 992px) and (max-width: 1200px) { 
+					padding: 2rem 2.5rem;
+					width:45%;
+					}					 
 					&.single {
 						padding: 2rem;
 						padding-top: 3.5rem;
+						text-align:center;
+						width:100%;
 						@media #{$breakpoint_xl3} {
 							padding-top: 2.5rem;
 						}
@@ -655,7 +667,7 @@
 								}
 							}
 							.hd-item-label {
-								width:50%;
+								//width:50%;
 								text-align: center;
 							}
 							.monitor-hd {
@@ -721,17 +733,19 @@
 							}
 						}
 						.gaming-tooltip {// tooltips for multiple HDD and SDD
-							top: -6rem;
+							top: -5.5rem; 
 							left: 50%;
-							min-width:24rem;
-							transform: translate(-50%);					
+							min-width:28rem;
+							min-height:7rem;
+							padding:1.25rem 1.5rem 1.25rem;
+							transform: translate(-50%);						
 							@media #{$breakpoint_sm}{								
-								min-width:28rem;
+								min-width:28rem; 
 							}
 						}
 						&:hover {
 							.gaming-tooltip {
-								display: inline-block;
+								display: inline-block; 
 								opacity: 1;
 							}
 						}
