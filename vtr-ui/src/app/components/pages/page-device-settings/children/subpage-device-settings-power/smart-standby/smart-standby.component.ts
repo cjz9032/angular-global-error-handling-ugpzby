@@ -56,6 +56,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	public showSmartStandby() {
+		this.autonomicCapabilityCheck();
 		if (this.powerService.isShellAvailable) {
 			this.powerService.getSmartStandbyCapability()
 				.then((response: boolean) => {
@@ -109,13 +110,16 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		// this.initSmartStandby();
 	}
 
-	initSmartStandby() {
-		this.getSmartStandbyIsAutonomic();
-		this.getIsAutonomicCapability();
+	initSmartStandby() {	
+		this.autonomicCapabilityCheck();	
 		this.initDataFromCache();
 		this.splitStartEndTime();
 	}
 
+	autonomicCapabilityCheck(){
+		this.getSmartStandbyIsAutonomic();
+		this.getIsAutonomicCapability();
+	}
 	initDataFromCache() {
 		this.cache = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
 		if (this.cache) {
