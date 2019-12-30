@@ -31,7 +31,6 @@
 							[caption]=""
 							[isSwitchVisible]="false"
 							[disabled]="disableDisplayColor"
-							[disabledAll]="disabledAllDisplayColor"
 							[leftIcon]="['fal', 'eye']"
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
@@ -42,7 +41,8 @@
 							<div class="row">
 								<div class="col-12">
 									<vtr-display-color-temp [displayColorTempSettings]="displayColorTempDataSource"
-										[enableSlider]="false"
+										[enableSlider]="!enableColorTempSlider"
+										[disableReset]="disableDisplayColorReset"
 										[manualRefresh]="manualRefresh"
 										(displayColorTempChange)="onSetChangeDisplayColorTemp($event)"
 										(resetTemparature)="resetDaytimeColorTemp($event)"
@@ -70,7 +70,6 @@
 							componentName="Eye Care Mode"
 							[isSwitchVisible]="true"
 							[disabled]="disableEyeCareMode"
-							[disabledAll]="disabledAllEyeCareMode"
 							[isLastChild]="false"
 							[leftIcon]="['fal', 'eye']"
 							[rightIcon]="['far', 'question-circle']"
@@ -85,7 +84,9 @@
 								<div class="col-12">
 									<vtr-eye-care-mode [eyeCareModeSettings]="eyeCareDataSource"
 										[enableSlider]="!enableSlider"
+									    [disableReset]="disableEyeCareModeReset"
 										[enableSunsetToSunrise]="enableSunsetToSunrise"
+									    [missingGraphicDriver]="missingGraphicDriver"
 										[sunsetToSunriseStatus]="sunsetToSunriseModeStatus"
 										[manualRefresh]="manualRefresh"
 										(eyeCareTemparatureChange)="onEyeCareTemparatureChange($event)"
