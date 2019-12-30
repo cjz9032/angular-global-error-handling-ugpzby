@@ -84,6 +84,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		}
 	}
 	public getSmartStandbyCapability() {
+		this.initSmartStandby();
 		this.showSmartStandby();
 		this.smartStandByInterval = setInterval(() => {
 			this.firstTimeLoad = false;
