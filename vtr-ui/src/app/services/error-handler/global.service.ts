@@ -27,10 +27,10 @@ export class GlobalErrorHandler implements ErrorHandler {
 	}
 
 	isPromiseError(error: PromiseError | any): error is PromiseError {
-		return (error && (error as PromiseError).rejection) ? true : false;
+		return Boolean(error && (error as PromiseError).rejection);
 	}
 
 	isChunkLoadError(error: ChunkLoadError | any): error is ChunkLoadError {
-		return (error && (error as ChunkLoadError).name === 'ChunkLoadError') ? true : false;
+		return Boolean(error && (error as ChunkLoadError).name === 'ChunkLoadError');
 	}
 }

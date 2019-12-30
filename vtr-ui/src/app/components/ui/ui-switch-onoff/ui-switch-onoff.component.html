@@ -55,12 +55,14 @@
 			<div *ngIf="!value"
 				aria-hidden="true"
 				id="{{onOffSwitchId+'_off_sizeStopProp'}}"
+				attr.aria-label="{{onOffSwitchId+'_off_sizeStopProp'}}"
 				(click)="stopPropagation($event);"
 				(keydown.enter)="stopPropagation($event);"
 				class="switch-label off-label">{{'common.ui.off' | translate}}</div>
 			<div *ngIf="value"
 				aria-hidden="true"
 				id="{{onOffSwitchId+'_on_sizeStopProp'}}"
+				attr.aria-label="{{onOffSwitchId+'_on_sizeStopProp'}}"
 				(click)="stopPropagation($event);"
 				(keydown.enter)="stopPropagation($event);"
 				class="switch-label on-label">{{'common.ui.on' | translate}}</div>

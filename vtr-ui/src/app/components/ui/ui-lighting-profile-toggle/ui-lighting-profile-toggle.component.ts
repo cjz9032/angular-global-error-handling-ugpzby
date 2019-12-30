@@ -12,7 +12,7 @@ export class UiLightingProfileToggleComponent implements OnInit {
 	public p2Checked: boolean;
 	public p3Checked: boolean;
 	public isToggle: boolean = true;
-	@Input() id: string ='';
+	@Input() id: string = '';
 	constructor() {
 
 
@@ -23,7 +23,7 @@ export class UiLightingProfileToggleComponent implements OnInit {
 	}
 	SetProfile(event) {
 		let val1: number = event.target.value;
-
+		this.currentProfile = val1;
 		this.setLightingProfileId.emit(event);
 	}
 }

@@ -47,6 +47,7 @@ export class SelfSelectService {
 			this._savedSegment = value;
 			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, this._savedSegment);
 			this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
+			this.commonService.sendReplayNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
 		}
 	}
 	public savedInterests: string[] = [];

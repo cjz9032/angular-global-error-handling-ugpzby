@@ -7,6 +7,7 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { Subject } from 'rxjs/internal/Subject';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { WinRT } from '@lenovo/tan-client-bridge';
+import { ReplaySubject } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,7 +17,9 @@ import { WinRT } from '@lenovo/tan-client-bridge';
  */
 export class CommonService {
 	public readonly notification: Observable<AppNotification>;
+	public readonly replayNotification: Observable<AppNotification>;
 	private notificationSubject: BehaviorSubject<AppNotification>;
+	private replaySubject: ReplaySubject<AppNotification>;
 	public isOnline = true;
 	public gamingCapabalities: any = new Subject();
 	private RS5Version = 17600;
@@ -26,7 +29,9 @@ export class CommonService {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(
 			new AppNotification('init')
 		);
+		this.replaySubject = new ReplaySubject<AppNotification>(0);
 		this.notification = this.notificationSubject;
+		this.replayNotification = this.replaySubject;
 	}
 
 	/**
@@ -150,6 +155,10 @@ export class CommonService {
 
 	public sendNotification(action: string, payload?: any) {
 		this.notificationSubject.next(new AppNotification(action, payload));
+	}
+
+	public sendReplayNotification(action: string, payload?: any) {
+		this.replaySubject.next(new AppNotification(action, payload));
 	}
 
 	public isRS5OrLater(): boolean {
