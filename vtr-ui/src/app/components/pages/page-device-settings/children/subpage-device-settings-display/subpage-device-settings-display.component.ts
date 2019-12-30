@@ -50,7 +50,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	disableEyeCareMode = false;
 	disableDisplayColorReset = false;
 	disableEyeCareModeReset = false;
-	private missingGraphicDriver = false;
+	missingGraphicDriver = false;
 	public isEyeCareMode = false;
 	public initEyecare = 0;
 	public showHideAutoExposureSlider = false;
