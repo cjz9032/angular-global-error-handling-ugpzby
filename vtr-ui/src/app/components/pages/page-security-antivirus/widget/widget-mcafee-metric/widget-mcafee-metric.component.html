@@ -7,7 +7,7 @@
   </div>
   <div class="divider"></div>
   <div>
-    <div *ngIf="showMetricButton || metricsList.length === 0" class="row inner no-gutters">
+    <div *ngIf="showMetricButton" class="row inner no-gutters">
       <img class="logo col-2"
       [src]=" '/assets/icons/SecurityAdvisor/Files_Scanned.svg' | svgInline | async" />
       <div class="height-line"></div>
@@ -23,7 +23,7 @@
             (onClick)="common.launch()"></vtr-ui-button>
       </div>
     </div>
-    <div *ngIf="!showMetricButton || metricsList.length !== 0">
+    <div *ngIf="!showMetricButton">
       <div class="row inner no-gutters">
           <img class="logo col-2"
           [src]=" '/assets/icons/SecurityAdvisor/Files_Scanned.svg' | svgInline | async" />
