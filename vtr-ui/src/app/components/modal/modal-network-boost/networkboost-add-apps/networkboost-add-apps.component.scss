@@ -56,9 +56,9 @@ ui-popover-apps {
 		// 	min-width: 91.4rem;
 		// }
 		.main-content-body {
-			padding: 4rem;
+			padding: 2rem;
 			@media #{$breakpoint_sm} {
-				padding: 3rem 2rem;
+				padding: 1rem;
 			}
 			.running-apps {
 				padding-bottom: 1rem;
@@ -68,14 +68,15 @@ ui-popover-apps {
 		}
 		.title-content {
 			h3 {
-				font-size: 3.5rem;
+				font-size: 3rem;
 				font-weight: $weight_light;
 				margin-bottom: 1rem;
 				color: $light;
 			}
 			p {
-				font-size: 1.5rem;
+				font-size: 1.25rem;
 				color: $gaming_light_05;
+				line-height: auto;
 			}
 		}
 		.app-add-container {
@@ -186,11 +187,14 @@ ui-popover-apps {
 			color: $light;
 			overflow-x: hidden;
 			touch-action: none;
-			height:55vh;
-			margin-top: 2.5rem;
-			padding: 0 1.5rem;
+			height:58vh;
+			margin-top: 1rem;
+			//padding: 0 1.5rem;
 			.image-content{
 				height:44%;
+				@media #{$breakpoint_lg} {
+					height:35%;
+				}
 				svg{
 					width:100%;
 					max-width:500px;
@@ -201,12 +205,15 @@ ui-popover-apps {
 			.text-content {
 				padding:0 0.5rem;
 				h3 {
-					font-size: 3.5rem;
+					font-size: 2.7rem;
 					font-weight: $weight_light;
 				}
 				p {
-					font-size: 1.6rem;
+					font-size: 1.4rem;
 				}
+			}
+			.mtn-2{
+				margin-top:2rem;
 			}
 		}
 	}
