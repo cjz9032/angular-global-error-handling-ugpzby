@@ -77,7 +77,10 @@ export class WarrantyService {
 					});
 				});
 			}
-			return undefined;
+			return new Observable((observer) => {
+				observer.next(undefined);
+				observer.complete();
+			});
 		} catch (error) {
 			throw Error(error.message);
 		}
