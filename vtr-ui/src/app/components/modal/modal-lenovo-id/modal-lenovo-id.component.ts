@@ -1,16 +1,16 @@
 import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from '../../../services/user/user.service';
 import { SupportService } from '../../../services/support/support.service';
 import { DevService } from '../../../services/dev/dev.service';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { ssoErroType } from 'src/app/enums/lenovo-id-key.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
 	selector: 'vtr-modal-lenovo-id',
@@ -163,6 +163,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					const userguid = (el.querySelector('#userguid') as HTMLInputElement).value;
 					const firstname = (el.querySelector('#firstname') as HTMLInputElement).value;
 					const lastname = (el.querySelector('#lastname') as HTMLInputElement).value;
+					if (firstname && userguid) {
+						const encryptedFirstName = CryptoJS.AES.encrypt(firstname, userguid).toString();
+						this.commonService.setLocalStorageValue(LocalStorageKey.LidUserFirstName, encryptedFirstName);
+					}
 					// Default to enable SSO after login success
 					self.userService.enableSSO(useruad, username, userid, userguid).then(result => {
 						if (result.success && result.status === 0) {
@@ -308,7 +312,11 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				self.activeModal.dismiss();
 			}
 		}).catch((error) => {
-			self.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
+			if (error && error.errorcode === 513) {
+				self.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_AccountPluginDoesnotExist);
+			} else {
+				self.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
+			}
 			self.activeModal.dismiss();
 		});
 

@@ -20,6 +20,7 @@ import { ActivatedRoute } from '@angular/router';
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { takeWhile } from 'rxjs/operators';
+import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
 
 
 @Component({
@@ -43,7 +44,13 @@ export class SubpageDeviceSettingsDisplayComponent
 	public cameraPrivacyModeStatus = new FeatureStatus(true, true);
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false, '', '');
 	public enableSunsetToSunrise = false;
-	public enableSlider = false;
+	enableSlider = false;
+	enableColorTempSlider = true;
+	disableDisplayColor = false;
+	disableEyeCareMode = false;
+	disableDisplayColorReset = false;
+	disableEyeCareModeReset = false;
+	missingGraphicDriver = false;
 	public isEyeCareMode = false;
 	public initEyecare = 0;
 	public showHideAutoExposureSlider = false;
@@ -269,7 +276,6 @@ export class SubpageDeviceSettingsDisplayComponent
 	initFeatures() {
 		this.getPrivacyGuardCapabilityStatus();
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
-		this.statusChangedLocationPermission();
 		this.initCameraSection();
 		this.getOLEDPowerControlCapability();
 		setTimeout(() => {
@@ -487,24 +493,56 @@ export class SubpageDeviceSettingsDisplayComponent
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.initEyecaremodeSettings()
-					.then((result: boolean) => {
+					.then<boolean>(result => {
 						this.logger.debug('initEyecaremodeSettings.then', result);
-						if (result === false) {
+						if (!result) {
 							this.initEyecare++;
 							if (this.initEyecare <= 1) {
 								this.initEyecaremodeSettings();
 							}
-						} else {
-							//
-							this.getSunsetToSunrise();
-							this.getEyeCareModeStatus();
-							this.getDisplayColorTemperature();
-							this.getDaytimeColorTemperature();
 						}
-
-					}).catch(error => {
+						return result;
+					})
+					.then<boolean | WhiteListCapability>(result => {
+						if (result) {
+							return this.displayService.getWhiteListCapability();
+						}
+						return result;
+					})
+					.then(result => {
+						switch (result) {
+							// case 'NotSupport':
+							// 	this.showECMReset = true;
+							// 	this.resetEyecaremodeAllSettings();
+							// 	break;
+							case 'NotAvailable':
+								this.enableSlider = false;
+								this.enableColorTempSlider = false;
+								this.disableDisplayColor = true;
+								this.disableDisplayColorReset = true;
+								this.disableEyeCareMode = true;
+								this.disableEyeCareModeReset = true;
+								this.missingGraphicDriver = true;
+								this.statusChangedLocationPermission();
+								this.getSunsetToSunrise();
+								this.getEyeCareModeStatus();
+								this.getDisplayColorTemperature();
+								this.getDaytimeColorTemperature();
+								break;
+							case false:
+								return;
+							case 'Support':
+							default:
+								this.statusChangedLocationPermission();
+								this.getSunsetToSunrise();
+								this.getEyeCareModeStatus();
+								this.getDisplayColorTemperature();
+								this.getDaytimeColorTemperature();
+								return result;
+						}
+					})
+					.catch(error => {
 						this.logger.error('initEyecaremodeSettings', error.message);
-
 					});
 			}
 		} catch (error) {
@@ -886,7 +924,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.eyeCareModeCache.enableSunsetToSunrise = this.enableSunsetToSunrise;
 			this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 		});
-		// this.cd.detectChanges();
+		// this.cd.detectChanges();+
 	}
 
 	public async statusChangedLocationPermission() {
@@ -901,6 +939,25 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.eyeCareModeStatus.status = resetData.eyecaremodeState;
 		this.enableSlider = resetData.eyecaremodeState;
 		this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
+
+		// Disable all features when missing graphic driver
+		if (resetData.capability === 'NotAvailable') {
+			this.enableSlider = false;
+			this.enableColorTempSlider = false;
+			this.disableDisplayColor = true;
+			this.disableDisplayColorReset = true;
+			this.disableEyeCareMode = true;
+			this.disableEyeCareModeReset = true;
+			this.missingGraphicDriver = true;
+		} else {
+			this.enableSlider = true;
+			this.enableColorTempSlider = true;
+			this.disableDisplayColor = false;
+			this.disableDisplayColorReset = false;
+			this.disableEyeCareMode = false;
+			this.disableEyeCareModeReset = false;
+			this.missingGraphicDriver = false;
+		}
 
 		this.eyeCareModeCache.sunsetToSunriseStatus = this.sunsetToSunriseModeStatus;
 		this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
