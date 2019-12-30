@@ -13,6 +13,8 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 	@Input() enableSunsetToSunrise: boolean;
 	@Input() sunsetToSunriseStatus: any;
 	@Input() manualRefresh: any;
+	@Input() disableReset = false;
+	@Input() missingGraphicDriver = false;
 
 	@Output() eyeCareTemparatureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() eyeCareTemparatureValueChange: EventEmitter<ChangeContext> = new EventEmitter();
