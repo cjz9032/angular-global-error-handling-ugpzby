@@ -187,7 +187,7 @@ ui-popover-apps {
 			color: $light;
 			overflow-x: hidden;
 			touch-action: none;
-			height:57vh;
+			height:58vh;
 			margin-top: 1rem;
 			//padding: 0 1.5rem;
 			.image-content{
@@ -205,12 +205,15 @@ ui-popover-apps {
 			.text-content {
 				padding:0 0.5rem;
 				h3 {
-					font-size: 3rem;
+					font-size: 2.7rem;
 					font-weight: $weight_light;
 				}
 				p {
-					font-size: 1.6rem;
+					font-size: 1.4rem;
 				}
+			}
+			.mtn-2{
+				margin-top:2rem;
 			}
 		}
 	}
