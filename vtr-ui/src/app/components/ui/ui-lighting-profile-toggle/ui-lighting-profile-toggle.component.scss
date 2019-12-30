@@ -74,7 +74,7 @@
 			font-size: 1.8rem;
 			width: 25%;
 			height: 4.2rem;
-			border-radius: 4.2rem;
+			border-radius: 4.2rem; 
 			margin: 0.4rem 0.2rem;
 			display: flex;
 			align-items: center;
@@ -88,11 +88,9 @@
 			@media #{$breakpoint_xl2} {
 				font-size: 1.4rem;
 			}
-			@media #{$breakpoint_xl2} {
+			@media #{$breakpoint_xl} {
 				white-space: nowrap;
 				overflow: hidden;
-				//letter-spacing: 2rem;
-				//text-indent: -20rem;
 				&#off {
 					letter-spacing: 0;
 					text-indent: 0;

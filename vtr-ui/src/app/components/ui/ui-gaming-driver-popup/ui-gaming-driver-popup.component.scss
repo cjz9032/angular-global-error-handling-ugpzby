@@ -148,10 +148,13 @@ ui-gaming-driver-popup {
 							padding: 3.8rem 3rem;
 						}
 						@media #{$breakpoint_sm} {
-							padding: 3.8rem 2rem;
+							padding: 3.8rem 1.5rem;
 						}
 						.cancel-link{
 								margin-left: 1.5rem;
+								@media #{$breakpoint_sm} {
+							   margin-left: 1rem;
+								}
 							}
 							.content-body {
 								min-height: 12rem;
@@ -181,10 +184,13 @@ ui-gaming-driver-popup {
 						padding: 3.8rem 3rem;
 					}
 					@media #{$breakpoint_sm} {
-					padding: 3.8rem 2rem;
+					padding: 3.8rem 1.5rem;
 					}
 					.cancel-link{
 						margin-left: 1.5rem;
+						@media #{$breakpoint_sm} {
+							margin-left: 1rem;
+						}
 					}
 					.content-body {
 						  min-height: 12rem;
