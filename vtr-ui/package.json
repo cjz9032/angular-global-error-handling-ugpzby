@@ -1,6 +1,6 @@
 {
 	"name": "vtr-ui",
-	"version": "1.0.281",
+	"version": "1.0.282",
 	"scripts": {
 		"build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
 		"build:qa": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=qa",
@@ -52,6 +52,7 @@
 		"angular2-uuid": "^1.1.1",
 		"bootstrap": "^4.3.1",
 		"core-js": "^2.5.4",
+		"crypto-js": "^3.1.9-1",
 		"d3": "^5.9.2",
 		"inversify": "^5.0.1",
 		"js-sha1": "^0.6.0",

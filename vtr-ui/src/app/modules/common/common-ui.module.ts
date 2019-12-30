@@ -37,6 +37,7 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
 import { faCircle as falCircle } from '@fortawesome/free-regular-svg-icons/faCircle';
 import { faChevronDown as falChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faChevronUp as falChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
+import { SpinnerComponent } from 'src/app/components/common/spinner/spinner.component';
 
 library.add(faCircle);
 library.add(faCheckCircle);
@@ -63,6 +64,7 @@ library.add(faChevronUp);
 		UiRoundedRectangleRadioComponent,
 		UiRowSwitchComponent,
 		UiSwitchOnoffComponent,
+		SpinnerComponent,
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
@@ -89,6 +91,7 @@ library.add(faChevronUp);
 		UiRoundedRectangleRadioComponent,
 		UiRowSwitchComponent,
 		UiSwitchOnoffComponent,
+		SpinnerComponent,
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,

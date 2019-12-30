@@ -39,7 +39,6 @@ import { PowerSmartSettingsComponent } from 'src/app/components/widgets/power-sm
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
 import { SmartStandbyComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
-import { SpinnerComponent } from 'src/app/components/common/spinner/spinner.component';
 import { SubpageDeviceSettingsAudioComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 import { SubpageDeviceSettingsInputAccessoryComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
@@ -155,7 +154,6 @@ library.add(faCalendarAlt);
 		PowerSmartSettingsComponent,
 		SmartStandbyComponent,
 		BatteryGaugeResetComponent,
-		SpinnerComponent,
 		SubpageDeviceSettingsAudioComponent,
 		SubpageDeviceSettingsDisplayComponent,
 		SubpageDeviceSettingsInputAccessoryComponent,
