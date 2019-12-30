@@ -25,6 +25,14 @@ export class BatteryGaugeResetComponent implements OnInit {
 	}
 
 	initBatteryGaugeResetInfo() {
+		if (this.batteryService.gaugeResetInfo) {
+			this.batteryService.gaugeResetInfo.forEach((battery) => {
+				if (this.isValid(battery.FCCBefore) && this.isValid(battery.FCCAfter)) {
+					battery.FCCBefore = ((parseFloat(battery.FCCBefore) / 1000).toFixed(2)).toString();
+					battery.FCCAfter = ((parseFloat(battery.FCCAfter) / 1000).toFixed(2)).toString();
+				}
+			});
+		}
 		// this.batteryGaugeResetInfo.push(new BatteryGaugeReset());
 		// this.batteryGaugeResetInfo.push(new BatteryGaugeReset());
 		// this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
