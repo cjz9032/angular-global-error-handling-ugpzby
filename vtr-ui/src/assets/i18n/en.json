@@ -476,6 +476,8 @@
 			"expand": "Expand",
 			"loader": "Fetching <br> Status",
 			"loading": "Loading...",
+			"from": "from",
+			"to": "to",
 			"clickToChange": "click to change"
 		},
 		"app-update": {
