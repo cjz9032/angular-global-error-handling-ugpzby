@@ -26,6 +26,7 @@ export class AdPolicyService {
 				this.updateSystemUpdateStatus();
 				this.commonService.setLocalStorageValue(LocalStorageKey.AdPolicyCache, this.adPolicyList);
 				this.commonService.sendNotification(AdPolicyEvent.AdPolicyUpdatedEvent, this);
+				this.commonService.sendReplayNotification(AdPolicyEvent.AdPolicyUpdatedEvent, this);
 			});
 		}
 	}
