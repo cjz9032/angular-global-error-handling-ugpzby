@@ -182,6 +182,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	onPowerBatteryGaugeResetEvent(batteryGaugeResetInfo: BatteryGaugeReset[]) {
 		console.log('onPowerBatteryGaugeResetEvent: Information', batteryGaugeResetInfo);
+		batteryGaugeResetInfo.forEach((battery) => {
+			battery.FCCBefore = ((parseFloat(battery.FCCBefore) / 1000).toFixed(2)).toString();
+			battery.FCCAfter = ((parseFloat(battery.FCCAfter) / 1000).toFixed(2)).toString();
+		});
 		this.batteryService.gaugeResetInfo = batteryGaugeResetInfo;
 	}
 
