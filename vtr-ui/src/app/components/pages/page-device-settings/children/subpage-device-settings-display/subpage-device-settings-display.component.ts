@@ -510,7 +510,6 @@ export class SubpageDeviceSettingsDisplayComponent
 						return result;
 					})
 					.then(result => {
-						console.log(result, '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
 						switch (result) {
 							// case 'NotSupport':
 							// 	this.showECMReset = true;
