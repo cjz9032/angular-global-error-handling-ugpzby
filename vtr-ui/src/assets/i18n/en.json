@@ -1475,7 +1475,7 @@
 			"superResolution": {
 				"heading": "Intelligent Media",
 				"title": "Video Resolution Upscaling",
-				"desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution.It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label> This function might impact the battery life,battery temperature,and cause noises.When enabled,it is recommended that you connect your computer with ac power.</label></p>",
+				"desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution. It works especially when the video is in poor resolution. </label></p> <p style='margin-top:4px;'><label> This function might impact the battery life, battery temperature, and cause noises. When enabled, it is recommended that you connect your computer with ac power. </label></p>",
 				"tooltip": "This feature works only on the following players: <br/> Windows Media player",
 				"note": {
 					"description": "The feature does not work when:",

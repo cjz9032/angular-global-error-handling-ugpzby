@@ -607,6 +607,12 @@
     content: $icomoon-star;
   }
 }
+.icomoon-superResolution {
+  &:before {
+    content: $icomoon-superResolution;
+    color: #4a81fd;
+  }
+}
 .icomoon-translation {
   &:before {
     content: $icomoon-translation;
