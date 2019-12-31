@@ -15,8 +15,11 @@ ui-popover {
 		min-width: 40rem;
 		top: -11.2rem;
 	}
+	@media #{$mediaquery_X48} {
+		min-width: 42rem;
+	}
 	@media #{$breakpoint_sm} {
-		min-width: 37rem;
+		min-width: 36rem;
 	}
 	@media #{$black-on-white} {
 		background: $high-contrast-grey;
