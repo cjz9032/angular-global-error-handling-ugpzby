@@ -408,7 +408,10 @@
 					cursor: pointer;
 					text-transform: uppercase;
 					color: $main;
-					@media #{$mediaquery_X1} {
+					@media #{$mediaquery_xl} {
+						font-size: $fontsize_xs2;
+					}
+					@media #{$mediaquery_md} {
 						font-size: $fontsize_xs2;
 					}
 
