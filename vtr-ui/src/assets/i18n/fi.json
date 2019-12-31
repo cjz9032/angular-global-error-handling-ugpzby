@@ -475,7 +475,10 @@
             "collapse": "Kutista",
             "expand": "Laajenna",
             "loader": "Noutaminen <br> Tila",
-            "loading": "Ladataan..."
+            "loading": "Ladataan...",
+            "from": "kohteesta",
+            "to": "kohteeseen",
+            "clickToChange": "muuta napsauttamalla tätä"
         },
         "app-update": {
             "message": "Hei! Vantage on saatavilla uudempi versio. Haluatko ladata sen?"
@@ -937,13 +940,13 @@
                 "smartStandby": {
                     "title": "Älykäs valmiustila",
                     "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
-                    "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua aloitusaikaa ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso optimoidaan määritetyn aikataulun perusteella. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
+                    "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso on optimoitu määrittämäsi aikataulun tai tietokoneen käyttöajan mukaan. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
                     "timer": {
-                        "heading": "Määritä aika, jolloin yleensä käytät tätä tietokonetta",
+                        "heading": "Aika, jolloin yleensä käytät tätä tietokonetta",
                         "subHeading1": "aloitat",
                         "subHeading2": "lopetusaika",
                         "subHeading3": "käytä tätä aikataulua seuraavaan:",
-                        "endTimeNote": "Lopetusajan on oltava 20 tunnin kuluessa aloitusajasta",
+                        "endTimeNote": "LOPETUSajan on oltava 20 tunnin kuluessa ALOITUSajasta",
                         "timeUnits": {
                             "unit1": "tuntia",
                             "unit2": "minuuttia",
@@ -963,7 +966,8 @@
                             "wed": "Weskiviikko",
                             "thurs": "Torstai",
                             "fri": "Perjantai",
-                            "sat": "Lauantai"
+                            "sat": "Lauantai",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Sunnuntai",
@@ -976,8 +980,54 @@
                         },
                         "everyday": "Joka päivä",
                         "weekdays": "Arkisin",
-                        "weekends": "Viikonloppuisin"
-                    }
+                        "weekends": "Viikonloppuisin",
+                        "noDaySelected": "Päivää ei ole valittuna"
+                    },
+                    "checkbox": "Tietokoneen aktiivisen ajan automaattinen säätäminen käytön mukaan",
+                    "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella tietokoneen taulukon toimintaa ja aktiivista aikaa",
+                    "subTitle": "Ajasta tietokoneesi",
+                    "automaticMode": "Automaattinen tila",
+                    "manualMode": "Manuaalinen tila",
+                    "subNote": "Tietokone on ajastettu käyttämään Modern Standby -ominaisuutta käytön mukaan.",
+                    "graph": {
+                        "graph1Tittle": "Tämän tietokoneen käyttö",
+                        "graph2Tittle": "Käytössä oleva aktiivinen aika",
+                        "graphSubtittle": "Näinä aikoina tietokone pidetään valmiudessa nopeampaan lepotilasta palamiseen.",
+                        "graphNote": "Tämän tietokoneen toimintatiedot eivät riitä luomaan profiilia automaattista ajoitusta varten. Smart Standby -ominaisuus käyttää manuaalisen tilan ajoitusta, kunnes käytettävissä on riittävästi tietoja.",
+                        "legends": {
+                            "none": "Ei mitään",
+                            "frequent": "Toistuva"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
+                    "subTitle2": "Määritä aika, jolloin yleensä käytät tätä tietokonetta",
+                    "oldTooltipText": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso optimoidaan määritetyn aikataulun perusteella. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä."
                 }
             },
             "audio": {
@@ -2263,7 +2313,6 @@
         "question5": {
             "title": "Tietokoneen käyttö taulutietokoneen tavoin",
             "description": "<div class='faqInFs4Fb'>    Tietokoneen käyttö taulutietokoneen tavoin</div><hr><p>Muistiotila tekee Windows-käyttöjärjestelmästä entistä intuitiivisemman ja helppokäyttöisemmän, kun käytössä on kosketusnäytöllinen laite.</p><h3 class='faqInFs25FbP10'>Muistiotila</h3><p>Voit ottaa muistiotilan käyttöön napsauttamalla tehtäväpalkissa <strong>toimintokeskus</strong> ja valitsemalla sitten <strong>Muistiotila</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Huomautus</h3><p>Saat lisätietoja siitä, miten laite ottaa muistiotilan automaattisesti käyttöön etsimällä laitteesi valmistajan verkkosivulta. Tämän toiminnon tuki riippuu laitteistosta, asennetusta ohjaimesta ja siitä, miten valmistaja on määrittänyt laitteen asetukset. </p><p> </p><p>Muistiotilassa sovellukset avautuvat koko näytön kokoisiksi, mikä tuo työskentelylle lisätilaa. Jos haluat sulkea sovelluksen, vedä se näytön alareunaan.</p><p> </p><h3 class='faqInFs25FbP10'>Vinkki</h3><p>Tehtäväpalkki on käytettävissä, kun tietokone on muistiotilassa. Voit kuitenkin piilottaa sen, jos haluat lisää tilaa näyttöön. Valitse <strong>Käynnistä</strong>-painike ja sitten <strong>Asetukset </strong>> <strong>Järjestelmä </strong>> <strong> Muistiotila</strong> ja ota <strong>Piilota tehtäväpalkki automaattisesti muistiotilassa</strong>. Voit tuoda piilotetun tehtäväpalkin näkyviin sipaisemalla näytön alareunasta ylöspäin tai viemällä hiiren osoittimen tämän kohdan päälle.</p><h3 class='faqInFs25FbP10'>Kahden sovelluksen käyttö samanaikaisesti</h3><p>Jos haluat käyttää kahta sovellusta rinnakkain muistiotilassa, vedä avoin sovellus alaspäin ja sivulle. Näet, mihin se loksahtaa paikalleen ja näet avoinna olevat sovellukset sen vieressä.</p><p>Tässä näkymässä voit myös:</p><ul>    <li>Muuttaa molempien sovellusten kokoa samanaikaisesti käyttämällä kahden näytöllä olevan sovelluksen välistä jaettua reunaa.</li>    <li>Avaa uusi sovellus tehtävänäkymästä, valitse tehtäväpalkissa <strong>Tehtävänäkymä</strong>, valitse sovellus ja vedä se sitten toiseen laitaan, kun haluat sijoittaa sen jaetulle näytölle.</li>    <li>Voit siirtyä takaisin sovellukseen tai avata aiemmin käyttämäsi sovelluksen napsauttamalla tehtäväpalkin Edellinen-painiketta.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",

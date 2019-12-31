@@ -475,7 +475,10 @@
             "collapse": "Contraer",
             "expand": "Expandir",
             "loader": "Obteniendo el estado",
-            "loading": "Cargando..."
+            "loading": "Cargando...",
+            "from": "a partir de",
+            "to": "en",
+            "clickToChange": "haga clic para cambiar"
         },
         "app-update": {
             "message": "¡Ey! Hay disponible una versión más reciente de Vantage, ¿desea cargarla?"
@@ -937,13 +940,13 @@
                 "smartStandby": {
                     "title": "Suspensión inteligente",
                     "description": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
-                    "tooltip": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de inicio programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo se optimiza de acuerdo con su planificación establecida. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos.",
+                    "tooltip": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo de tiempo está optimizado según la planificación que haya establecido o el sistema tiempo de uso que obtenemos. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos.",
                     "timer": {
-                        "heading": "Establezca los horarios en los que normalmente utiliza este equipo",
+                        "heading": "La hora en la que normalmente utiliza su equipo",
                         "subHeading1": "comience",
                         "subHeading2": "final",
                         "subHeading3": "utilice esta planificación para",
-                        "endTimeNote": "El tiempo de finalización debe encontrarse en un plazo de 20 horas desde la hora de inicio",
+                        "endTimeNote": "La hora de FINALIZACIÓN debe encontrarse en un plazo de 20 horas desde la hora de INICIO",
                         "timeUnits": {
                             "unit1": "Horas",
                             "unit2": "Minutos",
@@ -963,7 +966,8 @@
                             "wed": "Miércoles",
                             "thurs": "Jueves",
                             "fri": "Viernes",
-                            "sat": "Sábado"
+                            "sat": "Sábado",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Domingo",
@@ -976,8 +980,54 @@
                         },
                         "everyday": "Todos los días",
                         "weekdays": "Entre semana",
-                        "weekends": "Fines de semana"
-                    }
+                        "weekends": "Fines de semana",
+                        "noDaySelected": "No se seleccionó el día"
+                    },
+                    "checkbox": "Ajuste automático del tiempo activo del sistema basándose en su uso",
+                    "hyperlinkToGraph": "Haga clic aquí para ver la actividad y el tiempo activo de la tabla sistema",
+                    "subTitle": "Programar su equipo",
+                    "automaticMode": "Modalidad automática",
+                    "manualMode": "Modalidad manual",
+                    "subNote": "El sistema está programado en Espera moderna según su uso.",
+                    "graph": {
+                        "graph1Tittle": "Uso de este sistema",
+                        "graph2Tittle": "Tiempo activo aplicado",
+                        "graphSubtittle": "En estos periodos de tiempo, mantenemos el sistema listo para una reanudación más rápida.",
+                        "graphNote": "Los datos de actividad de este sistema no son suficientes para proporcionar un perfil para la planificación automática. La Espera inteligente usará la programación de Modalidad manual hasta que haya suficientes datos disponibles.",
+                        "legends": {
+                            "none": "Ninguna",
+                            "frequent": "Frecuente"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
+                    "subTitle2": "Establezca los horarios en los que normalmente utiliza este equipo",
+                    "oldTooltipText": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo se optimiza de acuerdo con su planificación establecida. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos."
                 }
             },
             "audio": {
@@ -2263,7 +2313,6 @@
         "question5": {
             "title": "Use su equipo como una tableta",
             "description": "<div class='faqInFs4Fb'>    Use su equipo como una tableta</div><hr><p>La modalidad de tablero hace que Windows sea más intuitivo y más fácil de utilizar cuando tiene un dispositivo de pantalla táctil.</p><h3 class='faqInFs25FbP10'>Use la modalidad de tableta</h3><p>Para activar la modalidad de tableta, seleccione <strong>Centro de actividades</strong> en la barra de tareas y luego seleccione <strong>Modalidad de tableta</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Nota</h3><p>Para averiguar si el dispositivo puede activar automáticamente la modalidad de tableta, busque el dispositivo en el sitio web del fabricante. La compatibilidad con esta característica depende del hardware, del controlador instalado y de la forma en la que el fabricante configuró el dispositivo. </p><p> </p><p>En la modalidad de tableta, las aplicaciones abren la pantalla completa, lo que proporciona más espacio para trabajar. Para cerrar una aplicación, arrástrela a la parte inferior de la pantalla.</p><p> </p><h3 class='faqInFs25FbP10'>Consejo</h3><p>La barra de tareas está disponible cuando el equipo está en modalidad de tableta, pero puede ocultarla si desea disponer de más espacio en la pantalla. Seleccione el botón <strong>Inicio</strong>, seleccione <strong>Configuración </strong>> <strong>Sistema </strong>> <strong> Modalidad de tableta </strong>, luego active <strong>Ocultar barra de tareas automáticamente en modo de tableta</strong>. Para ver la barra de tareas oculta, deslice el dedo hacia arriba desde la parte inferior de la pantalla o utilice el mouse para situarse allí.</p><h3 class='faqInFs25FbP10'>Utilizar dos aplicaciones simultáneamente</h3><p>Para utilizar dos aplicaciones en paralelo en modalidad de tableta, arrastre una aplicación abierta hacia abajo y hacia el lado. Verá dónde se ajustará y verá cualquier aplicación abierta junto a ella.</p><p>En esta vista también puede:</p><ul>    <li>Utilice el borde compartido entre dos aplicaciones ajustadas para cambiar el tamaño de ambas aplicaciones al mismo tiempo.</li>    <li>Abra una nueva aplicación desde la vista de tarea: seleccione <strong>Vista de tareas</strong> en la barra de tareas, seleccione una aplicación y luego arrástrela a un lado para ajustarla a la pantalla dividida.</li>    <li>Utilice el botón atrás de la barra de tareas para volver a una aplicación o para abrir una aplicación que estaba usando antes.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",

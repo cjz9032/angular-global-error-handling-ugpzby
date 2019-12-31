@@ -475,7 +475,10 @@
             "collapse": "折叠",
             "expand": "展开",
             "loader": "获取状态",
-            "loading": "载入中..."
+            "loading": "载入中...",
+            "from": "从",
+            "to": "到",
+            "clickToChange": "单击以更改"
         },
         "app-update": {
             "message": "您好！已有较新版本的 Vantage，您要加载吗？"
@@ -963,7 +966,8 @@
                             "wed": "星期三",
                             "thurs": "星期四",
                             "fri": "星期五",
-                            "sat": "星期六"
+                            "sat": "星期六",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "星期日",
@@ -976,8 +980,54 @@
                         },
                         "everyday": "每天",
                         "weekdays": "工作日",
-                        "weekends": "周末"
-                    }
+                        "weekends": "周末",
+                        "noDaySelected": "未选择日期"
+                    },
+                    "checkbox": "根据您的使用情况自动调整计算机的活动时间",
+                    "hyperlinkToGraph": "单击以查看计算机活动和活动时间表",
+                    "subTitle": "安排您的计算机",
+                    "automaticMode": "自动模式",
+                    "manualMode": "手动模式",
+                    "subNote": "根据您的使用情况将您的计算机安排为现代待机模式。",
+                    "graph": {
+                        "graph1Tittle": "此电脑的使用情况",
+                        "graph2Tittle": "应用的活动时间",
+                        "graphSubtittle": "在这些时间段内，我们让计算机保持随时就绪状态，以便实现更快速的恢复。",
+                        "graphNote": "此计算机的活动数据不足以为自动安排提供概要文件。智能待机将使用手动模式安排，直到有足够的数据可用为止。",
+                        "legends": {
+                            "none": "无",
+                            "frequent": "经常"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
+                    "subTitle2": "设置通常使用此计算机的时间",
+                    "oldTooltipText": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。"
                 }
             },
             "audio": {

@@ -475,7 +475,10 @@
             "collapse": "Réduire",
             "expand": "Développer",
             "loader": "Récupération du statut <br>",
-            "loading": "Chargement..."
+            "loading": "Chargement...",
+            "from": "à partir de",
+            "to": "pour",
+            "clickToChange": "cliquez pour modifier"
         },
         "app-update": {
             "message": "Bonjour, Une version plus récente de Vantage est disponible. Voulez-vous la télécharger ?"
@@ -937,13 +940,13 @@
                 "smartStandby": {
                     "title": "Veille intelligente",
                     "description": "Cette fonctionnalité programme l'ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
-                    "tooltip": "Lorsque la Veille intelligente est activée, votre ordinateur passe à la Veille moderne avant l'heure de début prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
+                    "tooltip": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisée en fonction de la période que vous aurez définie ou de la durée d'utilisation de votre ordinateur. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
                     "timer": {
-                        "heading": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur",
+                        "heading": "Les heures pendant lesquelles vous utilisez en général l'ordinateur",
                         "subHeading1": "début",
                         "subHeading2": "fin",
                         "subHeading3": "utilisez cette planification pour",
-                        "endTimeNote": "L'heure de fin doit se situer dans les 20 heures suivant l'heure de début",
+                        "endTimeNote": "L'heure de FIN doit se situer dans les 20 heures suivant l'heure de DÉBUT",
                         "timeUnits": {
                             "unit1": "Heures",
                             "unit2": "Minutes",
@@ -963,7 +966,8 @@
                             "wed": "Mercredi",
                             "thurs": "Jeudi",
                             "fri": "Vendredi",
-                            "sat": "Samedi"
+                            "sat": "Samedi",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Dimanche",
@@ -976,8 +980,54 @@
                         },
                         "everyday": "Tous les jours",
                         "weekdays": "Jours de la semaine",
-                        "weekends": "Fins de semaine"
-                    }
+                        "weekends": "Fins de semaine",
+                        "noDaySelected": "Aucun jour sélectionné"
+                    },
+                    "checkbox": "Ajustement automatique du temps d'activité de l'ordinateur en fonction de votre utilisation",
+                    "hyperlinkToGraph": "Cliquez pour afficher le tableau de l'activité et du temps d'activité de l'ordinateur",
+                    "subTitle": "Programmer votre ordinateur",
+                    "automaticMode": "Mode Automatique",
+                    "manualMode": "Mode Manuel",
+                    "subNote": "Votre ordinateur est programmé en Veille moderne en fonction de votre utilisation.",
+                    "graph": {
+                        "graph1Tittle": "Utilisation de cet ordinateur",
+                        "graph2Tittle": "Durée d'activité appliquée",
+                        "graphSubtittle": "Pendant ces périodes, l'ordinateur est prêt à être lancé plus rapidement.",
+                        "graphNote": "Les données d'activité de cet ordinateur ne sont pas suffisantes pour fournir un profil de planification automatique. La Veille intelligente utilise la planification en mode manuel jusqu'à ce que suffisamment de données soient disponibles.",
+                        "legends": {
+                            "none": "Aucune",
+                            "frequent": "Fréquent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
+                    "subTitle2": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur",
+                    "oldTooltipText": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs."
                 }
             },
             "audio": {
@@ -2263,7 +2313,6 @@
         "question5": {
             "title": "Utilisez votre ordinateur comme une tablette",
             "description": "<div class='faqInFs4Fb'>    Utilisez votre ordinateur comme une tablette</div><hr><p>Le mode tablette graphique rend Windows plus intuitif et plus facile à utiliser si vous utilisez un périphérique à écran tactile.</p><h3 class='faqInFs25FbP10'>Utiliser le Mode Tablette</h3><p>Pour activer le mode tablette, sélectionnez le <strong>Centre de notifications</strong> dans la barre des taches, puis sélectionner le<strong>mode tablette</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Important</h3><p>Pour savoir si votre périphérique peut activer automatiquement le mode tablette, recherchez votre périphérique sur le site Web du fabricant. La prise en charge de cette fonction dépend du matériel, du pilote installé et de la configuration du périphérique par le fabricant. </p><p> </p><p>En mode tablette, les applications ouvrent le plein écran et vous donnent de l'espace pour travailler. Pour fermer une application, faites-la glisser dans la partie inférieure de l'écran.</p><p> </p><h3 class='faqInFs25FbP10'>Astuce</h3><p>La barre des tâches est disponible lorsque votre PC est en mode tablette, mais vous pouvez le masquer si vous souhaitez plus de place à l'écran. Sélectionnez le bouton<strong> démarrer</strong>, sélectionnez <strong>paramètres </strong>> <strong>système </strong>> <strong>mode </strong>tablette, puis activer la <strong>fonction Masquer automatiquement la barre des tâches</strong>en mode tablette. Pour afficher la barre des tâches masquée, balayez le curseur en haut de l'écran ou utilisez votre souris pour la placer au pointage.</p><h3 class='faqInFs25FbP10'>Utiliser deux applications simultanément</h3><p>Pour utiliser deux applications côte à côte en mode tablette, faites glisser une application ouverte vers le bas et vers le côté. Vous verrez où elle sera aimantée et vous verrez s'afficher toutes les applications en cours.</p><p>Dans cette vue, vous pouvez également :</p><ul>    <li>Utilisez l'arête partagée entre deux applications aimantées pour redimensionner les deux applications simultanément.</li>    <li>Ouvrir une nouvelle application à partir de l'affichage des tâches - sélectionnez <strong>Affichage des tâches</strong> dans la barre des tâches, sélectionnez une application, puis faites-la glisser sur un côté pour l'aligner sur l'écran divisé.</li>    <li>Utilisez le bouton précédent de la barre des tâches pour revenir en arrière dans une application ou pour ouvrir une application que vous utilisiez auparavant.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",

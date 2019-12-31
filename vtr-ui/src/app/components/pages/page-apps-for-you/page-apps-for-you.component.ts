@@ -349,6 +349,8 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 			case this.installButtonStatusEnum.INSTALL:
 			default:
 				this.errorMessage = '';
+				this.appDetails.showStatus = this.statusEnum.DOWNLOADING;
+				this.installButtonStatus = this.installButtonStatusEnum.DOWNLOADING;
 				await this.appsForYouService.installApp(this.appGuid);
 				break;
 		}
