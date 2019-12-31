@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { VantageShellService } from '../../vantage-shell/vantage-shell-mock.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
-fdescribe('Shared service:', () => {
+describe('Shared service:', () => {
   let shellService: VantageShellService;
   let service: GamingAllCapabilitiesService;
   let capabilities: any = {
