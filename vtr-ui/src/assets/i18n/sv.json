@@ -475,7 +475,10 @@
             "collapse": "Komprimera",
             "expand": "Utöka",
             "loader": "Hämtar <br> status",
-            "loading": "Läser in..."
+            "loading": "Läser in...",
+            "from": "från",
+            "to": "till",
+            "clickToChange": "klicka för att ändra"
         },
         "app-update": {
             "message": "Hej! Det finns en nyare version av Vantage. Vill du läsa in den?"
@@ -937,13 +940,13 @@
                 "smartStandby": {
                     "title": "Smart vänteläge",
                     "description": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
-                    "tooltip": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda starttiden och i viloläge när den inte har använts under en viss tidsperiod på batteriström. Denna tidsperiod optimeras utifrån schemat du har angett. Datorn övergår från viloläge till modernt vänteläge endast på schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
+                    "tooltip": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda starttiden och i viloläge när den inte har använts under en viss tid på batterikraft. Tiden optimeras utifrån det schema du har valt eller den datoranvändningstid vi får. Datorn övergår från viloläge till modernt vänteläge endast schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
                     "timer": {
-                        "heading": "Ange vilken tid du använder datorn mest",
+                        "heading": "Tiden då du brukar använda datorn",
                         "subHeading1": "start",
                         "subHeading2": "slut",
                         "subHeading3": "använd detta schema för",
-                        "endTimeNote": "Sluttiden måste infalla högst 20 timmar efter starttiden",
+                        "endTimeNote": "SLUTTIDEN måste infalla högst 20 timmar efter STARTTIDEN",
                         "timeUnits": {
                             "unit1": "Timmar",
                             "unit2": "Minuter",
@@ -963,7 +966,8 @@
                             "wed": "ons",
                             "thurs": "tors",
                             "fri": "fre",
-                            "sat": "lör"
+                            "sat": "lör",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "söndag",
@@ -976,8 +980,54 @@
                         },
                         "everyday": "Varje dag",
                         "weekdays": "vardagar",
-                        "weekends": "helger"
-                    }
+                        "weekends": "helger",
+                        "noDaySelected": "Ingen dag har valts"
+                    },
+                    "checkbox": "Justera datorns aktiva tid automatiskt utifrån användning",
+                    "hyperlinkToGraph": "Klicka om du vill datorns tabell över aktivitet och aktiv tid",
+                    "subTitle": "Schemalägg datorn",
+                    "automaticMode": "Automatiskt läge",
+                    "manualMode": "Manuellt läge",
+                    "subNote": "Datorn är schemalagd för modernt vänteläge baserat på din användning.",
+                    "graph": {
+                        "graph1Tittle": "Datoranvändning",
+                        "graph2Tittle": "Tillämpad aktiv tid",
+                        "graphSubtittle": "Under dessa perioder är datorn aktiverad så att det går snabbare att återuppta arbetet.",
+                        "graphNote": "Det finns inte tillräckligt med aktivitetsdata för att skapa en profil för automatisk schemaläggning. I smart vänteläge används schemat för manuellt läge tills det finns tillräckligt med data.",
+                        "legends": {
+                            "none": "Ingen",
+                            "frequent": "Regelbunden"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
+                    "subTitle2": "Ange vilken tid du använder datorn mest",
+                    "oldTooltipText": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda START tiden och i viloläge när den inte har använts under en viss tid på batterikraft. Denna tidsperiod optimeras utifrån schemat du har angett. Datorn övergår från viloläge till modernt vänteläge endast på schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad."
                 }
             },
             "audio": {
@@ -2263,7 +2313,6 @@
         "question5": {
             "title": "Använda datorn som pekplatta",
             "description": "<div class='faqInFs4Fb'>    Använda datorn som pekplatta</div><hr><p>Surfplatteläget gör Windows mer intuitivt och användarvänligt när du använder en enhet med pekskärm.</p><h3 class='faqInFs25FbP10'>Använda surfplatteläge</h3><p>Aktivera surfplatteläge genom att klicka på <strong>åtgärdscenter</strong> i aktivitetsfältet och sedan markera <strong>Surfplatteläge</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Anmärkning</h3><p>Vissa enheter kan automatiskt aktivera surfplatteläge. Sök efter din enhet på tillverkarens webbplats för att se om din kan det. Stöd för den här funktionen beror på maskinvaran, drivrutinen och hur enheten konfigurerats av tillverkaren. </p><p> </p><p>I surfplatteläge öppnas appar på hela skärmen, vilket ger dig mer plats att arbeta på. Om du vill stänga en app drar du den längst ner på skärmen.</p><p> </p><h3 class='faqInFs25FbP10'>Tips</h3><p>Aktivitetsfältet visas när datorn är i surfplatteläge, men du kan dölja det om du vill ha mer utrymme på skärmen. Klicka på <strong>Start</strong>-knappen och sedan <strong>Inställningar </strong>> <strong>System </strong>> <strong> Surfplatteläge</strong>. Tryck sedan på <strong>Dölj aktivitetsfältet automatiskt i surfplatteläge</strong>. För att se det dolda aktivitetsfältet sveper du uppåt från skärmens nederkant eller håller muspekaren där.</p><h3 class='faqInFs25FbP10'>Använda två appar samtidigt</h3><p>För att använda två appar sida vid sida i surfplatteläge drar du en öppen app nedåt och åt ena sidan. Du ser var den fäster och sedan ser du alla andra öppna appar vid sidan av den.</p><p>I samma vy kan du också:</p><ul>    <li>Ta tag i kanten mellan de två fästa apparna för att ändra storlek på båda två på samma gång.</li>    <li>Öppna en ny app från aktivitetsvyn. Klicka på <strong>Aktivitetsvy</strong> i aktivitetsfältet, välj en app och dra den åt sidan för att fästa den på din delade skärm.</li>    <li>Använd tillbakaknappen på aktivitetsfältet för att gå tillbaka i appen eller för att öppna en app du använde tidigare.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",

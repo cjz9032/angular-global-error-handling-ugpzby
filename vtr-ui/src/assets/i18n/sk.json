@@ -475,7 +475,10 @@
             "collapse": "Zbaliť",
             "expand": "Rozbaliť",
             "loader": "Stav <br> načítania",
-            "loading": "Načítava..."
+            "loading": "Načítava...",
+            "from": "od",
+            "to": "zmeňte na",
+            "clickToChange": "kliknutím zmeňte"
         },
         "app-update": {
             "message": "Dobrý deň. K dispozícii je novšia verzia aplikácie Vantage, chcete ju načítať?"
@@ -937,13 +940,13 @@
                 "smartStandby": {
                     "title": "Inteligentný pohotovostný režim",
                     "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
-                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným začiatkom a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie sa optimalizuje podľa vami nastaveného plánu. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie keď sa počas nasledujúcich plánovaných dní nevyužíva.",
+                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie je optimalizované na základe nastaveného harmonogramu alebo stanoveného času využívania počítača. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie vtedy, ak sa počas nasledujúcich plánovaných dní nevyužíva.",
                     "timer": {
-                        "heading": "Nastavte čas, v ktorom zvyčajne používate počítač",
+                        "heading": "Čas, kedy obyčajne využívate svoj počítač",
                         "subHeading1": "začnete",
                         "subHeading2": "koniec",
                         "subHeading3": "tento plán použiť na",
-                        "endTimeNote": "Hodnota času ukončenia musí byť do 20 hodín od času začiatku",
+                        "endTimeNote": "Hodnota času UKONČENIA musí byť do 20 hodín od času ZAČIATKU",
                         "timeUnits": {
                             "unit1": "Hodiny",
                             "unit2": "Minúty",
@@ -963,7 +966,8 @@
                             "wed": "streda",
                             "thurs": "štvrtok",
                             "fri": "piatok",
-                            "sat": "sobota"
+                            "sat": "sobota",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "nedeľa",
@@ -976,8 +980,54 @@
                         },
                         "everyday": "Každý deň",
                         "weekdays": "Dni v týždni",
-                        "weekends": "víkendy"
-                    }
+                        "weekends": "víkendy",
+                        "noDaySelected": "Nie je vybratý žiadny deň"
+                    },
+                    "checkbox": "Automatické prispôsobenie aktívneho času počítača podľa vášho využívania",
+                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktívny čas tabuľky vášho počítača",
+                    "subTitle": "Plánovanie počítača",
+                    "automaticMode": "Automatický režim",
+                    "manualMode": "Manuálny režim",
+                    "subNote": "Váš počítač je naplánovaný na prepnutie do moderného pohotovostného režimu podľa vášho použitia.",
+                    "graph": {
+                        "graph1Tittle": "Použitie tohto počítača",
+                        "graph2Tittle": "Aplikovaný aktívny čas",
+                        "graphSubtittle": "V týchto časových obdobiach udržujeme počítač pripravený na rýchlejšiu obnovu.",
+                        "graphNote": "Údaje o činnosti tohto počítača nie sú dostatočné na poskytnutie profilu pre automatické plánovanie. Inteligentný pohotovostný režim bude používať plán manuálneho režimu, kým nebude k dispozícii dostatok údajov.",
+                        "legends": {
+                            "none": "Žiadne",
+                            "frequent": "Časté"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
+                    "subTitle2": "Nastavte čas, v ktorom zvyčajne používate počítač",
+                    "oldTooltipText": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie sa optimalizuje podľa vami nastaveného plánu. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie keď sa počas nasledujúcich plánovaných dní nevyužíva."
                 }
             },
             "audio": {
@@ -2263,7 +2313,6 @@
         "question5": {
             "title": "Používanie počítača ako tabletu",
             "description": "<div class='faqInFs4Fb'>    Používanie počítača ako tabletu</div><hr><p>Vďaka režimu tabletu je systém Windows intuitívnejší a jednoduchšie sa používa, ak máte zariadenie s dotykovou obrazovkou.</p><h3 class='faqInFs25FbP10'>Používanie režimu tabletu</h3><p>Ak chcete zapnúť režim tabletu, vyberte <strong>centrum akcií</strong> na paneli úloh a potom vyberte položku <strong>Režim tabletu</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Poznámka</h3><p>Ak chcete zistiť, či zariadenie môže automaticky zapnúť režim tabletu, vyhľadajte zariadenie na webovej lokalite výrobcu. Podpora pre túto funkciu závisí od hardvéru, nainštalovaného ovládača a nastavenia zariadenia výrobcom. </p><p> </p><p>V režime tabletu sa aplikácie otvárajú na celej obrazovke, aby ste mali viac miesta na prácu. Ak chcete aplikáciu zatvoriť, potiahnite ju k dolnému okraju obrazovky.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>Keď je počítač v režime tabletu, panel úloh je k dispozícii, ale môžete ho skryť, ak potrebujete na obrazovke viac miesta. Vyberte tlačidlo <strong>Štart</strong>, vyberte položky <strong>Nastavenia</strong> > <strong>Systém</strong> > <strong>Režim tabletu</strong> a potom zapnite funkciu <strong>Automaticky skrývať panel úloh v režime tabletu</strong>. Ak chcete zobraziť skrytý panel úloh, potiahnite prstom nahor od dolného okraja obrazovky alebo naň ukážte myšou.</p><h3 class='faqInFs25FbP10'>Používanie dvoch aplikácií súčasne</h3><p>Ak chcete v režime tabletu používať dve aplikácie vedľa seba, otvorte aplikáciu jej potiahnutím nadol a do strany. Uvidíte, kde sa prichytí, a vedľa nej sa zobrazia všetky otvorené aplikácie.</p><p>V tomto zobrazení tiež môžete:</p><ul>    <li>zmeniť veľkosť oboch aplikácií naraz pomocou spoločného okraja medzi dvoma prichytenými aplikáciami;</li>    <li>otvoriť novú aplikáciu zo zobrazenia úloh &mdash; vyberte položku <strong>Zobrazenie úloh</strong> na paneli úloh, vyberte aplikáciu a potiahnite ju do strany, aby ste ju prichytili na rozdelenú obrazovku;</li>    <li>vrátiť sa späť v aplikácii alebo otvoriť predtým používanú aplikáciu pomocou tlačidla Späť na paneli úloh.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",

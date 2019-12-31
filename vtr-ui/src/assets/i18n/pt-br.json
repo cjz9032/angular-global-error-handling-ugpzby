@@ -475,7 +475,10 @@
             "collapse": "Recolher",
             "expand": "Expandir",
             "loader": "Buscando <br> Status",
-            "loading": "Carregando..."
+            "loading": "Carregando...",
+            "from": "de",
+            "to": "para",
+            "clickToChange": "clique para alterar"
         },
         "app-update": {
             "message": "Ei! Uma versão mais recente do Vantage está disponível. Deseja carregá-la?"
@@ -937,13 +940,13 @@
                 "smartStandby": {
                     "title": "Suspensão inteligente",
                     "description": "Esse recurso programa o computador para otimizar a economia de carga da bateria durante horas ociosas sem prejudicar o tempo do início rápido durantes horas de maior uso.",
-                    "tooltip": "Quando a Suspensão inteligente estiver ativada, o computador alternará para a Suspensão moderna antes da hora de início programada e entrará no modo de hibernação depois que estiver inativo por um certo tempo na carga da bateria. O tempo será otimizado com base no planejamento que você definir. O computador alterna do modo de hibernação para a Suspensão moderna apenas nos dias programados e não alterna quando estiver inativo por dias programados consecutivos.",
+                    "tooltip": "Quando a Suspensão inteligente estiver ativada, o computador alternará para a Suspensão moderna antes da hora de INÍCIO programada e entrará no modo de hibernação depois que estiver inativo por um certo tempo na carga da bateria. Esse período é otimizado com base na programação que você define ou no tempo de uso do computador que obtemos. O computador alterna do modo de hibernação para a Suspensão moderna apenas nos dias programados e não alterna quando estiver inativo por dias programados consecutivos.",
                     "timer": {
-                        "heading": "Defina a hora em que você geralmente usa este computador",
+                        "heading": "O horário em que você geralmente usa o computador",
                         "subHeading1": "inicie",
                         "subHeading2": "término",
                         "subHeading3": "use essa programação para",
-                        "endTimeNote": "A hora de término deve estar dentro de 20 horas da hora de início",
+                        "endTimeNote": "A hora de TÉRMINO deve estar dentro de 20 horas da hora de INÍCIO",
                         "timeUnits": {
                             "unit1": "Horas",
                             "unit2": "Minutos",
@@ -963,7 +966,8 @@
                             "wed": "Quarta-feira",
                             "thurs": "Quinta-feira",
                             "fri": "Sexta-feira",
-                            "sat": "sábado"
+                            "sat": "sábado",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "domingo",
@@ -976,8 +980,54 @@
                         },
                         "everyday": "Todo dia",
                         "weekdays": "Dias úteis",
-                        "weekends": "Finais de semana"
-                    }
+                        "weekends": "Finais de semana",
+                        "noDaySelected": "Nenhum dia selecionado"
+                    },
+                    "checkbox": "Ajuste automático do tempo ativo do computador com base no uso",
+                    "hyperlinkToGraph": "Clique para ver a atividade e o tempo ativo da mesa do computador",
+                    "subTitle": "Programar o computador",
+                    "automaticMode": "Modo automático",
+                    "manualMode": "Modo manual",
+                    "subNote": "O computador está programado para Suspensão moderna com base no seu uso.",
+                    "graph": {
+                        "graph1Tittle": "Uso deste computador",
+                        "graph2Tittle": "Tempo ativo aplicado",
+                        "graphSubtittle": "Nestes períodos, mantemos o computador pronto para uma continuidade mais rápida.",
+                        "graphNote": "Os dados da atividade deste computador não são suficientes para fornecer um perfil para programação automática. A Suspensão inteligente usará a programação do modo manual até que dados suficientes estejam disponíveis.",
+                        "legends": {
+                            "none": "Nenhuma",
+                            "frequent": "Frequente"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Esse recurso programa o computador para otimizar a economia de carga da bateria durante horas ociosas sem prejudicar o tempo do início rápido durantes horas de maior uso.",
+                    "subTitle2": "Defina a hora em que você geralmente usa este computador",
+                    "oldTooltipText": "Quando a Suspensão inteligente estiver ativada, o computador alternará para a Suspensão moderna antes da hora de INÍCIO programada e entrará no modo de hibernação depois que estiver inativo por um certo tempo na carga da bateria. O tempo será otimizado com base no planejamento que você definir. O computador alterna do modo de hibernação para a Suspensão moderna apenas nos dias programados e não alterna quando estiver inativo por dias programados consecutivos."
                 }
             },
             "audio": {
@@ -2263,7 +2313,6 @@
         "question5": {
             "title": "Usar seu PC como um tablet",
             "description": "<div class='faqInFs4Fb'>    Usar seu PC como um tablet</div><hr><p>O modo Tablet torna o Windows mais intuitivo e fácil de usar quando você tem um dispositivo touchscreen.</p><h3 class='faqInFs25FbP10'>Usar o modo tablet</h3><p>Para ativar o modo tablet, selecione <strong>Central de ações</strong> na barra de tarefas e selecione <strong>Modo tablet</strong> .</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Nota</h3><p>Para descobrir se seu dispositivo pode ativar automaticamente o modo tablet, procure seu dispositivo no site do fabricante. O suporte para esse recurso depende do hardware, do driver instalado e de como o dispositivo foi configurado pelo fabricante. </p><p> </p><p>No modo tablet, os aplicativos abrem em tela cheia, oferecendo mais espaço para trabalhar. Para fechar um aplicativo, arraste-o para a parte inferior da tela.</p><p> </p><h3 class='faqInFs25FbP10'>Dica</h3><p>A barra de tarefas está disponível quando o seu PC está no modo tablet, mas você pode ocultá-la se quiser mais espaço na tela. Selecione o botão <strong>Iniciar</strong>, selecione <strong>Configurações </strong>> <strong>Sistema </strong>> <strong>Modo tablet</strong> e ative a opção <strong>Ocultar automaticamente a barra de tarefas no modo tablet</strong>. Para ver a barra de tarefas oculta, deslize para cima a partir da parte inferior da tela ou use o mouse para passar por cima.</p><h3 class='faqInFs25FbP10'>Usar dois aplicativos simultaneamente</h3><p>Para usar dois aplicativos lado a lado no modo tablet, arraste um aplicativo aberto para baixo e para o lado. Você verá onde ele se encaixará e verá todos os aplicativos abertos ao lado dele.</p><p>Nesta exibição, você também pode:</p><ul>    <li>Usar a borda compartilhada entre dois aplicativos para redimensionar os dois aplicativos ao mesmo tempo.</li>    <li>Abrir um novo aplicativo na exibição de tarefa &mdash; selecione <strong>Exibição de tarefa</strong> na barra de tarefas, selecione um aplicativo e arraste-o para um lado para encaixá-lo na tela dividida.</li>    <li>Usar o botão Voltar na barra de tarefas para voltar em um aplicativo ou abrir um aplicativo que você estava usando antes.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",

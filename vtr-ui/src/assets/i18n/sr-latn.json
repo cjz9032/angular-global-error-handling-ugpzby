@@ -475,7 +475,10 @@
             "collapse": "Skupi",
             "expand": "Raširi",
             "loader": "Status <br> preuzimanja",
-            "loading": "Učitavanje..."
+            "loading": "Učitavanje...",
+            "from": "iz",
+            "to": "u",
+            "clickToChange": "kliknite za promenu"
         },
         "app-update": {
             "message": "Hej! Novija verzija programa Vantage je raspoloživa, želite li da ga učitate?"
@@ -937,13 +940,13 @@
                 "smartStandby": {
                     "title": "Pametno stanje pripravnosti",
                     "description": "Ova funkcija zakazuje optimizaciju štednje energije računara tokom časova neaktivnosti bez žrtvovanja vremena brzog pokretanja tokom časova intenzivnijeg korišćenja.",
-                    "tooltip": "Kada je omogućeno pametno stanje pripravnosti, računar se prebacuje u moderno stanje pripravnosti pre zakazanog vremena početka i ulazi u stanje hibernacije nakon izvesnog perioda neaktivnosti tokom rada na bateriju. Taj vremenski period je optimizovan na osnovu rasporeda koji ste podesili. Računar se prebacuje iy stanja hibernacije u moderno stanje pripravnosti samo tokom zakazanih dana, a ne prebacuje se kad je neaktivan tokom uzastopnih zakazanih dana.",
+                    "tooltip": "Kad je omogućena funkcija Pametno vreme pripravnosti, računar se prebacuje na funkciju Moderno vreme pripravnosti pre zakazanog vremena POČETKA i ulazi u hibernaciju nakon što neko vreme bude neaktivan a napaja se na bateriju. Ovaj period se optimizuje na osnovu rasporeda koji ste podesili ili vremena korišćenja računara koje dobijemo. Računar prelazi iz hibernacije u Moderno stanje pripravnosti samo zakazanim danima i ne prelazi kada je neaktivan nekoliko uzastopnih zakazanih dana.",
                     "timer": {
-                        "heading": "Podesite vreme kada obično koristite ovaj računar",
+                        "heading": "Vreme kada obično koristite računar",
                         "subHeading1": "započnete",
                         "subHeading2": "završetak",
                         "subHeading3": "koristite ovaj raspored za",
-                        "endTimeNote": "Vreme završetka mora da bude u roku od 20 časova od vremena početka",
+                        "endTimeNote": "Vreme ZAVRŠETKA mora da bude u roku od 20 časova od vremena POČETKA",
                         "timeUnits": {
                             "unit1": "Sati",
                             "unit2": "Minuti",
@@ -963,7 +966,8 @@
                             "wed": "Sreda",
                             "thurs": "Četvrtak",
                             "fri": "Petak",
-                            "sat": "Subota"
+                            "sat": "Subota",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Nedelja",
@@ -976,8 +980,54 @@
                         },
                         "everyday": "Svaki dan",
                         "weekdays": "Weekdays",
-                        "weekends": "Vikendom"
-                    }
+                        "weekends": "Vikendom",
+                        "noDaySelected": "Nije izabran nijedan dan"
+                    },
+                    "checkbox": "Automatsko podešavanje aktivnog vremena računara na osnovu vašeg korišćenja",
+                    "hyperlinkToGraph": "Kliknite da biste videli aktivnost i aktivno vreme računarske tabele",
+                    "subTitle": "Zakazivanje rada računara",
+                    "automaticMode": "Automatski režim",
+                    "manualMode": "Ručni režim",
+                    "subNote": "Predviđeno je moderno stanje pripravnosti računara na osnovu vašeg korišćenja.",
+                    "graph": {
+                        "graph1Tittle": "Korišćenje ovog računara",
+                        "graph2Tittle": "Primenjeno aktivno vreme",
+                        "graphSubtittle": "Tokom ovih perioda održavamo spremnost računara za brži nastavak rada.",
+                        "graphNote": "Podaci o aktivnosti ovog računara nisu dovoljni da bi se obezbedio profil za automatsko zakazivanje. Pametno stanje pripravnosti će koristiti zakazivanje ručnog režima dok ne bude dostupno dovoljno podataka.",
+                        "legends": {
+                            "none": "Nema",
+                            "frequent": "Često"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Ova funkcija zakazuje optimizaciju štednje energije računara tokom časova neaktivnosti bez žrtvovanja vremena bryog pokretanja tokom časova intenzivnijeg korišćenja.",
+                    "subTitle2": "Podesite vreme kada obično koristite ovaj računar",
+                    "oldTooltipText": "Kad je omogućena funkcija Pametno vreme pripravnosti, računar se prebacuje na funkciju Moderno vreme pripravnosti pre zakazanog vremena POČETKA i ulazi u hibernaciju nakon što neko vreme bude neaktivan a napaja se na bateriju. Taj vremenski period je optimizovan na osnovu rasporeda koji ste podesili. Računar se prebacuje iy stanja hibernacije u moderno stanje pripravnosti samo tokom zakazanih dana, a ne prebacuje se kad je neaktivan tokom uzastopnih zakazanih dana."
                 }
             },
             "audio": {
@@ -2263,7 +2313,6 @@
         "question5": {
             "title": "Korišćenje računara kao tableta",
             "description": "<div class='faqInFs4Fb'>    Korišćenje računara kao tableta</div><hr><p>Uz režim tablet računara, Windows je intuitivniji i lakši za korišćenje kada imate uređaj osetljiv na dodir.</p><h3 class='faqInFs25FbP10'>Korišćenje u režimu tablet računara</h3><p>Da biste uključili režim tablet računara, izaberite <strong>Centar aktivnosti</strong> na traci zadataka, a zatim izaberite <strong>Tablet mode</strong> (Režim tablet računara).</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Napomena</h3><p>Da biste saznali da li vaš uređaj može automatski da uključi režim tablet računara, potražite vaš uređaj na veb lokaciji proizvođača. Podrška za ovu funkciju zavisi od hardvera, upravljačkog programa koji je instaliran i kako je proizvođač podesio uređaj. </p><p> </p><p>U režimu tablet računara, aplikacije se otvaraju u prikazu preko celog ekrana, dajući vam više prostora za rad. Da biste zatvorili aplikaciju, prevucite je na donji deo ekrana.</p><p> </p><h3 class='faqInFs25FbP10'>Savet</h3><p>Traka zadataka je dostupna kada je vaš računar u režimu tablet računara, ali možete da je sakrijete ako želite više prostora na ekranu. Izaberite dugme <strong>Start</strong>, izaberite <strong>Settings (Postavke) </strong>> <strong>System (Sistem) </strong>> <strong> Tablet mode (Režim tablet računara)</strong>, a zatim uključite opciju <strong>Automatically hide the taskbar in tablet mode</strong> (Automatsko skrivanje trake zadataka u režimu tablet računara). Da biste videli skrivenu traku zadataka, prevucite nagore sa dna ekrana ili pređite mišem preko tog dela.</p><h3 class='faqInFs25FbP10'>Istovremeno korišćenje dve aplikacije</h3><p>Da biste naporedno koristili dve aplikacije u režimu tablet računara, prevucite i otvorite aplikaciju nadole i u stranu. Videćete gde će se prikačiti i videćete sve otvorene aplikacije pored nje.</p><p>U ovom prikazu, možete i da radite sledeće:</p><ul>    <li>Koristite deljenu ivicu između dve prikačene aplikacije kako biste istovremeno promenili veličinu obe aplikacije.</li>    <li>Otvorite novu aplikaciju sa trake zadataka. Izaberite <strong>Task view</strong> (Prikaz zadataka) na traci zadataka, izaberite aplikaciju, prevucite je na jednu stranu kako biste je prikačili na podeljeni ekran.</li>    <li>Koristite dugme „Nazad“ na traci zadataka da biste se vratili u aplikaciji ili da biste otvorili aplikaciju koju ste prethodno koristili.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",

@@ -475,7 +475,10 @@
             "collapse": "Komprimer",
             "expand": "Utvid",
             "loader": "Henter <br> status",
-            "loading": "Laster..."
+            "loading": "Laster...",
+            "from": "fra",
+            "to": "til",
+            "clickToChange": "klikk for å endre"
         },
         "app-update": {
             "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"
@@ -937,13 +940,13 @@
                 "smartStandby": {
                     "title": "Smart hvilemodus",
                     "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
-                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt starttidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
+                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir, eller brukstiden vi mottar for datamaskinen. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
                     "timer": {
-                        "heading": "Angi vanlige tidspunkter for bruk av datamaskinen",
+                        "heading": "Tidspunkter du vanligvis bruker datamaskinen",
                         "subHeading1": "begynner",
                         "subHeading2": "slutt",
                         "subHeading3": "bruk denne planen for",
-                        "endTimeNote": "Sluttidspunktet må være innen 20 timer etter starttidspunktet",
+                        "endTimeNote": "SLUTT-tidspunktet må være innen 20 timer etter START-tidspunktet",
                         "timeUnits": {
                             "unit1": "Timer",
                             "unit2": "Minutter",
@@ -963,7 +966,8 @@
                             "wed": "ons",
                             "thurs": "Tor",
                             "fri": "fre",
-                            "sat": "lør"
+                            "sat": "lør",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "søndag",
@@ -976,8 +980,54 @@
                         },
                         "everyday": "Hver dag",
                         "weekdays": "Uke dager",
-                        "weekends": "Helger"
-                    }
+                        "weekends": "Helger",
+                        "noDaySelected": "Det er ikke valgt en dag"
+                    },
+                    "checkbox": "Automatisk justering av datamaskinens aktive tid basert på bruk",
+                    "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen",
+                    "subTitle": "Opprett kjøreplan for datamaskinen",
+                    "automaticMode": "Automatisk modus",
+                    "manualMode": "Manuell modus",
+                    "subNote": "Datamaskinen din er satt i Modern Standby basert på bruken din.",
+                    "graph": {
+                        "graph1Tittle": "Bruken av denne datamaskinen",
+                        "graph2Tittle": "Brukt aktiv tid",
+                        "graphSubtittle": "I disse tidsperiodene holder vi datamaskinen klar for raskere gjenopptak.",
+                        "graphNote": "Aktivitetsdataene til denne datamaskinen er ikke tilstrekkelig til å gi en profil for automatisk planlegging. Smart Standby vil bruke manuell modusplan til det er nok data tilgjengelig.",
+                        "legends": {
+                            "none": "Ingen",
+                            "frequent": "Frekvens"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
+                    "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen",
+                    "oldTooltipText": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad."
                 }
             },
             "audio": {
@@ -2263,7 +2313,6 @@
         "question5": {
             "title": "Bruke datamaskinen som et nettbrett",
             "description": "<div class='faqInFs4Fb'>    Bruke datamaskinen som et nettbrett</div><hr><p>Nett brett modus gjør Windows mer intuitiv og enklere å bruke når du har en berørings enhet.</p><h3 class='faqInFs25FbP10'>Bruk tavlemodus</h3><p>Hvis du vil slå på nett brett <strong>modus</strong> velger du handlings senter på oppgave linjen <strong>og velger deretter nett brett modus</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Merk</h3><p>Hvis du vil finne ut om enheten kan slå på nett brett modus automatisk, søker du etter enheten på produsentens nettsted. Støtte for denne funksjonen avhenger av maskin varen, driveren som er installert og hvordan enheten ble konfigurert av produsenten. </p><p> </p><p>I nett brett modus åpner apper full skjerm og gir deg mer plass å arbeide på. Hvis du vil lukke en app, drar du den til bunnen av skjermen.</p><p> </p><h3 class='faqInFs25FbP10'>Spiss</h3><p>Oppgave linjen er tilgjengelig når PC-en er i nett brett modus, men du kan skjule den hvis du vil ha mer plass på skjermen. Velg <strong>på Start</strong>-knappen, <strong>Velg</strong> innstillinger <strong>> </strong>system <strong> > nett </strong>brett modus, og <strong>slå på automatisk Skjul oppgave linjen i nett brett modus</strong>. Hvis du vil se den skjulte oppgave linjen, sveiper du ned nederst på skjermen, eller du kan bruke musen til å peke der.</p><h3 class='faqInFs25FbP10'>Bruk to apper samtidig</h3><p>Hvis du vil bruke to applikasjoner side ved side i nett brett modus, drar du en åpen app ned og til siden. Du vil se hvor den kan festes, og du vil se eventuelle åpne apper ved siden av den.</p><p>I denne visningen kan du også:</p><ul>    <li>Bruk den delte kanten mellom to festede applikasjoner til å endre størrelse på begge appene samtidig.</li>    <li>Åpne en ny app fra oppgave visning-Velg <strong>oppgave visning</strong> på oppgave linjen, Velg en app, og dra den til den ene siden for å feste den på den delte skjermen.</li>    <li>Bruk tilbake-knappen på oppgave linjen for å gå tilbake i en app eller åpne en app som du brukte tidligere.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
