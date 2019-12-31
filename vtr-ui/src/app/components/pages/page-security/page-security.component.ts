@@ -54,6 +54,7 @@ import { SecurityTypeConst } from 'src/app/data-models/security-advisor/status-i
 import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
 
 
 @Component({
@@ -90,7 +91,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	baseItems = [];
 	intermediateItems = [];
 	advanceItems = [];
-	statusItem: any;
+	statusItem: LandingView;
 	pluginSupport = true;
 
 	constructor(
@@ -285,10 +286,13 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		const levelStatus = {
 			basicValid: 0,
 			basicSuccess: false,
+			basicLength: 0,
 			intermediateValid: 0,
 			intermediateSuccess: false,
+			intermediateLength: 0,
 			advancedValid: 0,
-			advancedSuccess: false
+			advancedSuccess: false,
+			advancedLength: 0
 		};
 		for (const key in statusList) {
 			if (statusList.hasOwnProperty(key)) {
@@ -297,14 +301,17 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 					case SecurityTypeConst.Basic:
 						levelStatus.basicValid = element.filter(i => i === 'true' || i === 'enabled' || i === 'installed' || i === 'registered').length;
 						levelStatus.basicSuccess = element.length === levelStatus.basicValid;
+						levelStatus.basicLength = element.length;
 						break;
 					case SecurityTypeConst.Intermediate:
 						levelStatus.intermediateValid = element.filter(i => i === 'true' || i === 'enabled' || i === 'installed' || i === 'registered').length;
 						levelStatus.intermediateSuccess = element.length === levelStatus.intermediateValid;
+						levelStatus.intermediateLength = element.length;
 						break;
 					case SecurityTypeConst.Advanced:
 						levelStatus.advancedValid = element.filter(i => i === 'true' || i === 'enabled' || i === 'installed' || i === 'registered').length;
 						levelStatus.advancedSuccess = element.length === levelStatus.advancedValid;
+						levelStatus.advancedLength = element.length;
 						break;
 					default:
 						break;
@@ -315,35 +322,31 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	public calcSecurityLevel(levelStatus) {
-		const item = {
-			status: 0,
-			fullyProtected: false,
-			icon: 0
-		};
+		this.statusItem = new LandingView();
+		const allItems = levelStatus.basicLength + levelStatus.intermediateLength + levelStatus.advancedLength;
 		if (levelStatus.basicValid > 0) {
 			if (levelStatus.intermediateValid > 0 && levelStatus.basicSuccess) {
 				if (levelStatus.advancedValid > 0 && levelStatus.intermediateSuccess) {
-					item.status = 3;
-					item.fullyProtected = true;
-					item.icon = levelStatus.advancedValid - 1;
+					this.statusItem.status = 3;
+					this.statusItem.fullyProtected = true;
+					this.statusItem.percent = (levelStatus.advancedValid + levelStatus.basicLength + levelStatus.intermediateLength) / allItems;
 				} else {
-					item.status = 2;
-					item.fullyProtected = false;
-					item.icon = levelStatus.intermediateValid - 1;
+					this.statusItem.status = 2;
+					this.statusItem.fullyProtected = false;
+					this.statusItem.percent = (levelStatus.intermediateValid + levelStatus.basicLength) / allItems;
 				}
 			} else {
-				item.status = 1;
-				item.fullyProtected = false;
-				item.icon = levelStatus.basicValid - 1;
+				this.statusItem.status = 1;
+				this.statusItem.fullyProtected = false;
+				this.statusItem.percent = (levelStatus.basicValid) / allItems;
 			}
 
 		} else {
-			item.status = 0;
-			item.fullyProtected = false;
-			item.icon = 0;
+			this.statusItem.status = 0;
+			this.statusItem.fullyProtected = false;
+			this.statusItem.percent = 0;
 		}
 
-		this.statusItem = item;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingLevel, this.statusItem);
 	}
 
