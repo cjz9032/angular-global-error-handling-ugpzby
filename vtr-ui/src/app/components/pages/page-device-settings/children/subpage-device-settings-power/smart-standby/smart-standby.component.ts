@@ -56,7 +56,6 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	public showSmartStandby() {
-		this.autonomicCapabilityCheck();
 		if (this.powerService.isShellAvailable) {
 			this.powerService.getSmartStandbyCapability()
 				.then((response: boolean) => {
@@ -139,6 +138,11 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 
 	public onSmartStandbyToggle(event: any) {
 		this.showDropDown = [false, false, false];
+		if(this.isAutonomicCapability){
+			this.isCollapsed = true
+		} else{
+			this.isCollapsed = false
+		}
 		const isEnabled = event.switchValue;
 		try {
 			console.log('setSmartStandbyEnabled entered', event);
@@ -285,6 +289,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						this.isAutonomicCapability = response || false;
 						if (!this.isAutonomicCapability) {
 							this.checkbox = false
+							this.isCollapsed = false
 							this.caption = this.translate.instant('device.deviceSettings.power.smartStandby.description2');
 							this.tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.oldTooltipText');
 						}
@@ -348,7 +353,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			const modalRef = this.modalService.open(ModalSmartStandByComponent, {
 				backdrop: 'static',
 				centered: true,
-				windowClass: 'smart-standBy-modal'
+				windowClass: 'smart-standBy-modal',				
+				size: 'lg'
 			});
 			modalRef.componentInstance.isAutomatic = this.checkbox;
 		}
