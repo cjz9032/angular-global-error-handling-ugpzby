@@ -203,7 +203,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private getCameraPrivacyStatus() {
 		try {
 			if (this.dashboardService.isShellAvailable) {
-				// this.cameraStatus.isLoading = true;
 				if (this.cameraStatus.permission) {
 					// this.cameraStatus.isLoading = true;
 				}
@@ -212,7 +211,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				this.dashboardService
 					.getCameraStatus()
 					.then((featureStatus: FeatureStatus) => {
-						this.cameraStatus.isLoading = false;
 						this.logger.debug('WidgetQuicksettingsComponent.getCameraPrivacyStatus: response Camera Privacy', featureStatus);
 						this.cameraStatus.available = featureStatus.available;
 						if(!this.cameraStatusChangeBySet) {
