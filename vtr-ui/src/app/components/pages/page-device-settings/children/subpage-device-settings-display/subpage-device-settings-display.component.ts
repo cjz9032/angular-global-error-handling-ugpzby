@@ -515,7 +515,8 @@ export class SubpageDeviceSettingsDisplayComponent
 							// 	this.showECMReset = true;
 							// 	this.resetEyecaremodeAllSettings();
 							// 	break;
-							case 'NotAvailable':
+								// @@IMPORTANT@@ Do NOT correct this typos !!!!  This message is from plugins
+							case 'NotAvaliable':
 								this.enableSlider = false;
 								this.enableColorTempSlider = false;
 								this.disableDisplayColor = true;
@@ -941,7 +942,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
 
 		// Disable all features when missing graphic driver
-		if (resetData.capability === 'NotAvailable') {
+		if (resetData.capability === 'NotAvaliable') {
 			this.enableSlider = false;
 			this.enableColorTempSlider = false;
 			this.disableDisplayColor = true;
