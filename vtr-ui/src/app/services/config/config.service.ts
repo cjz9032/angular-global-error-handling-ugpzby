@@ -131,6 +131,7 @@ export class ConfigService {
 			const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
 			let resultMenu = cloneDeep(this.menuItemsGaming);
 			if (machineInfo.isGaming) {
+				this.activeSegment = segment;
 				if (isBetaUser && await this.canShowSearch()) {
 					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
@@ -510,6 +511,8 @@ export class ConfigService {
 
 	showSystemUpdates(): Promise<any> {
 		return new Promise((resolve) => {
+			if (!Array.isArray(this.menu)) { return; }
+
 			const device = this.menu.find((item) => item.id === 'device');
 			const deviceCommercial = this.menuBySegment.commercial.find((item) => item.id === 'device');
 			const deviceConsumer = this.menuBySegment.consumer.find((item) => item.id === 'device');
@@ -560,17 +563,17 @@ export class ConfigService {
 			return;
 		}
 		const newFeatureTipsShowComplete = this.commonService.getLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion);
-		if (!newFeatureTipsShowComplete || newFeatureTipsShowComplete < newFeatureVersion) {
-			const privacyItem = getItemByItemId('privacy');
-			const securityItem = getItemByItemId('security');
-			const chsItem = getItemByItemId('home-security');
+		if ((!newFeatureTipsShowComplete || newFeatureTipsShowComplete < newFeatureVersion)
+			&& Array.isArray(this.menu)) {
+			const privacyItem = this.menu.find((item: any) => item.id === 'privacy');
+			const securityItem = this.menu.find((item: any) => item.id === 'security');
+			const chsItem = this.menu.find((item: any) => item.id === 'home-security');
 			let isHideMenuToggle = true;
 			if (window.innerWidth < 1200) { isHideMenuToggle = false; }
 			if ((privacyItem || securityItem || chsItem) && isHideMenuToggle) {
 				this.newFeatureTipService.create();
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, newFeatureVersion);
-			function getItemByItemId(itemId: string) { return this.menu.find((item: any) => item.id === itemId); }
 		}
 	}
 }

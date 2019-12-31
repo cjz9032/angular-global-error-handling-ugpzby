@@ -64,6 +64,8 @@ import { ModalNewFeatureTipComponent } from '../components/modal/modal-new-featu
 import { NewFeatureTipService } from '../services/new-feature-tip/new-feature-tip.service';
 import { HardwareDashboardModule } from './hardware-settings/hardware-dashboard.module';
 import { GamingDashboardModule } from './gaming-dashboard.module';
+import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -136,6 +138,7 @@ import { GamingDashboardModule } from './gaming-dashboard.module';
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
 		ModalNewFeatureTipComponent,
+		ModalErrorMessageComponent
 	],
 	bootstrap: [AppComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
