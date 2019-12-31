@@ -475,7 +475,10 @@
             "collapse": "Skjul",
             "expand": "Udvid",
             "loader": "Henter <br> Status",
-            "loading": "Indlæser..."
+            "loading": "Indlæser...",
+            "from": "fra",
+            "to": "til",
+            "clickToChange": "klik for at ændre"
         },
         "app-update": {
             "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"
@@ -937,13 +940,13 @@
                 "smartStandby": {
                     "title": "Smart-standby",
                     "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
-                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte starttidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
+                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte STARTtidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller den tid for computerbrug, som vi får. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
                     "timer": {
-                        "heading": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
+                        "heading": "Det tidspunkt, hvor du normalt bruger denne computer",
                         "subHeading1": "starter",
                         "subHeading2": "slut",
                         "subHeading3": "brug denne tidsplan for",
-                        "endTimeNote": "Sluttidspunktet skal være inden for 20 timer fra starttidspunktet",
+                        "endTimeNote": "SLUTtidspunktet skal være inden for 20 timer fra STARTtidspunktet",
                         "timeUnits": {
                             "unit1": "Timer",
                             "unit2": "Minutter",
@@ -963,7 +966,8 @@
                             "wed": "Onsdag",
                             "thurs": "Torsdag",
                             "fri": "Fredag",
-                            "sat": "Lørdag"
+                            "sat": "Lørdag",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Søndag",
@@ -976,8 +980,54 @@
                         },
                         "everyday": "Hver dag",
                         "weekdays": "Hverdage",
-                        "weekends": "Weekender"
-                    }
+                        "weekends": "Weekender",
+                        "noDaySelected": "Ingen dag valgt"
+                    },
+                    "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
+                    "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
+                    "subTitle": "Tidsplan for din computer",
+                    "automaticMode": "Automatisk tilstand",
+                    "manualMode": "Manuel tilstand",
+                    "subNote": "Din computer er indstillet til at skifte til Moderne standby baseret på din brug.",
+                    "graph": {
+                        "graph1Tittle": "Brug af denne computer",
+                        "graph2Tittle": "Tildelt aktiv tid",
+                        "graphSubtittle": "I disse tidsperioder holder vi computeren klar, så du hurtigere kan genoptage arbejdet på den.",
+                        "graphNote": "Aktivitetsdataene for denne computer er ikke tilstrækkelige til at oprette en profil til automatisk tidsplanlægning. Smart-standby bruger tidsplanen for Manuel tilstand, indtil der er nok data til rådighed.",
+                        "legends": {
+                            "none": "Ingen",
+                            "frequent": "Ofte"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
+                    "subTitle2": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
+                    "oldTooltipText": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden."
                 }
             },
             "audio": {
@@ -2263,7 +2313,6 @@
         "question5": {
             "title": "Brug din pc som en tablet",
             "description": "<div class='faqInFs4Fb'>    Brug din pc som en tablet</div><hr><p>Tablettilstand gør Windows mere intuitiv og nemmere at bruge, fordi du har en berøringsfølsom skærmenhed.</p><h3 class='faqInFs25FbP10'>Brug tablettilstand</h3><p>Hvis du vil aktivere tablettilstand, skal du vælge <strong>Handlingscenter</strong> på proceslinjen og derefter vælge <strong>Tablettilstand</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Bemærk</h3><p>Hvis du vil finde ud af, om din enhed kan aktivere tablettilstand automatisk, skal du søge efter enheden på producentens websted. Understøttelsen af denne funktion afhænger af hardwaren, den installerede driver, og hvordan enheden er konfigureret af producenten. </p><p> </p><p>I tablettilstand åbnes apps i fuld skærmvisning, så du får mere plads til at arbejde. Hvis du vil lukke en app, skal du trække den til bunden af skærmen.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>Proceslinjen er tilgængelig, når pc'en er i tablettilstand, men du kan skjule den, hvis du vil have mere plads på skærmen. Vælg knappen <strong>Start</strong>, vælg <strong>Indstillinger </strong>> <strong>System </strong>> <strong>Tablettilstand</strong>, og aktivér derefter <strong>Skjul automatisk proceslinjen i tablettilstand</strong>. Hvis du vil se den skjulte proceslinje, skal du stryge opad fra bunden af skærmen eller bruge musen til at pege på den.</p><h3 class='faqInFs25FbP10'>Brug to apps samtidigt</h3><p>Hvis du vil bruge to apps side om side i tablettilstand, skal du trække en åben app nedad og til siden. Du kan se, hvor den bliver fastgjort, og du vil få vist alle åbne apps ved siden af den.</p><p>I denne visning kan du også:</p><ul>    <li>Bruge den fælles kant mellem to fastgjorte apps til at tilpasse størrelsen på begge apps samtidigt.</li>    <li>Åbn en ny app fra opgavevisningen. Vælg <strong>Opgavevisning</strong> på proceslinjen, vælg en app, og træk den derefter til den ene side for at fastgøre den på den delte skærm.</li>    <li>Brug knappen Tilbage på proceslinjen til at gå tilbage i en app eller åbne en app, du har brugt før.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",

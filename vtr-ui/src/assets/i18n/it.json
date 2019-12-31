@@ -475,7 +475,10 @@
             "collapse": "Riduci",
             "expand": "Espandi",
             "loader": "Stato di<br> recupero",
-            "loading": "Caricamento in corso..."
+            "loading": "Caricamento in corso...",
+            "from": "da",
+            "to": "a",
+            "clickToChange": "fare clic per modificare"
         },
         "app-update": {
             "message": "Ciao! È disponibile una versione più recente di Vantage. Caricarla?"
@@ -937,13 +940,13 @@
                 "smartStandby": {
                     "title": "Standby intelligente",
                     "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
-                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di inizio pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Il periodo di tempo è ottimizzato in base al piano impostato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
+                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Questo periodo di tempo è ottimizzato in base alla pianificazione impostata o al tempo di utilizzo del computer riscontrato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
                     "timer": {
-                        "heading": "Impostare l'ora in cui generalmente si utilizza il computer",
+                        "heading": "L'ora in cui generalmente si utilizza il computer",
                         "subHeading1": "si inizi",
                         "subHeading2": "fine",
                         "subHeading3": "usa questa pianificazione per",
-                        "endTimeNote": "L'ora di fine non deve superare le 20 ore da quella di inizio",
+                        "endTimeNote": "L'ora di FINE non deve superare le 20 ore da quella di INIZIO",
                         "timeUnits": {
                             "unit1": "Ore",
                             "unit2": "Minuti",
@@ -963,7 +966,8 @@
                             "wed": "mercoledì",
                             "thurs": "giovedi",
                             "fri": "Venerdì",
-                            "sat": "Sabato"
+                            "sat": "Sabato",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Domenica",
@@ -976,8 +980,54 @@
                         },
                         "everyday": "Ogni giorno",
                         "weekdays": "Nei giorni feriali",
-                        "weekends": "Fine settimana"
-                    }
+                        "weekends": "Fine settimana",
+                        "noDaySelected": "Nessun giorno selezionato"
+                    },
+                    "checkbox": "Regolazione automatica del tempo di utilizzo del computer in base all'utilizzo",
+                    "hyperlinkToGraph": "Fare clic per visualizzare l'attività e il tempo di utilizzo della tabella del computer",
+                    "subTitle": "Pianificazione del computer",
+                    "automaticMode": "Modalità automatica",
+                    "manualMode": "Modalità manuale",
+                    "subNote": "Il computer è pianificato per la modalità Standby moderno in base all'utilizzo.",
+                    "graph": {
+                        "graph1Tittle": "Utilizzo di questo computer",
+                        "graph2Tittle": "Tempo attivo applicato",
+                        "graphSubtittle": "In questi periodi di tempo, il computer è pronto per essere rapidamente riattivato.",
+                        "graphNote": "I dati di attività di questo computer non sono sufficienti per fornire un profilo per la pianificazione automatica. Standby intelligente utilizzerà la pianificazione in modalità manuale finché non saranno disponibili dati sufficienti.",
+                        "legends": {
+                            "none": "Nessuno",
+                            "frequent": "Frequente"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
+                    "subTitle2": "Impostare l'ora in cui generalmente si utilizza il computer",
+                    "oldTooltipText": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Il periodo di tempo è ottimizzato in base al piano impostato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi."
                 }
             },
             "audio": {
@@ -2263,7 +2313,6 @@
         "question5": {
             "title": "Utilizzo del PC come un tablet",
             "description": "<div class='faqInFs4Fb'>    Utilizzo del PC come un tablet</div><hr><p>La modalità tablet rende Windows più intuitivo e più facile da usare quando si dispone di un dispositivo touchscreen.</p><h3 class='faqInFs25FbP10'>Utilizzo della modalità tablet</h3><p>Per attivare la modalità tablet, selezionare <strong>Centro notifiche</strong> sulla barra delle applicazioni, quindi scegliere <strong>Modalità tablet</strong> .</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Nota</h3><p>Per verificare se il dispositivo è in grado di attivare automaticamente la modalità tablet, cercare il dispositivo sul sito Web del produttore. Il supporto di questa funzione dipende da hardware, driver installato e modalità di configurazione del dispositivo da parte del produttore. </p><p> </p><p>In modalità tablet, le app vengono visualizzate a schermo intero, offrendo più spazio per lavorare. Per chiudere un'app, trascinarla nella parte inferiore dello schermo.</p><p> </p><h3 class='faqInFs25FbP10'>Suggerimento</h3><p>La barra delle applicazioni è disponibile quando il PC è in modalità tablet, ma è possibile nasconderla se si desidera più spazio sullo schermo. Selezionare il pulsante <strong>Start </strong>, scegliere <strong>Impostazioni </strong>> <strong>Sistema </strong>> <strong> Modalità tablet </strong>, quindi attivare <strong>Nascondi automaticamente la barra delle applicazioni in modalità tablet</strong>. Per visualizzare la barra delle applicazioni, scorrere verso l'alto dalla parte inferiore dello schermo o utilizzare il mouse per passarvi sopra.</p><h3 class='faqInFs25FbP10'>Utilizzo contemporaneo di due app</h3><p>Per utilizzare due app affiancate in modalità tablet, trascinare un'app aperta giù e di lato. L'app verrà ancorata e verranno visualizzate tutte le app aperte accanto.</p><p>In questa vista, è anche possibile:</p><ul>    <li>Usare il bordo condiviso tra due app ancorate per ridimensionare contemporaneamente entrambe le app.</li>    <li>Aprire una nuova app da \"Visualizzazione attività\" - selezionare <strong>Visualizzazione attività</strong> sulla barra delle applicazioni, selezionare un'app e trascinala su un lato per ancorarla allo schermo diviso.</li>    <li>Utilizzare il pulsante Indietro sulla barra delle applicazioni per tornare a un'app o per aprire un'app che si stava utilizzando.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
