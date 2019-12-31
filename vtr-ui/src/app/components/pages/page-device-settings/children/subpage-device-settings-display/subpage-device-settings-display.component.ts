@@ -515,7 +515,8 @@ export class SubpageDeviceSettingsDisplayComponent
 							// 	this.showECMReset = true;
 							// 	this.resetEyecaremodeAllSettings();
 							// 	break;
-							case 'NotAvailable':
+								// @@IMPORTANT@@ Do NOT correct this typos !!!!  This message is from plugins
+							case 'NotAvaliable':
 								this.enableSlider = false;
 								this.enableColorTempSlider = false;
 								this.disableDisplayColor = true;
