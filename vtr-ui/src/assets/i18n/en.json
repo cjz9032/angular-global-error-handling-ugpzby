@@ -736,7 +736,7 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
+            "title": "Quicksettings",
             "microphone": "Microphone",
             "cameraPrivacy": "Camera",
             "eyeCareMode": "Eye Care",

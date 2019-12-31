@@ -385,8 +385,10 @@
 			.content {
 				cursor: pointer;
 				width: 100%;
-				padding: 28 / 430 * 100% 40 / 430 * 100% 0;
-				height: 40%;
+				//padding: 28 / 430 * 100% 40 / 430 * 100% 0;
+				padding: 2.4rem;
+				padding-bottom: 0;
+				height: 30%;
 
 				.title {
 					font-weight: $weight_light;
@@ -406,6 +408,9 @@
 					cursor: pointer;
 					text-transform: uppercase;
 					color: $main;
+					@media #{$mediaquery_X1} {
+						font-size: $fontsize_xs2;
+					}
 
 					&:hover {
 						.link-label {
