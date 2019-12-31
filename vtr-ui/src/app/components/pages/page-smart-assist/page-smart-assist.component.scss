@@ -241,7 +241,7 @@ $fontsize_xs: 1.4rem;
 			color: $shade_blue;
 		}
 	.privacy-button {
-		font-size: $body;
+		font-size: $fontsize_xs;
 		letter-spacing: 0.76px;
 		text-align: left;
 		text-decoration: underline;
@@ -265,6 +265,6 @@ $fontsize_xs: 1.4rem;
 	}
 }
 .fac-control {
-	margin-left: 2.2rem;
+	margin-left: 2.1rem;
 	padding-top: 1.5rem;
 }
