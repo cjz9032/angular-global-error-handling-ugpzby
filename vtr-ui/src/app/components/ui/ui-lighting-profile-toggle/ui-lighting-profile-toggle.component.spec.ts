@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UiLightingProfileToggleComponent } from './ui-lighting-profile-toggle.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 
-fdescribe('UiLightingProfileToggleComponent', () => {
+describe('UiLightingProfileToggleComponent', () => {
   let component: UiLightingProfileToggleComponent;
   let fixture: ComponentFixture<UiLightingProfileToggleComponent>;
 
