@@ -20,6 +20,7 @@ ui-popover {
 	}
 	@media #{$breakpoint_sm} {
 		min-width: 36rem;
+		top:-11.5rem;
 	}
 	@media #{$black-on-white} {
 		background: $high-contrast-grey;
@@ -49,12 +50,14 @@ ui-popover {
 	}
 	.vtr-ui-popover {
 		&.modal-body {
-			padding: 3.8rem 5rem;
-			@media #{$breakpoint_md} {
-				padding: 3.8rem 4rem;
-			}
-			@media #{$breakpoint_sm} {
-		  padding: 3.8rem 3rem;
+			padding: 4rem 4rem;
+			.btn-close {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				padding: 0.6rem 1.2rem;
+				width: 4rem;
+				height: 4rem;
 			}
 		}
 		.content-body {
