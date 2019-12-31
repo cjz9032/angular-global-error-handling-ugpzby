@@ -218,7 +218,7 @@ export class UserService {
 								self.setName(profile.firstName, profile.lastName);
 							}
 						} else {
-							if (result.userName) {
+							if (result.userName && !firstName) {
 								const userName = self.obscureUserName(result.userName);
 								self.setName(userName, '');
 							}
