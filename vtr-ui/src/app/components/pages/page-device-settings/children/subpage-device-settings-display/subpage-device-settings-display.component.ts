@@ -41,7 +41,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public cameraFeatureAccess: CameraFeatureAccess;
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
-	public cameraPrivacyModeStatus = new FeatureStatus(true, true);
+	public cameraPrivacyModeStatus = new FeatureStatus(true, true, false, false);
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false, '', '');
 	public enableSunsetToSunrise = false;
 	enableSlider = false;
@@ -790,19 +790,20 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	// Start Camera Privacy
 	public onCameraPrivacyModeToggle($event: any) {
-
 		if (this.displayService.isShellAvailable) {
+			this.cameraPrivacyModeStatus.isLoading = true;
 			this.displayService.setCameraPrivacyModeState($event.switchValue)
 				.then((value: boolean) => {
 					this.logger.debug('setCameraStatus.then', value);
 					this.logger.debug('setCameraStatus.then', $event.switchValue);
-					this.getCameraPrivacyModeStatus();
+					this.cameraPrivacyModeStatus.isLoading = false;
+					this.cameraPrivacyModeStatus.status = $event.switchValue;
 					this.onPrivacyModeChange($event.switchValue);
-					const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
+					const privacy = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
 					privacy.status = $event.switchValue;
-					// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, privacy);
 				}).catch(error => {
+					this.cameraPrivacyModeStatus.isLoading = false;
 					this.logger.error('setCameraStatus', error.message);
 					return EMPTY;
 				});
@@ -816,6 +817,8 @@ export class SubpageDeviceSettingsDisplayComponent
 				.then((featureStatus: FeatureStatus) => {
 					this.logger.debug('cameraPrivacyModeStatus.then', featureStatus);
 					this.cameraPrivacyModeStatus = featureStatus;
+					this.cameraPrivacyModeStatus.isLoading = false;
+					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 				})
 				.catch(error => {
 					this.logger.error('getCameraStatus', error.message);
