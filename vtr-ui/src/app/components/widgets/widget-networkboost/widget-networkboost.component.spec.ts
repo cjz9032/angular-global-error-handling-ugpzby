@@ -4,7 +4,7 @@ import { WidgetNetworkboostComponent } from './widget-networkboost.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-fdescribe('WidgetNetworkboostComponent', () => {
+describe('WidgetNetworkboostComponent', () => {
 	let component: WidgetNetworkboostComponent;
 	let fixture: ComponentFixture<WidgetNetworkboostComponent>;
 
