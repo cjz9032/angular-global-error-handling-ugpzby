@@ -1291,7 +1291,7 @@
 					},
 					"website": {
 						"url": "WEBSITE URL",
-						"successMessage": "The setting is applied successfully.",
+						"successMessage": "The settings are applied successfully.",
 						"invalidURLMessage": "Please input a valid URL.",
 						"placeholder": "Please start with http:// or https://"
 					},
