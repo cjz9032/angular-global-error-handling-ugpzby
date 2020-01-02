@@ -57,6 +57,7 @@ import { WidgetQaComponent } from 'src/app/components/widgets/widget-qa/widget-q
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { WidgetLandingSecurityComponent } from '../../components/pages/page-security/widget/widget-landing-security/widget-landing-security.component';
 import { WidgetLandingNavComponent } from '../../components/pages/page-security/widget/widget-landing-nav/widget-landing-nav.component';
+import { WidgetSvgCircleComponent } from 'src/app/components/pages/page-security/widget/widget-svg-circle/widget-svg-circle.component';
 library.add(
 	faLockAlt,
 	faQuestionCircle,
@@ -105,6 +106,7 @@ library.add(
 		WidgetCommonAntivirusComponent,
 		WidgetLandingSecurityComponent,
 		WidgetLandingNavComponent,
+		WidgetSvgCircleComponent,
 	],
 	imports: [
 		CommonModule,
