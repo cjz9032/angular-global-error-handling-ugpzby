@@ -722,7 +722,10 @@
                 "batteryNotDetected": "No se detectó ninguna batería",
                 "thresholdNote": "<b>Nota:</b> La batería no se puede cargar completamente cuando se ha habilitado el umbral de carga de la batería.",
                 "seeDetailsLink": "Ver detalles",
-                "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado."
+				"gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado.",
+				"dualConditions": {
+                    "NotDetected": "<b>No se detectó la batería principal.</b>"
+                }
             },
             "power": {
                 "title": "Energía",

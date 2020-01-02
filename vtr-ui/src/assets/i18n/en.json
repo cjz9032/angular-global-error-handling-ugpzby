@@ -711,7 +711,6 @@
 					"Exhaustion": "The battery has <b>failed due to normal wear.</b> The battery cannot be charged. Replace the battery.",
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
 					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
-					"PrimaryNotDetected": "The Primary battery not detected",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
 					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
 					"NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
@@ -723,7 +722,10 @@
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
 					"PermanentError": "The battery has <b>failed due to normal wear.</b> The battery cannot be charged. Replace the battery."
-				}
+				},
+				"dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected.</b>"
+                }
 			},
 			"power": {
 				"title": "Power",

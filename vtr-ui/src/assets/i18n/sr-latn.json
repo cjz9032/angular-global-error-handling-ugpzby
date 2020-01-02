@@ -722,7 +722,10 @@
                 "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Baterija se ne može automatski napuniti kada je omogućen Prag punjenja baterije.",
                 "seeDetailsLink": "Pogledajte detalje",
-                "gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen."
+				"gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen.",
+				"dualConditions": {
+                    "NotDetected": "<b>Primarna baterija nije pronađena.</b>"
+                }
             },
             "power": {
                 "title": "Napajanje",

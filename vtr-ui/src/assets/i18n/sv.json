@@ -722,7 +722,10 @@
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Batteriet går inte att ladda helt när Gränsvärde för batteriladdning är aktiverat.",
                 "seeDetailsLink": "Visa information",
-                "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten."
+				"gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten.",
+				"dualConditions": {
+                    "NotDetected": "<b>Det primära batteriet kan inte identifieras.</b>"
+                }
             },
             "power": {
                 "title": "Ström",

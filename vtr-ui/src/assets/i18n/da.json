@@ -722,7 +722,10 @@
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> Batteriet kan ikke blive fuldt opladet, når Opladningsgrænse for batteri er aktiveret.",
                 "seeDetailsLink": "Flere oplysninger",
-                "gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet."
+				"gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet.",
+				"dualConditions": {
+                    "NotDetected": "<b>Det primære batteri blev ikke fundet.</b>"
+                }
             },
             "power": {
                 "title": "Strøm",

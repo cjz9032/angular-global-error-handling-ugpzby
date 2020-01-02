@@ -722,7 +722,10 @@
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> de batterij kan niet volledig worden opgeladen als drempelwaarde voor batterijlading is ingeschakeld.",
                 "seeDetailsLink": "Bekijk meer informatie",
-                "gaugeResetWarning": "<b>Opmerking:</b> het opnieuw instellen van de batterijmeter wordt uitgevoerd. Zorg dat de netvoedingsadapter blijft aangesloten."
+				"gaugeResetWarning": "<b>Opmerking:</b> het opnieuw instellen van de batterijmeter wordt uitgevoerd. Zorg dat de netvoedingsadapter blijft aangesloten.",
+				"dualConditions": {
+                    "NotDetected": "<b>De primaire batterij is niet gevonden.</b>"
+                }
             },
             "power": {
                 "title": "Energiebeheer",

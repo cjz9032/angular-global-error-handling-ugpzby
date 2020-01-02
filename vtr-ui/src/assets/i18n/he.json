@@ -722,7 +722,10 @@
                 "batteryNotDetected": "לא זוהתה סוללה",
                 "thresholdNote": "<b>הערה:</b> לא ניתן לטעון את הסוללה במלואה כשסף טעינת הסוללה מופעל.",
                 "seeDetailsLink": "ראו פרטים",
-                "gaugeResetWarning": "<b>הערה:</b> איפוס מד הסוללה מתבצע. השאירו את מתאם מתח ה-AC מחובר."
+				"gaugeResetWarning": "<b>הערה:</b> איפוס מד הסוללה מתבצע. השאירו את מתאם מתח ה-AC מחובר.",
+				"dualConditions": {
+                    "NotDetected": "<b>הסוללה הראשית לא זוהתה.</b>"
+                }
             },
             "power": {
                 "title": "צריכת חשמל",

@@ -722,7 +722,10 @@
                 "batteryNotDetected": "Akkua ei havaittu",
                 "thresholdNote": "<b>Huomautus:</b> Akkua ei voi ladata täyteen, kun Akun varauksen kynnysarvo on otettu käyttöön.",
                 "seeDetailsLink": "Lisätietoja on seuraavissa",
-                "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen."
+				"gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen.",
+				"dualConditions": {
+                    "NotDetected": "<b>Ensisijaista akkua ei havaittu.</b>"
+                }
             },
             "power": {
                 "title": "Virta",
