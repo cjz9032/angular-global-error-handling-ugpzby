@@ -6,6 +6,12 @@ import { DeviceService } from '../device/device.service';
 import { CMSService } from '../cms/cms.service';
 import { LoggerService } from '../logger/logger.service';
 import { LocalInfoService } from '../local-info/local-info.service';
+import { SegmentConst } from 'src/app/services/self-select/self-select.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { DccService } from 'src/app/services/dcc/dcc.service';
+import { Subscription } from 'rxjs';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 
 export class Category {
 	id: string; 	// app category id
@@ -70,11 +76,13 @@ export class AppsForYouService {
 		private commonService: CommonService,
 		private logService: LoggerService,
 		private localInfoService: LocalInfoService,
+		private dccService: DccService
 	) {
 		this.initialize();
 		this.systemUpdateBridge = vantageShellService.getSystemUpdate();
 	}
 
+	private subscription: Subscription;
 	private isInitialized = false;
 	private cancelToken = undefined;
 	private isCancelInstall = false;
@@ -85,6 +93,12 @@ export class AppsForYouService {
 	private familyName: string;
 	private localInfo: any;
 	systemUpdateBridge: any;
+	public UnreadMessageCount = {
+		totalMessage: 0,
+		lmaMenuClicked: false,
+		adobeMenuClicked: false,
+		dccMenuClicked: false
+	};
 
 	private initialize() {
 		let machineInfo = this.deviceService.getMachineInfoSync();
@@ -104,8 +118,17 @@ export class AppsForYouService {
 		}
 		this.localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
+			this.dccService.isDccCapableDevice().then(() => {
+				this.dccService.canShowDccDemo().then(() => {
+					this.initUnreadMessage();
+				});
+			});
 		}).catch(e => {
 			this.localInfo = undefined;
+		});
+
+		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
 		});
 	}
 
@@ -222,7 +245,13 @@ export class AppsForYouService {
 				const applicationGuid = appGuid;
 				const result = await this.systemUpdateBridge.downloadAndInstallApp(applicationGuid, null,
 					(progressResponse) => {
-						this.updateCachedAppStatus(appGuid, 'InstallerRunning');
+						// SU plugin will launch installer after progress 85, so check status by the progerss;
+						//   for compatibility reasons, SU plugin will not add additonal status indicator
+						if (progressResponse < 85) {
+							this.updateCachedAppStatus(appGuid, 'Downloading');
+						} else {
+							this.updateCachedAppStatus(appGuid, 'InstallerRunning');
+						}
 						this.commonService.sendNotification(AppsForYouEnum.InstallAppProgress, progressResponse);
 					});
 				this.updateCachedAppStatus(appGuid, result);
@@ -274,7 +303,7 @@ export class AppsForYouService {
 	public showAdobeMenu() {
 		if (!this.deviceService.isArm && this.familyName && this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
 			this.localInfo && this.localInfo.Lang.indexOf('en') !== -1 && this.localInfo.GEO.indexOf('cn') === -1 &&
-			(this.localInfo.Segment.indexOf('SMB') !== -1 || this.localInfo.Segment.indexOf('Consumer') !== -1)) {
+			(this.localInfo.Segment !== SegmentConst.SMB || this.localInfo.Segment !== SegmentConst.Consumer)) {
 			return true;
 		} else {
 			return false;
@@ -282,11 +311,16 @@ export class AppsForYouService {
 	}
 
 	public showLmaMenu() {
-		if (!this.deviceService.isArm && !this.deviceService.isSMode) {
+		if (!this.deviceService.isArm && !this.deviceService.isSMode &&
+			this.localInfo && this.localInfo.Segment !== SegmentConst.Commercial) {
 			return true;
 		} else {
 			return false;
 		}
+	}
+
+	public showDccMenu() {
+		return this.dccService.showDemo || this.dccService.isDccDevice;
 	}
 
 	cancelInstall() {
@@ -298,6 +332,87 @@ export class AppsForYouService {
 
 	resetCancelInstall() {
 		this.isCancelInstall = false;
+	}
+
+	initUnreadMessage() {
+		const cacheUnreadMessageCount = this.commonService.getLocalStorageValue(
+			LocalStorageKey.UnreadMessageCount,
+			undefined
+		);
+		if (cacheUnreadMessageCount) {
+			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
+			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
+			this.UnreadMessageCount.dccMenuClicked = cacheUnreadMessageCount.dccMenuClicked ? cacheUnreadMessageCount.dccMenuClicked : false;
+			let totalMessage = 0;
+			if (this.showLmaMenu() && !this.UnreadMessageCount.lmaMenuClicked) {
+				totalMessage++;
+			}
+			if (this.showAdobeMenu() && !this.UnreadMessageCount.adobeMenuClicked) {
+				totalMessage++;
+			}
+			if (this.showDccMenu() && !this.UnreadMessageCount.dccMenuClicked) {
+				totalMessage++;
+			}
+			this.UnreadMessageCount.totalMessage = totalMessage;
+		} else if (this.UnreadMessageCount.totalMessage === 0) {
+			if (this.showLmaMenu()) {
+				this.UnreadMessageCount.totalMessage++;
+			}
+			if (this.showAdobeMenu()) {
+				this.UnreadMessageCount.totalMessage++;
+			}
+			if (this.showDccMenu()) {
+				this.UnreadMessageCount.totalMessage++;
+			}
+		}
+	}
+
+	updateUnreadMessageCount(id) {
+		let needUpdateLocalStorage = false;
+		if (id === 'menu-main-lnk-open-lma') {
+			if (!this.UnreadMessageCount.lmaMenuClicked) {
+				if (this.UnreadMessageCount.totalMessage > 0) {
+					this.UnreadMessageCount.totalMessage--;
+				}
+				this.UnreadMessageCount.lmaMenuClicked = true;
+				needUpdateLocalStorage = true;
+			}
+		} else if (id === 'menu-main-lnk-open-adobe') {
+			if (!this.UnreadMessageCount.adobeMenuClicked) {
+				if (this.UnreadMessageCount.totalMessage > 0) {
+					this.UnreadMessageCount.totalMessage--;
+				}
+				this.UnreadMessageCount.adobeMenuClicked = true;
+				needUpdateLocalStorage = true;
+			}
+		} else if (id === 'menu-main-lnk-open-dcc') {
+			if (!this.UnreadMessageCount.dccMenuClicked) {
+				if (this.UnreadMessageCount.totalMessage > 0) {
+					this.UnreadMessageCount.totalMessage--;
+				}
+				this.UnreadMessageCount.dccMenuClicked = true;
+				needUpdateLocalStorage = true;
+			}
+		}
+		if (needUpdateLocalStorage) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.UnreadMessageCount, this.UnreadMessageCount);
+		}
+	}
+
+	onNotification(notification: any) {
+		if (notification) {
+			switch (notification.type) {
+				case SelfSelectEvent.SegmentChange:
+					this.localInfoService.getLocalInfo().then(result => {
+						this.localInfo = result;
+					}).catch(e => {
+						this.localInfo = undefined;
+					});
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }
 

@@ -61,8 +61,8 @@
 					.button {
 						background: #e6eaeb;
 						color: #34495e;
-						
-				
+
+
 					}
 				}
 			}
@@ -79,14 +79,14 @@
 				padding-top: 25px;
 			}
 		}
-	
+
 		.feature-note {
 			background-color: $shade_lightest;
 			border: 1px solid $shade_lighter;
 			p {
 				font-size: 1.5rem;
 				color: $main_darker;
-				margin-bottom: 0rem;
+				margin: 0;
 			}
 			a {
 				text-decoration: underline;
@@ -97,7 +97,7 @@
 		}
 
 		.battery-conditions-tips {
-			font-size: $fontsize_md;
+			font-size: $fontsize_xs;
 			line-height: 1.2em;
 			width: 100%;
 			letter-spacing: 0;
@@ -112,7 +112,7 @@
 				color: #f17f14;
 			}
 		}
-		.normal-ACAdapter-condition {
+		.adapter-support {
 			.icomoon-ConditionACAdapterError {
 				&:before {
 					color: #30d487;
@@ -156,40 +156,40 @@
 			align-self: center;
 			font-size: $base;
 		}
-		
+
 	}
 	@media #{$black-on-white} {
-		
+
 		border: 0.1rem solid $dark;
 		border-radius: 1rem;
 	}
 	@media #{$white-on-black} {
-		
+
 		border: 0.1rem solid $light;
 		border-radius: 1rem;
 	}
-	
+
 }
 .modal-header{
 	@media #{$black-on-white} {
-		
+
 		border: 0.1rem solid $dark;
 		//border-radius: 1rem;
 	}
 	@media #{$white-on-black} {
-		
+
 		border: 0.1rem solid $light;
 		//border-radius: 1rem;
 	}
 	}
 	.modal-body{
 		@media #{$black-on-white} {
-		
+
 			border: 0.1rem solid $dark;
 			//border-radius: 1rem;
 		}
 		@media #{$white-on-black} {
-			
+
 			border: 0.1rem solid $light;
 			//border-radius: 1rem;
 		}

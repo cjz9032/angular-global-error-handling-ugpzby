@@ -1,4 +1,4 @@
-<div class="vtr-widget-warranty p-40"
+<div class="vtr-widget-warranty"
 	[ngClass]="{'in-warranty': item.info.status == 0, 'expired': item.info.status ==1, 'not-found': item.info.status == 2}">
 	<div class="container-fluid">
 		<div class="row">
@@ -38,7 +38,7 @@
 					<vtr-ui-button linkId="dashboard-view-warranty-options"
 						metricsEvent="FeatureClick"
 						metricsItem="ViewWarrantyOptionsButton"
-						[metricsParent]="pageParent"
+						metricsParent="Page.Dashboard"
 						buttonColor="gray"
 						[isFullWidth]="true"
 						[inRedBackground]="item.info.status==1"

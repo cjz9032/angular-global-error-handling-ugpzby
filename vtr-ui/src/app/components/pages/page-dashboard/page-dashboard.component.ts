@@ -1,9 +1,7 @@
-import { SupportService } from './../../../services/support/support.service';
-import { Component, OnInit, DoCheck, OnDestroy, SecurityContext } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy, SecurityContext, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { QaService } from '../../../services/qa/qa.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { Status } from 'src/app/data-models/widgets/status.model';
@@ -17,40 +15,46 @@ import { SystemUpdateService } from 'src/app/services/system-update/system-updat
 import { UserService } from 'src/app/services/user/user.service';
 import { AndroidService } from 'src/app/services/android/android.service';
 import { UPEService } from 'src/app/services/upe/upe.service';
-import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { ModalModernPreloadComponent } from '../../modal/modal-modern-preload/modal-modern-preload.component';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { WarrantyService } from 'src/app/services/warranty/warranty.service';
+import { SecureMath } from '@lenovo/tan-client-bridge';
+import { DccService } from 'src/app/services/dcc/dcc.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
 	styleUrls: ['./page-dashboard.component.scss']
 })
-export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
+export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
 	submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit;
-	securityAdvisor: SecurityAdvisor;
 	public systemStatus: Status[] = [];
 	public isOnline = true;
 	public brand;
-	private protocalAction: any;
-	public warrantyData: { info: { endDate: null, status: 2, startDate: null, url: string }; cache: boolean };
+	private protocolAction: any;
+	public warrantyData: { info: { endDate: null; status: 2; startDate: null; url: string }; cache: boolean };
 	public isWarrantyVisible = false;
+	public showQuickSettings = true;
+	dashboardStart: any = new Date();
 
-	heroBannerItems = [];   // tile A
+	heroBannerItems = []; // tile A
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
 	cardContentPositionD: any = {};
 	cardContentPositionE: any = {};
 	cardContentPositionF: any = {};
 
-	heroBannerItemsCms: [];   // tile A
+	heroBannerDemoItems = [];
+	canShowDccDemo$: Promise<boolean>;
+
+	heroBannerItemsCms: []; // tile A
 	cardContentPositionBCms: any = {};
 	cardContentPositionCCms: any = {};
 	cardContentPositionDCms: any = {};
@@ -63,7 +67,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		tileC: true,
 		tileD: true,
 		tileE: true,
-		tileF: true,
+		tileF: true
 	};
 
 	cmsRequestResult = {
@@ -105,16 +109,16 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private vantageShellService: VantageShellService,
 		public androidService: AndroidService,
 		private activatedRoute: ActivatedRoute,
-		private lenovoIdDialogService: LenovoIdDialogService,
+		private dialogService: DialogService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		public supportService: SupportService,
+		public warrantyService: WarrantyService,
 		private adPolicyService: AdPolicyService,
-		private sanitizer: DomSanitizer
+		private sanitizer: DomSanitizer,
+		public dccService: DccService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
-		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.deviceService.getMachineInfo().then(() => {
 			this.setDefaultSystemStatus();
 		});
@@ -134,17 +138,11 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 		this.isOnline = this.commonService.isOnline;
 		this.isWarrantyVisible = deviceService.showWarranty;
-		// this.warrantyData = this.supportService.warrantyData;
-		const cacheWarranty = this.commonService.getLocalStorageValue(LocalStorageKey.LastWarrantyStatus, undefined);
-		if (cacheWarranty) {
-			this.warrantyData = {
-				info: cacheWarranty,
-				cache: true
-			};
-		}
 	}
 
 	ngOnInit() {
+		this.dashboardService.isDashboardDisplayed = true;
+		this.getWelcomeText();
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, true);
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -155,38 +153,94 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			console.log('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
 		}
-
-		this.getPreviousContent();
-		this.fetchContent();
-		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchContent();
-		});
+		this.translate
+			.stream([
+				'dashboard.offlineInfo.welcomeToVantage',
+				'common.menu.support',
+				'settings.settings',
+				'dashboard.offlineInfo.systemHealth',
+				'common.securityAdvisor.wifi',
+				'systemUpdates.title',
+				'systemUpdates.readMore'
+			])
+			.subscribe((result) => {
+				this.dashboardService.translateString = result;
+				this.dashboardService.setDefaultCMSContent();
+				this.getPreviousContent();
+				this.fetchContent();
+				this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+					this.fetchContent();
+				});
+			});
+		this.getSelfSelectStatus();
+		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
 	}
 
 	ngDoCheck(): void {
-		const lastAction = this.protocalAction;
-		this.protocalAction = this.activatedRoute.snapshot.queryParams.action;
-		if (lastAction !== this.protocalAction) {
-			if (this.protocalAction.toLowerCase() === 'lenovoid') {
-				this.lenovoIdDialogService.openLenovoIdDialog();
-			} else if (this.protocalAction.toLowerCase() === 'modernpreload') {
-				this.openModernPreloadModal();
+		const lastAction = this.protocolAction;
+		this.protocolAction = this.activatedRoute.snapshot.queryParams.action;
+		if (this.protocolAction && (lastAction !== this.protocolAction)) {
+			if (this.protocolAction.toLowerCase() === 'lenovoid') {
+				setTimeout(() => this.dialogService.openLenovoIdDialog());
+			} else if (this.protocolAction.toLowerCase() === 'modernpreload') {
+				setTimeout(() => this.dialogService.openModernPreloadModal());
 			}
 		}
 	}
 
+	ngAfterViewInit() {
+		const dashboardEnd: any = new Date();
+		const dashboardTime = dashboardEnd - this.dashboardStart;
+		this.loggerService.info(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
+	}
+
 	ngOnDestroy() {
+		this.dashboardService.isDashboardDisplayed = false;
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, false);
-		if (
-			this.router.routerState.snapshot.url.indexOf('security') === -1 &&
-			this.router.routerState.snapshot.url.indexOf('dashboard') === -1
-		) {
-			if (this.securityAdvisor && this.securityAdvisor.wifiSecurity) {
-				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
-			}
-		}
 		this.qaService.destroyChangeSubscribed();
+	}
+
+	private getWelcomeText() {
+		if (!this.dashboardService.welcomeText) {
+			const win: any = window;
+			let isShellOnline = true;
+			if (win.VantageShellExtension && win.VantageShellExtension.MsWebviewHelper.getInstance().isInOfflineMode) {
+				isShellOnline = false;
+			}
+			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText);
+			let textIndex = 1;
+			const welcomeTextLength = 15;
+			if (dashboardLastWelcomeText && dashboardLastWelcomeText.welcomeText) {
+				const lastIndex = this.getWelcomeTextIndex(dashboardLastWelcomeText.welcomeText);
+				if (!dashboardLastWelcomeText.isOnline && isShellOnline) {
+					textIndex = lastIndex;
+				} else {
+					if (lastIndex === welcomeTextLength) {
+						textIndex = 1;
+					} else {
+						textIndex = lastIndex + 1;
+					}
+				}
+			} else {
+				textIndex = Math.floor(SecureMath.random() * 15 + 1);
+				if (textIndex === 2) {
+					textIndex = 3;
+				} // Do not show again in first time
+			}
+			this.dashboardService.welcomeText = `lenovoId.welcomeText${textIndex}`;
+			this.dashboardService.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
+			this.commonService.setLocalStorageValue(
+				LocalStorageKey.DashboardLastWelcomeText,
+				{
+					welcomeText: this.dashboardService.welcomeText,
+					isOnline: isShellOnline
+				}
+			);
+		}
+	}
+
+	private getWelcomeTextIndex(key: string) {
+		return parseInt(key.replace('lenovoId.welcomeText', ''), 10);
 	}
 
 	private fetchContent(lang?: string) {
@@ -197,7 +251,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			tileC: true,
 			tileD: true,
 			tileE: true,
-			tileF: true,
+			tileF: true
 		};
 		// reset cms request result
 		this.cmsRequestResult = {
@@ -209,9 +263,36 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			tileF: false
 		};
 
+		if (this.isOnline) {
+			if (this.dashboardService.heroBannerItemsOnline.length > 0) {
+				this.heroBannerItems = this.dashboardService.heroBannerItemsOnline;
+			}
+			if (this.dashboardService.cardContentPositionBOnline) {
+				this.cardContentPositionB = this.dashboardService.cardContentPositionBOnline;
+			}
+			if (this.dashboardService.cardContentPositionCOnline) {
+				this.cardContentPositionC = this.dashboardService.cardContentPositionCOnline;
+			}
+			if (this.dashboardService.cardContentPositionDOnline) {
+				this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
+			}
+			if (this.dashboardService.cardContentPositionEOnline) {
+				this.cardContentPositionE = this.dashboardService.cardContentPositionEOnline;
+			}
+			if (this.dashboardService.cardContentPositionFOnline) {
+				this.cardContentPositionF = this.dashboardService.cardContentPositionFOnline;
+			}
+		}
+
 		this.getTileSource().then(() => {
 			this.fetchCMSContent(lang);
 			this.fetchUPEContent();
+		});
+
+		this.dccService.canShowDccDemo().then((show) => {
+			if (show) {
+				this.getHeroBannerDemoItems();
+			}
 		});
 	}
 
@@ -234,12 +315,24 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				if (response && response.length > 0) {
 					this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
 
-					this.getCMSHeroBannerItems(response);
-					this.getCMSCardContentB(response);
-					this.getCMSCardContentC(response);
-					this.getCMSCardContentD(response);
-					this.getCMSCardContentE(response);
-					this.getCMSCardContentF(response);
+					if (this.dashboardService.heroBannerItemsOnline.length === 0) {
+						this.getCMSHeroBannerItems(response);
+					}
+					if (!this.dashboardService.cardContentPositionBOnline) {
+						this.getCMSCardContentB(response);
+					}
+					if (!this.dashboardService.cardContentPositionCOnline) {
+						this.getCMSCardContentC(response);
+					}
+					if (!this.dashboardService.cardContentPositionDOnline) {
+						this.getCMSCardContentD(response);
+					}
+					if (!this.dashboardService.cardContentPositionEOnline) {
+						this.getCMSCardContentE(response);
+					}
+					if (!this.dashboardService.cardContentPositionFOnline) {
+						this.getCMSCardContentF(response);
+					}
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
 					this.loggerService.info(msg);
@@ -248,13 +341,28 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			},
 			(error) => {
 				console.log('fetchCMSContent error', error);
-			});
+			}
+		);
+	}
+
+	getHeroBannerDemoItems() {
+		this.cmsRequestResult.tileA = true;
+		this.heroBannerDemoItems = [{
+			albumId: 1,
+			id: '',
+			source: this.sanitizer.sanitize(SecurityContext.HTML, 'VANTAGE'),
+			title: this.sanitizer.sanitize(SecurityContext.HTML, 'Lenovo exclusive offer of Adobe designer suite'),
+			url: '/assets/images/dcc/hero-banner-dcc.jpg',
+			ActionLink: 'dcc-demo',
+			ActionType: 'Internal',
+			DataSource: 'cms'
+		}];
 	}
 
 	getCMSHeroBannerItems(response) {
-		const heroBannerItems = this.cmsService.getOneCMSContent(response,
-			'home-page-hero-banner',
-			'position-A').map((record, index) => {
+		const heroBannerItems = this.cmsService
+			.getOneCMSContent(response, 'home-page-hero-banner', 'position-A')
+			.map((record, index) => {
 				return {
 					albumId: 1,
 					id: record.Id,
@@ -263,7 +371,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 					url: record.FeatureImage,
 					ActionLink: record.ActionLink,
 					ActionType: record.ActionType,
-					DataSource: 'cms',
+					DataSource: 'cms'
 				};
 			});
 		if (heroBannerItems && heroBannerItems.length) {
@@ -271,7 +379,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.cmsRequestResult.tileA = true;
 			if (!this.upeRequestResult.tileA || this.tileSource.tileA === 'CMS') {
 				this.heroBannerItems = this.heroBannerItemsCms;
-				this.dashboardService.heroBannerItems = this.heroBannerItemsCms;
+				this.dashboardService.heroBannerItemsOnline = this.heroBannerItemsCms;
 			}
 		}
 	}
@@ -285,15 +393,13 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		if (cardContentPositionB) {
 			this.cardContentPositionBCms = cardContentPositionB;
 			if (this.cardContentPositionBCms.BrandName) {
-				this.cardContentPositionBCms.BrandName = this.cardContentPositionBCms.BrandName.split(
-					'|'
-				)[0];
+				this.cardContentPositionBCms.BrandName = this.cardContentPositionBCms.BrandName.split('|')[0];
 			}
 			this.cardContentPositionBCms.DataSource = 'cms';
 			this.cmsRequestResult.tileB = true;
 			if (!this.upeRequestResult.tileB || this.tileSource.tileB === 'CMS') {
 				this.cardContentPositionB = this.cardContentPositionBCms;
-				this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+				this.dashboardService.cardContentPositionBOnline = this.cardContentPositionBCms;
 			}
 		}
 	}
@@ -313,7 +419,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.cmsRequestResult.tileC = true;
 			if (!this.upeRequestResult.tileC || this.tileSource.tileC === 'CMS') {
 				this.cardContentPositionC = this.cardContentPositionCCms;
-				this.dashboardService.cardContentPositionC = this.cardContentPositionCCms;
+				this.dashboardService.cardContentPositionCOnline = this.cardContentPositionCCms;
 			}
 		}
 	}
@@ -330,7 +436,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.cmsRequestResult.tileD = true;
 			if (!this.upeRequestResult.tileD || this.tileSource.tileD === 'CMS') {
 				this.cardContentPositionD = this.cardContentPositionDCms;
-				this.dashboardService.cardContentPositionD = this.cardContentPositionDCms;
+				this.dashboardService.cardContentPositionDOnline = this.cardContentPositionDCms;
 			}
 		}
 	}
@@ -347,7 +453,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.cmsRequestResult.tileE = true;
 			if (!this.upeRequestResult.tileE || this.tileSource.tileE === 'CMS') {
 				this.cardContentPositionE = this.cardContentPositionECms;
-				this.dashboardService.cardContentPositionE = this.cardContentPositionECms;
+				this.dashboardService.cardContentPositionEOnline = this.cardContentPositionECms;
 			}
 		}
 	}
@@ -364,7 +470,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.cmsRequestResult.tileF = true;
 			if (!this.upeRequestResult.tileF || this.tileSource.tileF === 'CMS') {
 				this.cardContentPositionF = this.cardContentPositionFCms;
-				this.dashboardService.cardContentPositionF = this.cardContentPositionFCms;
+				this.dashboardService.cardContentPositionFOnline = this.cardContentPositionFCms;
 			}
 		}
 	}
@@ -391,157 +497,174 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	getUPEHeroBannerItems(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
-			const heroBannerItems = this.upeService.getOneUPEContent(response,
-				'home-page-hero-banner',
-				'position-A').map((record, index) => {
-					return {
-						albumId: 1,
-						id: record.Id,
-						source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
-						title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
-						url: record.FeatureImage,
-						ActionLink: record.ActionLink,
-						ActionType: record.ActionType,
-						DataSource: 'upe',
-					};
-				});
-			if (heroBannerItems && heroBannerItems.length) {
-				this.heroBannerItems = heroBannerItems;
-				this.dashboardService.heroBannerItems = heroBannerItems;
-				this.upeRequestResult.tileA = true;
+		this.upeService.fetchUPEContent(upeParam).subscribe(
+			(response) => {
+				const heroBannerItems = this.upeService
+					.getOneUPEContent(response, 'home-page-hero-banner', 'position-A')
+					.map((record, index) => {
+						return {
+							albumId: 1,
+							id: record.Id,
+							source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+							title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
+							url: record.FeatureImage,
+							ActionLink: record.ActionLink,
+							ActionType: record.ActionType,
+							DataSource: 'upe'
+						};
+					});
+				if (heroBannerItems && heroBannerItems.length) {
+					this.heroBannerItems = heroBannerItems;
+					this.dashboardService.heroBannerItemsOnline = heroBannerItems;
+					this.upeRequestResult.tileA = true;
+				}
+			},
+			(err) => {
+				this.loggerService.info(`Cause by error: ${err}, position-A load CMS content.`);
+				this.upeRequestResult.tileA = false;
+				if (this.cmsRequestResult.tileA) {
+					this.heroBannerItems = this.heroBannerItemsCms;
+					this.dashboardService.heroBannerItemsOnline = this.heroBannerItemsCms;
+				}
 			}
-		}, (err) => {
-			this.loggerService.info(`Cause by error: ${err}, position-A load CMS content.`);
-			this.upeRequestResult.tileA = false;
-			if (this.cmsRequestResult.tileA) {
-				this.heroBannerItems = this.heroBannerItemsCms;
-				this.dashboardService.heroBannerItems = this.heroBannerItemsCms;
-			}
-		});
+		);
 	}
 
 	getUPECardContentB(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
-			const cardContentPositionB = this.upeService.getOneUPEContent(
-				response,
-				'half-width-title-description-link-image',
-				'position-B'
-			)[0];
-			if (cardContentPositionB) {
-				if (cardContentPositionB.BrandName) {
-					cardContentPositionB.BrandName = cardContentPositionB.BrandName.split('|')[0];
+		this.upeService.fetchUPEContent(upeParam).subscribe(
+			(response) => {
+				const cardContentPositionB = this.upeService.getOneUPEContent(
+					response,
+					'half-width-title-description-link-image',
+					'position-B'
+				)[0];
+				if (cardContentPositionB) {
+					if (cardContentPositionB.BrandName) {
+						cardContentPositionB.BrandName = cardContentPositionB.BrandName.split('|')[0];
+					}
+					cardContentPositionB.DataSource = 'upe';
+					this.cardContentPositionB = cardContentPositionB;
+					this.dashboardService.cardContentPositionBOnline = this.cardContentPositionB;
+					this.upeRequestResult.tileB = true;
 				}
-				cardContentPositionB.DataSource = 'upe';
-				this.cardContentPositionB = cardContentPositionB;
-				this.dashboardService.cardContentPositionB = this.cardContentPositionB;
-				this.upeRequestResult.tileB = true;
+			},
+			(err) => {
+				this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
+				this.upeRequestResult.tileB = false;
+				if (this.cmsRequestResult.tileB) {
+					this.cardContentPositionB = this.cardContentPositionBCms;
+					this.dashboardService.cardContentPositionBOnline = this.cardContentPositionBCms;
+				}
 			}
-		}, (err) => {
-			this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
-			this.upeRequestResult.tileB = false;
-			if (this.cmsRequestResult.tileB) {
-				this.cardContentPositionB = this.cardContentPositionBCms;
-				this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
-			}
-		});
+		);
 	}
 
 	getUPECardContentC(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
-			const cardContentPositionC = this.upeService.getOneUPEContent(
-				response,
-				'half-width-title-description-link-image',
-				'position-C'
-			)[0];
-			if (cardContentPositionC) {
-				if (cardContentPositionC.BrandName) {
-					cardContentPositionC.BrandName = cardContentPositionC.BrandName.split('|')[0];
+		this.upeService.fetchUPEContent(upeParam).subscribe(
+			(response) => {
+				const cardContentPositionC = this.upeService.getOneUPEContent(
+					response,
+					'half-width-title-description-link-image',
+					'position-C'
+				)[0];
+				if (cardContentPositionC) {
+					if (cardContentPositionC.BrandName) {
+						cardContentPositionC.BrandName = cardContentPositionC.BrandName.split('|')[0];
+					}
+					cardContentPositionC.DataSource = 'upe';
+					this.cardContentPositionC = cardContentPositionC;
+					this.dashboardService.cardContentPositionCOnline = this.cardContentPositionC;
+					this.upeRequestResult.tileC = true;
 				}
-				cardContentPositionC.DataSource = 'upe';
-				this.cardContentPositionC = cardContentPositionC;
-				this.dashboardService.cardContentPositionC = this.cardContentPositionC;
-				this.upeRequestResult.tileC = true;
+			},
+			(err) => {
+				this.loggerService.info(`Cause by error: ${err}, position-C load CMS content.`);
+				this.upeRequestResult.tileC = false;
+				if (this.cmsRequestResult.tileC) {
+					this.cardContentPositionC = this.cardContentPositionCCms;
+					this.dashboardService.cardContentPositionCOnline = this.cardContentPositionCCms;
+				}
 			}
-		}, (err) => {
-			this.loggerService.info(`Cause by error: ${err}, position-C load CMS content.`);
-			this.upeRequestResult.tileC = false;
-			if (this.cmsRequestResult.tileC) {
-				this.cardContentPositionC = this.cardContentPositionCCms;
-				this.dashboardService.cardContentPositionC = this.cardContentPositionCCms;
-			}
-		});
+		);
 	}
 
 	getUPECardContentD(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
-			const cardContentPositionD = this.upeService.getOneUPEContent(
-				response,
-				'full-width-title-image-background',
-				'position-D'
-			)[0];
-			if (cardContentPositionD) {
-				cardContentPositionD.DataSource = 'upe';
-				this.cardContentPositionD = cardContentPositionD;
-				this.dashboardService.cardContentPositionD = this.cardContentPositionD;
-				this.upeRequestResult.tileD = true;
+		this.upeService.fetchUPEContent(upeParam).subscribe(
+			(response) => {
+				const cardContentPositionD = this.upeService.getOneUPEContent(
+					response,
+					'full-width-title-image-background',
+					'position-D'
+				)[0];
+				if (cardContentPositionD) {
+					cardContentPositionD.DataSource = 'upe';
+					this.cardContentPositionD = cardContentPositionD;
+					this.dashboardService.cardContentPositionDOnline = this.cardContentPositionD;
+					this.upeRequestResult.tileD = true;
+				}
+			},
+			(err) => {
+				this.loggerService.info(`Cause by error: ${err}, position-D load CMS content.`);
+				this.upeRequestResult.tileD = false;
+				if (this.cmsRequestResult.tileD) {
+					this.cardContentPositionD = this.cardContentPositionDCms;
+					this.dashboardService.cardContentPositionDOnline = this.cardContentPositionDCms;
+				}
 			}
-		}, (err) => {
-			this.loggerService.info(`Cause by error: ${err}, position-D load CMS content.`);
-			this.upeRequestResult.tileD = false;
-			if (this.cmsRequestResult.tileD) {
-				this.cardContentPositionD = this.cardContentPositionDCms;
-				this.dashboardService.cardContentPositionD = this.cardContentPositionDCms;
-			}
-		});
+		);
 	}
 
 	getUPECardContentE(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
-			const cardContentPositionE = this.upeService.getOneUPEContent(
-				response,
-				'half-width-top-image-title-link',
-				'position-E'
-			)[0];
-			if (cardContentPositionE) {
-				cardContentPositionE.DataSource = 'upe';
-				this.cardContentPositionE = cardContentPositionE;
-				this.dashboardService.cardContentPositionE = this.cardContentPositionE;
-				this.upeRequestResult.tileE = true;
+		this.upeService.fetchUPEContent(upeParam).subscribe(
+			(response) => {
+				const cardContentPositionE = this.upeService.getOneUPEContent(
+					response,
+					'half-width-top-image-title-link',
+					'position-E'
+				)[0];
+				if (cardContentPositionE) {
+					cardContentPositionE.DataSource = 'upe';
+					this.cardContentPositionE = cardContentPositionE;
+					this.dashboardService.cardContentPositionEOnline = this.cardContentPositionE;
+					this.upeRequestResult.tileE = true;
+				}
+			},
+			(err) => {
+				this.loggerService.info(`Cause by error: ${err}, position-E load CMS content.`);
+				this.upeRequestResult.tileE = false;
+				if (this.cmsRequestResult.tileE) {
+					this.cardContentPositionE = this.cardContentPositionECms;
+					this.dashboardService.cardContentPositionEOnline = this.cardContentPositionECms;
+				}
 			}
-		}, (err) => {
-			this.loggerService.info(`Cause by error: ${err}, position-E load CMS content.`);
-			this.upeRequestResult.tileE = false;
-			if (this.cmsRequestResult.tileE) {
-				this.cardContentPositionE = this.cardContentPositionECms;
-				this.dashboardService.cardContentPositionE = this.cardContentPositionECms;
-			}
-		});
+		);
 	}
 
 	getUPECardContentF(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
-			const cardContentPositionF = this.upeService.getOneUPEContent(
-				response,
-				'half-width-top-image-title-link',
-				'position-F'
-			)[0];
-			if (cardContentPositionF) {
-				cardContentPositionF.DataSource = 'upe';
-				this.cardContentPositionF = cardContentPositionF;
-				this.dashboardService.cardContentPositionF = this.cardContentPositionF;
-				this.upeRequestResult.tileF = true;
+		this.upeService.fetchUPEContent(upeParam).subscribe(
+			(response) => {
+				const cardContentPositionF = this.upeService.getOneUPEContent(
+					response,
+					'half-width-top-image-title-link',
+					'position-F'
+				)[0];
+				if (cardContentPositionF) {
+					cardContentPositionF.DataSource = 'upe';
+					this.cardContentPositionF = cardContentPositionF;
+					this.dashboardService.cardContentPositionFOnline = this.cardContentPositionF;
+					this.upeRequestResult.tileF = true;
+				}
+			},
+			(err) => {
+				this.loggerService.info(`Cause by error: ${err}, position-F load CMS content.`);
+				this.upeRequestResult.tileF = false;
+				if (this.cmsRequestResult.tileF) {
+					this.cardContentPositionF = this.cardContentPositionFCms;
+					this.dashboardService.cardContentPositionFOnline = this.cardContentPositionFCms;
+				}
 			}
-		}, (err) => {
-			this.loggerService.info(`Cause by error: ${err}, position-F load CMS content.`);
-			this.upeRequestResult.tileF = false;
-			if (this.cmsRequestResult.tileF) {
-				this.cardContentPositionF = this.cardContentPositionFCms;
-				this.dashboardService.cardContentPositionF = this.cardContentPositionFCms;
-			}
-		});
+		);
 	}
-
 
 	onFeedbackModal() {
 		this.modalService.open(FeedbackFormComponent, {
@@ -552,38 +675,25 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 	}
 
-	openModernPreloadModal() {
-		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'modern-preload-modal',
-			keyboard: false,
-			beforeDismiss: () => {
-				if (modernPreloadModal.componentInstance.onBeforeDismiss) {
-					modernPreloadModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
-			}
-		});
-	}
-
 	private getTileSource() {
 		return new Promise((resolve) => {
-			this.hypService.getAllSettings().then((hyp: any) => {
-				if (hyp) {
-					this.tileSource.tileA = hyp.TileASource === 'UPE' ? 'UPE' : 'CMS';
-					this.tileSource.tileB = hyp.TileBSource === 'UPE' ? 'UPE' : 'CMS';
-					this.tileSource.tileC = hyp.TileCSource === 'UPE' ? 'UPE' : 'CMS';
-					this.tileSource.tileD = hyp.TileDSource === 'UPE' ? 'UPE' : 'CMS';
-					this.tileSource.tileE = hyp.TileESource === 'UPE' ? 'UPE' : 'CMS';
-					this.tileSource.tileF = hyp.TileFSource === 'UPE' ? 'UPE' : 'CMS';
+			this.hypService.getAllSettings().then(
+				(hyp: any) => {
+					if (hyp) {
+						this.tileSource.tileA = hyp.TileASource === 'UPE' ? 'UPE' : 'CMS';
+						this.tileSource.tileB = hyp.TileBSource === 'UPE' ? 'UPE' : 'CMS';
+						this.tileSource.tileC = hyp.TileCSource === 'UPE' ? 'UPE' : 'CMS';
+						this.tileSource.tileD = hyp.TileDSource === 'UPE' ? 'UPE' : 'CMS';
+						this.tileSource.tileE = hyp.TileESource === 'UPE' ? 'UPE' : 'CMS';
+						this.tileSource.tileF = hyp.TileFSource === 'UPE' ? 'UPE' : 'CMS';
+					}
+					resolve();
+				},
+				() => {
+					resolve();
+					console.log('get tile source failed.');
 				}
-				resolve();
-			}, () => {
-				resolve();
-				console.log('get tile source failed.');
-			});
+			);
 		});
 	}
 
@@ -655,7 +765,12 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		warranty.type = 'system';
 		this.systemStatus[2] = warranty;
 
-		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
+		if (
+			this.deviceService &&
+			!this.deviceService.isSMode &&
+			this.adPolicyService &&
+			this.adPolicyService.IsSystemUpdateEnabled
+		) {
 			const systemUpdate = new Status();
 			systemUpdate.status = 4;
 			systemUpdate.id = 'systemupdate';
@@ -684,8 +799,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				const memory = this.systemStatus[0];
 				const totalRam = value.memory.total;
 				const usedRam = value.memory.used;
-				const percentRam = parseInt((usedRam / totalRam * 100).toFixed(0), 10);
-				if (percentRam > 70) {
+				if (usedRam === totalRam) {
 					memory.status = 1;
 				} else {
 					memory.status = 0;
@@ -703,8 +817,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 						1
 					)} ${re} ${this.commonService.formatBytes(totalDisk, 1)}`;
 				});
-				const percent = parseInt((usedDisk / totalDisk * 100).toFixed(0), 10);
-				if (percent > 90) {
+				if (usedDisk === totalDisk) {
 					disk.status = 1;
 				} else {
 					disk.status = 0;
@@ -713,35 +826,16 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 
 		// warranty
-		this.dashboardService.getWarrantyInfo().subscribe((value) => {
-			if (value) {
-				const warranty = this.systemStatus[2];
-				const warrantyDate = this.commonService.formatDate(value.endDate);
-				// in warranty
-				if (value.status === 0) {
-					this.translate.stream('dashboard.systemStatus.warranty.detail.until').subscribe((re) => {
-						warranty.detail = `${re} ${warrantyDate}`; // `Until ${warrantyDate}`;
-					});
-					warranty.status = 0;
-				} else if (value.status === 1) {
-					this.translate.stream('dashboard.systemStatus.warranty.detail.expiredOn').subscribe((re) => {
-						warranty.detail = `${re} ${warrantyDate}`; // `Warranty expired on ${warrantyDate}`;
-					});
-					warranty.status = 1;
-				} else {
-					this.translate.stream('dashboard.systemStatus.warranty.detail.notAvailable').subscribe((re) => {
-						warranty.detail = `${re}`; //  'Warranty not available';
-					});
-					warranty.status = 1;
-				}
-				warranty.isHidden = !this.deviceService.showWarranty;
-				this.isWarrantyVisible = this.deviceService.showWarranty;
-			}
-		});
+		this.getWarrantyInfo();
 
 		// system update
-		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
-			this.dashboardService.getRecentUpdateInfo().subscribe(value => {
+		if (
+			this.deviceService &&
+			!this.deviceService.isSMode &&
+			this.adPolicyService &&
+			this.adPolicyService.IsSystemUpdateEnabled
+		) {
+			this.dashboardService.getRecentUpdateInfo().subscribe((value) => {
 				if (value) {
 					const systemUpdate = this.systemStatus[3];
 					const diffInDays = this.systemUpdateService.dateDiffInDays(value.lastupdate);
@@ -759,29 +853,75 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
+	getWarrantyInfo() {
+		this.warrantyService.getWarrantyInfo().subscribe((value) => {
+			if (value) {
+				this.setWarrantyInfo(value);
+			}
+		});
+	}
+
+	setWarrantyInfo(value: any) {
+		this.warrantyData = {
+			info: {
+				startDate: value.startDate,
+				endDate: value.endDate,
+				status: value.status,
+				url: this.warrantyService.getWarrantyUrl()
+			},
+			cache: true
+		};
+		const warranty = this.systemStatus[2];
+		const warrantyDate = this.commonService.formatDate(value.endDate);
+		// in warranty
+		if (value.status === 0) {
+			this.translate.stream('dashboard.systemStatus.warranty.detail.until').subscribe((re) => {
+				warranty.detail = `${re} ${warrantyDate}`; // `Until ${warrantyDate}`;
+			});
+			warranty.status = 0;
+		} else if (value.status === 1) {
+			this.translate.stream('dashboard.systemStatus.warranty.detail.expiredOn').subscribe((re) => {
+				warranty.detail = `${re} ${warrantyDate}`; // `Warranty expired on ${warrantyDate}`;
+			});
+			warranty.status = 1;
+		} else {
+			this.translate.stream('dashboard.systemStatus.warranty.detail.notAvailable').subscribe((re) => {
+				warranty.detail = `${re}`; //  'Warranty not available';
+			});
+			warranty.status = 1;
+		}
+		warranty.isHidden = !this.deviceService.showWarranty;
+		this.isWarrantyVisible = this.deviceService.showWarranty;
+	}
+
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
+					if (!this.isOnline) {
+						this.getPreviousContent();
+					} else {
+						this.fetchContent();
+						// this.fetchUPEContent();
+						this.getWarrantyInfo();
+					}
 					break;
 				case LocalStorageKey.LastWarrantyStatus:
 					if (notification.payload) {
-						this.warrantyData = {
-							info: {
-								startDate: notification.payload.startDate,
-								endDate: notification.payload.endDate,
-								status: notification.payload.status,
-								url: this.supportService.getWarrantyUrl(this.supportService.sn)
-							},
-							cache: true
-						};
+						this.setWarrantyInfo(notification.payload);
 					}
 					break;
 				default:
 					break;
 			}
 		}
+	}
+	// checking self select status for HW Settings
+	private getSelfSelectStatus() {
+		this.dashboardService.getSelfSelectStatus().then((value) => {
+			this.showQuickSettings = value;
+		});
 	}
 }

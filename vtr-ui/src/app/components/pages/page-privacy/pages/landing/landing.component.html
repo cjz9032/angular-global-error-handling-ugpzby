@@ -26,8 +26,9 @@
 					<button class="landing-pitch__button"
 							vtrSendAnalytics
 							[metricsEvent]="'ItemClick'"
-							[metricsItem]="'InstallButton'"
+							[metricsItem]="'InstallButton' | changeActionButtonText | async"
 							vtrOfflineMode
+							positionContextTo="top-left"
 							vtrOpenFigleafInstaller>{{'Install Now' | changeActionButtonText | async}}</button>
 					<span class="landing-pitch__button--disable">Also available for Android</span>
 				</div>
@@ -134,8 +135,9 @@
 					<button class="landing-pitch__button"
 							vtrSendAnalytics
 							[metricsEvent]="'ItemClick'"
-							[metricsItem]="'InstallButton'"
+							[metricsItem]="'InstallButton' | changeActionButtonText | async"
 							vtrOfflineMode
+							positionContextTo="top-right"
 							vtrOpenFigleafInstaller>
 						{{'Install Now' | changeActionButtonText | async}}
 					</button>

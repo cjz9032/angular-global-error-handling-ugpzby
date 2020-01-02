@@ -17,7 +17,7 @@
                         "balText": "일반 CPU 및 팬 속도",
                         "quietText": "CPU사용량 낮을수록 팬속도 낮음"
                     },
-                    "wifiSecurity": "Wifi 보안",
+                    "wifiSecurity": "WiFi 보안",
                     "dolby": "Dolby",
                     "rapidCharge": "급속 충전"
                 },
@@ -107,7 +107,8 @@
                     "sub1": "지원",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                }
+                },
+                "smartPerformance": "Smart Performance"
             },
             "narrator": {
                 "pageTitle": {
@@ -632,7 +633,6 @@
             "wifi": "WiFi 보안",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "사용",
             "disabled": "사용 안 함",
             "partiallyProtected": "부분적으로 보호",
@@ -642,11 +642,13 @@
             "installing": "설치하기",
             "notFound": "찾을 수 없음",
             "registered": "등록됨",
-            "notRegistered": "등록되지 않음"
+            "notRegistered": "등록되지 않음",
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
-            "subtitle": "귀하의 장치에 대한 몇 가지 유용한 정보를 찾으십시오.",
+            "subtitle": "장치에 관한 유용한 팁을 찾을 수 있습니다.",
             "question1": "파일 백업 및 복원",
             "question2": "PC를 새로 고치는 방법",
             "question3": "컴퓨터의 CPU를 아는 방법",
@@ -705,7 +707,9 @@
         "offlineInfo": {
             "title": "인터넷이 연결되어 있지 않음",
             "subtitle": "연결 문제 해결 방법에 대해 자세히 알아보기",
-            "buttonText": "지원 가져오기"
+            "buttonText": "지원 가져오기",
+            "welcomeToVantage": "차세대 Vantage를 소개합니다.",
+            "systemHealth": "시스템 상태"
         },
         "feedback": {
             "title": "피드백 제출",
@@ -790,10 +794,10 @@
                 "title": "시스템 업데이트",
                 "notFound": "시스템 업데이트를 찾을 수 없음",
                 "detail": {
-                    "uptoDate": "소프트웨어가 최신임",
-                    "updatedOn": "업데이트 날짜",
-                    "outdated": "소프트웨어가 오래됨",
-                    "neverRanUpdate": "업데이트 실행되지 않음"
+                    "uptoDate": "업데이트 확인됨 ",
+                    "updatedOn": "확인된 날짜 ",
+                    "outdated": "최근에 업데이트를 확인하지 않음 ",
+                    "neverRanUpdate": "업데이트 확인을 한 적 없음"
                 }
             },
             "extendedWarranty": "연장 보증",
@@ -896,7 +900,7 @@
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
                     "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b>",
                     "LimitedACAdapterSupport": "<b>AC 어댑터는 충분한 전원을 공급하지 못합니다.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. 최신 드라이버를 설치하려면 Windows 업데이트를 실행하십시오. <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">여기</a>에서 드라이버를 설치할 수도 있습니다.",
+                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. 최신 드라이버를 설치하려면 Windows 업데이트를 실행하십시오. <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">여기</a>에서 드라이버를 설치할 수도 있습니다. 설치한 후 컴퓨터를 다시 시작하십시오.",
                     "StoreLimitation": "<b>배터리는 원래 완전 충전 용량의 {{value}}%만</b> 저장할 수 있습니다.",
                     "HighTemperature": "배터리 온도가 너무 높아 <b>방전</b>이 <b>중단되었습니다.</b>",
                     "TrickleCharge": "배터리가 <b>완전히 방전되어</b> 다시 충전해야 합니다. 이 작업은 10시간 이상이 소요될 수 있습니다.",
@@ -904,12 +908,16 @@
                     "PermanentError": "배터리 용량이 <b>저하</b>되었습니다. 새 배터리를 교체하십시오.",
                     "NotSupportACAdapterDetail": "<b>AC 어댑터가 지원되지 않습니다.</b> Lenovo 컴퓨터는 이 AC 어댑터를 지원하지 않습니다. 갑작스런 시스템 종료 문제가 발생할 수 있습니다. 올바른 AC 어댑터를 연결하십시오.",
                     "LimitedACAdapterSupportDetail": "<b>AC 어댑터는 시스템 성능 및 충전 속도에</b> 영향을 줄 Lenovo 컴퓨터에 충분한 전원을 공급할 수 없습니다. 올바른 AC 어댑터를 다시 연결하십시오.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 전원이 연결돼 있습니다.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 전원이 연결돼 있습니다.</b>",
+                    "EmDriverInstalled": "배터리 세부사항을 사용할 수 없습니다. <b>Lenovo ACPI - Compliant Virtual Power Controller</b> 드라이버를 설치하려면 Windows 업데이트->업데이트 확인을 실행하십시오."
                 },
                 "batteryNotDetected": "배터리 없음",
-                "thresholdNote": "<b>참고:</b> 배터리 수명을 연장하기 위해 {{value}}%에서 충전이 멈추도록 배터리를 설정했습니다.",
+                "thresholdNote": "<b>참고:</b> 배터리 충전 임계값을 사용하는 경우 배터리가 완전히 충전되지 않습니다.",
                 "seeDetailsLink": "세부사항 참조",
-                "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오."
+                "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오.",
+                "dualConditions": {
+                    "NotDetected": "<b>기본 배터리를 찾을 수 없습니다.</b>"
+                }
             },
             "power": {
                 "title": "전원",
@@ -985,7 +993,29 @@
                         }
                     },
                     "description5": "지능형 냉각 기능은 팬 속도 및 최대 성능을 조정하고 배터리 수명을 관리합니다. 이 기능에는 3 가지 모드(자동 모드, 균형 모드 및 성능 모드)가 있으며, 이제 Windows 성능 전원 슬라이더를 사용하여 액세스할 수 있음",
-                    "nocqldesc": "지능형 냉각 기능을 사용해 시스템 성능과 열 온도를 조정할 수 있습니다. \"성능\" 모드에서는 시스템 성능을 최적화합니다. 반면에 \"냉각 및 저소음\" 모드에서 시스템을 냉각하고 소음을 줄이는 데 도움이 됩니다."
+                    "nocqldesc": "지능형 냉각 기능을 사용해 시스템 성능과 열 온도를 조정할 수 있습니다. \"성능\" 모드에서는 시스템 성능을 최적화합니다. 반면에 \"냉각 및 저소음\" 모드에서 시스템을 냉각하고 소음을 줄이는 데 도움이 됩니다.",
+                    "dytc6": {
+                        "desc1": "지능형 냉각 기능은 팬 속도 및 최대 성능을 조정하고 배터리 수명을 관리합니다.",
+                        "desc2": "이 기능에는 아래에 나열된 모드가 있으며, 현재 Windows 성능 전원 슬라이더를 통해 조정되었습니다. Windows 시스템 트레이의 배터리 아이콘을 클릭하여 액세스할 수 있습니다.",
+                        "desc3": "일부 모드는 활동 내용을 기반으로 넓은 성능 범위에서 자동으로 조정될 수 있습니다. 자동 모드를 사용하려면 Fn+T를 누르십시오.",
+                        "autoMode": {
+                            "title1": "자동 배터리 모드",
+                            "desc1": "슬라이더가 왼쪽에 있습니다. 최상의 DC 모드 환경을 위해 모드가 동적으로 저소음 모드 또는 배터리 모드로 전환됩니다.",
+                            "title2": "자동 성능 모드",
+                            "desc2": "슬라이더가 가운데 또는 가운데 오른쪽에 있습니다. 최상의 AC 모드 환경을 위해 모드가 동적으로 저소음 모드나 배터리 모드, 또는 성능 모드로 전환됩니다.",
+                            "title3": "성능 모드",
+                            "desc3": "슬라이더가 오른쪽 끝에 있습니다. 팬 속도와 허용 표면 온도가 더 높아져 성능을 극대화할 수 있습니다."
+                        },
+                        "manualMode": {
+                            "title1": "저소음 모드",
+                            "desc1": "슬라이더가 왼쪽에 있습니다. 더 시원하고 조용한 컴퓨터와 최상의 배터리 수명을 제공하기 위해 팬 속도와 성능을 낮춥니다.",
+                            "title2": "균형 조정 모드",
+                            "desc2": "슬라이더가 가운데 또는 가운데 오른쪽에 있습니다. 최상의 환경을 위해 팬 속도와 성능이 동적으로 균형을 이룹니다.",
+                            "title3": "성능 모드",
+                            "desc3": "슬라이더가 오른쪽 끝에 있습니다. 팬 속도와 허용 표면 온도가 더 높아져 성능을 극대화할 수 있습니다."
+                        },
+                        "desc3_1": "일부 모드는 활동 내용을 기반으로 넓은 성능 범위에서 자동으로 조정될 수 있습니다. 자동 모드를 사용하지 않으려면 Fn+ T를 누르십시오."
+                    }
                 },
                 "powerSettings": {
                     "title": "전원 설정",
@@ -1074,17 +1104,18 @@
                         },
                         "progressText1": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
                         "progressText2": "{{stageNum}}의 {{stage}}: 저전력으로 보정 중",
+                        "progressText3": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
                         "FCCText": "{{before}} Wh에서 {{after}} Wh",
                         "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "완료되었습니다. 리셋에 성공했습니다.",
-                            "ERROR_SHUTDOWN": "완료되지 않았습니다. 시스템을 종료합니다.",
-                            "ERROR_LOGOFF": "완료되지 않았습니다. 사용자가 로그아웃했습니다.",
-                            "ERROR_BATTERY_REMOVE": "완료되지 않았습니다. 배터리가 제거되었습니다.",
-                            "ERROR_BATTERY_REPLACE": "완료되지 않았습니다. 배터리가 교체되었습니다.",
-                            "ERROR_AC_DETTACH": "완료되지 않았습니다. AC 전원 어댑터가 분리되었습니다.",
-                            "ERROR_USER_CANCEL": "완료되지 않았습니다. 사용자가 취소했습니다.",
-                            "ERROR_UNEXPECTED": "완료되지 않았습니다. 예상치 않은 오류가 발생했습니다."
+                            "ERROR_SUCCESS": "완료: 재설정되었습니다.",
+                            "ERROR_SHUTDOWN": "실패: 시스템이 종료되었습니다.",
+                            "ERROR_LOGOFF": "실패: 사용자가 로그아웃했습니다.",
+                            "ERROR_BATTERY_REMOVE": "실패: 배터리가 제거되었습니다.",
+                            "ERROR_BATTERY_REPLACE": "실패: 배터리가 교체되었습니다.",
+                            "ERROR_AC_DETTACH": "실패: AC 전원 어댑터가 분리되었습니다.",
+                            "ERROR_USER_CANCEL": "실패: 사용자가 취소했습니다.",
+                            "ERROR_UNEXPECTED": "실패: 예상치 않은 오류가 발생했습니다."
                         },
                         "popup": {
                             "description1": "리셋 절차는 다음과 같습니다.<br>배터리 완충  -->  배터리 방전  -->  배터리 완전히 재충전",
@@ -1094,7 +1125,8 @@
                             "yes": "예",
                             "description3": "배터리 게이지 리셋을 중단하시겠습니까?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "참고: 한 번에 한 배터리만 리셋할 수 있습니다.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1130,7 +1162,8 @@
                             "wed": "수요일",
                             "thurs": "목요일",
                             "fri": "금요일",
-                            "sat": "토요일"
+                            "sat": "토요일",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "일요일",
@@ -1143,18 +1176,54 @@
                         },
                         "everyday": "매일",
                         "weekdays": "평일",
-                        "weekends": "주말"
+                        "weekends": "주말",
+                        "noDaySelected": "날짜를 선택하지 않음"
                     },
                     "checkbox": "사용 현황에 따라 컴퓨터의 활성 시간 자동 조정",
                     "hyperlinkToGraph": "클릭하여 컴퓨터 테이블의 활동 및 활성 시간을 확인",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer"
+                    "subTitle": "컴퓨터 예약",
+                    "automaticMode": "자동 모드",
+                    "manualMode": "수동 모드",
+                    "subNote": "사용량에 기반하여 컴퓨터가 모던 대기 모드가 되도록 예약되어 있습니다.",
+                    "graph": {
+                        "graph1Tittle": "이 컴퓨터 사용량",
+                        "graph2Tittle": "적용된 활성 시간",
+                        "graphSubtittle": "이 시간에는 컴퓨터를 언제든 빠르게 다시 사용할 수 있는 상태로 유지합니다.",
+                        "graphNote": "이 컴퓨터는 활동 데이터가 부족해 자동 예약을 위한 프로파일을 제공할 수 없습니다. 스마트 대기는 충분한 데이터를 사용할 수 있을 때까지 수동 모드 예약을 사용합니다.",
+                        "legends": {
+                            "none": "없음",
+                            "frequent": "자주"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
+                    "subTitle2": "이 컴퓨터를 주로 사용하는 시간 설정",
+                    "oldTooltipText": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 시간은 사용자가 설정한 스케줄을 토대로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며 비활성화되도록 예약된 날에는 전환되지 않습니다."
                 }
             },
             "audio": {
@@ -1236,6 +1305,15 @@
                 },
                 "display": {
                     "title": "디스플레이",
+                    "displayColorTemperature": {
+                        "title": "디스플레이 색상 온도",
+                        "description": "디스플레이의 색상 온도를 조절하여 블루라이트를 필터링하고 눈의 피로감을 줄일 수 있습니다. 일몰 때부터 일출 때까지 따뜻한 색상으로 디스플레이를 조정하여 수면에 도움이 됩니다.",
+                        "link": {
+                            "click": "색 온도를 바꾸려면",
+                            "here": "여기",
+                            "rest": "를 클릭하십시오."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "아이 케어 모드",
                         "checkbox": "아이 케어 모드를 일몰에서 일출로 예약",
@@ -1285,7 +1363,9 @@
                             "minutes": "분",
                             "alwaysOn": "항상 켜짐",
                             "never": "사용 안 함",
-                            "halfTime": "디스플레이 꺼짐 타이머의 절반 정도의 시간"
+                            "halfTime": "디스플레이 꺼짐 타이머의 절반 정도의 시간",
+                            "select": "선택",
+                            "time": "시간"
                         },
                         "taskBarDimmer": "작업 표시줄 채광",
                         "backgroundDimmer": "백그라운드 채광",
@@ -1340,7 +1420,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "고해상도 디스플레이의 확대/축소 기능을 사용하도록 설정",
+                        "description": "고해상도 디스플레이에서 확대/축소 기능 사용 설정",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -1430,10 +1510,14 @@
                         "title": "적용"
                     },
                     "website": {
-                        "url": "웹 사이트 URL"
+                        "url": "웹 사이트 URL",
+                        "successMessage": "설정이 적용되었습니다.",
+                        "invalidURLMessage": "올바른 URL을 입력해 주십시오.",
+                        "placeholder": "http:// 또는 https://로 시작해야 합니다."
                     },
                     "enterText": {
-                        "title": "입력할 텍스트"
+                        "title": "입력할 텍스트",
+                        "placeholder": "여기에 입력해 주십시오"
                     }
                 },
                 "fnCtrlKey": {
@@ -1445,7 +1529,21 @@
                     "more": "자세히",
                     "control1": "터치패드 제어",
                     "control2": "마우스 제어",
-                    "control3": "TRACKPOINT 제어"
+                    "control3": "TRACKPOINT 제어",
+                    "less": "간단히"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1608,7 +1706,7 @@
                 "heading": "지능형 미디어",
                 "title": "비디오 해상도 업스케일링",
                 "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label> 이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. 사용 가능으로 설정하는 경우, AC 전원을 사용하여 컴퓨터에 연결하는 것이 좋습니다.</label></p>",
-                "tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player",
                 "note": {
                     "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
                     "description1": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 전력이 20% 미만입니다.",
@@ -1804,7 +1902,7 @@
         },
         "needHelp": {
             "title": "도움이 필요하세요?",
-            "description": "도움을 줄 수 있는 연락처",
+            "description": "도움이 필요한 경우 Lenovo에 문의하십시오.",
             "listLenovoCommunity": "Lenovo 커뮤니티",
             "listContactCustomerService": "고객 서비스에 문의하기",
             "listContactUsOnWechat": "WeChat에 문의하기",
@@ -1815,7 +1913,7 @@
         },
         "quicklinks": {
             "title": "퀵링크",
-            "description": "도움을 줄 수 있는 연락처.",
+            "description": "도움이 필요한 경우 Lenovo에 문의하십시오.",
             "listETicket": "E-티켓으로 지원 가져오기",
             "listServiceProvider": "서비스 제공자 찾기",
             "listAboutLenovoVantage": "Lenovo Vantage 소개"
@@ -1826,7 +1924,7 @@
             "otherSoftwareLicenses": "기타 소프트웨어 라이선스",
             "ourWebsite": "당사 웹 사이트",
             "aboutYourDevice": "장치 소개",
-            "copyright": "© 2002-2019 Lenovo all rights reserved"
+            "copyright": "© 2002-2020 Lenovo all rights reserved"
         },
         "quickAccess": {
             "categories": "카테고리",
@@ -1837,9 +1935,7 @@
     "security": {
         "landing": {
             "fully": "완전히 보호됨",
-            "fullyDesc": "축하합니다! 잘 보호됩니다.",
             "notFully": "완전히 보호되지 않음",
-            "notFullyDesc": "완전히 보호되지 않습니다. 지금 자신을 더욱 적절하게 보호하는 방법을 알아보십시오.",
             "security101": "보안 어드바이저 101",
             "firewall": "방화벽",
             "pwdHealth": "암호 상태",
@@ -1848,17 +1944,6 @@
             "wifiConnected": "WiFi 및 홈 보안 연결",
             "connectedHomeSecurity": "홈 보안 연결",
             "fingerprint": "지문 인식 장치",
-            "seeAllNetwork": "모든 결합 네트워크 참조",
-            "maliciousNetwork": "이 달에 컴퓨터를 {{maliciousWifi}} 악성 테트워크와 연결할 수 없습니다.",
-            "good": "좋음",
-            "malicious": "악성",
-            "suspicious": "의심스러움",
-            "securityScoreDepends": "보안 결과는 다음 사항에 따릅니다.",
-            "antivirus": "바이러스 백신 소프트웨어로 보호",
-            "password": "강력하고 복잡한 암호를 안전하게 관리",
-            "vpn": "공격자에 대한 네트워크의 노출 여부 모니터링",
-            "wifi": "공용 WiFi를 사용할 때 개인 데이터 암호화",
-            "windowsHello": "안전한 로그인 옵션을 사용하여 장치 보호",
             "uacTitle": "UAC 알림이 무엇입니까?",
             "uacText": "사용자 계정 컨트롤은 Windows의 매우 중요한 보안 기능으로, 잠재적으로 유해한 프로그램이 시스템을 변경하지 못하도록 방지하는 데 도움이 됩니다.",
             "windowsTitle": "Windows를 활성화해야 하는 이유는 무엇입니까?",
@@ -1868,7 +1953,48 @@
             "passwordTitle": "암호를 보다 잘 보호하는 방법은 무엇입니까?",
             "passwordText": "제3자에서 사용자를 알지 못하는 상태에서 쉽게 액세스할 수 있는 브라우저에 저장하는 것으로 그치지 않고 전문 디지털 보호 앱으로 암호화된 모든 암호를 안전하게 저장 및 관리하십시오.",
             "enhanceTitle": "보안 보호를 강화하려면 어떻게 해야 합니까?",
-            "enhanceText": "바이러스 백신 소프트웨어 및 방화벽으로 장치를 보호하고 최소한의 보호로 UAC 알림을 설정하는 것이 좋습니다. 강력한 암호를 작성하고 안전한 방식으로 관리하고, 공용 네트워크를 고급 보호로 사용하는 동안 데이터를 암호화하십시오."
+            "enhanceText": "바이러스 백신 소프트웨어 및 방화벽으로 장치를 보호하고 최소한의 보호로 UAC 알림을 설정하는 것이 좋습니다. 강력한 암호를 작성하고 안전한 방식으로 관리하고, 공용 네트워크를 고급 보호로 사용하는 동안 데이터를 암호화하십시오.",
+            "antivirusContent": "바이러스 백신 소프트웨어를 사용하여 사용자 장치에 대한 맬웨어를 방지하고 검색하고 제거합니다.",
+            "firewallContent": "방화벽은 미리 정해진 보안 규칙을 기반으로 들어오고 나가는 네트워크 트래픽을 모니터 및 제어하는 신뢰할 수 있는 내부 네트워크와 신뢰할 수 없는 외부 네트워크 사이에 장애물을 설정합니다.",
+            "windowsActiveContent": "Windows의 정품 사본을 사용하면 보안 위험을 줄일 수 있습니다.",
+            "passwordContent": "암호, 지불 및 개인 정보를 보다 안전하고 간편하게 관리합니다. 강력하고 복잡한 암호를 만들어 모든 사이트에 즉시 로그인할 수도 있습니다.",
+            "fingerprintContent": "빠르고 안전하게 Windows에 로그인하고 결제하고 앱과 서비스에 연결합니다.",
+            "uacContent": "슬라이더를 움직여 잠재적으로 유해한 변경 사항으로부터 사용자 계정 컨트롤을 보호하는 정도를 선택하십시오.",
+            "wifiContent": "장치가 안전한 무선 네트워크와 잠재적인 악성 네트워크를 구분할 수 있도록 도와주는 고급 소프트웨어 서비스입니다.",
+            "bitLockerContent": "하드 드라이브의 데이터를 암호화하여 무단으로 액세스할 수 없도록 파일 및 폴더를 보호합니다.",
+            "vpnContent": "공용 wifi를 통해 송수신되는 정보를 암호화하고 온라인 활동을 안전하게 비공개로 보호하려면 VPN 서비스를 사용하십시오.",
+            "windows": "Windows 정품 인증",
+            "goAntivirus": "바이러스 백신으로 이동",
+            "goFirewall": "방화벽으로 이동",
+            "goPassword": "Password Manager로 이동",
+            "goWifi": "wifi 보안으로 이동",
+            "goVpn": "VPN 보안으로 이동",
+            "visitWindows": "Windows 정품 인증 방문",
+            "visitFingerprint": "지문 판독기 방문",
+            "visitUac": "사용자 계정 컨트롤 방문",
+            "visitHde": "하드 드라이브 암호화 방문",
+            "haveOwnPassword": "내 Password Manager가 있음",
+            "haveOwnWifi": "내 wifi 보안이 있음",
+            "haveOwnVpn": "내 VPN 보안이 있음",
+            "uac": "사용자 계정 컨트롤(UAC)",
+            "uacTitles": "사용자 계정 컨트롤",
+            "hde": "하드 드라이브 암호화",
+            "level": "보안 수준:",
+            "noProtection": "보호하지 않음",
+            "noProtectionDesc": "장치에 보안 보호가 설정되어 있지 않으므로 최소한의 보호를 위해 Windows Defender를 사용할 수 있습니다. 들어오는 위협으로부터 장치를 보호하려면 바이러스 백신 소프트웨어를 설치하십시오.",
+            "basic": "기본",
+            "basicTitle": "기본 보호",
+            "basicDesc": "장치에 기본 보안 보호만 사용하도록 설정되어 있습니다. 보호 기능을 강화하려면 UAC 알림을 사용으로 설정하고 Password Manager를 사용하십시오.",
+            "intermediate": "중간",
+            "intermediateTitle": "중간 보호",
+            "intermediateDesc": "잘 하셨습니다! 고급 보호 기능의 한 단계를 적용한 것일 뿐이며 데이터를 암호화하고 네트워크 보안 침해를 모니터링하는 것이 좋습니다.",
+            "advanced": "고급",
+            "advancedTitle": "고급 보호",
+            "advancedDesc": "축하합니다! 장치에 기본, 중간 및 고급 보안 보호 기능이 있습니다.",
+            "haveOwn": "내 설정이 있음",
+            "basicSecurity": "기본 보안",
+            "advancedSecurity": "고급 보안",
+            "intermediateSecurity": "중간 보안"
         },
         "antivirus": {
             "common": {
@@ -1954,7 +2080,7 @@
                 "back": "뒤로"
             },
             "container": {
-                "title": "Lenovo Wifi 보안",
+                "title": "Lenovo WiFi 보안",
                 "name": "WIFI 보안",
                 "enable": "사용",
                 "disable": "사용 안 함",
@@ -1999,7 +2125,7 @@
                 "subtitle": "안심하고 사용",
                 "subtitleDescribe": "장치 또는 홈 네트워크에서 취약한 점이 감지되거나 악성일 가능성이 있는 네트워크에 연결되어 있는 경우, 연결된 홈 보안 장치에서 경고를 보냅니다. 연결된 홈 보안에 대해 자세히 알아보십시오 <tag>여기</tag>.",
                 "tryNow": "지금 사용해 보기",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "초대 코드 입력",
@@ -2074,8 +2200,7 @@
             "getStarted1": "위의 \"SurfEasy 열기\" 버튼을 클릭하여 SurfEasy VPN을 실행하십시오.",
             "getStarted2": "보안 연결을 확인하려면 VPN을 켜고 잠시 기다리십시오.",
             "getStarted3": "원하는 경우 지역 또는 위치를 변경하여 안전하고 개인적인 네트워킹을 즐기십시오.",
-            "poweredBySurfEasy": "SurfEasy로 실행",
-            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>에 대해 자세히 읽기"
+            "poweredBySurfEasy": "SurfEasy로 실행"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 암호 관리자",
@@ -2103,8 +2228,7 @@
             "allowsYou2": "다크 웹에서 개인 정보 모니터",
             "allowsYou3": "내장 VPN으로 비보안 WiFi 네트워크에서 안전하게 유지",
             "allowsYou4": "암호를 노출하지 않고 안전하게 공유",
-            "poweredByDashLane": "Dashlane로 실행",
-            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>에 대해 자세히 읽기"
+            "poweredByDashLane": "Dashlane로 실행"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2134,9 +2258,36 @@
         "logout": "로그아웃",
         "unlockExclusives": "독점 잠금 해제",
         "user": "사용자",
-        "welcomeText": "오늘 동력 공급 상태 보기{{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "오늘 동력 공급 상태 보기!",
+        "welcomeText1": "오늘 동력 공급 상태 보기, {{firstName}}!",
+        "welcomeText2": "다시 만나서 반갑습니다, {{firstName}}",
+        "welcomeText3": "정말 반습니다, {{firstName}}",
+        "welcomeText4": "웃으세요, {{firstName}} 다른 사람도 따라 웃게 됩니다 :)",
+        "welcomeText5": "노크를 하세요, {{firstName}}",
+        "welcomeText6": "멋진 곳으로 가는군요!",
+        "welcomeText7": "오늘은 당신의 날이에요, {{firstName}}!",
+        "welcomeText8": "누가 행복한 작은 트리를 좋아하나요?",
+        "welcomeText9": "파티에 초대합니다, {{firstName}}!",
+        "welcomeText10": "침착하게 Vantage 유지",
+        "welcomeText11": "가성비가 더 큰 Vantage",
+        "welcomeText12": "Vantage 가져오기",
+        "welcomeText13": "먹고, 자고, Vantage, 반복",
+        "welcomeText14": "모든 순간이 새로운 Vantage",
+        "welcomeText15": "Vantage를 최대한으로",
+        "welcomeTextWithoutUserName1": "오늘 동력 공급 상태 보기!",
+        "welcomeTextWithoutUserName2": "다시 만나서 반갑습니다",
+        "welcomeTextWithoutUserName3": "정말 반습니다",
+        "welcomeTextWithoutUserName4": "웃으세요 다른 사람도 따라 웃게 됩니다 :)",
+        "welcomeTextWithoutUserName5": "노크를 하세요",
+        "welcomeTextWithoutUserName6": "멋진 곳으로 가는군요!",
+        "welcomeTextWithoutUserName7": "오늘은 당신의 날이에요!",
+        "welcomeTextWithoutUserName8": "누가 행복한 작은 트리를 좋아하나요?",
+        "welcomeTextWithoutUserName9": "파티에 초대합니다!",
+        "welcomeTextWithoutUserName10": "침착하게 Vantage 유지",
+        "welcomeTextWithoutUserName11": "가성비가 더 큰 Vantage",
+        "welcomeTextWithoutUserName12": "Vantage 가져오기",
+        "welcomeTextWithoutUserName13": "먹고, 자고, Vantage, 반복",
+        "welcomeTextWithoutUserName14": "모든 순간이 새로운 Vantage",
+        "welcomeTextWithoutUserName15": "Vantage를 최대한으로",
         "helloUser": "{{firstName}}님, 안녕하십니까!",
         "ssoErrorTitle": "오류",
         "ssoErrorCommon": "문제가 발생했습니다. 다시 시도하십시오.",
@@ -2155,7 +2306,7 @@
         },
         "question1": {
             "title": "파일 백업 및 복원",
-            "description": "<div>    <div class='faqInFs4Fb'>        파일 백업 및 복원    </div>    <hr />    <div class='faqInMb7'>        항상 백업 파일을 만드는 것이 좋습니다. 원본에 무슨 일이 발생하는 경우, 파일을 다른 드라이브에 보관하십시오.    </div>    <div class='faqInFs3Fb'>        백업 설정    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>시작</span> 버튼, <span class='faqInFb'>설정</span> > <span class='faqInFb'>업데이트 & 보안</span> > <span class='faqInFb'>백업</span> > <span class='faqInFb'>드라이브 추가</span>를 차례로 선택한 다음, 백업 파일을 저장할 외장 드라이브 또는 네트워크 위치를 선택하십시오.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        설정 완료. 매 시간마다 사용자 폴더(C:\\\\Users\\\\username)에 있는 모든 파일을 백업합니다. 백업할 파일 또는 백업 빈도를 변경하려면, <span class='faqInFb'>추가 옵션</span>으로 이동하십시오.    </div>    <div class='faqInFs3Fb'>        파일 복구    </div>    <div class='mb-5'>        중요한 파일이나 폴더가 없는 경우, 다시 가져오는 방법은 다음과 같습니다.    </div>    <div>        <div class='mb-3'>1. 작업 표시줄의 검색 상자에서 <span class='faqInFb'>파일 복원</span>을 입력하고 <span class='faqInFb'>파일 기록으로 파일 복원</span>을 선택하십시오.</div>        <div class='mb-3'>2. 필요한 파일을 찾은 다음, 화살표를 사용하여 모든 버전 표시</div>        <div class='mb-3'>3. 원하는 버전을 찾았으면, <span class='faqInFb'>복원</span>을 선택하여 원래 위치에 저장하십시오. 다른 장소에 저장하려면, <span class='faqInFb'>복원</span>을 길게 누르고(또는 마우스 오른쪽 버튼을 클릭하고) <span class='faqInFb'>복원 위치</span>를 선택한 다음 새 위치를 선택하십시오.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        파일 백업 및 복원    </div>    <hr />    <div class='faqInMb7'>        항상 백업 파일을 만드는 것이 좋습니다. 원본에 무슨 일이 발생하는 경우, 파일을 다른 드라이브에 보관하십시오.    </div>    <div class='faqInFs3Fb'>        백업 설정    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>시작</span> 버튼, <span class='faqInFb'>설정</span> > <span class='faqInFb'>업데이트 & 보안</span> > <span class='faqInFb'>백업</span> > <span class='faqInFb'>드라이브 추가</span>를 차례로 선택한 다음, 백업 파일을 저장할 외장 드라이브 또는 네트워크 위치를 선택하십시오.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        설정 완료. 매 시간마다 사용자 폴더(C:\\\\Users\\\\username)에 있는 모든 파일을 백업합니다. 백업할 파일 또는 백업 빈도를 변경하려면, <span class='faqInFb'>추가 옵션</span>으로 이동하십시오.    </div>    <div class='faqInFs3Fb'>        파일 복구    </div>    <div class='mb-5'>        중요한 파일이나 폴더가 없는 경우, 다시 가져오는 방법은 다음과 같습니다.    </div>    <div>        <div class='mb-3'>1. 작업 표시줄의 검색 상자에서 <span class='faqInFb'>파일 복원</span>을 입력하고 <span class='faqInFb'>파일 기록으로 파일 복원</span>을 선택하십시오.</div>        <div class='mb-3'>2. 필요한 파일을 찾은 다음, 화살표를 사용하여 모든 버전 표시</div>        <div class='mb-3'>3. 원하는 버전을 찾았으면, <span class='faqInFb'>복원</span>을 선택하여 원래 위치에 저장하십시오. 다른 장소에 저장하려면, <span class='faqInFb'>복원</span>을 길게 누르고(또는 마우스 오른쪽 버튼을 클릭하고) <span class='faqInFb'>복원 위치</span>를 선택한 다음 새 위치를 선택하십시오.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -2196,7 +2347,7 @@
         },
         "question2": {
             "title": "PC를 새로 고치는 방법",
-            "description": "<div>    <div class='faqInFs4Fb'>        PC를 새로 고치는 방법    </div>    <hr>    <div class='faqInFs25FbP5'>        증상    </div>    <div class='faqInP5'>        PC가 수행한 작업을 수행한 경우는 물론이고 작업을 수행하지 않는 경우 및 그 이유를 모르는 경우, 개인 파일을 삭제하거나 설정을 변경하지 않고 PC를 새로 고칠 수 있습니다. Windows는 개인 파일을 삭제하지 않고 새로 설치하는 것과 비슷하게 PC를 \\\"새로 고칠\\\" 수 있습니다.    </div>    <div class='faqInP5'>        PC를 새로 고치면, 파일과 사용자 설정 설정이 변경되지 않습니다    </div>    <div class='faqInP5'>        <ul>            <li>PC 설정이 기본값으로 다시 변경됨</li>            <li>Windows 스토어의 앱이 보관됨</li>            <li>디스크 또는 웹 사이트에서 설치한 앱이 제거됨</li>            <li>제거된 파일 목록이 바탕 화면에 저장됨</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        영향을 받는 브랜드    </div>    <div>        <ul>            <li>모든 데스크탑 및 노트북</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        운영 체제    </div>    <div>        <ul>            <li>Windows 8, 8.1 및 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        해결 방법    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        <span class='faqInFb'>설정</span>을 누르거나 클릭                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>업데이트 및 복구</span>를 누르거나 클릭                    </li>                    <li class='faqInP5'>                        <div><span class='faqInFb'>복구</span>를 누르거나 클릭</div>                        <div class='faqInP5'>PC 새로 고치기에서 파일에 영향을 주지 않고 <span class='faqInFb'>시작하기</span>를 누르거나 클릭하십시오.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>'다음'</span>을 클릭하십시오.                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>'새로 고침'</span>을 클릭하여 새로 고침 프로세스를 시작하십시오.                    </li>                    <li class='faqInP5'>                        새로 고침 프로세스가 완료되면, 바탕 화면에서 제거된 앱 목록을 찾을 수 있습니다                    </li>                    <li class='faqInP5'>                        시스템을 새로 고치는 동안 제거 된 앱을 찾을 수 있습니다                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> 시작 메뉴에서 사용할 수 있는 검색 도구에서 <span class='faqInFb'>새로 고침</span>을 검색합니다.</li>                    <li class='faqInP5'>                        <div>아래와 같이 검색 결과에서 <span class='faqInFb'>'파일에 영향을 주지 않고 PC 새로 고침'</span>을 클릭하십시오.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div><span class='faqInFb'>'파일에 영향을 주지 않고 PC 새로 고침'</span> 제목 바로 아래에 있는 <span class='faqInFb'>시작하기</span> 버튼을 클릭하여 Windows 10 PC 새로 고침을 시작하십시오.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        추가 정보    </div>    <div>        대부분의 경우, PC를 새로 고치기 시작하면 PC가 자체적으로 완료됩니다. 그러나 Windows에 누락된 파일이 필요한 경우, 복구 미디어(일반적으로 DVD 디스크 또는 썸 드라이브)를 삽입하라는 메시지가 표시됩니다. 그런 경우, PC에 따라 필요한 사항이 달라집니다.    </div>    <div class='faqInP10'>        DVD를 사용하여 PC를 Windows 8.1 또는 Windows RT 8.1로 업그레이드한 경우, 해당 디스크를 사용하십시오. Windows 8.1 또는 Windows RT 8.1 미디어가 없는 경우, Microsoft 지원에 문의하십시오.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        PC를 새로 고치는 방법    </div>    <hr>    <div class='faqInFs25FbP5'>        증상    </div>    <div class='faqInP5'>        PC가 수행한 작업을 수행한 경우는 물론이고 작업을 수행하지 않는 경우 및 그 이유를 모르는 경우, 개인 파일을 삭제하거나 설정을 변경하지 않고 PC를 새로 고칠 수 있습니다. Windows는 개인 파일을 삭제하지 않고 새로 설치하는 것과 비슷하게 PC를 \"새로 고칠\" 수 있습니다.    </div>    <div class='faqInP5'>        PC를 새로 고치면, 파일과 사용자 설정 설정이 변경되지 않습니다    </div>    <div class='faqInP5'>        <ul>            <li>PC 설정이 기본값으로 다시 변경됨</li>            <li>Windows 스토어의 앱이 보관됨</li>            <li>디스크 또는 웹 사이트에서 설치한 앱이 제거됨</li>            <li>제거된 파일 목록이 바탕 화면에 저장됨</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        영향을 받는 브랜드    </div>    <div>        <ul>            <li>모든 데스크탑 및 노트북</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        운영 체제    </div>    <div>        <ul>            <li>Windows 8, 8.1 및 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        해결 방법    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        <span class='faqInFb'>설정</span>을 누르거나 클릭                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>업데이트 및 복구</span>를 누르거나 클릭                    </li>                    <li class='faqInP5'>                        <div><span class='faqInFb'>복구</span>를 누르거나 클릭</div>                        <div class='faqInP5'>PC 새로 고치기에서 파일에 영향을 주지 않고 <span class='faqInFb'>시작하기</span>를 누르거나 클릭하십시오.</div>                        <div><img src='./../../../../assets/images/qa/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>'다음'</span>을 클릭하십시오.                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>'새로 고침'</span>을 클릭하여 새로 고침 프로세스를 시작하십시오.                    </li>                    <li class='faqInP5'>                        새로 고침 프로세스가 완료되면, 바탕 화면에서 제거된 앱 목록을 찾을 수 있습니다                    </li>                    <li class='faqInP5'>                        시스템을 새로 고치는 동안 제거 된 앱을 찾을 수 있습니다                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> 시작 메뉴에서 사용할 수 있는 검색 도구에서 <span class='faqInFb'>새로 고침</span>을 검색합니다.</li>                    <li class='faqInP5'>                        <div>아래와 같이 검색 결과에서 <span class='faqInFb'>'파일에 영향을 주지 않고 PC 새로 고침'</span>을 클릭하십시오.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div><span class='faqInFb'>'파일에 영향을 주지 않고 PC 새로 고침'</span> 제목 바로 아래에 있는 <span class='faqInFb'>시작하기</span> 버튼을 클릭하여 Windows 10 PC 새로 고침을 시작하십시오.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        추가 정보    </div>    <div>        대부분의 경우, PC를 새로 고치기 시작하면 PC가 자체적으로 완료됩니다. 그러나 Windows에 누락된 파일이 필요한 경우, 복구 미디어(일반적으로 DVD 디스크 또는 썸 드라이브)를 삽입하라는 메시지가 표시됩니다. 그런 경우, PC에 따라 필요한 사항이 달라집니다.    </div>    <div class='faqInP10'>        DVD를 사용하여 PC를 Windows 8.1 또는 Windows RT 8.1로 업그레이드한 경우, 해당 디스크를 사용하십시오. Windows 8.1 또는 Windows RT 8.1 미디어가 없는 경우, Microsoft 지원에 문의하십시오.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2359,7 +2510,7 @@
         },
         "question4": {
             "title": "시스템의 배터리 사용 확인",
-            "description": "<div class='faqInFs4Fb'>    시스템의 배터리 사용 확인</div><hr><h3 class='faqInFs25FbP10'>증상</h3><p>Windows 10에는 노트북의 전력을 소모하는 것이 무엇인지 나타내는 새로운 <strong>배터리 사용</strong> 화면이 화면이 포함되어 있습니다. 이 화면은 데스크톱 앱과 Windows 10 \\\"범용\\\" 앱에서 모두 너무 많은 전력을 사용하는 앱이 어떤 것인지 정확하게 알려 줍니다.</p><h3 class='faqInFs25FbP10'>영향을 받는 브랜드</h3><ul>    <li>Lenovo 노트북, 데스크탑</li></ul><h3 class='faqInFs25FbP10'>영향을 받는 시스템</h3><ul>    <li>모두</li></ul><h3 class='faqInFs25FbP10'>운영 체제</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>해결 방법</h3><p>이 기능은 Windows 10에서 새로운 기능입니다. 기존의 <strong>제어판</strong> 보기에 저장되어 있지 않으므로 먼저 이 기능을 찾아야 하며, 새로운 <strong>\\\"설정\\\"</strong> 앱에 저장되어 있습니다</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. 배터리 사용 화면 검색</h3></p><p>1. 시작 메뉴에서 <strong>\\\"설정\\\"</strong> 옵션을 클릭하거나 누르십시오</p><p>2. <strong>설정</strong>에서 <strong>\\\"시스템\\\"</strong>과 <strong>\\\"배터리 절약 모드\\\"<br />를 차례로 선택합니다.<br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. 자세한 정보를 보려면, 이 제목 아래에 있는 <strong>\\\"배터리 사용\\\"</strong> 링크를 클릭하십시오. </p><p> </p><h3 class='faqInFs25FbP10'>B. 전원 사용 분석</h3><p>4 배터리 사용 화면을 변경하여 지난 24시간에서 48시간까지 또는 지난 주부터 마지막 시간까지 배터리 사용을 표시하기 위해 할 수 있음</p><p>5 <strong>\\\"시스템\\\"</strong>, \\\"<strong>디스플레이,</strong>\\\" 및 \\\"<strong>Wi-Fi\\\"</strong> 비율. 이 기능은 시스템 프로세스에서 사용한 배터리 전력량를 나타냅니다, 디스플레이.</p><p>6 <strong>\\\"사용 중\\\"</strong> 및 <strong>\\\"배경\\\"</strong> 옵션에서는 이 애플리케이션을 사용하는 동안 배경에서 실행되는 애플리케이션에 비해 얼마나 많은 전력이 사용되는지 나타냅니다.</p><p>7 앱이 배경에서 전력을 사용하는 경우, <strong>\\\"배경 앱 설정 변경\\\" </strong>링크를 클릭하거나 눌러 앱이 배경에서 실행되지 않도록 구성할 수 있습니다. 이 기능은 범용 Windows 10 응용 프로그램에서만 작동합니다.</p><p>8. 아래로 더 스크롤하면 응용 프로그램 목록이 표시되며, 이 기능의 가장 유용한 섹션으로 간주할 수 있습니다. 이 프로그램은 해당 기간에 배터리 전력을 사용하여 앱 목록을 표시하고, 각 앱에 사용된 배터리 전원의 비율이 얼마인지을 보여 줌</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    시스템의 배터리 사용 확인</div><hr><h3 class='faqInFs25FbP10'>증상</h3><p>Windows 10에는 노트북의 전력을 소모하는 것이 무엇인지 나타내는 새로운 <strong>배터리 사용</strong> 화면이 화면이 포함되어 있습니다. 이 화면은 데스크톱 앱과 Windows 10 \"범용\" 앱에서 모두 너무 많은 전력을 사용하는 앱이 어떤 것인지 정확하게 알려 줍니다.</p><h3 class='faqInFs25FbP10'>영향을 받는 브랜드</h3><ul>    <li>Lenovo 노트북, 데스크탑</li></ul><h3 class='faqInFs25FbP10'>영향을 받는 시스템</h3><ul>    <li>모두</li></ul><h3 class='faqInFs25FbP10'>운영 체제</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>해결 방법</h3><p>이 기능은 Windows 10에서 새로운 기능입니다. 기존의 <strong>제어판</strong> 보기에 저장되어 있지 않으므로 먼저 이 기능을 찾아야 하며, 새로운 <strong>\"설정\"</strong> 앱에 저장되어 있습니다</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. 배터리 사용 화면 검색</h3></p><p>1. 시작 메뉴에서 <strong>\"설정\"</strong> 옵션을 클릭하거나 누르십시오</p><p>2. <strong>설정</strong>에서 <strong>\"시스템\"</strong>과 <strong>\"배터리 절약 모드\"<br />를 차례로 선택합니다.<br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. 자세한 정보를 보려면, 이 제목 아래에 있는 <strong>\"배터리 사용\"</strong> 링크를 클릭하십시오. </p><p> </p><h3 class='faqInFs25FbP10'>B. 전원 사용 분석</h3><p>4. 배터리 사용 화면을 변경하여 지난 24시간에서 48시간까지 또는 지난 주부터 마지막 시간까지 배터리 사용을 표시하기 위해 할 수 있음</p><p>5. <strong>\"시스템\"</strong>, \"<strong>디스플레이,</strong>\" 및 \"<strong>Wi-Fi\"</strong> 비율. 이 기능은 시스템 프로세스에서 사용한 배터리 전력량를 나타냅니다, 디스플레이.</p><p>6. <strong>\"사용 중\"</strong> 및 <strong>\"배경\"</strong> 옵션에서는 이 애플리케이션을 사용하는 동안 배경에서 실행되는 애플리케이션에 비해 얼마나 많은 전력이 사용되는지 나타냅니다.</p><p>7. 앱이 배경에서 전력을 사용하는 경우, <strong>\"배경 앱 설정 변경\" </strong>링크를 클릭하거나 눌러 앱이 배경에서 실행되지 않도록 구성할 수 있습니다. 이 기능은 범용 Windows 10 응용 프로그램에서만 작동합니다.</p><p>8. 아래로 더 스크롤하면 응용 프로그램 목록이 표시되며, 이 기능의 가장 유용한 섹션으로 간주할 수 있습니다. 이 프로그램은 해당 기간에 배터리 전력을 사용하여 앱 목록을 표시하고, 각 앱에 사용된 배터리 전원의 비율이 얼마인지을 보여 줌</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2428,7 +2579,6 @@
         "question5": {
             "title": "태블릿 같은 PC 사용",
             "description": "<div class='faqInFs4Fb'>    태블릿 같은 PC 사용</div><hr><p>태블릿 모드는 터치 스크린 장치가 있는 경우 Windows를 더욱 직관적이고 사용하기 쉽게 만듭니다.</p><h3 class='faqInFs25FbP10'>태블릿 모드 사용</h3><p>태블릿 모드를 켜려면, 작업 표시줄에서 <strong>관리 센터</strong>를 선택한 다음 <strong>태블릿 모드</strong>를 선택하십시오.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>주</h3><p>장치에서 태블릿 모드를 자동으로 켤 수 있는지 확인하려면, 제조업체 웹 사이트에서 장치를 검색하십시오. 이 기능에 대한 지원은 하드웨어, 설치된 드라이버 및 제조업체에서 장치를 설정하는 방법에 따라 다릅니다. </p><p> </p><p>태블릿 모드에서는 앱이 전체 화면을 열기 때문에 작업 공간이 더 많이 제공됩니다. 앱을 닫으려면, 화면 맨 아래로 끄십시오.</p><p> </p><h3 class='faqInFs25FbP10'>팁</h3><p>작업 표시줄은 PC가 태블릿 모드에 있는 경우에 사용할 수 있지만, 화면에 여유 공간을 추가로 원한다면 숨길 수 있습니다. <strong>시작</strong> 버튼, <strong>설정 </strong>> <strong>시스템 </strong>> <strong> 태블릿 모드</strong>를 차례로 선택한 다음, <strong>태블릿 모드에서 자동으로 작업 표시줄 자동으로 숨기기</strong>를 켭니다. 숨겨진 작업 표시줄을 표시하려면, 화면 하단에서 위로 살짝 밀어 올리거나 마우스를 사용하여 위치를 가리킵니다.</p><h3 class='faqInFs25FbP10'>동시에 두 개의 앱 사용</h3><p>태블릿 모드에서 두 개의 앱을 나란히 사용하려면, 열려 있는 앱을 아래로 및 옆으로 끄십시오. 그러면 표시되는 위치를 볼 수 있으며, 옆에 열려 있는 앱이 표시됩니다.</p><p>이 보기에서 다음을 수행할 수도 있습니다.</p><ul>    <li>두 개의 딸각 소리가 나는 앱 사이의 공유 가장자리를 사용하여 동시에 두 앱의 크기를 조정하십시오.</li>    <li>작업 보기에서 새 앱 열기 &mdash; <strong>작업 표시줄</strong>에서 작업 보기를 선택하고 앱을 선택한 후, 한 쪽으로 끌어서 분할된 화면에 맞춥니다.</li>    <li>앱에서 작업 표시줄의 뒤로 버튼을 사용하여 돌아가거나 전에 사용하던 앱을 여십시오.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2467,7 +2617,7 @@
         },
         "question6": {
             "title": "개인 비서 Cortana 알아 보기",
-            "description": "<div class='faqInFs4Fb'>    개인 비서 Cortana 알아 보기</div><hr><h3 class='faqInFs25FbP10'>Cortana란?</h3><hr /><p>Cortana는 사용자의 디지털 에이전트입니다. 작업을 완료하는 데 도움을 줄 수 있습니다.</p><p>Cortana를 많이 사용할수록, 경험을 더 많이 개인화할 수 있습니다.</p><p>시작하려면, 검색 상자에 질문을 입력하거나 마이크를 선택한 후 Cortana에게 문의하십시오. (모든 유형의 PC에서 입력을 할 수는 있지만, 말할 때 마이크가 필요합니다.)</p><p>무엇을 말해야 할 지 모르는 경우, 작업 표시줄의 검색 상자를 선택하면 잠금 화면 및 Cortana 홈에 제안이 표시됩니다.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>홈 2, 노트북 3, 설정 4, 피드백</li></ol><p>Cortana가 수행할 수 있는 작업은 다음과 같습니다.</p><ul>    <li>시간, 장소 또는 사람을 기준으로 미리 알림을 제공합니다.</li>    <li>패키지, 팀, 취미 및 항공편을 추적합니다.</li>    <li>이메일 및 텍스트를 전송합니다.</li>    <li>일정을 관리하고 최신 상태를 유지할 수 있습니다.</li>    <li>목록을 작성 및 관리합니다.</li>    <li>잡담 및 게임 재생.</li>    <li>팩트, 파일, 장소 및 정보를 찾습니다.</li>    <li>시스템에서 앱을 여십시오.</li></ul><h3 class='faqInFs25FbP10'>실행 방법: 미리 알림 설정</h3><hr /><p>Cortana가 할 수 있는 사항 중 하나는 미리 알림을 제공하는 것입니다. 시간, 장소 또는 사람을 기준으로 해야 할 일들을 알려 줄 수 있습니다.</p><p>예를 들어, '다음 번에 요청할 때 Tanya를 축하해야 한다는 것을 미리'이라고 입력하십시오.</p><p>Tanya에서 전화를 받을 때 미리 알림이 표시됩니다.</p><p>추가 보너스 &mdash; iPhone 또는 Android용 Windows 전화 또는 Cortana가 있는 경우, Cortana를 설정하여 PC와 휴대폰 사이의 알림을 동기화할 수 있습니다.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>안녕 Cortana?</h3><hr /><p>\\\"안녕 Cortana\\\"라고 말할 때마다 들을 수 있도록 Cortana를 설정하십시오. 작업 표시줄의 검색 상자를 선택하여 Cortana 홈을 엽니다. 그런 다음, <strong>설정</strong>을 선택하여 <strong>Cortana에게 '안녕 Cortana'에 응답하게 하기'를 켜십시오.</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>주</p><p>Cortana는 특정 국가/지역에서만 사용할 수 있으며, 일부 Cortana 기능은 어디에서든 사용할 수 있는 것은 아닙니다.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    개인 비서 Cortana 알아 보기</div><hr><h3 class='faqInFs25FbP10'>Cortana란?</h3><hr /><p>Cortana는 사용자의 디지털 에이전트입니다. 작업을 완료하는 데 도움을 줄 수 있습니다.</p><p>Cortana를 많이 사용할수록, 경험을 더 많이 개인화할 수 있습니다.</p><p>시작하려면, 검색 상자에 질문을 입력하거나 마이크를 선택한 후 Cortana에게 문의하십시오. (모든 유형의 PC에서 입력을 할 수는 있지만, 말할 때 마이크가 필요합니다.)</p><p>무엇을 말해야 할 지 모르는 경우, 작업 표시줄의 검색 상자를 선택하면 잠금 화면 및 Cortana 홈에 제안이 표시됩니다.</p><p><img src='./../../../assets/images/qa/6.1.jpg' /></p><ol>    <li>홈 2. 노트북 3. 설정 4. 피드백</li></ol><p>Cortana가 수행할 수 있는 작업은 다음과 같습니다.</p><ul>    <li>시간, 장소 또는 사람을 기준으로 미리 알림을 제공합니다.</li>    <li>패키지, 팀, 취미 및 항공편을 추적합니다.</li>    <li>이메일 및 텍스트를 전송합니다.</li>    <li>일정을 관리하고 최신 상태를 유지할 수 있습니다.</li>    <li>목록을 작성 및 관리합니다.</li>    <li>잡담 및 게임 재생.</li>    <li>팩트, 파일, 장소 및 정보를 찾습니다.</li>    <li>시스템에서 앱을 여십시오.</li></ul><h3 class='faqInFs25FbP10'>실행 방법: 미리 알림 설정</h3><hr /><p>Cortana가 할 수 있는 사항 중 하나는 미리 알림을 제공하는 것입니다. 시간, 장소 또는 사람을 기준으로 해야 할 일들을 알려 줄 수 있습니다.</p><p>예를 들어, '다음 번에 요청할 때 Tanya를 축하해야 한다는 것을 미리'이라고 입력하십시오.</p><p>Tanya에서 전화를 받을 때 미리 알림이 표시됩니다.</p><p>추가 보너스 &mdash; iPhone 또는 Android용 Windows 전화 또는 Cortana가 있는 경우, Cortana를 설정하여 PC와 휴대폰 사이의 알림을 동기화할 수 있습니다.</p><p><img src='./../../../assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>안녕 Cortana?</h3><hr /><p>\"안녕 Cortana\"라고 말할 때마다 들을 수 있도록 Cortana를 설정하십시오. 작업 표시줄의 검색 상자를 선택하여 Cortana 홈을 엽니다. 그런 다음, <strong>설정</strong>을 선택하여 <strong>Cortana에게 '안녕 Cortana'에 응답하게 하기'를 켜십시오.</strong></p><p><img src='./../../../assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>주</p><p>Cortana는 특정 국가/지역에서만 사용할 수 있으며, 일부 Cortana 기능은 어디에서든 사용할 수 있는 것은 아닙니다.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2511,12 +2661,14 @@
         "bullets2": "보안 어드바이저는보안을 쉽게 관리할 수 있습니다 (선택된 시스템에서 사용 가능).",
         "bullets3": "자동 업데이트를 사용하여 장치를 최상의 상태로 유지 (선택된 시스템에서 사용 가능).",
         "subtitle1": "장치는 어떻게 사용하려고 합니까?",
-        "subtitle2": "관심 사항을 말해 주십시오",
+        "subtitle2": "관심 사항을 말해 주십시오(옵션)",
         "personal": "개인용",
         "business": "비즈니스용",
         "custom": "사용 환경의 개인 설정",
+        "professional": "전문적 용도",
         "privacytitle": "익명으로 사용 통계를 수집하여 앱 품질을 개선하는 데 도움을 줄 수 있습니다.",
         "moreInterest": "+ 취미 추가",
+        "toolbartitle": "Lenovo Vantage 도구 모음 사용 (권장)",
         "title1": "에 오신 것을 환영합니다",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2547,13 +2699,16 @@
         "actionTriggered": "트리거된 작업",
         "actionTriggeredDescription": "중요/권장 업데이트 자동 설치와 같은 사용자 선택 설정에 의해 트리거된 메시지.",
         "OtherSettings": "기타 설정",
-        "usageStatistics": "사용 현황 통계",
-        "usageStatisticsDescription": "Lenovo에 익명으로 사용 통계 보내기.",
-        "deviceStatistics": "Lenovo와 통계 데이터 공유",
-        "deviceStatisticsDescription": "컴퓨터의 신뢰성과 디자인을 더욱 향상하고 기능을 한층 최적화할 수 있도록 Lenovo와 통계 데이터를 공유합니다.",
-        "userProfile": "User profile",
+        "usageStatistics": "Vantage 사용 통계",
+        "usageStatisticsDescription": "Vantage 향상에 도움이 되는 익명의 사용 통계를 보내 주십시오.",
+        "deviceStatistics": "Lenovo 장치 통계",
+        "deviceStatisticsDescription": "품질, 안정성 및 차세대 장치를 개선하는 데 도움이 되는 익명의 장치 데이터를 보내 주십시오.",
+        "userProfile": "사용자 프로필",
         "Note": "참고: ",
-        "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다."
+        "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다.",
+        "betaSettingTitle": "베타 프로그램",
+        "betaProgram": "베타 프로그램",
+        "betaSettingDescription": "개발 중인 최신 기능을 써보세요."
     },
     "modernPreload": {
         "cancel": "취소",
@@ -2682,7 +2837,8 @@
                 "description": "검색 및 복구를 실행하면, 데이터가 손실될 수 있습니다. 이 작업을 실행하기 전에 백업을 작성하는 것이 좋습니다. 계속하시겠습니까?",
                 "yes": "예",
                 "no": "아니요"
-            }
+            },
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "전문 진단 도구 다운로드",
@@ -2707,43 +2863,219 @@
         "cancelTextPrompt": "정말 취소하시겠습니까?",
         "cancelTextProgress": "취소 진행을 기다리십시오",
         "pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오.",
-        "testNotApplicable": "사용자 정의 스캔에 적용되지 않음"
+        "testNotApplicable": "사용자 정의 스캔에 적용되지 않음",
+        "waitScanStarts": "스캔 시작까지 기다려 주십시오",
+        "reminderTimeRetrieveHardwareInformation": "이 프로세스는 하드웨어 정보 검색에 시간이 다소 소요될 수 있습니다",
+        "retrievingHardwareInformation": "하드웨어 정보 검색 중...",
+        "pluginTokens": {
+            "cpu": "프로세서",
+            "memory": "메모리",
+            "motherboard": "마더보드",
+            "pci_express": "PCI Express",
+            "storage": "저장 장치",
+            "wireless": "무선"
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
-    },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "설치에 실패했습니다. 다시 시도하십시오.",
-                "networkError": "네트워크 오류가 발생했습니다.",
-                "installationCancelled": "설치가 취소되었습니다."
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
             }
         },
-        "menuText": {
-            "adobeRedemption": "Adobe 상환",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "설치",
-                "installing": "설치",
-                "installed": "설치됨",
-                "launch": "시작",
-                "seeMore": "자세한 정보"
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
             },
-            "fieldName": {
-                "description": "설명",
-                "screenshots": "스크린샷",
-                "additionalInformation": "추가 정보",
-                "by": "개발자:",
-                "updated": "업데이트 날짜:",
-                "type": "유형:",
-                "category": "범주:",
-                "legalAgreement": "합법적 계약",
-                "readMore": "자세히 읽기",
-                "readLess": "간단하게 읽기"
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
             }
         }
     },
@@ -2825,7 +3157,7 @@
             "welcomeTitle": "welcome to connected home security",
             "welcomeSubTitle": "30 days of protection for free",
             "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
             "locationTitle": "Enable location permissions",
             "locationPermission": "Allow Lenovo Vantage to access this device's location?",
             "allow": "Allow",
@@ -2863,5 +3195,64 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "이제 사용자 모르게 개인 정보가 온라인 추적기에 의해 침해되거나 사용되었는지 확인할 수 있습니다.",
+            "security": "알고 있습니다? 바이러스 백신 소프트웨어가 설치되어 있지 않더라도, 장치에 대한 기본 보안 보호 기능이 제공됩니다.",
+            "connectedHomeSecurity": "가정에서 네트워크 보안에 대한 실시간 모니터링 및 경고를 얻습니다. 스마트 장치가 보안 공격을 하고 있는 경우, 첫 번째 사용자는 이를 확인할 수 있습니다."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "설치에 실패했습니다. 다시 시도하십시오.",
+                "networkError": "네트워크 오류가 발생했습니다.",
+                "installationCancelled": "설치가 취소되었습니다."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe 상환",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "설치",
+                "installing": "설치",
+                "downloading": "다운로드 중",
+                "installed": "설치됨",
+                "launch": "시작",
+                "seeMore": "자세한 정보"
+            },
+            "fieldName": {
+                "description": "설명",
+                "screenshots": "스크린샷",
+                "additionalInformation": "추가 정보",
+                "by": "개발자:",
+                "updated": "업데이트 날짜:",
+                "type": "유형:",
+                "category": "범주:",
+                "legalAgreement": "합법적 계약",
+                "readMore": "자세히 읽기",
+                "readLess": "간단하게 읽기"
+            }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Lenovo Adobe 디자이너 제품군 독점 제공"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Lenovo 디지털 서비스"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro는 영화, TV 및 웹을 위한 최고의 비디오 편집 소프트웨어입니다. Premiere Pro에는 모든 장치에서 비디오를 네트워크와 공유할 수 있는 올인원 앱인 Premiere Rush 기능이 포함되어 있습니다.",
+            "subtitle12": "Creative Cloud Photography 요금제",
+            "body12": "Lightroom을 사용하여 사진 편집, 구성, 저장 및 공유가 가능하며, Photoshop을 통해 이미지를 원하는 대로 변형할 수 있습니다.",
+            "selectButton": "선택",
+            "subtitle2": "간소화된 올인원",
+            "body2": "올인원 PC는 9세대 Intel® Core™ 프로세서를 사용하며, 간편함, 하드웨어 기반 보안성 및 고해상도 디스플레이까지 모두 포함하는 데스크탑의 모든 기능을 세련된 디스플레이로 제공합니다."
+        }
+    }
 }

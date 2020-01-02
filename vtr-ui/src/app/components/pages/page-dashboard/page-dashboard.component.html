@@ -1,15 +1,16 @@
 <vtr-page-layout
-	[title]="deviceService.isArm || !commonService.isOnline ||!userService.auth ||!userService.hasFirstName? ('lenovoId.welcomeTextWithoutUserName' | translate) : ('lenovoId.welcomeText' | translate:{firstName:userService.firstName})"
+	[title]="deviceService.isArm || !commonService.isOnline || !userService.auth || !userService.hasFirstName || !userService.isLenovoIdSupported() ? (dashboardService.welcomeTextWithoutUserName | translate) : '<pre>' + (dashboardService.welcomeText | translate:{firstName:userService.firstName}) + '</pre>'"
 	[textId]="'dashboard'"
 	[pageCssClass]="'dashboard'"
 	[shiftLeftUp]="true"
-	[shiftRightUp]="true">
+	[shiftRightUp]="true"
+	[showDemo]="dccService.showDemo">
 
 	<left-content>
 		<div class="container-fluid">
 			<div class="row"
 				*ngIf="!isOnline">
-				<div class="col col-12 p-0">
+				<div class="col col-12 p-0 pb-40">
 					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
 						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
 						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
@@ -19,7 +20,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-12 pb-20 pt-0 px-0">
+				<div class="col-sm-12 pb-20 pt-0 px-0" [hidden]="canShowDccDemo$ | async">
 					<vtr-widget-carousel [data]="heroBannerItems"
 						order="1"
 						source="title"
@@ -35,7 +36,23 @@
 						link="thumbnailUrl">
 					</vtr-widget-carousel>
 				</div>
-				<div class="col-xl-6 py-20 card-left">
+				<div class="col-sm-12 pb-20 pt-0 px-0" [hidden]="!(canShowDccDemo$ | async)">
+					<vtr-widget-carousel [data]="heroBannerDemoItems"
+						order="1"
+						source="title"
+						[interval]="5000"
+						cardTitle="title"
+						pauseOnHover="true"
+						image="url"
+						[showNavigationArrows]="true"
+						[showNavigationIndicators]="true"
+						[carouselId]="'dashboard-lnk-hero-banner'"
+						id="dashboard-lnk-hero-banner"
+						aria-label="dashboard-lnk-hero-banner"
+						link="thumbnailUrl">
+					</vtr-widget-carousel>
+				</div>
+				<div class="col-xl-6 col-sm-6 py-20 card-left">
 					<vtr-container-card order="2"
 						[itemID]="cardContentPositionB.Id"
 						[img]="cardContentPositionB.FeatureImage"
@@ -46,16 +63,16 @@
 						[actionType]="cardContentPositionB.ActionType"
 						[actionLink]="cardContentPositionB.ActionLink"
 						[dataSource]="cardContentPositionB.DataSource"
+						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionB.isLocal)"
 						[type]="'corner'"
-						[ratioX]="4"
-						[ratioY]="2"
+						[ratio]="2"
 						[cornerShift]="'large'"
 						[containerCardId]="'dashboard-lnk-content-b'"
 						id="dashboard-card-b"
 						aria-label="dashboard-card-b">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 py-20 card-right">
+				<div class="col-xl-6 col-sm-6 py-20 card-right">
 					<vtr-container-card order="3"
 						[itemID]="cardContentPositionC.Id"
 						[img]="cardContentPositionC.FeatureImage"
@@ -65,9 +82,9 @@
 						[action]="cardContentPositionC.Action"
 						[actionType]="cardContentPositionC.ActionType"
 						[actionLink]="cardContentPositionC.ActionLink"
+						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionC.isLocal)"
 						[type]="'corner'"
-						[ratioX]="4"
-						[ratioY]="2"
+						[ratio]="2"
 						[containerCardId]="'dashboard-lnk-content-c'"
 						id="dashboard-card-c"
 						aria-label="dashboard-card-c">
@@ -82,15 +99,16 @@
 						[action]="cardContentPositionD.Action"
 						[actionType]="cardContentPositionD.ActionType"
 						[actionLink]="cardContentPositionD.ActionLink"
+						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionD.isLocal)"
 						[type]="'highlight'"
-						[ratioX]="8"
-						[ratioY]="2"
+						[ratio]="4"
 						[containerCardId]="'dashboard-lnk-content-d'"
 						id="dashboard-card-d"
 						aria-label="dashboard-card-d">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 py-20 card-left">
+				<div class="col-xl-6 col-sm-6 py-20 card-left"
+					[hidden]="deviceService.isSMode">
 					<vtr-container-card order="5"
 						[itemID]="cardContentPositionE.Id"
 						[img]="cardContentPositionE.FeatureImage"
@@ -99,15 +117,16 @@
 						[action]="cardContentPositionE.Action"
 						[actionType]="cardContentPositionE.ActionType"
 						[actionLink]="cardContentPositionE.ActionLink"
+						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionE.isLocal)"
 						[type]="'article'"
-						[ratioX]="4"
-						[ratioY]="4"
+						[ratio]="1"
 						[containerCardId]="'dashboard-lnk-content-e'"
 						id="dashboard-card-e"
 						aria-label="dashboard-card-e">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 py-20 card-right">
+				<div class="col-xl-6 col-sm-6 py-20 card-right"
+					[hidden]="deviceService.isSMode">
 					<vtr-container-card order="6"
 						[itemID]="cardContentPositionF.Id"
 						[img]="cardContentPositionF.FeatureImage"
@@ -116,9 +135,9 @@
 						[action]="cardContentPositionF.Action"
 						[actionType]="cardContentPositionF.ActionType"
 						[actionLink]="cardContentPositionF.ActionLink"
+						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionF.isLocal)"
 						[type]="'article'"
-						[ratioX]="4"
-						[ratioY]="4"
+						[ratio]="1"
 						[containerCardId]="'dashboard-lnk-content-f'"
 						id="dashboard-card-f"
 						aria-label="dashboard-card-f">
@@ -131,26 +150,28 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row"
-				*ngIf="warrantyData && deviceService.showWarranty">
-				<div class="col-sm-12 px-0 pb-20">
+				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible">
+				<div class="col-sm-12 col-md-12 pb-20 px-0">
 					<vtr-widget-dashboard-warranty [item]="warrantyData"
 						[isConnected]="isOnline">
 					</vtr-widget-dashboard-warranty>
 				</div>
 			</div>
 			<div class="row"
-				*ngIf="!deviceService.showWarranty">
-				<div class="col-sm-12 px-0 pb-0">
+				*ngIf="!(warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible)">
+				<div class="col-sm-12 col-md-12 pb-20 px-0">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
 						[actionName]="'dashboard.feedback.button' | translate"
 						[action]="'feedback'"
+						[isOnline]="isOnline"
 						(feedBackClick)="onFeedbackModal()">
 					</vtr-widget-feedback>
 				</div>
 			</div>
+
 			<div class="row"
-				*ngIf="!deviceService.isArm">
+				*ngIf="!deviceService.isArm && showQuickSettings">
 				<div class="col-sm-12 px-0 py-20">
 					<vtr-widget-quicksettings
 						[vtrAppSearchScroller]="['search-microphone-quick', 'search-camera-quick', 'search-eye-care-quick']">
@@ -159,7 +180,7 @@
 			</div>
 			<div class="row"
 				*ngIf="!deviceService.isArm">
-				<div class="col-sm-12 px-0 py-20">
+				<div class="col-sm-12 px-0 mt-20">
 					<vtr-widget-status componentName="system status"
 						[title]="'dashboard.systemStatus.title' | translate"
 						[description]="'dashboard.systemStatus.subtitle' | translate"
@@ -180,23 +201,23 @@
 				</div>
 			</div>
 
-			<div class="row"
+			<!-- <div class="row"
 				*ngIf="!deviceService.isArm && !deviceService.isSMode && brand !== 1 && !deviceService.isGaming">
 				<div class="col-sm-12 px-0 py-20">
 					<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
 						[linkId]="'dashboard'">
 					</vtr-widget-security-status>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="row"
-				*ngIf="deviceService.showWarranty"
+				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible"
 				[vtrAppSearchScroller]="['search-feedback']">
 				<div class="col-sm-12 px-0 py-20">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
 						[actionName]="'dashboard.feedback.button' | translate"
-						[action]="'feedback'"
+						[isOnline]="isOnline"
 						(feedBackClick)="onFeedbackModal()">
 					</vtr-widget-feedback>
 				</div>

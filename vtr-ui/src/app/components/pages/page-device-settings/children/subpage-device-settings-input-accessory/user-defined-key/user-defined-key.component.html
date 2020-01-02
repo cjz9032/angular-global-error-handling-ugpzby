@@ -1,5 +1,5 @@
 <li class="pt-3 user-defined-key-block"
-	*ngIf="hasUDKCapability">
+	*ngIf="hasUDKCapability && machineType === 1">
 	<vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.userDefinedKey.title' | translate"
 		componentName="User defined key"
 		[caption]="'device.deviceSettings.inputAccessories.userDefinedKey.caption' | translate"
@@ -13,7 +13,7 @@
 				<div class="row">
 					<div class="col-auto pl-0">
 						<img class="img-fluid"
-							src="../../../../../../assets/images/F12-key.PNG">
+							src="assets/images/F12-key.PNG">
 						<!-- <p class="pressf12"
 							style="text-align: center">press F12</p> -->
 					</div>
@@ -77,21 +77,30 @@
 											<label id="ip-webseiteurl"
 												attr.aria-label="ip-webseiteurl">{{'device.deviceSettings.inputAccessories.userDefinedKey.website.url' | translate}}</label>
 											<textarea class="form-control"
+												spellcheck="false"
 												[(ngModel)]="url"
+												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.website.placeholder'
+										| translate"
 												name="url"
-												required
-												[pattern]="hyperLinkPatterns"></textarea>
+												required></textarea>
 										</div>
 										<div class="col-12">
+											<div *ngIf="isUDFSetSuccessVisible"
+												class="select-text pt-3 udf-set-success">
+												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'
+										| translate}}
+											</div>
+											<div *ngIf="isUDFSetFailedVisible"
+												class="select-text pt-3 udf-set-failed">
+												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.invalidURLMessage'
+										| translate}}
+											</div>
 											<button type="submit"
 												class="button"
-												[ngClass]="{'submittedButton':udkFormSubmitted, 'button':!udkFormSubmitted}"
-												[disabled]="form1.invalid || udkFormSubmitted"
 												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}"
 												id="ip-userdefined-key-applybtn"
 												attr.aria-label="ip-userdefined-key-applybtn">
 												{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
-
 											</button>
 										</div>
 									</div>
@@ -121,18 +130,25 @@
 											<textarea class="form-control"
 												[(ngModel)]="description"
 												name="description"
+												spellcheck="false"
+												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.enterText.placeholder' | translate"
 												(keydown)="onKeydown($event)"
 												required></textarea>
 										</div>
 										<div class="col-12">
+											<div *ngIf="isUDFSetSuccessVisible"
+												class="select-text pt-3 udf-set-success">
+												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'
+										| translate}}
+											</div>
 											<button id="ip-userdefined-key-applybtn"
 												attr.aria-label="ip-userdefined-key-applybtn"
 												type="submit"
 												class="button"
-												[ngClass]="{'submittedButton':udkFormSubmitted, 'button':!udkFormSubmitted}"
-												[disabled]="form2.invalid || udkFormSubmitted"
 												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
-												{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
+												{{
+											'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate
+											}}
 
 											</button>
 										</div>

@@ -20,6 +20,16 @@
 		margin-left: 2rem;
 	}
 
+	.log-content {
+		pre{
+			padding: 0 4rem 4rem;
+			width: 100%;
+			height: calc(100vh - 14rem);
+			overflow-y: auto;
+			box-sizing: border-box;
+		}
+	}
+
 	.iframe-content{
 		width: 100%;
 		height: 100%;
@@ -38,12 +48,14 @@
 	}
 
 	h1 {
+		height: 7rem;
+		line-height: 3rem;
 		font-size: 3.1rem;
 		font-weight: normal;
 		color: $blue-dark;
-		margin-bottom: 3rem;
-		margin-left: 2rem;
-		margin-top: 2rem;
+		padding-bottom: 3rem;
+		padding-left: 4rem;
+		padding-top: 2rem;
 	}
 
 	img,
@@ -73,7 +85,6 @@
 
 :host ::ng-deep {
 	pre {
-		font-family: "Segoe UI", Sans-serif;
 		font-size: 1.8rem;
 		color: $main_dark;
 		word-wrap: break-word;

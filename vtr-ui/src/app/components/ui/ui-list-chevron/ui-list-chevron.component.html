@@ -3,7 +3,7 @@
 		<li *ngFor="let item of items"
 			[ngClass]="getItemStatusClass(item)"
 			[hidden]="item.isHidden">
-			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
+			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false  and launch not existed then user routerLink to naviagate within Lenovo Vantage Application -->
 
 			<a routerLink="/{{item.path}}"
 				id="{{linkId}}-{{item.id}}"
@@ -18,7 +18,7 @@
 				[tabindex]="clickable ? 0 : -1"
 				role="link"
 				[title]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
-				*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
+				*ngIf="(item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)) && !item.launch">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col col-1 text-center"
@@ -65,13 +65,13 @@
 							<div class="row no-gutters"
 								[ngClass]="{'flex-column': item.notificationDetail}">
 								<div title="{{item.title}}"
-									class="title text-break {{'dirClass' | translate}}"
-									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}"
+									class="title text-break d-flex align-items-center {{'dirClass' | translate}}"
+									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}"
 									dir="{{'dir' | translate}}">
 									{{item.title}}
 								</div>
 								<div title="{{item.detail}}"
-									class="col-4 detail text-break {{'dirClass' | translate}}"
+									class="col-6 detail word-break-all d-flex align-items-center justify-content-end {{'dirClass' | translate}}"
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)"
 									dir="{{'dir' | translate}}">
@@ -185,12 +185,122 @@
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
 							<div class="row no-gutters">
 								<div title="{{item.title}}"
-									class="col-8 title text-break"
-									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}">
+									class="col-6 title text-break d-flex align-items-center"
+									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}">
 									{{item.title}}
 								</div>
 								<div title="{{item.detail}}"
-									class="col-4 detail text-break"
+									class="col-6 detail word-break-all d-flex align-items-center justify-content-end"
+									*ngIf="item.detail"
+									[ngClass]="getItemDetailClasses(item)">
+									{{item.detail}}
+								</div>
+							</div>
+						</div>
+						<div class="col col-1 text-center"
+							*ngIf="iconPlacement==='right'">
+							<div class="item-icon status"
+								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
+								<div class="icon-bkg"
+									id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
+									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+								</div>
+
+							</div>
+							<div *ngIf="item.status === 4"
+								id="{{'icon-loading-' + item.id}}"
+								class="spinner-content">
+								<div class="spinner-border text-secondary progress-spinner"
+									role="status"></div>
+							</div>
+							<fa-icon *ngIf="item.circle === 'questionCircle'"
+								class="question-icon"
+								placement="auto"
+								[icon]="['far', 'question-circle']"
+								container="body"></fa-icon>
+							<div class="item-icon"
+								*ngIf="item.icon">
+								<div class="icon-bkg"
+									id="{{'icon-' + item.icon + '-' + item.id}}">
+									<fa-icon [icon]="item.icon"></fa-icon>
+								</div>
+							</div>
+							<div class="item-icon-image"
+								*ngIf="item.iconPath">
+								<img [src]="item.iconPath|svgInline|async" />
+							</div>
+						</div>
+						<div *ngIf="chevronVisibility"
+							class="col col-1 text-center">
+							<div class="arrow"
+								id="{{'icon-arrow-' + item.id}}">
+								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+
+			<!--Open other apps if launch existed-->
+			<a href="javascript:void(0);"
+				id="{{linkId}}-{{item.id}}"
+				vtrMetrics
+				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
+				[metricsEvent]="metricsEvent"
+				(click)="item.launch()"
+				[ngClass]="clickable?'':'disabled'"
+				[tabindex]="clickable ? 0 : -1"
+				role="link"
+				[title]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
+				*ngIf="item.launch">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col col-1 text-center"
+							*ngIf="iconPlacement==='left'">
+							<div class="item-icon status"
+								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
+								<div class="icon-bkg"
+									id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
+									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+								</div>
+							</div>
+							<div *ngIf="item.status === 4"
+								id="{{'icon-loading-' + item.id}}"
+								class="spinner-content">
+								<div class="spinner-border text-secondary progress-spinner"
+									role="status"></div>
+							</div>
+							<fa-icon *ngIf="item.circle === 'questionCircle'"
+								class="question-icon"
+								placement="auto"
+								[icon]="['far', 'question-circle']"
+								container="body"></fa-icon>
+							<div class="item-icon"
+								*ngIf="item.icon">
+								<div class="icon-bkg"
+									id="{{'icon-' + item.icon + '-' + item.id}}">
+									<fa-icon [icon]="item.icon"></fa-icon>
+								</div>
+							</div>
+							<div class="item-icon-image"
+								*ngIf="item.iconPath">
+								<img [src]="item.iconPath|svgInline|async" />
+							</div>
+							<!-- <div class="item-icon-image" *ngIf="item.iconIClass">
+									<fa-icon [icon]=item.iconIClass></fa-icon>
+									{{item.iconIClass}}
+								</div> -->
+						</div>
+						<div class="col item-text"
+							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
+							<div class="row no-gutters">
+								<div title="{{item.title}}"
+									class="col-6 title text-break d-flex align-items-center"
+									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}">
+									{{item.title}}
+								</div>
+								<div title="{{item.detail}}"
+									class="col-6 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)">
 									{{item.detail}}

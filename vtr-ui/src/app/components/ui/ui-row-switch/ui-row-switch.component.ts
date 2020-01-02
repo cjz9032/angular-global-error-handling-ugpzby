@@ -57,8 +57,6 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 	@Input() metricsParent = '';
 	@Input() isAdminRequired = false;
 	@Input() isRebootRequired = false;
-	@Input() captionLink = '';
-	@Input() subDescription = '';
 	@Input() label = '';
 	public contentExpand = false;
 
@@ -73,11 +71,6 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 	ngOnInit() {
 		this.childContent = {};
 		this.childContent.innerHTML = '';
-		if (this.captionLink && this.subDescription) {
-			// this.caption = this.caption + ' ' + this.captionLink + this.subDescription;
-			this.caption = this.caption + ' ' + '<u class="text-primary">' + this.captionLink + '</u>' + ' ' + this.subDescription;
-			return this.caption;
-		}
 		// this.commonService.notification.subscribe((notification: AppNotification) => {
 		// 	this.onNotification(notification);
 		// });
@@ -90,7 +83,6 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 			if (this.isSwitchChecked) {
 				const modalRef = this.modalService.open(ModalBatteryChargeThresholdComponent, {
 					backdrop: 'static',
-					size: 'sm',
 					centered: true,
 					windowClass: 'Battery-Charge-Threshold-Modal'
 				});
@@ -107,6 +99,9 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 							this.toggleOnOff.emit($event);
 						} else if (result === 'negative') {
 							this.isSwitchChecked = !this.isSwitchChecked;
+							if (document.getElementById('ds-power-battery-threshold-onOffButton')) {
+								document.getElementById('ds-power-battery-threshold-onOffButton').focus();
+							}
 						}
 					},
 					reason => {

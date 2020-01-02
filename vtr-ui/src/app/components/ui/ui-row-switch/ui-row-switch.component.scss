@@ -1,6 +1,6 @@
 @import "../../../app.theme";
 
-@mixin theme($name, $background, $color, $icon_color, $border) {
+@mixin theme($name, $background, $font_color, $icon_color, $border) {
 	.vtr-ui-switch-row.#{$name} {
 		.col-auto {
 			height: 100%;
@@ -9,7 +9,7 @@
 			}
 			@media #{$white-on-black} {
 				margin: 0.2rem;
-	}
+			}
 		}
 		.vtr-col-pad {
 			padding: 0 1rem;
@@ -18,8 +18,8 @@
 			// padding-right: 3rem;
 			padding-right: 0;
 			display: flex;
-			@media #{$mediaquery_X42}{
-			padding-left: 0
+			@media #{$mediaquery_X42} {
+				padding-left: 0;
 			}
 			> div.right-align {
 				float: right;
@@ -30,6 +30,7 @@
 		}
 		.vtr-disabled {
 			opacity: 0.65;
+			pointer-events: none !important;
 		}
 
 		padding: 1.5rem 0.7rem 1.5rem;
@@ -83,11 +84,14 @@
 			width: 2rem;
 			color: $icon_color;
 			position: relative;
-			top: .7em;
+			// top: .7em; // commented out to match the UI Mocukp
+		}
+		.top-pad-03 {
+			padding-top: 0rem;
 		}
 
 		.right-icon {
-			font-size: 1.8rem;
+			font-size: 1.6rem;
 			color: $icon_color;
 			cursor: pointer;
 
@@ -97,17 +101,17 @@
 		}
 
 		.title {
-			font-size: $section_header;
-			color: $color;
+			font-size: $fontsize_md;
+			color: $font_color;
 			font-weight: $weight_light;
 			letter-spacing: 0.05rem;
 			text-transform: none;
 		}
 
 		.caption {
-			font-size: $body;
+			font-size: $fontsize_xs;
 			font-weight: $weight_light;
-			color: $color;
+			color: $font_color;
 			max-width: 60rem;
 		}
 
@@ -140,6 +144,10 @@
 			padding-top: 0.3rem;
 		}
 
+		.tool-tip-icon {
+			margin-left: 0.9rem;
+			margin-top: 0.3rem;
+		}
 		// .right-align{
 		// 	padding-left: 3.5rem;
 		// }
@@ -174,8 +182,12 @@
 	fa-icon {
 		color: $dark;
 		font-size: 0.5rem;
+		padding-bottom: 5px;
+		vertical-align: middle;
+		display: inline-block;
 	}
 }
 
+// @mixin theme($name, $background, $font_color, $icon_color, $border)
 @include theme(white-theme, $light, $main_darker, $menu_hover, $screen_dark_10);
 @include theme(blue-theme, $gradient_main, $light, $light, $screen_light_15);

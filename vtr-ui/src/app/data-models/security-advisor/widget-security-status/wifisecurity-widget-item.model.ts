@@ -12,6 +12,7 @@ export class WifiSecurityWidgetItem extends WidgetItem {
 			id: 'sa-widget-lnk-ws',
 			path: 'security/wifi-security',
 			type: 'security',
+			isSystemLink: false,
 			metricsItemName: 'WiFi Security'
 		}, translateService);
 		this.translateService.stream('common.securityAdvisor.wifi').subscribe((value) => {

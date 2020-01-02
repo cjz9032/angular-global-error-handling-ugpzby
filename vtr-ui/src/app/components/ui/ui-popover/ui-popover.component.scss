@@ -2,24 +2,25 @@
 
 ui-popover {
 	position: absolute;
-	width: 60rem;
-	padding: 3rem 5rem;
+	max-width: 56rem;
 	background: $gaming_lightest;
 	z-index: 9;
 	border-radius: 1rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
-	right: 8rem;
-	top: -13rem;
-	@media #{$small-screen} {
-		width: 35rem;
-		top: -14rem;
+	right: 7.3rem;
+	top: -11.2rem;
+	width: 35vw;
+	min-width: 56rem;
+	@media #{$breakpoint_md} {
+		min-width: 40rem;
+		top: -11.2rem;
 	}
-	@media #{$medium-screen} {
-		width: 45rem;
-		top: -13rem;
+	@media #{$mediaquery_X48} {
+		min-width: 42rem;
 	}
-	@media #{$mediaquery_X31} {
-		width: 38rem;
+	@media #{$breakpoint_sm} {
+		min-width: 36rem;
+		top:-11.5rem;
 	}
 	@media #{$black-on-white} {
 		background: $high-contrast-grey;
@@ -41,7 +42,7 @@ ui-popover {
 		@media #{$black-on-white} {
 			border-bottom: 3rem solid $high-contrast-grey;
 			border-left: 3rem solid transparent;
-		}
+		} 
 		@media #{$white-on-black} {
 			border-bottom: 3rem solid $high-contrast-grey;
 			border-left: 3rem solid transparent;
@@ -49,9 +50,16 @@ ui-popover {
 	}
 	.vtr-ui-popover {
 		&.modal-body {
-			padding: 0;
+			padding: 4rem 4rem;
+			.btn-close {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				padding: 0.6rem 1.2rem;
+				width: 4rem;
+				height: 4rem;
+			}
 		}
-
 		.content-body {
 			min-height: 10rem;
 		}
@@ -71,6 +79,7 @@ ui-popover {
 			font-size: 2.5rem;
 			font-weight: normal;
 			color: $blue-dark;
+			padding-right: 2.5rem;
 		}
 
 		p {
@@ -86,8 +95,8 @@ ui-popover {
 			font-size: 2rem;
 			padding: 1rem 3rem;
 			margin-top: 1rem;
+			margin-right: 3rem;
 			font-weight: $weight_bold;
-			// text-transform: uppercase;
 		}
 
 		.cancel-link {
@@ -97,8 +106,7 @@ ui-popover {
 			vertical-align: middle;
 			padding: 0 0.5rem;
 			font-weight: $weight_600;
-			margin-top: 1.8rem;
-			margin-left: 3rem;
+			margin-top: 1rem;
 			border-bottom: 2px solid $btn_secondary_color;
 			cursor: pointer;
 			&:hover{

@@ -56,8 +56,6 @@
 
 	&__btn {
 		@extend %theme-btn;
-		text-transform: uppercase;
-		font-weight: 500;
 		@media (max-width: $responsive_m) {
 			width: 100%;
 		}
@@ -83,6 +81,10 @@
 
 		&--undefined {
 			background: linear-gradient(136.04deg, #CB7BD9 0%, #5854D6 100%);
+		}
+
+		&--exit-undefined {
+			background: linear-gradient(136.04deg, #C4ADC9 0%, #484769 100%);
 		}
 
 		&--low {

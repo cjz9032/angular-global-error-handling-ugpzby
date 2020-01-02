@@ -3,7 +3,10 @@
 
 		<br />
 
-		<div class="description">{{description}}</div>
+		<div class="description" [innerHtml]="description"></div>
+
+		<!-- <br />
+		<div class="description question">{{question}}</div> -->
 
 		<br />
 
@@ -15,6 +18,7 @@
 					metricsParent="{{ItemParent}}"
 					metricsItem="{{ConfirmItemName}}"
 					[label]="buttonText"
+					[tooltipText]="buttonText"
 					(onClick)="onClosing()">
 				</beta-vtr-ui-button>
 			</div>

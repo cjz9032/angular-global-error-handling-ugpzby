@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CommonService } from '../../../../../../services/common/common.service';
-import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
+import { CommonPopupService } from '../../../core/services/popups/common-popup.service';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { NetworkStatus } from '../../../../../../enums/network-status.enum';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';

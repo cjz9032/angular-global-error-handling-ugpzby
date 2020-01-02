@@ -27,7 +27,8 @@
 							[innerHTML]="'welcometutorial.description'| translate">
 						</div>
 					</div>
-					<div class="row no-gutters justify-content-center align-items-center">
+					<div class="row no-gutters justify-content-center align-items-center"
+						*ngIf="!deviceService.isArm">
 						<div class="col-auto title2">
 							<ul>
 								<li>{{"welcometutorial.bullets1" | translate }}</li>
@@ -44,6 +45,7 @@
 							metricsEvent="featureClick"
 							[tooltip]="false"
 							[metricsItem]="'NEXT'"
+							[tabIndex]="1"
 							[label]="'tutorial.next' | translate"
 							[btnHeight]=true
 							[isGradient]=true
@@ -57,7 +59,9 @@
 	</div>
 	<!-- start of page 2-->
 	<!-- end of page1-->
-	<div *ngSwitchCase="2" #welcomepage2 tabindex="-1">
+	<div *ngSwitchCase="2"
+		#welcomepage2
+		tabindex="-1">
 		<div class="card shadow-sm">
 			<div class="card-body p-0"
 				*ngIf="'welcometutorial.subtitle1' | translate">
@@ -71,63 +75,72 @@
 						</div>
 					</div>
 					<div class="row mb-5"
-						[ngClass]="{'radio-is-selected' : data.page2.radioValue !== null }">
-						<div class="col-4 device-image-content">
+						[ngClass]="{'radio-is-selected' : usageType !== null && usageType !== segmentConst.Gaming}">
+						<div class="col-4 device-image-content d-flex justify-content-center">
 							<div class="device-image"
 								id="tutorial_personalUse"
 								attr.aria-label="tutorial_personalUse"
-								(click)="saveUsageType('personal')">
+								(click)="saveUsageType(segmentConst.Consumer)">
 								<input type="radio"
 									name="radio"
 									id="personalRadio"
 									value="personal"
-									[checked]="data.page2.radioValue && data.page2.radioValue === 'personal'"
+									[checked]="usageType && usageType === segmentConst.Consumer"
 									#personalRadio />
 								<img for="personalRadio"
 									alt="Personal Use"
 									for="personalRadio"
 									src="assets/images/welcome/personal-use.jpg"
 									class="" />
-								<label for="personalRadio"  tabindex="1" (keypress)="onKeyPress($event)"
+								<label for="personalRadio"
+									tabindex="0"
+									id="segment-choose-personal-use"
+									(keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.personal" | translate }}</label>
 							</div>
 						</div>
-						<div class="col-4 device-image-content">
+						<div class="col-4 device-image-content d-flex justify-content-center">
 							<div class="device-image"
 								id="tutorial_businessUse"
 								attr.aria-label="tutorial_businessUse"
-								(click)="saveUsageType('business')">
+								(click)="saveUsageType(segmentConst.SMB)">
 								<input type="radio"
 									name="radio"
 									id="businessRadio"
 									value="business"
-									[checked]="data.page2.radioValue && data.page2.radioValue === 'business'"
+									[checked]="usageType && usageType === segmentConst.SMB"
 									#businessRadio />
 								<img alt="Business Use"
 									for="businessRadio"
 									src="assets/images/welcome/business-use.jpg"
 									class="business" />
-								<label for="businessRadio"  tabindex="2" (keypress)="onKeyPress($event)"
+								<label for="businessRadio"
+									tabindex="0"
+									id="segment-choose-business-use"
+									(keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.business" | translate }}</label>
 							</div>
 						</div>
-						<div class="col-4 device-image-content">
+						<div class="col-4 device-image-content d-flex justify-content-center">
 							<div class="device-image"
-								id="tutorial_customExp"
-								attr.aria-label="tutorial_customExp"
-								(click)="saveUsageType('custom')">
+								id="tutorial_professionalExp"
+								attr.aria-label="tutorial_professionalExp"
+								(click)="saveUsageType(segmentConst.Commercial)">
 								<input type="radio"
 									name="radio"
-									id="customRadio"
+									id="professionalRadio"
 									value="custom"
-									[checked]="data.page2.radioValue && data.page2.radioValue === 'custom'"
-									#customRadio />
+									[checked]="usageType && usageType === segmentConst.Commercial"
+									#professionalRadio />
 								<img alt="Custom Experience"
-									for="customRadio"
+									for="professionalRadio"
 									src="assets/images/welcome/custom-use.jpg"
 									class="custom" />
-								<label for="customRadio" tabindex="3	" (keypress)="onKeyPress($event)"
-									class="centered">{{ "welcometutorial.custom" | translate }} </label>
+								<label for="professionalRadio"
+									tabindex="0"
+									id="segment-choose-custom-use"
+									(keypress)="onKeyPress($event)"
+									class="centered">{{ "welcometutorial.professional" | translate }} </label>
 							</div>
 						</div>
 					</div>
@@ -139,19 +152,25 @@
 					</div>
 					<div class="row d-flex justify-content-center interests">
 						<div class="col-auto inline-block"
-							*ngFor="let interest of selfSelectService.interests; index as i">
+							*ngFor="let interest of interests; index as i">
 							<input type="checkbox"
-								[id]="interest.label + 'checkbox'"
+								[id]="interest.label + 'checkbox-welcome'"
 								#checkbox1
 								(click)="toggle($event, interest.label)"
-								[checked]="interest.checked"/>
-							<label class="bludFocusBoder" [ngClass]="{'hideLabel': i > 7 && !hideMoreInterestBtn}" tabindex="4" (keypress)="onKeyPress($event)" #interestChkboxs
-								[for]="interest.label + 'checkbox'">{{ "welcometutorial.interests." + interest.label | translate }}</label>
+								[checked]="interest.checked" />
+							<label [ngClass]="{'hideLabel': i > 7 && !hideMoreInterestBtn}"
+								tabindex="0"
+								(keypress)="onKeyPress($event)"
+								[id]="'welcome-interest-' + interest.label"
+								#interestChkboxs
+								[for]="interest.label + 'checkbox-welcome'">{{ "welcometutorial.interests." + interest.label | translate }}</label>
 						</div>
 					</div>
 					<div *ngIf="!hideMoreInterestBtn"
 						class="row justify-content-center align-items-center font-12-semi mb-4 col-12">
-						<div class="col-auto title2" tabindex="5" (keypress)="onKeyPress($event)"
+						<div class="col-auto title2"
+							tabindex="0"
+							(keypress)="onKeyPress($event)"
 							id="tutorial_hide_moreInterest"
 							attr.aria-label="tutorial_hide_moreInterest"
 							(click)="moreInterestClicked()">
@@ -159,20 +178,46 @@
 								class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>
 						</div>
 					</div>
+					<div class="row privacy-check mt-3"
+						*ngIf="vantageToolbarStatus.available">
+						<div class="custom-control custom-checkbox pl-0">
+							<input type="checkbox"
+								tabindex="-1"
+								(click)="saveToolbar($event)"
+								[checked]="vantageToolbar"
+								class="custom-control-input"
+								id="chkbox-vantage-toolbar"
+								role="checkbox">
+							<label class="custom-control-label" dir="{{direction}}"
+								tabindex="0" (keypress)="onKeyPress($event)"
+								id="welcome-toolbar-label"
+								for="chkbox-vantage-toolbar">
+								{{ "welcometutorial.toolbartitle" | translate }}
+							</label>
+						</div>
+					</div>
+
 					<div class="row privacy-check mt-3">
-						<div class="custom-control custom-checkbox">
-							<input type="checkbox" tabindex="6" (keypress)="onKeyPress($event)"
+						<div class="custom-control custom-checkbox pl-0">
+							<input type="checkbox"
+								tabindex="-1"
 								(click)="savePrivacy($event, 'PRIVACYPOLICY')"
 								[checked]="privacyPolicy"
 								class="custom-control-input"
 								id="defaultUnchecked"
 								attr.aria-label="defaultUnchecked">
 							<label class="custom-control-label"
+								tabindex="0"
+								id="welcome-privacy-label"
+								(keypress)="onKeyPress($event)"
 								for="defaultUnchecked">
 								{{ "welcometutorial.privacytitle" | translate }}
 								<a class="linktext"
-									href="{{privacyPolicyLink}}"
-									target="_blank"
+									tabindex="0"
+									id="welcome-privacy-link"
+									[ngClass]="{'lang-he-privacy-link':machineInfo.locale=='he'}"
+									(click)="privacyPolicyClick($event)"
+									href="#"
 									rel="noopener"
 									[innerHTML]="'welcometutorial.privacypolicy' | translate">
 									<!-- Lenovo's Privacy Policy -->
@@ -183,9 +228,11 @@
 				</div>
 
 				<div class="row justify-content-center align-items-center next-btn">
-					<div class="col-auto" (keypress)="btnDoneOnKeyPress($event)" >
+					<div class="col-auto"
+						(keypress)="btnDoneOnKeyPress($event)">
 						<vtr-ui-button metricsParent="WelcomePage"
-							metricsEvent="featureClick" [tabIndex]= '8'
+							metricsEvent="featureClick"
+							[tabIndex]='0'
 							[tooltip]="false"
 							[metricsItem]="'DONE'"
 							[label]="'welcometutorial.done' | translate"

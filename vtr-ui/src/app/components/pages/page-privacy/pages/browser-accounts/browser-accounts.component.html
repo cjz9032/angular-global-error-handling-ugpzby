@@ -1,7 +1,7 @@
 <section class="browser-accounts-page"
 		 vtrSendAnalytics
 		 [metricsEvent]="'PageView'"
-		 [attr.data-analyticsName]="(isFigleafReadyForCommunication$ | async) ? 'PrivatelyStoredPasswordsBlock' : 'NonPrivatePasswordsBlock'">
+		 [attr.data-analyticsName]="(isFigleafReadyForCommunication$ | async) ? 'NonPrivatePassword.PrivatelyStoredPasswordsBlock' : 'NonPrivatePassword.NonPrivatePasswordsBlock'">
 
 	<div class="browser-accounts-page__header">
 		<vtr-browser-account-header
@@ -20,13 +20,27 @@
 			</p>
 		</div>
 		<div class="browser-accounts-concent__btn-wrapper">
-			<button class="browser-accounts-concent__btn"
-					vtrSendAnalytics
-					[metricsEvent]="'ItemClick'"
-					[metricsItem]="'NonPrivatePasswordsAcceptAndScanButton'"
-					(click)="giveConcentToGetBrowserAccounts()">
-				ACCEPT & SHOW
-			</button>
+			<vtr-ab-tests [testName]="currentTests.PrimaryButtonPitch">
+				<button class="browser-accounts-concent__btn"
+						*testOption="'Secondary'"
+						vtrSendAnalytics
+						[metricsEvent]="'ItemClick'"
+						[metricsItem]="'NonPrivatePasswordsAcceptAndScanButton'"
+						[metricsParam]="{Test: 'PrimaryButtonPitch', Variant: 'Secondary'}"
+						(click)="giveConcentToGetBrowserAccounts()">
+					ACCEPT & SHOW
+				</button>
+				<button class="browser-accounts-concent__btn browser-accounts-concent__btn--transparent"
+						*testOption="'Primary'"
+						vtrSendAnalytics
+						[metricsEvent]="'ItemClick'"
+						[metricsItem]="'NonPrivatePasswordsAcceptAndScanButton'"
+						[metricsParam]="{Test: 'PrimaryButtonPitch', Variant: 'Primary'}"
+						(click)="giveConcentToGetBrowserAccounts()">
+					ACCEPT & SHOW
+				</button>
+			</vtr-ab-tests>
+
 		</div>
 	</div>
 

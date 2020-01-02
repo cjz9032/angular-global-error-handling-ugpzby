@@ -5,11 +5,14 @@
 
 	.updates-lists-container {
 		// margin-left: 3rem;
-		padding: 0 2rem;
+		padding: 0 1.15rem;
 
 		.btn-link {
-			font-size: 1.8rem;
-			font-weight: $weight_medium;
+			font-size: $fontsize_sm;
+			font-weight: $weight_light;
+			@media #{$breakpoint_xl} {
+				font-size: $fontsize_xs;
+			}
 		}
 
 		.installation-list {
@@ -39,57 +42,64 @@
 					display: inline-block;
 					padding-left: 1.6rem;
 
+					.status-icon {
+						flex-grow: 1;
+						margin-top: 0.8rem;
+					}
+					.update-info {
+						flex-grow: 15;
+					}
+
 					.title {
-						font-size: 1.5rem;
+						font-size: $fontsize_xs;
 						font-weight: $weight_medium;
 						float: left;
 
 						&.light-title {
 							font-weight: $weight_light;
 						}
-
-						.icon-check {
-							padding-right: 1rem;
+					}
+					.icon-check {
+						padding-right: 1rem;
+						display: inline-block;
+						.icon-bg {
 							display: inline-block;
-							.icon-bg {
-								display: inline-block;
-								border-radius: 50%;
-								height: 1.7rem;
-								width: 1.7rem;
-								line-height: 1.5rem;
-								font-size: 1rem;
-								text-align: center;
-								background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-								background-color: $go_dark;
-								border: 0.1rem solid $go_dark;
-							}
-
-							&::before {
-								content: '';
-							}
+							border-radius: 50%;
+							height: 1.7rem;
+							width: 1.7rem;
+							line-height: 1.5rem;
+							font-size: 1rem;
+							text-align: center;
+							background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+							background-color: $go_dark;
+							border: 0.1rem solid $go_dark;
 						}
-						.icon-times {
-							display: inline-block;
-							padding-right: 1rem;
-							.icon-bg {
-								display: inline-block;
-								border-radius: 50%;
-								height: 1.7rem;
-								width: 1.7rem;
-								line-height: 1.5rem;
-								font-size: 1rem;
-								text-align: center;
-								background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-								background-color: $go_dark;
-								border: 0.1rem solid $go_dark;
-								border: 0.1rem solid $stop_dark;
-								background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-								background-color: $stop_dark;
-							}
 
-							&::before {
-								content: '';
-							}
+						&::before {
+							content: "";
+						}
+					}
+					.icon-times {
+						display: inline-block;
+						padding-right: 1rem;
+						.icon-bg {
+							display: inline-block;
+							border-radius: 50%;
+							height: 1.7rem;
+							width: 1.7rem;
+							line-height: 1.5rem;
+							font-size: 1rem;
+							text-align: center;
+							background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+							background-color: $go_dark;
+							border: 0.1rem solid $go_dark;
+							border: 0.1rem solid $stop_dark;
+							background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+							background-color: $stop_dark;
+						}
+
+						&::before {
+							content: "";
 						}
 					}
 
@@ -112,8 +122,8 @@
 					}
 
 					.installation-details {
-						padding-left: 3rem;
-						font-size: 1.3rem;
+						// padding-left: 3rem;
+						font-size: $fontsize_xs2;
 					}
 				}
 
@@ -135,8 +145,8 @@
 				&.list-heading {
 					.item-text {
 						padding-left: 1.6rem;
-						font-size: 1.8rem;
-						font-weight: $weight_medium;
+						font-size: $fontsize_xs;
+						font-weight: $weight_600;
 						float: left;
 					}
 
@@ -154,8 +164,8 @@
 							.sort-heading-text {
 								display: inline;
 								padding-right: 0.4rem;
-								font-size: 1.8rem;
-								font-weight: $weight_medium;
+								font-size: $fontsize_xs;
+								font-weight: $weight_light;
 							}
 
 							.sort-icon {

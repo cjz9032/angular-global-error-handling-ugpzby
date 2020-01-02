@@ -5,7 +5,13 @@
 		box-shadow: $drop_shadow;
 		border-radius: $border_radius;
 		background-color: $light;
-		padding: 1.5rem;
+		padding: 2rem;
+		@media #{$breakpoint_sm} {
+			padding: $fontsize_xl;
+		}
+		@media #{$breakpoint_lg} {
+			margin-bottom: 3rem;
+		}
 		.loading {
 			text-align: center;
 		}
@@ -17,7 +23,7 @@
 
 	.heading {
 		color: $main_dark;
-		font-size: 2.5rem;
+		font-size: 2.4rem;
 		font-weight: $weight_regular;
 	}
 
@@ -32,7 +38,7 @@
 	.sub-heading-2 {
 		color: $main_dark;
 		font-weight: $weight_bold;
-		font-size: 2.5rem;
+		font-size: 2.4rem;
 	}
 
 	.sub-heading-text {
@@ -42,12 +48,12 @@
 	}
 
 	.coronet-logo {
-		width: 11rem;
+		width: 10rem;
 	}
 
 	.text-regular {
 		color: $main_dark;
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 	}
 
 	.btn-round-xs {
@@ -80,9 +86,9 @@
 			&.good {
 				.bullet-icon {
 					.icon-bkg {
-						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-						background-color: $go_dark;
-						border-color: $go_dark;
+						background: linear-gradient($gradient_angle, $green_darker 0%, $green-light 100%);
+						background-color: $green_darker;
+						border-color: $green_darker;
 					}
 				}
 			}
@@ -90,9 +96,9 @@
 			&.bad {
 				.bullet-icon {
 					.icon-bkg {
-						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-						background-color: $stop_dark;
-						border-color: $stop_dark;
+						background: linear-gradient($gradient_angle, $button_red_start 0%, $button_red_end 100%);
+						background-color: $button_red_start;
+						border-color: $button_red_start;
 					}
 				}
 
@@ -144,6 +150,7 @@
 	}
 
 	.button-box {
+		text-align: left;
 		padding: 1rem;
 		margin: 1.2rem;
 	}
@@ -186,7 +193,7 @@
 
 		.threat-locator-container {
 			margin: 3rem;
-			padding: 3rem;
+			padding: 2rem;
 			background: $light;
 			border-radius: $border_radius;
 
@@ -199,114 +206,128 @@
 				padding: 0rem;
 				margin: 0rem;
 				padding-top: 1rem;
-				text-align: right;
+				text-align: left !important;
 			}
 		}
 	}
 	.col-check-use-state{
 		margin: auto;
 	}
-
-	.content {
-		padding: 1.5rem;
-
-		.cardTitle {
-			display: flex;
-			margin-bottom: 3rem;
-
-			h3 {
-				font-size: 3rem;
-				font-weight: 350;
+	.card-body {
+		@media #{$breakpoint_sm} {
+			padding: 1rem
+		}
+		.content {
+			padding: 0.5rem;
+			@media #{$breakpoint_sm} {
+				padding: 0;
 			}
 
-			.status {
-				font-size: 2rem;
-				margin-left: 3rem;
-				margin-top: 0.8rem;
+			.cardTitle {
+				display: flex;
+				margin-bottom: 1rem;
 
-				.active {
+				h3 {
+					font-size: 2rem;
+					font-weight: 350;
+				}
+
+				.status {
+					font-size: 2rem;
+					margin-left: 3rem;
+					margin-top: 0.8rem;
+
+					.active {
+						text-decoration: underline;
+					}
+				}
+			}
+
+			.cardBody {
+				border: 0.1rem solid $shade_lighter;
+				border-radius: $border_radius;
+				background: $light;
+
+				.status-icon {
+					position: relative;
+					padding-right: 1rem;
+					span {
+						height: 1.5rem;
+						width: 1.5rem;
+						font-size: 2rem;
+					}
+
+					fa-icon {
+						color: $main;
+					}
+
+					.circle {
+						background-color: $green_darker;
+						background-image: linear-gradient(135deg, $green_darker 25%, $green-light 100%);
+						// height: 1.5em;
+						width: 1.5rem;
+						border-radius: 2rem;
+						border: 0.1rem solid $green_darker;
+						line-height: 0.9rem;
+						display: inline-block;
+						position: absolute;
+						top: 1.3rem;
+						left: 1.3rem;
+						flex-basis: auto;
+
+						fa-icon {
+							font-size: 1rem;
+							color: $shade_extralight;
+							position: absolute;
+							left: 0.2rem;
+							top: 0.2rem;
+						}
+
+						&.red {
+							background-color: $button_red_start;
+							background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
+							border: 0.1rem solid $button_red_start;
+							fa-icon {
+								left: 0.4rem;
+								top: 0.2rem;
+							}
+						}
+					}
+				}
+
+				.connection-name {
+					overflow: hidden;
+					text-overflow: ellipsis;
+
+					h5 {
+						font-size: 1.4rem;
+						font-weight: $weight_bold;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
+
+					.connection-status {
+						font-size: 1.4rem;
+					}
+					small {
+						font-weight: $weight_light;
+						display: block;
+					}
+				}
+			}
+
+			.card-foot {
+				margin-top: 2.2rem;
+
+				.show-more {
+					font-size: 1.6rem;
 					text-decoration: underline;
 				}
 			}
 		}
-
-		.cardBody {
-			border: 0.1rem solid $shade_lighter;
-			border-radius: $border_radius;
-			background: $light;
-
-			.status-icon {
-				position: relative;
-				width: 5.5rem;
-
-				fa-icon {
-					color: $main;
-				}
-
-				.circle {
-					background-color: $go;
-					background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
-					height: 2rem;
-					width: 2rem;
-					border-radius: 2rem;
-					border: 0.1rem solid $go_dark;
-					line-height: 0.9rem;
-					display: inline-block;
-					position: absolute;
-					top: 1.9rem;
-					left: 2.1rem;
-
-					fa-icon {
-						font-size: 1.5rem;
-						color: $shade_extralight;
-						position: absolute;
-						left: 0.2rem;
-						top: 0.2rem;
-					}
-
-					&.red {
-						background-color: $stop;
-						background-image: linear-gradient(315deg, $stop_light 25%, $stop 100%);
-						border: 0.1rem solid $stop_dark;
-						fa-icon {
-							left: 0.4rem;
-							top: 0.2rem;
-						}
-					}
-				}
-			}
-
-			.connection-name {
-				overflow: hidden;
-				text-overflow: ellipsis;
-
-				h5 {
-					font-size: 1.6rem;
-					font-weight: $weight_bold;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space: nowrap;
-				}
-
-				.connection-status {
-					font-size: 1.6rem;
-				}
-				small {
-					font-weight: $weight_light;
-					display: block;
-				}
-			}
-		}
-
-		.card-foot {
-			margin-top: 2.2rem;
-
-			.show-more {
-				font-size: 1.6rem;
-				text-decoration: underline;
-			}
-		}
 	}
+
 
 	.wifiSecurity {
 		.card {
@@ -320,36 +341,42 @@
 			}
 
 			.no-gutters {
-				height: 2.7rem;
+				// height: 2.7rem;
 				width: 100%;
 				display: flex;
-				.wifisecurity-container-name,
-				.wifisecurity-container-enable span{
-					display: inline-blockl;
+				.wifisecurity-container-name {
+					line-height: 2rem;
+					font-size: 1.2rem;
+				}
+				.wifisecurity-container-enable {
+					line-height: 1;
 					overflow: hidden;
-					white-space: nowrap;
-					text-overflow: ellipsis;
-
-				}
-				.wifisecurity-container-name{
-					min-width: 20%
-				}
-				.wifisecurity-container-enable{
-					max-width: 50%;
-					margin-top: 0.5rem;
-					margin-bottom: auto;
 					span{
-						width: 100%
+						display: inline-block;
+						overflow: hidden;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						font-size: 1.2rem;
+						max-width: 100%;
+						&.badge-success {
+							background-color: $green_dark;
+						}
+						&.badge-danger {
+							background-color: $button_red_start;
+						}
 					}
 				}
 			}
 		}
 
 		.card-header {
-			padding: 2.5rem;
+			padding: 1.5rem;
 			background: $shade_extralight;
 			border: 0rem;
 			border-radius: $border_radius;
+			@media #{$breakpoint_sm} {
+				padding: 1rem;
+			}
 
 			.collapse-control {
 				margin-top: -0.4rem;
@@ -359,7 +386,7 @@
 				.collapse-text {
 					display: inline-block;
 					color: $main;
-					font-size: 1.6rem;
+					font-size: 1.4rem;
 					vertical-align: middle;
 					text-decoration: underline;
 					font-weight: 500;
@@ -408,44 +435,44 @@
 		}
 
 		.subHeading {
-			display: flex;
+			// display: flex;
 			.loading {
 				margin-right: 1rem;
 			}
-			width: 50%;
-			justify-content: flex-start;
+			// width: 50%;
+			// justify-content: flex-start;
 			.circle {
-				background-color: $go;
-				background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
-				height: 2.5rem;
-				width: 2.7rem;
+				background-color: $green_darker;
+				background-image: linear-gradient(135deg, $green_darker 25%, $green-light 100%);
+				height: 2rem;
+				width: 2rem;
 				border-radius: 100%;
-				border: 0.1rem solid $go_dark;
+				border: 0.1rem solid $green_darker;
 				text-align: center;
 				display: inline-block;
 				margin-right: 1rem;
 				flex-shrink: 0;
 
 				fa-icon {
-					font-size: 1.5rem;
+					font-size: 1.2rem;
 					color: $light;
 				}
 
 				&.red {
-					background-color: $stop;
-					background-image: linear-gradient(315deg, $stop_light 25%, $stop 100%);
-					border: 0.1rem solid $stop_dark;
+					background-color: $button_red_start;
+					background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
+					border: 0.1rem solid $button_red_start;
 				}
 			}
-			.line-height-2-5 {
-				line-height: 2.5rem;
-				height: 2.5rem;
+			.line-height-2 {
+				line-height: 2rem;
+				height: 2rem;
 			}
 
 			h3 {
 				font-weight: $weight_bold;
 				text-transform: uppercase;
-				margin-right: 2.5rem;
+				line-height: 1;
 			}
 		}
 	}
@@ -494,12 +521,17 @@
 
 	}
 	.sm-device-responsive{
-		width: 50%;
-		display: flex;
-		justify-content: flex-end;
+		// width: 50%;
+		// display: flex;
+		// justify-content: flex-end;
 
 		vtr-ui-switch-onoff {
 			display: inline-block;
+			::ng-deep .checkbox {
+				input.wifi-checked + .switch {
+					background: linear-gradient($gradient_angle, $green_darker 0%, $green-light 100%);
+				}
+			}
 		}
 		.switch-disable {
 			opacity: 0.3;

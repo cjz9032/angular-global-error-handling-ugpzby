@@ -36,13 +36,13 @@
 		svg {
 			margin-right: 1rem;
 		}
-		@media #{$mediaquery_xl} {
+		@media #{$breakpoint_xl} {
 			display: inline-block;
 		}
-		@media #{$mediaquery_lg} {
+		@media #{$breakpoint_lg} {
 			display: none;
 		}
-		@media #{$mediaquery_md} {
+		@media #{$breakpoint_md} {
 			display: inline-block;
 		}
 	}
@@ -50,7 +50,7 @@
 	ul {
 		padding: 0;
 		&.numberpad-popup {
-			@media #{$mediaquery_xl} {
+			@media #{$breakpoint_xl} {
 				display: none;
 				padding: 1.4rem;
 				background-color: $gaming_shade;
@@ -60,13 +60,15 @@
 				z-index: 1;
 				top: 5.8rem;
 			}
-			@media #{$mediaquery_lg} {
+			@media #{$breakpoint_lg} {
 				display: block;
 				background: none;
 				position: relative;
 				top: 0;
+				padding-top: 0;
+				padding-left: 0;
 			}
-			@media #{$mediaquery_md} {
+			@media #{$breakpoint_md} {
 				display: none;
 				padding: 1.4rem;
 				background-color: $gaming_shade;

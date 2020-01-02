@@ -5,38 +5,46 @@
 				[subTitle]="getDeviceSubTitle()" [buttonText]="'hardwareScan.quickScan' | translate"
 				[anchorText]="'hardwareScan.customize.name' | translate" [percent]="progress"
 				[finalResultCodeText]="'hardwareScan.finalResultCode' | translate"
-				[disableQuickScan]="!isLoadingDone() || startScanClicked"
+				[disableQuickScan]="startScanClicked"
 				[disableCancel]="isDisableCancel()"
 				[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
 				[offlineText]="'dashboard.offlineInfo.title' | translate" [isOnline]="isOnline"
-				[showProgress]="isScanExecuting() || isRecoverExecuting()" (startQuickScan)="checkPreScanInfo(0)"
-				(checkCancel)="onCancelScan()" (checkAnchor)="onCustomizeScan()" [statusText]="finalStatusToken()">
+				[showProgress]="isScanExecuting() || isRecoverExecuting()" (startQuickScan)="startScanWaitingModules(taskTypeEnum.QuickScan)"
+				(checkCancel)="onCancelScan()" (checkAnchor)="startScanWaitingModules(taskTypeEnum.CustomScan)" [statusText]="finalStatusToken()"
+				itemParentCancel="{{itemParentCancelScan}}"
+				itemNameCancel= "{{itemNameCancelScan}}">
 			</vtr-widget-hardware-scan>
 		</div>
 	</div>
 
-	<div class="p-5 hardware-scan-items">
+	<div class="hardware-scan-items">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12 px-0">
 				<div class="header">
 					<div
 						[ngClass]="{'heading1': !isScanExecuting() || isRecoverExecuting(), 'heading2': isScanExecuting() && !isRecoverExecuting()}">
 						{{getComponentsTitle()}}</div>
 					<a class="action-anchor" (click)="isScanExecuting() ? onViewResults() : onViewResultsRecover()"
 						*ngIf="getEnableViewResults()" [routerLink]="viewResultsPath"
-						routerLinkActive="active">{{viewResultsText}}
+						routerLinkActive="active"
+						vtrMetrics
+						metricsEvent="FeatureClick"
+						metricsParent="{{itemParentSummary}}"
+						metricsItem="{{itemNameSummary}}">{{viewResultsText}}
 					</a>
 
-					<a class="refresh-button" 
-						*ngIf="isLoadingDone() && !isScanExecuting() && !isRecoverExecuting()"
-						vtrMetrics 
-						metricsEvent="FeatureClick" 
+					<a class="refresh-button"
+						*ngIf="!isRefreshingModules() && !isScanExecuting() && !isRecoverExecuting()"
+						vtrMetrics
+						metricsEvent="FeatureClick"
 						metricsParent="HardwareScan"
-						metricsItem="HardwareScan.RefreshModules" 
-						(click)="refreshModules()">{{refreshText}} 
-						<fa-icon class="refresh-icon" 
-							placement="auto" 
-							[icon]="['fal', 'redo']" 
+						metricsItem="HardwareScan.RefreshModules"
+						[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+						[ngClass]="{'action-anchor': !startScanClicked, 'disabled-anchor': startScanClicked}"
+						(click)="refreshModules()">{{refreshText}}
+						<fa-icon class="refresh-icon"
+							placement="auto"
+							[icon]="['fal', 'redo']"
 							container="body">
 						</fa-icon>
 					</a>
@@ -47,11 +55,11 @@
 		<div class="row">
 			<div class="col">
 				<div class="hardware-lists-container">
-					<vtr-ui-hardware-list *ngIf="isLoadingDone() && !isScanExecuting() && !isRecoverExecuting()"
+					<vtr-ui-hardware-list *ngIf="!isRefreshingModules() && !isScanExecuting() && !isRecoverExecuting()"
 						[items]="getItemToDisplay()">
 					</vtr-ui-hardware-list>
 
-					<div class="loading-components" *ngIf="!isLoadingDone() && !isRecoverExecuting()">
+					<div class="loading-components" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
 						<fa-icon placement="auto" spin="true" [icon]="['fal', 'circle-notch']" container="body">
 						</fa-icon>
 					</div>

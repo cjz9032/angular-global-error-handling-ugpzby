@@ -29,7 +29,7 @@
 
 			<div class="row">
 				<div class="col col-12 mb-40">
-					<beta-vtr-container-card vtrMetrics
+					<vtr-container-card vtrMetrics
 						order="1"
 						sideFlag='r'
 						itemID='HardwareScan.DiagnosticsTools'
@@ -38,21 +38,22 @@
 						[action]="'Read More'"
 						[caption]="'hardwareScan.support.subtitle' | translate"
 						[actionLink]="'https://pcsupport.lenovo.com/lenovodiagnosticsolutions/downloads'"
-						[type]="'partnerarticle'"
-						[ratioX]="4"
-						[ratioY]="2">
-					</beta-vtr-container-card>
+						[type]="'subpage-partner-corner'"
+						[ratio]="2">
+					</vtr-container-card>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col col-12 cont mb-40"
-					*ngIf="(hasDevicesToRecoverBadSectors() && !isRecoverInProgress() && isLoadingDone()) && !getIsViewingRecoverLog()">
-					<vtr-widget-recover-bad-sectors [title]="'hardwareScan.recoverBadSectors.title' | translate"
+				<div class="col col-12 cont mb-40" 
+					*ngIf="!isRecoverInProgress() && !getIsViewingRecoverLog()">
+					<vtr-widget-recover-bad-sectors
+						[title]="'hardwareScan.recoverBadSectors.title' | translate"
 						[description]="'hardwareScan.recoverBadSectors.description' | translate"
 						[textButton]="'hardwareScan.recoverBadSectors.title' | translate"
 						[recoverPath]="'/beta/hardware-scan/recover-bad-sectors'"
-						[disable]="disable()">
+						[disable]="!hasDevicesToRecoverBadSectors() || disable()"
+						[tooltipText]="('hardwareScan.recoverBadSectors.title' | translate)">
 					</vtr-widget-recover-bad-sectors>
 				</div>
 			</div>
@@ -60,7 +61,7 @@
 			<div class="row">
 				<div class="col col-12 mb-40">
 					<vtr-widget-hardware-scan-status
-						*ngIf="isLoadingDone() && !isScanExecuting() && !isRecoverExecuting() && !hidePreviousResult && !isRecoverInProgress()">
+						*ngIf="!isScanExecuting() && !isRecoverExecuting() && !hidePreviousResult && !isRecoverInProgress()">
 					</vtr-widget-hardware-scan-status>
 				</div>
 			</div>

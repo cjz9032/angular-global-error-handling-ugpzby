@@ -53,8 +53,7 @@
 						[actionType]="cardContentPositionD.ActionType"
 						[actionLink]="cardContentPositionD.ActionLink"
 						[type]="'highlight'"
-						[ratioX]="8"
-						[ratioY]="2">
+						[ratio]="4">
 					</vtr-container-card>
 					<a class="action-link-a"
 						*ngIf="isOnline"
@@ -78,8 +77,7 @@
 							[actionType]="cardContentPositionD.ActionType"
 							[actionLink]="cardContentPositionD.ActionLink"
 							[type]="'highlight'"
-							[ratioX]="8"
-							[ratioY]="2">
+							[ratio]="4">
 						</vtr-container-card>
 					</a>
 				</div>
@@ -90,23 +88,24 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row no-gutters">
-				<div class="col-sm-12 col-lg-12 mb-60">
+				<div class="col-sm-12 col-lg-12 mb-40">
 					<vtr-widget-legion-edge></vtr-widget-legion-edge>
 				</div>
 
-				<div class="col-sm-12 col-lg-12 mb-60">
+				<div class="col-sm-12 col-lg-12 mb-40">
 					<vtr-widget-quicksettings-list
 						title="{{'gaming.dashboard.device.quickSettingstitle.title' | translate}}">
 					</vtr-widget-quicksettings-list>
 				</div>
 
-				<div class="col-sm-12 col-lg-12 mb-60">
+				<div class="col-sm-12 col-lg-12 mb-40">
 					<vtr-widget-lighting title=""></vtr-widget-lighting>
 				</div>
-				<div class="col-sm-12 col-lg-12 mb-60">
+				<div class="col-sm-12 col-lg-12 mb-40">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
 						[actionName]="'dashboard.feedback.button' | translate"
+						[isOnline]="isOnline"
 						(feedBackClick)="onFeedbackModal()">
 					</vtr-widget-feedback>
 				</div>

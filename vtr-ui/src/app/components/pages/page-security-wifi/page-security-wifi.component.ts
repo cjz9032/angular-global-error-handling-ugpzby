@@ -15,8 +15,9 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { DeviceService } from 'src/app/services/device/device.service';
 import { ConfigService } from 'src/app/services/config/config.service';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -44,10 +45,13 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	cancelClick = false;
 	isOnline = true;
 	notificationSubscription: Subscription;
-	brand;
+	region = 'us';
+	language = 'en';
+	segment: string;
 	showChs = false;
 	intervalId: number;
 	interval = 15000;
+	segmentConst = SegmentConst;
 
 	constructor(
 		public activeRouter: ActivatedRoute,
@@ -59,16 +63,15 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public translate: TranslateService,
 		private ngZone: NgZone,
 		private router: Router,
+		private configService: ConfigService,
 		public deviceService: DeviceService,
-		private configService: ConfigService
 	) {	}
 
 	ngOnInit() {
 		this.securityAdvisor = this.shellService.getSecurityAdvisor();
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
-		if (this.deviceService.getMachineInfoSync()) {
-			this.brand = this.deviceService.getMachineInfoSync().brand;
-		}
+		this.segment = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment, this.segmentConst.Consumer);
+		this.showChs = this.configService.showCHS;
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService, this.ngZone, this.dialogService);
 		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.commonService, this.translate, this.ngZone);
@@ -92,6 +95,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		if (this.wifiSecurity) {
 			this.wifiSecurity.refresh();
 			this.wifiSecurity.getWifiSecurityState();
+			this.wifiSecurity.getWifiHistory();
 			this.wifiSecurity.getWifiState().then((res) => { }, (error) => {
 				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 			});
@@ -121,8 +125,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
-		if (this.router.routerState.snapshot.url.indexOf('security') === -1 && this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
-			if (this.securityAdvisor.wifiSecurity) {
+		if (this.securityAdvisor.wifiSecurity) {
+			this.securityAdvisor.wifiSecurity.cancelGetWifiHistory();
+			if (this.router.routerState.snapshot.url.indexOf('security') === -1) {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
 		}

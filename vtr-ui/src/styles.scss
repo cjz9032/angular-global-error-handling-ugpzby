@@ -1,18 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-/*
-Fix for VAN-1178 : Commented as RUBIK font google url as google is blocked in China, fonts are not downloaded ,
-downloaded font related files locally and added to assets/font/Rubik folder.
-Now these fonts are part of application. Should fix this issue
-@import url("https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i");
-reference : https://fonts.google.com/specimen/Rubik
-*/
-// @import url("./assets/font/Rubik/font.css");
-
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "./styles-bootstrap.scss";
-// @import "~bootstrap/dist/css/bootstrap.css";
-@import "./app/beta/beta-styles.scss";
 @import "app/app.theme";
+@import "./app/beta/beta-styles.scss";
+
+@import "./hw-settings-icomoon/icomoon-base64.scss";
 
 html {
 	margin: 0;
@@ -49,7 +40,7 @@ body a > *,
 .no-pointer > *,
 .no-pointer > div,
 a > div {
-	cursor: pointer !important;
+	cursor: pointer;
 }
 a.disabled {
 	pointer-events: none;
@@ -140,7 +131,7 @@ body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	font-family: "Segoe UI", Sans-serif;
+	font-family: "Segoe UI", sans-serif;
 	cursor: default;
 	// font-weight: 300;
 }
@@ -303,11 +294,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	border-radius: 0.4rem;
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-	font-family: "Segoe UI";
-	// RESPONSIVE EFFORT
-	// @media #{$mediaquery_xl} {
-	// 	max-width: 20rem;
-	// }
+
 	@media #{$black-on-white} {
 		border: 0.1rem solid;
 	}
@@ -412,7 +399,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 /*Battery-charge-threshold-modal-styles*/
 .Battery-Charge-Threshold-Modal {
 	.modal-dialog {
-		max-width: 35%;
+		width: 49rem;
 
 		// RESPONSIVE EFFORT
 		// @media #{$mediaquery_11} {
@@ -443,7 +430,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 /*.smart-standBy-modal-styles*/
 .smart-standBy-modal {
 	.modal-dialog {
-		max-width: 85%;
+		// max-width: 85%;
 	}
 	.modal-content {
 		border-radius: 1rem;
@@ -463,8 +450,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 /*modal-intelligent-cooling-modes-styles*/
 .Intelligent-Cooling-Modes-Modal {
 	.modal-dialog {
-		max-width: 35%;
-
+		max-width: 49rem;
 		// RESPONSIVE EFFORT
 		// @media #{$mediaquery_11} {
 		// 	max-width: 75%;
@@ -572,6 +558,21 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		overflow: hidden;
 	}
 }
+
+.update-read-more-modal-size {
+	.modal-dialog {
+		max-width: 60%;
+		margin: 1.75rem auto;
+		overflow-y: initial !important;
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		// background: none;
+		border: none;
+	}
+}
+
 .Article-Detail-Modal {
 	.modal-dialog {
 		max-width: 70%;
@@ -589,6 +590,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		background: $light;
 		padding: 3rem 0 0 0;
 		overflow: hidden;
+		font-size: 1.8rem;
+		color: $light-grey;
 		@media #{$black-on-white} {
 			border: 0.1rem solid;
 		}
@@ -626,32 +629,82 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		}
 
 		h5 {
-			font-size: 1.4rem;
+			font-size: 1.6rem;
 		}
 
 		h6 {
-			font-size: 1rem;
+			font-size: 1.4rem;
 		}
 
-		p,
-		li,
-		ul {
-			font-size: 1.8rem;
-			color: $light-grey;
-			margin-bottom: 1rem;
+		.article-content {
+			div,
+			span {
+				margin-bottom: 1rem;
+				word-wrap: break-word;
+			}
+
+			p,
+			li,
+			ul {
+				font-size: 1.8rem;
+				color: $light-grey;
+				margin-bottom: 1rem;
+				word-wrap: break-word;
+			}
 		}
 
 		img,
 		iframe {
 			max-width: 100%;
 			margin-bottom: 3rem;
+			border: none;
 		}
+	}
+}
 
-		p,
-		li,
-		ul {
-			word-wrap: break-word;
+.Dcc-Detail-Modal {
+	.modal-dialog {
+		max-width: 70%;
+		overflow-y: initial !important;
+
+		@media #{$mediaquery_15} {
+			max-width: 90% !important;
+			margin: 1rem auto !important;
 		}
+	}
+
+	.modal-dialog-centered {
+		height: calc(100vh - 3.5rem);
+		min-height: calc(100vh - 3.5rem);
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		overflow: hidden;
+	}
+}
+
+.Threat-Locator-Modal {
+	.modal-dialog {
+		max-width: 70%;
+		overflow-y: initial !important;
+
+		@media #{$mediaquery_15} {
+			max-width: 90% !important;
+			margin: 1rem auto !important;
+		}
+	}
+
+	.modal-dialog-centered {
+		height: calc(100vh - 3.5rem);
+		min-height: calc(100vh - 3.5rem);
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		overflow: hidden;
 	}
 }
 
@@ -742,7 +795,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 .Find-Us-Modal {
 	.modal-dialog {
-		width: 55rem;
+		width: 47.8rem;
 		margin: 1.75rem auto;
 		overflow-y: initial !important;
 	}
@@ -758,6 +811,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-dialog {
 		margin: 1.75rem auto;
 		width: 52rem;
+		max-width: 90%;
 	}
 
 	.modal-content {
@@ -793,7 +847,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	&.tooltip {
 		font-size: 1.6rem;
 		border-radius: 1rem;
-		font-family: "Segoe UI";
 
 		ul {
 			padding: 0;
@@ -816,7 +869,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		color: $main_darker;
 		text-align: left;
 		max-width: 100%;
-		font-family: "Segoe UI";
 
 		span {
 			font-weight: bold;
@@ -904,34 +956,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 // gaming overrides need to be at the bottom here
 @import "./styles-gaming.scss";
 
-/************************* icomoon icons ****************/
-@import "./icomoon-style.scss";
-
-@font-face {
-	font-family: "icomoon";
-	src: url("./assets/fonts/icomoon.woff?30mqwk") format("woff");
-	// src: url("./assets/fonts/icomoon.eot?30mqwk#iefix") format("embedded-opentype"),
-	// 	url("./assets/fonts/icomoon.ttf?30mqwk") format("truetype"),
-	// 	url("./assets/fonts/icomoon.woff?30mqwk") format("woff");
-	// url("./assets/fonts/icomoon.svg?30mqwk#icomoon") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
-
-.icomoon {
-	/* use !important to prevent issues with browser extensions that change fonts */
-	font-family: "icomoon" !important;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	font-size: 2.2rem;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
 /* ngb-modal-window overriding the class fade  =========== */
 .fade {
 	transition: none;
@@ -999,11 +1023,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			padding: 1.5rem;
 			border-radius: 0.8rem;
 			background: $main_darkest;
-			margin-bottom: 8rem;
+			margin-bottom: 5rem;
 			.nav-item {
 				width: calc(25% - 1rem);
 				.nav-link {
-					height: 22rem;
+					height: 19.5rem;
 					border-radius: 0.5rem;
 					background: $main_darker;
 					border: none !important;
@@ -1022,7 +1046,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 					z-index: 5;
 					.icon {
 						height: 12rem;
-						width: 12rem;
+						width: 10rem;
 						line-height: 12rem;
 						text-align: center;
 						font-size: 8rem;
@@ -1217,7 +1241,18 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .icon-icon-zero-day:before {
 	content: "\44";
 }
+
 // smart-performance-scan-summary-calendar-styles
+vtr-ui-smart-performance-scan-summary {
+	.vtr-page-header {
+		display: none;
+	}
+}
+vtr-ui-smart-performance-scanning {
+	.vtr-page-header {
+		display: none;
+	}
+}
 .vtr-ui-smart-performance-scan-summary {
 	.date-picker {
 		ngb-datepicker {
@@ -1296,22 +1331,102 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 /* override bootstrap custom check box in high contrast mode*/
 
-.custom-control-label:before{
+.custom-control-label:before {
 	@media #{$white-on-black} {
-	background-color: $dark;
+		background-color: $dark;
 	}
 	@media #{$black-on-white} {
 		background-color: $light;
-  }
+	}
 }
-  .custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
 	@media #{$white-on-black} {
-	background-color:$high-contrast-black-textselected;
+		background-color: $high-contrast-black-textselected;
 	}
 	@media #{$black-on-white} {
-		background-color:$high-contrast-white-textselected;
-
+		background-color: $high-contrast-white-textselected;
 	}
-  }
+}
 
+/* battery-detail-modal */
+.battery-modal-size {
+	.modal-dialog {
+		max-width: 110rem;
+		@media #{$breakpoint_xl} {
+			max-width: 95rem;
+		}
+		@media #{$breakpoint_lg} {
+			max-width: 70rem;
+			top: 4rem;
+		}
+		@media #{$breakpoint_md} {
+			max-width: 55rem;
+			top: 0;
+		}
+		@media #{$breakpoint_sm} {
+			max-width: 45rem;
+			margin: 0 auto;
+			top: 2rem;
+		}
+		.modal-content {
+			border-radius: 1rem;
+		}
+	}
+}
+.subscribe-modal {
+	.modal-dialog {
+		max-width: 70%;
+	}
+}
 
+.schedule-new-modal-size {
+	.modal-dialog {
+		max-width: 55%;
+		margin: 0 auto;
+		@media #{$breakpoint_lg} {
+			max-width: 70%;
+		}
+		@media #{$breakpoint_md} {
+			max-width: 75%;
+		}
+		@media #{$breakpoint_sm} {
+			max-width: 80%;
+		}
+		.modal-content {
+			border-radius: 1rem;
+			.description {
+				.question {
+					font-weight: $weight_bold;
+				}
+			}
+		}
+	}
+}
+
+.cancel-modal-hwscan {
+	.modal-dialog {
+		max-width: 50%;
+		margin: 0 auto;
+		@media #{$breakpoint_lg} {
+			max-width: 60%;
+		}
+		@media #{$breakpoint_md} {
+			max-width: 65%;
+		}
+		@media #{$breakpoint_sm} {
+			max-width: 80%;
+		}
+		.modal-content {
+			border-radius: 1rem;
+		}
+	}
+
+}
+.installation-history-container {
+	.vtr-container-collapsible.white-theme {
+		border-top-left-radius: 0 !important;
+		border-top-right-radius: 0 !important;
+		border-bottom-left-radius: 0.7rem !important;
+		border-bottom-right-radius: 0.7rem !important;
+	}
+}

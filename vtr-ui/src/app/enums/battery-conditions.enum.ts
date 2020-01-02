@@ -10,17 +10,17 @@ export enum BatteryConditionsEnum {
 	TrickleCharge,
 	OverheatedBattery,
 	PermanentError,
-	HardwareAuthenticationError,
 	UnsupportedBattery,
-	NonThinkPadBattery,
-	NonLenovoUsbPowerAdapter,
 
 	MissingDriver,
 
+	NonLenovoUsbPowerAdapter,
 	NotSupportACAdapter,
 	LimitedACAdapterSupport,
 	FullACAdapterSupport,
-	StoreLimitation
+	StoreLimitation,
+
+	PrimaryNotDetected
 }
 
 export enum BatteryStatus {

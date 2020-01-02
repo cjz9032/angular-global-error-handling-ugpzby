@@ -1,32 +1,79 @@
 <div class="modal-body vtr-modal-smart-stand-by">
-    <div class="row justify-content-end">
-        <div class="btn-close">
-            <button type="button" role="button" class="close" tabindex="1" aria-hidden="true"
-                aria-label="ds-rsmart-standby-close-button" (click)="closeModal()" (keydown.enter)="closeModal()">
-                <fa-icon [icon]="['fal', 'times']"></fa-icon>
-            </button>
-        </div>
-    </div>
-    <div class="row">
-        <!-- {{activities | json}} -->
-        <div class="col-12">
-            <!-- <h4 class="mb-3">{{ 'device.deviceSettings.power.smartStandby.graph1Tittle' | translate }}</h4> -->
-            <!-- <vtr-smart-standby-graph></vtr-smart-standby-graph> -->
-            <!-- <div class="app-smart-standby-activity my-3" #activityChart></div> -->
-            <div #activityChart></div>            
-        </div>
-        <div class="col-12 mt-3">
-            <!-- <h4 class="mb-3">{{ 'device.deviceSettings.power.smartStandby.graph2Tittle' | translate }}</h4> -->
-             <div #scheduleChart></div>
-             <div class="text-danger pl-4">
-                <h4> {{'device.deviceSettings.power.smartStandby.graphNote' | translate}} </h4>
-             </div>
-        </div>       
-        <div>
-            <button id="smart-standby-close" role="button" attr.aria-label="smart-standby-close" tabindex="1"
-                class="btn close-button" (click)="closeModal()"
-                (keydown.enter)="closeModal()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate}}
-            </button>
-        </div>
-    </div>
+	<div class="row justify-content-end">
+		<div class="btn-close">
+			<button type="button"
+				role="button"
+				class="close"
+				tabindex="1"
+				aria-hidden="true"
+				aria-label="ds-rsmart-standby-close-button"
+				(click)="closeModal()"
+				(keydown.enter)="closeModal()">
+				<fa-icon [icon]="['fal', 'times']"></fa-icon>
+			</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<div class="pl-2">
+				<div class="tittle">{{items[0].tittle | translate}}</div>
+				<div class="sub-tittle">{{items[0].subTittle | translate}}</div>
+			</div>
+			<div #chartContainer1
+				[id]="'chartContainer-1'"
+				class="activity-chart"></div>
+			<div *ngIf="items && items[0].legends"
+				class="d-flex justify-content-end legends-row pr-4">
+				<span class="mr-1">
+					{{'device.deviceSettings.power.smartStandby.graph.legends.none' | translate}}
+				</span>
+				<!-- <span *ngFor="let bgcolor of items[0].colors.first" class="graph-legend" [innerHtml]="items[0].legends" [style.backgroundColor]="bgcolor"></span> -->
+				<span class="legends-box d-flex justify-content-end">
+					<span class="graph-legend"
+						[innerHtml]="items[0].legends"
+						[style.backgroundColor]="colors.first[0]"></span>
+					<span class="graph-legend"
+						[innerHtml]="items[0].legends"
+						[style.backgroundColor]="colors.first[1]"></span>
+					<span class="graph-legend"
+						[innerHtml]="items[0].legends"
+						[style.backgroundColor]="colors.first[2]"></span>
+					<span class="graph-legend"
+						[innerHtml]="items[0].legends"
+						[style.backgroundColor]="colors.first[3]"></span>
+					<span class="graph-legend"
+						[innerHtml]="items[0].legends"
+						[style.backgroundColor]="colors.first[4]"></span>
+				</span>
+				<span class="ml-1">
+					{{'device.deviceSettings.power.smartStandby.graph.legends.frequent' | translate}}
+				</span>
+			</div>
+		</div>
+		<div class="col-12">
+			<div class="pl-2">
+				<div class="tittle">{{items[1].tittle | translate}}</div>
+				<div class="sub-tittle">{{items[1].subTittle | translate}}</div>
+			</div>
+			<div #chartContainer2
+				[id]="'chartContainer-2'"
+				class="activity-chart"></div>
+		</div>
+		<div class="col-12 mt-3"
+			*ngIf="isAutomatic && isSufficient === false">
+			<div class="note pl-4">
+				<h4> {{'device.deviceSettings.power.smartStandby.graph.graphNote' | translate}} </h4>
+			</div>
+		</div>
+		<div>
+			<button id="smart-standby-close"
+				role="button"
+				attr.aria-label="smart-standby-close"
+				tabindex="1"
+				class="btn close-button"
+				(click)="closeModal()"
+				(keydown.enter)="closeModal()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate | uppercase}}
+			</button>
+		</div>
+	</div>
 </div>

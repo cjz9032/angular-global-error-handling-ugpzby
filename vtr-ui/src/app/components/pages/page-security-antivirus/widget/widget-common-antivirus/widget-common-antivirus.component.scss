@@ -8,7 +8,7 @@
 
 	.title {
 		color: $main_darkest;
-		font-size: 2.5rem;
+		font-size: 2.2rem;
 		font-weight: 500;
 		line-height: 4.2rem;
 		text-align: center;
@@ -40,9 +40,12 @@
 			}
 			.title {
 				color: $main_darker;
-				font-size: 1.5rem;
+				font-size: 1.3rem;
 				@media #{$breakpoint_xl} {
 					font-size: 2rem;
+				}
+				@media #{$mediaquery_X46} {
+					font-size: 1.3rem !important;
 				}
 				font-weight: $weight_bold;
 				line-height: 2.3rem;
@@ -50,14 +53,14 @@
 			}
 
 			.logo {
-				height: 5rem;
+				height: 4rem;
 				@media #{$breakpoint_xl} {
 					height: 7.5rem;
 				}
 			}
 
 			.last-logo {
-				height: 2.5rem;
+				height: 2rem;
 				@media #{$breakpoint_xl} {
 					height: 3.5rem;
 				}
@@ -67,13 +70,20 @@
 				width: 0.01rem;
 				margin: 0 1.2rem;
 				background-color: $shade_light;
+				
+				@media #{$mediaquery_X46} {
+					margin: 0 0.8rem;
+				}
 			}
 
 			.subtitle {
 				color: $main_darker;
-				font-size: 1.4rem;
+				font-size: 1.2rem;
 				@media #{$breakpoint_xl} {
 					font-size: 1.6rem;
+				}
+				@media #{$mediaquery_X46} {
+					font-size: 1.2rem !important;
 				}
 				font-weight: 400;
 				line-height: 2.3rem;
@@ -82,20 +92,26 @@
 	}
 
 	.footer {
+		@media #{$mediaquery_md} {
+			display: none;
+		}
 		margin-top: 3rem;
 		.text-regular {
-			font-size: 1.6rem;
-			color: $main_shade;
-		}
-
-		.read-more-text {
 			font-size: 1.4rem;
+			color: $main_shade;
+			@media #{$mediaquery_X46} {
+				font-size: 1.3rem;
+			}
 		}
 
 		.mcafee-logo {
-			width: 14rem;
+			width: 12rem;
 			padding-top: 1rem;
-			margin-right: 2rem;
+			margin-right: 1.8rem;
+			@media #{$mediaquery_X46} {
+				width: 9rem;
+				margin-right: 1rem;
+			}
 		}
 
 		a {

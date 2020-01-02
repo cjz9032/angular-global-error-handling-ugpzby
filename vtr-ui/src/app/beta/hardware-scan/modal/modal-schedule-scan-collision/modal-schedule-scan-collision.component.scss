@@ -1,18 +1,20 @@
 @import "../../../../app.theme";
 
 .error {
-	font-size: 3rem;
-	font-weight: bold;
+	font-size: $fontsize_xl;
+	font-weight: $weight_600;
+	color: $shade_blue;
 }
 
 .description {
-	font-size: 2rem;
+	font-size: $fontsize_xs;
 	white-space: pre-wrap;
+	font-weight: $weight_light;
+	color: $shade_blue;
 }
 
 .modal-body {
-	// padding: 0 5rem 3rem 5rem;
-	padding: 4rem;
+	padding: 2.4rem;
 }
 
 .close-button {
@@ -45,3 +47,11 @@
 		height: 100%;
 	}
 }
+::ng-deep .beta-vtr-ui-button {
+	.button-box {
+		.button {
+			min-height: 4rem !important;
+		}
+	}
+}
+

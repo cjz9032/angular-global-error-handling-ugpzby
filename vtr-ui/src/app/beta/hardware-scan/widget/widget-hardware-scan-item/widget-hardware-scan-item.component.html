@@ -10,16 +10,6 @@
 							<fa-icon [icon]="['fas', 'caret-down']" *ngIf="item.collapsed"></fa-icon>{{ detailsText }}
 						</span>
 					</div>
-					<div class="result-code" *ngIf="item.resultCode">
-						<div class="result-code-value-text"><span>{{resultCodeText}}:</span></div>
-						<div class="left-code-result">
-							<span class="result-code-complete-text"> {{item.resultCode}}</span>
-							<fa-icon *ngIf="item.information" class="result-code-icon" triggers="click:blur"
-								placement="auto" [ngbTooltip]="tooltipRefModule" [icon]="['far', 'question-circle']"
-								container="body" tooltipClass="vtr-tooltip" (click)="getInformation(item.information)">
-							</fa-icon>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -32,14 +22,37 @@
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col pt-3">
+			<div class="result-code d-flex justify-content-end" *ngIf="item.resultCode">
+				<div class="result-code-value-text pr-2"><span>{{resultCodeText}}:</span></div>
+				<div class="left-code-result">
+					<span class="result-code-complete-text"> {{item.resultCode}}</span>
+					<fa-icon *ngIf="item.information" class="result-code-icon" triggers="click:blur"
+						placement="auto" [ngbTooltip]="tooltipRefModule" [icon]="['far', 'question-circle']"
+						container="body" tooltipClass="vtr-tooltip" (click)="getInformation(item.information)">
+					</fa-icon>
+				</div>
+			</div>
+		</div>
+		</div>
 	</div>
 </div>
 <ng-template #tooltipRefModule>
 	<div [innerHTML]="tooltipText"></div>
 	<div class='button-box'>
-		<a [attr.href]="'https://support.lenovo.com/contactus'"
+		<a
+			[attr.href]="'https://support.lenovo.com/contactus'"
 			target="_blank"
-			><button class='btn button'>{{lenovoSupport}}</button>
+			vtrMetrics
+			metricsItemID="HardwareScan.ResultSupport"
+			metricsItemPosition="r1"
+			metricsItemCategory="partnerarticle"
+			metricsEvent="articleclick"
+			metricsPageNumber="1">
+			<button class='btn button'>
+				{{ lenovoSupport }}
+			</button>
 		</a>
 	</div>
 </ng-template>

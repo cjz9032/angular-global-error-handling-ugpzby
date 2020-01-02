@@ -1,30 +1,29 @@
 import {
 	Component,
-	OnInit,
-	AfterViewInit
+	OnInit
 } from '@angular/core';
 import {
 	NgbActiveModal
 } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { EventTypes, WinRT } from '@lenovo/tan-client-bridge';
-import * as Phoenix from '@lenovo/tan-client-bridge';
+import { EventTypes, ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 
 @Component({
 	selector: 'vtr-modal-chs-welcome-container',
 	templateUrl: './modal-chs-welcome-container.component.html',
 	styleUrls: ['./modal-chs-welcome-container.component.scss']
 })
-export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit {
+export class ModalChsWelcomeContainerComponent implements OnInit {
 	switchPage = 1;
 	url = 'ms-settings:privacy-location';
 	showPageLocation = false;
-	hasSystemPermissionShowed: boolean;
 	isLocationServiceOn: boolean;
-	chs: Phoenix.ConnectedHomeSecurity;
+	chs: ConnectedHomeSecurity;
 	permission: any;
+	locationPermission: DeviceLocationPermission;
 	metricsParent = 'HomeSecurity';
 	welcomeDesc = [{
 		icon: 'personalDevice',
@@ -46,6 +45,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 		if (this.switchPage === 2) {
 			this.showPageLocation = true;
 		}
+		this.refreshPage();
 
 		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 			this.isLocationServiceOn = data;
@@ -60,19 +60,14 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 		});
 	}
 
-	ngAfterViewInit(): void {
-		this.refreshPage();
-	}
-
 	refreshPage() {
-		if (this.hasSystemPermissionShowed) {
-			this.requestVantagePermission();
+		if (this.locationPermission && this.locationPermission.hasSystemPermissionShowed) {
+			this.isLocationServiceOn = this.locationPermission.isLocationServiceOn;
+			if (this.isLocationServiceOn) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+			}
 		} else {
-			this.permission.getSystemPermissionShowed().then((response: boolean) => {
-				this.hasSystemPermissionShowed = response;
-				if (!response) { return; }
-				this.requestVantagePermission();
-			});
+			this.isLocationServiceOn = false;
 		}
 	}
 
@@ -92,25 +87,14 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 
 	public openLocation($event: any) {
 		this.closeModal();
-		this.permission.isComputerPermissionOn().then((result) => {
-			if (result) {
-				this.permission.getIsDevicePermissionOn().then((response) => {
-					if (response) {
-						this.permission.getSystemPermissionShowed().then((res) => {
-							this.hasSystemPermissionShowed = res;
-							if (res) {
-								WinRT.launchUri(this.url);
-							}
-							this.requestVantagePermission();
-						});
-					} else {
-						WinRT.launchUri(this.url);
-					}
-				});
-			} else {
-				WinRT.launchUri(this.url);
-			}
-		});
+		if (this.locationPermission
+				&& this.locationPermission.isAllAppsServiceOn
+				&& this.locationPermission.isDeviceServiceOn
+				&& !this.locationPermission.hasSystemPermissionShowed) {
+			this.requestVantagePermission();
+		} else {
+			this.permission.openSettingsApp(this.url);
+		}
 	}
 
 	requestVantagePermission() {

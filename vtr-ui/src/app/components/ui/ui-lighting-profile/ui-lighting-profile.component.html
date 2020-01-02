@@ -17,6 +17,7 @@
 			<div class="gaming-light-options">
 				<div *ngIf="!isProfileOff && simpleOrComplex===1"
 					class="light-option one-light only-blink">
+					<h3 class="content-title">{{'gaming.lightingProfile.lightingSingleLightingOption.option5.title' | translate}}</h3>
 					<vtr-ui-lighting-single-color (changeSingleColorOption)="changeSingleCoorEffect($event)"
 						[enableBrightCondition1] = "enableBrightCondition"
 						[options]="optionsSingleColor"

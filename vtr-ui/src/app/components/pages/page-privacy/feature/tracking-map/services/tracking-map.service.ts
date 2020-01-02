@@ -1,12 +1,12 @@
 import { Inject, Injectable } from '@angular/core';
 import { EMPTY, merge, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { catchError, map, shareReplay, startWith, switchMap, take } from 'rxjs/operators';
-import { UserAllowService } from '../../../common/services/user-allow.service';
+import { UserAllowService } from '../../../core/services/user-allow.service';
 import { HttpClient } from '@angular/common/http';
 import {
 	VantageCommunicationService,
 	VisitedWebsitesInfo
-} from '../../../common/services/vantage-communication.service';
+} from '../../../core/services/vantage-communication.service';
 import { topVisitedSites } from './tracking-map-top';
 import {
 	SingleTrackersInfo,
@@ -17,11 +17,11 @@ import {
 	typeData
 } from './tracking-map.interface';
 import { returnUniqueElementsInArray } from '../../../utils/helpers';
-import { FigleafOverviewService } from '../../../common/services/figleaf-overview.service';
+import { FigleafOverviewService } from '../../../core/services/figleaf-overview.service';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
-} from '../../../common/services/analytics/task-action-with-timeout.service';
+} from '../../../core/services/analytics/task-action-with-timeout.service';
 import { PRIVACY_ENVIRONMENT } from '../../../utils/injection-tokens';
 
 @Injectable({

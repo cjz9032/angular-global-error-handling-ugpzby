@@ -22,7 +22,7 @@ import { SidebarInstallWidgetComponent } from './main-layout/sidebar/sidebar-ben
 import { CheckBreachedAccountsModule } from './feature/check-breached-accounts/check-breached-accounts.module';
 import { TrackingMapModule } from './feature/tracking-map/tracking-map.module';
 import { NonPrivatePasswordModule } from './feature/non-private-password/non-private-password.module';
-import { VtrCommonModule } from './common/vtr-common.module';
+import { VtrCoreModule } from './core/vtr-core.module';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { ArticleSingleComponent } from './pages/articles/article-single/article-single.component';
 import { ArticlePreviewComponent } from './pages/articles/article-preview/article-preview.component';
@@ -36,6 +36,12 @@ import { OfflineWidgetComponent } from './main-layout/sidebar/offline-widget/off
 import { VideoWidgetComponent } from './main-layout/sidebar/video-widget/video-widget.component';
 import { CustomFontAwesomeModule } from './custom-font-awesome.module';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
+import { VideoComponent } from './main-layout/sidebar/video-widget/video/video.component';
+import { StatComponent } from './main-layout/privacy-dashboard-list/stat.component';
+import { SupportPopupComponent } from './main-layout/support-popup/support-popup.component';
+import { SupportBannerComponent } from './main-layout/support-banner/support-banner.component';
+import { SupportWidgetComponent } from './main-layout/sidebar/support-widget/support-widget.component';
+import { ExitWidgetComponent } from './main-layout/sidebar/exit-widget/exit-widget.component';
 
 @NgModule({
 	imports: [
@@ -48,7 +54,7 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 		CheckBreachedAccountsModule,
 		TrackingMapModule,
 		NonPrivatePasswordModule,
-		VtrCommonModule,
+		VtrCoreModule,
 		OneClickScanModule,
 		AppSearchModule
 	],
@@ -74,7 +80,13 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 		ArticleDescriptionComponent,
 		TrialExpiredWidgetComponent,
 		OfflineWidgetComponent,
+		ExitWidgetComponent,
 		VideoWidgetComponent,
+		VideoComponent,
+		StatComponent,
+		SupportPopupComponent,
+		SupportBannerComponent,
+		SupportWidgetComponent
 	],
 	providers: [
 		httpInterceptorProviders

@@ -21,7 +21,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PowerService } from 'src/app/services/power/power.service';
-
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-widget-quicksettings',
@@ -30,8 +30,9 @@ import { PowerService } from 'src/app/services/power/power.service';
 })
 export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public cameraStatus = new FeatureStatus(true, false);
-	public microphoneStatus = new FeatureStatus(false, false);
+	public microphoneStatus = new FeatureStatus(true, false);
 	public eyeCareModeStatus = new FeatureStatus(true, false);
+	public vantageToolbarStatus = new FeatureStatus(false, true);
 	private notificationSubscription: Subscription;
 	public isOnline: any = true;
 	public batteryInfo: any = [];
@@ -56,6 +57,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	];
 	private Windows: any;
 	private windowsObj: any;
+	private audioClient: any;
+	private audioData: string;
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
 
@@ -65,9 +68,11 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private powerService: PowerService,
 		private logger: LoggerService,
-		private deviceService: DeviceService,
+		public deviceService: DeviceService,
 		private ngZone: NgZone,
-		private vantageShellService: VantageShellService) {
+		private vantageShellService: VantageShellService,
+		private router: Router) {
+		this.cameraStatus.permission = false;
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
@@ -91,7 +96,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.isOnline) {
 			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-			if (welcomeTutorial && welcomeTutorial.page === 2) {
+			if (welcomeTutorial && welcomeTutorial.isDone) {
 				this.initFeatures();
 			}
 		} else {
@@ -110,6 +115,16 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
+		if (this.audioClient) {
+			try {
+				this.audioClient.stopMonitor();
+				console.log('stop audio monitor success in widget');
+			} catch (error) {
+				console.log('core audio stop moniotr error ' + error.message);
+			}
+		} else {
+			this.deviceService.stopMicrophoneMonitor();
+		}
 		this.stopMonitorForCamera();
 		this.deviceService.stopMicrophoneMonitor();
 		// this.stopEyeCareMonitor();
@@ -123,10 +138,18 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			const { type, payload } = notification;
 			switch (type) {
 				case DeviceMonitorStatus.MicrophoneStatus:
-					console.log('DeviceMonitorStatus.MicrophoneStatus', payload);
+					console.log('DeviceMonitorStatus.MicrophoneStatus', JSON.stringify(payload));
 					this.ngZone.run(() => {
-						this.microphoneStatus.status = payload.muteDisabled;
-						this.microphoneStatus.permission = payload.permission;
+						// microphone payload data is dynamic, need check one by one
+						if(payload.hasOwnProperty('muteDisabled')) {
+							this.microphoneStatus.status = payload.muteDisabled;
+						}
+						if(payload.hasOwnProperty('permission')) {
+							this.microphoneStatus.permission = payload.permission;
+						}
+						if(payload.hasOwnProperty('available')) {
+							this.microphoneStatus.available = (payload.available == true);
+						}
 					});
 					break;
 				case DeviceMonitorStatus.CameraStatus:
@@ -154,7 +177,13 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 		// this.initEyecaremodeSettings();
 		// this.startEyeCareMonitor();
+		// this.getVantageToolBarStatus();
+		// setTimeout(() => {
+		// 	this.initEyecaremodeSettings();
+		// 	this.startEyeCareMonitor();
+		// }, 5);
 	}
+	
 	public getCameraPermission() {
 		try {
 			if (this.displayService.isShellAvailable) {
@@ -212,11 +241,13 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				if (this.cameraStatus.permission) {
 					this.cameraStatus.isLoading = true;
 				}
+				this.logger.debug('WidgetQuicksettingsComponent.getCameraPrivacyStatus: invoke Camera Privacy');
+
 				this.dashboardService
 					.getCameraStatus()
 					.then((featureStatus: FeatureStatus) => {
 						this.cameraStatus.isLoading = false;
-						console.log('getCameraStatus.then', featureStatus);
+						this.logger.debug('WidgetQuicksettingsComponent.getCameraPrivacyStatus: response Camera Privacy', featureStatus);
 						this.cameraStatus = featureStatus;
 						this.cameraStatus.available = featureStatus.available;
 						this.cameraStatus.status = featureStatus.status;
@@ -228,13 +259,12 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						}
 					})
 					.catch(error => {
-						this.logger.error('getCameraStatus', error.message);
-						return EMPTY;
+						this.logger.error('WidgetQuicksettingsComponent.getCameraPrivacyStatus: promise error', error.message);
 					});
 			}
 		} catch (error) {
 			this.cameraStatus.isLoading = false;
-			this.logger.error('getCameraPrivacyStatus', error.message);
+			this.logger.error('WidgetQuicksettingsComponent.getCameraPrivacyStatus: exception', error.message);
 			return EMPTY;
 		}
 	}
@@ -284,17 +314,53 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 	private getMicrophoneStatus() {
 		if (this.dashboardService.isShellAvailable) {
-			this.dashboardService
-				.getMicrophoneStatus()
+			this.dashboardService.getMicrophoneStatus()
 				.then((featureStatus: FeatureStatus) => {
 					console.log('getMicrophoneStatus.then', featureStatus);
 					this.microphoneStatus = featureStatus;
 					if (featureStatus.available) {
-						this.deviceService.startMicrophoneMonitor();
+						const win: any = window;
+						if (win.VantageShellExtension && win.VantageShellExtension.AudioClient) {
+							try {
+								const a = performance.now();
+								this.audioClient = win.VantageShellExtension.AudioClient.getInstance();
+								const b = performance.now();
+								console.log('audioclient init' + (b-a) + 'ms');
+								if (this.audioClient) {
+									this.audioClient.onchangecallback = (data: string) => {
+										if(data){
+											if (this.audioData && this.audioData.toString() == data) {
+												return;
+											}
+											console.log('data data, got it ' + data);
+											this.audioData = data;
+											const dic = data.split(',');
+											
+											if(['1','0'].includes(dic[0])){
+												const muteDisabled = (dic[0] === '0');
+										
+												// if (/^\d+$/.test(dic[1])){
+												//   const volume = parseInt(dic[1]);
+												// }
+												this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, {muteDisabled: muteDisabled});
+											} else {
+												console.log('core audio wrong data format');
+											}
+										}
+									};
+								}
+								this.audioClient.startMonitor();
+							} catch (error) {
+								console.log('cannot init core audio for widget quick settings' + error.message);
+							}
+						} else {
+							console.log('current shell version maybe not support core audio');
+							// this.deviceService.startMicrophoneMonitor();
+						}
 					}
 				})
 				.catch(error => {
-					this.logger.error('getCameraStatus', error.message);
+					this.logger.error('getMicrophoneStatus', error.message);
 					return EMPTY;
 				});
 		}
@@ -320,7 +386,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	//#endregion
 
 	public onCameraStatusToggle($event: boolean) {
-
 		this.cameraStatus.isLoading = true;
 		this.quickSettingsWidget[1].state = false;
 		try {
@@ -401,6 +466,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	// 	}
 	// }
 
+	public onSystemUpdateToggle($event: boolean) {
+		this.router.navigate(['device/system-updates'], { queryParams: {action: 'start'}});
+	}
+
 	// private getEyeCareModeCallback(response: any) {
 	// 	this.eyeCareModeStatus.status = response.eyecaremodeState;
 	// }
@@ -427,9 +496,11 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	// 			.stopEyeCareMonitor();
 	// 	}
 	// }
-	onClick(path) {
+
+	onClick(path: string) {
 		this.deviceService.launchUri(path);
 	}
+
 	public getBatteryThresholdInformation() {
 		if (this.powerService.isShellAvailable) {
 			try {
@@ -446,6 +517,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
+
 	public showBatteryThresholdsettings(event) {
 		this.thresholdStatus = !this.thresholdStatus;
 		this.thresholdLoadingStatus = true;
@@ -467,6 +539,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 
 	}
+
 	public setChargeThresholdValues(batteryDetails: any) {
 		let batteryInfo: any = {};
 		try {
@@ -500,12 +573,13 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				const featureStatus = await this.powerService.getConservationModeStatusIdeaNoteBook();
 				console.log('getConservationModeStatusIdeaNoteBook.then', featureStatus);
 				this.conservationModeStatus = featureStatus;
-				} catch (error) {
+			} catch (error) {
 				this.logger.error('getConservationModeStatusIdeaNoteBook', error.message);
 				return EMPTY;
 			}
 		}
 	}
+
 	public async setConservationModeStatusIdeaNoteBook(status: any) {
 		console.log('======== setConservationModeStatusIdeaNoteBook.then ======== ');
 		try {
@@ -518,6 +592,37 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			this.logger.error('setConservationModeStatusIdeaNoteBook', error.message);
 			return EMPTY;
+		}
+	}
+
+	public onToolbarStatusToggle($event: boolean) {
+		try {
+			this.logger.debug('WidgetQuicksettingsComponent.onToolbarStatusToggle: before API call', $event);
+			if (this.powerService.isShellAvailable) {
+				this.powerService.setVantageToolBarStatus($event)
+					.then((value: boolean) => {
+						this.logger.debug('WidgetQuicksettingsComponent.onToolbarStatusToggle: API response received', value);
+						this.getVantageToolBarStatus();
+					}).catch(error => {
+						this.logger.error('WidgetQuicksettingsComponent.onToolbarStatusToggle: promise error ', error.message);
+					});
+			}
+		} catch (error) {
+			this.logger.error('WidgetQuicksettingsComponent.onToolbarStatusToggle: exception', error.message);
+			return EMPTY;
+		}
+	}
+
+	private async getVantageToolBarStatus() {
+		try {
+			this.logger.debug('WidgetQuicksettingsComponent.getVantageToolBarStatus: before API call');
+			if (this.powerService.isShellAvailable) {
+				const featureStatus = await this.powerService.getVantageToolBarStatus();
+				this.vantageToolbarStatus = featureStatus;
+				this.logger.debug('WidgetQuicksettingsComponent.getVantageToolBarStatus: API response received', featureStatus);
+			}
+		} catch (error) {
+			this.logger.error('WidgetQuicksettingsComponent.getVantageToolBarStatus: promise error ', error.message);
 		}
 	}
 }

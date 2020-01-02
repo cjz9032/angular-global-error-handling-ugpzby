@@ -1,11 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad.service';
-import { FnLockStatus, KeyType, PrimaryKeySetting, StringBooleanEnum } from './top-row-functions-ideapad.interface';
+import { FnLockStatus, KeyType, PrimaryKeySetting } from './top-row-functions-ideapad.interface';
 import { merge, Observable, of, Subject, Subscription } from 'rxjs';
 import { concatMap, map, mergeMap, switchMap, takeWhile, tap, throttleTime } from 'rxjs/operators';
 import { MetricService } from '../../../../../../services/metric/metric.service';
 import { CommonService } from '../../../../../../services/common/common.service';
 import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
+import { StringBooleanEnum } from '../../../../../../data-models/common/common.interface';
 
 @Component({
 	selector: 'vtr-top-row-functions-ideapad',
@@ -96,7 +97,9 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.setSubscription.unsubscribe();
+		if (this.setSubscription) {
+			this.setSubscription.unsubscribe();
+		}
 	}
 
 }

@@ -1,13 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { delayWhen, filter, first, map, skip, startWith, take, takeUntil } from 'rxjs/operators';
-import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
-import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
-import { CommonPopupService } from '../../common/services/popups/common-popup.service';
-import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
+import { filter, map, startWith, take, takeUntil } from 'rxjs/operators';
+import { BreachedAccountsService } from '../../feature/check-breached-accounts/services/breached-accounts.service';
+import { EmailVerifyService } from '../../feature/check-breached-accounts/services/email-verify.service';
+import { CommonPopupService } from '../../core/services/popups/common-popup.service';
+import { VantageCommunicationService } from '../../core/services/vantage-communication.service';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { BreachedAccountsFacadeService } from './breached-accounts-facade.service';
 import { combineLatest } from 'rxjs';
-import { Features } from '../../common/components/nav-tabs/nav-tabs.service';
+import { Features } from '../../core/components/nav-tabs/nav-tabs.service';
 import { CommonService } from '../../../../../services/common/common.service';
 import { NetworkStatus } from '../../../../../enums/network-status.enum';
 
@@ -21,17 +21,19 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	isOnline = this.commonService.isOnline;
 
 	breachedAccounts$ = this.breachedAccountsFacadeService.breachedAccounts$;
-	isAccountVerify$ = this.breachedAccountsFacadeService.isAccountVerify$;
 	isShowVerifyBlock$ = this.breachedAccountsFacadeService.isShowVerifyBlock$;
 	isFigleafReadyForCommunication$ = this.breachedAccountsFacadeService.isFigleafReadyForCommunication$;
+	isShowExitPitch$ = this.breachedAccountsFacadeService.isShowExitPitch$;
 	isUserAuthorized$ = this.breachedAccountsFacadeService.isUserAuthorized$;
 	breachedAccountsCount$ = this.breachedAccountsFacadeService.breachedAccountsCount$;
 	userEmail$ = this.breachedAccountsFacadeService.userEmail$;
 	breachedAccountWasScanned$ = this.breachedAccountsFacadeService.breachedAccountWasScanned$;
-	isUndefinedWithoutFigleafState$ = this.breachedAccountsFacadeService.isUndefinedWithoutFigleafState$;
+	isShowEmailScanner = this.breachedAccountsFacadeService.isShowEmailScanner$;
 	isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ = this.breachedAccountsFacadeService.isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$;
 	scanCounter$ = this.breachedAccountsFacadeService.scanCounter$;
+	isShowBreachedAccount$ = this.breachedAccountsFacadeService.isShowBreachedAccount$;
 
+	scanCounterLimit = this.breachedAccountsFacadeService.scanCounterLimit;
 	textForFeatureHeader = {
 		title: 'Check email for breaches',
 		figleafTitle: 'Lenovo Privacy Essentials by FigLeaf watches out for breaches',
@@ -45,7 +47,7 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
-		private emailScannerService: EmailScannerService,
+		private emailScannerService: EmailVerifyService,
 		private commonPopupService: CommonPopupService,
 		private vantageCommunicationService: VantageCommunicationService,
 		private breachedAccountsFacadeService: BreachedAccountsFacadeService,
@@ -58,7 +60,7 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 
 		combineLatest([
 			this.userEmail$,
-			this.emailScannerService.loadingStatusChanged$.pipe(startWith(false))
+			this.emailScannerService.loading$.pipe(startWith(false))
 		]).pipe(
 			filter(([_, isLoad]) => !isLoad),
 			takeUntil(instanceDestroyed(this))

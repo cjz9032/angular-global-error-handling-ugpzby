@@ -1,14 +1,17 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommunicationWithFigleafService } from '../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { RouterChangeHandlerService } from '../common/services/router-change-handler.service';
+import { RouterChangeHandlerService } from '../core/services/router-change-handler.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../utils/custom-rxjs-operators/instance-destroyed';
 import { RoutersName } from '../privacy-routing-name';
-import { FigleafOverviewService } from '../common/services/figleaf-overview.service';
-import { UpdateTriggersService } from '../common/services/update-triggers.service';
-import { TaskObserverService } from '../common/services/analytics/task-observer.service';
-import { WidgetDataService } from '../common/services/widget-data.service';
+import { FigleafOverviewService } from '../core/services/figleaf-overview.service';
+import { UpdateTriggersService } from '../core/services/update-triggers.service';
+import { TaskObserverService } from '../core/services/analytics/task-observer.service';
+import { WidgetDataService } from '../core/services/widget-data.service';
+import { AbTestsGenerateConfigService } from '../core/ab-tests/ab-tests-generate-config.service';
+import { CommunicationSwitcherService } from '../utils/communication-with-figleaf/communication-switcher.service';
+import { CommonService } from 'src/app/services/common/common.service';
 
 interface PageSettings {
 	showPrivacyScore: boolean;
@@ -62,7 +65,10 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		private figleafOverviewService: FigleafOverviewService,
 		private updateTriggersService: UpdateTriggersService,
 		private taskObserverService: TaskObserverService,
-		private widgetDataService: WidgetDataService
+		private widgetDataService: WidgetDataService,
+		private abTestsGenerateConfigService: AbTestsGenerateConfigService,
+		private communicationSwitcherService: CommunicationSwitcherService,
+		private commonService: CommonService
 	) {
 	}
 
@@ -74,6 +80,8 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.taskObserverService.start();
 		this.widgetDataService.startWrite();
+		this.communicationSwitcherService.startPulling();
+		this.communicationWithFigleafService.connect();
 		this.routerChangeHandler.onChange$
 			.pipe(
 				takeUntil(instanceDestroyed(this)),
@@ -81,6 +89,8 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 			.subscribe(
 				(currentPath) => this.setCurrentRouterPage(currentPath)
 			);
+
+		this.abTestsGenerateConfigService.shuffle();
 	}
 
 	ngOnDestroy() {
@@ -89,5 +99,6 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 
 	private setCurrentRouterPage(routerPage: string) {
 		this.currentPageSettings = this.pagesSettings[routerPage];
+		this.commonService.scrollTop();
 	}
 }

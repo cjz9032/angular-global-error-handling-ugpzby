@@ -8,9 +8,9 @@
 
 		</div>
 	</div>
-	<div class="row px-40">
+	<div class="row">
 		<div class="col">
-			<div class="row py-5 smartsettings-card"
+			<div class="row smartsettings-card"
 				*ngIf="dolbyModeResponse.available"
 				id="audio">
 				<div class="col-12 mx-auto">
@@ -167,7 +167,6 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-
 							<li class=""
 								*ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
 								<vtr-ui-row-switch
@@ -189,7 +188,6 @@
 									[switchId]="'audio-microphone-suppress'">
 								</vtr-ui-row-switch>
 							</li>
-
 							<li class=""
 								*ngIf="microphoneProperties.AEC != undefined">
 								<vtr-ui-row-switch
@@ -211,7 +209,6 @@
 									[switchId]="'audio-microphone-acousticEcho'">
 								</vtr-ui-row-switch>
 							</li>
-
 							<li class=""
 								*ngIf="!isDTmachine && microOptimizeModeResponse && microOptimizeModeResponse.modes.length > 0">
 								<vtr-ui-row-switch

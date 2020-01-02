@@ -2,16 +2,16 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { Subscription } from 'rxjs/internal/Subscription';
+import { Subscription } from 'rxjs';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { AppsForYouService, AppDetails } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { delay } from 'rxjs/operators';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalAppsForYouScreenshotComponent } from '../../modal/modal-apps-for-you-screenshot/modal-apps-for-you-screenshot.component';
 import { TranslateService } from '@ngx-translate/core';
+import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-page-apps-for-you',
@@ -35,9 +35,10 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 
 	installButtonStatusEnum = {
 		INSTALL: 1,
-		INSTALLING: 2,
-		LAUNCH: 3,
-		SEEMORE: 4,
+		DOWNLOADING: 2,
+		INSTALLING: 3,
+		LAUNCH: 4,
+		SEEMORE: 5,
 		UNKNOWN: -1
 	};
 
@@ -67,13 +68,13 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		private route: ActivatedRoute,
 		private commonService: CommonService,
 		private loggerService: LoggerService,
-		private shellService: VantageShellService,
+		private vantageShellService: VantageShellService,
 		public modalService: NgbModal,
 		private appsForYouService: AppsForYouService,
 		private translateService: TranslateService
 	) {
 		this.isOnline = this.commonService.isOnline;
-		this.systemUpdateBridge = shellService.getSystemUpdate();
+		this.systemUpdateBridge = vantageShellService.getSystemUpdate();
 		this.route.params.subscribe((params) => {
 			if (!this.appGuid || this.appGuid !== params.id) {
 				this.appDetails = undefined;
@@ -187,8 +188,13 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 					break;
 				case AppsForYouEnum.InstallAppProgress:
 					if (this.appDetails && this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !== -1) {
-						this.appDetails.showStatus = this.statusEnum.INSTALLING;
-						this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
+						if (notification.payload < 85) {
+							this.appDetails.showStatus = this.statusEnum.DOWNLOADING;
+							this.installButtonStatus = this.installButtonStatusEnum.DOWNLOADING;
+						} else {
+							this.appDetails.showStatus = this.statusEnum.INSTALLING;
+							this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
+						}
 					}
 					break;
 				case AppsForYouEnum.InstallAppResult:
@@ -200,6 +206,9 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 							this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
 							this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 							this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+						} else if (notification.payload === 'Downloading') {
+							this.appDetails.showStatus = this.statusEnum.DOWNLOADING;
+							this.installButtonStatus = this.installButtonStatusEnum.DOWNLOADING;
 						} else if (notification.payload === 'InstallerRunning') {
 							this.appDetails.showStatus = this.statusEnum.INSTALLING;
 							this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
@@ -236,6 +245,9 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		if (this.appDetails.screenshots.length > 3) {
 			this.showArrows = true;
 			this.startScreenshotAutoSwipe();
+		} else {
+			this.showArrows = false;
+			clearInterval(this.screenshotInterval);
 		}
 	}
 
@@ -247,6 +259,9 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 				if (status === 'InstallDone' || status === 'InstalledBefore') {
 					this.appDetails.showStatus = this.statusEnum.INSTALLED;
 					this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
+				} else if (status === 'Downloading') {
+					this.appDetails.showStatus = this.statusEnum.DOWNLOADING;
+					this.installButtonStatus = this.installButtonStatusEnum.DOWNLOADING;
 				} else if (status === 'InstallerRunning') {
 					this.appDetails.showStatus = this.statusEnum.INSTALLING;
 					this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
@@ -260,22 +275,79 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	// This is version compare function which takes version numbers of any length and any number size per segment.
+	// Return values:
+	// - negative number if v1 < v2
+	// - positive number if v1 > v2
+	// - zero if v1 = v2
+	private compareVersion(v1: string, v2: string) {
+		const regExStrip0 = '/(\.0+)+$/';
+		const segmentsA = v1.replace(regExStrip0, '').split('.');
+		const segmentsB = v2.replace(regExStrip0, '').split('.');
+		const min = Math.min(segmentsA.length, segmentsB.length);
+		for (let i = 0; i < min; i++) {
+			const diff = parseInt(segmentsA[i], 10) - parseInt(segmentsB[i], 10);
+			if (diff) {
+				return diff;
+			}
+		}
+		return segmentsA.length - segmentsB.length;
+	}
+
+	private isLMASupportUriProtocol() {
+		return new Promise(resovle => {
+			const regUtil = this.vantageShellService.getRegistryUtil();
+			if (regUtil) {
+				const regPath = 'HKEY_LOCAL_MACHINE\\Software\\Lenovo\\Lenovo Migration Assistant';
+				regUtil.queryValue(regPath).then(val => {
+					if (!val || (val.keyList || []).length === 0) {
+						resovle(false);
+					} else {
+						let support = false;
+						for (const key of val.keyList) {
+							const child = key.keyChildren.find(item => item.name === 'DisplayVersion');
+							if (child && child.value) {
+								const version = child.value;
+								if (this.compareVersion(version, '2.0.1.15') >= 0) {
+									support = true;
+									break;
+								}
+							}
+						}
+						resovle(support);
+					}
+				}).catch((e) => {
+					resovle(false);
+				});
+			} else {
+				resovle(false);
+			}
+		});
+	}
+
 	async clickInstallButton() {
 		switch (this.installButtonStatus) {
 			case this.installButtonStatusEnum.SEEMORE:
 				this.appsForYouService.openSeeMoreUrl(this.appGuid, this.appDetails.downloadlink);
 				break;
 			case this.installButtonStatusEnum.LAUNCH:
-				const launchPath = await this.systemUpdateBridge.getLaunchPath(this.appGuid);
-				if (launchPath) {
-					const paths = launchPath.split('|');
-					for (const path of paths) {
-						const result = await this.systemUpdateBridge.launchApp(path);
-						if (result) {
-							break;
+				this.isLMASupportUriProtocol().then(async (support) => {
+					if (support) {
+						WinRT.launchUri('lenovo-migration-assistant:vantage');
+					} else {
+						// If installed LMA does not support launch by URL protocol, try to launch it by GCP
+						const launchPath = await this.systemUpdateBridge.getLaunchPath(this.appGuid);
+						if (launchPath) {
+							const paths = launchPath.split('|');
+							for (const path of paths) {
+								const result = await this.systemUpdateBridge.launchApp(path);
+								if (result) {
+									break;
+								}
+							}
 						}
 					}
-				}
+				});
 				break;
 			case this.installButtonStatusEnum.INSTALL:
 			default:
@@ -301,7 +373,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		});
 		screenshotModal.componentInstance.metricsParent = this.metricsParent;
 		screenshotModal.componentInstance.image = imgUrl;
-		setTimeout(() => { document.getElementById('apps-for-you-screenshot-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
+		setTimeout(() => { (document.querySelector('.apps-for-you-dialog') as HTMLElement).focus(); }, 0);
 	}
 
 	copyObjectArray(obj: any) {

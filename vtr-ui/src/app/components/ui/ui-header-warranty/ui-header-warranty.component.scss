@@ -48,7 +48,7 @@
 	.header-warranty-dropdown {
 		position: absolute;
 		top: 3rem !important;
-		left: -1.15rem !important;
+		left: -7.15rem !important;
 		padding: 0;
 		transform: translate(0px, 0px) !important;
 		z-index: 1000;
@@ -58,7 +58,7 @@
 		background-clip: padding-box;
 		border-radius: 0.9rem;
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-		width: 30rem;
+		width: 28rem;
 		@media #{$breakpoint_xl}{
 			width: 29rem;
 		}
@@ -98,7 +98,7 @@
 			height: 1.4rem;
 			border: 1px solid rgba(0, 0, 0, 0);
 			position: absolute;
-			left: 2.2rem;
+			left: 8rem;
 			top: -0.7rem;
 			transform: rotate(45deg);
 			border-right: 0px;

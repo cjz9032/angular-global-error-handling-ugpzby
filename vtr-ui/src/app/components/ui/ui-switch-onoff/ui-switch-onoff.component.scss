@@ -6,12 +6,19 @@
 	cursor: pointer;
 	label {
 		cursor: pointer;
-		.switch-label, .switch {
+		.switch-label,
+		.switch {
 			cursor: pointer;
 		}
 	}
 	&.switch-disable {
 		pointer-events: none;
+	}
+}
+.switch-disable {
+	pointer-events: none;
+	.switch {
+		background: #e6eaeb !important;
 	}
 }
 
@@ -48,7 +55,7 @@
 
 input + .switch {
 	background: linear-gradient($gradient_angle, $shade_light 0%, $shade_lightest 100%);
-	margin-right: 0.7rem;
+	// margin-right: 0.7rem; // changed to match the UI Mockup.
 	@media #{$black-on-white} {
 		background: $dark;
 	}
@@ -77,15 +84,15 @@ input.wifi-checked + .switch {
 }
 
 .switch > small {
-	background-color: $shade_darkest;
-	border-radius: 10rem;
+	background-color: $shade_darker;
+	border-radius: 50%;
 	width: 2.2rem;
 	height: 2.2rem;
 	position: absolute;
 	left: 0.3rem;
-	top: 0.2rem;
-	-webkit-box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
-	box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
+	top: 0.3rem;
+	//-webkit-box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
+	//box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	transition: background-color 0.4s, left 0.2s;
 	@media #{$black-on-white} {
 		background-color: $light;
@@ -138,13 +145,13 @@ input.wifi-checked + .switch.switch-sm > small {
 /* EXTRA SMALL - XS */
 
 input.wifi-checked + .switch.switch-xs > small {
-	left: 4.2rem;
+	left: 2.8rem;
 }
 
 .switch.switch-xs {
 	margin-top: 0.5rem;
 	height: 2rem;
-	width: 6rem;
+	width: 4.6rem;
 }
 
 .switch-xs small {
@@ -182,17 +189,17 @@ input.wifi-checked + .switch.switch-xs > small {
 	font-size: 1.1rem;
 	text-transform: uppercase;
 	color: $light;
-	font-weight: $weight_medium;
+	font-weight: $weight_bold;
 	position: absolute;
 	top: 0.6rem;
 	width: 3.5rem;
-	left: 0.5rem;
+	left: 0rem;
 	text-align: center;
 
 	&.off-label {
-		left: 2rem;
-		color: $shade_darkest;
-		}
+		left: 1.4rem;
+		color: $shade_darker;
+	}
 }
 
 .spinner-text {

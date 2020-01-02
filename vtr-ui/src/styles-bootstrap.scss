@@ -125,6 +125,10 @@
 	word-break: break-word !important;
 }
 
+.word-break-all {
+	word-break: break-all !important;
+}
+
 .unclickable {
 	pointer-events: none;
 	color: inherit;
@@ -134,6 +138,28 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+.text-two-ellipsis {
+	display: -webkit-box;
+	overflow: hidden;
+	white-space: normal;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	-webkit-line-clamp: 2;
+	/* autoprefixer: off */
+	-webkit-box-orient: vertical;
+}
+
+.text-three-ellipsis {
+	display: -webkit-box;
+	overflow: hidden;
+	white-space: normal;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	-webkit-line-clamp: 3;
+	/* autoprefixer: off */
+	-webkit-box-orient: vertical;
 }
 
 
@@ -182,9 +208,9 @@
 	z-index: 10001;
 }
 
-.modal-content {
-	user-select: none;
-}
+// .modal-content {
+	// user-select: none;
+// }
 
 .battery-detail-modal-title {
 	color: $main_dark;
@@ -198,6 +224,16 @@
 		max-width: 60rem !important;
 		margin: 1.75rem auto;
 		overflow-y: initial !important;
+
+		@media #{$breakpoint_md} {
+			max-width: 55rem !important;
+			margin: 1.75rem auto;
+		}
+
+		@media #{$breakpoint_sm} {
+			max-width: 52.8rem !important;
+			margin: 0 2.4rem;
+		}
 	}
 
 	.modal-content {
@@ -221,11 +257,4 @@
 	padding-right: 2rem;
 	overflow: hidden;
 	min-height: 640px !important;
-}
-
-.update-read-more-modal-size .modal-dialog {
-	margin: 0 auto;
-	overflow: auto;
-	font-size: 1.4rem;
-	font-weight: 500;
 }

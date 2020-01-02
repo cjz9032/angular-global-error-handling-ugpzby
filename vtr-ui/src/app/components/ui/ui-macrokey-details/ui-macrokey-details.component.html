@@ -1,9 +1,9 @@
-<div class="macrokey-wrapper" [ngClass]="{'recording': recording && number}">
+<div class="macrokey-wrapper" [ngClass]="{'recording': recording && number, 'numberpad':isNumberpad}">
 	<div class="header-component" *ngIf="number && !number.status">
 		<div class="title-main">
 			{{ 'gaming.macroKey.recording.title' | translate }} <span
 				*ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
-			{{ number.key | translate }}
+			{{ number.key }}
 		</div>
 	</div>
 	<div class="section-details">
@@ -25,7 +25,7 @@
 						<p>
 							<span
 								*ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
-							{{ number.key | translate }}
+							{{ number.key }}
 						</p>
 					</div>
 					<div class="description">
@@ -63,14 +63,15 @@
 	</div>
 	<div class="footer-component text-center" *ngIf="number && !number.status">
 		<div class="start-button">
-			<vtr-ui-button id="gaming_macrokey_startrecording" tabindex="1" aria-label="gaming macrokey startrecording"
-				metricsEvent="featureClick" [metricsItem]="'macrokey_start_recording'" role="button"
+			<vtr-ui-button id="gaming_macrokey_startrecording" [tabIndex]="1"
+				aria-label="gaming macrokey startrecording" metricsEvent="featureClick"
+				[metricsItem]="'macrokey_start_recording'" role="button"
 				[label]="'gaming.macroKey.details.buttons.start' | translate" [btnHeight]=true [isGradient]=true
 				(onClick)="onStartClicked($event)" (keyup.enter)="onStartClicked($event)">
 			</vtr-ui-button>
 		</div>
 		<div class="stop-button">
-			<vtr-ui-button id="gaming_macrokey_stoprecording" tabindex="1" aria-label="gaming macrokey stoprecording"
+			<vtr-ui-button id="gaming_macrokey_stoprecording" [tabIndex]="1" aria-label="gaming macrokey stoprecording"
 				metricsEvent="featureClick" [metricsItem]="'macrokey_stop_recording'"
 				[label]="'gaming.macroKey.details.buttons.stop' | translate" [btnHeight]=true [isGradient]=true
 				(onClick)="onStopClicked($event)">

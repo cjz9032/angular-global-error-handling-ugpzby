@@ -3,6 +3,7 @@ export enum SessionStorageKey {
 	DashboardEyeCareMode = '[SessionStorageKey] DashboardEyeCareMode',
 	DashboardMicrophone = '[SessionStorageKey] DashboardMicrophone',
 	DashboardInDashboardPage = '[SessionStorageKey] DashboardInDashboardPage',
+	DashboardWelcomeText = '[SessionStorageKey] DashboardWelcomeText',
 	AvailableUpdates = '[SessionStorageKey] AvailableUpdates',
 	SecurityWifiSecurityLocationFlag = '[SessionStorageKey] SecurityWifiSecurityLocationFlag',
 	SecurityWifiSecurityInWifiPage = '[SessionStorageKey] SecurityWifiSecurityInWifiPage',
@@ -14,6 +15,6 @@ export enum SessionStorageKey {
 	HomeSecurityShowLocationPermisisonDialog = '[SessionStorageKey] HomeSecurityShowLocationPermisisonDialog',
 	WidgetWifiStatus = '[SessionStorageKey] WidgetWifiStatus',
 	ChsLocationDialogNextShowFlag = '[SessionStorageKey] ChsLocationDialogNextShowFlag',
-	ChsIsGetDevicePosture = '[SessionStorageKey] ChsIsGetDevicePosture',
 	WarrantyDataCache = '[SessionStorageKey] WarrantyDataCache'
+
 }

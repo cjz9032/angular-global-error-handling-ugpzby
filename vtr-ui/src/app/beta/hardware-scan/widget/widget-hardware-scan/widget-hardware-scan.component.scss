@@ -19,26 +19,26 @@
         }
         .title {
             color: $light;
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: $weight_light;
             line-height: 4.2rem;
-            padding-left: 5rem;
-            padding-top: 5rem;
+            padding-left: 2.4rem;
+            padding-top: 3rem;
             padding-bottom: 0.5rem;
-            padding-right: 5rem;
+            padding-right: 2.4rem;
         }
         .row1 {
             color: $light;
-            font-size: 1.4rem;
+            font-size: $fontsize_xs;
             line-height: 2.1rem;
             padding-left: 5rem;
             padding-right: 5rem;
         }
         .button-row {
-            padding-left: 5rem;
-            padding-bottom: 5rem;
+            padding-left: 2.4rem;
+            padding-bottom: 3rem;
             padding-top: 3rem;
-            padding-right: 5rem;
+            padding-right: 2.4rem;
             .action-button {
                 border-radius: 2.5rem;
                 background: $gradient_main;
@@ -154,10 +154,10 @@
         }
 
         .cancel-check {
-            padding-left: 5rem;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-            padding-right: 5rem;
+            margin-left: 5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            margin-right: 5rem;
             .cancel-button {
                 border-radius: 2.5rem;
                 border-color: $light-grey;
@@ -189,7 +189,7 @@
                 pointer-events: none !important;
             }
         }
-        
+
         .hwscan-header {
             padding-bottom: 1.5rem;
         }

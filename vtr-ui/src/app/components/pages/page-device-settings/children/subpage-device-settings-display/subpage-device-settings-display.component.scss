@@ -1,6 +1,14 @@
 @import "../../../../../app.theme.scss";
 
 .subpage-device-settings-display {
+	.displayColorTemperatureLink {
+		padding-left: 2.5rem;
+		font-size: 2rem;
+		font-weight: 300;
+	}
+	#goto_nightlight_link {
+		text-decoration: underline;
+	}
 	.title {
 		opacity: 0.8;
 		color: $main_darker;
@@ -9,7 +17,7 @@
 	}
 
 	.left-border {
-		border-left: 1rem solid $main;
+		border-left: 0.7rem solid $main;
 
 		.subtitle {
 			opacity: 0.8;
@@ -37,20 +45,20 @@
 				border: 0.1rem solid $dark;
 				border-radius: 1rem;
 				box-sizing: border-box;
-				
-				
+
+
 			}
 			@media #{$white-on-black} {
 				//background-color: $high-contrast-grey;
 				border: 0.1rem solid $light;
 				border-radius: 1rem;
 				box-sizing: border-box;
-				
-				
+
+
 			}
 		}
 	.smartsettings-card {
-		
+
 		.subtitle {
 			width: 100%;
 
@@ -118,8 +126,13 @@
 	}
 	.disabled {
 		opacity: 0.5;
-		pointer-events: none;
+		pointer-events: none;	
+		color: $light-grey;		
+		cursor: not-allowed;
 	}
+	 .custom-control-label-disabled:hover {
+		cursor: not-allowed;
+	  }
 	.privacy-guard-caption {
 		font-size: 1.5rem;
 		color: $main_darker;

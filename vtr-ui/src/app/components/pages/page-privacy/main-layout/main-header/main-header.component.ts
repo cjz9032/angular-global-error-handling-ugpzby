@@ -3,9 +3,10 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
-import { RouterChangeHandlerService } from '../../common/services/router-change-handler.service';
+import { RouterChangeHandlerService } from '../../core/services/router-change-handler.service';
 
 import { RoutersName } from '../../privacy-routing-name';
+import { AbTestsName } from '../../utils/ab-test/ab-tests.type';
 
 interface PageSettings {
 	title: string;
@@ -15,7 +16,7 @@ interface PageSettings {
 
 const defaultPageSettings: PageSettings = {
 	title: 'Lenovo Privacy Essentials',
-	backButton: false,
+	backButton: true,
 	figLeafIcon: true,
 };
 
@@ -25,7 +26,6 @@ const defaultPageSettings: PageSettings = {
 	styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent implements OnInit, OnDestroy {
-
 	title = 'Lenovo Privacy Essentials';
 	backButton = false;
 	figLeafIcon = true;

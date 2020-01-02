@@ -1,14 +1,16 @@
+import { LoggerService } from 'src/app/services/logger/logger.service';
 import { Validators } from '@angular/forms';
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, DoCheck } from '@angular/core';
 import { isUndefined } from 'util';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
 import { MacroKeyRepeat } from 'src/app/enums/macrokey-repeat.enum';
 import { MacroKeyInterval } from 'src/app/enums/macrokey-interval.enum.1';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-ui-macrokey-recorded-list',
 	templateUrl: './ui-macrokey-recorded-list.component.html',
-	styleUrls: ['./ui-macrokey-recorded-list.component.scss']
+	styleUrls: [ './ui-macrokey-recorded-list.component.scss' ]
 })
 export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoCheck {
 	@Input() number: any;
@@ -24,6 +26,8 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	public recordsList: any = [];
 	public pairCounter = {};
 	public hoveredPair = '';
+	tooltips_delay:any = '';
+	deleteStart: any = new Date();
 
 	repeatOptions: any = [
 		{
@@ -132,6 +136,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					id: 'macro_key_settings_keepdelay',
 					label: 'gaming.macroKey.details.recorded.intervalStatus.keep.title',
 					metricitem: 'macrokey_keep_delay',
+					show_tool_tip: true,
 					value: MacroKeyInterval.KeepInterval
 				},
 				{
@@ -141,6 +146,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					id: 'macro_key_settings_ignoredelay',
 					label: 'gaming.macroKey.details.recorded.intervalStatus.ignore.title',
 					metricitem: 'macrokey_ignore_delay',
+					show_tool_tip: true,
 					value: MacroKeyInterval.IgnoreInterval
 				}
 			]
@@ -158,9 +164,9 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		popupWindowTitle: 'gaming.macroKey.popupContent.clearMacrokey.modalTitle'
 	};
 
-	constructor(private macrokeyService: MacrokeyService) { }
+	constructor(private macrokeyService: MacrokeyService, private loggerService: LoggerService, private translate: TranslateService) {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	async recordDelete(record, i) {
 		try {
@@ -169,7 +175,15 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 				const remainingInputs = this.recordsData.inputs.filter(
 					(recordItem: any) => recordItem.pairName !== record.pairName
 				);
+
+				const deleteStart: any = new Date();
+				this.loggerService.info(`Performance: MACROKEY DELETE START TIME. ${deleteStart}`);
 				await this.macrokeyService.setMacroKey(this.number.key, remainingInputs).then((responseStatus) => {
+					// response;
+					const deleteEnd: any = new Date();
+					const deleteTime = deleteEnd - this.deleteStart;
+					this.loggerService.info(`Performance: MACROKEY DELETE END TIME. ${deleteEnd}`);
+					this.loggerService.info(`Performance: MACROKEY DELETE TOTAL TIME. ${deleteTime}ms`);
 					this.deleteCalled = false;
 					if (responseStatus) {
 						this.recordsData.inputs = remainingInputs;
@@ -179,7 +193,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					}
 				});
 			}
-		} catch (err) { }
+		} catch (err) {}
 	}
 
 	clearRecords() {
@@ -243,6 +257,11 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	}
 
 	onIntervalChanged(intervalOption) {
+		if (intervalOption.value) {
+			this.tooltips_delay = this.translate.instant(intervalOption.name);
+		} else {
+			this.tooltips_delay = '';
+		}
 		this.macrokeyService.setInterval(this.number.key, intervalOption.value).then((responseStatus) => {
 			if (responseStatus) {
 				this.recordsData.interval = intervalOption.value;

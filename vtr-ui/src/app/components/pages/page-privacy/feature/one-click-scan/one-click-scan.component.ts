@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, Input, OnDestroy } from '@angular/core';
 import { OneClickScanSteps, OneClickScanStepsService } from './services/one-click-scan-steps.service';
 import { PermitService } from './services/permit.service';
-import { CommonPopupService } from '../../common/services/popups/common-popup.service';
+import { CommonPopupService } from '../../core/services/popups/common-popup.service';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
-} from '../../common/services/analytics/task-action-with-timeout.service';
+} from '../../core/services/analytics/task-action-with-timeout.service';
 
 @Component({
 	selector: 'vtr-one-click-scan',

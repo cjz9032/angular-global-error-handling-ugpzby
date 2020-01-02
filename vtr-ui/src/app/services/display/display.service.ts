@@ -4,6 +4,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { CommonService } from '../common/common.service';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
+import { WhiteListCapability } from '../../data-models/eye-care-mode/white-list-capability.interface';
 @Injectable()
 export class DisplayService {
 	private displayEyeCareMode: any;
@@ -338,7 +339,7 @@ export class DisplayService {
 
 	public stopEyeCareMonitor() {
 		if (this.isShellAvailable) {
-			this.displayEyeCareMode.stopMonitor((response: boolean) => {
+			return this.displayEyeCareMode.stopMonitor((response: boolean) => {
 				// this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
 			});
 		}
@@ -406,5 +407,13 @@ export class DisplayService {
 			return this.oledSettings.setDisplayDimmerSetting(value);
 		}
 		return undefined;
+	}
+
+	resetEyecaremodeAllSettings() {
+		return this.displayEyeCareMode.resetEyecaremodeAllSettings();
+	}
+
+	getWhiteListCapability(): Promise<WhiteListCapability> {
+		return this.displayEyeCareMode.getWhiteListCapability();
 	}
 }

@@ -102,12 +102,13 @@
 	input {
 		position: absolute;
 		visibility: hidden;
-	}&.border-blue {
-		border: 0.3rem solid $main;
+	}
+	&.border-blue {
+		border: 0.2rem solid $dim_gray;
 		// transition: all 50ms ease-in;
 	}
 	&.border-grey {
-		border: 0.3rem solid $shade_lightest;
+		border: 0.2rem solid $note_border;
 		// transition: all 50ms ease-in;
 	}
 }
@@ -130,5 +131,12 @@
 .icomoon-Special-function, .icomoon-F1-F12-funciton {
 	&:before {
 		font-size: $svg_icon
+	}
+}
+:host-context(.top-row-key-block) {
+	.vtr-ui-rectangle-radio {
+		.label {
+			word-break: break-all!important;
+		}
 	}
 }

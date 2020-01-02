@@ -7,9 +7,13 @@ import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
 import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
-import { EMPTY, Subscription } from 'rxjs';
+import { EMPTY, Observable, Subscription } from 'rxjs';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
-import { StringBooleanEnum } from './top-row-functions-ideapad/top-row-functions-ideapad.interface';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { BacklightService } from './backlight/backlight.service';
+import { map } from 'rxjs/operators';
+import { StringBooleanEnum } from '../../../../../data-models/common/common.interface';
+import { BacklightLevelEnum } from './backlight/backlight.enum';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -28,7 +32,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public imagePathGrafEvo = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/';
 	public imagePathCS20 = 'assets/images/keyboard-images/KeyboardMap_Images/CS20/';
 	public imagesArray: string[] = ['Belgium.png', 'French.png', 'French_Canadian.png', 'German.png', 'Italian.png', 'Spanish.png', 'Turkish_F.png', 'Standered.png'];
- 
+
 
 	public image = '';
 	public additionalCapabilitiesObj: any = {};
@@ -46,7 +50,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public fnCtrlSwapCapability = false;
 	public fnCtrlSwapStatus = false;
 	public isRestartRequired = false;
-	voipAppName = ['Skype For Business', 'Microsoft Teams'];
+	voipAppName = ['Skype For Business 2016', 'Microsoft Teams'];
 	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
@@ -54,11 +58,15 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	fnLockCapability = false;
 	private topRowFunctionsIdeapadSubscription: Subscription;
 
+	backlightCapability$: Observable<boolean>;
+
 	constructor(
+		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private keyboardService: InputAccessoriesService,
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private commonService: CommonService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private backlightService: BacklightService
 	) {
 	}
 
@@ -83,6 +91,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 			});
 		});
+		this.backlightCapability$ = this.backlightService.backlight.pipe(
+			map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
+			map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY)
+		);
 	}
 
 	getVoipHotkeysSettings() {
@@ -142,12 +154,37 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 				if (this.inputAccessoriesCapability.additionalCapabilitiesObj) {
 					this.additionalCapabilitiesObj = this.inputAccessoriesCapability.additionalCapabilitiesObj;
+					if (this.keyboardCompatibility && this.inputAccessoriesCapability.keyboardLayoutName) {
+						this.getAdditionalCapabilitiesFromCache();
+					}
 				}
 			} else {
 				this.inputAccessoriesCapability = new InputAccessoriesCapability();
+				this.keyboardService.GetAllCapability().then((response=>{
+					this.keyboardCompatibility = (response != null && Object.keys(response).indexOf('keyboardMapCapability') !== -1) ? response.keyboardMapCapability : false;
+				}))
 			}
 		} catch (error) {
 			console.log('initHiddenKbdFnFromCache', error);
+		}
+	}
+
+	getAdditionalCapabilitiesFromCache() {
+		this.shortcutKeys = [];
+		if (this.additionalCapabilitiesObj.performance) {
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
+		}
+
+		this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj');
+
+		if (this.additionalCapabilitiesObj.privacy) {
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj');
+		}
+		if (this.additionalCapabilitiesObj.magnifier) {
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
+		}
+		if (this.additionalCapabilitiesObj.backLight) {
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj');
 		}
 	}
 
@@ -156,6 +193,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetKBDLayoutName().then((value: any) => {
+					this.inputAccessoriesCapability.keyboardLayoutName = value;
+					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					if (value) {
 						this.getKBDMachineType(value);
 					}
@@ -195,7 +234,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 
 	// To display the keyboard map image
 	public getKeyboardMap(layOutName, machineType) {
-		const type = machineType.toLowerCase();	
+		const type = machineType.toLowerCase();
 		this.imagesArray.forEach(element => {
 			if (element.toLowerCase() === layOutName.toLowerCase() + '.png') {
 				if (this.keyboardVersion === '1') {
@@ -227,7 +266,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					// console.log('promise all resonse  here -------------.>', response);
 					if (response && response.length) {
 						if (response[0]) {
-							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
+							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
 						}
 						this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj');
 
@@ -235,7 +274,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj');
 						}
 						if (response[2]) {
-							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
+							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
 						}
 						if (response[3]) {
 							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj');
@@ -273,41 +312,41 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			this.logger.error('GetFnCtrlSwapCapability', error.message);
 			return EMPTY;
 		}
-		}
-		public getFnCtrlSwap() {
-			try {
-				if (this.keyboardService.isShellAvailable) {
-					this.keyboardService.GetFnCtrlSwap().then(res => {
-						this.fnCtrlSwapStatus = res;
-					}).catch(error => {
-							this.logger.error('GetFnCtrlSwap error here', error.message);
-							return EMPTY;
-						});
-				}
-			} catch (error) {
-				this.logger.error('GetFnCtrlSwap', error.message);
-				return EMPTY;
+	}
+	public getFnCtrlSwap() {
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.GetFnCtrlSwap().then(res => {
+					this.fnCtrlSwapStatus = res;
+				}).catch(error => {
+					this.logger.error('GetFnCtrlSwap error here', error.message);
+					return EMPTY;
+				});
 			}
+		} catch (error) {
+			this.logger.error('GetFnCtrlSwap', error.message);
+			return EMPTY;
 		}
+	}
 
 	public fnCtrlKey(event) {
-			this.fnCtrlSwapStatus = event.switchValue;
-			try {
-				if (this.keyboardService.isShellAvailable) {
-					this.keyboardService.SetFnCtrlSwap(this.fnCtrlSwapStatus).then(res => {
-						this.isRestartRequired = res.RebootRequired;
-						if (res.RebootRequired === true) {
-							this.keyboardService.restartMachine();
-						}
-					}).catch((error) => {
-						this.logger.error('SetFnCtrlSwap', error.message);
-					});
-				}
-			} catch (error) {
-				this.logger.error('SetFnCtrlSwap', error.message);
-				return EMPTY;
+		this.fnCtrlSwapStatus = event.switchValue;
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.SetFnCtrlSwap(this.fnCtrlSwapStatus).then(res => {
+					this.isRestartRequired = res.RebootRequired;
+					if (res.RebootRequired === true) {
+						this.keyboardService.restartMachine();
+					}
+				}).catch((error) => {
+					this.logger.error('SetFnCtrlSwap', error.message);
+				});
 			}
+		} catch (error) {
+			this.logger.error('SetFnCtrlSwap', error.message);
+			return EMPTY;
 		}
+	}
 
 	public launchProtocol(protocol: string) {
 		if (this.keyboardService.isShellAvailable && protocol && protocol.length > 0) {
@@ -331,6 +370,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	}
 
 	ngOnDestroy(): void {
-		this.topRowFunctionsIdeapadSubscription.unsubscribe();
+		if (this.topRowFunctionsIdeapadSubscription) {
+			this.topRowFunctionsIdeapadSubscription.unsubscribe();
+		}
 	}
 }

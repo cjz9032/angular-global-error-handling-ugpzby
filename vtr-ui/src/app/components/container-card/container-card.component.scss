@@ -5,7 +5,15 @@
 	border-radius: $border_radius;
 	background-color: $light;
 	position: relative;
+
 	// overflow: hidden;
+	.default-cursor {
+		cursor: default !important;
+
+		* {
+			cursor: default !important;
+		}
+	}
 
 	.container-fluid {
 		height: 100%;
@@ -31,7 +39,7 @@
 
 			.card-image {
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				cursor: pointer;
@@ -42,9 +50,8 @@
 				border-radius: $border_radius;
 				overflow: hidden;
 
-
 				&::after {
-					content: '';
+					content: "";
 					background: rgba(0, 0, 0, 0.4);
 					width: 100%;
 					height: 100%;
@@ -57,33 +64,15 @@
 				.inner-content {
 					position: relative;
 					z-index: 1;
-					padding: 2.5rem;
+					padding: 2rem 2.5rem;
 					height: 100%;
-
-					// @media #{$mediaquery_X9} {
-					// 	padding: 1.5rem;
-					// }
-
-					// @media #{$mediaquery_X10} {
-					// 	padding: 2rem;
-					// }
-
-					// @media #{$mediaquery_X3} {
-					// 	padding: 1.5rem;
-					// }
-
-					// @media #{$mediaquery_X4} {
-					// 	padding: 2rem;
-					// }
-
-					// @media #{$mediaquery_X7} {
-					// 	padding: 1rem;
-					// }
 
 					.title {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+						font-size: $fontsize_xl2;
+						font-weight: $weight_light;
 					}
 
 					.description {
@@ -96,6 +85,13 @@
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+
+						div {
+							cursor: pointer;
+						}
+						font-size: $fontsize_md;
+						font-weight: $weight_light;
+						line-height: 1.2;
 					}
 
 					.logo {
@@ -109,15 +105,7 @@
 							text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						}
 					}
-
-					.default-cursor {
-						cursor: default;
-					}
 				}
-			}
-
-			.default-cursor {
-				cursor: default;
 			}
 		}
 	}
@@ -136,7 +124,7 @@
 				border-radius: $border_radius;
 				display: block;
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				cursor: pointer;
@@ -150,7 +138,7 @@
 				height: 50%;
 
 				@media #{$mediaquery_X9} {
-					padding: .5rem 0;
+					padding: 0.5rem 0;
 				}
 
 				@media #{$mediaquery_X10} {
@@ -158,7 +146,7 @@
 				}
 
 				@media #{$mediaquery_X3} {
-					padding: .5rem 0;
+					padding: 0.5rem 0;
 				}
 
 				@media #{$mediaquery_X4} {
@@ -166,7 +154,7 @@
 				}
 
 				@media #{$mediaquery_X7} {
-					padding: .5rem 0;
+					padding: 0.5rem 0;
 				}
 
 				.title {
@@ -176,7 +164,6 @@
 
 				.description {
 					color: $shade_darkest;
-					;
 					cursor: pointer;
 				}
 
@@ -206,8 +193,7 @@
 		}
 	}
 
-	&.card-corner-article {
-
+	&.card-subpage-corner {
 		.content {
 			position: relative;
 			z-index: 1;
@@ -215,7 +201,7 @@
 
 			.card-image {
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				cursor: pointer;
@@ -227,7 +213,7 @@
 				overflow: hidden;
 
 				&::after {
-					content: '';
+					content: "";
 					background: rgba(0, 0, 0, 0.4);
 					width: 100%;
 					height: 100%;
@@ -243,12 +229,12 @@
 					padding: 2rem;
 					height: 100%;
 					@media #{$black-on-white} {
-						border:0.1rem solid;
-						border-radius:2rem;
+						border: 0.1rem solid;
+						border-radius: 2rem;
 					}
 					@media #{$white-on-black} {
-						border:0.1rem solid;
-						border-radius:2rem;
+						border: 0.1rem solid;
+						border-radius: 2rem;
 					}
 
 					@media #{$mediaquery_X1} {
@@ -271,6 +257,8 @@
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+						font-size: $fontsize_xl2;
+						font-weight: $weight_light;
 					}
 
 					.description {
@@ -283,6 +271,13 @@
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+						font-size: $fontsize_md;
+						font-weight: $weight_light;
+						line-height: 1.2;
+
+						div {
+							cursor: pointer;
+						}
 					}
 
 					.logo {
@@ -313,7 +308,7 @@
 
 			.card-image {
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				cursor: pointer;
@@ -326,27 +321,21 @@
 				.inner-content {
 					position: relative;
 					z-index: 1;
-					height: 100%;
-					padding: 2rem;
-					// display: flex;
+					display: flex;
+					padding: 2rem 2.5rem;
 					// justify-content: flex-end;
-					align-items: center;
+					// align-items: center;
+
 					.title {
 						color: $light;
-						max-width: 60%;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-						text-overflow: ellipsis;
 						cursor: pointer;
-						margin-right: 10%;
 					}
 				}
 			}
 
-			.default-cursor {
-				cursor: default;
-			}
 			.highlight-offline {
-				.inner-content{
+				.inner-content {
 					.title {
 						cursor: default;
 					}
@@ -374,7 +363,6 @@
 
 		a,
 		.offline-a {
-
 			&:hover {
 				text-decoration: none;
 			}
@@ -386,7 +374,7 @@
 			.card-image {
 				display: block;
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				width: 100%;
@@ -394,15 +382,13 @@
 				cursor: pointer;
 			}
 
-			.default-cursor {
-				cursor: default;
-			}
-
 			.content {
 				cursor: pointer;
 				width: 100%;
-				padding: 28 / 430 * 100% 40 / 430 * 100% 0;
-				height: 40%;
+				//padding: 28 / 430 * 100% 40 / 430 * 100% 0;
+				padding: 2.4rem;
+				padding-bottom: 0;
+				height: 30%;
 
 				.title {
 					font-weight: $weight_light;
@@ -412,22 +398,22 @@
 					&:hover {
 						text-decoration: underline;
 					}
-
-					@media #{$mediaquery_7} {
-						overflow: hidden;
-						text-overflow: ellipsis;
-						white-space: nowrap;
-					}
 				}
 
 				.read-more {
 					// position: absolute;
 					// margin-top: 2rem;
 					// left: 4rem;
-					font-size: 1.4rem;
+					font-size: $fontsize_xs;
 					cursor: pointer;
 					text-transform: uppercase;
 					color: $main;
+					@media #{$mediaquery_xl} {
+						font-size: $fontsize_xs2;
+					}
+					@media #{$mediaquery_md} {
+						font-size: $fontsize_xs2;
+					}
 
 					&:hover {
 						.link-label {
@@ -450,11 +436,11 @@
 		}
 	}
 
-	&.card-partnerarticle {
+	&.card-subpage-partner-corner {
 		.image {
 			// height: 60%;
 			background-size: cover;
-			background-position: 50% 50%;
+			background-position: center center;
 			background-repeat: no-repeat;
 			border-radius: $border_radius;
 
@@ -473,15 +459,31 @@
 		}
 
 		.content {
-			//padding: 3rem 4rem;
+			padding: 2rem;
 			cursor: pointer;
 
+			@media #{$mediaquery_X1} {
+				padding: 2rem;
+			}
+
+			@media #{$mediaquery_10} {
+				padding: 1.5rem 2rem;
+			}
+
+			@media #{$mediaquery_X7} {
+				padding: 1.5rem;
+			}
+
+			@media #{$mediaquery_18} {
+				padding: 1.5rem;
+			}
+
 			.title {
-				font-weight: $weight_light;
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-				font-size: $sub_header;
-				line-height: 4.6rem;
+				font-size: $fontsize_xl;
+				font-weight: $weight_light;
+				line-height: 1.4;
 				cursor: pointer;
 			}
 
@@ -489,7 +491,7 @@
 				// position: absolute;
 				bottom: 4rem;
 				// left: 4rem;
-				font-size: 1.3rem;
+				font-size: $fontsize_xs;
 				cursor: pointer;
 				text-transform: uppercase;
 
@@ -524,7 +526,6 @@
 		}
 
 		.offline-a {
-
 			.default-cursor {
 				cursor: default;
 			}
@@ -546,38 +547,20 @@
 	.content {
 		position: relative;
 		z-index: 1;
-		padding: 3rem;
+		padding: 2.4rem;
 
 		.title {
 			color: $main_dark;
-			font-size: 2.5rem;
-			line-height: 1.1em;
-			font-weight: $weight_bold;
-
-		/*	@media #{$mediaquery_X4} {
-				font-size: 2rem;
-			}
-
-			@media #{$mediaquery_X7} {
-				font-size: 1.85rem;
-			}
-
-			@media #{$mediaquery_X11} {
-				font-size: 2rem;
-			}
-
-			@media #{$mediaquery_17} {
-				font-size: 2rem;
-			}
-
-			@media #{$mediaquery_X3} {
-				font-size: 1.6rem;
-			}*/
+			font-size: $fontsize_xl;
+			font-weight: $weight_light;
+			line-height: 1.4;
+			width: 100%;
 		}
 
 		.description {
 			color: $main_dark;
 			font-size: 1.1rem;
+			line-height: 1.2;
 		}
 
 		.caption {
@@ -585,26 +568,7 @@
 			font-size: 2.2rem;
 			line-height: 1.1em;
 			padding-top: 1rem;
-
-			/*@media #{$mediaquery_X4} {
-				font-size: 1.8rem;
-			}
-
-			@media #{$mediaquery_X7} {
-				font-size: 1.7rem;
-			}
-
-			@media #{$mediaquery_X11} {
-				font-size: 1.8rem;
-			}
-
-			@media #{$mediaquery_17} {
-				font-size: 1.8rem;
-			}
-
-			@media #{$mediaquery_X3} {
-				font-size: 1.6rem;
-			}*/
+			width: 100%;
 		}
 
 		.logo {
@@ -640,19 +604,26 @@
 }
 
 .offline-icon {
-	font-size: 10rem;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	font-size: 8rem;
+	background: rgba(25, 28, 40, 0.75);
+	border-radius: $border_radius;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	@media #{$mediaquery_X41} {
-		font-size: 16rem;
+		font-size: 12rem;
 	}
 
 	@media #{$mediaquery_X42} {
 		font-size: 6rem;
 	}
 
-	background-color:#1d2339;
-	color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }

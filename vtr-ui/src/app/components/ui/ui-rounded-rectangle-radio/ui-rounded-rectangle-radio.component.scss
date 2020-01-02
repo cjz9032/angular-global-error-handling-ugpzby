@@ -2,7 +2,7 @@
 
 .vtr-ui-rounded-rectangle-radio {
 	box-sizing: border-box;
-	background: linear-gradient(to left, $light, $shade_extralight);
+	background: transparent linear-gradient(270deg, $solitude 0%, $grey_lighter 100%) 0% 0% no-repeat padding-box;
 	display: inline-block;
 	margin-right: 1.5rem;
 	margin-bottom: 1rem;
@@ -80,7 +80,7 @@
 				border: none;
 				color: $high-contrast-white-textselected;
 			}
-	
+
 		}
 
 		fa-icon.icon {
@@ -114,15 +114,15 @@
 	}
 
 	&.border-blue {
-		border: 0.3rem solid $main;
+		border: 0.2rem solid $dim_gray;
 		// transition: all 50ms ease-in;
 		@media #{$black-on-white} {
-			border: 0.3rem solid $high-contrast-white-textselected;
+			border: 0.2rem solid $high-contrast-white-textselected;
 		}
 
 	}
 	&.border-grey {
-		border: 0.3rem solid $shade_lightest;
+		border: 0.2rem solid $note_border;
 		// transition: all 50ms ease-in;
 		@media #{$black-on-white} {
 			border: none;
@@ -130,7 +130,8 @@
 
 	}
 	&.border-disabled {
-		border: 0.3rem solid #e6eaeb;
+		border: 0.2rem solid #e6eaeb;
+		cursor: default;
 		label {
 			.icon-circle {
 				color: $grey_darker;
@@ -138,7 +139,8 @@
 		}
 	}
 	&.border-checked-disabled {
-		border: 0.3rem solid #667481;
+		border: 0.2rem solid #667481;
+		cursor: default;
 		label {
 			.icon-circle {
 				color: $grey_darker;

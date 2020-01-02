@@ -4,93 +4,96 @@
 	box-shadow: $drop_shadow;
 	border-radius: $border_radius;
 	background-color: $light;
+	.container-fluid {
+		padding: 2rem;
+	}
 	.title {
 		display: inline-block;
-		font-size: 2.5rem;
+		font-size: 2.4rem;
 		font-weight: 400;
 		margin-right: 2rem;
 		color: $shade_blue;
 	}
 
-	.chsStatus {
-		margin-top: 2rem;
-		.line-height-2-5 {
-			line-height: 2.5rem;
-			height: 2.5rem;
-		}
-	}
-
 	.card {
 		border-radius: $border_radius;
 		.no-gutters {
-			height: 4.5rem;
+			// height: 4.5rem;
 			width: 100%;
 			display: flex;
-			.homesecurity-container-name,
-			.homesecurity-container-enable span{
-				display: inline-blockl;
+			.homesecurity-container-name {
+				line-height: 2rem;
+				font-size: 1.2rem;
+			}
+			.homesecurity-container-enable {
+				line-height: 1;
 				overflow: hidden;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-			}
-			.homesecurity-container-name{
-				min-width: 20%
-			}
-			.homesecurity-container-enable{
-				max-width: 50%;
-				line-height: 0rem;
-				span{
-					width: 100%
+				span {
+					display: inline-block;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					font-size: 1.2rem;
+					max-width: 100%;
+					&.badge-success {
+						background-color: $green_dark;
+					}
+					&.badge-danger {
+						background-color: $button_red_start;
+					}
 				}
 			}
 		}
 
 		.card-header {
 			border-radius: $border_radius;
-			padding: 1.6rem 2.5rem;
+			padding: 1.5rem;
 			background: $shade_extralight;
 			border: 0rem;
 		}
 
 		.subHeading {
-			display: flex;
+			// display: flex;
 			.loading {
 				margin-right: 1rem;
 			}
-			width: 50%;
-			justify-content: flex-start;
+			// width: 50%;
+			// justify-content: flex-start;
 			.circle {
-				background-color: $go;
-				background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
-				height: 2.5rem;
-				width: 2.7rem;
+				height: 2rem;
+				width: 2rem;
 				border-radius: 100%;
-				border: 0.1rem solid $go_dark;
 				text-align: center;
 				display: inline-block;
 				margin-right: 1rem;
 				flex-shrink: 0;
+				flex-basis: auto;
 
 				fa-icon {
-					font-size: 1.5rem;
+					font-size: 1.2rem;
 					color: $light;
+				}
+				&.green {
+					background-color: $green_darker;
+					background-image: linear-gradient(135deg, $green_darker 25%, $green-light 100%);
+					border: 0.1rem solid $green_darker;
 				}
 
 				&.red {
-					background-color: $stop;
-					background-image: linear-gradient(315deg, $stop_light 25%, $stop 100%);
-					border: 0.1rem solid $stop_dark;
+					background-color: $button_red_start;
+					background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
+					border: 0.1rem solid $button_red_start;
 				}
 			}
-			.line-height-2-5 {
-				line-height: 2.5rem;
-				height: 2.5rem;
+			.line-height-2 {
+				line-height: 2rem;
+				height: 2rem;
 			}
 
 			h3 {
 				font-weight: $weight_bold;
 				text-transform: uppercase;
-				margin-right: 2.5rem;
+				line-height: 1;
 			}
 		}
 	}
@@ -98,7 +101,7 @@
 	.button-container {
 		display: flex;
 		align-items: center;
-		width: 50%;
+		// width: 50%;
 		vtr-ui-button {
 			max-width: 90%;
 			margin-left: auto;
@@ -107,7 +110,7 @@
 			::ng-deep .button-box {
 				margin-top: 0 !important;
 				.button {
-					width: 100%;
+					min-width: 100%;
 				}
 			}
 		}

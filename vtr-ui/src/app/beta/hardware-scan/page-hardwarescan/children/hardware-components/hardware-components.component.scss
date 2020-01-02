@@ -3,21 +3,24 @@
 .vtr-hardware-components {
 	border-radius: 0.5rem !important;
 	background-color: $light;
-
+	.hardware-scan-items {
+		padding: 2.4rem 2.4rem 0;
 	.header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 
 		.heading1 {
-			color: $main_darker;
-			font-size: 3rem;
+			color: $shade_blue;
+			font-size: 2.5rem;
+			font-weight: $weight_light;
 			text-transform: capitalize;
 		}
 
 		.heading2 {
-			color: $main;
-			font-size: 3rem;
+			color: $menu_hover;
+			font-size: 2.5rem;
+			font-weight: $weight_light;
 
 			&::first-letter {
 				text-transform: uppercase;
@@ -36,10 +39,19 @@
 			}
 		}
 
+		.disabled-anchor {
+			font-size: 1.3rem;
+			color: $shade_light;
+			text-decoration: underline;
+			text-transform: capitalize;
+			cursor: default;
+			pointer-events: none !important;
+		}
+
 		.refresh-button {
-			font-weight: bold;
-			font-size: 1.5rem;
-			color: $main;
+			font-weight: $weight_light;
+			font-size: $fontsize_xs;
+			color: $grey_dark;
 			text-decoration: underline;
 			cursor: pointer;
 
@@ -49,9 +61,11 @@
 
 			.refresh-icon {
 				padding-left: 1rem;
+				color: $main;
 			}
 		}
 	}
+}
 
 	.text-regular {
 		color: $main_shade;
@@ -61,7 +75,7 @@
 	}
 
 	.hardware-lists-container {
-		padding: 0rem 2rem 0rem 2rem;
+		// padding: 0rem 2rem 0rem 2rem;
 
 		.heading {
 			color: $main_dark;

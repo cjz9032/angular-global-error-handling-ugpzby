@@ -1,7 +1,7 @@
-import { BrowserListType } from '../common/services/vantage-communication.service';
+import { BrowserListType } from '../core/services/vantage-communication.service';
 import { AppStatuses, FeaturesStatuses } from '../userDataStatuses';
-import { sha256 } from 'js-sha256';
-import * as sha1 from 'js-sha1';
+import SHA256 from 'crypto-js/sha256';
+import SHA1 from 'crypto-js/sha1';
 import { FormControl, FormGroup } from '@angular/forms';
 
 export function returnUniqueElementsInArray<T>(arr: T[]): T[] {
@@ -25,14 +25,16 @@ export function getSha1Hash(value: string) {
 	if (typeof value !== 'string') {
 		return value;
 	}
-	return sha1(value);
+
+	return SHA1(value);
 }
 
 export function getSha256Hash(value: string) {
 	if (typeof value !== 'string') {
 		return value;
 	}
-	return sha256(value);
+
+	return SHA256(value);
 }
 
 export function getDisplayedCountValueOfIssues(status: FeaturesStatuses, issuesCount) {
@@ -59,8 +61,8 @@ export function getFigleafProtectedStatus(appState: AppStatuses) {
 	return figleafProtectStatuses.includes(appState);
 }
 
-export function snake2CamelCase(string) {
-	return string
+export function snake2CamelCase(message: string) {
+	return message
 		.replace(
 			/_(\w)/g,
 			($, $1) => $1.toUpperCase()
@@ -68,8 +70,8 @@ export function snake2CamelCase(string) {
 		;
 }
 
-export function snake2PascalCase(string) {
-	const s = snake2CamelCase(string);
+export function snake2PascalCase(message: string) {
+	const s = snake2CamelCase(message);
 
 	return `${s.charAt(0).toUpperCase()}${s.substr(1)}`;
 }

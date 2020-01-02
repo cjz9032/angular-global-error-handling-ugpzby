@@ -2,10 +2,17 @@
  * this enum is for local storage keys. new keys can be added here. please give meaningful names to key.
  */
 export enum LocalStorageKey {
+	EyeCareModeResetStatus = '[LocalStorageKey] EyeCareModeResetStatus',
 	WelcomeTutorial = '[LocalStorageKey] WelcomeTutorial',
 	SecurityVPNStatus = '[LocalStorageKey] SecurityVPNStatus',
 	SecurityPasswordManagerStatus = '[LocalStorageKey] SecurityPasswordManagerStatus',
+	SecurityLandingPasswordManagerShowOwn = '[LocalStorageKey] SecurityLandingPasswordManagerShowOwn',
+	SecurityLandingWifiSecurityShowOwn = '[LocalStorageKey] SecurityLandingWifiSecurityShowOwn',
+	SecurityLandingVPNShowOwn = '[LocalStorageKey] SecurityLandingVPNShowOwn',
 	SecurityWindowsHelloStatus = '[LocalStorageKey] SecurityWindowsHelloStatus',
+	SecurityWindowsActiveStatus = '[LocalStorageKey] SecurityWindowsActiveStatus',
+	SecurityUacStatus = '[LocalStorageKey] SecurityUacStatus',
+	SecurityBitLockerStatus = '[LocalStorageKey] SecurityBitLockerStatus',
 	SecurityShowWindowsHello = '[LocalStorageKey] SecurityShowWindowsHello',
 	SecurityShowWifiSecurity = '[LocalStorageKey] SecurityShowWifiSecurity',
 	SecurityMcAfee = '[LocalStorageKey] SecurityMcAfee',
@@ -14,6 +21,7 @@ export enum LocalStorageKey {
 	SecurityOtherFirewall = '[LocalStorageKey] SecurityOtherFirewall',
 	SecurityMcAfeeStatusList = '[LocalStorageKey] SecurityMcAfeeStatusList',
 	SecurityMcAfeeMetricList = '[LocalStorageKey] SecurityMcAfeeMetricList',
+	SecurityMcAfeeTrialUrl = '[LocalStorageKey] SecurityMcAfeeTrialUrl',
 	SecurityShowMetricList = '[LocalStorageKey] SecurityShowMetricList',
 	SecurityShowMcafee = '[LocalStorageKey] SecurityShowMcafee',
 	SecurityShowMetricButton = '[LocalStorageKey] SecurityShowMetricButton',
@@ -30,7 +38,7 @@ export enum LocalStorageKey {
 	SecurityLandingAntivirusStatus = '[LocalStorageKey] SecurityLandingAntivirusStatus',
 	SecurityLandingAntivirusFirewallStatus = '[LocalStorageKey] SecurityLandingAntivirusFirewallStatus',
 	SecurityLandingWindowsHelloFingerprintStatus = '[LocalStorageKey] SecurityLandingWindowsHelloFingerprintStatus',
-	SecurityLandingScore = '[LocalStorageKey] SecurityLandingScore',
+	SecurityLandingLevel = '[LocalStorageKey] SecurityLandingLevel',
 	SecurityLandingMaliciousWifi = '[LocalStorageKey] SecurityLandingMaliciousWifi',
 	DesktopMachine = '[LocalStorageKey] DesktopMachine',
 	HadRunApp = '[LocalStorageKey] HadRunApp',
@@ -165,6 +173,7 @@ export enum LocalStorageKey {
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
 	BetaUser = '[LocalStorageKey] BetaUser',
+	BetaTag = '[LocalStorageKey] BetaTag',
 	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability',
 	SmartStandbyCapability = '[LocalStorageKey] SmartStandbyCapability',
 	AlwaysOnUSBCapability = '[LocalStorageKey] AlwaysOnUSBCapability',
@@ -189,7 +198,30 @@ export enum LocalStorageKey {
 	// App Search
 	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
+	BacklightCapability = '[LocalStorageKey] BacklightCapability',
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
 	IsSubscribed = '[LocalStorageKey] IsSubscribed',
-	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails'
+	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails',
+	IsHidePowerPage = '[LocalStorageKey] IsHidePowerPage',
+	DashboardLastWelcomeText = '[LocalStorageKey] DashboardLastWelcomeText',
+	IsDolbyModeAvailable = '[LocalStorageKey] IsDolbyModeAvailable',
+	IsAudioPageAvailable = '[LocalStorageKey] IsAudioPageAvailable',
+	IsBatteryQuickSettingAvailable = '[LocalStorageKey] IsBatteryQuickSettingAvailable',
+
+	LocalInfoSegment = '[LocalStorageKey] LocalInfoSegment',
+	ChangedSelfSelectConfig = '[LocalStorageKey] ChangedSelfSelectConfig',
+
+	GaugeResetCapability = '[LocalStorageKey] GaugeResetCapability',
+
+		// New feature tips
+	NewFeatureTipsVersion = '[LocalStorageKey] NewFeatureTipsVersion',
+
+	// Device Settings storage key
+	MicrohoneCapability = '[LocalStorageKey] MicrohoneCapability',
+
+	// TEMP battery condition
+	BatteryCondition = '[LocalStorageKey] batteryCondition',
+
+	// UPE
+	UPEChannelTags = '[LocalStorageKey] UPEChannelTags'
 }

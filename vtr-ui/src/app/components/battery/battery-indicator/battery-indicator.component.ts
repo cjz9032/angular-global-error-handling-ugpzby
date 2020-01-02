@@ -22,6 +22,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	public fillStartColor = '#ff0000';
 	public fillEndColor = '#00ff00';
 	hideRemainingTimeTxt = false;
+	@Input() isWinRTLoading = true;
 
 	@ViewChild('battery', { static: true }) battery: ElementRef;
 	@ViewChild('batteryIndicator', { static: true }) batteryIndicator: ElementRef;
@@ -47,7 +48,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		if (changes.percentage && !changes.percentage.firstChange) {
+		if ((changes.percentage && !changes.percentage.firstChange) || changes.batteryNotDetected) {
 			this.refreshLevel();
 		}
 		this.checkRemainingTimeIsZero();

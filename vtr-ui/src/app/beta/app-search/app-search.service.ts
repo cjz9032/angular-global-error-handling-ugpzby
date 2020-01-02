@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ConfigService } from 'src/app/services/config/config.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { BetaService } from 'src/app/services/beta/beta.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { environment } from 'src/environments/environment';
@@ -17,7 +18,7 @@ export class AppSearchService {
 	private readonly scrollAnchors = {};
 	private unSupportfeatureEvt: BehaviorSubject<string> = new BehaviorSubject('');
 	private loaded = false;
-	private isBetaUserPromise: any;
+	private isBetaUserRes: any;
 	private betaRoutes = [];
 	private unsupportedFeatures;
 	private regionPromise: any;
@@ -47,11 +48,11 @@ export class AppSearchService {
 		private deviceService: DeviceService,
 		private configService: ConfigService,
 		private commonService: CommonService,
-		private localInfoService: LocalInfoService) {
+		private localInfoService: LocalInfoService,
+		private betaService: BetaService
+		) {
 		this.betaMenuMapPaths();
-		if (deviceService.showSearch) {
-			this.loadSearchIndex();
-		}
+		this.loadSearchIndex();
 		this.unsupportedFeatures = new Set();
 		const featuresArray = this.commonService.getLocalStorageValue(LocalStorageKey.UnSupportFeatures);
 		if (featuresArray !== undefined && featuresArray.length !== undefined) {
@@ -76,12 +77,12 @@ export class AppSearchService {
 		}
 	}
 
-	private async betaVerification(item: any) {
+	private betaVerification(item: any) {
 		if (!item.route) {
 			return true;
 		}
 
-		const isBetaUser = await this.isBetaUserPromise;
+		const isBetaUser = this.isBetaUserRes;
 		if (!isBetaUser && this.betaRoutes.indexOf(item.route) !== -1) {
 			return false;
 		}
@@ -101,7 +102,7 @@ export class AppSearchService {
 			return false;
 		}
 
-		const matchBeta = await this.betaVerification(item);
+		const matchBeta = this.betaVerification(item);
 		if (!matchBeta) {
 			return false;
 		}
@@ -126,16 +127,17 @@ export class AppSearchService {
 	}
 
 	async loadSearchIndex() {
-		if (this.loaded) {
+		const canShowSearch = await this.configService.canShowSearch();
+
+		if (this.loaded || !canShowSearch) {
 			return;
 		}
-
 
 		if (this.translateService.currentLang && this.translateService.currentLang !== 'en') {
 			return;
 		}
 
-		this.isBetaUserPromise = this.commonService.isBetaUser();
+		this.isBetaUserRes = this.betaService.getBetaStatus();
 		this.loaded = true;
 		const tags = this.searchDB.features.tags;
 		const relevantTags = this.searchDB.features.relevantTags;

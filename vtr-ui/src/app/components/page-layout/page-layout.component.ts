@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { DccService } from 'src/app/services/dcc/dcc.service';
 
 @Component({
 	selector: 'vtr-page-layout',
@@ -15,13 +16,15 @@ export class PageLayoutComponent implements OnInit {
 	@Input() backId: string;
 	@Input() isInnerBack = false;
 	@Input() menuItems: any[];
-	@Input() shiftLeftUp: boolean = false;
-	@Input() shiftRightUp: boolean = false;
+	@Input() shiftLeftUp = false;
+	@Input() shiftRightUp = false;
 	@Input() hideBack = false;
-
 	@Output() innerBack = new EventEmitter();
+	@Input() showDemo: boolean;
 
-	constructor() { }
+	constructor(
+		public dccService: DccService
+	) { }
 
 	ngOnInit() {
 	}
@@ -29,5 +32,4 @@ export class PageLayoutComponent implements OnInit {
 	onInnerBack() {
 		this.innerBack.emit();
 	}
-
 }

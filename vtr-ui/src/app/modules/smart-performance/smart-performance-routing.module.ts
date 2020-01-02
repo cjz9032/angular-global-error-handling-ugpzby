@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageSmartPerformanceComponent } from 'src/app/components/pages/page-smart-performance/page-smart-performance.component';
-import { GuardService } from 'src/app/services/guard/security-guardService.service';
+import { GuardService } from 'src/app/services/guard/guardService.service';
 
 const routes: Routes = [
 	{

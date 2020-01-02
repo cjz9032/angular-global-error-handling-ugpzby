@@ -47,7 +47,7 @@
 								</div>
 							</div>
 						</div>
-						<a href="javascript:void();"
+						<a href="javascript:void(0);"
 						id="{{'su_item_question_mark_' + item.packageID}}">
 							<fa-icon class="question"
 								triggers="click:blur"
@@ -123,12 +123,14 @@
 </div>
 <ng-template #systemUpdateTooltip>
 	<div class="tooltip-container">
-		<ul>
+		<ul dir="{{direction}}">
 			<li>{{'systemUpdates.updateCheckbox.manufacturer' | translate}}<span>{{ manufacturer }}</span></li>
 			<li>{{'systemUpdates.updateCheckbox.version' | translate}}<span>{{ version }}</span></li>
-			<li>{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ installedVersion | translate }}</span></li>
-			<li>{{'systemUpdates.updateCheckbox.downloadSize' | translate}}<span>{{ downloadSize }}</span> </li>
-			<li>{{'systemUpdates.updateCheckbox.diskSpaceNeeded' | translate}}<span>{{ diskSpaceNeeded }}</span></li>
+			<li *ngIf="installedVersionStatus === 0">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ installedVersion }}</span></li>
+			<li *ngIf="installedVersionStatus === 1">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ notInstalledText }}</span></li>
+			<li *ngIf="installedVersionStatus === 2">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ notAvailableText }}</span></li>
+			<li>{{'systemUpdates.updateCheckbox.downloadSize' | translate}}<span >{{ downloadSize }}</span> </li>
+			<li>{{'systemUpdates.updateCheckbox.diskSpaceNeeded' | translate}}<span >{{ diskSpaceNeeded }}</span></li>
 		</ul>
 		<div class="row"
 			*ngIf="isReadMeAvailable || severity !== 'Critical'">

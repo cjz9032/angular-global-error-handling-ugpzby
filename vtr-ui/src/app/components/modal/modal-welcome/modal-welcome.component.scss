@@ -13,17 +13,35 @@
 	box-shadow: $drop_shadow;
 	padding: 0;
 	position: relative;
-	width: 60rem;
 	max-width: 60rem !important;
-	height: 60rem;
+	max-height: 60rem;
+	height: auto;
 	background: $shade_lightest;
 	overflow: hidden;
+	@media #{$breakpoint_md} {
+		width: 100%;
+		height: 100%;
+	}
+
+	@media #{$breakpoint_sm} {
+		width: 100%;
+		height: 42rem;
+	}
 
 	.card-body {
 		display: flex;
 		flex-flow: column;
 		width: 60rem;
-		height: 60rem;
+		max-height: 60rem;
+		height: auto;
+		@media #{$breakpoint_md} {
+			width: 100%;
+			height: 100%;
+		}
+		@media #{$breakpoint_sm} {
+			width: 100%;
+			height: 42rem;
+		}
 	}
 
 	.banner-page-1 {
@@ -31,18 +49,27 @@
 		background-size: cover;
 		background-position: center;
 		width: 100%;
-		height: 22rem;
+		height: 30rem;
 		flex-shrink: 0;
+		@media #{$breakpoint_sm} {
+			height: 17.6rem;
+		}
 
 		.title-alignment {
-			line-height: 6rem;
+			line-height: 4rem;
+			margin-top: 15rem;
+			@media #{$breakpoint_sm} {
+				margin-top: 3.5rem;
+			}
 
 			.title1 {
 				color: $light;
-				font-size: 4.8rem;
+				font-size: 3.6rem;
+				font-weight: $weight_light;
 
 				span {
-					font-weight: bold;
+					font-size: $fontsize_xl2;
+					font-weight: $weight_bold;
 				}
 			}
 		}
@@ -55,6 +82,9 @@
 		width: 100%;
 		flex-shrink: 0;
 		background-position: center;
+		@media #{$breakpoint_sm} {
+			height: 11rem;
+		}
 	}
 
 	.font-14-semi {
@@ -68,18 +98,25 @@
 	}
 
 	.font-14-bold {
-		font-size: 1.8rem;
-		font-weight: 600;
+		font-size: $fontsize_xs;
+		font-weight: $weight_bold;
 	}
 
 	.content-page-2 {
 		overflow-y: auto;
 		color: $dark;
 		padding: 3rem 4rem 0;
-		height: 100%;
+		height: auto;
 		font-size: 1.5rem;
 		font-weight: $weight_regular;
 		letter-spacing: 0.05rem;
+		@media #{$breakpoint_md} {
+			height: 100%;
+		}
+		@media #{$breakpoint_sm} {
+			padding: 3rem 1rem 0;
+			height: 42rem;
+		}
 
 		img {
 			width: 100%;
@@ -97,6 +134,9 @@
 			position: relative;
 			border-radius: $border_radius_sm;
 			overflow: hidden;
+			@media #{$breakpoint_md} {
+				width: 12rem;
+			}
 
 			&::after {
 				content: "";
@@ -110,15 +150,15 @@
 			}
 
 			label {
-				font-family: "Segoe UI Bold", Sans-serif;
-				font-size: 1.4rem;
+				font-size: $fontsize_xs;
 				width: 100%;
 				height: 100%;
+				padding: 0 2%;
 				line-height: 2rem;
 				align-items: center;
 				display: flex;
 				justify-content: center;
-				font-weight: $weight_bold;
+				font-weight: $weight_light;
 				z-index: 2;
 			}
 
@@ -156,27 +196,27 @@
 			margin-left: 0.6rem;
 
 			.linktext {
-				color: #6f7170;
+				color: $main;
 				text-decoration: underline;
-			}
-
-			hover {
-				color: blue;
 			}
 		}
 
 		.custom-control-label {
-			padding-left: 2rem;
+			padding-left: 3rem;
 			line-height: 1.8rem;
-			font-size: 1.4rem;
+			font-size: $fontsize_xs;
 			margin-bottom: 1rem;
-			font-weight: $weight_regular;
+			font-weight: $weight_light;
+			min-height: 2rem;
 
 			// rounded square-box background
 			&::before {
 				width: 1.8rem;
 				height: 1.8rem;
 				top: 0.1rem;
+				left: 0.2rem;
+				box-shadow: inset 0 0 0 0.1rem $light;
+				border: 0.1rem solid $shade_darker;
 			}
 
 			// tick mark
@@ -184,32 +224,49 @@
 				top: 0;
 				width: 2rem;
 				height: 2rem;
-				left: -1.6rem;
+				left: 0.1rem;
 			}
 		}
 	}
 
 	.content-page-1 {
 		overflow-y: auto;
-		color: $dark;
-		padding: 3rem 4rem 0;
-		height: 100%;
-		font-size: 1.5rem;
-		font-weight: $weight_regular;
+		color: $shade_blue;
+		padding: 2rem 7.2rem 0;
+		height: auto;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
 		letter-spacing: 0.05rem;
+		text-align: left;
+		@media #{$breakpoint_sm} {
+			width: 100%;
+			height: 100%;
+		}
+		@media #{$breakpoint_sm} {
+			width: 100%;
+			height: 42rem;
+		}
 
-		ul li {
-			margin-bottom: 1.2rem;
+		ul {
+			width: 90%;
+			margin: 0 auto;
+			li {
+				margin-bottom: 1rem;
+				text-align: left;
+			}
 		}
 
 		div.row:first-child {
-			margin-bottom: 2rem;
+			margin-bottom: 1.5rem;
 		}
 	}
 
 	.next-btn {
 		padding: 0.5rem 0 1.5rem;
 		flex-shrink: 0;
+		@media #{$breakpoint_md} {
+			margin-top: 1rem;
+		}
 	}
 
 	.vtr-progress-bar {
@@ -306,8 +363,8 @@
 		border: 0.1rem solid $shade_btn_light;
 		border-radius: 2.5rem;
 		color: $shade_darkest;
-		font-size: 1.5rem;
-		font-weight: $weight_regular;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
 		text-align: center;
 		vertical-align: middle;
 
@@ -455,6 +512,12 @@
 
 	.more-interests {
 		cursor: pointer;
+		color: black;
+		font-weight: $weight_light;
+		font-size: $fontsize_xs;
+		&:hover {
+			color: $dark !important;
+		}
 	}
 
 	.html-css {
@@ -509,23 +572,5 @@
 	.lang-he-privacy-link{
 		float: left;
 		margin-right: 10px;
-	}
-
-	.bludFocusBoder:focus {
-		outline: 0;
-		box-shadow: none;
-	}
-
-	.bludFocusBoder:focus::after {
-		content: '';
-		display: block;
-		position: absolute;
-		left: -0.4rem;
-		top: -0.4rem;
-		border-radius: 500px;
-		width: calc(100% + 0.8rem);
-		height: calc(100% + 0.8rem);
-		border: none;
-		// border: thin solid $menu_hover; // commented due to cause of VAN-10277
 	}
 }

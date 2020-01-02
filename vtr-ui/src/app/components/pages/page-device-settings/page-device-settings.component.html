@@ -23,7 +23,7 @@
 	[shiftRightUp]="true">
 
 	<left-content>
-		<div class="mt-5"
+		<div class="mt-2"
 			#hsRouterOutlet>
 			<router-outlet (activate)="onRouteActivate($event, hsRouterOutlet)"></router-outlet>
 		</div>
@@ -40,6 +40,11 @@
 					<vtr-battery-card *ngIf="!isDesktopMachine"> </vtr-battery-card>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col col-12 help-heading">
+					{{ 'device.deviceSettings.helpful' | translate }}
+				</div>
+			</div>
 			<div class="row mb-40">
 				<div class="col col-12 cont">
 					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
@@ -49,7 +54,7 @@
 						[linkId]="'device-settings-qa'"></vtr-widget-questions>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row mb-40">
 				<div class="col col-12">
 					<vtr-container-card [img]="cardContentPositionA.FeatureImage"
 						[itemID]="cardContentPositionA.Id"
@@ -59,9 +64,8 @@
 						[action]="cardContentPositionA.Action"
 						[actionType]="cardContentPositionA.ActionType"
 						[actionLink]="cardContentPositionA.ActionLink"
-						[type]="'corner-article'"
-						[ratioX]="4"
-						[ratioY]="2"
+						[type]="'subpage-corner'"
+						[ratio]="2"
 						order="3"
 						sideFlag='r'
 						[cornerShift]="'large'"

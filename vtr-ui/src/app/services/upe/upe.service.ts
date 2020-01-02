@@ -1,266 +1,221 @@
 import { Injectable } from '@angular/core';
 import { CommsService } from '../comms/comms.service';
-import { CommonService } from '../common/common.service';
 import { DeviceService } from '../device/device.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { UUID } from 'angular2-uuid';
-import { LocalStorageKey } from '../../enums/local-storage-key.enum';
-
-import { environment } from '../../../environments/environment';
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Observable } from 'rxjs';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { DevService } from '../dev/dev.service';
+import { EssentialHelper } from './helper/essential.helper';
+import { IUpeEssential, IGetContentParam, IActionResult } from './model/definitions';
+import { CommonService } from '../common/common.service';
+import { LocalStorageKey } from '../../enums/local-storage-key.enum';
+import { SelfSelectService, SegmentConst } from '../self-select/self-select.service';
+import { TranslateService } from '@ngx-translate/core';
+import { UPEHelper } from './helper/upe.helper';
+
 
 @Injectable({
 	providedIn: 'root'
 })
 
 export class UPEService {
-	private readonly CredNameUPEAPIKey = 'UPEAPIKey';
-	private readonly CredNameUPEUserID = 'UPEUserID';
-	private forceRegister = false;
-	private upeUserID = '';
-	private regRetryCount = 0;
-
+	private channelTags: any;
+	private upeHelper: UPEHelper;
+	private essentialHelper: EssentialHelper;
+	private upeEssential: IUpeEssential;
+	private requestCache = {};
 	constructor(
 		private commsService: CommsService,
 		private commonService: CommonService,
-		private vantageShellService: VantageShellService,
+		private selfSelectService: SelfSelectService,
 		private deviceService: DeviceService,
-		private devService: DevService
+		vantageShellService: VantageShellService,
+		devService: DevService,
+		translate: TranslateService
 	) {
-		this.upeUserID = this.getUPEUserID();
+		this.essentialHelper = new EssentialHelper(commsService, deviceService, vantageShellService, devService);
+		this.upeHelper = new UPEHelper(vantageShellService, devService, translate);
+		this.channelTags = this.commonService.getLocalStorageValue(LocalStorageKey.UPEChannelTags);
 	}
 
-	deviceFilter(filters) {
-		return new Promise((resolve, reject) => {
-			if (!filters) {
-				console.log('vantageShellService.deviceFilter skipped filter call due to empty filter.');
-				this.devService.writeLog('vantageShellService.deviceFilter skipped filter call due to empty filter.');
-				return resolve(true);
-			}
-
-			return this.vantageShellService.deviceFilter(filters).then(
-				(result) => {
-					this.devService.writeLog('vantageShellService.deviceFilter ', JSON.stringify(result));
-					resolve(result);
-				},
-				(reason) => {
-					this.devService.writeLog('vantageShellService.deviceFilter error', reason);
-					console.log('vantageShellService.deviceFilter error', reason);
-					resolve(false);
-				}
-			);
-		});
+	public getOneUPEContent(results, template, position) {
+		return results.filter((record) => {
+			return record.Template === template && record.Position === position;
+		}).sort((a, b) => a.Priority.localeCompare(b.Priority));
 	}
 
-	private getUpeAPIKey(forceReg: boolean) {
-		return new Promise((resolve, reject) => {
-			const win: any = window;
-			let cred = null;
-			if (win.VantageStub) {
-				cred = win.VantageStub.getCredential(this.CredNameUPEAPIKey);
-			}
-
-			if (!cred || forceReg) {
-				try {
-					this.generateAPIKey().then((result) => {
-						resolve(result);
-					}, error => {
-						reject(error);
-					});
-				} catch (ex) {
-					reject(ex);
-				}
-			} else {
-				resolve(cred.password);
-			}
-		});
-	}
-
-	private getUpeShareKey() {
-		if (!environment.upeSharedKey) {
-			throw new Error('upe key is empty');
+	public fetchUPEContent(params: IGetContentParam): Observable<any> {
+		if (!params.position) {
+			throw new Error('invaild param for fetching upe content');
 		}
-		const factor = environment.upeSharedKey.concat('S00MzU3LTkxOGYtYmNjODZkZjgyNmY5');
-		return window.atob(factor);
+
+		if (!this.requestCache[params.position]) {
+			this.requestCache[params.position] = new Observable(subscriber => {	// cache request
+				(async () => {
+					const result = await this.startFetchUpeContentAndRetry(params);
+					if (result.success) {
+						const articles = await this.upeHelper.filterUPEContent(result.content);
+						subscriber.next(articles);
+						subscriber.complete();
+					} else {
+						subscriber.error(result);
+					}
+					this.requestCache[params.position] = null;	// release request
+				})();
+			});
+		}
+
+		return this.requestCache[params.position];
 	}
 
-	private generateAPIKey() {
-		const salt = this.getUpeShareKey();
-		const anonUserID = this.upeUserID;
-		const anonDeviceId = this.deviceService.getMachineInfoSync().deviceId;
-		const clientAgentId = environment.upeClientID;
-		// const timeStamp = new Date().toISOString().replace(/[-:]/ig, '').replace(/\.\d+Z/ig, 'Z');
+	private async startFetchUpeContentAndRetry(params: IGetContentParam): Promise<IActionResult> {
+		let result = await this.startFetchUpeContent(params);
 
-		const upeConfig = {
-			salt,
-			userid: anonUserID,
-			devid: anonDeviceId,
-			agentid: clientAgentId,
-		};
+		if (result.errorCode === 401) {	// unathenrized, need to registerDevice
+			this.upeEssential = await this.essentialHelper.registerDevice(this.upeEssential);
 
-		return new Promise((resolve, reject) => {
-			const win: any = window;
-			if (win.VantageStub) {
-				win.VantageStub.onupeapikeyfound = (result) => {
-					this.registerDeviceToUPEServer(JSON.parse(result)).then((data: any) => {
-						if (data) {
-							win.VantageStub.createCredential(this.CredNameUPEAPIKey, data);
-							this.forceRegister = false;
-							resolve(data);
-						} else {
-							console.log('register UPE Server failed.');
-							reject(result);
-						}
-					}, error => {
-						console.log('register UPE Server:' + error);
-						reject(error);
-					});
+			if (this.upeEssential && this.upeEssential.apiKey) {
+				result = await this.startFetchUpeContent(params);
+			} else {
+				result = {
+					success: false,
+					content: 'register device failed'
 				};
-
-				win.VantageStub.findUPEAPIKey(JSON.stringify(upeConfig));
-			}
-		});
-	}
-
-	private registerDeviceToUPEServer(regData) {
-		const queryParams = {
-			identity: {
-				anonUserId: this.upeUserID,
-				anonDeviceId: this.deviceService.getMachineInfoSync().deviceId,
-				clientAgentId: environment.upeClientID,
-				APIKey: regData.hash
-			},
-			registration: {
-				cnonce: regData.cnonce,
-				timeStamp: regData.timestamp
-			}
-		};
-
-
-		return new Promise((resolve, reject) => {
-			this.commsService.callUpeApi(
-				'/upe/auth/registerDevice', queryParams, {}
-			).subscribe((response: any) => {
-				if (response.status === 200) {
-					resolve(regData.hash);
-				} else {
-					reject(response.status + ' ' + response.statusText);
-				}
-			},
-			error => {
-				console.log('registerDeviceToUPEServer error', error);
-				reject('registerDeviceToUPEServer error');
-			});
-		});
-	}
-
-	private getUPEUserID() {
-		const win: any = window;
-		let uuid;
-		if (win.VantageStub) {
-			const cred = win.VantageStub.getCredential(this.CredNameUPEUserID);
-			if (cred) {
-				uuid = cred.password;
-				this.forceRegister = false;
-			} else {
-				uuid = UUID.UUID();
-				win.VantageStub.createCredential(this.CredNameUPEUserID, uuid);
-				this.forceRegister = true;
 			}
 		}
-		return uuid;
+
+		return result;
 	}
 
-	fetchUPEContent(params) {
-		return new Observable(subscriber => {
-			if (this.commonService.isOnline) {
-				this.getUPEContent(params, subscriber);
+	private async startFetchUpeContent(params: IGetContentParam): Promise<IActionResult> {
+		let essential = this.upeEssential ? this.upeEssential : await this.essentialHelper.getUpeEssential();
+		if (!essential) {
+			return {
+				success: false,
+				content: 'upe not support in current version'
+			};
+		}
+
+		if (!essential.anonUserId || !essential.apiKey) {
+			essential = await this.essentialHelper.registerDevice(essential);
+		}
+
+		this.upeEssential = essential;
+		if (!essential) {
+			return {
+				success: false,
+				content: 'registry upe device failed'
+			};
+		}
+
+		return await this.httpGetContentRequest(essential, params);
+	}
+
+	private async httpGetContentRequest(upeEssential: IUpeEssential, params: IGetContentParam): Promise<IActionResult> {
+		const queryParam = await this.makeQueryParam(upeEssential, params);
+		let content = '';
+		let errorCode = '';
+		try {
+			const httpResponse = await this.commsService.callUpeApi(
+				`${upeEssential.upeUrlBase}/upe/recommendation/v2/recommends`, queryParam
+			).toPromise() as any;
+
+			if (httpResponse.status === 200 && httpResponse.body) {
+				return {
+					success: true,
+					content: httpResponse.body.results
+				};
 			} else {
-				this.commonService.notification.subscribe((notification: AppNotification) => {
-					if (notification && notification.type === NetworkStatus.Online) {
-						this.getUPEContent(params, subscriber);
-					}
-				});
+				content = `get article failed upon http request(unknown)`;
 			}
-		});
+		} catch (ex) {
+			content = `get article failed upon http request`;
+			errorCode = ex.status;
+		}
+
+		return {
+			success: false,
+			content,
+			errorCode
+		};
 	}
 
-	getUPEContent(params, subscriber) {
-		this.getUpeAPIKey(this.forceRegister).then((apiKey) => {
-			const queryParam = this.makeQueryParam(apiKey, params);
-			this.commsService.callUpeApi(
-				'/upe/recommendation/recommends', queryParam, {}
-			).subscribe((response: any) => {
-				if (response.status === 200) {
-					subscriber.next(response.body.results);
-					subscriber.complete();
-				} else {
-					subscriber.error(response.status + ' ' + response.statusText);
-				}
-			},
-			(reason) => {
-				if (reason.status === 401) {
-					if (this.regRetryCount < 2) {
-						this.forceRegister = true;
-						this.getUPEContent(params, subscriber);
-					}
-					this.regRetryCount++;
-				}
-				if (reason.status !== 401 || this.regRetryCount >= 2) {
-					console.log('getUPEContent error', reason);
-					subscriber.error(reason);
-				}
-			});
-		});
+	private async getUpeTags(upeEssential: IUpeEssential) {
+		if (this.channelTags) {
+			return this.channelTags;
+		}
+
+		const result = await this.httpGetTagsRequest(upeEssential);
+		if (result.success) {
+			this.channelTags = result.content ? result.content : [];
+			this.commonService.setLocalStorageValue(LocalStorageKey.UPEChannelTags, this.channelTags);
+		}
+
+		return this.channelTags;
 	}
 
-	makeQueryParam(apiKey, upeParams) {
-		const devID = this.deviceService.getMachineInfoSync().deviceId;
+	private async httpGetTagsRequest(upeEssential: IUpeEssential): Promise<IActionResult> {
+		const { anonUserId, clientAgentId, apiKey, deviceId } = upeEssential;
+		const header = { anonUserId, clientAgentId, apiKey, anonDeviceId: deviceId };
+		let content = '';
+		let errorCode = '';
+		try {
+			const httpResponse = await this.commsService.makeTagRequest(
+				`${upeEssential.upeUrlBase}/upe/tag/api/row/tag/user_tags/sn/${upeEssential.deviceId}?type=c_tag`, header
+			).toPromise() as any;
+
+			if (httpResponse.status === 200 && httpResponse.body) {
+				return {
+					success: true,
+					content: httpResponse.body.tags
+				};
+			} else {
+				content = `get upe tags failed upon http request(unknown)`;
+			}
+		} catch (ex) {
+			content = `get  upe tags  failed upon http request`;
+			errorCode = ex.status;
+		}
+
+		return {
+			success: false,
+			content,
+			errorCode
+		};
+	}
+
+	private async makeQueryParam(upeEssential: IUpeEssential, upeParams: IGetContentParam) {
+		let channelTags = null;
+		const systeminfo = await this.deviceService.getMachineInfo();
+		const segment = await this.selfSelectService.getSegment();
+		if (segment === SegmentConst.SMB) {
+			channelTags = await this.getUpeTags(upeEssential);
+		}
+
 		const queryParam = {
 			identity: {
-				anonUserId: this.upeUserID,
-				anonDeviceId: devID,
-				clientAgentId: environment.upeClientID,
-				APIKey: apiKey,
+				anonUserId: upeEssential.anonUserId,
+				anonDeviceId: upeEssential.deviceId,
+				clientAgentId: upeEssential.clientAgentId,
+				APIKey: upeEssential.apiKey,
 			},
-			dId: devID,
+			dId: upeEssential.deviceId,
 			context: {
-				// lang: this.language,
-				// geo: this.region,
-				category: this.deviceService.getMachineInfoSync().isGaming ? 'game' : '',
-				position: upeParams.position
+				lang: this.upeHelper.getLang(),
+				Brand: systeminfo.brand,
+				GEO: systeminfo.country,
+				Family: systeminfo.family,
+				MTM: systeminfo.mtm,
+				OEM: systeminfo.manufacturer,
+				OperationSystem: systeminfo.os,
+				Processor: systeminfo.cpuinfo ? systeminfo.cpuinfo.name : null,
+				Segment: segment,
+				// SmbRole: null,
+				EnclosureType: systeminfo.enclosureType,
+				UpeTags: channelTags
 			},
-			recommendSize: 1
+			filterItemSize: 1,
+			positions: [upeParams.position]
 		};
 		return queryParam;
-	}
-
-	filterUPEContent(results) {
-		return new Promise((resolve, reject) => {
-			const promises = [];
-
-			results.forEach((result) => {
-				promises.push(this.deviceFilter(result.Filters));
-			});
-
-			Promise.all(promises).then((deviceFilterValues) => {
-				const filteredResults = results.filter((result, index) => {
-					return deviceFilterValues[index];
-				});
-
-				resolve(filteredResults);
-			});
-		});
-	}
-
-	getOneUPEContent(results, template, position) {
-		return results.filter((record) => {
-			return record.Template === template;
-		}).filter((record) => {
-			return record.Position === position;
-		}).sort((a, b) => a.Priority.localeCompare(b.Priority));
 	}
 }
