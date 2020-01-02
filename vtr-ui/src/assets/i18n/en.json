@@ -2296,7 +2296,7 @@
             "visitHde": "Visit Hard drive encryption",
             "haveOwnPassword": "I have my own password health",
             "haveOwnWifi": "I have my own wifi security",
-            "haveOwnVpn": "I have my own VPN security",
+            "haveOwnVpn": "I have my own VPN",
             "uac": "User Account Control (UAC)",
             "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
