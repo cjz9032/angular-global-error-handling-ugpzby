@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.42](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.41...v1.2.42) (2019-12-31)
+
+
+### Bug Fixes
+
+* **gaming:** show menu items correctly ([91d8b16](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/91d8b16))
+
+
+
 ## [1.2.41](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.40...v1.2.41) (2019-12-30)
 
 
