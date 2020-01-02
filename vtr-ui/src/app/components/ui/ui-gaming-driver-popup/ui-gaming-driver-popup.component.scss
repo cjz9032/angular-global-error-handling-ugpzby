@@ -12,11 +12,11 @@ ui-gaming-driver-popup {
 	width: 35vw;
 	min-width: 56rem;
 	@media #{$breakpoint_md} {
-		min-width: 42rem;
+		min-width: 45rem;
 		top: -14rem;
 	}
 	@media #{$breakpoint_sm} {
-		min-width: 38rem;
+		min-width: 36rem;
 	}
 	@media #{$black-on-white} {
 		background: $high-contrast-grey;
@@ -85,6 +85,12 @@ ui-gaming-driver-popup {
 			padding: 0.5rem 0;
 		}
 
+		.btn-container{
+			div {
+				display: inline-block;
+			}
+		}
+
 		.enable-button {
 			background: $gradient_main;
 			border-radius: 3rem;
@@ -138,21 +144,16 @@ ui-gaming-driver-popup {
 				@media #{$breakpoint_md} {
 					top:-10.3rem;
 				}
+				@media #{$mediaquery_X48} {
+						min-width: 44rem;
+						top: -10.3rem;
+					}
 				@media #{$breakpoint_sm} {
-					top:-13.2rem;
 					right: 7.5rem;
-					min-width: 37.5rem;
+					min-width: 36rem;
+					top:-15rem;
 				}
 					.modal-body{
-						@media #{$breakpoint_md} {
-							padding: 3.8rem 3rem;
-						}
-						@media #{$breakpoint_sm} {
-							padding: 3.8rem 2rem;
-						}
-						.cancel-link{
-								margin-left: 1.5rem;
-							}
 							.content-body {
 								min-height: 12rem;
 								@media #{$breakpoint_md} {
@@ -162,6 +163,24 @@ ui-gaming-driver-popup {
 									min-height: 20rem;
 								}
 							}
+							.btn-container{
+								div {
+									display: inline-block;
+										@media #{$mediaquery_sm} {
+											display: block;
+										}
+								}
+								.cancel-link{
+									@media #{$mediaquery_X48} {
+									margin-left: 1.5rem;
+									}
+								}
+								.enable-button{
+										@media #{$mediaquery_sm} {
+										margin-bottom: 1rem;
+									}
+								}
+						}
 				}
 			}
 		}
@@ -172,20 +191,15 @@ ui-gaming-driver-popup {
 					@media #{$breakpoint_md} {
 						top:-13.5rem;
 					}
+					@media #{$mediaquery_X48} {
+						min-width: 44rem;
+						top: -13.6rem;
+					}
 					@media #{$breakpoint_sm} {
-					min-width: 37.5rem;
-					top:-16.2rem;
+					  min-width: 36rem;
+					  top:-18.2rem;
 				}
 				.modal-body{
-					@media #{$breakpoint_md} {
-						padding: 3.8rem 3rem;
-					}
-					@media #{$breakpoint_sm} {
-					padding: 3.8rem 2rem;
-					}
-					.cancel-link{
-						margin-left: 1.5rem;
-					}
 					.content-body {
 						  min-height: 12rem;
 							@media #{$breakpoint_md} {
@@ -194,6 +208,24 @@ ui-gaming-driver-popup {
 							@media #{$breakpoint_sm} {
 								min-height: 20rem;
 							}
+						}
+						.btn-container{
+								div {
+									display: inline-block;
+										@media #{$mediaquery_sm} {
+											display: block;
+										}
+								}
+								.cancel-link{
+									@media #{$mediaquery_X48} {
+									margin-left: 1.5rem;
+									}
+								}
+								.enable-button{
+										@media #{$mediaquery_sm} {
+										margin-bottom: 1rem;
+									}
+								}
 						}
 					}
 			}

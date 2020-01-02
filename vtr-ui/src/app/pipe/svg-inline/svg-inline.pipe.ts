@@ -3,6 +3,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Observable } from 'rxjs/internal/Observable';
 
+declare var window;
+
 @Pipe({
 	name: 'svgInline',
 })
@@ -30,25 +32,23 @@ export class SvgInlinePipe implements PipeTransform, OnDestroy {
 
 	transform(value: any, args?: any): any {
 		if (typeof (value) !== 'undefined') {
-			return new Observable(observer => {
-				observer.next('');
-				const win:any = window;
-				if (value.substring(value.lastIndexOf('.')) === '.svg' &&
-					((win.VantageShellExtension && win.VantageShellExtension.MsWebviewHelper.getInstance().isInOfflineMode === true) ||
-					!this.commonService.isOnline)
-				) {
+			if (value.substring(value.lastIndexOf('.')) === '.svg' &&
+				((window.VantageShellExtension && window.VantageShellExtension.MsWebviewHelper.getInstance().isInOfflineMode === true) ||
+				!this.commonService.isOnline)
+			) {
+				return new Observable(observer => {
+					observer.next('');
 					this.getContent(value).then(val => {
 						val = `data:image/svg+xml;base64,${btoa(val + '')}`;
-						val = this.sanitizer.sanitize(SecurityContext.URL,val).replace('unsafe:','');
+						val = this.sanitizer.sanitize(SecurityContext.URL, val).replace('unsafe:', '');
 						val = this.sanitizer.bypassSecurityTrustResourceUrl(val + '');
 						observer.next(val);
 						observer.complete();
 					});
-				} else {
-					observer.next(value);
-					observer.complete();
-				}
-			});
+				});
+			} else {
+				return Promise.resolve(value);
+			}
 		} else {
 			return Promise.resolve('null');
 		}

@@ -672,6 +672,9 @@
         },
         "app-update": {
             "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+        },
+        "offline": {
+            "connectToUseFeature": "Connect to the internet to use this feature"
         }
     },
     "privacy": {
