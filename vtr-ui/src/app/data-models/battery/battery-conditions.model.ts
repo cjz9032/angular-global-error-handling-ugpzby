@@ -18,6 +18,8 @@ export class BatteryConditionModel {
 				return 'device.deviceSettings.batteryGauge.condition.Exhaustion';
 			case BatteryConditionsEnum.NotDetected:
 				return 'device.deviceSettings.batteryGauge.condition.NotDetected';
+			case BatteryConditionsEnum.PrimaryNotDetected:
+				return 'device.deviceSettings.batteryGauge.condition.PrimaryNotDetected';
 			case BatteryConditionsEnum.MissingDriver:
 				return 'device.deviceSettings.batteryGauge.condition.MissingDriver';
 			case BatteryConditionsEnum.NotSupportACAdapter:

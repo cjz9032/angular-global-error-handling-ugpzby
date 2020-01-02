@@ -19,7 +19,9 @@ export enum BatteryConditionsEnum {
 
 	NotSupportACAdapter,
 	LimitedACAdapterSupport,
-	StoreLimitation
+	StoreLimitation,
+
+	PrimaryNotDetected
 }
 
 export enum BatteryQuality {

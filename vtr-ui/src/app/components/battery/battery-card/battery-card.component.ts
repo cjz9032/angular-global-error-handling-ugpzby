@@ -267,7 +267,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.remainingPercentages = remainingPercentages;
 			this.sendThresholdWarning();
 			this.batteryHealth = this.batteryInfo[0].batteryHealth;
-			this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
+			// this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
 
 			this.batteryService.isAcAttached = this.batteryGauge.isAttached;
 			this.batteryService.remainingPercentages = this.remainingPercentages;
@@ -344,6 +344,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (this.batteryGauge.isPowerDriverMissing) {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryQuality.Poor));
 		}
+
 		if (!(this.batteryIndicator.batteryNotDetected || this.batteryGauge.isPowerDriverMissing)) {
 
 			// AcAdapter conditions hidden for IdeaPad & IdeaCenter machines
@@ -366,10 +367,28 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			healthCondition = this.batteryHealth;
 			this.batteryConditionStatus = this.getConditionState(this.batteryHealth);
 
-			if (isThinkPad && (this.batteryHealth === 1 || this.batteryHealth === 2)) {
-				healthCondition = BatteryConditionsEnum.StoreLimitation;
-				const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
-				this.param = { value: parseFloat(percentLimit.toFixed(1)) };
+			if (isThinkPad) {
+				if (this.batteryHealth === 1 || this.batteryHealth === 2) {
+					healthCondition = BatteryConditionsEnum.StoreLimitation;
+					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
+					this.param = { value: parseFloat(percentLimit.toFixed(1)) };
+				}
+
+				if (this.batteryHealth === 4) {
+					if (this.batteryInfo.length > 1) {
+						if (this.batteryInfo[1].batteryHealth === 4) {
+							this.batteryIndicator.batteryNotDetected = true;
+							healthCondition = 4;
+						} else {
+							this.batteryIndicator.batteryNotDetected = false;
+							healthCondition = BatteryConditionsEnum.PrimaryNotDetected;
+						}
+					} else {
+						this.batteryIndicator.batteryNotDetected = true;
+					}
+				} else {
+					this.batteryIndicator.batteryNotDetected = false;
+				}
 			}
 			this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
 				switch (condition.toLocaleLowerCase()) {
