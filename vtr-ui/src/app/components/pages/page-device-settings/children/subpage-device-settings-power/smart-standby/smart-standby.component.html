@@ -29,7 +29,7 @@
 							</vtr-ui-rounded-rectangle-radio>
 						</div>
 					</div>
-					<div *ngIf="!isAutonomicCapability" class="schedule_header">
+					<div *ngIf="!isAutonomicCapability && smartStandby?.isEnabled" class="schedule_header">
 						<h5>{{ 'device.deviceSettings.power.smartStandby.subTitle2' | translate }}</h5>
 					</div>
 					<div class="schedule" *ngIf="isAutonomicCapability && checkbox && smartStandby?.isEnabled">
@@ -105,7 +105,7 @@
 						</div>
 						<!-- content end -->
 					</div>
-					<div class="hyperlink-to-graph" (click)="showUsageGraph()" tabindex="0"
+					<div [ngClass]="{'disabled': !smartStandby.isEnabled}" class="hyperlink-to-graph" (click)="showUsageGraph()" tabindex="0"
 						attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 						{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
 					</div>

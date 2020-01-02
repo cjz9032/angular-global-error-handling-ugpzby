@@ -385,8 +385,10 @@
 			.content {
 				cursor: pointer;
 				width: 100%;
-				padding: 28 / 430 * 100% 40 / 430 * 100% 0;
-				height: 40%;
+				//padding: 28 / 430 * 100% 40 / 430 * 100% 0;
+				padding: 2.4rem;
+				padding-bottom: 0;
+				height: 30%;
 
 				.title {
 					font-weight: $weight_light;
@@ -406,6 +408,12 @@
 					cursor: pointer;
 					text-transform: uppercase;
 					color: $main;
+					@media #{$mediaquery_xl} {
+						font-size: $fontsize_xs2;
+					}
+					@media #{$mediaquery_md} {
+						font-size: $fontsize_xs2;
+					}
 
 					&:hover {
 						.link-label {
@@ -473,7 +481,7 @@
 			.title {
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-				font-size: $fontsize_xl2;
+				font-size: $fontsize_xl;
 				font-weight: $weight_light;
 				line-height: 1.4;
 				cursor: pointer;
@@ -483,7 +491,7 @@
 				// position: absolute;
 				bottom: 4rem;
 				// left: 4rem;
-				font-size: 1.3rem;
+				font-size: $fontsize_xs;
 				cursor: pointer;
 				text-transform: uppercase;
 

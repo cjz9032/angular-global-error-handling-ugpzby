@@ -17,6 +17,8 @@
 		</div>
 		<hr>
 		<div class="row">
+			<div class="btn-container">
+			<div>
 			<a class="btn enable-button" vtrMetrics tabindex="1"
 				[metricsItem]="'driverPopup_install'"
 				metricsEvent="featureClick"
@@ -26,12 +28,16 @@
 				role="link">
 				{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}
 			</a>
+			</div>
+			<div>
 			<a (click)="close()" vtrMetrics tabindex="1"
 			role="button"
 				[metricsItem]="'driverpopup_cancel'"
 				metricsEvent="featureClick"  (keyup.enter)="close()"
 				(keydown)="runappKeyup($event)"
 				class="cancel-link active" id="gaming_driverPopup_cancel" aria-label="gaming driverPopup cancel" role="link">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
+			</div>
+			</div>	
 		</div>
 	</div>
 	<!--Need input from Raghu on this-->

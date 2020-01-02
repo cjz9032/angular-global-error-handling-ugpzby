@@ -44,6 +44,7 @@
 					"metricsEvent": "featureClick",
 					"metricsParent": "navbar",
 					"metricsItem": "support",
+					"sMode": true,
 					"routerLinkActiveOptions": {
 						"exact": true
 					},
@@ -185,6 +186,21 @@
 						"exact": true
 					},
 					"adPolicyId": "E40B12CE-C5DD-4571-BBC6-7EA5879A8472",
+					"subitems": []
+				},
+				{
+					"id": "smart-assist",
+					"label": "common.menu.device.sub4",
+					"path": "smart-assist",
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.smartassist",
+					"externallink": false,
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"icon": null,
+					"sMode": true,
 					"subitems": []
 				}
 			]
@@ -329,6 +345,7 @@
 					"externallink": false,
 					"metricsParent": "navbar",
 					"metricsItem": "",
+					"sMode": true,
 					"routerLinkActiveOptions": {
 						"exact": true
 					},

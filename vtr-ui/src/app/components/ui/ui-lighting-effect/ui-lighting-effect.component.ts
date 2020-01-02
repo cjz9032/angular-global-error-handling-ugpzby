@@ -31,17 +31,16 @@ export class UiLightingEffectComponent implements OnInit, OnChanges{
 	@ViewChild('dropdownLightingEle', { static: false })
 	dropdownEle: ElementRef;
 	intervalObj: any;
-	isItemsFocused: boolean = false;
+	isItemsFocused = false;
 	//for macrokey
-    @Input() public enableDescription: Boolean = true;
-	@Input() isRecording: Boolean = false;
+    @Input() public enableDescription = true;
+	@Input() isRecording = false;
 	defaultLanguage: any;
 	@Input() tooltip_value: any;
 	//end
 
 	constructor(
 		private elementRef: ElementRef,
-		private languageService: LanguageService,
 		private deviceService: DeviceService
 	) {}
 
