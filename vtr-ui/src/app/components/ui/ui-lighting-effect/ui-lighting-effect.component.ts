@@ -43,9 +43,11 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 		private elementRef: ElementRef,
 		private deviceService: DeviceService
 	) {
-		document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
-			this.generalClick(event);
-		});
+		if (document.getElementById('menu-main-btn-navbar-toggler')) {
+			document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
+				this.generalClick(event);
+			});
+		}
 	}
 
 	ngOnInit() {

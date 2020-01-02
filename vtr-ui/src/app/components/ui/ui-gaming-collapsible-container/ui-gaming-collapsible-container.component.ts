@@ -25,9 +25,11 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	constructor(
 		private elementRef: ElementRef,
 	) {
-		document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
-			this.generalClick(event);
-		});
+		if (document.getElementById('menu-main-btn-navbar-toggler')) {
+			document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
+				this.generalClick(event);
+			});
+		}
 	}
 
 	ngOnInit() {

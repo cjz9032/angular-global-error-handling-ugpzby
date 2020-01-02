@@ -98,9 +98,11 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		private logger: LoggerService
 	) {
 		this.hds = this.defaultHds;
-		document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
-			this.toggleHDs(true);
-		});
+		if (document.getElementById('menu-main-btn-navbar-toggler')) {
+			document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
+				this.toggleHDs(true);
+			});
+		}
 	}
 
 	// CPU Panel Data
