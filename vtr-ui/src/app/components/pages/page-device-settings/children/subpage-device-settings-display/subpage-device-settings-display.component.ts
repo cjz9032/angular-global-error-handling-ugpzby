@@ -954,7 +954,6 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.disableEyeCareModeReset = true;
 			this.missingGraphicDriver = true;
 		} else {
-			this.enableSlider = true;
 			this.enableColorTempSlider = true;
 			this.disableDisplayColor = false;
 			this.disableDisplayColorReset = false;
