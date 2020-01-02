@@ -481,7 +481,7 @@
 			.title {
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-				font-size: $fontsize_xl2;
+				font-size: $fontsize_xl;
 				font-weight: $weight_light;
 				line-height: 1.4;
 				cursor: pointer;
@@ -491,7 +491,7 @@
 				// position: absolute;
 				bottom: 4rem;
 				// left: 4rem;
-				font-size: 1.3rem;
+				font-size: $fontsize_xs;
 				cursor: pointer;
 				text-transform: uppercase;
 
