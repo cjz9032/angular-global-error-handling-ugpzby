@@ -333,7 +333,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			} else {
 				this.batteryIndicator.batteryNotDetected = false;
 			}
-
+			this.isUnsupportedBattery = false;
 			this.batteryInfo[0].batteryCondition.forEach((condition) => {
 				switch (condition.toLocaleLowerCase()) {
 					case 'normal':
