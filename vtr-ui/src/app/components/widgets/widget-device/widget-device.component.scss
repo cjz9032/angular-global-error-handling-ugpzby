@@ -6,12 +6,15 @@
 	background-color: $light;
 	overflow: hidden;
 	position: relative;
+	.my-dev-pad {
+		padding: 2.4rem;
+	}
 	.device-status {
 		@media #{$breakpoint_lg} {
-			flex-direction: column;
+			flex-direction: row;
 		}
 		@media #{$breakpoint_md} {
-			flex-direction: column;
+			flex-direction: row;
 		}
 		@media #{$breakpoint_sm} {
 			flex-direction: column;
@@ -23,13 +26,13 @@
 			display: flex;
 			justify-content: flex-end;
 			flex-grow: 1;
-			@media #{$breakpoint_lg} {
+			padding-top: 3rem;
+			@media #{$breakpoint_sm} {
 				justify-content: flex-start;
 
 			}
 			.circleimage {
 				@media #{$breakpoint_lg} {
-					padding-top: 4rem;
 					width: 200px;
 
 				}
