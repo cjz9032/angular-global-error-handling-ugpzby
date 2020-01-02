@@ -1,116 +1,116 @@
-<div class="vtr-page-support vtr-page">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [title]="'faq.pageTitle' | translate"
-				[backarrow]="backarrow"
-				[back]="'common.ui.back' | translate"></vtr-header-main>
-		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col ">
-			<div class="row">
-				<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
 
-					<div class="row mn-6 card mb-5">
-						<div class="col p-5">
-							<div class="row py-5 description-container">
-								<div class="col"
-									[innerHTML]="qa.description">
+
+<vtr-page-layout [title]="'faq.pageTitle' | translate"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[back]="'common.ui.back' | translate">
+
+
+	<left-content>
+		<div class="container-fluid">
+				<div class="row card mb-5">
+					<div class="col left-container">
+						<div class="row description-container">
+							<div class="col"
+								[innerHTML]="qa.description">
+							</div>
+						</div>
+						<div class="row inset-content align-items-center justify-content-center py-3 invisible"
+							style="display: none">
+
+							<div class="col-auto ml-auto px-0">
+								<div class="icon-bkg text-center cursor-pointer"
+									(click)="qa.like=!qa.like">
+									<fa-icon [icon]="['far','thumbs-up']"></fa-icon>
 								</div>
 							</div>
-							<div class="row inset-content align-items-center justify-content-center py-3 invisible"
-								style="display: none">
-
-								<div class="col-auto ml-auto px-0">
-									<div class="icon-bkg text-center cursor-pointer"
-										(click)="qa.like=!qa.like">
-										<fa-icon [icon]="['far','thumbs-up']"></fa-icon>
-									</div>
+							<div class="col-auto px-2 ">
+								<div class="icon-bkg text-center cursor-pointer"
+									(click)="qa.dislike=!qa.dislike">
+									<fa-icon [icon]="['far','thumbs-down']"></fa-icon>
 								</div>
-								<div class="col-auto px-2 ">
-									<div class="icon-bkg text-center cursor-pointer"
-										(click)="qa.dislike=!qa.dislike">
-										<fa-icon [icon]="['far','thumbs-down']"></fa-icon>
-									</div>
-								</div>
-								<div class="col-auto mr-auto px-0 text">
-									Was this Helpful??
-								</div>
+							</div>
+							<div class="col-auto mr-auto px-0 text">
+								Was this Helpful??
 							</div>
 						</div>
 					</div>
-					<div class="row card">
-						<div class="col">
-							<div class="row p-5">
-								<div class="col title smaller">
-									<!-- Not finding what you are looking for?  -->
-									{{'faq.footer.title' | translate}}
-								</div>
-								<div class="w-100"></div>
-								<div class="col subtitle">
-									<!-- Need additional support? Don’t hesitate to contact us via: -->
-									{{'faq.footer.description' | translate}}
-								</div>
-								<div class="w-100"></div>
-								<div class="col px-0 mt-5">
-									<div class="row">
-										<!-- <div class="col inset-content invisible">
-											<div class="row align-items-center">
-												<div class="col-auto">
-													<fa-icon [icon]="['fal','briefcase']"></fa-icon>
-												</div>
-												<div class="col-auto px-2 mr-auto sub-title">
-													24X7 - Live Chat
-												</div>
-												<div class="col-auto ">
-													<button class="btn btn-label">CHAT NOW</button>
-												</div>
+				</div>
+				<div class="row card mb-5">
+					<div class="col">
+						<div class="row left-container">
+							<div class="col title smaller">
+								<!-- Not finding what you are looking for?  -->
+								{{'faq.footer.title' | translate}}
+							</div>
+							<div class="w-100"></div>
+							<div class="col subtitle">
+								<!-- Need additional support? Don’t hesitate to contact us via: -->
+								{{'faq.footer.description' | translate}}
+							</div>
+							<div class="w-100"></div>
+							<div class="col px-0 mt-5">
+								<div class="row">
+									<!-- <div class="col inset-content invisible">
+										<div class="row align-items-center">
+											<div class="col-auto">
+												<fa-icon [icon]="['fal','briefcase']"></fa-icon>
+											</div>
+											<div class="col-auto px-2 mr-auto sub-title">
+												24X7 - Live Chat
+											</div>
+											<div class="col-auto ">
+												<button class="btn btn-label">CHAT NOW</button>
 											</div>
 										</div>
-										<div class="col-auto px-4"></div> -->
-										<div class="col inset-content">
-											<div class="row align-items-center">
-												<div class="col-auto">
-													<fa-icon [icon]="['fal','briefcase']"></fa-icon>
-												</div>
-												<div class="col-auto px-2 mr-auto sub-title">
-													<!-- Lenovo Community -->
-													{{'faq.footer.body' | translate}}
-												</div>
-												<div class="col-auto ">
-													<!-- <button class="btn btn-label">Go To Forum</button> -->
-													<!-- <button class="btn btn-label"><a href="https://forums.lenovo.com/"
-															target="_blank">{{'faq.footer.button' | translate}}</a>
-														</button> -->
-													<button class="btn btn-label"
-														(click)="onNavigate()">{{'faq.footer.button' | translate}}
-													</button>
-													<!-- <button class="btn btn-label"
-														onclick="window.open('https://forums.lenovo.com/', '_blank')">Go
-														To Forum
+									</div>
+									<div class="col-auto px-4"></div> -->
+									<div class="col inset-content">
+										<div class="row align-items-center">
+											<div class="col-auto">
+												<fa-icon [icon]="['fal','briefcase']"></fa-icon>
+											</div>
+											<div class="col-auto px-2 mr-auto sub-title">
+												<!-- Lenovo Community -->
+												{{'faq.footer.body' | translate}}
+											</div>
+											<div class="col-auto ">
+												<!-- <button class="btn btn-label">Go To Forum</button> -->
+												<!-- <button class="btn btn-label"><a href="https://forums.lenovo.com/"
+														target="_blank">{{'faq.footer.button' | translate}}</a>
 													</button> -->
-												</div>
+												<button class="btn btn-label"
+													(click)="onNavigate()">{{'faq.footer.button' | translate}}
+												</button>
+												<!-- <button class="btn btn-label"
+													onclick="window.open('https://forums.lenovo.com/', '_blank')">Go
+													To Forum
+												</button> -->
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+						</div>
 
-						</div>
 					</div>
 				</div>
-				<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
-					<div class="row mn-6">
-						<div class="col">
-							<vtr-widget-questions componentName="qa"
-								[title]="'common.qAndA.title' | translate"
-								[description]="'common.qAndA.subtitle' | translate"
-								[items]="qaService.qas"
-								blockPosition="r1"></vtr-widget-questions>
-						</div>
-					</div>
-				</div>
+		</div>
+
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+		<div class="row mn-6">
+			<div class="col">
+				<vtr-widget-questions componentName="qa"
+					[title]="'common.qAndA.title' | translate"
+					[description]="'common.qAndA.subtitle' | translate"
+					[items]="qaService.qas"
+					blockPosition="r1"></vtr-widget-questions>
 			</div>
 		</div>
 	</div>
-</div>
+	</right-content>
+
+</vtr-page-layout>
