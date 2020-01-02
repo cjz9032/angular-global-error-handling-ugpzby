@@ -4,7 +4,7 @@ import { isUndefined } from 'util';
 @Component({
 	selector: 'vtr-ui-lighting-effect',
 	templateUrl: './ui-lighting-effect.component.html',
-	styleUrls: [ './ui-lighting-effect.component.scss' ],
+	styleUrls: ['./ui-lighting-effect.component.scss'],
 	host: {
 		'(document:click)': 'generalClick($event)'
 	}
@@ -31,9 +31,11 @@ export class UiLightingEffectComponent implements OnInit {
 	intervalObj: any;
 	isItemsFocused: boolean = false;
 
-	constructor(private elementRef: ElementRef) {}
+	constructor(private elementRef: ElementRef) {
+		document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => { this.generalClick(event); });
+	}
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	public toggleOptions() {
 		this.showOptions = !this.showOptions;
