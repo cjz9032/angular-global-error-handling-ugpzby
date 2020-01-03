@@ -127,11 +127,10 @@ export class ConfigService {
 			const isBetaUser = this.betaService.getBetaStatus();
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
-			const segment: string = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
+			this.activeSegment = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
 			const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
 			let resultMenu = cloneDeep(this.menuItemsGaming);
 			if (machineInfo.isGaming) {
-				this.activeSegment = segment;
 				if (isBetaUser && await this.canShowSearch()) {
 					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
@@ -164,7 +163,6 @@ export class ConfigService {
 					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
 			}
-			this.activeSegment = segment;
 			if (this.hypSettings) {
 				await this.initShowCHSMenu().then((result) => {
 					const shellVersion = {
@@ -177,7 +175,7 @@ export class ConfigService {
 						&& result
 						&& this.isShowCHSByShellVersion(shellVersion)
 						&& !machineInfo.isGaming
-						&& segment !== SegmentConst.Commercial;
+						&& this.activeSegment !== SegmentConst.Commercial;
 					const showCHSConsumer = country.toLowerCase() === 'us'
 						&& locale.startsWith('en')
 						&& result
@@ -196,7 +194,7 @@ export class ConfigService {
 					}
 				});
 			}
-			resultMenu = this.segmentFilter(resultMenu, segment);
+			resultMenu = this.segmentFilter(resultMenu, this.activeSegment);
 			this.menuBySegment.commercial = this.segmentFilter(this.menuBySegment.commercial, SegmentConst.Commercial);
 			this.menuBySegment.consumer = this.segmentFilter(this.menuBySegment.consumer, SegmentConst.Consumer);
 			this.menuBySegment.smb = this.segmentFilter(this.menuBySegment.smb, SegmentConst.SMB);
@@ -470,7 +468,7 @@ export class ConfigService {
 
 	updateSegmentMenu(segment): Promise<any> {
 		return new Promise((resolve) => {
-			if (segment === this.activeSegment) {
+			if (segment === this.activeSegment || segment === SegmentConst.Gaming) {
 				return resolve(this.menu);
 			} else {
 				this.activeSegment = segment;

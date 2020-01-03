@@ -214,7 +214,7 @@
 								[title]="title | htmlText"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
-								[style.margin-top.px]="containerCardArticle.clientWidth * 13 / 436"
+								[style.margin-top.px]="containerCardArticle.clientWidth * 0"
 								[style.height.px]="containerCardArticle.clientWidth * 54 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								role="link"></div>
@@ -273,12 +273,10 @@
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
 								[style.margin-top.px]="containerCardArticle.clientWidth * 13 / 436"
-								[style.font-size.px]="containerCardArticle.clientWidth * 24 / 436"
 								[style.height.px]="containerCardArticle.clientWidth * 54 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								role="link"></div>
 							<div *ngIf="actionLink && !isOfflineArm"
-								[style.font-size.px]="containerCardArticle.clientWidth * 14 / 436"
 								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								class="read-more">

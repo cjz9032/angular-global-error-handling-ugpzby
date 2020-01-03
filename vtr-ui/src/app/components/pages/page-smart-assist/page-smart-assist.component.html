@@ -185,8 +185,7 @@
 								<ul class="list-group list-group-flush pt-3 no-border-bottom"
 									[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
 									*ngIf="intelligentSecurity.isZeroTouchLockVisible">
-									<li class="auto-screen-block"
-										[class.margin-right-05]="isThinkPad">
+									<li class="auto-screen-block">
 										<vtr-ui-row-switch [switchId]="'zeroTouchLock'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLock.caption' | translate"

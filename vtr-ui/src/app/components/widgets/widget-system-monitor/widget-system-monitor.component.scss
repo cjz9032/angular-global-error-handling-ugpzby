@@ -105,9 +105,11 @@
 				@media #{$breakpoint_xl2} {
 					height: 18rem;
 				}
-				&.hds {
+				.hds {
 					position:absolute;
-					width: 100%;
+					width: 100%;		
+					border-radius: $border_radius_sm;		
+					background-color: $gaming_darkest;
 					border: 1px solid $gaming_darkest;
 					.hd-item {
 						//width:30%;
@@ -119,7 +121,7 @@
 						// max-width: 30rem;
 					 }
 					}
-					&.expanded {
+					.expanded {
 						height: auto;
 					}
 					&:hover {
@@ -631,12 +633,12 @@
 						padding: 2rem 0rem;						
 						width:40%;
 						}
-					@media screen  and (min-width: 568px)and (max-width: 767px){
+					@media screen  and (min-width: 568px)and (max-width: 767.9px){
 					padding: 2rem 0rem;					
 					width:32%;			
 					}
 				
-					@media screen and (min-width: 992px) and (max-width: 1200px) { 
+					@media screen and (min-width: 992px) and (max-width: 1199.9px) { 
 					padding: 2rem 2.5rem;
 					width:45%;
 					}					 
@@ -650,6 +652,7 @@
 						}
 						@media #{$breakpoint_xl2} {
 							padding-top: 1.5rem;
+							padding-bottom:0rem!important;
 						}						
 						.hd-item {
 							text-align: center;
