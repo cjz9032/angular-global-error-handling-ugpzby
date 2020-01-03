@@ -10,7 +10,7 @@ export class ServiceEssentialHelper implements IEssentialHelper {
 		vantageShellService: VantageShellService,
 		private devService: DevService
 	) {
-		// this.upeAgent = vantageShellService.getUpeAgent();
+		 this.upeAgent = vantageShellService.getUpeAgent();
 	}
 
 	public async getUpeEssential(): Promise<IUpeEssential> {
