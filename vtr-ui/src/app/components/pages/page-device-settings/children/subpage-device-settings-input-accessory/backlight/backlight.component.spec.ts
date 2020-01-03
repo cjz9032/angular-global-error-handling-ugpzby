@@ -1,4 +1,4 @@
-import { async, TestBed, getTestBed } from "@angular/core/testing";
+import { async, TestBed } from "@angular/core/testing";
 import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 
@@ -13,19 +13,13 @@ import { BacklightLevelEnum, BacklightStatusEnum } from "./backlight.enum";
 import { of } from "rxjs";
 
 describe("Component: Backlight", () => {
-	// let vantageShellService: VantageShellService
-	// let backlightServiceSpy: jasmine.SpyObj<BacklightService>
 	beforeEach(() => {
-		const spy = jasmine.createSpyObj("BacklightService", ["backlight"]);
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [BacklightComponent, RemoveSpacePipe],
 			imports: [TranslateModule.forRoot(), HttpClientTestingModule],
 			providers: [VantageShellService, BacklightService]
 		});
-
-		// vantageShellService = TestBed.get(VantageShellService);
-		// backlightServiceSpy = TestBed.get(BacklightService)
 	});
 
 	it("should create Backlight Component", () => {
