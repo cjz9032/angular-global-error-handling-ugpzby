@@ -39,10 +39,10 @@ export class SelfSelectService {
 	public userProfileEnabled = true;
 
 	private _savedSegment = null;
-	public get savedSegment() {
+	private get savedSegment() {
 		return this._savedSegment;
 	}
-	public set savedSegment(value) {
+	private set savedSegment(value) {
 		if (value && this._savedSegment !== value) {
 			this._savedSegment = value;
 			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, this._savedSegment);
