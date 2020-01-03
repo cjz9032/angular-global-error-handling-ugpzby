@@ -34,7 +34,6 @@ import { CardService } from 'src/app/services/card/card.service';
 import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
 import { StringBooleanEnum } from '../../data-models/common/common.interface';
 import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
-import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -416,9 +415,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 					break;
 				case MenuItem.MenuItemChange:
 					this.updateMenu(notification.payload);
-					break;
-				case SelfSelectEvent.SegmentChange:
-					this.initComponent();
 					break;
 				default:
 					break;
