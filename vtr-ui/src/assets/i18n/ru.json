@@ -2875,7 +2875,7 @@
             "storage": "Хранение",
             "wireless": "Беспроводная связь"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Имейте в виду, что тесты будут отменены при переходе системы в спящий режим или режим гибернации"
     },
     "smartPerformance": {
         "title": "Health & Support",

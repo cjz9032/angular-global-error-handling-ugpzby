@@ -9,8 +9,9 @@ import { GradientColor } from 'src/app/data-models/security-advisor/gradient-col
 export class WidgetSvgCircleComponent implements OnInit, DoCheck {
 	@Input() gradientColor: GradientColor;
 	@Input() colorStep = 100;
-	@Input() stroke = '#2F3447';
-	@Input() strokeWidth = '4';
+	@Input() fill = '#2F3447';
+	@Input() width = '3.5';
+	@Input() height = '15';
 	oldGradientPercent: number;
 
 	ngOnInit() {
@@ -33,28 +34,25 @@ export class WidgetSvgCircleComponent implements OnInit, DoCheck {
 			const colorArr = this.gradient(startColor, endColor, colorStep);
 
 			const circleSvg = document.getElementById('score-circle');
-			const lineTags = document.getElementsByTagNameNS('http://www.w3.org/2000/svg', 'line') ? document.getElementsByTagNameNS('http://www.w3.org/2000/svg', 'line') : [];
+			const lineTags = document.getElementsByTagNameNS('http://www.w3.org/2000/svg', 'rect') ? document.getElementsByTagNameNS('http://www.w3.org/2000/svg', 'rect') : [];
 
 			if (lineTags && lineTags.length > 0) {
 				for (let i = lineTags.length - 1; i >= 0; i--) {
-					lineTags[i].setAttribute('stroke', this.stroke);
+					lineTags[i].setAttribute('fill', this.fill);
 				}
 			} else {
-				const myLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-				myLine.setAttribute('class', 'line');
-				myLine.setAttribute('x1', '120');
-				myLine.setAttribute('y1', '5');
-				myLine.setAttribute('x2', '120');
-				myLine.setAttribute('y2', '23');
-				myLine.setAttribute('stroke', this.stroke);
-				myLine.setAttribute('stroke-width', this.strokeWidth);
-				myLine.setAttribute('transform', 'rotate(0,120,120)');
+				const myLine = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+				myLine.setAttribute('width', this.width);
+				myLine.setAttribute('height', this.height);
+				myLine.setAttribute('fill', this.fill);
+				myLine.setAttribute('transform', 'rotate(0,0,113)');
+				myLine.setAttribute('filter', 'url(#f1)');
 
 				const els = 100;
 				const step = 360 / els;
 				for (let i = 0; i < els; i++) {
 					lineTags[i] = myLine.cloneNode(true);
-					lineTags[i].setAttribute('transform', 'rotate(' + i * step + ',120,120)');
+					lineTags[i].setAttribute('transform', 'rotate(' + Number(i * step) + ',0,115)');
 					circleSvg.appendChild(lineTags[i]);
 				}
 
@@ -62,7 +60,7 @@ export class WidgetSvgCircleComponent implements OnInit, DoCheck {
 			const percent = this.gradientColor.percent > 0 ? this.gradientColor.percent : 100;
 			for (let i = 0; i <= percent; i++) {
 				if (lineTags[i]) {
-					lineTags[i].setAttribute('stroke', colorArr[i]);
+					lineTags[i].setAttribute('fill', colorArr[i]);
 				}
 			}
 		}

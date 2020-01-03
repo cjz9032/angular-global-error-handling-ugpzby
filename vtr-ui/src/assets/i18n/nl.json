@@ -2875,7 +2875,7 @@
             "storage": "Opslag",
             "wireless": "Draadloos"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2875,7 +2875,7 @@
             "storage": "ストレージ",
             "wireless": "ワイヤレス"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "システムがスリープ状態または休止状態になると、テストがキャンセルされることに注意してください"
     },
     "smartPerformance": {
         "title": "Health & Support",

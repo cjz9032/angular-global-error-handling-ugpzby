@@ -57,8 +57,10 @@ ui-popover-apps {
 		// }
 		.main-content-body {
 			padding: 2rem;
-			@media #{$breakpoint_sm} {
+			&.content-padding{
+				@media #{$breakpoint_sm} {
 				padding: 1rem;
+			}
 			}
 			.running-apps {
 				padding-bottom: 1rem;
@@ -72,6 +74,7 @@ ui-popover-apps {
 				font-weight: $weight_light;
 				margin-bottom: 1rem;
 				color: $light;
+				padding-right: 3rem;
 			}
 			p {
 				font-size: 1.25rem;
