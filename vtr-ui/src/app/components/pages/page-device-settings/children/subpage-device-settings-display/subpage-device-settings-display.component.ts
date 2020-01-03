@@ -526,7 +526,7 @@ export class SubpageDeviceSettingsDisplayComponent
 								this.missingGraphicDriver = true;
 								this.statusChangedLocationPermission();
 								this.getSunsetToSunrise();
-								this.getEyeCareModeStatus();
+								this.getEyeCareModeStatus(true);
 								this.getDisplayColorTemperature();
 								this.getDaytimeColorTemperature();
 								break;
@@ -571,7 +571,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 
-	private getEyeCareModeStatus() {
+	private getEyeCareModeStatus(isMissingGraphicDriver = false) {
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.getEyeCareModeState()
@@ -582,7 +582,9 @@ export class SubpageDeviceSettingsDisplayComponent
 						this.eyeCareModeStatus.status = this.setValues.SetEyecaremodeStatus;
 						this.isSet.isSetEyecaremodeStatus = false;
 					}
-					this.enableSlider = featureStatus.status;
+					if (!isMissingGraphicDriver) {
+						this.enableSlider = featureStatus.status;
+					}
 					// this.isEyeCareMode = this.eyeCareModeStatus.status;
 					if (this.eyeCareModeStatus.available === true) {
 						this.logger.debug('eyeCareModeStatus.available', featureStatus.available);
