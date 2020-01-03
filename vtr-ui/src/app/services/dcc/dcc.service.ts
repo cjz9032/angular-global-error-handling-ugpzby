@@ -4,6 +4,7 @@ import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DeviceService } from '../device/device.service';
+import { CommonService } from '../common/common.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -22,6 +23,7 @@ export class DccService {
 		private logger: LoggerService,
 		private cmsService: CMSService,
 		private deviceService: DeviceService,
+		private commonService: CommonService,
 		private vantageShellService: VantageShellService
 	) {
 		this.initialize();
@@ -62,8 +64,10 @@ export class DccService {
 				filter.then((hyp) => {
 					if (hyp === 'true') {
 						this.isDccDevice = true;
-						if (!this.cmsHeaderDccBackgroundUpdated) {
+						if (!this.cmsHeaderDccBackgroundUpdated && this.commonService.isOnline) {
 							this.headerBackground = '';
+						} else if (!this.commonService.isOnline) {
+							this.headerBackground = this.headerDccBackground;
 						}
 					}
 					resolve(this.isDccDevice);
