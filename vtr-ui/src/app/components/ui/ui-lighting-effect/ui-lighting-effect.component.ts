@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges,ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, ViewChild } from '@angular/core';
 import { isUndefined } from 'util';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { DeviceService } from 'src/app/services/device/device.service';
@@ -6,12 +6,12 @@ import { DeviceService } from 'src/app/services/device/device.service';
 @Component({
 	selector: 'vtr-ui-lighting-effect',
 	templateUrl: './ui-lighting-effect.component.html',
-	styleUrls: [ './ui-lighting-effect.component.scss' ],
+	styleUrls: ['./ui-lighting-effect.component.scss'],
 	host: {
 		'(document:click)': 'generalClick($event)'
 	}
 })
-export class UiLightingEffectComponent implements OnInit, OnChanges{
+export class UiLightingEffectComponent implements OnInit, OnChanges {
 	@Input() public options;
 	@Input() public tabindex;
 	@Input() public selectedValue;
@@ -33,7 +33,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges{
 	intervalObj: any;
 	isItemsFocused = false;
 	//for macrokey
-    @Input() public enableDescription = true;
+	@Input() public enableDescription = true;
 	@Input() isRecording = false;
 	defaultLanguage: any;
 	@Input() tooltip_value: any;
@@ -42,7 +42,13 @@ export class UiLightingEffectComponent implements OnInit, OnChanges{
 	constructor(
 		private elementRef: ElementRef,
 		private deviceService: DeviceService
-	) {}
+	) {
+		if (document.getElementById('menu-main-btn-navbar-toggler')) {
+			document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
+				this.generalClick(event);
+			});
+		}
+	}
 
 	ngOnInit() {
 		this.deviceService.getMachineInfo().then((value: any) => {
