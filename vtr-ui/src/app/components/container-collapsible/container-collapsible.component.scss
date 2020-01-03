@@ -21,7 +21,7 @@
 					color: $color;
 					font-size: $fontsize_md;
 					line-height: 3rem;
-					font-weight: $weight_light;
+					font-weight: $weight_regular;
 					text-transform: none;
 				}
 
@@ -31,7 +31,7 @@
 					.collapse-text {
 						display: inline-block;
 						color: $shade_blue;
-						font-size: $fontsize_xs;
+						font-size: $fontsize_xs2;
 						font-weight: $weight_light;
 						margin-right: 0.6rem;
 						vertical-align: middle;
