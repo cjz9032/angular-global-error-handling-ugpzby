@@ -722,7 +722,10 @@
                 },
                 "thresholdNote": "<b>注意：</b>启用电池充电阈值时，电池无法充满电。",
                 "seeDetailsLink": "查看详细信息",
-                "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。"
+				"gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。",
+				"dualConditions": {
+                    "NotDetected": "<b>未检测到主电池。</b>"
+                }
             },
             "power": {
                 "title": "电源管理",

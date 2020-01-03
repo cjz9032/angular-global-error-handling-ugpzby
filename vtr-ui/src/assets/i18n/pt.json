@@ -722,7 +722,10 @@
                 "batteryNotDetected": "Nenhuma bateria detetada",
                 "thresholdNote": "<b>Nota:</b> A bateria não pode estar totalmente carregada quando o Limiar de Carregamento da Bateria está ativado.",
                 "seeDetailsLink": "Ver detalhes",
-                "gaugeResetWarning": "<b>Nota:</b> A reposição do indicador de bateria está em curso. Mantenha o transformador CA conectado."
+				"gaugeResetWarning": "<b>Nota:</b> A reposição do indicador de bateria está em curso. Mantenha o transformador CA conectado.",
+				"dualConditions": {
+                    "NotDetected": "<b>A bateria principal não foi detetada.</b>"
+                }
             },
             "power": {
                 "title": "Alimentação",

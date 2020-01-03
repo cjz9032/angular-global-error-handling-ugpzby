@@ -722,7 +722,10 @@
                 "batteryNotDetected": "バッテリーが検出されませんでした",
                 "thresholdNote": "<b>注:</b>バッテリー充電のしきい値が有効な場合は、バッテリーを完全に充電することはできません。",
                 "seeDetailsLink": "詳細を見る",
-                "gaugeResetWarning": "<b>注:</b> バッテリー・ゲージのリセットが進行中です。AC 電源アダプターを接続したままにしてください。"
+				"gaugeResetWarning": "<b>注:</b> バッテリー・ゲージのリセットが進行中です。AC 電源アダプターを接続したままにしてください。",
+				"dualConditions": {
+                    "NotDetected": "<b>プライマリー・バッテリーが検出されませんでした。</b>"
+                }
             },
             "power": {
                 "title": "電源",
