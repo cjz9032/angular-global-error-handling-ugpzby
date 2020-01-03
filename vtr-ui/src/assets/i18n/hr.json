@@ -2875,7 +2875,7 @@
             "storage": "Pohrana",
             "wireless": "Bežična veza"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Napominjemo da će se testovi otkazati ako je sustav u stanju mirovanja ili hibernacije"
     },
     "smartPerformance": {
         "title": "Health & Support",

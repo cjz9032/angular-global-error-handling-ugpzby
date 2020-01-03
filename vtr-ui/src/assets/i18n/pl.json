@@ -2875,7 +2875,7 @@
             "storage": "Pamięć masowa",
             "wireless": "Bezprzewodowe"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji"
     },
     "smartPerformance": {
         "title": "Health & Support",

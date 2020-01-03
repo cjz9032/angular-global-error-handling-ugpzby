@@ -2875,7 +2875,7 @@
             "storage": "Speicher",
             "wireless": "Drahtlos"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Beachten Sie, dass die Tests abgebrochen werden, wenn das System im Ruhemodus oder im Ruhezustand ist"
     },
     "smartPerformance": {
         "title": "Health & Support",
