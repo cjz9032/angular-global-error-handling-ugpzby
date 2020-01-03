@@ -2875,7 +2875,7 @@
             "storage": "Lagring",
             "wireless": "Radio"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge"
     },
     "smartPerformance": {
         "title": "Health & Support",
