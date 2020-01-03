@@ -672,6 +672,9 @@
         },
         "app-update": {
             "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+        },
+        "offline": {
+            "connectToUseFeature": "Connect to the internet to use this feature"
         }
     },
     "privacy": {
@@ -736,7 +739,7 @@
             }
         },
         "quickSettings": {
-            "title": "Your Quick Settings",
+            "title": "Quicksettings",
             "microphone": "Microphone",
             "cameraPrivacy": "Camera",
             "eyeCareMode": "Eye Care",
@@ -2293,7 +2296,7 @@
             "visitHde": "Visit Hard drive encryption",
             "haveOwnPassword": "I have my own password health",
             "haveOwnWifi": "I have my own wifi security",
-            "haveOwnVpn": "I have my own VPN security",
+            "haveOwnVpn": "I have my own VPN",
             "uac": "User Account Control (UAC)",
             "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",

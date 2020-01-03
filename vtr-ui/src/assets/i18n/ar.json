@@ -2877,7 +2877,7 @@
             "storage": "السعة التخزينية",
             "wireless": "اللاسلكية"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "يُرجى العلم أن الاختبارات سوف تُلغى إذا دخل النظام في وضع السكون أو الإسبات"
     },
     "smartPerformance": {
         "title": "Health & Support",

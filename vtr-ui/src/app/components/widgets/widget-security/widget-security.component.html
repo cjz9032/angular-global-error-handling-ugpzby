@@ -4,8 +4,8 @@
 			<div class="status-container row d-flex flex-nowrap align-items-start mb-3">
 				<div class="left-container">
 					<div class="position-relative">
-						<div class="circle-box d-flex justify-content-center">
-							<img [src]=" images[statusItem?.status][statusItem?.icon] | svgInline | async">
+						<div class="circle-box d-flex justify-content-center" >
+							<vtr-widget-svg-circle [gradientColor]="gradient"></vtr-widget-svg-circle>
 						</div>
 						<div class="circle-desc">
 							<p class="text-two-ellipsis" [innerHTML]="'security.landing.level' | translate"></p>
@@ -14,7 +14,10 @@
 					</div>
 				</div>
 				<div class="side">
-					<img [src]="'/assets/images/securityAdvisor/side.svg' | svgInline | async" alt="" srcset="">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 237.17">
+						<defs><style>.a {fill: #2f3447;}</style></defs>
+						<path class="a" d="M100,1.41H0A332,332,0,0,1,100,238.59Z" transform="translate(0 -1.41)" />
+					</svg>
 				</div>
 				<div class="right-container">
 					<div class="level_desc">

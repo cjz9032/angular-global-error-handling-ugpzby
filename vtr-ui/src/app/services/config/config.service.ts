@@ -127,7 +127,7 @@ export class ConfigService {
 			const isBetaUser = this.betaService.getBetaStatus();
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
-			const segment: string = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
+			this.activeSegment = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
 			const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
 			let resultMenu = cloneDeep(this.menuItemsGaming);
 			if (machineInfo.isGaming) {
@@ -163,7 +163,6 @@ export class ConfigService {
 					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
 			}
-			this.activeSegment = segment;
 			if (this.hypSettings) {
 				await this.initShowCHSMenu().then((result) => {
 					const shellVersion = {
@@ -176,7 +175,7 @@ export class ConfigService {
 						&& result
 						&& this.isShowCHSByShellVersion(shellVersion)
 						&& !machineInfo.isGaming
-						&& segment !== SegmentConst.Commercial;
+						&& this.activeSegment !== SegmentConst.Commercial;
 					const showCHSConsumer = country.toLowerCase() === 'us'
 						&& locale.startsWith('en')
 						&& result
@@ -195,7 +194,7 @@ export class ConfigService {
 					}
 				});
 			}
-			resultMenu = this.segmentFilter(resultMenu, segment);
+			resultMenu = this.segmentFilter(resultMenu, this.activeSegment);
 			this.menuBySegment.commercial = this.segmentFilter(this.menuBySegment.commercial, SegmentConst.Commercial);
 			this.menuBySegment.consumer = this.segmentFilter(this.menuBySegment.consumer, SegmentConst.Consumer);
 			this.menuBySegment.smb = this.segmentFilter(this.menuBySegment.smb, SegmentConst.SMB);
@@ -469,7 +468,7 @@ export class ConfigService {
 
 	updateSegmentMenu(segment): Promise<any> {
 		return new Promise((resolve) => {
-			if (segment === this.activeSegment) {
+			if (segment === this.activeSegment || segment === SegmentConst.Gaming) {
 				return resolve(this.menu);
 			} else {
 				this.activeSegment = segment;
@@ -510,6 +509,8 @@ export class ConfigService {
 
 	showSystemUpdates(): Promise<any> {
 		return new Promise((resolve) => {
+			if (!Array.isArray(this.menu)) { return; }
+
 			const device = this.menu.find((item) => item.id === 'device');
 			const deviceCommercial = this.menuBySegment.commercial.find((item) => item.id === 'device');
 			const deviceConsumer = this.menuBySegment.consumer.find((item) => item.id === 'device');
@@ -560,17 +561,17 @@ export class ConfigService {
 			return;
 		}
 		const newFeatureTipsShowComplete = this.commonService.getLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion);
-		if (!newFeatureTipsShowComplete || newFeatureTipsShowComplete < newFeatureVersion) {
-			const privacyItem = getItemByItemId('privacy');
-			const securityItem = getItemByItemId('security');
-			const chsItem = getItemByItemId('home-security');
+		if ((!newFeatureTipsShowComplete || newFeatureTipsShowComplete < newFeatureVersion)
+			&& Array.isArray(this.menu)) {
+			const privacyItem = this.menu.find((item: any) => item.id === 'privacy');
+			const securityItem = this.menu.find((item: any) => item.id === 'security');
+			const chsItem = this.menu.find((item: any) => item.id === 'home-security');
 			let isHideMenuToggle = true;
 			if (window.innerWidth < 1200) { isHideMenuToggle = false; }
 			if ((privacyItem || securityItem || chsItem) && isHideMenuToggle) {
 				this.newFeatureTipService.create();
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, newFeatureVersion);
-			function getItemByItemId(itemId: string) { return this.menu.find((item: any) => item.id === itemId); }
 		}
 	}
 }

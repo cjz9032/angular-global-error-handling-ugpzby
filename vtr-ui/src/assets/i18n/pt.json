@@ -2875,7 +2875,7 @@
             "storage": "Memória",
             "wireless": "Sem fios"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Tenha em atenção que os testes serão cancelados se o sistema entrar em modo de suspensão ou hibernação"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2875,7 +2875,7 @@
             "storage": "存储器",
             "wireless": "无线"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "请记住，如果系统进入睡眠或休眠状态，则测试将被取消"
     },
     "smartPerformance": {
         "title": "Health & Support",

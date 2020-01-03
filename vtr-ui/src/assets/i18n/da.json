@@ -2875,7 +2875,7 @@
             "storage": "Lager",
             "wireless": "Trådløs"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Husk, at testene bliver annulleret, hvis systemet slumrer eller går i dvaletilstand"
     },
     "smartPerformance": {
         "title": "Health & Support",

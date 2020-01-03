@@ -2875,7 +2875,7 @@
             "storage": "Almacenamiento",
             "wireless": "Inalámbrica"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Tenga en cuenta que las pruebas se cancelarán si el sistema entra en suspensión o hibernación"
     },
     "smartPerformance": {
         "title": "Health & Support",
