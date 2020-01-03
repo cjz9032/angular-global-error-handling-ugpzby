@@ -337,6 +337,20 @@
 			"sMode": true,
 			"subitems": [
 				{
+					"id": "support",
+					"label": "common.menu.support",
+					"path":null,
+					"icon": null,
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.support",
+					"routerLinkActiveOptions": {
+						"exact": true},
+						"forArm": false,
+						"sMode": true,
+					"subitems": []
+					},
+				{
 					"id": "smart-performance",
 					"label": "gaming.common.menu.smartPerformance",
 					"path": "smart-performance",

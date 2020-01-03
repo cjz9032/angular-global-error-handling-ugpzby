@@ -224,24 +224,15 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		}
 	}
 
-	ngAfterViewInit() { 
-		this.desktopCheck();
+	ngAfterViewInit() {
+
 	}
-	
+
 	public unRegisterThermalModeEvent() {
 		this.shellServices.unRegisterEvent(
 			EventTypes.gamingThermalModeChangeEvent,
 			this.onRegThermalModeEvent.bind(this)
 		);
-	}
-
-	public desktopCheck(){
-		const isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-		if (isDesktopMachine) {
-			const id = 'gaming.dashboard.device.quickSettings.dolby' ;
-			const id1 =  'gaming.dashboard.device.quickSettings.rapidCharge';
-			this.quickSettings = this.quickSettings.filter(item => item.header !== id && item.header !== id1);
-		}
 	}
 
 	public registerThermalModeEvent() {
@@ -407,6 +398,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
 				this.handleError(new PluginMissingError());
 			});
+			this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, (res) => {
+				this.updateWifiSecurityState(res);
+			})
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
 			this.commonService.setSessionStorageValue(
 				SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
@@ -418,13 +412,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				}
 			);
-			// To check if wifi security feature is available
-			if (!this.wifiSecurity.isSupported) {
-				this.quickSettings[2].isVisible = false;
-			} else {
-				this.commonService.setLocalStorageValue(LocalStorageKey.WifiSecurityCache, true);
-				this.quickSettings[2].isVisible = true;
-			}
+
 			if (this.wifiHomeViewModel.isLWSEnabled) {
 				this.quickSettings[2].isChecked = true;
 			} else {
@@ -442,6 +430,15 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		}
 	}
 
+	public updateWifiSecurityState(state = false) {
+		if (!state) {
+			this.quickSettings[2].isVisible = false;
+		} else {
+			this.commonService.setLocalStorageValue(LocalStorageKey.WifiSecurityCache, true);
+			this.quickSettings[2].isVisible = true;
+		}
+		this.checkQuickSettingsVisibility();
+	}
 	public runLocationService() {
 		const wifiSecurity = this.securityAdvisor.wifiSecurity;
 		if (this.wifiSecurity) {

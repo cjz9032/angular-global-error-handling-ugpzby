@@ -26,6 +26,8 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 import { DccService } from 'src/app/services/dcc/dcc.service';
+import { SegmentConst } from 'src/app/services/self-select/self-select.service';
+import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -314,25 +316,13 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 				if (response && response.length > 0) {
 					this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
+					this.getCMSHeroBannerItems(response);
+					this.getCMSCardContentB(response);
+					this.getCMSCardContentC(response);
+					this.getCMSCardContentD(response);
+					this.getCMSCardContentE(response);
+					this.getCMSCardContentF(response);
 
-					if (this.dashboardService.heroBannerItemsOnline.length === 0) {
-						this.getCMSHeroBannerItems(response);
-					}
-					if (!this.dashboardService.cardContentPositionBOnline) {
-						this.getCMSCardContentB(response);
-					}
-					if (!this.dashboardService.cardContentPositionCOnline) {
-						this.getCMSCardContentC(response);
-					}
-					if (!this.dashboardService.cardContentPositionDOnline) {
-						this.getCMSCardContentD(response);
-					}
-					if (!this.dashboardService.cardContentPositionEOnline) {
-						this.getCMSCardContentE(response);
-					}
-					if (!this.dashboardService.cardContentPositionFOnline) {
-						this.getCMSCardContentF(response);
-					}
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
 					this.loggerService.info(msg);
@@ -374,7 +364,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 					DataSource: 'cms'
 				};
 			});
-		if (heroBannerItems && heroBannerItems.length) {
+		if (heroBannerItems && heroBannerItems.length && this.cmsHeroBannerChanged(heroBannerItems, this.heroBannerItemsCms)) {
 			this.heroBannerItemsCms = heroBannerItems;
 			this.cmsRequestResult.tileA = true;
 			if (!this.upeRequestResult.tileA || this.tileSource.tileA === 'CMS') {
@@ -382,6 +372,32 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				this.dashboardService.heroBannerItemsOnline = this.heroBannerItemsCms;
 			}
 		}
+	}
+
+	cmsHeroBannerChanged(bannerItems1, bannerItems2) {
+		let result =  false;
+		if ((bannerItems1 && !bannerItems2)
+		|| (!bannerItems1 && bannerItems2)) {
+			result = true;
+		} else if (bannerItems1 && bannerItems2) {
+			if (bannerItems1.length != bannerItems2.length) {
+				result = true;
+			} else {
+				for(var i = 0; i < bannerItems1.length; i++) {
+					if ((bannerItems1[i] && !bannerItems2[i])
+						|| (!bannerItems1[i] && bannerItems2[i])) {
+						result = true;
+						break;
+					}
+					else if (bannerItems1[i] && bannerItems2[i]
+						&& JSON.stringify(bannerItems2[i]) !== JSON.stringify(bannerItems1[i])) {
+						result = true;
+						break;
+					}
+				}
+			}
+		}
+		return result;
 	}
 
 	getCMSCardContentB(response) {
@@ -911,6 +927,11 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				case LocalStorageKey.LastWarrantyStatus:
 					if (notification.payload) {
 						this.setWarrantyInfo(notification.payload);
+					}
+					break;
+				case SelfSelectEvent.SegmentChange:
+					if (this.isOnline) {
+						this.fetchContent();
 					}
 					break;
 				default:
