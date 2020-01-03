@@ -2661,7 +2661,7 @@
         "bullets2": "使用安全性顧問,安全管理更輕鬆 (適用於特定系統)。",
         "bullets3": "使用自動更新,讓裝置隨時保持為最佳狀態 (適用於特定系統)。",
         "subtitle1": "您要如何使用您的裝置？",
-        "subtitle2": "告訴我們您的興趣（選填）",
+        "subtitle2": "請告訴我們您的興趣（選填）",
         "personal": "個人使用",
         "business": "業務使用",
         "custom": "自訂",
@@ -2875,7 +2875,7 @@
             "storage": "儲存裝置",
             "wireless": "無線"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試"
     },
     "smartPerformance": {
         "title": "Health & Support",

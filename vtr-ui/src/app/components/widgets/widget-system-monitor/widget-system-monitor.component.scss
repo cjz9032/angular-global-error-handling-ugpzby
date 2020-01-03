@@ -7,7 +7,7 @@
 		border-radius: $border_radius;
 		background: $dark_cell;
 		box-shadow: $drop_shadow_gaming;
-		padding: 2rem 4rem 2rem 4rem;
+		padding: 2rem 4rem 3.5rem 4rem;
 		height:auto;	
 		@media #{$breakpoint_lg} {
 			padding: 2rem;			
@@ -633,18 +633,19 @@
 						padding: 2rem 0rem;						
 						width:40%;
 						}
-					@media screen  and (min-width: 568px)and (max-width: 767px){
+					@media screen  and (min-width: 568px)and (max-width: 767.9px){
 					padding: 2rem 0rem;					
 					width:32%;			
 					}
 				
-					@media screen and (min-width: 992px) and (max-width: 1200px) { 
+					@media screen and (min-width: 992px) and (max-width: 1199.9px) { 
 					padding: 2rem 2.5rem;
 					width:45%;
 					}					 
 					&.single {
 						padding: 2rem;
 						padding-top: 3.5rem;
+						padding-bottom:0rem!important;
 						text-align:center;
 						width:100%;
 						@media #{$breakpoint_xl3} {

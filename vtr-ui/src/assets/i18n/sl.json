@@ -2661,7 +2661,7 @@
         "bullets2": "Varnostni svetovalec poenostavi upravljanje varnosti (na voljo v izbranih sistemih).",
         "bullets3": "Samodejne posodobitve zagotovijo, da je vaša naprava vedno v optimalnem stanju (na voljo v izbranih sistemih).",
         "subtitle1": "Kako boste uporabljali napravo?",
-        "subtitle2": "Povejte nam, kaj vas zanima (izbirno)",
+        "subtitle2": "Zaupajte nam, kaj vas zanima (izbirno)",
         "personal": "Osebna uporaba",
         "business": "Poslovna uporaba",
         "custom": "Izkušnja po meri",
@@ -2875,7 +2875,7 @@
             "storage": "Pomnilnik",
             "wireless": "Brezžično"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Upoštevajte, da bodo preskusi preklicani, če sistem preide v stanje spanja ali mirovanja"
     },
     "smartPerformance": {
         "title": "Health & Support",

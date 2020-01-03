@@ -2661,7 +2661,7 @@
         "bullets2": "Consultatul de securitate simplifică gestionarea securității (caracteristică disponibilă pe anumite sisteme).",
         "bullets3": "Actualizările automate vă mențin dispozitivul în stare perfectă (caracteristică disponibilă pe anumite sisteme).",
         "subtitle1": "Cum veți utiliza dispozitivul?",
-        "subtitle2": "Spuneţi-ne care sunt interesele dvs. (opţional)",
+        "subtitle2": "Spuneți-ne care sunt interesele dvs. (opțional)",
         "personal": "Utilizare personală",
         "business": "Utilizare comercială",
         "custom": "Experiență personalizată",
@@ -2875,7 +2875,7 @@
             "storage": "Stocare",
             "wireless": "Fără fir"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează"
     },
     "smartPerformance": {
         "title": "Health & Support",

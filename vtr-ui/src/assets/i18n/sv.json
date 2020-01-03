@@ -2661,7 +2661,7 @@
         "bullets2": "Säkerhetsrådgivare gör det enkelt att hantera säkerheten (ingår i vissa modeller).",
         "bullets3": "Automatiska uppdateringar gör att enheten fungerar optimalt (ingår i vissa modeller).",
         "subtitle1": "Hur planerar du att använda din enhet?",
-        "subtitle2": "Berätta om dina intressen (valfritt)",
+        "subtitle2": "Berätta gärna om dina intressen (valfritt)",
         "personal": "Privat",
         "business": "Arbete",
         "custom": "Skräddarsydd upplevelse",
@@ -2875,7 +2875,7 @@
             "storage": "Lagring",
             "wireless": "Radio"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge"
     },
     "smartPerformance": {
         "title": "Health & Support",

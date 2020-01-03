@@ -2661,7 +2661,7 @@
         "bullets2": "Bezpečnostní poradce usnadňuje správu zabezpečení (dostupný u vybraných systémů).",
         "bullets3": "Automatické aktualizace uchovávají vaše zařízení ve skvělém stavu (dostupné u vybraných systémů).",
         "subtitle1": "Jak budete zařízení používat?",
-        "subtitle2": "Povězte nám o svých zájmech (nepovinné)",
+        "subtitle2": "Povězte nám o svých zájmech (nepovinné)",
         "personal": "Osobní použití",
         "business": "Obchodní použití",
         "custom": "Vlastní zkušenost",
@@ -2875,7 +2875,7 @@
             "storage": "Úložiště",
             "wireless": "Bezdrátové"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Mějte na paměti, že testy budou zrušeny, pokud je systém v režimu spánku nebo hibernace"
     },
     "smartPerformance": {
         "title": "Health & Support",

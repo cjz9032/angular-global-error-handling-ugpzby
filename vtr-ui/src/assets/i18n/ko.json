@@ -2875,7 +2875,7 @@
             "storage": "저장 장치",
             "wireless": "무선"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "시스템이 절전 또는 최대 절전 모드 상태인 경우 테스트가 취소됩니다"
     },
     "smartPerformance": {
         "title": "Health & Support",

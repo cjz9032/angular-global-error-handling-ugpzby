@@ -2663,7 +2663,7 @@
         "bullets2": "يسهّل مستشار الأمان إدارة أمانك (متوفر في أنظمة محدد)ة",
         "bullets3": "تساعد التحديثات التلقائية في إبقاء جهازك في وضع ممتاز (متوفر في أنظمة محدد)ة",
         "subtitle1": "كيف ستستخدم جهازك؟",
-        "subtitle2": "أخبرنا عن اهتماماتك (اختياري)",
+        "subtitle2": "يُرجى إخبارنا عن اهتماماتك (اختياري)",
         "personal": "استخدام شخصي",
         "business": "استخدام في العمل",
         "custom": "تجربة مخصصة",
@@ -2877,7 +2877,7 @@
             "storage": "السعة التخزينية",
             "wireless": "اللاسلكية"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "يُرجى العلم أن الاختبارات سوف تُلغى إذا دخل النظام في وضع السكون أو الإسبات"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2661,7 +2661,7 @@
         "bullets2": "Güvenlik Danışmanı, güvenliğinizin yönetimini kolaylaştırır (seçili sistemlerde bulunur).",
         "bullets3": "Otomatik güncellemeler, cihazınızı en iyi durumda tutar (seçili sistemlerde bulunur).",
         "subtitle1": "Cihazınızı nasıl kullanacaksınız?",
-        "subtitle2": "Bize ilgi alanlarınızdan bahsedin (isteğe bağlı)",
+        "subtitle2": "Lütfen ilgi alanlarınızdan bahsedin (isteğe bağlı)",
         "personal": "Kişisel Kullanım",
         "business": "İş Amaçlı Kullanım",
         "custom": "Özel Deneyim",
@@ -2875,7 +2875,7 @@
             "storage": "Depolama alanı",
             "wireless": "Kablosuz"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Sistem uyku veya hazırda bekleme kipine geçerse testlerin iptal edileceğini unutmayın"
     },
     "smartPerformance": {
         "title": "Health & Support",

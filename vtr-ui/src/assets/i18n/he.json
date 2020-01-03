@@ -2875,7 +2875,7 @@
             "storage": "אחסון",
             "wireless": "אלחוטי"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "קחו בחשבון שהבדיקות יבוטלו אם המערכת במצב שינה או המתנה"
     },
     "smartPerformance": {
         "title": "Health & Support",
