@@ -4,7 +4,7 @@ import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 
 import { UiLightingEffectComponent } from './ui-lighting-effect.component';
 
-fdescribe('UiLightingEffectComponent', () => {
+describe('UiLightingEffectComponent', () => {
 	let component: UiLightingEffectComponent;
 	let fixture: ComponentFixture<UiLightingEffectComponent>;
 
