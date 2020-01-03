@@ -10,7 +10,7 @@ import { WidgetLightingComponent } from './widget-lighting.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { of } from 'rxjs';
 
-fdescribe('WidgetLightingComponent', () => {
+describe('WidgetLightingComponent', () => {
   let component: WidgetLightingComponent;
   let fixture: ComponentFixture<WidgetLightingComponent>;
   const commonServiceMock = {
