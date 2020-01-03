@@ -96,14 +96,14 @@
 
 	.side {
 		margin-left: -1rem;
-		img {
+		svg {
 			width: 3.5rem;
 		}
 	}
 	// @media #{$mediaquery_X46} {
 	// 	.side {
 	// 		margin-left: 0;
-	// 		img {
+	// 		svg {
 	// 			width: 1.5rem;
 	// 		}
 	// 	}
@@ -111,7 +111,7 @@
 	@media #{$mediaquery_X48} {
 		.side {
 			margin-left: 0;
-			img {
+			svg {
 				width: 1.5rem;
 			}
 		}

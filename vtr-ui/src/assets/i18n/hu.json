@@ -2875,7 +2875,7 @@
             "storage": "Tárolás",
             "wireless": "Vezeték nélküli"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül"
     },
     "smartPerformance": {
         "title": "Health & Support",
