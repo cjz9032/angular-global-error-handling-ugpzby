@@ -2875,7 +2875,7 @@
             "storage": "Úložiště",
             "wireless": "Bezdrátové"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Mějte na paměti, že testy budou zrušeny, pokud je systém v režimu spánku nebo hibernace"
     },
     "smartPerformance": {
         "title": "Health & Support",
