@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
 	selector: 'vtr-ui-macrokey-recorded-list',
 	templateUrl: './ui-macrokey-recorded-list.component.html',
-	styleUrls: [ './ui-macrokey-recorded-list.component.scss' ]
+	styleUrls: ['./ui-macrokey-recorded-list.component.scss']
 })
 export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoCheck {
 	@Input() number: any;
@@ -26,7 +26,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	public recordsList: any = [];
 	public pairCounter = {};
 	public hoveredPair = '';
-	tooltips_delay:any = '';
+	tooltips_delay: any = '';
 	deleteStart: any = new Date();
 
 	repeatOptions: any = [
@@ -39,6 +39,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					id: 'macro_key_settings_repeat1',
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat1.title',
 					metricitem: 'macrokey_no_repeat',
+					show_tool_tip: true,
 					value: MacroKeyRepeat.Repeat1
 				},
 				{
@@ -48,6 +49,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					id: 'macro_key_settings_repeat2',
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat2.title',
 					metricitem: 'macrokey_no_repeat_2times',
+					show_tool_tip: true,
 					value: MacroKeyRepeat.Repeat2
 				},
 				{
@@ -57,6 +59,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					id: 'macro_key_settings_repeat3',
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat3.title',
 					metricitem: 'macrokey_no_repeat_3times',
+					show_tool_tip: true,
 					value: MacroKeyRepeat.Repeat3
 				},
 				{
@@ -66,6 +69,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					id: 'macro_key_settings_repeat4',
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat4.title',
 					metricitem: 'macrokey_no_repeat_4times',
+					show_tool_tip: true,
 					value: MacroKeyRepeat.Repeat4
 				},
 				{
@@ -75,6 +79,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					id: 'macro_key_settings_repeat5',
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat5.title',
 					metricitem: 'macrokey_no_repeat_5times',
+					show_tool_tip: true,
 					value: MacroKeyRepeat.Repeat5
 				},
 				{
@@ -84,6 +89,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					id: 'macro_key_settings_repeat6',
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat6.title',
 					metricitem: 'macrokey_no_repeat_6times',
+					show_tool_tip: true,
 					value: MacroKeyRepeat.Repeat6
 				},
 				{
@@ -93,6 +99,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					id: 'macro_key_settings_repeat7',
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat7.title',
 					metricitem: 'macrokey_no_repeat_7times',
+					show_tool_tip: true,
 					value: MacroKeyRepeat.Repeat7
 				},
 				{
@@ -102,6 +109,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					id: 'macro_key_settings_repeat8',
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat8.title',
 					metricitem: 'macrokey_no_repeat_8times',
+					show_tool_tip: true,
 					value: MacroKeyRepeat.Repeat8
 				},
 				{
@@ -111,6 +119,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					id: 'macro_key_settings_repeat9',
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat9.title',
 					metricitem: 'macrokey_no_repeat_9times',
+					show_tool_tip: true,
 					value: MacroKeyRepeat.Repeat9
 				},
 				{
@@ -120,6 +129,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					id: 'macro_key_settings_repeat10',
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat10.title',
 					metricitem: 'macrokey_no_repeat_10times',
+					show_tool_tip: true,
 					value: MacroKeyRepeat.Repeat10
 				}
 			]
@@ -164,9 +174,9 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		popupWindowTitle: 'gaming.macroKey.popupContent.clearMacrokey.modalTitle'
 	};
 
-	constructor(private macrokeyService: MacrokeyService, private loggerService: LoggerService, private translate: TranslateService) {}
+	constructor(private macrokeyService: MacrokeyService, private loggerService: LoggerService, private translate: TranslateService) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	async recordDelete(record, i) {
 		try {
@@ -193,7 +203,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					}
 				});
 			}
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	clearRecords() {
