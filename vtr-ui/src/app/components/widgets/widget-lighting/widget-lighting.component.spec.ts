@@ -2,7 +2,6 @@ import { Gaming } from './../../../enums/gaming.enum';
 import { CommonService } from './../../../services/common/common.service';
 import { GamingLightingService } from 'src/app/services/gaming/lighting/gaming-lighting.service';
 import { DeviceService } from './../../../services/device/device.service';
-import { Router, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
