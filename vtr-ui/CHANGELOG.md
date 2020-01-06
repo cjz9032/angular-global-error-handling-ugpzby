@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.289](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.288...v1.0.289) (2020-01-06)
+
+
+### Bug Fixes
+
+* **i18n:** apply proper font value for east asian languages ([7bab409](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/7bab409))
+
+
+
 ## [1.0.288](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.287...v1.0.288) (2020-01-03)
 
 
