@@ -108,6 +108,11 @@ export class ConfigService {
 						this.notifyMenuChange(menu);
 					});
 					break;
+				case MenuItem.MenuBetaItemChange:
+					this.showBetaMenu(notification.payload).then((menu) => {
+						this.notifyMenuChange(menu);
+					});
+					break;
 				default:
 					break;
 			}
@@ -491,7 +496,6 @@ export class ConfigService {
 		if (menu.find((item) => item.id === 'wifi-security')
 			|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
 			this.supportFilter(menu, 'wifi-security', wifiIsSupport);
-			menu.filter(item => !item.hide);
 		} else if (wifiIsSupport && !this.deviceService.isSMode && !this.deviceService.isArm) {
 			if (securityItem && securityItem.subitems) {
 				const wifiItem = this.menuItems.find((item) => item.id === 'security').subitems.find((item) => item.id === 'wifi-security');
@@ -502,6 +506,44 @@ export class ConfigService {
 				menu.splice(supportIndex, 0, wifiItems);
 			}
 		}
+	}
+
+	showBetaMenu(isBeta: boolean): Promise<any> {
+		return new Promise((resolve) => {
+			this.updateBetaMenu(this.menu, isBeta).then((menu) => {
+				this.menu = menu;
+				this.menu = this.segmentFilter(this.menu, this.activeSegment);
+				return resolve(this.menu);
+			});
+			this.updateBetaMenu(this.menuBySegment.consumer, isBeta).then((menu) => {
+				this.menuBySegment.consumer = menu;
+			});
+			this.updateBetaMenu(this.menuBySegment.smb, isBeta).then((menu) => {
+				this.menuBySegment.smb = menu;
+			});
+		});
+	}
+
+	updateBetaMenu(menu, isBeta: boolean): Promise<any> {
+		return new Promise((resolve) => {
+			if (isBeta) {
+				if (!menu.find((item) => item.id === 'hardware-scan') && !menu.find((item) => item.id === 'app-search')) {
+					menu.splice(menu.length - 1, 0, ...this.betaItem);
+					this.canShowSearch().then((result) => {
+						if (result) {
+							menu.splice(menu.length - 1, 0, this.appSearch);
+						}
+						return resolve(menu);
+					});
+				} else {
+					return resolve(menu);
+				}
+			} else {
+				menu = menu.filter(item => item.id !== 'hardware-scan');
+				menu = menu.filter(item => item.id !== 'app-search');
+				return resolve(menu);
+			}
+		});
 	}
 
 	showSystemUpdates(): Promise<any> {
