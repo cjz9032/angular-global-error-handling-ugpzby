@@ -848,6 +848,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 					} else {
 						systemUpdate.status = 1;
 					}
+					systemUpdate.status = 0;
 				}
 			});
 		}
@@ -892,6 +893,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		}
 		warranty.isHidden = !this.deviceService.showWarranty;
 		this.isWarrantyVisible = this.deviceService.showWarranty;
+		warranty.status = 0;
 	}
 
 	private onNotification(notification: AppNotification) {

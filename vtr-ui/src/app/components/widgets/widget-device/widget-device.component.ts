@@ -232,6 +232,8 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 						// `never ran update`;
 						systemUpdate.status = 1;
 					}
+					// always show green check icon
+					systemUpdate.status = 0;
 				}
 			});
 		}
@@ -280,6 +282,8 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 					warranty.status = 1;
 				}
 				warranty.isHidden = !this.deviceService.showWarranty;
+				// always show green icon
+				warranty.status = 0;
 			}
 		});
 	}
