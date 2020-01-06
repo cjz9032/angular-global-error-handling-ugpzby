@@ -347,7 +347,8 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			this.webView.removeEventListener('navigationstarting', this.startBind);
 			this.webView.removeEventListener('navigationcompleted', this.completeBInd);
 			this.webView.close();
-			this.webView = null;
+			// Should not set webview to null, otherwise other references to webview will possibly raise unhandled null reference exception (FR: 5%)
+			// underlayer wrapper of webview in Vantage shell still has valid webview after close().
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
