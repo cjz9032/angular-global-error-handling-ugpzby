@@ -227,6 +227,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 					textIndex = 3;
 				} // Do not show again in first time
 			}
+			if (textIndex === 8 && this.translate.currentLang.toLocaleLowerCase() !== 'en') {
+				textIndex = 9;
+			}
 			this.dashboardService.welcomeText = `lenovoId.welcomeText${textIndex}`;
 			this.dashboardService.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
 			this.commonService.setLocalStorageValue(
