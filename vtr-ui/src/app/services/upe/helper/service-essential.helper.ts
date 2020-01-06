@@ -28,7 +28,7 @@ export class ServiceEssentialHelper implements IEssentialHelper {
 		try {
 			iUpeEssential = await this.upeAgent.registerDevice(essential);
 		} catch (ex) {
-			this.devService.writeLog('[service essential helper]get upe essential from upe agent failed', ex);
+			this.devService.writeLog('[service essential helper]register device from upe agent failed', ex);
 		}
 		return iUpeEssential;
 	}

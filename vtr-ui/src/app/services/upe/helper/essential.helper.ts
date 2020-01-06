@@ -8,8 +8,8 @@ import { DevService } from '../../dev/dev.service';
 
 export class EssentialHelper implements IEssentialHelper {
 	private iessentialHelper: IEssentialHelper;
-	private getUpeEssentialP: Promise<IUpeEssential>;
-	private registerDeviceP: Promise<IUpeEssential>;
+	private getUpeEssentialTask: Promise<IUpeEssential>;
+	private registerDeviceTask: Promise<IUpeEssential>;
 	public readonly isSupportUpeTag: boolean;		// old version of vantage service do not support upe tag, reserve for future
 
 	constructor(
@@ -29,20 +29,20 @@ export class EssentialHelper implements IEssentialHelper {
 	}
 
 	public async getUpeEssential(): Promise<IUpeEssential> {
-		if (!this.getUpeEssentialP) {	// cache the request in case of duplicated call
-			this.getUpeEssentialP = this.iessentialHelper.getUpeEssential();
+		if (!this.getUpeEssentialTask) {	// cache the request in case of duplicated call
+			this.getUpeEssentialTask = this.iessentialHelper.getUpeEssential();
 		}
-		const result = await this.getUpeEssentialP;
-		this.getUpeEssentialP = null;
+		const result = await this.getUpeEssentialTask;
+		this.getUpeEssentialTask = null;
 		return result;
 	}
 
 	public async registerDevice(essential: IUpeEssential): Promise<IUpeEssential> {
-		if (!this.registerDeviceP) {	// cache the request in case of duplicated call
-			this.registerDeviceP = this.iessentialHelper.registerDevice(essential);
+		if (!this.registerDeviceTask) {	// cache the request in case of duplicated call
+			this.registerDeviceTask = this.iessentialHelper.registerDevice(essential);
 		}
-		const result = await this.registerDeviceP;
-		this.registerDeviceP = null;
+		const result = await this.registerDeviceTask;
+		this.registerDeviceTask = null;
 		return result;
 	}
 }

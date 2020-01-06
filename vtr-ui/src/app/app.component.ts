@@ -97,8 +97,6 @@ export class AppComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		// check for update and download it but it will be available in next launch
 		// this.appUpdateService.checkForUpdatesNoPrompt();
-		// active duration
-		this.getDuration();
 		if (this.deviceService.isAndroid) {
 			return;
 		}
@@ -439,60 +437,6 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 		}, 2000);
 	}
-
-	// TESTING ACTIVE DURATION
-	private getDuration() {
-		const component = this; // value of this is null/undefined inside the functions
-		let isVisible = true; // internal flag, defaults to true
-		function onVisible() {
-			// prevent double execution
-			if (isVisible) {
-				return;
-			}
-			// console.log(' APP is VISIBLE-------------------------------------------------------');
-			component.metricService.sendAppResumeMetric();
-			// change flag value
-			isVisible = true;
-		} // end of onVisible
-		function onHidden() {
-			// prevent double execution
-			if (!isVisible) {
-				return;
-			}
-			// console.log(' APP is HIDDEN-------------------------------------------------------');
-			component.metricService.sendAppSuspendMetric();
-			// change flag value
-			isVisible = false;
-		} // end of onHidden
-		function handleVisibilityChange(forcedFlag) {
-			// forcedFlag is a boolean when this event handler is triggered by a
-			// focus or blur eventotherwise it's an Event object
-			if (typeof forcedFlag === 'boolean') {
-				if (forcedFlag) {
-					return onVisible();
-				}
-				return onHidden();
-			}
-			if (document.hidden) {
-				return onHidden();
-			}
-			return onVisible();
-		} // end of handleVisibilityChange
-		document.addEventListener('visibilitychange', handleVisibilityChange, false);
-		// extra event listeners for better behaviour
-		document.addEventListener('focus', () => {
-			handleVisibilityChange(true);
-		}, false);
-		document.addEventListener('blur', () => {
-			handleVisibilityChange(false);
-		}, false);
-		window.addEventListener('focus', () => {
-			handleVisibilityChange(true);
-		}, false);
-		window.addEventListener('blur', () => {
-			handleVisibilityChange(false);
-		}, false);
-	} // END OF DURATION
 
 	private setFontFamilyByLocale(locale: string = 'en') {
 		const defaultFontFamily = '"Segoe UI", sans-serif';
