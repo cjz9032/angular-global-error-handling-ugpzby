@@ -32,8 +32,6 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private systemUpdateService: SystemUpdateService,
 		private translate: TranslateService,
-		private timer: TimerService,
-		private metrics: MetricService,
 		private dashboardService: DashboardService,
 		private warrantyService: WarrantyService,
 		private adPolicyService: AdPolicyService,
@@ -47,19 +45,10 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.setDefaultInfo();
-		this.timer.start();
 		this.getDeviceInfo();
 	}
 
 	ngOnDestroy() {
-		const pageDuration = this.timer.stop();
-		const pageViewMetrics = {
-			ItemType: 'PageView',
-			PageName: 'Page.MyDevice',
-			PageContext: 'My device status',
-			PageDuration: pageDuration
-		};
-		this.metrics.sendMetrics(pageViewMetrics);
 	}
 
 	private setDefaultInfo() {

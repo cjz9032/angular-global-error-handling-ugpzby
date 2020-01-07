@@ -12,8 +12,20 @@
 }
 .vtr-battery-card {
 		@media #{$mediaquery_11} {
-		padding-top: 8.5rem;
-	}
+			padding-top: 8.5rem;
+		}
+		@media #{$mediaquery_sm} {
+			padding-top: 0rem;
+			margin-top: -1rem;
+		}
+		@media #{$mediaquery_md} {
+			padding-top: 0rem;
+			margin-top: -1rem;
+		}
+		@media #{$mediaquery_lg} {
+			padding-top: 0rem;
+			margin-top: -1rem;
+		}
 	// @media #{$mediaquery_X5} {
 	// 	padding-left: 8.5rem;
 	// 	padding-top: 12.5rem;
@@ -31,7 +43,17 @@
 		background-position: right top, right bottom;
 		background-repeat: no-repeat;
 		background-size: contain;
-			.battery-gauge-label {
+		max-width: 100%;
+		@media #{$breakpoint_lg} {
+			max-width: 100%;
+		}
+		@media #{$breakpoint_md} {
+			max-width: 100%;
+		}
+		@media #{$breakpoint_sm} {
+			max-width: 100%;
+		}
+		.battery-gauge-label {
 			opacity: 0.58;
 			color: $main_dark;
 			font-size: $caption;
