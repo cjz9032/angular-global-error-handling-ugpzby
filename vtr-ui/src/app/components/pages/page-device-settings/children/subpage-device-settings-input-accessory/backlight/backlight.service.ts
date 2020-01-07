@@ -43,7 +43,6 @@ export class BacklightService {
 	}
 
 	setBacklight(mode: BacklightMode) {
-		console.log(JSON.stringify(mode));
 		return from(this.backlightFeature.setBacklight({
 			settingList: {
 				setting: [

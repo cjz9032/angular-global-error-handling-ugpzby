@@ -102,7 +102,7 @@
 
 		.title {
 			font-size: $fontsize_md;
-			color: $font_color;
+			color:  $font_color;
 			font-weight: $weight_light;
 			letter-spacing: 0.05rem;
 			text-transform: none;
@@ -189,5 +189,5 @@
 }
 
 // @mixin theme($name, $background, $font_color, $icon_color, $border)
-@include theme(white-theme, $light, $main_darker, $menu_hover, $screen_dark_10);
+@include theme(white-theme, $light, $purple_navy, $menu_hover, $screen_dark_10);
 @include theme(blue-theme, $gradient_main, $light, $light, $screen_light_15);
