@@ -12,7 +12,7 @@ export class LocalInfoService {
 
 	// private sysInfo: any;
 	private localInfo: any;
-	private supportLanguages = ['en', 'zh-hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it', 'ja', 'ko', 'nb', 'nl', 'pl', 'pt-br', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-latn', 'sv', 'tr', 'uk', 'zh-hant'];
+	private supportLanguages = ['en', 'zh-hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it', 'ja', 'ko', 'nb', 'nl', 'pl', 'pt-br', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr', 'sv', 'tr', 'uk', 'zh-hant'];
 	private readonly gamingTag = SegmentConst.Gaming;
 	private selfSelectSegment = null;
 
