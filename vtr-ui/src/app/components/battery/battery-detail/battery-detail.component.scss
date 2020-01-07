@@ -6,10 +6,10 @@
 		overflow-x: hidden;
 		overflow-y: auto;
 		@media #{$breakpoint_md} {
-			max-height: 60rem;
+			max-height: 55rem;
 		}
-		@media #{$breakpoint_sm} {
-			max-height: 68rem;
+		 @media #{$breakpoint_sm} {
+		 	max-height: 50rem;
 		}
 
 		.battery-indicator {
