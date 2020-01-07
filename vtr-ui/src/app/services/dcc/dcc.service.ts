@@ -64,10 +64,12 @@ export class DccService {
 				filter.then((hyp) => {
 					if (hyp === 'true') {
 						this.isDccDevice = true;
-						if (!this.cmsHeaderDccBackgroundUpdated && this.commonService.isOnline) {
-							this.headerBackground = '';
-						} else if (!this.commonService.isOnline) {
-							this.headerBackground = this.headerDccBackground;
+						if (!this.deviceService.isGaming) {
+							if (!this.cmsHeaderDccBackgroundUpdated && this.commonService.isOnline) {
+								this.headerBackground = '';
+							} else if (!this.commonService.isOnline) {
+								this.headerBackground = this.headerDccBackground;
+							}
 						}
 					}
 					resolve(this.isDccDevice);

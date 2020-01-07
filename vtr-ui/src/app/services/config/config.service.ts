@@ -59,14 +59,15 @@ export class ConfigService {
 		// );
 		// this.menuItemNotification = this.menuItemSubject;
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
-		this.windowsHello = this.securityAdvisor.windowsHello;
-		if (!this.windowsHello.fingerPrintStatus) {
-			this.windowsHello.refresh();
+		if (this.securityAdvisor) {
+			this.windowsHello = this.securityAdvisor.windowsHello;
+			if (!this.windowsHello.fingerPrintStatus) {
+				this.windowsHello.refresh();
+			}
+			this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, (result) => {
+				this.notifyMenuChange(result);
+			});
 		}
-		this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, (result) => {
-			this.notifyMenuChange(result);
-		});
-
 	}
 
 
@@ -147,7 +148,7 @@ export class ConfigService {
 			}
 			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 			items = this.supportFilter(items, 'windows-hello', cacheShowWindowsHello);
-			if (this.windowsHello.fingerPrintStatus) {
+			if (this.windowsHello && this.windowsHello.fingerPrintStatus) {
 				items = this.supportFilter(items, 'windows-hello', this.windowsHelloService.showWindowsHello());
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, this.windowsHelloService.showWindowsHello());
 			}
