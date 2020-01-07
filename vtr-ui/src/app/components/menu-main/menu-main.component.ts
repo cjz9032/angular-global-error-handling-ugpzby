@@ -292,9 +292,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		if (this.backlightCapabilitySubscription) {
 			this.backlightCapabilitySubscription.unsubscribe();
 		}
-		if (this.backlightCapabilitySubscription) {
-			this.backlightCapabilitySubscription.unsubscribe();
-		}
 	}
 
 	toggleMenu(event) {

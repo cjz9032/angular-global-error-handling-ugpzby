@@ -343,6 +343,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 		this.hardwareScanService.setCurrentTaskStep(TaskStep.Run);
 
+		this.hardwareScanService.setCurrentTaskStep(TaskStep.Run);
+
 		const payload = {
 			requests: requests,
 			categories: [],
@@ -739,6 +741,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.isScanDone = true;
 	}
 	
+
 
 
 
