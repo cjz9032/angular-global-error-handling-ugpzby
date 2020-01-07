@@ -54,7 +54,7 @@ export class AntivirusWidgetItem extends WidgetItem {
 			if (others.firewall && others.firewall.length > 0) {
 				fwStatus = others.firewall[0].status;
 			}
-		} else {
+		} else if (defender) {
 			avStatus = typeof defender.status === 'boolean' ? defender.status : false;
 			fwStatus = typeof defender.firewallStatus === 'boolean' ? defender.firewallStatus : false;
 		}
