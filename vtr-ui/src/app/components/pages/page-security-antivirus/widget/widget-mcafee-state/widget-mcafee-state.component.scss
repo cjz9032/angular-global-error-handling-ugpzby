@@ -119,6 +119,20 @@
 					color: $light!important;
 					min-width: 20rem;
 				}
+				.disable {
+					background: $grey_light !important;
+					opacity: 1;
+					color: $shade_blue !important;
+					border: none !important;
+					cursor: default;
+					&:hover {
+						background: $grey_light !important;
+					}
+					.text {
+						cursor: default;
+						opacity: 0.5;
+					}
+				}
 			}
 		}
 	}

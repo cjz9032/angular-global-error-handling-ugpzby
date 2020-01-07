@@ -65,13 +65,13 @@
 							<div class="row no-gutters"
 								[ngClass]="{'flex-column': item.notificationDetail}">
 								<div title="{{item.title}}"
-									class="title text-break {{'dirClass' | translate}}"
-									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}"
+									class="title text-break d-flex align-items-center {{'dirClass' | translate}}"
+									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}"
 									dir="{{'dir' | translate}}">
 									{{item.title}}
 								</div>
 								<div title="{{item.detail}}"
-									class="col-4 detail text-break {{'dirClass' | translate}}"
+									class="col-6 detail word-break-all d-flex align-items-center justify-content-end {{'dirClass' | translate}}"
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)"
 									dir="{{'dir' | translate}}">
@@ -185,12 +185,12 @@
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
 							<div class="row no-gutters">
 								<div title="{{item.title}}"
-									class="col-8 title text-break"
-									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}">
+									class="col-6 title text-break d-flex align-items-center"
+									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}">
 									{{item.title}}
 								</div>
 								<div title="{{item.detail}}"
-									class="col-4 detail text-break"
+									class="col-6 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)">
 									{{item.detail}}
@@ -295,12 +295,12 @@
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
 							<div class="row no-gutters">
 								<div title="{{item.title}}"
-									class="col-8 title text-break"
-									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}">
+									class="col-6 title text-break d-flex align-items-center"
+									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}">
 									{{item.title}}
 								</div>
 								<div title="{{item.detail}}"
-									class="col-4 detail text-break"
+									class="col-6 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)">
 									{{item.detail}}

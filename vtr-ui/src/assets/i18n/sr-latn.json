@@ -1125,7 +1125,8 @@
                             "yes": "Da",
                             "description3": "Želite li zaista da zaustavite resetovanje pokazivača napunjenosti baterije?"
                         },
-                        "dual_note": "Napomena: Moguće je resetovati samo jednu po jednu bateriju."
+                        "dual_note": "Napomena: Moguće je resetovati samo jednu po jednu bateriju.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1363,8 +1364,8 @@
                             "alwaysOn": "Uvek uključeno",
                             "never": "nikada",
                             "halfTime": "Upola skraćeno vreme tajmera za isključivanje ekrana",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Izaberi",
+                            "time": "Vreme"
                         },
                         "taskBarDimmer": "SMANJENJE NIVOA SVETLOSTI TRAKE ZADATAKA",
                         "backgroundDimmer": "SMANJENJE NIVOA SVETLOSTI PROZORA U POZADINI",
@@ -1530,6 +1531,19 @@
                     "control2": "KONTROLE MIŠA",
                     "control3": "KONTROLE ZA TRACKPOINT",
                     "less": "MANJE"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1924,7 @@
             "otherSoftwareLicenses": "Druge licence za softver",
             "ourWebsite": "Naša veb lokacija",
             "aboutYourDevice": "Osnovne informacije o vašem uređaju",
-            "copyright": "© 2002-2019 Lenovo. Sva prava zadržana"
+            "copyright": "© 2002-2020 Lenovo. Sva prava zadržana"
         },
         "quickAccess": {
             "categories": "Kategorije",
@@ -1940,47 +1954,47 @@
             "passwordText": "Bezbedno smestite sve svoje lozinke i upravljajte njima tako što ćete ih šifrovati pomoću aplikacije za profesionalnu digitalnu zaštitu umesto da ih samo sačuvate u pregledaču gde im treće strane mogu lako pristupiti bez vašeg znanja.",
             "enhanceTitle": "Šta treba da uradim da bih poboljšao zaštitu bezbednosti?",
             "enhanceText": "Toplo vam preporučujemo da zaštitite svoje uređaje antivirusnim softverom i zaštitnim zidom, da podesite UAC obaveštenje na minimalnu zaštitu. I da kreirate jake lozinke i upravljate njima na bezbedan način, šifrujte podatke dok koristite javnu mrežu kao naprednu zaštitu.",
-            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
-            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
-            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
-            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
-            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
-            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
-            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
-            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
-            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
-            "windows": "Windows Activation",
-            "goAntivirus": "go to antivirus",
-            "goFirewall": "go to firewall",
-            "goPassword": "go to passwordManger",
-            "goWifi": "go to wifi-security",
-            "goVpn": "go to VPN security",
-            "visitWindows": "Visit Windows Activation",
-            "visitFingerprint": "Visit Fingerprint reader",
-            "visitUac": "Visit User Account Control",
-            "visitHde": "Visit Hard drive encryption",
-            "haveOwnPassword": "I have my own password manager",
-            "haveOwnWifi": "I have my own wifi security",
-            "haveOwnVpn": "I have my own wifi security",
-            "uac": "User Account Control (UAC)",
-            "uacTitles": "User Account Control",
-            "hde": "Hard drive encryption",
-            "level": "Security Level:",
-            "noProtection": "No protection",
-            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
-            "basic": "BASIC",
-            "basicTitle": "Basic protection",
-            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
-            "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own",
-            "basicSecurity": "BASIC SECURITY",
-            "advancedSecurity": "ADVANCED SECURITY",
-            "intermediateSecurity": "INTERMEDIATE SECURITY"
+            "antivirusContent": "Koristite antivirusni softver da biste sprečili, prepoznali i uklonili malver na vašim uređajima.",
+            "firewallContent": "Zaštitni zid uspostavlja barijeru između pouzdane interne mreže i nepouzdane spoljne mreže, koja nadgleda i kontroliše dolazni i odlazni mrežni saobraćaj zasnovan na unapred određenim bezbednosnim pravilima.",
+            "windowsActiveContent": "Korišćenjem originalne kopije operativnog sistema Windows izloženi ste manjem riziku od bezbednosnih pretnji.",
+            "passwordContent": "Koristite bezbedniji i lakši način za upravljanje lozinkama, plaćanjem i ličnim informacijama. Kreirajte, čak, jake, složene lozinke i odmah se prijavite na svakoj lokaciji.",
+            "fingerprintContent": "To je brz i bezbedan način prijavljivanja u operativni sistem Windows, plaćanja i povezivanja sa aplikacijama u uslugama.",
+            "uacContent": "Pomerite klizač da biste izabrali koliko želite da kontrola korisničkog naloga štiti od potencijalno štetnih promena.",
+            "wifiContent": "Napredna softverska usluga koja pomaže vašem uređaju da razlikuje bezbedne bežične mreže od potencijalno zlonamernih.",
+            "bitLockerContent": "Pomozite u zaštiti datoteka i fascikli od neovlašćenog pristupa šifrovanjem podataka na hard disku.",
+            "vpnContent": "Koristite VPN uslugu za šifrovanje informacija koje šaljete i primate pomoću javne Wi-Fi mreže i održavajte bezbednost i privatnost svoje aktivnosti na mreži.",
+            "windows": "Aktivacija operativnog sistema Windows",
+            "goAntivirus": "idi na antivirus",
+            "goFirewall": "idi na zaštitni zid",
+            "goPassword": "idi u menadžer za lozinke",
+            "goWifi": "idi na wi-fi bezbednost",
+            "goVpn": "idi na VPN bezbednost",
+            "visitWindows": "Otvorite stavku Aktivacija operativnog sistema Windows",
+            "visitFingerprint": "Otvorite stavku Čitač otisaka prstiju",
+            "visitUac": "Otvorite stavku Kontrola korisničkog naloga",
+            "visitHde": "Otvorite stavku Šifrovanje hard diska",
+            "haveOwnPassword": "Imam svoj menadžer za lozinke",
+            "haveOwnWifi": "Imam svoju wi-fi bezbednost",
+            "haveOwnVpn": "Imam svoju VPN bezbednost",
+            "uac": "Kontrola korisničkog naloga (UAC)",
+            "uacTitles": "Kontrola korisničkog naloga",
+            "hde": "Šifrovanje hard diska",
+            "level": "Nivo bezbednosti:",
+            "noProtection": "Bez zaštite",
+            "noProtectionDesc": "Vaš uređaj nema zaštitu bezbednosti, tako da vam omogućavamo Windows Defender kao minimalnu zaštitu. Da biste zaštitili uređaj od dolaznih pretnji, pokušajte da instalirate antivirusni softver.",
+            "basic": "OSNOVNO",
+            "basicTitle": "Osnovna zaštita",
+            "basicDesc": "Na uređaju je omogućena samo osnovna zaštita bezbednosti. Da biste dobili bolju zaštitu, probajte da omogućite UAC obaveštenja i koristite upravljač lozinkama.",
+            "intermediate": "SREDNJA",
+            "intermediateTitle": "Srednja zaštita",
+            "intermediateDesc": "Odlično obavljeno! Imate još jedan korak do dobijanja napredne zaštite. Probajte da šifrujete podatke i nadgledate povrede bezbednosti mreže.",
+            "advanced": "NAPREDNA",
+            "advancedTitle": "Napredna zaštita",
+            "advancedDesc": "Čestitamo! Na uređaju je omogućena osnovna, srednja i napredna zaštita bezbednosti. Odlično obavljeno!",
+            "haveOwn": "Imam svoju",
+            "basicSecurity": "OSNOVNA BEZBEDNOST",
+            "advancedSecurity": "NAPREDNA BEZBEDNOST",
+            "intermediateSecurity": "SREDNJA BEZBEDNOST"
         },
         "antivirus": {
             "common": {
@@ -2292,7 +2306,7 @@
         },
         "question1": {
             "title": "Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje",
-            "description": "<div>    <div class='faqInFs4Fb'>        Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje    </div>    <hr />    <div class='faqInMb7'>        Uvek je dobro da imate rezervnu kopiju. Čuvajte kopije datoteka na drugom disku u slučaju da se nešto desi originalima.    </div>    <div class='faqInFs3Fb'>        Podešavanje rezervne kopije    </div>    <hr />    <div class='mb-5'>        Izaberite dugme <span class='faqInFb'>Start</span>, izaberite <span class='faqInFb'>Settings (Postavke)</span> > <span class='faqInFb'>Update & Security (Ispravka i bezbednost)</span> > <span class='faqInFb'>Backup (Rezervna kopija)</span> > <span class='faqInFb'>Add a drive (Dodaj disk)</span>, a zatim dodajte spoljnu disk jedinicu ili mrežnu lokaciju za rezervne kopije.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Sve je podešeno. Svakog sata ćemo u vašoj korisničkoj fascikli (C:\\\\Users\\\\username) praviti rezervnu kopiju svega što koristite. Da biste promenili za koje datoteke pravimo rezervne kopije ili učestalost njihovog pravljenja, idite na <span class='faqInFb'>More options</span> (Još opcija).    </div>    <div class='faqInFs3Fb'>        Vraćanje datoteka u prethodno stanje    </div>    <div class='mb-5'>        Ako vam nedostaje važna datoteka ili fascikla, evo kako da je vratite:    </div>    <div>        <div class='mb-3'>1. U polje za pretragu na traci zadatak ukucajte <span class='faqInFb'>Restore files</span> (Oporavak datoteka), a zatim izaberite <span class='faqInFb'> Restore your files with File History</span> (Vraćanje datoteka u prethodno stanje pomoću funkcije „Istorija datoteka“).</div>        <div class='mb-3'>2. Potražite datoteku koja vam je potrebna, zatim koristite strelice da biste videli sve njene verzije</div>        <div class='mb-3'>3. Kada pronađete željenu verziju, izaberite <span class='faqInFb'>Restore</span> (Vrati u prethodno stanje) da biste je sačuvali na prvobitnoj lokaciji. Da biste je sačuvali na drugoj lokaciji, pritisnite i držite (ili kliknite desnim tasterom miša) <span class='faqInFb'>Restore</span> (Vrati u prethodno stanje), izaberite <span class='faqInFb'>Restore to</span> (Vrati u prethodno stanje na lokaciji), a zatim odaberite novu lokaciju.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje    </div>    <hr />    <div class='faqInMb7'>        Uvek je dobro da imate rezervnu kopiju. Čuvajte kopije datoteka na drugom disku u slučaju da se nešto desi originalima.    </div>    <div class='faqInFs3Fb'>        Podešavanje rezervne kopije    </div>    <hr />    <div class='mb-5'>        Izaberite dugme <span class='faqInFb'>Start</span>, izaberite <span class='faqInFb'>Settings (Postavke)</span> > <span class='faqInFb'>Update & Security (Ispravka i bezbednost)</span> > <span class='faqInFb'>Backup (Rezervna kopija)</span> > <span class='faqInFb'>Add a drive (Dodaj disk)</span>, a zatim dodajte spoljnu disk jedinicu ili mrežnu lokaciju za rezervne kopije.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Sve je podešeno. Svakog sata ćemo u vašoj korisničkoj fascikli (C:\\\\Users\\\\username) praviti rezervnu kopiju svega što koristite. Da biste promenili za koje datoteke pravimo rezervne kopije ili učestalost njihovog pravljenja, idite na <span class='faqInFb'>More options</span> (Još opcija).    </div>    <div class='faqInFs3Fb'>        Vraćanje datoteka u prethodno stanje    </div>    <div class='mb-5'>        Ako vam nedostaje važna datoteka ili fascikla, evo kako da je vratite:    </div>    <div>        <div class='mb-3'>1. U polje za pretragu na traci zadatak ukucajte <span class='faqInFb'>Restore files</span> (Oporavak datoteka), a zatim izaberite <span class='faqInFb'> Restore your files with File History</span> (Vraćanje datoteka u prethodno stanje pomoću funkcije „Istorija datoteka“).</div>        <div class='mb-3'>2. Potražite datoteku koja vam je potrebna, zatim koristite strelice da biste videli sve njene verzije</div>        <div class='mb-3'>3. Kada pronađete željenu verziju, izaberite <span class='faqInFb'>Restore</span> (Vrati u prethodno stanje) da biste je sačuvali na prvobitnoj lokaciji. Da biste je sačuvali na drugoj lokaciji, pritisnite i držite (ili kliknite desnim tasterom miša) <span class='faqInFb'>Restore</span> (Vrati u prethodno stanje), izaberite <span class='faqInFb'>Restore to</span> (Vrati u prethodno stanje na lokaciji), a zatim odaberite novu lokaciju.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -2333,7 +2347,7 @@
         },
         "question2": {
             "title": "Kako da osvežite računar",
-            "description": "<div>    <div class='faqInFs4Fb'>        Kako da osvežite računar    </div>    <hr>    <div class='faqInFs25FbP5'>        Simptom    </div>    <div class='faqInP5'>        Ako performanse računara više nisu kao što su bile, a ne znate razlog tome, možete da osvežite računar bez brisanja ličnih datoteka ili promene postavki. Windows može da „osveži“ računar tako da je to više nalik novoj instalaciji bez brisanja ličnih datoteka.    </div>    <div class='faqInP5'>        Osvežite računar i evo šta će se desiti: neće doći do promene vaših datoteka i personalizovanih postavki    </div>    <div class='faqInP5'>        <ul>            <li>Postavke računara će biti vraćene na podrazumevane vrednosti</li>            <li>Aplikacije iz Windows prodavnice će biti zadržane</li>            <li>Aplikacije koje ste instalirali sa diska ili veb lokacije će biti uklonjene</li>            <li>Lista uklonjenih datoteka će biti sačuvana na radnoj površini</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Brendovi na koje ovo utiče    </div>    <div>        <ul>            <li>Svi stoni i laptop računari</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Operativni sistem    </div>    <div>        <ul>            <li>Windows 8, 8.1 i 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Rešenje    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Dodirnite ili kliknite na <span class='faqInFb'> Settings </span>(Postavke)                    </li>                    <li class='faqInP5'>                        Dodirnite ili kliknite na <span class='faqInFb'> Update and recovery</span> (Ažuriranje i oporavak)                    </li>                    <li class='faqInP5'>                        <div>Dodirnite ili kliknite na <span class='faqInFb'> Recovery</span> (Oporavak)</div>                        <div class='faqInP5'>U odeljku „Refresh your PC without affecting your files“ (Osvežavanje računara bez uticaja na datoteke), dodirnite ili kliknite na <span class='faqInFb'> Get started</span> (Prvi koraci).</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Kliknite na <span class='faqInFb'> „Next“</span> (Dalje).                    </li>                    <li class='faqInP5'>                        Kliknite na dugme <span class='faqInFb'> „Refresh“ </span>(Osveži) da biste započeli proces osvežavanja.                    </li>                    <li class='faqInP5'>                        Kada se završi proces osvežavanja, listu „Removed Apps“ (Uklonjene aplikacije) možete da pronađete na radnoj površini                    </li>                    <li class='faqInP5'>                        Uklonjene aplikacije možete pronaći prilikom osvežavanja sistema                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Potražite <span class='faqInFb'> refresh </span>(osvežavanje) u alatki za pretragu dostupnu u meniju Start.</li>                    <li class='faqInP5'>                        <div>U rezultatima pretrage kliknite na <span class='faqInFb'> „Refresh your PC without affecting your files“</span> (Osvežite računar bez uticaja na datoteke) kao što je prikazano ispod.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Kliknite na dugme <span class='faqInFb'> Get started </span> (Prvi koraci) tik ispod zaglavlja<span class='faqInFb'> „Refresh your PC without affecting your files“</span> (Osvežite računar bez uticaja na datoteke) da biste započeli osvežavanje računara sa operativnim sistemom Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Dodatne informacije    </div>    <div>        U većini slučajeva, nakon što započnete osvežavanje računara, sam će se završiti. Međutim, ako su operativnom sistemu Windows potrebne datoteke koje nedostaju, od vas će biti zatraženo da postavite medijume za oporavak. To su obično DVD disk ili USB disk. Ako se to dogodi, od računara zavisi šta vam je potrebno.    </div>    <div class='faqInP10'>        Ako ste nadogradili računar na Windows 8.1 ili Windows RT 8.1 sa DVD diskom, koristite taj disk. Ako nemate Windows 8.1 ili Windows RT 8.1 medij, obratite se Microsoft podršci.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Kako da osvežite računar    </div>    <hr>    <div class='faqInFs25FbP5'>        Simptom    </div>    <div class='faqInP5'>        Ako performanse računara više nisu kao što su bile, a ne znate razlog tome, možete da osvežite računar bez brisanja ličnih datoteka ili promene postavki. Windows može da „osveži“ računar tako da je to više nalik novoj instalaciji bez brisanja ličnih datoteka.    </div>    <div class='faqInP5'>        Osvežite računar i evo šta će se desiti: neće doći do promene vaših datoteka i personalizovanih postavki    </div>    <div class='faqInP5'>        <ul>            <li>Postavke računara će biti vraćene na podrazumevane vrednosti</li>            <li>Aplikacije iz Windows prodavnice će biti zadržane</li>            <li>Aplikacije koje ste instalirali sa diska ili veb lokacije će biti uklonjene</li>            <li>Lista uklonjenih datoteka će biti sačuvana na radnoj površini</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Brendovi na koje ovo utiče    </div>    <div>        <ul>            <li>Svi stoni i laptop računari</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Operativni sistem    </div>    <div>        <ul>            <li>Windows 8, 8.1 i 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Rešenje    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Dodirnite ili kliknite na <span class='faqInFb'> Settings </span>(Postavke)                    </li>                    <li class='faqInP5'>                        Dodirnite ili kliknite na <span class='faqInFb'> Update and recovery</span> (Ažuriranje i oporavak)                    </li>                    <li class='faqInP5'>                        <div>Dodirnite ili kliknite na <span class='faqInFb'> Recovery</span> (Oporavak)</div>                        <div class='faqInP5'>U odeljku „Refresh your PC without affecting your files“ (Osvežavanje računara bez uticaja na datoteke), dodirnite ili kliknite na <span class='faqInFb'> Get started</span> (Prvi koraci).</div>                        <div><img src='./../../../../assets/images/qa/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        Kliknite na <span class='faqInFb'> „Next“</span> (Dalje).                    </li>                    <li class='faqInP5'>                        Kliknite na dugme <span class='faqInFb'> „Refresh“ </span>(Osveži) da biste započeli proces osvežavanja.                    </li>                    <li class='faqInP5'>                        Kada se završi proces osvežavanja, listu „Removed Apps“ (Uklonjene aplikacije) možete da pronađete na radnoj površini                    </li>                    <li class='faqInP5'>                        Uklonjene aplikacije možete pronaći prilikom osvežavanja sistema                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Potražite <span class='faqInFb'> refresh </span>(osvežavanje) u alatki za pretragu dostupnu u meniju Start.</li>                    <li class='faqInP5'>                        <div>U rezultatima pretrage kliknite na <span class='faqInFb'> „Refresh your PC without affecting your files“</span> (Osvežite računar bez uticaja na datoteke) kao što je prikazano ispod.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Kliknite na dugme <span class='faqInFb'> Get started </span> (Prvi koraci) tik ispod zaglavlja<span class='faqInFb'> „Refresh your PC without affecting your files“</span> (Osvežite računar bez uticaja na datoteke) da biste započeli osvežavanje računara sa operativnim sistemom Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Dodatne informacije    </div>    <div>        U većini slučajeva, nakon što započnete osvežavanje računara, sam će se završiti. Međutim, ako su operativnom sistemu Windows potrebne datoteke koje nedostaju, od vas će biti zatraženo da postavite medijume za oporavak. To su obično DVD disk ili USB disk. Ako se to dogodi, od računara zavisi šta vam je potrebno.    </div>    <div class='faqInP10'>        Ako ste nadogradili računar na Windows 8.1 ili Windows RT 8.1 sa DVD diskom, koristite taj disk. Ako nemate Windows 8.1 ili Windows RT 8.1 medij, obratite se Microsoft podršci.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2496,7 +2510,7 @@
         },
         "question4": {
             "title": "Proverite iskorišćenost baterije mašine",
-            "description": "<div class='faqInFs4Fb'>    Proverite iskorišćenost baterije mašine</div><hr><h3 class='faqInFs25FbP10'>Simptom</h3><p>Windows 10 sadrži novi ekran „<strong>Battery Use“</strong> (Potrošnja baterije) koji prikazuje šta troši energiju računara. To znači da vam tačno pokazuje koje aplikacije (i aplikacije za računar i Windows 10 „univerzalne“ aplikacije) koriste previše energije.</p><h3 class='faqInFs25FbP10'>Brendovi na koje ovo utiče</h3><ul>    <li>Lenovo laptopovi, stoni računari</li></ul><h3 class='faqInFs25FbP10'>Sistemi na koje ovo utiče</h3><ul>    <li>Sve</li></ul><h3 class='faqInFs25FbP10'>Operativni sistem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Rešenje</h3><p>Ova funkcija je nova u sistemu Windows 10. Prvo moramo da pronađemo ovu funkciju jer nije sačuvana u vašem tradicionalnom prikazu <strong>kontrolne table</strong>. Ova funkcija se nalazi u novoj aplikaciji <strong>„Settings“</strong> (Postavke)</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Pronađite ekran „Battery Use“ (Potrošnja baterije)</h3></p><p>1. Iz menija Start kliknite na opciju <strong>„Settings</strong>“ (Postavke) ili je dodirnite</p><p>2. U opciji <strong>Settings </strong>(Postavke) izaberite <strong>„System“</strong> (Sistem), a zatim izaberite <strong>„Battery saver“ (Ušteda baterije).<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.png' /></p><p>3. Ispod ovog zaglavlja kliknite na vezu <strong>„Battery use“</strong> (Potrošnja baterije) ili je dodirnite kako biste videli više detalja. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizirajte korišćenje napajanja</h3><p>4 Možete da promenite kako bi ekran za prikaz potrošnje baterije prikazivao potrošnju baterije od poslednjih 24 sata do poslednjih 48 sati ili poslednje iz protekle nedelje</p><p>5 Procenti za <strong>„System (Sistem)“,</strong> „<strong>Display (Ekran)</strong>“ i „<strong>Wi-Fi“</strong>. Ovo prikazuje koliko su sistemski procesi ili ekran potrošili energije baterije.</p><p>6 Opcije <strong>„In use“</strong> (U upotrebi) i <strong>„Background“</strong> (U pozadini) prikazuju koliko energije troše aplikacije dok ih koristite, u poređenju sa aplikacijama koje su pokrenute u pozadini.</p><p>7 Ako aplikacije koriste energiju u pozadini, možete da kliknete na vezu <strong> „Change background app settings“ </strong>(Promeni postavke aplikacija u pozadini) ili da je dodirnete i konfigurišite aplikacije tako da se ne pokreću u pozadini. Ovo funkcioniše samo za univerzalne Windows 10 aplikacije.</p><p>8 Listajte dalje nadole i videćete listu aplikacija. Ovo se smatra najkorisnijim odeljkom ove funkcije. Prikazivaće listu aplikacija koje su koristile energiju baterije u tom periodu i prikazuje vam koji procenat energije baterije je svaka aplikacija iskoristila</p><p><img src='./../../../assets/images/qa/4.2.png' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Proverite iskorišćenost baterije mašine</div><hr><h3 class='faqInFs25FbP10'>Simptom</h3><p>Windows 10 sadrži novi ekran „<strong>Battery Use“</strong> (Potrošnja baterije) koji prikazuje šta troši energiju računara. To znači da vam tačno pokazuje koje aplikacije (i aplikacije za računar i Windows 10 „univerzalne“ aplikacije) koriste previše energije.</p><h3 class='faqInFs25FbP10'>Brendovi na koje ovo utiče</h3><ul>    <li>Lenovo laptopovi, stoni računari</li></ul><h3 class='faqInFs25FbP10'>Sistemi na koje ovo utiče</h3><ul>    <li>Sve</li></ul><h3 class='faqInFs25FbP10'>Operativni sistem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Rešenje</h3><p>Ova funkcija je nova u sistemu Windows 10. Prvo moramo da pronađemo ovu funkciju jer nije sačuvana u vašem tradicionalnom prikazu <strong>kontrolne table</strong>. Ova funkcija se nalazi u novoj aplikaciji <strong>„Settings“</strong> (Postavke)</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Pronađite ekran „Battery Use“ (Potrošnja baterije)</h3></p><p>1. Iz menija Start kliknite na opciju <strong>„Settings</strong>“ (Postavke) ili je dodirnite</p><p>2. U opciji <strong>Settings </strong>(Postavke) izaberite <strong>„System“</strong> (Sistem), a zatim izaberite <strong>„Battery saver“ (Ušteda baterije).<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Ispod ovog zaglavlja kliknite na vezu <strong>„Battery use“</strong> (Potrošnja baterije) ili je dodirnite kako biste videli više detalja. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizirajte korišćenje napajanja</h3><p>4. Možete da promenite kako bi ekran za prikaz potrošnje baterije prikazivao potrošnju baterije od poslednjih 24 sata do poslednjih 48 sati ili poslednje iz protekle nedelje</p><p>5. Procenti za <strong>„System (Sistem)“,</strong> „<strong>Display (Ekran)</strong>“ i „<strong>Wi-Fi“</strong>. Ovo prikazuje koliko su sistemski procesi ili ekran potrošili energije baterije.</p><p>6. Opcije <strong>„In use“</strong> (U upotrebi) i <strong>„Background“</strong> (U pozadini) prikazuju koliko energije troše aplikacije dok ih koristite, u poređenju sa aplikacijama koje su pokrenute u pozadini.</p><p>7. Ako aplikacije koriste energiju u pozadini, možete da kliknete na vezu <strong> „Change background app settings“ </strong>(Promeni postavke aplikacija u pozadini) ili da je dodirnete i konfigurišite aplikacije tako da se ne pokreću u pozadini. Ovo funkcioniše samo za univerzalne Windows 10 aplikacije.</p><p>8. Listajte dalje nadole i videćete listu aplikacija. Ovo se smatra najkorisnijim odeljkom ove funkcije. Prikazivaće listu aplikacija koje su koristile energiju baterije u tom periodu i prikazuje vam koji procenat energije baterije je svaka aplikacija iskoristila</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2603,7 +2617,7 @@
         },
         "question6": {
             "title": "Upoznajte Cortana, vašeg ličnog pomoćnika",
-            "description": "<div class='faqInFs4Fb'>    Upoznajte Cortana, vašeg ličnog pomoćnika</div><hr><h3 class='faqInFs25FbP10'>Šta je Cortana?</h3><hr /><p>Cortana je vaš digitalni agent. Pomoći će vam da obavite stvari.</p><p>Što više budete koristili Cortana, to će vaše iskustvo biti više personalizovano.</p><p>Za početak, ukucajte pitanje u polje za pretragu ili izaberite mikrofon i razgovarajte sa pomoćnikom Cortana. (Kucanje funkcioniše za sve vrste računara, ali vam je za razgovor potreban mikrofon.)</p><p>Ako niste sigurni šta da kažete, videćete predloge na zaključanom ekranu, kao i na početnoj stranici Cortana kada izaberete polje za pretragu na traci zadataka.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Početak 2. Notebook 3. Postavke 4. Povratne informacije</li></ol><p>Evo nekih stvari koje Cortana može da uradi za vas:</p><ul>    <li>Daje vam podsetnike na osnovu vašeg vremena, mesta ili osoba.</li>    <li>Prati pakete, timove, interesovanja i letove.</li>    <li>Šalje e-poruke i tekstove.</li>    <li>Upravlja vašim kalendarom i brine se da ste u toku.</li>    <li>Kreira liste i upravlja njima.</li>    <li>Ćaska i igra igre.</li>    <li>Pronalazi činjenice, datoteke, mesta i informacije.</li>    <li>Otvara bilo koju aplikaciju u sistemu.</li></ul><h3 class='faqInFs25FbP10'>Isprobajte ovo: Postavite podsetnik</h3><hr /><p>Jedna od stvari koje Cortana može da uradi jeste da vas podseća. Može da vas podseti da radite stvari na osnovu vremena, mesta ili čak osoba.</p><p>Na primer, ukucajte ili recite „Podseti me da čestitam Tanji sledeći put kada pozove“.</p><p>Podsetnik će se pojaviti kada vas Tanja pozove.</p><p>Dodatni bonus &mdash; ako imate Windows telefon ili Cortana za iPhone ili Android, možete da podesite da Cortana sinhronizuje obaveštenja između vašeg računara i telefona.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Ćao, Cortana?</h3><hr /><p>Podesite da vas Cortana čuje svaki put kada kažete „Ćao, Cortana“. Izaberite polje za pretragu na traci zadataka da biste otvorili početnu stranicu aplikacije Cortana. Zatim izaberite <strong>Settings</strong> (Postavke) i uključite <strong>Let Cortana respond to „Hey Cortana“</strong> (Neka Cortana reaguje na „Ćao, Cortana“).</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Napomena</p><p>Cortana je dostupna samo u određenim zemljama/regijama, a neke funkcije pomoćnika Cortana možda nisu svugde dostupne.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Upoznajte Cortana, vašeg ličnog pomoćnika</div><hr><h3 class='faqInFs25FbP10'>Šta je Cortana?</h3><hr /><p>Cortana je vaš digitalni agent. Pomoći će vam da obavite stvari.</p><p>Što više budete koristili Cortana, to će vaše iskustvo biti više personalizovano.</p><p>Za početak, ukucajte pitanje u polje za pretragu ili izaberite mikrofon i razgovarajte sa pomoćnikom Cortana. (Kucanje funkcioniše za sve vrste računara, ali vam je za razgovor potreban mikrofon.)</p><p>Ako niste sigurni šta da kažete, videćete predloge na zaključanom ekranu, kao i na početnoj stranici Cortana kada izaberete polje za pretragu na traci zadataka.</p><p><img src='./../../../assets/images/qa/6.1.jpg' /></p><ol>    <li>Početak 2. Notebook 3. Postavke 4. Povratne informacije</li></ol><p>Evo nekih stvari koje Cortana može da uradi za vas:</p><ul>    <li>Daje vam podsetnike na osnovu vašeg vremena, mesta ili osoba.</li>    <li>Prati pakete, timove, interesovanja i letove.</li>    <li>Šalje e-poruke i tekstove.</li>    <li>Upravlja vašim kalendarom i brine se da ste u toku.</li>    <li>Kreira liste i upravlja njima.</li>    <li>Ćaska i igra igre.</li>    <li>Pronalazi činjenice, datoteke, mesta i informacije.</li>    <li>Otvara bilo koju aplikaciju u sistemu.</li></ul><h3 class='faqInFs25FbP10'>Isprobajte ovo: Postavite podsetnik</h3><hr /><p>Jedna od stvari koje Cortana može da uradi jeste da vas podseća. Može da vas podseti da radite stvari na osnovu vremena, mesta ili čak osoba.</p><p>Na primer, ukucajte ili recite „Podseti me da čestitam Tanji sledeći put kada pozove“.</p><p>Podsetnik će se pojaviti kada vas Tanja pozove.</p><p>Dodatni bonus &mdash; ako imate Windows telefon ili Cortana za iPhone ili Android, možete da podesite da Cortana sinhronizuje obaveštenja između vašeg računara i telefona.</p><p><img src='./../../../assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>Ćao, Cortana?</h3><hr /><p>Podesite da vas Cortana čuje svaki put kada kažete „Ćao, Cortana“. Izaberite polje za pretragu na traci zadataka da biste otvorili početnu stranicu aplikacije Cortana. Zatim izaberite <strong>Settings</strong> (Postavke) i uključite <strong>Let Cortana respond to „Hey Cortana“</strong> (Neka Cortana reaguje na „Ćao, Cortana“).</p><p><img src='./../../../assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>Napomena</p><p>Cortana je dostupna samo u određenim zemljama/regijama, a neke funkcije pomoćnika Cortana možda nisu svugde dostupne.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2647,7 +2661,7 @@
         "bullets2": "Savetnik za bezbednost olakšava upravljanje bezbednošću (dostupno na određenim modelima).",
         "bullets3": "Automatska ažuriranja održavaju uređaj u najboljoj formi (dostupno na određenim sistemima).",
         "subtitle1": "Kako ćete koristiti uređaj?",
-        "subtitle2": "Ispričajte nam o vašim interesovanjima (opcionalno)",
+        "subtitle2": "Recite nam šta vas zanima (opcionalno)",
         "personal": "Lična upotreba",
         "business": "Poslovna upotreba",
         "custom": "Prilagođeno iskustvo",
@@ -2861,7 +2875,7 @@
             "storage": "Skladištenje",
             "wireless": "Bežični"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Imajte na umu da će testovi biti otkazani ako sistem bude u stanju spavanja ili hibernacije"
     },
     "smartPerformance": {
         "title": "Health & Support",

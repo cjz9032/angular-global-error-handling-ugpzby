@@ -1125,7 +1125,8 @@
                             "yes": "Tak",
                             "description3": "Czy na pewno chcesz zatrzymać resetowanie wskaźnika stanu akumulatora?"
                         },
-                        "dual_note": "Uwaga: Można zresetować tylko jeden akumulator naraz."
+                        "dual_note": "Uwaga: Można zresetować tylko jeden akumulator naraz.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1363,8 +1364,8 @@
                             "alwaysOn": "Zawsze włączone",
                             "never": "nigdy",
                             "halfTime": "Połowa czasu wyłączenia wyświetlacza",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Wybierz",
+                            "time": "Czas"
                         },
                         "taskBarDimmer": "PRZYCIEMNIANIE PASKA ZADAŃ",
                         "backgroundDimmer": "PRZYCIEMNIANIE TŁA",
@@ -1530,6 +1531,19 @@
                     "control2": "PRZYCISKI MYSZY",
                     "control3": "PRZYCISKI TRACKPOINTA",
                     "less": "LESS"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1924,7 @@
             "otherSoftwareLicenses": "Inne licencje na oprogramowanie",
             "ourWebsite": "Nasza witryna sieci Web",
             "aboutYourDevice": "Informacje o urządzeniu",
-            "copyright": "© 2002–2019 Lenovo Wszelkie prawa zastrzeżone"
+            "copyright": "© 2002–2020 Lenovo Wszelkie prawa zastrzeżone"
         },
         "quickAccess": {
             "categories": "Kategorie",
@@ -1940,47 +1954,47 @@
             "passwordText": "Bezpiecznie przechowuj wszystkie hasła i nimi zarządzaj po zaszyfrowaniu przez profesjonalną cyfrową aplikację zabezpieczającą zamiast tylko przechowywać je w przeglądarce, do której dostęp bez twojej wiedzy mogą uzyskać osoby trzecie.",
             "enhanceTitle": "Co powinno się wykonać, aby zwiększyć ochronę?",
             "enhanceText": "Zdecydowanie zalecamy, aby twoje urządzenia były chronione przez oprogramowanie antywirusowe i firewall, a przy minimalnej ochronie skonfiguruj powiadomienia kontroli konta użytkownika. Twórz silne hasła i zarządzaj nimi w bezpieczny sposób oraz szyfruj dane, aby korzystać z zaawansowanej ochrony przy używaniu sieci publicznej.",
-            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
-            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
-            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
-            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
-            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
-            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
-            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
-            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
-            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
-            "windows": "Windows Activation",
-            "goAntivirus": "go to antivirus",
-            "goFirewall": "go to firewall",
-            "goPassword": "go to passwordManger",
-            "goWifi": "go to wifi-security",
-            "goVpn": "go to VPN security",
-            "visitWindows": "Visit Windows Activation",
-            "visitFingerprint": "Visit Fingerprint reader",
-            "visitUac": "Visit User Account Control",
-            "visitHde": "Visit Hard drive encryption",
-            "haveOwnPassword": "I have my own password manager",
-            "haveOwnWifi": "I have my own wifi security",
-            "haveOwnVpn": "I have my own wifi security",
-            "uac": "User Account Control (UAC)",
-            "uacTitles": "User Account Control",
-            "hde": "Hard drive encryption",
-            "level": "Security Level:",
-            "noProtection": "No protection",
-            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
-            "basic": "BASIC",
-            "basicTitle": "Basic protection",
-            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
-            "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own",
-            "basicSecurity": "BASIC SECURITY",
-            "advancedSecurity": "ADVANCED SECURITY",
-            "intermediateSecurity": "INTERMEDIATE SECURITY"
+            "antivirusContent": "Zabezpiecz swoje urządzenia za pomocą oprogramowania antywirusowego, aby blokować, wykrywać i usuwać złośliwe oprogramowanie.",
+            "firewallContent": "Zapora tworzy barierę pomiędzy zaufaną siecią wewnętrzną a niezaufaną siecią zewnętrzną, która monitoruje i kontroluje przychodzący i wychodzący ruch sieciowy na podstawie wstępnie ustalonych reguł zabezpieczeń.",
+            "windowsActiveContent": "Korzystaj z oryginalnej kopii systemu Windows, aby zmniejszyć ryzyko wystąpienia zagrożeń dla bezpieczeństwa.",
+            "passwordContent": "Korzystaj z bezpieczniejszego i łatwiejszego sposobu zarządzania hasłami, płatnościami i danymi osobowymi. Możesz również tworzyć silne, złożone hasła i natychmiastowo logować się na każdej stronie.",
+            "fingerprintContent": "Szybki i bezpieczny sposób logowania się do systemu Windows, dokonywania płatności i łączenia się z aplikacjami i usługami.",
+            "uacContent": "Przesuń suwak, aby określić, w jakim stopniu Kontrola konta użytkownika ma chronić Cię przed potencjalnie szkodliwymi zmianami.",
+            "wifiContent": "Zaawansowana usługa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych.",
+            "bitLockerContent": "Zabezpiecz pliki i foldery przed nieautoryzowanym dostępem, szyfrując dane na dysku twardym.",
+            "vpnContent": "Korzystaj z usługi VPN, aby zaszyfrować informacje wysyłane i otrzymywane za pośrednictwem publicznej sieci Wi-Fi oraz zapewnić sobie bezpieczeństwo i prywatność w Internecie.",
+            "windows": "Aktywacja systemu Windows",
+            "goAntivirus": "przejdź do programu antywirusowego",
+            "goFirewall": "przejdź do zapory",
+            "goPassword": "przejdź do menedżera haseł",
+            "goWifi": "przejdź do zabezpieczeń Wi-Fi",
+            "goVpn": "przejdź do zabezpieczeń VPN",
+            "visitWindows": "Odwiedź Aktywacja systemu Windows",
+            "visitFingerprint": "Odwiedź Czytnik linii papilarnych",
+            "visitUac": "Odwiedź Kontrola konta użytkownika",
+            "visitHde": "Odwiedź Szyfrowanie dysku twardego",
+            "haveOwnPassword": "Mam własnego menedżera haseł",
+            "haveOwnWifi": "Mam własne zabezpieczenia Wi-Fi",
+            "haveOwnVpn": "Mam własne zabezpieczenia VPN",
+            "uac": "Kontrola konta użytkownika",
+            "uacTitles": "Kontrola konta użytkownika",
+            "hde": "Szyfrowanie dysku twardego",
+            "level": "Poziom zabezpieczeń:",
+            "noProtection": "Brak ochrony",
+            "noProtectionDesc": "Twoje urządzenie nie jest chronione, więc włączamy dla Ciebie program Windows Defender zapewniający podstawową ochronę. Aby zabezpieczyć urządzenie przed zewnętrznymi zagrożeniami, spróbuj zainstalować oprogramowanie antywirusowe.",
+            "basic": "PODSTAWOWA",
+            "basicTitle": "Podstawowa ochrona",
+            "basicDesc": "Urządzenie ma zapewnioną tylko podstawową ochronę. Aby zapewnić sobie lepszą ochronę, włącz powiadomienia kontroli konta użytkownika i korzystaj z menedżera haseł.",
+            "intermediate": "POŚREDNIA",
+            "intermediateTitle": "Pośrednia ochrona",
+            "intermediateDesc": "Brawo! Jesteś o krok od uzyskania zaawansowanej ochrony — spróbuj zaszyfrować dane i monitorować sieć pod kątem naruszeń zabezpieczeń.",
+            "advanced": "ZAAWANSOWANA",
+            "advancedTitle": "Zaawansowana ochrona",
+            "advancedDesc": "Gratulacje! Twoje urządzenie ma zapewnioną podstawową, pośrednią i zaawansowaną ochronę, świetna robota!",
+            "haveOwn": "Mam własne",
+            "basicSecurity": "PODSTAWOWE ZABEZPIECZENIA",
+            "advancedSecurity": "ZAAWANSOWANE ZABEZPIECZENIA",
+            "intermediateSecurity": "POŚREDNIE ZABEZPIECZENIA"
         },
         "antivirus": {
             "common": {
@@ -2292,7 +2306,7 @@
         },
         "question1": {
             "title": "Tworzenie kopii zapasowych plików i ich przywracanie",
-            "description": "<div>    <div class='faqInFs4Fb'>        Tworzenie kopii zapasowych plików i ich przywracanie    </div>    <hr />    <div class='faqInMb7'>        Zawsze dobrze jest mieć plan awaryjny. Umieść kopie plików na innym dysku na wypadek, gdyby coś się stało z oryginałami.    </div>    <div class='faqInFs3Fb'>        Konfigurowanie funkcji tworzenia kopii zapasowej    </div>    <hr />    <div class='mb-5'>        Naciśnij przycisk <span class='faqInFb'>Start</span>, wybierz kolejno opcje <span class='faqInFb'>Ustawienia</span> > <span class='faqInFb'>Aktualizacja i zabezpieczenia</span> > <span class='faqInFb'>Kopia zapasowa</span> > <span class='faqInFb'>Dodaj dysk</span>, a następnie dodaj zewnętrzny dysk twardy lub lokalizację sieciową, gdzie chcesz umieścić kopie zapasowe.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Wszystko gotowe. Co godzinę będziemy wykonywać kopię zapasową całej zawartości Twojego folderu użytkownika (C:\\\\Users\\\\username). Aby zmienić zakres plików objętych kopią zapasową albo częstotliwość wykonywania kopii, kliknij łącze <span class='faqInFb'>Więcej opcji</span>.    </div>    <div class='faqInFs3Fb'>        Przywracanie plików    </div>    <div class='mb-5'>        Jeśli brakuje ważnego pliku lub folderu, oto sposób jego odzyskania:    </div>    <div>        <div class='mb-3'>1. Na pasku zadań w polu wyszukiwania wpisz wyrażenie <span class='faqInFb'>Przywróć pliki</span>, a następnie kliknij pozycję <span class='faqInFb'>Przywróć pliki za pomocą historii plików</span>.</div>        <div class='mb-3'>2. Poszukaj potrzebnego pliku, a następnie za pomocą strzałek przejrzyj jego wszystkie wersje</div>        <div class='mb-3'>3. Po znalezieniu żądanej wersji naciśnij przycisk <span class='faqInFb'>Przywróć</span>, a plik zostanie zapisany w swojej oryginalnej lokalizacji. Jeżeli chcesz zapisać go w innym miejscu, naciśnij i przytrzymaj (lub kliknij prawym przyciskiem myszy) przycisk <span class='faqInFb'>Przywróć</span>, wybierz polecenie <span class='faqInFb'>Przywróć do</span>, a następnie wybierz nową lokalizację.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Tworzenie kopii zapasowych plików i ich przywracanie    </div>    <hr />    <div class='faqInMb7'>        Zawsze dobrze jest mieć plan awaryjny. Umieść kopie plików na innym dysku na wypadek, gdyby coś się stało z oryginałami.    </div>    <div class='faqInFs3Fb'>        Konfigurowanie funkcji tworzenia kopii zapasowej    </div>    <hr />    <div class='mb-5'>        Naciśnij przycisk <span class='faqInFb'>Start</span>, wybierz kolejno opcje <span class='faqInFb'>Ustawienia</span> > <span class='faqInFb'>Aktualizacja i zabezpieczenia</span> > <span class='faqInFb'>Kopia zapasowa</span> > <span class='faqInFb'>Dodaj dysk</span>, a następnie dodaj zewnętrzny dysk twardy lub lokalizację sieciową, gdzie chcesz umieścić kopie zapasowe.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Wszystko gotowe. Co godzinę będziemy wykonywać kopię zapasową całej zawartości Twojego folderu użytkownika (C:\\\\Users\\\\username). Aby zmienić zakres plików objętych kopią zapasową albo częstotliwość wykonywania kopii, kliknij łącze <span class='faqInFb'>Więcej opcji</span>.    </div>    <div class='faqInFs3Fb'>        Przywracanie plików    </div>    <div class='mb-5'>        Jeśli brakuje ważnego pliku lub folderu, oto sposób jego odzyskania:    </div>    <div>        <div class='mb-3'>1. Na pasku zadań w polu wyszukiwania wpisz wyrażenie <span class='faqInFb'>Przywróć pliki</span>, a następnie kliknij pozycję <span class='faqInFb'>Przywróć pliki za pomocą historii plików</span>.</div>        <div class='mb-3'>2. Poszukaj potrzebnego pliku, a następnie za pomocą strzałek przejrzyj jego wszystkie wersje</div>        <div class='mb-3'>3. Po znalezieniu żądanej wersji naciśnij przycisk <span class='faqInFb'>Przywróć</span>, a plik zostanie zapisany w swojej oryginalnej lokalizacji. Jeżeli chcesz zapisać go w innym miejscu, naciśnij i przytrzymaj (lub kliknij prawym przyciskiem myszy) przycisk <span class='faqInFb'>Przywróć</span>, wybierz polecenie <span class='faqInFb'>Przywróć do</span>, a następnie wybierz nową lokalizację.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -2333,7 +2347,7 @@
         },
         "question2": {
             "title": "Jak odświeżyć komputer",
-            "description": "<div>    <div class='faqInFs4Fb'>        Jak odświeżyć komputer    </div>    <hr>    <div class='faqInFs25FbP5'>        Objaw    </div>    <div class='faqInP5'>        Jeśli Twój komputer nie działa tak dobrze jak kiedyś, a nie wiesz dlaczego, możesz go odświeżyć, nie usuwając żadnych osobistych plików ani nie zmieniając ustawień. System Windows może „odświeżyć” komputer, czyli dokonać praktycznie nowej instalacji, ale bez usuwania osobistych plików użytkownika.    </div>    <div class='faqInP5'>        Odświeżenie komputera ma następujące skutki: Twoje pliki i spersonalizowane ustawienia nie ulegną zmianie    </div>    <div class='faqInP5'>        <ul>            <li>Ustawienia komputera zostaną zmienione z powrotem na domyślne</li>            <li>Aplikacje ze Sklepu Windows zostaną zachowane</li>            <li>Aplikacje zainstalowane przez Ciebie z płyty lub Internetu zostaną usunięte</li>            <li>Na pulpicie zostanie zapisana lista usuniętych plików</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Marki, w których problem występuje    </div>    <div>        <ul>            <li>Wszystkie komputery stacjonarne i laptopy</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        System operacyjny    </div>    <div>        <ul>            <li>Windows 8, 8.1 i 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Rozwiązanie    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Dotknij lub kliknij opcję <span class='faqInFb'>Ustawienia</span>                    </li>                    <li class='faqInP5'>                        Dotknij lub kliknij opcję <span class='faqInFb'>Aktualizacje i odzyskiwanie</span>                    </li>                    <li class='faqInP5'>                        <div>Dotknij lub kliknij opcję <span class='faqInFb'>Odzyskiwanie</span></div>                        <div class='faqInP5'>W sekcji Odśwież komputer z zachowaniem istniejących plików dotknij lub kliknij pozycję <span class='faqInFb'>Rozpocznij</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Kliknij przycisk <span class='faqInFb'>Dalej</span>.                    </li>                    <li class='faqInP5'>                        Kliknij przycisk <span class='faqInFb'>Odśwież</span>, aby rozpocząć proces odświeżania.                    </li>                    <li class='faqInP5'>                        Po zakończeniu odświeżania na pulpicie znajduje się lista Usunięte aplikacje                    </li>                    <li class='faqInP5'>                        Zawiera ona spis aplikacji usuniętych podczas odświeżania systemu                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> W menu Start w polu wyszukiwania wpisz słowo <span class='faqInFb'>odśwież</span>.</li>                    <li class='faqInP5'>                        <div>Na liście wyników kliknij pozycję <span class='faqInFb'>Odśwież komputer z zachowaniem istniejących plików</span>, jak pokazano niżej.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Kliknij przycisk <span class='faqInFb'>Rozpocznij</span> znajdujący się tuż pod nagłówkiem<span class='faqInFb'>Odśwież komputer z zachowaniem istniejących plików</span>, aby rozpocząć odświeżanie swojego komputera z systemem Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Dodatkowe informacje    </div>    <div>        Najczęściej rozpoczęty proces odświeżania komputera jest wykonywany aż do końca automatycznie. Jeśli jednak w systemie Windows brakuje niezbędnych plików, zobaczysz monit o włożenie nośnika odzyskiwania, którym zazwyczaj jest dysk DVD lub pamięć USB. Gdy dojdzie do takiej sytuacji, potrzebne zasoby zależą od konkretnego komputera.    </div>    <div class='faqInP10'>        Jeżeli komputer był uaktualniany do systemu Windows 8.1 lub Windows RT 8.1 za pomocą dysku DVD, użyj tego dysku. Jeżeli nie masz nośnika z systemem Windows 8.1 lub Windows RT 8.1, skontaktuj się z pomocą techniczną Microsoft.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Jak odświeżyć komputer    </div>    <hr>    <div class='faqInFs25FbP5'>        Objaw    </div>    <div class='faqInP5'>        Jeśli Twój komputer nie działa tak dobrze jak kiedyś, a nie wiesz dlaczego, możesz go odświeżyć, nie usuwając żadnych osobistych plików ani nie zmieniając ustawień. System Windows może „odświeżyć” komputer, czyli dokonać praktycznie nowej instalacji, ale bez usuwania osobistych plików użytkownika.    </div>    <div class='faqInP5'>        Odświeżenie komputera ma następujące skutki: Twoje pliki i spersonalizowane ustawienia nie ulegną zmianie    </div>    <div class='faqInP5'>        <ul>            <li>Ustawienia komputera zostaną zmienione z powrotem na domyślne</li>            <li>Aplikacje ze Sklepu Windows zostaną zachowane</li>            <li>Aplikacje zainstalowane przez Ciebie z płyty lub Internetu zostaną usunięte</li>            <li>Na pulpicie zostanie zapisana lista usuniętych plików</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Marki, w których problem występuje    </div>    <div>        <ul>            <li>Wszystkie komputery stacjonarne i laptopy</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        System operacyjny    </div>    <div>        <ul>            <li>Windows 8, 8.1 i 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Rozwiązanie    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Dotknij lub kliknij opcję <span class='faqInFb'>Ustawienia</span>                    </li>                    <li class='faqInP5'>                        Dotknij lub kliknij opcję <span class='faqInFb'>Aktualizacje i odzyskiwanie</span>                    </li>                    <li class='faqInP5'>                        <div>Dotknij lub kliknij opcję <span class='faqInFb'>Odzyskiwanie</span></div>                        <div class='faqInP5'>W sekcji Odśwież komputer z zachowaniem istniejących plików dotknij lub kliknij pozycję <span class='faqInFb'>Rozpocznij</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        Kliknij przycisk <span class='faqInFb'>Dalej</span>.                    </li>                    <li class='faqInP5'>                        Kliknij przycisk <span class='faqInFb'>Odśwież</span>, aby rozpocząć proces odświeżania.                    </li>                    <li class='faqInP5'>                        Po zakończeniu odświeżania na pulpicie znajduje się lista Usunięte aplikacje                    </li>                    <li class='faqInP5'>                        Zawiera ona spis aplikacji usuniętych podczas odświeżania systemu                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> W menu Start w polu wyszukiwania wpisz słowo <span class='faqInFb'>odśwież</span>.</li>                    <li class='faqInP5'>                        <div>Na liście wyników kliknij pozycję <span class='faqInFb'>Odśwież komputer z zachowaniem istniejących plików</span>, jak pokazano niżej.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Kliknij przycisk <span class='faqInFb'>Rozpocznij</span> znajdujący się tuż pod nagłówkiem<span class='faqInFb'>Odśwież komputer z zachowaniem istniejących plików</span>, aby rozpocząć odświeżanie swojego komputera z systemem Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Dodatkowe informacje    </div>    <div>        Najczęściej rozpoczęty proces odświeżania komputera jest wykonywany aż do końca automatycznie. Jeśli jednak w systemie Windows brakuje niezbędnych plików, zobaczysz monit o włożenie nośnika odzyskiwania, którym zazwyczaj jest dysk DVD lub pamięć USB. Gdy dojdzie do takiej sytuacji, potrzebne zasoby zależą od konkretnego komputera.    </div>    <div class='faqInP10'>        Jeżeli komputer był uaktualniany do systemu Windows 8.1 lub Windows RT 8.1 za pomocą dysku DVD, użyj tego dysku. Jeżeli nie masz nośnika z systemem Windows 8.1 lub Windows RT 8.1, skontaktuj się z pomocą techniczną Microsoft.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2603,7 +2617,7 @@
         },
         "question6": {
             "title": "Poznaj Cortanę, swoją osobistą asystentkę",
-            "description": "<div class='faqInFs4Fb'>    Poznaj Cortanę, swoją osobistą asystentkę</div><hr><h3 class='faqInFs25FbP10'>Czym jest Cortana?</h3><hr /><p>Cortana to Twoja cyfrowa asystentka. Pomoże Ci wykonać różne zadania.</p><p>Im częściej używasz Cortany, tym bardziej zostanie spersonalizowana konkretnie dla Ciebie.</p><p>Aby rozpocząć, wpisz pytanie w polu wyszukiwania lub kliknij ikonę mikrofonu i porozmawiaj z Cortaną. (Wpisywanie działa na wszystkich typach komputerów, ale do mówienia jest potrzebny mikrofon).</p><p>Jeśli nie masz pewności, co powiedzieć, zobaczysz sugestie na ekranie blokady oraz na ekranie głównym Cortany, gdy klikniesz pole wyszukiwania na pasku zadań.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Ekran główny 2. Notes 3. Ustawienia 4. Opinia</li></ol><p>Oto kilka rzeczy, w których może pomagać Cortana:</p><ul>    <li>Przypominanie na podstawie kryterium czasu, miejsc lub ludzi.</li>    <li>Śledzenie paczek, zespołów, zainteresowań i lotów.</li>    <li>Wysyłanie wiadomości e-mail i tekstowych.</li>    <li>Zarządzanie Twoim kalendarzem i bieżące informowanie Cię o istotnych wydarzeniach.</li>    <li>Tworzenie list i zarządzanie nimi.</li>    <li>Prowadzenie towarzyskich rozmów i granie w gry.</li>    <li>Znajdowanie faktów, plików, miejsc i informacji.</li>    <li>Otwieranie dowolnych aplikacji na Twoim urządzeniu.</li></ul><h3 class='faqInFs25FbP10'>Spróbuj tego: ustawianie przypomnienia</h3><hr /><p>Jedną z funkcji, jaką może wykonywać Cortana, jest przypominanie. Może przypominać Ci o konieczności zrobienia różnych rzeczy w związku z konkretnym czasem, miejscami lub osobami.</p><p>Na przykład wpisz lub powiedz „Przypomnij mi, aby pogratulować Tanyi następnym razem, gdy zadzwoni”.</p><p>Przypomnienie pojawi się, gdy otrzymasz telefon od Tanyi.</p><p>Dodatkowa premia: jeśli masz telefon z systemem Windows lub Cortanę dla telefonów iPhone lub systemu Android, możesz ustawić w Cortanie synchronizowanie powiadomień między komputerem a telefonem.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hej, Cortana?</h3><hr /><p>Ustaw Cortanę tak, aby cię słyszała za każdym razem, gdy mówisz „Hej, Cortana”. Kliknij pole wyszukiwania na pasku zadań, aby otworzyć ekran główny Cortany. Następnie kliknij pozycję <strong>Ustawienia</strong> i włącz opcję <strong>Zezwalaj Cortanie na odpowiadanie na polecenie „Hej, Cortana”</strong>.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Uwaga</p><p>Cortana jest dostępna tylko w niektórych krajach / regionach. Istnieją również ograniczenia w działaniu funkcji Cortany.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Poznaj Cortanę, swoją osobistą asystentkę</div><hr><h3 class='faqInFs25FbP10'>Czym jest Cortana?</h3><hr /><p>Cortana to Twoja cyfrowa asystentka. Pomoże Ci wykonać różne zadania.</p><p>Im częściej używasz Cortany, tym bardziej zostanie spersonalizowana konkretnie dla Ciebie.</p><p>Aby rozpocząć, wpisz pytanie w polu wyszukiwania lub kliknij ikonę mikrofonu i porozmawiaj z Cortaną. (Wpisywanie działa na wszystkich typach komputerów, ale do mówienia jest potrzebny mikrofon).</p><p>Jeśli nie masz pewności, co powiedzieć, zobaczysz sugestie na ekranie blokady oraz na ekranie głównym Cortany, gdy klikniesz pole wyszukiwania na pasku zadań.</p><p><img src='./../../../assets/images/qa/6.1.jpg' /></p><ol>    <li>Ekran główny 2. Notes 3. Ustawienia 4. Opinia</li></ol><p>Oto kilka rzeczy, w których może pomagać Cortana:</p><ul>    <li>Przypominanie na podstawie kryterium czasu, miejsc lub ludzi.</li>    <li>Śledzenie paczek, zespołów, zainteresowań i lotów.</li>    <li>Wysyłanie wiadomości e-mail i tekstowych.</li>    <li>Zarządzanie Twoim kalendarzem i bieżące informowanie Cię o istotnych wydarzeniach.</li>    <li>Tworzenie list i zarządzanie nimi.</li>    <li>Prowadzenie towarzyskich rozmów i granie w gry.</li>    <li>Znajdowanie faktów, plików, miejsc i informacji.</li>    <li>Otwieranie dowolnych aplikacji na Twoim urządzeniu.</li></ul><h3 class='faqInFs25FbP10'>Spróbuj tego: ustawianie przypomnienia</h3><hr /><p>Jedną z funkcji, jaką może wykonywać Cortana, jest przypominanie. Może przypominać Ci o konieczności zrobienia różnych rzeczy w związku z konkretnym czasem, miejscami lub osobami.</p><p>Na przykład wpisz lub powiedz „Przypomnij mi, aby pogratulować Tanyi następnym razem, gdy zadzwoni”.</p><p>Przypomnienie pojawi się, gdy otrzymasz telefon od Tanyi.</p><p>Dodatkowa premia: jeśli masz telefon z systemem Windows lub Cortanę dla telefonów iPhone lub systemu Android, możesz ustawić w Cortanie synchronizowanie powiadomień między komputerem a telefonem.</p><p><img src='./../../../assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>Hej, Cortana?</h3><hr /><p>Ustaw Cortanę tak, aby cię słyszała za każdym razem, gdy mówisz „Hej, Cortana”. Kliknij pole wyszukiwania na pasku zadań, aby otworzyć ekran główny Cortany. Następnie kliknij pozycję <strong>Ustawienia</strong> i włącz opcję <strong>Zezwalaj Cortanie na odpowiadanie na polecenie „Hej, Cortana”</strong>.</p><p><img src='./../../../assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>Uwaga</p><p>Cortana jest dostępna tylko w niektórych krajach / regionach. Istnieją również ograniczenia w działaniu funkcji Cortany.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2861,7 +2875,7 @@
             "storage": "Pamięć masowa",
             "wireless": "Bezprzewodowe"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji"
     },
     "smartPerformance": {
         "title": "Health & Support",

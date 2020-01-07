@@ -32,22 +32,16 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
 
 	constructor(
-		private modalService: NgbModal,
 		private titleService: Title,
 		private commonService: CommonService,
 		private cmsService: CMSService,
 		private route: ActivatedRoute,
 		private shellService: VantageShellService,
 		public dashboardService: DashboardService,
-		private gamingLightService: GamingLightingService,
-		private upeService: UPEService,
-		private loggerService: LoggerService,
-		private hypService: HypothesisService,
 		private translate: TranslateService,
 		public deviceService: DeviceService
 	) {
 		this.metrics = this.shellService.getMetrics();
-
 		this.route.params.subscribe((params) => {
 			this.currentProfileId = +params.id; // (+) converts string 'id' to a number
 		});
@@ -69,7 +63,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {}
 
-	private onNotification(notification: AppNotification) {
+	onNotification(notification: AppNotification) {
 		if (
 			notification &&
 			(notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)

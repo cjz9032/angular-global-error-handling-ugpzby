@@ -2101,8 +2101,7 @@ export class VantageShellService {
 	 */
 	public getKeyboardManagerObject(): any {
 		const kbdManager: any = {
-			GetKeyboardMapCapability: this.getPromise(true),
-			GetUDKCapability: this.getPromise(true),
+			GetAllCapability: this.getPromise({ uDKCapability: true, keyboardMapCapability: true }),
 			GetKBDLayoutName: this.getPromise('Standered'),
 			GetKBDMachineType: this.getPromise('Other'),
 			GetKbdHiddenKeyPerformanceModeCapability: this.getPromise(false),

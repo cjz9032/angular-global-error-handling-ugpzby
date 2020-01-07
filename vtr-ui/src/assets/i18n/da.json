@@ -1125,7 +1125,8 @@
                             "yes": "Ja",
                             "description3": "Er du sikker på, at du vil stoppe nulstillingen af batterimåleren?"
                         },
-                        "dual_note": "Bemærk: Kun ét batteri kan nulstilles ad gangen."
+                        "dual_note": "Bemærk: Kun ét batteri kan nulstilles ad gangen.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1363,8 +1364,8 @@
                             "alwaysOn": "Altid tændt",
                             "never": "aldrig",
                             "halfTime": "Halv tid for tidsindstilling for slukket skærm",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Vælg",
+                            "time": "Klokkeslæt"
                         },
                         "taskBarDimmer": "PROCESLINJEDÆMPER",
                         "backgroundDimmer": "BAGGRUNDSDÆMPER",
@@ -1530,6 +1531,19 @@
                     "control2": "KONTROLELEMENTER PÅ MUS",
                     "control3": "TRACKPOINT-KONTROLELEMENTER",
                     "less": "FÆRRE"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1924,7 @@
             "otherSoftwareLicenses": "Andre softwarelicenser",
             "ourWebsite": "Vores websted",
             "aboutYourDevice": "Om din enhed",
-            "copyright": "© 2002-2019 Lenovo all rights reserved"
+            "copyright": "© 2002-2020 Lenovo all rights reserved"
         },
         "quickAccess": {
             "categories": "Kategorier",
@@ -1940,47 +1954,47 @@
             "passwordText": "Du kan gemme og administrere alle dine adgangskoder sikkert ved at kryptere dem med en professionel, digital beskyttelsesapp i stedet for at gemme dem i webbrowseren, der nemt kan tilgås af en tredjepart, uden at du ved det.",
             "enhanceTitle": "Hvad skal jeg gøre for at forbedre sikkerheden?",
             "enhanceText": "Vi anbefaler, at du beskytter dine enheder med antivirussoftware og en firewall og konfigurerer Kontrol af brugerkonti (UAC-meddelelse) til minimumsbeskyttelse. Opret desuden stærke adgangskoder, som du opbevarer på en sikker måde, og krypter dine data, når du bruger offentlige netværk, som udvidet beskyttelse.",
-            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
-            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
-            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
-            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
-            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
-            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
-            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
-            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
-            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
-            "windows": "Windows Activation",
-            "goAntivirus": "go to antivirus",
-            "goFirewall": "go to firewall",
-            "goPassword": "go to passwordManger",
-            "goWifi": "go to wifi-security",
-            "goVpn": "go to VPN security",
-            "visitWindows": "Visit Windows Activation",
-            "visitFingerprint": "Visit Fingerprint reader",
-            "visitUac": "Visit User Account Control",
-            "visitHde": "Visit Hard drive encryption",
-            "haveOwnPassword": "I have my own password manager",
-            "haveOwnWifi": "I have my own wifi security",
-            "haveOwnVpn": "I have my own wifi security",
-            "uac": "User Account Control (UAC)",
-            "uacTitles": "User Account Control",
-            "hde": "Hard drive encryption",
-            "level": "Security Level:",
-            "noProtection": "No protection",
-            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
-            "basic": "BASIC",
-            "basicTitle": "Basic protection",
-            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
-            "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own",
-            "basicSecurity": "BASIC SECURITY",
-            "advancedSecurity": "ADVANCED SECURITY",
-            "intermediateSecurity": "INTERMEDIATE SECURITY"
+            "antivirusContent": "Brug et antivirusprogram til at forhindre, finde og fjerne skadelig software fra dine enheder.",
+            "firewallContent": "En firewall opretter en barriere mellem et internt netværk, der er tillid til, og et eksternt netværk, der ikke er tillid til. Firewallen overvåger og kontrollerer indgående og udgående netværkstrafik baseret på foruddefinerede sikkerhedsregler.",
+            "windowsActiveContent": "Brug af en ægte kopi af Windows kan bevirke, at du er mindre udsat for risici for sikkerhedstrusler.",
+            "passwordContent": "Brug en mere sikker og nem måde at håndtere dine adgangskoder, betalinger og personlige oplysninger på. Og du kan endda oprette stærke, komplekse adgangskoder og logge på ethvert websted øjeblikkeligt.",
+            "fingerprintContent": "En hurtig og sikker metode, hvormed du kan logge på Windows, foretage betalinger og oprette forbindelse til apps og tjenester.",
+            "uacContent": "Flyt skyderen for at vælge, i hvor høj grad du vil have Kontrol af brugerkonti til at beskytte dig mod potentielt skadelige ændringer.",
+            "wifiContent": "En avanceret softwaretjeneste, der hjælper din enhed med at skelne mellem sikre trådløse netværk og potentielt skadelige trådløse netværk.",
+            "bitLockerContent": "Hjælper med at beskytte dine filer og mapper mod uautoriseret adgang ved at kryptere data på harddisken.",
+            "vpnContent": "Brug en VPN-tjeneste til at kryptere de oplysninger, du sender og modtager via offentlige WiFi-netværk, og sørg for, at dine onlineaktiviteter er beskyttede og private.",
+            "windows": "Windows-aktivering",
+            "goAntivirus": "gå til antivirus",
+            "goFirewall": "gå til firewall",
+            "goPassword": "gå til passwordManger",
+            "goWifi": "gå til wifi-sikkerhed",
+            "goVpn": "gå til VPN-sikkerhed",
+            "visitWindows": "Besøg Windows-aktivering",
+            "visitFingerprint": "Besøg Fingerprint Reader",
+            "visitUac": "Besøg Kontrol af brugerkonti",
+            "visitHde": "Besøg harddiskkryptering",
+            "haveOwnPassword": "Jeg har min egen password manager",
+            "haveOwnWifi": "Jeg har min egen wifi-sikkerhed",
+            "haveOwnVpn": "Jeg har min egen VPN-sikkerhed",
+            "uac": "Kontrol af brugerkonti (UAC)",
+            "uacTitles": "Kontrol af brugerkonti",
+            "hde": "Kryptering af harddisken",
+            "level": "Sikkerhedsniveau:",
+            "noProtection": "Ingen beskyttelse",
+            "noProtectionDesc": "Din enhed er ikke beskyttet mod trusler, så vi aktiverer Windows Defender, så du får minimal beskyttelse. Installer et antivirusprogram for at beskytte din enhed mod trusler udefra.",
+            "basic": "GRUNDLÆGGENDE",
+            "basicTitle": "Grundlæggende beskyttelse",
+            "basicDesc": "Din enhed har kun grundlæggende sikkerhedsbeskyttelse aktiveret. Prøv at aktivere UAC-meddelelser og bruge Password Manager for at få bedre beskyttelse.",
+            "intermediate": "MELLEM",
+            "intermediateTitle": "Mellem beskyttelse",
+            "intermediateDesc": "Godt gået! Du er kun ét skridt fra at få avanceret beskyttelse. Prøv at kryptere dine data og overvåge sikkerhedsbrud i dit netværk.",
+            "advanced": "UDVIDET",
+            "advancedTitle": "Avanceret beskyttelse",
+            "advancedDesc": "Tillykke. Din enhed har grundlæggende, mellem og avanceret sikkerhedsbeskyttelse aktiveret, godt gået!",
+            "haveOwn": "Jeg har min egen",
+            "basicSecurity": "GRUNDLÆGGENDE SIKKERHED",
+            "advancedSecurity": "AVANCERET SIKKERHED",
+            "intermediateSecurity": "MELLEM SIKKERHED"
         },
         "antivirus": {
             "common": {
@@ -2292,7 +2306,7 @@
         },
         "question1": {
             "title": "Sikkerhedskopiér og gendan dine filer",
-            "description": "<div>    <div class='faqInFs4Fb'>        Sikkerhedskopiér og gendan dine filer    </div>    <hr />    <div class='faqInMb7'>        Det er altid godt at have en sikkerhedskopi. Opbevar kopier af dine filer på et andet drev, i tilfælde af at der sker noget med originalerne.    </div>    <div class='faqInFs3Fb'>        Konfigurer din sikkerhedskopiering    </div>    <hr />    <div class='mb-5'>        Vælg knappen <span class='faqInFb'>Start</span>, vælg <span class='faqInFb'>Indstillinger</span> > <span class='faqInFb'>Opdatering og sikkerhed</span> > <span class='faqInFb'>Sikkerhedskopiering</span> > <span class='faqInFb'>Tilføj et drev</span>, og vælg derefter et eksternt drev eller en ekstern netværksplacering til dine sikkerhedskopier.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Du er klar. Hver time sikkerhedskopierer vi alt i din brugermappe (C:\\\\Users\\\\username). Hvis du vil ændre, hvilke filer der bliver sikkerhedskopieret, eller hvor ofte sikkerhedskopiering udføres, skal du gå til <span class='faqInFb'>Flere indstillinger</span>.    </div>    <div class='faqInFs3Fb'>        Gendan dine filer    </div>    <div class='mb-5'>        Hvis du mangler en vigtig fil eller mappe, kan du gå tilbage på følgende måde:    </div>    <div>        <div class='mb-3'>1. Skriv <span class='faqInFb'>Gendan filer</span> i søgefeltet på proceslinjen, og vælg derefter <span class='faqInFb'>Gendan dine filer med filhistorik</span>.</div>        <div class='mb-3'>2. Søg efter den fil, du skal bruge, og brug derefter pilene til at se alle dens versioner</div>        <div class='mb-3'>3. Når du har fundet den ønskede version, skal du vælge <span class='faqInFb'>Gendan</span> for at gemme den på sin oprindelige placering. Hvis du vil gemme den et andet sted, skal du trykke på og holde tasten <span class='faqInFb'>Gendan</span> nede (eller højreklikke), vælge <span class='faqInFb'>Gendan til</span> og derefter vælge en ny placering.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Sikkerhedskopiér og gendan dine filer    </div>    <hr />    <div class='faqInMb7'>        Det er altid godt at have en sikkerhedskopi. Opbevar kopier af dine filer på et andet drev, i tilfælde af at der sker noget med originalerne.    </div>    <div class='faqInFs3Fb'>        Konfigurer din sikkerhedskopiering    </div>    <hr />    <div class='mb-5'>        Vælg knappen <span class='faqInFb'>Start</span>, vælg <span class='faqInFb'>Indstillinger</span> > <span class='faqInFb'>Opdatering og sikkerhed</span> > <span class='faqInFb'>Sikkerhedskopiering</span> > <span class='faqInFb'>Tilføj et drev</span>, og vælg derefter et eksternt drev eller en ekstern netværksplacering til dine sikkerhedskopier.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Du er klar. Hver time sikkerhedskopierer vi alt i din brugermappe (C:\\\\Users\\\\username). Hvis du vil ændre, hvilke filer der bliver sikkerhedskopieret, eller hvor ofte sikkerhedskopiering udføres, skal du gå til <span class='faqInFb'>Flere indstillinger</span>.    </div>    <div class='faqInFs3Fb'>        Gendan dine filer    </div>    <div class='mb-5'>        Hvis du mangler en vigtig fil eller mappe, kan du gå tilbage på følgende måde:    </div>    <div>        <div class='mb-3'>1. Skriv <span class='faqInFb'>Gendan filer</span> i søgefeltet på proceslinjen, og vælg derefter <span class='faqInFb'>Gendan dine filer med filhistorik</span>.</div>        <div class='mb-3'>2. Søg efter den fil, du skal bruge, og brug derefter pilene til at se alle dens versioner</div>        <div class='mb-3'>3. Når du har fundet den ønskede version, skal du vælge <span class='faqInFb'>Gendan</span> for at gemme den på sin oprindelige placering. Hvis du vil gemme den et andet sted, skal du trykke på og holde tasten <span class='faqInFb'>Gendan</span> nede (eller højreklikke), vælge <span class='faqInFb'>Gendan til</span> og derefter vælge en ny placering.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -2333,7 +2347,7 @@
         },
         "question2": {
             "title": "Sådan gendanner du din pc",
-            "description": "<div>    <div class='faqInFs4Fb'>        Sådan gendanner du din pc    </div>    <hr>    <div class='faqInFs25FbP5'>        Symptom    </div>    <div class='faqInP5'>        Hvis din pc ikke fungerer lige så godt som tidligere, og du ikke ved, hvorfor, kan du gendanne pc'en uden at slette dine personlige filer eller ændre dine indstillinger. Windows kan 'gendanne' din pc, så den svarer mere til en ny installation uden at slette dine personlige filer.    </div>    <div class='faqInP5'>        Hvad sker der, når du gendanner din pc? Dine filer og personlige indstillinger bliver ikke ændret    </div>    <div class='faqInP5'>        <ul>            <li>Dine pc-indstillinger vil blive ændret tilbage til standardindstillingerne</li>            <li>Apps fra Windows Store vil blive bevaret</li>            <li>De apps, du har installeret fra disks eller websteder, vil blive fjernet</li>            <li>En liste over fjernede filer vil blive gemt på dit skrivebord</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Påvirkede mærker    </div>    <div>        <ul>            <li>Alle stationære og bærbare computere</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Styresystem    </div>    <div>        <ul>            <li>Windows 8, 8.1 og 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Løsning    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Tryk eller klik på <span class='faqInFb'>Indstillinger</span>                    </li>                    <li class='faqInP5'>                        Tryk eller klik på <span class='faqInFb'>Opdatering og genoprettelse</span>                    </li>                    <li class='faqInP5'>                        <div>Tryk eller klik på <span class='faqInFb'>Genoprettelse</span></div>                        <div class='faqInP5'>Under gendannelsen af din pc uden påvirkning af dine filer, skal du trykke eller klikke på <span class='faqInFb'>Kom i gang</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Klik på <span class='faqInFb'>Næste</span>.                    </li>                    <li class='faqInP5'>                        Klik på <span class='faqInFb'>Gendan</span> for at start gendannelsesprocessen.                    </li>                    <li class='faqInP5'>                        Når gendannelsesprocessen er fuldført, kan du finde listen Fjernede apps på skrivebordet                    </li>                    <li class='faqInP5'>                        Du kan finde de fjernede apps, mens systemet gendannes                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Søg efter <span class='faqInFb'>gendan</span> i det søgeværktøj, der findes i menuen Start.</li>                    <li class='faqInP5'>                        <div>Klik på <span class='faqInFb'>Optimer din pc uden at påvirke filerne</span> i søgeresultaterne, sådan som det er vist nedenfor.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Klik på knappen <span class='faqInFb'>Kom i gang</span> lige under overskriften <span class='faqInFb'>Optimer din pc uden at påvirke dine filer</span> for at påbegynde gendannelsen af din pc med Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Flere oplysninger    </div>    <div>        Når du har startet gendannelsen af din pc, fuldføres processen i de fleste tilfælde automatisk. Hvis Windows imidlertid har brug filer, der mangler, vil du blive bedt om at indsætte genoprettelsesmediet, som typisk er en dvd eller et USB-drev. Hvis det sker, bestemmer pc'en, hvad der kræves.    </div>    <div class='faqInP10'>        Hvis du har opgraderet din pc til Windows 8.1 eller Windows RT 8.1 med en dvd, skal du bruge denne disk. Hvis du ikke har nogen Windows 8.1- eller Windows RT 8.1-medier, skal du kontakte Microsoft Support.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Sådan gendanner du din pc    </div>    <hr>    <div class='faqInFs25FbP5'>        Symptom    </div>    <div class='faqInP5'>        Hvis din pc ikke fungerer lige så godt som tidligere, og du ikke ved, hvorfor, kan du gendanne pc'en uden at slette dine personlige filer eller ændre dine indstillinger. Windows kan 'gendanne' din pc, så den svarer mere til en ny installation uden at slette dine personlige filer.    </div>    <div class='faqInP5'>        Hvad sker der, når du gendanner din pc? Dine filer og personlige indstillinger bliver ikke ændret    </div>    <div class='faqInP5'>        <ul>            <li>Dine pc-indstillinger vil blive ændret tilbage til standardindstillingerne</li>            <li>Apps fra Windows Store vil blive bevaret</li>            <li>De apps, du har installeret fra disks eller websteder, vil blive fjernet</li>            <li>En liste over fjernede filer vil blive gemt på dit skrivebord</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Påvirkede mærker    </div>    <div>        <ul>            <li>Alle stationære og bærbare computere</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Styresystem    </div>    <div>        <ul>            <li>Windows 8, 8.1 og 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Løsning    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Tryk eller klik på <span class='faqInFb'>Indstillinger</span>                    </li>                    <li class='faqInP5'>                        Tryk eller klik på <span class='faqInFb'>Opdatering og genoprettelse</span>                    </li>                    <li class='faqInP5'>                        <div>Tryk eller klik på <span class='faqInFb'>Genoprettelse</span></div>                        <div class='faqInP5'>Under gendannelsen af din pc uden påvirkning af dine filer, skal du trykke eller klikke på <span class='faqInFb'>Kom i gang</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        Klik på <span class='faqInFb'>Næste</span>.                    </li>                    <li class='faqInP5'>                        Klik på <span class='faqInFb'>Gendan</span> for at start gendannelsesprocessen.                    </li>                    <li class='faqInP5'>                        Når gendannelsesprocessen er fuldført, kan du finde listen Fjernede apps på skrivebordet                    </li>                    <li class='faqInP5'>                        Du kan finde de fjernede apps, mens systemet gendannes                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Søg efter <span class='faqInFb'>gendan</span> i det søgeværktøj, der findes i menuen Start.</li>                    <li class='faqInP5'>                        <div>Klik på <span class='faqInFb'>Optimer din pc uden at påvirke filerne</span> i søgeresultaterne, sådan som det er vist nedenfor.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Klik på knappen <span class='faqInFb'>Kom i gang</span> lige under overskriften <span class='faqInFb'>Optimer din pc uden at påvirke dine filer</span> for at påbegynde gendannelsen af din pc med Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Flere oplysninger    </div>    <div>        Når du har startet gendannelsen af din pc, fuldføres processen i de fleste tilfælde automatisk. Hvis Windows imidlertid har brug filer, der mangler, vil du blive bedt om at indsætte genoprettelsesmediet, som typisk er en dvd eller et USB-drev. Hvis det sker, bestemmer pc'en, hvad der kræves.    </div>    <div class='faqInP10'>        Hvis du har opgraderet din pc til Windows 8.1 eller Windows RT 8.1 med en dvd, skal du bruge denne disk. Hvis du ikke har nogen Windows 8.1- eller Windows RT 8.1-medier, skal du kontakte Microsoft Support.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2496,7 +2510,7 @@
         },
         "question4": {
             "title": "Kontrollér computerens batteriforbrug",
-            "description": "<div class='faqInFs4Fb'>    Kontrollér computerens batteriforbrug</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 indeholder det nye skærmbillede <strong>Batteribrug</strong>, som viser, hvad der opbruger din bærbare computers strømlager. Det betyder, at du ved præcist, hvilke apps – både til stationære computere og 'generelle' apps til Windows 10 – der bruger for meget strøm.</p><h3 class='faqInFs25FbP10'>Påvirkede mærker</h3><ul>    <li>Bærbare og stationære computere fra Lenovo</li></ul><h3 class='faqInFs25FbP10'>Berørte systemer</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Styresystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p>Denne funktion er ny i Windows 10. Den er ikke placeret i den traditionelle visning af <strong>Kontrolpanel</strong>, men i den nye app <strong>Indstillinger</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Find skærmbilledet Batteribrug.</h3></p><p>1. Klik eller tryk på <strong>Indstillinger</strong> i menuen Start</p><p>2. I <strong>Indstillinger</strong> skal du vælge <strong>System</strong>og derefter vælge <strong>Strømsparetilstand.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.png' /></p><p>3. Klik eller tryk på linket <strong>Batteribrug</strong> under denne overskrift for at få flere oplysninger. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analysér dit strømforbrug.</h3><p>4 Du kan få skærmen Batteribrug til at vise forbruget for de seneste 24-48 timer eller den seneste uge</p><p>5 Procentangivelser for <strong>System</strong>, <strong>Skærm</strong> og <strong>Wi-Fi</strong>. Her kan du se, hvor meget batterikapacitet, systemprocesserne og skærmen har forbrugt</p><p>6 Indstillingerne <strong>I brug</strong> og <strong>Baggrund</strong> viser, hvor meget strøm der forbruges af applikationerne, mens du anvender dem, sammenlignet med applikationer, der kører i baggrunden.</p><p>7 Hvis apps forbruger strøm i baggrunden, kan du klikke eller trykke på linket <strong>Rediger indstillinger for baggrundsapp</strong>, og angiv apps til ikke at køre i baggrunden. Dette fungerer kun for de generelle Windows 10-apps.</p><p>8 Rul længere ned, hvor du får vist en liste over applikationer, som betragtes som den mest nyttige del af denne funktion. Den viser en liste over de apps, der har forbrugt batteristrøm i den aktuelle periode, og viser, hvor stor en procentdel af batteriets kapacitet hver enkelt app har forbrugt</p><p><img src='./../../../assets/images/qa/4.2.png' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Kontrollér computerens batteriforbrug</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 indeholder det nye skærmbillede <strong>Batteribrug</strong>, som viser, hvad der opbruger din bærbare computers strømlager. Det betyder, at du ved præcist, hvilke apps – både til stationære computere og 'generelle' apps til Windows 10 – der bruger for meget strøm.</p><h3 class='faqInFs25FbP10'>Påvirkede mærker</h3><ul>    <li>Bærbare og stationære computere fra Lenovo</li></ul><h3 class='faqInFs25FbP10'>Berørte systemer</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Styresystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p>Denne funktion er ny i Windows 10. Den er ikke placeret i den traditionelle visning af <strong>Kontrolpanel</strong>, men i den nye app <strong>Indstillinger</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Find skærmbilledet Batteribrug.</h3></p><p>1. Klik eller tryk på <strong>Indstillinger</strong> i menuen Start</p><p>2. I <strong>Indstillinger</strong> skal du vælge <strong>System</strong>og derefter vælge <strong>Strømsparetilstand.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klik eller tryk på linket <strong>Batteribrug</strong> under denne overskrift for at få flere oplysninger. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analysér dit strømforbrug.</h3><p>4. Du kan få skærmen Batteribrug til at vise forbruget for de seneste 24-48 timer eller den seneste uge</p><p>5. Procentangivelser for <strong>System</strong>, <strong>Skærm</strong> og <strong>Wi-Fi</strong>. Her kan du se, hvor meget batterikapacitet, systemprocesserne og skærmen har forbrugt</p><p>6. Indstillingerne <strong>I brug</strong> og <strong>Baggrund</strong> viser, hvor meget strøm der forbruges af applikationerne, mens du anvender dem, sammenlignet med applikationer, der kører i baggrunden.</p><p>7. Hvis apps forbruger strøm i baggrunden, kan du klikke eller trykke på linket <strong>Rediger indstillinger for baggrundsapp</strong>, og angiv apps til ikke at køre i baggrunden. Dette fungerer kun for de generelle Windows 10-apps.</p><p>8. Rul længere ned, hvor du får vist en liste over applikationer, som betragtes som den mest nyttige del af denne funktion. Den viser en liste over de apps, der har forbrugt batteristrøm i den aktuelle periode, og viser, hvor stor en procentdel af batteriets kapacitet hver enkelt app har forbrugt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2603,7 +2617,7 @@
         },
         "question6": {
             "title": "Lær Cortana, din personlige assistent, at kende",
-            "description": "<div class='faqInFs4Fb'>    Lær Cortana, din personlige assistent, at kende</div><hr><h3 class='faqInFs25FbP10'>Hvad er Cortana?</h3><hr /><p>Cortana er din digitale agent. Hun hjælper dig med at få tingene udført.</p><p>Jo mere du bruger Cortana, jo mere personlig bliver din oplevelse.</p><p>For at komme i gang skal du skrive et spørgsmål i søgefeltet eller vælge mikrofonen for at tale med Cortana. (Du kan også skrive på alle typer af computere, men du skal have en mikrofon for at kunne tale sammen.)</p><p>Hvis du ikke er sikker på, hvad du skal sige, får du vist forslag på låseskærmen og på startsiden for Cortana, når du har valgt søgefeltet på proceslinjen.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Startside 2. Notebook 3. Indstillinger 4. Feedback</li></ol><p>Her er nogle af de ting, som Cortana kan gøre for dig:</p><ul>    <li>Give dig påmindelser baseret på tidspunkter, steder eller personer.</li>    <li>Spore pakker, teams, interesser og flyvninger.</li>    <li>Sende e-mails og beskeder.</li>    <li>Administrere din kalender og holde dig opdateret.</li>    <li>Oprette og administrere lister.</li>    <li>Snakke og spille spil.</li>    <li>Finde fakta, filer, steder og oplysninger.</li>    <li>Åbne alle apps på systemet.</li></ul><h3 class='faqInFs25FbP10'>Prøv følgende: Angiv en påmindelse</h3><hr /><p>En af de ting, Cortana kan gøre, er at give dig påmindelser. Hun kan minde dig om ting baseret på tidspunkter, steder eller endda personer.</p><p>Du kan f.eks. skrive eller sige \"Mind mig om at ønske Tanya tillykke, næste gang hun ringer\".</p><p>Påmindelsen vises, når du får et opkald fra Tanya.</p><p>Ekstra bonus: Hvis du har en Windows Phone eller Cortana til iPhone eller Android, kan du indstille Cortana til at synkronisere påmindelser mellem computeren og telefonen.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hej Cortana?</h3><hr /><p>Indstil Cortana til at høre dig, hver gang du siger \"Hej Cortana\". Vælg søgefeltet på proceslinjen for at åbne startsiden for Cortana. Vælg derefter<strong>Indstillinger</strong>, og aktivér <strong>Lad Cortana reagere på \"Hej Cortana\"</strong>.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Bemærk</p><p>Cortana er kun tilgængelig i visse lande/områder, og nogle Cortana-funktioner er måske ikke tilgængelige alle steder.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Lær Cortana, din personlige assistent, at kende</div><hr><h3 class='faqInFs25FbP10'>Hvad er Cortana?</h3><hr /><p>Cortana er din digitale agent. Hun hjælper dig med at få tingene udført.</p><p>Jo mere du bruger Cortana, jo mere personlig bliver din oplevelse.</p><p>For at komme i gang skal du skrive et spørgsmål i søgefeltet eller vælge mikrofonen for at tale med Cortana. (Du kan også skrive på alle typer af computere, men du skal have en mikrofon for at kunne tale sammen.)</p><p>Hvis du ikke er sikker på, hvad du skal sige, får du vist forslag på låseskærmen og på startsiden for Cortana, når du har valgt søgefeltet på proceslinjen.</p><p><img src='./../../../assets/images/qa/6.1.jpg' /></p><ol>    <li>Startside 2. Notebook 3. Indstillinger 4. Feedback</li></ol><p>Her er nogle af de ting, som Cortana kan gøre for dig:</p><ul>    <li>Give dig påmindelser baseret på tidspunkter, steder eller personer.</li>    <li>Spore pakker, teams, interesser og flyvninger.</li>    <li>Sende e-mails og beskeder.</li>    <li>Administrere din kalender og holde dig opdateret.</li>    <li>Oprette og administrere lister.</li>    <li>Snakke og spille spil.</li>    <li>Finde fakta, filer, steder og oplysninger.</li>    <li>Åbne alle apps på systemet.</li></ul><h3 class='faqInFs25FbP10'>Prøv følgende: Angiv en påmindelse</h3><hr /><p>En af de ting, Cortana kan gøre, er at give dig påmindelser. Hun kan minde dig om ting baseret på tidspunkter, steder eller endda personer.</p><p>Du kan f.eks. skrive eller sige \"Mind mig om at ønske Tanya tillykke, næste gang hun ringer\".</p><p>Påmindelsen vises, når du får et opkald fra Tanya.</p><p>Ekstra bonus: Hvis du har en Windows Phone eller Cortana til iPhone eller Android, kan du indstille Cortana til at synkronisere påmindelser mellem computeren og telefonen.</p><p><img src='./../../../assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>Hej Cortana?</h3><hr /><p>Indstil Cortana til at høre dig, hver gang du siger \"Hej Cortana\". Vælg søgefeltet på proceslinjen for at åbne startsiden for Cortana. Vælg derefter<strong>Indstillinger</strong>, og aktivér <strong>Lad Cortana reagere på \"Hej Cortana\"</strong>.</p><p><img src='./../../../assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>Bemærk</p><p>Cortana er kun tilgængelig i visse lande/områder, og nogle Cortana-funktioner er måske ikke tilgængelige alle steder.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2861,7 +2875,7 @@
             "storage": "Lager",
             "wireless": "Trådløs"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Husk, at testene bliver annulleret, hvis systemet slumrer eller går i dvaletilstand"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -166,7 +166,8 @@
 										<div class="col-2"></div>
 									</div>
 								</vtr-ui-row-switch>
-							</li>
+                            </li>
+                            <div *ngIf="microphoneProperties?.currentMode!='NotSupported'">
 							<li class=""
 								*ngIf="microphoneProperties.keyboardNoiseSuppression">
 								<vtr-ui-row-switch
@@ -240,7 +241,8 @@
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
 								</vtr-ui-row-switch>
-							</li>
+                            </li>
+                            </div>
 						</ul>
 					</vtr-container-collapsible>
 				</div>

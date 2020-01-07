@@ -17,7 +17,7 @@ export class BacklightService {
 	constructor(
 		private shellService: VantageShellService
 	) {
-		this.backlightFeature = this.shellService.getBacklight();
+	//	this.backlightFeature = this.shellService.getBacklight();
 	}
 
 	get backlight(): Observable<Array<BacklightStatus | BacklightLevel>> {
@@ -43,7 +43,6 @@ export class BacklightService {
 	}
 
 	setBacklight(mode: BacklightMode) {
-		console.log(JSON.stringify(mode));
 		return from(this.backlightFeature.setBacklight({
 			settingList: {
 				setting: [

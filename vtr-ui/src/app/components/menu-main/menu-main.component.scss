@@ -148,18 +148,11 @@
 						// 	display: none;
 						// }
 						display: inline-table;
-						font-size: 1.7rem;
+						font-size: $fontsize_sm;
 						font-weight: 400;
 						line-height: calc(#{$menu_height} - 0.65rem);
 						color: $light;
 						padding: 0 1.5rem;
-						display: flex;
-						align-items: center;
-						overflow: hidden;
-						white-space: nowrap;
-						text-overflow: ellipsis;
-
-						height: 9rem;
 						display: flex;
 						align-items: center;
 						overflow: hidden;
@@ -243,7 +236,7 @@
 							.user-initials {
 								display: inline-block;
 								text-align: center;
-								font-size: 2rem;
+								font-size: $fontsize_xl !important;
 								width: 4.6rem;
 
 								@media #{$mediaquery_9} {

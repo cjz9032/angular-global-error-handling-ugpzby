@@ -70,7 +70,7 @@
 				<div class="content-page-2"
 					id="welcome-body-scroll">
 					<div class="row justify-content-center align-items-center font-14-bold mb-20">
-						<div class="col-auto title2 uppercase">
+						<div class="col-auto title2 uppercase text-center">
 							{{ "welcometutorial.subtitle1" | translate }}
 						</div>
 					</div>
@@ -93,7 +93,8 @@
 									src="assets/images/welcome/personal-use.jpg"
 									class="" />
 								<label for="personalRadio"
-									tabindex="1"
+									tabindex="0"
+									id="segment-choose-personal-use"
 									(keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.personal" | translate }}</label>
 							</div>
@@ -114,7 +115,8 @@
 									src="assets/images/welcome/business-use.jpg"
 									class="business" />
 								<label for="businessRadio"
-									tabindex="2"
+									tabindex="0"
+									id="segment-choose-business-use"
 									(keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.business" | translate }}</label>
 							</div>
@@ -135,7 +137,8 @@
 									src="assets/images/welcome/custom-use.jpg"
 									class="custom" />
 								<label for="professionalRadio"
-									tabindex="3	"
+									tabindex="0"
+									id="segment-choose-custom-use"
 									(keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.professional" | translate }} </label>
 							</div>
@@ -143,7 +146,7 @@
 					</div>
 
 					<div class="row justify-content-center align-items-center font-14-bold col-12 mb-20">
-						<div class="col-auto title2 uppercase">
+						<div class="col-auto title2 uppercase text-center">
 							{{ "welcometutorial.subtitle2" | translate}}
 						</div>
 					</div>
@@ -156,8 +159,9 @@
 								(click)="toggle($event, interest.label)"
 								[checked]="interest.checked" />
 							<label [ngClass]="{'hideLabel': i > 7 && !hideMoreInterestBtn}"
-								tabindex="4"
+								tabindex="0"
 								(keypress)="onKeyPress($event)"
+								[id]="'welcome-interest-' + interest.label"
 								#interestChkboxs
 								[for]="interest.label + 'checkbox-welcome'">{{ "welcometutorial.interests." + interest.label | translate }}</label>
 						</div>
@@ -165,7 +169,7 @@
 					<div *ngIf="!hideMoreInterestBtn"
 						class="row justify-content-center align-items-center font-12-semi mb-4 col-12">
 						<div class="col-auto title2"
-							tabindex="5"
+							tabindex="0"
 							(keypress)="onKeyPress($event)"
 							id="tutorial_hide_moreInterest"
 							attr.aria-label="tutorial_hide_moreInterest"
@@ -176,14 +180,17 @@
 					</div>
 					<div class="row privacy-check mt-3"
 						*ngIf="vantageToolbarStatus.available">
-						<div class="custom-control custom-checkbox">
-							<input type="checkbox" tabindex="6" (keypress)="onKeyPress($event)"
+						<div class="custom-control custom-checkbox pl-0">
+							<input type="checkbox"
+								tabindex="-1"
 								(click)="saveToolbar($event)"
 								[checked]="vantageToolbar"
 								class="custom-control-input"
 								id="chkbox-vantage-toolbar"
 								role="checkbox">
 							<label class="custom-control-label" dir="{{direction}}"
+								tabindex="0" (keypress)="onKeyPress($event)"
+								id="welcome-toolbar-label"
 								for="chkbox-vantage-toolbar">
 								{{ "welcometutorial.toolbartitle" | translate }}
 							</label>
@@ -191,20 +198,23 @@
 					</div>
 
 					<div class="row privacy-check mt-3">
-						<div class="custom-control custom-checkbox">
+						<div class="custom-control custom-checkbox pl-0">
 							<input type="checkbox"
-								tabindex="6"
-								(keypress)="onKeyPress($event)"
+								tabindex="-1"
 								(click)="savePrivacy($event, 'PRIVACYPOLICY')"
 								[checked]="privacyPolicy"
 								class="custom-control-input"
 								id="defaultUnchecked"
 								attr.aria-label="defaultUnchecked">
 							<label class="custom-control-label"
+								tabindex="0"
+								id="welcome-privacy-label"
+								(keypress)="onKeyPress($event)"
 								for="defaultUnchecked">
 								{{ "welcometutorial.privacytitle" | translate }}
 								<a class="linktext"
-									tabindex="7"
+									tabindex="0"
+									id="welcome-privacy-link"
 									[ngClass]="{'lang-he-privacy-link':machineInfo.locale=='he'}"
 									(click)="privacyPolicyClick($event)"
 									href="#"
@@ -222,7 +232,7 @@
 						(keypress)="btnDoneOnKeyPress($event)">
 						<vtr-ui-button metricsParent="WelcomePage"
 							metricsEvent="featureClick"
-							[tabIndex]='8'
+							[tabIndex]='0'
 							[tooltip]="false"
 							[metricsItem]="'DONE'"
 							[label]="'welcometutorial.done' | translate"

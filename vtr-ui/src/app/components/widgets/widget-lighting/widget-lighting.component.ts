@@ -27,8 +27,6 @@ export class WidgetLightingComponent implements OnInit {
 	constructor(
 		private gamingLightingService: GamingLightingService,
 		private commonService: CommonService,
-		private gamingCapabilityService: GamingAllCapabilitiesService,
-		private router: Router,
 		private deviceService: DeviceService
 	) { }
 

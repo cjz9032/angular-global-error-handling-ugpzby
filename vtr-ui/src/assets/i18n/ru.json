@@ -1125,7 +1125,8 @@
                             "yes": "Да",
                             "description3": "Остановить сброс индикатора аккумулятора?"
                         },
-                        "dual_note": "Примечание: Одновременно можно сбросить только один аккумулятор."
+                        "dual_note": "Примечание: Одновременно можно сбросить только один аккумулятор.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1363,8 +1364,8 @@
                             "alwaysOn": "Всегда включен",
                             "never": "никогда",
                             "halfTime": "Половина времени таймера выключения",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Выбор",
+                            "time": "Время"
                         },
                         "taskBarDimmer": "РЕГУЛЯТОР ЯРКОСТИ ПАНЕЛИ ЗАДАЧ",
                         "backgroundDimmer": "РЕГУЛЯТОР ЯРКОСТИ ФОНА",
@@ -1530,6 +1531,19 @@
                     "control2": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ МЫШИ",
                     "control3": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ TRACKPOINT",
                     "less": "МЕНЬШЕ"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1924,7 @@
             "otherSoftwareLicenses": "Другие лицензии на программное обеспечение",
             "ourWebsite": "Наш веб-сайт",
             "aboutYourDevice": "Знакомство с возможностями вашего устройства",
-            "copyright": "© Lenovo, 2002–2019. Все права защищены"
+            "copyright": "© Lenovo, 2002–2020. Все права защищены"
         },
         "quickAccess": {
             "categories": "Категории",
@@ -1940,47 +1954,47 @@
             "passwordText": "Используйте профессиональное приложение цифровой защиты для хранения и администрирования всех своих паролей в зашифрованном виде, вместо того чтобы хранить их в браузере, где к ним легко могут получить доступ третьи лица без вашего ведома.",
             "enhanceTitle": "Как повысить безопасность системы?",
             "enhanceText": "Настоятельно рекомендуем защитить устройства антивирусной программой и брандмауэром, а также настроить уведомление функции контроля учетных записей пользователей на минимальный уровень защиты. Кроме того, используйте надежные пароли и управляйте ими безопасным способом, а для дополнительной защиты шифруйте данные при использовании общедоступных сетей.",
-            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
-            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
-            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
-            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
-            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
-            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
-            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
-            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
-            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
-            "windows": "Windows Activation",
-            "goAntivirus": "go to antivirus",
-            "goFirewall": "go to firewall",
-            "goPassword": "go to passwordManger",
-            "goWifi": "go to wifi-security",
-            "goVpn": "go to VPN security",
-            "visitWindows": "Visit Windows Activation",
-            "visitFingerprint": "Visit Fingerprint reader",
-            "visitUac": "Visit User Account Control",
-            "visitHde": "Visit Hard drive encryption",
-            "haveOwnPassword": "I have my own password manager",
-            "haveOwnWifi": "I have my own wifi security",
-            "haveOwnVpn": "I have my own wifi security",
-            "uac": "User Account Control (UAC)",
-            "uacTitles": "User Account Control",
-            "hde": "Hard drive encryption",
-            "level": "Security Level:",
-            "noProtection": "No protection",
-            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
-            "basic": "BASIC",
-            "basicTitle": "Basic protection",
-            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
-            "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own",
-            "basicSecurity": "BASIC SECURITY",
-            "advancedSecurity": "ADVANCED SECURITY",
-            "intermediateSecurity": "INTERMEDIATE SECURITY"
+            "antivirusContent": "Используйте антивирусное программное обеспечение для предотвращения, обнаружения и удаления вредоносных программ на устройствах.",
+            "firewallContent": "Брандмауэр выполнят роль барьера между доверенной внутренней сетью и недоверенной внешней. Он отслеживает и контролирует входящий и исходящий трафик на основе заранее определенных правил безопасности.",
+            "windowsActiveContent": "Используйте подлинную копию Windows, чтобы снизить риск воздействия угроз безопасности.",
+            "passwordContent": "Используйте более безопасный и удобный способ управления паролями, платежами и личными данными. Также можно создавать надежные, сложные пароли и мгновенно выполнять вход на любом сайте.",
+            "fingerprintContent": "Быстрый и безопасный способ входа в Windows, совершения платежей и подключения к приложениям и услугам.",
+            "uacContent": "Переместите ползунок, чтобы выбрать степень защиты от потенциально опасных изменений, которую обеспечивает функция контроля учетных записей пользователей.",
+            "wifiContent": "Современная программная служба, с помощью которой ваше устройство отличает безопасные беспроводные сети от потенциально опасных.",
+            "bitLockerContent": "Защитите свои файлы и папки от несанкционированного доступа путем шифрования данных на жестком диске.",
+            "vpnContent": "Используйте службу VPN, которая шифрует данные, отправляемые и получаемые данные через общедоступную сеть WiFi, чтобы обеспечить безопасность и конфиденциальность при пользовании Интернетом.",
+            "windows": "Активация Windows",
+            "goAntivirus": "перейти к антивирусному программному обеспечению",
+            "goFirewall": "перейти к брандмауэру",
+            "goPassword": "перейти к диспетчеру паролей",
+            "goWifi": "перейти к разделу безопасности wifi",
+            "goVpn": "перейти к разделу безопасности VPN",
+            "visitWindows": "Перейти в раздел активации Windows",
+            "visitFingerprint": "Перейти в раздел устройства считывания отпечатков пальцев",
+            "visitUac": "Перейти в раздел контроля учетных записей пользователей",
+            "visitHde": "Перейти в раздел шифрования жесткого диска",
+            "haveOwnPassword": "У меня есть диспетчер паролей",
+            "haveOwnWifi": "У меня есть средство обеспечения безопасности при использовании сетей WiFi",
+            "haveOwnVpn": "У меня есть средство обеспечения безопасности при использовании сетей VPN",
+            "uac": "Контроль учетных записей пользователей (UAC)",
+            "uacTitles": "Контроль учетных записей пользователей",
+            "hde": "Шифрование жесткого диска",
+            "level": "Уровень защиты:",
+            "noProtection": "Без защиты",
+            "noProtectionDesc": "Ваши устройство не защищено, поэтому мы включаем Защитник Windows для обеспечения минимального уровня безопасности. Для защиты устройства от внешних угроз установите антивирусное программное обеспечение.",
+            "basic": "БАЗОВЫЙ",
+            "basicTitle": "Базовая защита",
+            "basicDesc": "На вашем устройстве включена лишь базовая защита. Для более надежной защиты включите уведомления функции UAC и используйте диспетчер паролей.",
+            "intermediate": "СРЕДНЯЯ",
+            "intermediateTitle": "Средняя защита",
+            "intermediateDesc": "Отлично! Вы всего в шаге от продвинутой защиты. Включите шифрование данных и мониторинг нарушений безопасности сети.",
+            "advanced": "ДОПОЛНИТЕЛЬНО",
+            "advancedTitle": "Продвинутая защита",
+            "advancedDesc": "Поздравляем! Отлично! На вашем устройстве включены базовый, средний и продвинутой уровни защиты.",
+            "haveOwn": "У меня есть",
+            "basicSecurity": "БАЗОВАЯ ЗАЩИТА",
+            "advancedSecurity": "ПРОДВИНУТАЯ ЗАЩИТА",
+            "intermediateSecurity": "СРЕДНЯЯ ЗАЩИТА"
         },
         "antivirus": {
             "common": {
@@ -2292,7 +2306,7 @@
         },
         "question1": {
             "title": "Резервное копирование и восстановление файлов",
-            "description": "<div>    <div class='faqInFs4Fb'>        Резервное копирование и восстановление файлов    </div>    <hr />    <div class='faqInMb7'>        Всегда хорошо иметь резервную копию. Сохраните копии своих файлов на другом диске на случай, если что-то случится с оригиналами.    </div>    <div class='faqInFs3Fb'>        Настройка резервного копирования    </div>    <hr />    <div class='mb-5'>        Нажмите кнопку <span class='faqInFb'>Пуск</span>, выберите <span class='faqInFb'>Параметры</span> > <span class='faqInFb'>Обновление и безопасность</span> > <span class='faqInFb'>Резервное копирование</span> > <span class='faqInFb'>Добавление диска</span> и выберите внешний диск или расположение в сети для файлов резервной копии.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Все готово. Каждый час будет выполняться резервное копирование всех данных в папке пользователя (C:\\\\Users\\\\username). Чтобы изменить файлы для резервного копирования или частоту их резервного копирования, перейдите в раздел <span class='faqInFb'>Больше параметров</span>.    </div>    <div class='faqInFs3Fb'>        Восстановление файлов    </div>    <div class='mb-5'>        Если вам нужен важный файл или папка, восстановите их следующим образом:    </div>    <div>        <div class='mb-3'>1. Введите <span class='faqInFb'>Восстановить файлы</span> в поле поиска на панели задач и выберите <span class='faqInFb'>Восстановление файлов с помощью истории файлов</span>.</div>        <div class='mb-3'>2. Найдите нужный файл, затем просмотрите все его версии с помощью стрелок</div>        <div class='mb-3'>3. После выбора нужной версии нажмите <span class='faqInFb'>Восстановить</span>, чтобы сохранить ее в исходном расположении. Чтобы сохранить файл в другом месте, нажмите и удерживайте (или щелкните правой кнопкой мыши) <span class='faqInFb'>Восстановить</span>, щелкните <span class='faqInFb'>Восстановить в</span>, а затем выберите новое расположение.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Резервное копирование и восстановление файлов    </div>    <hr />    <div class='faqInMb7'>        Всегда хорошо иметь резервную копию. Сохраните копии своих файлов на другом диске на случай, если что-то случится с оригиналами.    </div>    <div class='faqInFs3Fb'>        Настройка резервного копирования    </div>    <hr />    <div class='mb-5'>        Нажмите кнопку <span class='faqInFb'>Пуск</span>, выберите <span class='faqInFb'>Параметры</span> > <span class='faqInFb'>Обновление и безопасность</span> > <span class='faqInFb'>Резервное копирование</span> > <span class='faqInFb'>Добавление диска</span> и выберите внешний диск или расположение в сети для файлов резервной копии.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Все готово. Каждый час будет выполняться резервное копирование всех данных в папке пользователя (C:\\\\Users\\\\username). Чтобы изменить файлы для резервного копирования или частоту их резервного копирования, перейдите в раздел <span class='faqInFb'>Больше параметров</span>.    </div>    <div class='faqInFs3Fb'>        Восстановление файлов    </div>    <div class='mb-5'>        Если вам нужен важный файл или папка, восстановите их следующим образом:    </div>    <div>        <div class='mb-3'>1. Введите <span class='faqInFb'>Восстановить файлы</span> в поле поиска на панели задач и выберите <span class='faqInFb'>Восстановление файлов с помощью истории файлов</span>.</div>        <div class='mb-3'>2. Найдите нужный файл, затем просмотрите все его версии с помощью стрелок</div>        <div class='mb-3'>3. После выбора нужной версии нажмите <span class='faqInFb'>Восстановить</span>, чтобы сохранить ее в исходном расположении. Чтобы сохранить файл в другом месте, нажмите и удерживайте (или щелкните правой кнопкой мыши) <span class='faqInFb'>Восстановить</span>, щелкните <span class='faqInFb'>Восстановить в</span>, а затем выберите новое расположение.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -2333,7 +2347,7 @@
         },
         "question2": {
             "title": "Восстановление компьютера",
-            "description": "<div>    <div class='faqInFs4Fb'>        Восстановление компьютера    </div>    <hr>    <div class='faqInFs25FbP5'>        Признак    </div>    <div class='faqInP5'>        Если компьютер работает не так хорошо, как раньше, и вы не знаете почему, вы можете восстановить компьютер, не удаляя никаких личных файлов и не изменяя настроек. Windows может \"восстановить\" компьютер, чтобы это было похоже на новую установку, без удаления личных файлов.    </div>    <div class='faqInP5'>        При восстановлении компьютера файлы и персональные настройки не изменятся    </div>    <div class='faqInP5'>        <ul>            <li>Параметры ПК будут восстановлены до значений по умолчанию.</li>            <li>Приложения из магазина Windows будут сохранены</li>            <li>Приложения, установленные с диска или веб-сайта, будут удалены</li>            <li>Список удаленных файлов будет сохранен на рабочем столе</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Затрагиваемые торговые марки    </div>    <div>        <ul>            <li>Все настольные ПК и ноутбуки</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Операционная система    </div>    <div>        <ul>            <li>Windows 8, 8.1 и 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Решение    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Коснитесь или щелкните <span class='faqInFb'>Параметры</span>                    </li>                    <li class='faqInP5'>                        Коснитесь или щелкните <span class='faqInFb'>Обновление и восстановление</span>                    </li>                    <li class='faqInP5'>                        <div>Коснитесь или щелкните <span class='faqInFb'>Восстановление</span></div>                        <div class='faqInP5'>В разделе \"Восстановление компьютера без удаления файлов\" коснитесь или щелкните <span class='faqInFb'>Начать.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Нажмите кнопку <span class='faqInFb'>Далее</span>.                    </li>                    <li class='faqInP5'>                        Нажмите кнопку <span class='faqInFb'>Восстановить</span>, чтобы начать процесс восстановления.                    </li>                    <li class='faqInP5'>                        По завершении процесса восстановления на рабочем столе отобразится список удаленных приложений                    </li>                    <li class='faqInP5'>                        Вы можете найти удаленные приложения во время восстановления системы                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Введите <span class='faqInFb'>восстановить </span>в инструменте поиска, доступном в меню \"Пуск\".</li>                    <li class='faqInP5'>                        <div>Нажмите <span class='faqInFb'>Восстановление компьютера без удаления файлов</span> в результатах поиска, как показано ниже.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Нажмите кнопку <span class='faqInFb'>Начать</span> сразу под заголовком<span class='faqInFb'> Восстановление компьютера без удаления файлов</span>, чтобы начать восстановление компьютера под управлением Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Дополнительная информация    </div>    <div>        В большинстве случаев восстановление компьютера завершится самостоятельно после его запуска. Однако, если Windows потребуются отсутствующие файлы, отобразится запрос на вставку носителя восстановления, который обычно представляет собой DVD-диск или флэш-накопитель. В этом случае то, что вам нужно, зависит от компьютера.    </div>    <div class='faqInP10'>        Если вы обновили компьютер до Windows 8.1 или Windows RT 8.1 с помощью DVD-диска, используйте этот диск. Если у вас нет носителя Windows 8.1 или Windows RT 8.1, обратитесь в службу поддержки Microsoft.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Восстановление компьютера    </div>    <hr>    <div class='faqInFs25FbP5'>        Признак    </div>    <div class='faqInP5'>        Если компьютер работает не так хорошо, как раньше, и вы не знаете почему, вы можете восстановить компьютер, не удаляя никаких личных файлов и не изменяя настроек. Windows может \"восстановить\" компьютер, чтобы это было похоже на новую установку, без удаления личных файлов.    </div>    <div class='faqInP5'>        При восстановлении компьютера файлы и персональные настройки не изменятся    </div>    <div class='faqInP5'>        <ul>            <li>Параметры ПК будут восстановлены до значений по умолчанию.</li>            <li>Приложения из магазина Windows будут сохранены</li>            <li>Приложения, установленные с диска или веб-сайта, будут удалены</li>            <li>Список удаленных файлов будет сохранен на рабочем столе</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Затрагиваемые торговые марки    </div>    <div>        <ul>            <li>Все настольные ПК и ноутбуки</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Операционная система    </div>    <div>        <ul>            <li>Windows 8, 8.1 и 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Решение    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Коснитесь или щелкните <span class='faqInFb'>Параметры</span>                    </li>                    <li class='faqInP5'>                        Коснитесь или щелкните <span class='faqInFb'>Обновление и восстановление</span>                    </li>                    <li class='faqInP5'>                        <div>Коснитесь или щелкните <span class='faqInFb'>Восстановление</span></div>                        <div class='faqInP5'>В разделе \"Восстановление компьютера без удаления файлов\" коснитесь или щелкните <span class='faqInFb'>Начать.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        Нажмите кнопку <span class='faqInFb'>Далее</span>.                    </li>                    <li class='faqInP5'>                        Нажмите кнопку <span class='faqInFb'>Восстановить</span>, чтобы начать процесс восстановления.                    </li>                    <li class='faqInP5'>                        По завершении процесса восстановления на рабочем столе отобразится список удаленных приложений                    </li>                    <li class='faqInP5'>                        Вы можете найти удаленные приложения во время восстановления системы                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Введите <span class='faqInFb'>восстановить </span>в инструменте поиска, доступном в меню \"Пуск\".</li>                    <li class='faqInP5'>                        <div>Нажмите <span class='faqInFb'>Восстановление компьютера без удаления файлов</span> в результатах поиска, как показано ниже.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Нажмите кнопку <span class='faqInFb'>Начать</span> сразу под заголовком<span class='faqInFb'> Восстановление компьютера без удаления файлов</span>, чтобы начать восстановление компьютера под управлением Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Дополнительная информация    </div>    <div>        В большинстве случаев восстановление компьютера завершится самостоятельно после его запуска. Однако, если Windows потребуются отсутствующие файлы, отобразится запрос на вставку носителя восстановления, который обычно представляет собой DVD-диск или флэш-накопитель. В этом случае то, что вам нужно, зависит от компьютера.    </div>    <div class='faqInP10'>        Если вы обновили компьютер до Windows 8.1 или Windows RT 8.1 с помощью DVD-диска, используйте этот диск. Если у вас нет носителя Windows 8.1 или Windows RT 8.1, обратитесь в службу поддержки Microsoft.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2603,7 +2617,7 @@
         },
         "question6": {
             "title": "Знакомство с Кортаной, вашим личным помощником",
-            "description": "<div class='faqInFs4Fb'>    Знакомство с Кортаной, вашим личным помощником</div><hr><h3 class='faqInFs25FbP10'>Что такое Кортана?</h3><hr /><p>Кортана &mdash; это ваш цифровой агент. Она поможет выполнять поставленные задачи.</p><p>Чем больше вы используете Кортану, тем более персонализированным будет ваше взаимодействие.</p><p>Чтобы начать работу, введите вопрос в поле поиска или выберите микрофон и поговорите с Кортаной. (Набор текста работает на всех типах ПК, но для разговора нужен микрофон.)</p><p>Если вы не уверены, что сказать, вы увидите предложения на экране блокировки и на домашней странице Кортаны при выборе окна поиска на панели задач.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Домашняя страница 2. Записная книжка 3. Параметры 4. Отзывы</li></ol><p>Вот несколько примеров того, что может делать Кортана:</p><ul>    <li>Отправлять напоминания на основании времени, мест или людей.</li>    <li>Отслеживать пакеты, группы, интересы и рейсы.</li>    <li>Отправлять сообщения электронной почты и тексты.</li>    <li>Управлять календарем и держать вас в курсе событий.</li>    <li>Создавать списки и управлять ими.</li>    <li>Общаться и играть в игры.</li>    <li>Искать факты, файлы, места и информацию.</li>    <li>Открывать любое приложение в системе.</li></ul><h3 class='faqInFs25FbP10'>Попробуйте установить напоминание</h3><hr /><p>Одна из функций Кортаны &mdash; отправлять напоминания. Она может напомнить вам что-то сделать на основании времени, мест или даже людей.</p><p>Например, введите или скажите: \"Напомни мне поздравить Таню в следующий раз, когда она позвонит\".</p><p>Напоминание отобразится, когда вы получите звонок от Тани.</p><p>Дополнительный бонус: если у вас есть Windows Phone или Кортана для iPhone или Android, вы можете настроить Кортану для синхронизации уведомлений между компьютером и телефоном.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Привет, Кортана!</h3><hr /><p>Настройте Кортану, чтобы она слышала вас каждый раз, когда вы будете говорить \"Привет, Кортана!\" Выберите поле поиска на панели задач, чтобы открыть домашнюю страницу Кортаны. Затем выберите <strong>Параметры</strong> и включите параметр <strong>Разрешить Кортане отвечать на фразу \"Привет, Кортана!\"</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Примечание</p><p>Кортана доступна только в определенных странах/регионах, и некоторые функции Кортаны могут быть доступны не везде.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Знакомство с Кортаной, вашим личным помощником</div><hr><h3 class='faqInFs25FbP10'>Что такое Кортана?</h3><hr /><p>Кортана &mdash; это ваш цифровой агент. Она поможет выполнять поставленные задачи.</p><p>Чем больше вы используете Кортану, тем более персонализированным будет ваше взаимодействие.</p><p>Чтобы начать работу, введите вопрос в поле поиска или выберите микрофон и поговорите с Кортаной. (Набор текста работает на всех типах ПК, но для разговора нужен микрофон.)</p><p>Если вы не уверены, что сказать, вы увидите предложения на экране блокировки и на домашней странице Кортаны при выборе окна поиска на панели задач.</p><p><img src='./../../../assets/images/qa/6.1.jpg' /></p><ol>    <li>Домашняя страница 2. Записная книжка 3. Параметры 4. Отзывы</li></ol><p>Вот несколько примеров того, что может делать Кортана:</p><ul>    <li>Отправлять напоминания на основании времени, мест или людей.</li>    <li>Отслеживать пакеты, группы, интересы и рейсы.</li>    <li>Отправлять сообщения электронной почты и тексты.</li>    <li>Управлять календарем и держать вас в курсе событий.</li>    <li>Создавать списки и управлять ими.</li>    <li>Общаться и играть в игры.</li>    <li>Искать факты, файлы, места и информацию.</li>    <li>Открывать любое приложение в системе.</li></ul><h3 class='faqInFs25FbP10'>Попробуйте установить напоминание</h3><hr /><p>Одна из функций Кортаны &mdash; отправлять напоминания. Она может напомнить вам что-то сделать на основании времени, мест или даже людей.</p><p>Например, введите или скажите: \"Напомни мне поздравить Таню в следующий раз, когда она позвонит\".</p><p>Напоминание отобразится, когда вы получите звонок от Тани.</p><p>Дополнительный бонус: если у вас есть Windows Phone или Кортана для iPhone или Android, вы можете настроить Кортану для синхронизации уведомлений между компьютером и телефоном.</p><p><img src='./../../../assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>Привет, Кортана!</h3><hr /><p>Настройте Кортану, чтобы она слышала вас каждый раз, когда вы будете говорить \"Привет, Кортана!\" Выберите поле поиска на панели задач, чтобы открыть домашнюю страницу Кортаны. Затем выберите <strong>Параметры</strong> и включите параметр <strong>Разрешить Кортане отвечать на фразу \"Привет, Кортана!\"</strong></p><p><img src='./../../../assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>Примечание</p><p>Кортана доступна только в определенных странах/регионах, и некоторые функции Кортаны могут быть доступны не везде.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2861,7 +2875,7 @@
             "storage": "Хранение",
             "wireless": "Беспроводная связь"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Имейте в виду, что тесты будут отменены при переходе системы в спящий режим или режим гибернации"
     },
     "smartPerformance": {
         "title": "Health & Support",

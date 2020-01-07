@@ -78,7 +78,7 @@
 				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.NotSupportACAdapter"
 					class="icomoon icomoon-ConditionACAdapterError"></span>
 			</div>
-			<div *ngIf="batteryConditions[i].condition == batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams?.acWattage!=0"
+			<div *ngIf="batteryConditions[i].condition == batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
 				class="p-0 pr-2 col-auto adapter-support">
 				<span class="icomoon icomoon-ConditionACAdapterError"></span>
 			</div>
@@ -87,8 +87,7 @@
 					[innerHTML]="batteryConditionNote | translate:param"
 					id="myDevice-settings-battery-condition-tip"
 					role="text"></span>
-				<span
-					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
+				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
 					[innerHTML]="batteryConditionNote | translate:acAdapterInfoParams"
 					id="myDevice-settings-battery-condition-tip"
 					role="text"></span>

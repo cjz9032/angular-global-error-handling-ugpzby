@@ -6,7 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class HtmlTextPipe implements PipeTransform {
 
 	transform(value: any, ...args: any[]): any {
-		return value.replace(/<[^>]*>|/g, '');
+		const div = document.createElement('div');
+		div.innerHTML = value;
+		return div.innerText;
 	}
 
 }

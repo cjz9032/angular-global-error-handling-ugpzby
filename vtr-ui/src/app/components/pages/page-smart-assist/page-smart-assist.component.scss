@@ -297,6 +297,7 @@
 		p {
 			font-size: $body;
 			font-weight: $weight_light;
+			max-width: 60rem !important;
 		}
 	}
 	.fac-control {
@@ -304,4 +305,14 @@
 		padding-top: 1.5rem;
 	}
 
+}
+
+.smart-assist-card {
+	::ng-deep .vtr-ui-button {
+		.button-box {
+			.button {
+				min-height: 3.5rem !important;
+			}
+		}
+	}
 }

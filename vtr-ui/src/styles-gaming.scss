@@ -1603,6 +1603,12 @@ vtr-container-card {
 	}
 }
 
+.vtr-header-main-inner{
+	@media #{$breakpoint_xl} {
+			padding-right: 3.2rem !important;
+		}
+}
+
 .is-gaming,
 .gaming-help-popup,
 .battery-modal-size {

@@ -841,7 +841,7 @@
                 "hour": "ura",
                 "minutes": "minut",
                 "minute": "minuta",
-                "charge": "Čas, potreben, da je baterija popolnoma napolnjena",
+                "charge": "Čas za popolno napolnjenost baterije",
                 "button": "OGLEJTE SI PODROBNOSTI O BATERIJI",
                 "details": {
                     "title": "Podrobnosti baterije",
@@ -1125,7 +1125,8 @@
                             "yes": "Da",
                             "description3": "Ali ste prepričani, da želite ustaviti ponastavitev merilnika za baterijo?"
                         },
-                        "dual_note": "Opomba: hkrati lahko ponastavite samo eno baterijo."
+                        "dual_note": "Opomba: hkrati lahko ponastavite samo eno baterijo.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1363,8 +1364,8 @@
                             "alwaysOn": "Vedno vklopljeno",
                             "never": "nikoli",
                             "halfTime": "Polovica časa časovnika za izklop zaslona",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Izbira",
+                            "time": "Ura"
                         },
                         "taskBarDimmer": "ZATEMNJEVALNIK OPRAVILNE VRSTICE",
                         "backgroundDimmer": "ZATEMNJEVALNIK OZADJA",
@@ -1530,6 +1531,19 @@
                     "control2": "KONTROLNIKI MIŠKE",
                     "control3": "KONTROLNIKI TRACKPOINT",
                     "less": "MANJ"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1910,7 +1924,7 @@
             "otherSoftwareLicenses": "Druge licence za programsko opremo",
             "ourWebsite": "Naše spletno mesto",
             "aboutYourDevice": "O vaši napravi",
-            "copyright": "© 2002–2019 Lenovo – vse pravice so pridržane"
+            "copyright": "© 2002–2020 Lenovo – vse pravice so pridržane"
         },
         "quickAccess": {
             "categories": "Kategorije",
@@ -1940,47 +1954,47 @@
             "passwordText": "Vsa gesla varno shranjujte in upravljajte tako, da bodo šifrirana z aplikacijo za profesionalno digitalno zaščito. Ne shranjujte jih zgolj v brskalniku, do katerega lahko brez vaše vednosti dostopajo drugi.",
             "enhanceTitle": "Kako lahko izboljšam varnostno zaščito?",
             "enhanceText": "Močno priporočamo, da naprave zaščitite vsaj tako, da namestite protivirusno programsko opremo in požarni zid ter nastavite obvestila nadzora uporabniškega računa. Ustvarite močna gesla in jih varno upravljajte, kot dodatno zaščito pa pri uporabi javnih omrežij šifrirajte podatke.",
-            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
-            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
-            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
-            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
-            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
-            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
-            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
-            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
-            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
-            "windows": "Windows Activation",
-            "goAntivirus": "go to antivirus",
-            "goFirewall": "go to firewall",
-            "goPassword": "go to passwordManger",
-            "goWifi": "go to wifi-security",
-            "goVpn": "go to VPN security",
-            "visitWindows": "Visit Windows Activation",
-            "visitFingerprint": "Visit Fingerprint reader",
-            "visitUac": "Visit User Account Control",
-            "visitHde": "Visit Hard drive encryption",
-            "haveOwnPassword": "I have my own password manager",
-            "haveOwnWifi": "I have my own wifi security",
-            "haveOwnVpn": "I have my own wifi security",
-            "uac": "User Account Control (UAC)",
-            "uacTitles": "User Account Control",
-            "hde": "Hard drive encryption",
-            "level": "Security Level:",
-            "noProtection": "No protection",
-            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
-            "basic": "BASIC",
-            "basicTitle": "Basic protection",
-            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
-            "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own",
-            "basicSecurity": "BASIC SECURITY",
-            "advancedSecurity": "ADVANCED SECURITY",
-            "intermediateSecurity": "INTERMEDIATE SECURITY"
+            "antivirusContent": "Uporabite protivirusno programsko opremo za preprečevanje, zaznavanje in odstranjevanje zlonamerne programske opreme iz naprav.",
+            "firewallContent": "Požarni zid vzpostavi prepreko med zaupanja vrednim notranjim omrežjem in zunanjim omrežjem, ki ni vredno zaupanja, ki spremlja in nadzoruje dohodni in odhodni omrežni promet na podlagi vnaprej določenih varnostnih pravil.",
+            "windowsActiveContent": "Če uporabljate originalno kopijo sistema Windows, boste morda manj izpostavljeni varnostnim grožnjam.",
+            "passwordContent": "Uporabite varnejši in enostavnejši način za upravljanje gesel, plačil in osebnih podatkov. Poleg tega lahko ustvarite močna, zapletena gesla in se takoj prijavite na vsakem spletnem mestu.",
+            "fingerprintContent": "Hiter in varen način za prijavo v sistem Windows, plačevanje in povezovanje z aplikacijami in storitvami.",
+            "uacContent": "Premaknite drsnik, da izberete, v kolikšni meri želite, da vas Nadzor uporabniškega računa zaščiti pred morebitnimi škodljivimi spremembami.",
+            "wifiContent": "Napredna storitev programske opreme, ki vaši napravi pomaga razlikovati med varnimi brezžičnimi omrežji in morebitnimi zlonamernimi.",
+            "bitLockerContent": "Zaščitite datoteke in mape pred nepooblaščenim dostopom s šifriranjem podatkov na trdem disku.",
+            "vpnContent": "S storitvijo VPN šifrirajte podatke, ki jih pošiljate in prejemate v javnem omrežju Wi-Fi, ter poskrbite, da bo vaša spletna dejavnost varna in zasebna.",
+            "windows": "Aktiviranje sistema Windows",
+            "goAntivirus": "odpri protivirusno zaščito",
+            "goFirewall": "odpri požarni zid",
+            "goPassword": "odpri Upravitelja gesel",
+            "goWifi": "odpri varnost Wi-Fi-ja",
+            "goVpn": "odpri varnost VPN-ja",
+            "visitWindows": "Obiščite Aktiviranje sistema Windows",
+            "visitFingerprint": "Obiščite Bralnik prstnih odtisov",
+            "visitUac": "Obiščite Nadzor uporabniškega računa",
+            "visitHde": "Obiščite Šifriranje trdega diska",
+            "haveOwnPassword": "Imam svojega upravitelja gesel",
+            "haveOwnWifi": "Imam lastno varnost Wi-Fi-ja",
+            "haveOwnVpn": "Imam lastno varnost VPN-ja",
+            "uac": "Nadzor uporabniškega računa (UAC)",
+            "uacTitles": "Nadzor uporabniškega računa",
+            "hde": "Šifriranje trdega diska",
+            "level": "Raven varnosti:",
+            "noProtection": "Brez zaščite",
+            "noProtectionDesc": "Naprava nima varnostne zaščite, zato je kot minimalna zaščita omogočen Windows Defender. Če želite zaščititi napravo pred dohodnimi grožnjami, namestite protivirusno programsko opremo.",
+            "basic": "OSNOVNO",
+            "basicTitle": "Osnovna zaščita",
+            "basicDesc": "Vaša naprava ima omogočeno le osnovno varnostno zaščito. Za boljšo zaščito omogočite obvestila UAC in uporabite upravitelja gesel.",
+            "intermediate": "SREDNJA",
+            "intermediateTitle": "Srednja zaščita",
+            "intermediateDesc": "Odlično! Še korak vam manjka do dodatne zaščite. Šifrirajte podatke in spremljajte kršitve varnosti omrežja.",
+            "advanced": "DODATNA",
+            "advancedTitle": "Dodatna zaščita",
+            "advancedDesc": "Čestitamo! Vaša naprava ima omogočeno osnovno, srednjo in dodatno varnostno zaščito. Odlično!",
+            "haveOwn": "Imam svojo",
+            "basicSecurity": "OSNOVNA VARNOST",
+            "advancedSecurity": "DODATNA VARNOST",
+            "intermediateSecurity": "SREDNJA VARNOST"
         },
         "antivirus": {
             "common": {
@@ -2292,7 +2306,7 @@
         },
         "question1": {
             "title": "Varnostno kopiranje in obnovitev datotek",
-            "description": "<div>    <div class='faqInFs4Fb'>        Varnostno kopiranje in obnovitev datotek    </div>    <hr />    <div class='faqInMb7'>        Vedno je dobro imeti varnostno kopijo datotek. Kopije datotek hranite na drugem pogonu za vsak primer, če se kaj nepredvidenega zgodi z izvirniki.    </div>    <div class='faqInFs3Fb'>        Nastavitev varnostnega kopiranja    </div>    <hr />    <div class='mb-5'>        Izberite gumb <span class='faqInFb'>Start</span>, odprite <span class='faqInFb'>Nastavitve</span> > <span class='faqInFb'>Posodabljanje in varnost</span> > <span class='faqInFb'>Varnostno kopiranje</span> > <span class='faqInFb'>Dodaj pogon</span> in nato izberite zunanji pogon ali omrežno mesto za shranjevanje varnostnih kopij.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Postopek je končan. Varnostna kopija vsebine uporabniške mape (C:\\\\Users\\\\username) bo izdelana vsako uro. Če želite spremeniti, katere datoteke se varnostno kopirajo ali kako pogosto se izdelujejo varnostne kopije, odprite <span class='faqInFb'>Več možnosti</span>.    </div>    <div class='faqInFs3Fb'>        Obnovite datoteke    </div>    <div class='mb-5'>        Če ne najdete pomembne datoteke ali mape, jo lahko obnovite tako:    </div>    <div>        <div class='mb-3'>1. V iskalno polje v opravilni vrstici vnesite <span class='faqInFb'>Obnovitev datotek</span> in nato izberite <span class='faqInFb'>Obnovite datoteke z Zgodovino datoteke</span>.</div>        <div class='mb-3'>2. Poiščite želeno datoteko in nato uporabite puščice, da si ogledate vse njene različice</div>        <div class='mb-3'>3. Ko najdete želeno različico, izberite <span class='faqInFb'>Obnovi</span>, če želite datoteko shraniti na prvotno mesto. Če jo želite shraniti na drugo mesto, pridržite (ali z desno tipko miške kliknite) <span class='faqInFb'>Obnovi</span>, izberite <span class='faqInFb'>Obnovi v</span> in nato izberite novo mesto.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Varnostno kopiranje in obnovitev datotek    </div>    <hr />    <div class='faqInMb7'>        Vedno je dobro imeti varnostno kopijo datotek. Kopije datotek hranite na drugem pogonu za vsak primer, če se kaj nepredvidenega zgodi z izvirniki.    </div>    <div class='faqInFs3Fb'>        Nastavitev varnostnega kopiranja    </div>    <hr />    <div class='mb-5'>        Izberite gumb <span class='faqInFb'>Start</span>, odprite <span class='faqInFb'>Nastavitve</span> > <span class='faqInFb'>Posodabljanje in varnost</span> > <span class='faqInFb'>Varnostno kopiranje</span> > <span class='faqInFb'>Dodaj pogon</span> in nato izberite zunanji pogon ali omrežno mesto za shranjevanje varnostnih kopij.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Postopek je končan. Varnostna kopija vsebine uporabniške mape (C:\\\\Users\\\\username) bo izdelana vsako uro. Če želite spremeniti, katere datoteke se varnostno kopirajo ali kako pogosto se izdelujejo varnostne kopije, odprite <span class='faqInFb'>Več možnosti</span>.    </div>    <div class='faqInFs3Fb'>        Obnovite datoteke    </div>    <div class='mb-5'>        Če ne najdete pomembne datoteke ali mape, jo lahko obnovite tako:    </div>    <div>        <div class='mb-3'>1. V iskalno polje v opravilni vrstici vnesite <span class='faqInFb'>Obnovitev datotek</span> in nato izberite <span class='faqInFb'>Obnovite datoteke z Zgodovino datoteke</span>.</div>        <div class='mb-3'>2. Poiščite želeno datoteko in nato uporabite puščice, da si ogledate vse njene različice</div>        <div class='mb-3'>3. Ko najdete želeno različico, izberite <span class='faqInFb'>Obnovi</span>, če želite datoteko shraniti na prvotno mesto. Če jo želite shraniti na drugo mesto, pridržite (ali z desno tipko miške kliknite) <span class='faqInFb'>Obnovi</span>, izberite <span class='faqInFb'>Obnovi v</span> in nato izberite novo mesto.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -2333,7 +2347,7 @@
         },
         "question2": {
             "title": "Osveževanje računalnika",
-            "description": "<div>    <div class='faqInFs4Fb'>        Osveževanje računalnika    </div>    <hr>    <div class='faqInFs25FbP5'>        Znamenje težav    </div>    <div class='faqInP5'>        Če računalnik iz vam neznanih razlogov ne deluje več tako dobro kot nekoč, lahko računalnik osvežite brez brisanja osebnih datotek ali spreminjanja nastavitev. Sistem Windows lahko »osveži« računalnik brez brisanja osebnih datotek, da bo deloval kot ob novi namestitvi operacijskega sistema.    </div>    <div class='faqInP5'>        Ob osvežitvi računalnika se zgodi to: datoteke in prilagojene nastavitve ostanejo nespremenjene    </div>    <div class='faqInP5'>        <ul>            <li>Nastavitve računalnika se ponastavijo na privzete vrednosti</li>            <li>Programi iz Trgovine Windows se ohranijo</li>            <li>Programi, ki ste jih namestili z diska ali spletnega mesta, se odstranijo</li>            <li>Seznam odstranjenih datotek se shrani na namizju</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Blagovne znamke, na katere to vpliva    </div>    <div>        <ul>            <li>Vsi namizni in prenosni računalniki</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Operacijski sistem    </div>    <div>        <ul>            <li>Windows 8, 8.1 in 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Rešitev    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Tapnite ali kliknite <span class='faqInFb'>Nastavitve</span>                    </li>                    <li class='faqInP5'>                        Tapnite ali kliknite <span class='faqInFb'>Posodobitev in obnovitev</span>                    </li>                    <li class='faqInP5'>                        <div>Tapnite ali kliknite <span class='faqInFb'>Obnovitev</span></div>                        <div class='faqInP5'>V razdelku »Osvežitev računalnika brez vpliva na datoteke« tapnite ali kliknite <span class='faqInFb'>Začetek</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Kliknite <span class='faqInFb'>Naprej</span>.                    </li>                    <li class='faqInP5'>                        Kliknite <span class='faqInFb'>Osveži</span>, da zaženete postopek osveževanja.                    </li>                    <li class='faqInP5'>                        Po končanem postopku osveževanja bo na namizju prikazan seznam odstranjenih programov                    </li>                    <li class='faqInP5'>                        Odstranjene programe si lahko ogledate med osveževanjem sistema                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Z orodjem za iskanje v meniju Start poiščite izraz <span class='faqInFb'>osvežitev</span>.</li>                    <li class='faqInP5'>                        <div>V rezultatih iskanja kliknite <span class='faqInFb'>Osvežitev računalnika brez vpliva na datoteke</span>, kot je prikazano spodaj.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Kliknite gumb <span class='faqInFb'>Začetek</span> tik pod naslovom <span class='faqInFb'>Osvežitev računalnika brez vpliva na datoteke</span>, da zaženete osveževanje računalnika s sistemom Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Dodatne informacije    </div>    <div>        V večini primerov se osveževanje računalnika dokonča samodejno. Če pa sistem Windows potrebuje manjkajoče datoteke, boste morali ob pozivu vstaviti medij za obnovitev namestitve, ki je običajno na DVD-disku ali pogonu USB. V tem primeru je od računalnika odvisno, kaj vse boste potrebovali.    </div>    <div class='faqInP10'>        Če ste sistem nadgradili na različico Windows 8.1 ali Windows RT 8.1 z uporabo DVD-diska, uporabite isti disk. Če nimate medija s sistemom Windows 8.1 ali Windows RT 8.1, se obrnite na Microsoftovo podporo.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Osveževanje računalnika    </div>    <hr>    <div class='faqInFs25FbP5'>        Znamenje težav    </div>    <div class='faqInP5'>        Če računalnik iz vam neznanih razlogov ne deluje več tako dobro kot nekoč, lahko računalnik osvežite brez brisanja osebnih datotek ali spreminjanja nastavitev. Sistem Windows lahko »osveži« računalnik brez brisanja osebnih datotek, da bo deloval kot ob novi namestitvi operacijskega sistema.    </div>    <div class='faqInP5'>        Ob osvežitvi računalnika se zgodi to: datoteke in prilagojene nastavitve ostanejo nespremenjene    </div>    <div class='faqInP5'>        <ul>            <li>Nastavitve računalnika se ponastavijo na privzete vrednosti</li>            <li>Programi iz Trgovine Windows se ohranijo</li>            <li>Programi, ki ste jih namestili z diska ali spletnega mesta, se odstranijo</li>            <li>Seznam odstranjenih datotek se shrani na namizju</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Blagovne znamke, na katere to vpliva    </div>    <div>        <ul>            <li>Vsi namizni in prenosni računalniki</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Operacijski sistem    </div>    <div>        <ul>            <li>Windows 8, 8.1 in 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Rešitev    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Tapnite ali kliknite <span class='faqInFb'>Nastavitve</span>                    </li>                    <li class='faqInP5'>                        Tapnite ali kliknite <span class='faqInFb'>Posodobitev in obnovitev</span>                    </li>                    <li class='faqInP5'>                        <div>Tapnite ali kliknite <span class='faqInFb'>Obnovitev</span></div>                        <div class='faqInP5'>V razdelku »Osvežitev računalnika brez vpliva na datoteke« tapnite ali kliknite <span class='faqInFb'>Začetek</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        Kliknite <span class='faqInFb'>Naprej</span>.                    </li>                    <li class='faqInP5'>                        Kliknite <span class='faqInFb'>Osveži</span>, da zaženete postopek osveževanja.                    </li>                    <li class='faqInP5'>                        Po končanem postopku osveževanja bo na namizju prikazan seznam odstranjenih programov                    </li>                    <li class='faqInP5'>                        Odstranjene programe si lahko ogledate med osveževanjem sistema                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Z orodjem za iskanje v meniju Start poiščite izraz <span class='faqInFb'>osvežitev</span>.</li>                    <li class='faqInP5'>                        <div>V rezultatih iskanja kliknite <span class='faqInFb'>Osvežitev računalnika brez vpliva na datoteke</span>, kot je prikazano spodaj.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Kliknite gumb <span class='faqInFb'>Začetek</span> tik pod naslovom <span class='faqInFb'>Osvežitev računalnika brez vpliva na datoteke</span>, da zaženete osveževanje računalnika s sistemom Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Dodatne informacije    </div>    <div>        V večini primerov se osveževanje računalnika dokonča samodejno. Če pa sistem Windows potrebuje manjkajoče datoteke, boste morali ob pozivu vstaviti medij za obnovitev namestitve, ki je običajno na DVD-disku ali pogonu USB. V tem primeru je od računalnika odvisno, kaj vse boste potrebovali.    </div>    <div class='faqInP10'>        Če ste sistem nadgradili na različico Windows 8.1 ali Windows RT 8.1 z uporabo DVD-diska, uporabite isti disk. Če nimate medija s sistemom Windows 8.1 ali Windows RT 8.1, se obrnite na Microsoftovo podporo.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2603,7 +2617,7 @@
         },
         "question6": {
             "title": "Spoznavanje osebne pomočnice Cortane",
-            "description": "<div class='faqInFs4Fb'>    Spoznavanje osebne pomočnice Cortane</div><hr><h3 class='faqInFs25FbP10'>Kaj je Cortana?</h3><hr /><p>Cortana je vaša digitalna pomočnica. Pomagala vam bo pri izvajanju opravil.</p><p>Čim več jo boste uporabljali, tem bolje se boste z njo razumeli in tem boljša bo vaša uporabniška izkušnja.</p><p>Če želite začeti, vnesite vprašanje v iskalno polje ali izberite mikrofon in se pogovorite s Cortano. (Vnašanje s tipkovnico deluje v vseh vrstah računalnikov, medtem ko boste za pogovor potrebovali mikrofon.)</p><p>Če ne veste, kaj reči, si lahko pomagate s predlogi, ki se prikažejo na zaklenjenem zaslonu in na začetnem zaslonu aplikacije Cortana, ko v opravilni vrstici izberete iskalno polje.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Začetni zaslon 2. Beležnica 3. Nastavitve 4. Povratne informacije</li></ol><p>Cortana lahko za vas med drugim izvaja ta opravila:</p><ul>    <li>Prikazuje opomnike na podlagi ure, krajev ali ljudi.</li>    <li>Sledi pošiljkam, spremlja zaposlene in letalske polete ter beleži, kaj vas zanima.</li>    <li>Pošilja elektronsko pošto in sporočila SMS.</li>    <li>Upravlja koledar in vas sproti obvešča o dogodkih v koledarju.</li>    <li>Ustvarja in upravlja sezname.</li>    <li>Klepeta in igra igre.</li>    <li>Išče verodostojne podatke, datoteke, kraje in informacije.</li>    <li>Odpira poljubne programe, nameščene v sistemu.</li></ul><h3 class='faqInFs25FbP10'>Preizkusite jo tako, da nastavite opomnik</h3><hr /><p>Prikazovanje opomnikov je ena od reči, ki jih Cortana obvlada. Na podlagi ure, krajev in celo ljudi vas lahko opomni na opravila, ki vas čakajo.</p><p>Vnesite ali izgovorite na primer: »Opomni me, naj čestitam Tanji, ko me naslednjič pokliče«.</p><p>Ko vas bo Tanja naslednjič poklicala, se bo opomnik prikazal samodejno.</p><p>In še posladek: če uporabljate telefon Windows Phone ali aplikacijo Cortana za iPhone ali Android, lahko Cortana ob ustreznih nastavitvah poskrbi za sinhroniziranje obvestil med računalnikom in telefonom.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Živijo, Cortana</h3><hr /><p>Cortano lahko nastavite, da se odzove vsakič, ko rečete »Živijo, Cortana«. Izberite iskalno polje v opravilni vrstici, da odprete začetni zaslon aplikacije Cortana. Nato izberite <strong>Nastavitve</strong> in vklopite možnost <strong>Cortana naj se odzove na »Živijo, Cortana«</strong>.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Opomba</p><p>Cortana je na voljo le v nekaterih državah/regijah in nekatere njene funkcije morda niso povsod na voljo.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Spoznavanje osebne pomočnice Cortane</div><hr><h3 class='faqInFs25FbP10'>Kaj je Cortana?</h3><hr /><p>Cortana je vaša digitalna pomočnica. Pomagala vam bo pri izvajanju opravil.</p><p>Čim več jo boste uporabljali, tem bolje se boste z njo razumeli in tem boljša bo vaša uporabniška izkušnja.</p><p>Če želite začeti, vnesite vprašanje v iskalno polje ali izberite mikrofon in se pogovorite s Cortano. (Vnašanje s tipkovnico deluje v vseh vrstah računalnikov, medtem ko boste za pogovor potrebovali mikrofon.)</p><p>Če ne veste, kaj reči, si lahko pomagate s predlogi, ki se prikažejo na zaklenjenem zaslonu in na začetnem zaslonu aplikacije Cortana, ko v opravilni vrstici izberete iskalno polje.</p><p><img src='./../../../assets/images/qa/6.1.jpg' /></p><ol>    <li>Začetni zaslon 2. Beležnica 3. Nastavitve 4. Povratne informacije</li></ol><p>Cortana lahko za vas med drugim izvaja ta opravila:</p><ul>    <li>Prikazuje opomnike na podlagi ure, krajev ali ljudi.</li>    <li>Sledi pošiljkam, spremlja zaposlene in letalske polete ter beleži, kaj vas zanima.</li>    <li>Pošilja elektronsko pošto in sporočila SMS.</li>    <li>Upravlja koledar in vas sproti obvešča o dogodkih v koledarju.</li>    <li>Ustvarja in upravlja sezname.</li>    <li>Klepeta in igra igre.</li>    <li>Išče verodostojne podatke, datoteke, kraje in informacije.</li>    <li>Odpira poljubne programe, nameščene v sistemu.</li></ul><h3 class='faqInFs25FbP10'>Preizkusite jo tako, da nastavite opomnik</h3><hr /><p>Prikazovanje opomnikov je ena od reči, ki jih Cortana obvlada. Na podlagi ure, krajev in celo ljudi vas lahko opomni na opravila, ki vas čakajo.</p><p>Vnesite ali izgovorite na primer: »Opomni me, naj čestitam Tanji, ko me naslednjič pokliče«.</p><p>Ko vas bo Tanja naslednjič poklicala, se bo opomnik prikazal samodejno.</p><p>In še posladek: če uporabljate telefon Windows Phone ali aplikacijo Cortana za iPhone ali Android, lahko Cortana ob ustreznih nastavitvah poskrbi za sinhroniziranje obvestil med računalnikom in telefonom.</p><p><img src='./../../../assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>Živijo, Cortana</h3><hr /><p>Cortano lahko nastavite, da se odzove vsakič, ko rečete »Živijo, Cortana«. Izberite iskalno polje v opravilni vrstici, da odprete začetni zaslon aplikacije Cortana. Nato izberite <strong>Nastavitve</strong> in vklopite možnost <strong>Cortana naj se odzove na »Živijo, Cortana«</strong>.</p><p><img src='./../../../assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>Opomba</p><p>Cortana je na voljo le v nekaterih državah/regijah in nekatere njene funkcije morda niso povsod na voljo.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2647,7 +2661,7 @@
         "bullets2": "Varnostni svetovalec poenostavi upravljanje varnosti (na voljo v izbranih sistemih).",
         "bullets3": "Samodejne posodobitve zagotovijo, da je vaša naprava vedno v optimalnem stanju (na voljo v izbranih sistemih).",
         "subtitle1": "Kako boste uporabljali napravo?",
-        "subtitle2": "Povejte nam, kaj vas zanima (izbirno)",
+        "subtitle2": "Zaupajte nam, kaj vas zanima (izbirno)",
         "personal": "Osebna uporaba",
         "business": "Poslovna uporaba",
         "custom": "Izkušnja po meri",
@@ -2861,7 +2875,7 @@
             "storage": "Pomnilnik",
             "wireless": "Brezžično"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Upoštevajte, da bodo preskusi preklicani, če sistem preide v stanje spanja ali mirovanja"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -165,7 +165,7 @@ export enum LocalStorageKey {
 	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability',
 	VOIPCapability = '[LocalStorageKey] VOIPCapability',
 	DashboardCameraPrivacy = '[LocalStorageKey] DashboardCameraPrivacy',
-	// DashboardMicrophoneStatus = '[LocalStorageKey] DashboardMicrophoneStatus',
+	DashboardMicrophoneStatus = '[LocalStorageKey] DashboardMicrophoneStatus',
 	// DashboardEyeCareMode = '[LocalStorageKey] DashboardEyeCareMode',
 
 	// Auto close storage key
@@ -220,5 +220,8 @@ export enum LocalStorageKey {
 	MicrohoneCapability = '[LocalStorageKey] MicrohoneCapability',
 
 	// TEMP battery condition
-	BatteryCondition = '[LocalStorageKey] batteryCondition'
+	BatteryCondition = '[LocalStorageKey] batteryCondition',
+
+	// UPE
+	UPEChannelTags = '[LocalStorageKey] UPEChannelTags'
 }
