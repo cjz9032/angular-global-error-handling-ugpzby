@@ -750,11 +750,13 @@
 							margin-bottom:0rem;
 						}
 						.gaming-tooltip {// tooltips for multiple HDD and SDD
-							top: -5.5rem; 
+							top: -5rem; 
 							left: 50%;
 							min-width:28rem;
 							padding:1.25rem;
 							transform: translate(-50%);
+							display: inline-block; 
+								opacity: 1;
 							p{
 								line-height: auto;
 								padding:0px;
@@ -763,6 +765,9 @@
 							@media #{$breakpoint_sm}{								
 								min-width:28rem; 
 							}
+						}
+						.gaming-tooltip:first-child {
+							top: -4.5rem; 
 						}
 						&:hover {
 							.gaming-tooltip {
