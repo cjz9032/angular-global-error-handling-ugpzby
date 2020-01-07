@@ -186,21 +186,24 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	}
 
 	getWarrantyInfo() {
-		this.warrantyService.getWarrantyInfo().subscribe((value) => {
-			if (value) {
-				this.warrantyData = {
-					info: {
-						startDate: value.startDate,
-						endDate: value.endDate,
-						status: value.status,
-						dayDiff: value.dayDiff,
-						url: this.warrantyService.getWarrantyUrl()
-					},
-					cache: true
-				};
-				this.warrantyYear = this.warrantyService.getRoundYear(value.dayDiff);
-			}
-		});
+		const info = this.warrantyService.getWarrantyInfo();
+		if (info) {
+			info.subscribe((value) => {
+				if (value) {
+					this.warrantyData = {
+						info: {
+							startDate: value.startDate,
+							endDate: value.endDate,
+							status: value.status,
+							dayDiff: value.dayDiff,
+							url: this.warrantyService.getWarrantyUrl()
+						},
+						cache: true
+					};
+					this.warrantyYear = this.warrantyService.getRoundYear(value.dayDiff);
+				}
+			});
+		}
 	}
 
 	fetchCMSContents(lang?: string) {

@@ -1,13 +1,13 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalLicenseComponent } from '../../modal/modal-license/modal-license.component';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../../environments/environment';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
 
-declare var Windows;
+declare var window;
+
 @Component({
 	selector: 'vtr-modal-about',
 	templateUrl: './modal-about.component.html',
@@ -38,8 +38,8 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 	ngOnInit() {
 		if (this.translate.currentLang) { this.lang = this.translate.currentLang; }
 
-		if (Windows) {
-			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+		if (window.Windows) {
+			const packageVersion = window.Windows.ApplicationModel.Package.current.id.version;
 			// packageVersion.major, packageVersion.minor, packageVersion.build, packageVersion.revision
 			this.shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}.${packageVersion.revision}`;
 		}

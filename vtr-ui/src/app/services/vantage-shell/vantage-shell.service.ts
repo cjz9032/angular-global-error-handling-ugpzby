@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
 
-declare var Windows;
+declare var window;
 
 @Injectable({
 	providedIn: 'root'
@@ -90,8 +90,7 @@ export class VantageShellService {
 		}
 	}
 	private getVantageShell(): any {
-		const win: any = window;
-		return win.VantageShellExtension;
+		return window.VantageShellExtension;
 	}
 
 	private setConsoleLogProxy() {
@@ -175,8 +174,8 @@ export class VantageShellService {
 	}
 
 	public getShellVersion() {
-		if (Windows) {
-			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+		if (window.Windows) {
+			const packageVersion = window.Windows.ApplicationModel.Package.current.id.version;
 			return `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
 		}
 
