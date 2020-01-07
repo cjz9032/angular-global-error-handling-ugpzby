@@ -2875,7 +2875,8 @@
             "storage": "ストレージ",
             "wireless": "ワイヤレス"
         },
-        "warningMessage": "システムがスリープ状態または休止状態になると、テストがキャンセルされることに注意してください"
+        "warningMessage": "システムがスリープ状態または休止状態になると、テストがキャンセルされることに注意してください",
+        "refreshMessage": "Refresh will take some time as need to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",

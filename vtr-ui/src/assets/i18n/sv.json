@@ -2875,7 +2875,8 @@
             "storage": "Lagring",
             "wireless": "Radio"
         },
-        "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge"
+        "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge",
+        "refreshMessage": "Refresh will take some time as need to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2875,7 +2875,8 @@
             "storage": "Opslag",
             "wireless": "Draadloos"
         },
-        "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat"
+        "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat",
+        "refreshMessage": "Refresh will take some time as need to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",

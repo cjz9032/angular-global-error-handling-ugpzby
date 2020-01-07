@@ -2875,7 +2875,8 @@
             "storage": "Хранение",
             "wireless": "Беспроводная связь"
         },
-        "warningMessage": "Имейте в виду, что тесты будут отменены при переходе системы в спящий режим или режим гибернации"
+        "warningMessage": "Имейте в виду, что тесты будут отменены при переходе системы в спящий режим или режим гибернации",
+        "refreshMessage": "Refresh will take some time as need to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",

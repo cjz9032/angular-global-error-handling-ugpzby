@@ -39,7 +39,6 @@
 						metricsEvent="FeatureClick"
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.RefreshModules"
-						[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
 						[ngClass]="{'action-anchor': !startScanClicked, 'disabled-anchor': startScanClicked}"
 						(click)="refreshModules()">{{refreshText}}
 						<fa-icon class="refresh-icon"
@@ -62,6 +61,10 @@
 					<div class="loading-components" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
 						<fa-icon placement="auto" spin="true" [icon]="['fal', 'circle-notch']" container="body">
 						</fa-icon>
+					</div>
+
+					<div class="refresh-message" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
+						<h3>{{ 'hardwareScan.refreshMessage' | translate }}</h3>
 					</div>
 
 					<vtr-widget-hardware-scan-item *ngIf="isScanExecuting()" [items]="modules"

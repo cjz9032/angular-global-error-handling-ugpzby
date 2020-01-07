@@ -106,11 +106,18 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 4rem 0;
+		padding: 4rem 0 2rem 0;
 
 		fa-icon {
 			font-size: 6.5rem;
 			color: $main;
 		}
+	}
+
+	.refresh-message {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 4rem;
 	}
 }

@@ -2875,7 +2875,8 @@
             "storage": "Stocare",
             "wireless": "Fără fir"
         },
-        "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează"
+        "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează",
+        "refreshMessage": "Refresh will take some time as need to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",

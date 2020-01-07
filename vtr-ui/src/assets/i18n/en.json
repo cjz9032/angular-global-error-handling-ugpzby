@@ -1349,8 +1349,8 @@
                             "alwaysOn": "Always on",
                             "never": "Never",
                             "halfTime": "Half time of display off timer",
-                            "select" : "Select",
-                            "time" : "Time"
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "TASKBAR DIMMER",
                         "backgroundDimmer": "BACKGROUND DIMMER",
@@ -3197,7 +3197,8 @@
             "storage": "Storage",
             "wireless": "Wireless"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates",
+        "refreshMessage": "Refresh will take some time as need to load all the components again"
     },
     "notification": {
         "menu": {

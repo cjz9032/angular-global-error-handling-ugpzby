@@ -2875,7 +2875,8 @@
             "storage": "Пам'ять",
             "wireless": "Безпровідні підключення"
         },
-        "warningMessage": "Зауважте: тести буде скасовано, якщо система перейде до режиму сну або глибокого сну"
+        "warningMessage": "Зауважте: тести буде скасовано, якщо система перейде до режиму сну або глибокого сну",
+        "refreshMessage": "Refresh will take some time as need to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",

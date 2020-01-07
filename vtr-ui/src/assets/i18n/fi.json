@@ -2875,7 +2875,8 @@
             "storage": "Tallennus",
             "wireless": "Langattomat yhteydet"
         },
-        "warningMessage": "Muista, että testit peruutetaan, jos järjestelmä on lepo- tai horrostilassa"
+        "warningMessage": "Muista, että testit peruutetaan, jos järjestelmä on lepo- tai horrostilassa",
+        "refreshMessage": "Refresh will take some time as need to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",

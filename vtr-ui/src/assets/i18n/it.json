@@ -2875,7 +2875,8 @@
             "storage": "Memorizzazione",
             "wireless": "Wireless"
         },
-        "warningMessage": "I test verranno annullati se il sistema entra in modalità Ibernazione o Sospensione"
+        "warningMessage": "I test verranno annullati se il sistema entra in modalità Ibernazione o Sospensione",
+        "refreshMessage": "Refresh will take some time as need to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",

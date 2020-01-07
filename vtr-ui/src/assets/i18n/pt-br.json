@@ -2875,7 +2875,8 @@
             "storage": "Armazenamento",
             "wireless": "Wireless"
         },
-        "warningMessage": "Lembre-se de que os testes serão cancelados se o sistema entrar em suspensão ou hibernar"
+        "warningMessage": "Lembre-se de que os testes serão cancelados se o sistema entrar em suspensão ou hibernar",
+        "refreshMessage": "Refresh will take some time as need to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",
