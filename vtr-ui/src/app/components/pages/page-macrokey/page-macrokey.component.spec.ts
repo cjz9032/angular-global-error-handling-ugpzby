@@ -1,15 +1,16 @@
+import { CommonService } from 'src/app/services/common/common.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { HtmlTextPipe } from 'src/app/pipe/html-text/html-text.pipe';
 import { PageLayoutComponent } from './../../page-layout/page-layout.component';
 import { ContainerCardComponent } from './../../container-card/container-card.component';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-import { Observable, Subject } from 'rxjs';
-import { CMSService } from './../../../services/cms/cms.service';
+import { Observable, Subject, of } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 import { DeviceService } from './../../../services/device/device.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { HypothesisService } from './../../../services/hypothesis/hypothesis.service';
 import { LoggerService } from './../../../services/logger/logger.service';
 import { UPEService } from './../../../services/upe/upe.service';
-import { CommonService } from './../../../services/common/common.service';
 import { MacrokeyService } from './../../../services/gaming/macrokey/macrokey.service';
 import { VantageShellService } from './../../../services/vantage-shell/vantage-shell.service';
 import { DashboardService } from './../../../services/dashboard/dashboard.service';
@@ -22,17 +23,38 @@ import { PageMacrokeyComponent } from './page-macrokey.component';
 xdescribe('PageMacrokeyComponent', () => {
 	let component: PageMacrokeyComponent;
 	let fixture: ComponentFixture<PageMacrokeyComponent>;
-	const mockShellService = { getMetrics: function getMetrics() { return 'hii'; } };
+	const mockShellService = { getMetrics: () => 0, getSelfSelect: () => 0, getVantageStub: () => 0 };
 	const mockTitleService = { setTitle: function setTitle() { return 'hii'; } };
 	const onLangChange: Observable<any> = new Subject();
-
-	const mockTranslateService = {onLangChange};
-
+	const cmsContent = {
+		Results: [{
+			Id: 'e64d43892d8448d088f3e6037e385122',
+			Title: 'Header Image DCC', ShortTitle: '', Description: '',
+			FeatureImage: 'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/DCC_top_image.jpg?v=5cf8a0151ea84c4ca43e906339c3c3b2',
+			Action: '', ActionType: null, ActionLink: null, BrandName: '', BrandImage: '',
+			Priority: 'P1', Page: null, Template: 'header', Position: null, ExpirationDate: null,
+			Filters: { 'DeviceTag.Value': { key: 'System.DccGroup', operator: '==', value: 'true' } }
+		},
+		{
+			Id: '8516ba14dba5412ca954c3ccfdcbff90', Title: 'Default Header Image', ShortTitle: '',
+			Description: '', FeatureImage: 'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/Header-Image-Default.jpg?v=5d0bf7fd0065478c977ed284fecac45d',
+			Action: '', ActionType: null, ActionLink: null, BrandName: '', BrandImage: '',
+			Priority: 'P2', Page: null, Template: 'header', Position: null, ExpirationDate: null,
+			Filters: null
+		}], Metadata: { Count: 2 }
+	};
+	const mockTranslateService = { onLangChange };
+	const vantageShellMock = { getMetrics: () => 0 };
+	const commonServiceMock = { getLocalStorageValue: (key) => localStorage.getItem(key) }
+	const cmsMockService = {
+		fetchCMSContent: (test: any) => of(cmsContent)
+	};
 	beforeEach(fakeAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [PageMacrokeyComponent,
 				ContainerCardComponent,
 				PageLayoutComponent,
+				HtmlTextPipe,
 				mockPipe({ name: 'translate' }),
 				mockPipe({ name: 'sanitize' })],
 			schemas: [NO_ERRORS_SCHEMA],
@@ -41,21 +63,21 @@ xdescribe('PageMacrokeyComponent', () => {
 				{ provide: DashboardService, useValue: {} },
 				{ provide: VantageShellService, useValue: mockShellService },
 				{ provide: MacrokeyService, useValue: {} },
-				{ provide: CommonService, useValue: {} },
+				{ provide: CommonService, useValue: commonServiceMock },
 				{ provide: UPEService, useValue: {} },
 				{ provide: LoggerService, useValue: {} },
 				{ provide: HypothesisService, useValue: {} },
 				{ provide: TranslateService, useValue: mockTranslateService },
-				{ provide: DeviceService, useValue: {isGaming: true} },
+				{ provide: DeviceService, useValue: { isGaming: true } },
 				{ provide: Title, useValue: mockTitleService },
-				{ provide: CMSService, useValue: {} }
+				{ provide: CMSService, useValue: cmsMockService }
 			]
 		}).compileComponents();
 		fixture = TestBed.createComponent(PageMacrokeyComponent);
 		component = fixture.debugElement.componentInstance;
 		fixture.detectChanges();
-		component.cardContentPositionF = {Id: 1, FeatureImage: 'TEST'};
-		component.cardContentPositionC = {Id: 1, FeatureImage: 'TEST'};
+		component.cardContentPositionF = { Id: 1, FeatureImage: 'TEST' };
+		component.cardContentPositionC = { Id: 1, FeatureImage: 'TEST' };
 		tick(10);
 		fixture.detectChanges();
 	}

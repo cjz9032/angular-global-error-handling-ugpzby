@@ -91,7 +91,7 @@
 						}
 						font-size: $fontsize_md;
 						font-weight: $weight_light;
-						line-height: 1.2;
+						line-height: 1.4;
 					}
 
 					.logo {
@@ -273,7 +273,7 @@
 						cursor: pointer;
 						font-size: $fontsize_md;
 						font-weight: $weight_light;
-						line-height: 1.2;
+						line-height: 1.4;
 
 						div {
 							cursor: pointer;
@@ -560,14 +560,14 @@
 		.description {
 			color: $main_dark;
 			font-size: 1.1rem;
-			line-height: 1.2;
+			line-height: 1.4;
 		}
 
 		.caption {
 			color: $main_shade;
 			font-size: 2.2rem;
 			line-height: 1.1em;
-			padding-top: 1rem;
+			padding-top: 0.2rem;
 			width: 100%;
 		}
 
