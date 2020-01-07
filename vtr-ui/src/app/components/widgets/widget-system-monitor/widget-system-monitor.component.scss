@@ -625,8 +625,8 @@
 					}
 				}
 				.hd-list {
-					padding: 2rem 0 1rem;
-					width:73%;		
+					padding: 1rem 0 1rem;
+					width:75%;		
 					margin:auto;
 					text-align:left;
 					@media screen and (max-width: 567.9px){
@@ -641,7 +641,10 @@
 					@media screen and (min-width: 992px) and (max-width: 1199.9px) { 
 					padding: 2rem 2.5rem;
 					width:45%;
-					}					 
+					}
+					@media screen and (min-width: 1200px){
+					width:70%;
+					}				 
 					&.single {
 						padding: 2rem;
 						padding-top: 3.5rem;
@@ -659,9 +662,16 @@
 							text-align: center;
 							.gaming-tooltip {	//tooltip for single							
 								min-width: 24rem;							
-								top: -7rem;
+								top: -5.5rem!important;
 								left: 50%;
-								transform: translate(-50%);																					
+								transform: translate(-50%);	
+								display: inline-block; 
+								opacity: 1;	
+								p{
+									line-height: auto;
+									padding:0px;
+									margin:0px;
+								}																
 							}
 
 							&:hover {
@@ -736,16 +746,26 @@
 								display: none;
 							}
 						}
+						&:last-child {
+							margin-bottom:0rem;
+						}
 						.gaming-tooltip {// tooltips for multiple HDD and SDD
-							top: -5.5rem; 
+							top: -5rem; 
 							left: 50%;
 							min-width:28rem;
-							min-height:7rem;
-							padding:1.25rem 1.5rem 1.25rem;
-							transform: translate(-50%);						
+							padding:1.25rem;
+							transform: translate(-50%);
+							p{
+								line-height: auto;
+								padding:0px;
+								margin:0px;
+							}							
 							@media #{$breakpoint_sm}{								
 								min-width:28rem; 
 							}
+						}
+						.gaming-tooltip:first-child {
+							top: -4.5rem; 
 						}
 						&:hover {
 							.gaming-tooltip {

@@ -18,12 +18,14 @@ export class UiListSupportComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	itemClick(item: any) {
+	itemClick(item: any, event: any) {
 		if (item.url) {
 			WinRT.launchUri(item.url);
 		} else if (item.clickItem) {
 			this.supportService.widgetItemClick(item.clickItem);
 		}
+		event.stopPropagation();
+		event.preventDefault();
 	}
 
 }
