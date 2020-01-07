@@ -722,8 +722,8 @@
                 "batteryNotDetected": "未偵測到電池",
                 "thresholdNote": "<b>注意：</b>啟用電池的充電臨界值時，電池無法完全充電。",
                 "seeDetailsLink": "查看詳細資料",
-				"gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。",
+                "dualConditions": {
                     "NotDetected": "<b>未偵測到主要電池。</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "智慧型待命",
-                    "description": "此功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
-                    "tooltip": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程或我們取得的電腦使用情形最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
+                    "description": "這個功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可體驗<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">新式待命</a>的快速回復。",
+                    "tooltip": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程或您的電腦使用情形最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
                     "timer": {
-                        "heading": "您一般使用您的電腦的時間",
+                        "heading": "您一般使用這部電腦的時間：",
                         "subHeading1": "開始",
                         "subHeading2": "結束",
                         "subHeading3": "將此排程用於",
@@ -963,14 +963,14 @@
                     "warningtip": "請至少選擇一天。",
                     "days": {
                         "shortName": {
-                            "sun": "星期日",
-                            "mon": "星期一",
-                            "tue": "星期二",
-                            "wed": "星期三",
-                            "thurs": "星期四",
-                            "fri": "星期五",
-                            "sat": "星期六",
-                            "thu": "星期四"
+                            "sun": "週日",
+                            "mon": "週一",
+                            "tue": "週二",
+                            "wed": "週三",
+                            "thurs": "週四",
+                            "fri": "週五",
+                            "sat": "週六",
+                            "thu": "週四"
                         },
                         "name": {
                             "sun": "星期日",
@@ -987,7 +987,7 @@
                         "noDaySelected": "未選取日期"
                     },
                     "checkbox": "根據您的使用情形自動調整電腦的啟用時間",
-                    "hyperlinkToGraph": "按一下以查看您的計算機表格的活動和啟用時間",
+                    "hyperlinkToGraph": "按一下以查看使用情形和套用的啟用時間",
                     "subTitle": "排程您的電腦",
                     "automaticMode": "自動模式",
                     "manualMode": "手動模式",

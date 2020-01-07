@@ -722,8 +722,8 @@
                 "batteryNotDetected": "Baterie nebyla nalezena",
                 "thresholdNote": "<b>Poznámka:</b> Pokud je aktivován Limit nabíjení baterie, nelze baterii plně nabít.",
                 "seeDetailsLink": "Zobrazit podrobnosti",
-				"gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér.",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér.",
+                "dualConditions": {
                     "NotDetected": "<b>Primární baterie nebyla detekována.</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "Chytrý pohotovostní režim",
-                    "description": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění při intenzivnějším využívání.",
+                    "description": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost opětovného spuštění <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">moderního pohotovostního režimu</a> v době vyšší zátěže.",
                     "tooltip": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným ZAČÁTKEM přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové období se optimalizuje na základě nastaveného plánu nebo doby používání vašeho počítače. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů.",
                     "timer": {
-                        "heading": "Čas, kdy počítač obvykle používáte",
+                        "heading": "Čas, kdy počítač obvykle používáte:",
                         "subHeading1": "pokračovat",
                         "subHeading2": "konec",
                         "subHeading3": "použít toto nastavení pro",
@@ -963,14 +963,14 @@
                     "warningtip": "Vyberte prosím alespoň jeden den.",
                     "days": {
                         "shortName": {
-                            "sun": "neděle",
-                            "mon": "pondělí",
-                            "tue": "úterý",
-                            "wed": "středa",
-                            "thurs": "Čtvrtek",
-                            "fri": "pátek",
-                            "sat": "sobota",
-                            "thu": "Čtvrtek"
+                            "sun": "Ne",
+                            "mon": "Po",
+                            "tue": "Út",
+                            "wed": "St",
+                            "thurs": "Čt",
+                            "fri": "Pá",
+                            "sat": "So",
+                            "thu": "Čt"
                         },
                         "name": {
                             "sun": "neděle",
@@ -987,7 +987,7 @@
                         "noDaySelected": "Není vybrán žádný den"
                     },
                     "checkbox": "Automatické přizpůsobení aktivního času počítače na základě používání",
-                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktivní čas v tabulce pro počítač",
+                    "hyperlinkToGraph": "Kliknutím zobrazíte využití a použitý aktivní čas",
                     "subTitle": "Plánování počítače",
                     "automaticMode": "Automatický režim",
                     "manualMode": "Ruční režim",

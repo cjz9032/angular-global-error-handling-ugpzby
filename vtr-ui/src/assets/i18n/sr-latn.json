@@ -722,8 +722,8 @@
                 "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Baterija se ne može automatski napuniti kada je omogućen Prag punjenja baterije.",
                 "seeDetailsLink": "Pogledajte detalje",
-				"gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen.",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen.",
+                "dualConditions": {
                     "NotDetected": "<b>Primarna baterija nije pronađena.</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "Pametno stanje pripravnosti",
-                    "description": "Ova funkcija zakazuje optimizaciju štednje energije računara tokom časova neaktivnosti bez žrtvovanja vremena brzog pokretanja tokom časova intenzivnijeg korišćenja.",
-                    "tooltip": "Kad je omogućena funkcija Pametno vreme pripravnosti, računar se prebacuje na funkciju Moderno vreme pripravnosti pre zakazanog vremena POČETKA i ulazi u hibernaciju nakon što neko vreme bude neaktivan a napaja se na bateriju. Ovaj period se optimizuje na osnovu rasporeda koji ste podesili ili vremena korišćenja računara koje dobijemo. Računar prelazi iz hibernacije u Moderno stanje pripravnosti samo zakazanim danima i ne prelazi kada je neaktivan nekoliko uzastopnih zakazanih dana.",
+                    "description": "Ova funkcija zakazuje optimizovanje uštede baterije dok je računar u stanju mirovanja, a da se, pritom, ne žrtvuje brzo vraćanje opcije <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> (Moderno čekanje) tokom perioda intenzivnijeg korišćenja.",
+                    "tooltip": "Kad je omogućena funkcija Pametno vreme pripravnosti, računar se prebacuje na funkciju Moderno vreme pripravnosti pre zakazanog vremena POČETKA i ulazi u hibernaciju nakon što neko vreme bude neaktivan a napaja se na bateriju. Ovo vremenski period je optimizovan na osnovu rasporeda koji ste postavili ili na osnovu korišćenja računara. Računar prelazi iz hibernacije u Moderno stanje pripravnosti samo zakazanim danima i ne prelazi kada je neaktivan nekoliko uzastopnih zakazanih dana.",
                     "timer": {
-                        "heading": "Vreme kada obično koristite računar",
+                        "heading": "Vreme kada obično koristite ovaj računar:",
                         "subHeading1": "započnete",
                         "subHeading2": "završetak",
                         "subHeading3": "koristite ovaj raspored za",
@@ -963,14 +963,14 @@
                     "warningtip": "Odaberite najmanje jedan dan.",
                     "days": {
                         "shortName": {
-                            "sun": "Nedelja",
-                            "mon": "Ponedeljak",
-                            "tue": "Utorak",
-                            "wed": "Sreda",
-                            "thurs": "Četvrtak",
-                            "fri": "Petak",
-                            "sat": "Subota",
-                            "thu": "Četvrtak"
+                            "sun": "Ned.",
+                            "mon": "Pon.",
+                            "tue": "Uto.",
+                            "wed": "Sre.",
+                            "thurs": "Čet.",
+                            "fri": "Pet.",
+                            "sat": "Sub.",
+                            "thu": "Čet."
                         },
                         "name": {
                             "sun": "Nedelja",
@@ -987,7 +987,7 @@
                         "noDaySelected": "Nije izabran nijedan dan"
                     },
                     "checkbox": "Automatsko podešavanje aktivnog vremena računara na osnovu vašeg korišćenja",
-                    "hyperlinkToGraph": "Kliknite da biste videli aktivnost i aktivno vreme računarske tabele",
+                    "hyperlinkToGraph": "Kliknite da biste videli vreme korišćenje i primenjeno aktivno vreme",
                     "subTitle": "Zakazivanje rada računara",
                     "automaticMode": "Automatski režim",
                     "manualMode": "Ručni režim",

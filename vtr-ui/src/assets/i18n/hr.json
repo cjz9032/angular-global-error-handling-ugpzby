@@ -722,8 +722,8 @@
                 "batteryNotDetected": "Baterija nije pronađena",
                 "thresholdNote": "<b>Napomena:</b> Ako je omogućen prag napunjenosti baterije baterija se ne može potpuno napuniti.",
                 "seeDetailsLink": "Prikaži pojedinosti",
-				"gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen.",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen.",
+                "dualConditions": {
                     "NotDetected": "<b>Primarna baterija nije otkrivena.</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "Pametno stanje mirovanja",
-                    "description": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja brzog pokretanja tijekom rada s većim opterećenjem.",
-                    "tooltip": "Kad je omogućeno Pametno stanje pripravnosti, vaše se računalo prebacuje na Suvremeno stanje pripravnosti prije zakazanog vremena POKRETANJA i prelazi u hibernaciju nakon što je određeno vrijeme neaktivno na baterijskom napajanju. Ovaj se vremenski interval optimizira na temelju rasporeda koji postavite ili vremena uporabe računala koje dobivamo. Računalo se prebacuje iz hibernacije u Suvremeno stanje pripravnosti samo zakazanim danima te se ne prebacuje kad je neaktivno tijekom uzastopnih zakazanih dana.",
+                    "description": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja iskustva brzog nastavka rada u <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Suvremenom stanju pripravnosti</a> tijekom rada s većim opterećenjem.",
+                    "tooltip": "Kad je omogućeno Pametno stanje pripravnosti, vaše se računalo prebacuje na Suvremeno stanje pripravnosti prije zakazanog vremena POKRETANJA i prelazi u hibernaciju nakon što je određeno vrijeme neaktivno na baterijskom napajanju. Ovaj se vremenski interval optimizira na temelju rasporeda koji postavite ili vaše uporabe računala. Računalo se prebacuje iz hibernacije u Suvremeno stanje pripravnosti samo zakazanim danima te se ne prebacuje kad je neaktivno tijekom uzastopnih zakazanih dana.",
                     "timer": {
-                        "heading": "Vrijeme kada obično koristite računalo",
+                        "heading": "Vrijeme kada obično koristite ovo računalo:",
                         "subHeading1": "početak",
                         "subHeading2": "završetak",
                         "subHeading3": "koristi ovaj raspored za",
@@ -963,14 +963,14 @@
                     "warningtip": "Odaberite barem jedan dan.",
                     "days": {
                         "shortName": {
-                            "sun": "Nedjelja",
-                            "mon": "Ponedjeljak",
-                            "tue": "Utorak",
-                            "wed": "Srijeda",
-                            "thurs": "četvrtak",
-                            "fri": "Petak",
-                            "sat": "Subota",
-                            "thu": "četvrtak"
+                            "sun": "ned",
+                            "mon": "pon",
+                            "tue": "uto",
+                            "wed": "sri",
+                            "thurs": "čet",
+                            "fri": "pet",
+                            "sat": "sub",
+                            "thu": "čet"
                         },
                         "name": {
                             "sun": "Nedjelja",
@@ -987,7 +987,7 @@
                         "noDaySelected": "Nije odabran dan"
                     },
                     "checkbox": "Automatsko podešavanje aktivnog vremena vašeg računala na temelju vaše uporabe",
-                    "hyperlinkToGraph": "Kliknite za prikaz tablice aktivnosti i aktivnog vremena vašeg računala",
+                    "hyperlinkToGraph": "Kliknite za prikaz korištenja i primijenjenog aktivnog vremena",
                     "subTitle": "Zakažite raspored za svoje računalo",
                     "automaticMode": "Automatski način rada",
                     "manualMode": "Ručni način rada",

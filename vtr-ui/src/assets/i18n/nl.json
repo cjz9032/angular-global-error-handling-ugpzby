@@ -722,8 +722,8 @@
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> de batterij kan niet volledig worden opgeladen als drempelwaarde voor batterijlading is ingeschakeld.",
                 "seeDetailsLink": "Bekijk meer informatie",
-				"gaugeResetWarning": "<b>Opmerking:</b> het opnieuw instellen van de batterijmeter wordt uitgevoerd. Zorg dat de netvoedingsadapter blijft aangesloten.",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>Opmerking:</b> het opnieuw instellen van de batterijmeter wordt uitgevoerd. Zorg dat de netvoedingsadapter blijft aangesloten.",
+                "dualConditions": {
                     "NotDetected": "<b>De primaire batterij is niet gevonden.</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "Slim stand-by",
-                    "description": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de opstarttijd snel bij zwaarder gebruik.",
-                    "tooltip": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze tijdsperiode wordt geoptimaliseerd op basis van het schema dat u instelt, of op het gebruik van uw computer. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
+                    "description": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de snelle hervatting van <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern stand-by</a> bij zwaarder gebruik bestaan.",
+                    "tooltip": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze tijdsperiode wordt geoptimaliseerd op basis van het schema dat u instelt of op het gebruik van uw computer. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
                     "timer": {
-                        "heading": "De tijd waarop u gewoonlijk uw computer gebruikt",
+                        "heading": "De tijd dat u deze computer gewoonlijk gebruikt:",
                         "subHeading1": "met",
                         "subHeading2": "eind",
                         "subHeading3": "Gebruik deze planning voor",
@@ -963,14 +963,14 @@
                     "warningtip": "Selecteer minimaal één dag.",
                     "days": {
                         "shortName": {
-                            "sun": "zon",
-                            "mon": "maan",
-                            "tue": "dins",
-                            "wed": "woens",
-                            "thurs": "donder",
-                            "fri": "vrij",
-                            "sat": "zater",
-                            "thu": "donder"
+                            "sun": "Zo",
+                            "mon": "Ma",
+                            "tue": "Di",
+                            "wed": "Wo",
+                            "thurs": "Do",
+                            "fri": "Vr",
+                            "sat": "Za",
+                            "thu": "Do"
                         },
                         "name": {
                             "sun": "zondag",
@@ -987,7 +987,7 @@
                         "noDaySelected": "Geen dag geselecteerd"
                     },
                     "checkbox": "Automatisch aanpassen van de actieve tijd op uw computer op basis van uw gebruik",
-                    "hyperlinkToGraph": "Klik hier om de activiteit en de actieve tijd van uw computertabel te bekijken",
+                    "hyperlinkToGraph": "Klik hier om het gebruik en de toegepaste actieve tijd weer te geven",
                     "subTitle": "Uw computer plannen",
                     "automaticMode": "Automatische modus",
                     "manualMode": "Handmatige modus",

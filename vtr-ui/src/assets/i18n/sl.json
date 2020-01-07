@@ -722,8 +722,8 @@
                 "batteryNotDetected": "Baterija ni zaznana",
                 "thresholdNote": "<b>Opomba:</b> Ko je omogočena funkcija Prag polnjenja baterije, baterije ni mogoče povsem napolniti.",
                 "seeDetailsLink": "Prikaži podrobnosti",
-				"gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen.",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen.",
+                "dualConditions": {
                     "NotDetected": "<b>Glavna baterija ni zaznana.</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "Pametno stanje pripravljenosti",
-                    "description": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
-                    "tooltip": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na razpored, ki ste ga določili, ali čas uporabe računalnika, ki ga beležimo. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
+                    "description": "Ta funkcija nastavi časovni razpored za optimiziranje varčevanja z energijo baterije med neuporabo računalnika, ne da bi to vplivalo na možnost hitrega nadaljevanja delovanja v sklopu <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">sodobnega stanja pripravljenosti</a> med intenzivnejšo uporabo.",
+                    "tooltip": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To obdobje je optimizirano na podlagi nastavljenega časovnega razporeda ali vaše uporabe računalnika. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
                     "timer": {
-                        "heading": "Čas, ko običajno uporabljate računalnik",
+                        "heading": "Ura, ob kateri običajno uporabljate ta računalnik:",
                         "subHeading1": "začeti",
                         "subHeading2": "konec",
                         "subHeading3": "ta urnik uporabi za",
@@ -963,14 +963,14 @@
                     "warningtip": "Izberite vsaj en dan.",
                     "days": {
                         "shortName": {
-                            "sun": "Nedelja",
-                            "mon": "Ponedeljek",
-                            "tue": "Torek",
-                            "wed": "Sreda",
-                            "thurs": "Četrtek",
-                            "fri": "Petek",
-                            "sat": "Sobota",
-                            "thu": "Četrtek"
+                            "sun": "Ned",
+                            "mon": "Pon",
+                            "tue": "Tor",
+                            "wed": "Sre",
+                            "thurs": "Čet",
+                            "fri": "Pet",
+                            "sat": "Sob",
+                            "thu": "Čet"
                         },
                         "name": {
                             "sun": "Nedelja",
@@ -987,7 +987,7 @@
                         "noDaySelected": "Dan ni izbran"
                     },
                     "checkbox": "Samodejno prilagajanje dejavnega časa računalnika glede na vašo uporabo",
-                    "hyperlinkToGraph": "Kliknite, če si želite ogledati tabelo dejavnosti in dejavnega časa računalnika",
+                    "hyperlinkToGraph": "Kliknite za prikaz uporabe in uporabljeni aktivni čas",
                     "subTitle": "Nastavitev časovnega razporeda delovanja računalnika",
                     "automaticMode": "Samodejni način",
                     "manualMode": "Ročni način",
