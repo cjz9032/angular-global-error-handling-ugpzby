@@ -306,3 +306,13 @@
 	}
 
 }
+
+.smart-assist-card {
+	::ng-deep .vtr-ui-button {
+		.button-box {
+			.button {
+				min-height: 3.5rem !important;
+			}
+		}
+	}
+}

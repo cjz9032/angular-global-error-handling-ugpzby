@@ -1,17 +1,9 @@
 @import "../../../../../../app.theme.scss";
 
 .inputSection {
-	margin-top: 0.3rem;
+	margin-top: 1rem;
 	width: 75%;
-	@media #{$mediaquery_X28} {
-		margin-top: 1rem;
-	}
-	@media #{$mediaquery_X26} {
-		width: 72%;
-	}
-	@media #{$mediaquery_X27} {
-		width: 64%;
-	}
+
 
 	.dropdown-toggle::after {
 		display: none;
@@ -208,6 +200,9 @@
 	.user-defined-key-block {
 		::ng-deep .vtr-ui-switch-row .white-theme {
 			border-bottom: none !important;
+		}
+		.f12-img {
+			width: 10.1rem;
 		}
 	}
 }
