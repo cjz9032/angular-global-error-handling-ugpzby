@@ -160,7 +160,7 @@
 						right: auto;
 						left: 50%;
 						transform: translateX(-50%);
-						top: -24.7rem;
+						top: -25.1rem;
 						&::after {
 							top: calc(100% - 1.6rem);
 							right: calc(50% - 1.5rem);
@@ -179,10 +179,7 @@
 					}
 					@media #{$breakpoint_md} {
 						min-width: 45rem;
-						top:-24.7rem;
-					}
-					@media #{$breakpoint_sm} {
-						top: -23.2rem;
+						top:-25.1rem;
 					}
 					.content-body {
 						min-height: 12rem;

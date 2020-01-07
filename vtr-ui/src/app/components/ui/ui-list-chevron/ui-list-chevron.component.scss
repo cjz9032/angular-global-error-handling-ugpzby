@@ -6,7 +6,7 @@
 		margin-bottom: 0;
 		list-style: none;
 		padding: 0;
-		background-color: $shade_extralight;
+		background-color: $grey_lighter;
 		border: 0.1rem solid $shade_lighter;
 		border-radius: $border_radius;
 		line-height: 1.3;
@@ -186,6 +186,8 @@
 					font-size: $fontsize_xs2;
 					color: $shade_dark;
 					font-weight: $weight_medium;
+					word-break: normal !important;
+					font-style: italic;
 					// max-width: 50%;
 					cursor: pointer;
 					&.good {

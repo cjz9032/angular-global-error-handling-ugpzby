@@ -34,8 +34,8 @@ export class CommsService {
 	}
 
 
-	callUpeApi(api, queryParams: any = {}, httpOptions: any = {}) {
-		const url = this.env.upeApiRoot + api;
+	callUpeApi(url, queryParams: any = {}) {
+		// const url = this.env.upeApiRoot + api;
 
 		const reqHeader = new HttpHeaders({
 			'Content-Type': 'application/json;charset=UTF-8'
@@ -49,6 +49,9 @@ export class CommsService {
 			});
 	}
 
+	makeTagRequest(url, headers: any = {}) {
+		return this.http.get(url, { observe: 'response', headers });
+	}
 
 	flatGetCall(url) {
 		const self = this;

@@ -59,6 +59,7 @@ export class VantageShellService {
 				Phoenix.Features.AdPolicy,
 				Phoenix.Features.Registry,
 				Phoenix.Features.SelfSelect,
+				Phoenix.Features.UpeAgent,
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -172,7 +173,7 @@ export class VantageShellService {
 	}
 
 	public getShellVersion() {
-		if (Windows) {
+		if (typeof Windows !== 'undefined') {
 			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
 			return `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
 		}
@@ -984,6 +985,13 @@ export class VantageShellService {
 	}
 
 	getToolbarToastFeature(): any {
-        return this.phoenix.hwsettings.toolbar.ToolbarToast;
-    }
+		return this.phoenix.hwsettings.toolbar.ToolbarToast;
+	}
+
+	public getUpeAgent(): any {
+		if (this.phoenix) {
+			return this.phoenix.upeAgent;
+		}
+		return undefined;
+	}
 }

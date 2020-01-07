@@ -26,12 +26,9 @@ export class LocalInfoService {
 	}
 
 	async getLocalInfo() {
-		if (!this.selfSelectSegment || this.selfSelectSegment !== this.selfSelectService.savedSegment) {
-			this.selfSelectSegment = await this.selfSelectService.getSegment();
-			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, this.selfSelectSegment);
-		}
+		this.selfSelectSegment = await this.selfSelectService.getSegment();
 		if (this.localInfo) {
-			if (this.localInfo.Segment !== this.gamingTag) {
+			if (this.localInfo.Segment !== this.selfSelectSegment) {
 				this.localInfo.Segment = this.selfSelectSegment;
 			}
 			return this.localInfo;

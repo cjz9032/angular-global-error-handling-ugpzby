@@ -11,39 +11,14 @@
 	}
 
 	.switch-container {
-		height: 12.5rem;
-		width: 12.5rem;
+		height: 12.4rem;
+		width: 12.4rem;
 		border-radius: $border_radius;
 		padding: 0.1rem 0 0;
 		&.focus-blue-outline {
 			&:focus::after {
 				border-radius: $border_radius;
 			}
-		}
-
-		@media #{$breakpoint_xl3} {
-			height: 10.5rem;
-			width: 10.5rem;
-		}
-
-		@media #{$breakpoint_xl2} {
-			height: 9rem;
-			width: 9rem;
-		}
-
-		@media #{$breakpoint_xl} {
-			height: 9.5rem;
-			width: 9.5rem;
-		}
-
-		@media #{$breakpoint_lg} {
-			height: 21rem;
-			width: 21rem;
-		}
-
-		@media #{$breakpoint_md} {
-			height: 13rem;
-			width: 13rem;
 		}
 
 		&.checked {
@@ -78,7 +53,7 @@
 			cursor: pointer;
 			text-transform: uppercase;
 			text-align: center;
-			font-size: 1.1rem;
+			font-size: $fontsize_xs2;
 			// margin: 0 0 0rem 0.6rem;
 			font-weight: $weight_medium;
 			letter-spacing: 0;

@@ -220,5 +220,8 @@ export enum LocalStorageKey {
 	MicrohoneCapability = '[LocalStorageKey] MicrohoneCapability',
 
 	// TEMP battery condition
-	BatteryCondition = '[LocalStorageKey] batteryCondition'
+	BatteryCondition = '[LocalStorageKey] batteryCondition',
+
+	// UPE
+	UPEChannelTags = '[LocalStorageKey] UPEChannelTags'
 }

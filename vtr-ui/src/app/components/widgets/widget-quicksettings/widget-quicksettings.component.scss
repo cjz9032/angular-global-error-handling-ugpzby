@@ -9,18 +9,34 @@
 	}
 	.widget-icon-3 {
 		display: flex;
-		// justify-content: space-between;
+		justify-content: center;
 		> div {
-			margin-right: 30px;
+			&:first-child{
+				margin-right: 2.4rem;
+			}
+			&:nth-child(2n){
+				margin-right: 2.4rem;
+			}
+			&:last-child{
+				margin-right: 0 !important;
+			}
 		}
 	}
 }
 
 .widget-icon-2 {
 	display: flex;
-	// justify-content: flex-start;
+	justify-content: center;
 	> div {
-		margin-right: 30px;
+		&:first-child{
+			margin-right: 2.4rem;
+		}
+		&:nth-child(2n){
+			margin-right: 2.4rem;
+		}
+		&:last-child{
+			margin-right: 0 !important;
+		}
 	}
 }
 .permission-note {
