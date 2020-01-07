@@ -137,11 +137,12 @@ export class MetricsDirective {
 		console.log(" click number :: " + event.detail);
 
 		// prevent default event propogation for more than 1 click stop event propagation
-		if (event.detail > 1) {
+		if (event.detail > 1 && this.metricsItem !== 'btn.collapse') {
 			event.preventDefault();
 			event.stopPropagation();
 			return;
 		}
+
 		// Only for first click (when event.detail ===1 )log the metrics and propagate event
 		if (!this.metricsParent) {
 			this.metricsParent = this.activatedRoute.snapshot.data.pageName;
@@ -153,7 +154,6 @@ export class MetricsDirective {
 		}
 
 		const data = this.composeMetricsData();
-
 		if (this.metrics && this.metrics.sendAsync) {
 			try {
 				console.log('metrics data ::-------------------------------*******', JSON.stringify(data));
@@ -162,6 +162,5 @@ export class MetricsDirective {
 				this.devService.writeLog('sending metric breaks with exception:' + ex);
 			}
 		}
-
 	}
 }
