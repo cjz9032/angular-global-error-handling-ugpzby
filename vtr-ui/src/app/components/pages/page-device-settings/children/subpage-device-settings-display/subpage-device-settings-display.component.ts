@@ -399,6 +399,10 @@ export class SubpageDeviceSettingsDisplayComponent
 				.getCameraSettingsInfo()
 				.then((response) => {
 					this.logger.debug('getCameraDetails.then', response);
+					if (response) {
+						this.cameraPrivacyModeStatus.permission = response.permission;
+						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
+					}
 					this.dataSource = response;
 					if (this.dataSource.permission === true) {
 						this.shouldCameraSectionDisabled = false;
@@ -818,7 +822,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				.getCameraPrivacyModeState()
 				.then((featureStatus: FeatureStatus) => {
 					this.logger.debug('cameraPrivacyModeStatus.then', featureStatus);
-					this.cameraPrivacyModeStatus = featureStatus;
+					this.cameraPrivacyModeStatus = {...this.cameraPrivacyModeStatus, ...featureStatus};
 					this.cameraPrivacyModeStatus.isLoading = false;
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 				})
@@ -831,7 +835,7 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	startMonitorHandlerForCamera(value: FeatureStatus) {
 		this.logger.debug('startMonitorHandlerForCamera', value);
-		this.cameraPrivacyModeStatus = value;
+		this.cameraPrivacyModeStatus = {...this.cameraPrivacyModeStatus, ...value};
 		// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 		this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 	}

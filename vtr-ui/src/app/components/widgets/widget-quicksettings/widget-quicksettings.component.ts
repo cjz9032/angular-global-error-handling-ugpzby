@@ -219,7 +219,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 							this.cameraStatus.status = featureStatus.status;
 						}
 						this.cameraStatusChangeBySet = false;
-						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, featureStatus);
+						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 						// if privacy available then start monitoring
 						if (featureStatus.available) {
 							this.getCameraPermission();
