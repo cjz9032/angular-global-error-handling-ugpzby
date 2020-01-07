@@ -154,6 +154,17 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		});
 	}
 
+	ngOnDestroy() {
+		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
+		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
+		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
+		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+		this.batteryService.stopMonitor();
+	}
+
 	onPowerSupplyStatusEvent(info: any) {
 		console.log('onPowerSupplyStatusEvent: ', info);
 		if (info) {
@@ -183,8 +194,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	onPowerBatteryGaugeResetEvent(info: BatteryGaugeReset[]) {
 		console.log('onPowerBatteryGaugeResetEvent: Information', info);
-		if (info) {
-			info.forEach((battery) => {
+		const gaugeResetInfo = this.commonService.cloneObj(info);
+		if (gaugeResetInfo) {
+			gaugeResetInfo.forEach((battery) => {
 				if (battery.FCCBefore && battery.FCCAfter) {
 					if (battery.FCCBefore !== 0 && battery.FCCAfter !== 0) {
 						battery.FCCAfter = parseFloat((battery.FCCAfter / 1000).toFixed(2));
@@ -193,7 +205,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				}
 			});
 		}
-		this.batteryService.gaugeResetInfo = info;
+		this.batteryService.gaugeResetInfo = gaugeResetInfo;
 	}
 
 	public getBatteryDetailOnCard() {
@@ -492,16 +504,5 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	reInitValue() {
 		this.flag = false;
 		// this.getBatteryDetailOnCard();
-	}
-
-	ngOnDestroy() {
-		this.batteryService.stopMonitor();
-		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
-		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
-		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
-		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
-		if (this.notificationSubscription) {
-			this.notificationSubscription.unsubscribe();
-		}
 	}
 }
