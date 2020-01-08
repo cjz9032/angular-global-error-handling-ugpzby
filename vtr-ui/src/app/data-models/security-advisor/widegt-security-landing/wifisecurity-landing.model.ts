@@ -61,6 +61,8 @@ export class WifiSecurityLandingViewModel {
 			this.wfStatus.ownTitle = res['security.landing.haveOwnWifi'];
 			this.wfStatus.buttonLabel = res['security.landing.goWifi'];
 			const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
+			const cacheShowOwn: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
+			this.wfStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 			if (wfModel && wfModel.state) {
 				if (wfModel.isLocationServiceOn !== undefined) {
 					this.setWiFiSecurityState(wfModel.state, wfModel.isLocationServiceOn);
@@ -77,8 +79,8 @@ export class WifiSecurityLandingViewModel {
 		if (!this.translateString) {
 			return;
 		}
-		const cacheShowOwn = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
-		this.wfStatus.showOwn = typeof cacheShowOwn === 'boolean' ? cacheShowOwn : false;
+		const cacheShowOwn: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
+		this.wfStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 		if (location) {
 			this.wfStatus.status = state === 'enabled' ? 'enabled' : 'disabled';
 			this.wfStatus.detail = this.translateString[`common.securityAdvisor.${state === 'enabled' ? 'enabled' : 'disabled'}`];

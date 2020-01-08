@@ -12,7 +12,7 @@
 						{{ year }}{{'support.warranty.yearDepotWarranty' | translate}}
 					</div>
 					<div class="sub-description pb-20">
-						{{'support.warranty.subDescription1' | translate}}
+						<span [innerHTML]="'support.warranty.subDescription1' | translate"></span>
 						<span *ngIf="!isConnected && item.cache">{{'support.warranty.offlineTips1' | translate}}</span>
 						<span *ngIf="!isConnected && !item.cache">{{'support.warranty.offlineTips2' | translate}}</span>
 					</div>
@@ -30,7 +30,7 @@
 				<div class="content"
 					*ngIf="item.info.status == 2">
 					<div class="sub-description pb-20">
-						{{'support.warranty.subDescription2' | translate}}
+						<span [innerHTML]="'support.warranty.subDescription2' | translate"></span>
 						<span *ngIf="!isConnected && item.cache">{{'support.warranty.offlineTips1' | translate}}</span>
 						<span *ngIf="!isConnected && !item.cache">{{'support.warranty.offlineTips2' | translate}}</span>
 					</div>
