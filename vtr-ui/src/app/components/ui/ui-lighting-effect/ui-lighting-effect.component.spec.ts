@@ -1,5 +1,5 @@
 import { DeviceService } from 'src/app/services/device/device.service';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 
 import { UiLightingEffectComponent } from './ui-lighting-effect.component';
@@ -87,14 +87,15 @@ describe('UiLightingEffectComponent', () => {
 		expect(component.selectedOption).toBe(options[0]);
 	});
 
-	it('should focus on the item', () => {
-		const dropDownEle: any = false;
+	it('should focus on the item', fakeAsync (() => {
+		const dropDownEle: any = { nativeElement: {querySelectorAll: (param) => []}};
 		component.showOptions = true;
 		component.isItemsFocused = false;
 		component.dropdownEle = dropDownEle;
 		component.itemsFocused();
-		expect(component.isItemsFocused ).toBe(true);
-	});
+		tick(110);
+		expect(component.showOptions  ).toBe(false);
+	}));
 });
 
 
