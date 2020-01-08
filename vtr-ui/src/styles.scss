@@ -312,6 +312,13 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.fnctrl-tooltip.tooltip {
+	width: 30rem !important;
+	.tooltip-inner {
+		padding: 1rem !important;
+	}
+}
+
 .failure {
 	color: $alt;
 }

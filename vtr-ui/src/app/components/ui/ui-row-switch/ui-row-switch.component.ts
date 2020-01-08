@@ -58,6 +58,8 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 	@Input() isAdminRequired = false;
 	@Input() isRebootRequired = false;
 	@Input() label = '';
+	@Input() fnCtrltoolTip = false;
+	@Input() tooltipContent = [];
 	public contentExpand = false;
 
 
@@ -71,6 +73,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 	ngOnInit() {
 		this.childContent = {};
 		this.childContent.innerHTML = '';
+		console.log(this.tooltipContent);
 		// this.commonService.notification.subscribe((notification: AppNotification) => {
 		// 	this.onNotification(notification);
 		// });
