@@ -210,7 +210,7 @@
 									componentName="Oled Power Settings"
 									[name]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
 									[isSwitchVisible]="false"
-									[isLastChild]="true"
+									[isLastChild]="false"
 									[leftIcon]="['fal', 'tv']"
 									[showChildContent]="true"
 									[isSwitchChecked]="eyeCareModeStatus.status"
@@ -232,14 +232,14 @@
 							</li>
 
 
-							<!-- MVP 2 feature -->
+							<!-- Display Priority Control -->
 							<li class="pt-3">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.displayPriority.title' | translate"
 									[caption]="'device.deviceSettings.displayCamera.display.displayPriority.description' | translate"
 									[isSwitchVisible]="false"
-									[isLastChild]=true
-									[leftIcon]="['far', 'gem']"
+									[isLastChild]="true"
+									[leftIcon]="['icomoon', 'icomoon-dpc-icon']"
 									[readMoreText]="''"
 									[showChildContent]="true"
 									[theme]="'white'">
