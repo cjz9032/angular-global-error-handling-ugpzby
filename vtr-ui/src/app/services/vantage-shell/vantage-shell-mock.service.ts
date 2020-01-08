@@ -1917,7 +1917,13 @@ export class VantageShellService {
 
 		const gamingAutoClose: any = {
 			getAutoCloseList: this.getPromise(autoCloseList),
-			getRunningList: this.getPromise(runningList)
+			getRunningList: this.getPromise(runningList),
+			getStatus: this.getPromise(true),
+			setStatus: this.getPromise(true),
+			addAutoCloseList: this.getPromise(true),
+			delAutoCloseList: this.getPromise(true),
+			getNeedToAsk: this.getPromise(true),
+			setNeedToAsk: this.getPromise(true)
 		};
 		return gamingAutoClose;
 	}

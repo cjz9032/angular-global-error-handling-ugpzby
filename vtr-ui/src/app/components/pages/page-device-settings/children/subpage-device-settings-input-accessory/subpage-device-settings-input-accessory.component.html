@@ -73,6 +73,11 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
+
+					<li class="pt-3" *ngIf="machineType === 1">
+						<vtr-backlight-thinkpad></vtr-backlight-thinkpad>
+					</li>
+
 					<li class="pt-3" *ngIf="machineType === 1">
 						<vtr-top-row-functions></vtr-top-row-functions>
 					</li>
