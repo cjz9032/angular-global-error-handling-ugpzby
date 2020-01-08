@@ -56,6 +56,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public inputAccessoriesCapability: InputAccessoriesCapability;
 	hasUDKCapability = false;
 	fnLockCapability = false;
+	cacheFound = false;
 	private topRowFunctionsIdeapadSubscription: Subscription;
 
 	backlightCapability$: Observable<boolean>;
@@ -147,6 +148,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		try {
 			this.inputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
 			if (this.inputAccessoriesCapability !== undefined) {
+				this.cacheFound = true;
 				this.keyboardCompatibility = this.inputAccessoriesCapability.isKeyboardMapAvailable;
 				this.keyboardVersion = this.inputAccessoriesCapability.keyboardVersion;
 				if (this.inputAccessoriesCapability.image && this.inputAccessoriesCapability.image.length > 0) {
@@ -160,9 +162,15 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 			} else {
 				this.inputAccessoriesCapability = new InputAccessoriesCapability();
-				this.keyboardService.GetAllCapability().then((response=>{
+				this.cacheFound = false;
+				this.keyboardService.GetAllCapability().then((response => {
 					this.keyboardCompatibility = (response != null && Object.keys(response).indexOf('keyboardMapCapability') !== -1) ? response.keyboardMapCapability : false;
-				}))
+					this.inputAccessoriesCapability.isKeyboardMapAvailable = this.keyboardCompatibility;
+					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
+					if (!this.cacheFound && this.keyboardCompatibility) {
+						this.getKBDLayoutName();
+					}
+				}));
 			}
 		} catch (error) {
 			console.log('initHiddenKbdFnFromCache', error);
@@ -263,7 +271,6 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					this.keyboardService.GetKbdHiddenKeyBackLightCapability(),
 
 				]).then((response: any[]) => {
-					// console.log('promise all resonse  here -------------.>', response);
 					if (response && response.length) {
 						if (response[0]) {
 							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
