@@ -1,5 +1,5 @@
 
-import { TestBed } from '@angular/core/testing';
+import { TestBed, tick } from '@angular/core/testing';
 import { GamingLightingService } from './gaming-lighting.service';
 import { HttpClientModule } from '@angular/common/http';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
@@ -11,53 +11,99 @@ describe('Shared service:', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			imports: [HttpClientModule],
-			//providers: [VantageShellService,BatteryDetailComponent]
+			providers: []
 		});
-		service = TestBed.get(GamingLightingService);
 		shellService = TestBed.get(VantageShellService);
+		service = new GamingLightingService(shellService);
 	});
 	describe(':', () => {
 
 		function setup() {
 			// tslint:disable-next-line: no-shadowed-variable
-			const service = TestBed.get(GamingLightingService);
+			const service = new GamingLightingService(shellService);
 			// const batteryDetailComponent = TestBed.get(BatteryDetailComponent);
 			return { service };
 		}
 
 
-		it('should call getLightingProfileById', () => {
-			// tslint:disable-next-line: no-shadowed-variable
-			const { service } = setup();
-			const mockGamingLightingData = {
-				didSuccess: 1,
-				profileId: 1,
-				brightness: 3,
-				lightInfo: [
-					{
-						lightPanelType: 32,
-						lightEffectType: 4,
-						lightColor: 'FFFFFF',
-					},
-					{
-						lightPanelType: 64,
-						lightEffectType: 2,
-						lightColor: 'FF0000',
-					}
-				]
-			}
 
-			spyOn(service.getGamingLighting, 'getLightingProfileById').and.callThrough();
-			service.getLightingProfileById();
-			expect(service.getGamingLighting.getLightingProfileById).toHaveBeenCalled();
 
+		it('should call capabilities', () => {
+			spyOn(service.getGamingLighting, 'getLightingCapabilities').and.callThrough();
+			service.getLightingCapabilities();
+			expect(service.getGamingLighting.getLightingCapabilities).toHaveBeenCalled();
 			service.isShellAvailable = false;
-			service.getLightingProfileById();
-			expect(service.getGamingLighting.getLightingProfileById).toHaveBeenCalled();
-
+			service.getLightingCapabilities();
+			expect(service.getGamingLighting.getLightingCapabilities).toHaveBeenCalled();
 		});
 
+		it('should call getLightingProfileId', () => {
+			service.isShellAvailable = false;
+			const res = service.getLightingProfileId();
+			expect(res).toBe(undefined);
+			service.isShellAvailable = true;
+			try {
+				service.getLightingProfileId();
+			} catch (e) {
+				expect(e).not.toBeNull();
+			}
+		});
+		it('should call getLightingProfileById', () => {
+			spyOn(service.getGamingLighting, 'getLightingProfileById').and.callThrough();
+			service.getLightingProfileById(1);
+			expect(service.getGamingLighting.getLightingProfileById).toHaveBeenCalled();
+			service.isShellAvailable = false;
+			service.getLightingProfileById(1);
+			expect(service.getGamingLighting.getLightingProfileById).toHaveBeenCalled();
+		});
 
+		it('should call setLightingProfileId', () => {
+			service.isShellAvailable = false;
+			const res = service.setLightingProfileId(1, 1);
+			expect(res).toBe(undefined);
+			service.isShellAvailable = true;
+			try {
+				service.setLightingProfileId(1, 1);
+			} catch (e) {
+				expect(e).not.toBeNull();
+			}
+		});
+
+		it('should call setLightingProfileEffectColor', () => {
+			service.isShellAvailable = false;
+			const res = service.setLightingProfileEffectColor({});
+			expect(res).toBe(undefined);
+			service.isShellAvailable = true;
+			try {
+				service.setLightingProfileEffectColor({});
+			} catch (e) {
+				expect(e).not.toBeNull();
+			}
+		});
+
+		it('should call setLightingDefaultProfileById', () => {
+			service.isShellAvailable = false;
+			const res = service.setLightingDefaultProfileById(1);
+			expect(res).toBe(undefined);
+			service.isShellAvailable = true;
+			try {
+				service.setLightingDefaultProfileById(1);
+			} catch (e) {
+				expect(e).not.toBeNull();
+			}
+		});
+
+		it('should call setLightingProfileBrightness', () => {
+			service.isShellAvailable = false;
+			const res = service.setLightingProfileBrightness(1);
+			expect(res).toBe(undefined);
+			service.isShellAvailable = true;
+			try {
+				service.setLightingProfileBrightness(1);
+			} catch (e) {
+				expect(e).not.toBeNull();
+			}
+		});
 	});
 
 });
