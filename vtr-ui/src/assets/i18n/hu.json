@@ -722,8 +722,8 @@
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Jegyzet:</b> Az akkumulátor nem tölthető fel teljesen, ha az akkumulátortöltési küszöbérték engedélyezve van.",
                 "seeDetailsLink": "Részletek megtekintése",
-				"gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban.",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban.",
+                "dualConditions": {
                     "NotDetected": "<b>Az elsődleges akkumulátor nem észlelhető.</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "Intelligens készenlét",
-                    "description": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
+                    "description": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern készenléti állapot</a> visszaállási művelete nem lesz lassabb a gép komolyabb használata során.",
                     "tooltip": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett KEZDÉSI idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időtartamot az Ön által beállított munkarend vagy az érzékelt számítógép-használati séma alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre, és ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás.",
                     "timer": {
-                        "heading": "A számítógép jellemző használati időszaka",
+                        "heading": "Az idő, amikor általában használja a számítógépet:",
                         "subHeading1": "mezőből",
                         "subHeading2": "befejezés",
                         "subHeading3": "az ütemezés használata a következőhöz",
@@ -963,14 +963,14 @@
                     "warningtip": "Kérjük, válasszon legalább egy napot.",
                     "days": {
                         "shortName": {
-                            "sun": "Vasárnap",
-                            "mon": "Hétfő",
-                            "tue": "Kedd",
-                            "wed": "Szerda",
-                            "thurs": "Csütörtök",
-                            "fri": "Péntek",
-                            "sat": "Szombat",
-                            "thu": "Csütörtök"
+                            "sun": "Vas",
+                            "mon": "Hé",
+                            "tue": "Ke",
+                            "wed": "Sze",
+                            "thurs": "Csüt",
+                            "fri": "Pé",
+                            "sat": "Szo",
+                            "thu": "Csüt"
                         },
                         "name": {
                             "sun": "Vasárnap",
@@ -987,7 +987,7 @@
                         "noDaySelected": "Nincs kiválasztott nap"
                     },
                     "checkbox": "A számítógép aktív idejének automatikus beállítása a használati séma alapján",
-                    "hyperlinkToGraph": "Kattintson a számítógép tevékenységének és aktív idejének áttekintéséhez",
+                    "hyperlinkToGraph": "Kattintson a használat és az alkalmazott aktív idő megtekintéséhez",
                     "subTitle": "Számítógép ütemezése",
                     "automaticMode": "Automatikus üzemmód",
                     "manualMode": "Manuális üzemmód",
@@ -1663,7 +1663,7 @@
             "startDate": "Kezdő dátum: ",
             "endDate": "Záró dátum: ",
             "status": "Állapot: ",
-            "subDescription1": "Erre a termékre több év jótállás vonatkozik, és jogosult a telephelyi javításra. Az ügyfelek a helyi szervizközponttól kaphatnak további információt. A márkakereskedők átvételes javítást is biztosíthatnak a termékhez.",
+            "subDescription1": "A számítógépére érvényes a Lenovo korlátozott jótállás, és jogosult a raktárszervizre. Az ügyfelek a helyi szervizközponttól kaphatnak további információt. A márkakereskedők átvételes javítást is biztosíthatnak a termékhez.",
             "subDescription2": "Nem találtuk az eszköz jótállási adatait. További jótállási lehetőségeket támogatási webhelyünkön talál.",
             "viewWarrantyOptions": "JÓTÁLLÁSI LEHETŐSÉGEK MEGTEKINTÉSE",
             "offlineTips1": "A jótállásra vonatkozó legújabb információkért csatlakozzon az internethez.",

@@ -116,11 +116,7 @@ import { GamingDashboardModule } from './gaming-dashboard.module';
 		DevService,
 		DisplayService,
 		CookieService,
-		CommsService,
-		{
-			provide: ErrorHandler,
-			useClass: GlobalErrorHandler
-		}
+		CommsService
 	],
 	entryComponents: [
 		ModalWelcomeComponent,

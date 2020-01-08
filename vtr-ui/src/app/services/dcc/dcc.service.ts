@@ -30,6 +30,7 @@ export class DccService {
 	}
 
 	private initialize() {
+		this.isDccCapableDevice();
 		this.deviceService.getMachineInfo().then((machineInfo) => {
 			if (!this.deviceService.isGaming) {
 				const queryOptions: any = {
@@ -65,9 +66,7 @@ export class DccService {
 					if (hyp === 'true') {
 						this.isDccDevice = true;
 						if (!this.deviceService.isGaming) {
-							if (!this.cmsHeaderDccBackgroundUpdated && this.commonService.isOnline) {
-								this.headerBackground = '';
-							} else if (!this.commonService.isOnline) {
+							if (!this.commonService.isOnline || !this.cmsHeaderDccBackgroundUpdated) {
 								this.headerBackground = this.headerDccBackground;
 							}
 						}

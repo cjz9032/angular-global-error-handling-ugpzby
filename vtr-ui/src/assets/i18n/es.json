@@ -722,8 +722,8 @@
                 "batteryNotDetected": "No se detectó ninguna batería",
                 "thresholdNote": "<b>Nota:</b> La batería no se puede cargar completamente cuando se ha habilitado el umbral de carga de la batería.",
                 "seeDetailsLink": "Ver detalles",
-				"gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado.",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado.",
+                "dualConditions": {
                     "NotDetected": "<b>No se detectó la batería principal.</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "Suspensión inteligente",
-                    "description": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
-                    "tooltip": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo de tiempo está optimizado según la planificación que haya establecido o el sistema tiempo de uso que obtenemos. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos.",
+                    "description": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar la experiencia de reanudación rápida de <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Espera moderna</a> durante las horas de uso más intensivo.",
+                    "tooltip": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo está optimizado según la planificación que haya establecido o el uso del equipo. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos.",
                     "timer": {
-                        "heading": "La hora en la que normalmente utiliza su equipo",
+                        "heading": "El horario en el que normalmente utiliza este equipo:",
                         "subHeading1": "comience",
                         "subHeading2": "final",
                         "subHeading3": "utilice esta planificación para",
@@ -987,7 +987,7 @@
                         "noDaySelected": "No se seleccionó el día"
                     },
                     "checkbox": "Ajuste automático del tiempo activo del sistema basándose en su uso",
-                    "hyperlinkToGraph": "Haga clic aquí para ver la actividad y el tiempo activo de la tabla sistema",
+                    "hyperlinkToGraph": "Haga clic para ver el uso y el tiempo activo aplicado",
                     "subTitle": "Programar su equipo",
                     "automaticMode": "Modalidad automática",
                     "manualMode": "Modalidad manual",
@@ -1663,7 +1663,7 @@
             "startDate": "Fecha de inicio: ",
             "endDate": "Fecha de término: ",
             "status": "Estado: ",
-            "subDescription1": "Este producto tiene una garantía limitada por años y derecho a servicio de reparación de depósito. Los clientes pueden llamar al centro de servicio local para obtener más información. Los distribuidores pueden proporcionar reparación de entrega para este producto.",
+            "subDescription1": "La garantía limitada de Lenovo se aplica a su equipo y tiene derecho al servicio de Depot. Los clientes pueden llamar al centro de servicio local para obtener más información. Los distribuidores pueden proporcionar reparación de entrega para este producto.",
             "subDescription2": "No pudimos encontrar los detalles de garantía para su dispositivo, para tener más opciones de garantía, visite nuestro sitio web de soporte de garantía.",
             "viewWarrantyOptions": "VER OPCIONES DE GARANTÍA",
             "offlineTips1": "Conéctese a Internet para obtener la información de garantía más reciente.",

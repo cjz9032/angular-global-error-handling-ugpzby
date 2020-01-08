@@ -722,8 +722,8 @@
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
                 "thresholdNote": "<b>Nota:</b> la batteria non può essere caricata completamente quando è abilitata l'opzione Soglia di carica batteria.",
                 "seeDetailsLink": "Visualizza dettagli",
-				"gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA.",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA.",
+                "dualConditions": {
                     "NotDetected": "<b>La batteria principale non è stata rilevata.</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "Standby intelligente",
-                    "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
-                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Questo periodo di tempo è ottimizzato in base alla pianificazione impostata o al tempo di utilizzo del computer riscontrato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
+                    "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne il ripristino rapido dalla modalità <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Standby moderno</a> durante i picchi di utilizzo.",
+                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Questo periodo di tempo è ottimizzato in base alla pianificazione impostata o al tempo di utilizzo del computer. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
                     "timer": {
-                        "heading": "L'ora in cui generalmente si utilizza il computer",
+                        "heading": "Ora in cui generalmente si utilizza il computer:",
                         "subHeading1": "si inizi",
                         "subHeading2": "fine",
                         "subHeading3": "usa questa pianificazione per",
@@ -963,14 +963,14 @@
                     "warningtip": "Si prega di selezionare almeno un giorno.",
                     "days": {
                         "shortName": {
-                            "sun": "Domenica",
-                            "mon": "Lunedi",
-                            "tue": "martedì",
-                            "wed": "mercoledì",
-                            "thurs": "giovedi",
-                            "fri": "Venerdì",
-                            "sat": "Sabato",
-                            "thu": "giovedi"
+                            "sun": "Dom.",
+                            "mon": "Lun.",
+                            "tue": "Mar.",
+                            "wed": "Mer.",
+                            "thurs": "Gio.",
+                            "fri": "Ven.",
+                            "sat": "Sab.",
+                            "thu": "Gio."
                         },
                         "name": {
                             "sun": "Domenica",
@@ -987,7 +987,7 @@
                         "noDaySelected": "Nessun giorno selezionato"
                     },
                     "checkbox": "Regolazione automatica del tempo di utilizzo del computer in base all'utilizzo",
-                    "hyperlinkToGraph": "Fare clic per visualizzare l'attività e il tempo di utilizzo della tabella del computer",
+                    "hyperlinkToGraph": "Fare clic per visualizzare l'utilizzo e il tempo attivo applicato",
                     "subTitle": "Pianificazione del computer",
                     "automaticMode": "Modalità automatica",
                     "manualMode": "Modalità manuale",
@@ -1663,7 +1663,7 @@
             "startDate": "Data di inizio: ",
             "endDate": "Data di fine: ",
             "status": "Stato: ",
-            "subDescription1": "Questo prodotto viene fornito con garanzia limitata e servizio di riparazione presso il fornitore. Per ulteriori informazioni, i clienti possono contattare il centro di assistenza locale. I rivenditori potrebbero fornire il servizio di riparazione a domicilio per questo prodotto.",
+            "subDescription1": "La garanzia limitata Lenovo è valida per il computer in uso e include il servizio di deposito. Per ulteriori informazioni, i clienti possono contattare il centro di assistenza locale. I rivenditori potrebbero fornire il servizio di riparazione a domicilio per questo prodotto.",
             "subDescription2": "Non è stato possibile individuare i dettagli sulla garanzia del dispositivo. Per ulteriori opzioni della garanzia, visitare il nostro sito Web del supporto.",
             "viewWarrantyOptions": "VISUALIZZA OPZIONI DELLA GARANZIA",
             "offlineTips1": "Per informazioni più recenti sulla garanzia collegarsi a Internet.",

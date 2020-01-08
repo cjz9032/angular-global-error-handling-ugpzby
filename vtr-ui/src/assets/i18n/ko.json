@@ -722,8 +722,8 @@
                 "batteryNotDetected": "배터리 없음",
                 "thresholdNote": "<b>참고:</b> 배터리 충전 임계값을 사용하는 경우 배터리가 완전히 충전되지 않습니다.",
                 "seeDetailsLink": "세부사항 참조",
-				"gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오.",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오.",
+                "dualConditions": {
                     "NotDetected": "<b>기본 배터리를 찾을 수 없습니다.</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "스마트 대기",
-                    "description": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
+                    "description": "이 기능은 사용량이 많을 때 <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">최신 대기 상태</a>를 빠르게 재개하도록 하면서 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약합니다.",
                     "tooltip": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 기간은 설정한 일정 또는 컴퓨터 사용 시간을 기준으로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며, 비활성화되도록 예약된 날에는 전환되지 않습니다.",
                     "timer": {
-                        "heading": "이 컴퓨터를 주로 사용하는 시간",
+                        "heading": "이 컴퓨터를 주로 사용하는 시간:",
                         "subHeading1": "시작하면",
                         "subHeading2": "종료",
                         "subHeading3": "다음에 대해 이 스케줄을 사용합니다",
@@ -963,14 +963,14 @@
                     "warningtip": "적어도 하루를 선택하십시오.",
                     "days": {
                         "shortName": {
-                            "sun": "일요일",
-                            "mon": "월요일",
-                            "tue": "화요일",
-                            "wed": "수요일",
-                            "thurs": "목요일",
-                            "fri": "금요일",
-                            "sat": "토요일",
-                            "thu": "목요일"
+                            "sun": "일",
+                            "mon": "월",
+                            "tue": "화",
+                            "wed": "수",
+                            "thurs": "목",
+                            "fri": "금",
+                            "sat": "토",
+                            "thu": "목"
                         },
                         "name": {
                             "sun": "일요일",
@@ -987,7 +987,7 @@
                         "noDaySelected": "날짜를 선택하지 않음"
                     },
                     "checkbox": "사용 현황에 따라 컴퓨터의 활성 시간 자동 조정",
-                    "hyperlinkToGraph": "클릭하여 컴퓨터 테이블의 활동 및 활성 시간을 확인",
+                    "hyperlinkToGraph": "사용량 및 적용된 유효 시간을 보려면 클릭하십시오",
                     "subTitle": "컴퓨터 예약",
                     "automaticMode": "자동 모드",
                     "manualMode": "수동 모드",
@@ -1663,7 +1663,7 @@
             "startDate": "시작 날짜: ",
             "endDate": "계약 종료일: ",
             "status": "상태: ",
-            "subDescription1": "이 제품에는 햇수 제한 보증이 적용되며, 보관 수리 서비스를 받을 수 있습니다. 고객은 해당 지역 서비스 센터로 전화하여 자세한 정보를 요청할 수 있습니다. 대리점은 이 제품에 대한 직접 입고 수리를 제공할 수 있습니다.",
+            "subDescription1": "고객님의 컴퓨터에는 Lenovo 보증 제한이 적용되며 Depot 서비스를 받을 수 있습니다. 고객은 해당 지역 서비스 센터로 전화하여 자세한 정보를 요청할 수 있습니다. 대리점은 이 제품에 대한 직접 입고 수리를 제공할 수 있습니다.",
             "subDescription2": "장치에 대한 보증 상세 정보를 찾을 수 없으며 자세한 보증 옵션을 보유할 수 없습니다. 당사 지원 지원 웹 사이트를 방문하십시오.",
             "viewWarrantyOptions": "보증 옵션 보기",
             "offlineTips1": "최신 보증 정보는 인터넷에 연결하십시오.",

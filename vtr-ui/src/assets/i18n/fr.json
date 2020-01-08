@@ -722,8 +722,8 @@
                 "batteryNotDetected": "Aucune batterie détectée",
                 "thresholdNote": "<b>Remarque :</b> La batterie ne peut pas être complètement chargée lorsque Seuil de chargement de la batterie est activé.",
                 "seeDetailsLink": "Voir les détails",
-				"gaugeResetWarning": "<b>Remarque :</b> la réinitialisation de la jauge de la batterie est en cours. Veuillez ne pas débrancher le boîtier d'alimentation.",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>Remarque :</b> la réinitialisation de la jauge de la batterie est en cours. Veuillez ne pas débrancher le boîtier d'alimentation.",
+                "dualConditions": {
                     "NotDetected": "<b>La batterie principale n'est pas détectée.</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "Veille intelligente",
-                    "description": "Cette fonctionnalité programme l'ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
-                    "tooltip": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisée en fonction de la période que vous aurez définie ou de la durée d'utilisation de votre ordinateur. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
+                    "description": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant une sortie rapide de la <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">veille moderne</a> pendant les heures d'utilisation intense.",
+                    "tooltip": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie ou de l'utilisation de l'ordinateur. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
                     "timer": {
-                        "heading": "Les heures pendant lesquelles vous utilisez en général l'ordinateur",
+                        "heading": "Les heures pendant lesquelles vous utilisez généralement votre ordinateur :",
                         "subHeading1": "début",
                         "subHeading2": "fin",
                         "subHeading3": "utilisez cette planification pour",
@@ -987,7 +987,7 @@
                         "noDaySelected": "Aucun jour sélectionné"
                     },
                     "checkbox": "Ajustement automatique du temps d'activité de l'ordinateur en fonction de votre utilisation",
-                    "hyperlinkToGraph": "Cliquez pour afficher le tableau de l'activité et du temps d'activité de l'ordinateur",
+                    "hyperlinkToGraph": "Cliquez pour afficher l'utilisation et la durée d'activité appliquée",
                     "subTitle": "Programmer votre ordinateur",
                     "automaticMode": "Mode Automatique",
                     "manualMode": "Mode Manuel",
@@ -1663,7 +1663,7 @@
             "startDate": "Date de début : ",
             "endDate": "Date de fin : ",
             "status": "Etat : ",
-            "subDescription1": "Ce produit a une garantie limitée et il bénéficie du service de réparation de dépôt. Les clients peuvent appeler leur centre de service local pour plus d'informations. Les distributeurs peuvent fournir un service de réparation pour ce produit.",
+            "subDescription1": "La garantie limitée Lenovo s'applique à votre ordinateur et donne droit au service de dépôt. Les clients peuvent appeler leur centre de service local pour plus d'informations. Les distributeurs peuvent fournir un service de réparation pour ce produit.",
             "subDescription2": "Impossible de localiser les détails de la garantie pour votre périphérique, pour bénéficier de plus d'options de garantie, consultez notre site Web support.",
             "viewWarrantyOptions": "AFFICHER LES OPTIONS DE GARANTIE",
             "offlineTips1": "Veuillez vous connecter à Internet pour obtenir les dernières informations sur la garantie.",

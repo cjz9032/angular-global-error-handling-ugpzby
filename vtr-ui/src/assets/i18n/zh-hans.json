@@ -722,8 +722,8 @@
                 },
                 "thresholdNote": "<b>注意：</b>启用电池充电阈值时，电池无法充满电。",
                 "seeDetailsLink": "查看详细信息",
-				"gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。",
+                "dualConditions": {
                     "NotDetected": "<b>未检测到主电池。</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "智能待机",
-                    "description": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
-                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
+                    "description": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">现代待机模式</a>的快速恢复体验。",
+                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划或计算机使用时间而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
                     "timer": {
-                        "heading": "设置通常使用此计算机的时间",
+                        "heading": "通常使用此计算机的时间：",
                         "subHeading1": "开始",
                         "subHeading2": "结束",
                         "subHeading3": "将此计划用于",
@@ -963,14 +963,14 @@
                     "warningtip": "请至少选择一天。",
                     "days": {
                         "shortName": {
-                            "sun": "星期日",
-                            "mon": "星期一",
-                            "tue": "星期二",
-                            "wed": "星期三",
-                            "thurs": "星期四",
-                            "fri": "星期五",
-                            "sat": "星期六",
-                            "thu": "星期四"
+                            "sun": "周日",
+                            "mon": "周一",
+                            "tue": "周二",
+                            "wed": "周三",
+                            "thurs": "周四",
+                            "fri": "周五",
+                            "sat": "周六",
+                            "thu": "周四"
                         },
                         "name": {
                             "sun": "星期日",
@@ -987,7 +987,7 @@
                         "noDaySelected": "未选择日期"
                     },
                     "checkbox": "根据您的使用情况自动调整计算机的活动时间",
-                    "hyperlinkToGraph": "单击以查看计算机活动和活动时间表",
+                    "hyperlinkToGraph": "单击以查看使用情况和应用的活动时间",
                     "subTitle": "安排您的计算机",
                     "automaticMode": "自动模式",
                     "manualMode": "手动模式",
@@ -1663,7 +1663,7 @@
             "startDate": "开始日期：",
             "endDate": "结束日期：",
             "status": "状态：",
-            "subDescription1": "本产品具有若干年的有限保修，并有权送往维修站获得维修服务。客户可以致电其当地服务中心来获取更多信息。经销商可对本产品提供送修服务。",
+            "subDescription1": "Lenovo 有限保修适用于您的计算机，并享有专人取送服务。客户可以致电其当地服务中心来获取更多信息。经销商可对本产品提供送修服务。",
             "subDescription2": "我们无法找到适用于您设备的保修详细信息，要获取更多保修选项，请访问我们的支持网站。",
             "viewWarrantyOptions": "查看保修选项",
             "offlineTips1": "请连接到因特网以获取最新的保修信息。",

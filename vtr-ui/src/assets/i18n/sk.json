@@ -722,8 +722,8 @@
                 "batteryNotDetected": "Nebola zistená žiadna batéria",
                 "thresholdNote": "<b>Poznámka:</b> Ak je aktivovaný limit hraničné úrovne nabitia batérie, batériu nie je možné úplne nabiť.",
                 "seeDetailsLink": "Zobraziť podrobnosti",
-				"gaugeResetWarning": "<b>Poznámka:</b> Prebieha vynulovanie ukazovateľa batérie. Neodpájajte napájací adaptér.",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>Poznámka:</b> Prebieha vynulovanie ukazovateľa batérie. Neodpájajte napájací adaptér.",
+                "dualConditions": {
                     "NotDetected": "<b>Hlavná batéria nebola zistená.</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "Inteligentný pohotovostný režim",
-                    "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
-                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie je optimalizované na základe nastaveného harmonogramu alebo stanoveného času využívania počítača. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie vtedy, ak sa počas nasledujúcich plánovaných dní nevyužíva.",
+                    "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">moderného pohotovostného režimu</a> pri náročnejšom využívaní.",
+                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie je optimalizované na základe nastaveného harmonogramu, alebo stanoveného času využívania počítača. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie vtedy, ak sa počas nasledujúcich plánovaných dní nevyužíva.",
                     "timer": {
-                        "heading": "Čas, kedy obyčajne využívate svoj počítač",
+                        "heading": "Čas, v ktorom zvyčajne používate počítač:",
                         "subHeading1": "začnete",
                         "subHeading2": "koniec",
                         "subHeading3": "tento plán použiť na",
@@ -963,14 +963,14 @@
                     "warningtip": "Vyberte aspoň jeden deň.",
                     "days": {
                         "shortName": {
-                            "sun": "nedeľa",
-                            "mon": "pondelok",
-                            "tue": "utorok",
-                            "wed": "streda",
-                            "thurs": "štvrtok",
-                            "fri": "piatok",
-                            "sat": "sobota",
-                            "thu": "štvrtok"
+                            "sun": "Ne.",
+                            "mon": "Po.",
+                            "tue": "Ut.",
+                            "wed": "St.",
+                            "thurs": "Št.",
+                            "fri": "Pi.",
+                            "sat": "So.",
+                            "thu": "Št."
                         },
                         "name": {
                             "sun": "nedeľa",
@@ -987,7 +987,7 @@
                         "noDaySelected": "Nie je vybratý žiadny deň"
                     },
                     "checkbox": "Automatické prispôsobenie aktívneho času počítača podľa vášho využívania",
-                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktívny čas tabuľky vášho počítača",
+                    "hyperlinkToGraph": "Kliknutím zobrazíte využitie a aplikovaný aktívny čas",
                     "subTitle": "Plánovanie počítača",
                     "automaticMode": "Automatický režim",
                     "manualMode": "Manuálny režim",
@@ -1663,7 +1663,7 @@
             "startDate": "Dátum začiatku: ",
             "endDate": "Dátum konca: ",
             "status": "Stav: ",
-            "subDescription1": "Na tento produkt sa vzťahuje ročná obmedzená záruka s opravou v servisnom stredisku. Zákazníci môžu získať ďalšie informácie kontaktovaním miestneho servisného strediska. Predajcovia môžu pre tento produkt poskytovať opravu po doručení zákazníkom.",
+            "subDescription1": "Na váš počítač sa vzťahuje obmedzená záruka spoločnosti Lenovo s opravou v servisnom stredisku. Zákazníci môžu získať ďalšie informácie kontaktovaním miestneho servisného strediska. Predajcovia môžu pre tento produkt poskytovať opravu po doručení zákazníkom.",
             "subDescription2": "Nepodarilo sa nám nájsť informácie o záruke na vaše zariadenie. Ak chcete získať informácie o ďalších možnostiach záruky, navštívte našu webovú lokalitu podpory.",
             "viewWarrantyOptions": "ZOBRAZIŤ MOŽNOSTI ZÁRUKY",
             "offlineTips1": "Ak chcete získať najnovšie informácie o záruke, pripojte sa na internet.",

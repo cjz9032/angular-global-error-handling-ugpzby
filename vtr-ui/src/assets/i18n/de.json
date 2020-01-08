@@ -722,8 +722,8 @@
                 "batteryNotDetected": "Kein Akku erkannt",
                 "thresholdNote": "<b>Hinweis:</b> Der Akku kann nicht vollständig aufgeladen werden, wenn der Schwellenwert für die Akkuladung aktiviert ist.",
                 "seeDetailsLink": "Details anzeigen",
-				"gaugeResetWarning": "<b>Hinweis:</b> Der Akkustandsanzeiger wird zurückgesetzt. Lassen Sie das Netzteil angeschlossen.",
-				"dualConditions": {
+                "gaugeResetWarning": "<b>Hinweis:</b> Der Akkustandsanzeiger wird zurückgesetzt. Lassen Sie das Netzteil angeschlossen.",
+                "dualConditions": {
                     "NotDetected": "<b>Der primäre Akku wird nicht erkannt.</b>"
                 }
             },
@@ -942,10 +942,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart-Standby",
-                    "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Hochfahren bei intensiverer Nutzung beeinträchtigt wird.",
-                    "tooltip": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird anhand des von Ihnen festgelegten Zeitplans oder Ihrer Computernutzungszeiten optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
+                    "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Fortsetzen von <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern-Standby</a> bei intensiverer Nutzung beeinträchtigt wird.",
+                    "tooltip": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird anhand des von Ihnen festgelegten Zeitplans oder Ihrer Computernutzung optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
                     "timer": {
-                        "heading": "Die typischen Nutzungszeiten für Ihren Computer",
+                        "heading": "Typische Nutzungszeiten für diesen Computer:",
                         "subHeading1": "innerhalb des Felds",
                         "subHeading2": "Ende",
                         "subHeading3": "Zeitplan nutzen für",
@@ -987,7 +987,7 @@
                         "noDaySelected": "Kein Tag ausgewählt"
                     },
                     "checkbox": "Automatische Anpassung der aktiven Zeit Ihres Computers abhängig von der Verwendung",
-                    "hyperlinkToGraph": "Klicken Sie hier, um die Tabelle mit den Aktivitäten und aktiven Zeiten Ihres Computers anzuzeigen",
+                    "hyperlinkToGraph": "Hier klicken, um die Nutzung und angewandte aktive Zeit anzuzeigen",
                     "subTitle": "Zeitplan für Ihren Computer festlegen",
                     "automaticMode": "Automatischer Modus",
                     "manualMode": "Manueller Modus",
@@ -1663,7 +1663,7 @@
             "startDate": "Startdatum: ",
             "endDate": "Enddatum: ",
             "status": "Status: ",
-            "subDescription1": "Dieses Produkt hat eine jahrelange beschränkte Garantie und ist berechtigt für einen Depot-Reparaturservice. Kunden können sich für weitere Informationen an ihr lokales Service-Center wenden. Händler können für dieses Produkt eine Reparatur mit Einschicken des Geräts durch den Kunden durchführen.",
+            "subDescription1": "Die begrenzte Herstellergarantie von Lenovo gilt für Ihren Computer und berechtigt zum Depot-Service. Kunden können sich für weitere Informationen an ihr lokales Service-Center wenden. Händler können für dieses Produkt eine Reparatur mit Einschicken des Geräts durch den Kunden durchführen.",
             "subDescription2": "Wir konnten keine Garantieinformationen für Ihr Gerät finden, um weitere Garantieoptionen zu erhalten. Besuchen Sie bitte unsere Support-Website.",
             "viewWarrantyOptions": "GARANTIEOPTIONEN ANZEIGEN",
             "offlineTips1": "Stellen Sie eine Verbindung zum Internet her, um die neuesten Garantieinformationen zu erhalten.",
