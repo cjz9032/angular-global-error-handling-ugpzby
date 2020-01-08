@@ -155,6 +155,9 @@
 				ui-gaming-driver-popup {
 					right: calc(100% - 1rem);
 					top: -2.5rem;
+					&::after {
+					 top: 11.5rem;
+					}
 					@media #{$medium-screen}{
 						min-width: 45rem;
 						right: auto;

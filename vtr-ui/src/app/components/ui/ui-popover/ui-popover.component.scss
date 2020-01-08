@@ -8,19 +8,17 @@ ui-popover {
 	border-radius: 1rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
 	right: 7.3rem;
-	top: -11.2rem;
+	top: -11.5rem;
 	width: 35vw;
 	min-width: 56rem;
 	@media #{$breakpoint_md} {
-		min-width: 40rem;
-		top: -11.2rem;
+		min-width: 45rem;
 	}
 	@media #{$mediaquery_X48} {
-		min-width: 42rem;
+		min-width: 44rem;
 	}
 	@media #{$breakpoint_sm} {
 		min-width: 36rem;
-		top:-11.5rem;
 	}
 	@media #{$black-on-white} {
 		background: $high-contrast-grey;
@@ -39,6 +37,9 @@ ui-popover {
 		top: calc(50% - 1.5rem);
 		right: -1.2rem;
 		transform: rotate(-45deg);
+		@media #{$breakpoint_md} {
+			top:11.8rem;
+		}
 		@media #{$black-on-white} {
 			border-bottom: 3rem solid $high-contrast-grey;
 			border-left: 3rem solid transparent;
