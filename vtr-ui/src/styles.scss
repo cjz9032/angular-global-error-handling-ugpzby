@@ -400,6 +400,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .Battery-Charge-Threshold-Modal {
 	.modal-dialog {
 		width: 49rem;
+		max-width:90%;
+		margin:auto;
 
 		// RESPONSIVE EFFORT
 		// @media #{$mediaquery_11} {
@@ -1357,16 +1359,17 @@ vtr-ui-smart-performance-scanning {
 		}
 		@media #{$breakpoint_lg} {
 			max-width: 70rem;
-			top: 4rem;
+			top: 8rem;
 		}
 		@media #{$breakpoint_md} {
-			max-width: 55rem;
-			top: 0;
+			max-width: 60rem;
+			top: 8rem;
 		}
 		@media #{$breakpoint_sm} {
 			max-width: 45rem;
-			margin: 0 auto;
-			top: 2rem;
+			margin:0 auto;
+			top: 10rem;
+			bottom: 2rem;
 		}
 		.modal-content {
 			border-radius: 1rem;
