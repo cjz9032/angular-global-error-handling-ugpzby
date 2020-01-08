@@ -1,3 +1,5 @@
+import { LightEffectComplexType } from './../../../enums/light-effect-complex-type';
+import { LightEffectRGBFeature } from './../../../enums/light-effect-rgbfeature';
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { UiLightingProfileComponent } from './ui-lighting-profile.component';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
@@ -18,10 +20,18 @@ const getLightingProfileById: any = {
 		{ lightPanelType: 64, lightEffectType: 2, lightColor: '4A9325' }
 	]
 };
+const lightingResp = {
+	LightPanelType: [32, 64],
+	LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128],
+	LedType_simple: [0], BrightAdjustLevel: 4,
+	RGBfeature: 255
+};
 xdescribe('UiLightingProfileComponent', () => {
 	let component: UiLightingProfileComponent;
 	let fixture: ComponentFixture<UiLightingProfileComponent>;
 	gamingLightingServiceMock.isShellAvailable.and.returnValue(true);
+	gamingLightingServiceMock.setLightingProfileEffectColor.and
+		.returnValue(Promise.resolve(getLightingProfileById));
 	deviceServiceMock.isShellAvailable.and.returnValue(true);
 	deviceServiceMock.getMachineInfo.and.returnValue(Promise.resolve(undefined));
 	beforeEach(fakeAsync(() => {
@@ -31,13 +41,16 @@ xdescribe('UiLightingProfileComponent', () => {
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [
 				{ provide: HttpClient },
-				{ provide: Router, useClass: class { navigate = jasmine.createSpy("navigate"); } },
+				{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 				{ provide: DeviceService, useValue: deviceServiceMock },
 				{ provide: GamingLightingService, useValue: gamingLightingServiceMock }
 			]
 		}).compileComponents();
 		fixture = TestBed.createComponent(UiLightingProfileComponent);
 		component = fixture.debugElement.componentInstance;
+		if (!component.lightingCapabilities) {
+			component.lightingCapabilities = { RGBfeature: false };
+		}
 	}));
 
 	it('should create', fakeAsync(() => {
@@ -51,7 +64,7 @@ xdescribe('UiLightingProfileComponent', () => {
 		// component.defaultLanguage = 'en';
 		component.ngOnInit();
 		expect(component.isProfileOff).toEqual(true);
-	})
+	});
 
 	it('Profile shouldn\'t be off', () => {
 		component.currentProfileId = 1;
@@ -90,12 +103,12 @@ xdescribe('UiLightingProfileComponent', () => {
 					{
 						lightPanelType: 32,
 						lightEffectType: 4,
-						lightColor: "FFFFFF"
+						lightColor: 'FFFFFF'
 					},
 					{
 						lightPanelType: 64,
 						lightEffectType: 2,
-						lightColor: "FF0000"
+						lightColor: 'FF0000'
 					}
 				]
 			}
@@ -106,151 +119,80 @@ xdescribe('UiLightingProfileComponent', () => {
 		tick(10);
 	}));
 
-	it('should set the lighting profile', fakeAsync(() => {
-		component.currentProfileId = 1;
-		fixture.detectChanges();
-		gamingLightingServiceMock.setLightingDefaultProfileById.and.returnValue(Promise.resolve(
-			{
-				didSuccess: true,
-				profileId: 1,
-				brightness: 3,
-				lightInfo: [
-					{
-						lightPanelType: 32,
-						lightEffectType: 4,
-						lightColor: "FFFFFF"
-					},
-					{
-						lightPanelType: 64,
-						lightEffectType: 2,
-						lightColor: "FF0000"
-					}
-				]
-			}
-		));
-		let e = { target: { value: 1 } }
-		component.setDefaultProfile(e);
-		component.setLightingProfileId(e);
+	it('SHould get the cache details', () => {
+		const res = component.getCacheLightingCapabilities({
+			RGBfeature: LightEffectRGBFeature.Complex,
+			LedType_Complex: [1], LightPanelType: [{}]
+		});
+		expect(res).toBe(undefined);
+	});
+
+	it('Should call the color changed front', () => {
+		component.colorChangedFront({ hex: '#fffff' });
+		expect(component.inHex1).toBe('#fffff');
+	});
+
+	it('Should call the color changed side', fakeAsync(() => {
+		component.colorChangedSide({ hex: '#fffff' });
+		expect(component.inHex2).toBe('#fffff');
 		tick(10);
-		expect(component.profileBrightness).toEqual(3);
-		tick(10);
-		expect(component.frontSelectedValue).toEqual(4);
-		tick(10);
-		expect(component.sideSelectedValue).toEqual(2);
-		tick(10);
-		expect(component.inHex1).toEqual('FFFFFF');
-		tick(10);
-		expect(component.inHex2).toEqual('FF0000');
 	}));
 
-	it('Should give false show hide overlay when call optionchange RGB top using setLightingProfileEffectColor function.', fakeAsync(() => {
-		fixture = TestBed.createComponent(UiLightingProfileComponent);
-		component = fixture.debugElement.componentInstance;
-		fixture.detectChanges();
-
-		gamingLightingServiceMock.setLightingProfileEffectColor.and.returnValue(Promise.resolve(
-			{
-				profileId: 1,
-				lightPanelType: 32,
-				lightEffectType: 4
-			}
-		));
-		component.optionChangedRGBTop(2, 1);
-		tick(10);
-		expect(component.showHideOverlay).toEqual(false);
+	it('Should call the update lighting', fakeAsync(() => {
+		const res = component.updateGetGamingLightingCapabilities(null);
+		expect(res).toBe(undefined);
 	}));
 
-	it('Should give false show hide overlay when call optionchange RGB side using setLightingProfileEffectColor function.', fakeAsync(() => {
-		fixture = TestBed.createComponent(UiLightingProfileComponent);
-		component = fixture.debugElement.componentInstance;
-		fixture.detectChanges();
-		gamingLightingServiceMock.setLightingProfileEffectColor.and.returnValue(Promise.resolve(
-			{
-				profileId: 1,
-				lightPanelType: 32,
-				lightEffectType: 4
-			}
-		));
-		component.optionChangedRGBSide(2, 1);
-		tick(10);
-		expect(component.showHideOverlay).toEqual(false);
-	}))
+	it('Should call the optionChangedRGBTop', fakeAsync(() => {
+		const event = { value: LightEffectComplexType.CPU_frequency };
+		component.lightingCapabilities = {
+			RGBfeature: LightEffectRGBFeature.Complex,
+			LightPanelType: [{}],
+			LedType_Complex: [{}],
+			lightInfo: [
+				{ lightPanelType: 32, lightEffectType: 2, lightColor: '55943D' },
+				{ lightPanelType: 64, lightEffectType: 2, lightColor: '4A9325' }
+			]
+		};
+		const res = component.optionChangedRGBTop(event, {});
+		expect(res).toBe(undefined);
+		tick(5);
+		gamingLightingServiceMock.isShellAvailable.and.returnValue(true);
+		getLightingProfileById.didSuccess = false;
+		gamingLightingServiceMock.setLightingProfileEffectColor.and
+			.returnValue(Promise.resolve(getLightingProfileById));
+		event.value = LightEffectComplexType.Breath;
+		component.simpleOrComplex = LightEffectRGBFeature.Complex;
+		const res1 = component.optionChangedRGBTop(event, {});
+		expect(res1).toBe(undefined);
+	}));
 
-	xit('chcking', fakeAsync(() => {
-		fixture = TestBed.createComponent(UiLightingProfileComponent);
-		component = fixture.debugElement.componentInstance;
-		fixture.detectChanges();
-		let e = { target: { value: 1 } };
-		component.changeSingleCoorEffect(e);
-	}))
+	it('should call the colorEffectChangedSide', fakeAsync(() => {
+		component.lightingCapabilities = { LightPanelType: [] };
+		getLightingProfileById.didSuccess = true;
+		gamingLightingServiceMock.setLightingProfileEffectColor.and
+			.returnValue(Promise.resolve(getLightingProfileById));
+		const res = component.colorEffectChangedSide('#fffff');
+		expect(res).toBe(undefined);
+	}));
 
-	// xit('should update the top dropdown ', fakeAsync(() => {
-	// 	component.currentProfileId = 1;
-	// 	fixture.detectChanges();
-	// 	gamingLightingServiceMock.getLightingCapabilities.and.returnValue(Promise.resolve(multipleColorResponse));
-	// 	component.optionChangedRGBTop({ value: 2 }, {});
-	// 	tick(10);
-	// 	expect(component.showHideOverlaySide).toEqual(false);
-	// 	component.optionChangedRGBTop({ value: 4 }, {});
-	// 	tick(10);
-	// 	expect(component.showHideOverlaySide).toEqual(false);
-	// 	component.optionChangedRGBTop({ value: 8 }, {});
-	// 	tick(10);
-	// 	expect(component.showHideOverlaySide).toEqual(true);
-	// 	component.optionChangedRGBTop({ value: 32 }, {});
-	// 	tick(10);
-	// 	expect(component.showHideOverlaySide).toEqual(true);
-	// 	component.optionChangedRGBTop({ value: 64 }, {});
-	// 	tick(10);
-	// 	expect(component.showHideOverlaySide).toEqual(true);
-	// 	component.optionChangedRGBTop({ value: 128 }, {});
-	// 	tick(10);
-	// 	expect(component.showHideOverlaySide).toEqual(true);
-	// 	component.optionChangedRGBTop({ value: 4 }, {});
-	// 	tick(10);
-	// 	expect(component.enableBrightCondition).toEqual(true);
-	// 	component.optionChangedRGBTop({ value: 8 }, {});
-	// 	tick(10);
-	// 	expect(component.enableBrightCondition).toEqual(true);
+	it('should call the colorEffectChangedSide', fakeAsync(() => {
+		component.lightingCapabilities = { LightPanelType: [] };
+		getLightingProfileById.didSuccess = true;
+		gamingLightingServiceMock.setLightingProfileEffectColor.and
+			.returnValue(Promise.resolve(getLightingProfileById));
+		const res = component.colorEffectChangedFront('#fffff');
+		expect(res).toBe(undefined);
+	})); 
 
-	// }));
-
-	// xit('should update the side dropdown ', fakeAsync(() => {
-	// 	component.currentProfileId = 1;
-	// 	gamingLightingServiceMock.getLightingCapabilities.and.returnValue(Promise.resolve(
-	// 		{
-	// 			"LightPanelType":[32],
-	// 			"LedType_Complex": [268435456],
-	// 			"LedType_simple":[268435456],
-	// 			"BrightAdjustLevel":4|0,
-	// 			"RGBfeature":255|0|0
-	// 		}
-	// 	));
-	// 	component.optionChangedRGBSide({ value: 2 }, {});
-	// 	tick(10);
-	// 	expect(component.showHideOverlaySide).toEqual(false);
-	// 	component.optionChangedRGBSide({ value: 4 }, {});
-	// 	tick(10);
-	// 	expect(component.showHideOverlaySide).toEqual(false);
-	// 	component.optionChangedRGBSide({ value: 8 }, {});
-	// 	tick(10);
-	// 	expect(component.showHideOverlaySide).toEqual(true);
-	// 	component.optionChangedRGBSide({ value: 32 }, {});
-	// 	tick(10);
-	// 	expect(component.showHideOverlaySide).toEqual(true);
-	// 	component.optionChangedRGBSide({ value: 64 }, {});
-	// 	tick(10);
-	// 	expect(component.showHideOverlaySide).toEqual(true);
-	// 	component.optionChangedRGBSide({ value: 128 }, {});
-	// 	tick(10);
-	// 	expect(component.showHideOverlaySide).toEqual(true);
-	// 	component.optionChangedRGBSide({ value: 4 }, {});
-	// 	tick(10);
-	// 	expect(component.enableBrightCondition).toEqual(true);
-	// 	component.optionChangedRGBSide({ value: 8 }, {});
-	// 	tick(10);
-	// 	expect(component.enableBrightCondition).toEqual(true);
-	// }));
+	it('should call the setLightingProfileId', fakeAsync(() => {
+		component.lightingCapabilities = { LightPanelType: [] };
+		getLightingProfileById.didSuccess = true;
+		gamingLightingServiceMock.setLightingProfileEffectColor.and
+			.returnValue(Promise.resolve(getLightingProfileById));
+		const res = component.colorEffectChangedFront('#fffff');
+		expect(res).toBe(undefined);
+	}));
 
 });
 
@@ -263,9 +205,9 @@ export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
 		name: options.name
 	};
-	return <any>Pipe(metadata)(class MockPipe {
+	return Pipe(metadata)(class MockPipe {
 		public transform(query: string, ...args: any[]): any {
 			return query;
 		}
-	});
+	}) as any;
 }

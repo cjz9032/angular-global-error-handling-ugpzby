@@ -149,7 +149,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	public readonly displayPriorityRadioGroup = 'displayPriorityRadioGroup';
 	public readonly displayPriorityModal =
 		{
-			selectedValue: '',
+			selectedValue: 'HDMI',
 			options: [
 				{
 					name: 'CARTRIDGE',
@@ -1177,6 +1177,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 
 	public setDisplayPriorityCapability(option: string) {
 		this.logger.debug('SubpageDeviceSettingsDisplayComponent.setDisplayPriorityCapability.then', option);
+		this.displayPriorityModal.selectedValue = option;
 	}
 
 	//#endregion
