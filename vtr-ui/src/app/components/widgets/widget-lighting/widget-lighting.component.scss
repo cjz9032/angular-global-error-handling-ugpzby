@@ -154,7 +154,7 @@
 			::ng-deep{
 				ui-gaming-driver-popup {
 					right: calc(100% - 1rem);
-					top: -3.5rem;
+					top: -2.5rem;
 					@media #{$medium-screen}{
 						min-width: 45rem;
 						right: auto;
@@ -182,16 +182,15 @@
 						top:-25.1rem;
 					}
 					.content-body {
-						min-height: 12rem;
 							@media #{$medium-screen}{
 							min-height: 14.7rem;
 							}
 							@media #{$breakpoint_md}{
 							min-height: 14.7rem;
 							}
-						h1{
-							min-height: 60px;
-						}
+							p {
+								min-height: 5.8rem;
+							}
 					}
 				}
 			}

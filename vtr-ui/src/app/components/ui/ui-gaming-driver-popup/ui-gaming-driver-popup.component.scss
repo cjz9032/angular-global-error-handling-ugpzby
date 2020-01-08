@@ -8,12 +8,10 @@ ui-gaming-driver-popup {
 	border-radius: 0.75rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
 	right: 8rem;
-	top: -13rem;
 	width: 35vw;
 	min-width: 56rem;
 	@media #{$breakpoint_md} {
 		min-width: 45rem;
-		top: -14rem;
 	}
 	@media #{$breakpoint_sm} {
 		min-width: 36rem;
@@ -33,6 +31,9 @@ ui-gaming-driver-popup {
 		border-left: 3rem solid transparent;
 		bottom: -1rem;
 		top: calc(50% - 1.5rem);
+		@media #{$breakpoint_md} {
+			top:11.8rem;
+		}
 		right: -1.4rem;
 		transform: rotate(-45deg);
 		@media #{$black-on-white} {
@@ -138,77 +139,15 @@ ui-gaming-driver-popup {
 }
 
 ::ng-deep {
-		.overclock-driver-popup {
-			#gamingDriverPopup {
-				top:-9.3rem;
-				@media #{$breakpoint_md} {
-					top:-10.3rem;
+	.overclock-driver-popup, .networkboost-driver-popup{
+		#gamingDriverPopup{
+			@media #{$mediaquery_X48} {
+					min-width: 44rem;
 				}
-				@media #{$mediaquery_X48} {
-						min-width: 44rem;
-						top: -10.3rem;
-					}
 				@media #{$breakpoint_sm} {
-					right: 7.5rem;
 					min-width: 36rem;
-					top:-15rem;
-				}
-					.modal-body{
-							.content-body {
-								min-height: 12rem;
-								@media #{$breakpoint_md} {
-							  min-height: 14.7rem;
-							  }
-								@media #{$breakpoint_sm} {
-									min-height: 20rem;
-								}
-							}
-							.btn-container{
-								div {
-									display: inline-block;
-										@media #{$mediaquery_sm} {
-											display: block;
-										}
-								}
-								.cancel-link{
-									@media #{$mediaquery_X48} {
-									margin-left: 1.5rem;
-									}
-								}
-								.enable-button{
-										@media #{$mediaquery_sm} {
-										margin-bottom: 1rem;
-									}
-								}
-						}
-				}
 			}
-		}
-	.networkboost-driver-popup {
-		#gamingDriverPopup {
-			right:7.5rem;
-			top:-12.2rem;
-					@media #{$breakpoint_md} {
-						top:-13.5rem;
-					}
-					@media #{$mediaquery_X48} {
-						min-width: 44rem;
-						top: -13.6rem;
-					}
-					@media #{$breakpoint_sm} {
-					  min-width: 36rem;
-					  top:-18.2rem;
-				}
-				.modal-body{
-					.content-body {
-						  min-height: 12rem;
-							@media #{$breakpoint_md} {
-							min-height: 14.7rem;
-							}
-							@media #{$breakpoint_sm} {
-								min-height: 20rem;
-							}
-						}
+			.modal-body{
 						.btn-container{
 								div {
 									display: inline-block;
@@ -228,6 +167,20 @@ ui-gaming-driver-popup {
 								}
 						}
 					}
+		}	
+}
+		.overclock-driver-popup {
+			#gamingDriverPopup {
+				top:-8.5rem;
+				@media #{$breakpoint_sm} {
+					right: 7.5rem;
+				}
+			}
+		}
+	.networkboost-driver-popup {
+		#gamingDriverPopup {
+			right:7.5rem;
+			top:-11.5rem;
 			}
 	}
 }
