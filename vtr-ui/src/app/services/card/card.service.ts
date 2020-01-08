@@ -21,14 +21,14 @@ export class CardService {
 		}
 
 		const isProtocol = actionLink.startsWith('lenovo-vantage3:');
-		const isDccDetails = actionLink.startsWith('dcc-details:');
+		const isDccDetails = actionLink.startsWith('lenovo-vantage3:dcc-details');
 		const isDccDemo = actionLink.startsWith('dcc-demo');
 
 		if (!actionType || (actionType !== 'Internal' && !isProtocol)) {
 			return;
 		}
 
-		if (isProtocol) {
+		if (isProtocol && !isDccDetails) {
 			WinRT.launchUri(actionLink);
 		} else if (isDccDetails || isDccDemo) {
 			this.appsForYouService.updateUnreadMessageCount('menu-main-lnk-open-dcc');
