@@ -3,6 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { TranslateService } from '@ngx-translate/core';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-modal-dcc-detail',
@@ -22,7 +23,8 @@ export class ModalDccDetailComponent implements OnInit, AfterViewInit {
 		public activeModal: NgbActiveModal,
 		vantageShellService: VantageShellService,
 		private timerService: TimerService,
-		private translateService: TranslateService
+		private translateService: TranslateService,
+		public commonService: CommonService
 	) {
 		this.metricClient = vantageShellService.getMetrics();
 		this.metricsParent = 'dcc.detail';
