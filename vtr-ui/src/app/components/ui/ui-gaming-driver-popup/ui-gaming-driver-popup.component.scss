@@ -175,12 +175,18 @@ ui-gaming-driver-popup {
 				@media #{$breakpoint_sm} {
 					right: 7.5rem;
 				}
+					&::after {
+						top: 11.7rem;
+					}
 			}
 		}
 	.networkboost-driver-popup {
 		#gamingDriverPopup {
 			right:7.5rem;
 			top:-11.5rem;
+				&::after {
+						top: 11.7rem;
+					}
 			}
 	}
 }
