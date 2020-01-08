@@ -101,8 +101,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.cameraStatus.available = cameraState.available;
 			this.cameraStatus.status = cameraState.status;
 			this.cameraStatus.isLoading = false;
-			// comment out the line for van-13680
-			// this.cameraStatus.permission = cameraState.permission;
+			this.cameraStatus.permission = cameraState.permission;
 		}
 	}
 
