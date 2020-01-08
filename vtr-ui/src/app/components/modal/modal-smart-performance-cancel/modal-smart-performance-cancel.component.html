@@ -14,7 +14,7 @@
 		<p>If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan at any time.</p>
 		<hr>
 		<div class="row">
-			<button class="btn cancel-button">yes, cancel</button>
+			<button class="btn cancel-button" (click)="cancelScan()">yes, cancel</button>
 			<div class="py-5 ml-5">
 				<a (click)="closeModal()" class="resume-scan">no, resume scan</a>
 			</div>
