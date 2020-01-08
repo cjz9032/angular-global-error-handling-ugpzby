@@ -146,6 +146,44 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	cameraSessionId: Subscription;
 	showECMReset = false;
 
+	public readonly displayPriorityRadioGroup = 'displayPriorityRadioGroup';
+	public readonly displayPriorityModal =
+		{
+			selectedValue: '',
+			options: [
+				{
+					name: 'CARTRIDGE',
+					isAvailable: false,
+					label: 'device.deviceSettings.displayCamera.display.displayPriority.options.cartridge',
+					icon: 'dpc-optional' // icomoon icon name without "icomoon-"
+				},
+				{
+					name: 'WIGIG',
+					isAvailable: false,
+					label: 'device.deviceSettings.displayCamera.display.displayPriority.options.wigig',
+					icon: 'dpc-wigig'
+				},
+				{
+					name: 'DOCK',
+					isAvailable: false,
+					label: 'device.deviceSettings.displayCamera.display.displayPriority.options.dock',
+					icon: 'dpc-docking'
+				},
+				{
+					name: 'USB_C_DP',
+					isAvailable: false,
+					label: 'device.deviceSettings.displayCamera.display.displayPriority.options.usb_c_dp',
+					icon: 'dpc-type-c'
+				},
+				{
+					name: 'HDMI',
+					isAvailable: false,
+					label: 'device.deviceSettings.displayCamera.display.displayPriority.options.hdmi',
+					icon: 'dpc-hdmi'
+				}
+			]
+		};
+
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
@@ -162,8 +200,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		this.eyeCareDataSource = new EyeCareMode();
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
-		this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
-		this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
+			this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
+			this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
 		}
 	}
 
@@ -1130,5 +1168,17 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 				}
 			});
 	}
+
+	//#region Display Priority Control
+
+	private getDisplayPriorityCapability() {
+
+	}
+
+	public setDisplayPriorityCapability(option: string) {
+		this.logger.debug('SubpageDeviceSettingsDisplayComponent.setDisplayPriorityCapability.then', option);
+	}
+
+	//#endregion
 
 }

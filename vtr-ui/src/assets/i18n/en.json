@@ -1375,6 +1375,17 @@
                         "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
                         "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
                         "labelText": "Enable this feature when typing passwords"
+                    },
+                    "displayPriority":{
+                        "title": "Display priority control",
+                        "description":"Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options":{
+							"hdmi":"HDMI",
+							"dock":"Docking",
+							"usb_c_dp":"USB Type-C",
+							"wigig":"WiGig",
+							"cartridge":"Optional Module"
+						}
                     }
                 },
                 "camera": {
