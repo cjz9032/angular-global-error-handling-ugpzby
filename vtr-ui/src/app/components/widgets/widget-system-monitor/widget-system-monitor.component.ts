@@ -64,30 +64,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			isSystemDisk: 'true',
 			type: 'SSD',
 			usedDisk: 71
-		},
-		{
-			capacity: 476,
-			diskUsage: '14',
-			hddName: 'LENSE30512GMSP34MEAT3TA',
-			isSystemDisk: 'false',
-			type: 'SSD',
-			usedDisk: 71
-		},
-		{
-			capacity: 476,
-			diskUsage: '14',
-			hddName: 'LENSE30512GMSP34MEAT3TA',
-			isSystemDisk: 'false',
-			type: 'SSD',
-			usedDisk: 71
-		},
-		{
-			capacity: 476,
-			diskUsage: '14',
-			hddName: 'LENSE30512GMSP34MEAT3TA',
-			isSystemDisk: 'false',
-			type: 'SSD',
-			usedDisk: 71
 		}
 	];
 

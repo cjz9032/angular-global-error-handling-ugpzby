@@ -60,6 +60,36 @@
     content: $icomoon-display_camera;
   }
 }
+.icomoon-dpc-docking {
+  &:before {
+    content: $icomoon-dpc-docking;
+  }
+}
+.icomoon-dpc-hdmi {
+  &:before {
+    content: $icomoon-dpc-hdmi;
+  }
+}
+.icomoon-dpc-icon {
+  &:before {
+    content: $icomoon-dpc-icon;
+  }
+}
+.icomoon-dpc-optional {
+  &:before {
+    content: $icomoon-dpc-optional;
+  }
+}
+.icomoon-dpc-type-c {
+  &:before {
+    content: $icomoon-dpc-type-c;
+  }
+}
+.icomoon-dpc-wigig {
+  &:before {
+    content: $icomoon-dpc-wigig;
+  }
+}
 .icomoon-dynamic {
   &:before {
     content: $icomoon-dynamic;
@@ -675,4 +705,3 @@
     content: $icomoon-zero-touch-playback;
   }
 }
-
