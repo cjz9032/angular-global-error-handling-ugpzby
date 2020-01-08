@@ -65,7 +65,7 @@
 											[label]="dolbyMode | dolbyModesTranslation"
 											[value]='dolbyMode'
 											[checked]="dolbyMode == dolbyModeResponse.currentMode"
-											(change)="onDolbySeetingRadioChange($event)"
+											(optionChange)="onDolbySeetingRadioChange($event)"
 											[processIcon]="true"
 											[textId]="'myDevice-settings-audio-automatic-dolby'">
 										</vtr-ui-circle-radio-with-checkbox>
@@ -235,7 +235,7 @@
 											[value]='optimizeMode'
 											[checked]="optimizeMode === microOptimizeModeResponse.current"
 											[disabled]="microphoneProperties.disableEffect"
-											(change)="onOptimizeModesRadioChange($event)"
+											(optionChange)="onOptimizeModesRadioChange($event)"
 											[processIcon]="true"
 											[textId]="'myDevice-settings-audio-microphone-optimize'">
 										</vtr-ui-circle-radio-with-checkbox>

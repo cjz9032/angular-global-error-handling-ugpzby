@@ -21,7 +21,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	@Input() radioGroup: any;
 	@Input() customIcon = '';
 	@Input() hideIcon = false;
-	@Output() change: EventEmitter<any> = new EventEmitter();
+	@Output() optionChange: EventEmitter<any> = new EventEmitter();
 	// These following instance variables added for Keyboard navigation to radio button.
 	keyCode = Object.freeze({
 		TAB: 9,
@@ -49,7 +49,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	}
 
 	onChange(event) {
-		this.change.emit(event);
+		this.optionChange.emit(event);
 	}
 
 	getIconName(name: string) {
