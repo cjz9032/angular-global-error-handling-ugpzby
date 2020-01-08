@@ -321,7 +321,7 @@
 									*ngIf="!appsForYouService.UnreadMessageCount.adobeMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem
-								*ngIf="appsForYouService.showDccMenu()"
+								*ngIf="commonService.isOnline && appsForYouService.showDccMenu()"
 								class="dropdown-item link link-dcc"
 								tabindex="1"
 								vtrMetrics
