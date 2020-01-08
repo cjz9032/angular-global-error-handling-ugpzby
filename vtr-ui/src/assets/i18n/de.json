@@ -963,14 +963,14 @@
                     "warningtip": "Bitte wählen Sie mindestens einen Tag aus.",
                     "days": {
                         "shortName": {
-                            "sun": "Sonntag",
-                            "mon": "Montag",
-                            "tue": "Dienstag",
-                            "wed": "Mittwoch",
-                            "thurs": "Donnerstag",
-                            "fri": "Freitag",
-                            "sat": "Samstag",
-                            "thu": "Donnerstag"
+                            "sun": "So.",
+                            "mon": "Mo.",
+                            "tue": "Di.",
+                            "wed": "Mi.",
+                            "thurs": "Do.",
+                            "fri": "Fr.",
+                            "sat": "Sa.",
+                            "thu": "Do."
                         },
                         "name": {
                             "sun": "Sonntag",
