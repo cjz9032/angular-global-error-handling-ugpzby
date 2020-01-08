@@ -111,15 +111,25 @@
 					border-radius: $border_radius_sm;		
 					background-color: $gaming_darkest;
 					border: 1px solid $gaming_darkest;
+					@media #{$breakpoint_md} {
+						float:left;	
+						padding-bottom:2rem;
+						position:relative;
+						}
+					@media screen and (min-width: 992px) and (max-width: 1199.9px) { 
+						float:left;	
+						padding-bottom:2rem;
+						position:relative;
+					}
+					
 					.hd-item {
-						//width:30%;
-						@media #{$breakpoint_md} {
-						 //max-width: 35rem;
+					@media #{$breakpoint_md} {
 						 margin: auto;
-					 }
-					 @media #{$breakpoint_sm} {
-						// max-width: 30rem;
-					 }
+						 float:left;	
+					 }	
+					 @media screen and (min-width: 992px) and (max-width: 1199.9px) { 
+						float:left;	
+					}				 
 					}
 					.expanded {
 						height: auto;
@@ -625,8 +635,8 @@
 					}
 				}
 				.hd-list {
-					padding: 2rem 0 1rem;
-					width:73%;		
+					padding: 1rem 0 1rem;
+					width:75%;		
 					margin:auto;
 					text-align:left;
 					@media screen and (max-width: 567.9px){
@@ -641,7 +651,10 @@
 					@media screen and (min-width: 992px) and (max-width: 1199.9px) { 
 					padding: 2rem 2.5rem;
 					width:45%;
-					}					 
+					}
+					@media screen and (min-width: 1200px){
+					width:70%;
+					}				 
 					&.single {
 						padding: 2rem;
 						padding-top: 3.5rem;
@@ -657,16 +670,30 @@
 						}						
 						.hd-item {
 							text-align: center;
-							.gaming-tooltip {	//tooltip for single							
-								min-width: 24rem;							
-								top: -7rem;
+							.gaming-tooltip {// tooltips for single
+								top: -4.75rem;
+								vertical-align:middle;
+								display:flex;
+								flex-direction: column; 
+								min-height:6rem;
 								left: 50%;
-								transform: translate(-50%);																					
-							}
-
+								min-width:28rem;
+								padding:1.25rem;
+								transform: translate(-50%);							
+								p{
+									line-height: auto;
+									padding:0px;
+									margin:auto;
+									text-align:center;
+									vertical-align:middle;
+								}							
+								@media #{$breakpoint_sm}{								
+									min-width:28rem; 
+								}
+							}						
 							&:hover {
 								.gaming-tooltip {
-									display: inline-block;
+									display: flex; 
 									opacity: 1;
 								}
 							}
@@ -725,6 +752,13 @@
 						margin-bottom: 3.4rem;
 						width:100%;
 						position: relative;
+						@media #{$breakpoint_md} {
+							margin: auto;
+							float:left;	
+						}	
+						@media screen and (min-width: 992px) and (max-width: 1199.9px) { 
+						   float:left;	
+					   }
 						@media #{$breakpoint_xl3} {
 							margin-bottom: 2.4rem;
 						}
@@ -735,21 +769,31 @@
 							&::after {
 								display: none;
 							}
-						}
+						}						
 						.gaming-tooltip {// tooltips for multiple HDD and SDD
-							top: -5.5rem; 
+							top: -4.75rem;
+							vertical-align:middle;
+							display:flex;
+							flex-direction: column; 
+							min-height:6rem;
 							left: 50%;
 							min-width:28rem;
-							min-height:7rem;
-							padding:1.25rem 1.5rem 1.25rem;
-							transform: translate(-50%);						
+							padding:1.25rem;
+							transform: translate(-50%);							
+							p{
+								line-height: auto;
+								padding:0px;
+								margin:auto;
+								text-align:center;
+								vertical-align:middle;
+							}							
 							@media #{$breakpoint_sm}{								
 								min-width:28rem; 
 							}
-						}
+						}						
 						&:hover {
 							.gaming-tooltip {
-								display: inline-block; 
+								display: flex; 
 								opacity: 1;
 							}
 						}

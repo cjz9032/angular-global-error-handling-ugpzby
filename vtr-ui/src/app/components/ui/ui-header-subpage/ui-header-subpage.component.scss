@@ -1,14 +1,15 @@
 @import "../../../app.theme";
 
 .vtr-ui-header-subpage {
-	margin-bottom: 4rem;
+	//margin-bottom: 4rem;
 	h2 {
 		&.title {
 			color: $purple_navy;
 			font-size: $fontsize_xl4;
 			font-weight: $weight_light;
-			margin-bottom: 3rem;
+			margin-bottom: 2.5rem;
 			opacity: 0.8;
+			margin-top: 0.8rem;
 		}
 	}
 	.caption {

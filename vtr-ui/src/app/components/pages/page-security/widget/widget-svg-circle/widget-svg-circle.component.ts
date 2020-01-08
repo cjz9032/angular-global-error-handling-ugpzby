@@ -11,16 +11,19 @@ export class WidgetSvgCircleComponent implements OnInit, DoCheck {
 	@Input() colorStep = 100;
 	@Input() fill = '#2F3447';
 	@Input() width = '3.5';
-	@Input() height = '15';
+	@Input() height = '16';
 	oldGradientPercent: number;
+	oldColor: string;
+	gradientColorArr = [];
 
 	ngOnInit() {
 		this.updateStatus();
 		this.oldGradientPercent = this.gradientColor.percent;
+		this.oldColor = this.gradientColor.startColor;
 	}
 
 	ngDoCheck(): void {
-		if (!this.oldGradientPercent || this.gradientColor.percent !== this.oldGradientPercent) {
+		if (!this.oldGradientPercent || this.gradientColor.percent !== this.oldGradientPercent || this.gradientColor.startColor !== this.oldColor) {
 			this.oldGradientPercent = this.gradientColor.percent;
 			this.updateStatus();
 		}
@@ -28,10 +31,11 @@ export class WidgetSvgCircleComponent implements OnInit, DoCheck {
 
 	updateStatus() {
 		if (this.gradientColor) {
+			const sameColor = this.oldColor === this.gradientColor.startColor;
 			const startColor = this.gradientColor.startColor;
 			const endColor = this.gradientColor.endColor;
 			const colorStep = this.colorStep;
-			const colorArr = this.gradient(startColor, endColor, colorStep);
+			const colorArr = sameColor && this.gradientColorArr.length > 0 ? this.gradientColorArr : this.gradient(startColor, endColor, colorStep);
 
 			const circleSvg = document.getElementById('score-circle');
 			const lineTags = document.getElementsByTagNameNS('http://www.w3.org/2000/svg', 'rect') ? document.getElementsByTagNameNS('http://www.w3.org/2000/svg', 'rect') : [];
@@ -52,7 +56,7 @@ export class WidgetSvgCircleComponent implements OnInit, DoCheck {
 				const step = 360 / els;
 				for (let i = 0; i < els; i++) {
 					lineTags[i] = myLine.cloneNode(true);
-					lineTags[i].setAttribute('transform', 'rotate(' + Number(i * step) + ',0,115)');
+					lineTags[i].setAttribute('transform', 'rotate(' + Number(i * step) + ',0,113)');
 					circleSvg.appendChild(lineTags[i]);
 				}
 
@@ -80,6 +84,8 @@ export class WidgetSvgCircleComponent implements OnInit, DoCheck {
 	}
 
 	gradient(startColor: string, endColor: string, step: number) {
+		this.oldColor = startColor;
+		this.gradientColorArr = [];
 		const sColor = this.hexToRgb(startColor);
 		const eColor = this.hexToRgb(endColor);
 
@@ -87,11 +93,10 @@ export class WidgetSvgCircleComponent implements OnInit, DoCheck {
 		const gStep = (eColor[1] - sColor[1]) / step;
 		const bStep = (eColor[2] - sColor[2]) / step;
 
-		const gradientColorArr = [];
 		for (let i = 0; i < step; i++) {
-			gradientColorArr.push(this.rgbToHex(parseInt(rStep * i + sColor[0], 10), parseInt(gStep * i + sColor[1], 10), parseInt(bStep * i + sColor[2], 10)));
+			this.gradientColorArr.push(this.rgbToHex(parseInt(rStep * i + sColor[0], 10), parseInt(gStep * i + sColor[1], 10), parseInt(bStep * i + sColor[2], 10)));
 		}
-		return gradientColorArr;
+		return this.gradientColorArr;
 	}
 
 }
