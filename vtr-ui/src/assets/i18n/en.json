@@ -1221,7 +1221,7 @@
                     },
                     "airPlanePower": {
                         "title": "Airplane Power Mode",
-                        "description": "Airplane Power Mode enables you to use the ac power outlet on airplane in conformity with airline safety regulations. In this mode, the power consumption of your computer is reduced to a safe level by limiting the battery charge rate and computer performance.",
+                        "description": "This feature enables you to use the ac power outlet on an airplane where a certain power limit applies. In this mode, the power consumption of your computer is reduced to a safe level by limiting the battery charge rate and computer performance.",
                         "checkBoxDesc": "Auto detection",
                         "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
