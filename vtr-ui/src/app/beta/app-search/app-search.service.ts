@@ -137,7 +137,7 @@ export class AppSearchService {
 			return;
 		}
 
-		this.isBetaUserRes = this.betaService.getBetaStatus();
+		this.isBetaUserRes = this.betaService.showBetaFeature();
 		this.loaded = true;
 		const tags = this.searchDB.features.tags;
 		const relevantTags = this.searchDB.features.relevantTags;
