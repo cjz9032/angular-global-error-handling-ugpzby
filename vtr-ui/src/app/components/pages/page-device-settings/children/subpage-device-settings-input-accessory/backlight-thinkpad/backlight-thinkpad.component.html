@@ -17,7 +17,7 @@
 			[label]="mode.title | translate"
 			[value]="mode.value"
 			[checked]="mode.value === currentMode"
-			(change)="updateMode(mode.value)"
+			(optionChange)="updateMode(mode.value)"
 			[textId]="'myDevice-settings-inputAccessories-backlight'">
 		</vtr-ui-circle-radio-with-checkbox>
 	</div>
