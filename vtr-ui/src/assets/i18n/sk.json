@@ -717,20 +717,24 @@
             "button": "Spätná väzba",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Poznámky...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Ďakujeme vám za spätnú väzbu!"
-                },
                 "question1": "Páči sa vám nový štýl Vantage?",
                 "question2": "Považujete výkon za prijateľný?",
                 "question3": "Používali by ste túto aplikáciu v budúcnosti častejšie?",
+                "question4": "Vedeli ste, že Lenovo Vantage môžete použiť na aktualizáciu ovládačov, firmvéru a systému BIOS svojho počítača?",
+                "question5": "Aká je pravdepodobnosť, že by ste aplikáciu Lenovo Vantage odporučili priateľom alebo kolegom?",
+                "notAtAllLikely": "Nie je to pravdepodobné",
+                "extremelyLikely": "Veľmi pravdepodobné",
                 "yes": "Áno",
                 "no": "Nie",
                 "tips1": "Uveďte doplňujúce komentáre",
+                "comments": "Poznámky...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Odoslať spätnú väzbu",
-                "submitScreenShot": "Odoslať snímku obrazovky"
+                "submitScreenShot": "Odoslať snímku obrazovky",
+                "messages": {
+                    "feedbackSuccess": "Ďakujeme vám za spätnú väzbu!"
+                }
             }
         },
         "quickSettings": {
