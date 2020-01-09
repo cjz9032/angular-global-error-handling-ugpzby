@@ -272,25 +272,6 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	// This is version compare function which takes version numbers of any length and any number size per segment.
-	// Return values:
-	// - negative number if v1 < v2
-	// - positive number if v1 > v2
-	// - zero if v1 = v2
-	private compareVersion(v1: string, v2: string) {
-		const regExStrip0 = '/(\.0+)+$/';
-		const segmentsA = v1.replace(regExStrip0, '').split('.');
-		const segmentsB = v2.replace(regExStrip0, '').split('.');
-		const min = Math.min(segmentsA.length, segmentsB.length);
-		for (let i = 0; i < min; i++) {
-			const diff = parseInt(segmentsA[i], 10) - parseInt(segmentsB[i], 10);
-			if (diff) {
-				return diff;
-			}
-		}
-		return segmentsA.length - segmentsB.length;
-	}
-
 	private isLMASupportUriProtocol() {
 		return new Promise(resovle => {
 			const regUtil = this.vantageShellService.getRegistryUtil();
@@ -305,7 +286,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 							const child = key.keyChildren.find(item => item.name === 'DisplayVersion');
 							if (child && child.value) {
 								const version = child.value;
-								if (this.compareVersion(version, '2.0.1.15') >= 0) {
+								if (this.commonService.compareVersion(version, '2.0.1.15') >= 0) {
 									support = true;
 									break;
 								}
