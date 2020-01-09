@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "嘿！已有更新版的 Vantage，您要載入嗎？"
+        },
+        "offline": {
+            "connectToUseFeature": "Connect to the internet to use this feature"
         }
     },
     "privacy": {
@@ -1370,6 +1373,17 @@
                         "taskBarDimmer": "工作列調光器",
                         "backgroundDimmer": "背景調光器",
                         "displayDimmer": "顯示器調光器"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
