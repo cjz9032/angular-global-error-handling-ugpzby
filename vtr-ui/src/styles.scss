@@ -655,7 +655,13 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			}
 		}
 
-		img,
+		img {
+			max-width: 100%;
+			height: auto;
+			margin-bottom: 3rem;
+			border: none;
+		}
+
 		iframe {
 			max-width: 100%;
 			margin-bottom: 3rem;
