@@ -717,20 +717,24 @@
             "button": "Pružite povratne informacije",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Komentari...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Hvala nam na povratnim informacijama!"
-                },
                 "question1": "Da li vam se dopada novi stil Vantage-a?",
                 "question2": "Da li mislite da je učinak prihvatljiv?",
                 "question3": "Da li ćete u budućnosti češće koristiti aplikaciju?",
+                "question4": "Da li ste znali da možete da koristite Lenovo Vantage za ažuriranje softverskih upravljačkih programa, firmvera i sistema BIOS na vašem računaru?",
+                "question5": "Koliko je verovatno da ćete preporučiti aplikaciju Lenovo Vantage prijatelju ili kolegi?",
+                "notAtAllLikely": "Uopšte nije verovatno",
+                "extremelyLikely": "Izuzetno verovatno",
                 "yes": "Da",
                 "no": "Ne",
                 "tips1": "Ostavite dodatne komentare",
+                "comments": "Komentari...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Pošaljite povratne informacije",
-                "submitScreenShot": "Pošaljite snimak ekrana"
+                "submitScreenShot": "Pošaljite snimak ekrana",
+                "messages": {
+                    "feedbackSuccess": "Hvala nam na povratnim informacijama!"
+                }
             }
         },
         "quickSettings": {
@@ -1890,7 +1894,7 @@
             "startDate": "Datum početka: ",
             "endDate": "Datum isteka: ",
             "status": "Status: ",
-            "subDescription1": "Ovaj proizvod ima godišnje ograničenu garanciju i ima pravo na uslugu popravke u servisu. Korisnici mogu nazvati svoj lokalni servisni centar za više informacija. Prodavci mogu da pruže uslugu popravke za ovaj proizvod ako ga prime u svojim prostorijama.",
+            "subDescription1": "Lenovo ograničena garancija se odnosi na vaš računar i ima pravo na uslugu skladištenja. Korisnici mogu nazvati svoj lokalni servisni centar za više informacija. Prodavci mogu da pruže uslugu popravke za ovaj proizvod ako ga prime u svojim prostorijama.",
             "subDescription2": "Nismo uspeli da lociramo detalje garancije za vaš uređaj. Za više opcija garancije posetite našu veb lokaciju za podršku.",
             "viewWarrantyOptions": "PREGLED OPCIJA GARANCIJE",
             "offlineTips1": "Povežite se na internet radi najnovijih informacija o garanciji.",

@@ -717,20 +717,24 @@
             "button": "Giv feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Kommentarer...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Tak for din feedback!"
-                },
                 "question1": "Kan du lide den nye Vantage-stil?",
                 "question2": "Synes du, at ydeevnen er acceptabel?",
                 "question3": "Vil du bruge programmet mere i fremtiden?",
+                "question4": "Ved du, at du kan bruge Lenovo Vantage til at opdatere softwaredrivere, firmware og BIOS på din computer?",
+                "question5": "Hvor sandsynligt er det, at du vil anbefale Lenovo Vantage-programmet til en ven eller kollega?",
+                "notAtAllLikely": "Slet ikke sandsynligt",
+                "extremelyLikely": "Meget sandsynligt",
                 "yes": "Ja",
                 "no": "Nej",
                 "tips1": "Skriv eventuelle andre kommentarer",
+                "comments": "Kommentarer...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Send feedback",
-                "submitScreenShot": "Send skærmbillede"
+                "submitScreenShot": "Send skærmbillede",
+                "messages": {
+                    "feedbackSuccess": "Tak for din feedback!"
+                }
             }
         },
         "quickSettings": {
@@ -1890,7 +1894,7 @@
             "startDate": "Startdato: ",
             "endDate": "Slutdato: ",
             "status": "Status: ",
-            "subDescription1": "Dette produkt har års begrænset garanti, og det er berettiget til deponeringsreparation. Kunder kan ringe til deres lokale servicecenter for at få flere oplysninger. Forhandlere kan yde reparation ved indlevering af dette produkt.",
+            "subDescription1": "Lenovo Begrænset Garanti gælder for computeren, og den er berettiget til depotservice. Kunder kan ringe til deres lokale servicecenter for at få flere oplysninger. Forhandlere kan yde reparation ved indlevering af dette produkt.",
             "subDescription2": "Vi kunne ikke finde garantioplysninger for din enhed. Du kan finde flere garantimuligheder ved at gå til vores supportwebsted.",
             "viewWarrantyOptions": "VIS GARANTIMULIGHEDER",
             "offlineTips1": "Opret forbindelse til internettet for at få de nyeste garantioplysninger.",

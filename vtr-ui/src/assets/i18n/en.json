@@ -725,6 +725,10 @@
                 "question1": "Do you like the new style of Vantage?",
                 "question2": "Do you think the performance is acceptable?",
                 "question3": "Would you use the application more often in the future?",
+                "question4": "Were you aware that you can use Lenovo Vantage to update software drivers, firmware, and BIOS on your computer?",
+                "question5": "How likely is it that you would recommend the Lenovo Vantage application to a friend of colleague?",
+                "notAtAllLikely": "Not at all likely",
+                "extremelyLikely": "Extremely likely",
                 "yes": "Yes",
                 "no": "No",
                 "tips1": "Please leave any additional comments",
@@ -1221,7 +1225,7 @@
                     },
                     "airPlanePower": {
                         "title": "Airplane Power Mode",
-                        "description": "Airplane Power Mode enables you to use the ac power outlet on airplane in conformity with airline safety regulations. In this mode, the power consumption of your computer is reduced to a safe level by limiting the battery charge rate and computer performance.",
+                        "description": "This feature enables you to use the ac power outlet on an airplane where a certain power limit applies. In this mode, the power consumption of your computer is reduced to a safe level by limiting the battery charge rate and computer performance.",
                         "checkBoxDesc": "Auto detection",
                         "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
@@ -1375,6 +1379,17 @@
                         "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
                         "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
                         "labelText": "Enable this feature when typing passwords"
+                    },
+                    "displayPriority":{
+                        "title": "Display Priority Control",
+                        "description":"Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options":{
+							"hdmi":"HDMI",
+							"dock":"Docking",
+							"usb_c_dp":"USB Type-C",
+							"wigig":"WiGig",
+							"cartridge":"Optional Module"
+						}
                     }
                 },
                 "camera": {
@@ -1541,7 +1556,61 @@
                 "fnCtrlKey": {
                     "title": "Fn and Ctrl key swap",
                     "description": "If you habitually pressed the Fn key when intending to press the Ctrl key, you can exchange the functions of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, are you sure to restart?"
+					"restartNote": "Swapping the function of two keys requires you to restart your computer, are you sure to restart?",
+					"title2": "Fn works as Ctrl for frequently used key combinations",
+					"description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+					"featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+					"tootTip": {
+						"fnKeys": {
+							"heading": "Fn Keys",
+							"key1": "Fn + A",
+							"key2": "Fn + C",
+							"key3": "Fn + D",
+							"key4": "Fn + F",
+							"key5": "Fn + G",
+							"key6": "Fn + J",
+							"key7": "Fn + Q",
+							"key8": "Fn + U",
+							"key9": "Fn + V",
+							"key10": "Fn + W",
+							"key11": "Fn + X",
+							"key12": "Fn + Y",
+							"key13": "Fn + Z"
+						},
+						"ctrlKeys": {
+							"heading": "Ctrl Keys",
+							"key1": "Ctrl + A",
+							"key2": "Ctrl + C",
+							"key3": "Ctrl + D",
+							"key4": "Ctrl + F",
+							"key5": "Ctrl + G",
+							"key6": "Ctrl + J",
+							"key7": "Ctrl + Q",
+							"key8": "Ctrl + U",
+							"key9": "Ctrl + V",
+							"key10": "Ctrl + W",
+							"key11": "Ctrl + X",
+							"key12": "Ctrl + Y",
+							"key13": "Ctrl + Z"
+
+						},
+						"action": {
+							"heading": "Action",
+							"action1": "Select all",
+							"action2": "Copy",
+							"action3": "Add web page to my favorite",
+							"action4": "Search",
+							"action5": "Find and replace in Microsoft Word",
+							"action6": "Align left and right in Microsoft Word",
+							"action7": "Quit (in supported app)",
+							"action8": "Add underline",
+							"action9": "Paste",
+							"action10": "close (per app)",
+							"action11": "Cut",
+							"action12": "Redo",
+							"action13": "Undo"
+						}
+					}
                 },
                 "controlOptions": {
                     "more": "MORE",
@@ -2212,7 +2281,7 @@
             "startDate": "Start date: ",
             "endDate": "End date: ",
             "status": "Status: ",
-            "subDescription1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
+            "subDescription1": "Lenovo Limited Warranty applies to your computer and it is entitled to Depot Service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
             "subDescription2": "We were unable to locate the warranty details for your device. To view more options, please visit our support page.",
             "viewWarrantyOptions": "VIEW WARRANTY OPTIONS",
             "offlineTips1": "Please connect to internet for latest warranty info.",
@@ -2628,8 +2697,8 @@
             "button": "GO TO FORUM"
         },
         "question1": {
-            "title": "Back up and restore your files",
-            "description": "<div><div class='faqInFs4Fb'>Back up and restore your files</div><hr /><div class='faqInMb7'>It's always good to have a backup. Keep copies of your files on another drive in case something happens to the originals.</div><div class='faqInFs3Fb'>Set up your backup</div><hr /><div class='mb-5'>Select the <span class='faqInFb'>Start</span> button, select <span class='faqInFb'>Settings</span> > <span class='faqInFb'>Update & security</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Add a drive</span> , and then choose an external drive or network location for your backups.</div><div class='mb-5'><img src='./../../../../assets/images/qa/1.1.jpg' /></div><div class='mb-5'>All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files get backed up or how often backups happen, go to <span class='faqInFb'>More options</span>.</div><div class='faqInFs3Fb'>Restore your files</div><div class='mb-5'>If you're missing an important file or folder, here's how to get it back:</div><div><div class='mb-3'>1. Type <span class='faqInFb'>Restore files</span> in the search box on the taskbar, and then select <span class='faqInFb'> Restore your files with File History</span>.</div><div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div><div class='mb-3'>3. When you find the version you want, select <span class='faqInFb'>Restore</span> to save it in its original location. To save it in a different place, press and hold (or right-click) <span class='faqInFb'>Restore</span>, select <span class='faqInFb'>Restore to</span>, and then choose a new location. </div></div></div>",
+            "title": "Backup and restore your files",
+            "description": "<div><div class='faqInFs4Fb'>Backup and restore your files</div><hr /><div class='faqInMb7'>It's always good to have a backup. Keep copies of your files on another drive in case something happens to the originals.</div><div class='faqInFs3Fb'>Set up your backup</div><hr /><div class='mb-5'>Select the <span class='faqInFb'>Start</span> button, select <span class='faqInFb'>Settings</span> > <span class='faqInFb'>Update & security</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Add a drive</span> , and then choose an external drive or network location for your backups.</div><div class='mb-5'><img src='./../../../../assets/images/qa/1.1.jpg' /></div><div class='mb-5'>All set. Every hour, we'll backup everything in your user folder (C:\\Users\\username). To change which files get backed up or how often backups happen, go to <span class='faqInFb'>More options</span>.</div><div class='faqInFs3Fb'>Restore your files</div><div class='mb-5'>If you're missing an important file or folder, here's how to get it back:</div><div><div class='mb-3'>1. Type <span class='faqInFb'>Restore files</span> in the search box on the taskbar, and then select <span class='faqInFb'> Restore your files with File History</span>.</div><div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div><div class='mb-3'>3. When you find the version you want, select <span class='faqInFb'>Restore</span> to save it in its original location. To save it in a different place, press and hold (or right-click) <span class='faqInFb'>Restore</span>, select <span class='faqInFb'>Restore to</span>, and then choose a new location. </div></div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -2647,7 +2716,7 @@
             },
             "para3": {
                 "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
+                "span2": "Every hour, we'll backup everything in your user folder (C:\\Users\\username).",
                 "span3": "To change which files get backed up or how often backups happen, go to",
                 "span4": "More options."
             },
@@ -2744,7 +2813,7 @@
         },
         "question3": {
             "title": "How to know your machine's CPU",
-            "description": "<div class='faqInFs4Fb'>How to know your machine's CPU</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bitsystem.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n<li>All Desktop and Laptops</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul>\n<li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n<li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>right-clicking Computer, and then clicking Properties</li>\n<li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.Or, if you are using a mouse, point to the lower-right corner of the screen, and then click&nbsp;<strong>Search.</strong></li>\n<li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n<li>Tap or click <strong>System</strong></li>\n<li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>is displayed in the System type field under the System heading.If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong><strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br /> </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.Or, if you are using a mouse, point to the lower-right corner of the screen, and then click <strong>Search.</strong></li>\n<li>In the search box, type <strong>system information</strong></li>\n<li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then click <strong>System Summary.</strong></li>\n<li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>x64-based PC is displayed in the <strong>System type</strong> field under the Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field under the Item heading.</li>\n</ol>\n<p> </p>",
+            "description": "<div class='faqInFs4Fb'>How to know your machine's CPU</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n<li>All Desktops and Laptops</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul>\n<li>Windows 7, 8, 10</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n<li>Open System by clicking the <strong>Start button</strong> Picture of the <strong>Start button,</strong> right-clicking Computer, and then clicking Properties</li>\n<li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click&nbsp;<strong>Search.</strong></li>\n<li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n<li>Tap or click <strong>System</strong></li>\n<li> If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong> is displayed in the System type field under the System heading.If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong> <strong>32-bit Operating</strong> System is displayed in the System type field under the System heading.<br /> </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click <strong>Search.</strong></li>\n<li>In the search box, type <strong>system information</strong></li>\n<li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then click <strong>System Summary.</strong></li>\n<li> If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>x64-based PC is displayed in the <strong>System type</strong> field under the Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong> version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field under the Item heading.</li>\n</ol>\n<p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -2901,7 +2970,7 @@
         },
         "question5": {
             "title": "Use your PC like a tablet",
-            "description": "<div class='faqInFs4Fb'>Use your PC like a tablet</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touch screen device.</p>\n<h3 class='faqInFs25FbP10'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet mode</strong> .</p>\n<p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 class='faqInFs25FbP10'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, andhow the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of thescreen.</p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.Select the <strong>Start </strong>button, select <strong>Settings </strong>><strong>System </strong>> <strong>Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n<h3 class='faqInFs25FbP10'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n<li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n<li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then drag it to one side to snap it into your divided screen.</li>\n<li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "description": "<div class='faqInFs4Fb'>Use your PC like a tablet</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touch screen device.</p>\n<h3 class='faqInFs25FbP10'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet mode</strong>.</p>\n<p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 class='faqInFs25FbP10'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.</p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen. Select the <strong>Start </strong>button, select <strong>Settings </strong>><strong> System </strong>> <strong>Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>. To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n<h3 class='faqInFs25FbP10'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n<li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n<li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then drag it to one side to snap it into your divided screen.</li>\n<li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2940,7 +3009,7 @@
         },
         "question6": {
             "title": "Get to know Cortana, your personal assistant",
-            "description": "<div class='faqInFs4Fb'>Get to know Cortana, your personal assistant</div>\n<hr><h3 class='faqInFs25FbP10'>What is Cortana?</h3>\n<hr /><p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.jpg' /></p>\n<ol>\n<li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n<li>Give you reminders based on time, places, or people.</li>\n<li>Track packages, teams, interests, and flights.</li>\n<li>Send emails and texts.</li>\n<li>Manage your calendar and keep you up to date.</li>\n<li>Create and manage lists.</li>\n<li>Chit chat and play games.</li>\n<li>Find facts, files, places, and info.</li>\n<li>Open any app on your system.</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Try this: Set a reminder</h3><hr />\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.jpg' /></p>\n<h3 class='faqInFs25FbP10'>Hey Cortana?</h3><hr />\n<p>Set Cortana to hear you anytime you say 'Hey Cortana.' Select the search box on the taskbar to open Cortana home.Then select <strong>Settings</strong> and turn on <strong>Let Cortana respond to 'HeyCortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.jpg' /></p>\n<p class='faqInFs25FbP10'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.</p>\n<p> </p>",
+            "description": "<div class='faqInFs4Fb'>Get to know Cortana, your personal assistant</div>\n<hr><h3 class='faqInFs25FbP10'>What is Cortana?</h3>\n<hr /><p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.jpg' /></p>\n<ol>\n<li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n<li>Give you reminders based on time, places, or people.</li>\n<li>Track packages, teams, interests, and flights.</li>\n<li>Send emails and texts.</li>\n<li>Manage your calendar and keep you up to date.</li>\n<li>Create and manage lists.</li>\n<li>Chit chat and play games.</li>\n<li>Find facts, files, places, and info.</li>\n<li>Open any app on your system.</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Try this: Set a reminder</h3><hr />\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls'.</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.jpg' /></p>\n<h3 class='faqInFs25FbP10'>Hey Cortana?</h3><hr />\n<p>Set Cortana to hear you anytime you say 'Hey Cortana'. Select the search box on the taskbar to open Cortana home. Then select <strong>Settings</strong> and turn on <strong>Let Cortana respond to 'Hey Cortana'.</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.jpg' /></p>\n<p class='faqInFs25FbP10'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.</p>\n<p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",

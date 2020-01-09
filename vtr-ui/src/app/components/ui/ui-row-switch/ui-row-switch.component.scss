@@ -102,7 +102,7 @@
 
 		.title {
 			font-size: $fontsize_md;
-			color: $font_color;
+			color:  $font_color;
 			font-weight: $weight_light;
 			letter-spacing: 0.05rem;
 			text-transform: none;
@@ -188,6 +188,25 @@
 	}
 }
 
+.table {
+	width: 28rem !important;
+	font-size: 1.2rem;
+	margin-bottom: 0;
+	th {
+		width: auto;
+		white-space: nowrap;
+		td {
+		width: auto;
+		}
+	}
+}
+.table-bordered {
+	th, td {
+		border: 0.1rem solid $dark;
+	}
+}
+
+
 // @mixin theme($name, $background, $font_color, $icon_color, $border)
-@include theme(white-theme, $light, $main_darker, $menu_hover, $screen_dark_10);
+@include theme(white-theme, $light, $purple_navy, $menu_hover, $screen_dark_10);
 @include theme(blue-theme, $gradient_main, $light, $light, $screen_light_15);

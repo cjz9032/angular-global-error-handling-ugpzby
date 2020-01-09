@@ -717,20 +717,24 @@
             "button": "תנו משוב",
             "form": {
                 "email": "Email (optional)",
-                "comments": "הערות...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "תודה על המשוב!"
-                },
                 "question1": "האם אתם אוהבים את הסגנון החדש של Vantage?",
                 "question2": "האם לדעתכם הביצועים טובים?",
                 "question3": "האם אתם מתכוונים להשתמש ביישום לעיתים קרובות יותר בעתיד?",
+                "question4": "הידעתכם שאתם יכולים להשתמש ב- Lenovo Vantage כדי לעדכן מנהלי התקן תוכנה, קושחה ו-BIOS במחשב?",
+                "question5": "עד כמה סביר שתמליצו על היישום Lenovo Vantage לחבר או לעמית?",
+                "notAtAllLikely": "בכלל לא סביר",
+                "extremelyLikely": "סביר מאוד",
                 "yes": "כן",
                 "no": "לא",
                 "tips1": "הערות נוספות",
+                "comments": "הערות...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "שליחת משוב",
-                "submitScreenShot": "שליחת צילום מסך"
+                "submitScreenShot": "שליחת צילום מסך",
+                "messages": {
+                    "feedbackSuccess": "תודה על המשוב!"
+                }
             }
         },
         "quickSettings": {
@@ -1890,7 +1894,7 @@
             "startDate": "תאריך התחלה: ",
             "endDate": "תאריך סיום: ",
             "status": "מצב: ",
-            "subDescription1": "מוצר זה כולל אחריות מוגבלת בשנים והוא זכאי לשירות תיקונים במרכז השירות. לקוחות רשאים להתקשר למרכז השירות המקומי שלהם לקבלת מידע נוסף. משווקים עשויים לספק תיקון במסירה למוצר זה.",
+            "subDescription1": "<span dir='rtl'>האחריות המוגבלת של Lenovo חלה על המחשב שלכם והיא זכאית לשירות Depot. לקוחות רשאים להתקשר למרכז השירות המקומי שלהם לקבלת מידע נוסף. משווקים עשויים לספק תיקון במסירה למוצר זה.</span>",
             "subDescription2": "לא הצלחנו לאתר את פרטי האחריות של המכשיר, כדי לקבל אפשרויות אחריות נוספות, יש לבקר באתר התמיכה שלנו.",
             "viewWarrantyOptions": "הצגת אפשרויות אחריות",
             "offlineTips1": "התחברו לאינטרנט לקבלת מידע עדכני בנוגע לאחריות.",

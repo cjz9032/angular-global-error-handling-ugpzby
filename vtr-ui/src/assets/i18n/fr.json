@@ -717,20 +717,24 @@
             "button": "Donnez votre avis",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Commentaires...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Merci pour vos commentaires !"
-                },
                 "question1": "Aimez-vous le nouveau style de Vantage ?",
                 "question2": "Pensez-vous que les performances sont acceptables ?",
                 "question3": "Avez-vous l'intention d'utiliser plus souvent l'application à l'avenir ?",
+                "question4": "Saviez-vous que vous pouvez utiliser Lenovo Vantage pour mettre à jour les pilotes de logiciels, le microprogramme et le BIOS de votre ordinateur ?",
+                "question5": "Quelle est la probabilité que vous recommandiez l'application Lenovo Vantage à un ami ou collègue ?",
+                "notAtAllLikely": "Pas du tout probable",
+                "extremelyLikely": "Très probable",
                 "yes": "Oui",
                 "no": "Non",
                 "tips1": "Veuillez ajouter tout commentaire supplémentaire",
+                "comments": "Commentaires...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Envoyer des commentaires",
-                "submitScreenShot": "Envoyer une capture d'écran"
+                "submitScreenShot": "Envoyer une capture d'écran",
+                "messages": {
+                    "feedbackSuccess": "Merci pour vos commentaires !"
+                }
             }
         },
         "quickSettings": {
@@ -1890,7 +1894,7 @@
             "startDate": "Date de début : ",
             "endDate": "Date de fin : ",
             "status": "Etat : ",
-            "subDescription1": "Ce produit a une garantie limitée et il bénéficie du service de réparation de dépôt. Les clients peuvent appeler leur centre de service local pour plus d'informations. Les distributeurs peuvent fournir un service de réparation pour ce produit.",
+            "subDescription1": "La garantie limitée Lenovo s'applique à votre ordinateur et donne droit au service de dépôt. Les clients peuvent appeler leur centre de service local pour plus d'informations. Les distributeurs peuvent fournir un service de réparation pour ce produit.",
             "subDescription2": "Impossible de localiser les détails de la garantie pour votre périphérique, pour bénéficier de plus d'options de garantie, consultez notre site Web support.",
             "viewWarrantyOptions": "AFFICHER LES OPTIONS DE GARANTIE",
             "offlineTips1": "Veuillez vous connecter à Internet pour obtenir les dernières informations sur la garantie.",
