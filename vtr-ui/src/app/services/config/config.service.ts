@@ -162,12 +162,16 @@ export class ConfigService {
 			this.showSecurityItem(country.toLowerCase(), resultMenu);
 			this.smodeFilter(resultMenu, this.deviceService.isSMode);
 			this.armFilter(resultMenu, this.deviceService.isArm);
+			this.menuBySegment.commercial = cloneDeep(resultMenu);
 			if (isBetaUser) {
 				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
 				if (await this.canShowSearch()) {
 					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
 			}
+			this.menuBySegment.consumer = cloneDeep(resultMenu);
+			this.menuBySegment.smb = cloneDeep(resultMenu);
+			resultMenu = this.menuBySegment[this.activeSegment.toLowerCase()];
 			if (this.hypSettings) {
 				await this.initShowCHSMenu().then((result) => {
 					const shellVersion = {
@@ -186,9 +190,6 @@ export class ConfigService {
 						&& result
 						&& this.isShowCHSByShellVersion(shellVersion)
 						&& !machineInfo.isGaming;
-					this.menuBySegment.commercial = cloneDeep(resultMenu);
-					this.menuBySegment.consumer = cloneDeep(resultMenu);
-					this.menuBySegment.smb = cloneDeep(resultMenu);
 					if (!this.showCHS) {
 						resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 					}

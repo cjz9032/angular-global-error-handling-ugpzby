@@ -16,18 +16,21 @@ export class BetaService {
 		if (this.vantageShellService) {
 			this.betaUser = this.vantageShellService.getBetaUser();
 		}
+		this.commonService.removeLocalStorageValue(LocalStorageKey.BetaUser);
 	}
 
 	public getBetaStatus(): boolean {
-		this.commonService.removeLocalStorageValue(LocalStorageKey.BetaUser);
-		const segment = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment);
 		let isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaTag, 'init');
 		if (isBetaUser === 'init') {
 			isBetaUser = false;
 			this.setBetaStatus(false);
 		}
-		isBetaUser = isBetaUser && segment !== SegmentConst.Commercial;
 		return isBetaUser;
+	}
+
+	public showBetaFeature(): boolean {
+		const segment = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment);
+		return this.getBetaStatus() && segment !== SegmentConst.Commercial;
 	}
 
 	public setBetaStatus(value: boolean) {
