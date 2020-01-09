@@ -17,6 +17,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
+import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -83,6 +84,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 	constructor(
 		public qaService: QaService,
+		private keyboardService: InputAccessoriesService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
@@ -179,7 +181,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	initInputAccessories() {
+	async initInputAccessories() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType) {
 			const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
@@ -195,9 +197,13 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				return;
 			} else {
 				const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
-				let isAvailable;
-				if (inputAccessoriesCapability) {
-					isAvailable = inputAccessoriesCapability.isUdkAvailable || inputAccessoriesCapability.isKeyboardMapAvailable;
+				let isAvailable = false;
+				if (inputAccessoriesCapability && (inputAccessoriesCapability.isKeyboardMapAvailable || inputAccessoriesCapability.isUdkAvailable)) {
+					isAvailable = inputAccessoriesCapability.isKeyboardMapAvailable || inputAccessoriesCapability.isUdkAvailable ;
+				} else {
+					await this.keyboardService.GetAllCapability().then((response => {
+						isAvailable = (response != null && (Object.keys(response).indexOf('keyboardMapCapability') !== -1 || (Object.keys(response).indexOf('isUdkAvailable') !== -1))) ? true : false;
+					}));
 				}
 				const isVOIPAvailable = this.commonService.getLocalStorageValue(LocalStorageKey.VOIPCapability);
 				const topRowFunctionsIdeapadCapability = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability);

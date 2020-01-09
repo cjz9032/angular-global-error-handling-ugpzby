@@ -717,20 +717,24 @@
             "button": "Visszajelzés küldése",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Megjegyzések...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Köszönjük a visszajelzését."
-                },
                 "question1": "Tetszik a Vantage új stílusa?",
                 "question2": "Elfogadhatónak tartja a teljesítményt?",
                 "question3": "Használná gyakrabban az alkalmazást a jövőben?",
+                "question4": "Tudta, hogy a Lenovo Vantage segítségével frissítheti a számítógép illesztőprogramjait, firmware-jét és BIOS-át?",
+                "question5": "Mennyire valószínű, hogy ajánlaná a Lenovo Vantage alkalmazást egy ismerősének vagy munkatársának?",
+                "notAtAllLikely": "Egyáltalán nem valószínű",
+                "extremelyLikely": "Nagyon valószínű",
                 "yes": "Igen",
                 "no": "Nem",
                 "tips1": "Ha van további megjegyzése, írja le",
+                "comments": "Megjegyzések...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Visszajelzés küldése",
-                "submitScreenShot": "Képernyőkép küldése"
+                "submitScreenShot": "Képernyőkép küldése",
+                "messages": {
+                    "feedbackSuccess": "Köszönjük a visszajelzését."
+                }
             }
         },
         "quickSettings": {
