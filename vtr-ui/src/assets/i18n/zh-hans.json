@@ -717,20 +717,24 @@
             "button": "提供反馈",
             "form": {
                 "email": "联系方式（如果您不喜欢可留空）",
-                "comments": "意见...",
-                "button": "提交",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "感谢您的反馈！"
-                },
                 "question1": "您喜欢 Vantage 的新风格吗？",
                 "question2": "您认为性能是否可以接受？",
                 "question3": "您将来会更频繁地使用该应用程序吗？",
+                "question4": "您是否知道可以使用 Lenovo Vantage 更新计算机上的软件驱动程序、固件和 BIOS？",
+                "question5": "您将 Lenovo Vantage 应用程序推荐给同事朋友的可能性有多大？",
+                "notAtAllLikely": "完全不可能",
+                "extremelyLikely": "极有可能",
                 "yes": "是",
                 "no": "否",
                 "tips1": "如有任何其他意见，请提出",
+                "comments": "意见...",
+                "button": "提交",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "发送反馈",
-                "submitScreenShot": "提交屏幕截图"
+                "submitScreenShot": "提交屏幕截图",
+                "messages": {
+                    "feedbackSuccess": "感谢您的反馈！"
+                }
             }
         },
         "quickSettings": {

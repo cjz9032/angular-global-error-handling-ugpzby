@@ -409,6 +409,9 @@
 					text-transform: uppercase;
 					color: $main;
 					@media #{$mediaquery_xl} {
+						font-size: 1.1rem;
+					}
+					@media #{$mediaquery_lg} {
 						font-size: $fontsize_xs2;
 					}
 					@media #{$mediaquery_md} {
