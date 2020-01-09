@@ -92,6 +92,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-graph/smart-standby-graph.component';
 import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.component';
 import { BacklightModule } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.module';
+import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight-thinkpad/backlight-thinkpad.component';
 
 
 @NgModule({
@@ -132,7 +133,8 @@ import { BacklightModule } from '../../components/pages/page-device-settings/chi
 		TopRowFunctionsComponent,
 		VoiceComponent,
 		SmartStandbyGraphComponent,
-		TopRowFunctionsIdeapadComponent
+		TopRowFunctionsIdeapadComponent,
+		BacklightThinkpadComponent
 	],
     imports: [
         CommonModule,

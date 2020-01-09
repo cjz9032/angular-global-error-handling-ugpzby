@@ -155,7 +155,7 @@
 				@media #{$breakpoint_xl} {
 					flex-direction: column;
 					flex-grow: 0;
-					width: 85%;
+					width: 100%;
 
 				}
 				@media #{$breakpoint_lg} {
@@ -168,8 +168,6 @@
 				@media #{$breakpoint_sm} {
 					flex-direction: column;
 					flex-grow: 0;
-					width: 80%;
-
 				}
 			}
 			.title {
@@ -177,6 +175,14 @@
 				font-weight: $weight_light;
 				margin-bottom: 0.5rem;
 				color: $charcoal;
+				width: 70%;
+				@media #{$breakpoint_md} {
+					width: 100%;
+				}
+				@media #{$breakpoint_sm} {
+					width: 100%;
+				}
+
 
 				.systemDetails {
 					font-size: $fontsize_xs;

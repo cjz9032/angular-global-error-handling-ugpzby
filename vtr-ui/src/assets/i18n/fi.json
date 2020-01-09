@@ -717,20 +717,24 @@
             "button": "Anna palautetta",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Kommentit...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Kiitos palautteestasi."
-                },
                 "question1": "Pidätkö Vantagen uudesta tyylistä?",
                 "question2": "Onko sen suorituskyky mielestäsi hyväksyttävä?",
                 "question3": "Käyttäisitkö sovellusta useammin tulevaisuudessa?",
+                "question4": "Oletko tietoinen siitä, että voit käyttää Lenovo Vantage -ohjelmaa tietokoneen ohjelmisto-ohjaimien, laiteohjelmiston ja BIOSin päivittämiseen?",
+                "question5": "Kuinka todennäköistä on, että suosittelisit Lenovo Vantage -sovellusta kollegan ystävälle?",
+                "notAtAllLikely": "Ei lainkaan todennäköistä",
+                "extremelyLikely": "Erittäin todennäköistä",
                 "yes": "Kyllä",
                 "no": "Ei",
                 "tips1": "Anna lisäkommentteja",
+                "comments": "Kommentit...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Lähetä palautetta",
-                "submitScreenShot": "Lähetä näyttökuva"
+                "submitScreenShot": "Lähetä näyttökuva",
+                "messages": {
+                    "feedbackSuccess": "Kiitos palautteestasi."
+                }
             }
         },
         "quickSettings": {
@@ -1890,7 +1894,7 @@
             "startDate": "Aloituspäivämäärä: ",
             "endDate": "Päättymispäivämäärä: ",
             "status": "Tila: ",
-            "subDescription1": "Tälle tuotteelle on vuoden rajoitettu takuu, ja oikeutettu korjauspalveluun korjauskeskuksessa Asiakkaat voivat ottaa yhteyttä paikalliseen palvelukeskukseen lisätietoja varten. Korjauspalveluita tälle tuotteelle voi olla saatavilla jälleenmyyjien toimipisteissä.",
+            "subDescription1": "Tietokonettasi koskee Lenovon rajoitettu takuu, ja sillä on oikeus korjauskeskuksessa annettavaan palveluun. Asiakkaat voivat ottaa yhteyttä paikalliseen palvelukeskukseen lisätietoja varten. Korjauspalveluita tälle tuotteelle voi olla saatavilla jälleenmyyjien toimipisteissä.",
             "subDescription2": "Emme pystyneet löytämään takuutietoja laitteellesi. Tutustu tukisivustoomme jos haluat nähdä lisää takuuvaihtoehtoja.",
             "viewWarrantyOptions": "NÄYTÄ TAKUUVAIHTOEHDOT",
             "offlineTips1": "Muodosta Internet-yhteys uusimpia takuutietoja varten.",

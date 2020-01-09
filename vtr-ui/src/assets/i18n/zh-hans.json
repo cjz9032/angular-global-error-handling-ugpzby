@@ -717,20 +717,24 @@
             "button": "提供反馈",
             "form": {
                 "email": "联系方式（如果您不喜欢可留空）",
-                "comments": "意见...",
-                "button": "提交",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "感谢您的反馈！"
-                },
                 "question1": "您喜欢 Vantage 的新风格吗？",
                 "question2": "您认为性能是否可以接受？",
                 "question3": "您将来会更频繁地使用该应用程序吗？",
+                "question4": "您是否知道可以使用 Lenovo Vantage 更新计算机上的软件驱动程序、固件和 BIOS？",
+                "question5": "您将 Lenovo Vantage 应用程序推荐给同事朋友的可能性有多大？",
+                "notAtAllLikely": "完全不可能",
+                "extremelyLikely": "极有可能",
                 "yes": "是",
                 "no": "否",
                 "tips1": "如有任何其他意见，请提出",
+                "comments": "意见...",
+                "button": "提交",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "发送反馈",
-                "submitScreenShot": "提交屏幕截图"
+                "submitScreenShot": "提交屏幕截图",
+                "messages": {
+                    "feedbackSuccess": "感谢您的反馈！"
+                }
             }
         },
         "quickSettings": {
@@ -1890,7 +1894,7 @@
             "startDate": "开始日期：",
             "endDate": "结束日期：",
             "status": "状态：",
-            "subDescription1": "本产品具有若干年的有限保修，并有权送往维修站获得维修服务。客户可以致电其当地服务中心来获取更多信息。经销商可对本产品提供送修服务。",
+            "subDescription1": "Lenovo 有限保修适用于您的计算机，并享有专人取送服务。客户可以致电其当地服务中心来获取更多信息。经销商可对本产品提供送修服务。",
             "subDescription2": "我们无法找到适用于您设备的保修详细信息，要获取更多保修选项，请访问我们的支持网站。",
             "viewWarrantyOptions": "查看保修选项",
             "offlineTips1": "请连接到因特网以获取最新的保修信息。",

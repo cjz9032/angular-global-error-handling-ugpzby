@@ -23,7 +23,7 @@ export class WidgetSvgCircleComponent implements OnInit, DoCheck {
 	}
 
 	ngDoCheck(): void {
-		if (!this.oldGradientPercent || this.gradientColor.percent !== this.oldGradientPercent) {
+		if (!this.oldGradientPercent || this.gradientColor.percent !== this.oldGradientPercent || this.gradientColor.startColor !== this.oldColor) {
 			this.oldGradientPercent = this.gradientColor.percent;
 			this.updateStatus();
 		}

@@ -717,20 +717,24 @@
             "button": "Pošaljite povratne informacije",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Komentari...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Hvala vam na povratnim informacijama!"
-                },
                 "question1": "Sviđa li vam se novi stil aplikacije Vantage?",
                 "question2": "Mislite li da su performanse prihvatljive?",
                 "question3": "Biste li češće koristili aplikaciju u budućnosti?",
+                "question4": "Jeste li bili svjesni da Lenovo Vantage možete koristiti za ažuriranje upravljačkih programa, upravljačkog softvera i BIOS-a na računalu?",
+                "question5": "Kolika je vjerojatnost da biste aplikaciju Lenovo Vantage preporučili prijatelju kolege?",
+                "notAtAllLikely": "Uopće nije vjerojatno",
+                "extremelyLikely": "Vrlo vjerojatno",
                 "yes": "Da",
                 "no": "Ne",
                 "tips1": "Ostavite dodatne komentare",
+                "comments": "Komentari...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Pošalji povratne informacije",
-                "submitScreenShot": "Pošalji snimku zaslona"
+                "submitScreenShot": "Pošalji snimku zaslona",
+                "messages": {
+                    "feedbackSuccess": "Hvala vam na povratnim informacijama!"
+                }
             }
         },
         "quickSettings": {
@@ -1890,7 +1894,7 @@
             "startDate": "Datum početka: ",
             "endDate": "Datum isteka: ",
             "status": "Stanje: ",
-            "subDescription1": "Ovaj proizvod ima godinama ograničeno jamstvo i ima pravo na uslugu popravka u skladištu. Korisnici mogu nazvati svoj lokalni servisni centar za više informacija. Trgovci mogu pružati popravak za ovaj proizvod.",
+            "subDescription1": "Ograničeno jamstvo tvrtke Lenovo odnosi se na vaše računalo i ima pravo na Depot uslugu. Korisnici mogu nazvati svoj lokalni servisni centar za više informacija. Trgovci mogu pružati popravak za ovaj proizvod.",
             "subDescription2": "Nismo mogli locirati podatke o jamstvu za vaš uređaj. Za više mogućnosti jamstva posjetite naše web-mjesto za podršku.",
             "viewWarrantyOptions": "PRIKAŽI MOGUĆNOSTI JAMSTVA",
             "offlineTips1": "Za najnovije informacije o jamstvu priključite se na internet.",

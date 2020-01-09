@@ -54,8 +54,8 @@ export class VpnLandingViewModel {
 		if (!this.translateString) {
 			return;
 		}
-		const cacheShowOwn = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingVPNShowOwn, null);
-		this.vpnStatus.showOwn = typeof cacheShowOwn === 'boolean' ? cacheShowOwn : false;
+		const cacheShowOwn: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingVPNShowOwn, null);
+		this.vpnStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 		switch (status) {
 			case 'installed':
 				this.vpnStatus.detail = this.translateString['common.securityAdvisor.installed'];

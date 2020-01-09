@@ -32,7 +32,7 @@
 			[label]="mode.title | translate"
 			[value]="mode.value"
 			[checked]="mode.checked"
-			(change)="update$.next(mode)"
+			(optionChange)="update$.next(mode)"
 			[disabled]="mode.value === backlightStatusEnum.DISABLED_OFF"
 			[textId]="'myDevice-settings-inputAccessories-backlight'">
 		</vtr-ui-circle-radio-with-checkbox>
@@ -57,7 +57,7 @@
 				[label]="mode.title | translate"
 				[value]='mode.value'
 				[checked]="mode.checked"
-				(change)="update$.next(mode)"
+				(optionChange)="update$.next(mode)"
 				[disabled]="mode.value === backlightStatusEnum.DISABLED_OFF"
 				[textId]="'myDevice-settings-inputAccessories-backlight'">
 			</vtr-ui-circle-radio-with-checkbox>

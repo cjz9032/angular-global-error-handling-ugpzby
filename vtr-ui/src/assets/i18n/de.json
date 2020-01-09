@@ -717,20 +717,24 @@
             "button": "Feedback geben",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Kommentare…",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Vielen Dank für Ihr Feedback!"
-                },
                 "question1": "Gefällt Ihnen der neue Stil von Vantage?",
                 "question2": "Halten Sie die Leistung für akzeptabel?",
                 "question3": "Würden Sie die Anwendung in Zukunft häufiger verwenden?",
+                "question4": "Wussten Sie schon, dass Sie mit Lenovo Vantage Softwaretreiber, Firmware und BIOS auf Ihrem Computer aktualisieren können?",
+                "question5": "Wie wahrscheinlich ist es, dass Sie die Anwendung Lenovo Vantage einem Freund oder Kollegen weiterempfehlen?",
+                "notAtAllLikely": "Gar nicht wahrscheinlich",
+                "extremelyLikely": "Sehr wahrscheinlich",
                 "yes": "Ja",
                 "no": "Nein",
                 "tips1": "Bitte hinterlassen Sie einen zusätzlichen Kommentar",
+                "comments": "Kommentare…",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Feedback senden",
-                "submitScreenShot": "Screenshot senden"
+                "submitScreenShot": "Screenshot senden",
+                "messages": {
+                    "feedbackSuccess": "Vielen Dank für Ihr Feedback!"
+                }
             }
         },
         "quickSettings": {
@@ -1890,7 +1894,7 @@
             "startDate": "Startdatum: ",
             "endDate": "Enddatum: ",
             "status": "Status: ",
-            "subDescription1": "Dieses Produkt hat eine jahrelange beschränkte Garantie und ist berechtigt für einen Depot-Reparaturservice. Kunden können sich für weitere Informationen an ihr lokales Service-Center wenden. Händler können für dieses Produkt eine Reparatur mit Einschicken des Geräts durch den Kunden durchführen.",
+            "subDescription1": "Die begrenzte Herstellergarantie von Lenovo gilt für Ihren Computer und berechtigt zum Depot-Service. Kunden können sich für weitere Informationen an ihr lokales Service-Center wenden. Händler können für dieses Produkt eine Reparatur mit Einschicken des Geräts durch den Kunden durchführen.",
             "subDescription2": "Wir konnten keine Garantieinformationen für Ihr Gerät finden, um weitere Garantieoptionen zu erhalten. Besuchen Sie bitte unsere Support-Website.",
             "viewWarrantyOptions": "GARANTIEOPTIONEN ANZEIGEN",
             "offlineTips1": "Stellen Sie eine Verbindung zum Internet her, um die neuesten Garantieinformationen zu erhalten.",
