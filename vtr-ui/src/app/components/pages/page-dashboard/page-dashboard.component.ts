@@ -37,6 +37,7 @@ import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
 	submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit;
+	offlineConnection = 'offline-connection';
 	public systemStatus: Status[] = [];
 	public isOnline = true;
 	public brand;
