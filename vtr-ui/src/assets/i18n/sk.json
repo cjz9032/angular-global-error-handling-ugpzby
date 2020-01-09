@@ -2880,7 +2880,7 @@
             "wireless": "Bezdrôtové"
         },
         "warningMessage": "Majte na pamäti, že testy budú zrušené, ak je systém v režime spánku alebo hibernácie",
-        "refreshMessage": "Refresh will take some time as need to load all the components again"
+        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2880,7 +2880,7 @@
             "wireless": "Trådløs"
         },
         "warningMessage": "Husk at testene vil bli kansellert hvis systemet er i hvile- eller dvalemodus",
-        "refreshMessage": "Refresh will take some time as need to load all the components again"
+        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",

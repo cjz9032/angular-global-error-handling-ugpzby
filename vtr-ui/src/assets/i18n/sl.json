@@ -2880,7 +2880,7 @@
             "wireless": "Brezžično"
         },
         "warningMessage": "Upoštevajte, da bodo preskusi preklicani, če sistem preide v stanje spanja ali mirovanja",
-        "refreshMessage": "Refresh will take some time as need to load all the components again"
+        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",

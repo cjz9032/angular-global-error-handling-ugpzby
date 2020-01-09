@@ -2880,7 +2880,7 @@
             "wireless": "無線"
         },
         "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試",
-        "refreshMessage": "Refresh will take some time as need to load all the components again"
+        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",

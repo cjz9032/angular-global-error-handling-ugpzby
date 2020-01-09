@@ -2880,7 +2880,7 @@
             "wireless": "Inalámbrica"
         },
         "warningMessage": "Tenga en cuenta que las pruebas se cancelarán si el sistema entra en suspensión o hibernación",
-        "refreshMessage": "Refresh will take some time as need to load all the components again"
+        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
     },
     "smartPerformance": {
         "title": "Health & Support",
