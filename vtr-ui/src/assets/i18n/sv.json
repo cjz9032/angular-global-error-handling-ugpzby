@@ -717,20 +717,24 @@
             "button": "Ge feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Kommentarer…",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Tack för din feedback!"
-                },
                 "question1": "Gillar du det nya utseendet på Vantage?",
                 "question2": "Tycker du att kapaciteten är acceptabel?",
                 "question3": "Kommer du att använda programmet oftare i framtiden?",
+                "question4": "Visste du att du kan använda Lenovo Vantage för att uppdatera drivrutiner, fast programvara och BIOS på datorn?",
+                "question5": "Hur troligt är det att du skulle rekommendera programmet Lenovo Vantage till en vän eller kollega?",
+                "notAtAllLikely": "Inte alls troligt",
+                "extremelyLikely": "Mycket troligt",
                 "yes": "Ja",
                 "no": "Nej",
                 "tips1": "Skriv eventuella övriga kommentarer",
+                "comments": "Kommentarer…",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Skicka feedback",
-                "submitScreenShot": "Skicka skärmdump"
+                "submitScreenShot": "Skicka skärmdump",
+                "messages": {
+                    "feedbackSuccess": "Tack för din feedback!"
+                }
             }
         },
         "quickSettings": {

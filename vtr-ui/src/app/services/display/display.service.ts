@@ -312,7 +312,6 @@ export class DisplayService {
 		try {
 			if (this.isShellAvailable) {
 				return this.cameraSettings.startMonitor((response: any) => {
-					console.log('startMonitorForCameraPermission', response);
 					if (response.permission !== undefined) {
 						this.commonService.sendNotification(DeviceMonitorStatus.CameraStatus, response.permission);
 					}

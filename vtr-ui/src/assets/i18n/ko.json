@@ -717,20 +717,24 @@
             "button": "피드백 제출",
             "form": {
                 "email": "Email (optional)",
-                "comments": "댓글...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "소중한 의견을 들려주셔서 감사합니다!"
-                },
                 "question1": "새로운 스타일의 Vantage를 원하십니까?",
                 "question2": "성능이 적합하다고 생각합니까?",
                 "question3": "나중에 응용 프로그램을 보다 자주 사용하시겠습니까?",
+                "question4": "Lenovo Vantage를 사용하여 컴퓨터에서 소프트웨어 드라이버, 펌웨어 및 BIOS를 업데이트할 수 있다는 것을 알고 있었습니까?",
+                "question5": "Lenovo Vantage 응용 프로그램을 친구나 동료에게 추천하시겠습니까?",
+                "notAtAllLikely": "전혀 추천하지 않음",
+                "extremelyLikely": "매우 추천함",
                 "yes": "예",
                 "no": "아니요",
                 "tips1": "추가 의견을 남겨 주십시오.",
+                "comments": "댓글...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "피드백 보내기",
-                "submitScreenShot": "스크린 샷 제출"
+                "submitScreenShot": "스크린 샷 제출",
+                "messages": {
+                    "feedbackSuccess": "소중한 의견을 들려주셔서 감사합니다!"
+                }
             }
         },
         "quickSettings": {

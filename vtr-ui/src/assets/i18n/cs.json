@@ -717,20 +717,24 @@
             "button": "Zaslat zpětnou vazbu",
             "form": {
                 "email": "E-mail (volitelné)",
-                "comments": "Poznámky...",
-                "button": "Předložit",
-                "addScreenshot": "Přidat ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Děkujeme za váš názor."
-                },
                 "question1": "Líbí se vám nový styl aplikace Vantage?",
                 "question2": "Myslíte si, že aplikace funguje dobře?",
                 "question3": "Používali byste tuto aplikaci v budoucnu častěji?",
+                "question4": "Věděli jste, že pomocí programu Lenovo Vantage můžete ve vašem počítači aktualizovat ovladače softwaru, firmware a systém BIOS?",
+                "question5": "Jak je pravděpodobné, že byste aplikaci Lenovo Vantage doporučili svému známému nebo kolegovi?",
+                "notAtAllLikely": "Vůbec ne",
+                "extremelyLikely": "Velmi pravděpodobné",
                 "yes": "Ano",
                 "no": "Ne",
                 "tips1": "Zanechte prosím další komentáře",
+                "comments": "Poznámky...",
+                "button": "Předložit",
+                "addScreenshot": "Přidat ScreenShot",
                 "sendFeedback": "Odeslat zpětnou vazbu",
-                "submitScreenShot": "Odeslat snímek obrazovky"
+                "submitScreenShot": "Odeslat snímek obrazovky",
+                "messages": {
+                    "feedbackSuccess": "Děkujeme za váš názor."
+                }
             }
         },
         "quickSettings": {
