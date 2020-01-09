@@ -64,7 +64,7 @@
 					</div>
 
 					<div class="refresh-message" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
-						<h3>{{ 'hardwareScan.refreshMessage' | translate }}</h3>
+						{{ 'hardwareScan.refreshMessage' | translate }}
 					</div>
 
 					<vtr-widget-hardware-scan-item *ngIf="isScanExecuting()" [items]="modules"
