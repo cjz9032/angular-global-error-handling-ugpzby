@@ -720,20 +720,24 @@
             "button": "Proporcione comentarios",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comentarios...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Gracias por sus comentarios."
-                },
                 "question1": "¿Le gusta el nuevo estilo de Vantage?",
                 "question2": "¿Cree que el rendimiento es aceptable?",
                 "question3": "¿Utilizaría la aplicación con más frecuencia en el futuro?",
+                "question4": "¿Sabía que puede utilizar Lenovo Vantage para actualizar los controladores de software, el firmware y el BIOS de su sistema?",
+                "question5": "¿Qué probabilidades hay de que recomiende la aplicación Lenovo Vantage a un amigo o colega?",
+                "notAtAllLikely": "Para nada probable",
+                "extremelyLikely": "Muy probable",
                 "yes": "Sí",
                 "no": "No",
                 "tips1": "Deje cualquier comentario adicional",
+                "comments": "Comentarios...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Enviar comentarios",
-                "submitScreenShot": "Enviar captura de pantalla"
+                "submitScreenShot": "Enviar captura de pantalla",
+                "messages": {
+                    "feedbackSuccess": "Gracias por sus comentarios."
+                }
             }
         },
         "quickSettings": {

@@ -720,20 +720,24 @@
             "button": "Przekaż opinię",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Komentarze...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Dziękujemy za opinie!"
-                },
                 "question1": "Czy podoba Ci się nowy styl aplikacji Vantage?",
                 "question2": "Czy uważasz, że wydajność jest zadowalająca?",
                 "question3": "Czy masz zamiar częściej korzystać z tej aplikacji w przyszłości?",
+                "question4": "Czy wiesz, że możesz skorzystać z programu Lenovo Vantage w celu aktualizacji sterowników oprogramowania, oprogramowania układowego i systemu BIOS na komputerze?",
+                "question5": "Jak prawdopodobne jest, że polecisz program Lenovo Vantage znajomemu?",
+                "notAtAllLikely": "Wcale nieprawdopodobne",
+                "extremelyLikely": "Bardzo prawdopodobne",
                 "yes": "Tak",
                 "no": "Nie",
                 "tips1": "Przekaż dodatkowe komentarze",
+                "comments": "Komentarze...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Wyślij opinię",
-                "submitScreenShot": "Prześlij zrzut ekranu"
+                "submitScreenShot": "Prześlij zrzut ekranu",
+                "messages": {
+                    "feedbackSuccess": "Dziękujemy za opinie!"
+                }
             }
         },
         "quickSettings": {

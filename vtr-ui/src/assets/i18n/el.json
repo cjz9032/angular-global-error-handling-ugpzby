@@ -720,20 +720,24 @@
             "button": "Υποβολή σχολίων",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Σχόλια...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Σας ευχαριστούμε για τα σχόλιά σας!"
-                },
                 "question1": "Σας αρέσει το νέο στιλ του Vantage;",
                 "question2": "Πιστεύετε ότι η απόδοση είναι αποδεκτή;",
                 "question3": "Θα χρησιμοποιούσατε την εφαρμογή πιο συχνά στο μέλλον;",
+                "question4": "Γνωρίζατε ότι μπορείτε να χρησιμοποιήσετε το Lenovo Vantage για να ενημερώσετε τα προγράμματα οδήγησης λογισμικού, το υλικολογισμικό και το BIOS στον υπολογιστή σας;",
+                "question5": "Πόσο πιθανό είναι να συστήσετε την εφαρμογή Lenovo Vantage σε φίλο ή συνάδελφο;",
+                "notAtAllLikely": "Καθόλου πιθανό",
+                "extremelyLikely": "Εξαιρετικά πιθανό",
                 "yes": "Ναι",
                 "no": "Όχι",
                 "tips1": "Παρακαλούμε αφήστε τυχόν πρόσθετα σχόλια",
+                "comments": "Σχόλια...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Αποστολή σχολίων",
-                "submitScreenShot": "Υποβολή στιγμιότυπου οθόνης"
+                "submitScreenShot": "Υποβολή στιγμιότυπου οθόνης",
+                "messages": {
+                    "feedbackSuccess": "Σας ευχαριστούμε για τα σχόλιά σας!"
+                }
             }
         },
         "quickSettings": {

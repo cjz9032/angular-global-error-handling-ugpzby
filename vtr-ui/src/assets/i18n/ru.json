@@ -720,20 +720,24 @@
             "button": "Отправить отзыв",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Комментарии...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Благодарим за отзыв!"
-                },
                 "question1": "Вам нравится новый стиль Vantage?",
                 "question2": "Как вы считаете, производительность приемлема?",
                 "question3": "Вы будете использовать приложение чаще в будущем?",
+                "question4": "Знали ли вы, что с помощью Lenovo Vantage можно обновлять драйверы программного обеспечения, микропрограмму и BIOS компьютера?",
+                "question5": "Насколько вероятно, что вы порекомендуете приложение Lenovo Vantage другу или коллеге?",
+                "notAtAllLikely": "Маловероятно",
+                "extremelyLikely": "Крайне вероятно",
                 "yes": "Да",
                 "no": "Нет",
                 "tips1": "Оставьте любые дополнительные комментарии",
+                "comments": "Комментарии...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Отправить отзыв",
-                "submitScreenShot": "Отправить снимок экрана"
+                "submitScreenShot": "Отправить снимок экрана",
+                "messages": {
+                    "feedbackSuccess": "Благодарим за отзыв!"
+                }
             }
         },
         "quickSettings": {

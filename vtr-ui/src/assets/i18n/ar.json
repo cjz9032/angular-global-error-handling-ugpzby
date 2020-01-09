@@ -722,20 +722,24 @@
             "button": "تقديم ملاحظات",
             "form": {
                 "email": "البريد الإلكتروني اختياري",
-                "comments": "التعليقات...",
-                "button": "خضع",
-                "addScreenshot": "إضافة لقطة شاشة",
-                "messages": {
-                    "feedbackSuccess": "نشكرك على تعليقاتك!"
-                },
                 "question1": "<span dir=\"rtl\">هل أعجبك نمط Vantage الجديد؟</span>",
                 "question2": "هل تعتقد أن الأداء مقبول؟",
                 "question3": "هل ستستخدم التطبيق بشكل أكثر تكرارًا في المستقبل؟",
+                "question4": "هل كنت تعلم أنه يمكنك استخدام Lenovo Vantage لتحديث برامج التشغيل والبرامج الثابتة بالإضافة إلى BIOS على جهاز الكمبيوتر؟",
+                "question5": "ما مدى احتمالية أن تنصح صديق أو زميل لك باستخدام تطبيق Lenovo Vantage؟",
+                "notAtAllLikely": "غير محتمل على الإطلاق",
+                "extremelyLikely": "محتمل للغاية",
                 "yes": "نعم",
                 "no": "لا",
                 "tips1": "يرجى ترك أي تعليقات إضافية",
+                "comments": "التعليقات...",
+                "button": "خضع",
+                "addScreenshot": "إضافة لقطة شاشة",
                 "sendFeedback": "إرسال تعليقات",
-                "submitScreenShot": "إرسال لقطة الشاشة"
+                "submitScreenShot": "إرسال لقطة الشاشة",
+                "messages": {
+                    "feedbackSuccess": "نشكرك على تعليقاتك!"
+                }
             }
         },
         "quickSettings": {

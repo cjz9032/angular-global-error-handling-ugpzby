@@ -720,20 +720,24 @@
             "button": "Gi tilbakemelding",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Kommentarer...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Takk for tilbakemeldingen!"
-                },
                 "question1": "Liker du den nye stilen til Vantage?",
                 "question2": "Synes du at ytelsen er akseptabel?",
                 "question3": "Ville du brukt programmet mer i fremtiden?",
+                "question4": "Visste du at du kan bruke Lenovo Vantage til å oppdatere programvaredrivere, fastvare og BIOS på datamaskinen din?",
+                "question5": "Hvor sannsynlig er det at du anbefaler Lenovo Vantage-programmet til en venn eller kollega?",
+                "notAtAllLikely": "Ikke sannsynlig i det hele tatt",
+                "extremelyLikely": "Svært sannsynlig",
                 "yes": "Ja",
                 "no": "Nei",
                 "tips1": "Her kan du legge inn andre kommentarer",
+                "comments": "Kommentarer...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Send tilbakemelding",
-                "submitScreenShot": "Send skjermbilde"
+                "submitScreenShot": "Send skjermbilde",
+                "messages": {
+                    "feedbackSuccess": "Takk for tilbakemeldingen!"
+                }
             }
         },
         "quickSettings": {

@@ -720,20 +720,24 @@
             "button": "Залишити відгук",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Коментар...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Дякуємо за ваш відгук!"
-                },
                 "question1": "Чи подобається вам новий стиль Vantage?",
                 "question2": "Чи вистачає вам продуктивності?",
                 "question3": "Чи збираєтеся ви користуватися програмою частіше?",
+                "question4": "Чи знали ви, що можете використовувати Lenovo Vantage для оновлення драйверів програмного забезпечення, мікропрограм і BIOS?",
+                "question5": "Наскільки ймовірно, що ви б порекомендували програму Lenovo Vantage другу або колезі?",
+                "notAtAllLikely": "У жодному разі",
+                "extremelyLikely": "Дуже охоче",
                 "yes": "Так",
                 "no": "Ні",
                 "tips1": "Маєте додаткові коментарі?",
+                "comments": "Коментар...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Надіслати відгук",
-                "submitScreenShot": "Надіслати знімок екрана"
+                "submitScreenShot": "Надіслати знімок екрана",
+                "messages": {
+                    "feedbackSuccess": "Дякуємо за ваш відгук!"
+                }
             }
         },
         "quickSettings": {
