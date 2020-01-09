@@ -1355,18 +1355,18 @@ vtr-ui-smart-performance-scanning {
 	.modal-dialog {
 		max-width: 110rem;
 		@media #{$breakpoint_xl} {
-			max-width: 95rem;
+			max-width: 92rem;
 		}
 		@media #{$breakpoint_lg} {
-			max-width: 70rem;
+			max-width: 66rem;
 			top: 8rem;
 		}
 		@media #{$breakpoint_md} {
-			max-width: 60rem;
+			max-width: 54rem;
 			top: 8rem;
 		}
 		@media #{$breakpoint_sm} {
-			max-width: 45rem;
+			max-width: 40rem;
 			margin:0 auto;
 			top: 10rem;
 			bottom: 2rem;
