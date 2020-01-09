@@ -717,20 +717,24 @@
             "button": "提供意見回饋",
             "form": {
                 "email": "Email (optional)",
-                "comments": "留言...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "謝謝您的意見回饋！"
-                },
                 "question1": "您喜歡 Vantage 的新風格嗎？",
                 "question2": "您是否滿意其效能？",
                 "question3": "您未來會更常使用這款應用程式嗎？",
+                "question4": "您知道可以使用 Lenovo Vantage 來更新您電腦上的軟體驅動程式、韌體和 BIOS 嗎？",
+                "question5": "您將 Lenovo Vantage 應用程式推薦給同事朋友的可能性有多大？",
+                "notAtAllLikely": "完全不可能",
+                "extremelyLikely": "極有可能",
                 "yes": "是",
                 "no": "否",
                 "tips1": "請將任何其他意見告訴我們",
+                "comments": "留言...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "傳送意見回饋",
-                "submitScreenShot": "傳送螢幕擷取畫面"
+                "submitScreenShot": "傳送螢幕擷取畫面",
+                "messages": {
+                    "feedbackSuccess": "謝謝您的意見回饋！"
+                }
             }
         },
         "quickSettings": {

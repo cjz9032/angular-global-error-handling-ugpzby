@@ -717,20 +717,24 @@
             "button": "フィードバックを送る",
             "form": {
                 "email": "Email (optional)",
-                "comments": "コメント...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "フィードバックをありがとうございました!"
-                },
                 "question1": "Vantage の新しいスタイルを気に入っていますか？",
                 "question2": "パフォーマンスは許容できると思いますか？",
                 "question3": "今後もっと頻繁にアプリケーションを使いますか？",
+                "question4": "Lenovo Vantage でコンピューターのソフトウェア・ドライバー、ファームウェア、および BIOS を更新できることをご存知でしたか?",
+                "question5": "Lenovo Vantage アプリケーションを同僚の友人におすすめする可能性はどのくらいありますか?",
+                "notAtAllLikely": "まったくない",
+                "extremelyLikely": "非常に可能性が高い",
                 "yes": "はい",
                 "no": "いいえ",
                 "tips1": "追加のコメントを残してください",
+                "comments": "コメント...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "フィードバックを送る",
-                "submitScreenShot": "スクリーンショットを送信する"
+                "submitScreenShot": "スクリーンショットを送信する",
+                "messages": {
+                    "feedbackSuccess": "フィードバックをありがとうございました!"
+                }
             }
         },
         "quickSettings": {
