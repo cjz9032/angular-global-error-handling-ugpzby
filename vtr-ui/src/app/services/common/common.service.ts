@@ -207,21 +207,35 @@ export class CommonService {
 		return arguments.length === 1 ? undefined : defaultValue;
 	}
 
-	public removeObjFrom(array: any[], path: string) {
-		return array.filter(e => e.path !== path);
+	addToObjectsList(array: any[], item: any) {
+		if (!this.isPresent(array, item.path)) {
+			array.push(item);
+			return this.sortMenuItems(array);
+		} else {
+			return array;
+		}
 	}
 
-	public isFoundInArray(array: any[], path: string) {
-		const element = array.find(e => e.path === path);
-		return element ? true : false;
+	public removeObjFrom(array: any[], path: string) {
+		if (this.isPresent(array, path)) {
+			return array.filter(e => e.path !== path);
+		} else {
+			return array;
+		}
 	}
+
+	// public isFoundInArray(array: any[], path: string) {
+	// 	const element = array.find(e => e.path === path);
+	// 	return element ? true : false;
+	// }
 
 	public removeObjById(array: any[], id: string) {
 		return array.filter(e => e.id !== id);
 	}
 
 	public isPresent(array: any[], path: string) {
-		return array.some(e => e.path === path);
+		const element = array.find(e => e.path === path);
+		return element ? true : false;
 	}
 
 	public sortMenuItems(menuItems) {
