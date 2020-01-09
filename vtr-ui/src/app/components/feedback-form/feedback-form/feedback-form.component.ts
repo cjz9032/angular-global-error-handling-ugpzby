@@ -24,16 +24,15 @@ export class FeedbackFormComponent implements OnInit {
 			question: 'dashboard.feedback.form.question1'
 		},
 		{
-			idYes: 'feedback-qa-performance-yes',
-			idNo: 'feedback-performance-no',
-			name: 'qaPerformance',
-			question: 'dashboard.feedback.form.question2'
+			idYes: 'feedback-su-awareness-yes',
+			idNo: 'feedback-su-awareness-no',
+			name: 'systemUpdateAwareness',
+			question: 'dashboard.feedback.form.question4'
 		},
 		{
-			idYes: 'feedback-qa-use-frequency-yes',
-			idNo: 'feedback-qa-use-frequency-no',
-			name: 'qaUseFrequency',
-			question: 'dashboard.feedback.form.question3'
+			likelyValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			name: 'remommendVantageToFriend',
+			question: 'dashboard.feedback.form.question5'
 		}
 	];
 
@@ -59,8 +58,8 @@ export class FeedbackFormComponent implements OnInit {
 			Content: formData.userComment,
 			QA: {
 				QaNewStyle: formData.qaNewStyle,
-				QaPerformance: formData.qaPerformance,
-				QaUseFrequency: formData.qaUseFrequency
+				SystemUpdateAwareness: formData.systemUpdateAwareness,
+				RemommendVantageToFriend: formData.remommendVantageToFriend
 			}
 		};
 		if (this.metrics) {
@@ -85,8 +84,8 @@ export class FeedbackFormComponent implements OnInit {
 				Validators.minLength(1)
 			]),
 			qaNewStyle: new FormControl(null),
-			qaPerformance: new FormControl(null),
-			qaUseFrequency: new FormControl(null)
+			systemUpdateAwareness: new FormControl(null),
+			remommendVantageToFriend: new FormControl(null)
 		});
 	}
 
@@ -104,6 +103,10 @@ export class FeedbackFormComponent implements OnInit {
 	}
 
 	setRadioStatus(name: string, status: boolean) {
+		this.feedbackForm.patchValue({ [name]: status });
+	}
+
+	setLikelyStatus(name: string, status: number) {
 		this.feedbackForm.patchValue({ [name]: status });
 	}
 }

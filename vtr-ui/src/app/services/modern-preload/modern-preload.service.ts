@@ -107,6 +107,16 @@ export class ModernPreloadService {
 				return entitledApp;
 			});
 			return entitledAppList;
+		} else if (this.IsInstalling && this.IsCancelInstall) {
+			const entitledAppList = this.EntitledAppList.map(entitledApp => {
+				if (entitledApp && entitledApp.status !== ModernPreloadEnum.StatusInstalled
+					&& entitledApp.originalStatus) {
+					entitledApp.status = entitledApp.originalStatus;
+				}
+				entitledApp.isChecked = entitledApp.status !== ModernPreloadEnum.StatusInstalled;
+				return entitledApp;
+			});
+			return entitledAppList;
 		} else {
 			return this.EntitledAppList;
 		}
@@ -115,7 +125,7 @@ export class ModernPreloadService {
 	private handleGetAppListResponse(bridgeAppList: any, responseHandler) {
 		if (bridgeAppList && this.cmsAppList) {
 			this.logService.info('ModernPreloadService.handleGetAppListResponse response.', JSON.stringify(bridgeAppList));
-			const mergedAppList: AppItem = this.mergeAppDetails(bridgeAppList, this.cmsAppList);
+			const mergedAppList: AppItem[] = this.mergeAppDetails(bridgeAppList, this.cmsAppList);
 			this.EntitledAppList = mergedAppList;
 			this.sendResponseNotification(ModernPreloadEnum.GetEntitledAppListRespond, mergedAppList, responseHandler);
 		}
@@ -133,6 +143,7 @@ export class ModernPreloadService {
 				app.udcId = app.partNum;
 				app.version = detailFromCMS.Version;
 			}
+			app.originalStatus = app.status;
 			app.isChecked = app.status !== ModernPreloadEnum.StatusInstalled; // set default checked for not installed app
 		});
 		return appList;
@@ -213,6 +224,7 @@ export class ModernPreloadService {
 
 export class AppItem {
 	appID: string;
+	originalStatus?: string;
 	status: string;
 	progress?: any;
 	title?: string;
