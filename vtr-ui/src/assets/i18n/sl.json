@@ -717,20 +717,24 @@
             "button": "Pošljite povratne informacije",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Komentarji...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Hvala za povratne informacije."
-                },
                 "question1": "Ali vam je novi slog programa Vantage všeč?",
                 "question2": "Ali menite, da je učinkovitost delovanja sprejemljiva?",
                 "question3": "Ali bi v prihodnje pogosteje uporabljali aplikacijo?",
+                "question4": "Ste vedeli, da program Lenovo Vantage lahko uporabite za posodabljanje gonilnikov programske opreme, vdelane programske opreme in BIOS-a računalnika?",
+                "question5": "Ali bi program Lenovo Vantage priporočili prijatelju ali sodelavcu?",
+                "notAtAllLikely": "Nikakor",
+                "extremelyLikely": "Vsekakor",
                 "yes": "Da",
                 "no": "Ne",
                 "tips1": "Napišite morebitne dodatne komentarje",
+                "comments": "Komentarji...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Pošljite povratne informacije",
-                "submitScreenShot": "Posnetek zaslona pošiljanja"
+                "submitScreenShot": "Posnetek zaslona pošiljanja",
+                "messages": {
+                    "feedbackSuccess": "Hvala za povratne informacije."
+                }
             }
         },
         "quickSettings": {
@@ -1890,7 +1894,7 @@
             "startDate": "Datum začetka: ",
             "endDate": "Datum konca: ",
             "status": "Stanje: ",
-            "subDescription1": "Ta izdelek ima -letno omejeno garancijo in je upravičen do popravila na servisu. Stranke lahko za več informacij pokličejo lokalni servisni center. Prodajalci lahko za ta izdelek ponujajo popravilo s prinosom na servis.",
+            "subDescription1": "Lenovova omejena garancija velja za vaš računalnik in je upravičena do servisa v skladišču. Stranke lahko za več informacij pokličejo lokalni servisni center. Prodajalci lahko za ta izdelek ponujajo popravilo s prinosom na servis.",
             "subDescription2": "Podrobnosti garancije za vašo napravo ni bilo mogoče najti. Za več garancijskih možnosti obiščite naše spletno mesto za podporo.",
             "viewWarrantyOptions": "OGLED GARANCIJSKIH MOŽNOSTI",
             "offlineTips1": "Za najnovejše informacije o garanciji se povežite z internetom.",

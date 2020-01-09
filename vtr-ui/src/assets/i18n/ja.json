@@ -717,20 +717,24 @@
             "button": "フィードバックを送る",
             "form": {
                 "email": "Email (optional)",
-                "comments": "コメント...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "フィードバックをありがとうございました!"
-                },
                 "question1": "Vantage の新しいスタイルを気に入っていますか？",
                 "question2": "パフォーマンスは許容できると思いますか？",
                 "question3": "今後もっと頻繁にアプリケーションを使いますか？",
+                "question4": "Lenovo Vantage でコンピューターのソフトウェア・ドライバー、ファームウェア、および BIOS を更新できることをご存知でしたか?",
+                "question5": "Lenovo Vantage アプリケーションを同僚の友人におすすめする可能性はどのくらいありますか?",
+                "notAtAllLikely": "まったくない",
+                "extremelyLikely": "非常に可能性が高い",
                 "yes": "はい",
                 "no": "いいえ",
                 "tips1": "追加のコメントを残してください",
+                "comments": "コメント...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "フィードバックを送る",
-                "submitScreenShot": "スクリーンショットを送信する"
+                "submitScreenShot": "スクリーンショットを送信する",
+                "messages": {
+                    "feedbackSuccess": "フィードバックをありがとうございました!"
+                }
             }
         },
         "quickSettings": {
@@ -1890,7 +1894,7 @@
             "startDate": "開始日:",
             "endDate": "終了日:",
             "status": "ステータス:",
-            "subDescription1": "この製品は、年間限定保証とデポ修理サービスを受けることができます。詳細については、最寄りのサービスセンターまでお問い合わせください。販売店は、本製品の搬入修理を行うことができます。",
+            "subDescription1": "Lenovo 保証規定がご使用のコンピューターに適用され、Depot サービスを受けることができます。詳細については、最寄りのサービスセンターまでお問い合わせください。販売店は、本製品の搬入修理を行うことができます。",
             "subDescription2": "お使いのデバイスの保証の詳細を見つけることができませんでした。さらなる保証オプションについては、当社のサポート Web サイトをご覧ください。",
             "viewWarrantyOptions": "保証オプションを表示",
             "offlineTips1": "最新の保証情報についてはインターネットに接続してください。",

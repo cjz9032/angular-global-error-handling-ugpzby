@@ -12,6 +12,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
+import { MenuItem } from 'src/app/enums/menuItem.enum';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -133,7 +134,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 				break;
 			case SelfSelectEvent.SegmentChange:
 				this.getSegment();
-				break
+				break;
 			default:
 				break;
 		}
@@ -330,7 +331,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.toggleBetaProgram = event.switchValue;
 		this.sendSettingMetrics('SettingBetaProgram', event.switchValue);
 		this.betaService.setBetaStatus(this.toggleBetaProgram);
-		this.configService.notifyMenuChange();
+		this.commonService.sendReplayNotification(MenuItem.MenuBetaItemChange, this.toggleBetaProgram);
 	}
 
 	sendMetrics(data: any) {

@@ -717,20 +717,24 @@
             "button": "Fornisci feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Commenti...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Grazie del feedback!"
-                },
                 "question1": "Ti piace il nuovo stile di Vantage?",
                 "question2": "Le prestazioni sono accettabili?",
                 "question3": "Utilizzerai l'applicazione più spesso in futuro?",
+                "question4": "Sapevi che è possibile utilizzare Lenovo Vantage per aggiornare i driver del software, il firmware e il BIOS del computer?",
+                "question5": "Con quale probabilità consiglieresti l'applicazione Lenovo Vantage a un amico o un collega?",
+                "notAtAllLikely": "Altamente improbabile",
+                "extremelyLikely": "Molto probabile",
                 "yes": "Sì",
                 "no": "No",
                 "tips1": "Fornisci eventuali commenti aggiuntivi",
+                "comments": "Commenti...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Invia feedback",
-                "submitScreenShot": "Invia screenshot"
+                "submitScreenShot": "Invia screenshot",
+                "messages": {
+                    "feedbackSuccess": "Grazie del feedback!"
+                }
             }
         },
         "quickSettings": {
@@ -1890,7 +1894,7 @@
             "startDate": "Data di inizio: ",
             "endDate": "Data di fine: ",
             "status": "Stato: ",
-            "subDescription1": "Questo prodotto viene fornito con garanzia limitata e servizio di riparazione presso il fornitore. Per ulteriori informazioni, i clienti possono contattare il centro di assistenza locale. I rivenditori potrebbero fornire il servizio di riparazione a domicilio per questo prodotto.",
+            "subDescription1": "La garanzia limitata Lenovo è valida per il computer in uso e include il servizio di deposito. Per ulteriori informazioni, i clienti possono contattare il centro di assistenza locale. I rivenditori potrebbero fornire il servizio di riparazione a domicilio per questo prodotto.",
             "subDescription2": "Non è stato possibile individuare i dettagli sulla garanzia del dispositivo. Per ulteriori opzioni della garanzia, visitare il nostro sito Web del supporto.",
             "viewWarrantyOptions": "VISUALIZZA OPZIONI DELLA GARANZIA",
             "offlineTips1": "Per informazioni più recenti sulla garanzia collegarsi a Internet.",

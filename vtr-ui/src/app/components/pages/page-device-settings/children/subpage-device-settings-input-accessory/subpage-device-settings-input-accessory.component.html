@@ -73,6 +73,11 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
+
+					<li class="pt-3" *ngIf="machineType === 1">
+						<vtr-backlight-thinkpad></vtr-backlight-thinkpad>
+					</li>
+
 					<li class="pt-3" *ngIf="machineType === 1">
 						<vtr-top-row-functions></vtr-top-row-functions>
 					</li>
@@ -151,7 +156,7 @@
 						</vtr-ui-row-switch>
 					</li>
 					<!-- Fn and Ctrl keys swap feature commented due to VAN-12684 -->
-					<!-- <li class="pt-3" *ngIf="machineType == 1 && fnCtrlSwapCapability">
+					<li class="pt-3" *ngIf="machineType == 1 && fnCtrlSwapCapability">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title' | translate"
 							componentName="Fn key and Ctrl key swap "
@@ -170,7 +175,27 @@
 								</div>
 							</div>
 						</vtr-ui-row-switch>
-					</li> -->
+					</li>
+
+					<li class="pt-3">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title2' | translate"
+							componentName="Fn works as Ctrl for frequently used key combinations"
+							[caption]="'device.deviceSettings.inputAccessories.fnCtrlKey.description2' | translate"
+							[leftIcon]="['fal','sync']"
+							[showChildContent]="true"
+							[theme]="'white'"
+							[isSwitchVisible]="true"
+							[rightIcon]="['far', 'question-circle']"
+							[fnCtrltoolTip]="true"
+							[tooltipContent]="fnCtrlKeyTooltipContent">
+							<div class="row">
+								<div class="col-auto note pt-3">
+									<p>{{'device.deviceSettings.inputAccessories.fnCtrlKey.featureNote' | translate}}</p>
+								</div>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
 
 					<li *ngIf="machineType === 1">
 						<vtr-user-defined-key></vtr-user-defined-key>

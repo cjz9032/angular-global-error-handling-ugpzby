@@ -1,4 +1,4 @@
-import { async, TestBed } from '@angular/core/testing';
+import { async, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
@@ -12,6 +12,7 @@ import { MetricService } from '../../../../../services/metric/metric.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
+import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/battery-charge-threshold-capability.model'
 const featureStatus = {
 	'available': true,
 	'status': true,
@@ -142,12 +143,25 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			const myPrivateSpy = spyOn<any>(component, 'setConservationModeStatusIdeaNoteBook').and.callThrough();
 			const myPrivateSpyObj = spyOn<any>(component, 'setRapidChargeModeStatusIdeaNoteBook').and.callThrough();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
+			mode = 'expressCharging'
 			fixture.detectChanges();
 			await component.changeBatteryMode(new Event('click'), mode);
 			component.conservationModeStatus.status = true;
 			component.changeBatteryMode(new Event('click'), mode);
 			expect(myPrivateSpy).toHaveBeenCalled();
+		});
 
+		it('#changeBatteryMode should call else', async () => {
+			const { fixture, component, powerService } = setup();
+			const myPrivateSpy = spyOn<any>(component, 'setConservationModeStatusIdeaNoteBook').and.callThrough();
+			const myPrivateSpyObj = spyOn<any>(component, 'setRapidChargeModeStatusIdeaNoteBook').and.callThrough();
+			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
+			mode = 'conservationMode'
+			fixture.detectChanges();
+			// await component.changeBatteryMode(new Event('click'), mode);
+			component.conservationModeStatus.status = false;
+			component.changeBatteryMode(new Event('click'), mode);
+			// expect(myPrivateSpy).toHaveBeenCalled();
 		});
 		it('#onUsbChargingStatusChange should call', async () => {
 			const { fixture, component, powerService } = setup();
@@ -386,5 +400,76 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			component.closeContextModal();
 			expect(modalService.dismissAll).toHaveBeenCalled();
 		});
+
+		it('should call getBatteryAndPowerSettings', (() => {
+			const { component, fixture } = setup();
+			component.machineType = 0
+			component.getBatteryAndPowerSettings();
+			// tick()
+			expect(component.showEasyResumeSection).toBe(false)
+		}));
+
+		it('should call getBatteryAndPowerSettings', (() => {
+			const { component, fixture } = setup();
+			component.machineType = 1
+			component.getBatteryAndPowerSettings();
+			// tick()
+			// expect(component.showEasyResumeSection).toBe(false)
+		}));
+
+		it('onSetSmatStandbyCapability else case', () => {
+			const { component } = setup();
+			let booleanEvent = true
+			let spy = spyOn(commonService, 'isPresent').and.returnValue(true)
+			component.onSetSmartStandbyCapability(booleanEvent);
+			expect(spy).toHaveBeenCalledWith(component.headerMenuItems, 'smartStandby')
+		});
+
+		it('onSetSmatStandbyCapability else case - 2', () => {
+			const { component } = setup();
+			let booleanEvent = true
+			let spy = spyOn(commonService, 'isPresent').and.returnValue(false)
+			component.onSetSmartStandbyCapability(booleanEvent);
+			expect(spy).toHaveBeenCalledWith(component.headerMenuItems, 'smartStandby')
+		});
+		it('should call setChargeThresholdUI', () => {
+			const { component } = setup();
+			component.batteryChargeThresholdCache = new BatteryChargeThresholdCapability()
+			thresholdInfo[0].batteryNum = 1;
+			let spy = spyOn(component, 'isThresholdWarningMsgShown')
+			component.setChargeThresholdUI(thresholdInfo);
+			expect(spy).toHaveBeenCalled()
+		})
+
+		it('should call setChargeThresholdUI case-2', () => {
+			const { component } = setup();
+			component.batteryChargeThresholdCache = new BatteryChargeThresholdCapability()
+			thresholdInfo[0].batteryNum = 2;
+			let spy = spyOn(component, 'isThresholdWarningMsgShown')
+			component.setChargeThresholdUI(thresholdInfo);
+			expect(spy).toHaveBeenCalled()
+		})
+
+		it('should call setChargeThresholdUI if-case', () => {
+			const { component } = setup();
+			component.batteryChargeThresholdCache = new BatteryChargeThresholdCapability()
+			thresholdInfo[0].batteryNum = 1
+			thresholdInfo[0].startValue = null
+			thresholdInfo[0].stopValue = null
+			let spy = spyOn(powerService, 'setChargeThresholdValue')
+			component.setChargeThresholdUI(thresholdInfo);
+			expect(spy).toHaveBeenCalled()
+		})
+		it('should call setChargeThresholdUI if-case-2', () => {
+			const { component } = setup();
+			component.batteryChargeThresholdCache = new BatteryChargeThresholdCapability()
+			thresholdInfo[0].batteryNum = 2
+			thresholdInfo[0].startValue = null
+			thresholdInfo[0].stopValue = null
+			let spy = spyOn(powerService, 'setChargeThresholdValue')
+			component.setChargeThresholdUI(thresholdInfo);
+			expect(spy).toHaveBeenCalled()
+		})
+		
 	});
 });

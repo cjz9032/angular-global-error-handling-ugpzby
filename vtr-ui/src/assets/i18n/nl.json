@@ -717,20 +717,24 @@
             "button": "Feedback geven",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Opmerkingen...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Bedankt voor uw feedback."
-                },
                 "question1": "Bent u tevreden over de nieuwe stijl van Vantage?",
                 "question2": "Denkt u dat de prestaties acceptabel zijn?",
                 "question3": "Denkt u de toepassing in de toekomst vaker te gebruiken?",
+                "question4": "Weet u dat je Lenovo Vantage kunt gebruiken voor de update van softwaredrivers, firmware en BIOS op uw computer?",
+                "question5": "Zou u Lenovo Vantage aanbevelen bij een collega of vriend?",
+                "notAtAllLikely": "Zeker niet",
+                "extremelyLikely": "Zeker wel",
                 "yes": "Ja",
                 "no": "Nee",
                 "tips1": "Laat eventuele aanvullende opmerkingen achter",
+                "comments": "Opmerkingen...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Feedback verzenden",
-                "submitScreenShot": "Schermafbeelding verzenden"
+                "submitScreenShot": "Schermafbeelding verzenden",
+                "messages": {
+                    "feedbackSuccess": "Bedankt voor uw feedback."
+                }
             }
         },
         "quickSettings": {
@@ -1890,7 +1894,7 @@
             "startDate": "Begindatum: ",
             "endDate": "Einddatum: ",
             "status": "Status: ",
-            "subDescription1": "Dit product heeft jaar beperkte garantie en het recht op depot-reparatieservice. Klanten kunnen hun lokale servicecentrum bellen voor meer informatie. Dealers kunnen carry-in-reparatie bieden voor dit product.",
+            "subDescription1": "Uw computer wordt geleverd met Lenovo Beperkte Garantie, die Depot-service wordt genoemd. Klanten kunnen hun lokale servicecentrum bellen voor meer informatie. Dealers kunnen carry-in-reparatie bieden voor dit product.",
             "subDescription2": "We hebben geen garantie-informatie over uw apparaat gevonden. Ga voor meer garantieopties naar onze ondersteuningswebsite.",
             "viewWarrantyOptions": "GARANTIEOPTIES WEERGEVEN",
             "offlineTips1": "Maak verbinding met internet voor de recentste garantie-informatie.",

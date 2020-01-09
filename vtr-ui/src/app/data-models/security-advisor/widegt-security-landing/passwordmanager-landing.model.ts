@@ -54,8 +54,8 @@ export class PasswordManagerLandingViewModel {
 		if (!this.translateString) {
 			return;
 		}
-		const cacheShowOwn = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, null);
-		this.pmStatus.showOwn = typeof cacheShowOwn === 'boolean' ? cacheShowOwn : false;
+		const cacheShowOwn: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, null);
+		this.pmStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 		switch (status) {
 			case 'installed':
 				this.pmStatus.detail = this.translateString['common.securityAdvisor.installed'];

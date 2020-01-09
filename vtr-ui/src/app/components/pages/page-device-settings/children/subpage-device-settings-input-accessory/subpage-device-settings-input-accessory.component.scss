@@ -246,6 +246,18 @@
 			color: $main_darker;
 		}
 	}
+
+	.note {
+		background-color: $grey_lighter;
+		border: 1px solid $note_border;
+		margin-top: 1rem;
+		margin-left: 2rem;
+		width: 75%;
+			p {
+				font-size: $fontsize_xs2;
+				color: $purple_navy;
+			}
+	}
 }
 
 .voip {

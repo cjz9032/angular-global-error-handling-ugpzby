@@ -717,20 +717,24 @@
             "button": "Zaslat zpětnou vazbu",
             "form": {
                 "email": "E-mail (volitelné)",
-                "comments": "Poznámky...",
-                "button": "Předložit",
-                "addScreenshot": "Přidat ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Děkujeme za váš názor."
-                },
                 "question1": "Líbí se vám nový styl aplikace Vantage?",
                 "question2": "Myslíte si, že aplikace funguje dobře?",
                 "question3": "Používali byste tuto aplikaci v budoucnu častěji?",
+                "question4": "Věděli jste, že pomocí programu Lenovo Vantage můžete ve vašem počítači aktualizovat ovladače softwaru, firmware a systém BIOS?",
+                "question5": "Jak je pravděpodobné, že byste aplikaci Lenovo Vantage doporučili svému známému nebo kolegovi?",
+                "notAtAllLikely": "Vůbec ne",
+                "extremelyLikely": "Velmi pravděpodobné",
                 "yes": "Ano",
                 "no": "Ne",
                 "tips1": "Zanechte prosím další komentáře",
+                "comments": "Poznámky...",
+                "button": "Předložit",
+                "addScreenshot": "Přidat ScreenShot",
                 "sendFeedback": "Odeslat zpětnou vazbu",
-                "submitScreenShot": "Odeslat snímek obrazovky"
+                "submitScreenShot": "Odeslat snímek obrazovky",
+                "messages": {
+                    "feedbackSuccess": "Děkujeme za váš názor."
+                }
             }
         },
         "quickSettings": {
@@ -1890,7 +1894,7 @@
             "startDate": "Datum zahájení: ",
             "endDate": "Datum ukončení: ",
             "status": "Stav: ",
-            "subDescription1": "Tento výrobek má roční omezenou záruku a je oprávněn k opravě servisu. Další zákazníci mohou zákazníci získat telefonicky v místním servisním středisku. Prodejci mohou pro tento produkt poskytnout opravu typu carry-in.",
+            "subDescription1": "Omezená záruka Lenovo se vztahuje na váš počítač a v jejím rámci bude proveden servis typu Depot. Další zákazníci mohou zákazníci získat telefonicky v místním servisním středisku. Prodejci mohou pro tento produkt poskytnout opravu typu carry-in.",
             "subDescription2": "Nepodařilo se nám najít podrobnosti o záruce pro dané zařízení. Další možnosti záruky najdete na našem webu podpory.",
             "viewWarrantyOptions": "ZOBRAZIT MOŽNOSTI ZÁRUKY",
             "offlineTips1": "Pokud chcete nejnovější informace o záruce, připojte se k internetu.",
