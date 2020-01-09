@@ -717,20 +717,24 @@
             "button": "Oferiți feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comentarii...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Vă mulţumim pentru feedbackul furnizat!"
-                },
                 "question1": "Vă place noul stil al Vantage?",
                 "question2": "Credeți că performanța este acceptabilă?",
                 "question3": "Ați folosi aplicația mai des în viitor?",
+                "question4": "Știați că puteți utiliza Lenovo Vantage pentru a actualiza driverele software, firmware-ul și BIOS-ul computerului?",
+                "question5": "Care este probabilitatea de a recomanda aplicația Lenovo Vantage unui prieten sau unui coleg?",
+                "notAtAllLikely": "Deloc probabil",
+                "extremelyLikely": "Extrem de probabil",
                 "yes": "Da",
                 "no": "Nu",
                 "tips1": "Vă rugăm să lăsați orice comentarii suplimentare",
+                "comments": "Comentarii...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Trimiteți feedbackul",
-                "submitScreenShot": "Trimiteți captura de ecran"
+                "submitScreenShot": "Trimiteți captura de ecran",
+                "messages": {
+                    "feedbackSuccess": "Vă mulţumim pentru feedbackul furnizat!"
+                }
             }
         },
         "quickSettings": {

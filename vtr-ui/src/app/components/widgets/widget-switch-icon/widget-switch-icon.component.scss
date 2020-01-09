@@ -20,6 +20,18 @@
 				border-radius: $border_radius;
 			}
 		}
+		@media #{$breakpoint_xl}{
+			width: 9.6rem;
+		}
+		@media #{$breakpoint_lg}{
+			width: 12.4rem;
+		}
+		@media #{$breakpoint_md}{
+			width: 12.4rem;
+		}
+		@media #{$breakpoint_sm}{
+			width: 12.4rem;
+		}
 
 		&.checked {
 			border: 1px solid $go;
@@ -58,14 +70,6 @@
 			font-weight: $weight_medium;
 			letter-spacing: 0;
 			// overflow: hidden;
-
-			@media #{$breakpoint_lg} {
-				font-size: 2rem;
-			}
-
-			@media #{$breakpoint_md} {
-				font-size: 1.1rem;
-			}
 		}
 
 		.icon-container {
@@ -147,13 +151,13 @@
 			.on-label {
 				color: $light;
 			}
-			@media #{$breakpoint_lg} {
-				font-size: 2rem;
-			}
+			// @media #{$breakpoint_lg} {
+			// 	font-size: 2rem;
+			// }
 
-			@media #{$breakpoint_md} {
-				font-size: 1.1rem;
-			}
+			// @media #{$breakpoint_md} {
+			// 	font-size: 1.1rem;
+			// }
 		}
 
 		.is-visible {

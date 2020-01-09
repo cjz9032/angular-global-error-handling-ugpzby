@@ -717,20 +717,24 @@
             "button": "Feedback geven",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Opmerkingen...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Bedankt voor uw feedback."
-                },
                 "question1": "Bent u tevreden over de nieuwe stijl van Vantage?",
                 "question2": "Denkt u dat de prestaties acceptabel zijn?",
                 "question3": "Denkt u de toepassing in de toekomst vaker te gebruiken?",
+                "question4": "Weet u dat je Lenovo Vantage kunt gebruiken voor de update van softwaredrivers, firmware en BIOS op uw computer?",
+                "question5": "Zou u Lenovo Vantage aanbevelen bij een collega of vriend?",
+                "notAtAllLikely": "Zeker niet",
+                "extremelyLikely": "Zeker wel",
                 "yes": "Ja",
                 "no": "Nee",
                 "tips1": "Laat eventuele aanvullende opmerkingen achter",
+                "comments": "Opmerkingen...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Feedback verzenden",
-                "submitScreenShot": "Schermafbeelding verzenden"
+                "submitScreenShot": "Schermafbeelding verzenden",
+                "messages": {
+                    "feedbackSuccess": "Bedankt voor uw feedback."
+                }
             }
         },
         "quickSettings": {

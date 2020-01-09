@@ -717,20 +717,24 @@
             "button": "Geri bildirim gönder",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Açıklamalar...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Geri bildiriminiz için teşekkürler!"
-                },
                 "question1": "Vantage'ın yeni tarzını beğendiniz mi?",
                 "question2": "Performansın kabul edilir olduğunu düşünüyor musunuz?",
                 "question3": "Uygulamayı gelecekte daha sık kullanır mısınız?",
+                "question4": "Bilgisayarınızdaki yazılım sürücülerini, sabit yazılımı ve BIOS'u güncellemek için Lenovo Vantage'ı kullanabileceğinizi biliyor muydunuz?",
+                "question5": "Lenovo Vantage uygulamasını bir arkadaşınıza veya meslektaşınıza tavsiye etme olasılığınız nedir?",
+                "notAtAllLikely": "Hiç olası değil",
+                "extremelyLikely": "Kuvvetle muhtemel",
                 "yes": "Evet",
                 "no": "Hayır",
                 "tips1": "Lütfen ek yorumlarınızı bırakın",
+                "comments": "Açıklamalar...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Geri Bildirim Gönder",
-                "submitScreenShot": "Ekran Görüntüsü Gönder"
+                "submitScreenShot": "Ekran Görüntüsü Gönder",
+                "messages": {
+                    "feedbackSuccess": "Geri bildiriminiz için teşekkürler!"
+                }
             }
         },
         "quickSettings": {
