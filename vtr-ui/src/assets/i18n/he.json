@@ -717,20 +717,24 @@
             "button": "תנו משוב",
             "form": {
                 "email": "Email (optional)",
-                "comments": "הערות...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "תודה על המשוב!"
-                },
                 "question1": "האם אתם אוהבים את הסגנון החדש של Vantage?",
                 "question2": "האם לדעתכם הביצועים טובים?",
                 "question3": "האם אתם מתכוונים להשתמש ביישום לעיתים קרובות יותר בעתיד?",
+                "question4": "הידעתכם שאתם יכולים להשתמש ב- Lenovo Vantage כדי לעדכן מנהלי התקן תוכנה, קושחה ו-BIOS במחשב?",
+                "question5": "עד כמה סביר שתמליצו על היישום Lenovo Vantage לחבר או לעמית?",
+                "notAtAllLikely": "בכלל לא סביר",
+                "extremelyLikely": "סביר מאוד",
                 "yes": "כן",
                 "no": "לא",
                 "tips1": "הערות נוספות",
+                "comments": "הערות...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "שליחת משוב",
-                "submitScreenShot": "שליחת צילום מסך"
+                "submitScreenShot": "שליחת צילום מסך",
+                "messages": {
+                    "feedbackSuccess": "תודה על המשוב!"
+                }
             }
         },
         "quickSettings": {

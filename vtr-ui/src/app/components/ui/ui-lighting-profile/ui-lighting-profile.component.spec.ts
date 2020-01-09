@@ -1,15 +1,16 @@
+import { resolve } from 'url';
 import { LightEffectComplexType } from './../../../enums/light-effect-complex-type';
 import { LightEffectRGBFeature } from './../../../enums/light-effect-rgbfeature';
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import {  ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { UiLightingProfileComponent } from './ui-lighting-profile.component';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
-import { Pipe } from '@angular/core';
+import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
 import { DeviceService } from 'src/app/services/device/device.service';
 
-const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', ['isShellAvailable', 'getLightingCapabilities', 'optionChangedRGBTop', 'optionChangedRGBSide', 'setLightingDefaultProfileById', 'setLightingProfileEffectColor']);
+const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', ['setLightingProfileId', 'setLightingProfileBrightness',
+ 'isShellAvailable', 'getLightingCapabilities', 'optionChangedRGBTop', 'optionChangedRGBSide', 'setLightingDefaultProfileById', 'setLightingProfileEffectColor']);
 const deviceServiceMock = jasmine.createSpyObj('DeviceService', ['isShellAvailable', 'getMachineInfo']);
 const singleColorResponse = { LightPanelType: [1], LedType_Complex: [0], LedType_simple: [1, 2, 3, 4], BrightAdjustLevel: 0, RGBfeature: 1 };
 const multipleColorResponse = { LightPanelType: [32, 64], LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128], LedType_simple: [0], BrightAdjustLevel: 4, RGBfeature: 255 };
@@ -26,7 +27,7 @@ const lightingResp = {
 	LedType_simple: [0], BrightAdjustLevel: 4,
 	RGBfeature: 255
 };
-xdescribe('UiLightingProfileComponent', () => {
+describe('UiLightingProfileComponent', () => {
 	let component: UiLightingProfileComponent;
 	let fixture: ComponentFixture<UiLightingProfileComponent>;
 	gamingLightingServiceMock.isShellAvailable.and.returnValue(true);
@@ -183,17 +184,30 @@ xdescribe('UiLightingProfileComponent', () => {
 			.returnValue(Promise.resolve(getLightingProfileById));
 		const res = component.colorEffectChangedFront('#fffff');
 		expect(res).toBe(undefined);
-	})); 
+	}));
 
 	it('should call the setLightingProfileId', fakeAsync(() => {
-		component.lightingCapabilities = { LightPanelType: [] };
+		component.lightingCapabilities = { LightPanelType: [], LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128] };
 		getLightingProfileById.didSuccess = true;
 		gamingLightingServiceMock.setLightingProfileEffectColor.and
 			.returnValue(Promise.resolve(getLightingProfileById));
-		const res = component.colorEffectChangedFront('#fffff');
+		gamingLightingServiceMock.setLightingProfileId.and.returnValue(Promise.resolve({ profileId : 1, didSuccess: false}));
+		const res = component.setLightingProfileId({target: {value: 3}});
 		expect(res).toBe(undefined);
 	}));
 
+	it('should call the setLightingBrightness', fakeAsync(() => {
+		gamingLightingServiceMock.setLightingProfileBrightness.and.returnValue(Promise.resolve({didSuccess: true}));
+		const res = component.setLightingBrightness({ target: { value: 3 } });
+		expect(res).toBe(undefined);
+	}));
+
+	it('should call the changeSingleCoorEffect', fakeAsync(() => {
+		component.lightingCapabilities = { LightPanelType: [1], LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128] };
+
+		const res = component.changeSingleCoorEffect({});
+		expect(res).toBe(undefined);
+	}));
 });
 
 /**

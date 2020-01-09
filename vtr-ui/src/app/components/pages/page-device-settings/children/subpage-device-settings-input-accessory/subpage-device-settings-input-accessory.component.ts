@@ -61,6 +61,60 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 
 	backlightCapability$: Observable<boolean>;
 
+	public fnCtrlKeyTooltipContent = [
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key1',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key1',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action1'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key2',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key2',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action2'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key3',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key3',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action3'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key4',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key4',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action4'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key5',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key5',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action5'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key6',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key6',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action6'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key7',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key7',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action7'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key8',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key8',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action8'}
+
+		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key9',
+		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key9',
+		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action9'},
+
+		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key10',
+		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key10',
+		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action10'},
+
+		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key11',
+		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key11',
+		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action1'},
+
+		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key12',
+		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key12',
+		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action12'},
+
+		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key13',
+		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key13',
+		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action13'}
+	];
+
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private keyboardService: InputAccessoriesService,
