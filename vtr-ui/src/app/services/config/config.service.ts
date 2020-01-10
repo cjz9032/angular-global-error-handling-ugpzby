@@ -8,7 +8,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import { menuItemsGaming, menuItems, appSearch, betaItem } from 'src/assets/menu/menu.json';
 import { privacyPolicyLinks } from 'src/assets/privacy-policy-links/policylinks.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
-import { BetaService } from '../beta/beta.service';
+import { BetaService, BetaStatus } from '../beta/beta.service';
 import { LoggerService } from '../logger/logger.service';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
@@ -129,7 +129,7 @@ export class ConfigService {
 
 	initGetMenuItemsAsync(): Promise<any> {
 		return new Promise(async (resolve) => {
-			const isBetaUser = this.betaService.getBetaStatus();
+			const isBetaUser = this.betaService.getBetaStatus() === BetaStatus.On;
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
 			this.activeSegment = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
