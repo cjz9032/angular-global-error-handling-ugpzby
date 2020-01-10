@@ -112,9 +112,9 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 
 	startScreenshotAutoSwipe() {
 		clearInterval(this.screenshotInterval);
-		// this.screenshotInterval = setInterval(() => {
-		// 	this.swipeRightToLeft();
-		// }, 5000);
+		this.screenshotInterval = setInterval(() => {
+			this.swipeRightToLeft();
+		}, 5000);
 	}
 
 	clickRightArrow() {

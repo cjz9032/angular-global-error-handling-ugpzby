@@ -293,15 +293,42 @@
 	}
 }
 
-:host-context(.is-gaming) {
+:host-context(.is-gaming) ::ng-deep {
 	.vtr-page-apps-for-you {
-		.vtr-page-content {
-			background: $gaming_darkest;
-
-			.apps-header,
+		.vtr-page-left-column {
+			.apps-header {
+				background: $dark_cell;
+				color: $gaming_lightest;
+			}
+	
 			.apps-content {
 				background: $dark_cell;
 				color: $gaming_lightest;
+				.description {
+					opacity: .6;
+				}
+
+				.title {
+					color: $main;
+				}
+
+				.sub-title {
+					opacity: .6;
+				}
+	
+				.screenshot-con {
+					.screenshot-slider {
+						.image-content {
+							.screenshot-img {
+								border: none;
+								opacity: .9;
+								&:hover {
+									border: none;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
