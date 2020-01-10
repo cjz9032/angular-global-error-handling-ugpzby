@@ -1,7 +1,7 @@
 <div class="vtr-widget-offline-info">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col col-12 offline-info-background">
+			<div class="col col-12 offline-info-background" [ngClass]="{'offline-connection': offlineConnection }">
 				<div class="d-flex align-items-center w-100 hidden-if-overflow">
 					<div class="offline-icon">
 						<fa-icon [icon]="['fal', 'wifi-slash']" class="icon"></fa-icon>

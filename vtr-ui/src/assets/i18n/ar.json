@@ -672,6 +672,9 @@
         },
         "app-update": {
             "message": "مرحبا! يتوفر إصدار أحدث من Vantage، هل تريد تحميله؟"
+        },
+        "offline": {
+            "connectToUseFeature": "Connect to the internet to use this feature"
         }
     },
     "privacy": {
@@ -1376,6 +1379,17 @@
                         "taskBarDimmer": "تعتيم شريط المهام",
                         "backgroundDimmer": "تعتيم الخلفية",
                         "displayDimmer": "تعتيم جهاز العرض"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {

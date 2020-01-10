@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
+        },
+        "offline": {
+            "connectToUseFeature": "Connect to the internet to use this feature"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "작업 표시줄 채광",
                         "backgroundDimmer": "백그라운드 채광",
                         "displayDimmer": "디스플레이 채광"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
