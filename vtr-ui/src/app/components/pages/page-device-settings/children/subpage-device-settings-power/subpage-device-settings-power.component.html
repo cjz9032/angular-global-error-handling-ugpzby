@@ -16,7 +16,7 @@
 					(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
 				</vtr-smart-standby>
 				<div *ngIf="showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable || gaugeResetCapability"
-					class="row py-5 smartsettings-card"
+					class="row pt-5 smartsettings-card"
 					id="battery">
 					<div class="col-12 mx-auto container-card ">
 
@@ -216,7 +216,7 @@
 						</vtr-container-collapsible>
 					</div>
 				</div>
-				 <div class="row py-5 smartsettings-card"
+				 <div class="row pt-5 smartsettings-card"
 					id="power"
 					*ngIf="!isDesktopMachine && !batteryService.isPowerDriverMissing && (alwaysOnUSBStatus?.available || showEasyResumeSection || (showFlipToBootSection$ | async))">
 					<div class="col-12 mx-auto container-card">
@@ -315,7 +315,7 @@
 					</div>
 				</div>
 
-				 <div class="row py-5 smartsettings-card"
+				 <div class="row pt-5 smartsettings-card"
 					id="other"
 					*ngIf="vantageToolbarStatus.available">
 					<div class="col-12 mx-auto container-card">
@@ -345,7 +345,7 @@
 						</vtr-container-collapsible>
 					</div>
 				</div>
-				<div class="row py-5 smartsettings-card"
+				<div class="row pt-5 smartsettings-card"
 					*ngIf="isEnergyStarProduct">
 					<div class="col-12 mx-auto container-card">
 						<vtr-container-collapsible
