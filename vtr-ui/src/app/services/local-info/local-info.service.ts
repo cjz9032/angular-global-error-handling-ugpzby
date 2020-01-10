@@ -56,8 +56,8 @@ export class LocalInfoService {
 							GEO: result.country.toLowerCase() ? result.country.toLowerCase() : 'us',
 							OEM: result.manufacturer ? result.manufacturer : 'Lenovo',
 							OS: osName,
-							Segment: SegmentConst.Consumer,
-							Brand: 'Lenovo',
+							Segment: result.isGaming ? this.gamingTag : this.selfSelectSegment,
+							Brand: result.brand ? result.brand : 'Lenovo'
 						};
 
 					} else {
@@ -67,7 +67,7 @@ export class LocalInfoService {
 							OEM: 'Lenovo',
 							OS: 'Windows',
 							Segment: SegmentConst.Consumer,
-							Brand: 'Lenovo',
+							Brand: 'Lenovo'
 						};
 					}
 					return this.localInfo;
