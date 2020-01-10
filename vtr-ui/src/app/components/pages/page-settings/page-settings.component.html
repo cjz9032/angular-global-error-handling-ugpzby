@@ -8,8 +8,8 @@
 	[shiftRightUp]="true">
 
 	<left-content>
-		<div class="row pt-40 justify-content-center">
-			<div class="col-xl-9 col-lg-10 col-md-11 col-sm-12 settings-main-column">
+		<div class="row no-gutters justify-content-center">
+			<div class="col-12 settings-main-column">
 				<div class="subpage-settings vtr-subpage">
 					<vtr-ui-header-subpage [title]="'settings.settings' | translate"
 						[caption]="'settings.settingsDescription' | translate"
@@ -19,7 +19,7 @@
 						*ngIf="deviceService.isArm || deviceService.isSMode">
 					</vtr-ui-header-subpage>
 
-					<div class="py-5" *ngIf="!deviceService.isArm && !deviceService.isSMode && isMessageSettings"
+					<div class="card-pb card-pt" *ngIf="!deviceService.isArm && !deviceService.isSMode && isMessageSettings"
 						id="settings-messages">
 						<vtr-container-collapsible name="SettingsMessage"
 							[tabIndex]="0"
@@ -76,7 +76,7 @@
 						</vtr-container-collapsible>
 					</div>
 
-					<div class="py-5 beta-setting"
+					<div class="card-pb beta-setting"
 						*ngIf="segmentTag !== segmentConst.Commercial">
 						<vtr-container-collapsible [tabIndex]="0"
 							name="SettingsBeta"
@@ -101,7 +101,7 @@
 						</vtr-container-collapsible>
 					</div>
 
-					<div class="py-5"
+					<div class="card-pb"
 						id="settings-other-settings">
 						<vtr-container-collapsible [tabIndex]="0"
 							name="SettingsOther"
@@ -145,7 +145,7 @@
 						</vtr-container-collapsible>
 					</div>
 
-					<div class="py-5 user-profile-section"
+					<div class="card-pb user-profile-section"
 						*ngIf="selfSelectService.userProfileEnabled"
 						id="user-profile-setting"
 						[ngClass]="{
@@ -282,8 +282,7 @@
 						</vtr-container-collapsible>
 					</div>
 
-					<div class="py-5"
-						id="settings-other-settings">
+					<div id="settings-note">
 						<div class="settings-note">
 							<b>{{ 'settings.Note' | translate }}</b>{{ 'settings.settingsNotes' | translate }}
 						</div>

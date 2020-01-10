@@ -554,6 +554,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		max-width: 75%;
 		margin: 1rem auto 0;
 		overflow-y: initial !important;
+		@media #{$mediaquery_15} {
+			max-width: 90%;
+		}
 	}
 
 	.modal-dialog-centered {
