@@ -202,7 +202,7 @@ export enum LocalStorageKey {
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
 	IsSubscribed = '[LocalStorageKey] IsSubscribed',
 	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails',
-	IsHidePowerPage = '[LocalStorageKey] IsHidePowerPage',
+	IsPowerPageAvailable = '[LocalStorageKey] isPowerPageAvailable',
 	DashboardLastWelcomeText = '[LocalStorageKey] DashboardLastWelcomeText',
 	IsDolbyModeAvailable = '[LocalStorageKey] IsDolbyModeAvailable',
 	IsAudioPageAvailable = '[LocalStorageKey] IsAudioPageAvailable',

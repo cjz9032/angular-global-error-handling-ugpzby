@@ -2,18 +2,24 @@
 
 .vtr-widget-offline-info {
 	.offline-info-background {
-		border-radius: $border_radius;
+		border-radius: 0.7rem 0.7rem 0 0;
 		height: 100%;
 		width: 100%;
 		background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
 		box-shadow: $drop_shadow;
-		padding: 4rem 6rem;
+		padding: 2.4rem;
+		&.offline-connection {
+			border-radius: 0.7rem;
+		}
 
 		.title {
 			color: $light;
 			font-size: 3.5rem;
 			font-weight: $weight_light;
 			line-height: 4.2rem;
+			@media #{$breakpoint_xl} {
+				font-size: $fontsize_lg;
+			}
 		}
 
 		.subtitle {
@@ -27,13 +33,13 @@
 		.offline-icon{
 
 			.icon {
-				color: $light;
-				font-size: 7.5rem;
+				color: $menu_hover;
+				font-size: 5rem;
 			}
 		}
 
 		.offline-content{
-			padding-left: 5rem;
+			padding-left: 3.5rem;
 		}
 
 
@@ -46,9 +52,9 @@
 				text-transform: uppercase;
 				padding: 0 3rem;
 				color: $light;
-				font-size: 1.5rem;
+				font-size: $fontsize_xs2;
 				height: 5rem;
-				font-weight: $weight_medium;
+				font-weight: $weight_bold;
 				line-height: 5rem;
 				text-align: center;
 				border: 0rem;

@@ -24,6 +24,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	title = 'support.common.getSupport';
 	searchWords = '';
 	searchCount = 1;
+	offlineConnection = 'offline-connection';
 	emptyArticles = {
 		leftTop: [],
 		middleTop: [],
