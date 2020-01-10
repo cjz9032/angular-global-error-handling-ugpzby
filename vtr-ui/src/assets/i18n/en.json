@@ -3096,7 +3096,7 @@
         "deviceStatisticsDescription": "Send anonymous device data to help us improve quality, reliability, and the next generation of devices.",
         "userProfile": "User profile",
         "Note": "Note: ",
-        "settingsNotes": "all the settings in this page will need users to relaunch this application to take effect.",
+        "settingsNotes": "Please relaunch this application to make sure all changes take effect.",
         "betaSettingTitle": "Beta program",
         "betaProgram": "Beta Program",
         "betaSettingDescription": "Try the latest features we're working on."

@@ -672,7 +672,7 @@
             "message": "Bună ziua! Este disponibilă o versiune mai nouă de Vantage, doriți să o încărcați?"
         },
         "offline": {
-            "connectToUseFeature": "Connect to the internet to use this feature"
+            "connectToUseFeature": "Pentru a utiliza această caracteristică, trebuie să vă conectați la internet"
         }
     },
     "privacy": {
@@ -1993,7 +1993,7 @@
             "visitHde": "Accesaţi secţiunea pentru criptarea unităţii de hard disk",
             "haveOwnPassword": "Am propriul meu manager de parole",
             "haveOwnWifi": "Am propria mea securitate Wi-Fi",
-            "haveOwnVpn": "Am propria mea securitate VPN",
+            "haveOwnVpn": "Am propria rețea VPN",
             "uac": "Control cont utilizator (UAC)",
             "uacTitles": "Control cont utilizator",
             "hde": "Criptare unitate hard disk",
@@ -2723,7 +2723,7 @@
         "deviceStatisticsDescription": "Trimiteți date anonime ale dispozitivului pentru a ne ajuta să îmbunătățim calitatea, fiabilitatea și următoarea generație de dispozitive.",
         "userProfile": "Profil utilizator",
         "Note": "Notă: ",
-        "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației.",
+        "settingsNotes": "Pentru a vă asigura că toate modificările au efect, lansați din nou această aplicație.",
         "betaSettingTitle": "Program beta",
         "betaProgram": "Program beta",
         "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm."

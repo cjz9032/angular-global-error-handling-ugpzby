@@ -670,10 +670,10 @@
         },
         "app-update": {
             "message": "您好！已有较新版本的 Vantage，您要加载吗？"
-        },
-        "offline": {
-            "connectToUseFeature": "Connect to the internet to use this feature"
-        }
+		},
+		"offline": {
+            "connectToUseFeature": "连接到英特网以使用此功能"
+		}
     },
     "privacy": {
         "headerMain": {
@@ -1993,7 +1993,7 @@
             "visitHde": "访问硬盘驱动器加密",
             "haveOwnPassword": "我有自己的密码管理器",
             "haveOwnWifi": "我有自己的 WiFi 安全保护",
-            "haveOwnVpn": "我有自己的 VPN 安全保护",
+            "haveOwnVpn": "我有自己的 VPN",
             "uac": "用户帐户控制（UAC）",
             "uacTitles": "用户帐户控制",
             "hde": "硬盘驱动器加密",
@@ -2723,7 +2723,7 @@
         "deviceStatisticsDescription": "发送匿名设备数据以帮助我们改进质量、可靠性和新一代设备。",
         "userProfile": "用户概要文件",
         "Note": "注意：",
-        "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。",
+        "settingsNotes": "请重新启动此应用程序，以确保所有更改都生效。",
         "betaSettingTitle": "Beta 程序",
         "betaProgram": "Beta 程序",
         "betaSettingDescription": "试用我们正在开发的最新功能。"

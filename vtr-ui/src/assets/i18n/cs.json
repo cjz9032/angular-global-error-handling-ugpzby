@@ -672,7 +672,7 @@
             "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"
         },
         "offline": {
-            "connectToUseFeature": "Connect to the internet to use this feature"
+            "connectToUseFeature": "Chcete-li tuto funkci používat, připojte se k internetu."
         }
     },
     "privacy": {
@@ -1993,7 +1993,7 @@
             "visitHde": "Otevřít Šifrování pevného disku",
             "haveOwnPassword": "Mám vlastního správce hesel",
             "haveOwnWifi": "Mám vlastní zabezpečení na Wi-Fi",
-            "haveOwnVpn": "Mám vlastní zabezpečení na VPN",
+            "haveOwnVpn": "Mám vlastní VPN.",
             "uac": "Řízení uživatelských účtů (UAC)",
             "uacTitles": "Řízení uživatelských účtů",
             "hde": "Šifrování pevného disku",
@@ -2723,7 +2723,7 @@
         "deviceStatisticsDescription": "Odesílat anonymní data zařízení pro pomoc se zlepšením kvality, spolehlivosti a další generace zařízení.",
         "userProfile": "Profil uživatele",
         "Note": "Poznámka: ",
-        "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila.",
+        "settingsNotes": "Abyste ověřili, že se projevily všechny změny, spusťte aplikaci znovu.",
         "betaSettingTitle": "Beta program",
         "betaProgram": "Beta program",
         "betaSettingDescription": "Vyzkoušejte nejnovější funkce, na kterých pracujeme."

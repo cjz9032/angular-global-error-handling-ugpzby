@@ -672,7 +672,7 @@
             "message": "היי! יש גרסה חדשה יותר של Vantage, האם ברצונכם לטעון אותה?"
         },
         "offline": {
-            "connectToUseFeature": "Connect to the internet to use this feature"
+            "connectToUseFeature": "התחבר לאינטרנט כדי להשתמש בתכונה זו"
         }
     },
     "privacy": {
@@ -1993,7 +1993,7 @@
             "visitHde": "בקרו בהצפנת כונן קשיח",
             "haveOwnPassword": "יש לי Password Manager משלי",
             "haveOwnWifi": "יש לי אבטחת Wi-Fi משלי",
-            "haveOwnVpn": "יש לי אבטחת VPN משלי",
+            "haveOwnVpn": "יש לי VPN משלי",
             "uac": "בקרת חשבון משתמש (UAC)",
             "uacTitles": "בקרת חשבון משתמש",
             "hde": "הצפנת כונן קשיח",
@@ -2723,7 +2723,7 @@
         "deviceStatisticsDescription": "שלחו נתונים אנונימיים בנוגע למכשיר כדי לעזור לנו לשפר את האיכות, את האמינות ואת הדור הבא של המכשירים.",
         "userProfile": "פרופיל משתמש",
         "Note": "שימו לב: ",
-        "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה.",
+        "settingsNotes": "הפעל מחדש את היישום כדי לוודא שכל השינויים נכנסים לתוקף.",
         "betaSettingTitle": "תוכנית בטא",
         "betaProgram": "תוכנית בטא",
         "betaSettingDescription": "נסו את התכונות האחרונות שאנו עובדים עליהן."

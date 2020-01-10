@@ -672,7 +672,7 @@
             "message": "Hallo! Es ist eine neuere Version von Vantage verfügbar. Möchten Sie sie herunterladen?"
         },
         "offline": {
-            "connectToUseFeature": "Connect to the internet to use this feature"
+            "connectToUseFeature": "Internetverbindung für diese Funktion erforderlich"
         }
     },
     "privacy": {
@@ -1993,7 +1993,7 @@
             "visitHde": "Festplattenlaufwerk-Verschlüsselung besuchen",
             "haveOwnPassword": "Ich habe meinen eigenen Password Manager",
             "haveOwnWifi": "Ich habe meine eigene WiFi-Sicherheit",
-            "haveOwnVpn": "Ich habe meine eigene VPN-Sicherheit",
+            "haveOwnVpn": "Ich habe mein eigenes VPN",
             "uac": "Benutzerkontensteuerung (UAC)",
             "uacTitles": "Benutzerkontensteuerung",
             "hde": "Festplattenlaufwerk-Verschlüsselung",
@@ -2723,7 +2723,7 @@
         "deviceStatisticsDescription": "Senden Sie uns anonyme Gerätedaten, damit wir die Qualität und Zuverlässigkeit sowie die nächste Generation unserer Geräte verbessern können.",
         "userProfile": "Benutzerprofil",
         "Note": "Hinweis: ",
-        "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart dieser Anwendung durch den Benutzer, damit sie wirksam werden.",
+        "settingsNotes": "Starten Sie diese Anwendung neu, um sicherzustellen, dass alle Änderungen übernommen wurden.",
         "betaSettingTitle": "Beta-Programm",
         "betaProgram": "Beta-Programm",
         "betaSettingDescription": "Testen Sie die neuesten Funktionen, an denen wir gerade arbeiten."

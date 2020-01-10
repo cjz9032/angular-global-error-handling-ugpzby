@@ -672,7 +672,7 @@
             "message": "Hei! Vantage on saatavilla uudempi versio. Haluatko ladata sen?"
         },
         "offline": {
-            "connectToUseFeature": "Connect to the internet to use this feature"
+            "connectToUseFeature": "Muodosta Internet-yhteys, jotta voit käyttää tätä toimintoa"
         }
     },
     "privacy": {
@@ -1993,7 +1993,7 @@
             "visitHde": "Siirry kiintolevyaseman salaukseen",
             "haveOwnPassword": "Minulla on oma salasanojen hallintaohjelma",
             "haveOwnWifi": "Minulla on oma Wi-Fi-suojaus",
-            "haveOwnVpn": "Minulla on oma VPN-suojaus",
+            "haveOwnVpn": "Minulla on oma VPN",
             "uac": "Käyttäjätilien valvonta (UAC)",
             "uacTitles": "Käyttäjätilien valvonta",
             "hde": "Kiintolevyaseman salaus",
@@ -2723,7 +2723,7 @@
         "deviceStatisticsDescription": "Lähetä nimettömiä laitetietoja, jotta voimme kehittää laatua, luotettavuutta ja seuraavan sukupolven laitteita.",
         "userProfile": "Käyttäjäprofiili",
         "Note": "Huomautus: ",
-        "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen.",
+        "settingsNotes": "Ota tämä sovellus uudelleen käyttöön ja varmista, että kaikki muutokset tulevat voimaan.",
         "betaSettingTitle": "Beta-ohjelma",
         "betaProgram": "Beta-ohjelma",
         "betaSettingDescription": "Kokeile uusimpia ominaisuuksia, joita työstämme."

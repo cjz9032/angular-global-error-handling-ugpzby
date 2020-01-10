@@ -672,7 +672,7 @@
             "message": "Ciao! È disponibile una versione più recente di Vantage. Caricarla?"
         },
         "offline": {
-            "connectToUseFeature": "Connect to the internet to use this feature"
+            "connectToUseFeature": "Esegui la connessione a Internet per utilizzare questa funzione"
         }
     },
     "privacy": {
@@ -1993,7 +1993,7 @@
             "visitHde": "Visita Crittografia unità disco fisso",
             "haveOwnPassword": "Ho il mio Password Manager",
             "haveOwnWifi": "Ho la mia sicurezza Wi-Fi",
-            "haveOwnVpn": "Ho la mia sicurezza VPN",
+            "haveOwnVpn": "Ho la mia VPN",
             "uac": "Controllo dell'account utente (UAC)",
             "uacTitles": "Controllo dell'account utente",
             "hde": "Crittografia unità disco fisso",
@@ -2723,7 +2723,7 @@
         "deviceStatisticsDescription": "Invia dati anonimi sui dispositivi per migliorare la qualità, l'affidabilità e la nuova generazione di dispositivi.",
         "userProfile": "Profilo utente",
         "Note": "Nota: ",
-        "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione.",
+        "settingsNotes": "Riavviare questa applicazione per assicurarsi che tutte le modifiche abbiano effetto.",
         "betaSettingTitle": "Programma beta",
         "betaProgram": "Programma beta",
         "betaSettingDescription": "Prova le funzioni più recenti su cui stiamo lavorando."

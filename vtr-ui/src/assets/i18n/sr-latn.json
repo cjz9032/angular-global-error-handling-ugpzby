@@ -670,10 +670,10 @@
         },
         "app-update": {
             "message": "Hej! Novija verzija programa Vantage je raspoloživa, želite li da ga učitate?"
-        },
-        "offline": {
-            "connectToUseFeature": "Connect to the internet to use this feature"
-        }
+		},
+		"offline": {
+            "connectToUseFeature": "Povežite se sa internetom da biste koristili ovu funkciju"
+		}
     },
     "privacy": {
         "headerMain": {
@@ -1993,7 +1993,7 @@
             "visitHde": "Otvorite stavku Šifrovanje hard diska",
             "haveOwnPassword": "Imam svoj menadžer za lozinke",
             "haveOwnWifi": "Imam svoju wi-fi bezbednost",
-            "haveOwnVpn": "Imam svoju VPN bezbednost",
+            "haveOwnVpn": "Imam svoj VPN",
             "uac": "Kontrola korisničkog naloga (UAC)",
             "uacTitles": "Kontrola korisničkog naloga",
             "hde": "Šifrovanje hard diska",
@@ -2723,7 +2723,7 @@
         "deviceStatisticsDescription": "Pošaljite anonimno podatke o uređaju kako biste nam pomogli da poboljšamo kvalitet, pouzdanost i sledeću generaciju uređaja.",
         "userProfile": "Korisnički profil",
         "Note": "Napomena: ",
-        "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju.",
+        "settingsNotes": "Ponovo pokrenite ovu aplikaciju kako biste bili sigurni da su sve promene stupile na snagu.",
         "betaSettingTitle": "Beta program",
         "betaProgram": "Beta Program",
         "betaSettingDescription": "Isprobajte najnovije funkcije na kojima radimo."

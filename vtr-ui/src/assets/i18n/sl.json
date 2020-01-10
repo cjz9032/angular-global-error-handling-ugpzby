@@ -672,7 +672,7 @@
             "message": "Živijo! Na voljo je novejša različica aplikacije Vantage, jo želite naložiti?"
         },
         "offline": {
-            "connectToUseFeature": "Connect to the internet to use this feature"
+            "connectToUseFeature": "Za uporabo te funkcije se povežite v internet"
         }
     },
     "privacy": {
@@ -1993,7 +1993,7 @@
             "visitHde": "Obiščite Šifriranje trdega diska",
             "haveOwnPassword": "Imam svojega upravitelja gesel",
             "haveOwnWifi": "Imam lastno varnost Wi-Fi-ja",
-            "haveOwnVpn": "Imam lastno varnost VPN-ja",
+            "haveOwnVpn": "Imam svoj VPN",
             "uac": "Nadzor uporabniškega računa (UAC)",
             "uacTitles": "Nadzor uporabniškega računa",
             "hde": "Šifriranje trdega diska",
@@ -2723,7 +2723,7 @@
         "deviceStatisticsDescription": "Pošiljajte anonimne podatke o napravi, da nam pomagate izboljšati kakovost in zanesljivost delovanja naprave te in prihodnje generacije.",
         "userProfile": "Uporabniški profil",
         "Note": "Opomba: ",
-        "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo.",
+        "settingsNotes": "Za uveljavitev vseh sprememb ponovno zaženite aplikacijo.",
         "betaSettingTitle": "Program različice beta",
         "betaProgram": "Program različice beta",
         "betaSettingDescription": "Preizkusite najnovejše funkcije, na katerih delamo."

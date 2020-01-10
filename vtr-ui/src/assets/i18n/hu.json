@@ -672,7 +672,7 @@
             "message": "Szia! Megjelent a Vantage legújabb verziója, szeretnéd letölteni?"
         },
         "offline": {
-            "connectToUseFeature": "Connect to the internet to use this feature"
+            "connectToUseFeature": "Csatlakozzon az internethez a funkció használatához"
         }
     },
     "privacy": {
@@ -1993,7 +1993,7 @@
             "visitHde": "Merevlemez-titkosítás megnyitása",
             "haveOwnPassword": "Saját jelszókezelőm van",
             "haveOwnWifi": "Saját wifi biztonsági alkalmazásom van",
-            "haveOwnVpn": "Saját VPN biztonsági alkalmazásom van",
+            "haveOwnVpn": "Saját VPN-nel rendelkezem",
             "uac": "Felhasználói fiókok felügyelete (UAC)",
             "uacTitles": "Felhasználói fiókok felügyelete",
             "hde": "Merevlemez-titkosítás",
@@ -2723,7 +2723,7 @@
         "deviceStatisticsDescription": "Névtelen eszközadatok küldése a minőség és a megbízhatóság, valamint a következő generációs eszközök továbbfejlesztésének támogatása érdekében.",
         "userProfile": "Felhasználói profil",
         "Note": "Megjegyzés: ",
-        "settingsNotes": "Az ezen az oldalon található beállítások módosítása után a felhasználónak újra kell indítania az alkalmazást.",
+        "settingsNotes": "Kérjük, indítsa újra ezt az alkalmazást, hogy a módosítások életbe lépjenek.",
         "betaSettingTitle": "Bétaprogram",
         "betaProgram": "Bétaprogram",
         "betaSettingDescription": "Próbálja ki a legújabb funkciókat, amelyeken dolgozunk."

@@ -672,7 +672,7 @@
             "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"
         },
         "offline": {
-            "connectToUseFeature": "Connect to the internet to use this feature"
+            "connectToUseFeature": "Koble til Internett for å bruke denne funksjonen"
         }
     },
     "privacy": {
@@ -1993,7 +1993,7 @@
             "visitHde": "Gå til kryptering av harddisk",
             "haveOwnPassword": "Jeg har min egen passordbehandling",
             "haveOwnWifi": "Jeg har min egen WiFi-sikkerhet",
-            "haveOwnVpn": "Jeg har min egen VPN-sikkerhet",
+            "haveOwnVpn": "Jeg har min egen VPN",
             "uac": "Brukerkontokontroll (UAC)",
             "uacTitles": "Brukerkontokontroll",
             "hde": "Kryptering av harddisk",
@@ -2723,7 +2723,7 @@
         "deviceStatisticsDescription": "Send anonyme enhetsdata for å hjelpe oss med å forbedre kvalitet og pålitelighet, og utvikle neste generasjon med enheter.",
         "userProfile": "Brukerprofil",
         "Note": "Merk: ",
-        "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft.",
+        "settingsNotes": "Start programmet på nytt for å sikre at alle endringene trer i kraft.",
         "betaSettingTitle": "Beta-program",
         "betaProgram": "Beta-program",
         "betaSettingDescription": "Prøv de nyeste funksjonene vi jobber med."

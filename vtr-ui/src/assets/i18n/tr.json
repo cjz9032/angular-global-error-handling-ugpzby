@@ -672,7 +672,7 @@
             "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
         },
         "offline": {
-            "connectToUseFeature": "Connect to the internet to use this feature"
+            "connectToUseFeature": "Bu özelliği kullanmak için İnternet'e bağlanın"
         }
     },
     "privacy": {
@@ -1993,7 +1993,7 @@
             "visitHde": "Sabit sürücü şifrelemesi sayfasını ziyaret edin",
             "haveOwnPassword": "Kendi parola yöneticim var",
             "haveOwnWifi": "Kendi wifi güvenliğim var",
-            "haveOwnVpn": "Kendi VPN güvenliğim var",
+            "haveOwnVpn": "Kendi VPN bağlantım var",
             "uac": "Kullanıcı Hesabı Denetimi (UAC)",
             "uacTitles": "Kullanıcı Hesabı Denetimi",
             "hde": "Sabit sürücü şifrelemesi",
@@ -2723,7 +2723,7 @@
         "deviceStatisticsDescription": "Kaliteli, güvenilir ve yeni nesil cihazlar geliştirmemize yardımcı olmak için anonim cihaz verileri gönderin.",
         "userProfile": "Kullanıcı profili",
         "Note": "Not: ",
-        "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir.",
+        "settingsNotes": "Tüm değişikliklerin geçerli hale gelmesi için bu uygulamayı yeniden başlatın.",
         "betaSettingTitle": "Beta Programı",
         "betaProgram": "Beta Programı",
         "betaSettingDescription": "Üzerinde çalışmakta olduğumuz en yeni özellikleri deneyin."
