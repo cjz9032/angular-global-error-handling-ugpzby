@@ -9,6 +9,7 @@
 			<div class="qa-item"
 				*ngFor="let qa of questions">
 				<div class="question"
+					[dir]="'dir' | translate"
 					[innerHTML]="qa.question | translate"
 					[id]="qa.name"
 					[attr.aria-label]="qa.name"></div>
