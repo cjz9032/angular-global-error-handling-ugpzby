@@ -670,7 +670,10 @@
         },
         "app-update": {
             "message": "Hej! Novija verzija programa Vantage je raspoloživa, želite li da ga učitate?"
-        }
+		},
+		"offline": {
+            "connectToUseFeature": "Povežite se sa internetom da biste koristili ovu funkciju"
+		}
     },
     "privacy": {
         "headerMain": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "SMANJENJE NIVOA SVETLOSTI TRAKE ZADATAKA",
                         "backgroundDimmer": "SMANJENJE NIVOA SVETLOSTI PROZORA U POZADINI",
                         "displayDimmer": "ZATAMNJENJE EKRANA"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Otvorite stavku Šifrovanje hard diska",
             "haveOwnPassword": "Imam svoj menadžer za lozinke",
             "haveOwnWifi": "Imam svoju wi-fi bezbednost",
-            "haveOwnVpn": "Imam svoju VPN bezbednost",
+            "haveOwnVpn": "Imam svoj VPN",
             "uac": "Kontrola korisničkog naloga (UAC)",
             "uacTitles": "Kontrola korisničkog naloga",
             "hde": "Šifrovanje hard diska",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Pošaljite anonimno podatke o uređaju kako biste nam pomogli da poboljšamo kvalitet, pouzdanost i sledeću generaciju uređaja.",
         "userProfile": "Korisnički profil",
         "Note": "Napomena: ",
-        "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju.",
+        "settingsNotes": "Ponovo pokrenite ovu aplikaciju kako biste bili sigurni da su sve promene stupile na snagu.",
         "betaSettingTitle": "Beta program",
         "betaProgram": "Beta Program",
         "betaSettingDescription": "Isprobajte najnovije funkcije na kojima radimo."

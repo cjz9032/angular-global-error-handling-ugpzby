@@ -20,6 +20,9 @@
 				border-radius: $border_radius;
 			}
 		}
+		@media #{$breakpoint_xl2}{
+			width: 9.6rem;
+		}
 		@media #{$breakpoint_xl}{
 			width: 9.6rem;
 		}

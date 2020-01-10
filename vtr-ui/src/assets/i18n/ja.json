@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"
+        },
+        "offline": {
+            "connectToUseFeature": "この機能を使用するには、インターネットに接続してください"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "タスクバーを暗くする",
                         "backgroundDimmer": "バックグラウンドを暗くする",
                         "displayDimmer": "ディスプレイを暗くする"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "ハードディスク・ドライブの暗号化にアクセス",
             "haveOwnPassword": "自分のパスワード・マネージャーがあります",
             "haveOwnWifi": "自分の WiFi セキュリティーがあります",
-            "haveOwnVpn": "自分の VPN セキュリティーがあります",
+            "haveOwnVpn": "独自の VPN があります",
             "uac": "ユーザー アカウント制御 (UAC)",
             "uacTitles": "ユーザー アカウント制御",
             "hde": "ハードディスク・ドライブの暗号化",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "品質、信頼性、次世代デバイスの改善に役立てるため、デバイス データを匿名で送信します。",
         "userProfile": "ユーザー・プロフィール",
         "Note": "注:",
-        "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。",
+        "settingsNotes": "このアプリケーションを再起動して、すべての変更を適用してください。",
         "betaSettingTitle": "ベータ版プログラム",
         "betaProgram": "ベータ版プログラム",
         "betaSettingDescription": "現在開発中の最新機能をお試しください."

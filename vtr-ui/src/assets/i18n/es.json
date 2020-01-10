@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "¡Ey! Hay disponible una versión más reciente de Vantage, ¿desea cargarla?"
+        },
+        "offline": {
+            "connectToUseFeature": "Conéctese a Internet para utilizar esta característica"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "ATENUADOR DE BARRA DE TAREAS",
                         "backgroundDimmer": "ATENUADOR DE FONDO",
                         "displayDimmer": "ATENUADOR DE PANTALLA"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Visite Cifrado de unidad de disco duro",
             "haveOwnPassword": "Tengo mi propio administrador de contraseñas",
             "haveOwnWifi": "Tengo mi propia seguridad de Wi-Fi",
-            "haveOwnVpn": "Tengo mi propia seguridad de VPN",
+            "haveOwnVpn": "Tengo mi propia VPN",
             "uac": "Control de cuentas de usuario (UAC)",
             "uacTitles": "Control de cuentas de usuario",
             "hde": "Cifrado de unidad de disco duro",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Envíe datos de dispositivo anónimos para ayudarnos a mejorar la calidad, confiabilidad y la próxima generación de dispositivos.",
         "userProfile": "Perfil de usuario",
         "Note": "Nota: ",
-        "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto.",
+        "settingsNotes": "Vuelva a iniciar esta aplicación para asegurarse de que todos los cambios entren en efecto.",
         "betaSettingTitle": "Programa Beta",
         "betaProgram": "Programa Beta",
         "betaSettingDescription": "Pruebe las más recientes características en las que estamos trabajando."

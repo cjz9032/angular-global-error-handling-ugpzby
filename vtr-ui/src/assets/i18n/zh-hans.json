@@ -670,7 +670,10 @@
         },
         "app-update": {
             "message": "您好！已有较新版本的 Vantage，您要加载吗？"
-        }
+		},
+		"offline": {
+            "connectToUseFeature": "连接到英特网以使用此功能"
+		}
     },
     "privacy": {
         "headerMain": {
@@ -1374,6 +1377,17 @@
                         "description": "此功能可防止其他人偷看您的屏幕。当此功能开启时，将改变您显示屏的视角，使您周围的人无法偷看您的隐私。您还可以通过按“Fn+D”键切换模式。",
                         "note": "隐私保护在屏幕纵向模式下无法工作。在此模式下，仍可从侧面看到您的屏幕。",
                         "labelText": "输入密码时启用此功能"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "访问硬盘驱动器加密",
             "haveOwnPassword": "我有自己的密码管理器",
             "haveOwnWifi": "我有自己的 WiFi 安全保护",
-            "haveOwnVpn": "我有自己的 VPN 安全保护",
+            "haveOwnVpn": "我有自己的 VPN",
             "uac": "用户帐户控制（UAC）",
             "uacTitles": "用户帐户控制",
             "hde": "硬盘驱动器加密",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "发送匿名设备数据以帮助我们改进质量、可靠性和新一代设备。",
         "userProfile": "用户概要文件",
         "Note": "注意：",
-        "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。",
+        "settingsNotes": "请重新启动此应用程序，以确保所有更改都生效。",
         "betaSettingTitle": "Beta 程序",
         "betaProgram": "Beta 程序",
         "betaSettingDescription": "试用我们正在开发的最新功能。"

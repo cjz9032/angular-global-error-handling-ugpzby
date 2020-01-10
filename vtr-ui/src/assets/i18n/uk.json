@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Вітаємо! Доступна нова версія Vantage, завантажити її?"
+        },
+        "offline": {
+            "connectToUseFeature": "Підключіться до Інтернету, щоб використовувати цю функцію"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "ЗАТІНЕННЯ ПАНЕЛІ ЗАВДАНЬ",
                         "backgroundDimmer": "ЗАТІНЕННЯ ФОНОВИХ ВІКОН",
                         "displayDimmer": "ЗАТІНЕННЯ ЕКРАНА"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Перейти до шифрування жорсткого диска",
             "haveOwnPassword": "У мене є власний диспетчер паролів",
             "haveOwnWifi": "У мене є власний захист Wi-Fi",
-            "haveOwnVpn": "У мене є власний захист VPN",
+            "haveOwnVpn": "У мене є свій VPN",
             "uac": "Служба захисту користувачів (UAC)",
             "uacTitles": "Служба захисту користувачів",
             "hde": "Шифрування жорсткого диска",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Надсилати анонімні дані пристрою, щоб допомогти нам удосконалювати якість, надійність і наступне покоління пристроїв.",
         "userProfile": "Профіль користувача",
         "Note": "Примітка. ",
-        "settingsNotes": "всі зміни, внесені на цій сторінці, необхідно перезавантажити програму.",
+        "settingsNotes": "Перезапустіть цю програму, щоб усі зміни набули чинності.",
         "betaSettingTitle": "Бета-тестування",
         "betaProgram": "Бета-тестування",
         "betaSettingDescription": "Спробуйте найновіші функції, над якими ми ще працюємо."
