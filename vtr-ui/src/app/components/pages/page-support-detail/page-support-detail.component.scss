@@ -22,10 +22,11 @@
 	.left-container {
 		padding: 2.4rem;
 		.description-container {
-			font-size: $fontsize_sm;
+			font-size: $fontsize_xs;
 			display: block;
 			overflow: auto;
-			color: $main_dark;
+			color: $grey_dark;
+			font-weight: $weight_light;
 		  }
 
 		  .text {
@@ -40,30 +41,29 @@
 		  }
 
 		  .title {
-			color: $main_dark;
-			font-size: 3.9rem;
-			font-weight: $weight_medium;
+			color: $shade_blue;
+			font-size: 3.6rem;
+			font-weight: $weight_light;
 			margin-bottom: 2rem;
 
-			&.smaller {
-			  font-size: $fontsize_xl;
-			  margin-bottom: 1.5rem;
-			}
+			// &.smaller {
+			//   font-size: $fontsize_xl;
+			//   margin-bottom: 1.5rem;
+			// }
 
-			&.bolder {
-			  font-weight: $weight_medium;
-			  color: $main_darker;
-			}
+			// &.bolder {
+			//   font-weight: $weight_medium;
+			//   color: $main_darker;
+			// }
 		  }
 
 		  .subtitle {
-			color: $shade;
-			font-size: 1.3rem;
-			font-weight: $weight_medium;
+			color: $grey_dark;
+			font-size: $fontsize_xs;
+			font-weight: $weight_light;
 			letter-spacing: 0.1rem;
 			line-height: 2rem;
 			margin-top: -2rem;
-			text-transform: uppercase;
 		  }
 
 		  .inset-content {
@@ -104,9 +104,10 @@
   }
 
   .sub-title {
-	color: $main_darker;
-	font-size: 1.5rem;
-	font-weight: $weight-medium;
+	color: $shade_blue;
+	font-size: $fontsize_xs;
+	font-weight: $weight-bold;
+	text-transform: uppercase;
   }
 
   .icon {
@@ -136,8 +137,9 @@
 	  border: 1px solid #999;
 	}
 	.faqInFs4Fb {
-		font-size: $fontsize_xl2;
+		font-size: 3.6rem;
 		font-weight: $weight_light;
+		color: $shade_blue;
 	}
 
 	.faqInMb7 {
@@ -146,28 +148,32 @@
 	}
 
 	.faqInFs3Fb {
-		font-size: $fontsize_xl;
-		font-weight: $weight_600;
+		font-size: 3.6rem;
+		font-weight: $weight_light;
+		color: $shade_blue;
 	}
 
 	.faqInFb {
-		font-weight: $weight_600;
+		font-weight: $weight_light;
 	}
 
 	/*Q2*/
 	.faqInFs25Fb {
-		font-size: $fontsize_xl;
-		font-weight: $weight_600;
+		font-size: 3.6rem;
+		font-weight: $weight_light;
+		color: $shade_blue;
 	}
 	.faqInFs25FbP5 {
-		font-size: $fontsize_xl;
-		font-weight: $weight_600;
+		font-size: 3.6rem;
+		font-weight: $weight_light;
 		padding: 0.5rem 0;
+		color: $shade_blue;
 	}
 	.faqInFs25FbP10 {
-		font-size: $fontsize_xl;
-		font-weight: $weight_600;
+		font-size: 3.6rem;
+		font-weight: $weight_light;
 		padding: 1rem 0;
+		color: $shade_blue;
 	}
 	.faqInP5 {
 		padding: 0.5rem 0;

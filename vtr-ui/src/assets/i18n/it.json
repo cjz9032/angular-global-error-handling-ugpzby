@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Ciao! È disponibile una versione più recente di Vantage. Caricarla?"
+        },
+        "offline": {
+            "connectToUseFeature": "Esegui la connessione a Internet per utilizzare questa funzione"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "RIDUZIONE LUMINOSITÀ BARRA DELLE APPLICAZIONI",
                         "backgroundDimmer": "RIDUZIONE LUMINOSITÀ SFONDO",
                         "displayDimmer": "RIDUZIONE LUMINOSITÀ SCHERMO"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Visita Crittografia unità disco fisso",
             "haveOwnPassword": "Ho il mio Password Manager",
             "haveOwnWifi": "Ho la mia sicurezza Wi-Fi",
-            "haveOwnVpn": "Ho la mia sicurezza VPN",
+            "haveOwnVpn": "Ho la mia VPN",
             "uac": "Controllo dell'account utente (UAC)",
             "uacTitles": "Controllo dell'account utente",
             "hde": "Crittografia unità disco fisso",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Invia dati anonimi sui dispositivi per migliorare la qualità, l'affidabilità e la nuova generazione di dispositivi.",
         "userProfile": "Profilo utente",
         "Note": "Nota: ",
-        "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione.",
+        "settingsNotes": "Riavviare questa applicazione per assicurarsi che tutte le modifiche abbiano effetto.",
         "betaSettingTitle": "Programma beta",
         "betaProgram": "Programma beta",
         "betaSettingDescription": "Prova le funzioni più recenti su cui stiamo lavorando."

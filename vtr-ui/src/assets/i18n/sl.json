@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Živijo! Na voljo je novejša različica aplikacije Vantage, jo želite naložiti?"
+        },
+        "offline": {
+            "connectToUseFeature": "Za uporabo te funkcije se povežite v internet"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "ZATEMNJEVALNIK OPRAVILNE VRSTICE",
                         "backgroundDimmer": "ZATEMNJEVALNIK OZADJA",
                         "displayDimmer": "ZATEMNJEVANJE ZASLONA"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Obiščite Šifriranje trdega diska",
             "haveOwnPassword": "Imam svojega upravitelja gesel",
             "haveOwnWifi": "Imam lastno varnost Wi-Fi-ja",
-            "haveOwnVpn": "Imam lastno varnost VPN-ja",
+            "haveOwnVpn": "Imam svoj VPN",
             "uac": "Nadzor uporabniškega računa (UAC)",
             "uacTitles": "Nadzor uporabniškega računa",
             "hde": "Šifriranje trdega diska",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Pošiljajte anonimne podatke o napravi, da nam pomagate izboljšati kakovost in zanesljivost delovanja naprave te in prihodnje generacije.",
         "userProfile": "Uporabniški profil",
         "Note": "Opomba: ",
-        "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo.",
+        "settingsNotes": "Za uveljavitev vseh sprememb ponovno zaženite aplikacijo.",
         "betaSettingTitle": "Program različice beta",
         "betaProgram": "Program različice beta",
         "betaSettingDescription": "Preizkusite najnovejše funkcije, na katerih delamo."

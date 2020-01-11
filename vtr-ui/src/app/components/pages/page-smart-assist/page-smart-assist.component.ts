@@ -308,6 +308,7 @@ export class PageSmartAssistComponent
 	}
 
 	public setHPDLeaveSensitivitySetting(event) {
+        this.sesnsitivityAdjustVal = event.value;
 		try {
 			this.smartAssist.SetHPDLeaveSensitivitySetting(event.value).then((value: any) => {
 				console.log('setHPDLeaveSensitivitySetting value----->', value);

@@ -672,6 +672,9 @@
         },
         "app-update": {
             "message": "مرحبا! يتوفر إصدار أحدث من Vantage، هل تريد تحميله؟"
+        },
+        "offline": {
+            "connectToUseFeature": "اتصل بالإنترنت لاستخدام هذه الميزة"
         }
     },
     "privacy": {
@@ -1376,6 +1379,17 @@
                         "taskBarDimmer": "تعتيم شريط المهام",
                         "backgroundDimmer": "تعتيم الخلفية",
                         "displayDimmer": "تعتيم جهاز العرض"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1981,7 +1995,7 @@
             "visitHde": "زيارة تشفير محرك الأقراص الثابتة",
             "haveOwnPassword": "لديّ إدارة كلمات مرور خاصة بي",
             "haveOwnWifi": "لديّ أمان wifi خاص بي",
-            "haveOwnVpn": "لديّ أمان VPN خاص بي",
+            "haveOwnVpn": "لديّ شبكة VPN خاصة بي",
             "uac": "التحكم في حساب المستخدم (UAC)",
             "uacTitles": "التحكم في حساب المستخدم",
             "hde": "تشفير محرك الأقراص الثابتة",
@@ -2711,7 +2725,7 @@
         "deviceStatisticsDescription": "أرسل بيانات جهاز مجهولة المصدر لمساعدتنا في تحسين الجودة والموثوقية والجيل التالي من الأجهزة.",
         "userProfile": "ملف تعريف المستخدم",
         "Note": "ملاحظة: ",
-        "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول.",
+        "settingsNotes": "يرجى إعادة تشغيل هذا التطبيق للتأكد من أن جميع التغييرات نافذة المفعول.",
         "betaSettingTitle": "البرنامج التجريبي",
         "betaProgram": "البرنامج التجريبي",
         "betaSettingDescription": "جرّب أحدث الميزات التي نعمل عليها."

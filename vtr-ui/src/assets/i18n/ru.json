@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Привет! Доступна более новая версия Vantage. Загрузить?"
+        },
+        "offline": {
+            "connectToUseFeature": "Подключитесь к Интернету, чтобы использовать эту функцию"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "РЕГУЛЯТОР ЯРКОСТИ ПАНЕЛИ ЗАДАЧ",
                         "backgroundDimmer": "РЕГУЛЯТОР ЯРКОСТИ ФОНА",
                         "displayDimmer": "РЕГУЛЯТОР ЯРКОСТИ ЭКРАНА"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Перейти в раздел шифрования жесткого диска",
             "haveOwnPassword": "У меня есть диспетчер паролей",
             "haveOwnWifi": "У меня есть средство обеспечения безопасности при использовании сетей WiFi",
-            "haveOwnVpn": "У меня есть средство обеспечения безопасности при использовании сетей VPN",
+            "haveOwnVpn": "У меня есть служба VPN",
             "uac": "Контроль учетных записей пользователей (UAC)",
             "uacTitles": "Контроль учетных записей пользователей",
             "hde": "Шифрование жесткого диска",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Отправка анонимных данных об устройстве, которые помогут нам повысить качество, увеличить надежность и улучшить следующее поколение устройств.",
         "userProfile": "Профиль пользователя",
         "Note": "Замечание: ",
-        "settingsNotes": "Для вступления в силу любых параметров на этой странице необходимо перезапустить это приложение.",
+        "settingsNotes": "Перезапустите это приложение, чтобы все изменения вступили в силу.",
         "betaSettingTitle": "Программа бета-тестирования",
         "betaProgram": "Программа бета-тестирования",
         "betaSettingDescription": "Опробуйте новейшие функции, над которыми мы работаем."

@@ -412,6 +412,7 @@
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.app-search",
+		"segment": "-[Commercial]",
 		"routerLinkActiveOptions": {
 			"exact": true
 		},
@@ -431,6 +432,7 @@
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.hardwarescan",
+			"segment": "-[Commercial]",
 			"routerLinkActiveOptions": {
 				"exact": true
 			},

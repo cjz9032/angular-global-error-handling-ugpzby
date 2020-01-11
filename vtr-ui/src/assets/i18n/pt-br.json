@@ -669,7 +669,10 @@
             "clickToChange": "clique para alterar"
         },
         "app-update": {
-            "message": "Ei! Uma versão mais recente do Vantage está disponível. Deseja carregá-la?"
+			"message": "Ei! Uma versão mais recente do Vantage está disponível. Deseja carregá-la?"
+		},
+        "offline": {
+            "connectToUseFeature": "Conecte-se à Internet para usar este recurso"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "REGULADOR DE LUZ DA BARRA DE TAREFAS",
                         "backgroundDimmer": "REGULADOR DE LUZ EM SEGUNDO PLANO",
                         "displayDimmer": "REGULADOR DE LUZ DA TELA"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Visitar criptografia de disco rígido",
             "haveOwnPassword": "Tenho meu próprio password manager",
             "haveOwnWifi": "Tenho minha própria segurança Wi-Fi",
-            "haveOwnVpn": "Tenho minha própria segurança VPN",
+            "haveOwnVpn": "Tenho minha própria VPN",
             "uac": "Controle de Conta do Usuário (UAC)",
             "uacTitles": "Controle de Conta do Usuário",
             "hde": "Criptografia de disco rígido",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Envie dados anônimos do dispositivo para nos ajudar a melhorar a qualidade, a confiabilidade e a próxima geração de dispositivos.",
         "userProfile": "Perfil do usuário",
         "Note": "Nota: ",
-        "settingsNotes": "todas as configurações nesta página precisarão que os usuários reiniciem este aplicativo para entrarem em vigor.",
+        "settingsNotes": "Reinicie este aplicativo para garantir que todas as alterações entrem em vigor.",
         "betaSettingTitle": "Programa Beta",
         "betaProgram": "Programa Beta",
         "betaSettingDescription": "Experimente os recursos mais recentes nos quais estamos trabalhando."
