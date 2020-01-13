@@ -2109,7 +2109,7 @@
                 "showmore": "Mehr anzeigen",
                 "showless": "Weniger anzeigen",
                 "button": "WiFi-Sicherheit aktivieren",
-                "disableDecribe": "Lenovo WiFi-Sicherheit ist eine fortschrittliche, cloud-basierte Software, dank der Ihre Einheit zwischen sicheren und potenziell unsicheren Drahtlosnetzwerken unterscheiden kann."
+                "disableDescribe": "Lenovo WiFi-Sicherheit ist eine fortschrittliche, cloud-basierte Software, dank der Ihre Einheit zwischen sicheren und potenziell unsicheren Drahtlosnetzwerken unterscheiden kann."
             },
             "threatlocator": {
                 "describe": "Verwenden Sie die Bedrohungssuche, um die Sicherheit der Netzwerke um Sie herum zu ermitteln.",

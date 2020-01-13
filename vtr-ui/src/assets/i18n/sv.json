@@ -2109,7 +2109,7 @@
                 "showmore": "Visa mer",
                 "showless": "Visa mindre",
                 "button": "Aktivera WiFi-säkerhet",
-                "disableDecribe": "Lenovo WiFi-säkerhet är en avancerad molnbaserad programvarutjänst som hjälper din enhet att skilja mellan säkra trådlösa nätverk och potentiellt skadliga."
+                "disableDescribe": "Lenovo WiFi-säkerhet är en avancerad molnbaserad programvarutjänst som hjälper din enhet att skilja mellan säkra trådlösa nätverk och potentiellt skadliga."
             },
             "threatlocator": {
                 "describe": "Använd hotidentifieraren för att utvärdera säkerheten i nätverken.",
