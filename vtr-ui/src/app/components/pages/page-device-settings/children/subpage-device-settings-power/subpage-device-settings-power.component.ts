@@ -710,7 +710,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.powerService.getAirplaneModeCapabilityThinkPad().then((value) => {
 				console.log('getAirplaneModeCapabilityThinkPad.then', value);
 				this.showAirplanePowerModeSection = value;
-				this.updateBatteryLinkStatus(this.showAirplanePowerModeSection);
+				this.updatePowerLinkStatus(this.showAirplanePowerModeSection);
 				if (this.showAirplanePowerModeSection) {
 					this.getAirplaneModeThinkPad();
 				}
