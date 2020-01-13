@@ -233,6 +233,10 @@ describe('UiLightingProfileComponent', () => {
 		gamingLightingServiceMock.setLightingProfileId.and.returnValue(Promise.resolve({ profileId: 1, didSuccess: false }));
 		const res = component.setLightingProfileId({ target: { value: 3 } });
 		expect(res).toBe(undefined);
+		tick(20);
+		gamingLightingServiceMock.setLightingProfileId.and.returnValue(Promise.resolve({...getLightingProfileById, didSuccess: true }));
+		component.setLightingProfileId({ target: { value: 3 } });
+
 	}));
 
 	it('should call the setLightingBrightness', fakeAsync(() => {
