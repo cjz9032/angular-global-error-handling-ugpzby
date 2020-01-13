@@ -2109,7 +2109,7 @@
                 "showmore": "Több megjelenítése",
                 "showless": "Részletek elrejtése",
                 "button": "A Biztonságos WiFi engedélyezése",
-                "disableDecribe": "A Lenovo – Biztonságos WiFi egy fejlett, felhőalapú szoftverszolgáltatás, amely segít az eszköznek megkülönböztetni a biztonságos vezeték nélküli hálózatokat a potenciálisan rosszindulatú hálózatoktól."
+                "disableDescribe": "A Lenovo – Biztonságos WiFi egy fejlett, felhőalapú szoftverszolgáltatás, amely segít az eszköznek megkülönböztetni a biztonságos vezeték nélküli hálózatokat a potenciálisan rosszindulatú hálózatoktól."
             },
             "threatlocator": {
                 "describe": "A veszélyészlelővel megállapíthatja, mennyire biztonságosak a közeli hálózatok.",

@@ -188,8 +188,7 @@
 					color: $shade_dark;
 					font-weight: $weight_medium;
 					word-break: normal !important;
-					font-style: italic;
-					// max-width: 50%;
+					// font-style: italic; // change back by April Lu, this is a global style.
 					cursor: pointer;
 					&.good {
 						color: $go_dark;
