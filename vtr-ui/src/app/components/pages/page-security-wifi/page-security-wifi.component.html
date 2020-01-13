@@ -15,9 +15,10 @@
 		</div>
 		<wifi-security [data]="wifiHomeViewModel"
 			[vtrAppSearchScroller]="['search-wifi-security']"
-			[isShowHistory]="isShowHistory"
 			[showChs]="showChs"
 			></wifi-security>
+
+		<vtr-threat-locator *ngIf="region !== 'cn'"></vtr-threat-locator>
 		<div class="connected-home-status"
 			*ngIf="showChs">
 			<vtr-connected-home-status [homeSecurity]="homeSecurity"></vtr-connected-home-status>

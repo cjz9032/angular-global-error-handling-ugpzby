@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Bună ziua! Este disponibilă o versiune mai nouă de Vantage, doriți să o încărcați?"
+        },
+        "offline": {
+            "connectToUseFeature": "Pentru a utiliza această caracteristică, trebuie să vă conectați la internet"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "ESTOMPAREA BAREI DE ACTIVITĂȚI",
                         "backgroundDimmer": "ESTOMPAREA FUNDALULUI",
                         "displayDimmer": "ESTOMPAREA AFIȘAJULUI"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Accesaţi secţiunea pentru criptarea unităţii de hard disk",
             "haveOwnPassword": "Am propriul meu manager de parole",
             "haveOwnWifi": "Am propria mea securitate Wi-Fi",
-            "haveOwnVpn": "Am propria mea securitate VPN",
+            "haveOwnVpn": "Am propria rețea VPN",
             "uac": "Control cont utilizator (UAC)",
             "uacTitles": "Control cont utilizator",
             "hde": "Criptare unitate hard disk",
@@ -2095,7 +2109,7 @@
                 "showmore": "Se afişează mai multe",
                 "showless": "Afișează mai puțin",
                 "button": "Activare securitate WiFi",
-                "disableDecribe": "Securitate WiFi Lenovo este un serviciu software avansat bazat pe cloud care ajută dispozitivul să diferenţieze reţelele fără fir sigure de cele potenţial rău intenţionate."
+                "disableDescribe": "Securitate WiFi Lenovo este un serviciu software avansat bazat pe cloud care ajută dispozitivul să diferenţieze reţelele fără fir sigure de cele potenţial rău intenţionate."
             },
             "threatlocator": {
                 "describe": "Utilizați detectorul de amenințări pentru a determina siguranța rețelelor din jurul dvs.",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Trimiteți date anonime ale dispozitivului pentru a ne ajuta să îmbunătățim calitatea, fiabilitatea și următoarea generație de dispozitive.",
         "userProfile": "Profil utilizator",
         "Note": "Notă: ",
-        "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației.",
+        "settingsNotes": "Pentru a vă asigura că toate modificările au efect, lansați din nou această aplicație.",
         "betaSettingTitle": "Program beta",
         "betaProgram": "Program beta",
         "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm."

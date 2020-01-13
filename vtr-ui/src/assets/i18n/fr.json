@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Bonjour, Une version plus récente de Vantage est disponible. Voulez-vous la télécharger ?"
+        },
+        "offline": {
+            "connectToUseFeature": "Connectez-vous à Internet pour utiliser cette fonction"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "RÉDUCTION DE LA LUMINOSITÉ DE LA BARRE DES TÂCHES",
                         "backgroundDimmer": "RÉDUCTION DE LA LUMINOSITÉ EN ARRIÈRE-PLAN",
                         "displayDimmer": "RÉDUCTION DE LA LUMINOSITÉ DE L'ÉCRAN"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Visiter le chiffrement du disque dur",
             "haveOwnPassword": "J'ai mon propre Password Manager",
             "haveOwnWifi": "J'ai ma propre sécurité WiFi",
-            "haveOwnVpn": "J'ai ma propre sécurité VPN",
+            "haveOwnVpn": "J'ai mon propre VPN",
             "uac": "Contrôle de compte d'utilisateur",
             "uacTitles": "Contrôle de compte d'utilisateur",
             "hde": "Chiffrement du disque dur",
@@ -2095,7 +2109,7 @@
                 "showmore": "Afficher plus",
                 "showless": "Afficher moins",
                 "button": "Activer la sécurité WiFi",
-                "disableDecribe": "La Sécurité WiFi Lenovo est un service logiciel avancé basé dans le Cloud qui permet à votre appareil de différencier les réseaux sans fil sûrs de ceux potentiellement malveillants."
+                "disableDescribe": "La Sécurité WiFi Lenovo est un service logiciel avancé basé dans le Cloud qui permet à votre appareil de différencier les réseaux sans fil sûrs de ceux potentiellement malveillants."
             },
             "threatlocator": {
                 "describe": "Utiliser l'outil de détection des menaces pour déterminer la sécurité des réseaux alentours.",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Envoyez des données de périphérique anonymes pour nous aider à améliorer la qualité, la fiabilité et la nouvelle génération de périphériques.",
         "userProfile": "Profil utilisateur",
         "Note": "Remarque : ",
-        "settingsNotes": "les utilisateurs doivent effectuer un redémarrage de cette application pour que tous les paramètres de cette page soient pris en compte.",
+        "settingsNotes": "Relancez cette application pour vous assurer que toutes les modifications prennent effet.",
         "betaSettingTitle": "Programme bêta",
         "betaProgram": "Programme bêta",
         "betaSettingDescription": "Essayez les dernières fonctions sur lesquelles nous travaillons."

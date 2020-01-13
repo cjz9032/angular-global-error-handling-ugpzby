@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Hallo! Es ist eine neuere Version von Vantage verfügbar. Möchten Sie sie herunterladen?"
+        },
+        "offline": {
+            "connectToUseFeature": "Internetverbindung für diese Funktion erforderlich"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "HELLIGKEITSREGLER FÜR DIE TASKLEISTE",
                         "backgroundDimmer": "HELLIGKEITSREGLER FÜR DEN HINTERGRUND",
                         "displayDimmer": "HELLIGKEITSREGLER FÜR DIE ANZEIGE"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Festplattenlaufwerk-Verschlüsselung besuchen",
             "haveOwnPassword": "Ich habe meinen eigenen Password Manager",
             "haveOwnWifi": "Ich habe meine eigene WiFi-Sicherheit",
-            "haveOwnVpn": "Ich habe meine eigene VPN-Sicherheit",
+            "haveOwnVpn": "Ich habe mein eigenes VPN",
             "uac": "Benutzerkontensteuerung (UAC)",
             "uacTitles": "Benutzerkontensteuerung",
             "hde": "Festplattenlaufwerk-Verschlüsselung",
@@ -2095,7 +2109,7 @@
                 "showmore": "Mehr anzeigen",
                 "showless": "Weniger anzeigen",
                 "button": "WiFi-Sicherheit aktivieren",
-                "disableDecribe": "Lenovo WiFi-Sicherheit ist eine fortschrittliche, cloud-basierte Software, dank der Ihre Einheit zwischen sicheren und potenziell unsicheren Drahtlosnetzwerken unterscheiden kann."
+                "disableDescribe": "Lenovo WiFi-Sicherheit ist eine fortschrittliche, cloud-basierte Software, dank der Ihre Einheit zwischen sicheren und potenziell unsicheren Drahtlosnetzwerken unterscheiden kann."
             },
             "threatlocator": {
                 "describe": "Verwenden Sie die Bedrohungssuche, um die Sicherheit der Netzwerke um Sie herum zu ermitteln.",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Senden Sie uns anonyme Gerätedaten, damit wir die Qualität und Zuverlässigkeit sowie die nächste Generation unserer Geräte verbessern können.",
         "userProfile": "Benutzerprofil",
         "Note": "Hinweis: ",
-        "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart dieser Anwendung durch den Benutzer, damit sie wirksam werden.",
+        "settingsNotes": "Starten Sie diese Anwendung neu, um sicherzustellen, dass alle Änderungen übernommen wurden.",
         "betaSettingTitle": "Beta-Programm",
         "betaProgram": "Beta-Programm",
         "betaSettingDescription": "Testen Sie die neuesten Funktionen, an denen wir gerade arbeiten."

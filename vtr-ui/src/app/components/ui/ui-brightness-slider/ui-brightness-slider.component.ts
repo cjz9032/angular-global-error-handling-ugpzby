@@ -4,7 +4,7 @@ import { Options, ChangeContext, ValueToPositionFunction, PointerType } from 'ng
 @Component({
 	selector: 'vtr-ui-brightness-slider',
 	templateUrl: './ui-brightness-slider.component.html',
-	styleUrls: [ './ui-brightness-slider.component.scss' ]
+	styleUrls: ['./ui-brightness-slider.component.scss']
 })
 export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked {
 	@Input() lightingData: any;
@@ -22,12 +22,12 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	@Input() legendPositionFunction: ValueToPositionFunction; // function to handle legend position for Eye Care
 	@Input() stepsArray: Array<any>; // array with legend value for Eye care
 	@Input() manualRefresh = new EventEmitter<void>();
-	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
-	@Output() setLightingBrightness: EventEmitter<ChangeContext> = new EventEmitter();
+	@Input() metricsId = '';
+	@Output() onSliderChanged: EventEmitter<ChangeContext> = new EventEmitter();
 	triggerFocus: EventEmitter<PointerType> = new EventEmitter<PointerType>();
 	pointerType: any = PointerType;
 
-	constructor() {}
+	constructor() { }
 
 	ngAfterContentChecked() {
 		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
@@ -50,7 +50,6 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	}
 
 	public dragEnd($event: any) {
-		this.setLightingBrightness.emit($event.value);
-		this.change.emit($event.value);
+		this.onSliderChanged.emit($event.value);
 	}
 }

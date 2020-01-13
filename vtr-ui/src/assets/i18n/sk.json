@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Dobrý deň. K dispozícii je novšia verzia aplikácie Vantage, chcete ju načítať?"
+        },
+        "offline": {
+            "connectToUseFeature": "Na používanie tejto funkcie sa pripojte k internetu"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "ZNÍŽENIE JASU PANELA ÚLOH",
                         "backgroundDimmer": "ZNÍŽENIE JASU POZADIA",
                         "displayDimmer": "ZNÍŽENIE JASU OBRAZOVKY"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Navštíviť stránku o šifrovaní pevného disku",
             "haveOwnPassword": "Mám vlastného správcu hesiel",
             "haveOwnWifi": "Mám vlastné zabezpečenie bezdrôtového pripojenia",
-            "haveOwnVpn": "Mám vlastné zabezpečenie pomocou VPN",
+            "haveOwnVpn": "Mám vlastnú VPN",
             "uac": "Kontrola používateľských kont (UAC)",
             "uacTitles": "Kontrola používateľských kont",
             "hde": "Šifrovanie pevného disku",
@@ -2095,7 +2109,7 @@
                 "showmore": "Zobraziť viac",
                 "showless": "Zobraziť menej",
                 "button": "Zapnúť zabezpečenie WiFi",
-                "disableDecribe": "Zabezpečenie WiFi od spoločnosti Lenovo je pokročilá cloudová softvérová služba, ktorá pomáha vášmu zariadeniu odlíšiť bezpečné bezdrôtové siete od tých potenciálne škodlivých."
+                "disableDescribe": "Zabezpečenie WiFi od spoločnosti Lenovo je pokročilá cloudová softvérová služba, ktorá pomáha vášmu zariadeniu odlíšiť bezpečné bezdrôtové siete od tých potenciálne škodlivých."
             },
             "threatlocator": {
                 "describe": "Pomocou funkcie Detektor hrozieb určte bezpečnosť okolitých sietí.",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Odosielajte anonymné údaje zariadenia, aby ste nám pomohli zlepšiť kvalitu, spoľahlivosť a novú generáciu zariadení.",
         "userProfile": "Profil používateľa",
         "Note": "Poznámka: ",
-        "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie.",
+        "settingsNotes": "Znova spustite túto aplikáciu, aby ste sa uistili, že sa všetky zmeny prejavia.",
         "betaSettingTitle": "Program Beta",
         "betaProgram": "Program Beta",
         "betaSettingDescription": "Vyskúšajte najnovšie funkcie, na ktorých pracujeme."

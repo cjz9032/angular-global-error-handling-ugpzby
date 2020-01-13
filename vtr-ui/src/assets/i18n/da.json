@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"
+        },
+        "offline": {
+            "connectToUseFeature": "Opret forbindelse til internettet for at bruge denne funktion"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "PROCESLINJEDÆMPER",
                         "backgroundDimmer": "BAGGRUNDSDÆMPER",
                         "displayDimmer": "SKÆRMDÆMPER"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Besøg harddiskkryptering",
             "haveOwnPassword": "Jeg har min egen password manager",
             "haveOwnWifi": "Jeg har min egen wifi-sikkerhed",
-            "haveOwnVpn": "Jeg har min egen VPN-sikkerhed",
+            "haveOwnVpn": "Jeg har mit eget VPN",
             "uac": "Kontrol af brugerkonti (UAC)",
             "uacTitles": "Kontrol af brugerkonti",
             "hde": "Kryptering af harddisken",
@@ -2095,7 +2109,7 @@
                 "showmore": "Vis mere",
                 "showless": "Vis mindre",
                 "button": "Aktivér WiFi-sikkerhed",
-                "disableDecribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige."
+                "disableDescribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige."
             },
             "threatlocator": {
                 "describe": "Brug trusselssensoren til at bestemme sikkerheden i dine nærliggende netværk.",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Send anonyme enhedsdata for at hjælpe os med at forbedre kvalitet, pålidelighed og den næste generation af enheder.",
         "userProfile": "Brugerprofil",
         "Note": "Bemærk: ",
-        "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft.",
+        "settingsNotes": "Start programmet igen for at sikre, at alle ændringer træder i kraft.",
         "betaSettingTitle": "Betaprogram",
         "betaProgram": "Betaprogram",
         "betaSettingDescription": "Prøv de nyeste funktioner, vi arbejder på."

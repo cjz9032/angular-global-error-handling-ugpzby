@@ -95,7 +95,7 @@
 					</vtr-container-collapsible>
 				</div>
 			</div>
-			<div class="row py-5 smartsettings-card"
+			<div class="row pt-5 smartsettings-card"
 				id="microphone">
 				<div class="col-12 mx-auto container-card ">
 					<vtr-container-collapsible componentName="Microphone"
@@ -167,7 +167,7 @@
 									</div>
 								</vtr-ui-row-switch>
                             </li>
-                            <div *ngIf="microphoneProperties?.currentMode!='NotSupported'">
+                            <div *ngIf="microphoneProperties?.currentMode!='NotSupported' && !isDTmachine">
 							<li class=""
 								*ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
 								<vtr-ui-row-switch

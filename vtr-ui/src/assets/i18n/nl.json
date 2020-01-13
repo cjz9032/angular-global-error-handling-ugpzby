@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Hallo! Er is een nieuwere versie van Vantage beschikbaar, wilt u deze laden?"
+        },
+        "offline": {
+            "connectToUseFeature": "Verbinding maken met internet om deze functie te gebruiken"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "TAAKBALKDIMMER",
                         "backgroundDimmer": "ACHTERGRONDDIMMER",
                         "displayDimmer": "BEELDSCHERMDIMMER"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Bezoek Versleuteling van de hardeschijf",
             "haveOwnPassword": "Ik heb mijn eigen wachtwoordbeheerder",
             "haveOwnWifi": "Ik heb mijn eigen WiFi-beveiliging",
-            "haveOwnVpn": "Ik heb mijn eigen VPN-beveiliging",
+            "haveOwnVpn": "Ik heb mijn eigen VPN",
             "uac": "Gebruikersaccountbeheer (UAC)",
             "uacTitles": "Gebruikersaccountbeheer",
             "hde": "Versleuteling van de hardeschijf",
@@ -2095,7 +2109,7 @@
                 "showmore": "Meer weergeven",
                 "showless": "Minder weergeven",
                 "button": "WiFi-beveiliging inschakelen",
-                "disableDecribe": "Lenovo WiFi-beveiliging is een geavanceerde cloudgebaseerde softwareservice die uw apparaat helpt onderscheid te maken tussen veilige draadloze netwerken en mogelijk schadelijke."
+                "disableDescribe": "Lenovo WiFi-beveiliging is een geavanceerde cloudgebaseerde softwareservice die uw apparaat helpt onderscheid te maken tussen veilige draadloze netwerken en mogelijk schadelijke."
             },
             "threatlocator": {
                 "describe": "Gebruik de dreigingsdetector om de veiligheid van de netwerken om u heen te bepalen.",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Verzend anoniem apparaatgegevens om ons te helpen de kwaliteit, betrouwbaarheid en de volgende generatie apparaten te verbeteren.",
         "userProfile": "Gebruikersprofiel",
         "Note": "Opmerking: ",
-        "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben.",
+        "settingsNotes": "Start deze toepassing opnieuw, zodat alle wijzigingen van kracht worden.",
         "betaSettingTitle": "Bètaprogramma",
         "betaProgram": "Bètaprogramma",
         "betaSettingDescription": "Probeer de nieuwste functies waaraan we werken."
