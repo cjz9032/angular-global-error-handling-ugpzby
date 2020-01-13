@@ -180,8 +180,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	// ************************** Start Getting Cached Data ****************************
 	initDataFromCache() {
 		// this.initBatteryLinkFromCache();
-		// this.initSmartStandbyLinkFromCache();
-		// this.initPowerSmartSettingFromCache();
+		this.initSmartStandbyLinkFromCache();
+		this.initPowerSmartSettingFromCache();
 		this.initAirplanePowerFromCache();
 		this.initBatteryChargeThresholdFromCache();
 		this.initGaugeResetInfoFromCache();
@@ -193,32 +193,32 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	}
 
-	// public initPowerSmartSettingFromCache() {
-	// 	try {
-	// 		const cache = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
-	// 		if (cache) {
-	// 			const showIC = cache.showIC;
-	// 			if (showIC === 0) {
-	// 				this.hidePowerSmartSetting(true);
-	// 			}
-	// 		}
-	// 	} catch (error) {
-	// 		console.log('initPowerSmartSettingFromCache', error);
-	// 	}
-	// }
+	public initPowerSmartSettingFromCache() {
+		try {
+			const cache = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
+			if (cache) {
+				const showIC = cache.showIC;
+				if (showIC === 0) {
+					this.onSetSmartSettingsCapability(true);
+				}
+			}
+		} catch (error) {
+			console.log('initPowerSmartSettingFromCache', error);
+		}
+	}
 
 	// initBatteryLinkFromCache() {
 	// 	const status = this.commonService.getLocalStorageValue(LocalStorageKey.IsBatteryQuickSettingAvailable, true);
 	// }
 
-	// initSmartStandbyLinkFromCache() {
-	// 	const capability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
-	// 	if (capability !== undefined) {
-	// 		this.onSetSmartStandbyCapability(capability.isCapable);
-	// 	} else {
-	// 		this.onSetSmartStandbyCapability(false);
-	// 	}
-	// }
+	initSmartStandbyLinkFromCache() {
+		const capability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
+		if (capability !== undefined) {
+			this.onSetSmartStandbyCapability(capability.isCapable);
+		} else {
+			this.onSetSmartStandbyCapability(false);
+		}
+	}
 
 	initAirplanePowerFromCache() {
 		try {
@@ -709,7 +709,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (this.powerService.isShellAvailable) {
 			this.powerService.getAirplaneModeCapabilityThinkPad().then((value) => {
 				console.log('getAirplaneModeCapabilityThinkPad.then', value);
-				this.showAirplanePowerModeSection = false;
+				this.showAirplanePowerModeSection = value;
 				this.updateBatteryLinkStatus(this.showAirplanePowerModeSection);
 				if (this.showAirplanePowerModeSection) {
 					this.getAirplaneModeThinkPad();
