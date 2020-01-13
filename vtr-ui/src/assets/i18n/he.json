@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "היי! יש גרסה חדשה יותר של Vantage, האם ברצונכם לטעון אותה?"
+        },
+        "offline": {
+            "connectToUseFeature": "התחבר לאינטרנט כדי להשתמש בתכונה זו"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "עמעם שורת המשימות",
                         "backgroundDimmer": "עמעם רקע",
                         "displayDimmer": "עמעם תצוגה"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "בקרו בהצפנת כונן קשיח",
             "haveOwnPassword": "יש לי Password Manager משלי",
             "haveOwnWifi": "יש לי אבטחת Wi-Fi משלי",
-            "haveOwnVpn": "יש לי אבטחת VPN משלי",
+            "haveOwnVpn": "יש לי VPN משלי",
             "uac": "בקרת חשבון משתמש (UAC)",
             "uacTitles": "בקרת חשבון משתמש",
             "hde": "הצפנת כונן קשיח",
@@ -2095,7 +2109,7 @@
                 "showmore": "הצג יותר",
                 "showless": "הצג פחות",
                 "button": "הפעלת אבטחת WiFi",
-                "disableDecribe": "אבטחת WiFi של Lenovo היא תוכנה מתקדמת המבוססת על ענן שמסייעת למכשיר להבדיל בין רשתות אלחוטיות בטוחות ורשתות העלולות להיות זדוניות."
+                "disableDescribe": "אבטחת WiFi של Lenovo היא תוכנה מתקדמת המבוססת על ענן שמסייעת למכשיר להבדיל בין רשתות אלחוטיות בטוחות ורשתות העלולות להיות זדוניות."
             },
             "threatlocator": {
                 "describe": "השתמשו ב'גלאי האיומים' כדי לבדוק את רמת הבטיחות של הרשתות שסביבכם.",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "שלחו נתונים אנונימיים בנוגע למכשיר כדי לעזור לנו לשפר את האיכות, את האמינות ואת הדור הבא של המכשירים.",
         "userProfile": "פרופיל משתמש",
         "Note": "שימו לב: ",
-        "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה.",
+        "settingsNotes": "הפעל מחדש את היישום כדי לוודא שכל השינויים נכנסים לתוקף.",
         "betaSettingTitle": "תוכנית בטא",
         "betaProgram": "תוכנית בטא",
         "betaSettingDescription": "נסו את התכונות האחרונות שאנו עובדים עליהן."

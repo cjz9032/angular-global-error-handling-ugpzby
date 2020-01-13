@@ -2482,7 +2482,8 @@
                 "showmore": "Show more",
                 "showless": "Show less",
                 "button": "Enable WiFi security",
-                "disableDecribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
+				"disableDescribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+				"enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Use the threat detector to determine the safety of the networks around you.",
@@ -2692,7 +2693,7 @@
         "pageTitle": "Support Detail",
         "footer": {
             "title": "Not finding what you are looking for?",
-            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
+            "description": "Need additonal support? Don't hesitate to contact us via:",
             "body": "Lenovo Community",
             "button": "GO TO FORUM"
         },
@@ -3096,7 +3097,7 @@
         "deviceStatisticsDescription": "Send anonymous device data to help us improve quality, reliability, and the next generation of devices.",
         "userProfile": "User profile",
         "Note": "Note: ",
-        "settingsNotes": "all the settings in this page will need users to relaunch this application to take effect.",
+        "settingsNotes": "Please relaunch this application to make sure all changes take effect.",
         "betaSettingTitle": "Beta program",
         "betaProgram": "Beta Program",
         "betaSettingDescription": "Try the latest features we're working on."

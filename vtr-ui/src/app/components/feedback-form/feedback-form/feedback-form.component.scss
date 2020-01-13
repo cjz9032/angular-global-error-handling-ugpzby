@@ -184,11 +184,13 @@ $normalPadding: 2.4rem;
 
 		.btn-box {
 			padding-left: $normalPadding;
+			padding-right: $normalPadding;
 		}
 
 		.btn-submit {
 			flex: 0 0 22rem;
 			max-width: 24rem;
+			margin-right: 1rem;
 		}
 
 		.btn-submit-screenshot {

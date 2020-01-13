@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Γεια! Υπάρχει διαθέσιμη μια νεότερη έκδοση του Vantage, θέλετε να τη φορτώσετε;"
+        },
+        "offline": {
+            "connectToUseFeature": "Συνδεθείτε στο Internet για να χρησιμοποιήσετε αυτήν τη λειτουργία"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "ΜΕΙΩΣΗ ΦΩΤΕΙΝΟΤΗΤΑΣ ΓΡΑΜΜΗΣ ΕΡΓΑΣΙΩΝ",
                         "backgroundDimmer": "ΜΕΙΩΣΗ ΦΩΤΕΙΝΟΤΗΤΑΣ ΦΟΝΤΟΥ",
                         "displayDimmer": "ΜΕΙΩΣΗ ΦΩΤΕΙΝΟΤΗΤΑΣ ΟΘΟΝΗΣ"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Επίσκεψη σε κρυπτογράφηση σκληρού δίσκου",
             "haveOwnPassword": "Έχω τον δικό μου διαχειριστή κωδικών πρόσβασης",
             "haveOwnWifi": "Έχω τη δική μου ασφάλεια wifi",
-            "haveOwnVpn": "Έχω τη δική μου ασφάλεια VPN",
+            "haveOwnVpn": "Έχω το δικό μου VPN",
             "uac": "Έλεγχος λογαριασμού χρήστη (UAC)",
             "uacTitles": "Έλεγχος λογαριασμού χρήστη",
             "hde": "Κρυπτογράφηση σκληρού δίσκου",
@@ -2095,7 +2109,7 @@
                 "showmore": "Προβολή επιπλέον στοιχείων",
                 "showless": "Εμφάνιση λιγότερων",
                 "button": "Ενεργοποίηση Ασφαλείας WiFi",
-                "disableDecribe": "Η Ασφάλεια Lenovo WiFi είναι μια προηγμένη υπηρεσία λογισμικού που βασίζεται στο cloud, η οποία διευκολύνει τη συσκευή σας να διακρίνει τη διαφορά των ασφαλών ασύρματων δικτύων από άλλα δυνητικά κακόβουλα δίκτυα."
+                "disableDescribe": "Η Ασφάλεια Lenovo WiFi είναι μια προηγμένη υπηρεσία λογισμικού που βασίζεται στο cloud, η οποία διευκολύνει τη συσκευή σας να διακρίνει τη διαφορά των ασφαλών ασύρματων δικτύων από άλλα δυνητικά κακόβουλα δίκτυα."
             },
             "threatlocator": {
                 "describe": "Χρησιμοποιήστε τον ανιχνευτή απειλών για να προσδιορίσετε την ασφάλεια των δικτύων γύρω σας.",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Στείλτε ανώνυμα δεδομένα σχετικά με τη συσκευή για να μας βοηθήσετε να βελτιώσουμε την ποιότητα, την αξιοπιστία και τις συσκευές επόμενης γενιάς.",
         "userProfile": "Προφίλ χρήστη",
         "Note": "Σημείωση: ",
-        "settingsNotes": "για να τεθούν σε ισχύ όλες οι ρυθμίσεις σε αυτήν τη σελίδα, απαιτείται επανεκκίνηση της εφαρμογής από τον χρήστη.",
+        "settingsNotes": "Κάντε επανεκκίνηση αυτής της εφαρμογής για να διασφαλίσετε την εφαρμογή όλων των αλλαγών.",
         "betaSettingTitle": "Πρόγραμμα Beta",
         "betaProgram": "Πρόγραμμα Beta",
         "betaSettingDescription": "Δοκιμάστε τις τελευταίες δυνατότητες στις οποίες εργαζόμαστε."

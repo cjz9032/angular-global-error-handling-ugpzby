@@ -670,7 +670,10 @@
         },
         "app-update": {
             "message": "嘿！已有更新版的 Vantage，您要載入嗎？"
-        }
+		},
+		"offline": {
+            "connectToUseFeature": "連接到網際網路以使用此功能"
+		}
     },
     "privacy": {
         "headerMain": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "工作列調光器",
                         "backgroundDimmer": "背景調光器",
                         "displayDimmer": "顯示器調光器"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "造訪硬碟加密",
             "haveOwnPassword": "我有自己的 Password Manager",
             "haveOwnWifi": "我有自己的 WiFi 安全性",
-            "haveOwnVpn": "我有自己的 VPN 安全性",
+            "haveOwnVpn": "我有自己的 VPN",
             "uac": "使用者帳戶控制 (UAC)",
             "uacTitles": "使用者帳戶控制",
             "hde": "硬碟加密",
@@ -2095,7 +2109,7 @@
                 "showmore": "顯示更多",
                 "showless": "顯示較少內容",
                 "button": "啟用 WiFi 安全性",
-                "disableDecribe": "Lenovo WiFi 安全性是一項先進的雲端式軟體服務，可協助您的裝置區分安全與潛在惡意的無線網路。"
+                "disableDescribe": "Lenovo WiFi 安全性是一項先進的雲端式軟體服務，可協助您的裝置區分安全與潛在惡意的無線網路。"
             },
             "threatlocator": {
                 "describe": "使用威脅偵測器判斷您周圍網路的安全性。",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "傳送匿名裝置資料，以協助我們提升品質、可靠性和新一代的裝置。",
         "userProfile": "使用者設定檔",
         "Note": "附註：",
-        "settingsNotes": "使用者必須重新啟動此應用程式,此頁面中的所有設定才可生效。",
+        "settingsNotes": "請重新啟動此應用程式，以確保所有變更都生效。",
         "betaSettingTitle": "Beta 程式",
         "betaProgram": "Beta 程式",
         "betaSettingDescription": "試試我們正在開發的最新功能。"

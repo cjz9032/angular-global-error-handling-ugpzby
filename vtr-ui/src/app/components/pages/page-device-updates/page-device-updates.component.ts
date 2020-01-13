@@ -521,6 +521,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		} else {
 			modalRef.dismiss();
 			// its normal update type installation which doesn't require rebooting/power-off
+			document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
 			this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
 			return;
 		}
@@ -531,6 +532,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			result => {
 				// on open
 				if (result) {
+					document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
 					if (this.systemUpdateService.getACAttachedStatus()) {
 						removeDelayedUpdates = false;
 					} else {

@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Witaj! Dostępna jest nowsza wersja Vantage, czy chcesz ją pobrać?"
+        },
+        "offline": {
+            "connectToUseFeature": "Połącz się z Internetem, aby korzystać z tej funkcji"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "PRZYCIEMNIANIE PASKA ZADAŃ",
                         "backgroundDimmer": "PRZYCIEMNIANIE TŁA",
                         "displayDimmer": "PRZYCIEMNIANIE EKRANU"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Odwiedź Szyfrowanie dysku twardego",
             "haveOwnPassword": "Mam własnego menedżera haseł",
             "haveOwnWifi": "Mam własne zabezpieczenia Wi-Fi",
-            "haveOwnVpn": "Mam własne zabezpieczenia VPN",
+            "haveOwnVpn": "Mam własne VPN",
             "uac": "Kontrola konta użytkownika",
             "uacTitles": "Kontrola konta użytkownika",
             "hde": "Szyfrowanie dysku twardego",
@@ -2095,7 +2109,7 @@
                 "showmore": "Pokaż więcej",
                 "showless": "Pokaż mniej",
                 "button": "Włącz funkcję Bezpieczeństwo WiFi",
-                "disableDecribe": "Bezpieczeństwo WiFi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych."
+                "disableDescribe": "Bezpieczeństwo WiFi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych."
             },
             "threatlocator": {
                 "describe": "Funkcja Detektor zagrożeń sprawdza bezpieczeństwo sieci wokół Ciebie.",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Wyślij anonimowe dane o urządzeniu, aby pomóc nam poprawić jakość i niezawodność oraz ulepszyć nową generację urządzeń.",
         "userProfile": "Profil użytkownika",
         "Note": "Uwaga: ",
-        "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane.",
+        "settingsNotes": "Uruchom ponownie tę aplikację, aby upewnić się, że wszystkie zmiany zostaną zastosowane.",
         "betaSettingTitle": "Program Beta",
         "betaProgram": "Program Beta",
         "betaSettingDescription": "Wypróbuj najnowsze funkcje, nad którymi pracujemy."

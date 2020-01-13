@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
+        },
+        "offline": {
+            "connectToUseFeature": "Bu özelliği kullanmak için İnternet'e bağlanın"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "GÖREV ÇUBUĞU KARARTICI",
                         "backgroundDimmer": "ARKA PLAN KARARTICI",
                         "displayDimmer": "EKRAN KARARTICI"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1979,7 +1993,7 @@
             "visitHde": "Sabit sürücü şifrelemesi sayfasını ziyaret edin",
             "haveOwnPassword": "Kendi parola yöneticim var",
             "haveOwnWifi": "Kendi wifi güvenliğim var",
-            "haveOwnVpn": "Kendi VPN güvenliğim var",
+            "haveOwnVpn": "Kendi VPN bağlantım var",
             "uac": "Kullanıcı Hesabı Denetimi (UAC)",
             "uacTitles": "Kullanıcı Hesabı Denetimi",
             "hde": "Sabit sürücü şifrelemesi",
@@ -2095,7 +2109,7 @@
                 "showmore": "Daha fazlasını göster",
                 "showless": "Ayrıntıları gizle",
                 "button": "WiFi güvenliğini etkinleştirin",
-                "disableDecribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir."
+                "disableDescribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir."
             },
             "threatlocator": {
                 "describe": "Çevrenizdeki ağların güvenliğini belirlemek için tehdit dedektörünü kullanın.",
@@ -2709,7 +2723,7 @@
         "deviceStatisticsDescription": "Kaliteli, güvenilir ve yeni nesil cihazlar geliştirmemize yardımcı olmak için anonim cihaz verileri gönderin.",
         "userProfile": "Kullanıcı profili",
         "Note": "Not: ",
-        "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir.",
+        "settingsNotes": "Tüm değişikliklerin geçerli hale gelmesi için bu uygulamayı yeniden başlatın.",
         "betaSettingTitle": "Beta Programı",
         "betaProgram": "Beta Programı",
         "betaSettingDescription": "Üzerinde çalışmakta olduğumuz en yeni özellikleri deneyin."
