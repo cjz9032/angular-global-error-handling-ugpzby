@@ -2482,7 +2482,8 @@
                 "showmore": "Show more",
                 "showless": "Show less",
                 "button": "Enable WiFi security",
-                "disableDecribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
+				"disableDescribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+				"enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Use the threat detector to determine the safety of the networks around you.",

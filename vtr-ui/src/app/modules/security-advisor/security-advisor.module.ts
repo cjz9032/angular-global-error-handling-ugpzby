@@ -58,6 +58,7 @@ import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.mod
 import { WidgetLandingSecurityComponent } from '../../components/pages/page-security/widget/widget-landing-security/widget-landing-security.component';
 import { WidgetLandingNavComponent } from '../../components/pages/page-security/widget/widget-landing-nav/widget-landing-nav.component';
 import { WidgetSvgCircleComponent } from 'src/app/components/pages/page-security/widget/widget-svg-circle/widget-svg-circle.component';
+import { ThreatLocatorComponent } from '../../components/pages/page-security-wifi/children/threat-locator/threat-locator.component';
 library.add(
 	faLockAlt,
 	faQuestionCircle,
@@ -107,6 +108,7 @@ library.add(
 		WidgetLandingSecurityComponent,
 		WidgetLandingNavComponent,
 		WidgetSvgCircleComponent,
+		ThreatLocatorComponent,
 	],
 	imports: [
 		CommonModule,
