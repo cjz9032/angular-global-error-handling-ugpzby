@@ -1,3 +1,4 @@
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { HtmlTextPipe } from 'src/app/pipe/html-text/html-text.pipe';
@@ -19,11 +20,12 @@ import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { PageMacrokeyComponent } from './page-macrokey.component';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 
-xdescribe('PageMacrokeyComponent', () => {
+describe('PageMacrokeyComponent', () => {
 	let component: PageMacrokeyComponent;
 	let fixture: ComponentFixture<PageMacrokeyComponent>;
-	const mockShellService = { getMetrics: () => 0, getSelfSelect: () => 0, getVantageStub: () => 0 };
+	const mockShellService = { getMetrics: () => 0, getSelfSelect: () => 0, getVantageStub: () => 0, getSystemUpdate: () => 0, calcDeviceFilter: () => 0 };
 	const mockTitleService = { setTitle: function setTitle() { return 'hii'; } };
 	const onLangChange: Observable<any> = new Subject();
 	const cmsContent = {
@@ -44,10 +46,11 @@ xdescribe('PageMacrokeyComponent', () => {
 		}], Metadata: { Count: 2 }
 	};
 	const mockTranslateService = { onLangChange };
-	const vantageShellMock = { getMetrics: () => 0 };
-	const commonServiceMock = { getLocalStorageValue: (key) => localStorage.getItem(key) }
+	const notif = new AppNotification(NetworkStatus.Offline, 'true');
+	const commonServiceMock = { getLocalStorageValue: (key) => localStorage.getItem(key), setLocalStorageValue: () => 0, sendNotification: () => of(notif), sendReplayNotification: () => 0, notification: new Observable<AppNotification>() };
 	const cmsMockService = {
-		fetchCMSContent: (test: any) => of(cmsContent)
+		fetchCMSContent: (test: any) => of(cmsContent),
+		getOneCMSContent: () => 0
 	};
 	beforeEach(fakeAsync(() => {
 		TestBed.configureTestingModule({
@@ -68,13 +71,13 @@ xdescribe('PageMacrokeyComponent', () => {
 				{ provide: LoggerService, useValue: {} },
 				{ provide: HypothesisService, useValue: {} },
 				{ provide: TranslateService, useValue: mockTranslateService },
-				{ provide: DeviceService, useValue: { isGaming: true } },
+				{ provide: DeviceService, useValue: { isGaming: true, getMachineInfoSync: () => { }, getMachineInfo: () => Promise.resolve() } },
 				{ provide: Title, useValue: mockTitleService },
 				{ provide: CMSService, useValue: cmsMockService }
 			]
 		}).compileComponents();
 		fixture = TestBed.createComponent(PageMacrokeyComponent);
-		component = fixture.debugElement.componentInstance;
+		component = fixture.componentInstance;
 		fixture.detectChanges();
 		component.cardContentPositionF = { Id: 1, FeatureImage: 'TEST' };
 		component.cardContentPositionC = { Id: 1, FeatureImage: 'TEST' };
