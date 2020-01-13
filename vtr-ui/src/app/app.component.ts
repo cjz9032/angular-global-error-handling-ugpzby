@@ -33,6 +33,7 @@ import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service'
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
 import { AbTestsGenerateConfigService } from './components/pages/page-privacy/core/ab-tests/ab-tests-generate-config.service';
+import { ToolbarToastService } from './services/toolbartoast/toolbartoast.service';
 
 declare var Windows;
 @Component({
@@ -67,6 +68,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
 		private abTestsGenerateConfigService: AbTestsGenerateConfigService,
+		private toolbarToast: ToolbarToastService
 		// private appUpdateService: AppUpdateService
 	) {
 		// to check web and js bridge version in browser console
@@ -97,8 +99,6 @@ export class AppComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		// check for update and download it but it will be available in next launch
 		// this.appUpdateService.checkForUpdatesNoPrompt();
-		// active duration
-		this.getDuration();
 		if (this.deviceService.isAndroid) {
 			return;
 		}
@@ -134,6 +134,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 		this.setRunVersionToRegistry();
 		this.abTestsGenerateConfigService.shuffle();
+		this.toolbarToast.showVantageToolbarToast();
 	}
 
 	ngOnDestroy() {
@@ -362,16 +363,34 @@ export class AppComponent implements OnInit, OnDestroy {
 		window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
 	}
 
-	// Defect fix VAN-2988
-	// @HostListener('window:keydown', ['$event'])
-	// disableCtrlA($event: KeyboardEvent) {
-	// 	const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
+	@HostListener('window:keydown', ['$event'])
+	dialogCtrlA($event: KeyboardEvent) {
+		const dialog: HTMLElement = document.querySelector('ngb-modal-window');
+		if (dialog && ($event.ctrlKey || $event.metaKey) && $event.keyCode === 65) {
+			const activeDom: any = document.activeElement;
+			if (activeDom && (
+				(activeDom.type === 'textarea' && activeDom.tagName === 'TEXTAREA') ||
+				(activeDom.type === 'text' && activeDom.tagName === 'INPUT')
+			)) { return; }
+			this.selectText(dialog);
+			$event.stopPropagation();
+			$event.preventDefault();
+		}
+	}
 
-	// 	if (($event.ctrlKey || $event.metaKey) && $event.keyCode === 65 && !isPrivacyTab) {
-	// 		$event.stopPropagation();
-	// 		$event.preventDefault();
-	// 	}
-	// }
+	selectText(element: any) {
+		if ((document.body as any).createTextRange) {
+			const range = (document.body as any).createTextRange();
+			range.moveToElementText(element);
+			range.select();
+		} else if (window.getSelection) {
+			const selection = window.getSelection();
+			const range = document.createRange();
+			range.selectNodeContents(element);
+			selection.removeAllRanges();
+			selection.addRange(range);
+		}
+	}
 
 	private onNotification(notification: AppNotification) {
 		if (notification) {
@@ -421,60 +440,6 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 		}, 2000);
 	}
-
-	// TESTING ACTIVE DURATION
-	private getDuration() {
-		const component = this; // value of this is null/undefined inside the functions
-		let isVisible = true; // internal flag, defaults to true
-		function onVisible() {
-			// prevent double execution
-			if (isVisible) {
-				return;
-			}
-			// console.log(' APP is VISIBLE-------------------------------------------------------');
-			component.metricService.sendAppResumeMetric();
-			// change flag value
-			isVisible = true;
-		} // end of onVisible
-		function onHidden() {
-			// prevent double execution
-			if (!isVisible) {
-				return;
-			}
-			// console.log(' APP is HIDDEN-------------------------------------------------------');
-			component.metricService.sendAppSuspendMetric();
-			// change flag value
-			isVisible = false;
-		} // end of onHidden
-		function handleVisibilityChange(forcedFlag) {
-			// forcedFlag is a boolean when this event handler is triggered by a
-			// focus or blur eventotherwise it's an Event object
-			if (typeof forcedFlag === 'boolean') {
-				if (forcedFlag) {
-					return onVisible();
-				}
-				return onHidden();
-			}
-			if (document.hidden) {
-				return onHidden();
-			}
-			return onVisible();
-		} // end of handleVisibilityChange
-		document.addEventListener('visibilitychange', handleVisibilityChange, false);
-		// extra event listeners for better behaviour
-		document.addEventListener('focus', () => {
-			handleVisibilityChange(true);
-		}, false);
-		document.addEventListener('blur', () => {
-			handleVisibilityChange(false);
-		}, false);
-		window.addEventListener('focus', () => {
-			handleVisibilityChange(true);
-		}, false);
-		window.addEventListener('blur', () => {
-			handleVisibilityChange(false);
-		}, false);
-	} // END OF DURATION
 
 	private setFontFamilyByLocale(locale: string = 'en') {
 		const defaultFontFamily = '"Segoe UI", sans-serif';

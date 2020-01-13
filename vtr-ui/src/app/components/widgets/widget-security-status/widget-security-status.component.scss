@@ -31,13 +31,6 @@ vtr-widget-status ::ng-deep {
 			}
 			.item-text {
 				.detail {
-					display: flex !important;
-					align-items: center !important;
-					justify-content: flex-end !important;
-					flex-basis: 45% !important;
-					padding-right: 1rem;
-					text-overflow: clip !important;
-					white-space: normal !important;
 					&.good {
 						color: $green_dark !important;
 					}
@@ -49,14 +42,6 @@ vtr-widget-status ::ng-deep {
 					&.black {
 						color: $black_light !important;
 					}
-				}
-
-				.title {
-					display: flex;
-					align-items: center !important;
-					flex-basis: 55% !important;
-					text-overflow: clip !important;
-					white-space: normal !important;
 				}
 			}
 		}

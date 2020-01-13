@@ -5,7 +5,7 @@ import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { UiButtonComponent } from 'src/app/components/ui/ui-button/ui-button.component';
 
-describe('WidgetLandingSecurityComponent', () => {
+xdescribe('WidgetLandingSecurityComponent', () => {
 	let component: WidgetLandingSecurityComponent;
 	let fixture: ComponentFixture<WidgetLandingSecurityComponent>;
 

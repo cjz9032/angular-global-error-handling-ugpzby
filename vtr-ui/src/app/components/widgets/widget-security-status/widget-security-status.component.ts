@@ -91,7 +91,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 
 	showWindowsHelloItem() {
 		const windowsHelloItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-wh'));
-		if (this.windowsHelloService.showWindowsHello()) {
+		if (this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello)) {
 			if (!windowsHelloItem) {
 				this.items.splice(this.items.length - 1, 0, new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
 			}
@@ -143,10 +143,11 @@ export class WidgetSecurityStatusComponent implements OnInit {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		setTimeout(() => {
+		const id = document.activeElement.id;
+		if (id !== 'sa-av-button-launch-mcafee') {
 			this.securityAdvisor.refresh();
 			this.showVpn();
-		}, 0);
+		}
 	}
 
 }

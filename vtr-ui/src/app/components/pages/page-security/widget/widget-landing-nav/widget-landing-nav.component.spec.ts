@@ -8,6 +8,10 @@ import { UiButtonComponent } from 'src/app/components/ui/ui-button/ui-button.com
 import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
+import { TranslationModule } from 'src/app/modules/translation.module';
+import { TranslateStore } from '@ngx-translate/core';
+
+
 describe('WidgetLandingNavComponent', () => {
 	let component: WidgetLandingNavComponent;
 	let fixture: ComponentFixture<WidgetLandingNavComponent>;
@@ -15,7 +19,8 @@ describe('WidgetLandingNavComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetLandingNavComponent, WidgetLandingSecurityComponent, StatusTransformPipe, UiButtonComponent],
-			providers: [StatusTransformPipe],
+			imports: [TranslationModule],
+			providers: [StatusTransformPipe,TranslateStore,],
 			schemas: [NO_ERRORS_SCHEMA],
 		})
 			.compileComponents();
@@ -24,6 +29,9 @@ describe('WidgetLandingNavComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(WidgetLandingNavComponent);
 		component = fixture.componentInstance;
+		component.baseItems = [];
+		component.intermediateItems = [];
+		component.advancedItems = [];
 		fixture.detectChanges();
 	});
 

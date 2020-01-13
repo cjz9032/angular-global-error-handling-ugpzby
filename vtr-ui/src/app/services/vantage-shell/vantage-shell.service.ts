@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
 import { TopRowFunctionsIdeapad } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
+import { Backlight } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.interface';
 
 declare var Windows;
 
@@ -58,6 +59,7 @@ export class VantageShellService {
 				Phoenix.Features.AdPolicy,
 				Phoenix.Features.Registry,
 				Phoenix.Features.SelfSelect,
+				Phoenix.Features.UpeAgent,
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -171,7 +173,7 @@ export class VantageShellService {
 	}
 
 	public getShellVersion() {
-		if (Windows) {
+		if (typeof Windows !== 'undefined') {
 			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
 			return `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
 		}
@@ -971,9 +973,24 @@ export class VantageShellService {
 		return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
 	}
 
+	getBacklight(): Backlight {
+		return this.phoenix.hwsettings.input.backlight;
+	}
+
 	public getRegistryUtil(): Phoenix.RegistryFeature {
 		if (this.phoenix) {
 			return this.phoenix.registry;
+		}
+		return undefined;
+	}
+
+	getToolbarToastFeature(): any {
+		return this.phoenix.hwsettings.toolbar.ToolbarToast;
+	}
+
+	public getUpeAgent(): any {
+		if (this.phoenix) {
+			return this.phoenix.upeAgent;
 		}
 		return undefined;
 	}

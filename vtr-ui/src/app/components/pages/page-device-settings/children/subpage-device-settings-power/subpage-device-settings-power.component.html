@@ -10,13 +10,17 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
-					*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
+				<vtr-power-smart-settings (isPowerSmartSettingHidden)="onSetSmartSettingsCapability(false)"
+					*ngIf="!isDesktopMachine">
+				</vtr-power-smart-settings>
+
 				<vtr-smart-standby *ngIf="!isDesktopMachine"
 					(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
 				</vtr-smart-standby>
+
+<!-- ****************** Battery Section ******************************** -->
 				<div *ngIf="showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable || gaugeResetCapability"
-					class="row py-5"
+					class="row pt-5 smartsettings-card"
 					id="battery">
 					<div class="col-12 mx-auto container-card ">
 
@@ -216,9 +220,12 @@
 						</vtr-container-collapsible>
 					</div>
 				</div>
-				 <div class="row py-5 smartsettings-card"
+<!-- ****************** End Battery Section ******************************** -->
+
+<!-- ****************** Start Power Section ******************************** -->
+				 <div class="row pt-5 smartsettings-card"
 					id="power"
-					*ngIf="!isDesktopMachine && !batteryService.isPowerDriverMissing && (alwaysOnUSBStatus?.available || showEasyResumeSection || (showFlipToBootSection$ | async))">
+					*ngIf="!batteryService.isPowerDriverMissing && (alwaysOnUSBStatus?.available || showEasyResumeSection || (showFlipToBootSection$ | async))">
 					<div class="col-12 mx-auto container-card">
 						<vtr-container-collapsible
 							[cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
@@ -295,7 +302,7 @@
 									</vtr-ui-row-switch>
 								</li>
 								<li class=""
-									*ngIf="showEasyResumeSection">
+									*ngIf="!isDesktopMachine && showEasyResumeSection">
 									<vtr-ui-row-switch
 										[title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
 										[name]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
@@ -314,8 +321,10 @@
 						</vtr-container-collapsible>
 					</div>
 				</div>
+<!-- ****************** End Power Section ******************************** -->
 
-				 <div class="row py-5 smartsettings-card"
+
+				 <div class="row pt-5 smartsettings-card"
 					id="other"
 					*ngIf="vantageToolbarStatus.available">
 					<div class="col-12 mx-auto container-card">
@@ -345,7 +354,7 @@
 						</vtr-container-collapsible>
 					</div>
 				</div>
-				<div class="row py-5 smartsettings-card"
+				<div class="row pt-5 smartsettings-card"
 					*ngIf="isEnergyStarProduct">
 					<div class="col-12 mx-auto container-card">
 						<vtr-container-collapsible

@@ -180,6 +180,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 			if (setApp.showStatus !== this.statusEnum.INSTALLED) {
 				setApp.status = ModernPreloadEnum.StatusNotInstalled;
 				setApp.showStatus = this.statusEnum.FAILED_INSTALL;
+				this.isAppInstallError = true;
 			}
 			this.modernPreloadService.CurrentInstallingId = '';
 		}

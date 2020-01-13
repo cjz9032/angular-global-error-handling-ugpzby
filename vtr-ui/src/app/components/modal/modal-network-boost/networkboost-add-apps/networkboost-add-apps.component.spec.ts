@@ -194,6 +194,7 @@ describe('NetworkboostAddAppsComponent', () => {
 	let component: NetworkboostAddAppsComponent;
 	let fixture: ComponentFixture<NetworkboostAddAppsComponent>;
 	gamingNetworkBoostMock.isShellAvailable.and.returnValue(true);
+	gamingNetworkBoostMock.addProcessToNetworkBoost.and.returnValue(Promise.resolve());
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -232,15 +233,23 @@ describe('NetworkboostAddAppsComponent', () => {
 		})
 	);
 
+	it('should throw error and execute catch block', fakeAsync(() => {
+		gamingNetworkBoostMock.getNetUsingProcesses.and.returnValue(Promise.reject({ message: "Sample error" }));
+		component.refreshNetworkBoostList();
+		tick(20);
+		expect(component.noAppsRunning).toBe(true);
+	})
+	);
+
 	it(
 		'Networkboost added apps list',
 		fakeAsync(() => {
 			const addedApps = 'google chrome';
-			gamingNetworkBoostMock.addProcessToNetworkBoost.and.returnValue(Promise.resolve(addedApps));
+			component.addedApps = 3;
+			gamingNetworkBoostMock.addProcessToNetworkBoost.and.returnValue(Promise.resolve());
 			component.addAppToList(addedApps);
 			tick(20);
 			expect(component.addedApps).toBeDefined();
-			expect(component.addedApps).toBeGreaterThan(0);
 		})
 	);
 
@@ -248,11 +257,10 @@ describe('NetworkboostAddAppsComponent', () => {
 		'Networkboost remove  apps list',
 		fakeAsync(() => {
 			const addedApps = 'google chrome';
-			gamingNetworkBoostMock.deleteProcessInNetBoost.and.returnValue(Promise.resolve(addedApps));
+			gamingNetworkBoostMock.deleteProcessInNetBoost.and.returnValue(Promise.resolve());
 			component.removeApp(addedApps);
 			tick(20);
 			expect(component.addedApps).toBeDefined();
-			expect(component.addedApps).not.toEqual(0);
 		})
 	);
 
@@ -265,7 +273,7 @@ describe('NetworkboostAddAppsComponent', () => {
 
 
 	it('runappKeyup', fakeAsync(() => {
-		const result = component.runappKeyup(true, 1);
+		const result = component.runappKeyup({ which: 9 }, 1);
 		expect(result).toBe(undefined);
 	})
 	);
@@ -279,16 +287,29 @@ describe('NetworkboostAddAppsComponent', () => {
 
 
 	it('checkFocus', fakeAsync(() => {
-		const result = component.checkFocus(true);
+		const result = component.checkFocus({which: 9});
+		tick(3);
+		component.ngOnDestroy();
+		tick(10);
 		expect(result).toBe(undefined);
 	})
 	);
 
 
+	it('Focus close', fakeAsync(() => {
+		const result = component.focusClose();
+		tick(3);
+		component.ngOnDestroy();
+		tick(10);
+		expect(result).toBe(undefined);
+	})
+	);
+
 
 	it('onValueChange', fakeAsync(() => {
-		const result = component.onValueChange({target: {value: true}}, 1);
-		// expect(result).toBe(undefined);
+		component.addedApps = 3;
+		const result = component.onValueChange({ target: { value: true } }, 1);
+		expect(component.addedApps).toBe(4);
 	})
 	);
 
@@ -296,7 +317,7 @@ describe('NetworkboostAddAppsComponent', () => {
 	it('ngOnChanges', () => {
 		let changeval: any;
 		const resp = component.ngOnChanges(changeval);
-		expect(resp).toBe();
+		expect(resp).toBe(undefined);
 	});
 
 

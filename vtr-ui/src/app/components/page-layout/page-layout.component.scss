@@ -1,14 +1,12 @@
 @import "../../app.theme";
 
+
 .vtr-page {
 	.vtr-page-header {
-		background: #289cd0;
-		background: linear-gradient(to right, #72d0bb 0%, #289cd0 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#72d0bb", endColorstr="#289cd0", GradientType=1);
-		.page-header-bg {
-			background: url(/assets/images/gaming/GamingTopImage.png) center center no-repeat;
-			background-size: cover;
-		}
+		background-image: url('/assets/images/HeaderImage.jpg');
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
 	}
 	.vtr-page-columns {
 		max-width: $max_page_width;
@@ -26,6 +24,13 @@
 				@media #{$breakpoint_lg} {
 					padding-left: $padding_side;
 					padding-right: $padding_side;
+					padding-bottom: 1rem;
+				}
+				@media #{$breakpoint_sm} {
+					padding-bottom: 1rem;
+				}
+				@media #{$breakpoint_md} {
+					padding-bottom: 1rem;
 				}
 			}
 			&.vtr-page-right-column {
@@ -36,13 +41,22 @@
 					padding-right: $padding_side;
 				}
 				@media #{$breakpoint_lg} {
-					padding-left: $padding_side_sm;
-					padding-right: $padding_side_sm;
+					padding-left: $padding_side;
+					padding-right: $padding_side;
 					padding-bottom: $padding_side_sm;
 					padding-top: $padding_side_sm;
 				}
 				@media #{$breakpoint_lg} {
 					// padding-top: 2rem;
+				}
+				@media #{$breakpoint_lg} {
+					background-color: $shade_extralight;
+				}
+				@media #{$breakpoint_md} {
+					background-color: $shade_extralight;
+				}
+				@media #{$breakpoint_sm} {
+					background-color: $shade_extralight;
 				}
 				.vtr-page-column-shift-up {
 					@media #{$breakpoint_lg} {

@@ -7,6 +7,7 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { Subject } from 'rxjs/internal/Subject';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { WinRT } from '@lenovo/tan-client-bridge';
+import { ReplaySubject } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,7 +17,9 @@ import { WinRT } from '@lenovo/tan-client-bridge';
  */
 export class CommonService {
 	public readonly notification: Observable<AppNotification>;
+	public readonly replayNotification: Observable<AppNotification>;
 	private notificationSubject: BehaviorSubject<AppNotification>;
+	private replaySubject: ReplaySubject<AppNotification>;
 	public isOnline = true;
 	public gamingCapabalities: any = new Subject();
 	private RS5Version = 17600;
@@ -26,7 +29,9 @@ export class CommonService {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(
 			new AppNotification('init')
 		);
+		this.replaySubject = new ReplaySubject<AppNotification>(0);
 		this.notification = this.notificationSubject;
+		this.replayNotification = this.replaySubject;
 	}
 
 	/**
@@ -152,6 +157,10 @@ export class CommonService {
 		this.notificationSubject.next(new AppNotification(action, payload));
 	}
 
+	public sendReplayNotification(action: string, payload?: any) {
+		this.replaySubject.next(new AppNotification(action, payload));
+	}
+
 	public isRS5OrLater(): boolean {
 		return this.getWindowsVersion() >= this.RS5Version;
 	}
@@ -198,21 +207,35 @@ export class CommonService {
 		return arguments.length === 1 ? undefined : defaultValue;
 	}
 
-	public removeObjFrom(array: any[], path: string) {
-		return array.filter(e => e.path !== path);
+	addToObjectsList(array: any[], item: any) {
+		if (!this.isPresent(array, item.path)) {
+			array.push(item);
+			return this.sortMenuItems(array);
+		} else {
+			return array;
+		}
 	}
 
-	public isFoundInArray(array: any[], path: string) {
-		const element = array.find(e => e.path === path);
-		return element ? true : false;
+	public removeObjFrom(array: any[], path: string) {
+		if (this.isPresent(array, path)) {
+			return array.filter(e => e.path !== path);
+		} else {
+			return array;
+		}
 	}
+
+	// public isFoundInArray(array: any[], path: string) {
+	// 	const element = array.find(e => e.path === path);
+	// 	return element ? true : false;
+	// }
 
 	public removeObjById(array: any[], id: string) {
 		return array.filter(e => e.id !== id);
 	}
 
 	public isPresent(array: any[], path: string) {
-		return array.some(e => e.path === path);
+		const element = array.find(e => e.path === path);
+		return element ? true : false;
 	}
 
 	public sortMenuItems(menuItems) {

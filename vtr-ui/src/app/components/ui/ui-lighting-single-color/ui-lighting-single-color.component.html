@@ -1,9 +1,8 @@
 <div class="lighting-single-color">
-	<h3 class="content-title">{{'gaming.lightingProfile.lightingSingleLightingOption.option5.title' | translate}}</h3>
 	<ul class="lighting-list-option" role="radiogroup" aria-labelledby="radiogroup">
 		<li *ngFor="let option of options" tabindex="0" (keyup.enter)="getValue(option.id)" role="radio"
 			attr.aria-label ="option.option| translate" [attr.aria-checked]="selectedOptionId === option.id ? 'true':'false'">
-			<label class="gaming-radio">{{option.name | translate}}
+			<label class="gaming-radio" *ngIf="option.name !== 'undefined'">{{option.name | translate}}
 				<input type="radio" name="price" id="gaming_lighting_singlecolor_blink{{option.id}}"
 					attr.aria-label="gaming_lighting_singlecolor_blink{{option.id | translate}}" vtrMetrics
 					[metricsItem]="'singlecolor_blink_option'+option.id" metricsEvent="featureClick"

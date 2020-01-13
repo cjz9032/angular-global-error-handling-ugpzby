@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SubpageDeviceSettingsInputAccessoryComponent } from './subpage-device-settings-input-accessory.component';
+import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClient } from '@angular/common/http';
 
 xdescribe('SubpageDeviceSettingsInputAccessoryComponent', () => {
   let component: SubpageDeviceSettingsInputAccessoryComponent;
@@ -8,7 +11,13 @@ xdescribe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SubpageDeviceSettingsInputAccessoryComponent ]
+      declarations: [ SubpageDeviceSettingsInputAccessoryComponent,
+        mockPipe({ name: 'translate' }) ],
+        schemas: [NO_ERRORS_SCHEMA],
+        imports: [RouterTestingModule],
+        providers: [
+					{ provide: HttpClient }]
+
     })
     .compileComponents();
   }));
@@ -23,3 +32,16 @@ xdescribe('SubpageDeviceSettingsInputAccessoryComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+export function mockPipe(options: Pipe): Pipe {
+	const metadata: Pipe = {
+		name: options.name
+	};
+	return Pipe(metadata)(
+		class MockPipe {
+			// public transform(query: string, ...args: any[]): any {
+			// 	return query;
+			// }
+		}
+	);
+}

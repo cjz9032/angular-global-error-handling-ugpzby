@@ -21,6 +21,7 @@ export enum LocalStorageKey {
 	SecurityOtherFirewall = '[LocalStorageKey] SecurityOtherFirewall',
 	SecurityMcAfeeStatusList = '[LocalStorageKey] SecurityMcAfeeStatusList',
 	SecurityMcAfeeMetricList = '[LocalStorageKey] SecurityMcAfeeMetricList',
+	SecurityMcAfeeTrialUrl = '[LocalStorageKey] SecurityMcAfeeTrialUrl',
 	SecurityShowMetricList = '[LocalStorageKey] SecurityShowMetricList',
 	SecurityShowMcafee = '[LocalStorageKey] SecurityShowMcafee',
 	SecurityShowMetricButton = '[LocalStorageKey] SecurityShowMetricButton',
@@ -37,7 +38,7 @@ export enum LocalStorageKey {
 	SecurityLandingAntivirusStatus = '[LocalStorageKey] SecurityLandingAntivirusStatus',
 	SecurityLandingAntivirusFirewallStatus = '[LocalStorageKey] SecurityLandingAntivirusFirewallStatus',
 	SecurityLandingWindowsHelloFingerprintStatus = '[LocalStorageKey] SecurityLandingWindowsHelloFingerprintStatus',
-	SecurityLandingScore = '[LocalStorageKey] SecurityLandingScore',
+	SecurityLandingLevel = '[LocalStorageKey] SecurityLandingLevel',
 	SecurityLandingMaliciousWifi = '[LocalStorageKey] SecurityLandingMaliciousWifi',
 	DesktopMachine = '[LocalStorageKey] DesktopMachine',
 	HadRunApp = '[LocalStorageKey] HadRunApp',
@@ -197,10 +198,11 @@ export enum LocalStorageKey {
 	// App Search
 	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
+	BacklightCapability = '[LocalStorageKey] BacklightCapability',
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
 	IsSubscribed = '[LocalStorageKey] IsSubscribed',
 	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails',
-	IsHidePowerPage = '[LocalStorageKey] IsHidePowerPage',
+	IsPowerPageAvailable = '[LocalStorageKey] isPowerPageAvailable',
 	DashboardLastWelcomeText = '[LocalStorageKey] DashboardLastWelcomeText',
 	IsDolbyModeAvailable = '[LocalStorageKey] IsDolbyModeAvailable',
 	IsAudioPageAvailable = '[LocalStorageKey] IsAudioPageAvailable',
@@ -218,5 +220,8 @@ export enum LocalStorageKey {
 	MicrohoneCapability = '[LocalStorageKey] MicrohoneCapability',
 
 	// TEMP battery condition
-	BatteryCondition = '[LocalStorageKey] batteryCondition'
+	BatteryCondition = '[LocalStorageKey] batteryCondition',
+
+	// UPE
+	UPEChannelTags = '[LocalStorageKey] UPEChannelTags'
 }

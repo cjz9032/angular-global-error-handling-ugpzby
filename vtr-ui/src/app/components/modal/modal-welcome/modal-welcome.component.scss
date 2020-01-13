@@ -13,27 +13,34 @@
 	box-shadow: $drop_shadow;
 	padding: 0;
 	position: relative;
-	width: 60rem;
 	max-width: 60rem !important;
-	height: 60rem;
+	max-height: 60rem;
+	height: auto;
 	background: $shade_lightest;
 	overflow: hidden;
 	@media #{$breakpoint_md} {
+		width: 100%;
 		height: 100%;
+	}
+
+	@media #{$breakpoint_sm} {
+		width: 100%;
+		height: 42rem;
 	}
 
 	.card-body {
 		display: flex;
 		flex-flow: column;
 		width: 60rem;
-		height: 60rem;
+		max-height: 60rem;
+		height: auto;
 		@media #{$breakpoint_md} {
 			width: 100%;
 			height: 100%;
 		}
 		@media #{$breakpoint_sm} {
 			width: 100%;
-			height: 100%;
+			height: 42rem;
 		}
 	}
 
@@ -42,11 +49,19 @@
 		background-size: cover;
 		background-position: center;
 		width: 100%;
-		height: 22rem;
+		height: 30rem;			
+		margin-bottom:2.4rem;
 		flex-shrink: 0;
+		@media #{$breakpoint_sm} {
+			height: 17.6rem;
+		}
 
 		.title-alignment {
-			line-height: 6rem;
+			line-height: 4rem;
+			margin-top: 15rem;
+			@media #{$breakpoint_sm} {
+				margin-top: 3.5rem;
+			}
 
 			.title1 {
 				color: $light;
@@ -66,10 +81,11 @@
 		background-size: cover;
 		height: 10rem;
 		width: 100%;
-		flex-shrink: 0;
+		flex-shrink: 0;		
+		margin-bottom:2.4rem;
 		background-position: center;
 		@media #{$breakpoint_sm} {
-			height: 11rem;
+			height: 4.4rem;
 		}
 	}
 
@@ -81,11 +97,6 @@
 	.font-12-semi {
 		font-size: 1.6rem;
 		font-weight: 300;
-		.title2 {
-			&:focus {
-				outline: none;
-			}
-		}
 	}
 
 	.font-14-bold {
@@ -96,16 +107,18 @@
 	.content-page-2 {
 		overflow-y: auto;
 		color: $dark;
-		padding: 3rem 4rem 0;
-		height: 100%;
+		padding: 0rem 6.9rem 1.5rem 7rem;
+		height: auto;
 		font-size: 1.5rem;
 		font-weight: $weight_regular;
 		letter-spacing: 0.05rem;
-		@media #{$breakpoint_md} {
-			padding: 3rem 2rem 0;
+		@media #{$breakpoint_md} {			
+			padding: 0rem 6.9rem 1.5rem 7rem;
+			height: 100%;
 		}
 		@media #{$breakpoint_sm} {
-			padding: 3rem 1rem 0;
+			padding: 0rem 3.4rem 1.5rem;
+			height: 42rem;
 		}
 
 		img {
@@ -141,17 +154,15 @@
 
 			label {
 				font-size: $fontsize_xs;
-				width: 94%;
+				width: 100%;
 				height: 100%;
+				padding: 0 2%;
 				line-height: 2rem;
 				align-items: center;
 				display: flex;
 				justify-content: center;
 				font-weight: $weight_light;
 				z-index: 2;
-				&:focus {
-					outline: none;
-				}
 			}
 
 			img {
@@ -194,58 +205,71 @@
 		}
 
 		.custom-control-label {
-			padding-left: 2rem;
+			padding-left: 3rem;
 			line-height: 1.8rem;
-			font-size: $fontsize_xs;
+			font-size: $fontsize_xs2;
 			margin-bottom: 1rem;
 			font-weight: $weight_light;
+			min-height: 2rem;
 
 			// rounded square-box background
 			&::before {
 				width: 1.8rem;
 				height: 1.8rem;
-				top: 0.3rem;
+				top: 0.1rem;
+				left: 0.2rem;
 				box-shadow: inset 0 0 0 0.1rem $light;
 				border: 0.1rem solid $shade_darker;
 			}
 
 			// tick mark
 			&::after {
-				top: 0.2rem;
+				top: 0;
 				width: 2rem;
 				height: 2rem;
-				left: -1.6rem;
+				left: 0.1rem;
 			}
 		}
 	}
 
 	.content-page-1 {
 		overflow-y: auto;
-		color: $shade_blue;
-		padding: 3rem 4rem 0;
-		height: 100%;
+		color: $shade_blue;		
+		padding: 0rem 7.2rem 1.5rem 7.2rem;
+		height: auto;
 		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 		letter-spacing: 0.05rem;
-		text-align: center;
+		text-align: left;
+		@media #{$breakpoint_md} {			
+			height: 100%;
+		}
+		@media #{$breakpoint_sm} {
+			width: 100%;
+			height: 42rem;
+			padding: 0rem 3.6rem 1.5rem;
+		}
 
 		ul {
-			width: 75%;
+			width: 90%;
 			margin: 0 auto;
 			li {
-				margin-bottom: 1.2rem;
+				margin-bottom: 1rem;
 				text-align: left;
 			}
 		}
 
 		div.row:first-child {
-			margin-bottom: 2rem;
+			margin-bottom: 1.5rem;
 		}
 	}
 
 	.next-btn {
 		padding: 0.5rem 0 1.5rem;
 		flex-shrink: 0;
+		@media #{$breakpoint_md} {
+			margin-top: 1rem;
+		}
 	}
 
 	.vtr-progress-bar {
@@ -497,9 +521,6 @@
 		&:hover {
 			color: $dark !important;
 		}
-		&:focus {
-			outline: none;
-		}
 	}
 
 	.html-css {
@@ -524,9 +545,6 @@
 	.content-page-2 .interests input[type="checkbox"] + label,
 	.content-page-2 .privacy-check .custom-checkbox {
 		cursor: pointer;
-		&:focus {
-			outline: none;
-		}
 	}
 
 	.content-page-2 span.more-interests:hover,

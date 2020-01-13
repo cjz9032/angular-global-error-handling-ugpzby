@@ -7,10 +7,13 @@ import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
 import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
-import { EMPTY, Subscription } from 'rxjs';
+import { EMPTY, Observable, Subscription } from 'rxjs';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
-import { StringBooleanEnum } from './top-row-functions-ideapad/top-row-functions-ideapad.interface';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { BacklightService } from './backlight/backlight.service';
+import { map } from 'rxjs/operators';
+import { StringBooleanEnum } from '../../../../../data-models/common/common.interface';
+import { BacklightLevelEnum } from './backlight/backlight.enum';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -53,14 +56,72 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public inputAccessoriesCapability: InputAccessoriesCapability;
 	hasUDKCapability = false;
 	fnLockCapability = false;
+	cacheFound = false;
 	private topRowFunctionsIdeapadSubscription: Subscription;
+
+	backlightCapability$: Observable<boolean>;
+
+	public fnCtrlKeyTooltipContent = [
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key1',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key1',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action1'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key2',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key2',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action2'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key3',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key3',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action3'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key4',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key4',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action4'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key5',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key5',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action5'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key6',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key6',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action6'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key7',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key7',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action7'},
+
+		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key8',
+		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key8',
+		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action8'}
+
+		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key9',
+		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key9',
+		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action9'},
+
+		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key10',
+		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key10',
+		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action10'},
+
+		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key11',
+		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key11',
+		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action1'},
+
+		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key12',
+		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key12',
+		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action12'},
+
+		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key13',
+		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key13',
+		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action13'}
+	];
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private keyboardService: InputAccessoriesService,
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private commonService: CommonService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private backlightService: BacklightService
 	) {
 	}
 
@@ -85,6 +146,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 			});
 		});
+		this.backlightCapability$ = this.backlightService.backlight.pipe(
+			map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
+			map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY)
+		);
 	}
 
 	getVoipHotkeysSettings() {
@@ -137,6 +202,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		try {
 			this.inputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
 			if (this.inputAccessoriesCapability !== undefined) {
+				this.cacheFound = true;
 				this.keyboardCompatibility = this.inputAccessoriesCapability.isKeyboardMapAvailable;
 				this.keyboardVersion = this.inputAccessoriesCapability.keyboardVersion;
 				if (this.inputAccessoriesCapability.image && this.inputAccessoriesCapability.image.length > 0) {
@@ -147,13 +213,18 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					if (this.keyboardCompatibility && this.inputAccessoriesCapability.keyboardLayoutName) {
 						this.getAdditionalCapabilitiesFromCache();
 					}
-
 				}
 			} else {
 				this.inputAccessoriesCapability = new InputAccessoriesCapability();
-				this.keyboardService.GetKeyboardMapCapability().then((response=>{
-					this.keyboardCompatibility = response;
-				}))
+				this.cacheFound = false;
+				this.keyboardService.GetAllCapability().then((response => {
+					this.keyboardCompatibility = (response != null && Object.keys(response).indexOf('keyboardMapCapability') !== -1) ? response.keyboardMapCapability : false;
+					this.inputAccessoriesCapability.isKeyboardMapAvailable = this.keyboardCompatibility;
+					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
+					if (!this.cacheFound && this.keyboardCompatibility) {
+						this.getKBDLayoutName();
+					}
+				}));
 			}
 		} catch (error) {
 			console.log('initHiddenKbdFnFromCache', error);
@@ -254,7 +325,6 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					this.keyboardService.GetKbdHiddenKeyBackLightCapability(),
 
 				]).then((response: any[]) => {
-					// console.log('promise all resonse  here -------------.>', response);
 					if (response && response.length) {
 						if (response[0]) {
 							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');

@@ -45,6 +45,38 @@
 	.slider-item-text{
 		font-size: 1.3rem;
 		color: $shade_blue;
+		font-weight: $weight_bold;
+		letter-spacing: 0.83px;
 	}
-	
+	.camera-details {
+		@media #{$breakpoint_sm}{
+			margin-left: -1.5rem;
+			max-width: 35.5rem;
+		}
+		@media #{$breakpoint_md}{
+			margin-left: -1.5rem;
+			max-width: 35.5rem;
+		}
+		@media #{$breakpoint_lg}{
+			//margin-left: -1.5rem;
+			max-width: 35.5rem;
+		}
+		@media #{$breakpoint_xl}{
+			margin-left: -1.5rem;
+			max-width: 35.5rem;
+		}
+		.list-group {
+			li {
+				padding: 0.75rem 0rem;
+				vtr-ui-range-slider{
+					&::ng-deep {
+						.ng5-slider{
+							margin-top: 1.5rem;
+						}
+					}
+				}
+				
+			}
+		}
+	}
 }

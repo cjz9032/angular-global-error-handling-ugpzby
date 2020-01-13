@@ -5,15 +5,13 @@ ui-gaming-driver-popup {
 	max-width: 56rem;
 	background: $gaming_lightest;
 	z-index: 9;
-	border-radius: 1rem;
+	border-radius: 0.75rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
 	right: 8rem;
-	top: -13rem;
 	width: 35vw;
 	min-width: 56rem;
 	@media #{$breakpoint_md} {
-		min-width: 40rem;
-		top: -14rem;
+		min-width: 45rem;
 	}
 	@media #{$breakpoint_sm} {
 		min-width: 36rem;
@@ -33,6 +31,9 @@ ui-gaming-driver-popup {
 		border-left: 3rem solid transparent;
 		bottom: -1rem;
 		top: calc(50% - 1.5rem);
+		@media #{$breakpoint_md} {
+			top:11.8rem;
+		}
 		right: -1.4rem;
 		transform: rotate(-45deg);
 		@media #{$black-on-white} {
@@ -46,9 +47,14 @@ ui-gaming-driver-popup {
 	}
 	.vtr-ui-gaming-driver-popup {
 		&.modal-body {
-			padding: 3.8rem 5rem;
-			@media #{$breakpoint_sm} {
-		  padding: 3rem;
+			padding: 4rem 4rem;
+				.btn-close {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				padding: 0.6rem 1.2rem;
+				width: 4rem;
+				height: 4rem;
 			}
 		}
 		.content-body {
@@ -78,6 +84,12 @@ ui-gaming-driver-popup {
 			font-size: 1.6rem;
 			color: $light-grey;
 			padding: 0.5rem 0;
+		}
+
+		.btn-container{
+			div {
+				display: inline-block;
+			}
 		}
 
 		.enable-button {
@@ -127,9 +139,54 @@ ui-gaming-driver-popup {
 }
 
 ::ng-deep {
-.overclock-driver-popup {
-	#gamingDriverPopup {
-		top:-8rem !important;
-		}
+	.overclock-driver-popup, .networkboost-driver-popup{
+		#gamingDriverPopup{
+			@media #{$mediaquery_X48} {
+					min-width: 44rem;
+				}
+				@media #{$breakpoint_sm} {
+					min-width: 36rem;
+			}
+			.modal-body{
+						.btn-container{
+								div {
+									display: inline-block;
+										@media #{$mediaquery_sm} {
+											display: block;
+										}
+								}
+								.cancel-link{
+									@media #{$mediaquery_X48} {
+									margin-left: 1.5rem;
+									}
+								}
+								.enable-button{
+										@media #{$mediaquery_sm} {
+										margin-bottom: 1rem;
+									}
+								}
+						}
+					}
+		}	
 }
+		.overclock-driver-popup {
+			#gamingDriverPopup {
+				top:-8.5rem;
+				@media #{$breakpoint_sm} {
+					right: 7.5rem;
+				}
+					&::after {
+						top: 11.7rem;
+					}
+			}
+		}
+	.networkboost-driver-popup {
+		#gamingDriverPopup {
+			right:7.5rem;
+			top:-11.5rem;
+				&::after {
+						top: 11.7rem;
+					}
+			}
 	}
+}

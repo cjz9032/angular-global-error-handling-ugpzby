@@ -6,31 +6,31 @@
 		<div class="img-medium">
 			<div class="row">
 				<div class="col-6 subtitle">
-					{{dccSubTitle11}}
+					{{'dcc.dccDetails.subtitle11' | translate}}
 				</div>
 				<div class="col-6 subtitle">
-					{{dccSubTitle12}}
+					{{'dcc.dccDetails.subtitle12' | translate}}
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-6 icons">
-					<a href="" class="button">
-						<img src="/assets/images/dcc/icon-dcc-illustrator.jpg" />
-					</a>
+					<div class="button">
+						<img src="/assets/images/dcc/icon-dcc-premiere.jpg" />
+					</div>
 				</div>
 				<div class="col-6 icons">
-					<a href="" class="button">
+					<div class="button">
 						<img src="/assets/images/dcc/icon-dcc-photoshop.jpg" />
-					</a>
-					<a href="" class="button">
+					</div>
+					<div class="button">
 						<img src="/assets/images/dcc/icon-dcc-lightroom.jpg" />
-					</a>
+					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-6 body" [innerHTML]="dccBody11">
+				<div class="col-6 body" [innerHTML]="'dcc.dccDetails.body11' | translate">
 				</div>
-				<div class="col-6 body" [innerHTML]="dccBody12">
+				<div class="col-6 body" [innerHTML]="'dcc.dccDetails.body12' | translate">
 				</div>
 			</div>
 			<div class="row">
@@ -50,8 +50,8 @@
 		</div>
 		<div class="img-bottom">
 			<div class="text-content">
-				<div class="subtitle2">{{dccSubTitle2}}</div>
-				<div class="body2" [innerHTML]="dccBody2"> </div>
+				<div class="subtitle2">{{'dcc.dccDetails.subtitle2' | translate}}</div>
+				<div class="body2" [innerHTML]="'dcc.dccDetails.body2' | translate"> </div>
 			</div>
 		</div>
 	</div>

@@ -637,6 +637,7 @@ export class VantageShellService {
 	public getSecurityAdvisor(): Phoenix.SecurityAdvisor {
 		const securityAdvisor: Phoenix.SecurityAdvisor = {
 			antivirus: {
+				status: 'success',
 				mitt: null,
 				mcafeeDownloadUrl:
 					'https://www.mcafee.com/consumer/en-us/promos/expiry/l714/mls_430/trial/ab/wb.html?cid=239128&culture=en-us&affid=714&pir=1',
@@ -1916,7 +1917,13 @@ export class VantageShellService {
 
 		const gamingAutoClose: any = {
 			getAutoCloseList: this.getPromise(autoCloseList),
-			getRunningList: this.getPromise(runningList)
+			getRunningList: this.getPromise(runningList),
+			getStatus: this.getPromise(true),
+			setStatus: this.getPromise(true),
+			addAutoCloseList: this.getPromise(true),
+			delAutoCloseList: this.getPromise(true),
+			getNeedToAsk: this.getPromise(true),
+			setNeedToAsk: this.getPromise(true)
 		};
 		return gamingAutoClose;
 	}
@@ -2100,8 +2107,7 @@ export class VantageShellService {
 	 */
 	public getKeyboardManagerObject(): any {
 		const kbdManager: any = {
-			GetKeyboardMapCapability: this.getPromise(true),
-			GetUDKCapability: this.getPromise(true),
+			GetAllCapability: this.getPromise({ uDKCapability: true, keyboardMapCapability: true }),
 			GetKBDLayoutName: this.getPromise('Standered'),
 			GetKBDMachineType: this.getPromise('Other'),
 			GetKbdHiddenKeyPerformanceModeCapability: this.getPromise(false),

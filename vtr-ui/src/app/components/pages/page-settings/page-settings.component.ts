@@ -7,10 +7,12 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ConfigService } from 'src/app/services/config/config.service';
 import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
-import { BetaService } from 'src/app/services/beta/beta.service';
+import { BetaService, BetaStatus } from 'src/app/services/beta/beta.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
+import { MenuItem } from 'src/app/enums/menuItem.enum';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -130,6 +132,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					}
 				} catch (error) { }
 				break;
+			case SelfSelectEvent.SegmentChange:
+				this.getSegment();
+				break;
 			default:
 				break;
 		}
@@ -188,7 +193,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.getDeviceStatisticsPreference();
 		}
 		if (this.betaService) {
-			this.toggleBetaProgram = this.betaService.getBetaStatus();
+			this.toggleBetaProgram = this.betaService.getBetaStatus() === BetaStatus.On;
 		}
 	}
 	private getDeviceStatisticsPreference() {
@@ -325,8 +330,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	onToggleOfBetaProgram(event: any) {
 		this.toggleBetaProgram = event.switchValue;
 		this.sendSettingMetrics('SettingBetaProgram', event.switchValue);
-		this.betaService.setBetaStatus(this.toggleBetaProgram);
-		this.configService.notifyMenuChange();
+		this.betaService.setBetaStatus(this.toggleBetaProgram ? BetaStatus.On : BetaStatus.Off);
+		this.commonService.sendReplayNotification(MenuItem.MenuBetaItemChange, this.toggleBetaProgram);
 	}
 
 	sendMetrics(data: any) {

@@ -64,6 +64,6 @@ export class FingerPrintLandingViewModel {
 		}
 		this.whStatus.detail = this.translateString[`common.securityAdvisor.${finger === 'active' ? 'registered' : 'notRegistered'}`];
 		this.whStatus.status = finger === 'active' ? 'enabled' : 'disabled';
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, this.whStatus.status);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, finger);
 	}
 }

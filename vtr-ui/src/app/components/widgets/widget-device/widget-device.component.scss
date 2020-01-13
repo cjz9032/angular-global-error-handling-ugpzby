@@ -6,12 +6,15 @@
 	background-color: $light;
 	overflow: hidden;
 	position: relative;
+	.my-dev-pad {
+		padding: 2.4rem;
+	}
 	.device-status {
 		@media #{$breakpoint_lg} {
-			flex-direction: column;
+			flex-direction: row;
 		}
 		@media #{$breakpoint_md} {
-			flex-direction: column;
+			flex-direction: row;
 		}
 		@media #{$breakpoint_sm} {
 			flex-direction: column;
@@ -23,13 +26,13 @@
 			display: flex;
 			justify-content: flex-end;
 			flex-grow: 1;
-			@media #{$breakpoint_lg} {
+			padding-top: 3rem;
+			@media #{$breakpoint_sm} {
 				justify-content: flex-start;
 
 			}
 			.circleimage {
 				@media #{$breakpoint_lg} {
-					padding-top: 4rem;
 					width: 200px;
 
 				}
@@ -152,7 +155,7 @@
 				@media #{$breakpoint_xl} {
 					flex-direction: column;
 					flex-grow: 0;
-					width: 85%;
+					width: 100%;
 
 				}
 				@media #{$breakpoint_lg} {
@@ -165,8 +168,6 @@
 				@media #{$breakpoint_sm} {
 					flex-direction: column;
 					flex-grow: 0;
-					width: 80%;
-
 				}
 			}
 			.title {
@@ -174,6 +175,14 @@
 				font-weight: $weight_light;
 				margin-bottom: 0.5rem;
 				color: $charcoal;
+				width: 70%;
+				@media #{$breakpoint_md} {
+					width: 100%;
+				}
+				@media #{$breakpoint_sm} {
+					width: 100%;
+				}
+
 
 				.systemDetails {
 					font-size: $fontsize_xs;

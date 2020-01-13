@@ -84,12 +84,15 @@ import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
 import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
 import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faCircle } from '@fortawesome/pro-light-svg-icons/faCircle';
+import { faBriefcase } from '@fortawesome/pro-light-svg-icons/faBriefcase';
 import { faCircle as falCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-graph/smart-standby-graph.component';
 import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.component';
+import { BacklightModule } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.module';
+import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight-thinkpad/backlight-thinkpad.component';
 
 
 @NgModule({
@@ -130,28 +133,30 @@ import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-dev
 		TopRowFunctionsComponent,
 		VoiceComponent,
 		SmartStandbyGraphComponent,
-		TopRowFunctionsIdeapadComponent
+		TopRowFunctionsIdeapadComponent,
+		BacklightThinkpadComponent
 	],
-	imports: [
-		CommonModule,
-		CommonUiModule,
-		CommonWidgetModule,
-		CommonModalModule,
-		SharedModule,
-		HardwareSettingRoutingModule,
-		FontAwesomeModule,
-		ContainerCardModule,
-		MetricsModule,
-		NgbTooltipModule,
-		HeaderMainModule,
-		WidgetOfflineModule,
-		WidgetSecurityStatusModule,
-		NgbDropdownModule,
-		RouterModule,
-		NgbCollapseModule,
-		PageLayoutModule,
-		SettingsPageLayoutModule,
-	],
+    imports: [
+        CommonModule,
+        CommonUiModule,
+        CommonWidgetModule,
+        CommonModalModule,
+        SharedModule,
+        HardwareSettingRoutingModule,
+        FontAwesomeModule,
+        ContainerCardModule,
+        MetricsModule,
+        NgbTooltipModule,
+        HeaderMainModule,
+        WidgetOfflineModule,
+        WidgetSecurityStatusModule,
+        NgbDropdownModule,
+        RouterModule,
+        NgbCollapseModule,
+        PageLayoutModule,
+        SettingsPageLayoutModule,
+        BacklightModule,
+    ],
 	exports: [
 		CommonModule,
 		CommonUiModule,
@@ -201,5 +206,6 @@ export class HardwareSettingsModule {
 		library.add(faCircleNotch);
 		library.add(faAngleRight);
 		library.add(faCalendarAlt);
+		library.add(faBriefcase);
 	}
 }

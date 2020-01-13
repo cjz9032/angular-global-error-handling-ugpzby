@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Olá! Está disponível uma versão mais recente do Vantage, pretende carregá-la?"
+        },
+        "offline": {
+            "connectToUseFeature": "Ligue-se à Internet para utilizar esta funcionalidade"
         }
     },
     "privacy": {
@@ -717,20 +720,24 @@
             "button": "Fornecer comentários",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comentários...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Agradecemos os seus comentários!"
-                },
                 "question1": "Gosta do novo estilo do Vantage?",
                 "question2": "Acha que o desempenho é aceitável?",
                 "question3": "Utilizaria a aplicação mais frequentemente no futuro?",
+                "question4": "Sabia que pode utilizar o Lenovo Vantage para atualizar os controladores de software, o firmware e o BIOS no seu computador?",
+                "question5": "Qual a probabilidade de recomendar a aplicação Lenovo Vantage a um amigo ou colega?",
+                "notAtAllLikely": "Nada provável",
+                "extremelyLikely": "Extremamente provável",
                 "yes": "Sim",
                 "no": "Não",
                 "tips1": "Forneça quaisquer comentários adicionais",
+                "comments": "Comentários...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Enviar comentários",
-                "submitScreenShot": "Enviar captura de ecrã"
+                "submitScreenShot": "Enviar captura de ecrã",
+                "messages": {
+                    "feedbackSuccess": "Agradecemos os seus comentários!"
+                }
             }
         },
         "quickSettings": {
@@ -1125,7 +1132,8 @@
                             "yes": "Sim",
                             "description3": "Tem a certeza de que pretende parar a reposição do indicador de bateria?"
                         },
-                        "dual_note": "Nota: apenas pode ser reposta uma bateria de cada vez."
+                        "dual_note": "Nota: apenas pode ser reposta uma bateria de cada vez.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1363,12 +1371,23 @@
                             "alwaysOn": "Sempre ligado",
                             "never": "nunca",
                             "halfTime": "Intervalo de tempo de exibição do temporizador",
-                            "select": "Select",
-                            "time": "Time"
+                            "select": "Selecionar",
+                            "time": "Hora"
                         },
                         "taskBarDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DA BARRA DE TAREFAS",
                         "backgroundDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DE SEGUNDO PLANO",
                         "displayDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DO ECRÃ"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1530,6 +1549,19 @@
                     "control2": "CONTROLOS DO RATO",
                     "control3": "CONTROLOS DO TRACKPOINT",
                     "less": "MENOS"
+                },
+                "backlight": {
+                    "title": "Keyboard backlight",
+                    "description": {
+                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
+                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Low",
+                        "high": "High",
+                        "off": "Off"
+                    }
                 }
             }
         },
@@ -1876,7 +1908,7 @@
             "startDate": "Data de início: ",
             "endDate": "Data de fim: ",
             "status": "Estado: ",
-            "subDescription1": "Este produto tem garantia limitada em anos e inclui reparação ou troca num centro de assistência designado. Os clientes podem contactar o centro de assistência local para obter mais informações. Os revendedores poderão fornecer serviço de recolha para reparação para este produto.",
+            "subDescription1": "A Garantia Limitada da Lenovo é aplicável ao seu computador e confere o direito ao Serviço Depot. Os clientes podem contactar o centro de assistência local para obter mais informações. Os revendedores poderão fornecer serviço de recolha para reparação para este produto.",
             "subDescription2": "Não foi possível localizar os detalhes de garantia para o dispositivo. Para mais opções de garantia, visite o nosso sítio de suporte na Web.",
             "viewWarrantyOptions": "VER OPÇÕES DE GARANTIA",
             "offlineTips1": "Estabeleça ligação à Internet para obter as mais recentes informações sobre garantia.",
@@ -1910,7 +1942,7 @@
             "otherSoftwareLicenses": "Outras licenças de software",
             "ourWebsite": "O nosso sítio da Web",
             "aboutYourDevice": "Acerca do dispositivo",
-            "copyright": "© 2002-2019 Lenovo. Todos os direitos reservados"
+            "copyright": "© 2002-2020 Lenovo. Todos os direitos reservados"
         },
         "quickAccess": {
             "categories": "Categorias",
@@ -1940,47 +1972,47 @@
             "passwordText": "Armazene e administre com segurança todas as suas palavras-passe encriptadas com uma aplicação de proteção digital profissional em vez de simplesmente as armazenar nos seus navegadores que podem ser facilmente acedidos por terceiros sem o seu conhecimento.",
             "enhanceTitle": "O que devo fazer para melhorar a proteção de segurança?",
             "enhanceText": "Recomendamos vivamente que tenha os seus dispositivos protegidos por software antivírus e firewall, e configure a notificação UAC com proteção mínima. E crie palavras-passe fortes e administre-as de forma segura, encripte os seus dados enquanto utiliza redes públicas como proteção avançada.",
-            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
-            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
-            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
-            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
-            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
-            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
-            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
-            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
-            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
-            "windows": "Windows Activation",
-            "goAntivirus": "go to antivirus",
-            "goFirewall": "go to firewall",
-            "goPassword": "go to passwordManger",
-            "goWifi": "go to wifi-security",
-            "goVpn": "go to VPN security",
-            "visitWindows": "Visit Windows Activation",
-            "visitFingerprint": "Visit Fingerprint reader",
-            "visitUac": "Visit User Account Control",
-            "visitHde": "Visit Hard drive encryption",
-            "haveOwnPassword": "I have my own password manager",
-            "haveOwnWifi": "I have my own wifi security",
-            "haveOwnVpn": "I have my own wifi security",
-            "uac": "User Account Control (UAC)",
-            "uacTitles": "User Account Control",
-            "hde": "Hard drive encryption",
-            "level": "Security Level:",
-            "noProtection": "No protection",
-            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
-            "basic": "BASIC",
-            "basicTitle": "Basic protection",
-            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
-            "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own",
-            "basicSecurity": "BASIC SECURITY",
-            "advancedSecurity": "ADVANCED SECURITY",
-            "intermediateSecurity": "INTERMEDIATE SECURITY"
+            "antivirusContent": "Utilize um software antivírus para evitar, detetar e remover malware dos seus dispositivos.",
+            "firewallContent": "A firewall estabelece uma barreira entre uma rede interna fidedigna e uma rede externa não fidedigna, que monitoriza e controla o tráfego de rede de entrada e de saída baseada em regras de segurança pré-determinadas.",
+            "windowsActiveContent": "A utilização de uma cópia genuína do Windows pode reduzir o risco perante as ameaças de segurança.",
+            "passwordContent": "Utilize uma forma mais segura e mais fácil de gerir as suas palavras-passe, pagamentos e informações pessoais. Pode inclusivamente criar palavras-passe fortes e complexas, e iniciar sessão instantaneamente em cada site.",
+            "fingerprintContent": "Uma forma rápida e segura de iniciar sessão no Windows, fazer pagamentos e estabelecer ligação a aplicações e serviços.",
+            "uacContent": "Desloque o controlo de deslize para selecionar quanto pretende que o Controlo de Conta de Utilizador o proteja contra alterações potencialmente prejudiciais.",
+            "wifiContent": "Um serviço de software avançado que ajuda o seu dispositivo a diferenciar as redes sem fios seguras das potencialmente maliciosas.",
+            "bitLockerContent": "Ajude a proteger os seus ficheiros e pastas contra o acesso não autorizado ao encriptar os dados no seu disco rígido.",
+            "vpnContent": "Utilize um serviço VPN para encriptar as informações que envia e recebe com a rede Wi-Fi pública e mantenha a sua atividade online segura e privada.",
+            "windows": "Ativação do Windows",
+            "goAntivirus": "ir para antivírus",
+            "goFirewall": "ir para firewall",
+            "goPassword": "ir para passwordManger",
+            "goWifi": "ir para segurança wi-fi",
+            "goVpn": "ir para segurança da VPN",
+            "visitWindows": "Visitar Ativação do Windows",
+            "visitFingerprint": "Visitar Leitor de impressões digitais",
+            "visitUac": "Visitar Controlo de Conta de Utilizador",
+            "visitHde": "Visitar Encriptação de disco rígido",
+            "haveOwnPassword": "Tenho o meu próprio gestor de palavras-passe",
+            "haveOwnWifi": "Tenho a minha própria segurança Wi-Fi",
+            "haveOwnVpn": "Tenho a minha própria VPN",
+            "uac": "Controlo de Conta de Utilizador (UAC)",
+            "uacTitles": "Controlo de Conta de Utilizador",
+            "hde": "Encriptação da unidade de disco rígido",
+            "level": "Nível de Segurança:",
+            "noProtection": "Sem proteção",
+            "noProtectionDesc": "O seu dispositivo não tem proteção de segurança, pelo que ativamos o Windows Defender automatização como proteção mínima. Para proteger o seu dispositivo contra as ameaças recebidas, experimente instalar um software antivírus.",
+            "basic": "BÁSICO",
+            "basicTitle": "Proteção básica",
+            "basicDesc": "O seu dispositivo tem apenas a proteção de segurança básica ativada. Para melhorar a proteção, experimente ativar as notificações do UAC e utilizar um gestor de palavras-passe.",
+            "intermediate": "INTERMÉDIA",
+            "intermediateTitle": "Proteção intermédia",
+            "intermediateDesc": "Bom trabalho! Está a apenas um passo de obter proteção avançada, experimente encriptar os seus dados e monitorizar as falhas de segurança da sua rede.",
+            "advanced": "AVANÇADAS",
+            "advancedTitle": "Proteção avançada",
+            "advancedDesc": "Parabéns! O seu dispositivo tem a proteção de segurança básica, intermédia e avançada ativadas, bom trabalho!",
+            "haveOwn": "Tenho a minha própria",
+            "basicSecurity": "SEGURANÇA BÁSICA",
+            "advancedSecurity": "SEGURANÇA AVANÇADA",
+            "intermediateSecurity": "SEGURANÇA INTERMÉDIA"
         },
         "antivirus": {
             "common": {
@@ -2292,7 +2324,7 @@
         },
         "question1": {
             "title": "Faça uma cópia de segurança e restaure os seus ficheiros",
-            "description": "<div>    <div class='faqInFs4Fb'>        Faça uma cópia de segurança e restaure os seus ficheiros    </div>    <hr />    <div class='faqInMb7'>        É sempre uma boa ideia ter uma cópia de segurança. Mantenha cópias dos seus ficheiros em outra unidade caso aconteça algo aos originais.    </div>    <div class='faqInFs3Fb'>        Configurar a cópia de segurança    </div>    <hr />    <div class='mb-5'>        Selecione o botão <span class='faqInFb'>Iniciar</span>, selecione <span class='faqInFb'>Definições</span> > <span class='faqInFb'>Atualização e segurança</span> > <span class='faqInFb'>Cópia de segurança</span> > <span class='faqInFb'>Adicionar uma unidade</span> , e, em seguida, escolha uma unidade externa ou local de rede para as suas cópias de segurança.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Configuração concluída! A cada, será feita uma cópia de segurança de tudo na sua pasta de utilizador (C:\\\\Users\\\\username). Para alterar os ficheiros ou a frequência da cópia de segurança, vá a <span class='faqInFb'>Mais Opções</span>.    </div>    <div class='faqInFs3Fb'>        Restaurar os Ficheiros    </div>    <div class='mb-5'>        Caso lhe falte um ficheiro ou pasta importante, pode recuperá-lo através do seguinte procedimento:    </div>    <div>        <div class='mb-3'>1. Introduza <span class='faqInFb'>Restaurar ficheiros</span> na caixa de pesquisa da barra de tarefas e, em seguida, selecione <span class='faqInFb'> Restaurar os ficheiros com o Histórico de Ficheiros</span>.</div>        <div class='mb-3'>2. Procure o ficheiro de que precisa e, em seguida, utilize as setas para ver todas as versões do mesmo</div>        <div class='mb-3'>3. Quando encontrar a versão pretendida, selecione <span class='faqInFb'>Restaurar</span> para o guardar na sua localização original. Para a guardar num local diferente, prima sem soltar (ou clique com o botão direito do rato) <span class='faqInFb'>Restaurar</span>, selecione <span class='faqInFb'>Restaurar para</span>, e escolha outra localização.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Faça uma cópia de segurança e restaure os seus ficheiros    </div>    <hr />    <div class='faqInMb7'>        É sempre uma boa ideia ter uma cópia de segurança. Mantenha cópias dos seus ficheiros em outra unidade caso aconteça algo aos originais.    </div>    <div class='faqInFs3Fb'>        Configurar a cópia de segurança    </div>    <hr />    <div class='mb-5'>        Selecione o botão <span class='faqInFb'>Iniciar</span>, selecione <span class='faqInFb'>Definições</span> > <span class='faqInFb'>Atualização e segurança</span> > <span class='faqInFb'>Cópia de segurança</span> > <span class='faqInFb'>Adicionar uma unidade</span> , e, em seguida, escolha uma unidade externa ou local de rede para as suas cópias de segurança.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Configuração concluída! A cada, será feita uma cópia de segurança de tudo na sua pasta de utilizador (C:\\\\Users\\\\username). Para alterar os ficheiros ou a frequência da cópia de segurança, vá a <span class='faqInFb'>Mais Opções</span>.    </div>    <div class='faqInFs3Fb'>        Restaurar os Ficheiros    </div>    <div class='mb-5'>        Caso lhe falte um ficheiro ou pasta importante, pode recuperá-lo através do seguinte procedimento:    </div>    <div>        <div class='mb-3'>1. Introduza <span class='faqInFb'>Restaurar ficheiros</span> na caixa de pesquisa da barra de tarefas e, em seguida, selecione <span class='faqInFb'> Restaurar os ficheiros com o Histórico de Ficheiros</span>.</div>        <div class='mb-3'>2. Procure o ficheiro de que precisa e, em seguida, utilize as setas para ver todas as versões do mesmo</div>        <div class='mb-3'>3. Quando encontrar a versão pretendida, selecione <span class='faqInFb'>Restaurar</span> para o guardar na sua localização original. Para a guardar num local diferente, prima sem soltar (ou clique com o botão direito do rato) <span class='faqInFb'>Restaurar</span>, selecione <span class='faqInFb'>Restaurar para</span>, e escolha outra localização.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -2333,7 +2365,7 @@
         },
         "question2": {
             "title": "Como atualizar o PC",
-            "description": "<div>    <div class='faqInFs4Fb'>        Como atualizar o PC    </div>    <hr>    <div class='faqInFs25FbP5'>        Sintoma    </div>    <div class='faqInP5'>        Se o seu PC não estiver a funcionar tão bem como antes, e não souber porquê, pode atualizar o seu PC sem apagar nenhum dos seus ficheiros pessoais ou alterar as suas definições. O Windows pode \"atualizar\" o PC para que seja mais como uma nova instalação sem apagar os seus ficheiros pessoais.    </div>    <div class='faqInP5'>        Atualizar o PC, com esta opção, os seus ficheiros e definições personalizadas não vão mudar    </div>    <div class='faqInP5'>        <ul>            <li>As definições do PC serão alteradas para os valores predefinidos</li>            <li>As aplicações da loja Windows serão mantidas</li>            <li>Remove as aplicações que tenha instalado a partir de um disco ou sítio web</li>            <li>Será guardada no seu ambiente de trabalho uma lista de todas as aplicações removidas</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Marcas Afetadas    </div>    <div>        <ul>            <li>Todos os computadores de secretária e portáteis</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Sistema operativo    </div>    <div>        <ul>            <li>Windows 8, 8.1 e 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Solução    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Toque ou faça clique em <span class='faqInFb'> Definições </span>                    </li>                    <li class='faqInP5'>                        Toque ou faça clique em <span class='faqInFb'> Atualização e recuperação</span>                    </li>                    <li class='faqInP5'>                        <div>Toque ou faça clique em <span class='faqInFb'> Recuperação</span></div>                        <div class='faqInP5'>Em Atualizar o PC sem afetar os ficheiros pessoais, toque ou faça clique em <span class='faqInFb'> Introdução.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Clique em <span class='faqInFb'> “Seguinte”</span>.                    </li>                    <li class='faqInP5'>                        Clique em <span class='faqInFb'> “Atualizar” </span>para iniciar o processo de atualização.                    </li>                    <li class='faqInP5'>                        Uma vez terminado o processo de atualização, pode encontrar uma lista das aplicações removidas no ambiente de trabalho                    </li>                    <li class='faqInP5'>                        Pode encontrar as aplicações removidas ao restaurar o sistema                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Procure por <span class='faqInFb'> atualizar </span>na ferramenta de busca disponível no menu Iniciar,</li>                    <li class='faqInP5'>                        <div>Clique em <span class='faqInFb'> “Atualizar o PC sem afetar os ficheiros pessoais”</span> nos resultados da pesquisa como mostrado abaixo.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Clique no botão <span class='faqInFb'> Introdução </span> logo abaixo do cabeçalho<span class='faqInFb'> “Atualizar o PC sem afetar os ficheiros pessoais”</span> para começar a atualizar seu PC com Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Informações Adicionais    </div>    <div>        Na maioria dos casos, quando começa a atualizar o seu computador, ele termina sozinho. No entanto, se o Windows precisar de ficheiros em falta, ser-lhe-á solicitado que insira um suporte de recuperação, que normalmente é um disco DVD ou uma pen USB. Se isso acontecer, o que vai precisar depende do seu PC.    </div>    <div class='faqInP10'>        Se atualizou o seu PC para Windows 8.1 ou Windows RT 8.1 com um DVD, use esse disco. Se não tiver um suporte Windows 8.1 ou Windows RT 8.1, entre em contacto com o Suporte da Microsoft.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Como atualizar o PC    </div>    <hr>    <div class='faqInFs25FbP5'>        Sintoma    </div>    <div class='faqInP5'>        Se o seu PC não estiver a funcionar tão bem como antes, e não souber porquê, pode atualizar o seu PC sem apagar nenhum dos seus ficheiros pessoais ou alterar as suas definições. O Windows pode \"atualizar\" o PC para que seja mais como uma nova instalação sem apagar os seus ficheiros pessoais.    </div>    <div class='faqInP5'>        Atualizar o PC, com esta opção, os seus ficheiros e definições personalizadas não vão mudar    </div>    <div class='faqInP5'>        <ul>            <li>As definições do PC serão alteradas para os valores predefinidos</li>            <li>As aplicações da loja Windows serão mantidas</li>            <li>Remove as aplicações que tenha instalado a partir de um disco ou sítio web</li>            <li>Será guardada no seu ambiente de trabalho uma lista de todas as aplicações removidas</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Marcas Afetadas    </div>    <div>        <ul>            <li>Todos os computadores de secretária e portáteis</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Sistema operativo    </div>    <div>        <ul>            <li>Windows 8, 8.1 e 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Solução    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Toque ou faça clique em <span class='faqInFb'> Definições </span>                    </li>                    <li class='faqInP5'>                        Toque ou faça clique em <span class='faqInFb'> Atualização e recuperação</span>                    </li>                    <li class='faqInP5'>                        <div>Toque ou faça clique em <span class='faqInFb'> Recuperação</span></div>                        <div class='faqInP5'>Em Atualizar o PC sem afetar os ficheiros pessoais, toque ou faça clique em <span class='faqInFb'> Introdução.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        Clique em <span class='faqInFb'> “Seguinte”</span>.                    </li>                    <li class='faqInP5'>                        Clique em <span class='faqInFb'> “Atualizar” </span>para iniciar o processo de atualização.                    </li>                    <li class='faqInP5'>                        Uma vez terminado o processo de atualização, pode encontrar uma lista das aplicações removidas no ambiente de trabalho                    </li>                    <li class='faqInP5'>                        Pode encontrar as aplicações removidas ao restaurar o sistema                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Procure por <span class='faqInFb'> atualizar </span>na ferramenta de busca disponível no menu Iniciar,</li>                    <li class='faqInP5'>                        <div>Clique em <span class='faqInFb'> “Atualizar o PC sem afetar os ficheiros pessoais”</span> nos resultados da pesquisa como mostrado abaixo.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Clique no botão <span class='faqInFb'> Introdução </span> logo abaixo do cabeçalho<span class='faqInFb'> “Atualizar o PC sem afetar os ficheiros pessoais”</span> para começar a atualizar seu PC com Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Informações Adicionais    </div>    <div>        Na maioria dos casos, quando começa a atualizar o seu computador, ele termina sozinho. No entanto, se o Windows precisar de ficheiros em falta, ser-lhe-á solicitado que insira um suporte de recuperação, que normalmente é um disco DVD ou uma pen USB. Se isso acontecer, o que vai precisar depende do seu PC.    </div>    <div class='faqInP10'>        Se atualizou o seu PC para Windows 8.1 ou Windows RT 8.1 com um DVD, use esse disco. Se não tiver um suporte Windows 8.1 ou Windows RT 8.1, entre em contacto com o Suporte da Microsoft.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2496,7 +2528,7 @@
         },
         "question4": {
             "title": "Verificar a utilização de bateria da sua máquina",
-            "description": "<div class='faqInFs4Fb'>    Verificar a utilização de bateria da sua máquina</div><hr><h3 class='faqInFs25FbP10'>Sintoma</h3><p>O Windows 10 inclui um novo ecrã \"<strong>Uso da bateria\"</strong> que mostra o que está a gastar a bateria do seu portátil. Isso significa que lhe indicará exatamente quais as aplicações - tanto as aplicações de ambiente de trabalho como as \"universais\" do Windows 10 - que estão a usar demasiada energia.</p><h3 class='faqInFs25FbP10'>Marcas Afetadas</h3><ul>    <li>Computadores de secretária e portáteis da Lenovo</li></ul><h3 class='faqInFs25FbP10'>Sistemas Afetados</h3><ul>    <li>Tudo</li></ul><h3 class='faqInFs25FbP10'>Sistema Operativo</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Solução</h3><p>Esta funcionalidade é nova no Windows 10, e precisamos de a encontrar em primeiro lugar, pois não está guardada no seu habitual ecrã do <strong>Painel de controlo, </strong>esta funcionalidade está localizada na nova aplicação <strong>\"Definições\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Encontre o ecrã de uso da bateria</h3></p><p>1. Clique ou toque na opção <strong>\"Definições</strong>\" no menu iniciar</p><p>2. Em <strong>Definições </strong> selecione <strong>\"Sistema\"</strong> e depois selecione <strong> \"Poupança de bateria.\" <br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/4.1.png' /></p><p>3. Clique ou toque na ligação <strong>\"Uso da bateria\"</strong> sob este cabeçalho para ver mais detalhes. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analise o seu uso de energia</h3><p>4 Pode mudar para fazer com que o ecrã de uso da bateria exiba o uso da bateria das últimas 24 horas, das últimas 48 horas, ou da última semana</p><p>5 percentagens<strong>\"Sistema,\"</strong> \" <strong>Apresentar</strong> \" e \"<strong>Wi-Fi\"</strong>. Isso mostra quanta energia da bateria foi usada pelos processos do sistema, o ecrã,</p><p>6 As opções <strong>\"Em uso\"</strong> e <strong>\"Fundo\"</strong> mostram quanta energia é usada pelas aplicações enquanto as utiliza, em comparação com as aplicações em execução em segundo plano.</p><p>7 Se as aplicações estiverem a usar energia em segundo plano, pode clicar ou tocar em <strong> \"Alterar definições de aplicações em segundo plano\" </strong>e configurar as aplicações para não serem executadas em segundo plano. Isto só funciona para aplicações universais do Windows 10.</p><p>8 Desloque-se para baixo e verá uma lista de aplicações, esta é considerada a secção mais útil desta funcionalidade. Irá apresentar-lhe uma lista das aplicações que usaram carga da bateria nesse período, e mostrar-lhe-á a percentagem de bateria que cada aplicação usou</p><p><img src='./../../../assets/images/qa/4.2.png' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Verificar a utilização de bateria da sua máquina</div><hr><h3 class='faqInFs25FbP10'>Sintoma</h3><p>O Windows 10 inclui um novo ecrã \"<strong>Uso da bateria\"</strong> que mostra o que está a gastar a bateria do seu portátil. Isso significa que lhe indicará exatamente quais as aplicações - tanto as aplicações de ambiente de trabalho como as \"universais\" do Windows 10 - que estão a usar demasiada energia.</p><h3 class='faqInFs25FbP10'>Marcas Afetadas</h3><ul>    <li>Computadores de secretária e portáteis da Lenovo</li></ul><h3 class='faqInFs25FbP10'>Sistemas Afetados</h3><ul>    <li>Tudo</li></ul><h3 class='faqInFs25FbP10'>Sistema Operativo</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Solução</h3><p>Esta funcionalidade é nova no Windows 10, e precisamos de a encontrar em primeiro lugar, pois não está guardada no seu habitual ecrã do <strong>Painel de controlo, </strong>esta funcionalidade está localizada na nova aplicação <strong>\"Definições\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Encontre o ecrã de uso da bateria</h3></p><p>1. Clique ou toque na opção <strong>\"Definições</strong>\" no menu iniciar</p><p>2. Em <strong>Definições </strong> selecione <strong>\"Sistema\"</strong> e depois selecione <strong> \"Poupança de bateria.\" <br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Clique ou toque na ligação <strong>\"Uso da bateria\"</strong> sob este cabeçalho para ver mais detalhes. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analise o seu uso de energia</h3><p>4. Pode mudar para fazer com que o ecrã de uso da bateria exiba o uso da bateria das últimas 24 horas, das últimas 48 horas, ou da última semana</p><p>5. percentagens<strong>\"Sistema,\"</strong> \" <strong>Apresentar</strong> \" e \"<strong>Wi-Fi\"</strong>. Isso mostra quanta energia da bateria foi usada pelos processos do sistema, o ecrã,</p><p>6. As opções <strong>\"Em uso\"</strong> e <strong>\"Fundo\"</strong> mostram quanta energia é usada pelas aplicações enquanto as utiliza, em comparação com as aplicações em execução em segundo plano.</p><p>7. Se as aplicações estiverem a usar energia em segundo plano, pode clicar ou tocar em <strong> \"Alterar definições de aplicações em segundo plano\" </strong>e configurar as aplicações para não serem executadas em segundo plano. Isto só funciona para aplicações universais do Windows 10.</p><p>8. Desloque-se para baixo e verá uma lista de aplicações, esta é considerada a secção mais útil desta funcionalidade. Irá apresentar-lhe uma lista das aplicações que usaram carga da bateria nesse período, e mostrar-lhe-á a percentagem de bateria que cada aplicação usou</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2564,7 +2596,7 @@
         },
         "question5": {
             "title": "Utilizar o PC como tablet",
-            "description": "<div class='faqInFs4Fb'>    Utilizar o PC como tablet</div><hr><p>O modo Tablet torna o Windows mais intuitivo e fácil de usar quando tem um dispositivo com um ecrã tátil.</p><h3 class='faqInFs25FbP10'>Utilizar o modo tablet</h3><p>Para ativar o modo tablet, selecione <strong>Centro de Ação</strong> na barra de tarefas e selecione <strong>Modo tablet</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>Nota</h3><p>Para descobrir se o seu dispositivo pode ativar automaticamente o modo tablet, pesquise o seu dispositivo no sítio web do fabricante. O suporte para esta funcionalidade depende do hardware, do controlador instalado e de como o dispositivo foi configurado pelo fabricante. </p><p> </p><p>No modo tablet, as aplicações abrem em ecrã inteiro, dando-lhe mais espaço para trabalhar. Para fechar uma aplicação, arraste-a para a parte inferior do ecrã.</p><p> </p><h3 class='faqInFs25FbP10'>Sugestão</h3><p>A barra de tarefas está disponível quando o seu PC está no modo tablet, mas pode ocultá-la se quiser mais espaço no ecrã. Selecione o botão <strong>Iniciar, </strong>selecione <strong>Definições </strong>> <strong>Sistema </strong>> <strong> Modo de tablet </strong>, e ligue <strong>Ocultar automaticamente a barra de tarefas no modo de tablet</strong>. Para ver a barra de tarefas oculta, deslize para cima a partir da parte inferior do ecrã ou use o rato para pairar sobre ela.</p><h3 class='faqInFs25FbP10'>Usar duas aplicações simultaneamente</h3><p>Para utilizar duas aplicações lado a lado no modo tablet, arraste uma aplicação aberta para baixo e para o lado. Verá onde se encaixa, e todas as aplicações abertas ao lado dela.</p><p>Nesta vista, também pode:</p><ul>    <li>Usar a borda partilhada entre duas aplicações para redimensionar as duas aplicações ao mesmo tempo.</li>    <li>Abrir uma nova aplicação na vista de tarefas&mdash;selecione <strong>Vista de tarefas</strong> na barra de tarefas, selecione uma aplicação e arraste-a para um lado para a encaixar no ecrã dividido.</li>    <li>Use o botão voltar na barra de tarefas para voltar a uma aplicação ou para abrir uma aplicação que estava a usar antes.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Utilizar o PC como tablet</div><hr><p>O modo Tablet torna o Windows mais intuitivo e fácil de usar quando tem um dispositivo com um ecrã tátil.</p><h3 class='faqInFs25FbP10'>Utilizar o modo tablet</h3><p>Para ativar o modo tablet, selecione <strong>Centro de Ação</strong> na barra de tarefas e selecione <strong>Modo tablet</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Nota</h3><p>Para descobrir se o seu dispositivo pode ativar automaticamente o modo tablet, pesquise o seu dispositivo no sítio web do fabricante. O suporte para esta funcionalidade depende do hardware, do controlador instalado e de como o dispositivo foi configurado pelo fabricante. </p><p> </p><p>No modo tablet, as aplicações abrem em ecrã inteiro, dando-lhe mais espaço para trabalhar. Para fechar uma aplicação, arraste-a para a parte inferior do ecrã.</p><p> </p><h3 class='faqInFs25FbP10'>Sugestão</h3><p>A barra de tarefas está disponível quando o seu PC está no modo tablet, mas pode ocultá-la se quiser mais espaço no ecrã. Selecione o botão <strong>Iniciar, </strong>selecione <strong>Definições </strong>> <strong>Sistema </strong>> <strong> Modo de tablet </strong>, e ligue <strong>Ocultar automaticamente a barra de tarefas no modo de tablet</strong>. Para ver a barra de tarefas oculta, deslize para cima a partir da parte inferior do ecrã ou use o rato para pairar sobre ela.</p><h3 class='faqInFs25FbP10'>Usar duas aplicações simultaneamente</h3><p>Para utilizar duas aplicações lado a lado no modo tablet, arraste uma aplicação aberta para baixo e para o lado. Verá onde se encaixa, e todas as aplicações abertas ao lado dela.</p><p>Nesta vista, também pode:</p><ul>    <li>Usar a borda partilhada entre duas aplicações para redimensionar as duas aplicações ao mesmo tempo.</li>    <li>Abrir uma nova aplicação na vista de tarefas&mdash;selecione <strong>Vista de tarefas</strong> na barra de tarefas, selecione uma aplicação e arraste-a para um lado para a encaixar no ecrã dividido.</li>    <li>Use o botão voltar na barra de tarefas para voltar a uma aplicação ou para abrir uma aplicação que estava a usar antes.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2603,7 +2635,7 @@
         },
         "question6": {
             "title": "Conheça a Cortana, a sua assistente pessoal",
-            "description": "<div class='faqInFs4Fb'>    Conheça a Cortana, a sua assistente pessoal</div><hr><h3 class='faqInFs25FbP10'>O que é a Cortana?</h3><hr /><p>A Cortana é a sua agente digital. Irá ajudá-lo a fazer coisas.</p><p>Quanto mais utilizar a Cortana, mais personalizada será a sua experiência.</p><p>Para começar, insira uma pergunta na caixa de pesquisa ou selecione o microfone e fale com a Cortana. (Escrever funciona para todos os tipos de PCs, mas precisa de um microfone para falar.)</p><p>Se não souber o que dizer, verá sugestões no ecrã de bloqueio e na página inicial da Cortana ao selecionar a caixa de pesquisa na barra de tarefas.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Início 2. Bloco de Notas 3. Definições 4. Feedback</li></ol><p>Aqui estão algumas coisas que a Cortana pode fazer por si:</p><ul>    <li>Dar-lhe lembretes com base no tempo, lugares ou pessoas.</li>    <li>Seguir encomendas, equipas, interesses e voos.</li>    <li>Enviar emails e mensagens.</li>    <li>Gerir a sua agenda e mantê-lo atualizado.</li>    <li>Criar e gerir listas.</li>    <li>Conversar e jogar.</li>    <li>Encontrar fatos, ficheiros, lugares e informações.</li>    <li>Abrir qualquer aplicações no sistema.</li></ul><h3 class='faqInFs25FbP10'>Experimente isto: definir um lembrete</h3><hr /><p>Uma das coisas que Cortana pode fazer é mostrar-lhe lembretes. Pode lembrá-lo para fazer coisas, considerando o tempo, lugar, ou mesmo pessoas.</p><p>Por exemplo, escreva ou diga: “Lembra-me de felicitar a Tânia da próxima vez que ela telefonar.”</p><p>O lembrete aparecerá quando receber um telefonema da Tânia.</p><p>Bónus extra - se tiver um telemóvel Windows ou Cortana para iPhone ou Android, pode definir a Cortana para sincronizar notificações entre o seu PC e o telemóvel.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Olá Cortana?</h3><hr /><p>Configure a Cortana para ouvir sempre que disser “Olá, Cortana”. Selecione a caixa de pesquisa na barra de tarefas para abrir a página inicial da Cortana. Em seguida, selecione <strong>Definições</strong> e ligue <strong>Responder quando eu disser “Olá Cortana.”</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Nota</p><p>A Cortana só está disponível em certos países/regiões, e algumas funcionalidades da Cortana podem não estar disponíveis em todo o lado.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Conheça a Cortana, a sua assistente pessoal</div><hr><h3 class='faqInFs25FbP10'>O que é a Cortana?</h3><hr /><p>A Cortana é a sua agente digital. Irá ajudá-lo a fazer coisas.</p><p>Quanto mais utilizar a Cortana, mais personalizada será a sua experiência.</p><p>Para começar, insira uma pergunta na caixa de pesquisa ou selecione o microfone e fale com a Cortana. (Escrever funciona para todos os tipos de PCs, mas precisa de um microfone para falar.)</p><p>Se não souber o que dizer, verá sugestões no ecrã de bloqueio e na página inicial da Cortana ao selecionar a caixa de pesquisa na barra de tarefas.</p><p><img src='./../../../assets/images/qa/6.1.jpg' /></p><ol>    <li>Início 2. Bloco de Notas 3. Definições 4. Feedback</li></ol><p>Aqui estão algumas coisas que a Cortana pode fazer por si:</p><ul>    <li>Dar-lhe lembretes com base no tempo, lugares ou pessoas.</li>    <li>Seguir encomendas, equipas, interesses e voos.</li>    <li>Enviar emails e mensagens.</li>    <li>Gerir a sua agenda e mantê-lo atualizado.</li>    <li>Criar e gerir listas.</li>    <li>Conversar e jogar.</li>    <li>Encontrar fatos, ficheiros, lugares e informações.</li>    <li>Abrir qualquer aplicações no sistema.</li></ul><h3 class='faqInFs25FbP10'>Experimente isto: definir um lembrete</h3><hr /><p>Uma das coisas que Cortana pode fazer é mostrar-lhe lembretes. Pode lembrá-lo para fazer coisas, considerando o tempo, lugar, ou mesmo pessoas.</p><p>Por exemplo, escreva ou diga: “Lembra-me de felicitar a Tânia da próxima vez que ela telefonar.”</p><p>O lembrete aparecerá quando receber um telefonema da Tânia.</p><p>Bónus extra - se tiver um telemóvel Windows ou Cortana para iPhone ou Android, pode definir a Cortana para sincronizar notificações entre o seu PC e o telemóvel.</p><p><img src='./../../../assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>Olá Cortana?</h3><hr /><p>Configure a Cortana para ouvir sempre que disser “Olá, Cortana”. Selecione a caixa de pesquisa na barra de tarefas para abrir a página inicial da Cortana. Em seguida, selecione <strong>Definições</strong> e ligue <strong>Responder quando eu disser “Olá Cortana.”</strong></p><p><img src='./../../../assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>Nota</p><p>A Cortana só está disponível em certos países/regiões, e algumas funcionalidades da Cortana podem não estar disponíveis em todo o lado.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2691,7 +2723,7 @@
         "deviceStatisticsDescription": "Envie dados do dispositivo anónimos para nos ajudar a melhorar a qualidade, a fiabilidade e a nova geração de dispositivos.",
         "userProfile": "Perfil de utilizador",
         "Note": "Nota: ",
-        "settingsNotes": "todas as definições nesta página irão necessitar que o utilizador reinicie esta aplicação para que tenham efeito.",
+        "settingsNotes": "Reinicie esta aplicação para assegurar que todas as alterações entram em vigor.",
         "betaSettingTitle": "Programa Beta",
         "betaProgram": "Programa Beta",
         "betaSettingDescription": "Experimente as funcionalidades mais recentes em que estamos a trabalhar."
@@ -2822,8 +2854,7 @@
             "popup": {
                 "description": "A execução da verificação e reparação pode originar perda de dados. É recomendado efetuar uma cópia de segurança antes de executar esta operação. Tem a certeza de que pretende continuar?",
                 "yes": "Sim",
-                "no": "Não",
-                "question": "Are you sure you want to proceed?"
+                "no": "Não"
             },
             "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
@@ -2862,7 +2893,7 @@
             "storage": "Memória",
             "wireless": "Sem fios"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Tenha em atenção que os testes serão cancelados se o sistema entrar em modo de suspensão ou hibernação"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3223,6 +3254,23 @@
                 "readMore": "Ler mais",
                 "readLess": "Ler menos"
             }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Promoção exclusiva da Lenovo: Adobe Designer Suite"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Promoção digital da Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro é o principal software de edição de vídeo para cinema, televisão e a Web. O Premiere Pro inclui o Premiere Rush, uma aplicação multifunções que funciona em todos os seus dispositivos para partilhar os seus vídeos com a sua rede.",
+            "subtitle12": "Plano Creative Cloud Photography",
+            "body12": "Utilize o Lightroom para editar, organizar, armazenar e partilhar facilmente as suas fotografias em qualquer lugar, e o Photoshop para poder transformar as suas imagens em tudo aquilo que conseguir imaginar.",
+            "selectButton": "Selecionar",
+            "subtitle2": "Multifunções: otimizado",
+            "body2": "Os PCs All-in-One com processadores Intel® Core™ de 9.ª geração oferecem toda a potência de um desktop com um ecrã elegante para desfrutar de uma segurança baseada em hardware simplificada e um ecrã de alta resolução."
         }
     }
 }

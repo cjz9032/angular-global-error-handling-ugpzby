@@ -10,7 +10,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 @Component({
 	selector: 'app-widget-system-monitor',
 	templateUrl: './widget-system-monitor.component.html',
-	styleUrls: [ './widget-system-monitor.component.scss' ]
+	styleUrls: ['./widget-system-monitor.component.scss']
 })
 export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public cpuUseFrequency: string;
@@ -64,30 +64,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			isSystemDisk: 'true',
 			type: 'SSD',
 			usedDisk: 71
-		},
-		{
-			capacity: 476,
-			diskUsage: '14',
-			hddName: 'LENSE30512GMSP34MEAT3TA',
-			isSystemDisk: 'false',
-			type: 'SSD',
-			usedDisk: 71
-		},
-		{
-			capacity: 476,
-			diskUsage: '14',
-			hddName: 'LENSE30512GMSP34MEAT3TA',
-			isSystemDisk: 'false',
-			type: 'SSD',
-			usedDisk: 71
-		},
-		{
-			capacity: 476,
-			diskUsage: '14',
-			hddName: 'LENSE30512GMSP34MEAT3TA',
-			isSystemDisk: 'false',
-			type: 'SSD',
-			usedDisk: 71
 		}
 	];
 
@@ -98,6 +74,11 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		private logger: LoggerService
 	) {
 		this.hds = this.defaultHds;
+		if (document.getElementById('menu-main-btn-navbar-toggler')) {
+			document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
+				this.toggleHDs(true);
+			});
+		}
 	}
 
 	// CPU Panel Data
@@ -280,7 +261,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		try {
 			const hwInfo = await this.hwInfoService.getDynamicInformation();
 			this.formDynamicInformation(hwInfo);
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	public formDynamicInformation(hwInfo: any) {
@@ -314,7 +295,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			this.SystemStatusObj.ramUsage = hwInfo.memoryUsage;
 			this.initialiseDisksList(hwInfo.diskList);
 			this.setFormDynamicInformationCache(hwInfo);
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	public initialiseDisksList(diskList: any[] = []) {
@@ -382,7 +363,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				this.SystemStatusObj.ramOver = this.ramOver;
 				this.commonService.setLocalStorageValue(LocalStorageKey.ramOver, this.ramOver);
 			});
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	convertToBoolean(input: string): boolean | undefined {

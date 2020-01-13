@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
 import {
-	CapabilityTemp, FnLockStatus, GetFnLockStatusResponse,
-	GetPrimaryKeyResponse, PrimaryKeySetting,
-	StringBoolean,
+	CapabilityTemp,
+	FnLockStatus,
+	PrimaryKeySetting,
 	TopRowFunctionsIdeapad
 } from './top-row-functions-ideapad.interface';
 import { from, Observable } from 'rxjs';
-import { map, shareReplay, tap } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
+import { StringBoolean } from '../../../../../../data-models/common/common.interface';
 
 const CACHE_SIZE = 1;
 
@@ -54,7 +55,6 @@ export class TopRowFunctionsIdeapadService {
 	requestPrimaryKey(): Observable<PrimaryKeySetting> {
 		return from(this.topRowFunctionsIdeaPadFeature.getPrimaryKey())
 			.pipe(
-				tap(res => console.log('=======================================================================================', JSON.stringify(res))),
 				map(res => res.settingList.setting.find(item => item.key === 'PrimeKey'))
 			);
 	}
@@ -71,7 +71,6 @@ export class TopRowFunctionsIdeapadService {
 	requestFnLockStatus(): Observable<FnLockStatus> {
 		return from(this.topRowFunctionsIdeaPadFeature.getFnLockStatus())
 			.pipe(
-				tap(res => console.log('===============================================================================FnLock', JSON.stringify(res))),
 				map(res => res.settingList.setting.find(item => item.key === 'FnLock'))
 			);
 	}

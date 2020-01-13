@@ -125,6 +125,10 @@
 	word-break: break-word !important;
 }
 
+.word-break-all {
+	word-break: break-all !important;
+}
+
 .unclickable {
 	pointer-events: none;
 	color: inherit;
@@ -223,11 +227,12 @@
 
 		@media #{$breakpoint_md} {
 			max-width: 55rem !important;
+			margin: 1.75rem auto;
 		}
 
 		@media #{$breakpoint_sm} {
-			max-width: 45rem !important;
-			margin: 0 auto;
+			max-width: 52.8rem !important;
+			margin: 0 2.4rem;
 		}
 	}
 

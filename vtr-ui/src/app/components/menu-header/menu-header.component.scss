@@ -8,15 +8,19 @@
 		color: $light;
 		opacity: 0.5;
 		margin: 0 2rem 0.1rem;
-
+		
 		@media #{$breakpoint_xl} {
 			margin: 0 1rem 0.1rem;
 		}
 		@media #{$breakpoint_sm} {
 			margin: 0 0.5rem 0.1rem;
 		}
-
-
+		@media #{$breakpoint_md} {
+			margin-right: 3.5rem !important;
+		}
+		@media #{$breakpoint_sm} {
+			margin-right: 3.5rem !important;
+		}
 		&:first-child {
 			margin-left: 0.5rem;
 		}
@@ -33,14 +37,91 @@
 			font-weight: $weight_600;
 			padding-bottom: 2rem;
 			cursor: pointer;
+			.icomoon {
+				height: 4rem;
+				width: 4rem;
+				font-size: 3.2rem;
+			}
+			@media #{$breakpoint_xl6} {
+				font-size: $fontsize_md;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl5} {
+				font-size: $fontsize_md;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl4} {
+				font-size: $fontsize_md;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl3} {
+				font-size: $fontsize_md;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl2} {
+				font-size: $fontsize_md;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
+			}
 			@media #{$breakpoint_xl} {
 				font-size: $fontsize_md;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_lg} {
+				font-size: $fontsize_sm;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
 			}
 			@media #{$breakpoint_md} {
 				font-size: $fontsize_sm;
+				.text {
+					display: none;
+				}
+				.icomoon {
+					display: inline-block;
+				}
 			}
 			@media #{$breakpoint_sm} {
 				font-size: $fontsize_sm;
+				.text {
+					display: none;
+				}
+				.icomoon {
+					display: inline-block;
+				}
 			}
 
 		}
@@ -54,7 +135,7 @@
 				color: $light;
 				font-size: 2.2rem;
 				transform: rotate(45deg);
-				z-index: 0;
+				z-index: 2;
 
 				@media #{$black-on-white} {
 					color:$light;

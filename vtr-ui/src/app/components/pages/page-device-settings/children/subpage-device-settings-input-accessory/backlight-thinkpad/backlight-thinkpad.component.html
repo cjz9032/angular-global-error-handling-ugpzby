@@ -1,0 +1,24 @@
+<vtr-ui-row-switch
+	[title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"
+	componentName="Input Accessories"
+	[caption]="'device.deviceSettings.inputAccessories.backlight.description.base' | translate"
+	[leftIcon]="['fal', 'keyboard']"
+	[showChildContent]="true"
+	[theme]="'white'"
+	[isLastChild]="false"
+	[switchId]="'inputAccessories-backlight'"
+	automationId="[backlight.title, backlight.description.base]">
+	<div class="row">
+		<vtr-ui-circle-radio-with-checkbox
+			*ngFor="let mode of modes"
+			[theme]="'white'"
+			[radioId]="'backlightMode' + mode.value | removeSpace"
+			[group]="'backlight'"
+			[label]="mode.title | translate"
+			[value]="mode.value"
+			[checked]="mode.value === currentMode"
+			(optionChange)="updateMode(mode.value)"
+			[textId]="'myDevice-settings-inputAccessories-backlight'">
+		</vtr-ui-circle-radio-with-checkbox>
+	</div>
+</vtr-ui-row-switch>

@@ -10,13 +10,14 @@
 		<div class="container-fluid">
 			<div class="row"
 				*ngIf="!isOnline">
-				<div class="col col-12 p-0">
+				<div class="col col-12 p-0 pb-40">
 					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
 						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
 						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
 						[isSubtitleVisible]="false"
 						[isButtonVisible]="false"
-						id="dashboard-btn-connectivity"></vtr-widget-offline-info>
+						id="dashboard-btn-connectivity"
+						[offlineConnection]="offlineConnection"></vtr-widget-offline-info>
 				</div>
 			</div>
 			<div class="row">
@@ -52,7 +53,7 @@
 						link="thumbnailUrl">
 					</vtr-widget-carousel>
 				</div>
-				<div class="col-xl-6 py-20 card-left">
+				<div class="col-xl-6 col-sm-6 py-20 card-left">
 					<vtr-container-card order="2"
 						[itemID]="cardContentPositionB.Id"
 						[img]="cardContentPositionB.FeatureImage"
@@ -72,7 +73,7 @@
 						aria-label="dashboard-card-b">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 py-20 card-right">
+				<div class="col-xl-6 col-sm-6 py-20 card-right">
 					<vtr-container-card order="3"
 						[itemID]="cardContentPositionC.Id"
 						[img]="cardContentPositionC.FeatureImage"
@@ -107,7 +108,7 @@
 						aria-label="dashboard-card-d">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 py-20 card-left"
+				<div class="col-xl-6 col-sm-6 py-20 card-left"
 					[hidden]="deviceService.isSMode">
 					<vtr-container-card order="5"
 						[itemID]="cardContentPositionE.Id"
@@ -125,7 +126,7 @@
 						aria-label="dashboard-card-e">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 py-20 card-right"
+				<div class="col-xl-6 col-sm-6 py-20 card-right"
 					[hidden]="deviceService.isSMode">
 					<vtr-container-card order="6"
 						[itemID]="cardContentPositionF.Id"
@@ -151,7 +152,7 @@
 		<div class="container-fluid">
 			<div class="row"
 				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible">
-				<div class="col-sm-12 col-md-12 pb-60 px-0">
+				<div class="col-sm-12 col-md-12 pb-20 px-0">
 					<vtr-widget-dashboard-warranty [item]="warrantyData"
 						[isConnected]="isOnline">
 					</vtr-widget-dashboard-warranty>
@@ -159,11 +160,12 @@
 			</div>
 			<div class="row"
 				*ngIf="!(warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible)">
-				<div class="col-sm-12 px-0 pb-0">
+				<div class="col-sm-12 col-md-12 pb-20 px-0">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
 						[actionName]="'dashboard.feedback.button' | translate"
 						[action]="'feedback'"
+						[isOnline]="isOnline"
 						(feedBackClick)="onFeedbackModal()">
 					</vtr-widget-feedback>
 				</div>
@@ -171,7 +173,7 @@
 
 			<div class="row"
 				*ngIf="!deviceService.isArm && showQuickSettings">
-				<div class="col-sm-12 px-0 py-20">
+				<div class="col-sm-12 px-0 pt-3">
 					<vtr-widget-quicksettings
 						[vtrAppSearchScroller]="['search-microphone-quick', 'search-camera-quick', 'search-eye-care-quick']">
 					</vtr-widget-quicksettings>
@@ -216,7 +218,7 @@
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
 						[actionName]="'dashboard.feedback.button' | translate"
-						[action]="'feedback'"
+						[isOnline]="isOnline"
 						(feedBackClick)="onFeedbackModal()">
 					</vtr-widget-feedback>
 				</div>

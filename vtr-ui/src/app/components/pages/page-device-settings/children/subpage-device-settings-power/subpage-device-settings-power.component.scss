@@ -12,7 +12,7 @@
 		margin-left:1.8rem;
 	}
 	.left-border {
-		border-left: 1rem solid $main;
+		border-left: 0.7rem solid $main;
 
 		.subtitle {
 			opacity: 0.8;
@@ -51,8 +51,10 @@
 			
 			
 		}
-	}	.smartsettings-card {
-		
+	}	
+	.smartsettings-card {
+		margin-left: -1.5rem;
+		margin-right: -1.5rem;
 		.subtitle {
 			width: 100%;
 

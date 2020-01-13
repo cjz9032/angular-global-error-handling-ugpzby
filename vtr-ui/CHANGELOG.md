@@ -2,6 +2,95 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.53](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.52...v1.2.53) (2020-01-10)
+
+
+
+## [1.2.52](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.51...v1.2.52) (2020-01-09)
+
+
+
+## [1.2.51](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.50...v1.2.51) (2020-01-08)
+
+
+
+## [1.2.50](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.49...v1.2.50) (2020-01-08)
+
+
+
+## [1.2.49](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.48...v1.2.49) (2020-01-07)
+
+
+
+## [1.2.48](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.46...v1.2.48) (2020-01-07)
+
+
+
+## [1.2.47](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.46...v1.2.47) (2020-01-07)
+
+
+
+## [1.2.46](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.45...v1.2.46) (2020-01-06)
+
+
+
+## [1.2.45](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.44...v1.2.45) (2020-01-03)
+
+
+
+## [1.2.44](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.43...v1.2.44) (2020-01-02)
+
+
+
+## [1.2.43](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.42...v1.2.43) (2020-01-02)
+
+
+
+## [1.2.42](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.41...v1.2.42) (2019-12-31)
+
+
+### Bug Fixes
+
+* **gaming:** show menu items correctly ([91d8b16](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/91d8b16))
+
+
+
+## [1.2.41](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.40...v1.2.41) (2019-12-30)
+
+
+
+## [1.2.40](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.39...v1.2.40) (2019-12-27)
+
+
+
+## [1.2.39](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.38...v1.2.39) (2019-12-25)
+
+
+
+## [1.2.38](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.37...v1.2.38) (2019-12-24)
+
+
+
+## [1.2.37](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.36...v1.2.37) (2019-12-23)
+
+
+
+## [1.2.36](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.35...v1.2.36) (2019-12-20)
+
+
+### Features
+
+* **VAN-12559:** backlight ([5949349](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/5949349))
+* **VAN-12559:** backlight ([a9c9662](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/a9c9662))
+* **VAN-12559:** backlight icons ([d7fc8cc](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/d7fc8cc))
+* **VAN-12559:** backlight icons ([e258a3d](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/e258a3d))
+* **VAN-12559:** UI appearance story-ALS-base keyboard backlight mode on S950/S750 &ThinkBook 13s/14s G2 ([9a3614e](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/9a3614e))
+* **VAN-12559:** UI appearance story-ALS-base keyboard backlight mode on S950/S750 &ThinkBook 13s/14s G2 ([b82e820](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/b82e820))
+* **VAN-12559:** UI appearance story-ALS-base keyboard backlight mode on S950/S750 &ThinkBook 13s/14s G2 ([d81d08a](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/d81d08a))
+* **VAN-12559:** UI appearance story-ALS-base keyboard backlight mode on S950/S750 &ThinkBook 13s/14s G2 ([330fe68](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/330fe68))
+
+
+
 ## [1.2.35](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.34...v1.2.35) (2019-12-19)
 
 

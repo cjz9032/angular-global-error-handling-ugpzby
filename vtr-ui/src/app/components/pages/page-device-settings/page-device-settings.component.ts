@@ -17,6 +17,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
+import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -37,6 +38,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.power.title',
 			path: 'device-settings/power',
 			icon: 'power',
+			iconClass: 'icomoon-power_nav',
 			canDeactivate: [GuardService],
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
@@ -46,6 +48,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.audio.title',
 			path: 'device-settings/audio',
 			icon: 'audio',
+			iconClass: 'icomoon-audio',
 			canDeactivate: [GuardService],
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
@@ -55,6 +58,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.displayCamera.title',
 			path: 'device-settings/display-camera',
 			icon: 'display-camera',
+			iconClass: 'icomoon-display_camera',
 			canDeactivate: [GuardService],
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
@@ -64,6 +68,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.inputAccessories.title',
 			path: 'device-settings/input-accessories',
 			icon: 'input-accessories',
+			iconClass: 'icomoon-input_accessories',
 			canDeactivate: [GuardService],
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
@@ -79,6 +84,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 	constructor(
 		public qaService: QaService,
+		private keyboardService: InputAccessoriesService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
@@ -164,8 +170,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 						this.getAudioPageSettings();
 					}
 					break;
-				case LocalStorageKey.IsHidePowerPage:
-					if (payload) {
+				case LocalStorageKey.IsPowerPageAvailable:
+					if (!payload) {
 						this.hidePowerPage();
 					}
 					break;
@@ -175,7 +181,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	initInputAccessories() {
+	async initInputAccessories() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType) {
 			const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
@@ -191,13 +197,18 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				return;
 			} else {
 				const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
-				let isAvailable;
-				if (inputAccessoriesCapability) {
-					isAvailable = inputAccessoriesCapability.isUdkAvailable || inputAccessoriesCapability.isKeyboardMapAvailable;
+				let isAvailable = false;
+				if (inputAccessoriesCapability && (inputAccessoriesCapability.isKeyboardMapAvailable || inputAccessoriesCapability.isUdkAvailable)) {
+					isAvailable = inputAccessoriesCapability.isKeyboardMapAvailable || inputAccessoriesCapability.isUdkAvailable ;
+				} else {
+					await this.keyboardService.GetAllCapability().then((response => {
+						isAvailable = (response != null && (Object.keys(response).indexOf('keyboardMapCapability') !== -1 || (Object.keys(response).indexOf('isUdkAvailable') !== -1))) ? true : false;
+					}));
 				}
 				const isVOIPAvailable = this.commonService.getLocalStorageValue(LocalStorageKey.VOIPCapability);
 				const topRowFunctionsIdeapadCapability = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability);
-				if (!isAvailable && !isVOIPAvailable && !topRowFunctionsIdeapadCapability) {
+				const backlightCapability = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability);
+				if (!isAvailable && !isVOIPAvailable && !topRowFunctionsIdeapadCapability && !backlightCapability) {
 					this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
 				}
 			}
