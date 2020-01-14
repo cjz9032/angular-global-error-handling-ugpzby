@@ -334,11 +334,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			if (isThinkPad) {
 				if (this.batteryGauge.acAdapterStatus && this.batteryGauge.acAdapterStatus !== null) {
 					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryStatus.AcError));
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryStatus.AcAdapterStatus));
 					}
 
 					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryStatus.AcError));
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryStatus.AcAdapterStatus));
 					}
 				}
 			}
