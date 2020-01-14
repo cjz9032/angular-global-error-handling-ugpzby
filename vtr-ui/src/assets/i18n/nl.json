@@ -2162,7 +2162,8 @@
                 "showmore": "Meer weergeven",
                 "showless": "Minder weergeven",
                 "button": "WiFi-beveiliging inschakelen",
-                "disableDescribe": "Lenovo WiFi-beveiliging is een geavanceerde cloudgebaseerde softwareservice die uw apparaat helpt onderscheid te maken tussen veilige draadloze netwerken en mogelijk schadelijke."
+                "disableDescribe": "Lenovo WiFi-beveiliging is een geavanceerde cloudgebaseerde softwareservice die uw apparaat helpt onderscheid te maken tussen veilige draadloze netwerken en mogelijk schadelijke.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Gebruik de dreigingsdetector om de veiligheid van de netwerken om u heen te bepalen.",
