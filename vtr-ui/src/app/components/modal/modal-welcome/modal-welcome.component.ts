@@ -124,6 +124,14 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			tutorialData = new WelcomeTutorial(1, this.tutorialVersion, false);
 			this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorialData);
 		} else {
+			const buttonClickData = {
+				ItemType: 'FeatureClick',
+				ItemName: 'DONE',
+				ItemParent: 'WelcomePage'
+			};
+
+			this.metrics.sendAsync(buttonClickData);
+
 			const settingData = {
 				ItemType: 'SettingUpdate',
 				SettingName: 'Accept Privacy Policy',

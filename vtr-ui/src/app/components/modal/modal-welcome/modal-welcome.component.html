@@ -237,11 +237,9 @@
 				<div class="row justify-content-center align-items-center next-btn">
 					<div class="col-auto"
 						(keypress)="btnDoneOnKeyPress($event)">
-						<vtr-ui-button metricsParent="WelcomePage"
-							metricsEvent="featureClick"
+						<vtr-ui-button
 							[tabIndex]='0'
 							[tooltip]="false"
-							[metricsItem]="'DONE'"
 							[label]="'welcometutorial.done' | translate"
 							[btnHeight]=true
 							[isGradient]=true
