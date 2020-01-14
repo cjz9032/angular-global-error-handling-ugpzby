@@ -179,7 +179,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	setBatteryCard(response, methodName = 'Battery Info') {
 		if (response) {
 			this.logger.info(methodName + ' : ', response);
-			console.log(methodName + ' : ', response);
 			this.batteryInfo = response.batteryInformation;
 			this.batteryGauge = response.batteryIndicatorInfo;
 			if (this.batteryGauge.isAttached && this.batteryGauge.acWattage && this.batteryGauge.acAdapterType) {
@@ -384,7 +383,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 		this.batteryConditions = batteryConditions;
 		this.logger.info('Battery Conditions ====>', this.batteryConditions);
-		console.log('Battery Health: ', this.batteryHealth, 'Battery Conditions: ', JSON.stringify(this.batteryConditions));
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, indicator: this.batteryIndicator, conditions: this.batteryConditions });
 
 		this.setConditionTips();

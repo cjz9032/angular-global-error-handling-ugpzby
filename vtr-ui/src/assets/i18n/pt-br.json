@@ -2162,7 +2162,7 @@
                 "showmore": "Mostrar mais",
                 "showless": "Mostrar menos",
                 "button": "Ativar a segurança WiFi",
-                "disableDecribe": "O Lenovo Segurança WiFi é um serviço avançado de software baseado em nuvem que ajuda seu dispositivo a diferenciar redes sem fio seguras das potencialmente perigosas."
+                "disableDescribe": "O Lenovo Segurança WiFi é um serviço avançado de software baseado em nuvem que ajuda seu dispositivo a diferenciar redes sem fio seguras das potencialmente perigosas."
             },
             "threatlocator": {
                 "describe": "Use o detector de ameaças para determinar a segurança das redes ao seu redor.",

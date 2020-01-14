@@ -2162,7 +2162,7 @@
                 "showmore": "Pokaži več",
                 "showless": "Pokaži manj",
                 "button": "Omogoči varnost WiFi-ja",
-                "disableDecribe": "Program družbe Lenovo za varnost WiFi-ja je napredna oblačna storitev programske opreme, ki vaši napravi pomaga razlikovati med varnimi brezžičnimi omrežji in morebitnimi zlonamernimi."
+                "disableDescribe": "Program družbe Lenovo za varnost WiFi-ja je napredna oblačna storitev programske opreme, ki vaši napravi pomaga razlikovati med varnimi brezžičnimi omrežji in morebitnimi zlonamernimi."
             },
             "threatlocator": {
                 "describe": "Če želite ugotoviti, kako varna so omrežja okrog vas, uporabite detektor groženj.",

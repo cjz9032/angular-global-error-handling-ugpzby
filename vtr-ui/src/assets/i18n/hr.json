@@ -2162,7 +2162,7 @@
                 "showmore": "Više detalja",
                 "showless": "Pokaži manje",
                 "button": "Omogući sigurnost WiFi mreže",
-                "disableDecribe": "Sigurnost WiFija tvrtke Lenovo napredna je softverska usluga u oblaku koja vašem uređaju pojednostavnjuje razlikovanje sigurnih bežičnih veza od potencijalno zlonamjernih."
+                "disableDescribe": "Sigurnost WiFija tvrtke Lenovo napredna je softverska usluga u oblaku koja vašem uređaju pojednostavnjuje razlikovanje sigurnih bežičnih veza od potencijalno zlonamjernih."
             },
             "threatlocator": {
                 "describe": "Upotrijebite alat za lociranje prijetnji da biste utvrdili sigurnost mreža koje su vam dostupne.",
