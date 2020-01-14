@@ -9,7 +9,7 @@
 						[isSwitchVisible]=true [isLastChild]=true [showChildContent]="true"
 						[rightIcon]="['far', 'question-circle']"
 						[tooltipText]="tooltipText"
-						[isSwitchChecked]="smartStandby.isEnabled" (toggleOnOff)="onSmartStandbyToggle($event);isCollapsed = true"
+						[isSwitchChecked]="smartStandby.isEnabled" (toggleOnOff)="onSmartStandbyToggle($event)"
 						[switchId]="'smartStandby'">
 					</vtr-ui-row-switch>
 					<div>
@@ -105,7 +105,9 @@
 						</div>
 						<!-- content end -->
 					</div>
-					<div [ngClass]="{'disabled': !smartStandby.isEnabled}" class="hyperlink-to-graph" (click)="showUsageGraph()" tabindex="0"
+					<div *ngIf="isAutonomicCapability" vtrMetrics metricsItem="Open Smart Standby Modal" metricsEvent="featureClick"
+						metricsParent="Device.deviceSettings" id="modal_smartStandby_graphLink" metricsValue=true
+						[ngClass]="{'disabled': !smartStandby.isEnabled}" class="hyperlink-to-graph" (click)="showUsageGraph()" tabindex="0"
 						attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 						{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
 					</div>

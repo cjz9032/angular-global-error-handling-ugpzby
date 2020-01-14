@@ -1110,7 +1110,7 @@
                             "stop": "Zastavit"
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
-                        "progressText2": "{{stage}} of {{stageNum}}: Kalibrace na nízký stav baterie",
+                        "progressText2": "{{stage}} z {{stageNum}}: Kalibrace na nízký stav baterie",
                         "progressText3": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Před resetováním ukazatele stavu baterie nezapomeňte připojit počítač k napájení ze sítě. ",
@@ -1541,7 +1541,60 @@
                 "fnCtrlKey": {
                     "title": "Záměna kláves Fn a Ctrl",
                     "description": "Pokud se vám stává, že místo klávesy Ctrl stisknete klávesu Fn, funkce obou kláves můžete zaměnit.",
-                    "restartNote": "Záměna funkcí dvou kláves vyžaduje restart počítače. Opravdu chcete počítač restartovat?"
+                    "restartNote": "Záměna funkcí dvou kláves vyžaduje restart počítače. Opravdu chcete počítač restartovat?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "DALŠÍ",
@@ -2109,7 +2162,7 @@
                 "showmore": "Zobrazit více",
                 "showless": "Zobrazit méně",
                 "button": "Zapnout zabezpečení WiFi",
-                "disableDecribe": "Zabezpečení WiFi Lenovo je pokročilá cloudová softwarová služba, která pomáhá vašemu zařízení odlišit bezpečné bezdrátové sítě od potenciálně škodlivých."
+                "disableDescribe": "Zabezpečení WiFi Lenovo je pokročilá cloudová softwarová služba, která pomáhá vašemu zařízení odlišit bezpečné bezdrátové sítě od potenciálně škodlivých."
             },
             "threatlocator": {
                 "describe": "Vyhledávač hrozeb vám pomůže zjistit, jak bezpečné jsou sítě kolem vás.",
