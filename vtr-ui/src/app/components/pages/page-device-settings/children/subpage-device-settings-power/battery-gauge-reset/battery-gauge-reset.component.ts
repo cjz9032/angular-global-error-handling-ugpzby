@@ -21,6 +21,7 @@ export class BatteryGaugeResetComponent implements OnInit {
 	constructor(private logger: LoggerService, public modalService: NgbModal, public powerService: PowerService, public batteryService: BatteryDetailService) { }
 
 	ngOnInit() {
+		this.logger.info('Init Gauge Reset Feature', this.batteryService.gaugeResetInfo);
 		this.initBatteryGaugeResetInfo();
 	}
 
