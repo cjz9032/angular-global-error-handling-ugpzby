@@ -37,12 +37,9 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 })
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
-	@Input() isShowHistory: string;
 	@Input() showChs = false;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
-	region = 'us';
-	language = 'en';
 	isWifiSecurityEnabled = true;
 	showAllNetworks = true;
 	showMore = false;
@@ -55,23 +52,13 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		public modalService: NgbModal,
 		private commonService: CommonService,
 		public	deviceService: DeviceService,
-		private localInfoService: LocalInfoService,
 		private dialogService: DialogService
 	) {
 		super();
 	}
 
 	ngOnInit() {
-		this.localInfoService.getLocalInfo().then(result => {
-			this.region = result.GEO;
-			this.language = result.Lang;
-		}).catch(e => {
-			this.region = 'us';
-			this.language = 'en';
-		});
-		if (!this.showChs || this.isShowHistory === 'false') {
-			this.isShowMore = false;
-		}
+		this.isShowMore = !this.showChs;
 		this.data.wifiSecurity.on('cancelClick', () => {
 			this.cancelClick = true;
 		}).on('cancelClickFinish', () => {
@@ -125,18 +112,18 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	}
 
 	clickShowMore(): boolean {
-		const length = this.data.historys.length;
-		const all_length = this.data.allHistorys.length;
-		if (length === all_length || length === 8) {
-			this.data.historys = this.data.allHistorys.slice(0, 4);
+		const length = this.data.histories.length;
+		const allLength = this.data.allHistories.length;
+		if (length === allLength || length === 8) {
+			this.data.histories = this.data.allHistories.slice(0, 4);
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 			this.isShowMoreLink = true;
-		} else if (length + 2 >= all_length || length + 2 >= 8) {
-			this.data.historys = this.data.allHistorys.slice(0, 8);
+		} else if (length + 2 >= allLength || length + 2 >= 8) {
+			this.data.histories = this.data.allHistories.slice(0, 8);
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 8);
 			this.isShowMoreLink = false;
 		} else {
-			this.data.historys = this.data.allHistorys.slice(0, length + 2);
+			this.data.histories = this.data.allHistories.slice(0, length + 2);
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, length + 2);
 		}
 		return false;
@@ -152,22 +139,4 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		}
 	}
 
-	openThreatLocator() {
-		if (this.modalService.hasOpenModals()) {
-			return;
-		}
-		this.locatorButtonDisable = true;
-		const threatLocatorModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'Threat-Locator-Modal'
-		});
-		setTimeout(() => { document.getElementById('modal-threat-locator').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
-		threatLocatorModal.result.then(() => {
-			this.locatorButtonDisable = false;
-		}).catch(() => {
-			this.locatorButtonDisable = false;
-		});
-	}
 }
