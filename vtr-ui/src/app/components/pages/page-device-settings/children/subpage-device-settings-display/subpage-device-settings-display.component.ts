@@ -22,6 +22,7 @@ import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
+import { Md5 } from 'ts-md5';
 
 
 @Component({
@@ -310,13 +311,48 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	initFeatures() {
 		this.getPrivacyGuardCapabilityStatus();
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
-		this.statusChangedLocationPermission();
 		this.initCameraSection();
 		this.getOLEDPowerControlCapability();
-		setTimeout(() => {
-			this.initEyecaremodeSettings();
-			this.startEyeCareMonitor();
-		}, 5);
+		this.inWhiteList().then(isSupport => {
+			if (isSupport) {
+				this.statusChangedLocationPermission();
+				this.initEyecaremodeSettings();
+				this.startEyeCareMonitor();
+			} else {
+				this.showECMReset = true;
+			}
+		});
+		// setTimeout(() => {
+		// 	this.initEyecaremodeSettings();
+		// 	this.startEyeCareMonitor();
+		// }, 5);
+	}
+
+	inWhiteList() {
+		const whitelist = [
+			'40346638a8da4aa73c765af43a709673',
+			'a8c959c9d2f5f73734de9fb94a7065a2',
+			'96442075283918afcc945d55beeeaea9',
+			'216d38800e9ca05cd02e77a37184c133',
+			'b098dbfb5ffed24d3061aba9f38bd795',
+			'bdaf0b7919db29f5db5aa4868800417e',
+			'c4c9336f94ed2b360e5a9da9d19b4d6e',
+			'1e7a21e23525d272078d685c6a0e9f9d',
+			'63971f53e52831b2a3b81896948dd92a',
+			'08d313377ea30e73b4e8ab92f0312ec9',
+			'479a92a1dccaf9467d168ede8848faba',
+			'41849d08794e53826948df3b3bfbfd83',
+			'ecc858ed4e4ce4022b04b65a94651efa',
+			'ecc858ed4e4ce4022b04b65a94651efa',
+			'3672447c877e471a3878b591d1ba5a9f',
+			'0b35dc0e49945458f12d02e6ddcd86b7',
+			'671f1454b4101503f00ff4f786d44fa0',
+			'479a92a1dccaf9467d168ede8848faba'
+		];
+		return this.deviceService.getDeviceInfo()
+			.then(res => {
+				return whitelist.includes(Md5.hashStr(res.bios) as string);
+			});
 	}
 
 	async initCameraSection() {
