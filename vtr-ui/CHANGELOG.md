@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.296](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.295...v1.0.296) (2020-01-14)
+
+
+### Features
+
+* **env:** update CMS API root ([2ef2878](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/2ef2878))
+
+
+
 ## [1.0.295](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.294...v1.0.295) (2020-01-10)
 
 
