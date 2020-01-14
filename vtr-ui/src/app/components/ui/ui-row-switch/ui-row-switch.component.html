@@ -133,8 +133,8 @@
 						(keydown.enter)="onRightIconClick($event)">
 					</fa-icon>
 				</div>
-				<div class="p-0"
-					[ngClass]="{'pl-4': type==='Camera', 'pl-3': type===undefined}"
+				<div class="tool-tip-icon"
+					[ngClass]="{'pl-4': type==='Camera'}"
 					*ngIf="rightIcon.length > 0 && toolTipStatus">
 					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}"
 						tabindex="0"
@@ -150,8 +150,8 @@
 						(keydown.enter)="onRightIconClick($event)"></fa-icon>
 				</div>
 
-				<div class="p-0"
-					[ngClass]="{'pl-4': type==='Camera', 'pl-3': type===undefined}"
+				<div class="tool-tip-icon"
+					[ngClass]="{'pl-4': type==='Camera'}"
 					*ngIf="rightIcon.length > 0 && fnCtrltoolTip">
 					<fa-icon id="{{switchId+ '_fnCtrl_right_icon'}}"
 						tabindex="0"
@@ -167,7 +167,7 @@
 						(keydown.enter)="onRightIconClick($event)"></fa-icon>
 				</div>
 
-				<div class="p-0"
+				<div class="tool-tip-icon"
 					*ngIf="rightIcon.length > 0 && voice">
 					<fa-icon vtrMetrics
 						metricsEvent="FeatureClick"
