@@ -1829,7 +1829,10 @@ export class VantageShellService {
 
 		const gamingNetworkBoost: any = {
 			getProcessesInNetworkBoost: this.getPromise(networkBoostList),
-			getNetUsingProcesses: this.getPromise(runningList)
+			getNetUsingProcesses: this.getPromise(runningList),
+			getStatus: this.getPromise(true),
+			setStatus: this.getPromise(true),
+			addProcessToNetBoost:this.getPromise(true)
 		};
 		return gamingNetworkBoost;
 	}
@@ -1927,6 +1930,7 @@ export class VantageShellService {
 		};
 		return gamingAutoClose;
 	}
+
 	/***
      * returns macroKeyClearInfo object from VantageShellService of JS Bridge
      ***/
