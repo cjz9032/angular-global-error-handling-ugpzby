@@ -9,6 +9,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { TranslateService } from '@ngx-translate/core';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 @Component({
 	selector: 'vtr-battery-detail',
 	templateUrl: './battery-detail.component.html',
@@ -35,6 +36,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		public shellServices: VantageShellService,
 		public commonService: CommonService,
 		public cd: ChangeDetectorRef,
+		private logger: LoggerService,
 		public translate: TranslateService) {
 	}
 
@@ -42,7 +44,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		if (notification) {
 			switch (notification.type) {
 				case BatteryInformation.BatteryInfo:
-					console.log('Received battery info notification: ', notification.payload);
+					this.logger.info('Received battery info notification: ', notification.payload);
 					this.preProcessBatteryDetailResponse(notification.payload);
 					break;
 				default:
@@ -113,7 +115,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		console.log('In ngOnInit');
+		this.logger.info('In ngOnInit');
 		this.dataSource = this.dataInfo;
 		this.batteryIndicator = this.dataIndicator;
 		this.batteryConditions = this.dataConditions;
