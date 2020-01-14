@@ -2109,7 +2109,7 @@
                 "showmore": "顯示更多",
                 "showless": "顯示較少內容",
                 "button": "啟用 WiFi 安全性",
-                "disableDecribe": "Lenovo WiFi 安全性是一項先進的雲端式軟體服務，可協助您的裝置區分安全與潛在惡意的無線網路。"
+                "disableDescribe": "Lenovo WiFi 安全性是一項先進的雲端式軟體服務，可協助您的裝置區分安全與潛在惡意的無線網路。"
             },
             "threatlocator": {
                 "describe": "使用威脅偵測器判斷您周圍網路的安全性。",

@@ -18,6 +18,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { SegmentConst } from 'src/app/services/self-select/self-select.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -33,7 +34,6 @@ interface WifiSecurityState {
 export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewInit {
 	viewSecChkRoute = 'viewSecChkRoute';
 	cardContentPositionA: any = {};
-	isShowHistory: boolean;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	wifiSecurity: phoenix.WifiSecurity;
 	homeSecurity: phoenix.ConnectedHomeSecurity;
@@ -46,7 +46,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	isOnline = true;
 	notificationSubscription: Subscription;
 	region = 'us';
-	language = 'en';
 	segment: string;
 	showChs = false;
 	intervalId: number;
@@ -65,6 +64,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private router: Router,
 		private configService: ConfigService,
 		public deviceService: DeviceService,
+		private localInfoService: LocalInfoService
 	) {	}
 
 	ngOnInit() {
@@ -79,6 +79,11 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.cancelClick = true;
 		}).on('cancelClickFinish', () => {
 			this.cancelClick = false;
+		});
+		this.localInfoService.getLocalInfo().then(result => {
+			this.region = result.GEO;
+		}).catch(e => {
+			this.region = 'us';
 		});
 		this.fetchCMSArticles();
 
@@ -100,7 +105,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 			});
 		}
-		this.isShowHistory = this.activeRouter.snapshot.queryParams.isShowMore;
 		this.pullCHS();
 	}
 

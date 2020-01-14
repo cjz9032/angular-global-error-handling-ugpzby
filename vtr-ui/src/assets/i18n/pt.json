@@ -2109,7 +2109,7 @@
                 "showmore": "Mostrar mais",
                 "showless": "Mostrar menos",
                 "button": "Ativar a segurança de WiFi",
-                "disableDecribe": "A função Segurança WiFi da Lenovo é um serviço de software avançado baseado na cloud que ajuda o seu dispositivo a diferenciar as redes sem fios seguras das potencialmente maliciosas."
+                "disableDescribe": "A função Segurança WiFi da Lenovo é um serviço de software avançado baseado na cloud que ajuda o seu dispositivo a diferenciar as redes sem fios seguras das potencialmente maliciosas."
             },
             "threatlocator": {
                 "describe": "Utilize o detetor de ameaças para determinar a segurança das redes à sua volta.",
