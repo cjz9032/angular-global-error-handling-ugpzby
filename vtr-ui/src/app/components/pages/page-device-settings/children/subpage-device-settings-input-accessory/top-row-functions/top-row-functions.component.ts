@@ -31,9 +31,6 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 			this.getAllStatuses();
 		} else {
 			this.topRowKeyObj = new TopRowFunctionsCapability();
-			if (!this.isCacheFound) {
-				this.getFunctionCapabilities();
-			}
 		}
 
 		this.getFunctionCapabilities();
@@ -45,10 +42,10 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, this.topRowKeyObj);
 	}
 
-	public getFunctionCapabilities() {
+	public async getFunctionCapabilities() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
-				Promise.all([
+				await Promise.all([
 					this.keyboardService.getTopRowFnLockCapability(),
 					this.keyboardService.getTopRowFnStickKeyCapability(),
 					this.keyboardService.getTopRowPrimaryFunctionCapability(),

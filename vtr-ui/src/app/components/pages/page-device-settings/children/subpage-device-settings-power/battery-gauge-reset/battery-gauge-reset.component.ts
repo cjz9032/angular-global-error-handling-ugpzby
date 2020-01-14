@@ -23,6 +23,7 @@ export class BatteryGaugeResetComponent implements OnInit {
 	constructor(private logger: LoggerService, public modalService: NgbModal, public powerService: PowerService, public batteryService: BatteryDetailService) { }
 
 	ngOnInit() {
+		this.logger.info('Init Gauge Reset Feature', this.batteryService.gaugeResetInfo);
 		this.initBatteryGaugeResetInfo();
 	}
 
@@ -123,7 +124,11 @@ export class BatteryGaugeResetComponent implements OnInit {
 	}
 
 	updateGaugeResetInfo(value: BatteryGaugeReset) {
-		this.batteryService.gaugeResetInfo[value.batteryNum - 1] = value;
+		let index = value.batteryNum - 1;
+		if (this.batteryService.gaugeResetInfo.length < 2) {
+			index = 0;
+		}
+		this.batteryService.gaugeResetInfo[index] = value;
 	}
 
 	isValid(val: any) {

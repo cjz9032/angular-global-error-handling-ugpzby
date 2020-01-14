@@ -1201,7 +1201,7 @@
                             "ERROR_UNEXPECTED": "Failed: Unexpected error occurred."
                         },
                         "popup": {
-                            "description1": "The resetting process is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description1": "The resetting process is as follows:<br>Fully charge the battery --> Discharge to low battery power --> Recharge to high battery power or full charge",
                             "description2": "Notes: <br>1. The process may take several hours. Please avoid using the computer during this period.<br>2. Close all open apps and connect your computer to ac power.<br>3. During the process, the battery charge threshold function is disabled.",
                             "continue": "Continue",
                             "cancel": "Cancel",
@@ -2497,7 +2497,8 @@
                 "showmore": "Show more",
                 "showless": "Show less",
                 "button": "Enable WiFi security",
-                "disableDecribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
+				"disableDescribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+				"enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Use the threat detector to determine the safety of the networks around you.",

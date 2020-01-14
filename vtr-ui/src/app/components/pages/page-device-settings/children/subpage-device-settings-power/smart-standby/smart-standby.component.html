@@ -138,7 +138,14 @@
 						</div>
 						<!-- content end -->
 					</div>
-					<div [ngClass]="{'disabled': !smartStandby.isEnabled}"
+					<div *ngIf="isAutonomicCapability"
+						vtrMetrics
+						metricsItem="Open Smart Standby Modal"
+						metricsEvent="featureClick"
+						metricsParent="Device.deviceSettings"
+						id="modal_smartStandby_graphLink"
+						metricsValue=true
+						[ngClass]="{'disabled': !smartStandby.isEnabled}"
 						class="hyperlink-to-graph"
 						(click)="showUsageGraph()"
 						tabindex="0"

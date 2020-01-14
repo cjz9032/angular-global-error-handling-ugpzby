@@ -64,14 +64,14 @@
 										</div>
 									</div>
 									<div class="row"
-										*ngIf="isValid(batteryService.remainingPercentages[i])">
+										*ngIf="isValid(batteryService.remainingPercentages[battery.batteryNum - 1])">
 										<div class="col-4 label-text"
 											role="text">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.remaining' | translate}}
 										</div>
 										<div class="col-8 label-value"
 											role="text">
-											{{batteryService.remainingPercentages[i]}}<span>%</span></div>
+											{{batteryService.remainingPercentages[battery.batteryNum - 1]}}<span>%</span></div>
 									</div>
 									<div class="row"
 										*ngIf="isValid(battery.startTime)">
