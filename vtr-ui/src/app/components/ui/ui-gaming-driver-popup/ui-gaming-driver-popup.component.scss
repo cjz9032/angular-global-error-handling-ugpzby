@@ -139,7 +139,7 @@ ui-gaming-driver-popup {
 }
 
 ::ng-deep {
-	.overclock-driver-popup, .networkboost-driver-popup{
+	.overclock-driver-popup, .networkboost-driver-popup,.ram-overclock-driver-popup{
 		#gamingDriverPopup{
 			@media #{$mediaquery_X48} {
 					min-width: 44rem;
@@ -180,6 +180,15 @@ ui-gaming-driver-popup {
 					}
 			}
 		}
+		.ram-overclock-driver-popup {
+		#gamingDriverPopup {
+			right:7.5rem;
+			top:-11.5rem;
+				&::after {
+						top: 11.7rem;
+					}
+			}
+	}
 	.networkboost-driver-popup {
 		#gamingDriverPopup {
 			right:7.5rem;
