@@ -1,5 +1,8 @@
 @import "../../../../../app.theme.scss";
 
+// TODO: remove below line in 3.2
+$fontsize_xs: 1.4rem;
+
 .subpage-device-settings-input-accessories {
 	ul.list-group {
 		list-style-type: none;

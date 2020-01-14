@@ -32,8 +32,6 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public imagePathGrafEvo = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/';
 	public imagePathCS20 = 'assets/images/keyboard-images/KeyboardMap_Images/CS20/';
 	public imagesArray: string[] = ['Belgium.png', 'French.png', 'French_Canadian.png', 'German.png', 'Italian.png', 'Spanish.png', 'Turkish_F.png', 'Standered.png'];
-
-
 	public image = '';
 	public additionalCapabilitiesObj: any = {};
 	public machineType: number;
@@ -62,37 +60,53 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	backlightCapability$: Observable<boolean>;
 
 	public fnCtrlKeyTooltipContent = [
-		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key1',
-		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key1',
-		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action1'},
+		{
+			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key1',
+			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key1',
+			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action1'
+		},
 
-		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key2',
-		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key2',
-		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action2'},
+		{
+			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key2',
+			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key2',
+			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action2'
+		},
 
-		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key3',
-		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key3',
-		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action3'},
+		{
+			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key3',
+			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key3',
+			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action3'
+		},
 
-		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key4',
-		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key4',
-		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action4'},
+		{
+			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key4',
+			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key4',
+			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action4'
+		},
 
-		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key5',
-		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key5',
-		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action5'},
+		{
+			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key5',
+			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key5',
+			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action5'
+		},
 
-		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key6',
-		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key6',
-		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action6'},
+		{
+			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key6',
+			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key6',
+			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action6'
+		},
 
-		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key7',
-		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key7',
-		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action7'},
+		{
+			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key7',
+			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key7',
+			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action7'
+		},
 
-		{fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key8',
-		ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key8',
-		action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action8'}
+		{
+			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key8',
+			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key8',
+			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action8'
+		}
 
 		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key9',
 		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key9',
@@ -301,7 +315,6 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			if (element.toLowerCase() === layOutName.toLowerCase() + '.png') {
 				if (this.keyboardVersion === '1') {
 					this.image = this.imagePathCS20 + element;
-					// else if (this.keyboardVersion === '0') {
 				} else {
 					if (type === 'grafevo') {
 						this.image = this.imagePathGrafEvo + element;

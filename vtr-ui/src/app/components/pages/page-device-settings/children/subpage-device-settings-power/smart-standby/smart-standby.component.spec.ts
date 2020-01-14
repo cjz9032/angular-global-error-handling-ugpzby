@@ -9,7 +9,7 @@ import { PowerService } from 'src/app/services/power/power.service';
 import { HttpLoaderFactory, TranslationModule } from 'src/app/modules/translation.module';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
-describe('SmartStandbyComponent', () => {
+xdescribe('SmartStandbyComponent', () => {
 	let component: SmartStandbyComponent;
 	let fixture: ComponentFixture<SmartStandbyComponent>;
 	let powerService;

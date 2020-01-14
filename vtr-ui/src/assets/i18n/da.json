@@ -1142,10 +1142,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart-standby",
-                    "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
-                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte STARTtidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller den tid for computerbrug, som vi får. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
+                    "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at genoptage dit arbejde hurtigt ved hjælp af <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Moderne standby</a> i perioder med mere intens aktivitet.",
+                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller din computerbrug. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
                     "timer": {
-                        "heading": "Det tidspunkt, hvor du normalt bruger denne computer",
+                        "heading": "Den tid, hvor du normalt bruger denne computer:",
                         "subHeading1": "starter",
                         "subHeading2": "slut",
                         "subHeading3": "brug denne tidsplan for",
@@ -1163,14 +1163,14 @@
                     "warningtip": "Vælg venligst mindst en dag.",
                     "days": {
                         "shortName": {
-                            "sun": "Søndag",
-                            "mon": "Mandag",
-                            "tue": "Tirsdag",
-                            "wed": "Onsdag",
-                            "thurs": "Torsdag",
-                            "fri": "Fredag",
-                            "sat": "Lørdag",
-                            "thu": "Thu"
+                            "sun": "Søn",
+                            "mon": "Man",
+                            "tue": "Tirs",
+                            "wed": "Ons",
+                            "thurs": "Tors",
+                            "fri": "Fre",
+                            "sat": "Lør",
+                            "thu": "Tors"
                         },
                         "name": {
                             "sun": "Søndag",
@@ -1187,7 +1187,7 @@
                         "noDaySelected": "Ingen dag valgt"
                     },
                     "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
-                    "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
+                    "hyperlinkToGraph": "Klik her for at se forbruget og den anvendte aktive tid",
                     "subTitle": "Tidsplan for din computer",
                     "automaticMode": "Automatisk tilstand",
                     "manualMode": "Manuel tilstand",

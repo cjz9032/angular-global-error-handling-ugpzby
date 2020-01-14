@@ -62,7 +62,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private localInfoService: LocalInfoService,
 		public translate: TranslateService,
-	) {	}
+	) { }
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShell.getSecurityAdvisor();
@@ -283,11 +283,11 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	findArray(others: Array<phoenix.OtherInfo>, partyAvList) {
 		let show = true;
 		others.forEach((e) => {
-		  partyAvList.forEach((data) => {
-			if (e.name === data) {
-				show = false;
-			}
-		  });
+			partyAvList.forEach((data) => {
+				if (e.name === data) {
+					show = false;
+				}
+			});
 		});
 		return show;
 	}

@@ -1142,10 +1142,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart vänteläge",
-                    "description": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
-                    "tooltip": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda starttiden och i viloläge när den inte har använts under en viss tid på batterikraft. Tiden optimeras utifrån det schema du har valt eller den datoranvändningstid vi får. Datorn övergår från viloläge till modernt vänteläge endast schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
+                    "description": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den snabbt aktiveras med <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">modernt vänteläge</a> under tider då den används mer frekvent.",
+                    "tooltip": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda START tiden och i viloläge när den inte har använts under en viss tid på batterikraft. Tidsperioden är optimerad utifrån schemat du har angett eller din datoranvändning. Datorn övergår från viloläge till modernt vänteläge endast schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
                     "timer": {
-                        "heading": "Tiden då du brukar använda datorn",
+                        "heading": "Den tid du brukar använda denna dator:",
                         "subHeading1": "start",
                         "subHeading2": "slut",
                         "subHeading3": "använd detta schema för",
@@ -1167,10 +1167,10 @@
                             "mon": "mån",
                             "tue": "tis",
                             "wed": "ons",
-                            "thurs": "tors",
+                            "thurs": "tor",
                             "fri": "fre",
                             "sat": "lör",
-                            "thu": "Thu"
+                            "thu": "tor"
                         },
                         "name": {
                             "sun": "söndag",
@@ -1187,7 +1187,7 @@
                         "noDaySelected": "Ingen dag har valts"
                     },
                     "checkbox": "Justera datorns aktiva tid automatiskt utifrån användning",
-                    "hyperlinkToGraph": "Klicka om du vill datorns tabell över aktivitet och aktiv tid",
+                    "hyperlinkToGraph": "Klicka för att se förbrukningen och den tillämpade aktiva tiden",
                     "subTitle": "Schemalägg datorn",
                     "automaticMode": "Automatiskt läge",
                     "manualMode": "Manuellt läge",

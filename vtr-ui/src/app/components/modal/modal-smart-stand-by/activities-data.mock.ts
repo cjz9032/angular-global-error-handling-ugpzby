@@ -212,10 +212,10 @@ export const ActivitiesData = [
 			{
 				hour: 23,
 				usage: [
-					1,
-					2,
-					3,
-					4
+					0,
+					0,
+					0,
+					0
 				]
 			}
 		]
@@ -1538,13 +1538,12 @@ export const ActivitiesData = [
 			{
 				hour: 23,
 				usage: [
-					1,
-					1,
-					1,
-					1
+					0,
+					0,
+					0,
+					0
 				]
 			}
 		]
 	}
 ];
-

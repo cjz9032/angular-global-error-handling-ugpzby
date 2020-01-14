@@ -484,6 +484,26 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+/*.smart-standBy-modal-styles*/
+.smart-standBy-modal {
+	// .modal-dialog {
+	// 	max-width: 85%;
+	// }
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 2rem;
+		@media #{$black-on-white} {
+			border: 0.1rem solid;
+			border-radius: 1rem;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid;
+			border-radius: 1rem;
+		}
+	}
+}
+
 /*-----Voice-Modal------------*/
 .Voice-Modal {
 	.modal-dialog {

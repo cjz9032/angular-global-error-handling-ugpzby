@@ -134,7 +134,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					// Register for a notification when something goes wrong
 					// TODO: define the fail handle callback and show error message maybe... there's a chance another app is previewing camera, that's when failed happen.
 					self.oMediaCapture.addEventListener('failed', (error) => {
-						console.log('failed to capture camera', error);
+						this.appLogger.error('failed to capture camera', error.code);
 						self.cleanupCameraAsync();
 
 						this.ngZone.run(() => {

@@ -1007,9 +1007,9 @@
                         "desc3": "Einige Modi können je nach Aktivität automatisch über einen größeren Leistungsumfang angepasst werden. Um den Automatikmodus zu aktivieren, drücken Sie die Tastenkombination FN+T.",
                         "autoMode": {
                             "title1": "Automatischer Akku-Modus",
-                            "desc1": "Der Schieberegler befindet sich auf der linken Seite. Der Modus wird dynamisch in den \"Ruhemodus\" oder \"Akkumodus\" umgeschaltet, um das beste DC-Modus-Erlebnis zu erzielen.",
+                            "desc1": "Der Schieberegler befindet sich auf der linken Seite. Der Modus wird dynamisch in den Ruhemodus oder Akkumodus umgeschaltet, um das beste DC-Modus-Erlebnis zu erzielen.",
                             "title2": "Automatischer Leistungsmodus",
-                            "desc2": "Der Schieberegler befindet sich in der Mitte oder Mitte rechts. Der Modus wird dynamisch in den \"Ruhemodus\", \"ausbalancierten Modus\" oder \"Leistungsmodus\" umgeschaltet, um das bestmögliche Erlebnis im AC-Modus zu gewährleisten.",
+                            "desc2": "Der Schieberegler befindet sich in der Mitte oder Mitte rechts. Der Modus wird dynamisch in den Ruhemodus, ausbalancierten Modus oder Leistungsmodus umgeschaltet, um das bestmögliche Erlebnis im AC-Modus zu gewährleisten.",
                             "title3": "Leistungsmodus",
                             "desc3": "Der Schieberegler ist ganz rechts. Lüftergeschwindigkeit und zulässige Oberflächentemperatur sind höher für maximale Leistung."
                         },
@@ -1142,10 +1142,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart-Standby",
-                    "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Hochfahren bei intensiverer Nutzung beeinträchtigt wird.",
-                    "tooltip": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird anhand des von Ihnen festgelegten Zeitplans oder Ihrer Computernutzungszeiten optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
+                    "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Fortsetzen von <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern-Standby</a> bei intensiverer Nutzung beeinträchtigt wird.",
+                    "tooltip": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird anhand des von Ihnen festgelegten Zeitplans oder Ihrer Computernutzung optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
                     "timer": {
-                        "heading": "Die typischen Nutzungszeiten für Ihren Computer",
+                        "heading": "Typische Nutzungszeiten für diesen Computer:",
                         "subHeading1": "innerhalb des Felds",
                         "subHeading2": "Ende",
                         "subHeading3": "Zeitplan nutzen für",
@@ -1163,14 +1163,14 @@
                     "warningtip": "Bitte wählen Sie mindestens einen Tag aus.",
                     "days": {
                         "shortName": {
-                            "sun": "Sonntag",
-                            "mon": "Montag",
-                            "tue": "Dienstag",
-                            "wed": "Mittwoch",
-                            "thurs": "Donnerstag",
-                            "fri": "Freitag",
-                            "sat": "Samstag",
-                            "thu": "Thu"
+                            "sun": "So.",
+                            "mon": "Mo.",
+                            "tue": "Di.",
+                            "wed": "Mi.",
+                            "thurs": "Do.",
+                            "fri": "Fr.",
+                            "sat": "Sa.",
+                            "thu": "Do."
                         },
                         "name": {
                             "sun": "Sonntag",
@@ -1187,7 +1187,7 @@
                         "noDaySelected": "Kein Tag ausgewählt"
                     },
                     "checkbox": "Automatische Anpassung der aktiven Zeit Ihres Computers abhängig von der Verwendung",
-                    "hyperlinkToGraph": "Klicken Sie hier, um die Tabelle mit den Aktivitäten und aktiven Zeiten Ihres Computers anzuzeigen",
+                    "hyperlinkToGraph": "Hier klicken, um die Nutzung und angewandte aktive Zeit anzuzeigen",
                     "subTitle": "Zeitplan für Ihren Computer festlegen",
                     "automaticMode": "Automatischer Modus",
                     "manualMode": "Manueller Modus",

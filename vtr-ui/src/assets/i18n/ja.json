@@ -647,12 +647,12 @@
             "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>"
         },
         "qAndA": {
-            "title": "あなたの機械のQ&A",
-            "subtitle": "ご使用のデバイスのお役立ちヒントを探します。",
-            "question1": "ファイルをバックアップし、復元する",
+            "title": "ご使用のマシンの Q&A",
+            "subtitle": "あなたのデバイスのためのいくつかの役に立つヒントを見つけてください。",
+            "question1": "ファイルのバックアップおよび復元",
             "question2": "PC を更新する方法",
-            "question3": "ご使用のマシンの CPU を知る方法",
-            "question4": "マシンのバッテリーの使用を確認する",
+            "question3": "ご使用のマシンの CPU を確認",
+            "question4": "マシンのバッテリー使用状況を確認",
             "question5": "PC をタブレットのように使用する",
             "question6": "パーソナル・アシスタントの Cortana についてもっと知る"
         },
@@ -710,13 +710,13 @@
         "offlineInfo": {
             "title": "インターネット接続は検出されませんでした",
             "subtitle": "接続の問題を解決する方法の詳細については、",
-            "buttonText": "サポートを受ける",
+            "buttonText": "サポートを依頼",
             "welcomeToVantage": "次世代の Vantage へようこそ",
             "systemHealth": "システム正常性"
         },
         "feedback": {
             "title": "フィードバックを送る",
-            "subtitle": "Vantage の感想をお聞かせください。",
+            "subtitle": "VANTAGE に関するフィードバックをお送りください。",
             "button": "フィードバックを送る",
             "form": {
                 "email": "Email (optional)",
@@ -761,14 +761,14 @@
                 "title": "メモリー",
                 "detail": {
                     "notFound": "メモリーが見つかりません",
-                    "of": "の"
+                    "of": "/"
                 }
             },
             "diskSpace": {
                 "title": "ディスク容量",
                 "detail": {
                     "notFound": "ディスクが見つかりません",
-                    "of": "の"
+                    "of": "/"
                 }
             },
             "warranty": {
@@ -795,7 +795,7 @@
             "serial": "シリアル",
             "productNumber": "製品番号",
             "biosVersion": "BIOS バージョン",
-            "learnMore": "さらに詳しい説明を見る",
+            "learnMore": "詳細はこちら",
             "freeMemory": "空きメモリー",
             "systemUpdate": {
                 "title": "システム アップデート",
@@ -838,10 +838,10 @@
                     "support": "サポート"
                 }
             },
-            "helpful": "役に立つコンテンツ"
+            "helpful": "役に立つ情報"
         },
         "deviceSettings": {
-            "helpful": "役に立つコンテンツ",
+            "helpful": "役に立つ情報",
             "batteryGauge": {
                 "subtitle": "バッテリー状態",
                 "hours": "時間",
@@ -929,9 +929,9 @@
             "power": {
                 "title": "電源",
                 "subtitle": "電源設定",
-                "description": "このセクションでは、熱性能を動的に調整してバッテリー寿命を最大化することができます。また、一般的な電源関連機能もここにあります。このセクションでデフォルト設定を確認し、必要に応じてシステムをカスタマイズできます。",
+                "description": "このセクションでは、熱性能を動的に調整してバッテリー寿命を最大化することができます。また、一般的な電源機能も実行できます。このセクションでデフォルト設定を確認し、必要に応じてシステムをカスタマイズできます。",
                 "jumpto": {
-                    "title": "設定に移動",
+                    "title": "設定を表示",
                     "battery": "バッテリー",
                     "power": "電源",
                     "other": "その他"
@@ -945,7 +945,7 @@
                     "description3": "インテリジェント・クーリングは熱性能のバランスを必要に応じて自動的に調整します。ノートブックを手で持っている場合、インテリジェントクーリング機能はパフォーマンス設定を調整して表面の熱を軽減させ、使いやすくします。デバイスが机上に置かれると、この機能はパフォーマンスを最適化します。",
                     "description13": "オンにすると、この機能は必要に応じて熱設定を動的に調整します。デバイスを手に持っているときやアイドル状態のときはデバイスの温度を低めに、静かに保ちます。 デバイスが安定した場所にあると、パフォーマンスが最適化されます。オフにすると、熱の優先度を手動で設定できます。",
                     "description14": "この機能により、必要に応じて、ファン速度を調整したり、システムパフォーマンスを最大化したり、バッテリ寿命を延ばしたりすことができます。以下の 3 つのモードがあります。また、ホットキー (Fn+Q) を使うか Lenovo Vantage ツールバーからモードを切り替えることもできます。",
-                    "readMore": "表示を多くする。",
+                    "readMore": "さらに読む。",
                     "gotoWindows": {
                         "title": "Windows 設定に移動",
                         "modalBodyText1": "Windows のパフォーマンスの電源スライダーにアクセスするには、Windows のシステム トレイのバッテリー・アイコンをクリックします"
@@ -1057,7 +1057,7 @@
                         "description": "コンピューターを主に AC アダプターに接続して使用し、バッテリー電源はそれほど使用しない場合は、充電のしきい値を 100 % より下に変更してバッテリー寿命を延ばすことができます。それほど使用しないバッテリーは完全に充電しない状態を維持することで寿命が長くなるため、効果的です。",
                         "tooltip": "現状でバッテリーが充電停止しきい値を超えて充電されている場合は、電源を取り外して、バッテリーを充電停止しきい値以下まで放電させてください。バッテリーの状態 (古いまたは新しい) によって、充電の正確な開始点および停止点は、最大 2 パーセントのポイントで異なります。この機能が有効の場合、バッテリーの状態が正しく報告されるように定期的にバッテリー・ゲージのリセットを実行することをお勧めします。",
                         "note": "お願い",
-                        "readMoreText": "表示を多くする。",
+                        "readMoreText": "さらに読む。",
                         "noteInfo": " バッテリー充電のしきい値がまだ完全にアクティブではありません。マシンの電源を切り、充電停止しきい値以下までバッテリを放電してください。",
                         "settings": {
                             "title1": "プライマリー・バッテリーのしきい値",
@@ -1142,10 +1142,10 @@
                 },
                 "smartStandby": {
                     "title": "スマート・スタンバイ",
-                    "description": "この機能は、使用頻度の高い時間中の高速スタートアップ時間に影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
-                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。この期間は、設定したスケジュールまたは取得したコンピューターの使用時間に基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
+                    "description": "この機能は、使用頻度の高い時間中の<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">モダン・スタンバイ</a>の高速再開エクスペリエンスに影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
+                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。この期間は、設定したスケジュールまたはコンピューターの使用状況に基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
                     "timer": {
-                        "heading": "通常コンピューターを使用する時刻を設定します",
+                        "heading": "通常このコンピューターを使用する時刻:",
                         "subHeading1": "フィールドの",
                         "subHeading2": "終了",
                         "subHeading3": "このスケジュールを使用する期間",
@@ -1163,14 +1163,14 @@
                     "warningtip": "少なくとも1日を選択してください。",
                     "days": {
                         "shortName": {
-                            "sun": "日曜日",
-                            "mon": "月曜日",
-                            "tue": "火曜日",
-                            "wed": "水曜日",
-                            "thurs": "木曜日",
-                            "fri": "金曜日",
-                            "sat": "土曜日",
-                            "thu": "Thu"
+                            "sun": "日",
+                            "mon": "月",
+                            "tue": "火",
+                            "wed": "水",
+                            "thurs": "木",
+                            "fri": "金",
+                            "sat": "土",
+                            "thu": "木"
                         },
                         "name": {
                             "sun": "日曜日",
@@ -1187,7 +1187,7 @@
                         "noDaySelected": "日が選択されていません"
                     },
                     "checkbox": "使用状況に基づいてコンピューターのアクティブ時間を自動調整する",
-                    "hyperlinkToGraph": "クリックして、コンピューター・テーブルのアクティビティとアクティブ時間を表示します",
+                    "hyperlinkToGraph": "クリックして使用状況と適用されたアクティブ時間を確認します",
                     "subTitle": "コンピューターのスケジュール",
                     "automaticMode": "自動モード",
                     "manualMode": "手動モード",
@@ -1236,7 +1236,7 @@
             "audio": {
                 "title": "オーディオ",
                 "subtitle": "オーディオの設定",
-                "description": "このセクションでは、Dolby 設定やマイクなどのオーディオ設定を自動で最適化することも、すべて手動で構成することもできます。",
+                "description": "このセクションでは、Dolby 設定やマイクなどのオーディオ設定を自動で最適化することも、すべて手動で設定することもできます。",
                 "audioSmartsettings": {
                     "title": "オーディオ・スマート設定",
                     "subtitle": "アプリケーションに基づく設定",
@@ -1298,9 +1298,9 @@
             "displayCamera": {
                 "title": "ディスプレイとカメラ",
                 "subtitle": "ディスプレイとカメラの設定",
-                "description": "このセクションでは、ビジュアル・エクスペリエンスの向上や、カメラのプロパティの構成を行うことができます。ここでたくさんある機能を調べて、ディスプレイ・エクスペリエンスをカスタマイズします。",
+                "description": "このセクションでは、ビジュアル関連の向上や、カメラのプロパティの構成を行うことができます。ここでたくさんある機能を調べて、表示設定をカスタマイズします。",
                 "jumpTo": {
-                    "title": "設定に移動",
+                    "title": "設定を表示",
                     "shortcuts": {
                         "display": {
                             "title": "ディスプレイ"
@@ -1337,7 +1337,7 @@
                         }
                     },
                     "dispColorTemp": {
-                        "title": "ディスプレイの色温度",
+                        "title": "日中の色温度",
                         "options": {
                             "warm": "暖色 (目に優しい)",
                             "cold": "寒色"
@@ -1569,7 +1569,7 @@
             "title": "スマート・アシスト",
             "description": "Lenovo インテリジェント・センサーはコンピューターのさまざまなセンサーを組み合わせて操作を検出し、最適な電源管理の設定を調整し、プライバシーを保護します。",
             "jumpTo": {
-                "title": "設定に移動",
+                "title": "設定を表示",
                 "security": "セキュリティー",
                 "screen": "画面",
                 "media": "メディア",
@@ -1578,7 +1578,7 @@
             },
             "intelligentSecurity": {
                 "title": "インテリジェント・セキュリティー",
-                "readMore": "表示を多くする",
+                "readMore": "さらに読む",
                 "HumanPresenceDetection": {
                     "title": "人物存在検知",
                     "tooltip": "人物存在検知の設定をリセットするには、ここをクリックしてください。"
@@ -1769,7 +1769,7 @@
     "systemUpdates": {
         "title": "システム アップデート",
         "back": "戻る",
-        "history": "全履歴",
+        "history": "これまでの記録",
         "notAvailable": "利用できません",
         "notInstalled": "未インストール",
         "criticalUpdates": "重要な更新",
@@ -1779,7 +1779,7 @@
         "successInstall": "正常にインストールされました。",
         "failedInstall": "インストール失敗:",
         "at": "の",
-        "readMore": "表示を多くする",
+        "readMore": "さらに読む",
         "popup": {
             "reboot": "再起動",
             "shutdown": "シャットダウン",
@@ -1814,7 +1814,7 @@
         },
         "banner": {
             "neverChecked": "システム アップデートへようこそ。",
-            "title": "最新のシステムは健全なシステムです。",
+            "title": "システムを安全にご利用いただくために、常に最新の状態にしてください。",
             "installingTitle": "更新時に、ご使用のコンピューターをスリープ状態または休止状態にしないでください。",
             "last": "最終更新日:",
             "next": "次回の更新スケジュール:",
@@ -1893,7 +1893,7 @@
     },
     "support": {
         "common": {
-            "getSupport": "サポートを受ける"
+            "getSupport": "サポートを依頼"
         },
         "warranty": {
             "titleInWarranty": "保証期間内",
@@ -1946,8 +1946,8 @@
         },
         "quickAccess": {
             "categories": "カテゴリー",
-            "categoriesDesc": "記事を読んで役に立つ情報を見つけてください。",
-            "seeArticles": "記事を見る"
+            "categoriesDesc": "記事から役に立つ情報を検索。",
+            "seeArticles": "記事を確認"
         }
     },
     "security": {
@@ -2276,36 +2276,36 @@
         "logout": "ログアウト",
         "unlockExclusives": "専用機能をロック解除",
         "user": "ユーザー",
-        "welcomeText1": "今日はエネルギーにあふれているように見えます、{{firstName}} さん!",
-        "welcomeText2": "{{firstName}}さん、またお会いできて嬉しいです",
-        "welcomeText3": "{{firstName}}さん、とても嬉しい驚きです",
-        "welcomeText4": "{{firstName}}さんが笑うと、みんなが笑顔になります:)",
-        "welcomeText5": "コンコン、{{firstName}}さん",
+        "welcomeText1": "{{firstName}}さん、今日はエネルギーに満ち溢れた日です。",
+        "welcomeText2": "{{firstName}}さん、またお会いできて嬉しいです。",
+        "welcomeText3": "{{firstName}}さん、お久しぶりです。",
+        "welcomeText4": "{{firstName}}さんが笑うと、みんなが笑顔になります。",
+        "welcomeText5": "{{firstName}}さん、こんにちは！",
         "welcomeText6": "素晴らしい場所に出発しましょう！",
-        "welcomeText7": "今日はあなたの日です、{{firstName}}さん！",
+        "welcomeText7": "{{firstName}}さん、準備はいいですか。",
         "welcomeText8": "幸運の小さな木が好きなのは誰ですか？",
-        "welcomeText9": "パーティーをしましょう、{{firstName}}さん！",
-        "welcomeText10": "冷静を保ち、Vantage をオンにしましょう",
-        "welcomeText11": "コスパの高い Vantage",
-        "welcomeText12": "Vantage を家に持ち帰りましょう",
-        "welcomeText13": "食べて寝て、Vantage、そしてその繰り返し",
-        "welcomeText14": "いつでも新鮮な Vantage",
-        "welcomeText15": "Vantage を最大限に活用しましょう",
-        "welcomeTextWithoutUserName1": "今日はエネルギーにあふれているように見えます!",
-        "welcomeTextWithoutUserName2": "またお会いできて嬉しいです",
-        "welcomeTextWithoutUserName3": "とても嬉しい驚きです",
+        "welcomeText9": "{{firstName}}さん、さあ始めましょう。",
+        "welcomeText10": "慌てずに、Vantageを立ち上げよう！",
+        "welcomeText11": "Vantage は高品質かつお求めやすい価格です。",
+        "welcomeText12": "Vantageをもっと活用してみませんか。",
+        "welcomeText13": "毎日 Vantage をご活用ください。",
+        "welcomeText14": "Vantage には常に新しい発見があります。",
+        "welcomeText15": "Vantage を最大限に活用しましょう。",
+        "welcomeTextWithoutUserName1": "今日はエネルギーに満ち溢れた日です。",
+        "welcomeTextWithoutUserName2": "またお会いできて嬉しいです。",
+        "welcomeTextWithoutUserName3": "お久しぶりです。",
         "welcomeTextWithoutUserName4": "笑うと、みんなが笑顔になります:)",
-        "welcomeTextWithoutUserName5": "コンコン",
+        "welcomeTextWithoutUserName5": "こんにちは！",
         "welcomeTextWithoutUserName6": "素晴らしい場所に出発しましょう！",
-        "welcomeTextWithoutUserName7": "今日はあなたの日です！",
+        "welcomeTextWithoutUserName7": "準備はいいですか！",
         "welcomeTextWithoutUserName8": "幸運の小さな木が好きなのは誰ですか？",
-        "welcomeTextWithoutUserName9": "パーティーをしましょう！",
-        "welcomeTextWithoutUserName10": "冷静を保ち、Vantage をオンにしましょう",
-        "welcomeTextWithoutUserName11": "コスパの高い Vantage",
-        "welcomeTextWithoutUserName12": "Vantage を家に持ち帰りましょう",
-        "welcomeTextWithoutUserName13": "食べて寝て、Vantage、そしてその繰り返し",
-        "welcomeTextWithoutUserName14": "いつでも新鮮な Vantage",
-        "welcomeTextWithoutUserName15": "Vantage を最大限に活用しましょう",
+        "welcomeTextWithoutUserName9": "さあ始めましょう！",
+        "welcomeTextWithoutUserName10": "慌てずに、Vantageを立ち上げよう！",
+        "welcomeTextWithoutUserName11": "Vantage は高品質かつお求めやすい価格です。",
+        "welcomeTextWithoutUserName12": "Vantageをもっと活用してみませんか。",
+        "welcomeTextWithoutUserName13": "毎日 Vantage をご活用ください。",
+        "welcomeTextWithoutUserName14": "Vantage には常に新しい発見があります。",
+        "welcomeTextWithoutUserName15": "Vantage を最大限に活用しましょう。",
         "helloUser": "こんにちは {{firstName}} さん!",
         "ssoErrorTitle": "エラー",
         "ssoErrorCommon": "内部エラーが発生しました。再度試行してください。",
@@ -2323,7 +2323,7 @@
             "button": "フォーラムへ"
         },
         "question1": {
-            "title": "ファイルをバックアップし、復元する",
+            "title": "ファイルのバックアップおよび復元",
             "description": "<div>    <div class='faqInFs4Fb'>        ファイルをバックアップし、復元する    </div>    <hr />    <div class='faqInMb7'>        どんな場合でもバックアップを取っておくのは良いことです。オリジナルに問題が発生した場合に備えて、ファイルのコピーを別のドライブに保存してください。    </div>    <div class='faqInFs3Fb'>        バックアップの設定    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>「スタート」</span>ボタンを選択し、<span class='faqInFb'>「設定」</span> > <span class='faqInFb'>「更新とセキュリティ」</span> > <span class='faqInFb'>「バックアップ」</span> > <span class='faqInFb'>「ドライブの追加」</span>の順に選択して、次にバックアップ用の外付けドライブまたはネットワークの場所を選択します。    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/ja/1.1.jpg' />    </div>    <div class='mb-5'>        設定完了。毎時間、ユーザー・フォルダー (C:\\\\Users\\\\username) 内の全ファイルをバックアップします。バックアップするファイル、バックアップの頻度を変更するには、<span class='faqInFb'>「その他のオプション」</span>に進みます。    </div>    <div class='faqInFs3Fb'>        ファイルの復元    </div>    <div class='mb-5'>        重要なファイルやフォルダーが見つからない場合は、以下の手順で元に戻すことができます。    </div>    <div>        <div class='mb-3'>1.タスク バーの検索ボックスに<span class='faqInFb'>「ファイルを復元」</span>と入力して、次に<span class='faqInFb'>「ファイル履歴をファイルを復元」</span>を選択します。</div>        <div class='mb-3'>2.必要なファイルを探し、次に矢印を使って、そのすべてのバージョンを表示します</div>        <div class='mb-3'>3.必要なバージョンが見つかったら、<span class='faqInFb'>「復元」</span>を選択して、元の場所にそれを保存します。別の場所に保存するには、<span class='faqInFb'>「復元」</span>を長押し（または右クリック）し、<span class='faqInFb'>「復元先」</span>を選択して、次に新しい場所を選択します。</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
@@ -2438,7 +2438,7 @@
             "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
         },
         "question3": {
-            "title": "ご使用のマシンの CPU を知る方法",
+            "title": "ご使用のマシンの CPU を確認",
             "description": "<div class='faqInFs4Fb'>    ご使用のマシンの CPU を知る方法</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>32 ビットと 64 ビットという用語は、コンピューターのプロセッサー (CPUとも呼ばれる) が情報を処理する方法を表します。64 ビット版の Windows は、32 ビットのシステムよりも効率的に大量のランダム・アクセス・メモリー (RAM) を処理します。</p><h3 class='faqInFs25FbP10'>影響を受けるブランド</h3><p>上記の症状は、以下のシステムに関連しますが、これらに限定されません。</p><ul>    <li>すべてのデスクトップとラップトップ</li></ul><h3 class='faqInFs25FbP10'>オペレーティング・システム</h3><ul>    <li>Windows 7、8、10</li></ul><h3 class='faqInFs25FbP10'>解決法</h3><p><strong><u>Windows 7 または Vista の場合</u></strong></p><ol>    <li><strong>「スタート」ボタン</strong>の<strong>「スタート」ボタン</strong>の画像をクリックして、システムを開き、「コンピューター」を右クリックし、「プロパティ」をクリックします  </li>    <li>「システム」から、システムのタイプを表示できます。</li></ol><p><strong><u>Windows 8 および Windows 10 の場合</u></strong></p><p><strong>方法 1:</strong> コントロール パネルの「システム」ウィンドウを表示します</p><ol>    <li>画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。</li>    <li>検索ボックスに<strong>「システム」</strong>と入力してから、<strong>「設定」</strong>をタップまたはクリックします。</li>    <li><strong>「システム」</strong>をタップまたはクリックします</li>    <li>64 ビット版の Windows 8 を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「64 ビット オペレーティング システム」</strong>と表示されます。32 <strong>ビット版の Windows</strong> <strong>8</strong> を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「32 ビット オペレーティング システム」</strong>と表示されます。<br /> </li></ol><p><strong>方法 2</strong>: システム情報ウィンドウの表示</p><ol>    <li>画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。</li>    <li>検索ボックスに<strong>「システム情報」</strong>と入力します</li>    <li><strong>「システム」</strong>をタップまたはクリックし、<strong>「システム情報」</strong>をタップまたはクリックして、次に<strong>「システムの要約」</strong>をタップまたはクリックします。</li>    <li><strong>64 ビット</strong>版の Windows 8 を実行している場合<strong>、</strong>「項目」の見出し下の <strong>「システムの種類」</strong>に「x64 ベース PC」が表示されます。<br /><br /><strong>32 ビット</strong>版の Windows 8 を実行している場合、「項目」の見出しの下の<strong>「システムの種類」</strong>に「x86 ベース PC」が表示されます。 </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
@@ -2527,8 +2527,8 @@
             }
         },
         "question4": {
-            "title": "マシンのバッテリーの使用を確認する",
-            "description": "<div class='faqInFs4Fb'>    マシンのバッテリーの使用を確認する</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>Windows 10 には、ラップトップのバッテリー残量を表示する、新しい<strong>「バッテリーの使用」</strong>画面が含まれます。この画面では、どのアプリ (デスクトップと Windows 10 の両方の「ユニバーサル」アプリ) が電力を消費しすぎているのかを正確に知ることができます。</p><h3 class='faqInFs25FbP10'>影響を受けるブランド</h3><ul>    <li>Lenovo のラップトップ、デスクトップ</li></ul><h3 class='faqInFs25FbP10'>影響を受けるシステム</h3><ul>    <li>すべて</li></ul><h3 class='faqInFs25FbP10'>オペレーティング・システム</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決法</h3><p>この機能は Windows 10で新しく追加されました。従来の<strong>「コントロール パネル」</strong>の表示には格納されていないため、この機能を最初に見つける必要があります。この機能は新しい<strong>「設定」</strong>アプリにあります</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. バッテリー使用画面を見つける</h3></p><p>1.「スタート」メニューから<strong>「設定」</strong>のオプションをクリックまたはタップします</p><p>2.<strong>「設定」</strong>で、<strong>「システム」</strong><strong>「バッテリー節約機能」の順に選択します。 <br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/ja/4.1.jpg' /></p><p>3.この見出しの下の<strong>「バッテリーの使用」</strong>リンクをクリックまたはタップして、詳細を表示します。</p><p> </p><h3 class='faqInFs25FbP10'>B. 電力使用率を分析する</h3><p>4. バッテリー使用画面を変更して、過去 24 時間、48 時間、または先週からのバッテリー使用量を表示することができます</p><p>5. <strong>「システム」</strong>、<strong>「ディスプレイ」、</strong><strong>「Wi-Fi」</strong>の割合がわかります。これは、システムの処理、ディスプレイで消費された電力を表示します。</p><p>6. <strong>「使用中」</strong>および<strong>「バックグラウンド」</strong>オプションは、バックグラウンドで実行中のアプリと比較して、アプリ使用中の消費電力を示します。</p><p>7. バックグラウンドで電力を消費するアプリがある場合、<strong>「バックグラウンド アプリの設定を変更する」</strong>リンクをクリックまたはタップして、アプリがバックグラウンドで起動しないように設定します。これは、ユニバーサル Windows 10 アプリにのみ有効です。</p><p>8. 下にスクロールすると、アプリの一覧が表示されます。これは、この機能の最も便利なセクションです。一定期間にバッテリーを消費したアプリの一覧を表示します。また、各アプリが使用した電力の割合を示します</p><p><img src='./../../../assets/images/qa/ja/4.2.jpg' /></p><p> </p>",
+            "title": "マシンのバッテリー使用状況を確認",
+            "description": "<div class='faqInFs4Fb'>    マシンのバッテリー使用状況を確認</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>Windows 10 には、ラップトップのバッテリー残量を表示する、新しい<strong>「バッテリーの使用」</strong>画面が含まれます。この画面では、どのアプリ (デスクトップと Windows 10 の両方の「ユニバーサル」アプリ) が電力を消費しすぎているのかを正確に知ることができます。</p><h3 class='faqInFs25FbP10'>影響を受けるブランド</h3><ul>    <li>Lenovo のラップトップ、デスクトップ</li></ul><h3 class='faqInFs25FbP10'>影響を受けるシステム</h3><ul>    <li>すべて</li></ul><h3 class='faqInFs25FbP10'>オペレーティング・システム</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決法</h3><p>この機能は Windows 10で新しく追加されました。従来の<strong>「コントロール パネル」</strong>の表示には格納されていないため、この機能を最初に見つける必要があります。この機能は新しい<strong>「設定」</strong>アプリにあります</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. バッテリー使用画面を見つける</h3></p><p>1.「スタート」メニューから<strong>「設定」</strong>のオプションをクリックまたはタップします</p><p>2.<strong>「設定」</strong>で、<strong>「システム」</strong><strong>「バッテリー節約機能」の順に選択します。 <br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/ja/4.1.jpg' /></p><p>3.この見出しの下の<strong>「バッテリーの使用」</strong>リンクをクリックまたはタップして、詳細を表示します。</p><p> </p><h3 class='faqInFs25FbP10'>B. 電力使用率を分析する</h3><p>4. バッテリー使用画面を変更して、過去 24 時間、48 時間、または先週からのバッテリー使用量を表示することができます</p><p>5. <strong>「システム」</strong>、<strong>「ディスプレイ」、</strong><strong>「Wi-Fi」</strong>の割合がわかります。これは、システムの処理、ディスプレイで消費された電力を表示します。</p><p>6. <strong>「使用中」</strong>および<strong>「バックグラウンド」</strong>オプションは、バックグラウンドで実行中のアプリと比較して、アプリ使用中の消費電力を示します。</p><p>7. バックグラウンドで電力を消費するアプリがある場合、<strong>「バックグラウンド アプリの設定を変更する」</strong>リンクをクリックまたはタップして、アプリがバックグラウンドで起動しないように設定します。これは、ユニバーサル Windows 10 アプリにのみ有効です。</p><p>8. 下にスクロールすると、アプリの一覧が表示されます。これは、この機能の最も便利なセクションです。一定期間にバッテリーを消費したアプリの一覧を表示します。また、各アプリが使用した電力の割合を示します</p><p><img src='./../../../assets/images/qa/ja/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -3093,184 +3093,196 @@
                 "title": "Last 5 scan results:",
                 "scanDate": "Scan date:",
                 "results": "Results:",
-                "status": "Status"
-            }
-        }
-    },
-    "homeSecurity": {
-        "title": "Connected Home Security",
-        "notification": {
-            "recent": "Recent security notifications",
-            "notifications": "Notifications",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "Protect your device ecosystem",
-            "thisDevice": "This device",
-            "allDevices": "All Devices",
-            "protected": "Protected",
-            "notProtected": "Not Protected",
-            "trialExpired": "Trial expired",
-            "upgrade": "upgrade",
-            "inEcosystem": "In Ecosystem",
-            "ecosystemEnable": "Ecosystem Enabled",
-            "inTrial": "In trial",
-            "addEcosystem": "Add to Ecosystem",
-            "enableEcosystem": "Enable Ecosystem",
-            "startTrial": "Start Trial",
-            "fullAccess": "Full Access",
-            "renew": "Renew"
-        },
-        "overview": {
-            "overviewBlockTitle": "Your Ecosystem Security Overview",
-            "allDevices": "All Devices",
-            "myDevice": "My Device",
-            "thisComputer": "This computer",
-            "secure": "SECURE",
-            "needAttention": "NEEDS ATTENTION",
-            "manageAccount": "Manage account",
-            "devices": "Devices",
-            "seeProtectedDevices": "See protected devices",
-            "addDevice": "add device",
-            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
-            "upgrade": "upgrade",
-            "freeTrial": "Protect all of your devices - Free 30 day trial",
-            "startTrial": "Start Trial",
-            "trialTitle": "Trial subscription",
-            "subscriptionTitle": "Paid subscription",
-            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
-            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
-            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
-            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
-            "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
-            "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-            "familyMembers": "Family members",
-            "places": "Places",
-            "personalDevices": "Personal devices",
-            "wifiNetworks": "Wi-fi networks",
-            "homeDevices": "Home devices",
-            "disconnectDevice": "Disconnect this device from Connected Home Security",
-            "disconnect": "disconnect",
-            "goDashboard": "go to dashboard",
-            "buyNow": "Buy Now",
-            "extendNow": "extend now",
-            "renewNow": "Renew Now",
-            "poweredBy": "Powered by Coronet",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
-        },
-        "tour": {
-            "back": "Back",
-            "skip": "Skip",
-            "start": "START TOUR",
-            "done": "DONE",
-            "welcomeTitle": "welcome to connected home security",
-            "welcomeSubTitle": "30 days of protection for free",
-            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
-            "locationTitle": "Enable location permissions",
-            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
-            "allow": "Allow",
-            "notNow": "Not now"
-        },
-        "accountStatus": {
-            "title": "My Connected Home Security",
-            "startTrial": "Start Trial",
-            "manageAccount": "Manage Account",
-            "upgradeAccount": "Upgrade Account",
-            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-            "trialExpiredDetail1": "Your trial has expired.",
-            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "upgradedDetail1": "You account is active until {{expiredDate}}.",
-            "upgradedDetail2": "Your device ecosystem is currently being protected.",
-            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
-            "alreadyHaveAccount": "Already have an activation code?"
-        },
-        "card": {
-            "startTrial": "Start Trial",
-            "startTrialTitle": "Create your own Connected Home Security",
-            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-            "join": "join",
-            "joinTitle": "Join your family's Connected Home Security",
-            "joinDescription": "Become a part of your family security group."
-        },
-        "modal": {
-            "countdownTitle": "Launching web browser",
-            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-            "goNow": "Go now",
-            "disconnectedTitle": "Disconnect from protection?",
-            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-            "disconnecting": "Disconnecting..."
-        }
-    },
-    "dir": "ltr",
-    "dirClass": "ltr",
-    "notification": {
-        "menu": {
-            "privacy": "これで、個人情報が知らないうちにオンライン・トラッカーによって侵害されたり使用されたりしたかどうかを知ることができます。",
-            "security": "ご存知ですか。ウイルス対策ソフトウェアをインストールしていない場合でも、デバイスの基本的なセキュリティ保護を提供します。",
-            "connectedHomeSecurity": "自宅でネットワーク・セキュリティに関するリアルタイムの監視とアラートを実現します。スマート・デバイスのいずれかがセキュリティ攻撃に直面しているかどうかを知る最初の人物になります。"
-        }
-    },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "インストールが失敗しました。再度試行してください。",
-                "networkError": "ネットワーク・エラー。",
-                "installationCancelled": "インストールがキャンセルされました。"
+                "status": "Status",
+                "fieldName": {
+                    "description": "説明",
+                    "screenshots": "スクリーンショット",
+                    "additionalInformation": "追加情報",
+                    "by": "作者:",
+                    "updated": "更新:",
+                    "type": "タイプ:",
+                    "category": "カテゴリー:",
+                    "legalAgreement": "法的合意",
+                    "readMore": "さらに読む",
+                    "readLess": "表示を少なくする"
+                }
             }
         },
-        "menuText": {
-            "adobeRedemption": "Adobe の引き換え",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "インストール",
-                "installing": "インストール",
-                "downloading": "ダウンロード中",
-                "installed": "インストール済み",
-                "launch": "起動",
-                "seeMore": "詳細を見る"
+        "homeSecurity": {
+            "title": "Connected Home Security",
+            "notification": {
+                "recent": "Recent security notifications",
+                "notifications": "Notifications",
+                "unsafeNetworkConnection": "Unsafe network connection",
+                "networkUnsafe": "Network unsafe",
+                "deviceDisconnected": "Device disconnected",
+                "newDeviceDetected": "New device detected",
+                "unsafeDeviceDetected": "Unsafe device detected"
             },
-            "fieldName": {
-                "description": "説明",
-                "screenshots": "スクリーンショット",
-                "additionalInformation": "追加情報",
-                "by": "作者:",
-                "updated": "更新:",
-                "type": "タイプ:",
-                "category": "カテゴリー:",
-                "legalAgreement": "法的合意",
-                "readMore": "表示を多くする",
-                "readLess": "表示を少なくする"
+            "ecosystem": {
+                "ecosystemBlockTitle": "Protect your device ecosystem",
+                "thisDevice": "This device",
+                "allDevices": "All Devices",
+                "protected": "Protected",
+                "notProtected": "Not Protected",
+                "trialExpired": "Trial expired",
+                "upgrade": "upgrade",
+                "inEcosystem": "In Ecosystem",
+                "ecosystemEnable": "Ecosystem Enabled",
+                "inTrial": "In trial",
+                "addEcosystem": "Add to Ecosystem",
+                "enableEcosystem": "Enable Ecosystem",
+                "startTrial": "Start Trial",
+                "fullAccess": "Full Access",
+                "renew": "Renew"
+            },
+            "overview": {
+                "overviewBlockTitle": "Your Ecosystem Security Overview",
+                "allDevices": "All Devices",
+                "myDevice": "My Device",
+                "thisComputer": "This computer",
+                "secure": "SECURE",
+                "needAttention": "NEEDS ATTENTION",
+                "manageAccount": "Manage account",
+                "devices": "Devices",
+                "seeProtectedDevices": "See protected devices",
+                "addDevice": "add device",
+                "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+                "upgrade": "upgrade",
+                "freeTrial": "Protect all of your devices - Free 30 day trial",
+                "startTrial": "Start Trial",
+                "trialTitle": "Trial subscription",
+                "subscriptionTitle": "Paid subscription",
+                "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+                "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+                "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+                "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+                "overviewTitle": "Overview",
+                "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+                "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+                "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+                "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+                "overviewTitleAdmin": "Overview of your Connected Home Security",
+                "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+                "familyMembers": "Family members",
+                "places": "Places",
+                "personalDevices": "Personal devices",
+                "wifiNetworks": "Wi-fi networks",
+                "homeDevices": "Home devices",
+                "disconnectDevice": "Disconnect this device from Connected Home Security",
+                "disconnect": "disconnect",
+                "goDashboard": "go to dashboard",
+                "buyNow": "Buy Now",
+                "extendNow": "extend now",
+                "renewNow": "Renew Now",
+                "poweredBy": "Powered by Coronet",
+                "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            },
+            "tour": {
+                "back": "Back",
+                "skip": "Skip",
+                "start": "START TOUR",
+                "done": "DONE",
+                "welcomeTitle": "welcome to connected home security",
+                "welcomeSubTitle": "30 days of protection for free",
+                "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+                "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
+                "locationTitle": "Enable location permissions",
+                "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+                "allow": "Allow",
+                "notNow": "Not now"
+            },
+            "accountStatus": {
+                "title": "My Connected Home Security",
+                "startTrial": "Start Trial",
+                "manageAccount": "Manage Account",
+                "upgradeAccount": "Upgrade Account",
+                "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+                "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+                "trialExpiredDetail1": "Your trial has expired.",
+                "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+                "upgradedDetail1": "You account is active until {{expiredDate}}.",
+                "upgradedDetail2": "Your device ecosystem is currently being protected.",
+                "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+                "alreadyHaveAccount": "Already have an activation code?"
+            },
+            "card": {
+                "startTrial": "Start Trial",
+                "startTrialTitle": "Create your own Connected Home Security",
+                "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+                "join": "join",
+                "joinTitle": "Join your family's Connected Home Security",
+                "joinDescription": "Become a part of your family security group."
+            },
+            "modal": {
+                "countdownTitle": "Launching web browser",
+                "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+                "goNow": "Go now",
+                "disconnectedTitle": "Disconnect from protection?",
+                "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+                "disconnecting": "Disconnecting..."
             }
-        }
-    },
-    "dcc": {
-        "heroBanner": {
-            "description": "Adobe デザイナー・スイートの Lenovo 限定特典"
         },
-        "menuText": {
-            "lenovoDigitalOffer": "Lenovo デジタル特典"
+        "dir": "ltr",
+        "dirClass": "ltr",
+        "notification": {
+            "menu": {
+                "privacy": "これで、個人情報が知らないうちにオンライン・トラッカーによって侵害されたり使用されたりしたかどうかを知ることができます。",
+                "security": "ご存知ですか。ウイルス対策ソフトウェアをインストールしていない場合でも、デバイスの基本的なセキュリティ保護を提供します。",
+                "connectedHomeSecurity": "自宅でネットワーク・セキュリティに関するリアルタイムの監視とアラートを実現します。スマート・デバイスのいずれかがセキュリティ攻撃に直面しているかどうかを知る最初の人物になります。"
+            }
         },
-        "dccDetails": {
-            "subtitle11": "Premiere Pro",
-            "body11": "Premiere Pro は、映画、テレビ、Web 向けの主要なビデオ編集ソフトウェアです。Premiere Pro には、すべてのデバイスで機能し、ネットワークでビデオを共有するオールインワン・アプリの Premiere Rush が含まれています。",
-            "subtitle12": "Creative Cloud フォト・プラン",
-            "body12": "Lightroom を使用すれば、どこからでも簡単に写真を編集、整理、保存、共有できます。Photoshop があれば、画像を思い通りに変えることができます。",
-            "selectButton": "ツールバーで",
-            "subtitle2": "オールインワン: 簡素化",
-            "body2": "第 9 世代 Intel® Core™ プロセッサーを搭載したオールインワン PC によって、あらゆるデスクトップの強みが光沢のあるディスプレイに詰め込まれていることで、乱雑さが抑えられ、ハードウェアベースのセキュリティーと高解像度のディスプレイが実現されています。"
+        "appsForYou": {
+            "common": {
+                "errorMessage": {
+                    "installationFailed": "インストールが失敗しました。再度試行してください。",
+                    "networkError": "ネットワーク・エラー。",
+                    "installationCancelled": "インストールがキャンセルされました。"
+                }
+            },
+            "menuText": {
+                "adobeRedemption": "Adobe の引き換え",
+                "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+            },
+            "appDetails": {
+                "installButton": {
+                    "install": "インストール",
+                    "installing": "インストール",
+                    "downloading": "ダウンロード中",
+                    "installed": "インストール済み",
+                    "launch": "起動",
+                    "seeMore": "詳細を見る"
+                },
+                "fieldName": {
+                    "description": "説明",
+                    "screenshots": "スクリーンショット",
+                    "additionalInformation": "追加情報",
+                    "by": "作者:",
+                    "updated": "更新:",
+                    "type": "タイプ:",
+                    "category": "カテゴリー:",
+                    "legalAgreement": "法的合意",
+                    "readMore": "表示を多くする",
+                    "readLess": "表示を少なくする"
+                }
+            }
+        },
+        "dcc": {
+            "heroBanner": {
+                "description": "Adobe デザイナー・スイートの Lenovo 限定特典"
+            },
+            "menuText": {
+                "lenovoDigitalOffer": "Lenovo デジタル特典"
+            },
+            "dccDetails": {
+                "subtitle11": "Premiere Pro",
+                "body11": "Premiere Pro は、映画、テレビ、Web 向けの主要なビデオ編集ソフトウェアです。Premiere Pro には、すべてのデバイスで機能し、ネットワークでビデオを共有するオールインワン・アプリの Premiere Rush が含まれています。",
+                "subtitle12": "Creative Cloud フォト・プラン",
+                "body12": "Lightroom を使用すれば、どこからでも簡単に写真を編集、整理、保存、共有できます。Photoshop があれば、画像を思い通りに変えることができます。",
+                "selectButton": "ツールバーで",
+                "subtitle2": "オールインワン: 簡素化",
+                "body2": "第 9 世代 Intel® Core™ プロセッサーを搭載したオールインワン PC によって、あらゆるデスクトップの強みが光沢のあるディスプレイに詰め込まれていることで、乱雑さが抑えられ、ハードウェアベースのセキュリティーと高解像度のディスプレイが実現されています。"
+            }
         }
     }
 }

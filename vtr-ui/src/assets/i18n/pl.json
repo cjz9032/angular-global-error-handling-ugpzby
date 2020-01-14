@@ -1142,10 +1142,10 @@
                 },
                 "smartStandby": {
                     "title": "Inteligentne wstrzymanie",
-                    "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
-                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Ten okres jest optymalizowany na podstawie ustalonego przez ciebie harmonogramu lub otrzymanego przez nas twojego czasu użytkowania komputera. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowane dni; nie przełącza się w ogóle, jeśli według harmonogramu nie jest używany przez kilka kolejnych dni.",
+                    "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie wznawianie z <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">trybu wstrzymania</a> w godzinach bardziej intensywnego korzystania.",
+                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Ten okres jest optymalizowany na podstawie ustalonego przez ciebie harmonogramu lub Twojego czasu użytkowania komputera. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowane dni; nie przełącza się w ogóle, jeśli według harmonogramu nie jest używany przez kilka kolejnych dni.",
                     "timer": {
-                        "heading": "Typowe godziny korzystania przez ciebie z komputera",
+                        "heading": "Typowe godziny korzystania z komputera:",
                         "subHeading1": "rozpocząć się",
                         "subHeading2": "koniec",
                         "subHeading3": "używaj tego harmonogramu dla",
@@ -1163,14 +1163,14 @@
                     "warningtip": "Wybierz co najmniej jeden dzień.",
                     "days": {
                         "shortName": {
-                            "sun": "niedziela",
-                            "mon": "poniedziałek",
-                            "tue": "wtorek",
-                            "wed": "środa",
-                            "thurs": "czwartek",
-                            "fri": "piątek",
-                            "sat": "sobota",
-                            "thu": "Thu"
+                            "sun": "Nie",
+                            "mon": "Pon",
+                            "tue": "Wto",
+                            "wed": "Śro",
+                            "thurs": "Czw",
+                            "fri": "Pią",
+                            "sat": "Sob",
+                            "thu": "Czw"
                         },
                         "name": {
                             "sun": "niedziela",
@@ -1187,7 +1187,7 @@
                         "noDaySelected": "Nie wybrano dnia"
                     },
                     "checkbox": "Automatyczne dostosowywanie czasu aktywacji komputera na podstawie użytkowania",
-                    "hyperlinkToGraph": "Kliknij, aby zobaczyć tabelę aktywności i czasu aktywacji twojego komputera",
+                    "hyperlinkToGraph": "Kliknij, aby zobaczyć użycie i zastosowany czas aktywności",
                     "subTitle": "Ustaw harmonogram pracy komputera",
                     "automaticMode": "Tryb automatyczny",
                     "manualMode": "Tryb ręczny",
