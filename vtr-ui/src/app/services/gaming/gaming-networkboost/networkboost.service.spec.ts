@@ -36,7 +36,6 @@ describe('Shared service:', () => {
 			spyOn(service.gamingNetworkBoost, 'getNetUsingProcesses').and.callThrough();
 			service.getNetUsingProcesses();
 			expect(service.gamingNetworkBoost.getNetUsingProcesses).toHaveBeenCalled();
-
 			service.isShellAvailable = false;
 			service.getNetUsingProcesses();
 			expect(service.gamingNetworkBoost.getNetUsingProcesses).toHaveBeenCalled();
@@ -78,6 +77,47 @@ describe('Shared service:', () => {
 			expect(myobj).toHaveBeenCalled();
 
 		});
+
+		it('should call getNetworkBoostStatus', () => {
+			// tslint:disable-next-line: no-shadowed-variable
+			const { service } = setup();
+			spyOn(service.gamingNetworkBoost, 'getStatus').and.callThrough();
+			service.getNetworkBoostStatus();
+			expect(service.gamingNetworkBoost.getStatus).toHaveBeenCalled();
+			service.isShellAvailable = false;
+			service.getNetworkBoostStatus();
+			expect(service.gamingNetworkBoost.getStatus).toHaveBeenCalled();
+
+		});
+
+
+		it('should call setNetworkBoostStatus', () => {
+			// tslint:disable-next-line: no-shadowed-variable
+			const { service } = setup();
+			spyOn(service.gamingNetworkBoost, 'setStatus').and.callThrough();
+			service.setNetworkBoostStatus();
+			expect(service.gamingNetworkBoost.setStatus).toHaveBeenCalled();
+			service.isShellAvailable = false;
+			service.setNetworkBoostStatus();
+			expect(service.gamingNetworkBoost.setStatus).toHaveBeenCalled();
+
+		});
+
+		it('should call addProcessToNetworkBoost', () => {
+			// tslint:disable-next-line: no-shadowed-variable
+			const { service } = setup();
+			spyOn(service.gamingNetworkBoost, 'addProcessToNetBoost').and.callThrough();
+			service.addProcessToNetworkBoost();
+			expect(service.gamingNetworkBoost.addProcessToNetBoost).toHaveBeenCalled();
+			service.isShellAvailable = false;
+			service.addProcessToNetworkBoost();
+			expect(service.gamingNetworkBoost.addProcessToNetBoost).toHaveBeenCalled();
+
+		});
+
+
+
+
 
 		});
 

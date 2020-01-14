@@ -2109,7 +2109,7 @@
                 "showmore": "Prikaži više",
                 "showless": "Prikaži manje",
                 "button": "Omogući WiFi bezbednost",
-                "disableDecribe": "Lenovo WiFi bezbednost je napredna softverska usluga zasnovana na oblaku koja pomaže vašem uređaju da razlikuje bezbedne bežične mreže od potencijalno zlonamernih."
+                "disableDescribe": "Lenovo WiFi bezbednost je napredna softverska usluga zasnovana na oblaku koja pomaže vašem uređaju da razlikuje bezbedne bežične mreže od potencijalno zlonamernih."
             },
             "threatlocator": {
                 "describe": "Koristite detektor pretnji za utvrđivanje bezbednosti mreža oko vas.",

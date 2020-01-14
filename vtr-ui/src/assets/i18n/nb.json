@@ -2109,7 +2109,7 @@
                 "showmore": "Vis mer",
                 "showless": "Vis mindre",
                 "button": "Aktiver WiFi-sikkerhet",
-                "disableDecribe": "Lenovo WiFi Sikkerhet er en avansert, skybasert programtjeneste som hjelper enhet med å skille trygge trådløse nettverk fra potensielt farlige."
+                "disableDescribe": "Lenovo WiFi Sikkerhet er en avansert, skybasert programtjeneste som hjelper enhet med å skille trygge trådløse nettverk fra potensielt farlige."
             },
             "threatlocator": {
                 "describe": "Bruk trusseldetektoren til å finne ut hvor sikre nettverkene rundt deg er.",

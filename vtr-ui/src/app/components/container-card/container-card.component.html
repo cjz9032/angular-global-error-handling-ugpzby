@@ -55,8 +55,8 @@
 									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 								</span>
 								<span class="logo-text"
-								id="{{containerCardId+'-logo-text'}}"
-								role="textbox">{{logoText}}</span>
+									id="{{containerCardId+'-logo-text'}}"
+									role="textbox">{{logoText}}</span>
 							</div>
 						</div>
 					</a>
@@ -105,8 +105,8 @@
 									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 								</span>
 								<span class="logo-text"
-								id="{{containerCardId+'-logo-text'}}"
-								role="textbox">{{logoText}}</span>
+									id="{{containerCardId+'-logo-text'}}"
+									role="textbox">{{logoText}}</span>
 							</div>
 						</div>
 					</ng-container>
@@ -131,8 +131,8 @@
 									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 								</span>
 								<span class="logo-text"
-								id="{{containerCardId+'-logo-text'}}"
-								role="textbox">{{logoText}}</span>
+									id="{{containerCardId+'-logo-text'}}"
+									role="textbox">{{logoText}}</span>
 							</div>
 						</div>
 					</ng-container>
@@ -203,8 +203,8 @@
 								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 							</span>
 							<span class="logo-text"
-							id="{{containerCardId+'-logo-text'}}"
-							role="textbox">{{logoText}}</span>
+								id="{{containerCardId+'-logo-text'}}"
+								role="textbox">{{logoText}}</span>
 						</div>
 					</div>
 					<div class="row w-100">
@@ -261,8 +261,8 @@
 								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 							</span>
 							<span class="logo-text"
-							id="{{containerCardId+'-logo-text'}}"
-							role="textbox">{{logoText}}</span>
+								id="{{containerCardId+'-logo-text'}}"
+								role="textbox">{{logoText}}</span>
 						</div>
 					</div>
 					<div class="row w-100">
@@ -290,13 +290,8 @@
 					</div>
 				</div>
 			</a>
-			<div class="row offline-icon col col-12"
-				id="{{containerCardId+'-offline-icon'}}"
-				aria-label="offline-icon"
-				role="img"
-				*ngIf="!isOnline">
-				<fa-icon [icon]="['fal', 'wifi-slash']"></fa-icon>
-			</div>
+			<vtr-container-card-offline [containerCardId]="containerCardId"
+				*ngIf="!isOnline"></vtr-container-card-offline>
 		</div>
 	</div>
 
@@ -342,20 +337,15 @@
 									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 								</span>
 								<span class="logo-text"
-								id="{{containerCardId+'-logo-text'}}"
-								role="textbox">{{logoText}}</span>
+									id="{{containerCardId+'-logo-text'}}"
+									role="textbox">{{logoText}}</span>
 							</div>
 						</div>
 					</a>
 				</div>
 			</div>
-			<div class="row offline-icon col col-12"
-				id="{{containerCardId+'-offline-icon'}}"
-				aria-label="offline-icon"
-				role="img"
-				*ngIf="!isOnline">
-				<fa-icon [icon]="['fal', 'wifi-slash']"></fa-icon>
-			</div>
+			<vtr-container-card-offline [containerCardId]="containerCardId"
+				*ngIf="!isOnline"></vtr-container-card-offline>
 		</div>
 	</div>
 
@@ -374,8 +364,8 @@
 							<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 						</span>
 						<span class="logo-text"
-						id="{{containerCardId+'-logo-text'}}"
-						role="textbox">{{logoText}}</span>
+							id="{{containerCardId+'-logo-text'}}"
+							role="textbox">{{logoText}}</span>
 					</div>
 					<div class="row">
 						<a [attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
@@ -402,13 +392,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="row offline-icon col col-12"
-				id="{{containerCardId+'-offline-icon'}}"
-				aria-label="offline-icon"
-				role="img"
-				*ngIf="!isOnline">
-				<fa-icon [icon]="['fal', 'wifi-slash']"></fa-icon>
-			</div>
+			<vtr-container-card-offline [containerCardId]="containerCardId"
+				*ngIf="!isOnline"></vtr-container-card-offline>
 		</div>
 	</div>
 
