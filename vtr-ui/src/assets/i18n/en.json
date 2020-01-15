@@ -3125,6 +3125,8 @@
         "noteDownloadAvailable": "Note: After clicking Download, you may get a prompt from Windows to allow us to install the software on your device. Once finished installing your apps will show up automatically on your desktop or start menu.<br /><br />You may close the My Software page and continue using Lenovo Vantage. Do not close Lenovo Vantage during installation.",
         "sizeText": "Size",
         "versionText": "Version",
+        "redemptionCode": "Redemption code:",
+        "redeemWebsite": "Redeem at vendor website",
         "softwareDescription": "Click download below to redeem software that was purchased with your device. If at any time you need to download your software again, you can do so by clicking the My Software button in the Vantage menu.",
         "title": "My Software",
         "loadingDescription": "Please wait while we prepare a list of the software that was included in the purchase of your device.",
