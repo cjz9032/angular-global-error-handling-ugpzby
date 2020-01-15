@@ -215,10 +215,13 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 	}
 
 	setAppCheckStatus(appItem: AppItem) {
-		if (this.modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || appItem.isCheckDisabled) {
-			return false;
+		if (!this.isAppCheckDisabled(appItem)) {
+			appItem.isChecked = !appItem.isChecked;
 		}
-		appItem.isChecked = !appItem.isChecked;
+	}
+
+	isAppCheckDisabled(appItem: AppItem) {
+		return this.modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || appItem.isCheckDisabled;
 	}
 
 	checkedApp() {
