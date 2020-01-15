@@ -17,12 +17,15 @@ export class BatteryGaugeResetComponent implements OnInit {
 		'device.deviceSettings.batteryGauge.details.primary',
 		'device.deviceSettings.batteryGauge.details.secondary',
 		'device.deviceSettings.batteryGauge.details.tertiary'];
+	gaugeResetDisable: boolean[];
 
 	constructor(private logger: LoggerService, public modalService: NgbModal, public powerService: PowerService, public batteryService: BatteryDetailService) { }
 
 	ngOnInit() {
 		this.logger.info('Init Gauge Reset Feature', this.batteryService.gaugeResetInfo);
 		this.initBatteryGaugeResetInfo();
+		// this.invalidToUndefined();
+		this.setGaugeResetBtnStatus();
 	}
 
 	initBatteryGaugeResetInfo() {
@@ -96,23 +99,13 @@ export class BatteryGaugeResetComponent implements OnInit {
 	}
 
 
-	public isResetBtnDisabled(index) {
+	public setGaugeResetBtnStatus() {
+		this.gaugeResetDisable = [];
 		if (this.batteryService.gaugeResetInfo && this.batteryService.gaugeResetInfo.length > 1) {
-			if (index === 0) {
-				if (this.batteryService.gaugeResetInfo[1].isResetRunning) {
-					return true;
-				} else {
-					return false;
-				}
-			} else {
-				if (this.batteryService.gaugeResetInfo[0].isResetRunning) {
-					return true;
-				} else {
-					return false;
-				}
-			}
+			this.gaugeResetDisable.push(!this.batteryService.gaugeResetInfo[1].isResetRunning);
+			this.gaugeResetDisable.push(!this.batteryService.gaugeResetInfo[0].isResetRunning);
 		} else {
-			return false;
+			this.gaugeResetDisable.push(false);
 		}
 	}
 
@@ -124,17 +117,17 @@ export class BatteryGaugeResetComponent implements OnInit {
 		this.batteryService.gaugeResetInfo[index] = value;
 	}
 
-	isValid(val: any) {
-		if (!val || val === null) {
-			return false;
-		}
-		if (typeof val === 'number' && val === 0) {
-			return false;
-		}
-		if (typeof val === 'string' && val === '') {
-			return false;
-		}
-		return true;
-	}
+	// isValid(val: any) {
+	// 	if (!val || val === null) {
+	// 		return false;
+	// 	}
+	// 	if (typeof val === 'number' && val === 0) {
+	// 		return false;
+	// 	}
+	// 	if (typeof val === 'string' && val === '') {
+	// 		return false;
+	// 	}
+	// 	return true;
+	// }
 
 }

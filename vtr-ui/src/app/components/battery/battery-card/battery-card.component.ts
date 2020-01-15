@@ -146,6 +146,20 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		});
 	}
 
+	ngOnDestroy() {
+		if (this.batteryService.isShellAvailable) {
+			this.logger.info('STOP MONITOR');
+			this.batteryService.stopMonitor();
+		}
+		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
+		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
+		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
+		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
+
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+	}
 	onPowerSupplyStatusEvent(info: any) {
 		this.setBatteryCard(info, 'onPowerSupplyStatusEvent');
 	}
@@ -438,20 +452,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.flag = false;
 	}
 
-	ngOnDestroy() {
-		if (this.batteryService.isShellAvailable) {
-			this.logger.info('STOP MONITOR');
-			this.batteryService.stopMonitor();
-		}
-		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
-		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
-		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
-		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
-
-		if (this.notificationSubscription) {
-			this.notificationSubscription.unsubscribe();
-		}
-	}
 	/*
 		@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
 			this.closeModal();
