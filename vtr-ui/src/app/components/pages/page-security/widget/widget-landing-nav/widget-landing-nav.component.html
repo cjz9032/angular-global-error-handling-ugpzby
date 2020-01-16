@@ -1,7 +1,11 @@
 <ul class="vtr-widget-landing-nav">
     <li class="nav-item" [ngClass]="{'d-none': advancedItems && advancedItems.length === 0}" *ngFor="let featureConfig of featurePagesConfig">
         <span class="nav-link" [ngClass]="{'active': featureConfig.page === currentPage}"
-        (click)="changePage(featureConfig.page)">
+			(click)="changePage(featureConfig.page)"
+			vtrMetrics
+			metricsItem="change security item {{featureConfig.page}}"
+			metricsEvent="FeatureClick"
+			metricsParent="Security">
             <p class="nav-title mb-0">{{featureConfig.title | translate}}</p>
         </span>
     </li>
