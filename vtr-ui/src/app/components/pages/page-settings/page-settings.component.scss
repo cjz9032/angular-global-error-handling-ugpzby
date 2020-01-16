@@ -9,8 +9,12 @@
 
 :host ::ng-deep {
 	.vtr-page-preference-settings {
+		.vtr-page-header {
+			.vtr-header-main .vtr-header-main-inner {
+				padding-bottom: 4rem;
+			}
+		}
 		.vtr-page-columns {
-			margin-top: -4rem !important;
 			.vtr-page-column {
 				padding: 0 3.2rem 3.2rem !important;
 
