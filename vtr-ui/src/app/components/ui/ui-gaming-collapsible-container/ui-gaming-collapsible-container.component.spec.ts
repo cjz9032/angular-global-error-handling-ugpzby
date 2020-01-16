@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
 
-fdescribe('UiGamingCollapsibleContainerComponent', () => {
+xdescribe('UiGamingCollapsibleContainerComponent', () => {
 	let component: UiGamingCollapsibleContainerComponent;
 	let fixture: ComponentFixture<UiGamingCollapsibleContainerComponent>;
 	let router = { navigate: jasmine.createSpy('navigate') }
