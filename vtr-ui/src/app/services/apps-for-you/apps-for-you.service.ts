@@ -320,7 +320,7 @@ export class AppsForYouService {
 	}
 
 	public showDccMenu() {
-		return this.dccService.showDemo || this.dccService.isDccDevice;
+		return (this.dccService.showDemo || this.dccService.isDccDevice) && !this.deviceService.isGaming;
 	}
 
 	cancelInstall() {

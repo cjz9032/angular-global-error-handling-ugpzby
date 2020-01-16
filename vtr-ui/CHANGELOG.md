@@ -2,6 +2,127 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.55](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.54...v1.2.55) (2020-01-16)
+
+
+
+## [1.0.295](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.294...v1.0.295) (2020-01-10)
+
+
+
+## [1.0.294](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.52...v1.0.294) (2020-01-09)
+
+
+
+## [1.0.293](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.50...v1.0.293) (2020-01-08)
+
+
+
+## [1.0.292](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.291...v1.0.292) (2020-01-07)
+
+
+
+## [1.0.291](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.49...v1.0.291) (2020-01-07)
+
+
+### Bug Fixes
+
+* **overall:** add checks to display correctly in browser ([a498418](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/a498418))
+
+
+
+## [1.0.289](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.46...v1.0.289) (2020-01-06)
+
+
+### Bug Fixes
+
+* **i18n:** apply proper font value for east asian languages ([7bab409](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/7bab409))
+
+
+
+## [1.0.288](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.45...v1.0.288) (2020-01-03)
+
+
+
+## [1.0.287](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.43...v1.0.287) (2020-01-02)
+
+
+
+## [1.0.286](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.285...v1.0.286) (2019-12-31)
+
+
+
+## [1.0.285](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.284...v1.0.285) (2019-12-31)
+
+
+
+## [1.0.284](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.42...v1.0.284) (2019-12-31)
+
+
+
+## [1.0.283](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.282...v1.0.283) (2019-12-30)
+
+
+
+## [1.0.282](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.281...v1.0.282) (2019-12-30)
+
+
+
+## [1.0.281](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.40...v1.0.281) (2019-12-27)
+
+
+
+## [1.0.280](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.279...v1.0.280) (2019-12-26)
+
+
+
+## [1.0.279](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.39...v1.0.279) (2019-12-26)
+
+
+
+## [1.0.278](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.38...v1.0.278) (2019-12-24)
+
+
+
+## [1.0.277](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.37...v1.0.277) (2019-12-24)
+
+
+
+## [1.0.276](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.36...v1.0.276) (2019-12-23)
+
+
+### Features
+
+* **npm:** bump jsbridge version to 10.1912.1.unstablelatest ([603c5f3](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/603c5f3))
+* voip 3.1.6 ([f97c498](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/f97c498))
+* voip 3.1.6 ([5817985](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/5817985))
+* voip 3.1.6 ([a616c0a](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/a616c0a))
+* voip 3.1.6 has udk ([4d195ec](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/4d195ec))
+* voip 3.1.6 images ([af5690b](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/af5690b))
+* voip 3.1.6 multi languages ([fd009ca](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/fd009ca))
+* voip 3.1.6 multi languages ([4a0396d](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/4a0396d))
+* voip 3.1.6 style ([c4da9e9](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/c4da9e9))
+* voip 3.1.6 style ([b74decd](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/b74decd))
+
+
+
+## [1.0.275](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.19...v1.0.275) (2019-12-09)
+
+
+### Bug Fixes
+
+* **privacy:** scrollTop bluescreened on Intel video card system ([6b2225d](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/6b2225d))
+
+
+
+## [1.0.274](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.273...v1.0.274) (2019-12-05)
+
+
+
+## [1.2.54](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.53...v1.2.54) (2020-01-14)
+
+
+
 ## [1.2.53](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.52...v1.2.53) (2020-01-10)
 
 

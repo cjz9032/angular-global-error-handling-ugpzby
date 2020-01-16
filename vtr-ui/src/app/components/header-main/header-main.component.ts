@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DccService } from 'src/app/services/dcc/dcc.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-header-main',
 	templateUrl: './header-main.component.html',
 	styleUrls: [
-		'./header-main.component.scss',
-		'./header-main.component.gaming.scss'
+		'./header-main.component.scss'
 	]
 })
 export class HeaderMainComponent implements OnInit, AfterViewInit {
@@ -27,7 +27,8 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 
 	constructor(
 		private router: Router,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		public dccService: DccService
 	) { }
 
 	ngOnInit() {

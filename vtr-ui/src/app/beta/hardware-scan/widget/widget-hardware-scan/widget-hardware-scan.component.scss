@@ -31,8 +31,9 @@
             color: $light;
             font-size: $fontsize_xs;
             line-height: 2.1rem;
-            padding-left: 5rem;
-            padding-right: 5rem;
+            padding:0rem 2.4rem// updated as per new specs
+            //padding-left: 5rem;
+            //padding-right: 5rem;
         }
         .button-row {
             padding-left: 2.4rem;

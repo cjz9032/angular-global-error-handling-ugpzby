@@ -19,7 +19,7 @@
 				</vtr-smart-standby>
 
 <!-- ****************** Battery Section ******************************** -->
-				<div *ngIf="showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable || gaugeResetCapability"
+				<div *ngIf="conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable || gaugeResetCapability"
 					class="row pt-5 smartsettings-card"
 					id="battery">
 					<div class="col-12 mx-auto container-card ">
@@ -31,55 +31,6 @@
 							[isCollapsed]="false"
 							[collapseLinkId]="'device-settings-batterySettings'">
 							<ul class="list-group list-group-flush">
-								<li class=""
-									*ngIf="showAirplanePowerModeSection && !batteryService.isPowerDriverMissing">
-									<vtr-ui-row-switch
-										[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
-										[name]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
-										[caption]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
-										[isSwitchVisible]=true
-										[leftIcon]="['fal', 'plane']"
-										[tooltipText]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
-										[isSwitchChecked]="toggleAirplanePowerModeFlag"
-										[showChildContent]=true
-										[switchId]="'ds-power-battery-airplane'"
-										(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
-										<div class="row">
-											<div class="col px-20">
-												<div class="auto-set-checkbox custom-checkbox-gaming"
-													tabindex="0"
-													(keydown.enter)="cbAirplaneMode.click()"
-													[attr.aria-checked]="airplaneAutoDetection"
-													attr.aria-labelledby="cb-airplane-mode"
-													role="checkbox">
-													<input id="cb-airplane-mode"
-														#cbAirplaneMode
-														tabindex="-1"
-														class="custom-control-input"
-														attr.aria-label="cb-airplane-mode"
-														type="checkbox"
-														name="airplane-mode-checkbox-id"
-														[(ngModel)]="airplaneAutoDetection"
-														(ngModelChange)='onAirplaneAutoModeStatusChange()'
-														aria-hidden="true"
-														checked="" />
-
-													<span class="checkmark"></span>
-													<label for="cb-airplane-mode">
-														{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
-													</label>
-												</div>
-												<label *ngIf="airplaneAutoDetection"
-													role="text"
-													tabindex="0"
-													class="auto-detection-note">
-													{{ 	'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate }}
-												</label>
-											</div>
-										</div>
-									</vtr-ui-row-switch>
-								</li>
-
 								<!-- MVP 2 feature -->
 								<!-- <li class=""
 									*ngIf="machineType == 1 && isChargeThresholdAvailable && !batteryService.isPowerDriverMissing">
@@ -225,7 +176,7 @@
 <!-- ****************** Start Power Section ******************************** -->
 				 <div class="row pt-5 smartsettings-card"
 					id="power"
-					*ngIf="!batteryService.isPowerDriverMissing && (alwaysOnUSBStatus?.available || showEasyResumeSection || (showFlipToBootSection$ | async))">
+					*ngIf="!batteryService.isPowerDriverMissing && (showAirplanePowerModeSection || alwaysOnUSBStatus?.available || showEasyResumeSection || (showFlipToBootSection$ | async))">
 					<div class="col-12 mx-auto container-card">
 						<vtr-container-collapsible
 							[cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
@@ -234,6 +185,54 @@
 							[isCollapsed]="false"
 							[collapseLinkId]="'device-settings-powerSettings'">
 							<ul class="list-group list-group-flush">
+								<li class=""
+									*ngIf="showAirplanePowerModeSection">
+									<vtr-ui-row-switch
+										[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
+										[name]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
+										[caption]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
+										[isSwitchVisible]=true
+										[leftIcon]="['fal', 'plane']"
+										[tooltipText]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
+										[isSwitchChecked]="toggleAirplanePowerModeFlag"
+										[showChildContent]=true
+										[switchId]="'ds-power-battery-airplane'"
+										(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
+										<div class="row">
+											<div class="col px-20">
+												<div class="auto-set-checkbox custom-checkbox-gaming"
+													tabindex="0"
+													(keydown.enter)="cbAirplaneMode.click()"
+													[attr.aria-checked]="airplaneAutoDetection"
+													attr.aria-labelledby="cb-airplane-mode"
+													role="checkbox">
+													<input id="cb-airplane-mode"
+														#cbAirplaneMode
+														tabindex="-1"
+														class="custom-control-input"
+														attr.aria-label="cb-airplane-mode"
+														type="checkbox"
+														name="airplane-mode-checkbox-id"
+														[(ngModel)]="airplaneAutoDetection"
+														(ngModelChange)='onAirplaneAutoModeStatusChange()'
+														aria-hidden="true"
+														checked="" />
+
+													<span class="checkmark"></span>
+													<label for="cb-airplane-mode">
+														{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
+													</label>
+												</div>
+												<label *ngIf="airplaneAutoDetection"
+													role="text"
+													tabindex="0"
+													class="auto-detection-note">
+													{{ 	'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate }}
+												</label>
+											</div>
+										</div>
+									</vtr-ui-row-switch>
+								</li>
 								<li *ngIf="showFlipToBootSection$ | async">
 									<vtr-ui-row-switch
 										[title]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
@@ -324,7 +323,7 @@
 <!-- ****************** End Power Section ******************************** -->
 
 
-				 <div class="row pt-5 smartsettings-card"
+				 <div class="row pt-5 smartsettings-card pb-40"
 					id="other"
 					*ngIf="vantageToolbarStatus.available">
 					<div class="col-12 mx-auto container-card">
@@ -354,7 +353,7 @@
 						</vtr-container-collapsible>
 					</div>
 				</div>
-				<div class="row pt-5 smartsettings-card"
+				<div class="row pt-5 smartsettings-card "
 					*ngIf="isEnergyStarProduct">
 					<div class="col-12 mx-auto container-card">
 						<vtr-container-collapsible
