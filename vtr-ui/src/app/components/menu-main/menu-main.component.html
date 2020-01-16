@@ -301,7 +301,7 @@
 							</a>
 							<a ngbDropdownItem
 								*ngIf="appsForYouService.showAdobeMenu()"
-								class="dropdown-item link link-lma"
+								class="dropdown-item link link-adobe"
 								tabindex="1"
 								vtrMetrics
 								id="menu-main-lnk-open-adobe"
@@ -319,8 +319,8 @@
 									*ngIf="!appsForYouService.UnreadMessageCount.adobeMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem
-								*ngIf="appsForYouService.showDccMenu()"
-								class="dropdown-item link link-lma"
+								*ngIf="commonService.isOnline && appsForYouService.showDccMenu()"
+								class="dropdown-item link link-dcc"
 								tabindex="1"
 								vtrMetrics
 								id="menu-main-lnk-open-dcc"
@@ -329,6 +329,7 @@
 								[metricsParent]="item.metricsParent"
 								metricsItem="DccRedemptionButton"
 								(click)="onMenuItemClick(item, $event)"
+								(keydown.enter)="onMenuItemClick(item, $event)"
 								href="javascript:void(0)">
 								{{ 'dcc.menuText.lenovoDigitalOffer' | translate }}
 								<span class="unread-tag"

@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Bună ziua! Este disponibilă o versiune mai nouă de Vantage, doriți să o încărcați?"
+        },
+        "offline": {
+            "connectToUseFeature": "Pentru a utiliza această caracteristică, trebuie să vă conectați la internet"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "ESTOMPAREA BAREI DE ACTIVITĂȚI",
                         "backgroundDimmer": "ESTOMPAREA FUNDALULUI",
                         "displayDimmer": "ESTOMPAREA AFIȘAJULUI"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1527,7 +1541,60 @@
                 "fnCtrlKey": {
                     "title": "Schimbare taste Fn şi Ctrl",
                     "description": "Dacă apăsaţi în mod obişnuit tasta Fn când de fapt intenţionaţi să apăsaţi tasta Ctrl, puteţi schimba între ele funcţiile celor două taste.",
-                    "restartNote": "Comutarea funcţiei a două taste necesită repornirea computerului. Sigur reporniţi?"
+                    "restartNote": "Comutarea funcţiei a două taste necesită repornirea computerului. Sigur reporniţi?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "MAI MULTE",
@@ -1979,7 +2046,7 @@
             "visitHde": "Accesaţi secţiunea pentru criptarea unităţii de hard disk",
             "haveOwnPassword": "Am propriul meu manager de parole",
             "haveOwnWifi": "Am propria mea securitate Wi-Fi",
-            "haveOwnVpn": "Am propria mea securitate VPN",
+            "haveOwnVpn": "Am propria rețea VPN",
             "uac": "Control cont utilizator (UAC)",
             "uacTitles": "Control cont utilizator",
             "hde": "Criptare unitate hard disk",
@@ -2095,7 +2162,8 @@
                 "showmore": "Se afişează mai multe",
                 "showless": "Afișează mai puțin",
                 "button": "Activare securitate WiFi",
-                "disableDecribe": "Securitate WiFi Lenovo este un serviciu software avansat bazat pe cloud care ajută dispozitivul să diferenţieze reţelele fără fir sigure de cele potenţial rău intenţionate."
+                "disableDescribe": "Securitate WiFi Lenovo este un serviciu software avansat bazat pe cloud care ajută dispozitivul să diferenţieze reţelele fără fir sigure de cele potenţial rău intenţionate.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Utilizați detectorul de amenințări pentru a determina siguranța rețelelor din jurul dvs.",
@@ -2709,7 +2777,7 @@
         "deviceStatisticsDescription": "Trimiteți date anonime ale dispozitivului pentru a ne ajuta să îmbunătățim calitatea, fiabilitatea și următoarea generație de dispozitive.",
         "userProfile": "Profil utilizator",
         "Note": "Notă: ",
-        "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației.",
+        "settingsNotes": "Pentru a vă asigura că toate modificările au efect, lansați din nou această aplicație.",
         "betaSettingTitle": "Program beta",
         "betaProgram": "Program beta",
         "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm."

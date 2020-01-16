@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "¡Ey! Hay disponible una versión más reciente de Vantage, ¿desea cargarla?"
+        },
+        "offline": {
+            "connectToUseFeature": "Conéctese a Internet para utilizar esta característica"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "ATENUADOR DE BARRA DE TAREAS",
                         "backgroundDimmer": "ATENUADOR DE FONDO",
                         "displayDimmer": "ATENUADOR DE PANTALLA"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1527,7 +1541,60 @@
                 "fnCtrlKey": {
                     "title": "Cambio de teclas Fn y Ctrl",
                     "description": "Si normalmente presionaba la tecla Fn al intentar presionar la tecla Ctrl, you puede intercambiar las funciones de ambas teclas.",
-                    "restartNote": "Para intercambiar la función de dos claves es necesario reiniciar el sistema. ¿Está seguro de que desea reiniciarlo?"
+                    "restartNote": "Para intercambiar la función de dos claves es necesario reiniciar el sistema. ¿Está seguro de que desea reiniciarlo?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "MÁS",
@@ -1979,7 +2046,7 @@
             "visitHde": "Visite Cifrado de unidad de disco duro",
             "haveOwnPassword": "Tengo mi propio administrador de contraseñas",
             "haveOwnWifi": "Tengo mi propia seguridad de Wi-Fi",
-            "haveOwnVpn": "Tengo mi propia seguridad de VPN",
+            "haveOwnVpn": "Tengo mi propia VPN",
             "uac": "Control de cuentas de usuario (UAC)",
             "uacTitles": "Control de cuentas de usuario",
             "hde": "Cifrado de unidad de disco duro",
@@ -2095,7 +2162,8 @@
                 "showmore": "Mostrar más",
                 "showless": "Mostrar menos",
                 "button": "Habilitar seguridad de WiFi",
-                "disableDecribe": "Seguridad de Lenovo WiFi es un avanzado servicio de software basado en la nube que ayuda a su dispositivo a diferenciar entre redes inalámbricas seguras y aquellas posiblemente maliciosas."
+                "disableDescribe": "Seguridad de Lenovo WiFi es un avanzado servicio de software basado en la nube que ayuda a su dispositivo a diferenciar entre redes inalámbricas seguras y aquellas posiblemente maliciosas.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Utilice el detector de amenazas para determinar la seguridad de las redes a su alrededor.",
@@ -2709,7 +2777,7 @@
         "deviceStatisticsDescription": "Envíe datos de dispositivo anónimos para ayudarnos a mejorar la calidad, confiabilidad y la próxima generación de dispositivos.",
         "userProfile": "Perfil de usuario",
         "Note": "Nota: ",
-        "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto.",
+        "settingsNotes": "Vuelva a iniciar esta aplicación para asegurarse de que todos los cambios entren en efecto.",
         "betaSettingTitle": "Programa Beta",
         "betaProgram": "Programa Beta",
         "betaSettingDescription": "Pruebe las más recientes características en las que estamos trabajando."

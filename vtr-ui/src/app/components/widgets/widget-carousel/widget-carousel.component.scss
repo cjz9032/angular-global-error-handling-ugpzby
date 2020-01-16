@@ -4,6 +4,7 @@
 	box-shadow: $drop_shadow;
 	border-radius: $border_radius;
 	position: relative;
+	background: $light;
 	overflow: hidden;
 
 	&::after {

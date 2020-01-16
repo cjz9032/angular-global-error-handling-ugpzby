@@ -67,7 +67,6 @@ import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart
 		ModalChsStartTrialContainerComponent,
 		ModalRebootConfirmComponent,
 		ModalSmartStandByComponent
-
 	]
 })
 export class CommonModalModule { }

@@ -86,29 +86,22 @@ export class QaService {
 				}
 
 				try {
-					// console.log(qa.description);
 					qa.description = this.translate.instant(qa.description);
 					this.translate.stream(qa.description).subscribe((value) => {
 						qa.description = value;
 					});
-
-					// console.log(qa.description);
 				} catch (e) {
 					console.log('QA description by HTML MAP : already translated');
 				}
 
 				try {
 					this.translate.get(qa.keys).subscribe((translation: [string]) => {
-						// console.log(JSON.stringify(translation));
 						qa.keys = translation;
-						// console.log(JSON.stringify(qa.keys));
 					});
 				} catch (e) {
 					console.log('QA description by KEY_VALUE MAP : already translated');
 				}
 			});
-
-			// this.qas = this.qaService.qas;
 
 			// sahinul, 24June2019 VAN-5534
 			try {
@@ -123,9 +116,7 @@ export class QaService {
 
 		this.qas.forEach((qa) => {
 			try {
-				// console.log(qa.title);
 				qa.title = this.translate.instant(qa.title);
-				// console.log(qa.title);
 				this.translate.stream(qa.title).subscribe((value) => {
 					qa.title = value;
 				});
@@ -134,22 +125,17 @@ export class QaService {
 			}
 
 			try {
-				// console.log(qa.description);
 				qa.description = this.translate.instant(qa.description);
 				this.translate.stream(qa.description).subscribe((value) => {
 					qa.description = value;
 				});
-
-				// console.log(qa.description);
 			} catch (e) {
 				console.log('QA description by HTML MAP : already translated');
 			}
 
 			try {
 				this.translate.get(qa.keys).subscribe((translation: [string]) => {
-					// console.log(JSON.stringify(translation));
 					qa.keys = translation;
-					// console.log(JSON.stringify(qa.keys));
 				});
 			} catch (e) {
 				console.log('QA description by KEY_VALUE MAP : already translated');
@@ -186,12 +172,10 @@ export class QaService {
 				this.preserveTransKeys.isSubscribed = translateQA.onLangChange.subscribe((event: LangChangeEvent) => {
 					// Page Title
 					this.title = this.getObjectValue(event.translations, this.preserveTransKeys.pageTitle); // setting this again
-					// console.log('@sahinul in getQATranslation onLangChange', event.lang, this.preserveTransKeys.pageTitle, this.title);
 					this.qas.forEach((qa) => {
 						// segment or list Title
 						const qaTitleKey = this.preserveTransKeys.qasTransKeys[qa.id].title;
 						qa.title = this.getObjectValue(event.translations, qaTitleKey);
-						// console.log('@sahinul in getQATranslation onLangChange qa', qaTitleKey, qa.title);
 						const qaDescriptionKey = this.preserveTransKeys.qasTransKeys[qa.id].description;
 						qa.description = this.getObjectValue(event.translations, qaDescriptionKey);
 					});
@@ -234,7 +218,8 @@ export class QaService {
 
 	destroyChangeSubscribed() {
 		if (this.preserveTransKeys.isSubscribed) {
-			this.preserveTransKeys.isSubscribed.unsubscribe();
+			this.preserveTransKeys.isSubscribed = false;
+			// this.preserveTransKeys.isSubscribed.unsubscribe();
 		}
 		console.log('@destroyChangeSubscribed');
 	}

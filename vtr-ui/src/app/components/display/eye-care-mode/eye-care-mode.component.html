@@ -22,6 +22,7 @@
 					metricsEvent="itemClick"
 					metricsParent="eye-care-mode"
 					metricsItem="btn.eye-care-mode.ResetTemparature"
+				    [isDisabled]="disableReset"
 					[isFullWidth]="false"
 					[label]="'device.deviceSettings.displayCamera.display.eyeCareMode.reset' | translate"
 					[linkId]="'color-temp-eyeCareMode-reset-btn'">
@@ -35,8 +36,8 @@
 			tabindex="0"
 			attr.aria-label="cb-eye-care-schedule"
 			type="checkbox"
-			[disabled]="enableSunsetToSunrise"
 			attr.aria-disabled="enableSunsetToSunrise"
+			[disabled]="enableSunsetToSunrise || missingGraphicDriver"
 			class="custom-control-input"
 			[checked]="sunsetToSunriseStatus.status"
 			attr.aria-hidden="sunsetToSunriseStatus.available && enableSunsetToSunrise"
@@ -62,6 +63,7 @@
 		<input id="cb-eye-care-schedule"
 			type="checkbox"
 			tabindex="-1"
+		    [disabled]="missingGraphicDriver"
 			class="custom-control-input"
 			[checked]="sunsetToSunriseStatus.status"
 			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
@@ -71,7 +73,7 @@
 						{{sunriseToSunsetText}}">
 			<span id="cb-eye-care-schedule-text" role="none">
 				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
-				{{sunriseToSunsetText}} 
+				{{sunriseToSunsetText}}
 			</span>
 		</label>
 	</div>

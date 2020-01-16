@@ -170,8 +170,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 						this.getAudioPageSettings();
 					}
 					break;
-				case LocalStorageKey.IsHidePowerPage:
-					if (payload) {
+				case LocalStorageKey.IsPowerPageAvailable:
+					if (!payload) {
 						this.hidePowerPage();
 					}
 					break;

@@ -17,10 +17,13 @@ export class BatteryGaugeResetComponent implements OnInit {
 		'device.deviceSettings.batteryGauge.details.primary',
 		'device.deviceSettings.batteryGauge.details.secondary',
 		'device.deviceSettings.batteryGauge.details.tertiary'];
+	isStartTimeAmPm = true;
+	isLastResetTimeAmPm = true;
 
 	constructor(private logger: LoggerService, public modalService: NgbModal, public powerService: PowerService, public batteryService: BatteryDetailService) { }
 
 	ngOnInit() {
+		this.logger.info('Init Gauge Reset Feature', this.batteryService.gaugeResetInfo);
 		this.initBatteryGaugeResetInfo();
 	}
 
@@ -28,6 +31,11 @@ export class BatteryGaugeResetComponent implements OnInit {
 		// this.batteryGaugeResetInfo.push(new BatteryGaugeReset());
 		// this.batteryGaugeResetInfo.push(new BatteryGaugeReset());
 		// this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
+	}
+
+	getIsAmPm(time) {
+		const date = new Date(time);
+		return date.getHours() < 12;
 	}
 
 	onBatteryGaugeReset(index) {
@@ -116,7 +124,11 @@ export class BatteryGaugeResetComponent implements OnInit {
 	}
 
 	updateGaugeResetInfo(value: BatteryGaugeReset) {
-		this.batteryService.gaugeResetInfo[value.batteryNum - 1] = value;
+		let index = value.batteryNum - 1;
+		if (this.batteryService.gaugeResetInfo.length < 2) {
+			index = 0;
+		}
+		this.batteryService.gaugeResetInfo[index] = value;
 	}
 
 	isValid(val: any) {

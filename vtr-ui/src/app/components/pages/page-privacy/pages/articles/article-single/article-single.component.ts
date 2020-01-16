@@ -12,7 +12,7 @@ import { CommonService } from '../../../../../../services/common/common.service'
 	templateUrl: './article-single.component.html',
 	styleUrls: ['./article-single.component.scss']
 })
-export class ArticleSingleComponent implements OnInit {
+export class ArticleSingleComponent {
 	article$ = this.route.queryParams.pipe(
 		switchMap((params) => this.articlesService.getArticle(params.articleId)),
 	);

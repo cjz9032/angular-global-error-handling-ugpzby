@@ -60,7 +60,9 @@ export class SupportService {
 	async getSerialnumber(): Promise<any> {
 		if (!this.sn) {
 			const machineInfo = await this.getMachineInfo();
-			this.sn = machineInfo.serialnumber;
+			if (machineInfo) {
+				this.sn = machineInfo.serialnumber;
+			}
 		}
 		return this.sn;
 	}

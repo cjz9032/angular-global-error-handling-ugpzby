@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "嘿！已有更新版的 Vantage，您要載入嗎？"
+        },
+        "offline": {
+            "connectToUseFeature": "連接到網際網路以使用此功能"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "工作列調光器",
                         "backgroundDimmer": "背景調光器",
                         "displayDimmer": "顯示器調光器"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1527,7 +1541,60 @@
                 "fnCtrlKey": {
                     "title": "Fn 與 Ctrl 鍵交換",
                     "description": "如果您在想要按 Ctrl 鍵時卻習慣按下 Fn 鍵，可以交換這兩個鍵的功能。",
-                    "restartNote": "交換兩個鍵的功能需要重新啟動電腦，您確定要重新啟動嗎？"
+                    "restartNote": "交換兩個鍵的功能需要重新啟動電腦，您確定要重新啟動嗎？",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "其他資訊",
@@ -1979,7 +2046,7 @@
             "visitHde": "造訪硬碟加密",
             "haveOwnPassword": "我有自己的 Password Manager",
             "haveOwnWifi": "我有自己的 WiFi 安全性",
-            "haveOwnVpn": "我有自己的 VPN 安全性",
+            "haveOwnVpn": "我有自己的 VPN",
             "uac": "使用者帳戶控制 (UAC)",
             "uacTitles": "使用者帳戶控制",
             "hde": "硬碟加密",
@@ -2095,7 +2162,8 @@
                 "showmore": "顯示更多",
                 "showless": "顯示較少內容",
                 "button": "啟用 WiFi 安全性",
-                "disableDecribe": "Lenovo WiFi 安全性是一項先進的雲端式軟體服務，可協助您的裝置區分安全與潛在惡意的無線網路。"
+                "disableDescribe": "Lenovo WiFi 安全性是一項先進的雲端式軟體服務，可協助您的裝置區分安全與潛在惡意的無線網路。",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "使用威脅偵測器判斷您周圍網路的安全性。",
@@ -2709,7 +2777,7 @@
         "deviceStatisticsDescription": "傳送匿名裝置資料，以協助我們提升品質、可靠性和新一代的裝置。",
         "userProfile": "使用者設定檔",
         "Note": "附註：",
-        "settingsNotes": "使用者必須重新啟動此應用程式,此頁面中的所有設定才可生效。",
+        "settingsNotes": "請重新啟動此應用程式，以確保所有變更都生效。",
         "betaSettingTitle": "Beta 程式",
         "betaProgram": "Beta 程式",
         "betaSettingDescription": "試試我們正在開發的最新功能。"

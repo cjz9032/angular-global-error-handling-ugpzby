@@ -1,0 +1,22 @@
+<div class="row threat-locator" >
+	<div class="col">
+		<div class="threat-locator-container">
+			<div class="row">
+				<div class="col-sm-12 col-md-7 col-lg-12 col-xl-7">
+					<div class="sub-heading-2">Threat locator</div>
+					<div class="text-regular">
+						{{'security.wifisecurity.threatlocator.describe' | translate}}
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-5 col-lg-12 col-xl-5 col-check-location d-flex justify-content-end">
+					<div class="button-box">
+						<vtr-ui-button metricsEvent="featureClick" metricsItem="checkYourLocation"
+							[isDisabled]="locatorButtonDisable" (onClick)="openThreatLocator()"
+							[label]="'security.wifisecurity.threatlocator.button' | translate"
+							[linkId]="'sa-ws-btn-openlocator'"></vtr-ui-button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

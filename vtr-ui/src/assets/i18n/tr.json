@@ -670,6 +670,9 @@
         },
         "app-update": {
             "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
+        },
+        "offline": {
+            "connectToUseFeature": "Bu özelliği kullanmak için İnternet'e bağlanın"
         }
     },
     "privacy": {
@@ -1374,6 +1377,17 @@
                         "taskBarDimmer": "GÖREV ÇUBUĞU KARARTICI",
                         "backgroundDimmer": "ARKA PLAN KARARTICI",
                         "displayDimmer": "EKRAN KARARTICI"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1527,7 +1541,60 @@
                 "fnCtrlKey": {
                     "title": "Fn tuşu ve Ctrl tuşu arasında işlev değiş tokuşu",
                     "description": "Ctrl tuşu yerine alışkanlıkla Fn tuşuna basıyorsanız bu iki tuşun işlevlerini değiştirebilirsiniz.",
-                    "restartNote": "İki tuşun işlevini değiştirmek için bilgisayarınızı yeniden başlatmanız gerekir, yeniden başlatmak istediğinizden emin misiniz?"
+                    "restartNote": "İki tuşun işlevini değiştirmek için bilgisayarınızı yeniden başlatmanız gerekir, yeniden başlatmak istediğinizden emin misiniz?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "DAHA FAZLA",
@@ -1979,7 +2046,7 @@
             "visitHde": "Sabit sürücü şifrelemesi sayfasını ziyaret edin",
             "haveOwnPassword": "Kendi parola yöneticim var",
             "haveOwnWifi": "Kendi wifi güvenliğim var",
-            "haveOwnVpn": "Kendi VPN güvenliğim var",
+            "haveOwnVpn": "Kendi VPN bağlantım var",
             "uac": "Kullanıcı Hesabı Denetimi (UAC)",
             "uacTitles": "Kullanıcı Hesabı Denetimi",
             "hde": "Sabit sürücü şifrelemesi",
@@ -2095,7 +2162,8 @@
                 "showmore": "Daha fazlasını göster",
                 "showless": "Ayrıntıları gizle",
                 "button": "WiFi güvenliğini etkinleştirin",
-                "disableDecribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir."
+                "disableDescribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Çevrenizdeki ağların güvenliğini belirlemek için tehdit dedektörünü kullanın.",
@@ -2709,7 +2777,7 @@
         "deviceStatisticsDescription": "Kaliteli, güvenilir ve yeni nesil cihazlar geliştirmemize yardımcı olmak için anonim cihaz verileri gönderin.",
         "userProfile": "Kullanıcı profili",
         "Note": "Not: ",
-        "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir.",
+        "settingsNotes": "Tüm değişikliklerin geçerli hale gelmesi için bu uygulamayı yeniden başlatın.",
         "betaSettingTitle": "Beta Programı",
         "betaProgram": "Beta Programı",
         "betaSettingDescription": "Üzerinde çalışmakta olduğumuz en yeni özellikleri deneyin."
