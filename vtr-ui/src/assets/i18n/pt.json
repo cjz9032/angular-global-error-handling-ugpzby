@@ -1142,10 +1142,10 @@
                 },
                 "smartStandby": {
                     "title": "Modo de Suspensão Inteligente",
-                    "description": "Esta funcionalidade programa a otimização da poupança de energia da bateria do computador durante os períodos de inatividade sem sacrificar a experiência de retoma rápida a partir do <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modo de Suspensão Moderno</a> durante os horários de utilização intensiva.",
-                    "tooltip": "Quando o Modo de Suspensão Inteligente está ativado, o computador muda para o Modo de Suspensão Moderno antes da hora de INÍCIO agendada e entra em hibernação quando estiver inativo durante um determinado período de tempo quando alimentado pela bateria. Este período é otimizado com base no agendamento definido ou na utilização do computador. O computador muda do modo de hibernação para o Modo de Suspensão Moderno apenas em dias agendados e não muda quando está inativo por dias agendados consecutivos.",
+                    "description": "Esta funcionalidade programa a otimização da poupança de energia da bateria do computador durante períodos de inatividade sem prejudicar um tempo de arranque rápido durante horas de utilização mais intensa.",
+                    "tooltip": "Quando o Modo de Suspensão Inteligente está ativado, o computador muda para o Modo de Suspensão Moderno antes da hora de INÍCIO agendada e entra em hibernação quando estiver inativo durante um determinado período de tempo quando alimentado pela bateria. Este período de tempo é otimizado com base no agendamento definido ou no tempo de utilização do computador obtido. O computador muda do modo de hibernação para o Modo de Suspensão Moderno apenas em dias agendados e não muda quando está inativo por dias agendados consecutivos.",
                     "timer": {
-                        "heading": "A hora a que normalmente utiliza este computador:",
+                        "heading": "A hora em que geralmente utiliza o computador",
                         "subHeading1": "comece",
                         "subHeading2": "fim",
                         "subHeading3": "utilizar este agendamento para",
@@ -1163,14 +1163,14 @@
                     "warningtip": "Por favor, selecione pelo menos um dia.",
                     "days": {
                         "shortName": {
-                            "sun": "Dom",
-                            "mon": "Seg",
-                            "tue": "Ter",
-                            "wed": "Qua",
-                            "thurs": "Qui",
-                            "fri": "Sex",
-                            "sat": "Sáb",
-                            "thu": "Qui"
+                            "sun": "domingo",
+                            "mon": "Segunda-feira",
+                            "tue": "terça",
+                            "wed": "Quarta-feira",
+                            "thurs": "Quinta-feira",
+                            "fri": "Sexta-feira",
+                            "sat": "sábado",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "domingo",
@@ -1187,7 +1187,7 @@
                         "noDaySelected": "Nenhum dia selecionado"
                     },
                     "checkbox": "Ajustar automaticamente o tempo ativo do computador com base na utilização",
-                    "hyperlinkToGraph": "Clique para ver a utilização e o tempo ativo aplicado",
+                    "hyperlinkToGraph": "Clique para ver a atividade e o tempo ativo da tabela do computador",
                     "subTitle": "Programe o seu computador",
                     "automaticMode": "Modo automático",
                     "manualMode": "Modo manual",

@@ -1142,10 +1142,10 @@
                 },
                 "smartStandby": {
                     "title": "Akıllı Bekleme",
-                    "description": "Bu özellik, yoğun kullanım zamanlarında <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Bekleme Durumu</a> hızlı başlatma deneyiminden ödün vermeden, bilgisayar boşta olduğunda pil gücü tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
-                    "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya veya bilgisayar kullanım süresine göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
+                    "description": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
+                    "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya veya aldığımız bilgisayar kullanım süresine göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
                     "timer": {
-                        "heading": "Bu bilgisayarı genelde kullandığınız saatler:",
+                        "heading": "Bilgisayarınızı genelde kullandığınız saatleri ayarlayın",
                         "subHeading1": "bu alanın",
                         "subHeading2": "bitiş",
                         "subHeading3": "bu zamanlamanın kullanılacağı zaman",
@@ -1163,14 +1163,14 @@
                     "warningtip": "Lütfen en az bir gün seçin.",
                     "days": {
                         "shortName": {
-                            "sun": "Paz",
-                            "mon": "Pzt",
-                            "tue": "Sal",
-                            "wed": "Çar",
-                            "thurs": "Per",
-                            "fri": "Cum",
-                            "sat": "Cmt",
-                            "thu": "Per"
+                            "sun": "Pazar",
+                            "mon": "Pazartesi",
+                            "tue": "Salı",
+                            "wed": "Çarşamba",
+                            "thurs": "Perşembe",
+                            "fri": "Cuma",
+                            "sat": "Cumartesi",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Pazar",
@@ -1187,7 +1187,7 @@
                         "noDaySelected": "Gün seçilmedi"
                     },
                     "checkbox": "Bilgisayarınızın etkinlik süresini kullanımınıza göre otomatik ayarlama",
-                    "hyperlinkToGraph": "Kullanım ve uygulanan etkin zamanı görmek için tıklatın",
+                    "hyperlinkToGraph": "Etkinlik ve bilgisayarınızın etkinlik süresine ilişkin tabloyu görmek için tıklatın",
                     "subTitle": "Bilgisayarınızı zamanlama",
                     "automaticMode": "Otomatik kip",
                     "manualMode": "Manuel kip",

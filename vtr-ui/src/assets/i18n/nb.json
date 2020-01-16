@@ -1142,10 +1142,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart hvilemodus",
-                    "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker opplevelsen av rask gjenopptakelse for <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Moderne hvilemodus</a> på tidspunkter med tyngre bruk.",
-                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir, eller brukstiden for datamaskinen. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
+                    "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
+                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir, eller brukstiden vi mottar for datamaskinen. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
                     "timer": {
-                        "heading": "Tidspunktet du vanligvis bruker denne datamaskinen:",
+                        "heading": "Tidspunkter du vanligvis bruker datamaskinen",
                         "subHeading1": "begynner",
                         "subHeading2": "slutt",
                         "subHeading3": "bruk denne planen for",
@@ -1163,14 +1163,14 @@
                     "warningtip": "Vennligst velg minst en dag.",
                     "days": {
                         "shortName": {
-                            "sun": "Søn",
-                            "mon": "Man",
-                            "tue": "Tirs",
-                            "wed": "Ons",
-                            "thurs": "Tors",
-                            "fri": "Fre",
-                            "sat": "Lør",
-                            "thu": "Tors"
+                            "sun": "søn",
+                            "mon": "man",
+                            "tue": "tir",
+                            "wed": "ons",
+                            "thurs": "Tor",
+                            "fri": "fre",
+                            "sat": "lør",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "søndag",
@@ -1187,7 +1187,7 @@
                         "noDaySelected": "Det er ikke valgt en dag"
                     },
                     "checkbox": "Automatisk justering av datamaskinens aktive tid basert på bruk",
-                    "hyperlinkToGraph": "Klikk for å se bruk og brukt aktiv tid",
+                    "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen",
                     "subTitle": "Opprett kjøreplan for datamaskinen",
                     "automaticMode": "Automatisk modus",
                     "manualMode": "Manuell modus",
