@@ -94,9 +94,9 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 		}
 	}
 	public keyupTabFn(event, i) {
-		console.log('event.keyCode=======', event.keyCode, 'this.options.dropOptions.length==', this.options.dropOptions.length - 1, i)
+		console.log('event.keyCode=======', event.keyCode, 'this.options.dropOptions.length==', this.options.dropOptions.length - 1, i);
 		if ((this.options.dropOptions.length - 1) === i) {
-			if (event.keyCode === 9) this.showOptions = false;
+			if (event.keyCode === 9) { this.showOptions = false; }
 		}
 	}
 }

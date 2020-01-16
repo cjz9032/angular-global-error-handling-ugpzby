@@ -75,7 +75,11 @@
 										</div>
 
 										<span>{{hours[prevHour]}}</span><br>
-										<span class="highlight" role="text" tabindex="0" id="{{hours[copyHour]}}, 'hours'" attr.aria-label="{{hours[copyHour]}}, 'hours'">{{hours[copyHour]}}</span><br>
+										<span class="highlight"
+											role="text"
+											tabindex="0"
+											id="{{hours[copyHour]}}'hours'"
+											attr.aria-label="{{hours[copyHour]}}, 'hours'">{{hours[copyHour]}}</span><br>
 										<span>{{hours[nextHour]}}</span>
 
 										<div class="toggle-icon"
@@ -102,7 +106,11 @@
 										</div>
 
 										<span>{{minutes[prevMinute]}}</span><br>
-										<span class="highlight" role="text" tabindex="0" id="{{minutes[copyMinute]}}, 'minutes'" attr.aria-label="{{minutes[copyMinute]}}, 'minutes'">{{minutes[copyMinute]}}</span><br>
+										<span class="highlight"
+											role="text"
+											tabindex="0"
+											id="{{minutes[copyMinute]}}, 'minutes'"
+											attr.aria-label="{{minutes[copyMinute]}}, 'minutes'">{{minutes[copyMinute]}}</span><br>
 										<span>{{minutes[nextMinute]}}</span>
 
 										<div class="toggle-icon"
@@ -117,10 +125,16 @@
 
 									</div>
 
-									<div class="am-pm highlight" role="radiogroup" tabindex="0">
+									<div class="am-pm highlight"
+										role="radiogroup"
+										tabindex="0">
 										<span>
-											<label class="inline-block" for="{{linkId}}-am-radio" attr.aria-label="{{ amPms[0] | translate }}" tabindex="0"
-											[attr.aria-checked]="copyAmPm==0" (keydown.enter)="setAmPm(0)">
+											<label class="inline-block"
+												for="{{linkId}}-am-radio"
+												attr.aria-label="{{ amPms[0] | translate }}"
+												tabindex="0"
+												[attr.aria-checked]="copyAmPm==0"
+												(keydown.enter)="setAmPm(0)">
 												<input class="label-radio"
 													id="{{linkId}}-am-radio"
 													[name]="'ampmradio'+id"
@@ -128,13 +142,17 @@
 													value="0"
 													tabindex="-1"
 													[checked]="copyAmPm==0"
-													(click)="setAmPm(0)"
-													 />
+													(click)="setAmPm(0)" />
 												<p class="label-text">{{ amPms[0] | translate }}</p>
 											</label>
 										</span><br>
 										<span>
-											<label class="inline-block" for="{{linkId}}-pm-radio" attr.aria-label="{{ amPms[1] | translate }}" [attr.aria-checked]="copyAmPm==1" tabindex="0" (keydown.enter)="setAmPm(1)">
+											<label class="inline-block"
+												for="{{linkId}}-pm-radio"
+												attr.aria-label="{{ amPms[1] | translate }}"
+												[attr.aria-checked]="copyAmPm==1"
+												tabindex="0"
+												(keydown.enter)="setAmPm(1)">
 												<input class="label-radio"
 													id="{{linkId}}-pm-radio"
 													[name]="'ampmradio'+id"
@@ -142,8 +160,7 @@
 													tabindex="-1"
 													value="1"
 													[checked]="copyAmPm==1"
-													(click)="setAmPm(1)"
-													 />
+													(click)="setAmPm(1)" />
 												<p class="label-text">{{ amPms[1] | translate }}</p>
 											</label>
 										</span>
