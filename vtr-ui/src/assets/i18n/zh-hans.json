@@ -644,7 +644,8 @@
             "registered": "已注册",
             "notRegistered": "未注册",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "智能待机",
-                    "description": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
-                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
+                    "description": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">现代待机模式</a>的快速恢复体验。",
+                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划或计算机使用时间而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
                     "timer": {
-                        "heading": "设置通常使用此计算机的时间",
+                        "heading": "通常使用此计算机的时间：",
                         "subHeading1": "开始",
                         "subHeading2": "结束",
                         "subHeading3": "将此计划用于",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "未选择日期"
                     },
                     "checkbox": "根据您的使用情况自动调整计算机的活动时间",
-                    "hyperlinkToGraph": "单击以查看计算机活动和活动时间表",
+                    "hyperlinkToGraph": "单击以查看使用情况和应用的活动时间",
                     "subTitle": "安排您的计算机",
                     "automaticMode": "自动模式",
                     "manualMode": "手动模式",
@@ -2197,7 +2198,8 @@
                 "subtitle": "高枕无忧",
                 "subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，“互联家庭网络安全性”功能会向您发送警报。可在<tag>此处</tag>了解有关互联家庭网络安全性的更多信息。",
                 "tryNow": "立即试用",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "输入邀请码",
@@ -2272,7 +2274,8 @@
             "getStarted1": "单击上面的“打开 SurfEasy”按钮以启动 SurfEasy VPN。",
             "getStarted2": "开启 VPN，稍等片刻，以便确认连接安全。",
             "getStarted3": "如果需要，更改您的区域或位置，然后畅享安全、隐秘的网络。",
-            "poweredBySurfEasy": "SurfEasy 出品"
+            "poweredBySurfEasy": "SurfEasy 出品",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 密码管理器",
@@ -2300,7 +2303,8 @@
             "allowsYou2": "监控暗网保障个人信息安全",
             "allowsYou3": "通过内置 VPN 在不安全的 WiFi 网络上提供安全性",
             "allowsYou4": "在不显示密码的情况下安全地共享密码",
-            "poweredByDashLane": "Dashlane 出品"
+            "poweredByDashLane": "Dashlane 出品",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

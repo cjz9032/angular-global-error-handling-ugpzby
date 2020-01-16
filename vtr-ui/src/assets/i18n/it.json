@@ -644,7 +644,8 @@
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Domande e risposte per la tua macchina",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Standby intelligente",
-                    "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
-                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Questo periodo di tempo è ottimizzato in base alla pianificazione impostata o al tempo di utilizzo del computer riscontrato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
+                    "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne il ripristino rapido dalla modalità <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Standby moderno</a> durante i picchi di utilizzo.",
+                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Questo periodo di tempo è ottimizzato in base alla pianificazione impostata o al tempo di utilizzo del computer. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
                     "timer": {
-                        "heading": "L'ora in cui generalmente si utilizza il computer",
+                        "heading": "Ora in cui generalmente si utilizza il computer:",
                         "subHeading1": "si inizi",
                         "subHeading2": "fine",
                         "subHeading3": "usa questa pianificazione per",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Nessun giorno selezionato"
                     },
                     "checkbox": "Regolazione automatica del tempo di utilizzo del computer in base all'utilizzo",
-                    "hyperlinkToGraph": "Fare clic per visualizzare l'attività e il tempo di utilizzo della tabella del computer",
+                    "hyperlinkToGraph": "Fare clic per visualizzare l'utilizzo e il tempo attivo applicato",
                     "subTitle": "Pianificazione del computer",
                     "automaticMode": "Modalità automatica",
                     "manualMode": "Modalità manuale",
@@ -2197,7 +2198,8 @@
                 "subtitle": "Protezione garantita",
                 "subtitleDescribe": "Protezione abitazione connessa ti invierà un avviso se rileva una vulnerabilità del dispositivo o della rete domestica in uso o se sei collegato a una rete potenzialmente dannosa. Ulteriori informazioni su Protezione abitazione connessa sono disponibili <tag>qui</tag>.",
                 "tryNow": "Provalo ora",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Immettere il codice invito",
@@ -2272,7 +2274,8 @@
             "getStarted1": "Fare clic sul pulsante \"Avvia SurfEasy\" in alto, per avviare SurfEasy VPN.",
             "getStarted2": "Attiva la rete VPN e attendi qualche istante per la conferma della connessione sicura.",
             "getStarted3": "Modifica l'area geografica o la posizione se necessario e inizia a utilizzare la rete privata sicura.",
-            "poweredBySurfEasy": "Basato su SurfEasy"
+            "poweredBySurfEasy": "Basato su SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "STRUMENTO PER LA GESTIONE DELLE PASSWORD DASHLANE",
@@ -2300,7 +2303,8 @@
             "allowsYou2": "Monitorare le informazioni personali sul web oscuro",
             "allowsYou3": "Proteggere i dispositivi collegati alle reti WiFi non sicure con la rete VPN integrata",
             "allowsYou4": "Condividere le password in modo sicuro",
-            "poweredByDashLane": "Basato su Dashlane"
+            "poweredByDashLane": "Basato su Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

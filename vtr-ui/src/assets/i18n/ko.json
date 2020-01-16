@@ -644,7 +644,8 @@
             "registered": "등록됨",
             "notRegistered": "등록되지 않음",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "스마트 대기",
-                    "description": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
+                    "description": "이 기능은 사용량이 많을 때 <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">최신 대기 상태</a>를 빠르게 재개하도록 하면서 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약합니다.",
                     "tooltip": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 기간은 설정한 일정 또는 컴퓨터 사용 시간을 기준으로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며, 비활성화되도록 예약된 날에는 전환되지 않습니다.",
                     "timer": {
-                        "heading": "이 컴퓨터를 주로 사용하는 시간",
+                        "heading": "이 컴퓨터를 주로 사용하는 시간:",
                         "subHeading1": "시작하면",
                         "subHeading2": "종료",
                         "subHeading3": "다음에 대해 이 스케줄을 사용합니다",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "날짜를 선택하지 않음"
                     },
                     "checkbox": "사용 현황에 따라 컴퓨터의 활성 시간 자동 조정",
-                    "hyperlinkToGraph": "클릭하여 컴퓨터 테이블의 활동 및 활성 시간을 확인",
+                    "hyperlinkToGraph": "사용량 및 적용된 유효 시간을 보려면 클릭하십시오",
                     "subTitle": "컴퓨터 예약",
                     "automaticMode": "자동 모드",
                     "manualMode": "수동 모드",
@@ -2197,7 +2198,8 @@
                 "subtitle": "안심하고 사용",
                 "subtitleDescribe": "장치 또는 홈 네트워크에서 취약한 점이 감지되거나 악성일 가능성이 있는 네트워크에 연결되어 있는 경우, 연결된 홈 보안 장치에서 경고를 보냅니다. 연결된 홈 보안에 대해 자세히 알아보십시오 <tag>여기</tag>.",
                 "tryNow": "지금 사용해 보기",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "초대 코드 입력",
@@ -2272,7 +2274,8 @@
             "getStarted1": "위의 \"SurfEasy 열기\" 버튼을 클릭하여 SurfEasy VPN을 실행하십시오.",
             "getStarted2": "보안 연결을 확인하려면 VPN을 켜고 잠시 기다리십시오.",
             "getStarted3": "원하는 경우 지역 또는 위치를 변경하여 안전하고 개인적인 네트워킹을 즐기십시오.",
-            "poweredBySurfEasy": "SurfEasy로 실행"
+            "poweredBySurfEasy": "SurfEasy로 실행",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 암호 관리자",
@@ -2300,7 +2303,8 @@
             "allowsYou2": "다크 웹에서 개인 정보 모니터",
             "allowsYou3": "내장 VPN으로 비보안 WiFi 네트워크에서 안전하게 유지",
             "allowsYou4": "암호를 노출하지 않고 안전하게 공유",
-            "poweredByDashLane": "Dashlane로 실행"
+            "poweredByDashLane": "Dashlane로 실행",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

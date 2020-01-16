@@ -644,7 +644,8 @@
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Inteligentný pohotovostný režim",
-                    "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
-                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie je optimalizované na základe nastaveného harmonogramu alebo stanoveného času využívania počítača. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie vtedy, ak sa počas nasledujúcich plánovaných dní nevyužíva.",
+                    "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">moderného pohotovostného režimu</a> pri náročnejšom využívaní.",
+                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie je optimalizované na základe nastaveného harmonogramu, alebo stanoveného času využívania počítača. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie vtedy, ak sa počas nasledujúcich plánovaných dní nevyužíva.",
                     "timer": {
-                        "heading": "Čas, kedy obyčajne využívate svoj počítač",
+                        "heading": "Čas, v ktorom zvyčajne používate počítač:",
                         "subHeading1": "začnete",
                         "subHeading2": "koniec",
                         "subHeading3": "tento plán použiť na",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Nie je vybratý žiadny deň"
                     },
                     "checkbox": "Automatické prispôsobenie aktívneho času počítača podľa vášho využívania",
-                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktívny čas tabuľky vášho počítača",
+                    "hyperlinkToGraph": "Kliknutím zobrazíte využitie a aplikovaný aktívny čas",
                     "subTitle": "Plánovanie počítača",
                     "automaticMode": "Automatický režim",
                     "manualMode": "Manuálny režim",
@@ -2197,7 +2198,8 @@
                 "subtitle": "Pokoj v duši",
                 "subtitleDescribe": "Služba Zabezpečenie prepojenej domácnosti vám odošle varovanie, ak odhalí zraniteľnosť zariadenia alebo domácej siete, prípadne ak ste pripojení k potenciálne škodlivej sieti. Ďalšie informácie o zabezpečení pripojenej domácnosti získate <tag>tu</tag>.",
                 "tryNow": "Vyskúšať teraz",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Zadajte pozývací kód",
@@ -2272,7 +2274,8 @@
             "getStarted1": "Kliknite na tlačidlo „Otvoriť SurfEasy“ uvedené vyššie a spustite aplikáciu SurfEasy VPN.",
             "getStarted2": "Zapnite službu VPN a chvíľu počkajte na potvrdenie zabezpečeného pripojenia.",
             "getStarted3": "V prípade potreby zmeňte svoj región alebo polohu a používajte bezpečnú a súkromnú sieť.",
-            "poweredBySurfEasy": "Využíva technológiu SurfEasy"
+            "poweredBySurfEasy": "Využíva technológiu SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "SPRÁVCA HESIEL DASHLANE",
@@ -2300,7 +2303,8 @@
             "allowsYou2": "Slúži na sledovanie výskytu vašich údajov na temnom webe",
             "allowsYou3": "Zostaňte v bezpečí v nezabezpečených WiFi sieťach vďaka integrovanému VPN",
             "allowsYou4": "Bezpečne zdieľajte heslá bez ich odhalenia",
-            "poweredByDashLane": "Využíva technológiu Dashlane"
+            "poweredByDashLane": "Využíva technológiu Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

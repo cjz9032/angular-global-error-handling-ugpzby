@@ -644,7 +644,8 @@
             "registered": "REGISTRADO",
             "notRegistered": "NÃO REGISTRADO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Q & A para sua máquina",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Suspensão inteligente",
-                    "description": "Esse recurso programa o computador para otimizar a economia de carga da bateria durante horas ociosas sem prejudicar o tempo do início rápido durantes horas de maior uso.",
-                    "tooltip": "Quando a Suspensão inteligente estiver ativada, o computador alternará para a Suspensão moderna antes da hora de INÍCIO programada e entrará no modo de hibernação depois que estiver inativo por um certo tempo na carga da bateria. Esse período é otimizado com base na programação que você define ou no tempo de uso do computador que obtemos. O computador alterna do modo de hibernação para a Suspensão moderna apenas nos dias programados e não alterna quando estiver inativo por dias programados consecutivos.",
+                    "description": "Esse recurso programa o computador para otimizar a economia de carga da bateria durante horas ociosas sem prejudicar a experiência de continuidade rápida da <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Suspensão moderna</a> durante horas de maior uso.",
+                    "tooltip": "Quando a Suspensão inteligente estiver ativada, o computador alternará para a Suspensão moderna antes da hora de INÍCIO programada e entrará no modo de hibernação depois que estiver inativo por um certo tempo na carga da bateria. Esse período é otimizado com base na programação que você define ou no uso do computador. O computador alterna do modo de hibernação para a Suspensão moderna apenas nos dias programados e não alterna quando estiver inativo por dias programados consecutivos.",
                     "timer": {
-                        "heading": "O horário em que você geralmente usa o computador",
+                        "heading": "A hora em que você geralmente usa este computador:",
                         "subHeading1": "inicie",
                         "subHeading2": "término",
                         "subHeading3": "use essa programação para",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Nenhum dia selecionado"
                     },
                     "checkbox": "Ajuste automático do tempo ativo do computador com base no uso",
-                    "hyperlinkToGraph": "Clique para ver a atividade e o tempo ativo da mesa do computador",
+                    "hyperlinkToGraph": "Clique para exibir o uso e o tempo ativo aplicado",
                     "subTitle": "Programar o computador",
                     "automaticMode": "Modo automático",
                     "manualMode": "Modo manual",
@@ -2197,7 +2198,8 @@
                 "subtitle": "Fique tranquilo",
                 "subtitleDescribe": "A Segurança doméstica conectada enviará para você um alerta se uma vulnerabilidade no seu dispositivo ou rede doméstica for detectada, ou se você estiver conectado a uma rede possivelmente perigosa. Saiba mais sobre a Segurança doméstica conectada <tag>aqui</tag>.",
                 "tryNow": "Experimentar agora",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Inserir código de convite",
@@ -2272,7 +2274,8 @@
             "getStarted1": "Clique no botão \"Abrir o SurfEasy\" acima para iniciar o SurfEasy VPN.",
             "getStarted2": "Ative o VPN e aguarde por um breve momento para a confirmação de uma conexão segura.",
             "getStarted3": "Altere sua região ou localização se desejar, e aproveite rede segura e privada.",
-            "poweredBySurfEasy": "Tecnologia SurfEasy"
+            "poweredBySurfEasy": "Tecnologia SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "GERENCIADOR DE SENHAS DASHLANE",
@@ -2300,7 +2303,8 @@
             "allowsYou2": "Monitore a dark web em busca de suas informações pessoais",
             "allowsYou3": "Mantenha-se seguro em redes WiFi não seguras com a VPN integrada",
             "allowsYou4": "Compartilhe senhas de forma segura sem revelá-las",
-            "poweredByDashLane": "Tecnologia Dashlane"
+            "poweredByDashLane": "Tecnologia Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
