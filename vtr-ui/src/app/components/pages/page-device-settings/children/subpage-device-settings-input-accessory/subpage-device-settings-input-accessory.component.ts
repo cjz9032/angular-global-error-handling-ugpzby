@@ -32,8 +32,6 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public imagePathGrafEvo = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/';
 	public imagePathCS20 = 'assets/images/keyboard-images/KeyboardMap_Images/CS20/';
 	public imagesArray: string[] = ['Belgium.png', 'French.png', 'French_Canadian.png', 'German.png', 'Italian.png', 'Spanish.png', 'Turkish_F.png', 'Standered.png'];
-
-
 	public image = '';
 	public additionalCapabilitiesObj: any = {};
 	public machineType: number;
@@ -253,7 +251,6 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			if (element.toLowerCase() === layOutName.toLowerCase() + '.png') {
 				if (this.keyboardVersion === '1') {
 					this.image = this.imagePathCS20 + element;
-					// else if (this.keyboardVersion === '0') {
 				} else {
 					if (type === 'grafevo') {
 						this.image = this.imagePathGrafEvo + element;
