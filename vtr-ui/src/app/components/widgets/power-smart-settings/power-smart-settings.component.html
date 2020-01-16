@@ -2,7 +2,7 @@
 	<div *ngIf="showIC===4 || showIC===3 || showIC===14 || showIC===13">
 		<div class="row pt-5 smartsettings-card"
 			id="smartSettings">
-			<div class="col-12 mx-auto ">
+			<div class="col mx-auto ">
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
@@ -11,6 +11,7 @@
 					<ul class="list-group list-group-flush">
 						<li class="">
 							<vtr-ui-row-switch
+								[leftIcon]="['icomoon','icomoon-ic']"
 								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | titlecase"
 								[caption]="captionText"
 								[isSwitchVisible]="showIntelligentCoolingToggle"
@@ -87,7 +88,7 @@
 	<div *ngIf="showIC===5">
 		<div class="row pt-5 smartsettings-card"
 			id="smartSettings">
-			<div class="col-12 mx-auto ">
+			<div class="col mx-auto ">
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
@@ -162,7 +163,7 @@
 	<div *ngIf="showIC===6">
 		<div class="row pt-5 smartsettings-card"
 			id="smartSettings">
-			<div class="col-12 mx-auto ">
+			<div class="col mx-auto ">
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"

@@ -292,6 +292,7 @@ strong {
 
 ngb-tooltip-window.vtr-tooltip.tooltip {
 	border-radius: 0.4rem;
+	z-index: 1;
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 
@@ -441,9 +442,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 /*.smart-standBy-modal-styles*/
 .smart-standBy-modal {
-	.modal-dialog {
-		// max-width: 85%;
-	}
+	// .modal-dialog {
+	// 	// max-width: 85%;
+	// }
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
