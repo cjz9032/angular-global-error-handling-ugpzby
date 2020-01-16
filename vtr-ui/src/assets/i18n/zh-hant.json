@@ -1777,7 +1777,7 @@
                 "heading": "智慧型媒體",
                 "title": "視訊解析度提升",
                 "desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label> 此功能可能會影響電池續航力、電池溫度，並造成噪音。啟用時，建議您使用 AC 電源連接電腦。</label></p>",
-                "tooltip": "此功能僅適用於下列播放程式：<br/> Windows Media player",
+                "tooltip": "此功能僅適用於：<br/> Windows Media player",
                 "note": {
                     "description": "此功能在下列情況中無法運作：",
                     "description1": "電腦未連接到 AC 電源且電池電量低於 20％。",

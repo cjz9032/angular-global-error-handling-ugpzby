@@ -1777,7 +1777,7 @@
                 "heading": "Supporti intelligenti",
                 "title": "Upscaling della risoluzione video",
                 "desc": "<p><label>Questa funzione migliora l'esperienza di riproduzione dei video, aumentandone la risoluzione. Risulta particolarmente efficiente con i video in bassa risoluzione.</label></p> <p style='margin-top:4px;'><label> Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Se abilitata, si consiglia di collegare il computer all'alimentazione CA.</label></p>",
-                "tooltip": "La funzione può essere utilizzata solo sui seguenti lettori: <br/> Windows Media player",
+                "tooltip": "La funzione funziona solo su:<br/> Windows Media player",
                 "note": {
                     "description": "Questa funzione non può essere utilizzata quando:",
                     "description1": "Il computer non è collegato all'alimentazione CA e l'alimentazione della batteria è inferiore al 20%.",

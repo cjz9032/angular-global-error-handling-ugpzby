@@ -1777,7 +1777,7 @@
                 "heading": "Intelligente medier",
                 "title": "Opskalering af videoopløsning",
                 "desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label> Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Når funktionen er aktiveret, anbefales det, at du slutter computeren til vekselstrøm.</label></p>",
-                "tooltip": "Funktionen fungerer kun på følgende afspillere: <br/> Windows Media player",
+                "tooltip": "Funktionen fungerer kun på:<br/> Windows Media player",
                 "note": {
                     "description": "Denne funktion virker ikke i disse situationer:",
                     "description1": "Computeren er ikke tilsluttet til vekselstrøm, og batteriets strømniveau er lavere end 20%.",
