@@ -958,15 +958,15 @@
                         "optimize": "优化系统以",
                         "apsHint": "要启用智能冷却，必须安装并启用 Lenovo Active Protection System。",
                         "options": {
-                            "quiteCool3": "低温模式",
+                            "quiteCool3": "安静与低温",
                             "performance3": "高性能",
-                            "quiteCool4": "安静和低温模式",
-                            "performance4": "性能",
-                            "quiteCool5": "安静和低温模式",
-                            "performance5": "性能",
+                            "quiteCool4": "安静与低温",
+                            "performance4": "高性能",
+                            "quiteCool5": "安静与低温",
+                            "performance5": "高性能",
                             "batterySaving": "电池省电",
-                            "performance13": "性能",
-                            "quiteCool13": "安静和低温模式",
+                            "performance13": "高性能",
+                            "quiteCool13": "安静与低温",
                             "performance14": "极致性能",
                             "quiteCool14": "智能冷却"
                         },
@@ -2162,7 +2162,8 @@
                 "showmore": "显示更多内容",
                 "showless": "显示更少内容",
                 "button": "启用 WiFi 安全",
-                "disableDescribe": "Lenovo WiFi 安全是一项基于云的先进软件服务，可帮助您的设备区分安全的无线网络与潜在的恶意网络。"
+                "disableDescribe": "Lenovo WiFi 安全是一项基于云的先进软件服务，可帮助您的设备区分安全的无线网络与潜在的恶意网络。",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "使用威胁检测程序来确定您周围网络的安全性。",
