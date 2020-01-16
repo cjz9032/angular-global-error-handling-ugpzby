@@ -12,7 +12,7 @@
 			<div class="row pt-5 smartsettings-card"
 				id="Input & Accessories"
 				attr.aria-label="Input & Accessories">
-				<div class="col-12 mx-auto ">
+				<div class="col-12 px-0">
 					<!-- Input & Accessories -->
 					<vtr-container-collapsible [collapseLinkId]="'inputAccessories'"
 						[vtrAppSearchScroller]="['search-hidden-keyboard-fn', 'search-Keyboard-top-row']"
@@ -223,7 +223,6 @@
 							</ng-template>
 						</vtr-ui-row-switch>
 					</li>
-					<!-- Fn and Ctrl keys swap feature commented due to VAN-12684 -->
 					<li class="pt-3" *ngIf="machineType == 1 && fnCtrlSwapCapability">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title' | translate"
@@ -245,7 +244,7 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3">
+					<li class="pt-3" *ngIf="machineType == 1 && fnAsCtrlCapability">					
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title2' | translate"
 							componentName="Fn works as Ctrl for frequently used key combinations"
@@ -253,12 +252,14 @@
 							[leftIcon]="['fal','sync']"
 							[showChildContent]="true"
 							[theme]="'white'"
+							(toggleOnOff)="setFnAsCtrl($event)"
 							[isSwitchVisible]="true"
+							[isSwitchChecked]="fnAsCtrlStatus"
 							[rightIcon]="['far', 'question-circle']"
 							[fnCtrltoolTip]="true"
 							[tooltipContent]="fnCtrlKeyTooltipContent">
 							<div class="row">
-								<div class="col-auto note pt-3">
+								<div class="feature-note note p-4">
 									<p>{{'device.deviceSettings.inputAccessories.fnCtrlKey.featureNote' | translate}}</p>
 								</div>
 							</div>

@@ -51,7 +51,7 @@
 													[showMePartially]="item.isPopup" [descriptionLabel]="item.ariaLabel"
 													(closeClicked)="onClosed($event, in)">
 												</vtr-ui-popover>
-												<vtr-ui-gaming-driver-popup [ngClass]="{'networkboost-driver-popup': item.id === 'legionedge networkboost'}" *ngIf="item.isDriverPopup"
+												<vtr-ui-gaming-driver-popup [ngClass]="{'networkboost-driver-popup': item.id === 'legionedge networkboost','ram-overclock-driver-popup': item.id === 'legionedge ramoverlock'}" *ngIf="item.isDriverPopup"
 													 [showMePartially]="item.isDriverPopup"
 													[descriptionLabel]="item.ariaLabel"
 													[popupText]="item.driverPopupText"

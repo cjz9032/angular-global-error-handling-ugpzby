@@ -103,11 +103,11 @@
 		}
 
 		.feature-note {
-			background-color: $shade_lightest;
-			border: 1px solid $shade_lighter;
+			background-color: $grey_lighter;
+			border: 0.1rem solid $note_border;
 			p {
-				font-size: 1.5rem;
-				color: $main_darker;
+				font-size: $fontsize_xs;
+				color: $shade_blue;
 				margin: 0;
 			}
 			a {

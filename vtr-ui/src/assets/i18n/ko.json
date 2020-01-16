@@ -2162,7 +2162,8 @@
                 "showmore": "더 표시",
                 "showless": "간단하게 표시",
                 "button": "WiFi 보안 사용",
-                "disableDescribe": "Lenovo WiFi 보안은 장치가 안전한 무선 네트워크와 잠재적인 악성 네트워크를 구분할 수 있도록 도와주는 첨단 클라우드 기반 소프트웨어 서비스입니다."
+                "disableDescribe": "Lenovo WiFi 보안은 장치가 안전한 무선 네트워크와 잠재적인 악성 네트워크를 구분할 수 있도록 도와주는 첨단 클라우드 기반 소프트웨어 서비스입니다.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "위협 감지기를 사용하여 주변 네트워크의 안전성을 확인합니다.",

@@ -47,87 +47,21 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public isAppInstalled = false;
 	public fnCtrlSwapCapability = false;
 	public fnCtrlSwapStatus = false;
+	public fnAsCtrlCapability = false;
+	public fnAsCtrlStatus = false;
 	public isRestartRequired = false;
 	voipAppName = ['Skype For Business 2016', 'Microsoft Teams'];
 	iconName: string[] = ['icon-s4b', 'icon-teams'];
+	public tooltipString = 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.';
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
 	hasUDKCapability = false;
 	fnLockCapability = false;
 	cacheFound = false;
+	public isFrenchKeyboard = false;
 	private topRowFunctionsIdeapadSubscription: Subscription;
-
 	backlightCapability$: Observable<boolean>;
-
-	public fnCtrlKeyTooltipContent = [
-		{
-			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key1',
-			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key1',
-			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action1'
-		},
-
-		{
-			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key2',
-			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key2',
-			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action2'
-		},
-
-		{
-			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key3',
-			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key3',
-			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action3'
-		},
-
-		{
-			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key4',
-			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key4',
-			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action4'
-		},
-
-		{
-			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key5',
-			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key5',
-			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action5'
-		},
-
-		{
-			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key6',
-			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key6',
-			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action6'
-		},
-
-		{
-			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key7',
-			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key7',
-			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action7'
-		},
-
-		{
-			fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key8',
-			ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key8',
-			action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action8'
-		}
-
-		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key9',
-		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key9',
-		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action9'},
-
-		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key10',
-		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key10',
-		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action10'},
-
-		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key11',
-		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key11',
-		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action1'},
-
-		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key12',
-		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key12',
-		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action12'},
-
-		// {fnkey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.key13',
-		// ctrlKey: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.key13',
-		// action: 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.action13'}
-	];
+	public fnCtrlKeyTooltipContent = [];
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -150,6 +84,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
 			this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
 			this.getFnCtrlSwapCapability();
+			this.getFnAsCtrlCapability();
 		}
 		this.getMouseAndTouchPadCapability();
 		this.getVoipHotkeysSettings();
@@ -273,6 +208,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					if (value) {
 						this.getKBDMachineType(value);
+						this.getLayoutTable(value);
 					}
 				})
 					.catch(error => {
@@ -369,7 +305,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			return EMPTY;
 		}
 	}
-
+ 	// FnCtrlSwap feature start here
 	public getFnCtrlSwapCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
@@ -421,7 +357,98 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			return EMPTY;
 		}
 	}
+ 	// FnCtrlSwap feature end here
 
+	// FnAsCtrl feature start here
+	public getFnAsCtrlCapability() {
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.GetFnAsCtrlCapability().then(res => {
+					this.fnAsCtrlCapability = res;
+					if (this.fnAsCtrlCapability) {
+						this.getFnAsCtrlStatus();
+					}
+				}).catch((error) => {
+					this.logger.error('GetFnAsCtrlCapability', error.message);
+				});
+			}
+		} catch (error) {
+			this.logger.error('GetFnAsCtrlCapability', error.message);
+			return EMPTY;
+		}
+	}
+	public getFnAsCtrlStatus() {
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.GetFnAsCtrl().then(res => {
+					this.fnAsCtrlStatus = res;
+				}).catch(error => {
+					this.logger.error('GetFnAsCtrl error here', error.message);
+					return EMPTY;
+				});
+			}
+		} catch (error) {
+			this.logger.error('GetFnAsCtrl', error.message);
+			return EMPTY;
+		}
+	}
+
+	public setFnAsCtrl(event) {
+		this.fnAsCtrlStatus = event.switchValue;
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.SetFnAsCtrl(this.fnAsCtrlStatus).then(res => {
+				}).catch((error) => {
+					this.logger.error('SetFnAsCtrl', error.message);
+				});
+			}
+		} catch (error) {
+			this.logger.error('SetFnAsCtrl', error.message);
+			return EMPTY;
+		}
+	}
+	public getLayoutTable(layOutName) {
+		this.fnCtrlKeyTooltipContent = [];
+		let array = [];
+		switch (layOutName.toUpperCase()) {
+			case 'TURKISH_F':
+				array = [8, 1, 6, 9, 2, 5, 3];
+				this.generateLayOutTable(array);
+				break;
+			case 'BELGIUM':
+			case 'FRENCH' :
+			case 'FRENCH_CANADIAN':
+				array = [7, 4, 10, 11, 2, 9, 13, 12];
+				this.generateLayOutTable(array);
+				this.isFrenchKeyboard = true;
+				break;
+			default:
+				array = [1, 4, 13, 11, 2, 9, 10, 12];
+				this.generateLayOutTable(array);
+				break;
+		}
+	}
+	public generateLayOutTable(array) {
+		let obj: any = {};
+		this.fnCtrlKeyTooltipContent = [];
+		array.forEach(el => {
+			obj = {
+				action: this.tooltipString + 'action.action' + el,
+				ctrlKey: this.tooltipString + 'ctrlKeys.key' + el,
+				fnkey: this.tooltipString + 'fnKeys.key' + el
+			};
+			if (this.isFrenchKeyboard && obj !== undefined && obj.fnkey) {
+				if (obj.fnkey === this.tooltipString + 'fnKeys.key10') {
+					obj.action = this.tooltipString + 'action.action13';
+				}
+				if (obj.fnkey === this.tooltipString + 'fnKeys.key13') {
+					obj.action = this.tooltipString + 'action.action10';
+				}
+			}
+			this.fnCtrlKeyTooltipContent.push(obj);
+		});
+	}
+ 	// FnAsCtrl feature end here
 	public launchProtocol(protocol: string) {
 		if (this.keyboardService.isShellAvailable && protocol && protocol.length > 0) {
 			WinRT.launchUri(protocol);
