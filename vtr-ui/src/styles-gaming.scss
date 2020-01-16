@@ -1538,6 +1538,10 @@
 			color: $gaming_lightest !important;
 		}
 	}
+
+	.mtop{
+		margin-top:-2rem;//added to fix issue 13925
+	}
 }
 
 .gaming-help-modal {
