@@ -1776,12 +1776,12 @@
             "superResolution": {
                 "heading": "智慧型媒體",
                 "title": "視訊解析度提升",
-                "desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label> 此功能可能會影響電池續航力、電池溫度，並造成噪音。啟用時，建議您使用 AC 電源連接電腦。</label></p>",
+                "desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label>此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式下使用。否則，電力會消耗得更快，且電池壽命會變得更短。</label></p>",
                 "tooltip": "此功能僅適用於：<br/> Windows Media player",
                 "note": {
                     "description": "此功能在下列情況中無法運作：",
-                    "description1": "電腦未連接到 AC 電源且電池電量低於 20％。",
-                    "description2": "電腦未連接到 AC 電源且已啟用省電功能模式。",
+                    "description1": "電腦未連接到 AC 電源。",
+                    "description2": "電池省電模式已啟用。",
                     "description3": "CPU 溫度過高。"
                 }
             },

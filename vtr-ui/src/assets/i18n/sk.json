@@ -1776,12 +1776,12 @@
             "superResolution": {
                 "heading": "Inteligentné médiá",
                 "title": "Zvýšenie rozlíšenia videa",
-                "desc": "<p><label>Táto funkcia zlepšuje zážitok z prehrávania videa zvýšením rozlíšenia videa. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label> Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Ak je povolená, odporúča sa pripojiť počítač k zdroju napájania.</label></p>",
+                "desc": "<p><label>Táto funkcia zlepšuje zážitok z prehrávania videa zvýšením rozlíšenia videa. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu. V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
                 "tooltip": "Táto funkcia funguje iba na:<br/> Windows Media player",
                 "note": {
                     "description": "Funkcia nefunguje v týchto prípadoch:",
-                    "description1": "Počítač nie je pripojený k zdroju napájania a batéria je nabitá na menej než 20 %.",
-                    "description2": "Počítač nie je pripojený k zdroju napájania a je zapnutý šetriaci režim batérie.",
+                    "description1": "Počítač nie je pripojený k napájaciemu adaptéru.",
+                    "description2": "Režim úspory batérie je povolený.",
                     "description3": "Teplota procesora je príliš vysoká."
                 }
             },

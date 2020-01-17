@@ -1776,12 +1776,12 @@
             "superResolution": {
                 "heading": "Multimédia Inteligente",
                 "title": "Melhorar a resolução de vídeo",
-                "desc": "<p><label>Esta funcionalidade melhora a experiência de reprodução de vídeo melhorando a resolução de vídeo. Funciona especialmente quando o vídeo tem uma fraca resolução.</label></p> <p style='margin-top:4px;'><label> Esta função poderá ter impacto na duração da bateria, na temperatura da bateria e causar ruídos. Quando ativada, é recomendado ligar o computador à alimentação CA.</label></p>",
+                "desc": "<p><label>Esta funcionalidade melhora a experiência de reprodução de vídeo melhorando a resolução de vídeo. Funciona especialmente quando o vídeo tem uma fraca resolução.</label></p> <p style='margin-top:4px;'><label>Esta função poderá ter impacto na duração da bateria, na temperatura da bateria e causar ruídos. Não a utilize no modo CC. Caso contrário, vai acelerar o consumo de energia e reduzir a duração da bateria.</label></p>",
                 "tooltip": "A funcionalidade funciona apenas em:<br/> Windows Media player",
                 "note": {
                     "description": "Esta funcionalidade não funciona quando:",
-                    "description1": "O computador não está ligado à alimentação CA e a carga da bateria é inferior a 20%.",
-                    "description2": "O computador não está ligado à alimentação CA e o modo de poupança de bateria está ativado.",
+                    "description1": "O computador não está ligado à alimentação CA.",
+                    "description2": "O modo Poupança de bateria está ativado.",
                     "description3": "A temperatura da CPU é demasiado elevada."
                 }
             },

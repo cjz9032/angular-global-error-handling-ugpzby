@@ -1776,12 +1776,12 @@
             "superResolution": {
                 "heading": "Medii inteligente",
                 "title": "Mărirea rezoluţiei video",
-                "desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label> Această caracteristică ar putea afecta durata de viaţă a bateriei, temperatura bateriei şi poate provoca zgomote. Atunci când este activată, se recomandă să conectaţi computerul la o sursă de c.a.</label></p>",
+                "desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label>Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare cu c.c. În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.</label></p>",
                 "tooltip": "Această caracteristică funcționează numai pe:<br/> Windows Media player",
                 "note": {
                     "description": "Această caracteristică nu funcţionează când:",
-                    "description1": "computerul nu este conectat la o sursă de c.a. şi energia bateriei este mai mică de 20%.",
-                    "description2": "computerul nu este conectat la o sursă de c.a. şi modul Economisire baterie este activat.",
+                    "description1": "Computerul nu este conectat la o sursă de alimentare c.a.",
+                    "description2": "Modul de economisire a bateriei este activat.",
                     "description3": "Temperatura procesorului este prea mare."
                 }
             },

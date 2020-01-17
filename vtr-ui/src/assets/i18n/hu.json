@@ -1776,12 +1776,12 @@
             "superResolution": {
                 "heading": "Intelligens média",
                 "title": "Videófelbontás megnövelése",
-                "desc": "<p><label>Ez a szolgáltatás fokozza a videó lejátszásának élményét azáltal, hogy javítja a videófelbontást. Különösen akkor működik, ha a videó rossz felbontású.</label></p> <p style='margin-top:4px;'><label> Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ha engedélyezve van, akkor javasoljuk, hogy a számítógépet csatlakoztassa hálózati tápellátáshoz.</label></p>",
+                "desc": "<p><label>Ez a szolgáltatás fokozza a videó lejátszásának élményét azáltal, hogy javítja a videófelbontást. Különösen akkor működik, ha a videó rossz felbontású.</label></p> <p style='margin-top:4px;'><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Kérjük, ne használja DC üzemmódban. Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
                 "tooltip": "Ez a funkció csak a következőkön működik:<br/> Windows Media player",
                 "note": {
                     "description": "A funkció az alábbi esetekben nem működik:",
-                    "description1": "A számítógép nincs csatlakoztatva a hálózati tápellátáshoz, és az akkumulátor töltöttsége kevesebb 20%-nál.",
-                    "description2": "A számítógép nincs csatlakoztatva a hálózati tápellátáshoz, és az akkumulátortakarékos mód engedélyezve van.",
+                    "description1": "A számítógép nem csatlakozik a hálózati tápellátáshoz.",
+                    "description2": "Az Akkumulátorkímélő kód engedélyezve van.",
                     "description3": "A processzor hőmérséklete túl magas."
                 }
             },

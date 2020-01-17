@@ -1776,12 +1776,12 @@
             "superResolution": {
                 "heading": "Medios inteligentes",
                 "title": "Escalado de resolución de video",
-                "desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video mejorando la resolution de video. Funciona especialmente cuando el video tiene una resolución baja.</label></p> <p style='margin-top:4px;'><label> Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. Cuando está habilitada, se recomienda que conecte el sistema a la alimentación de CA.</label></p>",
+                "desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video mejorando la resolution de video. Funciona especialmente cuando el video tiene una resolución baja.</label></p> <p style='margin-top:4px;'><label>Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. No lo utilice en la modalidad de CC. De lo contrario, se acelerará el consumo de energía y se acortará la vida de la batería.</label></p>",
                 "tooltip": "La característica solo funciona en:<br/> Windows Media player",
                 "note": {
                     "description": "Esta característica no funciona cuando;",
-                    "description1": "El sistema no está conectado a la alimentación de CA y la energía de la batería es inferior al 20 %.",
-                    "description2": "El sistema no está conectado a la alimentación de CA y el modo de ahorro de energía de la batería está habilitado.",
+                    "description1": "El sistema no está conectado a la alimentación de CA.",
+                    "description2": "El modo de ahorro de batería está habilitado.",
                     "description3": "La temperatura de la CPU es demasiado alta."
                 }
             },

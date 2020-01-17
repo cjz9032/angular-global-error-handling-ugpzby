@@ -1776,12 +1776,12 @@
             "superResolution": {
                 "heading": "Inteligentní média",
                 "title": "Zvýšení rozlišení videa",
-                "desc": "<p><label>Tato funkce zvyšuje zážitek z přehrávání videa zlepšením rozlišení videa. Funguje zejména v případě, že je video ve špatném rozlišení.</label></p> <p style='margin-top:4px;'><label> Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. Pokud je povolená, doporučuje se připojit počítač k napájení střídavým proudem.</label></p>",
+                "desc": "<p><label>Tato funkce zvyšuje zážitek z přehrávání videa zlepšením rozlišení videa. Funguje zejména v případě, že je video ve špatném rozlišení.</label></p> <p style='margin-top:4px;'><label>Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. V režimu DC ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.</label></p>",
                 "tooltip": "Tato funkce funguje pouze na:<br/> Windows Media player",
                 "note": {
                     "description": "Tato funkce nepracuje v následujících případech:",
-                    "description1": "Počítač není připojen k napájení střídavým proudem a kapacita baterie je nižší než 20 %.",
-                    "description2": "Počítač není připojen k napájení střídavým proudem a je aktivní režim úspory baterie.",
+                    "description1": "Počítač není připojen k napájení.",
+                    "description2": "Je povolen režim úspory energie v baterii.",
                     "description3": "Teplota procesoru je příliš vysoká."
                 }
             },

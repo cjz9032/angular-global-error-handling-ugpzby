@@ -1776,12 +1776,12 @@
             "superResolution": {
                 "heading": "Inteligentni mediji",
                 "title": "Povečanje ločljivosti videoposnetkov",
-                "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label> Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Priporočamo, da takrat, ko je omogočena, računalnik priključite na izmenično napajanje.</label></p>",
+                "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri baterijskem napajanju, sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
                 "tooltip": "Funkcija deluje samo v:<br/> Windows Media player",
                 "note": {
                     "description": "Ta funkcija ne deluje v naslednjih primerih:",
-                    "description1": "Računalnik ni priključen na izmenično napajanje in baterija je manj kot 20 % napolnjena.",
-                    "description2": "Računalnik ni priključen na izmenično napajanje in omogočen je način varčevanja z baterijo.",
+                    "description1": "Računalnik ni priključen na omrežni vir napajanja.",
+                    "description2": "Omogočen je način za varčevanje z energijo baterije.",
                     "description3": "Temperatura CPE je previsoka."
                 }
             },
