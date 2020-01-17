@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT-VEZÉRLŐK",
                     "less": "KEVESEBB"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Billentyűzet-háttérvilágítás",
+					"description": {
+						"base": "Aktiválja a billentyűzet háttérvilágítását, hogy megkönnyítse a gépelést sötétben vagy rossz fényviszonyok között. Az Fn+szóköz billentyű megnyomásával megváltoztathatja a billentyűzet háttérvilágításának beállításait.",
+						"auto": "Aktiválja a billentyűzet háttérvilágítását, hogy megkönnyítse a gépelést sötétben vagy rossz fényviszonyok között. Az Fn+szóköz billentyű megnyomásával, vagy az „Automata” mód beállításával is megváltoztathatja a billentyűzet háttérvilágításának beállításait. Az „Automata” opció automatikusan beállítja a billentyűzet háttérvilágítását a környezeti fénynek megfelelően."
+					},
+					"level": {
+						"auto": "Automata",
+						"low": "Alacsony",
+						"high": "Magas",
+						"off": "Ki"
+					}
+				}
             }
         },
         "smartAssist": {

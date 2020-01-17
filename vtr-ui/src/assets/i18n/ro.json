@@ -1604,19 +1604,19 @@
                     "control3": "ELEMENTE DE CONTROL TRACKPOINT",
                     "less": "MAI PUŢIN"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Retroilum tast",
+					"description": {
+						"base": "Activați iluminarea de fundal a tastaturii pentru a simplifica tastarea în medii întunecate sau slab iluminate. De asemenea, puteți modifica setările iluminării de fundal a tastaturii apăsând tastele Fn+Space.",
+						"auto": "Activați iluminarea de fundal a tastaturii pentru a simplifica tastarea în medii întunecate sau slab iluminate. De asemenea, puteți modifica setările iluminării de fundal a tastaturii apăsând tastele Fn+Space sau alegând opțiunea „Auto”. Opțiunea „Auto” reglează nivelul iluminării de fundal a tastaturii în funcție de lumina ambientală."
+					},
+					"level": {
+						"auto": "Auto",
+						"low": "Minim",
+						"high": "Maxim",
+						"off": "Dez."
+					}
+				}
             }
         },
         "smartAssist": {

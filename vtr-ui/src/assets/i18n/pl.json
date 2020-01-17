@@ -1604,19 +1604,19 @@
                     "control3": "PRZYCISKI TRACKPOINTA",
                     "less": "LESS"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Podświetlenie klawiatury",
+					"description": {
+						"base": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając klawisz Fn+spacja.",
+						"auto": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając klawisz Fn+spacja, albo włączyć ustawienia automatyczne. Opcja „Automatyczna” automatycznie dostosowuje podświetlenie klawiatury do oświetlenia otoczenia."
+					},
+					"level": {
+						"auto": "Automatyczny",
+						"low": "Niski",
+						"high": "Wysoki",
+						"off": "Wyłącz"
+					}
+				}
             }
         },
         "smartAssist": {

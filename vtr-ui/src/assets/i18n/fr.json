@@ -1604,19 +1604,19 @@
                     "control3": "PARAMÈTRES TRACKPOINT",
                     "less": "MOINS"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Rétro-éclairage du clavier",
+					"description": {
+						"base": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez également modifier les paramètres de rétro-éclairage du clavier en appuyant sur la touche FN+espace.",
+						"auto": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez modifier les paramètres de rétro-éclairage en appuyant sur la touche FN+espace ou le paramétrer sur \"Auto\". L'option \"Auto\" règle automatiquement le rétro-éclairage du clavier en fonction de la lumière ambiante."
+					},
+					"level": {
+						"auto": "Auto",
+						"low": "Faible",
+						"high": "Elevée",
+						"off": "Désactivé"
+					}
+				}
             }
         },
         "smartAssist": {

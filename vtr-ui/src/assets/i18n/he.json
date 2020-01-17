@@ -1604,19 +1604,19 @@
                     "control3": "בקרי TRACKPOINT",
                     "less": "פחות"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "תאורת המקלדת",
+					"description": {
+						"base": "הפעילו את התאורה האחורית של המקלדת כדי להקל על ההקלדה בתנאי תאורה חלשה או מקום חשוך. ניתן גם לשנות את הגדרות התאורה האחורית של המקלדת על ידי לחיצה על המקש Fn+רווח.",
+						"auto": "הפעילו את התאורה האחורית של המקלדת כדי להקל על ההקלדה בתנאי תאורה חלשה או מקום חשוך. ניתן גם לשנות את הגדרות התאורה האחורית של המקלדת על ידי לחיצה על המקש Fn+רווח או להגדיר אותה למצב \"אוטומטי\". האפשרות \"אוטומטי\" מתאימה אוטומטית את התאורה האחורית של המקלדת בהתאם לאור הסביבה."
+					},
+					"level": {
+						"auto": "אוטומטי",
+						"low": "נמוך",
+						"high": "גבוה",
+						"off": "כבוי"
+					}
+				}
             }
         },
         "smartAssist": {

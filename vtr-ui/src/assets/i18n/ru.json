@@ -1604,19 +1604,19 @@
                     "control3": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ TRACKPOINT",
                     "less": "МЕНЬШЕ"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Подсветка клавиатуры",
+					"description": {
+						"base": "Включите подсветку клавиатуры, чтобы печатать в темноте или при плохом освещении. Для изменения параметров подсветки клавиатуры нажмите сочетание клавиш Fn+ПРОБЕЛ.",
+						"auto": "Включите подсветку клавиатуры, чтобы печатать в темноте или при плохом освещении. Для изменения параметров подсветки нажмите сочетание клавиш Fn+ПРОБЕЛ или выберите параметр \"Автоматический\". Параметр \"Автоматический\" автоматически регулирует подсветку клавиатуры с учетом окружающего освещения."
+					},
+					"level": {
+						"auto": "Авто",
+						"low": "Низкая",
+						"high": "Высокая",
+						"off": "Выкл."
+					}
+				}
             }
         },
         "smartAssist": {

@@ -1606,19 +1606,19 @@
                     "control3": "إعدادات تحكم TRACKPOINT",
                     "less": "أقل"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "الإضاءة الخلفية للوحة المفاتيح",
+					"description": {
+						"base": "نشّط الإضاءة الخلفية للوحة المفاتيح لتسهيل الكتابة في ظروف الإضاءة الداكنة أو الضعيفة. يمكنك أيضًا تغيير إعدادات الإضاءة الخلفية للوحة المفاتيح عن طريق الضغط على المفتاح Fn+مفتاح المسافة.",
+						"auto": "نشّط الإضاءة الخلفية للوحة المفاتيح لتسهيل الكتابة في ظروف الإضاءة الداكنة أو الضعيفة. يمكنك تغيير إعدادات الإضاءة الخلفية عن طريق الضغط على المفتاح Fn+مفتاح المسافة أو تحديد الخيار \"تلقائي\" لها. يضبط الخيار \"تلقائي\" الإضاءة الخلفية للوحة المفاتيح بشكل تلقائي وفقًا للضوء المحيط."
+					},
+					"level": {
+						"auto": "تلقائي",
+						"low": "منخفض",
+						"high": "مرتفع",
+						"off": "إيقاف"
+					}
+				}
             }
         },
         "smartAssist": {

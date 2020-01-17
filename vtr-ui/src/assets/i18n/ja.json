@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT 制御",
                     "less": "非表示にする"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "キーボードのバックライト",
+					"description": {
+						"base": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を変更することもできます。",
+						"auto": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を「自動」に変更することもできます。「自動」オプションでは、周囲の明るさに応じてキーボードのバックライトが自動的に調整されます。"
+					},
+					"level": {
+						"auto": "自動",
+						"low": "低",
+						"high": "高",
+						"off": "オフ"
+					}
+				}
             }
         },
         "smartAssist": {

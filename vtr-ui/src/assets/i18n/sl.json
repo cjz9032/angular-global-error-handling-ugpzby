@@ -1604,19 +1604,19 @@
                     "control3": "KONTROLNIKI TRACKPOINT",
                     "less": "MANJ"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Osvetlitev tipkovnice",
+					"description": {
+						"base": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabih svetlobnih pogojih. S tipkama »Fn+preslednica« lahko tudi spremenite nastavitve osvetlitve tipkovnice.",
+						"auto": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabih svetlobnih pogojih. S tipkama »Fn+preslednica« lahko tudi spremenite nastavitve osvetlitve tipkovnice ali pa osvetlitev nastavite na »Samodejno«. Možnost »Samodejno« bo samodejno prilagodila osvetlitev tipkovnice glede na okoljsko svetlobo."
+					},
+					"level": {
+						"auto": "Samodejno",
+						"low": "Nizko",
+						"high": "Visoko",
+						"off": "Izklopljeno"
+					}
+				}
             }
         },
         "smartAssist": {
