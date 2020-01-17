@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "Não foi possível encontrar a base de dados do repositório local ou está danificada.",
             "networkInterruptedException": "O Servidor de Atualização do Sistema atualmente não está disponível. Tente novamente mais tarde.",
             "helpCenterInvalidServerException": "O Servidor de Atualização do Sistema é inválido. Tente novamente mais tarde.",
-            "catalogNotFoundException": "Não foram encontradas atualizações aplicáveis ao seu sistema.",
+            "catalogNotFoundException": "Não foram encontradas atualizações aplicáveis para o seu sistema porque o catálogo de atualizações não foi encontrado.",
             "catalogCrcErrorException": "O catálogo do seu sistema está atualmente a ser atualizado. Tente novamente mais tarde.",
             "catalogErrorException": "Foi detetado um erro no catálogo de atualizações para o seu sistema no Servidor de Atualização do Sistema. Tente novamente mais tarde.",
             "fileNotFoundException": "Ficheiro não encontrado."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Nota: depois de fazer clique em Transferir, poderá ser apresentado um pedido do Windows para permitir a instalação do software no dispositivo. Quando a instalação estiver concluída, as aplicações serão automaticamente apresentadas no ambiente de trabalho ou no menu Iniciar.<br /><br />Pode fechar a página O meu software e continuar a utilizar o Lenovo Vantage. Não feche o Lenovo Vantage durante a instalação.",
         "sizeText": "Tamanho",
         "versionText": "Versão",
+        "redemptionCode": "Código de resgate:",
+        "redeemWebsite": "Resgatar no sítio da Web do fornecedor",
         "softwareDescription": "Faça clique em Transferir abaixo para resgatar software adquirido com o dispositivo. Se, em qualquer momento, precisar de transferir novamente o software, poderá fazê-lo clicando no botão O meu software no menu Vantage.",
         "title": "O meu software",
         "loadingDescription": "Aguarde enquanto preparamos uma lista do software incluído na compra do dispositivo.",

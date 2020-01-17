@@ -1392,27 +1392,32 @@ vtr-ui-smart-performance-scanning {
 
 /* battery-detail-modal */
 .battery-modal-size {
-	.modal-dialog {
+	display:flex!important;
+	align-items: center;
+	.modal-dialog {		
 		max-width: 110rem;
 		@media #{$breakpoint_xl} {
 			max-width: 92rem;
 		}
 		@media #{$breakpoint_lg} {
 			max-width: 66rem;
-			top: 8rem;
 		}
 		@media #{$breakpoint_md} {
 			max-width: 54rem;
-			top: 8rem;
 		}
 		@media #{$breakpoint_sm} {
 			max-width: 40rem;
-			margin:0 auto;
-			top: 10rem;
-			bottom: 2rem;
+			margin:auto;
 		}
 		.modal-content {
 			border-radius: 1rem;
+			.vtr-battery-indicator {
+				.cell{
+					@media #{$breakpoint_md} {
+						width:95%;
+					}
+				}
+			}
 		}
 	}
 }

@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "Impossibile trovare il database del repository locale oppure è danneggiato.",
             "networkInterruptedException": "Il server di aggiornamento del sistema non è attualmente disponibile. Si prega di riprovare più tardi.",
             "helpCenterInvalidServerException": "Il server di aggiornamento del sistema non è valido. Si prega di riprovare più tardi.",
-            "catalogNotFoundException": "Non è stato trovato alcun aggiornamento applicabile per il sistema.",
+            "catalogNotFoundException": "Non sono stati trovati aggiornamenti applicabili per il sistema. Impossibile trovare il catalogo aggiornamenti.",
             "catalogCrcErrorException": "Il catalogo per il sistema è attualmente in corso di aggiornamento. Si prega di riprovare più tardi.",
             "catalogErrorException": "È stato rilevato un errore con il catalogo degli aggiornamenti per il sistema sul server di aggiornamento del sistema. Si prega di riprovare più tardi.",
             "fileNotFoundException": "File non trovato."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Nota: dopo aver fatto clic su Scarica, verrà visualizzato un messaggio di Windows che richiede il consenso per installare il software sul dispositivo. Una volta completata l'installazione, le applicazioni verranno visualizzate automaticamente sul desktop o nel menu Start.<br /><br />È possibile chiudere la pagina Il mio software e continuare a utilizzare Lenovo Vantage. Non chiudere Lenovo Vantage durante l'installazione.",
         "sizeText": "Dimensione",
         "versionText": "Versione",
+        "redemptionCode": "Codice di riscatto:",
+        "redeemWebsite": "Riscatta sul sito Web del fornitore",
         "softwareDescription": "Fare clic sul pulsante Scarica in basso per riscattare il software acquistato con il dispositivo. È possibile scaricare nuovamente il software in qualsiasi momento, facendo clic sul pulsante Il mio software nel menu di Vantage.",
         "title": "Il mio software",
         "loadingDescription": "È in corso la preparazione di un elenco di software inclusi con l'acquisto del dispositivo.",

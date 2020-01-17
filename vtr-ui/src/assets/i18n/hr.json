@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "Baza podataka lokalnog spremišta nije pronađena ili je oštećena.",
             "networkInterruptedException": "Poslužitelj za ažuriranje sustava trenutno nije dostupan. Pokušajte ponovno kasnije.",
             "helpCenterInvalidServerException": "Poslužitelj za ažuriranje sustava nije valjan. Pokušajte ponovno kasnije.",
-            "catalogNotFoundException": "Za sustav nisu pronađena primjenjiva ažuriranja.",
+            "catalogNotFoundException": "Nisu pronađena odgovarajuća ažuriranja za vaš sustav jer nije pronađen katalog ažuriranja.",
             "catalogCrcErrorException": "Katalog za vaš sustav trenutno se ažurira. Pokušajte ponovno kasnije.",
             "catalogErrorException": "Otkrivena je pogreška s katalogom ažuriranja vašeg sustava na poslužitelju za ažuriranje sustava. Pokušajte ponovno kasnije.",
             "fileNotFoundException": "Datoteka nije pronađena."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Napomena: kada kliknete Preuzmi, sustav Windows možda će od vas zatražiti da nam dopustite instalaciju softvera na uređaj. Kada instalirate aplikacije, one će se automatski prikazivati na radnoj površini ili izborniku Start.<br /><br />Možete zatvoriti stranicu Moj softver i nastaviti koristiti Lenovo Vantage. Nemojte zatvarati Lenovo Vantage tijekom instalacije.",
         "sizeText": "Veličina",
         "versionText": "Verzija",
+        "redemptionCode": "Otkupni kod:",
+        "redeemWebsite": "Iskoristite na web mjestu dobavljača",
         "softwareDescription": "Kliknite preuzimanje u nastavku kako biste preuzeli softver kupljen s vašim uređajem. Ukoliko zatrebate iznova preuzeti svoj softver, možete to učiniti u bilo kojem trenutku klikom na gumb Moj softver na Vantage izborniku.",
         "title": "Moj softver",
         "loadingDescription": "Pričekajte dok pripremimo popis softvera uključenog uz kupnju uređaja.",

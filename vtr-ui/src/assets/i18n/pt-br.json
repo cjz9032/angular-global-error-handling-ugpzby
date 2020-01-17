@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "O banco de dados do repositório local não pôde ser localizado ou está corrompido.",
             "networkInterruptedException": "O Servidor de Atualização do Sistema está indisponível atualmente. Tente novamente mais tarde.",
             "helpCenterInvalidServerException": "O Servidor de Atualização do Sistema é inválido. Tente novamente mais tarde.",
-            "catalogNotFoundException": "Nenhuma atualização aplicável encontrada para seu sistema.",
+            "catalogNotFoundException": "Não foram encontradas atualizações aplicáveis para o seu sistema, pois o catálogo de atualizações não foi encontrado.",
             "catalogCrcErrorException": "O catálogo do sistema está sendo atualizado no momento. Tente novamente mais tarde.",
             "catalogErrorException": "Erro detectado no catálogo de atualizações para seu sistema no Servidor de Atualização do Sistema. Tente novamente mais tarde.",
             "fileNotFoundException": "Arquivo não encontrado."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Nota: depois de clicar em Baixar, pode ser exibido um prompt do Windows para permitir a instalação do software no dispositivo. Depois de concluída a instalação seus aplicativos serão exibidos automaticamente na sua área de trabalho ou no menu Iniciar.<br /><br />Você pode fechar a página Meu software e continuar usando o Lenovo Vantage. Não feche o Lenovo Vantage durante a instalação.",
         "sizeText": "Tamanho",
         "versionText": "Versão",
+        "redemptionCode": "Código de resgate:",
+        "redeemWebsite": "Resgatar no site do fornecedor",
         "softwareDescription": "Clique abaixo em Baixar para recuperar o software adquirido com seu dispositivo. Se, a qualquer momento, você precisar baixar o software novamente, poderá fazê-lo clicando no botão Meu software no menu do Vantage.",
         "title": "Meu software",
         "loadingDescription": "Aguarde enquanto preparamos uma lista do software incluído na compra do seu dispositivo.",

@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "Baza podataka lokalnog spremišta nije pronađena ili je oštećena.",
             "networkInterruptedException": "Server za ažuriranje sistema trenutno nije dostupan. Pokušajte ponovo kasnije.",
             "helpCenterInvalidServerException": "Server za ažuriranje sistema je neispravan. Pokušajte ponovo kasnije.",
-            "catalogNotFoundException": "Nema pronađenih primenljivih ažuriranja za vaš sistem.",
+            "catalogNotFoundException": "Nema pronađenih primenljivih ažuriranja za vaš sistem jer nije pronađen katalog ažuriranja.",
             "catalogCrcErrorException": "Katalog za vas sistem se trenutno ažurira. Pokušajte ponovo kasnije.",
             "catalogErrorException": "Otkrivena je greška u katalogu ažuriranja za vaš sistem na serveru za ažuriranje sistema. Pokušajte ponovo kasnije.",
             "fileNotFoundException": "Datoteka nije pronađena."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Napomena: Kada kliknete na dugme „Preuzmi“, možda ćete dobiti odziv operativnog sistema Windows da biste nam dozvolili da instaliramo softver na uređaju. Kada završite sa instalacijom, aplikacije će se automatski prikazati na radnoj površini ili meniju „Start“.<br /><br />Možete da zatvorite stranicu „Moj softver“ i da nastavite sa korišćenjem proizvoda Lenovo Vantage. Nemojte zatvarati Lenovo Vantage tokom instalacije.",
         "sizeText": "Veličina",
         "versionText": "Verzija",
+        "redemptionCode": "Kôd za otkup proizvoda:",
+        "redeemWebsite": "Preuzmite na veb lokaciji distributera",
         "softwareDescription": "Kliknite na „Preuzmi“ ispod kako biste preuzeli softver koji ste kupili zajedno sa uređajem. Ako u bilo kom trenutku treba ponovo da preuzmete softver, možete to da učinite tako što ćete kliknuti na dugme „Moj softver“ u meniju Vantage.",
         "title": "Moj softver",
         "loadingDescription": "Sačekajte da pripremimo listu softvera koji je bio uključen prilikom kupovine vašeg uređaja.",

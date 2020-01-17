@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "No se ha podido encontrar la base de datos del depósito local o está dañada.",
             "networkInterruptedException": "El servidor de actualización de sistema no está disponible en este momento. Vuelva a intentarlo más tarde.",
             "helpCenterInvalidServerException": "El servidor de actualización de sistema no es válido. Vuelva a intentarlo más tarde.",
-            "catalogNotFoundException": "No se encontraron actualizaciones aplicables para el sistema.",
+            "catalogNotFoundException": "No se han encontrado actualizaciones aplicables para el sistema debido a que no se ha encontrado el catálogo de actualizaciones.",
             "catalogCrcErrorException": "El catálogo del sistema se está actualizando en este momento. Vuelva a intentarlo más tarde.",
             "catalogErrorException": "Se detectó un error con el catálogo de actualizaciones para el sistema en el servidor de actualización de sistema. Vuelva a intentarlo más tarde.",
             "fileNotFoundException": "No se ha encontrado el archivo."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Nota: después de hacer clic en Descargar, puede que reciba una solicitud de Windows para que nos autorice a instalar el software en su dispositivo. Una vez finalizada la instalación de las aplicaciones, estas aparecerán automáticamente en el escritorio o en el menú Inicio.<br /><br />Puede cerrar la página Mi software y continuar usando Lenovo Vantage. No cierre Lenovo Vantage durante la instalación.",
         "sizeText": "Tamaño",
         "versionText": "Versión",
+        "redemptionCode": "Código de canje:",
+        "redeemWebsite": "Canjear al sitio web del proveedor",
         "softwareDescription": "Haga clic en descargar a continuación para canjear el software que compró con su dispositivo. Si en cualquier momento necesita volver a descargar el software, puede hacerlo haciendo clic en el botón Mi software en el menú Vantage.",
         "title": "Mi software",
         "loadingDescription": "Espere mientras preparamos una lista del software que se incluyó en la compra de su dispositivo.",

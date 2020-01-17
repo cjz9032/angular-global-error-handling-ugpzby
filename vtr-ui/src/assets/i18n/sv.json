@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "Den lokala uppdateringsdatabasen kan inte hittas eller är skadad.",
             "networkInterruptedException": "Systemuppdateringsservern är inte tillgänglig just nu. Försök igen litet senare.",
             "helpCenterInvalidServerException": "System Update-servern är ogiltig. Försök igen litet senare.",
-            "catalogNotFoundException": "Det gick inte att hitta några uppdateringar för ditt system.",
+            "catalogNotFoundException": "Inga tillämpliga uppdateringar hittades för ditt system, eftersom uppdateringskatalogen inte gick att hitta.",
             "catalogCrcErrorException": "Systemkatalogen uppdateras för närvarande. Försök igen litet senare.",
             "catalogErrorException": "Ett fel inträffade med systemets uppdateringskatalog på systemuppdateringsservern. Försök igen litet senare.",
             "fileNotFoundException": "Filen hittades inte."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Obs! När du klickar på Hämta kan det visas ett Windows-meddelande där du blir ombedd att ge oss tillstånd att installera programvaran på din enhet. När du är klar med installationen visas apparna automatiskt på skrivbordet eller Start-menyn.<br /><br />Du kan stänga sidan Min programvara och fortsätta använda Lenovo Vantage. Stäng inte Lenovo Vantage under installationen.",
         "sizeText": "Storlek",
         "versionText": "Version",
+        "redemptionCode": "Inlösenkod:",
+        "redeemWebsite": "Lös in på leverantörens webbplats",
         "softwareDescription": "Klicka på Hämta nedan för att hämta programvara som inkluderades i köpet av din enhet. Om du behöver ladda ned programvaran igen vid ett senare tillfälle kan du göra detta genom att välja Min programvara på Vantage-menyn.",
         "title": "MIn programvara",
         "loadingDescription": "Vänta medan vi skapar en lista med programvara som var inkluderad i köpet av enheten.",

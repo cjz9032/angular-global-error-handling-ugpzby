@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "Yerel depo veri tabanı bulunmadı veya bozuldu.",
             "networkInterruptedException": "Sistem Güncelleme Sunucusu şu anda kullanılamıyor. Lütfen daha sonra yeniden deneyin.",
             "helpCenterInvalidServerException": "Sistem Güncelleme Sunucusu geçersiz. Lütfen daha sonra yeniden deneyin.",
-            "catalogNotFoundException": "Sisteminiz için geçerli bir güncelleme yok.",
+            "catalogNotFoundException": "Güncelleme kataloğu bulunmadığından sisteminiz için geçerli bir güncelleme yok.",
             "catalogCrcErrorException": "Sisteminiz için katalog şu anda güncelleniyor. Lütfen daha sonra yeniden deneyin.",
             "catalogErrorException": "Sistem Güncelleme Sunucusu'ndaki sisteminiz için olan güncelleme kataloğunda bir hata saptandı. Lütfen daha sonra yeniden deneyin.",
             "fileNotFoundException": "Dosya bulunamadı."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Not: İndir seçeneğine tıkladıktan sonra, Windows'tan yazılımın cihazınıza yüklenmesine izin vermenizi isteyen bir komut istemi alabilirsiniz. Yükleme işlemi bittikten sonra uygulamalarınız masaüstünüzde veya başlat menüsünde otomatik olarak görüntülenir.<br /><br />Yazılımım sayfasını kapatıp Lenovo Vantage'ı kullanmaya devam edebilirsiniz. Yükleme işlemi sırasında Lenovo Vantage'ı kapatmayın.",
         "sizeText": "Boyut",
         "versionText": "Sürüm",
+        "redemptionCode": "Kullanım kodu:",
+        "redeemWebsite": "Satıcı web sitesinde kullanın",
         "softwareDescription": "Cihazınızla birlikte satın alınan yazılımı kullanmak için aşağıdaki indirme bağlantısına tıklayın. Herhangi bir anda yazılımınızı yeniden indirmeniz gerekirse bunu Vantage menüsündeki Yazılımım düğmesine tıklayarak yapabilirsiniz.",
         "title": "Yazılımım",
         "loadingDescription": "Cihazınızla birlikte satın aldığınız yazılımların listesi hazırlanırken lütfen bekleyin.",

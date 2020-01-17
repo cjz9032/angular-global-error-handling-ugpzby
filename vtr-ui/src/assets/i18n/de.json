@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "Die lokale Repositorydatenbank wurde nicht gefunden oder ist beschädigt.",
             "networkInterruptedException": "Der Systemaktualisierungsserver ist zurzeit nicht verfügbar. Versuchen Sie es später erneut.",
             "helpCenterInvalidServerException": "Ungültiger Systemaktualisierungsserver. Versuchen Sie es später erneut.",
-            "catalogNotFoundException": "Es wurden keine verfügbaren Updates für Ihr System gefunden.",
+            "catalogNotFoundException": "Es wurden keine Aktualisierungen für Ihr System gefunden, da der Updatekatalog nicht gefunden wurde.",
             "catalogCrcErrorException": "Der Katalog für Ihr System wird derzeit aktualisiert. Versuchen Sie es später erneut.",
             "catalogErrorException": "Im Updatekatalog für Ihr System auf dem Systemaktualisierungsserver wurde ein Fehler gefunden. Versuchen Sie es später erneut.",
             "fileNotFoundException": "Datei nicht gefunden."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Hinweis: Nach dem Klick auf „Herunterladen“ fordert Windows Sie möglicherweise dazu auf, die Installation der Software auf Ihrer Einheit zuzulassen. Nach der Installation erscheinen Ihre Apps automatisch auf dem Desktop oder im Startmenü.<br /><br />Sie können die Seite „Meine Software“ schließen und Lenovo Vantage weiterhin verwenden. Schließen Sie Lenovo Vantage nicht während der Installation.",
         "sizeText": "Größe",
         "versionText": "Version",
+        "redemptionCode": "Code zum Einlösen:",
+        "redeemWebsite": "Auf Hersteller-Website einlösen",
         "softwareDescription": "Klicken Sie unten auf „Herunterladen“, um Software, die mit Ihrem Gerät erworben wurde, einzulösen. Wenn Sie Ihre Software zu irgendeinem Zeitpunkt erneut herunterladen müssen, können Sie dies tun, indem Sie im Vantage-Menü auf die Schaltfläche „Meine Software“ klicken.",
         "title": "Meine Software",
         "loadingDescription": "Bitte warten Sie, während wir eine Liste der Software erstellen, die beim Kauf Ihres Gerätes enthalten war.",

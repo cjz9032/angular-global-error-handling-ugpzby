@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "Zbirke podatkov lokalne shrambe ni bilo mogoče najti ali pa je poškodovana.",
             "networkInterruptedException": "Strežnik za posodobitev sistema trenutno ni na voljo. Poskusite znova pozneje.",
             "helpCenterInvalidServerException": "Strežnik za posodobitev sistema je neveljaven. Poskusite znova pozneje.",
-            "catalogNotFoundException": "Za sistem ni bilo najdenih nobenih posodobitev.",
+            "catalogNotFoundException": "Ni nobenih ustreznih posodobitev za vaš sistem, ker kataloga posodobitev ni mogoče najti.",
             "catalogCrcErrorException": "Katalog za vaš sistem se trenutno posodablja. Poskusite znova pozneje.",
             "catalogErrorException": "V strežniku za posodobitev sistema je bila zaznana napaka v katalogu posodobitev za vaš sistem. Poskusite znova pozneje.",
             "fileNotFoundException": "Datoteka ni bila najdena."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Opomba: ko kliknete »Potrdi in prenesi«, se morda prikaže poziv sistema Windows, da nam dovolite namestitev programske opreme v vašo napravo. Po dokončani namestitvi bodo vaše aplikacije samodejno prikazane na namizju ali v začetnem meniju.<br /><br />Stran Moja programska oprema lahko zaprete in nadaljujete z uporabo Lenovo Vantage. Med namestitvijo ne zapirajte Lenovo Vantage.",
         "sizeText": "Velikost",
         "versionText": "Različica",
+        "redemptionCode": "Koda za prevzem:",
+        "redeemWebsite": "Prevzem na spletnem mestu ponudnika",
         "softwareDescription": "Kliknite spodaj, da uporabite programsko opremo, ki je bila kupljena z vašo napravo. Če tega zdaj ne želite, lahko programsko opremo kadarkoli prenesete tako, da v meniju Lenovo Vantage izberete Moja programska oprema.",
         "title": "Moja programska oprema",
         "loadingDescription": "Počakajte, da pripravimo seznam programske opreme, ki je bila vključena v nakup vaše naprave.",

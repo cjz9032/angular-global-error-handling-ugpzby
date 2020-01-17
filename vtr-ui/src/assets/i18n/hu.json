@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "A helyi gyűjtemény adatbázisa nem található vagy sérült.",
             "networkInterruptedException": "A rendszerfrissítési kiszolgáló jelenleg nem érhető el. Kérjük, később próbálja meg újra.",
             "helpCenterInvalidServerException": "A rendszerfrissítési kiszolgáló érvénytelen. Kérjük, később próbálja meg újra.",
-            "catalogNotFoundException": "Nem érhetők el frissítések a rendszerhez.",
+            "catalogNotFoundException": "A rendszeréhez nem áll rendelkezésre alkalmazható frissítés, mivel a frissítési katalógus nem található.",
             "catalogCrcErrorException": "A rendszerkatalógus jelenleg frissül. Kérjük, később próbálja meg újra.",
             "catalogErrorException": "Hibát találtunk a rendszer frissítési katalógusával a rendszerfrissítési kiszolgálón. Kérjük, később próbálja meg újra.",
             "fileNotFoundException": "A fájl nem található."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Megjegyzés: A Letöltés elemre való kattintás után előfordulhat, hogy a Windows a szoftver eszközön történő telepítésének engedélyezését kéri. A telepítés befejeződése után az alkalmazások automatikusan megjelennek az asztalon vagy a Start menüben.<br /><br />Bezárhatja a Saját szoftver oldalt, és folytathatja a Lenovo Vantage használatát. A telepítés alatt ne zárja be a Lenovo Vantage-et.",
         "sizeText": "Méret",
         "versionText": "Változat",
+        "redemptionCode": "Beváltható kód:",
+        "redeemWebsite": "Beváltás az eladó webhelyén",
         "softwareDescription": "Az alábbi Letöltés elemre kattintva beválthatja az eszközzel vásárolt szoftvert. Ha a későbbiekben újra le szeretné tölteni a szoftvert, kattintson a Vantage menü Saját szoftver elemére.",
         "title": "Saját szoftver",
         "loadingDescription": "Kérjük, várja meg, amíg összeállítjuk az eszközzel együtt megvásárolt szoftverek listáját.",

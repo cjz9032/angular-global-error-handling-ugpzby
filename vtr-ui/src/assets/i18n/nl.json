@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "De lokale repositorydatabase is niet gevonden of is beschadigd.",
             "networkInterruptedException": "De systeemupdateserver is momenteel niet beschikbaar. Probeer het later alstublieft opnieuw.",
             "helpCenterInvalidServerException": "De systeemupdateserver is ongeldig. Probeer het later alstublieft opnieuw.",
-            "catalogNotFoundException": "Er zijn geen updates gevonden die op uw systeem van toepassing zijn.",
+            "catalogNotFoundException": "Er zijn geen updates gevonden die op uw systeem van toepassing zijn, omdat de updatecatalogus niet is gevonden.",
             "catalogCrcErrorException": "De catalogus voor uw systeem wordt momenteel bijgewerkt. Probeer het later alstublieft opnieuw.",
             "catalogErrorException": "Er is een fout opgetreden met de updatecatalogus voor uw systeem op de systeemupdateserver. Probeer het later alstublieft opnieuw.",
             "fileNotFoundException": "Bestand niet gevonden."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Opmerking: Wanneer u op Downloaden klikt, kan er een prompt van Windows verschijnen om ons toe te staan de software op uw apparaat te installeren. Als de installatie is voltooid, worden uw apps automatisch weergegeven op het bureaublad of in het startmenu.<br /><br />U kunt de pagina Mijn software sluiten en doorgaan met het gebruik van Lenovo Vantage. Sluit Lenovo Vantage niet tijdens installatie.",
         "sizeText": "Grootte",
         "versionText": "Versie",
+        "redemptionCode": "Activeringscode:",
+        "redeemWebsite": "Gebruiken op de website van de leverancier",
         "softwareDescription": "Klik hieronder op de downloadknop om software te gebruiken die bij uw apparaat is aangeschaft. Als u uw software opnieuw wilt downloaden, kunt u dit doen door te klikken op de knop Mijn software in het menu Vantage.",
         "title": "Mijn software",
         "loadingDescription": "Een ogenblik geduld. We maken een lijst met de software die was inbegrepen bij de aanschaf van uw apparaat.",
