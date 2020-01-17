@@ -644,7 +644,8 @@
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart vänteläge",
-                    "description": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
-                    "tooltip": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda starttiden och i viloläge när den inte har använts under en viss tid på batterikraft. Tiden optimeras utifrån det schema du har valt eller den datoranvändningstid vi får. Datorn övergår från viloläge till modernt vänteläge endast schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
+                    "description": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den snabbt aktiveras med <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">modernt vänteläge</a> under tider då den används mer frekvent.",
+                    "tooltip": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda START tiden och i viloläge när den inte har använts under en viss tid på batterikraft. Tidsperioden är optimerad utifrån schemat du har angett eller din datoranvändning. Datorn övergår från viloläge till modernt vänteläge endast schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
                     "timer": {
-                        "heading": "Tiden då du brukar använda datorn",
+                        "heading": "Den tid du brukar använda denna dator:",
                         "subHeading1": "start",
                         "subHeading2": "slut",
                         "subHeading3": "använd detta schema för",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Ingen dag har valts"
                     },
                     "checkbox": "Justera datorns aktiva tid automatiskt utifrån användning",
-                    "hyperlinkToGraph": "Klicka om du vill datorns tabell över aktivitet och aktiv tid",
+                    "hyperlinkToGraph": "Klicka för att se förbrukningen och den tillämpade aktiva tiden",
                     "subTitle": "Schemalägg datorn",
                     "automaticMode": "Automatiskt läge",
                     "manualMode": "Manuellt läge",
@@ -1938,7 +1939,7 @@
             "localRepositoryDatabaseException": "Den lokala uppdateringsdatabasen kan inte hittas eller är skadad.",
             "networkInterruptedException": "Systemuppdateringsservern är inte tillgänglig just nu. Försök igen litet senare.",
             "helpCenterInvalidServerException": "System Update-servern är ogiltig. Försök igen litet senare.",
-            "catalogNotFoundException": "Det gick inte att hitta några uppdateringar för ditt system.",
+            "catalogNotFoundException": "Inga tillämpliga uppdateringar hittades för ditt system, eftersom uppdateringskatalogen inte gick att hitta.",
             "catalogCrcErrorException": "Systemkatalogen uppdateras för närvarande. Försök igen litet senare.",
             "catalogErrorException": "Ett fel inträffade med systemets uppdateringskatalog på systemuppdateringsservern. Försök igen litet senare.",
             "fileNotFoundException": "Filen hittades inte."
@@ -2162,7 +2163,8 @@
                 "showmore": "Visa mer",
                 "showless": "Visa mindre",
                 "button": "Aktivera WiFi-säkerhet",
-                "disableDescribe": "Lenovo WiFi-säkerhet är en avancerad molnbaserad programvarutjänst som hjälper din enhet att skilja mellan säkra trådlösa nätverk och potentiellt skadliga."
+                "disableDescribe": "Lenovo WiFi-säkerhet är en avancerad molnbaserad programvarutjänst som hjälper din enhet att skilja mellan säkra trådlösa nätverk och potentiellt skadliga.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Använd hotidentifieraren för att utvärdera säkerheten i nätverken.",
@@ -2196,7 +2198,8 @@
                 "subtitle": "Sinnesro",
                 "subtitleDescribe": "Säkerhet för uppkopplat hem skickar ett meddelande om det upptäcker en sårbarhet på enheten eller i hemnätverket eller om du ansluter till ett skadligt nätverk. Läs mer om Säkerhet för uppkopplat hem <tag>här</tag>.",
                 "tryNow": "Prova nu",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Ange inbjudningskod",
@@ -2271,7 +2274,8 @@
             "getStarted1": "Klicka på ”Öppna SurfEasy” ovan för att öppna SurfEasy VPN.",
             "getStarted2": "Aktivera VPN och vänta tills du ser en bekräftelse på att anslutningen är säker.",
             "getStarted3": "Ändra din region eller plats vid behov och surfa med ett säkert och privat nätverk.",
-            "poweredBySurfEasy": "Från SurfEasy"
+            "poweredBySurfEasy": "Från SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE LÖSENORDSHANTERARE",
@@ -2299,7 +2303,8 @@
             "allowsYou2": "övervaka om din personliga information finns på dark web",
             "allowsYou3": "skydda dig i osäkra WiFi-nätverk med inbyggt VPN",
             "allowsYou4": "dela lösenord på ett säkert sätt utan att avslöja dem.",
-            "poweredByDashLane": "Från Dashlane"
+            "poweredByDashLane": "Från Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2800,6 +2805,8 @@
         "noteDownloadAvailable": "Obs! När du klickar på Hämta kan det visas ett Windows-meddelande där du blir ombedd att ge oss tillstånd att installera programvaran på din enhet. När du är klar med installationen visas apparna automatiskt på skrivbordet eller Start-menyn.<br /><br />Du kan stänga sidan Min programvara och fortsätta använda Lenovo Vantage. Stäng inte Lenovo Vantage under installationen.",
         "sizeText": "Storlek",
         "versionText": "Version",
+        "redemptionCode": "Inlösenkod:",
+        "redeemWebsite": "Lös in på leverantörens webbplats",
         "softwareDescription": "Klicka på Hämta nedan för att hämta programvara som inkluderades i köpet av din enhet. Om du behöver ladda ned programvaran igen vid ett senare tillfälle kan du göra detta genom att välja Min programvara på Vantage-menyn.",
         "title": "MIn programvara",
         "loadingDescription": "Vänta medan vi skapar en lista med programvara som var inkluderad i köpet av enheten.",

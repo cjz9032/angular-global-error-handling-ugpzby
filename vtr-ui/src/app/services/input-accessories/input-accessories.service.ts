@@ -244,6 +244,8 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+	// FnCtrlSwap feature start here
+
 	public GetFnCtrlSwapCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
@@ -276,6 +278,43 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+	// FnCtrlSwap feature end here
+
+	// FnAsCtrl feature start here
+
+	public GetFnAsCtrlCapability(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetFnAsCtrlCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public GetFnAsCtrl() {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetFnAsCtrl();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public SetFnAsCtrl(value) {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.SetFnCtrlSwap(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+		// FnAsCtrl feature end here
 	public getMouseCapability(): Promise<boolean> {
 		try {
 			if (this.mouseAndTouchPad) {
@@ -320,6 +359,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+
 	// To Restart Windows
 	public restartMachine() {
 		this.keyboardManager.RestartMachine();

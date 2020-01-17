@@ -644,7 +644,8 @@
             "registered": "ENREGISTRÉ",
             "notRegistered": "NON ENREGISTRÉ",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Q & A pour votre machine",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Veille intelligente",
-                    "description": "Cette fonctionnalité programme l'ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
-                    "tooltip": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisée en fonction de la période que vous aurez définie ou de la durée d'utilisation de votre ordinateur. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
+                    "description": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant une sortie rapide de la <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">veille moderne</a> pendant les heures d'utilisation intense.",
+                    "tooltip": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie ou de l'utilisation de l'ordinateur. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
                     "timer": {
-                        "heading": "Les heures pendant lesquelles vous utilisez en général l'ordinateur",
+                        "heading": "Les heures pendant lesquelles vous utilisez généralement votre ordinateur :",
                         "subHeading1": "début",
                         "subHeading2": "fin",
                         "subHeading3": "utilisez cette planification pour",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Aucun jour sélectionné"
                     },
                     "checkbox": "Ajustement automatique du temps d'activité de l'ordinateur en fonction de votre utilisation",
-                    "hyperlinkToGraph": "Cliquez pour afficher le tableau de l'activité et du temps d'activité de l'ordinateur",
+                    "hyperlinkToGraph": "Cliquez pour afficher l'utilisation et la durée d'activité appliquée",
                     "subTitle": "Programmer votre ordinateur",
                     "automaticMode": "Mode Automatique",
                     "manualMode": "Mode Manuel",
@@ -1938,7 +1939,7 @@
             "localRepositoryDatabaseException": "La base de données de référentiel local est introuvable ou endommagée.",
             "networkInterruptedException": "Le serveur de mise à jour du système est actuellement indisponible. Réessayez plus tard.",
             "helpCenterInvalidServerException": "Le serveur de mise à jour du système n'est pas valide. Réessayez plus tard.",
-            "catalogNotFoundException": "Il n'existe pas de mise à jour correspondante à votre système.",
+            "catalogNotFoundException": "Aucune mise à jour applicable n'a été trouvée pour votre système, car le catalogue des mises à jour est introuvable.",
             "catalogCrcErrorException": "Le catalogue pour votre système est en cours de mise à jour. Réessayez plus tard.",
             "catalogErrorException": "Une erreur s'est produite avec le catalogue des mises à jour de votre système sur le serveur de mise à jour du système. Réessayez plus tard.",
             "fileNotFoundException": "Fichier introuvable."
@@ -2162,7 +2163,8 @@
                 "showmore": "Afficher plus",
                 "showless": "Afficher moins",
                 "button": "Activer la sécurité WiFi",
-                "disableDescribe": "La Sécurité WiFi Lenovo est un service logiciel avancé basé dans le Cloud qui permet à votre appareil de différencier les réseaux sans fil sûrs de ceux potentiellement malveillants."
+                "disableDescribe": "La Sécurité WiFi Lenovo est un service logiciel avancé basé dans le Cloud qui permet à votre appareil de différencier les réseaux sans fil sûrs de ceux potentiellement malveillants.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Utiliser l'outil de détection des menaces pour déterminer la sécurité des réseaux alentours.",
@@ -2196,7 +2198,8 @@
                 "subtitle": "Tranquillité d'esprit",
                 "subtitleDescribe": "La Sécurité domestique connectée vous enverra une alerte si elle détecte une vulnérabilité dans votre périphérique ou votre réseau domestique ou si vous êtes connecté à un réseau potentiellement malveillant. En savoir plus sur la Sécurité domestique connectée <tag>ici</tag>.",
                 "tryNow": "Essayer maintenant",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Entrer le code d'invitation",
@@ -2271,7 +2274,8 @@
             "getStarted1": "Cliquez sur le bouton \"Ouvrir SurfEasy\" pour lancer SurfEasy VPN.",
             "getStarted2": "Activer le VPN et attendre un court instant pour la confirmation d'une connexion sécurisée.",
             "getStarted3": "Modifiez votre région ou l'emplacement si vous le souhaitez et profitez de l'utilisation d'un réseau sécurisée et privée.",
-            "poweredBySurfEasy": "Fourni par SurfEasy"
+            "poweredBySurfEasy": "Fourni par SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "GESTIONNAIRE DE MOT DE PASSE DASHLANE",
@@ -2299,7 +2303,8 @@
             "allowsYou2": "Contrôler vos données personnelles sur le \"Dark Web\"",
             "allowsYou3": "Rester en sécurité sur les réseaux WiFi non sécurisés grâce au VPN intégré",
             "allowsYou4": "Partager les mots de passe en sécurité sans les révéler",
-            "poweredByDashLane": "Fourni par Dashlane"
+            "poweredByDashLane": "Fourni par Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2800,6 +2805,8 @@
         "noteDownloadAvailable": "Remarque : après avoir cliqué sur Télécharger, vous recevrez peut-être une invite de Windows pour nous permettre d'installer le logiciel sur votre périphérique. Une fois l'installation de vos applications terminée, celles-ci s'afficheront automatiquement sur votre bureau ou dans le menu Démarrer.<br /><br />Vous pouvez fermer la page Mon logiciel et continuer d'utiliser Lenovo Vantage. Ne fermez pas Lenovo Vantage pendant l'installation.",
         "sizeText": "Taille",
         "versionText": "Version",
+        "redemptionCode": "Code de remboursement :",
+        "redeemWebsite": "Rembourser sur le site Web du fournisseur",
         "softwareDescription": "Cliquez télécharger ci-dessous pour utiliser le logiciel que vous avez acheté avec votre appareil. Si à n'importe quel moment, vous avez besoin de télécharger à nouveau ce logiciel, vous pouvez effectuer cela en cliquant le bouton Mon logiciel dans le menu Vantage.",
         "title": "Mon logiciel",
         "loadingDescription": "Veuillez patienter pendant que nous préparons la liste des logiciels qui étaient inclus dans l'achat de votre appareil.",

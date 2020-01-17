@@ -311,8 +311,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				this.showIcon = true;
 			}
 		});
-		for (var _i = 0; _i < diskList.length; _i++) {
-			var hd = JSON.stringify(diskList[_i]);
+		for (let _i = 0; _i < diskList.length; _i++) {
+			let hd = JSON.stringify(diskList[_i]);
 			if (_i === 0 && this.showIcon === true) {
 				diskList[0].isSystemDisk = true;
 			} else {

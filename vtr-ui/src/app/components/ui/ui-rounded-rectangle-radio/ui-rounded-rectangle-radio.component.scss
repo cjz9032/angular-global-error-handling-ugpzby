@@ -147,6 +147,24 @@
 			}
 		}
 	}
+	&.border-disabled {
+		border: 0.2rem solid #e6eaeb;
+		cursor: default;
+		label {
+			.icon-circle {
+				color: $grey_darker;
+			}
+		}
+	}
+	&.border-checked-disabled {
+		border: 0.2rem solid #667481;
+		cursor: default;
+		label {
+			.icon-circle {
+				color: $grey_darker;
+			}
+		}
+	}
 }
 .large-width {
 	width: 29rem;

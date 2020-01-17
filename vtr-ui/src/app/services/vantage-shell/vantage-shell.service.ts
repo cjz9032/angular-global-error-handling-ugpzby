@@ -10,7 +10,7 @@ import { Container, BindingScopeEnum } from 'inversify';
 import { TopRowFunctionsIdeapad } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
 import { Backlight } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.interface';
 
-declare var Windows;
+declare var window;
 
 @Injectable({
 	providedIn: 'root'
@@ -88,8 +88,7 @@ export class VantageShellService {
 		}
 	}
 	private getVantageShell(): any {
-		const win: any = window;
-		return win.VantageShellExtension;
+		return window.VantageShellExtension;
 	}
 
 	private setConsoleLogProxy() {
@@ -173,8 +172,8 @@ export class VantageShellService {
 	}
 
 	public getShellVersion() {
-		if (typeof Windows !== 'undefined') {
-			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+		if (window.Windows) {
+			const packageVersion = window.Windows.ApplicationModel.Package.current.id.version;
 			return `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
 		}
 
@@ -944,6 +943,13 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+	// shellService
+	public getVoipHotkeysObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.voipHotkeys;
+		}
+		return undefined;
+	}
 
 	// =================== Start Hardware Scan
 	public getHardwareScan(): any {
@@ -953,14 +959,6 @@ export class VantageShellService {
 		return undefined;
 	}
 	// ==================== End Hardware Scan
-
-	// shellService
-	public getVoipHotkeysObject(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.input.voipHotkeys;
-		}
-		return undefined;
-	}
 
 	public getMouseAndTouchPad(): any {
 		if (this.phoenix) {

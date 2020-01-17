@@ -55,6 +55,7 @@ export class ConfigService {
 	betaItem = betaItem;
 	privacyPolicyLinks = privacyPolicyLinks;
 	showCHS = false;
+	showCHSWithoutSegment = false;
 	wifiSecurity: WifiSecurity;
 	securityAdvisor: SecurityAdvisor;
 	windowsHello: WindowsHello;
@@ -185,7 +186,7 @@ export class ConfigService {
 						&& this.isShowCHSByShellVersion(shellVersion)
 						&& !machineInfo.isGaming
 						&& this.activeSegment !== SegmentConst.Commercial;
-					const showCHSConsumer = country.toLowerCase() === 'us'
+					this.showCHSWithoutSegment = country.toLowerCase() === 'us'
 						&& locale.startsWith('en')
 						&& result
 						&& this.isShowCHSByShellVersion(shellVersion)
@@ -194,7 +195,7 @@ export class ConfigService {
 						resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 					}
 					this.menuBySegment.commercial = this.menuBySegment.commercial.filter(item => item.id !== 'home-security');
-					if (!showCHSConsumer) {
+					if (!this.showCHSWithoutSegment) {
 						this.menuBySegment.consumer = this.menuBySegment.consumer.filter(item => item.id !== 'home-security');
 						this.menuBySegment.smb = this.menuBySegment.smb.filter(item => item.id !== 'home-security');
 					}
@@ -328,8 +329,8 @@ export class ConfigService {
 			);
 			this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
 
-			if (smartAssistCacheValue || this.isSmartAssistAvailable) {
-				this.addSmartAssistMenu(items);
+			if (!smartAssistCacheValue || !this.isSmartAssistAvailable) {
+				this.removeSmartAssistMenu(items);
 			}
 
 			// raj: promise.all breaks if any one function is breaks. adding feature wise capability check
@@ -475,6 +476,7 @@ export class ConfigService {
 				return resolve(this.menu);
 			} else {
 				this.activeSegment = segment;
+				this.showCHS = this.showCHSWithoutSegment && this.activeSegment !== SegmentConst.Commercial;
 				const seg = segment.toLowerCase();
 				this.menu = cloneDeep(this.menuBySegment[seg]);
 				return resolve(this.menu);
@@ -484,20 +486,20 @@ export class ConfigService {
 
 	showWifiMenu(wifiIsSupport: boolean): Promise<any> {
 		return new Promise((resolve) => {
-			this.updateWifiMenu(this.menu, wifiIsSupport);
-			this.updateWifiMenu(this.menuBySegment.commercial, wifiIsSupport);
-			this.updateWifiMenu(this.menuBySegment.consumer, wifiIsSupport);
-			this.updateWifiMenu(this.menuBySegment.smb, wifiIsSupport);
+			this.updateWifiMenu(this.menu, wifiIsSupport, this.activeSegment);
+			this.updateWifiMenu(this.menuBySegment.commercial, wifiIsSupport, this.activeSegment);
+			this.updateWifiMenu(this.menuBySegment.consumer, wifiIsSupport, this.activeSegment);
+			this.updateWifiMenu(this.menuBySegment.smb, wifiIsSupport, this.activeSegment);
 			return resolve(this.menu);
 		});
 	}
 
-	updateWifiMenu(menu, wifiIsSupport) {
+	updateWifiMenu(menu, wifiIsSupport, segment) {
 		const securityItem = menu.find((item) => item.id === 'security');
 		if (menu.find((item) => item.id === 'wifi-security')
 			|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
 			this.supportFilter(menu, 'wifi-security', wifiIsSupport);
-		} else if (wifiIsSupport && !this.deviceService.isSMode && !this.deviceService.isArm) {
+		} else if (wifiIsSupport && !this.deviceService.isSMode && !this.deviceService.isArm && segment !== SegmentConst.Gaming) {
 			if (securityItem && securityItem.subitems) {
 				const wifiItem = this.menuItems.find((item) => item.id === 'security').subitems.find((item) => item.id === 'wifi-security');
 				securityItem.subitems.splice(3, 0, wifiItem);

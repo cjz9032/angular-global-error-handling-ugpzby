@@ -644,7 +644,8 @@
             "registered": "REGISZTRÁLT",
             "notRegistered": "NEM REGISZTRÁLT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Kérdések és válaszok a gépedhez",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Intelligens készenlét",
-                    "description": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
+                    "description": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern készenléti állapot</a> visszaállási művelete nem lesz lassabb a gép komolyabb használata során.",
                     "tooltip": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett KEZDÉSI idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időtartamot az Ön által beállított munkarend vagy az érzékelt számítógép-használati séma alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre, és ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás.",
                     "timer": {
-                        "heading": "A számítógép jellemző használati időszaka",
+                        "heading": "Az idő, amikor általában használja a számítógépet:",
                         "subHeading1": "mezőből",
                         "subHeading2": "befejezés",
                         "subHeading3": "az ütemezés használata a következőhöz",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Nincs kiválasztott nap"
                     },
                     "checkbox": "A számítógép aktív idejének automatikus beállítása a használati séma alapján",
-                    "hyperlinkToGraph": "Kattintson a számítógép tevékenységének és aktív idejének áttekintéséhez",
+                    "hyperlinkToGraph": "Kattintson a használat és az alkalmazott aktív idő megtekintéséhez",
                     "subTitle": "Számítógép ütemezése",
                     "automaticMode": "Automatikus üzemmód",
                     "manualMode": "Manuális üzemmód",
@@ -1938,7 +1939,7 @@
             "localRepositoryDatabaseException": "A helyi gyűjtemény adatbázisa nem található vagy sérült.",
             "networkInterruptedException": "A rendszerfrissítési kiszolgáló jelenleg nem érhető el. Kérjük, később próbálja meg újra.",
             "helpCenterInvalidServerException": "A rendszerfrissítési kiszolgáló érvénytelen. Kérjük, később próbálja meg újra.",
-            "catalogNotFoundException": "Nem érhetők el frissítések a rendszerhez.",
+            "catalogNotFoundException": "A rendszeréhez nem áll rendelkezésre alkalmazható frissítés, mivel a frissítési katalógus nem található.",
             "catalogCrcErrorException": "A rendszerkatalógus jelenleg frissül. Kérjük, később próbálja meg újra.",
             "catalogErrorException": "Hibát találtunk a rendszer frissítési katalógusával a rendszerfrissítési kiszolgálón. Kérjük, később próbálja meg újra.",
             "fileNotFoundException": "A fájl nem található."
@@ -2162,7 +2163,8 @@
                 "showmore": "Több megjelenítése",
                 "showless": "Részletek elrejtése",
                 "button": "A Biztonságos WiFi engedélyezése",
-                "disableDescribe": "A Lenovo – Biztonságos WiFi egy fejlett, felhőalapú szoftverszolgáltatás, amely segít az eszköznek megkülönböztetni a biztonságos vezeték nélküli hálózatokat a potenciálisan rosszindulatú hálózatoktól."
+                "disableDescribe": "A Lenovo – Biztonságos WiFi egy fejlett, felhőalapú szoftverszolgáltatás, amely segít az eszköznek megkülönböztetni a biztonságos vezeték nélküli hálózatokat a potenciálisan rosszindulatú hálózatoktól.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "A veszélyészlelővel megállapíthatja, mennyire biztonságosak a közeli hálózatok.",
@@ -2196,7 +2198,8 @@
                 "subtitle": "Nyugodt lehet",
                 "subtitleDescribe": "A Biztonsági rendszer csatlakoztatott otthonhoz riasztást küld, ha biztonsági rést észlel az eszköz vagy az otthoni hálózat esetében, illetve ha Ön esetlegesen rosszindulatú hálózathoz próbál csatlakozni. A Biztonsági rendszer csatlakoztatott otthonhoz szolgáltatásról <tag>itt</tag> tudhat meg többet.",
                 "tryNow": "Próbálja ki",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Meghívó kód küldése",
@@ -2271,7 +2274,8 @@
             "getStarted1": "A SurfEasy VPN elindításához kattintson a fenti „A SurfEasy megnyitása” gombra.",
             "getStarted2": "Kapcsolja be a VPN-t, és várjon egy kis ideig, amíg a rendszer visszaigazolja a kapcsolat biztonságosságát.",
             "getStarted3": "Igény szerint módosítsa a régiót vagy a tartózkodási helyet, és máris biztonságosan internetezhet.",
-            "poweredBySurfEasy": "A SurfEasy technológiája"
+            "poweredBySurfEasy": "A SurfEasy technológiája",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE JELSZÓKEZELŐ",
@@ -2299,7 +2303,8 @@
             "allowsYou2": "Nyomon követheti, hogy felbukkannak-e az Ön adatai a sötét weben",
             "allowsYou3": "A beépített VPN segítségével a nem biztonságos WiFi-hálózatok is biztonságosan használhatók",
             "allowsYou4": "A jelszavak biztonságos megosztása – nyilvánossá tétel nélkül",
-            "poweredByDashLane": "A Dashlane technológiája"
+            "poweredByDashLane": "A Dashlane technológiája",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2800,6 +2805,8 @@
         "noteDownloadAvailable": "Megjegyzés: A Letöltés elemre való kattintás után előfordulhat, hogy a Windows a szoftver eszközön történő telepítésének engedélyezését kéri. A telepítés befejeződése után az alkalmazások automatikusan megjelennek az asztalon vagy a Start menüben.<br /><br />Bezárhatja a Saját szoftver oldalt, és folytathatja a Lenovo Vantage használatát. A telepítés alatt ne zárja be a Lenovo Vantage-et.",
         "sizeText": "Méret",
         "versionText": "Változat",
+        "redemptionCode": "Beváltható kód:",
+        "redeemWebsite": "Beváltás az eladó webhelyén",
         "softwareDescription": "Az alábbi Letöltés elemre kattintva beválthatja az eszközzel vásárolt szoftvert. Ha a későbbiekben újra le szeretné tölteni a szoftvert, kattintson a Vantage menü Saját szoftver elemére.",
         "title": "Saját szoftver",
         "loadingDescription": "Kérjük, várja meg, amíg összeállítjuk az eszközzel együtt megvásárolt szoftverek listáját.",

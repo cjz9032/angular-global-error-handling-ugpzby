@@ -644,7 +644,8 @@
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Makineniz için Q & A",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Akıllı Bekleme",
-                    "description": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
-                    "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya veya aldığımız bilgisayar kullanım süresine göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
+                    "description": "Bu özellik, yoğun kullanım zamanlarında <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Bekleme Durumu</a> hızlı başlatma deneyiminden ödün vermeden, bilgisayar boşta olduğunda pil gücü tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
+                    "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya veya bilgisayar kullanım süresine göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
                     "timer": {
-                        "heading": "Bilgisayarınızı genelde kullandığınız saatleri ayarlayın",
+                        "heading": "Bu bilgisayarı genelde kullandığınız saatler:",
                         "subHeading1": "bu alanın",
                         "subHeading2": "bitiş",
                         "subHeading3": "bu zamanlamanın kullanılacağı zaman",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Gün seçilmedi"
                     },
                     "checkbox": "Bilgisayarınızın etkinlik süresini kullanımınıza göre otomatik ayarlama",
-                    "hyperlinkToGraph": "Etkinlik ve bilgisayarınızın etkinlik süresine ilişkin tabloyu görmek için tıklatın",
+                    "hyperlinkToGraph": "Kullanım ve uygulanan etkin zamanı görmek için tıklatın",
                     "subTitle": "Bilgisayarınızı zamanlama",
                     "automaticMode": "Otomatik kip",
                     "manualMode": "Manuel kip",
@@ -1938,7 +1939,7 @@
             "localRepositoryDatabaseException": "Yerel depo veri tabanı bulunmadı veya bozuldu.",
             "networkInterruptedException": "Sistem Güncelleme Sunucusu şu anda kullanılamıyor. Lütfen daha sonra yeniden deneyin.",
             "helpCenterInvalidServerException": "Sistem Güncelleme Sunucusu geçersiz. Lütfen daha sonra yeniden deneyin.",
-            "catalogNotFoundException": "Sisteminiz için geçerli bir güncelleme yok.",
+            "catalogNotFoundException": "Güncelleme kataloğu bulunmadığından sisteminiz için geçerli bir güncelleme yok.",
             "catalogCrcErrorException": "Sisteminiz için katalog şu anda güncelleniyor. Lütfen daha sonra yeniden deneyin.",
             "catalogErrorException": "Sistem Güncelleme Sunucusu'ndaki sisteminiz için olan güncelleme kataloğunda bir hata saptandı. Lütfen daha sonra yeniden deneyin.",
             "fileNotFoundException": "Dosya bulunamadı."
@@ -2162,7 +2163,8 @@
                 "showmore": "Daha fazlasını göster",
                 "showless": "Ayrıntıları gizle",
                 "button": "WiFi güvenliğini etkinleştirin",
-                "disableDescribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir."
+                "disableDescribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Çevrenizdeki ağların güvenliğini belirlemek için tehdit dedektörünü kullanın.",
@@ -2196,7 +2198,8 @@
                 "subtitle": "İçiniz Rahat Olsun",
                 "subtitleDescribe": "Bağlı Ev Güvenliği, cihazınızda veya ev ağınızda bir güvenlik açığı algılarsa ya da kötü amaçlı olabilecek bir ağa bağlanırsanız size bir uyarı gönderir. Bağlı Ev Güvenliği hakkında daha fazla bilgiye <tag>buradan</tag> ulaşabilirsiniz.",
                 "tryNow": "Şimdi Deneyin",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Davet kodunu girin",
@@ -2271,7 +2274,8 @@
             "getStarted1": "SurfEasy VPN'i başlatmak için yukarıdaki “SurfEasy'yi Açın” düğmesine tıklayın.",
             "getStarted2": "VPN'i açın ve güvenli bağlantının onaylanması için kısa bir süre bekleyin.",
             "getStarted3": "Dilerseniz bölgenizi veya konumunuzu değiştirin ve güvenli, özel ağın keyfini çıkarın.",
-            "poweredBySurfEasy": "SurfEasy Tarafından Desteklenmektedir"
+            "poweredBySurfEasy": "SurfEasy Tarafından Desteklenmektedir",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE PAROLA YÖNETİCİSİ",
@@ -2299,7 +2303,8 @@
             "allowsYou2": "Kişisel bilgileriniz için karanlık ağ izlemesi",
             "allowsYou3": "Yerleşik VPN sayesinde, güvenli olmayan WiFi ağlarında güvende olma",
             "allowsYou4": "Parolaları göstermeden, güvenli bir şekilde paylaşma",
-            "poweredByDashLane": "Dashlane Tarafından Desteklenmektedir"
+            "poweredByDashLane": "Dashlane Tarafından Desteklenmektedir",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2800,6 +2805,8 @@
         "noteDownloadAvailable": "Not: İndir seçeneğine tıkladıktan sonra, Windows'tan yazılımın cihazınıza yüklenmesine izin vermenizi isteyen bir komut istemi alabilirsiniz. Yükleme işlemi bittikten sonra uygulamalarınız masaüstünüzde veya başlat menüsünde otomatik olarak görüntülenir.<br /><br />Yazılımım sayfasını kapatıp Lenovo Vantage'ı kullanmaya devam edebilirsiniz. Yükleme işlemi sırasında Lenovo Vantage'ı kapatmayın.",
         "sizeText": "Boyut",
         "versionText": "Sürüm",
+        "redemptionCode": "Kullanım kodu:",
+        "redeemWebsite": "Satıcı web sitesinde kullanın",
         "softwareDescription": "Cihazınızla birlikte satın alınan yazılımı kullanmak için aşağıdaki indirme bağlantısına tıklayın. Herhangi bir anda yazılımınızı yeniden indirmeniz gerekirse bunu Vantage menüsündeki Yazılımım düğmesine tıklayarak yapabilirsiniz.",
         "title": "Yazılımım",
         "loadingDescription": "Cihazınızla birlikte satın aldığınız yazılımların listesi hazırlanırken lütfen bekleyin.",

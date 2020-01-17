@@ -644,7 +644,8 @@
             "registered": "REGISTRIRAN",
             "notRegistered": "NIJE REGISTRIRAN",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Pametno stanje mirovanja",
-                    "description": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja brzog pokretanja tijekom rada s većim opterećenjem.",
-                    "tooltip": "Kad je omogućeno Pametno stanje pripravnosti, vaše se računalo prebacuje na Suvremeno stanje pripravnosti prije zakazanog vremena POKRETANJA i prelazi u hibernaciju nakon što je određeno vrijeme neaktivno na baterijskom napajanju. Ovaj se vremenski interval optimizira na temelju rasporeda koji postavite ili vremena uporabe računala koje dobivamo. Računalo se prebacuje iz hibernacije u Suvremeno stanje pripravnosti samo zakazanim danima te se ne prebacuje kad je neaktivno tijekom uzastopnih zakazanih dana.",
+                    "description": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja iskustva brzog nastavka rada u <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Suvremenom stanju pripravnosti</a> tijekom rada s većim opterećenjem.",
+                    "tooltip": "Kad je omogućeno Pametno stanje pripravnosti, vaše se računalo prebacuje na Suvremeno stanje pripravnosti prije zakazanog vremena POKRETANJA i prelazi u hibernaciju nakon što je određeno vrijeme neaktivno na baterijskom napajanju. Ovaj se vremenski interval optimizira na temelju rasporeda koji postavite ili vaše uporabe računala. Računalo se prebacuje iz hibernacije u Suvremeno stanje pripravnosti samo zakazanim danima te se ne prebacuje kad je neaktivno tijekom uzastopnih zakazanih dana.",
                     "timer": {
-                        "heading": "Vrijeme kada obično koristite računalo",
+                        "heading": "Vrijeme kada obično koristite ovo računalo:",
                         "subHeading1": "početak",
                         "subHeading2": "završetak",
                         "subHeading3": "koristi ovaj raspored za",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Nije odabran dan"
                     },
                     "checkbox": "Automatsko podešavanje aktivnog vremena vašeg računala na temelju vaše uporabe",
-                    "hyperlinkToGraph": "Kliknite za prikaz tablice aktivnosti i aktivnog vremena vašeg računala",
+                    "hyperlinkToGraph": "Kliknite za prikaz korištenja i primijenjenog aktivnog vremena",
                     "subTitle": "Zakažite raspored za svoje računalo",
                     "automaticMode": "Automatski način rada",
                     "manualMode": "Ručni način rada",
@@ -1938,7 +1939,7 @@
             "localRepositoryDatabaseException": "Baza podataka lokalnog spremišta nije pronađena ili je oštećena.",
             "networkInterruptedException": "Poslužitelj za ažuriranje sustava trenutno nije dostupan. Pokušajte ponovno kasnije.",
             "helpCenterInvalidServerException": "Poslužitelj za ažuriranje sustava nije valjan. Pokušajte ponovno kasnije.",
-            "catalogNotFoundException": "Za sustav nisu pronađena primjenjiva ažuriranja.",
+            "catalogNotFoundException": "Nisu pronađena odgovarajuća ažuriranja za vaš sustav jer nije pronađen katalog ažuriranja.",
             "catalogCrcErrorException": "Katalog za vaš sustav trenutno se ažurira. Pokušajte ponovno kasnije.",
             "catalogErrorException": "Otkrivena je pogreška s katalogom ažuriranja vašeg sustava na poslužitelju za ažuriranje sustava. Pokušajte ponovno kasnije.",
             "fileNotFoundException": "Datoteka nije pronađena."
@@ -2162,7 +2163,8 @@
                 "showmore": "Više detalja",
                 "showless": "Pokaži manje",
                 "button": "Omogući sigurnost WiFi mreže",
-                "disableDescribe": "Sigurnost WiFija tvrtke Lenovo napredna je softverska usluga u oblaku koja vašem uređaju pojednostavnjuje razlikovanje sigurnih bežičnih veza od potencijalno zlonamjernih."
+                "disableDescribe": "Sigurnost WiFija tvrtke Lenovo napredna je softverska usluga u oblaku koja vašem uređaju pojednostavnjuje razlikovanje sigurnih bežičnih veza od potencijalno zlonamjernih.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Upotrijebite alat za lociranje prijetnji da biste utvrdili sigurnost mreža koje su vam dostupne.",
@@ -2196,7 +2198,8 @@
                 "subtitle": "Bezbrižan rad",
                 "subtitleDescribe": "Povezana sigurnost doma poslat će vam upozorenje ako otkrije ranjivost na vašem uređaju ili kućnoj mreži ili ako ste povezani s potencijalno zlonamjernom mrežom. Saznajte još više o Povezanoj sigurnosti doma <tag>ovdje</tag>.",
                 "tryNow": "Isprobajte odmah",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Unesite kôd pozivnice",
@@ -2271,7 +2274,8 @@
             "getStarted1": "Kliknite iznad na gumb \"Otvori SurfEasy\" da biste pokrenuli SurfEasy VPN.",
             "getStarted2": "Uključite VPN i pričekajte trenutak na potvrdu sigurne veze.",
             "getStarted3": "Promijenite regiju ili lokaciju ako želite i uživajte u sigurnoj, privatnoj mreži.",
-            "poweredBySurfEasy": "Pokreće SurfEasy"
+            "poweredBySurfEasy": "Pokreće SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "UPRAVITELJ LOZINKI DASHLANE",
@@ -2299,7 +2303,8 @@
             "allowsYou2": "Da pratite postoje li vaše osobne informacije na tamnom webu",
             "allowsYou3": "Da ostanete sigurni na nezaštićenim WiFi mrežama s ugrađenim VPN-om",
             "allowsYou4": "Da sigurno dijelite lozinke, a da ih ne otkrijete",
-            "poweredByDashLane": "Pokreće Dashlane"
+            "poweredByDashLane": "Pokreće Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2800,6 +2805,8 @@
         "noteDownloadAvailable": "Napomena: kada kliknete Preuzmi, sustav Windows možda će od vas zatražiti da nam dopustite instalaciju softvera na uređaj. Kada instalirate aplikacije, one će se automatski prikazivati na radnoj površini ili izborniku Start.<br /><br />Možete zatvoriti stranicu Moj softver i nastaviti koristiti Lenovo Vantage. Nemojte zatvarati Lenovo Vantage tijekom instalacije.",
         "sizeText": "Veličina",
         "versionText": "Verzija",
+        "redemptionCode": "Otkupni kod:",
+        "redeemWebsite": "Iskoristite na web mjestu dobavljača",
         "softwareDescription": "Kliknite preuzimanje u nastavku kako biste preuzeli softver kupljen s vašim uređajem. Ukoliko zatrebate iznova preuzeti svoj softver, možete to učiniti u bilo kojem trenutku klikom na gumb Moj softver na Vantage izborniku.",
         "title": "Moj softver",
         "loadingDescription": "Pričekajte dok pripremimo popis softvera uključenog uz kupnju uređaja.",

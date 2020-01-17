@@ -644,7 +644,8 @@
             "registered": "REGISTRERET",
             "notRegistered": "IKKE REGISTRERET",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart-standby",
-                    "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
-                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte STARTtidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller den tid for computerbrug, som vi får. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
+                    "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at genoptage dit arbejde hurtigt ved hjælp af <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Moderne standby</a> i perioder med mere intens aktivitet.",
+                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller din computerbrug. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
                     "timer": {
-                        "heading": "Det tidspunkt, hvor du normalt bruger denne computer",
+                        "heading": "Den tid, hvor du normalt bruger denne computer:",
                         "subHeading1": "starter",
                         "subHeading2": "slut",
                         "subHeading3": "brug denne tidsplan for",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Ingen dag valgt"
                     },
                     "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
-                    "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
+                    "hyperlinkToGraph": "Klik her for at se forbruget og den anvendte aktive tid",
                     "subTitle": "Tidsplan for din computer",
                     "automaticMode": "Automatisk tilstand",
                     "manualMode": "Manuel tilstand",
@@ -1938,7 +1939,7 @@
             "localRepositoryDatabaseException": "Databasen til det lokale opbevaringssted findes ikke eller er ødelagt.",
             "networkInterruptedException": "Systemopdateringsserveren er i øjeblikket ikke tilgængelig. Prøv igen senere.",
             "helpCenterInvalidServerException": "Systemopdateringsserveren er ugyldig. Prøv igen senere.",
-            "catalogNotFoundException": "Der er ikke fundet nogen tilgængelige opdateringer til systemet.",
+            "catalogNotFoundException": "Der blev ikke fundet nogen tilgængelige opdateringer til systemet, da opdateringskataloget ikke blev fundet.",
             "catalogCrcErrorException": "Kataloget til dit system er ved at blive opdateret. Prøv igen senere.",
             "catalogErrorException": "Der opstod en fejl med opdateringskataloget til systemet på systemopdateringsserveren. Prøv igen senere.",
             "fileNotFoundException": "Filen blev ikke fundet."
@@ -2162,7 +2163,8 @@
                 "showmore": "Vis mere",
                 "showless": "Vis mindre",
                 "button": "Aktivér WiFi-sikkerhed",
-                "disableDescribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige."
+                "disableDescribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Brug trusselssensoren til at bestemme sikkerheden i dine nærliggende netværk.",
@@ -2196,7 +2198,8 @@
                 "subtitle": "Få ro i sindet",
                 "subtitleDescribe": "Tilsluttet Home Security sender en advarsel, hvis systemet registrerer et sikkerhedsproblem i din enhed eller dit hjemmenetværk, eller hvis du er tilsluttet et potentielt skadeligt netværk. Få mere at vide om Tilsluttet Home Security <tag>her</tag>.",
                 "tryNow": "Prøv nu",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Indtast invitationskode",
@@ -2271,7 +2274,8 @@
             "getStarted1": "Klik på knappen \"Åbn SurfEasy\" ovenfor for at starte SurfEasy VPN.",
             "getStarted2": "Aktivér VPN, og vent et kort øjeblik for at få bekræftelse på en sikker forbindelse.",
             "getStarted3": "Rediger dit område eller din placering, og nyd sikre og private netværksaktiviteter.",
-            "poweredBySurfEasy": "Udarbejdet af SurfEasy"
+            "poweredBySurfEasy": "Udarbejdet af SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE ADGANGSKODEADMINISTRATOR",
@@ -2299,7 +2303,8 @@
             "allowsYou2": "Overvåge det mørke internet, så du er informeret",
             "allowsYou3": "Forblive sikret på ikke-sikre WiFi-netværk med indbygget VPN",
             "allowsYou4": "Dele adgangskoder sikkert uden at afsløre dem",
-            "poweredByDashLane": "Udarbejdet af Dashlane"
+            "poweredByDashLane": "Udarbejdet af Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2800,6 +2805,8 @@
         "noteDownloadAvailable": "Bemærk: Når du klikker på Download, får du muligvis en meddelelse fra Windows om at give os tilladelse til at installere programmet på din enhed. Når du er færdig med at installere, vises dine apps automatisk på skrivebordet eller i startmenuen.<br /><br />Du kan lukke siden Min software og fortsætte med at bruge Lenovo Vantage. Luk ikke Lenovo Vantage under installation.",
         "sizeText": "Størrelse",
         "versionText": "Version",
+        "redemptionCode": "Indløsningskode:",
+        "redeemWebsite": "Indløs på leverandørens websted",
         "softwareDescription": "Klik på download nedenfor for at indløse software, der er købt med din enhed. Hvis du på et tidspunkt får brug for at downloade softwaren igen, kan du gøre det ved at klikke på knappen Min software i Lenovo Vantage-menuen.",
         "title": "Min software",
         "loadingDescription": "Vent, mens vi forbereder en list over den software, der fulgte med, da du købte din enhed.",

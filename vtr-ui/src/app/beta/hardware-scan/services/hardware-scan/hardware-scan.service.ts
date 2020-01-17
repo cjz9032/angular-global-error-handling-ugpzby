@@ -667,7 +667,7 @@ export class HardwareScanService {
 			totalPercent += response.devices[i].percentageComplete;
 		}
 
-		this.progress = Math.round(totalPercent / this.devices.length);
+		this.progress = Math.floor(totalPercent / this.devices.length);
 
 		if (isNaN(this.progress)) {
 			this.progress = 0;

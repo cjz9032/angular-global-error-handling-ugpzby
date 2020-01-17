@@ -31,11 +31,12 @@ export class UiMacrokeyPopupComponent implements OnInit {
 	}
 
 	hiddenScroll() {
-		if ((document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow === 'hidden') {
+		if ((document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflowY === 'hidden') {
 			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflowY = 'auto';
 			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflowX = 'hidden';
 		} else {
-			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = 'hidden';
+			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflowY = 'hidden';
+			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflowX = 'hidden';
 		}
 	}
 }
