@@ -644,7 +644,8 @@
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart hvilemodus",
-                    "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
-                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir, eller brukstiden vi mottar for datamaskinen. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
+                    "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker opplevelsen av rask gjenopptakelse for <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Moderne hvilemodus</a> på tidspunkter med tyngre bruk.",
+                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir, eller brukstiden for datamaskinen. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
                     "timer": {
-                        "heading": "Tidspunkter du vanligvis bruker datamaskinen",
+                        "heading": "Tidspunktet du vanligvis bruker denne datamaskinen:",
                         "subHeading1": "begynner",
                         "subHeading2": "slutt",
                         "subHeading3": "bruk denne planen for",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Det er ikke valgt en dag"
                     },
                     "checkbox": "Automatisk justering av datamaskinens aktive tid basert på bruk",
-                    "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen",
+                    "hyperlinkToGraph": "Klikk for å se bruk og brukt aktiv tid",
                     "subTitle": "Opprett kjøreplan for datamaskinen",
                     "automaticMode": "Automatisk modus",
                     "manualMode": "Manuell modus",
@@ -1938,7 +1939,7 @@
             "localRepositoryDatabaseException": "Databasen i det lokale datalageret ble ikke funnet eller er ødelagt.",
             "networkInterruptedException": "Systemoppdateringsserveren er ikke tilgjengelig for øyeblikket. Prøv igjen senere.",
             "helpCenterInvalidServerException": "Systemoppdateringsserveren er ugyldig. Prøv igjen senere.",
-            "catalogNotFoundException": "Det ble ikke funnet noen oppdateringer som er aktuelle for systemet ditt.",
+            "catalogNotFoundException": "Det ble ikke funnet noen oppdateringer som er aktuelle for systemet ditt fordi Update-katalogen ikke ble funnet.",
             "catalogCrcErrorException": "Systemkatalogen oppdateres for øyeblikket. Prøv igjen senere.",
             "catalogErrorException": "Det ble oppdaget en feil med oppdateringskatalogen for ditt system på systemoppdateringsserveren. Prøv igjen senere.",
             "fileNotFoundException": "Fant ikke fil."
@@ -2197,7 +2198,8 @@
                 "subtitle": "Trygghet",
                 "subtitleDescribe": "Sikkerhet for tilkoblede hjem sender deg et varsel hvis den oppdager et sikkerhetsproblem i enheten eller hjemmenettverket, eller hvis du er koblet til et skadelig nettverk. Lær enda mer om Sikkerhet for tilkoblede hjem <tag>her</tag>.",
                 "tryNow": "Prøv nå",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Skriv inn invitasjonskode",
@@ -2272,7 +2274,8 @@
             "getStarted1": "Klikk på knappen \"Åpne SurfEasy\" ovenfor for å starte SurfEasy VPN.",
             "getStarted2": "Slå på VPN og vent et lite øyeblikk på bekreftelse av en sikker tilkobling.",
             "getStarted3": "Endre region eller plassering hvis du ønsker, og få sikkert og privat nettverk.",
-            "poweredBySurfEasy": "Leveres av SurfEasy"
+            "poweredBySurfEasy": "Leveres av SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE PASSORDADMINISTRATOR",
@@ -2300,7 +2303,8 @@
             "allowsYou2": "overvåke den mørke weben for å beskytte dine personlige data",
             "allowsYou3": "være trygg på usikrede WiFi-nettverk med innebygd VPN",
             "allowsYou4": "dele passord på en sikker måte uten å oppgi dem",
-            "poweredByDashLane": "Leveres av Dashlane"
+            "poweredByDashLane": "Leveres av Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2801,6 +2805,8 @@
         "noteDownloadAvailable": "Merk: Når du har klikket på Last ned, kan det hende du får en melding fra Windows som ber deg tillate at programvaren installeres på enheten. Når installasjonen er fullført, vises appene automatisk på skrivebordet eller Start-menyen.<br /><br />Du kan lukke siden Min programvare og fortsette å bruke Lenovo Vantage. Ikke lukk Lenovo Vantage under installasjonen.",
         "sizeText": "Størrelse",
         "versionText": "Versjon",
+        "redemptionCode": "Innløsningskode:",
+        "redeemWebsite": "Løs inn på leverandørnettsted",
         "softwareDescription": "Klikk på nedlastingsalternativet under for å få programvaren som var inkludert i kjøpet av enheten. Hvis du noensinne må laste ned programvaren på nytt, kan du gjøre dette ved å klikke på knappen Min programvare på Vantage-menyen.",
         "title": "Min programvare",
         "loadingDescription": "Vent litt mens det lages en liste over programvaren som var inkludert i kjøpet av enheten.",

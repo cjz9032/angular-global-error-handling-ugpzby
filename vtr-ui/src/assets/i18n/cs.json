@@ -644,7 +644,8 @@
             "registered": "REGISTROVÁNO",
             "notRegistered": "NENÍ REGISTROVÁNO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Otázky a odpovědi pro váš stroj",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Chytrý pohotovostní režim",
-                    "description": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění při intenzivnějším využívání.",
+                    "description": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost opětovného spuštění <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">moderního pohotovostního režimu</a> v době vyšší zátěže.",
                     "tooltip": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným ZAČÁTKEM přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové období se optimalizuje na základě nastaveného plánu nebo doby používání vašeho počítače. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů.",
                     "timer": {
-                        "heading": "Čas, kdy počítač obvykle používáte",
+                        "heading": "Čas, kdy počítač obvykle používáte:",
                         "subHeading1": "pokračovat",
                         "subHeading2": "konec",
                         "subHeading3": "použít toto nastavení pro",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Není vybrán žádný den"
                     },
                     "checkbox": "Automatické přizpůsobení aktivního času počítače na základě používání",
-                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktivní čas v tabulce pro počítač",
+                    "hyperlinkToGraph": "Kliknutím zobrazíte využití a použitý aktivní čas",
                     "subTitle": "Plánování počítače",
                     "automaticMode": "Automatický režim",
                     "manualMode": "Ruční režim",
@@ -1938,7 +1939,7 @@
             "localRepositoryDatabaseException": "Databázi lokálního archivu nebylo možné najít nebo je poškozená.",
             "networkInterruptedException": "Server služby aktualizace systému je momentálně nedostupný. Zkuste to prosím později.",
             "helpCenterInvalidServerException": "Chybný server služby aktualizace systému. Zkuste to prosím později.",
-            "catalogNotFoundException": "Pro váš systém nebyla nalezena žádná vhodná aktualizace.",
+            "catalogNotFoundException": "Pro váš systém nebyly nalezeny žádné použitelné aktualizace, protože nebyl nalezen katalog aktualizací.",
             "catalogCrcErrorException": "Právě probíhá aktualizace katalogu pro váš systém. Zkuste to prosím později.",
             "catalogErrorException": "V katalogu aktualizací pro váš systém na serveru služby aktualizace systému byla zjištěna chyba. Zkuste to prosím později.",
             "fileNotFoundException": "Soubor nebyl nalezen."
@@ -2197,7 +2198,8 @@
                 "subtitle": "Mír v duši",
                 "subtitleDescribe": "Pokud zabezpečení připojené domácnosti zjistí chybu v zabezpečení zařízení nebo domácí síti nebo rozpozná připojení k potenciálně škodlivé síti, odešle vám výstrahu. <tag>Zde</tag> zjistíte ještě více informací o zabezpečení připojené domácnosti.",
                 "tryNow": "Chci to vyzkoušet",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Zadejte kód pozvánky",
@@ -2272,7 +2274,8 @@
             "getStarted1": "Klikněte na tlačítko „Otevřít SurfEasy“ nahoře a spusťte SurfEasy VPN.",
             "getStarted2": "Zapněte VPN a chvíli čekejte na potvrzení bezpečného připojení.",
             "getStarted3": "Dle potřeby změňte oblast nebo polohu a užívejte si bezpečné a soukromé práce v síti.",
-            "poweredBySurfEasy": "Používá technologii SurfEasy"
+            "poweredBySurfEasy": "Používá technologii SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "SPRÁVCE HESEL DASHLANE",
@@ -2300,7 +2303,8 @@
             "allowsYou2": "Sledování temného webu, zda neobsahuje vaše osobní údaje",
             "allowsYou3": "Ochranu i v nezabezpečených sítích WiFi díky integrované VPN",
             "allowsYou4": "Bezpečné sdílení hesel bez rizika jejich odhalení",
-            "poweredByDashLane": "Používá technologii Dashlane"
+            "poweredByDashLane": "Používá technologii Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2801,6 +2805,8 @@
         "noteDownloadAvailable": "Poznámka: Po kliknutí na tlačítko Stáhnout se může zobrazit výzva systému Windows, aby bylo možné nainstalovat software do vašeho zařízení. Po dokončení instalace se aplikace automaticky zobrazí na ploše nebo v nabídce Start.<br /><br />Můžete zavřít stránku Můj software a pokračovat v používání programu Lenovo Vantage. Během instalace program Lenovo Vantage nezavírejte.",
         "sizeText": "Velikost",
         "versionText": "Verze",
+        "redemptionCode": "Kód uplatnění:",
+        "redeemWebsite": "Uplatnit na webu prodejce",
         "softwareDescription": "Klepnutím na tlačítko Stáhnout níže můžete získat software zakoupený se zařízením. Pokud budete potřebovat stáhnout software znovu, můžete tak učinit kliknutím na tlačítko Můj software v nabídce Vantage.",
         "title": "Můj software",
         "loadingDescription": "Počkejte, než se připraví seznam softwaru, který byl zahrnut do nákupu vašeho zařízení.",

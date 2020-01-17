@@ -1,9 +1,9 @@
 import { Component, OnInit, ElementRef, HostListener, SecurityContext, AfterViewInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
-import { ActivatedRoute } from '@angular/router';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { TranslateService } from '@ngx-translate/core';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-modal-dcc-detail',
@@ -22,12 +22,12 @@ export class ModalDccDetailComponent implements OnInit, AfterViewInit {
 	constructor(
 		public activeModal: NgbActiveModal,
 		vantageShellService: VantageShellService,
-		private activatedRoute: ActivatedRoute,
 		private timerService: TimerService,
-		private translateService: TranslateService
+		private translateService: TranslateService,
+		public commonService: CommonService
 	) {
 		this.metricClient = vantageShellService.getMetrics();
-		this.metricsParent = this.getPageName(activatedRoute) + '.DccDetails';
+		this.metricsParent = 'dcc.detail';
 	}
 
 	ngOnInit() {
@@ -39,18 +39,6 @@ export class ModalDccDetailComponent implements OnInit, AfterViewInit {
 		setTimeout(() => {
 			(document.querySelector('.Dcc-Detail-Modal') as HTMLElement).focus();
 		}, 0);
-	}
-
-	private getPageName(activatedRoute: ActivatedRoute) {
-		try {
-			return activatedRoute.children[0].firstChild.routeConfig.data.pageName;
-		} catch (ex) {}
-
-		try {
-			return activatedRoute.firstChild.snapshot.data.pageName;
-		} catch (ex) {}
-
-		return undefined;
 	}
 
 	enableBatteryChargeThreshold() {

@@ -10,5 +10,4 @@ export class SmartAssistCapability {
 	public isAPSCapable = false;
 	public isAPSSensorSupported = false;
 	public isAPSHDDStatus = -1;
-
 }

@@ -328,8 +328,8 @@ export class ConfigService {
 			);
 			this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
 
-			if (smartAssistCacheValue || this.isSmartAssistAvailable) {
-				this.addSmartAssistMenu(items);
+			if (!smartAssistCacheValue || !this.isSmartAssistAvailable) {
+				this.removeSmartAssistMenu(items);
 			}
 
 			// raj: promise.all breaks if any one function is breaks. adding feature wise capability check
