@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT 控制項",
                     "less": "較少"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "鍵盤背光",
+					"description": {
+						"base": "啟動鍵盤背光，以便在黑暗或光線不足的情況下打字。您也可以按下 Fn+空格鍵來變更鍵盤背光設定。",
+						"auto": "啟動鍵盤背光，以便在黑暗或光線不足的情況下打字。您可以按下 Fn+空格鍵來變更背光設定，或將它設定為「自動」。「自動」選項會根據周遭光線自動調整鍵盤背光。"
+					},
+					"level": {
+						"auto": "自動",
+						"low": "低",
+						"high": "高",
+						"off": "關閉"
+					}
+				}
             }
         },
         "smartAssist": {
