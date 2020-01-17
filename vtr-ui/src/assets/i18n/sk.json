@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "Databáza lokálneho odkladacieho priestoru sa nenašla alebo je poškodená.",
             "networkInterruptedException": "Server systémových aktualizácií je momentálne nedostupný. Skúste to znova neskôr.",
             "helpCenterInvalidServerException": "Server systémových aktualizácií je neplatný. Skúste to znova neskôr.",
-            "catalogNotFoundException": "Pre váš systém sa nenašli žiadne použiteľné aktualizácie.",
+            "catalogNotFoundException": "Pre váš systém sa nenašli žiadne použiteľné aktualizácie, pretože sa nenašiel katalóg aktualizácií.",
             "catalogCrcErrorException": "Katalóg pre váš systém sa práve aktualizuje. Skúste to znova neskôr.",
             "catalogErrorException": "Zistila sa chyba katalógu aktualizácií pre váš systém na serveri systémových aktualizácií. Skúste to znova neskôr.",
             "fileNotFoundException": "Súbor sa nenašiel."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Poznámka: Po kliknutí na tlačidlo Stiahnuť sa môže zobraziť výzva systému Windows na povolenie inštalácie softvéru do vášho zariadenia. Po dokončení inštalácie sa aplikácia automaticky zobrazí na pracovnej ploche alebo v ponuke Štart.<br /><br />Môžete zatvoriť stránku Môj softvér a pokračovať v používaní aplikácie Lenovo Vantage. Počas inštalácie nezatvárajte aplikáciu Lenovo Vantage.",
         "sizeText": "Rozmery",
         "versionText": "Verzia",
+        "redemptionCode": "Kód uplatnenia:",
+        "redeemWebsite": "Uplatnite na webovej stránke dodávateľa",
         "softwareDescription": "Ak chcete používať softvér, ktorý ste kúpili spolu so zariadením, nižšie kliknite na tlačidlo Stiahnuť. Ak budete potrebovať znova stiahnuť softvér, môžete to urobiť kliknutím na tlačidlo „Môj softvér“ v ponuke aplikácie Vantage.",
         "title": "Môj softvér",
         "loadingDescription": "Počkajte, kým pripravíme zoznam softvéru, ktorý ste zakúpili spolu so zariadením.",

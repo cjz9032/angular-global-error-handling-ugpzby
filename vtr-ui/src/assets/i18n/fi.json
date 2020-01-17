@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "Paikallisen säilön tietokantaa ei ole löytynyt tai se on viallinen.",
             "networkInterruptedException": "Järjestelmän päivityspalvelin ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen.",
             "helpCenterInvalidServerException": "Järjestelmän päivityspalvelin on virheellinen. Yritä myöhemmin uudelleen.",
-            "catalogNotFoundException": "Järjestelmään soveltuvia päivityksiä ei löydy.",
+            "catalogNotFoundException": "Järjestelmään soveltuvia päivityksiä ei löydy, koska päivitysluetteloa ei löydy.",
             "catalogCrcErrorException": "Järjestelmäluetteloa päivitetään parhaillaan. Yritä myöhemmin uudelleen.",
             "catalogErrorException": "Järjestelmän päivitysluettelossa havaittiin virhe järjestelmän päivityspalvelimessa. Yritä myöhemmin uudelleen.",
             "fileNotFoundException": "Tiedostoa ei löydy."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Huomautus: Kun olet napsauttanut Lataa, Windows voi pyytää sinulta lupaa ohjelmiston asentamiseen laitteeseesi. Kun sovellukset on asennettu, ne näkyvät automaattisesti työpöydällä tai aloitusvalikossa.<br /><br />Voit sulkea Oma ohjelmisto -sivun ja jatkaa Lenovo Vantagen käyttöä. Älä sulje Lenovo Vantagea asennuksen aikana.",
         "sizeText": "Koko",
         "versionText": "Versio",
+        "redemptionCode": "Lunastuskoodi:",
+        "redeemWebsite": "Lunasta toimittajan www-sivustolla",
         "softwareDescription": "Lunasta laitteen mukana ostettu ohjelmisto napsauttamalla alta Lataa. Voit milloin tahansa ladata ohjelmiston uudelleen valitsemalla Vantage-valikosta Oma ohjelmisto -painikkeen.",
         "title": "Oma ohjelmisto",
         "loadingDescription": "Odota sen aikaa, kun valmistelemme luetteloa laitteen mukana ostetuista ohjelmistoista.",

@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "Databasen til det lokale opbevaringssted findes ikke eller er ødelagt.",
             "networkInterruptedException": "Systemopdateringsserveren er i øjeblikket ikke tilgængelig. Prøv igen senere.",
             "helpCenterInvalidServerException": "Systemopdateringsserveren er ugyldig. Prøv igen senere.",
-            "catalogNotFoundException": "Der er ikke fundet nogen tilgængelige opdateringer til systemet.",
+            "catalogNotFoundException": "Der blev ikke fundet nogen tilgængelige opdateringer til systemet, da opdateringskataloget ikke blev fundet.",
             "catalogCrcErrorException": "Kataloget til dit system er ved at blive opdateret. Prøv igen senere.",
             "catalogErrorException": "Der opstod en fejl med opdateringskataloget til systemet på systemopdateringsserveren. Prøv igen senere.",
             "fileNotFoundException": "Filen blev ikke fundet."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Bemærk: Når du klikker på Download, får du muligvis en meddelelse fra Windows om at give os tilladelse til at installere programmet på din enhed. Når du er færdig med at installere, vises dine apps automatisk på skrivebordet eller i startmenuen.<br /><br />Du kan lukke siden Min software og fortsætte med at bruge Lenovo Vantage. Luk ikke Lenovo Vantage under installation.",
         "sizeText": "Størrelse",
         "versionText": "Version",
+        "redemptionCode": "Indløsningskode:",
+        "redeemWebsite": "Indløs på leverandørens websted",
         "softwareDescription": "Klik på download nedenfor for at indløse software, der er købt med din enhed. Hvis du på et tidspunkt får brug for at downloade softwaren igen, kan du gøre det ved at klikke på knappen Min software i Lenovo Vantage-menuen.",
         "title": "Min software",
         "loadingDescription": "Vent, mens vi forbereder en list over den software, der fulgte med, da du købte din enhed.",

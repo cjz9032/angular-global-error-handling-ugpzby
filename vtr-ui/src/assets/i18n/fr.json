@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "La base de données de référentiel local est introuvable ou endommagée.",
             "networkInterruptedException": "Le serveur de mise à jour du système est actuellement indisponible. Réessayez plus tard.",
             "helpCenterInvalidServerException": "Le serveur de mise à jour du système n'est pas valide. Réessayez plus tard.",
-            "catalogNotFoundException": "Il n'existe pas de mise à jour correspondante à votre système.",
+            "catalogNotFoundException": "Aucune mise à jour applicable n'a été trouvée pour votre système, car le catalogue des mises à jour est introuvable.",
             "catalogCrcErrorException": "Le catalogue pour votre système est en cours de mise à jour. Réessayez plus tard.",
             "catalogErrorException": "Une erreur s'est produite avec le catalogue des mises à jour de votre système sur le serveur de mise à jour du système. Réessayez plus tard.",
             "fileNotFoundException": "Fichier introuvable."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Remarque : après avoir cliqué sur Télécharger, vous recevrez peut-être une invite de Windows pour nous permettre d'installer le logiciel sur votre périphérique. Une fois l'installation de vos applications terminée, celles-ci s'afficheront automatiquement sur votre bureau ou dans le menu Démarrer.<br /><br />Vous pouvez fermer la page Mon logiciel et continuer d'utiliser Lenovo Vantage. Ne fermez pas Lenovo Vantage pendant l'installation.",
         "sizeText": "Taille",
         "versionText": "Version",
+        "redemptionCode": "Code de remboursement :",
+        "redeemWebsite": "Rembourser sur le site Web du fournisseur",
         "softwareDescription": "Cliquez télécharger ci-dessous pour utiliser le logiciel que vous avez acheté avec votre appareil. Si à n'importe quel moment, vous avez besoin de télécharger à nouveau ce logiciel, vous pouvez effectuer cela en cliquant le bouton Mon logiciel dans le menu Vantage.",
         "title": "Mon logiciel",
         "loadingDescription": "Veuillez patienter pendant que nous préparons la liste des logiciels qui étaient inclus dans l'achat de votre appareil.",

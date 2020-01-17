@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "Nie można znaleźć bazy danych lokalnego repozytorium albo jest ona uszkodzona.",
             "networkInterruptedException": "Serwer aktualizacji systemu jest obecnie niedostępny. Spróbuj ponownie później.",
             "helpCenterInvalidServerException": "Serwer aktualizacji systemu jest nieprawidłowy. Spróbuj ponownie później.",
-            "catalogNotFoundException": "Nie znaleziono odpowiednich aktualizacji do Twojego systemu.",
+            "catalogNotFoundException": "Brak odpowiednich aktualizacji dla systemu, jako że nie znaleziono katalogu aktualizacji.",
             "catalogCrcErrorException": "Katalog Twojego systemu jest obecnie aktualizowany. Spróbuj ponownie później.",
             "catalogErrorException": "Na serwerze aktualizacji systemu wykryto błąd związany z katalogiem aktualizacji Twojego systemu. Spróbuj ponownie później.",
             "fileNotFoundException": "Nie znaleziono pliku."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Uwaga: po kliknięciu przycisku Pobierz może zostać wyświetlony monit z systemu Windows z prośbą o potwierdzenie zainstalowania oprogramowania na urządzeniu. Po zakończeniu instalacji aplikacje będą wyświetlane automatycznie na pulpicie lub w menu Start.<br /><br />Możesz zamknąć stronę Moje oprogramowanie i dalej korzystać z Lenovo Vantage. Nie zamykaj Lenovo Vantage podczas instalacji.",
         "sizeText": "Wymiary",
         "versionText": "Wersja",
+        "redemptionCode": "Kod dostępu:",
+        "redeemWebsite": "Zakup na stronie dostawcy",
         "softwareDescription": "Kliknij poniższy przycisk Pobierz, aby pobrać oprogramowanie zakupione wraz z urządzeniem. Możesz ponownie pobrać oprogramowanie w dowolnym momencie, wybierając opcję Moje oprogramowanie z menu aplikacji Vantage.",
         "title": "Moje oprogramowanie",
         "loadingDescription": "Czekaj, tworzymy listę oprogramowania zakupionego wraz z urządzeniem.",

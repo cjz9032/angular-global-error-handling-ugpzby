@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "找不到本端儲存庫的資料庫或是該資料庫已毀損。",
             "networkInterruptedException": "系統更新伺服器目前無法使用。請稍後重試。",
             "helpCenterInvalidServerException": "系統更新伺服器無效。請稍後重試。",
-            "catalogNotFoundException": "找不到適用於您系統的更新。",
+            "catalogNotFoundException": "由於找不到更新目錄，因此找不到適用於您系統的更新。",
             "catalogCrcErrorException": "目前正在更新您系統的目錄。請稍後重試。",
             "catalogErrorException": "在系統更新伺服器上偵測到您系統的更新目錄發生錯誤。請稍後重試。",
             "fileNotFoundException": "找不到檔案。"
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "注意：按一下「下載」之後,便會出現來自 Windows 的提示,允許我們在您的裝置上安裝軟體。完成安裝後,您的應用程式將自動在桌面或「開始」功能表上顯示。<br /><br />您可以關閉「我的軟體」頁面,然後繼續使用 Lenovo Vantage。安裝期間請勿關閉 Lenovo Vantage。",
         "sizeText": "大小",
         "versionText": "版本",
+        "redemptionCode": "兌換碼：",
+        "redeemWebsite": "在供應商網站上兌換",
         "softwareDescription": "按一下下方的下載,以兌換購買裝置時隨附的軟體。如果您需要再次下載軟體,隨時按一下 Vantage 功能表中的「我的軟體」按鈕即可下載。",
         "title": "我的軟體",
         "loadingDescription": "請稍候,我們正在準備購買裝置時所附的軟體清單。",

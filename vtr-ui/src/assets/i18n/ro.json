@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "Baza de date din depozitul local nu a putut fi găsită sau este deteriorată.",
             "networkInterruptedException": "Serverul de actualizări ale sistemului este momentan indisponibil. Încercaţi din nou mai târziu.",
             "helpCenterInvalidServerException": "Serverul de actualizări ale sistemului nu este valid. Încercaţi din nou mai târziu.",
-            "catalogNotFoundException": "Nu s-au găsit actualizări aplicabile pentru sistemul dumneavoastră.",
+            "catalogNotFoundException": "Nu există actualizări care pot fi aplicate sistemului dvs., deoarece catalogul actualizărilor nu este găsit.",
             "catalogCrcErrorException": "Catalogul pentru sistemul dvs. este în curs de actualizare. Încercaţi din nou mai târziu.",
             "catalogErrorException": "S-a detectat o eroare la catalogul de actualizări pentru sistemul dumneavoastră pe serverul de actualizări ale sistemului. Încercaţi din nou mai târziu.",
             "fileNotFoundException": "Fişierul nu a fost găsit."
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "Notă: după ce faceți clic pe descărcare, este posibil ca Windows să vă solicite permisiunea de a ne lăsa să instalăm software-ul pe dispozitiv. După finalizarea instalării aplicaţiilor, acestea se vor afişa automat pe desktop sau în meniul Start.<br /><br />Puteți închide pagina Software-ul meu și utiliza în continuare Lenovo Vantage. Nu închideți Lenovo Vantage în timpul instalării.",
         "sizeText": "Dimensiune",
         "versionText": "Versiune",
+        "redemptionCode": "Cod de valorificare:",
+        "redeemWebsite": "Valorificați pe site-ul comerciantului",
         "softwareDescription": "Faceți clic pe descărcare mai jos pentru a vă valorifica software-ul care a fost achiziționat împreună cu dispozitivul. Dacă trebuie să descărcați software-ul din nou, puteți să faceți clic pe butonul Software-ul meu din meniul Vantage.",
         "title": "Software-ul meu",
         "loadingDescription": "Vă rugăm așteptați până când vom pregăti o listă a software-ului inclus în achiziția dispozitivului.",

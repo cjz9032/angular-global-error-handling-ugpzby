@@ -1939,7 +1939,7 @@
             "localRepositoryDatabaseException": "ローカル・リポジトリー・データベースは、検出できないか、破損しています。",
             "networkInterruptedException": "システム更新サーバーは現在使用できません。後から再試行してください。",
             "helpCenterInvalidServerException": "システム更新サーバーが無効です。後から再試行してください。",
-            "catalogNotFoundException": "ご使用のシステムに適用可能な更新はありません。",
+            "catalogNotFoundException": "更新カタログが見つからないため、ご使用のシステムに適用可能な更新が見つかりません。",
             "catalogCrcErrorException": "システムのカタログを更新中です。後から再試行してください。",
             "catalogErrorException": "システム更新サーバーで、ご使用のシステムの更新カタログにエラーが検出されました。後から再試行してください。",
             "fileNotFoundException": "ファイルが見つかりません。"
@@ -2805,6 +2805,8 @@
         "noteDownloadAvailable": "注: 「ダウンロード」をクリックすると、デバイスへのソフトウェアのインストールを許可するように Windows から指示される場合があります。アプリのインストールが完了すると、デスクトップまたは「スタート」メニューに自動的に表示されます。<br /><br />「マイ・ソフトウェア」ページを閉じて Lenovo Vantage の使用を続行できます。インストール中に Lenovo Vantage を閉じないでください。",
         "sizeText": "サイズ",
         "versionText": "バージョン",
+        "redemptionCode": "引き換えコード:",
+        "redeemWebsite": "ベンダーの Web サイトで引き換え",
         "softwareDescription": "ご使用のデバイスで購入したソフトウェアを使用するには、以下の「ダウンロード」をクリックします。ソフトウェアを再度ダウンロードする必要がある場合はいつでも、Vantage メニューの「マイ・ソフトウェア」ボタンをクリックして行うことができます。",
         "title": "マイ・ソフトウェア",
         "loadingDescription": "デバイスの購入に含まれていたソフトウェアのリストを準備しています。少々お待ちください。",

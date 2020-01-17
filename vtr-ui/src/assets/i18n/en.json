@@ -1942,7 +1942,7 @@
             "localRepositoryDatabaseException": "The local repository database could not be found or is corrupted.",
             "networkInterruptedException": "The System Update Server is currently unavailable. Please try again later.",
             "helpCenterInvalidServerException": "The System Update Server is invalid. Please try again later.",
-            "catalogNotFoundException": "There are no applicable updates found for your system.",
+            "catalogNotFoundException": "There are no applicable updates found for your system since the update catalog is not found.",
             "catalogCrcErrorException": "The catalog for your system is currently being updated. Please try again later.",
             "catalogErrorException": "An error was detected with the update catalog for your system on the System Update Server. Please try again later.",
             "fileNotFoundException": "File not found."
