@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT-BESTURINGSELEMENTEN",
                     "less": "MINDER"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Achtergrondverlichting toetsenbord",
+					"description": {
+						"base": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting van het toetsenbord ook wijzigen door op Fn+spatiebalk te drukken.",
+						"auto": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting wijzigen door op Fn+spatiebalk te drukken of door deze op \"Automatisch\" in te stellen. Bij de optie \"Automatisch\" wordt de achtergrondverlichting van het toetsenbord automatisch aan het omgevingslicht aangepast."
+					},
+					"level": {
+						"auto": "Automatisch",
+						"low": "Laag",
+						"high": "Hoog",
+						"off": "Uit"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "Intelligente media",
                 "title": "Schaalverhoging beeldschermresolutie",
-                "desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label> Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Als u deze functie inschakelt, wordt het aanbevolen om de computer op de netvoeding aan te sluiten.</label></p>",
-                "tooltip": "Deze functie werkt alleen op de volgende spelers: <br/> Windows Media player",
+                "desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet in gebruiken in gelijkstroommodus, anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
+                "tooltip": "De functie werkt alleen op:<br>Windows Media player",
                 "note": {
                     "description": "Deze functie werkt niet als:",
-                    "description1": "De computer niet is aangesloten op de netvoeding en de batterij minder dan 20% vermogen heeft.",
-                    "description2": "De computer niet is aangesloten op de netvoeding en de batterijbesparing is ingeschakeld.",
+                    "description1": "De computer is niet aangesloten op de netvoeding.",
+                    "description2": "De spaarstand voor batterijverbruik is ingeschakeld.",
                     "description3": "De CPU-temperatuur te hoog is."
                 }
             },

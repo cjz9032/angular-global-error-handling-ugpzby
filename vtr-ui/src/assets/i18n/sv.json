@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT-KONTROLLER",
                     "less": "MINDRE"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Bakgrundsbelysning för tangentbord",
+					"description": {
+						"base": "Aktivera tangentbordets bakgrundsbelysning om du vill göra det lättare att skriva i mörker eller dåligt ljus. Du kan också ändra inställningarna för tangentbordets bakgrundsbelysning genom att trycka på Fn+Mellanslag.",
+						"auto": "Aktivera tangentbordets bakgrundsbelysning om du vill göra det lättare att skriva i mörker eller dåligt ljus. Du kan ändra inställningarna för bakgrundsbelysningen genom att trycka på Fn+Mellanslag eller ange inställningen till Automatisk. Med alternativet Automatisk anpassas tangentbordets bakgrundsbelysning efter omgivande ljusförhållanden."
+					},
+					"level": {
+						"auto": "Automatisk",
+						"low": "Låg",
+						"high": "Hög",
+						"off": "Av"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "Intelligenta medier",
                 "title": "Öka videoupplösningen",
-                "desc": "<p><label>Med denna funktion kan du förbättra videouppspelningen genom att förbättra upplösningen. Detta är särskilt praktiskt om videon har låg upplösning.</label></p> <p style='margin-top:4px;'><label> Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Vi rekommenderar att du ansluter datorn till nätström när funktionen är aktiverad.</label></p>",
-                "tooltip": "Funktionen fungerar endast på följande spelare: <br/> Windows Media player",
+                "desc": "<p><label>Med denna funktion kan du förbättra videouppspelningen genom att förbättra upplösningen. Detta är särskilt praktiskt om videon har låg upplösning.</label></p> <p style='margin-top:4px;'><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge. Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
+                "tooltip": "Funktionen fungerar endast på:<br>Windows Media player",
                 "note": {
                     "description": "Funktionen fungerar inte när:",
-                    "description1": "datorn inte är ansluten till nätström och batterinivån är lägre än 20 %.",
-                    "description2": "datorn inte är ansluten till nätström och batterisparläget är aktiverat.",
+                    "description1": "Datorn inte är ansluten till nätströmmen.",
+                    "description2": "Batterisparläge är aktiverat.",
                     "description3": "processortemperaturen är för hög."
                 }
             },

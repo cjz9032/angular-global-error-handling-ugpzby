@@ -1604,19 +1604,19 @@
                     "control3": "PARAMÈTRES TRACKPOINT",
                     "less": "MOINS"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Rétro-éclairage du clavier",
+					"description": {
+						"base": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez également modifier les paramètres de rétro-éclairage du clavier en appuyant sur la touche FN+espace.",
+						"auto": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez modifier les paramètres de rétro-éclairage en appuyant sur la touche FN+espace ou le paramétrer sur \"Auto\". L'option \"Auto\" règle automatiquement le rétro-éclairage du clavier en fonction de la lumière ambiante."
+					},
+					"level": {
+						"auto": "Auto",
+						"low": "Faible",
+						"high": "Elevée",
+						"off": "Désactivé"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "Support intelligent",
                 "title": "Mise à l'échelle de la résolution vidéo",
-                "desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label> Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Lorsque cette option est activée, il est recommandé de brancher l'ordinateur à l'alimentation secteur.</label></p>",
-                "tooltip": "Cette fonction s'applique uniquement aux lecteurs suivants : <br/> Windows Media player",
+                "desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu. Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
+                "tooltip": "La fonction fonctionne uniquement sur :<br>Windows Media player",
                 "note": {
                     "description": "Cette fonction est inopérante quand :",
-                    "description1": "L'ordinateur n'est pas branché à l'alimentation secteur et la charge de la batterie est inférieure à 20 %.",
-                    "description2": "L'ordinateur n'est pas branché à l'alimentation secteur et le mode économiseur de batterie est activé.",
+                    "description1": "L'ordinateur n'est pas branché sur une prise secteur.",
+                    "description2": "Le mode d'économie de la batterie est activé.",
                     "description3": "La température de l'unité centrale est trop élevée."
                 }
             },

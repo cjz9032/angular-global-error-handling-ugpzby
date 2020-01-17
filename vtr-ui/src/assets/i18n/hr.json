@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT KONTROLE",
                     "less": "MANJE"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Pozadinsko osvjetljenje tipkovnice",
+					"description": {
+						"base": "Aktivirajte pozadinsko osvjetljenje tipkovnice kako biste olakšali tipkanje u uvjetima tamnog ili slabog svjetla. Također možete promijeniti postavke pozadinskog osvjetljenja tipkovnice pritiskom na tipku Fn+razmak.",
+						"auto": "Aktivirajte pozadinsko osvjetljenje tipkovnice kako biste olakšali tipkanje u uvjetima tamnog ili slabog svjetla. Postavke pozadinskog osvjetljenja možete promijeniti pritiskom tipke Fn+ili je postavite na \"Auto\". Mogućnost \"Auto\" automatski podešava pozadinsko osvjetljenje tipkovnice prema ambijentalnom svjetlu."
+					},
+					"level": {
+						"auto": "Automatski",
+						"low": "Nisko",
+						"high": "Visoko",
+						"off": "Isključeno"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "Inteligentni mediji",
                 "title": "Povećanje razlučivosti videozapisa",
-                "desc": "<p><label>Ova značajka unapređuje iskustvo reprodukcije videozapisa poboljšanjem razlučivosti videozapisa. Posebno je korisna u slučaju niske razlučivosti videozapisa.</label></p> <p style='margin-top:4px;'><label> Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Kad je omogućena, preporučuje se da računalo povežete na napajanje izmjeničnim naponom.</label></p>",
-                "tooltip": "Značajka radi samo na sljedećim reproduktorima videosadržaja: <br/> Windows Media player",
+                "desc": "<p><label>Ova značajka unapređuje iskustvo reprodukcije videozapisa poboljšanjem razlučivosti videozapisa. Posebno je korisna u slučaju niske razlučivosti videozapisa.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu. U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</label></p>",
+                "tooltip": "Značajka radi samo na:<br>Windows Media player",
                 "note": {
                     "description": "Ova značajka ne funkcionira kad:",
-                    "description1": "računalo nije priključeno na napajanje izmjeničnim naponom, a napunjenost baterije je niža od 20%.",
-                    "description2": "računalo nije priključeno na napajanje izmjeničnim naponom, a omogućen je način rada za uštedu baterije.",
+                    "description1": "Računalo nije priključeno na izmjenično napajanje.",
+                    "description2": "Omogućen je način uštede baterije.",
                     "description3": "je temperatura CPU-a previsoka."
                 }
             },
