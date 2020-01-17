@@ -1608,7 +1608,7 @@
 					"title": "Näppäimistön taustavalo",
 					"description": {
 						"base": "Näppäimistön taustavalon käynnistäminen helpottaa kirjoittamista pimeässä tai heikosti valaistuissa olosuhteissa. Voit myös muuttaa näppäimistön taustavalon asetuksia painamalla näppäinyhdistelmää Fn+välilyönti.",
-						"auto": "Näppäimistön taustavalon käynnistäminen helpottaa kirjoittamista pimeässä tai heikosti valaistuissa olosuhteissa. Voit muuttaa taustavalon asetuksia painamalla näppäinyhdistelmää Fn+välilyönti tai asettamalla sen \”Automaattiseksi\”. \"Automaattinen\"-vaihtoehto säätää näppäimistön taustavalon automaattisesti ympäristön valon mukaan."
+						"auto": "Näppäimistön taustavalon käynnistäminen helpottaa kirjoittamista pimeässä tai heikosti valaistuissa olosuhteissa. Voit muuttaa taustavalon asetuksia painamalla näppäinyhdistelmää Fn+välilyönti tai asettamalla sen \"Automaattiseksi\". \"Automaattinen\"-vaihtoehto säätää näppäimistön taustavalon automaattisesti ympäristön valon mukaan."
 					},
 					"level": {
 						"auto": "Automaattinen",
