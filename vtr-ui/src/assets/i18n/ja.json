@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT 制御",
                     "less": "非表示にする"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "キーボードのバックライト",
+					"description": {
+						"base": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を変更することもできます。",
+						"auto": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を「自動」に変更することもできます。「自動」オプションでは、周囲の明るさに応じてキーボードのバックライトが自動的に調整されます。"
+					},
+					"level": {
+						"auto": "自動",
+						"low": "低",
+						"high": "高",
+						"off": "オフ"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "インテリジェント・メディア",
                 "title": "ビデオ解像度のアップスケーリング",
-                "desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label> この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。有効にする場合は、コンピューターを AC 電源に接続することをお勧めします。</label></p>",
-                "tooltip": "この機能は、次のプレイヤーでのみ機能します。<br/> Windows Media player",
+                "desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label>この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。DC モードでは使用しないでください。そうしないと、電力消費が速くなり、バッテリー寿命が短くなります。</label></p>",
+                "tooltip": "この機能は以下でのみ機能します:<br>Windows Media player",
                 "note": {
                     "description": "この機能は次の場合は動作しません。",
-                    "description1": "コンピューターが AC 電源に接続されておらず、バッテリーの電力が 20% 未満の場合。",
-                    "description2": "コンピューターが AC 電源に接続されておらず、バッテリー節約モードが有効の場合。",
+                    "description1": "コンピューターが AC 電源に接続されていない。",
+                    "description2": "バッテリー節約モードが有効になっている。",
                     "description3": "CPU の温度が高すぎる場合。"
                 }
             },

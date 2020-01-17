@@ -1604,19 +1604,19 @@
                     "control3": "KONTROLE ZA TRACKPOINT",
                     "less": "MANJE"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Pozadinsko osvetljenje tastature",
+					"description": {
+						"base": "Aktivno pozadinsko svetlo na tastaturi za lakše kucanje u mraku ili pri lošem osvetljenju. Takođe možete da promenite postavke pozadinskog svetla na tastaturi pritiskom tastera Fn+taster za razmak.",
+						"auto": "Aktivno pozadinsko svetlo na tastaturi za lakše kucanje u mraku ili pri lošem osvetljenju. Postavke pozadinskog svetla možete da promenite pritiskom tastera Fn+taster za razmak ili da ih podesite na \"Automatski\". Opcija \"Automatski\" automatski podešava pozadinsko svetlo na tastaturi u skladu sa ambijentalnim svetlom."
+					},
+					"level": {
+						"auto": "Automatski",
+						"low": "Nisko",
+						"high": "Visoko",
+						"off": "Isključeno"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "Inteligentni mediji",
                 "title": "Poboljšavanje video rezolucije",
-                "desc": "<p><label>Ova funkcija poboljšava doživljaj video reprodukcije tako što poboljšava video rezoluciju. To je posebno korisno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label> Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Kada je omogućena, preporučuje se da računar povežete na napajanje naizmeničnom strujom.</label></p>",
-                "tooltip": "Funkcija funkcioniše samo u sledećim playerima: <br/> Windows Media player",
+                "desc": "<p><label>Ova funkcija poboljšava doživljaj video reprodukcije tako što poboljšava video rezoluciju. To je posebno korisno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Nemojte koristiti u režimu rada na jednosmernu struju. U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.</label></p>",
+                "tooltip": "Ova funkcija radi samo na:<br>Windows Media player",
                 "note": {
                     "description": "Ova funkcija ne radi kada:",
-                    "description1": "Računar nije povezan na napajanje naizmeničnom strujom i baterija je niža od 20%.",
-                    "description2": "Računar nije povezan na napajanje naizmeničnom strujom i omogućen je režim uštede baterije.",
+                    "description1": "Računar nije povezan na naizmeničnu struju.",
+                    "description2": "Omogućen je režim uštede baterije.",
                     "description3": "Temperatura procesora je previsoka."
                 }
             },

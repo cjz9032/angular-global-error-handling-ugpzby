@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT-KONTROLLER",
                     "less": "MINDRE"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Bakgrunnslys for tastaturet",
+					"description": {
+						"base": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom.",
+						"auto": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom eller sette til Automatisk. Alternativet Automatisk justerer automatisk bakgrunnslyset for tastaturet i henhold til omgivelseslyset."
+					},
+					"level": {
+						"auto": "Auto",
+						"low": "Lav",
+						"high": "Høyt",
+						"off": "Av"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "Intelligent medieavspilling",
                 "title": "Oppskalering av videooppløsning",
-                "desc": "<p><label>Denne funksjonen gir en bedre videoopplevelse ved å forbedre oppløsningen på videoen. Den fungerer spesielt bra når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label> Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Når den er aktivert, anbefales det at du kobler datamaskinen til strømnettet.</label></p>",
-                "tooltip": "Funksjonen fungerer bare på disse spillerne: <br/> Windows Media player",
+                "desc": "<p><label>Denne funksjonen gir en bedre videoopplevelse ved å forbedre oppløsningen på videoen. Den fungerer spesielt bra når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus. Ellers vil det øke strømforbruket og forkorte batteriets levetid.</label></p>",
+                "tooltip": "Funksjonen virker bare på:<br>Windows Media player",
                 "note": {
                     "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
-                    "description1": "Datamaskinen er ikke koblet til strømnettet, og batterinivået er lavere enn 20 %.",
-                    "description2": "Datamaskinen er ikke koblet til strømnettet, og batterisparingsmodus er aktivert.",
+                    "description1": "Strømadapteren er ikke tilkoblet datamaskinen.",
+                    "description2": "Batterisparemodus er aktivert.",
                     "description3": "CPU-temperaturen er for høy."
                 }
             },

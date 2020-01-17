@@ -4,6 +4,9 @@ import { Observable, Subject, Subscription } from 'rxjs';
 import { catchError, flatMap, pluck, share, switchMap, takeWhile, tap, throttleTime } from 'rxjs/operators';
 import { BacklightLevelEnum, BacklightStatusEnum } from './backlight.enum';
 import { BacklightLevel, BacklightMode, BacklightStatus } from './backlight.interface';
+import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
+import { CommonService } from '../../../../../../services/common/common.service';
+import { MetricService } from '../../../../../../services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-backlight',
@@ -52,7 +55,9 @@ export class BacklightComponent implements OnInit, OnDestroy {
 	private autoSubscription: Subscription;
 
 	constructor(
-		private backlightService: BacklightService
+		private backlightService: BacklightService,
+		private commonService: CommonService,
+		private metrics: MetricService
 	) {
 	}
 
@@ -81,7 +86,17 @@ export class BacklightComponent implements OnInit, OnDestroy {
 
 		this.setSubscription = this.update$
 			.pipe(
-				switchMap((update) => this.backlightService.setBacklight(update)),
+				tap(update => {
+					const machineFamilyName = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName);
+					const metricsData = {
+						ItemParent: 'Device.MyDeviceSettings',
+						ItemName: 'BacklightIdeapad',
+						ItemParam: {machineFamilyName},
+						ItemValue: update.value
+					};
+					this.metrics.sendMetrics(metricsData);
+				}),
+				switchMap(update => this.backlightService.setBacklight(update)),
 				// Throttle !!!!!!! Cause Common ui component fire two times !!!!!!!!!!!
 				throttleTime(300),
 				catchError((error, caught) => {
@@ -119,6 +134,7 @@ export class BacklightComponent implements OnInit, OnDestroy {
 		if (this.oneLevelSubscription) {
 			this.oneLevelSubscription.unsubscribe();
 		}
+		this.backlightService.clearCache();
 	}
 
 	onToggleOnOff($event) {
