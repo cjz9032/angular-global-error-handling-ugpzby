@@ -644,7 +644,8 @@
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Vprašanja in odgovori za vaš računalnik",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Pametno stanje pripravljenosti",
-                    "description": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
-                    "tooltip": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na razpored, ki ste ga določili, ali čas uporabe računalnika, ki ga beležimo. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
+                    "description": "Ta funkcija nastavi časovni razpored za optimiziranje varčevanja z energijo baterije med neuporabo računalnika, ne da bi to vplivalo na možnost hitrega nadaljevanja delovanja v sklopu <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">sodobnega stanja pripravljenosti</a> med intenzivnejšo uporabo.",
+                    "tooltip": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To obdobje je optimizirano na podlagi nastavljenega časovnega razporeda ali vaše uporabe računalnika. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
                     "timer": {
-                        "heading": "Čas, ko običajno uporabljate računalnik",
+                        "heading": "Ura, ob kateri običajno uporabljate ta računalnik:",
                         "subHeading1": "začeti",
                         "subHeading2": "konec",
                         "subHeading3": "ta urnik uporabi za",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Dan ni izbran"
                     },
                     "checkbox": "Samodejno prilagajanje dejavnega časa računalnika glede na vašo uporabo",
-                    "hyperlinkToGraph": "Kliknite, če si želite ogledati tabelo dejavnosti in dejavnega časa računalnika",
+                    "hyperlinkToGraph": "Kliknite za prikaz uporabe in uporabljeni aktivni čas",
                     "subTitle": "Nastavitev časovnega razporeda delovanja računalnika",
                     "automaticMode": "Samodejni način",
                     "manualMode": "Ročni način",
@@ -1938,7 +1939,7 @@
             "localRepositoryDatabaseException": "Zbirke podatkov lokalne shrambe ni bilo mogoče najti ali pa je poškodovana.",
             "networkInterruptedException": "Strežnik za posodobitev sistema trenutno ni na voljo. Poskusite znova pozneje.",
             "helpCenterInvalidServerException": "Strežnik za posodobitev sistema je neveljaven. Poskusite znova pozneje.",
-            "catalogNotFoundException": "Za sistem ni bilo najdenih nobenih posodobitev.",
+            "catalogNotFoundException": "Ni nobenih ustreznih posodobitev za vaš sistem, ker kataloga posodobitev ni mogoče najti.",
             "catalogCrcErrorException": "Katalog za vaš sistem se trenutno posodablja. Poskusite znova pozneje.",
             "catalogErrorException": "V strežniku za posodobitev sistema je bila zaznana napaka v katalogu posodobitev za vaš sistem. Poskusite znova pozneje.",
             "fileNotFoundException": "Datoteka ni bila najdena."
@@ -2197,7 +2198,8 @@
                 "subtitle": "Miren spanec",
                 "subtitleDescribe": "Povezana domača varnost vam bo poslala opozorilo, če zazna ranljivost v vaši napravi ali domačem omrežju ali če ste povezani z morebitno zlonamerno mrežo. Še več o povezani domači varnosti preberite <tag>tukaj</tag>.",
                 "tryNow": "Preskusite zdaj",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Vnesite kodo povabila",
@@ -2272,7 +2274,8 @@
             "getStarted1": "Kliknite gumb »Odpri SurfEasy« zgoraj, da zaženete SurfEasy VPN.",
             "getStarted2": "Vklopite VPN in počakajte kratek trenutek za potrditev varne povezave.",
             "getStarted3": "Po želji spremenite regijo ali lokacijo in uživajte v varnem, zasebnem mreženju.",
-            "poweredBySurfEasy": "Poganja SurfEasy"
+            "poweredBySurfEasy": "Poganja SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE UPRAVITELJ GESEL",
@@ -2300,7 +2303,8 @@
             "allowsYou2": "Spremljajte temni splet za vaše osebne podatke",
             "allowsYou3": "Ostanite varni na nezavarovanih omrežjih WiFi z vgrajeno v VPN",
             "allowsYou4": "Varno delite gesla, ne da bi jih razkrili",
-            "poweredByDashLane": "Poganja Dashlane"
+            "poweredByDashLane": "Poganja Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2801,6 +2805,8 @@
         "noteDownloadAvailable": "Opomba: ko kliknete »Potrdi in prenesi«, se morda prikaže poziv sistema Windows, da nam dovolite namestitev programske opreme v vašo napravo. Po dokončani namestitvi bodo vaše aplikacije samodejno prikazane na namizju ali v začetnem meniju.<br /><br />Stran Moja programska oprema lahko zaprete in nadaljujete z uporabo Lenovo Vantage. Med namestitvijo ne zapirajte Lenovo Vantage.",
         "sizeText": "Velikost",
         "versionText": "Različica",
+        "redemptionCode": "Koda za prevzem:",
+        "redeemWebsite": "Prevzem na spletnem mestu ponudnika",
         "softwareDescription": "Kliknite spodaj, da uporabite programsko opremo, ki je bila kupljena z vašo napravo. Če tega zdaj ne želite, lahko programsko opremo kadarkoli prenesete tako, da v meniju Lenovo Vantage izberete Moja programska oprema.",
         "title": "Moja programska oprema",
         "loadingDescription": "Počakajte, da pripravimo seznam programske opreme, ki je bila vključena v nakup vaše naprave.",

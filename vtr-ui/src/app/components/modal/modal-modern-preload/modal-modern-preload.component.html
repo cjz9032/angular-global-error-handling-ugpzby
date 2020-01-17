@@ -37,19 +37,22 @@
 					id="modern-preload-app-list"
 					role="list"
 					*ngIf="appList">
-					<div class="col-12 col-md-6 app-item"
+					<div class="col-12 col-lg-6 app-item"
 						*ngFor="let app of appList"
 						id="modern-preload-app-item-{{app.udcId}}"
 						role="listitem">
-						<div class="custom-control custom-checkbox">
+						<div class="custom-control custom-checkbox pl-0">
 							<input type="checkbox"
 								class="custom-control-input"
+								tabindex="-1"
 								[(ngModel)]="app.isChecked"
 								id="modern-preload-app-{{app.udcId}}"
-								[disabled]="modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING"
+								[disabled]="modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || app.isCheckDisabled"
 								attr.aria-label="modern-preload-app-{{app.udcId}}"
 								(change)="checkedApp()" />
 							<label class="custom-control-label"
+								[tabindex]="(modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || app.isCheckDisabled) ? -1 : 0"
+								(keydown.enter)="setAppCheckStatus(app)"
 								for="modern-preload-app-{{app.udcId}}">
 								<div class="app-logo">
 									<img [src]="app.thumbnail" />
@@ -57,69 +60,151 @@
 							</label>
 						</div>
 
-						<div class="item-info"
-							[ngSwitch]="app.showStatus">
+						<div class="item-info">
 							<b>{{ app.title }}</b>
-							<div class="status-box download_available"
-								*ngSwitchCase="statusEnum.NOT_INSTALL">
-								<img class="status-icon"
-									[src]="downloadIconBase64 | sanitize : 'resourceUrl'"
-									alt=""
-									srcset="">
-								<div class="status-text"
-									role="text"
-									id="modern-preload-status-download-available-{{ app.udcId }}"
-									[innerHTML]="'modernPreload.downloadAvailable' | translate"></div>
-							</div>
-							<div class="status-box download_complete"
-								*ngSwitchCase="statusEnum.DOWNLOAD_COMPLETE">
-								<img class="status-icon"
-									[src]="successIconBase64 | sanitize : 'resourceUrl'"
-									alt=""
-									srcset="">
-								<div class="status-text"
-									role="text"
-									id="modern-preload-status-download-complete-{{ app.udcId }}"
-									[innerHTML]="'modernPreload.downloadComplete' | translate"></div>
-							</div>
-							<div class="status-box failed-install"
-								*ngSwitchCase="statusEnum.FAILED_INSTALL">
-								<img class="status-icon"
-									[src]="errorIconBase64 | sanitize : 'resourceUrl'"
-									alt=""
-									srcset="">
-								<div class="status-text"
-									role="text"
-									id="modern-preload-status-failed-install-{{ app.udcId }}"
-									[innerHTML]="'modernPreload.failedInstall' | translate"></div>
-							</div>
-							<div class="status-box installed"
-								*ngSwitchCase="statusEnum.INSTALLED">
-								<img class="status-icon"
-									[src]="successIconBase64 | sanitize : 'resourceUrl'"
-									alt=""
-									srcset="">
-								<div class="status-text"
-									role="text"
-									id="modern-preload-status-installed-{{ app.udcId }}"
-									[innerHTML]="'modernPreload.installed' | translate"></div>
-							</div>
-							<div class="status-box downloading"
-								*ngSwitchCase="statusEnum.DOWNLOADING">
-								<div class="downloading-text"
-									role="text"
-									id="modern-preload-status-downloading-{{ app.udcId }}">{{ app.progress }}% <span
-										[innerHTML]="'modernPreload.downloading' | translate"></span></div>
-								<div class="progress-box w-100">
-									<ngb-progressbar type="success"
-										[value]="app.progress"
-										[height]="'0.8rem'">
-									</ngb-progressbar>
+							<div *ngIf="!app.isCheckDisabled"
+								[ngSwitch]="app.showStatus">
+								<div class="status-box download_available"
+									*ngSwitchCase="statusEnum.NOT_INSTALL">
+									<img class="status-icon"
+										[src]="downloadIconBase64 | sanitize : 'resourceUrl'"
+										alt=""
+										srcset="">
+									<div class="status-text"
+										role="text"
+										id="modern-preload-status-download-available-{{ app.udcId }}"
+										[innerHTML]="'modernPreload.downloadAvailable' | translate"></div>
+								</div>
+								<div class="status-box download_complete"
+									*ngSwitchCase="statusEnum.DOWNLOAD_COMPLETE">
+									<img class="status-icon"
+										[src]="successIconBase64 | sanitize : 'resourceUrl'"
+										alt=""
+										srcset="">
+									<div class="status-text"
+										role="text"
+										id="modern-preload-status-download-complete-{{ app.udcId }}"
+										[innerHTML]="'modernPreload.downloadComplete' | translate"></div>
+								</div>
+								<div class="status-box failed-install"
+									*ngSwitchCase="statusEnum.FAILED_INSTALL">
+									<img class="status-icon"
+										[src]="errorIconBase64 | sanitize : 'resourceUrl'"
+										alt=""
+										srcset="">
+									<div class="status-text"
+										role="text"
+										id="modern-preload-status-failed-install-{{ app.udcId }}"
+										[innerHTML]="'modernPreload.failedInstall' | translate"></div>
+								</div>
+								<div class="status-box installed"
+									*ngSwitchCase="statusEnum.INSTALLED">
+									<img class="status-icon"
+										[src]="successIconBase64 | sanitize : 'resourceUrl'"
+										alt=""
+										srcset="">
+									<div class="status-text"
+										role="text"
+										id="modern-preload-status-installed-{{ app.udcId }}"
+										[innerHTML]="'modernPreload.installed' | translate"></div>
+								</div>
+								<div class="status-box downloading"
+									*ngSwitchCase="statusEnum.DOWNLOADING">
+									<div class="downloading-text"
+										role="text"
+										id="modern-preload-status-downloading-{{ app.udcId }}">{{ app.progress }}% <span
+											[innerHTML]="'modernPreload.downloading' | translate"></span></div>
+									<div class="progress-box w-100">
+										<ngb-progressbar type="success"
+											[value]="app.progress"
+											[height]="'0.8rem'">
+										</ngb-progressbar>
+									</div>
 								</div>
 							</div>
-							<div>{{ app.company }}</div>
-							<div>{{'modernPreload.sizeText' | translate}}: {{ app.size }}</div>
-							<div>{{'modernPreload.versionText' | translate}}: {{ app.version }}</div>
+							<div *ngIf="app.company">{{ app.company }}</div>
+							<div *ngIf="app.size">{{'modernPreload.sizeText' | translate}}: {{ app.size }}</div>
+							<div *ngIf="app.version">{{'modernPreload.versionText' | translate}}: {{ app.version }}
+							</div>
+							<div *ngIf="app.activationCode"
+								class="redemption-code-content mb-3">
+								<div class="text"
+									role="text"
+									id="modern-preload-redemption-code-title-{{app.udcId}}">
+									{{'modernPreload.redemptionCode' | translate}}</div>
+								<div class="code d-flex align-items-center">
+									<div class="redemption-code mr-2 activation-code"
+										role="text"
+										id="modern-preload-redemption-code-{{app.udcId}}"
+										*ngIf="app.isShowActiveCode">
+										{{app.activationCode}}</div>
+									<div class="redemption-code mr-2 hide-characters d-flex flex-wrap"
+										role="text"
+										id="modern-preload-redemption-star-{{app.udcId}}"
+										*ngIf="!app.isShowActiveCode"
+										[innerHTML]="app.hiddenCharacters"></div>
+									<div class="redeem-icon"
+										(click)="setRedeemStatus(app)"
+										(keydown.enter)="setRedeemStatus(app)"
+										role="button"
+										tabindex="0"
+										vtrMetrics
+										metricsItem="ModernPreload.redeemCodeEyeButton"
+										metricsEvent="FeatureClick"
+										metricsParent="Modern Preload"
+										id="modern-preload-button-eye-{{app.udcId}}-{{app.isShowActiveCode}}">
+										<fa-icon *ngIf="app.isShowActiveCode"
+											[icon]="['far', 'eye-slash']"></fa-icon>
+										<fa-icon *ngIf="!app.isShowActiveCode"
+											[icon]="['far', 'eye']"></fa-icon>
+									</div>
+									<div class="redeem-icon"
+										role="button"
+										[tabindex]="app.isShowActiveCode ? 0 : -1"
+										vtrMetrics
+										metricsItem="ModernPreload.redeemCodeCopyButton"
+										metricsEvent="FeatureClick"
+										metricsParent="Modern Preload"
+										#redeemCodeCopy
+										id="modern-preload-button-redeem-code-copy-{{app.udcId}}"
+										ngxClipboard
+										(keydown.enter)="copy(app.activationCode, 'redeemCodeCopy')"
+										[cbContent]="app.activationCode">
+										<fa-icon *ngIf="app.isShowActiveCode"
+											[icon]="['fal', 'copy']"></fa-icon>
+									</div>
+								</div>
+							</div>
+							<div class="redemption-url d-flex align-items-center"
+								*ngIf="app.redemptionURL">
+								<a class="mr-2"
+									[href]="app.redemptionURL"
+									target="_blank"
+									vtrMetrics
+									metricsItem="ModernPreload.redeemWebsiteUrl"
+									metricsEvent="FeatureClick"
+									metricsParent="Modern Preload"
+									id="modern-preload-button-redeem-url-{{app.udcId}}">
+									<fa-icon class="pr-1"
+										[icon]="['fal', 'external-link']"></fa-icon>
+									<span>{{'modernPreload.redeemWebsite' | translate}}</span>
+								</a>
+								<div class="redeem-icon"
+									role="button"
+									tabindex="0"
+									vtrMetrics
+									metricsItem="ModernPreload.redeemWebsiteCopyButton"
+									metricsEvent="FeatureClick"
+									metricsParent="Modern Preload"
+									#redeemUrlCopy
+									id="modern-preload-button-redeem-url-copy-{{app.udcId}}"
+									ngxClipboard
+									(keydown.enter)="copy(app.redemptionURL, 'redeemUrlCopy')"
+									[cbContent]="app.redemptionURL">
+									<fa-icon [icon]="['fal', 'copy']"></fa-icon>
+								</div>
+								<div class="redeem-icon"></div>
+							</div>
 						</div>
 					</div>
 				</div>

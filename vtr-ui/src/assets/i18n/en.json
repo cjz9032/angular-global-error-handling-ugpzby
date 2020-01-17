@@ -1942,7 +1942,7 @@
             "localRepositoryDatabaseException": "The local repository database could not be found or is corrupted.",
             "networkInterruptedException": "The System Update Server is currently unavailable. Please try again later.",
             "helpCenterInvalidServerException": "The System Update Server is invalid. Please try again later.",
-            "catalogNotFoundException": "There are no applicable updates found for your system.",
+            "catalogNotFoundException": "There are no applicable updates found for your system since the update catalog is not found.",
             "catalogCrcErrorException": "The catalog for your system is currently being updated. Please try again later.",
             "catalogErrorException": "An error was detected with the update catalog for your system on the System Update Server. Please try again later.",
             "fileNotFoundException": "File not found."
@@ -3125,6 +3125,8 @@
         "noteDownloadAvailable": "Note: After clicking Download, you may get a prompt from Windows to allow us to install the software on your device. Once finished installing your apps will show up automatically on your desktop or start menu.<br /><br />You may close the My Software page and continue using Lenovo Vantage. Do not close Lenovo Vantage during installation.",
         "sizeText": "Size",
         "versionText": "Version",
+        "redemptionCode": "Redemption code:",
+        "redeemWebsite": "Redeem at vendor website",
         "softwareDescription": "Click download below to redeem software that was purchased with your device. If at any time you need to download your software again, you can do so by clicking the My Software button in the Vantage menu.",
         "title": "My Software",
         "loadingDescription": "Please wait while we prepare a list of the software that was included in the purchase of your device.",
