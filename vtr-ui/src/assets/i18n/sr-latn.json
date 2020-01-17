@@ -1608,7 +1608,7 @@
 					"title": "Pozadinsko osvetljenje tastature",
 					"description": {
 						"base": "Aktivno pozadinsko svetlo na tastaturi za lakše kucanje u mraku ili pri lošem osvetljenju. Takođe možete da promenite postavke pozadinskog svetla na tastaturi pritiskom tastera Fn+taster za razmak.",
-						"auto": "Aktivno pozadinsko svetlo na tastaturi za lakše kucanje u mraku ili pri lošem osvetljenju. Postavke pozadinskog svetla možete da promenite pritiskom tastera Fn+taster za razmak ili da ih podesite na \„Automatski\“. Opcija \„Automatski\“ automatski podešava pozadinsko svetlo na tastaturi u skladu sa ambijentalnim svetlom."
+						"auto": "Aktivno pozadinsko svetlo na tastaturi za lakše kucanje u mraku ili pri lošem osvetljenju. Postavke pozadinskog svetla možete da promenite pritiskom tastera Fn+taster za razmak ili da ih podesite na \"Automatski\". Opcija \"Automatski\" automatski podešava pozadinsko svetlo na tastaturi u skladu sa ambijentalnim svetlom."
 					},
 					"level": {
 						"auto": "Automatski",
