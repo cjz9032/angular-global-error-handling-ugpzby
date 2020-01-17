@@ -238,6 +238,13 @@ export class AppItem {
 	verbose?: string;
 	isChecked?: boolean;
 	showStatus?: number;
+	activationCode?: string;
+	hiddenCharacters?: string;
+	isShowActiveCode?: boolean;
+	redemptionURL?: string;
+	swHomePageURL?: string;
+	licAgreementURL?: string;
+	isCheckDisabled?: boolean;
 }
 
 export enum DownloadButtonStatusEnum {

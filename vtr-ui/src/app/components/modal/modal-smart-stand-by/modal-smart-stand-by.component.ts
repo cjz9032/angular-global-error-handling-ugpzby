@@ -74,11 +74,11 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 
 		const svg = d3.select(element).append('svg')
 			.attr('preserveAspectRatio', 'xMinYMin meet')
-			.attr('viewBox', '0 0 540 140');
+			.attr('viewBox', '0 0 570 140');
 
 		// chart plot area
 		const chart = svg.append('g')
-			.attr('transform', `translate(20 20)`);
+			.attr('transform', `translate(45 20)`);
 		chart.selectAll('g')
 			.data(hours)
 			.enter()
@@ -140,6 +140,7 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 
 	private getActivitiesData() {
 		// this.renderActivityChart(this.chartContainer1, this.activities, this.colors.first);
+		// return;
 		this.powerService.getSmartStandbyPresenceData().then((data: SmartStandbyActivityModel[]) => {
 			if (data && data.length > 0) {
 				this.renderActivityChart(this.chartContainer1, data, this.colors.first);
@@ -153,6 +154,7 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 
 	public getSmartStandbyActiveHours() {
 		// this.renderActivityChart(this.chartContainer2, this.activities, this.colors.second);
+		// return;
 		this.powerService.GetSmartStandbyActiveHours().then((data: SmartStandbyActivityModel[]) => {
 			if (data && data.length > 0) {
 				this.renderActivityChart(this.chartContainer2, data, this.colors.second);
