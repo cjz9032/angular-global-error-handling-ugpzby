@@ -59,6 +59,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private windowsObj: any;
 	private audioClient: any;
 	private audioData: string;
+	private microphoneDevice: any;
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
 
@@ -81,6 +82,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.windowsObj.addEventListener('accesschanged', () => {
 				this.getCameraPrivacyStatus();
 			});
+
+			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
+				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
 		}
 	}
 
@@ -101,6 +105,22 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			}
 		} else {
 			this.initFeatures();
+		}
+
+		if (this.microphoneDevice) {
+			this.microphoneDevice.addEventListener('accesschanged', (args: any) => {
+				console.log(JSON.stringify(args));
+				switch (args.status) {
+					case 1:
+						this.microphoneStatus.permission = true;
+						break;
+					case 2:
+					case 3:
+						this.microphoneStatus.permission = false;
+						break;
+				}
+				
+			});
 		}
 	}
 
@@ -129,6 +149,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.deviceService.stopMicrophoneMonitor();
 		// this.stopEyeCareMonitor();
 
+		if (this.microphoneDevice) {
+			this.microphoneDevice.removeEventListener('accesschanged');
+		}
 	}
 
 	//#region private functions
