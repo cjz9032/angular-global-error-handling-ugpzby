@@ -1604,19 +1604,19 @@
                     "control3": "KONTROLNIKI TRACKPOINT",
                     "less": "MANJ"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Osvetlitev tipkovnice",
+					"description": {
+						"base": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabih svetlobnih pogojih. S tipkama »Fn+preslednica« lahko tudi spremenite nastavitve osvetlitve tipkovnice.",
+						"auto": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabih svetlobnih pogojih. S tipkama »Fn+preslednica« lahko tudi spremenite nastavitve osvetlitve tipkovnice ali pa osvetlitev nastavite na »Samodejno«. Možnost »Samodejno« bo samodejno prilagodila osvetlitev tipkovnice glede na okoljsko svetlobo."
+					},
+					"level": {
+						"auto": "Samodejno",
+						"low": "Nizko",
+						"high": "Visoko",
+						"off": "Izklopljeno"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "Inteligentni mediji",
                 "title": "Povečanje ločljivosti videoposnetkov",
-                "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label> Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Priporočamo, da takrat, ko je omogočena, računalnik priključite na izmenično napajanje.</label></p>",
-                "tooltip": "Funkcija deluje samo s temi predvajalniki: <br/> Windows Media player",
+                "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri baterijskem napajanju, sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
+                "tooltip": "Funkcija deluje samo v:<br>Windows Media player",
                 "note": {
                     "description": "Ta funkcija ne deluje v naslednjih primerih:",
-                    "description1": "Računalnik ni priključen na izmenično napajanje in baterija je manj kot 20 % napolnjena.",
-                    "description2": "Računalnik ni priključen na izmenično napajanje in omogočen je način varčevanja z baterijo.",
+                    "description1": "Računalnik ni priključen na omrežni vir napajanja.",
+                    "description2": "Omogočen je način za varčevanje z energijo baterije.",
                     "description3": "Temperatura CPE je previsoka."
                 }
             },

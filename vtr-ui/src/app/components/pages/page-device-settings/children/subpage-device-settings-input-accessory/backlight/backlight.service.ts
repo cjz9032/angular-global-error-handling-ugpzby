@@ -42,6 +42,10 @@ export class BacklightService {
 		this.cache$ = null;
 	}
 
+	clearCache() {
+		this.cache$ = null;
+	}
+
 	setBacklight(mode: BacklightMode) {
 		return from(this.backlightFeature.setBacklight({
 			settingList: {

@@ -1604,19 +1604,19 @@
                     "control3": "CONTROLLI TRACKPOINT",
                     "less": "MENO"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Retroilluminazione tastiera",
+					"description": {
+						"base": "Attiva la retroilluminazione della tastiera per facilitare la digitazione in condizioni di scarsa illuminazione. È inoltre possibile modificare le impostazioni della retroilluminazione della tastiera premendo il tasto Fn+Barra spaziatrice.",
+						"auto": "Attiva la retroilluminazione della tastiera per facilitare la digitazione in condizioni di scarsa illuminazione. È inoltre possibile modificare le impostazioni della retroilluminazione premendo il tasto Fn+Barra spaziatrice o impostarla su \"Auto\". L'opzione \"Auto\" regola automaticamente la retroilluminazione della tastiera in base alla luce ambientale."
+					},
+					"level": {
+						"auto": "Automatico",
+						"low": "Basso",
+						"high": "Alto",
+						"off": "Disattivato"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "Supporti intelligenti",
                 "title": "Upscaling della risoluzione video",
-                "desc": "<p><label>Questa funzione migliora l'esperienza di riproduzione dei video, aumentandone la risoluzione. Risulta particolarmente efficiente con i video in bassa risoluzione.</label></p> <p style='margin-top:4px;'><label> Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Se abilitata, si consiglia di collegare il computer all'alimentazione CA.</label></p>",
-                "tooltip": "La funzione può essere utilizzata solo sui seguenti lettori: <br/> Windows Media player",
+                "desc": "<p><label>Questa funzione migliora l'esperienza di riproduzione dei video, aumentandone la risoluzione. Risulta particolarmente efficiente con i video in bassa risoluzione.</label></p> <p style='margin-top:4px;'><label>Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC, altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.</label></p>",
+                "tooltip": "La funzione funziona solo su:<br>Windows Media player",
                 "note": {
                     "description": "Questa funzione non può essere utilizzata quando:",
-                    "description1": "Il computer non è collegato all'alimentazione CA e l'alimentazione della batteria è inferiore al 20%.",
-                    "description2": "Il computer non è collegato all'alimentazione CA ed è abilitata la modalità di risparmio batteria.",
+                    "description1": "Il computer non è collegato all'alimentazione CA.",
+                    "description2": "La modalità di risparmio della batteria è abilitata.",
                     "description3": "La temperatura della CPU è elevata."
                 }
             },
