@@ -486,20 +486,20 @@ export class ConfigService {
 
 	showWifiMenu(wifiIsSupport: boolean): Promise<any> {
 		return new Promise((resolve) => {
-			this.updateWifiMenu(this.menu, wifiIsSupport);
-			this.updateWifiMenu(this.menuBySegment.commercial, wifiIsSupport);
-			this.updateWifiMenu(this.menuBySegment.consumer, wifiIsSupport);
-			this.updateWifiMenu(this.menuBySegment.smb, wifiIsSupport);
+			this.updateWifiMenu(this.menu, wifiIsSupport, this.activeSegment);
+			this.updateWifiMenu(this.menuBySegment.commercial, wifiIsSupport, this.activeSegment);
+			this.updateWifiMenu(this.menuBySegment.consumer, wifiIsSupport, this.activeSegment);
+			this.updateWifiMenu(this.menuBySegment.smb, wifiIsSupport, this.activeSegment);
 			return resolve(this.menu);
 		});
 	}
 
-	updateWifiMenu(menu, wifiIsSupport) {
+	updateWifiMenu(menu, wifiIsSupport, segment) {
 		const securityItem = menu.find((item) => item.id === 'security');
 		if (menu.find((item) => item.id === 'wifi-security')
 			|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
 			this.supportFilter(menu, 'wifi-security', wifiIsSupport);
-		} else if (wifiIsSupport && !this.deviceService.isSMode && !this.deviceService.isArm) {
+		} else if (wifiIsSupport && !this.deviceService.isSMode && !this.deviceService.isArm && segment !== SegmentConst.Gaming) {
 			if (securityItem && securityItem.subitems) {
 				const wifiItem = this.menuItems.find((item) => item.id === 'security').subitems.find((item) => item.id === 'wifi-security');
 				securityItem.subitems.splice(3, 0, wifiItem);
