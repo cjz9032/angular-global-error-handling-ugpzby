@@ -317,6 +317,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.initCameraSection();
 		this.getOLEDPowerControlCapability();
+		this.getPriorityControlCapability();
+		this.getPriorityControlSetting();
 		setTimeout(() => {
 			this.initEyecaremodeSettings();
 			this.startEyeCareMonitor();
@@ -1214,14 +1216,59 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 
 	//#region Display Priority Control
 
-	private getDisplayPriorityCapability() {
+	private getPriorityControlCapability() {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.getPriorityControlCapability()
+					.then((result: any) => {
+						this.logger.debug('SubpageDeviceSettingsDisplayComponent:getPriorityControlCapability.then', result);
 
+					}).catch(error => {
+						this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlCapability', error.message);
+
+					});
+			}
+		} catch (error) {
+			this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlCapability', error.message);
+			return EMPTY;
+		}
+	 }
+
+	 public getPriorityControlSetting() {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.getPriorityControlSetting()
+					.then((result: string) => {
+						this.logger.debug('SubpageDeviceSettingsDisplayComponent:getPriorityControlSetting.then', result);
+						this.displayPriorityModal.selectedValue = result;
+					}).catch(error => {
+						this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlSetting', error.message);
+
+					});
+			}
+		} catch (error) {
+			this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlSetting', error.message);
+			return EMPTY;
+		}
 	}
 
-	public setDisplayPriorityCapability(option: string) {
-		this.logger.debug('SubpageDeviceSettingsDisplayComponent.setDisplayPriorityCapability.then', option);
-		this.displayPriorityModal.selectedValue = option;
-	}
+	public setPriorityControlSetting(option: string) {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.setPriorityControlSetting(option)
+					.then((result: boolean) => {
+						this.logger.debug('SubpageDeviceSettingsDisplayComponent:setPriorityControlSetting.then', result);
+						this.displayPriorityModal.selectedValue = option;
+					}).catch(error => {
+						this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlCapability', error.message);
+
+					});
+			}
+		} catch (error) {
+			this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlCapability', error.message);
+			return EMPTY;
+		}
+ 	}
 
 	//#endregion
 

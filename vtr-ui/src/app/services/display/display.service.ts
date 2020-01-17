@@ -12,6 +12,7 @@ export class DisplayService {
 	private cameraSettings: any;
 	private privacyGuardSettings: any;
 	private oledSettings: any;
+	private priorityControl: any;
 	public isShellAvailable = false;
 	@Output() windowResize: EventEmitter<any> = new EventEmitter();
 
@@ -44,6 +45,11 @@ export class DisplayService {
 
 		this.oledSettings = shellService.getOledSettings();
 		if (this.oledSettings) {
+			this.isShellAvailable = true;
+		}
+
+		this.priorityControl = shellService.getPriorityControl();
+		if (this.priorityControl) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -414,5 +420,26 @@ export class DisplayService {
 
 	getWhiteListCapability(): Promise<WhiteListCapability> {
 		return this.displayEyeCareMode.getWhiteListCapability();
+	}
+
+	public getPriorityControlCapability(): Promise<any> {
+		if (this.priorityControl) {
+			return this.priorityControl.GetCapability();
+		}
+		return undefined;
+	}
+
+	public getPriorityControlSetting(): Promise<string> {
+		if (this.priorityControl) {
+			return this.priorityControl.GetPriorityControlSetting();
+		}
+		return undefined;
+	}
+
+	public setPriorityControlSetting(value: string): Promise<boolean> {
+		if (this.priorityControl) {
+			return this.priorityControl.SetPriorityControlSetting(value);
+		}
+		return undefined;
 	}
 }
