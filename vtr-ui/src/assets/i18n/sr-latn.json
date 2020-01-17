@@ -1777,7 +1777,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Poboljšavanje video rezolucije",
                 "desc": "<p><label>Ova funkcija poboljšava doživljaj video reprodukcije tako što poboljšava video rezoluciju. To je posebno korisno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Nemojte koristiti u režimu rada na jednosmernu struju. U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.</label></p>",
-                "tooltip": "Ova funkcija radi samo na:<br/> Windows Media player",
+                "tooltip": "Ova funkcija radi samo na:<br>Windows Media player",
                 "note": {
                     "description": "Ova funkcija ne radi kada:",
                     "description1": "Računar nije povezan na naizmeničnu struju.",

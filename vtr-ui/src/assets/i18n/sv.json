@@ -1777,7 +1777,7 @@
                 "heading": "Intelligenta medier",
                 "title": "Öka videoupplösningen",
                 "desc": "<p><label>Med denna funktion kan du förbättra videouppspelningen genom att förbättra upplösningen. Detta är särskilt praktiskt om videon har låg upplösning.</label></p> <p style='margin-top:4px;'><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge. Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
-                "tooltip": "Funktionen fungerar endast på:<br/> Windows Media player",
+                "tooltip": "Funktionen fungerar endast på:<br>Windows Media player",
                 "note": {
                     "description": "Funktionen fungerar inte när:",
                     "description1": "Datorn inte är ansluten till nätströmmen.",

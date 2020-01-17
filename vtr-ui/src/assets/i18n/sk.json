@@ -1777,7 +1777,7 @@
                 "heading": "Inteligentné médiá",
                 "title": "Zvýšenie rozlíšenia videa",
                 "desc": "<p><label>Táto funkcia zlepšuje zážitok z prehrávania videa zvýšením rozlíšenia videa. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu. V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
-                "tooltip": "Táto funkcia funguje iba na:<br/> Windows Media player",
+                "tooltip": "Táto funkcia funguje iba na:<br>Windows Media player",
                 "note": {
                     "description": "Funkcia nefunguje v týchto prípadoch:",
                     "description1": "Počítač nie je pripojený k napájaciemu adaptéru.",

@@ -1777,7 +1777,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Povečanje ločljivosti videoposnetkov",
                 "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri baterijskem napajanju, sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
-                "tooltip": "Funkcija deluje samo v:<br/> Windows Media player",
+                "tooltip": "Funkcija deluje samo v:<br>Windows Media player",
                 "note": {
                     "description": "Ta funkcija ne deluje v naslednjih primerih:",
                     "description1": "Računalnik ni priključen na omrežni vir napajanja.",

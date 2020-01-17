@@ -1777,7 +1777,7 @@
                 "heading": "Inteligentní média",
                 "title": "Zvýšení rozlišení videa",
                 "desc": "<p><label>Tato funkce zvyšuje zážitek z přehrávání videa zlepšením rozlišení videa. Funguje zejména v případě, že je video ve špatném rozlišení.</label></p> <p style='margin-top:4px;'><label>Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. V režimu DC ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.</label></p>",
-                "tooltip": "Tato funkce funguje pouze na:<br/> Windows Media player",
+                "tooltip": "Tato funkce funguje pouze na:<br>Windows Media player",
                 "note": {
                     "description": "Tato funkce nepracuje v následujících případech:",
                     "description1": "Počítač není připojen k napájení.",

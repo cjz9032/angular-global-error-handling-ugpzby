@@ -1780,7 +1780,7 @@
                 "heading": "Intelligent Media",
                 "title": "Video Resolution Upscaling",
                 "desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution. It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label>This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode. Otherwise, it will speed up the power consumption and shorten the battery life.</label></p>",
-                "tooltip": "The feature works only on:<br/> Windows Media player",
+                "tooltip": "The feature works only on:<br>Windows Media player",
                 "note": {
                     "description": "The feature does not work when:",
                     "description1": "The computer is not connected to ac power.",

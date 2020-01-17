@@ -1777,7 +1777,7 @@
                 "heading": "Support intelligent",
                 "title": "Mise à l'échelle de la résolution vidéo",
                 "desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu. Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
-                "tooltip": "La fonction fonctionne uniquement sur :<br/> Windows Media player",
+                "tooltip": "La fonction fonctionne uniquement sur :<br>Windows Media player",
                 "note": {
                     "description": "Cette fonction est inopérante quand :",
                     "description1": "L'ordinateur n'est pas branché sur une prise secteur.",

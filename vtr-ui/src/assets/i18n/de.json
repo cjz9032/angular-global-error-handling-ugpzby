@@ -1777,7 +1777,7 @@
                 "heading": "Intelligente Medien",
                 "title": "Upscaling der Videoauflösung",
                 "desc": "<p><label>Mit dieser Funktion wird die Videowiedergabe durch Verbesserung der Videoauflösung verbessert, insbesondere bei Videos mit schlechter Auflösung.</label></p> <p style='margin-top:4px;'><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus. Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
-                "tooltip": "Die Funktion funktioniert nur für:<br/> Windows Media player",
+                "tooltip": "Die Funktion funktioniert nur für:<br>Windows Media player",
                 "note": {
                     "description": "Diese Funktion funktioniert nicht, wenn:",
                     "description1": "Der Computer ist nicht an Netzstrom (Wechselstrom) angeschlossen.",

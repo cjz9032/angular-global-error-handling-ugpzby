@@ -1777,7 +1777,7 @@
                 "heading": "智能媒体",
                 "title": "提高视频分辨率",
                 "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放体验。尤其在视频分辨率较低时，此功能十分有效。</label></p> <p style='margin-top:4px;'><label>此功能可能会影响电池寿命、电池温度并产生噪音。请不要在直流电模式下使用。否则，会加快耗电速度并缩短电池寿命。</label></p>",
-                "tooltip": "此功能仅适用于：<br/> Windows Media player",
+                "tooltip": "此功能仅适用于：<br>Windows Media player",
                 "note": {
                     "description": "此功能在以下情况下无效：",
                     "description1": "计算机未连接到交流电源。",

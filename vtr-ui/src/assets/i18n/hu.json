@@ -1777,7 +1777,7 @@
                 "heading": "Intelligens média",
                 "title": "Videófelbontás megnövelése",
                 "desc": "<p><label>Ez a szolgáltatás fokozza a videó lejátszásának élményét azáltal, hogy javítja a videófelbontást. Különösen akkor működik, ha a videó rossz felbontású.</label></p> <p style='margin-top:4px;'><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Kérjük, ne használja DC üzemmódban. Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
-                "tooltip": "Ez a funkció csak a következőkön működik:<br/> Windows Media player",
+                "tooltip": "Ez a funkció csak a következőkön működik:<br>Windows Media player",
                 "note": {
                     "description": "A funkció az alábbi esetekben nem működik:",
                     "description1": "A számítógép nem csatlakozik a hálózati tápellátáshoz.",

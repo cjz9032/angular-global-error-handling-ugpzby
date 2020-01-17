@@ -1777,7 +1777,7 @@
                 "heading": "Intelligente media",
                 "title": "Schaalverhoging beeldschermresolutie",
                 "desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet in gebruiken in gelijkstroommodus, anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
-                "tooltip": "De functie werkt alleen op:<br/> Windows Media player",
+                "tooltip": "De functie werkt alleen op:<br>Windows Media player",
                 "note": {
                     "description": "Deze functie werkt niet als:",
                     "description1": "De computer is niet aangesloten op de netvoeding.",
