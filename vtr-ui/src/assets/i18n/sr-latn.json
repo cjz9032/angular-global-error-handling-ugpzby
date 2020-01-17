@@ -644,7 +644,8 @@
             "registered": "REGISTROVAN",
             "notRegistered": "NIJE REGISTROVAN",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "Hej! Novija verzija programa Vantage je raspoloživa, želite li da ga učitate?"
+        },
+        "offline": {
+            "connectToUseFeature": "Povežite se sa internetom da biste koristili ovu funkciju"
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "Pružite povratne informacije",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Komentari...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Hvala nam na povratnim informacijama!"
-                },
                 "question1": "Da li vam se dopada novi stil Vantage-a?",
                 "question2": "Da li mislite da je učinak prihvatljiv?",
                 "question3": "Da li ćete u budućnosti češće koristiti aplikaciju?",
+                "question4": "Da li ste znali da možete da koristite Lenovo Vantage za ažuriranje softverskih upravljačkih programa, firmvera i sistema BIOS na vašem računaru?",
+                "question5": "Koliko je verovatno da ćete preporučiti aplikaciju Lenovo Vantage prijatelju ili kolegi?",
+                "notAtAllLikely": "Uopšte nije verovatno",
+                "extremelyLikely": "Izuzetno verovatno",
                 "yes": "Da",
                 "no": "Ne",
                 "tips1": "Ostavite dodatne komentare",
+                "comments": "Komentari...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Pošaljite povratne informacije",
-                "submitScreenShot": "Pošaljite snimak ekrana"
+                "submitScreenShot": "Pošaljite snimak ekrana",
+                "messages": {
+                    "feedbackSuccess": "Hvala nam na povratnim informacijama!"
+                }
             }
         },
         "quickSettings": {
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Pametno stanje pripravnosti",
-                    "description": "Ova funkcija zakazuje optimizaciju štednje energije računara tokom časova neaktivnosti bez žrtvovanja vremena brzog pokretanja tokom časova intenzivnijeg korišćenja.",
-                    "tooltip": "Kad je omogućena funkcija Pametno vreme pripravnosti, računar se prebacuje na funkciju Moderno vreme pripravnosti pre zakazanog vremena POČETKA i ulazi u hibernaciju nakon što neko vreme bude neaktivan a napaja se na bateriju. Ovaj period se optimizuje na osnovu rasporeda koji ste podesili ili vremena korišćenja računara koje dobijemo. Računar prelazi iz hibernacije u Moderno stanje pripravnosti samo zakazanim danima i ne prelazi kada je neaktivan nekoliko uzastopnih zakazanih dana.",
+                    "description": "Ova funkcija zakazuje optimizovanje uštede baterije dok je računar u stanju mirovanja, a da se, pritom, ne žrtvuje brzo vraćanje opcije <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> (Moderno čekanje) tokom perioda intenzivnijeg korišćenja.",
+                    "tooltip": "Kad je omogućena funkcija Pametno vreme pripravnosti, računar se prebacuje na funkciju Moderno vreme pripravnosti pre zakazanog vremena POČETKA i ulazi u hibernaciju nakon što neko vreme bude neaktivan a napaja se na bateriju. Ovo vremenski period je optimizovan na osnovu rasporeda koji ste postavili ili na osnovu korišćenja računara. Računar prelazi iz hibernacije u Moderno stanje pripravnosti samo zakazanim danima i ne prelazi kada je neaktivan nekoliko uzastopnih zakazanih dana.",
                     "timer": {
-                        "heading": "Vreme kada obično koristite računar",
+                        "heading": "Vreme kada obično koristite ovaj računar:",
                         "subHeading1": "započnete",
                         "subHeading2": "završetak",
                         "subHeading3": "koristite ovaj raspored za",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "Nije izabran nijedan dan"
                     },
                     "checkbox": "Automatsko podešavanje aktivnog vremena računara na osnovu vašeg korišćenja",
-                    "hyperlinkToGraph": "Kliknite da biste videli aktivnost i aktivno vreme računarske tabele",
+                    "hyperlinkToGraph": "Kliknite da biste videli vreme korišćenje i primenjeno aktivno vreme",
                     "subTitle": "Zakazivanje rada računara",
                     "automaticMode": "Automatski režim",
                     "manualMode": "Ručni režim",
@@ -1370,6 +1378,17 @@
                         "taskBarDimmer": "SMANJENJE NIVOA SVETLOSTI TRAKE ZADATAKA",
                         "backgroundDimmer": "SMANJENJE NIVOA SVETLOSTI PROZORA U POZADINI",
                         "displayDimmer": "ZATAMNJENJE EKRANA"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Zamena tastera Fn i Ctrl",
                     "description": "Ako četo pritiskate taster Fn kada nameravate da pritisnete taster Ctrl, možete da zamenite funkcije ova dva tastera.",
-                    "restartNote": "Premeštanje funkcije dva tastera zahteva od vas da ponovo pokrenete računar. Želite li zaista da ponovo pokrenete?"
+                    "restartNote": "Premeštanje funkcije dva tastera zahteva od vas da ponovo pokrenete računar. Želite li zaista da ponovo pokrenete?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "VIŠE",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "Baza podataka lokalnog spremišta nije pronađena ili je oštećena.",
             "networkInterruptedException": "Server za ažuriranje sistema trenutno nije dostupan. Pokušajte ponovo kasnije.",
             "helpCenterInvalidServerException": "Server za ažuriranje sistema je neispravan. Pokušajte ponovo kasnije.",
-            "catalogNotFoundException": "Nema pronađenih primenljivih ažuriranja za vaš sistem.",
+            "catalogNotFoundException": "Nema pronađenih primenljivih ažuriranja za vaš sistem jer nije pronađen katalog ažuriranja.",
             "catalogCrcErrorException": "Katalog za vas sistem se trenutno ažurira. Pokušajte ponovo kasnije.",
             "catalogErrorException": "Otkrivena je greška u katalogu ažuriranja za vaš sistem na serveru za ažuriranje sistema. Pokušajte ponovo kasnije.",
             "fileNotFoundException": "Datoteka nije pronađena."
@@ -1890,7 +1962,7 @@
             "startDate": "Datum početka: ",
             "endDate": "Datum isteka: ",
             "status": "Status: ",
-            "subDescription1": "Ovaj proizvod ima godišnje ograničenu garanciju i ima pravo na uslugu popravke u servisu. Korisnici mogu nazvati svoj lokalni servisni centar za više informacija. Prodavci mogu da pruže uslugu popravke za ovaj proizvod ako ga prime u svojim prostorijama.",
+            "subDescription1": "Lenovo ograničena garancija se odnosi na vaš računar i ima pravo na uslugu skladištenja. Korisnici mogu nazvati svoj lokalni servisni centar za više informacija. Prodavci mogu da pruže uslugu popravke za ovaj proizvod ako ga prime u svojim prostorijama.",
             "subDescription2": "Nismo uspeli da lociramo detalje garancije za vaš uređaj. Za više opcija garancije posetite našu veb lokaciju za podršku.",
             "viewWarrantyOptions": "PREGLED OPCIJA GARANCIJE",
             "offlineTips1": "Povežite se na internet radi najnovijih informacija o garanciji.",
@@ -1975,7 +2047,7 @@
             "visitHde": "Otvorite stavku Šifrovanje hard diska",
             "haveOwnPassword": "Imam svoj menadžer za lozinke",
             "haveOwnWifi": "Imam svoju wi-fi bezbednost",
-            "haveOwnVpn": "Imam svoju VPN bezbednost",
+            "haveOwnVpn": "Imam svoj VPN",
             "uac": "Kontrola korisničkog naloga (UAC)",
             "uacTitles": "Kontrola korisničkog naloga",
             "hde": "Šifrovanje hard diska",
@@ -2091,7 +2163,8 @@
                 "showmore": "Prikaži više",
                 "showless": "Prikaži manje",
                 "button": "Omogući WiFi bezbednost",
-                "disableDecribe": "Lenovo WiFi bezbednost je napredna softverska usluga zasnovana na oblaku koja pomaže vašem uređaju da razlikuje bezbedne bežične mreže od potencijalno zlonamernih."
+                "disableDescribe": "Lenovo WiFi bezbednost je napredna softverska usluga zasnovana na oblaku koja pomaže vašem uređaju da razlikuje bezbedne bežične mreže od potencijalno zlonamernih.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Koristite detektor pretnji za utvrđivanje bezbednosti mreža oko vas.",
@@ -2125,7 +2198,8 @@
                 "subtitle": "Postizanje sigurnosti",
                 "subtitleDescribe": "Povezana kućna bezbednost će vam poslati obaveštenje ako otkrije ranjivost u uređaju ili kućnoj mreži ili ako ste povezani sa potencijalno zlonamernom mrežom. Saznajte još više o povezanoj kućnoj bezbednosti <tag>ovde</tag>.",
                 "tryNow": "Isprobajte odmah",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Unesite kôd poziva",
@@ -2200,7 +2274,8 @@
             "getStarted1": "Kliknite iznad na dugme „Otvori SurfEasy“ da biste pokrenuli SurfEasy VPN.",
             "getStarted2": "Uključite VPN i pričekajte trenutak za potvrdu bezbedne veze.",
             "getStarted3": "Promenite region ili lokaciju ako želite i uživajte u bezbednom, privatnom umrežavanju.",
-            "poweredBySurfEasy": "Obezbeđuje SurfEasy"
+            "poweredBySurfEasy": "Obezbeđuje SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE UPRAVLJAČ LOZINKAMA",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "Pratite postoje li vaše lične informacije na mračnom internetu",
             "allowsYou3": "Budite bezbedni na nebezbednim WiFi mrežama sa ugrađenim VPN-om",
             "allowsYou4": "Bezbedno delite lozinke bez njihovog otkrivanja",
-            "poweredByDashLane": "Obezbeđuje Dashlane"
+            "poweredByDashLane": "Obezbeđuje Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "Pošaljite anonimno podatke o uređaju kako biste nam pomogli da poboljšamo kvalitet, pouzdanost i sledeću generaciju uređaja.",
         "userProfile": "Korisnički profil",
         "Note": "Napomena: ",
-        "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju.",
+        "settingsNotes": "Ponovo pokrenite ovu aplikaciju kako biste bili sigurni da su sve promene stupile na snagu.",
         "betaSettingTitle": "Beta program",
         "betaProgram": "Beta Program",
         "betaSettingDescription": "Isprobajte najnovije funkcije na kojima radimo."
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "Napomena: Kada kliknete na dugme „Preuzmi“, možda ćete dobiti odziv operativnog sistema Windows da biste nam dozvolili da instaliramo softver na uređaju. Kada završite sa instalacijom, aplikacije će se automatski prikazati na radnoj površini ili meniju „Start“.<br /><br />Možete da zatvorite stranicu „Moj softver“ i da nastavite sa korišćenjem proizvoda Lenovo Vantage. Nemojte zatvarati Lenovo Vantage tokom instalacije.",
         "sizeText": "Veličina",
         "versionText": "Verzija",
+        "redemptionCode": "Kôd za otkup proizvoda:",
+        "redeemWebsite": "Preuzmite na veb lokaciji distributera",
         "softwareDescription": "Kliknite na „Preuzmi“ ispod kako biste preuzeli softver koji ste kupili zajedno sa uređajem. Ako u bilo kom trenutku treba ponovo da preuzmete softver, možete to da učinite tako što ćete kliknuti na dugme „Moj softver“ u meniju Vantage.",
         "title": "Moj softver",
         "loadingDescription": "Sačekajte da pripremimo listu softvera koji je bio uključen prilikom kupovine vašeg uređaja.",

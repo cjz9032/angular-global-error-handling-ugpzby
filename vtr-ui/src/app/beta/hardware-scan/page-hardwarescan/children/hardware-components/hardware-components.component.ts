@@ -35,8 +35,6 @@ const ViewResultsButton = 'ViewResults'
 
 export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
-	public viewResultsText = this.translate.instant('hardwareScan.viewResults');
-	public refreshText = this.translate.instant('hardwareScan.refreshModule');
 	public viewResultsPath = '';
 	public resultItems: any;
 	public hardwareTitle = '';
@@ -338,6 +336,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.progress = 0;
 		
 		this.currentTaskStep = TaskStep.Run;
+
+		this.hardwareScanService.setCurrentTaskStep(TaskStep.Run);
 
 		this.hardwareScanService.setCurrentTaskStep(TaskStep.Run);
 
@@ -741,6 +741,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.isScanDone = true;
 	}
 	
+
 
 
 

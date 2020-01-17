@@ -644,7 +644,8 @@
             "registered": "REGISTADO",
             "notRegistered": "NÃO REGISTADO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Q & A para sua máquina",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "Olá! Está disponível uma versão mais recente do Vantage, pretende carregá-la?"
+        },
+        "offline": {
+            "connectToUseFeature": "Ligue-se à Internet para utilizar esta funcionalidade"
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "Fornecer comentários",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comentários...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Agradecemos os seus comentários!"
-                },
                 "question1": "Gosta do novo estilo do Vantage?",
                 "question2": "Acha que o desempenho é aceitável?",
                 "question3": "Utilizaria a aplicação mais frequentemente no futuro?",
+                "question4": "Sabia que pode utilizar o Lenovo Vantage para atualizar os controladores de software, o firmware e o BIOS no seu computador?",
+                "question5": "Qual a probabilidade de recomendar a aplicação Lenovo Vantage a um amigo ou colega?",
+                "notAtAllLikely": "Nada provável",
+                "extremelyLikely": "Extremamente provável",
                 "yes": "Sim",
                 "no": "Não",
                 "tips1": "Forneça quaisquer comentários adicionais",
+                "comments": "Comentários...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Enviar comentários",
-                "submitScreenShot": "Enviar captura de ecrã"
+                "submitScreenShot": "Enviar captura de ecrã",
+                "messages": {
+                    "feedbackSuccess": "Agradecemos os seus comentários!"
+                }
             }
         },
         "quickSettings": {
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Modo de Suspensão Inteligente",
-                    "description": "Esta funcionalidade programa a otimização da poupança de energia da bateria do computador durante períodos de inatividade sem prejudicar um tempo de arranque rápido durante horas de utilização mais intensa.",
-                    "tooltip": "Quando o Modo de Suspensão Inteligente está ativado, o computador muda para o Modo de Suspensão Moderno antes da hora de INÍCIO agendada e entra em hibernação quando estiver inativo durante um determinado período de tempo quando alimentado pela bateria. Este período de tempo é otimizado com base no agendamento definido ou no tempo de utilização do computador obtido. O computador muda do modo de hibernação para o Modo de Suspensão Moderno apenas em dias agendados e não muda quando está inativo por dias agendados consecutivos.",
+                    "description": "Esta funcionalidade programa a otimização da poupança de energia da bateria do computador durante os períodos de inatividade sem sacrificar a experiência de retoma rápida a partir do <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modo de Suspensão Moderno</a> durante os horários de utilização intensiva.",
+                    "tooltip": "Quando o Modo de Suspensão Inteligente está ativado, o computador muda para o Modo de Suspensão Moderno antes da hora de INÍCIO agendada e entra em hibernação quando estiver inativo durante um determinado período de tempo quando alimentado pela bateria. Este período é otimizado com base no agendamento definido ou na utilização do computador. O computador muda do modo de hibernação para o Modo de Suspensão Moderno apenas em dias agendados e não muda quando está inativo por dias agendados consecutivos.",
                     "timer": {
-                        "heading": "A hora em que geralmente utiliza o computador",
+                        "heading": "A hora a que normalmente utiliza este computador:",
                         "subHeading1": "comece",
                         "subHeading2": "fim",
                         "subHeading3": "utilizar este agendamento para",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "Nenhum dia selecionado"
                     },
                     "checkbox": "Ajustar automaticamente o tempo ativo do computador com base na utilização",
-                    "hyperlinkToGraph": "Clique para ver a atividade e o tempo ativo da tabela do computador",
+                    "hyperlinkToGraph": "Clique para ver a utilização e o tempo ativo aplicado",
                     "subTitle": "Programe o seu computador",
                     "automaticMode": "Modo automático",
                     "manualMode": "Modo manual",
@@ -1370,6 +1378,17 @@
                         "taskBarDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DA BARRA DE TAREFAS",
                         "backgroundDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DE SEGUNDO PLANO",
                         "displayDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DO ECRÃ"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Troca das teclas Fn e Ctrl",
                     "description": "Se prime habitualmente a tecla Fn quando pretende premir a tecla Ctrl, pode trocar a função das duas teclas.",
-                    "restartNote": "Trocar a função de duas teclas requer que o computador seja reiniciado. Tem a certeza de que pretende reiniciar?"
+                    "restartNote": "Trocar a função de duas teclas requer que o computador seja reiniciado. Tem a certeza de que pretende reiniciar?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "MAIS",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "Não foi possível encontrar a base de dados do repositório local ou está danificada.",
             "networkInterruptedException": "O Servidor de Atualização do Sistema atualmente não está disponível. Tente novamente mais tarde.",
             "helpCenterInvalidServerException": "O Servidor de Atualização do Sistema é inválido. Tente novamente mais tarde.",
-            "catalogNotFoundException": "Não foram encontradas atualizações aplicáveis ao seu sistema.",
+            "catalogNotFoundException": "Não foram encontradas atualizações aplicáveis para o seu sistema porque o catálogo de atualizações não foi encontrado.",
             "catalogCrcErrorException": "O catálogo do seu sistema está atualmente a ser atualizado. Tente novamente mais tarde.",
             "catalogErrorException": "Foi detetado um erro no catálogo de atualizações para o seu sistema no Servidor de Atualização do Sistema. Tente novamente mais tarde.",
             "fileNotFoundException": "Ficheiro não encontrado."
@@ -1890,7 +1962,7 @@
             "startDate": "Data de início: ",
             "endDate": "Data de fim: ",
             "status": "Estado: ",
-            "subDescription1": "Este produto tem garantia limitada em anos e inclui reparação ou troca num centro de assistência designado. Os clientes podem contactar o centro de assistência local para obter mais informações. Os revendedores poderão fornecer serviço de recolha para reparação para este produto.",
+            "subDescription1": "A Garantia Limitada da Lenovo é aplicável ao seu computador e confere o direito ao Serviço Depot. Os clientes podem contactar o centro de assistência local para obter mais informações. Os revendedores poderão fornecer serviço de recolha para reparação para este produto.",
             "subDescription2": "Não foi possível localizar os detalhes de garantia para o dispositivo. Para mais opções de garantia, visite o nosso sítio de suporte na Web.",
             "viewWarrantyOptions": "VER OPÇÕES DE GARANTIA",
             "offlineTips1": "Estabeleça ligação à Internet para obter as mais recentes informações sobre garantia.",
@@ -1975,7 +2047,7 @@
             "visitHde": "Visitar Encriptação de disco rígido",
             "haveOwnPassword": "Tenho o meu próprio gestor de palavras-passe",
             "haveOwnWifi": "Tenho a minha própria segurança Wi-Fi",
-            "haveOwnVpn": "Tenho a minha própria segurança VPN",
+            "haveOwnVpn": "Tenho a minha própria VPN",
             "uac": "Controlo de Conta de Utilizador (UAC)",
             "uacTitles": "Controlo de Conta de Utilizador",
             "hde": "Encriptação da unidade de disco rígido",
@@ -2091,7 +2163,8 @@
                 "showmore": "Mostrar mais",
                 "showless": "Mostrar menos",
                 "button": "Ativar a segurança de WiFi",
-                "disableDecribe": "A função Segurança WiFi da Lenovo é um serviço de software avançado baseado na cloud que ajuda o seu dispositivo a diferenciar as redes sem fios seguras das potencialmente maliciosas."
+                "disableDescribe": "A função Segurança WiFi da Lenovo é um serviço de software avançado baseado na cloud que ajuda o seu dispositivo a diferenciar as redes sem fios seguras das potencialmente maliciosas.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Utilize o detetor de ameaças para determinar a segurança das redes à sua volta.",
@@ -2125,7 +2198,8 @@
                 "subtitle": "Tranquilidade",
                 "subtitleDescribe": "A Segurança de Casa Conectada enviará um alerta se detetar uma vulnerabilidade no dispositivo ou na rede doméstica, ou se estiver ligado a uma rede potencialmente maliciosa. Fique a saber ainda mais sobre a Segurança de Casa Conectada <tag>aqui</tag>.",
                 "tryNow": "Experimentar agora",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Introduzir código de convite",
@@ -2200,7 +2274,8 @@
             "getStarted1": "Clique no botão “Abrir SurfEasy” para iniciar a SurfEasy VPN.",
             "getStarted2": "Ative a VPN e aguarde um breve momento pela confirmação de uma ligação segura.",
             "getStarted3": "Altere a região ou localização, caso pretenda, e desfrute de uma utilização da rede segura e privada.",
-            "poweredBySurfEasy": "Com tecnologia SurfEasy"
+            "poweredBySurfEasy": "Com tecnologia SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "GESTOR DE PALAVRAS-PASSE DASHLANE",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "Monitorizar a dark web relativamente às suas informações pessoais",
             "allowsYou3": "Manter-se seguro em redes WiFi não seguras através da VPN integrada",
             "allowsYou4": "Partilhar palavras-passe de forma segura sem as revelar",
-            "poweredByDashLane": "Com tecnologia Dashlane"
+            "poweredByDashLane": "Com tecnologia Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "Envie dados do dispositivo anónimos para nos ajudar a melhorar a qualidade, a fiabilidade e a nova geração de dispositivos.",
         "userProfile": "Perfil de utilizador",
         "Note": "Nota: ",
-        "settingsNotes": "todas as definições nesta página irão necessitar que o utilizador reinicie esta aplicação para que tenham efeito.",
+        "settingsNotes": "Reinicie esta aplicação para assegurar que todas as alterações entram em vigor.",
         "betaSettingTitle": "Programa Beta",
         "betaProgram": "Programa Beta",
         "betaSettingDescription": "Experimente as funcionalidades mais recentes em que estamos a trabalhar."
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "Nota: depois de fazer clique em Transferir, poderá ser apresentado um pedido do Windows para permitir a instalação do software no dispositivo. Quando a instalação estiver concluída, as aplicações serão automaticamente apresentadas no ambiente de trabalho ou no menu Iniciar.<br /><br />Pode fechar a página O meu software e continuar a utilizar o Lenovo Vantage. Não feche o Lenovo Vantage durante a instalação.",
         "sizeText": "Tamanho",
         "versionText": "Versão",
+        "redemptionCode": "Código de resgate:",
+        "redeemWebsite": "Resgatar no sítio da Web do fornecedor",
         "softwareDescription": "Faça clique em Transferir abaixo para resgatar software adquirido com o dispositivo. Se, em qualquer momento, precisar de transferir novamente o software, poderá fazê-lo clicando no botão O meu software no menu Vantage.",
         "title": "O meu software",
         "loadingDescription": "Aguarde enquanto preparamos uma lista do software incluído na compra do dispositivo.",

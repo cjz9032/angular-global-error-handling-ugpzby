@@ -644,7 +644,8 @@
             "registered": "REGISTROVÁNO",
             "notRegistered": "NENÍ REGISTROVÁNO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Otázky a odpovědi pro váš stroj",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"
+        },
+        "offline": {
+            "connectToUseFeature": "Chcete-li tuto funkci používat, připojte se k internetu."
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "Zaslat zpětnou vazbu",
             "form": {
                 "email": "E-mail (volitelné)",
-                "comments": "Poznámky...",
-                "button": "Předložit",
-                "addScreenshot": "Přidat ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Děkujeme za váš názor."
-                },
                 "question1": "Líbí se vám nový styl aplikace Vantage?",
                 "question2": "Myslíte si, že aplikace funguje dobře?",
                 "question3": "Používali byste tuto aplikaci v budoucnu častěji?",
+                "question4": "Věděli jste, že pomocí programu Lenovo Vantage můžete ve vašem počítači aktualizovat ovladače softwaru, firmware a systém BIOS?",
+                "question5": "Jak je pravděpodobné, že byste aplikaci Lenovo Vantage doporučili svému známému nebo kolegovi?",
+                "notAtAllLikely": "Vůbec ne",
+                "extremelyLikely": "Velmi pravděpodobné",
                 "yes": "Ano",
                 "no": "Ne",
                 "tips1": "Zanechte prosím další komentáře",
+                "comments": "Poznámky...",
+                "button": "Předložit",
+                "addScreenshot": "Přidat ScreenShot",
                 "sendFeedback": "Odeslat zpětnou vazbu",
-                "submitScreenShot": "Odeslat snímek obrazovky"
+                "submitScreenShot": "Odeslat snímek obrazovky",
+                "messages": {
+                    "feedbackSuccess": "Děkujeme za váš názor."
+                }
             }
         },
         "quickSettings": {
@@ -1103,7 +1111,7 @@
                             "stop": "Zastavit"
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
-                        "progressText2": "{{stage}} of {{stageNum}}: Kalibrace na nízký stav baterie",
+                        "progressText2": "{{stage}} z {{stageNum}}: Kalibrace na nízký stav baterie",
                         "progressText3": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Před resetováním ukazatele stavu baterie nezapomeňte připojit počítač k napájení ze sítě. ",
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Chytrý pohotovostní režim",
-                    "description": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění při intenzivnějším využívání.",
+                    "description": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost opětovného spuštění <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">moderního pohotovostního režimu</a> v době vyšší zátěže.",
                     "tooltip": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným ZAČÁTKEM přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové období se optimalizuje na základě nastaveného plánu nebo doby používání vašeho počítače. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů.",
                     "timer": {
-                        "heading": "Čas, kdy počítač obvykle používáte",
+                        "heading": "Čas, kdy počítač obvykle používáte:",
                         "subHeading1": "pokračovat",
                         "subHeading2": "konec",
                         "subHeading3": "použít toto nastavení pro",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "Není vybrán žádný den"
                     },
                     "checkbox": "Automatické přizpůsobení aktivního času počítače na základě používání",
-                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktivní čas v tabulce pro počítač",
+                    "hyperlinkToGraph": "Kliknutím zobrazíte využití a použitý aktivní čas",
                     "subTitle": "Plánování počítače",
                     "automaticMode": "Automatický režim",
                     "manualMode": "Ruční režim",
@@ -1370,6 +1378,17 @@
                         "taskBarDimmer": "ZTMAVOVÁNÍ HLAVNÍHO PANELU",
                         "backgroundDimmer": "ZTMAVOVÁNÍ POZADÍ",
                         "displayDimmer": "ZTMAVOVÁNÍ DISPLEJE"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Záměna kláves Fn a Ctrl",
                     "description": "Pokud se vám stává, že místo klávesy Ctrl stisknete klávesu Fn, funkce obou kláves můžete zaměnit.",
-                    "restartNote": "Záměna funkcí dvou kláves vyžaduje restart počítače. Opravdu chcete počítač restartovat?"
+                    "restartNote": "Záměna funkcí dvou kláves vyžaduje restart počítače. Opravdu chcete počítač restartovat?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "DALŠÍ",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "Databázi lokálního archivu nebylo možné najít nebo je poškozená.",
             "networkInterruptedException": "Server služby aktualizace systému je momentálně nedostupný. Zkuste to prosím později.",
             "helpCenterInvalidServerException": "Chybný server služby aktualizace systému. Zkuste to prosím později.",
-            "catalogNotFoundException": "Pro váš systém nebyla nalezena žádná vhodná aktualizace.",
+            "catalogNotFoundException": "Pro váš systém nebyly nalezeny žádné použitelné aktualizace, protože nebyl nalezen katalog aktualizací.",
             "catalogCrcErrorException": "Právě probíhá aktualizace katalogu pro váš systém. Zkuste to prosím později.",
             "catalogErrorException": "V katalogu aktualizací pro váš systém na serveru služby aktualizace systému byla zjištěna chyba. Zkuste to prosím později.",
             "fileNotFoundException": "Soubor nebyl nalezen."
@@ -1890,7 +1962,7 @@
             "startDate": "Datum zahájení: ",
             "endDate": "Datum ukončení: ",
             "status": "Stav: ",
-            "subDescription1": "Tento výrobek má roční omezenou záruku a je oprávněn k opravě servisu. Další zákazníci mohou zákazníci získat telefonicky v místním servisním středisku. Prodejci mohou pro tento produkt poskytnout opravu typu carry-in.",
+            "subDescription1": "Omezená záruka Lenovo se vztahuje na váš počítač a v jejím rámci bude proveden servis typu Depot. Další zákazníci mohou zákazníci získat telefonicky v místním servisním středisku. Prodejci mohou pro tento produkt poskytnout opravu typu carry-in.",
             "subDescription2": "Nepodařilo se nám najít podrobnosti o záruce pro dané zařízení. Další možnosti záruky najdete na našem webu podpory.",
             "viewWarrantyOptions": "ZOBRAZIT MOŽNOSTI ZÁRUKY",
             "offlineTips1": "Pokud chcete nejnovější informace o záruce, připojte se k internetu.",
@@ -1975,7 +2047,7 @@
             "visitHde": "Otevřít Šifrování pevného disku",
             "haveOwnPassword": "Mám vlastního správce hesel",
             "haveOwnWifi": "Mám vlastní zabezpečení na Wi-Fi",
-            "haveOwnVpn": "Mám vlastní zabezpečení na VPN",
+            "haveOwnVpn": "Mám vlastní VPN.",
             "uac": "Řízení uživatelských účtů (UAC)",
             "uacTitles": "Řízení uživatelských účtů",
             "hde": "Šifrování pevného disku",
@@ -2091,7 +2163,8 @@
                 "showmore": "Zobrazit více",
                 "showless": "Zobrazit méně",
                 "button": "Zapnout zabezpečení WiFi",
-                "disableDecribe": "Zabezpečení WiFi Lenovo je pokročilá cloudová softwarová služba, která pomáhá vašemu zařízení odlišit bezpečné bezdrátové sítě od potenciálně škodlivých."
+                "disableDescribe": "Zabezpečení WiFi Lenovo je pokročilá cloudová softwarová služba, která pomáhá vašemu zařízení odlišit bezpečné bezdrátové sítě od potenciálně škodlivých.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Vyhledávač hrozeb vám pomůže zjistit, jak bezpečné jsou sítě kolem vás.",
@@ -2125,7 +2198,8 @@
                 "subtitle": "Mír v duši",
                 "subtitleDescribe": "Pokud zabezpečení připojené domácnosti zjistí chybu v zabezpečení zařízení nebo domácí síti nebo rozpozná připojení k potenciálně škodlivé síti, odešle vám výstrahu. <tag>Zde</tag> zjistíte ještě více informací o zabezpečení připojené domácnosti.",
                 "tryNow": "Chci to vyzkoušet",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Zadejte kód pozvánky",
@@ -2200,7 +2274,8 @@
             "getStarted1": "Klikněte na tlačítko „Otevřít SurfEasy“ nahoře a spusťte SurfEasy VPN.",
             "getStarted2": "Zapněte VPN a chvíli čekejte na potvrzení bezpečného připojení.",
             "getStarted3": "Dle potřeby změňte oblast nebo polohu a užívejte si bezpečné a soukromé práce v síti.",
-            "poweredBySurfEasy": "Používá technologii SurfEasy"
+            "poweredBySurfEasy": "Používá technologii SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "SPRÁVCE HESEL DASHLANE",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "Sledování temného webu, zda neobsahuje vaše osobní údaje",
             "allowsYou3": "Ochranu i v nezabezpečených sítích WiFi díky integrované VPN",
             "allowsYou4": "Bezpečné sdílení hesel bez rizika jejich odhalení",
-            "poweredByDashLane": "Používá technologii Dashlane"
+            "poweredByDashLane": "Používá technologii Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "Odesílat anonymní data zařízení pro pomoc se zlepšením kvality, spolehlivosti a další generace zařízení.",
         "userProfile": "Profil uživatele",
         "Note": "Poznámka: ",
-        "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila.",
+        "settingsNotes": "Abyste ověřili, že se projevily všechny změny, spusťte aplikaci znovu.",
         "betaSettingTitle": "Beta program",
         "betaProgram": "Beta program",
         "betaSettingDescription": "Vyzkoušejte nejnovější funkce, na kterých pracujeme."
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "Poznámka: Po kliknutí na tlačítko Stáhnout se může zobrazit výzva systému Windows, aby bylo možné nainstalovat software do vašeho zařízení. Po dokončení instalace se aplikace automaticky zobrazí na ploše nebo v nabídce Start.<br /><br />Můžete zavřít stránku Můj software a pokračovat v používání programu Lenovo Vantage. Během instalace program Lenovo Vantage nezavírejte.",
         "sizeText": "Velikost",
         "versionText": "Verze",
+        "redemptionCode": "Kód uplatnění:",
+        "redeemWebsite": "Uplatnit na webu prodejce",
         "softwareDescription": "Klepnutím na tlačítko Stáhnout níže můžete získat software zakoupený se zařízením. Pokud budete potřebovat stáhnout software znovu, můžete tak učinit kliknutím na tlačítko Můj software v nabídce Vantage.",
         "title": "Můj software",
         "loadingDescription": "Počkejte, než se připraví seznam softwaru, který byl zahrnut do nákupu vašeho zařízení.",

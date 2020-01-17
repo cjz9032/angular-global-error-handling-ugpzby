@@ -1,6 +1,6 @@
-<div class="vtr-header-main">
-	<div class="vtr-header-main-inner"
-		[ngClass]="{'show-back-btn':back && back.length > 0 && !hideBack}">
+<div class="vtr-header-main"
+	[ngStyle]="{background: dccService.headerBackground}">
+	<div class="vtr-header-main-inner">
 		<a class="back"
 			vtrMetrics
 			metricsEvent="FeatureClick"
@@ -9,8 +9,8 @@
 			id="{{backId}}"
 			href="javascript:void(0);"
 			[attr.aria-label]="back"
-			tabindex="0"
-			*ngIf="back && back.length > 0 && !hideBack">
+			tabindex="1"
+			*ngIf="back && back.length > 0">
 			{{backarrow}}
 			<span>
 				{{back}}
@@ -19,7 +19,8 @@
 		<h1 class="title"
 			*ngIf="title"
 			id="{{textId}}-header-title"
-			attr.aria-label="{{textId}}-header-title" [innerHtml]="title"></h1>
+			attr.aria-label="{{textId}}-header-title"
+			[innerHTML]="title"></h1>
 		<ng-content></ng-content>
 		<div *ngIf="forwardLink"
 			class="forward-link">

@@ -1,5 +1,6 @@
 @import "../../../app.theme.scss";
 
+$fontsize_xs: 1.4rem;
 .vtr-page {
 	.vtr-page-content {
 		.vtr-page-left-column {
@@ -48,8 +49,11 @@
 				font-size: $fontsize_xs;
 				color: $shade_blue;
 			}
-			a {
-				color: $menu_hover;
+
+		a {
+			text-decoration: underline;
+			color: $menu_hover;
+			&:hover {
 				text-decoration: underline;
 				&:hover {
 					text-decoration: underline;
@@ -57,9 +61,9 @@
 
 				}
 			}
-			&.screen-lock-note {
-				// max-width: 64rem;
-			}
+			// &.screen-lock-note {
+			// 	// max-width: 64rem;
+			// }
 			&.auto-screen-off-note {
 				p {
 					color: $alt;
@@ -94,6 +98,28 @@
 				}
 			}
 		}
+	}
+	.card-body {
+		padding: 2rem 4rem;
+	}
+	.blur-1 {
+		opacity: 0.65;
+	}
+	.feature-note {
+		background-color: $shade_lightest;
+		border: 1px solid $shade_lighter;
+		width: 100%;
+		p {
+			font-size: $fontsize_xs;
+			color: $main_darker;
+		}
+		a {
+			text-decoration: underline;
+			color: $menu_hover;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 		::ng-deep .vtr-ui-rounded-rectangle-radio {
 			width: 25.5rem;
 			@media #{$mediaquery_X22} {
@@ -113,7 +139,9 @@
 
 		.int-screen-desc {
 			p {
-				font-size: $body;
+				font-size: $fontsize_xs;
+				color: $purple_navy;
+				font-weight: $weight_light;
 			}
 		}
 
@@ -122,15 +150,21 @@
 				border-top: 0.1rem solid $shade_lighter;
 				border-bottom: none;
 			}
+			.display-padding {
+				padding-left: 2.5rem;
+			}
 			.display-dim-title {
 				font-size: 1.8rem;
 				color: $main_darker;
 				font-weight: $weight_600;
 				letter-spacing: 0.05rem;
 			}
-			::ng-deep .ng5-slider {
-				margin: 20px 0 15px;
+			::ng-deep {
+				.ng5-slider {
+					margin: 20px 0 15px;
+				}
 			}
+
 		}
 
 		.disabled-overlay {
@@ -169,7 +203,7 @@
 		.slider-note {
 			margin: 0 0 0 1rem;
 			padding-right: 1.4rem;
-			max-width: 60rem;
+			// max-width: 60rem;
 			::ng-deep .vtr-ui-rounded-rectangle-radio {
 				width: 13rem !important;
 				height: 5rem !important;
@@ -213,17 +247,17 @@
 			margin-right: 0.5rem;
 		}
 		label {
-			color: $shade_darker;
-			font-size: 1.5rem;
+			color: $shade_blue;
+			font-size: $fontsize_xs;
 			font-weight: $weight_light;
 			text-align: left;
 			padding-left: 2rem;
 		}
 	}
-	.custom-control-input:disabled ~ .custom-control-label::before {
-		// background-color: $light-grey;
-		//border-color: $shade;
-	}
+	// .custom-control-input:disabled ~ .custom-control-label::before {
+	// 	// background-color: $light-grey;
+	// 	//border-color: $shade;
+	// }
 
 	.custom-control-input:disabled ~ .custom-control-label {
 		cursor: not-allowed;
@@ -232,13 +266,7 @@
 	.custom-control-label {
 		padding-left: 0.5rem;
 		line-height: 1.15;
-		@media #{$mediaquery_14} {
-		line-height: 1.3;
-		}
-		@media #{$mediaquery_19} {
-		line-height: 1.3;
-		}
-		@media #{$mediaquery_X15} {
+		@media #{$breakpoint_sm} {
 		line-height: 1.3;
 		}
 
@@ -264,19 +292,20 @@
 	}
 	.smart-assist-checkbox {
 		margin: 1rem 0rem 1rem 0rem;
-		font-size: 1.4rem;
+		font-size: $fontsize_xs;
+		color: $shade_blue;
 	}
 
 	.permission-note {
-		background-color: $shade_lightest;
-			border: 1px solid $shade_lighter;
+		background-color: $grey_lighter;
+			border: 0.1rem solid $note_border;
 			padding-right: 1.4rem;
 			span {
 				font-size: $fontsize_xs;
 				color: $shade_blue;
 			}
 		.privacy-button {
-			font-size: $body;
+			font-size: $fontsize_xs;
 			letter-spacing: 0.76px;
 			text-align: left;
 			text-decoration: underline;
@@ -295,16 +324,18 @@
             font-size:1.4rem !important;
 		}
 		p {
-			font-size: $body;
+			font-size: $fontsize_xs;
 			font-weight: $weight_light;
-			max-width: 60rem !important;
+			// max-width: 60rem !important;
+			color: $purple_navy;
+			width: 95%;
 		}
 	}
 	.fac-control {
 		margin-left: 2.5rem;
 		padding-top: 1.5rem;
 	}
-
+	}
 }
 
 .smart-assist-card {
@@ -315,4 +346,8 @@
 			}
 		}
 	}
+}
+
+::ng-deep .vtr-ui-range-slider {
+	width: 85%;
 }

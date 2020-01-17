@@ -644,7 +644,8 @@
             "registered": "REKISTERÖITY",
             "notRegistered": "EI REKISTERÖITY",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "Hei! Vantage on saatavilla uudempi versio. Haluatko ladata sen?"
+        },
+        "offline": {
+            "connectToUseFeature": "Muodosta Internet-yhteys, jotta voit käyttää tätä toimintoa"
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "Anna palautetta",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Kommentit...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Kiitos palautteestasi."
-                },
                 "question1": "Pidätkö Vantagen uudesta tyylistä?",
                 "question2": "Onko sen suorituskyky mielestäsi hyväksyttävä?",
                 "question3": "Käyttäisitkö sovellusta useammin tulevaisuudessa?",
+                "question4": "Oletko tietoinen siitä, että voit käyttää Lenovo Vantage -ohjelmaa tietokoneen ohjelmisto-ohjaimien, laiteohjelmiston ja BIOSin päivittämiseen?",
+                "question5": "Kuinka todennäköistä on, että suosittelisit Lenovo Vantage -sovellusta kollegan ystävälle?",
+                "notAtAllLikely": "Ei lainkaan todennäköistä",
+                "extremelyLikely": "Erittäin todennäköistä",
                 "yes": "Kyllä",
                 "no": "Ei",
                 "tips1": "Anna lisäkommentteja",
+                "comments": "Kommentit...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Lähetä palautetta",
-                "submitScreenShot": "Lähetä näyttökuva"
+                "submitScreenShot": "Lähetä näyttökuva",
+                "messages": {
+                    "feedbackSuccess": "Kiitos palautteestasi."
+                }
             }
         },
         "quickSettings": {
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Älykäs valmiustila",
-                    "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
-                    "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso on optimoitu määrittämäsi aikataulun tai tietokoneen käyttöajan mukaan. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
+                    "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysaikana ilman, että <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> -ominaisuuden nopea käynnistys hidastuu kovan käytön aikana.",
+                    "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso on optimoitu määrittämäsi aikataulun tai tietokoneen käytön mukaan. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
                     "timer": {
-                        "heading": "Aika, jolloin yleensä käytät tätä tietokonetta",
+                        "heading": "Aika, jolloin yleensä käytät tätä tietokonetta:",
                         "subHeading1": "aloitat",
                         "subHeading2": "lopetusaika",
                         "subHeading3": "käytä tätä aikataulua seuraavaan:",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "Päivää ei ole valittuna"
                     },
                     "checkbox": "Tietokoneen aktiivisen ajan automaattinen säätäminen käytön mukaan",
-                    "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella tietokoneen taulukon toimintaa ja aktiivista aikaa",
+                    "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella käyttöä ja käytössä olevaa aikaa",
                     "subTitle": "Ajasta tietokoneesi",
                     "automaticMode": "Automaattinen tila",
                     "manualMode": "Manuaalinen tila",
@@ -1370,6 +1378,17 @@
                         "taskBarDimmer": "TEHTÄVÄPALKIN HIMMENNYSTOIMINTO",
                         "backgroundDimmer": "TAUSTAN HIMMENNYSTOIMINTO",
                         "displayDimmer": "NÄYTÖN HIMMENNYS"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Fn- ja Ctrl-näppäimen vaihto",
                     "description": "Jos painat usein Fn-näppäintä, kun aioit painaa Ctrl-näppäintä, voit vaihtaa näiden kahden näppäimen toimintoja.",
-                    "restartNote": "Kahden näppäimen toiminnon vaihtaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?"
+                    "restartNote": "Kahden näppäimen toiminnon vaihtaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "ENEMMÄN",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "Paikallisen säilön tietokantaa ei ole löytynyt tai se on viallinen.",
             "networkInterruptedException": "Järjestelmän päivityspalvelin ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen.",
             "helpCenterInvalidServerException": "Järjestelmän päivityspalvelin on virheellinen. Yritä myöhemmin uudelleen.",
-            "catalogNotFoundException": "Järjestelmään soveltuvia päivityksiä ei löydy.",
+            "catalogNotFoundException": "Järjestelmään soveltuvia päivityksiä ei löydy, koska päivitysluetteloa ei löydy.",
             "catalogCrcErrorException": "Järjestelmäluetteloa päivitetään parhaillaan. Yritä myöhemmin uudelleen.",
             "catalogErrorException": "Järjestelmän päivitysluettelossa havaittiin virhe järjestelmän päivityspalvelimessa. Yritä myöhemmin uudelleen.",
             "fileNotFoundException": "Tiedostoa ei löydy."
@@ -1890,7 +1962,7 @@
             "startDate": "Aloituspäivämäärä: ",
             "endDate": "Päättymispäivämäärä: ",
             "status": "Tila: ",
-            "subDescription1": "Tälle tuotteelle on vuoden rajoitettu takuu, ja oikeutettu korjauspalveluun korjauskeskuksessa Asiakkaat voivat ottaa yhteyttä paikalliseen palvelukeskukseen lisätietoja varten. Korjauspalveluita tälle tuotteelle voi olla saatavilla jälleenmyyjien toimipisteissä.",
+            "subDescription1": "Tietokonettasi koskee Lenovon rajoitettu takuu, ja sillä on oikeus korjauskeskuksessa annettavaan palveluun. Asiakkaat voivat ottaa yhteyttä paikalliseen palvelukeskukseen lisätietoja varten. Korjauspalveluita tälle tuotteelle voi olla saatavilla jälleenmyyjien toimipisteissä.",
             "subDescription2": "Emme pystyneet löytämään takuutietoja laitteellesi. Tutustu tukisivustoomme jos haluat nähdä lisää takuuvaihtoehtoja.",
             "viewWarrantyOptions": "NÄYTÄ TAKUUVAIHTOEHDOT",
             "offlineTips1": "Muodosta Internet-yhteys uusimpia takuutietoja varten.",
@@ -1975,7 +2047,7 @@
             "visitHde": "Siirry kiintolevyaseman salaukseen",
             "haveOwnPassword": "Minulla on oma salasanojen hallintaohjelma",
             "haveOwnWifi": "Minulla on oma Wi-Fi-suojaus",
-            "haveOwnVpn": "Minulla on oma VPN-suojaus",
+            "haveOwnVpn": "Minulla on oma VPN",
             "uac": "Käyttäjätilien valvonta (UAC)",
             "uacTitles": "Käyttäjätilien valvonta",
             "hde": "Kiintolevyaseman salaus",
@@ -2091,7 +2163,8 @@
                 "showmore": "Näytä lisää",
                 "showless": "Näytä vähemmän",
                 "button": "Ota WiFi -suojaus käyttöön",
-                "disableDecribe": "Lenovo WiFi -suojaus on kehittynyt pilvipohjainen ohjelmistopalvelu, joka auttaa laitetta erottamaan turvalliset langattomat verkot mahdollisista haitallisista verkoista."
+                "disableDescribe": "Lenovo WiFi -suojaus on kehittynyt pilvipohjainen ohjelmistopalvelu, joka auttaa laitetta erottamaan turvalliset langattomat verkot mahdollisista haitallisista verkoista.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Määritä uhkien paikantimen avulla ympärilläsi olevien verkkojen turvallisuus.",
@@ -2125,7 +2198,8 @@
                 "subtitle": "Mielenrauhaa",
                 "subtitleDescribe": "Connected Home -suojaus lähettää sinulle hälytyksen havaitessaan haavoittuvuuden laitteessasi tai kotiverkossasi tai, jos olet yhdistynyt mahdollisesti vahingolliseen verkkoon. Lue lisää Connected Home -suojauksesta <tag>tästä</tag>.",
                 "tryNow": "Kokeile nyt",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Anna kutsukoodi",
@@ -2200,7 +2274,8 @@
             "getStarted1": "Käynnistä SurfEasy VPN napsauttamalla \"Avaa SurfEasy\".",
             "getStarted2": "Ota VPN-yhteys käyttöön ja odota hetki, jotta saat vahvistuksen turvallisesta yhteydestä.",
             "getStarted3": "Muuta halutessasi alue tai sijainti ja nauti turvallisesta, yksityisestä verkon käytöstä.",
-            "poweredBySurfEasy": "SurfEasyn tarjoama"
+            "poweredBySurfEasy": "SurfEasyn tarjoama",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE salasanojen hallinta",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "Tarkkailla, onko pimeässä verkossa henkilökohtaisia tietojasi",
             "allowsYou3": "Käyttää turvaamattomia WiFi-verkkoja turvallisesti sisäänrakennetun VPN-yhteyden avulla",
             "allowsYou4": "Jakaa salasanoja turvallisesti paljastamatta niitä",
-            "poweredByDashLane": "Dashlanen tarjoama"
+            "poweredByDashLane": "Dashlanen tarjoama",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "Lähetä nimettömiä laitetietoja, jotta voimme kehittää laatua, luotettavuutta ja seuraavan sukupolven laitteita.",
         "userProfile": "Käyttäjäprofiili",
         "Note": "Huomautus: ",
-        "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen.",
+        "settingsNotes": "Ota tämä sovellus uudelleen käyttöön ja varmista, että kaikki muutokset tulevat voimaan.",
         "betaSettingTitle": "Beta-ohjelma",
         "betaProgram": "Beta-ohjelma",
         "betaSettingDescription": "Kokeile uusimpia ominaisuuksia, joita työstämme."
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "Huomautus: Kun olet napsauttanut Lataa, Windows voi pyytää sinulta lupaa ohjelmiston asentamiseen laitteeseesi. Kun sovellukset on asennettu, ne näkyvät automaattisesti työpöydällä tai aloitusvalikossa.<br /><br />Voit sulkea Oma ohjelmisto -sivun ja jatkaa Lenovo Vantagen käyttöä. Älä sulje Lenovo Vantagea asennuksen aikana.",
         "sizeText": "Koko",
         "versionText": "Versio",
+        "redemptionCode": "Lunastuskoodi:",
+        "redeemWebsite": "Lunasta toimittajan www-sivustolla",
         "softwareDescription": "Lunasta laitteen mukana ostettu ohjelmisto napsauttamalla alta Lataa. Voit milloin tahansa ladata ohjelmiston uudelleen valitsemalla Vantage-valikosta Oma ohjelmisto -painikkeen.",
         "title": "Oma ohjelmisto",
         "loadingDescription": "Odota sen aikaa, kun valmistelemme luetteloa laitteen mukana ostetuista ohjelmistoista.",

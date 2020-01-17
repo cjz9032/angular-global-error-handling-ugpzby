@@ -646,7 +646,8 @@
             "registered": "مسجل",
             "notRegistered": "غير مسجل",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "سؤال وجواب لجهازك",
@@ -672,6 +673,9 @@
         },
         "app-update": {
             "message": "مرحبا! يتوفر إصدار أحدث من Vantage، هل تريد تحميله؟"
+        },
+        "offline": {
+            "connectToUseFeature": "اتصل بالإنترنت لاستخدام هذه الميزة"
         }
     },
     "privacy": {
@@ -719,20 +723,24 @@
             "button": "تقديم ملاحظات",
             "form": {
                 "email": "البريد الإلكتروني اختياري",
-                "comments": "التعليقات...",
-                "button": "خضع",
-                "addScreenshot": "إضافة لقطة شاشة",
-                "messages": {
-                    "feedbackSuccess": "نشكرك على تعليقاتك!"
-                },
                 "question1": "<span dir=\"rtl\">هل أعجبك نمط Vantage الجديد؟</span>",
                 "question2": "هل تعتقد أن الأداء مقبول؟",
                 "question3": "هل ستستخدم التطبيق بشكل أكثر تكرارًا في المستقبل؟",
+                "question4": "هل كنت تعلم أنه يمكنك استخدام Lenovo Vantage لتحديث برامج التشغيل والبرامج الثابتة بالإضافة إلى BIOS على جهاز الكمبيوتر؟",
+                "question5": "ما مدى احتمالية أن تنصح صديق أو زميل لك باستخدام تطبيق Lenovo Vantage؟",
+                "notAtAllLikely": "غير محتمل على الإطلاق",
+                "extremelyLikely": "محتمل للغاية",
                 "yes": "نعم",
                 "no": "لا",
                 "tips1": "يرجى ترك أي تعليقات إضافية",
+                "comments": "التعليقات...",
+                "button": "خضع",
+                "addScreenshot": "إضافة لقطة شاشة",
                 "sendFeedback": "إرسال تعليقات",
-                "submitScreenShot": "إرسال لقطة الشاشة"
+                "submitScreenShot": "إرسال لقطة الشاشة",
+                "messages": {
+                    "feedbackSuccess": "نشكرك على تعليقاتك!"
+                }
             }
         },
         "quickSettings": {
@@ -1137,10 +1145,10 @@
                 },
                 "smartStandby": {
                     "title": "وضع الاستعداد الذكي",
-                    "description": "تعمل هذه الميزة على جدولة الكمبيوتر لتحسين معدل توفير طاقة البطارية خلال ساعات الخمول دون التضحية بفترة بدء التشغيل السريع خلال ساعات الاستعمال الأكثر كثافة.",
-                    "tooltip": "عند تمكين وضع الاستعداد الذكي، سيتحول الكمبيوتر إلى وضع الاستعداد الحديث قبل وقت البدء المجدول، ويدخل في وضع الإسبات بعد مرور فترة زمنية معينة لم يسجل خلالها أي نشاط أثناء عمله على طاقة البطارية. تم تحسين هذه الفترة الزمنية استنادًا إلى الجدول الذي تحدده أو وقت استخدام الكمبيوتر الذي نحصل عليه. ينتقل الكمبيوتر من الإسبات إلى وضع الاستعداد الحديث في الأيام المجدولة فقط، ولا تتم عملية الانتقال هذه عندما لا يسجل الكمبيوتر أي نشاط لعدة أيام مجدولة متتالية.",
+                    "description": "تعمل هذه الميزة على جدولة الكمبيوتر لتحسين معدلات توفير طاقة البطارية خلال ساعات الخمول دون التضحية بتجربة الاستئناف السريع في وضع <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">الاستعداد الحديث</a> خلال ساعات الاستعمال الأكثر كثافة.",
+                    "tooltip": "عند تمكين وضع الاستعداد الذكي، سيتحول الكمبيوتر إلى وضع الاستعداد الحديث قبل وقت البدء المجدول، ويدخل في وضع الإسبات بعد مرور فترة زمنية معينة لم يسجل خلالها أي نشاط أثناء عمله على طاقة البطارية. تم تحسين هذه الفترة الزمنية استنادًا إلى الجدول الذي تحدده أو استخدام الكمبيوتر. ينتقل الكمبيوتر من الإسبات إلى وضع الاستعداد الحديث في الأيام المجدولة فقط، ولا تتم عملية الانتقال هذه عندما لا يسجل الكمبيوتر أي نشاط لعدة أيام مجدولة متتالية.",
                     "timer": {
-                        "heading": "الوقت الذي تستخدم فيه الكمبيوتر عادة",
+                        "heading": "الوقت الذي تستخدم فيه هذا الكمبيوتر عادة:",
                         "subHeading1": "بدء",
                         "subHeading2": "إنهاء",
                         "subHeading3": "استخدم هذا الجدول الزمني لأجل",
@@ -1182,7 +1190,7 @@
                         "noDaySelected": "لم يتم تحديد أي يوم"
                     },
                     "checkbox": "الضبط التلقائي للوقت النشط لجهاز الكمبيوتر استنادًا إلى استخدامك",
-                    "hyperlinkToGraph": "انقر لرؤية النشاط والوقت النشط لجدول الكمبيوتر.",
+                    "hyperlinkToGraph": "انقر لرؤية الاستخدام والوقت النشط المطبق",
                     "subTitle": "جدولة الكمبيوتر",
                     "automaticMode": "الوضع التلقائي",
                     "manualMode": "الوضع اليدوي",
@@ -1372,6 +1380,17 @@
                         "taskBarDimmer": "تعتيم شريط المهام",
                         "backgroundDimmer": "تعتيم الخلفية",
                         "displayDimmer": "تعتيم جهاز العرض"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1525,7 +1544,60 @@
                 "fnCtrlKey": {
                     "title": "مبادلة المفتاح Fn والمفتاح Ctrl‬",
                     "description": "إذا كنت تضغط عادةً على المفتاح Fn عندما تريد الضغط على المفتاح Ctrl، فيمكنك مبادلة وظائف المفتاحين.",
-                    "restartNote": "يتطلب تبديل وظيفة المفتاحين إعادة تشغيل الكمبيوتر. هل تريد بالتأكيد إعادة التشغيل؟"
+                    "restartNote": "يتطلب تبديل وظيفة المفتاحين إعادة تشغيل الكمبيوتر. هل تريد بالتأكيد إعادة التشغيل؟",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "المزيد",
@@ -1869,7 +1941,7 @@
             "localRepositoryDatabaseException": "تعذر العثور على قاعدة بيانات المستودع المحلي أو إنها تالفة.",
             "networkInterruptedException": "خادم تحديث النظام غير متوفر حاليًا. يُرجى إعادة المحاولة لاحقًا.",
             "helpCenterInvalidServerException": "خادم تحديث النظام غير صالح. يُرجى إعادة المحاولة لاحقًا.",
-            "catalogNotFoundException": "لم يتم العثور على تحديثات قابلة للتطبيق للنظام الذي تستخدمه.",
+            "catalogNotFoundException": "لم يتم العثور على أي تحديثات للنظام لديك نظرًا لعدم العثور على كتالوج التحديث.",
             "catalogCrcErrorException": "يجري حاليًا تحديث الكتالوج الخاص بنظامك. يُرجى إعادة المحاولة لاحقًا.",
             "catalogErrorException": "تم الكشف عن خطأ يتعلق بكتالوج التحديث للنظام على خادم تحديث النظام. يُرجى إعادة المحاولة لاحقًا.",
             "fileNotFoundException": "لم يتم العثور على الملف."
@@ -1892,7 +1964,7 @@
             "startDate": "وقت البدء: ",
             "endDate": "تاريخ الانتهاء: ",
             "status": "الحالة: ",
-            "subDescription1": "هذا المنتج لديه سنوات ضمان محدودة ويتمتع بخدمة إصلاح مستودع. يمكن للعملاء الاتصال بمركز الخدمة المحلي للحصول علي مزيد من المعلومات. يمكن للتجار توفير إصلاح بإحضار المنتج لهذا المنتج.",
+            "subDescription1": "<span dir='rtl'>يسري ضمان Lenovo المحدود على الكمبيوتر الخاص بك ويتمتع بخدمة تجميع المنتجات لإرسالها للإصلاح. يمكن للعملاء الاتصال بمركز الخدمة المحلي للحصول علي مزيد من المعلومات. يمكن للتجار توفير إصلاح بإحضار المنتج لهذا المنتج.</span>",
             "subDescription2": "لم نكن قادرون علي تحديد تفاصيل الضمان لجهازك، للحصول علي المزيد من خيارات الضمان، يرجى زيارة موقعنا علي الإنترنت الخاص بالدعم.",
             "viewWarrantyOptions": "عرض خيارات الضمان",
             "offlineTips1": "يرجى الاتصال بالإنترنت للحصول على أحدث معلومات الضمان.",
@@ -1977,7 +2049,7 @@
             "visitHde": "زيارة تشفير محرك الأقراص الثابتة",
             "haveOwnPassword": "لديّ إدارة كلمات مرور خاصة بي",
             "haveOwnWifi": "لديّ أمان wifi خاص بي",
-            "haveOwnVpn": "لديّ أمان VPN خاص بي",
+            "haveOwnVpn": "لديّ شبكة VPN خاصة بي",
             "uac": "التحكم في حساب المستخدم (UAC)",
             "uacTitles": "التحكم في حساب المستخدم",
             "hde": "تشفير محرك الأقراص الثابتة",
@@ -2093,7 +2165,8 @@
                 "showmore": "إظهار المزيد",
                 "showless": "إظهار أقل",
                 "button": "تمكين أمان شبكة WiFi",
-                "disableDecribe": "ميزة أمان Lenovo WiFi هي عبارة عن خدمة برمجية متقدمة تستند إلى السحابة والتي تساعد جهازك في تمييز الشبكات اللاسلكية الآمنة عن الشبكات الضارة المحتملة."
+                "disableDescribe": "ميزة أمان Lenovo WiFi هي عبارة عن خدمة برمجية متقدمة تستند إلى السحابة والتي تساعد جهازك في تمييز الشبكات اللاسلكية الآمنة عن الشبكات الضارة المحتملة.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "استخدم محدد مواقع التهديدات للتعرف على مدى سلامة الشبكات من حولك.",
@@ -2127,7 +2200,8 @@
                 "subtitle": "راحة البال",
                 "subtitleDescribe": "سوف ترسل لك ميزة أمان المنزل المتصل تنبيهًا إذا كشفت عن وجود ثغرة أمنية في جهازك أو شبكتك المنزلية، أو إذا كنت متصلاً بشبكة من المحتمل أن تكون ضارة. اعرف المزيد حول أمان المنزل المتصل <tag>هنا</tag>.",
                 "tryNow": "جرّبها الآن",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "أدخل رمز الدعوة",
@@ -2202,7 +2276,8 @@
             "getStarted1": "انقر فوق الزر \"فتح SurfEasy\" أعلاه لبدء تشغيل SurfEasy VPN.",
             "getStarted2": "شغّل شبكة VPN وانتظر برهة قصيرة لتلقي تأكيد الاتصال الآمن.",
             "getStarted3": "يمكنك تغيير منطقتك أو موقعك، إذا لزم الآمر، والاستمتاع بشبكة آمنة وخاصة.",
-            "poweredBySurfEasy": "مشغّلة بواسطة SurfEasy"
+            "poweredBySurfEasy": "مشغّلة بواسطة SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "إدارة كلمات المرور في DASHLANE",
@@ -2230,7 +2305,8 @@
             "allowsYou2": "مراقبة الويب المظلم لمعلوماتك الشخصية",
             "allowsYou3": "المحافظة على سلامتك على شبكات WiFi غير الآمنة ذات VPN مضمنة",
             "allowsYou4": "مشاركة كلمات المرور بشكل آمن من دون الكشف عنها",
-            "poweredByDashLane": "مشغّل بواسطة Dashlane"
+            "poweredByDashLane": "مشغّل بواسطة Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2707,7 +2783,7 @@
         "deviceStatisticsDescription": "أرسل بيانات جهاز مجهولة المصدر لمساعدتنا في تحسين الجودة والموثوقية والجيل التالي من الأجهزة.",
         "userProfile": "ملف تعريف المستخدم",
         "Note": "ملاحظة: ",
-        "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول.",
+        "settingsNotes": "يرجى إعادة تشغيل هذا التطبيق للتأكد من أن جميع التغييرات نافذة المفعول.",
         "betaSettingTitle": "البرنامج التجريبي",
         "betaProgram": "البرنامج التجريبي",
         "betaSettingDescription": "جرّب أحدث الميزات التي نعمل عليها."
@@ -2731,6 +2807,8 @@
         "noteDownloadAvailable": "ملاحظة: بعد النقر فوق \"تنزيل\"، قد تظهر لك مطالبة من Windows للسماح لنا بتثبيت البرامج على جهازك. وفور الانتهاء من التثبيت، ستظهر تطبيقاتك تلقائيًا على سطح المكتب أو قائمة البدء.<br /><br />يمكنك إغلاق صفحة \"برامجي\" ومتابعة استخدام Lenovo Vantage. لا تغلق Lenovo Vantage أثناء التثبيت.",
         "sizeText": "الحجم",
         "versionText": "نسخة",
+        "redemptionCode": "رمز الاسترداد:",
+        "redeemWebsite": "الاسترداد من موقع الويب الخاص بالبائع",
         "softwareDescription": "انقر فوق \"تنزيل\" أدناه لاسترداد البرامج التي اشتريتها مع جهازك. إذا احتجت إلى تنزيل البرامج من جديد في أي وقت، فيمكنك القيام بذلك الآن عن طريق النقر فوق الزر \"برامجي\" من قائمة Vantage.",
         "title": "برنامجي",
         "loadingDescription": "يرجى الانتظار ريثما نقوم بتحضير قائمة بالبرامج التي كانت مضمنة في عملية شراء جهازك.",

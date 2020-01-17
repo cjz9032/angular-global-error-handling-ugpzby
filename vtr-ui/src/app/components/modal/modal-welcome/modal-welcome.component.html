@@ -95,6 +95,7 @@
 								<label for="personalRadio"
 									tabindex="0"
 									id="segment-choose-personal-use"
+									role="radio"
 									(keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.personal" | translate }}</label>
 							</div>
@@ -116,6 +117,7 @@
 									class="business" />
 								<label for="businessRadio"
 									tabindex="0"
+									role="radio"
 									id="segment-choose-business-use"
 									(keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.business" | translate }}</label>
@@ -138,6 +140,7 @@
 									class="custom" />
 								<label for="professionalRadio"
 									tabindex="0"
+									role="radio"
 									id="segment-choose-custom-use"
 									(keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.professional" | translate }} </label>
@@ -162,6 +165,7 @@
 								tabindex="0"
 								(keypress)="onKeyPress($event)"
 								[id]="'welcome-interest-' + interest.label"
+								role="checkbox"
 								#interestChkboxs
 								[for]="interest.label + 'checkbox-welcome'">{{ "welcometutorial.interests." + interest.label | translate }}</label>
 						</div>
@@ -173,6 +177,7 @@
 							(keypress)="onKeyPress($event)"
 							id="tutorial_hide_moreInterest"
 							attr.aria-label="tutorial_hide_moreInterest"
+							role="button"
 							(click)="moreInterestClicked()">
 							<span
 								class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>
@@ -188,9 +193,12 @@
 								class="custom-control-input"
 								id="chkbox-vantage-toolbar"
 								role="checkbox">
-							<label class="custom-control-label" dir="{{direction}}"
-								tabindex="0" (keypress)="onKeyPress($event)"
+							<label class="custom-control-label"
+								dir="{{direction}}"
+								tabindex="0"
+								(keypress)="onKeyPress($event)"
 								id="welcome-toolbar-label"
+								role="checkbox"
 								for="chkbox-vantage-toolbar">
 								{{ "welcometutorial.toolbartitle" | translate }}
 							</label>
@@ -209,6 +217,7 @@
 							<label class="custom-control-label"
 								tabindex="0"
 								id="welcome-privacy-label"
+								role="checkbox"
 								(keypress)="onKeyPress($event)"
 								for="defaultUnchecked">
 								{{ "welcometutorial.privacytitle" | translate }}
@@ -230,11 +239,9 @@
 				<div class="row justify-content-center align-items-center next-btn">
 					<div class="col-auto"
 						(keypress)="btnDoneOnKeyPress($event)">
-						<vtr-ui-button metricsParent="WelcomePage"
-							metricsEvent="featureClick"
+						<vtr-ui-button
 							[tabIndex]='0'
 							[tooltip]="false"
-							[metricsItem]="'DONE'"
 							[label]="'welcometutorial.done' | translate"
 							[btnHeight]=true
 							[isGradient]=true

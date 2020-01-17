@@ -12,6 +12,10 @@
 		overflow-y: auto;
 	}
 
+	&:hover {
+		overflow-y: auto;
+	}
+
 	fa-icon {
 		font-size: 2rem;
 		color: $main;
@@ -54,7 +58,7 @@
 		flex-direction: column;
 		justify-content: center;
 		.subtitle {
-			font-size: 2.0rem;
+			font-size: 2.5rem;
 			font-weight: bold;
 			color: $dark;
 			text-align: center;
@@ -75,7 +79,7 @@
 			}
 		}
 		.body {
-			font-size: 1.5rem;
+			font-size: 1.8rem;
 			color: $blue-dark;
 		}
 		.white-button {

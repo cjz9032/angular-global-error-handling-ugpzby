@@ -58,7 +58,11 @@
 			max-width: 35.5rem;
 		}
 		@media #{$breakpoint_lg}{
-			margin-left: -1.5rem;
+			//margin-left: -1.5rem;
+			max-width: 35.5rem;
+		}
+		@media #{$breakpoint_xl}{
+			//margin-left: -1.5rem;
 			max-width: 35.5rem;
 		}
 		.list-group {

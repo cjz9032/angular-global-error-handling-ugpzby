@@ -73,7 +73,7 @@ export class DisplayService {
 	}
 
 	resizeWindow() {
-		const delay = setTimeout(function () {
+		setTimeout(() => {
 			window.dispatchEvent(new Event('resize'));
 		}, 100);
 	}
@@ -312,7 +312,6 @@ export class DisplayService {
 		try {
 			if (this.isShellAvailable) {
 				return this.cameraSettings.startMonitor((response: any) => {
-					console.log('startMonitorForCameraPermission', response);
 					if (response.permission !== undefined) {
 						this.commonService.sendNotification(DeviceMonitorStatus.CameraStatus, response.permission);
 					}
@@ -385,25 +384,25 @@ export class DisplayService {
 		return undefined;
 	}
 
-	public setTaskbarDimmerSetting(value: String): Promise<boolean> {
+	public setTaskbarDimmerSetting(value: string): Promise<boolean> {
 		if (this.oledSettings) {
-			//console.log('this.setTaskbarDimmerSetting', this.oledSettings);
+			// console.log('this.setTaskbarDimmerSetting', this.oledSettings);
 			return this.oledSettings.setTaskbarDimmerSetting(value);
 		}
 		return undefined;
 	}
 
-	public setBackgroundDimmerSetting(value: String): Promise<boolean> {
+	public setBackgroundDimmerSetting(value: string): Promise<boolean> {
 		if (this.oledSettings) {
-			//console.log('this.setBackgroundDimmerSetting', this.oledSettings);
+			// console.log('this.setBackgroundDimmerSetting', this.oledSettings);
 			return this.oledSettings.setBackgroundDimmerSetting(value);
 		}
 		return undefined;
 	}
 
-	public setDisplayDimmerSetting(value: String): Promise<boolean> {
+	public setDisplayDimmerSetting(value: string): Promise<boolean> {
 		if (this.oledSettings) {
-			//console.log('this.setDisplayDimmerSetting', this.oledSettings);
+			// console.log('this.setDisplayDimmerSetting', this.oledSettings);
 			return this.oledSettings.setDisplayDimmerSetting(value);
 		}
 		return undefined;

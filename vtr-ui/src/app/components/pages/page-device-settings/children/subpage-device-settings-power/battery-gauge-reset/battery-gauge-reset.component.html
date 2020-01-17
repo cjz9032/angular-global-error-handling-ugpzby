@@ -64,14 +64,14 @@
 										</div>
 									</div>
 									<div class="row"
-										*ngIf="isValid(batteryService.remainingPercentages[i])">
+										*ngIf="isValid(batteryService.remainingPercentages[battery.batteryNum - 1])">
 										<div class="col-4 label-text"
 											role="text">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.remaining' | translate}}
 										</div>
 										<div class="col-8 label-value"
 											role="text">
-											{{batteryService.remainingPercentages[i]}}<span>%</span></div>
+											{{batteryService.remainingPercentages[battery.batteryNum - 1]}}<span>%</span></div>
 									</div>
 									<div class="row"
 										*ngIf="isValid(battery.startTime)">
@@ -81,7 +81,14 @@
 										</div>
 										<div class="col-8 label-value"
 											role="text">
-											{{battery.startTime | date : 'M/d/yyyy h:mm:ss a'}}</div>
+											{{battery.startTime | date : 'M/d/yyyy h:mm:ss '}}
+											{{getIsAmPm(battery.startTime)? ('device.deviceSettings.power.smartStandby.timer.amPms.am'| translate) : ('device.deviceSettings.power.smartStandby.timer.amPms.pm'| translate)}}
+										</div>
+									</div>
+									<div class="row pt-3">
+										<div class="col-12 percent-note">
+											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.percentNote' | translate}}
+										</div>
 									</div>
 									<div class="row pt-3">
 										<div class="col-12 percent-note">
@@ -100,7 +107,8 @@
 										</div>
 										<div class="col-8 label-value"
 											role="text">
-											{{battery.lastResetTime | date : 'M/d/yyyy h:mm:ss a'}}
+											{{battery.lastResetTime | date : 'M/d/yyyy h:mm:ss '}}
+											{{getIsAmPm(battery.lastResetTime)?('device.deviceSettings.power.smartStandby.timer.amPms.am'| translate) : ('device.deviceSettings.power.smartStandby.timer.amPms.pm'| translate)}}
 											<br *ngIf="isValid(battery.lastResetTime)">
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.resetLog.' + battery.resetErrorLog | translate}}
 										</div>

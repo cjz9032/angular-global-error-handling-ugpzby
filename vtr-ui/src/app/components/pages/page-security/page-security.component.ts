@@ -30,19 +30,9 @@ import {
 import {
 	TranslateService
 } from '@ngx-translate/core';
-import {
-	EventTypes
-} from '@lenovo/tan-client-bridge';
-import {
-	LocalStorageKey
-} from '../../../enums/local-storage-key.enum';
-import {
-	AppNotification
-} from 'src/app/data-models/common/app-notification.model';
-import {
-	NetworkStatus
-} from 'src/app/enums/network-status.enum';
-import { GuardService } from '../../../services/guard/guardService.service';
+import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
@@ -72,26 +62,23 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	windowsActiveLandingViewModel: WindowsActiveLandingViewModel;
 	bitLockerLandingViewModel: BitLockerLandingViewModel;
 	uacLandingViewModel: UacLandingViewModel;
-	windowsActive;
-	uac;
-	bitLocker;
+	windowsActive: phoenix.WindowsActivation;
+	uac: phoenix.UAC;
+	bitLocker: phoenix.BitLocker;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	antivirus: phoenix.Antivirus;
 	wifiSecurity: phoenix.WifiSecurity;
 	passwordManager: phoenix.PasswordManager;
 	vpn: phoenix.Vpn;
 	windowsHello: phoenix.WindowsHello;
-	// statusList: any;
-	maliciousWifi: number;
 	cardContentPositionA: any = {};
 	isOnline: boolean;
 	notificationSubscription: Subscription;
 	showVpn: boolean;
-	isRS5OrLater: boolean;
 	baseItems = [];
 	intermediateItems = [];
 	advanceItems = [];
-	statusItem: LandingView;
+	landingStatus: LandingView;
 	pluginSupport = true;
 
 	constructor(
@@ -101,7 +88,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private deviceService: DeviceService,
 		private ngZone: NgZone,
-		private guard: GuardService,
 		private router: Router,
 		private windowsHelloService: WindowsHelloService,
 		private hypSettings: HypothesisService
@@ -118,11 +104,12 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.antivirus = this.securityAdvisor.antivirus;
 		this.vpn = this.securityAdvisor.vpn;
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
+		this.windowsHello = this.securityAdvisor.windowsHello;
 		this.uac = this.securityAdvisor.uac;
 		this.windowsActive = this.securityAdvisor.windowsActivation;
 		this.bitLocker = this.securityAdvisor.bitLocker;
 		this.isOnline = this.commonService.isOnline;
-		this.statusItem = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingLevel);
+		this.landingStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingLevel);
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -185,33 +172,25 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		} else {
 			this.vpnLandingViewModel = undefined;
 		}
-		const windowsHello = this.securityAdvisor.windowsHello;
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		const cacheShowWifiSecurity = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity);
-		const wifiSecurity = this.securityAdvisor.wifiSecurity;
 		if (cacheShowWindowsHello) {
-			this.fingerPrintLandingViewModel = new FingerPrintLandingViewModel(this.translate, windowsHello, this.commonService);
+			this.fingerPrintLandingViewModel = new FingerPrintLandingViewModel(this.translate, this.windowsHello, this.commonService);
 		}
-		if (cacheShowWifiSecurity) {
+		if (cacheShowWifiSecurity || this.wifiSecurity.isSupported) {
 			this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.ngZone);
 		}
-		if (windowsHello.fingerPrintStatus) {
-			this.showWindowsHelloItem(windowsHello);
-		}
-		if (wifiSecurity.isSupported !== undefined) {
-			this.showWifiSecurityItem();
-		}
-		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
-			this.showWindowsHelloItem(windowsHello);
+		this.windowsHello.on(phoenix.EventTypes.helloFingerPrintStatusEvent, () => {
+			this.showWindowsHelloItem(this.windowsHello);
 			this.updateViewModels();
 		});
 		this.updateStatus();
-		wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, () => {
+		this.wifiSecurity.on(phoenix.EventTypes.wsIsSupportWifiEvent, () => {
 			this.showWifiSecurityItem();
 			this.updateViewModels();
-		}).on(EventTypes.wsStateEvent, () => {
+		}).on(phoenix.EventTypes.wsStateEvent, () => {
 			this.updateStatus();
-		}).on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
+		}).on(phoenix.EventTypes.wsIsLocationServiceOnEvent, () => {
 			this.ngZone.run(() => {
 				this.updateStatus();
 			});
@@ -251,6 +230,11 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			intermediate: [],
 			advanced: []
 		};
+		if (!this.pluginSupport) {
+			this.windowsActiveLandingViewModel = undefined;
+			this.uacLandingViewModel = undefined;
+			this.bitLockerLandingViewModel = undefined;
+		}
 		statusList.basic = new Array(
 			this.antivirusLandingViewModel.avStatus.status,
 			this.antivirusLandingViewModel.fwStatus.status,
@@ -322,32 +306,32 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	public calcSecurityLevel(levelStatus) {
-		this.statusItem = new LandingView();
+		this.landingStatus = new LandingView();
 		const allItems = levelStatus.basicLength + levelStatus.intermediateLength + levelStatus.advancedLength;
 		if (levelStatus.basicValid > 0) {
 			if (levelStatus.intermediateValid > 0 && levelStatus.basicSuccess) {
 				if (levelStatus.advancedValid > 0 && levelStatus.intermediateSuccess) {
-					this.statusItem.status = 3;
-					this.statusItem.fullyProtected = true;
-					this.statusItem.percent = (levelStatus.advancedValid + levelStatus.basicLength + levelStatus.intermediateLength) / allItems;
+					this.landingStatus.status = 3;
+					this.landingStatus.fullyProtected = true;
+					this.landingStatus.percent = (levelStatus.advancedValid + levelStatus.basicLength + levelStatus.intermediateLength) / allItems;
 				} else {
-					this.statusItem.status = 2;
-					this.statusItem.fullyProtected = false;
-					this.statusItem.percent = (levelStatus.intermediateValid + levelStatus.basicLength) / allItems;
+					this.landingStatus.status = 2;
+					this.landingStatus.fullyProtected = false;
+					this.landingStatus.percent = (levelStatus.intermediateValid + levelStatus.basicLength) / allItems;
 				}
 			} else {
-				this.statusItem.status = 1;
-				this.statusItem.fullyProtected = false;
-				this.statusItem.percent = (levelStatus.basicValid) / allItems;
+				this.landingStatus.status = 1;
+				this.landingStatus.fullyProtected = false;
+				this.landingStatus.percent = (levelStatus.basicValid) / allItems;
 			}
 
 		} else {
-			this.statusItem.status = 0;
-			this.statusItem.fullyProtected = false;
-			this.statusItem.percent = 0;
+			this.landingStatus.status = 0;
+			this.landingStatus.fullyProtected = false;
+			this.landingStatus.percent = 0;
 		}
 
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingLevel, this.statusItem);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingLevel, this.landingStatus);
 	}
 
 	fetchCMSArticles() {
@@ -372,7 +356,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	showWindowsHelloItem(windowsHello: phoenix.WindowsHello) {
-		if (this.windowsHelloService.showWindowsHello()) {
+		if (this.windowsHelloService.showWindowsHello(this.windowsHello)) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
 			this.fingerPrintLandingViewModel = new FingerPrintLandingViewModel(this.translate, windowsHello, this.commonService);
 		} else {
 			this.fingerPrintLandingViewModel = null;
@@ -381,6 +366,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	showWifiSecurityItem() {
 		if (this.wifiSecurity.isSupported) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, true);
 			this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.ngZone);
 		} else {
 			this.wifiSecurityLandingViewModel = null;

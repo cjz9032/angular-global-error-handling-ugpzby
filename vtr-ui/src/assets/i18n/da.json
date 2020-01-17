@@ -644,7 +644,8 @@
             "registered": "REGISTRERET",
             "notRegistered": "IKKE REGISTRERET",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"
+        },
+        "offline": {
+            "connectToUseFeature": "Opret forbindelse til internettet for at bruge denne funktion"
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "Giv feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Kommentarer...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Tak for din feedback!"
-                },
                 "question1": "Kan du lide den nye Vantage-stil?",
                 "question2": "Synes du, at ydeevnen er acceptabel?",
                 "question3": "Vil du bruge programmet mere i fremtiden?",
+                "question4": "Ved du, at du kan bruge Lenovo Vantage til at opdatere softwaredrivere, firmware og BIOS på din computer?",
+                "question5": "Hvor sandsynligt er det, at du vil anbefale Lenovo Vantage-programmet til en ven eller kollega?",
+                "notAtAllLikely": "Slet ikke sandsynligt",
+                "extremelyLikely": "Meget sandsynligt",
                 "yes": "Ja",
                 "no": "Nej",
                 "tips1": "Skriv eventuelle andre kommentarer",
+                "comments": "Kommentarer...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Send feedback",
-                "submitScreenShot": "Send skærmbillede"
+                "submitScreenShot": "Send skærmbillede",
+                "messages": {
+                    "feedbackSuccess": "Tak for din feedback!"
+                }
             }
         },
         "quickSettings": {
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart-standby",
-                    "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
-                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte STARTtidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller den tid for computerbrug, som vi får. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
+                    "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at genoptage dit arbejde hurtigt ved hjælp af <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Moderne standby</a> i perioder med mere intens aktivitet.",
+                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller din computerbrug. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
                     "timer": {
-                        "heading": "Det tidspunkt, hvor du normalt bruger denne computer",
+                        "heading": "Den tid, hvor du normalt bruger denne computer:",
                         "subHeading1": "starter",
                         "subHeading2": "slut",
                         "subHeading3": "brug denne tidsplan for",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "Ingen dag valgt"
                     },
                     "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
-                    "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
+                    "hyperlinkToGraph": "Klik her for at se forbruget og den anvendte aktive tid",
                     "subTitle": "Tidsplan for din computer",
                     "automaticMode": "Automatisk tilstand",
                     "manualMode": "Manuel tilstand",
@@ -1370,6 +1378,17 @@
                         "taskBarDimmer": "PROCESLINJEDÆMPER",
                         "backgroundDimmer": "BAGGRUNDSDÆMPER",
                         "displayDimmer": "SKÆRMDÆMPER"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Ombytning af Fn- og Ctrl-tast",
                     "description": "Hvis du ofte kommer til at trykke på Fn-tasten, når du vil trykke på Ctrl-tasten, kan du bytte om på funktionen for de to taster.",
-                    "restartNote": "Hvis du vil bytte om på funktionen for to taster, skal computeren genstartes. Er du sikker på, du vil genstarte?"
+                    "restartNote": "Hvis du vil bytte om på funktionen for to taster, skal computeren genstartes. Er du sikker på, du vil genstarte?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "FLERE",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "Databasen til det lokale opbevaringssted findes ikke eller er ødelagt.",
             "networkInterruptedException": "Systemopdateringsserveren er i øjeblikket ikke tilgængelig. Prøv igen senere.",
             "helpCenterInvalidServerException": "Systemopdateringsserveren er ugyldig. Prøv igen senere.",
-            "catalogNotFoundException": "Der er ikke fundet nogen tilgængelige opdateringer til systemet.",
+            "catalogNotFoundException": "Der blev ikke fundet nogen tilgængelige opdateringer til systemet, da opdateringskataloget ikke blev fundet.",
             "catalogCrcErrorException": "Kataloget til dit system er ved at blive opdateret. Prøv igen senere.",
             "catalogErrorException": "Der opstod en fejl med opdateringskataloget til systemet på systemopdateringsserveren. Prøv igen senere.",
             "fileNotFoundException": "Filen blev ikke fundet."
@@ -1890,7 +1962,7 @@
             "startDate": "Startdato: ",
             "endDate": "Slutdato: ",
             "status": "Status: ",
-            "subDescription1": "Dette produkt har års begrænset garanti, og det er berettiget til deponeringsreparation. Kunder kan ringe til deres lokale servicecenter for at få flere oplysninger. Forhandlere kan yde reparation ved indlevering af dette produkt.",
+            "subDescription1": "Lenovo Begrænset Garanti gælder for computeren, og den er berettiget til depotservice. Kunder kan ringe til deres lokale servicecenter for at få flere oplysninger. Forhandlere kan yde reparation ved indlevering af dette produkt.",
             "subDescription2": "Vi kunne ikke finde garantioplysninger for din enhed. Du kan finde flere garantimuligheder ved at gå til vores supportwebsted.",
             "viewWarrantyOptions": "VIS GARANTIMULIGHEDER",
             "offlineTips1": "Opret forbindelse til internettet for at få de nyeste garantioplysninger.",
@@ -1975,7 +2047,7 @@
             "visitHde": "Besøg harddiskkryptering",
             "haveOwnPassword": "Jeg har min egen password manager",
             "haveOwnWifi": "Jeg har min egen wifi-sikkerhed",
-            "haveOwnVpn": "Jeg har min egen VPN-sikkerhed",
+            "haveOwnVpn": "Jeg har mit eget VPN",
             "uac": "Kontrol af brugerkonti (UAC)",
             "uacTitles": "Kontrol af brugerkonti",
             "hde": "Kryptering af harddisken",
@@ -2091,7 +2163,8 @@
                 "showmore": "Vis mere",
                 "showless": "Vis mindre",
                 "button": "Aktivér WiFi-sikkerhed",
-                "disableDecribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige."
+                "disableDescribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Brug trusselssensoren til at bestemme sikkerheden i dine nærliggende netværk.",
@@ -2125,7 +2198,8 @@
                 "subtitle": "Få ro i sindet",
                 "subtitleDescribe": "Tilsluttet Home Security sender en advarsel, hvis systemet registrerer et sikkerhedsproblem i din enhed eller dit hjemmenetværk, eller hvis du er tilsluttet et potentielt skadeligt netværk. Få mere at vide om Tilsluttet Home Security <tag>her</tag>.",
                 "tryNow": "Prøv nu",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Indtast invitationskode",
@@ -2200,7 +2274,8 @@
             "getStarted1": "Klik på knappen \"Åbn SurfEasy\" ovenfor for at starte SurfEasy VPN.",
             "getStarted2": "Aktivér VPN, og vent et kort øjeblik for at få bekræftelse på en sikker forbindelse.",
             "getStarted3": "Rediger dit område eller din placering, og nyd sikre og private netværksaktiviteter.",
-            "poweredBySurfEasy": "Udarbejdet af SurfEasy"
+            "poweredBySurfEasy": "Udarbejdet af SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE ADGANGSKODEADMINISTRATOR",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "Overvåge det mørke internet, så du er informeret",
             "allowsYou3": "Forblive sikret på ikke-sikre WiFi-netværk med indbygget VPN",
             "allowsYou4": "Dele adgangskoder sikkert uden at afsløre dem",
-            "poweredByDashLane": "Udarbejdet af Dashlane"
+            "poweredByDashLane": "Udarbejdet af Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "Send anonyme enhedsdata for at hjælpe os med at forbedre kvalitet, pålidelighed og den næste generation af enheder.",
         "userProfile": "Brugerprofil",
         "Note": "Bemærk: ",
-        "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft.",
+        "settingsNotes": "Start programmet igen for at sikre, at alle ændringer træder i kraft.",
         "betaSettingTitle": "Betaprogram",
         "betaProgram": "Betaprogram",
         "betaSettingDescription": "Prøv de nyeste funktioner, vi arbejder på."
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "Bemærk: Når du klikker på Download, får du muligvis en meddelelse fra Windows om at give os tilladelse til at installere programmet på din enhed. Når du er færdig med at installere, vises dine apps automatisk på skrivebordet eller i startmenuen.<br /><br />Du kan lukke siden Min software og fortsætte med at bruge Lenovo Vantage. Luk ikke Lenovo Vantage under installation.",
         "sizeText": "Størrelse",
         "versionText": "Version",
+        "redemptionCode": "Indløsningskode:",
+        "redeemWebsite": "Indløs på leverandørens websted",
         "softwareDescription": "Klik på download nedenfor for at indløse software, der er købt med din enhed. Hvis du på et tidspunkt får brug for at downloade softwaren igen, kan du gøre det ved at klikke på knappen Min software i Lenovo Vantage-menuen.",
         "title": "Min software",
         "loadingDescription": "Vent, mens vi forbereder en list over den software, der fulgte med, da du købte din enhed.",

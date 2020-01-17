@@ -10,7 +10,7 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			<div class="row smartsettings-card"
+			<div class="row pt-5 smartsettings-card"
 				*ngIf="dolbyModeResponse.available"
 				id="audio">
 				<div class="col-12 mx-auto">
@@ -65,7 +65,7 @@
 											[label]="dolbyMode | dolbyModesTranslation"
 											[value]='dolbyMode'
 											[checked]="dolbyMode == dolbyModeResponse.currentMode"
-											(change)="onDolbySeetingRadioChange($event)"
+											(optionChange)="onDolbySeetingRadioChange($event)"
 											[processIcon]="true"
 											[textId]="'myDevice-settings-audio-automatic-dolby'">
 										</vtr-ui-circle-radio-with-checkbox>
@@ -95,7 +95,7 @@
 					</vtr-container-collapsible>
 				</div>
 			</div>
-			<div class="row py-5 smartsettings-card"
+			<div class="row pt-5 smartsettings-card pb-40"
 				id="microphone">
 				<div class="col-12 mx-auto container-card ">
 					<vtr-container-collapsible componentName="Microphone"
@@ -235,8 +235,10 @@
 											[value]='optimizeMode'
 											[checked]="optimizeMode === microOptimizeModeResponse.current"
 											[disabled]="microphoneProperties.disableEffect"
-											(change)="onOptimizeModesRadioChange($event)"
+											(optionChange)="onOptimizeModesRadioChange($event)"
 											[processIcon]="true"
+											[hideIcon]="optimizeMode === 'Normal'"
+											[customIcon]="optimizeMode === 'Normal' ? 'LE-VoiceRecognition2x': ''"
 											[textId]="'myDevice-settings-audio-microphone-optimize'">
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>

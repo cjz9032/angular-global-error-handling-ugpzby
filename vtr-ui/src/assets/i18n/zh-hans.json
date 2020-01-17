@@ -644,7 +644,8 @@
             "registered": "已注册",
             "notRegistered": "未注册",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "您好！已有较新版本的 Vantage，您要加载吗？"
+        },
+        "offline": {
+            "connectToUseFeature": "连接到英特网以使用此功能"
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "提供反馈",
             "form": {
                 "email": "联系方式（如果您不喜欢可留空）",
-                "comments": "意见...",
-                "button": "提交",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "感谢您的反馈！"
-                },
                 "question1": "您喜欢 Vantage 的新风格吗？",
                 "question2": "您认为性能是否可以接受？",
                 "question3": "您将来会更频繁地使用该应用程序吗？",
+                "question4": "您是否知道可以使用 Lenovo Vantage 更新计算机上的软件驱动程序、固件和 BIOS？",
+                "question5": "您将 Lenovo Vantage 应用程序推荐给同事朋友的可能性有多大？",
+                "notAtAllLikely": "完全不可能",
+                "extremelyLikely": "极有可能",
                 "yes": "是",
                 "no": "否",
                 "tips1": "如有任何其他意见，请提出",
+                "comments": "意见...",
+                "button": "提交",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "发送反馈",
-                "submitScreenShot": "提交屏幕截图"
+                "submitScreenShot": "提交屏幕截图",
+                "messages": {
+                    "feedbackSuccess": "感谢您的反馈！"
+                }
             }
         },
         "quickSettings": {
@@ -951,15 +959,15 @@
                         "optimize": "优化系统以",
                         "apsHint": "要启用智能冷却，必须安装并启用 Lenovo Active Protection System。",
                         "options": {
-                            "quiteCool3": "低温模式",
+                            "quiteCool3": "安静与低温",
                             "performance3": "高性能",
-                            "quiteCool4": "安静和低温模式",
-                            "performance4": "性能",
-                            "quiteCool5": "安静和低温模式",
-                            "performance5": "性能",
+                            "quiteCool4": "安静与低温",
+                            "performance4": "高性能",
+                            "quiteCool5": "安静与低温",
+                            "performance5": "高性能",
                             "batterySaving": "电池省电",
-                            "performance13": "性能",
-                            "quiteCool13": "安静和低温模式",
+                            "performance13": "高性能",
+                            "quiteCool13": "安静与低温",
                             "performance14": "极致性能",
                             "quiteCool14": "智能冷却"
                         },
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "智能待机",
-                    "description": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
-                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
+                    "description": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">现代待机模式</a>的快速恢复体验。",
+                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划或计算机使用时间而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
                     "timer": {
-                        "heading": "设置通常使用此计算机的时间",
+                        "heading": "通常使用此计算机的时间：",
                         "subHeading1": "开始",
                         "subHeading2": "结束",
                         "subHeading3": "将此计划用于",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "未选择日期"
                     },
                     "checkbox": "根据您的使用情况自动调整计算机的活动时间",
-                    "hyperlinkToGraph": "单击以查看计算机活动和活动时间表",
+                    "hyperlinkToGraph": "单击以查看使用情况和应用的活动时间",
                     "subTitle": "安排您的计算机",
                     "automaticMode": "自动模式",
                     "manualMode": "手动模式",
@@ -1370,6 +1378,17 @@
                         "description": "此功能可防止其他人偷看您的屏幕。当此功能开启时，将改变您显示屏的视角，使您周围的人无法偷看您的隐私。您还可以通过按“Fn+D”键切换模式。",
                         "note": "隐私保护在屏幕纵向模式下无法工作。在此模式下，仍可从侧面看到您的屏幕。",
                         "labelText": "输入密码时启用此功能"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "互换 Fn 键和 Ctrl 键",
                     "description": "如果当您想要按 Ctrl 键时却习惯按下 Fn 键，则您可以互换这两个键的功能。",
-                    "restartNote": "交换两个键的功能需要重新启动计算机，确定要重新启动吗？"
+                    "restartNote": "交换两个键的功能需要重新启动计算机，确定要重新启动吗？",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "更多",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "未能找到本地存储库或者该存储库已损坏。",
             "networkInterruptedException": "系统更新服务器当前不可用，请稍后重试。",
             "helpCenterInvalidServerException": "系统更新服务器无效，请稍后重试。",
-            "catalogNotFoundException": "没有找到适用于您的系统的更新。",
+            "catalogNotFoundException": "由于找不到更新列表，因此找不到适用于系统的更新。",
             "catalogCrcErrorException": "服务器的配置文件正在更新，请稍后重试。",
             "catalogErrorException": "在系统更新服务器上检测到您的更新配置有错，请稍后重试。",
             "fileNotFoundException": "未找到文件。"
@@ -1890,7 +1962,7 @@
             "startDate": "开始日期：",
             "endDate": "结束日期：",
             "status": "状态：",
-            "subDescription1": "本产品具有若干年的有限保修，并有权送往维修站获得维修服务。客户可以致电其当地服务中心来获取更多信息。经销商可对本产品提供送修服务。",
+            "subDescription1": "Lenovo 有限保修适用于您的计算机，并享有专人取送服务。客户可以致电其当地服务中心来获取更多信息。经销商可对本产品提供送修服务。",
             "subDescription2": "我们无法找到适用于您设备的保修详细信息，要获取更多保修选项，请访问我们的支持网站。",
             "viewWarrantyOptions": "查看保修选项",
             "offlineTips1": "请连接到因特网以获取最新的保修信息。",
@@ -1975,7 +2047,7 @@
             "visitHde": "访问硬盘驱动器加密",
             "haveOwnPassword": "我有自己的密码管理器",
             "haveOwnWifi": "我有自己的 WiFi 安全保护",
-            "haveOwnVpn": "我有自己的 VPN 安全保护",
+            "haveOwnVpn": "我有自己的 VPN",
             "uac": "用户帐户控制（UAC）",
             "uacTitles": "用户帐户控制",
             "hde": "硬盘驱动器加密",
@@ -2091,7 +2163,8 @@
                 "showmore": "显示更多内容",
                 "showless": "显示更少内容",
                 "button": "启用 WiFi 安全",
-                "disableDecribe": "Lenovo WiFi 安全是一项基于云的先进软件服务，可帮助您的设备区分安全的无线网络与潜在的恶意网络。"
+                "disableDescribe": "Lenovo WiFi 安全是一项基于云的先进软件服务，可帮助您的设备区分安全的无线网络与潜在的恶意网络。",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "使用威胁检测程序来确定您周围网络的安全性。",
@@ -2125,7 +2198,8 @@
                 "subtitle": "高枕无忧",
                 "subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，“互联家庭网络安全性”功能会向您发送警报。可在<tag>此处</tag>了解有关互联家庭网络安全性的更多信息。",
                 "tryNow": "立即试用",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "输入邀请码",
@@ -2200,7 +2274,8 @@
             "getStarted1": "单击上面的“打开 SurfEasy”按钮以启动 SurfEasy VPN。",
             "getStarted2": "开启 VPN，稍等片刻，以便确认连接安全。",
             "getStarted3": "如果需要，更改您的区域或位置，然后畅享安全、隐秘的网络。",
-            "poweredBySurfEasy": "SurfEasy 出品"
+            "poweredBySurfEasy": "SurfEasy 出品",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 密码管理器",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "监控暗网保障个人信息安全",
             "allowsYou3": "通过内置 VPN 在不安全的 WiFi 网络上提供安全性",
             "allowsYou4": "在不显示密码的情况下安全地共享密码",
-            "poweredByDashLane": "Dashlane 出品"
+            "poweredByDashLane": "Dashlane 出品",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "发送匿名设备数据以帮助我们改进质量、可靠性和新一代设备。",
         "userProfile": "用户概要文件",
         "Note": "注意：",
-        "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。",
+        "settingsNotes": "请重新启动此应用程序，以确保所有更改都生效。",
         "betaSettingTitle": "Beta 程序",
         "betaProgram": "Beta 程序",
         "betaSettingDescription": "试用我们正在开发的最新功能。"
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "注：单击“下载”后，Windows 可能会提示在设备上安装软件。安装完成后，应用程序会自动在桌面或“开始”菜单中显示。<br /><br />您可以关闭“我的软件”页面，然后继续使用 Lenovo Vantage。请勿在安装期间关闭 Lenovo Vantage。",
         "sizeText": "大小",
         "versionText": "版本",
+        "redemptionCode": "兑换代码：",
+        "redeemWebsite": "在供应商网站上兑换",
         "softwareDescription": "单击下方的下载以兑换购买设备时随附的软件。如果您需要再次下载软件，随时单击 Vantage 菜单中的“我的软件”按钮即可实现。",
         "title": "我的软件",
         "loadingDescription": "请稍候，我们正在准备您购买设备时随附的软件清单。",

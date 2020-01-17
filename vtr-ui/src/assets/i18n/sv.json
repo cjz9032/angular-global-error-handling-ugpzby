@@ -644,7 +644,8 @@
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "Hej! Det finns en nyare version av Vantage. Vill du läsa in den?"
+        },
+        "offline": {
+            "connectToUseFeature": "Anslut till Internet om du vill använda den här funktionen"
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "Ge feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Kommentarer…",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Tack för din feedback!"
-                },
                 "question1": "Gillar du det nya utseendet på Vantage?",
                 "question2": "Tycker du att kapaciteten är acceptabel?",
                 "question3": "Kommer du att använda programmet oftare i framtiden?",
+                "question4": "Visste du att du kan använda Lenovo Vantage för att uppdatera drivrutiner, fast programvara och BIOS på datorn?",
+                "question5": "Hur troligt är det att du skulle rekommendera programmet Lenovo Vantage till en vän eller kollega?",
+                "notAtAllLikely": "Inte alls troligt",
+                "extremelyLikely": "Mycket troligt",
                 "yes": "Ja",
                 "no": "Nej",
                 "tips1": "Skriv eventuella övriga kommentarer",
+                "comments": "Kommentarer…",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Skicka feedback",
-                "submitScreenShot": "Skicka skärmdump"
+                "submitScreenShot": "Skicka skärmdump",
+                "messages": {
+                    "feedbackSuccess": "Tack för din feedback!"
+                }
             }
         },
         "quickSettings": {
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart vänteläge",
-                    "description": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
-                    "tooltip": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda starttiden och i viloläge när den inte har använts under en viss tid på batterikraft. Tiden optimeras utifrån det schema du har valt eller den datoranvändningstid vi får. Datorn övergår från viloläge till modernt vänteläge endast schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
+                    "description": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den snabbt aktiveras med <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">modernt vänteläge</a> under tider då den används mer frekvent.",
+                    "tooltip": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda START tiden och i viloläge när den inte har använts under en viss tid på batterikraft. Tidsperioden är optimerad utifrån schemat du har angett eller din datoranvändning. Datorn övergår från viloläge till modernt vänteläge endast schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
                     "timer": {
-                        "heading": "Tiden då du brukar använda datorn",
+                        "heading": "Den tid du brukar använda denna dator:",
                         "subHeading1": "start",
                         "subHeading2": "slut",
                         "subHeading3": "använd detta schema för",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "Ingen dag har valts"
                     },
                     "checkbox": "Justera datorns aktiva tid automatiskt utifrån användning",
-                    "hyperlinkToGraph": "Klicka om du vill datorns tabell över aktivitet och aktiv tid",
+                    "hyperlinkToGraph": "Klicka för att se förbrukningen och den tillämpade aktiva tiden",
                     "subTitle": "Schemalägg datorn",
                     "automaticMode": "Automatiskt läge",
                     "manualMode": "Manuellt läge",
@@ -1370,6 +1378,17 @@
                         "taskBarDimmer": "AKTIVITETSFÄLTSDIMMER",
                         "backgroundDimmer": "BAKGRUNDSDIMMER",
                         "displayDimmer": "BILDSKÄRMSDIMMER"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Växla funktion på Fn- och Ctrl-tangenten",
                     "description": "Om du ofta trycker på Fn-tangenten när du avser att trycka på Ctrl-tangenten kan du växla de två tangenternas funktion.",
-                    "restartNote": "Du måste starta om datorn om du vill byta två tangenters funktion. Vill du verkligen göra det?"
+                    "restartNote": "Du måste starta om datorn om du vill byta två tangenters funktion. Vill du verkligen göra det?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "MER",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "Den lokala uppdateringsdatabasen kan inte hittas eller är skadad.",
             "networkInterruptedException": "Systemuppdateringsservern är inte tillgänglig just nu. Försök igen litet senare.",
             "helpCenterInvalidServerException": "System Update-servern är ogiltig. Försök igen litet senare.",
-            "catalogNotFoundException": "Det gick inte att hitta några uppdateringar för ditt system.",
+            "catalogNotFoundException": "Inga tillämpliga uppdateringar hittades för ditt system, eftersom uppdateringskatalogen inte gick att hitta.",
             "catalogCrcErrorException": "Systemkatalogen uppdateras för närvarande. Försök igen litet senare.",
             "catalogErrorException": "Ett fel inträffade med systemets uppdateringskatalog på systemuppdateringsservern. Försök igen litet senare.",
             "fileNotFoundException": "Filen hittades inte."
@@ -1890,7 +1962,7 @@
             "startDate": "Startdatum: ",
             "endDate": "Slutdatum: ",
             "status": "Status: ",
-            "subDescription1": "Denna produkt omfattas av garanti under ett fördefinierat antal år och har rätt till reparationsservice på verkstad. Kunden kan ringa det lokala servicecentret för mer information. Återförsäljare kan erbjuda reparation med inlämning för denna produkt.",
+            "subDescription1": "Din dator omfattas av Lenovos begränsade garanti och är berättigad till Depot-service. Kunden kan ringa det lokala servicecentret för mer information. Återförsäljare kan erbjuda reparation med inlämning för denna produkt.",
             "subDescription2": "Det gick inte att hitta garantiinformation för din enhet. Besök vår supportwebbplats för mer information om garantialternativ.",
             "viewWarrantyOptions": "VISA GARANTIALTERNATIV",
             "offlineTips1": "Anslut till internet för att se aktuell garantiinformation.",
@@ -1975,7 +2047,7 @@
             "visitHde": "Gå till hårddiskkryptering",
             "haveOwnPassword": "Jag har en egen lösenordshanterare",
             "haveOwnWifi": "Jag har egen Wi-Fi-säkerhet",
-            "haveOwnVpn": "Jag har egen VPN-säkerhet",
+            "haveOwnVpn": "Jag har min egen VPN",
             "uac": "User Account Control (UAC)",
             "uacTitles": "User Account Control",
             "hde": "Hårddiskkryptering",
@@ -2091,7 +2163,8 @@
                 "showmore": "Visa mer",
                 "showless": "Visa mindre",
                 "button": "Aktivera WiFi-säkerhet",
-                "disableDecribe": "Lenovo WiFi-säkerhet är en avancerad molnbaserad programvarutjänst som hjälper din enhet att skilja mellan säkra trådlösa nätverk och potentiellt skadliga."
+                "disableDescribe": "Lenovo WiFi-säkerhet är en avancerad molnbaserad programvarutjänst som hjälper din enhet att skilja mellan säkra trådlösa nätverk och potentiellt skadliga.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Använd hotidentifieraren för att utvärdera säkerheten i nätverken.",
@@ -2125,7 +2198,8 @@
                 "subtitle": "Sinnesro",
                 "subtitleDescribe": "Säkerhet för uppkopplat hem skickar ett meddelande om det upptäcker en sårbarhet på enheten eller i hemnätverket eller om du ansluter till ett skadligt nätverk. Läs mer om Säkerhet för uppkopplat hem <tag>här</tag>.",
                 "tryNow": "Prova nu",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Ange inbjudningskod",
@@ -2200,7 +2274,8 @@
             "getStarted1": "Klicka på ”Öppna SurfEasy” ovan för att öppna SurfEasy VPN.",
             "getStarted2": "Aktivera VPN och vänta tills du ser en bekräftelse på att anslutningen är säker.",
             "getStarted3": "Ändra din region eller plats vid behov och surfa med ett säkert och privat nätverk.",
-            "poweredBySurfEasy": "Från SurfEasy"
+            "poweredBySurfEasy": "Från SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE LÖSENORDSHANTERARE",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "övervaka om din personliga information finns på dark web",
             "allowsYou3": "skydda dig i osäkra WiFi-nätverk med inbyggt VPN",
             "allowsYou4": "dela lösenord på ett säkert sätt utan att avslöja dem.",
-            "poweredByDashLane": "Från Dashlane"
+            "poweredByDashLane": "Från Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "Skicka anonym enhetsdata för att hjälpa oss förbättra kvaliteten, tillförlitligheten och nästa generations enheter.",
         "userProfile": "Användarprofil",
         "Note": "Obs! ",
-        "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om.",
+        "settingsNotes": "Starta om programmet och kontrollera att alla ändringar börjar gälla.",
         "betaSettingTitle": "Betaprogram",
         "betaProgram": "Betaprogram",
         "betaSettingDescription": "Prova de senaste funktionerna vi arbetar på."
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "Obs! När du klickar på Hämta kan det visas ett Windows-meddelande där du blir ombedd att ge oss tillstånd att installera programvaran på din enhet. När du är klar med installationen visas apparna automatiskt på skrivbordet eller Start-menyn.<br /><br />Du kan stänga sidan Min programvara och fortsätta använda Lenovo Vantage. Stäng inte Lenovo Vantage under installationen.",
         "sizeText": "Storlek",
         "versionText": "Version",
+        "redemptionCode": "Inlösenkod:",
+        "redeemWebsite": "Lös in på leverantörens webbplats",
         "softwareDescription": "Klicka på Hämta nedan för att hämta programvara som inkluderades i köpet av din enhet. Om du behöver ladda ned programvaran igen vid ett senare tillfälle kan du göra detta genom att välja Min programvara på Vantage-menyn.",
         "title": "MIn programvara",
         "loadingDescription": "Vänta medan vi skapar en lista med programvara som var inkluderad i köpet av enheten.",

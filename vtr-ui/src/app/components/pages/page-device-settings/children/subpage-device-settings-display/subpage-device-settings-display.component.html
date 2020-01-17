@@ -44,6 +44,28 @@
 							</li>
 
 							<li class="pt-3"
+								*ngIf="showECMReset">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.displayCamera.display.displayColorTemperature.title' | translate"
+									componentName="Display color temperature"
+									[caption]="'device.deviceSettings.displayCamera.display.displayColorTemperature.description' | translate"
+									[isSwitchVisible]="false"
+									[leftIcon]="['fal', 'eye']"
+									[showChildContent]="true"
+									[theme]="'white'"
+									[switchId]="'day-time-color-temp'">
+									<div class="displayColorTemperatureLink">
+										<span>{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.click' | translate}}</span>&nbsp;
+										<a id="goto_nightlight_link"
+											href="javascript:void()"
+											attr.aria-label="goto_nightlight_link"
+											(click)="launchProtocol('ms-settings:nightlight')">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.here' | translate}}</a>&nbsp;
+										<span>{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.rest' | translate}}</span>
+									</div>
+								</vtr-ui-row-switch>
+							</li>
+
+							<li class="pt-3"
 								*ngIf="displayColorTempDataSource && displayColorTempDataSource.available && !showECMReset">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
@@ -69,10 +91,10 @@
 												(colorPreviewValue)="setToEyeCareMode()">
 											</vtr-display-color-temp>
 											<div class="row">
-												<div class="feature-note pl-5 pr-5 pt-4 pb-4"
-													 id="day-time-color-temp-note"
-													 tabindex="0"
-													 attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate }}">
+												<div class="feature-note p-4"
+													id="day-time-color-temp-note"
+													tabindex="0"
+													attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate }}">
 													<p>
 														{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}
 													</p>
@@ -206,7 +228,7 @@
 									componentName="Oled Power Settings"
 									[name]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
 									[isSwitchVisible]="false"
-									[isLastChild]="true"
+									[isLastChild]="false"
 									[leftIcon]="['fal', 'tv']"
 									[showChildContent]="true"
 									[isSwitchChecked]="eyeCareModeStatus.status"
@@ -228,28 +250,35 @@
 							</li>
 
 
-							<!-- MVP 2 feature -->
-							<!-- <li class="pt-3">
-							<vtr-ui-row-switch [title]="'Display Priority Control'"
-								[caption]="'Configures microphone effect to enhance your audio experience by different scenarios and environment.'"
-								[isSwitchVisible]="false"
-								[isLastChild]=true
-								[leftIcon]="['far', 'gem']"
-								[readMoreText]="''"
-								[showChildContent]="true"
-								[theme]="'white'">
-								<div class="my-3">
-									<vtr-ui-rectangle-radio [radioId]="'radio1'"
-										[group]="'radio'"
-										[label]="'HDMI'"
-										[value]="'DYNAMIC'"></vtr-ui-rectangle-radio>
-									<vtr-ui-rectangle-radio [radioId]="'radio2'"
-										[group]="'radio'"
-										[label]="'USB TYPE-c'"
-										[value]="'MOVIE'"></vtr-ui-rectangle-radio>
-								</div>
-							</vtr-ui-row-switch>
-						</li> -->
+							<!-- Display Priority Control -->
+							<li class="pt-3">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.displayCamera.display.displayPriority.title' | translate"
+									[caption]="'device.deviceSettings.displayCamera.display.displayPriority.description' | translate"
+									[isSwitchVisible]="false"
+									[isLastChild]="true"
+									[leftIcon]="['icomoon', 'icomoon-dpc-icon']"
+									[readMoreText]="''"
+									[showChildContent]="true"
+									[theme]="'white'">
+									<div class="row no-gutters">
+										<vtr-ui-circle-radio-with-checkbox
+											*ngFor="let option of displayPriorityModal.options"
+											[radioId]="'radioDisplayPriority' + option.name"
+											[group]="displayPriorityRadioGroup"
+											[label]="option.label | translate"
+											[theme]="'white'"
+											[value]='option.name'
+											[checked]="option.name === displayPriorityModal.selectedValue"
+											(optionChange)="setDisplayPriorityCapability(option.name)"
+											[processIcon]="true"
+											[textId]="'myDevice-settings-display-priority-control'"
+											[hideIcon]="true"
+											[customIcon]="option.icon">
+										</vtr-ui-circle-radio-with-checkbox>
+									</div>
+								</vtr-ui-row-switch>
+							</li>
 
 						</ul>
 					</vtr-container-collapsible>
@@ -257,7 +286,7 @@
 			</div>
 
 			<!-- Camera -->
-			<div class="row pt-5 smartsettings-card"
+			<div class="row pt-5 smartsettings-card pb-40"
 				*ngIf="this.isAllInOneMachineFlag"
 				id="camera"
 				[hidden]="isCameraHidden">

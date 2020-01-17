@@ -644,7 +644,8 @@
             "registered": "등록됨",
             "notRegistered": "등록되지 않음",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
+        },
+        "offline": {
+            "connectToUseFeature": "이 기능을 사용하려면 인터넷에 연결하십시오"
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "피드백 제출",
             "form": {
                 "email": "Email (optional)",
-                "comments": "댓글...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "소중한 의견을 들려주셔서 감사합니다!"
-                },
                 "question1": "새로운 스타일의 Vantage를 원하십니까?",
                 "question2": "성능이 적합하다고 생각합니까?",
                 "question3": "나중에 응용 프로그램을 보다 자주 사용하시겠습니까?",
+                "question4": "Lenovo Vantage를 사용하여 컴퓨터에서 소프트웨어 드라이버, 펌웨어 및 BIOS를 업데이트할 수 있다는 것을 알고 있었습니까?",
+                "question5": "Lenovo Vantage 응용 프로그램을 친구나 동료에게 추천하시겠습니까?",
+                "notAtAllLikely": "전혀 추천하지 않음",
+                "extremelyLikely": "매우 추천함",
                 "yes": "예",
                 "no": "아니요",
                 "tips1": "추가 의견을 남겨 주십시오.",
+                "comments": "댓글...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "피드백 보내기",
-                "submitScreenShot": "스크린 샷 제출"
+                "submitScreenShot": "스크린 샷 제출",
+                "messages": {
+                    "feedbackSuccess": "소중한 의견을 들려주셔서 감사합니다!"
+                }
             }
         },
         "quickSettings": {
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "스마트 대기",
-                    "description": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
+                    "description": "이 기능은 사용량이 많을 때 <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">최신 대기 상태</a>를 빠르게 재개하도록 하면서 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약합니다.",
                     "tooltip": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 기간은 설정한 일정 또는 컴퓨터 사용 시간을 기준으로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며, 비활성화되도록 예약된 날에는 전환되지 않습니다.",
                     "timer": {
-                        "heading": "이 컴퓨터를 주로 사용하는 시간",
+                        "heading": "이 컴퓨터를 주로 사용하는 시간:",
                         "subHeading1": "시작하면",
                         "subHeading2": "종료",
                         "subHeading3": "다음에 대해 이 스케줄을 사용합니다",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "날짜를 선택하지 않음"
                     },
                     "checkbox": "사용 현황에 따라 컴퓨터의 활성 시간 자동 조정",
-                    "hyperlinkToGraph": "클릭하여 컴퓨터 테이블의 활동 및 활성 시간을 확인",
+                    "hyperlinkToGraph": "사용량 및 적용된 유효 시간을 보려면 클릭하십시오",
                     "subTitle": "컴퓨터 예약",
                     "automaticMode": "자동 모드",
                     "manualMode": "수동 모드",
@@ -1370,6 +1378,17 @@
                         "taskBarDimmer": "작업 표시줄 채광",
                         "backgroundDimmer": "백그라운드 채광",
                         "displayDimmer": "디스플레이 채광"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Fn 키와 Ctrl 키 바꾸기",
                     "description": "Ctrl 키를 눌러야 하는 데 습관적으로 Fn 키를 누르는 경우 두 키의 기능을 바꿀 수 있습니다.",
-                    "restartNote": "두 키의 기능을 바꾸어도 컴퓨터를 다시 시작해야 합니다. 다시 시작하시겠습니까?"
+                    "restartNote": "두 키의 기능을 바꾸어도 컴퓨터를 다시 시작해야 합니다. 다시 시작하시겠습니까?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "자세히",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "로컬 리포지토리 데이터베이스를 찾을 수 없거나 데이터베이스가 손상되었습니다.",
             "networkInterruptedException": "시스템 업데이트 서버를 현재 사용할 수 없습니다. 나중에 다시 시도하십시오.",
             "helpCenterInvalidServerException": "시스템 업데이트 서버가 올바르지 않습니다. 나중에 다시 시도하십시오.",
-            "catalogNotFoundException": "시스템에 적용 가능한 업데이트를 찾을 수 없습니다.",
+            "catalogNotFoundException": "업데이트 카탈로그를 찾을 수 없기 때문에 사용자 시스템에 적용 가능한 업데이트를 찾을 수 없습니다.",
             "catalogCrcErrorException": "현재 시스템 카탈로그를 업데이트하는 중입니다. 나중에 다시 시도하십시오.",
             "catalogErrorException": "시스템 업데이트 서버의 사용자 시스템 업데이트 카탈로그에서 오류가 발견되었습니다. 나중에 다시 시도하십시오.",
             "fileNotFoundException": "파일을 찾을 수 없습니다."
@@ -1890,7 +1962,7 @@
             "startDate": "시작 날짜: ",
             "endDate": "계약 종료일: ",
             "status": "상태: ",
-            "subDescription1": "이 제품에는 햇수 제한 보증이 적용되며, 보관 수리 서비스를 받을 수 있습니다. 고객은 해당 지역 서비스 센터로 전화하여 자세한 정보를 요청할 수 있습니다. 대리점은 이 제품에 대한 직접 입고 수리를 제공할 수 있습니다.",
+            "subDescription1": "고객님의 컴퓨터에는 Lenovo 보증 제한이 적용되며 Depot 서비스를 받을 수 있습니다. 고객은 해당 지역 서비스 센터로 전화하여 자세한 정보를 요청할 수 있습니다. 대리점은 이 제품에 대한 직접 입고 수리를 제공할 수 있습니다.",
             "subDescription2": "장치에 대한 보증 상세 정보를 찾을 수 없으며 자세한 보증 옵션을 보유할 수 없습니다. 당사 지원 지원 웹 사이트를 방문하십시오.",
             "viewWarrantyOptions": "보증 옵션 보기",
             "offlineTips1": "최신 보증 정보는 인터넷에 연결하십시오.",
@@ -1975,7 +2047,7 @@
             "visitHde": "하드 드라이브 암호화 방문",
             "haveOwnPassword": "내 Password Manager가 있음",
             "haveOwnWifi": "내 wifi 보안이 있음",
-            "haveOwnVpn": "내 VPN 보안이 있음",
+            "haveOwnVpn": "개인 VPN 설정이 되어 있음",
             "uac": "사용자 계정 컨트롤(UAC)",
             "uacTitles": "사용자 계정 컨트롤",
             "hde": "하드 드라이브 암호화",
@@ -2091,7 +2163,8 @@
                 "showmore": "더 표시",
                 "showless": "간단하게 표시",
                 "button": "WiFi 보안 사용",
-                "disableDecribe": "Lenovo WiFi 보안은 장치가 안전한 무선 네트워크와 잠재적인 악성 네트워크를 구분할 수 있도록 도와주는 첨단 클라우드 기반 소프트웨어 서비스입니다."
+                "disableDescribe": "Lenovo WiFi 보안은 장치가 안전한 무선 네트워크와 잠재적인 악성 네트워크를 구분할 수 있도록 도와주는 첨단 클라우드 기반 소프트웨어 서비스입니다.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "위협 감지기를 사용하여 주변 네트워크의 안전성을 확인합니다.",
@@ -2125,7 +2198,8 @@
                 "subtitle": "안심하고 사용",
                 "subtitleDescribe": "장치 또는 홈 네트워크에서 취약한 점이 감지되거나 악성일 가능성이 있는 네트워크에 연결되어 있는 경우, 연결된 홈 보안 장치에서 경고를 보냅니다. 연결된 홈 보안에 대해 자세히 알아보십시오 <tag>여기</tag>.",
                 "tryNow": "지금 사용해 보기",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "초대 코드 입력",
@@ -2200,7 +2274,8 @@
             "getStarted1": "위의 \"SurfEasy 열기\" 버튼을 클릭하여 SurfEasy VPN을 실행하십시오.",
             "getStarted2": "보안 연결을 확인하려면 VPN을 켜고 잠시 기다리십시오.",
             "getStarted3": "원하는 경우 지역 또는 위치를 변경하여 안전하고 개인적인 네트워킹을 즐기십시오.",
-            "poweredBySurfEasy": "SurfEasy로 실행"
+            "poweredBySurfEasy": "SurfEasy로 실행",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 암호 관리자",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "다크 웹에서 개인 정보 모니터",
             "allowsYou3": "내장 VPN으로 비보안 WiFi 네트워크에서 안전하게 유지",
             "allowsYou4": "암호를 노출하지 않고 안전하게 공유",
-            "poweredByDashLane": "Dashlane로 실행"
+            "poweredByDashLane": "Dashlane로 실행",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "품질, 안정성 및 차세대 장치를 개선하는 데 도움이 되는 익명의 장치 데이터를 보내 주십시오.",
         "userProfile": "사용자 프로필",
         "Note": "참고: ",
-        "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다.",
+        "settingsNotes": "모든 변경 사항을 적용하려면, 이 응용 프로그램을 다시 실행하십시오.",
         "betaSettingTitle": "베타 프로그램",
         "betaProgram": "베타 프로그램",
         "betaSettingDescription": "개발 중인 최신 기능을 써보세요."
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "참고: 다운로드를 클릭하면 Windows에서 해당 장치에 소프트웨어를 설치할 수 있다는 메시지가 표시될 수 있습니다. 설치가 완료되면 바탕 화면이나 시작 메뉴에 앱이 자동으로 나타납니다.<br /><br />내 소프트웨어 페이지를 닫고 Lenovo Vantage를 계속 사용할 수 있습니다. 설치 중에 Lenovo Vantage를 닫지 마십시오.",
         "sizeText": "크기",
         "versionText": "버전",
+        "redemptionCode": "교환 코드:",
+        "redeemWebsite": "공급자 사이트에서 교환",
         "softwareDescription": "아래의 다운로드를 클릭하면 장치와 함께 구입한 소프트웨어를 사용할 수 있습니다. 언제든지 소프트웨어를 다시 다운로드해야 하는 경우 Vantage 메뉴에서 내 소프트웨어 버튼을 클릭하면 됩니다.",
         "title": "내 소프트웨어",
         "loadingDescription": "장치 구매시 포함된 소프트웨어 목록을 준비하는 동안 잠시 기다려주십시오.",
