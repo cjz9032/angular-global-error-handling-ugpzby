@@ -644,7 +644,8 @@
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Domande e risposte per la tua macchina",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "Ciao! È disponibile una versione più recente di Vantage. Caricarla?"
+        },
+        "offline": {
+            "connectToUseFeature": "Esegui la connessione a Internet per utilizzare questa funzione"
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "Fornisci feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Commenti...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Grazie del feedback!"
-                },
                 "question1": "Ti piace il nuovo stile di Vantage?",
                 "question2": "Le prestazioni sono accettabili?",
                 "question3": "Utilizzerai l'applicazione più spesso in futuro?",
+                "question4": "Sapevi che è possibile utilizzare Lenovo Vantage per aggiornare i driver del software, il firmware e il BIOS del computer?",
+                "question5": "Con quale probabilità consiglieresti l'applicazione Lenovo Vantage a un amico o un collega?",
+                "notAtAllLikely": "Altamente improbabile",
+                "extremelyLikely": "Molto probabile",
                 "yes": "Sì",
                 "no": "No",
                 "tips1": "Fornisci eventuali commenti aggiuntivi",
+                "comments": "Commenti...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Invia feedback",
-                "submitScreenShot": "Invia screenshot"
+                "submitScreenShot": "Invia screenshot",
+                "messages": {
+                    "feedbackSuccess": "Grazie del feedback!"
+                }
             }
         },
         "quickSettings": {
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Standby intelligente",
-                    "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
-                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Questo periodo di tempo è ottimizzato in base alla pianificazione impostata o al tempo di utilizzo del computer riscontrato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
+                    "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne il ripristino rapido dalla modalità <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Standby moderno</a> durante i picchi di utilizzo.",
+                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Questo periodo di tempo è ottimizzato in base alla pianificazione impostata o al tempo di utilizzo del computer. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
                     "timer": {
-                        "heading": "L'ora in cui generalmente si utilizza il computer",
+                        "heading": "Ora in cui generalmente si utilizza il computer:",
                         "subHeading1": "si inizi",
                         "subHeading2": "fine",
                         "subHeading3": "usa questa pianificazione per",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "Nessun giorno selezionato"
                     },
                     "checkbox": "Regolazione automatica del tempo di utilizzo del computer in base all'utilizzo",
-                    "hyperlinkToGraph": "Fare clic per visualizzare l'attività e il tempo di utilizzo della tabella del computer",
+                    "hyperlinkToGraph": "Fare clic per visualizzare l'utilizzo e il tempo attivo applicato",
                     "subTitle": "Pianificazione del computer",
                     "automaticMode": "Modalità automatica",
                     "manualMode": "Modalità manuale",
@@ -1370,6 +1378,17 @@
                         "taskBarDimmer": "RIDUZIONE LUMINOSITÀ BARRA DELLE APPLICAZIONI",
                         "backgroundDimmer": "RIDUZIONE LUMINOSITÀ SFONDO",
                         "displayDimmer": "RIDUZIONE LUMINOSITÀ SCHERMO"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Scambio tasto Fn e Ctrl",
                     "description": "Se di solito si preme il tasto Fn quando invece si vuole premere il tasto Ctrl, è possibile scambiare le funzioni dei due tasti.",
-                    "restartNote": "Per commutare la funzione di due tasti, è necessario riavviare il computer. Riavviare?"
+                    "restartNote": "Per commutare la funzione di due tasti, è necessario riavviare il computer. Riavviare?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "ALTRO",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "Impossibile trovare il database del repository locale oppure è danneggiato.",
             "networkInterruptedException": "Il server di aggiornamento del sistema non è attualmente disponibile. Si prega di riprovare più tardi.",
             "helpCenterInvalidServerException": "Il server di aggiornamento del sistema non è valido. Si prega di riprovare più tardi.",
-            "catalogNotFoundException": "Non è stato trovato alcun aggiornamento applicabile per il sistema.",
+            "catalogNotFoundException": "Non sono stati trovati aggiornamenti applicabili per il sistema. Impossibile trovare il catalogo aggiornamenti.",
             "catalogCrcErrorException": "Il catalogo per il sistema è attualmente in corso di aggiornamento. Si prega di riprovare più tardi.",
             "catalogErrorException": "È stato rilevato un errore con il catalogo degli aggiornamenti per il sistema sul server di aggiornamento del sistema. Si prega di riprovare più tardi.",
             "fileNotFoundException": "File non trovato."
@@ -1975,7 +2047,7 @@
             "visitHde": "Visita Crittografia unità disco fisso",
             "haveOwnPassword": "Ho il mio Password Manager",
             "haveOwnWifi": "Ho la mia sicurezza Wi-Fi",
-            "haveOwnVpn": "Ho la mia sicurezza VPN",
+            "haveOwnVpn": "Ho la mia VPN",
             "uac": "Controllo dell'account utente (UAC)",
             "uacTitles": "Controllo dell'account utente",
             "hde": "Crittografia unità disco fisso",
@@ -2091,7 +2163,8 @@
                 "showmore": "Mostra di più",
                 "showless": "Mostra meno",
                 "button": "Abilita sicurezza WiFi",
-                "disableDecribe": "Sicurezza Lenovo WiFi è un servizio software avanzato basato su cloud che consente al dispositivo in uso di distinguere reti wireless sicure da quelle potenzialmente dannose."
+                "disableDescribe": "Sicurezza Lenovo WiFi è un servizio software avanzato basato su cloud che consente al dispositivo in uso di distinguere reti wireless sicure da quelle potenzialmente dannose.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Utilizza il rilevatore delle minacce per determinare la sicurezza delle reti vicine.",
@@ -2125,7 +2198,8 @@
                 "subtitle": "Protezione garantita",
                 "subtitleDescribe": "Protezione abitazione connessa ti invierà un avviso se rileva una vulnerabilità del dispositivo o della rete domestica in uso o se sei collegato a una rete potenzialmente dannosa. Ulteriori informazioni su Protezione abitazione connessa sono disponibili <tag>qui</tag>.",
                 "tryNow": "Provalo ora",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Immettere il codice invito",
@@ -2200,7 +2274,8 @@
             "getStarted1": "Fare clic sul pulsante \"Avvia SurfEasy\" in alto, per avviare SurfEasy VPN.",
             "getStarted2": "Attiva la rete VPN e attendi qualche istante per la conferma della connessione sicura.",
             "getStarted3": "Modifica l'area geografica o la posizione se necessario e inizia a utilizzare la rete privata sicura.",
-            "poweredBySurfEasy": "Basato su SurfEasy"
+            "poweredBySurfEasy": "Basato su SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "STRUMENTO PER LA GESTIONE DELLE PASSWORD DASHLANE",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "Monitorare le informazioni personali sul web oscuro",
             "allowsYou3": "Proteggere i dispositivi collegati alle reti WiFi non sicure con la rete VPN integrata",
             "allowsYou4": "Condividere le password in modo sicuro",
-            "poweredByDashLane": "Basato su Dashlane"
+            "poweredByDashLane": "Basato su Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "Invia dati anonimi sui dispositivi per migliorare la qualità, l'affidabilità e la nuova generazione di dispositivi.",
         "userProfile": "Profilo utente",
         "Note": "Nota: ",
-        "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione.",
+        "settingsNotes": "Riavviare questa applicazione per assicurarsi che tutte le modifiche abbiano effetto.",
         "betaSettingTitle": "Programma beta",
         "betaProgram": "Programma beta",
         "betaSettingDescription": "Prova le funzioni più recenti su cui stiamo lavorando."
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "Nota: dopo aver fatto clic su Scarica, verrà visualizzato un messaggio di Windows che richiede il consenso per installare il software sul dispositivo. Una volta completata l'installazione, le applicazioni verranno visualizzate automaticamente sul desktop o nel menu Start.<br /><br />È possibile chiudere la pagina Il mio software e continuare a utilizzare Lenovo Vantage. Non chiudere Lenovo Vantage durante l'installazione.",
         "sizeText": "Dimensione",
         "versionText": "Versione",
+        "redemptionCode": "Codice di riscatto:",
+        "redeemWebsite": "Riscatta sul sito Web del fornitore",
         "softwareDescription": "Fare clic sul pulsante Scarica in basso per riscattare il software acquistato con il dispositivo. È possibile scaricare nuovamente il software in qualsiasi momento, facendo clic sul pulsante Il mio software nel menu di Vantage.",
         "title": "Il mio software",
         "loadingDescription": "È in corso la preparazione di un elenco di software inclusi con l'acquisto del dispositivo.",

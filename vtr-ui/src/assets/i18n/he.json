@@ -644,7 +644,8 @@
             "registered": "רשום",
             "notRegistered": "לא רשום",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Q & A עבור המחשב שלך",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "היי! יש גרסה חדשה יותר של Vantage, האם ברצונכם לטעון אותה?"
+        },
+        "offline": {
+            "connectToUseFeature": "התחבר לאינטרנט כדי להשתמש בתכונה זו"
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "תנו משוב",
             "form": {
                 "email": "Email (optional)",
-                "comments": "הערות...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "תודה על המשוב!"
-                },
                 "question1": "האם אתם אוהבים את הסגנון החדש של Vantage?",
                 "question2": "האם לדעתכם הביצועים טובים?",
                 "question3": "האם אתם מתכוונים להשתמש ביישום לעיתים קרובות יותר בעתיד?",
+                "question4": "הידעתכם שאתם יכולים להשתמש ב- Lenovo Vantage כדי לעדכן מנהלי התקן תוכנה, קושחה ו-BIOS במחשב?",
+                "question5": "עד כמה סביר שתמליצו על היישום Lenovo Vantage לחבר או לעמית?",
+                "notAtAllLikely": "בכלל לא סביר",
+                "extremelyLikely": "סביר מאוד",
                 "yes": "כן",
                 "no": "לא",
                 "tips1": "הערות נוספות",
+                "comments": "הערות...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "שליחת משוב",
-                "submitScreenShot": "שליחת צילום מסך"
+                "submitScreenShot": "שליחת צילום מסך",
+                "messages": {
+                    "feedbackSuccess": "תודה על המשוב!"
+                }
             }
         },
         "quickSettings": {
@@ -1000,9 +1008,9 @@
                         "desc3": "ניתן לכוונן חלק מהמצבים באופן אוטומטי לטווח רחב יותר של ביצועים בהתאם לפעילות. כדי להפעיל את המצב האוטומטי, לוחצים על Fn+T.",
                         "autoMode": {
                             "title1": "מצב סוללה אוטומטי",
-                            "desc1": "המחוון נמצא בצד שמאל. המצב מועבר באופן דינמי למצב 'שקט' או למצב 'סוללה' לחוויה הטובה ביותר במצב DC.",
+                            "desc1": "המחוון נמצא בצד שמאל. המצב מועבר באופן דינמי למצב שקט או למצב סוללה לחוויה הטובה ביותר במצב DC.",
                             "title2": "מצב ביצועים אוטומטי",
-                            "desc2": "המחוון נמצא במרכז או במרכז מימין. המצב מועבר באופן דינמי למצב 'שקט', למצב 'מאוזן' או למצב 'ביצועים' לחוויה הטובה ביותר במצב AC.",
+                            "desc2": "המחוון נמצא במרכז או במרכז מימין. המצב מועבר באופן דינמי למצב שקט, למצב מאוזן או למצב ביצועים לחוויה הטובה ביותר במצב AC.",
                             "title3": "מצב ביצועים",
                             "desc3": "המחוון נמצא בצד ימין. מהירות המאוורר וטמפרטורת המשטח המותרת גבוהות יותר כדי להשיג את הביצועים הטובים ביותר."
                         },
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "המתנה חכמה",
-                    "description": "תכונה זו מתזמנת את המחשב שלכם למיטוב חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, בלי לפגוע בזמן האתחול המהיר שנדרש בשעות שבהן נעשה שימוש במחשב.",
-                    "tooltip": "כאשר תכונת 'המתנה חכמה' פועלת, המחשב עובר ל'המתנה מודרנית' לפני מועד ההתחלה שנקבע, והוא עובר למצב שינה אם הוא בלתי פעיל במשך פרק זמן מסוים כאשר הוא מופעל באמצעות סוללה. פרק זמן זה ממוטב בהתבסס על המועד שנקבע או זמן השימוש במחשב שאנחנו מקבלים. המחשב עובר ממצב שינה למצב 'המתנה מודרנית' רק בימים שנקבעו, ואינו עובר כאשר הוא במצב בלתי פעיל במשך כמה ימים ברצף, לפי מה שקבעתם.",
+                    "description": "תכונה זו קובעת זמן למחשב שלכם שבו יבוצע מיטוב של חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, כדי שלא לפגוע בחוויית הפעלה מחדש מהירה של <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">הפעלה מודרנית</a> שנדרשת בשעות שבהן נעשה שימוש במחשב.",
+                    "tooltip": "כאשר תכונת 'המתנה חכמה' פועלת, המחשב עובר ל'המתנה מודרנית' לפני מועד ההתחלה שנקבע, והוא עובר למצב שינה אם הוא בלתי פעיל במשך פרק זמן מסוים כאשר הוא מופעל באמצעות סוללה. פרק זמן זה ממוטב בהתבסס על המועד שנקבע או זמן השימוש במחשב. המחשב עובר ממצב שינה למצב 'המתנה מודרנית' רק בימים שנקבעו, ואינו עובר כאשר הוא במצב בלתי פעיל במשך כמה ימים ברצף, לפי מה שקבעתם.",
                     "timer": {
-                        "heading": "הזמן שבו אתם בדרך כלל משתמשים במחשב",
+                        "heading": "הזמן שבו אתם בדרך כלל משתמשים במחשב:",
                         "subHeading1": "הפעלה",
                         "subHeading2": "סיום",
                         "subHeading3": "השתמשו בלוח הזמנים הזה לצורך",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "לא נבחר יום"
                     },
                     "checkbox": "התאמה אוטומטית של הזמן הפעיל של המחשב בהתבסס על השימוש שלכם",
-                    "hyperlinkToGraph": "לחצו כדי לראות את הפעילות ואת הזמן הפעיל של טבלת המחשב שלכם",
+                    "hyperlinkToGraph": "לחצו כדי לראות את השימוש ואת ‏‫הזמן הפעיל המעשי‬",
                     "subTitle": "תזמון המחשב",
                     "automaticMode": "מצב אוטומטי",
                     "manualMode": "מצב ידני",
@@ -1370,6 +1378,17 @@
                         "taskBarDimmer": "עמעם שורת המשימות",
                         "backgroundDimmer": "עמעם רקע",
                         "displayDimmer": "עמעם תצוגה"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "‏‫החלפה בין מקש Fn למקש Ctrl‬",
                     "description": "אם אתם לוחצים לעתים קרובות על מקש Fn במקום ללחוץ על מקש Ctrl, אפשר להחליף בין הפונקציות של שני המקשים.",
-                    "restartNote": "החלפת הפונקציה של שני מקשים מחייבת הפעלה מחדש של המחשב, האם אתם בטוחים שברצונכם להפעיל מחדש?"
+                    "restartNote": "החלפת הפונקציה של שני מקשים מחייבת הפעלה מחדש של המחשב, האם אתם בטוחים שברצונכם להפעיל מחדש?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "עוד",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "לא ניתן לאתר את מסד הנתונים של המאגר המקומי או שהוא פגום.",
             "networkInterruptedException": "השרת עדכוני המערכת אינו זמין כעת. נסו שוב מאוחר יותר.",
             "helpCenterInvalidServerException": "השרת עדכוני המערכת אינו חוקי. נסו שוב מאוחר יותר.",
-            "catalogNotFoundException": "לא נמצאו עדכונים עבור המערכת שלכם.",
+            "catalogNotFoundException": "לא נמצאו עדכונים רלוונטיים למערכת מכיוון שקטלוג העדכונים לא נמצא.",
             "catalogCrcErrorException": "קטלוג המערכת מתעדכן כעת. נסו שוב מאוחר יותר.",
             "catalogErrorException": "זוהתה שגיאה בקטלוג העדכונים של המערכת שלכם בשרת עדכוני המערכת. נסו שוב מאוחר יותר.",
             "fileNotFoundException": "הקובץ לא נמצא."
@@ -1975,7 +2047,7 @@
             "visitHde": "בקרו בהצפנת כונן קשיח",
             "haveOwnPassword": "יש לי Password Manager משלי",
             "haveOwnWifi": "יש לי אבטחת Wi-Fi משלי",
-            "haveOwnVpn": "יש לי אבטחת VPN משלי",
+            "haveOwnVpn": "יש לי VPN משלי",
             "uac": "בקרת חשבון משתמש (UAC)",
             "uacTitles": "בקרת חשבון משתמש",
             "hde": "הצפנת כונן קשיח",
@@ -2091,7 +2163,8 @@
                 "showmore": "הצג יותר",
                 "showless": "הצג פחות",
                 "button": "הפעלת אבטחת WiFi",
-                "disableDecribe": "אבטחת WiFi של Lenovo היא תוכנה מתקדמת המבוססת על ענן שמסייעת למכשיר להבדיל בין רשתות אלחוטיות בטוחות ורשתות העלולות להיות זדוניות."
+                "disableDescribe": "אבטחת WiFi של Lenovo היא תוכנה מתקדמת המבוססת על ענן שמסייעת למכשיר להבדיל בין רשתות אלחוטיות בטוחות ורשתות העלולות להיות זדוניות.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "השתמשו ב'גלאי האיומים' כדי לבדוק את רמת הבטיחות של הרשתות שסביבכם.",
@@ -2125,7 +2198,8 @@
                 "subtitle": "שקט נפשי",
                 "subtitleDescribe": "התכונה 'אבטחת הבית המחובר' תשלח לכם התראה בעת זיהוי פגיעות במכשיר או ברשת הביתית שלכם, או אם אתם מחוברים לרשת שעלולה להיות זדונית. ניתן לקבל מידע נוסף על 'אבטחת הבית המחובר' <tag>כאן</tag>.",
                 "tryNow": "נסו עכשיו",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "הזינו קוד הזמנה",
@@ -2200,7 +2274,8 @@
             "getStarted1": "לחצו על הלחצן \"פתח את SurfEasy\" למעלה כדי להפעיל את SurfEasy VPN.",
             "getStarted2": "הפעילו את רשת ה-VPN והמתינו רגע לאישור החיבור המאובטח.",
             "getStarted3": "שנו את האזור או המיקום שלכם במידת הצורך, ותיהנו מעבודה ברשת פרטית מאובטחת.",
-            "poweredBySurfEasy": "מופעל על ידי SurfEasy"
+            "poweredBySurfEasy": "מופעל על ידי SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "מנהל סיסמאות DASHLANE",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "לוודא שאין מידע אישי שלכם ברשת האפלה",
             "allowsYou3": "להישאר בטוחים ברשתות WiFi לא מאובטחות עם רשת VPN מובנית",
             "allowsYou4": "לשתף סיסמאות באופן מאובטח מבלי לחשוף אותן",
-            "poweredByDashLane": "מופעל על-ידי Dashlane"
+            "poweredByDashLane": "מופעל על-ידי Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "שלחו נתונים אנונימיים בנוגע למכשיר כדי לעזור לנו לשפר את האיכות, את האמינות ואת הדור הבא של המכשירים.",
         "userProfile": "פרופיל משתמש",
         "Note": "שימו לב: ",
-        "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה.",
+        "settingsNotes": "הפעל מחדש את היישום כדי לוודא שכל השינויים נכנסים לתוקף.",
         "betaSettingTitle": "תוכנית בטא",
         "betaProgram": "תוכנית בטא",
         "betaSettingDescription": "נסו את התכונות האחרונות שאנו עובדים עליהן."
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "הערה: לאחר לחיצה על 'הורדה', ייתכן שתתבקשו על-ידי Windows לאשר את התקנת התוכנה במכשיר שלכם. בסיום ההתקנה, היישומים שלכם יופיעו אוטומטית בשולחן העבודה או בתפריט \"התחל\".<br /><br />אפשר לסגור את הדף 'התוכנה שלי' ולהמשיך להשתמש ב-Lenovo Vantage. אבל אל תסגרו את Lenovo Vantage במהלך התקנה.",
         "sizeText": "גודל",
         "versionText": "גרסה",
+        "redemptionCode": "קוד מימוש:",
+        "redeemWebsite": "יש לממש באתר הספק",
         "softwareDescription": "לחצו על 'הורדה' בהמשך כדי להוריד תוכנה שנרכשה דרך המכשיר. אם תצטרכו, תוכלו להוריד את התוכנה שוב על-ידי לחיצה על לחצן 'התוכנה שלי' בתפריט של Vantage.",
         "title": "התוכנה שלי",
         "loadingDescription": "אנא המתינו כשאנחנו מכינים רשימה של התוכנות שנכללות ברכישת המכשיר.",

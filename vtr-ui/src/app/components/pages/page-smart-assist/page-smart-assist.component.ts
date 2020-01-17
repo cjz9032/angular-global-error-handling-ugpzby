@@ -27,8 +27,7 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 	templateUrl: './page-smart-assist.component.html',
 	styleUrls: ['./page-smart-assist.component.scss']
 })
-export class PageSmartAssistComponent
-	implements OnInit, OnDestroy {
+export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	title = 'Smart Assist';
 	back = 'BACK';
@@ -159,6 +158,10 @@ export class PageSmartAssistComponent
 		}
 	}
 
+	ngOnDestroy() {
+		document.removeEventListener('visibilitychange', this.visibilityChange);
+	}
+
 	initDataFromCache() {
 		try {
 			this.smartAssistCache = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCache, undefined);
@@ -230,6 +233,10 @@ export class PageSmartAssistComponent
 		this.intelligentSecurity.facilRecognitionCameraAccess = true;
 		this.intelligentSecurity.facialRecognitionCameraPrivacyMode = false;
 		this.intelligentSecurity.isDistanceSensitivityVisible = false;
+		this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = false;
+		this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = false;
+		this.intelligentSecurity.facilRecognitionCameraAccess = true;
+		this.intelligentSecurity.facialRecognitionCameraPrivacyMode = false;
 	}
 
 	private setIntelligentScreen() {
@@ -308,6 +315,7 @@ export class PageSmartAssistComponent
 	}
 
 	public setHPDLeaveSensitivitySetting(event) {
+		this.sesnsitivityAdjustVal = event.value;
 		try {
 			this.smartAssist.SetHPDLeaveSensitivitySetting(event.value).then((value: any) => {
 				console.log('setHPDLeaveSensitivitySetting value----->', value);
@@ -418,11 +426,6 @@ export class PageSmartAssistComponent
 			this.intelligentSecurity.autoScreenLockTimer = responses[2].toString();
 			this.intelligentSecurity.isHPDEnabled = responses[3];
 			this.intelligentSecurity.isIntelligentSecuritySupported = responses[4];
-			// if (this.machineType === 0) {
-			// 	this.intelligentSecurity.isIntelligentSecuritySupported = responses[4];
-			// } else {
-			// 	this.intelligentSecurity.isIntelligentSecuritySupported = responses[5];
-			// }
 
 			if (!this.intelligentSecurity.isIntelligentSecuritySupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
@@ -615,14 +618,15 @@ export class PageSmartAssistComponent
 				this.getHPDLeaveSensitivityStatus();
 				console.log('onResetDefaultSettings.resetHPDSetting', isSuccess);
 			});
-			if ( this.intelligentSecurity.isZeroTouchLockFacialRecoVisible) {
-				this.smartAssist.resetFacialRecognitionStatus().then((res) =>{
-					if (this.smartAssist.isShellAvailable) {
-						this.getFacialRecognitionStatus();
-					}
-					console.log(`HPDReset - resetFacialRecognitionStatus ${res}`);
-				})
-			}
+
+		if (this.intelligentSecurity.isZeroTouchLockFacialRecoVisible) {
+			this.smartAssist.resetFacialRecognitionStatus().then((res) => {
+				if (this.smartAssist.isShellAvailable) {
+					this.getFacialRecognitionStatus();
+				}
+				console.log(`HPDReset - resetFacialRecognitionStatus ${res}`);
+			});
+		}
 	}
 
 	private getVideoPauseResumeStatus() {
@@ -682,6 +686,22 @@ export class PageSmartAssistComponent
 		}
 	}
 
+	private getSuperResolutionStatus() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getSuperResolutionStatus()
+					.then((response: FeatureStatus) => {
+						this.isSuperResolutionLoading = false;
+						this.superResolution = response;
+					}).catch(error => {
+						console.error('getSuperResolutionStatus.error', error);
+					});
+			}
+		} catch (error) {
+			console.error('getSuperResolutionStatus' + error.message);
+		}
+	}
+
 	onClick(path) {
 		if (path) {
 			this.deviceService.launchUri(path);
@@ -726,26 +746,7 @@ export class PageSmartAssistComponent
 		console.log(`zero touch lock facial recognition permissionChange - getFacialRecognitionStatus`);
 	}
 
-	ngOnDestroy() {
-		clearTimeout(this.getAutoScreenOffNoteStatus);
-		document.removeEventListener('visibilitychange', this.visibilityChange);
-	}
 
-	private getSuperResolutionStatus() {
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.getSuperResolutionStatus()
-					.then((response: FeatureStatus) => {
-						this.isSuperResolutionLoading = false;
-						this.superResolution = response;
-					}).catch(error => {
-						console.error('getSuperResolutionStatus.error', error);
-					});
-			}
-		} catch (error) {
-			console.error('getSuperResolutionStatus' + error.message);
-		}
-	}
 	public checkMenuItemsLength() {
 		if (this.headerMenuItems.length === 1) {
 			this.headerMenuItems = [];

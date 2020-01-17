@@ -230,6 +230,7 @@
 							.item-con {
 								background: $gaming_darkest;
 								border: none;
+								box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.01);
 
 								&:hover {
 									background: $gaming;

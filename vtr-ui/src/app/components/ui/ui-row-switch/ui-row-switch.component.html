@@ -117,7 +117,7 @@
 
 				</div>
 				<!-- [ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}" -->
-				<div class="tool-tip-icon" *ngIf="rightIcon.length > 0 && !voice && !toolTipStatus">
+				<div class="tool-tip-icon" *ngIf="rightIcon.length > 0 && !voice && !toolTipStatus && !fnCtrltoolTip">
 					<fa-icon id="{{switchId}}-tooltip_right_icon"
 						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
 						class="right-icon"
@@ -133,8 +133,8 @@
 						(keydown.enter)="onRightIconClick($event)">
 					</fa-icon>
 				</div>
-				<div class="p-0"
-					[ngClass]="{'pl-4': type==='Camera', 'pl-3': type===undefined}"
+				<div class="tool-tip-icon"
+					[ngClass]="{'pl-4': type==='Camera'}"
 					*ngIf="rightIcon.length > 0 && toolTipStatus">
 					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}"
 						tabindex="0"
@@ -150,7 +150,24 @@
 						(keydown.enter)="onRightIconClick($event)"></fa-icon>
 				</div>
 
-				<div class="p-0"
+				<div class="tool-tip-icon"
+					[ngClass]="{'pl-4': type==='Camera'}"
+					*ngIf="rightIcon.length > 0 && fnCtrltoolTip">
+					<fa-icon id="{{switchId+ '_fnCtrl_right_icon'}}"
+						tabindex="0"
+						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
+						class="right-icon"
+						triggers="click:blur keydown.enter:keydown.Tab"
+						placement="auto"
+						[ngbTooltip]="fnCtrltoolTipRef"
+						[icon]="rightIcon"
+						container="body"
+						tooltipClass="vtr-tooltip fnctrl-tooltip"
+						(click)="onRightIconClick($event)"
+						(keydown.enter)="onRightIconClick($event)"></fa-icon>
+				</div>
+
+				<div class="tool-tip-icon"
 					*ngIf="rightIcon.length > 0 && voice">
 					<fa-icon vtrMetrics
 						metricsEvent="FeatureClick"
@@ -287,4 +304,24 @@
 			</div>
 		</li>
 	</ul>
+</ng-template>
+
+<!-- Fn Ctrl tooltip content -->
+<ng-template #fnCtrltoolTipRef>
+	<table class="table table-bordered">
+		<thead>
+		  <tr>
+			<th>{{ "device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.heading" | translate}}</th>
+			<th>{{ "device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.heading" | translate}}</th>
+			<th>{{ "device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.heading" | translate}}</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr *ngFor="let item of tooltipContent">
+			<td>{{item.fnkey | translate}}</td>
+			<td>{{item.ctrlKey | translate}}</td>
+			<td>{{item.action | translate}}</td>
+		  </tr>
+		</tbody>
+	  </table>
 </ng-template>

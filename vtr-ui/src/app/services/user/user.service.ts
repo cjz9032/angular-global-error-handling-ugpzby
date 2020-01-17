@@ -16,6 +16,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import * as CryptoJS from 'crypto-js';
 
 declare var Windows;
 
@@ -147,6 +148,55 @@ export class UserService {
 		}
 	}
 
+	getLidUserFirstNameFromLocalStorage(userGuid: string) {
+		const firstName = this.commonService.getLocalStorageValue(
+			LocalStorageKey.LidUserFirstName,
+			undefined
+		);
+		if (firstName && userGuid) {
+			const decrptedFirstName = CryptoJS.AES.decrypt(firstName, userGuid).toString(CryptoJS.enc.Utf8);
+			return decrptedFirstName;
+		} else {
+			return undefined;
+		}
+	}
+
+	obscureUserName(userName: string) {
+		let result = '';
+		if (!userName) {
+			return result;
+		}
+		if (userName.match(/\w+[@]{1}\w+[.]\w+/)) {
+			// Should be email, only show part of name and domain
+			const parts = userName.split('@');
+			const name = parts[0];
+			if (name.length > 2) {
+				result = name.charAt(0);
+				for (let i = 1; i < name.length - 1; i++) {
+					result += '*';
+				}
+				result += name.charAt(name.length - 1);
+			} else {
+				if (name.length > 1) {
+					result = name.charAt(0);
+				}
+				result += '*';
+			}
+			result += '@';
+			const domain = parts[1];
+			result += domain.charAt(0);
+			const dot = domain.indexOf('.');
+			for (let i = 1; i < dot; i++) {
+				result += '*';
+			}
+			result += domain.substring(dot);
+		} else {
+			// Should be phone number, hide middle 4 digits
+			result = userName.replace(/(\d{3})(\d{4})/, '$1****');
+		}
+		return result;
+	}
+
 	async loginSilently(appFeature = null) {
 		const self = this;
 		this.commonService.sendNotification(LenovoIdStatus.Pending, this.auth);
@@ -154,15 +204,28 @@ export class UserService {
 		if (!isStarterAccount && self.lid) {
 			self.lid.loginSilently().then(result => {
 				if (result.success && result.status === 0) {
-					this.silentlyLoginSuccess = true;
+					self.silentlyLoginSuccess = true;
+					const firstName = self.getLidUserFirstNameFromLocalStorage(result.userGuid);
+					if (firstName) {
+						self.setName(firstName, '');
+					}
 					self.lid.getUserProfile().then(profile => {
 						if (profile.success && profile.status === 0) {
-							self.setName(profile.firstName, profile.lastName);
-							self.setAuth(true);
-							self.commonService.sendNotification(LenovoIdStatus.SignedIn, appFeature);
-							self.sendSilentlyLoginMetric();
+							if (profile.firstName && profile.firstName !== firstName) {
+								self.setName(profile.firstName, profile.lastName);
+							}
+						} else {
+							if (result.userName && !firstName) {
+								const userName = self.obscureUserName(result.userName);
+								self.setName(userName, '');
+							}
 						}
+					}).catch((res) => {
+						self.devService.writeLog('getUserProfile() Exception happen ', res);
 					});
+					self.setAuth(true);
+					self.commonService.sendNotification(LenovoIdStatus.SignedIn, appFeature);
+					self.sendSilentlyLoginMetric();
 				} else {
 					self.commonService.sendNotification(LenovoIdStatus.SignedOut, appFeature);
 					self.sendSilentlyLoginMetric();

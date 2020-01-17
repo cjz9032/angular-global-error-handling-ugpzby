@@ -146,6 +146,17 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		});
 	}
 
+	ngOnDestroy() {
+		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
+		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
+		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
+		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+		this.batteryService.stopMonitor();
+	}
+
 	onPowerSupplyStatusEvent(info: any) {
 		this.setBatteryCard(info, 'onPowerSupplyStatusEvent');
 	}
@@ -158,10 +169,20 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.setBatteryCard(info, 'onRemainingTimeEvent');
 	}
 
-	onPowerBatteryGaugeResetEvent(gaugeResetInfo: BatteryGaugeReset[]) {
-		this.logger.info('onPowerBatteryGaugeResetEvent: Information', gaugeResetInfo);
+	onPowerBatteryGaugeResetEvent(info: BatteryGaugeReset[]) {
+		console.log('onPowerBatteryGaugeResetEvent: Information', info);
+		const gaugeResetInfo = this.commonService.cloneObj(info);
+		if (gaugeResetInfo) {
+			gaugeResetInfo.forEach((battery) => {
+				if (battery.FCCBefore && battery.FCCAfter) {
+					if (battery.FCCBefore !== 0 && battery.FCCAfter !== 0) {
+						battery.FCCAfter = parseFloat((battery.FCCAfter / 1000).toFixed(2));
+						battery.FCCBefore = parseFloat((battery.FCCBefore / 1000).toFixed(2));
+					}
+				}
+			});
+		}
 		this.batteryService.gaugeResetInfo = gaugeResetInfo;
-		this.batteryService.isGaugeResetRunning = gaugeResetInfo && (gaugeResetInfo.length > 0 && gaugeResetInfo[0].isResetRunning) || (gaugeResetInfo.length > 1 && gaugeResetInfo[1].isResetRunning);
 	}
 
 	public getBatteryDetailOnCard() {
@@ -179,7 +200,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	setBatteryCard(response, methodName = 'Battery Info') {
 		if (response) {
 			this.logger.info(methodName + ' : ', response);
-			console.log(methodName + ' : ', response);
 			this.batteryInfo = response.batteryInformation;
 			this.batteryGauge = response.batteryIndicatorInfo;
 			if (this.batteryGauge.isAttached && this.batteryGauge.acWattage && this.batteryGauge.acAdapterType) {
@@ -302,8 +322,25 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		const batteryConditions = [];
 		const isThinkPad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
 
-		if (this.batteryService.isPowerDriverMissing) {
+		if (this.batteryGauge.isPowerDriverMissing) {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryStatus.Poor));
+		}
+
+		if (!(this.batteryIndicator.batteryNotDetected || this.batteryGauge.isPowerDriverMissing)) {
+
+			// AcAdapter conditions hidden for IdeaPad & IdeaCenter machines
+			// if (machineType === 1 && machineType === 3) {
+			if (isThinkPad) {
+				if (this.batteryGauge.acAdapterStatus && this.batteryGauge.acAdapterStatus !== null) {
+					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryStatus.AcAdapterStatus));
+					}
+
+					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryStatus.AcAdapterStatus));
+					}
+				}
+			}
 		}
 
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
@@ -317,21 +354,22 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
 					this.param = { value: parseFloat(percentLimit.toFixed(1)) };
 				}
-			}
-			if (this.batteryHealth === 4) {
-				if (this.batteryInfo.length > 1 && isThinkPad) {
-					if (this.batteryInfo[1].batteryHealth === 4) {
-						this.batteryIndicator.batteryNotDetected = true;
-						healthCondition = 4;
+
+				if (this.batteryHealth === 4) {
+					if (this.batteryInfo.length > 1) {
+						if (this.batteryInfo[1].batteryHealth === 4) {
+							this.batteryIndicator.batteryNotDetected = true;
+							healthCondition = 4;
+						} else {
+							this.batteryIndicator.batteryNotDetected = false;
+							healthCondition = BatteryConditionsEnum.PrimaryNotDetected;
+						}
 					} else {
-						this.batteryIndicator.batteryNotDetected = false;
-						healthCondition = BatteryConditionsEnum.PrimaryNotDetected;
+						this.batteryIndicator.batteryNotDetected = true;
 					}
 				} else {
-					this.batteryIndicator.batteryNotDetected = true;
+					this.batteryIndicator.batteryNotDetected = false;
 				}
-			} else {
-				this.batteryIndicator.batteryNotDetected = false;
 			}
 			this.isUnsupportedBattery = false;
 			this.batteryInfo[0].batteryCondition.forEach((condition) => {
@@ -384,7 +422,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 		this.batteryConditions = batteryConditions;
 		this.logger.info('Battery Conditions ====>', this.batteryConditions);
-		console.log('Battery Health: ', this.batteryHealth, 'Battery Conditions: ', JSON.stringify(this.batteryConditions));
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, indicator: this.batteryIndicator, conditions: this.batteryConditions });
 
 		this.setConditionTips();
@@ -439,24 +476,4 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	reInitValue() {
 		this.flag = false;
 	}
-
-	ngOnDestroy() {
-		if (this.batteryService.isShellAvailable) {
-			this.logger.info('STOP MONITOR');
-			this.batteryService.stopMonitor();
-		}
-		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
-		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
-		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
-		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
-
-		if (this.notificationSubscription) {
-			this.notificationSubscription.unsubscribe();
-		}
-	}
-	/*
-		@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
-			this.closeModal();
-		} */
-
 }

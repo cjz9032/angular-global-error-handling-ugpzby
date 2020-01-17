@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, OnDestroy, SecurityContext, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, SecurityContext, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -34,13 +34,15 @@ import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 	templateUrl: './page-dashboard.component.html',
 	styleUrls: ['./page-dashboard.component.scss']
 })
-export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
+export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit {
 	submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit;
+	offlineConnection = 'offline-connection';
 	public systemStatus: Status[] = [];
 	public isOnline = true;
 	public brand;
 	private protocolAction: any;
+	private lastAction: any;
 	public warrantyData: { info: { endDate: null; status: 2; startDate: null; url: string }; cache: boolean };
 	public isWarrantyVisible = false;
 	public showQuickSettings = true;
@@ -119,6 +121,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		private sanitizer: DomSanitizer,
 		public dccService: DccService
 	) {
+		this.getProtocalAction();
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.deviceService.getMachineInfo().then(() => {
@@ -176,17 +179,36 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			});
 		this.getSelfSelectStatus();
 		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
+		this.launchProtocol();
 	}
 
-	ngDoCheck(): void {
-		const lastAction = this.protocolAction;
+	private getProtocalAction() {
 		this.protocolAction = this.activatedRoute.snapshot.queryParams.action;
-		if (this.protocolAction && (lastAction !== this.protocolAction)) {
-			if (this.protocolAction.toLowerCase() === 'lenovoid') {
-				setTimeout(() => this.dialogService.openLenovoIdDialog());
-			} else if (this.protocolAction.toLowerCase() === 'modernpreload') {
-				setTimeout(() => this.dialogService.openModernPreloadModal());
+		const currentNavigate = this.router.getCurrentNavigation();
+		if (currentNavigate && this.router.getCurrentNavigation().extras !== undefined) {
+			const extras = this.router.getCurrentNavigation().extras;
+			if (!this.protocolAction && extras.queryParams !== undefined && extras.queryParams.action !== undefined) {
+				this.protocolAction = extras.queryParams.action;
 			}
+		}
+	}
+
+	private launchProtocol() {
+		if (this.protocolAction && (this.lastAction !== this.protocolAction)) {
+			if (this.protocolAction.toLowerCase() === 'lenovoid' && !this.userService.auth) {
+				const shellVersion = this.vantageShellService.getShellVersion();
+				if (this.commonService.compareVersion(shellVersion, '10.2001.9') >= 0) {
+					// New shell use await to sync with UI, launch LID immediately
+					setTimeout(() => this.dialogService.openLenovoIdDialog(), 0);
+				} else {
+					// Delay 2 seconds then launch LID, this is workarround for old shell sync issue with UI,
+					//  UI will possibly become blank in case of protocol launch
+					setTimeout(() => this.dialogService.openLenovoIdDialog(), 2000);
+				}
+			} else if (this.protocolAction.toLowerCase() === 'modernpreload') {
+				setTimeout(() => this.dialogService.openModernPreloadModal(), 0);
+			}
+			this.lastAction = this.protocolAction;
 		}
 	}
 
@@ -228,6 +250,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				if (textIndex === 2) {
 					textIndex = 3;
 				} // Do not show again in first time
+			}
+			if (textIndex === 8 && this.translate.currentLang.toLocaleLowerCase() !== 'en') {
+				textIndex = 9;
 			}
 			this.dashboardService.welcomeText = `lenovoId.welcomeText${textIndex}`;
 			this.dashboardService.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
@@ -380,16 +405,15 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		|| (!bannerItems1 && bannerItems2)) {
 			result = true;
 		} else if (bannerItems1 && bannerItems2) {
-			if (bannerItems1.length != bannerItems2.length) {
+			if (bannerItems1.length !== bannerItems2.length) {
 				result = true;
 			} else {
-				for(var i = 0; i < bannerItems1.length; i++) {
+				for (let i = 0; i < bannerItems1.length; i++) {
 					if ((bannerItems1[i] && !bannerItems2[i])
 						|| (!bannerItems1[i] && bannerItems2[i])) {
 						result = true;
 						break;
-					}
-					else if (bannerItems1[i] && bannerItems2[i]
+					} else if (bannerItems1[i] && bannerItems2[i]
 						&& JSON.stringify(bannerItems2[i]) !== JSON.stringify(bannerItems1[i])) {
 						result = true;
 						break;
@@ -864,6 +888,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 					} else {
 						systemUpdate.status = 1;
 					}
+					systemUpdate.status = 0;
 				}
 			});
 		}
@@ -908,6 +933,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		}
 		warranty.isHidden = !this.deviceService.showWarranty;
 		this.isWarrantyVisible = this.deviceService.showWarranty;
+		warranty.status = 0;
 	}
 
 	private onNotification(notification: AppNotification) {

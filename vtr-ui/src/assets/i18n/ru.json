@@ -644,7 +644,8 @@
             "registered": "ЗАРЕГИСТРИРОВАНО",
             "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Политикой конфиденциальности</tag> и <tag>Условиями обслуживания</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Политикой конфиденциальности</tag> и <tag>Условиями обслуживания</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Q & A для вашей машины",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "Привет! Доступна более новая версия Vantage. Загрузить?"
+        },
+        "offline": {
+            "connectToUseFeature": "Подключитесь к Интернету, чтобы использовать эту функцию"
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "Отправить отзыв",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Комментарии...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Благодарим за отзыв!"
-                },
                 "question1": "Вам нравится новый стиль Vantage?",
                 "question2": "Как вы считаете, производительность приемлема?",
                 "question3": "Вы будете использовать приложение чаще в будущем?",
+                "question4": "Знали ли вы, что с помощью Lenovo Vantage можно обновлять драйверы программного обеспечения, микропрограмму и BIOS компьютера?",
+                "question5": "Насколько вероятно, что вы порекомендуете приложение Lenovo Vantage другу или коллеге?",
+                "notAtAllLikely": "Маловероятно",
+                "extremelyLikely": "Крайне вероятно",
                 "yes": "Да",
                 "no": "Нет",
                 "tips1": "Оставьте любые дополнительные комментарии",
+                "comments": "Комментарии...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Отправить отзыв",
-                "submitScreenShot": "Отправить снимок экрана"
+                "submitScreenShot": "Отправить снимок экрана",
+                "messages": {
+                    "feedbackSuccess": "Благодарим за отзыв!"
+                }
             }
         },
         "quickSettings": {
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Интеллектуальный режим ожидания",
-                    "description": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого запуска в часы интенсивного использования.",
-                    "tooltip": "Если функция интеллектуального режима ожидания включена, компьютер переключается в текущий режим ожидания до запланированного времени НАЧАЛА РАБОТЫ, а при неактивности в течение определенного периода времени при питании от аккумулятора переходит в режим гибернации. Этот период времени оптимизируется с учетом установленного пользователем графика или данных о времени использования компьютера, которые мы получаем. Компьютер переключается из режима гибернации в текущий режим ожидания только в запланированные дни и не переключается при неактивности в течение нескольких запланированных дней подряд.",
+                    "description": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого возвращения к работе в <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">текущем режиме ожидания</a> в часы интенсивного использования.",
+                    "tooltip": "Если функция интеллектуального режима ожидания включена, компьютер переключается в текущий режим ожидания до запланированного времени НАЧАЛА РАБОТЫ, а при неактивности в течение определенного периода времени при питании от аккумулятора переходит в режим гибернации. Этот период времени оптимизируется с учетом установленного пользователем графика или данных о времени использования компьютера. Компьютер переключается из режима гибернации в текущий режим ожидания только в запланированные дни и не переключается при неактивности в течение нескольких запланированных дней подряд.",
                     "timer": {
-                        "heading": "Время, когда вы обычно используете компьютер",
+                        "heading": "Время, в течение которого вы обычно используете этот компьютер:",
                         "subHeading1": "начнете",
                         "subHeading2": "окончание",
                         "subHeading3": "использовать это расписание в",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "День не выбран"
                     },
                     "checkbox": "Автоматическая регулировка активного времени компьютера с учетом характера использования",
-                    "hyperlinkToGraph": "Щелкните для просмотра активности и активного времени рабочего стола компьютера",
+                    "hyperlinkToGraph": "Нажмите, чтобы просмотреть данные об использовании и фактическое активное время",
                     "subTitle": "Планирование работы компьютера",
                     "automaticMode": "Автоматический режим",
                     "manualMode": "Ручной режим",
@@ -1370,6 +1378,17 @@
                         "taskBarDimmer": "РЕГУЛЯТОР ЯРКОСТИ ПАНЕЛИ ЗАДАЧ",
                         "backgroundDimmer": "РЕГУЛЯТОР ЯРКОСТИ ФОНА",
                         "displayDimmer": "РЕГУЛЯТОР ЯРКОСТИ ЭКРАНА"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Переключение функций клавиш Fn и Ctrl",
                     "description": "Если вы по привычке нажали клавишу Fn, намереваясь нажать клавишу Ctrl, вы можете поменять функции этих клавиш.",
-                    "restartNote": "Для переключения функции двух клавших необходимо перезапустить компьютер. Выполнить перезапуск?"
+                    "restartNote": "Для переключения функции двух клавших необходимо перезапустить компьютер. Выполнить перезапуск?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "ДОПОЛНИТЕЛЬНО",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "База данных локального репозитория не найдена или повреждена.",
             "networkInterruptedException": "Сервер обновления системы в настоящее время недоступен. Повторите попытку позже.",
             "helpCenterInvalidServerException": "Недопустимый сервер обновления системы. Повторите попытку позже.",
-            "catalogNotFoundException": "Для вашей системы не обнаружено подходящих обновлений.",
+            "catalogNotFoundException": "Для вашей системы не обнаружено применимых обновлений, так как не удалось найти каталог обновлений.",
             "catalogCrcErrorException": "Каталог для вашей системы в настоящее время обновляется. Повторите попытку позже.",
             "catalogErrorException": "Обнаружена ошибка, связанная с каталогом обновления вашей системы на сервере обновления системы. Повторите попытку позже.",
             "fileNotFoundException": "Файл не найден."
@@ -1975,7 +2047,7 @@
             "visitHde": "Перейти в раздел шифрования жесткого диска",
             "haveOwnPassword": "У меня есть диспетчер паролей",
             "haveOwnWifi": "У меня есть средство обеспечения безопасности при использовании сетей WiFi",
-            "haveOwnVpn": "У меня есть средство обеспечения безопасности при использовании сетей VPN",
+            "haveOwnVpn": "У меня есть служба VPN",
             "uac": "Контроль учетных записей пользователей (UAC)",
             "uacTitles": "Контроль учетных записей пользователей",
             "hde": "Шифрование жесткого диска",
@@ -2091,7 +2163,8 @@
                 "showmore": "Показать больше",
                 "showless": "Показать меньше",
                 "button": "Включить функцию обеспечения безопасности WiFi",
-                "disableDecribe": "Функция обеспечения безопасности безопасности Lenovo WiFi представляет собой современную облачную программную службу, с помощью которой ваше устройство отличает безопасные беспроводные сети от потенциально опасных."
+                "disableDescribe": "Функция обеспечения безопасности безопасности Lenovo WiFi представляет собой современную облачную программную службу, с помощью которой ваше устройство отличает безопасные беспроводные сети от потенциально опасных.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "С помощью детектора угроз можно найти ближайшие безопасные сети.",
@@ -2125,7 +2198,8 @@
                 "subtitle": "Спокойствие",
                 "subtitleDescribe": "Функция обеспечения безопасности устройств в домашней сети отправит вам уведомление, если в вашем устройстве или домашней сети будет обнаружена уязвимость, а также если вы подключитесь к потенциально вредоносной сети. Узнайте больше о безопасности устройств в домашней сети <tag>здесь</tag>.",
                 "tryNow": "Попробовать сейчас",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Ввести код приглашения",
@@ -2200,7 +2274,8 @@
             "getStarted1": "Нажмите кнопку \"Открыть SurfEasy\" сверху, чтобы запустить SurfEasy VPN.",
             "getStarted2": "Включите VPN и немного подождите, пока не появится подтверждение надежного подключения.",
             "getStarted3": "Если необходимо, измените свой регион или местоположение, и пользуйтесь безопасным и конфиденциальным сетевым подключением.",
-            "poweredBySurfEasy": "На основе SurfEasy"
+            "poweredBySurfEasy": "На основе SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "ДИСПЕТЧЕР ПАРОЛЕЙ DASHLANE",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "мониторинг даркнета на наличие ваших личных данных;",
             "allowsYou3": "обеспечение безопасности в незащищенных сетях WiFi благодаря встроенной функции VPN;",
             "allowsYou4": "безопасное предоставление паролей без их раскрытия.",
-            "poweredByDashLane": "На основе Dashlane"
+            "poweredByDashLane": "На основе Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "Отправка анонимных данных об устройстве, которые помогут нам повысить качество, увеличить надежность и улучшить следующее поколение устройств.",
         "userProfile": "Профиль пользователя",
         "Note": "Замечание: ",
-        "settingsNotes": "Для вступления в силу любых параметров на этой странице необходимо перезапустить это приложение.",
+        "settingsNotes": "Перезапустите это приложение, чтобы все изменения вступили в силу.",
         "betaSettingTitle": "Программа бета-тестирования",
         "betaProgram": "Программа бета-тестирования",
         "betaSettingDescription": "Опробуйте новейшие функции, над которыми мы работаем."
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "Примечание. Возможно, при нажатии кнопки «Скачать» вы получите от Windows запрос разрешения на установку программного обеспечения на вашем устройстве. По окончании установки ваши приложения автоматически отобразятся на рабочем столе или в меню \"Пуск\".<br /><br />Можно закрыть страницу «Мое программное обеспечение» и продолжить использовать Lenovo Vantage. Не закрывайте Lenovo Vantage во время установки.",
         "sizeText": "Размер",
         "versionText": "Версия",
+        "redemptionCode": "Код активации:",
+        "redeemWebsite": "Активировать на веб-сайте поставщика",
         "softwareDescription": "Нажмите кнопку «Скачать» ниже, чтобы активировать программное обеспечение, приобретенное для вашего устройства. Если вам потребуется снова скачать программное обеспечение, нажмите кнопку «Мое программное обеспечение» в меню Vantage.",
         "title": "Мое программное обеспечение",
         "loadingDescription": "Дождитесь, пока мы подготовим список программного обеспечения, предоставляемого в комплекте с вашим устройством.",

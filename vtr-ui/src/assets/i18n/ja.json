@@ -644,7 +644,8 @@
             "registered": "登録済み",
             "notRegistered": "未登録",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"
+        },
+        "offline": {
+            "connectToUseFeature": "この機能を使用するには、インターネットに接続してください"
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "フィードバックを送る",
             "form": {
                 "email": "Email (optional)",
-                "comments": "コメント...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "フィードバックをありがとうございました!"
-                },
                 "question1": "Vantage の新しいスタイルを気に入っていますか？",
                 "question2": "パフォーマンスは許容できると思いますか？",
                 "question3": "今後もっと頻繁にアプリケーションを使いますか？",
+                "question4": "Lenovo Vantage でコンピューターのソフトウェア・ドライバー、ファームウェア、および BIOS を更新できることをご存知でしたか?",
+                "question5": "Lenovo Vantage アプリケーションを同僚の友人におすすめする可能性はどのくらいありますか?",
+                "notAtAllLikely": "まったくない",
+                "extremelyLikely": "非常に可能性が高い",
                 "yes": "はい",
                 "no": "いいえ",
                 "tips1": "追加のコメントを残してください",
+                "comments": "コメント...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "フィードバックを送る",
-                "submitScreenShot": "スクリーンショットを送信する"
+                "submitScreenShot": "スクリーンショットを送信する",
+                "messages": {
+                    "feedbackSuccess": "フィードバックをありがとうございました!"
+                }
             }
         },
         "quickSettings": {
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "スマート・スタンバイ",
-                    "description": "この機能は、使用頻度の高い時間中の高速スタートアップ時間に影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
-                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。この期間は、設定したスケジュールまたは取得したコンピューターの使用時間に基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
+                    "description": "この機能は、使用頻度の高い時間中の<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">モダン・スタンバイ</a>の高速再開エクスペリエンスに影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
+                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。この期間は、設定したスケジュールまたはコンピューターの使用状況に基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
                     "timer": {
-                        "heading": "通常コンピューターを使用する時刻を設定します",
+                        "heading": "通常このコンピューターを使用する時刻:",
                         "subHeading1": "フィールドの",
                         "subHeading2": "終了",
                         "subHeading3": "このスケジュールを使用する期間",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "日が選択されていません"
                     },
                     "checkbox": "使用状況に基づいてコンピューターのアクティブ時間を自動調整する",
-                    "hyperlinkToGraph": "クリックして、コンピューター・テーブルのアクティビティとアクティブ時間を表示します",
+                    "hyperlinkToGraph": "クリックして使用状況と適用されたアクティブ時間を確認します",
                     "subTitle": "コンピューターのスケジュール",
                     "automaticMode": "自動モード",
                     "manualMode": "手動モード",
@@ -1370,6 +1378,17 @@
                         "taskBarDimmer": "タスクバーを暗くする",
                         "backgroundDimmer": "バックグラウンドを暗くする",
                         "displayDimmer": "ディスプレイを暗くする"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Fn キーと Ctr キーの入れ替え",
                     "description": "Ctrl キーを押そうとする際に Fn キーを押してしまう場合は、2 つのキーの機能を入れ替えることができます。",
-                    "restartNote": "2 つのキーの機能を交換するには、コンピューターを再起動する必要があります。再起動してもよろしいですか?"
+                    "restartNote": "2 つのキーの機能を交換するには、コンピューターを再起動する必要があります。再起動してもよろしいですか?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "詳細",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "ローカル・リポジトリー・データベースは、検出できないか、破損しています。",
             "networkInterruptedException": "システム更新サーバーは現在使用できません。後から再試行してください。",
             "helpCenterInvalidServerException": "システム更新サーバーが無効です。後から再試行してください。",
-            "catalogNotFoundException": "ご使用のシステムに適用可能な更新はありません。",
+            "catalogNotFoundException": "更新カタログが見つからないため、ご使用のシステムに適用可能な更新が見つかりません。",
             "catalogCrcErrorException": "システムのカタログを更新中です。後から再試行してください。",
             "catalogErrorException": "システム更新サーバーで、ご使用のシステムの更新カタログにエラーが検出されました。後から再試行してください。",
             "fileNotFoundException": "ファイルが見つかりません。"
@@ -1975,7 +2047,7 @@
             "visitHde": "ハードディスク・ドライブの暗号化にアクセス",
             "haveOwnPassword": "自分のパスワード・マネージャーがあります",
             "haveOwnWifi": "自分の WiFi セキュリティーがあります",
-            "haveOwnVpn": "自分の VPN セキュリティーがあります",
+            "haveOwnVpn": "独自の VPN があります",
             "uac": "ユーザー アカウント制御 (UAC)",
             "uacTitles": "ユーザー アカウント制御",
             "hde": "ハードディスク・ドライブの暗号化",
@@ -2091,7 +2163,8 @@
                 "showmore": "その他の情報を表示",
                 "showless": "その他の情報を表示しない",
                 "button": "WiFi セキュリティーを有効にする",
-                "disableDecribe": "Lenovo WiFi セキュリティーは高度なクラウドベースのソフトウェアサービスで、デバイスが安全な無線ネットワークを潜在的に悪意のあるものと区別するのに役立ちます。"
+                "disableDescribe": "Lenovo WiFi セキュリティーは高度なクラウドベースのソフトウェアサービスで、デバイスが安全な無線ネットワークを潜在的に悪意のあるものと区別するのに役立ちます。",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "脅威検出器を使用して、周囲のネットワークの安全性を判断します。",
@@ -2125,7 +2198,8 @@
                 "subtitle": "安心を手に入れる",
                 "subtitleDescribe": "接続ホーム・セキュリティーは、デバイスまたはホーム・ネットワークで脆弱性が検出された場合、または悪意がある可能性のネットワークに接続している場合に警告を送信します。接続ホーム・セキュリティーについての詳細は、<tag>ここで</tag>ご確認ください。",
                 "tryNow": "今すぐ試してみる",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "招待コードの入力",
@@ -2200,7 +2274,8 @@
             "getStarted1": "上にある「SurfEasy を開く」ボタンをクリックして SurfEasy VPN を起動します。",
             "getStarted2": "VPN をオンにして、接続の保護が確認されるまでしばらく待ちます。",
             "getStarted3": "必要に応じて地域や場所を変更し、安全なプライベート・ネットワークをご活用ください。",
-            "poweredBySurfEasy": "SurfEasy 搭載"
+            "poweredBySurfEasy": "SurfEasy 搭載",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE パスワード・マネージャー",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "皆様の個人情報についてダーク・ウェブを監視します",
             "allowsYou3": "内蔵の VPN により、安全でない WiFi ネットワークを安心して利用できます",
             "allowsYou4": "パスワードを明らかにせずに安全に共有できます",
-            "poweredByDashLane": "Dashlane 搭載"
+            "poweredByDashLane": "Dashlane 搭載",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "品質、信頼性、次世代デバイスの改善に役立てるため、デバイス データを匿名で送信します。",
         "userProfile": "ユーザー・プロフィール",
         "Note": "注:",
-        "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。",
+        "settingsNotes": "このアプリケーションを再起動して、すべての変更を適用してください。",
         "betaSettingTitle": "ベータ版プログラム",
         "betaProgram": "ベータ版プログラム",
         "betaSettingDescription": "現在開発中の最新機能をお試しください."
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "注: 「ダウンロード」をクリックすると、デバイスへのソフトウェアのインストールを許可するように Windows から指示される場合があります。アプリのインストールが完了すると、デスクトップまたは「スタート」メニューに自動的に表示されます。<br /><br />「マイ・ソフトウェア」ページを閉じて Lenovo Vantage の使用を続行できます。インストール中に Lenovo Vantage を閉じないでください。",
         "sizeText": "サイズ",
         "versionText": "バージョン",
+        "redemptionCode": "引き換えコード:",
+        "redeemWebsite": "ベンダーの Web サイトで引き換え",
         "softwareDescription": "ご使用のデバイスで購入したソフトウェアを使用するには、以下の「ダウンロード」をクリックします。ソフトウェアを再度ダウンロードする必要がある場合はいつでも、Vantage メニューの「マイ・ソフトウェア」ボタンをクリックして行うことができます。",
         "title": "マイ・ソフトウェア",
         "loadingDescription": "デバイスの購入に含まれていたソフトウェアのリストを準備しています。少々お待ちください。",

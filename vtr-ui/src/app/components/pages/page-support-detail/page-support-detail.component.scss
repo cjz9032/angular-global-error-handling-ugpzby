@@ -6,7 +6,6 @@
 //       background: $shade_lightest;
 //     }
 
-
 //     .vtr-page-right-column {
 //       @media #{$mediaquery_X8} {
 //         padding: 4rem 4rem 4rem 8.5rem !important;
@@ -15,105 +14,103 @@
 //   }
 // }
 
-
 .card {
 	border-radius: $border_radius;
 	box-shadow: $drop_shadow;
 	.left-container {
 		padding: 2.4rem;
 		.description-container {
-			font-size: $fontsize_sm;
+			font-size: $fontsize_xs;
 			display: block;
 			overflow: auto;
-			color: $main_dark;
-		  }
+			color: $grey_dark;
+			font-weight: $weight_light;
+		}
 
-		  .text {
+		.text {
 			color: $shade_darker;
 			font-size: 1.8rem;
 			font-weight: $weight_light;
 			line-height: 1.8em;
 
 			&.smaller {
-			  font-size: 1.4rem;
+				font-size: 1.4rem;
 			}
-		  }
+		}
 
-		  .title {
-			color: $main_dark;
-			font-size: 3.9rem;
-			font-weight: $weight_medium;
+		.title {
+			color: $shade_blue;
+			font-size: 3.6rem;
+			font-weight: $weight_light;
 			margin-bottom: 2rem;
 
-			&.smaller {
-			  font-size: $fontsize_xl;
-			  margin-bottom: 1.5rem;
-			}
+			// &.smaller {
+			//   font-size: $fontsize_xl;
+			//   margin-bottom: 1.5rem;
+			// }
 
-			&.bolder {
-			  font-weight: $weight_medium;
-			  color: $main_darker;
-			}
-		  }
+			// &.bolder {
+			//   font-weight: $weight_medium;
+			//   color: $main_darker;
+			// }
+		}
 
-		  .subtitle {
-			color: $shade;
-			font-size: 1.3rem;
-			font-weight: $weight_medium;
+		.subtitle {
+			color: $grey_dark;
+			font-size: $fontsize_xs;
+			font-weight: $weight_light;
 			letter-spacing: 0.1rem;
 			line-height: 2rem;
 			margin-top: -2rem;
-			text-transform: uppercase;
-		  }
+		}
 
-		  .inset-content {
+		.inset-content {
 			border: 1px solid $shade_lighter;
 			border-radius: $border_radius;
 			background: $shade_lightest;
 
 			.icon-bkg {
-			  background: $light;
-			  border: 1px solid $shade_lighter;
-			  width: 5rem;
-			  height: 5rem;
-			  border-radius: 2.5rem;
+				background: $light;
+				border: 1px solid $shade_lighter;
+				width: 5rem;
+				height: 5rem;
+				border-radius: 2.5rem;
 			}
 
 			fa-icon {
-			  font-size: 2.3rem;
-			  line-height: 5rem;
-			  color: $main;
+				font-size: 2.3rem;
+				line-height: 5rem;
+				color: $main;
 			}
 
 			.cursor-pointer {
-			  cursor: pointer;
+				cursor: pointer;
 			}
 
 			button {
-			  a {
-				color: $light;
-				&:hover {
-				  text-decoration: none;
+				a {
+					color: $light;
+					&:hover {
+						text-decoration: none;
+					}
 				}
-			  }
 			}
-		  }
+		}
 	}
+}
 
+.sub-title {
+	color: $shade_blue;
+	font-size: $fontsize_xs;
+	font-weight: $weight-bold;
+	text-transform: uppercase;
+}
 
-  }
-
-  .sub-title {
-	color: $main_darker;
-	font-size: 1.5rem;
-	font-weight: $weight-medium;
-  }
-
-  .icon {
+.icon {
 	color: $main;
-  }
+}
 
-  .btn-label {
+.btn-label {
 	height: 4.5rem;
 	margin: 1rem 0;
 	padding: 0 2rem;
@@ -124,20 +121,20 @@
 	font-weight: $weight_bold;
 	text-align: center;
 	text-transform: uppercase;
-  }
+}
 
-
-  //FAQ
-  .description-container ::ng-deep {
+//FAQ
+.description-container ::ng-deep {
 	img {
-	  max-width: 90%;
-	  max-height: 60rem;
-	  margin-left: 5%;
-	  border: 1px solid #999;
+		max-width: 90%;
+		max-height: 60rem;
+		margin-left: 5%;
+		border: 1px solid #999;
 	}
 	.faqInFs4Fb {
-		font-size: $fontsize_xl2;
+		font-size: 3.6rem;
 		font-weight: $weight_light;
+		color: $shade_blue;
 	}
 
 	.faqInMb7 {
@@ -146,28 +143,32 @@
 	}
 
 	.faqInFs3Fb {
-		font-size: $fontsize_xl;
-		font-weight: $weight_600;
+		font-size: 3.6rem;
+		font-weight: $weight_light;
+		color: $shade_blue;
 	}
 
 	.faqInFb {
-		font-weight: $weight_600;
+		font-weight: $weight_light;
 	}
 
 	/*Q2*/
 	.faqInFs25Fb {
-		font-size: $fontsize_xl;
-		font-weight: $weight_600;
+		font-size: 3.6rem;
+		font-weight: $weight_light;
+		color: $shade_blue;
 	}
 	.faqInFs25FbP5 {
-		font-size: $fontsize_xl;
-		font-weight: $weight_600;
+		font-size: 3.6rem;
+		font-weight: $weight_light;
 		padding: 0.5rem 0;
+		color: $shade_blue;
 	}
 	.faqInFs25FbP10 {
-		font-size: $fontsize_xl;
-		font-weight: $weight_600;
+		font-size: 3.6rem;
+		font-weight: $weight_light;
 		padding: 1rem 0;
+		color: $shade_blue;
 	}
 	.faqInP5 {
 		padding: 0.5rem 0;
@@ -184,7 +185,7 @@
 		text-decoration: underline;
 		font-weight: $weight_600;
 	}
-  }
+}
 //   .mn-6 {
 // 	margin-top: $shift_up_small;
 //   }

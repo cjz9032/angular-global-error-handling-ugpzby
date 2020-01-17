@@ -644,7 +644,8 @@
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Vprašanja in odgovori za vaš računalnik",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "Živijo! Na voljo je novejša različica aplikacije Vantage, jo želite naložiti?"
+        },
+        "offline": {
+            "connectToUseFeature": "Za uporabo te funkcije se povežite v internet"
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "Pošljite povratne informacije",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Komentarji...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Hvala za povratne informacije."
-                },
                 "question1": "Ali vam je novi slog programa Vantage všeč?",
                 "question2": "Ali menite, da je učinkovitost delovanja sprejemljiva?",
                 "question3": "Ali bi v prihodnje pogosteje uporabljali aplikacijo?",
+                "question4": "Ste vedeli, da program Lenovo Vantage lahko uporabite za posodabljanje gonilnikov programske opreme, vdelane programske opreme in BIOS-a računalnika?",
+                "question5": "Ali bi program Lenovo Vantage priporočili prijatelju ali sodelavcu?",
+                "notAtAllLikely": "Nikakor",
+                "extremelyLikely": "Vsekakor",
                 "yes": "Da",
                 "no": "Ne",
                 "tips1": "Napišite morebitne dodatne komentarje",
+                "comments": "Komentarji...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Pošljite povratne informacije",
-                "submitScreenShot": "Posnetek zaslona pošiljanja"
+                "submitScreenShot": "Posnetek zaslona pošiljanja",
+                "messages": {
+                    "feedbackSuccess": "Hvala za povratne informacije."
+                }
             }
         },
         "quickSettings": {
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Pametno stanje pripravljenosti",
-                    "description": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
-                    "tooltip": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na razpored, ki ste ga določili, ali čas uporabe računalnika, ki ga beležimo. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
+                    "description": "Ta funkcija nastavi časovni razpored za optimiziranje varčevanja z energijo baterije med neuporabo računalnika, ne da bi to vplivalo na možnost hitrega nadaljevanja delovanja v sklopu <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">sodobnega stanja pripravljenosti</a> med intenzivnejšo uporabo.",
+                    "tooltip": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To obdobje je optimizirano na podlagi nastavljenega časovnega razporeda ali vaše uporabe računalnika. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
                     "timer": {
-                        "heading": "Čas, ko običajno uporabljate računalnik",
+                        "heading": "Ura, ob kateri običajno uporabljate ta računalnik:",
                         "subHeading1": "začeti",
                         "subHeading2": "konec",
                         "subHeading3": "ta urnik uporabi za",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "Dan ni izbran"
                     },
                     "checkbox": "Samodejno prilagajanje dejavnega časa računalnika glede na vašo uporabo",
-                    "hyperlinkToGraph": "Kliknite, če si želite ogledati tabelo dejavnosti in dejavnega časa računalnika",
+                    "hyperlinkToGraph": "Kliknite za prikaz uporabe in uporabljeni aktivni čas",
                     "subTitle": "Nastavitev časovnega razporeda delovanja računalnika",
                     "automaticMode": "Samodejni način",
                     "manualMode": "Ročni način",
@@ -1370,6 +1378,17 @@
                         "taskBarDimmer": "ZATEMNJEVALNIK OPRAVILNE VRSTICE",
                         "backgroundDimmer": "ZATEMNJEVALNIK OZADJA",
                         "displayDimmer": "ZATEMNJEVANJE ZASLONA"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Zamenjava tipk Fn in Ctrl",
                     "description": "Če stalno pritiskate tipko Fn, ko nameravate pritisniti tipko Ctrl, lahko zamenjate funkcijo obeh tipk.",
-                    "restartNote": "Če zamenjate funkcijo dveh tipk, morate znova zagnati računalnik. Ali ste prepričani, da ga želite znova zagnati?"
+                    "restartNote": "Če zamenjate funkcijo dveh tipk, morate znova zagnati računalnik. Ali ste prepričani, da ga želite znova zagnati?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "VEČ",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "Zbirke podatkov lokalne shrambe ni bilo mogoče najti ali pa je poškodovana.",
             "networkInterruptedException": "Strežnik za posodobitev sistema trenutno ni na voljo. Poskusite znova pozneje.",
             "helpCenterInvalidServerException": "Strežnik za posodobitev sistema je neveljaven. Poskusite znova pozneje.",
-            "catalogNotFoundException": "Za sistem ni bilo najdenih nobenih posodobitev.",
+            "catalogNotFoundException": "Ni nobenih ustreznih posodobitev za vaš sistem, ker kataloga posodobitev ni mogoče najti.",
             "catalogCrcErrorException": "Katalog za vaš sistem se trenutno posodablja. Poskusite znova pozneje.",
             "catalogErrorException": "V strežniku za posodobitev sistema je bila zaznana napaka v katalogu posodobitev za vaš sistem. Poskusite znova pozneje.",
             "fileNotFoundException": "Datoteka ni bila najdena."
@@ -1975,7 +2047,7 @@
             "visitHde": "Obiščite Šifriranje trdega diska",
             "haveOwnPassword": "Imam svojega upravitelja gesel",
             "haveOwnWifi": "Imam lastno varnost Wi-Fi-ja",
-            "haveOwnVpn": "Imam lastno varnost VPN-ja",
+            "haveOwnVpn": "Imam svoj VPN",
             "uac": "Nadzor uporabniškega računa (UAC)",
             "uacTitles": "Nadzor uporabniškega računa",
             "hde": "Šifriranje trdega diska",
@@ -2091,7 +2163,8 @@
                 "showmore": "Pokaži več",
                 "showless": "Pokaži manj",
                 "button": "Omogoči varnost WiFi-ja",
-                "disableDecribe": "Program družbe Lenovo za varnost WiFi-ja je napredna oblačna storitev programske opreme, ki vaši napravi pomaga razlikovati med varnimi brezžičnimi omrežji in morebitnimi zlonamernimi."
+                "disableDescribe": "Program družbe Lenovo za varnost WiFi-ja je napredna oblačna storitev programske opreme, ki vaši napravi pomaga razlikovati med varnimi brezžičnimi omrežji in morebitnimi zlonamernimi.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Če želite ugotoviti, kako varna so omrežja okrog vas, uporabite detektor groženj.",
@@ -2125,7 +2198,8 @@
                 "subtitle": "Miren spanec",
                 "subtitleDescribe": "Povezana domača varnost vam bo poslala opozorilo, če zazna ranljivost v vaši napravi ali domačem omrežju ali če ste povezani z morebitno zlonamerno mrežo. Še več o povezani domači varnosti preberite <tag>tukaj</tag>.",
                 "tryNow": "Preskusite zdaj",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Vnesite kodo povabila",
@@ -2200,7 +2274,8 @@
             "getStarted1": "Kliknite gumb »Odpri SurfEasy« zgoraj, da zaženete SurfEasy VPN.",
             "getStarted2": "Vklopite VPN in počakajte kratek trenutek za potrditev varne povezave.",
             "getStarted3": "Po želji spremenite regijo ali lokacijo in uživajte v varnem, zasebnem mreženju.",
-            "poweredBySurfEasy": "Poganja SurfEasy"
+            "poweredBySurfEasy": "Poganja SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE UPRAVITELJ GESEL",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "Spremljajte temni splet za vaše osebne podatke",
             "allowsYou3": "Ostanite varni na nezavarovanih omrežjih WiFi z vgrajeno v VPN",
             "allowsYou4": "Varno delite gesla, ne da bi jih razkrili",
-            "poweredByDashLane": "Poganja Dashlane"
+            "poweredByDashLane": "Poganja Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "Pošiljajte anonimne podatke o napravi, da nam pomagate izboljšati kakovost in zanesljivost delovanja naprave te in prihodnje generacije.",
         "userProfile": "Uporabniški profil",
         "Note": "Opomba: ",
-        "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo.",
+        "settingsNotes": "Za uveljavitev vseh sprememb ponovno zaženite aplikacijo.",
         "betaSettingTitle": "Program različice beta",
         "betaProgram": "Program različice beta",
         "betaSettingDescription": "Preizkusite najnovejše funkcije, na katerih delamo."
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "Opomba: ko kliknete »Potrdi in prenesi«, se morda prikaže poziv sistema Windows, da nam dovolite namestitev programske opreme v vašo napravo. Po dokončani namestitvi bodo vaše aplikacije samodejno prikazane na namizju ali v začetnem meniju.<br /><br />Stran Moja programska oprema lahko zaprete in nadaljujete z uporabo Lenovo Vantage. Med namestitvijo ne zapirajte Lenovo Vantage.",
         "sizeText": "Velikost",
         "versionText": "Različica",
+        "redemptionCode": "Koda za prevzem:",
+        "redeemWebsite": "Prevzem na spletnem mestu ponudnika",
         "softwareDescription": "Kliknite spodaj, da uporabite programsko opremo, ki je bila kupljena z vašo napravo. Če tega zdaj ne želite, lahko programsko opremo kadarkoli prenesete tako, da v meniju Lenovo Vantage izberete Moja programska oprema.",
         "title": "Moja programska oprema",
         "loadingDescription": "Počakajte, da pripravimo seznam programske opreme, ki je bila vključena v nakup vaše naprave.",

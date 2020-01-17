@@ -1,18 +1,34 @@
-<div class="vtr-ui-rounded-rectangle-radio" attr.aria-label="{{label}}"
+<div class="vtr-ui-rounded-rectangle-radio"
 	[ngClass]="{'border-blue':checked && !disabled,
-				'border-grey':!checked&&!disabled,
-				'large-width': isLarge,
-				'border-checked-disabled': checked && disabled,
-				'border-disabled': disabled && !checked}">
-	<input id="{{radioId}}" attr.aria-label="{{label}}" tabindex="0" name="{{group}}" type="radio" [value]="value"
-		[checked]="checked" [disabled]="disabled" [attr.aria-checked]="checked" [attr.aria-disabled]="disabled" #radio
-		(click)="onChange(value)" (keydown.enter)="onChange(value)" />
-	<label tabindex="0" for="{{radioId}}" vtrMetrics metricsEvent="featureClick" [metricsItem]="name" [metricsValue]="value"
-		id="{{radioId}}" attr.aria-label="{{label}}" (keydown.enter)="onChange(value)">
-		<fa-layers [fixedWidth]="true" class="icon-circle">
+	'border-grey':!checked&&!disabled,
+	'large-width': isLarge,
+	'border-checked-disabled': checked && disabled,
+	'border-disabled': disabled && !checked}">
+	<input id="{{radioId}}"
+		attr.aria-label="{{radioId}}"
+		name="{{group}}"
+		type="radio"
+		[value]="value"
+		[checked]="checked"
+		[disabled]="disabled"
+		#radio
+		(click)="onChange(value)" />
+	<label for="{{radioId}}"
+		vtrMetrics
+		metricsEvent="featureClick"
+		[metricsItem]="name"
+		[metricsValue]="value"
+		id="{{radioId}}"
+		attr.aria-label="{{radioId}}">
+		<fa-layers [fixedWidth]="true"
+			class="icon-circle">
 			<fa-icon [icon]="['fal', 'circle']"></fa-icon>
-			<fa-icon [icon]="['fas', 'circle']" transform="shrink-6" *ngIf="checked"></fa-icon>
+			<fa-icon [icon]="['fas', 'circle']"
+				transform="shrink-6"
+				*ngIf="checked"></fa-icon>
 		</fa-layers>
-		<span class="label" id="{{radioId}}-title" attr.aria-label="{{radioId}}-title">{{label}}</span>
+		<span class="label"
+			id="{{radioId}}-title"
+			attr.aria-label="{{radioId}}-title">{{label}}</span>
 	</label>
 </div>

@@ -16,7 +16,8 @@
 						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
 						[isSubtitleVisible]="false"
 						[isButtonVisible]="false"
-						id="dashboard-btn-connectivity"></vtr-widget-offline-info>
+						id="dashboard-btn-connectivity"
+						[offlineConnection]="offlineConnection"></vtr-widget-offline-info>
 				</div>
 			</div>
 			<div class="row">
@@ -52,7 +53,7 @@
 						link="thumbnailUrl">
 					</vtr-widget-carousel>
 				</div>
-				<div class="col-xl-6 col-sm-6 py-20 card-left">
+				<div class="col-xl-6 col-sm-6 pb-20 card-left">
 					<vtr-container-card order="2"
 						[itemID]="cardContentPositionB.Id"
 						[img]="cardContentPositionB.FeatureImage"
@@ -72,7 +73,7 @@
 						aria-label="dashboard-card-b">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 col-sm-6 py-20 card-right">
+				<div class="col-xl-6 col-sm-6 pb-20 card-right">
 					<vtr-container-card order="3"
 						[itemID]="cardContentPositionC.Id"
 						[img]="cardContentPositionC.FeatureImage"
@@ -90,7 +91,7 @@
 						aria-label="dashboard-card-c">
 					</vtr-container-card>
 				</div>
-				<div class="col-sm-12 py-20 px-0">
+				<div class="col-sm-12 pb-20 px-0">
 					<vtr-container-card order="4"
 						[itemID]="cardContentPositionD.Id"
 						[img]="cardContentPositionD.FeatureImage"
@@ -107,7 +108,7 @@
 						aria-label="dashboard-card-d">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 col-sm-6 py-20 card-left"
+				<div class="col-xl-6 col-sm-6 pb-20 card-left"
 					[hidden]="deviceService.isSMode">
 					<vtr-container-card order="5"
 						[itemID]="cardContentPositionE.Id"
@@ -125,7 +126,7 @@
 						aria-label="dashboard-card-e">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 col-sm-6 py-20 card-right"
+				<div class="col-xl-6 col-sm-6 pb-20 card-right"
 					[hidden]="deviceService.isSMode">
 					<vtr-container-card order="6"
 						[itemID]="cardContentPositionF.Id"
@@ -192,7 +193,7 @@
 
 			<div class="row"
 				*ngIf="!androidService.isAndroid && deviceService.isArm">
-				<div class="col-sm-12 px-0 py-20">
+				<div class="col-sm-12 px-0 pb-20">
 					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 						[description]="'common.qAndA.subtitle' | translate"
 						[items]="qaService.qas"

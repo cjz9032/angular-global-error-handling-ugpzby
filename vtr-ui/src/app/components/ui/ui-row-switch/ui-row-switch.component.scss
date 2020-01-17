@@ -112,7 +112,7 @@
 			font-size: $fontsize_xs;
 			font-weight: $weight_light;
 			color: $font_color;
-			max-width: 60rem;
+			// max-width: 60rem;
 		}
 
 		.read-more {
@@ -187,6 +187,25 @@
 		display: inline-block;
 	}
 }
+
+.table {
+	width: 28rem !important;
+	font-size: 1.2rem;
+	margin-bottom: 0;
+	th {
+		width: auto;
+		white-space: nowrap;
+		td {
+		width: auto;
+		}
+	}
+}
+.table-bordered {
+	th, td {
+		border: 0.1rem solid $dark;
+	}
+}
+
 
 // @mixin theme($name, $background, $font_color, $icon_color, $border)
 @include theme(white-theme, $light, $purple_navy, $menu_hover, $screen_dark_10);

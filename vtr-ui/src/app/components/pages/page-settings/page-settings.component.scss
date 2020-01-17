@@ -1,10 +1,22 @@
 @import "../../../app.theme.scss";
 
+.card-pb {
+	padding-bottom: 3.2rem;
+}
+.card-pt {
+	padding-top: 3.2rem;
+}
+
 :host ::ng-deep {
-	.vtr-page {
+	.vtr-page-preference-settings {
+		.vtr-page-header {
+			.vtr-header-main .vtr-header-main-inner {
+				padding-bottom: 4rem;
+			}
+		}
 		.vtr-page-columns {
 			.vtr-page-column {
-				padding: 0 4rem 4rem;
+				padding: 0 3.2rem 3.2rem !important;
 
 				&.vtr-page-left-column {
 					flex: 0 0 100%;
@@ -195,6 +207,7 @@
 @include theme(blue-theme, $light);
 
 .subpage-settings {
+	padding-top: 2rem;
 	.title {
 		opacity: 0.8;
 		color: $main_darker;

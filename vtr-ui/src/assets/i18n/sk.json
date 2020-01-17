@@ -644,7 +644,8 @@
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -670,6 +671,9 @@
         },
         "app-update": {
             "message": "Dobrý deň. K dispozícii je novšia verzia aplikácie Vantage, chcete ju načítať?"
+        },
+        "offline": {
+            "connectToUseFeature": "Na používanie tejto funkcie sa pripojte k internetu"
         }
     },
     "privacy": {
@@ -717,20 +721,24 @@
             "button": "Spätná väzba",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Poznámky...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Ďakujeme vám za spätnú väzbu!"
-                },
                 "question1": "Páči sa vám nový štýl Vantage?",
                 "question2": "Považujete výkon za prijateľný?",
                 "question3": "Používali by ste túto aplikáciu v budúcnosti častejšie?",
+                "question4": "Vedeli ste, že Lenovo Vantage môžete použiť na aktualizáciu ovládačov, firmvéru a systému BIOS svojho počítača?",
+                "question5": "Aká je pravdepodobnosť, že by ste aplikáciu Lenovo Vantage odporučili priateľom alebo kolegom?",
+                "notAtAllLikely": "Nie je to pravdepodobné",
+                "extremelyLikely": "Veľmi pravdepodobné",
                 "yes": "Áno",
                 "no": "Nie",
                 "tips1": "Uveďte doplňujúce komentáre",
+                "comments": "Poznámky...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Odoslať spätnú väzbu",
-                "submitScreenShot": "Odoslať snímku obrazovky"
+                "submitScreenShot": "Odoslať snímku obrazovky",
+                "messages": {
+                    "feedbackSuccess": "Ďakujeme vám za spätnú väzbu!"
+                }
             }
         },
         "quickSettings": {
@@ -1135,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Inteligentný pohotovostný režim",
-                    "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
-                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie je optimalizované na základe nastaveného harmonogramu alebo stanoveného času využívania počítača. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie vtedy, ak sa počas nasledujúcich plánovaných dní nevyužíva.",
+                    "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">moderného pohotovostného režimu</a> pri náročnejšom využívaní.",
+                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie je optimalizované na základe nastaveného harmonogramu, alebo stanoveného času využívania počítača. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie vtedy, ak sa počas nasledujúcich plánovaných dní nevyužíva.",
                     "timer": {
-                        "heading": "Čas, kedy obyčajne využívate svoj počítač",
+                        "heading": "Čas, v ktorom zvyčajne používate počítač:",
                         "subHeading1": "začnete",
                         "subHeading2": "koniec",
                         "subHeading3": "tento plán použiť na",
@@ -1180,7 +1188,7 @@
                         "noDaySelected": "Nie je vybratý žiadny deň"
                     },
                     "checkbox": "Automatické prispôsobenie aktívneho času počítača podľa vášho využívania",
-                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktívny čas tabuľky vášho počítača",
+                    "hyperlinkToGraph": "Kliknutím zobrazíte využitie a aplikovaný aktívny čas",
                     "subTitle": "Plánovanie počítača",
                     "automaticMode": "Automatický režim",
                     "manualMode": "Manuálny režim",
@@ -1370,6 +1378,17 @@
                         "taskBarDimmer": "ZNÍŽENIE JASU PANELA ÚLOH",
                         "backgroundDimmer": "ZNÍŽENIE JASU POZADIA",
                         "displayDimmer": "ZNÍŽENIE JASU OBRAZOVKY"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Výmena klávesov Fn a Ctrl",
                     "description": "Ak zvyčajne stlačíte kláves Fn, keď chce stlačiť kláves Ctrl, môžete vymeniť funkcie týchto dvoch klávesov.",
-                    "restartNote": "Výmena funkcie dvoch klávesov vyžaduje reštart počítača. Naozaj chcete počítač reštartovať?"
+                    "restartNote": "Výmena funkcie dvoch klávesov vyžaduje reštart počítača. Naozaj chcete počítač reštartovať?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "VIAC",
@@ -1867,7 +1939,7 @@
             "localRepositoryDatabaseException": "Databáza lokálneho odkladacieho priestoru sa nenašla alebo je poškodená.",
             "networkInterruptedException": "Server systémových aktualizácií je momentálne nedostupný. Skúste to znova neskôr.",
             "helpCenterInvalidServerException": "Server systémových aktualizácií je neplatný. Skúste to znova neskôr.",
-            "catalogNotFoundException": "Pre váš systém sa nenašli žiadne použiteľné aktualizácie.",
+            "catalogNotFoundException": "Pre váš systém sa nenašli žiadne použiteľné aktualizácie, pretože sa nenašiel katalóg aktualizácií.",
             "catalogCrcErrorException": "Katalóg pre váš systém sa práve aktualizuje. Skúste to znova neskôr.",
             "catalogErrorException": "Zistila sa chyba katalógu aktualizácií pre váš systém na serveri systémových aktualizácií. Skúste to znova neskôr.",
             "fileNotFoundException": "Súbor sa nenašiel."
@@ -1975,7 +2047,7 @@
             "visitHde": "Navštíviť stránku o šifrovaní pevného disku",
             "haveOwnPassword": "Mám vlastného správcu hesiel",
             "haveOwnWifi": "Mám vlastné zabezpečenie bezdrôtového pripojenia",
-            "haveOwnVpn": "Mám vlastné zabezpečenie pomocou VPN",
+            "haveOwnVpn": "Mám vlastnú VPN",
             "uac": "Kontrola používateľských kont (UAC)",
             "uacTitles": "Kontrola používateľských kont",
             "hde": "Šifrovanie pevného disku",
@@ -2091,7 +2163,8 @@
                 "showmore": "Zobraziť viac",
                 "showless": "Zobraziť menej",
                 "button": "Zapnúť zabezpečenie WiFi",
-                "disableDecribe": "Zabezpečenie WiFi od spoločnosti Lenovo je pokročilá cloudová softvérová služba, ktorá pomáha vášmu zariadeniu odlíšiť bezpečné bezdrôtové siete od tých potenciálne škodlivých."
+                "disableDescribe": "Zabezpečenie WiFi od spoločnosti Lenovo je pokročilá cloudová softvérová služba, ktorá pomáha vášmu zariadeniu odlíšiť bezpečné bezdrôtové siete od tých potenciálne škodlivých.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Pomocou funkcie Detektor hrozieb určte bezpečnosť okolitých sietí.",
@@ -2125,7 +2198,8 @@
                 "subtitle": "Pokoj v duši",
                 "subtitleDescribe": "Služba Zabezpečenie prepojenej domácnosti vám odošle varovanie, ak odhalí zraniteľnosť zariadenia alebo domácej siete, prípadne ak ste pripojení k potenciálne škodlivej sieti. Ďalšie informácie o zabezpečení pripojenej domácnosti získate <tag>tu</tag>.",
                 "tryNow": "Vyskúšať teraz",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Zadajte pozývací kód",
@@ -2200,7 +2274,8 @@
             "getStarted1": "Kliknite na tlačidlo „Otvoriť SurfEasy“ uvedené vyššie a spustite aplikáciu SurfEasy VPN.",
             "getStarted2": "Zapnite službu VPN a chvíľu počkajte na potvrdenie zabezpečeného pripojenia.",
             "getStarted3": "V prípade potreby zmeňte svoj región alebo polohu a používajte bezpečnú a súkromnú sieť.",
-            "poweredBySurfEasy": "Využíva technológiu SurfEasy"
+            "poweredBySurfEasy": "Využíva technológiu SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "SPRÁVCA HESIEL DASHLANE",
@@ -2228,7 +2303,8 @@
             "allowsYou2": "Slúži na sledovanie výskytu vašich údajov na temnom webe",
             "allowsYou3": "Zostaňte v bezpečí v nezabezpečených WiFi sieťach vďaka integrovanému VPN",
             "allowsYou4": "Bezpečne zdieľajte heslá bez ich odhalenia",
-            "poweredByDashLane": "Využíva technológiu Dashlane"
+            "poweredByDashLane": "Využíva technológiu Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2705,7 +2781,7 @@
         "deviceStatisticsDescription": "Odosielajte anonymné údaje zariadenia, aby ste nám pomohli zlepšiť kvalitu, spoľahlivosť a novú generáciu zariadení.",
         "userProfile": "Profil používateľa",
         "Note": "Poznámka: ",
-        "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie.",
+        "settingsNotes": "Znova spustite túto aplikáciu, aby ste sa uistili, že sa všetky zmeny prejavia.",
         "betaSettingTitle": "Program Beta",
         "betaProgram": "Program Beta",
         "betaSettingDescription": "Vyskúšajte najnovšie funkcie, na ktorých pracujeme."
@@ -2729,6 +2805,8 @@
         "noteDownloadAvailable": "Poznámka: Po kliknutí na tlačidlo Stiahnuť sa môže zobraziť výzva systému Windows na povolenie inštalácie softvéru do vášho zariadenia. Po dokončení inštalácie sa aplikácia automaticky zobrazí na pracovnej ploche alebo v ponuke Štart.<br /><br />Môžete zatvoriť stránku Môj softvér a pokračovať v používaní aplikácie Lenovo Vantage. Počas inštalácie nezatvárajte aplikáciu Lenovo Vantage.",
         "sizeText": "Rozmery",
         "versionText": "Verzia",
+        "redemptionCode": "Kód uplatnenia:",
+        "redeemWebsite": "Uplatnite na webovej stránke dodávateľa",
         "softwareDescription": "Ak chcete používať softvér, ktorý ste kúpili spolu so zariadením, nižšie kliknite na tlačidlo Stiahnuť. Ak budete potrebovať znova stiahnuť softvér, môžete to urobiť kliknutím na tlačidlo „Môj softvér“ v ponuke aplikácie Vantage.",
         "title": "Môj softvér",
         "loadingDescription": "Počkajte, kým pripravíme zoznam softvéru, ktorý ste zakúpili spolu so zariadením.",

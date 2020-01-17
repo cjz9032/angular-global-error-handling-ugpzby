@@ -27,11 +27,16 @@
 			vtrMetrics
 			metricsEvent="featureClick"
 			[metricsItem]="'radio.'+label"
-			[metricsValue]="!radio.checked" tabindex="-1">
+			[metricsValue]="!radio.checked"
+			tabindex="-1">
 		<label for="{{radioId}}"
-			class="checkbox-custom-label" id="{{ radioId }}" attr.aria-label="{{ radioId }}">
+			class="checkbox-custom-label"
+			id="{{ radioId }}"
+			attr.aria-label="{{ radioId }}">
 			<div *ngIf="!hideIcon"
 				[ngClass]="'icomoon icomoon-'+getIconName(value)"></div>
+			<div *ngIf="customIcon && customIcon.length>0"
+				[ngClass]="'icomoon icomoon-'+customIcon"></div>
 			<fa-layers [fixedWidth]="true"
 				*ngIf="checked">
 				<fa-icon class="icon-circle"

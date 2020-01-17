@@ -10,6 +10,7 @@ import { ChangeContext } from 'ng5-slider';
 export class DisplayColorTempComponent implements OnInit {
 	@Input() displayColorTempSettings: EyeCareMode;
 	@Input() enableSlider: boolean;
+	@Input() disableReset = false;
 	@Input() manualRefresh: any;
 	@Output() displayColorTempChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() resetTemparature: EventEmitter<any> = new EventEmitter();
