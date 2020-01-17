@@ -17,7 +17,7 @@ export class BacklightService {
 	constructor(
 		private shellService: VantageShellService
 	) {
-	//	this.backlightFeature = this.shellService.getBacklight();
+		this.backlightFeature = this.shellService.getBacklight();
 	}
 
 	get backlight(): Observable<Array<BacklightStatus | BacklightLevel>> {
