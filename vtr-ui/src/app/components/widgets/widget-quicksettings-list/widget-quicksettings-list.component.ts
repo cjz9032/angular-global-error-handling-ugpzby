@@ -220,7 +220,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 	handleError(err) {
 		if (err && err instanceof PluginMissingError) {
-			this.dialogService.wifiSecurityErrorMessageDialog();
+			this.quickSettings[2].isVisible = false;
+		} else {
+			this.quickSettings[2].isVisible = true;
 		}
 	}
 
@@ -400,7 +402,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			});
 			this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, (res) => {
 				this.updateWifiSecurityState(res);
-			})
+			});
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
 			this.commonService.setSessionStorageValue(
 				SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
