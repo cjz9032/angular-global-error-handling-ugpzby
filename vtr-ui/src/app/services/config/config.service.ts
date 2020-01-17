@@ -55,6 +55,7 @@ export class ConfigService {
 	betaItem = betaItem;
 	privacyPolicyLinks = privacyPolicyLinks;
 	showCHS = false;
+	showCHSWithoutSegment = false;
 	wifiSecurity: WifiSecurity;
 	securityAdvisor: SecurityAdvisor;
 	windowsHello: WindowsHello;
@@ -185,7 +186,7 @@ export class ConfigService {
 						&& this.isShowCHSByShellVersion(shellVersion)
 						&& !machineInfo.isGaming
 						&& this.activeSegment !== SegmentConst.Commercial;
-					const showCHSConsumer = country.toLowerCase() === 'us'
+					this.showCHSWithoutSegment = country.toLowerCase() === 'us'
 						&& locale.startsWith('en')
 						&& result
 						&& this.isShowCHSByShellVersion(shellVersion)
@@ -194,7 +195,7 @@ export class ConfigService {
 						resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 					}
 					this.menuBySegment.commercial = this.menuBySegment.commercial.filter(item => item.id !== 'home-security');
-					if (!showCHSConsumer) {
+					if (!this.showCHSWithoutSegment) {
 						this.menuBySegment.consumer = this.menuBySegment.consumer.filter(item => item.id !== 'home-security');
 						this.menuBySegment.smb = this.menuBySegment.smb.filter(item => item.id !== 'home-security');
 					}
@@ -475,6 +476,7 @@ export class ConfigService {
 				return resolve(this.menu);
 			} else {
 				this.activeSegment = segment;
+				this.showCHS = this.showCHSWithoutSegment && this.activeSegment !== SegmentConst.Commercial;
 				const seg = segment.toLowerCase();
 				this.menu = cloneDeep(this.menuBySegment[seg]);
 				return resolve(this.menu);
