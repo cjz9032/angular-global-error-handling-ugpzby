@@ -219,6 +219,21 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
+		if (this.commonService.getLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus) === 'true') {
+			this.showECMReset = true;
+		}
+		this.inWhiteList().then(isSupport => {
+			if (isSupport) {
+				this.initDisplayColorTempFromCache();
+				this.initEyeCareModeFromCache();
+				this.statusChangedLocationPermission();
+				this.initEyecaremodeSettings();
+				this.startEyeCareMonitor();
+			} else {
+				this.showECMReset = true;
+				this.resetEyecaremodeAllSettings();
+			}
+		});
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
 				this.dataSource = cameraDetail;
@@ -257,8 +272,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 
 	initDataFromCache() {
 		try {
-			this.initDisplayColorTempFromCache();
-			this.initEyeCareModeFromCache();
 			this.initCameraPrivacyFromCache();
 		} catch (error) {
 			this.logger.error('initDataFromCache', error.message);
@@ -319,16 +332,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.initCameraSection();
 		this.getOLEDPowerControlCapability();
-		this.inWhiteList().then(isSupport => {
-			if (isSupport) {
-				this.statusChangedLocationPermission();
-				this.initEyecaremodeSettings();
-				this.startEyeCareMonitor();
-			} else {
-				this.showECMReset = true;
-				this.resetEyecaremodeAllSettings();
-			}
-		});
 	}
 
 	inWhiteList() {
