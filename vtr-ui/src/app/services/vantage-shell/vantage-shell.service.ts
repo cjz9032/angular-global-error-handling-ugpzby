@@ -954,10 +954,11 @@ export class VantageShellService {
 	// =================== Start Hardware Scan
 	public getHardwareScan(): any {
 		if (this.phoenix) {
-			return this.phoenix.hwsettings.input.voipHotkeys;
+			return this.phoenix.hardwareScan;
 		}
 		return undefined;
 	}
+	// ==================== End Hardware Scan
 
 	public getMouseAndTouchPad(): any {
 		if (this.phoenix) {
@@ -965,7 +966,6 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-	// ==================== End Hardware Scan
 
 	getTopRowFunctionsIdeapad(): any {
 		if (this.phoenix) {
@@ -979,10 +979,6 @@ export class VantageShellService {
 			return this.phoenix.hwsettings.input.backlight;
 		}
 		return undefined;
-	}
-
-	getBacklight(): Backlight {
-		return this.phoenix.hwsettings.input.backlight;
 	}
 
 	public getRegistryUtil(): Phoenix.RegistryFeature {

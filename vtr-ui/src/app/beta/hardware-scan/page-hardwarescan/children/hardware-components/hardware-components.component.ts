@@ -334,16 +334,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		console.log('[Start]: getDoScan()');
 		this.startDate = new Date();
 		this.progress = 0;
-		
-		this.currentTaskStep = TaskStep.Run;
-
-		this.hardwareScanService.setCurrentTaskStep(TaskStep.Run);
-
-		this.hardwareScanService.setCurrentTaskStep(TaskStep.Run);
-
-		this.hardwareScanService.setCurrentTaskStep(TaskStep.Run);
-
-		this.hardwareScanService.setCurrentTaskStep(TaskStep.Run);
 
 		this.hardwareScanService.setCurrentTaskStep(TaskStep.Run);
 
@@ -742,11 +732,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.setIsScanDone(false);
 		this.isScanDone = true;
 	}
-	
-
-
-
-
 
 
 	public onViewResultsRecover() {
