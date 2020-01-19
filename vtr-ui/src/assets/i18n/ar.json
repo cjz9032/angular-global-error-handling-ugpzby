@@ -1606,19 +1606,19 @@
                     "control3": "إعدادات تحكم TRACKPOINT",
                     "less": "أقل"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "الإضاءة الخلفية للوحة المفاتيح",
+					"description": {
+						"base": "نشّط الإضاءة الخلفية للوحة المفاتيح لتسهيل الكتابة في ظروف الإضاءة الداكنة أو الضعيفة. يمكنك أيضًا تغيير إعدادات الإضاءة الخلفية للوحة المفاتيح عن طريق الضغط على المفتاح Fn+مفتاح المسافة.",
+						"auto": "نشّط الإضاءة الخلفية للوحة المفاتيح لتسهيل الكتابة في ظروف الإضاءة الداكنة أو الضعيفة. يمكنك تغيير إعدادات الإضاءة الخلفية عن طريق الضغط على المفتاح Fn+مفتاح المسافة أو تحديد الخيار \"تلقائي\" لها. يضبط الخيار \"تلقائي\" الإضاءة الخلفية للوحة المفاتيح بشكل تلقائي وفقًا للضوء المحيط."
+					},
+					"level": {
+						"auto": "تلقائي",
+						"low": "منخفض",
+						"high": "مرتفع",
+						"off": "إيقاف"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1779,12 +1779,12 @@
             "superResolution": {
                 "heading": "الوسائط الذكية",
                 "title": "رفع مستوى دقة الفيديو",
-                "desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو عن طريق تحسين دقة الفيديو. إنها تعمل على وجه التحديد عندما تكون دقة الفيديو سيئة.</label></p> <p style='margin-top:4px;'><label> قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. عند تمكين هذه الميزة، من المستحسن أن تقوم بتوصيل الكمبيوتر بطاقة التيار المتردد.</label></p>",
-                "tooltip": "تعمل الميزة على المشغلات التالية فقط:<br/> Windows Media player",
+                "desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو عن طريق تحسين دقة الفيديو. إنها تعمل على وجه التحديد عندما تكون دقة الفيديو سيئة.</label></p> <p style='margin-top:4px;'><label>قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. يرجى عدم الاستخدام في وضع التيار المباشر‬. وإلا سوف تسرع استهلاك الطاقة وتقصير عمر البطارية.</label></p>",
+                "tooltip": "تعمل الميزة فقط على:<br>Windows Media player",
                 "note": {
                     "description": "لا تعمل هذه الميزة في الحالات التالية:",
-                    "description1": "الكمبيوتر غير متصل بطاقة التيار المتردد وطاقة البطارية أقل من 20%.",
-                    "description2": "الكمبيوتر غير متصل بطاقة التيار المتردد وتم تمكين وضع توفير البطارية.",
+                    "description1": "الكمبيوتر غير متصل بطاقة التيار المتردد.",
+                    "description2": "تم تمكين وضع توفير البطارية.",
                     "description3": "درجة حرارة وحدة المعالجة المركزية (CPU) مرتفعة جدًا."
                 }
             },

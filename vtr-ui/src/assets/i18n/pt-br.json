@@ -1604,19 +1604,19 @@
                     "control3": "CONTROLES DE TRACKPOINT",
                     "less": "MENOS"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Retroiluminação do teclado",
+					"description": {
+						"base": "Ative a luz de fundo do teclado para facilitar a digitação em condições de luz escura ou fraca. Você também pode alterar as configurações da luz de fundo do teclado pressionando a tecla Fn+Espaço.",
+						"auto": "Ative a luz de fundo do teclado para facilitar a digitação em condições de luz escura ou fraca. Você pode alterar as configurações da luz de fundo pressionando a tecla Fn+Espaço ou defini-la como \"Automático\". A opção \"Automático\" ajusta automaticamente a luz de fundo do teclado de acordo com a luz ambiente."
+					},
+					"level": {
+						"auto": "Automático",
+						"low": "Baixo",
+						"high": "Alto",
+						"off": "Desligado"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "Mídia inteligente",
                 "title": "Upscaling da resolução de vídeo",
-                "desc": "<p><label>Esse recurso aprimora a experiência de reprodução de vídeo, melhorando a resolução de vídeo. Funciona especialmente quando o vídeo está em baixa resolução.</label></p> <p style='margin-top:4px;'><label> Essa função pode afetar a vida útil da bateria, a temperatura da bateria e causar ruídos. Quando ativado, é recomendável conectar o computador à energia CA.</label></p>",
-                "tooltip": "O recurso funciona apenas nos seguintes players: <br/> Windows Media player",
+                "desc": "<p><label>Esse recurso aprimora a experiência de reprodução de vídeo, melhorando a resolução de vídeo. Funciona especialmente quando o vídeo está em baixa resolução.</label></p> <p style='margin-top:4px;'><label>Essa função pode afetar a vida útil da bateria, a temperatura da bateria e causar ruídos. Não a use no modo DC. Caso contrário, ela acelerará o consumo de energia e reduzirá a duração da bateria.</label></p>",
+                "tooltip": "O recurso funciona apenas em:<br>Windows Media player",
                 "note": {
                     "description": "Esse recurso não funciona quando:",
-                    "description1": "O computador não está conectado à energia CA e a carga da bateria é inferior a 20%.",
-                    "description2": "O computador não está conectado à energia CA e o modo de economia da bateria está ativado.",
+                    "description1": "O computador não está conectado a energia CA.",
+                    "description2": "O modo de economia de bateria está ativado.",
                     "description3": "A temperatura da CPU está muito alta."
                 }
             },

@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT-KONTROLELEMENTER",
                     "less": "FÆRRE"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Baggrundslys for tastatur",
+					"description": {
+						"base": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan også ændre indstillingerne for tastaturets baggrundslys ved at trykke på Fn+mellemrumstasten.",
+						"auto": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan ændre indstillingerne for baggrundslyset ved at trykke på Fn+mellemrumstasten eller indstille det til \"Auto\". Indstillingen \"Auto\" justerer automatisk tastaturets baggrundslys i forhold til det omgivende lys."
+					},
+					"level": {
+						"auto": "Auto",
+						"low": "Lav",
+						"high": "Høj",
+						"off": "Deaktiveret"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "Intelligente medier",
                 "title": "Opskalering af videoopløsning",
-                "desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label> Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Når funktionen er aktiveret, anbefales det, at du slutter computeren til vekselstrøm.</label></p>",
-                "tooltip": "Funktionen fungerer kun på følgende afspillere: <br/> Windows Media player",
+                "desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label>Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand. Ellers bliver strømforbruget større, og batterilevetiden afkortes.</label></p>",
+                "tooltip": "Funktionen fungerer kun på:<br>Windows Media player",
                 "note": {
                     "description": "Denne funktion virker ikke i disse situationer:",
-                    "description1": "Computeren er ikke tilsluttet til vekselstrøm, og batteriets strømniveau er lavere end 20%.",
-                    "description2": "Computeren er ikke tilsluttet til vekselstrøm, og strømsparetilstand er aktiveret.",
+                    "description1": "Computeren er ikke sluttet til vekselstrøm.",
+                    "description2": "Strømbesparelsestilstanden er aktiveret.",
                     "description3": "CPU-temperaturen er for høj."
                 }
             },

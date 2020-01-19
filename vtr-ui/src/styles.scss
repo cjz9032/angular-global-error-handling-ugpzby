@@ -1466,39 +1466,6 @@ vtr-ui-smart-performance-scanning {
 		}
 		.modal-content {
 			border-radius: 1rem;
-		}
-	}
-
-}
-.installation-history-container {
-	.vtr-container-collapsible.white-theme {
-		border-top-left-radius: 0 !important;
-		border-top-right-radius: 0 !important;
-		border-bottom-left-radius: 0.7rem !important;
-		border-bottom-right-radius: 0.7rem !important;
-	}
-}
-.subscribe-modal {
-	.modal-dialog {
-		max-width: 70%;
-	}
-}
-
-.schedule-new-modal-size {
-	.modal-dialog {
-		max-width: 55%;
-		margin: 0 auto;
-		@media #{$breakpoint_lg} {
-			max-width: 70%;
-		}
-		@media #{$breakpoint_md} {
-			max-width: 75%;
-		}
-		@media #{$breakpoint_sm} {
-			max-width: 80%;
-		}
-		.modal-content {
-			border-radius: 1rem;
 			.description {
 				.question {
 					font-weight: $weight_bold;
@@ -1524,6 +1491,15 @@ vtr-ui-smart-performance-scanning {
 		.modal-content {
 			border-radius: 1rem;
 		}
+	}
+
+}
+.installation-history-container {
+	.vtr-container-collapsible.white-theme {
+		border-top-left-radius: 0 !important;
+		border-top-right-radius: 0 !important;
+		border-bottom-left-radius: 0.7rem !important;
+		border-bottom-right-radius: 0.7rem !important;
 	}
 
 }

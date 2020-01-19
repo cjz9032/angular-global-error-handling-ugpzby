@@ -63,8 +63,6 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	backlightCapability$: Observable<boolean>;
 	public fnCtrlKeyTooltipContent = [];
 
-	backlightCapability$: Observable<boolean>;
-
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private keyboardService: InputAccessoriesService,

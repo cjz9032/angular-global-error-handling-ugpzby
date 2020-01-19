@@ -92,6 +92,10 @@ describe('ModalSmartStandByComponent', () => {
 				spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
 				spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
 
+			expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
+			expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
+		}));
+
 		// Testing exceptions
 		it('Testing exception', async(() => {
 			const { fixture, component, powerService } = setup();
@@ -114,28 +118,6 @@ describe('ModalSmartStandByComponent', () => {
 			})
 		);
 
-		//Testing exceptions
-		it(
-			'Testing exception',
-			async(() => {
-				const { fixture, component, powerService } = setup();
-				spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(
-					Promise.resolve(new TypeError('caught exception'))
-				);
-				spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(
-					Promise.resolve(new TypeError('caught exception'))
-				);
-
-				fixture.detectChanges(); // onInit()
-				let excp = function() {
-					//component.getActivities();
-					component.getSmartStandbyActiveHours();
-					component.closeModal();
-					throw new TypeError('caught exception');
-				};
-				expect(excp).toThrowError(TypeError);
-			})
-		);
 
 		// testing http.get
 		it('should call getActivities', (() => {

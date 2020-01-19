@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT-STEUERUNG",
                     "less": "WENIGER"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Tastaturhintergrundbeleuchtung",
+					"description": {
+						"base": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Tastaturbeleuchtung auch ändern, indem Sie die Tastenkombination Fn+Leertaste drücken.",
+						"auto": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Beleuchtung ändern, indem Sie die Tastenkombination Fn+Leertaste drücken oder für die Beleuchtung \"Auto\" einstellen. Mit der Option \"Auto\" wird die Tastaturhintergrundbeleuchtung automatisch an das Umgebungslicht angepasst."
+					},
+					"level": {
+						"auto": "Automatisch",
+						"low": "Niedrig",
+						"high": "Hoch",
+						"off": "Aus"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "Intelligente Medien",
                 "title": "Upscaling der Videoauflösung",
-                "desc": "<p><label>Mit dieser Funktion wird die Videowiedergabe durch Verbesserung der Videoauflösung verbessert, insbesondere bei Videos mit schlechter Auflösung.</label></p> <p style='margin-top:4px;'><label> Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Wenn diese Funktion aktiviert ist, sollten Sie den Computer an die Stromversorgung anschließen.</label></p>",
-                "tooltip": "Die Funktion funktioniert nur bei folgenden Playern: <br/> Windows Media player",
+                "desc": "<p><label>Mit dieser Funktion wird die Videowiedergabe durch Verbesserung der Videoauflösung verbessert, insbesondere bei Videos mit schlechter Auflösung.</label></p> <p style='margin-top:4px;'><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus. Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
+                "tooltip": "Die Funktion funktioniert nur für:<br>Windows Media player",
                 "note": {
                     "description": "Diese Funktion funktioniert nicht, wenn:",
-                    "description1": "Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkustand weniger als 20 % beträgt.",
-                    "description2": "Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkusparmodus aktiviert ist.",
+                    "description1": "Der Computer ist nicht an Netzstrom (Wechselstrom) angeschlossen.",
+                    "description2": "Der Akkusparmodus ist aktiviert.",
                     "description3": "Die CPU-Temperatur zu hoch ist."
                 }
             },

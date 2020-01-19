@@ -10,7 +10,10 @@ import { Container, BindingScopeEnum } from 'inversify';
 import { HardwareScanShellMock } from 'src/app/beta/hardware-scan/mock/hardware-scan-shell-mock';
 import { WinRT, CHSAccountState, EventTypes } from '@lenovo/tan-client-bridge';
 import { of } from 'rxjs';
-import { TopRowFunctionsIdeapad } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
+import { TopRowFunctionsIdeapad, KeyType } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
+import { VoipErrorCodeEnum } from 'src/app/enums/voip.enum';
+import { CommonErrorCode } from 'src/app/data-models/common/common.interface';
+import { BacklightStatusEnum, BacklightLevelEnum } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 
 declare var Windows;
 
@@ -2237,10 +2240,18 @@ export class VantageShellService {
 	}
 
 	public getVoipHotkeysObject(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.input.voipHotkeys;
-		}
-		return undefined;
+		return {
+			getVOIPHotkeysSettings: () => Promise.resolve({
+				errorCode: VoipErrorCodeEnum.SUCCEED,
+				capability: true,
+				appList: [
+					{
+						isAppInstalled: true,
+						isSelected: true
+					}
+				]
+			})
+		};
 	}
 
 	public getSuperResolution(): any {
@@ -2252,8 +2263,89 @@ export class VantageShellService {
 		return superResolution;
 	}
 
-	getTopRowFunctionsIdeapad(): TopRowFunctionsIdeapad {
-		return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
+	getTopRowFunctionsIdeapad(): any {
+		// return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
+		return {
+			getCapability: () => Promise.resolve({
+				capabilityList: {
+					Items: [
+						{
+							key: 'fnLock',
+							value: 'True',
+						}
+					]
+				}
+			}),
+			getPrimaryKey: () => Promise.resolve({
+				settingList: {
+					setting: [
+						{
+							key: 'PrimeKey',
+							value: KeyType.FNKEY,
+							enabled: 0,
+							errorCode: CommonErrorCode.SUCCEED
+						}
+					]
+				}
+			}),
+			getFnLockStatus: () => Promise.resolve({
+				settingList: {
+					setting: [
+						{
+							key: 'FnLock',
+							value: 'True',
+							enabled: 0,
+							errorCode: CommonErrorCode.SUCCEED
+						}
+					],
+				}
+			}),
+			// setFnLockStatus(fnLock: StringBoolean): Promise<CommonResponse<null>>
+		};
+	}
+
+	getBacklight(): any {
+		return {
+			getBacklight: () => Promise.resolve({
+				settingList: {
+					setting: [
+						{
+							key: 'KeyboardBacklightLevel',
+							value: BacklightLevelEnum.ONE_LEVEL,
+							enabled: 0,
+							errorCode: CommonErrorCode.SUCCEED
+						},
+						{
+							key: 'KeyboardBacklightStatus',
+							value: BacklightStatusEnum.LEVEL_1,
+							enabled: 0,
+							errorCode: CommonErrorCode.SUCCEED
+						}
+					]
+				}
+			}),
+			setBacklight: (status) => Promise.resolve({
+				errorcode: CommonErrorCode.SUCCEED
+			}),
+			GetBacklightOnSystemChange: (settings) => Promise.resolve({
+				settingList: {
+					setting: [
+						{
+							key: 'KeyboardBacklightLevel',
+							value: BacklightLevelEnum.ONE_LEVEL,
+							enabled: 0,
+							errorCode: CommonErrorCode.SUCCEED
+						},
+						{
+							key: 'KeyboardBacklightStatus',
+							value: BacklightStatusEnum.LEVEL_1,
+							enabled: 0,
+							errorCode: CommonErrorCode.SUCCEED
+						}
+					]
+				}
+			})
+		};
 	}
 
 	public getRegistryUtil(): Phoenix.RegistryFeature {
