@@ -10,12 +10,17 @@ export class InputAccessoriesService {
 	private mouseAndTouchPad: any;
 	public isShellAvailable = false;
 	private voipHotkeys;
+	public keyboard;
 
 	constructor(shellService: VantageShellService) {
 		this.voipHotkeys = shellService.getVoipHotkeysObject();
 		this.keyboardManager = shellService.getKeyboardManagerObject();
 		this.mouseAndTouchPad = shellService.getMouseAndTouchPad();
+		this.keyboard = shellService.getKeyboardObject();
 		if (this.keyboardManager) {
+			this.isShellAvailable = true;
+		}
+		if (this.keyboard) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -359,6 +364,85 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+
+	//Start of Keyboard backlight thinkpad model
+	public getAutoKBDBacklightCapability(): Promise<boolean> {
+		try {
+			if (this.keyboard) {
+				return this.keyboard.GetAutoKBDBacklightCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getKBDBacklightCapability(): Promise<boolean> {
+		try {
+			if (this.keyboard) {
+				return this.keyboard.GetKBDBacklightCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getAutoKBDStatus(): Promise<boolean> {
+		try {
+			if (this.keyboard) {
+				return this.keyboard.GetAutoKBDStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getKBDBacklightStatus(): Promise<string> {
+		try {
+			if (this.keyboard) {
+				return this.keyboard.GetKBDBacklightStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getKBDBacklightLevel(): Promise<string> {
+		try {
+			if (this.keyboard) {
+				return this.keyboard.GetKBDBacklightLevel();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setKBDBacklightStatus(level: string): Promise<boolean> {
+		try {
+			if (this.keyboard) {
+				return this.keyboard.SetKBDBacklightStaus(level);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setAutomaticKBDBacklight(level: boolean): Promise<boolean> {
+		try {
+			if (this.keyboard) {
+				return this.keyboard.SetAutomaticKBDBacklight(level);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	//End of Keyboard backlight thinkpad model
 
 	// To Restart Windows
 	public restartMachine() {

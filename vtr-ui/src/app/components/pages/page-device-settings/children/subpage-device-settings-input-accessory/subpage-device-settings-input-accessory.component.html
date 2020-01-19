@@ -74,8 +74,8 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3" *ngIf="machineType === 1">
-						<vtr-backlight-thinkpad></vtr-backlight-thinkpad>
+					<li class="pt-3" *ngIf="machineType === 1 && isKbdBacklightAvailable">
+						<vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)"></vtr-backlight-thinkpad>
 					</li>
 					<li class="pt-3 voip" *ngIf="showVoipHotkeysSection">
 						<vtr-ui-row-switch
@@ -244,7 +244,7 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3" *ngIf="machineType == 1 && fnAsCtrlCapability">					
+					<li class="pt-3" *ngIf="machineType == 1 && fnAsCtrlCapability">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title2' | translate"
 							componentName="Fn works as Ctrl for frequently used key combinations"
