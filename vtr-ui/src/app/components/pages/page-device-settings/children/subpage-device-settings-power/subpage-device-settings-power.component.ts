@@ -347,7 +347,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			this.logger.info('initEnergyStarFromCache', error);
 		}
-		this.checkMenuItemsEmpty();
 	}
 
 	// ************************** End Getting Cached Data ****************************
