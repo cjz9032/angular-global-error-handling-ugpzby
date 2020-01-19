@@ -60,6 +60,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private audioClient: any;
 	private audioData: string;
 	private microphoneDevice: any;
+	private microphnePermissionHandler: any;
 	private cameraStatusChangeBySet = false;
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
@@ -109,19 +110,23 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 
 		if (this.microphoneDevice) {
-			this.microphoneDevice.addEventListener('accesschanged', (args: any) => {
-				console.log(JSON.stringify(args));
-				switch (args.status) {
-					case 1:
-						this.microphoneStatus.permission = true;
-						break;
-					case 2:
-					case 3:
-						this.microphoneStatus.permission = false;
-						break;
+			this.microphnePermissionHandler = (args: any) =>{
+				if(args && args.status) {
+					switch (args.status) {
+						case 1:
+							this.microphoneStatus.permission = true;
+							this.updateMicrophoneStatus();
+							break;
+						case 2:
+							this.microphoneStatus.permission = false;
+							break;
+						case 3:
+							this.microphoneStatus.permission = false;
+							break;
+					}
 				}
-				
-			});
+			};
+			this.microphoneDevice.addEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
 	}
 
@@ -154,7 +159,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		// this.stopEyeCareMonitor();
 
 		if (this.microphoneDevice) {
-			this.microphoneDevice.removeEventListener('accesschanged');
+			this.microphoneDevice.removeEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
 	}
 
@@ -344,7 +349,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService.getMicrophoneStatus()
 				.then((featureStatus: FeatureStatus) => {
-					console.log('getMicrophoneStatus.then', featureStatus);
 					this.microphoneStatus = featureStatus;
 					if (featureStatus.available) {
 						const win: any = window;
@@ -353,7 +357,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 								const a = performance.now();
 								this.audioClient = win.VantageShellExtension.AudioClient.getInstance();
 								const b = performance.now();
-								console.log('audioclient init' + (b - a) + 'ms');
+								console.log('audioclient init ' + (b - a) + 'ms');
 								if (this.audioClient) {
 									this.audioClient.onchangecallback = (data: string) => {
 										if (data) {
@@ -652,6 +656,19 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('WidgetQuicksettingsComponent.getVantageToolBarStatus: promise error ', error.message);
+		}
+	}
+
+	private updateMicrophoneStatus() {
+		if (this.dashboardService.isShellAvailable) {
+			this.dashboardService.getMicrophoneStatus()
+				.then((featureStatus: FeatureStatus) => {
+					this.microphoneStatus = featureStatus;
+				})
+				.catch(error => {
+					this.logger.error('getMicrophoneStatus', error.message);
+					return EMPTY;
+				});
 		}
 	}
 }

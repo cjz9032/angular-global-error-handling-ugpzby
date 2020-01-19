@@ -41,8 +41,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public automaticDolbyHelpIcon = [];
 	public isOnline: any = true;
 	private microphoneDevice: any;
+	private microphnePermissionHandler: any;
 	private Windows: any;
-	private vantageShellService: VantageShellService;
 
 	// when initialize page, cacheFlag need change to false if user make changes before getting response back,
 	// in this case, need to drop response status.
@@ -55,15 +55,13 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private audioService: AudioService,
 		private dashboardService: DashboardService,
 		private logger: LoggerService,
-		private commonService: CommonService) {
+		private commonService: CommonService,
+		private vantageShellService: VantageShellService) {
 
-			this.Windows = this.vantageShellService.getWindows();
+			this.Windows = vantageShellService.getWindows();
 			if (this.Windows) {
 				this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
 					.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
-			}
-			else {
-				console.log('初始化失败');
 			}
 	}
 
@@ -85,19 +83,23 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 
 		if (this.microphoneDevice) {
-			this.microphoneDevice.addEventListener('accesschanged', (args: any) => {
-				console.log(JSON.stringify(args));
-				switch (args.status) {
-					case 1:
-						this.microphoneProperties.permission = true;
-						break;
-					case 2:
-					case 3:
-						this.microphoneProperties.permission = false;
-						break;
+			this.microphnePermissionHandler = (args: any) =>{
+				if(args && args.status) {
+					switch (args.status) {
+						case 1:
+							this.microphoneProperties.permission = true;
+							this.getMicrophoneSettingsAsync();
+							break;
+						case 2:
+							this.microphoneProperties.permission = false;
+							break;
+						case 3:
+							this.microphoneProperties.permission = false;
+							break;
+					}
 				}
-				
-			});
+			};
+			this.microphoneDevice.addEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
 	}
 
@@ -123,7 +125,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.stopMonitorForDolby();
 
 		if (this.microphoneDevice) {
-			this.microphoneDevice.removeEventListener('accesschanged');
+			this.microphoneDevice.removeEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
 	}
 
@@ -657,4 +659,5 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		console.log('ready to update microhone cache');
 		this.commonService.setLocalStorageValue(LocalStorageKey.MicrohoneCapability, info);
 	}
+
 }
