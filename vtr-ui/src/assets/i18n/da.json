@@ -644,7 +644,8 @@
             "registered": "REGISTRERET",
             "notRegistered": "IKKE REGISTRERET",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart-standby",
-                    "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
-                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte STARTtidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller den tid for computerbrug, som vi får. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
+                    "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at genoptage dit arbejde hurtigt ved hjælp af <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Moderne standby</a> i perioder med mere intens aktivitet.",
+                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller din computerbrug. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
                     "timer": {
-                        "heading": "Det tidspunkt, hvor du normalt bruger denne computer",
+                        "heading": "Den tid, hvor du normalt bruger denne computer:",
                         "subHeading1": "starter",
                         "subHeading2": "slut",
                         "subHeading3": "brug denne tidsplan for",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Ingen dag valgt"
                     },
                     "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
-                    "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
+                    "hyperlinkToGraph": "Klik her for at se forbruget og den anvendte aktive tid",
                     "subTitle": "Tidsplan for din computer",
                     "automaticMode": "Automatisk tilstand",
                     "manualMode": "Manuel tilstand",
@@ -1541,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Ombytning af Fn- og Ctrl-tast",
                     "description": "Hvis du ofte kommer til at trykke på Fn-tasten, når du vil trykke på Ctrl-tasten, kan du bytte om på funktionen for de to taster.",
-                    "restartNote": "Hvis du vil bytte om på funktionen for to taster, skal computeren genstartes. Er du sikker på, du vil genstarte?"
+                    "restartNote": "Hvis du vil bytte om på funktionen for to taster, skal computeren genstartes. Er du sikker på, du vil genstarte?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "FLERE",
@@ -1550,19 +1604,19 @@
                     "control3": "TRACKPOINT-KONTROLELEMENTER",
                     "less": "FÆRRE"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Baggrundslys for tastatur",
+					"description": {
+						"base": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan også ændre indstillingerne for tastaturets baggrundslys ved at trykke på Fn+mellemrumstasten.",
+						"auto": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan ændre indstillingerne for baggrundslyset ved at trykke på Fn+mellemrumstasten eller indstille det til \"Auto\". Indstillingen \"Auto\" justerer automatisk tastaturets baggrundslys i forhold til det omgivende lys."
+					},
+					"level": {
+						"auto": "Auto",
+						"low": "Lav",
+						"high": "Høj",
+						"off": "Deaktiveret"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1723,12 +1777,12 @@
             "superResolution": {
                 "heading": "Intelligente medier",
                 "title": "Opskalering af videoopløsning",
-                "desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label> Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Når funktionen er aktiveret, anbefales det, at du slutter computeren til vekselstrøm.</label></p>",
-                "tooltip": "Funktionen fungerer kun på følgende afspillere: <br/> Windows Media player",
+                "desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label>Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand. Ellers bliver strømforbruget større, og batterilevetiden afkortes.</label></p>",
+                "tooltip": "Funktionen fungerer kun på:<br>Windows Media player",
                 "note": {
                     "description": "Denne funktion virker ikke i disse situationer:",
-                    "description1": "Computeren er ikke tilsluttet til vekselstrøm, og batteriets strømniveau er lavere end 20%.",
-                    "description2": "Computeren er ikke tilsluttet til vekselstrøm, og strømsparetilstand er aktiveret.",
+                    "description1": "Computeren er ikke sluttet til vekselstrøm.",
+                    "description2": "Strømbesparelsestilstanden er aktiveret.",
                     "description3": "CPU-temperaturen er for høj."
                 }
             },
@@ -1885,7 +1939,7 @@
             "localRepositoryDatabaseException": "Databasen til det lokale opbevaringssted findes ikke eller er ødelagt.",
             "networkInterruptedException": "Systemopdateringsserveren er i øjeblikket ikke tilgængelig. Prøv igen senere.",
             "helpCenterInvalidServerException": "Systemopdateringsserveren er ugyldig. Prøv igen senere.",
-            "catalogNotFoundException": "Der er ikke fundet nogen tilgængelige opdateringer til systemet.",
+            "catalogNotFoundException": "Der blev ikke fundet nogen tilgængelige opdateringer til systemet, da opdateringskataloget ikke blev fundet.",
             "catalogCrcErrorException": "Kataloget til dit system er ved at blive opdateret. Prøv igen senere.",
             "catalogErrorException": "Der opstod en fejl med opdateringskataloget til systemet på systemopdateringsserveren. Prøv igen senere.",
             "fileNotFoundException": "Filen blev ikke fundet."
@@ -2109,7 +2163,8 @@
                 "showmore": "Vis mere",
                 "showless": "Vis mindre",
                 "button": "Aktivér WiFi-sikkerhed",
-                "disableDecribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige."
+                "disableDescribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Brug trusselssensoren til at bestemme sikkerheden i dine nærliggende netværk.",
@@ -2143,7 +2198,8 @@
                 "subtitle": "Få ro i sindet",
                 "subtitleDescribe": "Tilsluttet Home Security sender en advarsel, hvis systemet registrerer et sikkerhedsproblem i din enhed eller dit hjemmenetværk, eller hvis du er tilsluttet et potentielt skadeligt netværk. Få mere at vide om Tilsluttet Home Security <tag>her</tag>.",
                 "tryNow": "Prøv nu",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Indtast invitationskode",
@@ -2218,7 +2274,8 @@
             "getStarted1": "Klik på knappen \"Åbn SurfEasy\" ovenfor for at starte SurfEasy VPN.",
             "getStarted2": "Aktivér VPN, og vent et kort øjeblik for at få bekræftelse på en sikker forbindelse.",
             "getStarted3": "Rediger dit område eller din placering, og nyd sikre og private netværksaktiviteter.",
-            "poweredBySurfEasy": "Udarbejdet af SurfEasy"
+            "poweredBySurfEasy": "Udarbejdet af SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE ADGANGSKODEADMINISTRATOR",
@@ -2246,7 +2303,8 @@
             "allowsYou2": "Overvåge det mørke internet, så du er informeret",
             "allowsYou3": "Forblive sikret på ikke-sikre WiFi-netværk med indbygget VPN",
             "allowsYou4": "Dele adgangskoder sikkert uden at afsløre dem",
-            "poweredByDashLane": "Udarbejdet af Dashlane"
+            "poweredByDashLane": "Udarbejdet af Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2747,6 +2805,8 @@
         "noteDownloadAvailable": "Bemærk: Når du klikker på Download, får du muligvis en meddelelse fra Windows om at give os tilladelse til at installere programmet på din enhed. Når du er færdig med at installere, vises dine apps automatisk på skrivebordet eller i startmenuen.<br /><br />Du kan lukke siden Min software og fortsætte med at bruge Lenovo Vantage. Luk ikke Lenovo Vantage under installation.",
         "sizeText": "Størrelse",
         "versionText": "Version",
+        "redemptionCode": "Indløsningskode:",
+        "redeemWebsite": "Indløs på leverandørens websted",
         "softwareDescription": "Klik på download nedenfor for at indløse software, der er købt med din enhed. Hvis du på et tidspunkt får brug for at downloade softwaren igen, kan du gøre det ved at klikke på knappen Min software i Lenovo Vantage-menuen.",
         "title": "Min software",
         "loadingDescription": "Vent, mens vi forbereder en list over den software, der fulgte med, da du købte din enhed.",

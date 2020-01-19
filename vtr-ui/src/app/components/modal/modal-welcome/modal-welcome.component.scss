@@ -49,7 +49,7 @@
 		background-size: cover;
 		background-position: center;
 		width: 100%;
-		height: 30rem;			
+		height: 30rem;
 		margin-bottom:2.4rem;
 		flex-shrink: 0;
 		@media #{$breakpoint_sm} {
@@ -81,7 +81,7 @@
 		background-size: cover;
 		height: 10rem;
 		width: 100%;
-		flex-shrink: 0;		
+		flex-shrink: 0;
 		margin-bottom:2.4rem;
 		background-position: center;
 		@media #{$breakpoint_sm} {
@@ -112,7 +112,7 @@
 		font-size: 1.5rem;
 		font-weight: $weight_regular;
 		letter-spacing: 0.05rem;
-		@media #{$breakpoint_md} {			
+		@media #{$breakpoint_md} {
 			padding: 0rem 6.9rem 1.5rem 7rem;
 			height: 100%;
 		}
@@ -234,14 +234,14 @@
 
 	.content-page-1 {
 		overflow-y: auto;
-		color: $shade_blue;		
+		color: $shade_blue;
 		padding: 0rem 7.2rem 1.5rem 7.2rem;
 		height: auto;
 		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 		letter-spacing: 0.05rem;
 		text-align: left;
-		@media #{$breakpoint_md} {			
+		@media #{$breakpoint_md} {
 			height: 100%;
 		}
 		@media #{$breakpoint_sm} {

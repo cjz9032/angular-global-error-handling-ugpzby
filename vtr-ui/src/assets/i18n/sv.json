@@ -644,7 +644,8 @@
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart vänteläge",
-                    "description": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
-                    "tooltip": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda starttiden och i viloläge när den inte har använts under en viss tid på batterikraft. Tiden optimeras utifrån det schema du har valt eller den datoranvändningstid vi får. Datorn övergår från viloläge till modernt vänteläge endast schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
+                    "description": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den snabbt aktiveras med <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">modernt vänteläge</a> under tider då den används mer frekvent.",
+                    "tooltip": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda START tiden och i viloläge när den inte har använts under en viss tid på batterikraft. Tidsperioden är optimerad utifrån schemat du har angett eller din datoranvändning. Datorn övergår från viloläge till modernt vänteläge endast schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
                     "timer": {
-                        "heading": "Tiden då du brukar använda datorn",
+                        "heading": "Den tid du brukar använda denna dator:",
                         "subHeading1": "start",
                         "subHeading2": "slut",
                         "subHeading3": "använd detta schema för",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Ingen dag har valts"
                     },
                     "checkbox": "Justera datorns aktiva tid automatiskt utifrån användning",
-                    "hyperlinkToGraph": "Klicka om du vill datorns tabell över aktivitet och aktiv tid",
+                    "hyperlinkToGraph": "Klicka för att se förbrukningen och den tillämpade aktiva tiden",
                     "subTitle": "Schemalägg datorn",
                     "automaticMode": "Automatiskt läge",
                     "manualMode": "Manuellt läge",
@@ -1541,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Växla funktion på Fn- och Ctrl-tangenten",
                     "description": "Om du ofta trycker på Fn-tangenten när du avser att trycka på Ctrl-tangenten kan du växla de två tangenternas funktion.",
-                    "restartNote": "Du måste starta om datorn om du vill byta två tangenters funktion. Vill du verkligen göra det?"
+                    "restartNote": "Du måste starta om datorn om du vill byta två tangenters funktion. Vill du verkligen göra det?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "MER",
@@ -1550,19 +1604,19 @@
                     "control3": "TRACKPOINT-KONTROLLER",
                     "less": "MINDRE"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Bakgrundsbelysning för tangentbord",
+					"description": {
+						"base": "Aktivera tangentbordets bakgrundsbelysning om du vill göra det lättare att skriva i mörker eller dåligt ljus. Du kan också ändra inställningarna för tangentbordets bakgrundsbelysning genom att trycka på Fn+Mellanslag.",
+						"auto": "Aktivera tangentbordets bakgrundsbelysning om du vill göra det lättare att skriva i mörker eller dåligt ljus. Du kan ändra inställningarna för bakgrundsbelysningen genom att trycka på Fn+Mellanslag eller ange inställningen till Automatisk. Med alternativet Automatisk anpassas tangentbordets bakgrundsbelysning efter omgivande ljusförhållanden."
+					},
+					"level": {
+						"auto": "Automatisk",
+						"low": "Låg",
+						"high": "Hög",
+						"off": "Av"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1723,12 +1777,12 @@
             "superResolution": {
                 "heading": "Intelligenta medier",
                 "title": "Öka videoupplösningen",
-                "desc": "<p><label>Med denna funktion kan du förbättra videouppspelningen genom att förbättra upplösningen. Detta är särskilt praktiskt om videon har låg upplösning.</label></p> <p style='margin-top:4px;'><label> Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Vi rekommenderar att du ansluter datorn till nätström när funktionen är aktiverad.</label></p>",
-                "tooltip": "Funktionen fungerar endast på följande spelare: <br/> Windows Media player",
+                "desc": "<p><label>Med denna funktion kan du förbättra videouppspelningen genom att förbättra upplösningen. Detta är särskilt praktiskt om videon har låg upplösning.</label></p> <p style='margin-top:4px;'><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge. Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
+                "tooltip": "Funktionen fungerar endast på:<br>Windows Media player",
                 "note": {
                     "description": "Funktionen fungerar inte när:",
-                    "description1": "datorn inte är ansluten till nätström och batterinivån är lägre än 20 %.",
-                    "description2": "datorn inte är ansluten till nätström och batterisparläget är aktiverat.",
+                    "description1": "Datorn inte är ansluten till nätströmmen.",
+                    "description2": "Batterisparläge är aktiverat.",
                     "description3": "processortemperaturen är för hög."
                 }
             },
@@ -1885,7 +1939,7 @@
             "localRepositoryDatabaseException": "Den lokala uppdateringsdatabasen kan inte hittas eller är skadad.",
             "networkInterruptedException": "Systemuppdateringsservern är inte tillgänglig just nu. Försök igen litet senare.",
             "helpCenterInvalidServerException": "System Update-servern är ogiltig. Försök igen litet senare.",
-            "catalogNotFoundException": "Det gick inte att hitta några uppdateringar för ditt system.",
+            "catalogNotFoundException": "Inga tillämpliga uppdateringar hittades för ditt system, eftersom uppdateringskatalogen inte gick att hitta.",
             "catalogCrcErrorException": "Systemkatalogen uppdateras för närvarande. Försök igen litet senare.",
             "catalogErrorException": "Ett fel inträffade med systemets uppdateringskatalog på systemuppdateringsservern. Försök igen litet senare.",
             "fileNotFoundException": "Filen hittades inte."
@@ -2109,7 +2163,8 @@
                 "showmore": "Visa mer",
                 "showless": "Visa mindre",
                 "button": "Aktivera WiFi-säkerhet",
-                "disableDecribe": "Lenovo WiFi-säkerhet är en avancerad molnbaserad programvarutjänst som hjälper din enhet att skilja mellan säkra trådlösa nätverk och potentiellt skadliga."
+                "disableDescribe": "Lenovo WiFi-säkerhet är en avancerad molnbaserad programvarutjänst som hjälper din enhet att skilja mellan säkra trådlösa nätverk och potentiellt skadliga.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Använd hotidentifieraren för att utvärdera säkerheten i nätverken.",
@@ -2143,7 +2198,8 @@
                 "subtitle": "Sinnesro",
                 "subtitleDescribe": "Säkerhet för uppkopplat hem skickar ett meddelande om det upptäcker en sårbarhet på enheten eller i hemnätverket eller om du ansluter till ett skadligt nätverk. Läs mer om Säkerhet för uppkopplat hem <tag>här</tag>.",
                 "tryNow": "Prova nu",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Ange inbjudningskod",
@@ -2218,7 +2274,8 @@
             "getStarted1": "Klicka på ”Öppna SurfEasy” ovan för att öppna SurfEasy VPN.",
             "getStarted2": "Aktivera VPN och vänta tills du ser en bekräftelse på att anslutningen är säker.",
             "getStarted3": "Ändra din region eller plats vid behov och surfa med ett säkert och privat nätverk.",
-            "poweredBySurfEasy": "Från SurfEasy"
+            "poweredBySurfEasy": "Från SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE LÖSENORDSHANTERARE",
@@ -2246,7 +2303,8 @@
             "allowsYou2": "övervaka om din personliga information finns på dark web",
             "allowsYou3": "skydda dig i osäkra WiFi-nätverk med inbyggt VPN",
             "allowsYou4": "dela lösenord på ett säkert sätt utan att avslöja dem.",
-            "poweredByDashLane": "Från Dashlane"
+            "poweredByDashLane": "Från Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2747,6 +2805,8 @@
         "noteDownloadAvailable": "Obs! När du klickar på Hämta kan det visas ett Windows-meddelande där du blir ombedd att ge oss tillstånd att installera programvaran på din enhet. När du är klar med installationen visas apparna automatiskt på skrivbordet eller Start-menyn.<br /><br />Du kan stänga sidan Min programvara och fortsätta använda Lenovo Vantage. Stäng inte Lenovo Vantage under installationen.",
         "sizeText": "Storlek",
         "versionText": "Version",
+        "redemptionCode": "Inlösenkod:",
+        "redeemWebsite": "Lös in på leverantörens webbplats",
         "softwareDescription": "Klicka på Hämta nedan för att hämta programvara som inkluderades i köpet av din enhet. Om du behöver ladda ned programvaran igen vid ett senare tillfälle kan du göra detta genom att välja Min programvara på Vantage-menyn.",
         "title": "MIn programvara",
         "loadingDescription": "Vänta medan vi skapar en lista med programvara som var inkluderad i köpet av enheten.",

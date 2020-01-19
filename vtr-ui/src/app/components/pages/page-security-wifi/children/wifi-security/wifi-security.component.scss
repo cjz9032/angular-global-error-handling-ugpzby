@@ -155,61 +155,6 @@
 		margin: 1.2rem;
 	}
 
-	.wifi-security-box {
-		padding: 0.5rem;
-		background-color: $shade_lightest;
-		border: 0.1rem solid $shade_lighter;
-		border-radius: $border_radius;
-		text-align: center;
-
-		.sub-heading {
-			margin-top: 2.3rem;
-			color: $main_dark;
-			font-size: 1.8rem;
-			font-weight: $weight_medium;
-			text-transform: uppercase;
-			margin-left: -4rem;
-			word-break: break-all;
-			word-wrap: break-word;
-		}
-
-		.text-regular {
-			color: $main_dark;
-			font-size: 2rem;
-			font-weight: $weight_light;
-		}
-
-		.button-box {
-			padding-left: 0rem;
-			margin-left: -1rem;
-		}
-	}
-
-	.threat-locator {
-		background: url("src/assets/images/threat-locator-background.jpg");
-		border-radius: $border_radius;
-		border-top-left-radius: 0rem;
-		border-top-right-radius: 0rem;
-
-		.threat-locator-container {
-			margin: 3rem;
-			padding: 2rem;
-			background: $light;
-			border-radius: $border_radius;
-
-			.col-check-location {
-				padding-right: 0rem;
-				margin: auto;
-			}
-
-			.button-box {
-				padding: 0rem;
-				margin: 0rem;
-				padding-top: 1rem;
-				text-align: left !important;
-			}
-		}
-	}
 	.col-check-use-state{
 		margin: auto;
 	}
@@ -225,11 +170,38 @@
 
 			.cardTitle {
 				display: flex;
-				margin-bottom: 1rem;
 
 				h3 {
 					font-size: 2rem;
 					font-weight: 350;
+				}
+
+				.collapse-control {
+					margin-top: -0.4rem;
+					display: inline-block;
+					max-width: 70%;
+					margin-left: 1rem;
+					.collapse-text {
+						display: inline-block;
+						color: $main;
+						font-size: 1.4rem;
+						vertical-align: middle;
+						text-decoration: underline;
+						font-weight: 500;
+					}
+
+					fa-icon {
+						font-size: 2.4rem;
+						color: $main;
+						vertical-align: middle;
+						cursor: pointer;
+						padding-left: 0.8rem !important;
+					}
+					button{
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
 				}
 
 				.status {
@@ -332,12 +304,10 @@
 	.wifiSecurity {
 		.card {
 			border-radius: $border_radius;
-			border-bottom-left-radius: 0rem;
-			border-bottom-right-radius: 0rem;
 
-			&.collapsed {
-				border-bottom-left-radius: $border_radius;
-				border-bottom-right-radius: $border_radius;
+			&.expand {
+				border-bottom-left-radius: 0rem;
+				border-bottom-right-radius: 0rem;
 			}
 
 			.no-gutters {
@@ -377,40 +347,19 @@
 			@media #{$breakpoint_sm} {
 				padding: 1rem;
 			}
-
-			.collapse-control {
-				margin-top: -0.4rem;
-				display: inline-block;
-				max-width: 70%;
-				margin-left: 1rem;
-				.collapse-text {
-					display: inline-block;
-					color: $main;
-					font-size: 1.4rem;
-					vertical-align: middle;
-					text-decoration: underline;
-					font-weight: 500;
-				}
-
-				fa-icon {
-					font-size: 2.4rem;
-					color: $main;
-					vertical-align: middle;
-					cursor: pointer;
-					padding-left: 0.8rem !important;
-				}
-				button{
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space: nowrap;
-				}
-			}
 		}
 
-		.collapse {
+		.card-history {
 			background: $shade_extralight;
-			border-radius: 0rem;
 			border: 0.1rem solid $shade_lighter;
+			border-bottom-left-radius: $border_radius;
+			border-bottom-right-radius: $border_radius;
+		}
+
+		.border-top-none {
+			border-radius: $border_radius;
+			border-top-left-radius: 0rem;
+			border-top-right-radius: 0rem;
 		}
 
 		.half {
@@ -503,12 +452,12 @@
 			border-bottom: 0;
 		}
 		div.wifi:nth-child(odd) {
-			@media #{$mediaquery_X5, $mediaquery_10} {
+			@media #{$mediaquery_md, $mediaquery_X45} {
 				border-right: 0;
 			}
 		}
 		div.wifi:nth-last-child(2):nth-child(odd) {
-			@media #{$mediaquery_X5, $mediaquery_10} {
+			@media #{$mediaquery_md, $mediaquery_X45} {
 				border-bottom-left-radius: 0;
 				border-bottom: 0.1rem solid $shade_lighter;
 			}

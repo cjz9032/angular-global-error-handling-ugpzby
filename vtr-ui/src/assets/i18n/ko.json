@@ -644,7 +644,8 @@
             "registered": "등록됨",
             "notRegistered": "등록되지 않음",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "스마트 대기",
-                    "description": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
+                    "description": "이 기능은 사용량이 많을 때 <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">최신 대기 상태</a>를 빠르게 재개하도록 하면서 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약합니다.",
                     "tooltip": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 기간은 설정한 일정 또는 컴퓨터 사용 시간을 기준으로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며, 비활성화되도록 예약된 날에는 전환되지 않습니다.",
                     "timer": {
-                        "heading": "이 컴퓨터를 주로 사용하는 시간",
+                        "heading": "이 컴퓨터를 주로 사용하는 시간:",
                         "subHeading1": "시작하면",
                         "subHeading2": "종료",
                         "subHeading3": "다음에 대해 이 스케줄을 사용합니다",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "날짜를 선택하지 않음"
                     },
                     "checkbox": "사용 현황에 따라 컴퓨터의 활성 시간 자동 조정",
-                    "hyperlinkToGraph": "클릭하여 컴퓨터 테이블의 활동 및 활성 시간을 확인",
+                    "hyperlinkToGraph": "사용량 및 적용된 유효 시간을 보려면 클릭하십시오",
                     "subTitle": "컴퓨터 예약",
                     "automaticMode": "자동 모드",
                     "manualMode": "수동 모드",
@@ -1541,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Fn 키와 Ctrl 키 바꾸기",
                     "description": "Ctrl 키를 눌러야 하는 데 습관적으로 Fn 키를 누르는 경우 두 키의 기능을 바꿀 수 있습니다.",
-                    "restartNote": "두 키의 기능을 바꾸어도 컴퓨터를 다시 시작해야 합니다. 다시 시작하시겠습니까?"
+                    "restartNote": "두 키의 기능을 바꾸어도 컴퓨터를 다시 시작해야 합니다. 다시 시작하시겠습니까?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "자세히",
@@ -1550,19 +1604,19 @@
                     "control3": "TRACKPOINT 제어",
                     "less": "간단히"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "키보드 백라이트",
+					"description": {
+						"base": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. 또한 Fn+Space 키를 눌러 키보드 백라이트 설정을 변경할 수도 있습니다.",
+						"auto": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. Fn+Space 키를 눌러 키보드 백라이트 설정을 변경하거나 이를 \"자동\"으로 설정할 수 있습니다. \"자동\" 옵션은 주변 밝기에 따라 키보드 조명을 자동으로 조정합니다."
+					},
+					"level": {
+						"auto": "자동",
+						"low": "낮음",
+						"high": "높음",
+						"off": "끄기"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1723,12 +1777,12 @@
             "superResolution": {
                 "heading": "지능형 미디어",
                 "title": "비디오 해상도 업스케일링",
-                "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label> 이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. 사용 가능으로 설정하는 경우, AC 전원을 사용하여 컴퓨터에 연결하는 것이 좋습니다.</label></p>",
-                "tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player",
+                "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label>이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. DC 모드에서는 사용하지 마십시오. 그렇지 않으면 전력 소모를 가속화하고 배터리 수명을 단축시킵니다.</label></p>",
+                "tooltip": "이 기능은 다음의 환경에서만 작동합니다:<br>Windows Media player",
                 "note": {
                     "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
-                    "description1": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 전력이 20% 미만입니다.",
-                    "description2": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 절전 모드가 전력이 설정되었습니다.",
+                    "description1": "컴퓨터가 AC 전원에 연결되어 있지 않습니다.",
+                    "description2": "배터리 절약 모드를 사용합니다.",
                     "description3": "CPU 온도가 너무 높습니다."
                 }
             },
@@ -1885,7 +1939,7 @@
             "localRepositoryDatabaseException": "로컬 리포지토리 데이터베이스를 찾을 수 없거나 데이터베이스가 손상되었습니다.",
             "networkInterruptedException": "시스템 업데이트 서버를 현재 사용할 수 없습니다. 나중에 다시 시도하십시오.",
             "helpCenterInvalidServerException": "시스템 업데이트 서버가 올바르지 않습니다. 나중에 다시 시도하십시오.",
-            "catalogNotFoundException": "시스템에 적용 가능한 업데이트를 찾을 수 없습니다.",
+            "catalogNotFoundException": "업데이트 카탈로그를 찾을 수 없기 때문에 사용자 시스템에 적용 가능한 업데이트를 찾을 수 없습니다.",
             "catalogCrcErrorException": "현재 시스템 카탈로그를 업데이트하는 중입니다. 나중에 다시 시도하십시오.",
             "catalogErrorException": "시스템 업데이트 서버의 사용자 시스템 업데이트 카탈로그에서 오류가 발견되었습니다. 나중에 다시 시도하십시오.",
             "fileNotFoundException": "파일을 찾을 수 없습니다."
@@ -2109,7 +2163,8 @@
                 "showmore": "더 표시",
                 "showless": "간단하게 표시",
                 "button": "WiFi 보안 사용",
-                "disableDecribe": "Lenovo WiFi 보안은 장치가 안전한 무선 네트워크와 잠재적인 악성 네트워크를 구분할 수 있도록 도와주는 첨단 클라우드 기반 소프트웨어 서비스입니다."
+                "disableDescribe": "Lenovo WiFi 보안은 장치가 안전한 무선 네트워크와 잠재적인 악성 네트워크를 구분할 수 있도록 도와주는 첨단 클라우드 기반 소프트웨어 서비스입니다.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "위협 감지기를 사용하여 주변 네트워크의 안전성을 확인합니다.",
@@ -2143,7 +2198,8 @@
                 "subtitle": "안심하고 사용",
                 "subtitleDescribe": "장치 또는 홈 네트워크에서 취약한 점이 감지되거나 악성일 가능성이 있는 네트워크에 연결되어 있는 경우, 연결된 홈 보안 장치에서 경고를 보냅니다. 연결된 홈 보안에 대해 자세히 알아보십시오 <tag>여기</tag>.",
                 "tryNow": "지금 사용해 보기",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "초대 코드 입력",
@@ -2218,7 +2274,8 @@
             "getStarted1": "위의 \"SurfEasy 열기\" 버튼을 클릭하여 SurfEasy VPN을 실행하십시오.",
             "getStarted2": "보안 연결을 확인하려면 VPN을 켜고 잠시 기다리십시오.",
             "getStarted3": "원하는 경우 지역 또는 위치를 변경하여 안전하고 개인적인 네트워킹을 즐기십시오.",
-            "poweredBySurfEasy": "SurfEasy로 실행"
+            "poweredBySurfEasy": "SurfEasy로 실행",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 암호 관리자",
@@ -2246,7 +2303,8 @@
             "allowsYou2": "다크 웹에서 개인 정보 모니터",
             "allowsYou3": "내장 VPN으로 비보안 WiFi 네트워크에서 안전하게 유지",
             "allowsYou4": "암호를 노출하지 않고 안전하게 공유",
-            "poweredByDashLane": "Dashlane로 실행"
+            "poweredByDashLane": "Dashlane로 실행",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2747,6 +2805,8 @@
         "noteDownloadAvailable": "참고: 다운로드를 클릭하면 Windows에서 해당 장치에 소프트웨어를 설치할 수 있다는 메시지가 표시될 수 있습니다. 설치가 완료되면 바탕 화면이나 시작 메뉴에 앱이 자동으로 나타납니다.<br /><br />내 소프트웨어 페이지를 닫고 Lenovo Vantage를 계속 사용할 수 있습니다. 설치 중에 Lenovo Vantage를 닫지 마십시오.",
         "sizeText": "크기",
         "versionText": "버전",
+        "redemptionCode": "교환 코드:",
+        "redeemWebsite": "공급자 사이트에서 교환",
         "softwareDescription": "아래의 다운로드를 클릭하면 장치와 함께 구입한 소프트웨어를 사용할 수 있습니다. 언제든지 소프트웨어를 다시 다운로드해야 하는 경우 Vantage 메뉴에서 내 소프트웨어 버튼을 클릭하면 됩니다.",
         "title": "내 소프트웨어",
         "loadingDescription": "장치 구매시 포함된 소프트웨어 목록을 준비하는 동안 잠시 기다려주십시오.",

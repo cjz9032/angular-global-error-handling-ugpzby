@@ -644,7 +644,8 @@
             "registered": "ZAREJESTROWANY",
             "notRegistered": "NIE ZAREJESTROWANY",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Pytania i odpowiedzi dotyczące Twojej maszyny",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Inteligentne wstrzymanie",
-                    "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
-                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Ten okres jest optymalizowany na podstawie ustalonego przez ciebie harmonogramu lub otrzymanego przez nas twojego czasu użytkowania komputera. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowane dni; nie przełącza się w ogóle, jeśli według harmonogramu nie jest używany przez kilka kolejnych dni.",
+                    "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie wznawianie z <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">trybu wstrzymania</a> w godzinach bardziej intensywnego korzystania.",
+                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Ten okres jest optymalizowany na podstawie ustalonego przez ciebie harmonogramu lub Twojego czasu użytkowania komputera. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowane dni; nie przełącza się w ogóle, jeśli według harmonogramu nie jest używany przez kilka kolejnych dni.",
                     "timer": {
-                        "heading": "Typowe godziny korzystania przez ciebie z komputera",
+                        "heading": "Typowe godziny korzystania z komputera:",
                         "subHeading1": "rozpocząć się",
                         "subHeading2": "koniec",
                         "subHeading3": "używaj tego harmonogramu dla",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Nie wybrano dnia"
                     },
                     "checkbox": "Automatyczne dostosowywanie czasu aktywacji komputera na podstawie użytkowania",
-                    "hyperlinkToGraph": "Kliknij, aby zobaczyć tabelę aktywności i czasu aktywacji twojego komputera",
+                    "hyperlinkToGraph": "Kliknij, aby zobaczyć użycie i zastosowany czas aktywności",
                     "subTitle": "Ustaw harmonogram pracy komputera",
                     "automaticMode": "Tryb automatyczny",
                     "manualMode": "Tryb ręczny",
@@ -1541,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Klawisz przełączania Fn i Ctrl",
                     "description": "Jeśli zwykle naciskasz klawisz Fn, gdy chcesz nacisnąć klawisz Ctrl, funkcje tych dwóch klawiszy można zamienić.",
-                    "restartNote": "Zamiana funkcji dwóch klawiszy wymaga ponownego uruchomienia komputera. Czy na pewno chcesz ponownie go uruchomić?"
+                    "restartNote": "Zamiana funkcji dwóch klawiszy wymaga ponownego uruchomienia komputera. Czy na pewno chcesz ponownie go uruchomić?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "WIĘCEJ",
@@ -1550,19 +1604,19 @@
                     "control3": "PRZYCISKI TRACKPOINTA",
                     "less": "LESS"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Podświetlenie klawiatury",
+					"description": {
+						"base": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając klawisz Fn+spacja.",
+						"auto": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając klawisz Fn+spacja, albo włączyć ustawienia automatyczne. Opcja „Automatyczna” automatycznie dostosowuje podświetlenie klawiatury do oświetlenia otoczenia."
+					},
+					"level": {
+						"auto": "Automatyczny",
+						"low": "Niski",
+						"high": "Wysoki",
+						"off": "Wyłącz"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1723,12 +1777,12 @@
             "superResolution": {
                 "heading": "Inteligentne multimedia",
                 "title": "Skalowanie rozdzielczości wideo",
-                "desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label> Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Po włączeniu zaleca się podłączenie komputera do prądu przemiennego.</label></p>",
-                "tooltip": "Ta funkcja działa tylko w następujących odtwarzaczach: <br/> Windows Media player",
+                "desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać w trybie prądu stałego. Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
+                "tooltip": "Funkcja działa tylko w przypadku:<br>Windows Media player",
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
-                    "description1": "Komputer nie jest podłączony do zasilania prądem przemiennym, a poziom naładowania baterii jest niższy niż 20%.",
-                    "description2": "Komputer nie jest podłączony do zasilania prądem przemiennym, a tryb oszczędzania akumulatora jest włączony.",
+                    "description1": "Komputer nie jest podłączony do zasilania prądem przemiennym.",
+                    "description2": "Tryb oszczędzania baterii jest włączony.",
                     "description3": "Temperatura procesora jest za wysoka."
                 }
             },
@@ -1885,7 +1939,7 @@
             "localRepositoryDatabaseException": "Nie można znaleźć bazy danych lokalnego repozytorium albo jest ona uszkodzona.",
             "networkInterruptedException": "Serwer aktualizacji systemu jest obecnie niedostępny. Spróbuj ponownie później.",
             "helpCenterInvalidServerException": "Serwer aktualizacji systemu jest nieprawidłowy. Spróbuj ponownie później.",
-            "catalogNotFoundException": "Nie znaleziono odpowiednich aktualizacji do Twojego systemu.",
+            "catalogNotFoundException": "Brak odpowiednich aktualizacji dla systemu, jako że nie znaleziono katalogu aktualizacji.",
             "catalogCrcErrorException": "Katalog Twojego systemu jest obecnie aktualizowany. Spróbuj ponownie później.",
             "catalogErrorException": "Na serwerze aktualizacji systemu wykryto błąd związany z katalogiem aktualizacji Twojego systemu. Spróbuj ponownie później.",
             "fileNotFoundException": "Nie znaleziono pliku."
@@ -2109,7 +2163,8 @@
                 "showmore": "Pokaż więcej",
                 "showless": "Pokaż mniej",
                 "button": "Włącz funkcję Bezpieczeństwo WiFi",
-                "disableDecribe": "Bezpieczeństwo WiFi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych."
+                "disableDescribe": "Bezpieczeństwo WiFi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Funkcja Detektor zagrożeń sprawdza bezpieczeństwo sieci wokół Ciebie.",
@@ -2143,7 +2198,8 @@
                 "subtitle": "Spokojny sen",
                 "subtitleDescribe": "Bezpieczny Dom wyśle zawiadomienie, jeśli wykryje lukę w Twoim urządzeniu lub sieci domowej, lub jeśli zostaniesz połączony z potencjalnie złośliwą siecią. Dowiedz się więcej o funkcji Bezpieczny Dom <tag>tutaj</tag>.",
                 "tryNow": "„Wypróbuj teraz”",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Wprowadź kod zaproszenia",
@@ -2218,7 +2274,8 @@
             "getStarted1": "Kliknij na „Otwórz SurfEasy” przycisk powyżej, aby uruchomić SurfEasy VPN.",
             "getStarted2": "Włącz VPN i poczekaj krótką chwilę na potwierdzenie bezpiecznego połączenia.",
             "getStarted3": "W razie potrzeby zmień region lub lokalizację i korzystaj z bezpiecznej sieci prywatnej.",
-            "poweredBySurfEasy": "Zasilane przez SurfEasy"
+            "poweredBySurfEasy": "Zasilane przez SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE MENEDŻER HASEŁ",
@@ -2246,7 +2303,8 @@
             "allowsYou2": "Monitoruj ukrytą sieć w celu kontroli swoich informacji osobistych",
             "allowsYou3": "Bądź bezpieczny w niezabezpieczonych sieciach WiFi z wbudowanym VPN",
             "allowsYou4": "Bezpieczne udostępnianie haseł bez ujawniania ich",
-            "poweredByDashLane": "Zasilany przez Dashlane"
+            "poweredByDashLane": "Zasilany przez Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2747,6 +2805,8 @@
         "noteDownloadAvailable": "Uwaga: po kliknięciu przycisku Pobierz może zostać wyświetlony monit z systemu Windows z prośbą o potwierdzenie zainstalowania oprogramowania na urządzeniu. Po zakończeniu instalacji aplikacje będą wyświetlane automatycznie na pulpicie lub w menu Start.<br /><br />Możesz zamknąć stronę Moje oprogramowanie i dalej korzystać z Lenovo Vantage. Nie zamykaj Lenovo Vantage podczas instalacji.",
         "sizeText": "Wymiary",
         "versionText": "Wersja",
+        "redemptionCode": "Kod dostępu:",
+        "redeemWebsite": "Zakup na stronie dostawcy",
         "softwareDescription": "Kliknij poniższy przycisk Pobierz, aby pobrać oprogramowanie zakupione wraz z urządzeniem. Możesz ponownie pobrać oprogramowanie w dowolnym momencie, wybierając opcję Moje oprogramowanie z menu aplikacji Vantage.",
         "title": "Moje oprogramowanie",
         "loadingDescription": "Czekaj, tworzymy listę oprogramowania zakupionego wraz z urządzeniem.",

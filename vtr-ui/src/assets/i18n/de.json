@@ -644,7 +644,8 @@
             "registered": "REGISTRIERT",
             "notRegistered": "NICHT REGISTRIERT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Q & A für Ihre Maschine",
@@ -1007,9 +1008,9 @@
                         "desc3": "Einige Modi können je nach Aktivität automatisch über einen größeren Leistungsumfang angepasst werden. Um den Automatikmodus zu aktivieren, drücken Sie die Tastenkombination FN+T.",
                         "autoMode": {
                             "title1": "Automatischer Akku-Modus",
-                            "desc1": "Der Schieberegler befindet sich auf der linken Seite. Der Modus wird dynamisch in den \"Ruhemodus\" oder \"Akkumodus\" umgeschaltet, um das beste DC-Modus-Erlebnis zu erzielen.",
+                            "desc1": "Der Schieberegler befindet sich auf der linken Seite. Der Modus wird dynamisch in den Ruhemodus oder Akkumodus umgeschaltet, um das beste DC-Modus-Erlebnis zu erzielen.",
                             "title2": "Automatischer Leistungsmodus",
-                            "desc2": "Der Schieberegler befindet sich in der Mitte oder Mitte rechts. Der Modus wird dynamisch in den \"Ruhemodus\", \"ausbalancierten Modus\" oder \"Leistungsmodus\" umgeschaltet, um das bestmögliche Erlebnis im AC-Modus zu gewährleisten.",
+                            "desc2": "Der Schieberegler befindet sich in der Mitte oder Mitte rechts. Der Modus wird dynamisch in den Ruhemodus, ausbalancierten Modus oder Leistungsmodus umgeschaltet, um das bestmögliche Erlebnis im AC-Modus zu gewährleisten.",
                             "title3": "Leistungsmodus",
                             "desc3": "Der Schieberegler ist ganz rechts. Lüftergeschwindigkeit und zulässige Oberflächentemperatur sind höher für maximale Leistung."
                         },
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart-Standby",
-                    "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Hochfahren bei intensiverer Nutzung beeinträchtigt wird.",
-                    "tooltip": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird anhand des von Ihnen festgelegten Zeitplans oder Ihrer Computernutzungszeiten optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
+                    "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Fortsetzen von <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern-Standby</a> bei intensiverer Nutzung beeinträchtigt wird.",
+                    "tooltip": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird anhand des von Ihnen festgelegten Zeitplans oder Ihrer Computernutzung optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
                     "timer": {
-                        "heading": "Die typischen Nutzungszeiten für Ihren Computer",
+                        "heading": "Typische Nutzungszeiten für diesen Computer:",
                         "subHeading1": "innerhalb des Felds",
                         "subHeading2": "Ende",
                         "subHeading3": "Zeitplan nutzen für",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Kein Tag ausgewählt"
                     },
                     "checkbox": "Automatische Anpassung der aktiven Zeit Ihres Computers abhängig von der Verwendung",
-                    "hyperlinkToGraph": "Klicken Sie hier, um die Tabelle mit den Aktivitäten und aktiven Zeiten Ihres Computers anzuzeigen",
+                    "hyperlinkToGraph": "Hier klicken, um die Nutzung und angewandte aktive Zeit anzuzeigen",
                     "subTitle": "Zeitplan für Ihren Computer festlegen",
                     "automaticMode": "Automatischer Modus",
                     "manualMode": "Manueller Modus",
@@ -1541,7 +1542,60 @@
                 "fnCtrlKey": {
                     "title": "Austausch der Funktionen von Fn- und Strg-Taste",
                     "description": "Falls Sie aus Gewohnheit die Fn-Taste drücken, wenn Sie eigentlich die Strg-Taste drücken möchten, können Sie die Funktion der beiden Tasten vertauschen.",
-                    "restartNote": "Sie müssen den Computer neu starten, um die Funktion der beiden Tasten zu tauschen. Möchten Sie den Computer jetzt neu starten?"
+                    "restartNote": "Sie müssen den Computer neu starten, um die Funktion der beiden Tasten zu tauschen. Möchten Sie den Computer jetzt neu starten?",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Keys",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Keys",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "MEHR",
@@ -1550,19 +1604,19 @@
                     "control3": "TRACKPOINT-STEUERUNG",
                     "less": "WENIGER"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Tastaturhintergrundbeleuchtung",
+					"description": {
+						"base": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Tastaturbeleuchtung auch ändern, indem Sie die Tastenkombination Fn+Leertaste drücken.",
+						"auto": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Beleuchtung ändern, indem Sie die Tastenkombination Fn+Leertaste drücken oder für die Beleuchtung \"Auto\" einstellen. Mit der Option \"Auto\" wird die Tastaturhintergrundbeleuchtung automatisch an das Umgebungslicht angepasst."
+					},
+					"level": {
+						"auto": "Automatisch",
+						"low": "Niedrig",
+						"high": "Hoch",
+						"off": "Aus"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1723,12 +1777,12 @@
             "superResolution": {
                 "heading": "Intelligente Medien",
                 "title": "Upscaling der Videoauflösung",
-                "desc": "<p><label>Mit dieser Funktion wird die Videowiedergabe durch Verbesserung der Videoauflösung verbessert, insbesondere bei Videos mit schlechter Auflösung.</label></p> <p style='margin-top:4px;'><label> Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Wenn diese Funktion aktiviert ist, sollten Sie den Computer an die Stromversorgung anschließen.</label></p>",
-                "tooltip": "Die Funktion funktioniert nur bei folgenden Playern: <br/> Windows Media player",
+                "desc": "<p><label>Mit dieser Funktion wird die Videowiedergabe durch Verbesserung der Videoauflösung verbessert, insbesondere bei Videos mit schlechter Auflösung.</label></p> <p style='margin-top:4px;'><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus. Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
+                "tooltip": "Die Funktion funktioniert nur für:<br>Windows Media player",
                 "note": {
                     "description": "Diese Funktion funktioniert nicht, wenn:",
-                    "description1": "Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkustand weniger als 20 % beträgt.",
-                    "description2": "Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkusparmodus aktiviert ist.",
+                    "description1": "Der Computer ist nicht an Netzstrom (Wechselstrom) angeschlossen.",
+                    "description2": "Der Akkusparmodus ist aktiviert.",
                     "description3": "Die CPU-Temperatur zu hoch ist."
                 }
             },
@@ -1885,7 +1939,7 @@
             "localRepositoryDatabaseException": "Die lokale Repositorydatenbank wurde nicht gefunden oder ist beschädigt.",
             "networkInterruptedException": "Der Systemaktualisierungsserver ist zurzeit nicht verfügbar. Versuchen Sie es später erneut.",
             "helpCenterInvalidServerException": "Ungültiger Systemaktualisierungsserver. Versuchen Sie es später erneut.",
-            "catalogNotFoundException": "Es wurden keine verfügbaren Updates für Ihr System gefunden.",
+            "catalogNotFoundException": "Es wurden keine Aktualisierungen für Ihr System gefunden, da der Updatekatalog nicht gefunden wurde.",
             "catalogCrcErrorException": "Der Katalog für Ihr System wird derzeit aktualisiert. Versuchen Sie es später erneut.",
             "catalogErrorException": "Im Updatekatalog für Ihr System auf dem Systemaktualisierungsserver wurde ein Fehler gefunden. Versuchen Sie es später erneut.",
             "fileNotFoundException": "Datei nicht gefunden."
@@ -2109,7 +2163,8 @@
                 "showmore": "Mehr anzeigen",
                 "showless": "Weniger anzeigen",
                 "button": "WiFi-Sicherheit aktivieren",
-                "disableDecribe": "Lenovo WiFi-Sicherheit ist eine fortschrittliche, cloud-basierte Software, dank der Ihre Einheit zwischen sicheren und potenziell unsicheren Drahtlosnetzwerken unterscheiden kann."
+                "disableDescribe": "Lenovo WiFi-Sicherheit ist eine fortschrittliche, cloud-basierte Software, dank der Ihre Einheit zwischen sicheren und potenziell unsicheren Drahtlosnetzwerken unterscheiden kann.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Verwenden Sie die Bedrohungssuche, um die Sicherheit der Netzwerke um Sie herum zu ermitteln.",
@@ -2143,7 +2198,8 @@
                 "subtitle": "Immer auf Nummer sicher",
                 "subtitleDescribe": "Die Funktion \"Sicherheit für das verbundene Zuhause\" sendet Ihnen eine Warnung, wenn sie eine angreifbare Stelle in Ihrem Gerät oder privaten Netzwerk erkennt oder wenn Sie sich mit einem potenziell zerstörerischen Netzwerk verbinden. Erfahren Sie <tag>hier</tag> noch mehr über Connected Home Security.",
                 "tryNow": "Jetzt testen",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Einladungscode eingeben",
@@ -2218,7 +2274,8 @@
             "getStarted1": "Klicken Sie oben auf die Schaltfläche \"SurfEasy öffnen\", um SurfEasy VPN zu starten.",
             "getStarted2": "Schalten Sie das VPN ein und warten Sie kurz auf die Bestätigung einer sicheren Verbindung.",
             "getStarted3": "Ändern Sie die Region oder den Standort nach Wunsch und genießen Sie die Nutzung eines sicheren und geschützten Netzwerks.",
-            "poweredBySurfEasy": "Unterstützt von SurfEasy"
+            "poweredBySurfEasy": "Unterstützt von SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE-KENNWORTMANAGER",
@@ -2246,7 +2303,8 @@
             "allowsYou2": "Die Überwachung des Dark Web, um Ihre persönlichen Informationen zu schützen.",
             "allowsYou3": "Sicherheit bei ungesicherten WiFi-Netzwerken dank integriertem VPN.",
             "allowsYou4": "Das sichere Teilen von Kennwörtern, ohne diese preiszugeben.",
-            "poweredByDashLane": "Unterstützt von Dashlane"
+            "poweredByDashLane": "Unterstützt von Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2747,6 +2805,8 @@
         "noteDownloadAvailable": "Hinweis: Nach dem Klick auf „Herunterladen“ fordert Windows Sie möglicherweise dazu auf, die Installation der Software auf Ihrer Einheit zuzulassen. Nach der Installation erscheinen Ihre Apps automatisch auf dem Desktop oder im Startmenü.<br /><br />Sie können die Seite „Meine Software“ schließen und Lenovo Vantage weiterhin verwenden. Schließen Sie Lenovo Vantage nicht während der Installation.",
         "sizeText": "Größe",
         "versionText": "Version",
+        "redemptionCode": "Code zum Einlösen:",
+        "redeemWebsite": "Auf Hersteller-Website einlösen",
         "softwareDescription": "Klicken Sie unten auf „Herunterladen“, um Software, die mit Ihrem Gerät erworben wurde, einzulösen. Wenn Sie Ihre Software zu irgendeinem Zeitpunkt erneut herunterladen müssen, können Sie dies tun, indem Sie im Vantage-Menü auf die Schaltfläche „Meine Software“ klicken.",
         "title": "Meine Software",
         "loadingDescription": "Bitte warten Sie, während wir eine Liste der Software erstellen, die beim Kauf Ihres Gerätes enthalten war.",

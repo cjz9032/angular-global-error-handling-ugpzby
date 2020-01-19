@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DevService } from '../dev/dev.service';
 
+declare var window;
 
 @Injectable({
 	providedIn: 'root'
@@ -14,36 +15,25 @@ export class HypothesisService {
 		private shellService: VantageShellService,
 		private devService: DevService
 	) {
-		if (!this.hypSettings) {
-			this.getHypothesis();
-		}
+		this.getHypothesis().catch();
 	}
 
 	private getHypothesis() {
 		return new Promise((resolve, reject) => {
-			try {
-				const win: any = window;
-				if (win.Windows && win.Windows.ApplicationModel.Package.current.id.familyName === 'E046963F.LenovoCompanionBeta_k1h2ywk1493x8') {
-					// beta may not support the hypothesis config filter key, and it would block here, if not return immediately, we can treat it as not supported.
-					setTimeout(() => reject(new Error('not support in beta')), 2000);
-				}
-				const filter = this.shellService.calcDeviceFilter('{"var":"HypothesisGroups"}');
-				if (filter) {
-					filter.then((hyp) => {
-						this.hypSettings = hyp;
-						resolve();
-					},
-						error => {
-							this.devService.writeLog('getHypothesis: ', error);
-							reject(error);
-						});
-				} else {
-					reject('getHypothesis failed');
-					this.devService.writeLog('getHypothesis failed: ');
-				}
-			} catch (ex) {
-				this.devService.writeLog('getHypothesis: ' + ex.message);
-				reject(ex);
+			if (window.Windows && window.Windows.ApplicationModel.Package.current.id.familyName === 'E046963F.LenovoCompanionBeta_k1h2ywk1493x8') {
+				// beta may not support the hypothesis config filter key, and it would block here, if not return immediately, we can treat it as not supported.
+				setTimeout(() => reject(new Error('not support in beta')), 2000);
+			}
+			const filter = this.shellService.calcDeviceFilter('{"var":"HypothesisGroups"}');
+			if (filter) {
+				filter.then((hyp) => {
+					this.hypSettings = hyp;
+					resolve();
+				},
+					error => {
+						this.devService.writeLog('getHypothesis: ', error);
+						reject(error);
+					});
 			}
 		});
 	}
