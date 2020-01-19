@@ -326,12 +326,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 				this.startEyeCareMonitor();
 			} else {
 				this.showECMReset = true;
+				this.resetEyecaremodeAllSettings();
 			}
 		});
-		// setTimeout(() => {
-		// 	this.initEyecaremodeSettings();
-		// 	this.startEyeCareMonitor();
-		// }, 5);
 	}
 
 	inWhiteList() {
@@ -356,9 +353,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			'479a92a1dccaf9467d168ede8848faba'
 		];
 		return this.deviceService.getDeviceInfo()
-			.then(res => {
-				return whitelist.includes(Md5.hashStr(res.bios) as string);
-			});
+			.then(res => whitelist.includes(Md5.hashStr(res.bios) as string));
 	}
 
 	async initCameraSection() {
@@ -592,10 +587,10 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 					})
 					.then(result => {
 						switch (result) {
-							case 'NotSupport':
-								this.showECMReset = true;
-								this.resetEyecaremodeAllSettings();
-								break;
+							// case 'NotSupport':
+							// 	this.showECMReset = true;
+							// 	this.resetEyecaremodeAllSettings();
+							// 	break;
 								// @@IMPORTANT@@ Do NOT correct this typos !!!!  This message is from plugins
 							case 'NotAvaliable':
 								this.enableSlider = false;
