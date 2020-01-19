@@ -14,6 +14,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { DolbyAudioToggleCapability } from 'src/app/data-models/device/dolby-audio-toggle-capability';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -39,6 +40,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public readonly helpIcon = ['far', 'question-circle'];
 	public automaticDolbyHelpIcon = [];
 	public isOnline: any = true;
+	private microphoneDevice: any;
+	private Windows: any;
+	private vantageShellService: VantageShellService;
 
 	// when initialize page, cacheFlag need change to false if user make changes before getting response back,
 	// in this case, need to drop response status.
@@ -52,6 +56,15 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private dashboardService: DashboardService,
 		private logger: LoggerService,
 		private commonService: CommonService) {
+
+			this.Windows = this.vantageShellService.getWindows();
+			if (this.Windows) {
+				this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
+					.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
+			}
+			else {
+				console.log('初始化失败');
+			}
 	}
 
 	ngOnInit() {
@@ -71,6 +84,21 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.initFeatures();
 		}
 
+		if (this.microphoneDevice) {
+			this.microphoneDevice.addEventListener('accesschanged', (args: any) => {
+				console.log(JSON.stringify(args));
+				switch (args.status) {
+					case 1:
+						this.microphoneProperties.permission = true;
+						break;
+					case 2:
+					case 3:
+						this.microphoneProperties.permission = false;
+						break;
+				}
+				
+			});
+		}
 	}
 
 	private initFeatures() {
@@ -93,6 +121,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 		this.stopMonitor();
 		this.stopMonitorForDolby();
+
+		if (this.microphoneDevice) {
+			this.microphoneDevice.removeEventListener('accesschanged');
+		}
 	}
 
 	initDolbyAudioFromCache() {
