@@ -77,17 +77,21 @@ import { ModalErrorMessageComponent } from '../components/modal/modal-error-mess
 		ModalAppUpdateAvailableComponent,
 		ModalNewFeatureTipComponent,
 		PageSettingsComponent,
+		ModalErrorMessageComponent
 	],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
 		AppRoutingModule,
-		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' }),
+		ServiceWorkerModule.register('ngsw-worker.js', {
+			enabled: environment.production,
+			registrationStrategy: 'registerImmediately'
+		}),
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
 				useClass: WebpackTranslateLoader,
-				deps: [HttpClient]
+				deps: [ HttpClient ]
 			},
 			missingTranslationHandler: {
 				provide: MissingTranslationHandler,
@@ -110,14 +114,7 @@ import { ModalErrorMessageComponent } from '../components/modal/modal-error-mess
 		HardwareDashboardModule,
 		GamingDashboardModule
 	],
-	exports: [
-		NavbarModule,
-		RouterModule,
-		CommonPipeModule,
-		CommonUiModule,
-		ModernPreloadModule,
-		PageLayoutModule,
-	],
+	exports: [ NavbarModule, RouterModule, CommonPipeModule, CommonUiModule, ModernPreloadModule, PageLayoutModule ],
 	providers: [
 		CommonService,
 		MetricsTranslateService,
@@ -140,8 +137,8 @@ import { ModalErrorMessageComponent } from '../components/modal/modal-error-mess
 		ModalNewFeatureTipComponent,
 		ModalErrorMessageComponent
 	],
-	bootstrap: [AppComponent],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA]
+	bootstrap: [ AppComponent ],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {
 	constructor() {
