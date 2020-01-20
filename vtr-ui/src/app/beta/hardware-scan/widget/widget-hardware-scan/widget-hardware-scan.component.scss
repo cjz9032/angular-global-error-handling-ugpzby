@@ -153,43 +153,26 @@
                 }
             }
         }
-
+        
         .cancel-check {
-            margin-left: 5rem;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-            margin-right: 5rem;
-            .cancel-button {
-                border-radius: 2.5rem;
-                border-color: $light-grey;
-                background: $gradient_main;
-                text-transform: uppercase;
-                padding: 0 3rem;
-                color: $light;
-                font-size: 1.5rem;
-                height: 5rem;
-                font-weight: $weight_bold;
-                line-height: 5rem;
-                text-align: center;
-                border: 0rem;
-                cursor: pointer;
-            }
-            .cancel-button-disable {
-                border-radius: 2.5rem;
-                background: $light-grey;
-                text-transform: uppercase;
-                padding: 0 3rem;
-                color: $light;
-                font-size: 1.5rem;
-                height: 5rem;
-                font-weight: $weight_bold;
-                line-height: 5rem;
-                text-align: center;
-                border: 0rem;
-                cursor: default;
-                pointer-events: none !important;
-            }
-        }
+			color: $light;
+			font-size: 1.3rem;
+			font-weight: $weight_medium;
+			line-height: 1.5rem;
+			text-align: center;
+            text-transform: uppercase;
+            padding: 1rem !important;
+
+			.cancel-check-text {
+				cursor: pointer;
+				text-decoration: underline;
+
+				&:hover {
+					color: $light;
+					text-decoration: none;
+				}
+			}
+		}
 
         .hwscan-header {
             padding-bottom: 1.5rem;
