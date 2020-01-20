@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "飛行機電源モード",
-                        "description": "システムの消費電力量を制御することで飛行機の AC 電源コンセントを保護します。飛行機電源モードを有効にすると、コンピューターはバッテリー充電率とシステム・パフォーマンスを制限して電力消費量を抑えます。",
+                        "description": "この機能により、特定の電力制限が適用される飛行機の AC 電源コンセントを使用できます。このモードでは、バッテリー充電率とコンピューターのパフォーマンスを制限してお使いのコンピューターの電力消費量を安全なレベルまで抑えます。",
                         "checkBoxDesc": "自動検出",
                         "note": "自動検出が選択されている場合は、コンピューターは飛行機に搭乗している環境を検出すると自動的に飛行機電源モードをオンにし、飛行機を離れると飛行機電源モードをオフにします。"
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}}/{{stageNum}}: 満充電にして調整",
                         "progressText2": "{{stage}}/{{stageNum}}: 低バッテリー残量にして調整",
-                        "progressText3": "{{stage}}/{{stageNum}}: 満充電にして調整",
+                        "progressText3": "{{stage}}/{{stageNum}}: 高バッテリー残量にして調整",
                         "FCCText": "{{before}} Wh から {{after}} Wh",
                         "note": "注: バッテリー・ゲージをリセットする前に、コンピューターを AC 電源に接続してください。",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "少なくとも1日を選択してください。",
                     "days": {
                         "shortName": {
-                            "sun": "日曜日",
-                            "mon": "月曜日",
-                            "tue": "火曜日",
-                            "wed": "水曜日",
-                            "thurs": "木曜日",
-                            "fri": "金曜日",
-                            "sat": "土曜日",
-                            "thu": "Thu"
+                            "sun": "日",
+                            "mon": "月",
+                            "tue": "火",
+                            "wed": "水",
+                            "thurs": "木",
+                            "fri": "金",
+                            "sat": "土",
+                            "thu": "木"
                         },
                         "name": {
                             "sun": "日曜日",
@@ -1192,7 +1192,7 @@
                     "subTitle": "コンピューターのスケジュール",
                     "automaticMode": "自動モード",
                     "manualMode": "手動モード",
-                    "subNote": "コンピューターは、使用状況に基づいてモダン・スタンバイにスケジュールされます。",
+                    "subNote": "お使いのコンピューターは、使用状況に基づいて迅速に再開するようにスケジュールされています。",
                     "graph": {
                         "graph1Tittle": "このコンピューターの使用状況",
                         "graph2Tittle": "適用されたアクティブ時間",
@@ -1543,12 +1543,12 @@
                     "title": "Fn キーと Ctr キーの入れ替え",
                     "description": "Ctrl キーを押そうとする際に Fn キーを押してしまう場合は、2 つのキーの機能を入れ替えることができます。",
                     "restartNote": "2 つのキーの機能を交換するには、コンピューターを再起動する必要があります。再起動してもよろしいですか?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "頻繁に使用する組み合わせキーとして Fn キーが Ctrl キーとして機能する",
+                    "description2": "一部の頻繁に使用する組み合わせキーに関して、Fn キーがCtrl キーとして機能します。Ctrl キーの機能は変更されません。",
+                    "featureNote": "この機能と Fn キーおよび Ctrl キーの入れ替え機能を同時にオンにすることはできません。モードのいずれかがオンの場合は、もう一方のモードは自動的にオフになります。",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Fn キー",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1564,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Ctrl キー",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1580,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "アクション",
+                            "action1": "すべて選択",
+                            "action2": "コピー",
+                            "action3": "お気に入りに Web ページを追加する",
+                            "action4": "検索",
+                            "action5": "Microsoft Word で検索して置換する",
+                            "action6": "Microsoft Word で左右を合わせる",
+                            "action7": "終了 (サポートされているアプリ)",
+                            "action8": "下線を追加",
+                            "action9": "貼り付け",
+                            "action10": "閉じる (アプリごと)",
+                            "action11": "切り取り",
+                            "action12": "再実行",
+                            "action13": "元に戻す"
                         }
                     }
                 },
@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT 制御",
                     "less": "非表示にする"
                 },
-				"backlight": {
-					"title": "キーボードのバックライト",
-					"description": {
-						"base": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を変更することもできます。",
-						"auto": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を「自動」に変更することもできます。「自動」オプションでは、周囲の明るさに応じてキーボードのバックライトが自動的に調整されます。"
-					},
-					"level": {
-						"auto": "自動",
-						"low": "低",
-						"high": "高",
-						"off": "オフ"
-					}
-				}
+                "backlight": {
+                    "title": "キーボードのバックライト",
+                    "description": {
+                        "base": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を変更することもできます。",
+                        "auto": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を「自動」に変更することもできます。「自動」オプションでは、周囲の明るさに応じてキーボードのバックライトが自動的に調整されます。"
+                    },
+                    "level": {
+                        "auto": "自動",
+                        "low": "低",
+                        "high": "高",
+                        "off": "オフ"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2376,7 +2376,7 @@
     "faq": {
         "footer": {
             "title": "探しているものが見つかりませんか？",
-            "description": "追加サポートが必要ですか？ 次のことで米国に連絡することを躊躇しないでください。",
+            "description": "追加のサポートが必要ですか?以下からお気軽にお問い合わせください:",
             "body": "レノボコミュニティ",
             "button": "フォーラムへ"
         },
