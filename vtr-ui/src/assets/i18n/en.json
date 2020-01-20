@@ -1607,7 +1607,7 @@
                             "action7": "Quit (in supported app)",
                             "action8": "Add underline",
                             "action9": "Paste",
-                            "action10": "close (per app)",
+                            "action10": "Close (per app)",
                             "action11": "Cut",
                             "action12": "Redo",
                             "action13": "Undo"

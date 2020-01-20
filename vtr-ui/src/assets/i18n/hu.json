@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Repülőgépes energiaséma",
-                        "description": "A repülő elektromos csatlakozójának védelme a rendszer energiafogyasztásának szabályozásával.A Repülőgépes energiaséma engedélyezése esetén a számítógép az akkumulátortöltési ráta és a rendszerteljesítémény korlátozásával csökkenti az energiafogyasztást.",
+                        "description": "Ez a funkció lehetővé teszi a szabványos elektromos csatlakozó használatát az olyan repülőgépeken, ahol bizonyos teljesítménykorlátozások érvényesek. Ebben az üzemmódban a számítógép az akkumulátortöltési sebesség és a rendszerteljesítémény korlátozásával biztonságos szintre csökkenti az energiafogyasztását.",
                         "checkBoxDesc": "Automatikus észlelés",
                         "note": "Az automatikus észlelés bejelölésekor a számítógép automatikusan bekapcsolja a Repülőgépes energiamódot, amikor egy repülőgép fedélzeti környezetét észleli, és kikapcsolja, amikor Ön távozik onnan."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
                         "progressText2": "{{stage}}/{{stageNum}}: Kalibrálás alacsony akkumulátortöltöttségre",
-                        "progressText3": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
+                        "progressText3": "{{stage}}/{{stageNum}}: Kalibrálás magas akkumulátortöltöttségre",
                         "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
                         "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "Kérjük, válasszon legalább egy napot.",
                     "days": {
                         "shortName": {
-                            "sun": "Vasárnap",
-                            "mon": "Hétfő",
-                            "tue": "Kedd",
-                            "wed": "Szerda",
-                            "thurs": "Csütörtök",
-                            "fri": "Péntek",
-                            "sat": "Szombat",
-                            "thu": "Thu"
+                            "sun": "Vas",
+                            "mon": "Hé",
+                            "tue": "Ke",
+                            "wed": "Sze",
+                            "thurs": "Csüt",
+                            "fri": "Pé",
+                            "sat": "Szo",
+                            "thu": "Csüt"
                         },
                         "name": {
                             "sun": "Vasárnap",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Számítógép ütemezése",
                     "automaticMode": "Automatikus üzemmód",
                     "manualMode": "Manuális üzemmód",
-                    "subNote": "A számítógép használati séma alapján Modern készenléti állapotra lett ütemezve.",
+                    "subNote": "A számítógép a használatától függően gyorsabb visszaállásra van ütemezve.",
                     "graph": {
                         "graph1Tittle": "A számítógép használata",
                         "graph2Tittle": "Alkalmazott aktív idő",
@@ -1543,12 +1543,12 @@
                     "title": "Az Fn és a Ctrl billentyű felcserélése",
                     "description": "Ha rendszeresen az Fn billentyűt nyomja le, amikor a Ctrl billentyűt szeretné lenyomni, felcserélheti a két billentyű funkcióját.",
                     "restartNote": "A két billentyű funkciójának felcseréléséhez újra kell indítania a számítógépet. Biztosan újraindítja?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Az Fn a Ctrl billentyűként működik a gyakori billentyűkombinációk esetében",
+                    "description2": "Az Fn a Ctrl billentyűként működik bizonyos gyakran használt billentyűkombinációk esetében. A Ctrl billentyű funkciója nem módosul.",
+                    "featureNote": "Ez a funkció, valamint az Fn és a Ctrl billentyű felcserélése funkció nem lehet egyszerre bekapcsolva. Ha az egyik be van kapcsolva, akkor a másik automatikusan kikapcsol.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Fn billentyűk",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1564,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Ctrl billentyűk",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1580,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Művelet",
+                            "action1": "Összes kijelölése",
+                            "action2": "Másolás",
+                            "action3": "Weboldal kedvencekhez adása",
+                            "action4": "Keresés",
+                            "action5": "Keresés és csere a Microsoft Wordben",
+                            "action6": "Balra és jobbra igazítás a Microsoft Wordben",
+                            "action7": "Kilépés (a támogatott alkalmazásokban)",
+                            "action8": "Aláhúzás hozzáadása",
+                            "action9": "Beillesztés",
+                            "action10": "Bezárás (alkalmazásonként)",
+                            "action11": "Kivágás",
+                            "action12": "Újbóli végrehajtás",
+                            "action13": "Visszavonás"
                         }
                     }
                 },
@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT-VEZÉRLŐK",
                     "less": "KEVESEBB"
                 },
-				"backlight": {
-					"title": "Billentyűzet-háttérvilágítás",
-					"description": {
-						"base": "Aktiválja a billentyűzet háttérvilágítását, hogy megkönnyítse a gépelést sötétben vagy rossz fényviszonyok között. Az Fn+szóköz billentyű megnyomásával megváltoztathatja a billentyűzet háttérvilágításának beállításait.",
-						"auto": "Aktiválja a billentyűzet háttérvilágítását, hogy megkönnyítse a gépelést sötétben vagy rossz fényviszonyok között. Az Fn+szóköz billentyű megnyomásával, vagy az „Automata” mód beállításával is megváltoztathatja a billentyűzet háttérvilágításának beállításait. Az „Automata” opció automatikusan beállítja a billentyűzet háttérvilágítását a környezeti fénynek megfelelően."
-					},
-					"level": {
-						"auto": "Automata",
-						"low": "Alacsony",
-						"high": "Magas",
-						"off": "Ki"
-					}
-				}
+                "backlight": {
+                    "title": "Billentyűzet-háttérvilágítás",
+                    "description": {
+                        "base": "Aktiválja a billentyűzet háttérvilágítását, hogy megkönnyítse a gépelést sötétben vagy rossz fényviszonyok között. Az Fn+szóköz billentyű megnyomásával megváltoztathatja a billentyűzet háttérvilágításának beállításait.",
+                        "auto": "Aktiválja a billentyűzet háttérvilágítását, hogy megkönnyítse a gépelést sötétben vagy rossz fényviszonyok között. Az Fn+szóköz billentyű megnyomásával, vagy az „Automata” mód beállításával is megváltoztathatja a billentyűzet háttérvilágításának beállításait. Az „Automata” opció automatikusan beállítja a billentyűzet háttérvilágítását a környezeti fénynek megfelelően."
+                    },
+                    "level": {
+                        "auto": "Automata",
+                        "low": "Alacsony",
+                        "high": "Magas",
+                        "off": "Ki"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2376,7 +2376,7 @@
     "faq": {
         "footer": {
             "title": "Nem találja, amit keres?",
-            "description": "KÜLÖNLEGES TÁMOGATÁS? NEM HESITÁLT KAPCSOLAT VIA:",
+            "description": "További támogatásra van szüksége? Lépjen kapcsolatba velünk a következő módon:",
             "body": "Lenovo Közösség",
             "button": "TOVÁBB FORUM"
         },
