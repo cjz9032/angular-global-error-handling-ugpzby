@@ -84,8 +84,9 @@ export class BatteryGaugeResetComponent implements OnInit {
 		const gaugeResetInfo = this.batteryService.gaugeResetInfo[index];
 		try {
 			const response = await this.powerService.startBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
+			this.logger.info('start battery reset succeeded', response);
 			if (response) {
-				this.logger.info('start battery reset succeeded', response);
+				this.batteryService.isGaugeResetRunning = true;
 			}
 		} catch (error) {
 			this.logger.info('start battery reset failed', error);
@@ -96,8 +97,9 @@ export class BatteryGaugeResetComponent implements OnInit {
 		const gaugeResetInfo = this.batteryService.gaugeResetInfo[index];
 		try {
 			const response = await this.powerService.stopBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
+			this.logger.info('start battery reset succeeded', response);
 			if (response) {
-				this.logger.info('start battery reset succeeded', response);
+				this.batteryService.isGaugeResetRunning = false;
 			}
 		} catch (error) {
 			this.logger.info('start battery reset failed', error);
