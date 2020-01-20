@@ -2,33 +2,32 @@
 	id="smartStandby"
 	*ngIf="smartStandby?.isCapable">
 	<div class="col-12 mx-auto container-border">
-		<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
+		<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.sectionTitle' | translate"
 			[isCollapsed]="false"
-			 [collapseLinkId]="'smartrStandby'"
-			 [tabIndex]="0">
+			[collapseLinkId]="'smartrStandby'"
+			[tabIndex]="0">
 			<ul class="list-group list-group-flush">
 				<li>
-					<vtr-ui-row-switch
-					[title]="'device.deviceSettings.power.smartStandby.title' | translate"
-					[name]= "'device.deviceSettings.power.smartStandby.title' | translate"
-					[caption]="caption"
-					[isSwitchVisible]=true
-					[isLastChild]=true
-					[showChildContent]="true"
-					[leftIcon]="['icomoon', 'icomoon-DS-ic-list_Smart-standby']"
-					[rightIcon]="['far', 'question-circle']"
-					[tooltipText]="tooltipText"
-					[isSwitchChecked]="smartStandby.isEnabled"
-					(toggleOnOff)="onSmartStandbyToggle($event)"
-					[switchId]="'smartStandby'">
+					<vtr-ui-row-switch [title]="'device.deviceSettings.power.smartStandby.title' | translate"
+						[name]="'device.deviceSettings.power.smartStandby.title' | translate"
+						[caption]="caption"
+						[isSwitchVisible]=true
+						[isLastChild]=true
+						[showChildContent]="true"
+						[leftIcon]="['icomoon', 'icomoon-DS-ic-list_Smart-standby']"
+						[rightIcon]="['far', 'question-circle']"
+						[tooltipText]="tooltipText"
+						[isSwitchChecked]="smartStandby.isEnabled"
+						(toggleOnOff)="onSmartStandbyToggle($event)"
+						[switchId]="'smartStandby'">
 						<div class="pl-4 mt-3">
 							<div>
 								<div *ngIf="isAutonomicCapability"
-								 class="schedule_header">
+									class="schedule_header">
 									<h5>{{ 'device.deviceSettings.power.smartStandby.subTitle' | translate }}</h5>
 									<vtr-ui-rounded-rectangle-radio [radioId]="'automatic_show'"
 										[group]="'smartStandByBtns'"
-										 name="nMehod_show"
+										name="nMehod_show"
 										[label]="'device.deviceSettings.power.smartStandby.automaticMode' | translate"
 										[value]="'Automatic mode'"
 										[checked]="checkbox"
@@ -37,7 +36,7 @@
 									</vtr-ui-rounded-rectangle-radio>
 									<vtr-ui-rounded-rectangle-radio [radioId]="'manual_show'"
 										[group]="'smartStandByBtns'"
-										 name="fnKeyMehod_show"
+										name="fnKeyMehod_show"
 										[label]="'device.deviceSettings.power.smartStandby.manualMode' | translate"
 										[value]="'Manual mode'"
 										[checked]="!checkbox"
@@ -47,17 +46,17 @@
 								</div>
 							</div>
 							<div *ngIf="!isAutonomicCapability && smartStandby?.isEnabled"
-							 class="schedule_header">
+								class="schedule_header">
 								<h5>{{ 'device.deviceSettings.power.smartStandby.subTitle2' | translate }}</h5>
 							</div>
 							<div class="schedule"
-							 *ngIf="isAutonomicCapability && checkbox && smartStandby?.isEnabled">
+								*ngIf="isAutonomicCapability && checkbox && smartStandby?.isEnabled">
 								<h5>
 									{{ 'device.deviceSettings.power.smartStandby.subNote' | translate }}
 								</h5>
 							</div>
 							<div *ngIf="!checkbox && smartStandby?.isEnabled && isAutonomicCapability"
-							 class="schedule">
+								class="schedule">
 								<h5>
 									{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate }}
 								</h5>
@@ -71,33 +70,33 @@
 								</span>
 							</div>
 							<div *ngIf="!checkbox && smartStandby?.isEnabled"
-							 class="click-to-change-collapse">
+								class="click-to-change-collapse">
 								<!-- header -->
 								<div *ngIf="isAutonomicCapability"
-								 class="collapse-header"
+									class="collapse-header"
 									(click)="onToggle(timeToggle)"
 									(keydown.enter)="onToggle(timeToggle)"
 									[attr.aria-expanded]="!isCollapsed"
-									 #timeToggle
-									 tabindex="0"
+									#timeToggle
+									tabindex="0"
 									aria-label="smart standby, time picker-toggle button">
 									<div>
 										<div *ngIf="isCollapsed"
-										 class="collapse-text">
+											class="collapse-text">
 											<!-- Expand -->
 											{{'common.ui.clickToChange' | translate | uppercase }}
 										</div>
 										<div *ngIf="!isCollapsed"
-										 class="collapse-text">
+											class="collapse-text">
 											<!-- Collapse -->
 											{{'common.ui.collapse' | translate | uppercase }}
 										</div>
 									</div>
 									<div class="collapse-header-icon">
 										<fa-icon *ngIf="isCollapsed"
-										 [icon]="['fal', 'chevron-down']"></fa-icon>
+											[icon]="['fal', 'chevron-down']"></fa-icon>
 										<fa-icon *ngIf="!isCollapsed"
-										 [icon]="['fal', 'chevron-up']"></fa-icon>
+											[icon]="['fal', 'chevron-up']"></fa-icon>
 									</div>
 								</div>
 								<!-- header end -->
@@ -122,7 +121,8 @@
 												[label]="'smart standby , end time dropdown'"
 												[linkId]="'end'">
 											</vtr-ui-time-picker>
-											<div *ngIf="showDiffNote" class="row">
+											<div *ngIf="showDiffNote"
+												class="row">
 												<div class="col-md-12 pl-0">
 													<div class="note align-items-center"
 														id="smartStandby-timer-endTimeNote"
@@ -142,10 +142,10 @@
 								<!-- content end -->
 							</div>
 							<div *ngIf="isAutonomicCapability"
-							vtrMetrics
-							metricsItem="Open Smart Standby Modal"
+								vtrMetrics
+								metricsItem="Open Smart Standby Modal"
 								metricsEvent="featureClick"
-								 metricsParent="Device.deviceSettings"
+								metricsParent="Device.deviceSettings"
 								id="modal_smartStandby_graphLink"
 								metricsValue=true
 								[ngClass]="{'disabled': !smartStandby.isEnabled}"
@@ -159,7 +159,6 @@
 					</vtr-ui-row-switch>
 				</li>
 			</ul>
-		</vtr-container-collapsible
-		>
+		</vtr-container-collapsible>
 	</div>
 </div>
