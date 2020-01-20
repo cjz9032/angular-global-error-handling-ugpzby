@@ -50,6 +50,6 @@
 			id="{{textId}}-{{value}}-label"
 			attr.aria-label="{{textId}}-{{value}}-label"
 			[attr.aria-disabled]="disabled"
-			[attr.aria-checked]="checked">{{label | capitalizeFirst}}</div>
+			[attr.aria-checked]="checked">{{processLabel ? (label | capitalizeFirst) : label}}</div>
 	</div>
 </div>
