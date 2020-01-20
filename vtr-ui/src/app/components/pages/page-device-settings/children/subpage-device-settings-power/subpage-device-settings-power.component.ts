@@ -142,6 +142,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.logger.info('Init Subpage Power');
 		this.initDataFromCache();
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		if (this.isDesktopMachine) {
@@ -263,7 +264,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	initGaugeResetInfoFromCache() {
 		try {
-			this.gaugeResetCapability = this.commonService.getLocalStorageValue(LocalStorageKey.GaugeResetCapability, undefined);
+			const gaugeResetCapability = this.commonService.getLocalStorageValue(LocalStorageKey.GaugeResetCapability, undefined);
+			this.gaugeResetCapability = gaugeResetCapability ? true : false;
 		} catch (error) {
 			this.logger.info('initAirplanePowerFromCache', error);
 		}

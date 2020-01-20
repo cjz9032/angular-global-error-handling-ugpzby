@@ -470,10 +470,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 
 	public isShowIntelligentCoolingModes(): boolean {
 		if (!this.legacyManualModeCapability) {
-			this.logger.info('PowerSmartSettingsComponent.isShowIntelligentCoolingModes', this.legacyManualModeCapability);
+			// this.logger.info('PowerSmartSettingsComponent.isShowIntelligentCoolingModes', this.legacyManualModeCapability);
 			return false;
 		}
-		this.logger.info('PowerSmartSettingsComponent.isShowIntelligentCoolingModes', this.showIntelligentCoolingModes);
+		// this.logger.info('PowerSmartSettingsComponent.isShowIntelligentCoolingModes', this.showIntelligentCoolingModes);
 		return this.showIntelligentCoolingModes;
 	}
 
