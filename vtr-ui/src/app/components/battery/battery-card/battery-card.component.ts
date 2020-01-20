@@ -171,9 +171,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	onPowerBatteryGaugeResetEvent(info: BatteryGaugeReset[]) {
 		console.log('onPowerBatteryGaugeResetEvent: Information', info);
-		const gaugeResetInfo = this.commonService.cloneObj(info);
+		let isGaugeResetRunning = false;
+		const gaugeResetInfo: BatteryGaugeReset[] = this.commonService.cloneObj(info);
 		if (gaugeResetInfo) {
 			gaugeResetInfo.forEach((battery) => {
+				isGaugeResetRunning = isGaugeResetRunning || battery.isResetRunning;
 				if (battery.FCCBefore && battery.FCCAfter) {
 					if (battery.FCCBefore !== 0 && battery.FCCAfter !== 0) {
 						battery.FCCAfter = parseFloat((battery.FCCAfter / 1000).toFixed(2));
@@ -181,8 +183,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					}
 				}
 			});
+			this.batteryService.gaugeResetInfo = gaugeResetInfo;
+			this.batteryService.isGaugeResetRunning = isGaugeResetRunning;
 		}
-		this.batteryService.gaugeResetInfo = gaugeResetInfo;
 	}
 
 	public getBatteryDetailOnCard() {
@@ -324,23 +327,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 		if (this.batteryGauge.isPowerDriverMissing) {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryStatus.Poor));
-		}
-
-		if (!(this.batteryIndicator.batteryNotDetected || this.batteryGauge.isPowerDriverMissing)) {
-
-			// AcAdapter conditions hidden for IdeaPad & IdeaCenter machines
-			// if (machineType === 1 && machineType === 3) {
-			if (isThinkPad) {
-				if (this.batteryGauge.acAdapterStatus && this.batteryGauge.acAdapterStatus !== null) {
-					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryStatus.AcAdapterStatus));
-					}
-
-					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryStatus.AcAdapterStatus));
-					}
-				}
-			}
 		}
 
 		if (this.batteryInfo && this.batteryInfo.length > 0) {

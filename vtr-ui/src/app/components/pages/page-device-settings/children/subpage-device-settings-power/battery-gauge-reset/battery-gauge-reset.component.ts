@@ -124,11 +124,16 @@ export class BatteryGaugeResetComponent implements OnInit {
 	}
 
 	updateGaugeResetInfo(value: BatteryGaugeReset) {
+		let isResetRunning = false;
 		let index = value.batteryNum - 1;
 		if (this.batteryService.gaugeResetInfo.length < 2) {
 			index = 0;
 		}
 		this.batteryService.gaugeResetInfo[index] = value;
+		this.batteryService.gaugeResetInfo.forEach((battery) => {
+			isResetRunning = isResetRunning || battery.isResetRunning;
+		});
+		this.batteryService.isGaugeResetRunning = isResetRunning;
 	}
 
 	isValid(val: any) {
