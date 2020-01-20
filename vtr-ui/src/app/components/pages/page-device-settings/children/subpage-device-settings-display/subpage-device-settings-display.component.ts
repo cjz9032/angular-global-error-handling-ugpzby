@@ -260,7 +260,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		}
 
 		if (this.windowsObj) {
-			this.cameraAccessChangedHandler = ((args:any) => {
+			this.cameraAccessChangedHandler = (args:any) => {
 				if (args) {
 					console.log(`camera access changed args.status ${args.status}`);
 					switch (args.status) {
@@ -272,7 +272,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 							break;
 					}
 				}
-			})
+			}
 			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
 		}
 	}

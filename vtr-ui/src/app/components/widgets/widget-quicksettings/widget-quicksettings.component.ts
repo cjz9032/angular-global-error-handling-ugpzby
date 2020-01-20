@@ -102,7 +102,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 
 		if (this.windowsObj) {
-			this.cameraAccessChangedHandler = ((args:any) => {
+			this.cameraAccessChangedHandler = (args:any) => {
 				if (args) {
 					console.log(`camera access changed args.status ${args.status}`);
 					switch (args.status) {
@@ -117,7 +117,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 				}
-			})
+			}
 			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
 		}
 	}
