@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT 控制",
                     "less": "更少"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "键盘背光",
+					"description": {
+						"base": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn+空格键更改键盘背光设置。",
+						"auto": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn+空格键更改键盘背光设置，或将其设置为“自动”。“自动”选项会根据周围环境光线自动调整键盘背光。"
+					},
+					"level": {
+						"auto": "自动",
+						"low": "低",
+						"high": "高",
+						"off": "关闭"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "智能媒体",
                 "title": "提高视频分辨率",
-                "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放体验。尤其在视频分辨率较低时，此功能十分有效。</label></p> <p style='margin-top:4px;'><label> 此功能可能会影响电池寿命、电池温度并产生噪音。启用后，建议您使用交流电源连接计算机。</label></p>",
-                "tooltip": "此功能仅适用于以下播放器：<br/> Windows Media player",
+                "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放体验。尤其在视频分辨率较低时，此功能十分有效。</label></p> <p style='margin-top:4px;'><label>此功能可能会影响电池寿命、电池温度并产生噪音。请不要在直流电模式下使用。否则，会加快耗电速度并缩短电池寿命。</label></p>",
+                "tooltip": "此功能仅适用于：<br>Windows Media player",
                 "note": {
                     "description": "此功能在以下情况下无效：",
-                    "description1": "计算机未连接交流电源且电池电量低于 20%。",
-                    "description2": "计算机未连接交流电源且已启用电池省电模式。",
+                    "description1": "计算机未连接到交流电源。",
+                    "description2": "已启用省电模式。",
                     "description3": "CPU 温度过高。"
                 }
             },

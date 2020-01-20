@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT 제어",
                     "less": "간단히"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "키보드 백라이트",
+					"description": {
+						"base": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. 또한 Fn+Space 키를 눌러 키보드 백라이트 설정을 변경할 수도 있습니다.",
+						"auto": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. Fn+Space 키를 눌러 키보드 백라이트 설정을 변경하거나 이를 \"자동\"으로 설정할 수 있습니다. \"자동\" 옵션은 주변 밝기에 따라 키보드 조명을 자동으로 조정합니다."
+					},
+					"level": {
+						"auto": "자동",
+						"low": "낮음",
+						"high": "높음",
+						"off": "끄기"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1777,12 +1777,12 @@
             "superResolution": {
                 "heading": "지능형 미디어",
                 "title": "비디오 해상도 업스케일링",
-                "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label> 이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. 사용 가능으로 설정하는 경우, AC 전원을 사용하여 컴퓨터에 연결하는 것이 좋습니다.</label></p>",
-                "tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player",
+                "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label>이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. DC 모드에서는 사용하지 마십시오. 그렇지 않으면 전력 소모를 가속화하고 배터리 수명을 단축시킵니다.</label></p>",
+                "tooltip": "이 기능은 다음의 환경에서만 작동합니다:<br>Windows Media player",
                 "note": {
                     "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
-                    "description1": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 전력이 20% 미만입니다.",
-                    "description2": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 절전 모드가 전력이 설정되었습니다.",
+                    "description1": "컴퓨터가 AC 전원에 연결되어 있지 않습니다.",
+                    "description2": "배터리 절약 모드를 사용합니다.",
                     "description3": "CPU 온도가 너무 높습니다."
                 }
             },

@@ -975,12 +975,18 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	getTopRowFunctionsIdeapad(): TopRowFunctionsIdeapad {
-		return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
+	getTopRowFunctionsIdeapad(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
+		}
+		return undefined;
 	}
 
 	getBacklight(): Backlight {
-		return this.phoenix.hwsettings.input.backlight;
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.backlight;
+		}
+		return undefined;
 	}
 
 	public getRegistryUtil(): Phoenix.RegistryFeature {
