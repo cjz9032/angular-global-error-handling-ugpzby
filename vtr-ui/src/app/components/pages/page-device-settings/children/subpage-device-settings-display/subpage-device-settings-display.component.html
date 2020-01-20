@@ -233,7 +233,7 @@
 
 
 							<!-- Display Priority Control -->
-							<li class="pt-3">
+							<li class="pt-3" *ngIf="displayPriorityModal.capability">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.displayPriority.title' | translate"
 									[caption]="'device.deviceSettings.displayCamera.display.displayPriority.description' | translate"

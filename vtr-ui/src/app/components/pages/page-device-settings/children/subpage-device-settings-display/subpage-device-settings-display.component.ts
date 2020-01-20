@@ -155,6 +155,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	public readonly displayPriorityRadioGroup = 'displayPriorityRadioGroup';
 	public readonly displayPriorityModal =
 		{
+			capability: true,
 			selectedValue: 'HDMI',
 			options: [
 				{
@@ -258,6 +259,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			this.initDisplayColorTempFromCache();
 			this.initEyeCareModeFromCache();
 			this.initCameraPrivacyFromCache();
+			this.initPriorityControlFromCache();
 		} catch (error) {
 			this.logger.error('initDataFromCache', error.message);
 		}
@@ -312,13 +314,17 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		}
 	}
 
+	initPriorityControlFromCache() {
+		const available = this.commonService.getLocalStorageValue(LocalStorageKey.PriorityControlCapability, true);
+		this.displayPriorityModal.capability = available;
+	}
+
 	initFeatures() {
 		this.getPrivacyGuardCapabilityStatus();
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.initCameraSection();
 		this.getOLEDPowerControlCapability();
 		this.getPriorityControlCapability();
-		this.getPriorityControlSetting();
 		setTimeout(() => {
 			this.initEyecaremodeSettings();
 			this.startEyeCareMonitor();
@@ -1222,10 +1228,22 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 				this.displayService.getPriorityControlCapability()
 					.then((result: any) => {
 						this.logger.debug('SubpageDeviceSettingsDisplayComponent:getPriorityControlCapability.then', result);
-
+						for (const option of this.displayPriorityModal.options) {
+							if (!result[option.name]) {
+								this.displayPriorityModal.options = this.removeObjByName(this.displayPriorityModal.options, option.name);
+							}
+						}
+						if (this.displayPriorityModal.options.length !== 0) {
+							this.getPriorityControlSetting();
+							this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, true);
+						} else {
+							this.displayPriorityModal.capability = false;
+							this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
+						}
 					}).catch(error => {
 						this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlCapability', error.message);
-
+						this.displayPriorityModal.capability = false;
+						this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
 					});
 			}
 		} catch (error) {
@@ -1233,6 +1251,10 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			return EMPTY;
 		}
 	 }
+
+	 public removeObjByName(array: any[], name: string) {
+		return array.filter(e => e.name !== name);
+	}
 
 	 public getPriorityControlSetting() {
 		try {
@@ -1243,11 +1265,14 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 						this.displayPriorityModal.selectedValue = result;
 					}).catch(error => {
 						this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlSetting', error.message);
-
+						this.displayPriorityModal.capability = false;
+						this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
 					});
 			}
 		} catch (error) {
 			this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlSetting', error.message);
+			this.displayPriorityModal.capability = false;
+			this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
 			return EMPTY;
 		}
 	}
@@ -1261,7 +1286,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 						this.displayPriorityModal.selectedValue = option;
 					}).catch(error => {
 						this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlCapability', error.message);
-
 					});
 			}
 		} catch (error) {
