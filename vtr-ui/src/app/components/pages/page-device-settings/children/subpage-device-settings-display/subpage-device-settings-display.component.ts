@@ -328,6 +328,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		if (machineType === 1) {
 			this.getPriorityControlCapability();
 		} else {
+			this.displayPriorityModal.capability = false;
 			this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
 		}
 		setTimeout(() => {
