@@ -1,13 +1,14 @@
-<div class="row py-5" id="smartStandby" *ngIf="smartStandby?.isCapable">
-	<div class="col-12 px-0 container-border">
-		<vtr-container-collapsible
-		 [cardTitle]="'device.deviceSettings.power.smartStandby.sectionTitle' | translate"
+<div class="row pt-5 smartsettings-card"
+	id="smartStandby"
+	*ngIf="smartStandby?.isCapable">
+	<div class="col-12 mx-auto container-border">
+		<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
 			[isCollapsed]="false"
-			 [collapseLinkId]="'smartrStandby'" 
+			 [collapseLinkId]="'smartrStandby'"
 			 [tabIndex]="0">
 			<ul class="list-group list-group-flush">
 				<li>
-					<vtr-ui-row-switch 
+					<vtr-ui-row-switch
 					[title]="'device.deviceSettings.power.smartStandby.title' | translate"
 					[name]= "'device.deviceSettings.power.smartStandby.title' | translate"
 					[caption]="caption"
@@ -140,8 +141,8 @@
 								</div>
 								<!-- content end -->
 							</div>
-							<div *ngIf="isAutonomicCapability" 
-							vtrMetrics 
+							<div *ngIf="isAutonomicCapability"
+							vtrMetrics
 							metricsItem="Open Smart Standby Modal"
 								metricsEvent="featureClick"
 								 metricsParent="Device.deviceSettings"

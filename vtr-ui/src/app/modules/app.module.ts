@@ -64,7 +64,7 @@ import { ModalNewFeatureTipComponent } from '../components/modal/modal-new-featu
 import { NewFeatureTipService } from '../services/new-feature-tip/new-feature-tip.service';
 import { HardwareDashboardModule } from './hardware-settings/hardware-dashboard.module';
 import { GamingDashboardModule } from './gaming-dashboard.module';
-import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
+//import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
 
 @NgModule({
 	declarations: [
@@ -76,18 +76,22 @@ import { ModalErrorMessageComponent } from '../components/modal/modal-error-mess
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
 		ModalNewFeatureTipComponent,
-		PageSettingsComponent,
+		PageSettingsComponent
+		//ModalErrorMessageComponent
 	],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
 		AppRoutingModule,
-		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' }),
+		ServiceWorkerModule.register('ngsw-worker.js', {
+			enabled: environment.production,
+			registrationStrategy: 'registerImmediately'
+		}),
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
 				useClass: WebpackTranslateLoader,
-				deps: [HttpClient]
+				deps: [ HttpClient ]
 			},
 			missingTranslationHandler: {
 				provide: MissingTranslationHandler,
@@ -110,14 +114,7 @@ import { ModalErrorMessageComponent } from '../components/modal/modal-error-mess
 		HardwareDashboardModule,
 		GamingDashboardModule
 	],
-	exports: [
-		NavbarModule,
-		RouterModule,
-		CommonPipeModule,
-		CommonUiModule,
-		ModernPreloadModule,
-		PageLayoutModule,
-	],
+	exports: [ NavbarModule, RouterModule, CommonPipeModule, CommonUiModule, ModernPreloadModule, PageLayoutModule ],
 	providers: [
 		CommonService,
 		MetricsTranslateService,
@@ -137,11 +134,11 @@ import { ModalErrorMessageComponent } from '../components/modal/modal-error-mess
 		ModalDccDetailComponent,
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
-		ModalNewFeatureTipComponent,
-		ModalErrorMessageComponent
+		ModalNewFeatureTipComponent
+		//ModalErrorMessageComponent
 	],
-	bootstrap: [AppComponent],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA]
+	bootstrap: [ AppComponent ],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {
 	constructor() {
