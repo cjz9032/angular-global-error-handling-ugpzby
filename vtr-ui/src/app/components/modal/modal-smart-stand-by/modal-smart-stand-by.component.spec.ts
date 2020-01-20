@@ -38,8 +38,7 @@ describe('ModalSmartStandByComponent', () => {
 	const cameraSettingsResponse: CameraSettingsResponse = new CameraSettingsResponse();
 	const sunsetToSunriseStatus: SunsetToSunriseStatus = new SunsetToSunriseStatus(false, false, false, '', '');
 	const batteryConditionModels = [];
-	const i = 0;
-	for (i = 0; i <= 17; i++) {
+	for (let i = 0; i <= 17; i++) {
 		batteryConditionModels.push(new BatteryConditionModel(i, 0).getBatteryConditionTip(i));
 	}
 	const dolbyModeResponse = new DolbyModeResponse(false, [''], '');
