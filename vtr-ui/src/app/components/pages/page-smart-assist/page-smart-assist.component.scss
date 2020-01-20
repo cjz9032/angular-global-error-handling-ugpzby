@@ -47,6 +47,7 @@ $fontsize_xs: 1.4rem;
 			width: 100%;
 			p {
 				font-size: $fontsize_xs;
+				font-weight: $weight_light;
 				color: $shade_blue;
 			}
 
@@ -100,7 +101,7 @@ $fontsize_xs: 1.4rem;
 		}
 	}
 	.card-body {
-		padding: 2rem 4rem;
+		padding: 2rem 1.8rem;
 	}
 	.blur-1 {
 		opacity: 0.65;
@@ -111,7 +112,8 @@ $fontsize_xs: 1.4rem;
 		width: 100%;
 		p {
 			font-size: $fontsize_xs;
-			color: $main_darker;
+			font-weight: $weight_light;
+			color: $shade_blue;
 		}
 		a {
 			text-decoration: underline;
@@ -137,13 +139,6 @@ $fontsize_xs: 1.4rem;
 			}
 		}
 
-		.int-screen-desc {
-			p {
-				font-size: $fontsize_xs;
-				color: $purple_navy;
-				font-weight: $weight_light;
-			}
-		}
 
 		.keep-my-display-block {
 			::ng-deep .vtr-ui-switch-row {
@@ -152,12 +147,6 @@ $fontsize_xs: 1.4rem;
 			}
 			.display-padding {
 				padding-left: 2.5rem;
-			}
-			.display-dim-title {
-				font-size: 1.8rem;
-				color: $main_darker;
-				font-weight: $weight_600;
-				letter-spacing: 0.05rem;
 			}
 			::ng-deep {
 				.ng5-slider {
@@ -176,23 +165,10 @@ $fontsize_xs: 1.4rem;
 			pointer-events: none;
 		}
 
-		.no-border-bottom {
-			 .vtr-ui-switch-row.white-theme {
-				border-bottom: none !important;
-			}
-		}
 		.border-bottom {
 			border-bottom: 0.1rem solid $shade_lighter;
 		}
-		.bold-title {
-			.vtr-ui-switch-row.white-theme {
-				.title {
-					font-weight: $weight_bold !important;
-					font-size: $fontsize_xs !important;
-					color: $shade_blue !important;
-				}
-			}
-		}
+
 		.col-pad-margin {
 			::ng-deep .vtr-ui-switch-row.white-theme {
 				.vtr-col-pad {
@@ -204,19 +180,6 @@ $fontsize_xs: 1.4rem;
 			margin: 0 0 0 1rem;
 			padding-right: 1.4rem;
 			// max-width: 60rem;
-			::ng-deep .vtr-ui-rounded-rectangle-radio {
-				width: 13rem !important;
-				height: 5rem !important;
-				.label {
-					font-size: $fontsize_xs !important;
-					font-weight: $weight_light !important;
-					left: 4.5rem !important;
-				}
-				.icon-circle {
-					font-size: 2rem !important;
-					top: 1.4rem !important;
-				}
-			}
 		}
 		.padding-right-07 {
 			padding-right: 0.7rem;
@@ -350,4 +313,30 @@ $fontsize_xs: 1.4rem;
 
 ::ng-deep .vtr-ui-range-slider {
 	width: 85%;
+}
+
+.int-screen-desc {
+	p {
+		font-size: $fontsize_xs;
+		color: $purple_navy;
+		font-weight: $weight_light;
+	}
+}
+
+.bold-title {
+	::ng-deep .vtr-ui-switch-row.white-theme {
+		.title {
+			font-weight: $weight_bold !important;
+			font-size: $fontsize_xs !important;
+			color: $shade_blue !important;
+		}
+	}
+}
+
+.display-dim-title {
+	font-size: $fontsize_xs;
+	color: $shade_blue;
+	font-weight: $weight_bold;
+	letter-spacing: 0.05rem;
+	text-transform: uppercase;
 }

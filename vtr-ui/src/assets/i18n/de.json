@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Flugzeug-Energiemodus",
-                        "description": "Schützen Sie das Netzteil im Flugzeug, indem Sie den Stromverbrauch des Systems steuern.Wenn die Funktion Flugzeug-Energiemodus aktiviert ist, verringert der Computer den Stromverbrauch durch Beschränkung der Akkuladerate und der Systemleistung.",
+                        "description": "Mit dieser Funktion können Sie die Netzsteckdose in einem Flugzeug verwenden, wenn eine bestimmte Leistungsbegrenzung gilt. In diesem Modus wird der Stromverbrauch Ihres Computers durch Beschränkung der Akkuladerate und der Systemleistung auf einen sicheren Wert herabgesetzt.",
                         "checkBoxDesc": "Automatische Erkennung",
                         "note": "Ist die Funktion für automatische Erkennung aktiviert, schaltet der Computer den Flugzeug-Energiemodus automatisch ein, sobald er eine Umgebung erkennt, die dem Inneren einer Flugzeugkabine entspricht, und schaltet ihn beim Verlassen dieser Umgebung wieder aus."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} von {{stageNum}}: Kalibrierung für volle Ladung",
                         "progressText2": "{{stage}} von {{stageNum}}: Kalibrierung für niedrigen Akkustand",
-                        "progressText3": "{{stage}} von {{stageNum}}: Kalibrierung für volle Ladung",
+                        "progressText3": "{{stage}} von {{stageNum}}: Kalibrierung für hohen Akkustand",
                         "FCCText": "Von {{before}} Wh auf {{after}} Wh",
                         "note": "Hinweis: Vor dem Zurücksetzen des Akkustandsanzeigers muss Ihr Computer an die Stromversorgung angeschlossen werden. ",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "Bitte wählen Sie mindestens einen Tag aus.",
                     "days": {
                         "shortName": {
-                            "sun": "Sonntag",
-                            "mon": "Montag",
-                            "tue": "Dienstag",
-                            "wed": "Mittwoch",
-                            "thurs": "Donnerstag",
-                            "fri": "Freitag",
-                            "sat": "Samstag",
-                            "thu": "Thu"
+                            "sun": "So.",
+                            "mon": "Mo.",
+                            "tue": "Di.",
+                            "wed": "Mi.",
+                            "thurs": "Do.",
+                            "fri": "Fr.",
+                            "sat": "Sa.",
+                            "thu": "Do."
                         },
                         "name": {
                             "sun": "Sonntag",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Zeitplan für Ihren Computer festlegen",
                     "automaticMode": "Automatischer Modus",
                     "manualMode": "Manueller Modus",
-                    "subNote": "Für Ihren Computer ist der Modern-Standby-Modus abhängig von der Verwendung festgelegt.",
+                    "subNote": "Ihr Computer ist basierend auf der Nutzung für eine schnellere Wiederaufnahme eingeplant.",
                     "graph": {
                         "graph1Tittle": "Verwendung dieses Computers",
                         "graph2Tittle": "Aktive Zeit angewendet",
@@ -1543,12 +1543,12 @@
                     "title": "Austausch der Funktionen von Fn- und Strg-Taste",
                     "description": "Falls Sie aus Gewohnheit die Fn-Taste drücken, wenn Sie eigentlich die Strg-Taste drücken möchten, können Sie die Funktion der beiden Tasten vertauschen.",
                     "restartNote": "Sie müssen den Computer neu starten, um die Funktion der beiden Tasten zu tauschen. Möchten Sie den Computer jetzt neu starten?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Fn funktioniert wie Strg für häufig verwendete Tastenkombinationen",
+                    "description2": "Die Fn-Taste funktioniert für einige häufig verwendete Tastenkombinationen wie die Strg-Taste. Die Strg-Taste funktioniert weiterhin wie gewohnt.",
+                    "featureNote": "Diese Funktion und die Funktion zum Wechseln von Fn-Taste und Strg-Taste können nicht gleichzeitig aktiviert sein. Wenn eine Funktion eingeschaltet ist, wird die andere automatisch ausgeschaltet.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Fn-Tasten",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1564,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Strg-Tasten",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1580,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Aktion",
+                            "action1": "Alle auswählen",
+                            "action2": "Kopieren",
+                            "action3": "Webseite zu Lesezeichen hinzufügen",
+                            "action4": "Suchen",
+                            "action5": "Suchen und ersetzen in Microsoft Word",
+                            "action6": "Links- und rechtsbündig ausrichten in Microsoft Word",
+                            "action7": "Beenden (in unterstützter App)",
+                            "action8": "Unterstreichen",
+                            "action9": "Einfügen",
+                            "action10": "Schließen (in App)",
+                            "action11": "Ausschneiden",
+                            "action12": "Wiederholen",
+                            "action13": "Rückgängig machen"
                         }
                     }
                 },
@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT-STEUERUNG",
                     "less": "WENIGER"
                 },
-				"backlight": {
-					"title": "Tastaturhintergrundbeleuchtung",
-					"description": {
-						"base": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Tastaturbeleuchtung auch ändern, indem Sie die Tastenkombination Fn+Leertaste drücken.",
-						"auto": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Beleuchtung ändern, indem Sie die Tastenkombination Fn+Leertaste drücken oder für die Beleuchtung \"Auto\" einstellen. Mit der Option \"Auto\" wird die Tastaturhintergrundbeleuchtung automatisch an das Umgebungslicht angepasst."
-					},
-					"level": {
-						"auto": "Automatisch",
-						"low": "Niedrig",
-						"high": "Hoch",
-						"off": "Aus"
-					}
-				}
+                "backlight": {
+                    "title": "Tastaturhintergrundbeleuchtung",
+                    "description": {
+                        "base": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Tastaturbeleuchtung auch ändern, indem Sie die Tastenkombination Fn+Leertaste drücken.",
+                        "auto": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Beleuchtung ändern, indem Sie die Tastenkombination Fn+Leertaste drücken oder für die Beleuchtung \"Auto\" einstellen. Mit der Option \"Auto\" wird die Tastaturhintergrundbeleuchtung automatisch an das Umgebungslicht angepasst."
+                    },
+                    "level": {
+                        "auto": "Automatisch",
+                        "low": "Niedrig",
+                        "high": "Hoch",
+                        "off": "Aus"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2376,7 +2376,7 @@
     "faq": {
         "footer": {
             "title": "Nicht gefunden, wonach Sie suchen?",
-            "description": "BRAUCHEN SIE ZUSÄTZLICHE UNTERSTÜTZUNG? ZÖGERN SIE NICHT, UNS ÜBER:",
+            "description": "Benötigen Sie Hilfe? Kontaktieren Sie uns über:",
             "body": "Lenovo Community",
             "button": "GEHE ZUM FORUM"
         },
