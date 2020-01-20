@@ -2838,7 +2838,7 @@
                 "yes": "Da",
                 "no": "Nu"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Butonul este dezactivat dacă dispozitivele de stocare nu acceptă această funcționalitate, în timp ce informațiile hardware sunt încărcate sau dacă există o scanare în curs."
         },
         "support": {
             "title": "Descărcare instrumente profesionale de diagnosticare",

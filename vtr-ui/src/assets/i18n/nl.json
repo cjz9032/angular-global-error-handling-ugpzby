@@ -2838,7 +2838,7 @@
                 "yes": "Ja",
                 "no": "Nee"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "De knop wordt uitgeschakeld als de opslagapparaten deze functionaliteit niet ondersteunen, terwijl de hardwaregegevens worden geladen of als er een scan wordt uitgevoerd."
         },
         "support": {
             "title": "Professionele diagnosehulpprogramma's downloaden",

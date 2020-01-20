@@ -2838,7 +2838,7 @@
                 "yes": "Evet",
                 "no": "Hayır"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Depolama aygıtları bu işlevi desteklemiyorsa, donanım bilgileri yüklenirken veya devam eden bir tarama olduğunda düğme devre dışı bırakılır."
         },
         "support": {
             "title": "Profesyonel tanılama araçlarını indirin",

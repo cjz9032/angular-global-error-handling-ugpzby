@@ -2838,7 +2838,7 @@
                 "yes": "Ja",
                 "no": "Nein"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Falls die Speichereinheiten diese Funktionalität nicht unterstützen und die Hardwareinformationen abgerufen werden oder ein Scanvorgang durchgeführt wird, ist die Schaltfläche deaktiviert."
         },
         "support": {
             "title": "Professionelle Diagnosetools herunterladen",

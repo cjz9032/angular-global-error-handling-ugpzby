@@ -2838,7 +2838,7 @@
                 "yes": "Так",
                 "no": "Ні"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Кнопка неактивна, якщо накопичувачі не підтримують цю функцію, доки інформація про обладнання завантажується або триває сканування."
         },
         "support": {
             "title": "Завантаження професійних інструментів діагностики",

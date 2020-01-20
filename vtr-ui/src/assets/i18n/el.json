@@ -2838,7 +2838,7 @@
                 "yes": "Ναι",
                 "no": "Όχι"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Το κουμπί είναι απενεργοποιημένο, εάν οι συσκευές αποθήκευσης δεν υποστηρίζουν αυτή τη λειτουργία, ενώ οι πληροφορίες υλικού φορτώνονται ή εάν υπάρχει σάρωση σε εξέλιξη."
         },
         "support": {
             "title": "Κατεβάστε επαγγελματικά διαγνωστικά εργαλεία",

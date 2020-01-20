@@ -2838,7 +2838,7 @@
                 "yes": "Áno",
                 "no": "Nie"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Tlačidlo je vypnuté, ak táto funkcia nie je podporovaná úložnými zariadeniami počas načítavania informácií o hardvéri ako aj počas kontroly."
         },
         "support": {
             "title": "Stiahnite si profesionálne diagnostické nástroje",

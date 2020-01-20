@@ -2838,7 +2838,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "如果存储设备不支持此功能，当正在加载硬件信息或正在进行扫描时，将禁用此按钮。"
         },
         "support": {
             "title": "下载专业诊断工具",

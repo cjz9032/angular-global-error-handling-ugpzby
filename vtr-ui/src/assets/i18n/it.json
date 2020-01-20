@@ -2838,7 +2838,7 @@
                 "yes": "Sì",
                 "no": "No"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Il pulsante è disattivato se i dispositivi di archiviazione non supportano questa funzionalità, durante il caricamento delle informazioni hardware o mentre vi è una scansione in corso."
         },
         "support": {
             "title": "Scarica strumenti di diagnostica professionali",

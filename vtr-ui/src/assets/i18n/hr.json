@@ -2838,7 +2838,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Gumb je onemogućen ako uređaji za pohranu ne podržavaju ovu funkciju, dok se podaci o hardveru učitavaju ili je u tijeku skeniranje."
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alate",

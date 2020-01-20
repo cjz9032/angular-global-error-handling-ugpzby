@@ -2838,7 +2838,7 @@
                 "yes": "Да",
                 "no": "Нет"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Если устройства хранения данных не поддерживают данную функцию, эта кнопка отключена во время загрузки информации об оборудовании или сканирования."
         },
         "support": {
             "title": "Скачать профессиональные инструменты диагностики",
