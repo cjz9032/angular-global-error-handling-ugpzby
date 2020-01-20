@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Režim korišćenja u avionu",
-                        "description": "Zaštitite utičnicu za napajanje naizmeničnom strujom u avionu kontrolom potrošnje vašeg sistema.Kada je omogućen režim korišćenja u avionu, računar smanjuje potrošnju napajanja ograničavanjem brzine punjenja i performansi sistema.",
+                        "description": "Ova funkcija vam omogućava korišćenje standardne električne utičnice u avionu gde se primenjuju određena ograničenja napajanja. U ovom režimu, potrošnja struje za rad računara je smanjena na bezbedan nivo tako što se ograničavaju stopa punjenja baterije i performanse računara.",
                         "checkBoxDesc": "Automatska detekcija",
                         "note": "Ako je označena Automatska detekcija, vaš računar će automatski uključiti režim napajanja u avionu kada otkrije okruženje unutar aviona i isključiti ga kada napustite okruženje."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} od {{stageNum}}: kalibracija na pun kapacitet punjenja",
                         "progressText2": "{{stage}} od {{stageNum}}: kalibracija na nizak nivo napunjenosti baterije",
-                        "progressText3": "{{stage}} od {{stageNum}}: kalibracija na pun kapacitet punjenja",
+                        "progressText3": "{{stage}} od {{stageNum}}: kalibracija na visok nivo napunjenosti baterije",
                         "FCCText": "Sa {{before}} Wh na {{after}} Wh",
                         "note": "Napomena: pre nego što resetujete pokazivač napunjenosti baterije, obavezno povežite računar sa napajanjem naizmeničnom strujom. ",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "Odaberite najmanje jedan dan.",
                     "days": {
                         "shortName": {
-                            "sun": "Nedelja",
-                            "mon": "Ponedeljak",
-                            "tue": "Utorak",
-                            "wed": "Sreda",
-                            "thurs": "Četvrtak",
-                            "fri": "Petak",
-                            "sat": "Subota",
-                            "thu": "Thu"
+                            "sun": "Ned.",
+                            "mon": "Pon.",
+                            "tue": "Uto.",
+                            "wed": "Sre.",
+                            "thurs": "Čet.",
+                            "fri": "Pet.",
+                            "sat": "Sub.",
+                            "thu": "Čet."
                         },
                         "name": {
                             "sun": "Nedelja",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Zakazivanje rada računara",
                     "automaticMode": "Automatski režim",
                     "manualMode": "Ručni režim",
-                    "subNote": "Predviđeno je moderno stanje pripravnosti računara na osnovu vašeg korišćenja.",
+                    "subNote": "Računar je planiran za brži nastavak na osnovu korišćenja.",
                     "graph": {
                         "graph1Tittle": "Korišćenje ovog računara",
                         "graph2Tittle": "Primenjeno aktivno vreme",
@@ -1543,12 +1543,12 @@
                     "title": "Zamena tastera Fn i Ctrl",
                     "description": "Ako četo pritiskate taster Fn kada nameravate da pritisnete taster Ctrl, možete da zamenite funkcije ova dva tastera.",
                     "restartNote": "Premeštanje funkcije dva tastera zahteva od vas da ponovo pokrenete računar. Želite li zaista da ponovo pokrenete?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Fn funkcioniše kao Ctrl za često korišćene kombinacije tastera",
+                    "description2": "Taster Fn funkcioniše kao taster Ctrl kod nekih često korišćenih kombinacija tastera. Funkcija taster Ctrl se ne menja.",
+                    "featureNote": "Ova funkcija i funkcija zamene tastera Fn i Ctrl ne mogu da budu istovremeno uključene. Ako je jedna funkcija uključena, druga će se automatski isključiti.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Tasteri Fn",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1564,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Tasteri Ctrl",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1580,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Akcija",
+                            "action1": "Izaberite sve",
+                            "action2": "Kopiraj",
+                            "action3": "Dodaj veb stranicu u moje omiljene",
+                            "action4": "Pretraga",
+                            "action5": "Pronađi i zameni u programu Microsoft Word",
+                            "action6": "Poravnaj levo i desno u programu Microsoft Word",
+                            "action7": "Prekini (u podržanoj aplikaciji)",
+                            "action8": "Dodati podvlačenje",
+                            "action9": "Nalepi",
+                            "action10": "Zatvori (po aplikaciji)",
+                            "action11": "Iseci",
+                            "action12": "Ponovi",
+                            "action13": "Opozovi"
                         }
                     }
                 },
@@ -1604,19 +1604,19 @@
                     "control3": "KONTROLE ZA TRACKPOINT",
                     "less": "MANJE"
                 },
-				"backlight": {
-					"title": "Pozadinsko osvetljenje tastature",
-					"description": {
-						"base": "Aktivno pozadinsko svetlo na tastaturi za lakše kucanje u mraku ili pri lošem osvetljenju. Takođe možete da promenite postavke pozadinskog svetla na tastaturi pritiskom tastera Fn+taster za razmak.",
-						"auto": "Aktivno pozadinsko svetlo na tastaturi za lakše kucanje u mraku ili pri lošem osvetljenju. Postavke pozadinskog svetla možete da promenite pritiskom tastera Fn+taster za razmak ili da ih podesite na \"Automatski\". Opcija \"Automatski\" automatski podešava pozadinsko svetlo na tastaturi u skladu sa ambijentalnim svetlom."
-					},
-					"level": {
-						"auto": "Automatski",
-						"low": "Nisko",
-						"high": "Visoko",
-						"off": "Isključeno"
-					}
-				}
+                "backlight": {
+                    "title": "Pozadinsko osvetljenje tastature",
+                    "description": {
+                        "base": "Aktivno pozadinsko svetlo na tastaturi za lakše kucanje u mraku ili pri lošem osvetljenju. Takođe možete da promenite postavke pozadinskog svetla na tastaturi pritiskom tastera Fn+taster za razmak.",
+                        "auto": "Aktivno pozadinsko svetlo na tastaturi za lakše kucanje u mraku ili pri lošem osvetljenju. Postavke pozadinskog svetla možete da promenite pritiskom tastera Fn+taster za razmak ili da ih podesite na \"Automatski\". Opcija \"Automatski\" automatski podešava pozadinsko svetlo na tastaturi u skladu sa ambijentalnim svetlom."
+                    },
+                    "level": {
+                        "auto": "Automatski",
+                        "low": "Nisko",
+                        "high": "Visoko",
+                        "off": "Isključeno"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2376,7 +2376,7 @@
     "faq": {
         "footer": {
             "title": "Niste pronašli ono što tražite?",
-            "description": "POTREBNA DODATNA PODRŠKA? NE ODBIJATE KONTAKT SA VIA:",
+            "description": "Potrebna vam je dodatna podrška? Ne ustručavajte se da nas kontaktirate putem:",
             "body": "Lenovo zajednica",
             "button": "GO FOR FORUM"
         },

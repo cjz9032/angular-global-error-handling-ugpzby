@@ -21,6 +21,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	@Input() radioGroup: any;
 	@Input() customIcon = '';
 	@Input() hideIcon = false;
+	@Input() processLabel = true;
 	@Output() optionChange: EventEmitter<any> = new EventEmitter();
 	// These following instance variables added for Keyboard navigation to radio button.
 	keyCode = Object.freeze({
