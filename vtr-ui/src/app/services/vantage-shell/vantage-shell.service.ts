@@ -902,6 +902,7 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
 		if (this.phoenix) {
@@ -915,6 +916,13 @@ export class VantageShellService {
 	public getOledSettings(): any {
 		if (this.getHwSettings()) {
 			return this.getHwSettings().display.OLEDSettings;
+		}
+		return undefined;
+	}
+
+	public getPriorityControl(): any {
+		if (this.getHwSettings()) {
+			return this.getHwSettings().display.priorityControl;
 		}
 		return undefined;
 	}
