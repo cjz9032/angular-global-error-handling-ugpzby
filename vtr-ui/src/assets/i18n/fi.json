@@ -644,7 +644,8 @@
             "registered": "REKISTERÖITY",
             "notRegistered": "EI REKISTERÖITY",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Älykäs valmiustila",
-                    "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
-                    "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso on optimoitu määrittämäsi aikataulun tai tietokoneen käyttöajan mukaan. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
+                    "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysaikana ilman, että <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> -ominaisuuden nopea käynnistys hidastuu kovan käytön aikana.",
+                    "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso on optimoitu määrittämäsi aikataulun tai tietokoneen käytön mukaan. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
                     "timer": {
-                        "heading": "Aika, jolloin yleensä käytät tätä tietokonetta",
+                        "heading": "Aika, jolloin yleensä käytät tätä tietokonetta:",
                         "subHeading1": "aloitat",
                         "subHeading2": "lopetusaika",
                         "subHeading3": "käytä tätä aikataulua seuraavaan:",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Päivää ei ole valittuna"
                     },
                     "checkbox": "Tietokoneen aktiivisen ajan automaattinen säätäminen käytön mukaan",
-                    "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella tietokoneen taulukon toimintaa ja aktiivista aikaa",
+                    "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella käyttöä ja käytössä olevaa aikaa",
                     "subTitle": "Ajasta tietokoneesi",
                     "automaticMode": "Automaattinen tila",
                     "manualMode": "Manuaalinen tila",
@@ -1603,19 +1604,19 @@
                     "control3": "TRACKPOINT-TOIMINNOT",
                     "less": "VÄHEMMÄN"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Näppäimistön taustavalo",
+					"description": {
+						"base": "Näppäimistön taustavalon käynnistäminen helpottaa kirjoittamista pimeässä tai heikosti valaistuissa olosuhteissa. Voit myös muuttaa näppäimistön taustavalon asetuksia painamalla näppäinyhdistelmää Fn+välilyönti.",
+						"auto": "Näppäimistön taustavalon käynnistäminen helpottaa kirjoittamista pimeässä tai heikosti valaistuissa olosuhteissa. Voit muuttaa taustavalon asetuksia painamalla näppäinyhdistelmää Fn+välilyönti tai asettamalla sen \"Automaattiseksi\". \"Automaattinen\"-vaihtoehto säätää näppäimistön taustavalon automaattisesti ympäristön valon mukaan."
+					},
+					"level": {
+						"auto": "Automaattinen",
+						"low": "Pieni",
+						"high": "Suuri",
+						"off": "Poissa käytöstä"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1776,12 +1777,12 @@
             "superResolution": {
                 "heading": "Älykäs tietoväline",
                 "title": "Näytön tarkkuuden skaalaus",
-                "desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label> Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Kun tämä asetus on käytössä, tietokone on suositeltavaa kytkeä verkko virtaan.</label></p>",
-                "tooltip": "Ominaisuus toimii vain seuraavissa soittimissa: <br/> Windows Media player",
+                "desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä tasasähkövirtatilassa. Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
+                "tooltip": "Ominaisuus toimii vain näissä:<br>Windows Media player",
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
-                    "description1": "Tietokone ei ole liitettynä verkkovirtaan, ja akun varaustaso on alhaisempi kuin 20 %.",
-                    "description2": "Tietokone ei ole liitettynä verkkovirtaan, ja akun virransäästötila on käytössä.",
+                    "description1": "Tietokonetta ei ole kytketty verkkovirtaan.",
+                    "description2": "Akun virransäästötila on käytössä.",
                     "description3": "Keskusyksikön lämpötila on liian korkea."
                 }
             },
@@ -1938,7 +1939,7 @@
             "localRepositoryDatabaseException": "Paikallisen säilön tietokantaa ei ole löytynyt tai se on viallinen.",
             "networkInterruptedException": "Järjestelmän päivityspalvelin ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen.",
             "helpCenterInvalidServerException": "Järjestelmän päivityspalvelin on virheellinen. Yritä myöhemmin uudelleen.",
-            "catalogNotFoundException": "Järjestelmään soveltuvia päivityksiä ei löydy.",
+            "catalogNotFoundException": "Järjestelmään soveltuvia päivityksiä ei löydy, koska päivitysluetteloa ei löydy.",
             "catalogCrcErrorException": "Järjestelmäluetteloa päivitetään parhaillaan. Yritä myöhemmin uudelleen.",
             "catalogErrorException": "Järjestelmän päivitysluettelossa havaittiin virhe järjestelmän päivityspalvelimessa. Yritä myöhemmin uudelleen.",
             "fileNotFoundException": "Tiedostoa ei löydy."
@@ -2197,7 +2198,8 @@
                 "subtitle": "Mielenrauhaa",
                 "subtitleDescribe": "Connected Home -suojaus lähettää sinulle hälytyksen havaitessaan haavoittuvuuden laitteessasi tai kotiverkossasi tai, jos olet yhdistynyt mahdollisesti vahingolliseen verkkoon. Lue lisää Connected Home -suojauksesta <tag>tästä</tag>.",
                 "tryNow": "Kokeile nyt",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Anna kutsukoodi",
@@ -2272,7 +2274,8 @@
             "getStarted1": "Käynnistä SurfEasy VPN napsauttamalla \"Avaa SurfEasy\".",
             "getStarted2": "Ota VPN-yhteys käyttöön ja odota hetki, jotta saat vahvistuksen turvallisesta yhteydestä.",
             "getStarted3": "Muuta halutessasi alue tai sijainti ja nauti turvallisesta, yksityisestä verkon käytöstä.",
-            "poweredBySurfEasy": "SurfEasyn tarjoama"
+            "poweredBySurfEasy": "SurfEasyn tarjoama",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE salasanojen hallinta",
@@ -2300,7 +2303,8 @@
             "allowsYou2": "Tarkkailla, onko pimeässä verkossa henkilökohtaisia tietojasi",
             "allowsYou3": "Käyttää turvaamattomia WiFi-verkkoja turvallisesti sisäänrakennetun VPN-yhteyden avulla",
             "allowsYou4": "Jakaa salasanoja turvallisesti paljastamatta niitä",
-            "poweredByDashLane": "Dashlanen tarjoama"
+            "poweredByDashLane": "Dashlanen tarjoama",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2801,6 +2805,8 @@
         "noteDownloadAvailable": "Huomautus: Kun olet napsauttanut Lataa, Windows voi pyytää sinulta lupaa ohjelmiston asentamiseen laitteeseesi. Kun sovellukset on asennettu, ne näkyvät automaattisesti työpöydällä tai aloitusvalikossa.<br /><br />Voit sulkea Oma ohjelmisto -sivun ja jatkaa Lenovo Vantagen käyttöä. Älä sulje Lenovo Vantagea asennuksen aikana.",
         "sizeText": "Koko",
         "versionText": "Versio",
+        "redemptionCode": "Lunastuskoodi:",
+        "redeemWebsite": "Lunasta toimittajan www-sivustolla",
         "softwareDescription": "Lunasta laitteen mukana ostettu ohjelmisto napsauttamalla alta Lataa. Voit milloin tahansa ladata ohjelmiston uudelleen valitsemalla Vantage-valikosta Oma ohjelmisto -painikkeen.",
         "title": "Oma ohjelmisto",
         "loadingDescription": "Odota sen aikaa, kun valmistelemme luetteloa laitteen mukana ostetuista ohjelmistoista.",

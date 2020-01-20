@@ -644,7 +644,8 @@
             "registered": "REGISTROVAN",
             "notRegistered": "NIJE REGISTROVAN",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "Pametno stanje pripravnosti",
-                    "description": "Ova funkcija zakazuje optimizaciju štednje energije računara tokom časova neaktivnosti bez žrtvovanja vremena brzog pokretanja tokom časova intenzivnijeg korišćenja.",
-                    "tooltip": "Kad je omogućena funkcija Pametno vreme pripravnosti, računar se prebacuje na funkciju Moderno vreme pripravnosti pre zakazanog vremena POČETKA i ulazi u hibernaciju nakon što neko vreme bude neaktivan a napaja se na bateriju. Ovaj period se optimizuje na osnovu rasporeda koji ste podesili ili vremena korišćenja računara koje dobijemo. Računar prelazi iz hibernacije u Moderno stanje pripravnosti samo zakazanim danima i ne prelazi kada je neaktivan nekoliko uzastopnih zakazanih dana.",
+                    "description": "Ova funkcija zakazuje optimizovanje uštede baterije dok je računar u stanju mirovanja, a da se, pritom, ne žrtvuje brzo vraćanje opcije <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> (Moderno čekanje) tokom perioda intenzivnijeg korišćenja.",
+                    "tooltip": "Kad je omogućena funkcija Pametno vreme pripravnosti, računar se prebacuje na funkciju Moderno vreme pripravnosti pre zakazanog vremena POČETKA i ulazi u hibernaciju nakon što neko vreme bude neaktivan a napaja se na bateriju. Ovo vremenski period je optimizovan na osnovu rasporeda koji ste postavili ili na osnovu korišćenja računara. Računar prelazi iz hibernacije u Moderno stanje pripravnosti samo zakazanim danima i ne prelazi kada je neaktivan nekoliko uzastopnih zakazanih dana.",
                     "timer": {
-                        "heading": "Vreme kada obično koristite računar",
+                        "heading": "Vreme kada obično koristite ovaj računar:",
                         "subHeading1": "započnete",
                         "subHeading2": "završetak",
                         "subHeading3": "koristite ovaj raspored za",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "Nije izabran nijedan dan"
                     },
                     "checkbox": "Automatsko podešavanje aktivnog vremena računara na osnovu vašeg korišćenja",
-                    "hyperlinkToGraph": "Kliknite da biste videli aktivnost i aktivno vreme računarske tabele",
+                    "hyperlinkToGraph": "Kliknite da biste videli vreme korišćenje i primenjeno aktivno vreme",
                     "subTitle": "Zakazivanje rada računara",
                     "automaticMode": "Automatski režim",
                     "manualMode": "Ručni režim",
@@ -1603,19 +1604,19 @@
                     "control3": "KONTROLE ZA TRACKPOINT",
                     "less": "MANJE"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "Pozadinsko osvetljenje tastature",
+					"description": {
+						"base": "Aktivno pozadinsko svetlo na tastaturi za lakše kucanje u mraku ili pri lošem osvetljenju. Takođe možete da promenite postavke pozadinskog svetla na tastaturi pritiskom tastera Fn+taster za razmak.",
+						"auto": "Aktivno pozadinsko svetlo na tastaturi za lakše kucanje u mraku ili pri lošem osvetljenju. Postavke pozadinskog svetla možete da promenite pritiskom tastera Fn+taster za razmak ili da ih podesite na \"Automatski\". Opcija \"Automatski\" automatski podešava pozadinsko svetlo na tastaturi u skladu sa ambijentalnim svetlom."
+					},
+					"level": {
+						"auto": "Automatski",
+						"low": "Nisko",
+						"high": "Visoko",
+						"off": "Isključeno"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1776,12 +1777,12 @@
             "superResolution": {
                 "heading": "Inteligentni mediji",
                 "title": "Poboljšavanje video rezolucije",
-                "desc": "<p><label>Ova funkcija poboljšava doživljaj video reprodukcije tako što poboljšava video rezoluciju. To je posebno korisno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label> Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Kada je omogućena, preporučuje se da računar povežete na napajanje naizmeničnom strujom.</label></p>",
-                "tooltip": "Funkcija funkcioniše samo u sledećim playerima: <br/> Windows Media player",
+                "desc": "<p><label>Ova funkcija poboljšava doživljaj video reprodukcije tako što poboljšava video rezoluciju. To je posebno korisno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Nemojte koristiti u režimu rada na jednosmernu struju. U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.</label></p>",
+                "tooltip": "Ova funkcija radi samo na:<br>Windows Media player",
                 "note": {
                     "description": "Ova funkcija ne radi kada:",
-                    "description1": "Računar nije povezan na napajanje naizmeničnom strujom i baterija je niža od 20%.",
-                    "description2": "Računar nije povezan na napajanje naizmeničnom strujom i omogućen je režim uštede baterije.",
+                    "description1": "Računar nije povezan na naizmeničnu struju.",
+                    "description2": "Omogućen je režim uštede baterije.",
                     "description3": "Temperatura procesora je previsoka."
                 }
             },
@@ -1938,7 +1939,7 @@
             "localRepositoryDatabaseException": "Baza podataka lokalnog spremišta nije pronađena ili je oštećena.",
             "networkInterruptedException": "Server za ažuriranje sistema trenutno nije dostupan. Pokušajte ponovo kasnije.",
             "helpCenterInvalidServerException": "Server za ažuriranje sistema je neispravan. Pokušajte ponovo kasnije.",
-            "catalogNotFoundException": "Nema pronađenih primenljivih ažuriranja za vaš sistem.",
+            "catalogNotFoundException": "Nema pronađenih primenljivih ažuriranja za vaš sistem jer nije pronađen katalog ažuriranja.",
             "catalogCrcErrorException": "Katalog za vas sistem se trenutno ažurira. Pokušajte ponovo kasnije.",
             "catalogErrorException": "Otkrivena je greška u katalogu ažuriranja za vaš sistem na serveru za ažuriranje sistema. Pokušajte ponovo kasnije.",
             "fileNotFoundException": "Datoteka nije pronađena."
@@ -2197,7 +2198,8 @@
                 "subtitle": "Postizanje sigurnosti",
                 "subtitleDescribe": "Povezana kućna bezbednost će vam poslati obaveštenje ako otkrije ranjivost u uređaju ili kućnoj mreži ili ako ste povezani sa potencijalno zlonamernom mrežom. Saznajte još više o povezanoj kućnoj bezbednosti <tag>ovde</tag>.",
                 "tryNow": "Isprobajte odmah",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Unesite kôd poziva",
@@ -2272,7 +2274,8 @@
             "getStarted1": "Kliknite iznad na dugme „Otvori SurfEasy“ da biste pokrenuli SurfEasy VPN.",
             "getStarted2": "Uključite VPN i pričekajte trenutak za potvrdu bezbedne veze.",
             "getStarted3": "Promenite region ili lokaciju ako želite i uživajte u bezbednom, privatnom umrežavanju.",
-            "poweredBySurfEasy": "Obezbeđuje SurfEasy"
+            "poweredBySurfEasy": "Obezbeđuje SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE UPRAVLJAČ LOZINKAMA",
@@ -2300,7 +2303,8 @@
             "allowsYou2": "Pratite postoje li vaše lične informacije na mračnom internetu",
             "allowsYou3": "Budite bezbedni na nebezbednim WiFi mrežama sa ugrađenim VPN-om",
             "allowsYou4": "Bezbedno delite lozinke bez njihovog otkrivanja",
-            "poweredByDashLane": "Obezbeđuje Dashlane"
+            "poweredByDashLane": "Obezbeđuje Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2801,6 +2805,8 @@
         "noteDownloadAvailable": "Napomena: Kada kliknete na dugme „Preuzmi“, možda ćete dobiti odziv operativnog sistema Windows da biste nam dozvolili da instaliramo softver na uređaju. Kada završite sa instalacijom, aplikacije će se automatski prikazati na radnoj površini ili meniju „Start“.<br /><br />Možete da zatvorite stranicu „Moj softver“ i da nastavite sa korišćenjem proizvoda Lenovo Vantage. Nemojte zatvarati Lenovo Vantage tokom instalacije.",
         "sizeText": "Veličina",
         "versionText": "Verzija",
+        "redemptionCode": "Kôd za otkup proizvoda:",
+        "redeemWebsite": "Preuzmite na veb lokaciji distributera",
         "softwareDescription": "Kliknite na „Preuzmi“ ispod kako biste preuzeli softver koji ste kupili zajedno sa uređajem. Ako u bilo kom trenutku treba ponovo da preuzmete softver, možete to da učinite tako što ćete kliknuti na dugme „Moj softver“ u meniju Vantage.",
         "title": "Moj softver",
         "loadingDescription": "Sačekajte da pripremimo listu softvera koji je bio uključen prilikom kupovine vašeg uređaja.",

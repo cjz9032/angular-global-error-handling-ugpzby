@@ -1,65 +1,74 @@
-<div class="vtr-widget-mcafee-metric" [ngClass]="{'m-top': showMetricButton}">
-  <div class="row align-items-center justify-content-center">
-      <div class="icon-check">
-            <fa-icon [icon]="['fas', 'check']"></fa-icon>
-      </div>
-      <div class="title col-8 px-0">{{'security.antivirus.mcafee.report' | translate}}</div>
-  </div>
-  <div class="divider"></div>
-  <div>
-      <div *ngIf="showMetricButton" class="row inner no-gutters">
-        <img class="logo col-2"
-        [src]=" '/assets/icons/SecurityAdvisor/Files_Scanned.svg' | svgInline | async" />
-        <div class="height-line"></div>
-        <div class="col-8 row justify-content-center align-items-center">
-          <vtr-ui-button
-              linkId="sa-av-button-startFileScan"
-              metricsEvent="itemClick"
-              metricsItem="startFileScan"
-              metricsParent="security.antivirus"
-              upperCaseLabel=false
-              btnHeight=true
-              [label]="'security.antivirus.mcafee.startFileScan' | translate"
-              (onClick)="common.launch()"></vtr-ui-button>
-        </div>
-      </div>
-      <div *ngIf="!showMetricButton">
-        <div class="row inner no-gutters">
-            <img class="logo col-2"
-            [src]=" '/assets/icons/SecurityAdvisor/Files_Scanned.svg' | svgInline | async" />
-            <div class="height-line"></div>
-            <div class="col-8 align-self-center">
-                <div class="number" [innerHTML]="metricsList[0]"></div>
-                <div class="subtitle" [innerHTML]="'security.antivirus.mcafee.fileScan' | translate"></div>
-            </div>
-        </div>
-        <div class="row inner no-gutters">
-            <img class="logo col-2"
-            [src]="'/assets/icons/SecurityAdvisor/Virus_White.svg' | svgInline | async" />
-            <div class="height-line"></div>
-            <div class="col-8 align-self-center">
-                <div class="number" [innerHTML]="metricsList[1]"></div>
-                <div class="subtitle" [innerHTML]="'security.antivirus.mcafee.Viruses' | translate"></div>
-            </div>
-        </div>
-        <div class="row inner no-gutters">
-            <img class="logo col-2"
-            [src]=" '/assets/icons/SecurityAdvisor/Hacker_Icon.svg' | svgInline | async" />
-            <div class="height-line"></div>
-            <div class="col-8 align-self-center">
-                <div class="number" [innerHTML]="metricsList[2]"></div>
-                <div class="subtitle" [innerHTML]="'security.antivirus.mcafee.blocked' | translate"></div>
-            </div>
-        </div>
-        <div class="row inner no-gutters">
-            <img class="logo col-2"
-            [src]=" '/assets/icons/SecurityAdvisor/Files_Shredded.svg' | svgInline | async" />
-            <div class="height-line"></div>
-            <div class="col-8 align-self-center">
-                <div class="number" [innerHTML]="metricsList[3]"></div>
-                <div class="subtitle"  [innerHTML]="'security.antivirus.mcafee.shredded' | translate"></div>
-            </div>
-        </div>
-      </div>
-  </div>
+<div class="vtr-widget-mcafee-metric"
+	[ngClass]="{'m-top': showMetricButton}">
+	<div class="row align-items-center justify-content-center">
+		<div class="icon-check">
+			<fa-icon [icon]="['fas', 'check']"></fa-icon>
+		</div>
+		<div class="title col-8 px-0">{{'security.antivirus.mcafee.report' | translate}}</div>
+	</div>
+	<div class="divider"></div>
+	<div>
+		<div *ngIf="showMetricButton"
+			class="row inner no-gutters">
+			<img class="logo col-2"
+				[src]=" '/assets/icons/SecurityAdvisor/Files_Scanned.svg' | svgInline | async" />
+			<div class="height-line"></div>
+			<div class="col-8 row justify-content-center align-items-center">
+				<vtr-ui-button linkId="sa-av-button-startFileScan"
+					metricsEvent="itemClick"
+					metricsItem="startFileScan"
+					metricsParent="security.antivirus"
+					upperCaseLabel=false
+					btnHeight=true
+					[label]="'security.antivirus.mcafee.startFileScan' | translate"
+					(onClick)="common.launch()"></vtr-ui-button>
+			</div>
+		</div>
+		<div *ngIf="!showMetricButton">
+			<div class="row inner no-gutters">
+				<img class="logo col-2"
+					[src]=" '/assets/icons/SecurityAdvisor/Files_Scanned.svg' | svgInline | async" />
+				<div class="height-line"></div>
+				<div class="col-8 align-self-center">
+					<div class="number"
+						[innerHTML]="metricsList[0]"></div>
+					<div class="subtitle"
+						[innerHTML]="'security.antivirus.mcafee.fileScan' | translate"></div>
+				</div>
+			</div>
+			<div class="row inner no-gutters">
+				<img class="logo col-2"
+					[src]="'/assets/icons/SecurityAdvisor/Virus_White.svg' | svgInline | async" />
+				<div class="height-line"></div>
+				<div class="col-8 align-self-center">
+					<div class="number"
+						[innerHTML]="metricsList[1]"></div>
+					<div class="subtitle"
+						[innerHTML]="'security.antivirus.mcafee.Viruses' | translate"></div>
+				</div>
+			</div>
+			<div class="row inner no-gutters">
+				<img class="logo col-2"
+					[src]=" '/assets/icons/SecurityAdvisor/Hacker_Icon.svg' | svgInline | async" />
+				<div class="height-line"></div>
+				<div class="col-8 align-self-center">
+					<div class="number"
+						[innerHTML]="metricsList[2]"></div>
+					<div class="subtitle"
+						[innerHTML]="'security.antivirus.mcafee.blocked' | translate"></div>
+				</div>
+			</div>
+			<div class="row inner no-gutters">
+				<img class="logo col-2"
+					[src]=" '/assets/icons/SecurityAdvisor/Files_Shredded.svg' | svgInline | async" />
+				<div class="height-line"></div>
+				<div class="col-8 align-self-center">
+					<div class="number"
+						[innerHTML]="metricsList[3]"></div>
+					<div class="subtitle"
+						[innerHTML]="'security.antivirus.mcafee.shredded' | translate"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

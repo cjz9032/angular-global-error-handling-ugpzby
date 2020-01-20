@@ -81,16 +81,14 @@
 											<textarea class="form-control"
 												spellcheck="false"
 												[(ngModel)]="url"
-												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.website.placeholder'
-										| translate"
+												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.website.placeholder' | translate"
 												name="url"
 												required></textarea>
 										</div>
 										<div class="col-12">
 											<div *ngIf="isUDFSetSuccessVisible"
 												class="select-text pt-3 udf-set-success">
-												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'
-										| translate}}
+												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'| translate}}
 											</div>
 											<div *ngIf="isUDFSetFailedVisible"
 												class="select-text pt-3 udf-set-failed">
@@ -140,18 +138,14 @@
 										<div class="col-12">
 											<div *ngIf="isUDFSetSuccessVisible"
 												class="select-text pt-3 udf-set-success">
-												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'
-										| translate}}
+												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage' | translate}}
 											</div>
 											<button id="ip-userdefined-key-applybtn"
 												attr.aria-label="ip-userdefined-key-applybtn"
 												type="submit"
 												class="button"
 												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
-												{{
-											'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate
-											}}
-
+												{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
 											</button>
 										</div>
 									</div>

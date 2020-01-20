@@ -512,7 +512,6 @@ export class PowerService {
 	}
 	// ------------- End DYTC 6.0 -------------------
 
-
 	// End Power smart settings
 
 	// ---------- start battery threshold settings
@@ -641,7 +640,6 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
-
 	public getIsAutonomicCapability(): Promise<boolean> {
 		try {
 			if (this.devicePowerThinkPad) {
@@ -682,6 +680,7 @@ export class PowerService {
 		}
 		return undefined;
 	}
+
 	public getIsPresenceDataSufficient(): Promise<boolean> {
 		if (this.devicePowerThinkPad) {
 			return this.devicePowerThinkPad.sectionSmartStandby.getIsPresenceDataSufficient();

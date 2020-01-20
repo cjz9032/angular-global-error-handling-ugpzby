@@ -28,8 +28,10 @@ export class DeviceService {
 	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
 	public machineInfo: any;
+	public showSearch = false;
 	public machineType: number;
 	private Windows: any;
+	showPrivacy: boolean;
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService,
@@ -45,13 +47,45 @@ export class DeviceService {
 			this.isShellAvailable = true;
 		}
 		this.initIsArm();
+		this.initshowPrivacy();
+		this.initShowSearch();
 	}
 
-	private initIsArm() {
+	private async initIsArm() {
 		this.isAndroid = this.androidService.isAndroid;
-		this.isArm = this.isAndroid;
-		if (this.Windows) {
-			this.isArm = this.Windows.ApplicationModel.Package.current.id.architecture.toString() === '5';
+		if (this.isAndroid) {
+			return true;
+		}
+		try {
+			if (this.isShellAvailable) {
+				const machineInfo = await this.getMachineInfo();
+				this.isArm = this.isAndroid || machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
+				return this.isArm;
+			}
+		} catch (error) {
+			this.logger.error('getIsARM' + error.message);
+			return this.isArm;
+		}
+	}
+
+	private initshowPrivacy() {
+		// set this.showPrivacy appropriately based on machineInfo data
+		if (this.hypSettings) {
+			this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
+				this.showPrivacy = (privacy === 'enabled');
+			}, (error) => {
+				this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
+			});
+		}
+	}
+
+	private initShowSearch() {
+		if (this.hypSettings) {
+			this.hypSettings.getFeatureSetting('FeatureSearch').then((searchFeature) => {
+				this.showSearch = ((searchFeature || '').toString() === 'true');
+			}, (error) => {
+				this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
+			});
 		}
 	}
 

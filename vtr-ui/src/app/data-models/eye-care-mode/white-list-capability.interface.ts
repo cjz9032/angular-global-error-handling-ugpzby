@@ -3,4 +3,4 @@
 // 	"NotAvailable": Support but the driver is uninstalled or disabled, hide the UI but do not reset data.
 // 	"Support": Support the feature, display the UI just as before.
 // }
-export type WhiteListCapability = 'NotSupport' | 'NotAvailable' | 'Support';
+export type WhiteListCapability = 'NotSupport' | 'NotAvaliable' | 'Support';

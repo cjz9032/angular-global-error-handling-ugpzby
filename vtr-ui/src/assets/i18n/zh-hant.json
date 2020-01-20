@@ -644,7 +644,8 @@
             "registered": "已註冊",
             "notRegistered": "未註冊",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -1142,10 +1143,10 @@
                 },
                 "smartStandby": {
                     "title": "智慧型待命",
-                    "description": "此功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
-                    "tooltip": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程或我們取得的電腦使用情形最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
+                    "description": "這個功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可體驗<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">新式待命</a>的快速回復。",
+                    "tooltip": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程或您的電腦使用情形最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
                     "timer": {
-                        "heading": "您一般使用您的電腦的時間",
+                        "heading": "您一般使用這部電腦的時間：",
                         "subHeading1": "開始",
                         "subHeading2": "結束",
                         "subHeading3": "將此排程用於",
@@ -1187,7 +1188,7 @@
                         "noDaySelected": "未選取日期"
                     },
                     "checkbox": "根據您的使用情形自動調整電腦的啟用時間",
-                    "hyperlinkToGraph": "按一下以查看您的計算機表格的活動和啟用時間",
+                    "hyperlinkToGraph": "按一下以查看使用情形和套用的啟用時間",
                     "subTitle": "排程您的電腦",
                     "automaticMode": "自動模式",
                     "manualMode": "手動模式",
@@ -1603,19 +1604,19 @@
                     "control3": "TRACKPOINT 控制項",
                     "less": "較少"
                 },
-                "backlight": {
-                    "title": "Keyboard backlight",
-                    "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
-                    }
-                }
+				"backlight": {
+					"title": "鍵盤背光",
+					"description": {
+						"base": "啟動鍵盤背光，以便在黑暗或光線不足的情況下打字。您也可以按下 Fn+空格鍵來變更鍵盤背光設定。",
+						"auto": "啟動鍵盤背光，以便在黑暗或光線不足的情況下打字。您可以按下 Fn+空格鍵來變更背光設定，或將它設定為「自動」。「自動」選項會根據周遭光線自動調整鍵盤背光。"
+					},
+					"level": {
+						"auto": "自動",
+						"low": "低",
+						"high": "高",
+						"off": "關閉"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -1776,12 +1777,12 @@
             "superResolution": {
                 "heading": "智慧型媒體",
                 "title": "視訊解析度提升",
-                "desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label> 此功能可能會影響電池續航力、電池溫度，並造成噪音。啟用時，建議您使用 AC 電源連接電腦。</label></p>",
-                "tooltip": "此功能僅適用於下列播放程式：<br/> Windows Media player",
+                "desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label>此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式下使用。否則，電力會消耗得更快，且電池壽命會變得更短。</label></p>",
+                "tooltip": "此功能僅適用於：<br>Windows Media player",
                 "note": {
                     "description": "此功能在下列情況中無法運作：",
-                    "description1": "電腦未連接到 AC 電源且電池電量低於 20％。",
-                    "description2": "電腦未連接到 AC 電源且已啟用省電功能模式。",
+                    "description1": "電腦未連接到 AC 電源。",
+                    "description2": "電池省電模式已啟用。",
                     "description3": "CPU 溫度過高。"
                 }
             },
@@ -1938,7 +1939,7 @@
             "localRepositoryDatabaseException": "找不到本端儲存庫的資料庫或是該資料庫已毀損。",
             "networkInterruptedException": "系統更新伺服器目前無法使用。請稍後重試。",
             "helpCenterInvalidServerException": "系統更新伺服器無效。請稍後重試。",
-            "catalogNotFoundException": "找不到適用於您系統的更新。",
+            "catalogNotFoundException": "由於找不到更新目錄，因此找不到適用於您系統的更新。",
             "catalogCrcErrorException": "目前正在更新您系統的目錄。請稍後重試。",
             "catalogErrorException": "在系統更新伺服器上偵測到您系統的更新目錄發生錯誤。請稍後重試。",
             "fileNotFoundException": "找不到檔案。"
@@ -2197,7 +2198,8 @@
                 "subtitle": "安心保障",
                 "subtitleDescribe": "如果連線家庭安全性偵測到裝置或家庭網路有漏洞，或是如果您連線至潛在的惡意網路，將會向您傳送警示。<tag>這裡</tag>還可進一步瞭解連線家庭安全性。",
                 "tryNow": "立即試用",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "輸入邀請代碼",
@@ -2272,7 +2274,8 @@
             "getStarted1": "按一下上方的「開啟 SurfEasy」按鈕以啟動 SurfEasy VPN。",
             "getStarted2": "開啟 VPN 並稍待片刻，確認連線的安全。",
             "getStarted3": "如有需要，請變更您的區域或位置，並享有安全的私人網路。",
-            "poweredBySurfEasy": "搭載 SurfEasy"
+            "poweredBySurfEasy": "搭載 SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 密碼管理程式",
@@ -2300,7 +2303,8 @@
             "allowsYou2": "監視暗網以保護您的個人資訊",
             "allowsYou3": "透過內建 VPN，在不安全的 WiFi 網路上保持安全",
             "allowsYou4": "在不顯示密碼的情況下安全地共用密碼",
-            "poweredByDashLane": "搭載 Dashlane"
+            "poweredByDashLane": "搭載 Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2801,6 +2805,8 @@
         "noteDownloadAvailable": "注意：按一下「下載」之後,便會出現來自 Windows 的提示,允許我們在您的裝置上安裝軟體。完成安裝後,您的應用程式將自動在桌面或「開始」功能表上顯示。<br /><br />您可以關閉「我的軟體」頁面,然後繼續使用 Lenovo Vantage。安裝期間請勿關閉 Lenovo Vantage。",
         "sizeText": "大小",
         "versionText": "版本",
+        "redemptionCode": "兌換碼：",
+        "redeemWebsite": "在供應商網站上兌換",
         "softwareDescription": "按一下下方的下載,以兌換購買裝置時隨附的軟體。如果您需要再次下載軟體,隨時按一下 Vantage 功能表中的「我的軟體」按鈕即可下載。",
         "title": "我的軟體",
         "loadingDescription": "請稍候,我們正在準備購買裝置時所附的軟體清單。",

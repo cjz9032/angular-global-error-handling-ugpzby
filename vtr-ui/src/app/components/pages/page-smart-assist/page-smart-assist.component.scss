@@ -1,5 +1,6 @@
 @import "../../../app.theme.scss";
 
+$fontsize_xs: 1.4rem;
 .vtr-page {
 	.vtr-page-content {
 		.vtr-page-left-column {
@@ -48,8 +49,11 @@
 				font-size: $fontsize_xs;
 				color: $shade_blue;
 			}
-			a {
-				color: $menu_hover;
+
+		a {
+			text-decoration: underline;
+			color: $menu_hover;
+			&:hover {
 				text-decoration: underline;
 				&:hover {
 					text-decoration: underline;
@@ -57,9 +61,9 @@
 
 				}
 			}
-			&.screen-lock-note {
-				// max-width: 64rem;
-			}
+			// &.screen-lock-note {
+			// 	// max-width: 64rem;
+			// }
 			&.auto-screen-off-note {
 				p {
 					color: $alt;
@@ -92,6 +96,28 @@
 				&:hover {
 					color: $highlight;
 				}
+			}
+		}
+	}
+	.card-body {
+		padding: 2rem 4rem;
+	}
+	.blur-1 {
+		opacity: 0.65;
+	}
+	.feature-note {
+		background-color: $shade_lightest;
+		border: 1px solid $shade_lighter;
+		width: 100%;
+		p {
+			font-size: $fontsize_xs;
+			color: $main_darker;
+		}
+		a {
+			text-decoration: underline;
+			color: $menu_hover;
+			&:hover {
+				text-decoration: underline;
 			}
 		}
 		::ng-deep .vtr-ui-rounded-rectangle-radio {
@@ -228,10 +254,10 @@
 			padding-left: 2rem;
 		}
 	}
-	.custom-control-input:disabled ~ .custom-control-label::before {
-		// background-color: $light-grey;
-		//border-color: $shade;
-	}
+	// .custom-control-input:disabled ~ .custom-control-label::before {
+	// 	// background-color: $light-grey;
+	// 	//border-color: $shade;
+	// }
 
 	.custom-control-input:disabled ~ .custom-control-label {
 		cursor: not-allowed;
@@ -309,7 +335,7 @@
 		margin-left: 2.5rem;
 		padding-top: 1.5rem;
 	}
-
+	}
 }
 
 .smart-assist-card {
