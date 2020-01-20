@@ -324,7 +324,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.initCameraSection();
 		this.getOLEDPowerControlCapability();
-		this.getPriorityControlCapability();
+		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		if (machineType === 1) {
+			this.getPriorityControlCapability();
+		} else {
+			this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
+		}
 		setTimeout(() => {
 			this.initEyecaremodeSettings();
 			this.startEyeCareMonitor();
