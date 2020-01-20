@@ -64,7 +64,7 @@ import { ModalNewFeatureTipComponent } from '../components/modal/modal-new-featu
 import { NewFeatureTipService } from '../services/new-feature-tip/new-feature-tip.service';
 import { HardwareDashboardModule } from './hardware-settings/hardware-dashboard.module';
 import { GamingDashboardModule } from './gaming-dashboard.module';
-import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
+//import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
 
 @NgModule({
 	declarations: [
@@ -76,8 +76,8 @@ import { ModalErrorMessageComponent } from '../components/modal/modal-error-mess
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
 		ModalNewFeatureTipComponent,
-		PageSettingsComponent,
-		ModalErrorMessageComponent
+		PageSettingsComponent
+		//ModalErrorMessageComponent
 	],
 	imports: [
 		BrowserModule,
@@ -134,8 +134,8 @@ import { ModalErrorMessageComponent } from '../components/modal/modal-error-mess
 		ModalDccDetailComponent,
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
-		ModalNewFeatureTipComponent,
-		ModalErrorMessageComponent
+		ModalNewFeatureTipComponent
+		//ModalErrorMessageComponent
 	],
 	bootstrap: [ AppComponent ],
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
