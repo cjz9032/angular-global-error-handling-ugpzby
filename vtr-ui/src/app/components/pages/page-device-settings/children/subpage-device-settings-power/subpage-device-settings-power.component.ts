@@ -439,7 +439,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.checkIsPowerPageAvailable(addLink, 'smartStandby');
 		if (addLink) {
 			const smartStandByObj = {
-				title: 'device.deviceSettings.power.smartStandby.title',
+				title: 'device.deviceSettings.power.smartStandby.sectionTitle',
 				path: 'smartStandby',
 				metricsItem: 'SmartStandby',
 				order: 2
