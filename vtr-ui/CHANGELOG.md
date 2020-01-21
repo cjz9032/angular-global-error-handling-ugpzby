@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.60](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.59...v1.2.60) (2020-01-21)
+
+
+### Features
+
+* **VAN-10543:** update remove eye care mode ([b507c6a](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/b507c6a))
+* **VAN-10543:** update remove eye care mode ([0c03a81](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/0c03a81))
+
+
+
 ## [1.2.59](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.58...v1.2.59) (2020-01-20)
 
 
