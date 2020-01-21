@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Strømmodus for fly",
-                        "description": "Beskytt flyets strømuttak ved å kontrollere systemets strømforbruk.Når Strømmodus for fly er aktivert, reduserer datamaskinen strømforbruket ved å begrense batteriladehastigheten og systemytelsen.",
+                        "description": "Denne funksjonen lar deg bruke strømuttaket på et fly der en bestemt strømgrense er gjeldende. I denne modusen reduseres datamaskinens strømforbruk til et sikkert nivå ved å begrense batteriets ladehastighet og datamaskinens ytelse.",
                         "checkBoxDesc": "Automatisk oppdagelse",
                         "note": "Hvis automatisk oppdaging er sjekket, slår datamaskinen automatisk på strømmodusen for fly når den registrerer at du er om bord i et fly og slå av den når du drar."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
                         "progressText2": "{{stage}} av {{stageNum}}: kalibrerer for lite batteristrøm",
-                        "progressText3": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
+                        "progressText3": "{{stage}} av {{stageNum}}: Kalibrerer til høy batteristrøm",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "Vennligst velg minst en dag.",
                     "days": {
                         "shortName": {
-                            "sun": "søn",
-                            "mon": "man",
-                            "tue": "tir",
-                            "wed": "ons",
-                            "thurs": "Tor",
-                            "fri": "fre",
-                            "sat": "lør",
-                            "thu": "Thu"
+                            "sun": "Søn",
+                            "mon": "Man",
+                            "tue": "Tirs",
+                            "wed": "Ons",
+                            "thurs": "Tors",
+                            "fri": "Fre",
+                            "sat": "Lør",
+                            "thu": "Tors"
                         },
                         "name": {
                             "sun": "søndag",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Opprett kjøreplan for datamaskinen",
                     "automaticMode": "Automatisk modus",
                     "manualMode": "Manuell modus",
-                    "subNote": "Datamaskinen din er satt i Modern Standby basert på bruken din.",
+                    "subNote": "Datamaskinen din er satt opp for raskere gjenopptakelse basert på bruk.",
                     "graph": {
                         "graph1Tittle": "Bruken av denne datamaskinen",
                         "graph2Tittle": "Brukt aktiv tid",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
                     "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen",
-                    "oldTooltipText": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad."
+                    "oldTooltipText": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "Bytte av Fn- og Ctrl-tasten",
                     "description": "Hvis du av vane trykket på Fn-tasten da du mente å trykke på Ctrl-tasten, kan du bytte funksjonen til de to tastene.",
                     "restartNote": "Hvis du bytter funksjon for to taster, må du starte datamaskinen på nytt. Er du sikker på at du vil starte på nytt?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Fn fungerer som Ctrl for ofte brukte tastekombinasjoner",
+                    "description2": "Fn-tasten fungerer som Ctrl-tasten for noen ofte brukte tastekombinasjoner. Funksjonen til Ctrl-tasten endres ikke.",
+                    "featureNote": "Denne funksjonen og funksjonen for bytte av Fn- og Ctrl-tasten kan ikke være aktivert samtidig. Hvis én er aktivert, deaktiveres den andre automatisk.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Fn-taster",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Ctrl-taster",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1581,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Gjør slik",
+                            "action1": "Velg alle",
+                            "action2": "Kopier",
+                            "action3": "Legg til nettside i mine favoritter",
+                            "action4": "Søk",
+                            "action5": "Søk og erstatt i Microsoft Word",
+                            "action6": "Juster venstre og høyre i Microsoft Word",
+                            "action7": "Avslutt (i støttede apper)",
+                            "action8": "Legge til understreking",
+                            "action9": "Lim inn",
+                            "action10": "Lukk (via app)",
+                            "action11": "Klipp ut",
+                            "action12": "Gjør om",
+                            "action13": "Angre"
                         }
                     }
                 },
@@ -1604,19 +1605,19 @@
                     "control3": "TRACKPOINT-KONTROLLER",
                     "less": "MINDRE"
                 },
-				"backlight": {
-					"title": "Bakgrunnslys for tastaturet",
-					"description": {
-						"base": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom.",
-						"auto": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom eller sette til Automatisk. Alternativet Automatisk justerer automatisk bakgrunnslyset for tastaturet i henhold til omgivelseslyset."
-					},
-					"level": {
-						"auto": "Auto",
-						"low": "Lav",
-						"high": "Høyt",
-						"off": "Av"
-					}
-				}
+                "backlight": {
+                    "title": "Bakgrunnslys for tastaturet",
+                    "description": {
+                        "base": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom.",
+                        "auto": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom eller sette til Automatisk. Alternativet Automatisk justerer automatisk bakgrunnslyset for tastaturet i henhold til omgivelseslyset."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Lav",
+                        "high": "Høyt",
+                        "off": "Av"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2376,7 +2377,7 @@
     "faq": {
         "footer": {
             "title": "Finner du ikke det du leter etter?",
-            "description": "Trenger du ekstra støtte? IKKE HESITERER Å KONTAKTE OSS VIA:",
+            "description": "Trenger du ytterligere støtte? Ikke nøl med å kontakte oss via:",
             "body": "Lenovo Community",
             "button": "GÅ TIL FORUM"
         },

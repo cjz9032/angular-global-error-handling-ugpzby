@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Mode d'alimentation pour avion",
-                        "description": "Protégez la prise avion en contrôlant la consommation d'énergie de votre système.Lorsque le mode d'alimentation pour avion est activé, l'ordinateur réduit la consommation d'énergie en limitant la vitesse de chargement de la batterie et les performances du système.",
+                        "description": "Cette fonction vous permet d'utiliser la prise d'alimentation secteur dans un avion où une limite de puissance électrique s'applique. Sous ce mode, la consommation d'énergie de votre ordinateur est réduite pour atteindre un niveau de sécurité en limitant la vitesse de chargement de la batterie et les performances de l'ordinateur.",
                         "checkBoxDesc": "Détection automatique",
                         "note": "Si la détection automatique est cochée, votre ordinateur passe automatiquement en mode d'alimentation pour avion dès qu'il détecte que vous embarquez dans un avion et le désactive quand vous le quittez."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
                         "progressText2": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie faible",
-                        "progressText3": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
+                        "progressText3": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie pleine",
                         "FCCText": "De {{before}} Wh à {{after}} Wh",
                         "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {
@@ -1171,7 +1171,7 @@
                             "thurs": "Jeudi",
                             "fri": "Vendredi",
                             "sat": "Samedi",
-                            "thu": "Thu"
+                            "thu": "Jeudi"
                         },
                         "name": {
                             "sun": "Dimanche",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Programmer votre ordinateur",
                     "automaticMode": "Mode Automatique",
                     "manualMode": "Mode Manuel",
-                    "subNote": "Votre ordinateur est programmé en Veille moderne en fonction de votre utilisation.",
+                    "subNote": "Votre ordinateur est programmé pour effectuer une reprise de veille plus rapide en fonction de l'utilisation.",
                     "graph": {
                         "graph1Tittle": "Utilisation de cet ordinateur",
                         "graph2Tittle": "Durée d'activité appliquée",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
                     "subTitle2": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur",
-                    "oldTooltipText": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs."
+                    "oldTooltipText": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "Permutation touches Fn et Ctrl",
                     "description": "Si vous appuyez habituellement sur la touche Fn pour utiliser la touche Ctrl, vous pouvez permuter les fonctions de ces deux touches.",
                     "restartNote": "La permutation de la fonction de deux touches nécessite le redémarrage de l'ordinateur, voulez-vous vraiment redémarrer ?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "La touche Fn fonctionne en tant que touche Ctrl pour les combinaisons de touches fréquemment utilisées",
+                    "description2": "La touche Fn fonctionne comme la touche Ctrl pour certaines combinaisons de touches fréquemment utilisées. La fonction de la touche Ctrl n'est pas modifiée.",
+                    "featureNote": "Cette fonction et l'inversion des touches Fn et Ctrl ne peuvent pas être activées en même temps. Si une des fonctions est activée, l'autre sera automatiquement désactivée.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Touches Fn",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Touches Ctrl",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1581,19 +1582,19 @@
                         },
                         "action": {
                             "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "action1": "Tout sélectionner",
+                            "action2": "Copier",
+                            "action3": "Ajouter une page Web à mes favoris",
+                            "action4": "Rechercher",
+                            "action5": "Rechercher et remplacer dans Microsoft Word",
+                            "action6": "Aligner le texte à gauche et à droite dans Microsoft Word",
+                            "action7": "Quitter (dans les applications prises en charge)",
+                            "action8": "Souligner",
+                            "action9": "Coller",
+                            "action10": "Fermer (par application)",
+                            "action11": "Couper",
+                            "action12": "Rétablir",
+                            "action13": "Défaire"
                         }
                     }
                 },
@@ -1604,19 +1605,19 @@
                     "control3": "PARAMÈTRES TRACKPOINT",
                     "less": "MOINS"
                 },
-				"backlight": {
-					"title": "Rétro-éclairage du clavier",
-					"description": {
-						"base": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez également modifier les paramètres de rétro-éclairage du clavier en appuyant sur la touche FN+espace.",
-						"auto": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez modifier les paramètres de rétro-éclairage en appuyant sur la touche FN+espace ou le paramétrer sur \"Auto\". L'option \"Auto\" règle automatiquement le rétro-éclairage du clavier en fonction de la lumière ambiante."
-					},
-					"level": {
-						"auto": "Auto",
-						"low": "Faible",
-						"high": "Elevée",
-						"off": "Désactivé"
-					}
-				}
+                "backlight": {
+                    "title": "Rétro-éclairage du clavier",
+                    "description": {
+                        "base": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez également modifier les paramètres de rétro-éclairage du clavier en appuyant sur la touche FN+espace.",
+                        "auto": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez modifier les paramètres de rétro-éclairage en appuyant sur la touche FN+espace ou le paramétrer sur \"Auto\". L'option \"Auto\" règle automatiquement le rétro-éclairage du clavier en fonction de la lumière ambiante."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Faible",
+                        "high": "Elevée",
+                        "off": "Désactivé"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2376,7 +2377,7 @@
     "faq": {
         "footer": {
             "title": "Vous ne trouvez pas ce que vous cherchez?",
-            "description": "BESOIN D'UN SUPPORT SUPPLÉMENTAIRE? N'HÉSITEZ PAS À NOUS CONTACTER VIA:",
+            "description": "Besoin d'un support supplémentaire ? N'hésitez pas à nous contacter via :",
             "body": "Communauté Lenovo",
             "button": "ALLEZ AU FORUM"
         },

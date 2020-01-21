@@ -329,7 +329,7 @@ export class ConfigService {
 			);
 			this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
 
-			if (!smartAssistCacheValue || !this.isSmartAssistAvailable) {
+			if (!smartAssistCacheValue) {
 				this.removeSmartAssistMenu(items);
 			}
 
@@ -414,7 +414,23 @@ export class ConfigService {
 		if (myDeviceItem) {
 			const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
 			if (!smartAssistItem) {
-				myDeviceItem.subitems.splice(3, 0, this.menuItems.find((item) => item.id === 'device').subitems.find((item) => item.id === 'smart-assist'));
+				myDeviceItem.subitems.splice(3, 0,
+					{
+						id: 'smart-assist',
+						label: 'common.menu.device.sub4',
+						path: 'smart-assist',
+						metricsEvent: 'itemClick',
+						metricsParent: 'navbar',
+						metricsItem: 'link.smartassist',
+						externallink: false,
+						routerLinkActiveOptions: {
+							exact: true
+						},
+						icon: null,
+						sMode: true,
+						subitems: []
+					}
+				);
 			}
 		}
 	}

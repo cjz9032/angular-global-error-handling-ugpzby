@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Napájecí schéma Letadlo",
-                        "description": "Chrání elektrickou zásuvku v letadle řízením spotřeby vašeho počítače.Je-li aktivní napájecí režim Letadlo, omezí počítač spotřebu elektrické energie zpomalením nabíjení baterie a snížením výkonu systému.",
+                        "description": "Tato funkce umožňuje používat elektrické zásuvky v letadlech, které dokážou dodávat jen omezené množství energie. Tento režim snižuje rychlost dobíjení baterie a výkon hardwaru, aby byla omezena spotřeba energie počítačem na bezpečnou úroveň.",
                         "checkBoxDesc": "Automatická detekce",
                         "note": "Je li zaškrtnuta automatická detekce, aktivuje počítač automaticky napájecí schéma Letadlo, když detekuje prostředí letadla a vypne jej, když prostředí letadla opustíte."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
                         "progressText2": "{{stage}} z {{stageNum}}: Kalibrace na nízký stav baterie",
-                        "progressText3": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
+                        "progressText3": "{{stage}} z {{stageNum}}: Kalibrace na vysoký stav baterie",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Před resetováním ukazatele stavu baterie nezapomeňte připojit počítač k napájení ze sítě. ",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "Vyberte prosím alespoň jeden den.",
                     "days": {
                         "shortName": {
-                            "sun": "neděle",
-                            "mon": "pondělí",
-                            "tue": "úterý",
-                            "wed": "středa",
-                            "thurs": "Čtvrtek",
-                            "fri": "pátek",
-                            "sat": "sobota",
-                            "thu": "Thu"
+                            "sun": "Ne",
+                            "mon": "Po",
+                            "tue": "Út",
+                            "wed": "St",
+                            "thurs": "Čt",
+                            "fri": "Pá",
+                            "sat": "So",
+                            "thu": "Čt"
                         },
                         "name": {
                             "sun": "neděle",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Plánování počítače",
                     "automaticMode": "Automatický režim",
                     "manualMode": "Ruční režim",
-                    "subNote": "Váš počítač je naplánován na přepnutí do moderního pohotovostního režimu na základě vašeho použití.",
+                    "subNote": "Na základě používání má počítač nastaveno rychlejší obnovování činnosti.",
                     "graph": {
                         "graph1Tittle": "Použití tohoto počítače",
                         "graph2Tittle": "Použitý aktivní čas",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění.",
                     "subTitle2": "Nastavte čas, kdy počítač obvykle používáte",
-                    "oldTooltipText": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným ZAČÁTKEM přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové rozmezí se optimalizuje na základě nastaveného plánu. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů."
+                    "oldTooltipText": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným ZAČÁTKEM přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové rozmezí se optimalizuje na základě nastaveného plánu. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "Záměna kláves Fn a Ctrl",
                     "description": "Pokud se vám stává, že místo klávesy Ctrl stisknete klávesu Fn, funkce obou kláves můžete zaměnit.",
                     "restartNote": "Záměna funkcí dvou kláves vyžaduje restart počítače. Opravdu chcete počítač restartovat?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "U často používaných kombinací kláves funguje klávesa Fn jako klávesa Ctrl",
+                    "description2": "U některých často používaných kombinací kláves funguje klávesa Fn jako klávesa Ctrl. Funkce klávesy Ctrl se nemění.",
+                    "featureNote": "Tuto funkci a funkci záměny klávesy Fn a Ctrl nelze mít zapnutou současně. V případě zapnutí jedné z nich se druhá automaticky vypne.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Klávesa Fn",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Klávesa Ctrl",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1581,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Akce",
+                            "action1": "Vybrat vše",
+                            "action2": "Kopírovat",
+                            "action3": "Přidat webovou stránku do složky Oblíbené",
+                            "action4": "Vyhledat",
+                            "action5": "Najít a zaměnit v aplikaci Microsoft Word",
+                            "action6": "Zarovnat vlevo a vpravo v aplikaci Microsoft Word",
+                            "action7": "Ukončit (v podporované aplikaci)",
+                            "action8": "Přidat podtržení",
+                            "action9": "Vložit",
+                            "action10": "Zavřít (dle aplikace)",
+                            "action11": "Vyjmout",
+                            "action12": "Znovu",
+                            "action13": "Zpět"
                         }
                     }
                 },
@@ -1604,19 +1605,19 @@
                     "control3": "OVLÁDÁNÍ TRACKPOINT",
                     "less": "MÉNĚ"
                 },
-				"backlight": {
-					"title": "Podsvícení klávesnice",
-					"description": {
-						"base": "Zapněte podsvícení klávesnice a usnadněte si tak psaní při špatném osvětlení nebo ve tmě. Nastavení podsvícení klávesnice můžete změnit stisknutím klávesy Fn+Space.",
-						"auto": "Zapněte podsvícení klávesnice a usnadněte si tak psaní při špatném osvětlení nebo ve tmě. Nastavení podsvícení klávesnice můžete změnit stisknutím klávesy Fn+Space nebo ho nastavit jako „Auto“. Volba „Auto“ automaticky nastaví podsvícení klávesnice podle okolního světla."
-					},
-					"level": {
-						"auto": "Automatické",
-						"low": "Nízká",
-						"high": "Vysoká",
-						"off": "Vypnuto"
-					}
-				}
+                "backlight": {
+                    "title": "Podsvícení klávesnice",
+                    "description": {
+                        "base": "Zapněte podsvícení klávesnice a usnadněte si tak psaní při špatném osvětlení nebo ve tmě. Nastavení podsvícení klávesnice můžete změnit stisknutím klávesy Fn+Space.",
+                        "auto": "Zapněte podsvícení klávesnice a usnadněte si tak psaní při špatném osvětlení nebo ve tmě. Nastavení podsvícení klávesnice můžete změnit stisknutím klávesy Fn+Space nebo ho nastavit jako „Auto“. Volba „Auto“ automaticky nastaví podsvícení klávesnice podle okolního světla."
+                    },
+                    "level": {
+                        "auto": "Automatické",
+                        "low": "Nízká",
+                        "high": "Vysoká",
+                        "off": "Vypnuto"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2376,7 +2377,7 @@
     "faq": {
         "footer": {
             "title": "Nenajdete to, co hledáte?",
-            "description": "POTŘEBUJÍ DODATEČNÁ PODPORA? NEZABEZPEČUJTE KONTAKTUJTE NÁS VIA:",
+            "description": "Potřebujete další podporu? Neváhejte nás kontaktovat prostřednictvím:",
             "body": "Společnost Lenovo",
             "button": "Jděte do fóra"
         },

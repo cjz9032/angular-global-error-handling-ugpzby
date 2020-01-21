@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Modalità alimentazione in aereo",
-                        "description": "Proteggere la presa elettrica CA aereo controllando il consumo di energia del sistema.Quando è abilitata la funzione Modalità alimentazione in aereo, il computer riduce il consumo di energia limitando la velocità di ricarica della batteria e le prestazioni del sistema.",
+                        "description": "Questa funzione consente di utilizzare la presa elettrica CA su un aereo su cui si applica un limite di alimentazione specifico. In questa modalità il consumo di energia del computer viene ridotto a un livello di sicurezza limitando tensione di carica della batteria e prestazioni del computer.",
                         "checkBoxDesc": "Rilevamento automatico",
                         "note": "Se è abilitato il Rilevamento automatico, il computer attiverà automaticamente Modalità alimentazione in aereo quando rileva un ambiente a bordo dell'aeromobile e la disattiverà quando si scende."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
                         "progressText2": "{{stage}} di {{stageNum}}: calibrazione per batteria scarica in corso",
-                        "progressText3": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
+                        "progressText3": "{{stage}} di {{stageNum}}: calibrazione per batteria carica in corso",
                         "FCCText": "Da {{before}} Wh a {{after}} Wh",
                         "note": "Nota: prima di reimpostare l'indicatore della batteria, assicurarsi di collegare il computer all'alimentazione CA. ",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "Si prega di selezionare almeno un giorno.",
                     "days": {
                         "shortName": {
-                            "sun": "Domenica",
-                            "mon": "Lunedi",
-                            "tue": "martedì",
-                            "wed": "mercoledì",
-                            "thurs": "giovedi",
-                            "fri": "Venerdì",
-                            "sat": "Sabato",
-                            "thu": "Thu"
+                            "sun": "Dom.",
+                            "mon": "Lun.",
+                            "tue": "Mar.",
+                            "wed": "Mer.",
+                            "thurs": "Gio.",
+                            "fri": "Ven.",
+                            "sat": "Sab.",
+                            "thu": "Gio."
                         },
                         "name": {
                             "sun": "Domenica",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Pianificazione del computer",
                     "automaticMode": "Modalità automatica",
                     "manualMode": "Modalità manuale",
-                    "subNote": "Il computer è pianificato per la modalità Standby moderno in base all'utilizzo.",
+                    "subNote": "È stato pianificato il ripristino rapido del computer in base all'utilizzo.",
                     "graph": {
                         "graph1Tittle": "Utilizzo di questo computer",
                         "graph2Tittle": "Tempo attivo applicato",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
                     "subTitle2": "Impostare l'ora in cui generalmente si utilizza il computer",
-                    "oldTooltipText": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Il periodo di tempo è ottimizzato in base al piano impostato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi."
+                    "oldTooltipText": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Il periodo di tempo è ottimizzato in base al piano impostato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "Scambio tasto Fn e Ctrl",
                     "description": "Se di solito si preme il tasto Fn quando invece si vuole premere il tasto Ctrl, è possibile scambiare le funzioni dei due tasti.",
                     "restartNote": "Per commutare la funzione di due tasti, è necessario riavviare il computer. Riavviare?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Fn funziona come Ctrl per le combinazioni di tasti più utilizzate",
+                    "description2": "Il tasto Fn funziona come il tasto Ctrl per alcune combinazioni di tasti più utilizzate. La funzione del tasto Ctrl non viene modificata.",
+                    "featureNote": "Questa funzione e la funzione di Scambio tasto Fn e Ctrl non possono essere attive contemporaneamente. Se una è abilitata, l'altra verrà disabilitata automaticamente.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Tasti Fn",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Tasti Ctrl",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1581,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Azione",
+                            "action1": "Seleziona tutto",
+                            "action2": "Copia",
+                            "action3": "Aggiungi pagina Web ai Preferiti",
+                            "action4": "Cerca",
+                            "action5": "Trova e sostituisci in Microsoft Word",
+                            "action6": "Allinea a sinistra e a destra in Microsoft Word",
+                            "action7": "Esci (nelle app supportate)",
+                            "action8": "Aggiungi sottolineatura",
+                            "action9": "Incolla",
+                            "action10": "Chiudi (per le app)",
+                            "action11": "Taglia",
+                            "action12": "Ripeti",
+                            "action13": "Annulla operazione"
                         }
                     }
                 },
@@ -1604,19 +1605,19 @@
                     "control3": "CONTROLLI TRACKPOINT",
                     "less": "MENO"
                 },
-				"backlight": {
-					"title": "Retroilluminazione tastiera",
-					"description": {
-						"base": "Attiva la retroilluminazione della tastiera per facilitare la digitazione in condizioni di scarsa illuminazione. È inoltre possibile modificare le impostazioni della retroilluminazione della tastiera premendo il tasto Fn+Barra spaziatrice.",
-						"auto": "Attiva la retroilluminazione della tastiera per facilitare la digitazione in condizioni di scarsa illuminazione. È inoltre possibile modificare le impostazioni della retroilluminazione premendo il tasto Fn+Barra spaziatrice o impostarla su \"Auto\". L'opzione \"Auto\" regola automaticamente la retroilluminazione della tastiera in base alla luce ambientale."
-					},
-					"level": {
-						"auto": "Automatico",
-						"low": "Basso",
-						"high": "Alto",
-						"off": "Disattivato"
-					}
-				}
+                "backlight": {
+                    "title": "Retroilluminazione tastiera",
+                    "description": {
+                        "base": "Attiva la retroilluminazione della tastiera per facilitare la digitazione in condizioni di scarsa illuminazione. È inoltre possibile modificare le impostazioni della retroilluminazione della tastiera premendo il tasto Fn+Barra spaziatrice.",
+                        "auto": "Attiva la retroilluminazione della tastiera per facilitare la digitazione in condizioni di scarsa illuminazione. È inoltre possibile modificare le impostazioni della retroilluminazione premendo il tasto Fn+Barra spaziatrice o impostarla su \"Auto\". L'opzione \"Auto\" regola automaticamente la retroilluminazione della tastiera in base alla luce ambientale."
+                    },
+                    "level": {
+                        "auto": "Automatico",
+                        "low": "Basso",
+                        "high": "Alto",
+                        "off": "Disattivato"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2376,7 +2377,7 @@
     "faq": {
         "footer": {
             "title": "Non hai trovato quello che cercavi?",
-            "description": "BISOGNO DI SUPPORTO SUPPLEMENTARE? NON ESITARE A CONTATTARCI VIA:",
+            "description": "È necessario un ulteriore supporto? Non esitare a contattarci attraverso:",
             "body": "Comunità Lenovo",
             "button": "VAI AL FORUM"
         },

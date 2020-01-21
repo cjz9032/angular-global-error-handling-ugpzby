@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "飞行电源模式",
-                        "description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。",
+                        "description": "此功能让您可以在有一定功率限制的飞机上使用交流电源插座。在此模式下，通过限制电池充电速度和计算机性能，计算机功耗将降低到一个安全的级别。",
                         "checkBoxDesc": "自动检测",
                         "note": "如果已勾选自动检测功能，计算机将在其检测到机上环境后自动打开飞行电源模式，并在您离开时将其关闭。"
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为完全充电",
                         "progressText2": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为放电到低电量",
-                        "progressText3": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为充电到高电量",
+                        "progressText3": "{{stageNum}} 的 {{stage}}：校准为电池电量充足",
                         "FCCText": "从 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重置电池电量表之前，请确保将计算机连接到交流电源。",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "请至少选择一天。",
                     "days": {
                         "shortName": {
-                            "sun": "星期日",
-                            "mon": "星期一",
-                            "tue": "星期二",
-                            "wed": "星期三",
-                            "thurs": "星期四",
-                            "fri": "星期五",
-                            "sat": "星期六",
-                            "thu": "Thu"
+                            "sun": "周日",
+                            "mon": "周一",
+                            "tue": "周二",
+                            "wed": "周三",
+                            "thurs": "周四",
+                            "fri": "周五",
+                            "sat": "周六",
+                            "thu": "周四"
                         },
                         "name": {
                             "sun": "星期日",
@@ -1192,7 +1192,7 @@
                     "subTitle": "安排您的计算机",
                     "automaticMode": "自动模式",
                     "manualMode": "手动模式",
-                    "subNote": "根据您的使用情况将您的计算机安排为现代待机模式。",
+                    "subNote": "根据使用情况来安排计算机进行更快的恢复。",
                     "graph": {
                         "graph1Tittle": "此电脑的使用情况",
                         "graph2Tittle": "应用的活动时间",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
                     "subTitle2": "设置通常使用此计算机的时间",
-                    "oldTooltipText": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。"
+                    "oldTooltipText": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "互换 Fn 键和 Ctrl 键",
                     "description": "如果当您想要按 Ctrl 键时却习惯按下 Fn 键，则您可以互换这两个键的功能。",
                     "restartNote": "交换两个键的功能需要重新启动计算机，确定要重新启动吗？",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Fn 可以作为常用组合键的 Ctrl",
+                    "description2": "Fn 键可以作为一些常用组合键的 Ctrl 键。Ctrl 键的功能不变。",
+                    "featureNote": "此功能与 Fn 键和 Ctrl 键互换功能不能同时开启。如果开启其中一个功能，则将自动关闭另一个功能。",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Fn 键",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Ctrl 键",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1581,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "操作",
+                            "action1": "全选",
+                            "action2": "复制",
+                            "action3": "将 Web 页面添加到收藏夹",
+                            "action4": "搜索",
+                            "action5": "在 Microsoft Word 中查找并替换",
+                            "action6": "在 Microsoft Word 中靠左靠右对齐",
+                            "action7": "退出（在支持的应用中）",
+                            "action8": "添加下划线",
+                            "action9": "粘贴",
+                            "action10": "关闭（单个应用）",
+                            "action11": "剪切",
+                            "action12": "重做",
+                            "action13": "撤销"
                         }
                     }
                 },
@@ -1604,19 +1605,19 @@
                     "control3": "TRACKPOINT 控制",
                     "less": "更少"
                 },
-				"backlight": {
-					"title": "键盘背光",
-					"description": {
-						"base": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn+空格键更改键盘背光设置。",
-						"auto": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn+空格键更改键盘背光设置，或将其设置为“自动”。“自动”选项会根据周围环境光线自动调整键盘背光。"
-					},
-					"level": {
-						"auto": "自动",
-						"low": "低",
-						"high": "高",
-						"off": "关闭"
-					}
-				}
+                "backlight": {
+                    "title": "键盘背光",
+                    "description": {
+                        "base": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn+空格键更改键盘背光设置。",
+                        "auto": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn+空格键更改键盘背光设置，或将其设置为“自动”。“自动”选项会根据周围环境光线自动调整键盘背光。"
+                    },
+                    "level": {
+                        "auto": "自动",
+                        "low": "低",
+                        "high": "高",
+                        "off": "关闭"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2377,7 +2378,7 @@
         "pageTitle": "支持细节",
         "footer": {
             "title": "没找到所需信息？",
-            "description": "需要更多支持吗？欢迎通过以下方式联系我们：​",
+            "description": "需要更多支持吗？欢迎通过以下方式联系我们：",
             "body": "Lenovo 社区",
             "button": "访问论坛"
         },

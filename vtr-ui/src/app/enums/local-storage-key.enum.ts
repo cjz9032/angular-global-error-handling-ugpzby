@@ -224,5 +224,6 @@ export enum LocalStorageKey {
 	BatteryCondition = '[LocalStorageKey] batteryCondition',
 
 	// UPE
-	UPEChannelTags = '[LocalStorageKey] UPEChannelTags'
+	UPEChannelTags = '[LocalStorageKey] UPEChannelTags',
+	PriorityControlCapability = '[LocalStorageKey] PriorityControlCapability'
 }
