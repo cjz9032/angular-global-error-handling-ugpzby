@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
 
-xdescribe('UiGamingDriverPopupComponent', () => {
+describe('UiGamingDriverPopupComponent', () => {
 	let component: UiGamingDriverPopupComponent;
 	let fixture: ComponentFixture<UiGamingDriverPopupComponent>;
 	let router = { navigate: jasmine.createSpy('navigate') }
