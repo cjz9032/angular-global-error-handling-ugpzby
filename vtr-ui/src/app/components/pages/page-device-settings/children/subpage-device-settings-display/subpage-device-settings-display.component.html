@@ -231,7 +231,7 @@
 
 
 							<!-- Display Priority Control -->
-							<li class="pt-3">
+							<li class="pt-3" *ngIf="displayPriorityModal.capability">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.displayPriority.title' | translate"
 									[caption]="'device.deviceSettings.displayCamera.display.displayPriority.description' | translate"
@@ -247,10 +247,11 @@
 											[radioId]="'radioDisplayPriority' + option.name"
 											[group]="displayPriorityRadioGroup"
 											[label]="option.label | translate"
+											[processLabel]="false"
 											[theme]="'white'"
 											[value]='option.name'
 											[checked]="option.name === displayPriorityModal.selectedValue"
-											(optionChange)="setDisplayPriorityCapability(option.name)"
+											(optionChange)="setPriorityControlSetting(option.name)"
 											[processIcon]="true"
 											[textId]="'myDevice-settings-display-priority-control'"
 											[hideIcon]="true"
