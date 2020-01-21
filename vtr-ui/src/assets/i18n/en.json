@@ -1338,7 +1338,8 @@
                         "note": {
                             "title": "Note",
                             "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
-                        }
+                        },
+						"tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "oledPowerSettings": {
                         "title": "OLED Power Settings",
