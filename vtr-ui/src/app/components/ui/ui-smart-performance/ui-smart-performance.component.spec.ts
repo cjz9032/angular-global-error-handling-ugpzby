@@ -37,24 +37,39 @@ fdescribe('UiSmartPerformanceComponent', () => {
 
 		// it('should test changeScanStatus ', () => {
 		// 	const { fixture, component } = setup();
-		// 	spyOn(component, 'changeScanStatus');
-			
-		// 	fixture.detectChanges();
+		// 	// spyOn(component, 'changeScanStatus');
         //     component.changeScanStatus();
+		// 	fixture.detectChanges();
 		// 	expect(component.changeScanStatus).toHaveBeenCalled();
         // });
         
         it('should test changeScanStatus ', () => {
             const { fixture, component } = setup();
-            spyOn(component, 'changeScanStatus');
-            
-            fixture.detectChanges();
-            component.changeScanStatus();
-            expect(component.changeScanStatus).toHaveBeenCalled();
-        });
+            // spyOn(component, 'changeScanStatus');
+            let $event = {
+				rating: 4,
+				tune: 15,
+				boost: 50,
+				secure: 12,
+			}
+			component.changeScanStatus($event);
+			expect(component.rating).toEqual($event.rating)
+			expect(component.tune).toEqual($event.tune)
+			expect(component.boost).toEqual($event.boost)
+			expect(component.secure).toEqual($event.secure)
+            // fixture.detectChanges();
+            // expect(component.changeScanStatus).toHaveBeenCalled();
+		});
+		
+		it('should call changeScanEvent', () => {
+			const { fixture, component } = setup();
+			component.changeScanEvent()
+			expect(component.isScanning).toEqual(true)
+		})
         
         it('#ScanNow should call', () => {
-            const { fixture, component, smartService } = setup();
+			const { fixture, component, smartService } = setup();
+			component.smartPerformanceService.isShellAvailable = true;
             spyOn(smartService, 'getReadiness').and.returnValue(Promise.resolve(true));
             fixture.detectChanges();
             component.ScanNow();

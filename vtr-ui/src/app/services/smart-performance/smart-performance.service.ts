@@ -6,7 +6,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
     providedIn: 'root'
 })
 export class SmartPerformanceService {
-    private getSmartPerformance: any;
+    getSmartPerformance: any;
     public isShellAvailable = false;
     constructor(shellService: VantageShellService) {
         this.getSmartPerformance = shellService.getSmartPerformance();
