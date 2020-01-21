@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
                     "subTitle2": "Ange vilken tid du använder datorn mest",
-                    "oldTooltipText": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda START tiden och i viloläge när den inte har använts under en viss tid på batterikraft. Denna tidsperiod optimeras utifrån schemat du har angett. Datorn övergår från viloläge till modernt vänteläge endast på schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad."
+                    "oldTooltipText": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda START tiden och i viloläge när den inte har använts under en viss tid på batterikraft. Denna tidsperiod optimeras utifrån schemat du har angett. Datorn övergår från viloläge till modernt vänteläge endast på schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {

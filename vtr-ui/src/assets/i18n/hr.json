@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja vremena brzog pokretanja tijekom rada s većim opterećenjem.",
                     "subTitle2": "Postavite vrijeme kada obično koristite računalo",
-                    "oldTooltipText": "Kad je omogućeno Pametno stanje pripravnosti, vaše se računalo prebacuje na Suvremeno stanje pripravnosti prije zakazanog vremena POKRETANJA i prelazi u hibernaciju nakon što je određeno vrijeme neaktivno na baterijskom napajanju. To je vrijeme optimizirano na temelju rasporeda koji ste postavili. Računalo će se prebaciti iz hibernacije u moderno stanje mirovanja samo tijekom zakazanih dana i neće se prebaciti kada nije aktivno tijekom uzastopnih zakazanih dana."
+                    "oldTooltipText": "Kad je omogućeno Pametno stanje pripravnosti, vaše se računalo prebacuje na Suvremeno stanje pripravnosti prije zakazanog vremena POKRETANJA i prelazi u hibernaciju nakon što je određeno vrijeme neaktivno na baterijskom napajanju. To je vrijeme optimizirano na temelju rasporeda koji ste postavili. Računalo će se prebaciti iz hibernacije u moderno stanje mirovanja samo tijekom zakazanih dana i neće se prebaciti kada nije aktivno tijekom uzastopnih zakazanih dana.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {

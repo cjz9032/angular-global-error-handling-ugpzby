@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
                     "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen",
-                    "oldTooltipText": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad."
+                    "oldTooltipText": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
