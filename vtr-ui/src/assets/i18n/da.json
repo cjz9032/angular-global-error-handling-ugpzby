@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
                     "subTitle2": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
-                    "oldTooltipText": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden."
+                    "oldTooltipText": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {

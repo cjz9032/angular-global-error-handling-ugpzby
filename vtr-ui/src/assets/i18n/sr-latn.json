@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Ova funkcija zakazuje optimizaciju štednje energije računara tokom časova neaktivnosti bez žrtvovanja vremena bryog pokretanja tokom časova intenzivnijeg korišćenja.",
                     "subTitle2": "Podesite vreme kada obično koristite ovaj računar",
-                    "oldTooltipText": "Kad je omogućena funkcija Pametno vreme pripravnosti, računar se prebacuje na funkciju Moderno vreme pripravnosti pre zakazanog vremena POČETKA i ulazi u hibernaciju nakon što neko vreme bude neaktivan a napaja se na bateriju. Taj vremenski period je optimizovan na osnovu rasporeda koji ste podesili. Računar se prebacuje iy stanja hibernacije u moderno stanje pripravnosti samo tokom zakazanih dana, a ne prebacuje se kad je neaktivan tokom uzastopnih zakazanih dana."
+                    "oldTooltipText": "Kad je omogućena funkcija Pametno vreme pripravnosti, računar se prebacuje na funkciju Moderno vreme pripravnosti pre zakazanog vremena POČETKA i ulazi u hibernaciju nakon što neko vreme bude neaktivan a napaja se na bateriju. Taj vremenski period je optimizovan na osnovu rasporeda koji ste podesili. Računar se prebacuje iy stanja hibernacije u moderno stanje pripravnosti samo tokom zakazanih dana, a ne prebacuje se kad je neaktivan tokom uzastopnih zakazanih dana.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {

@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
                     "subTitle2": "Nastavte čas, v ktorom zvyčajne používate počítač",
-                    "oldTooltipText": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie sa optimalizuje podľa vami nastaveného plánu. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie keď sa počas nasledujúcich plánovaných dní nevyužíva."
+                    "oldTooltipText": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie sa optimalizuje podľa vami nastaveného plánu. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie keď sa počas nasledujúcich plánovaných dní nevyužíva.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {

@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
                     "subTitle2": "Impostare l'ora in cui generalmente si utilizza il computer",
-                    "oldTooltipText": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Il periodo di tempo è ottimizzato in base al piano impostato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi."
+                    "oldTooltipText": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Il periodo di tempo è ottimizzato in base al piano impostato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {

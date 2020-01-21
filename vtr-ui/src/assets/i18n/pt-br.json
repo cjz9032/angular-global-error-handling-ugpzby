@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Esse recurso programa o computador para otimizar a economia de carga da bateria durante horas ociosas sem prejudicar o tempo do início rápido durantes horas de maior uso.",
                     "subTitle2": "Defina a hora em que você geralmente usa este computador",
-                    "oldTooltipText": "Quando a Suspensão inteligente estiver ativada, o computador alternará para a Suspensão moderna antes da hora de INÍCIO programada e entrará no modo de hibernação depois que estiver inativo por um certo tempo na carga da bateria. O tempo será otimizado com base no planejamento que você definir. O computador alterna do modo de hibernação para a Suspensão moderna apenas nos dias programados e não alterna quando estiver inativo por dias programados consecutivos."
+                    "oldTooltipText": "Quando a Suspensão inteligente estiver ativada, o computador alternará para a Suspensão moderna antes da hora de INÍCIO programada e entrará no modo de hibernação depois que estiver inativo por um certo tempo na carga da bateria. O tempo será otimizado com base no planejamento que você definir. O computador alterna do modo de hibernação para a Suspensão moderna apenas nos dias programados e não alterna quando estiver inativo por dias programados consecutivos.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
