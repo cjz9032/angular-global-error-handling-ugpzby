@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Hochfahren bei intensiverer Nutzung beeinträchtigt wird.",
                     "subTitle2": "Typische Nutzungszeiten für diesen Computer festlegen",
-                    "oldTooltipText": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird auf Grundlage des von Ihnen festgelegten Zeitplans optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist."
+                    "oldTooltipText": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird auf Grundlage des von Ihnen festgelegten Zeitplans optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {

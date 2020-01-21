@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
                     "subTitle2": "Nastavite uro, ko običajno uporabljate ta računalnik",
-                    "oldTooltipText": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na urnik, ki ga nastavite. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni."
+                    "oldTooltipText": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na urnik, ki ga nastavite. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {

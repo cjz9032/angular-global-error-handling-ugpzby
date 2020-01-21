@@ -329,7 +329,7 @@ export class ConfigService {
 			);
 			this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
 
-			if (!smartAssistCacheValue || !this.isSmartAssistAvailable) {
+			if (!smartAssistCacheValue) {
 				this.removeSmartAssistMenu(items);
 			}
 

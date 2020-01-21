@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de opstarttijd snel bij zwaarder gebruik.",
                     "subTitle2": "Stel de tijd in waarop u deze computer gewoonlijk gebruikt",
-                    "oldTooltipText": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen."
+                    "oldTooltipText": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
