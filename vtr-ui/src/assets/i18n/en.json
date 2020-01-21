@@ -1054,6 +1054,7 @@
                     }
                 },
                 "smartStandby": {
+                    "sectionTitle": "Standby settings",
                     "title": "Smart standby",
                     "description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> during hours of heavier use.",
                     "tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set, or your computer usage. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
@@ -1606,7 +1607,7 @@
                             "action7": "Quit (in supported app)",
                             "action8": "Add underline",
                             "action9": "Paste",
-                            "action10": "close (per app)",
+                            "action10": "Close (per app)",
                             "action11": "Cut",
                             "action12": "Redo",
                             "action13": "Undo"
@@ -1780,12 +1781,12 @@
             "superResolution": {
                 "heading": "Intelligent Media",
                 "title": "Video Resolution Upscaling",
-                "desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution.It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label> This function might impact the battery life,battery temperature,and cause noises.When enabled,it is recommended that you connect your computer with ac power.</label></p>",
-                "tooltip": "This feature works only on the following players: <br/> Windows Media player",
+                "desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution. It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label>This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode. Otherwise, it will speed up the power consumption and shorten the battery life.</label></p>",
+                "tooltip": "The feature works only on:<br>Windows Media player",
                 "note": {
                     "description": "The feature does not work when:",
-                    "description1": "The computer is not connected to ac power and the battery power is lower than 20%.",
-                    "description2": "The computer is not connected to ac power and the battery saver mode is enabled.",
+                    "description1": "The computer is not connected to ac power.",
+                    "description2": "The Battery saving mode is enabled.",
                     "description3": "The CPU temperature is too high."
                 }
             },

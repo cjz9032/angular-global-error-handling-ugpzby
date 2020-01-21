@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Modo de energía avión",
-                        "description": "Proteja la toma de aliment. de CA del avión controlando el consumo de energía de su sist.Cuando está habilitada la modalidad de energía Avión, el sistema reduce el consumo de energía limitando la frecuencia de carga de la batería y el rendimiento del sistema.",
+                        "description": "Esta característica le permite utilizar la toma de alimentación de CA en un avión donde se aplica un límite de energía determinado. En este modo, el consumo de energía de su equipo se reduce a un nivel seguro, limitando la frecuencia de carga de la batería y el rendimiento del equipo.",
                         "checkBoxDesc": "Autodetección",
                         "note": "Si se la detección está marcada, su sistema se encenderá automáticamente en la modalidad de energía Avión cuando detecte que está en un entorno a bordo de un avión y la desactivará cuando salga de ese entorno."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} de {{stageNum}}: Calibración a carga completa",
                         "progressText2": "{{stage}} de {{stageNum}}: Calibración a energía de batería baja",
-                        "progressText3": "{{stage}} de {{stageNum}}: Calibración a carga completa",
+                        "progressText3": "{{stage}} de {{stageNum}}: Calibración a energía de batería alta",
                         "FCCText": "De {{before}} Wh a {{after}} Wh",
                         "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {
@@ -1171,7 +1171,7 @@
                             "thurs": "Jueves",
                             "fri": "Viernes",
                             "sat": "Sábado",
-                            "thu": "Thu"
+                            "thu": "Jueves"
                         },
                         "name": {
                             "sun": "Domingo",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Programar su equipo",
                     "automaticMode": "Modalidad automática",
                     "manualMode": "Modalidad manual",
-                    "subNote": "El sistema está programado en Espera moderna según su uso.",
+                    "subNote": "El sistema está programado para una reanudación más rápida según su uso.",
                     "graph": {
                         "graph1Tittle": "Uso de este sistema",
                         "graph2Tittle": "Tiempo activo aplicado",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
                     "subTitle2": "Establezca los horarios en los que normalmente utiliza este equipo",
-                    "oldTooltipText": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo se optimiza de acuerdo con su planificación establecida. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos."
+                    "oldTooltipText": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo se optimiza de acuerdo con su planificación establecida. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "Cambio de teclas Fn y Ctrl",
                     "description": "Si normalmente presionaba la tecla Fn al intentar presionar la tecla Ctrl, you puede intercambiar las funciones de ambas teclas.",
                     "restartNote": "Para intercambiar la función de dos claves es necesario reiniciar el sistema. ¿Está seguro de que desea reiniciarlo?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Fn funciona como Ctrl para combinaciones de teclas de uso frecuente",
+                    "description2": "La tecla Fn funciona como la tecla Ctrl para algunas combinaciones de teclas de uso frecuente. La función de la tecla Ctrl no cambia.",
+                    "featureNote": "Esta función y la tecla Fn y la función de intercambio de teclas Ctrl no pueden estar habilitadas al mismo tiempo. Si una está encendida, la otra se apagará automáticamente.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Teclas Fn",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Teclas Ctrl",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1581,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Acción",
+                            "action1": "Seleccionar todos",
+                            "action2": "Copiar",
+                            "action3": "Agregar la página web a mis favoritos",
+                            "action4": "Buscar",
+                            "action5": "Buscar y reemplazar en Microsoft Word",
+                            "action6": "Alinear izquierda y derecha en Microsoft Word",
+                            "action7": "Salir (en aplicaciones admitidas)",
+                            "action8": "Agregar subrayado",
+                            "action9": "Pegar",
+                            "action10": "Cerrar (por aplicación)",
+                            "action11": "Cortar",
+                            "action12": "Rehacer",
+                            "action13": "Deshacer"
                         }
                     }
                 },
@@ -1605,16 +1606,16 @@
                     "less": "MENOS"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Retroiluminación del teclado",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Active la retroiluminación del teclado para facilitar la escritura en una condición de luz oscura o deficiente. También puede cambiar los valores de la iluminación posterior pulsando la tecla Fn+barra espaciadora.",
+                        "auto": "Active la retroiluminación del teclado para facilitar la escritura en una condición de luz oscura o deficiente. Puede cambiar los valores de la iluminación posterior pulsando la tecla Fn+barra espaciadora o configurándolo en “Auto”. La opción “Auto” ajusta automáticamente la iluminación posterior del teclado según la luz ambiental."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automático",
+                        "low": "Baja",
+                        "high": "Alto",
+                        "off": "Apagado"
                     }
                 }
             }
@@ -1777,12 +1778,12 @@
             "superResolution": {
                 "heading": "Medios inteligentes",
                 "title": "Escalado de resolución de video",
-                "desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video mejorando la resolution de video. Funciona especialmente cuando el video tiene una resolución baja.</label></p> <p style='margin-top:4px;'><label> Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. Cuando está habilitada, se recomienda que conecte el sistema a la alimentación de CA.</label></p>",
-                "tooltip": "La característica solo funciona en los siguientes reproductores: <br/> Windows Media player",
+                "desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video mejorando la resolution de video. Funciona especialmente cuando el video tiene una resolución baja.</label></p> <p style='margin-top:4px;'><label>Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. No lo utilice en la modalidad de CC. De lo contrario, se acelerará el consumo de energía y se acortará la vida de la batería.</label></p>",
+                "tooltip": "La característica solo funciona en:<br>Windows Media player",
                 "note": {
                     "description": "Esta característica no funciona cuando;",
-                    "description1": "El sistema no está conectado a la alimentación de CA y la energía de la batería es inferior al 20 %.",
-                    "description2": "El sistema no está conectado a la alimentación de CA y el modo de ahorro de energía de la batería está habilitado.",
+                    "description1": "El sistema no está conectado a la alimentación de CA.",
+                    "description2": "El modo de ahorro de batería está habilitado.",
                     "description3": "La temperatura de la CPU es demasiado alta."
                 }
             },
@@ -2376,7 +2377,7 @@
     "faq": {
         "footer": {
             "title": "¿No encuentras lo que buscas?",
-            "description": "¿NECESITA APOYO ADICIONAL? NO DUDESE CONTACTARNOS A TRAVÉS DE:",
+            "description": "¿Necesita soporte adicional? No dude en ponerse en contacto con nosotros mediante:",
             "body": "Comunidad de Lenovo",
             "button": "Ir al foro"
         },

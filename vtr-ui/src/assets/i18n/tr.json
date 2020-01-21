@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Uçak Güç Kipi",
-                        "description": "Sisteminizin güç tüketimini denetleyerek uçak AC güç çıkışını koruyun.Uçak Güç Kipi etkinleştirildiğinde bilgisayar, pil şarj oranını ve sistem performansını sınırlayarak güç tüketimini azaltır.",
+                        "description": "Bu özellik, belirli bir güç sınırının geçerli olduğu bir uçaktaki AC güç çıkışını kullanabilmenizi sağlar. Bu kipte, pil şarj oranı ve bilgisayar performansı sınırlanarak bilgisayarınızın pil tüketimi güvenli bir düzeye düşürülür.",
                         "checkBoxDesc": "Otomatik algılama",
                         "note": "Otomatik algılama işaretlenirse bilgisayarınız uçak kabini ortamını algıladığında otomatik olarak Uçak güç kipini açar ve kullanmadığınızda kapanır."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
                         "progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
-                        "progressText3": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
+                        "progressText3": "{{stage}} / {{stageNum}}: Yüksek pil gücü için kalibre ediliyor",
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "Lütfen en az bir gün seçin.",
                     "days": {
                         "shortName": {
-                            "sun": "Pazar",
-                            "mon": "Pazartesi",
-                            "tue": "Salı",
-                            "wed": "Çarşamba",
-                            "thurs": "Perşembe",
-                            "fri": "Cuma",
-                            "sat": "Cumartesi",
-                            "thu": "Thu"
+                            "sun": "Paz",
+                            "mon": "Pzt",
+                            "tue": "Sal",
+                            "wed": "Çar",
+                            "thurs": "Per",
+                            "fri": "Cum",
+                            "sat": "Cmt",
+                            "thu": "Per"
                         },
                         "name": {
                             "sun": "Pazar",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Bilgisayarınızı zamanlama",
                     "automaticMode": "Otomatik kip",
                     "manualMode": "Manuel kip",
-                    "subNote": "Bilgisayarınız, kullanımınıza dayalı olarak Modern Bekleme Durumu kipine ayarlanmıştır.",
+                    "subNote": "Kullanıma bağlı olarak, bilgisayarınız beklemeden daha hızlı çıkacak şekilde zamanlanır.",
                     "graph": {
                         "graph1Tittle": "Bu bilgisayarın kullanımı",
                         "graph2Tittle": "Uygulanan etkin zaman",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
                     "subTitle2": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın",
-                    "oldTooltipText": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez."
+                    "oldTooltipText": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "Fn tuşu ve Ctrl tuşu arasında işlev değiş tokuşu",
                     "description": "Ctrl tuşu yerine alışkanlıkla Fn tuşuna basıyorsanız bu iki tuşun işlevlerini değiştirebilirsiniz.",
                     "restartNote": "İki tuşun işlevini değiştirmek için bilgisayarınızı yeniden başlatmanız gerekir, yeniden başlatmak istediğinizden emin misiniz?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Fn tuşu sık kullanılan tuş bileşimlerinde Ctrl görevi görür",
+                    "description2": "Fn tuşu bazı sık kullanılan tuş bileşimlerinde Ctrl tuşu görevi görür. Ctrl tuşunun işlevi değişmez.",
+                    "featureNote": "Bu işlev ve Fn tuşu ile Ctrl tuşunu değiştirme işlevi aynı anda etkin olamaz. Bu işlevlerden biri etkinse diğeri otomatik olarak devre dışı kalır.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Fn Tuşları",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Ctrl Tuşları",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1581,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "İşlem",
+                            "action1": "Tümünü seç",
+                            "action2": "Kopyala",
+                            "action3": "Web sayfasını favorilerime ekle",
+                            "action4": "Arama",
+                            "action5": "Microsoft Word'de bul ve değiştir",
+                            "action6": "Microsoft Word'de sola ve sağa yasla",
+                            "action7": "Çık (desteklenen uygulamadan)",
+                            "action8": "Alt çizgi ekle",
+                            "action9": "Yapıştır",
+                            "action10": "Kapat (ilgili uygulamayı)",
+                            "action11": "Kes",
+                            "action12": "Yinele",
+                            "action13": "Geri al"
                         }
                     }
                 },
@@ -1605,16 +1606,16 @@
                     "less": "DAHA AZ"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Klavye arka ışığı",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Karanlıkta veya zayıf ışık koşullarında yazmayı kolaylaştırmak için klavye arka ışığını etkinleştirin. Klavye arka ışığı ayarlarını Fn+Ara çubuğu tuşlarına basarak da değiştirebilirsiniz.",
+                        "auto": "Karanlıkta veya zayıf ışık koşullarında yazmayı kolaylaştırmak için klavye arka ışığını etkinleştirin. Arka ışık ayarlarını Fn+Ara çubuğu tuşlarına basarak veya “Otomatik” olarak ayarlayarak değiştirebilirsiniz. “Otomatik” seçeneği, klavye arka ışığını ortam ışığına göre otomatik olarak ayarlar."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Otomatik",
+                        "low": "Düşük",
+                        "high": "Yüksek",
+                        "off": "Kapalı"
                     }
                 }
             }
@@ -1777,12 +1778,12 @@
             "superResolution": {
                 "heading": "Akıllı Medya",
                 "title": "Video Çözünürlüğünü Yükseltme",
-                "desc": "<p><label>Bu özellik, videoyu çözünürlüğünü iyileştirerek video kayıttan yürütme deneyimini geliştirir. Özellikle video çözünürlüğü düşük olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label> Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Etkinleştirildiğinde, bilgisayarınızı bir AC gücüne bağlamanız önerilir.</label></p>",
-                "tooltip": "Özellik yalnızca şu oynatıcılarda çalışır: <br/> Windows Media player",
+                "desc": "<p><label>Bu özellik, videoyu çözünürlüğünü iyileştirerek video kayıttan yürütme deneyimini geliştirir. Özellikle video çözünürlüğü düşük olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label>Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Lütfen DC kipinde kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.</label></p>",
+                "tooltip": "Özellik yalnızca şunlarda çalışır:<br>Windows Media player",
                 "note": {
                     "description": "Bu özellik şu durumlarda çalışmaz:",
-                    "description1": "Bilgisayar AC gücüne bağlı değil ve pil gücü %20'den düşük.",
-                    "description2": "Bilgisayar AC gücüne bağlı değil ve pil tasarrufu kipi etkin.",
+                    "description1": "Bilgisayar AC gücüne bağlı değil.",
+                    "description2": "Pil tasarrufu kipi etkin.",
                     "description3": "CPU sıcaklığı çok yüksek."
                 }
             },
@@ -2376,7 +2377,7 @@
     "faq": {
         "footer": {
             "title": "Aradığınızı bulamadınız mı?",
-            "description": "EK DESTEĞE İHTİYACINIZ VAR? ABD VİA'yla İLETİŞİME GEÇMEYİN:",
+            "description": "Ek desteğe mi ihtiyacınız var? Aşağıdaki şekilde bizimle iletişime geçebilirsiniz:",
             "body": "Lenovo Topluluğu",
             "button": "FORUMA GİT"
         },

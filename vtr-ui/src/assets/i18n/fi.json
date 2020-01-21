@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Lentokonevirtatila",
-                        "description": "Suojaa lentokoneen pistorasiaa rajoittamalla tietokoneesi virrankulutusta.Kun lentokonevirtatila on käytössä, tietokone vähentää virrankulutusta rajoittamalla akun latausta ja järjestelmän suorituskykyä.",
+                        "description": "Tämän toiminnon avulla voit käyttää verkkopistorasiaa lentokoneessa, jossa on käytössä määrätty virrankäyttöraja. Kun tämä tila on käytössä, tietokoneen virrankulutus alennetaan turvalliselle tasolle rajoittamalla akun latausnopeutta ja tietokoneen suorituskykyä.",
                         "checkBoxDesc": "Automaattinen tunnistus",
                         "note": "Jos automaattinen tunnistus on valittu, tietokone ottaa lentokonevirtatilan käyttöön automaattisesti, kun se havaitsee olevansa lentokoneessa, ja poistaa sen käytöstä, kun poistut."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
                         "progressText2": "{{stage}} / {{stageNum}}: Kalibroidaan akun alhaiseen varaukseen",
-                        "progressText3": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
+                        "progressText3": "{{stage}} / {{stageNum}}: Kalibroidaan akun korkeaan varaukseen",
                         "FCCText": "{{before}}Wh- {{after}} Wh",
                         "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "Valitse vähintään yksi päivä.",
                     "days": {
                         "shortName": {
-                            "sun": "Sunnuntai",
-                            "mon": "Maanantai",
-                            "tue": "Tiistai",
-                            "wed": "Weskiviikko",
-                            "thurs": "Torstai",
-                            "fri": "Perjantai",
-                            "sat": "Lauantai",
-                            "thu": "Thu"
+                            "sun": "Su",
+                            "mon": "Ma",
+                            "tue": "Ti",
+                            "wed": "Ke",
+                            "thurs": "To",
+                            "fri": "Pe",
+                            "sat": "La",
+                            "thu": "To"
                         },
                         "name": {
                             "sun": "Sunnuntai",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Ajasta tietokoneesi",
                     "automaticMode": "Automaattinen tila",
                     "manualMode": "Manuaalinen tila",
-                    "subNote": "Tietokone on ajastettu käyttämään Modern Standby -ominaisuutta käytön mukaan.",
+                    "subNote": "Tietokone on ajoitettu palaamaan nopeasti normaaliin toimintaan käytön perusteella.",
                     "graph": {
                         "graph1Tittle": "Tämän tietokoneen käyttö",
                         "graph2Tittle": "Käytössä oleva aktiivinen aika",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
                     "subTitle2": "Määritä aika, jolloin yleensä käytät tätä tietokonetta",
-                    "oldTooltipText": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso optimoidaan määritetyn aikataulun perusteella. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä."
+                    "oldTooltipText": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso optimoidaan määritetyn aikataulun perusteella. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "Fn- ja Ctrl-näppäimen vaihto",
                     "description": "Jos painat usein Fn-näppäintä, kun aioit painaa Ctrl-näppäintä, voit vaihtaa näiden kahden näppäimen toimintoja.",
                     "restartNote": "Kahden näppäimen toiminnon vaihtaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Fn toimii kuten Ctrl usein käytetyissä näppäinyhdistelmissä",
+                    "description2": "Fn-näppäin toimii kuten Ctrl-näppäin joissakin usein käytetyissä näppäinyhdistelmissä. Ctrl-näppäimen toiminto ei muutu.",
+                    "featureNote": "Tämä toiminto ja Fn-näppäin- ja Ctrl-näppäinyhdistelmän vaihtotoiminto eivät voi olla käytössä samaan aikaan. Jos yksi tila on käytössä, toinen tila poistetaan käytöstä automaattisesti.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Fn-näppäimet",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Ctrl-näppäimet",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1581,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Toiminto",
+                            "action1": "Kaikkien valinta",
+                            "action2": "Kopiointi",
+                            "action3": "Lisää verkkosivu suosikkeihini",
+                            "action4": "Hae",
+                            "action5": "Etsi ja korvaa Microsoft Wordissa",
+                            "action6": "Tasaa vasemmalle ja oikealle Microsoft Wordissa",
+                            "action7": "Lopeta (tuetussa sovelluksessa)",
+                            "action8": "Lisää alleviivaus",
+                            "action9": "Liitä",
+                            "action10": "Sulje (sovelluskohtaisesti)",
+                            "action11": "Leikkaa",
+                            "action12": "Tee uudelleen",
+                            "action13": "Kumous"
                         }
                     }
                 },
@@ -1605,16 +1606,16 @@
                     "less": "VÄHEMMÄN"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Näppäimistön taustavalo",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Näppäimistön taustavalon käynnistäminen helpottaa kirjoittamista pimeässä tai heikosti valaistuissa olosuhteissa. Voit myös muuttaa näppäimistön taustavalon asetuksia painamalla näppäinyhdistelmää Fn+välilyönti.",
+                        "auto": "Näppäimistön taustavalon käynnistäminen helpottaa kirjoittamista pimeässä tai heikosti valaistuissa olosuhteissa. Voit muuttaa taustavalon asetuksia painamalla näppäinyhdistelmää Fn+välilyönti tai asettamalla sen \"Automaattiseksi\". \"Automaattinen\"-vaihtoehto säätää näppäimistön taustavalon automaattisesti ympäristön valon mukaan."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automaattinen",
+                        "low": "Pieni",
+                        "high": "Suuri",
+                        "off": "Poissa käytöstä"
                     }
                 }
             }
@@ -1777,12 +1778,12 @@
             "superResolution": {
                 "heading": "Älykäs tietoväline",
                 "title": "Näytön tarkkuuden skaalaus",
-                "desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label> Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Kun tämä asetus on käytössä, tietokone on suositeltavaa kytkeä verkko virtaan.</label></p>",
-                "tooltip": "Ominaisuus toimii vain seuraavissa soittimissa: <br/> Windows Media player",
+                "desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä tasasähkövirtatilassa. Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
+                "tooltip": "Ominaisuus toimii vain näissä:<br>Windows Media player",
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
-                    "description1": "Tietokone ei ole liitettynä verkkovirtaan, ja akun varaustaso on alhaisempi kuin 20 %.",
-                    "description2": "Tietokone ei ole liitettynä verkkovirtaan, ja akun virransäästötila on käytössä.",
+                    "description1": "Tietokonetta ei ole kytketty verkkovirtaan.",
+                    "description2": "Akun virransäästötila on käytössä.",
                     "description3": "Keskusyksikön lämpötila on liian korkea."
                 }
             },
@@ -2376,7 +2377,7 @@
     "faq": {
         "footer": {
             "title": "Etkö löydä mitä etsit?",
-            "description": "LISÄTIETOJA? ÄLÄ KYSY YHTEYTTÄ VIA:",
+            "description": "Tarvitsetko lisätukea? Älä epäröi ottaa meihin yhteyttä seuraavalla tavalla:",
             "body": "Lenovo-yhteisö",
             "button": "Siirry FORUMiin"
         },

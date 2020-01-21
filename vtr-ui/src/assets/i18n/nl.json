@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Energiemodus aan boord van een vliegtuig",
-                        "description": "Bescherm het stopcontact aan boord door het energieverbruik van uw systeem te beheren.Als het energieschema voor voeding aan boord van een vliegtuig is ingeschakeld, reduceert de computer het energieverbruik door de batterijlaadsnelheid en de systeemprestaties te verlagen.",
+                        "description": "Met deze functie kunt u het stopcontact in een vliegtuig gebruiken waarvoor een bepaalde voedingslimiet geldt. In deze modus wordt het energieverbruik van uw computer gereduceerd tot een veilig niveau door de batterijlaadsnelheid en de computerprestaties te beperken.",
                         "checkBoxDesc": "Automatische detectie",
                         "note": "Als automatische detectie is aangevinkt, wordt het energieschema voor voeding aan boord van een vliegtuig automatisch ingeschakeld wanneer de computer een vliegtuigomgeving detecteert. Dit wordt weer uitgeschakeld wanneer u het vliegtuig verlaat."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} van {{stageNum}}: kalibreren naar volledig opladen",
                         "progressText2": "{{stage}} van {{stageNum}}: kalibreren naar bijna lege batterij",
-                        "progressText3": "{{stage}} van {{stageNum}}: kalibreren naar volledig opladen",
+                        "progressText3": "{{stage}} van {{stageNum}}: kalibreren naar bijna volle batterij",
                         "FCCText": "Van {{before}} Wh tot {{after}} Wh",
                         "note": "Opmerking: voordat u de batterijmeter opnieuw instelt, zorg ervoor dat de computer is aangesloten op de netvoeding. ",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "Selecteer minimaal één dag.",
                     "days": {
                         "shortName": {
-                            "sun": "zon",
-                            "mon": "maan",
-                            "tue": "dins",
-                            "wed": "woens",
-                            "thurs": "donder",
-                            "fri": "vrij",
-                            "sat": "zater",
-                            "thu": "Thu"
+                            "sun": "Zo",
+                            "mon": "Ma",
+                            "tue": "Di",
+                            "wed": "Wo",
+                            "thurs": "Do",
+                            "fri": "Vr",
+                            "sat": "Za",
+                            "thu": "Do"
                         },
                         "name": {
                             "sun": "zondag",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Uw computer plannen",
                     "automaticMode": "Automatische modus",
                     "manualMode": "Handmatige modus",
-                    "subNote": "Uw computer staat op basis van uw gebruik ingesteld op Modern stand-by.",
+                    "subNote": "Uw computer staat op basis van het gebruik ingesteld op snelle hervatting.",
                     "graph": {
                         "graph1Tittle": "Gebruik van deze computer",
                         "graph2Tittle": "Toegepaste actieve tijd",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de opstarttijd snel bij zwaarder gebruik.",
                     "subTitle2": "Stel de tijd in waarop u deze computer gewoonlijk gebruikt",
-                    "oldTooltipText": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen."
+                    "oldTooltipText": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "Fn-toets en Ctrl-toets wisselen",
                     "description": "Als u uit gewoonte op de Fn-toets drukt als u op de Ctrl-toets wilt drukken, kunt u de functie van de twee toetsen omwisselen.",
                     "restartNote": "Als u de functie van twee toetsen wilt wisselen, moet u de computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Fn werkt als Ctrl voor vaak gebruikte toetsencombinaties",
+                    "description2": "De Fn-toets werkt als de Ctrl-toets voor sommige vaak gebruikte toetsencombinaties. De functie van de Ctrl-toets wijzigt niet.",
+                    "featureNote": "U kunt deze functie en de Fn-toets en de Ctrl-toets niet tegelijk gebruiken. Als de ene wordt ingeschakeld, wordt de andere automatisch uitgeschakeld.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Fn-toetsen",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Ctrl-toetsen",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1581,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Actie",
+                            "action1": "Alles selecteren",
+                            "action2": "Kopiëren",
+                            "action3": "Webpagina toevoegen aan mijn favorieten",
+                            "action4": "Zoeken",
+                            "action5": "Zoeken en vervangen in Microsoft Word",
+                            "action6": "Links en rechts uitlijnen in Microsoft Word",
+                            "action7": "Afsluiten (in ondersteunde app)",
+                            "action8": "Onderstrepen toevoegen",
+                            "action9": "Plakken",
+                            "action10": "Sluiten (per app)",
+                            "action11": "Knippen",
+                            "action12": "Opnieuw",
+                            "action13": "Ongedaan maken"
                         }
                     }
                 },
@@ -1605,16 +1606,16 @@
                     "less": "MINDER"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Achtergrondverlichting toetsenbord",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting van het toetsenbord ook wijzigen door op Fn+spatiebalk te drukken.",
+                        "auto": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting wijzigen door op Fn+spatiebalk te drukken of door deze op \"Automatisch\" in te stellen. Bij de optie \"Automatisch\" wordt de achtergrondverlichting van het toetsenbord automatisch aan het omgevingslicht aangepast."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automatisch",
+                        "low": "Laag",
+                        "high": "Hoog",
+                        "off": "Uit"
                     }
                 }
             }
@@ -1777,12 +1778,12 @@
             "superResolution": {
                 "heading": "Intelligente media",
                 "title": "Schaalverhoging beeldschermresolutie",
-                "desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label> Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Als u deze functie inschakelt, wordt het aanbevolen om de computer op de netvoeding aan te sluiten.</label></p>",
-                "tooltip": "Deze functie werkt alleen op de volgende spelers: <br/> Windows Media player",
+                "desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet in gebruiken in gelijkstroommodus, anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
+                "tooltip": "De functie werkt alleen op:<br>Windows Media player",
                 "note": {
                     "description": "Deze functie werkt niet als:",
-                    "description1": "De computer niet is aangesloten op de netvoeding en de batterij minder dan 20% vermogen heeft.",
-                    "description2": "De computer niet is aangesloten op de netvoeding en de batterijbesparing is ingeschakeld.",
+                    "description1": "De computer is niet aangesloten op de netvoeding.",
+                    "description2": "De spaarstand voor batterijverbruik is ingeschakeld.",
                     "description3": "De CPU-temperatuur te hoog is."
                 }
             },
@@ -2376,7 +2377,7 @@
     "faq": {
         "footer": {
             "title": "Niet vinden wat je zoekt?",
-            "description": "NODIG AANVULLENDE SUPPORT? AARZEL NIET ONS VIA TE CONTACTEREN:",
+            "description": "Hebt u extra ondersteuning nodig? Neem dan contact met ons op via:",
             "body": "Lenovo Community",
             "button": "GA NAAR FORUM"
         },

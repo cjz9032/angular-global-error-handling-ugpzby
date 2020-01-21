@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "비행기 전원 모드",
-                        "description": "시스템의 전력 소모를 제어하여 비행기의 AC 전원 콘센트를 보호하십시오.비행기 전원 모드를 사용하면, 컴퓨터가 배터리 충전율과 시스템 성능을 제한하여 전력 소모를 줄입니다.",
+                        "description": "이 기능을 사용하면 특정 전력 한계가 적용되는 항공기에서 AC 전원 콘센트를 사용할 수 있습니다. 이 모드에서는 배터리 충전 속도와 컴퓨터 성능을 제한하여 컴퓨터의 전력 소모를 안전한 수준으로 줄입니다.",
                         "checkBoxDesc": "자동 검색",
                         "note": "자동 탐지를 선택하면 비행기 탑승 환경을 탐지했을 때 컴퓨터가 비행기 전원 모드를 자동으로 켜고 비행기에서 내리면 끕니다."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
                         "progressText2": "{{stageNum}}의 {{stage}}: 저전력으로 보정 중",
-                        "progressText3": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
+                        "progressText3": "{{stageNum}}의 {{stage}}: 고전력으로 보정 중",
                         "FCCText": "{{before}} Wh에서 {{after}} Wh",
                         "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "적어도 하루를 선택하십시오.",
                     "days": {
                         "shortName": {
-                            "sun": "일요일",
-                            "mon": "월요일",
-                            "tue": "화요일",
-                            "wed": "수요일",
-                            "thurs": "목요일",
-                            "fri": "금요일",
-                            "sat": "토요일",
-                            "thu": "Thu"
+                            "sun": "일",
+                            "mon": "월",
+                            "tue": "화",
+                            "wed": "수",
+                            "thurs": "목",
+                            "fri": "금",
+                            "sat": "토",
+                            "thu": "목"
                         },
                         "name": {
                             "sun": "일요일",
@@ -1192,7 +1192,7 @@
                     "subTitle": "컴퓨터 예약",
                     "automaticMode": "자동 모드",
                     "manualMode": "수동 모드",
-                    "subNote": "사용량에 기반하여 컴퓨터가 모던 대기 모드가 되도록 예약되어 있습니다.",
+                    "subNote": "사용량에 따라 빠르게 다시 시작할 수 있도록 컴퓨터가 예약되어 있습니다.",
                     "graph": {
                         "graph1Tittle": "이 컴퓨터 사용량",
                         "graph2Tittle": "적용된 활성 시간",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
                     "subTitle2": "이 컴퓨터를 주로 사용하는 시간 설정",
-                    "oldTooltipText": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 시간은 사용자가 설정한 스케줄을 토대로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며 비활성화되도록 예약된 날에는 전환되지 않습니다."
+                    "oldTooltipText": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 시간은 사용자가 설정한 스케줄을 토대로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며 비활성화되도록 예약된 날에는 전환되지 않습니다.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "Fn 키와 Ctrl 키 바꾸기",
                     "description": "Ctrl 키를 눌러야 하는 데 습관적으로 Fn 키를 누르는 경우 두 키의 기능을 바꿀 수 있습니다.",
                     "restartNote": "두 키의 기능을 바꾸어도 컴퓨터를 다시 시작해야 합니다. 다시 시작하시겠습니까?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Fn이 자주 사용하는 키 조합의 Ctrl로 작동",
+                    "description2": "Fn 키가 몇 가지 자주 사용하는 키 조합의 Ctrl 키로 작동합니다. Ctrl 키의 기능은 변경되지 않습니다.",
+                    "featureNote": "이 기능 및 Fn 키와 Ctrl 키 스왑 기능은 동시에 사용할 수 없습니다. 하나가 켜져 있으면 다른 모드는 자동으로 꺼집니다.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Fn 키",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Ctrl 키",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1581,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "동작",
+                            "action1": "모두 선택",
+                            "action2": "복사",
+                            "action3": "웹 페이지를 내 즐겨찾기에 추가",
+                            "action4": "검색",
+                            "action5": "Microsoft Word의 찾기 및 바꾸기",
+                            "action6": "Microsoft Word의 왼쪽 및 오른쪽 맞춤",
+                            "action7": "종료(앱에서 지원하는 경우)",
+                            "action8": "밑줄 추가",
+                            "action9": "붙여넣기",
+                            "action10": "닫기(앱에 따라 다름)",
+                            "action11": "잘라내기",
+                            "action12": "다시 실행",
+                            "action13": "실행 취소"
                         }
                     }
                 },
@@ -1605,16 +1606,16 @@
                     "less": "간단히"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "키보드 백라이트",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. 또한 Fn+Space 키를 눌러 키보드 백라이트 설정을 변경할 수도 있습니다.",
+                        "auto": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. Fn+Space 키를 눌러 키보드 백라이트 설정을 변경하거나 이를 \"자동\"으로 설정할 수 있습니다. \"자동\" 옵션은 주변 밝기에 따라 키보드 조명을 자동으로 조정합니다."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "자동",
+                        "low": "낮음",
+                        "high": "높음",
+                        "off": "끄기"
                     }
                 }
             }
@@ -1777,12 +1778,12 @@
             "superResolution": {
                 "heading": "지능형 미디어",
                 "title": "비디오 해상도 업스케일링",
-                "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label> 이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. 사용 가능으로 설정하는 경우, AC 전원을 사용하여 컴퓨터에 연결하는 것이 좋습니다.</label></p>",
-                "tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player",
+                "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label>이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. DC 모드에서는 사용하지 마십시오. 그렇지 않으면 전력 소모를 가속화하고 배터리 수명을 단축시킵니다.</label></p>",
+                "tooltip": "이 기능은 다음의 환경에서만 작동합니다:<br>Windows Media player",
                 "note": {
                     "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
-                    "description1": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 전력이 20% 미만입니다.",
-                    "description2": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 절전 모드가 전력이 설정되었습니다.",
+                    "description1": "컴퓨터가 AC 전원에 연결되어 있지 않습니다.",
+                    "description2": "배터리 절약 모드를 사용합니다.",
                     "description3": "CPU 온도가 너무 높습니다."
                 }
             },
@@ -2376,7 +2377,7 @@
     "faq": {
         "footer": {
             "title": "당신이 찾고있는 것을 찾지 못했습니까?",
-            "description": "추가 지원이 필요하십니까? VIA에 연락을 주저하지 마십시오.",
+            "description": "추가 지원이 필요하십니까? 다음을 통해 문의하십시오:",
             "body": "Lenovo 커뮤니티",
             "button": "포럼으로 이동"
         },

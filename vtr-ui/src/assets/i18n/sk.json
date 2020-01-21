@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Režim napájania Lietadlo",
-                        "description": "Ochrana elektrickej zásuvky lietadla ovládaním spotreby energie systémom.Keď je režim napájania Lietadlo zapnutý, počítač zníži spotrebu energie obmedzením intenzity nabíjania batérie a výkonu systému.",
+                        "description": "Táto funkcia vám umožňuje používať zásuvku so striedavým prúdom v lietadle, pre ktorú sa uplatňuje určitý limit napájania. V tomto režime je spotreba energie vášho počítača obmedzená na bezpečnú úroveň prostredníctvom obmedzenia rýchlosti nabíjania batérie a výkonu počítača.",
                         "checkBoxDesc": "Automatické zisťovanie",
                         "note": "Ak je začiarknuté automatické zisťovanie a počítač zistí prostredie na palube lietadla, automaticky zapne režim napájania V lietadle, ktorý sa vypne, keď palubu lietadla opustíte."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibrácia na úplné nabitie",
                         "progressText2": "{{stage}} z {{stageNum}}: Kalibrácia na nízku úroveň nabitia batérie",
-                        "progressText3": "{{stage}} z {{stageNum}}: Kalibrácia na úplné nabitie",
+                        "progressText3": "{{stage}} z {{stageNum}}: Kalibrácia na vysokú úroveň nabitia batérie",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Pred resetovaním ukazovateľa batérie pripojte počítač k zdroju napájania. ",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "Vyberte aspoň jeden deň.",
                     "days": {
                         "shortName": {
-                            "sun": "nedeľa",
-                            "mon": "pondelok",
-                            "tue": "utorok",
-                            "wed": "streda",
-                            "thurs": "štvrtok",
-                            "fri": "piatok",
-                            "sat": "sobota",
-                            "thu": "Thu"
+                            "sun": "Ne.",
+                            "mon": "Po.",
+                            "tue": "Ut.",
+                            "wed": "St.",
+                            "thurs": "Št.",
+                            "fri": "Pi.",
+                            "sat": "So.",
+                            "thu": "Št."
                         },
                         "name": {
                             "sun": "nedeľa",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Plánovanie počítača",
                     "automaticMode": "Automatický režim",
                     "manualMode": "Manuálny režim",
-                    "subNote": "Váš počítač je naplánovaný na prepnutie do moderného pohotovostného režimu podľa vášho použitia.",
+                    "subNote": "Na základe používania má počítač nastavené rýchlejšie obnovovanie činnosti.",
                     "graph": {
                         "graph1Tittle": "Použitie tohto počítača",
                         "graph2Tittle": "Aplikovaný aktívny čas",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
                     "subTitle2": "Nastavte čas, v ktorom zvyčajne používate počítač",
-                    "oldTooltipText": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie sa optimalizuje podľa vami nastaveného plánu. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie keď sa počas nasledujúcich plánovaných dní nevyužíva."
+                    "oldTooltipText": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie sa optimalizuje podľa vami nastaveného plánu. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie keď sa počas nasledujúcich plánovaných dní nevyužíva.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "Výmena klávesov Fn a Ctrl",
                     "description": "Ak zvyčajne stlačíte kláves Fn, keď chce stlačiť kláves Ctrl, môžete vymeniť funkcie týchto dvoch klávesov.",
                     "restartNote": "Výmena funkcie dvoch klávesov vyžaduje reštart počítača. Naozaj chcete počítač reštartovať?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Kláves Fn funguje rovnako ako kláves Ctrl v prípade často používaných kombinácií klávesov",
+                    "description2": "Kláves Fn funguje rovnako ako kláves Ctrl v prípade niektorých často používaných kombinácií klávesov. Funkcia klávesu Ctrl sa nezmení.",
+                    "featureNote": "Táto funkcia a funkcia prehodenia klávesu Fn a Ctrl nemôžu byť aktivované súčasne. Ak dôjde k aktivácii jednej z nich, druhá sa automaticky vypne.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Klávesy Fn",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Klávesy Ctrl",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1581,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Akcia",
+                            "action1": "Vybrať všetko",
+                            "action2": "Kopírovať",
+                            "action3": "Pridať webovú stránku medzi obľúbené položky",
+                            "action4": "Hľadať",
+                            "action5": "Vyhľadať a nahradiť v programe Microsoft Word",
+                            "action6": "Zarovnať doľava a doprava v programe Microsoft Word",
+                            "action7": "Ukončiť (v podporovanej aplikácii)",
+                            "action8": "Pridať podčiarknutie",
+                            "action9": "Vložiť",
+                            "action10": "Zatvoriť (podľa aplikácie)",
+                            "action11": "Vystrihnúť",
+                            "action12": "Znova",
+                            "action13": "Späť"
                         }
                     }
                 },
@@ -1605,16 +1606,16 @@
                     "less": "MENEJ"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Podsvietenie klávesnice",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Aktivujte podsvietenie klávesnice a uľahčite si písanie v tme alebo pri slabom svetle. Nastavenia podsvietenia klávesnice môžete zmeniť aj stlačením klávesov Fn+medzerník.",
+                        "auto": "Aktivujte podsvietenie klávesnice a uľahčite si písanie v tme alebo pri slabom svetle. Nastavenia podsvietenia klávesnice môžete zmeniť stlačením klávesov Fn+medzerník alebo nastaviť na možnosť \"Auto\". Pri možnosti \"Auto\" sa podsvietenie klávesnice upraví automaticky podľa okolitého svetla."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automaticky",
+                        "low": "Nízke",
+                        "high": "Vysoké",
+                        "off": "Vyp."
                     }
                 }
             }
@@ -1777,12 +1778,12 @@
             "superResolution": {
                 "heading": "Inteligentné médiá",
                 "title": "Zvýšenie rozlíšenia videa",
-                "desc": "<p><label>Táto funkcia zlepšuje zážitok z prehrávania videa zvýšením rozlíšenia videa. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label> Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Ak je povolená, odporúča sa pripojiť počítač k zdroju napájania.</label></p>",
-                "tooltip": "Táto funkcia funguje iba pri použití týchto prehrávačov: <br/> Windows Media player",
+                "desc": "<p><label>Táto funkcia zlepšuje zážitok z prehrávania videa zvýšením rozlíšenia videa. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu. V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
+                "tooltip": "Táto funkcia funguje iba na:<br>Windows Media player",
                 "note": {
                     "description": "Funkcia nefunguje v týchto prípadoch:",
-                    "description1": "Počítač nie je pripojený k zdroju napájania a batéria je nabitá na menej než 20 %.",
-                    "description2": "Počítač nie je pripojený k zdroju napájania a je zapnutý šetriaci režim batérie.",
+                    "description1": "Počítač nie je pripojený k napájaciemu adaptéru.",
+                    "description2": "Režim úspory batérie je povolený.",
                     "description3": "Teplota procesora je príliš vysoká."
                 }
             },
@@ -2376,7 +2377,7 @@
     "faq": {
         "footer": {
             "title": "Nenašli ste to, čo hľadáte?",
-            "description": "POTREBNÉ ĎALŠIE PODPORY? NEZABUDNITE KONTAKTUJTE NÁS VIA:",
+            "description": "Potrebujete ďalšiu podporu? Neváhajte nás kontaktovať prostredníctvom:",
             "body": "Spoločnosť Lenovo",
             "button": "GO TO FORUM"
         },

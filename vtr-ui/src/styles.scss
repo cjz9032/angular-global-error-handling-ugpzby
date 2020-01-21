@@ -1392,6 +1392,8 @@ vtr-ui-smart-performance-scanning {
 
 /* battery-detail-modal */
 .battery-modal-size {
+	display:flex!important;
+	align-items: center;
 	.modal-dialog {
 		max-width: 110rem;
 		@media #{$breakpoint_xl} {
@@ -1399,20 +1401,23 @@ vtr-ui-smart-performance-scanning {
 		}
 		@media #{$breakpoint_lg} {
 			max-width: 66rem;
-			top: 8rem;
 		}
 		@media #{$breakpoint_md} {
 			max-width: 54rem;
-			top: 8rem;
 		}
 		@media #{$breakpoint_sm} {
 			max-width: 40rem;
-			margin:0 auto;
-			top: 10rem;
-			bottom: 2rem;
+			margin:auto;
 		}
 		.modal-content {
 			border-radius: 1rem;
+			.vtr-battery-indicator {
+				.cell{
+					@media #{$breakpoint_md} {
+						width:95%;
+					}
+				}
+			}
 		}
 	}
 }
@@ -1471,5 +1476,26 @@ vtr-ui-smart-performance-scanning {
 		border-top-right-radius: 0 !important;
 		border-bottom-left-radius: 0.7rem !important;
 		border-bottom-right-radius: 0.7rem !important;
+	}
+}
+
+.no-border-bottom {
+ .vtr-ui-switch-row.white-theme {
+	   border-bottom: none !important;
+   }
+}
+
+.slider-note {
+	.vtr-ui-rounded-rectangle-radio {
+		width: 13rem !important;
+		height: 5rem !important;
+		.label {
+			font-size: $fontsize_xs !important;
+			left: 4.5rem !important;
+		}
+		.icon-circle {
+			font-size: 2rem !important;
+			top: 1.4rem !important;
+		}
 	}
 }

@@ -913,6 +913,7 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
 		if (this.phoenix) {
@@ -926,6 +927,13 @@ export class VantageShellService {
 	public getOledSettings(): any {
 		if (this.getHwSettings()) {
 			return this.getHwSettings().display.OLEDSettings;
+		}
+		return undefined;
+	}
+
+	public getPriorityControl(): any {
+		if (this.getHwSettings()) {
+			return this.getHwSettings().display.priorityControl;
 		}
 		return undefined;
 	}
@@ -978,12 +986,18 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	getTopRowFunctionsIdeapad(): TopRowFunctionsIdeapad {
-		return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
+	getTopRowFunctionsIdeapad(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
+		}
+		return undefined;
 	}
 
 	getBacklight(): Backlight {
-		return this.phoenix.hwsettings.input.backlight;
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.backlight;
+		}
+		return undefined;
 	}
 
 	public getRegistryUtil(): Phoenix.RegistryFeature {

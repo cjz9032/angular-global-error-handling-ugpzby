@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Flygenergiläge",
-                        "description": "Skydda flygplanets eluttag genom att kontrollera systemets strömförbrukning.När Flygenergiläge är aktiverat minskas strömförbrukningen genom att batteriladdningstakten och systemprestanda begränsas.",
+                        "description": "Med denna funktion kan du använda nätuttaget på ett flygplan där vissa effektbegränsningar gäller. I detta läge minskas datorns effektförbrukning till en säker nivå genom att begränsa batteriladdningstakten och datorns prestanda.",
                         "checkBoxDesc": "Aktivera automatisk upptäckt",
                         "note": "Om funktionen Autodetektering är markerad slås flygläget på automatiskt när datorn upptäcker en flygplansmiljö och stänger av det när du lämnar miljön."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
                         "progressText2": "{{stage}} av {{stageNum}}: Kalibrerar för låg batterinivå",
-                        "progressText3": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
+                        "progressText3": "{{stage}} av {{stageNum}}: Kalibrerar för hög batterinivå",
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
@@ -1168,10 +1168,10 @@
                             "mon": "mån",
                             "tue": "tis",
                             "wed": "ons",
-                            "thurs": "tors",
+                            "thurs": "tor",
                             "fri": "fre",
                             "sat": "lör",
-                            "thu": "Thu"
+                            "thu": "tor"
                         },
                         "name": {
                             "sun": "söndag",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Schemalägg datorn",
                     "automaticMode": "Automatiskt läge",
                     "manualMode": "Manuellt läge",
-                    "subNote": "Datorn är schemalagd för modernt vänteläge baserat på din användning.",
+                    "subNote": "Datorn har schemalagts för snabbare återgång baserat på användningen.",
                     "graph": {
                         "graph1Tittle": "Datoranvändning",
                         "graph2Tittle": "Tillämpad aktiv tid",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
                     "subTitle2": "Ange vilken tid du använder datorn mest",
-                    "oldTooltipText": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda START tiden och i viloläge när den inte har använts under en viss tid på batterikraft. Denna tidsperiod optimeras utifrån schemat du har angett. Datorn övergår från viloläge till modernt vänteläge endast på schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad."
+                    "oldTooltipText": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda START tiden och i viloläge när den inte har använts under en viss tid på batterikraft. Denna tidsperiod optimeras utifrån schemat du har angett. Datorn övergår från viloläge till modernt vänteläge endast på schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "Växla funktion på Fn- och Ctrl-tangenten",
                     "description": "Om du ofta trycker på Fn-tangenten när du avser att trycka på Ctrl-tangenten kan du växla de två tangenternas funktion.",
                     "restartNote": "Du måste starta om datorn om du vill byta två tangenters funktion. Vill du verkligen göra det?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Fn fungerar som Ctrl för tangentkombinationer som används ofta",
+                    "description2": "Fn-tangenten fungerar som Ctrl-tangenten för vissa tangentkombinationer som används ofta. Funktionen för Ctrl-tangenten ändras inte.",
+                    "featureNote": "Den här funktionen och Fn-tangenten och att byta funktion på Ctrl-tangenten fungerar inte samtidigt. Om någon av dem är aktiverade kommer den andra stängas av automatiskt.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Fn-tangenter",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Ctrl-tangenter",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1581,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Åtgärd",
+                            "action1": "Markera alla",
+                            "action2": "Kopiera",
+                            "action3": "Lägg till webbsidan som favorit",
+                            "action4": "Sök",
+                            "action5": "Sök och ersätt i Microsoft Word",
+                            "action6": "Justera åt vänster eller höger i Microsoft Word",
+                            "action7": "Avsluta (i appar som stöds)",
+                            "action8": "Lägg till understrykning",
+                            "action9": "Klistra in",
+                            "action10": "Stäng (per app)",
+                            "action11": "Klipp ut",
+                            "action12": "Gör om",
+                            "action13": "Ångra"
                         }
                     }
                 },
@@ -1605,16 +1606,16 @@
                     "less": "MINDRE"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Bakgrundsbelysning för tangentbord",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Aktivera tangentbordets bakgrundsbelysning om du vill göra det lättare att skriva i mörker eller dåligt ljus. Du kan också ändra inställningarna för tangentbordets bakgrundsbelysning genom att trycka på Fn+Mellanslag.",
+                        "auto": "Aktivera tangentbordets bakgrundsbelysning om du vill göra det lättare att skriva i mörker eller dåligt ljus. Du kan ändra inställningarna för bakgrundsbelysningen genom att trycka på Fn+Mellanslag eller ange inställningen till Automatisk. Med alternativet Automatisk anpassas tangentbordets bakgrundsbelysning efter omgivande ljusförhållanden."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automatisk",
+                        "low": "Låg",
+                        "high": "Hög",
+                        "off": "Av"
                     }
                 }
             }
@@ -1777,12 +1778,12 @@
             "superResolution": {
                 "heading": "Intelligenta medier",
                 "title": "Öka videoupplösningen",
-                "desc": "<p><label>Med denna funktion kan du förbättra videouppspelningen genom att förbättra upplösningen. Detta är särskilt praktiskt om videon har låg upplösning.</label></p> <p style='margin-top:4px;'><label> Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Vi rekommenderar att du ansluter datorn till nätström när funktionen är aktiverad.</label></p>",
-                "tooltip": "Funktionen fungerar endast på följande spelare: <br/> Windows Media player",
+                "desc": "<p><label>Med denna funktion kan du förbättra videouppspelningen genom att förbättra upplösningen. Detta är särskilt praktiskt om videon har låg upplösning.</label></p> <p style='margin-top:4px;'><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge. Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
+                "tooltip": "Funktionen fungerar endast på:<br>Windows Media player",
                 "note": {
                     "description": "Funktionen fungerar inte när:",
-                    "description1": "datorn inte är ansluten till nätström och batterinivån är lägre än 20 %.",
-                    "description2": "datorn inte är ansluten till nätström och batterisparläget är aktiverat.",
+                    "description1": "Datorn inte är ansluten till nätströmmen.",
+                    "description2": "Batterisparläge är aktiverat.",
                     "description3": "processortemperaturen är för hög."
                 }
             },
@@ -2376,7 +2377,7 @@
     "faq": {
         "footer": {
             "title": "Hitta inte det du letar efter?",
-            "description": "Behöver du ytterligare stöd? INTE FÖRSÄLJA ATT KONTAKTA OSS VIA:",
+            "description": "Behöver du mer support? Tveka inte att kontakta oss via:",
             "body": "Lenovo Community",
             "button": "Gå till forum"
         },

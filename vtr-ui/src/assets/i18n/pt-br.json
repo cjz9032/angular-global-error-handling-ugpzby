@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Modo de Energia de Avião",
-                        "description": "Proteja a tomada elétrica CA dos aviões ao controlar o consumo de energia do seu sistema.Quando o Modo de Energia de Voo estiver ativado, o computador reduzirá o consumo de energia ao limitar a taxa de carregamento da bateria e o desempenho do sistema.",
+                        "description": "Esse recurso permite usar a tomada elétrica CA em um avião no qual se aplica certo limite de energia. Nesse modo, o consumo de energia do computador é reduzido a um nível seguro limitando a taxa de carga da bateria e o desempenho do computador.",
                         "checkBoxDesc": "Detecção automática",
                         "note": "Se a Detecção automática for marcada, seu computador ativará o Modo de energia de avião automaticamente quando detectar um ambiente a bordo de uma aeronave e será desativado quando você sair."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} de {{stageNum}}: Calibrando em carga máxima",
                         "progressText2": "{{stage}} de {{stageNum}}: Calibrando em bateria fraca",
-                        "progressText3": "{{stage}} de {{stageNum}}: Calibrando em carga máxima",
+                        "progressText3": "{{stage}} de {{stageNum}}: Calibrando em bateria alta",
                         "FCCText": "De {{before}} Wh para {{after}} Wh",
                         "note": "Nota: Antes de redefinir o medidor da bateria, certifique-se de conectar o computador à energia CA. ",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "Por favor, selecione pelo menos um dia.",
                     "days": {
                         "shortName": {
-                            "sun": "domingo",
-                            "mon": "Segunda-feira",
-                            "tue": "terça",
-                            "wed": "Quarta-feira",
-                            "thurs": "Quinta-feira",
-                            "fri": "Sexta-feira",
-                            "sat": "sábado",
-                            "thu": "Thu"
+                            "sun": "Dom.",
+                            "mon": "Seg.",
+                            "tue": "Ter.",
+                            "wed": "Qua.",
+                            "thurs": "Qui.",
+                            "fri": "Sex.",
+                            "sat": "Sáb.",
+                            "thu": "Qui."
                         },
                         "name": {
                             "sun": "domingo",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Programar o computador",
                     "automaticMode": "Modo automático",
                     "manualMode": "Modo manual",
-                    "subNote": "O computador está programado para Suspensão moderna com base no seu uso.",
+                    "subNote": "O computador está programado para uma continuidade mais rápida com base no uso.",
                     "graph": {
                         "graph1Tittle": "Uso deste computador",
                         "graph2Tittle": "Tempo ativo aplicado",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Esse recurso programa o computador para otimizar a economia de carga da bateria durante horas ociosas sem prejudicar o tempo do início rápido durantes horas de maior uso.",
                     "subTitle2": "Defina a hora em que você geralmente usa este computador",
-                    "oldTooltipText": "Quando a Suspensão inteligente estiver ativada, o computador alternará para a Suspensão moderna antes da hora de INÍCIO programada e entrará no modo de hibernação depois que estiver inativo por um certo tempo na carga da bateria. O tempo será otimizado com base no planejamento que você definir. O computador alterna do modo de hibernação para a Suspensão moderna apenas nos dias programados e não alterna quando estiver inativo por dias programados consecutivos."
+                    "oldTooltipText": "Quando a Suspensão inteligente estiver ativada, o computador alternará para a Suspensão moderna antes da hora de INÍCIO programada e entrará no modo de hibernação depois que estiver inativo por um certo tempo na carga da bateria. O tempo será otimizado com base no planejamento que você definir. O computador alterna do modo de hibernação para a Suspensão moderna apenas nos dias programados e não alterna quando estiver inativo por dias programados consecutivos.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "Permuta entre as teclas Fn e Ctrl",
                     "description": "Se você costuma pressionar a tecla Fn quando deseja pressionar a tecla Ctrl, é possível trocar as funções das duas teclas.",
                     "restartNote": "Trocar a função de duas teclas requer a reinicialização do computador. Tem certeza de que deseja reiniciar?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "A tecla Fn funciona como a tecla Ctrl para combinações de teclas usadas com frequência",
+                    "description2": "A tecla Fn funciona como a tecla Ctrl para algumas combinações de teclas usadas com frequência. A função da tecla Ctrl não muda.",
+                    "featureNote": "Esta função e a função de permuta da tecla Fn e da tecla Ctrl não podem ser ativadas ao mesmo tempo. Se uma delas estiver ativada, a outra será desativada automaticamente.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Teclas Fn",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Teclas Ctrl",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1581,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Ação",
+                            "action1": "Selecionar tudo",
+                            "action2": "Copiar",
+                            "action3": "Adicionar página da Web aos meus favoritos",
+                            "action4": "Pesquisar",
+                            "action5": "Localizar e substituir no Microsoft Word",
+                            "action6": "Alinhar à esquerda e à direita no Microsoft Word",
+                            "action7": "Sair (em aplicativos compatíveis)",
+                            "action8": "Adicionar sublinhado",
+                            "action9": "Colar",
+                            "action10": "Fechar (por aplicativo)",
+                            "action11": "Recortar",
+                            "action12": "Refazer",
+                            "action13": "Desfazer"
                         }
                     }
                 },
@@ -1605,16 +1606,16 @@
                     "less": "MENOS"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Retroiluminação do teclado",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Ative a luz de fundo do teclado para facilitar a digitação em condições de luz escura ou fraca. Você também pode alterar as configurações da luz de fundo do teclado pressionando a tecla Fn+Espaço.",
+                        "auto": "Ative a luz de fundo do teclado para facilitar a digitação em condições de luz escura ou fraca. Você pode alterar as configurações da luz de fundo pressionando a tecla Fn+Espaço ou defini-la como \"Automático\". A opção \"Automático\" ajusta automaticamente a luz de fundo do teclado de acordo com a luz ambiente."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automático",
+                        "low": "Baixo",
+                        "high": "Alto",
+                        "off": "Desligado"
                     }
                 }
             }
@@ -1777,12 +1778,12 @@
             "superResolution": {
                 "heading": "Mídia inteligente",
                 "title": "Upscaling da resolução de vídeo",
-                "desc": "<p><label>Esse recurso aprimora a experiência de reprodução de vídeo, melhorando a resolução de vídeo. Funciona especialmente quando o vídeo está em baixa resolução.</label></p> <p style='margin-top:4px;'><label> Essa função pode afetar a vida útil da bateria, a temperatura da bateria e causar ruídos. Quando ativado, é recomendável conectar o computador à energia CA.</label></p>",
-                "tooltip": "O recurso funciona apenas nos seguintes players: <br/> Windows Media player",
+                "desc": "<p><label>Esse recurso aprimora a experiência de reprodução de vídeo, melhorando a resolução de vídeo. Funciona especialmente quando o vídeo está em baixa resolução.</label></p> <p style='margin-top:4px;'><label>Essa função pode afetar a vida útil da bateria, a temperatura da bateria e causar ruídos. Não a use no modo DC. Caso contrário, ela acelerará o consumo de energia e reduzirá a duração da bateria.</label></p>",
+                "tooltip": "O recurso funciona apenas em:<br>Windows Media player",
                 "note": {
                     "description": "Esse recurso não funciona quando:",
-                    "description1": "O computador não está conectado à energia CA e a carga da bateria é inferior a 20%.",
-                    "description2": "O computador não está conectado à energia CA e o modo de economia da bateria está ativado.",
+                    "description1": "O computador não está conectado a energia CA.",
+                    "description2": "O modo de economia de bateria está ativado.",
                     "description3": "A temperatura da CPU está muito alta."
                 }
             },
@@ -2376,7 +2377,7 @@
     "faq": {
         "footer": {
             "title": "Não encontrando o que você está procurando?",
-            "description": "PRECISA DE SUPORTE ADICIONAL? NÃO HESITE EM CONTACTAR A VIA:",
+            "description": "Precisa de suporte adicional? Não hesite em entrar em contato conosco por:",
             "body": "Comunidade Lenovo",
             "button": "IR PARA O FÓRUM"
         },

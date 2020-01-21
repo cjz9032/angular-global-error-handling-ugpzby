@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "Tryb samolotowy",
-                        "description": "Chroń samolotowe gniazdko elektryczne, kontrolując ilość energii zużywanej przez system.Gdy Tryb samolotowy jest włączony, komputer zmniejsza zużycie energii, ograniczając szybkość ładowania akumulatora i wydajność systemu.",
+                        "description": "Funkcja umożliwia korzystanie z gniazdka elektrycznego w samolocie z określonym limitem mocy. Jeśli tryb samolotowy jest włączony, zużycie energii przez komputer zostaje zmniejszone do bezpiecznego poziomu przy jednoczesnym ograniczeniu szybkości ładowania akumulatora i wydajności systemu.",
                         "checkBoxDesc": "Autowykrywanie",
                         "note": "Jeśli automatyczne wykrywanie jest włączone, komputer przełączy się do samolotowego trybu zasilania, gdy wykryje, że znajduje się na pokładzie samolotu i wyłączy go po opuszczeniu samolotu."
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibracja do całkowitego naładowania",
                         "progressText2": "{{stage}} z {{stageNum}}: Kalibracja do niskiego poziomu naładowania baterii",
-                        "progressText3": "{{stage}} z {{stageNum}}: Kalibracja do całkowitego naładowania",
+                        "progressText3": "{{stage}} z {{stageNum}}: Kalibracja do wysokiego poziomu zasilania baterii",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "Wybierz co najmniej jeden dzień.",
                     "days": {
                         "shortName": {
-                            "sun": "niedziela",
-                            "mon": "poniedziałek",
-                            "tue": "wtorek",
-                            "wed": "środa",
-                            "thurs": "czwartek",
-                            "fri": "piątek",
-                            "sat": "sobota",
-                            "thu": "Thu"
+                            "sun": "Nie",
+                            "mon": "Pon",
+                            "tue": "Wto",
+                            "wed": "Śro",
+                            "thurs": "Czw",
+                            "fri": "Pią",
+                            "sat": "Sob",
+                            "thu": "Czw"
                         },
                         "name": {
                             "sun": "niedziela",
@@ -1192,7 +1192,7 @@
                     "subTitle": "Ustaw harmonogram pracy komputera",
                     "automaticMode": "Tryb automatyczny",
                     "manualMode": "Tryb ręczny",
-                    "subNote": "Komputer przechodzi w tryb Modern Standby na podstawie użytkowania.",
+                    "subNote": "Można zaplanować szybsze wznowienie pracy komputera w zależności od sposobu użytkowania.",
                     "graph": {
                         "graph1Tittle": "Użytkowanie komputera",
                         "graph2Tittle": "Zastosowany czas aktywności",
@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
                     "subTitle2": "Ustaw typowe godziny korzystania z komputera",
-                    "oldTooltipText": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Okres bezczynności jest optymalizowany na podstawie ustawionego harmonogramu. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowanych dniach, a nie przełącza się w ogóle, jeśli nie jest używany przez kilka kolejnych zaplanowanych dni."
+                    "oldTooltipText": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Okres bezczynności jest optymalizowany na podstawie ustawionego harmonogramu. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowanych dniach, a nie przełącza się w ogóle, jeśli nie jest używany przez kilka kolejnych zaplanowanych dni.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1543,12 +1544,12 @@
                     "title": "Klawisz przełączania Fn i Ctrl",
                     "description": "Jeśli zwykle naciskasz klawisz Fn, gdy chcesz nacisnąć klawisz Ctrl, funkcje tych dwóch klawiszy można zamienić.",
                     "restartNote": "Zamiana funkcji dwóch klawiszy wymaga ponownego uruchomienia komputera. Czy na pewno chcesz ponownie go uruchomić?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "W przypadku często używanych kombinacji klawiszy klawisz Fn działa jak klawisz Ctrl",
+                    "description2": "Klawisz Fn działa jak klawisz Ctrl w przypadku niektórych często używanych kombinacji klawiszy. Działanie klawisza Ctrl nie ulega zmianie.",
+                    "featureNote": "Opisana funkcja, klawisz Fn i funkcja zamiany klawisza Ctrl nie mogą być włączone jednocześnie. Jeśli jeden z trybów jest włączony, drugi zostanie automatycznie wyłączony.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Klawisze Fn",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1565,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Klawisze Ctrl",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1581,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Działanie",
+                            "action1": "Wybierz wszystkie",
+                            "action2": "Kopiuj",
+                            "action3": "Dodaj stronę WWW do moich ulubionych",
+                            "action4": "Wyszukiwanie",
+                            "action5": "Znajdź i zamień w programie Microsoft Word",
+                            "action6": "Wyrównaj do lewej i prawej w programie Microsoft Word",
+                            "action7": "Zakończ (w obsługiwanych aplikacjach)",
+                            "action8": "Dodaj podkreślenie",
+                            "action9": "Wklej",
+                            "action10": "Zamknij (w aplikacji)",
+                            "action11": "Wytnij",
+                            "action12": "Ponów",
+                            "action13": "Cofnij"
                         }
                     }
                 },
@@ -1605,16 +1606,16 @@
                     "less": "LESS"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Podświetlenie klawiatury",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając klawisz Fn+spacja.",
+                        "auto": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając klawisz Fn+spacja, albo włączyć ustawienia automatyczne. Opcja „Automatyczna” automatycznie dostosowuje podświetlenie klawiatury do oświetlenia otoczenia."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automatyczny",
+                        "low": "Niski",
+                        "high": "Wysoki",
+                        "off": "Wyłącz"
                     }
                 }
             }
@@ -1777,12 +1778,12 @@
             "superResolution": {
                 "heading": "Inteligentne multimedia",
                 "title": "Skalowanie rozdzielczości wideo",
-                "desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label> Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Po włączeniu zaleca się podłączenie komputera do prądu przemiennego.</label></p>",
-                "tooltip": "Ta funkcja działa tylko w następujących odtwarzaczach: <br/> Windows Media player",
+                "desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać w trybie prądu stałego. Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
+                "tooltip": "Funkcja działa tylko w przypadku:<br>Windows Media player",
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
-                    "description1": "Komputer nie jest podłączony do zasilania prądem przemiennym, a poziom naładowania baterii jest niższy niż 20%.",
-                    "description2": "Komputer nie jest podłączony do zasilania prądem przemiennym, a tryb oszczędzania akumulatora jest włączony.",
+                    "description1": "Komputer nie jest podłączony do zasilania prądem przemiennym.",
+                    "description2": "Tryb oszczędzania baterii jest włączony.",
                     "description3": "Temperatura procesora jest za wysoka."
                 }
             },
@@ -2376,7 +2377,7 @@
     "faq": {
         "footer": {
             "title": "Nie znalazłeś tego, czego szukasz?",
-            "description": "POTRZEBUJESZ DODATKOWEGO WSPARCIA? NIE ZAPRASZAMY DO KONTAKTU Z NAMI VIA:",
+            "description": "Potrzebujesz dodatkowego wsparcia? Skontaktuj się z nami za pomocą:",
             "body": "Społeczność Lenovo",
             "button": "PRZEJDŹ DO FORUM"
         },

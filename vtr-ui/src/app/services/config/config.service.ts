@@ -55,6 +55,7 @@ export class ConfigService {
 	betaItem = betaItem;
 	privacyPolicyLinks = privacyPolicyLinks;
 	showCHS = false;
+	showCHSWithoutSegment = false;
 	wifiSecurity: WifiSecurity;
 	securityAdvisor: SecurityAdvisor;
 	windowsHello: WindowsHello;
@@ -185,7 +186,7 @@ export class ConfigService {
 						&& this.isShowCHSByShellVersion(shellVersion)
 						&& !machineInfo.isGaming
 						&& this.activeSegment !== SegmentConst.Commercial;
-					const showCHSConsumer = country.toLowerCase() === 'us'
+					this.showCHSWithoutSegment = country.toLowerCase() === 'us'
 						&& locale.startsWith('en')
 						&& result
 						&& this.isShowCHSByShellVersion(shellVersion)
@@ -194,7 +195,7 @@ export class ConfigService {
 						resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 					}
 					this.menuBySegment.commercial = this.menuBySegment.commercial.filter(item => item.id !== 'home-security');
-					if (!showCHSConsumer) {
+					if (!this.showCHSWithoutSegment) {
 						this.menuBySegment.consumer = this.menuBySegment.consumer.filter(item => item.id !== 'home-security');
 						this.menuBySegment.smb = this.menuBySegment.smb.filter(item => item.id !== 'home-security');
 					}
@@ -328,7 +329,7 @@ export class ConfigService {
 			);
 			this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
 
-			if (!smartAssistCacheValue || !this.isSmartAssistAvailable) {
+			if (!smartAssistCacheValue) {
 				this.removeSmartAssistMenu(items);
 			}
 
@@ -413,7 +414,23 @@ export class ConfigService {
 		if (myDeviceItem) {
 			const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
 			if (!smartAssistItem) {
-				myDeviceItem.subitems.splice(3, 0, this.menuItems.find((item) => item.id === 'device').subitems.find((item) => item.id === 'smart-assist'));
+				myDeviceItem.subitems.splice(3, 0,
+					{
+						id: 'smart-assist',
+						label: 'common.menu.device.sub4',
+						path: 'smart-assist',
+						metricsEvent: 'itemClick',
+						metricsParent: 'navbar',
+						metricsItem: 'link.smartassist',
+						externallink: false,
+						routerLinkActiveOptions: {
+							exact: true
+						},
+						icon: null,
+						sMode: true,
+						subitems: []
+					}
+				);
 			}
 		}
 	}
@@ -475,6 +492,7 @@ export class ConfigService {
 				return resolve(this.menu);
 			} else {
 				this.activeSegment = segment;
+				this.showCHS = this.showCHSWithoutSegment && this.activeSegment !== SegmentConst.Commercial;
 				const seg = segment.toLowerCase();
 				this.menu = cloneDeep(this.menuBySegment[seg]);
 				return resolve(this.menu);
