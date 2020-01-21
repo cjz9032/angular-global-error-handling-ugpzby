@@ -97,6 +97,13 @@ export class UserDefinedKeyComponent implements OnInit {
 				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
 		}
 	}
+	checkDropDown(userDefineDrop: any, i, event) {
+		if (event && event.keyCode === 9) {
+			if (i === this.userDefinedKeyOptions.length - 1 ) {
+					userDefineDrop.close();
+			}
+		}
+	}
 
 	public getUDKTypeList() {
 		try {
