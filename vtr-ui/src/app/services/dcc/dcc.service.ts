@@ -14,8 +14,9 @@ export class DccService {
 	public showDemo = false;
 	public isDccDevice = false;
 	private cmsHeaderDccBackgroundUpdated = false;
+	private bgColor = '#6DBEB8';
 	private backgroundProperties = ' no-repeat center / cover';
-	public headerBackground = 'url(/assets/images/HeaderImage.jpg)' + this.backgroundProperties;
+	public headerBackground = 'url(/assets/images/HeaderImage.jpg)' + this.backgroundProperties + this.bgColor;
 	private headerDccBackground = 'url(/assets/images/HeaderImageDcc.jpg)' + this.backgroundProperties;
 
 	constructor(
