@@ -168,7 +168,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	// ************************** Start Getting Cached Data ****************************
 	initDataFromCache() {
 		// this.initBatteryLinkFromCache();
-		this.initSmartStandbyLinkFromCache();
+		this.initSmartStandbyFromCache();
 		this.initPowerSmartSettingFromCache();
 		this.initAirplanePowerFromCache();
 		this.initBatteryChargeThresholdFromCache();
@@ -195,7 +195,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	initSmartStandbyLinkFromCache() {
+	initSmartStandbyFromCache() {
 		const capability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
 		if (capability !== undefined) {
 			this.onSetSmartStandbyCapability(capability.isCapable);
@@ -1130,12 +1130,75 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.powerService.getChargeThresholdInfo().then((response) => {
 				this.logger.info('getBatteryThresholdInformation.then', response);
 				this.setChargeThresholdUI(response);
+				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, response);
 			}).catch ((error) => {
 				this.logger.error('getBatteryThresholdInformation :: error', error.message);
 				return EMPTY;
 			});
 		}
 	}
+
+	public toggleBCTSwitch(event) {
+		if (event) {
+			let count = 0;
+			this.thresholdInfo.forEach(battery => {
+				battery.isOn = event;
+				this.onBCTInfoChange(battery, count);
+				count++;
+			});
+		} else {
+			this.setBCTToggleOff(event);
+		}
+	}
+
+	public onBCTInfoChange(bctInfo: ChargeThreshold, index: number) {
+		if (this.powerService.isShellAvailable) {
+			this.powerService.setChargeThresholdValue(bctInfo)
+				.then((value: any) => {
+					this.logger.info('setChargeThresholdValue.then', value);
+					if (value === 0) {
+						this.thresholdInfo[index] = bctInfo;
+						if (!this.chargeThresholdStatus) {
+							this.chargeThresholdStatus = true;
+							this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.chargeThresholdStatus);
+						}
+						this.isThresholdWarningMsgShown();
+						this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.thresholdInfo);
+					}
+				})
+				.catch(error => {
+					this.logger.error('change threshold value', error.message);
+					return EMPTY;
+				});
+		}
+	}
+
+	public onAutoCheckChange(bctInfo: ChargeThreshold, index: number) {
+		if (this.powerService.isShellAvailable) {
+			this.powerService.setCtAutoCheckbox(bctInfo);
+			this.thresholdInfo[index] = bctInfo;
+			this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.thresholdInfo);
+		}
+	}
+
+	public setBCTToggleOff(event) {
+		this.powerService.setToggleOff(this.thresholdInfo.length)
+			.then((value: any) => {
+				if (value === 0) {
+					this.chargeThresholdStatus = false;
+					this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.chargeThresholdStatus);
+					this.thresholdInfo.forEach(battery => {
+						battery.isOn = event;
+					});
+					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.thresholdInfo);
+				}
+			})
+			.catch(error => {
+				this.logger.error('change threshold value', error.message);
+				return EMPTY;
+			});
+	}
+	// End battery threshold settings
 
 	private onNotification(notification: AppNotification) {
 		if (notification) {
@@ -1152,60 +1215,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public toggleBCTSwitch(event) {
-		if (event) {
-			let count = 0;
-			this.thresholdInfo.forEach(battery => {
-				battery.isOn = event;
-				this.onBCTInfoChange(battery, count);
-				count++;
-			});
-		} else {
-			this.powerService.setToggleOff(this.thresholdInfo.length)
-				.then((value: any) => {
-					if (value === 0) {
-						this.chargeThresholdStatus = false;
-						this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.chargeThresholdStatus);
-						this.thresholdInfo.forEach(battery => {
-							battery.isOn = event;
-						});
-					}
-				})
-				.catch(error => {
-					this.logger.error('change threshold value', error.message);
-					return EMPTY;
-				});
-		}
-
-	}
-
-	public onBCTInfoChange(bctInfo: ChargeThreshold, index: number) {
-		if (this.powerService.isShellAvailable) {
-			this.powerService.setChargeThresholdValue(bctInfo)
-				.then((value: any) => {
-					this.logger.info('setChargeThresholdValue.then', value);
-					if (value === 0) {
-						this.thresholdInfo[index] = bctInfo;
-						if (!this.chargeThresholdStatus) {
-							this.chargeThresholdStatus = true;
-							this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.chargeThresholdStatus);
-						}
-						this.isThresholdWarningMsgShown();
-					}
-				})
-				.catch(error => {
-					this.logger.error('change threshold value', error.message);
-					return EMPTY;
-				});
-		}
-	}
-
-	public onAutoCheckChange(bctInfo: ChargeThreshold, index: number) {
-		if (this.powerService.isShellAvailable) {
-			this.powerService.setCtAutoCheckbox(bctInfo);
-			this.thresholdInfo[index] = bctInfo;
-		}
-	}
+	// Start Flip To Boot
 	public getFlipToBootCapability() {
 		this.logger.info('Before getFlipToBootCapability');
 		this.powerService.getFlipToBootCapability()
@@ -1243,7 +1253,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.logger.info('setFlipToBootSettings.error', error);
 			});
 	}
+	// End Flip To Boot
 
+	// Gauge Reset Capability
 	getGaugeResetCapability() {
 		this.logger.info('Before getGaugeResetCapability');
 		this.powerService.getGaugeResetCapability().then((response) => {
@@ -1255,4 +1267,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.logger.info('getGaugeResetCapability.error', err);
 		});
 	}
+	// Gauge Reset Capability
+
 }
