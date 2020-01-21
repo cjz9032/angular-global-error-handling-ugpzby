@@ -1093,7 +1093,7 @@
                     },
                     "airPlanePower": {
                         "title": "機艙電源模式",
-                        "description": "藉由控制您系統的耗電量，保護飛機上的 AC 電源插座。當機艙電源模式啟用時，電腦會限制電池充電率和系統效能，藉此降低耗電量。",
+                        "description": "這項功能可讓您在飛機上使用符合特定電源限制的 AC 電源插座。在這種模式下，因為電池充電率和電腦效能將受限制，因此電腦耗用的電力會降到安全等級。",
                         "checkBoxDesc": "自動偵測",
                         "note": "如果勾選自動偵測，當電腦偵測到機上環境時，將自動開啟機艙電源模式，並在您下機時將其關閉。"
                     },
@@ -1112,7 +1112,7 @@
                         },
                         "progressText1": "步驟{{stage}}（共{{stageNum}}個步驟）：充飽校準",
                         "progressText2": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為放電到低電量",
-                        "progressText3": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為充電到高電量",
+                        "progressText3": "{{stageNum}} 的 {{stage}}：電池電力充足校準",
                         "FCCText": "從 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重設電池計量器之前，請確定將電腦連接到 AC 電源。",
                         "resetLog": {
@@ -1164,14 +1164,14 @@
                     "warningtip": "請至少選擇一天。",
                     "days": {
                         "shortName": {
-                            "sun": "星期日",
-                            "mon": "星期一",
-                            "tue": "星期二",
-                            "wed": "星期三",
-                            "thurs": "星期四",
-                            "fri": "星期五",
-                            "sat": "星期六",
-                            "thu": "Thu"
+                            "sun": "週日",
+                            "mon": "週一",
+                            "tue": "週二",
+                            "wed": "週三",
+                            "thurs": "週四",
+                            "fri": "週五",
+                            "sat": "週六",
+                            "thu": "週四"
                         },
                         "name": {
                             "sun": "星期日",
@@ -1192,7 +1192,7 @@
                     "subTitle": "排程您的電腦",
                     "automaticMode": "自動模式",
                     "manualMode": "手動模式",
-                    "subNote": "根據您的使用情形將您的電腦排程為新式待命模式。",
+                    "subNote": "您的電腦已排定依使用情況以加快回復。",
                     "graph": {
                         "graph1Tittle": "此電腦的使用情形",
                         "graph2Tittle": "套用的啟用時間",
@@ -1543,12 +1543,12 @@
                     "title": "Fn 與 Ctrl 鍵交換",
                     "description": "如果您在想要按 Ctrl 鍵時卻習慣按下 Fn 鍵，可以交換這兩個鍵的功能。",
                     "restartNote": "交換兩個鍵的功能需要重新啟動電腦，您確定要重新啟動嗎？",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Fn 可做為常用組合鍵的 Ctrl",
+                    "description2": "Fn 鍵可做為一些常用組合鍵的 Ctrl 鍵。Ctrl 鍵的功能不變。",
+                    "featureNote": "此功能與 Fn 鍵和 Ctrl 鍵交換功能無法同時開啟。如果開啟其中一個，另一個將會自動關閉。",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Fn 鍵",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1564,7 +1564,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Ctrl 鍵",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1580,20 +1580,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "動作",
+                            "action1": "全選",
+                            "action2": "複製",
+                            "action3": "將網頁新增到我的最愛",
+                            "action4": "搜尋",
+                            "action5": "在 Microsoft Word 中尋找及取代",
+                            "action6": "在 Microsoft Word 中靠左和靠右對齊",
+                            "action7": "結束（在支援的應用程式中）",
+                            "action8": "加上底線",
+                            "action9": "貼上",
+                            "action10": "關閉（個別應用程式）",
+                            "action11": "剪下",
+                            "action12": "重做",
+                            "action13": "復原"
                         }
                     }
                 },
@@ -1604,19 +1604,19 @@
                     "control3": "TRACKPOINT 控制項",
                     "less": "較少"
                 },
-				"backlight": {
-					"title": "鍵盤背光",
-					"description": {
-						"base": "啟動鍵盤背光，以便在黑暗或光線不足的情況下打字。您也可以按下 Fn+空格鍵來變更鍵盤背光設定。",
-						"auto": "啟動鍵盤背光，以便在黑暗或光線不足的情況下打字。您可以按下 Fn+空格鍵來變更背光設定，或將它設定為「自動」。「自動」選項會根據周遭光線自動調整鍵盤背光。"
-					},
-					"level": {
-						"auto": "自動",
-						"low": "低",
-						"high": "高",
-						"off": "關閉"
-					}
-				}
+                "backlight": {
+                    "title": "鍵盤背光",
+                    "description": {
+                        "base": "啟動鍵盤背光，以便在黑暗或光線不足的情況下打字。您也可以按下 Fn+空格鍵來變更鍵盤背光設定。",
+                        "auto": "啟動鍵盤背光，以便在黑暗或光線不足的情況下打字。您可以按下 Fn+空格鍵來變更背光設定，或將它設定為「自動」。「自動」選項會根據周遭光線自動調整鍵盤背光。"
+                    },
+                    "level": {
+                        "auto": "自動",
+                        "low": "低",
+                        "high": "高",
+                        "off": "關閉"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2376,7 +2376,7 @@
     "faq": {
         "footer": {
             "title": "找不到你要找的東西？",
-            "description": "需要額外的支持嗎？ 不要猶豫與VIA聯繫：",
+            "description": "需要其他支援嗎？請隨時透過以下方式與我們聯絡：",
             "body": "聯想社區",
             "button": "去論壇"
         },

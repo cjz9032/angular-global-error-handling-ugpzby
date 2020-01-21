@@ -930,6 +930,13 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getPriorityControl(): any {
+		if (this.getHwSettings()) {
+			return this.getHwSettings().display.priorityControl;
+		}
+		return undefined;
+	}
+
 	public getVersion(): any {
 		if (this.phoenix && this.phoenix.version) {
 			return this.phoenix.version;
