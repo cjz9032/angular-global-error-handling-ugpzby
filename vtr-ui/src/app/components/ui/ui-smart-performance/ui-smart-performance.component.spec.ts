@@ -6,7 +6,7 @@ import { TranslationModule } from 'src/app/modules/translation.module';
 import { TranslateStore } from '@ngx-translate/core';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 
-fdescribe('UiSmartPerformanceComponent', () => {
+describe('UiSmartPerformanceComponent', () => {
 	let component: UiSmartPerformanceComponent;
 	let fixture: ComponentFixture<UiSmartPerformanceComponent>;
 

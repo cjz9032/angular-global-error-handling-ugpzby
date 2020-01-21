@@ -4,7 +4,7 @@ import { SmartPerformanceService } from './smart-performance.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { HttpClientModule } from '@angular/common/http';
 
-fdescribe('SmartPerformanceService', () => {
+describe('SmartPerformanceService', () => {
   // beforeEach(() => TestBed.configureTestingModule({}));
 
   // it('should be created', () => {
