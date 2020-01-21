@@ -155,24 +155,24 @@
         }
         
         .cancel-check {
-			color: $light;
-			font-size: 1.3rem;
-			font-weight: $weight_medium;
-			line-height: 1.5rem;
-			text-align: center;
+            color: $light;
+            font-size: 1.3rem;
+            font-weight: $weight_medium;
+            line-height: 1.5rem;
+            text-align: center;
             text-transform: uppercase;
             padding: 1rem !important;
 
-			.cancel-check-text {
-				cursor: pointer;
-				text-decoration: underline;
+            .cancel-check-text {
+                cursor: pointer;
+                text-decoration: underline;
 
-				&:hover {
-					color: $light;
-					text-decoration: none;
-				}
-			}
-		}
+                &:hover {
+                    color: $light;
+                    text-decoration: none;
+                }
+            }
+        }
 
         .hwscan-header {
             padding-bottom: 1.5rem;
