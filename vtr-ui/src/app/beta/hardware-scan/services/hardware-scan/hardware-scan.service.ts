@@ -101,8 +101,14 @@ export class HardwareScanService {
 			this.isAvailable().then((available) => {
 				console.log('[doPriorityRequests] isAvailable() promise returned: ', available);
 				if (available) {
-					// Retrive the Plugin's information (it does not use the CLI)
-					this.pluginVersion = this.getPluginInfo();
+					// Retrive the Plugin's version (it does not use the CLI)
+					this.getPluginInfo().then((hwscanPluginInfo: any) => {
+						console.log('[getPluginInfo] then: ', hwscanPluginInfo);
+						if (hwscanPluginInfo) {
+							this.pluginVersion = hwscanPluginInfo.PluginVersion;
+							console.log('[getPluginInfo] Hardware Scan plugin version: ', this.pluginVersion);
+						}
+					});
 
 					// Retrive the last Scan's results (it does not use the CLI)
 					this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
