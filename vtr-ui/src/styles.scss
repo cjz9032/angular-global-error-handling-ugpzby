@@ -512,16 +512,19 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .Voice-Modal {
 	.modal-dialog {
 		max-width: 35%;
-
-		// RESPONSIVE EFFORT
-		// @media #{$mediaquery_11} {
-		// 	max-width: 75%;
-		// 	margin: 0 auto;
-		// }
-
-		// @media #{$mediaquery_X8} {
-		// 	max-width: 50%;
-		// }
+		@media #{$breakpoint_xl} {
+			max-width: 45%;
+		}
+		@media #{$breakpoint_lg} {
+			max-width: 60%;
+		}
+		@media #{$breakpoint_md} {
+			max-width: 80%;
+		}
+		@media #{$breakpoint_sm} {
+			max-width: 90%;
+			margin: 0.5rem auto 0;
+		}
 	}
 
 	.modal-content {
@@ -535,16 +538,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .voice-install-failed-modal {
 	.modal-dialog {
 		max-width: 40%;
-
-		// RESPONSIVE EFFORT
-		// @media #{$mediaquery_11} {
-		// 	max-width: 75%;
-		// 	margin: 0 auto;
-		// }
-
-		// @media #{$mediaquery_X8} {
-		// 	max-width: 50%;
-		// }
+		@media #{$breakpoint_md} {
+			max-width: 90%;
+			margin: 0 auto;
+		}
 	}
 
 	.modal-content {
@@ -1486,6 +1483,8 @@ vtr-ui-smart-performance-scanning {
 }
 
 .slider-note {
+	margin-right: 0.8rem;
+	padding-left: 1rem;
 	.vtr-ui-rounded-rectangle-radio {
 		width: 13rem !important;
 		height: 5rem !important;

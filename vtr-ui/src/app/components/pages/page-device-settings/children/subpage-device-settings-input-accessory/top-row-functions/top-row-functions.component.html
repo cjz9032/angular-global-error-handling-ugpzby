@@ -2,16 +2,16 @@
   <div *ngIf="topRowKeyObj.fnLockCap">
     <div class="row">
       <div class="col-12 pl-3">
-        <div class="col-12 title-blck px-0 d-flex">
+        <div class="col-12 title-blck px-0 d-flex" role="text" tabindex="0" >
           <div class="left-icon">
             <fa-icon [icon]="['fal', 'keyboard']"></fa-icon>
           </div>
-          <div class="title pl-2">
+          <div class="title pl-2" role="text" >
             {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.title' | translate}}
           </div>
         </div>
         <div class="col-12 pr-0 caption">
-          <div class="text">
+          <div class="text" role="text" tabindex="0" >
             {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.description' | translate}}
           </div>
           <div class="my-3">
@@ -23,6 +23,7 @@
                   [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey' | translate"
                   [iconName]="'icomoon icomoon-Special-function'" [disabled]="topRowKeyObj.stickyFunStatus"
                   (change)="onChangeFunType(topRowKeyObj.primaryFunStatus)"
+                  (customKeyEvent)="updateFocusAndSelection($event, !topRowKeyObj.primaryFunStatus)"
                   [value]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? true: false">
                 </vtr-ui-rectangle-radio>
               </div>
@@ -32,6 +33,7 @@
                   [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"
                   [iconName]="'icomoon icomoon-F1-F12-funciton'" [disabled]="topRowKeyObj.stickyFunStatus"
                   (change)="onChangeFunType(!topRowKeyObj.primaryFunStatus)"
+                  (customKeyEvent)="updateFocusAndSelection($event, topRowKeyObj.primaryFunStatus)"
                   [value]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? false: true">
                 </vtr-ui-rectangle-radio>
               </div>
@@ -39,7 +41,7 @@
             <p class="text mt-3">
               {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.description' | translate}}
             </p>
-            <div *ngIf="!showAdvancedSection">
+            <div *ngIf="!showAdvancedSection" role="text" tabindex="0">
               <span class="link-text mt-4" (click)="showAdvancedSection = true">
                 {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
               </span>
@@ -96,7 +98,7 @@
         </div>
       </div>
     </div>
-    <div class="pl-5">
+    <div class="pl-5" role="text" tabindex="0">
       <span class="link-text mt-2 ml-4" (click)="showAdvancedSection = false">
         {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.hideAdvSettings' | translate}}
       </span>
