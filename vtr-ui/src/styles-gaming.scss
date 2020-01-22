@@ -384,13 +384,16 @@
 												color: $gaming_lightest;
 											}
 											.battery-gauge-info {
+												background: $gaming-Darkslate-blue!important;
+												border:none;
 												.row {
 													.label-text {
-														color: $shade_blue;
+														color: $gaming_lightest;
 													}
 												}
 											}
 										}
+										
 										.top-row-key-block {
 											.title {
 												color: $gaming_lightest;
@@ -415,6 +418,15 @@
 								.seperator {
 									color: $gaming_grey_lightest !important;
 								}
+							}
+						}
+					}
+					.subpage-device-settings-power{
+						.energystar-container{
+							background: $gaming-Darkslate-blue!important;
+							border:none;
+							.energystar-text{
+							color: $gaming_lightest;
 							}
 						}
 					}
@@ -703,10 +715,12 @@
 					border: none;
 				}
 				.vtr-battery-gauge-reset {
+					
 					.battery-text {
 						color: $gaming_lightest;
 					}
 					.battery-gauge-info {
+						background: $gaming-Darkslate-blue!important;
 						.row {
 							.label-text {
 								color: $shade_blue;
