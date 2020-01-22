@@ -1476,6 +1476,10 @@ vtr-ui-smart-performance-scanning {
 		border-top-right-radius: 0 !important;
 		border-bottom-left-radius: 0.7rem !important;
 		border-bottom-right-radius: 0.7rem !important;
+		box-shadow: 0 0.7rem 1.5rem 0 rgba(0,0,0,0.15) !important;
+		.card-header {
+			border-bottom: none;
+		}
 	}
 }
 

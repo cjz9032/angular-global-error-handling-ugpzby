@@ -5,9 +5,12 @@
 		margin: 3.5rem 0;
 		box-sizing: unset;
 		.list-group-item {
-			background: $shade_extralight;
+			background: $grey_lighter;
 			padding: 1.5rem 1rem 1.5rem 0.2rem;
-
+			border: 0.1rem solid $note_border;
+			&:last-child {
+				border-top: none;
+			}
 			.button-box {
 				padding: 0rem;
 				margin: 0rem;
