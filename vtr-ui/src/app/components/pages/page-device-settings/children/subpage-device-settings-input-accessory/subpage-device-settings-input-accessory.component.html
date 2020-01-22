@@ -76,8 +76,8 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3" *ngIf="machineType === 1">
-						<vtr-backlight-thinkpad></vtr-backlight-thinkpad>
+					<li class="pt-3" *ngIf="machineType === 1 && isKbdBacklightAvailable">
+						<vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)"></vtr-backlight-thinkpad>
 					</li>
 					<li class="pt-3 voip" *ngIf="showVoipHotkeysSection">
 						<vtr-ui-row-switch
