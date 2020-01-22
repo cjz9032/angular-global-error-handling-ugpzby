@@ -25,7 +25,7 @@
 
 							<div class="col">
 								<div class="btn-group btn-block dropdown-left"
-									ngbDropdown
+									ngbDropdown #userDefineDrop="ngbDropdown"
 									placement="bottom">
 									<button [ngClass]="['btn','btn-outline-shadow']"
 										ngbDropdownToggle
@@ -59,8 +59,11 @@
 										<a [ngClass]="['dropdown-item']"
 											*ngFor="let item of userDefinedKeyOptions, let i=index"
 											id="userdefinedkey-{{i}}"
-											attr.aria-label="userdefinedkey-{{i}}"
-											(click)="onChange(item)">{{item.title | translate}}
+											attr.aria-label="userdefinedkey-{{item.title | translate}}"
+											tabindex="0"
+											(keydown.enter)="onChange(item); userDefineDrop.close()"
+											(keydown)="checkDropDown(userDefineDrop, i, $event)"
+											(click)="onChange(item)">{{item.title | translate}} 
 										</a>
 									</div>
 								</div>

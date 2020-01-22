@@ -1154,8 +1154,8 @@
                 position: absolute;
                 top: 0;
                 bottom: 0;
-                width: 100%;
-                right: -100%;
+                width: calc((100vw - 160rem) / 2);
+                right: calc(((100vw - 160rem) / 2) * -1);
                 background-image: url("./assets/images/gaming/GradientLine@1x.png");
                 background-repeat: repeat;
                 background-size: 100% 100%;

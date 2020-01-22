@@ -406,9 +406,11 @@
 					font-weight: $weight_light;
 					text-decoration: none;
 					cursor: pointer;
-
 					&:hover {
 						text-decoration: underline;
+					}
+					@media #{$breakpoint_md}{
+						margin-bottom: -1rem;
 					}
 				}
 
@@ -420,6 +422,7 @@
 					cursor: pointer;
 					text-transform: uppercase;
 					color: $main;
+					line-height: 2rem !important;
 					@media #{$mediaquery_xl} {
 						font-size: 1.1rem;
 					}
@@ -509,7 +512,6 @@
 				font-size: $fontsize_xs;
 				cursor: pointer;
 				text-transform: uppercase;
-
 				a {
 					color: $light;
 					text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;

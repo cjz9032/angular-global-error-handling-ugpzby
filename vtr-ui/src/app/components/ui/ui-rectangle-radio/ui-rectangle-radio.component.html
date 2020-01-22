@@ -1,5 +1,14 @@
-<div class="vtr-ui-rectangle-radio" [ngClass]="{'border-blue':checked && !disabled, 'border-grey':!checked, 'disabled-class':disabled}">
-		<input id="{{radioId}}"
+<div class="vtr-ui-rectangle-radio" [ngClass]="{'border-blue':checked && !disabled, 'border-grey':!checked, 'disabled-class':disabled}"
+	role="radio"
+	id="{{'div' + radioId}}"
+	[tabIndex]="checked? 0 :-1"
+	[attr.aria-disabled]="disabled"
+	[attr.aria-checked]="checked"
+	attr.aria-label="radioId"
+	(keydown)="emitKeyEvent($event)"
+	> 
+		<input id="{{radioId}}" 
+		[attr.aria-label]="radioId"
 		name="{{group}}"
 		type="radio"
 		[value]="value"
@@ -10,7 +19,10 @@
 		vtrMetrics
 		metricsEvent="featureClick"
 		[metricsItem]="'radio.'+label"
-		[metricsValue]="!radio.checked"/>
+		[metricsValue]="!radio.checked"
+		tabindex="-1"
+		[attr.aria-checked]="checked"
+/>
 	<label for="{{radioId}}">
 
 		<span class="label">{{label}}</span>		
