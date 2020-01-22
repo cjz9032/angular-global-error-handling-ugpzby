@@ -10,9 +10,9 @@
                         <span class="row">{{subTitle}}</span>
                         <span class="row">{{warningMessage}}</span>
                     </div>
-                    <div *ngIf="showProgress" class="row">
+                    <div class="row">
                         <div class="row progress-div">
-                            <div *ngIf="!isScanOrRBSFinished()" class="row progress-percent-text">
+                            <div class="row progress-percent-text">
                                 <span class="progress-value-text">{{percent}}</span>
                                 <span class="progress-complete-text">% {{completeText}}</span>
                             </div>
