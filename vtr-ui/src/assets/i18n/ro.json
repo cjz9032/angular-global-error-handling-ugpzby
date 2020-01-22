@@ -87,7 +87,8 @@
                     "line8": "<b>Încărcare rapidă </b><br> Jucați jocuri la drum, cu ajutorul încărcării mai rapide a bateriei",
                     "line9": "<b>Blocare touchpad </b><br> Preveniți introducerile eronate, dezactivând panoul tactil în timp ce jucați jocuri",
                     "line10": "<b>Închidere automată </b><br> Eliminați procesele care sunt inutile pentru jocuri, înainte de a începe să jucați, pentru a amplifica la maximum resursele de sistem disponibile",
-                    "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii"
+                    "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii",
+					"line12": "<b>Tastă macro </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Plasați cursorul pe CPU/GPU/RAM și pe alte drivere pentru a afișa descrierile acestora, inclusiv informațiile de fabricare și modelul"
@@ -1231,7 +1232,8 @@
                     },
                     "description2": "Această caracteristică programează computerul dvs. să optimizeze energaia bateriei în timpul orelor de inactivitate, fără a renunţa la timpul rapid de pornire în orele de utilizare mai intensivă.",
                     "subTitle2": "Setaţi orele la care utilizaţi de obicei acest computer",
-                    "oldTooltipText": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru PORNIRE şi intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată pe baza programului pe care îl setaţi dvs. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate şi nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive."
+                    "oldTooltipText": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru PORNIRE şi intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată pe baza programului pe care îl setaţi dvs. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate şi nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {

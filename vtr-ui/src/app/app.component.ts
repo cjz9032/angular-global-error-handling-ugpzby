@@ -309,7 +309,10 @@ export class AppComponent implements OnInit, OnDestroy {
 						}
 
 						this.translate.use(langCode).subscribe(
-							(data) => console.log('@sahinul trans use NEXT'),
+							(data) => {
+								this.setFontFamilyByLocale(langCode);
+								console.log('@sahinul trans use NEXT');
+							},
 							(error) => console.log('@sahinul server switch error ', error),
 							() => {
 								// Evaluate the translations for QA on language Change

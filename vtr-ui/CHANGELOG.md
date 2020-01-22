@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.62](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.61...v1.2.62) (2020-01-22)
+
+
+### Bug Fixes
+
+* **wifi security:** add mb-40 to the content card ([fa6001e](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/fa6001e))
+* **wifi security:** the on/off no longer affected by first usage ([6a55915](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/6a55915))
+
+
+
+## [1.2.61](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.60...v1.2.61) (2020-01-21)
+
+
+
 ## [1.2.60](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.59...v1.2.60) (2020-01-21)
 
 

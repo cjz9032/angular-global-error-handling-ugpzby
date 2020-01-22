@@ -56,12 +56,13 @@
 		background: $gradient_main;
 		border-radius: 3rem;
 		color: $light;
-		font-size: 1.7rem;
+		font-size: $fontsize_xs;
 		padding: 1.5rem 4.5rem;
 		font-weight: 500;
 		margin-top: 1rem;
-		letter-spacing: 1px;	line-height: 18px;
-		font-weight: $weight_600;
+		letter-spacing: 1px;
+		line-height: 18px;
+		font-weight: $weight_bold;
 		text-transform: uppercase;
 	}
 
@@ -74,7 +75,7 @@
 
 		.text-regular {
 			// color: $shade_blue;
-			
+
 			padding: 1.4rem 0 0 1.5rem;
 			font-size: 1.8rem;
 			line-height: 1.2;
