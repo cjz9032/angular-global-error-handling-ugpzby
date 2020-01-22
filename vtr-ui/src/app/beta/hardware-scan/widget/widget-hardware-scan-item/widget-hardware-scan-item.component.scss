@@ -3,14 +3,35 @@
 .vtr-widget-hardware-scan-item {
 	margin-top: 2rem;
 
+	.module-information {
+		justify-content: space-between;
+	}
+
 	.title {
+		display: flex;
+		justify-content: flex-start;
 		color: $shade_blue;
 		font-size: $fontsize_xl;
 		font-weight: $weight_600;
 		@media #{$breakpoint_lg} {
 			font-size: 1.9rem;
 		}
+
+		.module-name {
+			padding-left: 1.5rem;
+		}
 	}
+
+	.test-status {
+		display: inline-block;
+		font-size: 3rem;
+	}
+
+	.qr-img {
+		width: 4rem;
+		height: 4rem;
+	}
+
 	.description {
 		display: flex;
 		justify-content: space-between;

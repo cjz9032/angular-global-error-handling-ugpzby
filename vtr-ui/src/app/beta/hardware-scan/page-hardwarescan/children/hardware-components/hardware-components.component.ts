@@ -690,6 +690,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				resultCode: module.resultCode,
 				information: module.description,
 				collapsed: false,
+				icon: this.hardwareScanService.getHardwareComponentIcon(module.id),
 				details: [],
 				listTest: []
 			};
