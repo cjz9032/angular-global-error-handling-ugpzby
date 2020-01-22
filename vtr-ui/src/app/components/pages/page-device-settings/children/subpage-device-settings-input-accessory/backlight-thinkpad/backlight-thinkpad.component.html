@@ -6,7 +6,7 @@
 	[showChildContent]="true"
 	[theme]="'white'"
 	[isLastChild]="false"
-	[switchId]="'inputAccessories-backlight'"
+	[switchId]="'inputAccessories-backlight-thinkpad'"
 	automationId="[backlight.title, backlight.description.base]">
 	<div class="row">
 		<vtr-ui-circle-radio-with-checkbox
@@ -18,7 +18,7 @@
 			[value]="mode.value"
 			[checked]="mode.value === currentMode"
 			(optionChange)="updateMode(mode.value)"
-			[textId]="'myDevice-settings-inputAccessories-backlight'">
+			[textId]="'myDevice-settings-inputAccessories-backlight-thinkpad'">
 		</vtr-ui-circle-radio-with-checkbox>
 	</div>
 </vtr-ui-row-switch>
