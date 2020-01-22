@@ -914,6 +914,16 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	/**
+	 * returns Keyboard object  from VantageShellService of JS Bridge
+	 */
+	public getKeyboardObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.keyboard;
+		}
+		return undefined;
+	}
+
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
 		if (this.phoenix) {
