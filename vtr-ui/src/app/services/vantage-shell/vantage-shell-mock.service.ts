@@ -2174,6 +2174,30 @@ export class VantageShellService {
 		return oledSettings;
 	}
 
+	public getPriorityControl(): any {
+		const priorityControl = {
+			getPriorityControlCapability: this.getPromise(true),
+			getPriorityControlSetting: this.getPromise(true),
+			setPriorityControlSetting: this.getPromise(true),
+		};
+
+		return priorityControl;
+	}
+
+	public getKeyboardObject(): any {
+		const keyboard = {
+			getAutoKBDBacklightCapability: this.getPromise(true),
+			getKBDBacklightCapability: this.getPromise(true),
+			getAutoKBDStatus: this.getPromise(true),
+			getKBDBacklightStatus: this.getPromise(true),
+			getKBDBacklightLevel: this.getPromise(true),
+			setKBDBacklightStatus: this.getPromise(true),
+			setAutomaticKBDBacklight: this.getPromise(true)
+		};
+
+		return keyboard;
+	}
+
 	public getVersion(): any {
 		if (this.phoenix && this.phoenix.version) {
 			return this.phoenix.version;
