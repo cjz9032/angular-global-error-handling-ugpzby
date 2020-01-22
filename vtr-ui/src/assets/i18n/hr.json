@@ -87,7 +87,8 @@
                     "line8": "<b>Brzo punjenje </b><br> Igrajte u pokretu uz brže punjenje baterije",
                     "line9": "<b>Zaključavanje dodirne pločice </b><br> Onemogućite dodirnu pločicu tijekom igranja da biste spriječili slučajne unose",
                     "line10": "<b>Automatsko zatvaranje </b><br> Prije igranja očistite procese koji nisu nužni za igranje da biste maksimizirali upotrebu dostupnih resursa sustava",
-                    "line11": "<b>Termički način rada </b><br> Postavite željeni profil uređaja za brzinu ventilatora i kontrolu hlađenja"
+                    "line11": "<b>Termički način rada </b><br> Postavite željeni profil uređaja za brzinu ventilatora i kontrolu hlađenja",
+					"line12": "<b>Makro tipka </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Zadržite pokazivač na CPU/GPU/RAM i različitim pogonima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"
