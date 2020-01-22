@@ -176,16 +176,19 @@ $fontsize_xs: 1.4rem;
 				}
 			}
 		}
-		.slider-note {
-			margin: 0 0 0 1rem;
-			padding-right: 1.4rem;
-			// max-width: 60rem;
-		}
+		// .slider-note {
+		// 	margin: 0 0 0 1rem;
+		// 	padding-right: 1.4rem;
+		// 	// max-width: 60rem;
+		// }
 		.padding-right-07 {
 			padding-right: 0.7rem;
         }
 		.margin-right-05 {
 			margin-right: 0.5rem;
+		}
+		&.auto-screen-off-note {
+			margin: 1.5rem 0.8rem 0 3.8rem;
 		}
 	}
 
