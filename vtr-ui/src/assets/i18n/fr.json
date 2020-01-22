@@ -1231,7 +1231,8 @@
                     },
                     "description2": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
                     "subTitle2": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur",
-                    "oldTooltipText": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs."
+                    "oldTooltipText": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {

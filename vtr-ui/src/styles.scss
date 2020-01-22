@@ -1394,7 +1394,7 @@ vtr-ui-smart-performance-scanning {
 .battery-modal-size {
 	display:flex!important;
 	align-items: center;
-	.modal-dialog {		
+	.modal-dialog {
 		max-width: 110rem;
 		@media #{$breakpoint_xl} {
 			max-width: 92rem;
@@ -1476,5 +1476,26 @@ vtr-ui-smart-performance-scanning {
 		border-top-right-radius: 0 !important;
 		border-bottom-left-radius: 0.7rem !important;
 		border-bottom-right-radius: 0.7rem !important;
+	}
+}
+
+.no-border-bottom {
+ .vtr-ui-switch-row.white-theme {
+	   border-bottom: none !important;
+   }
+}
+
+.slider-note {
+	.vtr-ui-rounded-rectangle-radio {
+		width: 13rem !important;
+		height: 5rem !important;
+		.label {
+			font-size: $fontsize_xs !important;
+			left: 4.5rem !important;
+		}
+		.icon-circle {
+			font-size: 2rem !important;
+			top: 1.4rem !important;
+		}
 	}
 }
