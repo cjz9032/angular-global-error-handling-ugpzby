@@ -6,3 +6,11 @@
 	background: $gaming_lightest;
 	border: none;
 }
+
+::ng-deep .vtr-page-lightingcustomize {
+	.vtr-page-left-column {
+		.vtr-page-column-shift-up {
+			overflow: hidden;
+		}	
+	}
+}
