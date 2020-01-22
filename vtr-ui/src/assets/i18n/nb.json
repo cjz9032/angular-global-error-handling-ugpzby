@@ -87,7 +87,8 @@
                     "line8": "<b>Hurtiglading </b><br> Lad batteriet raskere for å spille mer når du er på farten",
                     "line9": "<b>Pekeplatelås </b><br> Forhindre utilsiktede inndata ved å deaktivere pekeplaten mens du spiller",
                     "line10": "<b>Lukk automatisk </b><br> For å maksimere de tilgjengelige systemressursene kan du fjerne prosesser som spillet ikke trenger, før du begynner å spille",
-                    "line11": "<b>Termisk modus </b><br> Angi ønsket enhetsprofil for viftehastigheten og kjølingskontroll"
+                    "line11": "<b>Termisk modus </b><br> Angi ønsket enhetsprofil for viftehastigheten og kjølingskontroll",
+					"line12": "<b>Makrotast</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Hold pekeren over CPU/GPU/RAM og ulike stasjoner for å vise beskrivelser, deriblant informasjon om fabrikant og modell"
