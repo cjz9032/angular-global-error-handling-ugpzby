@@ -90,7 +90,8 @@
                     "line8": "<b>Brzo punjenje </b><br> Igrajte igre u pokretu duže uz brže punjenje baterije",
                     "line9": "<b>Zaključ. dodirne table </b><br> Sprečite pogrešne unose onemogućavanjem dodirne table prilikom igranja",
                     "line10": "<b>Automatsko zatvaranje </b><br> Obrišite procese koji nisu potrebni za igranje pre nego što počnete kako biste maksimalno iskoristili dostupne sistemske resurse",
-                    "line11": "<b>Toplotni režim </b><br> Postavite željeni profil uređaja za kontrolu brzine ventilatora i hlađenja"
+                    "line11": "<b>Toplotni režim </b><br> Postavite željeni profil uređaja za kontrolu brzine ventilatora i hlađenja",
+					"line12": "<b>Taster makroa </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Zadržite pokazivač na procesoru (CPU) / GPU / RAM i različitim diskovima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"

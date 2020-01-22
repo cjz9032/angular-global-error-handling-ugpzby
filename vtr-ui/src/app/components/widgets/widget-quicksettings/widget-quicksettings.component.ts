@@ -60,6 +60,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private audioClient: any;
 	private audioData: string;
 	private cameraStatusChangeBySet = false;
+	private cameraAccessChangedHandler: any;
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
 
@@ -77,11 +78,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
-				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
-
-			this.windowsObj.addEventListener('accesschanged', () => {
-				this.getCameraPrivacyStatus();
-			});
+				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);	
 		}
 	}
 
@@ -102,6 +99,26 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			}
 		} else {
 			this.initFeatures();
+		}
+
+		if (this.windowsObj) {
+			this.cameraAccessChangedHandler = (args:any) => {
+				if (args) {
+					console.log(`camera access changed args.status ${args.status}`);
+					switch (args.status) {
+						case 2:
+						case 3:
+							this.cameraStatus.permission = false;
+							break;
+						case 1:
+							this.cameraStatus.permission = true;
+						default:
+							break;
+					}
+					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
+				}
+			}
+			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
 		}
 	}
 
@@ -132,6 +149,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.stopMonitorForCamera();
 		this.deviceService.stopMicrophoneMonitor();
 		// this.stopEyeCareMonitor();
+
+		if (this.windowsObj) {
+			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
+		}
 
 	}
 

@@ -87,7 +87,8 @@
                     "line8": "<b>Snelladen </b><br> Onderweg langer gamen met snellere oplaadtijden",
                     "line9": "<b>Touchpadvergrendeling </b><br> Schakel het touchpad uit bij gamen om foutieve invoer te voorkomen",
                     "line10": "<b>Automatisch sluiten </b><br> Wis, voordat je begint, processen die je niet nodig hebt voor gamen om de systeembronnen optimaal te gebruiken",
-                    "line11": "<b>Thermische modus </b><br> Een profiel voor het apparaat van uw voorkeur instellen ter verbetering van de ventilatorsnelheid en het beheren van de koeling"
+                    "line11": "<b>Thermische modus </b><br> Een profiel voor het apparaat van uw voorkeur instellen ter verbetering van de ventilatorsnelheid en het beheren van de koeling",
+					"line12": "<b>Macrotoets</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Beweeg over CPU / GPU / RAM en verschillende schijven om hun beschrijvingen weer te geven, inclusief fabrikant- en modelinformatie"
