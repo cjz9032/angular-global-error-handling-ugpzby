@@ -87,7 +87,8 @@
                     "line8": "<b>Hurtig opladning</b><br> Spil længere tid på farten med hurtigere batteriopladning",
                     "line9": "<b>Lås på navigationsplade</b><br> Undgå forkerte input ved at deaktivere navigationspladen, mens du spiller",
                     "line10": "<b>Luk automatisk</b><br> Ryd processer, der ikke er nødvendige for spil, før du går i gang med at spille, for at maksimere tilgængelige systemressourcer",
-                    "line11": "<b>Varmetilstand</b><br> Angiv din foretrukne enhedsprofil for blæserhastighed og kølingskontrol"
+                    "line11": "<b>Varmetilstand</b><br> Angiv din foretrukne enhedsprofil for blæserhastighed og kølingskontrol",
+					"line12": "<b>Makro-tast</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Peg på CPU-/GPU/RAM og forskellige drev for at få vist disses beskrivelser, herunder fabrikat- og modeloplysninger"
@@ -1231,7 +1232,8 @@
                     },
                     "description2": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
                     "subTitle2": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
-                    "oldTooltipText": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden."
+                    "oldTooltipText": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
