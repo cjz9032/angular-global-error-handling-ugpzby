@@ -88,7 +88,7 @@
                     "line9": "<b>Kosketuslevyn lukitus </b><br> Estä väärät syötteet poistamalla kosketuslevy käytöstä pelaamisen ajaksi",
                     "line10": "<b>Automaattinen sulkeminen </b><br> Maksimoi käytettävissä olevat järjestelmäresurssit tyhjentämällä ennen pelaamisen aloittamista prosessit, joita ei tarvita pelaamiseen",
                     "line11": "<b>Lämpö-tila </b><br> Määritä haluamaasi laitteen profiiliin tuulettimen kierrosnopeuden ja jäähdytyksen säätö",
-					"line12": "<b>Makronäppäin</b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Makronäppäin</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Näytä keskusyksikön/näytönohjaimen/RAM-muistin kuvaukset, mukaan lukien valmistus- ja mallitiedot, viemällä osoitin näiden ja eri asemien päälle"
@@ -1127,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Epäonnistui: Tapahtui odottamaton virhe."
                         },
                         "popup": {
-                            "description1": "Nollausprosessi on seuraavanlainen:<br>Akun lataus täyteen varaukseen  -->  Akun varauksen purku kokonaan  -->  Akun lataus täyteen",
+                            "description1": "Nollausprosessi on seuraavanlainen:<br>Akun lataus täyteen varaukseen --> Akun varauksen purku alhaiseen akun varaukseen --> Akun lataus korkeaan varaukseen tai täyteen",
                             "description2": "Huomautuset: <br>1. Prosessi saattaa kestää useita tunteja. Vältä tietokoneen käyttöä tämän ajanjakson aikana.<br>2. Sulje kaikki avoimet sovellukset ja liitä tietokone verkkovirtaan.<br>3. Prosessin aikana akun varauksen kynnysarvo -toiminto ei ole käytössä.",
                             "continue": "Jatka",
                             "cancel": "Peruuta",
@@ -1337,7 +1337,8 @@
                         "note": {
                             "title": "Huomautus",
                             "description": "Lenovo Vantage -ohjelman on käytettävä sijaintitietojasi oman alueesi auringon lasku- ja nousuajan laskemiseen."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Näytön värilämpötila",

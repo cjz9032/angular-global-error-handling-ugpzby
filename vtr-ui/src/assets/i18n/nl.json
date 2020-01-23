@@ -88,7 +88,7 @@
                     "line9": "<b>Touchpadvergrendeling </b><br> Schakel het touchpad uit bij gamen om foutieve invoer te voorkomen",
                     "line10": "<b>Automatisch sluiten </b><br> Wis, voordat je begint, processen die je niet nodig hebt voor gamen om de systeembronnen optimaal te gebruiken",
                     "line11": "<b>Thermische modus </b><br> Een profiel voor het apparaat van uw voorkeur instellen ter verbetering van de ventilatorsnelheid en het beheren van de koeling",
-					"line12": "<b>Macrotoets</b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Macrotoets</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Beweeg over CPU / GPU / RAM en verschillende schijven om hun beschrijvingen weer te geven, inclusief fabrikant- en modelinformatie"
@@ -1127,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Mislukt: er is een onverwachte fout opgetreden."
                         },
                         "popup": {
-                            "description1": "Het proces voor opnieuw instellen verloopt als volgt:<br>de batterij wordt volledig opgeladen  -->  de batterij wordt volledig ontladen  -->  de batterij wordt opnieuw volledig opgeladen",
+                            "description1": "Het proces voor opnieuw instellen verloopt als volgt:<br>de batterij wordt volledig opgeladen --> de batterij wordt ontladen naar een bijna lege batterij --> de batterij wordt opnieuw opgeladen totdat hij bijna of helemaal vol is",
                             "description2": "Opmerkingen: <br>1. Dit proces kan enkele uren duren. Gebruik de computer in deze periode niet.<br>2. Sluit alle open apps en sluit de computer aan op de netvoeding.<br>3. Tijdens het proces is de functie drempelwaarde voor batterijlading uitgeschakeld.",
                             "continue": "Doorgaan",
                             "cancel": "Annuleren",
@@ -1337,7 +1337,8 @@
                         "note": {
                             "title": "Opmerking",
                             "description": "Lenovo Vantage heeft toegang nodig tot uw locatiegegevens voor het berekenen van de tijd voor zonsondergang en zonsopgang van uw regio."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Kleurtemperatuur weergeven",
