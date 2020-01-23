@@ -18,7 +18,7 @@ describe('BatteryCardComponent', () => {
 	// let component: BatteryCardComponent;
 	// let fixture: ComponentFixture<BatteryCardComponent>;
 	let commonService: CommonService;
-	let debugElement;
+	// let debugElement;
 	let batteryService;
 	let modalService;
 
@@ -223,12 +223,12 @@ describe('BatteryCardComponent', () => {
 
 			expect(component.initBatteryInformation).toHaveBeenCalled();
 
-			//expect(component.remainingPercentages).toEqual([component.batteryInfo[0].remainingPercent]);
+			// expect(component.remainingPercentages).toEqual([component.batteryInfo[0].remainingPercent]);
 			expect(component.batteryHealth).toEqual(component.batteryInfo[0].batteryHealth);
 			expect(component.batteryIndicator.batteryNotDetected).toBeFalsy();
 			expect(component.batteryIndicator.percent).toEqual(component.batteryGauge.percentage);
-			//expect(component.batteryIndicator.charging).toBeFalsy();
-			//expect(component.batteryIndicator.charging).toBeTruthy();
+			// expect(component.batteryIndicator.charging).toBeFalsy();
+			// expect(component.batteryIndicator.charging).toBeTruthy();
 			expect(component.batteryIndicator.timeText).toEqual('timeRemaining');
 			expect(component.batteryIndicator.expressCharging).toBeFalsy();
 
@@ -301,12 +301,12 @@ describe('BatteryCardComponent', () => {
 			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0)]);
 			expect(component.setConditionTips).toHaveBeenCalled();
 
-			//isPowerDriverMissing
-			component.batteryService.isPowerDriverMissing = true; 
+			// isPowerDriverMissing
+			component.batteryService.isPowerDriverMissing = true;
 			component.getBatteryCondition();
 			expect(component.batteryConditions).toEqual([new BatteryConditionModel(11, 2), new BatteryConditionModel(0, 0)]);
 
-			component.batteryService.isPowerDriverMissing = false; 
+			component.batteryService.isPowerDriverMissing = false;
 			component.batteryHealth = 1;
 			component.getBatteryCondition();
 			// 	expect(component.batteryConditions).toEqual([new BatteryConditionModel(17, 1)]);
@@ -322,7 +322,7 @@ describe('BatteryCardComponent', () => {
 			component.batteryGauge.acAdapterStatus = 'NotSupported';
 			component.getBatteryCondition();
 			// expect(component.batteryConditions).toEqual([new BatteryConditionModel(15, 3), new BatteryConditionModel(0, 0)]);
-			//expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0), new BatteryConditionModel(15, 3)]);
+			// expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0), new BatteryConditionModel(15, 3)]);
 			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0), new BatteryConditionModel(13, 3)]);
 
 			// all thinkPad conditions
@@ -333,7 +333,7 @@ describe('BatteryCardComponent', () => {
 
 			// power driver missing
 			component.batteryInfo = undefined;
-			//component.batteryGauge.isPowerDriverMissing = true;
+			// component.batteryGauge.isPowerDriverMissing = true;
 			component.batteryGauge.isPowerDriverMissing = false;
 			component.batteryIndicator.batteryNotDetected = false;
 			component.batteryGauge.acAdapterStatus = 'Supported';
