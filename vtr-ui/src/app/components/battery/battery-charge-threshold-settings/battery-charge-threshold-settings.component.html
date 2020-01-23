@@ -21,14 +21,14 @@
 					<div class="row">
 						<!--start of left dropdown box for action in row-->
 						<div class="col-12 px-20 pb-4"
-							[class.disabled]="bctInfo.checkBoxValue || isGaugeResetRunning">
+							[class.disabled]="bctInfo.checkboxValue || isGaugeResetRunning">
 							<div class="btn-group btn-block dropdown-left"
 								ngbDropdown
 								placement="bottom-right">
-								<button [ngClass]="['btn','btn-outline-shadow',bctInfo.checkBoxValue?'disabled':'']"
+								<button [ngClass]="['btn','btn-outline-shadow',bctInfo.checkboxValue?'disabled':'']"
 									ngbDropdownToggle
 									 #startToggle
-									[disabled]="bctInfo.checkBoxValue?true:false"
+									[disabled]="bctInfo.checkboxValue?true:false"
 									type="button"
 									id="{{textId}}-start-dropdown"
 									attr.aria-label="{{textId}}-start-dropdown">
@@ -104,7 +104,7 @@
 								</button>
 								<div ngbDropdownMenu
 									aria-labelledby="">
-									<a [ngClass]="['dropdown-item',!bctInfo.checkBoxValue && (item <= bctInfo.startValue) ?'disabled':'']"
+									<a [ngClass]="['dropdown-item',!bctInfo.checkboxValue && (item <= bctInfo.startValue) ?'disabled':'']"
 										role="option"
 										tabindex="0"
 										*ngFor="let item of stopAtChargeOptions"
@@ -127,7 +127,7 @@
 									[id]="isCheckedAutoInput + randomNumber"
 									attr.aria-label="batteryThreshold-options-checkboxText"
 									[name]="isCheckedAutoInput + randomNumber"
-									[(ngModel)]="bctInfo.checkBoxValue"
+									[(ngModel)]="bctInfo.checkboxValue"
 									(ngModelChange)='toggleAutoChargeSettings($event)'>
 								<span class="checkmark"></span>
 								<label [for]="isCheckedAutoInput + randomNumber">{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate}}</label>
@@ -149,7 +149,7 @@
 
 		<!--start of Note -->
 		<div class="row"
-			*ngIf="showWarningMsg">
+			*ngIf="showBCTWarningNote">
 			<div class="col px-20">
 				<div class="note-box">
 					<div class="note"

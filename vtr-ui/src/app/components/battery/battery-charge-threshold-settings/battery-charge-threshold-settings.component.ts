@@ -12,7 +12,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 
 	@Input() title = '';
 	@Input() displayNoteOnly = false;
-	@Input() showWarningMsg: boolean;
+	@Input() showBCTWarningNote: boolean;
 	@Input() textId = '';
 	@Input() isGaugeResetRunning = false;
 	@Input() bctInfo: ChargeThreshold;
@@ -49,10 +49,10 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	}
 
 	onStopValueChange(stopVal: number, button: HTMLElement) {
-		const bctInfo = this.commonService.cloneObj(this.bctInfo);
+		const bctInfo: ChargeThreshold = this.commonService.cloneObj(this.bctInfo);
 		if (bctInfo.stopValue !== stopVal) {
 			bctInfo.stopValue = stopVal;
-			if (bctInfo.checkBoxValue) {
+			if (bctInfo.checkboxValue) {
 				bctInfo.startValue = this.bctInfo.stopValue - 5;
 			}
 			this.changeBCTInfo.emit(bctInfo);
