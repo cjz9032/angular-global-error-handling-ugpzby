@@ -71,7 +71,12 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 			}
 		}, 30000);
 	}
-
+	updateCustomKeyEvents(event, value) {
+		const { customeEvent } = event;
+		if (customeEvent === AppEvent.LEFT || customeEvent === AppEvent.RIGHT) {
+			this.onChangeKeyType(value);
+		}
+	}
 	public getAllStatuses() {
 		if (this.topRowKeyObj) {
 			if (this.topRowKeyObj.fnLockCap) {

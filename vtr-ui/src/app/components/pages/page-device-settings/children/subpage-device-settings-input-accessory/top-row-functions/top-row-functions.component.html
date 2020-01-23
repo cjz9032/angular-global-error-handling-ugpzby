@@ -41,8 +41,8 @@
             <p class="text mt-3">
               {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.description' | translate}}
             </p>
-            <div *ngIf="!showAdvancedSection" role="text" tabindex="0">
-              <span class="link-text mt-4" (click)="showAdvancedSection = true">
+            <div *ngIf="!showAdvancedSection">
+              <span class="link-text mt-4"  role="text" tabindex="0" (click)="showAdvancedSection = true" (keydown.enter)="showAdvancedSection = true">
                 {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
               </span>
             </div>
@@ -80,12 +80,12 @@
             <vtr-ui-rounded-rectangle-radio [radioId]="'nMehod_show'" [group]="'topRowKeys'" name="nMehod_show"
               [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod' | translate"
               [value]="false" [checked]="!topRowKeyObj.stickyFunStatus" (change)="onChangeKeyType(false)"
-              [isLarge]= "true" [disabled]="false">
+              [isLarge]= "true" [disabled]="false" (customKeyEvent)="updateCustomKeyEvents($event, true)">
             </vtr-ui-rounded-rectangle-radio>
             <vtr-ui-rounded-rectangle-radio [radioId]="'fnKeyMehod_show'" [group]="'topRowKeys'" name="fnKeyMehod_show"
               [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod' | translate"
               [value]="true" [checked]="topRowKeyObj.stickyFunStatus" (change)="onChangeKeyType(true)"
-              [isLarge]= "true" [disabled]="false">
+              [isLarge]= "true" [disabled]="false" (customKeyEvent)="updateCustomKeyEvents($event, false)">
             </vtr-ui-rounded-rectangle-radio>
             <div class="caption mt-4" *ngIf="topRowKeyObj.stickyFunStatus">
               <vtr-widget-permission-note
@@ -98,8 +98,8 @@
         </div>
       </div>
     </div>
-    <div class="pl-5" role="text" tabindex="0">
-      <span class="link-text mt-2 ml-4" (click)="showAdvancedSection = false">
+    <div class="pl-5" >
+      <span class="link-text mt-2 ml-4" role="text" tabindex="0" (click)="showAdvancedSection = false" (keydown.enter)="showAdvancedSection = false">
         {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.hideAdvSettings' | translate}}
       </span>
     </div>
