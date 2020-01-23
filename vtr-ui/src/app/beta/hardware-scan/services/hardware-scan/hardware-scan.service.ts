@@ -412,7 +412,7 @@ export class HardwareScanService {
 		return undefined;
 	}
 
-	public async isAvailable() {
+	public isAvailable() {
 		console.log('[isAvailable] Method called!');
 		return this.hypSettingsPromise
 			.then((result: any) => {
