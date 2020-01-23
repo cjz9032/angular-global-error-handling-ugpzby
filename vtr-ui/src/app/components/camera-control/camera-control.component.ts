@@ -79,7 +79,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			this.orientationChanged = this.onOrientationChanged.bind(this);
 			this.Windows.Graphics.Display.DisplayInformation.addEventListener('orientationchanged', this.orientationChanged);
 			this.cameraStreamStateChanged = this.onCameraStreamStateChanged.bind(this);
-			this.Capture.addEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
+			this.oMediaCapture.addEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
 		}
 		//#endregion
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
@@ -96,14 +96,16 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
-		this.cleanupCameraAsync();
 		document.removeEventListener('visibilitychange', this.visibilityChange);
 		//#region unregister orientation change event
 		if (this.Windows) {
 			this.Windows.Graphics.Display.DisplayInformation.removeEventListener('orientationchanged', this.orientationChanged);
-			this.Capture.removeEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
+		}
+		if (this.oMediaCapture) {
+			this.oMediaCapture.removeEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
 		}
 		//#endregion
+		this.cleanupCameraAsync();
 	}
 
 	findCameraDeviceByPanelAsync(panel) {
