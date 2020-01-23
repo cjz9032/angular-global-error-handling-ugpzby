@@ -36,6 +36,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private oMediaCapture: any;
 	private visibilityChange: any;
 	private orientationChanged: any;
+	private cameraStreamStateChanged: any;
 
 	public cameraErrorTitle: string;
 	public cameraErrorDescription: string;
@@ -77,6 +78,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (this.Windows) {
 			this.orientationChanged = this.onOrientationChanged.bind(this);
 			this.Windows.Graphics.Display.DisplayInformation.addEventListener('orientationchanged', this.orientationChanged);
+			this.cameraStreamStateChanged = this.onCameraStreamStateChanged.bind(this);
+			this.Capture.addEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
 		}
 		//#endregion
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
@@ -98,6 +101,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		//#region unregister orientation change event
 		if (this.Windows) {
 			this.Windows.Graphics.Display.DisplayInformation.removeEventListener('orientationchanged', this.orientationChanged);
+			this.Capture.removeEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
 		}
 		//#endregion
 	}
@@ -228,7 +232,11 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	onOrientationChanged(eventArgs) {
-		this.logger.info('Device Orientation Changed', eventArgs);
+		this.logger.info('CameraControlComponent.onOrientationChanged', eventArgs);
+	}
+
+	onCameraStreamStateChanged(eventArgs) {
+		this.logger.info('CameraControlComponent.onCameraStreamStateChanged', eventArgs);
 	}
 
 	public onAutoExposureChange($event: any) {
