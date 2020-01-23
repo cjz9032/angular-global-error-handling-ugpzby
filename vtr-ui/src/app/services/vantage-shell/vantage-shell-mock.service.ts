@@ -1251,17 +1251,17 @@ export class VantageShellService {
 		const batteryThresholdInfo: any = [
 			{
 				batteryNumber: 1,
-				checkBoxValue: false,
+				checkboxValue: false,
 				isCapable: true,
-				isOn: false,
+				isEnabled: false,
 				startValue: 75,
 				stopValue: 80
 			},
 			{
 				batteryNumber: 2,
-				checkBoxValue: false,
+				checkboxValue: false,
 				isCapable: true,
-				isOn: false,
+				isEnabled: false,
 				startValue: 75,
 				stopValue: 80
 			}
