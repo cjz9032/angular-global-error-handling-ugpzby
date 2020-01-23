@@ -59,8 +59,14 @@
 					background-color: $shade_extralight;
 				}
 				.vtr-page-column-shift-up {
+					@media #{$breakpoint_sm} {
+						margin-top:-4rem;
+					}
+					@media #{$breakpoint_md} {
+						margin-top:-4rem;
+					}
 					@media #{$breakpoint_lg} {
-						margin-top:0;
+						margin-top:-4rem;
 					}
 				}
 			}

@@ -3,7 +3,14 @@
 	'border-grey':!checked&&!disabled,
 	'large-width': isLarge,
 	'border-checked-disabled': checked && disabled,
-	'border-disabled': disabled && !checked}">
+	'border-disabled': disabled && !checked}" 
+	id="{{'div'+radioId}}" 
+	role="radio"
+	[attr.aria-disabled]="disabled"
+	[attr.aria-checked]="checked"
+	attr.aria-label="radioId"
+	[tabIndex]="checked? 0 :-1"
+	(keydown)="onkeyPress($event)">
 	<input id="{{radioId}}"
 		attr.aria-label="{{radioId}}"
 		name="{{group}}"
@@ -12,7 +19,8 @@
 		[checked]="checked"
 		[disabled]="disabled"
 		#radio
-		(click)="onChange(value)" />
+		(click)="onChange(value)"
+		tabindex="-1" />
 	<label for="{{radioId}}"
 		vtrMetrics
 		metricsEvent="featureClick"

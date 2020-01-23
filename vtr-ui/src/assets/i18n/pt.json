@@ -87,7 +87,8 @@
                     "line8": "<b>Carregamento Rápido </b><br> Jogue em viagem com carregamento mais rápido da bateria",
                     "line9": "<b>Bloqueio do Painel Tátil </b><br> Evite entradas acidentais desativando o painel tátil durante o jogo",
                     "line10": "<b>Fechar auto-maticamente </b><br> Limpe processos que não são necessários para o jogo antes de começar a jogar, de modo a maximizar os recursos de sistema disponíveis",
-                    "line11": "<b>Modo Térmico </b><br> Defina o perfil de dispositivo preferido para velocidade da ventoinha e controlo de arrefecimento"
+                    "line11": "<b>Modo Térmico </b><br> Defina o perfil de dispositivo preferido para velocidade da ventoinha e controlo de arrefecimento",
+					"line12": "<b>Tecla de Macro </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Passe o rato sobre CPU/GPU/RAM e diferentes controladores para mostrar as respetivas descrições, incluindo informações de fabrico e do modelo"
