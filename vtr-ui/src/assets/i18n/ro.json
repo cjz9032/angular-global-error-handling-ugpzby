@@ -87,7 +87,8 @@
                     "line8": "<b>Încărcare rapidă </b><br> Jucați jocuri la drum, cu ajutorul încărcării mai rapide a bateriei",
                     "line9": "<b>Blocare touchpad </b><br> Preveniți introducerile eronate, dezactivând panoul tactil în timp ce jucați jocuri",
                     "line10": "<b>Închidere automată </b><br> Eliminați procesele care sunt inutile pentru jocuri, înainte de a începe să jucați, pentru a amplifica la maximum resursele de sistem disponibile",
-                    "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii"
+                    "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii",
+                    "line12": "<b>Tastă macro </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Plasați cursorul pe CPU/GPU/RAM și pe alte drivere pentru a afișa descrierile acestora, inclusiv informațiile de fabricare și modelul"
@@ -1126,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Nereușit: a apărut o eroare neașteptată."
                         },
                         "popup": {
-                            "description1": "Procesul de resetare este următorul:<br>Încărcaţi complet bateria  -->  Descărcaţi complet bateria  -->  Reîncărcaţi complet bateria",
+                            "description1": "Procesul de resetare este următorul:<br>Încărcați complet bateria --> Descărcați bateria până la un nivel scăzut --> Reîncărcați până la un nivel ridicat sau încărcați complet",
                             "description2": "Note: <br>1. Procesul poate dura câteva ore. Evitaţi utilizarea computerului în această perioadă.<br>2. Închideţi toate aplicaţiile deschise şi conectaţi computerul la o sursă de c.a.<br>3. În timpul procesului, funcţia Prag încărcare baterie este dezactivată.",
                             "continue": "Contin.",
                             "cancel": "Anulare",
@@ -1336,7 +1337,8 @@
                         "note": {
                             "title": "Notă",
                             "description": "Lenovo Vantage trebuie să vă acceseze informațiile privind locația pentru determinarea orei de apus și răsărit din regiunea dvs."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Temperatură culoare afișaj",

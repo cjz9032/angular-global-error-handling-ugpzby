@@ -87,7 +87,8 @@
                     "line8": "<b>Gyorstöltés </b><br> Hosszabb játékidő utazás közben gyorsabb akkumulátortöltéssel",
                     "line9": "<b>Érintőfelület zárolása </b><br> A véletlenszerű műveletek elkerülése az érintőfelület játék közbeni letiltásával",
                     "line10": "<b>Automatikus bezárás </b><br> A rendszer erőforrásainak maximalizálásához törölje a nem használt folyamatokat a játék megkezdése előtt",
-                    "line11": "<b>Termál mód </b><br> Preferált eszközprofil beállítása a ventilátorsebesség és hűtés vezérléséhez"
+                    "line11": "<b>Termál mód </b><br> Preferált eszközprofil beállítása a ventilátorsebesség és hűtés vezérléséhez",
+                    "line12": "<b>Makróbillentyű</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Vigye az egeret a CPU/GPU/RAM vagy a különböző meghajtók fölé, és láthatja a leírásukat, többek között a gyártmányukat és a típusukat"
@@ -1126,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Sikertelen: Váratlan hiba történt."
                         },
                         "popup": {
-                            "description1": "A nullázási folyamat a következő: <br> Töltse fel teljesen az akkumulátort  -->  Süsse ki teljesen az akkumulátort  -->  Töltse újra teljesen az akkumulátort",
+                            "description1": "A nullázási folyamat a következő:<br>Töltse fel teljesen az akkumulátort --> Süsse ki alacsony akkumulátortöltöttségig --> Töltse újra magas akkumulátortöltöttségig vagy teljes töltöttségig",
                             "description2": "Megjegyzések: <br>1. A folyamat több órát is igénybe vehet. A számítógépet ezen idő alatt ne használja.<br>2. Zárja be az összes nyitott alkalmazást, és csatlakoztassa a számítógépet hálózati tápellátáshoz.<br>3. A folyamat során az akkumulátortöltési küszöbérték funkció le van tiltva.",
                             "continue": "Folytatás",
                             "cancel": "Mégse",
@@ -1336,7 +1337,8 @@
                         "note": {
                             "title": "Megjegyzés",
                             "description": "A napnyugta és a napkelte idejének kiszámításához a Lenovo Vantage-nek hozzá kell férnie a helyadatokhoz."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "A képernyő színhőmérséklete",

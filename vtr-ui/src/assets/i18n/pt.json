@@ -80,14 +80,15 @@
                     "line1": "Com o Vantage Edge, as definições serão automaticamente ajustadas com base na utilização. \n Desempenho máximo durante jogos, maior duração da bateria quando não estiver a jogar.",
                     "line2": "<b>Descrição Geral da Gestão de Funcionalidades</b> <br> Algumas funcionalidades não disponíveis em todos os dispositivos",
                     "line3": "<b>Overclocking da CPU </b><br> Aumente a velocidade máxima do processador",
-                    "line4": "<b>Overclocking da RAM </b><br> Aumente a velocidade máxima da memória",
+                    "line4": "<b>Overclock da RAM </b><br> Aumente a velocidade máxima da memória",
                     "line5": "<b>Reforço da rede </b><br> Dê prioridade ao tráfego de rede para o jogo que está a jogar",
                     "line6": "<b>Dolby </b><br> Ajuste o áudio especificamente para jogos com a tecnologia Dolby",
                     "line7": "<b>Modo Híbrido </b><br> Desative as definições de GPU avançadas quando não estiver a jogar para melhorar o desempenho da bateria",
                     "line8": "<b>Carregamento Rápido </b><br> Jogue em viagem com carregamento mais rápido da bateria",
                     "line9": "<b>Bloqueio do Painel Tátil </b><br> Evite entradas acidentais desativando o painel tátil durante o jogo",
                     "line10": "<b>Fechar auto-maticamente </b><br> Limpe processos que não são necessários para o jogo antes de começar a jogar, de modo a maximizar os recursos de sistema disponíveis",
-                    "line11": "<b>Modo Térmico </b><br> Defina o perfil de dispositivo preferido para velocidade da ventoinha e controlo de arrefecimento"
+                    "line11": "<b>Modo Térmico </b><br> Defina o perfil de dispositivo preferido para velocidade da ventoinha e controlo de arrefecimento",
+                    "line12": "<b>Tecla de Macro </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Passe o rato sobre CPU/GPU/RAM e diferentes controladores para mostrar as respetivas descrições, incluindo informações de fabrico e do modelo"
@@ -1126,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Falha: Ocorreu um erro inesperado."
                         },
                         "popup": {
-                            "description1": "O processo de reposição é o seguinte:<br>Carregar totalmente a bateria  -->  Descarregar totalmente a bateria  -->  Voltar a carregar totalmente a bateria",
+                            "description1": "O processo de reposição é o seguinte:<br>Carregar totalmente a bateria --> Descarregar até bateria fraca --> Recarregar até carga da bateria cheia ou carga completa",
                             "description2": "Notas: <br>1. O processo poderá demorar várias horas. Evite utilizar o computador durante este período.<br>2. Feche todas as aplicações abertas e ligue o computador à alimentação CA.<br>3. Durante o processo, a função de limiar de carregamento da bateria é desativada.",
                             "continue": "Continuar",
                             "cancel": "Cancelar",
@@ -1336,7 +1337,8 @@
                         "note": {
                             "title": "Nota",
                             "description": "A Lenovo Vantage precisa de aceder às suas informações de localização para calcular o horário do pôr e do nascer do sol na sua região."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura de cor do ecrã",

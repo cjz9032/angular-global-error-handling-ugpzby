@@ -11,7 +11,7 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			<div class="row pt-5 smartsettings-card"
+			<div class="row pt-5 smart-settings-card"
 				id="display">
 				<div class="col-12 mx-auto  container-card">
 					<!-- Display -->
@@ -125,6 +125,14 @@
 												</vtr-widget-permission-note>
 											</div>
 
+											<div class="row">
+												<div class="feature-note p-4 ecm-note"
+													 id="eye-care-mode-temp-note"
+													 tabindex="0"
+													 attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.eyeCareMode.tips' | translate }}">
+													<p>{{'device.deviceSettings.displayCamera.display.eyeCareMode.tips' | translate}}</p>
+												</div>
+											</div>
 											<!-- <span *ngIf="!enableSunsetToSunrise; else vtrwidgetpermissionnote"></span>
 										<ng-template #vtrwidgetpermissionnote>
 											<vtr-widget-permission-note
@@ -233,13 +241,14 @@
 							<!-- Display Priority Control -->
 							<li class="pt-3" *ngIf="displayPriorityModal.capability">
 								<vtr-ui-row-switch
-									[title]="'device.deviceSettings.displayCamera.display.displayPriority.title' | translate"
+									[title]="'device.deviceSettings.displayCamera.display.displayPriority.title' | translate | capitalizeFirst"
 									[caption]="'device.deviceSettings.displayCamera.display.displayPriority.description' | translate"
 									[isSwitchVisible]="false"
 									[isLastChild]="true"
 									[leftIcon]="['icomoon', 'icomoon-dpc-icon']"
 									[readMoreText]="''"
 									[showChildContent]="true"
+									[switchId]="'display-priority-control'"
 									[theme]="'white'">
 									<div class="row no-gutters">
 										<vtr-ui-circle-radio-with-checkbox
@@ -267,7 +276,7 @@
 			</div>
 
 			<!-- Camera -->
-			<div class="row pt-5 smartsettings-card pb-40"
+			<div class="row pt-5 smart-settings-card pb-40"
 				*ngIf="this.isAllInOneMachineFlag"
 				id="camera"
 				[hidden]="isCameraHidden">

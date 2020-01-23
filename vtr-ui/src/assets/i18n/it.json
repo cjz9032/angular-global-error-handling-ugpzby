@@ -87,7 +87,8 @@
                     "line8": "<b>Carica rapida </b><br> Maggiore autonomia per giocare in viaggio con caricamenti più rapidi della batteria",
                     "line9": "<b>Blocco touchpad </b><br> Previeni input errati disabilitando il touchpad quando giochi",
                     "line10": "<b>Chius. auto </b><br> Termina i processi non richiesti dai videogame prima di iniziare a giocare per ottimizzare le risorse di sistema disponibili",
-                    "line11": "<b>Modalità termica </b><br> Imp. profilo dispositivo preferito per velocità ventola e controllo raffreddamento"
+                    "line11": "<b>Modalità termica </b><br> Imp. profilo dispositivo preferito per velocità ventola e controllo raffreddamento",
+                    "line12": "<b>Tasto macro </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Passa il mouse su CPU/GPU/RAM e sulle differenti unità per mostrare le descrizioni, come le informazioni sul modello e la fabbricazione"
@@ -1126,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Operazione non riuscita: errore imprevisto."
                         },
                         "popup": {
-                            "description1": "Il processo di reimpostazione è il seguente:<br>caricare completamente la batteria  -->  scaricare completamente la batteria  -->  ricaricare completamente la batteria",
+                            "description1": "Il processo di reimpostazione è il seguente:<br>Caricare completamente la batteria --> Scaricare completamente la batteria --> Ricaricare completamente la batteria",
                             "description2": "Note: <br>1. Il processo potrebbe richiedere diverse ore. Evitare di utilizzare il computer durante questo periodo.<br>2. Chiudere tutte le applicazioni aperte e collegare il computer all'alimentazione CA.<br>3. Durante il processo, la funzione soglia di carica della batteria è disabilitata.",
                             "continue": "Continua",
                             "cancel": "Annulla",
@@ -1336,7 +1337,8 @@
                         "note": {
                             "title": "Nota",
                             "description": "Lenovo Vantage deve accedere alle informazioni sulla posizione per calcolare l'ora del tramonto e dell'alba dell'area geografica in cui ci si trova."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura colore schermo",

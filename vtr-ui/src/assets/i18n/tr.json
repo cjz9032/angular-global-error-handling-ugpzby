@@ -87,7 +87,8 @@
                     "line8": "<b>Hızlı Şarj </b><br> Daha hızlı pil şarjıyla hareket halindeyken daha uzun süre oyun oynayın",
                     "line9": "<b>Touchpad Kilidi </b><br> Oyun oynarken dokunmaya duyarlı tableti devre dışı bırakarak hatalı girişleri önleyin",
                     "line10": "<b>Oto. Kapat </b><br> Kullanılabilir sistem kaynaklarını en üst düzeye çıkarmak için oyuna başlamadan önce gerekli olmayan işlemleri temizleyin",
-                    "line11": "<b>Isı Kipi </b><br> Fan hızı ve soğutma kontrolü için tercih ettiğiniz cihaz profilini ayarlayın"
+                    "line11": "<b>Isı Kipi </b><br> Fan hızı ve soğutma kontrolü için tercih ettiğiniz cihaz profilini ayarlayın",
+                    "line12": "<b>Makro Tuşu </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Üretim ve model bilgilerini de içeren açıklamaları göstermek için CPU/GPU/RAM ve farklı sürücülerin üzerine gelin"
@@ -1126,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Başarısız: Beklenmedik bir hata oluştu."
                         },
                         "popup": {
-                            "description1": "Sıfırlama işlemi şöyledir:<br>Pili tamamen doldurma  -->  Pili tamamen boşaltma  -->  Pili tamamen yeniden doldurma",
+                            "description1": "Sıfırlama işlemi şöyledir:<br>Pili tamamen doldurma --> Düşük pil gücüne düşürme --> Yüksek pil gücüne kadar yeniden doldurma veya tamamen doldurma",
                             "description2": "Notlar: <br>1. Bu işlem birkaç saat sürebilir. Bu sırada lütfen bilgisayarınızı kullanmaktan kaçının.<br>2. Tüm açık uygulamaları kapatın ve bilgisayarınızı AC gücüne bağlayın.<br>3. İşlem sırasında pil şarj eşiği işlevi devre dışı bırakılır.",
                             "continue": "Devam",
                             "cancel": "İptal",
@@ -1336,7 +1337,8 @@
                         "note": {
                             "title": "Not",
                             "description": "Lenovo Vantage'ın, bölgenizdeki gün batımı ve gün doğumu saatlerini hesaplamak için konum bilgilerinize erişmesi gerekir."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Ekran rengi sıcaklığı",

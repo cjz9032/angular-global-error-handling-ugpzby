@@ -6,6 +6,7 @@
 		padding-left: 2.5rem;
 		font-size: 1.4rem;
 		font-weight: 300;
+		color: $purple_navy;
 	}
 	#goto_nightlight_link {
 		text-decoration: underline;
@@ -58,7 +59,7 @@
 
 			}
 		}
-	.smartsettings-card {
+	.smart-settings-card {
 		margin-left: -1.5rem;
 		margin-right: -1.5rem;
 		.subtitle {
@@ -210,5 +211,11 @@
 				border: none;
 			}
 		}
+	}
+}
+
+.ecm-note {
+	p {
+		margin-bottom: 0;
 	}
 }
