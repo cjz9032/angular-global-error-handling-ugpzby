@@ -1103,10 +1103,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 				const startValue = battery.startValue - (battery.startValue % 5);
 				let stopValue = battery.stopValue - (battery.stopValue % 5);
-				if (battery.startValue !== startValue || battery.stopValue !== battery.stopValue) {
-					if (startValue === stopValue) {
-						stopValue = stopValue + 5;
-					}
+				if (startValue === stopValue) {
+					stopValue = stopValue + 5;
+				}
+				if (battery.startValue !== startValue || battery.stopValue !== stopValue) {
 					battery.startValue = startValue;
 					battery.stopValue = stopValue;
 					this.onBCTInfoChange(battery, count);
