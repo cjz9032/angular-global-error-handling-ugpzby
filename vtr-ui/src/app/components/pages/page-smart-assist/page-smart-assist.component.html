@@ -22,7 +22,7 @@
 			<div class="row">
 				<div class="col">
 					<!-- Start of Intelligent Security -->
-					<div class="row py-5 smart-assist-card"
+					<div class="row pt-5 smart-assist-card"
 						id="security"
 						*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
 						<div class="col-12 px-0">
@@ -391,7 +391,7 @@
 					<!-- End of Intelligent Security -->
 
 					<!-- Start of Intelligent Screen -->
-					<div class="row py-5 smart-assist-card"
+					<div class="row pt-5 smart-assist-card"
 						id="screen"
 						*ngIf="intelligentScreen.isIntelligentScreenVisible">
 						<div class="col-12 px-0">
@@ -404,8 +404,8 @@
 								[theme]="'white'"
 								(toggle)="onCardCollapse($event)">
 
-								<div class="row">
-									<div class="col-auto">
+								<div class="intligent-screen">
+									<div class="col-12 px-0">
 										<div class="int-screen-desc">
 											<p id="smart-assist-intelligent-screen-desc"
 												attr.aria-label="smart-assist-intelligent-screen-desc">
@@ -493,7 +493,7 @@
 					<!-- End of Intelligent Media -->
 
 					<!-- Start of Active Protection System -->
-					<div class="row py-5 smart-assist-card"
+					<div class="row pt-5 smart-assist-card"
 						id="aps"
 						*ngIf='isAPSAvailable'>
 						<div class="col-12 px-0">
@@ -512,7 +512,7 @@
 					<!-- End of Active Protection System -->
 
 					<!-- Start of voice -->
-					<div class="row py-5 smart-assist-card"
+					<div class="row pt-5 smart-assist-card"
 						id="voice"
 						*ngIf="lenovoVoice.available">
 						<div class="col-12 px-0">

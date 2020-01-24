@@ -1,5 +1,4 @@
 @import "../../../app.theme.scss";
-
 $fontsize_xs: 1.4rem;
 .vtr-page {
 	.vtr-page-content {
@@ -12,6 +11,7 @@ $fontsize_xs: 1.4rem;
 .vtr-page-right-column {
 	background-color: $shade_extralight;
 }
+
 ::ng-deep {
 	.vtr-page-smart-assist {
 		// .title {
@@ -50,261 +50,252 @@ $fontsize_xs: 1.4rem;
 				font-weight: $weight_light;
 				color: $shade_blue;
 			}
-
-		a {
-			text-decoration: underline;
-			color: $menu_hover;
-			&:hover {
+			a {
 				text-decoration: underline;
+				color: $menu_hover;
 				&:hover {
 					text-decoration: underline;
-					color: $menu_hover;
-
+					&:hover {
+						text-decoration: underline;
+						color: $menu_hover;
+					}
 				}
-			}
-			// &.screen-lock-note {
-			// 	// max-width: 64rem;
-			// }
-			&.auto-screen-off-note {
-				p {
+				// &.screen-lock-note {
+				// 	// max-width: 64rem;
+				// }
+				&.auto-screen-off-note {
+					p {
+						color: $alt;
+					}
+					span {
+						font-size: 1.5rem;
+					}
+				}
+				fa-icon {
 					color: $alt;
-				}
-				span {
-					font-size: 1.5rem;
+					font-size: 3rem;
 				}
 			}
-			fa-icon {
-				color: $alt;
-				font-size: 3rem;
+			.blur {
+				&.disabled {
+					opacity: 0.65;
+				}
 			}
-		}
-		.blur {
-			&.disabled {
-				opacity: 0.65;
-			}
-		}
-
-		.auto-screen-lock-timer {
-			h3 {
-				font-weight: $weight_bold;
-				color: $main_darker;
-				margin-top: 0.2rem;
-				letter-spacing: 0.05rem;
-			}
-			fa-icon {
-				font-size: 1.8rem;
-				color: $gaming;
-				&:hover {
-					color: $highlight;
+			.auto-screen-lock-timer {
+				h3 {
+					font-weight: $weight_bold;
+					color: $main_darker;
+					margin-top: 0.2rem;
+					letter-spacing: 0.05rem;
+				}
+				fa-icon {
+					font-size: 1.8rem;
+					color: $gaming;
+					&:hover {
+						color: $highlight;
+					}
 				}
 			}
 		}
-	}
-	.card-body {
-		padding: 2rem 1.8rem;
-	}
-	.blur-1 {
-		opacity: 0.65;
-	}
-	.feature-note {
-		background-color: $shade_lightest;
-		border: 1px solid $shade_lighter;
-		width: 100%;
-		p {
-			font-size: $fontsize_xs;
-			font-weight: $weight_light;
-			color: $shade_blue;
+		.card-body {
+			padding: 2rem 1.8rem;
 		}
-		a {
-			text-decoration: underline;
-			color: $menu_hover;
-			&:hover {
+		.blur-1 {
+			opacity: 0.65;
+		}
+		.feature-note {
+			background-color: $shade_lightest;
+			border: 1px solid $shade_lighter;
+			width: 100%;
+			p {
+				font-size: $fontsize_xs;
+				font-weight: $weight_light;
+				color: $shade_blue;
+			}
+			a {
 				text-decoration: underline;
-			}
-		}
-		::ng-deep .vtr-ui-rounded-rectangle-radio {
-			width: 25.5rem;
-			@media #{$mediaquery_X22} {
-				width: 25.5rem;
-			}
-			@media #{$mediaquery_X23} {
-				width: 25.5rem;
-			}
-		}
-
-		.auto-screen-block,
-		.auto-screen-off-block {
-			::ng-deep .vtr-ui-switch-row {
-				border-bottom: none;
-			}
-		}
-
-
-		.keep-my-display-block {
-			::ng-deep .vtr-ui-switch-row {
-				border-top: 0.1rem solid $shade_lighter;
-				border-bottom: none;
-			}
-			.display-padding {
-				padding-left: 2.5rem;
-			}
-			::ng-deep {
-				.ng5-slider {
-					margin: 20px 0 15px;
+				color: $menu_hover;
+				&:hover {
+					text-decoration: underline;
 				}
 			}
-
-		}
-
-		.disabled-overlay {
-			background-color: #f6f8f8;
-			z-index: 2;
-			pointer-events: none;
-		}
-		.disabled {
-			pointer-events: none;
-		}
-
-		.border-bottom {
-			border-bottom: 0.1rem solid $shade_lighter;
-		}
-
-		.col-pad-margin {
-			::ng-deep .vtr-ui-switch-row.white-theme {
-				.vtr-col-pad {
-					margin-right: 0.4rem;
+			::ng-deep .vtr-ui-rounded-rectangle-radio {
+				width: 25.5rem;
+				@media #{$mediaquery_X22} {
+					width: 25.5rem;
+				}
+				@media #{$mediaquery_X23} {
+					width: 25.5rem;
 				}
 			}
+			.auto-screen-block,
+			.auto-screen-off-block {
+				::ng-deep .vtr-ui-switch-row {
+					border-bottom: none;
+				}
+			}
+			.keep-my-display-block {
+				::ng-deep .vtr-ui-switch-row {
+					border-top: 0.1rem solid $shade_lighter;
+					border-bottom: none;
+				}
+				.display-padding {
+					padding-left: 2.5rem;
+				}
+				::ng-deep {
+					.ng5-slider {
+						margin: 20px 0 15px;
+					}
+				}
+			}
+			.disabled-overlay {
+				background-color: #f6f8f8;
+				z-index: 2;
+				pointer-events: none;
+			}
+			.disabled {
+				pointer-events: none;
+			}
+			.border-bottom {
+				border-bottom: 0.1rem solid $shade_lighter;
+			}
+			.col-pad-margin {
+				::ng-deep .vtr-ui-switch-row.white-theme {
+					.vtr-col-pad {
+						margin-right: 0.4rem;
+					}
+				}
+			}
+			// .slider-note {
+			// 	margin: 0 0 0 1rem;
+			// 	padding-right: 1.4rem;
+			// 	// max-width: 60rem;
+			// }
+			.padding-right-07 {
+				padding-right: 0.7rem;
+			}
+			.margin-right-05 {
+				margin-right: 0.5rem;
+			}
+			&.auto-screen-off-note {
+				margin: 1.5rem 0.8rem 0 3.8rem;
+			}
 		}
-		// .slider-note {
-		// 	margin: 0 0 0 1rem;
-		// 	padding-right: 1.4rem;
-		// 	// max-width: 60rem;
+		.vtr-page-shift-up-medium {
+			@media #{$mediaquery_X5} {
+				margin-top: 0;
+			}
+			@media only screen and (min-width: 400px) and (max-width: 768px) {
+				margin-top: -6rem;
+			}
+		}
+		.auto-set-checkbox {
+			margin-top: 2rem;
+			position: relative;
+			input {
+				width: 1.5rem;
+				height: 1.5rem;
+				position: absolute;
+				top: 0.5rem;
+				margin-right: 0.5rem;
+			}
+			label {
+				color: $shade_blue;
+				font-size: $fontsize_xs;
+				font-weight: $weight_light;
+				text-align: left;
+				padding-left: 2rem;
+			}
+		}
+		// .custom-control-input:disabled ~ .custom-control-label::before {
+		// 	// background-color: $light-grey;
+		// 	//border-color: $shade;
 		// }
-		.padding-right-07 {
-			padding-right: 0.7rem;
-        }
-		.margin-right-05 {
-			margin-right: 0.5rem;
+		.custom-control-input:disabled~.custom-control-label {
+			cursor: not-allowed;
 		}
-		&.auto-screen-off-note {
-			margin: 1.5rem 0.8rem 0 3.8rem;
+		.custom-control-label {
+			padding-left: 0.5rem;
+			line-height: 1.15;
+			@media #{$breakpoint_sm} {
+				line-height: 1.3;
+			}
+			//color: $dark;
+			.disabled {
+				color: $light-grey;
+			}
+			// rounded square-box background
+			&::before {
+				top: 0.2rem;
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+			// tick mark
+			&::after {
+				top: 0rem;
+				width: 2rem;
+				height: 2rem;
+				left: -1.7rem;
+			}
 		}
-	}
-
-	.vtr-page-shift-up-medium {
-		@media #{$mediaquery_X5} {
-			margin-top: 0;
-		}
-
-		@media only screen and (min-width: 400px) and (max-width: 768px) {
-			margin-top: -6rem;
-		}
-	}
-
-	.auto-set-checkbox {
-		margin-top: 2rem;
-		position: relative;
-		input {
-			width: 1.5rem;
-			height: 1.5rem;
-			position: absolute;
-			top: 0.5rem;
-			margin-right: 0.5rem;
-		}
-		label {
-			color: $shade_blue;
+		.smart-assist-checkbox {
+			margin: 1rem 0rem 1rem 0rem;
 			font-size: $fontsize_xs;
-			font-weight: $weight_light;
-			text-align: left;
-			padding-left: 2rem;
+			color: $shade_blue;
 		}
-	}
-	// .custom-control-input:disabled ~ .custom-control-label::before {
-	// 	// background-color: $light-grey;
-	// 	//border-color: $shade;
-	// }
-
-	.custom-control-input:disabled ~ .custom-control-label {
-		cursor: not-allowed;
-	}
-
-	.custom-control-label {
-		padding-left: 0.5rem;
-		line-height: 1.15;
-		@media #{$breakpoint_sm} {
-		line-height: 1.3;
-		}
-
-		//color: $dark;
-
-		.disabled {
-		color: $light-grey;
-		}
-		// rounded square-box background
-		&::before {
-		top: 0.2rem;
-		width: 1.5rem;
-		height: 1.5rem;
-		}
-
-		// tick mark
-		&::after {
-		top: 0rem;
-		width: 2rem;
-		height: 2rem;
-		left: -1.7rem;
-		}
-	}
-	.smart-assist-checkbox {
-		margin: 1rem 0rem 1rem 0rem;
-		font-size: $fontsize_xs;
-		color: $shade_blue;
-	}
-
-	.permission-note {
-		background-color: $grey_lighter;
+		.permission-note {
+			background-color: $grey_lighter;
 			border: 0.1rem solid $note_border;
 			padding-right: 1.4rem;
 			span {
 				font-size: $fontsize_xs;
 				color: $shade_blue;
 			}
-		.privacy-button {
-			font-size: $fontsize_xs;
-			letter-spacing: 0.76px;
-			text-align: left;
-			text-decoration: underline;
-			margin-bottom: 0.5rem;
-			color: $menu_hover;
+			.privacy-button {
+				font-size: $fontsize_xs;
+				letter-spacing: 0.76px;
+				text-align: left;
+				text-decoration: underline;
+				margin-bottom: 0.5rem;
+				color: $menu_hover;
 				&:hover {
 					text-decoration: underline;
 					color: $menu_hover;
 				}
+			}
 		}
-	}
-	.facial-recognition {
-		h3 {
-			font-weight: $weight_bold;
-            color: $shade_blue;
-            font-size:1.4rem !important;
+		.facial-recognition {
+			h3 {
+				font-weight: $weight_bold;
+				color: $shade_blue;
+				font-size: 1.4rem !important;
+			}
+			p {
+				font-size: $fontsize_xs;
+				font-weight: $weight_light;
+				// max-width: 60rem !important;
+				color: $purple_navy;
+				width: 95%;
+			}
 		}
-		p {
-			font-size: $fontsize_xs;
-			font-weight: $weight_light;
-			// max-width: 60rem !important;
-			color: $purple_navy;
-			width: 95%;
+		.fac-control {
+			margin-left: 2.5rem;
+			padding-top: 1.5rem;
 		}
-	}
-	.fac-control {
-		margin-left: 2.5rem;
-		padding-top: 1.5rem;
-	}
+		vtr-ui-row-switch {
+			&::ng-deep {
+				.vtr-ui-switch-row.white-theme {
+					padding-top: 0.5rem !important;
+				}
+			}
+		}
 	}
 }
 
 .smart-assist-card {
+	&:last-child {
+		padding-bottom: 3rem;
+	}
 	::ng-deep .vtr-ui-button {
 		.button-box {
 			.button {
@@ -316,6 +307,11 @@ $fontsize_xs: 1.4rem;
 
 ::ng-deep .vtr-ui-range-slider {
 	width: 85%;
+	&::ng-deep {
+		.ng5-slider {
+			margin-top: 2rem !important;
+		}
+	}
 }
 
 .int-screen-desc {
@@ -323,6 +319,7 @@ $fontsize_xs: 1.4rem;
 		font-size: $fontsize_xs;
 		color: $purple_navy;
 		font-weight: $weight_light;
+		padding-left: 1rem;
 	}
 }
 
