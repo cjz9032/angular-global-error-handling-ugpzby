@@ -6,10 +6,10 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
     providedIn: 'root'
 })
 export class SmartPerformanceService {
-    private getSmartPerformance: any;
+    getSmartPerformance: any;
     public isShellAvailable = false;
     constructor(shellService: VantageShellService) {
-        //this.getSmartPerformance = shellService.getSmartPerformance();
+        this.getSmartPerformance = shellService.getSmartPerformance();
         if (this.getSmartPerformance) {
             this.isShellAvailable = true;
         }
@@ -18,7 +18,7 @@ export class SmartPerformanceService {
     getReadiness(): Promise<boolean> {
         try {
             if (this.isShellAvailable) {
-                return this.getSmartPerformance.GetReadiness();
+                return this.getSmartPerformance.getScanReadyStatus();
             }
             return undefined;
         } catch (error) {
@@ -26,10 +26,10 @@ export class SmartPerformanceService {
         }
     }
 
-    launchScan(): Promise<any> {
+    startScan(): Promise<any> {
         try {
             if (this.isShellAvailable) {
-                return this.getSmartPerformance.LaunchScan();
+                return this.getSmartPerformance.startScan();
             }
             return undefined;
         } catch (error) {
@@ -51,7 +51,7 @@ export class SmartPerformanceService {
     cancelScan(): Promise<boolean> {
         try {
             if (this.isShellAvailable) {
-                return this.getSmartPerformance.CancelScan();
+                return this.getSmartPerformance.cancelScan();
             }
             return undefined;
         } catch (error) {

@@ -60,6 +60,7 @@ export class VantageShellService {
 				Phoenix.Features.Registry,
 				Phoenix.Features.SelfSelect,
 				Phoenix.Features.UpeAgent,
+				Phoenix.Features.SmartPerformance,
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -538,6 +539,16 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getSmartPerformance() {
+        if (this.phoenix) {
+            if (!this.phoenix.smartPerformance) {
+                return this.phoenix.loadFeatures([Phoenix.Features.SmartPerformance]);
+            }
+            return this.phoenix.smartPerformance;
+        }
+        return undefined;
+    } 
 
 	// public getSmartPerformance() {
 	// 	console.log('----------CALLING');
