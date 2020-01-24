@@ -207,21 +207,35 @@ export class CommonService {
 		return arguments.length === 1 ? undefined : defaultValue;
 	}
 
-	public removeObjFrom(array: any[], path: string) {
-		return array.filter(e => e.path !== path);
+	addToObjectsList(array: any[], item: any) {
+		if (!this.isPresent(array, item.path)) {
+			array.push(item);
+			return this.sortMenuItems(array);
+		} else {
+			return array;
+		}
 	}
 
-	public isFoundInArray(array: any[], path: string) {
-		const element = array.find(e => e.path === path);
-		return element ? true : false;
+	public removeObjFrom(array: any[], path: string) {
+		if (this.isPresent(array, path)) {
+			return array.filter(e => e.path !== path);
+		} else {
+			return array;
+		}
 	}
+
+	// public isFoundInArray(array: any[], path: string) {
+	// 	const element = array.find(e => e.path === path);
+	// 	return element ? true : false;
+	// }
 
 	public removeObjById(array: any[], id: string) {
 		return array.filter(e => e.id !== id);
 	}
 
 	public isPresent(array: any[], path: string) {
-		return array.some(e => e.path === path);
+		const element = array.find(e => e.path === path);
+		return element ? true : false;
 	}
 
 	public sortMenuItems(menuItems) {
@@ -253,5 +267,24 @@ export class CommonService {
 
 	public scrollTop() {
 		document.querySelector('.vtr-app.container-fluid').scrollTop = 0;
+	}
+
+	// This is version compare function which takes version numbers of any length and any number size per segment.
+	// Return values:
+	// - negative number if v1 < v2
+	// - positive number if v1 > v2
+	// - zero if v1 = v2
+	public compareVersion(v1: string, v2: string) {
+		const regExStrip0 = '/(\.0+)+$/';
+		const segmentsA = v1.replace(regExStrip0, '').split('.');
+		const segmentsB = v2.replace(regExStrip0, '').split('.');
+		const min = Math.min(segmentsA.length, segmentsB.length);
+		for (let i = 0; i < min; i++) {
+			const diff = parseInt(segmentsA[i], 10) - parseInt(segmentsB[i], 10);
+			if (diff) {
+				return diff;
+			}
+		}
+		return segmentsA.length - segmentsB.length;
 	}
 }

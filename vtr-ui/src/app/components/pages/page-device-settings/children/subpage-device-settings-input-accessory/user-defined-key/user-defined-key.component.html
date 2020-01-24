@@ -25,7 +25,7 @@
 
 							<div class="col">
 								<div class="btn-group btn-block dropdown-left"
-									ngbDropdown
+									ngbDropdown #userDefineDrop="ngbDropdown"
 									placement="bottom">
 									<button [ngClass]="['btn','btn-outline-shadow']"
 										ngbDropdownToggle
@@ -59,8 +59,11 @@
 										<a [ngClass]="['dropdown-item']"
 											*ngFor="let item of userDefinedKeyOptions, let i=index"
 											id="userdefinedkey-{{i}}"
-											attr.aria-label="userdefinedkey-{{i}}"
-											(click)="onChange(item)">{{item.title | translate}}
+											attr.aria-label="userdefinedkey-{{item.title | translate}}"
+											tabindex="0"
+											(keydown.enter)="onChange(item); userDefineDrop.close()"
+											(keydown)="checkDropDown(userDefineDrop, i, $event)"
+											(click)="onChange(item)">{{item.title | translate}} 
 										</a>
 									</div>
 								</div>
@@ -81,16 +84,14 @@
 											<textarea class="form-control"
 												spellcheck="false"
 												[(ngModel)]="url"
-												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.website.placeholder'
-										| translate"
+												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.website.placeholder' | translate"
 												name="url"
 												required></textarea>
 										</div>
 										<div class="col-12">
 											<div *ngIf="isUDFSetSuccessVisible"
 												class="select-text pt-3 udf-set-success">
-												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'
-										| translate}}
+												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'| translate}}
 											</div>
 											<div *ngIf="isUDFSetFailedVisible"
 												class="select-text pt-3 udf-set-failed">
@@ -140,18 +141,14 @@
 										<div class="col-12">
 											<div *ngIf="isUDFSetSuccessVisible"
 												class="select-text pt-3 udf-set-success">
-												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'
-										| translate}}
+												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage' | translate}}
 											</div>
 											<button id="ip-userdefined-key-applybtn"
 												attr.aria-label="ip-userdefined-key-applybtn"
 												type="submit"
 												class="button"
 												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
-												{{
-											'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate
-											}}
-
+												{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
 											</button>
 										</div>
 									</div>

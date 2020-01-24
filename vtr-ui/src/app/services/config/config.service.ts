@@ -8,7 +8,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import { menuItemsGaming, menuItems, appSearch, betaItem } from 'src/assets/menu/menu.json';
 import { privacyPolicyLinks } from 'src/assets/privacy-policy-links/policylinks.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
-import { BetaService } from '../beta/beta.service';
+import { BetaService, BetaStatus } from '../beta/beta.service';
 import { LoggerService } from '../logger/logger.service';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
@@ -55,6 +55,7 @@ export class ConfigService {
 	betaItem = betaItem;
 	privacyPolicyLinks = privacyPolicyLinks;
 	showCHS = false;
+	showCHSWithoutSegment = false;
 	wifiSecurity: WifiSecurity;
 	securityAdvisor: SecurityAdvisor;
 	windowsHello: WindowsHello;
@@ -108,6 +109,11 @@ export class ConfigService {
 						this.notifyMenuChange(menu);
 					});
 					break;
+				case MenuItem.MenuBetaItemChange:
+					this.showBetaMenu(notification.payload).then((menu) => {
+						this.notifyMenuChange(menu);
+					});
+					break;
 				default:
 					break;
 			}
@@ -124,7 +130,7 @@ export class ConfigService {
 
 	initGetMenuItemsAsync(): Promise<any> {
 		return new Promise(async (resolve) => {
-			const isBetaUser = this.betaService.getBetaStatus();
+			const isBetaUser = this.betaService.getBetaStatus() === BetaStatus.On;
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
 			this.activeSegment = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
@@ -157,12 +163,16 @@ export class ConfigService {
 			this.showSecurityItem(country.toLowerCase(), resultMenu);
 			this.smodeFilter(resultMenu, this.deviceService.isSMode);
 			this.armFilter(resultMenu, this.deviceService.isArm);
+			this.menuBySegment.commercial = cloneDeep(resultMenu);
 			if (isBetaUser) {
 				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
 				if (await this.canShowSearch()) {
 					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
 			}
+			this.menuBySegment.consumer = cloneDeep(resultMenu);
+			this.menuBySegment.smb = cloneDeep(resultMenu);
+			resultMenu = this.menuBySegment[this.activeSegment.toLowerCase()];
 			if (this.hypSettings) {
 				await this.initShowCHSMenu().then((result) => {
 					const shellVersion = {
@@ -176,19 +186,16 @@ export class ConfigService {
 						&& this.isShowCHSByShellVersion(shellVersion)
 						&& !machineInfo.isGaming
 						&& this.activeSegment !== SegmentConst.Commercial;
-					const showCHSConsumer = country.toLowerCase() === 'us'
+					this.showCHSWithoutSegment = country.toLowerCase() === 'us'
 						&& locale.startsWith('en')
 						&& result
 						&& this.isShowCHSByShellVersion(shellVersion)
 						&& !machineInfo.isGaming;
-					this.menuBySegment.commercial = cloneDeep(resultMenu);
-					this.menuBySegment.consumer = cloneDeep(resultMenu);
-					this.menuBySegment.smb = cloneDeep(resultMenu);
 					if (!this.showCHS) {
 						resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 					}
 					this.menuBySegment.commercial = this.menuBySegment.commercial.filter(item => item.id !== 'home-security');
-					if (!showCHSConsumer) {
+					if (!this.showCHSWithoutSegment) {
 						this.menuBySegment.consumer = this.menuBySegment.consumer.filter(item => item.id !== 'home-security');
 						this.menuBySegment.smb = this.menuBySegment.smb.filter(item => item.id !== 'home-security');
 					}
@@ -322,8 +329,8 @@ export class ConfigService {
 			);
 			this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
 
-			if (smartAssistCacheValue || this.isSmartAssistAvailable) {
-				this.addSmartAssistMenu(items);
+			if (!smartAssistCacheValue) {
+				this.removeSmartAssistMenu(items);
 			}
 
 			// raj: promise.all breaks if any one function is breaks. adding feature wise capability check
@@ -407,7 +414,23 @@ export class ConfigService {
 		if (myDeviceItem) {
 			const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
 			if (!smartAssistItem) {
-				myDeviceItem.subitems.splice(3, 0, this.menuItems.find((item) => item.id === 'device').subitems.find((item) => item.id === 'smart-assist'));
+				myDeviceItem.subitems.splice(3, 0,
+					{
+						id: 'smart-assist',
+						label: 'common.menu.device.sub4',
+						path: 'smart-assist',
+						metricsEvent: 'itemClick',
+						metricsParent: 'navbar',
+						metricsItem: 'link.smartassist',
+						externallink: false,
+						routerLinkActiveOptions: {
+							exact: true
+						},
+						icon: null,
+						sMode: true,
+						subitems: []
+					}
+				);
 			}
 		}
 	}
@@ -469,6 +492,7 @@ export class ConfigService {
 				return resolve(this.menu);
 			} else {
 				this.activeSegment = segment;
+				this.showCHS = this.showCHSWithoutSegment && this.activeSegment !== SegmentConst.Commercial;
 				const seg = segment.toLowerCase();
 				this.menu = cloneDeep(this.menuBySegment[seg]);
 				return resolve(this.menu);
@@ -491,7 +515,6 @@ export class ConfigService {
 		if (menu.find((item) => item.id === 'wifi-security')
 			|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
 			this.supportFilter(menu, 'wifi-security', wifiIsSupport);
-			menu.filter(item => !item.hide);
 		} else if (wifiIsSupport && !this.deviceService.isSMode && !this.deviceService.isArm) {
 			if (securityItem && securityItem.subitems) {
 				const wifiItem = this.menuItems.find((item) => item.id === 'security').subitems.find((item) => item.id === 'wifi-security');
@@ -502,6 +525,44 @@ export class ConfigService {
 				menu.splice(supportIndex, 0, wifiItems);
 			}
 		}
+	}
+
+	showBetaMenu(isBeta: boolean): Promise<any> {
+		return new Promise((resolve) => {
+			this.updateBetaMenu(this.menu, isBeta).then((menu) => {
+				this.menu = menu;
+				this.menu = this.segmentFilter(this.menu, this.activeSegment);
+				return resolve(this.menu);
+			});
+			this.updateBetaMenu(this.menuBySegment.consumer, isBeta).then((menu) => {
+				this.menuBySegment.consumer = menu;
+			});
+			this.updateBetaMenu(this.menuBySegment.smb, isBeta).then((menu) => {
+				this.menuBySegment.smb = menu;
+			});
+		});
+	}
+
+	updateBetaMenu(menu, isBeta: boolean): Promise<any> {
+		return new Promise((resolve) => {
+			if (isBeta) {
+				if (!menu.find((item) => item.id === 'hardware-scan') && !menu.find((item) => item.id === 'app-search')) {
+					menu.splice(menu.length - 1, 0, ...this.betaItem);
+					this.canShowSearch().then((result) => {
+						if (result) {
+							menu.splice(menu.length - 1, 0, this.appSearch);
+						}
+						return resolve(menu);
+					});
+				} else {
+					return resolve(menu);
+				}
+			} else {
+				menu = menu.filter(item => item.id !== 'hardware-scan');
+				menu = menu.filter(item => item.id !== 'app-search');
+				return resolve(menu);
+			}
+		});
 	}
 
 	showSystemUpdates(): Promise<any> {

@@ -40,21 +40,24 @@
 			border: 0.1rem solid $dark;
 			border-radius: 1rem;
 			box-sizing: border-box;
-			
-			
+
+
 		}
 		@media #{$white-on-black} {
 			//background-color: $high-contrast-grey;
 			border: 0.1rem solid $light;
 			border-radius: 1rem;
 			box-sizing: border-box;
-			
-			
+
+
 		}
-	}	
-	.smartsettings-card {
+	}
+	.smart-settings-card {
 		margin-left: -1.5rem;
 		margin-right: -1.5rem;
+		&:last-child {
+			padding-bottom: 3rem;
+		}
 		.subtitle {
 			width: 100%;
 
@@ -174,18 +177,17 @@
 		font-weight: $weight_bold;
 	}
 	.auto-detection-note {
-		font-size: $body;
+		font-size: $fontsize_xs;
 		font-weight: $weight_light;
-		max-width: 60rem;
-		color: $main_darker;
+		// max-width: 60rem;
+		color: $shade_blue;
 		padding-left: 2rem;
 		padding-right: 2rem;
 		padding-top: 1.4rem;
 		padding-bottom: 1.4rem;
 		margin-top: 1rem;
-		background-color: $shade_lightest;
-		border: 1px solid $shade_lighter;
-		color: $main_darker;
+		background-color: $grey_lighter;
+		border: 0.1rem solid  $note_border;
 	}
 	.auto-set-checkbox {
 		margin-top: 2rem;
@@ -201,8 +203,8 @@
 			outline: 0;
 		}
 		label {
-			color: $shade_darker;
-			font-size: 1.5rem;
+			color: $shade_blue;
+			font-size: $fontsize_xs;
 			font-weight: $weight_light;
 			text-align: left;
 			padding-left: 2rem;

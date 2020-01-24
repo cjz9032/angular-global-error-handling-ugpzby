@@ -1,4 +1,4 @@
-import { async, TestBed } from '@angular/core/testing';
+import { async, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
@@ -12,37 +12,35 @@ import { MetricService } from '../../../../../services/metric/metric.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
+import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/battery-charge-threshold-capability.model';
 const featureStatus = {
-	'available': true,
-	'status': true,
-	'permission': true,
-	'isLoading': true
-}
+	available: true,
+	status: true,
+	permission: true,
+	isLoading: true
+};
 
 describe('SubpageDeviceSettingsPowerComponent', () => {
 	let powerService: PowerService;
 	let commonService: CommonService;
 	let logger: LoggerService;
 	let modalService: NgbModal;
-	let shellServices: VantageShellService;
-	let metrics: MetricService;
-	let debugElement;
 	let mode = 'expressCharging';
-	let batteryNum = 1, inputString = 'changedValues';
-	const batteryDetails = {
-		'checkBoxValue': '5',
-		'startValue': '3',
-		'stopValue': '2'
-	}
+	const batteryNum = 1;
+	// const batteryDetails = {
+	// 	checkboxValue: '5',
+	// 	startValue: '3',
+	// 	stopValue: '2'
+	// };
 	const machineType = 1;
-	let thresholdInfo: ChargeThreshold[] = [
+	const thresholdInfo: ChargeThreshold[] = [
 		{
 			batteryNum: 1,
 			isCapable: false,
-			isOn: false,
+			isEnabled: false,
 			startValue: 40,
 			stopValue: 45,
-			checkBoxValue: false,
+			checkboxValue: false,
 		}
 	];
 
@@ -98,18 +96,18 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			fixture.detectChanges();
 			component.onAirplaneAutoModeStatusChange();
 		});
-		it('#checkPowerDriverMissing should call', () => {
+		/* it('#checkPowerDriverMissing should call', () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
 			fixture.detectChanges();
 			component.checkPowerDriverMissing(true);
-		});
-		it('#showBatteryThresholdsettings should call', () => {
+		}); */
+		it('#toggleBCTSwitch should call', () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
 			fixture.detectChanges();
 			component.thresholdInfo = thresholdInfo;
-			component.showBatteryThresholdsettings(new Event('click'));
+			component.toggleBCTSwitch(new Event('click'));
 		});
 
 		it('#getGaugeResetCapability should call', () => {
@@ -121,18 +119,18 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			expect(powerService.getGaugeResetCapability).toHaveBeenCalled();
 
 		});
-		it('#hidePowerSmartSetting should call', () => {
+		/* it('#hidePowerSmartSetting should call', () => {
 			const { fixture, component } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
 			fixture.detectChanges();
 			component.hidePowerSmartSetting(true);
-		});
+		}); */
 		it('#setChargeThresholdValues should call', () => {
 			const { fixture, component, powerService, commonService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
 			spyOn(commonService, 'sendNotification').and.returnValue();
 			fixture.detectChanges();
-			component.setChargeThresholdValues(batteryDetails, batteryNum, inputString);
+			component.onBCTInfoChange(thresholdInfo[0], batteryNum);
 			expect(commonService.sendNotification).toHaveBeenCalled();
 
 
@@ -142,17 +140,30 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			const myPrivateSpy = spyOn<any>(component, 'setConservationModeStatusIdeaNoteBook').and.callThrough();
 			const myPrivateSpyObj = spyOn<any>(component, 'setRapidChargeModeStatusIdeaNoteBook').and.callThrough();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
+			mode = 'expressCharging';
 			fixture.detectChanges();
 			await component.changeBatteryMode(new Event('click'), mode);
 			component.conservationModeStatus.status = true;
 			component.changeBatteryMode(new Event('click'), mode);
 			expect(myPrivateSpy).toHaveBeenCalled();
+		});
 
+		it('#changeBatteryMode should call else', async () => {
+			const { fixture, component, powerService } = setup();
+			const myPrivateSpy = spyOn<any>(component, 'setConservationModeStatusIdeaNoteBook').and.callThrough();
+			const myPrivateSpyObj = spyOn<any>(component, 'setRapidChargeModeStatusIdeaNoteBook').and.callThrough();
+			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
+			mode = 'conservationMode';
+			fixture.detectChanges();
+			// await component.changeBatteryMode(new Event('click'), mode);
+			component.conservationModeStatus.status = false;
+			component.changeBatteryMode(new Event('click'), mode);
+			// expect(myPrivateSpy).toHaveBeenCalled();
 		});
 		it('#onUsbChargingStatusChange should call', async () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			spyOn(component, 'updatePowerMode')
+			spyOn(component, 'updatePowerMode');
 			fixture.detectChanges();
 			await component.onUsbChargingStatusChange();
 			expect(component.updatePowerMode).toHaveBeenCalled();
@@ -160,11 +171,11 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 
 		it('#getBatteryAndPowerSettings should call', async () => {
 			const { fixture, component, powerService } = setup();
-			spyOn(component, 'getBatteryAndPowerSettings')
+			spyOn(component, 'getBatteryAndPowerSettings');
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
 			const myPrivateSpy = spyOn<any>(component, 'getEasyResumeCapabilityThinkPad').and.callThrough();
 			fixture.detectChanges();
-			//await component.getBatteryAndPowerSettings(machineType);
+			// await component.getBatteryAndPowerSettings(machineType);
 			component.machineType = machineType;
 			await component.getBatteryAndPowerSettings();
 			expect(component.getBatteryAndPowerSettings).toHaveBeenCalled();
@@ -378,13 +389,84 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			component.onToggleOfAlwaysOnUsb({ switchValue: true });
 			expect(myPrivateSpy).toHaveBeenCalled();
 		});
-		it('#closeContextModal should call', () => {
+		/* it('#closeContextModal should call', () => {
 			const { fixture, component } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
 			spyOn(modalService, 'dismissAll').and.returnValue();
 			fixture.detectChanges();
 			component.closeContextModal();
 			expect(modalService.dismissAll).toHaveBeenCalled();
+		}); */
+
+		it('should call getBatteryAndPowerSettings', (() => {
+			const { component, fixture } = setup();
+			component.machineType = 0;
+			component.getBatteryAndPowerSettings();
+			// tick()
+			expect(component.showEasyResumeSection).toBe(false);
+		}));
+
+		it('should call getBatteryAndPowerSettings', (() => {
+			const { component, fixture } = setup();
+			component.machineType = 1;
+			component.getBatteryAndPowerSettings();
+			// tick()
+			// expect(component.showEasyResumeSection).toBe(false)
+		}));
+
+		it('onSetSmatStandbyCapability else case', () => {
+			const { component } = setup();
+			const booleanEvent = true;
+			const spy = spyOn(commonService, 'isPresent').and.returnValue(true);
+			component.onSetSmartStandbyCapability(booleanEvent);
+			expect(spy).toHaveBeenCalledWith(component.headerMenuItems, 'smartStandby');
 		});
+
+		it('onSetSmatStandbyCapability else case - 2', () => {
+			const { component } = setup();
+			const booleanEvent = true;
+			const spy = spyOn(commonService, 'isPresent').and.returnValue(false);
+			component.onSetSmartStandbyCapability(booleanEvent);
+			expect(spy).toHaveBeenCalledWith(component.headerMenuItems, 'smartStandby');
+		});
+		it('should call setChargeThresholdUI', () => {
+			const { component } = setup();
+			component.chargeThresholdCache = thresholdInfo;
+			thresholdInfo[0].batteryNum = 1;
+			const spy = spyOn(component, 'isThresholdWarningMsgShown');
+			component.setChargeThresholdUI(thresholdInfo);
+			expect(spy).toHaveBeenCalled();
+		});
+
+		it('should call setChargeThresholdUI case-2', () => {
+			const { component } = setup();
+			component.chargeThresholdCache = thresholdInfo;
+			thresholdInfo[0].batteryNum = 2;
+			const spy = spyOn(component, 'isThresholdWarningMsgShown');
+			component.setChargeThresholdUI(thresholdInfo);
+			expect(spy).toHaveBeenCalled();
+		});
+
+		it('should call setChargeThresholdUI if-case', () => {
+			const { component } = setup();
+			component.chargeThresholdCache = thresholdInfo;
+			thresholdInfo[0].batteryNum = 1;
+			thresholdInfo[0].startValue = null;
+			thresholdInfo[0].stopValue = null;
+			const spy = spyOn(powerService, 'setChargeThresholdValue');
+			component.setChargeThresholdUI(thresholdInfo);
+			expect(spy).toHaveBeenCalled();
+		});
+		it('should call setChargeThresholdUI if-case-2', () => {
+			const { component } = setup();
+			component.chargeThresholdCache = thresholdInfo;
+			thresholdInfo[0].batteryNum = 2;
+			thresholdInfo[0].startValue = null;
+			thresholdInfo[0].stopValue = null;
+			const spy = spyOn(powerService, 'setChargeThresholdValue');
+			component.setChargeThresholdUI(thresholdInfo);
+			expect(spy).toHaveBeenCalled();
+		});
+
 	});
 });

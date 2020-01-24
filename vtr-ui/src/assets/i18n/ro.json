@@ -87,7 +87,8 @@
                     "line8": "<b>Încărcare rapidă </b><br> Jucați jocuri la drum, cu ajutorul încărcării mai rapide a bateriei",
                     "line9": "<b>Blocare touchpad </b><br> Preveniți introducerile eronate, dezactivând panoul tactil în timp ce jucați jocuri",
                     "line10": "<b>Închidere automată </b><br> Eliminați procesele care sunt inutile pentru jocuri, înainte de a începe să jucați, pentru a amplifica la maximum resursele de sistem disponibile",
-                    "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii"
+                    "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii",
+                    "line12": "<b>Tastă macro </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Plasați cursorul pe CPU/GPU/RAM și pe alte drivere pentru a afișa descrierile acestora, inclusiv informațiile de fabricare și modelul"
@@ -644,7 +645,8 @@
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -670,6 +672,9 @@
         },
         "app-update": {
             "message": "Bună ziua! Este disponibilă o versiune mai nouă de Vantage, doriți să o încărcați?"
+        },
+        "offline": {
+            "connectToUseFeature": "Pentru a utiliza această caracteristică, trebuie să vă conectați la internet"
         }
     },
     "privacy": {
@@ -717,20 +722,24 @@
             "button": "Oferiți feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comentarii...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Vă mulţumim pentru feedbackul furnizat!"
-                },
                 "question1": "Vă place noul stil al Vantage?",
                 "question2": "Credeți că performanța este acceptabilă?",
                 "question3": "Ați folosi aplicația mai des în viitor?",
+                "question4": "Știați că puteți utiliza Lenovo Vantage pentru a actualiza driverele software, firmware-ul și BIOS-ul computerului?",
+                "question5": "Care este probabilitatea de a recomanda aplicația Lenovo Vantage unui prieten sau unui coleg?",
+                "notAtAllLikely": "Deloc probabil",
+                "extremelyLikely": "Extrem de probabil",
                 "yes": "Da",
                 "no": "Nu",
                 "tips1": "Vă rugăm să lăsați orice comentarii suplimentare",
+                "comments": "Comentarii...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Trimiteți feedbackul",
-                "submitScreenShot": "Trimiteți captura de ecran"
+                "submitScreenShot": "Trimiteți captura de ecran",
+                "messages": {
+                    "feedbackSuccess": "Vă mulţumim pentru feedbackul furnizat!"
+                }
             }
         },
         "quickSettings": {
@@ -1085,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "Mod alimentare avion",
-                        "description": "Protejaţi priza de c.a. din avion controlând consumul de energie al sistemului.Când modul de alimentare avion este activat, calculatorul reduce consumul de energie prin limitarea ratei de încărcare a bateriei și a performanței sistemului.",
+                        "description": "Această caracteristică vă permite să utilizați priza electrică într-un avion în care se aplică o anumită limită de putere. În acest mod, consumul de energie al computerului scade până la un nivel sigur prin limitarea ratei de încărcare a bateriei și a performanței computerului.",
                         "checkBoxDesc": "Autodetecție",
                         "note": "Dacă detectarea automată este activată, calculatorul va porni automat modul de alimentare Avion când detectează un mediu de bord de avion și îl va opri când părăsiți acel mediu."
                     },
@@ -1104,7 +1113,7 @@
                         },
                         "progressText1": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
                         "progressText2": "{{stage}} din {{stageNum}}: se calibrează la nivel scăzut al bateriei",
-                        "progressText3": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
+                        "progressText3": "{{stage}} din {{stageNum}}: se calibrează la nivel ridicat al bateriei",
                         "FCCText": "De la {{before}} Wh la {{after}} Wh",
                         "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {
@@ -1118,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Nereușit: a apărut o eroare neașteptată."
                         },
                         "popup": {
-                            "description1": "Procesul de resetare este următorul:<br>Încărcaţi complet bateria  -->  Descărcaţi complet bateria  -->  Reîncărcaţi complet bateria",
+                            "description1": "Procesul de resetare este următorul:<br>Încărcați complet bateria --> Descărcați bateria până la un nivel scăzut --> Reîncărcați până la un nivel ridicat sau încărcați complet",
                             "description2": "Note: <br>1. Procesul poate dura câteva ore. Evitaţi utilizarea computerului în această perioadă.<br>2. Închideţi toate aplicaţiile deschise şi conectaţi computerul la o sursă de c.a.<br>3. În timpul procesului, funcţia Prag încărcare baterie este dezactivată.",
                             "continue": "Contin.",
                             "cancel": "Anulare",
@@ -1135,10 +1144,10 @@
                 },
                 "smartStandby": {
                     "title": "Stare de veghe inteligentă",
-                    "description": "Această caracteristică programează computerul dvs. să optimizeze economia de energie de la baterie în timpul orelor de inactivitate, fără a renunța la timpii rapizi de pornire pe durata orelor de utilizare mai intensivă.",
-                    "tooltip": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru PORNIRE şi intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată în funcţie de programul pe care îl setaţi sau de timpul de utilizare al computerului pe care îl obţinem. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate şi nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive.",
+                    "description": "Această caracteristică programează computerul să optimizeze modul de economisire a energiei bateriei în timpul orelor de inactivitate, fără a afecta experiența de reluare rapidă pentru <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a>, în timpul orelor de utilizare intensivă.",
+                    "tooltip": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru PORNIRE și intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată în funcție de programarea pe care o setați sau de modul de utilizare a computerului. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate și nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive.",
                     "timer": {
-                        "heading": "Orele la care utilizaţi de obicei computerul",
+                        "heading": "Timpul în care utilizați de obicei acest computer:",
                         "subHeading1": "începeţi",
                         "subHeading2": "oprire",
                         "subHeading3": "utilizați această planificare pentru",
@@ -1156,14 +1165,14 @@
                     "warningtip": "Selectați cel puțin o zi.",
                     "days": {
                         "shortName": {
-                            "sun": "duminică",
-                            "mon": "luni",
-                            "tue": "marţi",
-                            "wed": "miercuri",
-                            "thurs": "joi",
-                            "fri": "vineri",
-                            "sat": "sâmbătă",
-                            "thu": "Thu"
+                            "sun": "Duminică",
+                            "mon": "Luni",
+                            "tue": "Marţi",
+                            "wed": "Miercuri",
+                            "thurs": "Joi",
+                            "fri": "Vineri",
+                            "sat": "Sâmbătă",
+                            "thu": "Joi"
                         },
                         "name": {
                             "sun": "duminică",
@@ -1180,11 +1189,11 @@
                         "noDaySelected": "Nicio zi selectată"
                     },
                     "checkbox": "Reglarea automată a orelor active ale computerului în funcţie de utilizare",
-                    "hyperlinkToGraph": "Faceţi clic pentru a vedea activitatea şi orele active ale computerului",
+                    "hyperlinkToGraph": "Faceți clic pentru a vedea nivelul de utilizare și timpul activ aplicat",
                     "subTitle": "Programaţi computerul",
                     "automaticMode": "Mod Automat",
                     "manualMode": "Mod Manual",
-                    "subNote": "Computerul este programat în Starea de veghe modernă în funcţie de utilizare.",
+                    "subNote": "Computerul dvs. este programat pentru o revenire mai rapidă, în funcție de utilizare.",
                     "graph": {
                         "graph1Tittle": "Utilizarea acestui computer",
                         "graph2Tittle": "Timp activ aplicat",
@@ -1223,7 +1232,8 @@
                     },
                     "description2": "Această caracteristică programează computerul dvs. să optimizeze energaia bateriei în timpul orelor de inactivitate, fără a renunţa la timpul rapid de pornire în orele de utilizare mai intensivă.",
                     "subTitle2": "Setaţi orele la care utilizaţi de obicei acest computer",
-                    "oldTooltipText": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru PORNIRE şi intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată pe baza programului pe care îl setaţi dvs. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate şi nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive."
+                    "oldTooltipText": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru PORNIRE şi intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată pe baza programului pe care îl setaţi dvs. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate şi nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1327,7 +1337,8 @@
                         "note": {
                             "title": "Notă",
                             "description": "Lenovo Vantage trebuie să vă acceseze informațiile privind locația pentru determinarea orei de apus și răsărit din regiunea dvs."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Temperatură culoare afișaj",
@@ -1370,6 +1381,17 @@
                         "taskBarDimmer": "ESTOMPAREA BAREI DE ACTIVITĂȚI",
                         "backgroundDimmer": "ESTOMPAREA FUNDALULUI",
                         "displayDimmer": "ESTOMPAREA AFIȘAJULUI"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1545,60 @@
                 "fnCtrlKey": {
                     "title": "Schimbare taste Fn şi Ctrl",
                     "description": "Dacă apăsaţi în mod obişnuit tasta Fn când de fapt intenţionaţi să apăsaţi tasta Ctrl, puteţi schimba între ele funcţiile celor două taste.",
-                    "restartNote": "Comutarea funcţiei a două taste necesită repornirea computerului. Sigur reporniţi?"
+                    "restartNote": "Comutarea funcţiei a două taste necesită repornirea computerului. Sigur reporniţi?",
+                    "title2": "Fn funcţionează ca Ctrl pentru combinaţiile de taste utilizate frecvent",
+                    "description2": "Tasta Fn funcţionează ca tasta Ctrl pentru unele combinaţii de taste utilizate frecvent. Funcţia tastei Ctrl nu se modifică.",
+                    "featureNote": "Această funcţie şi funcţia de comutare a tastei Fn+Ctrl nu pot fi pornite în acelaşi timp. Dacă o funcţie este pornită, cealaltă va fi oprită în mod automat.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Taste Fn",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Taste Ctrl",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Acţiune",
+                            "action1": "Selectare totală",
+                            "action2": "Copiere",
+                            "action3": "Adăugare pagină web la preferinţele mele",
+                            "action4": "Căutare",
+                            "action5": "Găsirea şi înlocuirea în Microsoft Word",
+                            "action6": "Alinierea la stânga şi la dreapta în Microsoft Word",
+                            "action7": "Ieşire (în aplicaţia acceptată)",
+                            "action8": "Adăugare subliniere",
+                            "action9": "Lipire",
+                            "action10": "Închidere (per aplicaţie)",
+                            "action11": "Tăiere",
+                            "action12": "Refacere",
+                            "action13": "Anulare"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "MAI MULTE",
@@ -1533,16 +1608,16 @@
                     "less": "MAI PUŢIN"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Retroilum tast",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Activați iluminarea de fundal a tastaturii pentru a simplifica tastarea în medii întunecate sau slab iluminate. De asemenea, puteți modifica setările iluminării de fundal a tastaturii apăsând tastele Fn+Space.",
+                        "auto": "Activați iluminarea de fundal a tastaturii pentru a simplifica tastarea în medii întunecate sau slab iluminate. De asemenea, puteți modifica setările iluminării de fundal a tastaturii apăsând tastele Fn+Space sau alegând opțiunea „Auto”. Opțiunea „Auto” reglează nivelul iluminării de fundal a tastaturii în funcție de lumina ambientală."
                     },
                     "level": {
                         "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "low": "Minim",
+                        "high": "Maxim",
+                        "off": "Dez."
                     }
                 }
             }
@@ -1705,12 +1780,12 @@
             "superResolution": {
                 "heading": "Medii inteligente",
                 "title": "Mărirea rezoluţiei video",
-                "desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label> Această caracteristică ar putea afecta durata de viaţă a bateriei, temperatura bateriei şi poate provoca zgomote. Atunci când este activată, se recomandă să conectaţi computerul la o sursă de c.a.</label></p>",
-                "tooltip": "Caracteristica funcţionează numai în următoarele playere: <br/> Windows Media player",
+                "desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label>Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare cu c.c. În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.</label></p>",
+                "tooltip": "Această caracteristică funcționează numai pe:<br>Windows Media player",
                 "note": {
                     "description": "Această caracteristică nu funcţionează când:",
-                    "description1": "computerul nu este conectat la o sursă de c.a. şi energia bateriei este mai mică de 20%.",
-                    "description2": "computerul nu este conectat la o sursă de c.a. şi modul Economisire baterie este activat.",
+                    "description1": "Computerul nu este conectat la o sursă de alimentare c.a.",
+                    "description2": "Modul de economisire a bateriei este activat.",
                     "description3": "Temperatura procesorului este prea mare."
                 }
             },
@@ -1867,7 +1942,7 @@
             "localRepositoryDatabaseException": "Baza de date din depozitul local nu a putut fi găsită sau este deteriorată.",
             "networkInterruptedException": "Serverul de actualizări ale sistemului este momentan indisponibil. Încercaţi din nou mai târziu.",
             "helpCenterInvalidServerException": "Serverul de actualizări ale sistemului nu este valid. Încercaţi din nou mai târziu.",
-            "catalogNotFoundException": "Nu s-au găsit actualizări aplicabile pentru sistemul dumneavoastră.",
+            "catalogNotFoundException": "Nu există actualizări care pot fi aplicate sistemului dvs., deoarece catalogul actualizărilor nu este găsit.",
             "catalogCrcErrorException": "Catalogul pentru sistemul dvs. este în curs de actualizare. Încercaţi din nou mai târziu.",
             "catalogErrorException": "S-a detectat o eroare la catalogul de actualizări pentru sistemul dumneavoastră pe serverul de actualizări ale sistemului. Încercaţi din nou mai târziu.",
             "fileNotFoundException": "Fişierul nu a fost găsit."
@@ -1975,7 +2050,7 @@
             "visitHde": "Accesaţi secţiunea pentru criptarea unităţii de hard disk",
             "haveOwnPassword": "Am propriul meu manager de parole",
             "haveOwnWifi": "Am propria mea securitate Wi-Fi",
-            "haveOwnVpn": "Am propria mea securitate VPN",
+            "haveOwnVpn": "Am propria rețea VPN",
             "uac": "Control cont utilizator (UAC)",
             "uacTitles": "Control cont utilizator",
             "hde": "Criptare unitate hard disk",
@@ -2091,7 +2166,8 @@
                 "showmore": "Se afişează mai multe",
                 "showless": "Afișează mai puțin",
                 "button": "Activare securitate WiFi",
-                "disableDecribe": "Securitate WiFi Lenovo este un serviciu software avansat bazat pe cloud care ajută dispozitivul să diferenţieze reţelele fără fir sigure de cele potenţial rău intenţionate."
+                "disableDescribe": "Securitate WiFi Lenovo este un serviciu software avansat bazat pe cloud care ajută dispozitivul să diferenţieze reţelele fără fir sigure de cele potenţial rău intenţionate.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Utilizați detectorul de amenințări pentru a determina siguranța rețelelor din jurul dvs.",
@@ -2125,7 +2201,8 @@
                 "subtitle": "Liniştea minţii",
                 "subtitleDescribe": "Securitatea conectată, la domiciliu, vă va trimite o alertă dacă detectează o vulnerabilitate în dispozitivul sau în rețeaua dvs., sau dacă sunteți conectat la o rețea potențial rău-intenționată. Aflați mai multe despre Securitate conectată, la domiciliu <tag>aici</tag>.",
                 "tryNow": "Încercați acum",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Introduceți codul invitației",
@@ -2200,7 +2277,8 @@
             "getStarted1": "Dați clic pe butonul de mai sus, „Deschideți SurfEasy”, pentru a lansa SurfEasy VPN.",
             "getStarted2": "Porniți VPN și așteptați un scurt moment pentru confirmarea unei conexiuni securizate.",
             "getStarted3": "Schimbați regiunea sau localizarea, dacă doriți, și bucurați-vă de o rețea privată securizată.",
-            "poweredBySurfEasy": "Dezvoltat de SurfEasy"
+            "poweredBySurfEasy": "Dezvoltat de SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "MANAGER PAROLE DASHLANE",
@@ -2228,7 +2306,8 @@
             "allowsYou2": "monitorizați dark web-ul pentru datele dvs. cu caracter personal",
             "allowsYou3": "să rămâneți în siguranță pe rețelele WiFi nesecurizate cu VPN integrat",
             "allowsYou4": "să partajați parole în siguranță, fără a le dezvălui",
-            "poweredByDashLane": "Dezvoltat de Dashlane"
+            "poweredByDashLane": "Dezvoltat de Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2300,7 +2379,7 @@
     "faq": {
         "footer": {
             "title": "Nu găsiți ceea ce căutați?",
-            "description": "NEVOIE SUPORT SUPORT? NU ESTE HESITAT SĂ CONTACTĂȚI VIA:",
+            "description": "Aveţi nevoie de asistenţă suplimentară? Nu ezitaţi să ne contactaţi prin:",
             "body": "Comunitatea Lenovo",
             "button": "Du-te la FORUM"
         },
@@ -2705,7 +2784,7 @@
         "deviceStatisticsDescription": "Trimiteți date anonime ale dispozitivului pentru a ne ajuta să îmbunătățim calitatea, fiabilitatea și următoarea generație de dispozitive.",
         "userProfile": "Profil utilizator",
         "Note": "Notă: ",
-        "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației.",
+        "settingsNotes": "Pentru a vă asigura că toate modificările au efect, lansați din nou această aplicație.",
         "betaSettingTitle": "Program beta",
         "betaProgram": "Program beta",
         "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm."
@@ -2729,6 +2808,8 @@
         "noteDownloadAvailable": "Notă: după ce faceți clic pe descărcare, este posibil ca Windows să vă solicite permisiunea de a ne lăsa să instalăm software-ul pe dispozitiv. După finalizarea instalării aplicaţiilor, acestea se vor afişa automat pe desktop sau în meniul Start.<br /><br />Puteți închide pagina Software-ul meu și utiliza în continuare Lenovo Vantage. Nu închideți Lenovo Vantage în timpul instalării.",
         "sizeText": "Dimensiune",
         "versionText": "Versiune",
+        "redemptionCode": "Cod de valorificare:",
+        "redeemWebsite": "Valorificați pe site-ul comerciantului",
         "softwareDescription": "Faceți clic pe descărcare mai jos pentru a vă valorifica software-ul care a fost achiziționat împreună cu dispozitivul. Dacă trebuie să descărcați software-ul din nou, puteți să faceți clic pe butonul Software-ul meu din meniul Vantage.",
         "title": "Software-ul meu",
         "loadingDescription": "Vă rugăm așteptați până când vom pregăti o listă a software-ului inclus în achiziția dispozitivului.",

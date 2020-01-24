@@ -87,7 +87,8 @@
                     "line8": "<b>Hızlı Şarj </b><br> Daha hızlı pil şarjıyla hareket halindeyken daha uzun süre oyun oynayın",
                     "line9": "<b>Touchpad Kilidi </b><br> Oyun oynarken dokunmaya duyarlı tableti devre dışı bırakarak hatalı girişleri önleyin",
                     "line10": "<b>Oto. Kapat </b><br> Kullanılabilir sistem kaynaklarını en üst düzeye çıkarmak için oyuna başlamadan önce gerekli olmayan işlemleri temizleyin",
-                    "line11": "<b>Isı Kipi </b><br> Fan hızı ve soğutma kontrolü için tercih ettiğiniz cihaz profilini ayarlayın"
+                    "line11": "<b>Isı Kipi </b><br> Fan hızı ve soğutma kontrolü için tercih ettiğiniz cihaz profilini ayarlayın",
+                    "line12": "<b>Makro Tuşu </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Üretim ve model bilgilerini de içeren açıklamaları göstermek için CPU/GPU/RAM ve farklı sürücülerin üzerine gelin"
@@ -644,7 +645,8 @@
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Makineniz için Q & A",
@@ -670,6 +672,9 @@
         },
         "app-update": {
             "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
+        },
+        "offline": {
+            "connectToUseFeature": "Bu özelliği kullanmak için İnternet'e bağlanın"
         }
     },
     "privacy": {
@@ -717,20 +722,24 @@
             "button": "Geri bildirim gönder",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Açıklamalar...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Geri bildiriminiz için teşekkürler!"
-                },
                 "question1": "Vantage'ın yeni tarzını beğendiniz mi?",
                 "question2": "Performansın kabul edilir olduğunu düşünüyor musunuz?",
                 "question3": "Uygulamayı gelecekte daha sık kullanır mısınız?",
+                "question4": "Bilgisayarınızdaki yazılım sürücülerini, sabit yazılımı ve BIOS'u güncellemek için Lenovo Vantage'ı kullanabileceğinizi biliyor muydunuz?",
+                "question5": "Lenovo Vantage uygulamasını bir arkadaşınıza veya meslektaşınıza tavsiye etme olasılığınız nedir?",
+                "notAtAllLikely": "Hiç olası değil",
+                "extremelyLikely": "Kuvvetle muhtemel",
                 "yes": "Evet",
                 "no": "Hayır",
                 "tips1": "Lütfen ek yorumlarınızı bırakın",
+                "comments": "Açıklamalar...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Geri Bildirim Gönder",
-                "submitScreenShot": "Ekran Görüntüsü Gönder"
+                "submitScreenShot": "Ekran Görüntüsü Gönder",
+                "messages": {
+                    "feedbackSuccess": "Geri bildiriminiz için teşekkürler!"
+                }
             }
         },
         "quickSettings": {
@@ -1085,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "Uçak Güç Kipi",
-                        "description": "Sisteminizin güç tüketimini denetleyerek uçak AC güç çıkışını koruyun.Uçak Güç Kipi etkinleştirildiğinde bilgisayar, pil şarj oranını ve sistem performansını sınırlayarak güç tüketimini azaltır.",
+                        "description": "Bu özellik, belirli bir güç sınırının geçerli olduğu bir uçaktaki AC güç çıkışını kullanabilmenizi sağlar. Bu kipte, pil şarj oranı ve bilgisayar performansı sınırlanarak bilgisayarınızın pil tüketimi güvenli bir düzeye düşürülür.",
                         "checkBoxDesc": "Otomatik algılama",
                         "note": "Otomatik algılama işaretlenirse bilgisayarınız uçak kabini ortamını algıladığında otomatik olarak Uçak güç kipini açar ve kullanmadığınızda kapanır."
                     },
@@ -1104,7 +1113,7 @@
                         },
                         "progressText1": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
                         "progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
-                        "progressText3": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
+                        "progressText3": "{{stage}} / {{stageNum}}: Yüksek pil gücü için kalibre ediliyor",
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
@@ -1118,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Başarısız: Beklenmedik bir hata oluştu."
                         },
                         "popup": {
-                            "description1": "Sıfırlama işlemi şöyledir:<br>Pili tamamen doldurma  -->  Pili tamamen boşaltma  -->  Pili tamamen yeniden doldurma",
+                            "description1": "Sıfırlama işlemi şöyledir:<br>Pili tamamen doldurma --> Düşük pil gücüne düşürme --> Yüksek pil gücüne kadar yeniden doldurma veya tamamen doldurma",
                             "description2": "Notlar: <br>1. Bu işlem birkaç saat sürebilir. Bu sırada lütfen bilgisayarınızı kullanmaktan kaçının.<br>2. Tüm açık uygulamaları kapatın ve bilgisayarınızı AC gücüne bağlayın.<br>3. İşlem sırasında pil şarj eşiği işlevi devre dışı bırakılır.",
                             "continue": "Devam",
                             "cancel": "İptal",
@@ -1135,10 +1144,10 @@
                 },
                 "smartStandby": {
                     "title": "Akıllı Bekleme",
-                    "description": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
-                    "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya veya aldığımız bilgisayar kullanım süresine göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
+                    "description": "Bu özellik, yoğun kullanım zamanlarında <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Bekleme Durumu</a> hızlı başlatma deneyiminden ödün vermeden, bilgisayar boşta olduğunda pil gücü tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
+                    "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya veya bilgisayar kullanım süresine göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
                     "timer": {
-                        "heading": "Bilgisayarınızı genelde kullandığınız saatleri ayarlayın",
+                        "heading": "Bu bilgisayarı genelde kullandığınız saatler:",
                         "subHeading1": "bu alanın",
                         "subHeading2": "bitiş",
                         "subHeading3": "bu zamanlamanın kullanılacağı zaman",
@@ -1156,14 +1165,14 @@
                     "warningtip": "Lütfen en az bir gün seçin.",
                     "days": {
                         "shortName": {
-                            "sun": "Pazar",
-                            "mon": "Pazartesi",
-                            "tue": "Salı",
-                            "wed": "Çarşamba",
-                            "thurs": "Perşembe",
-                            "fri": "Cuma",
-                            "sat": "Cumartesi",
-                            "thu": "Thu"
+                            "sun": "Paz",
+                            "mon": "Pzt",
+                            "tue": "Sal",
+                            "wed": "Çar",
+                            "thurs": "Per",
+                            "fri": "Cum",
+                            "sat": "Cmt",
+                            "thu": "Per"
                         },
                         "name": {
                             "sun": "Pazar",
@@ -1180,11 +1189,11 @@
                         "noDaySelected": "Gün seçilmedi"
                     },
                     "checkbox": "Bilgisayarınızın etkinlik süresini kullanımınıza göre otomatik ayarlama",
-                    "hyperlinkToGraph": "Etkinlik ve bilgisayarınızın etkinlik süresine ilişkin tabloyu görmek için tıklatın",
+                    "hyperlinkToGraph": "Kullanım ve uygulanan etkin zamanı görmek için tıklatın",
                     "subTitle": "Bilgisayarınızı zamanlama",
                     "automaticMode": "Otomatik kip",
                     "manualMode": "Manuel kip",
-                    "subNote": "Bilgisayarınız, kullanımınıza dayalı olarak Modern Bekleme Durumu kipine ayarlanmıştır.",
+                    "subNote": "Kullanıma bağlı olarak, bilgisayarınız beklemeden daha hızlı çıkacak şekilde zamanlanır.",
                     "graph": {
                         "graph1Tittle": "Bu bilgisayarın kullanımı",
                         "graph2Tittle": "Uygulanan etkin zaman",
@@ -1223,7 +1232,8 @@
                     },
                     "description2": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
                     "subTitle2": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın",
-                    "oldTooltipText": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez."
+                    "oldTooltipText": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1327,7 +1337,8 @@
                         "note": {
                             "title": "Not",
                             "description": "Lenovo Vantage'ın, bölgenizdeki gün batımı ve gün doğumu saatlerini hesaplamak için konum bilgilerinize erişmesi gerekir."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Ekran rengi sıcaklığı",
@@ -1370,6 +1381,17 @@
                         "taskBarDimmer": "GÖREV ÇUBUĞU KARARTICI",
                         "backgroundDimmer": "ARKA PLAN KARARTICI",
                         "displayDimmer": "EKRAN KARARTICI"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1545,60 @@
                 "fnCtrlKey": {
                     "title": "Fn tuşu ve Ctrl tuşu arasında işlev değiş tokuşu",
                     "description": "Ctrl tuşu yerine alışkanlıkla Fn tuşuna basıyorsanız bu iki tuşun işlevlerini değiştirebilirsiniz.",
-                    "restartNote": "İki tuşun işlevini değiştirmek için bilgisayarınızı yeniden başlatmanız gerekir, yeniden başlatmak istediğinizden emin misiniz?"
+                    "restartNote": "İki tuşun işlevini değiştirmek için bilgisayarınızı yeniden başlatmanız gerekir, yeniden başlatmak istediğinizden emin misiniz?",
+                    "title2": "Fn tuşu sık kullanılan tuş bileşimlerinde Ctrl görevi görür",
+                    "description2": "Fn tuşu bazı sık kullanılan tuş bileşimlerinde Ctrl tuşu görevi görür. Ctrl tuşunun işlevi değişmez.",
+                    "featureNote": "Bu işlev ve Fn tuşu ile Ctrl tuşunu değiştirme işlevi aynı anda etkin olamaz. Bu işlevlerden biri etkinse diğeri otomatik olarak devre dışı kalır.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn Tuşları",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl Tuşları",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "İşlem",
+                            "action1": "Tümünü seç",
+                            "action2": "Kopyala",
+                            "action3": "Web sayfasını favorilerime ekle",
+                            "action4": "Arama",
+                            "action5": "Microsoft Word'de bul ve değiştir",
+                            "action6": "Microsoft Word'de sola ve sağa yasla",
+                            "action7": "Çık (desteklenen uygulamadan)",
+                            "action8": "Alt çizgi ekle",
+                            "action9": "Yapıştır",
+                            "action10": "Kapat (ilgili uygulamayı)",
+                            "action11": "Kes",
+                            "action12": "Yinele",
+                            "action13": "Geri al"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "DAHA FAZLA",
@@ -1533,16 +1608,16 @@
                     "less": "DAHA AZ"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Klavye arka ışığı",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Karanlıkta veya zayıf ışık koşullarında yazmayı kolaylaştırmak için klavye arka ışığını etkinleştirin. Klavye arka ışığı ayarlarını Fn+Ara çubuğu tuşlarına basarak da değiştirebilirsiniz.",
+                        "auto": "Karanlıkta veya zayıf ışık koşullarında yazmayı kolaylaştırmak için klavye arka ışığını etkinleştirin. Arka ışık ayarlarını Fn+Ara çubuğu tuşlarına basarak veya “Otomatik” olarak ayarlayarak değiştirebilirsiniz. “Otomatik” seçeneği, klavye arka ışığını ortam ışığına göre otomatik olarak ayarlar."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Otomatik",
+                        "low": "Düşük",
+                        "high": "Yüksek",
+                        "off": "Kapalı"
                     }
                 }
             }
@@ -1705,12 +1780,12 @@
             "superResolution": {
                 "heading": "Akıllı Medya",
                 "title": "Video Çözünürlüğünü Yükseltme",
-                "desc": "<p><label>Bu özellik, videoyu çözünürlüğünü iyileştirerek video kayıttan yürütme deneyimini geliştirir. Özellikle video çözünürlüğü düşük olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label> Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Etkinleştirildiğinde, bilgisayarınızı bir AC gücüne bağlamanız önerilir.</label></p>",
-                "tooltip": "Özellik yalnızca şu oynatıcılarda çalışır: <br/> Windows Media player",
+                "desc": "<p><label>Bu özellik, videoyu çözünürlüğünü iyileştirerek video kayıttan yürütme deneyimini geliştirir. Özellikle video çözünürlüğü düşük olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label>Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Lütfen DC kipinde kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.</label></p>",
+                "tooltip": "Özellik yalnızca şunlarda çalışır:<br>Windows Media player",
                 "note": {
                     "description": "Bu özellik şu durumlarda çalışmaz:",
-                    "description1": "Bilgisayar AC gücüne bağlı değil ve pil gücü %20'den düşük.",
-                    "description2": "Bilgisayar AC gücüne bağlı değil ve pil tasarrufu kipi etkin.",
+                    "description1": "Bilgisayar AC gücüne bağlı değil.",
+                    "description2": "Pil tasarrufu kipi etkin.",
                     "description3": "CPU sıcaklığı çok yüksek."
                 }
             },
@@ -1867,7 +1942,7 @@
             "localRepositoryDatabaseException": "Yerel depo veri tabanı bulunmadı veya bozuldu.",
             "networkInterruptedException": "Sistem Güncelleme Sunucusu şu anda kullanılamıyor. Lütfen daha sonra yeniden deneyin.",
             "helpCenterInvalidServerException": "Sistem Güncelleme Sunucusu geçersiz. Lütfen daha sonra yeniden deneyin.",
-            "catalogNotFoundException": "Sisteminiz için geçerli bir güncelleme yok.",
+            "catalogNotFoundException": "Güncelleme kataloğu bulunmadığından sisteminiz için geçerli bir güncelleme yok.",
             "catalogCrcErrorException": "Sisteminiz için katalog şu anda güncelleniyor. Lütfen daha sonra yeniden deneyin.",
             "catalogErrorException": "Sistem Güncelleme Sunucusu'ndaki sisteminiz için olan güncelleme kataloğunda bir hata saptandı. Lütfen daha sonra yeniden deneyin.",
             "fileNotFoundException": "Dosya bulunamadı."
@@ -1975,7 +2050,7 @@
             "visitHde": "Sabit sürücü şifrelemesi sayfasını ziyaret edin",
             "haveOwnPassword": "Kendi parola yöneticim var",
             "haveOwnWifi": "Kendi wifi güvenliğim var",
-            "haveOwnVpn": "Kendi VPN güvenliğim var",
+            "haveOwnVpn": "Kendi VPN bağlantım var",
             "uac": "Kullanıcı Hesabı Denetimi (UAC)",
             "uacTitles": "Kullanıcı Hesabı Denetimi",
             "hde": "Sabit sürücü şifrelemesi",
@@ -2091,7 +2166,8 @@
                 "showmore": "Daha fazlasını göster",
                 "showless": "Ayrıntıları gizle",
                 "button": "WiFi güvenliğini etkinleştirin",
-                "disableDecribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir."
+                "disableDescribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Çevrenizdeki ağların güvenliğini belirlemek için tehdit dedektörünü kullanın.",
@@ -2125,7 +2201,8 @@
                 "subtitle": "İçiniz Rahat Olsun",
                 "subtitleDescribe": "Bağlı Ev Güvenliği, cihazınızda veya ev ağınızda bir güvenlik açığı algılarsa ya da kötü amaçlı olabilecek bir ağa bağlanırsanız size bir uyarı gönderir. Bağlı Ev Güvenliği hakkında daha fazla bilgiye <tag>buradan</tag> ulaşabilirsiniz.",
                 "tryNow": "Şimdi Deneyin",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Davet kodunu girin",
@@ -2200,7 +2277,8 @@
             "getStarted1": "SurfEasy VPN'i başlatmak için yukarıdaki “SurfEasy'yi Açın” düğmesine tıklayın.",
             "getStarted2": "VPN'i açın ve güvenli bağlantının onaylanması için kısa bir süre bekleyin.",
             "getStarted3": "Dilerseniz bölgenizi veya konumunuzu değiştirin ve güvenli, özel ağın keyfini çıkarın.",
-            "poweredBySurfEasy": "SurfEasy Tarafından Desteklenmektedir"
+            "poweredBySurfEasy": "SurfEasy Tarafından Desteklenmektedir",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE PAROLA YÖNETİCİSİ",
@@ -2228,7 +2306,8 @@
             "allowsYou2": "Kişisel bilgileriniz için karanlık ağ izlemesi",
             "allowsYou3": "Yerleşik VPN sayesinde, güvenli olmayan WiFi ağlarında güvende olma",
             "allowsYou4": "Parolaları göstermeden, güvenli bir şekilde paylaşma",
-            "poweredByDashLane": "Dashlane Tarafından Desteklenmektedir"
+            "poweredByDashLane": "Dashlane Tarafından Desteklenmektedir",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2300,7 +2379,7 @@
     "faq": {
         "footer": {
             "title": "Aradığınızı bulamadınız mı?",
-            "description": "EK DESTEĞE İHTİYACINIZ VAR? ABD VİA'yla İLETİŞİME GEÇMEYİN:",
+            "description": "Ek desteğe mi ihtiyacınız var? Aşağıdaki şekilde bizimle iletişime geçebilirsiniz:",
             "body": "Lenovo Topluluğu",
             "button": "FORUMA GİT"
         },
@@ -2705,7 +2784,7 @@
         "deviceStatisticsDescription": "Kaliteli, güvenilir ve yeni nesil cihazlar geliştirmemize yardımcı olmak için anonim cihaz verileri gönderin.",
         "userProfile": "Kullanıcı profili",
         "Note": "Not: ",
-        "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir.",
+        "settingsNotes": "Tüm değişikliklerin geçerli hale gelmesi için bu uygulamayı yeniden başlatın.",
         "betaSettingTitle": "Beta Programı",
         "betaProgram": "Beta Programı",
         "betaSettingDescription": "Üzerinde çalışmakta olduğumuz en yeni özellikleri deneyin."
@@ -2729,6 +2808,8 @@
         "noteDownloadAvailable": "Not: İndir seçeneğine tıkladıktan sonra, Windows'tan yazılımın cihazınıza yüklenmesine izin vermenizi isteyen bir komut istemi alabilirsiniz. Yükleme işlemi bittikten sonra uygulamalarınız masaüstünüzde veya başlat menüsünde otomatik olarak görüntülenir.<br /><br />Yazılımım sayfasını kapatıp Lenovo Vantage'ı kullanmaya devam edebilirsiniz. Yükleme işlemi sırasında Lenovo Vantage'ı kapatmayın.",
         "sizeText": "Boyut",
         "versionText": "Sürüm",
+        "redemptionCode": "Kullanım kodu:",
+        "redeemWebsite": "Satıcı web sitesinde kullanın",
         "softwareDescription": "Cihazınızla birlikte satın alınan yazılımı kullanmak için aşağıdaki indirme bağlantısına tıklayın. Herhangi bir anda yazılımınızı yeniden indirmeniz gerekirse bunu Vantage menüsündeki Yazılımım düğmesine tıklayarak yapabilirsiniz.",
         "title": "Yazılımım",
         "loadingDescription": "Cihazınızla birlikte satın aldığınız yazılımların listesi hazırlanırken lütfen bekleyin.",

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { FlipToBootErrorStatusInterface, FlipToBootInterface, FlipToBootSetStatus } from './flipToBoot.interface';
+import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 @Injectable({
 	providedIn: 'root'
 })
@@ -512,7 +513,6 @@ export class PowerService {
 	}
 	// ------------- End DYTC 6.0 -------------------
 
-
 	// End Power smart settings
 
 	// ---------- start battery threshold settings
@@ -527,13 +527,13 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
-	public setChargeThresholdValue(value: any): Promise<any> {
+	public setChargeThresholdValue(value: ChargeThreshold): Promise<any> {
 		console.log('Battery threshold value here ----->', value);
 
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setChargeThresholdValue(
-					value.batteryNumber, value.startValue, value.stopValue, value.checkBoxValue
+					value.batteryNum, value.startValue, value.stopValue, value.checkboxValue
 				);
 			}
 			return undefined;
@@ -542,12 +542,12 @@ export class PowerService {
 		}
 	}
 
-	public setCtAutoCheckbox(value: any): Promise<any> {
+	public setCtAutoCheckbox(value: ChargeThreshold): Promise<any> {
 		// console.log('auto check value here ----->', value);
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(
-					value.batteryNumber, value.startValue, value.stopValue, value.checkBoxValue
+					value.batteryNum, value.startValue, value.stopValue, value.checkboxValue
 				);
 			}
 			return undefined;
@@ -641,7 +641,6 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
-
 	public getIsAutonomicCapability(): Promise<boolean> {
 		try {
 			if (this.devicePowerThinkPad) {
@@ -682,6 +681,7 @@ export class PowerService {
 		}
 		return undefined;
 	}
+
 	public getIsPresenceDataSufficient(): Promise<boolean> {
 		if (this.devicePowerThinkPad) {
 			return this.devicePowerThinkPad.sectionSmartStandby.getIsPresenceDataSufficient();

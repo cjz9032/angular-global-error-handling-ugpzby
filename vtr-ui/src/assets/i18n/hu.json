@@ -87,7 +87,8 @@
                     "line8": "<b>Gyorstöltés </b><br> Hosszabb játékidő utazás közben gyorsabb akkumulátortöltéssel",
                     "line9": "<b>Érintőfelület zárolása </b><br> A véletlenszerű műveletek elkerülése az érintőfelület játék közbeni letiltásával",
                     "line10": "<b>Automatikus bezárás </b><br> A rendszer erőforrásainak maximalizálásához törölje a nem használt folyamatokat a játék megkezdése előtt",
-                    "line11": "<b>Termál mód </b><br> Preferált eszközprofil beállítása a ventilátorsebesség és hűtés vezérléséhez"
+                    "line11": "<b>Termál mód </b><br> Preferált eszközprofil beállítása a ventilátorsebesség és hűtés vezérléséhez",
+                    "line12": "<b>Makróbillentyű</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Vigye az egeret a CPU/GPU/RAM vagy a különböző meghajtók fölé, és láthatja a leírásukat, többek között a gyártmányukat és a típusukat"
@@ -644,7 +645,8 @@
             "registered": "REGISZTRÁLT",
             "notRegistered": "NEM REGISZTRÁLT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Kérdések és válaszok a gépedhez",
@@ -670,6 +672,9 @@
         },
         "app-update": {
             "message": "Szia! Megjelent a Vantage legújabb verziója, szeretnéd letölteni?"
+        },
+        "offline": {
+            "connectToUseFeature": "Csatlakozzon az internethez a funkció használatához"
         }
     },
     "privacy": {
@@ -717,20 +722,24 @@
             "button": "Visszajelzés küldése",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Megjegyzések...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Köszönjük a visszajelzését."
-                },
                 "question1": "Tetszik a Vantage új stílusa?",
                 "question2": "Elfogadhatónak tartja a teljesítményt?",
                 "question3": "Használná gyakrabban az alkalmazást a jövőben?",
+                "question4": "Tudta, hogy a Lenovo Vantage segítségével frissítheti a számítógép illesztőprogramjait, firmware-jét és BIOS-át?",
+                "question5": "Mennyire valószínű, hogy ajánlaná a Lenovo Vantage alkalmazást egy ismerősének vagy munkatársának?",
+                "notAtAllLikely": "Egyáltalán nem valószínű",
+                "extremelyLikely": "Nagyon valószínű",
                 "yes": "Igen",
                 "no": "Nem",
                 "tips1": "Ha van további megjegyzése, írja le",
+                "comments": "Megjegyzések...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Visszajelzés küldése",
-                "submitScreenShot": "Képernyőkép küldése"
+                "submitScreenShot": "Képernyőkép küldése",
+                "messages": {
+                    "feedbackSuccess": "Köszönjük a visszajelzését."
+                }
             }
         },
         "quickSettings": {
@@ -1085,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "Repülőgépes energiaséma",
-                        "description": "A repülő elektromos csatlakozójának védelme a rendszer energiafogyasztásának szabályozásával.A Repülőgépes energiaséma engedélyezése esetén a számítógép az akkumulátortöltési ráta és a rendszerteljesítémény korlátozásával csökkenti az energiafogyasztást.",
+                        "description": "Ez a funkció lehetővé teszi a szabványos elektromos csatlakozó használatát az olyan repülőgépeken, ahol bizonyos teljesítménykorlátozások érvényesek. Ebben az üzemmódban a számítógép az akkumulátortöltési sebesség és a rendszerteljesítémény korlátozásával biztonságos szintre csökkenti az energiafogyasztását.",
                         "checkBoxDesc": "Automatikus észlelés",
                         "note": "Az automatikus észlelés bejelölésekor a számítógép automatikusan bekapcsolja a Repülőgépes energiamódot, amikor egy repülőgép fedélzeti környezetét észleli, és kikapcsolja, amikor Ön távozik onnan."
                     },
@@ -1104,7 +1113,7 @@
                         },
                         "progressText1": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
                         "progressText2": "{{stage}}/{{stageNum}}: Kalibrálás alacsony akkumulátortöltöttségre",
-                        "progressText3": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
+                        "progressText3": "{{stage}}/{{stageNum}}: Kalibrálás magas akkumulátortöltöttségre",
                         "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
                         "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {
@@ -1118,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Sikertelen: Váratlan hiba történt."
                         },
                         "popup": {
-                            "description1": "A nullázási folyamat a következő: <br> Töltse fel teljesen az akkumulátort  -->  Süsse ki teljesen az akkumulátort  -->  Töltse újra teljesen az akkumulátort",
+                            "description1": "A nullázási folyamat a következő:<br>Töltse fel teljesen az akkumulátort --> Süsse ki alacsony akkumulátortöltöttségig --> Töltse újra magas akkumulátortöltöttségig vagy teljes töltöttségig",
                             "description2": "Megjegyzések: <br>1. A folyamat több órát is igénybe vehet. A számítógépet ezen idő alatt ne használja.<br>2. Zárja be az összes nyitott alkalmazást, és csatlakoztassa a számítógépet hálózati tápellátáshoz.<br>3. A folyamat során az akkumulátortöltési küszöbérték funkció le van tiltva.",
                             "continue": "Folytatás",
                             "cancel": "Mégse",
@@ -1135,10 +1144,10 @@
                 },
                 "smartStandby": {
                     "title": "Intelligens készenlét",
-                    "description": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
+                    "description": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern készenléti állapot</a> visszaállási művelete nem lesz lassabb a gép komolyabb használata során.",
                     "tooltip": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett KEZDÉSI idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időtartamot az Ön által beállított munkarend vagy az érzékelt számítógép-használati séma alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre, és ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás.",
                     "timer": {
-                        "heading": "A számítógép jellemző használati időszaka",
+                        "heading": "Az idő, amikor általában használja a számítógépet:",
                         "subHeading1": "mezőből",
                         "subHeading2": "befejezés",
                         "subHeading3": "az ütemezés használata a következőhöz",
@@ -1156,14 +1165,14 @@
                     "warningtip": "Kérjük, válasszon legalább egy napot.",
                     "days": {
                         "shortName": {
-                            "sun": "Vasárnap",
-                            "mon": "Hétfő",
-                            "tue": "Kedd",
-                            "wed": "Szerda",
-                            "thurs": "Csütörtök",
-                            "fri": "Péntek",
-                            "sat": "Szombat",
-                            "thu": "Thu"
+                            "sun": "Vas",
+                            "mon": "Hé",
+                            "tue": "Ke",
+                            "wed": "Sze",
+                            "thurs": "Csüt",
+                            "fri": "Pé",
+                            "sat": "Szo",
+                            "thu": "Csüt"
                         },
                         "name": {
                             "sun": "Vasárnap",
@@ -1180,11 +1189,11 @@
                         "noDaySelected": "Nincs kiválasztott nap"
                     },
                     "checkbox": "A számítógép aktív idejének automatikus beállítása a használati séma alapján",
-                    "hyperlinkToGraph": "Kattintson a számítógép tevékenységének és aktív idejének áttekintéséhez",
+                    "hyperlinkToGraph": "Kattintson a használat és az alkalmazott aktív idő megtekintéséhez",
                     "subTitle": "Számítógép ütemezése",
                     "automaticMode": "Automatikus üzemmód",
                     "manualMode": "Manuális üzemmód",
-                    "subNote": "A számítógép használati séma alapján Modern készenléti állapotra lett ütemezve.",
+                    "subNote": "A számítógép a használatától függően gyorsabb visszaállásra van ütemezve.",
                     "graph": {
                         "graph1Tittle": "A számítógép használata",
                         "graph2Tittle": "Alkalmazott aktív idő",
@@ -1223,7 +1232,8 @@
                     },
                     "description2": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
                     "subTitle2": "Adja meg, hogy általában mikor használja a számítógépet",
-                    "oldTooltipText": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett KEZDÉSI idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időszakot a megadott ütemezés alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre; ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás."
+                    "oldTooltipText": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett KEZDÉSI idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időszakot a megadott ütemezés alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre; ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1327,7 +1337,8 @@
                         "note": {
                             "title": "Megjegyzés",
                             "description": "A napnyugta és a napkelte idejének kiszámításához a Lenovo Vantage-nek hozzá kell férnie a helyadatokhoz."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "A képernyő színhőmérséklete",
@@ -1370,6 +1381,17 @@
                         "taskBarDimmer": "TÁLCA ELSÖTÉTÍTÉSE",
                         "backgroundDimmer": "HÁTTÉR ELSÖTÉTÍTÉSE",
                         "displayDimmer": "KÉPERNYŐ ELSÖTÉTÍTÉSE"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1545,60 @@
                 "fnCtrlKey": {
                     "title": "Az Fn és a Ctrl billentyű felcserélése",
                     "description": "Ha rendszeresen az Fn billentyűt nyomja le, amikor a Ctrl billentyűt szeretné lenyomni, felcserélheti a két billentyű funkcióját.",
-                    "restartNote": "A két billentyű funkciójának felcseréléséhez újra kell indítania a számítógépet. Biztosan újraindítja?"
+                    "restartNote": "A két billentyű funkciójának felcseréléséhez újra kell indítania a számítógépet. Biztosan újraindítja?",
+                    "title2": "Az Fn a Ctrl billentyűként működik a gyakori billentyűkombinációk esetében",
+                    "description2": "Az Fn a Ctrl billentyűként működik bizonyos gyakran használt billentyűkombinációk esetében. A Ctrl billentyű funkciója nem módosul.",
+                    "featureNote": "Ez a funkció, valamint az Fn és a Ctrl billentyű felcserélése funkció nem lehet egyszerre bekapcsolva. Ha az egyik be van kapcsolva, akkor a másik automatikusan kikapcsol.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn billentyűk",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl billentyűk",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Művelet",
+                            "action1": "Összes kijelölése",
+                            "action2": "Másolás",
+                            "action3": "Weboldal kedvencekhez adása",
+                            "action4": "Keresés",
+                            "action5": "Keresés és csere a Microsoft Wordben",
+                            "action6": "Balra és jobbra igazítás a Microsoft Wordben",
+                            "action7": "Kilépés (a támogatott alkalmazásokban)",
+                            "action8": "Aláhúzás hozzáadása",
+                            "action9": "Beillesztés",
+                            "action10": "Bezárás (alkalmazásonként)",
+                            "action11": "Kivágás",
+                            "action12": "Újbóli végrehajtás",
+                            "action13": "Visszavonás"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "TOVÁBBIAK",
@@ -1533,16 +1608,16 @@
                     "less": "KEVESEBB"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Billentyűzet-háttérvilágítás",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Aktiválja a billentyűzet háttérvilágítását, hogy megkönnyítse a gépelést sötétben vagy rossz fényviszonyok között. Az Fn+szóköz billentyű megnyomásával megváltoztathatja a billentyűzet háttérvilágításának beállításait.",
+                        "auto": "Aktiválja a billentyűzet háttérvilágítását, hogy megkönnyítse a gépelést sötétben vagy rossz fényviszonyok között. Az Fn+szóköz billentyű megnyomásával, vagy az „Automata” mód beállításával is megváltoztathatja a billentyűzet háttérvilágításának beállításait. Az „Automata” opció automatikusan beállítja a billentyűzet háttérvilágítását a környezeti fénynek megfelelően."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automata",
+                        "low": "Alacsony",
+                        "high": "Magas",
+                        "off": "Ki"
                     }
                 }
             }
@@ -1705,12 +1780,12 @@
             "superResolution": {
                 "heading": "Intelligens média",
                 "title": "Videófelbontás megnövelése",
-                "desc": "<p><label>Ez a szolgáltatás fokozza a videó lejátszásának élményét azáltal, hogy javítja a videófelbontást. Különösen akkor működik, ha a videó rossz felbontású.</label></p> <p style='margin-top:4px;'><label> Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ha engedélyezve van, akkor javasoljuk, hogy a számítógépet csatlakoztassa hálózati tápellátáshoz.</label></p>",
-                "tooltip": "Ez a funkció csak a következő lejátszókon működik: <br/> Windows Media player",
+                "desc": "<p><label>Ez a szolgáltatás fokozza a videó lejátszásának élményét azáltal, hogy javítja a videófelbontást. Különösen akkor működik, ha a videó rossz felbontású.</label></p> <p style='margin-top:4px;'><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Kérjük, ne használja DC üzemmódban. Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
+                "tooltip": "Ez a funkció csak a következőkön működik:<br>Windows Media player",
                 "note": {
                     "description": "A funkció az alábbi esetekben nem működik:",
-                    "description1": "A számítógép nincs csatlakoztatva a hálózati tápellátáshoz, és az akkumulátor töltöttsége kevesebb 20%-nál.",
-                    "description2": "A számítógép nincs csatlakoztatva a hálózati tápellátáshoz, és az akkumulátortakarékos mód engedélyezve van.",
+                    "description1": "A számítógép nem csatlakozik a hálózati tápellátáshoz.",
+                    "description2": "Az Akkumulátorkímélő kód engedélyezve van.",
                     "description3": "A processzor hőmérséklete túl magas."
                 }
             },
@@ -1867,7 +1942,7 @@
             "localRepositoryDatabaseException": "A helyi gyűjtemény adatbázisa nem található vagy sérült.",
             "networkInterruptedException": "A rendszerfrissítési kiszolgáló jelenleg nem érhető el. Kérjük, később próbálja meg újra.",
             "helpCenterInvalidServerException": "A rendszerfrissítési kiszolgáló érvénytelen. Kérjük, később próbálja meg újra.",
-            "catalogNotFoundException": "Nem érhetők el frissítések a rendszerhez.",
+            "catalogNotFoundException": "A rendszeréhez nem áll rendelkezésre alkalmazható frissítés, mivel a frissítési katalógus nem található.",
             "catalogCrcErrorException": "A rendszerkatalógus jelenleg frissül. Kérjük, később próbálja meg újra.",
             "catalogErrorException": "Hibát találtunk a rendszer frissítési katalógusával a rendszerfrissítési kiszolgálón. Kérjük, később próbálja meg újra.",
             "fileNotFoundException": "A fájl nem található."
@@ -1975,7 +2050,7 @@
             "visitHde": "Merevlemez-titkosítás megnyitása",
             "haveOwnPassword": "Saját jelszókezelőm van",
             "haveOwnWifi": "Saját wifi biztonsági alkalmazásom van",
-            "haveOwnVpn": "Saját VPN biztonsági alkalmazásom van",
+            "haveOwnVpn": "Saját VPN-nel rendelkezem",
             "uac": "Felhasználói fiókok felügyelete (UAC)",
             "uacTitles": "Felhasználói fiókok felügyelete",
             "hde": "Merevlemez-titkosítás",
@@ -2091,7 +2166,8 @@
                 "showmore": "Több megjelenítése",
                 "showless": "Részletek elrejtése",
                 "button": "A Biztonságos WiFi engedélyezése",
-                "disableDecribe": "A Lenovo – Biztonságos WiFi egy fejlett, felhőalapú szoftverszolgáltatás, amely segít az eszköznek megkülönböztetni a biztonságos vezeték nélküli hálózatokat a potenciálisan rosszindulatú hálózatoktól."
+                "disableDescribe": "A Lenovo – Biztonságos WiFi egy fejlett, felhőalapú szoftverszolgáltatás, amely segít az eszköznek megkülönböztetni a biztonságos vezeték nélküli hálózatokat a potenciálisan rosszindulatú hálózatoktól.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "A veszélyészlelővel megállapíthatja, mennyire biztonságosak a közeli hálózatok.",
@@ -2125,7 +2201,8 @@
                 "subtitle": "Nyugodt lehet",
                 "subtitleDescribe": "A Biztonsági rendszer csatlakoztatott otthonhoz riasztást küld, ha biztonsági rést észlel az eszköz vagy az otthoni hálózat esetében, illetve ha Ön esetlegesen rosszindulatú hálózathoz próbál csatlakozni. A Biztonsági rendszer csatlakoztatott otthonhoz szolgáltatásról <tag>itt</tag> tudhat meg többet.",
                 "tryNow": "Próbálja ki",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Meghívó kód küldése",
@@ -2200,7 +2277,8 @@
             "getStarted1": "A SurfEasy VPN elindításához kattintson a fenti „A SurfEasy megnyitása” gombra.",
             "getStarted2": "Kapcsolja be a VPN-t, és várjon egy kis ideig, amíg a rendszer visszaigazolja a kapcsolat biztonságosságát.",
             "getStarted3": "Igény szerint módosítsa a régiót vagy a tartózkodási helyet, és máris biztonságosan internetezhet.",
-            "poweredBySurfEasy": "A SurfEasy technológiája"
+            "poweredBySurfEasy": "A SurfEasy technológiája",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE JELSZÓKEZELŐ",
@@ -2228,7 +2306,8 @@
             "allowsYou2": "Nyomon követheti, hogy felbukkannak-e az Ön adatai a sötét weben",
             "allowsYou3": "A beépített VPN segítségével a nem biztonságos WiFi-hálózatok is biztonságosan használhatók",
             "allowsYou4": "A jelszavak biztonságos megosztása – nyilvánossá tétel nélkül",
-            "poweredByDashLane": "A Dashlane technológiája"
+            "poweredByDashLane": "A Dashlane technológiája",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2300,7 +2379,7 @@
     "faq": {
         "footer": {
             "title": "Nem találja, amit keres?",
-            "description": "KÜLÖNLEGES TÁMOGATÁS? NEM HESITÁLT KAPCSOLAT VIA:",
+            "description": "További támogatásra van szüksége? Lépjen kapcsolatba velünk a következő módon:",
             "body": "Lenovo Közösség",
             "button": "TOVÁBB FORUM"
         },
@@ -2705,7 +2784,7 @@
         "deviceStatisticsDescription": "Névtelen eszközadatok küldése a minőség és a megbízhatóság, valamint a következő generációs eszközök továbbfejlesztésének támogatása érdekében.",
         "userProfile": "Felhasználói profil",
         "Note": "Megjegyzés: ",
-        "settingsNotes": "Az ezen az oldalon található beállítások módosítása után a felhasználónak újra kell indítania az alkalmazást.",
+        "settingsNotes": "Kérjük, indítsa újra ezt az alkalmazást, hogy a módosítások életbe lépjenek.",
         "betaSettingTitle": "Bétaprogram",
         "betaProgram": "Bétaprogram",
         "betaSettingDescription": "Próbálja ki a legújabb funkciókat, amelyeken dolgozunk."
@@ -2729,6 +2808,8 @@
         "noteDownloadAvailable": "Megjegyzés: A Letöltés elemre való kattintás után előfordulhat, hogy a Windows a szoftver eszközön történő telepítésének engedélyezését kéri. A telepítés befejeződése után az alkalmazások automatikusan megjelennek az asztalon vagy a Start menüben.<br /><br />Bezárhatja a Saját szoftver oldalt, és folytathatja a Lenovo Vantage használatát. A telepítés alatt ne zárja be a Lenovo Vantage-et.",
         "sizeText": "Méret",
         "versionText": "Változat",
+        "redemptionCode": "Beváltható kód:",
+        "redeemWebsite": "Beváltás az eladó webhelyén",
         "softwareDescription": "Az alábbi Letöltés elemre kattintva beválthatja az eszközzel vásárolt szoftvert. Ha a későbbiekben újra le szeretné tölteni a szoftvert, kattintson a Vantage menü Saját szoftver elemére.",
         "title": "Saját szoftver",
         "loadingDescription": "Kérjük, várja meg, amíg összeállítjuk az eszközzel együtt megvásárolt szoftverek listáját.",

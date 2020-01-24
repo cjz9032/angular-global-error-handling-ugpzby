@@ -9,7 +9,7 @@ import { CommonService } from '../../../../../services/common/common.service';
 	templateUrl: './articles.component.html',
 	styleUrls: ['./articles.component.scss']
 })
-export class ArticlesComponent implements OnInit {
+export class ArticlesComponent {
 	articles$ = this.articlesService.getListOfArticles();
 
 	constructor(
@@ -17,9 +17,6 @@ export class ArticlesComponent implements OnInit {
 		private router: Router,
 		private commonService: CommonService
 	) {
-	}
-
-	ngOnInit() {
 	}
 
 	openArticle(articleId: string) {

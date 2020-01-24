@@ -28,7 +28,7 @@
 		.row1 {
 			opacity: 0.5;
 			color: $light;
-			font-size: 1.4rem;
+			font-size: 1.75rem;
 			line-height: 2.1rem;
 			padding-left: 2.5rem;
 			padding-top: 0rem;
@@ -93,7 +93,7 @@
 
 					.progress-value-text {
 						color: $light;
-						font-size: 1.4rem;
+						font-size: 1.75rem;
 						font-weight: $weight_light;
 						line-height: 2.9rem;
 						padding-right: 0rem;
@@ -104,7 +104,7 @@
 
 					.progress-complete-text {
 						color: $light;
-						font-size: 1.4rem;
+						font-size: 1.75rem;
 						font-weight: $weight_light;
 						line-height: 2.9rem;
 						padding-right: 0rem;
@@ -159,15 +159,13 @@
 			line-height: 1.5rem;
 			text-align: center;
 			text-transform: uppercase;
+			cursor: pointer;
+			border-bottom: 0.2rem solid $light;
+			padding: 0 0 0.1rem;
 
-			.cancel-check-text {
-				cursor: pointer;
-				text-decoration: underline;
-
-				&:hover {
-					color: $light;
-					text-decoration: none;
-				}
+			&:hover {
+				color: $light;
+				text-decoration: none;
 			}
 		}
 	}

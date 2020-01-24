@@ -80,14 +80,15 @@
                     "line1": "Met Vantage Edge worden uw instellingen automatisch op gebruik afgestemd. \n Maximale prestaties tijdens het gamen, langere batterijduur wanneer u dat niet bent.",
                     "line2": "<b>Overzicht functiebeheer</b> <br> Sommige functies niet op alle apparaten beschikbaar",
                     "line3": "<b>CPU overklokken </b><br> Geef de maximumsnelheid voor uw processor een boost",
-                    "line4": "<b>RAM overklokken </b><br> Geef de maximumsnelheid voor uw geheugen een boost",
+                    "line4": "<b>RAM overklok </b><br> Geef de maximumsnelheid voor uw geheugen een boost",
                     "line5": "<b>Netwerkboost </b><br> Stel prioriteiten in voor netwerkverkeer voor de game die u speelt",
                     "line6": "<b>Dolby </b><br> Stem uw audio specifiek af voor gamen met Dolby-technologie",
                     "line7": "<b>Hybride modus </b><br> Geavanceerde GPU-instellingen uitschakelen wanneer u niet aan het gamen bent om de batterijduur te verbeteren",
                     "line8": "<b>Snelladen </b><br> Onderweg langer gamen met snellere oplaadtijden",
                     "line9": "<b>Touchpadvergrendeling </b><br> Schakel het touchpad uit bij gamen om foutieve invoer te voorkomen",
                     "line10": "<b>Automatisch sluiten </b><br> Wis, voordat je begint, processen die je niet nodig hebt voor gamen om de systeembronnen optimaal te gebruiken",
-                    "line11": "<b>Thermische modus </b><br> Een profiel voor het apparaat van uw voorkeur instellen ter verbetering van de ventilatorsnelheid en het beheren van de koeling"
+                    "line11": "<b>Thermische modus </b><br> Een profiel voor het apparaat van uw voorkeur instellen ter verbetering van de ventilatorsnelheid en het beheren van de koeling",
+                    "line12": "<b>Macrotoets</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Beweeg over CPU / GPU / RAM en verschillende schijven om hun beschrijvingen weer te geven, inclusief fabrikant- en modelinformatie"
@@ -644,7 +645,8 @@
             "registered": "GEREGISTREERD",
             "notRegistered": "NIET GEREGISTREERD",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "V & A voor uw machine",
@@ -670,6 +672,9 @@
         },
         "app-update": {
             "message": "Hallo! Er is een nieuwere versie van Vantage beschikbaar, wilt u deze laden?"
+        },
+        "offline": {
+            "connectToUseFeature": "Verbinding maken met internet om deze functie te gebruiken"
         }
     },
     "privacy": {
@@ -717,20 +722,24 @@
             "button": "Feedback geven",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Opmerkingen...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Bedankt voor uw feedback."
-                },
                 "question1": "Bent u tevreden over de nieuwe stijl van Vantage?",
                 "question2": "Denkt u dat de prestaties acceptabel zijn?",
                 "question3": "Denkt u de toepassing in de toekomst vaker te gebruiken?",
+                "question4": "Weet u dat je Lenovo Vantage kunt gebruiken voor de update van softwaredrivers, firmware en BIOS op uw computer?",
+                "question5": "Zou u Lenovo Vantage aanbevelen bij een collega of vriend?",
+                "notAtAllLikely": "Zeker niet",
+                "extremelyLikely": "Zeker wel",
                 "yes": "Ja",
                 "no": "Nee",
                 "tips1": "Laat eventuele aanvullende opmerkingen achter",
+                "comments": "Opmerkingen...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Feedback verzenden",
-                "submitScreenShot": "Schermafbeelding verzenden"
+                "submitScreenShot": "Schermafbeelding verzenden",
+                "messages": {
+                    "feedbackSuccess": "Bedankt voor uw feedback."
+                }
             }
         },
         "quickSettings": {
@@ -1085,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "Energiemodus aan boord van een vliegtuig",
-                        "description": "Bescherm het stopcontact aan boord door het energieverbruik van uw systeem te beheren.Als het energieschema voor voeding aan boord van een vliegtuig is ingeschakeld, reduceert de computer het energieverbruik door de batterijlaadsnelheid en de systeemprestaties te verlagen.",
+                        "description": "Met deze functie kunt u het stopcontact in een vliegtuig gebruiken waarvoor een bepaalde voedingslimiet geldt. In deze modus wordt het energieverbruik van uw computer gereduceerd tot een veilig niveau door de batterijlaadsnelheid en de computerprestaties te beperken.",
                         "checkBoxDesc": "Automatische detectie",
                         "note": "Als automatische detectie is aangevinkt, wordt het energieschema voor voeding aan boord van een vliegtuig automatisch ingeschakeld wanneer de computer een vliegtuigomgeving detecteert. Dit wordt weer uitgeschakeld wanneer u het vliegtuig verlaat."
                     },
@@ -1104,7 +1113,7 @@
                         },
                         "progressText1": "{{stage}} van {{stageNum}}: kalibreren naar volledig opladen",
                         "progressText2": "{{stage}} van {{stageNum}}: kalibreren naar bijna lege batterij",
-                        "progressText3": "{{stage}} van {{stageNum}}: kalibreren naar volledig opladen",
+                        "progressText3": "{{stage}} van {{stageNum}}: kalibreren naar bijna volle batterij",
                         "FCCText": "Van {{before}} Wh tot {{after}} Wh",
                         "note": "Opmerking: voordat u de batterijmeter opnieuw instelt, zorg ervoor dat de computer is aangesloten op de netvoeding. ",
                         "resetLog": {
@@ -1118,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Mislukt: er is een onverwachte fout opgetreden."
                         },
                         "popup": {
-                            "description1": "Het proces voor opnieuw instellen verloopt als volgt:<br>de batterij wordt volledig opgeladen  -->  de batterij wordt volledig ontladen  -->  de batterij wordt opnieuw volledig opgeladen",
+                            "description1": "Het proces voor opnieuw instellen verloopt als volgt:<br>de batterij wordt volledig opgeladen --> de batterij wordt ontladen naar een bijna lege batterij --> de batterij wordt opnieuw opgeladen totdat hij bijna of helemaal vol is",
                             "description2": "Opmerkingen: <br>1. Dit proces kan enkele uren duren. Gebruik de computer in deze periode niet.<br>2. Sluit alle open apps en sluit de computer aan op de netvoeding.<br>3. Tijdens het proces is de functie drempelwaarde voor batterijlading uitgeschakeld.",
                             "continue": "Doorgaan",
                             "cancel": "Annuleren",
@@ -1135,10 +1144,10 @@
                 },
                 "smartStandby": {
                     "title": "Slim stand-by",
-                    "description": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de opstarttijd snel bij zwaarder gebruik.",
-                    "tooltip": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze tijdsperiode wordt geoptimaliseerd op basis van het schema dat u instelt, of op het gebruik van uw computer. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
+                    "description": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de snelle hervatting van <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern stand-by</a> bij zwaarder gebruik bestaan.",
+                    "tooltip": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze tijdsperiode wordt geoptimaliseerd op basis van het schema dat u instelt of op het gebruik van uw computer. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
                     "timer": {
-                        "heading": "De tijd waarop u gewoonlijk uw computer gebruikt",
+                        "heading": "De tijd dat u deze computer gewoonlijk gebruikt:",
                         "subHeading1": "met",
                         "subHeading2": "eind",
                         "subHeading3": "Gebruik deze planning voor",
@@ -1156,14 +1165,14 @@
                     "warningtip": "Selecteer minimaal één dag.",
                     "days": {
                         "shortName": {
-                            "sun": "zon",
-                            "mon": "maan",
-                            "tue": "dins",
-                            "wed": "woens",
-                            "thurs": "donder",
-                            "fri": "vrij",
-                            "sat": "zater",
-                            "thu": "Thu"
+                            "sun": "Zo",
+                            "mon": "Ma",
+                            "tue": "Di",
+                            "wed": "Wo",
+                            "thurs": "Do",
+                            "fri": "Vr",
+                            "sat": "Za",
+                            "thu": "Do"
                         },
                         "name": {
                             "sun": "zondag",
@@ -1180,11 +1189,11 @@
                         "noDaySelected": "Geen dag geselecteerd"
                     },
                     "checkbox": "Automatisch aanpassen van de actieve tijd op uw computer op basis van uw gebruik",
-                    "hyperlinkToGraph": "Klik hier om de activiteit en de actieve tijd van uw computertabel te bekijken",
+                    "hyperlinkToGraph": "Klik hier om het gebruik en de toegepaste actieve tijd weer te geven",
                     "subTitle": "Uw computer plannen",
                     "automaticMode": "Automatische modus",
                     "manualMode": "Handmatige modus",
-                    "subNote": "Uw computer staat op basis van uw gebruik ingesteld op Modern stand-by.",
+                    "subNote": "Uw computer staat op basis van het gebruik ingesteld op snelle hervatting.",
                     "graph": {
                         "graph1Tittle": "Gebruik van deze computer",
                         "graph2Tittle": "Toegepaste actieve tijd",
@@ -1223,7 +1232,8 @@
                     },
                     "description2": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de opstarttijd snel bij zwaarder gebruik.",
                     "subTitle2": "Stel de tijd in waarop u deze computer gewoonlijk gebruikt",
-                    "oldTooltipText": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen."
+                    "oldTooltipText": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1327,7 +1337,8 @@
                         "note": {
                             "title": "Opmerking",
                             "description": "Lenovo Vantage heeft toegang nodig tot uw locatiegegevens voor het berekenen van de tijd voor zonsondergang en zonsopgang van uw regio."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Kleurtemperatuur weergeven",
@@ -1370,6 +1381,17 @@
                         "taskBarDimmer": "TAAKBALKDIMMER",
                         "backgroundDimmer": "ACHTERGRONDDIMMER",
                         "displayDimmer": "BEELDSCHERMDIMMER"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1545,60 @@
                 "fnCtrlKey": {
                     "title": "Fn-toets en Ctrl-toets wisselen",
                     "description": "Als u uit gewoonte op de Fn-toets drukt als u op de Ctrl-toets wilt drukken, kunt u de functie van de twee toetsen omwisselen.",
-                    "restartNote": "Als u de functie van twee toetsen wilt wisselen, moet u de computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?"
+                    "restartNote": "Als u de functie van twee toetsen wilt wisselen, moet u de computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?",
+                    "title2": "Fn werkt als Ctrl voor vaak gebruikte toetsencombinaties",
+                    "description2": "De Fn-toets werkt als de Ctrl-toets voor sommige vaak gebruikte toetsencombinaties. De functie van de Ctrl-toets wijzigt niet.",
+                    "featureNote": "U kunt deze functie en de Fn-toets en de Ctrl-toets niet tegelijk gebruiken. Als de ene wordt ingeschakeld, wordt de andere automatisch uitgeschakeld.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn-toetsen",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl-toetsen",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Actie",
+                            "action1": "Alles selecteren",
+                            "action2": "Kopiëren",
+                            "action3": "Webpagina toevoegen aan mijn favorieten",
+                            "action4": "Zoeken",
+                            "action5": "Zoeken en vervangen in Microsoft Word",
+                            "action6": "Links en rechts uitlijnen in Microsoft Word",
+                            "action7": "Afsluiten (in ondersteunde app)",
+                            "action8": "Onderstrepen toevoegen",
+                            "action9": "Plakken",
+                            "action10": "Sluiten (per app)",
+                            "action11": "Knippen",
+                            "action12": "Opnieuw",
+                            "action13": "Ongedaan maken"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "MEER",
@@ -1533,16 +1608,16 @@
                     "less": "MINDER"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Achtergrondverlichting toetsenbord",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting van het toetsenbord ook wijzigen door op Fn+spatiebalk te drukken.",
+                        "auto": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting wijzigen door op Fn+spatiebalk te drukken of door deze op \"Automatisch\" in te stellen. Bij de optie \"Automatisch\" wordt de achtergrondverlichting van het toetsenbord automatisch aan het omgevingslicht aangepast."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automatisch",
+                        "low": "Laag",
+                        "high": "Hoog",
+                        "off": "Uit"
                     }
                 }
             }
@@ -1705,12 +1780,12 @@
             "superResolution": {
                 "heading": "Intelligente media",
                 "title": "Schaalverhoging beeldschermresolutie",
-                "desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label> Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Als u deze functie inschakelt, wordt het aanbevolen om de computer op de netvoeding aan te sluiten.</label></p>",
-                "tooltip": "Deze functie werkt alleen op de volgende spelers: <br/> Windows Media player",
+                "desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet in gebruiken in gelijkstroommodus, anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
+                "tooltip": "De functie werkt alleen op:<br>Windows Media player",
                 "note": {
                     "description": "Deze functie werkt niet als:",
-                    "description1": "De computer niet is aangesloten op de netvoeding en de batterij minder dan 20% vermogen heeft.",
-                    "description2": "De computer niet is aangesloten op de netvoeding en de batterijbesparing is ingeschakeld.",
+                    "description1": "De computer is niet aangesloten op de netvoeding.",
+                    "description2": "De spaarstand voor batterijverbruik is ingeschakeld.",
                     "description3": "De CPU-temperatuur te hoog is."
                 }
             },
@@ -1867,7 +1942,7 @@
             "localRepositoryDatabaseException": "De lokale repositorydatabase is niet gevonden of is beschadigd.",
             "networkInterruptedException": "De systeemupdateserver is momenteel niet beschikbaar. Probeer het later alstublieft opnieuw.",
             "helpCenterInvalidServerException": "De systeemupdateserver is ongeldig. Probeer het later alstublieft opnieuw.",
-            "catalogNotFoundException": "Er zijn geen updates gevonden die op uw systeem van toepassing zijn.",
+            "catalogNotFoundException": "Er zijn geen updates gevonden die op uw systeem van toepassing zijn, omdat de updatecatalogus niet is gevonden.",
             "catalogCrcErrorException": "De catalogus voor uw systeem wordt momenteel bijgewerkt. Probeer het later alstublieft opnieuw.",
             "catalogErrorException": "Er is een fout opgetreden met de updatecatalogus voor uw systeem op de systeemupdateserver. Probeer het later alstublieft opnieuw.",
             "fileNotFoundException": "Bestand niet gevonden."
@@ -1975,7 +2050,7 @@
             "visitHde": "Bezoek Versleuteling van de hardeschijf",
             "haveOwnPassword": "Ik heb mijn eigen wachtwoordbeheerder",
             "haveOwnWifi": "Ik heb mijn eigen WiFi-beveiliging",
-            "haveOwnVpn": "Ik heb mijn eigen VPN-beveiliging",
+            "haveOwnVpn": "Ik heb mijn eigen VPN",
             "uac": "Gebruikersaccountbeheer (UAC)",
             "uacTitles": "Gebruikersaccountbeheer",
             "hde": "Versleuteling van de hardeschijf",
@@ -2091,7 +2166,8 @@
                 "showmore": "Meer weergeven",
                 "showless": "Minder weergeven",
                 "button": "WiFi-beveiliging inschakelen",
-                "disableDecribe": "Lenovo WiFi-beveiliging is een geavanceerde cloudgebaseerde softwareservice die uw apparaat helpt onderscheid te maken tussen veilige draadloze netwerken en mogelijk schadelijke."
+                "disableDescribe": "Lenovo WiFi-beveiliging is een geavanceerde cloudgebaseerde softwareservice die uw apparaat helpt onderscheid te maken tussen veilige draadloze netwerken en mogelijk schadelijke.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Gebruik de dreigingsdetector om de veiligheid van de netwerken om u heen te bepalen.",
@@ -2125,7 +2201,8 @@
                 "subtitle": "Geen zorgen meer",
                 "subtitleDescribe": "Connected Home-beveiliging stuurt u een waarschuwing als er een beveiligingsprobleem in uw apparaat of thuisnetwerk is gedetecteerd of als u bent verbonden met een mogelijk schadelijk netwerk. Leer meer over Connected Home Security <tag>hier</tag>.",
                 "tryNow": "Probeer het nu",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Voer uw uitnodigingscode in",
@@ -2200,7 +2277,8 @@
             "getStarted1": "Klik hierboven op de knop \"SurfEasy openen\" om SurfEasy VPN te starten.",
             "getStarted2": "Schakel het VPN in en wacht even op bevestiging van een beveiligde verbinding.",
             "getStarted3": "Wijzig zo nodig uw regio of locatie en geniet van een veilig en persoonlijk netwerk.",
-            "poweredBySurfEasy": "Powered By SurfEasy"
+            "poweredBySurfEasy": "Powered By SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE-WACHTWOORDBEHEER",
@@ -2228,7 +2306,8 @@
             "allowsYou2": "Het darkweb bewaken voor uw persoonlijke informatie.",
             "allowsYou3": "Veilig blijven in onbeveiligd WiFi-netwerken met ingebouwd VPN.",
             "allowsYou4": "Wachtwoorden veilig delen zonder deze prijs te geven.",
-            "poweredByDashLane": "Powered By Dashlane"
+            "poweredByDashLane": "Powered By Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2300,7 +2379,7 @@
     "faq": {
         "footer": {
             "title": "Niet vinden wat je zoekt?",
-            "description": "NODIG AANVULLENDE SUPPORT? AARZEL NIET ONS VIA TE CONTACTEREN:",
+            "description": "Hebt u extra ondersteuning nodig? Neem dan contact met ons op via:",
             "body": "Lenovo Community",
             "button": "GA NAAR FORUM"
         },
@@ -2705,7 +2784,7 @@
         "deviceStatisticsDescription": "Verzend anoniem apparaatgegevens om ons te helpen de kwaliteit, betrouwbaarheid en de volgende generatie apparaten te verbeteren.",
         "userProfile": "Gebruikersprofiel",
         "Note": "Opmerking: ",
-        "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben.",
+        "settingsNotes": "Start deze toepassing opnieuw, zodat alle wijzigingen van kracht worden.",
         "betaSettingTitle": "Bètaprogramma",
         "betaProgram": "Bètaprogramma",
         "betaSettingDescription": "Probeer de nieuwste functies waaraan we werken."
@@ -2729,6 +2808,8 @@
         "noteDownloadAvailable": "Opmerking: Wanneer u op Downloaden klikt, kan er een prompt van Windows verschijnen om ons toe te staan de software op uw apparaat te installeren. Als de installatie is voltooid, worden uw apps automatisch weergegeven op het bureaublad of in het startmenu.<br /><br />U kunt de pagina Mijn software sluiten en doorgaan met het gebruik van Lenovo Vantage. Sluit Lenovo Vantage niet tijdens installatie.",
         "sizeText": "Grootte",
         "versionText": "Versie",
+        "redemptionCode": "Activeringscode:",
+        "redeemWebsite": "Gebruiken op de website van de leverancier",
         "softwareDescription": "Klik hieronder op de downloadknop om software te gebruiken die bij uw apparaat is aangeschaft. Als u uw software opnieuw wilt downloaden, kunt u dit doen door te klikken op de knop Mijn software in het menu Vantage.",
         "title": "Mijn software",
         "loadingDescription": "Een ogenblik geduld. We maken een lijst met de software die was inbegrepen bij de aanschaf van uw apparaat.",

@@ -8,7 +8,7 @@
 	[shiftRightUp]="true">
 
 	<left-content>
-		<div class="mt-5">
+		<div class="mt-2">
 			<div class="row">
 				<div class="col">
 					<vtr-ui-header-subpage [items]="headerMenuItems"
@@ -22,7 +22,7 @@
 			<div class="row">
 				<div class="col">
 					<!-- Start of Intelligent Security -->
-					<div class="row py-5 smart-assist-card"
+					<div class="row pt-5 smart-assist-card"
 						id="security"
 						*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
 						<div class="col-12 px-0">
@@ -208,7 +208,6 @@
 														attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-desc">
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 													</p>
-
 													<div class="custom-control custom-checkbox smart-assist-checkbox">
 														<input id="cb-zero-touch-lock"
 															attr.aria-label="cb-zero-touch-lock"
@@ -358,7 +357,7 @@
 									</li>
 								</ul>
 								<div class="row">
-									<div class="feature-note p-4 m-4">
+									<div class="feature-note p-4 my-4 mx-3">
 										<p id="smart-assist-intelligent-security-note-desc1"
 											attr.aria-label="smart-assist-intelligent-security-note-desc1">
 											{{'device.smartAssist.intelligentSecurity.note.description3' | translate}}
@@ -392,7 +391,7 @@
 					<!-- End of Intelligent Security -->
 
 					<!-- Start of Intelligent Screen -->
-					<div class="row py-5 smart-assist-card"
+					<div class="row pt-5 smart-assist-card"
 						id="screen"
 						*ngIf="intelligentScreen.isIntelligentScreenVisible">
 						<div class="col-12 px-0">
@@ -405,8 +404,8 @@
 								[theme]="'white'"
 								(toggle)="onCardCollapse($event)">
 
-								<div class="row">
-									<div class="col-auto">
+								<div class="intligent-screen">
+									<div class="col-12 px-0">
 										<div class="int-screen-desc">
 											<p id="smart-assist-intelligent-screen-desc"
 												attr.aria-label="smart-assist-intelligent-screen-desc">
@@ -431,7 +430,7 @@
 										</vtr-ui-row-switch>
 										<div class="row"
 											*ngIf="intelligentScreen.isAutoScreenOffNoteVisible">
-											<div class="feature-note auto-screen-off-note p-4 m-4">
+											<div class="feature-note auto-screen-off-note p-4">
 												<p id="smart-assist-auto-screen-off-note"
 													attr.aria-label="smart-assist-auto-screen-off-note">
 													{{'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate}}
@@ -442,7 +441,7 @@
 										</div>
 									</li>
 									<li class="pt-3 keep-my-display-block"
-										*ngIf="intelligentScreen.isReadingOrBrowsingVisible">
+										>
 										<vtr-ui-row-switch [switchId]="'keepMyDisplay'"
 											[title]="'device.smartAssist.intelligentScreen.keepMyDisplay.title' | translate"
 											[caption]="'device.smartAssist.intelligentScreen.keepMyDisplay.caption' | translate"
@@ -452,7 +451,7 @@
 											[showChildContent]="true"
 											(toggleOnOff)="onKeepMyDisplayToggle($event)"
 											[isSwitchChecked]="intelligentScreen.isReadingOrBrowsingEnabled">
-											<div class="pl-5 ml-5 pt-4">
+											<div class="pl-4 ml-3 pt-4">
 												<div class="display-dim-title"
 													id="smart-assist-display-slider-title"
 													attr.aria-label="smart-assist-display-slider-title">
@@ -494,7 +493,7 @@
 					<!-- End of Intelligent Media -->
 
 					<!-- Start of Active Protection System -->
-					<div class="row py-5 smart-assist-card"
+					<div class="row pt-5 smart-assist-card"
 						id="aps"
 						*ngIf='isAPSAvailable'>
 						<div class="col-12 px-0">
@@ -513,7 +512,7 @@
 					<!-- End of Active Protection System -->
 
 					<!-- Start of voice -->
-					<div class="row py-5 smart-assist-card"
+					<div class="row pt-5 smart-assist-card"
 						id="voice"
 						*ngIf="lenovoVoice.available">
 						<div class="col-12 px-0">
@@ -538,7 +537,7 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col col-12 pb-20">
+				<div class="col col-12 pb-5">
 					<vtr-container-card [containerCardId]="'smart-assist-container-card'"
 						[img]="cardContentPositionA.FeatureImage"
 						[caption]="cardContentPositionA.Description"
@@ -556,7 +555,12 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col col-12 cont py-20">
+				<div class="col col-12 mb-3 help-heading">
+					{{ 'device.deviceSettings.helpful' | translate }}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-12 cont">
 					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 						[description]="'common.qAndA.subtitle' | translate"
 						[items]="qaService.qas"

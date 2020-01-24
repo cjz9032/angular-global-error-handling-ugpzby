@@ -7,8 +7,11 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RouterLinkWithHref } from '@angular/router';
 import { By } from '@angular/platform-browser';
+import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
+import { InstallUpdate } from 'src/app/data-models/system-update/install-update.model';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+
 const hardwareScanServiceMock = jasmine.createSpyObj('HardwareScanService', ['isShellAvailable']);
 const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabilitiesService', [
 	'gamingAllCapabilities',
@@ -91,6 +94,8 @@ describe('WidgetSystemToolsComponent', () => {
 	});
 
 	it('should create one', async () => {
+		let availableUpdateDetail : AvailableUpdateDetail = new AvailableUpdateDetail();
+		let installUpdate : InstallUpdate = new InstallUpdate();
 		expect(component).toBeTruthy();
 	});
 

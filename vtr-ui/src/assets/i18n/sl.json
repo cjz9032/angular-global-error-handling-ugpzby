@@ -87,7 +87,8 @@
                     "line8": "<b>Hitro polnjenje </b><br> S hitrejšim polnjenjem baterije igrajte dalj časa tudi, ko ste na poti",
                     "line9": "<b>Zaklepanje sledilne ploščice </b><br> Onemogočite sledilno ploščico, da preprečite napačne vnose med igranjem",
                     "line10": "<b>Samodejno zapiranje </b><br> Pred začetkom igranja počistite nepotrebne procese in v celoti izkoristite razpoložljiva sistemska sredstva",
-                    "line11": "<b>Toplotni način </b><br> Nastavite želeni profil naprave za nadzor hitrosti ventilatorja in hlajenja"
+                    "line11": "<b>Toplotni način </b><br> Nastavite želeni profil naprave za nadzor hitrosti ventilatorja in hlajenja",
+                    "line12": "<b>Makro tipka </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Kazalec zadržite na CPE/GPE/RAM in različnih pogonih, če si želite ogledati njihove opise, vključno z informacijami o proizvajalcu in modelu"
@@ -644,7 +645,8 @@
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Vprašanja in odgovori za vaš računalnik",
@@ -670,6 +672,9 @@
         },
         "app-update": {
             "message": "Živijo! Na voljo je novejša različica aplikacije Vantage, jo želite naložiti?"
+        },
+        "offline": {
+            "connectToUseFeature": "Za uporabo te funkcije se povežite v internet"
         }
     },
     "privacy": {
@@ -717,20 +722,24 @@
             "button": "Pošljite povratne informacije",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Komentarji...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Hvala za povratne informacije."
-                },
                 "question1": "Ali vam je novi slog programa Vantage všeč?",
                 "question2": "Ali menite, da je učinkovitost delovanja sprejemljiva?",
                 "question3": "Ali bi v prihodnje pogosteje uporabljali aplikacijo?",
+                "question4": "Ste vedeli, da program Lenovo Vantage lahko uporabite za posodabljanje gonilnikov programske opreme, vdelane programske opreme in BIOS-a računalnika?",
+                "question5": "Ali bi program Lenovo Vantage priporočili prijatelju ali sodelavcu?",
+                "notAtAllLikely": "Nikakor",
+                "extremelyLikely": "Vsekakor",
                 "yes": "Da",
                 "no": "Ne",
                 "tips1": "Napišite morebitne dodatne komentarje",
+                "comments": "Komentarji...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Pošljite povratne informacije",
-                "submitScreenShot": "Posnetek zaslona pošiljanja"
+                "submitScreenShot": "Posnetek zaslona pošiljanja",
+                "messages": {
+                    "feedbackSuccess": "Hvala za povratne informacije."
+                }
             }
         },
         "quickSettings": {
@@ -1085,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "Način porabe za letalo",
-                        "description": "Zaščitite letalski napajalni priključek za izmenični tok z nadzorom porabe sistema.Če je omogočen način porabe za letalo, računalnik zmanjša porabo energije z omejevanjem hitrosti polnjenja baterije in učinkovitosti delovanja sistema.",
+                        "description": "Ta funkcija omogoča priklop v električno vtičnico na letalu, pri čemer velja določena omejitev napajanja. V tem načinu se poraba energije računalnika zmanjša na varno raven tako, da se omejita hitrost polnjenja baterije in učinkovitost delovanja računalnika.",
                         "checkBoxDesc": "Samodejno zaznavanje",
                         "note": "Če je označeno potrditveno polje za samodejno zaznavanje, bo računalnik samodejno vklopil način porabe za letalo, ko zazna, da ste v letalu, in ga izklopil, ko se izkrcate."
                     },
@@ -1104,7 +1113,7 @@
                         },
                         "progressText1": "{{stage}} od {{stageNum}}: umerjanje do povsem napolnjene baterije",
                         "progressText2": "{{stage}} od {{stageNum}}: umerjanje do skoraj prazne baterije",
-                        "progressText3": "{{stage}} od {{stageNum}}: umerjanje do povsem napolnjene baterije",
+                        "progressText3": "{{stage}} od {{stageNum}}: umerjanje na visoko napolnjenost baterije",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Opomba: pred ponastavitvijo merilnika za baterijo poskrbite, da bo računalnik priključen na izmenično napajanje. ",
                         "resetLog": {
@@ -1118,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Neuspešno: Prišlo je do nepričakovane napake."
                         },
                         "popup": {
-                            "description1": "Postopek ponastavitve je naslednji:<br>povsem napolnite baterijo  -->  popolnoma izpraznite baterijo  -->  popolnoma napolnite baterijo",
+                            "description1": "Postopek ponastavitve je sledeč:<br>Povsem napolnite baterijo --> Naj se baterija skoraj povsem izprazni --> Baterijo napolnite do visoke ali polne ravni napolnjenosti",
                             "description2": "Opombe: <br>1. Ta postopek lahko traja več ur. Računalnika v tem času ne uporabljajte.<br>2. Zaprite vse odprte programe in računalnik priključite na električno vtičnico.<br>3. Med postopkom je funkcija praga polnjenja baterije onemogočena.",
                             "continue": "Nadaljuj",
                             "cancel": "Prekliči",
@@ -1135,10 +1144,10 @@
                 },
                 "smartStandby": {
                     "title": "Pametno stanje pripravljenosti",
-                    "description": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
-                    "tooltip": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na razpored, ki ste ga določili, ali čas uporabe računalnika, ki ga beležimo. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
+                    "description": "Ta funkcija nastavi časovni razpored za optimiziranje varčevanja z energijo baterije med neuporabo računalnika, ne da bi to vplivalo na možnost hitrega nadaljevanja delovanja v sklopu <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">sodobnega stanja pripravljenosti</a> med intenzivnejšo uporabo.",
+                    "tooltip": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To obdobje je optimizirano na podlagi nastavljenega časovnega razporeda ali vaše uporabe računalnika. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
                     "timer": {
-                        "heading": "Čas, ko običajno uporabljate računalnik",
+                        "heading": "Ura, ob kateri običajno uporabljate ta računalnik:",
                         "subHeading1": "začeti",
                         "subHeading2": "konec",
                         "subHeading3": "ta urnik uporabi za",
@@ -1156,14 +1165,14 @@
                     "warningtip": "Izberite vsaj en dan.",
                     "days": {
                         "shortName": {
-                            "sun": "Nedelja",
-                            "mon": "Ponedeljek",
-                            "tue": "Torek",
-                            "wed": "Sreda",
-                            "thurs": "Četrtek",
-                            "fri": "Petek",
-                            "sat": "Sobota",
-                            "thu": "Thu"
+                            "sun": "Ned",
+                            "mon": "Pon",
+                            "tue": "Tor",
+                            "wed": "Sre",
+                            "thurs": "Čet",
+                            "fri": "Pet",
+                            "sat": "Sob",
+                            "thu": "Čet"
                         },
                         "name": {
                             "sun": "Nedelja",
@@ -1180,11 +1189,11 @@
                         "noDaySelected": "Dan ni izbran"
                     },
                     "checkbox": "Samodejno prilagajanje dejavnega časa računalnika glede na vašo uporabo",
-                    "hyperlinkToGraph": "Kliknite, če si želite ogledati tabelo dejavnosti in dejavnega časa računalnika",
+                    "hyperlinkToGraph": "Kliknite za prikaz uporabe in uporabljeni aktivni čas",
                     "subTitle": "Nastavitev časovnega razporeda delovanja računalnika",
                     "automaticMode": "Samodejni način",
                     "manualMode": "Ročni način",
-                    "subNote": "Vaš računalnik ima nastavljen časovni razpored za preklop v sodobno stanje pripravljenosti na podlagi njegove uporabe.",
+                    "subNote": "Vaš računalnik ima nastavljen časovni razpored za hitrejše nadaljevanje delovanja na podlagi njegove uporabe.",
                     "graph": {
                         "graph1Tittle": "Uporaba tega računalnika",
                         "graph2Tittle": "Uporabljeni aktivni čas",
@@ -1223,7 +1232,8 @@
                     },
                     "description2": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
                     "subTitle2": "Nastavite uro, ko običajno uporabljate ta računalnik",
-                    "oldTooltipText": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na urnik, ki ga nastavite. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni."
+                    "oldTooltipText": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na urnik, ki ga nastavite. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1327,7 +1337,8 @@
                         "note": {
                             "title": "Opomba",
                             "description": "Lenovo Vantage potrebuje dostop do informacij o vaši lokaciji za izračun časa sončnega zahoda in vzhoda v vaši regiji."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Barvna temperatura zaslona",
@@ -1370,6 +1381,17 @@
                         "taskBarDimmer": "ZATEMNJEVALNIK OPRAVILNE VRSTICE",
                         "backgroundDimmer": "ZATEMNJEVALNIK OZADJA",
                         "displayDimmer": "ZATEMNJEVANJE ZASLONA"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1545,60 @@
                 "fnCtrlKey": {
                     "title": "Zamenjava tipk Fn in Ctrl",
                     "description": "Če stalno pritiskate tipko Fn, ko nameravate pritisniti tipko Ctrl, lahko zamenjate funkcijo obeh tipk.",
-                    "restartNote": "Če zamenjate funkcijo dveh tipk, morate znova zagnati računalnik. Ali ste prepričani, da ga želite znova zagnati?"
+                    "restartNote": "Če zamenjate funkcijo dveh tipk, morate znova zagnati računalnik. Ali ste prepričani, da ga želite znova zagnati?",
+                    "title2": "Pri pogosto uporabljenih kombinacijah tipk deluje Fn kot Ctrl",
+                    "description2": "Tipka Fn pri nekaterih pogosto uporabljenih kombinacijah tipk deluje kot tipka Ctrl. Delovanje tipke Ctrl se ne spreminja.",
+                    "featureNote": "Ta funkcija in funkcija zamenjave tipke Fn in tipke Ctrl ne moreta biti obe vklopljeni hkrati. Ob vklopu ene se druga samodejno izklopi.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Tipki Fn",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Tipki Ctrl",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Ukrep",
+                            "action1": "Izberi vse",
+                            "action2": "Kopiraj",
+                            "action3": "Dodaj spletno stran med moje priljubljene",
+                            "action4": "Iskanje",
+                            "action5": "Poišči in zamenjaj v aplikaciji Microsoft Word",
+                            "action6": "Poravnaj levo ali desno v aplikaciji Microsoft Word",
+                            "action7": "Izhod (v podprtem programu)",
+                            "action8": "Podčrtaj besedilo",
+                            "action9": "Prilepi",
+                            "action10": "Zapri (posamezen program)",
+                            "action11": "Izreži",
+                            "action12": "Uveljavi",
+                            "action13": "Razveljavi"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "VEČ",
@@ -1533,16 +1608,16 @@
                     "less": "MANJ"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Osvetlitev tipkovnice",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabih svetlobnih pogojih. S tipkama »Fn+preslednica« lahko tudi spremenite nastavitve osvetlitve tipkovnice.",
+                        "auto": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabih svetlobnih pogojih. S tipkama »Fn+preslednica« lahko tudi spremenite nastavitve osvetlitve tipkovnice ali pa osvetlitev nastavite na »Samodejno«. Možnost »Samodejno« bo samodejno prilagodila osvetlitev tipkovnice glede na okoljsko svetlobo."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Samodejno",
+                        "low": "Nizko",
+                        "high": "Visoko",
+                        "off": "Izklopljeno"
                     }
                 }
             }
@@ -1705,12 +1780,12 @@
             "superResolution": {
                 "heading": "Inteligentni mediji",
                 "title": "Povečanje ločljivosti videoposnetkov",
-                "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label> Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Priporočamo, da takrat, ko je omogočena, računalnik priključite na izmenično napajanje.</label></p>",
-                "tooltip": "Funkcija deluje samo s temi predvajalniki: <br/> Windows Media player",
+                "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri baterijskem napajanju, sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
+                "tooltip": "Funkcija deluje samo v:<br>Windows Media player",
                 "note": {
                     "description": "Ta funkcija ne deluje v naslednjih primerih:",
-                    "description1": "Računalnik ni priključen na izmenično napajanje in baterija je manj kot 20 % napolnjena.",
-                    "description2": "Računalnik ni priključen na izmenično napajanje in omogočen je način varčevanja z baterijo.",
+                    "description1": "Računalnik ni priključen na omrežni vir napajanja.",
+                    "description2": "Omogočen je način za varčevanje z energijo baterije.",
                     "description3": "Temperatura CPE je previsoka."
                 }
             },
@@ -1867,7 +1942,7 @@
             "localRepositoryDatabaseException": "Zbirke podatkov lokalne shrambe ni bilo mogoče najti ali pa je poškodovana.",
             "networkInterruptedException": "Strežnik za posodobitev sistema trenutno ni na voljo. Poskusite znova pozneje.",
             "helpCenterInvalidServerException": "Strežnik za posodobitev sistema je neveljaven. Poskusite znova pozneje.",
-            "catalogNotFoundException": "Za sistem ni bilo najdenih nobenih posodobitev.",
+            "catalogNotFoundException": "Ni nobenih ustreznih posodobitev za vaš sistem, ker kataloga posodobitev ni mogoče najti.",
             "catalogCrcErrorException": "Katalog za vaš sistem se trenutno posodablja. Poskusite znova pozneje.",
             "catalogErrorException": "V strežniku za posodobitev sistema je bila zaznana napaka v katalogu posodobitev za vaš sistem. Poskusite znova pozneje.",
             "fileNotFoundException": "Datoteka ni bila najdena."
@@ -1975,7 +2050,7 @@
             "visitHde": "Obiščite Šifriranje trdega diska",
             "haveOwnPassword": "Imam svojega upravitelja gesel",
             "haveOwnWifi": "Imam lastno varnost Wi-Fi-ja",
-            "haveOwnVpn": "Imam lastno varnost VPN-ja",
+            "haveOwnVpn": "Imam svoj VPN",
             "uac": "Nadzor uporabniškega računa (UAC)",
             "uacTitles": "Nadzor uporabniškega računa",
             "hde": "Šifriranje trdega diska",
@@ -2091,7 +2166,8 @@
                 "showmore": "Pokaži več",
                 "showless": "Pokaži manj",
                 "button": "Omogoči varnost WiFi-ja",
-                "disableDecribe": "Program družbe Lenovo za varnost WiFi-ja je napredna oblačna storitev programske opreme, ki vaši napravi pomaga razlikovati med varnimi brezžičnimi omrežji in morebitnimi zlonamernimi."
+                "disableDescribe": "Program družbe Lenovo za varnost WiFi-ja je napredna oblačna storitev programske opreme, ki vaši napravi pomaga razlikovati med varnimi brezžičnimi omrežji in morebitnimi zlonamernimi.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Če želite ugotoviti, kako varna so omrežja okrog vas, uporabite detektor groženj.",
@@ -2125,7 +2201,8 @@
                 "subtitle": "Miren spanec",
                 "subtitleDescribe": "Povezana domača varnost vam bo poslala opozorilo, če zazna ranljivost v vaši napravi ali domačem omrežju ali če ste povezani z morebitno zlonamerno mrežo. Še več o povezani domači varnosti preberite <tag>tukaj</tag>.",
                 "tryNow": "Preskusite zdaj",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Vnesite kodo povabila",
@@ -2200,7 +2277,8 @@
             "getStarted1": "Kliknite gumb »Odpri SurfEasy« zgoraj, da zaženete SurfEasy VPN.",
             "getStarted2": "Vklopite VPN in počakajte kratek trenutek za potrditev varne povezave.",
             "getStarted3": "Po želji spremenite regijo ali lokacijo in uživajte v varnem, zasebnem mreženju.",
-            "poweredBySurfEasy": "Poganja SurfEasy"
+            "poweredBySurfEasy": "Poganja SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE UPRAVITELJ GESEL",
@@ -2228,7 +2306,8 @@
             "allowsYou2": "Spremljajte temni splet za vaše osebne podatke",
             "allowsYou3": "Ostanite varni na nezavarovanih omrežjih WiFi z vgrajeno v VPN",
             "allowsYou4": "Varno delite gesla, ne da bi jih razkrili",
-            "poweredByDashLane": "Poganja Dashlane"
+            "poweredByDashLane": "Poganja Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2300,7 +2379,7 @@
     "faq": {
         "footer": {
             "title": "Ne najdete, kar iščete?",
-            "description": "POTREBUJE DODATNO PODPORO? Ne oklevajte, da nas kontaktirate:",
+            "description": "Potrebujete dodatno podporo? Vabimo vas, da se obrnite na nas na te načine:",
             "body": "Skupnost Lenovo",
             "button": "Pojdi na forum"
         },
@@ -2705,7 +2784,7 @@
         "deviceStatisticsDescription": "Pošiljajte anonimne podatke o napravi, da nam pomagate izboljšati kakovost in zanesljivost delovanja naprave te in prihodnje generacije.",
         "userProfile": "Uporabniški profil",
         "Note": "Opomba: ",
-        "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo.",
+        "settingsNotes": "Za uveljavitev vseh sprememb ponovno zaženite aplikacijo.",
         "betaSettingTitle": "Program različice beta",
         "betaProgram": "Program različice beta",
         "betaSettingDescription": "Preizkusite najnovejše funkcije, na katerih delamo."
@@ -2729,6 +2808,8 @@
         "noteDownloadAvailable": "Opomba: ko kliknete »Potrdi in prenesi«, se morda prikaže poziv sistema Windows, da nam dovolite namestitev programske opreme v vašo napravo. Po dokončani namestitvi bodo vaše aplikacije samodejno prikazane na namizju ali v začetnem meniju.<br /><br />Stran Moja programska oprema lahko zaprete in nadaljujete z uporabo Lenovo Vantage. Med namestitvijo ne zapirajte Lenovo Vantage.",
         "sizeText": "Velikost",
         "versionText": "Različica",
+        "redemptionCode": "Koda za prevzem:",
+        "redeemWebsite": "Prevzem na spletnem mestu ponudnika",
         "softwareDescription": "Kliknite spodaj, da uporabite programsko opremo, ki je bila kupljena z vašo napravo. Če tega zdaj ne želite, lahko programsko opremo kadarkoli prenesete tako, da v meniju Lenovo Vantage izberete Moja programska oprema.",
         "title": "Moja programska oprema",
         "loadingDescription": "Počakajte, da pripravimo seznam programske opreme, ki je bila vključena v nakup vaše naprave.",

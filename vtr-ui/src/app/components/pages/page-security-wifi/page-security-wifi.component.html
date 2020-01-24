@@ -15,9 +15,10 @@
 		</div>
 		<wifi-security [data]="wifiHomeViewModel"
 			[vtrAppSearchScroller]="['search-wifi-security']"
-			[isShowHistory]="isShowHistory"
 			[showChs]="showChs"
 			></wifi-security>
+
+		<vtr-threat-locator *ngIf="region !== 'cn'"></vtr-threat-locator>
 		<div class="connected-home-status"
 			*ngIf="showChs">
 			<vtr-connected-home-status [homeSecurity]="homeSecurity"></vtr-connected-home-status>
@@ -52,7 +53,7 @@
 				</div>
 			</div>
 			<!--end of Security Card Advisor-->
-			<div class="row">
+			<div class="row mb-40">
 				<div class="col col-12">
 					<vtr-container-card [img]="cardContentPositionA.FeatureImage"
 						[caption]="cardContentPositionA.Description"

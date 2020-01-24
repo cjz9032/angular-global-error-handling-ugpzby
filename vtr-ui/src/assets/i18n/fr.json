@@ -87,7 +87,8 @@
                     "line8": "<b>Charge rapide </b><br> Jouez plus longtemps durant vos déplacements grâce au chargement plus rapide de la batterie",
                     "line9": "<b>Verrou pavé tactile </b><br> Évitez les saisies par erreur lorsque vous jouez en désactivant le pavé tactile",
                     "line10": "<b>Fermeture automatique </b><br> Effacez les processus qui ne sont pas nécessaires pour le jeu avant de commencer à jouer pour optimiser les ressources système disponibles",
-                    "line11": "<b>Mode thermique </b><br> Définissez votre profil périphérique favori pour contrôler la vitesse du ventilateur et le refroidissement"
+                    "line11": "<b>Mode thermique </b><br> Définissez votre profil périphérique favori pour contrôler la vitesse du ventilateur et le refroidissement",
+                    "line12": "<b>Touche de macro </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Placez le curseur sur UC/GPU/RAM et sur différents lecteurs pour afficher leurs descriptions, y compris les informations relatives à la fabrication et au modèle"
@@ -644,7 +645,8 @@
             "registered": "ENREGISTRÉ",
             "notRegistered": "NON ENREGISTRÉ",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Q & A pour votre machine",
@@ -670,6 +672,9 @@
         },
         "app-update": {
             "message": "Bonjour, Une version plus récente de Vantage est disponible. Voulez-vous la télécharger ?"
+        },
+        "offline": {
+            "connectToUseFeature": "Connectez-vous à Internet pour utiliser cette fonction"
         }
     },
     "privacy": {
@@ -717,20 +722,24 @@
             "button": "Donnez votre avis",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Commentaires...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Merci pour vos commentaires !"
-                },
                 "question1": "Aimez-vous le nouveau style de Vantage ?",
                 "question2": "Pensez-vous que les performances sont acceptables ?",
                 "question3": "Avez-vous l'intention d'utiliser plus souvent l'application à l'avenir ?",
+                "question4": "Saviez-vous que vous pouvez utiliser Lenovo Vantage pour mettre à jour les pilotes de logiciels, le microprogramme et le BIOS de votre ordinateur ?",
+                "question5": "Quelle est la probabilité que vous recommandiez l'application Lenovo Vantage à un ami ou collègue ?",
+                "notAtAllLikely": "Pas du tout probable",
+                "extremelyLikely": "Très probable",
                 "yes": "Oui",
                 "no": "Non",
                 "tips1": "Veuillez ajouter tout commentaire supplémentaire",
+                "comments": "Commentaires...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Envoyer des commentaires",
-                "submitScreenShot": "Envoyer une capture d'écran"
+                "submitScreenShot": "Envoyer une capture d'écran",
+                "messages": {
+                    "feedbackSuccess": "Merci pour vos commentaires !"
+                }
             }
         },
         "quickSettings": {
@@ -1085,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "Mode d'alimentation pour avion",
-                        "description": "Protégez la prise avion en contrôlant la consommation d'énergie de votre système.Lorsque le mode d'alimentation pour avion est activé, l'ordinateur réduit la consommation d'énergie en limitant la vitesse de chargement de la batterie et les performances du système.",
+                        "description": "Cette fonction vous permet d'utiliser la prise d'alimentation secteur dans un avion où une limite de puissance électrique s'applique. Sous ce mode, la consommation d'énergie de votre ordinateur est réduite pour atteindre un niveau de sécurité en limitant la vitesse de chargement de la batterie et les performances de l'ordinateur.",
                         "checkBoxDesc": "Détection automatique",
                         "note": "Si la détection automatique est cochée, votre ordinateur passe automatiquement en mode d'alimentation pour avion dès qu'il détecte que vous embarquez dans un avion et le désactive quand vous le quittez."
                     },
@@ -1104,7 +1113,7 @@
                         },
                         "progressText1": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
                         "progressText2": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie faible",
-                        "progressText3": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
+                        "progressText3": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie pleine",
                         "FCCText": "De {{before}} Wh à {{after}} Wh",
                         "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {
@@ -1118,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Échec : une erreur inattendue est survenue."
                         },
                         "popup": {
-                            "description1": "Le processus de réinitialisation est le suivant :<br>Charge complète de la batterie  -->  Décharge complète de la batterie  -->  Recharge complète de la batterie",
+                            "description1": "Le processus de réinitialisation est le suivant :<br>Charge complète de la batterie --> Décharge jusqu'à charge de batterie faible --> Recharge jusqu'à charge de batterie élevée ou charge complète de la batterie",
                             "description2": "Remarques : <br>1. Ce processus peut durer plusieurs heures. Veuillez éviter d'utiliser votre ordinateur pendant cette opération.<br>2. Fermez toutes les applications ouvertes et connectez votre ordinateur à l'alimentation secteur.<br>3. Pendant le processus, la fonction de seuil de chargement de la batterie est désactivée.",
                             "continue": "Continuer",
                             "cancel": "Annuler",
@@ -1135,10 +1144,10 @@
                 },
                 "smartStandby": {
                     "title": "Veille intelligente",
-                    "description": "Cette fonctionnalité programme l'ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
-                    "tooltip": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisée en fonction de la période que vous aurez définie ou de la durée d'utilisation de votre ordinateur. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
+                    "description": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant une sortie rapide de la <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">veille moderne</a> pendant les heures d'utilisation intense.",
+                    "tooltip": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie ou de l'utilisation de l'ordinateur. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
                     "timer": {
-                        "heading": "Les heures pendant lesquelles vous utilisez en général l'ordinateur",
+                        "heading": "Les heures pendant lesquelles vous utilisez généralement votre ordinateur :",
                         "subHeading1": "début",
                         "subHeading2": "fin",
                         "subHeading3": "utilisez cette planification pour",
@@ -1163,7 +1172,7 @@
                             "thurs": "Jeudi",
                             "fri": "Vendredi",
                             "sat": "Samedi",
-                            "thu": "Thu"
+                            "thu": "Jeudi"
                         },
                         "name": {
                             "sun": "Dimanche",
@@ -1180,11 +1189,11 @@
                         "noDaySelected": "Aucun jour sélectionné"
                     },
                     "checkbox": "Ajustement automatique du temps d'activité de l'ordinateur en fonction de votre utilisation",
-                    "hyperlinkToGraph": "Cliquez pour afficher le tableau de l'activité et du temps d'activité de l'ordinateur",
+                    "hyperlinkToGraph": "Cliquez pour afficher l'utilisation et la durée d'activité appliquée",
                     "subTitle": "Programmer votre ordinateur",
                     "automaticMode": "Mode Automatique",
                     "manualMode": "Mode Manuel",
-                    "subNote": "Votre ordinateur est programmé en Veille moderne en fonction de votre utilisation.",
+                    "subNote": "Votre ordinateur est programmé pour effectuer une reprise de veille plus rapide en fonction de l'utilisation.",
                     "graph": {
                         "graph1Tittle": "Utilisation de cet ordinateur",
                         "graph2Tittle": "Durée d'activité appliquée",
@@ -1223,7 +1232,8 @@
                     },
                     "description2": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
                     "subTitle2": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur",
-                    "oldTooltipText": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs."
+                    "oldTooltipText": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1327,7 +1337,8 @@
                         "note": {
                             "title": "Important",
                             "description": "Lenovo Vantage doit accéder aux informations concernant votre emplacement pour calculer l'heure du coucher et du lever du soleil pour votre région."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Température de couleur de l'écran",
@@ -1370,6 +1381,17 @@
                         "taskBarDimmer": "RÉDUCTION DE LA LUMINOSITÉ DE LA BARRE DES TÂCHES",
                         "backgroundDimmer": "RÉDUCTION DE LA LUMINOSITÉ EN ARRIÈRE-PLAN",
                         "displayDimmer": "RÉDUCTION DE LA LUMINOSITÉ DE L'ÉCRAN"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1545,60 @@
                 "fnCtrlKey": {
                     "title": "Permutation touches Fn et Ctrl",
                     "description": "Si vous appuyez habituellement sur la touche Fn pour utiliser la touche Ctrl, vous pouvez permuter les fonctions de ces deux touches.",
-                    "restartNote": "La permutation de la fonction de deux touches nécessite le redémarrage de l'ordinateur, voulez-vous vraiment redémarrer ?"
+                    "restartNote": "La permutation de la fonction de deux touches nécessite le redémarrage de l'ordinateur, voulez-vous vraiment redémarrer ?",
+                    "title2": "La touche Fn fonctionne en tant que touche Ctrl pour les combinaisons de touches fréquemment utilisées",
+                    "description2": "La touche Fn fonctionne comme la touche Ctrl pour certaines combinaisons de touches fréquemment utilisées. La fonction de la touche Ctrl n'est pas modifiée.",
+                    "featureNote": "Cette fonction et l'inversion des touches Fn et Ctrl ne peuvent pas être activées en même temps. Si une des fonctions est activée, l'autre sera automatiquement désactivée.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Touches Fn",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Touches Ctrl",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Action",
+                            "action1": "Tout sélectionner",
+                            "action2": "Copier",
+                            "action3": "Ajouter une page Web à mes favoris",
+                            "action4": "Rechercher",
+                            "action5": "Rechercher et remplacer dans Microsoft Word",
+                            "action6": "Aligner le texte à gauche et à droite dans Microsoft Word",
+                            "action7": "Quitter (dans les applications prises en charge)",
+                            "action8": "Souligner",
+                            "action9": "Coller",
+                            "action10": "Fermer (par application)",
+                            "action11": "Couper",
+                            "action12": "Rétablir",
+                            "action13": "Défaire"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "PLUS",
@@ -1533,16 +1608,16 @@
                     "less": "MOINS"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Rétro-éclairage du clavier",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez également modifier les paramètres de rétro-éclairage du clavier en appuyant sur la touche FN+espace.",
+                        "auto": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez modifier les paramètres de rétro-éclairage en appuyant sur la touche FN+espace ou le paramétrer sur \"Auto\". L'option \"Auto\" règle automatiquement le rétro-éclairage du clavier en fonction de la lumière ambiante."
                     },
                     "level": {
                         "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "low": "Faible",
+                        "high": "Elevée",
+                        "off": "Désactivé"
                     }
                 }
             }
@@ -1705,12 +1780,12 @@
             "superResolution": {
                 "heading": "Support intelligent",
                 "title": "Mise à l'échelle de la résolution vidéo",
-                "desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label> Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Lorsque cette option est activée, il est recommandé de brancher l'ordinateur à l'alimentation secteur.</label></p>",
-                "tooltip": "Cette fonction s'applique uniquement aux lecteurs suivants : <br/> Windows Media player",
+                "desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu. Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
+                "tooltip": "La fonction fonctionne uniquement sur :<br>Windows Media player",
                 "note": {
                     "description": "Cette fonction est inopérante quand :",
-                    "description1": "L'ordinateur n'est pas branché à l'alimentation secteur et la charge de la batterie est inférieure à 20 %.",
-                    "description2": "L'ordinateur n'est pas branché à l'alimentation secteur et le mode économiseur de batterie est activé.",
+                    "description1": "L'ordinateur n'est pas branché sur une prise secteur.",
+                    "description2": "Le mode d'économie de la batterie est activé.",
                     "description3": "La température de l'unité centrale est trop élevée."
                 }
             },
@@ -1867,7 +1942,7 @@
             "localRepositoryDatabaseException": "La base de données de référentiel local est introuvable ou endommagée.",
             "networkInterruptedException": "Le serveur de mise à jour du système est actuellement indisponible. Réessayez plus tard.",
             "helpCenterInvalidServerException": "Le serveur de mise à jour du système n'est pas valide. Réessayez plus tard.",
-            "catalogNotFoundException": "Il n'existe pas de mise à jour correspondante à votre système.",
+            "catalogNotFoundException": "Aucune mise à jour applicable n'a été trouvée pour votre système, car le catalogue des mises à jour est introuvable.",
             "catalogCrcErrorException": "Le catalogue pour votre système est en cours de mise à jour. Réessayez plus tard.",
             "catalogErrorException": "Une erreur s'est produite avec le catalogue des mises à jour de votre système sur le serveur de mise à jour du système. Réessayez plus tard.",
             "fileNotFoundException": "Fichier introuvable."
@@ -1975,7 +2050,7 @@
             "visitHde": "Visiter le chiffrement du disque dur",
             "haveOwnPassword": "J'ai mon propre Password Manager",
             "haveOwnWifi": "J'ai ma propre sécurité WiFi",
-            "haveOwnVpn": "J'ai ma propre sécurité VPN",
+            "haveOwnVpn": "J'ai mon propre VPN",
             "uac": "Contrôle de compte d'utilisateur",
             "uacTitles": "Contrôle de compte d'utilisateur",
             "hde": "Chiffrement du disque dur",
@@ -2091,7 +2166,8 @@
                 "showmore": "Afficher plus",
                 "showless": "Afficher moins",
                 "button": "Activer la sécurité WiFi",
-                "disableDecribe": "La Sécurité WiFi Lenovo est un service logiciel avancé basé dans le Cloud qui permet à votre appareil de différencier les réseaux sans fil sûrs de ceux potentiellement malveillants."
+                "disableDescribe": "La Sécurité WiFi Lenovo est un service logiciel avancé basé dans le Cloud qui permet à votre appareil de différencier les réseaux sans fil sûrs de ceux potentiellement malveillants.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Utiliser l'outil de détection des menaces pour déterminer la sécurité des réseaux alentours.",
@@ -2125,7 +2201,8 @@
                 "subtitle": "Tranquillité d'esprit",
                 "subtitleDescribe": "La Sécurité domestique connectée vous enverra une alerte si elle détecte une vulnérabilité dans votre périphérique ou votre réseau domestique ou si vous êtes connecté à un réseau potentiellement malveillant. En savoir plus sur la Sécurité domestique connectée <tag>ici</tag>.",
                 "tryNow": "Essayer maintenant",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Entrer le code d'invitation",
@@ -2200,7 +2277,8 @@
             "getStarted1": "Cliquez sur le bouton \"Ouvrir SurfEasy\" pour lancer SurfEasy VPN.",
             "getStarted2": "Activer le VPN et attendre un court instant pour la confirmation d'une connexion sécurisée.",
             "getStarted3": "Modifiez votre région ou l'emplacement si vous le souhaitez et profitez de l'utilisation d'un réseau sécurisée et privée.",
-            "poweredBySurfEasy": "Fourni par SurfEasy"
+            "poweredBySurfEasy": "Fourni par SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "GESTIONNAIRE DE MOT DE PASSE DASHLANE",
@@ -2228,7 +2306,8 @@
             "allowsYou2": "Contrôler vos données personnelles sur le \"Dark Web\"",
             "allowsYou3": "Rester en sécurité sur les réseaux WiFi non sécurisés grâce au VPN intégré",
             "allowsYou4": "Partager les mots de passe en sécurité sans les révéler",
-            "poweredByDashLane": "Fourni par Dashlane"
+            "poweredByDashLane": "Fourni par Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2300,7 +2379,7 @@
     "faq": {
         "footer": {
             "title": "Vous ne trouvez pas ce que vous cherchez?",
-            "description": "BESOIN D'UN SUPPORT SUPPLÉMENTAIRE? N'HÉSITEZ PAS À NOUS CONTACTER VIA:",
+            "description": "Besoin d'un support supplémentaire ? N'hésitez pas à nous contacter via :",
             "body": "Communauté Lenovo",
             "button": "ALLEZ AU FORUM"
         },
@@ -2705,7 +2784,7 @@
         "deviceStatisticsDescription": "Envoyez des données de périphérique anonymes pour nous aider à améliorer la qualité, la fiabilité et la nouvelle génération de périphériques.",
         "userProfile": "Profil utilisateur",
         "Note": "Remarque : ",
-        "settingsNotes": "les utilisateurs doivent effectuer un redémarrage de cette application pour que tous les paramètres de cette page soient pris en compte.",
+        "settingsNotes": "Relancez cette application pour vous assurer que toutes les modifications prennent effet.",
         "betaSettingTitle": "Programme bêta",
         "betaProgram": "Programme bêta",
         "betaSettingDescription": "Essayez les dernières fonctions sur lesquelles nous travaillons."
@@ -2729,6 +2808,8 @@
         "noteDownloadAvailable": "Remarque : après avoir cliqué sur Télécharger, vous recevrez peut-être une invite de Windows pour nous permettre d'installer le logiciel sur votre périphérique. Une fois l'installation de vos applications terminée, celles-ci s'afficheront automatiquement sur votre bureau ou dans le menu Démarrer.<br /><br />Vous pouvez fermer la page Mon logiciel et continuer d'utiliser Lenovo Vantage. Ne fermez pas Lenovo Vantage pendant l'installation.",
         "sizeText": "Taille",
         "versionText": "Version",
+        "redemptionCode": "Code de remboursement :",
+        "redeemWebsite": "Rembourser sur le site Web du fournisseur",
         "softwareDescription": "Cliquez télécharger ci-dessous pour utiliser le logiciel que vous avez acheté avec votre appareil. Si à n'importe quel moment, vous avez besoin de télécharger à nouveau ce logiciel, vous pouvez effectuer cela en cliquant le bouton Mon logiciel dans le menu Vantage.",
         "title": "Mon logiciel",
         "loadingDescription": "Veuillez patienter pendant que nous préparons la liste des logiciels qui étaient inclus dans l'achat de votre appareil.",

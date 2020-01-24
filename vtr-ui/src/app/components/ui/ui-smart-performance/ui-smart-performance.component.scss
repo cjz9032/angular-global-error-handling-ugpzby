@@ -18,6 +18,18 @@
 			&.px-10{
 				padding-left: 10rem;
 				padding-right: 10rem;
+				@media #{$breakpoint_sm}{
+					padding-left: 0rem;
+					padding-right: 0rem;
+				}
+				@media #{$breakpoint_md}{
+					padding-left: 0rem;
+					padding-right: 0rem;
+				}
+				@media #{$breakpoint_lg}{
+					padding-left: 0rem;
+					padding-right: 0rem;
+				}
 			}
 			h1 {
 				color: $light;

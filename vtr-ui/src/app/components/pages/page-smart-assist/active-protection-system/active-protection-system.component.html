@@ -1,6 +1,6 @@
 <div class="aps">
 	<div class="row">
-		<div class="col-12">
+		<div class="col-12 px-0">
 			<p class="caption"
 				id="smart-assist-active-protection-system-desc"
 				attr.aria-label="smart-assist-active-protection-system-desc">
@@ -8,7 +8,7 @@
 			</p>
 		</div>
 
-		<div class="col-12">
+		<div class="col-12 px-0">
 			<ul class="list-group list-group-flush">
 				<!-- APS Slider -->
 				<li class="auto-screen-off-block">
@@ -83,7 +83,7 @@
 				</li>
 
 				<!-- Manual Overide -->
-				<li class="pt-3 keep-my-display-block auto-screen-off-block">
+				<li class="pt-3 pl-3 keep-my-display-block auto-screen-off-block">
 					<vtr-ui-row-switch [switchId]="'manualActiveProtectionSuspension'"
 						[title]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.title' | translate"
 						[caption]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.caption' | translate"
@@ -137,7 +137,7 @@
 
 				<!-- Advanced section -->
 				<li *ngIf="advanceAvailable && apsStatus"
-					class="advanced pt-3 keep-my-display-block auto-screen-off-block">
+					class="advanced pt-3 pl-3 keep-my-display-block auto-screen-off-block">
 					<h4 *ngIf="!advancedToggle"
 						id="activeProtectionSystem-more"
 						attr.aria-label="activeProtectionSystem-more">

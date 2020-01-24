@@ -80,14 +80,15 @@
                     "line1": "Vantage Edge를 사용하면 사용량에 따라 설정이 자동으로 조정됩니다. \n 게임 중 최대 성능, 게임을 하지 않을 때는 배터리 수명이 연장됩니다.",
                     "line2": "<b>기능 관리 개요</b> <br> 일부 기능은 모든 장치에서 사용하지 못할 수 있음",
                     "line3": "<b>CPU 오버클럭킹 </b><br> 프로세서의 최대 속도 향상",
-                    "line4": "<b>RAM 오버클럭킹 </b><br> 메모리의 최대 속도 향상",
+                    "line4": "<b>RAM 오버클럭 </b><br> 메모리의 최대 속도 향상",
                     "line5": "<b>네트워크 향상 </b><br> 재생 중인 게임의 네트워크 트래픽 우선 순위 지정",
                     "line6": "<b>Dolby </b><br> Dolby 기술을 이용한 게임 전용 오디오 조정",
                     "line7": "<b>하이브리드 모드 </b><br> 배터리 성능을 높이기 위해 게임을 하지 않을 때 고급 GPU 설정 사용 안 함",
                     "line8": "<b>급속 충전 </b><br> 더 빠른 배터리 충전으로 이동 중 게임 시간 연장",
                     "line9": "<b>터치 패드 잠금 </b><br> 게임 중 터치패드를 비활성화하여 잘못된 입력 방지",
                     "line10": "<b>자동 닫기 </b><br> 게임을 시작하기 전에 사용 가능한 시스템 리소스를 극대화하기 위해 필요하지 않은 프로세스 지우기",
-                    "line11": "<b>열 모드 </b><br> 팬 속도 및 냉각 제어를 위해 선호하는 장치 프로파일 설정"
+                    "line11": "<b>열 모드 </b><br> 팬 속도 및 냉각 제어를 위해 선호하는 장치 프로파일 설정",
+                    "line12": "<b>매크로 키 </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "제조 및 모델 정보를 포함한 설명이 표시되도록 CPU/GPU/RAM 및 다른 드라이브를 가리킴"
@@ -644,7 +645,8 @@
             "registered": "등록됨",
             "notRegistered": "등록되지 않음",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
@@ -670,6 +672,9 @@
         },
         "app-update": {
             "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
+        },
+        "offline": {
+            "connectToUseFeature": "이 기능을 사용하려면 인터넷에 연결하십시오"
         }
     },
     "privacy": {
@@ -717,20 +722,24 @@
             "button": "피드백 제출",
             "form": {
                 "email": "Email (optional)",
-                "comments": "댓글...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "소중한 의견을 들려주셔서 감사합니다!"
-                },
                 "question1": "새로운 스타일의 Vantage를 원하십니까?",
                 "question2": "성능이 적합하다고 생각합니까?",
                 "question3": "나중에 응용 프로그램을 보다 자주 사용하시겠습니까?",
+                "question4": "Lenovo Vantage를 사용하여 컴퓨터에서 소프트웨어 드라이버, 펌웨어 및 BIOS를 업데이트할 수 있다는 것을 알고 있었습니까?",
+                "question5": "Lenovo Vantage 응용 프로그램을 친구나 동료에게 추천하시겠습니까?",
+                "notAtAllLikely": "전혀 추천하지 않음",
+                "extremelyLikely": "매우 추천함",
                 "yes": "예",
                 "no": "아니요",
                 "tips1": "추가 의견을 남겨 주십시오.",
+                "comments": "댓글...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "피드백 보내기",
-                "submitScreenShot": "스크린 샷 제출"
+                "submitScreenShot": "스크린 샷 제출",
+                "messages": {
+                    "feedbackSuccess": "소중한 의견을 들려주셔서 감사합니다!"
+                }
             }
         },
         "quickSettings": {
@@ -1085,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "비행기 전원 모드",
-                        "description": "시스템의 전력 소모를 제어하여 비행기의 AC 전원 콘센트를 보호하십시오.비행기 전원 모드를 사용하면, 컴퓨터가 배터리 충전율과 시스템 성능을 제한하여 전력 소모를 줄입니다.",
+                        "description": "이 기능을 사용하면 특정 전력 한계가 적용되는 항공기에서 AC 전원 콘센트를 사용할 수 있습니다. 이 모드에서는 배터리 충전 속도와 컴퓨터 성능을 제한하여 컴퓨터의 전력 소모를 안전한 수준으로 줄입니다.",
                         "checkBoxDesc": "자동 검색",
                         "note": "자동 탐지를 선택하면 비행기 탑승 환경을 탐지했을 때 컴퓨터가 비행기 전원 모드를 자동으로 켜고 비행기에서 내리면 끕니다."
                     },
@@ -1104,7 +1113,7 @@
                         },
                         "progressText1": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
                         "progressText2": "{{stageNum}}의 {{stage}}: 저전력으로 보정 중",
-                        "progressText3": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
+                        "progressText3": "{{stageNum}}의 {{stage}}: 고전력으로 보정 중",
                         "FCCText": "{{before}} Wh에서 {{after}} Wh",
                         "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {
@@ -1118,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "실패: 예상치 않은 오류가 발생했습니다."
                         },
                         "popup": {
-                            "description1": "리셋 절차는 다음과 같습니다.<br>배터리 완충  -->  배터리 방전  -->  배터리 완전히 재충전",
+                            "description1": "리셋 절차는 다음과 같습니다.<br>배터리 완전 충전 --> 저전력 상태까지 배터리 방전 --> 고전력 상태까지 배터리 재충전 또는 완전 충전",
                             "description2": "참고: <br>1. 이 절차는 몇 시간 정도 걸릴 수 있습니다. 이 시간 동안 컴퓨터 사용을 지양하십시오.<br>2. 열려 있는 모든 앱을 닫고 컴퓨터를 AC 전원에 연결하십시오.<br>3. 절차가 진행되는 동안, 배터리 충전 임계값 기능은 꺼집니다.",
                             "continue": "계속",
                             "cancel": "취소",
@@ -1135,10 +1144,10 @@
                 },
                 "smartStandby": {
                     "title": "스마트 대기",
-                    "description": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
+                    "description": "이 기능은 사용량이 많을 때 <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">최신 대기 상태</a>를 빠르게 재개하도록 하면서 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약합니다.",
                     "tooltip": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 기간은 설정한 일정 또는 컴퓨터 사용 시간을 기준으로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며, 비활성화되도록 예약된 날에는 전환되지 않습니다.",
                     "timer": {
-                        "heading": "이 컴퓨터를 주로 사용하는 시간",
+                        "heading": "이 컴퓨터를 주로 사용하는 시간:",
                         "subHeading1": "시작하면",
                         "subHeading2": "종료",
                         "subHeading3": "다음에 대해 이 스케줄을 사용합니다",
@@ -1156,14 +1165,14 @@
                     "warningtip": "적어도 하루를 선택하십시오.",
                     "days": {
                         "shortName": {
-                            "sun": "일요일",
-                            "mon": "월요일",
-                            "tue": "화요일",
-                            "wed": "수요일",
-                            "thurs": "목요일",
-                            "fri": "금요일",
-                            "sat": "토요일",
-                            "thu": "Thu"
+                            "sun": "일",
+                            "mon": "월",
+                            "tue": "화",
+                            "wed": "수",
+                            "thurs": "목",
+                            "fri": "금",
+                            "sat": "토",
+                            "thu": "목"
                         },
                         "name": {
                             "sun": "일요일",
@@ -1180,11 +1189,11 @@
                         "noDaySelected": "날짜를 선택하지 않음"
                     },
                     "checkbox": "사용 현황에 따라 컴퓨터의 활성 시간 자동 조정",
-                    "hyperlinkToGraph": "클릭하여 컴퓨터 테이블의 활동 및 활성 시간을 확인",
+                    "hyperlinkToGraph": "사용량 및 적용된 유효 시간을 보려면 클릭하십시오",
                     "subTitle": "컴퓨터 예약",
                     "automaticMode": "자동 모드",
                     "manualMode": "수동 모드",
-                    "subNote": "사용량에 기반하여 컴퓨터가 모던 대기 모드가 되도록 예약되어 있습니다.",
+                    "subNote": "사용량에 따라 빠르게 다시 시작할 수 있도록 컴퓨터가 예약되어 있습니다.",
                     "graph": {
                         "graph1Tittle": "이 컴퓨터 사용량",
                         "graph2Tittle": "적용된 활성 시간",
@@ -1223,7 +1232,8 @@
                     },
                     "description2": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
                     "subTitle2": "이 컴퓨터를 주로 사용하는 시간 설정",
-                    "oldTooltipText": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 시간은 사용자가 설정한 스케줄을 토대로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며 비활성화되도록 예약된 날에는 전환되지 않습니다."
+                    "oldTooltipText": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 시간은 사용자가 설정한 스케줄을 토대로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며 비활성화되도록 예약된 날에는 전환되지 않습니다.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1327,7 +1337,8 @@
                         "note": {
                             "title": "주",
                             "description": "Lenovo Vantage는 위치 정보에 액세스하여 지역의 일몰 및 일출 시간을 계산해야 합니다."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "디스플레이 색상 온도",
@@ -1370,6 +1381,17 @@
                         "taskBarDimmer": "작업 표시줄 채광",
                         "backgroundDimmer": "백그라운드 채광",
                         "displayDimmer": "디스플레이 채광"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1523,7 +1545,60 @@
                 "fnCtrlKey": {
                     "title": "Fn 키와 Ctrl 키 바꾸기",
                     "description": "Ctrl 키를 눌러야 하는 데 습관적으로 Fn 키를 누르는 경우 두 키의 기능을 바꿀 수 있습니다.",
-                    "restartNote": "두 키의 기능을 바꾸어도 컴퓨터를 다시 시작해야 합니다. 다시 시작하시겠습니까?"
+                    "restartNote": "두 키의 기능을 바꾸어도 컴퓨터를 다시 시작해야 합니다. 다시 시작하시겠습니까?",
+                    "title2": "Fn이 자주 사용하는 키 조합의 Ctrl로 작동",
+                    "description2": "Fn 키가 몇 가지 자주 사용하는 키 조합의 Ctrl 키로 작동합니다. Ctrl 키의 기능은 변경되지 않습니다.",
+                    "featureNote": "이 기능 및 Fn 키와 Ctrl 키 스왑 기능은 동시에 사용할 수 없습니다. 하나가 켜져 있으면 다른 모드는 자동으로 꺼집니다.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn 키",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl 키",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "동작",
+                            "action1": "모두 선택",
+                            "action2": "복사",
+                            "action3": "웹 페이지를 내 즐겨찾기에 추가",
+                            "action4": "검색",
+                            "action5": "Microsoft Word의 찾기 및 바꾸기",
+                            "action6": "Microsoft Word의 왼쪽 및 오른쪽 맞춤",
+                            "action7": "종료(앱에서 지원하는 경우)",
+                            "action8": "밑줄 추가",
+                            "action9": "붙여넣기",
+                            "action10": "닫기(앱에 따라 다름)",
+                            "action11": "잘라내기",
+                            "action12": "다시 실행",
+                            "action13": "실행 취소"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "자세히",
@@ -1533,16 +1608,16 @@
                     "less": "간단히"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "키보드 백라이트",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. 또한 Fn+Space 키를 눌러 키보드 백라이트 설정을 변경할 수도 있습니다.",
+                        "auto": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. Fn+Space 키를 눌러 키보드 백라이트 설정을 변경하거나 이를 \"자동\"으로 설정할 수 있습니다. \"자동\" 옵션은 주변 밝기에 따라 키보드 조명을 자동으로 조정합니다."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "자동",
+                        "low": "낮음",
+                        "high": "높음",
+                        "off": "끄기"
                     }
                 }
             }
@@ -1705,12 +1780,12 @@
             "superResolution": {
                 "heading": "지능형 미디어",
                 "title": "비디오 해상도 업스케일링",
-                "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label> 이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. 사용 가능으로 설정하는 경우, AC 전원을 사용하여 컴퓨터에 연결하는 것이 좋습니다.</label></p>",
-                "tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player",
+                "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label>이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. DC 모드에서는 사용하지 마십시오. 그렇지 않으면 전력 소모를 가속화하고 배터리 수명을 단축시킵니다.</label></p>",
+                "tooltip": "이 기능은 다음의 환경에서만 작동합니다:<br>Windows Media player",
                 "note": {
                     "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
-                    "description1": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 전력이 20% 미만입니다.",
-                    "description2": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 절전 모드가 전력이 설정되었습니다.",
+                    "description1": "컴퓨터가 AC 전원에 연결되어 있지 않습니다.",
+                    "description2": "배터리 절약 모드를 사용합니다.",
                     "description3": "CPU 온도가 너무 높습니다."
                 }
             },
@@ -1867,7 +1942,7 @@
             "localRepositoryDatabaseException": "로컬 리포지토리 데이터베이스를 찾을 수 없거나 데이터베이스가 손상되었습니다.",
             "networkInterruptedException": "시스템 업데이트 서버를 현재 사용할 수 없습니다. 나중에 다시 시도하십시오.",
             "helpCenterInvalidServerException": "시스템 업데이트 서버가 올바르지 않습니다. 나중에 다시 시도하십시오.",
-            "catalogNotFoundException": "시스템에 적용 가능한 업데이트를 찾을 수 없습니다.",
+            "catalogNotFoundException": "업데이트 카탈로그를 찾을 수 없기 때문에 사용자 시스템에 적용 가능한 업데이트를 찾을 수 없습니다.",
             "catalogCrcErrorException": "현재 시스템 카탈로그를 업데이트하는 중입니다. 나중에 다시 시도하십시오.",
             "catalogErrorException": "시스템 업데이트 서버의 사용자 시스템 업데이트 카탈로그에서 오류가 발견되었습니다. 나중에 다시 시도하십시오.",
             "fileNotFoundException": "파일을 찾을 수 없습니다."
@@ -1975,7 +2050,7 @@
             "visitHde": "하드 드라이브 암호화 방문",
             "haveOwnPassword": "내 Password Manager가 있음",
             "haveOwnWifi": "내 wifi 보안이 있음",
-            "haveOwnVpn": "내 VPN 보안이 있음",
+            "haveOwnVpn": "개인 VPN 설정이 되어 있음",
             "uac": "사용자 계정 컨트롤(UAC)",
             "uacTitles": "사용자 계정 컨트롤",
             "hde": "하드 드라이브 암호화",
@@ -2091,7 +2166,8 @@
                 "showmore": "더 표시",
                 "showless": "간단하게 표시",
                 "button": "WiFi 보안 사용",
-                "disableDecribe": "Lenovo WiFi 보안은 장치가 안전한 무선 네트워크와 잠재적인 악성 네트워크를 구분할 수 있도록 도와주는 첨단 클라우드 기반 소프트웨어 서비스입니다."
+                "disableDescribe": "Lenovo WiFi 보안은 장치가 안전한 무선 네트워크와 잠재적인 악성 네트워크를 구분할 수 있도록 도와주는 첨단 클라우드 기반 소프트웨어 서비스입니다.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "위협 감지기를 사용하여 주변 네트워크의 안전성을 확인합니다.",
@@ -2125,7 +2201,8 @@
                 "subtitle": "안심하고 사용",
                 "subtitleDescribe": "장치 또는 홈 네트워크에서 취약한 점이 감지되거나 악성일 가능성이 있는 네트워크에 연결되어 있는 경우, 연결된 홈 보안 장치에서 경고를 보냅니다. 연결된 홈 보안에 대해 자세히 알아보십시오 <tag>여기</tag>.",
                 "tryNow": "지금 사용해 보기",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "초대 코드 입력",
@@ -2200,7 +2277,8 @@
             "getStarted1": "위의 \"SurfEasy 열기\" 버튼을 클릭하여 SurfEasy VPN을 실행하십시오.",
             "getStarted2": "보안 연결을 확인하려면 VPN을 켜고 잠시 기다리십시오.",
             "getStarted3": "원하는 경우 지역 또는 위치를 변경하여 안전하고 개인적인 네트워킹을 즐기십시오.",
-            "poweredBySurfEasy": "SurfEasy로 실행"
+            "poweredBySurfEasy": "SurfEasy로 실행",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 암호 관리자",
@@ -2228,7 +2306,8 @@
             "allowsYou2": "다크 웹에서 개인 정보 모니터",
             "allowsYou3": "내장 VPN으로 비보안 WiFi 네트워크에서 안전하게 유지",
             "allowsYou4": "암호를 노출하지 않고 안전하게 공유",
-            "poweredByDashLane": "Dashlane로 실행"
+            "poweredByDashLane": "Dashlane로 실행",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2300,7 +2379,7 @@
     "faq": {
         "footer": {
             "title": "당신이 찾고있는 것을 찾지 못했습니까?",
-            "description": "추가 지원이 필요하십니까? VIA에 연락을 주저하지 마십시오.",
+            "description": "추가 지원이 필요하십니까? 다음을 통해 문의하십시오:",
             "body": "Lenovo 커뮤니티",
             "button": "포럼으로 이동"
         },
@@ -2705,7 +2784,7 @@
         "deviceStatisticsDescription": "품질, 안정성 및 차세대 장치를 개선하는 데 도움이 되는 익명의 장치 데이터를 보내 주십시오.",
         "userProfile": "사용자 프로필",
         "Note": "참고: ",
-        "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다.",
+        "settingsNotes": "모든 변경 사항을 적용하려면, 이 응용 프로그램을 다시 실행하십시오.",
         "betaSettingTitle": "베타 프로그램",
         "betaProgram": "베타 프로그램",
         "betaSettingDescription": "개발 중인 최신 기능을 써보세요."
@@ -2729,6 +2808,8 @@
         "noteDownloadAvailable": "참고: 다운로드를 클릭하면 Windows에서 해당 장치에 소프트웨어를 설치할 수 있다는 메시지가 표시될 수 있습니다. 설치가 완료되면 바탕 화면이나 시작 메뉴에 앱이 자동으로 나타납니다.<br /><br />내 소프트웨어 페이지를 닫고 Lenovo Vantage를 계속 사용할 수 있습니다. 설치 중에 Lenovo Vantage를 닫지 마십시오.",
         "sizeText": "크기",
         "versionText": "버전",
+        "redemptionCode": "교환 코드:",
+        "redeemWebsite": "공급자 사이트에서 교환",
         "softwareDescription": "아래의 다운로드를 클릭하면 장치와 함께 구입한 소프트웨어를 사용할 수 있습니다. 언제든지 소프트웨어를 다시 다운로드해야 하는 경우 Vantage 메뉴에서 내 소프트웨어 버튼을 클릭하면 됩니다.",
         "title": "내 소프트웨어",
         "loadingDescription": "장치 구매시 포함된 소프트웨어 목록을 준비하는 동안 잠시 기다려주십시오.",

@@ -2,9 +2,11 @@
 
 .subpage-device-settings-display {
 	.displayColorTemperatureLink {
-		padding-left: 2.5rem;
-		font-size: 2rem;
+		margin-top: 1rem;
+		padding-left: 3rem;
+		font-size: 1.4rem;
 		font-weight: 300;
+		color: $purple_navy;
 	}
 	#goto_nightlight_link {
 		text-decoration: underline;
@@ -57,7 +59,7 @@
 
 			}
 		}
-	.smartsettings-card {
+	.smart-settings-card {
 		margin-left: -1.5rem;
 		margin-right: -1.5rem;
 		.subtitle {
@@ -127,8 +129,8 @@
 	}
 	.disabled {
 		opacity: 0.5;
-		pointer-events: none;	
-		color: $light-grey;		
+		pointer-events: none;
+		color: $light-grey;
 		cursor: not-allowed;
 	}
 	 .custom-control-label-disabled:hover {
@@ -136,18 +138,18 @@
 	  }
 	.privacy-guard-caption {
 		font-size: 1.5rem;
-		color: $main_darker;
-		max-width: 60rem;
+		color: $purple_navy;
+		// max-width: 60rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
 	}
 
 	.feature-note {
-		background-color: $shade_lightest;
-		border: 1px solid $shade_lighter;
+		background-color: $grey_lighter;
+		border: 0.1rem solid $note_border;
 		p {
-			font-size: 1.5rem;
-			color: $main_darker;
+			font-size: $fontsize_xs;
+			color: $shade_blue;
 		}
 	}
 
@@ -209,5 +211,11 @@
 				border: none;
 			}
 		}
+	}
+}
+
+.ecm-note {
+	p {
+		margin-bottom: 0;
 	}
 }

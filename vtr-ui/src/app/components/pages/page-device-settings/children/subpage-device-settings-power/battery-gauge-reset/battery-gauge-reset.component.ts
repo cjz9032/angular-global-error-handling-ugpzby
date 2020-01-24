@@ -17,17 +17,27 @@ export class BatteryGaugeResetComponent implements OnInit {
 		'device.deviceSettings.batteryGauge.details.primary',
 		'device.deviceSettings.batteryGauge.details.secondary',
 		'device.deviceSettings.batteryGauge.details.tertiary'];
+	isStartTimeAmPm = true;
+	isLastResetTimeAmPm = true;
+	gaugeResetBtnStatus: boolean[];
 
 	constructor(private logger: LoggerService, public modalService: NgbModal, public powerService: PowerService, public batteryService: BatteryDetailService) { }
 
 	ngOnInit() {
+		this.logger.info('Init Gauge Reset Feature', this.batteryService.gaugeResetInfo);
 		this.initBatteryGaugeResetInfo();
+		this.setGaugeResetSection();
 	}
 
 	initBatteryGaugeResetInfo() {
 		// this.batteryGaugeResetInfo.push(new BatteryGaugeReset());
 		// this.batteryGaugeResetInfo.push(new BatteryGaugeReset());
 		// this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
+	}
+
+	getIsAmPm(time) {
+		const date = new Date(time);
+		return date.getHours() < 12;
 	}
 
 	onBatteryGaugeReset(index) {
@@ -74,8 +84,9 @@ export class BatteryGaugeResetComponent implements OnInit {
 		const gaugeResetInfo = this.batteryService.gaugeResetInfo[index];
 		try {
 			const response = await this.powerService.startBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
+			this.logger.info('start battery reset succeeded', response);
 			if (response) {
-				this.logger.info('start battery reset succeeded', response);
+				this.batteryService.isGaugeResetRunning = true;
 			}
 		} catch (error) {
 			this.logger.info('start battery reset failed', error);
@@ -86,8 +97,9 @@ export class BatteryGaugeResetComponent implements OnInit {
 		const gaugeResetInfo = this.batteryService.gaugeResetInfo[index];
 		try {
 			const response = await this.powerService.stopBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
+			this.logger.info('start battery reset succeeded', response);
 			if (response) {
-				this.logger.info('start battery reset succeeded', response);
+				this.batteryService.isGaugeResetRunning = false;
 			}
 		} catch (error) {
 			this.logger.info('start battery reset failed', error);
@@ -95,41 +107,45 @@ export class BatteryGaugeResetComponent implements OnInit {
 	}
 
 
-	public isResetBtnDisabled(index) {
-		if (this.batteryService.gaugeResetInfo && this.batteryService.gaugeResetInfo.length > 1) {
-			if (index === 0) {
-				if (this.batteryService.gaugeResetInfo[1].isResetRunning) {
-					return true;
-				} else {
-					return false;
+	public setGaugeResetSection() {
+		let isResetRunning = false;
+		const gaugeResetBtnStatus = [];
+		if (this.batteryService.gaugeResetInfo) {
+			this.batteryService.gaugeResetInfo.forEach((battery) => {
+				this.isStartTimeAmPm = new Date(battery.startTime).getHours() < 12;
+				this.isLastResetTimeAmPm = new Date(battery.lastResetTime).getHours() < 12;
+				isResetRunning = isResetRunning || battery.isResetRunning;
+				if (this.batteryService.gaugeResetInfo.length > 1) {
+					gaugeResetBtnStatus.push(!battery.isResetRunning);
 				}
-			} else {
-				if (this.batteryService.gaugeResetInfo[0].isResetRunning) {
-					return true;
-				} else {
-					return false;
-				}
-			}
+			});
 		} else {
-			return false;
+			gaugeResetBtnStatus.push(true);
 		}
+		this.gaugeResetBtnStatus = gaugeResetBtnStatus;
+		this.batteryService.isGaugeResetRunning = isResetRunning;
 	}
 
 	updateGaugeResetInfo(value: BatteryGaugeReset) {
-		this.batteryService.gaugeResetInfo[value.batteryNum - 1] = value;
+		let index = value.batteryNum - 1;
+		if (this.batteryService.gaugeResetInfo.length < 2) {
+			index = 0;
+		}
+		this.batteryService.gaugeResetInfo[index] = value;
+		this.setGaugeResetSection();
 	}
 
-	isValid(val: any) {
-		if (!val || val === null) {
-			return false;
-		}
-		if (typeof val === 'number' && val === 0) {
-			return false;
-		}
-		if (typeof val === 'string' && val === '') {
-			return false;
-		}
-		return true;
-	}
+	// isValid(val: any) {
+	// 	if (!val || val === null) {
+	// 		return false;
+	// 	}
+	// 	if (typeof val === 'number' && val === 0) {
+	// 		return false;
+	// 	}
+	// 	if (typeof val === 'string' && val === '') {
+	// 		return false;
+	// 	}
+	// 	return true;
+	// }
 
 }

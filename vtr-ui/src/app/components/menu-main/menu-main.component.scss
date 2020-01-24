@@ -219,6 +219,8 @@
 						.icon {
 							display: inline-block;
 							vertical-align: middle;
+							width: 3rem;
+							text-align: center;
 						}
 
 						&.user {
@@ -326,7 +328,8 @@
 							}
 
 							&.link-lma,
-							&.link-adobe {
+							&.link-adobe,
+							&.link-dcc {
 								position: relative;
 
 								.unread-tag {

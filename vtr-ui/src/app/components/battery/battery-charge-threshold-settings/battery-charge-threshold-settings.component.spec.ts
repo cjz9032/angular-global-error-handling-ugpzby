@@ -31,7 +31,7 @@ describe('BatteryChargeThresholdSettingsComponent', () => {
 		function setup() {
 			const fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
 			const component = fixture.debugElement.componentInstance;
-			//const componentElement = fixture.debugElement.nativeElement; 
+			//const componentElement = fixture.debugElement.nativeElement;
 			return { fixture, component };
 		}
 
@@ -87,13 +87,13 @@ describe('BatteryChargeThresholdSettingsComponent', () => {
 			let newCharge = 25;
 			let startToggle = fixture.debugElement.nativeElement.querySelector('button[id^="' + textId + '-start-dropdown"]');
 			let endToggle = fixture.debugElement.nativeElement.querySelector('button[id^="' + textId + '-stop-dropdown"]');
-			//case A => 
+			//case A =>
 			component.onChargeChange('startAtCharge', newCharge, new Event('click'), startToggle);
 			expect(component.selectedStartAtCharge).toEqual(newCharge);
 			expect(component.selectedOptionsData).toEqual({
 				startValue: newCharge,
 				stopValue: selectedStopAtCharge,
-				checkBoxValue: false
+				checkboxValue: false
 			});
 
 			//case B
