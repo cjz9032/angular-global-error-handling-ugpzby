@@ -1850,7 +1850,7 @@ export class VantageShellService {
 			getNetUsingProcesses: this.getPromise(runningList),
 			getStatus: this.getPromise(true),
 			setStatus: this.getPromise(true),
-			addProcessToNetBoost:this.getPromise(true)
+			addProcessToNetBoost: this.getPromise(true)
 		};
 		return gamingNetworkBoost;
 	}
@@ -2146,6 +2146,14 @@ export class VantageShellService {
 
 		return kbdManager;
 	}
+
+	public getKeyboardObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.keyboard;
+		}
+		return undefined;
+	}
+
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
 		const voice = {
@@ -2170,8 +2178,18 @@ export class VantageShellService {
 			setDisplayDimmerSetting: this.getPromise(true),
 
 		};
-
 		return oledSettings;
+	}
+
+	/** returns OledSettings object from VantageShellService of JS Bridge */
+	public getPriorityControl(): any {
+		const priorityControl = {
+			GetCapability: this.getPromise(true),
+			GetPriorityControlSetting: this.getPromise(true),
+			SetPriorityControlSetting: this.getPromise(true)
+
+		};
+		return priorityControl;
 	}
 
 	public getVersion(): any {
@@ -2351,6 +2369,17 @@ export class VantageShellService {
 	public getRegistryUtil(): Phoenix.RegistryFeature {
 		if (this.phoenix) {
 			return this.phoenix.registry;
+		}
+		return undefined;
+	}
+
+	getToolbarToastFeature(): any {
+		return this.phoenix.hwsettings.toolbar.ToolbarToast;
+	}
+
+	public getUpeAgent(): any {
+		if (this.phoenix) {
+			return this.phoenix.upeAgent;
 		}
 		return undefined;
 	}
