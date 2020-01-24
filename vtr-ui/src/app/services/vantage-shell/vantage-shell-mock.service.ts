@@ -24,7 +24,7 @@ export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	public phoenix: any;
 	private shell: any;
-	private isGamingDevice = true;
+	private isGamingDevice = false;
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
@@ -1850,7 +1850,7 @@ export class VantageShellService {
 			getNetUsingProcesses: this.getPromise(runningList),
 			getStatus: this.getPromise(true),
 			setStatus: this.getPromise(true),
-			addProcessToNetBoost:this.getPromise(true)
+			addProcessToNetBoost: this.getPromise(true)
 		};
 		return gamingNetworkBoost;
 	}
@@ -2146,6 +2146,7 @@ export class VantageShellService {
 
 		return kbdManager;
 	}
+
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
 		const voice = {
@@ -2170,7 +2171,6 @@ export class VantageShellService {
 			setDisplayDimmerSetting: this.getPromise(true),
 
 		};
-
 		return oledSettings;
 	}
 
@@ -2375,6 +2375,17 @@ export class VantageShellService {
 	public getRegistryUtil(): Phoenix.RegistryFeature {
 		if (this.phoenix) {
 			return this.phoenix.registry;
+		}
+		return undefined;
+	}
+
+	getToolbarToastFeature(): any {
+		return this.phoenix.hwsettings.toolbar.ToolbarToast;
+	}
+
+	public getUpeAgent(): any {
+		if (this.phoenix) {
+			return this.phoenix.upeAgent;
 		}
 		return undefined;
 	}

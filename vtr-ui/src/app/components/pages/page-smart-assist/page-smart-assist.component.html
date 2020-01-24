@@ -537,7 +537,7 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col col-12 pb-20">
+				<div class="col col-12 pb-5">
 					<vtr-container-card [containerCardId]="'smart-assist-container-card'"
 						[img]="cardContentPositionA.FeatureImage"
 						[caption]="cardContentPositionA.Description"
@@ -555,7 +555,12 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col col-12 cont py-20">
+				<div class="col col-12 mb-3 help-heading">
+					{{ 'device.deviceSettings.helpful' | translate }}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-12 cont">
 					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 						[description]="'common.qAndA.subtitle' | translate"
 						[items]="qaService.qas"
