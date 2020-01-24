@@ -2,6 +2,8 @@ import { HomeComponent } from './../components/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
+import { PageCptComponent } from '../components/pages/page-cpt/page-cpt.component';
+import { CptpageMyDeviceComponent } from '../components/pages/page-cpt/children/hardware-settings/cptpage-my-device/cptpage-my-device.component';
 
 const routes: Routes = [
 
@@ -60,6 +62,20 @@ const routes: Routes = [
 		path: 'device/smart-performance',
 		loadChildren: './smart-performance/smart-performance.module#SmartPerformanceModule'
 	},
+	{
+		path: 'cpt',
+		component: PageCptComponent,
+		data: {
+			pageName: 'Page.Cpt'
+		}
+	},
+	// {
+	// 	path: 'cpt-mydevice',
+	// 	component: CptpageMyDeviceComponent,
+	// 	data: {
+	// 		pageName: 'Page.Cpt-MyDevice'
+	// 	}
+	// },
 	{
 		path: '',
 		component: HomeComponent,

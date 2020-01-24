@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col">
+        <h1>{{'device.myDevice.title' | translate}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 px-0 pb-20 pt-0">
+        <vtr-container-card order="1" sideFlag="r" [img]="cardContentPositionA.FeatureImage"
+            [itemID]="cardContentPositionA.Id" [caption]="cardContentPositionA.Description"
+            [title]="cardContentPositionA.Title" [logoText]="cardContentPositionA.BrandName"
+            [action]="cardContentPositionA.Action" [actionType]="cardContentPositionA.ActionType"
+            [actionLink]="cardContentPositionA.ActionLink" [type]="'corner-article'" [ratioX]="4" [ratioY]="2"
+            [cornerShift]="'large'" id="device-container-card" aria-label="device-container-card"
+            [containerCardId]="'myDevice-container-card'">
+        </vtr-container-card>
+    </div>
+</div>

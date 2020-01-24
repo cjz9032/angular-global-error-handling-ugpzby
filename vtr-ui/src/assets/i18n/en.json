@@ -2864,5 +2864,8 @@
 				"readLess": "Read Less"
 			}
 		}
+	},
+	"cpt": {
+		"title": "Content Preview Tool"
 	}
 }

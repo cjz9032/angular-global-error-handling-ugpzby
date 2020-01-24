@@ -59,6 +59,11 @@ import { PageSettingsComponent } from '../components/pages/page-settings/page-se
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonUiModule } from './common/common-ui.module';
 import { WebpackTranslateLoader } from './webpack-translate-loader.loader';
+//cpt related
+import { PageCptComponent } from '../components/pages/page-cpt/page-cpt.component';
+//import { CptpageDeviceSettingsComponent } from 'src/app/components/pages/page-cpt/children/cptpage-device-settings/cptpage-device-settings.component';
+//import { CptpageMyDeviceComponent } from 'src/app/components/pages/page-cpt/children/cptpage-my-device/cptpage-my-device.component';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -68,6 +73,7 @@ import { WebpackTranslateLoader } from './webpack-translate-loader.loader';
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
 		PageSettingsComponent,
+		PageCptComponent,
 	],
 	imports: [
 		BrowserModule,

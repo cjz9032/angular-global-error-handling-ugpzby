@@ -13,6 +13,7 @@ export class ServerSwitch {
 	//public segmentId: string;
 	public brand: any;
 	//public segmentId: string;
+	public page: any;
 
 	public countryList: any = CountryList;
 	public languageList: any = LanguageList;
@@ -42,6 +43,11 @@ export class ServerSwitch {
 		'Lenovo',
 		'Fujitsu',
 		'NEC'
+	];
+
+	public pageList: any = [
+		{'label':'My Device','componentSelector':'vtr-cptpage-my-device'},
+		{'label':'My Device Settings','componentSelector':'vtr-cptpage-device-settings'}
 	];
 
 }

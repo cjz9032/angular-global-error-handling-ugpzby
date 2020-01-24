@@ -53,6 +53,11 @@ import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-se
 import { CommonModalModule } from '../common/common-modal.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
+//cpt
+import { CptpageDeviceSettingsComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-device-settings/cptpage-device-settings.component';
+import { CptpageMyDeviceComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-my-device/cptpage-my-device.component';
+
+
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
@@ -130,7 +135,10 @@ import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-dev
 		TopRowFunctionsComponent,
 		VoiceComponent,
 		SmartStandbyGraphComponent,
-		TopRowFunctionsIdeapadComponent
+		TopRowFunctionsIdeapadComponent,
+		//cpt
+		CptpageDeviceSettingsComponent,
+		CptpageMyDeviceComponent
 	],
 	imports: [
 		CommonModule,
