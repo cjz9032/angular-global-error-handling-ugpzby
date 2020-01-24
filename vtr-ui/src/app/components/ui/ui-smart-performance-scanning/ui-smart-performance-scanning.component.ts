@@ -3,6 +3,12 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceCancelComponent } from '../../modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 import { WidgetSpeedometerComponent } from '../../widgets/widget-speedometer/widget-speedometer.component';
 import {NgbAccordion} from '@ng-bootstrap/ng-bootstrap';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import { EventTypes } from '@lenovo/tan-client-bridge';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
+import { SPCategory, SPSubCategory } from 'src/app/enums/smart-performance.enum';
 @Component({
   selector: 'vtr-ui-smart-performance-scanning',
   templateUrl: './ui-smart-performance-scanning.component.html',
@@ -19,10 +25,18 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	@Input() percent = 0;
 	@Input() isCheckingStatus = false;
 	@Output() sendScanStatus = new EventEmitter();
+	public onehundreadFlag = true;
+	public twohundreadFlag = true;
+	public threehundreadFlag = true;
+	public smartperformanceScanningStatusEventRef: any;
+	public responseData : any;
+	public panelID;
+	public spCategoryenum:any;
+	public spSubCategoryenum:any;
 	
 	sampleDesc = 'This is a brief description of what Accumulated Junk means to a user and why they should know more about it. What is it, why is it important, how is it affecting my computer performance, how will I benifit from the junk being cleaned up';
 	index = 0;
-	@Input() activegroup = "Tune up performance";
+	public activegroup:any;
 	currentCategory = 1;
 	subItems: any = {};
 	public vdata=[
@@ -114,14 +128,94 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	]
 	 public scanData : any = {};
 	 public timer: any;
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal,
+	public shellServices: VantageShellService,
+	public smartPerformanceService: SmartPerformanceService,
+	private logger: LoggerService) { }
 
   ngOnInit() {
-	this.scanData = this.vdata[0];
+	this.spCategoryenum = SPCategory;
+	this.spSubCategoryenum = SPSubCategory;
+	this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
+	this.smartperformanceScanningStatusEventRef = this.getSmartPerformanceStartScanStatusEvent.bind(this);
+	this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus, this.smartperformanceScanningStatusEventRef);
+	
+	this.getSmartPerformanceStartScanInformation();
+	//this.scanData = this.vdata[0];
 	this.initSpeed();
-	this.GetScanStatus();	
+	//this.GetScanStatus();	
 	this.updateTuneUpPerformanceSubItems('Performance', this.sampleDesc); 
   }
+
+   getSmartPerformanceStartScanStatusEvent(response) {
+	this.responseData = response;
+	this.getSmartPerformanceStartScanInformation();
+  }
+
+  public async getSmartPerformanceStartScanInformation() {
+	let notification;
+	if (this.smartPerformanceService.isShellAvailable) {
+		try {
+			const res = await this.smartPerformanceService.startScan();
+			//console.log("StartScan response -------------------", res);
+			//this.responseData = res || [];
+			//console.log("res information--------------------------------", this.responseData);
+			if(res.state == true)
+			{
+				//final result
+				this.sendScanStatus.emit({rating:res.rating, tune:res.result.tune, boost:res.result.boost, secure:res.result.secure});
+			}
+			else
+			{
+				//intermediate result
+				this.percent = this.responseData.percentage;
+				this.scanData = this.responseData.payload;
+				//this.activegroup = this.scanData.status.category;
+				if(this.scanData.status.category == this.spSubCategoryenum.HUNDEREAD)
+				{
+					this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
+				}
+				else if(this.scanData.status.category == this.spSubCategoryenum.TWOHUNDEREAD)
+				{
+					this.activegroup = this.spCategoryenum.INTERNETPERFORMANCE;
+				}
+				else if(this.scanData.status.category == this.spSubCategoryenum.THREEHUNDEREAD)
+				{
+					this.activegroup = this.spCategoryenum.MALWARESECURITY;
+				}
+				if(this.scanData.status.category == this.spSubCategoryenum.HUNDEREAD)
+				{
+					if(this.onehundreadFlag == true)
+					{
+						this.updateTuneUpPerformanceSubItems('Performance', this.sampleDesc)
+						this.onehundreadFlag = false;
+					}
+				}
+				else if(this.scanData.status.category == this.spSubCategoryenum.TWOHUNDEREAD && this.twohundreadFlag == true)
+				{
+					this.currentCategory=2;
+					this.updateInternetPerformanceSubItems('Internet performance', this.sampleDesc);
+					this.initSpeed();
+					this.twohundreadFlag = false;
+				}
+				else if(this.scanData.status.category == this.spSubCategoryenum.THREEHUNDEREAD && this.threehundreadFlag == true)
+				{
+					this.currentCategory=3;
+					this.updateMalwareSubItems('Malware', this.sampleDesc);
+					this.initSpeed();
+					this.threehundreadFlag = false;
+				}
+				this.toggle(this.activegroup);
+			}
+		} catch (error) {
+			this.logger.error('getSmartPerformanceStartScanInformation :: error', error.message);
+			return EMPTY;
+		}
+	}
+}
+
+
+
   openCancelScanModel() {
 	  this.modalService.open(ModalSmartPerformanceCancelComponent, {
 		backdrop: 'static',
@@ -141,7 +235,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			 }
 			 if(this.index==2)
 			 {
-				this.activegroup = "Internet performance";
+				this.activegroup = this.spCategoryenum.INTERNETPERFORMANCE;
 				this.currentCategory=2;
 				this.updateInternetPerformanceSubItems('Internet performance', this.sampleDesc);
 				this.toggle(this.activegroup);
@@ -149,7 +243,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			 }
 			 if(this.index==4)
 			 {
-				this.activegroup = "Malware & Security";
+				this.activegroup = this.spCategoryenum.MALWARESECURITY;
 				this.currentCategory=3;
 				this.updateMalwareSubItems('Malware', this.sampleDesc);
 				this.toggle(this.activegroup);
@@ -209,6 +303,12 @@ updateMalwareSubItems(name, desc) {
 			{key: 'Malware & Security Dummy Data 2'},
 			{key: 'Malware & Security Dummy Data 3'},
 			{key: 'Malware & Security Dummy Data 4'},
+			{key: 'Malware & Security Dummy Data 5'},
+			{key: 'Malware & Security Dummy Data 6'},
+			{key: 'Malware & Security Dummy Data 7'},
+			{key: 'Malware & Security Dummy Data 8'},
+			{key: 'Malware & Security Dummy Data 9'},
+			{key: 'Malware & Security Dummy Data 10'},
 	]};
 	//this.subItemsList.emit(this.subItems);
 }
