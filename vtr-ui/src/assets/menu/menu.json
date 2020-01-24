@@ -1,477 +1,410 @@
 {
-    "menuItemsGaming":[{
-		"id": "device",
-		"label":"common.menu.device.title",
-		"path": "device-gaming",
-		"icon": ["fas", "desktop"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "device.navbar",
-		"metricsItem": "link.device",
-		"routerLinkActiveOptions": {
-			"exact": true
+	"menuItemsGaming": [
+		{
+			"id": "device",
+			"label": "common.menu.device.title",
+			"path": "device-gaming",
+			"icon": [
+				"fas",
+				"desktop"
+			],
+			"metricsEvent": "itemClick",
+			"metricsParent": "device.navbar",
+			"metricsItem": "link.device",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"forArm": true,
+			"sMode": true,
+			"subitems": []
 		},
-		"forArm": true,
-		"sMode": true,
-		"subitems": []
-	}, {
-		"id": "support",
-		"label": "gaming.common.menu.support.title",
-		"path": "support",
-		"icon": ["fal", "wrench"],
-		"metricsEvent": "featureClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.support",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"forArm": false,
-		"sMode": true,
-		"subitems": [{
+		{
 			"id": "support",
-			"label": "gaming.common.menu.support.sub1",
-			"path": null,
-			"icon": null,
-			"externallink": false,
+			"label": "gaming.common.menu.support.title",
+			"path": "support",
+			"icon": [
+				"fal",
+				"wrench"
+			],
 			"metricsEvent": "featureClick",
 			"metricsParent": "navbar",
-			"metricsItem": "support",
+			"metricsItem": "link.support",
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
-			"subitems": []
-		}, {
-			"id": "facebook",
-			"label": "gaming.common.menu.support.sub2",
-			"path": "https://www.facebook.com/LenovoLegion/",
-			"icon": null,
-			"externallink": true,
-			"metricsEvent": "featureClick",
-			"metricsParent": "navbar",
-			"metricsItem": "facebook",
-			"routerLinkActiveOptions": {
-				"exact": false
-			},
-			"subitems": []
-		}, {
-			"id": "instagram",
-			"label": "gaming.common.menu.support.sub3",
-			"path": "https://www.instagram.com/lenovolegion/",
-			"icon": null,
-			"externallink": true,
-			"metricsEvent": "featureClick",
-			"metricsParent": "navbar",
-			"metricsItem": "instagaram",
+			"forArm": false,
+			"sMode": true,
+			"subitems": [
+				{
+					"id": "support",
+					"label": "gaming.common.menu.support.sub1",
+					"path": null,
+					"icon": null,
+					"externallink": false,
+					"metricsEvent": "featureClick",
+					"metricsParent": "navbar",
+					"metricsItem": "support",
+					"sMode": true,
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"subitems": []
+				},
+				{
+					"id": "facebook",
+					"label": "gaming.common.menu.support.sub2",
+					"path": "https://www.facebook.com/LenovoLegion/",
+					"icon": null,
+					"externallink": true,
+					"metricsEvent": "featureClick",
+					"metricsParent": "navbar",
+					"metricsItem": "facebook",
+					"routerLinkActiveOptions": {
+						"exact": false
+					},
+					"subitems": []
+				},
+				{
+					"id": "instagram",
+					"label": "gaming.common.menu.support.sub3",
+					"path": "https://www.instagram.com/lenovolegion/",
+					"icon": null,
+					"externallink": true,
+					"metricsEvent": "featureClick",
+					"metricsParent": "navbar",
+					"metricsItem": "instagaram",
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"subitems": []
+				}
+			]
+		},
+		{
+			"id": "user",
+			"label": "User",
+			"path": "user",
+			"icon": "user",
+			"metricsEvent": "ItemClick",
+			"metricsParent": "NavigationLenovoAccount.Submenu",
+			"metricsItem": "link.user",
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
+			"forArm": true,
 			"subitems": []
-		}]
-	}, {
-		"id": "user",
-		"label": "User",
-		"path": "user",
-		"icon": "user",
-		"metricsEvent": "ItemClick",
-		"metricsParent": "NavigationLenovoAccount.Submenu",
-		"metricsItem": "link.user",
-		"routerLinkActiveOptions": {
-			"exact": true
+		}
+	],
+	"menuItems": [
+		{
+			"id": "dashboard",
+			"label": "common.menu.dashboard",
+			"path": "dashboard",
+			"icon": [
+				"fal",
+				"columns"
+			],
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.dashboard",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"forArm": true,
+			"sMode": true,
+			"subitems": []
 		},
-		"forArm": true,
-		"subitems": []
-	}],
-    "menuItems": [{
-		"id": "dashboard",
-		"label": "common.menu.dashboard",
-		"path": "dashboard",
-		"icon": ["fal", "columns"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.dashboard",
-		"routerLinkActiveOptions": {
-			"exact": true
+		{
+			"id": "privacy",
+			"label": "common.menu.privacy",
+			"path": "privacy",
+			"icon": [
+				"fal",
+				"user-shield"
+			],
+			"segment": "-[Commercial]",
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.privacy",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"forArm": false,
+			"subitems": []
 		},
-		"forArm": true,
-		"sMode": true,
-		"subitems": []
-	}, {
-		"id": "device",
-		"label": "common.menu.device.title",
-		"path": "device",
-		"icon": ["fal", "laptop"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.device",
-		"forArm": false,
-		"sMode": true,
-		"subitems": [{
+		{
 			"id": "device",
-			"label": "common.menu.device.sub1",
-			"path": null,
-			"icon": null,
+			"label": "common.menu.device.title",
+			"path": "device",
+			"icon": [
+				"fal",
+				"laptop"
+			],
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
-			"metricsItem": "link.mydevice",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
+			"metricsItem": "link.device",
+			"forArm": false,
 			"sMode": true,
-			"subitems": []
-		}, {
-			"id": "device-settings",
-			"label": "common.menu.device.sub2",
-			"path": "device-settings",
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "device.navbar",
-			"metricsItem": "link.mydevicesettings",
-			"routerLinkActiveOptions": {
-				"exact": false
-			},
-			"sMode": true,
-			"subitems": []
-		}, {
-			"id": "system-updates",
-			"label": "common.menu.device.sub3",
-			"path": "system-updates",
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.systemupdates",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"adPolicyId": "E40B12CE-C5DD-4571-BBC6-7EA5879A8472",
-			"subitems": []
-		},{
-            "id": "smart-performance",
-            "label": "Smart performance",
-            "path": "smart-performance",
-            "icon": "",
-            "metricsEvent": "itemClick",
-            "metricsParent": "navbar",
-            "metricsItem": "",
-            "routerLinkActiveOptions": {
-                "exact": true
-            },
-            "subitems": []
-        }]
-	}, {
-		"id": "security",
-		"label": "common.menu.security.title",
-		"path": "security",
-		"icon": ["fal", "lock"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.security",
-		"brand": "-[think]",
-		"forArm": false,
-		"subitems": [{
+			"subitems": [
+				{
+					"id": "device",
+					"label": "common.menu.device.sub1",
+					"path": null,
+					"icon": null,
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.mydevice",
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"sMode": true,
+					"subitems": []
+				},
+				{
+					"id": "device-settings",
+					"label": "common.menu.device.sub2",
+					"path": "device-settings",
+					"icon": null,
+					"metricsEvent": "itemClick",
+					"metricsParent": "device.navbar",
+					"metricsItem": "link.mydevicesettings",
+					"routerLinkActiveOptions": {
+						"exact": false
+					},
+					"sMode": true,
+					"subitems": []
+				},
+				{
+					"id": "system-updates",
+					"label": "common.menu.device.sub3",
+					"path": "system-updates",
+					"icon": null,
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.systemupdates",
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"adPolicyId": "E40B12CE-C5DD-4571-BBC6-7EA5879A8472",
+					"subitems": []
+				},
+				{
+					"id": "smart-assist",
+					"label": "common.menu.device.sub4",
+					"path": "smart-assist",
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.smartassist",
+					"externallink": false,
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"icon": null,
+					"sMode": true,
+					"subitems": []
+				}
+			]
+		},
+		{
 			"id": "security",
-			"label": "common.menu.security.sub1",
-			"path": null,
-			"icon": null,
+			"label": "common.menu.security.title",
+			"path": "security",
+			"icon": [
+				"fal",
+				"lock"
+			],
+			"segment": "-[Commercial]",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
-			"metricsItem": "link.mysecurity",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"subitems": []
-		}, {
-			"id": "anti-virus",
-			"label": "common.menu.security.sub2",
-			"path": "anti-virus",
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.antivirus",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"subitems": []
-		}, {
+			"metricsItem": "link.security",
+			"forArm": false,
+			"subitems": [
+				{
+					"id": "security",
+					"label": "common.menu.security.sub1",
+					"path": null,
+					"icon": null,
+					"segment": "-[Commercial]",
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.mysecurity",
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"subitems": []
+				},
+				{
+					"id": "anti-virus",
+					"label": "common.menu.security.sub2",
+					"path": "anti-virus",
+					"icon": null,
+					"segment": "-[Commercial]",
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.antivirus",
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"subitems": []
+				},
+				{
+					"id": "password-protection",
+					"label": "common.menu.security.sub4",
+					"path": "password-protection",
+					"segment": "-[Commercial]",
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.passwordprotection",
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"icon": null,
+					"subitems": []
+				},
+				{
+					"id": "wifi-security",
+					"label": "common.menu.security.sub3",
+					"path": "wifi-security",
+					"icon": null,
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.wifisecurity",
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"subitems": []
+				},
+				{
+					"id": "internet-protection",
+					"label": "common.menu.security.sub5",
+					"path": "internet-protection",
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.internetprotection",
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"icon": null,
+					"segment": "-[Commercial]",
+					"subitems": []
+				}
+			]
+		},
+		{
 			"id": "wifi-security",
-			"label": "common.menu.security.sub3",
-			"path": "wifi-security",
-			"icon": null,
+			"label": "common.menu.security.title",
+			"path": "security/wifi-security",
+			"icon": [
+				"fal",
+				"lock"
+			],
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
-			"metricsItem": "link.wifisecurity",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"subitems": []
-		}, {
-			"id": "password-protection",
-			"label": "common.menu.security.sub4",
-			"path": "password-protection",
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.passwordprotection",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"icon": null,
-			"subitems": []
-		}]
-	}, {
-		"id": "wifi-security",
-		"label": "common.menu.security.sub3",
-		"path": "security/wifi-security",
-		"icon": ["fal", "lock"],
-		"brand": "+[think]",
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.wifisecurity",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"subitems": []
-	},
-	{
-		"id": "support",
-		"label": "common.menu.support",
-		"path": "support",
-		"icon": ["fal", "wrench"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.support",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"forArm": false,
-		"sMode": true,
-		"subitems": []
-	},{
-		"id": "home-security",
-		"label": "common.menu.homeSecurity",
-		"path": "home-security",
-		"brand": "-[think]",
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.homesecurity",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"icon": ["fal", "home-lg-alt"],
-		"forArm": false,
-		"subitems": [],
-		"pre": [
-			"assets/images/connected-home-security/welcome-slide1@2x.png"
+			"metricsItem": "link.security",
+			"segment": "+[Commercial]",
+			"forArm": false,
+			"subitems": [
+				{
+				"id": "wifi-security",
+				"label": "common.menu.security.sub3",
+				"path": null,
+				"icon": null,
+				"metricsEvent": "itemClick",
+				"metricsParent": "navbar",
+				"metricsItem": "link.wifisecurity",
+				"routerLinkActiveOptions": {
+					"exact": true
+				},
+				"subitems": []
+			}
 		]
-	},{
-		"id": "user",
-		"label": "User",
-		"path": "user",
-		"icon": "user",
-		"metricsEvent": "ItemClick",
-		"metricsParent": "NavigationLenovoAccount.Submenu",
-		"metricsItem": "link.user",
-		"routerLinkActiveOptions": {
-			"exact": true
 		},
-		"forArm": true,
-		"sMode": true,
-		"subitems": []
-	}],
-    "menuItemsPrivacy": [{
-		"id": "dashboard",
-		"label": "common.menu.dashboard",
-		"path": "dashboard",
-		"icon": ["fal", "columns"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.dashboard",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"forArm": true,
-		"sMode": true,
-		"subitems": []
-	}, {
-		"id": "privacy",
-		"label": "common.menu.privacy",
-		"path": "privacy",
-		"icon": ["fal", "user-shield"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.privacy",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"forArm": false,
-		"subitems": []
-	}, {
-		"id": "device",
-		"label": "common.menu.device.title",
-		"path": "device",
-		"icon": ["fal", "laptop"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.device",
-		"forArm": false,
-		"sMode": true,
-		"subitems": [{
-			"id": "device",
-			"label": "common.menu.device.sub1",
-			"path": null,
-			"icon": null,
+		{
+			"id": "support",
+			"label": "common.menu.support",
+			"path": "support",
+			"icon": [
+				"fal",
+				"wrench"
+			],
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
-			"metricsItem": "link.mydevice",
+			"metricsItem": "link.support",
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
+			"forArm": false,
+			"sMode": true,
+			"subitems": [
+				{
+					"id": "support",
+					"label": "common.menu.support",
+					"path":null,
+					"icon": null,
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.support",
+					"routerLinkActiveOptions": {
+						"exact": true},
+						"forArm": false,
+						"sMode": true,
+					"subitems": []
+					},
+				{
+					"id": "smart-performance",
+					"label": "gaming.common.menu.smartPerformance",
+					"path": "smart-performance",
+					"icon": "",
+					"metricsEvent": "itemClick",
+					"externallink": false,
+					"metricsParent": "navbar",
+					"metricsItem": "",
+					"sMode": true,
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"subitems": []
+				}
+			]
+		},
+		{
+			"id": "home-security",
+			"label": "common.menu.homeSecurity",
+			"path": "home-security",
+			"segment": "-[Commercial]",
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.homesecurity",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"icon": [
+				"fal",
+				"home-lg-alt"
+			],
+			"forArm": false,
+			"subitems": [],
+			"pre": [
+				"assets/images/connected-home-security/welcome-slide1@2x.png"
+			]
+		},
+		{
+			"id": "user",
+			"label": "User",
+			"path": "user",
+			"icon": "user",
+			"metricsEvent": "ItemClick",
+			"metricsParent": "NavigationLenovoAccount.Submenu",
+			"metricsItem": "link.user",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"forArm": true,
 			"sMode": true,
 			"subitems": []
-		}, {
-			"id": "device-settings",
-			"label": "common.menu.device.sub2",
-			"path": "device-settings",
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "device.navbar",
-			"metricsItem": "link.mydevicesettings",
-			"routerLinkActiveOptions": {
-				"exact": false
-			},
-			"sMode": true,
-			"subitems": []
-		}, {
-			"id": "system-updates",
-			"label": "common.menu.device.sub3",
-			"path": "system-updates",
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.systemupdates",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"adPolicyId": "E40B12CE-C5DD-4571-BBC6-7EA5879A8472",
-			"subitems": []
-		}]
-	}, {
-		"id": "security",
-		"label": "common.menu.security.title",
-		"path": "security",
-		"icon": ["fal", "lock"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.security",
-		"brand": "-[think]",
-		"forArm": false,
-		"subitems": [{
-			"id": "security",
-			"label": "common.menu.security.sub1",
-			"path": null,
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.mysecurity",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"subitems": []
-		}, {
-			"id": "anti-virus",
-			"label": "common.menu.security.sub2",
-			"path": "anti-virus",
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.antivirus",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"subitems": []
-		}, {
-			"id": "wifi-security",
-			"label": "common.menu.security.sub3",
-			"path": "wifi-security",
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.wifisecurity",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"subitems": []
-		}, {
-			"id": "password-protection",
-			"label": "common.menu.security.sub4",
-			"path": "password-protection",
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.passwordprotection",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"icon": null,
-			"subitems": []
-		}]
-	}, {
-		"id": "wifi-security",
-		"label": "common.menu.security.sub3",
-		"path": "security/wifi-security",
-		"icon": ["fal", "lock"],
-		"brand": "+[think]",
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.wifisecurity",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"subitems": []
-	}, 
-	{
-		"id": "support",
-		"label": "common.menu.support",
-		"path": "support",
-		"icon": ["fal", "wrench"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.support",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"forArm": false,
-		"sMode": true,
-		"subitems": []
-	}, {
-		"id": "home-security",
-		"label": "common.menu.homeSecurity",
-		"path": "home-security",
-		"brand": "-[think]",
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.homesecurity",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"icon": ["fal", "home-lg-alt"],
-		"forArm": false,
-		"subitems": [],
-		"pre": [
-			"assets/images/connected-home-security/welcome-slide1@2x.png"
-		]
-	}, {
-		"id": "user",
-		"label": "User",
-		"path": "user",
-		"icon": "user",
-		"metricsEvent": "ItemClick",
-		"metricsParent": "NavigationLenovoAccount.Submenu",
-		"metricsItem": "link.user",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"forArm": true,
-		"sMode": true,
-		"subitems": []
-	}],
-    "appSearch": {
+		}
+	],
+	"appSearch": {
 		"id": "app-search",
 		"label": " ",
 		"beta": true,
@@ -479,26 +412,36 @@
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.app-search",
+		"segment": "-[Commercial]",
 		"routerLinkActiveOptions": {
 			"exact": true
 		},
-		"icon": ["fal", "search"],
+		"icon": [
+			"fal",
+			"search"
+		],
 		"forArm": false,
 		"subitems": []
 	},
-    "betaItem": [{
-		"id": "hardware-scan",
-		"label": "hardwareScan.name",
-		"beta": true,
-		"path": "beta/hardware-scan",
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.hardwarescan",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"icon": ["fal", "flask"],
-		"forArm": false,
-		"subitems": []
-	}]
+	"betaItem": [
+		{
+			"id": "hardware-scan",
+			"label": "hardwareScan.name",
+			"beta": true,
+			"path": "beta/hardware-scan",
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.hardwarescan",
+			"segment": "-[Commercial]",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"icon": [
+				"fal",
+				"flask"
+			],
+			"forArm": false,
+			"subitems": []
+		}
+	]
 }

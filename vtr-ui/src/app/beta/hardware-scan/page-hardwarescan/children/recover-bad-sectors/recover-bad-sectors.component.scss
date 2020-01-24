@@ -3,115 +3,108 @@
 .vtr-recover-bad-sectors {
 	background-color: $light;
 	border-radius: $border_radius;
+	.container {
+		padding: 2.4rem;
+		margin: 0;
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 
-	.header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+			.heading1 {
+				color: $main_darker;
+				font-size: 3rem;
+				// padding-left: 1rem;
+				text-transform: capitalize;
+			}
+			.action-anchor {
+				font-size: 1.3rem;
+				color: $main;
+				text-decoration: underline;
+				cursor: pointer;
 
-		.heading1 {
-			color: $main_darker;
-			font-size: 3rem;
-			padding-left: 1rem;
-			text-transform: capitalize;
-		}
-		.action-anchor {
-			font-size: 1.3rem;
-			color: $main;
-			text-decoration: underline;
-			cursor: pointer;
-
-			&:hover {
-				text-decoration: none;
+				&:hover {
+					text-decoration: none;
+				}
 			}
 		}
-	}
 
-	.text-regular {
-		color: $main_shade;
-		font-size: 1.5rem;
-		font-weight: $weight_light;
-		padding: 1rem 1rem 1rem 0rem;
-	}
-
-	.hardware-lists-container {
-		padding: 0rem 2rem 0rem 2rem;
-
-		.heading {
-			color: $main_dark;
-			font-size: 2.5rem;
+		.text-regular {
+			color: $main_shade;
+			font-size: 1.5rem;
+			font-weight: $weight_light;
+			padding: 1rem 1rem 1rem 0rem;
 		}
-	}
 
-	.row-seperator {
-		width: 100%;
-		height: 0.2rem;
-		background-color: $shade_lightest;
-		// margin: 0.5rem 1.5rem 1.5rem 0rem;
-	}
+		.hardware-lists-container {
+			padding: 0rem 2rem 0rem 2rem;
 
-	fa-icon {
-		font-size: 4.5rem;
-		color: $main;
-	}
+			.heading {
+				color: $main_dark;
+				font-size: 2.5rem;
+			}
+		}
 
-	.loading-components {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 4rem 0;
+		.row-seperator {
+			width: 100%;
+			height: 0.2rem;
+			background-color: $shade_lightest;
+			// margin: 0.5rem 1.5rem 1.5rem 0rem;
+		}
 
 		fa-icon {
-			font-size: 6.5rem;
+			font-size: 4.5rem;
 			color: $main;
 		}
-	}
 
-	.button-row {
-		text-align: center;
-		align-items: center;
-		margin: 0 2rem;
+		.loading-components {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 4rem 0;
 
-		.action-button {
-			border-radius: 2.5rem;
-			background: $gradient_main;
-			text-transform: uppercase;
-			padding: 0 3rem;
-			color: $light;
-			font-size: 1.5rem;
-			height: 5rem;
-			max-width: 100%;
-			font-weight: $weight_bold;
-			line-height: 5rem;
-
-			text-align: center;
-			border: 0rem;
-			cursor: pointer;
+			fa-icon {
+				font-size: 6.5rem;
+				color: $main;
+			}
 		}
 
-		.action-button-disable {
-			border-radius: 2.5rem;
-			background: $gradient_main;
-			text-transform: uppercase;
-			padding: 0 3rem;
-			color: $light;
-			font-size: 1.5rem;
-			height: 5rem;
-			max-width: 100%;
-			font-weight: $weight_bold;
-			line-height: 5rem;
-
+		.button-row {
 			text-align: center;
-			border: 0rem;
-			cursor: default;
-		}
-	}
+			align-items: center;
+			// margin: 0 2rem;
 
-	.errorMessage {
-		width: 100%;
-		color: $alt;
-		font-size: 1.4rem;
-		font-weight: $weight_medium;
-		margin-left: 2.5rem;
+			.action-button {
+				border-radius: 2.5rem;
+				background: $gradient_main;
+				text-transform: uppercase;
+				padding: 0 3rem;
+				color: $light;
+				font-size: 1.5rem;
+				height: 5rem;
+				max-width: 100%;
+				font-weight: $weight_bold;
+				line-height: 5rem;
+
+				text-align: center;
+				border: 0rem;
+				cursor: pointer;
+
+				&:disabled {
+					background: $light_grey;
+					text-align: center;
+					border: 0rem;
+					cursor: default;
+				}
+			}
+		}
+
+		.errorMessage {
+			width: 100%;
+			color: $alt;
+			font-size: 1.4rem;
+			font-weight: $weight_medium;
+			margin-left: 2.5rem;
+		}
 	}
 }

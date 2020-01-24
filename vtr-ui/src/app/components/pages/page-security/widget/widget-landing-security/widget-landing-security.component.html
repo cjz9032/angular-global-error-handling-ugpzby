@@ -1,0 +1,52 @@
+<section class="vtr-widget-landing-security">
+    <div *ngFor="let item of items" class="item">
+        <div *ngIf="item" class="">
+			<div class="title-box row flex-nowrap align-items-center no-gutters mb-2">
+				<span class="col-1 basis-width" [ngClass]="['icomoon', 'icomoon-' + item.icon]"></span>
+				<div class="col-11 pl-3 row align-items-center justify-content-between flex-nowrap">
+					<h3 class="mb-0">{{item.title}}</h3>
+					<span *ngIf="!item.showOwn" class="badge text-ellipsis ml-auto"
+						title="{{item.detail}}"
+						[ngClass]="{'status-enabled':item.status === 'enabled' || item.status === 'installed' ,
+						'status-disabled': item.status === 'disabled' || item.status === 'not-installed',
+						'status-loading': item.status === 'loading' || item.status === 'installing'}">
+						{{item.detail}}</span>
+					<span *ngIf="item.showOwn" class="badge text-ellipsis status-haveOwn ml-auto"
+						title="{{badgeContent | translate}}">
+						{{badgeContent | translate}}</span>
+				</div>
+			</div>
+			<div class="desc-box row no-gutters">
+				<div class="col-1 basis-width"></div>
+				<section class="landing-content col-11 pl-3">
+					<p>{{item.content}}</p>
+					<vtr-ui-button *ngIf="!item.showOwn && item.buttonLink" [label]="item.buttonLabel"
+						[metricsItem]="item.id"
+						[routerPath]="item.buttonLink" [ngClass]="{'white-button':item.status === 'enabled' || item.status === 'installed'}">
+					</vtr-ui-button>
+					<vtr-ui-button *ngIf="item.buttonHref" [label]="item.buttonLabel" [href]="item.buttonHref"
+						[metricsItem]="item.id"
+						[ngClass]="{'white-button':item.status === 'enabled'}">
+					</vtr-ui-button>
+					<vtr-ui-button *ngIf="item.launch" [label]="item.buttonLabel"
+						[metricsItem]="item.id"
+						[ngClass]="{'white-button':item.status === 'enabled'}"
+						(onClick)="item.launch()">
+					</vtr-ui-button>
+					<div *ngIf="!item.noneCheck" class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="customCheck-{{item.id}}"
+							vtrMetrics
+							[metricsEvent]="'featureClick'"
+							[metricsParent]="'security'"
+							[metricsItem]="(item.showOwn ? 'haveOwn' :'notHaveOwn') + ':' +item.id"
+							[checked]="item.showOwn" attr.aria-label="defaultUnchecked" (change)="haveOwn(item.showOwn, item.id)">
+						<label class="custom-control-label" for="customCheck-{{item.id}}">
+							{{item.ownTitle}}
+						</label>
+					</div>
+				</section>
+			</div>
+        </div>
+        <hr>
+    </div>
+</section>

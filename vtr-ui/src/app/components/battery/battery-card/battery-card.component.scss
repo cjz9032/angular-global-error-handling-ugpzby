@@ -12,8 +12,20 @@
 }
 .vtr-battery-card {
 		@media #{$mediaquery_11} {
-		padding-top: 8.5rem;
-	}
+			padding-top: 8.5rem;
+		}
+		@media #{$mediaquery_sm} {
+			padding-top: 0rem;
+			//margin-top: -1rem;
+		}
+		@media #{$mediaquery_md} {
+			padding-top: 0rem;
+			//margin-top: -1rem;
+		}
+		@media #{$mediaquery_lg} {
+			padding-top: 0rem;
+			//margin-top: -1rem;
+		}
 	// @media #{$mediaquery_X5} {
 	// 	padding-left: 8.5rem;
 	// 	padding-top: 12.5rem;
@@ -31,7 +43,17 @@
 		background-position: right top, right bottom;
 		background-repeat: no-repeat;
 		background-size: contain;
-			.battery-gauge-label {
+		max-width: 100%;
+		@media #{$breakpoint_lg} {
+			max-width: 100%;
+		}
+		@media #{$breakpoint_md} {
+			max-width: 100%;
+		}
+		@media #{$breakpoint_sm} {
+			max-width: 100%;
+		}
+		.battery-gauge-label {
 			opacity: 0.58;
 			color: $main_dark;
 			font-size: $caption;
@@ -61,25 +83,32 @@
 					.button {
 						background: #e6eaeb;
 						color: #34495e;
-						@media #{$black-on-white} {
-							border: 0.1rem solid;
-						}
-						@media #{$white-on-black} {
-							border: 0.1rem solid;
-						}
-				
+
+
 					}
 				}
 			}
 		}
-	
+		.btn-disabled{
+			@media #{$black-on-white} {
+				border: 0.1rem brown;
+				border-radius: 5rem;
+				padding-top: 25px;
+			}
+			@media #{$white-on-black} {
+				border: 0.1rem green;
+				border-radius: 5rem;
+				padding-top: 25px;
+			}
+		}
+
 		.feature-note {
-			background-color: $shade_lightest;
-			border: 1px solid $shade_lighter;
+			background-color: $grey_lighter;
+			border: 0.1rem solid $note_border;
 			p {
-				font-size: 1.5rem;
-				color: $main_darker;
-				margin-bottom: 0rem;
+				font-size: $fontsize_xs;
+				color: $shade_blue;
+				margin: 0;
 			}
 			a {
 				text-decoration: underline;
@@ -90,7 +119,7 @@
 		}
 
 		.battery-conditions-tips {
-			font-size: $fontsize_md;
+			font-size: $fontsize_xs;
 			line-height: 1.2em;
 			width: 100%;
 			letter-spacing: 0;
@@ -105,7 +134,7 @@
 				color: #f17f14;
 			}
 		}
-		.normal-ACAdapter-condition {
+		.adapter-support {
 			.icomoon-ConditionACAdapterError {
 				&:before {
 					color: #30d487;
@@ -149,40 +178,40 @@
 			align-self: center;
 			font-size: $base;
 		}
-		
+
 	}
 	@media #{$black-on-white} {
-		
+
 		border: 0.1rem solid $dark;
 		border-radius: 1rem;
 	}
 	@media #{$white-on-black} {
-		
+
 		border: 0.1rem solid $light;
 		border-radius: 1rem;
 	}
-	
+
 }
 .modal-header{
 	@media #{$black-on-white} {
-		
+
 		border: 0.1rem solid $dark;
 		//border-radius: 1rem;
 	}
 	@media #{$white-on-black} {
-		
+
 		border: 0.1rem solid $light;
 		//border-radius: 1rem;
 	}
 	}
 	.modal-body{
 		@media #{$black-on-white} {
-		
+
 			border: 0.1rem solid $dark;
 			//border-radius: 1rem;
 		}
 		@media #{$white-on-black} {
-			
+
 			border: 0.1rem solid $light;
 			//border-radius: 1rem;
 		}

@@ -1,5 +1,5 @@
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MockService } from '../../../services/mock/mock.service';
 import { SupportService } from '../../../services/support/support.service';
 import { DeviceService } from '../../../services/device/device.service';
@@ -10,17 +10,21 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { WarrantyService } from 'src/app/services/warranty/warranty.service';
+import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
 
 @Component({
 	selector: 'vtr-page-support',
 	templateUrl: './page-support.component.html',
 	styleUrls: ['./page-support.component.scss']
 })
-export class PageSupportComponent implements OnInit {
+export class PageSupportComponent implements OnInit, OnDestroy {
 
+	SupportContentStatus = SupportContentStatus;
 	title = 'support.common.getSupport';
 	searchWords = '';
 	searchCount = 1;
+	offlineConnection = 'offline-connection';
 	emptyArticles = {
 		leftTop: [],
 		middleTop: [],
@@ -32,14 +36,15 @@ export class PageSupportComponent implements OnInit {
 	};
 	backupContentArticles = this.copyObjectArray(this.emptyArticles);
 	articles = this.copyObjectArray(this.emptyArticles);
-	/** content | articles */
-	articlesType = 'loading';
+	articlesType = '';
 	articleCategories: any = [];
 	isCategoryArticlesShow = false;
 	warrantyData: { info: any, cache: boolean };
+	warrantyYear = 0;
 	isOnline: boolean;
 	notificationSubscription: Subscription;
 	backId = 'support-page-btn-back';
+	getArticlesTimeout: any;
 	supportDatas = {
 		documentation: [
 			{
@@ -101,11 +106,11 @@ export class PageSupportComponent implements OnInit {
 		'assets/images/support/support-offline-4.jpg',
 	];
 	localCateIcons = [
-		'assets/images/support/design-innovation.png',
-		'assets/images/support/how-to.png',
-		'assets/images/support/lifestyle-entertainment.png',
-		'assets/images/support/software-apps.png',
-	];
+		'assets/images/support/design-innovation.svg',
+		'assets/images/support/how-to.svg',
+		'assets/images/support/lifestyle-entertainment.svg',
+		'assets/images/support/software-apps.svg',
+	]
 
 	cateStartTime: any;
 	contentStartTime: any;
@@ -113,6 +118,7 @@ export class PageSupportComponent implements OnInit {
 	constructor(
 		public mockService: MockService,
 		public supportService: SupportService,
+		public warrantyService: WarrantyService,
 		public deviceService: DeviceService,
 		public localInfoService: LocalInfoService,
 		private cmsService: CMSService,
@@ -121,18 +127,21 @@ export class PageSupportComponent implements OnInit {
 		private modalService: NgbModal
 	) {
 		this.isOnline = this.commonService.isOnline;
-		this.warrantyData = this.supportService.warrantyData;
 	}
 
 	ngOnInit() {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		this.getWarrantyInfo(this.isOnline);
+		this.getWarrantyInfo();
 
 		this.fetchCMSArticleCategory();
 		this.fetchCMSContents();
 		this.setShowList();
+	}
+
+	ngOnDestroy() {
+		clearTimeout(this.getArticlesTimeout);
 	}
 
 	onNotification(notification: AppNotification) {
@@ -144,12 +153,9 @@ export class PageSupportComponent implements OnInit {
 					if (notification.payload.isOnline !== this.isOnline) {
 						this.isOnline = notification.payload.isOnline;
 						if (this.isOnline) {
-							sessionStorage.removeItem('warrantyCache');
 							const retryInterval = setInterval(() => {
-								const cacheWarranty = sessionStorage.getItem('warrantyCache');
 								if (this.articleCategories.length > 0 &&
-									this.articles.leftTop.length > 0 &&
-									cacheWarranty) {
+									this.articles.leftTop.length > 0) {
 									clearInterval(retryInterval);
 									return;
 								}
@@ -159,10 +165,8 @@ export class PageSupportComponent implements OnInit {
 								if (this.articles.leftTop.length === 0) {
 									this.fetchCMSContents();
 								}
-								if (!cacheWarranty) {
-									this.getWarrantyInfo(this.isOnline);
-								}
 							}, 2500);
+							this.getWarrantyInfo();
 						}
 					}
 					break;
@@ -184,13 +188,30 @@ export class PageSupportComponent implements OnInit {
 		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
 	}
 
-	getWarrantyInfo(online: boolean) {
-		this.supportService.getWarrantyInfo(online);
+	getWarrantyInfo() {
+		const info = this.warrantyService.getWarrantyInfo();
+		if (info) {
+			info.subscribe((value) => {
+				if (value) {
+					this.warrantyData = {
+						info: {
+							startDate: value.startDate,
+							endDate: value.endDate,
+							status: value.status,
+							dayDiff: value.dayDiff,
+							url: this.warrantyService.getWarrantyUrl()
+						},
+						cache: true
+					};
+					this.warrantyYear = this.warrantyService.getRoundYear(value.dayDiff);
+				}
+			});
+		}
 	}
 
 	fetchCMSContents(lang?: string) {
 		this.contentStartTime = new Date();
-		this.articlesType = 'loading';
+		this.articlesType = SupportContentStatus.Loading;
 
 		const queryOptions = {
 			Page: 'support'
@@ -204,6 +225,7 @@ export class PageSupportComponent implements OnInit {
 				const contentEnd: any = new Date();
 				const contentUseTime = contentEnd - this.contentStartTime;
 				if (response && response.length > 0) {
+					response = response.filter(r => r.Page === 'support');
 					response.forEach(article => {
 						if (article.FeatureImage) {
 							article.FeatureImage = article.FeatureImage.replace('(', '%28').replace(')', '%29');
@@ -212,28 +234,27 @@ export class PageSupportComponent implements OnInit {
 					this.sliceArticles(response);
 					this.backupContentArticles = this.copyObjectArray(this.articles);
 					// console.log(this.articles);
-					this.articlesType = 'content';
+					this.articlesType = SupportContentStatus.Content;
 					const msg = `Performance: Support page get content articles, ${contentUseTime}ms`;
 					this.loggerService.info(msg);
 				} else {
 					const msg = `Performance: Support page not have this Language content articles, ${contentUseTime}ms`;
 					this.loggerService.info(msg);
-					this.fetchCMSContents('en');
+					this.sliceArticles([]);
+					this.articlesType = SupportContentStatus.Empty;
 				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
+				this.getArticlesTimeout = setTimeout(() => { this.fetchCMSContents(); }, 5000);
 			}
 		);
 	}
 
-	fetchCMSArticleCategory(lang?: string) {
+	fetchCMSArticleCategory() {
 		this.cateStartTime = new Date();
 
 		const queryOptions = {};
-		if (lang) {
-			Object.assign(queryOptions, { Lang: lang });
-		}
 
 		this.cmsService.fetchCMSArticleCategories(queryOptions).then(
 			(response: any) => {
@@ -251,27 +272,26 @@ export class PageSupportComponent implements OnInit {
 				} else {
 					const msg = `Performance: Support page not have this Language article category, ${cateUseTime}ms`;
 					this.loggerService.info(msg);
-					this.fetchCMSArticleCategory('en');
 				}
 			},
 			error => {
 				console.log('fetchCMSArticleCategories error', error);
-				if (lang.toLowerCase() !== 'en') {
-					this.fetchCMSArticleCategory('en');
-				}
+				setTimeout(() => { this.fetchCMSArticleCategory(); }, 5000);
 			}
 		);
 	}
 
 	clickCategory(categoryId: string) {
 		this.isCategoryArticlesShow = true;
+		clearTimeout(this.getArticlesTimeout);
 		this.fetchCMSArticles(categoryId);
 	}
 
 	onInnerBack() {
+		clearTimeout(this.getArticlesTimeout);
 		this.isCategoryArticlesShow = false;
 		if (this.backupContentArticles.leftTop.length > 0) {
-			this.articlesType = 'content';
+			this.articlesType = SupportContentStatus.Content;
 			this.articles = this.copyObjectArray(this.backupContentArticles);
 		} else {
 			this.fetchCMSContents();
@@ -279,12 +299,12 @@ export class PageSupportComponent implements OnInit {
 	}
 
 	fetchCMSArticles(categoryId: string, lang?: string) {
-		this.articlesType = 'loading';
+		this.articlesType = SupportContentStatus.Loading;
 		const queryOptions = {
 			category: categoryId,
 		};
 		if (lang) {
-			Object.assign(queryOptions, { Lang: lang });
+			Object.assign(queryOptions, { Lang: lang, GEO: 'us' });
 		}
 
 		this.cmsService.fetchCMSArticles(queryOptions, true).then(
@@ -296,15 +316,16 @@ export class PageSupportComponent implements OnInit {
 						}
 					});
 					this.sliceArticles(response);
-					this.articlesType = 'articles';
+					this.articlesType = SupportContentStatus.Articles;
 				} else {
-					this.fetchCMSArticles(categoryId, 'en');
+					this.sliceArticles([]);
+					this.articlesType = SupportContentStatus.Empty;
 				}
 			},
 			error => {
 				console.log('fetchCMSArticles error', error);
 				if (lang.toLowerCase() !== 'en') {
-					this.fetchCMSArticles(categoryId, 'en');
+					this.getArticlesTimeout = setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
 				}
 			}
 		);
@@ -335,7 +356,7 @@ export class PageSupportComponent implements OnInit {
 			}
 		});
 	}
-	
+
 	copyObjectArray(obj: any) {
 		return JSON.parse(JSON.stringify(obj));
 	}

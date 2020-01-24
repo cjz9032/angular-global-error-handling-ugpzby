@@ -4,16 +4,18 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { PageCptComponent } from '../components/pages/page-cpt/page-cpt.component';
 import { CptpageMyDeviceComponent } from '../components/pages/page-cpt/children/hardware-settings/cptpage-my-device/cptpage-my-device.component';
+import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
+import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
 
 const routes: Routes = [
 
 	{
 		path: 'dashboard',
-		loadChildren: './hardware-settings/hardware-dashboard.module#HardwareDashboardModule'
+		component: PageDashboardComponent
 	},
 	{
 		path: 'device-gaming',
-		loadChildren: './gaming-dashboard.module#GamingDashboardModule'
+		component: PageDeviceGamingComponent
 	},
 	{
 		path: 'gaming',
@@ -59,7 +61,7 @@ const routes: Routes = [
 		loadChildren: '../beta/beta.module#BetaModule'
 	},
 	{
-		path: 'device/smart-performance',
+		path: 'support/smart-performance',
 		loadChildren: './smart-performance/smart-performance.module#SmartPerformanceModule'
 	},
 	{

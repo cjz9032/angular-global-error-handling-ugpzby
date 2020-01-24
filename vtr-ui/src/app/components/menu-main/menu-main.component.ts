@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Component, OnInit, HostListener, ViewChild, Input, ElementRef, ViewContainerRef, OnDestroy } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
@@ -7,74 +7,84 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
-import { EventTypes, SecurityAdvisor, WindowsHello, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
-import { LenovoIdDialogService } from '../../services/dialog/lenovoIdDialog.service';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
-import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LanguageService } from 'src/app/services/language/language.service';
-import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal-modern-preload.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
-import { AdPolicyEvent, AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
-import { EMPTY, Observable, Subscription } from 'rxjs';
+import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
+import { Observable, Subscription } from 'rxjs';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
 import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
-import { StringBooleanEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
-import { catchError } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
-
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
+import { CardService } from 'src/app/services/card/card.service';
+import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
+import { StringBooleanEnum } from '../../data-models/common/common.interface';
+import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
 	templateUrl: './menu-main.component.html',
 	styleUrls: ['./menu-main.component.scss']
 })
-export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
+export class MenuMainComponent implements OnInit, OnDestroy {
 	@ViewChild('menuTarget', { static: false })
 	menuTarget: ElementRef;
 	@Input() loadMenuItem: any = {};
 	public machineFamilyName: string;
 	public country: string;
-	commonMenuSubscription: Subscription;
 	constantDevice = 'device';
 	constantDeviceSettings = 'device-settings';
 	region: string;
 	public isDashboard = false;
 	public countryCode: string;
 	public locale: string;
-	public items: any = [];
+	public items: Array<any> = [];
 	public showSearchBox = false;
 	public showSearchMenu = false;
 	public searchTips = '';
 	private searchTipsTimeout: any;
 	private unsupportFeatureEvt: Observable<string>;
-
+	private subscription: Subscription;
+	public selfSelectStatusVal: boolean;
 	showMenu = false;
 	showHWScanMenu = false;
 	preloadImages: string[];
-	securityAdvisor: SecurityAdvisor;
 	isRS5OrLater: boolean;
 	isGamingHome: boolean;
 	currentUrl: string;
 	isSMode: boolean;
 	hideDropDown = false;
+	segment: string;
+	headerLogo: string;
 
-	UnreadMessageCount = {
-		totalMessage: 0,
-		lmaMenuClicked: false,
-		adobeMenuClicked: false
-	};
+	VantageLogo = `
+		data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c
+		3RyYXRvciAyMy4wLjIsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4x
+		IiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS9
+		4bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTYgMj
+		U2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojMjdBREQ3O30NCgkuc3Qxe2ZpbGw6I
+		zIxMzA2NDt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxyZWN0IHk9IjAiIGNsYXNzPSJzdDAiIHdpZHRoPSIyNTYiIGhl
+		aWdodD0iMjU2Ii8+DQoJPGc+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iNTguMiwyMTEuNiA4OC41LDE5Mi42IDE5NC44LDE5Mi42IDE
+		5NC44LDE5NS41IAkJIi8+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iNTguMiwyMTEuNiA4OC41LDE5Mi42IDg4LjUsMzkuNiA4Ni4zLD
+		M5LjYgCQkiLz4NCgkJPHBvbHlnb24gY2xhc3M9InN0MiIgcG9pbnRzPSIxOTQuOCwxNjIuOSAxMjEuMywxNjIuOSAxMjEuMywzOS42IDg4LjUsMzkuN
+		iA4OC41LDE5Mi42IDE5NC44LDE5Mi42IAkJIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=
+		`;
+	gamingLogo = '../../../assets/images/gaming/gaming-logo-small.png';
+	private backlightCapabilitySubscription: Subscription;
 
 	get appsForYouEnum() { return AppsForYouEnum; }
 
@@ -85,22 +95,65 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		public userService: UserService,
 		public languageService: LanguageService,
 		public deviceService: DeviceService,
-		public vantageShellService: VantageShellService,
-		public localInfoService: LocalInfoService,
-		private smartAssist: SmartAssistService,
+		private vantageShellService: VantageShellService,
 		private logger: LoggerService,
-		private dialogService: LenovoIdDialogService,
+		private dialogService: DialogService,
 		private keyboardService: InputAccessoriesService,
 		public modalService: NgbModal,
-		private windowsHelloService: WindowsHelloService,
 		public modernPreloadService: ModernPreloadService,
 		private adPolicyService: AdPolicyService,
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		public appsForYouService: AppsForYouService,
-		searchService: AppSearchService,
-		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService
+		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
+		private searchService: AppSearchService,
+		public dashboardService: DashboardService,
+		private newFeatureTipService: NewFeatureTipService,
+		private viewContainerRef: ViewContainerRef,
+		public cardService: CardService,
+		private backlightService: BacklightService
 	) {
+		newFeatureTipService.viewContainer = this.viewContainerRef;
+	}
+
+	ngOnInit() {
+		this.headerLogo = '';
+		this.checkLiteGaming();
+
+		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+
+		this.isDashboard = true;
+
+		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
+			LocalStorageKey.MachineFamilyName,
+			undefined
+		);
+		if (cacheMachineFamilyName) {
+			this.machineFamilyName = cacheMachineFamilyName;
+		}
+
+		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
+			this.hardwareScanService.isAvailable().then((available) => {
+				this.showHWScanMenu = available;
+			});
+		}
+		this.initComponent();
+	}
+
+	updateMenu(menu) {
+		if (menu && menu.length > 0) {
+			this.items = menu;
+			const chsItem = this.items.find((item) => item.id === 'home-security');
+			if (!chsItem) {
+				return;
+			}
+			this.preloadImages = [].concat(chsItem.pre);
+		}
+	}
+
+	private initComponent() {
 		this.router.events.subscribe((ev) => {
 			if (ev instanceof NavigationEnd) {
 				this.currentUrl = ev.url;
@@ -117,8 +170,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				this.showSearchMenu = true;
 			}
 		});
-
-		this.unsupportFeatureEvt = searchService.getUnsupportFeatureEvt();
+		this.unsupportFeatureEvt = this.searchService.getUnsupportFeatureEvt();
 		this.unsupportFeatureEvt.subscribe(featureDesc => {
 			if (this.searchTipsTimeout) {
 				clearTimeout(this.searchTipsTimeout);
@@ -129,11 +181,17 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				this.searchTipsTimeout = null;
 			}, 3000);
 		});
-	}
 
-	@HostListener('window: focus')
-	onFocus(): void {
-		this.showVpn();
+		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
+		if (machineType) {
+			this.loadMenuOptions(machineType);
+		} else if (this.deviceService.isShellAvailable) {
+			this.deviceService
+				.getMachineType()
+				.then((value: number) => {
+					this.loadMenuOptions(value);
+				});
+		}
 	}
 
 	@HostListener('document:click', ['$event'])
@@ -156,38 +214,38 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
 	}
 
-	ngOnInit() {
-		this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
-
-		this.commonMenuSubscription = this.configService.menuItemNotification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
-
-		this.isDashboard = true;
-
-		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
-			LocalStorageKey.MachineFamilyName,
-			undefined
-		);
-		if (cacheMachineFamilyName) {
-			this.machineFamilyName = cacheMachineFamilyName;
-		}
-
-		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
-			this.showHWScanMenu = this.hardwareScanService.isHardwareScanAvailable();
-		}
-	}
-
 	private loadMenuOptions(machineType: number) {
 		// if IdeaPad or ThinkPad then call below function
 		if (machineType === 0 || machineType === 1) {
-			this.showSmartAssist();
+			// add try catch for backlight exception; this is temp solution, dongwq2 should add error handle in backlight
+			try {
+				// this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, false);
+				this.backlightCapabilitySubscription = this.backlightService.backlight.pipe(
+					map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
+					map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY),
+					tap(res => {
+						this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, res);
+					}),
+					catchError(() => {
+						window.localStorage.removeItem(LocalStorageKey.BacklightCapability);
+						return undefined;
+					})
+				).subscribe();
+			} catch (error) {
+				console.log('Backlight error: ', error);
+			}
+
 		}
-		if (machineType === 1) {
-			this.initInputAccessories();
+
+		const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
+		// Added special case for KEI machine
+		if (machineFamily) {
+			const familyName = machineFamily.replace(/\s+/g, '');
+			if (machineType === 1 && familyName !== 'LenovoTablet10') {
+				this.initInputAccessories();
+			}
 		}
+
 		if (machineType === 0) {
 			// todo: in case unexpected showing up in edge case when u remove drivers. should be a safety way to check capability.
 			this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, false);
@@ -212,68 +270,27 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
 	}
 
-	private initUnreadMessage() {
-		const cacheUnreadMessageCount = this.commonService.getLocalStorageValue(
-			LocalStorageKey.UnreadMessageCount,
-			undefined
-		);
-		if (cacheUnreadMessageCount) {
-			this.UnreadMessageCount.totalMessage = cacheUnreadMessageCount.totalMessage;
-			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
-			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
-		} else {
-			if (this.appsForYouService.showLmaMenu()) {
-				this.UnreadMessageCount.totalMessage++;
-			}
-			if (this.appsForYouService.showAdobeMenu()) {
-				this.UnreadMessageCount.totalMessage++;
-			}
-		}
-	}
-
-	updateUnreadMessageCount(item, event?) {
-		this.showMenu = false;
-		if (item.id === 'user') {
-			const target = event.target || event.srcElement || event.currentTarget;
-			const idAttr = target.attributes.id;
-			const id = idAttr.nodeValue;
-			let needUpdateLocalStorage = false;
-			if (id === 'menu-main-lnk-open-lma') {
-				if (!this.UnreadMessageCount.lmaMenuClicked) {
-					if (this.UnreadMessageCount.totalMessage > 0) {
-						this.UnreadMessageCount.totalMessage--;
-					}
-					this.UnreadMessageCount.lmaMenuClicked = true;
-					needUpdateLocalStorage = true;
+	private checkLiteGaming() {
+		const filter: Promise<any> = this.vantageShellService.calcDeviceFilter({ var: 'DeviceTags.System.Profile.LiteGaming' });
+		if (filter) {
+			filter.then((hyp) => {
+				if (hyp !== null) {
+					this.deviceService.isLiteGaming = true;
+					this.headerLogo = this.VantageLogo;
+				} else {
+					this.deviceService.isLiteGaming = false;
+					this.headerLogo = this.gamingLogo;
 				}
-			} else if (id === 'menu-main-lnk-open-adobe') {
-				if (!this.UnreadMessageCount.adobeMenuClicked) {
-					if (this.UnreadMessageCount.totalMessage > 0) {
-						this.UnreadMessageCount.totalMessage--;
-					}
-					this.UnreadMessageCount.adobeMenuClicked = true;
-					needUpdateLocalStorage = true;
-				}
-			}
-			if (needUpdateLocalStorage) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.UnreadMessageCount, this.UnreadMessageCount);
-			}
+			});
 		}
-	}
-
-	ngAfterViewInit(): void {
-		this.getMenuItems().then((items) => {
-			const chsItem = items.find((item) => item.id === 'home-security');
-			if (!chsItem) {
-				return;
-			}
-			this.preloadImages = [].concat(chsItem.pre);
-		});
 	}
 
 	ngOnDestroy() {
-		if (this.commonMenuSubscription) {
-			this.commonMenuSubscription.unsubscribe();
+		if (this.subscription) {
+			this.subscription.unsubscribe();
+		}
+		if (this.backlightCapabilitySubscription) {
+			this.backlightCapabilitySubscription.unsubscribe();
 		}
 	}
 
@@ -295,23 +312,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	showItem(item) {
 		let showItem = true;
-		if (this.deviceService.isSMode) {
-			if (!item.sMode) {
-				showItem = false;
-			}
-			if (item.id === 'device') {
-				item.subitems.forEach((subitem, index, object) => {
-					if (!subitem.sMode) {
-						object.splice(index, 1);
-					}
-				});
-			}
-		}
-		if (this.deviceService.isArm) {
-			if (!item.forArm) {
-				showItem = false;
-			}
-		}
 
 		if (item.id === 'hardware-scan') {
 			showItem = this.showHWScanMenu;
@@ -324,6 +324,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		if (item.hasOwnProperty('hide') && item.hide) {
 			showItem = false;
 		}
+
 		if (!this.adPolicyService.IsSystemUpdateEnabled && item.id === 'device') {
 			item.subitems.forEach((subitem, index, object) => {
 				if (subitem.adPolicyId && subitem.adPolicyId === AdPolicyId.SystemUpdate) {
@@ -349,11 +350,24 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	onMenuItemClick(item, event?) {
+		window.getSelection().empty();
 		this.showMenu = false;
 		if (item.id === 'app-search') {
 			this.updateSearchBoxState(!this.showSearchBox);
 			if (event) {
 				event.fromSearchMenu = true;
+			}
+		} else if (item.id === 'user' && event) {
+			const target = event.target || event.srcElement || event.currentTarget;
+			const idAttr = target.attributes.id;
+			const id = idAttr.nodeValue;
+			if (id === 'menu-main-lnk-open-lma' ||
+				id === 'menu-main-lnk-open-adobe' ||
+				id === 'menu-main-lnk-open-dcc') {
+				this.appsForYouService.updateUnreadMessageCount(id);
+				if (id === 'menu-main-lnk-open-dcc') {
+					this.cardService.openDccDetailModal();
+				}
 			}
 		}
 	}
@@ -363,9 +377,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.updateSearchBoxState(false);
 	}
 
-	menuItemClick(event, path) {
+	menuItemKeyDown(path, subpath?) {
 		if (path) {
-			this.router.navigateByUrl(path);
+			if (!subpath) {
+				this.router.navigateByUrl(`/${path}`);
+			} else {
+				this.router.navigateByUrl(`/${path}/${subpath}`);
+			}
 		}
 	}
 
@@ -395,207 +413,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				case NetworkStatus.Online:
 					this.modernPreloadService.getIsEntitled();
 					break;
-				case AdPolicyEvent.AdPolicyUpdatedEvent:
-					this.showSystemUpdates();
-					break;
 				case MenuItem.MenuItemChange:
-					this.showMenuItems();
+					this.updateMenu(notification.payload);
 					break;
 				default:
 					break;
 			}
 		}
-	}
-
-	showSystemUpdates() {
-		this.getMenuItems().then((items) => {
-			const device = items.find((item) => item.id === 'device');
-			if (device !== undefined) {
-				const su = device.subitems.find((item) => item.id === 'system-updates');
-				if (this.adPolicyService.IsSystemUpdateEnabled && !this.deviceService.isSMode && !this.deviceService.isGaming) {
-					if (!su) {
-						device.subitems.splice(2, 0, {
-							id: 'system-updates',
-							label: 'common.menu.device.sub3',
-							path: 'system-updates',
-							icon: '',
-							metricsEvent: 'itemClick',
-							metricsParent: 'navbar',
-							metricsItem: 'link.systemupdates',
-							routerLinkActiveOptions: {
-								exact: true
-							},
-							adPolicyId: AdPolicyId.SystemUpdate,
-							subitems: []
-						});
-					}
-				} else {
-					if (su) {
-						device.subitems = device.subitems.filter(
-							(item) => item.id !== 'system-updates'
-						);
-					}
-				}
-			}
-		});
-	}
-
-	showWindowsHelloItem() {
-		this.getMenuItems().then((items) => {
-			const securityItem = items.find((item) => item.id === 'security');
-
-			if (!this.windowsHelloService.showWindowsHello()) {
-				securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'windows-hello');
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
-			} else {
-				const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
-				if (!windowsHelloItem) {
-					securityItem.subitems.push({
-						id: 'windows-hello',
-						label: 'common.menu.security.sub6',
-						path: 'windows-hello',
-						icon: '',
-						metricsEvent: 'itemClick',
-						metricsParent: 'navbar',
-						metricsItem: 'link.windowshello',
-						routerLinkActiveOptions: { exact: true },
-						subitems: []
-					});
-				}
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
-			}
-		});
-	}
-
-	showVpn() {
-		this.getMenuItems().then((items) => {
-			const securityItemForVpn = items.find((item) => item.id === 'security');
-			if (securityItemForVpn !== undefined) {
-				const vpnItem = securityItemForVpn.subitems.find((item) => item.id === 'internet-protection');
-				if (this.region !== 'cn') {
-					if (!vpnItem) {
-						securityItemForVpn.subitems.splice(4, 0, {
-							id: 'internet-protection',
-							label: 'common.menu.security.sub5',
-							path: 'internet-protection',
-							metricsEvent: 'itemClick',
-							metricsParent: 'navbar',
-							metricsItem: 'link.internetprotection',
-							routerLinkActiveOptions: { exact: true },
-							icon: '',
-							subitems: []
-						});
-					}
-				} else {
-					if (vpnItem) {
-						securityItemForVpn.subitems = securityItemForVpn.subitems.filter(
-							(item) => item.id !== 'internet-protection'
-						);
-					}
-				}
-			}
-		});
-	}
-
-	getMenuItems(): Promise<any> {
-		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
-			this.items = items;
-			return this.items;
-		});
-	}
-
-	private showSmartAssist() {
-		this.logger.info('inside showSmartAssist');
-		this.getMenuItems().then(async (items) => {
-			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
-			if (myDeviceItem !== undefined) {
-				const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
-				if (!smartAssistItem) {
-					// if cache has value true for IsSmartAssistSupported, add menu item
-					const isSmartAssistSupported = this.commonService.getLocalStorageValue(
-						LocalStorageKey.IsSmartAssistSupported,
-						false
-					);
-					this.logger.info('showSmartAssist isSmartAssistSupported cache value', isSmartAssistSupported);
-
-					if (isSmartAssistSupported) {
-						this.addSmartAssistMenu(myDeviceItem);
-					}
-
-					// raj: promise.all breaks if any one function is breaks. adding feature wise capability check
-					const assistCapability: SmartAssistCapability = new SmartAssistCapability();
-					// HPD and Intelligent Screen capability check
-					try {
-						assistCapability.isIntelligentSecuritySupported = await this.smartAssist.getHPDVisibility();
-						assistCapability.isIntelligentScreenSupported = await this.smartAssist.getIntelligentScreenVisibility();
-					} catch (error) {
-						this.logger.exception('showSmartAssist smartAssist.getHPDVisibility check', error);
-					}
-					// lenovo voice  capability check
-					try {
-						assistCapability.isLenovoVoiceSupported = await this.smartAssist.isLenovoVoiceAvailable();
-					} catch (error) {
-						this.logger.exception('showSmartAssist smartAssist.isLenovoVoiceAvailable check', error);
-					}
-					// lenovo voice  capability check
-					try {
-						assistCapability.isIntelligentMediaSupported = await this.smartAssist.getVideoPauseResumeStatus(); // returns object
-					} catch (error) {
-						this.logger.exception('showSmartAssist smartAssist.getVideoPauseResumeStatus check', error);
-					}
-					// lenovo voice  capability check
-					try {
-						// assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
-					} catch (error) {
-						this.logger.exception('showSmartAssist smartAssist.getSuperResolutionStatus check', error);
-					}
-					try {
-						assistCapability.isAPSCapable = await this.smartAssist.getAPSCapability();
-						assistCapability.isAPSSensorSupported = await this.smartAssist.getSensorStatus();
-						assistCapability.isAPSHDDStatus = await this.smartAssist.getHDDStatus();
-						assistCapability.isAPSSupported = assistCapability.isAPSCapable && assistCapability.isAPSSensorSupported && assistCapability.isAPSHDDStatus > 0;
-					} catch (error) {
-						this.logger.exception('showSmartAssist APS capability check', error);
-					}
-
-					this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, assistCapability);
-					this.logger.info('showSmartAssist capability check', assistCapability);
-
-					const isAvailable =
-						assistCapability.isIntelligentSecuritySupported ||
-						assistCapability.isLenovoVoiceSupported ||
-						assistCapability.isIntelligentMediaSupported.available ||
-						assistCapability.isIntelligentScreenSupported ||
-						assistCapability.isSuperResolutionSupported.available ||
-						assistCapability.isAPSSupported;
-					// const isAvailable = true;
-					this.commonService.setLocalStorageValue(
-						LocalStorageKey.IsSmartAssistSupported,
-						isAvailable
-					);
-
-					// avoid duplicate entry. if not added earlier then add menu
-					if (isAvailable && !isSmartAssistSupported) {
-						this.addSmartAssistMenu(myDeviceItem);
-					}
-				}
-			}
-		});
-	}
-
-	private addSmartAssistMenu(myDeviceItem: any) {
-		myDeviceItem.subitems.splice(4, 0, {
-			id: 'smart-assist',
-			label: 'common.menu.device.sub4',
-			path: 'smart-assist',
-			metricsEvent: 'itemClick',
-			metricsParent: 'navbar',
-			metricsItem: 'link.smartassist',
-			routerLinkActiveOptions: { exact: true },
-			icon: '',
-			sMode: true,
-			subitems: []
-		});
 	}
 
 	public openExternalLink(link) {
@@ -606,8 +430,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	initInputAccessories() {
 		Promise.all([
-			this.keyboardService.GetUDKCapability(),
-			this.keyboardService.GetKeyboardMapCapability(),
+			this.keyboardService.GetAllCapability(),
 			this.keyboardService.GetKeyboardVersion()
 		])
 			.then((responses) => {
@@ -616,9 +439,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					if (inputAccessoriesCapability === undefined) {
 						inputAccessoriesCapability = new InputAccessoriesCapability();
 					}
-					inputAccessoriesCapability.isUdkAvailable = responses[0];
-					inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
-					inputAccessoriesCapability.keyboardVersion = responses[2];
+					inputAccessoriesCapability.isUdkAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('uDKCapability') !== -1) ? responses[0].uDKCapability : false;
+					inputAccessoriesCapability.isKeyboardMapAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1) ? responses[0].keyboardMapCapability : false;
+					inputAccessoriesCapability.keyboardVersion = (responses[1] != null) ? responses[1] : '-1';
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
 						inputAccessoriesCapability
 					);
@@ -638,93 +461,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	openModernPreloadModal() {
 		this.showMenu = false;
-		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'modern-preload-modal',
-			keyboard: false,
-			beforeDismiss: () => {
-				if (modernPreloadModal.componentInstance.onBeforeDismiss) {
-					modernPreloadModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
-			}
-		});
+		this.dialogService.openModernPreloadModal();
 	}
-
-	showMenuItems() {
-		this.localInfoService
-			.getLocalInfo()
-			.then((result) => {
-				this.region = result.GEO;
-				this.showVpn();
-				this.initUnreadMessage();
-			})
-			.catch((e) => {
-				this.region = 'us';
-				this.showVpn();
-			});
-
-		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
-		this.getMenuItems().then((items) => {
-			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(
-				LocalStorageKey.SecurityShowWindowsHello
-			);
-			if (cacheShowWindowsHello) {
-				const securityItem = items.find((item) => item.id === 'security');
-				if (securityItem) {
-					const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
-					if (!windowsHelloItem) {
-						securityItem.subitems.push({
-							id: 'windows-hello',
-							label: 'common.menu.security.sub6',
-							path: 'windows-hello',
-							icon: '',
-							metricsEvent: 'itemClick',
-							metricsParent: 'navbar',
-							metricsItem: 'link.windowshello',
-							routerLinkActiveOptions: { exact: true },
-							subitems: []
-						});
-					}
-				}
-			}
-			if (this.securityAdvisor) {
-			const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
-			if (windowsHello.fingerPrintStatus) {
-				this.showWindowsHelloItem();
-			}
-			windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
-				this.showWindowsHelloItem();
-			});
-			}
-		});
-
-		if (this.hardwareScanService && this.hardwareScanService.getPluginInfo()) {
-			this.hardwareScanService.getPluginInfo()
-				.then((hwscanPluginInfo: any) => {
-					// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
-					this.showHWScanMenu = hwscanPluginInfo !== undefined &&
-						hwscanPluginInfo.LegacyPlugin === false &&
-						hwscanPluginInfo.PluginVersion !== '1.0.39'; // This version is not compatible with current version
-				})
-				.catch(() => {
-					this.showHWScanMenu = false;
-				});
-		}
-
-		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
-		if (machineType) {
-			this.loadMenuOptions(machineType);
-		} else if (this.deviceService.isShellAvailable) {
-			this.deviceService
-				.getMachineType()
-				.then((value: number) => {
-					this.loadMenuOptions(value);
-				})
-				.catch((error) => { });
-		}
-	}
-
 }

@@ -10,7 +10,10 @@ import { Container, BindingScopeEnum } from 'inversify';
 import { HardwareScanShellMock } from 'src/app/beta/hardware-scan/mock/hardware-scan-shell-mock';
 import { WinRT, CHSAccountState, EventTypes } from '@lenovo/tan-client-bridge';
 import { of } from 'rxjs';
-import { TopRowFunctionsIdeapad } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
+import { TopRowFunctionsIdeapad, KeyType } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
+import { VoipErrorCodeEnum } from 'src/app/enums/voip.enum';
+import { CommonErrorCode } from 'src/app/data-models/common/common.interface';
+import { BacklightStatusEnum, BacklightLevelEnum } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 
 declare var Windows;
 
@@ -19,9 +22,9 @@ declare var Windows;
 })
 export class VantageShellService {
 	public readonly isShellAvailable: boolean;
-	private phoenix: any;
+	public phoenix: any;
 	private shell: any;
-	private isGamingDevice = true;
+	private isGamingDevice = false;
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
@@ -61,7 +64,6 @@ export class VantageShellService {
 				Phoenix.Features.PreferenceSettings,
 				Phoenix.Features.ConnectedHomeSecurity,
 				Phoenix.Features.HardwareScan,
-				Phoenix.Features.BetaUser,
 				Phoenix.Features.DevicePosture,
 				Phoenix.Features.AdPolicy
 			]);
@@ -468,7 +470,7 @@ export class VantageShellService {
 							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
 						}
 
-						const isBeta = that.commonService.getLocalStorageValue(LocalStorageKey.BetaUser);
+						const isBeta = that.commonService.getLocalStorageValue(LocalStorageKey.BetaTag, false);
 						if (isBeta) {
 							data.IsBetaUser = true;
 						}
@@ -638,6 +640,7 @@ export class VantageShellService {
 	public getSecurityAdvisor(): Phoenix.SecurityAdvisor {
 		const securityAdvisor: Phoenix.SecurityAdvisor = {
 			antivirus: {
+				status: 'success',
 				mitt: null,
 				mcafeeDownloadUrl:
 					'https://www.mcafee.com/consumer/en-us/promos/expiry/l714/mls_430/trial/ab/wb.html?cid=239128&culture=en-us&affid=714&pir=1',
@@ -740,7 +743,7 @@ export class VantageShellService {
 					}
 				],
 				isLocationServiceOn: true,
-				isComputerPermissionOn: true,
+				isAllAppsPermissionOn: true,
 				isDevicePermissionOn: true,
 				isLWSPluginInstalled: true,
 				hasSystemPermissionShowed: true,
@@ -777,7 +780,58 @@ export class VantageShellService {
 					const p2 = new Promise((resolve) => { });
 					return Promise.all([p1, p2]);
 				},
-				cancelGetWifiSecurityState() { }
+				cancelGetWifiSecurityState() { },
+				getWifiHistory() { },
+				cancelGetWifiHistory() { }
+			},
+			windowsActivation: {
+				mitt: null,
+				status: 'disable',
+				windowsActivationProtocol: '',
+				launch() {
+					return Promise.resolve(true);
+				},
+				on(type, handler) {
+					return this;
+				},
+				off() {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			uac: {
+				mitt: null,
+				status: 'disable',
+				on(type, handler) {
+					return this;
+				},
+				off() {
+					return this;
+				},
+				launch() {
+					return Promise.resolve(true);
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			bitLocker: {
+				mitt: null,
+				status: 'disable',
+				launch() {
+					return Promise.resolve(true);
+				},
+				on(type, handler) {
+					return this;
+				},
+				off() {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
 			},
 			setScoreRegistry() {
 				return Promise.resolve(true);
@@ -888,7 +942,7 @@ export class VantageShellService {
 	/**
 	 * returns hardware settings object from VantageShellService of JS Bridge
 	 */
-	private getHwSettings(): any {
+	public getHwSettings(): any {
 		if (this.phoenix && this.phoenix.hwsettings) {
 			return this.phoenix.hwsettings;
 		}
@@ -917,7 +971,9 @@ export class VantageShellService {
 		};
 
 		dolby.getDolbyMode = this.getPromise(obj);
-
+		dolby.setDolbyMode = this.getPromise(true);
+		dolby.stopMonitor = this.getPromise(true);
+		dolby.startMonitor = this.getPromise(true);
 		return dolby;
 	}
 
@@ -944,6 +1000,14 @@ export class VantageShellService {
 		};
 		microphone.getSupportedModes = this.getPromise(micSupportedModes);
 		microphone.getMicrophoneSettings = this.getPromise(micSettings);
+		microphone.setMicrophoneVolume = this.getPromise(true);
+		microphone.setMicophoneMute = this.getPromise(true);
+		microphone.setMicrophoneAutoOptimization = this.getPromise(true);
+		microphone.setMicrophoneKeyboardNoiseSuppression = this.getPromise(true);
+		microphone.setMicrophoneAEC = this.getPromise(true);
+		microphone.setMicrophoneOpitimaztion = this.getPromise(true);
+		microphone.startMonitor = this.getPromise(true);
+		microphone.stopMonitor = this.getPromise(true);
 
 		return microphone;
 	}
@@ -953,7 +1017,11 @@ export class VantageShellService {
 	 */
 	public getSmartSettings(): any {
 		const smartSettings: any = {
-			absFeature: { getDolbyFeatureStatus: this.getPromise({ available: true, status: false }) }
+			absFeature: {
+				getDolbyFeatureStatus: this.getPromise({ available: true, status: false }),
+				setDolbyFeatureStatus: this.getPromise(true)
+
+			}
 		};
 
 		return smartSettings;
@@ -1021,6 +1089,7 @@ export class VantageShellService {
 			}
 		};
 		battery.getBatteryInformation = this.getPromise(battery);
+		battery.startBatteryMonitor = this.getPromise(true);
 		battery.stopBatteryMonitor = this.getPromise(true);
 		return battery;
 	}
@@ -1052,24 +1121,34 @@ export class VantageShellService {
 		};
 		const displayEyeCareMode: any = {
 			getDaytimeColorTemperature: this.getPromise(dayTimeObj),
+			setDaytimeColorTemperature: this.getPromise(true),
+			resetDaytimeColorTemperature: this.getPromise(true),
 			getDisplayColortemperature: this.getPromise(eyeCareObj),
+			setDisplayColortemperature: this.getPromise(true),
 			getEyeCareModeState: this.getPromise(obj),
+			getEyeCareAutoModeState: this.getPromise(obj),
 			initEyecaremodeSettings: this.getPromise(true),
 			startMonitor: this.getPromise(true),
 			stopMonitor: this.getPromise(true),
+			setEyeCareMode: this.getPromise(true),
+			setEyeCareAutoMode: this.getPromise(true),
+			resetEyeCareMode: this.getPromise(true),
 			statusChangedLocationPermission: this.getPromise(true)
 		};
-
 		return displayEyeCareMode;
 	}
-
 	/**
 	 * returns Privacy Guard object from VantageShellService of JS Bridge
 	 */
 	public getPrivacyGuardObject(): any {
 		const privacyGuardSettings: any = {
 			getPrivacyGuardCapability: this.getPromise(true),
-			getPrivacyGuardOnPasswordCapability: this.getPromise(true)
+			getPrivacyGuardOnPasswordCapability: this.getPromise(true),
+			getPrivacyGuardStatus: this.getPromise(true),
+			getPrivacyGuardOnPasswordStatus: this.getPromise(true),
+			setPrivacyGuardStatus: this.getPromise(true),
+			setPrivacyGuardOnPasswordStatus: this.getPromise(true),
+
 		};
 
 		return privacyGuardSettings;
@@ -1081,7 +1160,18 @@ export class VantageShellService {
 	public getCameraPrivacy(): any {
 		const cameraPrivacyStatus: any = {
 			getCameraPrivacyStatus: this.getPromise({ available: true, status: true }),
-			startMonitor: this.getPromise(true)
+			setCameraPrivacyStatus: this.getPromise(true),
+			startMonitor: this.getPromise(true),
+			stopMonitor: this.getPromise(true),
+		};
+		return cameraPrivacyStatus;
+	}
+	/**
+	 * returns CameraPrivacy object from VantageShellService of JS Bridge
+	 */
+	public setCameraPrivacy(): any {
+		const cameraPrivacyStatus: any = {
+			setCameraPrivacyStatus: this.getPromise({ available: true, status: true }),
 		};
 		return cameraPrivacyStatus;
 	}
@@ -1090,8 +1180,15 @@ export class VantageShellService {
 	 */
 	public getCameraSettings(): any {
 		const cameraSettings: any = {
+			getCameraSettings: this.getPromise(true),
+			setCameraBrightness: this.getPromise(true),
+			setCameraContrast: this.getPromise(true),
+			setCameraAutoExposure: this.getPromise(true),
+			setCameraExposure: this.getPromise(true),
+			setCameraAutoFocus: this.getPromise(true),
+			resetCameraSettings: this.getPromise(true),
 			startMonitor: this.getPromise(true),
-			getCameraSettings: this.getPromise(true)
+			stopMonitor: this.getPromise(true),
 		};
 
 		return cameraSettings;
@@ -1104,6 +1201,8 @@ export class VantageShellService {
 		};
 
 		devicePower.getVantageToolBarStatus = this.getPromise(toolbarObj);
+		devicePower.setVantageToolBarStatus = this.getPromise(toolbarObj);
+		devicePower.startMonitor = this.getPromise(toolbarObj);
 		devicePower.stopMonitor = this.getPromise(true);
 		return devicePower;
 	}
@@ -1113,13 +1212,31 @@ export class VantageShellService {
 			status: true
 		};
 		const devicePowerIdeaNoteBook = {
-			rapidChargeMode: { getRapidChargeModeStatus: this.getPromise(obj) },
-			conservationMode: { getConservationModeStatus: this.getPromise(obj) },
+			rapidChargeMode: {
+				getRapidChargeModeStatus: this.getPromise(obj),
+				setRapidChargeModeStatus: this.getPromise(obj)
+			},
+			conservationMode: {
+				getConservationModeStatus: this.getPromise(obj),
+				setConservationModeStatus: this.getPromise(obj)
+			},
+			intelligentCoolingForIdeaPad: {
+				getITSSettings: this.getPromise(true),
+				setITSSettings: this.getPromise(true),
+				startMonitor: this.getPromise(true),
+				stopMonitor: this.getPromise(true)
+			},
+
 			alwaysOnUSB: {
 				getAlwaysOnUSBStatus: this.getPromise(obj),
-				getUSBChargingInBatteryModeStatus: this.getPromise(obj)
+				getUSBChargingInBatteryModeStatus: this.getPromise(obj),
+				setAlwaysOnUSBStatus: this.getPromise(obj),
+				setUSBChargingInBatteryModeStatus: this.getPromise(obj)
 			},
-			flipToBoot: { getFlipToBootCapability: this.getPromise({ ErrorCode: 0, Supported: 1, CurrentMode: 1 }) }
+			flipToBoot: {
+				getFlipToBootCapability: this.getPromise({ ErrorCode: 0, Supported: 1, CurrentMode: 1 }),
+				setFlipToBootSettings: this.getPromise({ ErrorCode: 0, Supported: 1, CurrentMode: 1 })
+			}
 		};
 		return devicePowerIdeaNoteBook;
 	}
@@ -1133,30 +1250,64 @@ export class VantageShellService {
 	public getPowerThinkPad(): any {
 		const batteryThresholdInfo: any = [
 			{
-				batteryNum: 1,
-				checkBoxValue: false,
+				batteryNumber: 1,
+				checkboxValue: false,
 				isCapable: true,
-				isOn: false,
+				isEnabled: false,
 				startValue: 75,
 				stopValue: 80
 			},
 			{
-				batteryNum: 2,
-				checkBoxValue: false,
+				batteryNumber: 2,
+				checkboxValue: false,
 				isCapable: true,
-				isOn: false,
+				isEnabled: false,
 				startValue: 75,
 				stopValue: 80
 			}
 		];
 		const devicePowerThinkPad: any = {
-			sectionChargeThreshold: { getChargeThresholdInfo: this.getPromise(batteryThresholdInfo) },
-			sectionAirplaneMode: { getAirplaneModeCapability: this.getPromise(true) },
-			sectionAlwaysOnUsb: { getAlwaysOnUsbCapability: this.getPromise(true) },
-			sectionEasyResume: { getEasyResumeCapability: this.getPromise(true) },
+			sectionBatteryGaugeReset: {
+				getGaugeResetCapability: this.getPromise(true),
+				startBatteryGaugeReset: this.getPromise(true),
+				stopBatteryGaugeReset: this.getPromise(true)
+			},
+			sectionChargeThreshold: {
+				getChargeThresholdInfo: this.getPromise(batteryThresholdInfo),
+				setChargeThresholdValue: this.getPromise(batteryThresholdInfo),
+				setCtAutoCheckbox: this.getPromise(batteryThresholdInfo),
+				setToggleOff: this.getPromise(batteryThresholdInfo)
+			},
+			sectionAirplaneMode: {
+				getAirplaneModeCapability: this.getPromise(true),
+				getAirplaneMode: this.getPromise(true),
+				setAirplaneMode: this.getPromise(true),
+				setAirplaneModeAutoDetection: this.getPromise(true),
+				getAirplaneModeAutoDetection: this.getPromise(true)
+			},
+			sectionAlwaysOnUsb: {
+				getAlwaysOnUsbCapability: this.getPromise(true),
+				setAlwaysOnUsb: this.getPromise(true),
+				getAlwaysOnUsb: this.getPromise(true)
+			},
+			sectionEasyResume: {
+				getEasyResumeCapability: this.getPromise(true),
+				getEasyResume: this.getPromise(true),
+				setEasyResume: this.getPromise(true)
+			},
 			sectionSmartStandby: {
 				getSmartStandbyCapability: this.getPromise(true),
-				getSmartStandbyEnabled: this.getPromise(true)
+				getSmartStandbyEnabled: this.getPromise(true),
+				getSmartStandbyActiveStartEnd: this.getPromise(true),
+				getSmartStandbyDaysOfWeekOff: this.getPromise(true),
+				setSmartStandbyEnabled: this.getPromise(true),
+				setSmartStandbyActiveStartEnd: this.getPromise(true),
+				setSmartStandbyDaysOfWeekOff: this.getPromise(true),
+				getIsAutonomicCapability: this.getPromise(true),
+				getSmartStandbyIsAutonomic: this.getPromise(true),
+				getSmartStandbyPresenceData: this.getPromise(true),
+				getSmartStandbyActiveHours: this.getPromise(true),
+				setSmartStandbyIsAutonomic: this.getPromise(true)
 			}
 		};
 		return devicePowerThinkPad;
@@ -1168,10 +1319,32 @@ export class VantageShellService {
 	// 	}
 	// }
 	public getPowerItsIntelligentCooling(): any {
-		if (this.getPowerSettings() && this.getPowerSettings().its) {
-			return this.getPowerSettings().its;
-		}
-		return undefined;
+		const devicePowerItsIntelligentCooling = {
+			intelligentCooling: {
+				getPMDriverStatus: this.getPromise(true),
+				getITSServiceStatus: this.getPromise(true),
+				getDYTCRevision: this.getPromise(true),
+				getCQLCapability: this.getPromise(true),
+				getTIOCapability: this.getPromise(true),
+				setAutoModeSetting: this.getPromise(true),
+				setManualModeSetting: this.getPromise(true),
+				getManualModeSetting: this.getPromise(true),
+				getAPSState: this.getPromise(true),
+				getLegacyCQLCapability: this.getPromise(true),
+				getLegacyTIOCapability: this.getPromise(true),
+				getLegacyManualModeCapability: this.getPromise(true),
+				getLegacyAutoModeState: this.getPromise(true),
+				getLegacyManualModeState: this.getPromise(true),
+				setLegacyAutoModeState: this.getPromise(true),
+				setLegacyManualModeState: this.getPromise(true)
+
+			}
+		};
+		// if (this.getPowerSettings() && this.getPowerSettings().its) {
+		// 	return this.getPowerSettings().its;
+		// }
+		// return undefined;
+		return devicePowerItsIntelligentCooling;
 	}
 
 	public getSmartPerformance() {
@@ -1367,7 +1540,10 @@ export class VantageShellService {
 			errorCode: 0,
 			supportedModes: ['Blur', 'Comic', 'Sketch']
 		};
-		const cameraBlur: any = { getCameraBlurSettings: this.getPromise(obj) };
+		const cameraBlur: any = {
+			getCameraBlurSettings: this.getPromise(obj),
+			setCameraBlurSettings: this.getPromise(obj)
+		};
 		return cameraBlur;
 	}
 
@@ -1526,7 +1702,12 @@ export class VantageShellService {
 			GetBrowsingTime: this.getPromise(30),
 			SetWalkingMode: this.getPromise(true),
 			setBrowsingMode: this.getPromise(true),
-			SetBrowsingTime: this.getPromise(true)
+			SetBrowsingTime: this.getPromise(true),
+			GetHPDLeaveSensitivityVisibility: this.getPromise(true),
+			GetHPDLeaveSensitivity: this.getPromise(true),
+			SetHPDLeaveSensitivitySetting: this.getPromise(true),
+			getLockFacialRecognitionSettings: this.getPromise(true),
+			setLockFacialRecognitionSettings: this.getPromise(true)
 		};
 		return intelligentSensing;
 	}
@@ -1666,7 +1847,10 @@ export class VantageShellService {
 
 		const gamingNetworkBoost: any = {
 			getProcessesInNetworkBoost: this.getPromise(networkBoostList),
-			getNetUsingProcesses: this.getPromise(runningList)
+			getNetUsingProcesses: this.getPromise(runningList),
+			getStatus: this.getPromise(true),
+			setStatus: this.getPromise(true),
+			addProcessToNetBoost: this.getPromise(true)
 		};
 		return gamingNetworkBoost;
 	}
@@ -1754,10 +1938,17 @@ export class VantageShellService {
 
 		const gamingAutoClose: any = {
 			getAutoCloseList: this.getPromise(autoCloseList),
-			getRunningList: this.getPromise(runningList)
+			getRunningList: this.getPromise(runningList),
+			getStatus: this.getPromise(true),
+			setStatus: this.getPromise(true),
+			addAutoCloseList: this.getPromise(true),
+			delAutoCloseList: this.getPromise(true),
+			getNeedToAsk: this.getPromise(true),
+			setNeedToAsk: this.getPromise(true)
 		};
 		return gamingAutoClose;
 	}
+
 	/***
      * returns macroKeyClearInfo object from VantageShellService of JS Bridge
      ***/
@@ -1938,8 +2129,7 @@ export class VantageShellService {
 	 */
 	public getKeyboardManagerObject(): any {
 		const kbdManager: any = {
-			GetKeyboardMapCapability: this.getPromise(true),
-			GetUDKCapability: this.getPromise(true),
+			GetAllCapability: this.getPromise({ uDKCapability: true, keyboardMapCapability: true }),
 			GetKBDLayoutName: this.getPromise('Standered'),
 			GetKBDMachineType: this.getPromise('Other'),
 			GetKbdHiddenKeyPerformanceModeCapability: this.getPromise(false),
@@ -1956,6 +2146,7 @@ export class VantageShellService {
 
 		return kbdManager;
 	}
+
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
 		const voice = {
@@ -1970,9 +2161,41 @@ export class VantageShellService {
 
 	/** returns OledSettings object from VantageShellService of JS Bridge */
 	public getOledSettings(): any {
-		const oledSettings = { getOLEDPowerControlCapability: this.getPromise(true) };
+		const oledSettings = {
+			getOLEDPowerControlCapability: this.getPromise(true),
+			getTaskbarDimmerSetting: this.getPromise(true),
+			getBackgroundDimmerSetting: this.getPromise(true),
+			getDisplayDimmerSetting: this.getPromise(true),
+			setTaskbarDimmerSetting: this.getPromise(true),
+			setBackgroundDimmerSetting: this.getPromise(true),
+			setDisplayDimmerSetting: this.getPromise(true),
 
+		};
 		return oledSettings;
+	}
+
+	public getPriorityControl(): any {
+		const priorityControl = {
+			getPriorityControlCapability: this.getPromise(true),
+			getPriorityControlSetting: this.getPromise(true),
+			setPriorityControlSetting: this.getPromise(true),
+		};
+
+		return priorityControl;
+	}
+
+	public getKeyboardObject(): any {
+		const keyboard = {
+			getAutoKBDBacklightCapability: this.getPromise(true),
+			getKBDBacklightCapability: this.getPromise(true),
+			getAutoKBDStatus: this.getPromise(true),
+			getKBDBacklightStatus: this.getPromise(true),
+			getKBDBacklightLevel: this.getPromise(true),
+			setKBDBacklightStatus: this.getPromise(true),
+			setAutomaticKBDBacklight: this.getPromise(true)
+		};
+
+		return keyboard;
 	}
 
 	public getVersion(): any {
@@ -2040,24 +2263,129 @@ export class VantageShellService {
 		return inputControlLinks;
 	}
 
-	public getVoipHotkeysObject() {
-		throw new Error('Method not implemented.');
+	public getVoipHotkeysObject(): any {
+		return {
+			getVOIPHotkeysSettings: () => Promise.resolve({
+				errorCode: VoipErrorCodeEnum.SUCCEED,
+				capability: true,
+				appList: [
+					{
+						isAppInstalled: true,
+						isSelected: true
+					}
+				]
+			})
+		};
 	}
 
 	public getSuperResolution(): any {
-		const inputControlLinks: any = {
-			getSuperResolutionStatus: this.getPromise({ available: true, status: false })
+		const superResolution: any = {
+			getSuperResolutionStatus: this.getPromise({ available: true, status: false }),
+			setSuperResolutionStatus: this.getPromise(true)
 		};
 
-		return inputControlLinks;
+		return superResolution;
 	}
-	getTopRowFunctionsIdeapad(): TopRowFunctionsIdeapad {
-		return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
+
+	getTopRowFunctionsIdeapad(): any {
+		// return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
+		return {
+			getCapability: () => Promise.resolve({
+				capabilityList: {
+					Items: [
+						{
+							key: 'fnLock',
+							value: 'True',
+						}
+					]
+				}
+			}),
+			getPrimaryKey: () => Promise.resolve({
+				settingList: {
+					setting: [
+						{
+							key: 'PrimeKey',
+							value: KeyType.FNKEY,
+							enabled: 0,
+							errorCode: CommonErrorCode.SUCCEED
+						}
+					]
+				}
+			}),
+			getFnLockStatus: () => Promise.resolve({
+				settingList: {
+					setting: [
+						{
+							key: 'FnLock',
+							value: 'True',
+							enabled: 0,
+							errorCode: CommonErrorCode.SUCCEED
+						}
+					],
+				}
+			}),
+			// setFnLockStatus(fnLock: StringBoolean): Promise<CommonResponse<null>>
+		};
+	}
+
+	getBacklight(): any {
+		return {
+			getBacklight: () => Promise.resolve({
+				settingList: {
+					setting: [
+						{
+							key: 'KeyboardBacklightLevel',
+							value: BacklightLevelEnum.ONE_LEVEL,
+							enabled: 0,
+							errorCode: CommonErrorCode.SUCCEED
+						},
+						{
+							key: 'KeyboardBacklightStatus',
+							value: BacklightStatusEnum.LEVEL_1,
+							enabled: 0,
+							errorCode: CommonErrorCode.SUCCEED
+						}
+					]
+				}
+			}),
+			setBacklight: (status) => Promise.resolve({
+				errorcode: CommonErrorCode.SUCCEED
+			}),
+			GetBacklightOnSystemChange: (settings) => Promise.resolve({
+				settingList: {
+					setting: [
+						{
+							key: 'KeyboardBacklightLevel',
+							value: BacklightLevelEnum.ONE_LEVEL,
+							enabled: 0,
+							errorCode: CommonErrorCode.SUCCEED
+						},
+						{
+							key: 'KeyboardBacklightStatus',
+							value: BacklightStatusEnum.LEVEL_1,
+							enabled: 0,
+							errorCode: CommonErrorCode.SUCCEED
+						}
+					]
+				}
+			})
+		};
 	}
 
 	public getRegistryUtil(): Phoenix.RegistryFeature {
 		if (this.phoenix) {
 			return this.phoenix.registry;
+		}
+		return undefined;
+	}
+
+	getToolbarToastFeature(): any {
+		return this.phoenix.hwsettings.toolbar.ToolbarToast;
+	}
+
+	public getUpeAgent(): any {
+		if (this.phoenix) {
+			return this.phoenix.upeAgent;
 		}
 		return undefined;
 	}

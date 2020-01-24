@@ -1,8 +1,9 @@
 <section class="breaches-page"
 		 vtrSendAnalytics
-		 [metricsEvent]="'PageView'">
+		 [metricsEvent]="'PageView'"
+		 data-analyticsName="BreachedAccounts">
 
-	<div class="breaches-page__header" *ngIf="!(isShowVerifyBlock$ | async) && (isOnline || (!isOnline && !(userEmail$ | async) || (isFigleafReadyForCommunication$ | async)))">
+	<div class="breaches-page__header" *ngIf="!(isShowExitPitch$ | async) && !(isShowVerifyBlock$ | async) && (isOnline || (!isOnline && !(userEmail$ | async) || (isFigleafReadyForCommunication$ | async)))">
 		<vtr-feature-header
 			class="breaches-page__feature-header"
 			[texts]="textForFeatureHeader"
@@ -12,13 +13,13 @@
 			<span class="breaches-page__title--red">{{breachedAccountsCount$ | async}}</span> breached accounts found
 		</vtr-feature-header>
 
-		<button class="breaches-page__button"
+		<button class="breaches-page__button breaches-page__button--max-width"
 				*ngIf="(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length"
 				vtrSendAnalytics
 				[metricsEvent]="'ItemClick'"
 				[metricsItem]="'ViewInLenovoPrivacyEssentialsButton'"
 				(click)="openFigleafApp()">
-			View now
+			View in the app
 		</button>
 
 		<button class="breaches-page__button"
@@ -27,7 +28,7 @@
 				[metricsEvent]="'ItemClick'"
 				[metricsItem]="'BreachedAccountsFixInLenovoPrivacyButton'"
 				(click)="openFigleafApp()">
-			Fix in Lenovo Privacy Essentials
+			Fix in the app
 		</button>
 
 		<div class="breaches-page__tooltip"
@@ -39,17 +40,19 @@
 		</div>
 	</div>
 
-	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
+	<div class="breached-accounts">
 		<ng-container *ngIf="isOnline || (!isOnline && !(userEmail$ | async)) || (isFigleafReadyForCommunication$ | async); else offlineBlock" >
 			<vtr-email-scanner
 				class="breached-accounts__email-scanner"
-				*ngIf="(isUndefinedWithoutFigleafState$ | async)"
+				data-analyticsName="BreachedAccountsBlock"
+				*ngIf="(isShowEmailScanner | async)"
 				[scanCounter]="scanCounter$ | async"
+				[scanCounterLimit]="scanCounterLimit"
 				[emailWasScanned]="breachedAccountWasScanned$ | async">
 			</vtr-email-scanner>
 			<vtr-breached-account
-				*ngIf="(((isAccountVerify$ | async) && (isFigleafReadyForCommunication$ | async))
-					|| ((isUserAuthorized$ | async) && !(isFigleafReadyForCommunication$ | async)) && (breachedAccounts$ | async)?.length)"
+				data-analyticsName="BreachedAccountsBlock"
+				*ngIf="(isShowBreachedAccount$ | async)"
 				[breachedAccounts]="(breachedAccounts$ | async)"
 				[isUserAuthorized]="isUserAuthorized$ | async"
 				[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async"
@@ -57,14 +60,22 @@
 			</vtr-breached-account>
 
 			<vtr-verify-email
+				data-analyticsName="ConfirmBlock"
 				*ngIf="(isShowVerifyBlock$ | async)"
 				[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async"
 				[userEmail]="userEmail$ | async"
 				[breachedAccountsLength]="(breachedAccounts$ | async)?.length"
+				[scanCounter]="scanCounter$ | async"
+				[scanCounterLimit]="scanCounterLimit"
 				(verifyEmailEmit)="startVerify()">
 			</vtr-verify-email>
 
+			<vtr-exit-pitch *ngIf="isShowExitPitch$ | async">
+
+			</vtr-exit-pitch>
+
 			<div class="breached-accounts__clear-data-wrapper"
+				 data-analyticsName="BreachedAccountsBlock"
 				 *ngIf="(userEmail$ | async) && !(isFigleafReadyForCommunication$ | async)">
 				<vtr-clear-data-tooltip [feature]="breachedFeatureName"></vtr-clear-data-tooltip>
 			</div>

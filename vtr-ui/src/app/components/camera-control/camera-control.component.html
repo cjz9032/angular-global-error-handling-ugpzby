@@ -1,7 +1,7 @@
 <div class="vtr-camera-control">
 	<div class="row">
-		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 pl-0 pr-0">
-			<div class="camera-preview text-center">
+		<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 pl-0 pr-0">
+			<div class="camera-preview">
 				<video #cameraPreview
 					*ngIf="!disabledAll && !isCameraInErrorState"
 					class="feed"></video>
@@ -24,10 +24,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+		<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 camera-details">
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item"
-					*ngIf="cameraSettings.brightness.supported">
+					*ngIf="cameraSettings.brightness && cameraSettings.brightness.supported">
 					<div class="slider-item-text text-uppercase"
 						id="camera-brightness"
 						attr.aria-label="camera-brightness">
@@ -45,7 +45,7 @@
 					</vtr-ui-range-slider>
 				</li>
 				<li class="list-group-item"
-					*ngIf="cameraSettings.contrast.supported">
+					*ngIf="cameraSettings.contrast && cameraSettings.contrast.supported">
 					<div class="slider-item-text text-uppercase"
 						id="camera-contrast"
 						attr.aria-label="camera-contrast">
@@ -63,7 +63,7 @@
 					</vtr-ui-range-slider>
 				</li>
 				<li class="list-group-item"
-					*ngIf="cameraSettings.exposure.autoModeSupported">
+					*ngIf="cameraSettings.exposure && cameraSettings.exposure.autoModeSupported">
 					<div class="d-flex justify-content-between">
 						<div class="slider-item-text text-uppercase"
 							id="camera-auto-exposure"
@@ -77,7 +77,8 @@
 								(toggle)="onAutoExposureChange($event)"
 								[onOffSwitchId]="'cameraSettings-autoExposure'"></vtr-ui-switch-onoff>
 						</div>
-					</div>
+                    </div>
+                    <div *ngIf="!cameraFeatureAccess.exposureAutoValue">
 					<vtr-ui-range-slider [hidden]="!cameraFeatureAccess.showAutoExposureSlider"
 						[step]="cameraSettings.exposure.step"
 						[minValue]="cameraSettings.exposure.min"
@@ -87,10 +88,11 @@
 						[(value)]="cameraSettings.exposure.value"
 						(change)="onExposureSliderChange($event)"
 						[rangeSliderId]="'cameraSettings-autoExposure'">
-					</vtr-ui-range-slider>
+                    </vtr-ui-range-slider>
+                </div>
 				</li>
 				<li class="list-group-item"
-					*ngIf="cameraSettings.focus.supported">
+					*ngIf="cameraSettings.focus && cameraSettings.focus.supported">
 					<div class="d-flex justify-content-between">
 						<div class="slider-item-text text-uppercase ">
 							<!-- Auto Focus -->

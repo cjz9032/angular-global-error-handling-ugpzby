@@ -1,7 +1,7 @@
 @import "../../../../app.theme";
 
 .vtr-ui-hardware-list-test {
-	padding: 1.5rem 2rem 0 2rem;
+	padding-top: 1.5rem;
 
 	.list-group {
 		.list-group-item {
@@ -17,7 +17,7 @@
 				justify-content: space-between;
 				align-items: center;
 				padding: 0 1.5rem;
-				height: 7rem;
+				height: 5rem;
 
 				.rotate {
 					-webkit-transform: rotate(180deg);
@@ -68,6 +68,8 @@
 						top: 0.3rem;
 						width: 1.6rem;
 						height: 1.6rem;
+						box-shadow: inset 0 0 0 0.1rem $light;
+						border: 0.1rem solid $shade_darker;
 					}
 
 					// tick mark
@@ -81,12 +83,12 @@
 			}
 
 			.name {
-				font-size: 1.5rem;
-				font-weight: $weight_bold;
+				font-size: $fontsize_xs;
+				font-weight: $weight_600;
 			}
 
 			.subname {
-				font-weight: $weight_medium !important;
+				font-weight: $weight_light !important;
 			}
 
 			.name-test {
@@ -112,10 +114,10 @@
 
 	.options {
 		padding: 1.1rem 0;
-		font-size: 1.3rem;
+		font-size: $fontsize_xs;
 
 		.select-item {
-			color: $main;
+			color: $menu_hover;
 			font-weight: $weight_light;
 			border-bottom: 0.1rem solid $main;
 			cursor: pointer;

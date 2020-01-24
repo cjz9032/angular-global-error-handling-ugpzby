@@ -19,39 +19,40 @@
 }
 ui-popover {
 	position: absolute;
-	max-width: 35%;
-	padding: 3rem 5rem;
 	background: #fbfdff;
 	z-index: 9;
-	border-radius: 1rem;
+	border-radius: 0.75rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
-	right: 0;
-	top: 25%;
-	left: 0;
-	margin: auto;
+	max-width: 56rem;
+	@media #{$breakpoint_xl} {
+		width: 85%;
+	}
+	@media #{$breakpoint_sm} {
+		width: 90%;
+	}
 	@media #{$black-on-white} {
 		border: 0.1rem solid $dark;
 	}
 	@media #{$white-on-black} {
 		border: 0.1rem solid $light;
 	}
-	@media #{$small-screen} {
-		max-width: 45rem;
-	}
-	@media #{$medium-screen} {
-		max-width: 50rem;
-	}
 }
 
 .vtr-ui-macrokey-popup {
 	&.modal-body {
-		padding: 0;
+		padding: 4rem;
+		.btn-close {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		padding: 0.6rem 1.2rem;
+		width: 4rem;
+		height: 4rem;
+		}
 	}
-
 	.content-body {
 		min-height: 10rem;
 	}
-
 	fa-icon {
 		font-size: 3rem;
 		color: $main;
@@ -61,6 +62,7 @@ ui-popover {
 		font-size: 2.5rem;
 		font-weight: normal;
 		color: $blue-dark;
+		padding-right: 2.5rem;
 	}
 
 	p {
@@ -83,10 +85,9 @@ ui-popover {
 		font-size: 2rem;
 		padding: 1rem 3rem;
 		margin-top: 1rem;
+		margin-right: 3rem;
 		font-weight: $weight_bold;
-		//text-transform: uppercase;
 	}
-
 	.cancel-link {
 		height: 3.2rem;
 		color: $main;
@@ -94,24 +95,20 @@ ui-popover {
 		vertical-align: middle;
 		padding: 0 0.5rem;
 		font-weight: $weight_600;
-		margin-top: 1.8rem;
-		margin-left: 3rem;
+		margin-top: 1rem;
 		border-bottom: 2px solid $btn_secondary_color;
 		cursor: pointer;
-		&:hover{
-				text-decoration: none;
-			}
+		&:hover {
+			text-decoration: none;
+		}
 	}
 }
 
 ::ng-deep {
 	.vtr-menu-main {
-		z-index: 1 !important;
+		z-index: 100 !important;
 	}
 	.vtr-page-content {
 		z-index: unset !important;
-	}
-	.modal-main-wrapper {
-		z-index: 2 !important;
 	}
 }

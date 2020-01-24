@@ -1,5 +1,5 @@
-<div class="vtr-ui-article-item mb-80"
-	*ngIf="articleType === 'articles'"
+<div class="vtr-ui-article-item mb-40"
+	*ngIf="articleType === SupportContentStatus.Articles"
 	#articleItemDiv
 	id="{{'article-item-' + index}}"
 	attr.aria-label="{{'article-item-' + index}}"
@@ -20,7 +20,7 @@
 				metricsItemPosition="{{ index }}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
-				(click)="showArticleDetails()">
+				(click)="clickContent()">
 				<div *ngIf="item.Thumbnail"
 					class="image"
 					[style.background-image]="'url('+item.Thumbnail+')'">
@@ -38,17 +38,19 @@
 				<div *ngIf="item.Title"
 					class="col col-12 content">
 					<div href="javascript:;"
-						class="title"
-						[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
-						[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
-						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430">{{item.Title}}</div>
+						class="title text-two-ellipsis"
+						[title]="item.Title | htmlText"
+						[style.font-size.px]="articleItemDiv.clientWidth * 26 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 72 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 36 / 430"
+						[innerHTML]="item.Title"></div>
 					<div class="logo-text">
 						<span *ngIf="item.LogoText && !item.Thumbnail">{{item.LogoText}}</span>
 					</div>
 					<div *ngIf="item.ReadMore && item.Thumbnail"
-						[style.font-size.px]="articleItemDiv.clientWidth * 14 / 430"
-						[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
-						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[style.font-size.px]="articleItemDiv.clientWidth * 18 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 30 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 30 / 430"
 						class="read-more">
 						<span class="link-label">Read More</span>
 						<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
@@ -58,8 +60,8 @@
 		</div>
 	</div>
 </div>
-<div class="vtr-ui-article-item mb-80"
-	*ngIf="articleType === 'content'"
+<div class="vtr-ui-article-item mb-40"
+	*ngIf="articleType === SupportContentStatus.Content"
 	#articleItemDiv
 	id="{{'article-item-' + index}}"
 	attr.aria-label="{{'article-item-' + index}}"
@@ -67,7 +69,8 @@
 	[style.height.px]="articleItemDiv.clientWidth * ratio">
 	<div class="container-fluid">
 		<div class="row">
-			<a href="javascript:;"
+			<a [attr.href]="item.ActionLink"
+				target="_blank"
 				class="article-conetnt"
 				vtrMetrics
 				id="{{'article-item-card-' + index}}"
@@ -79,7 +82,7 @@
 				metricsItemPosition="{{index}}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
-				(click)="showArticleDetails()">
+				(click)="clickContent()">
 				<div *ngIf="item.FeatureImage"
 					class="image"
 					[style.background-image]="'url('+item.FeatureImage+')'">
@@ -96,17 +99,19 @@
 				</div>
 				<div *ngIf="item.Title"
 					class="col col-12 content">
-					<div class="title"
-						[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
-						[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
-						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430">{{item.Title}}</div>
+					<div class="title text-two-ellipsis"
+						[title]="item.Title | htmlText"
+						[style.font-size.px]="articleItemDiv.clientWidth * 26 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 72 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 36 / 430"
+						[innerHTML]="item.Title"></div>
 					<div class="logo-text">
 						<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
 					</div>
 					<div *ngIf="item.ActionLink && item.FeatureImage && item.Action"
-						[style.font-size.px]="articleItemDiv.clientWidth * 14 / 430"
-						[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
-						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[style.font-size.px]="articleItemDiv.clientWidth * 18 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 30 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 30 / 430"
 						class="read-more">
 						<span class="link-label">{{item.Action}}</span>
 						<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>

@@ -1,8 +1,9 @@
 @import "../../../../../app.theme";
 
 .subpage-device-settings-audio {
-	.smartsettings-card {
-		
+	.smart-settings-card {
+		margin-left: -1.5rem;
+		margin-right: -1.5rem;
 		.subtitle {
 			width: 100%;
 
@@ -13,6 +14,7 @@
 				line-height: 2.8rem;
 				margin-top: 1.5rem;
 				text-transform: uppercase;
+				font-weight: $weight_medium ;
 			}
 
 			p {
@@ -21,32 +23,39 @@
 				font-size: 1.6rem;
 				line-height: 2.8rem;
 				padding-bottom: 2.5rem;
-				border-bottom: 0.1rem solid $screen_light_15;
+				//border-bottom: 0.1rem solid $screen_light_15;
 			}
 		}
 	}
 	.container-card{
 		@media #{$black-on-white} {
-			
+
 			border: 0.1rem solid $dark;
 			border-radius: 1rem;
 			box-sizing: border-box;
-			
-			
+
+
 		}
 		@media #{$white-on-black} {
-			
+
 			border: 0.1rem solid $light;
 			border-radius: 1rem;
 			box-sizing: border-box;
-			
-			
+
+
 		}
 
 	}
 
 	ul.list-group {
 		list-style-type: none;
-		padding-bottom: 3rem;
+		//padding-bottom: 3rem;
+		li {
+			&:last-child {
+				::ng-deep .vtr-ui-switch-row {
+					border-bottom: none !important;
+				}
+			}
+		}
 	}
 }

@@ -4,15 +4,16 @@
 	border-radius: $border_radius;
 	background-color: $light;
 	box-shadow: $drop_shadow;
-	padding: 4rem;
+	padding: 2.4rem;
 	.title {
-		color: $main_darker;
+		color: $main_dark;
 		font-size: 2.5rem;
+		font-weight: $weight_light;
 	}
 	.description {
-		color: $main_shade;
-		font-size: 1.4rem;
-		font-weight: $weight_medium;
+		color: $grey_dark;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
 	}
 
 	.settings-container {

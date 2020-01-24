@@ -3,6 +3,7 @@ import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart
 import { NgbModal,NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 @Component({
   selector: 'vtr-ui-smart-performance-scan-summary',
   templateUrl: './ui-smart-performance-scan-summary.component.html',
@@ -10,21 +11,31 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 })
 export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 
-  constructor(private modalService: NgbModal,private commonService: CommonService,private calendar: NgbCalendar) { }
+  constructor(private modalService: NgbModal,
+    private commonService: CommonService,
+    private calendar: NgbCalendar,
+    private logger: LoggerService) { }
+
   public today = new Date();
   public items: any = [];
-  isSubscribed:any;
+   isSubscribed:any;
+   title = 'smartPerformance.title';
  public menuItems: any = [{ itemName: 'Annual' }, { itemName: 'Quarterly' }, { itemName: 'Custom' }]
-  subscriptionDetails:any;
-  startDate:any;
-  endDate:any;
-  status:any;
-  givenDate:Date
-
+  // subscriptionDetails:any;
+  // startDate:any;
+  // endDate:any;
+  // status:any;
+  // givenDate:Date;
+  leftAnimator:any;
+  
 
   // tslint:disable-next-line:max-line-length
 @Input() isScanning = false;
 @Input() isScanningCompleted = false;
+@Input() tune = 0;
+@Input() boost = 0;
+@Input() secure = 0;
+@Input() rating = 0;
  public tabIndex: number;
   public toggleValue: number;
   public currentYear: any;
@@ -65,7 +76,13 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	scanTime: any = { 'hour': this.hours[11],'hourId': 11,'min': this.mins[0],'minId': 0,'amPm': this.amPm[0],'amPmId': 0};
   copyScanTime: any = {'hour': this.hours[11], 'hourId': 11, 'min': this.mins[0], 'minId': 0, 'amPm': this.amPm[0], 'amPmId': 0 };
   scanScheduleDate:any;
+  issueCount: any = 0;
+  // tuneindividualIssueCount: any = 0;
+  // boostindividualIssueCount: any = 0;
+  // secureindividualIssueCount: any = 0;
   ngOnInit() {
+    this.issueCount = this.tune + this.boost + this.secure;
+    //this.leftAnimatorCalc = ((this.rating*10) - 1);
 this.currentDate = new Date();
     this.selectedDate=this.calendar.getToday();
     this.toDate = this.selectedDate;
@@ -73,30 +90,37 @@ this.currentDate = new Date();
 	 	this.items = [ { itemValue : '16 fixes', itemExpandValue : {tune:'10 GB',boost:'12',secure:'14'}, itemstatus : true, itemDate : this.today},
 	{ itemValue : '0 fixes', itemExpandValue : {tune:'10 GB',boost:'12',secure:'14'}, itemstatus : false, itemDate : this.today},
 	{ itemValue : '8 fixes', itemExpandValue : {tune:'10 GB',boost:'12',secure:'14'}, itemstatus : true, itemDate : this.today} ];
-  this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
-  if(this.isSubscribed)
-  {
-    this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SubscribtionDetails);
-    this.startDate = this.subscriptionDetails[0].StartDate;
-    this.endDate = this.subscriptionDetails[0].EndDate;
-    this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
+   this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
+  // if(this.isSubscribed)
+  // {
+  //   this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SubscribtionDetails);
+  //   this.startDate = this.subscriptionDetails[0].StartDate;
+  //   this.endDate = this.subscriptionDetails[0].EndDate;
+  //   this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
 
-    if(this.givenDate > this.today)
-      this.status = "ACTIVE";
-    else
-      this.status = "INACTIVE";
-  }
-  else
-  {
-	this.startDate="---";
-	this.endDate="---";
-	this.status="INACTIVE";
-  }
+  //   if(this.givenDate > this.today)
+  //     this.status = "ACTIVE";
+  //   else
+  //     this.status = "INACTIVE";
+  // }
+  // else
+  // {
+	// this.startDate="---";
+	// this.endDate="---";
+	// this.status="INACTIVE";
+  // }
   //scan settings
   this.selectedFrequency = this.scanFrequency[1];
 		this.selectedDay = this.days[0];
     this.isDaySelectionEnable = false;
     this.scanScheduleDate=this.selectedDate;
+    this.leftAnimator="0%";
+  }
+  ngAfterViewInit()
+  {
+
+    this.leftAnimator = ((this.rating*10) - 1).toString() + "%"; 
+    //console.log("Left Animator======================================", this.leftAnimator);
   }
   expandRow(value) {
 	if (this.toggleValue === value) {
@@ -110,7 +134,7 @@ this.currentDate = new Date();
     this.dropDownToggle = true;
     this.isDropDownOpen = false;
     this.tabIndex = value;
-    console.log(this.tabIndex);
+    this.logger.info('scanSummaryTime.tabIndex', this.tabIndex);
     if (value === 0 && !this.annualYear) {
       var d = new Date();
       this.currentYear = (d.getFullYear());
@@ -145,21 +169,18 @@ this.currentDate = new Date();
   this.selectedDate=this.selectedfromDate;
   }
   selectToDate() {
-    console.log("to date");
     this.isFromDate=false;
     this.selectedDate=this.selectedTodate;
     // this.selectedTodate=this.toDate.month+'/'+this.toDate.day+'/'+this.toDate.year;
   }
   onDateSelected(){
-    console.log('date');
-    console.log(this.selectedDate);
+    this.logger.info('onDateSelected.SelectedDate', this.selectedDate);
     if(this.isFromDate){
       this.displayFromDate=this.selectedfromDate.month+'/'+this.selectedfromDate.day+'/'+this.selectedfromDate.year;
     }
     else{
-      console.log("else to date");
       this.displayToDate=this.selectedTodate.month+'/'+this.selectedTodate.day+'/'+this.selectedTodate.year;
-      console.log(this.displayToDate);
+      this.logger.info('onDateSelected.else to date', this.displayToDate);
     }
   }
   customDateScanSummary(){
@@ -178,7 +199,6 @@ openSubscribeModal() {
     });
 }
 ScanNowSummary(){
-	console.log("summary");
 	this.backToScan.emit();
 }
 
@@ -223,7 +243,7 @@ cancelChangedScanSchedule() {
   this.isChangeSchedule = false;
 }
 setEnableScanStatus(event) {
-  console.log(event.switchValue);
+  this.logger.info('setEnableScanStatus', event.switchValue);
   this.scanToggleValue = event.switchValue;
 }
 saveChangeScanTime() {

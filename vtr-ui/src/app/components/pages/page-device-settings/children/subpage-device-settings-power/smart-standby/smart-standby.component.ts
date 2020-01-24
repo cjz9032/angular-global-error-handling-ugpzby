@@ -7,10 +7,11 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
-import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
+import { TranslateService } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-graph/smart-standby-graph.component';
+import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
 import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart-stand-by/modal-smart-stand-by.component';
+
 
 @Component({
 	selector: 'vtr-smart-standby',
@@ -18,7 +19,6 @@ import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart
 	styleUrls: ['./smart-standby.component.scss']
 })
 export class SmartStandbyComponent implements OnInit, OnDestroy {
-
 	public smartStandby = new SmartStandby();
 	cache: SmartStandby;
 	public smartStandbyStartTime: string;
@@ -28,10 +28,12 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	showDropDown: boolean[];
 	toggleSubscription: Subscription;
 	checkbox = false;
-	isCollapsed = false;
-	public automodeBtnVal = true;
-	public manualmodeBtnVal = false;
+	isCollapsed = true;
 	public isAutonomicCapability = false;
+	public smartStandByInterval: any;
+	public caption = this.translate.instant('device.deviceSettings.power.smartStandby.description');
+	public tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.tooltip');
+	firstTimeLoad: boolean;
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
 	constructor(
@@ -39,12 +41,14 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		public powerService: PowerService,
 		private logger: LoggerService,
 		public commonService: CommonService,
-		public smartStandbyService: SmartStandbyService) {
+		public smartStandbyService: SmartStandbyService,
+		private translate: TranslateService, ) {
 		this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
 	}
 
 	ngOnInit() {
-		this.showSmartStandby();
+		this.firstTimeLoad = true;
+		this.getSmartStandbyCapability();
 		this.showDropDown = [false, false, false];
 		this.toggleSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onSmartStandbyNotification(notification);
@@ -52,29 +56,39 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	public showSmartStandby() {
-		this.initSmartStandby();
 		if (this.powerService.isShellAvailable) {
 			this.powerService.getSmartStandbyCapability()
 				.then((response: boolean) => {
-					console.log(' getSmartStandbyCapability response', response);
-					this.smartStandby.isCapable = response;
-					this.cache.isCapable = response;
-					this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
-					if (this.smartStandby.isCapable) {
-						this.setSmartStandbySection();
+					this.logger.info(' getSmartStandbyCapability response', response);
+					if (this.firstTimeLoad || response !== this.smartStandby.isCapable) {
+						this.smartStandby.isCapable = response;
+						this.cache.isCapable = response;
+						this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
+						if (this.smartStandby.isCapable) {
+							this.setSmartStandbySection();
+						}
 					}
-
 					this.smartStandbyCapability.emit(this.smartStandby.isCapable);
+
 				}).catch((error) => {
-					console.log('getSmartStandbyCapability Error', error.message);
+					this.logger.info('getSmartStandbyCapability Error', error.message);
 				});
 		}
+	}
+
+	public getSmartStandbyCapability() {
+		this.initSmartStandby();
+		this.showSmartStandby();
+		this.smartStandByInterval = setInterval(() => {
+			this.firstTimeLoad = false;
+			this.showSmartStandby();
+		}, 30000);
 	}
 
 	async setSmartStandbySection() {
 		if (this.powerService.isShellAvailable) {
 			const response = await this.powerService.getSmartStandbyEnabled();
-			console.log('getSmartStandbyEnabled response', response);
+			this.logger.info('getSmartStandbyEnabled response', response);
 			this.smartStandby.isEnabled = response;
 			this.cache.isEnabled = response;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
@@ -96,12 +110,15 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	initSmartStandby() {
-		this.getSmartStandbyIsAutonomic();
-		this.getIsAutonomicCapability();
+		this.autonomicCapabilityCheck();
 		this.initDataFromCache();
 		this.splitStartEndTime();
 	}
 
+	autonomicCapabilityCheck() {
+		this.getSmartStandbyIsAutonomic();
+		this.getIsAutonomicCapability();
+	}
 	initDataFromCache() {
 		this.cache = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
 		if (this.cache) {
@@ -120,13 +137,19 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	public onSmartStandbyToggle(event: any) {
+		this.showDropDown = [false, false, false];
+		if (this.isAutonomicCapability) {
+			this.isCollapsed = true;
+		} else {
+			this.isCollapsed = false;
+		}
 		const isEnabled = event.switchValue;
 		try {
-			console.log('setSmartStandbyEnabled entered', event);
+			this.logger.info('setSmartStandbyEnabled entered', event);
 			if (this.powerService.isShellAvailable) {
 				this.powerService.setSmartStandbyEnabled(isEnabled)
 					.then((value: number) => {
-						console.log('setSmartStandbyEnabled.then', value);
+						this.logger.info('setSmartStandbyEnabled.then', value);
 						if (value === 0) {
 							this.smartStandby.isEnabled = isEnabled;
 							this.cache.isEnabled = this.smartStandby.isEnabled;
@@ -170,13 +193,13 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.splitStartEndTime();
 		if (!this.showDiffNote) {
 			try {
-				console.log('setSmartStandbyStartEndTime entered', event);
+				this.logger.info('setSmartStandbyStartEndTime entered', event);
 				if (this.powerService.isShellAvailable) {
 					this.powerService.setSmartStandbyActiveStartEnd(activeStartEnd)
 						.then((value: number) => {
-							console.log('setSmartStandbyStartEndTime.then', value);
+							this.logger.info('setSmartStandbyStartEndTime.then', value);
 							if (value === 0) {
-								console.log('smartStandbyStartEndTime is set successfully');
+								this.logger.info('smartStandbyStartEndTime is set successfully');
 								this.cache.activeStartEnd = activeStartEnd;
 								this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
 							}
@@ -200,13 +223,13 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.cache.daysOfWeekOff = daysOfWeekOff;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
 		try {
-			console.log('setSmartStandbyDaysOfWeekOff entered', event);
+			this.logger.info('setSmartStandbyDaysOfWeekOff entered', event);
 			if (this.powerService.isShellAvailable) {
 				this.powerService.setSmartStandbyDaysOfWeekOff(daysOfWeekOff)
 					.then((value: number) => {
-						console.log('setSmartStandbyDaysOfWeekOff.then', value);
+						this.logger.info('setSmartStandbyDaysOfWeekOff.then', value);
 						if (value === 0) {
-							console.log('smartStandbyDaysOfWeekOff is set successfully');
+							this.logger.info('smartStandbyDaysOfWeekOff is set successfully');
 							this.cache.daysOfWeekOff = daysOfWeekOff;
 							this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
 						}
@@ -262,10 +285,14 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			if (this.powerService.isShellAvailable) {
 				this.powerService.getIsAutonomicCapability()
 					.then(response => {
-						console.log('===== getIsAutonomicCapability =====:', response);
+						this.logger.info('===== getIsAutonomicCapability =====:', response);
 						this.isAutonomicCapability = response || false;
 						if (!this.isAutonomicCapability) {
-							this.checkbox = true;						}
+							this.checkbox = false;
+							this.isCollapsed = false;
+							this.caption = this.translate.instant('device.deviceSettings.power.smartStandby.description2');
+							this.tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.oldTooltipText');
+						}
 					}).catch(error => {
 						this.logger.error('getIsAutonomicCapability', error.message);
 						return EMPTY;
@@ -281,7 +308,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			if (this.powerService.isShellAvailable) {
 				this.powerService.setSmartStandbyIsAutonomic(onOff)
 					.then((value: number) => {
-						console.log('setSmartStandbyIsAutonomic', value);
+						this.logger.info('setSmartStandbyIsAutonomic', value);
 					}).catch(error => {
 						this.logger.error('setSmartStandbyIsAutonomic', error.message);
 						return EMPTY;
@@ -298,7 +325,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 				this.powerService.getSmartStandbyIsAutonomic()
 					.then((response: boolean) => {
 						this.checkbox = response;
-						console.log('getSmartStandbyIsAutonomic:', response);
+						this.logger.info('getSmartStandbyIsAutonomic:', response);
 					}).catch(error => {
 						this.logger.error('getSmartStandbyIsAutonomic', error.message);
 						return EMPTY;
@@ -311,6 +338,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	onCheckboxClicked(event) {
+		this.showDropDown = [false, false, false];
 		this.checkbox = event;
 		this.setSmartStandbyIsAutonomic(this.checkbox);
 	}
@@ -318,19 +346,24 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	public onToggle(elem: HTMLElement) {
 		elem.focus();
 		this.isCollapsed = !this.isCollapsed;
-	}
-	public changeMode(automaticMode, manualMode) {
-		this.automodeBtnVal = automaticMode;
-		this.manualmodeBtnVal = manualMode;
+		this.showDropDown = [false, false, false];
 	}
 	public showUsageGraph() {
-		this.modalService.open(ModalSmartStandByComponent, { backdrop: 'static',
-		centered: true,
-		windowClass: 'smart-standBy-modal'});
+		if (this.smartStandby.isEnabled) {
+			const modalRef = this.modalService.open(ModalSmartStandByComponent, {
+				backdrop: 'static',
+				centered: true,
+				windowClass: 'smart-standBy-modal',
+				size: 'lg'
+			});
+			modalRef.componentInstance.isAutomatic = this.checkbox;
+		}
 	}
 
 	ngOnDestroy() {
-		this.toggleSubscription.unsubscribe();
+		clearTimeout(this.smartStandByInterval);
+		if (this.toggleSubscription) {
+			this.toggleSubscription.unsubscribe();
+		}
 	}
-
 }

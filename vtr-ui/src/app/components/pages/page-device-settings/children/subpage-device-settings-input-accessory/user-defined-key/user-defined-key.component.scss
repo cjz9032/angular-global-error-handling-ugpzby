@@ -1,17 +1,9 @@
 @import "../../../../../../app.theme.scss";
 
 .inputSection {
-	margin-top: 0.3rem;
+	margin-top: 1rem;
 	width: 75%;
-	@media #{$mediaquery_X28} {
-		margin-top: 1rem;
-	}
-	@media #{$mediaquery_X26} {
-		width: 72%;
-	}
-	@media #{$mediaquery_X27} {
-		width: 64%;
-	}
+
 
 	.dropdown-toggle::after {
 		display: none;
@@ -31,6 +23,14 @@
 		color: $shade_darker;
 		font-size: $body;
 		font-weight: $weight_light;
+	}
+
+	.udf-set-success {
+		color: $shade_blue;
+	}
+
+	.udf-set-failed {
+		color: $button_red_start;
 	}
 
 	.button {
@@ -94,7 +94,7 @@
 			padding: 1rem;
 			min-height: 7rem;
 			height: auto;
-			width:100%;
+			width: 100%;
 
 			&.btn-outline-shadow {
 				border: 1px solid $shade_lighter;
@@ -148,7 +148,7 @@
 		border-image: none;
 		box-shadow: 0px 0px 2.2rem rgba(0, 0, 0, 0.3);
 		font-size: 1.2rem;
-		font-weight: $weight_medium;
+		font-weight: bold;
 		text-transform: uppercase;
 		text-align: left;
 		color: $shade;
@@ -175,13 +175,15 @@
 		font-size: 1.2rem;
 		padding: 1rem;
 		width: 100%;
+		color: $shade_blue;
 
 		&:hover {
 			outline: $dark;
 		}
 
 		&::placeholder {
-			color: $shade_light;
+			color: $grey_dark;
+			font-size: $caption;
 			font-weight: $weight_medium;
 		}
 	}
@@ -199,6 +201,9 @@
 		::ng-deep .vtr-ui-switch-row .white-theme {
 			border-bottom: none !important;
 		}
+		.f12-img {
+			width: 10.1rem;
+		}
 	}
 }
 
@@ -211,6 +216,6 @@ div {
 	cursor: default;
 }
 
-.dropdown-toggle{
+.dropdown-toggle {
 	white-space: normal !important;
 }

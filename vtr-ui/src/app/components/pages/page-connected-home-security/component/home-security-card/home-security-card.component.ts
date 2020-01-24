@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
-import { HomeSecurityLocation } from 'src/app/data-models/home-security/home-security-location.model';
+import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.enum';
@@ -11,7 +11,7 @@ import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.
 	styleUrls: ['./home-security-card.component.scss']
 })
 export class HomeSecurityCardComponent implements OnInit {
-	@Input() location: HomeSecurityLocation;
+	@Input() location: DeviceLocationPermission;
 	@Input() permission: any;
 
 	constructor(
@@ -28,17 +28,7 @@ export class HomeSecurityCardComponent implements OnInit {
 		} else if (this.location && this.location.isLocationServiceOn) {
 			this.dialogService.openInvitationCodeDialog();
 		} else {
-			this.isShowCHSPermissionDialog().then((result) => {
-				if (result) {
-					this.dialogService.openCHSPermissionModal();
-				} else {
-					this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
-						if (status) {
-							this.dialogService.openInvitationCodeDialog();
-						}
-					});
-				}
-			});
+			this.showPermissionDialog('join');
 		}
 	}
 
@@ -48,32 +38,27 @@ export class HomeSecurityCardComponent implements OnInit {
 		} else if (this.location && this.location.isLocationServiceOn) {
 			this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.loading);
 		} else {
-			this.isShowCHSPermissionDialog().then((result) => {
-				if (result) {
-					this.dialogService.openCHSPermissionModal();
-				} else {
-					this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
-						if (status) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-							this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.loading);
-						}
-					});
-				}
-			});
+			this.showPermissionDialog('trail');
 		}
 	}
 
-	isShowCHSPermissionDialog(): Promise<boolean> {
-		return this.permission.getSystemPermissionShowed().then((result) => {
-			if (!result) {
-				if (this.location && this.location.isDeviceServiceOn && this.location.isComputerServiceOn) {
-					return false;
-				} else {
-					return true;
+	showPermissionDialog(dialog: string) {
+		if (this.location
+			&& !this.location.hasSystemPermissionShowed
+			&& this.location.isAllAppsServiceOn
+			&& this.location.isDeviceServiceOn) {
+			this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
+				if (status) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+					if (dialog === 'join') {
+						this.dialogService.openInvitationCodeDialog();
+					} else if (dialog === 'trial') {
+						this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.loading);
+					}
 				}
-			} else {
-				return true;
-			}
-		});
+			});
+		} else {
+			this.dialogService.openCHSPermissionModal(this.location);
+		}
 	}
 }

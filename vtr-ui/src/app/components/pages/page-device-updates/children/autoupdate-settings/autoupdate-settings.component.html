@@ -12,11 +12,11 @@
 					<ul class="list-group">
 						<li class="list-group-item"
 							*ngFor="let item of items">
-							<div class="media pl-3 align-items-center"
+							<div class="media pl-1 align-items-center"
 								id="{{item.name}}"
 								attr.aria-label="{{item.name}}">
 								<img [src]="item.leftImageSource|svgInline|async" />
-								<div class="media-body pb-0 mb-0 small pl-3">
+								<div class="media-body pb-0 mb-0 small pl-2">
 									<div class="d-flex justify-content-between align-items-center w-100">
 										<div class="update-title"
 											[innerHTML]="item.header| sanitize : 'html'"></div>

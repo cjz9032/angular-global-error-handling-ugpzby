@@ -11,38 +11,29 @@
 	}
 
 	.switch-container {
-		height: 12.5rem;
-		width: 12.5rem;
+		height: 12.4rem;
+		width: 12.4rem;
 		border-radius: $border_radius;
+		padding: 0.1rem 0 0;
 		&.focus-blue-outline {
 			&:focus::after {
 				border-radius: $border_radius;
 			}
 		}
-
-		@media #{$breakpoint_xl3} {
-			height: 10.5rem;
-			width: 10.5rem;
+		@media #{$breakpoint_xl2}{
+			width: 9.6rem;
 		}
-
-		@media #{$breakpoint_xl2} {
-			height: 9rem;
-			width: 9rem;
+		@media #{$breakpoint_xl}{
+			width: 9.6rem;
 		}
-
-		@media #{$breakpoint_xl} {
-			height: 9.5rem;
-			width: 9.5rem;
+		@media #{$breakpoint_lg}{
+			width: 12.4rem;
 		}
-
-		@media #{$breakpoint_lg} {
-			height: 21rem;
-			width: 21rem;
+		@media #{$breakpoint_md}{
+			width: 12.4rem;
 		}
-
-		@media #{$breakpoint_md} {
-			height: 13rem;
-			width: 13rem;
+		@media #{$breakpoint_sm}{
+			width: 12.4rem;
 		}
 
 		&.checked {
@@ -74,21 +65,14 @@
 		}
 
 		.title {
+			cursor: pointer;
 			text-transform: uppercase;
 			text-align: center;
-			font-size: 1.1rem;
-			margin: 0 0 0rem 0.6rem;
+			font-size: $fontsize_xs2;
+			// margin: 0 0 0rem 0.6rem;
 			font-weight: $weight_medium;
 			letter-spacing: 0;
-			overflow: hidden;
-
-			@media #{$breakpoint_lg} {
-				font-size: 2rem;
-			}
-
-			@media #{$breakpoint_md} {
-				font-size: 1.1rem;
-			}
+			// overflow: hidden;
 		}
 
 		.icon-container {
@@ -104,12 +88,7 @@
 			@media #{$breakpoint_xl3} {
 				height: 4.5rem;
 				width: 4.5rem;
-				margin: 0.4rem auto;
-			}
-
-			@media #{$breakpoint_xl2} {
-				height: 3.5rem;
-				width: 3.5rem;
+				margin: 0.5rem auto;
 			}
 
 			@media #{$breakpoint_xl} {
@@ -132,21 +111,26 @@
 				line-height: 1.3em;
 				@media #{$breakpoint_xl3} {
 					font-size: 3.5rem;
+					line-height: 4.5rem;
 				}
 
 				@media #{$breakpoint_xl2} {
 					font-size: 2.7rem;
+					line-height: 4.3rem;
 				}
 
 				@media #{$breakpoint_xl} {
 					font-size: 3.7rem;
+					line-height: 5rem;
 				}
 				@media #{$breakpoint_lg} {
 					font-size: 4.5rem;
+					line-height: 6rem;
 				}
 
 				@media #{$breakpoint_md} {
 					font-size: 4.5rem;
+					line-height: 6rem;
 				}
 			}
 
@@ -170,13 +154,17 @@
 			.on-label {
 				color: $light;
 			}
-			@media #{$breakpoint_lg} {
-				font-size: 2rem;
-			}
+			// @media #{$breakpoint_lg} {
+			// 	font-size: 2rem;
+			// }
 
-			@media #{$breakpoint_md} {
-				font-size: 1.1rem;
-			}
+			// @media #{$breakpoint_md} {
+			// 	font-size: 1.1rem;
+			// }
+		}
+
+		.is-visible {
+			visibility: hidden;
 		}
 	}
 }
@@ -184,6 +172,6 @@
 	opacity: 0.65;
 }
 .disable-container {
-	cursor: not-allowed !important;
+	cursor: default !important;
 	color: lightgray;
 }

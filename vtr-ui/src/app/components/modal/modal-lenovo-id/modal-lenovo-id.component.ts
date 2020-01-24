@@ -1,88 +1,16 @@
 import { Component, OnInit, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from '../../../services/user/user.service';
 import { SupportService } from '../../../services/support/support.service';
 import { DevService } from '../../../services/dev/dev.service';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { ssoErroType } from 'src/app/enums/lenovo-id-key.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-
-enum ssoErroType {
-
-	SSO_ErrorType_NoErr = 0,
-
-	//
-	// server error type
-	//
-
-	// Invalid request parameters, some parameters may be empty
-	SSO_ErrorType_InvalidParam,
-
-	// Sign error
-	SSO_ErrorType_SignInFailed,
-
-	// Invalid aid
-	SSO_ErrorType_InvalidAID,
-
-	SSO_ErrorType_InvalidDidByServer,
-
-	// Invalid UAD
-	SSO_ErrorType_InvalidUAD,
-
-	// Invalid UD
-	SSO_ErrorType_InvalidUD,
-
-	// Invalid UAD type
-	SSO_ErrorType_InvalidUADType,
-
-	// ClientTimeStamp is incorrect
-	SSO_ErrorType_TimeStampIncorrect,
-
-	// Server Error
-	SSO_ErrorType_ServerError = -99,
-
-	//
-	// sso client error type
-	//
-
-	// Unknown/Undefined client error
-	SSO_ErrorType_Unknown = 1000,
-
-	// Error communicating with server
-	SSO_ErrorType_Conmmunicating,
-
-	// Invalid response from server
-	SSO_ErrorTyoe_InvalidResponse,
-
-	// Invalid response logon URL returned from server
-	SSO_ErrorType_InvalidURL,
-
-	// Invalid dId returned from server
-	SSO_ErrorType_InvalidDID,
-
-	// Error accessing Windows credential manager
-	SSO_ErrorType_CannotAccessCredential,
-
-	// Problem obtaining MTM/serial number
-	SSO_ErrorType_MTMORSerialNumber,
-
-	// custom
-	// the user was not signed in yet,
-	SSO_ErrorType_NotSignedIn = 2000,
-
-	SSO_ErrorType_UnknownCrashed = 2001,
-
-	SSO_ErrorType_DisConnect = 2002,
-
-	SSO_ErrorType_SSORequestTimeOut = 2003,
-
-	SSO_ErrorType_AccountPluginDoesnotExist = 2004,
-}
+import * as CryptoJS from 'crypto-js';
 
 @Component({
 	selector: 'vtr-modal-lenovo-id',
@@ -110,7 +38,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		private devService: DevService,
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
-		private modalService: NgbModal,
+		private modalService: NgbModal
 	) {
 		this.cacheCleared = false;
 		this.isBroswerVisible = false;
@@ -133,54 +61,15 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		}
 	}
 
-	// error is come from response status of LID contact request
-	popupErrorMessage(error: number) {
-		const modalRef = this.modalService
-			.open(ModalCommonConfirmationComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'common-confirmation-modal'
-			});
-
-		const header = 'lenovoId.ssoErrorTitle';
-		let description = 'lenovoId.ssoErrorCommonEx';
-
-		switch (error) {
-			case ssoErroType.SSO_ErrorType_TimeStampIncorrect:
-				description = 'lenovoId.ssoErrorTimeStampIncorrect';
-				break;
-
-			case ssoErroType.SSO_ErrorType_DisConnect:
-				description = 'lenovoId.ssoErrorNetworkDisconnected';
-				break;
-
-			case ssoErroType.SSO_ErrorType_Conmmunicating:
-				description = 'lenovoId.ssoErrorCommunicating';
-				break;
-
-			case ssoErroType.SSO_ErrorType_AccountPluginDoesnotExist:
-				description = 'lenovoId.ssoErrorAccountPluginNotExist';
-				break;
-
-			default:
-				description = 'lenovoId.ssoErrorCommonEx';
-				break;
-		}
-		modalRef.componentInstance.CancelText = '';
-		modalRef.componentInstance.header = header;
-		modalRef.componentInstance.description = description;
-	}
-
-	ngOnInit() {
+	async ngOnInit() {
 		if (!this.webView) {
 			this.devService.writeLog('ModalLenovoIdComponent constructor: webView object is undefined, critical error exit!');
 			this.activeModal.dismiss();
 			return;
 		}
 
-		this.webView.create('<div style=\'display: block;position: fixed;z-index: 1;padding-top:5%;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);\'>  <div class=\'queryHeight\'>  <style>.queryHeight { position: relative;background-color: #fefefe;margin: auto;padding: auto;border: 1px solid #888;max-width: 460px; height: 80%;} @media only screen and (min-height: 768px) {.queryHeight{height: 60%;}} @media only screen and (min-height: 1080px) {.queryHeight{height: 50%;}} @media only screen and (min-height: 2160px) {.queryHeight{height: 40%;}} .close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}.close:hover,.close:focus {  color: black;  text-decoration: none;  cursor: pointer;} @keyframes spinner {  to {transform: rotate(360deg);}} .spinner:before {  content: \'\';  box-sizing: border-box;  position: absolute;  top: 50%;  left: 50%;  width: 60px;  height: 60px;  margin-top: -15px;  margin-left: -30px;  border-radius: 50%;  border: 3px solid #ccc;  border-top-color: #07d;  animation: spinner .6s linear infinite;} </style>  <div id=\'btnClose\' style=\'padding: 2px 16px;background-color: white;color: black;border-bottom: 1px solid #e5e5e5;\'>  <span class=\'close\' id=\'txtClose\' aria-current=\'true\'>&times;</span> <div style=\'height:45px;\'></div>  </div>    <div style=\'height: 100%; min-height: 400px;\' id=\'webviewBorder\'> <div id=\'spinnerCtrl\' class=\'spinner\'></div> <div id=\'webviewPlaceHolder\' attr.aria-label=\'lid-login-dialog-webview\'></div>    </div>  </div></div>');
-		this.webView.show();
+		await this.webView.create('<div style=\'display: block;position: fixed;z-index: 1;padding-top:5%;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);\'>  <div class=\'queryHeight\'>  <style>.queryHeight { position: relative;background-color: #fefefe;margin: auto;padding: auto;border: 1px solid #888;max-width: 460px; height: 80%;} @media only screen and (min-height: 768px) {.queryHeight{height: 60%;}} @media only screen and (min-height: 1080px) {.queryHeight{height: 50%;}} @media only screen and (min-height: 2160px) {.queryHeight{height: 40%;}} .close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}.close:hover,.close:focus {  color: black;  text-decoration: none;  cursor: pointer;} @keyframes spinner {  to {transform: rotate(360deg);}} .holder { position: absolute; width: 60px; height: 60px; left: 50%; top: 50%; transform: translate(-50%, -50%); } .holder .spinner { display: block; width: 100%; height: 100%; border-radius: 50%; border: 3px solid #ccc; border-top-color: #07d; animation: spinner .8s linear infinite; } </style>  <div id=\'btnClose\' style=\'padding: 2px 16px;background-color: white;color: black;border-bottom: 1px solid #e5e5e5;\'>  <span class=\'close\' id=\'txtClose\' aria-current=\'true\'>&times;</span> <div style=\'height:45px;\'></div>  </div>    <div style=\'height: 100%; min-height: 400px;\' id=\'webviewBorder\'> <div class=\'holder\'><span id=\'spinnerCtrl\' class=\'spinner\'></span></div> <div id=\'webviewPlaceHolder\' attr.aria-label=\'lid-login-dialog-webview\'></div>    </div>  </div></div>');
+		await this.webView.show();
 		this.eventBind = this.onEvent.bind(this);
 		this.startBind = this.onNavigationStart.bind(this);
 		this.completeBInd = this.onNavigationCompleted.bind(this);
@@ -190,10 +79,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 		if (!this.cacheCleared) {
 			// Hide browser while clearing cache
-			this.webView.changeVisibility('webviewPlaceHolder', false);
+			await this.webView.changeVisibility('webviewPlaceHolder', false);
 
 			// This is the link to clear cache for SSO production environment
-			this.webView.navigate('https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
+			await this.webView.navigate('https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
 			this.cacheCleared = true;
 		}
 	}
@@ -217,7 +106,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	//  1, user have to back to the app and log in again after he/she created account in the brwoser;
 	//  2, if url was changed by facebook the workaround will not work anymore.
 	//
-	onNavigationStart(e) {
+	async onNavigationStart(e) {
 		const self = this;
 		if (!e) {
 			return;
@@ -230,7 +119,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			url.indexOf('accounts.google.com') !== -1 ||
 			url.indexOf('login.live.com') !== -1 ||
 			url.indexOf('login.yahoo.co.jp') !== -1) {
-			this.webView.changeVisibility('spinnerCtrl', true);
+			await this.webView.changeVisibility('spinnerCtrl', true);
 		}
 
 		if (url.indexOf('facebook.com/r.php') !== -1 ||
@@ -244,11 +133,11 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			// EventArgs.preventDefault();
 			return;
 		} else {
-			self.webView.changeVisibility('webviewPlaceHolder', false);
+			await self.webView.changeVisibility('webviewPlaceHolder', false);
 		}
 	}
 
-	onNavigationCompleted(e) {
+	async onNavigationCompleted(e) {
 		const self = this;
 		if (!e) {
 			return;
@@ -258,8 +147,8 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			if (eventData.url.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
 				return;
 			}
-			self.webView.changeVisibility('spinnerCtrl', false);
-			self.webView.changeVisibility('webviewPlaceHolder', true);
+			await self.webView.changeVisibility('spinnerCtrl', false);
+			await self.webView.changeVisibility('webviewPlaceHolder', true);
 			const htmlContent = eventData.content;
 			try {
 				// Parse html content to get user info
@@ -274,6 +163,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					const userguid = (el.querySelector('#userguid') as HTMLInputElement).value;
 					const firstname = (el.querySelector('#firstname') as HTMLInputElement).value;
 					const lastname = (el.querySelector('#lastname') as HTMLInputElement).value;
+					if (firstname && userguid) {
+						const encryptedFirstName = CryptoJS.AES.encrypt(firstname, userguid).toString();
+						this.commonService.setLocalStorageValue(LocalStorageKey.LidUserFirstName, encryptedFirstName);
+					}
 					// Default to enable SSO after login success
 					self.userService.enableSSO(useruad, username, userid, userguid).then(result => {
 						if (result.success && result.status === 0) {
@@ -292,9 +185,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			}
 		} else {
 			// Handle error
-			self.activeModal.dismiss();
+			self.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
+			self.devService.writeLog('onNavigationCompleted: navigation completed unsuccessfully!');
 			self.userService.sendSigninMetrics('failure', self.starterStatus, self.everSignIn, self.appFeature);
-			self.devService.writeLog('onNavigationCompleted: Login failed!');
+			self.activeModal.dismiss();
 		}
 	}
 
@@ -394,7 +288,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					return;
 				} else {
 					// Change UI language to current system local or user selection saved in cookie
-					self.supportService.getMachineInfo().then((machineInfo) => {
+					self.supportService.getMachineInfo().then(async (machineInfo) => {
 						const lang = self.userService.getLidLanguageSelectionFromCookies('https://passport.lenovo.com');
 						if (lang !== '') {
 							if (self.isLidSupportedLanguage(lang)) {
@@ -405,23 +299,23 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 						} else {
 							loginUrl += '&lang=' + self.getLidSupportedLanguageFromLocale(machineInfo.locale);
 						}
-						self.webView.navigate(loginUrl);
+						await self.webView.navigate(loginUrl);
 						self.devService.writeLog('Loading login page ', loginUrl);
-					}, error => {
-						self.webView.navigate(loginUrl);
+					}, async error => {
+						await self.webView.navigate(loginUrl);
 						self.devService.writeLog('getMachineInfo() failed ' + error + ', loading default login page ' + loginUrl);
 					});
 				}
 			} else {
-				self.popupErrorMessage(result.status);
+				self.userService.popupErrorMessage(result.status);
 				self.devService.writeLog('getLoginUrl() failed ' + result.status);
 				self.activeModal.dismiss();
 			}
 		}).catch((error) => {
-			if (error && error.errorcode && error.errorcode === 513) {
-				self.popupErrorMessage(ssoErroType.SSO_ErrorType_AccountPluginDoesnotExist);
+			if (error && error.errorcode === 513) {
+				self.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_AccountPluginDoesnotExist);
 			} else {
-				self.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
+				self.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
 			}
 			self.activeModal.dismiss();
 		});
@@ -436,7 +330,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					this.devService.writeLog('onNotification() NetworkStatus: ' + notification.type);
 					const currentIsOnline = notification.payload.isOnline;
 					if (!currentIsOnline && this.isOnline !== currentIsOnline) {
-						this.popupErrorMessage(ssoErroType.SSO_ErrorType_DisConnect);
+						this.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_DisConnect);
 						this.activeModal.dismiss();
 					}
 					this.isOnline = currentIsOnline;
@@ -447,13 +341,14 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		}
 	}
 
-	ngOnDestroy(): void {
+	async ngOnDestroy(): Promise<void> {
 		if (this.webView) {
 			this.webView.removeEventListener('eventtriggered', this.eventBind);
 			this.webView.removeEventListener('navigationstarting', this.startBind);
 			this.webView.removeEventListener('navigationcompleted', this.completeBInd);
-			this.webView.close();
-			this.webView = null;
+			await this.webView.close();
+			// Should not set webview to null, otherwise other references to webview will possibly raise unhandled null reference exception (FR: 5%)
+			// underlayer wrapper of webview in Vantage shell still has valid webview after close().
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();

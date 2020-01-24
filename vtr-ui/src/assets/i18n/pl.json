@@ -17,7 +17,7 @@
                         "balText": "Normalna prędkość CPU i wentylatora",
                         "quietText": "Mniejsza prędkość CPU i wentylatora"
                     },
-                    "wifiSecurity": "Bezp. Wi-Fi",
+                    "wifiSecurity": "Bezp. WiFi",
                     "dolby": "Dolby",
                     "rapidCharge": "Szybkie ładowanie"
                 },
@@ -80,14 +80,15 @@
                     "line1": "Dzięki opcji Vantage Edge ustawienia zostaną automatycznie dostrojone w zależności od sposobu użytkowania. \n Maksymalna wydajność podczas grania, dłuższa żywotność baterii, gdy nie grasz.",
                     "line2": "<b>Omówienie zarządzania funkcją</b> <br> Niektóre funkcje nie są dostępne na wszystkich urządzeniach",
                     "line3": "<b>Przetaktowywanie CPU </b><br> Zwiększ maksymalną prędkość procesora",
-                    "line4": "<b>Przetaktowywanie RAM </b><br> Zwiększ maksymalną prędkość pamięci",
+                    "line4": "<b>Przetaktowywanie pamięci RAM </b><br> Zwiększ maksymalną prędkość pamięci",
                     "line5": "<b>Wspomaganie sieci </b><br> Określ priorytety ruchu sieciowego dla odtwarzanej gry",
                     "line6": "<b>Dolby </b><br> Dostrój dźwięk specjalnie do gier z technologią Dolby",
                     "line7": "<b>Tryb hybrydowy </b><br> Wyłącz zaawansowane ustawienia GPU, gdy nie grasz, aby zwiększyć wydajność baterii",
                     "line8": "<b>Szybkie ładowanie </b><br> Graj dłużej dzięki szybszemu ładowaniu baterii",
                     "line9": "<b>Blokada panelu dotyk. </b><br> Zapobiegnij błędom sterowania, wyłączając panel dotykowy na czas grania",
                     "line10": "<b>Autozamykanie </b><br> Wyczyść procesy, które nie są potrzebne do grania przed rozpoczęciem gry, aby zmaksymalizować dostępne zasoby systemowe",
-                    "line11": "<b>Tryb term </b><br> Ustaw preferowany profil urządzenia dotyczący prędkości wentylatora i sterowania chłodzeniem."
+                    "line11": "<b>Tryb term </b><br> Ustaw preferowany profil urządzenia dotyczący prędkości wentylatora i sterowania chłodzeniem.",
+                    "line12": "<b>Klawisz makr</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Najedź kursorem myszy na CPU/GPU/RAM i różne dyski, aby wyświetlić ich opis wraz z informacjami o producencie i modelu"
@@ -107,7 +108,8 @@
                     "sub1": "Pomoc techniczna",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                }
+                },
+                "smartPerformance": "Smart Performance"
             },
             "narrator": {
                 "pageTitle": {
@@ -613,7 +615,7 @@
                 "title": "Ochrona",
                 "sub1": "Moje zabezpieczenie",
                 "sub2": "Antywirus",
-                "sub3": "Bezpieczeństwo Wi-Fi",
+                "sub3": "Bezpieczeństwo WiFi",
                 "sub4": "Bezpieczeństwo hasła",
                 "sub5": "Ochrona internetowa",
                 "sub6": "Windows Hello"
@@ -629,10 +631,9 @@
             "title": "Doradca zabezpieczeń",
             "subtitle": "SPRAWDŹ, CZY URZĄDZENIE JEST ZABEZPIECZONE.",
             "antiVirus": "Antywirus",
-            "wifi": "Bezpieczeństwo Wi-Fi",
+            "wifi": "Bezpieczeństwo WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "WŁĄCZONO",
             "disabled": "WYŁĄCZONO",
             "partiallyProtected": "CZĘŚCIOWO CHRONIONE",
@@ -642,11 +643,14 @@
             "installing": "INSTALOWANIE",
             "notFound": "NIE ZNALEZIONO",
             "registered": "ZAREJESTROWANY",
-            "notRegistered": "NIE ZAREJESTROWANY"
+            "notRegistered": "NIE ZAREJESTROWANY",
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Pytania i odpowiedzi dotyczące Twojej maszyny",
-            "subtitle": "ZNAJDŹ NIEKTÓRE POMOCNE WSKAZÓWKI DLA TWOJEGO URZĄDZENIA.",
+            "subtitle": "Zobacz przydatne wskazówki dotyczące Twojego urządzenia.",
             "question1": "Tworzenie kopii zapasowych plików i ich przywracanie",
             "question2": "Jak odświeżyć komputer",
             "question3": "Jak sprawdzić procesor komputera",
@@ -668,6 +672,9 @@
         },
         "app-update": {
             "message": "Witaj! Dostępna jest nowsza wersja Vantage, czy chcesz ją pobrać?"
+        },
+        "offline": {
+            "connectToUseFeature": "Połącz się z Internetem, aby korzystać z tej funkcji"
         }
     },
     "privacy": {
@@ -705,7 +712,9 @@
         "offlineInfo": {
             "title": "Nie wykryto połączenia z Internetem.",
             "subtitle": "Uzyskaj więcej informacji, jak rozwiązać problemy z połączeniem w naszym",
-            "buttonText": "Uzyskaj pomoc techniczną"
+            "buttonText": "Uzyskaj pomoc techniczną",
+            "welcomeToVantage": "Witamy w aplikacji Vantage nowej generacji",
+            "systemHealth": "Stan systemu"
         },
         "feedback": {
             "title": "Przekaż opinię",
@@ -713,20 +722,24 @@
             "button": "Przekaż opinię",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Komentarze...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Dziękujemy za opinie!"
-                },
                 "question1": "Czy podoba Ci się nowy styl aplikacji Vantage?",
                 "question2": "Czy uważasz, że wydajność jest zadowalająca?",
                 "question3": "Czy masz zamiar częściej korzystać z tej aplikacji w przyszłości?",
+                "question4": "Czy wiesz, że możesz skorzystać z programu Lenovo Vantage w celu aktualizacji sterowników oprogramowania, oprogramowania układowego i systemu BIOS na komputerze?",
+                "question5": "Jak prawdopodobne jest, że polecisz program Lenovo Vantage znajomemu?",
+                "notAtAllLikely": "Wcale nieprawdopodobne",
+                "extremelyLikely": "Bardzo prawdopodobne",
                 "yes": "Tak",
                 "no": "Nie",
                 "tips1": "Przekaż dodatkowe komentarze",
+                "comments": "Komentarze...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Wyślij opinię",
-                "submitScreenShot": "Prześlij zrzut ekranu"
+                "submitScreenShot": "Prześlij zrzut ekranu",
+                "messages": {
+                    "feedbackSuccess": "Dziękujemy za opinie!"
+                }
             }
         },
         "quickSettings": {
@@ -745,7 +758,7 @@
         },
         "systemStatus": {
             "title": "Stan systemu",
-            "subtitle": "SZYBKO SPRAWDŹ STAN URZĄDZENIA.",
+            "subtitle": "Szybko sprawdź stan urządzenia.",
             "memory": {
                 "title": "Pamięć",
                 "detail": {
@@ -790,10 +803,10 @@
                 "title": "Aktualizacja systemu",
                 "notFound": "Nie znaleziono aktualizacji systemu",
                 "detail": {
-                    "uptoDate": "Oprogramowanie aktualne",
-                    "updatedOn": "zaktualizowano",
-                    "outdated": "Oprogramowanie przestarzałe",
-                    "neverRanUpdate": "nigdy nieaktualizowane"
+                    "uptoDate": "Aktualizacje sprawdzone ",
+                    "updatedOn": "sprawdzone ",
+                    "outdated": "Ostatnio nie sprawdzano aktualizacji ",
+                    "neverRanUpdate": "nigdy nie sprawdzano aktualizacji"
                 }
             },
             "extendedWarranty": "Rozszerz gwarancję",
@@ -837,7 +850,7 @@
                 "hour": "godzina",
                 "minutes": "minut(y)",
                 "minute": "minuta",
-                "charge": "CZAS CAŁKOWITEGO NAŁADOWANIA",
+                "charge": "Czas całkowitego ładowania",
                 "button": "ZOBACZ INFORMACJE DOTYCZĄCE AKUMULATORA",
                 "details": {
                     "title": "Informacje dotyczące akumulatora",
@@ -896,7 +909,7 @@
                     "NotGood": "<b>Akumulator nie jest w dobrym stanie.</b>",
                     "NotSupportACAdapter": "<b>Zasilacz nie jest obsługiwany.</b>",
                     "LimitedACAdapterSupport": "<b>Zasilacz nie zapewnia wystarczającej mocy.</b>",
-                    "MissingDriver": "<b>Sterownik Lenovo Power Manager</b> nie jest zainstalowany lub nie działa poprawnie. Uruchom usługę Windows Update, aby zainstalować najnowszy sterownik. Możesz także zainstalować sterownik <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">stąd</a>.",
+                    "MissingDriver": "<b>Sterownik Lenovo Power Manager</b> nie jest zainstalowany lub nie działa poprawnie. Uruchom usługę Windows Update, aby zainstalować najnowszy sterownik. Możesz także zainstalować sterownik <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">stąd</a>. Po zakończeniu instalacji, ponownie uruchom komputer.",
                     "StoreLimitation": "<b>Pojemność akumulatora to tylko {{value}}% pierwotnej pojemności</b> po pełnym naładowaniu.",
                     "HighTemperature": "<b>Rozładowywanie</b> zostało zatrzymane, ponieważ <b>temperatura akumulatora jest zbyt wysoka.</b>",
                     "TrickleCharge": "Akumulator <b>całkowicie się rozładował</b> i należy go ponownie naładować. Może to zająć dziesięć godzin lub więcej.",
@@ -904,12 +917,16 @@
                     "PermanentError": "Pojemność baterii <b>trwale spadła</b>. Wymień baterię na nową.",
                     "NotSupportACAdapterDetail": "<b>Zasilacz nie jest obsługiwany.</b> Komputer Lenovo nie obsługuje tego zasilacza. Może on spowodować nagłe zamknięcie. Podłącz odpowiedni zasilacz.",
                     "LimitedACAdapterSupportDetail": "<b>Zasilacz nie zapewnia wystarczającej mocy</b> komputerowi Lenovo, co ma wpływ na wydajność systemu i szybkość ładowania. Podłącz ponownie odpowiedni zasilacz.",
-                    "FullACAdapterSupport": "<b>Zasilanie {{acWattage}} W {{acAdapterType}} jest podłączone.</b>"
+                    "FullACAdapterSupport": "<b>Zasilanie {{acWattage}} W {{acAdapterType}} jest podłączone.</b>",
+                    "EmDriverInstalled": "Informacje dotyczące akumulatora niedostępne. Uruchom Windows Update-> Sprawdź aktualizacje, aby zainstalować sterownik <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Nie wykryto akumulatora",
-                "thresholdNote": "<b>Uwaga</b>: w celu zwiększenia żywotności akumulatora ustawiono go tak, aby przestał ładować się po osiągnięciu {{value}}%.",
+                "thresholdNote": "<b>Uwaga:</b> Nie można w pełni naładować akumulatora, gdy włączony jest próg ładowania akumulatora.",
                 "seeDetailsLink": "Zobacz szczegóły",
-                "gaugeResetWarning": "<b>Uwaga:</b> Trwa resetowanie wskaźnika stanu akumulatora. Proszę zachować zasilacz podłączony."
+                "gaugeResetWarning": "<b>Uwaga:</b> Trwa resetowanie wskaźnika stanu akumulatora. Proszę zachować zasilacz podłączony.",
+                "dualConditions": {
+                    "NotDetected": "<b>Nie wykryto podstawowego akumulatora.</b>"
+                }
             },
             "power": {
                 "title": "Zasilanie",
@@ -985,7 +1002,29 @@
                         }
                     },
                     "description5": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji. Ta funkcja ma trzy tryby (tryb cichy, tryb zrównoważony i tryb wydajności) i jest teraz dostępna za pomocą suwaka wydajności systemu Windows",
-                    "nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”."
+                    "nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”.",
+                    "dytc6": {
+                        "desc1": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji.",
+                        "desc2": "Ta funkcja ma tryby wymienione poniżej, a teraz się ją reguluje za pomocą suwaka wydajności systemu Windows. Aby do niej przejść, kliknij ikonę akumulatora na pasku zadań systemu Windows.",
+                        "desc3": "Niektóre tryby mogą się automatycznie dostosowywać w szerszym zakresie wydajności zależnie od Twojej aktywności. Aby włączyć tryb automatyczny, naciśnij kombinację klawiszy Fn+T.",
+                        "autoMode": {
+                            "title1": "Automatyczny tryb akumulatora",
+                            "desc1": "Suwak znajduje się po lewej stronie. Tryb jest dynamicznie przełączany na Cichy lub Akumulator, aby uzyskać najlepszy efekt pracy na prądzie stałym.",
+                            "title2": "Automatyczny tryb wydajności",
+                            "desc2": "Suwak znajduje się na środku lub nieco z prawej strony. Tryb jest dynamicznie przełączany na Cichy, Zrównoważony lub Wydajność, aby uzyskać najlepszy efekt pracy na prądzie przemiennym.",
+                            "title3": "Tryb wydajności",
+                            "desc3": "Suwak znajduje się po prawej stronie. Szybkość wentylatora i dopuszczalna temperatura powierzchni są wyższe dla uzyskania najlepszej wydajności."
+                        },
+                        "manualMode": {
+                            "title1": "Tryb cichy",
+                            "desc1": "Suwak znajduje się po lewej stronie. Szybkość wentylatora i wydajność są obniżone, w wyniku czego komputer staje się chłodniejszy i cichszy, a czas pracy akumulatora najdłuższy.",
+                            "title2": "Tryb zrównoważony",
+                            "desc2": "Suwak znajduje się na środku lub nieco z prawej strony. Szybkość wentylatora i wydajność są równoważone według aktualnych potrzeb, aby zapewnić efektywne działanie komputera.",
+                            "title3": "Tryb wydajności",
+                            "desc3": "Suwak znajduje się po prawej stronie. Szybkość wentylatora i dopuszczalna temperatura powierzchni są wyższe dla uzyskania najlepszej wydajności."
+                        },
+                        "desc3_1": "Niektóre tryby mogą się automatycznie dostosowywać w szerszym zakresie wydajności zależnie od Twojej aktywności. Aby wyłączyć tryb automatyczny, naciśnij Fn+ T."
+                    }
                 },
                 "powerSettings": {
                     "title": "Ustawienia zasilania",
@@ -1055,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "Tryb samolotowy",
-                        "description": "Chroń samolotowe gniazdko elektryczne, kontrolując ilość energii zużywanej przez system.Gdy Tryb samolotowy jest włączony, komputer zmniejsza zużycie energii, ograniczając szybkość ładowania akumulatora i wydajność systemu.",
+                        "description": "Funkcja umożliwia korzystanie z gniazdka elektrycznego w samolocie z określonym limitem mocy. Jeśli tryb samolotowy jest włączony, zużycie energii przez komputer zostaje zmniejszone do bezpiecznego poziomu przy jednoczesnym ograniczeniu szybkości ładowania akumulatora i wydajności systemu.",
                         "checkBoxDesc": "Autowykrywanie",
                         "note": "Jeśli automatyczne wykrywanie jest włączone, komputer przełączy się do samolotowego trybu zasilania, gdy wykryje, że znajduje się na pokładzie samolotu i wyłączy go po opuszczeniu samolotu."
                     },
@@ -1074,27 +1113,29 @@
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibracja do całkowitego naładowania",
                         "progressText2": "{{stage}} z {{stageNum}}: Kalibracja do niskiego poziomu naładowania baterii",
+                        "progressText3": "{{stage}} z {{stageNum}}: Kalibracja do wysokiego poziomu zasilania baterii",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Ukończono. Resetowanie zakończyło się powodzeniem.",
-                            "ERROR_SHUTDOWN": "Nie zakończono. System zostanie zamknięty.",
-                            "ERROR_LOGOFF": "Nie zakończono. Wylogowano użytkownika.",
-                            "ERROR_BATTERY_REMOVE": "Nie zakończono. Wyjęto akumulator.",
-                            "ERROR_BATTERY_REPLACE": "Nie zakończono. Wymieniono akumulator.",
-                            "ERROR_AC_DETTACH": "Nie zakończono. Odłączono zasilacz.",
-                            "ERROR_USER_CANCEL": "Nie zakończono. Zadanie anulowane przez użytkownika.",
-                            "ERROR_UNEXPECTED": "Nie zakończono. Wystąpił nieoczekiwany błąd."
+                            "ERROR_SUCCESS": "Ukończone: resetowanie powiodło się.",
+                            "ERROR_SHUTDOWN": "Niepowodzenie: System zostanie zamknięty.",
+                            "ERROR_LOGOFF": "Niepowodzenie: wylogowano użytkownika.",
+                            "ERROR_BATTERY_REMOVE": "Niepowodzenie: Wyjęto akumulator.",
+                            "ERROR_BATTERY_REPLACE": "Niepowodzenie: Wymieniono akumulator.",
+                            "ERROR_AC_DETTACH": "Niepowodzenie: Odłączono zasilacz.",
+                            "ERROR_USER_CANCEL": "Niepowodzenie: Zadanie anulowane przez użytkownika.",
+                            "ERROR_UNEXPECTED": "Niepowodzenie: wystąpił nieoczekiwany błąd."
                         },
                         "popup": {
-                            "description1": "Proces resetowania wygląda następująco:<br> Całkowicie naładuj akumulator  -->  Całkowicie rozładuj akumulator  -->  Całkowicie naładuj akumulator",
+                            "description1": "Proces resetowania wygląda następująco:<br>Całkowicie naładuj akumulator --> Rozładuj akumulator do niskiego poziomu --> Naładuj akumulator do wysokiego poziomu lub całkowicie",
                             "description2": "Uwaga: <br>1. Ten proces może zająć wiele godzin. W tym czasie należy unikać używania komputera.<br>2. Zamknij wszystkie otwarte aplikacje i podłącz komputer do zasilania sieciowego.<br>3. Podczas tego procesu funkcja progu ładowania akumulatora jest wyłączona.",
                             "continue": "Kontynuuj",
                             "cancel": "Anuluj",
                             "yes": "Tak",
                             "description3": "Czy na pewno chcesz zatrzymać resetowanie wskaźnika stanu akumulatora?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Uwaga: Można zresetować tylko jeden akumulator naraz.",
+                        "percentNote": "Note: During the process, the battery percentage might fluctuate."
                     }
                 },
                 "energyStar": {
@@ -1103,14 +1144,14 @@
                 },
                 "smartStandby": {
                     "title": "Inteligentne wstrzymanie",
-                    "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
-                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Ten okres jest optymalizowany na podstawie ustalonego przez ciebie harmonogramu lub otrzymanego przez nas twojego czasu użytkowania komputera. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowane dni; nie przełącza się w ogóle, jeśli według harmonogramu nie jest używany przez kilka kolejnych dni.",
+                    "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie wznawianie z <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">trybu wstrzymania</a> w godzinach bardziej intensywnego korzystania.",
+                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Ten okres jest optymalizowany na podstawie ustalonego przez ciebie harmonogramu lub Twojego czasu użytkowania komputera. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowane dni; nie przełącza się w ogóle, jeśli według harmonogramu nie jest używany przez kilka kolejnych dni.",
                     "timer": {
-                        "heading": "Typowe godziny korzystania przez ciebie z komputera",
+                        "heading": "Typowe godziny korzystania z komputera:",
                         "subHeading1": "rozpocząć się",
                         "subHeading2": "koniec",
                         "subHeading3": "używaj tego harmonogramu dla",
-                        "endTimeNote": "Czas od godziny początkowej do końcowej nie może przekraczać 20 godzin",
+                        "endTimeNote": "Czas od godziny POCZĄTKOWEJ do KOŃCOWEJ nie może przekraczać 20 godzin",
                         "timeUnits": {
                             "unit1": "Godziny",
                             "unit2": "Minuty",
@@ -1124,13 +1165,14 @@
                     "warningtip": "Wybierz co najmniej jeden dzień.",
                     "days": {
                         "shortName": {
-                            "sun": "niedziela",
-                            "mon": "poniedziałek",
-                            "tue": "wtorek",
-                            "wed": "środa",
-                            "thurs": "czwartek",
-                            "fri": "piątek",
-                            "sat": "sobota"
+                            "sun": "Nie",
+                            "mon": "Pon",
+                            "tue": "Wto",
+                            "wed": "Śro",
+                            "thurs": "Czw",
+                            "fri": "Pią",
+                            "sat": "Sob",
+                            "thu": "Czw"
                         },
                         "name": {
                             "sun": "niedziela",
@@ -1143,18 +1185,55 @@
                         },
                         "everyday": "Codzienny",
                         "weekdays": "Dni powszednie",
-                        "weekends": "Weekendy"
+                        "weekends": "Weekendy",
+                        "noDaySelected": "Nie wybrano dnia"
                     },
                     "checkbox": "Automatyczne dostosowywanie czasu aktywacji komputera na podstawie użytkowania",
-                    "hyperlinkToGraph": "Kliknij, aby zobaczyć tabelę aktywności i czasu aktywacji twojego komputera",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer"
+                    "hyperlinkToGraph": "Kliknij, aby zobaczyć użycie i zastosowany czas aktywności",
+                    "subTitle": "Ustaw harmonogram pracy komputera",
+                    "automaticMode": "Tryb automatyczny",
+                    "manualMode": "Tryb ręczny",
+                    "subNote": "Można zaplanować szybsze wznowienie pracy komputera w zależności od sposobu użytkowania.",
+                    "graph": {
+                        "graph1Tittle": "Użytkowanie komputera",
+                        "graph2Tittle": "Zastosowany czas aktywności",
+                        "graphSubtittle": "W tych okresach komputer pozostaje gotowy do szybszego wznowienia pracy.",
+                        "graphNote": "Dane o aktywności komputera nie są wystarczające, aby zapewnić profil do automatycznego planowania harmonogramu. Tryb Smart Standby będzie korzystać z harmonogramu trybu ręcznego, aż dostępna będzie wystarczająca ilość danych.",
+                        "legends": {
+                            "none": "Brak",
+                            "frequent": "Często"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
+                    "subTitle2": "Ustaw typowe godziny korzystania z komputera",
+                    "oldTooltipText": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Okres bezczynności jest optymalizowany na podstawie ustawionego harmonogramu. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowanych dniach, a nie przełącza się w ogóle, jeśli nie jest używany przez kilka kolejnych zaplanowanych dni.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1236,6 +1315,15 @@
                 },
                 "display": {
                     "title": "Wyświetlanie",
+                    "displayColorTemperature": {
+                        "title": "Temperatura barwowa ekranu",
+                        "description": "Możesz dostosowywać temperaturę barwową ekranu, odfiltrowując niebieskie światło męczące oczy. Z kolei w okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
+                        "link": {
+                            "click": "Kliknij",
+                            "here": "tutaj",
+                            "rest": "aby zmienić temperaturę barwową."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Tryb ochrony oczu",
                         "checkbox": "Ustaw tryb ochrony oczu od zachodu do wschodu słońca",
@@ -1249,7 +1337,8 @@
                         "note": {
                             "title": "Uwaga",
                             "description": "Aplikacja Lenovo Vantage musi uzyskać dostęp do informacji o lokalizacji w celu obliczenia czasu zachodu i wschodu słońca w Twoim regionie."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura barwowa ekranu",
@@ -1285,11 +1374,24 @@
                             "minutes": "minut(y)",
                             "alwaysOn": "Zawsze włączone",
                             "never": "nigdy",
-                            "halfTime": "Połowa czasu wyłączenia wyświetlacza"
+                            "halfTime": "Połowa czasu wyłączenia wyświetlacza",
+                            "select": "Wybierz",
+                            "time": "Czas"
                         },
                         "taskBarDimmer": "PRZYCIEMNIANIE PASKA ZADAŃ",
                         "backgroundDimmer": "PRZYCIEMNIANIE TŁA",
                         "displayDimmer": "PRZYCIEMNIANIE EKRANU"
+                    },
+                    "displayPriority": {
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optional Module"
+                        }
                     }
                 },
                 "camera": {
@@ -1430,22 +1532,93 @@
                         "title": "ZASTOSUJ"
                     },
                     "website": {
-                        "url": "ADRES URL WITRYNY"
+                        "url": "ADRES URL WITRYNY",
+                        "successMessage": "Ustawienia zostały pomyślnie zastosowane.",
+                        "invalidURLMessage": "Wprowadź prawidłowy adres URL.",
+                        "placeholder": "Zacznij od http:// lub https://"
                     },
                     "enterText": {
-                        "title": "TEKST DO WPROWADZENIA"
+                        "title": "TEKST DO WPROWADZENIA",
+                        "placeholder": "Proszę wpisać tutaj"
                     }
                 },
                 "fnCtrlKey": {
                     "title": "Klawisz przełączania Fn i Ctrl",
                     "description": "Jeśli zwykle naciskasz klawisz Fn, gdy chcesz nacisnąć klawisz Ctrl, funkcje tych dwóch klawiszy można zamienić.",
-                    "restartNote": "Zamiana funkcji dwóch klawiszy wymaga ponownego uruchomienia komputera. Czy na pewno chcesz ponownie go uruchomić?"
+                    "restartNote": "Zamiana funkcji dwóch klawiszy wymaga ponownego uruchomienia komputera. Czy na pewno chcesz ponownie go uruchomić?",
+                    "title2": "W przypadku często używanych kombinacji klawiszy klawisz Fn działa jak klawisz Ctrl",
+                    "description2": "Klawisz Fn działa jak klawisz Ctrl w przypadku niektórych często używanych kombinacji klawiszy. Działanie klawisza Ctrl nie ulega zmianie.",
+                    "featureNote": "Opisana funkcja, klawisz Fn i funkcja zamiany klawisza Ctrl nie mogą być włączone jednocześnie. Jeśli jeden z trybów jest włączony, drugi zostanie automatycznie wyłączony.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Klawisze Fn",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Klawisze Ctrl",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Działanie",
+                            "action1": "Wybierz wszystkie",
+                            "action2": "Kopiuj",
+                            "action3": "Dodaj stronę WWW do moich ulubionych",
+                            "action4": "Wyszukiwanie",
+                            "action5": "Znajdź i zamień w programie Microsoft Word",
+                            "action6": "Wyrównaj do lewej i prawej w programie Microsoft Word",
+                            "action7": "Zakończ (w obsługiwanych aplikacjach)",
+                            "action8": "Dodaj podkreślenie",
+                            "action9": "Wklej",
+                            "action10": "Zamknij (w aplikacji)",
+                            "action11": "Wytnij",
+                            "action12": "Ponów",
+                            "action13": "Cofnij"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "WIĘCEJ",
                     "control1": "PRZYCISKI PANELU DOTYKOWEGO",
                     "control2": "PRZYCISKI MYSZY",
-                    "control3": "PRZYCISKI TRACKPOINTA"
+                    "control3": "PRZYCISKI TRACKPOINTA",
+                    "less": "LESS"
+                },
+                "backlight": {
+                    "title": "Podświetlenie klawiatury",
+                    "description": {
+                        "base": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając klawisz Fn+spacja.",
+                        "auto": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając klawisz Fn+spacja, albo włączyć ustawienia automatyczne. Opcja „Automatyczna” automatycznie dostosowuje podświetlenie klawiatury do oświetlenia otoczenia."
+                    },
+                    "level": {
+                        "auto": "Automatyczny",
+                        "low": "Niski",
+                        "high": "Wysoki",
+                        "off": "Wyłącz"
+                    }
                 }
             }
         },
@@ -1607,12 +1780,12 @@
             "superResolution": {
                 "heading": "Inteligentne multimedia",
                 "title": "Skalowanie rozdzielczości wideo",
-                "desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label> Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Po włączeniu zaleca się podłączenie komputera do prądu przemiennego.</label></p>",
-                "tooltip": "Ta funkcja działa tylko w następujących odtwarzaczach: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać w trybie prądu stałego. Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
+                "tooltip": "Funkcja działa tylko w przypadku:<br>Windows Media player",
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
-                    "description1": "Komputer nie jest podłączony do zasilania prądem przemiennym, a poziom naładowania baterii jest niższy niż 20%.",
-                    "description2": "Komputer nie jest podłączony do zasilania prądem przemiennym, a tryb oszczędzania akumulatora jest włączony.",
+                    "description1": "Komputer nie jest podłączony do zasilania prądem przemiennym.",
+                    "description2": "Tryb oszczędzania baterii jest włączony.",
                     "description3": "Temperatura procesora jest za wysoka."
                 }
             },
@@ -1679,7 +1852,7 @@
         },
         "autoUpdateSettings": {
             "title": "Ustawienia automatycznych aktualizacji",
-            "subtitle": "AUTOMATYCZNA INSTALACJA AKTUALIZACJI",
+            "subtitle": "Automatyczne instalowanie aktualizacji",
             "critical": {
                 "title": "Aktualizacje krytyczne",
                 "tooltip": "Aktualizacje krytyczne mogą zapobiegać poważnym problemom, usterkom, awariom sprzętu lub uszkodzeniu danych."
@@ -1769,7 +1942,7 @@
             "localRepositoryDatabaseException": "Nie można znaleźć bazy danych lokalnego repozytorium albo jest ona uszkodzona.",
             "networkInterruptedException": "Serwer aktualizacji systemu jest obecnie niedostępny. Spróbuj ponownie później.",
             "helpCenterInvalidServerException": "Serwer aktualizacji systemu jest nieprawidłowy. Spróbuj ponownie później.",
-            "catalogNotFoundException": "Nie znaleziono odpowiednich aktualizacji do Twojego systemu.",
+            "catalogNotFoundException": "Brak odpowiednich aktualizacji dla systemu, jako że nie znaleziono katalogu aktualizacji.",
             "catalogCrcErrorException": "Katalog Twojego systemu jest obecnie aktualizowany. Spróbuj ponownie później.",
             "catalogErrorException": "Na serwerze aktualizacji systemu wykryto błąd związany z katalogiem aktualizacji Twojego systemu. Spróbuj ponownie później.",
             "fileNotFoundException": "Nie znaleziono pliku."
@@ -1792,7 +1965,7 @@
             "startDate": "Data rozpoczęcia: ",
             "endDate": "Data zakończenia: ",
             "status": "Stan: ",
-            "subDescription1": "Ten produkt jest objęty wieloletnią gwarancją ograniczoną i podlega usłudze serwisu wysyłkowego. Aby uzyskać więcej informacji, klienci mogą zadzwonić do lokalnego centrum serwisowego. Sprzedawcy mogą zapewniać usługę naprawy dla tego produktu po dostarczeniu go przez nabywcę.",
+            "subDescription1": "Ograniczona Gwarancja Lenovo ma zastosowanie do Twojego komputera i uprawnia do serwisu wysyłkowego. Aby uzyskać więcej informacji, klienci mogą zadzwonić do lokalnego centrum serwisowego. Sprzedawcy mogą zapewniać usługę naprawy dla tego produktu po dostarczeniu go przez nabywcę.",
             "subDescription2": "Nie znaleziono szczegółów gwarancji na Twoje urządzenie. Aby uzyskać więcej opcji gwarancji, odwiedź naszą witrynę wsparcia technicznego.",
             "viewWarrantyOptions": "WYŚWIETL OPCJE GWARANCJI",
             "offlineTips1": "Połącz się z Internetem, aby uzyskać najnowsze informacje o gwarancji.",
@@ -1804,7 +1977,7 @@
         },
         "needHelp": {
             "title": "Potrzebujesz pomocy?",
-            "description": "SKONTAKTUJ SIĘ Z NAMI, ABY UZYSKAĆ POMOC.",
+            "description": "Jeżeli potrzebujesz pomocy, skontaktuj się z nami.",
             "listLenovoCommunity": "Społeczność Lenovo",
             "listContactCustomerService": "Skontaktuj się z działem obsługi klienta",
             "listContactUsOnWechat": "Skontaktuj się z nami za pomocą aplikacji WeChat",
@@ -1815,7 +1988,7 @@
         },
         "quicklinks": {
             "title": "Szybkie odsyłacze",
-            "description": "SKONTAKTUJ SIĘ Z NAMI, ABY UZYSKAĆ POMOC.",
+            "description": "Jeżeli potrzebujesz pomocy, skontaktuj się z nami.",
             "listETicket": "Uzyskaj pomoc techniczną za pomocą zgłoszenia elektronicznego",
             "listServiceProvider": "Znajdź dostawcę usług",
             "listAboutLenovoVantage": "Informacje o Lenovo Vantage"
@@ -1826,7 +1999,7 @@
             "otherSoftwareLicenses": "Inne licencje na oprogramowanie",
             "ourWebsite": "Nasza witryna sieci Web",
             "aboutYourDevice": "Informacje o urządzeniu",
-            "copyright": "© 2002–2019 Lenovo Wszelkie prawa zastrzeżone"
+            "copyright": "© 2002–2020 Lenovo Wszelkie prawa zastrzeżone"
         },
         "quickAccess": {
             "categories": "Kategorie",
@@ -1837,9 +2010,7 @@
     "security": {
         "landing": {
             "fully": "Pełna ochrona",
-            "fullyDesc": "Gratulacje! Jesteś dobrze chroniony.",
             "notFully": "Brak pełnej ochrony",
-            "notFullyDesc": "Nie jesteś dobrze chroniony. Dowiedz się, jak lepiej chronić swoje urządzenie.",
             "security101": "DORADCA ZABEZPIECZEŃ 101",
             "firewall": "Zapora",
             "pwdHealth": "Bezpieczeństwo hasła",
@@ -1848,17 +2019,6 @@
             "wifiConnected": "WiFi i Bezpieczny Dom",
             "connectedHomeSecurity": "Bezpieczny Dom",
             "fingerprint": "Czytnik linii papilarnych",
-            "seeAllNetwork": "Zobacz wszystkie połączone sieci",
-            "maliciousNetwork": "Uniemożliwił komputerowi połączenie {{maliciousWifi}}ze złośliwymi sieciami w tym miesiącu.",
-            "good": "DOBRY",
-            "malicious": "ZŁOŚLIWY",
-            "suspicious": "PODEJRZANY",
-            "securityScoreDepends": "Twój wynik bezpieczeństwa zależy od tego, czy:",
-            "antivirus": "Używasz oprogramowania antywirusowego",
-            "password": "Używasz silnych i skomplikowanych haseł i zarządzasz nimi w bezpieczny sposób",
-            "vpn": "Monitorujesz narażenie sieci na ataki",
-            "wifi": "Szyfrujesz dane osobowe podczas korzystania z publicznej sieci WiFi",
-            "windowsHello": "Chronisz urządzenie, korzystając z opcji bezpiecznego logowania",
             "uacTitle": "Czym jest powiadomienie kontroli konta użytkownika?",
             "uacText": "Kontrola konta użytkownika jest bardzo ważną funkcją bezpieczeństwa systemu Windows, która pomaga zapobiegać wprowadzaniu zmian w systemie przez potencjalnie szkodliwe programy.",
             "windowsTitle": "Dlaczego muszę aktywować system Windows?",
@@ -1868,7 +2028,48 @@
             "passwordTitle": "Jak lepiej chronić hasło?",
             "passwordText": "Bezpiecznie przechowuj wszystkie hasła i nimi zarządzaj po zaszyfrowaniu przez profesjonalną cyfrową aplikację zabezpieczającą zamiast tylko przechowywać je w przeglądarce, do której dostęp bez twojej wiedzy mogą uzyskać osoby trzecie.",
             "enhanceTitle": "Co powinno się wykonać, aby zwiększyć ochronę?",
-            "enhanceText": "Zdecydowanie zalecamy, aby twoje urządzenia były chronione przez oprogramowanie antywirusowe i firewall, a przy minimalnej ochronie skonfiguruj powiadomienia kontroli konta użytkownika. Twórz silne hasła i zarządzaj nimi w bezpieczny sposób oraz szyfruj dane, aby korzystać z zaawansowanej ochrony przy używaniu sieci publicznej."
+            "enhanceText": "Zdecydowanie zalecamy, aby twoje urządzenia były chronione przez oprogramowanie antywirusowe i firewall, a przy minimalnej ochronie skonfiguruj powiadomienia kontroli konta użytkownika. Twórz silne hasła i zarządzaj nimi w bezpieczny sposób oraz szyfruj dane, aby korzystać z zaawansowanej ochrony przy używaniu sieci publicznej.",
+            "antivirusContent": "Zabezpiecz swoje urządzenia za pomocą oprogramowania antywirusowego, aby blokować, wykrywać i usuwać złośliwe oprogramowanie.",
+            "firewallContent": "Zapora tworzy barierę pomiędzy zaufaną siecią wewnętrzną a niezaufaną siecią zewnętrzną, która monitoruje i kontroluje przychodzący i wychodzący ruch sieciowy na podstawie wstępnie ustalonych reguł zabezpieczeń.",
+            "windowsActiveContent": "Korzystaj z oryginalnej kopii systemu Windows, aby zmniejszyć ryzyko wystąpienia zagrożeń dla bezpieczeństwa.",
+            "passwordContent": "Korzystaj z bezpieczniejszego i łatwiejszego sposobu zarządzania hasłami, płatnościami i danymi osobowymi. Możesz również tworzyć silne, złożone hasła i natychmiastowo logować się na każdej stronie.",
+            "fingerprintContent": "Szybki i bezpieczny sposób logowania się do systemu Windows, dokonywania płatności i łączenia się z aplikacjami i usługami.",
+            "uacContent": "Przesuń suwak, aby określić, w jakim stopniu Kontrola konta użytkownika ma chronić Cię przed potencjalnie szkodliwymi zmianami.",
+            "wifiContent": "Zaawansowana usługa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych.",
+            "bitLockerContent": "Zabezpiecz pliki i foldery przed nieautoryzowanym dostępem, szyfrując dane na dysku twardym.",
+            "vpnContent": "Korzystaj z usługi VPN, aby zaszyfrować informacje wysyłane i otrzymywane za pośrednictwem publicznej sieci Wi-Fi oraz zapewnić sobie bezpieczeństwo i prywatność w Internecie.",
+            "windows": "Aktywacja systemu Windows",
+            "goAntivirus": "przejdź do programu antywirusowego",
+            "goFirewall": "przejdź do zapory",
+            "goPassword": "przejdź do menedżera haseł",
+            "goWifi": "przejdź do zabezpieczeń Wi-Fi",
+            "goVpn": "przejdź do zabezpieczeń VPN",
+            "visitWindows": "Odwiedź Aktywacja systemu Windows",
+            "visitFingerprint": "Odwiedź Czytnik linii papilarnych",
+            "visitUac": "Odwiedź Kontrola konta użytkownika",
+            "visitHde": "Odwiedź Szyfrowanie dysku twardego",
+            "haveOwnPassword": "Mam własnego menedżera haseł",
+            "haveOwnWifi": "Mam własne zabezpieczenia Wi-Fi",
+            "haveOwnVpn": "Mam własne VPN",
+            "uac": "Kontrola konta użytkownika",
+            "uacTitles": "Kontrola konta użytkownika",
+            "hde": "Szyfrowanie dysku twardego",
+            "level": "Poziom zabezpieczeń:",
+            "noProtection": "Brak ochrony",
+            "noProtectionDesc": "Twoje urządzenie nie jest chronione, więc włączamy dla Ciebie program Windows Defender zapewniający podstawową ochronę. Aby zabezpieczyć urządzenie przed zewnętrznymi zagrożeniami, spróbuj zainstalować oprogramowanie antywirusowe.",
+            "basic": "PODSTAWOWA",
+            "basicTitle": "Podstawowa ochrona",
+            "basicDesc": "Urządzenie ma zapewnioną tylko podstawową ochronę. Aby zapewnić sobie lepszą ochronę, włącz powiadomienia kontroli konta użytkownika i korzystaj z menedżera haseł.",
+            "intermediate": "POŚREDNIA",
+            "intermediateTitle": "Pośrednia ochrona",
+            "intermediateDesc": "Brawo! Jesteś o krok od uzyskania zaawansowanej ochrony — spróbuj zaszyfrować dane i monitorować sieć pod kątem naruszeń zabezpieczeń.",
+            "advanced": "ZAAWANSOWANA",
+            "advancedTitle": "Zaawansowana ochrona",
+            "advancedDesc": "Gratulacje! Twoje urządzenie ma zapewnioną podstawową, pośrednią i zaawansowaną ochronę, świetna robota!",
+            "haveOwn": "Mam własne",
+            "basicSecurity": "PODSTAWOWE ZABEZPIECZENIA",
+            "advancedSecurity": "ZAAWANSOWANE ZABEZPIECZENIA",
+            "intermediateSecurity": "POŚREDNIE ZABEZPIECZENIA"
         },
         "antivirus": {
             "common": {
@@ -1954,7 +2155,7 @@
                 "back": "WSTECZ"
             },
             "container": {
-                "title": "Bezpieczeństwo Wi-Fi Lenovo",
+                "title": "Bezpieczeństwo WiFi Lenovo",
                 "name": "BEZPIECZEŃSTWO WIFI",
                 "enable": "WŁĄCZONO",
                 "disable": "WYŁĄCZONO",
@@ -1964,8 +2165,9 @@
                 "connect": "Połączony jako ostatni",
                 "showmore": "Pokaż więcej",
                 "showless": "Pokaż mniej",
-                "button": "Włącz funkcję Bezpieczeństwo Wi-Fi",
-                "disableDecribe": "Bezpieczeństwo Wi-Fi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych."
+                "button": "Włącz funkcję Bezpieczeństwo WiFi",
+                "disableDescribe": "Bezpieczeństwo WiFi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych.",
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Funkcja Detektor zagrożeń sprawdza bezpieczeństwo sieci wokół Ciebie.",
@@ -1999,6 +2201,7 @@
                 "subtitle": "Spokojny sen",
                 "subtitleDescribe": "Bezpieczny Dom wyśle zawiadomienie, jeśli wykryje lukę w Twoim urządzeniu lub sieci domowej, lub jeśli zostaniesz połączony z potencjalnie złośliwą siecią. Dowiedz się więcej o funkcji Bezpieczny Dom <tag>tutaj</tag>.",
                 "tryNow": "„Wypróbuj teraz”",
+                "visit": "Visit",
                 "goToChs": "go to connected home security"
             },
             "invitationcode": {
@@ -2039,7 +2242,7 @@
                 "pass": "POWIODŁO SIĘ",
                 "learnMoreAboutSecurityHealth": "Dowiedz się więcej o każdym z tych <tag>komponentów</tag>tutaj.",
                 "peaceOfMind": "Chcesz więcej spokoju?",
-                "button": "Włącz funkcję Bezpieczeństwo Wi-Fi"
+                "button": "Włącz funkcję Bezpieczeństwo WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2075,7 +2278,7 @@
             "getStarted2": "Włącz VPN i poczekaj krótką chwilę na potwierdzenie bezpiecznego połączenia.",
             "getStarted3": "W razie potrzeby zmień region lub lokalizację i korzystaj z bezpiecznej sieci prywatnej.",
             "poweredBySurfEasy": "Zasilane przez SurfEasy",
-            "privacyPolicyAndTermsOfService": "Przeczytaj więcej na temat <tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>"
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE MENEDŻER HASEŁ",
@@ -2104,7 +2307,7 @@
             "allowsYou3": "Bądź bezpieczny w niezabezpieczonych sieciach WiFi z wbudowanym VPN",
             "allowsYou4": "Bezpieczne udostępnianie haseł bez ujawniania ich",
             "poweredByDashLane": "Zasilany przez Dashlane",
-            "privacyPolicyAndTermsOfService": "Przeczytaj więcej na temat <tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>"
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2134,9 +2337,36 @@
         "logout": "Wyloguj",
         "unlockExclusives": "Odblokuj dodatki specjalne",
         "user": "Użytkownik",
-        "welcomeText": "Wygląda na pełnego energii {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Wygląda na pełnego energii!",
+        "welcomeText1": "Wygląda na pełnego energii, {{firstName}}!",
+        "welcomeText2": "Dobrze cię znowu widzieć, {{firstName}}",
+        "welcomeText3": "Co za miła niespodzianka, {{firstName}}",
+        "welcomeText4": "Uśmiechnij się, {{firstName}}, to zaraźliwe :)",
+        "welcomeText5": "Puk, puk, {{firstName}}",
+        "welcomeText6": "Jesteś w świetnym miejscu!",
+        "welcomeText7": "Dziś jest twój dzień, {{firstName}}!",
+        "welcomeText8": "Kto lubi świetne towarzystwo?",
+        "welcomeText9": "Zaczyna się zabawa, {{firstName}}!",
+        "welcomeText10": "Wyluzuj się i włącz Vantage",
+        "welcomeText11": "Więcej funkcji Vantage bardziej się opłaca",
+        "welcomeText12": "Zabierz Vantage do domu",
+        "welcomeText13": "Jedz. Śpij. Vantage. Powtórz.",
+        "welcomeText14": "W każdej chwili otrzymujesz nowy Vantage",
+        "welcomeText15": "Wykorzystaj w pełni Vantage",
+        "welcomeTextWithoutUserName1": "Wygląda na pełnego energii!",
+        "welcomeTextWithoutUserName2": "Dobrze cię znowu widzieć",
+        "welcomeTextWithoutUserName3": "Co za miła niespodzianka",
+        "welcomeTextWithoutUserName4": "Uśmiechnij się, to zaraźliwe :)",
+        "welcomeTextWithoutUserName5": "Puk, puk",
+        "welcomeTextWithoutUserName6": "Jesteś w świetnym miejscu!",
+        "welcomeTextWithoutUserName7": "Dziś jest twój dzień!",
+        "welcomeTextWithoutUserName8": "Kto lubi świetne towarzystwo?",
+        "welcomeTextWithoutUserName9": "Zaczyna się zabawa!",
+        "welcomeTextWithoutUserName10": "Wyluzuj się i włącz Vantage",
+        "welcomeTextWithoutUserName11": "Więcej funkcji Vantage bardziej się opłaca",
+        "welcomeTextWithoutUserName12": "Zabierz Vantage do domu",
+        "welcomeTextWithoutUserName13": "Jedz. Śpij. Vantage. Powtórz.",
+        "welcomeTextWithoutUserName14": "W każdej chwili otrzymujesz nowy Vantage",
+        "welcomeTextWithoutUserName15": "Wykorzystaj w pełni Vantage",
         "helloUser": "Witaj, {{firstName}}!",
         "ssoErrorTitle": "Błąd",
         "ssoErrorCommon": "Niestety, wystąpił błąd. Spróbuj ponownie.",
@@ -2149,13 +2379,13 @@
     "faq": {
         "footer": {
             "title": "Nie znalazłeś tego, czego szukasz?",
-            "description": "POTRZEBUJESZ DODATKOWEGO WSPARCIA? NIE ZAPRASZAMY DO KONTAKTU Z NAMI VIA:",
+            "description": "Potrzebujesz dodatkowego wsparcia? Skontaktuj się z nami za pomocą:",
             "body": "Społeczność Lenovo",
             "button": "PRZEJDŹ DO FORUM"
         },
         "question1": {
             "title": "Tworzenie kopii zapasowych plików i ich przywracanie",
-            "description": "<div>    <div class='faqInFs4Fb'>        Tworzenie kopii zapasowych plików i ich przywracanie    </div>    <hr />    <div class='faqInMb7'>        Zawsze dobrze jest mieć plan awaryjny. Umieść kopie plików na innym dysku na wypadek, gdyby coś się stało z oryginałami.    </div>    <div class='faqInFs3Fb'>        Konfigurowanie funkcji tworzenia kopii zapasowej    </div>    <hr />    <div class='mb-5'>        Naciśnij przycisk <span class='faqInFb'>Start</span>, wybierz kolejno opcje <span class='faqInFb'>Ustawienia</span> > <span class='faqInFb'>Aktualizacja i zabezpieczenia</span> > <span class='faqInFb'>Kopia zapasowa</span> > <span class='faqInFb'>Dodaj dysk</span>, a następnie dodaj zewnętrzny dysk twardy lub lokalizację sieciową, gdzie chcesz umieścić kopie zapasowe.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Wszystko gotowe. Co godzinę będziemy wykonywać kopię zapasową całej zawartości Twojego folderu użytkownika (C:\\\\Users\\\\username). Aby zmienić zakres plików objętych kopią zapasową albo częstotliwość wykonywania kopii, kliknij łącze <span class='faqInFb'>Więcej opcji</span>.    </div>    <div class='faqInFs3Fb'>        Przywracanie plików    </div>    <div class='mb-5'>        Jeśli brakuje ważnego pliku lub folderu, oto sposób jego odzyskania:    </div>    <div>        <div class='mb-3'>1. Na pasku zadań w polu wyszukiwania wpisz wyrażenie <span class='faqInFb'>Przywróć pliki</span>, a następnie kliknij pozycję <span class='faqInFb'>Przywróć pliki za pomocą historii plików</span>.</div>        <div class='mb-3'>2. Poszukaj potrzebnego pliku, a następnie za pomocą strzałek przejrzyj jego wszystkie wersje</div>        <div class='mb-3'>3. Po znalezieniu żądanej wersji naciśnij przycisk <span class='faqInFb'>Przywróć</span>, a plik zostanie zapisany w swojej oryginalnej lokalizacji. Jeżeli chcesz zapisać go w innym miejscu, naciśnij i przytrzymaj (lub kliknij prawym przyciskiem myszy) przycisk <span class='faqInFb'>Przywróć</span>, wybierz polecenie <span class='faqInFb'>Przywróć do</span>, a następnie wybierz nową lokalizację.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Tworzenie kopii zapasowych plików i ich przywracanie    </div>    <hr />    <div class='faqInMb7'>        Zawsze dobrze jest mieć plan awaryjny. Umieść kopie plików na innym dysku na wypadek, gdyby coś się stało z oryginałami.    </div>    <div class='faqInFs3Fb'>        Konfigurowanie funkcji tworzenia kopii zapasowej    </div>    <hr />    <div class='mb-5'>        Naciśnij przycisk <span class='faqInFb'>Start</span>, wybierz kolejno opcje <span class='faqInFb'>Ustawienia</span> > <span class='faqInFb'>Aktualizacja i zabezpieczenia</span> > <span class='faqInFb'>Kopia zapasowa</span> > <span class='faqInFb'>Dodaj dysk</span>, a następnie dodaj zewnętrzny dysk twardy lub lokalizację sieciową, gdzie chcesz umieścić kopie zapasowe.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Wszystko gotowe. Co godzinę będziemy wykonywać kopię zapasową całej zawartości Twojego folderu użytkownika (C:\\\\Users\\\\username). Aby zmienić zakres plików objętych kopią zapasową albo częstotliwość wykonywania kopii, kliknij łącze <span class='faqInFb'>Więcej opcji</span>.    </div>    <div class='faqInFs3Fb'>        Przywracanie plików    </div>    <div class='mb-5'>        Jeśli brakuje ważnego pliku lub folderu, oto sposób jego odzyskania:    </div>    <div>        <div class='mb-3'>1. Na pasku zadań w polu wyszukiwania wpisz wyrażenie <span class='faqInFb'>Przywróć pliki</span>, a następnie kliknij pozycję <span class='faqInFb'>Przywróć pliki za pomocą historii plików</span>.</div>        <div class='mb-3'>2. Poszukaj potrzebnego pliku, a następnie za pomocą strzałek przejrzyj jego wszystkie wersje</div>        <div class='mb-3'>3. Po znalezieniu żądanej wersji naciśnij przycisk <span class='faqInFb'>Przywróć</span>, a plik zostanie zapisany w swojej oryginalnej lokalizacji. Jeżeli chcesz zapisać go w innym miejscu, naciśnij i przytrzymaj (lub kliknij prawym przyciskiem myszy) przycisk <span class='faqInFb'>Przywróć</span>, wybierz polecenie <span class='faqInFb'>Przywróć do</span>, a następnie wybierz nową lokalizację.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -2196,7 +2426,7 @@
         },
         "question2": {
             "title": "Jak odświeżyć komputer",
-            "description": "<div>    <div class='faqInFs4Fb'>        Jak odświeżyć komputer    </div>    <hr>    <div class='faqInFs25FbP5'>        Objaw    </div>    <div class='faqInP5'>        Jeśli Twój komputer nie działa tak dobrze jak kiedyś, a nie wiesz dlaczego, możesz go odświeżyć, nie usuwając żadnych osobistych plików ani nie zmieniając ustawień. System Windows może „odświeżyć” komputer, czyli dokonać praktycznie nowej instalacji, ale bez usuwania osobistych plików użytkownika.    </div>    <div class='faqInP5'>        Odświeżenie komputera ma następujące skutki: Twoje pliki i spersonalizowane ustawienia nie ulegną zmianie    </div>    <div class='faqInP5'>        <ul>            <li>Ustawienia komputera zostaną zmienione z powrotem na domyślne</li>            <li>Aplikacje ze Sklepu Windows zostaną zachowane</li>            <li>Aplikacje zainstalowane przez Ciebie z płyty lub Internetu zostaną usunięte</li>            <li>Na pulpicie zostanie zapisana lista usuniętych plików</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Marki, w których problem występuje    </div>    <div>        <ul>            <li>Wszystkie komputery stacjonarne i laptopy</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        System operacyjny    </div>    <div>        <ul>            <li>Windows 8, 8.1 i 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Rozwiązanie    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Dotknij lub kliknij opcję <span class='faqInFb'>Ustawienia</span>                    </li>                    <li class='faqInP5'>                        Dotknij lub kliknij opcję <span class='faqInFb'>Aktualizacje i odzyskiwanie</span>                    </li>                    <li class='faqInP5'>                        <div>Dotknij lub kliknij opcję <span class='faqInFb'>Odzyskiwanie</span></div>                        <div class='faqInP5'>W sekcji Odśwież komputer z zachowaniem istniejących plików dotknij lub kliknij pozycję <span class='faqInFb'>Rozpocznij</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Kliknij przycisk <span class='faqInFb'>Dalej</span>.                    </li>                    <li class='faqInP5'>                        Kliknij przycisk <span class='faqInFb'>Odśwież</span>, aby rozpocząć proces odświeżania.                    </li>                    <li class='faqInP5'>                        Po zakończeniu odświeżania na pulpicie znajduje się lista Usunięte aplikacje                    </li>                    <li class='faqInP5'>                        Zawiera ona spis aplikacji usuniętych podczas odświeżania systemu                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> W menu Start w polu wyszukiwania wpisz słowo <span class='faqInFb'>odśwież</span>.</li>                    <li class='faqInP5'>                        <div>Na liście wyników kliknij pozycję <span class='faqInFb'>Odśwież komputer z zachowaniem istniejących plików</span>, jak pokazano niżej.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Kliknij przycisk <span class='faqInFb'>Rozpocznij</span> znajdujący się tuż pod nagłówkiem<span class='faqInFb'>Odśwież komputer z zachowaniem istniejących plików</span>, aby rozpocząć odświeżanie swojego komputera z systemem Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Dodatkowe informacje    </div>    <div>        Najczęściej rozpoczęty proces odświeżania komputera jest wykonywany aż do końca automatycznie. Jeśli jednak w systemie Windows brakuje niezbędnych plików, zobaczysz monit o włożenie nośnika odzyskiwania, którym zazwyczaj jest dysk DVD lub pamięć USB. Gdy dojdzie do takiej sytuacji, potrzebne zasoby zależą od konkretnego komputera.    </div>    <div class='faqInP10'>        Jeżeli komputer był uaktualniany do systemu Windows 8.1 lub Windows RT 8.1 za pomocą dysku DVD, użyj tego dysku. Jeżeli nie masz nośnika z systemem Windows 8.1 lub Windows RT 8.1, skontaktuj się z pomocą techniczną Microsoft.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Jak odświeżyć komputer    </div>    <hr>    <div class='faqInFs25FbP5'>        Objaw    </div>    <div class='faqInP5'>        Jeśli Twój komputer nie działa tak dobrze jak kiedyś, a nie wiesz dlaczego, możesz go odświeżyć, nie usuwając żadnych osobistych plików ani nie zmieniając ustawień. System Windows może „odświeżyć” komputer, czyli dokonać praktycznie nowej instalacji, ale bez usuwania osobistych plików użytkownika.    </div>    <div class='faqInP5'>        Odświeżenie komputera ma następujące skutki: Twoje pliki i spersonalizowane ustawienia nie ulegną zmianie    </div>    <div class='faqInP5'>        <ul>            <li>Ustawienia komputera zostaną zmienione z powrotem na domyślne</li>            <li>Aplikacje ze Sklepu Windows zostaną zachowane</li>            <li>Aplikacje zainstalowane przez Ciebie z płyty lub Internetu zostaną usunięte</li>            <li>Na pulpicie zostanie zapisana lista usuniętych plików</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Marki, w których problem występuje    </div>    <div>        <ul>            <li>Wszystkie komputery stacjonarne i laptopy</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        System operacyjny    </div>    <div>        <ul>            <li>Windows 8, 8.1 i 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Rozwiązanie    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Dotknij lub kliknij opcję <span class='faqInFb'>Ustawienia</span>                    </li>                    <li class='faqInP5'>                        Dotknij lub kliknij opcję <span class='faqInFb'>Aktualizacje i odzyskiwanie</span>                    </li>                    <li class='faqInP5'>                        <div>Dotknij lub kliknij opcję <span class='faqInFb'>Odzyskiwanie</span></div>                        <div class='faqInP5'>W sekcji Odśwież komputer z zachowaniem istniejących plików dotknij lub kliknij pozycję <span class='faqInFb'>Rozpocznij</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        Kliknij przycisk <span class='faqInFb'>Dalej</span>.                    </li>                    <li class='faqInP5'>                        Kliknij przycisk <span class='faqInFb'>Odśwież</span>, aby rozpocząć proces odświeżania.                    </li>                    <li class='faqInP5'>                        Po zakończeniu odświeżania na pulpicie znajduje się lista Usunięte aplikacje                    </li>                    <li class='faqInP5'>                        Zawiera ona spis aplikacji usuniętych podczas odświeżania systemu                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> W menu Start w polu wyszukiwania wpisz słowo <span class='faqInFb'>odśwież</span>.</li>                    <li class='faqInP5'>                        <div>Na liście wyników kliknij pozycję <span class='faqInFb'>Odśwież komputer z zachowaniem istniejących plików</span>, jak pokazano niżej.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Kliknij przycisk <span class='faqInFb'>Rozpocznij</span> znajdujący się tuż pod nagłówkiem<span class='faqInFb'>Odśwież komputer z zachowaniem istniejących plików</span>, aby rozpocząć odświeżanie swojego komputera z systemem Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Dodatkowe informacje    </div>    <div>        Najczęściej rozpoczęty proces odświeżania komputera jest wykonywany aż do końca automatycznie. Jeśli jednak w systemie Windows brakuje niezbędnych plików, zobaczysz monit o włożenie nośnika odzyskiwania, którym zazwyczaj jest dysk DVD lub pamięć USB. Gdy dojdzie do takiej sytuacji, potrzebne zasoby zależą od konkretnego komputera.    </div>    <div class='faqInP10'>        Jeżeli komputer był uaktualniany do systemu Windows 8.1 lub Windows RT 8.1 za pomocą dysku DVD, użyj tego dysku. Jeżeli nie masz nośnika z systemem Windows 8.1 lub Windows RT 8.1, skontaktuj się z pomocą techniczną Microsoft.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2428,7 +2658,6 @@
         "question5": {
             "title": "Używanie komputera jak tabletu",
             "description": "<div class='faqInFs4Fb'>    Używanie komputera jak tabletu</div><hr><p>Tryb tabletu sprawia, że system Windows jest bardziej intuicyjny i łatwiejszy w obsłudze na urządzeniu z ekranem dotykowym.</p><h3 class='faqInFs25FbP10'>Używanie trybu tabletu</h3><p>Aby włączyć tryb tabletu, na pasku zadań kliknij pozycję <strong>centrum akcji</strong> i wybierz opcję <strong>Tryb tabletu</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Uwaga</h3><p>Aby sprawdzić, czy urządzenie może się automatycznie przełączać do trybu tabletu, poszukaj urządzenia w witrynie internetowej producenta. Obsługa tej funkcji zależy od sprzętu, zainstalowanego sterownika i fabrycznej konfiguracji urządzenia. </p><p> </p><p>W trybie tabletu aplikacje otwierają się na całym ekranie, oferując więcej miejsca do pracy. Aby zamknąć aplikację, przeciągnij ją do dołu ekranu.</p><p> </p><h3 class='faqInFs25FbP10'>Wskazówka</h3><p>W trybie tabletu pasek zadań jest dostępny, ale można go schować, jeśli chcesz mieć więcej miejsca do pracy na ekranie. Naciśnij przycisk <strong>Start</strong>, wybierz kolejno opcje <strong>Ustawienia</strong> > <strong>System</strong> > <strong>Tryb tabletu</strong>, a następnie włącz opcję <strong>Automatycznie ukrywaj pasek zadań w trybie tabletu</strong>. Aby zobaczyć ukryty pasek zadań, przesuń palcem od dołu do góry ekranu lub umieść wskaźnik myszy u dołu ekranu.</p><h3 class='faqInFs25FbP10'>Używanie dwóch aplikacji równocześnie</h3><p>Aby używać dwóch aplikacji obok siebie w trybie tabletu, przeciągnij otwartą aplikację w dół i na bok. Zostanie przyciągnięta, a obok będzie widać wszystkie otwarte aplikacje.</p><p>W tym widoku można również:</p><ul>    <li>Użyć wspólnej krawędzi dwóch przyciągniętych aplikacji, aby zmienić rozmiar obu aplikacji równocześnie.</li>    <li>Otworzyć nową aplikację z widoku zadań: na pasku zadań kliknij opcję <strong>Widok zadań</strong>, zaznacz aplikację, a następnie przeciągnij ją w jedną stronę, a zostanie przyciągnięta do podzielonego ekranu.</li>    <li>Użyć przycisku Wstecz na pasku zadań, aby wrócić do poprzedniego okna w obecnej aplikacji lub otworzyć wcześniej używaną aplikację.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2467,7 +2696,7 @@
         },
         "question6": {
             "title": "Poznaj Cortanę, swoją osobistą asystentkę",
-            "description": "<div class='faqInFs4Fb'>    Poznaj Cortanę, swoją osobistą asystentkę</div><hr><h3 class='faqInFs25FbP10'>Czym jest Cortana?</h3><hr /><p>Cortana to Twoja cyfrowa asystentka. Pomoże Ci wykonać różne zadania.</p><p>Im częściej używasz Cortany, tym bardziej zostanie spersonalizowana konkretnie dla Ciebie.</p><p>Aby rozpocząć, wpisz pytanie w polu wyszukiwania lub kliknij ikonę mikrofonu i porozmawiaj z Cortaną. (Wpisywanie działa na wszystkich typach komputerów, ale do mówienia jest potrzebny mikrofon).</p><p>Jeśli nie masz pewności, co powiedzieć, zobaczysz sugestie na ekranie blokady oraz na ekranie głównym Cortany, gdy klikniesz pole wyszukiwania na pasku zadań.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Ekran główny 2. Notes 3. Ustawienia 4. Opinia</li></ol><p>Oto kilka rzeczy, w których może pomagać Cortana:</p><ul>    <li>Przypominanie na podstawie kryterium czasu, miejsc lub ludzi.</li>    <li>Śledzenie paczek, zespołów, zainteresowań i lotów.</li>    <li>Wysyłanie wiadomości e-mail i tekstowych.</li>    <li>Zarządzanie Twoim kalendarzem i bieżące informowanie Cię o istotnych wydarzeniach.</li>    <li>Tworzenie list i zarządzanie nimi.</li>    <li>Prowadzenie towarzyskich rozmów i granie w gry.</li>    <li>Znajdowanie faktów, plików, miejsc i informacji.</li>    <li>Otwieranie dowolnych aplikacji na Twoim urządzeniu.</li></ul><h3 class='faqInFs25FbP10'>Spróbuj tego: ustawianie przypomnienia</h3><hr /><p>Jedną z funkcji, jaką może wykonywać Cortana, jest przypominanie. Może przypominać Ci o konieczności zrobienia różnych rzeczy w związku z konkretnym czasem, miejscami lub osobami.</p><p>Na przykład wpisz lub powiedz „Przypomnij mi, aby pogratulować Tanyi następnym razem, gdy zadzwoni”.</p><p>Przypomnienie pojawi się, gdy otrzymasz telefon od Tanyi.</p><p>Dodatkowa premia: jeśli masz telefon z systemem Windows lub Cortanę dla telefonów iPhone lub systemu Android, możesz ustawić w Cortanie synchronizowanie powiadomień między komputerem a telefonem.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hej, Cortana?</h3><hr /><p>Ustaw Cortanę tak, aby cię słyszała za każdym razem, gdy mówisz „Hej, Cortana”. Kliknij pole wyszukiwania na pasku zadań, aby otworzyć ekran główny Cortany. Następnie kliknij pozycję <strong>Ustawienia</strong> i włącz opcję <strong>Zezwalaj Cortanie na odpowiadanie na polecenie „Hej, Cortana”</strong>.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Uwaga</p><p>Cortana jest dostępna tylko w niektórych krajach / regionach. Istnieją również ograniczenia w działaniu funkcji Cortany.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Poznaj Cortanę, swoją osobistą asystentkę</div><hr><h3 class='faqInFs25FbP10'>Czym jest Cortana?</h3><hr /><p>Cortana to Twoja cyfrowa asystentka. Pomoże Ci wykonać różne zadania.</p><p>Im częściej używasz Cortany, tym bardziej zostanie spersonalizowana konkretnie dla Ciebie.</p><p>Aby rozpocząć, wpisz pytanie w polu wyszukiwania lub kliknij ikonę mikrofonu i porozmawiaj z Cortaną. (Wpisywanie działa na wszystkich typach komputerów, ale do mówienia jest potrzebny mikrofon).</p><p>Jeśli nie masz pewności, co powiedzieć, zobaczysz sugestie na ekranie blokady oraz na ekranie głównym Cortany, gdy klikniesz pole wyszukiwania na pasku zadań.</p><p><img src='./../../../assets/images/qa/6.1.jpg' /></p><ol>    <li>Ekran główny 2. Notes 3. Ustawienia 4. Opinia</li></ol><p>Oto kilka rzeczy, w których może pomagać Cortana:</p><ul>    <li>Przypominanie na podstawie kryterium czasu, miejsc lub ludzi.</li>    <li>Śledzenie paczek, zespołów, zainteresowań i lotów.</li>    <li>Wysyłanie wiadomości e-mail i tekstowych.</li>    <li>Zarządzanie Twoim kalendarzem i bieżące informowanie Cię o istotnych wydarzeniach.</li>    <li>Tworzenie list i zarządzanie nimi.</li>    <li>Prowadzenie towarzyskich rozmów i granie w gry.</li>    <li>Znajdowanie faktów, plików, miejsc i informacji.</li>    <li>Otwieranie dowolnych aplikacji na Twoim urządzeniu.</li></ul><h3 class='faqInFs25FbP10'>Spróbuj tego: ustawianie przypomnienia</h3><hr /><p>Jedną z funkcji, jaką może wykonywać Cortana, jest przypominanie. Może przypominać Ci o konieczności zrobienia różnych rzeczy w związku z konkretnym czasem, miejscami lub osobami.</p><p>Na przykład wpisz lub powiedz „Przypomnij mi, aby pogratulować Tanyi następnym razem, gdy zadzwoni”.</p><p>Przypomnienie pojawi się, gdy otrzymasz telefon od Tanyi.</p><p>Dodatkowa premia: jeśli masz telefon z systemem Windows lub Cortanę dla telefonów iPhone lub systemu Android, możesz ustawić w Cortanie synchronizowanie powiadomień między komputerem a telefonem.</p><p><img src='./../../../assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>Hej, Cortana?</h3><hr /><p>Ustaw Cortanę tak, aby cię słyszała za każdym razem, gdy mówisz „Hej, Cortana”. Kliknij pole wyszukiwania na pasku zadań, aby otworzyć ekran główny Cortany. Następnie kliknij pozycję <strong>Ustawienia</strong> i włącz opcję <strong>Zezwalaj Cortanie na odpowiadanie na polecenie „Hej, Cortana”</strong>.</p><p><img src='./../../../assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>Uwaga</p><p>Cortana jest dostępna tylko w niektórych krajach / regionach. Istnieją również ograniczenia w działaniu funkcji Cortany.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2511,12 +2740,14 @@
         "bullets2": "Doradca zabezpieczeń ułatwia zarządzanie bezpieczeństwem (dostępny w wybranych systemach).",
         "bullets3": "Automatyczne aktualizacje zapewniają doskonałą pracę urządzenia (dostępne w wybranych systemach).",
         "subtitle1": "Jak będziesz korzystać z urządzenia?",
-        "subtitle2": "Opowiedz nam o swoich zainteresowaniach",
+        "subtitle2": "Opowiedz nam o swoich zainteresowaniach (opcjonalnie)",
         "personal": "Do celów prywatnych",
         "business": "Do celów firmowych",
         "custom": "Niestandardowe zastosowanie",
+        "professional": "Zastosowania profesjonalne",
         "privacytitle": "Pomóż nam w ulepszaniu tej aplikacji, zezwalając na anonimowe gromadzenie statystyk użytkowania.",
         "moreInterest": "+ więcej zainteresowań",
+        "toolbartitle": "Włącz pasek narzędzi Lenovo Vantage (zalecane)",
         "title1": "Witamy w aplikacji",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2547,13 +2778,16 @@
         "actionTriggered": "Wykonane działanie",
         "actionTriggeredDescription": "Wiadomości uruchamiane przez ustawienia użytkownika, takie jak automatyczne instalowanie krytycznych lub zalecanych aktualizacji.",
         "OtherSettings": "Inne ustawienia",
-        "usageStatistics": "Statystyki użytkowania",
-        "usageStatisticsDescription": "Wyślij do firmy Lenovo anonimowe statystyki dotyczące użytkowania.",
-        "deviceStatistics": "Udostępniaj dane statystyczne Lenovo",
-        "deviceStatisticsDescription": "Udostępnia dane statystyczne firmie Lenovo w celu poprawy niezawodności i projektu, a także optymalizacji funkcji na komputerze użytkownika.",
-        "userProfile": "User profile",
+        "usageStatistics": "Statystyki użytkowania Vantage",
+        "usageStatisticsDescription": "Wyślij anonimowe statystyki użytkowania, aby pomóc nam ulepszać Vantage.",
+        "deviceStatistics": "Statystyki urządzenia Lenovo",
+        "deviceStatisticsDescription": "Wyślij anonimowe dane o urządzeniu, aby pomóc nam poprawić jakość i niezawodność oraz ulepszyć nową generację urządzeń.",
+        "userProfile": "Profil użytkownika",
         "Note": "Uwaga: ",
-        "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane."
+        "settingsNotes": "Uruchom ponownie tę aplikację, aby upewnić się, że wszystkie zmiany zostaną zastosowane.",
+        "betaSettingTitle": "Program Beta",
+        "betaProgram": "Program Beta",
+        "betaSettingDescription": "Wypróbuj najnowsze funkcje, nad którymi pracujemy."
     },
     "modernPreload": {
         "cancel": "Anuluj",
@@ -2574,6 +2808,8 @@
         "noteDownloadAvailable": "Uwaga: po kliknięciu przycisku Pobierz może zostać wyświetlony monit z systemu Windows z prośbą o potwierdzenie zainstalowania oprogramowania na urządzeniu. Po zakończeniu instalacji aplikacje będą wyświetlane automatycznie na pulpicie lub w menu Start.<br /><br />Możesz zamknąć stronę Moje oprogramowanie i dalej korzystać z Lenovo Vantage. Nie zamykaj Lenovo Vantage podczas instalacji.",
         "sizeText": "Wymiary",
         "versionText": "Wersja",
+        "redemptionCode": "Kod dostępu:",
+        "redeemWebsite": "Zakup na stronie dostawcy",
         "softwareDescription": "Kliknij poniższy przycisk Pobierz, aby pobrać oprogramowanie zakupione wraz z urządzeniem. Możesz ponownie pobrać oprogramowanie w dowolnym momencie, wybierając opcję Moje oprogramowanie z menu aplikacji Vantage.",
         "title": "Moje oprogramowanie",
         "loadingDescription": "Czekaj, tworzymy listę oprogramowania zakupionego wraz z urządzeniem.",
@@ -2682,7 +2918,8 @@
                 "description": "Wykonanie skanowania i naprawy może spowodować utratę danych. Zaleca się wykonanie kopii zapasowej przed wykonaniem tej operacji. Czy na pewno chcesz przejść dalej?",
                 "yes": "Tak",
                 "no": "Nie"
-            }
+            },
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Pobierz profesjonalne narzędzia diagnostyczne",
@@ -2707,43 +2944,219 @@
         "cancelTextPrompt": "Czy na pewno chcesz anulować?",
         "cancelTextProgress": "Poczekaj na anulowanie postępu",
         "pluginNotUpdate": "Funkcja skanowania sprzętu jest niedostępna, ponieważ jest nieaktualna. Należy ją zaktualizować.",
-        "testNotApplicable": "Nie dotyczy skanowania niestandardowego"
+        "testNotApplicable": "Nie dotyczy skanowania niestandardowego",
+        "waitScanStarts": "Poczekaj aż rozpocznie się skanowanie",
+        "reminderTimeRetrieveHardwareInformation": "Proces pobierania informacji o sprzęcie może chwilę potrwać",
+        "retrievingHardwareInformation": "Pobieranie informacji o sprzęcie...",
+        "pluginTokens": {
+            "cpu": "Procesor",
+            "memory": "Pamięć",
+            "motherboard": "Płyta główna",
+            "pci_express": "PCI Express",
+            "storage": "Pamięć masowa",
+            "wireless": "Bezprzewodowe"
+        },
+        "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji"
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
-    },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Instalacja nie powiodła się. Spróbuj ponownie.",
-                "networkError": "Błąd sieci.",
-                "installationCancelled": "Instalacja anulowana."
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
             }
         },
-        "menuText": {
-            "adobeRedemption": "Aktywacja Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Zainstaluj",
-                "installing": "Instalowanie",
-                "installed": "Zainstalowane",
-                "launch": "Uruchom",
-                "seeMore": "Zobacz więcej"
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
             },
-            "fieldName": {
-                "description": "Opis",
-                "screenshots": "Zrzuty ekranu",
-                "additionalInformation": "Dodatkowe informacje",
-                "by": "Autor:",
-                "updated": "Zaktualizowano:",
-                "type": "Typ:",
-                "category": "Kategoria:",
-                "legalAgreement": "Umowa prawna",
-                "readMore": "Dowiedz się więcej",
-                "readLess": "Czytaj mniej"
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
             }
         }
     },
@@ -2825,7 +3238,7 @@
             "welcomeTitle": "welcome to connected home security",
             "welcomeSubTitle": "30 days of protection for free",
             "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
             "locationTitle": "Enable location permissions",
             "locationPermission": "Allow Lenovo Vantage to access this device's location?",
             "allow": "Allow",
@@ -2863,5 +3276,64 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Teraz możesz dowiedzieć się, czy twoje prywatne dane zostały naruszone lub wykorzystane przez narzędzia do śledzenia online bez twojej wiedzy.",
+            "security": "Czy wiesz? Nawet jeśli nie masz zainstalowanego oprogramowania antywirusowego, nadal zapewniamy podstawową ochronę twojego urządzenia.",
+            "connectedHomeSecurity": "Zyskaj monitorowanie w czasie rzeczywistym i otrzymuj alerty dotyczące bezpieczeństwa sieci w domu. Jako pierwszy dowiesz się, czy któreś z twoich inteligentnych urządzeń jest narażone na zagrożenia."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalacja nie powiodła się. Spróbuj ponownie.",
+                "networkError": "Błąd sieci.",
+                "installationCancelled": "Instalacja anulowana."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Aktywacja Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Zainstaluj",
+                "installing": "Instalowanie",
+                "downloading": "Pobieranie",
+                "installed": "Zainstalowane",
+                "launch": "Uruchom",
+                "seeMore": "Zobacz więcej"
+            },
+            "fieldName": {
+                "description": "Opis",
+                "screenshots": "Zrzuty ekranu",
+                "additionalInformation": "Dodatkowe informacje",
+                "by": "Autor:",
+                "updated": "Zaktualizowano:",
+                "type": "Typ:",
+                "category": "Kategoria:",
+                "legalAgreement": "Umowa prawna",
+                "readMore": "Dowiedz się więcej",
+                "readLess": "Czytaj mniej"
+            }
+        }
+    },
+    "dcc": {
+        "heroBanner": {
+            "description": "Ekskluzywna oferta Lenovo na pakiet narzędzi projektowych Adobe"
+        },
+        "menuText": {
+            "lenovoDigitalOffer": "Cyfrowa oferta Lenovo"
+        },
+        "dccDetails": {
+            "subtitle11": "Premiere Pro",
+            "body11": "Premiere Pro to wiodące oprogramowanie do edycji wideo do filmów, telewizji i Internetu. Premiere Pro zawiera Premiere Rush — uniwersalną aplikację działającą na wszystkich urządzeniach, która służy do udostępnia wideo w sieci.",
+            "subtitle12": "Plan fotograficzny Creative Cloud",
+            "body12": "W oprogramowaniu Lightroom można łatwo edytować, porządkować, przechowywać i udostępniać swoje zdjęcia z dowolnego miejsca, a w programie Photoshop można je przekształcać, ograniczając się jedynie wyobraźnią.",
+            "selectButton": "Wybierz",
+            "subtitle2": "Komputery All-in-One: optymalizacja",
+            "body2": "Komputery All-in-One z procesorami Intel® Core™ 9. generacji oferują moc komputera stacjonarnego zamkniętą w eleganckim monitorze. Dzięki temu zyskujesz porządek na biurku, wbudowane zabezpieczenia sprzętowe i ekran o dużej rozdzielczości."
+        }
+    }
 }

@@ -17,7 +17,7 @@
 	width: 100%;
 
 	@media #{$mediaquery_xl} {
-		position: absolute;
+		position: fixed;
 		left: 0%;
 		right: 0%;
 	}
@@ -56,11 +56,13 @@
 			color: $light;
 			overflow: hidden;
 			&.logo-y {
+				background-color: rgba(4, 184, 255, 0.548);
 				height: 9rem;
 				padding-bottom: 0;
 			}
 
 			.menu-main-logo {
+				background-color: #27add7;
 				display: block;
 				width: 100%;
 				height: 100%;
@@ -134,6 +136,9 @@
 			&.show {
 				display: block;
 				// overflow-y: auto;
+				.navbar-nav .nav-item .dropdown-menu .dropdown-item.link {
+					line-height: 4rem;
+				}
 			}
 
 			.navbar-nav {
@@ -143,11 +148,16 @@
 						// 	display: none;
 						// }
 						display: inline-table;
-						font-size: 1.7rem;
+						font-size: $fontsize_sm;
 						font-weight: 400;
 						line-height: calc(#{$menu_height} - 0.65rem);
 						color: $light;
 						padding: 0 1.5rem;
+						display: flex;
+						align-items: center;
+						overflow: hidden;
+						white-space: nowrap;
+						text-overflow: ellipsis;
 
 						@media #{mediaquery_7} {
 							padding: 0 1.5rem;
@@ -209,6 +219,8 @@
 						.icon {
 							display: inline-block;
 							vertical-align: middle;
+							width: 3rem;
+							text-align: center;
 						}
 
 						&.user {
@@ -226,7 +238,7 @@
 							.user-initials {
 								display: inline-block;
 								text-align: center;
-								font-size: 2rem;
+								font-size: $fontsize_xl !important;
 								width: 4.6rem;
 
 								@media #{$mediaquery_9} {
@@ -276,8 +288,8 @@
 							&.menu-pointer {
 								position: absolute;
 								top: -1.5rem;
-								left: 6rem;
-								margin-left: -1.5rem;
+								left: 50%;
+								margin-left: -1.25rem;
 								color: $light;
 								font-size: 3rem;
 								transform: rotate(45deg);
@@ -299,7 +311,7 @@
 							color: $main_shade;
 							padding: 0.25rem 0.9rem;
 							font-size: 1.5rem;
-							line-height: 2.2rem;
+							line-height: 3.2rem;
 							font-weight: $weight_medium;
 
 							&.link {
@@ -316,7 +328,8 @@
 							}
 
 							&.link-lma,
-							&.link-adobe {
+							&.link-adobe,
+							&.link-dcc {
 								position: relative;
 
 								.unread-tag {
@@ -336,7 +349,7 @@
 					&:last-child {
 						.dropdown-menu {
 							min-width: 20rem;
-							max-width: 50rem;
+							max-width: 60rem;
 						}
 					}
 
@@ -416,6 +429,9 @@
 				background: $main_darker;
 
 				.navbar-nav {
+					max-height: calc(100vh - #{$menu_height});
+					overflow-y: auto;
+
 					.nav-item {
 						padding: 0 0 0.5rem 0;
 

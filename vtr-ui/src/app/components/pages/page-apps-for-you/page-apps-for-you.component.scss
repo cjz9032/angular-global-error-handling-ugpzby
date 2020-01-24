@@ -1,7 +1,29 @@
 @import '../../../app.theme';
 
-.vtr-page-apps-for-you {
-	.vtr-page-content {
+:host ::ng-deep {
+	.vtr-page-apps-for-you {
+		.vtr-page-columns {
+			.vtr-page-column {
+				padding: 0 $padding_side 4rem !important;
+				@media #{$breakpoint_xl} {
+					padding: 0 $padding_side_sm 4rem !important;
+				}
+
+				&.vtr-page-left-column {
+					flex: 0 0 100%;
+					max-width: 100%;
+				}
+
+				&.vtr-page-right-column {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+:host ::ng-deep .vtr-page-apps-for-you {
+	.vtr-page-left-column {
 		background: $shade_lightest;
 		min-height: calc(-31.5rem + 100vh);
 		padding: 0 $padding_side;
@@ -10,18 +32,13 @@
 			padding: 0 5rem;
 		}
 
-		.offline-content {
-			margin-top: -5.3125rem;
-		}
-
 		.apps-header {
-			margin-top: -5.3125rem;
 			box-shadow: $drop_shadow;
 			border-radius: $border_radius;
 			background-color: $light;
-			padding: 4rem;
-			height: 20rem;
-			margin-bottom: 4rem;
+			padding: 2.4rem;
+			height: 12.8rem;
+			margin-bottom: 3.2rem;
 
 			.logo-con {
 				display: flex;
@@ -29,26 +46,32 @@
 				height: 100%;
 
 				.img-logo {
-					width: 10rem;
-					max-width: 100%;
+					width: 8rem;
+					height: 8rem;
+				}
+				.app-name {
+					display: flex;
+					flex-flow: column;
+					justify-content: center;
+					padding-left: 2.4rem;
+	
+					.app-title {
+						font-size: 2rem;
+						line-height: 1.4;
+					}
+	
+					.app-price {
+						font-size: 1.4rem;
+						opacity: .8;
+					}
+				}
+				@media #{$mediaquery_15} {
+					.app-name {
+						padding-left: 1.6rem;
+					}
 				}
 			}
 
-			.app-name {
-				display: flex;
-				flex-flow: column;
-				justify-content: center;
-				padding-left: 1rem;
-
-				.app-title {
-					font-size: 2rem;
-				}
-
-				.app-price {
-					font-size: 1.4rem;
-					opacity: .8;
-				}
-			}
 
 			.app-spinner {
 				width: 6rem;
@@ -61,6 +84,10 @@
 				.spinner-border {
 					width: 5rem;
 					height: 5rem;
+					@media #{$mediaquery_15} {
+						width: 3rem;
+						height: 3rem;
+					}
 				}
 			}
 
@@ -76,6 +103,9 @@
 				.btn-box {
 					width: 100%;
 					max-width: 25rem;
+					@media #{$mediaquery_15} {
+						max-width: 18rem;
+					}
 					::ng-deep {
 						.vtr-ui-button .button-box {
 							margin-top: 0;
@@ -90,12 +120,16 @@
 					margin-top: 3.5rem;
 					height: 6rem;
 					padding-right: 0.5rem;
-					line-height: 2rem;
-					overflow: hidden;
+					line-height: 1.4;
 					width: 100%;
 					font-size: 1.6rem;
 					color: $danger_dark;
 					text-align: right;
+					@media #{$mediaquery_15} {
+						.app-name {
+							font-size: 1.4rem;
+						}
+					}
 				}
 			}
 		}
@@ -104,15 +138,13 @@
 			box-shadow: $drop_shadow;
 			border-radius: $border_radius;
 			background-color: $light;
-			padding: 4rem;
+			padding: 2.4rem;
 			min-height: 20rem;
 			font-size: 1.8rem;
-			margin-bottom: 4rem;
 
 			.title {
 				color: $main;
 				font-size: 2.4rem;
-				font-weight: $weight_600;
 			}
 
 			.sub-title {
@@ -141,9 +173,14 @@
 						.screenshot-img {
 							position: absolute;
 							width: 32%;
+							height: 100%;
 							top: 0;
 							transition: left .3s;
 							cursor: pointer;
+							border: 1px solid #ddd;
+							&:hover {
+								border: 1px solid #ccc;
+							}
 							&.position-0 {
 								left: -34%;
 							}
@@ -177,6 +214,7 @@
 
 							img {
 								width: 100%;
+								height: 100%;
 							}
 						}
 					}
@@ -195,6 +233,12 @@
 							cursor: pointer;
 							opacity: .5;
 							color: $shade_darker;
+							@media #{$mediaquery_15} {
+								margin-top: -2rem;
+								width: 1.5rem;
+								height: 4rem;
+								font-size: 2.4rem;
+								}
 						}
 
 						.left-arrow {
@@ -225,7 +269,7 @@
 				width: 100%;
 
 				.info-item {
-					margin-bottom: 2rem;
+					margin-bottom: 1rem;
 				}
 
 				.legal-agreement {
@@ -249,15 +293,42 @@
 	}
 }
 
-:host-context(.is-gaming) {
+:host-context(.is-gaming) ::ng-deep {
 	.vtr-page-apps-for-you {
-		.vtr-page-content {
-			background: $gaming_darkest;
-
-			.apps-header,
+		.vtr-page-left-column {
+			.apps-header {
+				background: $dark_cell;
+				color: $gaming_lightest;
+			}
+	
 			.apps-content {
 				background: $dark_cell;
 				color: $gaming_lightest;
+				.description {
+					opacity: .6;
+				}
+
+				.title {
+					color: $main;
+				}
+
+				.sub-title {
+					opacity: .6;
+				}
+	
+				.screenshot-con {
+					.screenshot-slider {
+						.image-content {
+							.screenshot-img {
+								border: none;
+								opacity: .9;
+								&:hover {
+									border: none;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}

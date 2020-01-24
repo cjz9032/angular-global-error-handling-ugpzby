@@ -12,7 +12,7 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 interface DevicePostureDetail {
 	status: number; // 1,2
 	title: string; // name
-	detail: string; // faied,passed
+	detail: string; // failed,passed
 	path: string;
 	type: string;
 }
@@ -20,9 +20,9 @@ interface DevicePostureDetail {
 export class WifiHomeViewModel {
 	wifiSecurity: WifiSecurity;
 	isLWSEnabled: boolean;
-	allHistorys: Array<phoenix.WifiDetail>;
+	allHistories: Array<phoenix.WifiDetail>;
 	hasMore: boolean;
-	historys: Array<phoenix.WifiDetail>;
+	histories: Array<phoenix.WifiDetail>;
 	tryNowUrl: string;
 	homeStatus: string;
 	tryNowEnable = false;
@@ -66,26 +66,26 @@ export class WifiHomeViewModel {
 			if (value) {
 				let cacheWifiSecurityHistoryNum = commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum);
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, value);
-				this.allHistorys = wifiSecurity.wifiHistory;
-				this.allHistorys = this.mappingHistory(this.allHistorys);
+				this.allHistories = wifiSecurity.wifiHistory;
+				this.allHistories = this.mappingHistory(this.allHistories);
 				if (cacheWifiSecurityHistoryNum) {
 					cacheWifiSecurityHistoryNum = JSON.parse(cacheWifiSecurityHistoryNum);
-					if (this.allHistorys.length > 4) {
+					if (this.allHistories.length > 4) {
 						this.hasMore = true;
 					} else {
 						this.hasMore = false;
 					}
-					this.historys = wifiSecurity.wifiHistory.slice(0, cacheWifiSecurityHistoryNum);
+					this.histories = wifiSecurity.wifiHistory.slice(0, cacheWifiSecurityHistoryNum);
 				} else {
-					if (this.allHistorys.length > 4) {
+					if (this.allHistories.length > 4) {
 						this.hasMore = true;
 					} else {
 						this.hasMore = false;
 					}
-					this.historys = wifiSecurity.wifiHistory.slice(0, 4);
+					this.histories = wifiSecurity.wifiHistory.slice(0, 4);
 					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 				}
-				this.historys = this.mappingHistory(this.historys);
+				this.histories = this.mappingHistory(this.histories);
 			}
 		});
 		this.wifiSecurity = wifiSecurity;
@@ -101,33 +101,33 @@ export class WifiHomeViewModel {
 		}
 		if (wifiSecurity && wifiSecurity.wifiHistory) {
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
-			this.allHistorys = wifiSecurity.wifiHistory;
-			this.allHistorys = this.mappingHistory(this.allHistorys);
-			if (this.allHistorys.length > 4) {
+			this.allHistories = wifiSecurity.wifiHistory;
+			this.allHistories = this.mappingHistory(this.allHistories);
+			if (this.allHistories.length > 4) {
 					this.hasMore = true;
 			} else {
 				this.hasMore = false;
 			}
-			this.historys = wifiSecurity.wifiHistory.slice(0, 4);
+			this.histories = wifiSecurity.wifiHistory.slice(0, 4);
 			commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
-			this.historys = this.mappingHistory(this.historys);
+			this.histories = this.mappingHistory(this.histories);
 		} else if (cacheWifiSecurityHistory) {
-			this.allHistorys = cacheWifiSecurityHistory;
-			this.allHistorys = this.mappingHistory(this.allHistorys);
-			if (this.allHistorys.length > 4) {
+			this.allHistories = cacheWifiSecurityHistory;
+			this.allHistories = this.mappingHistory(this.allHistories);
+			if (this.allHistories.length > 4) {
 				this.hasMore = true;
 			} else {
 				this.hasMore = false;
 			}
-			this.historys = cacheWifiSecurityHistory.slice(0, 4);
+			this.histories = cacheWifiSecurityHistory.slice(0, 4);
 			commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
-			this.historys = this.mappingHistory(this.historys);
+			this.histories = this.mappingHistory(this.histories);
 		}
 	}
 
-	mappingHistory(historys: Array<phoenix.WifiDetail>): Array<phoenix.WifiDetail> {
-		const Historys = [];
-		historys.forEach((item) => {
+	mappingHistory(histories: Array<phoenix.WifiDetail>): Array<phoenix.WifiDetail> {
+		const Histories = [];
+		histories.forEach((item) => {
 			let i = {
 				ssid: '',
 				info: '',
@@ -138,9 +138,9 @@ export class WifiHomeViewModel {
 				const info = i.info.replace(/T/g, ' ');
 				i.info = info;
 			}
-			Historys.push(i);
+			Histories.push(i);
 		});
-		return Historys;
+		return Histories;
 	}
 }
 

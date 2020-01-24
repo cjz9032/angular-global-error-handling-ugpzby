@@ -11,6 +11,13 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { ModalWifiSecurityInvitationComponent } from 'src/app/components/modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
 import { ModalChsStartTrialContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-start-trial-container/modal-chs-start-trial-container.component';
 import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.enum';
+import { SegmentConst } from '../self-select/self-select.service';
+import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
+import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id/modal-lenovo-id.component';
+import { ModalModernPreloadComponent } from 'src/app/components/modal/modal-modern-preload/modal-modern-preload.component';
+import { Router } from '@angular/router';
+import { DeviceService } from '../device/device.service';
+import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 
 
 @Injectable({
@@ -19,7 +26,10 @@ import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.
 export class DialogService {
 	constructor(
 		private commonService: CommonService,
-		public modalService: NgbModal)  { }
+		public modalService: NgbModal,
+		private router: Router,
+		private deviceService: DeviceService
+	)  { }
 
 	openInvitationCodeDialog() {
 		if (this.modalService.hasOpenModals()) {
@@ -96,9 +106,9 @@ export class DialogService {
 			modal.componentInstance.description = 'security.wifisecurity.locationmodal.describe2';
 			modal.componentInstance.url = 'ms-settings:privacy-location';
 			modal.componentInstance.wifiSecurity = wifiSecurity;
-			modal.componentInstance.closeButtonId = 'sa-ws-btn-locationclose';
-			modal.componentInstance.agreeButtonId = 'sa-ws-btn-locationagree';
-			modal.componentInstance.cancelButtonId = 'sa-ws-btn-locationcancel';
+			// modal.componentInstance.closeButtonId = 'sa-ws-btn-locationclose';
+			// modal.componentInstance.agreeButtonId = 'sa-ws-btn-locationagree';
+			// modal.componentInstance.cancelButtonId = 'sa-ws-btn-locationcancel';
 			wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (para) => {
 				if (para) {
 					modal.close();
@@ -161,7 +171,7 @@ export class DialogService {
 		}
 	}
 
-	openCHSPermissionModal(): NgbModalRef {
+	openCHSPermissionModal(locationPermission: DeviceLocationPermission): NgbModalRef {
 		if (this.modalService.hasOpenModals()) {
 			return;
 		}
@@ -172,12 +182,13 @@ export class DialogService {
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
+			welcomeModal.componentInstance.locationPermission = locationPermission;
 			welcomeModal.componentInstance.switchPage = 2;
 			return welcomeModal;
 		}
 	}
 
-	openWelcomeModal(showWelcome): NgbModalRef {
+	openWelcomeModal(showWelcome: number, locationPermission: DeviceLocationPermission): NgbModalRef {
 		if (this.modalService.hasOpenModals()) {
 			return;
 		}
@@ -193,6 +204,7 @@ export class DialogService {
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
+			welcomeModal.componentInstance.locationPermission = locationPermission;
 			return welcomeModal;
 		}
 	}
@@ -211,5 +223,59 @@ export class DialogService {
 			trialModal.componentInstance.showWhichPage = showWhichPage;
 			return trialModal;
 		}
+	}
+
+	openLenovoIdDialog(appFeature = null) {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
+		const segment: SegmentConst = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment);
+		if (segment && segment !== SegmentConst.Commercial) {
+			if (!navigator.onLine) {
+				const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
+					backdrop: 'static',
+					size: 'lg',
+					centered: true,
+					windowClass: 'common-confirmation-modal'
+				});
+
+				const header = 'lenovoId.ssoErrorTitle';
+				modalRef.componentInstance.CancelText = '';
+				modalRef.componentInstance.header = header;
+				modalRef.componentInstance.description = 'lenovoId.ssoErrorNetworkDisconnected';
+				return modalRef.result;
+			} else {
+				const modal: NgbModalRef = this.modalService.open(ModalLenovoIdComponent, {
+					backdrop: 'static',
+					centered: true,
+					windowClass: 'lenovo-id-modal-size'
+				});
+				(<ModalLenovoIdComponent>modal.componentInstance).appFeature = appFeature;
+				return modal.result;
+			}
+		} else {
+			this.router.parseUrl(this.deviceService.isGaming ? '/device-gaming' : '/dashboard');
+		}
+	}
+
+	openModernPreloadModal() {
+		// const segment: SegmentConst = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment);
+		// if (segment && segment !== SegmentConst.Gaming && !this.deviceService.isSMode) {
+			const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
+				backdrop: 'static',
+				size: 'lg',
+				centered: true,
+				windowClass: 'modern-preload-modal',
+				keyboard: false,
+				beforeDismiss: () => {
+					if (modernPreloadModal.componentInstance.onBeforeDismiss) {
+						modernPreloadModal.componentInstance.onBeforeDismiss();
+					}
+					return true;
+				}
+			});
+		// } else {
+		// 	this.router.parseUrl(this.deviceService.isGaming ? '/gaming/dashboard' : '/dashboard');
+		// }
 	}
 }

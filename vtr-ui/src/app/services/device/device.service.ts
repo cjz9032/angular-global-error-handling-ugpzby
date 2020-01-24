@@ -9,6 +9,7 @@ import { AndroidService } from '../android/android.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { resolve } from 'url';
 
 @Injectable({
 	providedIn: 'root'
@@ -21,13 +22,16 @@ export class DeviceService {
 	public isArm = false;
 	public isAndroid = false;
 	public is64bit = true;
-	public showPrivacy = false;
 	public isGaming = false;
+	public isLiteGaming = false;
 	public isSMode = false;
 	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
-	private machineInfo: any;
+	public machineInfo: any;
 	public showSearch = false;
+	public machineType: number;
+	private Windows: any;
+	showPrivacy: boolean;
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService,
@@ -38,7 +42,7 @@ export class DeviceService {
 		this.device = shellService.getDevice();
 		this.sysInfo = shellService.getSysinfo();
 		this.microphone = shellService.getMicrophoneSettings();
-
+		this.Windows = this.shellService.getWindows();
 		if (this.device && this.sysInfo) {
 			this.isShellAvailable = true;
 		}
@@ -47,23 +51,7 @@ export class DeviceService {
 		this.initShowSearch();
 	}
 
-	private initIsArm() {
-		try {
-			this.getIsARM()
-				.then((status: boolean) => {
-					this.isArm = status;
-				}).catch(error => {
-					this.logger.error('initArm', error.message);
-					return false;
-				});
-		} catch (error) {
-			this.logger.error('initArm' + error.message);
-			return false;
-		}
-	}
-
-	public async getIsARM(): Promise<boolean> {
-		let isArm = false;
+	private async initIsArm() {
 		this.isAndroid = this.androidService.isAndroid;
 		if (this.isAndroid) {
 			return true;
@@ -71,12 +59,12 @@ export class DeviceService {
 		try {
 			if (this.isShellAvailable) {
 				const machineInfo = await this.getMachineInfo();
-				isArm = this.isAndroid || machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
-				return isArm;
+				this.isArm = this.isAndroid || machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
+				return this.isArm;
 			}
 		} catch (error) {
 			this.logger.error('getIsARM' + error.message);
-			return isArm;
+			return this.isArm;
 		}
 	}
 
@@ -110,13 +98,23 @@ export class DeviceService {
 
 	// this API doesn't have performance issue, can be always called at any time.
 	getMachineInfo(): Promise<any> {
+		this.logger.debug('DeviceService.getMachineInfo: pre API call');
+		if (this.machineInfo) {
+			this.logger.debug('DeviceService.getMachineInfo: found cached response');
+			this.commonService.sendNotification('MachineInfo', this.machineInfo);
+			return Promise.resolve(this.machineInfo);
+		}
+
 		if (this.isShellAvailable && this.sysInfo) {
+			this.logger.debug('DeviceService.getMachineInfo: no cache, invoking API');
+
 			return this.sysInfo.getMachineInfo()
 				.then((info) => {
+					this.logger.debug('DeviceService.getMachineInfo: response received from API');
 					this.machineInfo = info;
 					this.isSMode = info.isSMode;
 					this.isGaming = info.isGaming;
-					if (!this.showWarranty && (!info.mtm || (info.mtm && info.mtm.substring(info.mtm.length - 2).toLocaleLowerCase() !== 'cd'))) {
+					if (!this.showWarranty && (!info.mtm || (info.mtm && !info.mtm.toLocaleLowerCase().endsWith('cd')))) {
 						this.showWarranty = true;
 					}
 					if (info && info.cpuArchitecture) {
@@ -127,6 +125,7 @@ export class DeviceService {
 						}
 					}
 					this.commonService.sendNotification('MachineInfo', this.machineInfo);
+					this.logger.debug('DeviceService.getMachineInfo: returning response from API');
 					return info;
 				});
 		}
@@ -175,7 +174,13 @@ export class DeviceService {
 
 	getMachineType(): Promise<number> {
 		if (this.sysInfo) {
-			return this.sysInfo.getMachineType();
+			if (this.machineType) {
+				return Promise.resolve(this.machineType);
+			}
+			return this.sysInfo.getMachineType((value) => {
+				this.machineType = value;
+				return value;
+			});
 		}
 		return undefined;
 	}

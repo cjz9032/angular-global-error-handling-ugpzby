@@ -9,6 +9,23 @@
 		font-size: 3rem;
 		color: $main;
 	}
+	.tittle {
+		font-weight: $weight_600;
+		letter-spacing: 0;
+		color: #34495e;
+		opacity: 1;
+		font-size: 1.8rem;
+	}
+	.sub-tittle,
+	.note {
+		letter-spacing: 0;
+		color: #667481;
+		opacity: 1;
+		font-size: 1.4rem;
+	}
+	.note {
+		color: #db221f;
+	}
 	.close-button {
 		background: $gradient_main;
 		border-radius: 3rem;
@@ -18,5 +35,25 @@
 		font-weight: 500;
 		margin-top: 1rem;
 		font-weight: $weight_bold;
+	}
+	.legends-row {
+		// max-width: 93.5%;
+		font-size: 1.2rem;
+		.graph-legend {
+			display: block;
+			width: 0.6rem;
+			// height: 1.2rem;
+			// margin-top: 0.2rem;
+			border-width: thin;
+		}
+		.legends-box{
+			border: 0.1rem solid $dark;
+		}
+	}
+
+	.activity-chart {
+		font-family: "Segoe UI", sans-serif;
+		font-size: 10px;
+		letter-spacing: 0.35px;
 	}
 }

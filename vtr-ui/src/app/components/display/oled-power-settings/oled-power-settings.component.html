@@ -3,19 +3,21 @@
 		<div class="col">
 			<p class="caption"
 				tabindex="0"
-				id="oled-power-settings-caption1" attr.aria-label="{{ description[0] }}" >
+				id="oled-power-settings-caption1"
+				attr.aria-label="{{ description[0] }}">
 				{{ description[0] }}
 			</p>
 			<p class="caption"
 				tabindex="0"
-				id="oled-power-settings-caption2" attr.aria-label="{{ description[1] }}" >
+				id="oled-power-settings-caption2"
+				attr.aria-label="{{ description[1] }}">
 				{{ description[1] }}
 			</p>
 		</div>
 	</div>
 
 	<div class="dropdown row">
-		<section class="col-sm-12 col-md-4">
+		<section class="col-sm-12 col-md-12 col-xl-4">
 			<h5 id="oled-power-settings-tb-dimmer"
 				tabindex="0"
 				attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.taskBarDimmer' | translate}}">
@@ -23,6 +25,7 @@
 			</h5>
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="taskBarDimmerValue"
+				[textCase]="'oled'"
 				(change)="onTaskBarDimmerChange($event)"
 				vtrMetrics
 				metricsEvent="FeatureClick"
@@ -31,7 +34,7 @@
 				[dropDownId]="'oled-taskbar-dimmer-dropDown'">
 			</vtr-ui-dropdown>
 		</section>
-		<section class="col-sm-12 col-md-4">
+		<section class="col-sm-12 col-md-12 col-xl-4">
 			<h5 id="oled-power-settings-bg-dimmer"
 				tabindex="0"
 				attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.backgroundDimmer' | translate}}">
@@ -39,6 +42,7 @@
 			</h5>
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="backgroundDimmerValue"
+				[textCase]="'oled'"
 				(change)="onBackgroundDimmerChange($event)"
 				vtrMetrics
 				metricsEvent="FeatureClick"
@@ -47,7 +51,7 @@
 				[dropDownId]="'oled-background-dimmer-dropDown'">
 			</vtr-ui-dropdown>
 		</section>
-		<section class="col-sm-12 col-md-4">
+		<section class="col-sm-12 col-md-12 col-xl-4">
 			<h5 id="oled-power-settings-dp-dimmer"
 				tabindex="0"
 				attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.displayDimmer' | translate}}">
@@ -56,6 +60,7 @@
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="displayDimmerValue"
 				(change)="onDisplayDimmerChange($event)"
+				[textCase]="'oled'"
 				vtrMetrics
 				metricsEvent="FeatureClick"
 				metricsParent="Page.Settings"

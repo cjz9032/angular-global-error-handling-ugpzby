@@ -36,6 +36,7 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 	}
 
 	ngOnInit() {
+		window.getSelection().empty();
 		this.enterTime = new Date().getTime();
 		this.articleTitle = '';
 		this.articleImage = '';
@@ -45,7 +46,12 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 				if ('Results' in response) {
 					this.articleTitle = response.Results.Title;
 					this.articleImage = response.Results.Image;
-					this.articleBody = this.sanitizer.sanitize(SecurityContext.HTML, response.Results.Body);
+					const articleBodySanitize = this.sanitizer.sanitize(SecurityContext.HTML, response.Results.Body);
+					const replaceBody = articleBodySanitize
+						.replace(/(<video )/gi, '<iframe ')
+						.replace(/(<\/video>)/gi, '</iframe>')
+						.replace(/(autoplay=\")/gi, 'allow="');
+					this.articleBody = this.sanitizer.bypassSecurityTrustHtml(replaceBody);
 					if (response.Results.Category && response.Results.Category.length > 0) {
 						this.articleCategory = response.Results.Category.map((category: any) => category.Id).join(' ');
 					}

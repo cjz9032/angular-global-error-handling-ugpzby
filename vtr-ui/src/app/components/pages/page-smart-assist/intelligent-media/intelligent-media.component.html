@@ -1,6 +1,6 @@
 <div class="row py-5 smart-assist-card"
 	id="intelligentMedia">
-	<div class="col-12 mx-auto"
+	<div class="col-12 px-0"
 		id="media">
 		<vtr-container-collapsible [collapseLinkId]="'intelligentMedia'"
 			[cardTitle]="'device.smartAssist.intelligentMedia.heading' | translate"
@@ -30,6 +30,7 @@
 			</ul>
 			<ul class="list-group list-group-flush">
 				<li>
+					<div class="border-top" *ngIf="superResolutionAvailable && intelligentMediaAvailable"></div>
 					<vtr-ui-row-switch *ngIf="superResolutionAvailable"
 					    [switchId]="'superResolution'"
 						[title]="'device.smartAssist.superResolution.title' | translate"

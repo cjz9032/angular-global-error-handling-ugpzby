@@ -9,7 +9,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { BehaviorSubject, EMPTY } from 'rxjs';
+import { BehaviorSubject, EMPTY, pipe, zip, range, timer, from, combineLatest, of } from 'rxjs';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
 import {
 	FlipToBootCurrentModeEnum,
@@ -18,14 +18,13 @@ import {
 	FlipToBootSupportedEnum
 } from '../../../../../services/power/flipToBoot.enum';
 import { MetricService } from '../../../../../services/metric/metric.service';
-
-
 import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
 import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/battery-charge-threshold-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
-import { GaugeResetInfoCache } from 'src/app/data-models/device/gauge-reset-info-cache.model';
-
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { retryWhen, map, mergeMap, tap, finalize, takeWhile, switchMap, debounce } from 'rxjs/operators';
+import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -39,8 +38,19 @@ enum PowerMode {
 	styleUrls: ['./subpage-device-settings-power.component.scss']
 })
 export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
+
+	@Input() isCollapsed = true;
+	@Input() allowCollapse = true;
+	@Input() theme = 'white';
+
+	@Output() toggle = new EventEmitter();
+
+	public machineType: any;
+	public isDesktopMachine = true;
+
 	public vantageToolbarStatus = new FeatureStatus(false, true);
 	vantageToolbarCache: FeatureStatus;
+
 	public alwaysOnUSBStatus = new FeatureStatus(false, true);
 	public usbChargingStatus = new FeatureStatus(false, true);
 	public easyResumeStatus = new FeatureStatus(false, true);
@@ -48,210 +58,118 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public expressChargingStatus = new FeatureStatus(false, true);
 	public conservationModeLock = false;
 	public expressChargingLock = false;
-	public batteryGauge: any;
-	public showWarningMsg: boolean;
+
+	// Energy Star
 	public isEnergyStarProduct = false;
 	public energyStarCache: boolean;
-	public isChargeThresholdAvailable = false;
-	public gaugeResetCapability = false;
-	@Input() isCollapsed = true;
-	@Input() allowCollapse = true;
-	@Input() theme = 'white';
 
-	@Output() toggle = new EventEmitter();
-
-	primaryCheckBox = false;
-	secondaryCheckBox = false;
-	selectedStopAtChargeVal;
-	selectedStartAtChargeVal;
-	selectedStopAtChargeVal1;
-	selectedStartAtChargeVal1;
-
-	public responseData: any[] = [];
-	isSecondBatteryAvailable = false;
-	public machineType: any;
 	private batteryCountStatusEventRef: any;
+	public thresholdInfo: ChargeThreshold[];
+	public chargeThresholdCapability = false;
+	public chargeThresholdStatus = false;
+	public showBCTWarningNote: boolean;
 
 	notificationSubscription: Subscription;
-
-	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
-	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
-	stopAtChargeOptions: number[] = this.chargeOptions.slice(1, this.chargeOptions.length);
+	toolBarSubscription: Subscription;
 
 	toggleAlwaysOnUsbFlag = false;
 	usbChargingCheckboxFlag = false;
 	powerMode = PowerMode.Sleep;
-	showEasyResumeSection = true;
+	showEasyResumeSection = false;
 	toggleEasyResumeStatus = false;
+
 	showAirplanePowerModeSection = false;
 	toggleAirplanePowerModeFlag = false;
 	airplaneAutoDetection = false;
+
 	usbChargingInBatteryModeStatus = true;
-	isDesktopMachine = true;
-	showBatteryThreshold = false;
 	value = 1;
 	alwaysOnUSBCache: AlwaysOnUSBCapability = undefined;
 	airplanePowerCache: AlwaysOnUSBCapability = undefined;
 	easyResumeCache: FeatureStatus;
-	batteryChargeThresholdCache: BatteryChargeThresholdCapability = undefined;
+	chargeThresholdCache: ChargeThreshold[] = undefined;
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
-	public isPowerDriverMissing = false;
-
-	gaugeResetInfo: BatteryGaugeReset[];
-	gaugeResetInfoCache: GaugeResetInfoCache = undefined;
-	remainingPercentages: number[];
-	isACAttached: boolean;
-	isGaugeResetRunning: boolean[] = [false, false];
-
 	smartStandbyCapability: boolean;
 	showPowerSmartSettings = true;
-	tempHeaderMenuItems = [];
+	gaugeResetCapability = false;
+	isToolBarSetSuccessed = false;
+	isVantageToolbarSetEnd = true;
 
+	isPowerDriverMissing = false;
+
+	toggleFlipToBootStatus = true;
+	showFlipToBootSection$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
+	isBatterySectionAvailable = false;
+	isPowerSectionAvailable = false;
+	isPowerPageAvailable = false;
+	gotoLinks = ['smartSettings', 'smartStandby', 'battery', 'power', 'other'];
+
+	// remove power smart settings after intelligent cooling code updates
 	headerMenuItems = [
 		{
 			title: 'device.deviceSettings.power.powerSmartSettings.title',
 			path: 'smartSettings',
-			metricsItem: 'PowerSmartSettings'
-		},
-		{
-			title: 'device.deviceSettings.power.smartStandby.title',
-			path: 'smartStandby',
-			metricsItem: 'SmartStandby'
-		},
-		{
-			title: 'device.deviceSettings.power.batterySettings.title',
-			path: 'battery',
-			metricsItem: 'BatterySettings'
-		},
-		{
-			title: 'device.deviceSettings.power.powerSettings.title',
-			path: 'power',
-			metricsItem: 'PowerSettings'
-		},
-		{
-			title: 'device.deviceSettings.power.otherSettings.title',
-			path: 'other',
-			metricsItem: 'OtherSettings'
+			metricsItem: 'PowerSmartSettings',
+			order: 1
 		}
 	];
-	// removed from conservation mode <br>Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off.
-	toggleFlipToBootStatus = true;
-	showFlipToBootSection$: BehaviorSubject<boolean> = new BehaviorSubject(false);
-
-	async changeBatteryMode(event, mode) {
-		// Code suggested fangtian1@lenovo.com, above commented code is the previous one
-		if (mode === 'expressCharging') {
-			this.conservationModeLock = true;
-			this.expressChargingLock = false;
-			if (this.expressChargingStatus.status) { // Close express charge if it's open before
-				try {
-					// close express charging and change UI appearance
-					await this.setRapidChargeModeStatusIdeaNoteBook(false);
-					this.expressChargingStatus.status = false;
-				} catch (e) {
-					// if await failed
-					console.log(e.message);
-				}
-			} else { // Open express charge if it's close before
-				if (this.conservationModeStatus.status) { // When conservation mode is open, close it
-					try {
-						await this.setConservationModeStatusIdeaNoteBook(false);
-						this.conservationModeStatus.status = false;
-					} catch (e) {
-						// return false directly if failed to close conservation mode
-						return false;
-					}
-				}
-				try { // open Express charging if close conservation mode successfully
-					await this.setRapidChargeModeStatusIdeaNoteBook(true);
-					this.expressChargingStatus.status = true;
-				} catch (e) {
-					// Log?
-					console.log(e.message);
-				}
-			}
-
-			this.expressChargingLock = false;
-			this.conservationModeLock = false;
-		} else if (mode === 'conservationMode') {
-			this.conservationModeLock = false;
-			this.expressChargingLock = true;
-			if (this.conservationModeStatus.status) { // Close conservation mode if it's open before
-				try {
-					// close conservation mode and change UI appearance
-					await this.setConservationModeStatusIdeaNoteBook(false);
-					this.conservationModeStatus.status = false;
-				} catch (e) {
-					// if await failed
-					console.log(e.message);
-				}
-			} else { // Open conservation mode if it's close before
-				if (this.expressChargingStatus.status) { // When express charging is open, close it
-					try {
-						await this.setRapidChargeModeStatusIdeaNoteBook(false);
-						this.expressChargingStatus.status = false;
-					} catch (e) {
-						// return false directly if failed to close express charging
-						return false;
-					}
-				}
-				try { // open conservation mode if close express charging successfully
-					await this.setConservationModeStatusIdeaNoteBook(true);
-					this.conservationModeStatus.status = true;
-				} catch (e) {
-					// Log?
-					console.log(e.message);
-				}
-			}
-
-			this.expressChargingLock = false;
-			this.conservationModeLock = false;
-		}
-		this.expressChargingCache.status = this.expressChargingStatus.status;
-		this.expressChargingCache.isLoading = this.expressChargingLock;
-		this.commonService.setLocalStorageValue(LocalStorageKey.ExpressChargingCapability, this.expressChargingCache);
-
-		this.conservationModeCache.status = this.conservationModeStatus.status;
-		this.conservationModeCache.isLoading = this.conservationModeLock;
-		this.commonService.setLocalStorageValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
-	}
 
 	constructor(
+		private routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		public powerService: PowerService,
+		public batteryService: BatteryDetailService,
 		private commonService: CommonService,
 		private logger: LoggerService,
 		public modalService: NgbModal,
 		public shellServices: VantageShellService,
-		private metrics: MetricService
+		private metrics: MetricService,
 	) {
 	}
 
 	ngOnInit() {
-		this.tempHeaderMenuItems = this.headerMenuItems;
-		this.getFlipToBootCapability();
+		this.logger.info('Init Subpage Power');
 		this.initDataFromCache();
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		this.getVantageToolBarCapability();
-		this.getEnergyStarCapability();
 		if (this.isDesktopMachine) {
-			this.headerMenuItems.splice(0, 1);
-			this.headerMenuItems.splice(0, 1);
-			this.headerMenuItems.splice(0, 1);
+			// TODO: remove onSetSmartSettingsCapability when intelligent cooling fixed
+			this.onSetSmartSettingsCapability(false);
+			// this.checkIsPowerPageAvailable(false, 'smartSettings');
+			this.checkIsPowerPageAvailable(false, 'smartStandby');
+			this.checkIsPowerPageAvailable(false, 'battery');
 		}
-		this.getBatteryAndPowerSettings(this.machineType);
+		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		this.getBatteryAndPowerSettings();
+		this.getVantageToolBarStatus();
+		this.getEnergyStarCapability();
+
 		this.startMonitor();
 
 		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 
-		console.log('=============Power Subpage ngOnit ===================');
+		this.logger.info('=============Power Subpage ngOnit ===================');
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 	}
 
+	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+		this.stopMonitor();
+		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
+		if (this.toolBarSubscription) {
+			this.toolBarSubscription.unsubscribe();
+		}
+	}
+
+	// ************************** Start Getting Cached Data ****************************
 	initDataFromCache() {
+		// this.initBatteryLinkFromCache();
+		this.initSmartStandbyFromCache();
+		this.initPowerSmartSettingFromCache();
 		this.initAirplanePowerFromCache();
 		this.initBatteryChargeThresholdFromCache();
 		this.initGaugeResetInfoFromCache();
@@ -263,73 +181,26 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	}
 
-	initExpressChargingFromCache() {
+	public initPowerSmartSettingFromCache() {
 		try {
-			this.expressChargingCache = this.commonService.getLocalStorageValue(LocalStorageKey.ExpressChargingCapability, undefined);
-			if (this.expressChargingCache !== undefined) {
-				this.expressChargingStatus.available = this.expressChargingCache.available;
-				this.expressChargingStatus.status = this.expressChargingCache.status;
-				this.expressChargingLock = this.expressChargingCache.isLoading;
-			} else {
-				this.expressChargingCache = new FeatureStatus(false, true, true, false);
-			}
-		} catch (error) {
-			console.log('initExpressChargingFromCache', error);
-		}
-	}
-
-	initConservationModeFromCache() {
-		try {
-			this.conservationModeCache = this.commonService.getLocalStorageValue(LocalStorageKey.ConservationModeCapability, undefined);
-			if (this.conservationModeCache !== undefined) {
-				this.conservationModeStatus.available = this.conservationModeCache.available;
-				this.conservationModeStatus.status = this.conservationModeCache.status;
-				this.conservationModeLock = this.conservationModeCache.isLoading;
-			} else {
-				this.conservationModeCache = new FeatureStatus(false, true, true, false);
-			}
-		} catch (error) {
-			console.log('initConservationModeFromCache', error);
-		}
-	}
-
-	initBatteryChargeThresholdFromCache() {
-		try {
-			this.batteryChargeThresholdCache = this.commonService.getLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, undefined);
-			if (this.batteryChargeThresholdCache) {
-				this.isChargeThresholdAvailable = this.batteryChargeThresholdCache.available;
-				this.showBatteryThreshold = this.batteryChargeThresholdCache.toggleStatus;
-
-				this.selectedStartAtChargeVal = this.batteryChargeThresholdCache.startAt1;
-				this.selectedStopAtChargeVal = this.batteryChargeThresholdCache.stopAt1;
-				this.primaryCheckBox = this.batteryChargeThresholdCache.checkBox1;
-
-				if (this.isSecondBatteryAvailable) {
-					this.selectedStartAtChargeVal1 = this.batteryChargeThresholdCache.startAt2;
-					this.selectedStopAtChargeVal1 = this.batteryChargeThresholdCache.stopAt2;
-					this.secondaryCheckBox = this.batteryChargeThresholdCache.checkBox2;
+			const cache = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
+			if (cache) {
+				const showIC = cache.showIC;
+				if (showIC === 0) {
+					this.onSetSmartSettingsCapability(true);
 				}
-				this.showWarningMsg = this.batteryChargeThresholdCache.showWarningMsg;
-
-			} else {
-				this.batteryChargeThresholdCache = new BatteryChargeThresholdCapability();
 			}
 		} catch (error) {
-			console.log('initBatteryChargeThresholdFromCache', error);
+			console.log('initPowerSmartSettingFromCache', error);
 		}
 	}
 
-	initGaugeResetInfoFromCache() {
-		try {
-			this.gaugeResetInfoCache = this.commonService.getLocalStorageValue(LocalStorageKey.GaugeResetInformation, undefined);
-			if (this.gaugeResetInfoCache !== undefined) {
-				this.gaugeResetCapability = this.gaugeResetInfoCache.isAvailable;
-				this.gaugeResetInfo = this.gaugeResetInfoCache.gaugeResetInfo;
-			} else {
-				this.gaugeResetInfoCache = new GaugeResetInfoCache();
-			}
-		} catch (error) {
-			console.log('initAirplanePowerFromCache', error);
+	initSmartStandbyFromCache() {
+		const capability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
+		if (capability !== undefined) {
+			this.onSetSmartStandbyCapability(capability.isCapable);
+		} else {
+			this.onSetSmartStandbyCapability(false);
 		}
 	}
 
@@ -344,35 +215,57 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.airplanePowerCache = new AlwaysOnUSBCapability();
 			}
 		} catch (error) {
-			console.log('initAirplanePowerFromCache', error);
+			this.logger.info('initAirplanePowerFromCache', error);
 		}
 	}
 
-
-	initEnergyStarFromCache() {
+	initBatteryChargeThresholdFromCache() {
 		try {
-			this.energyStarCache = this.commonService.getLocalStorageValue(LocalStorageKey.EnergyStarCapability, undefined);
-			if (this.energyStarCache !== undefined) {
-				this.isEnergyStarProduct = this.energyStarCache;
-			} else {
-				this.energyStarCache = false;
+			this.chargeThresholdCache = this.commonService.getLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, undefined);
+			if (this.chargeThresholdCache) {
+				this.setChargeThresholdUI(this.chargeThresholdCache);
 			}
 		} catch (error) {
-			console.log('initEnergyStarFromCache', error);
+			this.logger.info('initBatteryChargeThresholdFromCache', error);
 		}
 	}
 
-	initOtherSettingsFromCache() {
+	initGaugeResetInfoFromCache() {
 		try {
-			this.vantageToolbarCache = this.commonService.getLocalStorageValue(LocalStorageKey.VantageToolbarCapability, undefined);
-			if (this.vantageToolbarCache) {
-				this.vantageToolbarStatus.available = this.vantageToolbarCache.available;
-				this.vantageToolbarStatus.status = this.vantageToolbarCache.status;
+			const gaugeResetCapability = this.commonService.getLocalStorageValue(LocalStorageKey.GaugeResetCapability, undefined);
+			this.gaugeResetCapability = gaugeResetCapability ? true : false;
+		} catch (error) {
+			this.logger.info('initAirplanePowerFromCache', error);
+		}
+	}
+
+	initExpressChargingFromCache() {
+		try {
+			this.expressChargingCache = this.commonService.getLocalStorageValue(LocalStorageKey.ExpressChargingCapability, undefined);
+			if (this.expressChargingCache !== undefined) {
+				this.expressChargingStatus.available = this.expressChargingCache.available;
+				this.expressChargingStatus.status = this.expressChargingCache.status;
+				this.expressChargingLock = this.expressChargingCache.isLoading;
 			} else {
-				this.vantageToolbarCache = new FeatureStatus(false, true);
+				this.expressChargingCache = new FeatureStatus(false, true, true, false);
 			}
 		} catch (error) {
-			console.log('initOtherSettingsFromCache', error);
+			this.logger.info('initExpressChargingFromCache', error);
+		}
+	}
+
+	initConservationModeFromCache() {
+		try {
+			this.conservationModeCache = this.commonService.getLocalStorageValue(LocalStorageKey.ConservationModeCapability, undefined);
+			if (this.conservationModeCache !== undefined) {
+				this.conservationModeStatus.available = this.conservationModeCache.available;
+				this.conservationModeStatus.status = this.conservationModeCache.status;
+				this.conservationModeLock = this.conservationModeCache.isLoading;
+			} else {
+				this.conservationModeCache = new FeatureStatus(false, true, true, false);
+			}
+		} catch (error) {
+			this.logger.info('initConservationModeFromCache', error);
 		}
 	}
 
@@ -395,68 +288,210 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.easyResumeCache = new FeatureStatus(false, false);
 			}
 		} catch (error) {
-			console.log('initPowerSettingsFromCache', error);
+			this.logger.info('initPowerSettingsFromCache', error);
 		}
 	}
 
-	ngOnDestroy() {
-		if (this.notificationSubscription) {
-			this.notificationSubscription.unsubscribe();
+	initOtherSettingsFromCache() {
+		try {
+			this.vantageToolbarCache = this.commonService.getLocalStorageValue(LocalStorageKey.VantageToolbarCapability, undefined);
+			if (this.vantageToolbarCache) {
+				this.vantageToolbarStatus.available = this.vantageToolbarCache.available;
+				this.vantageToolbarStatus.status = this.vantageToolbarCache.status;
+			} else {
+				this.vantageToolbarCache = new FeatureStatus(false, true);
+			}
+		} catch (error) {
+			this.logger.info('initOtherSettingsFromCache', error);
 		}
-		this.stopMonitor();
-		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
+	}
+
+	initEnergyStarFromCache() {
+		try {
+			this.energyStarCache = this.commonService.getLocalStorageValue(LocalStorageKey.EnergyStarCapability, undefined);
+			if (this.energyStarCache !== undefined) {
+				this.isEnergyStarProduct = this.energyStarCache;
+			} else {
+				this.energyStarCache = false;
+			}
+		} catch (error) {
+			this.logger.info('initEnergyStarFromCache', error);
+		}
+	}
+
+	// ************************** End Getting Cached Data ****************************
+
+	// TODO: remove unused method
+	// openContextModal(template: TemplateRef<any>) {
+	// 	this.modalService.open(template, {
+	// 		windowClass: 'read-more'
+	// 	});
+	// }
+
+	// closeContextModal() {
+	// 	this.modalService.dismissAll();
+	// }
+
+	// ************ Start power page Capability Checks *******************
+	onSetSmartSettingsCapability(event: boolean) {
+		this.showPowerSmartSettings = event;
+		this.updateSmartSettingsLinkStatus(this.showPowerSmartSettings);
 	}
 
 	onSetSmartStandbyCapability(event: boolean) {
 		this.smartStandbyCapability = event;
-		if (!event) {
+		this.updateSmartStandbyLinkStatus(this.smartStandbyCapability);
+	}
+
+	getBatteryAndPowerSettings() {
+		this.logger.info('Inside getBatteryAndPowerSettings', this.machineType);
+
+		this.isBatterySectionAvailable = false;
+		this.isPowerSectionAvailable = false;
+
+		this.getFlipToBootCapability();
+		switch (this.machineType) {
+			case 1:
+				this.batteryCountStatusEventRef = this.getBatteryStatusEvent.bind(this);
+				this.getAirplaneModeCapabilityThinkPad();
+				this.getAirplaneModeAutoDetectionOnThinkPad();
+				this.getBatteryThresholdInformation();
+				this.getGaugeResetCapability();
+				this.getAlwaysOnUSBCapabilityThinkPad();
+				this.getEasyResumeCapabilityThinkPad();
+				break;
+			case 0:
+				this.getConservationModeStatusIdeaPad();
+				this.getRapidChargeModeStatusIdeaPad();
+				this.getAlwaysOnUSBStatusIdeaPad();
+				this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+				break;
+		}
+	}
+
+	getVantageToolBarStatus() {
+		this.logger.info('Before getVantageToolBarStatus');
+		if (this.powerService.isShellAvailable) {
+			this.powerService.getVantageToolBarStatus().then((featureStatus) => {
+				this.logger.info('getVantageToolBarStatus.then', featureStatus);
+				this.vantageToolbarStatus = featureStatus;
+				this.updateOtherSettingsStatus(this.vantageToolbarStatus.available);
+			}).catch ((error) => {
+				this.logger.error('getVantageToolBarStatus', error.message);
+				return EMPTY;
+			});
+		}
+	}
+
+	public getEnergyStarCapability() {
+		this.logger.info('Before getEnergyStarCapability');
+		this.powerService.getEnergyStarCapability()
+			.then((response: boolean) => {
+				this.logger.info('getEnergyStarCapability.then', response);
+				this.isEnergyStarProduct = response;
+				this.commonService.setLocalStorageValue(LocalStorageKey.EnergyStarCapability, this.isEnergyStarProduct);
+			}).catch(error => {
+				this.logger.error('getEnergyStarCapability.error', error.message);
+			});
+	}
+	// ************ End power page Capability Checks *******************
+
+
+	// ******************** Start Goto Links of diff sections Updates *******************
+
+	// TODO: Update this after changing logic for intelligent cooling part
+	updateSmartSettingsLinkStatus(addLink: boolean) {
+		this.checkIsPowerPageAvailable(addLink, 'smartSettings');
+		this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartSettings');
+	}
+
+	updateSmartStandbyLinkStatus(addLink: boolean) {
+		this.checkIsPowerPageAvailable(addLink, 'smartStandby');
+		if (addLink) {
+			const smartStandByObj = {
+				title: 'device.deviceSettings.power.smartStandby.sectionTitle',
+				path: 'smartStandby',
+				metricsItem: 'SmartStandby',
+				order: 2
+			};
+			this.commonService.addToObjectsList(this.headerMenuItems, smartStandByObj);
+		} else {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartStandby');
 		}
 	}
 
-	openContextModal(template: TemplateRef<any>) {
-		this.modalService.open(template, {
-			windowClass: 'read-more'
-		});
-	}
-
-	closeContextModal() {
-		this.modalService.dismissAll();
-	}
-
-	async getBatteryAndPowerSettings(machineName: any) {
-		console.log('inside getAndSetAlwaysOnUSBForBrands');
-		console.log('machine', machineName);
-
-		switch (machineName) {
-			case 1:
-				this.getAirplaneModeAutoDetectionOnThinkPad();
-				this.batteryCountStatusEventRef = this.getBatteryStatusEvent.bind(this);
-				await this.getBatteryThresholdInformation();
-				await this.getGaugeResetCapability();
-				await this.getAirplaneModeCapabilityThinkPad();
-				await this.getAlwaysOnUSBCapabilityThinkPad();
-				await this.getEasyResumeCapabilityThinkPad();
-				break;
-			case 0:
-				this.showEasyResumeSection = false;
-				await this.getConservationModeStatusIdeaPad();
-				await this.getRapidChargeModeStatusIdeaPad();
-				await this.getAlwaysOnUSBStatusIdeaPad();
-				this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
-				break;
+	updateBatteryLinkStatus(addLink: boolean) {
+		this.isBatterySectionAvailable = this.isBatterySectionAvailable || addLink;
+		this.checkIsPowerPageAvailable(this.isBatterySectionAvailable, 'battery');
+		if (this.isBatterySectionAvailable) {
+			const batteryObj = {
+				title: 'device.deviceSettings.power.batterySettings.title',
+				path: 'battery',
+				metricsItem: 'BatterySettings',
+				order: 3
+			};
+			this.headerMenuItems = this.commonService.addToObjectsList(this.headerMenuItems, batteryObj);
+		} else {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
 		}
-		this.hideBatteryLink();
-		this.hidePowerLink();
 	}
 
-	async getVantageToolBarCapability() {
-		await this.getVantageToolBarStatus();
-		this.hideOtherSettingsLink();
+	updatePowerLinkStatus(addLink: boolean) {
+		this.isPowerSectionAvailable = this.isPowerSectionAvailable || addLink;
+		this.checkIsPowerPageAvailable(this.isPowerSectionAvailable, 'power');
+		if (this.isPowerSectionAvailable) {
+			const powerObj = {
+				title: 'device.deviceSettings.power.powerSettings.title',
+				path: 'power',
+				metricsItem: 'PowerSettings',
+				order: 4
+			};
+			this.headerMenuItems = this.commonService.addToObjectsList(this.headerMenuItems, powerObj);
+		} else {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
+		}
 	}
+
+	updateOtherSettingsStatus(addLink: boolean) {
+		this.checkIsPowerPageAvailable(addLink, 'other');
+		if (addLink) {
+			const other = {
+				title: 'device.deviceSettings.power.otherSettings.title',
+				path: 'other',
+				metricsItem: 'OtherSettings',
+				order: 5
+			};
+			this.headerMenuItems = this.commonService.addToObjectsList(this.headerMenuItems, other);
+		} else {
+			this.commonService.removeObjFrom(this.headerMenuItems, 'other');
+		}
+	}
+
+	checkIsPowerPageAvailable(value: boolean, id: string) {
+		// this.isPowerPageAvailable = this.isPowerPageAvailable || value;
+		const index: number = this.gotoLinks.indexOf(id);
+		if (value) {
+			if (index === -1) {
+				this.gotoLinks.push(id);
+			}
+		} else {
+			if (index !== -1) {
+				this.gotoLinks =  this.gotoLinks.filter((link) => {
+					return link !== id;
+				});
+			}
+		}
+		if (this.gotoLinks.length === 0 ) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsPowerPageAvailable, false);
+		} else {
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsPowerPageAvailable, true);
+		}
+	}
+	// ******************** End Goto Links of diff sections Updates *******************
+
 
 	onUsbChargingStatusChange() {
-		console.log('usb charge state entered');
+		this.logger.info('usb charge state entered');
 		this.updatePowerMode();
 	}
 
@@ -472,11 +507,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.powerMode = PowerMode.Disabled;
 				}
 				this.setAlwaysOnUSBStatusThinkPad(this.powerMode, this.usbChargingCheckboxFlag);
-				console.log('always on usb: thinkpad');
+				this.logger.info('always on usb: thinkpad');
 				break;
 			case 0:
 				this.setAlwaysOnUSBStatusIdeaPad(event);
-				console.log('always on usb: ideapad');
+				this.logger.info('always on usb: ideapad');
 				break;
 		}
 		this.alwaysOnUSBCache.toggleState.status = this.toggleAlwaysOnUsbFlag;
@@ -490,10 +525,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		switch (this.machineType) {
 			case 1:
 				this.setEasyResumeThinkPad(event);
-				console.log('Easy Resume: ThinkPad');
+				this.logger.info('Easy Resume: ThinkPad');
 				break;
 			case 0:
-				console.log('easy resume: ideapad');
+				this.logger.info('easy resume: ideapad');
 				break;
 		}
 	}
@@ -502,10 +537,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		switch (this.machineType) {
 			case 1:
 				this.setAirplaneModeThinkPad(event);
-				console.log('Airplane Power mOde Set: ThinkPad', event);
+				this.logger.info('Airplane Power mOde Set: ThinkPad', event);
 				break;
 			case 0:
-				console.log('Airplane Power mOde Set: ideapad');
+				this.logger.info('Airplane Power mOde Set: ideapad');
 				break;
 		}
 	}
@@ -521,30 +556,31 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 		switch (this.machineType) {
 			case 1:
-				console.log('always on usb: thinkpad');
+				this.logger.info('always on usb: thinkpad');
 				this.setAlwaysOnUSBStatusThinkPad(this.powerMode, this.usbChargingCheckboxFlag);
 				break;
 			case 0:
 				this.setUSBChargingInBatteryModeStatusIdeaNoteBook(this.usbChargingCheckboxFlag);
-				console.log('always on usb: ideapad');
+				this.logger.info('always on usb: ideapad');
 				break;
 		}
 	}
 
 	// Start ThinkPad
-	private async getAlwaysOnUSBCapabilityThinkPad() {
-		console.log('getAlwaysOnUSBCapabilityThinkPad ');
+	private getAlwaysOnUSBCapabilityThinkPad() {
+		this.logger.info('Before getAlwaysOnUSBCapabilityThinkPad ');
 		if (this.powerService.isShellAvailable) {
-			try {
-				const value = await this.powerService.getAlwaysOnUSBCapabilityThinkPad();
-				console.log('getAlwaysOnUSBCapabilityThinkPad.then', value);
+			this.powerService.getAlwaysOnUSBCapabilityThinkPad().then((value) => {
+				this.logger.info('getAlwaysOnUSBCapabilityThinkPad.then', value);
 				this.alwaysOnUSBStatus.available = value;
-				this.getAlwaysOnUSBStatusThinkPad();
-			} catch (error) {
-				this.logger.error('getAlwaysOnUSBCapabilityThinkPad', error.message);
-				this.alwaysOnUSBStatus.available = false;
+				this.updatePowerLinkStatus(value);
+				if (value) {
+					this.getAlwaysOnUSBStatusThinkPad();
+				}
+			}).catch ((error) => {
+				this.logger.error('getAlwaysOnUSBCapabilityThinkPad.error', error.message);
 				return EMPTY;
-			}
+			});
 		}
 	}
 
@@ -554,12 +590,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.powerService
 					.getAlwaysOnUSBStatusThinkPad()
 					.then((alwaysOnUsbThinkPad: any) => {
-						console.log('getAlwaysOnUSBStatusThinkPad.then', alwaysOnUsbThinkPad);
+						this.logger.info('getAlwaysOnUSBStatusThinkPad.then', alwaysOnUsbThinkPad);
 						this.alwaysOnUSBStatus.status = alwaysOnUsbThinkPad.isEnabled;
 						this.usbChargingCheckboxFlag = alwaysOnUsbThinkPad.isChargeFromShutdown;
-						if (alwaysOnUsbThinkPad.isEnabled) {
-							this.toggleAlwaysOnUsbFlag = true;
-						}
+						this.toggleAlwaysOnUsbFlag = alwaysOnUsbThinkPad.isEnabled;
 						this.alwaysOnUSBCache.checkbox.status = this.usbChargingCheckboxFlag;
 						this.alwaysOnUSBCache.toggleState.status = this.toggleAlwaysOnUsbFlag;
 						this.commonService.setLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
@@ -575,11 +609,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			return EMPTY;
 		}
 	}
-	private async getEasyResumeCapabilityThinkPad() {
+	private getEasyResumeCapabilityThinkPad() {
+		this.logger.info('Before getEasyResumeCapabilityThinkPad');
 		if (this.powerService.isShellAvailable) {
-			try {
-				const value = await this.powerService.getEasyResumeCapabilityThinkPad();
-				console.log('getEasyResumeCapabilityThinkPad.then', value);
+			this.powerService.getEasyResumeCapabilityThinkPad().then((value) => {
+				this.logger.info('getEasyResumeCapabilityThinkPad.then', value);
+				this.updatePowerLinkStatus(value);
 				if (value === true) {
 					this.showEasyResumeSection = true;
 					this.getEasyResumeStatusThinkPad();
@@ -588,11 +623,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				}
 				this.easyResumeCache.available = this.showEasyResumeSection;
 				this.commonService.setLocalStorageValue(LocalStorageKey.EasyResumeCapability, this.easyResumeCache);
-			} catch (error) {
+			}).catch ((error) => {
 				this.logger.error('getEasyResumeCapabilityThinkPad', error.message);
-				this.showEasyResumeSection = false;
 				return EMPTY;
-			}
+			});
 		}
 	}
 
@@ -602,7 +636,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.powerService
 					.getEasyResumeStatusThinkPad()
 					.then((value: any) => {
-						console.log('getEasyResumeStatusThinkPad.then', value);
+						this.logger.info('getEasyResumeStatusThinkPad.then', value);
 						this.toggleEasyResumeStatus = value;
 						this.easyResumeCache.status = this.toggleEasyResumeStatus;
 						this.commonService.setLocalStorageValue(LocalStorageKey.EasyResumeCapability, this.easyResumeCache);
@@ -619,292 +653,222 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	private setEasyResumeThinkPad(event: any) {
-		try {
-			console.log('setAlwaysOnUSBStatusIdeaNoteBook.then', event);
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.setEasyResumeThinkPad(event.switchValue)
-					.then((value: boolean) => {
-						console.log('setEasyResumeThinkPad.then', event.switchValue);
-						this.getEasyResumeStatusThinkPad();
-					})
-					.catch(error => {
-						this.logger.error('setEasyResumeThinkPad', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('setEasyResumeThinkPad', error.message);
-			return EMPTY;
+		if (this.powerService.isShellAvailable) {
+			this.powerService.setEasyResumeThinkPad(event.switchValue).then((value: boolean) => {
+				this.logger.info('setEasyResumeThinkPad.then', event.switchValue);
+				if (value) {
+					this.getEasyResumeStatusThinkPad();
+				}
+			}).catch(error => {
+				this.logger.error('setEasyResumeThinkPad', error.message);
+				return EMPTY;
+			});
 		}
 	}
 
 	private setAlwaysOnUSBStatusThinkPad(event: any, checkboxVal: any) {
-		try {
-			console.log('setAlwaysOnUSBStatusThinkPad.then', event);
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.setAlwaysOnUSBStatusThinkPad(event, checkboxVal)
-					.then((value: boolean) => {
-						console.log('setAlwaysOnUSBStatusThinkPad.then', value);
-						this.getAlwaysOnUSBStatusThinkPad();
-					})
-					.catch(error => {
-						this.logger.error('setAlwaysOnUSBStatusThinkPad', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('setAlwaysOnUSBStatusThinkPad', error.message);
-			return EMPTY;
+		if (this.powerService.isShellAvailable) {
+			this.powerService.setAlwaysOnUSBStatusThinkPad(event, checkboxVal).then((value: boolean) => {
+				this.logger.info('setAlwaysOnUSBStatusThinkPad.then', value);
+				this.getAlwaysOnUSBStatusThinkPad();
+			}).catch(error => {
+				this.logger.error('setAlwaysOnUSBStatusThinkPad', error.message);
+				return EMPTY;
+			});
 		}
 	}
-	private async getAirplaneModeCapabilityThinkPad() {
-		console.log('getAirplaneModeCapabilityThinkPad ');
+	private getAirplaneModeCapabilityThinkPad() {
+		this.logger.info('Before getAirplaneModeCapabilityThinkPad.then ');
 		if (this.powerService.isShellAvailable) {
-			try {
-				const value = await this.powerService.getAirplaneModeCapabilityThinkPad();
-				console.log('getAirplaneModeCapabilityThinkPad.then', value);
+			this.powerService.getAirplaneModeCapabilityThinkPad().then((value) => {
+				this.logger.info('getAirplaneModeCapabilityThinkPad.then ==>', value);
 				this.showAirplanePowerModeSection = value;
+				this.updatePowerLinkStatus(this.showAirplanePowerModeSection);
 				if (this.showAirplanePowerModeSection) {
 					this.getAirplaneModeThinkPad();
 				}
 				this.airplanePowerCache.toggleState.available = this.showAirplanePowerModeSection;
 				this.commonService.setLocalStorageValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
-			} catch (error) {
-				this.logger.error('getAirplaneModeCapabilityThinkPad', error.message);
-				this.showAirplanePowerModeSection = false;
+			}) .catch ((error) => {
+				this.logger.error('getAirplaneModeCapabilityThinkPad Error ==> ', error.message);
 				return EMPTY;
-			}
+			});
 		}
 	}
 
 	private getAirplaneModeThinkPad() {
-		try {
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.getAirplaneModeThinkPad()
-					.then((airPlanePowerMode: any) => {
-						console.log('getAirplaneModeThinkPad.then', airPlanePowerMode);
-						this.toggleAirplanePowerModeFlag = airPlanePowerMode;
-						this.commonService.sendNotification('AirplaneModeStatus',
-							this.toggleAirplanePowerModeFlag);
-						this.airplanePowerCache.toggleState.status = this.toggleAirplanePowerModeFlag;
-						this.commonService.setLocalStorageValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
-					})
-					.catch(error => {
-						this.logger.error('getAirplaneModeThinkPad', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('getAirplaneModeThinkPad', error.message);
-			return EMPTY;
+		if (this.powerService.isShellAvailable) {
+			this.powerService.getAirplaneModeThinkPad().then((airPlanePowerMode: any) => {
+				this.logger.info('getAirplaneModeThinkPad.then', airPlanePowerMode);
+				this.toggleAirplanePowerModeFlag = airPlanePowerMode;
+				this.commonService.sendNotification('AirplaneModeStatus',
+					this.toggleAirplanePowerModeFlag);
+				this.airplanePowerCache.toggleState.status = this.toggleAirplanePowerModeFlag;
+				this.commonService.setLocalStorageValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
+			}).catch(error => {
+				this.logger.error('getAirplaneModeThinkPad', error.message);
+				return EMPTY;
+			});
 		}
 	}
 
 	private setAirplaneModeThinkPad(event: any) {
-		try {
-			console.log('setAirplaneModeThinkPad entered', event);
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.setAirplaneModeThinkPad(event.switchValue)
-					.then((value: boolean) => {
-						console.log('setAirplaneModeThinkPad.then', value);
-						this.getAirplaneModeThinkPad();
-					})
-					.catch(error => {
-						this.logger.error('setAirplaneModeThinkPad', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('setAirplaneModeThinkPad', error.message);
-			return EMPTY;
+		if (this.powerService.isShellAvailable) {
+			this.powerService.setAirplaneModeThinkPad(event.switchValue).then((value: boolean) => {
+				this.logger.info('setAirplaneModeThinkPad.then', value);
+				this.getAirplaneModeThinkPad();
+			}).catch(error => {
+				this.logger.error('setAirplaneModeThinkPad', error.message);
+				return EMPTY;
+			});
 		}
-
 	}
 
 	private getAirplaneModeAutoDetectionOnThinkPad() {
-		try {
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.getAirplaneModeAutoDetectionOnThinkPad()
-					.then((status: boolean) => {
-						console.log('getAirplaneModeAutoDetectionOnThinkPad.then', status);
-						this.airplaneAutoDetection = status;
-						this.airplanePowerCache.checkbox.status = status;
-						this.commonService.setLocalStorageValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
-					})
-					.catch(error => {
-						this.logger.error('getAirplaneModeAutoDetectionOnThinkPad', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('getAirplaneModeAutoDetectionOnThinkPad', error.message);
-			return EMPTY;
+		if (this.powerService.isShellAvailable) {
+			this.powerService.getAirplaneModeAutoDetectionOnThinkPad()
+				.then((status: boolean) => {
+					this.logger.info('getAirplaneModeAutoDetectionOnThinkPad.then', status);
+					this.airplaneAutoDetection = status;
+					this.airplanePowerCache.checkbox.status = status;
+					this.commonService.setLocalStorageValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
+				})
+				.catch(error => {
+					this.logger.error('getAirplaneModeAutoDetectionOnThinkPad', error.message);
+					return EMPTY;
+				});
 		}
 	}
 
 	private setAirplaneModeAutoDetectionOnThinkPad(status: boolean) {
-		try {
-			console.log('setAirplaneModeAutoDetectionOnThinkPad entered', status);
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.setAirplaneModeAutoDetectionOnThinkPad(status)
-					.then((value: boolean) => {
-						console.log('setAirplaneModeAutoDetectionOnThinkPad.then', value);
-					})
-					.catch(error => {
-						this.logger.error('setAirplaneModeAutoDetectionOnThinkPad', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('setAirplaneModeAutoDetectionOnThinkPad', error.message);
-			return EMPTY;
+		if (this.powerService.isShellAvailable) {
+			this.powerService.setAirplaneModeAutoDetectionOnThinkPad(status)
+				.then((value: boolean) => {
+					this.logger.info('setAirplaneModeAutoDetectionOnThinkPad.then', value);
+				}).catch(error => {
+					this.logger.error('setAirplaneModeAutoDetectionOnThinkPad', error.message);
+					return EMPTY;
+				});
 		}
 	}
 
 	onAirplaneAutoModeStatusChange() {
-		console.log('onAirplaneAutoModeStatusChange', this.airplaneAutoDetection);
+		this.logger.info('onAirplaneAutoModeStatusChange', this.airplaneAutoDetection);
 		this.setAirplaneModeAutoDetectionOnThinkPad(this.airplaneAutoDetection);
 		this.airplanePowerCache.checkbox.status = this.airplaneAutoDetection;
 		this.commonService.setLocalStorageValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
 	}
-
-	// End ThinkPad
+	// **************************** End ThinkPad ***************************************************
 
 	// Start IdeaNoteBook
-	private async getAlwaysOnUSBStatusIdeaPad() {
+	private getAlwaysOnUSBStatusIdeaPad() {
 		if (this.powerService.isShellAvailable) {
-			try {
-				const featureStatus = await this.powerService.getAlwaysOnUSBStatusIdeaNoteBook();
-				console.log('getAlwaysOnUSBStatusIdeaNoteBook.then', featureStatus);
+			this.powerService.getAlwaysOnUSBStatusIdeaNoteBook().then((featureStatus) => {
+				this.logger.info('getAlwaysOnUSBStatusIdeaNoteBook.then', featureStatus);
 				this.alwaysOnUSBStatus = featureStatus;
+				this.updatePowerLinkStatus(this.alwaysOnUSBStatus.available);
 				this.toggleAlwaysOnUsbFlag = this.alwaysOnUSBStatus.status;
 				this.alwaysOnUSBCache.toggleState.status = this.toggleAlwaysOnUsbFlag;
 				this.commonService.setLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
-			} catch (error) {
+			}).catch ((error) => {
 				this.logger.error('getAlwaysOnUSBStatusIdeaNoteBook', error.message);
 				return EMPTY;
-			}
+			});
 		}
 	}
 
 	private getUSBChargingInBatteryModeStatusIdeaNoteBook() {
-		try {
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.getUSBChargingInBatteryModeStatusIdeaNoteBook()
-					.then((featureStatus: FeatureStatus) => {
-						console.log('getUSBChargingInBatteryModeStatusIdeaNoteBook.then', featureStatus);
-						this.usbChargingStatus = featureStatus;
-						this.usbChargingInBatteryModeStatus = featureStatus.available;
-						if (this.usbChargingInBatteryModeStatus) {
-							this.usbChargingCheckboxFlag = featureStatus.status;
-						}
-						this.alwaysOnUSBCache.checkbox.available = this.usbChargingInBatteryModeStatus;
-						this.alwaysOnUSBCache.checkbox.status = this.usbChargingCheckboxFlag;
-						this.commonService.setLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
-						// if (this.alwaysOnUSBStatus.status) {
-						// 	this.toggleAlwaysOnUsbFlag = true;
-						// }
-					})
-					.catch(error => {
-						this.logger.error('getUSBChargingInBatteryModeStatusIdeaNoteBook', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('getUSBChargingInBatteryModeStatusIdeaNoteBook', error.message);
-			return EMPTY;
+		this.logger.info('Before getUSBChargingInBatteryModeStatusIdeaNoteBook');
+		if (this.powerService.isShellAvailable) {
+			this.powerService.getUSBChargingInBatteryModeStatusIdeaNoteBook()
+				.then((featureStatus: FeatureStatus) => {
+					this.logger.info('getUSBChargingInBatteryModeStatusIdeaNoteBook.then', featureStatus);
+					this.usbChargingStatus = featureStatus;
+					this.usbChargingInBatteryModeStatus = featureStatus.available;
+					if (this.usbChargingInBatteryModeStatus) {
+						this.usbChargingCheckboxFlag = featureStatus.status;
+					}
+					this.alwaysOnUSBCache.checkbox.available = this.usbChargingInBatteryModeStatus;
+					this.alwaysOnUSBCache.checkbox.status = this.usbChargingCheckboxFlag;
+					this.commonService.setLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
+				}).catch(error => {
+					this.logger.error('getUSBChargingInBatteryModeStatusIdeaNoteBook', error.message);
+					return EMPTY;
+				});
 		}
 	}
 
 	private setUSBChargingInBatteryModeStatusIdeaNoteBook(event: any) {
-		try {
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.setUSBChargingInBatteryModeStatusIdeaNoteBook(event)
-					.then((value: boolean) => {
-						console.log('setUSBChargingInBatteryModeStatusIdeaNoteBook.then', value);
-						setTimeout(() => {
-							this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
-						}, 50);
-					})
-					.catch(error => {
-						this.logger.error('setUSBChargingInBatteryModeStatusIdeaNoteBook', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('setUSBChargingInBatteryModeStatusIdeaNoteBook', error.message);
-			return EMPTY;
+		if (this.powerService.isShellAvailable) {
+			this.powerService.setUSBChargingInBatteryModeStatusIdeaNoteBook(event)
+				.then((value: boolean) => {
+					this.logger.info('setUSBChargingInBatteryModeStatusIdeaNoteBook.then', value);
+					setTimeout(() => {
+						this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+					}, 50);
+				}).catch(error => {
+					this.logger.error('setUSBChargingInBatteryModeStatusIdeaNoteBook', error.message);
+					return EMPTY;
+				});
 		}
 	}
 
 	private setAlwaysOnUSBStatusIdeaPad(event: any) {
-		try {
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.setAlwaysOnUSBStatusIdeaNoteBook(event.switchValue)
-					.then((value: boolean) => {
-						console.log('setAlwaysOnUSBStatusIdeaNoteBook.then', value);
-						setTimeout(() => {
-							this.getAlwaysOnUSBStatusIdeaPad();
-						}, 50);
-					})
-					.catch(error => {
-						this.logger.error('getAlwaysOnUSBStatusIdeaNoteBook', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('getAlwaysOnUSBStatusIdeaNoteBook', error.message);
-			return EMPTY;
+		if (this.powerService.isShellAvailable) {
+			this.powerService
+				.setAlwaysOnUSBStatusIdeaNoteBook(event.switchValue)
+				.then((value: boolean) => {
+					this.logger.info('setAlwaysOnUSBStatusIdeaNoteBook.then', value);
+					setTimeout(() => {
+						this.getAlwaysOnUSBStatusIdeaPad();
+					}, 50);
+				}).catch(error => {
+					this.logger.error('getAlwaysOnUSBStatusIdeaNoteBook', error.message);
+					return EMPTY;
+				});
 		}
 	}
-	private async getConservationModeStatusIdeaPad() {
+	private getConservationModeStatusIdeaPad() {
+		this.logger.info('Before getConservationModeStatusIdeaNoteBook');
 		if (this.powerService.isShellAvailable) {
-			try {
-				const featureStatus = await this.powerService.getConservationModeStatusIdeaNoteBook();
-				console.log('getConservationModeStatusIdeaNoteBook.then', featureStatus);
+			this.powerService.getConservationModeStatusIdeaNoteBook().then((featureStatus) => {
+				this.logger.info('getConservationModeStatusIdeaNoteBook.then', featureStatus);
 				this.conservationModeStatus = featureStatus;
+				this.updateBatteryLinkStatus(this.conservationModeStatus.available);
 
 				this.conservationModeCache = featureStatus;
 				this.conservationModeCache.isLoading = this.conservationModeLock;
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
-			} catch (error) {
+			}).catch ((error) => {
 				this.logger.error('getConservationModeStatusIdeaNoteBook', error.message);
 				return EMPTY;
-			}
+			});
 		}
 	}
 
-	private async getRapidChargeModeStatusIdeaPad() {
+	private getRapidChargeModeStatusIdeaPad() {
+		this.logger.info('Before getRapidChargeModeStatusIdeaNoteBook');
 		if (this.powerService.isShellAvailable) {
-			try {
-				const featureStatus = await this.powerService.getRapidChargeModeStatusIdeaNoteBook();
-				console.log('getRapidChargeModeStatusIdeaNoteBook.then', featureStatus);
+			this.powerService.getRapidChargeModeStatusIdeaNoteBook().then((featureStatus) => {
+				this.logger.info('getRapidChargeModeStatusIdeaNoteBook.then', featureStatus);
 				this.expressChargingStatus = featureStatus;
+				this.updateBatteryLinkStatus(this.expressChargingStatus.available);
 				this.expressChargingCache = featureStatus;
 				this.expressChargingCache.isLoading = this.expressChargingLock;
 				this.commonService.setLocalStorageValue(LocalStorageKey.ExpressChargingCapability, this.expressChargingCache);
-			} catch (error) {
+			}).catch ((error) => {
 				this.logger.error('getRapidChargeModeStatusIdeaNoteBook', error.message);
 				return EMPTY;
-			}
+			});
 		}
 	}
 
 	private async setConservationModeStatusIdeaNoteBook(status: any) {
 		try {
-			console.log('setConservationModeStatusIdeaNoteBook.then', status);
+			this.logger.info('setConservationModeStatusIdeaNoteBook.then', status);
 			if (this.powerService.isShellAvailable) {
 				const value = await this.powerService.setConservationModeStatusIdeaNoteBook(status);
-				console.log('setConservationModeStatusIdeaNoteBook.then', value);
+				this.logger.info('setConservationModeStatusIdeaNoteBook.then', value);
 
 			}
 		} catch (error) {
@@ -913,72 +877,178 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
+
+	// removed from conservation mode <br>Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off.
+	async changeBatteryMode(event, mode) {
+		// Code suggested fangtian1@lenovo.com, above commented code is the previous one
+		if (mode === 'expressCharging') {
+			this.conservationModeLock = true;
+			this.expressChargingLock = false;
+			if (this.expressChargingStatus.status) { // Close express charge if it's open before
+				try {
+					// close express charging and change UI appearance
+					await this.setRapidChargeModeStatusIdeaNoteBook(false);
+					this.expressChargingStatus.status = false;
+				} catch (e) {
+					// if await failed
+					this.logger.info(e.message);
+				}
+			} else { // Open express charge if it's close before
+				if (this.conservationModeStatus.status) { // When conservation mode is open, close it
+					try {
+						await this.setConservationModeStatusIdeaNoteBook(false);
+						this.conservationModeStatus.status = false;
+					} catch (e) {
+						// return false directly if failed to close conservation mode
+						return false;
+					}
+				}
+				try { // open Express charging if close conservation mode successfully
+					await this.setRapidChargeModeStatusIdeaNoteBook(true);
+					this.expressChargingStatus.status = true;
+				} catch (e) {
+					// Log?
+					this.logger.info(e.message);
+				}
+			}
+
+			this.expressChargingLock = false;
+			this.conservationModeLock = false;
+		} else if (mode === 'conservationMode') {
+			this.conservationModeLock = false;
+			this.expressChargingLock = true;
+			if (this.conservationModeStatus.status) { // Close conservation mode if it's open before
+				try {
+					// close conservation mode and change UI appearance
+					await this.setConservationModeStatusIdeaNoteBook(false);
+					this.conservationModeStatus.status = false;
+				} catch (e) {
+					// if await failed
+					this.logger.info(e.message);
+				}
+			} else { // Open conservation mode if it's close before
+				if (this.expressChargingStatus.status) { // When express charging is open, close it
+					try {
+						await this.setRapidChargeModeStatusIdeaNoteBook(false);
+						this.expressChargingStatus.status = false;
+					} catch (e) {
+						// return false directly if failed to close express charging
+						return false;
+					}
+				}
+				try { // open conservation mode if close express charging successfully
+					await this.setConservationModeStatusIdeaNoteBook(true);
+					this.conservationModeStatus.status = true;
+				} catch (e) {
+					// Log?
+					this.logger.info(e.message);
+				}
+			}
+
+			this.expressChargingLock = false;
+			this.conservationModeLock = false;
+		}
+		this.expressChargingCache.status = this.expressChargingStatus.status;
+		this.expressChargingCache.isLoading = this.expressChargingLock;
+		this.commonService.setLocalStorageValue(LocalStorageKey.ExpressChargingCapability, this.expressChargingCache);
+
+		this.conservationModeCache.status = this.conservationModeStatus.status;
+		this.conservationModeCache.isLoading = this.conservationModeLock;
+		this.commonService.setLocalStorageValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
+	}
+
 	private async setRapidChargeModeStatusIdeaNoteBook(status) {
 		try {
-			console.log('setRapidChargeModeStatusIdeaNoteBook.then', status);
+			this.logger.info('setRapidChargeModeStatusIdeaNoteBook.then', status);
 
 			if (this.powerService.isShellAvailable) {
 				const value = await this.powerService
 					.setRapidChargeModeStatusIdeaNoteBook(status);
-				console.log('setRapidChargeModeStatusIdeaNoteBook.then', value);
+				this.logger.info('setRapidChargeModeStatusIdeaNoteBook.then', value);
 			}
 		} catch (error) {
 			this.logger.error('setRapidChargeModeStatusIdeaNoteBook', error.message);
 			return EMPTY;
 		}
 	}
-
-
 	// End IdeaNoteBook
-	// Start Lenovo Vantage ToolBar
-	private async getVantageToolBarStatus() {
-		try {
-			if (this.powerService.isShellAvailable) {
-				const featureStatus = await this.powerService.getVantageToolBarStatus();
-				this.logger.info('getVantageToolBarStatus.then', featureStatus);
-				this.vantageToolbarStatus = featureStatus;
-				this.hideOtherSettingsLink();
-			}
-		} catch (error) {
-			this.logger.error('getVantageToolBarStatus', error.message);
-			this.hideOtherSettingsLink();
-			return EMPTY;
-		}
-	}
 
+
+	// Start Lenovo Vantage ToolBar
 	public onVantageToolBarStatusToggle(event: any) {
-		console.log('onVantageToolBarStatusToggle', event.switchValue);
+		this.logger.info('onVantageToolBarStatusToggle', event.switchValue);
 		try {
 			if (this.powerService.isShellAvailable) {
-				this.powerService.setVantageToolBarStatus(event.switchValue)
-					.then((value: boolean) => {
-						console.log('setVantageToolBarStatus.then', event.switchValue);
-						this.getVantageToolBarStatus();
-					}).catch(error => {
-						this.logger.error('setVantageToolBarStatus', error.message);
-						return EMPTY;
-					});
+				this.isVantageToolbarSetEnd = false;
+				// for fix van-11383
+				function backoff(maxTries, ms) {
+					return pipe(
+						retryWhen(attempts => zip(range(1, maxTries), attempts)
+							.pipe(
+								map(([i]) => i * i),
+								mergeMap(i => timer(i * ms)),
+							)
+						),
+					);
+				}
+
+				const setEvent$ = from(this.powerService.setVantageToolBarStatus(event.switchValue))
+					.pipe(
+						tap(() => this.logger.info(`powerService.setVantageToolBarStatus - start stream`))
+					);
+
+				const retry$ = of([])
+					.pipe(
+						switchMap(() => this.powerService.getVantageToolBarStatus()),
+						map(res => {
+							if (res.status !== event.switchValue) {
+
+								throw res;
+							} else {
+								this.isToolBarSetSuccessed = true;
+								this.vantageToolbarStatus = res;
+								return res;
+							}
+						}),
+						backoff(3, 200),
+						finalize(() => {
+							if (this.isToolBarSetSuccessed) {
+								this.isToolBarSetSuccessed = false;
+							} else {
+								this.getVantageToolBarStatus();
+							}
+							this.isVantageToolbarSetEnd = true;
+						})
+					);
+				const deboEvent$ = retry$.pipe(debounce(() => timer(0)));
+
+				this.toolBarSubscription = combineLatest([setEvent$, deboEvent$]).subscribe(() => this.logger.info(`combineLatest( setEvent$ + deboEvent$ )`)
+				);
 			}
 		} catch (error) {
+			this.isVantageToolbarSetEnd = true;
 			this.logger.error('getVantageToolBarStatus', error.message);
 			return EMPTY;
 		}
 	}
 
 	public getStartMonitorCallBack(featureStatus: FeatureStatus) {
-		console.log('getStartMonitorCallBack', featureStatus);
-		this.vantageToolbarStatus = featureStatus;
+		this.logger.info('getStartMonitorCallBack', featureStatus);
+		this.logger.info('isVantageToolbarSetEnd:', this.isVantageToolbarSetEnd);
+		if (this.isVantageToolbarSetEnd) {
+			this.vantageToolbarStatus = featureStatus;
+		}
+		this.updateOtherSettingsStatus(this.vantageToolbarStatus.available);
 		this.commonService.setLocalStorageValue(LocalStorageKey.VantageToolbarCapability, featureStatus);
-		this.hideOtherSettingsLink();
 	}
 
 	public startMonitor() {
-		console.log('start eyecare monitor');
+		this.logger.info('start eyecare monitor');
 		if (this.powerService.isShellAvailable) {
 			this.powerService
 				.startMonitor(this.getStartMonitorCallBack.bind(this))
 				.then((value: any) => {
-					console.log('startmonitor', value);
+					this.logger.info('startmonitor', value);
 				}).catch(error => {
 					this.logger.error('startmonitor', error.message);
 					return EMPTY;
@@ -988,7 +1058,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	public stopMonitor() {
-		console.log('stop eyecare monitor');
+		this.logger.info('stop eyecare monitor');
 		if (this.powerService.isShellAvailable) {
 			this.powerService.stopMonitor();
 		}
@@ -996,264 +1066,184 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	// End Lenovo Vantage ToolBar
 
-	hidePowerSmartSetting(hide: boolean) {
-		this.showPowerSmartSettings = hide;
-		this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartSettings');
-	}
-
 	// start battery threshold settings
 	private getBatteryStatusEvent(response) {
-		// console.log('Event response here---------------....>%%%%%%%%%%%?>', response)
-		this.responseData = response;
-		this.getBatteryThresholdInformation();
+		// this.logger.info('Event response here---------------....>%%%%%%%%%%%?>', response)
+		this.setChargeThresholdUI(response);
 	}
-	public async getBatteryThresholdInformation() {
-		let notification;
-		if (this.powerService.isShellAvailable) {
-			try {
-				const res = await this.powerService.getChargeThresholdInfo();
-				this.responseData = res || [];
-				if (this.responseData && this.responseData.length > 0) {
-					this.isChargeThresholdAvailable = this.responseData[0].isCapable;
-					this.selectedStartAtChargeVal = this.responseData[0].startValue - (this.responseData[0].startValue % 5);
-					this.selectedStopAtChargeVal = this.responseData[0].stopValue - (this.responseData[0].stopValue % 5);
-					this.primaryCheckBox = this.responseData[0].checkBoxValue;
-					this.showBatteryThreshold = this.responseData[0].isOn;
-					if (this.selectedStartAtChargeVal !== this.responseData[0].startValue ||
-						this.selectedStopAtChargeVal !== this.responseData[0].stopValue) {
-						this.powerService.setChargeThresholdValue(
-							{
-								batteryNumber: this.responseData[0].batteryNumber,
-								startValue: this.selectedStartAtChargeVal,
-								stopValue: this.selectedStopAtChargeVal,
-								checkBoxValue: this.primaryCheckBox
-							}
-						);
-					}
-					if (this.responseData.length === 2) {
-						this.isSecondBatteryAvailable = true;
-						this.secondaryCheckBox = this.responseData[1].checkBoxValue;
-						this.selectedStartAtChargeVal1 = this.responseData[1].startValue - (this.responseData[1].startValue % 5);
-						this.selectedStopAtChargeVal1 = this.responseData[1].stopValue - (this.responseData[1].stopValue % 5);
-						if (this.selectedStartAtChargeVal1 !== this.responseData[1].startValue ||
-							this.selectedStopAtChargeVal1 !== this.responseData[1].stopValue) {
-							this.powerService.setChargeThresholdValue(
-								{
-									batteryNumber: this.responseData[1].batteryNumber,
-									startValue: this.selectedStartAtChargeVal1,
-									stopValue: this.selectedStopAtChargeVal1,
-									checkBoxValue: this.secondaryCheckBox
-								}
-							);
-						}
-					}
-					notification = {
-						isOn: this.responseData[0].isOn,
-						stopValue1: this.selectedStopAtChargeVal,
-						stopValue2: this.selectedStopAtChargeVal1
-					};
 
-					// cache value
-					this.batteryChargeThresholdCache.available = this.isChargeThresholdAvailable;
-					this.batteryChargeThresholdCache.toggleStatus = this.showBatteryThreshold;
-
-					this.batteryChargeThresholdCache.startAt1 = this.selectedStartAtChargeVal;
-					this.batteryChargeThresholdCache.stopAt1 = this.selectedStopAtChargeVal;
-					this.batteryChargeThresholdCache.checkBox1 = this.primaryCheckBox;
-
-					this.batteryChargeThresholdCache.startAt2 = this.selectedStartAtChargeVal1;
-					this.batteryChargeThresholdCache.stopAt2 = this.selectedStopAtChargeVal1;
-					this.batteryChargeThresholdCache.checkBox2 = this.secondaryCheckBox;
-
-					this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
-					this.batteryChargeThresholdCache.isSecondBatteryAvailable = this.isSecondBatteryAvailable;
-					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
+	isThresholdWarningMsgShown() {
+		if (this.batteryService.remainingPercentages && this.batteryService.remainingPercentages.length > 0) {
+			if (this.thresholdInfo.length === 1) {
+				if (this.batteryService.remainingPercentages[0] && this.thresholdInfo[0].batteryNum === 1 ) {
+					this.showBCTWarningNote = this.batteryService.remainingPercentages[0] > this.thresholdInfo[0].stopValue;
 				}
-				this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, notification);
-			} catch (error) {
+				if (this.batteryService.remainingPercentages.length > 1 && this.batteryService.remainingPercentages[1]
+					&& this.thresholdInfo[0].batteryNum === 2 ) {
+					this.showBCTWarningNote = this.batteryService.remainingPercentages[1] > this.thresholdInfo[0].stopValue;
+				}
+			} else {
+				if (this.batteryService.remainingPercentages.length > 1 && this.thresholdInfo[1].stopValue) {
+					this.showBCTWarningNote = this.showBCTWarningNote || (this.batteryService.remainingPercentages[0] > this.thresholdInfo[0].stopValue);
+				}
+			}
+		}
+	}
+
+	setChargeThresholdUI(response) {
+		const thresholdInfo = response || [];
+		let bctCapability = false;
+		let bctStatus = false;
+
+		if (thresholdInfo && thresholdInfo.length > 0) {
+			let count = 0;
+			thresholdInfo.forEach((battery) => {
+				bctCapability = bctCapability || battery.isCapable;
+				bctStatus = bctStatus || battery.isEnabled;
+
+				const startValue = battery.startValue - (battery.startValue % 5);
+				let stopValue = battery.stopValue - (battery.stopValue % 5);
+				if (battery.startValue !== startValue || battery.stopValue !== battery.stopValue) {
+					if (startValue === stopValue) {
+						stopValue = stopValue + 5;
+					}
+					battery.startValue = startValue;
+					battery.stopValue = stopValue;
+					this.onBCTInfoChange(battery, count);
+				}
+				count++;
+			});
+
+			this.chargeThresholdCapability = bctCapability;
+			this.chargeThresholdStatus = bctStatus;
+			this.thresholdInfo = thresholdInfo;
+			if (this.chargeThresholdCapability && this.chargeThresholdStatus) {
+				this.isThresholdWarningMsgShown();
+			}
+		} else {
+			this.chargeThresholdCapability = false;
+			this.chargeThresholdStatus = false;
+		}
+		this.updateBatteryLinkStatus(this.chargeThresholdCapability);
+		this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.chargeThresholdCapability && this.chargeThresholdStatus);
+	}
+
+	public getBatteryThresholdInformation() {
+		this.logger.info('Before getBatteryThresholdInformation');
+		if (this.powerService.isShellAvailable) {
+			this.powerService.getChargeThresholdInfo().then((response) => {
+				this.logger.info('getBatteryThresholdInformation.then', response);
+				this.setChargeThresholdUI(response);
+				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, response);
+			}).catch ((error) => {
 				this.logger.error('getBatteryThresholdInformation :: error', error.message);
 				return EMPTY;
-			}
+			});
 		}
 	}
 
-	private onNotification(notification: AppNotification) {
-		if (notification) {
-			switch (notification.type) {
-				case 'ThresholdWarningNote':
-					this.showWarningMsg = notification.payload;
-					this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
-					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
-					break;
-				case 'IsPowerDriverMissing':
-					this.checkPowerDriverMissing(notification.payload);
-					break;
-				case 'GaugeResetInfo':
-					if (notification.payload) {
-						this.gaugeResetInfo = notification.payload;
-						if (this.gaugeResetInfo && this.gaugeResetInfo.length > 0) {
-							this.isGaugeResetRunning[0] = this.gaugeResetInfo[0].isResetRunning;
-							if (this.gaugeResetInfo.length > 1) {
-								this.isGaugeResetRunning[0] = this.gaugeResetInfo[1].isResetRunning;
-							}
-						}
-						this.gaugeResetInfoCache = new GaugeResetInfoCache();
-						this.gaugeResetInfoCache.gaugeResetInfo = this.gaugeResetInfo;
-						this.commonService.setLocalStorageValue(LocalStorageKey.GaugeResetInformation, this.gaugeResetInfoCache);
+	public toggleBCTSwitch(event) {
+		if (event) {
+			let count = 0;
+			this.thresholdInfo.forEach(battery => {
+				battery.isEnabled = event;
+				const startValue = battery.startValue - (battery.startValue % 5);
+				let stopValue = battery.stopValue - (battery.stopValue % 5);
+				if (battery.startValue !== startValue || battery.stopValue !== battery.stopValue) {
+					if (startValue === stopValue) {
+						stopValue = stopValue + 5;
 					}
-					break;
-				// case 'BatteryInfoForGaugeReset':
-				// 	if (notification.payload) {
-				// 		this.remainingPercentages = notification.payload.remainingPercentages;
-				// 		this.isACAttached = notification.payload.isACAttached;
-				// 		break;
-				// 	}
-			}
-
-		}
-	}
-
-	public checkPowerDriverMissing(status) {
-		this.isPowerDriverMissing = status;
-		if (!status) {
-			this.headerMenuItems = this.tempHeaderMenuItems;
-		}
-		this.getBatteryAndPowerSettings(this.machineType);
-		this.getFlipToBootCapability();
-		this.getVantageToolBarCapability();
-		this.getEnergyStarCapability();
-		this.onSetSmartStandbyCapability(this.smartStandbyCapability);
-		if (!this.showPowerSmartSettings) {
-			this.hidePowerSmartSetting(this.showPowerSmartSettings);
-		}
-	}
-
-	public showBatteryThresholdsettings(event) {
-		this.showBatteryThreshold = event;
-		// console.log(this.showBatteryThreshold);
-		this.batteryChargeThresholdCache.toggleStatus = event;
-		this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
-		if (this.showBatteryThreshold) {
-			this.responseData.forEach(batteryInfo => {
-				this.setChargeThresholdValues(batteryInfo, batteryInfo.batteryNum, 'changedValues');
+					battery.startValue = startValue;
+					battery.stopValue = stopValue;
+				}
+				this.onBCTInfoChange(battery, count);
+				count++;
 			});
 		} else {
-			this.powerService.setToggleOff(this.responseData.length)
+			this.setBCTToggleOff(event);
+		}
+	}
+
+	public onBCTInfoChange(bctInfo: ChargeThreshold, index: number) {
+		if (this.powerService.isShellAvailable) {
+			this.powerService.setChargeThresholdValue(bctInfo)
 				.then((value: any) => {
-					// console.log('change threshold value------------------->>>>>>>>>', value);
-					this.getBatteryThresholdInformation();
+					this.logger.info('setChargeThresholdValue.then', value);
+					if (value === 0) {
+						this.thresholdInfo[index] = bctInfo;
+						if (!this.chargeThresholdStatus) {
+							this.chargeThresholdStatus = true;
+							this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.chargeThresholdStatus);
+						}
+						this.isThresholdWarningMsgShown();
+						this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.thresholdInfo);
+					}
 				})
 				.catch(error => {
 					this.logger.error('change threshold value', error.message);
 					return EMPTY;
 				});
 		}
-
 	}
 
-	public setChargeThresholdValues(batteryDetails: any, batteryNum: number, inputString: string) {
-		let batteryInfo: any = {};
-		if (batteryNum === 1) {
-			this.selectedStopAtChargeVal = batteryDetails.stopValue;
-
-			this.batteryChargeThresholdCache.checkBox1 = batteryDetails.checkBoxValue;
-			this.batteryChargeThresholdCache.startAt1 = batteryDetails.startValue;
-			this.batteryChargeThresholdCache.stopAt1 = batteryDetails.stopValue;
+	public onAutoCheckChange(bctInfo: ChargeThreshold, index: number) {
+		if (this.powerService.isShellAvailable) {
+			this.powerService.setCtAutoCheckbox(bctInfo);
+			this.thresholdInfo[index] = bctInfo;
+			this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.thresholdInfo);
 		}
-		if (batteryNum === 2) {
-			this.selectedStopAtChargeVal1 = batteryDetails.stopValue;
+	}
 
-			this.batteryChargeThresholdCache.checkBox2 = batteryDetails.checkBoxValue;
-			this.batteryChargeThresholdCache.startAt2 = batteryDetails.startValue;
-			this.batteryChargeThresholdCache.stopAt2 = batteryDetails.stopValue;
-		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
-		try {
-			if (this.powerService.isShellAvailable) {
-				batteryInfo = {
-					batteryNumber: batteryNum,
-					startValue: batteryDetails.startValue,
-					stopValue: batteryDetails.stopValue,
-					checkBoxValue: batteryDetails.checkBoxValue
-				};
-				if (inputString === 'changedValues') {
-					this.powerService
-						.setChargeThresholdValue(batteryInfo)
-						.then((value: any) => {
-							const notification = {
-								isOn: true,
-								stopValue1: this.selectedStopAtChargeVal, stopValue2: this.selectedStopAtChargeVal1
-							};
-							this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, notification);
-						})
-						.catch(error => {
-							this.logger.error('change threshold value', error.message);
-							return EMPTY;
-						});
-				} else {
-					if (inputString === 'autoChecked') {
-						this.powerService.setCtAutoCheckbox(batteryInfo);
-						const notification = {
-							isOn: true,
-							stopValue1: this.selectedStopAtChargeVal, stopValue2: this.selectedStopAtChargeVal1
-						};
-						this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, notification);
-					}
+	public setBCTToggleOff(event) {
+		this.powerService.setToggleOff(this.thresholdInfo.length)
+			.then((value: any) => {
+				if (value === 0) {
+					this.chargeThresholdStatus = false;
+					this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.chargeThresholdStatus);
+					this.thresholdInfo.forEach(battery => {
+						battery.isEnabled = event;
+					});
+					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.thresholdInfo);
 				}
-			}
-		} catch (error) {
-			this.logger.error('setChargeThresholdValues', error.message);
-			return EMPTY;
-		}
-	}
-
-	hideBatteryLink() {
-		if (!(this.showAirplanePowerModeSection ||
-			(this.conservationModeStatus && this.conservationModeStatus.available) || (this.expressChargingStatus && this.expressChargingStatus.available) ||
-			this.isChargeThresholdAvailable || this.gaugeResetCapability)) {
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
-		}
-	}
-
-	hidePowerLink() {
-		if (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available && !this.showFlipToBootSection$.value) {
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
-		}
-	}
-
-	hideOtherSettingsLink() {
-		if (this.vantageToolbarStatus && !this.vantageToolbarStatus.available) {
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'other');
-		}
-	}
-
-	public getEnergyStarCapability() {
-		this.powerService.getEnergyStarCapability()
-			.then((response: boolean) => {
-				console.log('getEnergyStarCapability.then', response);
-
-				this.isEnergyStarProduct = response;
-				this.commonService.setLocalStorageValue(LocalStorageKey.EnergyStarCapability, this.isEnergyStarProduct);
 			})
 			.catch(error => {
-				console.log('getEnergyStarCapability.error', error.message);
+				this.logger.error('change threshold value', error.message);
+				return EMPTY;
 			});
 	}
+	// End battery threshold settings
 
-	public getFlipToBootCapability() {
-		// think machine should pass through the procedure;
-		if (+this.machineType === 1) {
-			return;
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case 'IsPowerDriverMissing':
+					const status = notification.payload;
+					if (status !== this.isPowerDriverMissing) {
+						this.isPowerDriverMissing = status;
+						this.getBatteryAndPowerSettings();
+					}
+					break;
+			}
+
 		}
+	}
+
+	// Start Flip To Boot
+	public getFlipToBootCapability() {
+		this.logger.info('Before getFlipToBootCapability');
 		this.powerService.getFlipToBootCapability()
-			.then(res => {
+			.then((res) => {
+				this.logger.info('getFlipToBootCapability.then ===>', res);
 				if (+res.ErrorCode === FlipToBootErrorCodeEnum.Succeed && +res.Supported === FlipToBootSupportedEnum.Succeed) {
+					this.updatePowerLinkStatus(true);
 					this.showFlipToBootSection$.next(true);
 					this.toggleFlipToBootStatus = +res.CurrentMode === FlipToBootCurrentModeEnum.SucceedEnable;
+				} else {
+					this.updatePowerLinkStatus(false);
 				}
 			})
 			.catch(error => {
-				console.log('getFlipToBootCapability.error', error);
+				this.logger.info('getFlipToBootCapability.error', error);
 			});
 	}
 
@@ -1273,19 +1263,23 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.metrics.sendMetrics(metricsData);
 			})
 			.catch(error => {
-				console.log('setFlipToBootSettings.error', error);
+				this.logger.info('setFlipToBootSettings.error', error);
 			});
 	}
+	// End Flip To Boot
 
+	// Gauge Reset Capability
 	getGaugeResetCapability() {
+		this.logger.info('Before getGaugeResetCapability');
 		this.powerService.getGaugeResetCapability().then((response) => {
-			console.log('Battery Gauge Reset', this.gaugeResetCapability);
+			this.logger.info('getGaugeResetCapability.then', this.gaugeResetCapability);
 			this.gaugeResetCapability = response;
-			this.gaugeResetInfoCache.isAvailable = response;
-			this.commonService.setLocalStorageValue(LocalStorageKey.GaugeResetInformation, this.gaugeResetInfoCache);
+			this.updateBatteryLinkStatus(this.gaugeResetCapability);
+			this.commonService.setLocalStorageValue(LocalStorageKey.GaugeResetCapability, this.gaugeResetCapability);
 		}).catch((err) => {
-			console.log('Battery Gauge Reset', err);
+			this.logger.info('getGaugeResetCapability.error', err);
 		});
 	}
+	// Gauge Reset Capability
 
 }

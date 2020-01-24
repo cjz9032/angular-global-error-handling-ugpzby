@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from './articles.service';
 import { Router } from '@angular/router';
 import { RoutersName } from '../../privacy-routing-name';

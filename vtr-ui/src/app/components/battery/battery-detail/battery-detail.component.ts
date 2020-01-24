@@ -9,6 +9,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { TranslateService } from '@ngx-translate/core';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 @Component({
 	selector: 'vtr-battery-detail',
 	templateUrl: './battery-detail.component.html',
@@ -26,9 +27,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	public deviceChemistry = [];
 	batteryConditions: BatteryConditionModel[];
 	batteryChargeStatus = BatteryChargeStatus;
-
-	remainingHours: number[] = [];
-	remainingMinutes: number[] = [];
+	math = Math;
 
 	hourText: string;
 	minutesText: string;
@@ -37,6 +36,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		public shellServices: VantageShellService,
 		public commonService: CommonService,
 		public cd: ChangeDetectorRef,
+		private logger: LoggerService,
 		public translate: TranslateService) {
 	}
 
@@ -44,7 +44,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		if (notification) {
 			switch (notification.type) {
 				case BatteryInformation.BatteryInfo:
-					console.log('Received battery info notification: ', notification.payload);
+					this.logger.info('Received battery info notification: ', notification.payload);
 					this.preProcessBatteryDetailResponse(notification.payload);
 					break;
 				default:
@@ -60,8 +60,6 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			'device.deviceSettings.batteryGauge.details.tertiary'];
 		if (response) {
 			if (response.detail) {
-				this.remainingHours = [];
-				this.remainingMinutes = [];
 				for (let i = 0; i < response.detail.length; i++) {
 					if (response.detail[i] && response.detail[i] !== null) {
 						response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
@@ -81,14 +79,11 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 							response.detail[i].remainingTime = undefined;
 						} else {
 							const totalMin = response.detail[i].remainingTime;
-							this.remainingHours.push(Math.trunc(totalMin / 60));
-							this.remainingMinutes.push(Math.trunc(totalMin % 60));
-
-							this.hourText = this.remainingHours[i] > 0 && this.remainingHours[i] < 2 ?
+							this.hourText = Math.trunc(totalMin / 60) > 0 && Math.trunc(totalMin / 60) < 2 ?
 								'device.deviceSettings.batteryGauge.hour' :
 								'device.deviceSettings.batteryGauge.hours';
 
-							this.minutesText = this.remainingMinutes[i] > 0 && this.remainingMinutes[i] < 2 ?
+							this.minutesText = (totalMin % 60) > 0 && (totalMin % 60) < 2 ?
 								'device.deviceSettings.batteryGauge.minute' :
 								'device.deviceSettings.batteryGauge.minutes';
 						}
@@ -120,7 +115,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		console.log('In ngOnInit');
+		this.logger.info('In ngOnInit');
 		this.dataSource = this.dataInfo;
 		this.batteryIndicator = this.dataIndicator;
 		this.batteryConditions = this.dataConditions;

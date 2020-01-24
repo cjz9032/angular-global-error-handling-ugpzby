@@ -4,6 +4,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
+import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
   selector: 'vtr-ui-smart-performance',
@@ -19,42 +21,55 @@ export class UiSmartPerformanceComponent implements OnInit {
 	subItems = [];
 	currentSubItemCategory: any = {};
 	@Input() activegroup = "Tune up performance";
-	isSubscribed:any;
-	subscriptionDetails:any;
-	startDate:any;
-	endDate:any;
-	status:any;
-	givenDate:Date;
-	public today = new Date();
-	
+	 isSubscribed:any;
+	// subscriptionDetails:any;
+	// startDate:any;
+	// endDate:any;
+	// status:any;
+	// strStatus:any;
+	// givenDate:Date;
+	// public today = new Date();
+	public tune = 0;
+	public boost = 0;
+	public secure = 0;
+	public rating = 0;
 
 	constructor(
-		private translate: TranslateService,private modalService: NgbModal,private commonService: CommonService
+		private translate: TranslateService,
+		private modalService: NgbModal,
+		private commonService: CommonService,
+		public smartPerformanceService: SmartPerformanceService,
+		private logger: LoggerService,
 	) {
 		this.translateStrings();
 	}
 
   ngOnInit() {
 
-	this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
-	if(this.isSubscribed)
-  	{
-		this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SubscribtionDetails);
-		this.startDate = this.subscriptionDetails[0].StartDate;
-		this.endDate = this.subscriptionDetails[0].EndDate;
-		this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
+	 this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
+	// if(this.isSubscribed)
+  	// {
+	// 	this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SubscribtionDetails);
+	// 	this.startDate = this.subscriptionDetails[0].StartDate;
+	// 	this.endDate = this.subscriptionDetails[0].EndDate;
+	// 	this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
 		
-		if(this.givenDate > this.today)
-		this.status = "ACTIVE";
-		else 
-		this.status = "INACTIVE";
-	}
-	else
-	{
-		this.startDate="---";
-		this.endDate="---";
-		this.status="INACTIVE";
-	}
+	// 	if(this.givenDate > this.today){
+	// 		this.status = 'smartPerformance.subscriptionDetails.activeStatus';
+	// 		this.strStatus = 'ACTIVE';
+	// 	}
+	// 	else {
+	// 		this.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
+	// 		this.strStatus = 'INACTIVE';
+	// 	}
+	// }
+	// else
+	// {
+	// 	this.startDate="---";
+	// 	this.endDate="---";
+	// 	this.status='smartPerformance.subscriptionDetails.inactiveStatus';
+	// 	this.strStatus = 'INACTIVE';
+	// }
   }
 
   private translateStrings() {
@@ -67,11 +82,14 @@ export class UiSmartPerformanceComponent implements OnInit {
 
 }
 
-public changeScanStatus() {
-	console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
+public changeScanStatus($event) {
 	this.isScanningCompleted = true; 
 	this.isScanning = false;
-	console.log(this.isScanningCompleted+'>>>'+this.isScanning);
+	this.rating = $event.rating;
+	this.tune = $event.tune;
+	this.boost = $event.boost;
+	this.secure = $event.secure;
+	this.logger.info('changeScanStatus', this.isScanningCompleted+'>>>'+this.isScanning);
 }
 openSubscribeModal() {
     this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
@@ -79,7 +97,6 @@ openSubscribeModal() {
         size: 'lg',
         centered: true,
         windowClass: 'subscribe-modal',
-
     });
 }
 updateSubItemsList(subItem) {
@@ -91,8 +108,31 @@ updateSubItemsList(subItem) {
 	}
 }
 changeScanEvent(){
-	console.log("emitted");
-this.isScanning=true;
-this.isScanningCompleted=false;
+	this.isScanning=true;
+	this.isScanningCompleted=false;
+}
+ScanNow()
+{
+	if (this.smartPerformanceService.isShellAvailable) {
+		this.smartPerformanceService
+			.getReadiness()
+			.then((getReadinessFromService: any) => {
+				this.logger.info('ScanNow.getReadiness.then', getReadinessFromService);
+				if(getReadinessFromService){
+					this.isScanning = true;
+				}
+				else{
+					this.isScanning = false;
+				}
+			})
+			.catch(error => {
+			 
+			});
+	}
+}
+cancelScan()
+{
+	this.isScanning=false;
+	this.isScanningCompleted=false;
 }
 }

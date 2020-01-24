@@ -12,7 +12,6 @@ export class UiButtonComponent implements OnInit {
 	@Input() isHalfWidth: boolean;
 	@Input() alreadyJoinGroup = 'unjoined';
 	@Input() upperCaseLabel = true;
-	@Input() tabindex = 0;
 	@Input() capitalizeLabel = false;
 	@Output() onClick = new EventEmitter<any>();
 
@@ -37,12 +36,13 @@ export class UiButtonComponent implements OnInit {
 	@Input() routerPath: string;
 	@Input() href: string;
 	@Input() inRedBackground = false;
-	@Input() tabIndex = 0;
+	@Input() tabIndex = 0; // please use this one if you need special tabindex.
 	@Input() isLoading = false;
 
 	constructor() { }
 
 	onClickButton(event) {
+		window.getSelection().empty();
 		if (this.href) {
 			WinRT.launchUri(this.href);
 			return;

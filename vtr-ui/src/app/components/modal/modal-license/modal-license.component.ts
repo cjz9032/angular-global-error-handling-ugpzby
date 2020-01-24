@@ -21,6 +21,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	pageDuration: number;
 	metrics: any;
 	loading = true;
+	iframeInterval: any;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -33,6 +34,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		window.getSelection().empty();
 		this.http.get(this.url, { responseType: 'text' }).subscribe((results: any) => {
 			if (this.type === 'txt') {
 				this.loading = false;
@@ -44,7 +46,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 			}
 		});
 		this.timerService.start();
-		setTimeout(() => { 
+		setTimeout(() => {
 			document.getElementById('license-dialog').parentElement.parentElement.parentElement.parentElement.focus();
 			document.getElementById('license-dialog-empty').focus();
 		}, 0);
@@ -63,8 +65,18 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	}
 
 	setIframeUrl() {
-		const licenseAgreementIframe: any = document.getElementById('license-agreement-iframe');
-		licenseAgreementIframe.src = this.url;
+		const iframe: any = document.querySelector('#license-agreement-iframe');
+		iframe.src = this.url;
+		this.iframeInterval = setInterval(() => {
+			if (iframe.contentWindow) {
+				iframe.contentWindow.addEventListener('mousewheel', (event: any) => {
+					if (event.ctrlKey === true || event.metaKey) {
+						event.preventDefault();
+					}
+				}, false);
+				clearInterval(this.iframeInterval);
+			}
+		}, 50);
 	}
 
 	sendMetricsAsync(data: any) {

@@ -69,24 +69,6 @@ describe('ModalAddAppsComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-
-
-
-	// it(
-	// 	'should show running app list',
-	// 	fakeAsync(() => {
-	// 		gamingAutoCloseServiceMock.getAppsAutoCloseRunningList.and.returnValue(
-	// 			Promise.resolve(sampleRunningAppList)
-	// 		);
-	// 		component.refreshRunningList();
-	// 		fixture.detectChanges();
-	// 		tick(16);
-	// 		expect(sampleRunningAppList.processList).toBeDefined();
-	// 		expect(sampleRunningAppList.processList.length).toBeGreaterThan(0);
-	// 		fixture.destroy();
-	// 	})
-	// );
-
 	it('should show running app list', done => {
 		const p = new Promise((resolve, reject) =>
 		  setTimeout(() => resolve(''), 1000)
@@ -121,12 +103,10 @@ describe('ModalAddAppsComponent', () => {
 	);
 
 	it('addAppData', fakeAsync(() => {
-		const result = component.runappKeyup(true, 1);
+		const result = component.addAppData({ target: { value: true } }, 1);
 		expect(result).toBe(undefined);
 	})
 	);
-
-
 
 });
 

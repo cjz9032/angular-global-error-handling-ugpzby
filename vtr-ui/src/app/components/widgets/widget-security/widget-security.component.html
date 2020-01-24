@@ -1,42 +1,36 @@
 <div class="vtr-widget-security">
 	<div class="container-fluid">
 		<div class="row security-background">
-			<div class="col-3 col-sm-3 col-md-12 col-lg-3">
-				<div class="row">
-					<div class="col circle-container d-flex justify-content-center">
-						<img *ngIf="percentValue === 100" [src]=" 'assets/icons/SecurityAdvisor/Shield_check.svg' | svgInline | async" alt="" srcset="">
-						<img *ngIf="percentValue !== 100" [src]=" 'assets/icons/SecurityAdvisor/Shield_X.svg' | svgInline | async" alt="" srcset="">
+			<div class="status-container row d-flex flex-nowrap align-items-start mb-3">
+				<div class="left-container">
+					<div class="position-relative">
+						<div class="circle-box d-flex justify-content-center" >
+							<vtr-widget-svg-circle [gradientColor]="gradient"></vtr-widget-svg-circle>
+						</div>
+						<div class="circle-desc">
+							<p class="text-two-ellipsis" [innerHTML]="'security.landing.level' | translate"></p>
+							<b class="text-ellipsis text-uppercase" [innerHTML]="securityLevelInfo[statusItem?.status].status | translate"></b>
+						</div>
 					</div>
 				</div>
+				<div class="side">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 237.17">
+						<defs><style>.a {fill: #2f3447;}</style></defs>
+						<path class="a" d="M100,1.41H0A332,332,0,0,1,100,238.59Z" transform="translate(0 -1.41)" />
+					</svg>
+				</div>
+				<div class="right-container">
+					<div class="level_desc">
+						<h4 class="title mb-4" [innerHTML]="securityLevelInfo[statusItem?.status].title | translate"></h4>
+						<h5 class="desc mb-0" [innerHTML]="securityLevelInfo[statusItem?.status].desc | translate"></h5>
+					</div>
+				</div>
+
 			</div>
-			<div class="col-9 col-sm-9 col-md-12 col-lg-9 last-col px-0">
-				<p class="title d-flex align-items-center">
-					<span>{{security.title[percentValue === 100 ? 0 : 1] | translate}}</span>
-					<vtr-ui-tooltips class="pl-3 pt-2">
-						<ng-template #tooltipText>
-							<span class="tooltips-description__tooltip-text"
-								(mouseenter)="hover=true;"
-								(mouseleave)="hover=false;"
-								[ngClass]="{'hover': hover}">i</span>
-						</ng-template>
-						<ng-template #tooltipContext>
-							<div class="tooltips-description__tooltip-context">
-								<p class="tooltips-description__tooltip-context-title">
-									{{tooltipsTitle | translate}}
-								</p>
-								<ul class="tooltips-description__tooltip-context-list">
-									<li class="tooltips-description__tooltip-context-list-item" *ngFor="let item of tooltips; let i=index">
-										{{tooltips[i] | translate}}
-									</li>
-								</ul>
-							</div>
-						</ng-template>
-					</vtr-ui-tooltips>
-				</p>
-				<p class="row1">{{security.subTitle[percentValue === 100 ? 0 : 1] | translate}}</p>
-				<p class="row1">{{security.subTitle2[percentValue === 100 ? 0 : 1] | translate}}</p>
-				<div class="button-row">
-					<vtr-ui-button
+			<div class="button-container w-100">
+				<div class="row no-gutters align-items-center flex-nowrap justify-content-between">
+					<h5 class="desc mb-0" [innerHTML]="btnDesc[statusItem?.fullyProtected ? 1 : 0] | translate"></h5>
+					<vtr-ui-button class="button"
 						metricsItem="securityAdvisor101"
 						metricsEvent="ArticleClick"
 						metricsItemPosition="1"
@@ -45,8 +39,10 @@
 						[metricsItemCategory]="articleCategory"
 						[label]="'security.landing.security101' | translate"
 						(onClick)="buttonClick()"
-						[linkId]="'sa-ov-btn-securityArticle'"
-						[upperCaseLabel]=false></vtr-ui-button>
+						[isDisabled]="!isOnline"
+						btnHeight=true
+						linkId="sa-ov-btn-securityArticle">
+					</vtr-ui-button>
 				</div>
 			</div>
 		</div>

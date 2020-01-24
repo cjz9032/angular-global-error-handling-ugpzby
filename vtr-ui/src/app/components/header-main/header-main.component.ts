@@ -1,12 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DccService } from 'src/app/services/dcc/dcc.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-header-main',
 	templateUrl: './header-main.component.html',
 	styleUrls: [
-		'./header-main.component.scss',
-		'./header-main.component.gaming.scss'
+		'./header-main.component.scss'
 	]
 })
 export class HeaderMainComponent implements OnInit, AfterViewInit {
@@ -22,10 +23,13 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 	@Input() isInnerBack = false;
 	@Input() textId: string;
 	@Input() hideBack = false;
-
 	@Output() innerBack = new EventEmitter();
 
-	constructor(private router: Router) { }
+	constructor(
+		private router: Router,
+		public deviceService: DeviceService,
+		public dccService: DccService
+	) { }
 
 	ngOnInit() {
 		const self = this;
@@ -53,8 +57,11 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 		if (this.isInnerBack) {
 			this.onInnerBack();
 		} else {
-			if (window.history.length > 1) { return window.history.back(); }
-			this.router.navigate(['dashboard']);
+			if (window.history.length > 1) {
+				return window.history.back();
+			} else if (typeof this.deviceService.isGaming === 'boolean') {
+				this.router.navigate([this.deviceService.isGaming ? 'device-gaming' : 'dashboard']);
+			}
 		}
 	}
 }

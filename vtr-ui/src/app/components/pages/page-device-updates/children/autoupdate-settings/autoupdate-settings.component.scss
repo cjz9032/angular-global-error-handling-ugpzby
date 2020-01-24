@@ -4,17 +4,16 @@
 	border-radius: $border_radius;
 	background-color: $light;
 	box-shadow: $drop_shadow;
-	padding: 4rem;
+	padding: $fontsize_xl;
 	.title {
-		color: $shade_blue;
-		font-size: 2.5rem;
-		font-weight: $weight_medium;
+		color: $main_dark;
+		font-size: $fontsize_xl;
+		font-weight: $weight_600;
 	}
 	.description {
 		color: $main_shade;
-		font-size: 1.5rem;
-		text-transform: uppercase;
-		font-weight: $weight_medium;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
 	}
 
 	.settings-container {
@@ -26,13 +25,14 @@
 
 		.update-title {
 			color: $shade_blue;
-			font-size: 1.6rem;
-			font-weight: $weight_600;
+			font-size: $fontsize_xs;
+			font-weight: $weight_bold;
 		}
 
 		fa-icon {
 			color: $main;
 			font-size: 1.8rem;
+			padding-left: 0.5rem;
 
 			&.question {
 				cursor: pointer;

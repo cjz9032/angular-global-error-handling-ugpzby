@@ -13,12 +13,16 @@ export class LoggerService {
 	public isShellAvailable = false;
 	private version: string;
 	private logger: any;
-
 	constructor(private vantageShellService: VantageShellService) {
 		this.version = environment.appVersion;
 		this.logger = this.vantageShellService.getLogger();
 		if (this.logger) {
 			this.isShellAvailable = true;
+		}
+		if (!environment.isLoggingEnabled) {
+			this.debug = () => { };
+			this.error = () => { };
+			this.info = () => { };
 		}
 	}
 
@@ -66,7 +70,6 @@ export class LoggerService {
 			console.log(this.getMessage(message, errorMessage));
 		}
 	}
-
 
 	/**
 	 * add console log with ISO date time stamp

@@ -1,10 +1,16 @@
+import { Subscription } from 'rxjs/internal/Subscription';
+import { throttleTime } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 import {
 	Component,
 	OnInit,
 	Input,
 	ViewChild,
 	Output,
-	EventEmitter
+	EventEmitter,
+	ElementRef,
+	OnDestroy,
+	NgZone
 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
@@ -21,7 +27,7 @@ import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.compone
 	styleUrls: ['./ui-row-switch.component.scss'],
 	exportAs: 'uiRowSwitch'
 })
-export class UiRowSwitchComponent extends BaseComponent implements OnInit {
+export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDestroy {
 	@ViewChild('childContent', { static: false }) childContent: any;
 
 	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
@@ -57,26 +63,32 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 	@Input() metricsParent = '';
 	@Input() isAdminRequired = false;
 	@Input() isRebootRequired = false;
-	@Input() captionLink = '';
-	@Input() subDescription = '';
+	@Input() label = '';
+	@Input() fnCtrltoolTip = false;
+	@Input() tooltipContent = [];
 	public contentExpand = false;
 
-
-	// private tooltip: NgbTooltip;
+	@ViewChild('rightToolTip1', { static: false }) rightToolTip1: ElementRef;
+	@ViewChild('rightToolTip2', { static: false }) rightToolTip2: ElementRef;
+	@ViewChild('rightToolTip3', { static: false }) rightToolTip3: ElementRef;
+	scrollEvent = new Subject();
+	subscriptionList = [];
 
 	constructor(
 		public modalService: NgbModal, private deviceService: DeviceService, private translate: TranslateService,
+		private ngZone: NgZone
 	) { super(); }
 
 
 	ngOnInit() {
 		this.childContent = {};
 		this.childContent.innerHTML = '';
-		if (this.captionLink && this.subDescription) {
-			// this.caption = this.caption + ' ' + this.captionLink + this.subDescription;
-			this.caption = this.caption + ' ' + '<u class="text-primary">' + this.captionLink + '</u>' + ' ' + this.subDescription;
-			return this.caption;
-		}
+		console.log(this.tooltipContent);
+		this.checkToolTips();
+		this.ngZone.runOutsideAngular(() => {
+			window.addEventListener('scroll', () => { this.scrollEvent.next(); }, true);
+		});
+
 		// this.commonService.notification.subscribe((notification: AppNotification) => {
 		// 	this.onNotification(notification);
 		// });
@@ -89,7 +101,6 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 			if (this.isSwitchChecked) {
 				const modalRef = this.modalService.open(ModalBatteryChargeThresholdComponent, {
 					backdrop: 'static',
-					size: 'sm',
 					centered: true,
 					windowClass: 'Battery-Charge-Threshold-Modal'
 				});
@@ -106,6 +117,9 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 							this.toggleOnOff.emit($event);
 						} else if (result === 'negative') {
 							this.isSwitchChecked = !this.isSwitchChecked;
+							if (document.getElementById('ds-power-battery-threshold-onOffButton')) {
+								document.getElementById('ds-power-battery-threshold-onOffButton').focus();
+							}
 						}
 					},
 					reason => {
@@ -155,10 +169,30 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 		this.contentExpand = true;
 	}
 
-	public onRightIconClick($event) {
+	public onRightIconClick(tooltip, $event) {
+		this.toggleToolTip(tooltip, true);
 		this.tooltipClick.emit($event);
 	}
 
+	checkToolTips() {
+		// console.log('==THROTTLE');
+		const subscription = this.scrollEvent.asObservable().pipe(throttleTime(100)).subscribe(event => {
+			this.toggleToolTip(this.rightToolTip1);
+			this.toggleToolTip(this.rightToolTip2);
+			this.toggleToolTip(this.rightToolTip3);
+		});
+		this.subscriptionList.push(subscription);
+	}
+
+	public toggleToolTip(tooltip, canOpen = false) {
+		if (tooltip) {
+			if (tooltip.isOpen()) {
+				tooltip.close();
+			} else if (canOpen) {
+				tooltip.open();
+			}
+		}
+	}
 	public onResetClick($event: Event) {
 		this.resetClick.emit($event);
 	}
@@ -181,6 +215,12 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 		modalRef.componentInstance.value = this.voiceValue;
 		modalRef.componentInstance.metricsParent = this.metricsParent;
 	}
+
+	ngOnDestroy() {
+		window.removeEventListener('scroll', () => { });
+		this.subscriptionList.forEach((s: Subscription) => s.unsubscribe());
+	}
+
 	// private closeTooltip($event: Event) {
 	// 	if (!$event.srcElement.classList.contains('fa-question-circle') && this.tooltip && this.tooltip.isOpen()) {
 	// 		this.tooltip.close();

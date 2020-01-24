@@ -8,24 +8,24 @@
 	[shiftRightUp]="true">
 
 	<left-content>
-		<div class="mt-5">
+		<div class="mt-2">
 			<div class="row">
 				<div class="col">
 					<vtr-ui-header-subpage [items]="headerMenuItems"
 						[caption]="'device.smartAssist.description' | translate"
-						[menuTitle]="'device.smartAssist.jumpTo.title' | translate"
+						[menuTitle]="jumpTosettingsTitle"
 						[textId]="'smart-assist'"
 						[metricsParent]="'Device.SmartAssist'">
 					</vtr-ui-header-subpage>
 				</div>
 			</div>
-			<div class="row px-40">
+			<div class="row">
 				<div class="col">
 					<!-- Start of Intelligent Security -->
 					<div class="row py-5 smart-assist-card"
 						id="security"
 						*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
-						<div class="col-12 mx-auto">
+						<div class="col-12 px-0">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentSecurity'"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.intelligentSecurity.title' | translate"
@@ -51,9 +51,9 @@
 											[rightIcon]="['far', 'question-circle']"
 											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.tooltip' | translate">
 										</vtr-ui-row-switch>
-										<div class="bold-title no-border-bottom pb-4 border-bottom"
+										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible"
-											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLoginEnabled">
+											>
 											<vtr-ui-row-switch [switchId]="'distanceSensitivity'"
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
@@ -120,7 +120,7 @@
 										</vtr-ui-row-switch>
 									</li>
 									<li class="pt-3 no-border-bottom"
-										[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled">
+										>
 										<vtr-ui-row-switch [switchId]="'thinkpadZeroTouchLogin'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
@@ -133,7 +133,7 @@
 											[disabled]="!intelligentSecurity.isHPDEnabled">
 										</vtr-ui-row-switch>
 										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
-											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLoginEnabled">
+											>
 											<vtr-ui-row-switch [switchId]="'thinkpadDistanceSensitivity'"
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[isSwitchVisible]="false"
@@ -185,8 +185,7 @@
 								<ul class="list-group list-group-flush pt-3 no-border-bottom"
 									[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
 									*ngIf="intelligentSecurity.isZeroTouchLockVisible">
-									<li class="auto-screen-block"
-										[class.margin-right-05]="isThinkPad">
+									<li class="auto-screen-block">
 										<vtr-ui-row-switch [switchId]="'zeroTouchLock'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLock.caption' | translate"
@@ -198,8 +197,8 @@
 											(toggleOnOff)="onZeroTouchLockStatusToggle($event)"
 											[theme]="'white'"
 											[disabled]="!intelligentSecurity.isHPDEnabled">
-											<div class="row">
-												<div class="col px-20 mt-10 facial-recognition"
+											<div class="row fac-control">
+												<div class="col mt-10 facial-recognition"
 													*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible">
 													<h3 id="smart-assist-zero-touch-lock-faical-recognition-title"
 														attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-title">
@@ -209,7 +208,6 @@
 														attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-desc">
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 													</p>
-
 													<div class="custom-control custom-checkbox smart-assist-checkbox">
 														<input id="cb-zero-touch-lock"
 															attr.aria-label="cb-zero-touch-lock"
@@ -266,7 +264,7 @@
 											</div>
 										</vtr-ui-row-switch>
 										<div *ngIf="sensitivityVisibility" class="pl-5 bold-title no-border-bottom pb-4"
-										[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled">
+										>
 										<vtr-ui-row-switch [switchId]="'thinkpadSensitivity'"
 											[title]="'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate"
 											[isSwitchVisible]="false" [showChildContent]="true"
@@ -302,7 +300,6 @@
 									</div>
 										<div class="bold-title no-border-bottom pl-5 pb-4 border-bottom"
 											*ngIf="intelligentSecurity.isZeroTouchLockVisible"
-											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled"
 											[class.col-pad-margin]="isThinkPad">
 											<vtr-ui-row-switch [switchId]="'autoScreenLockTimer'"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.title' | translate"
@@ -360,7 +357,7 @@
 									</li>
 								</ul>
 								<div class="row">
-									<div class="feature-note p-4 m-4">
+									<div class="feature-note p-4 my-4 mx-3">
 										<p id="smart-assist-intelligent-security-note-desc1"
 											attr.aria-label="smart-assist-intelligent-security-note-desc1">
 											{{'device.smartAssist.intelligentSecurity.note.description3' | translate}}
@@ -397,7 +394,7 @@
 					<div class="row py-5 smart-assist-card"
 						id="screen"
 						*ngIf="intelligentScreen.isIntelligentScreenVisible">
-						<div class="col-12 mx-auto">
+						<div class="col-12 px-0">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentScreen'"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.intelligentScreen.title' | translate"
@@ -433,7 +430,7 @@
 										</vtr-ui-row-switch>
 										<div class="row"
 											*ngIf="intelligentScreen.isAutoScreenOffNoteVisible">
-											<div class="feature-note auto-screen-off-note p-4 m-4">
+											<div class="feature-note auto-screen-off-note p-4">
 												<p id="smart-assist-auto-screen-off-note"
 													attr.aria-label="smart-assist-auto-screen-off-note">
 													{{'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate}}
@@ -444,7 +441,7 @@
 										</div>
 									</li>
 									<li class="pt-3 keep-my-display-block"
-										*ngIf="intelligentScreen.isReadingOrBrowsingVisible">
+										>
 										<vtr-ui-row-switch [switchId]="'keepMyDisplay'"
 											[title]="'device.smartAssist.intelligentScreen.keepMyDisplay.title' | translate"
 											[caption]="'device.smartAssist.intelligentScreen.keepMyDisplay.caption' | translate"
@@ -454,7 +451,7 @@
 											[showChildContent]="true"
 											(toggleOnOff)="onKeepMyDisplayToggle($event)"
 											[isSwitchChecked]="intelligentScreen.isReadingOrBrowsingEnabled">
-											<div class="pl-5 ml-5 pt-4">
+											<div class="pl-4 ml-3 pt-4">
 												<div class="display-dim-title"
 													id="smart-assist-display-slider-title"
 													attr.aria-label="smart-assist-display-slider-title">
@@ -484,9 +481,13 @@
 					<!-- Start of Intelligent Media -->
 
 					<vtr-intelligent-media id="media"
-						*ngIf="intelligentMedia.available"
+						*ngIf="intelligentMedia.available || superResolution.available"
 						[isLoading]="isIntelligentMediaLoading"
-						[isChecked]="intelligentMedia.status">
+						[isChecked]="intelligentMedia.status"
+						[isSRLoading]="isSuperResolutionLoading"
+						[isSRChecked]="superResolution.status"
+						[intelligentMediaAvailable]="intelligentMedia.available"
+						[superResolutionAvailable]="superResolution.available">
 					</vtr-intelligent-media>
 
 					<!-- End of Intelligent Media -->
@@ -495,7 +496,7 @@
 					<div class="row py-5 smart-assist-card"
 						id="aps"
 						*ngIf='isAPSAvailable'>
-						<div class="col-12 mx-auto">
+						<div class="col-12 px-0">
 							<vtr-container-collapsible [collapseLinkId]="'activeProtection'"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.activeProtectionSystem.title' | translate"
@@ -514,7 +515,7 @@
 					<div class="row py-5 smart-assist-card"
 						id="voice"
 						*ngIf="lenovoVoice.available">
-						<div class="col-12 mx-auto">
+						<div class="col-12 px-0">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentVoice'"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.voice.title' | translate"
@@ -545,9 +546,8 @@
 						[action]="cardContentPositionA.Action"
 						[actionType]="cardContentPositionA.ActionType"
 						[actionLink]="cardContentPositionA.ActionLink"
-						[type]="'corner-article'"
-						[ratioX]="4"
-						[ratioY]="2"
+						[type]="'subpage-corner'"
+						[ratio]="2"
 						order="1"
 						sideFlag='r'
 						[cornerShift]="'large'">

@@ -15,8 +15,12 @@
 		@media #{$breakpoint_sm} {
 			margin: 0 0.5rem 0.1rem;
 		}
-
-
+		@media #{$breakpoint_md} {
+			margin-right: 3.5rem !important;
+		}
+		@media #{$breakpoint_sm} {
+			margin-right: 3.5rem !important;
+		}
 		&:first-child {
 			margin-left: 0.5rem;
 		}
@@ -33,34 +37,111 @@
 			font-weight: $weight_600;
 			padding-bottom: 2rem;
 			cursor: pointer;
-			@media #{$breakpoint_md} {
+			.icomoon {
+				height: 4rem;
+				width: 4rem;
+				font-size: 3.2rem;
+			}
+			@media #{$breakpoint_xl6} {
 				font-size: $fontsize_md;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl5} {
+				font-size: $fontsize_md;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl4} {
+				font-size: $fontsize_md;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl3} {
+				font-size: $fontsize_md;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl2} {
+				font-size: $fontsize_md;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl} {
+				font-size: $fontsize_sm;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_lg} {
+				font-size: $fontsize_sm;
+				.text {
+					display: inline-block;
+				}
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_md} {
+				font-size: $fontsize_sm;
+				.text {
+					display: none;
+				}
+				.icomoon {
+					display: inline-block;
+				}
 			}
 			@media #{$breakpoint_sm} {
 				font-size: $fontsize_sm;
+				.text {
+					display: none;
+				}
+				.icomoon {
+					display: inline-block;
+				}
 			}
-
 		}
 		fa-icon {
 			&.menu-pointer {
 				display: none;
 				position: absolute;
-				bottom: -2.5rem;
+				bottom: -1.8rem;
 				left: 50%;
 				margin-left: -1.5rem;
-				color: $light;
-				font-size: 3rem;
+				color: $shade_extralight;
+				font-size: 2.2rem;
 				transform: rotate(45deg);
-				z-index: 0;
+				z-index: 2;
 
 				@media #{$black-on-white} {
-					color:$light;
+					color: $shade_extralight;
 				}
 				@media #{$white-on-black} {
 					color: $dark;
 				}
-
-
 			}
 		}
 	}

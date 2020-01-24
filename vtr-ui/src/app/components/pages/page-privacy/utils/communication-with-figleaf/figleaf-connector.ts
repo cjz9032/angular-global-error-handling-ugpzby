@@ -1,4 +1,5 @@
 import { MockWindows } from '../moked-api';
+import { throwError } from 'rxjs';
 
 const Windows = window['Windows'] || MockWindows; // this is mocked data for browser
 
@@ -9,6 +10,7 @@ export interface MessageToFigleaf {
 
 const APP_SERVICE_NAME = 'figleaf.lenovoCompanion';
 const PACKAGE_FAMILY_NAME = 'Lenovo.FigLeaf_e83k4pgknp69a';
+const URI_SCHEME_NAME = 'lenovoprivacy';
 
 const onConnectListeners = [];
 const onDisconnectListeners = [];
@@ -37,12 +39,15 @@ class FigleafConnector {
 
 		const response = await currentConnection.sendMessageAsync(message);
 
-		if (response.status === Windows.ApplicationModel.AppService.AppServiceResponseStatus.success) {
+		if (response && response.status === Windows.ApplicationModel.AppService.AppServiceResponseStatus.success) {
 			return JSON.parse(response.message.result);
+		} else {
+			this.disconnect();
+			throw new Error('App in exit state');
 		}
 	}
 
-	async connect() {
+	private async connect() {
 		let newConnection = connection;
 
 		if (newConnection === null) {
@@ -70,6 +75,11 @@ class FigleafConnector {
 			connection.close();
 			connection = null;
 		}
+	}
+
+	async checkIfFigleafInstalled() {
+		const foundUri = await Windows.System.Launcher.findUriSchemeHandlersAsync(URI_SCHEME_NAME);
+		return foundUri.length;
 	}
 
 	private disconnectFromFigleaf() {

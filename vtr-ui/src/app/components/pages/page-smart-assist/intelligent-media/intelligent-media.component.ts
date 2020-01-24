@@ -12,13 +12,14 @@ import { EMPTY } from 'rxjs';
 export class IntelligentMediaComponent implements OnInit {
 	@Input() isChecked = false;
 	@Input() isLoading = true;
-	@Input() intelligentMediaAvailable = true;
+	@Input() intelligentMediaAvailable = false;
 	@Output() videoPlaybackToggle: EventEmitter<any> = new EventEmitter();
 
 	@Input() isSRChecked = false;
 	@Input() isSRLoading = true;
-	@Input() superResolutionAvailable = true;
+	@Input() superResolutionAvailable = false;
 	@Output() superResolutionToggle: EventEmitter<any> = new EventEmitter();
+
 	constructor(
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,

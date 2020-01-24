@@ -4,12 +4,14 @@
 		<div class="list" *ngIf="isDropDownOpen && !disabled" role="listbox" tabindex="0" [attr.aria-hidden]="!isDropDownOpen">
 			<ul>
 				<li (click)="[select(i, toggleBtn),toggle()]" role="option" (keydown.enter)="[select(i, toggleBtn),toggle()]" tabindex="0" attr.aria-label="{{ i.text }}" *ngFor="let i of list" >
-					{{i.text | uppercase }}
+					<span *ngIf="textCase === 'default'">{{i.text | titlecase }}</span>
+					<span *ngIf="textCase === 'oled'" >{{customCamelCase(i.text)}}</span>
 				</li>
 			</ul>
 		</div>
 		<div class="time">
-			<span>{{name}} {{placeholder | uppercase }} </span>
+			<span *ngIf="textCase === 'default'">{{name}} {{placeholder | titlecase }} </span>
+			<span *ngIf="textCase === 'oled'" >{{name}} {{placeholder | lowercase }} </span>
 		</div>
 		<p class="chevron">
 			<fa-icon *ngIf="!isDropDownOpen" [icon]="['fal', 'chevron-down']">

@@ -8,11 +8,12 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 	constructor(windowsHello: WindowsHello, commonService: CommonService, private translateService: TranslateService) {
 		super({
 			id: 'sa-widget-lnk-wh',
-			path: 'security/windows-hello',
+			path: 'ms-settings:signinoptions',
 			type: 'security',
-			metricsItemName: 'Windows Hello'
+			isSystemLink: true,
+			metricsItemName: 'fingerPrint'
 		}, translateService);
-		this.translateService.stream('common.securityAdvisor.windowsHello').subscribe((value) => {
+		this.translateService.stream('common.securityAdvisor.fingerPrint').subscribe((value) => {
 			this.title = value;
 		});
 		const cacheStatus: string = commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus);

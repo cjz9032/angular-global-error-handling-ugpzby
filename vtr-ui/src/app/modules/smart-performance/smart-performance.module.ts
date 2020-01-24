@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SmartPerformanceRoutingModule } from './smart-performance-routing.module';
@@ -30,6 +30,11 @@ import { WidgetSpeedometerComponent } from '../../components/widgets/widget-spee
 import { UiSmartPerformanceScanSummaryComponent } from '../../components/ui/ui-smart-performance-scan-summary/ui-smart-performance-scan-summary.component';
 import { FormsModule } from '@angular/forms';
 import { CommonUiModule } from '../common/common-ui.module';
+import { TranslationModule } from '../translation.module';
+import { WidgetSubscriptiondetailsComponent } from 'src/app/components/widgets/widget-subscriptiondetails/widget-subscriptiondetails.component';
+import { WidgetScansettingsComponent } from '../../components/widgets/widget-scansettings/widget-scansettings.component';
+import { PageLayoutComponent } from 'src/app/components/page-layout/page-layout.component';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 library.add(faLaptop);
 library.add(faTrashAlt);
 library.add(faExclamationTriangle);
@@ -52,18 +57,22 @@ library.add(faCircle);
     ModalSmartPerformanceSubscribeComponent,
     WidgetSpeedometerComponent,
     UiSmartPerformanceScanSummaryComponent,
-
-
+    WidgetSubscriptiondetailsComponent,
+    WidgetScansettingsComponent,
+   
 	],
   imports: [ CommonModule,
 	  NgbModule,
   SmartPerformanceRoutingModule,
     FormsModule ,
   NgbDatepickerModule ,
+  PageLayoutModule,
   HeaderMainModule,
   FontAwesomeModule,
-  CommonUiModule
+  CommonUiModule,
+  TranslationModule.forChild()
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent,CommonUiModule],
   bootstrap: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent]
 })

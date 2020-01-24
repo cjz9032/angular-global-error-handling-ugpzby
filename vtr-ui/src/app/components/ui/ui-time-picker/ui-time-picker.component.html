@@ -2,7 +2,7 @@
 	<p class="sub-heading">
 		{{ subHeadingText | translate | uppercase }}</p>
 	<div class="row">
-		<div class="col-md-10 col-sm-12 pl-0">
+		<div class="col-md-12 col-sm-12 pl-0">
 			<div class="row">
 				<div class="dropdown">
 					<input [id]="id"
@@ -23,31 +23,31 @@
 						<div class="row">
 							<div class="col align-items-center d-flex justify-content-between">
 								<div class="time-headings">
-									<p class="ml-5"
+									<p class=""
 										id="smartStandby-{{linkId}}-hours"
 										attr.aria-label="smartStandby-{{linkId}}-hours">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}
 									</p>
-									<span class="ml-5">{{hours[hour]}}</span>
+									<span class="">{{hours[hour]}}</span>
 								</div>
 								<div class="time-headings">
-									<p class="mr-2"
+									<p class=""
 										id="smartStandby-{{linkId}}-minutes"
 										attr.aria-label="smartStandby-{{linkId}}-minutes">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}
 									</p>
-									<span class="mr-2">{{minutes[minute]}}</span>
+									<span class="">{{minutes[minute]}}</span>
 								</div>
 								<div class="time-headings">
-									<p class="mr-5"
+									<p class=""
 										id="smartStandby-{{linkId}}-amPm"
 										attr.aria-label="smartStandby-{{linkId}}-amPm">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
 									</p>
-									<span class="mr-5">{{amPms[amPm] | translate}}</span>
+									<span class="">{{amPms[amPm] | translate}}</span>
 								</div>
 
-								<div class="toggle-icon"
+								<div class="toggle-icon align-right"
 									id="smartStandby-{{linkId}}-dropDown-btn"
 									attr.aria-label="smartStandby-{{linkId}}-dropDown-btn">
 									<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
@@ -62,7 +62,7 @@
 						<div class="main-block">
 							<div class="timer-block">
 								<div class="row align-items-center d-flex justify-content-between">
-									<div class="hours-block pl-5 ml-5">
+									<div class="hours-block">
 
 										<div class="toggle-icon"
 											(click)="updateHours(false)"
@@ -75,7 +75,11 @@
 										</div>
 
 										<span>{{hours[prevHour]}}</span><br>
-										<span class="highlight" role="text" tabindex="0" attr.aria-label="{{hours[copyHour]}}, 'hours'">{{hours[copyHour]}}</span><br>
+										<span class="highlight"
+											role="text"
+											tabindex="0"
+											id="{{hours[copyHour]}}'hours'"
+											attr.aria-label="{{hours[copyHour]}}, 'hours'">{{hours[copyHour]}}</span><br>
 										<span>{{hours[nextHour]}}</span>
 
 										<div class="toggle-icon"
@@ -102,7 +106,11 @@
 										</div>
 
 										<span>{{minutes[prevMinute]}}</span><br>
-										<span class="highlight" role="text" tabindex="0" attr.aria-label="{{minutes[copyMinute]}}, 'minutes'">{{minutes[copyMinute]}}</span><br>
+										<span class="highlight"
+											role="text"
+											tabindex="0"
+											id="{{minutes[copyMinute]}}, 'minutes'"
+											attr.aria-label="{{minutes[copyMinute]}}, 'minutes'">{{minutes[copyMinute]}}</span><br>
 										<span>{{minutes[nextMinute]}}</span>
 
 										<div class="toggle-icon"
@@ -117,10 +125,16 @@
 
 									</div>
 
-									<div class="am-pm ml-52 highlight" role="radiogroup" tabindex="0">
+									<div class="am-pm highlight"
+										role="radiogroup"
+										tabindex="0">
 										<span>
-											<label class="inline-block" for="{{linkId}}-am-radio" attr.aria-label="{{ amPms[0] | translate }}" tabindex="0"
-											[attr.aria-checked]="copyAmPm==0" (keydown.enter)="setAmPm(0)">
+											<label class="inline-block"
+												for="{{linkId}}-am-radio"
+												attr.aria-label="{{ amPms[0] | translate }}"
+												tabindex="0"
+												[attr.aria-checked]="copyAmPm==0"
+												(keydown.enter)="setAmPm(0)">
 												<input class="label-radio"
 													id="{{linkId}}-am-radio"
 													[name]="'ampmradio'+id"
@@ -128,13 +142,17 @@
 													value="0"
 													tabindex="-1"
 													[checked]="copyAmPm==0"
-													(click)="setAmPm(0)"
-													 />
+													(click)="setAmPm(0)" />
 												<p class="label-text">{{ amPms[0] | translate }}</p>
 											</label>
 										</span><br>
 										<span>
-											<label class="inline-block" for="{{linkId}}-pm-radio" attr.aria-label="{{ amPms[1] | translate }}" [attr.aria-checked]="copyAmPm==1" tabindex="0" (keydown.enter)="setAmPm(1)">
+											<label class="inline-block"
+												for="{{linkId}}-pm-radio"
+												attr.aria-label="{{ amPms[1] | translate }}"
+												[attr.aria-checked]="copyAmPm==1"
+												tabindex="0"
+												(keydown.enter)="setAmPm(1)">
 												<input class="label-radio"
 													id="{{linkId}}-pm-radio"
 													[name]="'ampmradio'+id"
@@ -142,12 +160,12 @@
 													tabindex="-1"
 													value="1"
 													[checked]="copyAmPm==1"
-													(click)="setAmPm(1)"
-													 />
+													(click)="setAmPm(1)" />
 												<p class="label-text">{{ amPms[1] | translate }}</p>
 											</label>
 										</span>
 									</div>
+									<div class="empty-block"></div>
 								</div>
 							</div>
 						</div>

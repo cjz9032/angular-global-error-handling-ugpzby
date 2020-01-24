@@ -19,8 +19,10 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	@Input() processIcon = false;
 	@Input() textId: string;
 	@Input() radioGroup: any;
-	@Output() change: EventEmitter<any> = new EventEmitter();
-	hideIcon: boolean = false;
+	@Input() customIcon = '';
+	@Input() hideIcon = false;
+	@Input() processLabel = true;
+	@Output() optionChange: EventEmitter<any> = new EventEmitter();
 	// These following instance variables added for Keyboard navigation to radio button.
 	keyCode = Object.freeze({
 		TAB: 9,
@@ -42,13 +44,13 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.translate.stream(this.label).subscribe((result: string) => {
-			this.label = result;
-		});
+		// this.translate.stream(this.label).subscribe((result: string) => {
+		// 	this.label = result;
+		// });
 	}
 
 	onChange(event) {
-		this.change.emit(event);
+		this.optionChange.emit(event);
 	}
 
 	getIconName(name: string) {

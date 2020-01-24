@@ -3,7 +3,7 @@
 .vtr-widget-system-tools {
 	.widget-title {
 		color: $gaming_lightest;
-		font-size: 5rem;
+		font-size: 4rem;
 		margin-bottom: 1rem;
 		font-weight: $weight-light;
 	}
@@ -24,6 +24,7 @@
 			li {
 				//width: calc(100% / 5);
 				width: 20%;
+				min-width: 10.4rem;
 				a {
 					text-decoration: none;
 					display: inline-block;

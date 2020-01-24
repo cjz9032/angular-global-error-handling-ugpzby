@@ -8,13 +8,14 @@ import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { GuardService } from '../../../services/guard/security-guardService.service';
+import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import { AntivirusCommon } from 'src/app/data-models/security-advisor/antivirus-common.model';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { TranslateService } from '@ngx-translate/core';
+import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -46,7 +47,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 
 	@HostListener('window:focus')
 	onFocus(): void {
-		this.antiVirus.refresh();
+		const id = document.activeElement.id;
+		if (id !== 'sa-av-button-launch-mcafee') {
+			this.antiVirus.refresh();
+		}
 	}
 
 	constructor(
@@ -58,7 +62,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private localInfoService: LocalInfoService,
 		public translate: TranslateService,
-	) {	}
+	) { }
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShell.getSecurityAdvisor();
@@ -68,7 +72,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		this.common = new AntivirusCommon(this.antiVirus, this.isOnline, this.localInfoService, this.translate);
+		this.common = new AntivirusCommon(this.antiVirus, this.isOnline, this.localInfoService, this.commonService, this.translate);
 		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.commonService, this.translate);
 		if (this.antiVirus.mcafee) {
 			this.viewModel.mcafee = Object.assign({}, {
@@ -201,15 +205,20 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		}).on(phoenix.EventTypes.avMcafeeMetricsEvent, (data) => {
 			this.viewModel.metricsList = this.getMcafeeMetric(this.viewModel.metricsList, data);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeMetricList, this.viewModel.metricsList);
+		}).on(phoenix.EventTypes.avMcafeeTrialUrlEvent, (data) => {
+			this.viewModel.mcafee.trialUrl = data;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeTrialUrl, this.viewModel.mcafee.trialUrl);
 		});
 
-		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+		if (!this.guard.previousPageName.startsWith('Security')) {
 			this.antiVirus.refresh();
 		}
+		const antivirus = new AntivirusErrorHandle(this.antiVirus);
+		antivirus.refreshAntivirus();
 	}
 
 	ngOnDestroy() {
-		if (this.router.routerState.snapshot.url.indexOf('security') === -1 && this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
+		if (this.router.routerState.snapshot.url.indexOf('security') === -1) {
 			if (this.securityAdvisor.wifiSecurity) {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
@@ -274,16 +283,16 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	findArray(others: Array<phoenix.OtherInfo>, partyAvList) {
 		let show = true;
 		others.forEach((e) => {
-		  partyAvList.forEach((data) => {
-			if (e.name === data) {
-				show = false;
-			}
-		  });
+			partyAvList.forEach((data) => {
+				if (e.name === data) {
+					show = false;
+				}
+			});
 		});
 		return show;
 	}
 
-	getMcafeeFeature(mcafee: phoenix.McAfeeInfo, data?) {
+	getMcafeeFeature(mcafee: phoenix.McAfeeInfo, data?: Array<phoenix.McafeeFeature>) {
 		const featureList = [{
 			status: mcafee.registered,
 			title: this.register,
@@ -340,12 +349,30 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			});
 		} else if (data) {
 			if (data.length < 6) {
-				data.forEach((feature) => {
-					featureList.push({
-						status: feature.value,
-						title: feature.key,
-						installed: feature.installed
-					});
+				featureList.push({
+					status: data[0].value,
+					title: this.virusScan,
+					installed: data[0].installed
+				});
+				featureList.push({
+					status: data[1].value,
+					title: this.fireWall,
+					installed: data[1].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.antiSpam,
+					installed: data[2].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.quickClean,
+					installed: data[3].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.vulnerability,
+					installed: data[4].installed
 				});
 			} else {
 				featureList.push({
@@ -376,12 +403,30 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			}
 		} else {
 			if (mcafee.features.length < 6) {
-				mcafee.features.forEach((feature) => {
-					featureList.push({
-						status: feature.value,
-						title: feature.key,
-						installed: feature.installed
-					});
+				featureList.push({
+					status: mcafee.status,
+					title: this.virusScan,
+					installed: true
+				});
+				featureList.push({
+					status: mcafee.firewallStatus,
+					title: this.fireWall,
+					installed: true
+				});
+				featureList.push({
+					status: null,
+					title: this.antiSpam,
+					installed: mcafee.features[2].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.quickClean,
+					installed: mcafee.features[3].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.vulnerability,
+					installed: mcafee.features[4].installed
 				});
 			} else {
 				featureList.push({
@@ -415,12 +460,17 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	}
 
 	updateRegister(list: Array<any>, data) {
-		const featureList = list.slice(1, 5);
+		this.viewModel.mcafee.registered = data;
 		const registerList = {
-			status: data,
+			status: data ? 'enabled' : 'disabled',
 			title: this.register
 		};
-		return featureList.splice(0, 0, registerList);
+		if (list.length > 0) {
+			list.splice(0, 1, registerList);
+		} else {
+			list.push(registerList);
+		}
+		return list;
 	}
 
 	getMcafeeMetric(metrics: Array<phoenix.McafeeMetricsList>, data?) {
@@ -434,6 +484,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			this.viewModel.showMetricsList = false;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricList, false);
 		} else {
+			this.viewModel.showMetricsList = true;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricList, true);
 		}
 		metricsFeature.forEach((e) => {
@@ -486,10 +537,11 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricButton, false);
 				return list;
 			} else {
+				this.viewModel.showMetricButton = true;
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricButton, true);
 			}
 		}
-		return metricsList;
+		return list;
 	}
 
 	private onNotification(notification: AppNotification) {

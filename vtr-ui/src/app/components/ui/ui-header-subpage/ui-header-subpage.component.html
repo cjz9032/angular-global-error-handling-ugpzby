@@ -1,6 +1,4 @@
-<div class="vtr-ui-header-subpage container-fluid"
-	role="text"
-	tabindex="0">
+<div class="vtr-ui-header-subpage container-fluid">
 	<div class="row"
 		*ngIf="title!=undefined">
 		<div class="col">
@@ -50,7 +48,7 @@
 							metricsEvent="FeatureClick"
 							[metricsParent]="metricsParent"
 							id="jumptoSetting-{{item.path}}"
-							attr.aria-label=" 'jump to,' {{item.title | translate}} "
+							attr.aria-label= "jumpto-{{item.path | translate}}"
 							(click)="menuItemClick($event, item)"
 							(keydown.enter)="menuItemClick($event, item)">
 							{{item.title | translate}}

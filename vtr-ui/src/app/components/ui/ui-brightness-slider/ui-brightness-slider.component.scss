@@ -20,19 +20,28 @@
 			&.ng5-slider-selection {
 				background: $gaming_lighting_gradient;
 			}
+
 			&.ng5-slider-pointer {
 				background-image: url('../../../../assets/gaming-icons/Brightness@2x.png');
 				background-position: center center;
 				background-repeat: no-repeat;
 				background-size: 100%;
-				height: 3rem;
-				width: 3rem;
+				height: 3.2rem;
+				width: 3.2rem;
 				top: -1.3rem;
 				border-radius: 50%;
 				&::after {
 					background: none;
 				}
 			}
+		}
+	}
+}
+
+::ng-deep {
+	&.ng5-slider-span {
+		&.ng5-slider-bar {
+			width: 99% !important;
 		}
 	}
 }

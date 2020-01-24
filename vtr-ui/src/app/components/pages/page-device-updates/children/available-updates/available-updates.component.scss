@@ -2,23 +2,34 @@
 
 .vtr-available-updates {
 	background-color: $light;
+	box-shadow: 0 0.7rem 1.5rem 0 rgba(0,0,0,0.15);
 	.header {
 		.heading {
 			color: $main_darker;
 			font-size: 3.5rem;
 			line-height: 1;
+			@media #{$breakpoint_xl2} {
+				font-size: 2.8rem;
+			}
+
+			@media #{$breakpoint_lg} {
+				font-size: $fontsize_xl;
+			}
+			@media #{$breakpoint_md} {
+				font-size: $fontsize_md;
+			}
 		}
 	}
 
 	.text-regular {
 		color: $main_shade;
-		font-size: 1.5rem;
+		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 		padding: 1rem 1rem 1rem 0rem;
 	}
 	.updates-lists-container {
-		margin-left: 3rem;
-		padding: 2rem 2rem 0rem 2rem;
+		// margin-left: 3rem;
+		padding: 2rem 0 0;
 
 		.heading {
 			color: $main_dark;
@@ -60,9 +71,9 @@
 	}
 
 	vtr-ui-button {
-		::ng-deep .vtr-ui-button{
+		::ng-deep .vtr-ui-button {
 			max-width: 100% !important;
-			.button-box .button{
+			.button-box .button {
 				max-width: 100% !important;
 			}
 		}

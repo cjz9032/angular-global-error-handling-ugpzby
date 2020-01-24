@@ -5,7 +5,9 @@
 	//text-transform: uppercase;
 	font-weight: 500;
 	padding: 1.6rem 0;
-	@media #{$mediaquery_11} {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	@media #{$breakpoint_md} {
 		font-size: 3.2rem;
 	}
 	span {
@@ -17,22 +19,6 @@
 
 .col-6 {
 	min-width: 22rem;
-	@media #{$mediaquery_X6} {
-		min-width: 35rem;
-	}
-
-	@media #{$mediaquery_16} {
-		flex: 0 0 100%;
-		max-width: 100%;
-	}
-
-	@media #{$mediaquery_X3} {
-		flex: 0 0 100%;
-		max-width: 100%;
-	}
-}
-
-.select-wrapper {
 }
 
 .record-list-wrapper {
@@ -79,13 +65,14 @@
 		margin: 0.4rem 0rem;
 		> div {
 			display: inline-block;
-			width: 50%;
 			padding: 0.5rem 1rem;
 			&:first-child {
 				text-align: left;
+				width: 60%;
 			}
 			&:last-child {
 				text-align: right;
+				width: 40%;
 			}
 		}
 	}

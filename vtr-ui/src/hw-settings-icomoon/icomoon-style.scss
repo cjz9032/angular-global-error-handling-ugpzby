@@ -1,0 +1,824 @@
+@import "icomoon-variables";
+
+.icomoon-Active-protection {
+	&:before {
+	  content: $icomoon-Active-protection; 
+	}
+  }
+  .icomoon-arrows-h {
+	&:before {
+	  content: $icomoon-arrows-h; 
+	}
+  }
+  .icomoon-audio {
+	&:before {
+	  content: $icomoon-audio;     
+	  color: #fff;
+	}
+  }
+  .icomoon-Auto {
+	&:before {
+	  content: $icomoon-Auto; 
+	}
+  }
+  .icomoon-auto-screen-off {
+	&:before {
+	  content: $icomoon-auto-screen-off; 
+	}
+  }
+  .icomoon-Camera {
+	&:before {
+	  content: $icomoon-Camera; 
+	}
+  }
+  .icomoon-Camera-slash {
+	&:before {
+	  content: $icomoon-Camera-slash; 
+	}
+  }
+  .icomoon-ConditionACAdapterError {
+	&:before {
+	  content: $icomoon-ConditionACAdapterError; 
+	}
+  }
+  .icomoon-ConditionBadBattery {
+	&:before {
+	  content: $icomoon-ConditionBadBattery; 
+	}
+  }
+  .icomoon-ConditionFairBattery {
+	&:before {
+	  content: $icomoon-ConditionFairBattery; 
+	}
+  }
+  .icomoon-ConditionGoodBattery {
+	&:before {
+	  content: $icomoon-ConditionGoodBattery; 
+	}
+  }
+  .icomoon-display_camera {
+	&:before {
+	  content: $icomoon-display_camera;     
+	  color: #fff;
+	}
+  }
+  .icomoon-dpc-docking {
+	&:before {
+	  content: $icomoon-dpc-docking; 
+	}
+  }
+  .icomoon-dpc-hdmi {
+	&:before {
+	  content: $icomoon-dpc-hdmi; 
+	}
+  }
+  .icomoon-dpc-icon {
+	&:before {
+	  content: $icomoon-dpc-icon; 
+	}
+  }
+  .icomoon-dpc-optional {
+	&:before {
+	  content: $icomoon-dpc-optional; 
+	}
+  }
+  .icomoon-dpc-type-c {
+	&:before {
+	  content: $icomoon-dpc-type-c; 
+	}
+  }
+  .icomoon-dpc-wigig {
+	&:before {
+	  content: $icomoon-dpc-wigig; 
+	}
+  }
+  .icomoon-DS-ic-list_Smart-standby {
+	&:before {
+	  content: $icomoon-DS-ic-list_Smart-standby; 
+	}
+  }
+  .icomoon-dynamic {
+	&:before {
+	  content: $icomoon-dynamic; 
+	}
+  }
+  .icomoon-F1-F12-funciton {
+	&:before {
+	  content: $icomoon-F1-F12-funciton;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Battery-bolt2x {
+	&:before {
+	  content: $icomoon-FA-Battery-bolt2x; 
+	}
+  }
+  .icomoon-FA-Battery-three-quarters2x {
+	&:before {
+	  content: $icomoon-FA-Battery-three-quarters2x; 
+	}
+  }
+  .icomoon-FA-Bolt2x {
+	&:before {
+	  content: $icomoon-FA-Bolt2x; 
+	}
+  }
+  .icomoon-FA-Briefcase2x {
+	&:before {
+	  content: $icomoon-FA-Briefcase2x; 
+	}
+  }
+  .icomoon-face-recognition {
+	&:before {
+	  content: $icomoon-face-recognition; 
+	}
+  }
+  .icomoon-FA-Child2x {
+	&:before {
+	  content: $icomoon-FA-Child2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Connection2x {
+	&:before {
+	  content: $icomoon-FA-Connection2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Download2x {
+	&:before {
+	  content: $icomoon-FA-Download2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Eye2x {
+	&:before {
+	  content: $icomoon-FA-Eye2x; 
+	}
+  }
+  .icomoon-FA-Eye-Slash2x {
+	&:before {
+	  content: $icomoon-FA-Eye-Slash2x; 
+	}
+  }
+  .icomoon-FA-Headset2x {
+	&:before {
+	  content: $icomoon-FA-Headset2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Info-circle2x {
+	&:before {
+	  content: $icomoon-FA-Info-circle2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-keyboard2x {
+	&:before {
+	  content: $icomoon-FA-keyboard2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Lock2x {
+	&:before {
+	  content: $icomoon-FA-Lock2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Mail2x {
+	&:before {
+	  content: $icomoon-FA-Mail2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-mask2x {
+	&:before {
+	  content: $icomoon-FA-mask2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Microphone---slash2x {
+	&:before {
+	  content: $icomoon-FA-Microphone---slash2x; 
+	}
+  }
+  .icomoon-FA-Microphone2x {
+	&:before {
+	  content: $icomoon-FA-Microphone2x; 
+	}
+  }
+  .icomoon-familyMembers {
+	&:before {
+	  content: $icomoon-familyMembers;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Plane2x {
+	&:before {
+	  content: $icomoon-FA-Plane2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Plug2x {
+	&:before {
+	  content: $icomoon-FA-Plug2x; 
+	}
+  }
+  .icomoon-FA-Question-circle2x {
+	&:before {
+	  content: $icomoon-FA-Question-circle2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Settings2x {
+	&:before {
+	  content: $icomoon-FA-Settings2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Tasks2x {
+	&:before {
+	  content: $icomoon-FA-Tasks2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Tools2x {
+	&:before {
+	  content: $icomoon-FA-Tools2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-trophy2x {
+	&:before {
+	  content: $icomoon-FA-trophy2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Umbrella2x {
+	&:before {
+	  content: $icomoon-FA-Umbrella2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Unplugged2x {
+	&:before {
+	  content: $icomoon-FA-Unplugged2x; 
+	}
+  }
+  .icomoon-FA-User-headset2x {
+	&:before {
+	  content: $icomoon-FA-User-headset2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-FA-Wheel2x {
+	&:before {
+	  content: $icomoon-FA-Wheel2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-Flip-to-boot {
+	&:before {
+	  content: $icomoon-Flip-to-boot;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-Fn-key-Ctrol-swap {
+	&:before {
+	  content: $icomoon-Fn-key-Ctrol-swap;     
+	  color: #418afd;
+	}
+  }
+  .icomoon-games {
+	&:before {
+	  content: $icomoon-games;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-Hidden-keyboard-functions {
+	&:before {
+	  content: $icomoon-Hidden-keyboard-functions;     
+	  color: #418afd;
+	}
+  }
+  .icomoon-homeDevices {
+	&:before {
+	  content: $icomoon-homeDevices;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-ic {
+	&:before {
+	  content: $icomoon-ic; 
+	}
+  }
+  .icomoon-input_accessories {
+	&:before {
+	  content: $icomoon-input_accessories;     
+	  color: #fff;
+	}
+  }
+  .icomoon-keep-my-display {
+	&:before {
+	  content: $icomoon-keep-my-display; 
+	}
+  }
+  .icomoon-landing-antivirus {
+	&:before {
+	  content: $icomoon-landing-antivirus;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing-disk {
+	&:before {
+	  content: $icomoon-landing-disk;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing-finger {
+	&:before {
+	  content: $icomoon-landing-finger;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing-firewall {
+	&:before {
+	  content: $icomoon-landing-firewall;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing-password {
+	&:before {
+	  content: $icomoon-landing-password;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing-uac {
+	&:before {
+	  content: $icomoon-landing-uac;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing-vpn {
+	&:before {
+	  content: $icomoon-landing-vpn;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing-wifi {
+	&:before {
+	  content: $icomoon-landing-wifi;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing-windows {
+	&:before {
+	  content: $icomoon-landing-windows;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Acoustic-echo-cancellation2x {
+	&:before {
+	  content: $icomoon-LE-Acoustic-echo-cancellation2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Active-pen-battery2x {
+	&:before {
+	  content: $icomoon-LE-Active-pen-battery2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Airplanemode2x {
+	&:before {
+	  content: $icomoon-LE-Airplanemode2x; 
+	}
+  }
+  .icomoon-LE-AirplanemodeCharging2x {
+	&:before {
+	  content: $icomoon-LE-AirplanemodeCharging2x; 
+	}
+  }
+  .icomoon-LE-Always-on-usb2x {
+	&:before {
+	  content: $icomoon-LE-Always-on-usb2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Battery-charge-treshold2x {
+	&:before {
+	  content: $icomoon-LE-Battery-charge-treshold2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Battery-gauge-reset2x {
+	&:before {
+	  content: $icomoon-LE-Battery-gauge-reset2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Battery-Life-mode2x {
+	&:before {
+	  content: $icomoon-LE-Battery-Life-mode2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Breached-accounts2x {
+	&:before {
+	  content: $icomoon-LE-Breached-accounts2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-ChargeFromShutdown2x {
+	&:before {
+	  content: $icomoon-LE-ChargeFromShutdown2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Charging-USB---SS2x {
+	&:before {
+	  content: $icomoon-LE-Charging-USB---SS2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Charging-USB2x {
+	&:before {
+	  content: $icomoon-LE-Charging-USB2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-ConservationCharging2x {
+	&:before {
+	  content: $icomoon-LE-ConservationCharging2x; 
+	}
+  }
+  .icomoon-LE-Conservation-mode2x {
+	&:before {
+	  content: $icomoon-LE-Conservation-mode2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-CoolingDown2x {
+	&:before {
+	  content: $icomoon-LE-CoolingDown2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Data-protection2x {
+	&:before {
+	  content: $icomoon-LE-Data-protection2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Display-priority-control2x {
+	&:before {
+	  content: $icomoon-LE-Display-priority-control2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Dolby2x {
+	&:before {
+	  content: $icomoon-LE-Dolby2x; 
+	}
+  }
+  .icomoon-LE-Easily-accessible-accounts2x {
+	&:before {
+	  content: $icomoon-LE-Easily-accessible-accounts2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Easy-resume2x {
+	&:before {
+	  content: $icomoon-LE-Easy-resume2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Energy-star-logo2x {
+	&:before {
+	  content: $icomoon-LE-Energy-star-logo2x; 
+	}
+  }
+  .icomoon-LE-expressCharging2x {
+	&:before {
+	  content: $icomoon-LE-expressCharging2x; 
+	}
+  }
+  .icomoon-LE-face-detection2x {
+	&:before {
+	  content: $icomoon-LE-face-detection2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-face-recognition2x {
+	&:before {
+	  content: $icomoon-LE-face-recognition2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Figleaf2x {
+	&:before {
+	  content: $icomoon-LE-Figleaf2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Finger-Identification2x {
+	&:before {
+	  content: $icomoon-LE-Finger-Identification2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Finger-recognition2x {
+	&:before {
+	  content: $icomoon-LE-Finger-recognition2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Finger-Scanning2x {
+	&:before {
+	  content: $icomoon-LE-Finger-Scanning2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Handwritting-identification2x {
+	&:before {
+	  content: $icomoon-LE-Handwritting-identification2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Handwritting-recognition2x {
+	&:before {
+	  content: $icomoon-LE-Handwritting-recognition2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-HDMI2x {
+	&:before {
+	  content: $icomoon-LE-HDMI2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-IntelligentCooling2x {
+	&:before {
+	  content: $icomoon-LE-IntelligentCooling2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Intelligent-dual-fan-2x {
+	&:before {
+	  content: $icomoon-LE-Intelligent-dual-fan-2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-IR2x {
+	&:before {
+	  content: $icomoon-LE-IR2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Microphone-Optimize2x {
+	&:before {
+	  content: $icomoon-LE-Microphone-Optimize2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Microphone-volume2x {
+	&:before {
+	  content: $icomoon-LE-Microphone-volume2x; 
+	}
+  }
+  .icomoon-LE-Palm-recognition2x {
+	&:before {
+	  content: $icomoon-LE-Palm-recognition2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Palm-Scanning2x {
+	&:before {
+	  content: $icomoon-LE-Palm-Scanning2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Power-agenda2x {
+	&:before {
+	  content: $icomoon-LE-Power-agenda2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Power-plan2x {
+	&:before {
+	  content: $icomoon-LE-Power-plan2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Smart-Assist2x {
+	&:before {
+	  content: $icomoon-LE-Smart-Assist2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-USB-Type-C2x {
+	&:before {
+	  content: $icomoon-LE-USB-Type-C2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-USB2x {
+	&:before {
+	  content: $icomoon-LE-USB2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-User-Detection2x {
+	&:before {
+	  content: $icomoon-LE-User-Detection2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-Level_1 {
+	&:before {
+	  content: $icomoon-Level_1; 
+	}
+  }
+  .icomoon-Level_2 {
+	&:before {
+	  content: $icomoon-Level_2; 
+	}
+  }
+  .icomoon-LE-Visible-to-online-trackers2x {
+	&:before {
+	  content: $icomoon-LE-Visible-to-online-trackers2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Voice2x {
+	&:before {
+	  content: $icomoon-LE-Voice2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-VoiceRecognition2x {
+	&:before {
+	  content: $icomoon-LE-VoiceRecognition2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-LE-Voice-recognition2x {
+	&:before {
+	  content: $icomoon-LE-Voice-recognition2x;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-movie {
+	&:before {
+	  content: $icomoon-movie;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-multiplevoices {
+	&:before {
+	  content: $icomoon-multiplevoices;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-music {
+	&:before {
+	  content: $icomoon-music; 
+	}
+  }
+  .icomoon-NoBatteryError {
+	&:before {
+	  content: $icomoon-NoBatteryError; 
+	}
+  }
+  .icomoon-normal {
+	&:before {
+	  content: $icomoon-normal; 
+	}
+  }
+  .icomoon-Off {
+	&:before {
+	  content: $icomoon-Off; 
+	}
+  }
+  .icomoon-onlymyvoice {
+	&:before {
+	  content: $icomoon-onlymyvoice;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-performance {
+	&:before {
+	  content: $icomoon-performance; 
+	}
+  }
+  .icomoon-personalDevice {
+	&:before {
+	  content: $icomoon-personalDevice;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-places {
+	&:before {
+	  content: $icomoon-places;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-power_nav {
+	&:before {
+	  content: $icomoon-power_nav;     
+	  color: #fff;
+	}
+  }
+  .icomoon-privacy-guard {
+	&:before {
+	  content: $icomoon-privacy-guard;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-Quick-settings_Charge-threshold-off {
+	&:before {
+	  content: $icomoon-Quick-settings_Charge-threshold-off; 
+	}
+  }
+  .icomoon-quick-setting-system-update {
+	&:before {
+	  content: $icomoon-quick-setting-system-update; 
+	}
+  }
+  .icomoon-Special-function {
+	&:before {
+	  content: $icomoon-Special-function;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-star {
+	&:before {
+	  content: $icomoon-star; 
+	}
+  }
+  .icomoon-superResolution {
+	&:before {
+	  content: $icomoon-superResolution;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-Top-row-keys {
+	&:before {
+	  content: $icomoon-Top-row-keys;     
+	  color: #418afd;
+	}
+  }
+  .icomoon-translation {
+	&:before {
+	  content: $icomoon-translation; 
+	}
+  }
+  .icomoon-voicerecognition {
+	&:before {
+	  content: $icomoon-voicerecognition;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-voice-to-text {
+	&:before {
+	  content: $icomoon-voice-to-text; 
+	}
+  }
+  .icomoon-voip {
+	&:before {
+	  content: $icomoon-voip;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-VOIP-Hotkeys {
+	&:before {
+	  content: $icomoon-VOIP-Hotkeys;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-wifiNetworks {
+	&:before {
+	  content: $icomoon-wifiNetworks;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-zero-touch-lock {
+	&:before {
+	  content: $icomoon-zero-touch-lock;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-zero-touch-login {
+	&:before {
+	  content: $icomoon-zero-touch-login;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-zero-touch-playback {
+	&:before {
+	  content: $icomoon-zero-touch-playback;     
+	  color: #4a81fd;
+	}
+  }
+  
+  

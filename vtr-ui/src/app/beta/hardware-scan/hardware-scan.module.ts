@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgbModalModule, NgbDropdownModule, NgbDatepickerModule, NgbCollapseModule, NgbTooltipModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { HardwareScanRoutingModule } from './hardware-scan-routing.module';
+import { ModalWaitComponent } from './modal/modal-wait/modal-wait.component';
 import { ModalCancelComponent } from './modal/modal-cancel/modal-cancel.component';
 import { ModalEticketComponent } from './modal/modal-eticket/modal-eticket.component';
 import { ModalScheduleNewScanComponent } from './modal/modal-schedule-new-scan/modal-schedule-new-scan.component';
@@ -26,7 +27,7 @@ import { SharedModule } from 'src/app/modules/shared.module';
 import { HeaderMainComponent } from './header-main/header-main.component';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { UiButtonModule } from './ui/ui-button/ui-button.module';
-import { ContainerCardModule } from './container-card/container-card.module';
+import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { MetricsModule } from 'src/app/directives/metrics.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
@@ -54,6 +55,7 @@ library.add(faBan);
 
 @NgModule({
 	declarations: [
+		ModalWaitComponent,
 		ModalCancelComponent,
 		ModalEticketComponent,
 		ModalHardwareScanCustomizeComponent,
@@ -98,6 +100,7 @@ library.add(faBan);
 		CUSTOM_ELEMENTS_SCHEMA
 	],
 	entryComponents: [
+		ModalWaitComponent,
 		ModalCancelComponent,
 		ModalEticketComponent,
 		ModalHardwareScanCustomizeComponent,

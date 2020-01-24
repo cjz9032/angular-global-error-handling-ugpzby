@@ -6,12 +6,15 @@
 			class="feedback-form"
 			[formGroup]="feedbackForm"
 			novalidate>
-			<div class="line"></div>
 			<div class="qa-item"
 				*ngFor="let qa of questions">
-				<div class="question" [innerHTML]="qa.question | translate" [id]="qa.name"
-				[attr.aria-label]="qa.name"></div>
-				<div class="form-check form-check-inline">
+				<div class="question"
+					[dir]="'dir' | translate"
+					[innerHTML]="qa.question | translate"
+					[id]="qa.name"
+					[attr.aria-label]="qa.name"></div>
+				<div class="form-check form-check-inline"
+					*ngIf="qa.idYes">
 					<input class="form-check-input"
 						type="radio"
 						tabindex="-1"
@@ -25,7 +28,8 @@
 						(keyup.enter)="setRadioStatus(qa.name, true)"
 						[for]="qa.idYes">{{'dashboard.feedback.form.yes' | translate}}</label>
 				</div>
-				<div class="form-check form-check-inline">
+				<div class="form-check form-check-inline"
+					*ngIf="qa.idNo">
 					<input class="form-check-input"
 						type="radio"
 						tabindex="-1"
@@ -39,75 +43,85 @@
 						(keyup.enter)="setRadioStatus(qa.name, false)"
 						[for]="qa.idNo">{{'dashboard.feedback.form.no' | translate}}</label>
 				</div>
-				<div class="line"></div>
+				<div class="likely-content"
+					*ngIf="qa.likelyValues">
+					<div class="form-check form-check-inline"
+						*ngFor="let likely of qa.likelyValues">
+						<input class="form-check-input"
+							type="radio"
+							tabindex="-1"
+							[formControlName]="qa.name"
+							[name]="qa.name"
+							[id]="'feedback-likely-' + likely"
+							[value]="likely">
+						<label class="form-check-label"
+							[tabindex]="feedbackSuccess ? -1 : 0"
+							(keyup.enter)="setLikelyStatus(qa.name, likely)"
+							[for]="'feedback-likely-' + likely">{{ likely }}</label>
+					</div>
+					<div class="w-100 mb-1"></div>
+					<div class="likely-text">{{ 'dashboard.feedback.form.notAtAllLikely' | translate }}</div>
+					<div class="likely-text text-right">{{ 'dashboard.feedback.form.extremelyLikely' | translate }}</div>
+				</div>
 			</div>
 
 			<div class="row">
 				<div class="col">
-					<div class="comment-tip" id="feedback-form-additional-comments"
-					attr.aria-label="feedback-form-additional-comments">
-						{{'dashboard.feedback.form.tips1' | translate}}
+					<div class="comment-tip"
+						id="feedback-form-additional-comments"
+						attr.aria-label="feedback-form-additional-comments">
+						{{'dashboard.feedback.form.tips1' | translate}}:
 					</div>
-					<textarea placeholder="{{'dashboard.feedback.form.comments' | translate}}"
-						class="form-control user-comment"
+					<textarea #feedbackComment placeholder="{{'dashboard.feedback.form.comments' | translate}}"
+						class="form-control user-comment mb-1"
 						cols="30"
 						rows="10"
+						maxlength="1000"
 						[tabindex]="feedbackSuccess ? -1 : 0"
 						formControlName="userComment"
 						pattern="^(?!\s*$).+"
 						required></textarea>
-				</div>
-			</div>
-
-			<div class="d-flex">
-				<div class="button-box">
-					<vtr-ui-button linkId="modal-btn-sendfeedback"
-						metricsEvent="FeatureClick"
-						metricsItem="SendFeedbackButton"
-						metricsParent="Page.Dashboard"
-						[tabIndex]="feedbackSuccess ? -1 : 0"
-						[isFullWidth]="true"
-						[isDisabled]="!feedbackForm.value.userComment && feedbackForm.value.qaNewStyle === null && feedbackForm.value.qaPerformance === null && feedbackForm.value.qaUseFrequency === null"
-						[label]="'dashboard.feedback.form.sendFeedback' | translate"
-						(onClick)="onFeedBackSubmit()"></vtr-ui-button>
-				</div>
-				<div ngbDropdown 
-					class="d-inline-block dropdown-content">
-					<div class="dropdown-btn"
-						id="feedback-dropdown"
-						[tabindex]="feedbackSuccess ? -1 : 0"
-						attr.aria-label="feedback-dropdown" ngbDropdownToggle>
-						<fa-icon [icon]="['fal', 'angle-down']"></fa-icon>
-					</div>
-					<div class="dropdown-list"
-						ngbDropdownMenu
-						aria-labelledby="feedback-dropdown">
-						<div class="menu-pointer"></div>
-						<div class="dropdown-item" ngbDropdownItem
-							[tabindex]="feedbackSuccess ? -1 : 0"
-							vtrMetrics
-							id="modal-btn-submitScreeenshot"
-							attr.aria-label="modal-btn-submitScreeenshot"
-							metricsItem="btn.SubmitScreenShot"
-							metricsEvent="FeatureClick"
-							metricsParent="Dialog.Feedback"
-							title="{{'dashboard.feedback.form.submitScreenShot' | translate}}"
-							(keyup.enter)="goToMailUtility()"
-							(click)="goToMailUtility()">
-							{{'dashboard.feedback.form.submitScreenShot' | translate}}
-						</div>
-					</div>
+					<div class="w-100 text-right comment-count">{{feedbackComment.value.length}}/1000</div>
 				</div>
 			</div>
 		</form>
+		<div class="line"></div>
+		<div class="d-flex align-items-center btn-box">
+			<div class="btn-submit">
+				<vtr-ui-button linkId="modal-btn-sendfeedback"
+					metricsEvent="FeatureClick"
+					metricsItem="SendFeedbackButton"
+					metricsParent="Page.Dashboard"
+					[tabIndex]="feedbackSuccess ? -1 : 0"
+					[btnHeight]="true"
+					[isFullWidth]="true"
+					[isDisabled]="!feedbackForm.value.userComment && feedbackForm.value.qaNewStyle === null && feedbackForm.value.systemUpdateAwareness === null && feedbackForm.value.remommendVantageToFriend === null"
+					[label]="'dashboard.feedback.form.sendFeedback' | translate"
+					(onClick)="onFeedBackSubmit()"></vtr-ui-button>
+			</div>
+			<div class="btn-submit-screenshot text-ellipsis"
+				[tabindex]="feedbackSuccess ? -1 : 0"
+				vtrMetrics
+				id="modal-btn-submitScreeenshot"
+				attr.aria-label="Submit Screeenshot"
+				metricsItem="btn.SubmitScreenShot"
+				metricsEvent="FeatureClick"
+				metricsParent="Dialog.Feedback"
+				title="{{'dashboard.feedback.form.submitScreenShot' | translate}}"
+				(keyup.enter)="goToMailUtility()"
+				(click)="goToMailUtility()">
+				{{'dashboard.feedback.form.submitScreenShot' | translate}}
+			</div>
+		</div>
 	</div>
 	<div class="feedback-success"
 		*ngIf="feedbackSuccess">
 		<div class="success-icon">
 			<fa-icon [icon]="['fal', 'check-circle']"></fa-icon>
 		</div>
-		<div class="thank-you" id="feedback-modal-thank-you"
-		attr.aria-label="feedback-modal-thank-you">{{ 'dashboard.feedback.form.messages.feedbackSuccess' | translate }}</div>
+		<div class="thank-you"
+			id="feedback-modal-thank-you"
+			attr.aria-label="feedback-modal-thank-you">{{ 'dashboard.feedback.form.messages.feedbackSuccess' | translate }}</div>
 		<div class="left-time">{{ leftTime }}</div>
 	</div>
 

@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
-import { RouterChangeHandlerService } from '../../common/services/router-change-handler.service';
-
+import { DccService } from 'src/app/services/dcc/dcc.service';
 import { RoutersName } from '../../privacy-routing-name';
+import { RouterChangeHandlerService } from '../../core/services/router-change-handler.service';
 
 interface PageSettings {
 	title: string;
@@ -15,7 +15,7 @@ interface PageSettings {
 
 const defaultPageSettings: PageSettings = {
 	title: 'Lenovo Privacy Essentials',
-	backButton: false,
+	backButton: true,
 	figLeafIcon: true,
 };
 
@@ -25,7 +25,6 @@ const defaultPageSettings: PageSettings = {
 	styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent implements OnInit, OnDestroy {
-
 	title = 'Lenovo Privacy Essentials';
 	backButton = false;
 	figLeafIcon = true;
@@ -60,6 +59,7 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 	constructor(
 		private router: Router,
 		private _location: Location,
+		public dccService: DccService,
 		private routerChangeHandler: RouterChangeHandlerService
 	) {
 	}

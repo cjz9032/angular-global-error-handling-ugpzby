@@ -4,10 +4,12 @@
 	.vtr-ui-circle-radio-with-checkbox.#{$name} {
 		margin-right: 1.5rem;
 		.checkbox {
-
 			position: relative;
 			height: 12rem;
-			width: 14rem;
+			width: 11rem;
+			@media screen and (min-width: 992px) and (max-width: 1199.9px){
+				width: 18rem;
+			}
 		}
 
 		.checkbox-custom {
@@ -28,7 +30,7 @@
 			@media #{$white-on-black} {
 				//background: darkviolet;
 			}
-	
+
 		}
 
 		.checkbox-custom+.checkbox-custom-label>.icomoon::before {
@@ -47,7 +49,7 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			background: $foreground;
-			border: 0.1rem solid $shade_lighter;
+			border: 0.1rem solid $background;
 			display: inline-block;
 			vertical-align: middle;
 			width: 6rem;
@@ -59,20 +61,21 @@
 		.title {
 			position: absolute;
 			//bottom: 4px;
+			top:80%;
 			left: 0;
 			right: 0;
 			font-weight: $weight_bold;
 			font-size: $caption;
 			color: $shade_light;
-			top: 9.5rem;
-			//white-space: nowrap;
+			//top: 75px;
+			// white-space: nowrap;
 		}
 
 		.checkbox-custom:checked+.checkbox-custom-label {
 			background-color: $background;
 			@media #{$white-on-black}{
 				background-color: $highlight_bright;;
-				
+
 			}
 			@media #{$black-on-white}{
 				background-color:$high-contrast-white-textselected;
@@ -88,14 +91,14 @@
 			color: $light;
 			font-size: 2rem;
 			@media #{$black-on-white} {
-				border: 0.1rem solid $dark;
+				//border: 0.1rem solid $dark;
 				color:$light;
 			}
 			@media #{$white-on-black} {
-				border: 0.1rem solid $light;
+				//border: 0.1rem solid $light;
 				color:$dark;
 			}
-	
+
 
 		}
 
@@ -107,11 +110,11 @@
 			font-size: 2rem;
 			@media #{$black-on-white} {
 				color: $dark;
-				
+
 			}
 			@media #{$white-on-black} {
 				color: $light;
-				
+
 	}
 		}
 	}

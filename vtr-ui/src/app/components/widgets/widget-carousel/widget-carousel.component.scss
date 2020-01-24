@@ -4,6 +4,9 @@
 	box-shadow: $drop_shadow;
 	border-radius: $border_radius;
 	position: relative;
+	background: $light;
+	overflow: hidden;
+	
 	&::after {
 		content: "";
 		background: rgba(0, 0, 0, 0.4);
@@ -33,16 +36,25 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		padding: 2.5rem;
+		padding: 2rem 2.5rem;
 		right: 0 !important;
 		text-align: left;
 		z-index: 1;
 
 		.title {
 			padding: 0;
-			font-size: 2.4rem;//3rem
+			font-size: $fontsize_md;
+			font-weight: $weight_light;
 			color: $light;
 			text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+			line-height: 1.4;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			/* autoprefixer: off */
+			-webkit-box-orient: vertical;
+
 			//max-width: 60%;
 			/*@media #{$mediaquery_X31} {
 				max-width: 80%;
@@ -54,9 +66,13 @@
 			padding: 0;
 			color: $light;
 			text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-			font-size: 2rem;//1.4rem
-			font-weight: $weight_medium;
-			text-transform: uppercase;
+			font-size: $fontsize_xl2;
+			font-weight: $weight_regular;
+			// text-transform: uppercase;
+			line-height: 1.4;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 	}
 
@@ -64,6 +80,13 @@
 		border-radius: $border_radius;
 		width: 100%;
 		background-size: cover;
+		background-position: center center;
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid ;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid ;
 	}
 }
 
@@ -77,11 +100,35 @@
 			.carousel-inner {
 				overflow: inherit;
 			}
-
-			.carousel-control-prev,
-			.carousel-control-next {
-				width: 5%;
+			.carousel-control-next-icon {
+				background-image: none;
+				width: 2rem;
+				height: 2rem;
+				border-top: 0.3rem solid $light;
+				border-right: 0.3rem solid $light;
+				transform: rotate(45deg);
 			}
+			.carousel-control-prev-icon {
+				background-image: none;
+				width: 2rem;
+				height: 2rem;
+				border-top: 0.3rem solid $light;
+				border-left: 0.3rem solid $light;
+				transform: rotate(-45deg);
+			}
+			// .carousel-control-prev,
+			// .carousel-control-next {
+			// 	width: 3.2rem;
+			// 	height: 3.2rem;
+			// 	position: relative;
+			// 	&::after{
+			// 		content: '';
+			// 		position: absolute;
+			// 		height: 2rem;
+			// 		width: 0.2rem;
+			// 		background: $light;
+			// 	}
+			// }
 		}
 	}
 }

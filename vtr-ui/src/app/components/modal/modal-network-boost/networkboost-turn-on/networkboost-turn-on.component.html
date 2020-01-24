@@ -1,16 +1,14 @@
-<div class="modal-main-wrapper" tabindex="1" id="nbTurnOnModal" attr.aria-label="{{'gaming.narrator.networkBoost.turnOnModal.confirmation' | translate}}">
+<div class="modal-main-wrapper d-flex justify-content-center align-items-center" tabindex="1" id="nbTurnOnModal" attr.aria-label="{{'gaming.narrator.networkBoost.turnOnModal.confirmation' | translate}}">
   <ui-popover-turn-on>
-    <div class="modal-body vtr-modal-turn-on">
+    <div class="vtr-modal-turn-on">
       <div class="modal-body">
-        <div class="row justify-content-end">
-          <div class="btn-close">
-            <button type="button" class="close" id="closeButton" aria-hidden="true" (click)="notNowAction(false)" tabindex="1" 
+        <div class="btn-close">
+            <button type="button" class="close" id="closeButton" aria-hidden="true" (click)="notNowAction(false)" tabindex="1"
             attr.aria-label="{{'gaming.narrator.networkBoost.common.close' | translate}}" (keyup.enter)="notNowAction(false)">
               <fa-icon [icon]="['fal', 'times']"></fa-icon>
             </button>
-          </div>
         </div>
-        <div class="content-body">
+          <div class="content-body">
           <h1>{{ 'gaming.networkBoost.modalTurn.title'  | translate }}</h1>
           <p>{{ 'gaming.networkBoost.modalTurn.body' | translate }}</p>
         </div>
@@ -26,15 +24,15 @@
         </div>
         <hr>
         <div class="row">
-          <div>
+          <div class="action-container">
             <button class="btn enable-button"
-              (click)="turnOnAction(true)" 
-              tabindex="1" attr.aria-label="{{'gaming.narrator.networkBoost.turnOnModal.turnOnButton' | translate}}" 
-              (keyup.enter)="turnOnAction(true)">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
+              (click)="turnOnAction(true)"
+              tabindex="1" attr.aria-label="{{'gaming.narrator.networkBoost.turnOnModal.turnOnButton' | translate}}"
+			  (keyup.enter)="turnOnAction(true)">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
             <a (click)="notNowAction(false)"
               class="cancel-link active"
               tabindex="1" attr.aria-label="{{'gaming.narrator.networkBoost.turnOnModal.notOnButton' | translate}}" role="button"
-               (keyup.enter)="notNowAction(false)" (keydown)="keydownFn($event)">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
+			   (keyup.enter)="notNowAction(false)" (keydown)="keydownFn($event)">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
           </div>
         </div>
       </div>

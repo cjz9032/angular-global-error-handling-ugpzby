@@ -7,6 +7,7 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { Subject } from 'rxjs/internal/Subject';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { WinRT } from '@lenovo/tan-client-bridge';
+import { ReplaySubject } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,16 +17,21 @@ import { WinRT } from '@lenovo/tan-client-bridge';
  */
 export class CommonService {
 	public readonly notification: Observable<AppNotification>;
+	public readonly replayNotification: Observable<AppNotification>;
 	private notificationSubject: BehaviorSubject<AppNotification>;
+	private replaySubject: ReplaySubject<AppNotification>;
 	public isOnline = true;
 	public gamingCapabalities: any = new Subject();
 	private RS5Version = 17600;
+	public osVersion = 0;
 
 	constructor() {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(
 			new AppNotification('init')
 		);
+		this.replaySubject = new ReplaySubject<AppNotification>(0);
 		this.notification = this.notificationSubject;
+		this.replayNotification = this.replaySubject;
 	}
 
 	/**
@@ -139,24 +145,39 @@ export class CommonService {
 		return arguments.length === 1 ? undefined : defaultValue;
 	}
 
+	/**
+	 * Removes the key/value pair with the given key
+	 * @param key key use to removes the key/value pair in local storage
+	 */
+	public removeLocalStorageValue(key: LocalStorageKey | DashboardLocalStorageKey) {
+		window.localStorage.removeItem(key);
+	}
+
 	public sendNotification(action: string, payload?: any) {
 		this.notificationSubject.next(new AppNotification(action, payload));
+	}
+
+	public sendReplayNotification(action: string, payload?: any) {
+		this.replaySubject.next(new AppNotification(action, payload));
 	}
 
 	public isRS5OrLater(): boolean {
 		return this.getWindowsVersion() >= this.RS5Version;
 	}
 
-	public getWindowsVersion(): Number {
-		let version = '0';
-		navigator.userAgent.split(' ').forEach((value) => {
-			if (value.indexOf('Edge') !== -1) {
-				const dotIndex = value.indexOf('.');
-				version = value.substring(dotIndex + 1, value.length);
-			}
-		});
-		console.log(version);
-		return Number(version);
+	public getWindowsVersion(): number {
+		if (this.osVersion === 0) {
+			let version = '0';
+			navigator.userAgent.split(' ').forEach((value) => {
+				if (value.indexOf('Edge') !== -1) {
+					const dotIndex = value.indexOf('.');
+					version = value.substring(dotIndex + 1, value.length);
+					this.osVersion = Number(version);
+				}
+			});
+			console.log(`this.ovVersion: ${this.osVersion}`);
+		}
+		return this.osVersion;
 	}
 
 	/**
@@ -186,13 +207,50 @@ export class CommonService {
 		return arguments.length === 1 ? undefined : defaultValue;
 	}
 
-	public removeObjFrom(array: any[], path: string) {
-		return array.filter(e => e.path !== path);
+	addToObjectsList(array: any[], item: any) {
+		if (!this.isPresent(array, item.path)) {
+			array.push(item);
+			return this.sortMenuItems(array);
+		} else {
+			return array;
+		}
 	}
 
-	public isFoundInArray(array: any[], path: string) {
-		let element = array.find(e => e.path === path);
+	public removeObjFrom(array: any[], path: string) {
+		if (this.isPresent(array, path)) {
+			return array.filter(e => e.path !== path);
+		} else {
+			return array;
+		}
+	}
+
+	// public isFoundInArray(array: any[], path: string) {
+	// 	const element = array.find(e => e.path === path);
+	// 	return element ? true : false;
+	// }
+
+	public removeObjById(array: any[], id: string) {
+		return array.filter(e => e.id !== id);
+	}
+
+	public isPresent(array: any[], path: string) {
+		const element = array.find(e => e.path === path);
 		return element ? true : false;
+	}
+
+	public sortMenuItems(menuItems) {
+		if (menuItems) {
+			return menuItems.sort((item1, item2) => {
+				let comparison = 0;
+				if (item1.order > item2.order) {
+					comparison = 1;
+				} else if (item1.order < item2.order) {
+					comparison = -1;
+				}
+				return comparison;
+			});
+		}
+		return undefined;
 	}
 
 	public getCapabalitiesNotification(): Observable<any> {
@@ -202,15 +260,31 @@ export class CommonService {
 		this.gamingCapabalities.next({ type: action, payload });
 	}
 
-	public isBetaUser(): Promise<number> {
-		const win: any = window;
-		if (WinRT && win.Windows) {
-			return WinRT.queryUriSupport('mailto:john@doe.com', 'E046963F.LenovoCompanionBeta_k1h2ywk1493x8');
-		}
-	}
-
 	public cloneObj(obj) {
 		// It will not copy reference. It is for assigning object pass by reference.
 		return JSON.parse(JSON.stringify(obj));
+	}
+
+	public scrollTop() {
+		document.querySelector('.vtr-app.container-fluid').scrollTop = 0;
+	}
+
+	// This is version compare function which takes version numbers of any length and any number size per segment.
+	// Return values:
+	// - negative number if v1 < v2
+	// - positive number if v1 > v2
+	// - zero if v1 = v2
+	public compareVersion(v1: string, v2: string) {
+		const regExStrip0 = '/(\.0+)+$/';
+		const segmentsA = v1.replace(regExStrip0, '').split('.');
+		const segmentsB = v2.replace(regExStrip0, '').split('.');
+		const min = Math.min(segmentsA.length, segmentsB.length);
+		for (let i = 0; i < min; i++) {
+			const diff = parseInt(segmentsA[i], 10) - parseInt(segmentsB[i], 10);
+			if (diff) {
+				return diff;
+			}
+		}
+		return segmentsA.length - segmentsB.length;
 	}
 }

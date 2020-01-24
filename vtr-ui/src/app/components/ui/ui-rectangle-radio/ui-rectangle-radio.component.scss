@@ -23,6 +23,7 @@
 		position: relative;
 		z-index: 2;
 		overflow: hidden;
+		color: $menu_hover;
 
 		&:before {
 			box-sizing: border-box;
@@ -32,7 +33,7 @@
 			width: 2.2rem;
 			height: 2.2rem;
 			content: "";
-			border: 1px solid $main;
+			border: 1px solid $menu_hover;
 			background-color: $light;
 			border-radius: 1rem;
 			z-index: 2;
@@ -48,7 +49,7 @@
 			width: 1.6rem;
 			height: 1.6rem;
 			content: "";
-			background-color: $main;
+			background-color: $menu_hover;
 			border-radius: 1rem;
 			z-index: 2;
 			cursor: pointer;
@@ -59,9 +60,9 @@
 			position: absolute;
 			left: 4.8rem;
 			top: 2.2rem;
-			color: $main_darkest;
-			font-size: 1.3rem;
-			font-weight: bold;
+			color: $grey_dark;
+			font-size: $fontsize_xs2;
+			font-weight: $weight_bold;
 			word-wrap: break-word;
 			// word-break: break-all;
 			padding-right: 1rem;
@@ -102,12 +103,13 @@
 	input {
 		position: absolute;
 		visibility: hidden;
-	}&.border-blue {
-		border: 0.3rem solid $main;
+	}
+	&.border-blue {
+		border: 0.2rem solid $dim_gray;
 		// transition: all 50ms ease-in;
 	}
 	&.border-grey {
-		border: 0.3rem solid $shade_lightest;
+		border: 0.2rem solid $note_border;
 		// transition: all 50ms ease-in;
 	}
 }
@@ -130,5 +132,12 @@
 .icomoon-Special-function, .icomoon-F1-F12-funciton {
 	&:before {
 		font-size: $svg_icon
+	}
+}
+:host-context(.top-row-key-block) {
+	.vtr-ui-rectangle-radio {
+		.label {
+			word-break: break-all!important;
+		}
 	}
 }

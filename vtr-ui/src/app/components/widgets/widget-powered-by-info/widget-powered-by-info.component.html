@@ -1,15 +1,15 @@
-<div class="vtr-widget-powered-by-info d-flex justify-content-between align-items-center">
+<div class="vtr-widget-powered-by-info d-flex justify-content-between align-items-center flex-wrap pb-40 pt-4">
 	<div>
 		<p class="subTitle mb-0" [innerHTML]="title | translate"></p>
 		<p class="text-regular"
 			*vtrTranslate="detail | translate">
-			<a id="chs-lnk-privacypolicy"
+			<a id="{{linkId}}-privacypolicy"
 				vtrMetrics
 				metricsEvent="featureClick"
 				metricsItem="privacyPolicy"
 				[href]="privacyUrl"
 				target="_blank"></a>
-			<a id="chs-lnk-termsofservices"
+			<a id="{{linkId}}-termsofservices"
 				vtrMetrics
 				metricsEvent="featureClick"
 				metricsItem="termsOfServices"
@@ -18,7 +18,7 @@
 		</p>
 	</div>
 	<div>
-		<img class="coronet-logo"
+		<img class="product-logo"
 			[src]=" imgUrl | svgInline | async" />
 	</div>
 </div>

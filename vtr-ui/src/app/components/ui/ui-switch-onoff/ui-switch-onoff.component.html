@@ -4,8 +4,8 @@
 		[ngClass]="{'white-theme': theme==='white',
 					'blue-theme': theme==='blue'}">
 		<vtr-spinner></vtr-spinner>
-		<span [innerHTML]="'common.ui.loader' | translate"
-			class="spinner-text"></span>
+		<!-- <span [innerHTML]="'common.ui.loader' | translate"
+			class="spinner-text"></span> -->
 	</div>
 	<div *ngIf="!showLoader"
 		class="checkbox"
@@ -41,7 +41,7 @@
 				[attr.aria-checked]="value"
 				[attr.aria-disabled]="disabled"
 				[attr.aria-readonly]="readonly"
-				attr.aria-label="{{onOffSwitchId}}"
+				attr.aria-label="{{ariaLabel}}"
 				aria-hidden="true"
 				(change)="onChange($event)"
 				(keydown.enter)="onChange($event)"
@@ -55,12 +55,14 @@
 			<div *ngIf="!value"
 				aria-hidden="true"
 				id="{{onOffSwitchId+'_off_sizeStopProp'}}"
+				attr.aria-label="{{onOffSwitchId+'_off_sizeStopProp'}}"
 				(click)="stopPropagation($event);"
 				(keydown.enter)="stopPropagation($event);"
 				class="switch-label off-label">{{'common.ui.off' | translate}}</div>
 			<div *ngIf="value"
 				aria-hidden="true"
 				id="{{onOffSwitchId+'_on_sizeStopProp'}}"
+				attr.aria-label="{{onOffSwitchId+'_on_sizeStopProp'}}"
 				(click)="stopPropagation($event);"
 				(keydown.enter)="stopPropagation($event);"
 				class="switch-label on-label">{{'common.ui.on' | translate}}</div>

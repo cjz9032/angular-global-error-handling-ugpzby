@@ -6,11 +6,10 @@
 	background-color: $light;
 
 	.header {
-		padding-left: 1.5rem;
 		.heading {
 			color: $shade_blue;
-			font-size: 3.6rem;
-			font-weight: $weight_regular;
+			font-size: 3rem;
+			font-weight: $weight_light;
 		}
 	}
 
@@ -29,14 +28,14 @@
 			.icon-bkg {
 				display: inline-block;
 				border-radius: 50%;
-				height: 3.3rem;
-				width: 3.3rem;
+				height: 2.3rem;
+				width: 2.3rem;
 				border-width: 0.3rem;
 				border-style: solid;
 				text-align: center;
 				fa-icon {
-					font-size: 1.6rem;
-					line-height: 2.7rem;
+					font-size: 1.4rem;
+					line-height: 1.7rem;
 					color: $light;
 				}
 			}
@@ -74,15 +73,15 @@
 				.icon-bkg {
 					display: inline-block;
 					border-radius: 50%;
-					height: 3.3rem;
-					width: 3.3rem;
+					height: 2.3rem;
+					width: 2.3rem;
 					border-width: 0.3rem;
 					border-style: solid;
 					text-align: center;
 
 					fa-icon {
-						font-size: 1.6rem;
-						line-height: 2.7rem;
+						font-size: 1.4rem;
+						line-height: 1.7rem;
 						color: $light;
 					}
 				}
@@ -91,7 +90,7 @@
 	}
 
 	.gem-box {
-		padding: 3rem 1rem 4rem 1rem;
+		// padding: 3rem 1rem 4rem 1rem;
 		height: auto;
 		width: 100%;
 		max-width: 100%;
@@ -122,6 +121,9 @@
 		}
 	}
 
+	.bottom-content {
+		padding-bottom: 3rem;
+	}
 	vtr-home-security-card {
 		width: 100%;
 		margin: 1rem;

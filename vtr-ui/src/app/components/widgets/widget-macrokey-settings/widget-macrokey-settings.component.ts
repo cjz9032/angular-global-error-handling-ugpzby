@@ -14,6 +14,8 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 import { isUndefined } from 'util';
 import { MacroKeyRecordedChange } from 'src/app/data-models/gaming/macrokey/macrokey-recorded-change.model';
 import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macrokey-input-change.model';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
 	selector: 'vtr-widget-macrokey-settings',
@@ -31,6 +33,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 					id: 'macro key settings on',
 					label: 'gaming.macroKey.narrator.macrokeySettings1.option1',
 					metricitem: 'macrokey_settings_on',
+					show_tool_tip: false,
 					value: 1
 				},
 				{
@@ -40,6 +43,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 					id: 'macro key settings enabled when gaming',
 					label: 'gaming.macroKey.narrator.macrokeySettings1.option2',
 					metricitem: 'macrokey_settings_enabled_when_gaming',
+					show_tool_tip: true,
 					value: 2
 				},
 				{
@@ -49,12 +53,13 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 					id: 'macro key settings off',
 					label: 'gaming.macroKey.narrator.macrokeySettings1.option3',
 					metricitem: 'macrokey_settings_off',
+					show_tool_tip: false,
 					value: 3
 				}
 			]
 		}
 	];
-
+	tooltips_value: any = '';
 	numberSelected;
 	isNumpad: Boolean = true;
 	isRecording: Boolean = false;
@@ -69,7 +74,8 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		private shellService: VantageShellService,
 		private router: Router,
 		private commonService: CommonService,
-		private gamingCapabilityService: GamingAllCapabilitiesService
+		private gamingCapabilityService: GamingAllCapabilitiesService,
+		private translate: TranslateService
 	) { }
 
 	ngOnInit() {
@@ -98,6 +104,22 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		this.numberSelected = this.macroKeyRecordedStatus.filter(
 			(number) => number.key === this.macroKeyInputData.key
 		)[0];
+
+
+		// let tipid = 2;
+		// if (this.macroKeyTypeStatus.MacroKeyStatus == tipid) {
+		// 	this.macroKeyOptions.dropOptions.forEach((option) => {
+		// 		if (option.value == tipid) {
+		// 			this.tooltips_value = this.translate.instant(option.name);
+		// 		}
+		// 	});
+		// }
+		//this.ngbtconfig.triggers = 'hover';
+		//this.ngbtconfig.placement = 'right';
+		if (this.macroKeyTypeStatus.MacroKeyStatus === 2) {
+			this.tooltips_value = this.translate.instant('gaming.macroKey.status.whileGaming.title');
+		}
+
 	}
 
 	initMacroKeySubpage() {
@@ -208,6 +230,13 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	}
 
 	optionChanged(option: any) {
+
+		if (option.value == 2) {
+			this.tooltips_value = this.translate.instant(option.name);
+		} else {
+			this.tooltips_value = '';
+		}
+
 		this.macroKeyService.setMacroKeyApplyStatus(option.value).then((responseStatus) => {
 			if (responseStatus) {
 				// Setting the value of macrokey status dropdown

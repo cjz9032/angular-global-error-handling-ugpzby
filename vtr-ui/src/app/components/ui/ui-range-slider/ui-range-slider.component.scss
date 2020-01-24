@@ -16,6 +16,7 @@ but not to any other element on the page. using ::ng-deep
 				border: 0.1rem solid $shade_lighter;
 				height: 0.8rem;
 				border-radius: 0.5rem;
+				width:99.5%!important;
 			}
 			/* slider selected area*/
 			.ng5-slider-selection {
@@ -40,11 +41,11 @@ but not to any other element on the page. using ::ng-deep
 
 				@media #{$white-on-black} {
 					border: 1px solid #fff;
-					background: grey;
+					background: $high-contrast-blue;
 				}
 				@media #{$black-on-white} {
 					border: 1px solid #000;
-					background: grey;
+					background: $high-contrast-blue;
 				}
 
 				&::after {

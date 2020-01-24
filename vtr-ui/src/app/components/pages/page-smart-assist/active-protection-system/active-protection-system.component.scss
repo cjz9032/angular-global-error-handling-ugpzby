@@ -14,13 +14,16 @@
 		border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
 	}
 	.caption {
-		font-size: $body;
-		// color: $main_shade;
+		font-size: $fontsize_xs;
+		color: $purple_navy;
+		font-weight: $weight_light;
+		padding-left: 1rem;
 	}
 	.switch {
 		.caption {
-			font-size: 1.4rem;
-			color: $main_shade;
+			font-size: $fontsize_xs;
+			color: $purple_navy;
+			font-weight: $weight_light;
 		}
 	}
 	.slider {
@@ -70,43 +73,42 @@
 }
 
 .aps-checkbox {
-    margin: 1rem 0rem 1rem 0rem;
-	font-size: 1.4rem;
+	margin: 1rem 0rem 1rem 0rem;
+	font-size: $fontsize_xs;
 	padding-left: 5rem;
-  }
-  .custom-control-input:disabled ~ .custom-control-label {
-    cursor: not-allowed;
-  }
+}
 
-  .custom-control-label {
-    padding-left: 0.5rem;
+.aps-disabled {
+	.custom-control-input ~ .custom-control-label {
+		cursor: not-allowed;
+	}
+	.custom-control-input:checked ~ .custom-control-label::before {
+		background-color: #8b91a2;
+		box-shadow: none;
+		border-color: #8b91a2;
+	}
+}
+
+.custom-control-label {
+	padding-left: 0.5rem;
 	line-height: 1.15;
-	color: $main_shade;
-    @media #{$mediaquery_14} {
-      line-height: 1.3;
-    }
-    @media #{$mediaquery_19} {
-      line-height: 1.3;
-    }
-    @media #{$mediaquery_X15} {
-      line-height: 1.3;
-    }
+	color: $shade_blue;
 
-    .disabled {
-      color: $light-grey;
-    }
-    // rounded square-box background
-    &::before {
-      top: 0.2rem;
-      width: 1.5rem;
-      height: 1.5rem;
-    }
+	.disabled {
+		color: $light-grey;
+	}
+	// rounded square-box background
+	&::before {
+		top: 0.2rem;
+		width: 1.5rem;
+		height: 1.5rem;
+	}
 
-    // tick mark
-    &::after {
-      top: 0rem;
-      width: 2rem;
-      height: 2rem;
-      left: -1.7rem;
-    }
-  }
+	// tick mark
+	&::after {
+		top: 0rem;
+		width: 2rem;
+		height: 2rem;
+		left: -1.7rem;
+	}
+}

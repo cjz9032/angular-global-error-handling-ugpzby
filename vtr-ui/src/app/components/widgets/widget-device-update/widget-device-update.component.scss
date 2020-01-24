@@ -2,7 +2,7 @@
 
 .vtr-widget-device-update {
 	.systemupdate-background {
-		border-radius: 0.5rem;
+		border-radius: 0.7rem;
 		border-bottom-left-radius: 0rem;
 		border-bottom-right-radius: 0rem;
 		height: 100%;
@@ -12,36 +12,47 @@
 
 		.title {
 			color: $light;
-			font-size: 3.5rem;
+			font-size: 3.4rem;
 			font-weight: $weight_light;
 			line-height: 4.2rem;
-			padding-left: 5rem;
-			padding-top: 5rem;
+			padding-left: 2.5rem;
+			padding-top: 2rem;
 			padding-bottom: 2rem;
-			padding-right: 5rem;
+			padding-right: 2.5rem;
+			@media #{$breakpoint_xl} {
+				font-size: 2rem;
+				padding-bottom: 0.8rem;
+			}
 		}
 
 		.row1 {
 			opacity: 0.5;
 			color: $light;
-			font-size: 1.4rem;
+			font-size: 1.75rem;
 			line-height: 2.1rem;
-			padding-left: 5rem;
+			padding-left: 2.5rem;
 			padding-top: 0rem;
 			padding-right: 5rem;
 		}
 
 		.button-row {
-			padding-left: 5rem;
-			padding-bottom: 5rem;
-			padding-top: 3rem;
-			padding-right: 5rem;
+			padding-left: 2.5rem;
+			padding-bottom: 3rem;
+			padding-top: 2.5rem;
+			padding-right: 2.5rem;
 			max-width: 100%;
+			&::ng-deep{
+				vtr-ui-button {
+					.button-box {
+						padding: 0;
+					}
+				}
+			}
 		}
 
 		.progress-div {
-			padding-left: 5rem;
-			padding-right: 5rem;
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
 			margin-top: 3rem;
 			border-top: 0.1rem solid;
 			border-color: rgba(255, 255, 255, 0.18);
@@ -82,7 +93,7 @@
 
 					.progress-value-text {
 						color: $light;
-						font-size: 1.4rem;
+						font-size: 1.75rem;
 						font-weight: $weight_light;
 						line-height: 2.9rem;
 						padding-right: 0rem;
@@ -93,7 +104,7 @@
 
 					.progress-complete-text {
 						color: $light;
-						font-size: 1.4rem;
+						font-size: 1.75rem;
 						font-weight: $weight_light;
 						line-height: 2.9rem;
 						padding-right: 0rem;
@@ -105,8 +116,8 @@
 		}
 
 		.progress-bar-div-container {
-			padding-left: 5rem;
-			padding-right: 5rem;
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
 
 			.progress-bar-div {
 				padding: 1rem;
@@ -148,15 +159,13 @@
 			line-height: 1.5rem;
 			text-align: center;
 			text-transform: uppercase;
+			cursor: pointer;
+			border-bottom: 0.2rem solid $light;
+			padding: 0 0 0.1rem;
 
-			.cancel-check-text {
-				cursor: pointer;
-				text-decoration: underline;
-
-				&:hover {
-					color: $light;
-					text-decoration: none;
-				}
+			&:hover {
+				color: $light;
+				text-decoration: none;
 			}
 		}
 	}

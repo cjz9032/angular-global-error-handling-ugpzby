@@ -8,11 +8,13 @@ import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/e
 	styleUrls: ['./eye-care-mode.component.scss']
 })
 export class EyeCareModeComponent implements OnInit, OnChanges {
-	@Input() eyeCareModeSettings: EyeCareMode;
+	@Input() eyeCareModeSettings: EyeCareMode = new EyeCareMode();
 	@Input() enableSlider: boolean;
 	@Input() enableSunsetToSunrise: boolean;
 	@Input() sunsetToSunriseStatus: any;
 	@Input() manualRefresh: any;
+	@Input() disableReset = false;
+	@Input() missingGraphicDriver = false;
 
 	@Output() eyeCareTemparatureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() eyeCareTemparatureValueChange: EventEmitter<ChangeContext> = new EventEmitter();
@@ -34,7 +36,7 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 
 	ngOnChanges(changes: SimpleChanges): void {
 		try {
-			if (changes['sunsetToSunriseStatus'] && !changes['sunsetToSunriseStatus'].firstChange) {
+			if (changes.sunsetToSunriseStatus && !changes.sunsetToSunriseStatus.firstChange) {
 				if (this.sunsetToSunriseStatus && this.sunsetToSunriseStatus.sunsettime && this.sunsetToSunriseStatus.sunrisetime) {
 					this.sunriseToSunsetText = `(${this.sunsetToSunriseStatus.sunsettime} - ${this.sunsetToSunriseStatus.sunrisetime})`;
 				}

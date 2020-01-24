@@ -35,6 +35,10 @@
 			color: $shade_blue;
 			font-size: 1.6rem;
 			font-weight: $weight_600;
+			max-width: calc(100% - 10.6rem);
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
 		}
 
 		fa-icon {
@@ -85,8 +89,8 @@
 		}
 	}
 }
-.customizable{
-	fa-icon{
+.customizable {
+	fa-icon {
 		display: block !important;
 	}
 }

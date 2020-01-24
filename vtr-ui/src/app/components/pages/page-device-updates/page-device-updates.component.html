@@ -5,7 +5,7 @@
 	[shiftRightUp]="true">
 
 	<left-content>
-		<div class="container-fluid">
+		<div class="container-fluid pb-20">
 
 			<div class="row">
 				<div class="col col-12">
@@ -17,7 +17,7 @@
 						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
 						(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
 
-					<vtr-widget-device-update [title]="updateTitle | translate"
+					<vtr-widget-device-update [title]="updateTitle"
 						*ngIf="isOnline"
 						[vtrAppSearchScroller]="['search-check-update']"
 						[subTitle1]="getLastUpdatedText()"
@@ -51,7 +51,7 @@
 			</vtr-available-updates>
 
 			<div class="row">
-				<div class="col col-12 installation-history-container p-5">
+				<div class="col col-12 installation-history-container">
 					<vtr-container-collapsible name="SystemUpdateHistory"
 						[tabIndex]="0"
 						[cardTitle]="'systemUpdates.history' | translate"
@@ -89,11 +89,10 @@
 						[action]="'Read More'"
 						[actionType]="'External'"
 						[actionLink]="supportLink"
-						[type]="'partnerarticle'"
+						[type]="'subpage-partner-corner'"
 						order="2"
 						sideFlag='r'
-						[ratioX]="4"
-						[ratioY]="2">
+						[ratio]="2">
 					</vtr-container-card>
 				</div>
 			</div>
@@ -110,11 +109,10 @@
 						[action]="cardContentPositionA.Action"
 						[actionType]="cardContentPositionA.ActionType"
 						[actionLink]="cardContentPositionA.ActionLink"
-						[type]="'corner-article'"
+						[type]="'subpage-corner'"
 						order="3"
 						sideFlag='r'
-						[ratioX]="4"
-						[ratioY]="2"
+						[ratio]="2"
 						[cornerShift]="'large'">
 					</vtr-container-card>
 				</div>

@@ -1,7 +1,9 @@
 @import "../../../../app.theme";
 
 .title {
-    font-size: 3.5rem;
+    font-size: $fontsize_xl;
+	font-weight: $weight_600;
+	color: $shade_blue;
 }
 
 .loading {
@@ -10,11 +12,13 @@
 }
 
 .description {
-    font-size: 2rem;
+    font-size: $fontsize_xs;
+	font-weight: $weight_bold;
+	color: $shade_blue;
 }
 
 .modal-body {
-  padding: 4rem;
+  padding: 2.4rem;
 }
 
 .close-button {
@@ -33,7 +37,7 @@
   font-size: 1.5rem;
   padding: 1rem 3rem;
   border-radius: 5rem;
-  font-weight: $weight_bold;  
+  font-weight: $weight_bold;
   text-transform: uppercase;
 }
 

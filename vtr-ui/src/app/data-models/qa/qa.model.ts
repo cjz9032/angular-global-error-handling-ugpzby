@@ -2,9 +2,9 @@ export class QA {
 	id: number;
 	iconPath: string;
 	path: string;
-	title: string;
-	keys: string[];
-	description: string;
+	title?: string;
+	keys?: string[];
+	description?: string;
 	like: boolean;
 	dislike: boolean;
 	category: string;
@@ -18,7 +18,7 @@ export class QA {
 		keys: string[],
 		description: string) { }
 
-	getDescription() {
+	getDescription?() {
 		return 'getDescription';
 	}
 }

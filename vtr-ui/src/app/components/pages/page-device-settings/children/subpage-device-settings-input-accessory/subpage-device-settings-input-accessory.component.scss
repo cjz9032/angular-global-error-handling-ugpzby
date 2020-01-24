@@ -1,5 +1,8 @@
 @import "../../../../../app.theme.scss";
 
+// TODO: remove below line in 3.2
+$fontsize_xs: 1.4rem;
+
 .subpage-device-settings-input-accessories {
 	ul.list-group {
 		list-style-type: none;
@@ -7,20 +10,19 @@
 	}
 
 	.hidden-keyboard-text {
-		margin-left: 2rem;
-		font-size: 1.9rem;
-		color: $main_darker;
-		padding-left: 2rem;
-		padding-right: 2rem;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
+		color: $grey_dark;
 	}
 
 	.keys-row {
 		margin-top: 13px;
 
 		.caption-tittle {
-			color: #667481;
-			font-weight: bold;
-			font-size: $base;
+			color: $grey_dark;
+			font-weight: $weight_bold;
+			font-size: $fontsize_xs;
+			line-height: 2.8rem;
 		}
 	}
 
@@ -30,6 +32,7 @@
 		min-height: 33vh;
 		height: auto;
 		margin-top: 1rem;
+		margin-left: 1rem;
 
 		img {
 			width: 100%;
@@ -240,12 +243,21 @@
 	}
 
 	.feature-note {
-		background-color: $shade_lightest;
-		border: 1px solid $shade_lighter;
+		background-color: $grey_lighter;
+		border:  0.1rem solid $note_border;
+		width: 100%;
 		p {
-			font-size: 1.5rem;
-			color: $main_darker;
+			font-size: $fontsize_xs;
+			color: $shade_blue;
 		}
+		&.note {
+			margin-top: 1rem;
+			margin-left: 2rem;
+		}
+	}
+
+	.img-block {
+		padding-left: 2.4rem;
 	}
 }
 

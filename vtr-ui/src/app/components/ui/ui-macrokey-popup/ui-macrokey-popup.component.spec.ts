@@ -24,13 +24,16 @@ describe('UiMacrokeyPopupComponent', () => {
 			headerTitle: 'This is the header',
 			bodyText: 'this is the test body',
 			btnConfirm: 'Confirm'
-		}
+		};
+		let html_x = fixture.debugElement.nativeElement;
+		html_x.classList.add("vtr-app");
 		fixture.detectChanges();
 	});
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+
 	it('should focus on element', async () => {
 		let result: void;
 		try {
@@ -41,6 +44,7 @@ describe('UiMacrokeyPopupComponent', () => {
 		expect(result).toEqual(undefined);
 
 	});
+
 	it('should call key down fun', async () => {
 		let result: void;
 		try {

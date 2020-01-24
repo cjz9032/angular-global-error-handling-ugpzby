@@ -1,0 +1,62 @@
+<div class="modal-body vtr-modal-dcc-detail">
+	<div class="content" tabindex="0">
+		<div class="img-top">
+			<div class="title" [innerHTML]="dccTitle"></div>
+		</div>
+		<div class="img-medium">
+			<div class="row">
+				<div class="col-6 subtitle">
+					{{'dcc.dccDetails.subtitle11' | translate}}
+				</div>
+				<div class="col-6 subtitle">
+					{{'dcc.dccDetails.subtitle12' | translate}}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6 icons">
+					<div class="button">
+						<img src="/assets/images/dcc/icon-dcc-premiere.jpg" />
+					</div>
+				</div>
+				<div class="col-6 icons">
+					<div class="button">
+						<img src="/assets/images/dcc/icon-dcc-photoshop.jpg" />
+					</div>
+					<div class="button">
+						<img src="/assets/images/dcc/icon-dcc-lightroom.jpg" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6 body" [innerHTML]="'dcc.dccDetails.body11' | translate">
+				</div>
+				<div class="col-6 body" [innerHTML]="'dcc.dccDetails.body12' | translate">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6 flex-column button white-button">
+					<vtr-ui-button linkId="dcc-link-select-pr" metricsEvent="itemClick"
+					metricsItem="btn.select.pr" metricsParent="dcc.detail" upperCaseLabel=false
+						btnHeight=true [isDisabled]="!commonService.isOnline" [label]="'dcc.dccDetails.selectButton' | translate" href="https://support.lenovo.com">
+					</vtr-ui-button>
+				</div>
+				<div class="col-6 flex-column button white-button">
+					<vtr-ui-button linkId="dcc-link-select-ps-lr" metricsEvent="itemClick"
+					metricsItem="btn.select.ps.lr" metricsParent="dcc.detail" upperCaseLabel=false
+						btnHeight=true [isDisabled]="!commonService.isOnline" [label]="'dcc.dccDetails.selectButton' | translate" href="https://support.lenovo.com">
+					</vtr-ui-button>
+				</div>
+			</div>
+		</div>
+		<div class="img-bottom">
+			<div class="text-content">
+				<div class="subtitle2">{{'dcc.dccDetails.subtitle2' | translate}}</div>
+				<div class="body2" [innerHTML]="'dcc.dccDetails.body2' | translate"> </div>
+			</div>
+		</div>
+	</div>
+	<a href="javascript:;" role="button" class="close-btn" aria-hidden="true" vtrMetrics metricsItem="DccCloseButton"
+		metricsEvent="FeatureClick" metricsParent="{{ metricsParent }}" (click)="closeModal()">
+		<img [src]=" '/assets/images/dcc/icon-close-white.png'" alt="" srcset="">
+	</a>
+</div>

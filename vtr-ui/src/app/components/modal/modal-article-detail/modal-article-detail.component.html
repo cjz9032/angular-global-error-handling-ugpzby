@@ -1,19 +1,20 @@
-<div class="modal-body vtr-modal-article-detail" id="article-dialog">
-	<h1>{{articleTitle}}</h1>
+<div class="modal-body vtr-modal-article-detail" id="article-dialog" role="dialog">
+	<h1 id="article-title" role="heading">{{articleTitle}}</h1>
 	<div class="article-content" tabindex="0">
 		<img src="{{articleImage}}"
 			alt="">
 		<div class="article-body" [innerHTML]="articleBody"> </div>
 	</div>
-	<a href="javascript:;"
+	<div tabindex="0"
 		role="button"
 		class="close-btn"
-		aria-hidden="true"
+		aria-label="Article Close Button"
 		vtrMetrics
 		metricsItem="ArticleCloseButton"
 		metricsEvent="FeatureClick"
 		metricsParent="{{ metricsParent }}"
-	 (click)="closeModal()">
+		(keyup.enter)="closeModal()"
+		(click)="closeModal()">
 		<img [src]=" '/assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-	</a>
+	</div>
 </div>

@@ -10,6 +10,8 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { map, mergeMap } from 'rxjs/operators';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
+import { LanguageService } from 'src/app/services/language/language.service';
+import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 @Component({
 	selector: 'vtr-widget-device',
 	templateUrl: './widget-device.component.html',
@@ -19,6 +21,7 @@ import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	public myDevice: MyDevice;
 	public deviceStatus: Status[] = [];
+	public direction = 'ltr';
 
 	// subtitle = 'My device status';
 
@@ -29,29 +32,23 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private systemUpdateService: SystemUpdateService,
 		private translate: TranslateService,
-		private timer: TimerService,
-		private metrics: MetricService,
 		private dashboardService: DashboardService,
-		private adPolicyService: AdPolicyService
+		private warrantyService: WarrantyService,
+		private adPolicyService: AdPolicyService,
+		private languageService: LanguageService
 	) {
 		this.myDevice = new MyDevice();
+		if (this.languageService.currentLanguage.toLowerCase() === 'ar' || this.languageService.currentLanguage.toLowerCase() === 'he' ) {
+			this.direction = 'rtl';
+		}
 	}
 
 	ngOnInit() {
 		this.setDefaultInfo();
-		this.timer.start();
 		this.getDeviceInfo();
 	}
 
 	ngOnDestroy() {
-		const pageDuration = this.timer.stop();
-		const pageViewMetrics = {
-			ItemType: 'PageView',
-			PageName: 'Page.MyDevice',
-			PageContext: 'My device status',
-			PageDuration: pageDuration
-		};
-		this.metrics.sendMetrics(pageViewMetrics);
 	}
 
 	private setDefaultInfo() {
@@ -155,17 +152,12 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				}
 
 				this.translate.stream('device.myDevice.of').pipe(map(val => {
-					return `${this.commonService.formatBytes(total)} ${val} ${type}`;
-				}), mergeMap(val => {
-					return this.translate.stream('device.myDevice.memory.ram').pipe(map(ram => {
-						return `${val} ${ram}`;
-					}));
+					return `${this.commonService.formatBytes(used)} ${val} ${this.commonService.formatBytes(total)}`;
 				})).subscribe((value) => {
 					memory.systemDetails = value;
 				});
 
-				const percent = parseInt(((used / total) * 100).toFixed(0), 10);
-				if (percent > 70) {
+				if (used === total) {
 					memory.status = 1;
 				} else {
 					memory.status = 0;
@@ -182,13 +174,11 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 					disk.systemDetails = `${this.commonService.formatBytes(usedDisk)} ${value} ${this.commonService.formatBytes(totalDisk)}`;
 				});
 
-				const percentDisk = parseInt(((usedDisk / totalDisk) * 100).toFixed(0), 10);
-				if (percentDisk > 90) {
+				if (usedDisk === totalDisk) {
 					disk.status = 1;
 				} else {
 					disk.status = 0;
 				}
-
 			}
 		});
 
@@ -231,12 +221,14 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 						// `never ran update`;
 						systemUpdate.status = 1;
 					}
+					// always show green check icon
+					systemUpdate.status = 0;
 				}
 			});
 		}
 
 		// warranty
-		this.dashboardService.getWarrantyInfo().subscribe(data => {
+		this.warrantyService.getWarrantyInfo().subscribe(data => {
 			if (data) {
 				let warranty;
 				if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
@@ -279,6 +271,8 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 					warranty.status = 1;
 				}
 				warranty.isHidden = !this.deviceService.showWarranty;
+				// always show green icon
+				warranty.status = 0;
 			}
 		});
 	}

@@ -1,8 +1,8 @@
 <div>
 	<div *ngIf="showIC===4 || showIC===3 || showIC===14 || showIC===13">
-		<div class="row py-5 smartsettings-card"
+		<div class="row pt-5 smart-settings-card"
 			id="smartSettings">
-			<div class="col-12 mx-auto ">
+			<div class="col mx-auto ">
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
@@ -11,6 +11,7 @@
 					<ul class="list-group list-group-flush">
 						<li class="">
 							<vtr-ui-row-switch
+								[leftIcon]="['icomoon','icomoon-ic']"
 								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | titlecase"
 								[caption]="captionText"
 								[isSwitchVisible]="showIntelligentCoolingToggle"
@@ -25,12 +26,12 @@
 										*ngIf="showIC===3 && !apsStatus">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }}
 									</div>
-									<div *ngIf="showIC===3 && showIntelligentCoolingModes"
+									<div *ngIf="showIC===3 && isShowIntelligentCoolingModes()"
 										class="optimize">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }}
 									</div>
 									<div class="row no-gutters"
-										*ngIf="showIntelligentCoolingModes"
+										*ngIf="isShowIntelligentCoolingModes()"
 										role="radiogroup">
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC!==14"
 											[theme]="'blue'"
@@ -39,7 +40,7 @@
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
 											[value]="'performance'"
 											[checked]="radioPerformance"
-											(change)="changePerformance($event)"
+											(optionChange)="changePerformance($event)"
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox [radioId]="'radioICQuiteCool'"
@@ -48,7 +49,7 @@
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' + showIC | translate"
 											[value]="showIC==14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x' "
 											[checked]="radioQuietCool"
-											(change)="changeQuietCool($event)"
+											(optionChange)="changeQuietCool($event)"
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14"
@@ -58,7 +59,7 @@
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
 											[value]="'performance'"
 											[checked]="radioPerformance"
-											(change)="changePerformance($event)"
+											(optionChange)="changePerformance($event)"
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14"
@@ -68,7 +69,7 @@
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.batterySaving' | translate"
 											[value]="'LE-Battery-Life-mode2x'"
 											[checked]="radioBatterySaving"
-											(change)="changeBatterySaving($event)"
+											(optionChange)="changeBatterySaving($event)"
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
@@ -85,16 +86,16 @@
 	</div>
 
 	<div *ngIf="showIC===5">
-		<div class="row py-5 smartsettings-card"
+		<div class="row pt-5 smart-settings-card"
 			id="smartSettings">
-			<div class="col-10 mx-auto ">
+			<div class="col mx-auto ">
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
 					<div class="row">
-						<div class="col-auto text-wrap subtitle">
+						<div class="col-12 text-wrap subtitle">
 							<h3 tabindex="0"
 								role="text">
 								<!-- Intelligent Cooling  -->
@@ -106,7 +107,7 @@
 								<a class="read-more-link"
 									#readMoreLink
 									*ngIf="!onReadMoreClick"
-									href="javascript:void()"
+									href="javascript:void(0)"
 									(click)="readMoreLink.blur();readMore(readMoreDiv)"
 									(keydown.enter)="readMoreLink.blur();readMore(readMoreDiv);"
 									tabindex="0"
@@ -153,6 +154,100 @@
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate}}
 								</button>
 							</p>
+						</div>
+					</div>
+				</vtr-container-collapsible>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="showIC===6">
+		<div class="row py-5 smart-settings-card"
+			id="smartSettings">
+			<div class="col mx-auto ">
+				<vtr-container-collapsible
+					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
+					[isCollapsed]="false"
+					[allowCollapse]="false"
+					[theme]="'blue'">
+					<div class="row">
+						<div class="col-12 text-wrap subtitle">
+							<h3 tabindex="0"
+								role="text">
+								<!-- Intelligent Cooling  -->
+								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}
+							</h3>
+							<p tabindex="0"
+								role="text">
+								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc1' | translate}}
+							</p>
+							<p tabindex="0"
+								role="text">
+								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc2' | translate}}
+							</p>
+							<div class="row mb-4">
+								<div>
+									<img role="img"
+									class="img-fluid mx-auto d-block"
+									src="assets/images/dytc6_toolbar.png">
+								</div>
+							</div>
+							<p *ngIf="dytc6IsAutoModeSupported && (dytc6Mode === 'autoMode')" tabindex="0"
+								role="text">
+								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc3_1' | translate}}
+							</p>
+							<p *ngIf="dytc6IsAutoModeSupported && (dytc6Mode === 'manualMode')" tabindex="0"
+								role="text">
+								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc3' | translate}}
+							</p>
+							<div *ngIf="isCollapsed"
+								tabindex="0"
+								id="readMoreDytc6"
+								role="text">
+								<p tabindex="0"
+									id="readMoreDytc6Mode1"
+									role="text">
+									<span role="text"
+										class="cooling-modes">
+										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title1" | translate}}:
+									</span>
+										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc1" | translate}}
+								</p>
+								<p tabindex="0"
+									id="readMoreDytc6Mode2"
+									role="text">
+									<span role="text"
+										class="cooling-modes">
+										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title2" | translate}}:
+									</span>
+										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc2" | translate}}
+								</p>
+								<p tabindex="0"
+									id="readMoreDytc6Mode3"
+									role="text">
+									<span role="text"
+										class="cooling-modes">
+										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title3" | translate}}:
+									</span>
+										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc3" | translate}}
+								</p>
+
+							</div>
+							<div class="more-info mt-5 row"
+								(click)="showMoreDytc6()"
+								tabindex="0"
+								role="link"
+								attr.aria-label="powerSmartSettings-intelligentCooling-more-info">
+								<div class="more-info-button mr-2" *ngIf="!isCollapsed">
+									{{'device.deviceSettings.inputAccessories.controlOptions.more' | translate}}
+								</div>
+								<div class="more-info-button mr-2" *ngIf="isCollapsed">
+									{{'device.deviceSettings.inputAccessories.controlOptions.less' | translate}}
+								</div>
+								<fa-icon *ngIf="!isCollapsed"
+										[icon]="['fal', 'chevron-down']"></fa-icon>
+								<fa-icon *ngIf="isCollapsed"
+									[icon]="['fal', 'chevron-up']"></fa-icon>
+							</div>
 						</div>
 					</div>
 				</vtr-container-collapsible>

@@ -4,6 +4,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { CommonService } from '../common/common.service';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
+import { WhiteListCapability } from '../../data-models/eye-care-mode/white-list-capability.interface';
 @Injectable()
 export class DisplayService {
 	private displayEyeCareMode: any;
@@ -11,6 +12,7 @@ export class DisplayService {
 	private cameraSettings: any;
 	private privacyGuardSettings: any;
 	private oledSettings: any;
+	private priorityControl: any;
 	public isShellAvailable = false;
 	@Output() windowResize: EventEmitter<any> = new EventEmitter();
 
@@ -45,6 +47,11 @@ export class DisplayService {
 		if (this.oledSettings) {
 			this.isShellAvailable = true;
 		}
+
+		this.priorityControl = shellService.getPriorityControl();
+		if (this.priorityControl) {
+			this.isShellAvailable = true;
+		}
 	}
 
 	startLoading() {
@@ -72,7 +79,7 @@ export class DisplayService {
 	}
 
 	resizeWindow() {
-		const delay = setTimeout(function () {
+		setTimeout(() => {
 			window.dispatchEvent(new Event('resize'));
 		}, 100);
 	}
@@ -311,7 +318,6 @@ export class DisplayService {
 		try {
 			if (this.isShellAvailable) {
 				return this.cameraSettings.startMonitor((response: any) => {
-					console.log('startMonitorForCameraPermission', response);
 					if (response.permission !== undefined) {
 						this.commonService.sendNotification(DeviceMonitorStatus.CameraStatus, response.permission);
 					}
@@ -338,7 +344,7 @@ export class DisplayService {
 
 	public stopEyeCareMonitor() {
 		if (this.isShellAvailable) {
-			this.displayEyeCareMode.stopMonitor((response: boolean) => {
+			return this.displayEyeCareMode.stopMonitor((response: boolean) => {
 				// this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
 			});
 		}
@@ -384,26 +390,55 @@ export class DisplayService {
 		return undefined;
 	}
 
-	public setTaskbarDimmerSetting(value: String): Promise<boolean> {
+	public setTaskbarDimmerSetting(value: string): Promise<boolean> {
 		if (this.oledSettings) {
-			//console.log('this.setTaskbarDimmerSetting', this.oledSettings);
+			// console.log('this.setTaskbarDimmerSetting', this.oledSettings);
 			return this.oledSettings.setTaskbarDimmerSetting(value);
 		}
 		return undefined;
 	}
 
-	public setBackgroundDimmerSetting(value: String): Promise<boolean> {
+	public setBackgroundDimmerSetting(value: string): Promise<boolean> {
 		if (this.oledSettings) {
-			//console.log('this.setBackgroundDimmerSetting', this.oledSettings);
+			// console.log('this.setBackgroundDimmerSetting', this.oledSettings);
 			return this.oledSettings.setBackgroundDimmerSetting(value);
 		}
 		return undefined;
 	}
 
-	public setDisplayDimmerSetting(value: String): Promise<boolean> {
+	public setDisplayDimmerSetting(value: string): Promise<boolean> {
 		if (this.oledSettings) {
-			//console.log('this.setDisplayDimmerSetting', this.oledSettings);
+			// console.log('this.setDisplayDimmerSetting', this.oledSettings);
 			return this.oledSettings.setDisplayDimmerSetting(value);
+		}
+		return undefined;
+	}
+
+	resetEyecaremodeAllSettings() {
+		return this.displayEyeCareMode.resetEyecaremodeAllSettings();
+	}
+
+	getWhiteListCapability(): Promise<WhiteListCapability> {
+		return this.displayEyeCareMode.getWhiteListCapability();
+	}
+
+	public getPriorityControlCapability(): Promise<any> {
+		if (this.priorityControl) {
+			return this.priorityControl.GetCapability();
+		}
+		return undefined;
+	}
+
+	public getPriorityControlSetting(): Promise<string> {
+		if (this.priorityControl) {
+			return this.priorityControl.GetPriorityControlSetting();
+		}
+		return undefined;
+	}
+
+	public setPriorityControlSetting(value: string): Promise<boolean> {
+		if (this.priorityControl) {
+			return this.priorityControl.SetPriorityControlSetting(value);
 		}
 		return undefined;
 	}

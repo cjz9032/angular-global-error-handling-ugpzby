@@ -3,9 +3,10 @@
 .vtr-ui-list-chevron {
 	.chevron-list {
 		margin-top: 2.7rem;
+		margin-bottom: 0;
 		list-style: none;
 		padding: 0;
-		background-color: $shade_extralight;
+		background-color: $grey_lighter;
 		border: 0.1rem solid $shade_lighter;
 		border-radius: $border_radius;
 		line-height: 1.3;
@@ -138,8 +139,9 @@
 
 			.item-icon-image {
 				display: inline-block;
-				height: 3rem;
+				height: 2.3rem;
 				width: 3rem;
+				padding-right: 1rem;
 				@media #{$black-on-white} {
 					color: lightgray;
 				}
@@ -158,22 +160,20 @@
 					margin: auto;
 				}
 			}
-
+// According to Vantage3.0, v1.2 responsive UI SPEC, the text of the chevron component need to be wrapped automatically,
+// if there are special styles, please modify them in their respective pages.
 			.item-text {
 				overflow: hidden;
 				padding-left: 1rem;
+				padding-right: 1rem;
 				cursor: pointer;
 				.title {
 					cursor: pointer;
-					font-size: $fontsize_md;
+					font-size: $fontsize_xs;
 					font-weight: $weight_bold;
-					float: left;
-					padding-top: 0.1rem;
-					padding-right: 0.1rem;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space: nowrap;
-					color: $blue-dark;
+					padding-right: 0.5rem;
+					color: $shade_blue;
+					// width: 13rem;
 
 					&.light-title {
 						font-weight: $weight_light;
@@ -183,18 +183,12 @@
 
 				.detail {
 					padding-left: 0.1rem;
-					padding-top: 0.3rem;
-					float: right;
 					text-align: right;
 					font-size: $fontsize_xs2;
 					color: $shade_dark;
 					font-weight: $weight_medium;
-					max-width: 50%;
-					word-wrap: break-word;
-					display: block;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space: nowrap;
+					word-break: normal !important;
+					// font-style: italic; // change back by April Lu, this is a global style.
 					cursor: pointer;
 					&.good {
 						color: $go_dark;
@@ -255,6 +249,14 @@
 				cursor: pointer;
 				&.blue-arrow {
 					color: $main;
+					@media #{$black-on-white} {
+						color: $dark;
+					}
+					@media #{$white-on-black} {
+						color: $light;
+					}
+
+
 				}
 			}
 

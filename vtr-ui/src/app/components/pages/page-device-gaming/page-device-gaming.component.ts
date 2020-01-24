@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
@@ -22,6 +22,7 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { Title } from '@angular/platform-browser';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
 
 @Component({
 	selector: 'vtr-page-device-gaming',
@@ -29,20 +30,17 @@ import { Title } from '@angular/platform-browser';
 	styleUrls: [ './page-device-gaming.component.scss' ],
 	providers: [ NgbModalConfig, NgbModal ]
 })
-export class PageDeviceGamingComponent implements OnInit {
+export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit {
 	public static allCapablitiyFlag = false;
+	dashboardStart: any = new Date();
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 	public isOnline = true;
-	heroBannerItems = [];
-	cardContentPositionB: any = {};
-	cardContentPositionC: any = {};
+	private protocolAction: any;
 	cardContentPositionD: any = {};
-	cardContentPositionE: any = {};
-	cardContentPositionF: any = {};
 
 	constructor(
 		private router: Router,
@@ -59,6 +57,8 @@ export class PageDeviceGamingComponent implements OnInit {
 		public userService: UserService,
 		private translate: TranslateService,
 		private loggerService: LoggerService,
+		private activatedRoute: ActivatedRoute,
+		private dialogService: DialogService,
 		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
 		vantageShellService: VantageShellService,
 		private titleService: Title
@@ -85,103 +85,80 @@ export class PageDeviceGamingComponent implements OnInit {
 				})
 				.catch((err) => {});
 		}
-		this.getPreviousContent();
-
-		this.fetchCmsContents();
+		this.translate
+			.stream([
+				'dashboard.offlineInfo.welcomeToVantage',
+				'common.menu.support',
+				'settings.settings',
+				'dashboard.offlineInfo.systemHealth',
+				'common.securityAdvisor.wifi',
+				'systemUpdates.title',
+				'systemUpdates.readMore'
+			])
+			.subscribe((result) => {
+				this.dashboardService.translateString = result;
+				this.dashboardService.setDefaultCMSContent();
+				this.getPreviousContent();
+				this.fetchCmsContents();
+			});
 
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 	}
 
+	ngDoCheck(): void {
+		const lastAction = this.protocolAction;
+		this.protocolAction = this.activatedRoute.snapshot.queryParams.action;
+		if (this.protocolAction && lastAction !== this.protocolAction) {
+			if (this.protocolAction.toLowerCase() === 'lenovoid') {
+				setTimeout(() => this.dialogService.openLenovoIdDialog());
+			} else if (this.protocolAction.toLowerCase() === 'modernpreload') {
+				setTimeout(() => this.dialogService.openModernPreloadModal());
+			}
+		}
+	}
+
+	ngAfterViewInit() {
+		const dashboardEnd: any = new Date();
+		const dashboardTime = dashboardEnd - this.dashboardStart;
+		this.loggerService.info(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
+	}
+
 	fetchCmsContents(lang?: string) {
 		const callCmsStartTime: any = new Date();
-		let queryOptions: any = {
+		const queryOptions: any = {
 			Page: 'dashboard'
 		};
-		if (lang) {
-			queryOptions = {
-				Page: 'dashboard',
-				Lang: lang,
-				GEO: 'US'
-			};
+		// if (lang) {
+		// 	queryOptions = {
+		// 		Page: 'dashboard',
+		// 		Lang: lang,
+		// 		GEO: 'US'
+		// 	};
+		// }
+		if (this.isOnline) {
+			if (this.dashboardService.cardContentPositionDOnline) {
+				this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
+			}
 		}
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const callCmsEndTime: any = new Date();
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 				if (response && response.length > 0) {
-					const heroBannerItems = this.cmsService
-						.getOneCMSContent(response, 'home-page-hero-banner', 'position-A')
-						.map((record, index) => {
-							return {
-								albumId: 1,
-								id: index + 1,
-								source: record.Title,
-								title: record.Description,
-								url: record.FeatureImage,
-								ActionLink: record.ActionLink
-							};
-						});
-					if (heroBannerItems && heroBannerItems.length) {
-						this.heroBannerItems = heroBannerItems;
-						this.dashboardService.heroBannerItems = heroBannerItems;
-					}
-
-					const cardContentPositionB = this.cmsService.getOneCMSContent(
-						response,
-						'half-width-title-description-link-image',
-						'position-B'
-					)[0];
-					if (cardContentPositionB) {
-						this.cardContentPositionB = cardContentPositionB;
-						if (this.cardContentPositionB.BrandName) {
-							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+					if (!this.dashboardService.cardContentPositionDOnline) {
+						const cardContentPositionD = this.cmsService.getOneCMSContent(
+							response,
+							'full-width-title-image-background',
+							'position-D'
+						)[0];
+						if (cardContentPositionD) {
+							this.cardContentPositionD = cardContentPositionD;
+							this.dashboardService.cardContentPositionDOnline = cardContentPositionD;
 						}
-						this.dashboardService.cardContentPositionB = cardContentPositionB;
-					}
-
-					const cardContentPositionC = this.cmsService.getOneCMSContent(
-						response,
-						'half-width-title-description-link-image',
-						'position-C'
-					)[0];
-					if (cardContentPositionC) {
-						this.cardContentPositionC = cardContentPositionC;
-						if (this.cardContentPositionC.BrandName) {
-							this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
-						}
-						this.dashboardService.cardContentPositionC = cardContentPositionC;
-					}
-
-					const cardContentPositionD = this.cmsService.getOneCMSContent(
-						response,
-						'full-width-title-image-background',
-						'position-D'
-					)[0];
-					if (cardContentPositionD) {
-						this.cardContentPositionD = cardContentPositionD;
-						this.dashboardService.cardContentPositionD = cardContentPositionD;
-					}
-
-					const cardContentPositionE = this.cmsService.getOneCMSContent(
-						response,
-						'half-width-top-image-title-link',
-						'position-E'
-					)[0];
-					if (cardContentPositionE) {
-						this.cardContentPositionE = cardContentPositionE;
-						this.dashboardService.cardContentPositionE = cardContentPositionE;
-					}
-
-					const cardContentPositionF = this.cmsService.getOneCMSContent(
-						response,
-						'half-width-top-image-title-link',
-						'position-F'
-					)[0];
-					if (cardContentPositionF) {
-						this.cardContentPositionF = cardContentPositionF;
-						this.dashboardService.cardContentPositionF = cardContentPositionF;
+					} else {
+						this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
 					}
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
@@ -196,12 +173,7 @@ export class PageDeviceGamingComponent implements OnInit {
 	public onConnectivityClick($event: any) {}
 
 	private getPreviousContent() {
-		this.heroBannerItems = this.dashboardService.heroBannerItems;
-		this.cardContentPositionB = this.dashboardService.cardContentPositionB;
-		this.cardContentPositionC = this.dashboardService.cardContentPositionC;
 		this.cardContentPositionD = this.dashboardService.cardContentPositionD;
-		this.cardContentPositionE = this.dashboardService.cardContentPositionE;
-		this.cardContentPositionF = this.dashboardService.cardContentPositionF;
 	}
 
 	private getSystemInfo() {
@@ -437,6 +409,11 @@ export class PageDeviceGamingComponent implements OnInit {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
+					if (!this.isOnline) {
+						this.getPreviousContent();
+					} else {
+						this.fetchCmsContents();
+					}
 					break;
 				default:
 					break;

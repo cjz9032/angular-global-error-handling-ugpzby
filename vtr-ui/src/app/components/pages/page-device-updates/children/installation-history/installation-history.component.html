@@ -6,7 +6,7 @@
 				<div class="row">
 					<div class="col">
 						<!-- <div class="heading">Full History</div> -->
-						<ul class="installation-list" id="su_history_list">
+						<ul class="installation-list" id="su_history_list" dir="{{direction}}">
 							<li class="list-heading">
 								<div class="container-fluid">
 									<div class="row align-items-center">
@@ -34,9 +34,7 @@
 									<div class="row">
 										<div class="col col-11 item-text">
 											<div class="row">
-												<div class="col">
-													<span class="title"
-														[ngClass]="{'light-title':item.lightTitle}">
+												<div class="col status-icon">
 														<div class="icon-check" *ngIf="item.status.toLocaleLowerCase() === 'installed'">
 																<div class="icon-bg">
 																	<fa-icon id="{{'su_history_icon_success_'+item.packageID}}" role="article"
@@ -49,46 +47,52 @@
 																		[icon]="['fas', 'times']"></fa-icon>
 																</div>
 														</div>
-														<span id="{{'su_history_'+item.packageID}}" role="listitem">{{item.packageDesc}} - {{item.version}}</span>
+													</div>
+													<div class="col update-info">
+													<span class="title"
+														[ngClass]="{'light-title':item.lightTitle}">
+														<span id="{{'su_history_'+item.packageID}}" role="listitem"><b>{{item.packageDesc}}</b> - {{item.version}}</span>
+														<div class="row">
+																<div class="col">
+																	<span class="installation-details">
+																		{{item.message}}
+																	</span>
+																</div>
+															</div>
+															<div *ngIf="expandedRecordId===item.packageID">
+																<div class="row">
+																	<div class="col">
+																		<span class="installation-details">
+																			{{'systemUpdates.installationHistory.packageSize' | translate}}
+																			{{commonService.formatBytes(item.packageSize)}}
+																		</span>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col">
+																		<span class="installation-details">
+																			{{'systemUpdates.installationHistory.releaseDate' | translate}}
+																			{{convertReleaseDate(item.packageReleaseDate)}}
+																		</span>
+																	</div>
+																</div>
+																<!-- MVP 2 feature, retry install -->
+																<!-- <div class="row"
+																	*ngIf="item.status.toLocaleLowerCase() === 'failed'">
+																	<div class="col">
+																		<span class="installation-details">
+																			<button type="button"
+																				(click)="onRetryClick(item.packageID)"
+																				class="btn btn-outline-primary">Retry install</button>
+																		</span>
+																	</div>
+																</div> -->
+															</div>
 													</span>
 												</div>
+
 											</div>
-											<div class="row">
-												<div class="col">
-													<span class="installation-details">
-														{{item.message}}
-													</span>
-												</div>
-											</div>
-											<div *ngIf="expandedRecordId===item.packageID">
-												<div class="row">
-													<div class="col">
-														<span class="installation-details">
-															{{'systemUpdates.installationHistory.packageSize' | translate}}
-															{{commonService.formatBytes(item.packageSize)}}
-														</span>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col">
-														<span class="installation-details">
-															{{'systemUpdates.installationHistory.releaseDate' | translate}}
-															{{convertReleaseDate(item.packageReleaseDate)}}
-														</span>
-													</div>
-												</div>
-												<!-- MVP 2 feature, retry install -->
-												<!-- <div class="row"
-													*ngIf="item.status.toLocaleLowerCase() === 'failed'">
-													<div class="col">
-														<span class="installation-details">
-															<button type="button"
-																(click)="onRetryClick(item.packageID)"
-																class="btn btn-outline-primary">Retry install</button>
-														</span>
-													</div>
-												</div> -->
-											</div>
+
 										</div>
 										<div class="col col-1 text-right">
 											<div class="expand"  id="{{'su_installation_update_expand_'+item.packageID}}" role="button">

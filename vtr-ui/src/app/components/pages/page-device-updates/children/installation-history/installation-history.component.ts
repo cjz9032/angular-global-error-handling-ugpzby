@@ -7,6 +7,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LanguageService } from 'src/app/services/language/language.service';
 
 @Component({
 	selector: 'vtr-installation-history',
@@ -21,15 +22,20 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 	public installationHistory: Array<UpdateHistory> = [];
 	private notificationSubscription: Subscription;
 	public showAll = false;
+	public direction = 'ltr';
 
 	constructor(
 		public systemUpdateService: SystemUpdateService,
 		public commonService: CommonService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		public languageService: LanguageService
 	) {
 		const cashData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateInstallationHistoryList);
 		if (typeof(cashData) !== 'undefined' && cashData.length > 0) {
 			this.installationHistory = cashData;
+		}
+		if (this.languageService.currentLanguage.toLowerCase() === 'ar' || this.languageService.currentLanguage.toLowerCase() === 'he' ) {
+			this.direction = 'rtl';
 		}
 	}
 

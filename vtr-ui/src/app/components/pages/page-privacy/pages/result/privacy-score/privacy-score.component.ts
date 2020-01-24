@@ -1,17 +1,17 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { CommonPopupService } from '../../../core/services/popups/common-popup.service';
 import { PrivacyScoreService } from './privacy-score.service';
 import { map, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
+import { VantageCommunicationService } from '../../../core/services/vantage-communication.service';
 import { AppStatuses } from '../../../userDataStatuses';
 import { combineLatest } from 'rxjs';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
-} from '../../../common/services/analytics/task-action-with-timeout.service';
-import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
+} from '../../../core/services/analytics/task-action-with-timeout.service';
+import { AppStatusesService } from '../../../core/services/app-statuses/app-statuses.service';
 import { ScoreShowSpinnerService } from './score-show-spinner.service';
 
 @Component({
@@ -20,29 +20,27 @@ import { ScoreShowSpinnerService } from './score-show-spinner.service';
 	styleUrls: ['./privacy-score.component.scss'],
 })
 export class PrivacyScoreComponent implements OnInit, OnDestroy {
-	// default data
-	title = 'Find out your privacy score';
-	text = `Your Lenovo is designed to put you
-			in control of your privacy. It all
-			starts with simple tools to show you how
-			private you are online.`;
-	btnText = 'Define my score';
-	privacyLevel = 'undefined';
+	title: string;
+	text: string;
+	privacyLevel: string;
+	score: number;
 	defaultScoreImageUrl = '/assets/images/privacy-tab/Main_icon.png';
-	score;
 
 	isShowScore$ = this.scoreShowSpinnerService.isShow$;
 
-	isFirstTimeVisitor$ = this.appStatusesService.globalStatus$.pipe(
-		map((userDataStatus) => userDataStatus.appState === AppStatuses.firstTimeVisitor)
+	appState$ = this.appStatusesService.globalStatus$.pipe(
+		map((userDataStatus) => userDataStatus.appState)
 	);
+
+	isFirstTimeVisitor$ = this.appState$.pipe(map((appState) => appState === AppStatuses.firstTimeVisitor));
+
+	appStatuses = AppStatuses;
 
 	constructor(
 		private privacyScoreService: PrivacyScoreService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private appStatusesService: AppStatusesService,
 		private vantageCommunicationService: VantageCommunicationService,
-		private changeDetectorRef: ChangeDetectorRef,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 		private scoreShowSpinnerService: ScoreShowSpinnerService,
 		private commonPopupService: CommonPopupService) {
@@ -51,28 +49,25 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		combineLatest([
 			this.privacyScoreService.newPrivacyScore$,
-			this.isFirstTimeVisitor$
+			this.appState$
 		]).pipe(
 			takeUntil(instanceDestroyed(this)),
-		).subscribe(([score, isFirstTimeVisitor]) => {
-			if (isFirstTimeVisitor) {
-				this.setDataAccordingToScore(0);
-			}
+		).subscribe(([score, appState]) => {
+			this.setDataAccordingToScore(score, appState);
 
-			if (!isFirstTimeVisitor) {
-				this.setDataAccordingToScore(score);
+			if (appState === this.appStatuses.scanPerformed) {
 				this.taskActionWithTimeoutService.finishedAction(TasksName.scoreScanAction);
 			}
-
-			this.changeDetectorRef.detectChanges();
 		});
+
+		this.setDataAccordingToScore(0, this.appStatuses.firstTimeVisitor);
 	}
 
 	ngOnDestroy() {
 	}
 
-	setDataAccordingToScore(score) {
-		const {privacyLevel, title, text} = this.privacyScoreService.getStaticDataAccordingToScore(score);
+	setDataAccordingToScore(score: number, appState: AppStatuses) {
+		const {privacyLevel, title, text} = this.privacyScoreService.getStaticDataAccordingToScore(score, appState);
 		this.score = score;
 		this.privacyLevel = privacyLevel;
 		this.title = title;

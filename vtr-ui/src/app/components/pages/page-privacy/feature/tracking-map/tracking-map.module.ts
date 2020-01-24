@@ -4,7 +4,7 @@ import { TrackingMapComponent } from './tracking-map.component';
 import { FlTrackingMapModule } from '../../utils/fl-tracking-map';
 import { SingleTrackerDetailComponent } from './single-tracker-detail/single-tracker-detail.component';
 import { RouterModule } from '@angular/router';
-import { VtrCommonModule } from '../../common/vtr-common.module';
+import { VtrCoreModule } from '../../core/vtr-core.module';
 
 @NgModule({
 	declarations: [
@@ -19,7 +19,7 @@ import { VtrCommonModule } from '../../common/vtr-common.module';
 		CommonModule,
 		RouterModule,
 		FlTrackingMapModule,
-		VtrCommonModule,
+		VtrCoreModule,
 	]
 })
 export class TrackingMapModule {

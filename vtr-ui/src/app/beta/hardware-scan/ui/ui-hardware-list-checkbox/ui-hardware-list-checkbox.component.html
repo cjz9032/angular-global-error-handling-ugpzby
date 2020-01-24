@@ -1,11 +1,11 @@
 <div class="vtr-ui-list-checkbox-hardware">
 	<ul class="list-group">
-		<div class="col-12">
+		<div class="col-12 px-0">
 			<li class="list-group-item" *ngFor="let device of devices; let i = index">
 				<div class="row align-items-center">
 					<div class="custom-control form-control-lg custom-checkbox">
 						<input id="{{ i }}" type="checkbox" class="custom-control-input"
-							[(ngModel)]="device.isSelected" (click)="onSelectDevice()" />
+							[(ngModel)]="device.isSelected" (change)="onSelectDevice()" />
 						<label class="custom-control-label name" for="{{ i }}">
 							<span class="title">{{ device.title }}</span>
 						</label>
@@ -13,7 +13,7 @@
 				</div>
 			</li>
 		</div>
-		<div class="col-12">
+		<div class="col-12 px-0">
 			<div class="options">
 				<a class="select-item" (click)="onSelectAllDevices()">{{select}}</a>
 				<span class="select-item-subtitle">/</span>

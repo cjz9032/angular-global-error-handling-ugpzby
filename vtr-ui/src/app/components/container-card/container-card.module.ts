@@ -8,16 +8,19 @@ import { SanitizeModule } from 'src/app/modules/sanitize.module';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { TranslationModule } from 'src/app/modules/translation.module';
+import { ContainerCardOfflineComponent } from './container-card-offline/container-card-offline.component';
 library.add(faArrowRight);
 
 @NgModule({
 	declarations: [
 		ContainerCardComponent,
-
+		ContainerCardOfflineComponent,
 	],
 	imports: [
 		CommonModule,
 		CommonPipeModule,
+		TranslationModule.forChild(),
 		MetricsModule,
 		FontAwesomeModule,
 		SanitizeModule,
