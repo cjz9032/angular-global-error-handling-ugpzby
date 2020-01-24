@@ -88,7 +88,7 @@
                     "line9": "<b>Blokada panelu dotyk. </b><br> Zapobiegnij błędom sterowania, wyłączając panel dotykowy na czas grania",
                     "line10": "<b>Autozamykanie </b><br> Wyczyść procesy, które nie są potrzebne do grania przed rozpoczęciem gry, aby zmaksymalizować dostępne zasoby systemowe",
                     "line11": "<b>Tryb term </b><br> Ustaw preferowany profil urządzenia dotyczący prędkości wentylatora i sterowania chłodzeniem.",
-					"line12": "<b>Klawisz makr</b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Klawisz makr</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Najedź kursorem myszy na CPU/GPU/RAM i różne dyski, aby wyświetlić ich opis wraz z informacjami o producencie i modelu"
@@ -1127,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Niepowodzenie: wystąpił nieoczekiwany błąd."
                         },
                         "popup": {
-                            "description1": "Proces resetowania wygląda następująco:<br> Całkowicie naładuj akumulator  -->  Całkowicie rozładuj akumulator  -->  Całkowicie naładuj akumulator",
+                            "description1": "Proces resetowania wygląda następująco:<br>Całkowicie naładuj akumulator --> Rozładuj akumulator do niskiego poziomu --> Naładuj akumulator do wysokiego poziomu lub całkowicie",
                             "description2": "Uwaga: <br>1. Ten proces może zająć wiele godzin. W tym czasie należy unikać używania komputera.<br>2. Zamknij wszystkie otwarte aplikacje i podłącz komputer do zasilania sieciowego.<br>3. Podczas tego procesu funkcja progu ładowania akumulatora jest wyłączona.",
                             "continue": "Kontynuuj",
                             "cancel": "Anuluj",
@@ -1337,7 +1337,8 @@
                         "note": {
                             "title": "Uwaga",
                             "description": "Aplikacja Lenovo Vantage musi uzyskać dostęp do informacji o lokalizacji w celu obliczenia czasu zachodu i wschodu słońca w Twoim regionie."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura barwowa ekranu",

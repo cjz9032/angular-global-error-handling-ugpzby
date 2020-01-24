@@ -1558,8 +1558,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "Fn key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the functions of the two keys.",
+                    "title": "Fn and Ctrl key swap",
+                    "description": "If you habitually pressed the Fn key when intending to press the Ctrl key, you can exchange the functions of the two keys.",
                     "restartNote": "Swapping the function of two keys requires you to restart your computer, are you sure to restart?",
                     "title2": "Fn works as Ctrl for frequently used key combinations",
                     "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
@@ -2088,7 +2088,7 @@
             "complete": "complete",
             "cancelScan": {
                 "button": "CANCEL SCAN",
-                "title": "Cacel the scan?",
+                "title": "Cancel the scan?",
                 "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
                 "yesButton": "YES, CANCEL",
                 "noButton": "NO, RESUME SCAN"
@@ -2110,6 +2110,9 @@
             "signupRepairButton": "SIGN UP & REPAIR NOW",
             "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
             "issueCount": "{{individualIssueCount}} ISSUES",
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
             "scannedAreas": "SCANNED AREAS",
             "recommendedAction": {
                 "title": "RECOMMENDED ACTION",
@@ -2118,7 +2121,21 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tunepc":{
+                "accumulatedjunkscannedareas":{
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",

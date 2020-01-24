@@ -91,7 +91,7 @@
                     "line9": "<b>Zaključ. dodirne table </b><br> Sprečite pogrešne unose onemogućavanjem dodirne table prilikom igranja",
                     "line10": "<b>Automatsko zatvaranje </b><br> Obrišite procese koji nisu potrebni za igranje pre nego što počnete kako biste maksimalno iskoristili dostupne sistemske resurse",
                     "line11": "<b>Toplotni režim </b><br> Postavite željeni profil uređaja za kontrolu brzine ventilatora i hlađenja",
-					"line12": "<b>Taster makroa </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Taster makroa </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Zadržite pokazivač na procesoru (CPU) / GPU / RAM i različitim diskovima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"
@@ -1127,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Neuspelo: došlo je do neočekivane greške."
                         },
                         "popup": {
-                            "description1": "Proces resetovanja je sledeći:<br>napunite bateriju-do kraja  -->  potpuno ispraznite bateriju  -->  ponovo potpuno napunite bateriju",
+                            "description1": "Proces resetovanja je sledeći:<br>napunite bateriju do kraja --> ispraznite bateriju na nizak nivo napunjenosti --> ponovo napunite bateriju na visok nivo napunjenosti ili do kraja",
                             "description2": "Napomene: <br>1. Ovaj proces može da traje nekoliko sati. Izbegavajte korišćenje računara tokom ovog perioda.<br>2. Zatvorite sve otvorene aplikacije i povežite računar sa napajanjem naizmeničnom strujom.<br>3. Tokom procesa, funkcija za prag punjenja baterije je onemogućena.",
                             "continue": "Nastavi",
                             "cancel": "Otkaži",
@@ -1337,7 +1337,8 @@
                         "note": {
                             "title": "Napomena",
                             "description": "Lenovo Vantage treba da pristupi informacijama o lokaciji kako bi se izračunalo vreme zalaska i izlaska sunca u vašem regionu."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura boje ekrana",

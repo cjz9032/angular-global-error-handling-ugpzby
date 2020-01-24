@@ -10,17 +10,21 @@
 		</div>
 		<div class="row">
 			<div class="col">
+<!-- ****************** Power Smart Settings Section ******************************** -->
 				<vtr-power-smart-settings (isPowerSmartSettingHidden)="onSetSmartSettingsCapability(false)"
 					*ngIf="!isDesktopMachine">
 				</vtr-power-smart-settings>
+<!-- ****************** Power Smart Settings Section ******************************** -->
 
+<!-- ****************** Smart Standby Section ******************************** -->
 				<vtr-smart-standby *ngIf="!isDesktopMachine"
 					(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
 				</vtr-smart-standby>
+<!-- ****************** Smart Standby Section ******************************** -->
 
 <!-- ****************** Battery Section ******************************** -->
-				<div *ngIf="conservationModeStatus?.available || expressChargingStatus?.available || chargeThresholdCapability || gaugeResetCapability"
-					class="row pt-5 smartsettings-card"
+				<div *ngIf="isBatterySectionAvailable"
+					class="row pt-5 smart-settings-card"
 					id="battery">
 					<div class="col-12 mx-auto container-card ">
 
@@ -32,7 +36,7 @@
 							[collapseLinkId]="'device-settings-batterySettings'">
 							<ul class="list-group list-group-flush">
 								<li class=""
-									*ngIf="machineType == 1 && thresholdInfo && chargeThresholdCapability && !batteryService.isPowerDriverMissing">
+									*ngIf="machineType === 1 && chargeThresholdCapability && thresholdInfo?.length>0">
 									<vtr-ui-row-switch
 										[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 										[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
@@ -47,7 +51,7 @@
 										[isDisabled]="batteryService.isGaugeResetRunning"
 										[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
 										<div *ngIf="chargeThresholdStatus">
-											<vtr-battery-charge-threshold-settings *ngIf="thresholdInfo[0]"
+											<vtr-battery-charge-threshold-settings
 												[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title'
 													+ thresholdInfo[0].batteryNum | translate"
 												[isGaugeResetRunning]="batteryService.isGaugeResetRunning"
@@ -57,7 +61,7 @@
 												(autoChecked)="onAutoCheckChange($event, 0)">
 											</vtr-battery-charge-threshold-settings>
 
-											<vtr-battery-charge-threshold-settings *ngIf="thresholdInfo.length===2 && thresholdInfo[1]"
+											<vtr-battery-charge-threshold-settings *ngIf="thresholdInfo.length===2"
 												[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title2' | translate"
 												[isGaugeResetRunning]="batteryService.isGaugeResetRunning"
 												[bctInfo]="thresholdInfo[1]"
@@ -80,7 +84,7 @@
 								</li>
 
 								<li class=""
-									*ngIf="expressChargingStatus.available">
+									*ngIf="expressChargingStatus?.available">
 									<vtr-ui-row-switch
 										[title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
 										[name]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
@@ -98,7 +102,7 @@
 									</vtr-ui-row-switch>
 								</li>
 								<li class=""
-									*ngIf="conservationModeStatus.available">
+									*ngIf="conservationModeStatus?.available">
 									<vtr-ui-row-switch
 										[title]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
 										[name]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
@@ -122,9 +126,9 @@
 <!-- ****************** End Battery Section ******************************** -->
 
 <!-- ****************** Start Power Section ******************************** -->
-				 <div class="row pt-5 smartsettings-card"
+				 <div class="row pt-5 smart-settings-card"
 					id="power"
-					*ngIf="!batteryService.isPowerDriverMissing && (showAirplanePowerModeSection || alwaysOnUSBStatus?.available || showEasyResumeSection || (showFlipToBootSection$ | async))">
+					*ngIf="isPowerSectionAvailable">
 					<div class="col-12 mx-auto container-card">
 						<vtr-container-collapsible
 							[cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
@@ -271,7 +275,7 @@
 <!-- ****************** End Power Section ******************************** -->
 
 
-				 <div class="row pt-5 smartsettings-card"
+				 <div class="row pt-5 pb-5 smart-settings-card"
 					id="other"
 					*ngIf="vantageToolbarStatus.available">
 					<div class="col-12 mx-auto container-card">
@@ -301,7 +305,7 @@
 						</vtr-container-collapsible>
 					</div>
 				</div>
-				<div class="row pt-5 smartsettings-card"
+				<div class="row pt-5 smart-settings-card"
 					*ngIf="isEnergyStarProduct">
 					<div class="col-12 mx-auto container-card">
 						<vtr-container-collapsible

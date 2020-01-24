@@ -88,7 +88,7 @@
                     "line9": "<b>觸控板鎖定 </b><br> 在遊戲時停用觸控板，防止錯誤的輸入",
                     "line10": "<b>自動關閉 </b><br> 在您開始暢玩遊戲之前先清除與遊戲無關的處理程序，盡可能地利用所有可用的系統資源",
                     "line11": "<b>熱模式 </b><br> 設定您偏好的裝置設定檔中的風扇速度和冷卻控制",
-					"line12": "<b>巨集鍵 </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>巨集鍵 </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "將游標移至 CPU/GPU/RAM 和不同的驅動程式之上以查看其個別描述，包括製造與機型資訊"
@@ -1127,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "失敗：發生非預期的錯誤。"
                         },
                         "popup": {
-                            "description1": "重設程序如下：<br>電池完整充電  -->  電池完全放電  -->  將電池重新充飽",
+                            "description1": "重設程序如下：<br>電池完整充電 --> 放電至電池電力不足 --> 重新充電至電池電力充足或充飽",
                             "description2": "附註：<br>1. 這個程序可能需費時數小時。請避免在此期間使用電腦。<br>2. 關閉所有已開啟的應用程式，然後將電腦連接到 AC 電源。<br>3. 在此程序期間，會停用電池充電臨界值功能。",
                             "continue": "繼續",
                             "cancel": "取消",
@@ -1337,7 +1337,8 @@
                         "note": {
                             "title": "備注",
                             "description": "Lenovo Vantage 需要存取您的位置資訊，才能計算您所在當地的日出和日落時間。"
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "顯示器色溫",
