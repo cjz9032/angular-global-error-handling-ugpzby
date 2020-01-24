@@ -154,15 +154,19 @@ export class MacrokeyService {
 	updateMacrokeyInitialKeyRepeatDataCache(selectRepeatChange: number) {
 		let macroKeyData = new MacroKeyInputChange();
 		macroKeyData = this.commonService.getLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData);
-		macroKeyData.macro.repeat = selectRepeatChange;
-		this.commonService.setLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData, macroKeyData);
+		if (macroKeyData) {
+			macroKeyData.macro.repeat = selectRepeatChange;
+			this.commonService.setLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData, macroKeyData);
+		}
 	}
 
 	updateMacrokeyInitialKeyIntervalDataCache(intervalStatus: number) {
 		let macroKeyData = new MacroKeyInputChange();
 		macroKeyData = this.commonService.getLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData);
-		macroKeyData.macro.interval = intervalStatus;
-		this.commonService.setLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData, macroKeyData);
+		if (macroKeyData) {
+			macroKeyData.macro.interval = intervalStatus;
+			this.commonService.setLocalStorageValue(LocalStorageKey.InitialKeyMacroKeyData, macroKeyData);
+		}
 	}
 
 	updateMacrokeyInitialKeyDataCache(inputs: any) {

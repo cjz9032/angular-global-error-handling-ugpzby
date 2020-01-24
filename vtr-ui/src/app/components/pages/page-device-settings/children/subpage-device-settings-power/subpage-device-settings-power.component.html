@@ -67,7 +67,7 @@
 												[bctInfo]="thresholdInfo[1]"
 												[textId]="'threshold-secondary-battery'"
 												(changeBCTInfo)="onBCTInfoChange($event, 1)"
-												(autoChecked)="onAutoCheckChange($event, 0)">
+												(autoChecked)="onAutoCheckChange($event, 1)">
 											</vtr-battery-charge-threshold-settings>
 
 											<vtr-battery-charge-threshold-settings *ngIf="showBCTWarningNote"
@@ -151,7 +151,7 @@
 										[switchId]="'ds-power-battery-airplane'"
 										(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
 										<div class="row">
-											<div class="col px-20">
+											<div class="col px-5">
 												<div class="auto-set-checkbox custom-checkbox-gaming"
 													tabindex="0"
 													(keydown.enter)="cbAirplaneMode.click()"
@@ -229,7 +229,7 @@
 											</div>
 										</div>
 										<div class="row">
-											<div class="col px-20">
+											<div class="col px-5">
 												<div class="auto-set-checkbox custom-checkbox-gaming"
 													*ngIf="usbChargingInBatteryModeStatus">
 													<input id="cb-always-on-usb"

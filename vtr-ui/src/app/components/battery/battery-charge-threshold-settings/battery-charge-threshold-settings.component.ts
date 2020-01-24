@@ -53,7 +53,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 		if (bctInfo.stopValue !== stopVal) {
 			bctInfo.stopValue = stopVal;
 			if (bctInfo.checkboxValue) {
-				bctInfo.startValue = this.bctInfo.stopValue - 5;
+				bctInfo.startValue = stopVal - 5;
 			}
 			this.changeBCTInfo.emit(bctInfo);
 		}
@@ -64,7 +64,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 		const bctInfo = this.commonService.cloneObj(this.bctInfo);
 		if (event) {
 			bctInfo.startValue = this.bctInfo.stopValue - 5;
-			this.autoChecked.emit(bctInfo);
 		}
+		this.autoChecked.emit(bctInfo);
 	}
 }
