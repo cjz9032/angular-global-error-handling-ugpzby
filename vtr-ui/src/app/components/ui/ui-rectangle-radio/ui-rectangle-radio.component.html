@@ -1,4 +1,4 @@
-<div class="vtr-ui-rectangle-radio" [ngClass]="{'border-blue':checked && !disabled, 'border-grey':!checked, 'disabled-class':disabled}"
+<div class="vtr-ui-rectangle-radio" [ngClass]="{'border-blue':checked && !disabled, 'border-grey':!checked, 'disabled-class':disabled, 'disabled-grey':checked && disabled}"
 	role="radio"
 	id="{{'div' + radioId}}"
 	[tabIndex]="checked? 0 :-1"
