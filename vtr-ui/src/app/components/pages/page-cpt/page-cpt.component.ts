@@ -11,6 +11,8 @@ import { isNull, isUndefined } from 'util';
 import { CptpageDeviceSettingsComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-device-settings/cptpage-device-settings.component';
 import { CptpageMyDeviceComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-my-device/cptpage-my-device.component';
 
+declare let JSONEditor: any;
+declare let ClipboardJS: any;
 
 @Component({
   selector: 'vtr-page-cpt',
@@ -34,15 +36,21 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
   };
   serverSwitchResponse: any = {
     cmsserver: '',
+    fullcmsserver: '',
     componentSelector: 'vtr-cptpage-device-settings',
     systemLang: '',
     currentLang: '',
-    jsonresponse : {},
+    jsonresponse: {},
     isloading: null,
   };
 
+  editor: any;
+  clipboard: any;
 
-  constructor(public commonService: CommonService, private translate: TranslateService, private cfr: ComponentFactoryResolver) { }
+  constructor(public commonService: CommonService, private translate: TranslateService, private cfr: ComponentFactoryResolver) { 
+    this.loadDynamicStyle();
+    this.loadDynamicScripts();
+  }
 
   ngOnInit() {
     this.serverSwitchData = new ServerSwitch();
@@ -160,6 +168,25 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
       console.log("Language loaded: " + this.serverSwitchResponse.currentLang);
     });
 
+    //for full urls 
+    let defaultsURLParm = {
+      Lang: (serverSwitchLocalData.language.Value).toLowerCase(),
+      GEO: (serverSwitchLocalData.country.Value).toLowerCase(),
+      OEM: serverSwitchLocalData.oem,
+      Segment: serverSwitchLocalData.segment,
+      Brand: serverSwitchLocalData.brand,
+      OS: 'Windows'
+    };
+
+    //jsonEditor 
+    if(!this.editor){
+      this.editor = new JSONEditor(document.getElementById('jeditor'),{mode:'view'},{});
+    }
+    
+    //copyClipboard
+    if(!this.clipboard){
+      this.clipboard = new ClipboardJS('.btnCopy');
+    }
 
     //add components cms logic with switch block
     //load components from page dropdown
@@ -178,8 +205,18 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
           (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'device'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
             this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
             this.serverSwitchResponse.isloading = false;
+
           }
         );
 
@@ -189,19 +226,70 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         factory = this.cfr.resolveComponentFactory(CptpageDeviceSettingsComponent);
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageDeviceSettingsComponent>componentRef.instance);
-        
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
           (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'device-settings'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
             this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
             this.serverSwitchResponse.isloading = false;
           }
         );
-        
+
         break;
     }
 
   }
+
+  parseCMSUrl(defaultsURLParm, queryParams, cmsserver) {
+
+    let CMSOption = Object.assign(defaultsURLParm, queryParams);
+    let fullcmsserver = cmsserver + '/api/v1/features';
+    let c = 0;
+    for (let x in CMSOption) {
+      fullcmsserver += (c == 0 ? '?' : '&') + x + '=' + CMSOption[x];
+      c++;
+    }
+    return fullcmsserver;
+  }
+
+
+  loadDynamicScripts() {
+    const dynamicScripts = [
+     'https://cdn.jsdelivr.net/npm/jsoneditor@8.4.1/dist/jsoneditor.min.js',
+     'https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js'
+    ];
+    for (let i = 0; i < dynamicScripts.length; i++) {
+      const node = document.createElement('script');
+      node.src = dynamicScripts[i];
+      node.type = 'text/javascript';
+      node.async = false;
+      node.charset = 'utf-8';
+      document.getElementsByTagName('head')[0].appendChild(node);
+    }
+  }
+
+  loadDynamicStyle() {
+    const dynamicScripts = [
+     'https://cdn.jsdelivr.net/npm/jsoneditor@5.19.2/dist/jsoneditor.min.css'
+    ];
+    for (let i = 0; i < dynamicScripts.length; i++) {
+      const node = document.createElement('link');
+      node.href = dynamicScripts[i];
+      node.type = 'text/css';
+      node.rel = 'stylesheet';
+      document.getElementsByTagName('head')[0].appendChild(node);
+    }
+  }
+
 
   ngOnDestroy() {
     //setting language
