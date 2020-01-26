@@ -41,14 +41,17 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	public cameraErrorTitle: string;
 	public cameraErrorDescription: string;
 	public isCameraInErrorState = false;
+	private isCameraInitialized = false;
 
 	@ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
 		// when camera preview video element is visible then start camera feed
 		this.cameraPreview = content;
-		if (content && !this.cameraDetail.isPrivacyModeEnabled) {
-			this.initializeCameraAsync();
-		} else {
-			this.cleanupCameraAsync();
+		if (!this.isCameraInitialized) {
+			if (content && !this.cameraDetail.isPrivacyModeEnabled) {
+				this.initializeCameraAsync();
+			} else {
+				this.cleanupCameraAsync();
+			}
 		}
 	}
 
@@ -183,11 +186,13 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					return self.oMediaCapture.initializeAsync(settings);
 
 				}, (error) => {
+					this.isCameraInitialized = false;
 					console.log('findCameraDeviceByPanelAsync error', error.message);
 					this.ngZone.run(() => {
 						this.disabledAll = true;
 					});
 				}).then(() => {
+					this.isCameraInitialized = true;
 					return self.startPreviewAsync();
 				}).done();
 		} catch (error) {
@@ -216,6 +221,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	cleanupCameraAsync() {
+		this.isCameraInitialized = false;
 		console.log('cleanupCameraAsync');
 		this.stopPreview();
 
@@ -229,7 +235,9 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (document.hidden) {
 			this.cleanupCameraAsync();
 		} else {
-			this.initializeCameraAsync();
+			if (!this.isCameraInitialized) {
+				this.initializeCameraAsync();
+			}
 		}
 	}
 
