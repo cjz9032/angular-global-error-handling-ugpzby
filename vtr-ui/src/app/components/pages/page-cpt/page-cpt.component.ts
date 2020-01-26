@@ -279,7 +279,7 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
 
   loadDynamicStyle() {
     const dynamicScripts = [
-     'https://cdn.jsdelivr.net/npm/jsoneditor@5.19.2/dist/jsoneditor.min.css'
+     'https://cdn.jsdelivr.net/npm/jsoneditor@8.4.1/dist/jsoneditor.min.css'
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('link');
