@@ -106,23 +106,32 @@
 	}
 	&.border-blue {
 		border: 0.2rem solid $dim_gray;
-		// transition: all 50ms ease-in;
+		// transition: all 50ms ease-in;		
+		label::after {
+			opacity: 1 !important;
+			background-color: $menu_hover !important;
+		}
+	}
+	&.disabled-grey{
+		label::after {
+			opacity: 1 !important;
+			background-color: $light-grey !important;
+		}
 	}
 	&.border-grey {
 		border: 0.2rem solid $note_border;
 		// transition: all 50ms ease-in;
-	}
+	}	
 }
 .disabled-class{
 	opacity: 0.7;
-	border: 0.3rem solid $light-grey;
-
+	border: 0.3rem solid $light-grey;	
 	label {
 		&:after, &:before {
 			border-color: $light-grey;
-		}
+		}		
 		&:after {
-			background-color: $light-grey;
+			background-color: $light-grey !important;
 		}
 		&:hover {
 			cursor: not-allowed;
