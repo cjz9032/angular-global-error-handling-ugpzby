@@ -44,6 +44,7 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
     currentLang: '',
     jsonresponse: {},
     isloading: null,
+    showeditor: true
   };
 
   editor: any;
@@ -64,7 +65,8 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
       cmsserver: new FormControl(this.serverSwitchData.serverList[1], Validators.required),
       oem: new FormControl(this.serverSwitchData.oemList[0], Validators.required),
       brand: new FormControl(this.serverSwitchData.brandList[0], Validators.required),
-      page: new FormControl(this.serverSwitchData.pageList[0], Validators.required)
+      page: new FormControl(this.serverSwitchData.pageList[0], Validators.required),
+      showeditor: new FormControl(true),
     });
 
     this.serverSwitchResponse.systemLang = this.translate.currentLang;
@@ -87,7 +89,9 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
       message: []
     };
     this.serverSwitchResponse.jsonresponse = null;
+    this.serverSwitchResponse.fullcmsserver = '';
     this.serverSwitchResponse.isloading = true;
+    this.serverSwitchResponse.showeditor = formData.showeditor;
 
     // validating
     if (isNull(formData.cmsserver) || isUndefined(formData.cmsserver)) {
@@ -279,7 +283,6 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
           this.serverSwitchResponse.isloading = false;
         break;
     }
-
   }
 
   parseCMSUrl(defaultsURLParm, queryParams, cmsserver) {
