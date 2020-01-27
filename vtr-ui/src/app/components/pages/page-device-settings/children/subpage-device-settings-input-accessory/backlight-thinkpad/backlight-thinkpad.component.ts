@@ -50,6 +50,7 @@ export class BacklightThinkpadComponent implements OnInit {
 	public updateMode(mode) {
 		this.currentMode = mode;
 		if (this.currentMode === BacklightStatusEnum.AUTO) {
+			this.setKBDBacklightStatus(BacklightStatusEnum.OFF);
 			this.setAutomaticKBDBacklight(true);
 		} else {
 			this.setKBDBacklightStatus(this.currentMode);
@@ -134,7 +135,7 @@ export class BacklightThinkpadComponent implements OnInit {
 				this.keyboardService.getKBDBacklightStatus()
 					.then(res => {
 						this.logger.info('BacklightThinkpadComponent:getKBDBacklightStatus', res);
-						if (res !== BacklightStatusEnum.AUTO) {
+						if (res !== BacklightStatusEnum.AUTO && this.currentMode !== BacklightStatusEnum.AUTO) {
 							this.currentMode = this.compare(res);
 						}
 					}).catch(error => {
