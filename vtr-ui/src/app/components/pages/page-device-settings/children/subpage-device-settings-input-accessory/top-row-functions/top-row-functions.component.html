@@ -66,12 +66,12 @@
     <div *ngIf="topRowKeyObj.stickyFunCap">
       <div class="col-12 pl-3 sectn-padding">
         <div class="col-12 title-blck px-0 d-flex">
-          <div class="title pl-5">
+          <div class="title pl-5 ml-2">
             {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.title' | translate}}
           </div>
         </div>
         <div class="col-12 pl-5 pr-0">
-          <div class="caption">
+          <div class="caption pl-2">
             <div class="text">
               {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.description' | translate}}
             </div>
@@ -87,7 +87,7 @@
               [value]="true" [checked]="topRowKeyObj.stickyFunStatus" (change)="onChangeKeyType(true)"
               [isLarge]= "true" [disabled]="false" (customKeyEvent)="updateCustomKeyEvents($event, false)">
             </vtr-ui-rounded-rectangle-radio>
-            <div class="caption mt-4" *ngIf="topRowKeyObj.stickyFunStatus">
+            <div class="caption mt-4 pl-0"  *ngIf="topRowKeyObj.stickyFunStatus">
               <vtr-widget-permission-note
                 [noteTitle]="'device.deviceSettings.displayCamera.camera.note.title' | translate"
                 [description]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.note' | translate"
