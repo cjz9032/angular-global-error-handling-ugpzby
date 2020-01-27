@@ -1,4 +1,4 @@
-<div class="vtr-ui-rectangle-radio" [ngClass]="{'border-blue':checked && !disabled, 'border-grey':!checked, 'disabled-class':disabled}"
+<div class="vtr-ui-rectangle-radio" [ngClass]="{'border-blue':checked && !disabled, 'border-grey':!checked, 'disabled-class':disabled, 'disabled-grey':checked && disabled}"
 	role="radio"
 	id="{{'div' + radioId}}"
 	[tabIndex]="checked? 0 :-1"
@@ -6,8 +6,8 @@
 	[attr.aria-checked]="checked"
 	attr.aria-label="radioId"
 	(keydown)="emitKeyEvent($event)"
-	> 
-		<input id="{{radioId}}" 
+	>
+		<input id="{{radioId}}"
 		[attr.aria-label]="radioId"
 		name="{{group}}"
 		type="radio"
@@ -25,7 +25,7 @@
 />
 	<label for="{{radioId}}">
 
-		<span class="label">{{label}}</span>		
+		<span class="label">{{label}}</span>
 		<span class="{{iconName}} mt-3"></span>
 
 		<span *ngIf="!hideIcon" [ngClass]="'icomoon icomoon-'+getIconName(label)"></span>
@@ -35,7 +35,7 @@
 			class="question"
 			placement="auto"
 			ngbTooltip="{{tooltip}}"
-			container="body">
+			container="vtr-root">
 			<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
 		</span>
 	</label>
