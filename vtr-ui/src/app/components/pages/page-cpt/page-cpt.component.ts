@@ -10,6 +10,8 @@ import { isNull, isUndefined } from 'util';
 //add components below
 import { CptpageDeviceSettingsComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-device-settings/cptpage-device-settings.component';
 import { CptpageMyDeviceComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-my-device/cptpage-my-device.component';
+import { CptpageDashboardComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-dashboard/cptpage-dashboard.component';
+
 
 declare let JSONEditor: any;
 declare let ClipboardJS: any;
@@ -19,7 +21,7 @@ declare let ClipboardJS: any;
   templateUrl: './page-cpt.component.html',
   styleUrls: ['./page-cpt.component.scss'],
   //add components within array
-  entryComponents: [CptpageMyDeviceComponent, CptpageDeviceSettingsComponent]
+  entryComponents: [CptpageMyDeviceComponent, CptpageDeviceSettingsComponent, CptpageDashboardComponent]
 })
 export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
   title = 'Content Preview Tool';
@@ -196,6 +198,31 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
     let factory: any;
     let componentRef: any;
     switch (this.serverSwitchResponse.componentSelector) {
+      //Page Dashboard
+      case 'vtr-page-dashboard':
+        factory = this.cfr.resolveComponentFactory(CptpageDashboardComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageDashboardComponent>componentRef.instance);
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'dashboard'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+
+          }
+        );
+
+        break;
       //Page My Device
       case 'vtr-cptpage-my-device':
         factory = this.cfr.resolveComponentFactory(CptpageMyDeviceComponent);
@@ -244,6 +271,12 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
           }
         );
 
+        break;
+        default: 
+          this.serverSwitchResponse.fullcmsserver = '';
+          this.serverSwitchResponse.jsonresponse = {'error':'Work in progress.'};
+          this.editor.set(this.serverSwitchResponse.jsonresponse);
+          this.serverSwitchResponse.isloading = false;
         break;
     }
 

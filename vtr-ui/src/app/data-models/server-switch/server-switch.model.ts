@@ -46,8 +46,16 @@ export class ServerSwitch {
 	];
 
 	public pageList: any = [
+		{'label':'Dashboard','componentSelector':'vtr-page-dashboard'},
 		{'label':'My Device','componentSelector':'vtr-cptpage-my-device'},
-		{'label':'My Device Settings','componentSelector':'vtr-cptpage-device-settings'}
+		{'label':'My Device Settings','componentSelector':'vtr-cptpage-device-settings'},
+		{'label':'System Update','componentSelector':'vtr-page-device-updates'},
+		{'label':'Smart Assist','componentSelector':'vtr-page-smart-assist'},
+		{'label':'Support Detail','componentSelector':'vtr-page-support-detail'},
+		/* non hw */
+		/*{'label':'Preference settings','componentSelector':'vtr-page-settings'},
+		{'label':'Connected Home','componentSelector':'vtr-page-connected-home-security'},
+		{'label':'Privacy','componentSelector':''},*/
 	];
 
 }

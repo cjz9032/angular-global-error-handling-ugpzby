@@ -56,7 +56,7 @@ import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.mod
 //cpt
 import { CptpageDeviceSettingsComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-device-settings/cptpage-device-settings.component';
 import { CptpageMyDeviceComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-my-device/cptpage-my-device.component';
-
+import { CptpageDashboardComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-dashboard/cptpage-dashboard.component';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -141,6 +141,8 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 		//cpt
 		CptpageDeviceSettingsComponent,
 		CptpageMyDeviceComponent,
+		CptpageDashboardComponent,
+
 		BacklightThinkpadComponent
 	],
 	imports: [
