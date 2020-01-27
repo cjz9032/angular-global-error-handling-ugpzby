@@ -1,6 +1,13 @@
-<vtr-page-layout [title]="'cpt.title' | translate" [back]="'common.ui.back' | translate" [backId]="'cpt-back-btn'"
-    [shiftLeftUp]="false" [shiftRightUp]="true">
+<vtr-page-layout
+[title]="'cpt.title' | translate"
+[back]="'common.ui.back' | translate"
+[pageCssClass]="'cpt-page'"
+[backId]="'cpt-back-btn'"
+[shiftLeftUp]="false"
+[shiftRightUp]="true">
     <left-content>
+		<div class="row cpt-page-fx">
+			<div class="col-5">
         <div class="cpt-form">
             <div class="row server-content">
                 <div class="server-body col">
@@ -11,36 +18,36 @@
                         </ul>
 
                         <div class="form-group row mb-2">
-                            <label for="cmsserver" class="col col-4 col-form-label">CMS API</label>
-                            <div class="col">
-                                <select name="cmsserver" id="cmsserver" formControlName="cmsserver" required>
+                            <label for="cmsserver" class="col-sm-3 col-form-label">CMS API</label>
+                            <div class="col-sm-9">
+                                <select name="cmsserver" id="cmsserver" class="form-control" formControlName="cmsserver" required>
                                     <option *ngFor="let cmsserver of serverSwitchData.serverList" [ngValue]="cmsserver">
                                         {{cmsserver}}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row mb-2">
-                            <label for="country" class="col col-4 col-form-label">Country</label>
-                            <div class="col">
-                                <select name="country" id="country" formControlName="country" required>
+                            <label for="country" class="col-sm-3 col-form-label">Country</label>
+                            <div class="col-sm-9">
+                                <select name="country" class="form-control" id="country" formControlName="country" required>
                                     <option *ngFor="let country of serverSwitchData.countryList" [ngValue]="country">
                                         {{country.Value}}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row mb-2">
-                            <label for="language" class="col col-4 col-form-label">Language</label>
-                            <div class="col">
-                                <select name="language" id="language" formControlName="language" required>
+                            <label for="language" class="col-sm-3 col-form-label">Language</label>
+                            <div class="col-sm-9">
+                                <select name="language" class="form-control" id="language" formControlName="language" required>
                                     <option *ngFor="let language of serverSwitchData.languageList" [ngValue]="language">
                                         {{language.Value}}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row mb-2">
-                            <label for="segment" class="col col-4 col-form-label">Segment</label>
-                            <div class="col">
-                                <select name="segment" id="segment" formControlName="segment" required>
+                            <label for="segment" class="col-sm-3 col-form-label">Segment</label>
+                            <div class="col-sm-9">
+                                <select name="segment" id="segment" class="form-control" formControlName="segment" required>
                                     <option *ngFor="let segment of serverSwitchData.segmentList" [ngValue]="segment">
                                         {{segment}}</option>
                                 </select>
@@ -48,9 +55,9 @@
                         </div>
 
                         <div class="form-group row mb-2">
-                            <label for="oem" class="col col-4 col-form-label">OEM</label>
-                            <div class="col">
-                                <select name="oem" id="oem" formControlName="oem" required>
+                            <label for="oem" class="col-sm-3 col-form-label">OEM</label>
+                            <div class="col-sm-9">
+                                <select name="oem" id="oem" class="form-control" formControlName="oem" required>
                                     <option *ngFor="let oem of serverSwitchData.oemList" [ngValue]="oem">{{oem}}
                                     </option>
                                 </select>
@@ -58,9 +65,9 @@
                         </div>
 
                         <div class="form-group row mb-2">
-                            <label for="brand" class="col col-4 col-form-label">Brand</label>
-                            <div class="col">
-                                <select name="brand" id="brand" formControlName="brand" required>
+                            <label for="brand" class="col-sm-3 col-form-label">Brand</label>
+                            <div class="col-sm-9">
+                                <select name="brand" class="form-control" id="brand" formControlName="brand" required>
                                     <option *ngFor="let brand of serverSwitchData.brandList" [ngValue]="brand">
                                         {{brand}}
                                     </option>
@@ -68,17 +75,22 @@
                             </div>
                         </div>
                         <div class="form-group row mb-2">
-                            <label for="page" class="col col-4 col-form-label">Page</label>
-                            <div class="col">
-                                <select name="page" id="page" formControlName="page" required>
+                            <label for="page" class="col-sm-3 col-form-label">Page</label>
+                            <div class="col-sm-9">
+                                <select name="page" class="form-control" id="page" formControlName="page" required>
                                     <option *ngFor="let page of serverSwitchData.pageList" [ngValue]="page">
                                         {{page.label}}</option>
                                 </select>
                             </div>
+						</div>
+
+						<div class="form-check chk-bx">
+							<input type="checkbox" class="form-check-input">
+								<label class="form-check-label">Show Request Response</label>
                         </div>
 
-                        <div class="form-group row mb-2">
-                            <div class="col">
+                        <div class="form-group row mb-2 sbmt">
+                            <div class="col-sm-12">
                                 <input type="submit" class="btn btn-lg btn-primary button" value="Submit">
                             </div>
                         </div>
@@ -87,20 +99,14 @@
                 </div>
             </div>
         </div>
-        <div class="cpt-preview row">
-            <div class="col">
-                <!-- Pages -->
-                <div class="mt-5">
-                    <ng-template #vc></ng-template>
-                </div>
-            </div>
-        </div>
-    </left-content>
-    <right-content>
-        <div class="container-fluid">
-            <div class="row mb-40">
-                <div class="col col-12" [ngClass]="" role="text" tabindex="0" id="cpt-cms-url">
-                    <h2 class="text-break">CMS Url: {{serverSwitchResponse.fullcmsserver}}</h2>
+	</div>
+
+	<div class="col-6 cms-url-block">
+		<div class="container">
+            <div class="row mb-20">
+                <div class="col col-12 cms-txt" [ngClass]="" role="text" tabindex="0" id="cpt-cms-url">
+					<h2>CMS Url:</h2>
+					<p class="text-break">{{serverSwitchResponse.fullcmsserver}}</p>
                 </div>
             </div>
             <div class="row mb-40">
@@ -116,9 +122,20 @@
                         <button class="btnCopy" data-clipboard-action="copy" [attr.data-clipboard-text]="serverSwitchResponse.jsonresponse | json">Copy Response</button>
                         <div id="jeditor"></div>
                     </div>
-                    
+
                 </div>
             </div>
-        </div>
-    </right-content>
+		</div>
+	</div>
+</div>
+
+<div class="cpt-preview row">
+	<div class="col">
+		<!-- Pages -->
+		<div class="mt-5">
+			<ng-template #vc></ng-template>
+		</div>
+	</div>
+</div>
+    </left-content>
 </vtr-page-layout>
