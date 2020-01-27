@@ -152,14 +152,88 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		 let spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(1)
 		component.initFeatures()
 		expect(spy).toHaveBeenCalled()
-	})
+	});
 
 	it('should call inWhiteList', () => {
 		let spy = spyOn(deviceService, 'getDeviceInfo').and.returnValue(Promise.resolve(vantageShellService.getDevice()))
 		component.inWhiteList()
-	})
+	});
 
-	
+	it('should call getPriorityControlCapability: true', () => {
+		const optionResponse: any = {
+			HDMI: true,
+			DOCK: true,
+			CARTRIDGE: false,
+			USB_C_DP: false,
+			WIGIG: true
+		};
+		spyOn(displayService, 'getPriorityControlCapability').and.returnValue(Promise.resolve(optionResponse));
+		spyOn(component, 'getPriorityControlSetting');
+		component.getPriorityControlCapability();
+		expect(displayService.getPriorityControlCapability).toHaveBeenCalled();
+	});
+
+	it('should call getPriorityControlCapability: false', () => {
+		const optionResponse: any = {
+			HDMI: false,
+			DOCK: false,
+			CARTRIDGE: false,
+			USB_C_DP: false,
+			WIGIG: false
+		};
+		spyOn(displayService, 'getPriorityControlCapability').and.returnValue(Promise.resolve(optionResponse));
+		spyOn(component, 'getPriorityControlSetting');
+		component.getPriorityControlCapability();
+		expect(displayService.getPriorityControlCapability).toHaveBeenCalled();
+		expect(component.getPriorityControlSetting).not.toHaveBeenCalled();
+	});
+
+	it('should call getPriorityControlCapability: throw error', () => {
+		const optionResponse: any = {
+			HDMI: false,
+			DOCK: false,
+			CARTRIDGE: false,
+			USB_C_DP: false,
+			WIGIG: false
+		};
+		spyOn(displayService, 'getPriorityControlCapability').and.returnValue(Promise.reject('Whoops!'));
+		spyOn(component, 'getPriorityControlSetting');
+		component.getPriorityControlCapability();
+		expect(displayService.getPriorityControlCapability).toHaveBeenCalled();
+		expect(component.getPriorityControlSetting).not.toHaveBeenCalled();
+	});
+
+	it('should call getPriorityControlSetting: CARTRIDGE', () => {
+		spyOn(displayService, 'getPriorityControlSetting').and.returnValue(Promise.resolve('CARTRIDGE'));
+		component.getPriorityControlSetting();
+		expect(displayService.getPriorityControlSetting).toHaveBeenCalled();
+	});
+
+	it('should call getPriorityControlSetting: throw error', () => {
+		spyOn(displayService, 'getPriorityControlSetting').and.returnValue(Promise.reject('Whoops!'));
+		component.getPriorityControlSetting();
+		expect(displayService.getPriorityControlSetting).toHaveBeenCalled();
+	});
+
+	it('should call setPriorityControlSetting: CARTRIDGE', () => {
+		spyOn(displayService, 'setPriorityControlSetting').and.returnValue(Promise.resolve(true));
+		component.setPriorityControlSetting('CARTRIDGE');
+		expect(displayService.setPriorityControlSetting).toHaveBeenCalled();
+	});
+
+	it('should call setPriorityControlSetting: reject promise', () => {
+		spyOn(displayService, 'setPriorityControlSetting').and.returnValue(Promise.reject('Whoops!'));
+		component.setPriorityControlSetting('CARTRIDGE');
+		expect(displayService.setPriorityControlSetting).toHaveBeenCalled();
+	});
+
+	it('should call setPriorityControlSetting: reject promise', () => {
+		spyOn(displayService, 'setPriorityControlSetting').and.throwError('Whoops!');
+		component.setPriorityControlSetting('CARTRIDGE');
+		expect(displayService.setPriorityControlSetting).toHaveBeenCalled();
+	});
+
+
 });
 
 /**
