@@ -194,7 +194,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 				}
 			]
 		};
-	
+
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
@@ -217,7 +217,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 
 		if (this.Windows) {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
-				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);	
+				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
 		}
 	}
 
@@ -1296,7 +1296,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 
 	//#region Display Priority Control
 
-	private getPriorityControlCapability() {
+	public getPriorityControlCapability() {
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.getPriorityControlCapability()
