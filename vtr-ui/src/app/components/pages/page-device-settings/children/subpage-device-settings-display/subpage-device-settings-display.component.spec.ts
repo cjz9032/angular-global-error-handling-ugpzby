@@ -1,194 +1,181 @@
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-import { HttpClient } from '@angular/common/http';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { SubpageDeviceSettingsDisplayComponent } from './subpage-device-settings-display.component';
-import { Pipe } from '@angular/core';
-import { DisplayService } from 'src/app/services/display/display.service';
-import { RouterTestingModule } from '@angular/router/testing';
-import { CommonService } from 'src/app/services/common/common.service';
-import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
-// const displayServiceMock = jasmine.createSpyObj('DisplayService', ['isShellAvailable', 'getPrivacyGuardCapability',
-// 	'getPrivacyGuardOnPasswordCapability', 'getPrivacyGuardStatus', 'getPrivacyGuardOnPasswordStatus', 'setPrivacyGuardStatus', 'setPrivacyGuardOnPasswordStatus']);
-// const commonServiceMock = jasmine.createSpyObj('CommonService', ['isShellAvailable', 'notification']);
-// const baseCameraDetailServiceMock = jasmine.createSpyObj('BaseCameraDetail', ['isShellAvailable', 'cameraDetailObservable']);
+import {
+	async,
+	ComponentFixture,
+	TestBed,
+	fakeAsync,
+	tick
+} from "@angular/core/testing";
+import {
+	HttpClientTestingModule,
+	HttpTestingController
+} from "@angular/common/http/testing";
+import { RouterTestingModule } from "@angular/router/testing";
+import { NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { Pipe } from "@angular/core";
 
+import { SubpageDeviceSettingsDisplayComponent } from "./subpage-device-settings-display.component";
+import { CapitalizeFirstPipe } from "../../../../../pipe/capitalize-pipe/capitalize-first.pipe";
+import {
+	CameraDetail,
+	CameraSettingsResponse,
+	CameraFeatureAccess,
+	EyeCareModeResponse
+} from "src/app/data-models/camera/camera-detail.model";
 
-describe('SubpageDeviceSettingsDisplayComponent', () => {
-	// let component: SubpageDeviceSettingsDisplayComponent;
-	// let fixture: ComponentFixture<SubpageDeviceSettingsDisplayComponent>;
-	// displayServiceMock.isShellAvailable.and.returnValue(true);
+import { DisplayService } from "src/app/services/display/display.service";
+import { DeviceService } from "src/app/services/device/device.service";
+import { CommonService } from "src/app/services/common/common.service";
+import { BaseCameraDetail } from "src/app/services/camera/camera-detail/base-camera-detail.service";
+import { LoggerService } from "src/app/services/logger/logger.service";
+import { VantageShellService } from "src/app/services/vantage-shell/vantage-shell.service";
+import { DevService } from '../../../../../services/dev/dev.service'
+
+import { TranslateModule } from "@ngx-translate/core";
+import { Md5 } from 'ts-md5';
+
+describe("SubpageDeviceSettingsDisplayComponent", () => {
+	let component: SubpageDeviceSettingsDisplayComponent;
+	let fixture: ComponentFixture<SubpageDeviceSettingsDisplayComponent>;
+	let deviceService: DeviceService;
+	let displayService: DisplayService;
+	let commonService: CommonService;
+	let baseCameraDetailService: BaseCameraDetail;
+	let vantageShellService: VantageShellService;
+	let logger: LoggerService;
+	let devService: DevService
 
 	beforeEach(async(() => {
-		// TestBed.configureTestingModule({
-		// 	imports: [RouterTestingModule],
-		// 	declarations: [SubpageDeviceSettingsDisplayComponent,
-		// 		mockPipe({ name: 'translate' })],
-		// 	schemas: [NO_ERRORS_SCHEMA],
-		// 	providers: [{ provide: HttpClient }, { provide: DisplayService, useValue: displayServiceMock },
+		TestBed.configureTestingModule({
+			imports: [RouterTestingModule, HttpClientTestingModule, TranslateModule.forRoot()],
+			declarations: [
+				SubpageDeviceSettingsDisplayComponent,
+				mockPipe({ name: "translate" }),
+				CapitalizeFirstPipe
+			],
+			schemas: [NO_ERRORS_SCHEMA],
+			providers: [
+				DeviceService,
+				DisplayService,
+				VantageShellService,
+				BaseCameraDetail,
+				CommonService,
+				DevService,
+				LoggerService
+			]
+		}).compileComponents();
 
-		// 	]
-		// }).compileComponents();
-		// fixture = TestBed.createComponent(SubpageDeviceSettingsDisplayComponent);
-		// displayServiceMock.getPrivacyGuardCapability.and.returnValue(Promise.resolve(true));
-		// displayServiceMock.getPrivacyGuardOnPasswordCapability.and.returnValue(Promise.resolve(true));
-		// displayServiceMock.getPrivacyGuardOnPasswordStatus.and.returnValue(Promise.resolve(true));
-		// displayServiceMock.setPrivacyGuardStatus.and.returnValue(Promise.resolve(true));
-		// displayServiceMock.setPrivacyGuardOnPasswordStatus.and.returnValue(Promise.resolve(true));
-		// displayServiceMock.getPrivacyGuardStatus.and.returnValue(Promise.resolve(true));
-		// displayServiceMock.startEyeCareMonitor.and.returnValue(Promise.resolve(true));
-		// displayServiceMock.initEyecaremodeSettings.and.returnValue(Promise.resolve(true));
-
-		// component = fixture.componentInstance;
-		// fixture.detectChanges();
+		fixture = TestBed.createComponent(
+			SubpageDeviceSettingsDisplayComponent
+		);
+		component = fixture.componentInstance;
+		deviceService = TestBed.get(DeviceService);
+		displayService = TestBed.get(DisplayService);
+		commonService = TestBed.get(CommonService);
+		baseCameraDetailService = TestBed.get(BaseCameraDetail);
+		vantageShellService = TestBed.get(VantageShellService);
+		logger = TestBed.get(LoggerService);
+		devService = TestBed.get(DevService)
 	}));
 
-	// it('should create', () => {
-	// 	expect(component).toBeTruthy();
-	// });
+	it("should create", () => {
+		expect(component).toBeTruthy();
+	});
 
-	// it('should get the privacy guard capability status is true', fakeAsync(() => {
-	// 	fixture.detectChanges();
-	// 	component.getPrivacyGuardCapabilityStatus();
-	// 	tick(10);
-	// 	const result = component.privacyGuardCapability;
-	// 	expect(result).toBe(true);
+	it('should call initDataFromCache', (() => {
+		let spy = spyOn(component, 'initCameraPrivacyFromCache')
+		component.initDataFromCache()
+		expect(spy).toHaveBeenCalled()
+	}))
 
-	// }));
+	it('should throw error - initDataFromCache', () => {
+		expect(component.initDataFromCache).toThrow()
+	});
 
-	// it('should get the privacy guard capability status is false', fakeAsync(() => {
-	// 	displayServiceMock.getPrivacyGuardCapability.and.returnValue(Promise.resolve(false));
-	// 	fixture.detectChanges();
-	// 	component.getPrivacyGuardCapabilityStatus();
-	// 	tick(10);
-	// 	const result = component.privacyGuardCapability;
-	// 	expect(result).toBe(false);
+	it('should call initCameraPrivacyFromCache', () => {
+		const privacy = {available: 'true'}
+		let spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(privacy)
+		component.initCameraPrivacyFromCache()
+		expect(spy).toHaveBeenCalled()
+	})
 
-	// }));
+	it('should call initCameraPrivacyFromCache - else', () => {
+		component.initCameraPrivacyFromCache()
+		expect(component.cameraPrivacyModeStatus.available).toEqual(true)
+	});
 
+	it('should call initEyeCareModeFromCache', () => {
+		let eyeCareModeCache = {available: true}
+		let spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(eyeCareModeCache)
+		component.initEyeCareModeFromCache()
+		expect(spy).toHaveBeenCalled()
+	});
 
-	// it('should get the privacy guard on password capability status is true', fakeAsync(() => {
-	// 	fixture.detectChanges();
-	// 	component.getPrivacyGuardOnPasswordCapabilityStatus();
-	// 	tick(10);
-	// 	const result = component.privacyGuardOnPasswordCapability;
-	// 	expect(result).toBe(true);
+	it('should call initEyeCareModeFromCache - else', () => {
+		component.initEyeCareModeFromCache()
+		expect(component.eyeCareModeCache.available).toEqual(false)
+	});
 
-	// }));
+	it('should throw error - initEyeCareModeFromCache', () => {
+		expect(component.initEyeCareModeFromCache).toThrow()
+	})
 
-	// it('should get the privacy guard on password capability status is false', fakeAsync(() => {
-	// 	displayServiceMock.getPrivacyGuardOnPasswordCapability.and.returnValue(Promise.resolve(false));
-	// 	fixture.detectChanges();
-	// 	component.getPrivacyGuardOnPasswordCapabilityStatus();
-	// 	tick(10);
-	// 	const result = component.privacyGuardOnPasswordCapability;
-	// 	expect(result).toBe(false);
-	// }));
+	it('should call initDisplayColorTempFromCache', () => {
+		let displayColorTempCache = {available: true}
+		let spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(displayColorTempCache)
+		component.initDisplayColorTempFromCache()
+		expect(spy).toHaveBeenCalled()
+	})
 
+	it('should call initDisplayColorTempFromCache - else', () => {
+		component.initDisplayColorTempFromCache()
+		expect(component.displayColorTempCache.available).toEqual(undefined)
+	});
 
-	// it('should get the privacy guard toggle status is true', fakeAsync((done) => {
-	// 	component.getPrivacyToggleStatusVal();
-	// 	fixture.detectChanges();
-	// 	tick(10);
-	// 	const result = component.privacyGuardToggleStatus;
-	// 	clearInterval(component.privacyGuardInterval);
-	// 	tick(10);
+	it('should call initDisplayColorTempFromCache - inner if', () => {
+		let displayColorTempCache = {available: false}
+		let spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(displayColorTempCache)
+		component.initDisplayColorTempFromCache()
+		expect(spy).toHaveBeenCalled()
+	})
 
-	// 	expect(result).toBe(true);
-	// 	done();
-	// }));
+	it('should throw error - initDisplayColorTempFromCache', () => {
+		expect(component.initDisplayColorTempFromCache).toThrow()
+	})
 
-	// it('should get the privacy guard toggle status is false', fakeAsync((done) => {
-	// 	displayServiceMock.getPrivacyGuardStatus.and.returnValue(Promise.resolve(false));
-	// 	component.getPrivacyToggleStatusVal();
-	// 	fixture.detectChanges();
+	it('should call initFeatures', () => {
+		let spy = spyOn(component, 'getPrivacyGuardCapabilityStatus')
+		component.initFeatures()
+		expect(spy).toHaveBeenCalled()
+	})
 
-	// 	tick(10);
-	// 	const result = component.privacyGuardToggleStatus;
-	// 	clearInterval(component.privacyGuardInterval);
-	// 	tick(10);
+	it('should call initFeatures - inner if', () => {
+		 let spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(1)
+		component.initFeatures()
+		expect(spy).toHaveBeenCalled()
+	})
 
-	// 	expect(result).toBe(false);
-	// 	done();
-	// }));
+	it('should call inWhiteList', () => {
+		let spy = spyOn(deviceService, 'getDeviceInfo').and.returnValue(Promise.resolve(vantageShellService.getDevice()))
+		component.inWhiteList()
+	})
 
-
-	// it('should get the privacy guard on password status is true', fakeAsync(() => {
-	// 	fixture.detectChanges();
-	// 	component.getPrivacyGuardOnPasswordCapabilityStatus();
-	// 	tick(10);
-	// 	const result = component.privacyGuardCheckBox;
-	// 	expect(result).toBe(true);
-
-	// }));
-
-	// it('should get the privacy guard on password status is false', fakeAsync(() => {
-	// 	displayServiceMock.getPrivacyGuardOnPasswordStatus.and.returnValue(Promise.resolve(false));
-	// 	fixture.detectChanges();
-	// 	component.getPrivacyGuardOnPasswordCapabilityStatus();
-	// 	tick(10);
-	// 	const result = component.privacyGuardCheckBox;
-	// 	expect(result).toBe(false);
-
-	// }));
-
-
-	// it('should set the privacy guard toggle status is true', fakeAsync(() => {
-	// 	fixture.detectChanges();
-	// 	component.setPrivacyGuardToggleStatus({ switchValue: true });
-	// 	tick(10);
-	// 	const result = component.isToggleResponse;
-	// 	expect(result).toBe(true);
-
-	// }));
-
-	// it('should set the privacy guard toggle status is false', fakeAsync(() => {
-	// 	displayServiceMock.setPrivacyGuardStatus.and.returnValue(Promise.resolve(false));
-	// 	component.setPrivacyGuardToggleStatus({ switchValue: false });
-	// 	fixture.detectChanges();
-
-	// 	tick(10);
-	// 	const result = component.isToggleResponse;
-	// 	expect(result).toBe(false);
-
-	// }));
-
-	// it('should set the privacy guard on password check box status is true', fakeAsync(() => {
-	// 	component.setPrivacyGuardOnPasswordStatusVal({ target: { checked: true } });
-	// 	component.privacyGuardCheckBox = true;
-	// 	fixture.detectChanges();
-
-	// 	tick(10);
-	// 	const result = component.isOnPswdStatus;
-	// 	expect(result).toBe(true);
-
-	// }));
-
-	// it('should set the privacy guard on password check box status is false', fakeAsync(() => {
-	// 	displayServiceMock.setPrivacyGuardOnPasswordStatus.and.returnValue(Promise.resolve(false));
-	// 	component.setPrivacyGuardOnPasswordStatusVal({ target: { checked: false } });
-	// 	component.privacyGuardCheckBox = false;
-	// 	fixture.detectChanges();
-
-	// 	tick(10);
-	// 	const result = component.isOnPswdStatus;
-	// 	expect(result).toBe(false);
-
-	// }));
+	
 });
 
-
-// /**
-//  * @param options pipeName which has to be mock
-//  * @description To mock the pipe.
-//  * @summary This has to move to one utils file.
-//  */
-// export function mockPipe(options: Pipe): Pipe {
-// 	const metadata: Pipe = {
-// 		name: options.name
-// 	};
-// 	return <any>Pipe(metadata)(class MockPipe {
-// 		public transform(query: string, ...args: any[]): any {
-// 			return query;
-// 		}
-// 	});
-// }
+/**
+ * @param options pipeName which has to be mock
+ * @description To mock the pipe.
+ * @summary This has to move to one utils file.
+ */
+export function mockPipe(options: Pipe): Pipe {
+	const metadata: Pipe = {
+		name: options.name
+	};
+	return <any>Pipe(metadata)(
+		class MockPipe {
+			public transform(query: string, ...args: any[]): any {
+				return query;
+			}
+		}
+	);
+}
