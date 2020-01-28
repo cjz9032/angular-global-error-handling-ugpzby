@@ -110,14 +110,14 @@
 	&__text-strong {
 		line-height: 3rem;
 		font-weight: bold;
-		font-size: 2.5rem;
+		font-size: $fontsize_xl;
 		color: #34495E;
 	}
 
 	&__title {
 		font-weight: 400;
 		color: #194A65;
-		font-size: 2.5rem;
+		font-size: $fontsize_xl;
 		line-height: 2.9rem;
 		margin: 0 0 1.6rem;
 	}
