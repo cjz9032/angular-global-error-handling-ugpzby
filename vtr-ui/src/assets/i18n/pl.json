@@ -80,14 +80,15 @@
                     "line1": "Dzięki opcji Vantage Edge ustawienia zostaną automatycznie dostrojone w zależności od sposobu użytkowania. \n Maksymalna wydajność podczas grania, dłuższa żywotność baterii, gdy nie grasz.",
                     "line2": "<b>Omówienie zarządzania funkcją</b> <br> Niektóre funkcje nie są dostępne na wszystkich urządzeniach",
                     "line3": "<b>Przetaktowywanie CPU </b><br> Zwiększ maksymalną prędkość procesora",
-                    "line4": "<b>Przetaktowywanie RAM </b><br> Zwiększ maksymalną prędkość pamięci",
+                    "line4": "<b>Przetaktowywanie pamięci RAM </b><br> Zwiększ maksymalną prędkość pamięci",
                     "line5": "<b>Wspomaganie sieci </b><br> Określ priorytety ruchu sieciowego dla odtwarzanej gry",
                     "line6": "<b>Dolby </b><br> Dostrój dźwięk specjalnie do gier z technologią Dolby",
                     "line7": "<b>Tryb hybrydowy </b><br> Wyłącz zaawansowane ustawienia GPU, gdy nie grasz, aby zwiększyć wydajność baterii",
                     "line8": "<b>Szybkie ładowanie </b><br> Graj dłużej dzięki szybszemu ładowaniu baterii",
                     "line9": "<b>Blokada panelu dotyk. </b><br> Zapobiegnij błędom sterowania, wyłączając panel dotykowy na czas grania",
                     "line10": "<b>Autozamykanie </b><br> Wyczyść procesy, które nie są potrzebne do grania przed rozpoczęciem gry, aby zmaksymalizować dostępne zasoby systemowe",
-                    "line11": "<b>Tryb term </b><br> Ustaw preferowany profil urządzenia dotyczący prędkości wentylatora i sterowania chłodzeniem."
+                    "line11": "<b>Tryb term </b><br> Ustaw preferowany profil urządzenia dotyczący prędkości wentylatora i sterowania chłodzeniem.",
+                    "line12": "<b>Klawisz makr</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Najedź kursorem myszy na CPU/GPU/RAM i różne dyski, aby wyświetlić ich opis wraz z informacjami o producencie i modelu"
@@ -1126,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Niepowodzenie: wystąpił nieoczekiwany błąd."
                         },
                         "popup": {
-                            "description1": "Proces resetowania wygląda następująco:<br> Całkowicie naładuj akumulator  -->  Całkowicie rozładuj akumulator  -->  Całkowicie naładuj akumulator",
+                            "description1": "Proces resetowania wygląda następująco:<br>Całkowicie naładuj akumulator --> Rozładuj akumulator do niskiego poziomu --> Naładuj akumulator do wysokiego poziomu lub całkowicie",
                             "description2": "Uwaga: <br>1. Ten proces może zająć wiele godzin. W tym czasie należy unikać używania komputera.<br>2. Zamknij wszystkie otwarte aplikacje i podłącz komputer do zasilania sieciowego.<br>3. Podczas tego procesu funkcja progu ładowania akumulatora jest wyłączona.",
                             "continue": "Kontynuuj",
                             "cancel": "Anuluj",
@@ -1336,7 +1337,8 @@
                         "note": {
                             "title": "Uwaga",
                             "description": "Aplikacja Lenovo Vantage musi uzyskać dostęp do informacji o lokalizacji w celu obliczenia czasu zachodu i wschodu słońca w Twoim regionie."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura barwowa ekranu",
@@ -3123,7 +3125,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",

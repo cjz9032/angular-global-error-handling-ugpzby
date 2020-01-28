@@ -10,13 +10,13 @@
 		</div>
 	</div>
 	<div class="content-block px-3">
-		<h1>Cancel the scan?</h1>
-		<p>If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan at any time.</p>
+		<h1>{{'smartPerformance.scanningPage.cancelScan.title' |translate }}</h1>
+		<p>{{'smartPerformance.scanningPage.cancelScan.description' |translate }}</p>
 		<hr>
 		<div class="row">
-			<button class="btn cancel-button">yes, cancel</button>
+			<button class="btn cancel-button" (click)="cancelScan()">{{'smartPerformance.scanningPage.cancelScan.yesButton' |translate }}</button>
 			<div class="py-5 ml-5">
-				<a (click)="closeModal()" class="resume-scan">no, resume scan</a>
+				<a (click)="closeModal()" class="resume-scan">{{'smartPerformance.scanningPage.cancelScan.noButton' |translate }}</a>
 			</div>
 		</div>
 	</div>

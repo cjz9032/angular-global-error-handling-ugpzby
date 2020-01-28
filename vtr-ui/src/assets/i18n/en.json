@@ -87,15 +87,16 @@
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
                     "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
-                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
+                    "line3": "<b>CPU/GPU Overclock</b><br> Boost the maximum speed for your processor",
+                    "line4": "<b>RAM Overclock </b><br> Boost the maximum speed for your memory",
                     "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
                     "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
                     "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
                     "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
                     "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
                     "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control",
+					"line12": "<b>Macro key </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
@@ -1338,7 +1339,8 @@
                         "note": {
                             "title": "Note",
                             "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
-                        }
+                        },
+						"tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "oledPowerSettings": {
                         "title": "OLED Power Settings",
@@ -2086,7 +2088,7 @@
             "complete": "complete",
             "cancelScan": {
                 "button": "CANCEL SCAN",
-                "title": "Cacel the scan?",
+                "title": "Cancel the scan?",
                 "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
                 "yesButton": "YES, CANCEL",
                 "noButton": "NO, RESUME SCAN"
@@ -2108,6 +2110,9 @@
             "signupRepairButton": "SIGN UP & REPAIR NOW",
             "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
             "issueCount": "{{individualIssueCount}} ISSUES",
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
             "scannedAreas": "SCANNED AREAS",
             "recommendedAction": {
                 "title": "RECOMMENDED ACTION",
@@ -2116,7 +2121,21 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tunepc":{
+                "accumulatedjunkscannedareas":{
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",

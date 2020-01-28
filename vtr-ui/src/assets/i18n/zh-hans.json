@@ -90,7 +90,8 @@
                     "line8": "<b>快速充电 </b><br> 电池充电速度提高，随时随地畅玩游戏的时间随之增多",
                     "line9": "<b>触摸板锁定 </b><br> 在游戏时禁用触摸板，防止错误输入",
                     "line10": "<b>自动关闭 </b><br> 在畅玩游戏之前清理与游戏无关的进程，从而最大限度地利用可用的系统资源",
-                    "line11": "<b>散热模式 </b><br> 设置风扇速度和冷却控制的首选设备配置文件"
+                    "line11": "<b>散热模式 </b><br> 设置风扇速度和冷却控制的首选设备配置文件",
+                    "line12": "<b>宏键 </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "将鼠标悬停在 CPU/GPU/RAM 和不同的驱动器上以显示其描述（包括制造和型号信息）"
@@ -1126,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "失败：发生意外错误。"
                         },
                         "popup": {
-                            "description1": "重置过程如下：<br>为电池充满电  -->  将电池完全放电  -->  重新为电池充满电",
+                            "description1": "重置过程如下：<br>为电池充满电 --> 将电池放电至电量不足 --> 重新为电池充电至电量充足或完全充满电",
                             "description2": "注意：<br>1. 此过程可能耗时数小时。在此期间，请不要使用计算机。<br>2. 关闭所有打开的应用程序，然后将计算机连接到交流电源。<br>3. 在此过程中，将禁用电池充电阈值功能。",
                             "continue": "继续",
                             "cancel": "取消",
@@ -1336,7 +1337,8 @@
                         "note": {
                             "title": "注",
                             "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "oledPowerSettings": {
                         "title": "OLED 电源设置",
@@ -3123,7 +3125,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",

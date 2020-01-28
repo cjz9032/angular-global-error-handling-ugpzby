@@ -92,7 +92,8 @@
                     "line8": "<b>الشحن السريع</b><br> الاستمتاع بممارسة الألعاب أثناء التنقل لفترة أطول بفضل الشحن السريع للبطارية",
                     "line9": "<b>قفل لوحه اللمس</b><br> منع الإدخالات الخاطئة من خلال تعطيل لوحة اللمس أثناء اللعب",
                     "line10": "<b>إغلاق تلقائي</b><br> مسح العمليات غير اللازمة للألعاب قبل البدء في اللعب لزيادة موارد النظام المتاحة إلى أقصى حد",
-                    "line11": "<b>الوضع الحراري</b><br> تعيين ملف تعريف الجهاز المفضل لسرعة المروحة والتحكم في التبريد"
+                    "line11": "<b>الوضع الحراري</b><br> تعيين ملف تعريف الجهاز المفضل لسرعة المروحة والتحكم في التبريد",
+                    "line12": "<b>مفتاح الماكرو </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "قم بتمرير الماوس فوق CPU/GPU/RAM ومحركات الأقراص المختلفة لإظهار أوصافها بما في ذلك معلومات التصنيع والطراز"
@@ -1128,7 +1129,7 @@
                             "ERROR_UNEXPECTED": "فشل: حدث خطأ غير متوقع."
                         },
                         "popup": {
-                            "description1": "تتم عملية إعادة التعيين على الشكل التالي:<br>شحن البطارية بشكل كامل  -->  إفراغ البطارية بشكل كامل  -->  إعادة شحن البطارية بشكل كامل",
+                            "description1": "تتم عملية إعادة التعيين على الشكل التالي:<br>شحن البطارية بشكل كامل --> إفراغ البطارية إلى طاقة البطارية منخفضة‬‏--> إعادة شحن البطارية إلى طاقة البطارية العالية أو بشكل كامل",
                             "description2": "ملاحظات: <br>1. قد تستغرق العملية عدة ساعات. يرجى تجنب استخدام الكمبيوتر خلال هذه الفترة.<br>2. أغلق جميع التطبيقات المفتوحة وقم بتوصيل الكمبيوتر بطاقة التيار المتردد.<br>3. أثناء العملية، يتم تعطيل وظيفة حد شحن البطارية.",
                             "continue": "استمر",
                             "cancel": "إلغاء",
@@ -1338,7 +1339,8 @@
                         "note": {
                             "title": "ملحوظة",
                             "description": "يحتاج Lenovo Vantage إلى الوصول إلى معلومات موقعك لحساب وقت الغروب وشروق الشمس في منطقتك."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "درجة حرارة ألوان جهاز العرض",
@@ -3125,7 +3127,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",

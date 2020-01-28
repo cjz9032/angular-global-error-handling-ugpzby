@@ -62,6 +62,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	private topRowFunctionsIdeapadSubscription: Subscription;
 	backlightCapability$: Observable<boolean>;
 	public fnCtrlKeyTooltipContent = [];
+	public isKbdBacklightAvailable = true;
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -468,6 +469,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				this.logger.error('SubpageDeviceSettingsInputAccessoryComponent: error in getMouseAndTouchPadCapability.Promise.all()', error);
 			});
 		}
+	}
+
+	public showHideKeyboardBacklight(available: any) {
+		this.isKbdBacklightAvailable = available;
 	}
 
 	ngOnDestroy(): void {

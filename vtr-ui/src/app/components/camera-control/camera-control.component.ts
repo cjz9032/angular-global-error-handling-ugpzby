@@ -35,18 +35,23 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private DeviceClass: any;
 	private oMediaCapture: any;
 	private visibilityChange: any;
+	private orientationChanged: any;
+	private cameraStreamStateChanged: any;
 
 	public cameraErrorTitle: string;
 	public cameraErrorDescription: string;
 	public isCameraInErrorState = false;
+	private isCameraInitialized = false;
 
 	@ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
 		// when camera preview video element is visible then start camera feed
 		this.cameraPreview = content;
-		if (content && !this.cameraDetail.isPrivacyModeEnabled) {
-			this.initializeCameraAsync();
-		} else {
-			this.cleanupCameraAsync();
+		if (!this.isCameraInitialized) {
+			if (content && !this.cameraDetail.isPrivacyModeEnabled) {
+				this.initializeCameraAsync();
+			} else {
+				this.cleanupCameraAsync();
+			}
 		}
 	}
 
@@ -71,6 +76,15 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		this.visibilityChange = this.onVisibilityChanged.bind(this);
 		document.addEventListener('visibilitychange', this.visibilityChange);
 		//#endregion
+
+		//#region hook up orientation change event
+		if (this.Windows) {
+			this.orientationChanged = this.onOrientationChanged.bind(this);
+			this.Windows.Graphics.Display.DisplayInformation.addEventListener('orientationchanged', this.orientationChanged);
+			this.cameraStreamStateChanged = this.onCameraStreamStateChanged.bind(this);
+			this.oMediaCapture.addEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
+		}
+		//#endregion
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			(cameraDetail: CameraDetail) => {
 				this.cameraDetail = cameraDetail;
@@ -85,8 +99,16 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
-		this.cleanupCameraAsync();
 		document.removeEventListener('visibilitychange', this.visibilityChange);
+		//#region unregister orientation change event
+		if (this.Windows) {
+			this.Windows.Graphics.Display.DisplayInformation.removeEventListener('orientationchanged', this.orientationChanged);
+		}
+		if (this.oMediaCapture) {
+			this.oMediaCapture.removeEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
+		}
+		//#endregion
+		this.cleanupCameraAsync();
 	}
 
 	findCameraDeviceByPanelAsync(panel) {
@@ -164,11 +186,13 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					return self.oMediaCapture.initializeAsync(settings);
 
 				}, (error) => {
+					this.isCameraInitialized = false;
 					console.log('findCameraDeviceByPanelAsync error', error.message);
 					this.ngZone.run(() => {
 						this.disabledAll = true;
 					});
 				}).then(() => {
+					this.isCameraInitialized = true;
 					return self.startPreviewAsync();
 				}).done();
 		} catch (error) {
@@ -197,6 +221,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	cleanupCameraAsync() {
+		this.isCameraInitialized = false;
 		console.log('cleanupCameraAsync');
 		this.stopPreview();
 
@@ -210,8 +235,18 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (document.hidden) {
 			this.cleanupCameraAsync();
 		} else {
-			this.initializeCameraAsync();
+			if (!this.isCameraInitialized) {
+				this.initializeCameraAsync();
+			}
 		}
+	}
+
+	onOrientationChanged(eventArgs) {
+		this.logger.info('CameraControlComponent.onOrientationChanged', eventArgs);
+	}
+
+	onCameraStreamStateChanged(eventArgs) {
+		this.logger.info('CameraControlComponent.onCameraStreamStateChanged', eventArgs);
 	}
 
 	public onAutoExposureChange($event: any) {

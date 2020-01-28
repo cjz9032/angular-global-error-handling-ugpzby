@@ -61,10 +61,10 @@ describe('ModalSmartStandByComponent', () => {
 			const fixture = TestBed.createComponent(ModalSmartStandByComponent);
 			const component = fixture.debugElement.componentInstance;
 			const powerService = fixture.debugElement.injector.get(PowerService);
-
+			const activeModal = fixture.debugElement.injector.get(NgbActiveModal)
 			const httpTestingController = fixture.debugElement.injector.get(HttpTestingController);
 
-			return { fixture, component, powerService, httpTestingController };
+			return { fixture, component, powerService, httpTestingController, activeModal };
 		}
 
 		it('should create the app', (() => {
@@ -77,7 +77,7 @@ describe('ModalSmartStandByComponent', () => {
 			spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
 			spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
 
-			component.getActiviesData();
+			component['getActivitiesData']();
 			fixture.detectChanges();
 
 			expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
@@ -112,24 +112,29 @@ describe('ModalSmartStandByComponent', () => {
 			expect(excp).toThrowError(TypeError);
 		}));
 
-
+		it('should call closeModal', () => {
+			const { component, activeModal } = setup();
+			let spy = spyOn(activeModal, 'close')
+			component.closeModal()
+			expect(spy).toHaveBeenCalled()
+		})
 
 
 		// testing http.get
-		it('should call getActivities', (() => {
-			const { fixture, component, httpTestingController } = setup();
-			const mockActivities = activities;
+		// it('should call getActivities', (() => {
+		// 	const { fixture, component, httpTestingController } = setup();
+		// 	const mockActivities = activities;
 
-			component.getActivities().subscribe(data => {
-				expect(data).toEqual(mockActivities);
-			});
+		// 	component['getActivities']().subscribe(data => {
+		// 		expect(data).toEqual(mockActivities);
+		// 	});
 
-			const req = httpTestingController.expectOne('/assets/activities.json');
+		// 	const req = httpTestingController.expectOne('/assets/activities.json');
 
-			expect(req.request.method).toBe('GET');
+		// 	expect(req.request.method).toBe('GET');
 
-			req.flush(mockActivities);
-		}));
+		// 	req.flush(mockActivities);
+		// }));
 
 		afterEach(() => {
 			const { httpTestingController } = setup();

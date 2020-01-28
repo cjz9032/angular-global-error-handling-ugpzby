@@ -1078,7 +1078,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				if (this.batteryService.remainingPercentages[0] && this.thresholdInfo[0].batteryNum === 1 ) {
 					this.showBCTWarningNote = this.batteryService.remainingPercentages[0] > this.thresholdInfo[0].stopValue;
 				}
-				if (this.batteryService.remainingPercentages[1] && this.thresholdInfo[0].batteryNum === 2 ) {
+				if (this.batteryService.remainingPercentages.length > 1 && this.batteryService.remainingPercentages[1]
+					&& this.thresholdInfo[0].batteryNum === 2 ) {
 					this.showBCTWarningNote = this.batteryService.remainingPercentages[1] > this.thresholdInfo[0].stopValue;
 				}
 			} else {
@@ -1098,14 +1099,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			let count = 0;
 			thresholdInfo.forEach((battery) => {
 				bctCapability = bctCapability || battery.isCapable;
-				bctStatus = bctStatus || battery.isOn;
+				bctStatus = bctStatus || battery.isEnabled;
 
 				const startValue = battery.startValue - (battery.startValue % 5);
 				let stopValue = battery.stopValue - (battery.stopValue % 5);
-				if (battery.startValue !== startValue || battery.stopValue !== battery.stopValue) {
-					if (startValue === stopValue) {
-						stopValue = stopValue + 5;
-					}
+				if (startValue === stopValue) {
+					stopValue = stopValue + 5;
+				}
+				if (battery.startValue !== startValue || battery.stopValue !== stopValue) {
 					battery.startValue = startValue;
 					battery.stopValue = stopValue;
 					this.onBCTInfoChange(battery, count);
@@ -1145,7 +1146,16 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (event) {
 			let count = 0;
 			this.thresholdInfo.forEach(battery => {
-				battery.isOn = event;
+				battery.isEnabled = event;
+				const startValue = battery.startValue - (battery.startValue % 5);
+				let stopValue = battery.stopValue - (battery.stopValue % 5);
+				if (battery.startValue !== startValue || battery.stopValue !== battery.stopValue) {
+					if (startValue === stopValue) {
+						stopValue = stopValue + 5;
+					}
+					battery.startValue = startValue;
+					battery.stopValue = stopValue;
+				}
 				this.onBCTInfoChange(battery, count);
 				count++;
 			});
@@ -1191,7 +1201,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.chargeThresholdStatus = false;
 					this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.chargeThresholdStatus);
 					this.thresholdInfo.forEach(battery => {
-						battery.isOn = event;
+						battery.isEnabled = event;
 					});
 					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.thresholdInfo);
 				}

@@ -1,5 +1,7 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, EventEmitter, Output } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'vtr-modal-smart-performance-cancel',
@@ -7,8 +9,10 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./modal-smart-performance-cancel.component.scss']
 })
 export class ModalSmartPerformanceCancelComponent implements OnInit {
-
-  constructor(public activeModal: NgbActiveModal) { }
+  //@Output() stopScanning = new EventEmitter();
+  constructor(public activeModal: NgbActiveModal, 
+    public smartPerformanceService: SmartPerformanceService, 
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -19,5 +23,31 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
   onFocus(): void {
   const modal = document.querySelector('.cancel-modal') as HTMLElement;
 		modal.focus();
+  }
+  cancelScan()
+  {
+    if (this.smartPerformanceService.isShellAvailable) {
+      this.smartPerformanceService
+        .cancelScan()
+        .then((cancelScanFromService: any) => {
+          console.log('getReadiness.then', cancelScanFromService);
+          if(cancelScanFromService){
+            //this.router.navigate(['support/smart-performance']);
+            //this.stopScanning.emit();
+            console.log("Routed");
+            this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['support/smart-performance']));
+          }
+          else{
+            //this.isScanning = false;
+          }
+        })
+        .catch(error => {
+         
+        });
+    }
+    else {
+      console.log("Shell is not available");
+    }  
+    this.activeModal.close('close');
   }
 }

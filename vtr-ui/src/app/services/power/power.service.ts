@@ -533,7 +533,7 @@ export class PowerService {
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setChargeThresholdValue(
-					value.batteryNum, value.startValue, value.stopValue, value.checkBoxValue
+					value.batteryNum, value.startValue, value.stopValue, value.checkboxValue
 				);
 			}
 			return undefined;
@@ -547,7 +547,7 @@ export class PowerService {
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(
-					value.batteryNum, value.startValue, value.stopValue, value.checkBoxValue
+					value.batteryNum, value.startValue, value.stopValue, value.checkboxValue
 				);
 			}
 			return undefined;

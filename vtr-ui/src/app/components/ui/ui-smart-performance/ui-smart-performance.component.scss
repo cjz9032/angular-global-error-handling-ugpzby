@@ -18,6 +18,18 @@
 			&.px-10{
 				padding-left: 10rem;
 				padding-right: 10rem;
+				// @media #{$breakpoint_sm}{
+				// 	padding-left: 0rem;
+				// 	padding-right: 0rem;
+				// }
+				// @media #{$breakpoint_md}{
+				// 	padding-left: 0rem;
+				// 	padding-right: 0rem;
+				// }
+				@media #{$breakpoint_lg}{
+					padding-left: 3rem;
+					padding-right: 3rem;
+				}
 			}
 			h1 {
 				color: $light;
@@ -179,8 +191,8 @@
 				font-weight: bold;
 			  }
 			.smart-features{
-				padding-left: 6rem;
-				padding-right: 6rem;
+				// padding-left: 6rem;
+				// padding-right: 6rem;
 				.title{
 					font-weight: $weight_bold;
 					font-size: $fontsize_sm;
@@ -203,6 +215,9 @@
 						width: 1px;
 						height: 100%;
 						background: $screen_dark_10;
+						@media #{$breakpoint_sm} {
+							display: none;
+						}
 					}
 					&:last-child{
 						&::after {
@@ -238,6 +253,10 @@
 							font-size: 2.6rem;
 							margin-right: 0.8rem;
 							color: $menu_hover;
+							@media #{$breakpoint_xl} {
+								font-size: $fontsize_xl;
+								margin-right: 0.5rem;
+							}
 						}
 						p {
 							font-size: 1.1rem;
@@ -246,6 +265,18 @@
 							margin-top: 0.6rem;
 							line-height: 1.6rem;
 							color: #272A3B;
+							@media #{$breakpoint_xl} {
+								font-size: 1rem;
+							}
+							@media #{$breakpoint_lg} {
+								font-size: 1.1rem;
+							}
+							@media #{$breakpoint_md} {
+								text-align: center;
+							}
+						}
+						@media #{$breakpoint_md} {
+							flex-direction: column;
 						}
 					}
 				}
@@ -298,11 +329,14 @@
 				display: flex;
 				justify-content: center;
 				width: 100%;
+				@media #{$breakpoint_sm} {
+					flex-direction: column-reverse;
+				}
 				.action-button {
 					border-radius: 2.5rem;
 					background: $gradient_main;
 					text-transform: uppercase;
-					padding: 0 5rem;
+					padding: 0;
 					color: $light;
 					font-size: 1.5rem;
 					height: 5rem;
@@ -315,6 +349,10 @@
 				}
 				.description {
 					max-width: 40rem;
+					@media #{$breakpoint_sm} {
+						max-width: 100%;
+						text-align: center;
+					}
 					p {
 						strong {
 							font-weight: $weight_bold;
