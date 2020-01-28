@@ -53,11 +53,6 @@ import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-se
 import { CommonModalModule } from '../common/common-modal.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
-//cpt
-import { CptpageDeviceSettingsComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-device-settings/cptpage-device-settings.component';
-import { CptpageMyDeviceComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-my-device/cptpage-my-device.component';
-import { CptpageDashboardComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-dashboard/cptpage-dashboard.component';
-
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
@@ -98,6 +93,18 @@ import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-gra
 import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.component';
 import { BacklightModule } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.module';
 import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight-thinkpad/backlight-thinkpad.component';
+
+//cpt
+import { CptpageDeviceSettingsComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-device-settings/cptpage-device-settings.component';
+import { CptpageMyDeviceComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-my-device/cptpage-my-device.component';
+import { CptpageDashboardComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-dashboard/cptpage-dashboard.component';
+import { CptpageDeviceUpdatesComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-device-updates/cptpage-device-updates.component';
+import { CptpageSmartAssistComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-smart-assist/cptpage-smart-assist.component';
+import { CptpageSecurityComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security/cptpage-security.component';
+import { CptpageSecurityAntivirusComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-antivirus/cptpage-security-antivirus.component';
+import { CptpageSecurityPasswordComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-password/cptpage-security-password.component';
+import { CptpageSecurityWifiComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-wifi/cptpage-security-wifi.component';
+import { CptpageSecurityInternetComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-internet/cptpage-security-internet.component';
 
 
 @NgModule({
@@ -142,6 +149,13 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 		CptpageDeviceSettingsComponent,
 		CptpageMyDeviceComponent,
 		CptpageDashboardComponent,
+		CptpageDeviceUpdatesComponent,
+		CptpageSmartAssistComponent,
+		CptpageSecurityComponent,
+		CptpageSecurityAntivirusComponent,
+		CptpageSecurityPasswordComponent,
+		CptpageSecurityWifiComponent,
+		CptpageSecurityInternetComponent,
 
 		BacklightThinkpadComponent
 	],

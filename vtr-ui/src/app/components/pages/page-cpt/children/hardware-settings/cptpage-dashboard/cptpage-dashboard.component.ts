@@ -17,7 +17,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './cptpage-dashboard.component.html',
   styleUrls: ['./cptpage-dashboard.component.scss']
 })
-export class CptpageDashboardComponent implements OnInit {
+export class CptpageDashboardComponent implements OnInit, OnDestroy {
   title = 'Dashboard';
   offlineConnection = 'offline-connection';
 	public isOnline = true;

@@ -83,8 +83,10 @@
                                     <div class="col-sm-9">
                                         <select name="page" class="form-control" id="page" formControlName="page"
                                             required>
-                                            <option *ngFor="let page of serverSwitchData.pageList" [ngValue]="page">
-                                                {{page.label}}</option>
+                                            <optgroup *ngFor="let pg of serverSwitchData.pageList" label="{{pg.optgroup}}">
+                                                <option *ngFor="let page of pg.opt" [ngValue]="page">
+                                                    {{page.label}}</option>
+                                            </optgroup>
                                         </select>
                                     </div>
                                 </div>

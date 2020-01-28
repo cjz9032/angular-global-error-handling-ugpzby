@@ -11,6 +11,13 @@ import { isNull, isUndefined } from 'util';
 import { CptpageDeviceSettingsComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-device-settings/cptpage-device-settings.component';
 import { CptpageMyDeviceComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-my-device/cptpage-my-device.component';
 import { CptpageDashboardComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-dashboard/cptpage-dashboard.component';
+import { CptpageDeviceUpdatesComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-device-updates/cptpage-device-updates.component';
+import { CptpageSmartAssistComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-smart-assist/cptpage-smart-assist.component';
+import { CptpageSecurityComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security/cptpage-security.component';
+import { CptpageSecurityAntivirusComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-antivirus/cptpage-security-antivirus.component';
+import { CptpageSecurityPasswordComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-password/cptpage-security-password.component';
+import { CptpageSecurityWifiComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-wifi/cptpage-security-wifi.component';
+import { CptpageSecurityInternetComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-internet/cptpage-security-internet.component';
 
 
 declare let JSONEditor: any;
@@ -21,7 +28,10 @@ declare let ClipboardJS: any;
   templateUrl: './page-cpt.component.html',
   styleUrls: ['./page-cpt.component.scss'],
   //add components within array
-  entryComponents: [CptpageMyDeviceComponent, CptpageDeviceSettingsComponent, CptpageDashboardComponent]
+  entryComponents: [CptpageMyDeviceComponent, CptpageDeviceSettingsComponent, CptpageDashboardComponent, CptpageDeviceUpdatesComponent
+    , CptpageSmartAssistComponent, CptpageSecurityComponent, CptpageSecurityAntivirusComponent,CptpageSecurityPasswordComponent
+    , CptpageSecurityWifiComponent, CptpageSecurityInternetComponent
+  ]
 })
 export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
   title = 'Content Preview Tool';
@@ -50,7 +60,7 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
   editor: any;
   clipboard: any;
 
-  constructor(public commonService: CommonService, private translate: TranslateService, private cfr: ComponentFactoryResolver) { 
+  constructor(public commonService: CommonService, private translate: TranslateService, private cfr: ComponentFactoryResolver) {
     this.loadDynamicStyle();
     this.loadDynamicScripts();
   }
@@ -65,7 +75,7 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
       cmsserver: new FormControl(this.serverSwitchData.serverList[1], Validators.required),
       oem: new FormControl(this.serverSwitchData.oemList[0], Validators.required),
       brand: new FormControl(this.serverSwitchData.brandList[0], Validators.required),
-      page: new FormControl(this.serverSwitchData.pageList[0], Validators.required),
+      page: new FormControl(this.serverSwitchData.pageList[0]['opt'][0], Validators.required),
       showeditor: new FormControl(true),
     });
 
@@ -185,12 +195,12 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
     };
 
     //jsonEditor 
-    if(!this.editor){
-      this.editor = new JSONEditor(document.getElementById('jeditor'),{mode:'view'},{});
+    if (!this.editor) {
+      this.editor = new JSONEditor(document.getElementById('jeditor'), { mode: 'view' }, {});
     }
-    
+
     //copyClipboard
-    if(!this.clipboard){
+    if (!this.clipboard) {
       this.clipboard = new ClipboardJS('.btnCopy');
     }
 
@@ -276,19 +286,188 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         );
 
         break;
-        default: 
-          this.serverSwitchResponse.fullcmsserver = '';
-          this.serverSwitchResponse.jsonresponse = {'error':'Work in progress.'};
-          this.editor.set(this.serverSwitchResponse.jsonresponse);
-          this.serverSwitchResponse.isloading = false;
+      //Page System Update
+      case 'vtr-page-device-updates':
+        factory = this.cfr.resolveComponentFactory(CptpageDeviceUpdatesComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageDeviceUpdatesComponent>componentRef.instance);
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'system-updates'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+          }
+        );
+
+        break;
+      //Page Smart Assist
+      case 'vtr-page-smart-assist':
+        factory = this.cfr.resolveComponentFactory(CptpageSmartAssistComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageSmartAssistComponent>componentRef.instance);
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'device-settings'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+          }
+        );
+
+        break;
+      //Page My Security
+      case 'vtr-page-security':
+        factory = this.cfr.resolveComponentFactory(CptpageSecurityComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageSecurityComponent>componentRef.instance);
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'security'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+          }
+        );
+
+        break;
+      //Page Anti-Virus
+      case 'vtr-page-security-antivirus':
+        factory = this.cfr.resolveComponentFactory(CptpageSecurityAntivirusComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageSecurityAntivirusComponent>componentRef.instance);
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'anti-virus',
+              Template: 'inner-page-right-side-article-image-background'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+          }
+        );
+
+        break;
+      //Page Password Health
+      case 'vtr-page-security-password':
+        factory = this.cfr.resolveComponentFactory(CptpageSecurityPasswordComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageSecurityPasswordComponent>componentRef.instance);
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'password-protection'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+          }
+        );
+
+        break;
+      //Page WiFi Security
+      case 'vtr-page-security-wifi':
+        factory = this.cfr.resolveComponentFactory(CptpageSecurityWifiComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageSecurityWifiComponent>componentRef.instance);
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'wifi-security'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+          }
+        );
+
+        break;  
+      //Page Internet Protection
+      case 'vtr-page-security-internet':
+        factory = this.cfr.resolveComponentFactory(CptpageSecurityInternetComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageSecurityInternetComponent>componentRef.instance);
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'internet-protection'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+          }
+        );
+
+        break;      
+      default:
+        this.serverSwitchResponse.fullcmsserver = '';
+        this.serverSwitchResponse.jsonresponse = { 'error': 'Work in progress.' };
+        this.editor.set(this.serverSwitchResponse.jsonresponse);
+        this.serverSwitchResponse.isloading = false;
         break;
     }
   }
 
-  parseCMSUrl(defaultsURLParm, queryParams, cmsserver) {
+  parseCMSUrl(defaultsURLParm, queryParams, cmsserver, isArticle = false) {
 
     let CMSOption = Object.assign(defaultsURLParm, queryParams);
-    let fullcmsserver = cmsserver + '/api/v1/features';
+    let fullcmsserver = cmsserver + '/api/v1/' + (!isArticle ? 'features' : 'articles');
     let c = 0;
     for (let x in CMSOption) {
       fullcmsserver += (c == 0 ? '?' : '&') + x + '=' + CMSOption[x];
@@ -300,8 +479,8 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
 
   loadDynamicScripts() {
     const dynamicScripts = [
-     'https://cdn.jsdelivr.net/npm/jsoneditor@8.4.1/dist/jsoneditor.min.js',
-     'https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js'
+      'https://cdn.jsdelivr.net/npm/jsoneditor@8.4.1/dist/jsoneditor.min.js',
+      'https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js'
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('script');
@@ -315,7 +494,7 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
 
   loadDynamicStyle() {
     const dynamicScripts = [
-     'https://cdn.jsdelivr.net/npm/jsoneditor@8.4.1/dist/jsoneditor.min.css'
+      'https://cdn.jsdelivr.net/npm/jsoneditor@8.4.1/dist/jsoneditor.min.css'
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('link');
