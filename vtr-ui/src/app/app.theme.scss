@@ -9,10 +9,17 @@ $main_light: #5086cb;
 $main_lighter: #b5d0f4;
 $main_lightest: #eaf2fd;
 $menu_hover: #4a81fd;
-
+//new added styles
+$gaming_bg: #11192c;// as per zeyu specs
+$gaming-Darkslate-blue: #233043; //new code #222D45;//old --code #233043 changed by Ram according to Hongjuan
+$darkPopup: #293757;
+$white5:rgba(251,253,255,0.05);
+$white100:rgba(251,253,255,1);
+$white60:rgba(251,253,255,0.6);
+//
 $dark_cell: linear-gradient(0deg, #2e4255, #293c4f);
 $dark_popup_cell: linear-gradient(0deg, #435064, #3d4c5c);
-$gaming_bg: #11192c;// as per zeyu specs
+
 $gaming_darkest: #1f2a42;
 $gaming_darker: #253048;
 $gaming_dark: #293c4f;
@@ -28,7 +35,6 @@ $gaming_green_gradient: linear-gradient(90deg, #2fcc74, #33dfa6);
 $gaming_switch_light: #f2f2f2;
 $gaming_switch_dark: #6d6d6d;
 $gaming-slate-blue: #30415a;
-$gaming-Darkslate-blue: #233043; //new code #222D45;//old --code #233043 changed by Ram according to Hongjuan
 $gaming_blue_grey_light: #425067;
 $gaming_grey_lightest: #aab0bc;
 $gaming_hover: #545f76;

@@ -332,7 +332,7 @@
 															}
 														}
 														label {
-															color: $gaming_grey_lightest;
+															color: $white100;
 															margin-left: 0.8rem;
 														}
 													}
@@ -389,6 +389,9 @@
 												.row {
 													.label-text {
 														color: $gaming_lightest;
+													}
+													.label-value {
+														color: $gaming_grey_lightest;
 													}
 												}
 											}
