@@ -983,7 +983,7 @@ export class VantageShellService {
 	public getMicrophoneSettings(): any {
 		const microphone: any = {};
 		const micSupportedModes: any = {
-			current: 'MultipleVoices',
+			currentMode: 'MultipleVoices',
 			modes: ['VoiceRecognition', 'OnlyMyVoice', 'Normal', 'MultipleVoices']
 		};
 
@@ -1008,6 +1008,10 @@ export class VantageShellService {
 		microphone.setMicrophoneOpitimaztion = this.getPromise(true);
 		microphone.startMonitor = this.getPromise(true);
 		microphone.stopMonitor = this.getPromise(true);
+		microphone.getMicrophoneSettingsAsync = (handler) => {
+			this.getPromise(true);
+			handler(micSupportedModes);
+		};
 
 		return microphone;
 	}
