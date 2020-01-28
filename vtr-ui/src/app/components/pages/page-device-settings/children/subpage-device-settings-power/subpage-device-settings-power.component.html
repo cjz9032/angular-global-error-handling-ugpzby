@@ -98,7 +98,7 @@
 									[showLoaderState]="false"
 									[switchId]="'ds-power-battery-expressCharging'"
 									[label]="'rapid charging, toggle button'"
-									(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
+									(toggleOnOff)="changeBatteryMode('expressCharging')">
 								</vtr-ui-row-switch>
 							</li>
 							<li class=""
@@ -115,7 +115,7 @@
 									[disabled]="conservationModeLock"
 									[showLoaderState]="false"
 									[switchId]="'ds-power-battery-conservationMode'"
-									(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
+									(toggleOnOff)="changeBatteryMode('conservationMode')">
 								</vtr-ui-row-switch>
 							</li>
 
@@ -149,7 +149,7 @@
 									[isSwitchChecked]="toggleAirplanePowerModeFlag"
 									[showChildContent]=true
 									[switchId]="'ds-power-battery-airplane'"
-									(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
+									(toggleOnOff)="onToggleOfAirplanePowerMode($event.switchValue)">
 									<div class="row">
 										<div class="col px-5">
 											<div class="auto-set-checkbox custom-checkbox-gaming"
@@ -197,7 +197,7 @@
 									[rightIcon]="['far', 'question-circle']"
 									[tooltipText]="'device.deviceSettings.power.powerSettings.flipToBoot.tooltip' | translate"
 									[switchId]="'ds-power-flipToBoot'"
-									(toggleOnOff)="onToggleOfFlipToBoot($event)">
+									(toggleOnOff)="onToggleOfFlipToBoot($event.switchValue)">
 								</vtr-ui-row-switch>
 							</li>
 							<li class=""
@@ -214,7 +214,7 @@
 									[showChildContent]="true"
 									[tooltipText]=""
 									[switchId]="'ds-power-alwaysUSB'"
-									(toggleOnOff)="onToggleOfAlwaysOnUsb($event)">
+									(toggleOnOff)="onToggleOfAlwaysOnUsb($event.switchValue)">
 									<div class="row">
 										<div class="col-auto justify-content-start align-items-center pr-2">
 											<i class="icomoon icomoon-LE-Charging-USB2x"></i>
@@ -265,7 +265,7 @@
 									[rightIcon]="['far', 'question-circle']"
 									[tooltipText]="'device.deviceSettings.power.powerSettings.easyResume.tooltip' | translate"
 									[switchId]="'ds-power-easyResume'"
-									(toggleOnOff)="onToggleOfEasyResume($event)">
+									(toggleOnOff)="onToggleOfEasyResume($event.switchValue)">
 								</vtr-ui-row-switch>
 							</li>
 						</ul>
@@ -298,7 +298,7 @@
 									[leftIcon]="['fal', 'thumbtack']"
 									[isSwitchChecked]="vantageToolbarStatus.status"
 									[switchId]="'ds-power-otherSettings-toolBar'"
-									(toggleOnOff)="onVantageToolBarStatusToggle($event)">
+									(toggleOnOff)="onVantageToolBarStatusToggle($event.switchValue)">
 								</vtr-ui-row-switch>
 							</li>
 						</ul>

@@ -94,8 +94,8 @@
 			}
 		}
 		.progress-div {
-			padding-left: 5rem;
-			padding-right: 5rem;
+			align-items: flex-end;
+			padding:0rem 2.4rem;
 			.progress-percent-text {
 				color: $light;
 				font-size: 2.5rem;
@@ -118,7 +118,7 @@
 					font-size: 1.4rem;
 					font-weight: $weight_light;
 					line-height: 2.9rem;
-					padding-right: 0rem;
+					padding-right: 1rem;
 					padding-left: 0;
 					text-align: left;
 				}

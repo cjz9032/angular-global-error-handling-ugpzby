@@ -5,11 +5,19 @@
                 <div class="row">
                     <div class="col title">{{title}}</div>
                 </div>
-                <div class="row" *ngIf="showProgress && !isScanOrRBSFinished()">
-                    <div class="col row1">{{subTitle}}</div>
-                </div>
-                <div class="row" *ngIf="showProgress && !isScanOrRBSFinished()">
-                    <div class="col row1">{{warningMessage}}</div>
+                <div class="row hwscan-header" *ngIf="showProgress && !isScanOrRBSFinished()">
+                    <div class="col row1">
+                        <span class="row">{{subTitle}}</span>
+                        <span class="row">{{warningMessage}}</span>
+                    </div>
+                    <div class="row">
+                        <div class="row progress-div">
+                            <div class="row progress-percent-text">
+                                <span class="progress-value-text">{{percent}}</span>
+                                <span class="progress-complete-text">% {{completeText}}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div *ngIf="!showProgress" class="row">
                     <div class="col button-row">
@@ -29,12 +37,6 @@
                     </div>
                 </div>
                 <div *ngIf="showProgress" class="col row hwscan-header">
-                    <div class="col col-12 row progress-div">
-                        <div *ngIf="!isScanOrRBSFinished()" class="col col-12 progress-percent-text">
-                            <span class="progress-value-text">{{percent}}</span>
-                            <span class="progress-complete-text">% {{completeText}}</span>
-                        </div>
-                    </div>
                     <div *ngIf="!isScanOrRBSFinished()" class="col col-12 row progress-bar-div-container">
                         <div class="col col-12 progress-bar-div">
                             <ngb-progressbar type="success" [value]="percent" [height]="'0.6rem'"></ngb-progressbar>
