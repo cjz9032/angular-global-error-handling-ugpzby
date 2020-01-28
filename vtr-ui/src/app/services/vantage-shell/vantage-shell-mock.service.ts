@@ -24,7 +24,7 @@ export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	public phoenix: any;
 	private shell: any;
-	private isGamingDevice = true;
+	private isGamingDevice = false;
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
@@ -1251,17 +1251,17 @@ export class VantageShellService {
 		const batteryThresholdInfo: any = [
 			{
 				batteryNumber: 1,
-				checkBoxValue: false,
+				checkboxValue: false,
 				isCapable: true,
-				isOn: false,
+				isEnabled: false,
 				startValue: 75,
 				stopValue: 80
 			},
 			{
 				batteryNumber: 2,
-				checkBoxValue: false,
+				checkboxValue: false,
 				isCapable: true,
-				isOn: false,
+				isEnabled: false,
 				startValue: 75,
 				stopValue: 80
 			}
@@ -1663,13 +1663,21 @@ export class VantageShellService {
 		return gamingLighting;
 	}
 	public getGamingOverClock(): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingOverclock;
-		}
-		return undefined;
+		// if (this.phoenix) {
+		// 	if (!this.phoenix.gaming) {
+		// 		this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+		// 	}
+		// 	return this.phoenix.gaming.gamingOverclock;
+		// }
+		// return undefined;
+		const gamingOverClock = {
+			getCpuOCStatus: this.getPromise(true),
+			getRamOCStatus: this.getPromise(true),
+			setCpuOCStatus: this.getPromise(true),
+			setRamOCStatus: this.getPromise(true),
+		};
+		return gamingOverClock;
+
 	}
 
 	public getIntelligentSensing(): any {
@@ -1719,27 +1727,38 @@ export class VantageShellService {
 	}
 
 	public getGamingKeyLock() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingKeyLock;
-		}
-		return undefined;
+
+		// if (this.phoenix) {
+		// 	if (!this.phoenix.gaming) {
+		// 		this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+		// 	}
+
+		// 	return this.phoenix.gaming.gamingKeyLock;
+		// }
+		const gamingKeyLock: any = {
+			getKeyLockStatus: this.getPromise(true),
+			setKeyLockStatus: this.getPromise(true)
+		};
+		return gamingKeyLock;
+		//return undefined;
 	}
 
 	public getGamingHybridMode() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingHybridMode;
-		}
-		return undefined;
+
+		const gamingHybridMode: any = {
+			getHybridModeStatus: this.getPromise(true),
+			setHybridModeStatus: this.getPromise(true)
+		};
+		return gamingHybridMode;
+
 	}
 
 	public getGamingHwInfo() {
-		const gamingHwInfo: any = {};
+		const gamingHwInfo: any = {
+			getDynamicInformation: this.getPromise(true),
+			getMachineInfomation: this.getPromise(true)
+		};
+
 		const hwINFOObj = {
 			cpuBaseFrequence: '1.80GHz',
 			cpuModuleName: 'Intel(R) Core(TM) i10-8250U CPU @ 1.60GHz',
@@ -1758,6 +1777,9 @@ export class VantageShellService {
 		// }
 		// return undefined;
 	}
+
+
+
 
 	public getIntelligentMedia(): any {
 		const media = {
@@ -1850,7 +1872,7 @@ export class VantageShellService {
 			getNetUsingProcesses: this.getPromise(runningList),
 			getStatus: this.getPromise(true),
 			setStatus: this.getPromise(true),
-			addProcessToNetBoost:this.getPromise(true)
+			addProcessToNetBoost: this.getPromise(true)
 		};
 		return gamingNetworkBoost;
 	}
@@ -2078,12 +2100,19 @@ export class VantageShellService {
 	}
 
 	public getGamingThermalMode() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingThermalmode;
-		}
+		// if (this.phoenix) {
+		// 	if (!this.phoenix.gaming) {
+		// 		this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+		// 	}
+		// 	return this.phoenix.gaming.gamingThermalmode;
+		// }
+
+		const gamingThermalMode = {
+			getThermalModeStatus: this.getPromise(true),
+			setThermalModeStatus: this.getPromise(true),
+			regThermalModeEvent: this.getPromise(true),
+		};
+		return gamingThermalMode;
 	}
 
 	public getImcHelper(): any {
@@ -2146,6 +2175,7 @@ export class VantageShellService {
 
 		return kbdManager;
 	}
+
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
 		const voice = {
@@ -2170,8 +2200,31 @@ export class VantageShellService {
 			setDisplayDimmerSetting: this.getPromise(true),
 
 		};
-
 		return oledSettings;
+	}
+
+	public getPriorityControl(): any {
+		const priorityControl = {
+			getPriorityControlCapability: this.getPromise(true),
+			getPriorityControlSetting: this.getPromise(true),
+			setPriorityControlSetting: this.getPromise(true),
+		};
+
+		return priorityControl;
+	}
+
+	public getKeyboardObject(): any {
+		const keyboard = {
+			getAutoKBDBacklightCapability: this.getPromise(true),
+			getKBDBacklightCapability: this.getPromise(true),
+			getAutoKBDStatus: this.getPromise(true),
+			getKBDBacklightStatus: this.getPromise(true),
+			getKBDBacklightLevel: this.getPromise(true),
+			setKBDBacklightStatus: this.getPromise(true),
+			setAutomaticKBDBacklight: this.getPromise(true)
+		};
+
+		return keyboard;
 	}
 
 	public getVersion(): any {
@@ -2351,6 +2404,17 @@ export class VantageShellService {
 	public getRegistryUtil(): Phoenix.RegistryFeature {
 		if (this.phoenix) {
 			return this.phoenix.registry;
+		}
+		return undefined;
+	}
+
+	getToolbarToastFeature(): any {
+		return this.phoenix.hwsettings.toolbar.ToolbarToast;
+	}
+
+	public getUpeAgent(): any {
+		if (this.phoenix) {
+			return this.phoenix.upeAgent;
 		}
 		return undefined;
 	}

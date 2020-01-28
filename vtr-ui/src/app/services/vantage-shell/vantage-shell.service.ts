@@ -60,6 +60,7 @@ export class VantageShellService {
 				Phoenix.Features.Registry,
 				Phoenix.Features.SelfSelect,
 				Phoenix.Features.UpeAgent,
+				Phoenix.Features.SmartPerformance,
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -539,6 +540,16 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getSmartPerformance() {
+        if (this.phoenix) {
+            if (!this.phoenix.smartPerformance) {
+                return this.phoenix.loadFeatures([Phoenix.Features.SmartPerformance]);
+            }
+            return this.phoenix.smartPerformance;
+        }
+        return undefined;
+    } 
+
 	// public getSmartPerformance() {
 	// 	console.log('----------CALLING');
 	// 	if (this.phoenix) {
@@ -899,6 +910,16 @@ export class VantageShellService {
 	public getKeyboardManagerObject(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.input.kbdManager;
+		}
+		return undefined;
+	}
+
+	/**
+	 * returns Keyboard object  from VantageShellService of JS Bridge
+	 */
+	public getKeyboardObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.keyboard;
 		}
 		return undefined;
 	}

@@ -14,7 +14,7 @@
 						*ngFor="let battery of batteryService.gaugeResetInfo; let i=index"
 						tabindex="0"
 						role="text">
-						<div class="col px-20">
+						<div class="col px-5">
 							<div class="battery-text"
 								id=""
 								role="text">
@@ -42,7 +42,7 @@
 								<!-- Battery Gauge Reset Progress -->
 								<div *ngIf="battery.isResetRunning">
 									<div class="row"
-										*ngIf="isValid(battery.stage) && isValid(battery.stageNum)">
+										*ngIf="battery.stage && battery.stageNum">
 										<div class="col-4 label-text"
 											role="text">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.progress' | translate}}
@@ -64,7 +64,7 @@
 										</div>
 									</div>
 									<div class="row"
-										*ngIf="isValid(batteryService.remainingPercentages[battery.batteryNum - 1])">
+										*ngIf="!(batteryService.remainingPercentages[battery.batteryNum - 1]===0)">
 										<div class="col-4 label-text"
 											role="text">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.remaining' | translate}}
@@ -74,7 +74,7 @@
 											{{batteryService.remainingPercentages[battery.batteryNum - 1]}}<span>%</span></div>
 									</div>
 									<div class="row"
-										*ngIf="isValid(battery.startTime)">
+										*ngIf="battery.startTime">
 										<div class="col-4 label-text"
 											role="text">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.startTime' | translate}}
@@ -95,7 +95,7 @@
 								<!-- Last Battery Gauge reset result -->
 								<div *ngIf="!battery.isResetRunning">
 									<div class="row"
-										*ngIf="isValid(battery.lastResetTime) && isValid(battery.resetErrorLog)">
+										*ngIf="battery.lastResetTime && battery.resetErrorLog">
 										<div class="col-4 label-text"
 											role="text">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.lastReset' | translate}}
@@ -104,12 +104,12 @@
 											role="text">
 											{{battery.lastResetTime | date : 'M/d/yyyy h:mm:ss '}}
 											{{getIsAmPm(battery.lastResetTime)?('device.deviceSettings.power.smartStandby.timer.amPms.am'| translate) : ('device.deviceSettings.power.smartStandby.timer.amPms.pm'| translate)}}
-											<br *ngIf="isValid(battery.lastResetTime)">
+											<br *ngIf="battery.lastResetTime">
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.resetLog.' + battery.resetErrorLog | translate}}
 										</div>
 									</div>
 									<div class="row"
-										*ngIf="isValid(battery.FCCBefore) && isValid(battery.FCCAfter)">
+										*ngIf="battery.FCCBefore && battery.FCCAfter">
 										<div class="col-4 label-text"
 											role="text">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.fullChargeCapacity' | translate}}
@@ -123,13 +123,13 @@
 
 								<div class="col-lg-8 col-md-8 col-sm-12 battery-gauge-btn"
 									[class.stop-btn]="battery.isResetRunning"
-									[class.disabled-btn]="isResetBtnDisabled(i) || !batteryService.isAcAttached">
+									[class.disabled-btn]="gaugeResetBtnStatus[i] || !batteryService.isAcAttached">
 									<vtr-ui-button metricsItem="Battery.Gauge.RESET"
 										metricsParent="Page.Settings"
 										metricsEvent="FeatureClick"
 										[isFullWidth]="true"
-										[disabled]="isResetBtnDisabled(i) || !batteryService.isAcAttached"
-										[tabIndex]="(isResetBtnDisabled(i) || !batteryService.isAcAttached)?-1:0"
+										[disabled]="gaugeResetBtnStatus[i] || !batteryService.isAcAttached"
+										[tabIndex]="(gaugeResetBtnStatus[i] || !batteryService.isAcAttached)?-1:0"
 										id="myDevice-settings-battery-gauge-reset-stop-btn"
 										[linkId]="'myDevice-settings-battery-gauge-reset-stop-btn'"
 										[label]="battery.isResetRunning? ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.stop'|translate): ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.reset' | translate)"
@@ -139,7 +139,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row px-20 pt-3">
+					<div class="row px-5 pt-3">
 						<span *ngIf="!batteryService.isAcAttached"
 							class="note warning-note"
 							tabindex="0"

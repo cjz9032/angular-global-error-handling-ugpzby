@@ -80,14 +80,15 @@
                     "line1": "עם Vantage Edge, ההגדרות שלכם יתכווננו באופן אוטומטי בהתאם לשימוש. \n ביצועים מרביים כשאתם משחקים, חיי סוללה ארוכים יותר כשאינכם משחקים.",
                     "line2": "<b>סקירה כללית של ניהול תכונות</b> <br> חלק מהתכונות אינן זמינות בכל המכשירים",
                     "line3": "<b>אוברקלוקינג של מעבד </b><br> הגבירו את המהירות המרבית של המעבד",
-                    "line4": "<b>אוברקלוקינג של RAM </b><br> הגבירו את המהירות המרבית של הזיכרון",
+                    "line4": "<b>אוברקלוק של RAM </b><br> הגבירו את המהירות המרבית של הזיכרון",
                     "line5": "<b>שיפור הרשת </b><br> קבעו סדר עדיפויות לתעבורת רשת למשחק שבו אתם משחקים",
                     "line6": "<b>Dolby </b><br> כווננו את השמע באופן ספציפי למשחק עם טכנולוגיית Dolby",
                     "line7": "<b>מצב היברידי </b><br> השביתו את ההגדרות המתקדמות של GPU כשאתם לא משחקים כדי לשפר את ביצועי הסוללה",
                     "line8": "<b>טעינה מהירה </b><br> שחקו זמן רב יותר בדרכים עם טעינת סוללה מהירה יותר",
                     "line9": "<b>מנעול משטח מגע </b><br> הימנעו מהזנות מוטעות באמצעות השבתת משטח המגע בזמן שאתם משחקים",
                     "line10": "<b>סגירה אוטומטית</b><br> נקו תהליכים שאינם נדרשים למשחק לפני שאתם מתחילים לשחק כדי לשפר את המשאבים הזמינים של המערכת",
-                    "line11": "<b>מצב תרמי </b><br> הגדרת פרופיל ההתקן המועדף למהירות המאוורר ובקרת הצינון"
+                    "line11": "<b>מצב תרמי </b><br> הגדרת פרופיל ההתקן המועדף למהירות המאוורר ובקרת הצינון",
+                    "line12": "<b>מקש מאקרו </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "העבר את העכבר מעל CPU/GPU/RAM וכוננים שונים כדי להציג את התיאורים שלהם, כולל נתוני ייצור ומידע על הדגם"
@@ -1126,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "נכשל: ארעה שגיאה בלתי צפויה."
                         },
                         "popup": {
-                            "description1": "תהליך האיפוס מתבצע באופן הבא:<br>סוללה טעונה במלואה  -->  פריקה מלאה של הסוללה  -->  סוללה טעונה במלואה",
+                            "description1": "תהליך האיפוס מתבצע באופן הבא:<br>טענו את הסוללה במלואה --> רוקנו לרמת חשמל נמוכה של הסוללה --> טענו לרמת חשמל גבוהה של הסוללה או לטעינה מלאה",
                             "description2": "הערות: <br>1. התהליך עשוי להימשך מספר שעות. הימנעו משימוש במחשב בפרק זמן זה.<br>2. סגרו את כל היישומים בפתוחים וחברו את המחשב לחשמל.<br>3. במהלך התהליך, פונקציית סף טעינת הסוללה מושבתת.",
                             "continue": "המשך",
                             "cancel": "ביטול",
@@ -1231,7 +1232,8 @@
                     },
                     "description2": "תכונה זו קובעת זמן למחשב שלכם שבו יבוצע מיטוב של חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, כדי שלא לפגוע בזמן הפעלה מחדש מהירה שנדרש בשעות שבהן נעשה שימוש במחשב.",
                     "subTitle2": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב",
-                    "oldTooltipText": "כאשר תכונת 'המתנה חכמה' פועלת, המחשב עובר ל'המתנה מודרנית' לפני מועד ההתחלה שנקבע, והוא עובר למצב שינה אם הוא בלתי פעיל במשך פרק זמן מסוים כאשר הוא מופעל באמצעות סוללה. פרק הזמן הזה עובר מיטוב לפי לוח הזמנים שקבעתם. המחשב עובר ממצב שינה למצב 'המתנה מודרנית' רק בימים שנקבעו, ואינו עובר כאשר הוא במצב בלתי פעיל במשך כמה ימים ברצף, לפי מה שקבעתם."
+                    "oldTooltipText": "כאשר תכונת 'המתנה חכמה' פועלת, המחשב עובר ל'המתנה מודרנית' לפני מועד ההתחלה שנקבע, והוא עובר למצב שינה אם הוא בלתי פעיל במשך פרק זמן מסוים כאשר הוא מופעל באמצעות סוללה. פרק הזמן הזה עובר מיטוב לפי לוח הזמנים שקבעתם. המחשב עובר ממצב שינה למצב 'המתנה מודרנית' רק בימים שנקבעו, ואינו עובר כאשר הוא במצב בלתי פעיל במשך כמה ימים ברצף, לפי מה שקבעתם.",
+                    "sectionTitle": "Standby settings"
                 }
             },
             "audio": {
@@ -1335,7 +1337,8 @@
                         "note": {
                             "title": "הערה",
                             "description": "Lenovo Vantage צריך לגשת לפרטי המיקום שלכם לחישוב זמן השקיעה והזריחה באזורכם."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "טמפרטורת צבע התצוגה",
@@ -3122,7 +3125,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
