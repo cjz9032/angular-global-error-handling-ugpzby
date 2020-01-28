@@ -26,15 +26,14 @@
 	display: inline-block;
 	font-weight: 200;
 	outline: none;
-	font-size: 20px;
+	font-size: $fontsize_lg;
 }
 
 .close-btn {
 	position: absolute;
 	right: 1.8rem;
 	top: 1.8rem;
-	width: 2.2rem;
-	height: 2.2rem;
+	font-size: $fontsize_lg;
 	margin-bottom: 1rem;
 	cursor: pointer;
 

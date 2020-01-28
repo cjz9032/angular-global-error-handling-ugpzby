@@ -9,7 +9,7 @@
         background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
         box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
         .status {
-            font-size: 2rem;
+            font-size: $fontsize_lg;
             color: $light;
             padding-right: 5rem;
             display: flex;
@@ -19,7 +19,7 @@
         }
         .title {
             color: $light;
-            font-size: 2.5rem;
+            font-size: $fontsize_xl2;
             font-weight: $weight_light;
             line-height: 4.2rem;
             padding-left: 2.4rem;
@@ -46,7 +46,7 @@
                 text-transform: uppercase;
                 padding: 0 3rem;
                 color: $light;
-                font-size: 1.5rem;
+                font-size: $fontsize_xs;
                 height: 5rem;
                 font-weight: $weight_bold;
                 line-height: 5rem;
@@ -60,7 +60,7 @@
                 text-transform: uppercase;
                 padding: 0 3rem;
                 color: $light;
-                font-size: 1.5rem;
+                font-size: $fontsize_xs;
                 height: 5rem;
                 font-weight: $weight_bold;
                 line-height: 5rem;
@@ -69,7 +69,7 @@
                 cursor: default;
             }
             .action-anchor {
-                font-size: 1.3rem;
+                font-size: $fontsize_xs2;
                 font-weight: $weight_bold;
                 color: $light;
                 border-bottom: 0.2rem solid $light;
@@ -82,7 +82,7 @@
                 }
             }
             .disabled-anchor {
-                font-size: 1.3rem;
+                font-size: $fontsize_xs2;
                 font-weight: $weight_bold;
                 color: $shade_light;
                 border-bottom: 0.2rem solid $shade_light;
@@ -98,24 +98,23 @@
             padding-right: 5rem;
             .progress-percent-text {
                 color: $light;
-                font-size: 2.5rem;
+                font-size: $fontsize_xl;
                 font-weight: $weight_light;
                 line-height: 2.9rem;
                 display: inline;
                 text-align: right;
                 .progress-value-text {
                     color: $light;
-                    font-size: 1.4rem;
+                    font-size: 3rem;
                     font-weight: $weight_light;
                     line-height: 2.9rem;
                     padding-right: 0rem;
                     padding-left: 0rem;
                     text-align: left;
-                    font-size: 3rem !important;
                 }
                 .progress-complete-text {
                     color: $light;
-                    font-size: 1.4rem;
+                    font-size: $fontsize_xs;
                     font-weight: $weight_light;
                     line-height: 2.9rem;
                     padding-right: 0rem;
@@ -155,10 +154,8 @@
         }
 
         .cancel-check {
-            margin-left: 5rem;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-            margin-right: 5rem;
+            margin: 2rem 5rem;
+            font-size: $fontsize_xs2;
             .cancel-button {
                 border-radius: 2.5rem;
                 border-color: $light-grey;
@@ -166,7 +163,6 @@
                 text-transform: uppercase;
                 padding: 0 3rem;
                 color: $light;
-                font-size: 1.5rem;
                 height: 5rem;
                 font-weight: $weight_bold;
                 line-height: 5rem;
@@ -180,7 +176,6 @@
                 text-transform: uppercase;
                 padding: 0 3rem;
                 color: $light;
-                font-size: 1.5rem;
                 height: 5rem;
                 font-weight: $weight_bold;
                 line-height: 5rem;
@@ -196,7 +191,7 @@
         }
         .final-result-code {
             color: $light;
-            font-size: 1.3rem;
+            font-size: $fontsize_xs2;
             line-height: 1.5rem;
             padding-left: 5rem;
             padding-top: 2rem;
@@ -214,7 +209,7 @@
             }
             .result-code-icon {
                 margin-left: 0.5rem;
-                font-size: 1.3rem;
+                font-size: $fontsize_lg;
                 color: $main;
                 cursor: pointer;
                 &:hover {

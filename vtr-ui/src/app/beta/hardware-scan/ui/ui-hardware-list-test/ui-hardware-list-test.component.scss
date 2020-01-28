@@ -88,16 +88,17 @@
 			}
 
 			.subname {
+				font-size: $fontsize_xs;
 				font-weight: $weight_light !important;
 			}
 
 			.name-test {
-				font-size: 1.5rem;
+				font-size: $fontsize_xs;
 				font-weight: $weight_medium;
 			}
 
 			fa-icon {
-				font-size: 3.5rem;
+				font-size: $fontsize_xl;
 				cursor: pointer;
 			}
 		}
