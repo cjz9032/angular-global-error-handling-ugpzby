@@ -1,14 +1,21 @@
 <div class="vtr-widget-hardware-scan-item" *ngFor="let item of items">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col">
-				<div class="title">{{item.module}}</div>
-				<div class="description">
-					<div class="subtitle">{{item.name}}
-						<span *ngIf="item.details" class="details" (click)="item.collapsed = !item.collapsed">
-							<fa-icon [icon]="['fas', 'caret-right']" *ngIf="!item.collapsed"></fa-icon>
-							<fa-icon [icon]="['fas', 'caret-down']" *ngIf="item.collapsed"></fa-icon>{{ detailsText }}
-						</span>
+			<div class="row module-information">
+				<div class="module-icon" *ngIf="item.icon !== undefined">
+					<img class="img-icon" src={{item.icon}} />
+				</div>
+				<div class="title">
+					<div class="row col-12 module-name">
+						{{item.module}}
+						<div class="row col-12 description">
+							<div class="subtitle">{{item.name}}
+								<span *ngIf="item.details" class="details" (click)="item.collapsed = !item.collapsed">
+									<fa-icon [icon]="['fas', 'caret-right']" *ngIf="!item.collapsed"></fa-icon>
+									<fa-icon [icon]="['fas', 'caret-down']" *ngIf="item.collapsed"></fa-icon>{{ detailsText }}
+								</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
