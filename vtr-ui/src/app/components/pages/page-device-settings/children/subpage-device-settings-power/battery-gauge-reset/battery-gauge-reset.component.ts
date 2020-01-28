@@ -35,11 +35,6 @@ export class BatteryGaugeResetComponent implements OnInit {
 		// this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
 	}
 
-	getIsAmPm(time) {
-		const date = new Date(time);
-		return date.getHours() < 12;
-	}
-
 	onBatteryGaugeReset(index) {
 		let modalRef;
 		modalRef = this.modalService.open(ModalBatteryChargeThresholdComponent, {
@@ -85,9 +80,9 @@ export class BatteryGaugeResetComponent implements OnInit {
 		try {
 			const response = await this.powerService.startBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
 			this.logger.info('start battery reset succeeded', response);
-			if (response) {
-				this.batteryService.isGaugeResetRunning = true;
-			}
+			// if (response) {
+			// 	this.batteryService.isGaugeResetRunning = true;
+			// }
 		} catch (error) {
 			this.logger.info('start battery reset failed', error);
 		}
@@ -98,9 +93,9 @@ export class BatteryGaugeResetComponent implements OnInit {
 		try {
 			const response = await this.powerService.stopBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
 			this.logger.info('start battery reset succeeded', response);
-			if (response) {
-				this.batteryService.isGaugeResetRunning = false;
-			}
+			// if (response) {
+			// 	this.batteryService.isGaugeResetRunning = false;
+			// }
 		} catch (error) {
 			this.logger.info('start battery reset failed', error);
 		}
@@ -119,7 +114,8 @@ export class BatteryGaugeResetComponent implements OnInit {
 		} else {
 			gaugeResetBtnStatus.push(true);
 		}
-		this.batteryService.isGaugeResetRunning = isResetRunning;
+
+		// gauge reset btn status in case of dual battery
 		if (this.batteryService.gaugeResetInfo && this.batteryService.gaugeResetInfo.length > 1) {
 			if (isResetRunning) {
 				this.batteryService.gaugeResetInfo.forEach((battery) => {
@@ -130,6 +126,8 @@ export class BatteryGaugeResetComponent implements OnInit {
 				gaugeResetBtnStatus.push(false);
 			}
 		}
+
+		this.batteryService.isGaugeResetRunning = isResetRunning;
 		this.gaugeResetBtnStatus = gaugeResetBtnStatus;
 	}
 

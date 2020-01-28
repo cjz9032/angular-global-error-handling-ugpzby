@@ -82,7 +82,7 @@
 										<div class="col-8 label-value"
 											role="text">
 											{{battery.startTime | date : 'M/d/yyyy h:mm:ss '}}
-											{{getIsAmPm(battery.startTime)? ('device.deviceSettings.power.smartStandby.timer.amPms.am'| translate) : ('device.deviceSettings.power.smartStandby.timer.amPms.pm'| translate)}}
+											{{isStartTimeAmPm? ('device.deviceSettings.power.smartStandby.timer.amPms.am'| translate) : ('device.deviceSettings.power.smartStandby.timer.amPms.pm'| translate)}}
 										</div>
 									</div>
 									<div class="row pt-3">
@@ -103,7 +103,7 @@
 										<div class="col-8 label-value"
 											role="text">
 											{{battery.lastResetTime | date : 'M/d/yyyy h:mm:ss '}}
-											{{getIsAmPm(battery.lastResetTime)?('device.deviceSettings.power.smartStandby.timer.amPms.am'| translate) : ('device.deviceSettings.power.smartStandby.timer.amPms.pm'| translate)}}
+											{{isLastResetTimeAmPm?('device.deviceSettings.power.smartStandby.timer.amPms.am'| translate) : ('device.deviceSettings.power.smartStandby.timer.amPms.pm'| translate)}}
 											<br *ngIf="battery.lastResetTime">
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.resetLog.' + battery.resetErrorLog | translate}}
 										</div>
