@@ -259,10 +259,11 @@
 							[isSwitchChecked]="fnAsCtrlStatus"
 							[rightIcon]="['far', 'question-circle']"
 							[fnCtrltoolTip]="true"
-							[tooltipContent]="fnCtrlKeyTooltipContent">
+							[tooltipContent]="fnCtrlKeyTooltipContent"
+							[switchId]="'inputAccessories-fnCtrlKey1'">
 							<div class="row">
 								<div class="feature-note note p-4">
-									<p>{{'device.deviceSettings.inputAccessories.fnCtrlKey.featureNote' | translate}}</p>
+									<p id="fnCtrlKey-featureNote">{{'device.deviceSettings.inputAccessories.fnCtrlKey.featureNote' | translate}}</p>
 								</div>
 							</div>
 						</vtr-ui-row-switch>
