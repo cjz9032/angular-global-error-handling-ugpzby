@@ -88,7 +88,7 @@
                     "line9": "<b>Touchpad-Sperre </b><br> Fehlerhafte Eingaben beim Spielen durch deaktiviertes Touchpad verhindern",
                     "line10": "<b>Automatisch schließen </b><br> Nicht benötigte Prozesse vor dem Spielen beenden, um verfügbare Systemressourcen zu maximieren",
                     "line11": "<b>Wärmemodus </b><br> Stellen Sie Ihr bevorzugtes Geräteprofil für die Lüfterdrehzahl und die Kühlsteuerung ein",
-					"line12": "<b>Makrotaste </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Makrotaste </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Bewegen Sie den Mauszeiger über CPU/GPU/RAM und unterschiedlichen Laufwerke, um ihre Beschreibungen einschließlich Hersteller und Modellinformationen anzuzeigen"
@@ -1127,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Fehlgeschlagen: Ein unerwarteter Fehler ist aufgetreten."
                         },
                         "popup": {
-                            "description1": "Das Zurücksetzen wird wie folgt durchgeführt:<br>Akku wird vollständig aufgeladen  -->  Akku wird vollständig entladen  -->  Akku wird vollständig aufgeladen",
+                            "description1": "Das Zurücksetzen wird wie folgt durchgeführt:<br>Akku wird vollständig aufgeladen --> Akku wird fast vollständig entladen --> Akku wird (fast) vollständig wieder aufgeladen",
                             "description2": "Hinweise: <br>1. Der Prozess kann mehrere Stunden dauern. Verwenden Sie den Computer während dieser Zeit nicht.<br>2. Schließen Sie alle offenen Anwendungen und schließen Sie Ihren Computer an die Stromversorgung an.<br>3. Während des Vorgangs ist die Funktion für den Schwellenwert für Akkuladung deaktiviert.",
                             "continue": "Weiter",
                             "cancel": "Abbrechen",
@@ -1337,7 +1337,8 @@
                         "note": {
                             "title": "Anmerkung",
                             "description": "Lenovo Vantage muss auf Ihre Standortinformationen zugreifen, um die Sonnenuntergangs- und Sonnenaufgangszeit Ihrer Gegend zu berechnen."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Farbtemperatur der Anzeige",
@@ -3124,7 +3125,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",

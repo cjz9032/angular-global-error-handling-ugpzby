@@ -88,7 +88,7 @@
                     "line9": "<b>Κλείδωμα επιφάνειας αφής </b><br> Αποφυγή εσφαλμένων εισαγωγών με την απενεργοποίηση της επιφάνειας εργασίας ενώ παίζετε",
                     "line10": "<b>Αυτόματο κλείσιμο </b><br> Κατάργηση διεργασιών που δεν είναι απαραίτητες για το παιχνίδι, πριν αρχίσετε να παίζετε, για μεγιστοποίηση των διαθέσιμων πόρων του συστήματος",
                     "line11": "<b>Θερμική λειτουργία </b><br> Ρύθμιση επιθυμητού προφίλ συσκευής για τον έλεγχο ταχύτητας και ψύξης ανεμιστήρα",
-					"line12": "<b>Πλήκτρο μακροεντολής </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Πλήκτρο μακροεντολής </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Τοποθετήστε τον δείκτη του ποντικιού στην CPU /GPU/RAM και διάφορες μονάδες δίσκων για να εμφανιστεί η περιγραφή τους, συμπεριλαμβανομένων πληροφοριών κατασκευής και μοντέλου"
@@ -1127,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Απέτυχε: Παρουσιάστηκε μη αναμενόμενο σφάλμα."
                         },
                         "popup": {
-                            "description1": "Η διαδικασία επαναφοράς είναι η εξής:<br>Πλήρης φόρτιση της μπαταρίας  -->  Πλήρης εκφόρτιση της μπαταρίας  -->  Πλήρης επαναφόρτιση της μπαταρίας",
+                            "description1": "Η διαδικασία επαναφοράς είναι η εξής:<br>Πλήρης φόρτιση της μπαταρίας --> Αποφόρτιση μέχρι χαμηλή στάθμη μπαταρίας --> Επαναφόρτιση σε υψηλή ή πλήρη στάθμη φόρτισης μπαταρίας",
                             "description2": "Σημειώσεις: <br>1. Η διαδικασία ίσως διαρκέσει αρκετές ώρες. Αποφύγετε τη χρήση του υπολογιστή κατά τη διάρκεια αυτής της περιόδου.<br>2. Κλείστε όλες τις ανοιχτές εφαρμογές και συνδέστε τον υπολογιστή σας σε παροχή εναλλασσόμενου ρεύματος.<br>3. Κατά τη διάρκεια της διαδικασίας, η λειτουργία ορίου φορτίου μπαταρίας είναι απενεργοποιημένη.",
                             "continue": "Συνέχιση",
                             "cancel": "Άκυρο",
@@ -1337,7 +1337,8 @@
                         "note": {
                             "title": "Σημείωση",
                             "description": "Η εφαρμογή Lenovo Vantage πρέπει να έχει πρόσβαση στις πληροφορίες της τοποθεσίας σας για να μπορεί να υπολογίσει την ώρα του ηλιοβασιλέματος και την ώρα της ανατολής στην περιοχή σας."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Θερμοκρασία χρωμάτων οθόνης",
@@ -3124,7 +3125,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",

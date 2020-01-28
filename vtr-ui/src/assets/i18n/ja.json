@@ -88,7 +88,7 @@
                     "line9": "<b>タッチパッド・ロック </b><br> ゲーム中はタッチパッドを無効にして誤入力を防ぎます",
                     "line10": "<b>自動クローズ </b><br> プレイ開始前にゲームに不要な処理をクリアして利用可能なシステム・リソースを最大化します",
                     "line11": "<b>サーマル・モード </b><br> ファン速度と冷却制御のために優先デバイス・プロファイルを設定する",
-					"line12": "<b>マクロ・キー </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>マクロ・キー </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "CPU/GPU/RAM およびさまざまなドライブの上にマウスを移動すると、製造元やモデル情報などの説明が表示されます"
@@ -1127,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "失敗: 予期しないエラーが発生しました。"
                         },
                         "popup": {
-                            "description1": "リセット・プロセスは次のとおりです。<br>バッテリーを完全に充電  -->  バッテリーを完全に放電  -->  バッテリーを完全に再充電",
+                            "description1": "リセット・プロセスは次のとおりです。<br>バッテリーを完全に充電 --> 低バッテリー残量まで放電 --> 高バッテリー残量または満充電まで再充電",
                             "description2": "注: <br>1. この処理には数時間かかる場合があります。この間、コンピューターの使用は避けてください。<br>2. 開いているすべてのアプリを閉じて、コンピューターを AC 電源に接続します。<br>3. プロセス中、バッテリー充電のしきい値機能は無効になります。",
                             "continue": "続行",
                             "cancel": "キャンセル",
@@ -1337,7 +1337,8 @@
                         "note": {
                             "title": "お願い",
                             "description": "Lenovo Vantage はその地域の日没と日の出の時刻を計算するために、位置情報にアクセスする必要があります。"
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "ディスプレイの色温度",
@@ -3124,7 +3125,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",

@@ -80,7 +80,7 @@
                     "line1": "Vantage Edge를 사용하면 사용량에 따라 설정이 자동으로 조정됩니다. \n 게임 중 최대 성능, 게임을 하지 않을 때는 배터리 수명이 연장됩니다.",
                     "line2": "<b>기능 관리 개요</b> <br> 일부 기능은 모든 장치에서 사용하지 못할 수 있음",
                     "line3": "<b>CPU 오버클럭킹 </b><br> 프로세서의 최대 속도 향상",
-                    "line4": "<b>RAM 오버클럭킹 </b><br> 메모리의 최대 속도 향상",
+                    "line4": "<b>RAM 오버클럭 </b><br> 메모리의 최대 속도 향상",
                     "line5": "<b>네트워크 향상 </b><br> 재생 중인 게임의 네트워크 트래픽 우선 순위 지정",
                     "line6": "<b>Dolby </b><br> Dolby 기술을 이용한 게임 전용 오디오 조정",
                     "line7": "<b>하이브리드 모드 </b><br> 배터리 성능을 높이기 위해 게임을 하지 않을 때 고급 GPU 설정 사용 안 함",
@@ -88,7 +88,7 @@
                     "line9": "<b>터치 패드 잠금 </b><br> 게임 중 터치패드를 비활성화하여 잘못된 입력 방지",
                     "line10": "<b>자동 닫기 </b><br> 게임을 시작하기 전에 사용 가능한 시스템 리소스를 극대화하기 위해 필요하지 않은 프로세스 지우기",
                     "line11": "<b>열 모드 </b><br> 팬 속도 및 냉각 제어를 위해 선호하는 장치 프로파일 설정",
-					"line12": "<b>매크로 키 </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>매크로 키 </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "제조 및 모델 정보를 포함한 설명이 표시되도록 CPU/GPU/RAM 및 다른 드라이브를 가리킴"
@@ -1127,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "실패: 예상치 않은 오류가 발생했습니다."
                         },
                         "popup": {
-                            "description1": "리셋 절차는 다음과 같습니다.<br>배터리 완충  -->  배터리 방전  -->  배터리 완전히 재충전",
+                            "description1": "리셋 절차는 다음과 같습니다.<br>배터리 완전 충전 --> 저전력 상태까지 배터리 방전 --> 고전력 상태까지 배터리 재충전 또는 완전 충전",
                             "description2": "참고: <br>1. 이 절차는 몇 시간 정도 걸릴 수 있습니다. 이 시간 동안 컴퓨터 사용을 지양하십시오.<br>2. 열려 있는 모든 앱을 닫고 컴퓨터를 AC 전원에 연결하십시오.<br>3. 절차가 진행되는 동안, 배터리 충전 임계값 기능은 꺼집니다.",
                             "continue": "계속",
                             "cancel": "취소",
@@ -1337,7 +1337,8 @@
                         "note": {
                             "title": "주",
                             "description": "Lenovo Vantage는 위치 정보에 액세스하여 지역의 일몰 및 일출 시간을 계산해야 합니다."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "디스플레이 색상 온도",
@@ -3124,7 +3125,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",

@@ -91,7 +91,7 @@
                     "line9": "<b>Zámek dotykové plošky </b><br> Vyhněte se neúmyslným kliknutím vypnutím dotykové plošky",
                     "line10": "<b>Automaticky zavřít </b><br> Před hraním her ukončete procesy, které nepotřebuje, abyste měli k dispozici co nejvíce systémových prostředků",
                     "line11": "<b>Režim tepl </b><br> Nastavte svůj profil zařízení pro otáčky ventilátoru a řízení chlazení",
-					"line12": "<b>Klávesa maker</b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Klávesa maker</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Umístěním kurzoru na CPU/GPU/RAM a různé jednotky zobrazíte jejich popisy, včetně informací o výrobci a modelu"
@@ -1127,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Selhání: Došlo k neočekávané chybě."
                         },
                         "popup": {
-                            "description1": "Proces resetování je následující:<br>Plné nabití baterie  -->  Plné vybití baterie  -->  Plné opětovné nabití baterie",
+                            "description1": "Proces resetování je následující:<br>Plné nabití baterie --> Vybití na nízké nabití --> Dobití na vysoké nebo úplné nabití",
                             "description2": "Poznámky: <br>1. Tento proces může trvat několik hodin. Během této doby počítač nepoužívejte.<br>2. Zavřete všechny otevřené aplikace a připojte počítač k napájení.<br>3. Během procesu je funkce prahu nabití baterie deaktivována.",
                             "continue": "Pokračuj",
                             "cancel": "Storno",
@@ -1337,7 +1337,8 @@
                         "note": {
                             "title": "Poznámka",
                             "description": "Program Lenovo Vantage potřebuje získat přístup k informacím o umístění pro výpočet času západu a východu slunce."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Teplota barev displeje",
@@ -3124,7 +3125,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",

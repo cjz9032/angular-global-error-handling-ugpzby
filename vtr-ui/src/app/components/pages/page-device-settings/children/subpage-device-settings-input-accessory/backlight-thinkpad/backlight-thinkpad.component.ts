@@ -50,6 +50,7 @@ export class BacklightThinkpadComponent implements OnInit {
 	public updateMode(mode) {
 		this.currentMode = mode;
 		if (this.currentMode === BacklightStatusEnum.AUTO) {
+			this.setKBDBacklightStatus(BacklightStatusEnum.OFF);
 			this.setAutomaticKBDBacklight(true);
 		} else {
 			this.setKBDBacklightStatus(this.currentMode);
@@ -57,7 +58,7 @@ export class BacklightThinkpadComponent implements OnInit {
 		}
 	}
 
-	private getKBDBacklightCapability() {
+	public getKBDBacklightCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.getKBDBacklightCapability()
@@ -86,7 +87,7 @@ export class BacklightThinkpadComponent implements OnInit {
 		return array.filter(e => e.value !== value);
 	}
 
-	private getAutoKBDBacklightCapability() {
+	public getAutoKBDBacklightCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.getAutoKBDBacklightCapability()
@@ -108,7 +109,7 @@ export class BacklightThinkpadComponent implements OnInit {
 		}
 	}
 
-	private getAutoKBDStatus() {
+	public getAutoKBDStatus() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.getAutoKBDStatus()
@@ -128,13 +129,13 @@ export class BacklightThinkpadComponent implements OnInit {
 		}
 	}
 
-	private getKBDBacklightStatus() {
+	public getKBDBacklightStatus() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.getKBDBacklightStatus()
 					.then(res => {
 						this.logger.info('BacklightThinkpadComponent:getKBDBacklightStatus', res);
-						if (res !== BacklightStatusEnum.AUTO) {
+						if (res !== BacklightStatusEnum.AUTO && this.currentMode !== BacklightStatusEnum.AUTO) {
 							this.currentMode = this.compare(res);
 						}
 					}).catch(error => {
@@ -148,7 +149,7 @@ export class BacklightThinkpadComponent implements OnInit {
 		}
 	}
 
-	private getKBDBacklightLevel() {
+	public getKBDBacklightLevel() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.getKBDBacklightLevel()
@@ -175,7 +176,7 @@ export class BacklightThinkpadComponent implements OnInit {
 		}
 	}
 
-	private setKBDBacklightStatus(level: string) {
+	public setKBDBacklightStatus(level: string) {
 		if (this.keyboardService.isShellAvailable) {
 			this.keyboardService.setKBDBacklightStatus(level)
 			.then((value: boolean) => {
@@ -187,7 +188,7 @@ export class BacklightThinkpadComponent implements OnInit {
 		}
 	}
 
-	private setAutomaticKBDBacklight(level: boolean) {
+	public setAutomaticKBDBacklight(level: boolean) {
 		if (this.keyboardService.isShellAvailable) {
 			this.keyboardService.setAutomaticKBDBacklight(level)
 			.then((value: boolean) => {

@@ -88,7 +88,7 @@
                     "line9": "<b>Zaklepanje sledilne ploščice </b><br> Onemogočite sledilno ploščico, da preprečite napačne vnose med igranjem",
                     "line10": "<b>Samodejno zapiranje </b><br> Pred začetkom igranja počistite nepotrebne procese in v celoti izkoristite razpoložljiva sistemska sredstva",
                     "line11": "<b>Toplotni način </b><br> Nastavite želeni profil naprave za nadzor hitrosti ventilatorja in hlajenja",
-					"line12": "<b>Makro tipka </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Makro tipka </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Kazalec zadržite na CPE/GPE/RAM in različnih pogonih, če si želite ogledati njihove opise, vključno z informacijami o proizvajalcu in modelu"
@@ -1127,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Neuspešno: Prišlo je do nepričakovane napake."
                         },
                         "popup": {
-                            "description1": "Postopek ponastavitve je naslednji:<br>povsem napolnite baterijo  -->  popolnoma izpraznite baterijo  -->  popolnoma napolnite baterijo",
+                            "description1": "Postopek ponastavitve je sledeč:<br>Povsem napolnite baterijo --> Naj se baterija skoraj povsem izprazni --> Baterijo napolnite do visoke ali polne ravni napolnjenosti",
                             "description2": "Opombe: <br>1. Ta postopek lahko traja več ur. Računalnika v tem času ne uporabljajte.<br>2. Zaprite vse odprte programe in računalnik priključite na električno vtičnico.<br>3. Med postopkom je funkcija praga polnjenja baterije onemogočena.",
                             "continue": "Nadaljuj",
                             "cancel": "Prekliči",
@@ -1337,7 +1337,8 @@
                         "note": {
                             "title": "Opomba",
                             "description": "Lenovo Vantage potrebuje dostop do informacij o vaši lokaciji za izračun časa sončnega zahoda in vzhoda v vaši regiji."
-                        }
+                        },
+                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
                     },
                     "dispColorTemp": {
                         "title": "Barvna temperatura zaslona",
@@ -3124,7 +3125,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
