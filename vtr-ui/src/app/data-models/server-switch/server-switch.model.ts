@@ -48,18 +48,18 @@ export class ServerSwitch {
 	public pageList: any = [
 		/*hardware*/
 		{
-			'optgroup': 'Hardware',
+			'optgroup': 'Core',
 			'opt': [
 				{ 'label': 'Dashboard', 'componentSelector': 'vtr-page-dashboard'  },
-				{ 'label': 'Device--My Device', 'componentSelector': 'vtr-cptpage-my-device' },
-				{ 'label': 'Device--My Device Settings', 'componentSelector': 'vtr-cptpage-device-settings' },
-				{ 'label': 'Device--System Update', 'componentSelector': 'vtr-page-device-updates' },
-				{ 'label': 'Device--Smart Assist', 'componentSelector': 'vtr-page-smart-assist' },
-				{ 'label': 'Security--My Security', 'componentSelector': 'vtr-page-security' },
-				{ 'label': 'Security--Anti-Virus', 'componentSelector': 'vtr-page-security-antivirus' },
-				{ 'label': 'Security--Password Health', 'componentSelector': 'vtr-page-security-password'},
-				{ 'label': 'Security--WiFi Security', 'componentSelector': 'vtr-page-security-wifi'},
-				{ 'label': 'Security--Internet Protection', 'componentSelector': 'vtr-page-security-internet'},
+				{ 'label': 'Device', 'componentSelector': 'vtr-cptpage-my-device' },
+				{ 'label': 'Device Settings', 'componentSelector': 'vtr-cptpage-device-settings' },
+				{ 'label': 'System Updates', 'componentSelector': 'vtr-page-device-updates' },
+				/*{ 'label': 'Smart Assist', 'componentSelector': 'vtr-page-smart-assist' },*/
+				{ 'label': 'Security', 'componentSelector': 'vtr-page-security' },
+				{ 'label': 'Anti-Virus', 'componentSelector': 'vtr-page-security-antivirus' },
+				{ 'label': 'Password Protection', 'componentSelector': 'vtr-page-security-password'},
+				{ 'label': 'WiFi Security', 'componentSelector': 'vtr-page-security-wifi'},
+				{ 'label': 'Internet Protection', 'componentSelector': 'vtr-page-security-internet'},
 			]
 		},
 	];

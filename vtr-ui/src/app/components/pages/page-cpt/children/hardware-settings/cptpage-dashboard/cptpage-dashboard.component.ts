@@ -2,7 +2,8 @@ import { Component, OnInit, Input, OnDestroy, SecurityContext } from '@angular/c
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { CommonService } from 'src/app/services/common/common.service';
-//import { DeviceService } from 'src/app/services/device/device.service';
+//import { WidgetCarouselComponent } from 'src/app/components/widgets/widget-carousel/widget-carousel.component';
+//import { WidgetCarouselModule } from 'src/app/components/widgets/widget-carousel/widget-carousel.module';
 
 //for cpt
 import { Subject, Observable, empty } from 'rxjs';
@@ -15,7 +16,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'vtr-cptpage-dashboard',
   templateUrl: './cptpage-dashboard.component.html',
-  styleUrls: ['./cptpage-dashboard.component.scss']
+  styleUrls: ['./cptpage-dashboard.component.scss'],
+  //add components within array
+  //entryComponents: [WidgetCarouselComponent]
 })
 export class CptpageDashboardComponent implements OnInit, OnDestroy {
   title = 'Dashboard';

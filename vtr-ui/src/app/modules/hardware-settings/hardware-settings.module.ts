@@ -95,6 +95,7 @@ import { BacklightModule } from '../../components/pages/page-device-settings/chi
 import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight-thinkpad/backlight-thinkpad.component';
 
 //cpt
+import { WidgetCarouselModule } from 'src/app/components/widgets/widget-carousel/widget-carousel.module';
 import { CptpageDeviceSettingsComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-device-settings/cptpage-device-settings.component';
 import { CptpageMyDeviceComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-my-device/cptpage-my-device.component';
 import { CptpageDashboardComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-dashboard/cptpage-dashboard.component';
@@ -179,6 +180,8 @@ import { CptpageSecurityInternetComponent } from 'src/app/components/pages/page-
 		PageLayoutModule,
 		SettingsPageLayoutModule,
 		BacklightModule,
+		//cpt
+		WidgetCarouselModule
 	],
 	exports: [
 		CommonModule,

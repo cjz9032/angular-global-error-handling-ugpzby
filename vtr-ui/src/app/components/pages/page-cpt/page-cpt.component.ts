@@ -22,6 +22,15 @@ import { CptpageSecurityInternetComponent } from 'src/app/components/pages/page-
 
 declare let JSONEditor: any;
 declare let ClipboardJS: any;
+/**
+ * Gaming Dashboard
+Gaming Macrokey
+Gaming Lighting
+Gaming NetworkBoost
+Gaming AutoClose 
+
+src\app\modules\gaming-routing.module.ts
+ */
 
 @Component({
   selector: 'vtr-page-cpt',

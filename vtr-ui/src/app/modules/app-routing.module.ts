@@ -66,10 +66,10 @@ const routes: Routes = [
 	},
 	{
 		path: 'cpt',
-		component: PageCptComponent,
-		data: {
-			pageName: 'Page.Cpt'
-		}
+		component: PageCptComponent
+		// data: {
+		// 	pageName: 'Page.Cpt'
+		// }
 	},
 	// {
 	// 	path: 'cpt-mydevice',
