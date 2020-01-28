@@ -868,6 +868,7 @@ export class HardwareScanService {
 						resultCode: '',
 						description: '',
 						information: '',
+						icon: '',
 						metaInformation: [],
 						listTest: []
 					};
@@ -877,6 +878,7 @@ export class HardwareScanService {
 					item.groupId = group.id;
 					item.listTest = [];
 					item.name = group.name;
+					item.icon = this.getHardwareComponentIcon(item.id)
 					item.metaInformation = group.metaInformation;
 
 					for (const testSummary of group.testList) {
@@ -1107,6 +1109,7 @@ export class HardwareScanService {
 				for (let i = 0; i < module.response.groupResults.length; i++) {
 					const item: any = {};
 					const groupResultMeta = groupsResultMeta.find(x => x.id === groupResult[i].id);
+					const moduleName = groupResult[i].moduleName;
 
 					item.id = moduleId;
 					item.module = module.categoryInformation.name;
@@ -1114,6 +1117,7 @@ export class HardwareScanService {
 					item.resultCode = groupResult[i].resultCode;
 					item.information = groupResult[i].resultDescription;
 					item.collapsed = false;
+					item.icon = this.getHardwareComponentIcon(moduleName);
 					item.details = [];
 
 					for (let j = 0; j < groupResultMeta.metaInformation.length; j++) {
