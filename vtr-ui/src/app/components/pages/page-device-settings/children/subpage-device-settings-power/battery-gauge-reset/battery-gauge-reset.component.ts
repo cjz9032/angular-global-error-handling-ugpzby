@@ -115,15 +115,22 @@ export class BatteryGaugeResetComponent implements OnInit {
 				this.isStartTimeAmPm = new Date(battery.startTime).getHours() < 12;
 				this.isLastResetTimeAmPm = new Date(battery.lastResetTime).getHours() < 12;
 				isResetRunning = isResetRunning || battery.isResetRunning;
-				if (this.batteryService.gaugeResetInfo.length > 1) {
-					gaugeResetBtnStatus.push(!battery.isResetRunning);
-				}
 			});
 		} else {
 			gaugeResetBtnStatus.push(true);
 		}
-		this.gaugeResetBtnStatus = gaugeResetBtnStatus;
 		this.batteryService.isGaugeResetRunning = isResetRunning;
+		if (this.batteryService.gaugeResetInfo && this.batteryService.gaugeResetInfo.length > 1) {
+			if (isResetRunning) {
+				this.batteryService.gaugeResetInfo.forEach((battery) => {
+					gaugeResetBtnStatus.push(!battery.isResetRunning);
+				});
+			} else {
+				gaugeResetBtnStatus.push(false);
+				gaugeResetBtnStatus.push(false);
+			}
+		}
+		this.gaugeResetBtnStatus = gaugeResetBtnStatus;
 	}
 
 	updateGaugeResetInfo(value: BatteryGaugeReset) {
