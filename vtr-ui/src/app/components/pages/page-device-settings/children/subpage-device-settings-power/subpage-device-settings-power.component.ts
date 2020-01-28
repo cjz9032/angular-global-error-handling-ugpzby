@@ -333,13 +333,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	// }
 
 	// ************ Start power page Capability Checks *******************
-	onSetSmartSettingsCapability(event: boolean) {
-		this.showPowerSmartSettings = event;
+	onSetSmartSettingsCapability(value: boolean) {
+		this.showPowerSmartSettings = value;
 		this.updateSmartSettingsLinkStatus(this.showPowerSmartSettings);
 	}
 
-	onSetSmartStandbyCapability(event: boolean) {
-		this.smartStandbyCapability = event;
+	onSetSmartStandbyCapability(value: boolean) {
+		this.smartStandbyCapability = value;
 		this.updateSmartStandbyLinkStatus(this.smartStandbyCapability);
 	}
 
@@ -495,8 +495,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.updatePowerMode();
 	}
 
-	onToggleOfAlwaysOnUsb(event) {
-		this.toggleAlwaysOnUsbFlag = event.switchValue;
+	onToggleOfAlwaysOnUsb(value: boolean) {
+		this.toggleAlwaysOnUsbFlag = value;
 		switch (this.machineType) {
 			case 1:
 				if (this.toggleAlwaysOnUsbFlag && this.usbChargingCheckboxFlag) {
@@ -510,7 +510,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.logger.info('always on usb: thinkpad');
 				break;
 			case 0:
-				this.setAlwaysOnUSBStatusIdeaPad(event);
+				this.setAlwaysOnUSBStatusIdeaPad(value);
 				this.logger.info('always on usb: ideapad');
 				break;
 		}
@@ -521,10 +521,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}, 100);
 	}
 
-	onToggleOfEasyResume(event) {
+	onToggleOfEasyResume(value: boolean) {
 		switch (this.machineType) {
 			case 1:
-				this.setEasyResumeThinkPad(event);
+				this.setEasyResumeThinkPad(value);
 				this.logger.info('Easy Resume: ThinkPad');
 				break;
 			case 0:
@@ -533,11 +533,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onToggleOfAirplanePowerMode(event) {
+	onToggleOfAirplanePowerMode(value) {
 		switch (this.machineType) {
 			case 1:
-				this.setAirplaneModeThinkPad(event);
-				this.logger.info('Airplane Power mOde Set: ThinkPad', event);
+				this.setAirplaneModeThinkPad(value);
+				this.logger.info('Airplane Power mOde Set: ThinkPad', value);
 				break;
 			case 0:
 				this.logger.info('Airplane Power mOde Set: ideapad');
@@ -652,11 +652,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private setEasyResumeThinkPad(event: any) {
+	private setEasyResumeThinkPad(value: boolean) {
 		if (this.powerService.isShellAvailable) {
-			this.powerService.setEasyResumeThinkPad(event.switchValue).then((value: boolean) => {
-				this.logger.info('setEasyResumeThinkPad.then', event.switchValue);
-				if (value) {
+			this.powerService.setEasyResumeThinkPad(value).then((response: boolean) => {
+				this.logger.info('setEasyResumeThinkPad.then', value);
+				if (response) {
 					this.getEasyResumeStatusThinkPad();
 				}
 			}).catch(error => {
@@ -666,9 +666,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private setAlwaysOnUSBStatusThinkPad(event: any, checkboxVal: any) {
+	private setAlwaysOnUSBStatusThinkPad(powerMode: string, checkboxVal: boolean) {
 		if (this.powerService.isShellAvailable) {
-			this.powerService.setAlwaysOnUSBStatusThinkPad(event, checkboxVal).then((value: boolean) => {
+			this.powerService.setAlwaysOnUSBStatusThinkPad(powerMode, checkboxVal).then((value: boolean) => {
 				this.logger.info('setAlwaysOnUSBStatusThinkPad.then', value);
 				this.getAlwaysOnUSBStatusThinkPad();
 			}).catch(error => {
@@ -712,10 +712,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private setAirplaneModeThinkPad(event: any) {
+	private setAirplaneModeThinkPad(value: boolean) {
 		if (this.powerService.isShellAvailable) {
-			this.powerService.setAirplaneModeThinkPad(event.switchValue).then((value: boolean) => {
-				this.logger.info('setAirplaneModeThinkPad.then', value);
+			this.powerService.setAirplaneModeThinkPad(value).then((response: boolean) => {
+				this.logger.info('setAirplaneModeThinkPad.then', response);
 				this.getAirplaneModeThinkPad();
 			}).catch(error => {
 				this.logger.error('setAirplaneModeThinkPad', error.message);
@@ -798,9 +798,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private setUSBChargingInBatteryModeStatusIdeaNoteBook(event: any) {
+	private setUSBChargingInBatteryModeStatusIdeaNoteBook(flagValue: any) {
 		if (this.powerService.isShellAvailable) {
-			this.powerService.setUSBChargingInBatteryModeStatusIdeaNoteBook(event)
+			this.powerService.setUSBChargingInBatteryModeStatusIdeaNoteBook(flagValue)
 				.then((value: boolean) => {
 					this.logger.info('setUSBChargingInBatteryModeStatusIdeaNoteBook.then', value);
 					setTimeout(() => {
@@ -813,12 +813,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private setAlwaysOnUSBStatusIdeaPad(event: any) {
+	private setAlwaysOnUSBStatusIdeaPad(value: boolean) {
 		if (this.powerService.isShellAvailable) {
 			this.powerService
-				.setAlwaysOnUSBStatusIdeaNoteBook(event.switchValue)
-				.then((value: boolean) => {
-					this.logger.info('setAlwaysOnUSBStatusIdeaNoteBook.then', value);
+				.setAlwaysOnUSBStatusIdeaNoteBook(value)
+				.then((response: boolean) => {
+					this.logger.info('setAlwaysOnUSBStatusIdeaNoteBook.then', response);
 					setTimeout(() => {
 						this.getAlwaysOnUSBStatusIdeaPad();
 					}, 50);
@@ -879,7 +879,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 
 	// removed from conservation mode <br>Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off.
-	async changeBatteryMode(event, mode) {
+	async changeBatteryMode(mode: string) {
 		// Code suggested fangtian1@lenovo.com, above commented code is the previous one
 		if (mode === 'expressCharging') {
 			this.conservationModeLock = true;
@@ -975,8 +975,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 
 	// Start Lenovo Vantage ToolBar
-	public onVantageToolBarStatusToggle(event: any) {
-		this.logger.info('onVantageToolBarStatusToggle', event.switchValue);
+	public onVantageToolBarStatusToggle(value: boolean) {
+		this.logger.info('onVantageToolBarStatusToggle', value);
 		try {
 			if (this.powerService.isShellAvailable) {
 				this.isVantageToolbarSetEnd = false;
@@ -992,7 +992,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					);
 				}
 
-				const setEvent$ = from(this.powerService.setVantageToolBarStatus(event.switchValue))
+				const setEvent$ = from(this.powerService.setVantageToolBarStatus(value))
 					.pipe(
 						tap(() => this.logger.info(`powerService.setVantageToolBarStatus - start stream`))
 					);
@@ -1001,7 +1001,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.pipe(
 						switchMap(() => this.powerService.getVantageToolBarStatus()),
 						map(res => {
-							if (res.status !== event.switchValue) {
+							if (res.status !== value) {
 
 								throw res;
 							} else {
@@ -1142,11 +1142,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public toggleBCTSwitch(event) {
-		if (event) {
+	public toggleBCTSwitch(value: boolean) {
+		if (value) {
 			let count = 0;
 			this.thresholdInfo.forEach(battery => {
-				battery.isEnabled = event;
+				battery.isEnabled = value;
 				const startValue = battery.startValue - (battery.startValue % 5);
 				let stopValue = battery.stopValue - (battery.stopValue % 5);
 				if (battery.startValue !== startValue || battery.stopValue !== battery.stopValue) {
@@ -1160,7 +1160,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				count++;
 			});
 		} else {
-			this.setBCTToggleOff(event);
+			this.setBCTToggleOff(value);
 		}
 	}
 
@@ -1194,14 +1194,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public setBCTToggleOff(event) {
+	public setBCTToggleOff(value: boolean) {
 		this.powerService.setToggleOff(this.thresholdInfo.length)
-			.then((value: any) => {
-				if (value === 0) {
+			.then((response: number) => {
+				if (response === 0) {
 					this.chargeThresholdStatus = false;
 					this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.chargeThresholdStatus);
 					this.thresholdInfo.forEach(battery => {
-						battery.isEnabled = event;
+						battery.isEnabled = value;
 					});
 					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.thresholdInfo);
 				}
@@ -1247,8 +1247,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	onToggleOfFlipToBoot($event: any) {
-		const status: FlipToBootSetStatus = $event.switchValue ? FlipToBootSetStatusEnum.On : FlipToBootSetStatusEnum.Off;
+	onToggleOfFlipToBoot(value: boolean) {
+		const status: FlipToBootSetStatus = value ? FlipToBootSetStatusEnum.On : FlipToBootSetStatusEnum.Off;
 		this.powerService.setFlipToBootSettings(status)
 			.then(res => {
 				if (+res.ErrorCode !== FlipToBootErrorCodeEnum.Succeed) {
