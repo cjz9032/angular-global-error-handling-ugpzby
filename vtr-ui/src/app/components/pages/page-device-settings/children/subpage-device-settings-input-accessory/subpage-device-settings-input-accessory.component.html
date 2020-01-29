@@ -34,7 +34,7 @@
 									[showChildContent]="true"
 									[theme]="'white'"
 									[switchId]="'inputAccessories-hiddenKeyboardFunctions'">
-									<div class="row">
+									<div class="row pl-3">
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 											<!-- <img src="../../../../../../assets/icons/Hidden keyboard functions.svg" alt="">-->
 											<div class="img-preview"
@@ -96,9 +96,9 @@
 								<div class="col-12 adjust-margin" automationId="VoipHotkeys.description.f10">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f10' | translate}}</div>
 								<div class="col-12 adjust-margin" automationId="VoipHotkeys.description.f11">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f11' | translate}}</div>
 							</div>
-							<div class="row pt-2" *ngIf="installedApps.length > 0; else noAppInstalled">
+							<div class="row pt-2 pl-4" *ngIf="installedApps.length > 0; else noAppInstalled">
 								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-									<div class="pl-2 pt-3 pb-4 prompting" automationid="VoipHotkeys.hasInstalledAppsDescription">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsDescription' | translate}}</div>
+									<div class="pt-3 pb-4 prompting" automationid="VoipHotkeys.hasInstalledAppsDescription">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsDescription' | translate}}</div>
 									<ng-container *ngFor="let installedApp of installedApps; index as i" >
 										<vtr-ui-rectangle-radio *ngIf="installedApp.isAppInstalled"
 																[ngClass]="{'mr-5': i === 0}"
@@ -174,9 +174,9 @@
 								<div class="col-12 adjust-margin" automationId="VoipHotkeys.description.f10">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f10' | translate}}</div>
 								<div class="col-12 adjust-margin" automationId="VoipHotkeys.description.f11">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f11' | translate}}</div>
 							</div>
-							<div class="row pt-2" *ngIf="installedApps.length > 0; else noAppInstalled">
+							<div class="row pt-2 pl-4" *ngIf="installedApps.length > 0; else noAppInstalled">
 								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-									<div class="pl-2 pt-3 pb-4 prompting" automationid="VoipHotkeys.hasInstalledAppsDescription">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsDescription' | translate}}</div>
+									<div class="pt-3 pb-4 prompting" automationid="VoipHotkeys.hasInstalledAppsDescription">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsDescription' | translate}}</div>
 									<ng-container *ngFor="let installedApp of installedApps; index as i">
 										<vtr-ui-rectangle-radio *ngIf="installedApp.isAppInstalled"
 																[ngClass]="{'mr-5': i === 0}"
