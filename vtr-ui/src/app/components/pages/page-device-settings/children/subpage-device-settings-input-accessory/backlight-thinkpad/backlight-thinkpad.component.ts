@@ -13,7 +13,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 })
 export class BacklightThinkpadComponent implements OnInit {
 
-	currentMode: BacklightStatusEnum = BacklightStatusEnum.AUTO;
+	currentMode: BacklightStatusEnum = BacklightStatusEnum.OFF;
 	@Output() showHide = new EventEmitter<boolean>();
 	modes = [
 		{
