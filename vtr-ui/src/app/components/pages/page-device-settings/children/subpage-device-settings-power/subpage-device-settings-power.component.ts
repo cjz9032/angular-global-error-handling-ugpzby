@@ -1274,7 +1274,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.powerService.getGaugeResetCapability().then((response) => {
 			this.logger.info('getGaugeResetCapability.then', this.gaugeResetCapability);
 			this.gaugeResetCapability = response;
-			this.updateBatteryLinkStatus(this.gaugeResetCapability);
+			this.updateBatteryLinkStatus(this.gaugeResetCapability && this.batteryService.gaugeResetInfo.length > 0);
 			this.commonService.setLocalStorageValue(LocalStorageKey.GaugeResetCapability, this.gaugeResetCapability);
 		}).catch((err) => {
 			this.logger.info('getGaugeResetCapability.error', err);
