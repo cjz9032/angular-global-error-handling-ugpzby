@@ -75,7 +75,7 @@
 
 	.text-regular {
 		color: $main_shade;
-		font-size: 1.5rem;
+		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 		padding: 1rem 1rem 1rem 0rem;
 	}
@@ -85,7 +85,7 @@
 
 		.heading {
 			color: $main_dark;
-			font-size: 2.5rem;
+			font-size: $fontsize_xl;
 		}
 
 		.button-box {

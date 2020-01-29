@@ -2,7 +2,7 @@
 
 .vtr-modal-hardware-scan-customize {
 	fa-icon {
-		font-size: 2.5rem;
+		font-size: $fontsize_xl;
 		color: $main;
 	}
 
@@ -26,7 +26,7 @@
 		.errorMessage {
 			width: 100%;
 			color: $alt;
-			font-size: 1.4rem;
+			font-size: $fontsize_xs;
 			font-weight: $weight_medium;
 		}
 	}

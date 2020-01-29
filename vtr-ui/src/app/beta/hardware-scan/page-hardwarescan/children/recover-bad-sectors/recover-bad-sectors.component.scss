@@ -18,7 +18,7 @@
 				text-transform: capitalize;
 			}
 			.action-anchor {
-				font-size: 1.3rem;
+				font-size: $fontsize_xs2;
 				color: $main;
 				text-decoration: underline;
 				cursor: pointer;
@@ -41,7 +41,7 @@
 
 			.heading {
 				color: $main_dark;
-				font-size: 2.5rem;
+				font-size: $fontsize_xl;
 			}
 		}
 
@@ -53,7 +53,7 @@
 		}
 
 		fa-icon {
-			font-size: 4.5rem;
+			font-size: $fontsize_xl4;
 			color: $main;
 		}
 

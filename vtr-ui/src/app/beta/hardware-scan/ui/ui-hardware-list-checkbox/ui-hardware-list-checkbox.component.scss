@@ -52,13 +52,13 @@
 		}
 
 		.subtitle {
-			font-size: 1.4rem;
+			font-size: $fontsize_xs;
 			font-weight: $shade_lighter;
 		}
 
 		.options {
 			padding: 0.8rem 0;
-			font-size: 1.3rem;
+			font-size: $fontsize_xs2;
 
 			.select-item {
 				color: $main;

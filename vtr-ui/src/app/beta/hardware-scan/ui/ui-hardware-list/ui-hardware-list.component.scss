@@ -49,7 +49,7 @@
 			table {
 				margin: 0 !important;
 				border: none !important;
-				font-size: 1.1rem;
+				font-size: $fontsize_xs2;
 				color: $shade_darkest;
 
 				tr {
@@ -111,7 +111,7 @@
 
 	.span-not-applicable {
 		color: $light-grey;
-		font-size: 1.4rem;
+		font-size: $fontsize_xs;
 		padding-left: 3rem;
 		font-weight: $weight_bold;
 	}
@@ -174,13 +174,13 @@
 
 		.module-result-text {
 			padding-right: 1rem;
-			font-size: 1rem;
+			font-size: $fontsize_xs2;
 			font-weight: $weight_bold;
 			text-transform: uppercase;
 		}
 
 		.module-result-icon {
-			font-size: 2rem;
+			font-size: $fontsize_lg;
 		}
 
 		.noScanned {
