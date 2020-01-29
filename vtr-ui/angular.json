@@ -178,15 +178,15 @@
 									"with": "src/app/components/pages/page-privacy/utils/communication-with-figleaf/figleaf-connector-mock.ts"
 								}
 							],
-							"optimization": false,
-							"outputHashing": "none",
+							"optimization": true,
+							"outputHashing": "all",
 							"sourceMap": true,
 							"extractCss": true,
 							"namedChunks": true,
-							"aot": false,
+							"aot": true,
 							"extractLicenses": false,
 							"vendorChunk": false,
-							"buildOptimizer": false,
+							"buildOptimizer": true,
 							"budgets": [
 								{
 									"type": "initial",
@@ -194,7 +194,7 @@
 									"maximumError": "15mb"
 								}
 							],
-							"serviceWorker": false
+							"serviceWorker": true
 						},
 						"beta": {
 							"fileReplacements": [

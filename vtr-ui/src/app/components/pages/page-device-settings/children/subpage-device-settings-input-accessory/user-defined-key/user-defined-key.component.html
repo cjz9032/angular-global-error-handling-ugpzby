@@ -9,7 +9,7 @@
 		[tooltipText]="'device.deviceSettings.inputAccessories.userDefinedKey.tooltip' | translate"
 		[switchId]="'ds-ip-userdefined-key'">
 		<div class="row">
-			<div class="col-12 pt-3">
+			<div class="col-12 pt-3 pl-5">
 				<div class="row">
 					<div class="col-auto pl-0">
 						<img class="img-fluid f12-img"
@@ -63,7 +63,7 @@
 											tabindex="0"
 											(keydown.enter)="onChange(item); userDefineDrop.close()"
 											(keydown)="checkDropDown(userDefineDrop, i, $event)"
-											(click)="onChange(item)">{{item.title | translate}} 
+											(click)="onChange(item)">{{item.title | translate}}
 										</a>
 									</div>
 								</div>

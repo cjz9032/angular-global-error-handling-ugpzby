@@ -200,7 +200,7 @@
 											<div class="row fac-control">
 												<div class="col mt-10 facial-recognition"
 													*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible">
-													<h3 id="smart-assist-zero-touch-lock-faical-recognition-title"
+													<h3 id="smart-assist-zero-touch-lock-faical-recognition-title mt-2"
 														attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-title">
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.title' | translate}}
 													</h3>
@@ -479,16 +479,17 @@
 
 
 					<!-- Start of Intelligent Media -->
-
-					<vtr-intelligent-media id="media"
-						*ngIf="intelligentMedia.available || superResolution.available"
-						[isLoading]="isIntelligentMediaLoading"
-						[isChecked]="intelligentMedia.status"
-						[isSRLoading]="isSuperResolutionLoading"
-						[isSRChecked]="superResolution.status"
-						[intelligentMediaAvailable]="intelligentMedia.available"
-						[superResolutionAvailable]="superResolution.available">
-					</vtr-intelligent-media>
+					<div class="smart-assist-card">
+						<vtr-intelligent-media id="media"
+							*ngIf="intelligentMedia.available || superResolution.available"
+							[isLoading]="isIntelligentMediaLoading"
+							[isChecked]="intelligentMedia.status"
+							[isSRLoading]="isSuperResolutionLoading"
+							[isSRChecked]="superResolution.status"
+							[intelligentMediaAvailable]="intelligentMedia.available"
+							[superResolutionAvailable]="superResolution.available">
+						</vtr-intelligent-media>
+					</div>
 
 					<!-- End of Intelligent Media -->
 

@@ -983,7 +983,7 @@ export class VantageShellService {
 	public getMicrophoneSettings(): any {
 		const microphone: any = {};
 		const micSupportedModes: any = {
-			current: 'MultipleVoices',
+			currentMode: 'MultipleVoices',
 			modes: ['VoiceRecognition', 'OnlyMyVoice', 'Normal', 'MultipleVoices']
 		};
 
@@ -1008,6 +1008,10 @@ export class VantageShellService {
 		microphone.setMicrophoneOpitimaztion = this.getPromise(true);
 		microphone.startMonitor = this.getPromise(true);
 		microphone.stopMonitor = this.getPromise(true);
+		microphone.getMicrophoneSettingsAsync = (handler) => {
+			this.getPromise(true);
+			handler(micSupportedModes);
+		};
 
 		return microphone;
 	}
@@ -1663,13 +1667,21 @@ export class VantageShellService {
 		return gamingLighting;
 	}
 	public getGamingOverClock(): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingOverclock;
-		}
-		return undefined;
+		// if (this.phoenix) {
+		// 	if (!this.phoenix.gaming) {
+		// 		this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+		// 	}
+		// 	return this.phoenix.gaming.gamingOverclock;
+		// }
+		// return undefined;
+		const gamingOverClock = {
+			getCpuOCStatus: this.getPromise(true),
+			getRamOCStatus: this.getPromise(true),
+			setCpuOCStatus: this.getPromise(true),
+			setRamOCStatus: this.getPromise(true),
+		};
+		return gamingOverClock;
+
 	}
 
 	public getIntelligentSensing(): any {
@@ -1719,27 +1731,38 @@ export class VantageShellService {
 	}
 
 	public getGamingKeyLock() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingKeyLock;
-		}
-		return undefined;
+
+		// if (this.phoenix) {
+		// 	if (!this.phoenix.gaming) {
+		// 		this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+		// 	}
+
+		// 	return this.phoenix.gaming.gamingKeyLock;
+		// }
+		const gamingKeyLock: any = {
+			getKeyLockStatus: this.getPromise(true),
+			setKeyLockStatus: this.getPromise(true)
+		};
+		return gamingKeyLock;
+		//return undefined;
 	}
 
 	public getGamingHybridMode() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingHybridMode;
-		}
-		return undefined;
+
+		const gamingHybridMode: any = {
+			getHybridModeStatus: this.getPromise(true),
+			setHybridModeStatus: this.getPromise(true)
+		};
+		return gamingHybridMode;
+
 	}
 
 	public getGamingHwInfo() {
-		const gamingHwInfo: any = {};
+		const gamingHwInfo: any = {
+			getDynamicInformation: this.getPromise(true),
+			getMachineInfomation: this.getPromise(true)
+		};
+
 		const hwINFOObj = {
 			cpuBaseFrequence: '1.80GHz',
 			cpuModuleName: 'Intel(R) Core(TM) i10-8250U CPU @ 1.60GHz',
@@ -1758,6 +1781,9 @@ export class VantageShellService {
 		// }
 		// return undefined;
 	}
+
+
+
 
 	public getIntelligentMedia(): any {
 		const media = {
@@ -2078,12 +2104,19 @@ export class VantageShellService {
 	}
 
 	public getGamingThermalMode() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingThermalmode;
-		}
+		// if (this.phoenix) {
+		// 	if (!this.phoenix.gaming) {
+		// 		this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+		// 	}
+		// 	return this.phoenix.gaming.gamingThermalmode;
+		// }
+
+		const gamingThermalMode = {
+			getThermalModeStatus: this.getPromise(true),
+			setThermalModeStatus: this.getPromise(true),
+			regThermalModeEvent: this.getPromise(true),
+		};
+		return gamingThermalMode;
 	}
 
 	public getImcHelper(): any {

@@ -208,6 +208,7 @@
 			font-weight: $weight_light;
 			text-align: left;
 			padding-left: 2rem;
+			line-height: 1.6;
 		}
 	}
 	.energystar-container {
@@ -219,15 +220,17 @@
 		background-color: $shade_extralight;
 		margin: 1rem 0rem 1.5rem 0rem;
 		.energystar-text {
-			color: $main_darker;
+			color: $shade_blue;
 			font-size: 1.5rem;
-			font-weight: $weight_bold;
+			font-weight: $weight_light;
 			margin: 0.5rem 0 0 0;
+			text-transform: uppercase;
+			letter-spacing: 0.89px;
 		}
-		.energystar-text {
-			@media #{$mediaquery_11} {
-				text-align: center;
-			}
-		}
+		// .energystar-text {
+		// 	@media #{$mediaquery_11} {
+		// 		text-align: center;
+		// 	}
+		// }
 	}
 }

@@ -292,7 +292,7 @@ strong {
 
 ngb-tooltip-window.vtr-tooltip.tooltip {
 	border-radius: 0.4rem;
-	z-index: 1;
+	// z-index: 1;
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 
@@ -1083,6 +1083,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 					color: $main_lightest;
 					position: relative;
 					z-index: 5;
+					@media #{$breakpoint_xl} {
+						font-size: $fontsize_xs2;
+					}
+					@media #{$breakpoint_sm} {
+						font-size: 0.9rem;
+					}
 					.icon {
 						height: 12rem;
 						width: 10rem;
@@ -1090,6 +1096,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 						text-align: center;
 						font-size: 8rem;
 						color: $main_light;
+						@media #{$breakpoint_sm} {
+							font-size: 6rem;
+						}
 					}
 					&::before {
 						content: "";
