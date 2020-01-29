@@ -58,10 +58,6 @@ import { PageLayoutModule } from '../components/page-layout/page-layout.module';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//cpt related
-import { PageCptComponent } from '../components/pages/page-cpt/page-cpt.component';
-//import { CptpageDeviceSettingsComponent } from 'src/app/components/pages/page-cpt/children/cptpage-device-settings/cptpage-device-settings.component';
-//import { CptpageMyDeviceComponent } from 'src/app/components/pages/page-cpt/children/cptpage-my-device/cptpage-my-device.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
 import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
@@ -81,7 +77,6 @@ import { GamingDashboardModule } from './gaming-dashboard.module';
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
 		//PageSettingsComponent,
-		PageCptComponent,
 		ModalNewFeatureTipComponent,
 		PageSettingsComponent
 		//ModalErrorMessageComponent

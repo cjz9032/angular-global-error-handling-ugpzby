@@ -18,6 +18,7 @@ import { CptpageSecurityAntivirusComponent } from 'src/app/components/pages/page
 import { CptpageSecurityPasswordComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-password/cptpage-security-password.component';
 import { CptpageSecurityWifiComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-wifi/cptpage-security-wifi.component';
 import { CptpageSecurityInternetComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-internet/cptpage-security-internet.component';
+import { CptpageSupportComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-support/cptpage-support.component';
 
 
 declare let JSONEditor: any;
@@ -39,7 +40,7 @@ src\app\modules\gaming-routing.module.ts
   //add components within array
   entryComponents: [CptpageMyDeviceComponent, CptpageDeviceSettingsComponent, CptpageDashboardComponent, CptpageDeviceUpdatesComponent
     , CptpageSmartAssistComponent, CptpageSecurityComponent, CptpageSecurityAntivirusComponent,CptpageSecurityPasswordComponent
-    , CptpageSecurityWifiComponent, CptpageSecurityInternetComponent
+    , CptpageSecurityWifiComponent, CptpageSecurityInternetComponent, CptpageSupportComponent
   ]
 })
 export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
@@ -463,7 +464,57 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
           }
         );
 
-        break;      
+        break;     
+      //Page Support
+      case 'vtr-page-support':
+        factory = this.cfr.resolveComponentFactory(CptpageSupportComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageSupportComponent>componentRef.instance);
+
+        //set child editor 
+        //this.currentComponent.editorSupport = new JSONEditor(document.getElementById('jeditorSupport'), { mode: 'view' }, {});
+        //this.currentComponent.clipboardSupport = new ClipboardJS('.btnCopySupport');
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'support'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+
+            //setting child variables
+            this.currentComponent.currentSelection.defaultArticleUrl = this.parseCMSUrl(defaultsURLParm, {}, this.serverSwitchResponse.cmsserver,true);
+            //console.log(this.currentComponent.currentSelection);
+
+          }
+        );
+
+        //calling child methods for category click 
+        /*let categorySubscriber = this.currentComponent.fetchCMSArticles('').subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'support'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+          }
+        );*/
+
+        break; 
       default:
         this.serverSwitchResponse.fullcmsserver = '';
         this.serverSwitchResponse.jsonresponse = { 'error': 'Work in progress.' };
@@ -475,7 +526,7 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
 
   parseCMSUrl(defaultsURLParm, queryParams, cmsserver, isArticle = false) {
 
-    let CMSOption = Object.assign(defaultsURLParm, queryParams);
+    let CMSOption = Object.assign({},defaultsURLParm, queryParams);
     let fullcmsserver = cmsserver + '/api/v1/' + (!isArticle ? 'features' : 'articles');
     let c = 0;
     for (let x in CMSOption) {

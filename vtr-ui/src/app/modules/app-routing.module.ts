@@ -66,18 +66,9 @@ const routes: Routes = [
 	},
 	{
 		path: 'cpt',
-		component: PageCptComponent
-		// data: {
-		// 	pageName: 'Page.Cpt'
-		// }
+		/*component: PageCptComponent*/
+		loadChildren: './cpt/cpt.module#CptModule'
 	},
-	// {
-	// 	path: 'cpt-mydevice',
-	// 	component: CptpageMyDeviceComponent,
-	// 	data: {
-	// 		pageName: 'Page.Cpt-MyDevice'
-	// 	}
-	// },
 	{
 		path: '',
 		component: HomeComponent,

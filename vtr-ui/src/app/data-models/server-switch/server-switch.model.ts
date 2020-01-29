@@ -60,6 +60,7 @@ export class ServerSwitch {
 				{ 'label': 'Password Protection', 'componentSelector': 'vtr-page-security-password'},
 				{ 'label': 'WiFi Security', 'componentSelector': 'vtr-page-security-wifi'},
 				{ 'label': 'Internet Protection', 'componentSelector': 'vtr-page-security-internet'},
+				{ 'label': 'Support', 'componentSelector': 'vtr-page-support'},
 			]
 		},
 	];
