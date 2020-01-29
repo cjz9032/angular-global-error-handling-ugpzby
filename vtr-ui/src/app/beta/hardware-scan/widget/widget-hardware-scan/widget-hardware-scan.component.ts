@@ -16,7 +16,6 @@ export class WidgetHardwareScanComponent implements OnInit {
 	@Input() finalResultCodeText: string = this.finalResultCodeText || '';
 	@Input() buttonText = '';
 	@Input() anchorText = '';
-	@Input() cancelText = this.translate.instant('hardwareScan.cancel');
 	@Input() completeText = this.translate.instant('hardwareScan.complete');
 	@Input() statusText: string;
 	@Input() lenovoSupport = '';

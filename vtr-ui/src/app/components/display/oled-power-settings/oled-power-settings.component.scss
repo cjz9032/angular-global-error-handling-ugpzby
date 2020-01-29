@@ -2,21 +2,28 @@
 
 .vtr-oled-power-settings {
   p.caption {
-    font-size: 1.5rem;
-    margin-left: 0.5rem !important;
+    font-size: $fontsize_xs;
+	margin-left: 1rem !important;
+	color: $purple_navy;
+	font-weight: $weight_light;
+	padding-left: 0.5rem;
   }
   .dropdown {
-    margin-top: 2.5rem;
+	margin-top: 2.5rem;
+	margin-left: 1.2rem;
     section {
       margin-bottom: 3rem;
-      padding: 0 2rem 0 0;
+	  padding: 0 2rem 0 0;
+	  .oled-dimming-portions {
+		  height: 5rem;
       h5 {
-        font-size: 1.5rem;
-        font-weight: 600;
+        font-size: $fontsize_xs;
+        font-weight: $weight_600;
         color: $main_shade;
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
         padding-left: 0.3rem;
-      }
+	  }
+	}
     }
   }
 }
