@@ -1433,6 +1433,30 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
+.start-recover-warning {
+	.modal-dialog {
+		max-width: 55%;
+		margin: 0 auto;
+		@media #{$breakpoint_lg} {
+			max-width: 70%;
+		}
+		@media #{$breakpoint_md} {
+			max-width: 75%;
+		}
+		@media #{$breakpoint_sm} {
+			max-width: 80%;
+		}
+		.modal-content {
+			border-radius: 1rem;
+			.description {
+				.question {
+					font-weight: $weight_bold;
+				}
+			}
+		}
+	}
+}
+
 .schedule-new-modal-size {
 	.modal-dialog {
 		max-width: 55%;
