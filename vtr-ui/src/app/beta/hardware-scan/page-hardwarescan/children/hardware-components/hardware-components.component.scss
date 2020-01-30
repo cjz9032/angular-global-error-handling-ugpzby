@@ -15,7 +15,7 @@
 			font-weight: $weight_light;
 			text-transform: capitalize;
 			@media #{$breakpoint_xl3}{
-			font-size: $fontsize_md;
+				font-size: $fontsize_md;
 			}
 			@media #{$breakpoint_xl6}{
 				font-size: $fontsize_xl;
