@@ -77,6 +77,32 @@
     <div class="col-4 vtr-page-right-column">
         <div class="container-fluid">
 
+            <!-- Category Articles Editors -->
+            <div class="row d-lg-block"
+                [ngClass]="{'showEditor': articlesType === 'articles', 'hideEditor': articlesType !== 'articles'  }">
+                <div class="category-article-editor col col-12 p-3">
+                    <div class="d-flex flex-column">
+                        <div class="cms-txt">
+                            <strong>Article Url:</strong>
+                            <div class="d-flex flex-row-reverse w-100"><button
+                                    class="btnCopy btn btn-sm btn-primary button" data-clipboard-action="copy"
+                                    [attr.data-clipboard-text]="currentSelection.articleUrl">Copy
+                                    Url</button>
+                            </div>
+                            <p class="text-break mt-1">{{currentSelection.articleUrl}}</p>
+                        </div>
+                        <div class="">
+                            <div class="d-flex flex-row-reverse w-100">
+                                <button class="btnCopy btn btn-sm btn-primary button" data-clipboard-action="copy"
+                                    [attr.data-clipboard-text]="articles | json">Copy
+                                    Response</button>
+                            </div>
+                            <div id="jeditorSupport"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row d-none d-lg-block" *ngIf="articlesType !== 'loading' && articles.right.length > 0">
                 <div class="col col-12 px-0 pt-0 pb-40">
                     <vtr-container-article [items]="articles.right" *ngIf="isOnline" [startIndex]="5"
@@ -85,26 +111,6 @@
                 </div>
             </div>
 
-            <!-- Category Articles Editors -->
-            <div class="row d-lg-block"
-                [ngClass]="{'showEditor': articlesType === 'articles', 'hideEditor': articlesType !== 'articles'  }">
-                <div class="col col-12 cms-txt">
-                    <strong>Article Url:</strong>
-                    <div class="d-flex flex-row-reverse w-100"><button class="btnCopy btn btn-sm btn-primary button"
-                            data-clipboard-action="copy" [attr.data-clipboard-text]="currentSelection.articleUrl">Copy
-                            Url</button>
-                    </div>
-                    <p class="text-break mt-1">{{currentSelection.articleUrl}}</p>
-                </div>
-                <div class="col col-12">
-                    <div class="d-flex flex-row-reverse w-100">
-                        <button class="btnCopy btn btn-sm btn-primary button" data-clipboard-action="copy"
-                            [attr.data-clipboard-text]="articles | json">Copy
-                            Response</button>
-                    </div>
-                    <div id="jeditorSupport"></div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

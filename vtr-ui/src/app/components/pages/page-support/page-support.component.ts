@@ -99,6 +99,15 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		metricsEvent: 'FeatureClick',
 		metricsParent: 'Page.Support'
 	};
+	//cpt
+	listCpt = {
+		iconPath: 'assets/images/support/svg_icon_about_us.svg',
+		title: 'cpt.title',
+		url: '#/cpt',
+		metricsItem: 'Quicklinks.AboutLenovoVantageButton',//@todo
+		metricsEvent: 'FeatureClick',
+		metricsParent: 'Page.Support'
+	};
 	offlineImages = [
 		'assets/images/support/support-offline-1.jpg',
 		'assets/images/support/support-offline-2.jpg',
@@ -186,6 +195,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			this.supportDatas.needHelp.splice(1, 0, this.listContactCustomerService);
 		});
 		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
+		//cpt
+		this.supportDatas.quicklinks.push(this.listCpt);
 	}
 
 	getWarrantyInfo() {

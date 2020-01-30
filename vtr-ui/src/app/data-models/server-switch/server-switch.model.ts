@@ -60,9 +60,20 @@ export class ServerSwitch {
 				{ 'label': 'Password Protection', 'componentSelector': 'vtr-page-security-password'},
 				{ 'label': 'WiFi Security', 'componentSelector': 'vtr-page-security-wifi'},
 				{ 'label': 'Internet Protection', 'componentSelector': 'vtr-page-security-internet'},
-				{ 'label': 'Support', 'componentSelector': 'vtr-page-support'},
+				/*{ 'label': 'Windows Hello', 'componentSelector': 'vtr-page-security-windows-hello' },*/
+				{ 'label': 'Support', 'componentSelector': 'vtr-page-support'}
 			]
 		},
+		/*gaming*/
+		{
+			'optgroup': 'Gaming',
+			'opt': [
+				{ 'label': 'Dashboard', 'componentSelector': 'vtr-page-device-gaming'  },
+				{ 'label': 'Macro Key', 'componentSelector': 'vtr-page-macrokey'  },
+				{ 'label': 'Lighting', 'componentSelector': 'vtr-page-lightingcustomize'  },
+			]
+		},
+		
 	];
 
 }

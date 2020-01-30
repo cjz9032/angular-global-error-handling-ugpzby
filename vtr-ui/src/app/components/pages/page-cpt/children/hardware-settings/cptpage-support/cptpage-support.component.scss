@@ -208,7 +208,15 @@
 		@media #{$mediaquery_X5} {
 			padding: 4rem 8.5rem;
 		}
-    }
+	}
+	
+	.category-article-editor {
+		box-shadow: $drop_shadow;
+		border-radius: $border_radius;
+		background-color: $light;
+		position: relative;
+		height: 30rem;
+	}
     
     .showEditor {
         width: auto;

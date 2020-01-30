@@ -116,18 +116,6 @@ export class CptpageSupportComponent implements OnInit, OnDestroy {
     this.searchWords = value;
   }
 
-  parseCMSUrl(defaultsURLParm, queryParams, cmsserver, isArticle = false) {
-
-    let CMSOption = Object.assign(defaultsURLParm, queryParams);
-    let fullcmsserver = cmsserver + '/api/v1/' + (!isArticle ? 'features' : 'articles');
-    let c = 0;
-    for (let x in CMSOption) {
-      fullcmsserver += (c == 0 ? '?' : '&') + x + '=' + CMSOption[x];
-      c++;
-    }
-    return fullcmsserver;
-  }
-
   setCurrentSelection(categoryId: string) {
     this.currentSelection.categoryId = categoryId;
     this.currentSelection.articleUrl = this.currentSelection.defaultArticleUrl + '&category='+categoryId;

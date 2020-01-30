@@ -19,6 +19,9 @@ import { CptpageSecurityPasswordComponent } from 'src/app/components/pages/page-
 import { CptpageSecurityWifiComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-wifi/cptpage-security-wifi.component';
 import { CptpageSecurityInternetComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-internet/cptpage-security-internet.component';
 import { CptpageSupportComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-support/cptpage-support.component';
+import { CptpageDeviceGamingComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-device-gaming/cptpage-device-gaming.component';
+import { CptpageMacrokeyComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-macrokey/cptpage-macrokey.component';
+import { CptpageLightingcustomizeComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-lightingcustomize/cptpage-lightingcustomize.component';
 
 
 declare let JSONEditor: any;
@@ -40,7 +43,8 @@ src\app\modules\gaming-routing.module.ts
   //add components within array
   entryComponents: [CptpageMyDeviceComponent, CptpageDeviceSettingsComponent, CptpageDashboardComponent, CptpageDeviceUpdatesComponent
     , CptpageSmartAssistComponent, CptpageSecurityComponent, CptpageSecurityAntivirusComponent,CptpageSecurityPasswordComponent
-    , CptpageSecurityWifiComponent, CptpageSecurityInternetComponent, CptpageSupportComponent
+    , CptpageSecurityWifiComponent, CptpageSecurityInternetComponent, CptpageSupportComponent, CptpageDeviceGamingComponent
+    , CptpageMacrokeyComponent, CptpageLightingcustomizeComponent
   ]
 })
 export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
@@ -471,10 +475,6 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageSupportComponent>componentRef.instance);
 
-        //set child editor 
-        //this.currentComponent.editorSupport = new JSONEditor(document.getElementById('jeditorSupport'), { mode: 'view' }, {});
-        //this.currentComponent.clipboardSupport = new ClipboardJS('.btnCopySupport');
-
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
           (jresponse: any) => {
@@ -492,18 +492,24 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
 
             //setting child variables
             this.currentComponent.currentSelection.defaultArticleUrl = this.parseCMSUrl(defaultsURLParm, {}, this.serverSwitchResponse.cmsserver,true);
-            //console.log(this.currentComponent.currentSelection);
 
           }
         );
 
-        //calling child methods for category click 
-        /*let categorySubscriber = this.currentComponent.fetchCMSArticles('').subscribe(
+        break; 
+      //Page Gaming Dashboard
+      case 'vtr-page-device-gaming':
+        factory = this.cfr.resolveComponentFactory(CptpageDeviceGamingComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageDeviceGamingComponent>componentRef.instance);
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
           (jresponse: any) => {
 
             //for full urls 
             let queryParams = {
-              Page: 'support'
+              Page: 'dashboard'
             };
             this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
 
@@ -512,9 +518,57 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
 
             this.serverSwitchResponse.isloading = false;
           }
-        );*/
+        );
 
-        break; 
+        break;     
+      //Page Gaming Macrokey
+      case 'vtr-page-macrokey':
+        factory = this.cfr.resolveComponentFactory(CptpageMacrokeyComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageMacrokeyComponent>componentRef.instance);
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'macro-key'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+          }
+        );
+
+        break;     
+      //Page Gaming Lighting
+      case 'vtr-page-lightingcustomize':
+        factory = this.cfr.resolveComponentFactory(CptpageLightingcustomizeComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageLightingcustomizeComponent>componentRef.instance);
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'lighting'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+          }
+        );
+
+        break;     
       default:
         this.serverSwitchResponse.fullcmsserver = '';
         this.serverSwitchResponse.jsonresponse = { 'error': 'Work in progress.' };

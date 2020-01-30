@@ -12,6 +12,8 @@ import { CptpageSecurityPasswordComponent } from 'src/app/components/pages/page-
 import { CptpageSecurityWifiComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-wifi/cptpage-security-wifi.component';
 import { CptpageSecurityInternetComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-security-internet/cptpage-security-internet.component';
 import { CptpageSupportComponent } from 'src/app/components/pages/page-cpt/children/hardware-settings/cptpage-support/cptpage-support.component';
+import { CptpageDeviceGamingComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-device-gaming/cptpage-device-gaming.component';
+import { CptpageMacrokeyComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-macrokey/cptpage-macrokey.component';
 
 //misc
 import { CommonModule } from '@angular/common';
@@ -22,6 +24,8 @@ import { HardwareDashboardModule } from '../hardware-settings/hardware-dashboard
 import { SecurityAdvisorModule } from '../security-advisor/security-advisor.module';
 import { UIArticleItemComponent } from 'src/app/components/ui/ui-article-item/ui-article-item.component';
 import { ContainerArticleComponent } from 'src/app/components/container-article/container-article.component';
+import { GamingDashboardModule } from '../gaming-dashboard.module';
+import { CptpageLightingcustomizeComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-lightingcustomize/cptpage-lightingcustomize.component';
 
 
 @NgModule({
@@ -39,6 +43,9 @@ import { ContainerArticleComponent } from 'src/app/components/container-article/
 		CptpageSecurityWifiComponent,
 		CptpageSecurityInternetComponent,
 		CptpageSupportComponent,
+		CptpageDeviceGamingComponent,
+		CptpageMacrokeyComponent,
+		CptpageLightingcustomizeComponent
 
 	],
 	imports: [
@@ -47,7 +54,9 @@ import { ContainerArticleComponent } from 'src/app/components/container-article/
 		SupportModule,
 		HardwareSettingsModule,
 		HardwareDashboardModule,
-		SecurityAdvisorModule
+		SecurityAdvisorModule,
+		//gaming
+		GamingDashboardModule
 	],
 	providers: [],
 	exports: [],
