@@ -938,6 +938,13 @@
 					}
 				}
 			}
+			.smart-settings-card{
+				vtr-ui-row-switch {
+					.vtr-ui-switch-row.white-theme {						
+						border-bottom:none !important;						
+					}
+				}
+			}
 
 			//badsectorspage
 			.vtr-device-information {
