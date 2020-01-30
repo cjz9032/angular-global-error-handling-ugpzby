@@ -71,6 +71,8 @@ export class ServerSwitch {
 				{ 'label': 'Dashboard', 'componentSelector': 'vtr-page-device-gaming'  },
 				{ 'label': 'Macro Key', 'componentSelector': 'vtr-page-macrokey'  },
 				{ 'label': 'Lighting', 'componentSelector': 'vtr-page-lightingcustomize'  },
+				{ 'label': 'Network Boost', 'componentSelector': 'vtr-page-networkboost'  },
+				{ 'label': 'Auto Close', 'componentSelector': 'vtr-page-autoclose'  }
 			]
 		},
 		

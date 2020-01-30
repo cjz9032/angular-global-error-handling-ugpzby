@@ -26,6 +26,8 @@ import { UIArticleItemComponent } from 'src/app/components/ui/ui-article-item/ui
 import { ContainerArticleComponent } from 'src/app/components/container-article/container-article.component';
 import { GamingDashboardModule } from '../gaming-dashboard.module';
 import { CptpageLightingcustomizeComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-lightingcustomize/cptpage-lightingcustomize.component';
+import { CptpageNetworkboostComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-networkboost/cptpage-networkboost.component';
+import { CptpageAutocloseComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-autoclose/cptpage-autoclose.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { CptpageLightingcustomizeComponent } from 'src/app/components/pages/page
 		CptpageSupportComponent,
 		CptpageDeviceGamingComponent,
 		CptpageMacrokeyComponent,
-		CptpageLightingcustomizeComponent
+		CptpageLightingcustomizeComponent,
+		CptpageNetworkboostComponent,
+		CptpageAutocloseComponent
 
 	],
 	imports: [

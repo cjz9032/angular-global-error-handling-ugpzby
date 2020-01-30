@@ -12,6 +12,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
+//cpt
+import { environment } from 'src/environments/environment';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -99,14 +101,13 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		metricsEvent: 'FeatureClick',
 		metricsParent: 'Page.Support'
 	};
-	//cpt
+
+	//cpt 
+	private isServerSwitchEnabled = true;
 	listCpt = {
 		iconPath: 'assets/images/support/svg_icon_about_us.svg',
 		title: 'cpt.title',
-		url: '#/cpt',
-		metricsItem: 'Quicklinks.AboutLenovoVantageButton',//@todo
-		metricsEvent: 'FeatureClick',
-		metricsParent: 'Page.Support'
+		clickItem: 'cpt'
 	};
 	offlineImages = [
 		'assets/images/support/support-offline-1.jpg',
@@ -147,6 +148,9 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.fetchCMSArticleCategory();
 		this.fetchCMSContents();
 		this.setShowList();
+
+		//cpt
+		this.isServerSwitchEnabled = (typeof environment !== 'undefined' ? environment.isServerSwitchEnabled : true);
 	}
 
 	ngOnDestroy() {
@@ -195,8 +199,12 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			this.supportDatas.needHelp.splice(1, 0, this.listContactCustomerService);
 		});
 		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
+		
 		//cpt
-		this.supportDatas.quicklinks.push(this.listCpt);
+		if(this.isServerSwitchEnabled){
+			this.supportDatas.quicklinks.push(this.listCpt);
+		}
+		
 	}
 
 	getWarrantyInfo() {

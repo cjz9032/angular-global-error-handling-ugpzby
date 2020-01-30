@@ -103,7 +103,7 @@
                 </div>
             </div>
 
-            <div class="row d-none d-lg-block" *ngIf="articlesType !== 'loading' && articles.right.length > 0">
+            <div class="row d-none d-lg-block mt-5" *ngIf="articlesType !== 'loading' && articles.right.length > 0">
                 <div class="col col-12 px-0 pt-0 pb-40">
                     <vtr-container-article [items]="articles.right" *ngIf="isOnline" [startIndex]="5"
                         [indexPreText]="'r'" [indexTimes]="1" [type]="articlesType">

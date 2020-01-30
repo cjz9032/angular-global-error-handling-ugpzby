@@ -22,6 +22,8 @@ import { CptpageSupportComponent } from 'src/app/components/pages/page-cpt/child
 import { CptpageDeviceGamingComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-device-gaming/cptpage-device-gaming.component';
 import { CptpageMacrokeyComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-macrokey/cptpage-macrokey.component';
 import { CptpageLightingcustomizeComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-lightingcustomize/cptpage-lightingcustomize.component';
+import { CptpageNetworkboostComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-networkboost/cptpage-networkboost.component';
+import { CptpageAutocloseComponent } from 'src/app/components/pages/page-cpt/children/gaming/cptpage-autoclose/cptpage-autoclose.component';
 
 
 declare let JSONEditor: any;
@@ -44,7 +46,7 @@ src\app\modules\gaming-routing.module.ts
   entryComponents: [CptpageMyDeviceComponent, CptpageDeviceSettingsComponent, CptpageDashboardComponent, CptpageDeviceUpdatesComponent
     , CptpageSmartAssistComponent, CptpageSecurityComponent, CptpageSecurityAntivirusComponent,CptpageSecurityPasswordComponent
     , CptpageSecurityWifiComponent, CptpageSecurityInternetComponent, CptpageSupportComponent, CptpageDeviceGamingComponent
-    , CptpageMacrokeyComponent, CptpageLightingcustomizeComponent
+    , CptpageMacrokeyComponent, CptpageLightingcustomizeComponent, CptpageNetworkboostComponent, CptpageAutocloseComponent
   ]
 })
 export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
@@ -558,6 +560,54 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
             //for full urls 
             let queryParams = {
               Page: 'lighting'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+          }
+        );
+
+        break;     
+      //Page Gaming NetworkBoost
+      case 'vtr-page-networkboost':
+        factory = this.cfr.resolveComponentFactory(CptpageNetworkboostComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageNetworkboostComponent>componentRef.instance);
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'network-boost'
+            };
+            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
+            this.serverSwitchResponse.jsonresponse = jresponse;
+            this.editor.set(jresponse);
+
+            this.serverSwitchResponse.isloading = false;
+          }
+        );
+
+        break;     
+      //Page Gaming AutoClose
+      case 'vtr-page-autoclose':
+        factory = this.cfr.resolveComponentFactory(CptpageAutocloseComponent);
+        componentRef = this.vc.createComponent(factory);
+        this.currentComponent = (<CptpageAutocloseComponent>componentRef.instance);
+
+        //calling child methods
+        this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
+          (jresponse: any) => {
+
+            //for full urls 
+            let queryParams = {
+              Page: 'auto-close'
             };
             this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
 
