@@ -2919,7 +2919,7 @@
                 "yes": "Igen",
                 "no": "Nem"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "A gomb le van tiltva, ha a tárolóeszközök nem támogatják ezt a funkciót a hardverinformáció betöltése közben, vagy ha vizsgálat van folyamatban."
         },
         "support": {
             "title": "Professzionális diagnosztikai eszközök letöltése",

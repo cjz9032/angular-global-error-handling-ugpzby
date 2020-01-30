@@ -2919,7 +2919,7 @@
                 "yes": "Kyllä",
                 "no": "Ei"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Painike on poistettu käytöstä, jos tallennuslaitteet eivät tue tätä toimintoa, kun laitteisto tietoja ladataan tai jos tarkistus on meneillään."
         },
         "support": {
             "title": "Lataa ammattimaiset vianmääritystyökalut",
