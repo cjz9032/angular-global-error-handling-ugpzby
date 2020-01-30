@@ -70,7 +70,7 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 				backdrop: 'static',
 				size: 'lg',
 				centered: true,
-				windowClass: 'start-recover-warning'
+				windowClass: 'schedule-new-modal-size'
 			});
 			
 			modal.componentInstance.ItemParent = "HardwareScan.ConfirmRecoverBadSectors";
