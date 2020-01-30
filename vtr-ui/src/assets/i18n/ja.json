@@ -2919,7 +2919,7 @@
                 "yes": "はい",
                 "no": "いいえ"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "ストレージ・デバイスがこの機能をサポートしていない場合、ハードウェア情報を読み込み中の場合、またはスキャンが進行中の場合は、ボタンが無効になります。"
         },
         "support": {
             "title": "プロの診断ツールをダウンロードする",

@@ -2919,7 +2919,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "當儲存裝置不支援這項功能而硬體資訊即將載入，或者其中正在進行掃描時，此按鈕為停用狀態。"
         },
         "support": {
             "title": "下載專業診斷工具",

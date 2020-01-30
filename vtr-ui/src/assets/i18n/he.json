@@ -2919,7 +2919,7 @@
                 "yes": "כן",
                 "no": "לא"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "הלחצן מושבת אם התקני האחסון לא תומכים בפונקציונליות זו, בזמן שמידע מהחומרה נטען או אם מתבצעת סריקה."
         },
         "support": {
             "title": "הורידו כלי אבחון מקצועיים",
