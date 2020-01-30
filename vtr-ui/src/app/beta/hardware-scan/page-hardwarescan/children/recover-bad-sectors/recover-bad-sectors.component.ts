@@ -70,7 +70,7 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 				backdrop: 'static',
 				size: 'lg',
 				centered: true,
-				windowClass: 'schedule-new-modal-size'
+				windowClass: 'hardware-scan-modal-size'
 			});
 			
 			modal.componentInstance.ItemParent = "HardwareScan.ConfirmRecoverBadSectors";
@@ -87,6 +87,8 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 			}, (reason) => {
 				// do nothing
 			});
+			// This fix avoids the invisible popup when the screen is set to 500x500 size and the time to render the modal is not enough.
+			// The translate(0px, 0px) was needed to rebuild the modal and problem doesn't occur anymore.
 			setTimeout(() => {
 				(document.querySelector('.modal.show .modal-dialog') as HTMLElement).style.transform = "translate(0px, 0px)";
 			}, 1);
