@@ -9,7 +9,7 @@
 		padding: 1.5rem;
 		width: 100%;
 		.subscription-title {
-			font-size: 2.5rem;
+			font-size:$fontsize_xl;
 			font-weight: $weight_600;
 		}
 		.coronet-logo {
@@ -26,7 +26,7 @@
 			}
 		}
 		.heading {
-			font-size: 2.5rem;
+			font-size: $fontsize_xl;
 			font-weight: $weight_600;
 		}
 		.content-body {
