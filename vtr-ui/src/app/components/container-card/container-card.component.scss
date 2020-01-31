@@ -72,7 +72,7 @@
 					@media #{$white-on-black} {
 						border: 0.1rem solid $dark ;
 					}
-			
+
 					.title {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
@@ -323,7 +323,7 @@
 				display: block;
 				border-radius: $border_radius;
 				overflow: hidden;
-				
+
 				.inner-content {
 					position: relative;
 					z-index: 1;
@@ -331,7 +331,7 @@
 					padding: 2rem 2.5rem;
 					// justify-content: flex-end;
 					// align-items: center;
-				
+
 				.title {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
@@ -401,6 +401,12 @@
 				padding: 2.4rem;
 				padding-bottom: 0;
 				height: 30%;
+				@media #{$breakpoint_md} {
+					padding: 2.4rem 1.2rem;
+				}
+				@media #{$breakpoint_sm} {
+					padding: 2.4rem;
+				}
 
 				.title {
 					font-weight: $weight_light;
