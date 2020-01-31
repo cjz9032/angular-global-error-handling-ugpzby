@@ -2919,7 +2919,7 @@
                 "yes": "Ano",
                 "no": "Ne"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Tlačítko je vypnuto, pokud úložná zařízení nepodporují tuto funkci v průběhu načítaní informací o hardwaru nebo pokud probíhá kontrola."
         },
         "support": {
             "title": "Stáhnout profesionální diagnostické nástroje",

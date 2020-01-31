@@ -2919,7 +2919,7 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Knappen är inaktiverad om lagringsenheterna inte stöder den här funktionen, om maskinvaruinformationen läses in eller om en genomsökning pågår."
         },
         "support": {
             "title": "Hämta professionella diagnostikverktyg",

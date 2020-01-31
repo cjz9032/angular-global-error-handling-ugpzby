@@ -2919,7 +2919,7 @@
                 "yes": "Tak",
                 "no": "Nie"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Podczas ładowania informacji o sprzęcie lub w trakcie skanowania, przycisk jest wyłączony, jeśli urządzenia pamięci nie obsługują tej funkcji."
         },
         "support": {
             "title": "Pobierz profesjonalne narzędzia diagnostyczne",
