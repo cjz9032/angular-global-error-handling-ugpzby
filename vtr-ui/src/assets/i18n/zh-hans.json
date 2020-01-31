@@ -1233,7 +1233,7 @@
                     "description2": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
                     "subTitle2": "设置通常使用此计算机的时间",
                     "oldTooltipText": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "待机设置"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "labelText": "输入密码时启用此功能"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "显示优先级控制",
+                        "description": "设备支持外接显示屏数目的上限。当使用这些其他方法连接多个显示屏时，只有优先显示的显示屏才会工作。<br/>在下面选择要优先使用的其他显示输出方法：",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
+                            "dock": "扩展坞",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "可选模块"
                         }
                     }
                 },
