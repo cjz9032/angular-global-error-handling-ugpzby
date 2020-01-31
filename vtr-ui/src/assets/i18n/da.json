@@ -1233,7 +1233,7 @@
                     "description2": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
                     "subTitle2": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
                     "oldTooltipText": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "Indstillinger for standby"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "SKÆRMDÆMPER"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Styring af skærmprioritet",
+                        "description": "Din enhed understøtter et maks. antal eksterne skærme. Hvis du tilslutter mere end én skærm via disse ekstra metoder, er det kun den prioriterede skærm, der vil fungere.<br/>Vælg, hvilken ekstra skærmudgangsmetode, der skal prioriteres, nedenfor:",
                         "options": {
                             "hdmi": "HDMI",
                             "dock": "Docking",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Modul som ekstraudstyr"
                         }
                     }
                 },
@@ -2919,7 +2919,7 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Knappen deaktiveres, hvis lagerenhederne ikke understøtter denne funktion, mens hardwareoplysningerne indlæses, eller hvis der er en scanning i gang."
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",

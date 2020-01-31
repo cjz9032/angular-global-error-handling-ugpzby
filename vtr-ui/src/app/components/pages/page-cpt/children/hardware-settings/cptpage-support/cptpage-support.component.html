@@ -1,0 +1,116 @@
+<div class="row">
+    <div class="col">
+        <h1>{{'support.common.getSupport' | translate}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-8 vtr-page-left-column">
+        <div class="container-fluid">
+            <div class="row" *ngIf="articleCategories.length > 0 && isOnline">
+                <div class="col col-12 px-0 pt-0 pb-40">
+                    <div class="card quick-access">
+                        <div class="d-flex flex-row-reverse w-100"><button class="btn btn-sm btn-primary button"
+                                (click)="onInnerBack()">Reset Category</button>
+                        </div>
+                        <div class="quick-access-title">
+                            {{ 'support.quickAccess.categories' | translate }}</div>
+                        <div class="quick-access-desc">
+                            {{ 'support.quickAccess.categoriesDesc' | translate }}</div>
+                        <div class="quick-assess-categories row no-gutters">
+                            <div role="button" class="quick-assess-item"
+                                *ngFor="let category of articleCategories, let i = index" tabindex="1"
+                                id="{{'support-category-'+category.Id}}"
+                                attr.aria-label="{{'support-category-'+category.Title}}" vtrMetrics
+                                metricsItem="Support.CategoryClicked" metricsEvent="featureClick"
+                                metricsParam="CategoryId: {{ category.Id }}" metricsParent="Page.Support"
+                                (keyup.enter)="clickCategory(category.Id)" (click)="clickCategory(category.Id)">
+                                <div class="item-con">
+                                    <div class="item-icon">
+                                        <img [src]="category.Image ? category.Image : localCateIcons[i]" />
+                                    </div>
+                                    <div class="item-title">{{ category.Title }}</div>
+
+                                    <div class="item-button"
+                                        title="{{ 'support.quickAccess.seeArticles' | translate }}">
+                                        {{ 'support.quickAccess.seeArticles' | translate }}</div>
+                                </div>
+                            </div>
+                            <div class="spinner-content w-100 text-center"
+                                *ngIf="articlesType === SupportContentStatus.Empty && isOnline">
+                                <img src="/assets/images/support/empty.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="articlesType !== 'loading'">
+                <div class="col-md-6 pb-20 card-left" *ngIf="articles.leftTop.length > 0">
+                    <vtr-container-article [items]="articles.leftTop" *ngIf="isOnline" [startIndex]="1" [indexTimes]="2"
+                        [type]="articlesType">
+                    </vtr-container-article>
+                    <vtr-container-article class="d-none d-lg-block" [items]="articles.leftBottom" *ngIf="isOnline"
+                        [startIndex]="5" [indexTimes]="2" [type]="articlesType">
+                    </vtr-container-article>
+                    <vtr-container-article class="d-lg-none" [items]="articles.leftBottomSmall" *ngIf="isOnline"
+                        [startIndex]="5" [indexTimes]="2" [type]="articlesType">
+                    </vtr-container-article>
+                </div>
+                <div class="col-md-6 pb-20 card-right" *ngIf="articles.middleTop.length > 0">
+                    <vtr-container-article [items]="articles.middleTop" *ngIf="isOnline" [startIndex]="2"
+                        [indexTimes]="2" [type]="articlesType">
+                    </vtr-container-article>
+                    <vtr-container-article class="d-none d-lg-block" [items]="articles.middleBottom" *ngIf="isOnline"
+                        [startIndex]="6" [indexTimes]="2" [type]="articlesType">
+                    </vtr-container-article>
+                    <vtr-container-article class="d-lg-none" [items]="articles.middleBottomSmall" *ngIf="isOnline"
+                        [startIndex]="6" [indexTimes]="2" [type]="articlesType">
+                    </vtr-container-article>
+                </div>
+            </div>
+            <div class="spinner-content w-100 text-center" *ngIf="articlesType === 'loading' && isOnline">
+                <div class="spinner-border text-primary progress-spinner" role="status"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4 vtr-page-right-column">
+        <div class="container-fluid">
+
+            <!-- Category Articles Editors -->
+            <div class="row d-lg-block"
+                [ngClass]="{'showEditor': articlesType === 'articles', 'hideEditor': articlesType !== 'articles'  }">
+                <div class="category-article-editor col col-12 p-3">
+                    <div class="d-flex flex-column">
+                        <div class="cms-txt">
+                            <strong>Article Url:</strong>
+                            <div class="d-flex flex-row-reverse w-100"><button
+                                    class="btnCopy btn btn-sm btn-primary button" data-clipboard-action="copy"
+                                    [attr.data-clipboard-text]="currentSelection.articleUrl">Copy
+                                    Url</button>
+                            </div>
+                            <p class="text-break mt-1">{{currentSelection.articleUrl}}</p>
+                        </div>
+                        <div class="">
+                            <div class="d-flex flex-row-reverse w-100">
+                                <button class="btnCopy btn btn-sm btn-primary button" data-clipboard-action="copy"
+                                    [attr.data-clipboard-text]="articles | json">Copy
+                                    Response</button>
+                            </div>
+                            <div id="jeditorSupport"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row d-none d-lg-block mt-5" *ngIf="articlesType !== 'loading' && articles.right.length > 0">
+                <div class="col col-12 px-0 pt-0 pb-40">
+                    <vtr-container-article [items]="articles.right" *ngIf="isOnline" [startIndex]="5"
+                        [indexPreText]="'r'" [indexTimes]="1" [type]="articlesType">
+                    </vtr-container-article>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

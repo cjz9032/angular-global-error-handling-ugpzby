@@ -1233,7 +1233,7 @@
                     "description2": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja vremena brzog pokretanja tijekom rada s većim opterećenjem.",
                     "subTitle2": "Postavite vrijeme kada obično koristite računalo",
                     "oldTooltipText": "Kad je omogućeno Pametno stanje pripravnosti, vaše se računalo prebacuje na Suvremeno stanje pripravnosti prije zakazanog vremena POKRETANJA i prelazi u hibernaciju nakon što je određeno vrijeme neaktivno na baterijskom napajanju. To je vrijeme optimizirano na temelju rasporeda koji ste postavili. Računalo će se prebaciti iz hibernacije u moderno stanje mirovanja samo tijekom zakazanih dana i neće se prebaciti kada nije aktivno tijekom uzastopnih zakazanih dana.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "Postavke pripravnosti"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "ZATAMNJIVANJE ZASLONA"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Kontrola prioriteta prikaza",
+                        "description": "Vaš uređaj podržava maksimalni broj vanjskih zaslona. Pri povezivanju više od jednog zaslona pomoću tih dodatnih metoda, radit će samo jedan prioritetni.<br/>U nastavku odaberite koji dodatni način prikaza prikazivanja prioriteta:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
-                            "usb_c_dp": "USB Type-C",
+                            "dock": "Spajanje",
+                            "usb_c_dp": "USB tip C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Opcionalni modul"
                         }
                     }
                 },
@@ -2919,7 +2919,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Gumb je onemogućen ako uređaji za pohranu ne podržavaju ovu funkciju, dok se podaci o hardveru učitavaju ili je u tijeku skeniranje."
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alate",

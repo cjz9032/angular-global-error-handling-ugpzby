@@ -1233,7 +1233,7 @@
                     "description2": "Esta funcionalidade programa a otimização da poupança de energia da bateria do computador durante períodos de inatividade sem prejudicar um tempo de arranque rápido durante horas de utilização mais intensa.",
                     "subTitle2": "Hora definida em que geralmente utiliza este computador",
                     "oldTooltipText": "Quando o Modo de Suspensão Inteligente está ativado, o computador muda para o Modo de Suspensão Moderno antes da hora de INÍCIO agendada e entra em hibernação quando estiver inativo durante um determinado período de tempo quando alimentado pela bateria. Este período de tempo é otimizado com base no agendamento definido pelo utilizador. O computador muda do modo de hibernação para o Modo de Suspensão Moderno apenas em dias agendados e não muda quando está inativo por dias agendados consecutivos.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "Definições de suspensão"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "DIMINUIÇÃO DE LUMINOSIDADE DO ECRÃ"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Controlo da prioridade de visualização",
+                        "description": "O seu dispositivo suporta um número máximo de ecrãs externos. Ao ligar mais de um ecrã através destes métodos adicionais, só funcionará o ecrã com prioridade.<br/>Escolha abaixo o método de saída de ecrã adicional a priorizar:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
-                            "usb_c_dp": "USB Type-C",
+                            "dock": "Expansão",
+                            "usb_c_dp": "USB Tipo-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Módulo Opcional"
                         }
                     }
                 },
@@ -2919,7 +2919,7 @@
                 "yes": "Sim",
                 "no": "Não"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "O botão está desativado se os dispositivos de armazenamento não suportarem esta funcionalidade, enquanto as informações de hardware estiverem a ser carregadas ou se estiver a decorrer uma verificação."
         },
         "support": {
             "title": "Transferir ferramentas de diagnóstico profissionais",

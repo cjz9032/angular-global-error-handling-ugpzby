@@ -1233,7 +1233,7 @@
                     "description2": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
                     "subTitle2": "Ustaw typowe godziny korzystania z komputera",
                     "oldTooltipText": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Okres bezczynności jest optymalizowany na podstawie ustawionego harmonogramu. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowanych dniach, a nie przełącza się w ogóle, jeśli nie jest używany przez kilka kolejnych zaplanowanych dni.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "Ustawienia trybu gotowości"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "PRZYCIEMNIANIE EKRANU"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Sterowanie priorytetem ekranów",
+                        "description": "Twoje urządzenie obsługuje maksymalną liczbę wyświetlaczy zewnętrznych. Po podłączeniu kilku wyświetlaczy za pomocą tych dodatkowych metod, działać będzie tylko ten z priorytetem.<br/>Wybierz poniżej, która z dodatkowych metod wyświetlania ma mieć priorytet:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
+                            "dock": "Dokowanie",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Moduł optyczny"
                         }
                     }
                 },
@@ -2919,7 +2919,7 @@
                 "yes": "Tak",
                 "no": "Nie"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Podczas ładowania informacji o sprzęcie lub w trakcie skanowania, przycisk jest wyłączony, jeśli urządzenia pamięci nie obsługują tej funkcji."
         },
         "support": {
             "title": "Pobierz profesjonalne narzędzia diagnostyczne",

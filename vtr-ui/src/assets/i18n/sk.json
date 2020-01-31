@@ -1233,7 +1233,7 @@
                     "description2": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
                     "subTitle2": "Nastavte čas, v ktorom zvyčajne používate počítač",
                     "oldTooltipText": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie sa optimalizuje podľa vami nastaveného plánu. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie keď sa počas nasledujúcich plánovaných dní nevyužíva.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "Nastavenie pohotovostného režimu"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "ZNÍŽENIE JASU OBRAZOVKY"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Ovládanie priority obrazovky",
+                        "description": "Vaše zariadenie podporuje maximálny počet externých displejov. Pri pripájaní viac ako jedného displeja pomocou týchto ďalších metód bude fungovať iba ten, ktorý má prednosť.<br/>Nižšie si vyberte, ktorý extra spôsob výstupu displeja, sa má uprednostniť:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
-                            "usb_c_dp": "USB Type-C",
+                            "dock": "Dokovanie",
+                            "usb_c_dp": "USB typ-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Voliteľný modul"
                         }
                     }
                 },
@@ -2919,7 +2919,7 @@
                 "yes": "Áno",
                 "no": "Nie"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Tlačidlo je vypnuté, ak táto funkcia nie je podporovaná úložnými zariadeniami počas načítavania informácií o hardvéri ako aj počas kontroly."
         },
         "support": {
             "title": "Stiahnite si profesionálne diagnostické nástroje",

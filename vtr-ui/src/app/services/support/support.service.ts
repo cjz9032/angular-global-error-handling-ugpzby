@@ -6,6 +6,7 @@ import { CommonService } from '../common/common.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DeviceService } from '../device/device.service';
+//import { window } from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root'
@@ -93,6 +94,9 @@ export class SupportService {
 			case 'userGuide':
 				this.launchUserGuide(false);
 				break;
+			case 'cpt':
+				this.gotoCpt();
+				break;	
 			default:
 				break;
 		}
@@ -124,5 +128,10 @@ export class SupportService {
 			return `https://www.lenovo.com/us/en/warrantyApos?serialNumber=${serialNumber}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
 		}
 		return this.warrantyNormalUrl;
+	}
+
+	//cpt
+	gotoCpt() {
+		window.location.href = '#/cpt';
 	}
 }

@@ -2,8 +2,15 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<div class="title">{{title}}</div>
-				<div class="description">{{description}}</div>
+				<div class="row">
+					<div class="title">{{title}}</div>
+					<div class="title-question-mark">
+						<fa-icon class="recover-question-icon" triggers="click:blur" placement="auto"
+							[ngbTooltip]="tooltipRef" [icon]="['far', 'question-circle']" container="body"
+							tooltipClass="vtr-tooltip"></fa-icon>
+					</div>
+				</div>
+				<div class="description">{{'hardwareScan.recoverBadSectors.waitAvailability' | translate}}</div>
 			</div>
 		</div>
 		<div class="row">
@@ -27,3 +34,7 @@
 		</div>
 	</div>
 </div>
+
+<ng-template #tooltipRef>
+	<div>{{description}}</div>
+</ng-template>

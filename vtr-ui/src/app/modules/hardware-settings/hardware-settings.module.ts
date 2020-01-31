@@ -94,7 +94,6 @@ import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-dev
 import { BacklightModule } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.module';
 import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight-thinkpad/backlight-thinkpad.component';
 
-
 @NgModule({
 	declarations: [
 		ActiveProtectionSystemAdvancedComponent,
@@ -133,6 +132,7 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 		VoiceComponent,
 		SmartStandbyGraphComponent,
 		TopRowFunctionsIdeapadComponent,
+
 		BacklightThinkpadComponent
 	],
 	imports: [
@@ -154,7 +154,7 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 		NgbCollapseModule,
 		PageLayoutModule,
 		SettingsPageLayoutModule,
-		BacklightModule,
+		BacklightModule
 	],
 	exports: [
 		CommonModule,

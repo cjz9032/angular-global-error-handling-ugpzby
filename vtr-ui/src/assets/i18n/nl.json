@@ -1233,7 +1233,7 @@
                     "description2": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de opstarttijd snel bij zwaarder gebruik.",
                     "subTitle2": "Stel de tijd in waarop u deze computer gewoonlijk gebruikt",
                     "oldTooltipText": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "Instellingen voor stand-by"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "BEELDSCHERMDIMMER"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Prioriteitsinstelling beeldscherm",
+                        "description": "Uw apparaat ondersteunt een maximum aantal externe beeldschermen. Als er meer dan één beeldscherm met deze extra methoden wordt verbonden, werkt het display dat prioriteit heeft.<br/>Selecteer hieronder welke uitvoermethode voor een extra display prioriteit heeft:",
                         "options": {
                             "hdmi": "HDMI",
                             "dock": "Docking",
-                            "usb_c_dp": "USB Type-C",
+                            "usb_c_dp": "USB-type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Optionele module"
                         }
                     }
                 },
@@ -2919,7 +2919,7 @@
                 "yes": "Ja",
                 "no": "Nee"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "De knop wordt uitgeschakeld als de opslagapparaten deze functionaliteit niet ondersteunen, terwijl de hardwaregegevens worden geladen of als er een scan wordt uitgevoerd."
         },
         "support": {
             "title": "Professionele diagnosehulpprogramma's downloaden",

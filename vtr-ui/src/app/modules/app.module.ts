@@ -57,6 +57,7 @@ import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageLayoutModule } from '../components/page-layout/page-layout.module';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
 import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
@@ -75,6 +76,7 @@ import { GamingDashboardModule } from './gaming-dashboard.module';
 		ModalDccDetailComponent,
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
+		//PageSettingsComponent,
 		ModalNewFeatureTipComponent,
 		PageSettingsComponent
 		//ModalErrorMessageComponent
