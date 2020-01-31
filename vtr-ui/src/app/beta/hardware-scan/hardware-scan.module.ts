@@ -41,6 +41,7 @@ import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclama
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { faAngleUp } from '@fortawesome/pro-light-svg-icons/faAngleUp';
 import { faBan } from '@fortawesome/free-solid-svg-icons/faBan';
+import { ModalRecoverConfirmComponent } from './modal/modal-recover-confirm/modal-recover-confirm.component';
 
 library.add(faCaretUp);
 library.add(faCaretRight);
@@ -55,6 +56,7 @@ library.add(faBan);
 
 @NgModule({
 	declarations: [
+		ModalRecoverConfirmComponent,
 		ModalWaitComponent,
 		ModalCancelComponent,
 		ModalEticketComponent,
@@ -101,6 +103,7 @@ library.add(faBan);
 	],
 	entryComponents: [
 		ModalWaitComponent,
+		ModalRecoverConfirmComponent,
 		ModalCancelComponent,
 		ModalEticketComponent,
 		ModalHardwareScanCustomizeComponent,
