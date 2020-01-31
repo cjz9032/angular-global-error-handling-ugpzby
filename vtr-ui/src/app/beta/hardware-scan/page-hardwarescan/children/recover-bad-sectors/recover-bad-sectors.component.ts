@@ -4,8 +4,8 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
-import { ModalScheduleScanCollisionComponent } from '../../../modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
 import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
+import { ModalRecoverConfirmComponent } from '../../../modal/modal-recover-confirm/modal-recover-confirm.component';
 
 @Component({
 	selector: 'vtr-recover-bad-sectors',
@@ -66,18 +66,16 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 		const leastOneSelected = this.devices.find(device => device.isSelected);
 		if (leastOneSelected !== undefined) {
 
-			const modal: NgbModalRef = this.modalService.open(ModalScheduleScanCollisionComponent, {
+			const modal: NgbModalRef = this.modalService.open(ModalRecoverConfirmComponent, {
 				backdrop: 'static',
 				size: 'lg',
 				centered: true,
-				windowClass: 'schedule-new-modal-size'
+				windowClass: 'hardware-scan-modal-size'
 			});
-
-			(<ModalScheduleScanCollisionComponent>modal.componentInstance).error = this.translate.instant('hardwareScan.warning');
-			(<ModalScheduleScanCollisionComponent>modal.componentInstance).description = this.translate.instant('hardwareScan.recoverBadSectors.popup.description');
-			(<ModalScheduleScanCollisionComponent>modal.componentInstance).ItemParent = "HardwareScan.ConfirmRecoverBadSectors";
-			(<ModalScheduleScanCollisionComponent>modal.componentInstance).CancelItemName = "ConfirmRecoverBadSectors.Close";
-			(<ModalScheduleScanCollisionComponent>modal.componentInstance).ConfirmItemName = "ConfirmRecoverBadSectors.Confirm";
+			
+			modal.componentInstance.ItemParent = "HardwareScan.ConfirmRecoverBadSectors";
+			modal.componentInstance.CancelItemName = "ConfirmRecoverBadSectors.Close";
+			modal.componentInstance.ConfirmItemName = "ConfirmRecoverBadSectors.Confirm";
 
 			modal.result.then((result) => {
 				const devicesSelected = this.devices.filter(device => device.isSelected);
@@ -89,7 +87,11 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 			}, (reason) => {
 				// do nothing
 			});
-
+			// This fix avoids the invisible popup when the screen is set to 500x500 size and the time to render the modal is not enough.
+			// The translate(0px, 0px) was needed to rebuild the modal and problem doesn't occur anymore.
+			setTimeout(() => {
+				(document.querySelector('.modal.show .modal-dialog') as HTMLElement).style.transform = "translate(0px, 0px)";
+			}, 1);
 		} else {
 			this.errorMessage = this.translate.instant('hardwareScan.errorDeviceChoose');
 		}
