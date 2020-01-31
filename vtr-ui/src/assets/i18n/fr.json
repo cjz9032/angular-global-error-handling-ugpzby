@@ -1233,7 +1233,7 @@
                     "description2": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
                     "subTitle2": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur",
                     "oldTooltipText": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "Paramètres du mode veille"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "RÉDUCTION DE LA LUMINOSITÉ DE L'ÉCRAN"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Commande priorité affichage",
+                        "description": "Votre périphérique prend en charge un nombre maximal d'écrans externes. Lorsque vous connectez plus d'un écran à l'aide de ces méthodes supplémentaires, seule celle définit comme prioritaire fonctionnera.<br/>Sélectionnez ci-dessous la méthode de sortie d'affichage supplémentaire à traiter comme prioritaire :",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
+                            "dock": "Station d'accueil",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Module optionnel"
                         }
                     }
                 },

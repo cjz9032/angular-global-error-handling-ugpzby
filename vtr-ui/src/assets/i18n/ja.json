@@ -1233,7 +1233,7 @@
                     "description2": "この機能は、使用頻度の高い時間中の高速スタートアップ時間に影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
                     "subTitle2": "通常このコンピューターを使用する時刻を設定します",
                     "oldTooltipText": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。時間は設定されたスケジュールに基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "スタンバイ設定"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "ディスプレイを暗くする"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "ディスプレイ優先度コントロール",
+                        "description": "デバイスは最大数の外部ディスプレイをサポートしています。これらの追加方法を使用して複数のディスプレイを接続する場合、優先順位の高いディスプレイのみが機能します。<br/>優先する追加のディスプレイ出力方法を以下から選択します。",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
+                            "dock": "ドッキング",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "オプション・モジュール"
                         }
                     }
                 },
