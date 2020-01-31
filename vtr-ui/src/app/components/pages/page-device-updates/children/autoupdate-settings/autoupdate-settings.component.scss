@@ -27,6 +27,12 @@
 			color: $purple_navy;
 			font-size: $fontsize_sm;
 			font-weight: $weight_light;
+			@media #{$breakpoint_xl} {
+				padding-right: 0.5rem;
+			}
+			@media #{$breakpoint_lg} {
+				padding-right: 0;
+			}
 		}
 
 		fa-icon {
