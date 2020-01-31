@@ -15,3 +15,17 @@
 		}
 	}
 }
+
+::ng-deep .vtr-page-gaming-macrokey {
+	.vtr-page-left-column {
+		.vtr-page-column-shift-up {
+			overflow: hidden;
+		}	
+	}
+
+	.vtr-page-right-column {
+		.vtr-page-column-shift-up {
+			overflow: hidden;
+		}	
+	}
+}

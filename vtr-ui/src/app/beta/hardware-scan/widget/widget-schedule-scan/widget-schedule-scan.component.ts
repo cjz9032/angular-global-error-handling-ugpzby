@@ -73,7 +73,7 @@ export class WidgetScheduleScanComponent implements OnInit {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'schedule-new-modal-size'
+			windowClass: 'hardware-scan-modal-size'
 		});
 
 		(<ModalScheduleNewScanComponent>modal.componentInstance).editMode = edit;
@@ -178,7 +178,7 @@ export class WidgetScheduleScanComponent implements OnInit {
 				backdrop: 'static',
 				size: 'sm',
 				centered: true,
-				windowClass: 'schedule-new-modal-size'
+				windowClass: 'hardware-scan-modal-size'
 			});
 		} else {
 			modal = this.modalService
@@ -186,7 +186,7 @@ export class WidgetScheduleScanComponent implements OnInit {
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,
-					windowClass: 'schedule-new-modal-size'
+					windowClass: 'hardware-scan-modal-size'
 			});
 		}
 
