@@ -249,10 +249,11 @@ $fontsize_xs: 1.4rem;
 		p {
 			font-size: $fontsize_xs;
 			color: $shade_blue;
+			font-weight: $weight_light;
 		}
 		&.note {
 			margin-top: 1rem;
-			margin-left: 2rem;
+			margin-left: 3rem;
 		}
 	}
 
