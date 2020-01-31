@@ -1233,7 +1233,7 @@
                     "description2": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
                     "subTitle2": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın",
                     "oldTooltipText": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "Bekleme ayarları"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "EKRAN KARARTICI"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Ekran Öncelik Denetimi",
+                        "description": "Cihazınızın desteklediği harici ekranlar için bir üst sınır söz konusudur. Bu ekstra yöntemleri kullanarak birden fazla ekran bağlandığında yalnızca öncelikli olan ekran çalışır.<br/>Aşağıdaki ekstra ekran çıkış yöntemlerinden hangisine öncelik verileceğini seçin:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
+                            "dock": "Takma",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "İsteğe Bağlı Modül"
                         }
                     }
                 },

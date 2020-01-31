@@ -1233,7 +1233,7 @@
                     "description2": "這個功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
                     "subTitle2": "設定您一般使用這部電腦的時間",
                     "oldTooltipText": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "待命設定"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "顯示器調光器"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "顯示優先順序控制",
+                        "description": "您的裝置支援外接式顯示器數目的上限。使用其他這些方法連接多個顯示器時，只有優先使用的顯示器才會運作。<br/>請在下方選擇要優先使用的其他顯示輸出方法：",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
+                            "dock": "泊接",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "光學模組"
                         }
                     }
                 },
