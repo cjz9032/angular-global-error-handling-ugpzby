@@ -2919,7 +2919,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Gumb je onemogočen, če shranjevalne naprave ne podpirajo te funkcije, če poteka nalaganje informacij o strojni opremi ali če se izvaja pregled strojne opreme."
         },
         "support": {
             "title": "Prenos profesionalnih diagnostičnih orodij",

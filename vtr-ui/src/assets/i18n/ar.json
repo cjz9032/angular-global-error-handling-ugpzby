@@ -2921,7 +2921,7 @@
                 "yes": "نعم",
                 "no": "لا"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "يتم تعطيل الزر إذا كانت أجهزة التخزين لا تدعم هذه الوظيفة، أثناء تحميل معلومات الجهاز أو في حالة وجود عملية مسح قيد التقدم."
         },
         "support": {
             "title": "تنزيل أدوات تشخيص احترافية",

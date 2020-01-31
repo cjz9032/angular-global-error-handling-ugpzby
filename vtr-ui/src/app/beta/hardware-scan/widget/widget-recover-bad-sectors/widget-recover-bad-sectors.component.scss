@@ -10,6 +10,13 @@
 		font-size: $fontsize_xl;
 		font-weight: $weight_light;
 	}
+	.title-question-mark {
+		color: $main_dark;
+		font-size: $fontsize_md;
+		font-weight: $weight_light;
+		padding-top: 0.7rem;
+		padding-left: 1rem;
+	}
 	.description {
 		color: $grey_dark;
 		font-size: $fontsize_xs;
@@ -75,6 +82,17 @@
 						}
 					}
 				}
+			}
+		}
+
+		.recover-question-icon {
+			margin-left: 0.5rem;
+			font-size: $fontsize_xs;
+			color: $main;
+			cursor: pointer;
+
+			&:hover {
+				color: $highlight;
 			}
 		}
 	}

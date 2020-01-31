@@ -2919,7 +2919,7 @@
                 "yes": "예",
                 "no": "아니요"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "하드웨어 정보가 로드되고 있거나 스캔 중인 파일이 있을 때 저장 장치가 해당 기능을 지원하지 않는 경우 버튼이 비활성화 됩니다."
         },
         "support": {
             "title": "전문 진단 도구 다운로드",

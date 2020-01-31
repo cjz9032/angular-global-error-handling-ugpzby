@@ -2919,7 +2919,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Dugme je onemogućeno ukoliko uređaji za skladištenje ne podržavaju ovu funkcionalnost, tokom učitavanja informacija o hardveru ili ako je u toku skeniranje."
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alatke",

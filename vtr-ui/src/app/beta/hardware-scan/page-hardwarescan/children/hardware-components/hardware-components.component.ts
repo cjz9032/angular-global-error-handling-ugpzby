@@ -444,7 +444,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				backdrop: 'static',
 				size: 'lg',
 				centered: true,
-				windowClass: 'schedule-new-modal-size'
+				windowClass: 'hardware-scan-modal-size'
 			});
 			modalRef.componentInstance.moduleNames = brokenModules;
 			modalRef.componentInstance.setUrl(fullUrl);
@@ -633,7 +633,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,
-					windowClass: 'schedule-new-modal-size'
+					windowClass: 'hardware-scan-modal-size'
 				});
 
 				this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
