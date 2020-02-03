@@ -40,7 +40,7 @@
 						[manualRefresh]="manualRefresh"
 						[enableSlider]="disabledAll"
 						[(value)]="cameraSettings.brightness.value"
-						(change)="onBrightnessSliderChange($event)"
+						(sliderChange)="onBrightnessSliderChange($event)"
 						[rangeSliderId]="'cameraSettings-brightness'">
 					</vtr-ui-range-slider>
 				</li>
@@ -58,7 +58,7 @@
 						[manualRefresh]="manualRefresh"
 						[enableSlider]="disabledAll"
 						[(value)]="cameraSettings.contrast.value"
-						(change)="onContrastSliderChange($event)"
+						(sliderChange)="onContrastSliderChange($event)"
 						[rangeSliderId]="'cameraSettings-contrast'">
 					</vtr-ui-range-slider>
 				</li>
@@ -86,7 +86,7 @@
 						[enableSlider]="disabledAll"
 						[manualRefresh]="manualRefresh"
 						[(value)]="cameraSettings.exposure.value"
-						(change)="onExposureSliderChange($event)"
+						(sliderChange)="onExposureSliderChange($event)"
 						[rangeSliderId]="'cameraSettings-autoExposure'">
                     </vtr-ui-range-slider>
                 </div>
