@@ -1,6 +1,8 @@
+@import "../../../../app.theme.scss";
 .caption {
-    font-size: 1.5rem;
-    // color: $main_shade;
+	font-size: $fontsize_xs;
+	font-weight: $weight_light;
+    color: $purple_navy;
 }
 .input-item{
     padding: 0;
