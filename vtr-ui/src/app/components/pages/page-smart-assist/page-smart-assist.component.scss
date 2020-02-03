@@ -104,8 +104,8 @@ $fontsize_xs: 1.4rem;
 			opacity: 0.65;
 		}
 		.feature-note {
-			background-color: $shade_lightest;
-			border: 1px solid $shade_lighter;
+			background-color: $grey_lighter;
+			border: 0.1rem solid $note_border;
 			width: 100%;
 			p {
 				font-size: $fontsize_xs;
@@ -178,7 +178,7 @@ $fontsize_xs: 1.4rem;
 				margin-right: 0.5rem;
 			}
 			&.auto-screen-off-note {
-				margin: 1.5rem 0.8rem 0 3.8rem;
+				margin: 1.5rem 0.8rem 0 4.5rem;
 			}
 		}
 		.vtr-page-shift-up-medium {
@@ -242,6 +242,7 @@ $fontsize_xs: 1.4rem;
 			margin: 1rem 0rem 1rem 0rem;
 			font-size: $fontsize_xs;
 			color: $shade_blue;
+			font-weight: $weight_light;
 		}
 		.permission-note {
 			background-color: $grey_lighter;
@@ -249,6 +250,7 @@ $fontsize_xs: 1.4rem;
 			padding-right: 1.4rem;
 			span {
 				font-size: $fontsize_xs;
+				font-weight: $weight_light;
 				color: $shade_blue;
 			}
 			.privacy-button {
@@ -274,12 +276,12 @@ $fontsize_xs: 1.4rem;
 				font-size: $fontsize_xs;
 				font-weight: $weight_light;
 				// max-width: 60rem !important;
-				color: $purple_navy;
+				color: $grey_dark;
 				width: 95%;
 			}
 		}
 		.fac-control {
-			margin-left: 2.5rem;
+			margin-left: 3rem;
 			//padding-top: 1.5rem;
 		}
 		vtr-ui-row-switch {

@@ -428,7 +428,7 @@
 						top: 1.75rem;
 						left: 1.75rem;
 						border-radius: 50%;
-						border: 0.75rem solid $gaming_darkest;
+						border: 0.75rem solid $gaming_bg;
 						@media #{$breakpoint_xl3} {
 							top: 1rem;
 							left: 1rem;
@@ -496,7 +496,7 @@
 								position: absolute;
 								left: 0;
 								border-radius: 50%;
-								background-color: $gaming_darkest;
+								background-color: $gaming_bg;
 								@media #{$breakpoint_xl3} {
 									width: 27rem;
 									height: 27rem;
@@ -885,7 +885,7 @@
 										height: 100%;
 										position: absolute;
 										left: 0;
-										background-color: $gaming_hdd_ring;
+										background-color: $gaming_bg;
 										@media #{$black-on-white}{
 											background-color: $high-contrast-grey;
 										}
@@ -897,7 +897,7 @@
 								&.right {
 									left: 50%;
 									.mask-obj {
-										background-color: $gaming_hdd_ring;
+										background-color: $gaming_bg;
 										content: "";
 										position: absolute;
 										width: 100%;
