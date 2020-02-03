@@ -23,7 +23,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
 import { Md5 } from 'ts-md5';
-
+import {BatteryDetailService} from 'src/app/services/battery-detail/battery-detail.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-display',
@@ -194,10 +194,10 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 				}
 			]
 		};
-
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
+		public batteryService:BatteryDetailService,
 		public displayService: DisplayService,
 		private commonService: CommonService,
 		private ngZone: NgZone,
@@ -1121,6 +1121,13 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			this.manualRefresh.emit();
 		}
 	}
+	public isDisabledCameraBlur(): boolean {
+		if(this.batteryService.gaugePercent < 23 && !this.batteryService.isAcAttached){
+			this.onCameraBackgroundBlur({switchValue:false});
+			return true;
+		}
+		return false;
+	  }
 
 	public onCameraBackgroundBlur($event: any) {
 		try {

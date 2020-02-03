@@ -46,6 +46,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 	@Input() tooltipText = '';
 	@Input() switchId = '';
 	@Input() disabled = false;
+	@Input() autoScreenLockTimerToolTip;
 	@Input() disabledAll = false;
 	@Input() type = undefined;
 	@Input() resetTextAsButton = false;
