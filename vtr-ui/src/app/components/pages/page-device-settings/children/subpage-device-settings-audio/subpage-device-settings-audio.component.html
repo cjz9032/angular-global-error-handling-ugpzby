@@ -156,7 +156,7 @@
 												[minValue]="0"
 												[maxValueLegend]="'device.deviceSettings.audio.microphone.volume.options.loud' | translate"
 												[maxValue]="100"
-												(change)="setVolume($event)"
+												(sliderChange)="setVolume($event)"
 												[enableSlider]="!microphoneProperties.permission"
 												[value]="microphoneProperties.volume"
 												[manualRefresh]="manualRefresh"

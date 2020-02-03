@@ -42,7 +42,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	public cameraFeatureAccess: CameraFeatureAccess;
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
-	public cameraPrivacyModeStatus = new FeatureStatus(true, true, false, false);
+	public cameraPrivacyModeStatus = new FeatureStatus(true, true, false, true);
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false, '', '');
 	public enableSunsetToSunrise = false;
 	enableSlider = false;
@@ -945,6 +945,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 				})
 				.catch(error => {
+					this.cameraPrivacyModeStatus.isLoading = false;
 					this.logger.error('getCameraStatus', error.message);
 					return EMPTY;
 				});
@@ -953,6 +954,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 
 	startMonitorHandlerForCamera(value: FeatureStatus) {
 		this.logger.debug('startMonitorHandlerForCamera', value);
+		this.cameraPrivacyModeStatus.isLoading = false;
 		this.cameraPrivacyModeStatus = {...this.cameraPrivacyModeStatus, ...value};
 		// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 		this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
