@@ -1233,7 +1233,7 @@
                     "description2": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
                     "subTitle2": "Nastavite uro, ko običajno uporabljate ta računalnik",
                     "oldTooltipText": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na urnik, ki ga nastavite. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "Nastavitve stanja pripravljenosti"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "ZATEMNJEVANJE ZASLONA"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Nadzor prednosti zaslona",
+                        "description": "Vaša naprava podpira največje število zunanjih zaslonov. Če na dodatne načine povežete več zaslonov, bo deloval le prednostni.<br/>Spodaj izberite prednostni dodatni zaslonski izhod:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
+                            "dock": "Priključitvena enota",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Izbirni modul"
                         }
                     }
                 },

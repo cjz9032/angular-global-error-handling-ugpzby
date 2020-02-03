@@ -13,10 +13,7 @@
 		color: $shade_blue;
 		font-size: $fontsize_xl;
 		font-weight: $weight_600;
-		@media #{$breakpoint_lg} {
-			font-size: 1.9rem;
-		}
-
+		
 		.module-name {
 			padding-left: 1rem;
 		}
@@ -52,6 +49,7 @@
 			}
 
 			fa-icon {
+				font-size: $fontsize_lg;
 				padding-left: 1rem;
 				padding-right: 0.5rem;
 			}
@@ -101,7 +99,7 @@
 			.result-code-icon {
 				margin-left: 0.5rem;
 				margin-right: 0.5rem;
-				font-size: 1.8rem;
+				font-size: $fontsize_lg;
 				color: $main;
 				cursor: pointer;
 

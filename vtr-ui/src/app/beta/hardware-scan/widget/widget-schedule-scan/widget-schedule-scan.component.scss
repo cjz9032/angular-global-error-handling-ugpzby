@@ -11,7 +11,7 @@
 	}
 	.description {
 		color: $shade;
-		font-size: 1.4rem;
+		font-size: $fontsize_xs;
 		font-weight: $weight_medium;
 	}
 
@@ -39,7 +39,7 @@
 		text-transform: uppercase;
 		padding: 0 3rem;
 		color: $light;
-		font-size: 1.5rem;
+		font-size: $fontsize_xs;
 		height: 5rem;
 		max-width: 100%;
 		font-weight: $weight_bold;

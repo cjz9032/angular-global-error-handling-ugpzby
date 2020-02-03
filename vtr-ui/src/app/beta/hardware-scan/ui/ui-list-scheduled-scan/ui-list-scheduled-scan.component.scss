@@ -27,7 +27,7 @@
 
         .type-scan{
           float: right;
-          font-size: 1.5rem;
+          font-size: $fontsize_xs;
           font-weight: 100;
           color: $shade_darker;
           text-align: center;
@@ -41,7 +41,7 @@
       }
 
       .title {  
-        font-size: 1.5rem;
+        font-size: $fontsize_xs;
 				font-weight: bolder;
 				padding-top: 0rem;
         float: left;

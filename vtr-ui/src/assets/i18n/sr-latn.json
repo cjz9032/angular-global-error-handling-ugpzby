@@ -1233,7 +1233,7 @@
                     "description2": "Ova funkcija zakazuje optimizaciju štednje energije računara tokom časova neaktivnosti bez žrtvovanja vremena bryog pokretanja tokom časova intenzivnijeg korišćenja.",
                     "subTitle2": "Podesite vreme kada obično koristite ovaj računar",
                     "oldTooltipText": "Kad je omogućena funkcija Pametno vreme pripravnosti, računar se prebacuje na funkciju Moderno vreme pripravnosti pre zakazanog vremena POČETKA i ulazi u hibernaciju nakon što neko vreme bude neaktivan a napaja se na bateriju. Taj vremenski period je optimizovan na osnovu rasporeda koji ste podesili. Računar se prebacuje iy stanja hibernacije u moderno stanje pripravnosti samo tokom zakazanih dana, a ne prebacuje se kad je neaktivan tokom uzastopnih zakazanih dana.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "Postavke stanja pripravnosti"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "ZATAMNJENJE EKRANA"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Kontrola prioriteta ekrana",
+                        "description": "Uređaj podržava maksimalan broj spoljnih monitora. Kada je povezano više od jednog monitora pomoću dodatnih metoda, radiće samo onaj sa prioritetom.<br/>U nastavku odaberite koji metod dodatnog izlaza monitora ima prioritet:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
+                            "dock": "Priključna stanica",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Opcionalan modul"
                         }
                     }
                 },
