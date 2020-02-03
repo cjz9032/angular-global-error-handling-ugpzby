@@ -1233,7 +1233,7 @@
                     "description2": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
                     "subTitle2": "Adja meg, hogy általában mikor használja a számítógépet",
                     "oldTooltipText": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett KEZDÉSI idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időszakot a megadott ütemezés alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre; ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "Készenléti állapot beállításai"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "KÉPERNYŐ ELSÖTÉTÍTÉSE"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Képernyőprioritás-szabályozó",
+                        "description": "A készüléke maximális számú külső kijelzőt támogat. Ha egynél több képernyőt csatlakoztat ezekkel az extra módszerekkel, csak az előnyben részesített képernyő működik.<br/>Válassza ki alább, hogy melyik extra megjelenítési módot részesíti előnyben:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
+                            "dock": "Dokkolás",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Opcionális modul"
                         }
                     }
                 },
@@ -2919,7 +2919,7 @@
                 "yes": "Igen",
                 "no": "Nem"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "A gomb le van tiltva, ha a tárolóeszközök nem támogatják ezt a funkciót a hardverinformáció betöltése közben, vagy ha vizsgálat van folyamatban."
         },
         "support": {
             "title": "Professzionális diagnosztikai eszközök letöltése",

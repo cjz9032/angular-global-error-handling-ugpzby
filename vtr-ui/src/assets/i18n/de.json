@@ -1233,7 +1233,7 @@
                     "description2": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Hochfahren bei intensiverer Nutzung beeinträchtigt wird.",
                     "subTitle2": "Typische Nutzungszeiten für diesen Computer festlegen",
                     "oldTooltipText": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird auf Grundlage des von Ihnen festgelegten Zeitplans optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "Standby-Einstellungen"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "HELLIGKEITSREGLER FÜR DIE ANZEIGE"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Bildschirm-Prioritätskontrolle",
+                        "description": "Ihre Einheit unterstützt eine maximale Anzahl externer Bildschirme. Wenn Sie mithilfe dieser zusätzlichen Methoden mehrere Bildschirme anschließen, funktioniert nur der als bevorzugt festgelegte Bildschirm.<br/>Wählen Sie unten aus, welche Ausgabemethode für den zusätzlichen Bildschirm priorisiert werden soll:",
                         "options": {
                             "hdmi": "HDMI",
                             "dock": "Docking",
-                            "usb_c_dp": "USB Type-C",
+                            "usb_c_dp": "USB-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Optionales Modul"
                         }
                     }
                 },
@@ -2919,7 +2919,7 @@
                 "yes": "Ja",
                 "no": "Nein"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Falls die Speichereinheiten diese Funktionalität nicht unterstützen und die Hardwareinformationen abgerufen werden oder ein Scanvorgang durchgeführt wird, ist die Schaltfläche deaktiviert."
         },
         "support": {
             "title": "Professionelle Diagnosetools herunterladen",

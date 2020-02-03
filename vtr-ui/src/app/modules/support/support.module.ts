@@ -61,6 +61,11 @@ library.add(falHeart);
 	providers: [
 		SupportService,
 	],
+	exports: [
+		//cpt
+		UIArticleItemComponent,
+		ContainerArticleComponent,
+	],
 	entryComponents: [
 		ModalLicenseComponent,
 		ModalAboutComponent,

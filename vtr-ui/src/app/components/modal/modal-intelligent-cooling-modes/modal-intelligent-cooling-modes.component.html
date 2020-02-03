@@ -1,5 +1,19 @@
+<div class="modal-header" role="heading">
+	<h4 class="modal-title intelligent-cooling-modal-title pl-5"
+		role="text">
+		{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.title' | translate}}
+	</h4>
+	<button class="close-button bg-white"
+		tabindex="1"
+		(click)="closeModal()"
+		(keydown.enter)="closeModal()"
+		attr.aria-label="intelligentCoolingModesModal-close-button"
+		id="intelligentCoolingModesModal-close-button">
+		<fa-icon [icon]="['fal', 'times']"></fa-icon>
+	</button>
+</div>
 <div class="modal-body vtr-modal-intelligent-cooling-modes">
-	<div class="row justify-content-end"
+	<!-- <div class="row justify-content-end"
 		role="dialog">
 		<div class="btn-close">
 			<button type="button"
@@ -18,7 +32,7 @@
 		ngbAutofocus
 		role="text">
 		{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.title' | translate}}
-	</h1>
+	</h1> -->
 	<hr aria-hidden="true">
 	<div class="row"
 		role="text">

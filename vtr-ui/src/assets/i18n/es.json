@@ -1233,7 +1233,7 @@
                     "description2": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
                     "subTitle2": "Establezca los horarios en los que normalmente utiliza este equipo",
                     "oldTooltipText": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo se optimiza de acuerdo con su planificación establecida. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "Valores de espera"
                 }
             },
             "audio": {
@@ -1383,14 +1383,14 @@
                         "displayDimmer": "ATENUADOR DE PANTALLA"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Control de prioridad de pantalla",
+                        "description": "El dispositivo admite una cantidad máxima de pantallas externas. Cuando conecte más de una pantalla utilizando estos métodos adicionales, solo funcionará una prioridad.<br/>Seleccione a continuación el método adicional de salida de pantalla para priorizar:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
-                            "usb_c_dp": "USB Type-C",
+                            "dock": "Estación de acoplamiento",
+                            "usb_c_dp": "USB tipo-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Módulo opcional"
                         }
                     }
                 },
@@ -2919,7 +2919,7 @@
                 "yes": "Sí",
                 "no": "No"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "El botón está deshabilitado si los dispositivos de almacenamiento no admiten esta funcionalidad, mientras que la información de hardware se está cargando o si hay un análisis en curso."
         },
         "support": {
             "title": "Descargar herramientas de diagnóstico profesionales",

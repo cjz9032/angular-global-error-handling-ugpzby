@@ -1,5 +1,18 @@
 @import '../../../app.theme.scss';
-
+.intelligent-cooling-modal-title {
+	color: $main_dark;
+	font-size: $title;
+}
+.close-button {
+	color: #496afd;
+	font-weight: 400;
+	font-size: 2.4rem;
+	line-height: 1;
+	border: none;
+	&:hover {
+		opacity: 0.7;
+	}
+}
 .vtr-modal-intelligent-cooling-modes {
 
 	&.modal-body {
@@ -12,7 +25,7 @@
 	}
 
 	h1 {
-		font-size: 2.5rem;
+		font-size: $fontsize_xl;
 		font-weight: normal;
 		color: $main_dark;
 		line-height: 29px;
@@ -54,7 +67,7 @@
 				width: 5rem;
 				height: 5rem;
 			.serial{
-				font-size: 2.5rem;
+				font-size: $fontsize_xl;
 				color: $light;
 				width: 4.3rem;
 				height: 2.9rem;
