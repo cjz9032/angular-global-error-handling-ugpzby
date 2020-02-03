@@ -158,9 +158,9 @@
 	background-color: $gaming_bg;	
 	vtr-container-collapsible {
 		.vtr-container-collapsible.white-theme {
-			background: $dark_cell !important;
+			background: $gaming_darkest !important;
 			.card {
-				background: $dark_cell !important;
+				background: $gaming_darkest !important;
 			}
 		}
 	}
@@ -337,7 +337,7 @@
 														}
 													}
 													.auto-detection-note {
-														background: $gaming-Darkslate-blue;
+														background: $gaming-bg;
 														color: $gaming_lightest;
 														border: none;
 													}
@@ -384,7 +384,7 @@
 												color: $gaming_lightest;
 											}
 											.battery-gauge-info {
-												background: $gaming-Darkslate-blue!important;
+												background: $gaming_bg!important;
 												border:none;
 												.row {
 													.label-text {
@@ -581,7 +581,7 @@
 				&.vtr-page-right-column {
 					.vtr-battery-card {
 						.container {
-							background-color: $gaming_dark !important;
+							background-color: $gaming_darkest !important;
 
 							.battery-gauge-label,
 							.battery-conditions-tips {
@@ -596,7 +596,7 @@
 					vtr-autoupdate-settings {
 						.vtr-autoupdate-settings {
 							background-color: auto;
-							background: $dark_cell;
+							background: $gaming_darkest;
 
 							.title {
 								color: $gaming_lightest;
@@ -622,7 +622,7 @@
 					vtr-widget-questions {
 						.vtr-widget-questions {
 							background-color: auto;
-							background: $dark_cell !important;
+							background: $gaming-darkest !important;
 
 							.title {
 								color: $gaming_lightest !important;
@@ -635,7 +635,7 @@
 
 							.vtr-ui-list-chevron {
 								.chevron-list {
-									background-color: $gaming-Darkslate-blue;
+									background-color: $gaming_shade;
 									border: none;
 									overflow: hidden;
 
@@ -713,7 +713,7 @@
 					}
 				}
 				.auto-detection-note {
-					background: $gaming-Darkslate-blue;
+					background: $gaming-bg;
 					color: $gaming_lightest;
 					border: none;
 				}
@@ -723,7 +723,7 @@
 						color: $gaming_lightest;
 					}
 					.battery-gauge-info {
-						background: $gaming-Darkslate-blue!important;
+						background: $gaming_bg!important;
 						.row {
 							.label-text {
 								color: $shade_blue;
@@ -755,10 +755,10 @@
 			}
 
 			.vtr-container-collapsible.white-theme {
-				background: $dark_cell !important;
+				background: $gaming_darkest !important;
 
 				.card {
-					background-color: $dark_cell !important;
+					background-color: $gaming_darkest !important;
 					.card-header {
 						.header {
 							color: $gaming_light_blue !important;
@@ -1260,9 +1260,9 @@
 			}
 			.vtr-battery-card {
 				.container {
-					background-color: $gaming_dark !important;
+					background-color: $gaming_darkest !important;
 					&.battery-panel-background {
-						background-color: $gaming_dark !important;
+						background-color: $gaming_darkest !important;
 					}
 					.battery-health {
 						color: $gaming_lightest;
@@ -1288,7 +1288,7 @@
 						color: $gaming_grey_lightest;
 					}
 					.feature-note {
-						background: $gaming-Darkslate-blue;
+						background: $gaming-bg;
 						border: none;
 						p {
 							color: $gaming_lightest !important;
@@ -1329,8 +1329,7 @@
 	}
 
 	.vtr-widget-feedback {
-		background-color: auto;
-		background: $dark_cell;
+		background-color: $gaming_darkest!important;
 		.title {
 			color: $gaming_lightest !important;
 		}
@@ -1345,7 +1344,7 @@
 	}
 
 	.feature-note {
-		background-color: $gaming-Darkslate-blue !important;
+		background-color: $gaming-bg !important;
 		border: none !important;
 		border-radius: $border_radius;
 		p {
@@ -1413,11 +1412,11 @@
 	}
 
 	.vtr-home-security-card {
-		background-color: $gaming_darker !important;
-		border: 0.1rem solid $gaming_darkest !important;
+		background-color: $gaming_bg !important;
+		border: 0.1rem solid $gaming_bg !important;
 		.content {
 			.container-fluid:nth-child(2n + 1) {
-				border-right: 0.1rem solid $gaming_darkest !important;
+				border-right: 0.1rem solid $gaming_bg !important;
 			}
 			.container-fluid {
 				.title {
@@ -1433,7 +1432,7 @@
 		@media #{$medium-screen} {
 			.content {
 				.container-fluid:nth-child(2n + 1) {
-					border-bottom: 0.1rem solid $gaming_darkest !important;
+					border-bottom: 0.1rem solid $gaming_bg !important;
 				}
 			}
 		}
@@ -1441,7 +1440,7 @@
 		@media #{$small-screen} {
 			.content {
 				.container-fluid:nth-child(2n + 1) {
-					border-bottom: 0.1rem solid $gaming_darkest !important;
+					border-bottom: 0.1rem solid $gaming_bg !important;
 				}
 			}
 		}
@@ -1496,32 +1495,39 @@
 
 	.wifi-security {
 		.threat-locator-container {
-			background: $gaming_dark !important;
+			background: $gaming_darkest !important;
 		}
 		.card {
-			background: $gaming_dark !important;
+			background: $gaming_bg !important;
 			border: 0rem !important;
 		}
 		.collapse {
-			background: $gaming_dark !important;
-			border-color: $gaming_dark !important;
+			background: $gaming_bg !important;
+			border-color: $gaming_bg !important;
 		}
 		.card-header {
-			background: $gaming_darkest !important;
+			background: $gaming_bg !important;
 			color: $gaming_lightest !important;
-			border: 0.1rem solid $gaming_dark !important;
+			border: 0.1rem solid $gaming_bg !important;
+		}
+		.card-history {		
+			background: $gaming_bg !important;	
+			border: 0.1rem solid $gaming_bg!important;			
+			color: $gaming_lightest !important;
 		}
 		.card-body {
-			background-color: $gaming_darkest !important;
+			background-color: $gaming_bg !important;			
+			border: 0.1rem solid $gaming_bg!important;
 			color: $gaming_lightest !important;
+			border-radius:$border_radius;
 		}
 		.cardBody {
-			border: 0.1rem solid $gaming_darkest !important;
-			background: $gaming_dark !important;
+			border: 0.1rem solid $gaming_bg !important;
+			background: $gaming_darkest !important;
 		}
 		.wifi-card {
 			.wifi {
-				//background-color: $gaming-Darkslate-blue;
+				padding-bottom:0.4rem;
 				.title {
 					color: $gaming_lightest;
 				}
@@ -1530,25 +1536,30 @@
 				}
 			}
 			div.wifi:nth-child(odd) {
-				border-bottom: 0.1rem solid $gaming_darkest !important;
-				border-right: 0.1rem solid $gaming_darkest !important;
+				border-bottom: 0.1rem solid $gaming_bg !important;
+				//border-right: 0.1rem solid $gaming_bg !important;
+				border-right: 0rem !important;				
+				@media only screen and (min-width: 768px) and (max-width: 991.9px){
+					border-right: 0.1rem solid $gaming_bg !important;
+				}
 			}
 			div.wifi:nth-child(even) {
-				border-bottom: 0.1rem solid $gaming_darkest !important;
+				border-bottom: 0.1rem solid $gaming_bg !important;
 			}
 			div.wifi:nth-last-child(2):nth-child(odd) {
 				@media #{$mediaquery_X5, $mediaquery_10} {
-					border-bottom: 0.1rem solid $gaming_darkest !important;
+					border-bottom: 0.1rem solid $gaming_bg !important;
 				}
 			}
 		}
 		.security-card {
-			background-color: $gaming_dark !important;
+			background-color: $gaming_darkest !important;
+			border: 0.1rem solid $gaming_bg !important;
 			margin-bottom: 5em;
 		}
 
 		.vtr-container-collapsible.white-theme {
-			background: $dark_cell !important;
+			background: $gaming_darkest !important;
 		}
 
 		.heading {
