@@ -216,10 +216,10 @@
 	::ng-deep {
 		.vtr-page-left-column {
 			.card {
-				background: $dark_cell;
+				background: $gaming_darkest;
 
 				&.quick-access {
-					background: $dark_cell;
+					background: $gaming_darkest;
 
 					.quick-access-title {
 						color: $gaming_lightest;
@@ -228,7 +228,7 @@
 					.quick-assess-categories {
 						.quick-assess-item {
 							.item-con {
-								background: $gaming_darkest;
+								background: $gaming_bg;
 								border: none;
 								box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.01);
 
@@ -249,7 +249,7 @@
 		.vtr-page-right-column {
 			.vtr-widget-support {
 				background-color: auto;
-				background: $dark_cell;
+				background: $gaming_darkest;
 
 				.title {
 					color: $gaming_lightest !important;
@@ -257,7 +257,7 @@
 
 				.vtr-ui-list-support {
 					.support-list {
-						background-color: $gaming-Darkslate-blue !important;
+						background-color: $gaming_bg !important;
 						border: none !important;
 
 						button {
@@ -280,7 +280,7 @@
 						}
 
 						li {
-							border-bottom: 0.1rem solid $screen_dark_15 !important;
+							border-bottom: 0.1rem solid $gaming_darkest !important;
 
 							a {
 								&:hover {

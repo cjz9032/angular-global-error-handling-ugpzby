@@ -635,13 +635,13 @@
 
 							.vtr-ui-list-chevron {
 								.chevron-list {
-									background-color: $gaming_shade;
+									background-color: $gaming_bg;
 									border: none;
 									overflow: hidden;
 
 									.good {
 										color: $gaming_lightest;
-										border-bottom: 1px solid $screen_dark_15;
+										border-bottom: 1px solid $gaming_darkest!important;
 									}
 
 									li {
