@@ -305,7 +305,8 @@
 									(toggleOnOff)="onCameraPrivacyModeToggle($event)"
 									[isSwitchChecked]="cameraPrivacyModeStatus.status"
 									[tooltipText]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate"
-									[isDisabled]="shouldCameraSectionDisabled">
+									[isDisabled]="shouldCameraSectionDisabled"
+									[showLoaderState]="cameraPrivacyModeStatus.isLoading">
 									<div class="row">
 										<div class="col-12 pr-0">
 											<div *ngIf="hideNote"

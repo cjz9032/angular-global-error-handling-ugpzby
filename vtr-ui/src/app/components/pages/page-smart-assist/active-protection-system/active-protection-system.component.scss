@@ -22,12 +22,12 @@
 	.switch {
 		.caption {
 			font-size: $fontsize_xs;
-			color: $purple_navy;
+			color: $grey_dark;
 			font-weight: $weight_light;
 		}
 	}
 	.slider {
-		padding: 0 3rem 0 2rem;
+		padding: 0 3rem 0 3rem;
 	}
 	.checkbox {
 		padding: 0 3rem 0 2rem;
@@ -73,8 +73,9 @@
 }
 
 .aps-checkbox {
-	margin: 1rem 0rem 1rem 0rem;
+	margin: 1rem 0rem 1rem 1rem;
 	font-size: $fontsize_xs;
+	font-weight: $weight_light;
 	padding-left: 5rem;
 }
 
