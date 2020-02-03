@@ -15,10 +15,6 @@
 				padding-top: 0rem;
 				padding-left: 1.5rem;
 				color: $shade_blue;
-				@media #{$breakpoint_lg} {
-					font-size: $fontsize_xs2;
-				}
-
 			}
 
 			.subtitle {
@@ -27,9 +23,6 @@
 				padding-left: 1.5rem;
 				color: $shade_blue;
 				font-weight: $weight_light;
-				@media #{$breakpoint_lg} {
-					font-size: $fontsize_xs2;
-				}
 			}
 		}
 	}
@@ -56,7 +49,7 @@
 			table {
 				margin: 0 !important;
 				border: none !important;
-				font-size: 1.1rem;
+				font-size: $fontsize_xs2;
 				color: $shade_darkest;
 
 				tr {
@@ -118,7 +111,7 @@
 
 	.span-not-applicable {
 		color: $light-grey;
-		font-size: 1.4rem;
+		font-size: $fontsize_xs;
 		padding-left: 3rem;
 		font-weight: $weight_bold;
 	}
@@ -132,7 +125,7 @@
 		text-align: center;
 
 		.progress-value-text {
-			font-size: 1.4rem !important;
+			font-size: $fontsize_xs !important;
 			font-weight: $weight_bold;
 			color:$dark;
 		}
@@ -142,8 +135,12 @@
 		}
 
 		fa-icon {
-			font-size: 2.7rem;
-
+			@media #{$breakpoint_sm}{
+				font-size: $fontsize_sm;
+			}
+			@media #{$breakpoint_xl6}{
+				font-size: $fontsize_lg;
+			}
 		}
 	}
 
@@ -177,13 +174,13 @@
 
 		.module-result-text {
 			padding-right: 1rem;
-			font-size: 1rem;
+			font-size: $fontsize_xs2;
 			font-weight: $weight_bold;
 			text-transform: uppercase;
 		}
 
 		.module-result-icon {
-			font-size: 2rem;
+			font-size: $fontsize_lg;
 		}
 
 		.noScanned {
@@ -196,7 +193,6 @@
 	}
 
 	.qr-img {
-		width: 2.4rem;
-		height: 2.4rem;
+		font-size: $fontsize_xl;
 	}
 }
