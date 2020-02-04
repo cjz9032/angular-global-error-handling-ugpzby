@@ -187,7 +187,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 				}, (error) => {
 					this.isCameraInitialized = false;
-					console.log('findCameraDeviceByPanelAsync error', error.message);
+					console.log(`findCameraDeviceByPanelAsync error ${error.message}`);
 					this.ngZone.run(() => {
 						this.disabledAll = true;
 					});
@@ -207,6 +207,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			this.videoElement = this.cameraPreview.nativeElement;
 			this.videoElement.src = previewUrl;
 			this.videoElement.play();
+			this.logger.info('CameraControlComponent.onOrientationChanged', { previewUrl, videoElement: this.videoElement});
 		});
 	}
 
