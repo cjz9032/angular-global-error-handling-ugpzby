@@ -225,7 +225,8 @@
 							</ng-template>
 						</vtr-ui-row-switch>
 					</li>
-					<li class="pt-3" *ngIf="machineType == 1 && fnCtrlSwapCapability">
+					<!-- The fnCtrlSwap feature hidden in 3.2 -->
+					<!-- <li class="pt-3" *ngIf="machineType == 1 && fnCtrlSwapCapability">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title' | translate"
 							componentName="Fn key and Ctrl key swap "
@@ -244,9 +245,10 @@
 								</div>
 							</div>
 						</vtr-ui-row-switch>
-					</li>
-
-					<li class="pt-3" *ngIf="machineType == 1 && fnAsCtrlCapability">
+					</li> -->
+					
+					<!-- The fnAsCtrl feature hidden in 3.2 -->
+					<!-- <li class="pt-3" *ngIf="machineType == 1 && fnAsCtrlCapability">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title2' | translate"
 							componentName="Fn works as Ctrl for frequently used key combinations"
@@ -267,7 +269,7 @@
 								</div>
 							</div>
 						</vtr-ui-row-switch>
-					</li>
+					</li> -->
 
 					<li *ngIf="machineType === 1">
 						<vtr-user-defined-key></vtr-user-defined-key>
