@@ -2429,4 +2429,22 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+	public getInstalledApplicationList() {
+		if (this.phoenix) {
+				const installedAppList: any = {
+					installedAppList: [{
+						name: 'Google Chrome',
+						description: ''
+						}, {
+						name: 'Internet Explorer',
+						description: ''
+						}, {
+						name: 'candy crush saga',
+						description: ''
+						}]
+				};
+				return installedAppList;
+		}
+		return undefined;
+	}
 }
