@@ -67,8 +67,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	public privacyGuardInterval: any;
 	public hasOLEDPowerControlCapability = false;
 	private Windows: any;
-	private windowsObj: any;
-	private cameraAccessChangedHandler: any;
 	private DeviceInformation: any;
 	private DeviceClass: any;
 	public isOnline: any = true;
@@ -214,11 +212,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
 			this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
 		}
-
-		if (this.Windows) {
-			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
-				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
-		}
 	}
 
 	ngOnInit() {
@@ -275,23 +268,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			}
 		} else {
 			this.initFeatures();
-		}
-
-		if (this.windowsObj) {
-			this.cameraAccessChangedHandler = (args:any) => {
-				if (args) {
-					console.log(`camera access changed args.status ${args.status}`);
-					switch (args.status) {
-						case 2:
-						case 3:
-						case 1:
-							this.getCameraDetails();
-						default:
-							break;
-					}
-				}
-			}
-			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
 		}
 	}
 
@@ -481,10 +457,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		if (this.cameraSessionId) {
 			this.cameraSessionId.unsubscribe();
 		}
-
-		if (this.windowsObj) {
-			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
-		}
 	}
 
 	/**
@@ -525,8 +497,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 					if (this.dataSource.permission === true) {
 						this.shouldCameraSectionDisabled = false;
 						this.logger.debug('getCameraDetails.then permission', this.dataSource.permission);
-						this.shouldCameraSectionDisabled = false;
-						this.hideNote = false;
 					} else {
 						// 	response.exposure.autoValue = true;
 						this.dataSource = this.emptyCameraDetails[0];
