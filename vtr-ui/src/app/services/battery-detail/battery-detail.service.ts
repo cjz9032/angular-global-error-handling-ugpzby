@@ -13,6 +13,7 @@ export class BatteryDetailService {
 	gaugeResetInfo: BatteryGaugeReset[];
 	isPowerDriverMissing: boolean;
 	isGaugeResetRunning: boolean;
+	isChargeThresholdEnabled: boolean;
 
 	public isShellAvailable = false;
 	constructor(shellService: VantageShellService) {

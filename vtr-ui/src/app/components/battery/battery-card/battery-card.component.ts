@@ -120,8 +120,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 		this.setConditionTips();
 		this.isWinRTLoading = false;
-
 		// temp
+
 		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			// this.logger.info('BatteryCardComponent.ngOnInit: Query Params', params);
 			if (params.has('batterydetail') && !this.isModalShown) {
@@ -174,6 +174,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		let isGaugeResetRunning = false;
 		const gaugeResetInfo: BatteryGaugeReset[] = this.commonService.cloneObj(info);
 		if (gaugeResetInfo) {
+			const formatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(' shorttime');
+			this.commonService.setSystemTimeFormat(formatter.clock === '12HourClock');
 			gaugeResetInfo.forEach((battery) => {
 				isGaugeResetRunning = isGaugeResetRunning || battery.isResetRunning;
 				if (battery.FCCBefore && battery.FCCAfter) {
