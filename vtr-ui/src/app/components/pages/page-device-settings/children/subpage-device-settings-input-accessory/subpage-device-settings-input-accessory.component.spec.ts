@@ -107,7 +107,8 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		component.getAdditionalCapabilities();
 		expect(inputAccessoriesService.GetKbdHiddenKeyPerformanceModeCapability).toHaveBeenCalled();
   });
-	it('#getFnCtrlSwapCapability should call', () => {
+ // The fnCtrlSwap & FnAsCtrl features Test cases hidden in 3.2
+	/* it('#getFnCtrlSwapCapability should call', () => {
 		const { fixture, component, } = setup();
 		spyOn(inputAccessoriesService, 'GetFnCtrlSwapCapability').and.returnValue(Promise.resolve(true));
 		fixture.detectChanges();
@@ -163,6 +164,6 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		fixture.detectChanges();
 		component.getLayoutTable('Standard');
 		expect(component.getLayoutTable).toHaveBeenCalled();
-  });
+  });*/
   });
 });

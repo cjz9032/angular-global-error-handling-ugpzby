@@ -55,7 +55,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	private visibilityChange: any;
 	private Windows: any;
 	private windowsObj: any;
-	private cameraAccessChangedHandler: any;
 	public hpdSensorType = 0;
 	public sensitivityVisibility = false;
 	public sesnsitivityAdjustVal: number;
@@ -138,7 +137,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
 
-			
+			this.windowsObj.addEventListener('accesschanged', () => {
+				this.permissionChanged();
+			});
 		}
 	}
 
@@ -155,18 +156,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.initSmartAssist(true);
 			this.getHPDLeaveSensitivityVisibilityStatus();
 		}
-
-		if (this.windowsObj) {
-			this.cameraAccessChangedHandler = this.permissionChanged.bind(this);
-			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
-		}
 	}
 
 	ngOnDestroy() {
 		document.removeEventListener('visibilitychange', this.visibilityChange);
-		if (this.windowsObj) {
-			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
-		}
 	}
 
 	initDataFromCache() {
