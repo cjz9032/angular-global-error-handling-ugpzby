@@ -76,9 +76,10 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3" *ngIf="machineType === 1 && isKbdBacklightAvailable">
+					<!-- commented out below lines to temporarily hide in current release -->
+					<!-- <li class="pt-3" *ngIf="machineType === 1 && isKbdBacklightAvailable">
 						<vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)"></vtr-backlight-thinkpad>
-					</li>
+					</li> -->
 					<li class="pt-3 voip" *ngIf="showVoipHotkeysSection">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.title' | translate"
