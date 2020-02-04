@@ -33,15 +33,16 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	@Input() stepsArray: Array<any>; // array with legend value for Eye care
 	@Input() manualRefresh = new EventEmitter<void>();
 
-	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() sliderChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() valueChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() valueChangeEnd: EventEmitter<ChangeContext> = new EventEmitter();
+	public highValue = undefined;
 
-
-	constructor() { }
+	constructor() {
+		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
+	}
 
 	ngAfterContentChecked() {
-		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
 	}
 
 	ngOnInit() {
@@ -73,13 +74,11 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	 * @param $event event data from ng5-slider component
 	 */
 	public onChange($event: ChangeContext) {
-		console.log('onChange Ui slider');
-		this.change.emit($event);
+		this.highValue = undefined;
+		console.log(`onChange Ui slider ${$event}, ${this.highValue}`);
+		this.sliderChange.emit($event);
 	}
 
-	public onSliderChanged(event: any) {
-		console.log('slider changed');
-	}
 	public dragEnd($event: ChangeContext) {
 		this.valueChangeEnd.emit($event);
 	}

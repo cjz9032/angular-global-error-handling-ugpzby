@@ -13,12 +13,12 @@
 
 			.heading1 {
 				color: $main_darker;
-				font-size: 3rem;
+				font-size: $fontsize_xl;
 				// padding-left: 1rem;
 				text-transform: capitalize;
 			}
 			.action-anchor {
-				font-size: 1.3rem;
+				font-size: $fontsize_xs2;
 				color: $main;
 				text-decoration: underline;
 				cursor: pointer;
@@ -31,7 +31,7 @@
 
 		.text-regular {
 			color: $main_shade;
-			font-size: 1.5rem;
+			font-size: $fontsize_xs;
 			font-weight: $weight_light;
 			padding: 1rem 1rem 1rem 0rem;
 		}
@@ -53,7 +53,7 @@
 		}
 
 		fa-icon {
-			font-size: 4.5rem;
+			font-size: $fontsize_xl4;
 			color: $main;
 		}
 
@@ -80,7 +80,7 @@
 				text-transform: uppercase;
 				padding: 0 3rem;
 				color: $light;
-				font-size: 1.5rem;
+				font-size: $fontsize_xs;
 				height: 5rem;
 				max-width: 100%;
 				font-weight: $weight_bold;
@@ -102,7 +102,7 @@
 		.errorMessage {
 			width: 100%;
 			color: $alt;
-			font-size: 1.4rem;
+			font-size: $fontsize_xs;
 			font-weight: $weight_medium;
 			margin-left: 2.5rem;
 		}

@@ -72,7 +72,7 @@
 					@media #{$white-on-black} {
 						border: 0.1rem solid $dark ;
 					}
-			
+
 					.title {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
@@ -307,6 +307,15 @@
 	}
 
 	&.card-highlight {
+		@media #{$breakpoint_xl} {
+			height: 22.3rem !important;
+		}
+		@media #{$breakpoint_lg} {
+			height: 17.6rem !important;
+		}
+		@media #{$breakpoint_sm} {
+			height: 24.5rem !important;
+		}
 		.content {
 			position: relative;
 			z-index: 1;
@@ -319,11 +328,11 @@
 				text-decoration: none;
 				cursor: pointer;
 				width: 100%;
-				height: 100%;
+				height: 100% !important;
 				display: block;
 				border-radius: $border_radius;
 				overflow: hidden;
-				
+
 				.inner-content {
 					position: relative;
 					z-index: 1;
@@ -331,7 +340,7 @@
 					padding: 2rem 2.5rem;
 					// justify-content: flex-end;
 					// align-items: center;
-				
+
 				.title {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
@@ -351,6 +360,7 @@
 	}
 
 	&.card-article {
+		height: 32.5rem !important;
 		.row {
 			max-width: 100%;
 		}
@@ -406,6 +416,7 @@
 					font-weight: $weight_light;
 					text-decoration: none;
 					cursor: pointer;
+					height: 4.5rem !important;
 					&:hover {
 						text-decoration: underline;
 					}

@@ -1235,7 +1235,7 @@
                     "description2": "تعمل هذه الميزة على جدولة الكمبيوتر لتحسين معدلات توفير طاقة البطارية خلال ساعات الخمول دون التضحية بفترة بدء التشغيل السريع خلال ساعات الاستعمال الأكثر كثافة.",
                     "subTitle2": "اضبط الوقت الذي تستخدم فيه هذا الكمبيوتر عادة",
                     "oldTooltipText": "عند تمكين وضع الاستعداد الذكي، سيتحول الكمبيوتر إلى وضع الاستعداد الحديث قبل وقت البدء المجدول، ويدخل في وضع الإسبات بعد مرور فترة زمنية معينة لم يسجل خلالها أي نشاط أثناء عمله على طاقة البطارية. يتم تحسين هذه المدة الزمنية استنادًا إلى الجدول الزمني الذي حددته. لا يتحول الكمبيوتر من الإسبات إلى الوضع الاحتياطي الحديث إلا في الأيام المجدولة زمنيًا ولا يتم التحول عند عدم النشاط لعدة أيام متتالية مجدولة زمنيًا.",
-                    "sectionTitle": "Standby settings"
+                    "sectionTitle": "إعدادات الاستعداد"
                 }
             },
             "audio": {
@@ -1385,14 +1385,14 @@
                         "displayDimmer": "تعتيم جهاز العرض"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "التحكم في أولوية العرض",
+                        "description": "يدعم جهازك أقصى عدد ممكن من أجهزة العرض الخارجية. عند توصيل أكثر من جهاز عرض باستخدام هذه الطرق الإضافية، لن يعمل إلا الجهاز الذي تم تحديد الأولوية له.<br/>اختر فيما يلي طريقة خرج أجهزة العرض الإضافية لتحديد الأولوية:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
-                            "usb_c_dp": "USB Type-C",
+                            "dock": "الإرساء",
+                            "usb_c_dp": "USB من النوع C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "الوحدة الاختيارية"
                         }
                     }
                 },

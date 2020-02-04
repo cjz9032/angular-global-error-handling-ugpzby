@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col">
+        <h1>{{'common.menu.device.sub2' | translate}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6 col-sm-6">
+        <vtr-container-card [img]="cardContentPositionA.FeatureImage" [itemID]="cardContentPositionA.Id"
+            [caption]="cardContentPositionA.Description" [title]="cardContentPositionA.Title"
+            [logoText]="cardContentPositionA.BrandName" [action]="cardContentPositionA.Action"
+            [actionType]="cardContentPositionA.ActionType" [actionLink]="cardContentPositionA.ActionLink"
+            [type]="'subpage-corner'" [ratio]="2" order="3" sideFlag='r' [cornerShift]="'large'"
+            id="device-settings-container-card"
+            attr.aria-label="device-settings-container-card-{{cardContentPositionA.Title}}" role="link"
+            [containerCardId]="'device-settings-container-card'">
+        </vtr-container-card>
+    </div>
+</div>

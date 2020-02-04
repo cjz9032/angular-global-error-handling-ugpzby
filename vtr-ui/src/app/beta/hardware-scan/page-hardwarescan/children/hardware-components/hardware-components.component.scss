@@ -12,14 +12,19 @@
 
 		.heading1 {
 			color: $shade_blue;
-			font-size: $fontsize_xl;
 			font-weight: $weight_light;
 			text-transform: capitalize;
+			@media #{$breakpoint_xl3}{
+				font-size: $fontsize_md;
+			}
+			@media #{$breakpoint_xl6}{
+				font-size: $fontsize_xl;
+			}
 		}
 
 		.heading2 {
 			color: $menu_hover;
-			font-size:$fontsize_xl;
+			font-size: $fontsize_xl;
 			font-weight: $weight_light;
 
 			&::first-letter {
@@ -28,7 +33,7 @@
 		}
 
 		.action-anchor {
-			font-size: 1.3rem;
+			font-size: $fontsize_xs;
 			color: $main;
 			text-decoration: underline;
 			text-transform: capitalize;
@@ -40,7 +45,7 @@
 		}
 
 		.disabled-anchor {
-			font-size: 1.3rem;
+			font-size: $fontsize_xs;
 			color: $shade_light;
 			text-decoration: underline;
 			text-transform: capitalize;
@@ -61,6 +66,7 @@
 
 			.refresh-icon {
 				padding-left: 1rem;
+				font-size: $fontsize_sm;
 				color: $main;
 			}
 		}
@@ -69,7 +75,7 @@
 
 	.text-regular {
 		color: $main_shade;
-		font-size: 1.5rem;
+		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 		padding: 1rem 1rem 1rem 0rem;
 	}
@@ -79,7 +85,7 @@
 
 		.heading {
 			color: $main_dark;
-			font-size: 2.5rem;
+			font-size: $fontsize_xl;
 		}
 
 		.button-box {

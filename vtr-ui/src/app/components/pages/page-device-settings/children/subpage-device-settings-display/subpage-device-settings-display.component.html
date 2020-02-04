@@ -237,9 +237,9 @@
 								</vtr-ui-row-switch>
 							</li>
 
-
+							<!-- commented out below lines to temporarily hide in current release -->
 							<!-- Display Priority Control -->
-							<li class="pt-3" *ngIf="displayPriorityModal.capability">
+							<!-- <li class="pt-3" *ngIf="displayPriorityModal.capability">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.displayPriority.title' | translate | capitalizeFirst"
 									[caption]="'device.deviceSettings.displayCamera.display.displayPriority.description' | translate"
@@ -268,7 +268,7 @@
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
 								</vtr-ui-row-switch>
-							</li>
+							</li> -->
 
 						</ul>
 					</vtr-container-collapsible>
@@ -305,7 +305,8 @@
 									(toggleOnOff)="onCameraPrivacyModeToggle($event)"
 									[isSwitchChecked]="cameraPrivacyModeStatus.status"
 									[tooltipText]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate"
-									[isDisabled]="shouldCameraSectionDisabled">
+									[isDisabled]="shouldCameraSectionDisabled"
+									[showLoaderState]="cameraPrivacyModeStatus.isLoading">
 									<div class="row">
 										<div class="col-12 pr-0">
 											<div *ngIf="hideNote"
