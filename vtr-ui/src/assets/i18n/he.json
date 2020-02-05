@@ -1338,7 +1338,7 @@
                             "title": "הערה",
                             "description": "Lenovo Vantage צריך לגשת לפרטי המיקום שלכם לחישוב זמן השקיעה והזריחה באזורכם."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "הפעילו את Windows Update או התקינו מנהל התקן גרפי באופן ידני כדי לשחזר את מצב השמירה על העיניים"
                     },
                     "dispColorTemp": {
                         "title": "טמפרטורת צבע התצוגה",
