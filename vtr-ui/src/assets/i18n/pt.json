@@ -1338,7 +1338,7 @@
                             "title": "Nota",
                             "description": "A Lenovo Vantage precisa de aceder às suas informações de localização para calcular o horário do pôr e do nascer do sol na sua região."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Execute o Windows Update ou instale manualmente o controlador da placa gráfica para recuperar o modo Cuidados com a Visão"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura de cor do ecrã",

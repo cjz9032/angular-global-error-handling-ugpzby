@@ -236,7 +236,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				} else {
 					warranty = this.deviceStatus[3];
 				}
-				const warrantyDate = this.commonService.formatDate(data.endDate);
+				const warrantyDate = this.commonService.formatUTCDate(data.endDate);
 				// in warranty
 				if (data.status === 0) {
 					const today = new Date();
