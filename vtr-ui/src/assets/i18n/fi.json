@@ -1338,7 +1338,7 @@
                             "title": "Huomautus",
                             "description": "Lenovo Vantage -ohjelman on käytettävä sijaintitietojasi oman alueesi auringon lasku- ja nousuajan laskemiseen."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Käytä Windows Update -ominaisuutta tai asenna näytönohjain manuaalisesti, jotta voit palauttaa silmien hoitotilan"
                     },
                     "dispColorTemp": {
                         "title": "Näytön värilämpötila",

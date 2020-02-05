@@ -1338,7 +1338,7 @@
                             "title": "Important",
                             "description": "Lenovo Vantage doit accéder aux informations concernant votre emplacement pour calculer l'heure du coucher et du lever du soleil pour votre région."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Exécutez Windows Update ou installez manuellement le pilote graphique pour restaurer le mode Protection des yeux"
                     },
                     "dispColorTemp": {
                         "title": "Température de couleur de l'écran",
