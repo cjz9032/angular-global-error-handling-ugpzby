@@ -248,9 +248,8 @@
 
 		.vtr-page-right-column {
 			.vtr-widget-support {
-				background-color: auto;
 				background: $gaming_darkest;
-
+				box-shadow: $drop_shadow_gaming;
 				.title {
 					color: $gaming_lightest !important;
 				}

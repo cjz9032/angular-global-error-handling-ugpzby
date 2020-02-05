@@ -1338,7 +1338,7 @@
                             "title": "備注",
                             "description": "Lenovo Vantage 需要存取您的位置資訊，才能計算您所在當地的日出和日落時間。"
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "請執行 Windows Update 或手動安裝圖形驅動程式，以回復護眼模式"
                     },
                     "dispColorTemp": {
                         "title": "顯示器色溫",
