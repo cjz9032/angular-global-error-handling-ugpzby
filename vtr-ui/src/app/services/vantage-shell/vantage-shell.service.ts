@@ -268,7 +268,7 @@ export class VantageShellService {
 						}
 
 						if (win.VantageStub && win.VantageStub.toastMsgName) {
-							data.launchByToast = win.VantageStub.toastMsgName;
+							data.LaunchByToast = win.VantageStub.toastMsgName;
 						}
 
 						data.ItemType = that.normalizeEventName(data.ItemType);
@@ -554,7 +554,7 @@ export class VantageShellService {
             return this.phoenix.smartPerformance;
         }
         return undefined;
-    } 
+    }
 
 	// public getSmartPerformance() {
 	// 	console.log('----------CALLING');
