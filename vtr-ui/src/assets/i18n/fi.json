@@ -3352,5 +3352,8 @@
             "subtitle2": "Kaikki samassa: virtaviivaistettu",
             "body2": "9. sukupolven Intel® Core™ -suorittimilla varustetut monitoimitietokoneet ovat tehokkaita pöytäkoneita, joissa on tyylikäs, selkeä ja suuritarkkuuksinen näyttö laitteistoperustaisella suojauksella."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

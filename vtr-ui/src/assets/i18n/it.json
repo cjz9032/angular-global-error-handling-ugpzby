@@ -3352,5 +3352,8 @@
             "subtitle2": "All-in-one semplificato",
             "body2": "I PC all-in-one con processori Intel® Core™ di nona generazione offrono tutte le potenzialità di un desktop con uno elegante design, per un minor ingombro, una protezione basata sull'hardware e uno schermo ad alta risoluzione."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }
