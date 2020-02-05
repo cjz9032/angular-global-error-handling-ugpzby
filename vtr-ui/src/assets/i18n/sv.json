@@ -1338,7 +1338,7 @@
                             "title": "Anmärkning",
                             "description": "Lenovo Vantage behöver åtkomst till din platsinformation för att kunna beräkna solnedgång och soluppgång i din region."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Kör Windows Update eller installera grafikdrivrutinen manuellt för att återställa ögonskyddsläge"
                     },
                     "dispColorTemp": {
                         "title": "Bildskärmens färgtemperatur",

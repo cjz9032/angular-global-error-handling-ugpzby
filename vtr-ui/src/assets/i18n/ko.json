@@ -1338,7 +1338,7 @@
                             "title": "주",
                             "description": "Lenovo Vantage는 위치 정보에 액세스하여 지역의 일몰 및 일출 시간을 계산해야 합니다."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Windows 업데이트를 실행하거나 그래픽 드라이버를 수동으로 설치하여 Eye Care 모드로 복구하십시오"
                     },
                     "dispColorTemp": {
                         "title": "디스플레이 색상 온도",
