@@ -1338,7 +1338,7 @@
                             "title": "Anmerkung",
                             "description": "Lenovo Vantage muss auf Ihre Standortinformationen zugreifen, um die Sonnenuntergangs- und Sonnenaufgangszeit Ihrer Gegend zu berechnen."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Führen Sie Windows Update aus oder installieren Sie den Grafiktreiber manuell, um den Modus \"Augen schonen\" wiederherzustellen"
                     },
                     "dispColorTemp": {
                         "title": "Farbtemperatur der Anzeige",

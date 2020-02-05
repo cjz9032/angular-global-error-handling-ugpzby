@@ -1338,7 +1338,7 @@
                             "title": "Poznámka",
                             "description": "Program Lenovo Vantage potřebuje získat přístup k informacím o umístění pro výpočet času západu a východu slunce."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Režim Péče o oči obnovíte spuštěním Windows Update nebo ruční instalací ovladače grafické karty"
                     },
                     "dispColorTemp": {
                         "title": "Teplota barev displeje",

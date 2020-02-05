@@ -78,12 +78,12 @@ export class CommonService {
 	 * Returns date formatted in YYYY/MM/DD format
 	 * @param date date object to format
 	 */
-	public formatDate(dateString: string): string {
+	public formatUTCDate(dateString: string): string {
 		const date = new Date(dateString);
-		const mm = date.getMonth() + 1; // getMonth() is zero-based
-		const dd = date.getDate();
+		const mm = date.getUTCMonth() + 1; // getMonth() is zero-based
+		const dd = date.getUTCDate();
 
-		return [date.getFullYear(),
+		return [date.getUTCFullYear(),
 			'/',
 		(mm > 9 ? '' : '0') + mm,
 			'/',
