@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 	templateUrl: './battery-gauge-reset.component.html',
 	styleUrls: ['./battery-gauge-reset.component.scss']
 })
-export class BatteryGaugeResetComponent implements OnInit {
+export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
 	headings = [
 		'device.deviceSettings.batteryGauge.details.primary',
@@ -34,6 +34,10 @@ export class BatteryGaugeResetComponent implements OnInit {
 		this.systemTimeFormatSubscription = this.commonService.getSystemTimeFormat().subscribe((value: boolean) => {
 			this.is12HrsFormat = value;
 		});
+	}
+
+	ngOnDestroy() {
+		this.systemTimeFormatSubscription.unsubscribe();
 	}
 
 	initBatteryGaugeResetInfo() {
