@@ -1338,7 +1338,7 @@
                             "title": "Notă",
                             "description": "Lenovo Vantage trebuie să vă acceseze informațiile privind locația pentru determinarea orei de apus și răsărit din regiunea dvs."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Pentru a recupera modul de îngrijire a ochilor, rulați Windows Update sau instalați manual driverul pentru placa grafică"
                     },
                     "dispColorTemp": {
                         "title": "Temperatură culoare afișaj",

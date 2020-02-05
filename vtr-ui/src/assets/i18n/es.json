@@ -1338,7 +1338,7 @@
                             "title": "Nota",
                             "description": "Lenovo Vantage necesita acceder a la información de ubicación para calcular la hora del atardecer y amanecer de su región."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Ejecute Windows Update o instale manualmente el controlador de gráficos para recuperar la modalidad de Cuidado de la visión"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura del color de visualización",

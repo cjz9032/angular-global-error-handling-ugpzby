@@ -167,7 +167,7 @@
 									</div>
 								</vtr-ui-row-switch>
                             </li>
-                            <div *ngIf="microphoneProperties?.currentMode!='NotSupported' && !isDTmachine">
+                            <div *ngIf="microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine">
 							<li class=""
 								*ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
 								<vtr-ui-row-switch

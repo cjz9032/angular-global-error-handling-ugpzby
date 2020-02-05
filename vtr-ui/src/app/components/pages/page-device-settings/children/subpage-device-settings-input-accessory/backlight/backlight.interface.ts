@@ -28,9 +28,9 @@ export interface GetBacklightResponse {
 }
 
 export interface SetBacklightStatus {
-	settingList: {
+	settingList: [{
 		setting: Array<BacklightStatus>;
-	};
+	}];
 }
 
 export interface BacklightOnChangeSettings {
