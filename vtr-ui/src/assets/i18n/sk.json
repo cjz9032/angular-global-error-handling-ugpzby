@@ -1338,7 +1338,7 @@
                             "title": "Poznámka",
                             "description": "Aplikácia Lenovo Vantage potrebuje prístup k lokálnym informáciám na výpočet času západu a východu slnka vo vašej oblasti."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "Ak chcete obnoviť režim na ochranu zraku, spustite službu Windows Update alebo manuálne nainštalujte ovládač grafickej karty"
                     },
                     "dispColorTemp": {
                         "title": "Teplota farieb obrazovky",
@@ -1420,7 +1420,8 @@
                         "caption": "Táto funkcia rozostrí pozadie pri použití kamery na videohovor alebo fotografovanie. Môžete si vybrať z rôznych efektov uvedených nižšie.",
                         "blurMode": "Režim rozostrenia",
                         "comicMode": "Režim komiksu",
-                        "sketchMode": "Režim náčrtu"
+                        "sketchMode": "Režim náčrtu",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "FOTOAPARÁT SA POUŽÍVA",
@@ -2167,7 +2168,7 @@
                 "showless": "Zobraziť menej",
                 "button": "Zapnúť zabezpečenie WiFi",
                 "disableDescribe": "Zabezpečenie WiFi od spoločnosti Lenovo je pokročilá cloudová softvérová služba, ktorá pomáha vášmu zariadeniu odlíšiť bezpečné bezdrôtové siete od tých potenciálne škodlivých.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Zabezpečenie Wi-Fi od spoločnosti Lenovo v súčasnosti monitoruje aktivitu vo vašej sieti WiFi."
             },
             "threatlocator": {
                 "describe": "Pomocou funkcie Detektor hrozieb určte bezpečnosť okolitých sietí.",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Počítače All-in-One: stolové počítače jednoduchšie",
             "body2": "Počítače All-in-One s procesormi Intel® Core™ 9. generácie vám poskytnú všetok výkon stolového počítača skrytého v elegantnej obrazovke. Vychutnávajte si väčší poriadok na stole, hardvérového zabezpečenie a obrazovku s vysokým rozlíšením."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

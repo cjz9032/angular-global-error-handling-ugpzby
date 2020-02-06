@@ -6,7 +6,7 @@
 				[caption]="'device.deviceSettings.displayCamera.description' | translate"
 				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate"
 				[textId]="'ds-display-camera'">
-			</vtr-ui-header-subpage>
+		</vtr-ui-header-subpage>
 		</div>
 	</div>
 	<div class="row">
@@ -401,7 +401,6 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-
 							<li class="pt-3"
 								*ngIf="cameraBlur.available && cameraBlur.errorCode == 0">
 								<vtr-ui-row-switch
@@ -410,12 +409,14 @@
 									[caption]="'device.deviceSettings.displayCamera.camera.camerablur.caption' | translate"
 									[isSwitchVisible]="true"
 									[isLastChild]=true
-									[leftIcon]="['fal', 'gem']"
+									[leftIcon]="['fal', 'camera']"
 									[showChildContent]="true"
 									[isSwitchChecked]="cameraBlur.enabled"
 									(toggleOnOff)="onCameraBackgroundBlur($event)"
 									[theme]="'white'"
-									[switchId]="'device-settings-camera-blur'">
+									[tooltipText]="'device.deviceSettings.displayCamera.camera.camerablur.tooltip' | translate"
+									[switchId]="'device-settings-camera-blur'"
+									>
 									<div class="row"
 										*ngIf="cameraBlur.enabled">
 										<div class="col-12 pr-0 my-3">

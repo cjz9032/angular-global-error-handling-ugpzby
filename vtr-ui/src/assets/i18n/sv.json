@@ -1338,7 +1338,7 @@
                             "title": "Anmärkning",
                             "description": "Lenovo Vantage behöver åtkomst till din platsinformation för att kunna beräkna solnedgång och soluppgång i din region."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "Kör Windows Update eller installera grafikdrivrutinen manuellt för att återställa ögonskyddsläge"
                     },
                     "dispColorTemp": {
                         "title": "Bildskärmens färgtemperatur",
@@ -1420,7 +1420,8 @@
                         "caption": "Med denna funktion görs bakgrunden oskarp när du använder kameran för att ringa videosamtal eller ta foton. Du kan välja bland effekterna nedan.",
                         "blurMode": "Oskärpeläge",
                         "comicMode": "Komiskt läge",
-                        "sketchMode": "Skissläge"
+                        "sketchMode": "Skissläge",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERAN ANVÄNDS",
@@ -2167,7 +2168,7 @@
                 "showless": "Visa mindre",
                 "button": "Aktivera WiFi-säkerhet",
                 "disableDescribe": "Lenovo WiFi-säkerhet är en avancerad molnbaserad programvarutjänst som hjälper din enhet att skilja mellan säkra trådlösa nätverk och potentiellt skadliga.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Lenovo WiFi-säkerhet övervakar WiFi-nätverket."
             },
             "threatlocator": {
                 "describe": "Använd hotidentifieraren för att utvärdera säkerheten i nätverken.",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Allt-i-ett: smidigt och enkelt",
             "body2": "Allt-i-ett-datorer med 9:e generationens Intel® Core™-processorer ger dig alla fördelar med en stationär dator förpackade i en slimmad bildskärm – för en renare arbetsyta, maskinvarubaserad säkerhet och högupplöst bild."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

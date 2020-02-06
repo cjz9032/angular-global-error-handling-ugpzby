@@ -15,12 +15,12 @@
 						<div class="right-col">
 							<div class="pb-2">
 								<span>{{'support.warranty.startDate' | translate}}</span>
-								<b *ngIf="item.info.status !== 2">{{ item.info.startDate | dateFormat}}</b>
+								<b *ngIf="item.info.status !== 2">{{ item.info.startDate | formatUTCDate}}</b>
 								<b *ngIf="item.info.status === 2">{{'common.securityAdvisor.notFound' | translate}}</b>
 							</div>
 							<div class="pb-2">
 								<span>{{'support.warranty.endDate' | translate}}</span>
-								<b *ngIf="item.info.status !== 2">{{ item.info.endDate | dateFormat }}</b>
+								<b *ngIf="item.info.status !== 2">{{ item.info.endDate | formatUTCDate }}</b>
 								<b *ngIf="item.info.status === 2">{{'common.securityAdvisor.notFound' | translate}}</b>
 							</div>
 						</div>

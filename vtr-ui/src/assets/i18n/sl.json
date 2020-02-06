@@ -1338,7 +1338,7 @@
                             "title": "Opomba",
                             "description": "Lenovo Vantage potrebuje dostop do informacij o vaši lokaciji za izračun časa sončnega zahoda in vzhoda v vaši regiji."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "Za obnovitev očem prijaznega načina zaženite Windows Update ali ročno namestite grafični gonilnik"
                     },
                     "dispColorTemp": {
                         "title": "Barvna temperatura zaslona",
@@ -1420,7 +1420,8 @@
                         "caption": "Ta funkcija zamegli ozadje, ko kamero uporabljate za videoklice ali fotografiranje. Med spodnjimi možnostmi lahko izberete različne učinke.",
                         "blurMode": "Način zameglitve",
                         "comicMode": "Način stripa",
-                        "sketchMode": "Način skice"
+                        "sketchMode": "Način skice",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA JE V UPORABI",
@@ -2167,7 +2168,7 @@
                 "showless": "Pokaži manj",
                 "button": "Omogoči varnost WiFi-ja",
                 "disableDescribe": "Program družbe Lenovo za varnost WiFi-ja je napredna oblačna storitev programske opreme, ki vaši napravi pomaga razlikovati med varnimi brezžičnimi omrežji in morebitnimi zlonamernimi.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Program družbe Lenovo za varnost WiFi-ja trenutno nadzoruje omrežje WiFi."
             },
             "threatlocator": {
                 "describe": "Če želite ugotoviti, kako varna so omrežja okrog vas, uporabite detektor groženj.",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Računalniki »vse-v-enem«: učinkovito",
             "body2": "Računalniki »vse-v-enem« s procesorji Intel® Core™ 9. generacije vam nudijo vso zmogljivost namiznega računalnika, vse pa je zapakirano v eleganten zaslon za manj nereda, varnosti, ki temelji na strojni opremi, in z zaslonom z visoko ločljivostjo."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

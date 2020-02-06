@@ -1338,7 +1338,7 @@
                             "title": "Napomena",
                             "description": "Lenovo Vantage treba da pristupi informacijama o lokaciji kako bi se izračunalo vreme zalaska i izlaska sunca u vašem regionu."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "Pokrenite Windows Update ili ručno instalirajte grafički upravljački program da biste oporavili režim zaštite vida"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura boje ekrana",
@@ -1420,7 +1420,8 @@
                         "caption": "Ova funkcija zamagljuje pozadinu kada koristite kameru za video poziv ili fotografisanje. Možete da odaberete drugačije efekte iz izbora u nastavku.",
                         "blurMode": "Režim zamagljenja",
                         "comicMode": "Režim stripa",
-                        "sketchMode": "Režim crteža"
+                        "sketchMode": "Režim crteža",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA JE U UPOTREBI",
@@ -2167,7 +2168,7 @@
                 "showless": "Prikaži manje",
                 "button": "Omogući WiFi bezbednost",
                 "disableDescribe": "Lenovo WiFi bezbednost je napredna softverska usluga zasnovana na oblaku koja pomaže vašem uređaju da razlikuje bezbedne bežične mreže od potencijalno zlonamernih.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Lenovo WiFi bezbednost trenutno nadgleda vašu WiFi mrežu."
             },
             "threatlocator": {
                 "describe": "Koristite detektor pretnji za utvrđivanje bezbednosti mreža oko vas.",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Računari „sve u jednom“: unapređeni",
             "body2": "Računari „sve u jednom“ sa 9. generacijom Gen Intel® Core™ procesorima pružaju vam svu snagu desktop konfiguracije na tankom ekranu – za manje zatrpavanje, bezbednost na nivou hardvera i prikaz visoke rezolucije."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

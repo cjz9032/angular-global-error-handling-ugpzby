@@ -1338,7 +1338,7 @@
                             "title": "Megjegyzés",
                             "description": "A napnyugta és a napkelte idejének kiszámításához a Lenovo Vantage-nek hozzá kell férnie a helyadatokhoz."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "Kérjük, futtassa a Windows Update szolgáltatást, vagy telepítse manuálisan a grafikus illesztőprogramot a Szemvédő mód helyreállításához"
                     },
                     "dispColorTemp": {
                         "title": "A képernyő színhőmérséklete",
@@ -1420,7 +1420,8 @@
                         "caption": "Ez a funkció elhomályosítja a hátteret, ha a kamerát videohíváshoz vagy fényképezéshez használják. Az alábbi effektusok közül választhat.",
                         "blurMode": "Elmosás mód",
                         "comicMode": "Rajzfilm mód",
-                        "sketchMode": "Skicc mód"
+                        "sketchMode": "Skicc mód",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "A KAMERA HASZNÁLATBAN VAN",
@@ -2167,7 +2168,7 @@
                 "showless": "Részletek elrejtése",
                 "button": "A Biztonságos WiFi engedélyezése",
                 "disableDescribe": "A Lenovo – Biztonságos WiFi egy fejlett, felhőalapú szoftverszolgáltatás, amely segít az eszköznek megkülönböztetni a biztonságos vezeték nélküli hálózatokat a potenciálisan rosszindulatú hálózatoktól.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "A Lenovo – Biztonságos WiFi jelenleg figyeli az Ön WiFi-hálózatát."
             },
             "threatlocator": {
                 "describe": "A veszélyészlelővel megállapíthatja, mennyire biztonságosak a közeli hálózatok.",
@@ -3352,5 +3353,8 @@
             "subtitle2": "All-in-One: Egyszerű",
             "body2": "Az all-in-one számítógépek a 9. generációs Intel® Core™ processzorral az asztali számítógépek minden előnyét biztosítják egy karcsú kijelzőbe csomagolva – kevesebb rendetlenséggel, hardver alapú biztonsággal és nagy felbontású kijelzővel."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

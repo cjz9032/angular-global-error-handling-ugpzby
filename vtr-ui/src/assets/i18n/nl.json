@@ -1338,7 +1338,7 @@
                             "title": "Opmerking",
                             "description": "Lenovo Vantage heeft toegang nodig tot uw locatiegegevens voor het berekenen van de tijd voor zonsondergang en zonsopgang van uw regio."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "Voer Windows Update uit of installeer handmatig een grafisch stuurprogramma om de Oogzorg-modus te herstellen"
                     },
                     "dispColorTemp": {
                         "title": "Kleurtemperatuur weergeven",
@@ -1420,7 +1420,8 @@
                         "caption": "Deze functie vervaagt de achtergrond wanneer u de camera gebruikt voor een videogesprek of het maken van foto's. U kunt verschillende effecten kiezen uit onderstaande selecties.",
                         "blurMode": "Vervaagmodus",
                         "comicMode": "Stripmodus",
-                        "sketchMode": "Schetsmodus"
+                        "sketchMode": "Schetsmodus",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN GEBRUIK",
@@ -2167,7 +2168,7 @@
                 "showless": "Minder weergeven",
                 "button": "WiFi-beveiliging inschakelen",
                 "disableDescribe": "Lenovo WiFi-beveiliging is een geavanceerde cloudgebaseerde softwareservice die uw apparaat helpt onderscheid te maken tussen veilige draadloze netwerken en mogelijk schadelijke.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Lenovo WiFi-beveiliging bewaakt je WiFi-netwerk op dit moment."
             },
             "threatlocator": {
                 "describe": "Gebruik de dreigingsdetector om de veiligheid van de netwerken om u heen te bepalen.",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Alles-in-één computers: gestroomlijnd",
             "body2": "Alles-in-één pc's met 9e generatie Intel® Core™ processoren voorzien u van de kracht van een desktop in een strak design — voor minder volume, op hardware gebaseerde beveiliging en een scherm met hoge resolutie."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

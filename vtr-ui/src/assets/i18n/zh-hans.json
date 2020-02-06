@@ -1338,7 +1338,7 @@
                             "title": "注",
                             "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "请运行 Windows Update 或手动安装显卡驱动程序以恢复护眼模式"
                     },
                     "oledPowerSettings": {
                         "title": "OLED 电源设置",
@@ -1420,7 +1420,8 @@
                         "caption": "当您使用摄像头进行视频通话或拍摄照片时，该功能可以使背景变得模糊。您可以从下面的选项中选择不同的效果。",
                         "blurMode": "模糊模式",
                         "comicMode": "漫画模式",
-                        "sketchMode": "素描模式"
+                        "sketchMode": "素描模式",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "摄像头正在使用中",
@@ -2167,7 +2168,7 @@
                 "showless": "显示更少内容",
                 "button": "启用 WiFi 安全",
                 "disableDescribe": "Lenovo WiFi 安全是一项基于云的先进软件服务，可帮助您的设备区分安全的无线网络与潜在的恶意网络。",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Lenovo WiFi 安全目前正在监控您的 WiFi 网络。"
             },
             "threatlocator": {
                 "describe": "使用威胁检测程序来确定您周围网络的安全性。",
@@ -3352,5 +3353,8 @@
             "subtitle2": "多功能：简化",
             "body2": "配备第九代 Intel® Core™ 处理器的一体机，将桌面的所有功能都装入设计时尚的显示屏中 - 干扰更少，具有基于硬件的安全性和高分辨率的显示效果。"
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

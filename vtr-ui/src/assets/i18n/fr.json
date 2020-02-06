@@ -1338,7 +1338,7 @@
                             "title": "Important",
                             "description": "Lenovo Vantage doit accéder aux informations concernant votre emplacement pour calculer l'heure du coucher et du lever du soleil pour votre région."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "Exécutez Windows Update ou installez manuellement le pilote graphique pour restaurer le mode Protection des yeux"
                     },
                     "dispColorTemp": {
                         "title": "Température de couleur de l'écran",
@@ -1420,7 +1420,8 @@
                         "caption": "Cette fonction floute votre arrière-plan lorsque vous utilisez la caméra pour un appel vidéo ou pour prendre des photos. Vous pouvez choisir différents effets parmi les sélections ci-dessous.",
                         "blurMode": "Mode flou",
                         "comicMode": "Mode comique",
-                        "sketchMode": "Mode croquis"
+                        "sketchMode": "Mode croquis",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "L'APPAREIL PHOTO EST EN COURS D'UTILISATION",
@@ -2167,7 +2168,7 @@
                 "showless": "Afficher moins",
                 "button": "Activer la sécurité WiFi",
                 "disableDescribe": "La Sécurité WiFi Lenovo est un service logiciel avancé basé dans le Cloud qui permet à votre appareil de différencier les réseaux sans fil sûrs de ceux potentiellement malveillants.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "La sécurité WiFi Lenovo surveille actuellement l'activité de votre réseau WiFi."
             },
             "threatlocator": {
                 "describe": "Utiliser l'outil de détection des menaces pour déterminer la sécurité des réseaux alentours.",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Ordinateurs tout en un : simplifié",
             "body2": "Les PC tout-en-un dotés de la 9ème génération de processeurs Intel® Core™ vous offrent toute la puissance d'un ordinateur de bureau avec un écran élégant : pour une sécurité basée matériel moins encombrante et un écran haute résolution."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

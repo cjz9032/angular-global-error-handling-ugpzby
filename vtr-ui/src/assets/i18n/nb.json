@@ -1338,7 +1338,7 @@
                             "title": "Merk",
                             "description": "Lenovo Vantage trenger tilgang til informasjon om plasseringen din for å beregne tidspunkter for solnedgang og soloppgang for regionen din."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "Kjør Windows Update eller installer grafikkdriver manuelt for å gjenopprette Eye Care-modus"
                     },
                     "dispColorTemp": {
                         "title": "Skjermens fargetemperatur",
@@ -1420,7 +1420,8 @@
                         "caption": "Denne funksjonen gjør bakgrunnen uskarp når du bruker kameraet til videosamtaler eller tar bilder. Du kan velge en annen effekt blant alternativene under.",
                         "blurMode": "Uskarp modus",
                         "comicMode": "Tegneseriemodus",
-                        "sketchMode": "Skissemodus"
+                        "sketchMode": "Skissemodus",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERAET ER I BRUK",
@@ -2167,7 +2168,7 @@
                 "showless": "Vis mindre",
                 "button": "Aktiver WiFi-sikkerhet",
                 "disableDescribe": "Lenovo WiFi Sikkerhet er en avansert, skybasert programtjeneste som hjelper enhet med å skille trygge trådløse nettverk fra potensielt farlige.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Lenovo WiFi Security overvåker for øyeblikket WiFi-nettverket ditt."
             },
             "threatlocator": {
                 "describe": "Bruk trusseldetektoren til å finne ut hvor sikre nettverkene rundt deg er.",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Alt-i-ett: strømlinjeformet",
             "body2": "Alt-i-ett-PC-er med 9. generasjons Intel® Core™-prosessorer gir deg all kraften til en stasjonær PC pakket i en elegant skjerm – for mindre rot, maskinvarebasert sikkerhet og skjerm med høy oppløsning."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

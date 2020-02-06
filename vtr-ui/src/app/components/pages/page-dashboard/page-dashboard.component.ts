@@ -913,7 +913,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			cache: true
 		};
 		const warranty = this.systemStatus[2];
-		const warrantyDate = this.commonService.formatDate(value.endDate);
+		const warrantyDate = this.commonService.formatUTCDate(value.endDate);
 		// in warranty
 		if (value.status === 0) {
 			this.translate.stream('dashboard.systemStatus.warranty.detail.until').subscribe((re) => {

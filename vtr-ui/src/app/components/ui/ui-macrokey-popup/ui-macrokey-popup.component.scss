@@ -24,6 +24,7 @@ ui-popover {
 	border-radius: 0.75rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
 	max-width: 56rem;
+	min-width: 45rem;
 	@media #{$breakpoint_xl} {
 		width: 85%;
 	}

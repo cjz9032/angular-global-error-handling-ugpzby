@@ -1340,7 +1340,7 @@
                             "title": "ملحوظة",
                             "description": "يحتاج Lenovo Vantage إلى الوصول إلى معلومات موقعك لحساب وقت الغروب وشروق الشمس في منطقتك."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "يرجى تشغيل Windows Update أو تثبيت برنامج تشغيل الرسومات يدويًا لاسترداد وضع العناية بالعين"
                     },
                     "dispColorTemp": {
                         "title": "درجة حرارة ألوان جهاز العرض",
@@ -1422,7 +1422,8 @@
                         "caption": "تقوم هذه الميزة بإضفاء التمويه على الخلفية عندما تستخدم الكاميرا لأي مكالمة فيديو أو التقاط الصور. يمكنك اختيار تأثير مختلف من الأقسام التالية.",
                         "blurMode": "وضع التمويه",
                         "comicMode": "الوضع الكوميدي",
-                        "sketchMode": "وضع التخطيط"
+                        "sketchMode": "وضع التخطيط",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "الكاميرا قيد الاستخدام",
@@ -2169,7 +2170,7 @@
                 "showless": "إظهار أقل",
                 "button": "تمكين أمان شبكة WiFi",
                 "disableDescribe": "ميزة أمان Lenovo WiFi هي عبارة عن خدمة برمجية متقدمة تستند إلى السحابة والتي تساعد جهازك في تمييز الشبكات اللاسلكية الآمنة عن الشبكات الضارة المحتملة.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "تقوم ميزة أمان Lenovo WiFi بمراقبة شبكة WiFi لديك في الوقت الحالي."
             },
             "threatlocator": {
                 "describe": "استخدم محدد مواقع التهديدات للتعرف على مدى سلامة الشبكات من حولك.",
@@ -3352,5 +3353,8 @@
             "subtitle2": "الأجهزة المتكاملة: انسيابية",
             "body2": "تمنحك أجهزة الكمبيوتر الشخصي المتكاملة المزودة بمعالجات Intel® Core™ من الجيل التاسع كل إمكانات الكمبيوتر المكتبي الذي يتم تجميعهم في شاشة أنيقة، وذلك لضمان مستوى أقل من الفوضى والأمان القائم على الأجهزة وشاشة عرض عالية الدقة."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

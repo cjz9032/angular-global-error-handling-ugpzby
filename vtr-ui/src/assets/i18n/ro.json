@@ -1338,7 +1338,7 @@
                             "title": "Notă",
                             "description": "Lenovo Vantage trebuie să vă acceseze informațiile privind locația pentru determinarea orei de apus și răsărit din regiunea dvs."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "Pentru a recupera modul de îngrijire a ochilor, rulați Windows Update sau instalați manual driverul pentru placa grafică"
                     },
                     "dispColorTemp": {
                         "title": "Temperatură culoare afișaj",
@@ -1420,7 +1420,8 @@
                         "caption": "Această caracteristică estompează fundalul atunci când utilizați camera pentru apeluri video sau pentru a realiza fotografii. Puteți alege diverse efecte din selecțiile de mai jos.",
                         "blurMode": "Mod estompare",
                         "comicMode": "Mod comic",
-                        "sketchMode": "Mod schiță"
+                        "sketchMode": "Mod schiță",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA ESTE ÎN CURS DE UTILIZARE",
@@ -2167,7 +2168,7 @@
                 "showless": "Afișează mai puțin",
                 "button": "Activare securitate WiFi",
                 "disableDescribe": "Securitate WiFi Lenovo este un serviciu software avansat bazat pe cloud care ajută dispozitivul să diferenţieze reţelele fără fir sigure de cele potenţial rău intenţionate.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "În prezent, Securitate WiFi Lenovo vă monitorizează activitatea în rețeaua WiFi."
             },
             "threatlocator": {
                 "describe": "Utilizați detectorul de amenințări pentru a determina siguranța rețelelor din jurul dvs.",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Echipamente multifuncţionale: acum mai optimizate",
             "body2": "PC-urile multifuncţionale cu procesoare Intel® Core™ din a 9-a generaţie vă oferă toată puterea unui desktop într-un monitor elegant – pentru mai puţin dezordine, securitate bazată pe hardware şi afişare de înaltă rezoluţie."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

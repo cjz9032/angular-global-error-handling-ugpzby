@@ -1338,7 +1338,7 @@
                             "title": "Huomautus",
                             "description": "Lenovo Vantage -ohjelman on käytettävä sijaintitietojasi oman alueesi auringon lasku- ja nousuajan laskemiseen."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "Käytä Windows Update -ominaisuutta tai asenna näytönohjain manuaalisesti, jotta voit palauttaa silmien hoitotilan"
                     },
                     "dispColorTemp": {
                         "title": "Näytön värilämpötila",
@@ -1420,7 +1420,8 @@
                         "caption": "Tämä ominaisuus sumentaa taustan, kun käytät kameraa videopuheluihin tai valokuvaamiseen. Voit valita eri tehosteen alla olevasta valikoimasta.",
                         "blurMode": "Sumennustila",
                         "comicMode": "Sarjakuvatila",
-                        "sketchMode": "Luonnostila"
+                        "sketchMode": "Luonnostila",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA ON KÄYTÖSSÄ",
@@ -2167,7 +2168,7 @@
                 "showless": "Näytä vähemmän",
                 "button": "Ota WiFi -suojaus käyttöön",
                 "disableDescribe": "Lenovo WiFi -suojaus on kehittynyt pilvipohjainen ohjelmistopalvelu, joka auttaa laitetta erottamaan turvalliset langattomat verkot mahdollisista haitallisista verkoista.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Lenovo WiFi -suojaus valvoo tällä hetkellä WiFi-verkon toimintaa."
             },
             "threatlocator": {
                 "describe": "Määritä uhkien paikantimen avulla ympärilläsi olevien verkkojen turvallisuus.",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Kaikki samassa: virtaviivaistettu",
             "body2": "9. sukupolven Intel® Core™ -suorittimilla varustetut monitoimitietokoneet ovat tehokkaita pöytäkoneita, joissa on tyylikäs, selkeä ja suuritarkkuuksinen näyttö laitteistoperustaisella suojauksella."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

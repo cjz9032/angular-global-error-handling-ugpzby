@@ -1338,7 +1338,7 @@
                             "title": "Nota",
                             "description": "Lenovo Vantage deve accedere alle informazioni sulla posizione per calcolare l'ora del tramonto e dell'alba dell'area geografica in cui ci si trova."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "Eseguire Windows Update o installare manualmente il driver di grafica per ripristinare la modalità Comfort visivo"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura colore schermo",
@@ -1420,7 +1420,8 @@
                         "caption": "Questa funzionalità consente di sfocare lo sfondo quando la fotocamera viene utilizzata per videochiamate o per scattare foto. È possibile scegliere un effetto diverso tra le selezioni elencate di seguito.",
                         "blurMode": "Modalità sfocatura",
                         "comicMode": "Modalità fumetto",
-                        "sketchMode": "Modalità schizzo"
+                        "sketchMode": "Modalità schizzo",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "LA FOTOCAMERA È IN USO",
@@ -2167,7 +2168,7 @@
                 "showless": "Mostra meno",
                 "button": "Abilita sicurezza WiFi",
                 "disableDescribe": "Sicurezza Lenovo WiFi è un servizio software avanzato basato su cloud che consente al dispositivo in uso di distinguere reti wireless sicure da quelle potenzialmente dannose.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Sicurezza Lenovo WiFi sta attualmente monitorando la rete WiFi."
             },
             "threatlocator": {
                 "describe": "Utilizza il rilevatore delle minacce per determinare la sicurezza delle reti vicine.",
@@ -3352,5 +3353,8 @@
             "subtitle2": "All-in-one semplificato",
             "body2": "I PC all-in-one con processori Intel® Core™ di nona generazione offrono tutte le potenzialità di un desktop con uno elegante design, per un minor ingombro, una protezione basata sull'hardware e uno schermo ad alta risoluzione."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

@@ -1338,7 +1338,7 @@
                             "title": "お願い",
                             "description": "Lenovo Vantage はその地域の日没と日の出の時刻を計算するために、位置情報にアクセスする必要があります。"
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "Windows Update を実行するか、グラフィック・ドライバーを手動でインストールして、アイ・ケア・モードを復元してください"
                     },
                     "dispColorTemp": {
                         "title": "ディスプレイの色温度",
@@ -1420,7 +1420,8 @@
                         "caption": "この機能は、ビデオ通話または写真撮影にカメラを使用する際に背景をぼかします。以下の選択肢から別の効果を選択できます。",
                         "blurMode": "ぼかしモード",
                         "comicMode": "コミック モード",
-                        "sketchMode": "スケッチ モード"
+                        "sketchMode": "スケッチ モード",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "カメラは使用中です",
@@ -2167,7 +2168,7 @@
                 "showless": "その他の情報を表示しない",
                 "button": "WiFi セキュリティーを有効にする",
                 "disableDescribe": "Lenovo WiFi セキュリティーは高度なクラウドベースのソフトウェアサービスで、デバイスが安全な無線ネットワークを潜在的に悪意のあるものと区別するのに役立ちます。",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Lenovo WiFi セキュリティーが現在 WiFi ネットワークを監視しています。"
             },
             "threatlocator": {
                 "describe": "脅威検出器を使用して、周囲のネットワークの安全性を判断します。",
@@ -3352,5 +3353,8 @@
             "subtitle2": "オールインワン: 簡素化",
             "body2": "第 9 世代 Intel® Core™ プロセッサーを搭載したオールインワン PC によって、あらゆるデスクトップの強みが光沢のあるディスプレイに詰め込まれていることで、乱雑さが抑えられ、ハードウェアベースのセキュリティーと高解像度のディスプレイが実現されています。"
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

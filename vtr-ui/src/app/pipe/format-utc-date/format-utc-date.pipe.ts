@@ -1,17 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-	name: 'dateFormat'
+	name: 'formatUTCDate'
 })
-export class DateFormatPipe implements PipeTransform {
+export class FormatUTCDatePipe implements PipeTransform {
 
 	transform(value: any, ...args: any[]): any {
 		const date = new Date(value);
-		const mm = date.getMonth() + 1; // getMonth() is zero-based
-		const dd = date.getDate();
+		const mm = date.getUTCMonth() + 1; // getMonth() is zero-based
+		const dd = date.getUTCDate();
 
 		return [
-			date.getFullYear(),
+			date.getUTCFullYear(),
 			'/', (mm > 9 ? '' : '0') + mm,
 			'/', (dd > 9 ? '' : '0') + dd
 		].join('');

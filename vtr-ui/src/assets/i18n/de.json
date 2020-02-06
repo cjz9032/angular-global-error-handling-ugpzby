@@ -1338,7 +1338,7 @@
                             "title": "Anmerkung",
                             "description": "Lenovo Vantage muss auf Ihre Standortinformationen zugreifen, um die Sonnenuntergangs- und Sonnenaufgangszeit Ihrer Gegend zu berechnen."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+                        "tips": "Führen Sie Windows Update aus oder installieren Sie den Grafiktreiber manuell, um den Modus \"Augen schonen\" wiederherzustellen"
                     },
                     "dispColorTemp": {
                         "title": "Farbtemperatur der Anzeige",
@@ -1420,7 +1420,8 @@
                         "caption": "Mit dieser Funktion wird Ihr Hintergrund weichgezeichnet, wenn Sie die Kamera für Videokonferenzen oder die Aufnahme von Fotos verwenden. Sie können einen der unten aufgeführten Effekte auswählen.",
                         "blurMode": "Weichzeichnen-Modus",
                         "comicMode": "Comic-Modus",
-                        "sketchMode": "Skizzen-Modus"
+                        "sketchMode": "Skizzen-Modus",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA WIRD VERWENDET",
@@ -2167,7 +2168,7 @@
                 "showless": "Weniger anzeigen",
                 "button": "WiFi-Sicherheit aktivieren",
                 "disableDescribe": "Lenovo WiFi-Sicherheit ist eine fortschrittliche, cloud-basierte Software, dank der Ihre Einheit zwischen sicheren und potenziell unsicheren Drahtlosnetzwerken unterscheiden kann.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Lenovo WiFi-Sicherheit überwacht zurzeit Ihr WiFi-Netzwerk."
             },
             "threatlocator": {
                 "describe": "Verwenden Sie die Bedrohungssuche, um die Sicherheit der Netzwerke um Sie herum zu ermitteln.",
@@ -3352,5 +3353,8 @@
             "subtitle2": "All-in-Ones: Optimiert",
             "body2": "All-in-One-PCs mit Intel® Core™-Prozessoren der neunten Generation vereinen die volle Leistung eines Desktop-PCs mit einem schlanken Bildschirm – so profitieren Sie von mehr Übersichtlichkeit, hardwarebasierter Sicherheit und einem hochauflösenden Display."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }
