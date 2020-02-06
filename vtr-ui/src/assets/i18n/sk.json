@@ -2167,7 +2167,7 @@
                 "showless": "Zobraziť menej",
                 "button": "Zapnúť zabezpečenie WiFi",
                 "disableDescribe": "Zabezpečenie WiFi od spoločnosti Lenovo je pokročilá cloudová softvérová služba, ktorá pomáha vášmu zariadeniu odlíšiť bezpečné bezdrôtové siete od tých potenciálne škodlivých.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Zabezpečenie Wi-Fi od spoločnosti Lenovo v súčasnosti monitoruje aktivitu vo vašej sieti WiFi."
             },
             "threatlocator": {
                 "describe": "Pomocou funkcie Detektor hrozieb určte bezpečnosť okolitých sietí.",

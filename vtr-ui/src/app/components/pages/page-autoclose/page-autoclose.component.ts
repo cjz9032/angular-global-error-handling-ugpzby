@@ -128,10 +128,15 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	hiddenScroll(action: boolean) {
+		const selectorVtr = (document.getElementsByClassName('vtr-app')[0] as HTMLElement);
 		if (action) {
-			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = 'hidden';
+			selectorVtr.style.overflowY = 'hidden';
+			selectorVtr.style.overflowX = 'hidden';
 		} else {
-			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = '';
+			if (selectorVtr.style.overflowY === 'hidden') {
+				selectorVtr.style.overflowY = 'auto';
+				selectorVtr.style.overflowX = 'hidden';
+			}
 		}
 	}
 

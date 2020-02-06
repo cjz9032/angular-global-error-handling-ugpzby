@@ -6,18 +6,18 @@
 		<div *ngIf="viewModel?.currentPage ==='windows'" class="windows">
 			<div *ngIf="isOnline" class="row justify-content-center">
 				<div class="header w-100 row justify-content-between w-windows">
-					<div class="rounded-card-with-shadow py-4 pl-4 pl-lg-0 pr-4 col part-position">
+					<div class="rounded-card-with-shadow pl-lg-0 col part-position">
 						<div class="d-flex flex-column flex-lg-row" [vtrAppSearchScroller]="['search-anti-virus']">
 							<div class="align-self-center">
 								<img class="img-fluid" src="/assets/images/antivirus/protection.png" />
 							</div>
-							<div class="col align-self-center px-5 mb-5 px-lg-0 mb-lg-0">
+							<div class="col align-self-center mb-5 px-lg-0 mb-lg-0">
 								<div class="subtitle p-0"
 									[innerHTML]="'security.antivirus.windowsDefender.optimallyProtected' | translate">
 								</div>
 							</div>
-							<div class="d-lg-none rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col-10 row b-border align-self-center">
-								<img class="align-self-center col-4"
+							<div class="d-lg-none rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col row b-border align-self-center">
+								<img class="align-self-center col-4 mcafee-black-img"
 									[src]=" '/assets/images/antivirus/mcafee_black.png'" />
 								<div class="align-self-center col-8 p-0">
 									<div class="title"
@@ -37,7 +37,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col-5 row b-border lg-none">
+					<div class="rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col-5 row b-border d-none d-lg-flex">
 						<img class="align-self-center col-4" [src]=" '/assets/images/antivirus/mcafee_black.png'" />
 						<div class="align-self-center col-8 p-0">
 							<div class="title" [innerHTML]="'security.antivirus.windowsDefender.topTip' | translate">
@@ -126,14 +126,14 @@
 						</div>
 						<div class="col-xl-7 col-12 px-0" [ngClass]="{'col-xl-12': !viewModel.showMetricsList}">
 							<div class="row justify-content-between">
-								<div class="row col-5 col-md-6">
+								<div class="row col-6">
 									<img class="mcafee-logo align-self-start"
 										[src]=" '/assets/images/mcafee_logo.svg' | svgInline | async" />
 									<div class="line-height"></div>
 									<div class="title" [innerHTML]="'security.antivirus.mcafee.title' | translate">
 									</div>
 								</div>
-								<div class="flex-column button col-7 col-md-6 px-0">
+								<div class="flex-column two-ellipsis-button button col-6 px-0">
 									<vtr-ui-button
 										*ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
 										linkId="sa-av-link-subscribe" metricsEvent="itemClick"
@@ -263,9 +263,9 @@
 			<div class="row">
 				<div class="col col-12">
 					<vtr-container-card [img]="cardContentPositionA.FeatureImage"
-						[caption]="cardContentPositionA.Description" 
+						[caption]="cardContentPositionA.Description"
 						[title]="cardContentPositionA.Title"
-						[logoText]="cardContentPositionA.BrandName" 
+						[logoText]="cardContentPositionA.BrandName"
 						[action]="cardContentPositionA.Action"
 						[actionType]="cardContentPositionA.ActionType"
 						[actionLink]="cardContentPositionA.ActionLink"
@@ -280,8 +280,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="footer row justify-content-center">
-			<div class="row px-0">
+		<div class="footer row d-block d-lg-none">
+			<div class="row px-0 justify-content-center">
 			  <div class="px-0">
 				<img class="mcafee-logo"
 				  [src]=" '/assets/images/mcafee_logo.svg' | svgInline | async" />

@@ -10,7 +10,6 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { TranslationNotification } from 'src/app/data-models/translation/translation';
 import { Subscription, EMPTY } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-home',
@@ -27,8 +26,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private languageService: LanguageService,
 		private commonService: CommonService,
-		private route: ActivatedRoute,
-		private shellService:VantageShellService
+		private route: ActivatedRoute
 	) {
 		this.route.queryParams
 			.pipe(filter(params => params.redirectTo))
@@ -58,11 +56,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 				// for browser
 				this.languageService.useLanguage();
 				this.vantageLaunch(false);
-			}
-			const vanStub = this.shellService.getVantageStub();
-			if(vanStub.closeLoadingAnimation)
-			{
-				vanStub.closeLoadingAnimation();
 			}
 		} catch (error) {
 			this.logger.error(`HomeComponent.ngOnInit`, error.message);
