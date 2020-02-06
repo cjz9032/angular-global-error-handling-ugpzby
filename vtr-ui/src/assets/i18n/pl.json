@@ -2167,7 +2167,7 @@
                 "showless": "Pokaż mniej",
                 "button": "Włącz funkcję Bezpieczeństwo WiFi",
                 "disableDescribe": "Bezpieczeństwo WiFi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Funkcja Bezpieczeństwo Wi-Fi Lenovo obecnie monitoruje aktywność w sieci."
             },
             "threatlocator": {
                 "describe": "Funkcja Detektor zagrożeń sprawdza bezpieczeństwo sieci wokół Ciebie.",
