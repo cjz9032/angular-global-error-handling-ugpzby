@@ -1,7 +1,7 @@
 <div class="record-list-wrapper" [ngClass]="{'recording': recordingStatus}"
 	attr.data-line="{{ 'gaming.macroKey.details.recorded.list.footer.title' | translate }}">
 	<div class="row top-fix">
-		<div class="col-sm-12" *ngIf="!recordingStatus">
+		<div class="col-sm-12" *ngIf="!recordingStatus" class="w-100">
 			<div class="title-main">
 				{{ 'gaming.macroKey.details.recorded.title' | translate }}
 				<span>
@@ -10,21 +10,21 @@
 				</span>
 			</div>
 		</div>
-		<div class="col-12" *ngIf="!recordingStatus"> 
+		<div class="col-12" *ngIf="!recordingStatus" class="w-100"> 
 			<div class="select-wrapper">
 				<vtr-ui-lighting-effect [selectedValue]="repeatSelectedValue" [options]="repeatOptions[0]"
 					[enableDescription]="false" (change)="onRepeatChanged($event)" [tabindex]="1">
 				</vtr-ui-lighting-effect >
 			</div>
 		</div>
-		<div class="col-12" *ngIf="!recordingStatus">
+		<div class="col-12" *ngIf="!recordingStatus" class="w-100">
 			<div class="select-wrapper">
 				<vtr-ui-lighting-effect [tooltip_value]= "tooltips_delay | translate" [showDescription]="true" [selectedValue]="delaySelectedValue" [options]="intervalOptions[0]"
 					(change)="onIntervalChanged($event)" [tabindex]="1">
 				</vtr-ui-lighting-effect>
 			</div>
 		</div>
-		<div class="col-sm-12">
+		<div class="col-sm-12" class="w-100">
 			<div class="record-table" [ngClass]="{'recording': recordingStatus}">
 				<div class="record-header">
 					<div>{{ 'gaming.macroKey.details.recorded.list.header.col1' | translate }}</div>
