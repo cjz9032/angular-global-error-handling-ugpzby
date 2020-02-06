@@ -1340,7 +1340,7 @@
                             "title": "ملحوظة",
                             "description": "يحتاج Lenovo Vantage إلى الوصول إلى معلومات موقعك لحساب وقت الغروب وشروق الشمس في منطقتك."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "يرجى تشغيل Windows Update أو تثبيت برنامج تشغيل الرسومات يدويًا لاسترداد وضع العناية بالعين"
                     },
                     "dispColorTemp": {
                         "title": "درجة حرارة ألوان جهاز العرض",
@@ -2169,7 +2169,7 @@
                 "showless": "إظهار أقل",
                 "button": "تمكين أمان شبكة WiFi",
                 "disableDescribe": "ميزة أمان Lenovo WiFi هي عبارة عن خدمة برمجية متقدمة تستند إلى السحابة والتي تساعد جهازك في تمييز الشبكات اللاسلكية الآمنة عن الشبكات الضارة المحتملة.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "تقوم ميزة أمان Lenovo WiFi بمراقبة شبكة WiFi لديك في الوقت الحالي."
             },
             "threatlocator": {
                 "describe": "استخدم محدد مواقع التهديدات للتعرف على مدى سلامة الشبكات من حولك.",

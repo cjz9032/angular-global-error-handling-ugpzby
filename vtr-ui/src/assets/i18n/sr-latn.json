@@ -1338,7 +1338,7 @@
                             "title": "Napomena",
                             "description": "Lenovo Vantage treba da pristupi informacijama o lokaciji kako bi se izračunalo vreme zalaska i izlaska sunca u vašem regionu."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Pokrenite Windows Update ili ručno instalirajte grafički upravljački program da biste oporavili režim zaštite vida"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura boje ekrana",
@@ -2167,7 +2167,7 @@
                 "showless": "Prikaži manje",
                 "button": "Omogući WiFi bezbednost",
                 "disableDescribe": "Lenovo WiFi bezbednost je napredna softverska usluga zasnovana na oblaku koja pomaže vašem uređaju da razlikuje bezbedne bežične mreže od potencijalno zlonamernih.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Lenovo WiFi bezbednost trenutno nadgleda vašu WiFi mrežu."
             },
             "threatlocator": {
                 "describe": "Koristite detektor pretnji za utvrđivanje bezbednosti mreža oko vas.",

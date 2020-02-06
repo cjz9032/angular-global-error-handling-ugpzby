@@ -1338,7 +1338,7 @@
                             "title": "Megjegyzés",
                             "description": "A napnyugta és a napkelte idejének kiszámításához a Lenovo Vantage-nek hozzá kell férnie a helyadatokhoz."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Kérjük, futtassa a Windows Update szolgáltatást, vagy telepítse manuálisan a grafikus illesztőprogramot a Szemvédő mód helyreállításához"
                     },
                     "dispColorTemp": {
                         "title": "A képernyő színhőmérséklete",
@@ -2167,7 +2167,7 @@
                 "showless": "Részletek elrejtése",
                 "button": "A Biztonságos WiFi engedélyezése",
                 "disableDescribe": "A Lenovo – Biztonságos WiFi egy fejlett, felhőalapú szoftverszolgáltatás, amely segít az eszköznek megkülönböztetni a biztonságos vezeték nélküli hálózatokat a potenciálisan rosszindulatú hálózatoktól.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "A Lenovo – Biztonságos WiFi jelenleg figyeli az Ön WiFi-hálózatát."
             },
             "threatlocator": {
                 "describe": "A veszélyészlelővel megállapíthatja, mennyire biztonságosak a közeli hálózatok.",

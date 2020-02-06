@@ -1338,7 +1338,7 @@
                             "title": "주",
                             "description": "Lenovo Vantage는 위치 정보에 액세스하여 지역의 일몰 및 일출 시간을 계산해야 합니다."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Windows 업데이트를 실행하거나 그래픽 드라이버를 수동으로 설치하여 Eye Care 모드로 복구하십시오"
                     },
                     "dispColorTemp": {
                         "title": "디스플레이 색상 온도",
@@ -2167,7 +2167,7 @@
                 "showless": "간단하게 표시",
                 "button": "WiFi 보안 사용",
                 "disableDescribe": "Lenovo WiFi 보안은 장치가 안전한 무선 네트워크와 잠재적인 악성 네트워크를 구분할 수 있도록 도와주는 첨단 클라우드 기반 소프트웨어 서비스입니다.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Lenovo WiFi 보안이 현재 WiFi 네트워크를 모니터링하고 있습니다."
             },
             "threatlocator": {
                 "describe": "위협 감지기를 사용하여 주변 네트워크의 안전성을 확인합니다.",

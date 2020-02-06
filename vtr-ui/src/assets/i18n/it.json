@@ -1338,7 +1338,7 @@
                             "title": "Nota",
                             "description": "Lenovo Vantage deve accedere alle informazioni sulla posizione per calcolare l'ora del tramonto e dell'alba dell'area geografica in cui ci si trova."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Eseguire Windows Update o installare manualmente il driver di grafica per ripristinare la modalità Comfort visivo"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura colore schermo",
@@ -2167,7 +2167,7 @@
                 "showless": "Mostra meno",
                 "button": "Abilita sicurezza WiFi",
                 "disableDescribe": "Sicurezza Lenovo WiFi è un servizio software avanzato basato su cloud che consente al dispositivo in uso di distinguere reti wireless sicure da quelle potenzialmente dannose.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Sicurezza Lenovo WiFi sta attualmente monitorando la rete WiFi."
             },
             "threatlocator": {
                 "describe": "Utilizza il rilevatore delle minacce per determinare la sicurezza delle reti vicine.",

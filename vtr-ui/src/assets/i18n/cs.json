@@ -1338,7 +1338,7 @@
                             "title": "Poznámka",
                             "description": "Program Lenovo Vantage potřebuje získat přístup k informacím o umístění pro výpočet času západu a východu slunce."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Režim Péče o oči obnovíte spuštěním Windows Update nebo ruční instalací ovladače grafické karty"
                     },
                     "dispColorTemp": {
                         "title": "Teplota barev displeje",
@@ -2167,7 +2167,7 @@
                 "showless": "Zobrazit méně",
                 "button": "Zapnout zabezpečení WiFi",
                 "disableDescribe": "Zabezpečení WiFi Lenovo je pokročilá cloudová softwarová služba, která pomáhá vašemu zařízení odlišit bezpečné bezdrátové sítě od potenciálně škodlivých.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Zabezpečení Lenovo WiFi aktuálně sleduje vaši síť WiFi."
             },
             "threatlocator": {
                 "describe": "Vyhledávač hrozeb vám pomůže zjistit, jak bezpečné jsou sítě kolem vás.",

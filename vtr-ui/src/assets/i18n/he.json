@@ -1338,7 +1338,7 @@
                             "title": "הערה",
                             "description": "Lenovo Vantage צריך לגשת לפרטי המיקום שלכם לחישוב זמן השקיעה והזריחה באזורכם."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "הפעילו את Windows Update או התקינו מנהל התקן גרפי באופן ידני כדי לשחזר את מצב השמירה על העיניים"
                     },
                     "dispColorTemp": {
                         "title": "טמפרטורת צבע התצוגה",
@@ -2167,7 +2167,7 @@
                 "showless": "הצג פחות",
                 "button": "הפעלת אבטחת WiFi",
                 "disableDescribe": "אבטחת WiFi של Lenovo היא תוכנה מתקדמת המבוססת על ענן שמסייעת למכשיר להבדיל בין רשתות אלחוטיות בטוחות ורשתות העלולות להיות זדוניות.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "אבטחת WiFi של Lenovo עוקבת כעת אחר רשת ה-WiFi שלכם."
             },
             "threatlocator": {
                 "describe": "השתמשו ב'גלאי האיומים' כדי לבדוק את רמת הבטיחות של הרשתות שסביבכם.",

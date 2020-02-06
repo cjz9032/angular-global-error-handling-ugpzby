@@ -48,14 +48,14 @@ export class BacklightService {
 
 	setBacklight(mode: BacklightMode) {
 		return from(this.backlightFeature.setBacklight({
-			settingList: {
+			settingList: [{
 				setting: [
 					{
 						key: 'KeyboardBacklightStatus',
 						value: mode.value
 					}
 				]
-			}
+			}]
 		}));
 	}
 }

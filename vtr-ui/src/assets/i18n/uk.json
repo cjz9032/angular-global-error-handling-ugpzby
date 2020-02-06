@@ -1338,7 +1338,7 @@
                             "title": "Примітка",
                             "description": "Lenovo Vantage потребує інформацію про ваше місцезнаходження, щоб розрахувати час заходу та сходу сонця у вашому регіоні."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Запустіть Windows Update або інсталюйте графічний драйвер вручну, щоб відновити режим захисту зору"
                     },
                     "dispColorTemp": {
                         "title": "Температура кольору екрана",
@@ -2167,7 +2167,7 @@
                 "showless": "Згорнути",
                 "button": "Увімкніть Безпеку WiFi",
                 "disableDescribe": "Безпека WiFi від Lenovo – це передове хмарне програмне забезпечення, яке допомагає вашому пристрою відрізняти безпечні безпровідні мережі від потенційно зловмисних.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Наразі Безпека WiFi від Lenovo перевіряє вашу мережу WiFi."
             },
             "threatlocator": {
                 "describe": "Використовуйте детектор загроз, щоб визначити, чи безпечні мережі поблизу.",
