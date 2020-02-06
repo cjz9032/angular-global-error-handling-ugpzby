@@ -2,8 +2,10 @@
 
 .vtr-common-antivirus {
 	margin-top: 4rem;
+	margin-bottom: 2rem;
 	@media #{$breakpoint_xl} {
 		margin-top: 0rem;
+		margin-bottom: 0rem;
 	}
 
 	.title {
@@ -70,7 +72,7 @@
 				width: 0.01rem;
 				margin: 0 1.2rem;
 				background-color: $shade_light;
-				
+
 				@media #{$mediaquery_X46} {
 					margin: 0 0.8rem;
 				}
@@ -92,7 +94,7 @@
 	}
 
 	.footer {
-		@media #{$mediaquery_md} {
+		@media #{$mediaquery_lg} {
 			display: none;
 		}
 		margin-top: 3rem;

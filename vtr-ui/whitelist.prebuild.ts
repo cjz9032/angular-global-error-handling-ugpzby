@@ -21,7 +21,9 @@ const whitelist = [
 	'M38KT',
 	'N24ET',
 	'AKCN3',
-	'N2OET'
+	'N2OET',
+	'BYCN3',
+	'N23ET'
 ];
 
 console.log((whitelist.reduce((acc, current) => {
