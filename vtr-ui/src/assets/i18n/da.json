@@ -1338,7 +1338,7 @@
                             "title": "Bemærk",
                             "description": "Lenovo Vantage skal have adgang til dine placeringsoplysninger for at beregne tiden for solnedgang og solopgang i dit område."
                         },
-						"tips": "Kør Windows Update, eller installer grafikdriveren manuelt for at genoprette Øjenbeskyttelsestilstand"
+                        "tips": "Kør Windows Update, eller installer grafikdriveren manuelt for at genoprette Øjenbeskyttelsestilstand"
                     },
                     "dispColorTemp": {
                         "title": "Skærmens farvetemperatur",
@@ -1420,7 +1420,8 @@
                         "caption": "Denne funktion slører baggrunden, når du bruger kameraet til videoopkald eller til at tage billeder. Du kan vælge en anden effekt i indstillingerne nedenfor.",
                         "blurMode": "Sløret tilstand",
                         "comicMode": "Tegneserietilstand",
-                        "sketchMode": "Skitsetilstand"
+                        "sketchMode": "Skitsetilstand",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERAET ER I BRUG",

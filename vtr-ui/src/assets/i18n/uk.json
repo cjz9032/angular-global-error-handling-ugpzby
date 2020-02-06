@@ -1338,7 +1338,7 @@
                             "title": "Примітка",
                             "description": "Lenovo Vantage потребує інформацію про ваше місцезнаходження, щоб розрахувати час заходу та сходу сонця у вашому регіоні."
                         },
-						"tips": "Запустіть Windows Update або інсталюйте графічний драйвер вручну, щоб відновити режим захисту зору"
+                        "tips": "Запустіть Windows Update або інсталюйте графічний драйвер вручну, щоб відновити режим захисту зору"
                     },
                     "dispColorTemp": {
                         "title": "Температура кольору екрана",
@@ -1420,7 +1420,8 @@
                         "caption": "Ця функція розмиває фон під час будь-яких відеовикликів або зйомки фотографій. Доступні такі ефекти:",
                         "blurMode": "Режим \"Розмиття\"",
                         "comicMode": "Режим \"Комічний\"",
-                        "sketchMode": "Режим \"Ескіз\""
+                        "sketchMode": "Режим \"Ескіз\"",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "КАМЕРА ВЖЕ ВИКОРИСТОВУЄТЬСЯ",

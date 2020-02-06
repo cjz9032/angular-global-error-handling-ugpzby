@@ -1340,7 +1340,7 @@
                             "title": "ملحوظة",
                             "description": "يحتاج Lenovo Vantage إلى الوصول إلى معلومات موقعك لحساب وقت الغروب وشروق الشمس في منطقتك."
                         },
-						"tips": "يرجى تشغيل Windows Update أو تثبيت برنامج تشغيل الرسومات يدويًا لاسترداد وضع العناية بالعين"
+                        "tips": "يرجى تشغيل Windows Update أو تثبيت برنامج تشغيل الرسومات يدويًا لاسترداد وضع العناية بالعين"
                     },
                     "dispColorTemp": {
                         "title": "درجة حرارة ألوان جهاز العرض",
@@ -1422,7 +1422,8 @@
                         "caption": "تقوم هذه الميزة بإضفاء التمويه على الخلفية عندما تستخدم الكاميرا لأي مكالمة فيديو أو التقاط الصور. يمكنك اختيار تأثير مختلف من الأقسام التالية.",
                         "blurMode": "وضع التمويه",
                         "comicMode": "الوضع الكوميدي",
-                        "sketchMode": "وضع التخطيط"
+                        "sketchMode": "وضع التخطيط",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "الكاميرا قيد الاستخدام",
