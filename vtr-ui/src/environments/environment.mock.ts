@@ -12,5 +12,5 @@ export const environment: IEnvironment = {
 	allowMockService: false,
 	isLoggingEnabled: true,
 	isServerSwitchEnabled: true,
-	isCPTEnabled: true
+	isCPTEnabled: false
 };
