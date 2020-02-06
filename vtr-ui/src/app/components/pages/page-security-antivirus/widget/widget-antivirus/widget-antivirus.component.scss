@@ -67,9 +67,6 @@
   }
 
   .footer {
-    @media #{$mediaquery_md} {
-      display: none;
-    }
     margin-top: 3rem;
     .text-regular {
       font-size: 1.6rem;
