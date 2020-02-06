@@ -1338,7 +1338,7 @@
                             "title": "Uwaga",
                             "description": "Aplikacja Lenovo Vantage musi uzyskać dostęp do informacji o lokalizacji w celu obliczenia czasu zachodu i wschodu słońca w Twoim regionie."
                         },
-						"tips": "Uruchom Windows Update lub ręcznie zainstaluj sterownik karty graficznej, aby przywrócić tryb Eye Care"
+                        "tips": "Uruchom Windows Update lub ręcznie zainstaluj sterownik karty graficznej, aby przywrócić tryb Eye Care"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura barwowa ekranu",
@@ -1420,7 +1420,8 @@
                         "caption": "Ta funkcja rozmywa tło podczas korzystania z aparatu do połączeń wideo lub robienia zdjęć. Możesz wybrać inny efekt z poniższych:",
                         "blurMode": "Tryb rozmycia",
                         "comicMode": "Tryb komiksowy",
-                        "sketchMode": "Tryb szkicu"
+                        "sketchMode": "Tryb szkicu",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA JEST UŻYWANA",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Komputery All-in-One: optymalizacja",
             "body2": "Komputery All-in-One z procesorami Intel® Core™ 9. generacji oferują moc komputera stacjonarnego zamkniętą w eleganckim monitorze. Dzięki temu zyskujesz porządek na biurku, wbudowane zabezpieczenia sprzętowe i ekran o dużej rozdzielczości."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

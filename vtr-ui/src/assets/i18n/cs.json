@@ -1338,7 +1338,7 @@
                             "title": "Poznámka",
                             "description": "Program Lenovo Vantage potřebuje získat přístup k informacím o umístění pro výpočet času západu a východu slunce."
                         },
-						"tips": "Režim Péče o oči obnovíte spuštěním Windows Update nebo ruční instalací ovladače grafické karty"
+                        "tips": "Režim Péče o oči obnovíte spuštěním Windows Update nebo ruční instalací ovladače grafické karty"
                     },
                     "dispColorTemp": {
                         "title": "Teplota barev displeje",
@@ -1420,7 +1420,8 @@
                         "caption": "Tato funkce rozostří pozadí při použití kamery pro libovolný videohovor nebo fotografování. V následujících volbách si můžete vybrat jiný efekt.",
                         "blurMode": "Režim Rozostření",
                         "comicMode": "Režim Komiks",
-                        "sketchMode": "Režim Skica"
+                        "sketchMode": "Režim Skica",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA SE POUŽÍVÁ",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Počítače all-in-one zjednodušeně",
             "body2": "Počítače all-in-one s procesory Intel® Core™ 9. generace vám poskytují veškerý výkon stolního počítače zabalený v elegantním displeji. Zabírají méně místa a nabízejí hardwarové zabezpečení a obraz s vysokým rozlišením."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

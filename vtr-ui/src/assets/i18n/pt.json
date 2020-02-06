@@ -1338,7 +1338,7 @@
                             "title": "Nota",
                             "description": "A Lenovo Vantage precisa de aceder às suas informações de localização para calcular o horário do pôr e do nascer do sol na sua região."
                         },
-						"tips": "Execute o Windows Update ou instale manualmente o controlador da placa gráfica para recuperar o modo Cuidados com a Visão"
+                        "tips": "Execute o Windows Update ou instale manualmente o controlador da placa gráfica para recuperar o modo Cuidados com a Visão"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura de cor do ecrã",
@@ -1420,7 +1420,8 @@
                         "caption": "Esta funcionalidade desfoca o fundo quando a câmara é utilizada para videochamadas ou fotografias. É possível escolher entre as diferentes seleções de efeitos abaixo.",
                         "blurMode": "Modo desfocado",
                         "comicMode": "Modo banda desenhada",
-                        "sketchMode": "Modo esboço"
+                        "sketchMode": "Modo esboço",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "A CÂMARA ESTÁ A SER UTILIZADA",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Multifunções: otimizado",
             "body2": "Os PCs All-in-One com processadores Intel® Core™ de 9.ª geração oferecem toda a potência de um desktop com um ecrã elegante para desfrutar de uma segurança baseada em hardware simplificada e um ecrã de alta resolução."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

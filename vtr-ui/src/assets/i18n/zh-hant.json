@@ -1338,7 +1338,7 @@
                             "title": "備注",
                             "description": "Lenovo Vantage 需要存取您的位置資訊，才能計算您所在當地的日出和日落時間。"
                         },
-						"tips": "請執行 Windows Update 或手動安裝圖形驅動程式，以回復護眼模式"
+                        "tips": "請執行 Windows Update 或手動安裝圖形驅動程式，以回復護眼模式"
                     },
                     "dispColorTemp": {
                         "title": "顯示器色溫",
@@ -1420,7 +1420,8 @@
                         "caption": "當您使用攝影機進行任何視訊通話或拍照時，此功能會讓背景模糊。您可以從下面選項選擇不同的效果。",
                         "blurMode": "模糊模式",
                         "comicMode": "漫畫模式",
-                        "sketchMode": "素描模式"
+                        "sketchMode": "素描模式",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "攝影機正在使用中",
@@ -3352,5 +3353,8 @@
             "subtitle2": "一體成型：簡化",
             "body2": "一體成型 PC，搭載第 9 代 Intel® Core™ 處理器，將桌面電腦的所有功能都裝入設計時尚的顯示器中 — 干擾更少，符合硬體安全，以及高解析度顯示器。"
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }
