@@ -408,10 +408,8 @@
 									componentName="Camera Background Blur"
 									[caption]="'device.deviceSettings.displayCamera.camera.camerablur.caption' | translate"
 									[isSwitchVisible]="true"
-									[isDisabled]= "isDisabledCameraBlur()"
 									[isLastChild]=true
 									[leftIcon]="['fal', 'gem']"
-									[rightIcon]="['far', 'question-circle']"
 									[showChildContent]="true"
 									[isSwitchChecked]="cameraBlur.enabled"
 									(toggleOnOff)="onCameraBackgroundBlur($event)"

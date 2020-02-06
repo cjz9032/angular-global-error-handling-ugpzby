@@ -63,7 +63,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public isEnergyStarProduct = false;
 	public energyStarCache: boolean;
 
-	private batteryCountStatusEventRef: any;
 	public thresholdInfo: ChargeThreshold[];
 	public chargeThresholdCapability = false;
 	public chargeThresholdStatus = false;
@@ -100,6 +99,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	toggleFlipToBootStatus = true;
 	showFlipToBootSection$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+	bctInfoSubscription: Subscription;
 
 	isBatterySectionAvailable = false;
 	isPowerSectionAvailable = false;
@@ -146,11 +146,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 		this.startMonitor();
 
-		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
-
 		this.logger.info('=============Power Subpage ngOnit ===================');
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
+		});
+
+		this.bctInfoSubscription = this.batteryService.getChargeThresholdInfo()
+			.subscribe((value: ChargeThreshold[]) => {
+				this.setChargeThresholdUI(value);
 		});
 	}
 
@@ -158,8 +161,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
+		if (this.bctInfoSubscription) {
+			this.bctInfoSubscription.unsubscribe();
+		}
 		this.stopMonitor();
-		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 		if (this.toolBarSubscription) {
 			this.toolBarSubscription.unsubscribe();
 		}
@@ -352,10 +357,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.getFlipToBootCapability();
 		switch (this.machineType) {
 			case 1:
-				this.batteryCountStatusEventRef = this.getBatteryStatusEvent.bind(this);
 				this.getAirplaneModeCapabilityThinkPad();
 				this.getAirplaneModeAutoDetectionOnThinkPad();
-				this.getBatteryThresholdInformation();
 				this.getGaugeResetCapability();
 				this.getAlwaysOnUSBCapabilityThinkPad();
 				this.getEasyResumeCapabilityThinkPad();
@@ -1125,22 +1128,21 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.chargeThresholdStatus = false;
 		}
 		this.updateBatteryLinkStatus(this.chargeThresholdCapability);
-		this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.chargeThresholdCapability && this.chargeThresholdStatus);
 	}
 
-	public getBatteryThresholdInformation() {
-		this.logger.info('Before getBatteryThresholdInformation');
-		if (this.powerService.isShellAvailable) {
-			this.powerService.getChargeThresholdInfo().then((response) => {
-				this.logger.info('getBatteryThresholdInformation.then', response);
-				this.setChargeThresholdUI(response);
-				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, response);
-			}).catch ((error) => {
-				this.logger.error('getBatteryThresholdInformation :: error', error.message);
-				return EMPTY;
-			});
-		}
-	}
+	// public getBatteryThresholdInformation() {
+	// 	this.logger.info('Before getBatteryThresholdInformation');
+	// 	if (this.powerService.isShellAvailable) {
+	// 		this.powerService.getChargeThresholdInfo().then((response) => {
+	// 			this.logger.info('getBatteryThresholdInformation.then', response);
+	// 			this.setChargeThresholdUI(response);
+	// 			this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, response);
+	// 		}).catch ((error) => {
+	// 			this.logger.error('getBatteryThresholdInformation :: error', error.message);
+	// 			return EMPTY;
+	// 		});
+	// 	}
+	// }
 
 	public toggleBCTSwitch(value: boolean) {
 		if (value) {

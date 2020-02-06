@@ -527,6 +527,7 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
+
 	public setChargeThresholdValue(value: ChargeThreshold): Promise<any> {
 		console.log('Battery threshold value here ----->', value);
 
