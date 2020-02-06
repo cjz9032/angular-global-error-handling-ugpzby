@@ -2167,7 +2167,7 @@
                 "showless": "Näytä vähemmän",
                 "button": "Ota WiFi -suojaus käyttöön",
                 "disableDescribe": "Lenovo WiFi -suojaus on kehittynyt pilvipohjainen ohjelmistopalvelu, joka auttaa laitetta erottamaan turvalliset langattomat verkot mahdollisista haitallisista verkoista.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Lenovo WiFi -suojaus valvoo tällä hetkellä WiFi-verkon toimintaa."
             },
             "threatlocator": {
                 "describe": "Määritä uhkien paikantimen avulla ympärilläsi olevien verkkojen turvallisuus.",
