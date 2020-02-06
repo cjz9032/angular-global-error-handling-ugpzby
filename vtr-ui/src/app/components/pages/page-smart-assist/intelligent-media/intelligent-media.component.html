@@ -3,6 +3,7 @@
 	<div class="col-12 px-0"
 		id="media">
 		<vtr-container-collapsible [collapseLinkId]="'intelligentMedia'"
+			[tabIndex]="0"
 			[cardTitle]="'device.smartAssist.intelligentMedia.heading' | translate"
 			componentName="intelligentMediaCollapsible"
 			[isCollapsed]="false"
@@ -11,7 +12,7 @@
 			<ul class="list-group list-group-flush">
 				<li>
 					<vtr-ui-row-switch *ngIf="intelligentMediaAvailable"
-					    [switchId]="'intelligentMedia'"
+						[switchId]="'intelligentMedia'"
 						[title]="'device.smartAssist.intelligentMedia.title' | translate"
 						componentName="intelligentMediaSwitch"
 						[isLastChild]="true"
@@ -30,9 +31,10 @@
 			</ul>
 			<ul class="list-group list-group-flush">
 				<li>
-					<div class="border-top" *ngIf="superResolutionAvailable && intelligentMediaAvailable"></div>
+					<div class="border-top"
+						*ngIf="superResolutionAvailable && intelligentMediaAvailable"></div>
 					<vtr-ui-row-switch *ngIf="superResolutionAvailable"
-					    [switchId]="'superResolution'"
+						[switchId]="'superResolution'"
 						[title]="'device.smartAssist.superResolution.title' | translate"
 						componentName="superResolutionSwitch"
 						[isLastChild]="true"
@@ -48,13 +50,25 @@
 						[showLoaderState]="isSRLoading">
 					</vtr-ui-row-switch>
 					<div class="row">
-						<div class="feature-note p-4" *ngIf="superResolutionAvailable">
+						<div class="feature-note p-4"
+							*ngIf="superResolutionAvailable"
+							role="text"
+							tabindex="0">
 							<p>{{'device.smartAssist.superResolution.note.description' | translate}}</p>
 							<div class="m-4">
 								<ul>
-									<li><p>{{'device.smartAssist.superResolution.note.description1' | translate}}</p></li>
-									<li><p>{{'device.smartAssist.superResolution.note.description2' | translate}}</p></li>
-									<li><p>{{'device.smartAssist.superResolution.note.description3' | translate}}</p></li>
+									<li>
+										<p role="text">
+											{{'device.smartAssist.superResolution.note.description1' | translate}}</p>
+									</li>
+									<li>
+										<p role="text">
+											{{'device.smartAssist.superResolution.note.description2' | translate}}</p>
+									</li>
+									<li>
+										<p role="text">
+											{{'device.smartAssist.superResolution.note.description3' | translate}}</p>
+									</li>
 								</ul>
 							</div>
 						</div>
