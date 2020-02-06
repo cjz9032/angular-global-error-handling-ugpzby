@@ -3352,5 +3352,8 @@
             "subtitle2": "Alt-i-en-computere: strømlinet",
             "body2": "Alt-i-en-pc'er med 9. generations Intel® Core™-processorer giver dig alle kræfterne i en stationær computer i en slank skærm. Du får mindre rod, hardwarebaseret sikkerhed og en skærm med en høj opløsning."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

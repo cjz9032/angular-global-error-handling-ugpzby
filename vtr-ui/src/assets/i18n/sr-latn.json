@@ -3352,5 +3352,8 @@
             "subtitle2": "Računari „sve u jednom“: unapređeni",
             "body2": "Računari „sve u jednom“ sa 9. generacijom Gen Intel® Core™ procesorima pružaju vam svu snagu desktop konfiguracije na tankom ekranu – za manje zatrpavanje, bezbednost na nivou hardvera i prikaz visoke rezolucije."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

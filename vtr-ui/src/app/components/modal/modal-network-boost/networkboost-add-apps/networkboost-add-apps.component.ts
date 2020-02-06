@@ -79,7 +79,8 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 	async refreshNetworkBoostList() {
 		try {
 			const result: any = await this.networkBoostService.getNetUsingProcesses();
-			// console.log('RESULT frpm NB', result);
+			this.loggerService.info('NetworkboostaddComponent.refreshNetworkBoostList',
+				'RESULT frpm NB --->' + result);
 			this.loading = false;
 			this.runningList = [];
 			if (result && !isUndefined(result.processList)) {
@@ -91,7 +92,8 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 			} else {
 				this.ariaLabel = 'gaming.narrator.networkBoost.addApps.addAppsTitle';
 			}
-			// console.log(this.runningList, '--RUNNINGLIST');
+			this.loggerService.info('NetworkboostaddComponent.refreshNetworkBoostList',
+				'RUNNINGLIST --->' +  this.runningList);
 		} catch (error) {
 			this.loading = false;
 			this.noAppsRunning = true;
@@ -141,9 +143,8 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 	checkApps(i) {
 		let isShow = false;
 		this.runningList.forEach((e, index) => {
-			// console.log(index);
+			this.loggerService.info('NetworkboostaddComponent.checkApps','--->' +  index);
 			if (this.isChecked[index] && index > i) {
-				// console.log(index, i);
 				isShow = true;
 			}
 		});

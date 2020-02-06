@@ -114,6 +114,9 @@
 			.carousel-inner {
 				overflow: inherit;
 			}
+			.carousel-control-prev,.carousel-control-next {
+				width: 8.5%;
+			}
 			.carousel-control-next-icon {
 				background-image: none;
 				width: 2rem;
