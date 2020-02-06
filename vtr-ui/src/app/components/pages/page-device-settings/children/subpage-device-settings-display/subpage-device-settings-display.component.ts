@@ -157,7 +157,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	public readonly displayPriorityRadioGroup = 'displayPriorityRadioGroup';
 	public readonly displayPriorityModal =
 		{
-			capability: true,
+			capability: false,
 			selectedValue: 'HDMI',
 			options: [
 				{
@@ -341,8 +341,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		this.getOLEDPowerControlCapability();
 		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (machineType === 1) {
-			// commented out below lines to temporarily hide in current release
-			// this.getPriorityControlCapability();
+			this.getPriorityControlCapability();
 		} else {
 			this.displayPriorityModal.capability = false;
 			this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
@@ -1292,6 +1291,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 							}
 						}
 						if (this.displayPriorityModal.options.length !== 0) {
+							this.displayPriorityModal.capability = true;
 							this.getPriorityControlSetting();
 							this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, true);
 						} else {
