@@ -99,7 +99,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	cardContentPositionA: any = {};
 	private machineType: number;
 	private smartAssistCapability: SmartAssistCapability = undefined;
-	public jumpTosettingsTitle: string;
+	public jumpToSettingsTitle: string;
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -114,7 +114,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private vantageShellService: VantageShellService
 	) {
-		this.jumpTosettingsTitle = this.translate.instant('device.smartAssist.jumpTo.title');
+		this.jumpToSettingsTitle = this.translate.instant('device.smartAssist.jumpTo.title');
 		// VAN-5872, server switch feature on language change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
@@ -750,7 +750,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public checkMenuItemsLength() {
 		if (this.headerMenuItems.length === 1) {
 			this.headerMenuItems = [];
-			this.jumpTosettingsTitle = '';
+			this.jumpToSettingsTitle = '';
 		}
 	}
 }
