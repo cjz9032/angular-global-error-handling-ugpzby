@@ -6,7 +6,7 @@
 				[caption]="'device.deviceSettings.displayCamera.description' | translate"
 				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate"
 				[textId]="'ds-display-camera'">
-			</vtr-ui-header-subpage>
+		</vtr-ui-header-subpage>
 		</div>
 	</div>
 	<div class="row">
@@ -237,9 +237,9 @@
 								</vtr-ui-row-switch>
 							</li>
 
-
+							<!-- commented out below lines to temporarily hide in current release -->
 							<!-- Display Priority Control -->
-							<li class="pt-3" *ngIf="displayPriorityModal.capability">
+							<!-- <li class="pt-3" *ngIf="displayPriorityModal.capability">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.displayPriority.title' | translate | capitalizeFirst"
 									[caption]="'device.deviceSettings.displayCamera.display.displayPriority.description' | translate"
@@ -268,7 +268,7 @@
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
 								</vtr-ui-row-switch>
-							</li>
+							</li> -->
 
 						</ul>
 					</vtr-container-collapsible>
@@ -401,7 +401,6 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-
 							<li class="pt-3"
 								*ngIf="cameraBlur.available && cameraBlur.errorCode == 0">
 								<vtr-ui-row-switch
@@ -415,7 +414,9 @@
 									[isSwitchChecked]="cameraBlur.enabled"
 									(toggleOnOff)="onCameraBackgroundBlur($event)"
 									[theme]="'white'"
-									[switchId]="'device-settings-camera-blur'">
+									[tooltipText]="'device.deviceSettings.displayCamera.camera.camerablur.tooltip' | translate"
+									[switchId]="'device-settings-camera-blur'"
+									>
 									<div class="row"
 										*ngIf="cameraBlur.enabled">
 										<div class="col-12 pr-0 my-3">

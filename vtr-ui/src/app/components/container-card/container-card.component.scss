@@ -236,11 +236,11 @@
 					height: 100%;
 					@media #{$black-on-white} {
 						border: 0.1rem solid;
-						border-radius: 2rem;
+						border-radius: 0.8rem;
 					}
 					@media #{$white-on-black} {
 						border: 0.1rem solid;
-						border-radius: 2rem;
+						border-radius: 0.8rem;
 					}
 
 					@media #{$mediaquery_X1} {
@@ -307,6 +307,15 @@
 	}
 
 	&.card-highlight {
+		@media #{$breakpoint_xl} {
+			height: 22.3rem !important;
+		}
+		@media #{$breakpoint_lg} {
+			height: 17.6rem !important;
+		}
+		@media #{$breakpoint_sm} {
+			height: 24.5rem !important;
+		}
 		.content {
 			position: relative;
 			z-index: 1;
@@ -319,7 +328,7 @@
 				text-decoration: none;
 				cursor: pointer;
 				width: 100%;
-				height: 100%;
+				height: 100% !important;
 				display: block;
 				border-radius: $border_radius;
 				overflow: hidden;
@@ -351,6 +360,7 @@
 	}
 
 	&.card-article {
+		height: 32.5rem !important;
 		.row {
 			max-width: 100%;
 		}
@@ -401,17 +411,12 @@
 				padding: 2.4rem;
 				padding-bottom: 0;
 				height: 30%;
-				@media #{$breakpoint_md} {
-					padding: 2.4rem 1.2rem;
-				}
-				@media #{$breakpoint_sm} {
-					padding: 2.4rem;
-				}
 
 				.title {
 					font-weight: $weight_light;
 					text-decoration: none;
 					cursor: pointer;
+					height: 4.5rem !important;
 					&:hover {
 						text-decoration: underline;
 					}

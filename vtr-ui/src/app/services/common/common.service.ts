@@ -6,7 +6,6 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { Subject } from 'rxjs/internal/Subject';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
-import { WinRT } from '@lenovo/tan-client-bridge';
 import { ReplaySubject } from 'rxjs';
 
 @Injectable({
@@ -24,6 +23,7 @@ export class CommonService {
 	public gamingCapabalities: any = new Subject();
 	private RS5Version = 17600;
 	public osVersion = 0;
+	public systemTimeFormat12Hrs: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
 	constructor() {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(
@@ -78,12 +78,12 @@ export class CommonService {
 	 * Returns date formatted in YYYY/MM/DD format
 	 * @param date date object to format
 	 */
-	public formatDate(dateString: string): string {
+	public formatUTCDate(dateString: string): string {
 		const date = new Date(dateString);
-		const mm = date.getMonth() + 1; // getMonth() is zero-based
-		const dd = date.getDate();
+		const mm = date.getUTCMonth() + 1; // getMonth() is zero-based
+		const dd = date.getUTCDate();
 
-		return [date.getFullYear(),
+		return [date.getUTCFullYear(),
 			'/',
 		(mm > 9 ? '' : '0') + mm,
 			'/',
@@ -286,5 +286,13 @@ export class CommonService {
 			}
 		}
 		return segmentsA.length - segmentsB.length;
+	}
+
+	setSystemTimeFormat(flag: boolean) {
+		this.systemTimeFormat12Hrs.next(flag);
+	}
+
+	getSystemTimeFormat() {
+		return this.systemTimeFormat12Hrs.asObservable();
 	}
 }

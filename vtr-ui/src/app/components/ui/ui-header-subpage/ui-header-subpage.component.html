@@ -48,7 +48,7 @@
 							metricsEvent="FeatureClick"
 							[metricsParent]="metricsParent"
 							id="jumptoSetting-{{item.path}}"
-							attr.aria-label= "jumpto-{{item.path | translate}}"
+							attr.aria-label= "jumpto-{{item.path}}"
 							(click)="menuItemClick($event, item)"
 							(keydown.enter)="menuItemClick($event, item)">
 							{{item.title | translate}}
