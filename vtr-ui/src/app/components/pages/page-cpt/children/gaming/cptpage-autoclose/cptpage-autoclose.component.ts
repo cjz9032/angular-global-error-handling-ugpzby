@@ -2,6 +2,7 @@ import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { CommonService } from 'src/app/services/common/common.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 //for cpt
 import { Subject, Observable, empty } from 'rxjs';
@@ -22,7 +23,8 @@ export class CptpageAutocloseComponent implements OnInit, OnDestroy {
   constructor(
     private commonService: CommonService,
     private cmsService: CMSService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private loggerService: LoggerService
   ) { }
 
   ngOnInit() {
@@ -60,7 +62,7 @@ export class CptpageAutocloseComponent implements OnInit, OnDestroy {
 
         },
         error => {
-          console.log('fetchCMSContent error', error);
+          this.loggerService.error('cptpage-autoclosecomponent.getCmsJsonResponse', 'fetchCMSContent error' + error);
         }
       );
 
