@@ -7,6 +7,7 @@ import {
 	AfterContentChecked
 } from '@angular/core';
 import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-ui-range-slider',
@@ -38,7 +39,9 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	@Output() valueChangeEnd: EventEmitter<ChangeContext> = new EventEmitter();
 	public highValue = undefined;
 
-	constructor() {
+	constructor(
+		private loggerService: LoggerService
+	) {
 		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
 	}
 
@@ -75,7 +78,8 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	 */
 	public onChange($event: ChangeContext) {
 		this.highValue = undefined;
-		console.log(`onChange Ui slider ${$event}, ${this.highValue}`);
+		this.loggerService.info('ui-range-slider.component.onChange',
+		`onChange Ui slider ---> ${$event}, ${this.highValue}`);
 		this.sliderChange.emit($event);
 	}
 

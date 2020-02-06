@@ -55,6 +55,9 @@
 		z-index: 99;
 		bottom: 1rem;
 		min-width: 40rem;
+		@media screen and (min-width: 991.99px) and (max-width: 992.99px) {
+			min-width: 34rem;
+		}
 		left: 50%;
 		transform: translate(-50%);
 		opacity: 0;

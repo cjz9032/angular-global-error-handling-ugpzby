@@ -168,7 +168,7 @@
 	.container-fluid{
 		vtr-widget-device{
 			.vtr-widget-device {
-				background: $dark_cell !important;
+				background: $gaming_darkest !important;
 				.family {
 					color: $gaming_lightest!important;
 				}
@@ -182,7 +182,7 @@
 					color: $gaming_lightest;
 				}
 				.status-list {
-					background-color:  $gaming-slate-blue!important;
+					background-color:  $gaming-bg!important;
 					border: none;
 					li {
 						border-bottom: 1px solid $gaming-Darkslate-blue!important;
@@ -193,7 +193,7 @@
 							}
 						}						
 						&:hover {
-							background-color: $gaming-Darkslate-blue!important;
+							background-color: $darkPopup!important;
 						}
 						&.good {
 							.title {
@@ -1244,7 +1244,7 @@
 			}
 			vtr-widget-recover-bad-sectors {
 				.vtr-widget-device-recover-bad-sectors {
-					background: $dark_cell;
+					background: $gaming_darkest;
 					.title {
 						color: $gaming_lightest;
 					}
