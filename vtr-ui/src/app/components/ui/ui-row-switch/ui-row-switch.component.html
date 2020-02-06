@@ -117,7 +117,7 @@
 
 				</div>
 				<!-- [ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}" -->
-				<div class="tool-tip-icon" *ngIf="rightIcon.length > 0 && !voice && !toolTipStatus && !fnCtrltoolTip"
+				<div class="tool-tip-icon float-right" *ngIf="rightIcon.length > 0 && !voice && !toolTipStatus && !fnCtrltoolTip"
 					[ngClass]="{'auto-screen-lock-help-icon': !isSwitchVisible}">
 					<fa-icon id="{{switchId}}-tooltip_right_icon"
 						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}" 
@@ -136,7 +136,7 @@
 						(keydown.enter)="onRightIconClick(rightToolTip1, $event)">
 					</fa-icon>
 				</div>
-				<div class="tool-tip-icon" 
+				<div class="tool-tip-icon float-right" 
 				[ngClass]="{'pl-4': type==='Camera'}"
 					*ngIf="rightIcon.length > 0 && toolTipStatus">
 					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}"
@@ -155,7 +155,7 @@
 						(keydown.enter)="onRightIconClick(rightToolTip2, $event)"></fa-icon>
 				</div>
 
-				<div class="tool-tip-icon"
+				<div class="tool-tip-icon float-right"
 				 [ngClass]="{'pl-4': type==='Camera'}"
 					*ngIf="rightIcon.length > 0 && fnCtrltoolTip">
 					<fa-icon id="{{switchId+ '_fnCtrl_right_icon'}}"
@@ -174,7 +174,7 @@
 						(keydown.enter)="onRightIconClick(rightToolTip3, $event)"></fa-icon>
 				</div>
 
-				<div class="tool-tip-icon"
+				<div class="tool-tip-icon float-right"
 				 *ngIf="rightIcon.length > 0 && voice">
 					<fa-icon vtrMetrics
 					 metricsEvent="FeatureClick" 
