@@ -2167,7 +2167,7 @@
                 "showless": "Afișează mai puțin",
                 "button": "Activare securitate WiFi",
                 "disableDescribe": "Securitate WiFi Lenovo este un serviciu software avansat bazat pe cloud care ajută dispozitivul să diferenţieze reţelele fără fir sigure de cele potenţial rău intenţionate.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "În prezent, Securitate WiFi Lenovo vă monitorizează activitatea în rețeaua WiFi."
             },
             "threatlocator": {
                 "describe": "Utilizați detectorul de amenințări pentru a determina siguranța rețelelor din jurul dvs.",

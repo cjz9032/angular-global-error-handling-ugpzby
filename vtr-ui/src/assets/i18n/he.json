@@ -2167,7 +2167,7 @@
                 "showless": "הצג פחות",
                 "button": "הפעלת אבטחת WiFi",
                 "disableDescribe": "אבטחת WiFi של Lenovo היא תוכנה מתקדמת המבוססת על ענן שמסייעת למכשיר להבדיל בין רשתות אלחוטיות בטוחות ורשתות העלולות להיות זדוניות.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "אבטחת WiFi של Lenovo עוקבת כעת אחר רשת ה-WiFi שלכם."
             },
             "threatlocator": {
                 "describe": "השתמשו ב'גלאי האיומים' כדי לבדוק את רמת הבטיחות של הרשתות שסביבכם.",

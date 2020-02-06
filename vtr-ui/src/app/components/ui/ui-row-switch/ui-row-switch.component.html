@@ -117,8 +117,9 @@
 
 				</div>
 				<!-- [ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}" -->
+				<!-- [ngClass]= tool-tip-help-icon-alignment is for auto screen lock timer should be aligned with help icon of zero touch login section  -->
 				<div class="tool-tip-icon" *ngIf="rightIcon.length > 0 && !voice && !toolTipStatus && !fnCtrltoolTip"
-					[ngClass]="{'auto-screen-lock-help-icon': !isSwitchVisible}">
+					[ngClass]="{'tool-tip-help-icon-alignment': !isSwitchVisible}">
 					<fa-icon id="{{switchId}}-tooltip_right_icon"
 						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}" 
 						class="right-icon"
