@@ -2167,7 +2167,7 @@
                 "showless": "Mostrar menos",
                 "button": "Habilitar seguridad de WiFi",
                 "disableDescribe": "Seguridad de Lenovo WiFi es un avanzado servicio de software basado en la nube que ayuda a su dispositivo a diferenciar entre redes inalámbricas seguras y aquellas posiblemente maliciosas.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Seguridad de Lenovo WiFi no está supervisando su red WiFi."
             },
             "threatlocator": {
                 "describe": "Utilice el detector de amenazas para determinar la seguridad de las redes a su alrededor.",
