@@ -1338,7 +1338,7 @@
                             "title": "Napomena",
                             "description": "Lenovo Vantage mora pristupiti informacijama o lokaciji kako bi izračunao vrijeme zalaska i izlaska sunca u vašoj regiji."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Pokrenite Windows Update ili ručno instalirajte grafički upravljački program da biste oporavili način Eye Care"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura boje prikaza",

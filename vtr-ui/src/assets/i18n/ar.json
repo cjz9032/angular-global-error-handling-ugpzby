@@ -1340,7 +1340,7 @@
                             "title": "ملحوظة",
                             "description": "يحتاج Lenovo Vantage إلى الوصول إلى معلومات موقعك لحساب وقت الغروب وشروق الشمس في منطقتك."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "يرجى تشغيل Windows Update أو تثبيت برنامج تشغيل الرسومات يدويًا لاسترداد وضع العناية بالعين"
                     },
                     "dispColorTemp": {
                         "title": "درجة حرارة ألوان جهاز العرض",

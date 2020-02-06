@@ -11,6 +11,7 @@ export class BatteryDetailService {
 
 	private battery: any;
 	isAcAttached: boolean;
+	gaugePercent:number;
 	remainingPercentages: number[] = [];
 	gaugeResetInfo: BatteryGaugeReset[];
 	isPowerDriverMissing: boolean;

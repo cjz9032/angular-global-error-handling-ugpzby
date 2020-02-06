@@ -1338,7 +1338,7 @@
                             "title": "Megjegyzés",
                             "description": "A napnyugta és a napkelte idejének kiszámításához a Lenovo Vantage-nek hozzá kell férnie a helyadatokhoz."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Kérjük, futtassa a Windows Update szolgáltatást, vagy telepítse manuálisan a grafikus illesztőprogramot a Szemvédő mód helyreállításához"
                     },
                     "dispColorTemp": {
                         "title": "A képernyő színhőmérséklete",

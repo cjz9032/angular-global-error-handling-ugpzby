@@ -1338,7 +1338,7 @@
                             "title": "Uwaga",
                             "description": "Aplikacja Lenovo Vantage musi uzyskać dostęp do informacji o lokalizacji w celu obliczenia czasu zachodu i wschodu słońca w Twoim regionie."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Uruchom Windows Update lub ręcznie zainstaluj sterownik karty graficznej, aby przywrócić tryb Eye Care"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura barwowa ekranu",

@@ -1338,7 +1338,7 @@
                             "title": "Not",
                             "description": "Lenovo Vantage'ın, bölgenizdeki gün batımı ve gün doğumu saatlerini hesaplamak için konum bilgilerinize erişmesi gerekir."
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "Göz Koruması Kipi'ne dönmek için Windows Update'i çalıştırın veya grafik kartı sürücüsünü manuel olarak yükleyin"
                     },
                     "dispColorTemp": {
                         "title": "Ekran rengi sıcaklığı",
