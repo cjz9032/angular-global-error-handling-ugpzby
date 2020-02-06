@@ -73,7 +73,7 @@
     <div class="container-fluid">
         <div class="row">
                 <div class="payment-options">
-                        <iframe src="https://uatpcsupport.lenovo.com/us/en/upgradewarranty?serial=pc0bms6n&mt=20en&source=vantage" sandbox="allow-forms allow-scripts allow-same-origin" frameborder="0" ></iframe>
+                        <iframe  [src]="paymenturl | sanitize : 'resourceUrl'" sandbox="allow-forms allow-scripts allow-same-origin" frameborder="0" ></iframe>
                     </div>
         </div>
         </div>

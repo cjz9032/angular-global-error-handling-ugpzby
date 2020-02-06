@@ -24,3 +24,13 @@ export enum SPSubCategory{
     THREEHUNDEREADANDFOUR = '304',
     THREEHUNDEREADANDFIVE = '305',
 }
+
+export enum PaymentPage{
+    URL = "https://uatpcsupport.lenovo.com/",
+    APPLICATIONNAME = "vantage",
+    URLSTRING = "upgradewarranty?",
+    SERIALQUERYPARAMETER="serial=",
+    MTQUERYPARAMETER="&mt=",
+    SOURCEQUERYPARAMETER="&source=",
+    SLASH="/",
+}
