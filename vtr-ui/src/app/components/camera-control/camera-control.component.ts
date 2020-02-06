@@ -34,6 +34,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private DeviceInformation: any;
 	private DeviceClass: any;
 	private oMediaCapture: any;
+	private orientationSensor: any;
+	private deviceOrientation: any;
 	private visibilityChange: any;
 	private orientationChanged: any;
 	private cameraStreamStateChanged: any;
@@ -79,6 +81,14 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 		//#region hook up orientation change event
 		if (this.Windows) {
+			this.orientationSensor = this.Windows.Devices.Sensors.SimpleOrientationSensor.getDefault();
+			if (this.orientationSensor != null) {
+				this.deviceOrientation = this.orientationSensor.GetCurrentOrientation();
+				// when device is rotated, below event will be fired
+				this.deviceOrientation.onorientationchanged = (orientation) => {
+					this.logger.info('CameraControlComponent.onorientationchanged: ', orientation);
+				};
+			}
 			this.orientationChanged = this.onOrientationChanged.bind(this);
 			this.Windows.Graphics.Display.DisplayInformation.addEventListener('orientationchanged', this.orientationChanged);
 			this.cameraStreamStateChanged = this.onCameraStreamStateChanged.bind(this);
@@ -109,6 +119,20 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		}
 		//#endregion
 		this.cleanupCameraAsync();
+	}
+
+	private convertDisplayOrientationToDegrees(orientation) {
+		switch (orientation) {
+			case this.Windows.Devices.Sensors.SimpleOrientation.rotated90DegreesCounterclockwise:
+				return 90;
+			case this.Windows.Devices.Sensors.SimpleOrientation.rotated180DegreesCounterclockwise:
+				return 180;
+			case this.Windows.Devices.Sensors.SimpleOrientation.rotated270DegreesCounterclockwise:
+				return 270;
+			case this.Windows.Devices.Sensors.SimpleOrientation.notRotated:
+			default:
+				return 0;
+		}
 	}
 
 	findCameraDeviceByPanelAsync(panel) {
@@ -207,7 +231,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			this.videoElement = this.cameraPreview.nativeElement;
 			this.videoElement.src = previewUrl;
 			this.videoElement.play();
-			this.logger.info('CameraControlComponent.onOrientationChanged', { previewUrl, videoElement: this.videoElement});
+			this.logger.info('CameraControlComponent.onOrientationChanged', { previewUrl, videoElement: this.videoElement });
 		});
 	}
 
