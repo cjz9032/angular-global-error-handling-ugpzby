@@ -46,7 +46,7 @@ export class PageAutocloseComponent implements OnInit {
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
 		private translate: TranslateService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
 	) {
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
@@ -160,8 +160,8 @@ export class PageAutocloseComponent implements OnInit {
 				if (!isUndefined(appList.processList)) {
 					this.autoCloseAppList = appList.processList;
 					this.gamingAutoCloseService.setAutoCloseListCache(appList.processList);
-					console.log('get Auto close List', appList.processList);
-					console.log('Total Auto close List Apps', appList.processList.length);
+					this.loggerService.info('page-autoclose.component.refreshAutoCloseList', 'get Auto close List--->' + appList.processList);
+					this.loggerService.info('page-autoclose.component.refreshAutoCloseList', 'Total Auto close List Apps--->' + appList.processList.length);
 				}
 			});
 		} catch (error) {
@@ -251,7 +251,7 @@ export class PageAutocloseComponent implements OnInit {
 			this.toggleStatus = await this.gamingAutoCloseService.getAutoCloseStatus();
 			this.gamingAutoCloseService.setAutoCloseStatusCache(this.toggleStatus);
 		} catch (err) {
-			console.log(`ERROR in getAutoCloseStatus()`, err);
+			this.loggerService.error('page-autoclose.component.getAutoCloseStatus', 'ERROR in getAutoCloseStatus()-->' + err);
 		}
 	}
 }

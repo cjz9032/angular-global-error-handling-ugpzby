@@ -3352,5 +3352,8 @@
             "subtitle2": "Počítače all-in-one zjednodušeně",
             "body2": "Počítače all-in-one s procesory Intel® Core™ 9. generace vám poskytují veškerý výkon stolního počítače zabalený v elegantním displeji. Zabírají méně místa a nabízejí hardwarové zabezpečení a obraz s vysokým rozlišením."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }
