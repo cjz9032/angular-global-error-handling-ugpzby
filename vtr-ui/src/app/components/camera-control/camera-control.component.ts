@@ -34,10 +34,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private DeviceInformation: any;
 	private DeviceClass: any;
 	private oMediaCapture: any;
-	private orientationSensor: any;
-	private deviceOrientation: any;
 	private visibilityChange: any;
-	private orientationChanged: any;
 	private cameraStreamStateChanged: any;
 
 	public cameraErrorTitle: string;
@@ -48,7 +45,9 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	// Rotation metadata to apply to the preview stream and recorded videos (MF_MT_VIDEO_ROTATION)
 	// Reference: http://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868174.aspx
 	private readonly RotationKey = "C380465D-2271-428C-9B83-ECEA3B4A85C1";
-	private readonly oOrientationSensor;
+	private orientationSensor: any;
+	private deviceOrientation: any;
+	private orientationChanged: any;
 
 	@ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
 		// when camera preview video element is visible then start camera feed
@@ -75,7 +74,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			this.Capture = this.Windows.Media.Capture;
 			this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
 			this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
-			this.oOrientationSensor = this.Windows.Devices.Sensors.SimpleOrientationSensor.getDefault();
 		}
 	}
 
@@ -95,12 +93,10 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			if (this.orientationSensor != null) {
 				this.deviceOrientation = this.orientationSensor.GetCurrentOrientation();
 				// when device is rotated, below event will be fired
-				this.deviceOrientation.onorientationchanged = (orientation) => {
-					this.logger.info('CameraControlComponent.onorientationchanged: ', orientation);
-				};
+				this.deviceOrientation.onorientationchanged = this.onOrientationChanged.bind(this);
+				this.orientationChanged = this.onOrientationChanged.bind(this);
 			}
-			this.orientationChanged = this.onOrientationChanged.bind(this);
-			this.Windows.Graphics.Display.DisplayInformation.addEventListener('orientationchanged', this.orientationChanged);
+
 			this.cameraStreamStateChanged = this.onCameraStreamStateChanged.bind(this);
 			this.oMediaCapture.addEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
 		}
@@ -285,8 +281,10 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onOrientationChanged(eventArgs) {
-		this.logger.info('CameraControlComponent.onOrientationChanged', eventArgs);
+	onOrientationChanged(orientation) {
+		this.logger.info('CameraControlComponent.onorientationchanged: ', orientation);
+		let orientationDegree = this.convertDisplayOrientationToDegrees(orientation);
+		this.setCameraPreviewOrientation(orientationDegree);
 	}
 
 	onCameraStreamStateChanged(eventArgs) {
