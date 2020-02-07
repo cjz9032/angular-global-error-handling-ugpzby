@@ -186,8 +186,9 @@
 										<div class="col-12">
 											<div class="custom-control custom-checkbox privacy-checkbox">
 												<input type="checkbox"
-													attr.disabled="privacyGuardToggleStatus"
-													class="custom-control-input"
+												[disabled]="privacyGuardToggleStatus"
+												class="custom-control-input"
+												[ngClass]="{'custom-control-label-disabled': privacyGuardToggleStatus}"
 													id="cb-privacy-guard"
 													attr.aria-label="cb-privacy-guard"
 													[checked]="privacyGuardCheckBox"
