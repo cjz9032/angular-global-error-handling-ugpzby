@@ -69,10 +69,7 @@ export class VantageShellService {
 
 	public registerEvent(eventType: any, handler: any) {
 		if (this.phoenix) {
-			this.phoenix.on(eventType, (val) => {
-				// 	console.log('Event fired: ', eventType, val);
-				handler(val);
-			});
+			this.phoenix.on(eventType, handler);
 		}
 	}
 
