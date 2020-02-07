@@ -79,10 +79,17 @@
 											role="text">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.startTime' | translate}}
 										</div>
+
 										<div class="col-8 label-value"
-											role="text">
+											role="text"
+											*ngIf="is12HrsFormat">
 											{{battery.startTime | date : 'M/d/yyyy h:mm:ss '}}
-											{{isStartTimeAmPm? ('device.deviceSettings.power.smartStandby.timer.amPms.am'| translate) : ('device.deviceSettings.power.smartStandby.timer.amPms.pm'| translate)}}
+											{{startTimeAbbreviated | translate}}
+										</div>
+										<div class="col-8 label-value"
+											role="text"
+											*ngIf="!is12HrsFormat">
+											{{battery.startTime | date : 'M/d/yyyy H:mm:ss '}}
 										</div>
 									</div>
 									<div class="row pt-3">
@@ -101,10 +108,18 @@
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.lastReset' | translate}}
 										</div>
 										<div class="col-8 label-value"
-											role="text">
+											role="text"
+											*ngIf="is12HrsFormat">
 											{{battery.lastResetTime | date : 'M/d/yyyy h:mm:ss '}}
-											{{isLastResetTimeAmPm?('device.deviceSettings.power.smartStandby.timer.amPms.am'| translate) : ('device.deviceSettings.power.smartStandby.timer.amPms.pm'| translate)}}
+											{{ lastResetTimeAbbreviated | translate}}
 											<br *ngIf="battery.lastResetTime">
+											{{'device.deviceSettings.power.batterySettings.gaugeReset.resetLog.' + battery.resetErrorLog | translate}}
+										</div>
+										<div class="col-8 label-value"
+											role="text"
+											*ngIf="!is12HrsFormat">
+											{{battery.lastResetTime | date : 'M/d/yyyy H:mm:ss '}}
+											<br>
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.resetLog.' + battery.resetErrorLog | translate}}
 										</div>
 									</div>
