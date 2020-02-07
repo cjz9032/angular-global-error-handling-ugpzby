@@ -1338,7 +1338,7 @@
                             "title": "注",
                             "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
                         },
-                        "tips": "Please run Windows Update or manually install graphics driver to recover Eye Care mode"
+						"tips": "请运行 Windows Update 或手动安装显卡驱动程序以恢复护眼模式"
                     },
                     "oledPowerSettings": {
                         "title": "OLED 电源设置",
@@ -3352,5 +3352,8 @@
             "subtitle2": "多功能：简化",
             "body2": "配备第九代 Intel® Core™ 处理器的一体机，将桌面的所有功能都装入设计时尚的显示屏中 - 干扰更少，具有基于硬件的安全性和高分辨率的显示效果。"
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

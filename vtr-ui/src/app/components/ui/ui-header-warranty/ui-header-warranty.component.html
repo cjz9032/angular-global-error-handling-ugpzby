@@ -43,11 +43,11 @@
 				<div class="pb-1"
 					id="warranty-start-date"
 					attr.aria-label="warranty-start-date">
-					{{'support.warranty.startDate' | translate}}<b>{{ warrantyData.info.startDate | dateFormat }}</b>
+					{{'support.warranty.startDate' | translate}}<b>{{ warrantyData.info.startDate | formatUTCDate }}</b>
 				</div>
 				<div id="warranty-end-date"
 					attr.aria-label="warranty-end-date">
-					{{'support.warranty.endDate' | translate}}<b>{{ warrantyData.info.endDate | dateFormat }}</b>
+					{{'support.warranty.endDate' | translate}}<b>{{ warrantyData.info.endDate | formatUTCDate }}</b>
 				</div>
 			</div>
 
