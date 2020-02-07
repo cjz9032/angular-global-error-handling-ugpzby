@@ -50,6 +50,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private orientationSensor: any;
 	private deviceOrientation: any;
 	private displayOrientation: any;
+	private simpleOrientation = this.Windows.Devices.Sensors.SimpleOrientation;
 
 
 	@ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
@@ -137,20 +138,20 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	private convertDisplayOrientationToDegrees(orientation) {
 		switch (orientation) {
-			case this.Windows.Devices.Sensors.SimpleOrientation.rotated90DegreesCounterclockwise:
+			case this.simpleOrientation.rotated90DegreesCounterclockwise:
 				return 90;
-			case this.Windows.Devices.Sensors.SimpleOrientation.rotated180DegreesCounterclockwise:
+			case this.simpleOrientation.rotated180DegreesCounterclockwise:
 				return 180;
-			case this.Windows.Devices.Sensors.SimpleOrientation.rotated270DegreesCounterclockwise:
+			case this.simpleOrientation.rotated270DegreesCounterclockwise:
 				return 270;
-			case this.Windows.Devices.Sensors.SimpleOrientation.notRotated:
+			case this.simpleOrientation.notRotated:
 			default:
 				return 0;
 		}
 	}
 
 	private async setCameraPreviewOrientation(orientationInDegrees: number) {
-		console.log('CameraControlComponent.setCameraPreviewOrientation', orientation);
+		console.log('CameraControlComponent.setCameraPreviewOrientation', orientationInDegrees);
 
 		if (this.oMediaCapture.videoDeviceController) {
 			const props = this.oMediaCapture.videoDeviceController.getMediaStreamProperties(this.Capture.MediaStreamType.videoPreview);
@@ -163,8 +164,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	onDeviceOrientationChanged(args) {
 		this.logger.info('CameraControlComponent.onDeviceOrientationChanged: ', args);
 
-		if (args.orientation !== this.deviceOrientation.faceup
-			&& args.orientation !== this.deviceOrientation.facedown) {
+		if (args.orientation !== this.simpleOrientation.faceup
+			&& args.orientation !== this.simpleOrientation.facedown) {
 			this.deviceOrientation = args.orientation;
 			const orientationDegree = this.convertDisplayOrientationToDegrees(this.deviceOrientation);
 			this.setCameraPreviewOrientation(orientationDegree);
