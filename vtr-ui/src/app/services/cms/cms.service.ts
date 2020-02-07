@@ -11,6 +11,7 @@ import { LocalInfoService } from '../local-info/local-info.service';
 import { DevService } from '../dev/dev.service';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { throwError } from 'rxjs';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -154,7 +155,6 @@ export class CMSService {
 			);
 		},
 			error => {
-				console.log('getCMSContent::error', error);
 				subscriber.error(error);
 			}
 		);
@@ -197,14 +197,14 @@ export class CMSService {
 								resolve(result);
 							},
 							(reason) => {
-								console.log('fetchCMSArticleCategories:error', reason);
-								reject('fetchCMSContent error');
+								// reject('fetchCMSContent error');
+								throwError(new Error('fetchCMSContent error'))
 							}
 						);
 					},
 					error => {
-						console.log('fetchCMSArticleCategories::error', error);
-						reject('fetchCMSContent error');
+						// reject('fetchCMSContent error');
+						throwError(new Error('fetchCMSContent error'))
 					}
 				);
 		});
@@ -249,14 +249,14 @@ export class CMSService {
 								resolve(result);
 							},
 							(reason) => {
-								console.log('fetchCMSArticles:: error', reason);
-								reject('fetchCMSContent error');
+								// reject('fetchCMSContent error');
+								throwError(new Error('fetchCMSContent error'))
 							}
 						);
 					},
 					error => {
-						console.log('fetchCMSArticles:: error', error);
-						reject('fetchCMSArticles error');
+						// reject('fetchCMSArticles error');
+						throwError(new Error('fetchCMSContent error'))
 					}
 				);
 		});
@@ -372,8 +372,8 @@ export class CMSService {
 						resolve(response.Results);
 					},
 					error => {
-						console.log('fetchCMSEntitledAppList::error ', error);
-						reject('fetchCMSEntitledAppList error');
+						// reject('fetchCMSEntitledAppList error');
+						throwError(new Error('fetchCMSEntitledAppList error'))
 					}
 				);
 		});
@@ -394,8 +394,8 @@ export class CMSService {
 						resolve(response.Results);
 					},
 					error => {
-						console.log('fetchCMSAppDetails::error ', error);
-						reject('fetchCMSAppDetails error');
+						// reject('fetchCMSAppDetails error');
+						throwError(new Error('fetchCMSAppDetails error'))
 					}
 				);
 		});
