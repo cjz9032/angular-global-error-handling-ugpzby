@@ -617,7 +617,7 @@
                 "sub2": "Antivirus",
                 "sub3": "Sicurezza WiFi",
                 "sub4": "Integrità password",
-                "sub5": "Protezione Internet",
+                "sub5": "Protezione VPN",
                 "sub6": "Windows Hello"
             },
             "support": "Supporto",
@@ -1338,7 +1338,7 @@
                             "title": "Nota",
                             "description": "Lenovo Vantage deve accedere alle informazioni sulla posizione per calcolare l'ora del tramonto e dell'alba dell'area geografica in cui ci si trova."
                         },
-						"tips": "Eseguire Windows Update o installare manualmente il driver di grafica per ripristinare la modalità Comfort visivo"
+                        "tips": "Eseguire Windows Update o installare manualmente il driver di grafica per ripristinare la modalità Comfort visivo"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura colore schermo",
@@ -1420,7 +1420,8 @@
                         "caption": "Questa funzionalità consente di sfocare lo sfondo quando la fotocamera viene utilizzata per videochiamate o per scattare foto. È possibile scegliere un effetto diverso tra le selezioni elencate di seguito.",
                         "blurMode": "Modalità sfocatura",
                         "comicMode": "Modalità fumetto",
-                        "sketchMode": "Modalità schizzo"
+                        "sketchMode": "Modalità schizzo",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "LA FOTOCAMERA È IN USO",
