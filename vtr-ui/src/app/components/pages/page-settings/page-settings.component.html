@@ -19,7 +19,7 @@
 						*ngIf="deviceService.isArm || deviceService.isSMode">
 					</vtr-ui-header-subpage>
 
-					<div class="card-pb card-pt" *ngIf="!deviceService.isArm && !deviceService.isSMode && isMessageSettings"
+					<div class="card-pt" *ngIf="!deviceService.isArm && !deviceService.isSMode && isMessageSettings"
 						id="settings-messages">
 						<vtr-container-collapsible name="SettingsMessage"
 							[tabIndex]="0"
@@ -76,7 +76,7 @@
 						</vtr-container-collapsible>
 					</div>
 
-					<div class="card-pb beta-setting"
+					<div class="card-pt beta-setting"
 						*ngIf="segmentTag !== segmentConst.Commercial">
 						<vtr-container-collapsible [tabIndex]="0"
 							name="SettingsBeta"
@@ -101,7 +101,7 @@
 						</vtr-container-collapsible>
 					</div>
 
-					<div class="card-pb"
+					<div class="card-pt"
 						id="settings-other-settings">
 						<vtr-container-collapsible [tabIndex]="0"
 							name="SettingsOther"
@@ -145,7 +145,7 @@
 						</vtr-container-collapsible>
 					</div>
 
-					<div class="card-pb user-profile-section"
+					<div class="card-pt card-pb user-profile-section"
 						*ngIf="selfSelectService.userProfileEnabled"
 						id="user-profile-setting"
 						[ngClass]="{

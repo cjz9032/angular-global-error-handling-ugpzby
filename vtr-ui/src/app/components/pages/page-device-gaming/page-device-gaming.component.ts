@@ -259,7 +259,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 			warranty.type = 'system';
 
 			if (response.warranty) {
-				const warrantyDate = this.commonService.formatDate(response.warranty.expired);
+				const warrantyDate = this.commonService.formatUTCDate(response.warranty.expired);
 				// in warranty
 				if (response.warranty.status === 0) {
 					warranty.detail = `${this.translate.instant(

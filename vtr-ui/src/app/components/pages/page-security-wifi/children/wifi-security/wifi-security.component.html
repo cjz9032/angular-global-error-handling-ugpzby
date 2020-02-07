@@ -12,7 +12,7 @@
 			</div>
 		</div>
 		<div class="row mb-20">
-			<div [ngClass]="{'col-lg-7':data.wifiSecurity.state==='never-used'}">
+			<div>
 				<div *ngIf="data.isLWSEnabled === false" class="text-regular">{{ 'security.wifisecurity.container.disableDescribe' | translate }}</div>
 				<div *ngIf="data.isLWSEnabled" class="text-regular">{{ 'security.wifisecurity.container.enabledDescribe' | translate }}</div>
 			</div>
