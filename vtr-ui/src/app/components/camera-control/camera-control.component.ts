@@ -58,7 +58,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (!this.isCameraInitialized) {
 			if (content && !this.cameraDetail.isPrivacyModeEnabled) {
 				this.initializeCameraAsync();
-				this.setCameraPreviewOrientation(90);
+				this.setCameraPreviewOrientation(180);
 			} else {
 				this.cleanupCameraAsync();
 			}
@@ -77,8 +77,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			this.Capture = this.Windows.Media.Capture;
 			this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
 			this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
-			this.deviceOrientation = this.Windows.Graphics.Display.DisplayOrientations.portrait;
-			this.displayInformation = this.Windows.Graphics.Display.DisplayInformation.getForCurrentView();
+			// this.deviceOrientation = this.Windows.Graphics.Display.DisplayOrientations.portrait;
+			// this.displayInformation = this.Windows.Graphics.Display.DisplayInformation.getForCurrentView();
 		}
 	}
 
@@ -96,7 +96,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			this.oMediaCapture.addEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
 			this.orientationSensor = this.Windows.Devices.Sensors.SimpleOrientationSensor.getDefault();
 			if (this.orientationSensor != null) {
-				this.deviceOrientation = this.orientationSensor.GetCurrentOrientation();
+				this.deviceOrientation = this.orientationSensor.getCurrentOrientation();
 				// when device rotation is detected by sensors, below event will be fired
 				this.orientationSensor.addEventListener(this.orientationChangedEvent
 					, this.onDeviceOrientationChanged.bind(this));
@@ -150,6 +150,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	private async setCameraPreviewOrientation(orientationInDegrees: number) {
+		console.log('CameraControlComponent.setCameraPreviewOrientation', orientation);
+
 		if (this.oMediaCapture.videoDeviceController) {
 			const props = this.oMediaCapture.videoDeviceController.getMediaStreamProperties(this.Capture.MediaStreamType.videoPreview);
 			props.properties.insert(this.RotationKey, orientationInDegrees);
