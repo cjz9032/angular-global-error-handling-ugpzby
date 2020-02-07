@@ -31,7 +31,6 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 		private router: Router,
 	) {
 		this.hardwareScanService.setLoadingStatus(true);
-		this.hardwareScanService.setRecoverInProgress(true);
 		this.hardwareScanService.setScanExecutionStatus(false);
 		this.hardwareScanService.setRecoverExecutionStatus(false);
 		this.hardwareScanService.setIsScanDone(false);
@@ -81,6 +80,7 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 				const devicesSelected = this.devices.filter(device => device.isSelected);
 				this.hardwareScanService.setDevicesRecover(devicesSelected);
 				this.hardwareScanService.setRecoverInit(true);
+				this.hardwareScanService.setRecoverInProgress(true);
 				this.hardwareScanService.setRecoverExecutionStatus(true);
 				this.hardwareScanService.setIsScanDone(false);
 				this.router.navigateByUrl('/beta/hardware-scan');
