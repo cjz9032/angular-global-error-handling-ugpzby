@@ -46,10 +46,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	// Reference: http://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868174.aspx
 	private readonly RotationKey = 'C380465D-2271-428C-9B83-ECEA3B4A85C1';
 	private readonly orientationChangedEvent = 'orientationchanged';
-	private readonly displayInformation: any;
 	private orientationSensor: any;
 	private deviceOrientation: any;
-	private displayOrientation: any;
 	private simpleOrientation: any;
 
 
@@ -78,8 +76,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
 			this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
 			this.simpleOrientation = this.Windows.Devices.Sensors.SimpleOrientation;
-			// this.deviceOrientation = this.Windows.Graphics.Display.DisplayOrientations.portrait;
-			// this.displayInformation = this.Windows.Graphics.Display.DisplayInformation.getForCurrentView();
 		}
 	}
 
@@ -95,12 +91,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		//#region hook up orientation change event
 		if (this.Windows) {
 			this.oMediaCapture.addEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
-
-
+			this.orientationSensor = this.Windows.Devices.Sensors.SimpleOrientationSensor.getDefault();
 			this.cameraStreamStateChanged = this.onCameraStreamStateChanged.bind(this);
-			// display orientation changed like landscape to portrait and vice versa
-			// this.displayInformation.addEventListener(this.orientationChangedEvent
-			// 	, this.onDisplayOrientationChanged.bind(this));
 		}
 		//#endregion
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
@@ -120,7 +112,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		document.removeEventListener('visibilitychange', this.visibilityChange);
 		//#region unregister orientation change event
 		if (this.Windows) {
-			// this.displayInformation.removeEventListener(this.orientationChangedEvent, this.onDisplayOrientationChanged);
 			if (this.orientationSensor != null) {
 				this.orientationSensor.removeEventListener(this.orientationChangedEvent, this.onDeviceOrientationChanged);
 			}
@@ -162,7 +153,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			&& args.orientation !== this.simpleOrientation.facedown) {
 			this.deviceOrientation = args.orientation;
 			const orientationDegree = this.convertDisplayOrientationToDegrees(this.deviceOrientation);
-			// this.setCameraPreviewOrientation(orientationDegree);
+			this.setCameraPreviewOrientation(orientationDegree);
 		}
 	}
 
@@ -268,17 +259,16 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			this.videoElement.play();
 			this.logger.info('CameraControlComponent.onOrientationChanged', { previewUrl, videoElement: this.videoElement });
 
-			this.orientationSensor = this.Windows.Devices.Sensors.SimpleOrientationSensor.getDefault();
-			if (this.orientationSensor != null) {
-				this.deviceOrientation = this.orientationSensor.getCurrentOrientation();
-				// when device rotation is detected by sensors, below event will be fired
-				this.orientationSensor.addEventListener(this.orientationChangedEvent
-					, this.onDeviceOrientationChanged.bind(this));
-			}
 
-			this.videoElement.addEventListener("playing", () => {
+			this.videoElement.addEventListener('playing', () => {
 				// isPreviewing = true;
-				return this.setCameraPreviewOrientation(180);
+				// return this.setCameraPreviewOrientation(180);
+				if (this.orientationSensor) {
+					this.deviceOrientation = this.orientationSensor.getCurrentOrientation();
+					// when device rotation is detected by sensors, below event will be fired
+					this.orientationSensor.addEventListener(this.orientationChangedEvent
+						, this.onDeviceOrientationChanged.bind(this));
+				}
 			});
 
 		});
