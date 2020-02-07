@@ -1,66 +1,65 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { NO_ERRORS_SCHEMA } from "@angular/core";
-import { RouterTestingModule } from "@angular/router/testing";
-import { HttpClientTestingModule } from "@angular/common/http/testing";
-import { HttpClient } from "@angular/common/http";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
 
-import { BatteryCardComponent } from "./battery-card.component";
+import { BatteryCardComponent } from './battery-card.component';
 
-import { CommonService } from "src/app/services/common/common.service";
-import { BatteryDetailService } from "src/app/services/battery-detail/battery-detail.service";
-import { VantageShellService } from "src/app/services/vantage-shell/vantage-shell.service";
-import { LoggerService } from "src/app/services/logger/logger.service";
+import { CommonService } from 'src/app/services/common/common.service';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {
 	TranslateModule,
 	TranslateService,
 	TranslateLoader
-} from "@ngx-translate/core";
-import { HttpLoaderFactory } from "src/app/modules/translation.module";
+} from '@ngx-translate/core';
+import { HttpLoaderFactory } from 'src/app/modules/translation.module';
 import {
 	BatteryStatus,
 	BatteryConditionsEnum
-} from "src/app/enums/battery-conditions.enum";
-import { BatteryConditionModel } from "src/app/data-models/battery/battery-conditions.model";
-import BatteryGaugeDetail from "src/app/data-models/battery/battery-gauge-detail-model";
-import { BatteryGaugeReset } from "src/app/data-models/device/battery-gauge-reset.model";
-import { AppNotification } from "src/app/data-models/common/app-notification.model";
-import { ChargeThresholdInformation } from "src/app/enums/battery-information.enum";
-import BatteryIndicator from "src/app/data-models/battery/battery-indicator.model";
+} from 'src/app/enums/battery-conditions.enum';
+import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
+import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
+import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
 
 // declare var Windows;
 
 const info = {
 	batteryInformation: [
 		{
-			heading: "",
+			heading: '',
 			chargeStatusString:
-				"device.deviceSettings.batteryGauge.details.chargeStatusString.charging",
+				'device.deviceSettings.batteryGauge.details.chargeStatusString.charging',
 			remainingTimeText:
-				"device.deviceSettings.batteryGauge.details.chargeCompletionTime",
+				'device.deviceSettings.batteryGauge.details.chargeCompletionTime',
 
-			barCode: "X2XP899J0N0",
+			barCode: 'X2XP899J0N0',
 			batteryCondition: [
-				"Normal",
-				"hightemperature",
-				"tricklecharge",
-				"overheatedbattery",
-				"permanenterror",
-				"unsupportedbattery"
+				'Normal',
+				'hightemperature',
+				'tricklecharge',
+				'overheatedbattery',
+				'permanenterror',
+				'unsupportedbattery'
 			],
 			batteryHealth: 0,
 			chargeStatus: 2,
 			cycleCount: 138,
 			designCapacity: 45.28,
 			designVoltage: 11.1,
-			deviceChemistry: "Li-Polymer",
-			firmwareVersion: "0005-0234-0100-0005",
-			firstUseDate: new Date("12/21/2018"),
-			fruPart: "01AV464",
+			deviceChemistry: 'Li-Polymer',
+			firmwareVersion: '0005-0234-0100-0005',
+			firstUseDate: new Date('12/21/2018'),
+			fruPart: '01AV464',
 			fullChargeCapacity: 46.74,
-			manufactureDate: new Date("12/21/2018"),
-			manufacturer: "SMP",
+			manufactureDate: new Date('12/21/2018'),
+			manufacturer: 'SMP',
 			remainingCapacity: 11.74,
 			remainingPercent: 75,
 			remainingTime: 204,
@@ -70,8 +69,8 @@ const info = {
 		}
 	],
 	batteryIndicatorInfo: {
-		acAdapterStatus: "Supported",
-		acAdapterType: "Legacy",
+		acAdapterStatus: 'Supported',
+		acAdapterType: 'Legacy',
 		acWattage: 0,
 		isAirplaneModeEnabled: false,
 		isAttached: false,
@@ -79,13 +78,13 @@ const info = {
 		isPowerDriverMissing: false,
 		percentage: 75,
 		time: 204,
-		timeType: "timeRemaining"
+		timeType: 'timeRemaining'
 	}
 };
 
 const batteryGuage = {
-	acAdapterStatus: "Supported",
-	acAdapterType: "Legacy",
+	acAdapterStatus: 'Supported',
+	acAdapterType: 'Legacy',
 	acWattage: 0,
 	isAirplaneModeEnabled: false,
 	isAttached: false,
@@ -93,10 +92,10 @@ const batteryGuage = {
 	isPowerDriverMissing: true,
 	percentage: 75,
 	time: 204,
-	timeType: "timeRemaining"
+	timeType: 'timeRemaining'
 };
 
-describe("BatteryCardComponent", () => {
+describe('BatteryCardComponent', () => {
 	let component: BatteryCardComponent;
 	let fixture: ComponentFixture<BatteryCardComponent>;
 	let commonService: CommonService;
@@ -137,112 +136,112 @@ describe("BatteryCardComponent", () => {
 		logger = TestBed.get(LoggerService);
 	}));
 
-	it("should create component", () => {
+	it('should create component', () => {
 		fixture.detectChanges();
 		expect(component).toBeDefined();
 	});
 
-	it("should call updateMainBatteryTime - status is 1", () => {
+	it('should call updateMainBatteryTime - status is 1', () => {
 		const batteryInfo = {
 			percentage: 75,
 			remainingTime: 204,
 			status: 1
 		};
-		let spy = spyOn(component, "getMainBatteryInfo").and.returnValue(
+		let spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
 			batteryInfo
 		);
 		component.updateMainBatteryTime();
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it("should call updateMainBatteryTime - status is 1 else case", () => {
+	it('should call updateMainBatteryTime - status is 1 else case', () => {
 		const batteryInfo = {
 			percentage: 95,
 			remainingTime: 530000,
 			status: 1
 		};
-		let spy = spyOn(component, "getMainBatteryInfo").and.returnValue(
+		let spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
 			batteryInfo
 		);
 		component.updateMainBatteryTime();
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it("should call updateMainBatteryTime - status is 0", () => {
+	it('should call updateMainBatteryTime - status is 0', () => {
 		const batteryInfo = {
 			percentage: 75,
 			remainingTime: 204,
 			status: 0
 		};
-		let spy = spyOn(component, "getMainBatteryInfo").and.returnValue(
+		let spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
 			batteryInfo
 		);
 		component.updateMainBatteryTime();
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it("should call onPowerSupplyStatusEvent", () => {
-		let spy = spyOn(component, "setBatteryCard");
+	it('should call onPowerSupplyStatusEvent', () => {
+		let spy = spyOn(component, 'setBatteryCard');
 		component.onPowerSupplyStatusEvent(info);
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it("should call onRemainingPercentageEvent", () => {
-		let spy = spyOn(component, "setBatteryCard");
+	it('should call onRemainingPercentageEvent', () => {
+		let spy = spyOn(component, 'setBatteryCard');
 		component.onRemainingPercentageEvent(info);
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it("should call onRemainingTimeEvent", () => {
-		let spy = spyOn(component, "setBatteryCard");
+	it('should call onRemainingTimeEvent', () => {
+		let spy = spyOn(component, 'setBatteryCard');
 		component.onRemainingTimeEvent(info);
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it("should call onPowerBatteryGaugeResetEvent", () => {
+	it('should call onPowerBatteryGaugeResetEvent', () => {
 		const info: BatteryGaugeReset[] = [
 			{
-				barCode: "X2XP899J0N0",
+				barCode: 'X2XP899J0N0',
 				batteryNum: 1,
 				FCCAfter: 4,
 				FCCBefore: 1,
 				isResetRunning: false,
-				lastResetTime: "",
-				resetErrorLog: "ERROR_UNEXPECTED",
+				lastResetTime: '',
+				resetErrorLog: 'ERROR_UNEXPECTED',
 				stage: 0,
 				stageNum: 0,
-				startTime: ""
+				startTime: ''
 			}
 		];
-		let spy = spyOn(commonService, "cloneObj").and.returnValue(info);
+		let spy = spyOn(commonService, 'cloneObj').and.returnValue(info);
 		component.onPowerBatteryGaugeResetEvent(info);
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it("should call getBatteryDetailOnCard - else case", () => {
-		let spy = spyOn(component, "getBatteryDetails");
+	it('should call getBatteryDetailOnCard - else case', () => {
+		let spy = spyOn(component, 'getBatteryDetails');
 		component.batteryService.isShellAvailable = false;
 		component.getBatteryDetailOnCard();
 		expect(spy).not.toHaveBeenCalled();
 	});
 
-	it("should throw error - getBatteryDetailOnCard", () => {
+	it('should throw error - getBatteryDetailOnCard', () => {
 		expect(component.getBatteryDetailOnCard).toThrow();
 	});
 
-	it("should call onNotification - inner first if", () => {
-		const thresholdNotification: AppNotification = {
-			type: ChargeThresholdInformation.ChargeThresholdInfo,
-			payload: true
-		};
-		component.batteryIndicator = new BatteryIndicator();
-		component.onNotification(thresholdNotification);
-		expect(component.batteryIndicator.isChargeThresholdOn).toEqual(true);
-	});
+	// it('should call onNotification - inner first if', () => {
+	// 	const thresholdNotification: AppNotification = {
+	// 		type: ChargeThresholdInformation.ChargeThresholdInfo,
+	// 		payload: true
+	// 	};
+	// 	component.batteryIndicator = new BatteryIndicator();
+	// 	component.onNotification(thresholdNotification);
+	// 	expect(component.batteryIndicator.isChargeThresholdOn).toEqual(true);
+	// });
 
-	it("should call onNotification - inner second if", () => {
+	it('should call onNotification - inner if', () => {
 		const airplaneModeNotification: AppNotification = {
-			type: "AirplaneModeStatus",
+			type: 'AirplaneModeStatus',
 			payload: true
 		};
 		component.batteryIndicator = new BatteryIndicator();
@@ -250,9 +249,9 @@ describe("BatteryCardComponent", () => {
 		expect(component.batteryIndicator.isAirplaneMode).toEqual(true);
 	});
 
-	it("should call getBatteryCondition - isPowerDriverMissing is true", () => {
+	it('should call getBatteryCondition - isPowerDriverMissing is true', () => {
 		component.batteryGauge = { ...batteryGuage };
-		spyOn(commonService, "getLocalStorageValue").and.returnValue(1);
+		spyOn(commonService, 'getLocalStorageValue').and.returnValue(1);
 		component.getBatteryCondition();
 		expect(component.batteryConditions).toContain(
 			new BatteryConditionModel(
@@ -271,32 +270,32 @@ describe("BatteryCardComponent", () => {
 	// 	// expect(component.batteryConditions).toContain(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryStatus.Poor))
 	// });
 
-	it("should call showDetailTip", () => {
+	it('should call showDetailTip', () => {
 		const index = 1;
 		component.batteryConditionNotes = [];
 		component.showDetailTip(index);
 		expect(component.shortAcErrNote).toEqual(false);
 	});
 
-	it("should call getConditionState - case 3", () => {
+	it('should call getConditionState - case 3', () => {
 		const conditionState = 3;
 		component.getConditionState(conditionState).toString();
 		expect(component.batteryStatus).toEqual(BatteryStatus);
 	});
 
-	it("should call getConditionState case 4", () => {
+	it('should call getConditionState case 4', () => {
 		const conditionState = 4;
 		component.getConditionState(conditionState).toString();
 		expect(component.batteryStatus).toEqual(BatteryStatus);
 	});
 
-	it("should call getConditionState case 5", () => {
+	it('should call getConditionState case 5', () => {
 		const conditionState = 5;
 		component.getConditionState(conditionState).toString();
 		expect(component.batteryStatus).toEqual(BatteryStatus);
 	});
 
-	it("should call reInitValue", () => {
+	it('should call reInitValue', () => {
 		component.reInitValue();
 		expect(component.flag).toEqual(false);
 	});
