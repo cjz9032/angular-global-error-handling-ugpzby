@@ -617,7 +617,7 @@
                 "sub2": "Virüsten Koruma",
                 "sub3": "WiFi Güvenliği",
                 "sub4": "Parola Durumu",
-                "sub5": "İnternet Koruması",
+                "sub5": "VPN Güvenliği",
                 "sub6": "Windows Hello"
             },
             "support": "Destek",
@@ -1338,7 +1338,7 @@
                             "title": "Not",
                             "description": "Lenovo Vantage'ın, bölgenizdeki gün batımı ve gün doğumu saatlerini hesaplamak için konum bilgilerinize erişmesi gerekir."
                         },
-						"tips": "Göz Koruması Kipi'ne dönmek için Windows Update'i çalıştırın veya grafik kartı sürücüsünü manuel olarak yükleyin"
+                        "tips": "Göz Koruması Kipi'ne dönmek için Windows Update'i çalıştırın veya grafik kartı sürücüsünü manuel olarak yükleyin"
                     },
                     "dispColorTemp": {
                         "title": "Ekran rengi sıcaklığı",
@@ -1420,7 +1420,8 @@
                         "caption": "Bu özellik, kamerayı kullanarak görüntülü arama yaparken veya fotoğraf çekerken arka planınızı bulanıklaştırır. Aşağıdaki seçimlerden farklı bir efekt belirleyebilirsiniz.",
                         "blurMode": "Bulanıklık kipi",
                         "comicMode": "Karikatür kipi",
-                        "sketchMode": "Eskiz kipi"
+                        "sketchMode": "Eskiz kipi",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA KULLANIMDA",

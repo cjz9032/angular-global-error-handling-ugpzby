@@ -617,7 +617,7 @@
                 "sub2": "アンチウィルス",
                 "sub3": "WiFi セキュリティー",
                 "sub4": "パスワードの健全性",
-                "sub5": "インターネット保護",
+                "sub5": "VPN セキュリティー",
                 "sub6": "Windows Hello"
             },
             "support": "サポート",
@@ -1338,7 +1338,7 @@
                             "title": "お願い",
                             "description": "Lenovo Vantage はその地域の日没と日の出の時刻を計算するために、位置情報にアクセスする必要があります。"
                         },
-						"tips": "Windows Update を実行するか、グラフィック・ドライバーを手動でインストールして、アイ・ケア・モードを復元してください"
+                        "tips": "Windows Update を実行するか、グラフィック・ドライバーを手動でインストールして、アイ・ケア・モードを復元してください"
                     },
                     "dispColorTemp": {
                         "title": "ディスプレイの色温度",
@@ -1420,7 +1420,8 @@
                         "caption": "この機能は、ビデオ通話または写真撮影にカメラを使用する際に背景をぼかします。以下の選択肢から別の効果を選択できます。",
                         "blurMode": "ぼかしモード",
                         "comicMode": "コミック モード",
-                        "sketchMode": "スケッチ モード"
+                        "sketchMode": "スケッチ モード",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "カメラは使用中です",

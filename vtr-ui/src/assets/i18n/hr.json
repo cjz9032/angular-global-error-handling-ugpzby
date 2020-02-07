@@ -617,7 +617,7 @@
                 "sub2": "Zaštita od virusa",
                 "sub3": "Sigurnost WiFija",
                 "sub4": "Jačina lozinke",
-                "sub5": "Zaštita na internetu",
+                "sub5": "Sigurnost VPN mreže",
                 "sub6": "Windows Hello"
             },
             "support": "Podrška",
@@ -1338,7 +1338,7 @@
                             "title": "Napomena",
                             "description": "Lenovo Vantage mora pristupiti informacijama o lokaciji kako bi izračunao vrijeme zalaska i izlaska sunca u vašoj regiji."
                         },
-						"tips": "Pokrenite Windows Update ili ručno instalirajte grafički upravljački program da biste oporavili način Eye Care"
+                        "tips": "Pokrenite Windows Update ili ručno instalirajte grafički upravljački program da biste oporavili način Eye Care"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura boje prikaza",
@@ -1420,7 +1420,8 @@
                         "caption": "Ova značajka zamagljuje pozadinu kada se koristite kamerom za videopoziv ili fotografiranje. Možete odabrati različite efekte iz odabira u nastavku.",
                         "blurMode": "Način zamagljenja",
                         "comicMode": "Način stripa",
-                        "sketchMode": "Način skice"
+                        "sketchMode": "Način skice",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA SE KORISTI",

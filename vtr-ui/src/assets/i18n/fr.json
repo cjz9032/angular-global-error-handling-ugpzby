@@ -617,7 +617,7 @@
                 "sub2": "Antivirus",
                 "sub3": "Sécurité WiFi",
                 "sub4": "État de santé du mot de passe",
-                "sub5": "Protection Internet",
+                "sub5": "Sécurité VPN",
                 "sub6": "Windows Hello"
             },
             "support": "Soutien",
@@ -1338,7 +1338,7 @@
                             "title": "Important",
                             "description": "Lenovo Vantage doit accéder aux informations concernant votre emplacement pour calculer l'heure du coucher et du lever du soleil pour votre région."
                         },
-						"tips": "Exécutez Windows Update ou installez manuellement le pilote graphique pour restaurer le mode Protection des yeux"
+                        "tips": "Exécutez Windows Update ou installez manuellement le pilote graphique pour restaurer le mode Protection des yeux"
                     },
                     "dispColorTemp": {
                         "title": "Température de couleur de l'écran",
@@ -1420,7 +1420,8 @@
                         "caption": "Cette fonction floute votre arrière-plan lorsque vous utilisez la caméra pour un appel vidéo ou pour prendre des photos. Vous pouvez choisir différents effets parmi les sélections ci-dessous.",
                         "blurMode": "Mode flou",
                         "comicMode": "Mode comique",
-                        "sketchMode": "Mode croquis"
+                        "sketchMode": "Mode croquis",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "L'APPAREIL PHOTO EST EN COURS D'UTILISATION",
