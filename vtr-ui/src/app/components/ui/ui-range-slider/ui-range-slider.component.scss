@@ -122,8 +122,8 @@ but not to any other element on the page. using ::ng-deep
 	}
 	.disable-slider-pointer {
 		.ng5-slider {
-			.ng5-slider-pointer {
-				background: #8b91a2 !important;
+			.ng5-slider-pointer, .ng5-slider-selection {
+				background: #8b91a2;
 			}
 		}
 	}
