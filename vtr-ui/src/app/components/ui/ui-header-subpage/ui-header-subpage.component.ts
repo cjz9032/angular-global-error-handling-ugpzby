@@ -27,7 +27,7 @@ export class UiHeaderSubpageComponent implements OnInit {
 			window.scrollBy(0, -60);
 			// fix for VAN-12795 , focus element only when event is key press for narrator to read element text.
 			if (event.type !== 'click') {
-				const focusElement = element.querySelector('[tabindex = \'0\']') as HTMLElement;
+				const focusElement = element.querySelector('[tabIndex = \'0\']') as HTMLElement;
 				focusElement.focus();
 			}
 		}
