@@ -213,6 +213,13 @@
 			}
 		}
 	}
+	.cam-privacy-switch {
+		::ng-deep .vtr-ui-switch-row.white-theme {
+			.vtr-row-switch {
+				min-height: 4rem;
+			}
+		}
+	}
 }
 
 .ecm-note {

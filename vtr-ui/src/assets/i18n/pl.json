@@ -617,7 +617,7 @@
                 "sub2": "Antywirus",
                 "sub3": "Bezpieczeństwo WiFi",
                 "sub4": "Bezpieczeństwo hasła",
-                "sub5": "Ochrona internetowa",
+                "sub5": "Zabezpieczenia VPN",
                 "sub6": "Windows Hello"
             },
             "support": "Pomoc techniczna",
@@ -1338,7 +1338,7 @@
                             "title": "Uwaga",
                             "description": "Aplikacja Lenovo Vantage musi uzyskać dostęp do informacji o lokalizacji w celu obliczenia czasu zachodu i wschodu słońca w Twoim regionie."
                         },
-						"tips": "Uruchom Windows Update lub ręcznie zainstaluj sterownik karty graficznej, aby przywrócić tryb Eye Care"
+                        "tips": "Uruchom Windows Update lub ręcznie zainstaluj sterownik karty graficznej, aby przywrócić tryb Eye Care"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura barwowa ekranu",
@@ -1420,7 +1420,8 @@
                         "caption": "Ta funkcja rozmywa tło podczas korzystania z aparatu do połączeń wideo lub robienia zdjęć. Możesz wybrać inny efekt z poniższych:",
                         "blurMode": "Tryb rozmycia",
                         "comicMode": "Tryb komiksowy",
-                        "sketchMode": "Tryb szkicu"
+                        "sketchMode": "Tryb szkicu",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA JEST UŻYWANA",

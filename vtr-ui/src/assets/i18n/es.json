@@ -617,7 +617,7 @@
                 "sub2": "Antivirus",
                 "sub3": "Seguridad de WiFi",
                 "sub4": "Estado de la contraseña",
-                "sub5": "Protección de Internet",
+                "sub5": "Seguridad VPN",
                 "sub6": "Windows Hello"
             },
             "support": "Soporte",
@@ -1338,7 +1338,7 @@
                             "title": "Nota",
                             "description": "Lenovo Vantage necesita acceder a la información de ubicación para calcular la hora del atardecer y amanecer de su región."
                         },
-						"tips": "Ejecute Windows Update o instale manualmente el controlador de gráficos para recuperar la modalidad de Cuidado de la visión"
+                        "tips": "Ejecute Windows Update o instale manualmente el controlador de gráficos para recuperar la modalidad de Cuidado de la visión"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura del color de visualización",
@@ -1420,7 +1420,8 @@
                         "caption": "Esta característica difumina el segundo plano cuando utiliza la cámara para realizar videollamadas o tomar fotos. Podría elegir entre distintos efectos desde las opciones a continuación.",
                         "blurMode": "Modalidad difuminado",
                         "comicMode": "Modalidad cómic",
-                        "sketchMode": "Modalidad boceto"
+                        "sketchMode": "Modalidad boceto",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "LA CÁMARA ESTÁ EN USO",

@@ -642,10 +642,15 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
 
 
   loadDynamicScripts() {
-    const dynamicScripts = [
+    /*const dynamicScripts = [
       'https://cdn.jsdelivr.net/npm/jsoneditor@8.4.1/dist/jsoneditor.min.js',
       'https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js'
+    ];*/
+    const dynamicScripts = [
+      'assets/cpt/jsoneditor8.4.1.min.js',
+      'assets/cpt/clipboard2.min.js'
     ];
+    
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('script');
       node.src = dynamicScripts[i];
@@ -657,8 +662,11 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   loadDynamicStyle() {
-    const dynamicScripts = [
+    /*const dynamicScripts = [
       'https://cdn.jsdelivr.net/npm/jsoneditor@8.4.1/dist/jsoneditor.min.css'
+    ];*/
+    const dynamicScripts = [
+      'assets/cpt/jsoneditor8.4.1.min.css'
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('link');

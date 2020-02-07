@@ -617,7 +617,7 @@
                 "sub2": "Antivírus",
                 "sub3": "Zabezpečenie WiFi",
                 "sub4": "Sila hesla",
-                "sub5": "Internetová ochrana",
+                "sub5": "Zabezpečenie VPN",
                 "sub6": "Windows Hello"
             },
             "support": "Technická podpora",
@@ -1338,7 +1338,7 @@
                             "title": "Poznámka",
                             "description": "Aplikácia Lenovo Vantage potrebuje prístup k lokálnym informáciám na výpočet času západu a východu slnka vo vašej oblasti."
                         },
-						"tips": "Ak chcete obnoviť režim na ochranu zraku, spustite službu Windows Update alebo manuálne nainštalujte ovládač grafickej karty"
+                        "tips": "Ak chcete obnoviť režim na ochranu zraku, spustite službu Windows Update alebo manuálne nainštalujte ovládač grafickej karty"
                     },
                     "dispColorTemp": {
                         "title": "Teplota farieb obrazovky",
@@ -1420,7 +1420,8 @@
                         "caption": "Táto funkcia rozostrí pozadie pri použití kamery na videohovor alebo fotografovanie. Môžete si vybrať z rôznych efektov uvedených nižšie.",
                         "blurMode": "Režim rozostrenia",
                         "comicMode": "Režim komiksu",
-                        "sketchMode": "Režim náčrtu"
+                        "sketchMode": "Režim náčrtu",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "FOTOAPARÁT SA POUŽÍVA",
