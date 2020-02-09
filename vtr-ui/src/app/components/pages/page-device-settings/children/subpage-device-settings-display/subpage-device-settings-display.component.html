@@ -173,7 +173,7 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="feature-note p-4 m-4"
+										<div class="feature-note p-4 m-4 ml-5"
 											tabindex="0"
 											id="privacy-guard-note"
 											attr.aria-label="privacy guard note, {{'device.deviceSettings.displayCamera.display.privacyGuard.note' | translate}}">
@@ -183,7 +183,7 @@
 									</div>
 									<div class="row"
 										*ngIf="privacyGuardOnPasswordCapability">
-										<div class="col-12">
+										<div class="col-12 ml-4">
 											<div class="custom-control custom-checkbox privacy-checkbox">
 												<input type="checkbox"
 													attr.disabled="privacyGuardToggleStatus"
@@ -292,7 +292,7 @@
 						(toggle)="onCardCollapse($event)"
 						[collapseLinkId]="'device-settings-camera'">
 						<ul class="list-group list-group-flush">
-							<li class="pt-3"
+							<li class="pt-3 cam-privacy-switch"
 								*ngIf="cameraPrivacyModeStatus.available">
 								<vtr-ui-row-switch [switchId]="'camera-privacy-mode'"
 									[title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"

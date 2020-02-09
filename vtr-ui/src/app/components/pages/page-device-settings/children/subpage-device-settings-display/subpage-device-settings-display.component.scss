@@ -141,7 +141,7 @@
 		font-size: $fontsize_xs;
 		color: $grey_dark;
 		// max-width: 60rem;
-		padding-left: 2rem;
+		padding-left: 3rem;
 		padding-right: 2rem;
 	}
 
@@ -210,6 +210,13 @@
 			@media #{$white-on-black} {
 				color: $yellow;
 				border: none;
+			}
+		}
+	}
+	.cam-privacy-switch {
+		::ng-deep .vtr-ui-switch-row.white-theme {
+			.vtr-row-switch {
+				min-height: 4rem;
 			}
 		}
 	}
