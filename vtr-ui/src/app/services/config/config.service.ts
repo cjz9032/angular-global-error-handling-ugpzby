@@ -506,6 +506,7 @@ export class ConfigService {
 			this.updateWifiMenu(this.menuBySegment.commercial, wifiIsSupport);
 			this.updateWifiMenu(this.menuBySegment.consumer, wifiIsSupport);
 			this.updateWifiMenu(this.menuBySegment.smb, wifiIsSupport);
+			this.updateWifiStateCache(wifiIsSupport);
 			return resolve(this.menu);
 		});
 	}
@@ -525,6 +526,10 @@ export class ConfigService {
 				menu.splice(supportIndex, 0, wifiItems);
 			}
 		}
+	}
+
+	updateWifiStateCache(wifiIsSupport: boolean) {
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, wifiIsSupport);
 	}
 
 	showBetaMenu(isBeta: boolean): Promise<any> {
