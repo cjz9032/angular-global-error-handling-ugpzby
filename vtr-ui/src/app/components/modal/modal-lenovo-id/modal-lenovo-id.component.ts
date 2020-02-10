@@ -342,6 +342,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	}
 
 	async ngOnDestroy(): Promise<void> {
+		// Before close, stop on-going navigation.
+		await this.webView.navigate('about:blank');
+
 		if (this.webView) {
 			this.webView.removeEventListener('eventtriggered', this.eventBind);
 			this.webView.removeEventListener('navigationstarting', this.startBind);
