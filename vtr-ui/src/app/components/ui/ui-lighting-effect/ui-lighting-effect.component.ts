@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, 
 import { isUndefined } from 'util';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-ui-lighting-effect',
@@ -32,16 +33,17 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 	dropdownEle: ElementRef;
 	intervalObj: any;
 	isItemsFocused = false;
-	//for macrokey
+	// for macrokey
 	@Input() public enableDescription = true;
 	@Input() isRecording = false;
 	defaultLanguage: any;
 	@Input() tooltip_value: any;
-	//end
+	// end
 
 	constructor(
 		private elementRef: ElementRef,
-		private deviceService: DeviceService
+		private deviceService: DeviceService,
+		private loggerService: LoggerService
 	) {
 		if (document.getElementById('menu-main-btn-navbar-toggler')) {
 			document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
@@ -54,7 +56,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 		this.deviceService.getMachineInfo().then((value: any) => {
 			this.defaultLanguage = value.locale;
 		});
-		console.log('option itpeople', this.options);
+		this.loggerService.info('ui-lighting-effect.component.ngOnInit', '--->' + this.options);
 	}
 
 	public toggleOptions() {

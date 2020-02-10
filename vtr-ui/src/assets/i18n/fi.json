@@ -87,7 +87,8 @@
                     "line8": "<b>Pikalataus </b><br> Pelaa liikkeellä ollessasi pikalatauksen avulla",
                     "line9": "<b>Kosketuslevyn lukitus </b><br> Estä väärät syötteet poistamalla kosketuslevy käytöstä pelaamisen ajaksi",
                     "line10": "<b>Automaattinen sulkeminen </b><br> Maksimoi käytettävissä olevat järjestelmäresurssit tyhjentämällä ennen pelaamisen aloittamista prosessit, joita ei tarvita pelaamiseen",
-                    "line11": "<b>Lämpö-tila </b><br> Määritä haluamaasi laitteen profiiliin tuulettimen kierrosnopeuden ja jäähdytyksen säätö"
+                    "line11": "<b>Lämpö-tila </b><br> Määritä haluamaasi laitteen profiiliin tuulettimen kierrosnopeuden ja jäähdytyksen säätö",
+                    "line12": "<b>Makronäppäin</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Näytä keskusyksikön/näytönohjaimen/RAM-muistin kuvaukset, mukaan lukien valmistus- ja mallitiedot, viemällä osoitin näiden ja eri asemien päälle"
@@ -616,7 +617,7 @@
                 "sub2": "Virustentorjunta",
                 "sub3": "WiFi-suojaus",
                 "sub4": "Salasanan kunto",
-                "sub5": "Internet-suojaus",
+                "sub5": "VPN-suojaus",
                 "sub6": "Windows Hello"
             },
             "support": "Tuki",
@@ -644,7 +645,8 @@
             "registered": "REKISTERÖITY",
             "notRegistered": "EI REKISTERÖITY",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -670,6 +672,9 @@
         },
         "app-update": {
             "message": "Hei! Vantage on saatavilla uudempi versio. Haluatko ladata sen?"
+        },
+        "offline": {
+            "connectToUseFeature": "Muodosta Internet-yhteys, jotta voit käyttää tätä toimintoa"
         }
     },
     "privacy": {
@@ -1089,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "Lentokonevirtatila",
-                        "description": "Suojaa lentokoneen pistorasiaa rajoittamalla tietokoneesi virrankulutusta.Kun lentokonevirtatila on käytössä, tietokone vähentää virrankulutusta rajoittamalla akun latausta ja järjestelmän suorituskykyä.",
+                        "description": "Tämän toiminnon avulla voit käyttää verkkopistorasiaa lentokoneessa, jossa on käytössä määrätty virrankäyttöraja. Kun tämä tila on käytössä, tietokoneen virrankulutus alennetaan turvalliselle tasolle rajoittamalla akun latausnopeutta ja tietokoneen suorituskykyä.",
                         "checkBoxDesc": "Automaattinen tunnistus",
                         "note": "Jos automaattinen tunnistus on valittu, tietokone ottaa lentokonevirtatilan käyttöön automaattisesti, kun se havaitsee olevansa lentokoneessa, ja poistaa sen käytöstä, kun poistut."
                     },
@@ -1108,7 +1113,7 @@
                         },
                         "progressText1": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
                         "progressText2": "{{stage}} / {{stageNum}}: Kalibroidaan akun alhaiseen varaukseen",
-                        "progressText3": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
+                        "progressText3": "{{stage}} / {{stageNum}}: Kalibroidaan akun korkeaan varaukseen",
                         "FCCText": "{{before}}Wh- {{after}} Wh",
                         "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
                         "resetLog": {
@@ -1122,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Epäonnistui: Tapahtui odottamaton virhe."
                         },
                         "popup": {
-                            "description1": "Nollausprosessi on seuraavanlainen:<br>Akun lataus täyteen varaukseen  -->  Akun varauksen purku kokonaan  -->  Akun lataus täyteen",
+                            "description1": "Nollausprosessi on seuraavanlainen:<br>Akun lataus täyteen varaukseen --> Akun varauksen purku alhaiseen akun varaukseen --> Akun lataus korkeaan varaukseen tai täyteen",
                             "description2": "Huomautuset: <br>1. Prosessi saattaa kestää useita tunteja. Vältä tietokoneen käyttöä tämän ajanjakson aikana.<br>2. Sulje kaikki avoimet sovellukset ja liitä tietokone verkkovirtaan.<br>3. Prosessin aikana akun varauksen kynnysarvo -toiminto ei ole käytössä.",
                             "continue": "Jatka",
                             "cancel": "Peruuta",
@@ -1139,10 +1144,10 @@
                 },
                 "smartStandby": {
                     "title": "Älykäs valmiustila",
-                    "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
-                    "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso on optimoitu määrittämäsi aikataulun tai tietokoneen käyttöajan mukaan. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
+                    "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysaikana ilman, että <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> -ominaisuuden nopea käynnistys hidastuu kovan käytön aikana.",
+                    "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso on optimoitu määrittämäsi aikataulun tai tietokoneen käytön mukaan. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
                     "timer": {
-                        "heading": "Aika, jolloin yleensä käytät tätä tietokonetta",
+                        "heading": "Aika, jolloin yleensä käytät tätä tietokonetta:",
                         "subHeading1": "aloitat",
                         "subHeading2": "lopetusaika",
                         "subHeading3": "käytä tätä aikataulua seuraavaan:",
@@ -1160,14 +1165,14 @@
                     "warningtip": "Valitse vähintään yksi päivä.",
                     "days": {
                         "shortName": {
-                            "sun": "Sunnuntai",
-                            "mon": "Maanantai",
-                            "tue": "Tiistai",
-                            "wed": "Weskiviikko",
-                            "thurs": "Torstai",
-                            "fri": "Perjantai",
-                            "sat": "Lauantai",
-                            "thu": "Thu"
+                            "sun": "Su",
+                            "mon": "Ma",
+                            "tue": "Ti",
+                            "wed": "Ke",
+                            "thurs": "To",
+                            "fri": "Pe",
+                            "sat": "La",
+                            "thu": "To"
                         },
                         "name": {
                             "sun": "Sunnuntai",
@@ -1184,11 +1189,11 @@
                         "noDaySelected": "Päivää ei ole valittuna"
                     },
                     "checkbox": "Tietokoneen aktiivisen ajan automaattinen säätäminen käytön mukaan",
-                    "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella tietokoneen taulukon toimintaa ja aktiivista aikaa",
+                    "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella käyttöä ja käytössä olevaa aikaa",
                     "subTitle": "Ajasta tietokoneesi",
                     "automaticMode": "Automaattinen tila",
                     "manualMode": "Manuaalinen tila",
-                    "subNote": "Tietokone on ajastettu käyttämään Modern Standby -ominaisuutta käytön mukaan.",
+                    "subNote": "Tietokone on ajoitettu palaamaan nopeasti normaaliin toimintaan käytön perusteella.",
                     "graph": {
                         "graph1Tittle": "Tämän tietokoneen käyttö",
                         "graph2Tittle": "Käytössä oleva aktiivinen aika",
@@ -1227,7 +1232,8 @@
                     },
                     "description2": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
                     "subTitle2": "Määritä aika, jolloin yleensä käytät tätä tietokonetta",
-                    "oldTooltipText": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso optimoidaan määritetyn aikataulun perusteella. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä."
+                    "oldTooltipText": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso optimoidaan määritetyn aikataulun perusteella. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
+                    "sectionTitle": "Valmiustilan asetukset"
                 }
             },
             "audio": {
@@ -1331,7 +1337,8 @@
                         "note": {
                             "title": "Huomautus",
                             "description": "Lenovo Vantage -ohjelman on käytettävä sijaintitietojasi oman alueesi auringon lasku- ja nousuajan laskemiseen."
-                        }
+                        },
+                        "tips": "Käytä Windows Update -ominaisuutta tai asenna näytönohjain manuaalisesti, jotta voit palauttaa silmien hoitotilan"
                     },
                     "dispColorTemp": {
                         "title": "Näytön värilämpötila",
@@ -1374,6 +1381,17 @@
                         "taskBarDimmer": "TEHTÄVÄPALKIN HIMMENNYSTOIMINTO",
                         "backgroundDimmer": "TAUSTAN HIMMENNYSTOIMINTO",
                         "displayDimmer": "NÄYTÖN HIMMENNYS"
+                    },
+                    "displayPriority": {
+                        "title": "Näyttöprioriteetin hallinta",
+                        "description": "Laite tukee ulkoisten laitteiden enimmäismäärää. Kun laitteeseen liitetään useita näyttöjä näiden lisätapojen avulla, vain ensisijaiseksi määritetty näyttö toimii.<br/>Valitse alta ensisijainen näytön lähtötapa:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Telakka",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Valinnainen moduuli"
+                        }
                     }
                 },
                 "camera": {
@@ -1402,7 +1420,8 @@
                         "caption": "Tämä ominaisuus sumentaa taustan, kun käytät kameraa videopuheluihin tai valokuvaamiseen. Voit valita eri tehosteen alla olevasta valikoimasta.",
                         "blurMode": "Sumennustila",
                         "comicMode": "Sarjakuvatila",
-                        "sketchMode": "Luonnostila"
+                        "sketchMode": "Luonnostila",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA ON KÄYTÖSSÄ",
@@ -1527,7 +1546,60 @@
                 "fnCtrlKey": {
                     "title": "Fn- ja Ctrl-näppäimen vaihto",
                     "description": "Jos painat usein Fn-näppäintä, kun aioit painaa Ctrl-näppäintä, voit vaihtaa näiden kahden näppäimen toimintoja.",
-                    "restartNote": "Kahden näppäimen toiminnon vaihtaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?"
+                    "restartNote": "Kahden näppäimen toiminnon vaihtaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?",
+                    "title2": "Fn toimii kuten Ctrl usein käytetyissä näppäinyhdistelmissä",
+                    "description2": "Fn-näppäin toimii kuten Ctrl-näppäin joissakin usein käytetyissä näppäinyhdistelmissä. Ctrl-näppäimen toiminto ei muutu.",
+                    "featureNote": "Tämä toiminto ja Fn-näppäin- ja Ctrl-näppäinyhdistelmän vaihtotoiminto eivät voi olla käytössä samaan aikaan. Jos yksi tila on käytössä, toinen tila poistetaan käytöstä automaattisesti.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn-näppäimet",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl-näppäimet",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Toiminto",
+                            "action1": "Kaikkien valinta",
+                            "action2": "Kopiointi",
+                            "action3": "Lisää verkkosivu suosikkeihini",
+                            "action4": "Hae",
+                            "action5": "Etsi ja korvaa Microsoft Wordissa",
+                            "action6": "Tasaa vasemmalle ja oikealle Microsoft Wordissa",
+                            "action7": "Lopeta (tuetussa sovelluksessa)",
+                            "action8": "Lisää alleviivaus",
+                            "action9": "Liitä",
+                            "action10": "Sulje (sovelluskohtaisesti)",
+                            "action11": "Leikkaa",
+                            "action12": "Tee uudelleen",
+                            "action13": "Kumous"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "ENEMMÄN",
@@ -1537,16 +1609,16 @@
                     "less": "VÄHEMMÄN"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Näppäimistön taustavalo",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Näppäimistön taustavalon käynnistäminen helpottaa kirjoittamista pimeässä tai heikosti valaistuissa olosuhteissa. Voit myös muuttaa näppäimistön taustavalon asetuksia painamalla näppäinyhdistelmää Fn+välilyönti.",
+                        "auto": "Näppäimistön taustavalon käynnistäminen helpottaa kirjoittamista pimeässä tai heikosti valaistuissa olosuhteissa. Voit muuttaa taustavalon asetuksia painamalla näppäinyhdistelmää Fn+välilyönti tai asettamalla sen \"Automaattiseksi\". \"Automaattinen\"-vaihtoehto säätää näppäimistön taustavalon automaattisesti ympäristön valon mukaan."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automaattinen",
+                        "low": "Pieni",
+                        "high": "Suuri",
+                        "off": "Poissa käytöstä"
                     }
                 }
             }
@@ -1709,12 +1781,12 @@
             "superResolution": {
                 "heading": "Älykäs tietoväline",
                 "title": "Näytön tarkkuuden skaalaus",
-                "desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label> Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Kun tämä asetus on käytössä, tietokone on suositeltavaa kytkeä verkko virtaan.</label></p>",
-                "tooltip": "Ominaisuus toimii vain seuraavissa soittimissa: <br/> Windows Media player",
+                "desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä tasasähkövirtatilassa. Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
+                "tooltip": "Ominaisuus toimii vain näissä:<br>Windows Media player",
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
-                    "description1": "Tietokone ei ole liitettynä verkkovirtaan, ja akun varaustaso on alhaisempi kuin 20 %.",
-                    "description2": "Tietokone ei ole liitettynä verkkovirtaan, ja akun virransäästötila on käytössä.",
+                    "description1": "Tietokonetta ei ole kytketty verkkovirtaan.",
+                    "description2": "Akun virransäästötila on käytössä.",
                     "description3": "Keskusyksikön lämpötila on liian korkea."
                 }
             },
@@ -1871,7 +1943,7 @@
             "localRepositoryDatabaseException": "Paikallisen säilön tietokantaa ei ole löytynyt tai se on viallinen.",
             "networkInterruptedException": "Järjestelmän päivityspalvelin ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen.",
             "helpCenterInvalidServerException": "Järjestelmän päivityspalvelin on virheellinen. Yritä myöhemmin uudelleen.",
-            "catalogNotFoundException": "Järjestelmään soveltuvia päivityksiä ei löydy.",
+            "catalogNotFoundException": "Järjestelmään soveltuvia päivityksiä ei löydy, koska päivitysluetteloa ei löydy.",
             "catalogCrcErrorException": "Järjestelmäluetteloa päivitetään parhaillaan. Yritä myöhemmin uudelleen.",
             "catalogErrorException": "Järjestelmän päivitysluettelossa havaittiin virhe järjestelmän päivityspalvelimessa. Yritä myöhemmin uudelleen.",
             "fileNotFoundException": "Tiedostoa ei löydy."
@@ -1979,7 +2051,7 @@
             "visitHde": "Siirry kiintolevyaseman salaukseen",
             "haveOwnPassword": "Minulla on oma salasanojen hallintaohjelma",
             "haveOwnWifi": "Minulla on oma Wi-Fi-suojaus",
-            "haveOwnVpn": "Minulla on oma VPN-suojaus",
+            "haveOwnVpn": "Minulla on oma VPN",
             "uac": "Käyttäjätilien valvonta (UAC)",
             "uacTitles": "Käyttäjätilien valvonta",
             "hde": "Kiintolevyaseman salaus",
@@ -2095,7 +2167,8 @@
                 "showmore": "Näytä lisää",
                 "showless": "Näytä vähemmän",
                 "button": "Ota WiFi -suojaus käyttöön",
-                "disableDecribe": "Lenovo WiFi -suojaus on kehittynyt pilvipohjainen ohjelmistopalvelu, joka auttaa laitetta erottamaan turvalliset langattomat verkot mahdollisista haitallisista verkoista."
+                "disableDescribe": "Lenovo WiFi -suojaus on kehittynyt pilvipohjainen ohjelmistopalvelu, joka auttaa laitetta erottamaan turvalliset langattomat verkot mahdollisista haitallisista verkoista.",
+                "enabledDescribe": "Lenovo WiFi -suojaus valvoo tällä hetkellä WiFi-verkon toimintaa."
             },
             "threatlocator": {
                 "describe": "Määritä uhkien paikantimen avulla ympärilläsi olevien verkkojen turvallisuus.",
@@ -2129,7 +2202,8 @@
                 "subtitle": "Mielenrauhaa",
                 "subtitleDescribe": "Connected Home -suojaus lähettää sinulle hälytyksen havaitessaan haavoittuvuuden laitteessasi tai kotiverkossasi tai, jos olet yhdistynyt mahdollisesti vahingolliseen verkkoon. Lue lisää Connected Home -suojauksesta <tag>tästä</tag>.",
                 "tryNow": "Kokeile nyt",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Anna kutsukoodi",
@@ -2204,7 +2278,8 @@
             "getStarted1": "Käynnistä SurfEasy VPN napsauttamalla \"Avaa SurfEasy\".",
             "getStarted2": "Ota VPN-yhteys käyttöön ja odota hetki, jotta saat vahvistuksen turvallisesta yhteydestä.",
             "getStarted3": "Muuta halutessasi alue tai sijainti ja nauti turvallisesta, yksityisestä verkon käytöstä.",
-            "poweredBySurfEasy": "SurfEasyn tarjoama"
+            "poweredBySurfEasy": "SurfEasyn tarjoama",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE salasanojen hallinta",
@@ -2232,7 +2307,8 @@
             "allowsYou2": "Tarkkailla, onko pimeässä verkossa henkilökohtaisia tietojasi",
             "allowsYou3": "Käyttää turvaamattomia WiFi-verkkoja turvallisesti sisäänrakennetun VPN-yhteyden avulla",
             "allowsYou4": "Jakaa salasanoja turvallisesti paljastamatta niitä",
-            "poweredByDashLane": "Dashlanen tarjoama"
+            "poweredByDashLane": "Dashlanen tarjoama",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2304,7 +2380,7 @@
     "faq": {
         "footer": {
             "title": "Etkö löydä mitä etsit?",
-            "description": "LISÄTIETOJA? ÄLÄ KYSY YHTEYTTÄ VIA:",
+            "description": "Tarvitsetko lisätukea? Älä epäröi ottaa meihin yhteyttä seuraavalla tavalla:",
             "body": "Lenovo-yhteisö",
             "button": "Siirry FORUMiin"
         },
@@ -2709,7 +2785,7 @@
         "deviceStatisticsDescription": "Lähetä nimettömiä laitetietoja, jotta voimme kehittää laatua, luotettavuutta ja seuraavan sukupolven laitteita.",
         "userProfile": "Käyttäjäprofiili",
         "Note": "Huomautus: ",
-        "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen.",
+        "settingsNotes": "Ota tämä sovellus uudelleen käyttöön ja varmista, että kaikki muutokset tulevat voimaan.",
         "betaSettingTitle": "Beta-ohjelma",
         "betaProgram": "Beta-ohjelma",
         "betaSettingDescription": "Kokeile uusimpia ominaisuuksia, joita työstämme."
@@ -2733,6 +2809,8 @@
         "noteDownloadAvailable": "Huomautus: Kun olet napsauttanut Lataa, Windows voi pyytää sinulta lupaa ohjelmiston asentamiseen laitteeseesi. Kun sovellukset on asennettu, ne näkyvät automaattisesti työpöydällä tai aloitusvalikossa.<br /><br />Voit sulkea Oma ohjelmisto -sivun ja jatkaa Lenovo Vantagen käyttöä. Älä sulje Lenovo Vantagea asennuksen aikana.",
         "sizeText": "Koko",
         "versionText": "Versio",
+        "redemptionCode": "Lunastuskoodi:",
+        "redeemWebsite": "Lunasta toimittajan www-sivustolla",
         "softwareDescription": "Lunasta laitteen mukana ostettu ohjelmisto napsauttamalla alta Lataa. Voit milloin tahansa ladata ohjelmiston uudelleen valitsemalla Vantage-valikosta Oma ohjelmisto -painikkeen.",
         "title": "Oma ohjelmisto",
         "loadingDescription": "Odota sen aikaa, kun valmistelemme luetteloa laitteen mukana ostetuista ohjelmistoista.",
@@ -2842,7 +2920,7 @@
                 "yes": "Kyllä",
                 "no": "Ei"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Painike on poistettu käytöstä, jos tallennuslaitteet eivät tue tätä toimintoa, kun laitteisto tietoja ladataan tai jos tarkistus on meneillään."
         },
         "support": {
             "title": "Lataa ammattimaiset vianmääritystyökalut",
@@ -3049,7 +3127,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3259,5 +3354,8 @@
             "subtitle2": "Kaikki samassa: virtaviivaistettu",
             "body2": "9. sukupolven Intel® Core™ -suorittimilla varustetut monitoimitietokoneet ovat tehokkaita pöytäkoneita, joissa on tyylikäs, selkeä ja suuritarkkuuksinen näyttö laitteistoperustaisella suojauksella."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

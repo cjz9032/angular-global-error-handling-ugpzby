@@ -87,7 +87,8 @@
                     "line8": "<b>Rýchle nabíjanie </b><br> Hrajte sa a zvládnite toho viac vďaka rýchlejšiemu nabíjaniu batérie",
                     "line9": "<b>Zámok dotykového panela </b><br> Zabráňte chybným vstupom zakázaním dotykového panela, keď sa hráte",
                     "line10": "<b>Automatické zatvorenie </b><br> Skôr než sa začnete hrať, odstráňte procesy, ktoré na hru nepotrebujete, a maximalizujte dostupné systémové prostriedky",
-                    "line11": "<b>Tepelný režim </b><br> Nastavenie preferovaného profilu zariadenia na ovládanie otáčok ventilátora a chladenia"
+                    "line11": "<b>Tepelný režim </b><br> Nastavenie preferovaného profilu zariadenia na ovládanie otáčok ventilátora a chladenia",
+                    "line12": "<b>Kláves makra</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Umiestnením kurzora myši položky CPU/GPU/RAM a rôzne jednotky zobrazíte ich popisy vrátane informácií o výrobe a modeloch"
@@ -616,7 +617,7 @@
                 "sub2": "Antivírus",
                 "sub3": "Zabezpečenie WiFi",
                 "sub4": "Sila hesla",
-                "sub5": "Internetová ochrana",
+                "sub5": "Zabezpečenie VPN",
                 "sub6": "Windows Hello"
             },
             "support": "Technická podpora",
@@ -644,7 +645,8 @@
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -670,6 +672,9 @@
         },
         "app-update": {
             "message": "Dobrý deň. K dispozícii je novšia verzia aplikácie Vantage, chcete ju načítať?"
+        },
+        "offline": {
+            "connectToUseFeature": "Na používanie tejto funkcie sa pripojte k internetu"
         }
     },
     "privacy": {
@@ -1089,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "Režim napájania Lietadlo",
-                        "description": "Ochrana elektrickej zásuvky lietadla ovládaním spotreby energie systémom.Keď je režim napájania Lietadlo zapnutý, počítač zníži spotrebu energie obmedzením intenzity nabíjania batérie a výkonu systému.",
+                        "description": "Táto funkcia vám umožňuje používať zásuvku so striedavým prúdom v lietadle, pre ktorú sa uplatňuje určitý limit napájania. V tomto režime je spotreba energie vášho počítača obmedzená na bezpečnú úroveň prostredníctvom obmedzenia rýchlosti nabíjania batérie a výkonu počítača.",
                         "checkBoxDesc": "Automatické zisťovanie",
                         "note": "Ak je začiarknuté automatické zisťovanie a počítač zistí prostredie na palube lietadla, automaticky zapne režim napájania V lietadle, ktorý sa vypne, keď palubu lietadla opustíte."
                     },
@@ -1108,7 +1113,7 @@
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibrácia na úplné nabitie",
                         "progressText2": "{{stage}} z {{stageNum}}: Kalibrácia na nízku úroveň nabitia batérie",
-                        "progressText3": "{{stage}} z {{stageNum}}: Kalibrácia na úplné nabitie",
+                        "progressText3": "{{stage}} z {{stageNum}}: Kalibrácia na vysokú úroveň nabitia batérie",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Pred resetovaním ukazovateľa batérie pripojte počítač k zdroju napájania. ",
                         "resetLog": {
@@ -1122,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Zlyhanie: Vyskytla sa neočakávaná chyba."
                         },
                         "popup": {
-                            "description1": "Proces vynulovania prebieha takto:<br>Plne nabite batériu  -->  Plne vybite batériu  -->  Plne nabite batériu",
+                            "description1": "Proces vynulovania prebieha takto:<br>Plne nabite batériu --> Batériu vybite na výkon pri nízkej batérii --> Nabite na kapacitu batérie vysokého výkonu alebo úplne nabite",
                             "description2": "Poznámky: <br>1. Tento proces môže trvať niekoľko hodín. Počas vykonávania tejto činnosti počítač nepoužívajte.<br>2. Ukončite všetky spustené aplikácie a pripojte počítač k zdroju napájania.<br>3. Počas procesu je funkcia hraničnej úrovne nabitia batérie vypnutá.",
                             "continue": "Pokračuj",
                             "cancel": "Zrušiť",
@@ -1139,10 +1144,10 @@
                 },
                 "smartStandby": {
                     "title": "Inteligentný pohotovostný režim",
-                    "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
-                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie je optimalizované na základe nastaveného harmonogramu alebo stanoveného času využívania počítača. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie vtedy, ak sa počas nasledujúcich plánovaných dní nevyužíva.",
+                    "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">moderného pohotovostného režimu</a> pri náročnejšom využívaní.",
+                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie je optimalizované na základe nastaveného harmonogramu, alebo stanoveného času využívania počítača. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie vtedy, ak sa počas nasledujúcich plánovaných dní nevyužíva.",
                     "timer": {
-                        "heading": "Čas, kedy obyčajne využívate svoj počítač",
+                        "heading": "Čas, v ktorom zvyčajne používate počítač:",
                         "subHeading1": "začnete",
                         "subHeading2": "koniec",
                         "subHeading3": "tento plán použiť na",
@@ -1160,14 +1165,14 @@
                     "warningtip": "Vyberte aspoň jeden deň.",
                     "days": {
                         "shortName": {
-                            "sun": "nedeľa",
-                            "mon": "pondelok",
-                            "tue": "utorok",
-                            "wed": "streda",
-                            "thurs": "štvrtok",
-                            "fri": "piatok",
-                            "sat": "sobota",
-                            "thu": "Thu"
+                            "sun": "Ne.",
+                            "mon": "Po.",
+                            "tue": "Ut.",
+                            "wed": "St.",
+                            "thurs": "Št.",
+                            "fri": "Pi.",
+                            "sat": "So.",
+                            "thu": "Št."
                         },
                         "name": {
                             "sun": "nedeľa",
@@ -1184,11 +1189,11 @@
                         "noDaySelected": "Nie je vybratý žiadny deň"
                     },
                     "checkbox": "Automatické prispôsobenie aktívneho času počítača podľa vášho využívania",
-                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktívny čas tabuľky vášho počítača",
+                    "hyperlinkToGraph": "Kliknutím zobrazíte využitie a aplikovaný aktívny čas",
                     "subTitle": "Plánovanie počítača",
                     "automaticMode": "Automatický režim",
                     "manualMode": "Manuálny režim",
-                    "subNote": "Váš počítač je naplánovaný na prepnutie do moderného pohotovostného režimu podľa vášho použitia.",
+                    "subNote": "Na základe používania má počítač nastavené rýchlejšie obnovovanie činnosti.",
                     "graph": {
                         "graph1Tittle": "Použitie tohto počítača",
                         "graph2Tittle": "Aplikovaný aktívny čas",
@@ -1227,7 +1232,8 @@
                     },
                     "description2": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
                     "subTitle2": "Nastavte čas, v ktorom zvyčajne používate počítač",
-                    "oldTooltipText": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie sa optimalizuje podľa vami nastaveného plánu. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie keď sa počas nasledujúcich plánovaných dní nevyužíva."
+                    "oldTooltipText": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie sa optimalizuje podľa vami nastaveného plánu. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie keď sa počas nasledujúcich plánovaných dní nevyužíva.",
+                    "sectionTitle": "Nastavenie pohotovostného režimu"
                 }
             },
             "audio": {
@@ -1331,7 +1337,8 @@
                         "note": {
                             "title": "Poznámka",
                             "description": "Aplikácia Lenovo Vantage potrebuje prístup k lokálnym informáciám na výpočet času západu a východu slnka vo vašej oblasti."
-                        }
+                        },
+                        "tips": "Ak chcete obnoviť režim na ochranu zraku, spustite službu Windows Update alebo manuálne nainštalujte ovládač grafickej karty"
                     },
                     "dispColorTemp": {
                         "title": "Teplota farieb obrazovky",
@@ -1374,6 +1381,17 @@
                         "taskBarDimmer": "ZNÍŽENIE JASU PANELA ÚLOH",
                         "backgroundDimmer": "ZNÍŽENIE JASU POZADIA",
                         "displayDimmer": "ZNÍŽENIE JASU OBRAZOVKY"
+                    },
+                    "displayPriority": {
+                        "title": "Ovládanie priority obrazovky",
+                        "description": "Vaše zariadenie podporuje maximálny počet externých displejov. Pri pripájaní viac ako jedného displeja pomocou týchto ďalších metód bude fungovať iba ten, ktorý má prednosť.<br/>Nižšie si vyberte, ktorý extra spôsob výstupu displeja, sa má uprednostniť:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Dokovanie",
+                            "usb_c_dp": "USB typ-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Voliteľný modul"
+                        }
                     }
                 },
                 "camera": {
@@ -1402,7 +1420,8 @@
                         "caption": "Táto funkcia rozostrí pozadie pri použití kamery na videohovor alebo fotografovanie. Môžete si vybrať z rôznych efektov uvedených nižšie.",
                         "blurMode": "Režim rozostrenia",
                         "comicMode": "Režim komiksu",
-                        "sketchMode": "Režim náčrtu"
+                        "sketchMode": "Režim náčrtu",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "FOTOAPARÁT SA POUŽÍVA",
@@ -1527,7 +1546,60 @@
                 "fnCtrlKey": {
                     "title": "Výmena klávesov Fn a Ctrl",
                     "description": "Ak zvyčajne stlačíte kláves Fn, keď chce stlačiť kláves Ctrl, môžete vymeniť funkcie týchto dvoch klávesov.",
-                    "restartNote": "Výmena funkcie dvoch klávesov vyžaduje reštart počítača. Naozaj chcete počítač reštartovať?"
+                    "restartNote": "Výmena funkcie dvoch klávesov vyžaduje reštart počítača. Naozaj chcete počítač reštartovať?",
+                    "title2": "Kláves Fn funguje rovnako ako kláves Ctrl v prípade často používaných kombinácií klávesov",
+                    "description2": "Kláves Fn funguje rovnako ako kláves Ctrl v prípade niektorých často používaných kombinácií klávesov. Funkcia klávesu Ctrl sa nezmení.",
+                    "featureNote": "Táto funkcia a funkcia prehodenia klávesu Fn a Ctrl nemôžu byť aktivované súčasne. Ak dôjde k aktivácii jednej z nich, druhá sa automaticky vypne.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Klávesy Fn",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Klávesy Ctrl",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Akcia",
+                            "action1": "Vybrať všetko",
+                            "action2": "Kopírovať",
+                            "action3": "Pridať webovú stránku medzi obľúbené položky",
+                            "action4": "Hľadať",
+                            "action5": "Vyhľadať a nahradiť v programe Microsoft Word",
+                            "action6": "Zarovnať doľava a doprava v programe Microsoft Word",
+                            "action7": "Ukončiť (v podporovanej aplikácii)",
+                            "action8": "Pridať podčiarknutie",
+                            "action9": "Vložiť",
+                            "action10": "Zatvoriť (podľa aplikácie)",
+                            "action11": "Vystrihnúť",
+                            "action12": "Znova",
+                            "action13": "Späť"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "VIAC",
@@ -1537,16 +1609,16 @@
                     "less": "MENEJ"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Podsvietenie klávesnice",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Aktivujte podsvietenie klávesnice a uľahčite si písanie v tme alebo pri slabom svetle. Nastavenia podsvietenia klávesnice môžete zmeniť aj stlačením klávesov Fn+medzerník.",
+                        "auto": "Aktivujte podsvietenie klávesnice a uľahčite si písanie v tme alebo pri slabom svetle. Nastavenia podsvietenia klávesnice môžete zmeniť stlačením klávesov Fn+medzerník alebo nastaviť na možnosť \"Auto\". Pri možnosti \"Auto\" sa podsvietenie klávesnice upraví automaticky podľa okolitého svetla."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automaticky",
+                        "low": "Nízke",
+                        "high": "Vysoké",
+                        "off": "Vyp."
                     }
                 }
             }
@@ -1709,12 +1781,12 @@
             "superResolution": {
                 "heading": "Inteligentné médiá",
                 "title": "Zvýšenie rozlíšenia videa",
-                "desc": "<p><label>Táto funkcia zlepšuje zážitok z prehrávania videa zvýšením rozlíšenia videa. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label> Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Ak je povolená, odporúča sa pripojiť počítač k zdroju napájania.</label></p>",
-                "tooltip": "Táto funkcia funguje iba pri použití týchto prehrávačov: <br/> Windows Media player",
+                "desc": "<p><label>Táto funkcia zlepšuje zážitok z prehrávania videa zvýšením rozlíšenia videa. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu. V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
+                "tooltip": "Táto funkcia funguje iba na:<br>Windows Media player",
                 "note": {
                     "description": "Funkcia nefunguje v týchto prípadoch:",
-                    "description1": "Počítač nie je pripojený k zdroju napájania a batéria je nabitá na menej než 20 %.",
-                    "description2": "Počítač nie je pripojený k zdroju napájania a je zapnutý šetriaci režim batérie.",
+                    "description1": "Počítač nie je pripojený k napájaciemu adaptéru.",
+                    "description2": "Režim úspory batérie je povolený.",
                     "description3": "Teplota procesora je príliš vysoká."
                 }
             },
@@ -1871,7 +1943,7 @@
             "localRepositoryDatabaseException": "Databáza lokálneho odkladacieho priestoru sa nenašla alebo je poškodená.",
             "networkInterruptedException": "Server systémových aktualizácií je momentálne nedostupný. Skúste to znova neskôr.",
             "helpCenterInvalidServerException": "Server systémových aktualizácií je neplatný. Skúste to znova neskôr.",
-            "catalogNotFoundException": "Pre váš systém sa nenašli žiadne použiteľné aktualizácie.",
+            "catalogNotFoundException": "Pre váš systém sa nenašli žiadne použiteľné aktualizácie, pretože sa nenašiel katalóg aktualizácií.",
             "catalogCrcErrorException": "Katalóg pre váš systém sa práve aktualizuje. Skúste to znova neskôr.",
             "catalogErrorException": "Zistila sa chyba katalógu aktualizácií pre váš systém na serveri systémových aktualizácií. Skúste to znova neskôr.",
             "fileNotFoundException": "Súbor sa nenašiel."
@@ -1979,7 +2051,7 @@
             "visitHde": "Navštíviť stránku o šifrovaní pevného disku",
             "haveOwnPassword": "Mám vlastného správcu hesiel",
             "haveOwnWifi": "Mám vlastné zabezpečenie bezdrôtového pripojenia",
-            "haveOwnVpn": "Mám vlastné zabezpečenie pomocou VPN",
+            "haveOwnVpn": "Mám vlastnú VPN",
             "uac": "Kontrola používateľských kont (UAC)",
             "uacTitles": "Kontrola používateľských kont",
             "hde": "Šifrovanie pevného disku",
@@ -2095,7 +2167,8 @@
                 "showmore": "Zobraziť viac",
                 "showless": "Zobraziť menej",
                 "button": "Zapnúť zabezpečenie WiFi",
-                "disableDecribe": "Zabezpečenie WiFi od spoločnosti Lenovo je pokročilá cloudová softvérová služba, ktorá pomáha vášmu zariadeniu odlíšiť bezpečné bezdrôtové siete od tých potenciálne škodlivých."
+                "disableDescribe": "Zabezpečenie WiFi od spoločnosti Lenovo je pokročilá cloudová softvérová služba, ktorá pomáha vášmu zariadeniu odlíšiť bezpečné bezdrôtové siete od tých potenciálne škodlivých.",
+                "enabledDescribe": "Zabezpečenie Wi-Fi od spoločnosti Lenovo v súčasnosti monitoruje aktivitu vo vašej sieti WiFi."
             },
             "threatlocator": {
                 "describe": "Pomocou funkcie Detektor hrozieb určte bezpečnosť okolitých sietí.",
@@ -2129,7 +2202,8 @@
                 "subtitle": "Pokoj v duši",
                 "subtitleDescribe": "Služba Zabezpečenie prepojenej domácnosti vám odošle varovanie, ak odhalí zraniteľnosť zariadenia alebo domácej siete, prípadne ak ste pripojení k potenciálne škodlivej sieti. Ďalšie informácie o zabezpečení pripojenej domácnosti získate <tag>tu</tag>.",
                 "tryNow": "Vyskúšať teraz",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Zadajte pozývací kód",
@@ -2204,7 +2278,8 @@
             "getStarted1": "Kliknite na tlačidlo „Otvoriť SurfEasy“ uvedené vyššie a spustite aplikáciu SurfEasy VPN.",
             "getStarted2": "Zapnite službu VPN a chvíľu počkajte na potvrdenie zabezpečeného pripojenia.",
             "getStarted3": "V prípade potreby zmeňte svoj región alebo polohu a používajte bezpečnú a súkromnú sieť.",
-            "poweredBySurfEasy": "Využíva technológiu SurfEasy"
+            "poweredBySurfEasy": "Využíva technológiu SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "SPRÁVCA HESIEL DASHLANE",
@@ -2232,7 +2307,8 @@
             "allowsYou2": "Slúži na sledovanie výskytu vašich údajov na temnom webe",
             "allowsYou3": "Zostaňte v bezpečí v nezabezpečených WiFi sieťach vďaka integrovanému VPN",
             "allowsYou4": "Bezpečne zdieľajte heslá bez ich odhalenia",
-            "poweredByDashLane": "Využíva technológiu Dashlane"
+            "poweredByDashLane": "Využíva technológiu Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2304,7 +2380,7 @@
     "faq": {
         "footer": {
             "title": "Nenašli ste to, čo hľadáte?",
-            "description": "POTREBNÉ ĎALŠIE PODPORY? NEZABUDNITE KONTAKTUJTE NÁS VIA:",
+            "description": "Potrebujete ďalšiu podporu? Neváhajte nás kontaktovať prostredníctvom:",
             "body": "Spoločnosť Lenovo",
             "button": "GO TO FORUM"
         },
@@ -2709,7 +2785,7 @@
         "deviceStatisticsDescription": "Odosielajte anonymné údaje zariadenia, aby ste nám pomohli zlepšiť kvalitu, spoľahlivosť a novú generáciu zariadení.",
         "userProfile": "Profil používateľa",
         "Note": "Poznámka: ",
-        "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie.",
+        "settingsNotes": "Znova spustite túto aplikáciu, aby ste sa uistili, že sa všetky zmeny prejavia.",
         "betaSettingTitle": "Program Beta",
         "betaProgram": "Program Beta",
         "betaSettingDescription": "Vyskúšajte najnovšie funkcie, na ktorých pracujeme."
@@ -2733,6 +2809,8 @@
         "noteDownloadAvailable": "Poznámka: Po kliknutí na tlačidlo Stiahnuť sa môže zobraziť výzva systému Windows na povolenie inštalácie softvéru do vášho zariadenia. Po dokončení inštalácie sa aplikácia automaticky zobrazí na pracovnej ploche alebo v ponuke Štart.<br /><br />Môžete zatvoriť stránku Môj softvér a pokračovať v používaní aplikácie Lenovo Vantage. Počas inštalácie nezatvárajte aplikáciu Lenovo Vantage.",
         "sizeText": "Rozmery",
         "versionText": "Verzia",
+        "redemptionCode": "Kód uplatnenia:",
+        "redeemWebsite": "Uplatnite na webovej stránke dodávateľa",
         "softwareDescription": "Ak chcete používať softvér, ktorý ste kúpili spolu so zariadením, nižšie kliknite na tlačidlo Stiahnuť. Ak budete potrebovať znova stiahnuť softvér, môžete to urobiť kliknutím na tlačidlo „Môj softvér“ v ponuke aplikácie Vantage.",
         "title": "Môj softvér",
         "loadingDescription": "Počkajte, kým pripravíme zoznam softvéru, ktorý ste zakúpili spolu so zariadením.",
@@ -2842,7 +2920,7 @@
                 "yes": "Áno",
                 "no": "Nie"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Tlačidlo je vypnuté, ak táto funkcia nie je podporovaná úložnými zariadeniami počas načítavania informácií o hardvéri ako aj počas kontroly."
         },
         "support": {
             "title": "Stiahnite si profesionálne diagnostické nástroje",
@@ -3049,7 +3127,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3259,5 +3354,8 @@
             "subtitle2": "Počítače All-in-One: stolové počítače jednoduchšie",
             "body2": "Počítače All-in-One s procesormi Intel® Core™ 9. generácie vám poskytnú všetok výkon stolového počítača skrytého v elegantnej obrazovke. Vychutnávajte si väčší poriadok na stole, hardvérového zabezpečenie a obrazovku s vysokým rozlíšením."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

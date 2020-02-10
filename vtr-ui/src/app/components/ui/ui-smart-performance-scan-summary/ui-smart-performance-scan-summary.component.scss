@@ -789,7 +789,7 @@ vtr-ui-smart-performance-scan-summary {
 	}
 	.cancel-link {
 		color: $main;
-		font-size: 1.5rem;
+		font-size: $fontsize_xs;
 		text-decoration: underline;
 		vertical-align: middle;
 		padding: 1rem 3rem;

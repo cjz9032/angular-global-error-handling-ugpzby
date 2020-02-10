@@ -5,7 +5,8 @@
 	z-index: 2;
 	.widget-container {
 		border-radius: $border_radius;
-		background: $dark_cell;
+		//background: $dark_cell;
+		background:$gaming_darkest;
 		box-shadow: $drop_shadow_gaming;
 		padding: 2rem 4rem 3.5rem 4rem;
 		height:auto;	
@@ -96,7 +97,8 @@
 			}
 			.monitor-section {
 				border-radius: $border_radius_sm;
-				background-color: $gaming_darkest;
+				//background-color: $gaming_darkest;
+				background-color:$gaming_bg;
 				height: 24rem;
 				position: relative;
 				@media #{$breakpoint_xl3} {
@@ -109,8 +111,8 @@
 					position:absolute;
 					width: 100%;		
 					border-radius: $border_radius_sm;		
-					background-color: $gaming_darkest;
-					border: 1px solid $gaming_darkest;
+					background-color: $gaming_bg;
+					border: 1px solid $gaming_bg;
 					@media #{$breakpoint_md} {
 						float:left;	
 						padding-bottom:2rem;
@@ -426,7 +428,7 @@
 						top: 1.75rem;
 						left: 1.75rem;
 						border-radius: 50%;
-						border: 0.75rem solid $gaming_darkest;
+						border: 0.75rem solid $gaming_bg;
 						@media #{$breakpoint_xl3} {
 							top: 1rem;
 							left: 1rem;
@@ -494,7 +496,7 @@
 								position: absolute;
 								left: 0;
 								border-radius: 50%;
-								background-color: $gaming_darkest;
+								background-color: $gaming_bg;
 								@media #{$breakpoint_xl3} {
 									width: 27rem;
 									height: 27rem;
@@ -582,7 +584,7 @@
 							top: 50%;
 							left: 50%;
 							transform: translateX(-50%) translateY(-50%);
-							background-color: $gaming_darkest;
+							background-color: $gaming_bg;
 							width: 21.5rem;
 							height: 21.5rem;
 							border-radius: 50%;
@@ -677,7 +679,7 @@
 								flex-direction: column; 
 								min-height:6rem;
 								left: 50%;
-								min-width:28rem;
+								min-width:26rem;
 								padding:1.25rem;
 								transform: translate(-50%);							
 								p{
@@ -777,7 +779,7 @@
 							flex-direction: column; 
 							min-height:6rem;
 							left: 50%;
-							min-width:28rem;
+							min-width:26rem;
 							padding:1.25rem;
 							transform: translate(-50%);							
 							p{
@@ -826,7 +828,7 @@
 							}
 							.hd-status {
 								color: $shade;
-								font-size: 1.2rem;
+								font-size: 1.1rem;
 								line-height: 1.9rem;
 							}
 						}
@@ -883,7 +885,7 @@
 										height: 100%;
 										position: absolute;
 										left: 0;
-										background-color: $gaming_hdd_ring;
+										background-color: $gaming_bg;
 										@media #{$black-on-white}{
 											background-color: $high-contrast-grey;
 										}
@@ -895,7 +897,7 @@
 								&.right {
 									left: 50%;
 									.mask-obj {
-										background-color: $gaming_hdd_ring;
+										background-color: $gaming_bg;
 										content: "";
 										position: absolute;
 										width: 100%;

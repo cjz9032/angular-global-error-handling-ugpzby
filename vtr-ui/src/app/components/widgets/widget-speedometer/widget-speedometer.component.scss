@@ -77,13 +77,13 @@
 							position: absolute;
 							left: 0;
 							border-radius: 50%;
-							background-color: $gaming_darkest;
+							background-color: $gaming_bg;
 						}
 					}
 					&.right {
 						left: 19rem;
 						.mask-obj {
-							background-color: $gaming_dark;
+							background-color: $gaming_darkest;
 							content: "";
 							position: absolute;
 							width: 17.25rem;

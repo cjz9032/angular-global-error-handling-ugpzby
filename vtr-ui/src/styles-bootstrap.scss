@@ -35,6 +35,10 @@
 	margin-top: 4rem !important;
 }
 
+.mb-20 {
+	margin-bottom: 2rem !important;
+}
+
 .mb-40 {
 	margin-bottom: 4rem !important;
 }
@@ -166,7 +170,7 @@
 // override for bootstrap modal size
 .battery-modal-size .modal-dialog {
 	max-width: 150rem;
-	top: $modal_top_margin;
+	//top: $modal_top_margin;
 }
 
 // feedback modal start:

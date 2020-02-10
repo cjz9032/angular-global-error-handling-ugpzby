@@ -1,6 +1,6 @@
 <div class="vtr-camera-control">
 	<div class="row">
-		<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 pl-0 pr-0">
+		<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 pl-0 pr-0">
 			<div class="camera-preview">
 				<video #cameraPreview
 					*ngIf="!disabledAll && !isCameraInErrorState"
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 camera-details">
+		<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 camera-details">
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item"
 					*ngIf="cameraSettings.brightness && cameraSettings.brightness.supported">
@@ -40,7 +40,7 @@
 						[manualRefresh]="manualRefresh"
 						[enableSlider]="disabledAll"
 						[(value)]="cameraSettings.brightness.value"
-						(change)="onBrightnessSliderChange($event)"
+						(sliderChange)="onBrightnessSliderChange($event)"
 						[rangeSliderId]="'cameraSettings-brightness'">
 					</vtr-ui-range-slider>
 				</li>
@@ -58,7 +58,7 @@
 						[manualRefresh]="manualRefresh"
 						[enableSlider]="disabledAll"
 						[(value)]="cameraSettings.contrast.value"
-						(change)="onContrastSliderChange($event)"
+						(sliderChange)="onContrastSliderChange($event)"
 						[rangeSliderId]="'cameraSettings-contrast'">
 					</vtr-ui-range-slider>
 				</li>
@@ -86,7 +86,7 @@
 						[enableSlider]="disabledAll"
 						[manualRefresh]="manualRefresh"
 						[(value)]="cameraSettings.exposure.value"
-						(change)="onExposureSliderChange($event)"
+						(sliderChange)="onExposureSliderChange($event)"
 						[rangeSliderId]="'cameraSettings-autoExposure'">
                     </vtr-ui-range-slider>
                 </div>

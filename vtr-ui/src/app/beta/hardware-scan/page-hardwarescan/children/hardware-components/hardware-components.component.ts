@@ -35,8 +35,6 @@ const ViewResultsButton = 'ViewResults'
 
 export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
-	public viewResultsText = this.translate.instant('hardwareScan.viewResults');
-	public refreshText = this.translate.instant('hardwareScan.refreshModule');
 	public viewResultsPath = '';
 	public resultItems: any;
 	public hardwareTitle = '';
@@ -446,7 +444,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				backdrop: 'static',
 				size: 'lg',
 				centered: true,
-				windowClass: 'schedule-new-modal-size'
+				windowClass: 'hardware-scan-modal-size'
 			});
 			modalRef.componentInstance.moduleNames = brokenModules;
 			modalRef.componentInstance.setUrl(fullUrl);
@@ -635,7 +633,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,
-					windowClass: 'schedule-new-modal-size'
+					windowClass: 'hardware-scan-modal-size'
 				});
 
 				this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
@@ -692,6 +690,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				resultCode: module.resultCode,
 				information: module.description,
 				collapsed: false,
+				icon: this.hardwareScanService.getHardwareComponentIcon(module.id),
 				details: [],
 				listTest: []
 			};

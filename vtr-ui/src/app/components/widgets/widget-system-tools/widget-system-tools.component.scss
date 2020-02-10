@@ -9,7 +9,8 @@
 	}
 	.widget-container {
 		border-radius: $border_radius;
-		background: $dark_cell;
+		//background: $dark_cell;
+		background:$gaming_darkest;
 		box-shadow: $drop_shadow_gaming;
 		padding: 4rem;
 		@media #{$breakpoint_xl} {
@@ -61,7 +62,7 @@
 						width: 8rem;
 						border-radius: 50%;
 						margin: auto;
-						background: $gaming_dark;
+						background: $gaming_bg;
 						position: relative;
 						z-index: 1;
 						box-sizing: border-box;
@@ -92,7 +93,7 @@
 							bottom: 0;
 							right: 0;
 							margin: 0;
-							background: $gaming_dark;
+							background: $gaming_darkest;
 							z-index: 0;
 							transition: all .3s ease-in-out;
 						}
@@ -100,7 +101,7 @@
 							position: relative;
 							z-index: 2;
 							font-size: 3.5rem;
-							background: $gaming_icon_gradient;
+							background: $gaming_bg;
 							-webkit-background-clip: text;
 							-webkit-text-fill-color: transparent;
 							background-clip: text;

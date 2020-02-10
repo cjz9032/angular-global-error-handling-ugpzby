@@ -74,7 +74,7 @@
 			input {
 				height: 3rem;
 				width: 6rem;
-				background: $gaming_shade;
+				background: $white5;
 				font-size: 1.6rem;
 				color: $gaming_lightest;
 				border: none;
@@ -113,7 +113,7 @@
 		background: $gradient_main;
 		border-radius: 0.5rem;
 		color: $light;
-		font-size: 1.8rem;
+		font-size: $fontsize_sm;
 		font-weight: 500;
 		margin-left: -3rem;
 		min-width: 14rem;

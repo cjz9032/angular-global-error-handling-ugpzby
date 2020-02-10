@@ -12,6 +12,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
+//cpt
+import { environment } from 'src/environments/environment';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -24,6 +26,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	title = 'support.common.getSupport';
 	searchWords = '';
 	searchCount = 1;
+	offlineConnection = 'offline-connection';
 	emptyArticles = {
 		leftTop: [],
 		middleTop: [],
@@ -98,6 +101,14 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		metricsEvent: 'FeatureClick',
 		metricsParent: 'Page.Support'
 	};
+
+	//cpt 
+	private isCPTEnabled = true;
+	listCpt = {
+		iconPath: 'assets/images/support/svg_icon_cpt.svg',
+		title: 'cpt.title',
+		clickItem: 'cpt'
+	};
 	offlineImages = [
 		'assets/images/support/support-offline-1.jpg',
 		'assets/images/support/support-offline-2.jpg',
@@ -137,6 +148,9 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.fetchCMSArticleCategory();
 		this.fetchCMSContents();
 		this.setShowList();
+
+		//cpt
+		this.isCPTEnabled = (typeof environment !== 'undefined' ? environment.isCPTEnabled : true);
 	}
 
 	ngOnDestroy() {
@@ -185,24 +199,33 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			this.supportDatas.needHelp.splice(1, 0, this.listContactCustomerService);
 		});
 		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
+		
+		//cpt
+		if(this.isCPTEnabled){
+			this.supportDatas.quicklinks.push(this.listCpt);
+		}
+		
 	}
 
 	getWarrantyInfo() {
-		this.warrantyService.getWarrantyInfo().subscribe((value) => {
-			if (value) {
-				this.warrantyData = {
-					info: {
-						startDate: value.startDate,
-						endDate: value.endDate,
-						status: value.status,
-						dayDiff: value.dayDiff,
-						url: this.warrantyService.getWarrantyUrl()
-					},
-					cache: true
-				};
-				this.warrantyYear = this.warrantyService.getRoundYear(value.dayDiff);
-			}
-		});
+		const info = this.warrantyService.getWarrantyInfo();
+		if (info) {
+			info.subscribe((value) => {
+				if (value) {
+					this.warrantyData = {
+						info: {
+							startDate: value.startDate,
+							endDate: value.endDate,
+							status: value.status,
+							dayDiff: value.dayDiff,
+							url: this.warrantyService.getWarrantyUrl()
+						},
+						cache: true
+					};
+					this.warrantyYear = this.warrantyService.getRoundYear(value.dayDiff);
+				}
+			});
+		}
 	}
 
 	fetchCMSContents(lang?: string) {

@@ -4,7 +4,7 @@
 	.title-blck{
 		.left-icon {
 			display: inline-block;
-			font-size: $section_header;
+			font-size: $fontsize_md;
 			height: 1em;
 			width: 1.12em;
 			color:$menu_hover;
@@ -12,8 +12,8 @@
 			vertical-align: -0.12em;
 		}
 		.title {
-			font-size: $section_header;
-			color: $main_darker;
+			font-size: $fontsize_md;
+			color: $purple_navy;
 			font-weight: $weight_light;
 			letter-spacing: 0.05rem;
 			text-transform: none;
@@ -21,14 +21,15 @@
 	}
 	.caption {
 		.text{
-			font-size: $body;
+			font-size: $fontsize_xs;
 			font-weight: $weight_light;
-			color: $main_darker;
+			color:$grey_dark;
 		}
-		max-width: 60rem;
+		// max-width: 60rem;
+		padding-left: 3rem;
 	}
 	.link-text {
-		font-size: $caption;
+		font-size: $fontsize_xs2;
 		font-weight: $weight_bold;
 		text-decoration: underline;
 		letter-spacing: 0.05rem;

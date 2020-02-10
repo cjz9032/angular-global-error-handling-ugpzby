@@ -10,7 +10,7 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			<div class="row pt-5 smartsettings-card"
+			<div class="row pt-5 smart-settings-card"
 				*ngIf="dolbyModeResponse.available"
 				id="audio">
 				<div class="col-12 mx-auto">
@@ -95,7 +95,7 @@
 					</vtr-container-collapsible>
 				</div>
 			</div>
-			<div class="row py-5 smartsettings-card"
+			<div class="row py-5 smart-settings-card"
 				id="microphone">
 				<div class="col-12 mx-auto container-card ">
 					<vtr-container-collapsible componentName="Microphone"
@@ -156,7 +156,7 @@
 												[minValue]="0"
 												[maxValueLegend]="'device.deviceSettings.audio.microphone.volume.options.loud' | translate"
 												[maxValue]="100"
-												(change)="setVolume($event)"
+												(sliderChange)="setVolume($event)"
 												[enableSlider]="!microphoneProperties.permission"
 												[value]="microphoneProperties.volume"
 												[manualRefresh]="manualRefresh"
@@ -167,7 +167,7 @@
 									</div>
 								</vtr-ui-row-switch>
                             </li>
-                            <div *ngIf="microphoneProperties?.currentMode!='NotSupported'">
+                            <div *ngIf="microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine">
 							<li class=""
 								*ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
 								<vtr-ui-row-switch
@@ -237,6 +237,8 @@
 											[disabled]="microphoneProperties.disableEffect"
 											(optionChange)="onOptimizeModesRadioChange($event)"
 											[processIcon]="true"
+											[hideIcon]="optimizeMode === 'Normal'"
+											[customIcon]="optimizeMode === 'Normal' ? 'LE-VoiceRecognition2x': ''"
 											[textId]="'myDevice-settings-audio-microphone-optimize'">
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>

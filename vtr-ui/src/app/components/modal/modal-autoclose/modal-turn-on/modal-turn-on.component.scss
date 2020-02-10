@@ -140,7 +140,7 @@ ui-popover-turn-on {
 	}
 
 	h1 {
-		font-size: 2.5rem;
+		font-size: $fontsize_xl;
 		font-weight: normal;
 		color: $blue-dark;
 		padding-right: 2.5rem;
@@ -165,7 +165,7 @@ ui-popover-turn-on {
 		background: $gradient_main;
 		border-radius: 3rem;
 		color: $light;
-		font-size: 2rem;
+		font-size: 1.6rem;
 		padding: 1rem 3rem;
 		margin-top: 1rem;
 		font-weight: $weight_600;
@@ -175,9 +175,9 @@ ui-popover-turn-on {
 		}
 	}
 	.cancel-link {
-		height: 3.2rem;
+		height: 2.5rem;
 		color: $btn_secondary_color;
-		font-size: 2rem;
+		font-size: $fontsize_sm;
 		vertical-align: middle;
 		padding: 0 0.5rem;
 		font-weight: $weight_600;

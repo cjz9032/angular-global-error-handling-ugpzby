@@ -42,6 +42,8 @@
 			opacity: 1;
 		}
 	}
+	
+	
 	.gaming-tooltip {
 		padding: 2rem;
 		background: $gaming_lightest;
@@ -53,6 +55,9 @@
 		z-index: 99;
 		bottom: 1rem;
 		min-width: 40rem;
+		@media screen and (min-width: 991.99px) and (max-width: 992.99px) {
+			min-width: 34rem;
+		}
 		left: 50%;
 		transform: translate(-50%);
 		opacity: 0;
@@ -224,6 +229,16 @@
 				border-radius: 0.4rem;
 				font-size: 1.4rem;
 				color: $gaming_dark;
+			}
+		}
+	}
+}
+
+::ng-deep {
+	.record-list-wrapper {
+		.select-box { 
+			.gaming-tooltip {
+				left: -500px !important;
 			}
 		}
 	}

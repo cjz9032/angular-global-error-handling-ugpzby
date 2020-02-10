@@ -1,35 +1,53 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { BatteryCardComponent } from './battery-card.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { TranslateStore } from '@ngx-translate/core';
-import { HttpClientModule } from '@angular/common/http';
-import { CommonService } from 'src/app/services/common/common.service';
 import { RouterTestingModule } from '@angular/router/testing';
-import { TranslationModule } from 'src/app/modules/translation.module';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
+
+import { BatteryCardComponent } from './battery-card.component';
+
+import { CommonService } from 'src/app/services/common/common.service';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
-import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
-import { BatteryStatus } from 'src/app/enums/battery-conditions.enum';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import {
+	TranslateModule,
+	TranslateService,
+	TranslateLoader
+} from '@ngx-translate/core';
+import { HttpLoaderFactory } from 'src/app/modules/translation.module';
+import {
+	BatteryStatus,
+	BatteryConditionsEnum
+} from 'src/app/enums/battery-conditions.enum';
+import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
+import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
+import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
 
-describe('BatteryCardComponent', () => {
-	// let component: BatteryCardComponent;
-	// let fixture: ComponentFixture<BatteryCardComponent>;
-	let commonService: CommonService;
-	let debugElement;
-	let batteryService;
-	let modalService;
+// declare var Windows;
 
-	const info = {
-		batteryInformation: [{
+const info = {
+	batteryInformation: [
+		{
 			heading: '',
-			chargeStatusString: 'device.deviceSettings.batteryGauge.details.chargeStatusString.charging',
-			remainingTimeText: 'device.deviceSettings.batteryGauge.details.chargeCompletionTime',
+			chargeStatusString:
+				'device.deviceSettings.batteryGauge.details.chargeStatusString.charging',
+			remainingTimeText:
+				'device.deviceSettings.batteryGauge.details.chargeCompletionTime',
 
 			barCode: 'X2XP899J0N0',
-			batteryCondition: ['Normal'],
+			batteryCondition: [
+				'Normal',
+				'hightemperature',
+				'tricklecharge',
+				'overheatedbattery',
+				'permanenterror',
+				'unsupportedbattery'
+			],
 			batteryHealth: 0,
 			chargeStatus: 2,
 			cycleCount: 138,
@@ -48,535 +66,237 @@ describe('BatteryCardComponent', () => {
 			temperature: 34,
 			voltage: 10.843,
 			wattage: 9
-		}],
-		batteryIndicatorInfo: {
-			acAdapterStatus: 'Supported',
-			acAdapterType: 'Legacy',
-			acWattage: 0,
-			isAirplaneModeEnabled: false,
-			isAttached: false,
-			isExpressCharging: false,
-			isPowerDriverMissing: false,
-			percentage: 75,
-			time: 204,
-			timeType: 'timeRemaining'
 		}
-	};
+	],
+	batteryIndicatorInfo: {
+		acAdapterStatus: 'Supported',
+		acAdapterType: 'Legacy',
+		acWattage: 0,
+		isAirplaneModeEnabled: false,
+		isAttached: false,
+		isExpressCharging: false,
+		isPowerDriverMissing: false,
+		percentage: 75,
+		time: 204,
+		timeType: 'timeRemaining'
+	}
+};
 
-	const conditions: BatteryConditionModel[] = [
-		{
-			condition: 0, conditionStatus: 0,
-			getBatteryConditionTip() {
-				return 'device.deviceSettings.batteryGauge.condition.Normal';
-			}
-		},
-		{
-			condition: 16, conditionStatus: 3,
-			getBatteryConditionTip() {
-				return 'device.deviceSettings.batteryGauge.condition.LimitedACAdapterSupport';
-			}
-		},
-		{
-			condition: 11, conditionStatus: 1,
-			getBatteryConditionTip() {
-				return 'device.deviceSettings.batteryGauge.condition.UnsupportedBattery';
-			}
-		},
-		{
-			condition: 11, conditionStatus: 1,
-			getBatteryConditionTip() {
-				return 'device.deviceSettings.batteryGauge.condition.NonThinkPadBattery';
-			}
-		}
-	];
+const batteryGuage = {
+	acAdapterStatus: 'Supported',
+	acAdapterType: 'Legacy',
+	acWattage: 0,
+	isAirplaneModeEnabled: false,
+	isAttached: false,
+	isExpressCharging: false,
+	isPowerDriverMissing: true,
+	percentage: 75,
+	time: 204,
+	timeType: 'timeRemaining'
+};
 
-	const thresholdNotification: AppNotification = {
-		type: ChargeThresholdInformation.ChargeThresholdInfo,
-		payload: true
-	};
-
-	const airplaneModeNotification: AppNotification = {
-		type: 'AirplaneModeStatus',
-		payload: true
-	};
-
-
-
+describe('BatteryCardComponent', () => {
+	let component: BatteryCardComponent;
+	let fixture: ComponentFixture<BatteryCardComponent>;
+	let commonService: CommonService;
+	let batteryDetailService: BatteryDetailService;
+	let shellService: VantageShellService;
+	let logger: LoggerService;
+	let translate: TranslateService;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [BatteryCardComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [TranslationModule, HttpClientModule, RouterTestingModule],
-			providers: [TranslateStore]
-		});
+			imports: [
+				TranslateModule.forRoot({
+					loader: {
+						provide: TranslateLoader,
+						useFactory: HttpLoaderFactory,
+						deps: [HttpClient]
+					}
+				}),
+				HttpClientTestingModule,
+				RouterTestingModule
+			],
+			declarations: [BatteryCardComponent],
+			providers: [
+				CommonService,
+				BatteryDetailService,
+				VantageShellService,
+				LoggerService,
+				NgbModal
+			]
+		}).compileComponents();
+
+		fixture = TestBed.createComponent(BatteryCardComponent);
+		component = fixture.componentInstance;
+		commonService = TestBed.get(CommonService);
+		batteryDetailService = TestBed.get(BatteryDetailService);
+		shellService = TestBed.get(VantageShellService);
+		logger = TestBed.get(LoggerService);
 	}));
 
-	describe(':', () => {
-
-		function setup() {
-			const fixture = TestBed.createComponent(BatteryCardComponent);
-			const component = fixture.componentInstance;
-			commonService = fixture.debugElement.injector.get(CommonService);
-			batteryService = fixture.debugElement.injector.get(BatteryDetailService);
-			modalService = fixture.debugElement.injector.get(NgbModal);
-
-			return { fixture, component, commonService, batteryService, modalService };
-		}
-
-		afterEach(() => {
-			const { component } = setup();
-			component.isLoading = false;
-		});
-
-		it('should create app', () => {
-			const { component } = setup();
-			expect(component).toBeTruthy();
-		});
-
-		it('#ngOnInit should call getBatteryDetailOnCard', () => {
-			const { fixture, component } = setup();
-			spyOn(component, 'getBatteryDetailOnCard');
-			fixture.detectChanges();
-			component.ngOnInit();
-			expect(component.getBatteryDetailOnCard).toHaveBeenCalled();
-		});
-
-		it('#onPowerSupplyStatusEvent should set batteryInfo, batteryGauge and call updateBatteryDetails', () => {
-			const { component } = setup();
-			spyOn(component, 'updateBatteryDetails');
-			component.onPowerSupplyStatusEvent(info);
-			expect(component.batteryInfo).toEqual(info.batteryInformation);
-			expect(component.batteryGauge).toEqual(info.batteryIndicatorInfo);
-			expect(component.updateBatteryDetails).toHaveBeenCalled();
-		});
-
-		it('#onRemainingPercentageEvent should set batteryInfo, batteryGauge and call updateBatteryDetails', () => {
-			const { component } = setup();
-			spyOn(component, 'updateBatteryDetails');
-			component.onRemainingPercentageEvent(info);
-			expect(component.batteryInfo).toEqual(info.batteryInformation);
-			expect(component.batteryGauge).toEqual(info.batteryIndicatorInfo);
-			expect(component.updateBatteryDetails).toHaveBeenCalled();
-		});
-
-		it('#onRemainingTimeEvent should set batteryInfo, batteryGauge and call updateBatteryDetails', () => {
-			const { component } = setup();
-			spyOn(component, 'updateBatteryDetails');
-			component.onRemainingTimeEvent(info);
-			expect(component.batteryInfo).toEqual(info.batteryInformation);
-			expect(component.batteryGauge).toEqual(info.batteryIndicatorInfo);
-			expect(component.updateBatteryDetails).toHaveBeenCalled();
-		});
-
-		it('#getBatteryDetails should get battery information', async () => {
-			const { fixture, component, batteryService } = setup();
-			spyOn(batteryService, 'getBatteryDetail').and.returnValue(Promise.resolve(info));
-			await component.getBatteryDetails(false);
-			fixture.detectChanges();
-			expect(batteryService.getBatteryDetail).toHaveBeenCalled();
-			expect(component.batteryInfo).toEqual(info.batteryInformation);
-			expect(component.batteryGauge).toEqual(info.batteryIndicatorInfo);
-		});
-
-		it('#onNotification should show threshold warning note and call sendThresholdWarning', () => {
-			const { fixture, component } = setup();
-			fixture.detectChanges();
-			const notification = thresholdNotification;
-			component.onNotification(notification);
-			expect(component.batteryIndicator.isChargeThresholdOn).toEqual(notification.payload);
-		});
-
-		it('#onNotification should show Airplane mode Icon inside battery', () => {
-			const { component } = setup();
-			const notification = airplaneModeNotification;
-			component.onNotification(notification);
-			expect(component.batteryIndicator.isAirplaneMode).toEqual(notification.payload);
-		});
-
-		it('#initBatteryInformation should set undefined battery properties to default values', () => {
-			const { component } = setup();
-			component.batteryGauge = info.batteryIndicatorInfo;
-			component.batteryInfo = info.batteryInformation;
-
-			component.batteryGauge.isExpressCharging = undefined;
-			component.batteryGauge.percentage = undefined;
-			component.batteryInfo[0].batteryCondition = [];
-
-			component.initBatteryInformation();
-			expect(component.batteryGauge.isExpressCharging).toBeFalsy();
-			expect(component.batteryGauge.percentage).toEqual(0);
-			expect(component.batteryInfo[0].batteryCondition).toEqual(['Normal']);
-		});
-
-		it('#updateBatteryDetails should call initBatteryInformation, initialize batteryIndicator and call getBatteryCondition', () => {
-			const { fixture, component } = setup();
-			component.batteryGauge = info.batteryIndicatorInfo;
-			component.batteryInfo = info.batteryInformation;
-
-			spyOn(component, 'initBatteryInformation');
-			spyOn(component, 'getBatteryCondition');
-			spyOn(component, 'updateBatteryDetails').and.callThrough();
-			fixture.detectChanges();
-
-			component.updateBatteryDetails();
-
-			expect(component.initBatteryInformation).toHaveBeenCalled();
-
-			//expect(component.remainingPercentages).toEqual([component.batteryInfo[0].remainingPercent]);
-			expect(component.batteryHealth).toEqual(component.batteryInfo[0].batteryHealth);
-			expect(component.batteryIndicator.batteryNotDetected).toBeFalsy();
-			expect(component.batteryIndicator.percent).toEqual(component.batteryGauge.percentage);
-			//expect(component.batteryIndicator.charging).toBeFalsy();
-			//expect(component.batteryIndicator.charging).toBeTruthy();
-			expect(component.batteryIndicator.timeText).toEqual('timeRemaining');
-			expect(component.batteryIndicator.expressCharging).toBeFalsy();
-
-			expect(component.getBatteryCondition).toHaveBeenCalled();
-		});
-
-
-		it('#showDetailModal should call modalService open method', () => {
-			const { fixture, component, modalService } = setup();
-			spyOn(modalService, 'open').and.returnValue({ result: Promise.resolve() });
-			fixture.detectChanges();
-			component.showDetailModal(component.batteryModal);
-			expect(modalService.open).toHaveBeenCalledWith(component.batteryModal, {
-				backdrop: 'static',
-				size: 'lg',
-				windowClass: 'battery-modal-size'
-			});
-		});
-
-		it('#showDetailTip should set shortAcErrNote to false', () => {
-			const { component } = setup();
-			const condition: BatteryConditionModel = {
-				condition: 16,
-				conditionStatus: 3,
-				getBatteryConditionTip() {
-					return 'device.deviceSettings.batteryGauge.condition.LimitedACAdapterSupport';
-				}
-			};
-			component.batteryConditionNotes = [condition.getBatteryConditionTip(condition.condition)];
-			component.batteryConditions = [condition];
-			component.showDetailTip(0);
-			expect(component.shortAcErrNote).toBeFalsy();
-		});
-
-		it('#getConditionState should return 0', () => {
-			const { component } = setup();
-			expect(component.getConditionState(0)).toEqual(BatteryStatus[0]);
-		});
-
-		it('#getConditionState should return 1', () => {
-			const { component } = setup();
-			expect(component.getConditionState(1)).toEqual(BatteryStatus[1]);
-			expect(component.getConditionState(3)).toEqual(BatteryStatus[1]);
-		});
-
-		it('#getConditionState should return 2', () => {
-			const { component } = setup();
-			expect(component.getConditionState(2)).toBe(BatteryStatus[2]);
-			expect(component.getConditionState(4)).toBe(BatteryStatus[2]);
-			expect(component.getConditionState(5)).toBe(BatteryStatus[2]);
-		});
-
-		it('#reInitValue should set flag to false', () => {
-			const { component } = setup();
-			component.reInitValue();
-			expect(component.flag).toBeFalsy();
-		});
-
-		it('#getBatteryCondition should set conditions and call setConditionTips', () => {
-			const { fixture, component, commonService, batteryService } = setup();
-			// Normal condition
-			component.batteryInfo = info.batteryInformation;
-			component.batteryGauge = info.batteryIndicatorInfo;
-			spyOn(commonService, 'getLocalStorageValue').and.returnValue(1);
-			spyOn(component, 'setConditionTips');
-			fixture.detectChanges();
-
-			component.getBatteryCondition();
-			expect(commonService.getLocalStorageValue).toHaveBeenCalledWith(LocalStorageKey.MachineType);
-			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0)]);
-			expect(component.setConditionTips).toHaveBeenCalled();
-
-			//isPowerDriverMissing
-			component.batteryService.isPowerDriverMissing = true; 
-			component.getBatteryCondition();
-			expect(component.batteryConditions).toEqual([new BatteryConditionModel(11, 2), new BatteryConditionModel(0, 0)]);
-
-			component.batteryService.isPowerDriverMissing = false; 
-			component.batteryHealth = 1;
-			component.getBatteryCondition();
-			// 	expect(component.batteryConditions).toEqual([new BatteryConditionModel(17, 1)]);
-
-			// Limited AC adapter status
-			component.batteryHealth = 0;
-			component.batteryGauge.acAdapterStatus = 'Limited';
-			component.getBatteryCondition();
-			// expect(component.batteryConditions).toEqual([new BatteryConditionModel(16, 3), new BatteryConditionModel(0, 0)]);
-			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0), new BatteryConditionModel(14, 3)]);
-
-			// Not Supported AC adapter status
-			component.batteryGauge.acAdapterStatus = 'NotSupported';
-			component.getBatteryCondition();
-			// expect(component.batteryConditions).toEqual([new BatteryConditionModel(15, 3), new BatteryConditionModel(0, 0)]);
-			//expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0), new BatteryConditionModel(15, 3)]);
-			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0), new BatteryConditionModel(13, 3)]);
-
-			// all thinkPad conditions
-			component.batteryGauge.acAdapterStatus = 'Supported';
-			component.batteryInfo[0].batteryCondition = ['HardwareAuthenticationError', 'HighTemperature', 'TrickleCharge', 'OverheatedBattery', 'PermanentError'];
-			component.getBatteryCondition();
-			expect(component.batteryConditions.length).toEqual(4);
-
-			// power driver missing
-			component.batteryInfo = undefined;
-			//component.batteryGauge.isPowerDriverMissing = true;
-			component.batteryGauge.isPowerDriverMissing = false;
-			component.batteryIndicator.batteryNotDetected = false;
-			component.batteryGauge.acAdapterStatus = 'Supported';
-			component.batteryGauge.isAttached = true;
-			component.getBatteryCondition();
-			expect(component.batteryConditions).toEqual([new BatteryConditionModel(15, 3)]);
-
-
-		});
-
-		it('#setConditionTips should get condition tips array ', () => {
-			const { component } = setup();
-			component.batteryConditions = conditions;
-			component.setConditionTips();
-
-			expect(component.batteryConditionNotes.length).toBe(4);
-		});
-
+	it('should create component', () => {
+		fixture.detectChanges();
+		expect(component).toBeDefined();
 	});
 
+	it('should call updateMainBatteryTime - status is 1', () => {
+		const batteryInfo = {
+			percentage: 75,
+			remainingTime: 204,
+			status: 1
+		};
+		let spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
+			batteryInfo
+		);
+		component.updateMainBatteryTime();
+		expect(spy).toHaveBeenCalled();
+	});
 
-	// beforeEach(async(() => {
-	// 	TestBed.configureTestingModule({
-	// 		declarations: [BatteryCardComponent],
-	// 		schemas: [NO_ERRORS_SCHEMA],
-	// 		imports: [TranslationModule, HttpClientModule, RouterTestingModule],
-	// 		providers: [TranslateStore]
-	// 	}).compileComponents();
-	// }));
-	// afterEach(() => {
-	// 	component.isLoading = false;
-	// });
+	it('should call updateMainBatteryTime - status is 1 else case', () => {
+		const batteryInfo = {
+			percentage: 95,
+			remainingTime: 530000,
+			status: 1
+		};
+		let spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
+			batteryInfo
+		);
+		component.updateMainBatteryTime();
+		expect(spy).toHaveBeenCalled();
+	});
 
-	// beforeEach(() => {
-	// 	fixture = TestBed.createComponent(BatteryCardComponent);
-	// 	debugElement = fixture.debugElement;
-	// 	commonService = debugElement.injector.get(CommonService);
-	// 	batteryService = debugElement.injector.get(BatteryDetailService);
-	// 	modalService = debugElement.injector.get(NgbModal);
-	// 	component = fixture.componentInstance;
-	// 	fixture.detectChanges();
-	// });
+	it('should call updateMainBatteryTime - status is 0', () => {
+		const batteryInfo = {
+			percentage: 75,
+			remainingTime: 204,
+			status: 0
+		};
+		let spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
+			batteryInfo
+		);
+		component.updateMainBatteryTime();
+		expect(spy).toHaveBeenCalled();
+	});
 
-	// it('should create', () => {
-	// 	expect(component).toBeTruthy();
-	// });
+	it('should call onPowerSupplyStatusEvent', () => {
+		let spy = spyOn(component, 'setBatteryCard');
+		component.onPowerSupplyStatusEvent(info);
+		expect(spy).toHaveBeenCalled();
+	});
 
-	// it('#ngOnInit should call getBatteryDetailOnCard', () => {
-	// 	spyOn(component, 'getBatteryDetailOnCard');
-	// 	component.ngOnInit();
-	// 	expect(component.getBatteryDetailOnCard).toHaveBeenCalled();
-	// });
+	it('should call onRemainingPercentageEvent', () => {
+		let spy = spyOn(component, 'setBatteryCard');
+		component.onRemainingPercentageEvent(info);
+		expect(spy).toHaveBeenCalled();
+	});
 
-	// it('#onPowerSupplyStatusEvent should set batteryInfo, batteryGauge and call updateBatteryDetails', () => {
-	// 	spyOn(component, 'updateBatteryDetails');
-	// 	component.onPowerSupplyStatusEvent(info);
-	// 	expect(component.batteryInfo).toEqual(info.batteryInformation);
-	// 	expect(component.batteryGauge).toEqual(info.batteryIndicatorInfo);
-	// 	expect(component.updateBatteryDetails).toHaveBeenCalled();
-	// });
+	it('should call onRemainingTimeEvent', () => {
+		let spy = spyOn(component, 'setBatteryCard');
+		component.onRemainingTimeEvent(info);
+		expect(spy).toHaveBeenCalled();
+	});
 
-	// it('#onRemainingPercentageEvent should set batteryInfo, batteryGauge and call updateBatteryDetails', () => {
-	// 	spyOn(component, 'updateBatteryDetails');
-	// 	component.onRemainingPercentageEvent(info);
-	// 	expect(component.batteryInfo).toEqual(info.batteryInformation);
-	// 	expect(component.batteryGauge).toEqual(info.batteryIndicatorInfo);
-	// 	expect(component.updateBatteryDetails).toHaveBeenCalled();
-	// });
+	it('should call onPowerBatteryGaugeResetEvent', () => {
+		const info: BatteryGaugeReset[] = [
+			{
+				barCode: 'X2XP899J0N0',
+				batteryNum: 1,
+				FCCAfter: 4,
+				FCCBefore: 1,
+				isResetRunning: false,
+				lastResetTime: '',
+				resetErrorLog: 'ERROR_UNEXPECTED',
+				stage: 0,
+				stageNum: 0,
+				startTime: ''
+			}
+		];
+		let spy = spyOn(commonService, 'cloneObj').and.returnValue(info);
+		component.onPowerBatteryGaugeResetEvent(info);
+		expect(spy).toHaveBeenCalled();
+	});
 
-	// it('#onRemainingTimeEvent should set batteryInfo, batteryGauge and call updateBatteryDetails', () => {
-	// 	spyOn(component, 'updateBatteryDetails');
-	// 	component.onRemainingTimeEvent(info);
-	// 	expect(component.batteryInfo).toEqual(info.batteryInformation);
-	// 	expect(component.batteryGauge).toEqual(info.batteryIndicatorInfo);
-	// 	expect(component.updateBatteryDetails).toHaveBeenCalled();
-	// });
+	it('should call getBatteryDetailOnCard - else case', () => {
+		let spy = spyOn(component, 'getBatteryDetails');
+		component.batteryService.isShellAvailable = false;
+		component.getBatteryDetailOnCard();
+		expect(spy).not.toHaveBeenCalled();
+	});
 
-	// it('#getBatteryDetails should get battery information', async () => {
-	// 	spyOn(batteryService, 'getBatteryDetail').and.returnValue(Promise.resolve(info));
-	// 	await component.getBatteryDetails();
-	// 	expect(batteryService.getBatteryDetail).toHaveBeenCalled();
-	// 	expect(component.batteryInfo).toEqual(info.batteryInformation);
-	// 	expect(component.batteryGauge).toEqual(info.batteryIndicatorInfo);
-	// });
+	it('should throw error - getBatteryDetailOnCard', () => {
+		expect(component.getBatteryDetailOnCard).toThrow();
+	});
 
-	// it('#onNotification should show threshold warning note and call sendThresholdWarning', () => {
-	// 	spyOn(component, 'sendThresholdWarning');
-	// 	const notification = thresholdNotification;
-	// 	component.onNotification(notification);
-	// 	expect(component.chargeThresholdInfo).toEqual(notification.payload);
-	// 	// TODO
-	// 	// expect(component.param1).toEqual({ value: component.chargeThresholdInfo.stopValue1 });
-	// 	expect(component.sendThresholdWarning).toHaveBeenCalled();
-	// });
-
-	// it('#onNotification should show Airplane mode Icon inside battery', () => {
-	// 	const notification = airplaneModeNotification;
-	// 	component.onNotification(notification);
-	// 	expect(component.batteryIndicator.isAirplaneMode).toEqual(notification.payload);
-	// });
-
-	// it('#initBatteryInformation should set undefined battery properties to default values', () => {
-	// 	component.batteryGauge = info.batteryIndicatorInfo;
-	// 	component.batteryInfo = info.batteryInformation;
-
-	// 	component.batteryGauge.isExpressCharging = undefined;
-	// 	component.batteryGauge.percentage = undefined;
-	// 	component.batteryInfo[0].batteryCondition = [];
-
-	// 	component.initBatteryInformation();
-	// 	expect(component.batteryGauge.isExpressCharging).toBeFalsy();
-	// 	expect(component.batteryGauge.percentage).toEqual(0);
-	// 	expect(component.batteryInfo[0].batteryCondition).toEqual(['Normal']);
-	// });
-
-	// it('#updateBatteryDetails should call initBatteryInformation, initialize batteryIndicator, send remaining percentages to threshold and call getBatteryCondition', () => {
-	// 	component.batteryGauge = info.batteryIndicatorInfo;
-	// 	component.batteryInfo = info.batteryInformation;
-
-	// 	spyOn(component, 'initBatteryInformation');
-	// 	spyOn(component, 'sendThresholdWarning');
-	// 	spyOn(component, 'getBatteryCondition');
-	// 	spyOn(component, 'updateBatteryDetails').and.callThrough();
-	// 	component.updateBatteryDetails();
-
-	// 	expect(component.initBatteryInformation).toHaveBeenCalled();
-
-	// 	expect(component.remainingPercentages).toEqual([component.batteryInfo[0].remainingPercent]);
-	// 	expect(component.sendThresholdWarning).toHaveBeenCalled();
-	// 	expect(component.batteryHealth).toEqual(component.batteryInfo[0].batteryHealth);
-	// 	expect(component.batteryIndicator.batteryNotDetected).toBeFalsy();
-	// 	expect(component.batteryIndicator.percent).toEqual(component.batteryGauge.percentage);
-	// 	expect(component.batteryIndicator.charging).toBeFalsy();
-	// 	expect(component.batteryIndicator.timeText).toEqual('timeRemaining');
-	// 	expect(component.batteryIndicator.expressCharging).toBeFalsy();
-
-	// 	expect(component.getBatteryCondition).toHaveBeenCalled();
-	// });
-
-	// it('#sendThresholdWarning should call commonService sendNotification with false', () => {
-	// 	component.remainingPercentages = [65];
-	// 	component.chargeThresholdInfo = thresholdNotification.payload;
-	// 	spyOn(commonService, 'sendNotification');
-	// 	component.sendThresholdWarning();
-	// 	expect(commonService.sendNotification).toHaveBeenCalledWith('ThresholdWarningNote', false);
-	// });
-
-	// it('#sendThresholdWarning should call commonService sendNotification with true', () => {
-	// 	component.remainingPercentages = [85];
-	// 	component.chargeThresholdInfo = thresholdNotification.payload;
-	// 	spyOn(commonService, 'sendNotification');
-	// 	component.sendThresholdWarning();
-	// 	expect(commonService.sendNotification).toHaveBeenCalledWith('ThresholdWarningNote', true);
-	// });
-
-	// it('#showDetailModal should call modalService open method', () => {
-	// 	spyOn(modalService, 'open').and.returnValue({ result: Promise.resolve() });
-	// 	component.showDetailModal(component.batteryModal);
-	// 	expect(modalService.open).toHaveBeenCalledWith(component.batteryModal, {
-	// 		backdrop: 'static',
-	// 		size: 'lg',
-	// 		windowClass: 'battery-modal-size'
-	// 	});
-	// });
-
-	// it('#showDetailTip should set shortAcErrNote to false', () => {
-	// 	const condition: BatteryConditionModel = {
-	// 		condition: 16,
-	// 		conditionStatus: 3,
-	// 		getBatteryConditionTip() {
-	// 			return 'device.deviceSettings.batteryGauge.condition.LimitedACAdapterSupport';
-	// 		}
+	// it('should call onNotification - inner first if', () => {
+	// 	const thresholdNotification: AppNotification = {
+	// 		type: ChargeThresholdInformation.ChargeThresholdInfo,
+	// 		payload: true
 	// 	};
-	// 	component.batteryConditionNotes = [condition.getBatteryConditionTip(condition.condition)];
-	// 	component.batteryConditions = [condition];
-	// 	component.showDetailTip(0);
-	// 	expect(component.shortAcErrNote).toBeFalsy();
+	// 	component.batteryIndicator = new BatteryIndicator();
+	// 	component.onNotification(thresholdNotification);
+	// 	expect(component.batteryIndicator.isChargeThresholdOn).toEqual(true);
 	// });
 
-	// it('#getConditionState should return 0', () => {
-	// 	expect(component.getConditionState(0)).toEqual(BatteryQuality[0]);
+	it('should call onNotification - inner if', () => {
+		const airplaneModeNotification: AppNotification = {
+			type: 'AirplaneModeStatus',
+			payload: true
+		};
+		component.batteryIndicator = new BatteryIndicator();
+		component.onNotification(airplaneModeNotification);
+		expect(component.batteryIndicator.isAirplaneMode).toEqual(true);
+	});
+
+	it('should call getBatteryCondition - isPowerDriverMissing is true', () => {
+		component.batteryGauge = { ...batteryGuage };
+		spyOn(commonService, 'getLocalStorageValue').and.returnValue(1);
+		component.getBatteryCondition();
+		expect(component.batteryConditions).toContain(
+			new BatteryConditionModel(
+				BatteryConditionsEnum.MissingDriver,
+				BatteryStatus.Poor
+			)
+		);
+	});
+
+	// it('should call getBatteryCondition - batterHealth is 1', () => {
+	// 	component.batteryGauge = { ...batteryGuage }
+	// 	// component.batteryInfo = { ...info.batteryInformation }
+	// 	// component.batteryInfo[0].batteryCondition = ['hightemperature']
+	// 	spyOn(commonService, 'getLocalStorageValue').and.returnValue(1)
+	// 	component.getBatteryCondition()
+	// 	// expect(component.batteryConditions).toContain(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryStatus.Poor))
 	// });
 
-	// it('#getConditionState should return 1', () => {
-	// 	expect(component.getConditionState(1)).toEqual(BatteryQuality[1]);
-	//     expect(component.getConditionState(3)).toEqual(BatteryQuality[1]);
-	// });
+	it('should call showDetailTip', () => {
+		const index = 1;
+		component.batteryConditionNotes = [];
+		component.showDetailTip(index);
+		expect(component.shortAcErrNote).toEqual(false);
+	});
 
-	// it('#getConditionState should return 2', () => {
-	// 	expect(component.getConditionState(2)).toBe(BatteryQuality[2]);
-	// 	expect(component.getConditionState(4)).toBe(BatteryQuality[2]);
-	// 	expect(component.getConditionState(5)).toBe(BatteryQuality[2]);
-	// });
+	it('should call getConditionState - case 3', () => {
+		const conditionState = 3;
+		component.getConditionState(conditionState).toString();
+		expect(component.batteryStatus).toEqual(BatteryStatus);
+	});
 
-	// it('#reInitValue should set flag to false', () => {
-	// 	component.reInitValue();
-	// 	expect(component.flag).toBeFalsy();
-	// });
+	it('should call getConditionState case 4', () => {
+		const conditionState = 4;
+		component.getConditionState(conditionState).toString();
+		expect(component.batteryStatus).toEqual(BatteryStatus);
+	});
 
-	// it('#getBatteryCondition should set conditions and call setConditionTips', () => {
-	// 	// Normal condition
-	// 	component.batteryInfo = info.batteryInformation;
-	// 	component.batteryGauge = info.batteryIndicatorInfo;
-	// 	spyOn(commonService, 'getLocalStorageValue').and.returnValue(1);
-	// 	spyOn(component, 'setConditionTips');
-	// 	component.getBatteryCondition();
-	// 	expect(commonService.getLocalStorageValue).toHaveBeenCalledWith(LocalStorageKey.MachineType);
-	// 	expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0)]);
-	// 	expect(component.setConditionTips).toHaveBeenCalled();
+	it('should call getConditionState case 5', () => {
+		const conditionState = 5;
+		component.getConditionState(conditionState).toString();
+		expect(component.batteryStatus).toEqual(BatteryStatus);
+	});
 
-	// 	component.batteryHealth = 1;
-	// 	component.getBatteryCondition();
-	// //	expect(component.batteryConditions).toEqual([new BatteryConditionModel(17, 1)]);
-
-	// 	// Limited AC adapter status
-	// 	component.batteryHealth = 0;
-	// 	component.batteryGauge.acAdapterStatus = 'Limited';
-	// 	component.getBatteryCondition();
-	// 	expect(component.batteryConditions).toEqual([new BatteryConditionModel(16, 3), new BatteryConditionModel(0, 0)]);
-
-	// 	// Not Supported AC adapter status
-	// 	component.batteryGauge.acAdapterStatus = 'NotSupported';
-	// 	component.getBatteryCondition();
-	// 	expect(component.batteryConditions).toEqual([new BatteryConditionModel(15, 3), new BatteryConditionModel(0, 0)]);
-
-	// 	// all thinkPad conditions
-	// 	component.batteryGauge.acAdapterStatus = 'Supported';
-	// 	component.batteryInfo[0].batteryCondition = ['HardwareAuthenticationError', 'HighTemperature', 'TrickleCharge', 'OverheatedBattery', 'PermanentError'];
-	// 	component.getBatteryCondition();
-	// 	expect(component.batteryConditions.length).toEqual(5);
-
-	// 	// power driver missing
-	// 	component.batteryInfo = undefined;
-	// 	component.batteryGauge.isPowerDriverMissing = true;
-	// 	component.batteryIndicator.batteryNotDetected = false;
-	// 	component.getBatteryCondition();
-	// 	expect(component.batteryConditions).toEqual([new BatteryConditionModel(14, 2)]);
-	// });
-
-	// it('#setConditionTips should get condition tips array ', () => {
-	// 	component.batteryConditions = conditions;
-	// 	component.setConditionTips();
-
-	// 	expect(component.batteryConditionNotes.length).toBe(3);
-	// });
+	it('should call reInitValue', () => {
+		component.reInitValue();
+		expect(component.flag).toEqual(false);
+	});
 });

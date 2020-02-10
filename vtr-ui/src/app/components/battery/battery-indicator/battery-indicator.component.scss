@@ -82,7 +82,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			// left: 3.3%; // small
 			// width: 91.3%;
 
-			left: 1.8%; // big
+			left: 2.65%; // big
 			width: 91%;
 			border: 0.8rem solid var(--border-color);
 			opacity: 1;
@@ -204,7 +204,12 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 						margin-left: 1rem;
 						font-size: 1.5rem;
 						position: relative;
-						top: -0.8rem;
+						top: -0.3rem;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						overflow: hidden;
+						display: inline-block;
+						width: 75%;
 					}
 				}
 

@@ -87,7 +87,8 @@
                     "line8": "<b>Carica rapida </b><br> Maggiore autonomia per giocare in viaggio con caricamenti più rapidi della batteria",
                     "line9": "<b>Blocco touchpad </b><br> Previeni input errati disabilitando il touchpad quando giochi",
                     "line10": "<b>Chius. auto </b><br> Termina i processi non richiesti dai videogame prima di iniziare a giocare per ottimizzare le risorse di sistema disponibili",
-                    "line11": "<b>Modalità termica </b><br> Imp. profilo dispositivo preferito per velocità ventola e controllo raffreddamento"
+                    "line11": "<b>Modalità termica </b><br> Imp. profilo dispositivo preferito per velocità ventola e controllo raffreddamento",
+                    "line12": "<b>Tasto macro </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Passa il mouse su CPU/GPU/RAM e sulle differenti unità per mostrare le descrizioni, come le informazioni sul modello e la fabbricazione"
@@ -616,7 +617,7 @@
                 "sub2": "Antivirus",
                 "sub3": "Sicurezza WiFi",
                 "sub4": "Integrità password",
-                "sub5": "Protezione Internet",
+                "sub5": "Protezione VPN",
                 "sub6": "Windows Hello"
             },
             "support": "Supporto",
@@ -644,7 +645,8 @@
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Domande e risposte per la tua macchina",
@@ -670,6 +672,9 @@
         },
         "app-update": {
             "message": "Ciao! È disponibile una versione più recente di Vantage. Caricarla?"
+        },
+        "offline": {
+            "connectToUseFeature": "Esegui la connessione a Internet per utilizzare questa funzione"
         }
     },
     "privacy": {
@@ -1089,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "Modalità alimentazione in aereo",
-                        "description": "Proteggere la presa elettrica CA aereo controllando il consumo di energia del sistema.Quando è abilitata la funzione Modalità alimentazione in aereo, il computer riduce il consumo di energia limitando la velocità di ricarica della batteria e le prestazioni del sistema.",
+                        "description": "Questa funzione consente di utilizzare la presa elettrica CA su un aereo su cui si applica un limite di alimentazione specifico. In questa modalità il consumo di energia del computer viene ridotto a un livello di sicurezza limitando tensione di carica della batteria e prestazioni del computer.",
                         "checkBoxDesc": "Rilevamento automatico",
                         "note": "Se è abilitato il Rilevamento automatico, il computer attiverà automaticamente Modalità alimentazione in aereo quando rileva un ambiente a bordo dell'aeromobile e la disattiverà quando si scende."
                     },
@@ -1108,7 +1113,7 @@
                         },
                         "progressText1": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
                         "progressText2": "{{stage}} di {{stageNum}}: calibrazione per batteria scarica in corso",
-                        "progressText3": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
+                        "progressText3": "{{stage}} di {{stageNum}}: calibrazione per batteria carica in corso",
                         "FCCText": "Da {{before}} Wh a {{after}} Wh",
                         "note": "Nota: prima di reimpostare l'indicatore della batteria, assicurarsi di collegare il computer all'alimentazione CA. ",
                         "resetLog": {
@@ -1122,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Operazione non riuscita: errore imprevisto."
                         },
                         "popup": {
-                            "description1": "Il processo di reimpostazione è il seguente:<br>caricare completamente la batteria  -->  scaricare completamente la batteria  -->  ricaricare completamente la batteria",
+                            "description1": "Il processo di reimpostazione è il seguente:<br>Caricare completamente la batteria --> Scaricare completamente la batteria --> Ricaricare completamente la batteria",
                             "description2": "Note: <br>1. Il processo potrebbe richiedere diverse ore. Evitare di utilizzare il computer durante questo periodo.<br>2. Chiudere tutte le applicazioni aperte e collegare il computer all'alimentazione CA.<br>3. Durante il processo, la funzione soglia di carica della batteria è disabilitata.",
                             "continue": "Continua",
                             "cancel": "Annulla",
@@ -1139,10 +1144,10 @@
                 },
                 "smartStandby": {
                     "title": "Standby intelligente",
-                    "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
-                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Questo periodo di tempo è ottimizzato in base alla pianificazione impostata o al tempo di utilizzo del computer riscontrato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
+                    "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne il ripristino rapido dalla modalità <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Standby moderno</a> durante i picchi di utilizzo.",
+                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Questo periodo di tempo è ottimizzato in base alla pianificazione impostata o al tempo di utilizzo del computer. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
                     "timer": {
-                        "heading": "L'ora in cui generalmente si utilizza il computer",
+                        "heading": "Ora in cui generalmente si utilizza il computer:",
                         "subHeading1": "si inizi",
                         "subHeading2": "fine",
                         "subHeading3": "usa questa pianificazione per",
@@ -1160,14 +1165,14 @@
                     "warningtip": "Si prega di selezionare almeno un giorno.",
                     "days": {
                         "shortName": {
-                            "sun": "Domenica",
-                            "mon": "Lunedi",
-                            "tue": "martedì",
-                            "wed": "mercoledì",
-                            "thurs": "giovedi",
-                            "fri": "Venerdì",
-                            "sat": "Sabato",
-                            "thu": "Thu"
+                            "sun": "Dom.",
+                            "mon": "Lun.",
+                            "tue": "Mar.",
+                            "wed": "Mer.",
+                            "thurs": "Gio.",
+                            "fri": "Ven.",
+                            "sat": "Sab.",
+                            "thu": "Gio."
                         },
                         "name": {
                             "sun": "Domenica",
@@ -1184,11 +1189,11 @@
                         "noDaySelected": "Nessun giorno selezionato"
                     },
                     "checkbox": "Regolazione automatica del tempo di utilizzo del computer in base all'utilizzo",
-                    "hyperlinkToGraph": "Fare clic per visualizzare l'attività e il tempo di utilizzo della tabella del computer",
+                    "hyperlinkToGraph": "Fare clic per visualizzare l'utilizzo e il tempo attivo applicato",
                     "subTitle": "Pianificazione del computer",
                     "automaticMode": "Modalità automatica",
                     "manualMode": "Modalità manuale",
-                    "subNote": "Il computer è pianificato per la modalità Standby moderno in base all'utilizzo.",
+                    "subNote": "È stato pianificato il ripristino rapido del computer in base all'utilizzo.",
                     "graph": {
                         "graph1Tittle": "Utilizzo di questo computer",
                         "graph2Tittle": "Tempo attivo applicato",
@@ -1227,7 +1232,8 @@
                     },
                     "description2": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
                     "subTitle2": "Impostare l'ora in cui generalmente si utilizza il computer",
-                    "oldTooltipText": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Il periodo di tempo è ottimizzato in base al piano impostato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi."
+                    "oldTooltipText": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Il periodo di tempo è ottimizzato in base al piano impostato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
+                    "sectionTitle": "Impostazioni di standby"
                 }
             },
             "audio": {
@@ -1331,7 +1337,8 @@
                         "note": {
                             "title": "Nota",
                             "description": "Lenovo Vantage deve accedere alle informazioni sulla posizione per calcolare l'ora del tramonto e dell'alba dell'area geografica in cui ci si trova."
-                        }
+                        },
+                        "tips": "Eseguire Windows Update o installare manualmente il driver di grafica per ripristinare la modalità Comfort visivo"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura colore schermo",
@@ -1374,6 +1381,17 @@
                         "taskBarDimmer": "RIDUZIONE LUMINOSITÀ BARRA DELLE APPLICAZIONI",
                         "backgroundDimmer": "RIDUZIONE LUMINOSITÀ SFONDO",
                         "displayDimmer": "RIDUZIONE LUMINOSITÀ SCHERMO"
+                    },
+                    "displayPriority": {
+                        "title": "Controllo priorità visualizzazione",
+                        "description": "Il dispositivo supporta un numero massimo di schermi esterni. Quando si collegano più schermi utilizzando questi metodi aggiuntivi, funzionerà solo quello prioritario.<br/>Selezionare di seguito il metodo di uscita video aggiuntivo cui assegnare la priorità:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Espansione",
+                            "usb_c_dp": "USB tipo-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Modulo opzionale"
+                        }
                     }
                 },
                 "camera": {
@@ -1402,7 +1420,8 @@
                         "caption": "Questa funzionalità consente di sfocare lo sfondo quando la fotocamera viene utilizzata per videochiamate o per scattare foto. È possibile scegliere un effetto diverso tra le selezioni elencate di seguito.",
                         "blurMode": "Modalità sfocatura",
                         "comicMode": "Modalità fumetto",
-                        "sketchMode": "Modalità schizzo"
+                        "sketchMode": "Modalità schizzo",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "LA FOTOCAMERA È IN USO",
@@ -1527,7 +1546,60 @@
                 "fnCtrlKey": {
                     "title": "Scambio tasto Fn e Ctrl",
                     "description": "Se di solito si preme il tasto Fn quando invece si vuole premere il tasto Ctrl, è possibile scambiare le funzioni dei due tasti.",
-                    "restartNote": "Per commutare la funzione di due tasti, è necessario riavviare il computer. Riavviare?"
+                    "restartNote": "Per commutare la funzione di due tasti, è necessario riavviare il computer. Riavviare?",
+                    "title2": "Fn funziona come Ctrl per le combinazioni di tasti più utilizzate",
+                    "description2": "Il tasto Fn funziona come il tasto Ctrl per alcune combinazioni di tasti più utilizzate. La funzione del tasto Ctrl non viene modificata.",
+                    "featureNote": "Questa funzione e la funzione di Scambio tasto Fn e Ctrl non possono essere attive contemporaneamente. Se una è abilitata, l'altra verrà disabilitata automaticamente.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Tasti Fn",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Tasti Ctrl",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Azione",
+                            "action1": "Seleziona tutto",
+                            "action2": "Copia",
+                            "action3": "Aggiungi pagina Web ai Preferiti",
+                            "action4": "Cerca",
+                            "action5": "Trova e sostituisci in Microsoft Word",
+                            "action6": "Allinea a sinistra e a destra in Microsoft Word",
+                            "action7": "Esci (nelle app supportate)",
+                            "action8": "Aggiungi sottolineatura",
+                            "action9": "Incolla",
+                            "action10": "Chiudi (per le app)",
+                            "action11": "Taglia",
+                            "action12": "Ripeti",
+                            "action13": "Annulla operazione"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "ALTRO",
@@ -1537,16 +1609,16 @@
                     "less": "MENO"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Retroilluminazione tastiera",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Attiva la retroilluminazione della tastiera per facilitare la digitazione in condizioni di scarsa illuminazione. È inoltre possibile modificare le impostazioni della retroilluminazione della tastiera premendo il tasto Fn+Barra spaziatrice.",
+                        "auto": "Attiva la retroilluminazione della tastiera per facilitare la digitazione in condizioni di scarsa illuminazione. È inoltre possibile modificare le impostazioni della retroilluminazione premendo il tasto Fn+Barra spaziatrice o impostarla su \"Auto\". L'opzione \"Auto\" regola automaticamente la retroilluminazione della tastiera in base alla luce ambientale."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automatico",
+                        "low": "Basso",
+                        "high": "Alto",
+                        "off": "Disattivato"
                     }
                 }
             }
@@ -1709,12 +1781,12 @@
             "superResolution": {
                 "heading": "Supporti intelligenti",
                 "title": "Upscaling della risoluzione video",
-                "desc": "<p><label>Questa funzione migliora l'esperienza di riproduzione dei video, aumentandone la risoluzione. Risulta particolarmente efficiente con i video in bassa risoluzione.</label></p> <p style='margin-top:4px;'><label> Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Se abilitata, si consiglia di collegare il computer all'alimentazione CA.</label></p>",
-                "tooltip": "La funzione può essere utilizzata solo sui seguenti lettori: <br/> Windows Media player",
+                "desc": "<p><label>Questa funzione migliora l'esperienza di riproduzione dei video, aumentandone la risoluzione. Risulta particolarmente efficiente con i video in bassa risoluzione.</label></p> <p style='margin-top:4px;'><label>Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC, altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.</label></p>",
+                "tooltip": "La funzione funziona solo su:<br>Windows Media player",
                 "note": {
                     "description": "Questa funzione non può essere utilizzata quando:",
-                    "description1": "Il computer non è collegato all'alimentazione CA e l'alimentazione della batteria è inferiore al 20%.",
-                    "description2": "Il computer non è collegato all'alimentazione CA ed è abilitata la modalità di risparmio batteria.",
+                    "description1": "Il computer non è collegato all'alimentazione CA.",
+                    "description2": "La modalità di risparmio della batteria è abilitata.",
                     "description3": "La temperatura della CPU è elevata."
                 }
             },
@@ -1871,7 +1943,7 @@
             "localRepositoryDatabaseException": "Impossibile trovare il database del repository locale oppure è danneggiato.",
             "networkInterruptedException": "Il server di aggiornamento del sistema non è attualmente disponibile. Si prega di riprovare più tardi.",
             "helpCenterInvalidServerException": "Il server di aggiornamento del sistema non è valido. Si prega di riprovare più tardi.",
-            "catalogNotFoundException": "Non è stato trovato alcun aggiornamento applicabile per il sistema.",
+            "catalogNotFoundException": "Non sono stati trovati aggiornamenti applicabili per il sistema. Impossibile trovare il catalogo aggiornamenti.",
             "catalogCrcErrorException": "Il catalogo per il sistema è attualmente in corso di aggiornamento. Si prega di riprovare più tardi.",
             "catalogErrorException": "È stato rilevato un errore con il catalogo degli aggiornamenti per il sistema sul server di aggiornamento del sistema. Si prega di riprovare più tardi.",
             "fileNotFoundException": "File non trovato."
@@ -1979,7 +2051,7 @@
             "visitHde": "Visita Crittografia unità disco fisso",
             "haveOwnPassword": "Ho il mio Password Manager",
             "haveOwnWifi": "Ho la mia sicurezza Wi-Fi",
-            "haveOwnVpn": "Ho la mia sicurezza VPN",
+            "haveOwnVpn": "Ho la mia VPN",
             "uac": "Controllo dell'account utente (UAC)",
             "uacTitles": "Controllo dell'account utente",
             "hde": "Crittografia unità disco fisso",
@@ -2095,7 +2167,8 @@
                 "showmore": "Mostra di più",
                 "showless": "Mostra meno",
                 "button": "Abilita sicurezza WiFi",
-                "disableDecribe": "Sicurezza Lenovo WiFi è un servizio software avanzato basato su cloud che consente al dispositivo in uso di distinguere reti wireless sicure da quelle potenzialmente dannose."
+                "disableDescribe": "Sicurezza Lenovo WiFi è un servizio software avanzato basato su cloud che consente al dispositivo in uso di distinguere reti wireless sicure da quelle potenzialmente dannose.",
+                "enabledDescribe": "Sicurezza Lenovo WiFi sta attualmente monitorando la rete WiFi."
             },
             "threatlocator": {
                 "describe": "Utilizza il rilevatore delle minacce per determinare la sicurezza delle reti vicine.",
@@ -2129,7 +2202,8 @@
                 "subtitle": "Protezione garantita",
                 "subtitleDescribe": "Protezione abitazione connessa ti invierà un avviso se rileva una vulnerabilità del dispositivo o della rete domestica in uso o se sei collegato a una rete potenzialmente dannosa. Ulteriori informazioni su Protezione abitazione connessa sono disponibili <tag>qui</tag>.",
                 "tryNow": "Provalo ora",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Immettere il codice invito",
@@ -2204,7 +2278,8 @@
             "getStarted1": "Fare clic sul pulsante \"Avvia SurfEasy\" in alto, per avviare SurfEasy VPN.",
             "getStarted2": "Attiva la rete VPN e attendi qualche istante per la conferma della connessione sicura.",
             "getStarted3": "Modifica l'area geografica o la posizione se necessario e inizia a utilizzare la rete privata sicura.",
-            "poweredBySurfEasy": "Basato su SurfEasy"
+            "poweredBySurfEasy": "Basato su SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "STRUMENTO PER LA GESTIONE DELLE PASSWORD DASHLANE",
@@ -2232,7 +2307,8 @@
             "allowsYou2": "Monitorare le informazioni personali sul web oscuro",
             "allowsYou3": "Proteggere i dispositivi collegati alle reti WiFi non sicure con la rete VPN integrata",
             "allowsYou4": "Condividere le password in modo sicuro",
-            "poweredByDashLane": "Basato su Dashlane"
+            "poweredByDashLane": "Basato su Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2304,7 +2380,7 @@
     "faq": {
         "footer": {
             "title": "Non hai trovato quello che cercavi?",
-            "description": "BISOGNO DI SUPPORTO SUPPLEMENTARE? NON ESITARE A CONTATTARCI VIA:",
+            "description": "È necessario un ulteriore supporto? Non esitare a contattarci attraverso:",
             "body": "Comunità Lenovo",
             "button": "VAI AL FORUM"
         },
@@ -2709,7 +2785,7 @@
         "deviceStatisticsDescription": "Invia dati anonimi sui dispositivi per migliorare la qualità, l'affidabilità e la nuova generazione di dispositivi.",
         "userProfile": "Profilo utente",
         "Note": "Nota: ",
-        "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione.",
+        "settingsNotes": "Riavviare questa applicazione per assicurarsi che tutte le modifiche abbiano effetto.",
         "betaSettingTitle": "Programma beta",
         "betaProgram": "Programma beta",
         "betaSettingDescription": "Prova le funzioni più recenti su cui stiamo lavorando."
@@ -2733,6 +2809,8 @@
         "noteDownloadAvailable": "Nota: dopo aver fatto clic su Scarica, verrà visualizzato un messaggio di Windows che richiede il consenso per installare il software sul dispositivo. Una volta completata l'installazione, le applicazioni verranno visualizzate automaticamente sul desktop o nel menu Start.<br /><br />È possibile chiudere la pagina Il mio software e continuare a utilizzare Lenovo Vantage. Non chiudere Lenovo Vantage durante l'installazione.",
         "sizeText": "Dimensione",
         "versionText": "Versione",
+        "redemptionCode": "Codice di riscatto:",
+        "redeemWebsite": "Riscatta sul sito Web del fornitore",
         "softwareDescription": "Fare clic sul pulsante Scarica in basso per riscattare il software acquistato con il dispositivo. È possibile scaricare nuovamente il software in qualsiasi momento, facendo clic sul pulsante Il mio software nel menu di Vantage.",
         "title": "Il mio software",
         "loadingDescription": "È in corso la preparazione di un elenco di software inclusi con l'acquisto del dispositivo.",
@@ -2842,7 +2920,7 @@
                 "yes": "Sì",
                 "no": "No"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Il pulsante è disattivato se i dispositivi di archiviazione non supportano questa funzionalità, durante il caricamento delle informazioni hardware o mentre vi è una scansione in corso."
         },
         "support": {
             "title": "Scarica strumenti di diagnostica professionali",
@@ -3049,7 +3127,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3259,5 +3354,8 @@
             "subtitle2": "All-in-one semplificato",
             "body2": "I PC all-in-one con processori Intel® Core™ di nona generazione offrono tutte le potenzialità di un desktop con uno elegante design, per un minor ingombro, una protezione basata sull'hardware e uno schermo ad alta risoluzione."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

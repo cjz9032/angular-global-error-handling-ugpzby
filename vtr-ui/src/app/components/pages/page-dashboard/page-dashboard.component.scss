@@ -1,11 +1,60 @@
 @import "../../../app.theme";
+.custom-card-container{
+	@media #{$breakpoint_xl6}{
+		flex-direction: row;
+		justify-content: space-between;
+		.custom-card {
+			width: 50%;
+		}
+	}
+	@media #{$breakpoint_xl}{
+		flex-direction: column;
+		justify-content: flex-start;
+		.custom-card {
+			width: 100%;
+		}
+	}
+	@media #{$breakpoint_lg}{
+		flex-direction: row;
+		justify-content: space-between;
+		.custom-card {
+			width: 50%;
+		}
+	}
+	@media #{$breakpoint_md}{
+		flex-direction: row;
+		justify-content: space-between;
+		.custom-card {
+			width: 50%;
+		}
+	}
+	@media #{$breakpoint_sm}{
+		flex-direction: column;
+		.custom-card {
+			width: 100%;
+		}
+	}
+}
+
 
 .card-left {
 	padding-left: 0;
 	//padding-right: 2rem;
+	@media #{$breakpoint_xl6} {
+		padding-left: 0;
+		padding-right: 1.2rem;
+	}
 	@media #{$breakpoint_xl} {
-		//padding-left: 0;
-		//padding-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	@media #{$breakpoint_lg} {
+		padding-left: 0;
+		padding-right: 1.2rem;
+	}
+	@media #{$breakpoint_md} {
+		padding-left: 0;
+		padding-right: 1.2rem;
 	}
 	@media #{$breakpoint_sm} {
 		padding-left: 0;
@@ -16,9 +65,21 @@
 .card-right {
 	//padding-left: 2rem;
 	padding-right: 0;
+	@media #{$breakpoint_xl6} {
+		padding-left: 1.2rem;
+		padding-right: 0;
+	}
 	@media #{$breakpoint_xl} {
-		//padding-left: 0;
-		//padding-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	@media #{$breakpoint_lg} {
+		padding-left: 1.2rem;
+		padding-right: 0;
+	}
+	@media #{$breakpoint_md} {
+		padding-left: 1.2rem;
+		padding-right: 0;
 	}
 	@media #{$breakpoint_sm} {
 		padding-left: 0;

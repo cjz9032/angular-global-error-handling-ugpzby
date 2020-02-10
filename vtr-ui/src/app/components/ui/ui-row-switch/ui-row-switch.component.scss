@@ -12,7 +12,7 @@
 			}
 		}
 		.vtr-col-pad {
-			padding: 0 1rem;
+			padding: 0 1.5rem;
 		}
 		.vtr-row-switch {
 			// padding-right: 3rem;
@@ -112,7 +112,7 @@
 			font-size: $fontsize_xs;
 			font-weight: $weight_light;
 			color: $font_color;
-			max-width: 60rem;
+			// max-width: 60rem;
 		}
 
 		.read-more {
@@ -210,3 +210,9 @@
 // @mixin theme($name, $background, $font_color, $icon_color, $border)
 @include theme(white-theme, $light, $purple_navy, $menu_hover, $screen_dark_10);
 @include theme(blue-theme, $gradient_main, $light, $light, $screen_light_15);
+
+.vtr-ui-switch-row.white-theme {
+	.caption {
+		color: $grey_dark;
+	}
+}

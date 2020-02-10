@@ -14,7 +14,7 @@ export interface IEssentialHelper {
 
 
 export interface IGetContentParam {
-	position: string;
+	positions: any[];
 }
 
 

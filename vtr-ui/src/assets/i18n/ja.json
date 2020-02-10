@@ -87,7 +87,8 @@
                     "line8": "<b>急速充電 </b><br> 急速充電で外出時により長くゲームをプレイできます",
                     "line9": "<b>タッチパッド・ロック </b><br> ゲーム中はタッチパッドを無効にして誤入力を防ぎます",
                     "line10": "<b>自動クローズ </b><br> プレイ開始前にゲームに不要な処理をクリアして利用可能なシステム・リソースを最大化します",
-                    "line11": "<b>サーマル・モード </b><br> ファン速度と冷却制御のために優先デバイス・プロファイルを設定する"
+                    "line11": "<b>サーマル・モード </b><br> ファン速度と冷却制御のために優先デバイス・プロファイルを設定する",
+                    "line12": "<b>マクロ・キー </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "CPU/GPU/RAM およびさまざまなドライブの上にマウスを移動すると、製造元やモデル情報などの説明が表示されます"
@@ -616,7 +617,7 @@
                 "sub2": "アンチウィルス",
                 "sub3": "WiFi セキュリティー",
                 "sub4": "パスワードの健全性",
-                "sub5": "インターネット保護",
+                "sub5": "VPN セキュリティー",
                 "sub6": "Windows Hello"
             },
             "support": "サポート",
@@ -644,7 +645,8 @@
             "registered": "登録済み",
             "notRegistered": "未登録",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
@@ -670,6 +672,9 @@
         },
         "app-update": {
             "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"
+        },
+        "offline": {
+            "connectToUseFeature": "この機能を使用するには、インターネットに接続してください"
         }
     },
     "privacy": {
@@ -1089,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "飛行機電源モード",
-                        "description": "システムの消費電力量を制御することで飛行機の AC 電源コンセントを保護します。飛行機電源モードを有効にすると、コンピューターはバッテリー充電率とシステム・パフォーマンスを制限して電力消費量を抑えます。",
+                        "description": "この機能により、特定の電力制限が適用される飛行機の AC 電源コンセントを使用できます。このモードでは、バッテリー充電率とコンピューターのパフォーマンスを制限してお使いのコンピューターの電力消費量を安全なレベルまで抑えます。",
                         "checkBoxDesc": "自動検出",
                         "note": "自動検出が選択されている場合は、コンピューターは飛行機に搭乗している環境を検出すると自動的に飛行機電源モードをオンにし、飛行機を離れると飛行機電源モードをオフにします。"
                     },
@@ -1108,7 +1113,7 @@
                         },
                         "progressText1": "{{stage}}/{{stageNum}}: 満充電にして調整",
                         "progressText2": "{{stage}}/{{stageNum}}: 低バッテリー残量にして調整",
-                        "progressText3": "{{stage}}/{{stageNum}}: 満充電にして調整",
+                        "progressText3": "{{stage}}/{{stageNum}}: 高バッテリー残量にして調整",
                         "FCCText": "{{before}} Wh から {{after}} Wh",
                         "note": "注: バッテリー・ゲージをリセットする前に、コンピューターを AC 電源に接続してください。",
                         "resetLog": {
@@ -1122,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "失敗: 予期しないエラーが発生しました。"
                         },
                         "popup": {
-                            "description1": "リセット・プロセスは次のとおりです。<br>バッテリーを完全に充電  -->  バッテリーを完全に放電  -->  バッテリーを完全に再充電",
+                            "description1": "リセット・プロセスは次のとおりです。<br>バッテリーを完全に充電 --> 低バッテリー残量まで放電 --> 高バッテリー残量または満充電まで再充電",
                             "description2": "注: <br>1. この処理には数時間かかる場合があります。この間、コンピューターの使用は避けてください。<br>2. 開いているすべてのアプリを閉じて、コンピューターを AC 電源に接続します。<br>3. プロセス中、バッテリー充電のしきい値機能は無効になります。",
                             "continue": "続行",
                             "cancel": "キャンセル",
@@ -1139,10 +1144,10 @@
                 },
                 "smartStandby": {
                     "title": "スマート・スタンバイ",
-                    "description": "この機能は、使用頻度の高い時間中の高速スタートアップ時間に影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
-                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。この期間は、設定したスケジュールまたは取得したコンピューターの使用時間に基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
+                    "description": "この機能は、使用頻度の高い時間中の<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">モダン・スタンバイ</a>の高速再開エクスペリエンスに影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
+                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。この期間は、設定したスケジュールまたはコンピューターの使用状況に基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
                     "timer": {
-                        "heading": "通常コンピューターを使用する時刻を設定します",
+                        "heading": "通常このコンピューターを使用する時刻:",
                         "subHeading1": "フィールドの",
                         "subHeading2": "終了",
                         "subHeading3": "このスケジュールを使用する期間",
@@ -1160,14 +1165,14 @@
                     "warningtip": "少なくとも1日を選択してください。",
                     "days": {
                         "shortName": {
-                            "sun": "日曜日",
-                            "mon": "月曜日",
-                            "tue": "火曜日",
-                            "wed": "水曜日",
-                            "thurs": "木曜日",
-                            "fri": "金曜日",
-                            "sat": "土曜日",
-                            "thu": "Thu"
+                            "sun": "日",
+                            "mon": "月",
+                            "tue": "火",
+                            "wed": "水",
+                            "thurs": "木",
+                            "fri": "金",
+                            "sat": "土",
+                            "thu": "木"
                         },
                         "name": {
                             "sun": "日曜日",
@@ -1184,11 +1189,11 @@
                         "noDaySelected": "日が選択されていません"
                     },
                     "checkbox": "使用状況に基づいてコンピューターのアクティブ時間を自動調整する",
-                    "hyperlinkToGraph": "クリックして、コンピューター・テーブルのアクティビティとアクティブ時間を表示します",
+                    "hyperlinkToGraph": "クリックして使用状況と適用されたアクティブ時間を確認します",
                     "subTitle": "コンピューターのスケジュール",
                     "automaticMode": "自動モード",
                     "manualMode": "手動モード",
-                    "subNote": "コンピューターは、使用状況に基づいてモダン・スタンバイにスケジュールされます。",
+                    "subNote": "お使いのコンピューターは、使用状況に基づいて迅速に再開するようにスケジュールされています。",
                     "graph": {
                         "graph1Tittle": "このコンピューターの使用状況",
                         "graph2Tittle": "適用されたアクティブ時間",
@@ -1227,7 +1232,8 @@
                     },
                     "description2": "この機能は、使用頻度の高い時間中の高速スタートアップ時間に影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
                     "subTitle2": "通常このコンピューターを使用する時刻を設定します",
-                    "oldTooltipText": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。時間は設定されたスケジュールに基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。"
+                    "oldTooltipText": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。時間は設定されたスケジュールに基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
+                    "sectionTitle": "スタンバイ設定"
                 }
             },
             "audio": {
@@ -1331,7 +1337,8 @@
                         "note": {
                             "title": "お願い",
                             "description": "Lenovo Vantage はその地域の日没と日の出の時刻を計算するために、位置情報にアクセスする必要があります。"
-                        }
+                        },
+                        "tips": "Windows Update を実行するか、グラフィック・ドライバーを手動でインストールして、アイ・ケア・モードを復元してください"
                     },
                     "dispColorTemp": {
                         "title": "ディスプレイの色温度",
@@ -1374,6 +1381,17 @@
                         "taskBarDimmer": "タスクバーを暗くする",
                         "backgroundDimmer": "バックグラウンドを暗くする",
                         "displayDimmer": "ディスプレイを暗くする"
+                    },
+                    "displayPriority": {
+                        "title": "ディスプレイ優先度コントロール",
+                        "description": "デバイスは最大数の外部ディスプレイをサポートしています。これらの追加方法を使用して複数のディスプレイを接続する場合、優先順位の高いディスプレイのみが機能します。<br/>優先する追加のディスプレイ出力方法を以下から選択します。",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "ドッキング",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "オプション・モジュール"
+                        }
                     }
                 },
                 "camera": {
@@ -1402,7 +1420,8 @@
                         "caption": "この機能は、ビデオ通話または写真撮影にカメラを使用する際に背景をぼかします。以下の選択肢から別の効果を選択できます。",
                         "blurMode": "ぼかしモード",
                         "comicMode": "コミック モード",
-                        "sketchMode": "スケッチ モード"
+                        "sketchMode": "スケッチ モード",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "カメラは使用中です",
@@ -1527,7 +1546,60 @@
                 "fnCtrlKey": {
                     "title": "Fn キーと Ctr キーの入れ替え",
                     "description": "Ctrl キーを押そうとする際に Fn キーを押してしまう場合は、2 つのキーの機能を入れ替えることができます。",
-                    "restartNote": "2 つのキーの機能を交換するには、コンピューターを再起動する必要があります。再起動してもよろしいですか?"
+                    "restartNote": "2 つのキーの機能を交換するには、コンピューターを再起動する必要があります。再起動してもよろしいですか?",
+                    "title2": "頻繁に使用する組み合わせキーとして Fn キーが Ctrl キーとして機能する",
+                    "description2": "一部の頻繁に使用する組み合わせキーに関して、Fn キーがCtrl キーとして機能します。Ctrl キーの機能は変更されません。",
+                    "featureNote": "この機能と Fn キーおよび Ctrl キーの入れ替え機能を同時にオンにすることはできません。モードのいずれかがオンの場合は、もう一方のモードは自動的にオフになります。",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn キー",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl キー",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "アクション",
+                            "action1": "すべて選択",
+                            "action2": "コピー",
+                            "action3": "お気に入りに Web ページを追加する",
+                            "action4": "検索",
+                            "action5": "Microsoft Word で検索して置換する",
+                            "action6": "Microsoft Word で左右を合わせる",
+                            "action7": "終了 (サポートされているアプリ)",
+                            "action8": "下線を追加",
+                            "action9": "貼り付け",
+                            "action10": "閉じる (アプリごと)",
+                            "action11": "切り取り",
+                            "action12": "再実行",
+                            "action13": "元に戻す"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "詳細",
@@ -1537,16 +1609,16 @@
                     "less": "非表示にする"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "キーボードのバックライト",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を変更することもできます。",
+                        "auto": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を「自動」に変更することもできます。「自動」オプションでは、周囲の明るさに応じてキーボードのバックライトが自動的に調整されます。"
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "自動",
+                        "low": "低",
+                        "high": "高",
+                        "off": "オフ"
                     }
                 }
             }
@@ -1709,12 +1781,12 @@
             "superResolution": {
                 "heading": "インテリジェント・メディア",
                 "title": "ビデオ解像度のアップスケーリング",
-                "desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label> この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。有効にする場合は、コンピューターを AC 電源に接続することをお勧めします。</label></p>",
-                "tooltip": "この機能は、次のプレイヤーでのみ機能します。<br/> Windows Media player",
+                "desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label>この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。DC モードでは使用しないでください。そうしないと、電力消費が速くなり、バッテリー寿命が短くなります。</label></p>",
+                "tooltip": "この機能は以下でのみ機能します:<br>Windows Media player",
                 "note": {
                     "description": "この機能は次の場合は動作しません。",
-                    "description1": "コンピューターが AC 電源に接続されておらず、バッテリーの電力が 20% 未満の場合。",
-                    "description2": "コンピューターが AC 電源に接続されておらず、バッテリー節約モードが有効の場合。",
+                    "description1": "コンピューターが AC 電源に接続されていない。",
+                    "description2": "バッテリー節約モードが有効になっている。",
                     "description3": "CPU の温度が高すぎる場合。"
                 }
             },
@@ -1871,7 +1943,7 @@
             "localRepositoryDatabaseException": "ローカル・リポジトリー・データベースは、検出できないか、破損しています。",
             "networkInterruptedException": "システム更新サーバーは現在使用できません。後から再試行してください。",
             "helpCenterInvalidServerException": "システム更新サーバーが無効です。後から再試行してください。",
-            "catalogNotFoundException": "ご使用のシステムに適用可能な更新はありません。",
+            "catalogNotFoundException": "更新カタログが見つからないため、ご使用のシステムに適用可能な更新が見つかりません。",
             "catalogCrcErrorException": "システムのカタログを更新中です。後から再試行してください。",
             "catalogErrorException": "システム更新サーバーで、ご使用のシステムの更新カタログにエラーが検出されました。後から再試行してください。",
             "fileNotFoundException": "ファイルが見つかりません。"
@@ -1979,7 +2051,7 @@
             "visitHde": "ハードディスク・ドライブの暗号化にアクセス",
             "haveOwnPassword": "自分のパスワード・マネージャーがあります",
             "haveOwnWifi": "自分の WiFi セキュリティーがあります",
-            "haveOwnVpn": "自分の VPN セキュリティーがあります",
+            "haveOwnVpn": "独自の VPN があります",
             "uac": "ユーザー アカウント制御 (UAC)",
             "uacTitles": "ユーザー アカウント制御",
             "hde": "ハードディスク・ドライブの暗号化",
@@ -2095,7 +2167,8 @@
                 "showmore": "その他の情報を表示",
                 "showless": "その他の情報を表示しない",
                 "button": "WiFi セキュリティーを有効にする",
-                "disableDecribe": "Lenovo WiFi セキュリティーは高度なクラウドベースのソフトウェアサービスで、デバイスが安全な無線ネットワークを潜在的に悪意のあるものと区別するのに役立ちます。"
+                "disableDescribe": "Lenovo WiFi セキュリティーは高度なクラウドベースのソフトウェアサービスで、デバイスが安全な無線ネットワークを潜在的に悪意のあるものと区別するのに役立ちます。",
+                "enabledDescribe": "Lenovo WiFi セキュリティーが現在 WiFi ネットワークを監視しています。"
             },
             "threatlocator": {
                 "describe": "脅威検出器を使用して、周囲のネットワークの安全性を判断します。",
@@ -2129,7 +2202,8 @@
                 "subtitle": "安心を手に入れる",
                 "subtitleDescribe": "接続ホーム・セキュリティーは、デバイスまたはホーム・ネットワークで脆弱性が検出された場合、または悪意がある可能性のネットワークに接続している場合に警告を送信します。接続ホーム・セキュリティーについての詳細は、<tag>ここで</tag>ご確認ください。",
                 "tryNow": "今すぐ試してみる",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "招待コードの入力",
@@ -2204,7 +2278,8 @@
             "getStarted1": "上にある「SurfEasy を開く」ボタンをクリックして SurfEasy VPN を起動します。",
             "getStarted2": "VPN をオンにして、接続の保護が確認されるまでしばらく待ちます。",
             "getStarted3": "必要に応じて地域や場所を変更し、安全なプライベート・ネットワークをご活用ください。",
-            "poweredBySurfEasy": "SurfEasy 搭載"
+            "poweredBySurfEasy": "SurfEasy 搭載",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE パスワード・マネージャー",
@@ -2232,7 +2307,8 @@
             "allowsYou2": "皆様の個人情報についてダーク・ウェブを監視します",
             "allowsYou3": "内蔵の VPN により、安全でない WiFi ネットワークを安心して利用できます",
             "allowsYou4": "パスワードを明らかにせずに安全に共有できます",
-            "poweredByDashLane": "Dashlane 搭載"
+            "poweredByDashLane": "Dashlane 搭載",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2304,7 +2380,7 @@
     "faq": {
         "footer": {
             "title": "探しているものが見つかりませんか？",
-            "description": "追加サポートが必要ですか？ 次のことで米国に連絡することを躊躇しないでください。",
+            "description": "追加のサポートが必要ですか?以下からお気軽にお問い合わせください:",
             "body": "レノボコミュニティ",
             "button": "フォーラムへ"
         },
@@ -2709,7 +2785,7 @@
         "deviceStatisticsDescription": "品質、信頼性、次世代デバイスの改善に役立てるため、デバイス データを匿名で送信します。",
         "userProfile": "ユーザー・プロフィール",
         "Note": "注:",
-        "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。",
+        "settingsNotes": "このアプリケーションを再起動して、すべての変更を適用してください。",
         "betaSettingTitle": "ベータ版プログラム",
         "betaProgram": "ベータ版プログラム",
         "betaSettingDescription": "現在開発中の最新機能をお試しください."
@@ -2733,6 +2809,8 @@
         "noteDownloadAvailable": "注: 「ダウンロード」をクリックすると、デバイスへのソフトウェアのインストールを許可するように Windows から指示される場合があります。アプリのインストールが完了すると、デスクトップまたは「スタート」メニューに自動的に表示されます。<br /><br />「マイ・ソフトウェア」ページを閉じて Lenovo Vantage の使用を続行できます。インストール中に Lenovo Vantage を閉じないでください。",
         "sizeText": "サイズ",
         "versionText": "バージョン",
+        "redemptionCode": "引き換えコード:",
+        "redeemWebsite": "ベンダーの Web サイトで引き換え",
         "softwareDescription": "ご使用のデバイスで購入したソフトウェアを使用するには、以下の「ダウンロード」をクリックします。ソフトウェアを再度ダウンロードする必要がある場合はいつでも、Vantage メニューの「マイ・ソフトウェア」ボタンをクリックして行うことができます。",
         "title": "マイ・ソフトウェア",
         "loadingDescription": "デバイスの購入に含まれていたソフトウェアのリストを準備しています。少々お待ちください。",
@@ -2842,7 +2920,7 @@
                 "yes": "はい",
                 "no": "いいえ"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "ストレージ・デバイスがこの機能をサポートしていない場合、ハードウェア情報を読み込み中の場合、またはスキャンが進行中の場合は、ボタンが無効になります。"
         },
         "support": {
             "title": "プロの診断ツールをダウンロードする",
@@ -3049,7 +3127,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3259,5 +3354,8 @@
             "subtitle2": "オールインワン: 簡素化",
             "body2": "第 9 世代 Intel® Core™ プロセッサーを搭載したオールインワン PC によって、あらゆるデスクトップの強みが光沢のあるディスプレイに詰め込まれていることで、乱雑さが抑えられ、ハードウェアベースのセキュリティーと高解像度のディスプレイが実現されています。"
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

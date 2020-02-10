@@ -74,7 +74,7 @@ ui-gaming-driver-popup {
 		}
 
 		h1 {
-			font-size: 2.5rem;
+			font-size: $fontsize_xl;
 			font-weight: normal;
 			color: $blue-dark;
 			padding-right: 2.5rem;
@@ -96,7 +96,7 @@ ui-gaming-driver-popup {
 			background: $gradient_main;
 			border-radius: 3rem;
 			color: $light;
-			font-size: 2rem;
+			font-size: $fontsize_sm;
 			padding: 1rem 3rem;
 			margin-top: 1rem;
 			font-weight: $weight_bold;
@@ -104,9 +104,9 @@ ui-gaming-driver-popup {
 		}
 
 		.cancel-link {
-			height: 3.2rem;
+			height: 2.5rem;
 			color: $main;
-			font-size: 2rem;
+			font-size: $fontsize_sm;
 			vertical-align: middle;
 			padding: 0 0.5rem;
 			font-weight: $weight_600;
@@ -139,7 +139,7 @@ ui-gaming-driver-popup {
 }
 
 ::ng-deep {
-	.overclock-driver-popup, .networkboost-driver-popup{
+	.overclock-driver-popup, .networkboost-driver-popup,.ram-overclock-driver-popup{
 		#gamingDriverPopup{
 			@media #{$mediaquery_X48} {
 					min-width: 44rem;
@@ -180,6 +180,15 @@ ui-gaming-driver-popup {
 					}
 			}
 		}
+		.ram-overclock-driver-popup {
+		#gamingDriverPopup {
+			right:7.5rem;
+			top:-11.5rem;
+				&::after {
+						top: 11.7rem;
+					}
+			}
+	}
 	.networkboost-driver-popup {
 		#gamingDriverPopup {
 			right:7.5rem;

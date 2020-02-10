@@ -38,6 +38,7 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 
 	onCheckForUpdates() {
 		this.checkForUpdate.emit();
+		document.getElementById('system-update-back-btn').focus();
 	}
 
 	cancelUpdates() {

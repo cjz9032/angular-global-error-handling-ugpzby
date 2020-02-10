@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SecurityQaService } from 'src/app/services/security/securityQa.service';
+import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
   selector: 'vtr-widget-qa',
@@ -11,7 +12,12 @@ export class WidgetQaComponent implements OnInit {
   mainTitle = 'Q&A';
   openId = null;
   questions;
-  constructor(private qaService: SecurityQaService) {
+  isCollapse = false;
+  metricsValue: string;
+
+  constructor(
+	  private qaService: SecurityQaService,
+	  public metrics: MetricService) {
 	  this.questions = this.qaService.question;
    }
 
@@ -20,6 +26,17 @@ export class WidgetQaComponent implements OnInit {
 
   openAccordion(index) {
 	this.openId = this.openId === index ? null : index;
+	this.isCollapse = this.openId === index ? true : !this.isCollapse;
+	this.metricsValue = this.isCollapse ? 'expand' : 'collapse';
+	const metricsData = {
+		ItemParent: 'Security',
+		ItemName: `QuestionsAndAnswersItem-${this.questions[index].id}-${this.metricsValue}`,
+		ItemType: 'FeatureClick',
+		ItemParm: {
+			QuestionsAndAnswersId: this.questions[index].id
+		}
+	};
+	this.metrics.sendMetrics(metricsData);
   }
 
 }

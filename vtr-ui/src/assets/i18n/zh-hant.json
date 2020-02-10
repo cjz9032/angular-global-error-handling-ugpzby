@@ -87,7 +87,8 @@
                     "line8": "<b>快速充電 </b><br> 電池充電速度提高，有更多時間隨時隨地暢玩遊戲",
                     "line9": "<b>觸控板鎖定 </b><br> 在遊戲時停用觸控板，防止錯誤的輸入",
                     "line10": "<b>自動關閉 </b><br> 在您開始暢玩遊戲之前先清除與遊戲無關的處理程序，盡可能地利用所有可用的系統資源",
-                    "line11": "<b>熱模式 </b><br> 設定您偏好的裝置設定檔中的風扇速度和冷卻控制"
+                    "line11": "<b>熱模式 </b><br> 設定您偏好的裝置設定檔中的風扇速度和冷卻控制",
+                    "line12": "<b>巨集鍵 </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "將游標移至 CPU/GPU/RAM 和不同的驅動程式之上以查看其個別描述，包括製造與機型資訊"
@@ -616,7 +617,7 @@
                 "sub2": "防毒",
                 "sub3": "WiFi 安全性",
                 "sub4": "密碼安全狀態",
-                "sub5": "網際網路保護",
+                "sub5": "VPN 安全性",
                 "sub6": "Windows Hello"
             },
             "support": "支援",
@@ -644,7 +645,8 @@
             "registered": "已註冊",
             "notRegistered": "未註冊",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -670,6 +672,9 @@
         },
         "app-update": {
             "message": "嘿！已有更新版的 Vantage，您要載入嗎？"
+        },
+        "offline": {
+            "connectToUseFeature": "連接到網際網路以使用此功能"
         }
     },
     "privacy": {
@@ -840,7 +845,7 @@
         "deviceSettings": {
             "helpful": "實用內容",
             "batteryGauge": {
-                "subtitle": "电池",
+                "subtitle": "電池",
                 "hours": "小時",
                 "hour": "時",
                 "minutes": "分",
@@ -1089,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "機艙電源模式",
-                        "description": "藉由控制您系統的耗電量，保護飛機上的 AC 電源插座。當機艙電源模式啟用時，電腦會限制電池充電率和系統效能，藉此降低耗電量。",
+                        "description": "這項功能可讓您在飛機上使用符合特定電源限制的 AC 電源插座。在這種模式下，因為電池充電率和電腦效能將受限制，因此電腦耗用的電力會降到安全等級。",
                         "checkBoxDesc": "自動偵測",
                         "note": "如果勾選自動偵測，當電腦偵測到機上環境時，將自動開啟機艙電源模式，並在您下機時將其關閉。"
                     },
@@ -1108,7 +1113,7 @@
                         },
                         "progressText1": "步驟{{stage}}（共{{stageNum}}個步驟）：充飽校準",
                         "progressText2": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為放電到低電量",
-                        "progressText3": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為充電到高電量",
+                        "progressText3": "{{stageNum}} 的 {{stage}}：電池電力充足校準",
                         "FCCText": "從 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重設電池計量器之前，請確定將電腦連接到 AC 電源。",
                         "resetLog": {
@@ -1122,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "失敗：發生非預期的錯誤。"
                         },
                         "popup": {
-                            "description1": "重設程序如下：<br>電池完整充電  -->  電池完全放電  -->  將電池重新充飽",
+                            "description1": "重設程序如下：<br>電池完整充電 --> 放電至電池電力不足 --> 重新充電至電池電力充足或充飽",
                             "description2": "附註：<br>1. 這個程序可能需費時數小時。請避免在此期間使用電腦。<br>2. 關閉所有已開啟的應用程式，然後將電腦連接到 AC 電源。<br>3. 在此程序期間，會停用電池充電臨界值功能。",
                             "continue": "繼續",
                             "cancel": "取消",
@@ -1139,10 +1144,10 @@
                 },
                 "smartStandby": {
                     "title": "智慧型待命",
-                    "description": "此功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
-                    "tooltip": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程或我們取得的電腦使用情形最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
+                    "description": "這個功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可體驗<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">新式待命</a>的快速回復。",
+                    "tooltip": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程或您的電腦使用情形最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
                     "timer": {
-                        "heading": "您一般使用您的電腦的時間",
+                        "heading": "您一般使用這部電腦的時間：",
                         "subHeading1": "開始",
                         "subHeading2": "結束",
                         "subHeading3": "將此排程用於",
@@ -1160,14 +1165,14 @@
                     "warningtip": "請至少選擇一天。",
                     "days": {
                         "shortName": {
-                            "sun": "星期日",
-                            "mon": "星期一",
-                            "tue": "星期二",
-                            "wed": "星期三",
-                            "thurs": "星期四",
-                            "fri": "星期五",
-                            "sat": "星期六",
-                            "thu": "Thu"
+                            "sun": "週日",
+                            "mon": "週一",
+                            "tue": "週二",
+                            "wed": "週三",
+                            "thurs": "週四",
+                            "fri": "週五",
+                            "sat": "週六",
+                            "thu": "週四"
                         },
                         "name": {
                             "sun": "星期日",
@@ -1184,11 +1189,11 @@
                         "noDaySelected": "未選取日期"
                     },
                     "checkbox": "根據您的使用情形自動調整電腦的啟用時間",
-                    "hyperlinkToGraph": "按一下以查看您的計算機表格的活動和啟用時間",
+                    "hyperlinkToGraph": "按一下以查看使用情形和套用的啟用時間",
                     "subTitle": "排程您的電腦",
                     "automaticMode": "自動模式",
                     "manualMode": "手動模式",
-                    "subNote": "根據您的使用情形將您的電腦排程為新式待命模式。",
+                    "subNote": "您的電腦已排定依使用情況以加快回復。",
                     "graph": {
                         "graph1Tittle": "此電腦的使用情形",
                         "graph2Tittle": "套用的啟用時間",
@@ -1227,7 +1232,8 @@
                     },
                     "description2": "這個功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
                     "subTitle2": "設定您一般使用這部電腦的時間",
-                    "oldTooltipText": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。"
+                    "oldTooltipText": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
+                    "sectionTitle": "待命設定"
                 }
             },
             "audio": {
@@ -1331,7 +1337,8 @@
                         "note": {
                             "title": "備注",
                             "description": "Lenovo Vantage 需要存取您的位置資訊，才能計算您所在當地的日出和日落時間。"
-                        }
+                        },
+                        "tips": "請執行 Windows Update 或手動安裝圖形驅動程式，以回復護眼模式"
                     },
                     "dispColorTemp": {
                         "title": "顯示器色溫",
@@ -1374,6 +1381,17 @@
                         "taskBarDimmer": "工作列調光器",
                         "backgroundDimmer": "背景調光器",
                         "displayDimmer": "顯示器調光器"
+                    },
+                    "displayPriority": {
+                        "title": "顯示優先順序控制",
+                        "description": "您的裝置支援外接式顯示器數目的上限。使用其他這些方法連接多個顯示器時，只有優先使用的顯示器才會運作。<br/>請在下方選擇要優先使用的其他顯示輸出方法：",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "泊接",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "光學模組"
+                        }
                     }
                 },
                 "camera": {
@@ -1402,7 +1420,8 @@
                         "caption": "當您使用攝影機進行任何視訊通話或拍照時，此功能會讓背景模糊。您可以從下面選項選擇不同的效果。",
                         "blurMode": "模糊模式",
                         "comicMode": "漫畫模式",
-                        "sketchMode": "素描模式"
+                        "sketchMode": "素描模式",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "攝影機正在使用中",
@@ -1527,7 +1546,60 @@
                 "fnCtrlKey": {
                     "title": "Fn 與 Ctrl 鍵交換",
                     "description": "如果您在想要按 Ctrl 鍵時卻習慣按下 Fn 鍵，可以交換這兩個鍵的功能。",
-                    "restartNote": "交換兩個鍵的功能需要重新啟動電腦，您確定要重新啟動嗎？"
+                    "restartNote": "交換兩個鍵的功能需要重新啟動電腦，您確定要重新啟動嗎？",
+                    "title2": "Fn 可做為常用組合鍵的 Ctrl",
+                    "description2": "Fn 鍵可做為一些常用組合鍵的 Ctrl 鍵。Ctrl 鍵的功能不變。",
+                    "featureNote": "此功能與 Fn 鍵和 Ctrl 鍵交換功能無法同時開啟。如果開啟其中一個，另一個將會自動關閉。",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn 鍵",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl 鍵",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "動作",
+                            "action1": "全選",
+                            "action2": "複製",
+                            "action3": "將網頁新增到我的最愛",
+                            "action4": "搜尋",
+                            "action5": "在 Microsoft Word 中尋找及取代",
+                            "action6": "在 Microsoft Word 中靠左和靠右對齊",
+                            "action7": "結束（在支援的應用程式中）",
+                            "action8": "加上底線",
+                            "action9": "貼上",
+                            "action10": "關閉（個別應用程式）",
+                            "action11": "剪下",
+                            "action12": "重做",
+                            "action13": "復原"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "其他資訊",
@@ -1537,16 +1609,16 @@
                     "less": "較少"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "鍵盤背光",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "啟動鍵盤背光，以便在黑暗或光線不足的情況下打字。您也可以按下 Fn+空格鍵來變更鍵盤背光設定。",
+                        "auto": "啟動鍵盤背光，以便在黑暗或光線不足的情況下打字。您可以按下 Fn+空格鍵來變更背光設定，或將它設定為「自動」。「自動」選項會根據周遭光線自動調整鍵盤背光。"
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "自動",
+                        "low": "低",
+                        "high": "高",
+                        "off": "關閉"
                     }
                 }
             }
@@ -1709,12 +1781,12 @@
             "superResolution": {
                 "heading": "智慧型媒體",
                 "title": "視訊解析度提升",
-                "desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label> 此功能可能會影響電池續航力、電池溫度，並造成噪音。啟用時，建議您使用 AC 電源連接電腦。</label></p>",
-                "tooltip": "此功能僅適用於下列播放程式：<br/> Windows Media player",
+                "desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label>此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式下使用。否則，電力會消耗得更快，且電池壽命會變得更短。</label></p>",
+                "tooltip": "此功能僅適用於：<br>Windows Media player",
                 "note": {
                     "description": "此功能在下列情況中無法運作：",
-                    "description1": "電腦未連接到 AC 電源且電池電量低於 20％。",
-                    "description2": "電腦未連接到 AC 電源且已啟用省電功能模式。",
+                    "description1": "電腦未連接到 AC 電源。",
+                    "description2": "電池省電模式已啟用。",
                     "description3": "CPU 溫度過高。"
                 }
             },
@@ -1871,7 +1943,7 @@
             "localRepositoryDatabaseException": "找不到本端儲存庫的資料庫或是該資料庫已毀損。",
             "networkInterruptedException": "系統更新伺服器目前無法使用。請稍後重試。",
             "helpCenterInvalidServerException": "系統更新伺服器無效。請稍後重試。",
-            "catalogNotFoundException": "找不到適用於您系統的更新。",
+            "catalogNotFoundException": "由於找不到更新目錄，因此找不到適用於您系統的更新。",
             "catalogCrcErrorException": "目前正在更新您系統的目錄。請稍後重試。",
             "catalogErrorException": "在系統更新伺服器上偵測到您系統的更新目錄發生錯誤。請稍後重試。",
             "fileNotFoundException": "找不到檔案。"
@@ -1979,7 +2051,7 @@
             "visitHde": "造訪硬碟加密",
             "haveOwnPassword": "我有自己的 Password Manager",
             "haveOwnWifi": "我有自己的 WiFi 安全性",
-            "haveOwnVpn": "我有自己的 VPN 安全性",
+            "haveOwnVpn": "我有自己的 VPN",
             "uac": "使用者帳戶控制 (UAC)",
             "uacTitles": "使用者帳戶控制",
             "hde": "硬碟加密",
@@ -2095,7 +2167,8 @@
                 "showmore": "顯示更多",
                 "showless": "顯示較少內容",
                 "button": "啟用 WiFi 安全性",
-                "disableDecribe": "Lenovo WiFi 安全性是一項先進的雲端式軟體服務，可協助您的裝置區分安全與潛在惡意的無線網路。"
+                "disableDescribe": "Lenovo WiFi 安全性是一項先進的雲端式軟體服務，可協助您的裝置區分安全與潛在惡意的無線網路。",
+                "enabledDescribe": "Lenovo WiFi 安全性目前正在監視您的 WiFi 網路。"
             },
             "threatlocator": {
                 "describe": "使用威脅偵測器判斷您周圍網路的安全性。",
@@ -2129,7 +2202,8 @@
                 "subtitle": "安心保障",
                 "subtitleDescribe": "如果連線家庭安全性偵測到裝置或家庭網路有漏洞，或是如果您連線至潛在的惡意網路，將會向您傳送警示。<tag>這裡</tag>還可進一步瞭解連線家庭安全性。",
                 "tryNow": "立即試用",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "輸入邀請代碼",
@@ -2204,7 +2278,8 @@
             "getStarted1": "按一下上方的「開啟 SurfEasy」按鈕以啟動 SurfEasy VPN。",
             "getStarted2": "開啟 VPN 並稍待片刻，確認連線的安全。",
             "getStarted3": "如有需要，請變更您的區域或位置，並享有安全的私人網路。",
-            "poweredBySurfEasy": "搭載 SurfEasy"
+            "poweredBySurfEasy": "搭載 SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 密碼管理程式",
@@ -2232,7 +2307,8 @@
             "allowsYou2": "監視暗網以保護您的個人資訊",
             "allowsYou3": "透過內建 VPN，在不安全的 WiFi 網路上保持安全",
             "allowsYou4": "在不顯示密碼的情況下安全地共用密碼",
-            "poweredByDashLane": "搭載 Dashlane"
+            "poweredByDashLane": "搭載 Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2304,7 +2380,7 @@
     "faq": {
         "footer": {
             "title": "找不到你要找的東西？",
-            "description": "需要額外的支持嗎？ 不要猶豫與VIA聯繫：",
+            "description": "需要其他支援嗎？請隨時透過以下方式與我們聯絡：",
             "body": "聯想社區",
             "button": "去論壇"
         },
@@ -2514,7 +2590,7 @@
         },
         "question4": {
             "title": "檢查電腦的電池使用情況",
-            "description": "<div class='faqInFs4Fb'>    檢查電腦的電池使用情況</div><hr><h3 class='faqInFs25FbP10'>問題狀況</h3><p>Windows 10 包含一個全新的<strong>電池使用情況</strong>螢幕，其中顯示筆記型電腦電量使用情況。從這裡可以明確知道，包括桌上型電腦和 Windows 10「通用」應用程式，哪種應用程式耗用最多電力。</p><h3 class='faqInFs25FbP10'>受影響的品牌</h3><ul>    <li>Lenovo 筆記型電腦、桌上型電腦</li></ul><h3 class='faqInFs25FbP10'>受影響的系統</h3><ul>    <li>所有</li></ul><h3 class='faqInFs25FbP10'>作業系統</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決方案</h3><p>這是 Windows 10 首度推出的新功能，我們需要先找出此功能，因為這個功能並未儲存在傳統<strong>控制面板</strong>檢視中，而是儲存在全新的<strong>設定</strong>應用程式中</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. 找出電池使用情況螢幕</h3></p><p>1.從開始功能表按一下或輕點<strong>設定</strong>選項</p><p>2.在<strong>設定</strong>中，選取<strong>「系統」</strong>，然後選取<strong>「省電功能」。<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.在這個標題下，按一下或輕按<strong>「電池使用情況」</strong>連結以查看詳細資料。</p><p> </p><h3 class='faqInFs25FbP10'>B. 分析電源使用</h3><p>4. 電池使用情況螢幕可以變更成顯示從過去 24 小時到過去 48 小時、或從上週開始的電池使用情況</p><p>5. <strong>「系統」</strong>、<strong>「顯示器」</strong>和 <strong>「Wi-Fi」</strong>百分比。這會顯示系統作業，也就是顯示器，使用了多少電池電量；</p><p>6. <strong>「正在使用」</strong>和<strong>「背景」</strong>選項顯示正在使用與背景中的應用程式使用多少電力的比較。</p><p>7. 如果應用程式在背景中使用電力，則您可以按一下或輕點<strong>「變更背景應用程式設定」</strong>連接，並將應用程式設定成不在背景執行。這個設定僅適用通用 Windows 10 應用程式。</p><p>8. 繼續向下捲動，您將看到一個應用程式清單，而這堪稱此項功能最有用的部分。它將顯示列出該時段內使用電池電量的應用程式清單，並且列出每個應用程式所使用電池電量的百分比</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    檢查電腦的電池使用情況</div><hr><h3 class='faqInFs25FbP10'>問題狀況</h3><p>Windows 10 包含一個全新的<strong>電池使用情況</strong>螢幕，其中顯示筆記型電腦電量使用情況。從這裡可以明確知道，包括桌上型電腦和 Windows 10「通用」應用程式，哪種應用程式耗用最多電力。</p><h3 class='faqInFs25FbP10'>受影響的品牌</h3><ul>    <li>Lenovo 筆記型電腦、桌上型電腦</li></ul><h3 class='faqInFs25FbP10'>受影響的系統</h3><ul>    <li>所有</li></ul><h3 class='faqInFs25FbP10'>作業系統</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決方案</h3><p>這是 Windows 10 首度推出的新功能，我們需要先找出此功能，因為這個功能並未儲存在傳統<strong>控制面板</strong>檢視中，而是儲存在全新的<strong>設定</strong>應用程式中</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. 找出電池使用情況螢幕</h3></p><p>1.從開始功能表按一下或輕點<strong>設定</strong>選項</p><p>2.在<strong>設定</strong>中，選取<strong>「系統」</strong>，然後選取<strong>「省電功能」。<br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.在這個標題下，按一下或輕按<strong>「電池使用情況」</strong>連結以查看詳細資料。</p><p> </p><h3 class='faqInFs25FbP10'>B. 分析電源使用</h3><p>4. 電池使用情況螢幕可以變更成顯示從過去 24 小時到過去 48 小時、或從上週開始的電池使用情況</p><p>5. <strong>「系統」</strong>、<strong>「顯示器」</strong>和 <strong>「Wi-Fi」</strong>百分比。這會顯示系統作業，也就是顯示器，使用了多少電池電量；</p><p>6. <strong>「正在使用」</strong>和<strong>「背景」</strong>選項顯示正在使用與背景中的應用程式使用多少電力的比較。</p><p>7. 如果應用程式在背景中使用電力，則您可以按一下或輕點<strong>「變更背景應用程式設定」</strong>連接，並將應用程式設定成不在背景執行。這個設定僅適用通用 Windows 10 應用程式。</p><p>8. 繼續向下捲動，您將看到一個應用程式清單，而這堪稱此項功能最有用的部分。它將顯示列出該時段內使用電池電量的應用程式清單，並且列出每個應用程式所使用電池電量的百分比</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2709,7 +2785,7 @@
         "deviceStatisticsDescription": "傳送匿名裝置資料，以協助我們提升品質、可靠性和新一代的裝置。",
         "userProfile": "使用者設定檔",
         "Note": "附註：",
-        "settingsNotes": "使用者必須重新啟動此應用程式,此頁面中的所有設定才可生效。",
+        "settingsNotes": "請重新啟動此應用程式，以確保所有變更都生效。",
         "betaSettingTitle": "Beta 程式",
         "betaProgram": "Beta 程式",
         "betaSettingDescription": "試試我們正在開發的最新功能。"
@@ -2733,6 +2809,8 @@
         "noteDownloadAvailable": "注意：按一下「下載」之後,便會出現來自 Windows 的提示,允許我們在您的裝置上安裝軟體。完成安裝後,您的應用程式將自動在桌面或「開始」功能表上顯示。<br /><br />您可以關閉「我的軟體」頁面,然後繼續使用 Lenovo Vantage。安裝期間請勿關閉 Lenovo Vantage。",
         "sizeText": "大小",
         "versionText": "版本",
+        "redemptionCode": "兌換碼：",
+        "redeemWebsite": "在供應商網站上兌換",
         "softwareDescription": "按一下下方的下載,以兌換購買裝置時隨附的軟體。如果您需要再次下載軟體,隨時按一下 Vantage 功能表中的「我的軟體」按鈕即可下載。",
         "title": "我的軟體",
         "loadingDescription": "請稍候,我們正在準備購買裝置時所附的軟體清單。",
@@ -2842,7 +2920,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "當儲存裝置不支援這項功能而硬體資訊即將載入，或者其中正在進行掃描時，此按鈕為停用狀態。"
         },
         "support": {
             "title": "下載專業診斷工具",
@@ -3049,7 +3127,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3259,5 +3354,8 @@
             "subtitle2": "一體成型：簡化",
             "body2": "一體成型 PC，搭載第 9 代 Intel® Core™ 處理器，將桌面電腦的所有功能都裝入設計時尚的顯示器中 — 干擾更少，符合硬體安全，以及高解析度顯示器。"
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

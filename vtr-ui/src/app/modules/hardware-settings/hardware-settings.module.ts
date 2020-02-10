@@ -94,7 +94,6 @@ import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-dev
 import { BacklightModule } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.module';
 import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight-thinkpad/backlight-thinkpad.component';
 
-
 @NgModule({
 	declarations: [
 		ActiveProtectionSystemAdvancedComponent,
@@ -124,7 +123,6 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 		PowerSmartSettingsComponent,
 		SmartStandbyComponent,
 		BatteryGaugeResetComponent,
-		SpinnerComponent,
 		SubpageDeviceSettingsAudioComponent,
 		SubpageDeviceSettingsDisplayComponent,
 		SubpageDeviceSettingsInputAccessoryComponent,
@@ -134,29 +132,30 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 		VoiceComponent,
 		SmartStandbyGraphComponent,
 		TopRowFunctionsIdeapadComponent,
+
 		BacklightThinkpadComponent
 	],
-    imports: [
-        CommonModule,
-        CommonUiModule,
-        CommonWidgetModule,
-        CommonModalModule,
-        SharedModule,
-        HardwareSettingRoutingModule,
-        FontAwesomeModule,
-        ContainerCardModule,
-        MetricsModule,
-        NgbTooltipModule,
-        HeaderMainModule,
-        WidgetOfflineModule,
-        WidgetSecurityStatusModule,
-        NgbDropdownModule,
-        RouterModule,
-        NgbCollapseModule,
-        PageLayoutModule,
-        SettingsPageLayoutModule,
-        BacklightModule,
-    ],
+	imports: [
+		CommonModule,
+		CommonUiModule,
+		CommonWidgetModule,
+		CommonModalModule,
+		SharedModule,
+		HardwareSettingRoutingModule,
+		FontAwesomeModule,
+		ContainerCardModule,
+		MetricsModule,
+		NgbTooltipModule,
+		HeaderMainModule,
+		WidgetOfflineModule,
+		WidgetSecurityStatusModule,
+		NgbDropdownModule,
+		RouterModule,
+		NgbCollapseModule,
+		PageLayoutModule,
+		SettingsPageLayoutModule,
+		BacklightModule
+	],
 	exports: [
 		CommonModule,
 		CommonUiModule,

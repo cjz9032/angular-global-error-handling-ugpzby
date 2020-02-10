@@ -80,14 +80,15 @@
                     "line1": "Dzięki opcji Vantage Edge ustawienia zostaną automatycznie dostrojone w zależności od sposobu użytkowania. \n Maksymalna wydajność podczas grania, dłuższa żywotność baterii, gdy nie grasz.",
                     "line2": "<b>Omówienie zarządzania funkcją</b> <br> Niektóre funkcje nie są dostępne na wszystkich urządzeniach",
                     "line3": "<b>Przetaktowywanie CPU </b><br> Zwiększ maksymalną prędkość procesora",
-                    "line4": "<b>Przetaktowywanie RAM </b><br> Zwiększ maksymalną prędkość pamięci",
+                    "line4": "<b>Przetaktowywanie pamięci RAM </b><br> Zwiększ maksymalną prędkość pamięci",
                     "line5": "<b>Wspomaganie sieci </b><br> Określ priorytety ruchu sieciowego dla odtwarzanej gry",
                     "line6": "<b>Dolby </b><br> Dostrój dźwięk specjalnie do gier z technologią Dolby",
                     "line7": "<b>Tryb hybrydowy </b><br> Wyłącz zaawansowane ustawienia GPU, gdy nie grasz, aby zwiększyć wydajność baterii",
                     "line8": "<b>Szybkie ładowanie </b><br> Graj dłużej dzięki szybszemu ładowaniu baterii",
                     "line9": "<b>Blokada panelu dotyk. </b><br> Zapobiegnij błędom sterowania, wyłączając panel dotykowy na czas grania",
                     "line10": "<b>Autozamykanie </b><br> Wyczyść procesy, które nie są potrzebne do grania przed rozpoczęciem gry, aby zmaksymalizować dostępne zasoby systemowe",
-                    "line11": "<b>Tryb term </b><br> Ustaw preferowany profil urządzenia dotyczący prędkości wentylatora i sterowania chłodzeniem."
+                    "line11": "<b>Tryb term </b><br> Ustaw preferowany profil urządzenia dotyczący prędkości wentylatora i sterowania chłodzeniem.",
+                    "line12": "<b>Klawisz makr</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Najedź kursorem myszy na CPU/GPU/RAM i różne dyski, aby wyświetlić ich opis wraz z informacjami o producencie i modelu"
@@ -616,7 +617,7 @@
                 "sub2": "Antywirus",
                 "sub3": "Bezpieczeństwo WiFi",
                 "sub4": "Bezpieczeństwo hasła",
-                "sub5": "Ochrona internetowa",
+                "sub5": "Zabezpieczenia VPN",
                 "sub6": "Windows Hello"
             },
             "support": "Pomoc techniczna",
@@ -644,7 +645,8 @@
             "registered": "ZAREJESTROWANY",
             "notRegistered": "NIE ZAREJESTROWANY",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>",
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Pytania i odpowiedzi dotyczące Twojej maszyny",
@@ -670,6 +672,9 @@
         },
         "app-update": {
             "message": "Witaj! Dostępna jest nowsza wersja Vantage, czy chcesz ją pobrać?"
+        },
+        "offline": {
+            "connectToUseFeature": "Połącz się z Internetem, aby korzystać z tej funkcji"
         }
     },
     "privacy": {
@@ -1089,7 +1094,7 @@
                     },
                     "airPlanePower": {
                         "title": "Tryb samolotowy",
-                        "description": "Chroń samolotowe gniazdko elektryczne, kontrolując ilość energii zużywanej przez system.Gdy Tryb samolotowy jest włączony, komputer zmniejsza zużycie energii, ograniczając szybkość ładowania akumulatora i wydajność systemu.",
+                        "description": "Funkcja umożliwia korzystanie z gniazdka elektrycznego w samolocie z określonym limitem mocy. Jeśli tryb samolotowy jest włączony, zużycie energii przez komputer zostaje zmniejszone do bezpiecznego poziomu przy jednoczesnym ograniczeniu szybkości ładowania akumulatora i wydajności systemu.",
                         "checkBoxDesc": "Autowykrywanie",
                         "note": "Jeśli automatyczne wykrywanie jest włączone, komputer przełączy się do samolotowego trybu zasilania, gdy wykryje, że znajduje się na pokładzie samolotu i wyłączy go po opuszczeniu samolotu."
                     },
@@ -1108,7 +1113,7 @@
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibracja do całkowitego naładowania",
                         "progressText2": "{{stage}} z {{stageNum}}: Kalibracja do niskiego poziomu naładowania baterii",
-                        "progressText3": "{{stage}} z {{stageNum}}: Kalibracja do całkowitego naładowania",
+                        "progressText3": "{{stage}} z {{stageNum}}: Kalibracja do wysokiego poziomu zasilania baterii",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
                         "resetLog": {
@@ -1122,7 +1127,7 @@
                             "ERROR_UNEXPECTED": "Niepowodzenie: wystąpił nieoczekiwany błąd."
                         },
                         "popup": {
-                            "description1": "Proces resetowania wygląda następująco:<br> Całkowicie naładuj akumulator  -->  Całkowicie rozładuj akumulator  -->  Całkowicie naładuj akumulator",
+                            "description1": "Proces resetowania wygląda następująco:<br>Całkowicie naładuj akumulator --> Rozładuj akumulator do niskiego poziomu --> Naładuj akumulator do wysokiego poziomu lub całkowicie",
                             "description2": "Uwaga: <br>1. Ten proces może zająć wiele godzin. W tym czasie należy unikać używania komputera.<br>2. Zamknij wszystkie otwarte aplikacje i podłącz komputer do zasilania sieciowego.<br>3. Podczas tego procesu funkcja progu ładowania akumulatora jest wyłączona.",
                             "continue": "Kontynuuj",
                             "cancel": "Anuluj",
@@ -1139,10 +1144,10 @@
                 },
                 "smartStandby": {
                     "title": "Inteligentne wstrzymanie",
-                    "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
-                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Ten okres jest optymalizowany na podstawie ustalonego przez ciebie harmonogramu lub otrzymanego przez nas twojego czasu użytkowania komputera. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowane dni; nie przełącza się w ogóle, jeśli według harmonogramu nie jest używany przez kilka kolejnych dni.",
+                    "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie wznawianie z <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">trybu wstrzymania</a> w godzinach bardziej intensywnego korzystania.",
+                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Ten okres jest optymalizowany na podstawie ustalonego przez ciebie harmonogramu lub Twojego czasu użytkowania komputera. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowane dni; nie przełącza się w ogóle, jeśli według harmonogramu nie jest używany przez kilka kolejnych dni.",
                     "timer": {
-                        "heading": "Typowe godziny korzystania przez ciebie z komputera",
+                        "heading": "Typowe godziny korzystania z komputera:",
                         "subHeading1": "rozpocząć się",
                         "subHeading2": "koniec",
                         "subHeading3": "używaj tego harmonogramu dla",
@@ -1160,14 +1165,14 @@
                     "warningtip": "Wybierz co najmniej jeden dzień.",
                     "days": {
                         "shortName": {
-                            "sun": "niedziela",
-                            "mon": "poniedziałek",
-                            "tue": "wtorek",
-                            "wed": "środa",
-                            "thurs": "czwartek",
-                            "fri": "piątek",
-                            "sat": "sobota",
-                            "thu": "Thu"
+                            "sun": "Nie",
+                            "mon": "Pon",
+                            "tue": "Wto",
+                            "wed": "Śro",
+                            "thurs": "Czw",
+                            "fri": "Pią",
+                            "sat": "Sob",
+                            "thu": "Czw"
                         },
                         "name": {
                             "sun": "niedziela",
@@ -1184,11 +1189,11 @@
                         "noDaySelected": "Nie wybrano dnia"
                     },
                     "checkbox": "Automatyczne dostosowywanie czasu aktywacji komputera na podstawie użytkowania",
-                    "hyperlinkToGraph": "Kliknij, aby zobaczyć tabelę aktywności i czasu aktywacji twojego komputera",
+                    "hyperlinkToGraph": "Kliknij, aby zobaczyć użycie i zastosowany czas aktywności",
                     "subTitle": "Ustaw harmonogram pracy komputera",
                     "automaticMode": "Tryb automatyczny",
                     "manualMode": "Tryb ręczny",
-                    "subNote": "Komputer przechodzi w tryb Modern Standby na podstawie użytkowania.",
+                    "subNote": "Można zaplanować szybsze wznowienie pracy komputera w zależności od sposobu użytkowania.",
                     "graph": {
                         "graph1Tittle": "Użytkowanie komputera",
                         "graph2Tittle": "Zastosowany czas aktywności",
@@ -1227,7 +1232,8 @@
                     },
                     "description2": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
                     "subTitle2": "Ustaw typowe godziny korzystania z komputera",
-                    "oldTooltipText": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Okres bezczynności jest optymalizowany na podstawie ustawionego harmonogramu. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowanych dniach, a nie przełącza się w ogóle, jeśli nie jest używany przez kilka kolejnych zaplanowanych dni."
+                    "oldTooltipText": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Okres bezczynności jest optymalizowany na podstawie ustawionego harmonogramu. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowanych dniach, a nie przełącza się w ogóle, jeśli nie jest używany przez kilka kolejnych zaplanowanych dni.",
+                    "sectionTitle": "Ustawienia trybu gotowości"
                 }
             },
             "audio": {
@@ -1331,7 +1337,8 @@
                         "note": {
                             "title": "Uwaga",
                             "description": "Aplikacja Lenovo Vantage musi uzyskać dostęp do informacji o lokalizacji w celu obliczenia czasu zachodu i wschodu słońca w Twoim regionie."
-                        }
+                        },
+                        "tips": "Uruchom Windows Update lub ręcznie zainstaluj sterownik karty graficznej, aby przywrócić tryb Eye Care"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura barwowa ekranu",
@@ -1374,6 +1381,17 @@
                         "taskBarDimmer": "PRZYCIEMNIANIE PASKA ZADAŃ",
                         "backgroundDimmer": "PRZYCIEMNIANIE TŁA",
                         "displayDimmer": "PRZYCIEMNIANIE EKRANU"
+                    },
+                    "displayPriority": {
+                        "title": "Sterowanie priorytetem ekranów",
+                        "description": "Twoje urządzenie obsługuje maksymalną liczbę wyświetlaczy zewnętrznych. Po podłączeniu kilku wyświetlaczy za pomocą tych dodatkowych metod, działać będzie tylko ten z priorytetem.<br/>Wybierz poniżej, która z dodatkowych metod wyświetlania ma mieć priorytet:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Dokowanie",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Moduł optyczny"
+                        }
                     }
                 },
                 "camera": {
@@ -1402,7 +1420,8 @@
                         "caption": "Ta funkcja rozmywa tło podczas korzystania z aparatu do połączeń wideo lub robienia zdjęć. Możesz wybrać inny efekt z poniższych:",
                         "blurMode": "Tryb rozmycia",
                         "comicMode": "Tryb komiksowy",
-                        "sketchMode": "Tryb szkicu"
+                        "sketchMode": "Tryb szkicu",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA JEST UŻYWANA",
@@ -1527,7 +1546,60 @@
                 "fnCtrlKey": {
                     "title": "Klawisz przełączania Fn i Ctrl",
                     "description": "Jeśli zwykle naciskasz klawisz Fn, gdy chcesz nacisnąć klawisz Ctrl, funkcje tych dwóch klawiszy można zamienić.",
-                    "restartNote": "Zamiana funkcji dwóch klawiszy wymaga ponownego uruchomienia komputera. Czy na pewno chcesz ponownie go uruchomić?"
+                    "restartNote": "Zamiana funkcji dwóch klawiszy wymaga ponownego uruchomienia komputera. Czy na pewno chcesz ponownie go uruchomić?",
+                    "title2": "W przypadku często używanych kombinacji klawiszy klawisz Fn działa jak klawisz Ctrl",
+                    "description2": "Klawisz Fn działa jak klawisz Ctrl w przypadku niektórych często używanych kombinacji klawiszy. Działanie klawisza Ctrl nie ulega zmianie.",
+                    "featureNote": "Opisana funkcja, klawisz Fn i funkcja zamiany klawisza Ctrl nie mogą być włączone jednocześnie. Jeśli jeden z trybów jest włączony, drugi zostanie automatycznie wyłączony.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Klawisze Fn",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Klawisze Ctrl",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Działanie",
+                            "action1": "Wybierz wszystkie",
+                            "action2": "Kopiuj",
+                            "action3": "Dodaj stronę WWW do moich ulubionych",
+                            "action4": "Wyszukiwanie",
+                            "action5": "Znajdź i zamień w programie Microsoft Word",
+                            "action6": "Wyrównaj do lewej i prawej w programie Microsoft Word",
+                            "action7": "Zakończ (w obsługiwanych aplikacjach)",
+                            "action8": "Dodaj podkreślenie",
+                            "action9": "Wklej",
+                            "action10": "Zamknij (w aplikacji)",
+                            "action11": "Wytnij",
+                            "action12": "Ponów",
+                            "action13": "Cofnij"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "WIĘCEJ",
@@ -1537,16 +1609,16 @@
                     "less": "LESS"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Podświetlenie klawiatury",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając klawisz Fn+spacja.",
+                        "auto": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając klawisz Fn+spacja, albo włączyć ustawienia automatyczne. Opcja „Automatyczna” automatycznie dostosowuje podświetlenie klawiatury do oświetlenia otoczenia."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automatyczny",
+                        "low": "Niski",
+                        "high": "Wysoki",
+                        "off": "Wyłącz"
                     }
                 }
             }
@@ -1709,12 +1781,12 @@
             "superResolution": {
                 "heading": "Inteligentne multimedia",
                 "title": "Skalowanie rozdzielczości wideo",
-                "desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label> Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Po włączeniu zaleca się podłączenie komputera do prądu przemiennego.</label></p>",
-                "tooltip": "Ta funkcja działa tylko w następujących odtwarzaczach: <br/> Windows Media player",
+                "desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać w trybie prądu stałego. Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
+                "tooltip": "Funkcja działa tylko w przypadku:<br>Windows Media player",
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
-                    "description1": "Komputer nie jest podłączony do zasilania prądem przemiennym, a poziom naładowania baterii jest niższy niż 20%.",
-                    "description2": "Komputer nie jest podłączony do zasilania prądem przemiennym, a tryb oszczędzania akumulatora jest włączony.",
+                    "description1": "Komputer nie jest podłączony do zasilania prądem przemiennym.",
+                    "description2": "Tryb oszczędzania baterii jest włączony.",
                     "description3": "Temperatura procesora jest za wysoka."
                 }
             },
@@ -1871,7 +1943,7 @@
             "localRepositoryDatabaseException": "Nie można znaleźć bazy danych lokalnego repozytorium albo jest ona uszkodzona.",
             "networkInterruptedException": "Serwer aktualizacji systemu jest obecnie niedostępny. Spróbuj ponownie później.",
             "helpCenterInvalidServerException": "Serwer aktualizacji systemu jest nieprawidłowy. Spróbuj ponownie później.",
-            "catalogNotFoundException": "Nie znaleziono odpowiednich aktualizacji do Twojego systemu.",
+            "catalogNotFoundException": "Brak odpowiednich aktualizacji dla systemu, jako że nie znaleziono katalogu aktualizacji.",
             "catalogCrcErrorException": "Katalog Twojego systemu jest obecnie aktualizowany. Spróbuj ponownie później.",
             "catalogErrorException": "Na serwerze aktualizacji systemu wykryto błąd związany z katalogiem aktualizacji Twojego systemu. Spróbuj ponownie później.",
             "fileNotFoundException": "Nie znaleziono pliku."
@@ -1979,7 +2051,7 @@
             "visitHde": "Odwiedź Szyfrowanie dysku twardego",
             "haveOwnPassword": "Mam własnego menedżera haseł",
             "haveOwnWifi": "Mam własne zabezpieczenia Wi-Fi",
-            "haveOwnVpn": "Mam własne zabezpieczenia VPN",
+            "haveOwnVpn": "Mam własne VPN",
             "uac": "Kontrola konta użytkownika",
             "uacTitles": "Kontrola konta użytkownika",
             "hde": "Szyfrowanie dysku twardego",
@@ -2095,7 +2167,8 @@
                 "showmore": "Pokaż więcej",
                 "showless": "Pokaż mniej",
                 "button": "Włącz funkcję Bezpieczeństwo WiFi",
-                "disableDecribe": "Bezpieczeństwo WiFi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych."
+                "disableDescribe": "Bezpieczeństwo WiFi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych.",
+                "enabledDescribe": "Funkcja Bezpieczeństwo Wi-Fi Lenovo obecnie monitoruje aktywność w sieci."
             },
             "threatlocator": {
                 "describe": "Funkcja Detektor zagrożeń sprawdza bezpieczeństwo sieci wokół Ciebie.",
@@ -2129,7 +2202,8 @@
                 "subtitle": "Spokojny sen",
                 "subtitleDescribe": "Bezpieczny Dom wyśle zawiadomienie, jeśli wykryje lukę w Twoim urządzeniu lub sieci domowej, lub jeśli zostaniesz połączony z potencjalnie złośliwą siecią. Dowiedz się więcej o funkcji Bezpieczny Dom <tag>tutaj</tag>.",
                 "tryNow": "„Wypróbuj teraz”",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Wprowadź kod zaproszenia",
@@ -2204,7 +2278,8 @@
             "getStarted1": "Kliknij na „Otwórz SurfEasy” przycisk powyżej, aby uruchomić SurfEasy VPN.",
             "getStarted2": "Włącz VPN i poczekaj krótką chwilę na potwierdzenie bezpiecznego połączenia.",
             "getStarted3": "W razie potrzeby zmień region lub lokalizację i korzystaj z bezpiecznej sieci prywatnej.",
-            "poweredBySurfEasy": "Zasilane przez SurfEasy"
+            "poweredBySurfEasy": "Zasilane przez SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE MENEDŻER HASEŁ",
@@ -2232,7 +2307,8 @@
             "allowsYou2": "Monitoruj ukrytą sieć w celu kontroli swoich informacji osobistych",
             "allowsYou3": "Bądź bezpieczny w niezabezpieczonych sieciach WiFi z wbudowanym VPN",
             "allowsYou4": "Bezpieczne udostępnianie haseł bez ujawniania ich",
-            "poweredByDashLane": "Zasilany przez Dashlane"
+            "poweredByDashLane": "Zasilany przez Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2304,7 +2380,7 @@
     "faq": {
         "footer": {
             "title": "Nie znalazłeś tego, czego szukasz?",
-            "description": "POTRZEBUJESZ DODATKOWEGO WSPARCIA? NIE ZAPRASZAMY DO KONTAKTU Z NAMI VIA:",
+            "description": "Potrzebujesz dodatkowego wsparcia? Skontaktuj się z nami za pomocą:",
             "body": "Społeczność Lenovo",
             "button": "PRZEJDŹ DO FORUM"
         },
@@ -2709,7 +2785,7 @@
         "deviceStatisticsDescription": "Wyślij anonimowe dane o urządzeniu, aby pomóc nam poprawić jakość i niezawodność oraz ulepszyć nową generację urządzeń.",
         "userProfile": "Profil użytkownika",
         "Note": "Uwaga: ",
-        "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane.",
+        "settingsNotes": "Uruchom ponownie tę aplikację, aby upewnić się, że wszystkie zmiany zostaną zastosowane.",
         "betaSettingTitle": "Program Beta",
         "betaProgram": "Program Beta",
         "betaSettingDescription": "Wypróbuj najnowsze funkcje, nad którymi pracujemy."
@@ -2733,6 +2809,8 @@
         "noteDownloadAvailable": "Uwaga: po kliknięciu przycisku Pobierz może zostać wyświetlony monit z systemu Windows z prośbą o potwierdzenie zainstalowania oprogramowania na urządzeniu. Po zakończeniu instalacji aplikacje będą wyświetlane automatycznie na pulpicie lub w menu Start.<br /><br />Możesz zamknąć stronę Moje oprogramowanie i dalej korzystać z Lenovo Vantage. Nie zamykaj Lenovo Vantage podczas instalacji.",
         "sizeText": "Wymiary",
         "versionText": "Wersja",
+        "redemptionCode": "Kod dostępu:",
+        "redeemWebsite": "Zakup na stronie dostawcy",
         "softwareDescription": "Kliknij poniższy przycisk Pobierz, aby pobrać oprogramowanie zakupione wraz z urządzeniem. Możesz ponownie pobrać oprogramowanie w dowolnym momencie, wybierając opcję Moje oprogramowanie z menu aplikacji Vantage.",
         "title": "Moje oprogramowanie",
         "loadingDescription": "Czekaj, tworzymy listę oprogramowania zakupionego wraz z urządzeniem.",
@@ -2842,7 +2920,7 @@
                 "yes": "Tak",
                 "no": "Nie"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Podczas ładowania informacji o sprzęcie lub w trakcie skanowania, przycisk jest wyłączony, jeśli urządzenia pamięci nie obsługują tej funkcji."
         },
         "support": {
             "title": "Pobierz profesjonalne narzędzia diagnostyczne",
@@ -3049,7 +3127,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3259,5 +3354,8 @@
             "subtitle2": "Komputery All-in-One: optymalizacja",
             "body2": "Komputery All-in-One z procesorami Intel® Core™ 9. generacji oferują moc komputera stacjonarnego zamkniętą w eleganckim monitorze. Dzięki temu zyskujesz porządek na biurku, wbudowane zabezpieczenia sprzętowe i ekran o dużej rozdzielczości."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

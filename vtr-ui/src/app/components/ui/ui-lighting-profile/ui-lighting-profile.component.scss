@@ -2,7 +2,7 @@
 
 .ui-lighting-profile {
   border-radius: $border_radius;
-  background: $dark_cell;
+  background: $gaming_darkest;
   box-shadow: $drop_shadow_gaming;
   padding: 6rem;
   height: auto;
@@ -31,11 +31,11 @@
     margin-top: 2.2rem;
     background: $gaming_lighting_profile_bg;
     border-radius: 0.5rem;
-    background: url(./../../../../assets/images/gaming/lighting/blueBG.png) left center no-repeat $gaming_lighting_profile_bg;
+    background: url(./../../../../assets/images/gaming/lighting/blueBG.png) left center no-repeat $gaming_bg;
     background-size: contain;
     padding: 2rem;
     @media #{$small-screen}{
-      background: url(./../../../../assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_lighting_profile_bg;
+      background: url(./../../../../assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_bg;
       background-size: 100% auto;
       .d-flex{
         flex-direction: column;
@@ -63,7 +63,7 @@
         width: 100%;
         max-width: 40rem;
         height: auto;
-       // @media #{$small-screen}{ commented as per zeyu updates in spreadsheet
+       // @media #{$small-screen}{ commented as per UX Sepcs
         //  max-width: 20rem;
        // }
       }
@@ -105,7 +105,7 @@
               height: 4.8rem;
               line-height: 6.8rem;
               border-radius: 0.6rem;
-              background: $gaming_shade;
+              background: $white5;
               margin-bottom: 5rem;
               .dropdown-toggle {
                 cursor: pointer;

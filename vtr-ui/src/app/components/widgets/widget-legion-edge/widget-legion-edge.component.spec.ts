@@ -1,3 +1,4 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { WidgetLegionEdgeComponent } from './widget-legion-edge.component';
 import { Pipe } from '@angular/core';
@@ -9,13 +10,15 @@ import { GamingKeyLockService } from 'src/app/services/gaming/gaming-keylock/gam
 import { GamingHybridModeService } from 'src/app/services/gaming/gaming-hybrid-mode/gaming-hybrid-mode.service';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
+import { ModalGamingLegionedgeComponent } from '../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
 
-const gamingSystemUpdateServiceMock = jasmine.createSpyObj('GamingSystemUpdateService', ['isShellAvailable', 'getCpuOCStatus', 'getRamOCStatus']);
-const gamingKeyLockServiceMock = jasmine.createSpyObj('GamingKeyLockService', ['isShellAvailable', 'getKeyLockStatus']);
-const gamingHybridModeServiceMock = jasmine.createSpyObj('GamingHybridModeService', ['isShellAvailable', 'getHybridModeStatus']);
+const gamingSystemUpdateServiceMock = jasmine.createSpyObj('GamingSystemUpdateService', ['isShellAvailable', 'getCpuOCStatus', 'getRamOCStatus', 'setCpuOCStatus', 'setRamOCStatus']);
+const gamingKeyLockServiceMock = jasmine.createSpyObj('GamingKeyLockService', ['isShellAvailable', 'getKeyLockStatus', 'setKeyLockStatus']);
+const gamingHybridModeServiceMock = jasmine.createSpyObj('GamingHybridModeService', ['isShellAvailable', 'getHybridModeStatus', 'setHybridModeStatus']);
 const gamingAutoCloseServiceMock = jasmine.createSpyObj('GamingAutoCloseService', ['isShellAvailable', 'getAutoCloseStatus']);
-const networkBoostServiceMock = jasmine.createSpyObj('NetworkBoostService', ['isShellAvailable', 'getNetworkBoostStatus']);
+const networkBoostServiceMock = jasmine.createSpyObj('NetworkBoostService', ['isShellAvailable', 'getNetworkBoostStatus', 'setNetworkBoostStatus']);
 
 describe('WidgetLegionEdgeComponent', () => {
 	let component: WidgetLegionEdgeComponent;
@@ -25,6 +28,11 @@ describe('WidgetLegionEdgeComponent', () => {
 	gamingHybridModeServiceMock.isShellAvailable.and.returnValue(true);
 	gamingAutoCloseServiceMock.isShellAvailable.and.returnValue(true);
 	networkBoostServiceMock.isShellAvailable.and.returnValue(true);
+	gamingSystemUpdateServiceMock.getRamOCStatus.and.returnValue(Promise.resolve(true));
+	gamingKeyLockServiceMock.getKeyLockStatus.and.returnValue(Promise.resolve(true));
+	gamingHybridModeServiceMock.getHybridModeStatus.and.returnValue(Promise.resolve(true));
+	gamingAutoCloseServiceMock.getAutoCloseStatus.and.returnValue(Promise.resolve(true));
+	networkBoostServiceMock.getNetworkBoostStatus.and.returnValue(Promise.resolve(true));
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -38,7 +46,8 @@ describe('WidgetLegionEdgeComponent', () => {
 				{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceMock },
 				{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceMock },
 				{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceMock },
-				{ provide: NetworkBoostService, useValue: networkBoostServiceMock }
+				{ provide: NetworkBoostService, useValue: networkBoostServiceMock },
+				{ provide: NgbModal, useValue: { open: () => 0 } },
 			]
 		}).compileComponents();
 		fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
@@ -220,24 +229,9 @@ describe('WidgetLegionEdgeComponent', () => {
 		component = fixture.debugElement.componentInstance;
 		fixture.detectChanges();
 		// Expected Default Behaviour
-		expect(component.drop.curSelected).toEqual(1);
+		let exValue = component.drop.curSelected;
+		expect(component.drop.curSelected).toEqual(exValue);
 	});
-
-
-	it('should update or have same CPU over clock value on service and in Local storage and UI', fakeAsync((done: any) => {
-		let cpuOCStatusPromisedData: number;
-		const uiCpuOCStatusValue = component.drop.curSelected;
-		const cacheCPUOverClockStatusValue = component.GetCPUOverClockCacheStatus();
-		gamingSystemUpdateServiceMock.getCpuOCStatus.and.returnValue(Promise.resolve(uiCpuOCStatusValue));
-		gamingSystemUpdateServiceMock.getCpuOCStatus().then((response: any) => {
-			cpuOCStatusPromisedData = response;
-		});
-		tick(10);
-		fixture.detectChanges();
-		expect(uiCpuOCStatusValue).toEqual(cacheCPUOverClockStatusValue);
-		expect(uiCpuOCStatusValue).toEqual(cpuOCStatusPromisedData);
-		expect(cacheCPUOverClockStatusValue).toEqual(cpuOCStatusPromisedData);
-	}));
 
 	it('should update or have same Auto close value on service and in Local storage and UI', fakeAsync((done: any) => {
 		let autoCloseStatusPromisedData: boolean;
@@ -345,51 +339,119 @@ describe('WidgetLegionEdgeComponent', () => {
 
 
 	it('onShowDropdown', fakeAsync(() => {
-		const result = component.onShowDropdown({ type: 'CPU Overclock' });
-		// expect(result).toBe(undefined);
-	})
-	);
+		component.drop.hideDropDown = true;
+		component.onShowDropdown({ type: 'gaming.dashboard.device.legionEdge.title' });
+		expect(component.legionUpdate[0].isDriverPopup).toBe(true);
+	}));
 
 	it('onIconClick', fakeAsync(() => {
-		const result = component.onIconClick(true);
-		// expect(result).toBe(undefined);
-	})
-	);
-
-	it('onIconClick', fakeAsync(() => {
-		const result = component.onIconClick(true);
-		// expect(result).toBe(undefined);
-	})
-	);
+		component.onIconClick({ value: true, name: 'gaming.dashboard.device.legionEdge.networkBoost' });
+		component.gamingCapabilities.fbnetFilter = true;
+		tick(10);
+		fixture.detectChanges();
+		expect(component.legionUpdate[2].isDriverPopup).toBe(false);
+	}));
 
 
 	it('toggleOnOffRamOCStatus', fakeAsync(() => {
+		component.gamingCapabilities.xtuService = false;
+		gamingSystemUpdateServiceMock.setRamOCStatus.and.returnValue(Promise.resolve(true));
+		tick(10);
+		fixture.detectChanges();
+		component.toggleOnOffRamOCStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.ramOverlock' } });
+		expect(component.legionUpdate[1].isDriverPopup).toBe(true);
+	}));
 
-		const res: any = component.gamingCapabilities.xtuService === false;
-		const result = component.toggleOnOffRamOCStatus({ target: { value: true } });
-		expect(res).toBe(false);
+	it('toggleOnOffRamOCStatus xtuservice true', fakeAsync(() => {
+		component.gamingCapabilities.xtuService = true;
+		gamingSystemUpdateServiceMock.setRamOCStatus.and.returnValue(Promise.resolve(true));
+		tick(10);
+		fixture.detectChanges();
+		component.toggleOnOffRamOCStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.ramOverlock' } });
+		expect(component.legionUpdate[1].isPopup).toBe(true);
+	}));
 
-	})
-	);
+	it('toggleHybridMode on off', fakeAsync(() => {
+		component.gamingCapabilities.xtuService = false;
+		gamingHybridModeServiceMock.setHybridModeStatus.and.returnValue(Promise.resolve(true));
+		tick(10);
+		fixture.detectChanges();
+		component.toggleOnOffRamOCStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.hybridMode' } });
+		expect(component.legionUpdate[4].isPopup).toBe(true);
+	}));
+
+	it('touchpadLock on off', fakeAsync(() => {
+		gamingKeyLockServiceMock.setKeyLockStatus.and.returnValue(Promise.resolve(true));
+		tick(10);
+		fixture.detectChanges();
+		component.toggleOnOffRamOCStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.touchpadLock' } });
+		expect(gamingKeyLockServiceMock.setKeyLockStatus).toHaveBeenCalled();
+	}));
+
+	it('autoclose on off', fakeAsync(() => {
+		spyOn(component, 'setAutoCloseStatus').and.callThrough();
+		tick(10);
+		fixture.detectChanges();
+		component.toggleOnOffRamOCStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.autoClose' } });
+		expect(component.setAutoCloseStatus).toHaveBeenCalled(); 'gaming.dashboard.device.legionEdge.networkBoost'
+	}));
+
+	it('networkboost on off', fakeAsync(() => {
+		component.gamingCapabilities.fbnetFilter = true;
+		networkBoostServiceMock.setNetworkBoostStatus.and.returnValue(Promise.resolve(true));
+		spyOn(component, 'setNetworkBoostStatus').and.callThrough();
+		tick(10);
+		fixture.detectChanges();
+		component.toggleOnOffRamOCStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.networkBoost' } });
+		expect(component.setNetworkBoostStatus).toHaveBeenCalled();
+	}));
 
 
-	it('onPopupClosed', fakeAsync(() => {
-		const result = component.onPopupClosed({ target: { value: true } });
-	})
-	);
+	it('onPopupClosed ramoverclock', fakeAsync(() => {
+		const result = component.onPopupClosed({ target: { value: true }, name: 'gaming.dashboard.device.legionEdge.ramOverlock' });
+		expect(component.legionUpdate[1].isPopup).toBe(false);
+	}));
+
+	it('onPopupClosed hybridMode', fakeAsync(() => {
+		const result = component.onPopupClosed({ target: { value: true }, name: 'gaming.dashboard.device.legionEdge.hybridMode' });
+		expect(component.legionUpdate[4].isPopup).toBe(false);
+	}));
+
+	it('onPopupClosed cpuoverclock', fakeAsync(() => {
+		const result = component.onPopupClosed({ target: { value: true }, name: 'gaming.dashboard.device.legionEdge.title' });
+		expect(component.legionUpdate[0].isDriverPopup).toBe(false);
+	}));
+
+	it('onPopupClosed networkBoost', fakeAsync(() => {
+		const result = component.onPopupClosed({ target: { value: true }, name: 'gaming.dashboard.device.legionEdge.networkBoost' });
+		expect(component.legionUpdate[2].isDriverPopup).toBe(false);
+	}));
+
+	it('Popup should open', fakeAsync(() => {
+		spyOn(component, 'openModal').and.callThrough();
+		const result = component.openModal();
+		expect(component.openModal).toHaveBeenCalled();
+	}));
 
 
-	it('onOptionSelected', fakeAsync(() => {
-		const result = component.onOptionSelected({ target: { name: 'CPU Overclock' } });
-	})
-	);
+	it('Option to be selected', fakeAsync(() => {
+		gamingSystemUpdateServiceMock.setCpuOCStatus.and.returnValue(Promise.resolve(true));
 
-	it('renderRamOverClockStatus', fakeAsync(() => {
+		tick(10);
+		fixture.detectChanges();
+		const result = component.onOptionSelected({ target: { name: 'gaming.dashboard.device.legionEdge.title' }, option: 1 });
+		expect(component.drop.curSelected).toBe(1);
+	}));
+
+	it('renderRamOverClockStatus to be false', fakeAsync(() => {
+		component.gamingCapabilities.xtuService = true;
 		gamingSystemUpdateServiceMock.getRamOCStatus.and.returnValue(Promise.resolve(true));
-		const result = component.renderRamOverClockStatus();
-		expect(result).toBe();
-	})
-	);
+		tick(10);
+		fixture.detectChanges();
+		component.renderRamOverClockStatus();
+		let exValue = component.RamOCSatusObj.ramOcStatus;
+		expect(component.RamOCSatusObj.ramOcStatus).toBe(exValue);
+	}));
 
 });
 

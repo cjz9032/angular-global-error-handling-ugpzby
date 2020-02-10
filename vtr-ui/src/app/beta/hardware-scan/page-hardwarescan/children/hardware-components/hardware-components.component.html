@@ -30,7 +30,7 @@
 						vtrMetrics
 						metricsEvent="FeatureClick"
 						metricsParent="{{itemParentSummary}}"
-						metricsItem="{{itemNameSummary}}">{{viewResultsText}}
+						metricsItem="{{itemNameSummary}}">{{'hardwareScan.viewResults' | translate}}
 					</a>
 
 					<a class="refresh-button"
@@ -40,7 +40,7 @@
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.RefreshModules"
 						[ngClass]="{'action-anchor': !startScanClicked, 'disabled-anchor': startScanClicked}"
-						(click)="refreshModules()">{{refreshText}}
+						(click)="refreshModules()">{{'hardwareScan.refreshModule' | translate}}
 						<fa-icon class="refresh-icon"
 							placement="auto"
 							[icon]="['fal', 'redo']"
