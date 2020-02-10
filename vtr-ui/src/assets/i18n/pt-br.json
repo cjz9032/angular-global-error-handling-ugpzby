@@ -1338,7 +1338,7 @@
                             "title": "Nota",
                             "description": "O Lenovo Vantage precisa acessar suas informações de localização para calcular o horário do pôr do sol e do nascer do sol da sua região."
                         },
-						"tips": "Execute o Windows Update ou instale manualmente o driver gráfico para recuperar o modo Proteção Ocular"
+                        "tips": "Execute o Windows Update ou instale manualmente o driver gráfico para recuperar o modo Proteção Ocular"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura das cores do monitor",
@@ -1420,7 +1420,8 @@
                         "caption": "Esta função desfoca o fundo quando a câmera é usada para qualquer chamada de vídeo ou registro de fotos. Você pode escolher efeitos diferentes entre as seleções abaixo.",
                         "blurMode": "Modo Borrão",
                         "comicMode": "Modo Quadrinhos",
-                        "sketchMode": "Modo Desenho"
+                        "sketchMode": "Modo Desenho",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "A CÂMERA ESTÁ EM USO",

@@ -1338,7 +1338,7 @@
                             "title": "Anmerkung",
                             "description": "Lenovo Vantage muss auf Ihre Standortinformationen zugreifen, um die Sonnenuntergangs- und Sonnenaufgangszeit Ihrer Gegend zu berechnen."
                         },
-						"tips": "Führen Sie Windows Update aus oder installieren Sie den Grafiktreiber manuell, um den Modus \"Augen schonen\" wiederherzustellen"
+                        "tips": "Führen Sie Windows Update aus oder installieren Sie den Grafiktreiber manuell, um den Modus \"Augen schonen\" wiederherzustellen"
                     },
                     "dispColorTemp": {
                         "title": "Farbtemperatur der Anzeige",
@@ -1420,7 +1420,8 @@
                         "caption": "Mit dieser Funktion wird Ihr Hintergrund weichgezeichnet, wenn Sie die Kamera für Videokonferenzen oder die Aufnahme von Fotos verwenden. Sie können einen der unten aufgeführten Effekte auswählen.",
                         "blurMode": "Weichzeichnen-Modus",
                         "comicMode": "Comic-Modus",
-                        "sketchMode": "Skizzen-Modus"
+                        "sketchMode": "Skizzen-Modus",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA WIRD VERWENDET",
