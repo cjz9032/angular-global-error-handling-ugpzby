@@ -11,6 +11,7 @@
 	height: 6.5rem;
 	border-radius: 20rem;
 	cursor: pointer;
+	outline: none;
 
 	@media #{$breakpoint_xl} {
 		width: 20rem;
