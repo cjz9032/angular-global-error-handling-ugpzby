@@ -195,7 +195,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
-		public batteryService:BatteryDetailService,
+		public batteryService: BatteryDetailService,
 		public displayService: DisplayService,
 		private commonService: CommonService,
 		private ngZone: NgZone,
@@ -1098,13 +1098,14 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			this.manualRefresh.emit();
 		}
 	}
+
 	public isDisabledCameraBlur(): boolean {
-		if(this.batteryService.gaugePercent < 23 && !this.batteryService.isAcAttached){
-			this.onCameraBackgroundBlur({switchValue:false});
+		if (this.batteryService.gaugePercent < 23 && !this.batteryService.isAcAttached) {
+			this.onCameraBackgroundBlur({switchValue: false});
 			return true;
 		}
 		return false;
-	  }
+	}
 
 	public onCameraBackgroundBlur($event: any) {
 		try {
