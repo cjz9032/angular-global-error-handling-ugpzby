@@ -1,83 +1,84 @@
 <p class="caption"
 	id="activeProtectionSystem-advanced-settings-desc"
-	attr.aria-label="activeProtectionSystem-advanced-settings-desc">
+	role="text"
+	tabindex="0">
 	{{'device.smartAssist.activeProtectionSystem.advanced.description' | translate}}
 </p>
-	<div class="row">
-		<div class="col">
+<div class="row">
+	<div class="col">
 
-			<li *ngIf="penCapability"
-				class="input-item">
-				<div>
-					<vtr-ui-row-switch [name]="'activeProtectionSystem_advanced_pen'"
-						[title]="'device.smartAssist.activeProtectionSystem.advanced.pen.title' | translate"
-						[caption]="'device.smartAssist.activeProtectionSystem.advanced.pen.description' | translate"
-						[theme]="'white'"
-						[isSwitchVisible]="true"
-						[showChildContent]="true"
-						[isSwitchChecked]="penStatus"
-						(toggleOnOff)="setPenSetting($event)"
-						vtrMetrics
-						metricsEvent="FeatureClick"
-						metricsParent="Device.SmartAssist"
-						metricsItem="ActiveProtectionSystem.Advanced.PenInput"
-						metricsValue="penStatus"
-						[switchId]="'activeProtectionSystem-advanced-pen'">
-						<div class="dropdown col-sm-6 pl-0">
-							<vtr-ui-dropdown [dropDownId]="'penIntervalsDropDown'"
-								*ngIf=" penStatus "
-								[list]="intervals"
-								[value]="penDelay"
-								(change)="setPenDelayTime($event)"
-								vtrMetrics
-								metricsEvent="FeatureClick"
-								metricsParent="Device.SmartAssist"
-								metricsItem="ActiveProtectionSystem.Advanced.PenInput.Dropdown"
-								metricsValue="penStatus">
-							</vtr-ui-dropdown>
-						</div>
-					</vtr-ui-row-switch>
-				</div>
-			</li>
+		<li *ngIf="penCapability"
+			class="input-item">
+			<div>
+				<vtr-ui-row-switch [name]="'activeProtectionSystem_advanced_pen'"
+					[title]="'device.smartAssist.activeProtectionSystem.advanced.pen.title' | translate"
+					[caption]="'device.smartAssist.activeProtectionSystem.advanced.pen.description' | translate"
+					[theme]="'white'"
+					[isSwitchVisible]="true"
+					[showChildContent]="true"
+					[isSwitchChecked]="penStatus"
+					(toggleOnOff)="setPenSetting($event)"
+					vtrMetrics
+					metricsEvent="FeatureClick"
+					metricsParent="Device.SmartAssist"
+					metricsItem="ActiveProtectionSystem.Advanced.PenInput"
+					metricsValue="penStatus"
+					[switchId]="'activeProtectionSystem-advanced-pen'">
+					<div class="dropdown col-sm-6 pl-0">
+						<vtr-ui-dropdown [dropDownId]="'penIntervalsDropDown'"
+							*ngIf=" penStatus "
+							[list]="intervals"
+							[value]="penDelay"
+							(change)="setPenDelayTime($event)"
+							vtrMetrics
+							metricsEvent="FeatureClick"
+							metricsParent="Device.SmartAssist"
+							metricsItem="ActiveProtectionSystem.Advanced.PenInput.Dropdown"
+							metricsValue="penStatus">
+						</vtr-ui-dropdown>
+					</div>
+				</vtr-ui-row-switch>
+			</div>
+		</li>
 
-			<li *ngIf="touchCapability"
-				class="input-item">
-				<div>
-					<vtr-ui-row-switch [name]="'activeProtectionSystem_touchInput'"
-						[title]="'device.smartAssist.activeProtectionSystem.advanced.touch.title' | translate"
-						[theme]="'white'"
-						[isSwitchVisible]="true"
-						[showChildContent]="true"
-						[isSwitchChecked]="touchStatus"
-						(toggleOnOff)="setTouchInputSetting($event)"
-						vtrMetrics
-						metricsEvent="FeatureClick"
-						metricsParent="Device.SmartAssist"
-						metricsItem="ActiveProtectionSystem.Advanced.TouchInput"
-						metricsValue="touchStatus"
-						[switchId]="'activeProtectionSystem_touchInput'">
-					</vtr-ui-row-switch>
-				</div>
-			</li>
+		<li *ngIf="touchCapability"
+			class="input-item">
+			<div>
+				<vtr-ui-row-switch [name]="'activeProtectionSystem_touchInput'"
+					[title]="'device.smartAssist.activeProtectionSystem.advanced.touch.title' | translate"
+					[theme]="'white'"
+					[isSwitchVisible]="true"
+					[showChildContent]="true"
+					[isSwitchChecked]="touchStatus"
+					(toggleOnOff)="setTouchInputSetting($event)"
+					vtrMetrics
+					metricsEvent="FeatureClick"
+					metricsParent="Device.SmartAssist"
+					metricsItem="ActiveProtectionSystem.Advanced.TouchInput"
+					metricsValue="touchStatus"
+					[switchId]="'activeProtectionSystem_touchInput'">
+				</vtr-ui-row-switch>
+			</div>
+		</li>
 
-			<li *ngIf="pSensorCapability"
-				class="input-item">
-				<div>
-					<vtr-ui-row-switch [name]="'activeProtectionSystem_advanced_hand'"
-						[title]="'device.smartAssist.activeProtectionSystem.advanced.hand.title' | translate"
-						[theme]="'white'"
-						[isSwitchVisible]="true"
-						[showChildContent]="true"
-						[isSwitchChecked]="pSensorStatus"
-						(toggleOnOff)="setPSensorSetting($event)"
-						vtrMetrics
-						metricsEvent="FeatureClick"
-						metricsParent="Device.SmartAssist"
-						metricsItem="ActiveProtectionSystem.Advanced.PSensorInput"
-						metricsValue="pSensorStatus"
-						[switchId]="'activeProtectionSystem_advanced_hand'">
-					</vtr-ui-row-switch>
-				</div>
-			</li>
-		</div>
+		<li *ngIf="pSensorCapability"
+			class="input-item">
+			<div>
+				<vtr-ui-row-switch [name]="'activeProtectionSystem_advanced_hand'"
+					[title]="'device.smartAssist.activeProtectionSystem.advanced.hand.title' | translate"
+					[theme]="'white'"
+					[isSwitchVisible]="true"
+					[showChildContent]="true"
+					[isSwitchChecked]="pSensorStatus"
+					(toggleOnOff)="setPSensorSetting($event)"
+					vtrMetrics
+					metricsEvent="FeatureClick"
+					metricsParent="Device.SmartAssist"
+					metricsItem="ActiveProtectionSystem.Advanced.PSensorInput"
+					metricsValue="pSensorStatus"
+					[switchId]="'activeProtectionSystem_advanced_hand'">
+				</vtr-ui-row-switch>
+			</div>
+		</li>
 	</div>
+</div>

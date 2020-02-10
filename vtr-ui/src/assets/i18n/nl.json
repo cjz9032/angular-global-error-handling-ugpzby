@@ -1338,7 +1338,7 @@
                             "title": "Opmerking",
                             "description": "Lenovo Vantage heeft toegang nodig tot uw locatiegegevens voor het berekenen van de tijd voor zonsondergang en zonsopgang van uw regio."
                         },
-						"tips": "Voer Windows Update uit of installeer handmatig een grafisch stuurprogramma om de Oogzorg-modus te herstellen"
+                        "tips": "Voer Windows Update uit of installeer handmatig een grafisch stuurprogramma om de Oogzorg-modus te herstellen"
                     },
                     "dispColorTemp": {
                         "title": "Kleurtemperatuur weergeven",
@@ -1420,7 +1420,8 @@
                         "caption": "Deze functie vervaagt de achtergrond wanneer u de camera gebruikt voor een videogesprek of het maken van foto's. U kunt verschillende effecten kiezen uit onderstaande selecties.",
                         "blurMode": "Vervaagmodus",
                         "comicMode": "Stripmodus",
-                        "sketchMode": "Schetsmodus"
+                        "sketchMode": "Schetsmodus",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN GEBRUIK",

@@ -1338,7 +1338,7 @@
                             "title": "주",
                             "description": "Lenovo Vantage는 위치 정보에 액세스하여 지역의 일몰 및 일출 시간을 계산해야 합니다."
                         },
-						"tips": "Windows 업데이트를 실행하거나 그래픽 드라이버를 수동으로 설치하여 Eye Care 모드로 복구하십시오"
+                        "tips": "Windows 업데이트를 실행하거나 그래픽 드라이버를 수동으로 설치하여 Eye Care 모드로 복구하십시오"
                     },
                     "dispColorTemp": {
                         "title": "디스플레이 색상 온도",
@@ -1420,7 +1420,8 @@
                         "caption": "이 기능을 사용하면 카메라에서 영상 통화를 하거나 사진을 촬영할 때 배경이 흐려집니다. 아래의 선택 사항에서 다른 효과를 선택할 수 있습니다.",
                         "blurMode": "흐림 모드",
                         "comicMode": "만화 모드",
-                        "sketchMode": "스케치 모드"
+                        "sketchMode": "스케치 모드",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "카메라 사용 중",
