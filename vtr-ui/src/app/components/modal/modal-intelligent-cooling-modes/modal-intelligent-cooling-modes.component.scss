@@ -4,8 +4,7 @@
 	font-size: $title;
 }
 .modal-header {
-	border-bottom: none;
-	.close-button {
+	.close-button.bg-white {
 		color: #496afd;
 		font-weight: 400;
 		font-size: 2.4rem;

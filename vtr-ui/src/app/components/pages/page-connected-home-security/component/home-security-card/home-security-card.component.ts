@@ -38,7 +38,7 @@ export class HomeSecurityCardComponent implements OnInit {
 		} else if (this.location && this.location.isLocationServiceOn) {
 			this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.loading);
 		} else {
-			this.showPermissionDialog('trail');
+			this.showPermissionDialog('trial');
 		}
 	}
 
