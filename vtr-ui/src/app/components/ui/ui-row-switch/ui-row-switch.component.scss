@@ -51,7 +51,7 @@
 			padding: 0 1rem 0 0;
 
 			.left-icon {
-				font-size: 2rem;
+				font-size: $fontsize_lg;
 				color: $icon_color;
 				fill: $icon_color;
 				width: 2rem;
@@ -59,7 +59,7 @@
 			}
 
 			.left-icon-svg {
-				font-size: 2rem;
+				font-size: $fontsize_lg;
 				color: $icon_color;
 				fill: $icon_color;
 				width: 2.5rem;
@@ -93,7 +93,7 @@
 		}
 
 		.right-icon {
-			font-size: 1.6rem;
+			font-size: $fontsize_sm;
 			color: $icon_color;
 			cursor: pointer;
 
@@ -129,10 +129,10 @@
 		}
 
 		.text {
-			font-size: 1.4rem;
+			font-size: $fontsize_xs;
 
 			.link-text {
-				font-size: 1.2rem;
+				font-size: $fontsize_xs2;
 				text-decoration: underline;
 				letter-spacing: 0.05rem;
 				padding-top: 0.3rem;
@@ -140,7 +140,7 @@
 		}
 
 		.link-text {
-			font-size: 1.2rem;
+			font-size: $fontsize_xs2;
 			text-decoration: underline;
 			letter-spacing: 0.05rem;
 			padding-top: 0.3rem;
