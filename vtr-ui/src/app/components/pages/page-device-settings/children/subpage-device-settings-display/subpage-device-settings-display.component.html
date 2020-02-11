@@ -54,6 +54,7 @@
 									componentName="Display color temperature"
 									[caption]=""
 									[isSwitchVisible]="false"
+									[disabled]="disableDisplayColor"
 									[leftIcon]="['fal', 'eye']"
 									[rightIcon]="['far', 'question-circle']"
 									[readMoreText]="''"
@@ -65,13 +66,15 @@
 										<div class="col-12">
 											<vtr-display-color-temp
 												[displayColorTempSettings]="displayColorTempDataSource"
-												[enableSlider]="false"
+												[enableSlider]="!enableColorTempSlider"
+												[disableReset]="disableDisplayColorReset"
 												[manualRefresh]="manualRefresh"
 												(displayColorTempChange)="onSetChangeDisplayColorTemp($event)"
 												(resetTemparature)="resetDaytimeColorTemp($event)"
 												(colorPreviewValue)="setToEyeCareMode()">
 											</vtr-display-color-temp>
 											<div class="row">
+										        <!--<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4" -->
 												<div class="feature-note p-4"
 													id="day-time-color-temp-note"
 													tabindex="0"
@@ -92,6 +95,8 @@
 									[title]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 									componentName="Eye Care Mode"
 									[isSwitchVisible]="true"
+									[disabled]="disableEyeCareMode"
+									[isDisabled]="disableEyeCareMode"
 									[isLastChild]="false"
 									[leftIcon]="['fal', 'eye']"
 									[rightIcon]="['far', 'question-circle']"
@@ -106,7 +111,9 @@
 										<div class="col-12">
 											<vtr-eye-care-mode [eyeCareModeSettings]="eyeCareDataSource"
 												[enableSlider]="!enableSlider"
+												[disableReset]="disableEyeCareModeReset"
 												[enableSunsetToSunrise]="enableSunsetToSunrise"
+												[missingGraphicDriver]="missingGraphicDriver"
 												[sunsetToSunriseStatus]="sunsetToSunriseModeStatus"
 												[manualRefresh]="manualRefresh"
 												(eyeCareTemparatureChange)="onEyeCareTemparatureChange($event)"
@@ -125,7 +132,7 @@
 												</vtr-widget-permission-note>
 											</div>
 
-											<div class="row">
+											<div class="row" *ngIf="missingGraphicDriver">
 												<div class="feature-note p-4 ecm-note"
 													 id="eye-care-mode-temp-note"
 													 tabindex="0"
@@ -308,9 +315,9 @@
 									[isDisabled]="shouldCameraSectionDisabled"
 									[showLoaderState]="cameraPrivacyModeStatus.isLoading">
 									<div class="row">
-										<div class="col-12 pr-0">
-											<div *ngIf="hideNote"
-												class="row permission-note mt-5">
+										<div class="col-12 pr-0 pl-5">
+											<div *ngIf="hideNote" 
+												class="row permission-note mt-2">
 												<div class="col-12 p-3 d-flex">
 													<div class="col-1 pl-0 text-center">
 														<fa-icon [icon]="['fas', 'exclamation-circle']"

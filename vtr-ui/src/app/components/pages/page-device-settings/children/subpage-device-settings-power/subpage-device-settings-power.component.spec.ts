@@ -203,14 +203,14 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 		});
-		it('#getBatteryStatusEvent should call', async () => {
-			const { fixture, component, powerService } = setup();
-			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			const myPrivateSpy = spyOn<any>(component, 'getBatteryStatusEvent').and.callThrough();
-			fixture.detectChanges();
-			myPrivateSpy.call(component);
-			await component.getBatteryThresholdInformation();
-		});
+		// it('#getBatteryStatusEvent should call', async () => {
+		// 	const { fixture, component, powerService } = setup();
+		// 	spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
+		// 	const myPrivateSpy = spyOn<any>(component, 'getBatteryStatusEvent').and.callThrough();
+		// 	fixture.detectChanges();
+		// 	myPrivateSpy.call(component);
+		// 	await component.getBatteryThresholdInformation();
+		// });
 		it('#setAlwaysOnUSBStatusThinkPad should call', async () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
@@ -571,13 +571,13 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			expect(spy).toHaveBeenCalled();
 
         });
-        it('#getBatteryThresholdInformation catch block should call', () => {
-			const { fixture, component, powerService } = setup();
-            let spy =spyOn(powerService, 'getChargeThresholdInfo').and.returnValue(Promise.reject());
-			component.getBatteryThresholdInformation();
-			expect(spy).toHaveBeenCalled();
-
-        });
+        // it('#getBatteryThresholdInformation catch block should call', () => {
+		// 	const { fixture, component, powerService } = setup();
+        //     let spy =spyOn(powerService, 'getChargeThresholdInfo').and.returnValue(Promise.reject());
+		// 	component.getBatteryThresholdInformation();
+		// 	expect(spy).toHaveBeenCalled();
+		// });
+		
         it('#setUSBChargingInBatteryModeStatusIdeaNoteBook catch block should call', () => {
 			const { fixture, component, powerService } = setup();
             let spy =spyOn(powerService, 'setUSBChargingInBatteryModeStatusIdeaNoteBook').and.returnValue(Promise.reject());

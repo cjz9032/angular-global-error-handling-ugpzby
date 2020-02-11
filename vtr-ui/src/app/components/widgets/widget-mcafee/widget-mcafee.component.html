@@ -1,5 +1,5 @@
-<div class="vtr-widget-mcafee mt-4 row justify-content-between md-margin">
-	<div class="col-7 md-col px-0">
+<div class="vtr-widget-mcafee mt-4 row justify-content-between mb-5">
+	<div class="col-8">
 		<div class="col-auto px-0 mr-auto">
 			<div class="title pb-3">{{'security.antivirus.common.mcafeePremium' | translate}}</div>
 		</div>
@@ -7,12 +7,13 @@
 			{{'security.antivirus.common.protectedBy' | translate: {protectedName: name } }}
 		</div>
 	</div>
-	<div class="col-auto px-0 align-self-center">
+	<div class="col-4 text-right px-0">
 		<vtr-ui-button  *ngIf="install"
 			metricsEvent="FeatureClick"
 			metricsItem="launchMcafee"
 			metricsParent="security.antivirus"
 			upperCaseLabel=false
+			btnHeight=true
 			(onClick)="common.launch()"
 			[label]="'security.antivirus.mcafee.launch' | translate"
 			[upperCaseLabel]="false"
@@ -23,6 +24,7 @@
 			metricsItem="getMcafee"
 			metricsParent="security.antivirus"
 			upperCaseLabel=false
+			btnHeight=true
 			[isDisabled]="isOnline === false"
 			[href]="common.urlGetMcAfee"
 			[label]="'security.antivirus.mcafee.getMacfee' | translate"

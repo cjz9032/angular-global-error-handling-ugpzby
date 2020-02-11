@@ -4,7 +4,9 @@ import {
 	Input,
 	Output,
 	EventEmitter,
-	AfterContentChecked
+	AfterContentChecked,
+	SimpleChanges,
+	OnChanges
 } from '@angular/core';
 import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -14,7 +16,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	templateUrl: './ui-range-slider.component.html',
 	styleUrls: ['./ui-range-slider.component.scss']
 })
-export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
+export class UiRangeSliderComponent implements OnInit, OnChanges {
 	// package url https://angular-slider.github.io/ng5-slider/demos
 
 	public options: Options;
@@ -42,10 +44,12 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	constructor(
 		private loggerService: LoggerService
 	) {
-		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
 	}
 
-	ngAfterContentChecked() {
+	ngOnChanges(changes: SimpleChanges): void {
+		if (changes.enableSlider) {
+			this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
+		}
 	}
 
 	ngOnInit() {
@@ -79,7 +83,7 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	public onChange($event: ChangeContext) {
 		this.highValue = undefined;
 		this.loggerService.info('ui-range-slider.component.onChange',
-		`onChange Ui slider ---> ${$event}, ${this.highValue}`);
+			`onChange Ui slider ---> ${$event}, ${this.highValue}`);
 		this.sliderChange.emit($event);
 	}
 

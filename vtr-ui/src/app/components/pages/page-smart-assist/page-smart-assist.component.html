@@ -299,7 +299,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="bold-title no-border-bottom pl-5 pb-4 border-bottom"
+										<div class="bold-title no-border-bottom pl-5 pb-4 border-bottom auto-screen-lock-help-icon"
 											*ngIf="intelligentSecurity.isZeroTouchLockVisible"
 											[class.col-pad-margin]="isThinkPad">
 											<vtr-ui-row-switch [switchId]="'autoScreenLockTimer'"
@@ -452,7 +452,7 @@
 											[showChildContent]="true"
 											(toggleOnOff)="onKeepMyDisplayToggle($event)"
 											[isSwitchChecked]="intelligentScreen.isReadingOrBrowsingEnabled">
-											<div class="pl-4 ml-3 pt-4">
+											<div class="pl-4 ml-4 pt-4">
 												<div class="display-dim-title"
 													id="smart-assist-display-slider-title"
 													attr.aria-label="smart-assist-display-slider-title">
