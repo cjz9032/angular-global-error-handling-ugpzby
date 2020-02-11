@@ -9,7 +9,6 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
 import { TopRowFunctionsIdeapad } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
 import { Backlight } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.interface';
-
 declare var window;
 
 @Injectable({
@@ -267,6 +266,8 @@ export class VantageShellService {
 						if (win.VantageStub && win.VantageStub.toastMsgName) {
 							data.LaunchByToast = win.VantageStub.toastMsgName;
 						}
+
+						MetricHelper.setupMetricDbg(that, this, data);
 
 						data.ItemType = that.normalizeEventName(data.ItemType);
 						return await this.sendAsyncOrignally(data);
