@@ -1315,11 +1315,13 @@ export class HardwareScanService {
 		const result = [];
 
 		for (const module in this.iconByModule) {
-			result.push({
-				name: this.translate.instant('hardwareScan.pluginTokens.' + module),
-				subname: '',
-				icon: this.getHardwareComponentIcon(module)
-			});
+			if (module !== 'pci_express_laptop') {
+				result.push({
+					name: this.translate.instant('hardwareScan.pluginTokens.' + module),
+					subname: '',
+					icon: this.getHardwareComponentIcon(module)
+				});
+			}
 		}
 
 		return result;
