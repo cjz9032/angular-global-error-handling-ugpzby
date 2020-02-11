@@ -46,7 +46,7 @@ export class MetricHelper {
 			}
 
 			data.dbgId = `${Date.now()}${ metricClient.dbgCounter++}`;
-			data.retryCode = '@@retryCode@@';
+			data.retryCode = '@@retryCode200@@';
 		}
 	}
 
