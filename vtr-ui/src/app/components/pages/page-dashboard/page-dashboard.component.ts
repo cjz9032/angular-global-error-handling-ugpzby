@@ -585,6 +585,10 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			}
 		});
 
+		if (positions.length === 0) {
+			return;
+		}
+
 		try {
 			const response = await this.upeService.fetchUPEContent({positions});
 			contentCards.forEach(cardItem => {

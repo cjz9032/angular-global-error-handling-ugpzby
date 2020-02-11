@@ -80,7 +80,7 @@
 
 	.button {
 		position: relative;
-		top: 2rem;
+		top: 1.8rem;
 		@media #{$mediaquery_lg} {
 			top: 2.5rem;
 		}
@@ -213,6 +213,12 @@
 				line-height: 2rem;
 				font-size: 1.4rem;
 			}
+		}
+	}
+
+	.button {
+		@media #{$mediaquery_lg} {
+			top: 1.8rem;
 		}
 	}
 
