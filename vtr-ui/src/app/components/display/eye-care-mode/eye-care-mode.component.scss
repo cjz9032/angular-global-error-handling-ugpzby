@@ -4,8 +4,12 @@
 	.mode-slider {
 		width: 100%;
 	}
+	.slider-length{
+		width: 80%;
+	}	
 	.reset-temperature {
 		//width: 20rem;
+		width: 20%;
 		margin-top: 2.5rem;
 		position: relative;
 
@@ -26,6 +30,9 @@
 				font-weight: $weight_bold;
 				padding: 0.5rem 1.5rem;
 				max-width: 12rem;
+				@media #{$breakpoint_xl} {
+					min-width: 8rem;
+				}
 			}
 		}
 		.text {
