@@ -255,11 +255,13 @@ $fontsize_xs: 1.4rem;
 			}
 			.privacy-button {
 				font-size: $fontsize_xs;
-				letter-spacing: 0.76px;
+				letter-spacing: 0px;
 				text-align: left;
 				text-decoration: underline;
 				margin-bottom: 0.5rem;
 				color: $menu_hover;
+				font-family: "Segoe UI", sans-serif;
+				font-weight: $weight_light;
 				&:hover {
 					text-decoration: underline;
 					color: $menu_hover;
@@ -348,3 +350,16 @@ $fontsize_xs: 1.4rem;
 	font-weight: $weight_light;
 	color: $purple_navy;
 }
+
+.auto-screen-lock-help-icon {
+	::ng-deep .vtr-ui-switch-row.white-theme {
+		.vtr-row-switch {
+			display: block !important;
+			text-align: right !important;
+			.tool-tip-icon {
+				margin-left: 0 !important;
+			}
+		}
+	}
+}
+

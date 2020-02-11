@@ -3,7 +3,7 @@
 .vtr-common-antivirus {
 	margin-top: 4rem;
 	margin-bottom: 2rem;
-	@media #{$breakpoint_xl} {
+	@media #{$breakpoint_lg} {
 		margin-top: 0rem;
 		margin-bottom: 0rem;
 	}
@@ -20,18 +20,18 @@
 		@media #{$breakpoint_xl} {
 			flex-direction: column;
 		}
-		box-shadow: $drop_shadow;
 		border-radius: $border_radius;
 		background: $light;
 		margin-top: 3rem;
 
 		img {
 			width: 100%;
+			border-radius: $border_radius;
 		}
 
 		.xl-margin {
 			@media #{$breakpoint_xl} {
-				margin: 5rem 0rem;
+				margin: 2rem 0rem;
 			}
 		}
 
@@ -44,10 +44,7 @@
 				color: $main_darker;
 				font-size: 1.3rem;
 				@media #{$breakpoint_xl} {
-					font-size: 2rem;
-				}
-				@media #{$mediaquery_X46} {
-					font-size: 1.3rem !important;
+					font-size: 1.6rem;
 				}
 				font-weight: $weight_bold;
 				line-height: 2.3rem;
@@ -82,10 +79,7 @@
 				color: $main_darker;
 				font-size: 1.2rem;
 				@media #{$breakpoint_xl} {
-					font-size: 1.6rem;
-				}
-				@media #{$mediaquery_X46} {
-					font-size: 1.2rem !important;
+					font-size: 1.4rem;
 				}
 				font-weight: 400;
 				line-height: 2.3rem;
@@ -98,6 +92,7 @@
 			display: none;
 		}
 		margin-top: 3rem;
+		margin-bottom: 3rem;
 		.text-regular {
 			font-size: 1.4rem;
 			color: $main_shade;
