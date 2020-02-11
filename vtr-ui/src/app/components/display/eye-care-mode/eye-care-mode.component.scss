@@ -10,18 +10,18 @@
 	.reset-temperature {
 		//width: 20rem;
 		width: 20%;
-		margin-top: 2.5rem;
+		margin-top: 1.8rem;
 		position: relative;
 
-		@media #{$mediaquery_7} {
-			margin-top: 1.6rem;
-			position: relative;
-		}
+		// @media #{$mediaquery_7} {
+		// 	margin-top: 1.6rem;
+		// 	position: relative;
+		// }
 
-		@media #{$mediaquery_10} {
-			margin-top: 1.7rem;
-			position: relative;
-		}
+		// @media #{$mediaquery_10} {
+		// 	margin-top: 1.7rem;
+		// 	position: relative;
+		// }
 		.button-box {
 			margin: 0rem 0rem 0rem 0.5rem;
 			::ng-deep .button {
@@ -31,6 +31,12 @@
 				padding: 0.5rem 1.5rem;
 				max-width: 12rem;
 				@media #{$breakpoint_xl} {
+					min-width: 8rem;
+				}
+				@media #{$breakpoint_lg} {
+					min-width: 12rem;
+				}
+				@media #{$breakpoint_md} {
 					min-width: 8rem;
 				}
 			}
