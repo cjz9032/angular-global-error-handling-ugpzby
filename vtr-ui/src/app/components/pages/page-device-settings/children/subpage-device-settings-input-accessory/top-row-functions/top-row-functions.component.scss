@@ -4,12 +4,13 @@
 .title-blck{
     .left-icon {
         display: inline-block;
-        font-size: $fontsize_md;
+        font-size: $subpage_menu_title;
         height: 1em;
-        width: 1.12em;
+        width: 1.5em;
         color:$menu_hover;
         overflow: visible;
         vertical-align: -0.12em;
+        // padding: 0 0.7em 0 0;
 }
 .title {
     font-size: $fontsize_md;
