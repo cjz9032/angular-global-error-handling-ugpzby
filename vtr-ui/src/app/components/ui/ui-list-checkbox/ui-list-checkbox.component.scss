@@ -16,6 +16,7 @@
 				margin: 0rem;
 				display: inline-block;
 
+
 				.btn-round-sm {
 					border-radius: 0.5rem;
 					padding: 0.5rem 1rem 0.5rem 1rem;
@@ -24,12 +25,16 @@
 					border: 0rem;
 					color: $stop_light;
 					font-weight: $weight_light;
+					line-height: 1px;
 				}
 			}
 			.custom-control {
 				display: inline-block;
 				.custom-control-label {
 					padding-left: 1.2rem;
+					@media #{$breakpoint_sm} {
+						padding-bottom: 1rem;
+					}
 
 					// rounded square-box background
 					&::before {
