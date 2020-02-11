@@ -2958,7 +2958,7 @@
             "wireless": "אלחוטי"
         },
         "warningMessage": "קחו בחשבון שהבדיקות יבוטלו אם המערכת במצב שינה או המתנה",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "הרענון עשוי לארוך זמן מה מכיוון שהמחשב צריך לטעון את כל הרכיבים מחדש"
     },
     "smartPerformance": {
         "title": "Health & Support",

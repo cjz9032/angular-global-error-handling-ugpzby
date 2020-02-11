@@ -2958,7 +2958,7 @@
             "wireless": "Беспроводная связь"
         },
         "warningMessage": "Имейте в виду, что тесты будут отменены при переходе системы в спящий режим или режим гибернации",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "Обновление может занять некоторое время, так как необходимо снова загрузить все компоненты"
     },
     "smartPerformance": {
         "title": "Health & Support",

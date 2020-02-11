@@ -2958,7 +2958,7 @@
             "wireless": "Langattomat yhteydet"
         },
         "warningMessage": "Muista, että testit peruutetaan, jos järjestelmä on lepo- tai horrostilassa",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "Päivitys saattaa kestää jonkin aikaa, koska kaikkien osien lataus on tehtävä uudelleen"
     },
     "smartPerformance": {
         "title": "Health & Support",

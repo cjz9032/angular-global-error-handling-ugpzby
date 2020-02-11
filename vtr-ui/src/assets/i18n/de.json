@@ -2958,7 +2958,7 @@
             "wireless": "Drahtlos"
         },
         "warningMessage": "Beachten Sie, dass die Tests abgebrochen werden, wenn das System im Ruhemodus oder im Ruhezustand ist",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "Die Aktualisierung kann einige Zeit in Anspruch nehmen, da alle Komponenten erneut geladen werden müssen"
     },
     "smartPerformance": {
         "title": "Health & Support",

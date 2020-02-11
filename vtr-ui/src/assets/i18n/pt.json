@@ -2958,7 +2958,7 @@
             "wireless": "Sem fios"
         },
         "warningMessage": "Tenha em atenção que os testes serão cancelados se o sistema entrar em modo de suspensão ou hibernação",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "A atualização pode demorar algum tempo por precisar de voltar a carregar todos os componentes"
     },
     "smartPerformance": {
         "title": "Health & Support",

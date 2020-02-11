@@ -2958,7 +2958,7 @@
             "wireless": "Draadloos"
         },
         "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "Het vernieuwen kan even duren omdat alle onderdelen opnieuw moeten worden geladen"
     },
     "smartPerformance": {
         "title": "Health & Support",

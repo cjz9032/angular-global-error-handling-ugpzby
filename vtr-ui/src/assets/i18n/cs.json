@@ -2958,7 +2958,7 @@
             "wireless": "Bezdrátové"
         },
         "warningMessage": "Mějte na paměti, že testy budou zrušeny, pokud je systém v režimu spánku nebo hibernace",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "Obnovení může nějakou dobu trvat, protože je třeba znovu načíst všechny součásti"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2958,7 +2958,7 @@
             "wireless": "无线"
         },
         "warningMessage": "请记住，如果系统进入睡眠或休眠状态，则测试将被取消",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "刷新可能需要一些时间，因为它需要再次加载所有组件"
     },
     "smartPerformance": {
         "title": "Health & Support",

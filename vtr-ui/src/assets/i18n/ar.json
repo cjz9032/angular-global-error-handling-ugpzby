@@ -2960,7 +2960,7 @@
             "wireless": "اللاسلكية"
         },
         "warningMessage": "يُرجى العلم أن الاختبارات سوف تُلغى إذا دخل النظام في وضع السكون أو الإسبات",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "قد يستغرق التحديث بعض الوقت لأنه يحتاج إلى تحميل جميع المكونات مرةً أخرى"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2958,7 +2958,7 @@
             "wireless": "Fără fir"
         },
         "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "Actualizarea poate dura un timp, deoarece este necesar să se încarce din nou toate componentele"
     },
     "smartPerformance": {
         "title": "Health & Support",

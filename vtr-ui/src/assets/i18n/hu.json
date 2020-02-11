@@ -2958,7 +2958,7 @@
             "wireless": "Vezeték nélküli"
         },
         "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie"
     },
     "smartPerformance": {
         "title": "Health & Support",

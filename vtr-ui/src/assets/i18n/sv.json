@@ -2958,7 +2958,7 @@
             "wireless": "Radio"
         },
         "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "Uppdateringen kan ta lite tid, eftersom alla komponenter behöver läsas in igen"
     },
     "smartPerformance": {
         "title": "Health & Support",

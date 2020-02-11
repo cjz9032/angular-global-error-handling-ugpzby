@@ -2958,7 +2958,7 @@
             "wireless": "Bezprzewodowe"
         },
         "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "Odświeżanie może zająć trochę czasu, ponieważ wymaga ponownego załadowania wszystkich komponentów"
     },
     "smartPerformance": {
         "title": "Health & Support",

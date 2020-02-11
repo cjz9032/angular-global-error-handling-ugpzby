@@ -2958,7 +2958,7 @@
             "wireless": "Kablosuz"
         },
         "warningMessage": "Sistem uyku veya hazırda bekleme kipine geçerse testlerin iptal edileceğini unutmayın",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "Tüm bileşenlerin tekrar yüklenmesi gerektiğinden yenileme işlemi biraz zaman alabilir"
     },
     "smartPerformance": {
         "title": "Health & Support",

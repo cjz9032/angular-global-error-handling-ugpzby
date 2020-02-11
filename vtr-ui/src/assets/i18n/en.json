@@ -1386,15 +1386,6 @@
                     },
                     "displayPriority": {
                         "title": "Display Priority Control",
-<<<<<<< HEAD
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
-                        "options": {
-                            "hdmi": "HDMI",
-                            "dock": "Docking",
-                            "usb_c_dp": "USB Type-C",
-                            "wigig": "WiGig",
-                            "cartridge": "Optional Module"
-=======
                         "description":"Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
                         "options":{
                             "hdmi":"HDMI",
@@ -1402,7 +1393,6 @@
                             "usb_c_dp":"USB Type-C",
                             "wigig":"WiGig",
                             "cartridge":"Optional Module"
->>>>>>> develop
                         }
                     }
                 },
@@ -1607,10 +1597,6 @@
                             "key11": "Ctrl + X",
                             "key12": "Ctrl + Y",
                             "key13": "Ctrl + Z"
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
                         },
                         "action": {
                             "heading": "Action",
@@ -1623,11 +1609,7 @@
                             "action7": "Quit (in supported app)",
                             "action8": "Add underline",
                             "action9": "Paste",
-<<<<<<< HEAD
-                            "action10": "close (per app)",
-=======
                             "action10": "Close (per app)",
->>>>>>> develop
                             "action11": "Cut",
                             "action12": "Redo",
                             "action13": "Undo"
@@ -3372,13 +3354,8 @@
             "subtitle2": "All-in-Ones: Streamlined",
             "body2": "All-in-One PCs with 9th Gen Intel® Core™ processors give you all the power of a desktop packaged in a sleek display — for less clutter, hardware-based security, and a hi-res display."
         }
-<<<<<<< HEAD
-    }
-}
-=======
     },
     "cpt": {
 		"title": "Content Preview Tool"
 	}
 }
->>>>>>> develop

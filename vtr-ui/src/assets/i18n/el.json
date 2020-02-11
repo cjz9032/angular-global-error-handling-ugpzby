@@ -2958,7 +2958,7 @@
             "wireless": "Ασύρματο"
         },
         "warningMessage": "Λάβετε υπόψη ότι οι δοκιμές θα ακυρωθούν εάν το σύστημα είναι σε κατάσταση αναστολής λειτουργίας ή αδρανοποίησης",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "Η ανανέωση ενδέχεται να διαρκέσει αρκετή ώρα, επειδή απαιτείται επαναφόρτωση όλων των στοιχείων"
     },
     "smartPerformance": {
         "title": "Health & Support",

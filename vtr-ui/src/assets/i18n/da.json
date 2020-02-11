@@ -2958,7 +2958,7 @@
             "wireless": "Trådløs"
         },
         "warningMessage": "Husk, at testene bliver annulleret, hvis systemet slumrer eller går i dvaletilstand",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "Opdateringen kan tage noget tid, da den skal indlæse alle komponenterne igen"
     },
     "smartPerformance": {
         "title": "Health & Support",

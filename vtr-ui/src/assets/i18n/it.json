@@ -2958,7 +2958,7 @@
             "wireless": "Wireless"
         },
         "warningMessage": "I test verranno annullati se il sistema entra in modalità Ibernazione o Sospensione",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "L'aggiornamento potrebbe richiedere del tempo poiché è necessario caricare di nuovo tutti i componenti"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2958,7 +2958,7 @@
             "wireless": "Bežična veza"
         },
         "warningMessage": "Napominjemo da će se testovi otkazati ako je sustav u stanju mirovanja ili hibernacije",
-        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
+        "refreshMessage": "Osvježavanje može potrajati neko vrijeme jer je potrebno ponovno učitati sve komponente"
     },
     "smartPerformance": {
         "title": "Health & Support",
