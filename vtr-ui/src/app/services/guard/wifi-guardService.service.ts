@@ -21,7 +21,7 @@ export class WifiGuardService implements CanActivate {
 	async canActivate() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-		const cacheState = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity);
+		const cacheState : boolean | undefined = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity);
 		if (cacheState === undefined) {
 			await this.wifiSecurity.getWifiSecurityStateOnce();
 			if (typeof this.wifiSecurity.isSupported === 'boolean') {
