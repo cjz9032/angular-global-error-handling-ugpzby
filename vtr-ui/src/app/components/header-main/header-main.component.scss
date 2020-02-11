@@ -7,6 +7,13 @@
 	background: linear-gradient(to right, #289cd0 0%, #72d0bb 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#289cd0', endColorstr='#72d0bb', GradientType=1);
 
+	.vtr-header-main-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+	}
+
 	&.dcc {
 		background: linear-gradient(to right, #185d73 0%, #1e7390 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#185d73", endColorstr="#1e7390", GradientType=1);

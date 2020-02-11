@@ -147,10 +147,11 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 		this.fetchCMSArticleCategory();
 		this.fetchCMSContents();
-		this.setShowList();
 
 		//cpt
 		this.isCPTEnabled = (typeof environment !== 'undefined' ? environment.isCPTEnabled : true);
+
+		this.setShowList();
 	}
 
 	ngOnDestroy() {

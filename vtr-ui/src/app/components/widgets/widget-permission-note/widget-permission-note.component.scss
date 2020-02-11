@@ -2,7 +2,7 @@
 .vtr-widget-permission-note {
 	width: 100%;
 	background-color: $shade_lightest;
-	font-size: 1.4rem;
+	font-size: $fontsize_xs;
 	color: $alt;
 	border: 1px solid $shade_lighter;
 	@media #{$black-on-white} {
@@ -18,9 +18,11 @@
 
 
 	.privacy-button {
-		font-size: 1.2rem;
-		letter-spacing: 0.76px;
+		font-size: $fontsize_xs;
+		letter-spacing: 0px;
 		text-align: left;
+		font-family: "Segoe UI", sans-serif;
+		font-weight: $weight_light;
 		@media #{$black-on-white} {
 			color: $blue-light;
 			border:none;
@@ -28,7 +30,7 @@
 		@media #{$white-on-black} {
 			color: $yellow;
 			border:none;
-			
+
 		}
 	}
 }

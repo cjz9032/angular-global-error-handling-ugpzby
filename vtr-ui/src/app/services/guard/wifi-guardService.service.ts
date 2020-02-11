@@ -18,16 +18,20 @@ export class WifiGuardService implements CanActivate {
 		private guardConstants: GuardConstants
 	) { }
 
-	canActivate() {
+	async canActivate() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-		let result = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, false);
-		if (typeof this.wifiSecurity.isSupported === 'boolean') {
-			result = this.wifiSecurity.isSupported;
-		}
-		if (!result) {
+		const cacheState : boolean | undefined = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity);
+		if (cacheState === undefined) {
+			await this.wifiSecurity.getWifiSecurityStateOnce();
+			if (typeof this.wifiSecurity.isSupported === 'boolean') {
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
+				return this.wifiSecurity.isSupported;
+			}
+
 			return this.guardConstants.defaultRoute;
 		}
-		return result;
+
+		return cacheState;
 	}
 }
