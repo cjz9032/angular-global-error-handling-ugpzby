@@ -71,7 +71,8 @@ export class HardwareScanService {
 		'cpu': 'icon_hardware_processor.svg',
 		'memory': 'icon_hardware_memory.svg',
 		'motherboard': 'icon_hardware_motherboard.svg',
-		'pci_express': (this.isDesktopMachine) ? 'icon_hardware_pci-desktop.svg' : 'icon_hardware_pci-laptop.svg',
+		'pci_express': 'icon_hardware_pci-desktop.svg',
+		'pci_express_laptop': 'icon_hardware_pci-laptop.svg',
 		'wireless': 'icon_hardware_wireless.svg',
 		'storage': 'icon_hardware_hdd.svg'
 	};
@@ -1294,6 +1295,11 @@ export class HardwareScanService {
 		const iconsBasePath = '/assets/icons/hardware-scan/';
 
 		if (moduleName in this.iconByModule) {
+			if (!this.isDesktopMachine) {
+				if (moduleName === 'pci_express') {
+					return iconsBasePath + this.iconByModule[moduleName + '_laptop'];
+				}
+			}
 			return iconsBasePath + this.iconByModule[moduleName];
 		}
 
