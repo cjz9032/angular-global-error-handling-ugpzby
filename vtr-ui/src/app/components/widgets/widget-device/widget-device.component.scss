@@ -21,6 +21,8 @@
 		}
 		.device-info {
 			flex-grow: 2;
+			max-width: 65%;
+			padding-right: 1rem;
 		}
 		.device-image {
 			display: flex;
@@ -32,19 +34,16 @@
 
 			}
 			.circleimage {
-				@media #{$breakpoint_lg} {
-					width: 200px;
-
-				}
+				width: 22.5rem;
 			}
 		}
 		.family {
 			color: $main_dark;
 			font-size: $fontsize_xl2;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-			max-width: 95%;
+			// overflow: hidden;
+			// text-overflow: ellipsis;
+			// white-space: nowrap;
+			word-break: break-all;
 			font-weight: $weight_light;
 		}
 	}

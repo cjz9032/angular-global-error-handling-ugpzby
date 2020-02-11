@@ -617,7 +617,7 @@
                 "sub2": "Vírusirtó",
                 "sub3": "Biztonságos WiFi",
                 "sub4": "Jelszó állapota",
-                "sub5": "Védelem az interneten",
+                "sub5": "VPN-biztonság",
                 "sub6": "Windows Hello"
             },
             "support": "Támogatás",
@@ -1338,7 +1338,7 @@
                             "title": "Megjegyzés",
                             "description": "A napnyugta és a napkelte idejének kiszámításához a Lenovo Vantage-nek hozzá kell férnie a helyadatokhoz."
                         },
-						"tips": "Kérjük, futtassa a Windows Update szolgáltatást, vagy telepítse manuálisan a grafikus illesztőprogramot a Szemvédő mód helyreállításához"
+                        "tips": "Kérjük, futtassa a Windows Update szolgáltatást, vagy telepítse manuálisan a grafikus illesztőprogramot a Szemvédő mód helyreállításához"
                     },
                     "dispColorTemp": {
                         "title": "A képernyő színhőmérséklete",
@@ -1420,7 +1420,8 @@
                         "caption": "Ez a funkció elhomályosítja a hátteret, ha a kamerát videohíváshoz vagy fényképezéshez használják. Az alábbi effektusok közül választhat.",
                         "blurMode": "Elmosás mód",
                         "comicMode": "Rajzfilm mód",
-                        "sketchMode": "Skicc mód"
+                        "sketchMode": "Skicc mód",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "A KAMERA HASZNÁLATBAN VAN",
@@ -2589,7 +2590,7 @@
         },
         "question4": {
             "title": "A gép akkumulátorhasználatának ellenőrzése",
-            "description": "<div class='faqInFs4Fb'>    A gép akkumulátorhasználatának ellenőrzése</div><hr><h3 class='faqInFs25FbP10'>Tünet</h3><p>A Windows 10 rendszer része az új <strong>Akkumulátorhasználat</strong> képernyő, amelyen látható, hogy mi meríti a laptop akkumulátorát. Ez azt jelenti, hogy pontosan megmutatja, hogy melyik alkalmazások – asztali vagy univerzális Windows 10-alkalmazások – használnak túl sok energiát.</p><h3 class='faqInFs25FbP10'>Érintett márkák</h3><ul>    <li>Lenovo laptopok, asztali számítógépek</li></ul><h3 class='faqInFs25FbP10'>Érintett rendszerek</h3><ul>    <li>Mind</li></ul><h3 class='faqInFs25FbP10'>Operációs rendszer</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Megoldás</h3><p>Ez a Windows 10 új szolgáltatása, ezért először meg kell találni a funkciót, mivel nem a hagyományos <strong>Vezérlőpult</strong> nézetből érhető el, hanem az új <strong>Gépház</strong> alkalmazásban</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Keresse meg az Akkumulátorhasználat képernyőt</h3></p><p>1. Kattintson vagy koppintson a <strong>Gépház</strong> lehetőségre a Start menüben</p><p>2. A <strong>Gépház </strong> alkalmazásban válassza a <strong>Rendszer</strong>, majd az <strong>Takarékos üzemmód lehetőséget.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg'  /></p><p>3. További részletekért kattintson vagy koppintspn a <strong>Takarékos üzemmód</strong> hivatkozásra ez alatt fejléc alatt. </p><p> </p><h3 class='faqInFs25FbP10'>B. Elemezze ki az energiafelhasználást</h3><p>4. Az Akkumulátorhasználat képernyőt módosíthatja úgy, hogy az utolsó 24 óra, az utolsó 48 óra vagy a múlt hét akkumulátorhasználatát jelenítse meg</p><p>5. A <strong>Rendszer</strong>, a <strong>Kijelző</strong> és a <strong>Wi-Fi</strong> százalékos értékei. Ez azt mutatja, hogy mennyi energiát használtak a rendszerfolyamatok és a kijelző.</p><p>6. A <strong>Használatban</strong> és a <strong>Háttér</strong> lehetőség azt mutatja meg, hogy a háttérben futó alkalmazásokhoz képest az alkalmazások mennyi energiát igényelnek a használat közben.</p><p>7. Ha az alkalmazások energiát használnak a háttérben, kattintson vagy koppintson a <strong>Háttérben futó alkalmazások beállításainak módosítása</strong> hivatkozásra, és konfigurálja úgy az alkalmazásokat, hogy ne fussanak a háttérben. Ez csak az univerzális Windows 10 alkalmazások esetén működik.</p><p>8. Görgessen lejjebb, és megjelenik az alkalmazások listája – ez a funkció leghasznosabb része. Megjelenít egy listát azokról az alkalmazásokról, amelyek az adott időszakban használják az akkumulátort, és megmutatja, hogy az egyes alkalmazások százalékosan mekkora részét használják az akkumulátorok energiájának</p><p><img src='./../../../assets/images/qa/4.2.jpg'  /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    A gép akkumulátorhasználatának ellenőrzése</div><hr><h3 class='faqInFs25FbP10'>Tünet</h3><p>A Windows 10 rendszer része az új <strong>Akkumulátorhasználat</strong> képernyő, amelyen látható, hogy mi meríti a laptop akkumulátorát. Ez azt jelenti, hogy pontosan megmutatja, hogy melyik alkalmazások – asztali vagy univerzális Windows 10-alkalmazások – használnak túl sok energiát.</p><h3 class='faqInFs25FbP10'>Érintett márkák</h3><ul>    <li>Lenovo laptopok, asztali számítógépek</li></ul><h3 class='faqInFs25FbP10'>Érintett rendszerek</h3><ul>    <li>Mind</li></ul><h3 class='faqInFs25FbP10'>Operációs rendszer</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Megoldás</h3><p>Ez a Windows 10 új szolgáltatása, ezért először meg kell találni a funkciót, mivel nem a hagyományos <strong>Vezérlőpult</strong> nézetből érhető el, hanem az új <strong>Gépház</strong> alkalmazásban</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Keresse meg az Akkumulátorhasználat képernyőt</h3></p><p>1. Kattintson vagy koppintson a <strong>Gépház</strong> lehetőségre a Start menüben</p><p>2. A <strong>Gépház </strong> alkalmazásban válassza a <strong>Rendszer</strong>, majd az <strong>Takarékos üzemmód lehetőséget.<br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg'  /></p><p>3. További részletekért kattintson vagy koppintspn a <strong>Takarékos üzemmód</strong> hivatkozásra ez alatt fejléc alatt. </p><p> </p><h3 class='faqInFs25FbP10'>B. Elemezze ki az energiafelhasználást</h3><p>4. Az Akkumulátorhasználat képernyőt módosíthatja úgy, hogy az utolsó 24 óra, az utolsó 48 óra vagy a múlt hét akkumulátorhasználatát jelenítse meg</p><p>5. A <strong>Rendszer</strong>, a <strong>Kijelző</strong> és a <strong>Wi-Fi</strong> százalékos értékei. Ez azt mutatja, hogy mennyi energiát használtak a rendszerfolyamatok és a kijelző.</p><p>6. A <strong>Használatban</strong> és a <strong>Háttér</strong> lehetőség azt mutatja meg, hogy a háttérben futó alkalmazásokhoz képest az alkalmazások mennyi energiát igényelnek a használat közben.</p><p>7. Ha az alkalmazások energiát használnak a háttérben, kattintson vagy koppintson a <strong>Háttérben futó alkalmazások beállításainak módosítása</strong> hivatkozásra, és konfigurálja úgy az alkalmazásokat, hogy ne fussanak a háttérben. Ez csak az univerzális Windows 10 alkalmazások esetén működik.</p><p>8. Görgessen lejjebb, és megjelenik az alkalmazások listája – ez a funkció leghasznosabb része. Megjelenít egy listát azokról az alkalmazásokról, amelyek az adott időszakban használják az akkumulátort, és megmutatja, hogy az egyes alkalmazások százalékosan mekkora részét használják az akkumulátorok energiájának</p><p><img src='./../../../assets/images/qa/4.2.jpg'  /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -3352,5 +3353,8 @@
             "subtitle2": "All-in-One: Egyszerű",
             "body2": "Az all-in-one számítógépek a 9. generációs Intel® Core™ processzorral az asztali számítógépek minden előnyét biztosítják egy karcsú kijelzőbe csomagolva – kevesebb rendetlenséggel, hardver alapú biztonsággal és nagy felbontású kijelzővel."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

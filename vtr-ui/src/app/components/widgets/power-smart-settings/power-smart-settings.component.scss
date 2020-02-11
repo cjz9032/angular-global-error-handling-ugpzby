@@ -1,6 +1,10 @@
 @import "../../../app.theme";
 
 .smart-settings-card {
+	.left-icon {
+		margin-top: 1.25rem;
+		color: white;
+	}
 	.subtitle {
 		width: 100%;
 
@@ -33,13 +37,6 @@
 		// li vtr-ui-row-switch div {
 		//     margin-left: -10px;
 		// }
-		.optimize {
-			color: $light;
-			font-size: 1.6rem;
-			font-weight: 700;
-			margin-bottom: 10px;
-			margin-top: 2rem;
-		}
 		::ng-deep .vtr-ui-rounded-rectangle-radio {
 			&.border-grey {
 				border: none;
@@ -118,5 +115,13 @@
 		@media #{$white-on-black} {
 			color: $yellow;
 		}
+	}
+	.optimize {
+		color: $light;
+		font-size: 1.6rem;
+		font-weight: 700;
+		margin-bottom: 10px;
+		margin-top: 2rem;
+		margin-left: 0.5rem;
 	}
 }

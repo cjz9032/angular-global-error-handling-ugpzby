@@ -617,7 +617,7 @@
                 "sub2": "Antivirus",
                 "sub3": "WiFi-sikkerhet",
                 "sub4": "Passordtilstand",
-                "sub5": "Internettbeskyttelse",
+                "sub5": "VPN-sikkerhet",
                 "sub6": "Windows Hello"
             },
             "support": "Støtte",
@@ -1338,7 +1338,7 @@
                             "title": "Merk",
                             "description": "Lenovo Vantage trenger tilgang til informasjon om plasseringen din for å beregne tidspunkter for solnedgang og soloppgang for regionen din."
                         },
-						"tips": "Kjør Windows Update eller installer grafikkdriver manuelt for å gjenopprette Eye Care-modus"
+                        "tips": "Kjør Windows Update eller installer grafikkdriver manuelt for å gjenopprette Eye Care-modus"
                     },
                     "dispColorTemp": {
                         "title": "Skjermens fargetemperatur",
@@ -1420,7 +1420,8 @@
                         "caption": "Denne funksjonen gjør bakgrunnen uskarp når du bruker kameraet til videosamtaler eller tar bilder. Du kan velge en annen effekt blant alternativene under.",
                         "blurMode": "Uskarp modus",
                         "comicMode": "Tegneseriemodus",
-                        "sketchMode": "Skissemodus"
+                        "sketchMode": "Skissemodus",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERAET ER I BRUK",
@@ -2589,7 +2590,7 @@
         },
         "question4": {
             "title": "Kontrollere datamaskinens batteriforbruk",
-            "description": "<div class='faqInFs4Fb'>    Kontrollere datamaskinens batteriforbruk</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 inneholder et nytt <strong>batteri bruks</strong> skjerm bilde som viser hva som skjer med din bærbare juice. Det betyr at du kan se nøyaktig hvilke applikasjoner – både stasjonære og Windows 10 \"universelle\" apper-bruker for mye strøm.</p><h3 class='faqInFs25FbP10'>Berørte merker</h3><ul>    <li>Lenovo bærbare maskiner, stasjonære maskiner</li></ul><h3 class='faqInFs25FbP10'>Gjelder for følgende systemer</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p>Denne funksjonen er ny i Windows 10, men vi må først finne denne funksjonen fordi den ikke er lagret i den tradisjonelle <strong>kontroll panel </strong>visningen, denne funksjonen finnes i den nye <strong>\"Settings\"-</strong> appen</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Finn batteri bruk skjermen</h3></p><p>1. Klikk på eller trykk <strong>på \"</strong>Settings\"-alternativet på Start-menyen</p><p>2. Velg <strong>system </strong> <strong>under innstillinger</strong>, og velg <strong>deretter \"batteris paring\". <br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klikk på eller trykk <strong>\"på \"batteri Bruk\"</strong> -koblingen under denne overskriften for å se flere detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analyser strøm forbruket</h3><p>4. Du kan endre for å gjøre batteriet til å bruke skjermen til å se batteri bruk fra de siste 24 timene til de siste 48 timene eller sist fra forrige uke</p><p>5. <strong>\"system\",</strong> \"<strong>skjerm</strong>\" og \" <strong>Wi-Fi\"</strong> prosenter. Dette viser hvor mye batteri strøm som er brukt av system prosesser, skjermen,</p><p>6. <strong>\"alternativene\"</strong> i bruk og <strong> bakgrunn</strong> viser hvor mye strøm som brukes av applikasjoner mens du bruker dem, sammenlignet med programmer som kjøres i bakgrunnen.</p><p>7. Hvis apper bruker strøm i bakgrunnen, kan du klikke på eller trykke på <strong>koblingen \"endre innstillinger for bakgrunns </strong>app\" og konfigurere apper slik at de ikke kan kjøres i bakgrunnen. Dette fungerer bare for universelle Windows 10-apper.</p><p>8. Rull nedover og du vil se en liste over applikasjoner, anses dette som den mest nyttige delen av denne funksjonen. Det vil se ut som en liste over appene har brukt batteriet i den perioden, og viser deg hvilken prosent del av batteriet du har brukt i hver app</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Kontrollere datamaskinens batteriforbruk</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 inneholder et nytt <strong>batteri bruks</strong> skjerm bilde som viser hva som skjer med din bærbare juice. Det betyr at du kan se nøyaktig hvilke applikasjoner – både stasjonære og Windows 10 \"universelle\" apper-bruker for mye strøm.</p><h3 class='faqInFs25FbP10'>Berørte merker</h3><ul>    <li>Lenovo bærbare maskiner, stasjonære maskiner</li></ul><h3 class='faqInFs25FbP10'>Gjelder for følgende systemer</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p>Denne funksjonen er ny i Windows 10, men vi må først finne denne funksjonen fordi den ikke er lagret i den tradisjonelle <strong>kontroll panel </strong>visningen, denne funksjonen finnes i den nye <strong>\"Settings\"-</strong> appen</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Finn batteri bruk skjermen</h3></p><p>1. Klikk på eller trykk <strong>på \"</strong>Settings\"-alternativet på Start-menyen</p><p>2. Velg <strong>system </strong> <strong>under innstillinger</strong>, og velg <strong>deretter \"batteris paring\". <br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klikk på eller trykk <strong>\"på \"batteri Bruk\"</strong> -koblingen under denne overskriften for å se flere detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analyser strøm forbruket</h3><p>4. Du kan endre for å gjøre batteriet til å bruke skjermen til å se batteri bruk fra de siste 24 timene til de siste 48 timene eller sist fra forrige uke</p><p>5. <strong>\"system\",</strong> \"<strong>skjerm</strong>\" og \" <strong>Wi-Fi\"</strong> prosenter. Dette viser hvor mye batteri strøm som er brukt av system prosesser, skjermen,</p><p>6. <strong>\"alternativene\"</strong> i bruk og <strong> bakgrunn</strong> viser hvor mye strøm som brukes av applikasjoner mens du bruker dem, sammenlignet med programmer som kjøres i bakgrunnen.</p><p>7. Hvis apper bruker strøm i bakgrunnen, kan du klikke på eller trykke på <strong>koblingen \"endre innstillinger for bakgrunns </strong>app\" og konfigurere apper slik at de ikke kan kjøres i bakgrunnen. Dette fungerer bare for universelle Windows 10-apper.</p><p>8. Rull nedover og du vil se en liste over applikasjoner, anses dette som den mest nyttige delen av denne funksjonen. Det vil se ut som en liste over appene har brukt batteriet i den perioden, og viser deg hvilken prosent del av batteriet du har brukt i hver app</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Alt-i-ett: strømlinjeformet",
             "body2": "Alt-i-ett-PC-er med 9. generasjons Intel® Core™-prosessorer gir deg all kraften til en stasjonær PC pakket i en elegant skjerm – for mindre rot, maskinvarebasert sikkerhet og skjerm med høy oppløsning."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

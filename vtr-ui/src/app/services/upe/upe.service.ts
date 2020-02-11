@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { CommsService } from '../comms/comms.service';
 import { DeviceService } from '../device/device.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { Observable } from 'rxjs';
 import { DevService } from '../dev/dev.service';
 import { EssentialHelper } from './helper/essential.helper';
 import { IUpeEssential, IGetContentParam, IActionResult } from './model/definitions';
@@ -11,7 +10,7 @@ import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 import { SelfSelectService, SegmentConst } from '../self-select/self-select.service';
 import { TranslateService } from '@ngx-translate/core';
 import { UPEHelper } from './helper/upe.helper';
-
+import { LocalInfoService } from '../local-info/local-info.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -22,12 +21,13 @@ export class UPEService {
 	private upeHelper: UPEHelper;
 	private essentialHelper: EssentialHelper;
 	private upeEssential: IUpeEssential;
-	private requestCache = {};
+	private localInfo: any;
 	constructor(
 		private commsService: CommsService,
 		private commonService: CommonService,
 		private selfSelectService: SelfSelectService,
 		private deviceService: DeviceService,
+		private localInfoService: LocalInfoService,
 		vantageShellService: VantageShellService,
 		devService: DevService,
 		translate: TranslateService
@@ -37,44 +37,33 @@ export class UPEService {
 		this.channelTags = this.commonService.getLocalStorageValue(LocalStorageKey.UPEChannelTags);
 	}
 
-	public getOneUPEContent(results, template, position) {
+	public filterItems(results, template, position) {
 		return results.filter((record) => {
 			return record.Template === template && record.Position === position;
 		}).sort((a, b) => a.Priority.localeCompare(b.Priority));
 	}
 
-	public fetchUPEContent(params: IGetContentParam): Observable<any> {
-		if (!params.position) {
-			throw new Error('invaild param for fetching upe content');
+	public async fetchUPEContent(params: IGetContentParam) {
+		if (!params.positions) {
+			throw new Error('invaild positions for fetching upe content');
 		}
 
-		if (!this.requestCache[params.position]) {
-			this.requestCache[params.position] = new Observable(subscriber => {	// cache request
-				(async () => {
-					const result = await this.startFetchUpeContentAndRetry(params);
-					if (result.success) {
-						const articles = await this.upeHelper.filterUPEContent(result.content);
-						subscriber.next(articles);
-						subscriber.complete();
-					} else {
-						subscriber.error(result);
-					}
-					this.requestCache[params.position] = null;	// release request
-				})();
-			});
+		const result = await this.sendAndRetry(params);
+		if (result.success) {
+			return await this.upeHelper.filterUPEContent(result.content);
+		} else {
+			throw new Error(result.content);
 		}
-
-		return this.requestCache[params.position];
 	}
 
-	private async startFetchUpeContentAndRetry(params: IGetContentParam): Promise<IActionResult> {
-		let result = await this.startFetchUpeContent(params);
+	private async sendAndRetry(params: IGetContentParam): Promise<IActionResult> {
+		let result = await this.requestUpeContent(params);
 
 		if (result.errorCode === 401) {	// unathenrized, need to registerDevice
 			this.upeEssential = await this.essentialHelper.registerDevice(this.upeEssential);
 
 			if (this.upeEssential && this.upeEssential.apiKey) {
-				result = await this.startFetchUpeContent(params);
+				result = await this.requestUpeContent(params);
 			} else {
 				result = {
 					success: false,
@@ -86,7 +75,7 @@ export class UPEService {
 		return result;
 	}
 
-	private async startFetchUpeContent(params: IGetContentParam): Promise<IActionResult> {
+	private async requestUpeContent(params: IGetContentParam): Promise<IActionResult> {
 		let essential = this.upeEssential ? this.upeEssential : await this.essentialHelper.getUpeEssential();
 		if (!essential) {
 			return {
@@ -107,10 +96,10 @@ export class UPEService {
 			};
 		}
 
-		return await this.httpGetContentRequest(essential, params);
+		return await this.httpRequestForUpeContent(essential, params);
 	}
 
-	private async httpGetContentRequest(upeEssential: IUpeEssential, params: IGetContentParam): Promise<IActionResult> {
+	private async httpRequestForUpeContent(upeEssential: IUpeEssential, params: IGetContentParam): Promise<IActionResult> {
 		const queryParam = await this.makeQueryParam(upeEssential, params);
 		let content = '';
 		let errorCode = '';
@@ -139,12 +128,12 @@ export class UPEService {
 		};
 	}
 
-	private async getUpeTags(upeEssential: IUpeEssential) {
+	private async requestUpeTags(upeEssential: IUpeEssential) {
 		if (this.channelTags) {
 			return this.channelTags;
 		}
 
-		const result = await this.httpGetTagsRequest(upeEssential);
+		const result = await this.httpRequestForTags(upeEssential);
 		if (result.success) {
 			this.channelTags = result.content ? result.content : [];
 			this.commonService.setLocalStorageValue(LocalStorageKey.UPEChannelTags, this.channelTags);
@@ -153,7 +142,7 @@ export class UPEService {
 		return this.channelTags;
 	}
 
-	private async httpGetTagsRequest(upeEssential: IUpeEssential): Promise<IActionResult> {
+	private async httpRequestForTags(upeEssential: IUpeEssential): Promise<IActionResult> {
 		const { anonUserId, clientAgentId, apiKey, deviceId } = upeEssential;
 		const header = { anonUserId, clientAgentId, apiKey, anonDeviceId: deviceId };
 		let content = '';
@@ -185,12 +174,17 @@ export class UPEService {
 
 	private async makeQueryParam(upeEssential: IUpeEssential, upeParams: IGetContentParam) {
 		let channelTags = null;
+
+		if (!this.localInfo) {
+			this.localInfo = await this.localInfoService.getLocalInfo();
+		}
 		const systeminfo = await this.deviceService.getMachineInfo();
 		const segment = await this.selfSelectService.getSegment();
 		if (segment === SegmentConst.SMB) {
-			channelTags = await this.getUpeTags(upeEssential);
+			channelTags = await this.requestUpeTags(upeEssential);
 		}
 
+		const lang = this.localInfo.Lang ? this.localInfo.Lang.toUpperCase() : 'EN';
 		const queryParam = {
 			identity: {
 				anonUserId: upeEssential.anonUserId,
@@ -200,9 +194,9 @@ export class UPEService {
 			},
 			dId: upeEssential.deviceId,
 			context: {
-				lang: this.upeHelper.getLang(),
+				lang,
 				Brand: systeminfo.brand,
-				GEO: systeminfo.country,
+				GEO: systeminfo.country.toUpperCase(),
 				Family: systeminfo.family,
 				MTM: systeminfo.mtm,
 				OEM: systeminfo.manufacturer,
@@ -214,7 +208,7 @@ export class UPEService {
 				UpeTags: channelTags
 			},
 			filterItemSize: 1,
-			positions: [upeParams.position]
+			positions: upeParams.positions
 		};
 		return queryParam;
 	}

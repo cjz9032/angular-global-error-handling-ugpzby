@@ -4,6 +4,7 @@ import { DeviceService } from '../device/device.service';
 import { CommonService } from '../common/common.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LoggerService } from '../logger/logger.service';
 
 export class SelfSelectConfig {
 	public customtags?: string;
@@ -66,13 +67,14 @@ export class SelfSelectService {
 	constructor(
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
+		private logger: LoggerService,
 		public deviceService: DeviceService
 	) {
 		this.selfSelect = this.vantageShellService.getSelfSelect();
 		this.vantageStub = this.vantageShellService.getVantageStub();
 		const changedConfig = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
 		if (changedConfig && changedConfig.segment) {
-			console.log(`SelfSelectService update segment. ${changedConfig.segment}`);
+			this.logger.info(`SelfSelectService update segment. ${changedConfig.segment}`);
 			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, changedConfig.segment);
 			if (this.selfSelect) {
 				this.selfSelect.updateConfig(changedConfig).catch((error) => {});
@@ -131,7 +133,7 @@ export class SelfSelectService {
 				this.savedSegment = this.usageType;
 			}
 		} catch (error) {
-			console.log('SelfSelectService.getConfig failed. ', error);
+			this.logger.error('SelfSelectService.getConfig failed. ', error);
 			this.usageType = this.calcDefaultSegment(this.machineInfo);
 			this.savedSegment = this.usageType;
 			this.saveConfig();
@@ -172,7 +174,7 @@ export class SelfSelectService {
 		try {
 			let segment = SegmentConst.Consumer;
 			if (!machineInfo) {
-				console.log('SelfSelectService.calcDefaultSegment failed for machine info undefined. ');
+				this.logger.info('SelfSelectService.calcDefaultSegment failed for machine info undefined. ');
 			} else if (machineInfo.isGaming) {
 				segment = SegmentConst.Gaming;
 			} else if (this.isArm(machineInfo)) {
@@ -192,7 +194,7 @@ export class SelfSelectService {
 			}
 			return segment;
 		} catch (e) {
-			console.log('SelfSelectService.calcDefaultSegment exception: ', e);
+			this.logger.error('SelfSelectService.calcDefaultSegment exception: ', e);
 			return SegmentConst.Consumer;
 		}
 	}

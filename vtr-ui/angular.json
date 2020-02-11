@@ -245,6 +245,18 @@
 						},
 						"mock": {
 							"browserTarget": "vtr-ui:build:mock"
+						},
+						"stage": {
+							"browserTarget": "vtr-ui:build:stage"
+						},
+						"qa": {
+							"browserTarget": "vtr-ui:build:qa"
+						},
+						"beta": {
+							"browserTarget": "vtr-ui:build:beta"
+						},
+						"dev": {
+							"browserTarget": "vtr-ui:build:dev"
 						}
 					}
 				},

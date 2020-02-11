@@ -103,9 +103,9 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	};
 
 	//cpt 
-	private isServerSwitchEnabled = true;
+	private isCPTEnabled = true;
 	listCpt = {
-		iconPath: 'assets/images/support/svg_icon_about_us.svg',
+		iconPath: 'assets/images/support/svg_icon_cpt.svg',
 		title: 'cpt.title',
 		clickItem: 'cpt'
 	};
@@ -147,10 +147,11 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 		this.fetchCMSArticleCategory();
 		this.fetchCMSContents();
-		this.setShowList();
 
 		//cpt
-		this.isServerSwitchEnabled = (typeof environment !== 'undefined' ? environment.isServerSwitchEnabled : true);
+		this.isCPTEnabled = (typeof environment !== 'undefined' ? environment.isCPTEnabled : true);
+
+		this.setShowList();
 	}
 
 	ngOnDestroy() {
@@ -201,7 +202,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
 		
 		//cpt
-		if(this.isServerSwitchEnabled){
+		if(this.isCPTEnabled){
 			this.supportDatas.quicklinks.push(this.listCpt);
 		}
 		

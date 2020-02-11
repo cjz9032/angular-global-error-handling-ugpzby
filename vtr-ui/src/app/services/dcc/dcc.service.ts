@@ -14,10 +14,9 @@ export class DccService {
 	public showDemo = false;
 	public isDccDevice = false;
 	private cmsHeaderDccBackgroundUpdated = false;
-	private bgColor = '#6DBEB8';
-	private backgroundProperties = ' no-repeat center / cover';
-	public headerBackground = 'url(/assets/images/HeaderImage.jpg)' + this.backgroundProperties + this.bgColor;
-	private headerDccBackground = 'url(/assets/images/HeaderImageDcc.jpg)' + this.backgroundProperties;
+	public headerBackground = '';
+	private headerDefaultBackground = '/assets/images/HeaderImage.jpg';
+	private headerDccBackground = '/assets/images/HeaderImageDcc.jpg';
 
 	constructor(
 		private modalService: NgbModal,
@@ -30,21 +29,26 @@ export class DccService {
 		this.initialize();
 	}
 
-	private initialize() {
-		this.isDccCapableDevice();
-		this.deviceService.getMachineInfo().then((machineInfo) => {
-			if (!this.deviceService.isGaming) {
-				const queryOptions: any = {
-					Page: 'dashboard'
-				};
-				this.cmsService.fetchCMSContent(queryOptions).subscribe(
-					(response: any) => {
-						if (response && response.length > 0) {
-							this.getCMSHeaderImageDcc(response);
-						}
-					});
+	private async initialize() {
+		const isDccDevice = await this.isDccCapableDevice();
+		if (isDccDevice) {
+			if (this.needUpdateDccHeaderBackground()) {
+				this.headerBackground = this.headerDccBackground;
 			}
-		});
+		} else {
+			this.headerBackground = this.headerDefaultBackground;
+		}
+		if (!this.deviceService.isGaming) {
+			const queryOptions: any = {
+				Page: 'dashboard'
+			};
+			this.cmsService.fetchCMSContent(queryOptions).subscribe(
+				(response: any) => {
+					if (response && response.length > 0) {
+						this.getCMSHeaderImageDcc(response);
+					}
+				});
+		}
 	}
 
 	private getCMSHeaderImageDcc(response) {
@@ -55,8 +59,17 @@ export class DccService {
 		)[0];
 		if (headerImage && headerImage.Title === 'Header Image DCC') {
 			this.cmsHeaderDccBackgroundUpdated = true;
-			this.headerBackground = 'url(' + headerImage.FeatureImage + ')' + this.backgroundProperties;
+			this.headerBackground = headerImage.FeatureImage;
 		}
+	}
+
+	private needUpdateDccHeaderBackground() {
+		if (!this.deviceService.isGaming && this.headerBackground !== this.headerDccBackground) {
+			if (!this.commonService.isOnline || !this.cmsHeaderDccBackgroundUpdated) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public isDccCapableDevice(): Promise<boolean> {
@@ -66,17 +79,14 @@ export class DccService {
 				filter.then((hyp) => {
 					if (hyp === 'true') {
 						this.isDccDevice = true;
-						if (!this.deviceService.isGaming) {
-							if (!this.commonService.isOnline || !this.cmsHeaderDccBackgroundUpdated) {
-								this.headerBackground = this.headerDccBackground;
-							}
-						}
 					}
 					resolve(this.isDccDevice);
 				}, (error) => {
 					this.logger.error('DccService.isDccDeviceCapableDevice: promise error ', error);
 					resolve(false);
 				});
+			} else {
+				resolve(false);
 			}
 		});
 	}
@@ -95,6 +105,8 @@ export class DccService {
 					this.logger.error('DccService.canShowDccDemo: promise error ', error);
 					resolve(false);
 				});
+			} else {
+				resolve(false);
 			}
 		});
 	}

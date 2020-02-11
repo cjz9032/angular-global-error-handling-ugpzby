@@ -617,7 +617,7 @@
                 "sub2": "Antivirus",
                 "sub3": "WiFi-säkerhet",
                 "sub4": "Lösenordstillstånd",
-                "sub5": "Internetskydd",
+                "sub5": "VPN-säkerhet",
                 "sub6": "Windows Hello"
             },
             "support": "Support",
@@ -1338,7 +1338,7 @@
                             "title": "Anmärkning",
                             "description": "Lenovo Vantage behöver åtkomst till din platsinformation för att kunna beräkna solnedgång och soluppgång i din region."
                         },
-						"tips": "Kör Windows Update eller installera grafikdrivrutinen manuellt för att återställa ögonskyddsläge"
+                        "tips": "Kör Windows Update eller installera grafikdrivrutinen manuellt för att återställa ögonskyddsläge"
                     },
                     "dispColorTemp": {
                         "title": "Bildskärmens färgtemperatur",
@@ -1420,7 +1420,8 @@
                         "caption": "Med denna funktion görs bakgrunden oskarp när du använder kameran för att ringa videosamtal eller ta foton. Du kan välja bland effekterna nedan.",
                         "blurMode": "Oskärpeläge",
                         "comicMode": "Komiskt läge",
-                        "sketchMode": "Skissläge"
+                        "sketchMode": "Skissläge",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERAN ANVÄNDS",
@@ -2589,7 +2590,7 @@
         },
         "question4": {
             "title": "Kontrollera datorns batteriförbrukning",
-            "description": "<div class='faqInFs4Fb'>    Kontrollera datorns batteriförbrukning</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 har en ny <strong>”batterianvändnings-skärm”</strong> som visar vad det är som tömmer datorns batteri. Det betyder att du kan se exakt vilka appar (både skrivbordsappar och Windows 10:s universalappar) som använder för mycket batteri.</p><h3 class='faqInFs25FbP10'>Berörda varumärken</h3><ul>    <li>Lenovos bärbara och stationära datorer</li></ul><h3 class='faqInFs25FbP10'>Berörda system</h3><ul>    <li>Alla</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Lösning</h3><p>Den här funktionen är ny i Windows 10, vi behöver hitta den här funktionen eftersom den inte finns i din vanliga <strong>kontrollpanel</strong>. Du hittar den istället i den nya appen <strong>”Inställningar”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Hitta batterianvändningsskärmen</h3></p><p>1. Klicka eller tryck på alternativet <strong>Inställningar</strong> i startmenyn</p><p>2. Väl inne i <strong>Inställningar</strong> klickar du på <strong>”System”</strong> och sedan <strong>”Batterisparfunktionen”.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klicka eller tryck på länken <strong>”Batterianvändning”</strong> under rubriken för att se detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analysera din energiförbrukning</h3><p>4. Du kan ändra från att visa batterianvändning för de senaste 24 timmarna till de senaste 48 timmarna eller den senaste veckan</p><p>5. Procent för <strong>”System,”</strong> ”<strong>Bildskärm</strong>” och ”<strong>Wi-Fi”</strong>. Detta visas hur mycket av batteriet som har används av systemet, bildskärmen,</p><p>6. Alternativen <strong>”Används”</strong> och <strong>”Bakgrund”</strong> visar hur mycket energi som används av appar medan de används jämfört med appar som körs i bakgrunden.</p><p>7. Om appar använder energi i bakgrunden kan du klicka eller trycka på <strong>Ändra inställningarna för bakgrundsappar</strong> och konfigurera appar så att de inte körs i bakgrunden. Detta fungerar endast för universella Windows 10-appar.</p><p>8. Längre ned hittar du en lista på appar, och den är den mest användbara delen av den här funktionen. Den visar alla appar som har använt batteri under den valda perioden och hur stor del av batterienergin i procent som varje app har använt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Kontrollera datorns batteriförbrukning</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 har en ny <strong>”batterianvändnings-skärm”</strong> som visar vad det är som tömmer datorns batteri. Det betyder att du kan se exakt vilka appar (både skrivbordsappar och Windows 10:s universalappar) som använder för mycket batteri.</p><h3 class='faqInFs25FbP10'>Berörda varumärken</h3><ul>    <li>Lenovos bärbara och stationära datorer</li></ul><h3 class='faqInFs25FbP10'>Berörda system</h3><ul>    <li>Alla</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Lösning</h3><p>Den här funktionen är ny i Windows 10, vi behöver hitta den här funktionen eftersom den inte finns i din vanliga <strong>kontrollpanel</strong>. Du hittar den istället i den nya appen <strong>”Inställningar”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Hitta batterianvändningsskärmen</h3></p><p>1. Klicka eller tryck på alternativet <strong>Inställningar</strong> i startmenyn</p><p>2. Väl inne i <strong>Inställningar</strong> klickar du på <strong>”System”</strong> och sedan <strong>”Batterisparfunktionen”.<br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klicka eller tryck på länken <strong>”Batterianvändning”</strong> under rubriken för att se detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analysera din energiförbrukning</h3><p>4. Du kan ändra från att visa batterianvändning för de senaste 24 timmarna till de senaste 48 timmarna eller den senaste veckan</p><p>5. Procent för <strong>”System,”</strong> ”<strong>Bildskärm</strong>” och ”<strong>Wi-Fi”</strong>. Detta visas hur mycket av batteriet som har används av systemet, bildskärmen,</p><p>6. Alternativen <strong>”Används”</strong> och <strong>”Bakgrund”</strong> visar hur mycket energi som används av appar medan de används jämfört med appar som körs i bakgrunden.</p><p>7. Om appar använder energi i bakgrunden kan du klicka eller trycka på <strong>Ändra inställningarna för bakgrundsappar</strong> och konfigurera appar så att de inte körs i bakgrunden. Detta fungerar endast för universella Windows 10-appar.</p><p>8. Längre ned hittar du en lista på appar, och den är den mest användbara delen av den här funktionen. Den visar alla appar som har använt batteri under den valda perioden och hur stor del av batterienergin i procent som varje app har använt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -3352,5 +3353,8 @@
             "subtitle2": "Allt-i-ett: smidigt och enkelt",
             "body2": "Allt-i-ett-datorer med 9:e generationens Intel® Core™-processorer ger dig alla fördelar med en stationär dator förpackade i en slimmad bildskärm – för en renare arbetsyta, maskinvarubaserad säkerhet och högupplöst bild."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

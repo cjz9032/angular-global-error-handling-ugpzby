@@ -141,7 +141,7 @@
 		font-size: $fontsize_xs;
 		color: $grey_dark;
 		// max-width: 60rem;
-		padding-left: 2rem;
+		padding-left: 3rem;
 		padding-right: 2rem;
 	}
 
@@ -192,17 +192,18 @@
 	.permission-note {
 		width: 100%;
 		background-color: $shade_lightest;
-		font-size: 1.4rem;
-		border: 1px solid $shade_lighter;
+		font-size: $fontsize_xs;
+		border: 0.1rem solid $shade_lighter;
 		justify-content: space-between;
 		.note-icon{
-			font-size: 20px;
+			font-size: 2rem;
 		}
 		.privacy-button {
-			font-size: 1.4rem;
-			letter-spacing: 0.76px;
+			font-size: $fontsize_xs;
+			letter-spacing: 0px;
 			text-align: left;
-			text-align: left;
+			font-family: "Segoe UI", sans-serif;
+			font-weight: $weight_light;
 			@media #{$black-on-white} {
 				color: $high-contrast-blue;
 				border:none;
@@ -210,6 +211,13 @@
 			@media #{$white-on-black} {
 				color: $yellow;
 				border: none;
+			}
+		}
+	}
+	.cam-privacy-switch {
+		::ng-deep .vtr-ui-switch-row.white-theme {
+			.vtr-row-switch {
+				min-height: 4rem;
 			}
 		}
 	}
