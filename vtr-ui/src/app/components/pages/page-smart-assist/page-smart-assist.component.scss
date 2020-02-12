@@ -40,6 +40,7 @@ $fontsize_xs: 1.4rem;
 		// }
 		.blur-1 {
 			opacity: 0.65;
+			pointer-events: none;
 		}
 		.feature-note {
 			background-color: $grey_lighter;
@@ -356,6 +357,7 @@ $fontsize_xs: 1.4rem;
 		.vtr-row-switch {
 			display: block !important;
 			text-align: right !important;
+			min-width: auto !important;
 			.tool-tip-icon {
 				margin-left: 0 !important;
 			}
