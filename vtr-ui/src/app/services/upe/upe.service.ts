@@ -204,7 +204,7 @@ export class UPEService {
 				EnclosureType: systeminfo.enclosureType,
 				UpeTags: channelTags
 			},
-			filterItemSize: 1,
+			filterItemSize: 3,
 			positions: upeParams.positions
 		};
 		return queryParam;
