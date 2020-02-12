@@ -18,28 +18,28 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 		});
 		const cacheStatus: string = commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus);
 		if (cacheStatus) {
-			this.status = cacheStatus === 'enabled' ? 0 : 1;
+			this.status = cacheStatus === 'enrolled' ? 0 : 1;
 			this.detail = cacheStatus;
 			this.translateStatus(this.detail);
 		}
 		if (windowsHello.fingerPrintStatus) {
 			const active = windowsHello.fingerPrintStatus === 'active';
 			this.status = active ? 0 : 1;
-			this.detail = active ? 'enabled' : 'disabled';
+			this.detail = active ? 'enrolled' : 'notEnrolled';
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
 			this.translateStatus(this.detail);
 		}
 
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, (fpStatus) => {
 			this.status = fpStatus === 'active' ? 0 : 1;
-			this.detail = fpStatus === 'active' ? 'enabled' : 'disabled';
+			this.detail = fpStatus === 'active' ? 'enrolled' : 'notEnrolled';
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
 			this.translateStatus(this.detail);
 		});
 	}
 
 	translateStatus(status: string) {
-		const translateKey = status === 'enabled' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+		const translateKey = status === 'enrolled' ? 'common.securityAdvisor.enrolled' : 'common.securityAdvisor.notEnrolled';
 		this.translateService.stream(translateKey).subscribe((value) => {
 			this.detail = value;
 		});

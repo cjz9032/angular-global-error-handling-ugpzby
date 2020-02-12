@@ -189,13 +189,17 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 					// top: 2.5rem;
 					width: 80%;
 					// margin-left: 12.5%;
+					margin: auto;
+					height: 100%;
+					position: static;
+					padding-left: 2.8rem;
 
 					.error-icon {
 						font-size: 3.5rem;
 						// align-self: center;
 						position: relative;
-						bottom: 3rem;
-						right: 3.5rem;
+						bottom: 3.3rem;
+						right: 2.5rem;
 					}
 					.icomoon-NoBatteryError {
 						&:before {
@@ -211,7 +215,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 						text-overflow: ellipsis;
 						overflow: hidden;
 						display: inline-block;
-						width: 100%;
+						width: auto;
 					}
 				}
 
