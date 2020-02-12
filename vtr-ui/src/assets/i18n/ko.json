@@ -618,7 +618,7 @@
                 "sub3": "WiFi 보안",
                 "sub4": "Password Manager",
                 "sub5": "VPN",
-                "sub6": "Fingerprint"
+                "sub6": "지문"
             },
             "support": "지원",
             "privacy": "프라이버시",
@@ -644,7 +644,7 @@
             "notFound": "찾을 수 없음",
             "registered": "등록됨",
             "notRegistered": "등록되지 않음",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "지문",
             "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>",
             "windowsHello": "Windows Hello"
         },

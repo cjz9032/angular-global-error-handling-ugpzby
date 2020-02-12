@@ -618,7 +618,7 @@
                 "sub3": "WiFi Güvenliği",
                 "sub4": "Password Manager",
                 "sub5": "VPN",
-                "sub6": "Fingerprint"
+                "sub6": "Parmak izi"
             },
             "support": "Destek",
             "privacy": "Gizlilik",
@@ -644,7 +644,7 @@
             "notFound": "BULUNAMADI",
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Parmak izi",
             "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>",
             "windowsHello": "Windows Hello"
         },

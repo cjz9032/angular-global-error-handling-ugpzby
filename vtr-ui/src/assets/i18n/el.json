@@ -616,9 +616,9 @@
                 "sub1": "Η Ασφάλειά μου",
                 "sub2": "Προστασία από ιούς",
                 "sub3": "Ασφάλεια WiFi",
-                "sub4": "Password Manager",
+                "sub4": "διαχειριστής κωδικών πρόσβασης",
                 "sub5": "VPN",
-                "sub6": "Fingerprint"
+                "sub6": "Δακτυλικό αποτύπωμα"
             },
             "support": "Υποστήριξη",
             "privacy": "Προσωπικά δεδομένα",
@@ -632,7 +632,7 @@
             "subtitle": "ΕΛΕΓΞΤΕ ΕΑΝ Η ΣΥΣΚΕΥΗ ΣΑΣ ΕΙΝΑΙ ΑΣΦΑΛΗΣ.",
             "antiVirus": "Προστασία από ιούς",
             "wifi": "Ασφάλεια WiFi",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "διαχειριστής κωδικών πρόσβασης",
             "vpn": "VPN",
             "enabled": "ΕΝΕΡΓΟΠΟΙΗΘΗΚΕ",
             "disabled": "ΑΠΕΝΕΡΓΟΠΟΙΗΘΗΚΕ",
@@ -644,7 +644,7 @@
             "notFound": "ΔΕΝ ΒΡΕΘΗΚΕ",
             "registered": "ΔΗΛΩΘΗΚΕ",
             "notRegistered": "ΔΕΝ ΔΗΛΩΘΗΚΕ",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Δακτυλικό αποτύπωμα",
             "privacyPolicyAndTermsOfService": "<tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>",
             "windowsHello": "Windows Hello"
         },

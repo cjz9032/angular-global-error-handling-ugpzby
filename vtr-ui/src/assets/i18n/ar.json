@@ -620,7 +620,7 @@
                 "sub3": "أمان شبكة WiFi",
                 "sub4": "مدير كلمة السر",
                 "sub5": "VPN",
-                "sub6": "Fingerprint"
+                "sub6": "بصمة"
             },
             "support": "الدعم",
             "privacy": "الخصوصية",
@@ -646,7 +646,7 @@
             "notFound": "لم يتم العثور عليه",
             "registered": "مسجل",
             "notRegistered": "غير مسجل",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "بصمة",
             "privacyPolicyAndTermsOfService": "<tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>",
             "windowsHello": "Windows Hello"
         },

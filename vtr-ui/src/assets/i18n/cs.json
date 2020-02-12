@@ -618,7 +618,7 @@
                 "sub3": "Zabezpečení WiFi",
                 "sub4": "Správce hesel",
                 "sub5": "VPN",
-                "sub6": "Fingerprint"
+                "sub6": "Otisk prstu"
             },
             "support": "Podpora",
             "privacy": "Soukromí",
@@ -644,7 +644,7 @@
             "notFound": "NENALEZENO",
             "registered": "REGISTROVÁNO",
             "notRegistered": "NENÍ REGISTROVÁNO",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Otisk prstu",
             "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>",
             "windowsHello": "Windows Hello"
         },

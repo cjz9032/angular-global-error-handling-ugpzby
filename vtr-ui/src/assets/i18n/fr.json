@@ -618,7 +618,7 @@
                 "sub3": "Sécurité WiFi",
                 "sub4": "Password Manager",
                 "sub5": "VPN",
-                "sub6": "Fingerprint"
+                "sub6": "Empreinte digitale"
             },
             "support": "Soutien",
             "privacy": "Confidentialité",
@@ -644,7 +644,7 @@
             "notFound": "NON TROUVÉ",
             "registered": "ENREGISTRÉ",
             "notRegistered": "NON ENREGISTRÉ",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Empreinte digitale",
             "privacyPolicyAndTermsOfService": "<tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>",
             "windowsHello": "Windows Hello"
         },

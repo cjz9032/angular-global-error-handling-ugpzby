@@ -618,7 +618,7 @@
                 "sub3": "WiFi-sikkerhed",
                 "sub4": "Adgangskodesundhed",
                 "sub5": "VPN",
-                "sub6": "Fingerprint"
+                "sub6": "Fingeraftryk"
             },
             "support": "Support",
             "privacy": "Anonymitet",
@@ -644,7 +644,7 @@
             "notFound": "IKKE FUNDET",
             "registered": "REGISTRERET",
             "notRegistered": "IKKE REGISTRERET",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Fingeraftryk",
             "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>",
             "windowsHello": "Windows Hello"
         },

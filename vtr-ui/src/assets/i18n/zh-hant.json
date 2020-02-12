@@ -618,7 +618,7 @@
                 "sub3": "WiFi 安全性",
                 "sub4": "Password Manager",
                 "sub5": "VPN",
-                "sub6": "Fingerprint"
+                "sub6": "指紋"
             },
             "support": "支援",
             "privacy": "隱私權",
@@ -644,7 +644,7 @@
             "notFound": "找不到",
             "registered": "已註冊",
             "notRegistered": "未註冊",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>",
             "windowsHello": "Windows Hello"
         },
