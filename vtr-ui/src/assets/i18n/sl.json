@@ -616,9 +616,9 @@
                 "sub1": "Moja varnost",
                 "sub2": "Protivirusna zaščita",
                 "sub3": "Varnost WiFi-ja",
-                "sub4": "Geslo zdravje",
-                "sub5": "VPN Varnost",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "Podpora",
             "privacy": "Zasebnost",

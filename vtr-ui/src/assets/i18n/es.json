@@ -616,9 +616,9 @@
                 "sub1": "Mi seguridad",
                 "sub2": "Antivirus",
                 "sub3": "Seguridad de WiFi",
-                "sub4": "Estado de la contraseña",
-                "sub5": "Seguridad VPN",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "Soporte",
             "privacy": "Privacidad",

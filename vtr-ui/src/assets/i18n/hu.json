@@ -616,9 +616,9 @@
                 "sub1": "Saját biztonság",
                 "sub2": "Vírusirtó",
                 "sub3": "Biztonságos WiFi",
-                "sub4": "Jelszó állapota",
-                "sub5": "VPN-biztonság",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "Támogatás",
             "privacy": "Adatvédelem",

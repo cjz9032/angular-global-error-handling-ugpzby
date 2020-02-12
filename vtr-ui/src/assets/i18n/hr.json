@@ -615,10 +615,10 @@
                 "title": "Sigurnost",
                 "sub1": "Moja sigurnost",
                 "sub2": "Zaštita od virusa",
-                "sub3": "Sigurnost WiFija",
-                "sub4": "Jačina lozinke",
-                "sub5": "Sigurnost VPN mreže",
-                "sub6": "Windows Hello"
+                "sub3": "Sigurnost WiFi mreže",
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "Podrška",
             "privacy": "Zaštita privatnosti",

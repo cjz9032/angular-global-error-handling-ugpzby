@@ -616,9 +616,9 @@
                 "sub1": "Моя безопасность",
                 "sub2": "Антивирусная программа",
                 "sub3": "Безопасность WiFi",
-                "sub4": "Надежность пароля",
-                "sub5": "Безопасность VPN",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "Поддержка",
             "privacy": "Конфиденциальность",

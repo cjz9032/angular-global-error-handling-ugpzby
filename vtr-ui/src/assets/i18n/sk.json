@@ -616,9 +616,9 @@
                 "sub1": "Moje zabezpečenie",
                 "sub2": "Antivírus",
                 "sub3": "Zabezpečenie WiFi",
-                "sub4": "Sila hesla",
-                "sub5": "Zabezpečenie VPN",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "Technická podpora",
             "privacy": "Ochrana osobných údajov",

@@ -617,10 +617,10 @@
                 "title": "الأمان",
                 "sub1": "أمن جهازي",
                 "sub2": "مكافحة الفيروسات",
-                "sub3": "أمان WiFi",
-                "sub4": "سلامة كلمة المرور",
-                "sub5": "أمان VPN",
-                "sub6": "Windows Hello"
+                "sub3": "أمان شبكة WiFi",
+                "sub4": "مدير كلمة السر",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "الدعم",
             "privacy": "الخصوصية",

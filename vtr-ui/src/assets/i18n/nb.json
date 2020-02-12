@@ -616,9 +616,9 @@
                 "sub1": "Min sikkerhet",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-sikkerhet",
-                "sub4": "Passordtilstand",
-                "sub5": "VPN-sikkerhet",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "Støtte",
             "privacy": "Personvern",

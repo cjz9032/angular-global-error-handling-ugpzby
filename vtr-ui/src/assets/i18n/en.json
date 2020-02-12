@@ -618,9 +618,9 @@
                 "sub1": "My Security",
                 "sub2": "Anti-Virus",
                 "sub3": "WiFi Security",
-                "sub4": "Password Health",
-                "sub5": "VPN Security",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "Support",
             "homeSecurity": "Connected Home",

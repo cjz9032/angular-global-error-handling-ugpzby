@@ -616,9 +616,9 @@
                 "sub1": "Güvenliğim",
                 "sub2": "Virüsten Koruma",
                 "sub3": "WiFi Güvenliği",
-                "sub4": "Parola Durumu",
-                "sub5": "VPN Güvenliği",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "Destek",
             "privacy": "Gizlilik",

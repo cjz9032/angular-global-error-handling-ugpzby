@@ -616,9 +616,9 @@
                 "sub1": "我的安全性",
                 "sub2": "防毒",
                 "sub3": "WiFi 安全性",
-                "sub4": "密碼安全狀態",
-                "sub5": "VPN 安全性",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "支援",
             "privacy": "隱私權",

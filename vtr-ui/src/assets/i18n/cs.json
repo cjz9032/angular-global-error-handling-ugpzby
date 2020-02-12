@@ -616,9 +616,9 @@
                 "sub1": "Moje zabezpečení",
                 "sub2": "Antivirus",
                 "sub3": "Zabezpečení WiFi",
-                "sub4": "Stav hesla",
-                "sub5": "Zabezpečení VPN",
-                "sub6": "Windows Hello"
+                "sub4": "Správce hesel",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "Podpora",
             "privacy": "Soukromí",
@@ -633,7 +633,7 @@
             "antiVirus": "Antivirus",
             "wifi": "Zabezpečení WiFi",
             "pswdMgr": "Správce hesel",
-            "vpn": "Síť VPN",
+            "vpn": "VPN",
             "enabled": "POVOLENO",
             "disabled": "ZAKÁZÁNO",
             "partiallyProtected": "ČÁSTEČNĚ CHRÁNĚNO",
