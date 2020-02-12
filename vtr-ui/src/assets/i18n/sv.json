@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Helt skyddad",
-            "notFully": "Inte helt skyddad",
+            "fully": "För att få ett bättre erbjudande om skydd av din enhet, fortsätt med",
+            "notFully": "För att få ett bättre skydd av din enhet, börja med",
             "security101": "SÄKERHETSRÅDGIVARE",
             "firewall": "Brandvägg",
             "pwdHealth": "Lösenordstillstånd",

@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "受全面保护",
-            "notFully": "未受全面保护",
+            "fully": "为了获得更好的服务来保护您的设备，请继续使用",
+            "notFully": "要了解如何更好地保护您的设备，请开始使用",
             "security101": "安全建议入门",
             "firewall": "防火墙",
             "pwdHealth": "密码保险箱",

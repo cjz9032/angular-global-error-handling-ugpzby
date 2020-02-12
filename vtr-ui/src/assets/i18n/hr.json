@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "U potpunosti zaštićen",
-            "notFully": "Nije u potpunosti zaštićen",
+            "fully": "Da biste osigurali bolju ponudu, zaštitite svoj uređaj, ostanite s",
+            "notFully": "Da biste naučili kako bolje zaštititi svoj uređaj, započnite s",
             "security101": "SAVJETNIK ZA SIGURNOST TVRTKE 101",
             "firewall": "Vatrozid",
             "pwdHealth": "Jačina lozinke",

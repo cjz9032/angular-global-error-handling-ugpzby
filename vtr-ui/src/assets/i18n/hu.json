@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Teljesen védett",
-            "notFully": "Nem teljesen védett",
+            "fully": "Ha jobb ajánlatot szeretne kapni eszköze védelmére, maradjon a következővel:",
+            "notFully": "Ha meg szeretné tudni, hogyan védheti meg jobban eszközeit, kezdje a következővel:",
             "security101": "BIZTONSÁGI TANÁCSADÓ 101",
             "firewall": "Tűzfal",
             "pwdHealth": "Jelszó állapota",

@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Täysin suojattu",
-            "notFully": "Ei täysin suojattu",
+            "fully": "Jos haluat paremman tarjouksen laitteesi suojaamiseen, pysy kohdassa",
+            "notFully": "Jos haluat lisätietoja laitteen paremmasta suojauksesta, aloita kohdasta",
             "security101": "SECURITY ADVISOR 101",
             "firewall": "Palomuuri",
             "pwdHealth": "Salasanan kunto",

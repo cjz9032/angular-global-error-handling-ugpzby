@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Plne chránené",
-            "notFully": "Nie plne chránené",
+            "fully": "Získajte lepšiu ponuku na ochranu svojho zariadenia a naďalej používajte",
+            "notFully": "Ak chcete zistiť, ako lepšie chrániť svoje zariadenie, začnite s",
             "security101": "PORADCA ZABEZPEČENÍM 101",
             "firewall": "Brána firewall",
             "pwdHealth": "Sila hesla",

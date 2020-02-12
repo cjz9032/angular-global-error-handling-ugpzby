@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Vollständig geschützt",
-            "notFully": "Nicht vollständig geschützt",
+            "fully": "Um ein besseres Angebot zum Schutz Ihrer Einheit zu erhalten, bleiben Sie bei",
+            "notFully": "Um zu erfahren, wie Sie Ihre Einheit besser schützen können, beginnen Sie mit",
             "security101": "SICHERHEITSRATGEBER 101",
             "firewall": "Firewall",
             "pwdHealth": "Kennwortzustand",

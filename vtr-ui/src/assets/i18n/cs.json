@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Úplná ochrana",
-            "notFully": "Nejste zcela chráněni",
+            "fully": "Získejte lepší nabídku pro ochranu zařízení a nadále používejte",
+            "notFully": "Chcete-li se dozvědět, jak lépe chránit zařízení, začněte používat",
             "security101": "BEZPEČNOSTNÍ RÁDCE 101",
             "firewall": "Firewall",
             "pwdHealth": "Stav hesla",

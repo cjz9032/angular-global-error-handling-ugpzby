@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Pełna ochrona",
-            "notFully": "Brak pełnej ochrony",
+            "fully": "Aby dowiedzieć się, jak lepiej chronić swoje urządzenie, pozostań z",
+            "notFully": "Aby dowiedzieć się, jak lepiej chronić swoje urządzenie, zacznij od",
             "security101": "DORADCA ZABEZPIECZEŃ 101",
             "firewall": "Zapora",
             "pwdHealth": "Bezpieczeństwo hasła",

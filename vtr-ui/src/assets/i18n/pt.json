@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Totalmente protegido",
-            "notFully": "Não totalmente protegido",
+            "fully": "Para obter uma melhor oferta e proteger o seu dispositivo, mantenha",
+            "notFully": "Para saber como melhor proteger o seu dispositivo, comece com",
             "security101": "PRINCÍPIOS BÁSICOS DE ASSISTENTE DE SEGURANÇA",
             "firewall": "Firewall",
             "pwdHealth": "Estado de palavra-passe",

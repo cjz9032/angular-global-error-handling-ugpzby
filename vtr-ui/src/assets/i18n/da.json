@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Fuldt beskyttet",
-            "notFully": "Ikke fuldt beskyttet",
+            "fully": "Hvis du vil have et bedre tilbud til at beskytte din enhed, så fortsæt med",
+            "notFully": "Hvis du vil lære, hvordan du beskytter din enhed bedre, skal du starte med",
             "security101": "SIKKERHEDSVEJLEDNING 101",
             "firewall": "Firewall",
             "pwdHealth": "Adgangskodesundhed",
