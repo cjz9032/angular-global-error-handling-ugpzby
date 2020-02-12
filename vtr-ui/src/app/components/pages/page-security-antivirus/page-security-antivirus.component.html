@@ -59,7 +59,7 @@
 				[isSubtitleVisible]="false" [isButtonVisible]="false"></vtr-widget-offline-info>
 			<div class="subheader antivirus-block row justify-content-between">
 				<div class="rounded-card-with-shadow bg-white defender-part" [ngClass]="{'offline-part': isOnline}">
-					<div class="row justify-content-between">
+					<div class="row justify-content-between align-items-center">
 						<div class="row">
 							<img class="mcafee-logo align-self-start"
 								[src]=" '/assets/images/mcafee_logo.svg' | svgInline | async" />
@@ -231,18 +231,20 @@
 
 					</div>
 				</div>
-				<vtr-container-collapsible
-					*ngIf="viewModel.showMcafee"
-					[collapseLinkId]="'othersBetterOffer'"
-					[cardTitle]="'security.antivirus.others.betterOffer' | translate"
-					componentName="othersBetterOfferCollapsible"
-					[allowCollapse]="true">
-					<vtr-widget-mcafee [install]="viewModel.mcafeeInstall"
-						[isOnline]="isOnline"
-						[name]="viewModel.otherAntiVirus.name" [common]="common">
-					</vtr-widget-mcafee>
-					<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
-				</vtr-container-collapsible>
+				<div class="mb-5">
+					<vtr-container-collapsible
+						*ngIf="viewModel.showMcafee"
+						[collapseLinkId]="'othersBetterOffer'"
+						[cardTitle]="'security.antivirus.others.betterOffer' | translate"
+						componentName="othersBetterOfferCollapsible"
+						[allowCollapse]="true">
+						<vtr-widget-mcafee [install]="viewModel.mcafeeInstall"
+							[isOnline]="isOnline"
+							[name]="viewModel.otherAntiVirus.name" [common]="common">
+						</vtr-widget-mcafee>
+						<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
+					</vtr-container-collapsible>
+				</div>
 			</div>
 		</div>
 	</left-content>

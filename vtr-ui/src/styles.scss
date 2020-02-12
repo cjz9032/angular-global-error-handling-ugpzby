@@ -310,7 +310,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		background-color: $light;
 		font-size: 1.4rem;
 		text-align: left;
-		min-width: 20rem;
+		max-width: 40rem;
 	}
 }
 
@@ -908,7 +908,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		padding: 3rem;
 		color: $main_darker;
 		text-align: left;
-		max-width: 100%;
+		max-width: 40rem;
 
 		span {
 			font-weight: bold;

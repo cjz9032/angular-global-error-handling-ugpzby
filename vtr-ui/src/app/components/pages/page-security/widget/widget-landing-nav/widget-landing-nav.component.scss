@@ -6,10 +6,11 @@
 
   .nav-item {
     list-style-type: none;
-	margin-right: 2rem;
-	@media #{$mediaquery_X46} {
-		margin-right: 1rem;
-	}
+    margin-right: 2rem;
+    min-width: 0;
+	  @media #{$mediaquery_X46} {
+		  margin-right: 1rem;
+	  }
   }
 
   .nav-link {

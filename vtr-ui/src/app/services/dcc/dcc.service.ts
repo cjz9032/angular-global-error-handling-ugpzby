@@ -31,10 +31,8 @@ export class DccService {
 
 	private async initialize() {
 		const isDccDevice = await this.isDccCapableDevice();
-		if (isDccDevice) {
-			if (this.needUpdateDccHeaderBackground()) {
-				this.headerBackground = this.headerDccBackground;
-			}
+		if (isDccDevice && this.needUpdateDccHeaderBackground()) {
+			this.headerBackground = this.headerDccBackground;
 		} else {
 			this.headerBackground = this.headerDefaultBackground;
 		}
@@ -64,10 +62,10 @@ export class DccService {
 	}
 
 	private needUpdateDccHeaderBackground() {
-		if (!this.deviceService.isGaming && this.headerBackground !== this.headerDccBackground) {
-			if (!this.commonService.isOnline || !this.cmsHeaderDccBackgroundUpdated) {
-				return true;
-			}
+		if (!this.deviceService.isGaming &&
+			this.headerBackground !== this.headerDccBackground &&
+			(!this.commonService.isOnline || !this.cmsHeaderDccBackgroundUpdated)) {
+			return true;
 		}
 		return false;
 	}

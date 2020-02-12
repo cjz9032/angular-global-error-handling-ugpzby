@@ -150,16 +150,13 @@ export class UPEService {
 		try {
 			const httpResponse = await this.commsService.makeTagRequest(
 				`${upeEssential.upeUrlBase}/upe/tag/api/row/tag/user_tags/sn/${upeEssential.deviceId}?type=c_tag`, header
-			).toPromise() as any;
+			) as any;
 
-			if (httpResponse.status === 200 && httpResponse.body) {
-				return {
-					success: true,
-					content: httpResponse.body.tags
-				};
-			} else {
-				content = `get upe tags failed upon http request(unknown)`;
-			}
+			const jsonResponse = JSON.parse(httpResponse);
+			return {
+				success: true,
+				content: jsonResponse.tags
+			};
 		} catch (ex) {
 			content = `get  upe tags  failed upon http request`;
 			errorCode = ex.status;
@@ -207,7 +204,7 @@ export class UPEService {
 				EnclosureType: systeminfo.enclosureType,
 				UpeTags: channelTags
 			},
-			filterItemSize: 1,
+			filterItemSize: 3,
 			positions: upeParams.positions
 		};
 		return queryParam;
