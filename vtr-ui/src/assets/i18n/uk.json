@@ -616,9 +616,9 @@
                 "sub1": "Моя безпека",
                 "sub2": "Антивірус",
                 "sub3": "Безпека WiFi",
-                "sub4": "Надійність паролю",
-                "sub5": "Безпека VPN",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Відбитки пальців"
             },
             "support": "підтримка",
             "privacy": "Конфіденційність",
@@ -644,7 +644,7 @@
             "notFound": "НЕ ВИЯВЛЕНО",
             "registered": "ЗАРЕЄСТРОВАНО",
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Відбитки пальців",
             "privacyPolicyAndTermsOfService": "<tag>політику конфіденційності</tag> та <tag>умови надання послуг</tag>",
             "windowsHello": "Windows Hello"
         },

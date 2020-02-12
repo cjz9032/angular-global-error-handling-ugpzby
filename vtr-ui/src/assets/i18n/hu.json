@@ -616,9 +616,9 @@
                 "sub1": "Saját biztonság",
                 "sub2": "Vírusirtó",
                 "sub3": "Biztonságos WiFi",
-                "sub4": "Jelszó állapota",
-                "sub5": "VPN-biztonság",
-                "sub6": "Windows Hello"
+                "sub4": "Jelszókezelő",
+                "sub5": "VPN",
+                "sub6": "Ujjlenyomat"
             },
             "support": "Támogatás",
             "privacy": "Adatvédelem",
@@ -632,7 +632,7 @@
             "subtitle": "ELLENŐRIZZE, HOGY BIZTONSÁGOS-E A KÉSZÜLÉK.",
             "antiVirus": "Vírusirtó",
             "wifi": "Biztonságos WiFi",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "Jelszókezelő",
             "vpn": "VPN",
             "enabled": "ENGEDÉLYEZETT",
             "disabled": "LETILTOTT",
@@ -644,7 +644,7 @@
             "notFound": "NEM TALÁLHATÓ",
             "registered": "REGISZTRÁLT",
             "notRegistered": "NEM REGISZTRÁLT",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Ujjlenyomat",
             "privacyPolicyAndTermsOfService": "<tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag>",
             "windowsHello": "Windows Hello"
         },

@@ -616,9 +616,9 @@
                 "sub1": "Protezione personalizzata",
                 "sub2": "Antivirus",
                 "sub3": "Sicurezza WiFi",
-                "sub4": "Integrità password",
-                "sub5": "Protezione VPN",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Impronta digitale"
             },
             "support": "Supporto",
             "privacy": "Vita Privata",
@@ -644,7 +644,7 @@
             "notFound": "NON TROVATO",
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Impronta digitale",
             "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>",
             "windowsHello": "Windows Hello"
         },

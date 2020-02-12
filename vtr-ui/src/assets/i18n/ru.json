@@ -616,9 +616,9 @@
                 "sub1": "Моя безопасность",
                 "sub2": "Антивирусная программа",
                 "sub3": "Безопасность WiFi",
-                "sub4": "Надежность пароля",
-                "sub5": "Безопасность VPN",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Oтпечаток пальца"
             },
             "support": "Поддержка",
             "privacy": "Конфиденциальность",
@@ -644,7 +644,7 @@
             "notFound": "НЕ ОБНАРУЖЕНО",
             "registered": "ЗАРЕГИСТРИРОВАНО",
             "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Oтпечаток пальца",
             "privacyPolicyAndTermsOfService": "<tag>Политикой конфиденциальности</tag> и <tag>Условиями обслуживания</tag>",
             "windowsHello": "Windows Hello"
         },

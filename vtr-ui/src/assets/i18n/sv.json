@@ -616,9 +616,9 @@
                 "sub1": "Min säkerhet",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-säkerhet",
-                "sub4": "Lösenordstillstånd",
-                "sub5": "VPN-säkerhet",
-                "sub6": "Windows Hello"
+                "sub4": "Lösenordshanterare",
+                "sub5": "VPN",
+                "sub6": "Fingeravtryck"
             },
             "support": "Support",
             "privacy": "Sekretess",
@@ -632,7 +632,7 @@
             "subtitle": "KONTROLLERA OM DIN ENHET ÄR SKYDDAD.",
             "antiVirus": "Antivirus",
             "wifi": "WiFi-säkerhet",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "Lösenordshanterare",
             "vpn": "VPN",
             "enabled": "AKTIVERAD",
             "disabled": "INAKTIVERAD",
@@ -644,7 +644,7 @@
             "notFound": "HITTADES INTE",
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Fingeravtryck",
             "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
             "windowsHello": "Windows Hello"
         },

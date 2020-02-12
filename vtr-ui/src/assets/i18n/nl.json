@@ -616,9 +616,9 @@
                 "sub1": "Mijn beveiliging",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-beveiliging",
-                "sub4": "Wachtwoordstatus",
-                "sub5": "VPN-beveiliging",
-                "sub6": "Windows Hello"
+                "sub4": "Wachtwoordbeheerder",
+                "sub5": "VPN",
+                "sub6": "Vingerafdruk"
             },
             "support": "Ondersteuning",
             "privacy": "Privacy",
@@ -632,7 +632,7 @@
             "subtitle": "CONTROLEER OF UW APPARAAT IS BEVEILIGD.",
             "antiVirus": "Antivirus",
             "wifi": "WiFi-beveiliging",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "Wachtwoordbeheerder",
             "vpn": "VPN",
             "enabled": "INGESCHAKELD",
             "disabled": "UITGESCHAKELD",
@@ -644,7 +644,7 @@
             "notFound": "NIET GEVONDEN",
             "registered": "GEREGISTREERD",
             "notRegistered": "NIET GEREGISTREERD",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Vingerafdruk",
             "privacyPolicyAndTermsOfService": "<tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>",
             "windowsHello": "Windows Hello"
         },

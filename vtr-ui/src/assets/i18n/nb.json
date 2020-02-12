@@ -616,9 +616,9 @@
                 "sub1": "Min sikkerhet",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-sikkerhet",
-                "sub4": "Passordtilstand",
-                "sub5": "VPN-sikkerhet",
-                "sub6": "Windows Hello"
+                "sub4": "Passordbehandling",
+                "sub5": "VPN",
+                "sub6": "Fingeravtrykk"
             },
             "support": "Støtte",
             "privacy": "Personvern",
@@ -632,7 +632,7 @@
             "subtitle": "KONTROLLER OM ENHETEN ER SIKRET.",
             "antiVirus": "Antivirus",
             "wifi": "WiFi-sikkerhet",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "Passordbehandling",
             "vpn": "VPN",
             "enabled": "AKTIVERT",
             "disabled": "DEAKTIVERT",
@@ -644,7 +644,7 @@
             "notFound": "IKKE FUNNET",
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Fingeravtrykk",
             "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
             "windowsHello": "Windows Hello"
         },

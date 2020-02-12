@@ -616,9 +616,9 @@
                 "sub1": "マイ・セキュリティー",
                 "sub2": "アンチウィルス",
                 "sub3": "WiFi セキュリティー",
-                "sub4": "パスワードの健全性",
-                "sub5": "VPN セキュリティー",
-                "sub6": "Windows Hello"
+                "sub4": "パスワードマネージャー",
+                "sub5": "VPN",
+                "sub6": "指紋"
             },
             "support": "サポート",
             "privacy": "プライバシー",
@@ -632,7 +632,7 @@
             "subtitle": "デバイスが保護されているかどうかを確認します。",
             "antiVirus": "アンチウィルス",
             "wifi": "WiFi セキュリティー",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "パスワードマネージャー",
             "vpn": "VPN",
             "enabled": "有効",
             "disabled": "無効",
@@ -644,7 +644,7 @@
             "notFound": "見つかりませんでした",
             "registered": "登録済み",
             "notRegistered": "未登録",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>",
             "windowsHello": "Windows Hello"
         },

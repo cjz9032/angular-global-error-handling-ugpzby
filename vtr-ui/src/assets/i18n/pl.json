@@ -616,9 +616,9 @@
                 "sub1": "Moje zabezpieczenie",
                 "sub2": "Antywirus",
                 "sub3": "Bezpieczeństwo WiFi",
-                "sub4": "Bezpieczeństwo hasła",
-                "sub5": "Zabezpieczenia VPN",
-                "sub6": "Windows Hello"
+                "sub4": "Menedżer haseł",
+                "sub5": "VPN",
+                "sub6": "Odcisk palca"
             },
             "support": "Pomoc techniczna",
             "privacy": "Prywatność",
@@ -632,7 +632,7 @@
             "subtitle": "SPRAWDŹ, CZY URZĄDZENIE JEST ZABEZPIECZONE.",
             "antiVirus": "Antywirus",
             "wifi": "Bezpieczeństwo WiFi",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "Menedżer haseł",
             "vpn": "VPN",
             "enabled": "WŁĄCZONO",
             "disabled": "WYŁĄCZONO",
@@ -644,7 +644,7 @@
             "notFound": "NIE ZNALEZIONO",
             "registered": "ZAREJESTROWANY",
             "notRegistered": "NIE ZAREJESTROWANY",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Odcisk palca",
             "privacyPolicyAndTermsOfService": "<tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>",
             "windowsHello": "Windows Hello"
         },

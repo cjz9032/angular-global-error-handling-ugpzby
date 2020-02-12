@@ -616,9 +616,9 @@
                 "sub1": "האבטחה שלי",
                 "sub2": "אנטי-וירוס",
                 "sub3": "אבטחת WiFi",
-                "sub4": "תקינות סיסמה",
-                "sub5": "אבטחת VPN",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "טביעת אצבע"
             },
             "support": "תמיכה",
             "privacy": "פרטיות",
@@ -644,7 +644,7 @@
             "notFound": "לא נמצא",
             "registered": "רשום",
             "notRegistered": "לא רשום",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "טביעת אצבע",
             "privacyPolicyAndTermsOfService": "<tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>",
             "windowsHello": "Windows Hello"
         },
