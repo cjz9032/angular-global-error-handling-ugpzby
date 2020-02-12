@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "FULLSTENDIG BESKYTTET",
-            "notFully": "Ikke fullstendig beskyttet",
+            "fully": "For å få et bedre tilbud bør du beskytte enheten og bli hos",
+            "notFully": "Hvis du vil vite hvordan du kan beskytte enheten din bedre, kan du starte med",
             "security101": "SIKKERHETSRÅDGIVER 101",
             "firewall": "Brannmur",
             "pwdHealth": "Passordtilstand",

@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "COMPLETAMENTE PROTETTO",
-            "notFully": "Non completamente protetto",
+            "fully": "Per ottenere un'offerta migliore per proteggere il tuo dispositivo, scegli",
+            "notFully": "Per scoprire come proteggere al meglio il tuo dispositivo, inizia con",
             "security101": "ASSISTENTE SICUREZZA 101",
             "firewall": "Firewall",
             "pwdHealth": "Integrità password",

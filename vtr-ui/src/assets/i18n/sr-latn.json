@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "U potpunosti zaštićen",
-            "notFully": "Nije u potpunosti zaštićen",
+            "fully": "Para obtener una mejor oferta para proteger su dispositivo, manténgase con",
+            "notFully": "Para saber cómo proteger mejor su dispositivo, comience con",
             "security101": "SAVETNIK ZA BEZBEDNOST 101",
             "firewall": "Zaštitni zid",
             "pwdHealth": "Ispravnost lozinke",

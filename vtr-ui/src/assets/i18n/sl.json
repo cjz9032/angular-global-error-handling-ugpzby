@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Popolnoma zaščitena",
-            "notFully": "Nije popolnoma zaščitena",
+            "fully": "Če želite še bolje zaščititi svojo napravo, še naprej uporabljajte",
+            "notFully": "Če želite izvedeti, kako lahko bolje zaščitite svojo napravo, začnite uporabljati",
             "security101": "VARNOSTNI SVETOVALEC 101",
             "firewall": "Požarni zid",
             "pwdHealth": "Geslo zdravje",

@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Complet protejat",
-            "notFully": "Neprotejat complet",
+            "fully": "Pentru a obține o ofertă mai bună în vederea protejării dispozitivului dvs., rămâneți cu",
+            "notFully": "Pentru a afla cum să vă protejați mai bine dispozitivul, începeți cu",
             "security101": "ASISTENȚĂ PRIVIND SECURITATEA 101",
             "firewall": "Paravan de protecție",
             "pwdHealth": "Sănătatea parolei",
