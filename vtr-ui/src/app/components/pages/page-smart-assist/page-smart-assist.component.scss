@@ -40,6 +40,7 @@ $fontsize_xs: 1.4rem;
 		// }
 		.blur-1 {
 			opacity: 0.65;
+			pointer-events: none;
 		}
 		.feature-note {
 			background-color: $grey_lighter;
