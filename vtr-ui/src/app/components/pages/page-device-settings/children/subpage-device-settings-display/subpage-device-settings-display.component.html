@@ -201,6 +201,7 @@
 													(change)="setPrivacyGuardOnPasswordStatusVal($event)" />
 												<span class="checkmark"></span>
 												<label class="custom-control-label"
+												id="cb-privacy-guard"
 													for="cb-privacy-guard">
 													<span id="cb-privacy-guard-description"
 														attr.aria-label="privacy guard password capability note, {{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}">
@@ -315,9 +316,9 @@
 									[isDisabled]="shouldCameraSectionDisabled"
 									[showLoaderState]="cameraPrivacyModeStatus.isLoading">
 									<div class="row">
-										<div class="col-12 pr-0 pl-5">
-											<div *ngIf="hideNote" 
-												class="row permission-note mt-2">
+										<div class="col-12 pr-0">
+											<div *ngIf="hideNote"
+												class="row permission-note mt-5">
 												<div class="col-12 p-3 d-flex">
 													<div class="col-1 pl-0 text-center">
 														<fa-icon [icon]="['fas', 'exclamation-circle']"
