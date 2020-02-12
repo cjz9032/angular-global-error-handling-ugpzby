@@ -111,14 +111,14 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 
 	setChecked(currentItem) {
 		const currentRadio = currentItem.querySelectorAll('input[type="radio"]');
-		if (currentRadio && !currentRadio.checked) {
+		if (currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
 			currentRadio[0].click();
+			this.radioButtons.forEach(radioButton => {
+				radioButton.setAttribute('aria-checked', 'false');
+			});
+			currentItem.setAttribute('aria-checked', 'true');
 		}
 		this.setRadioTabIndex(currentItem);
-		this.radioButtons.forEach(radioButton => {
-			radioButton.setAttribute('aria-checked', 'false');
-		});
-		currentItem.setAttribute('aria-checked', 'true');
 		currentItem.focus();
 	}
 
