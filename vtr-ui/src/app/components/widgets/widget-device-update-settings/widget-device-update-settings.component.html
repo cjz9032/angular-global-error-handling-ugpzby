@@ -32,7 +32,7 @@
 											</vtr-ui-gaming-driver-popup>
 											<a id="{{item.settings}}" [attr.aria-label]="item.ariaLabel + 'gear icon'"
 												vtrMetrics href="javascript:void();" [metricsItem]="item.settings"
-												metricsEvent="featureClick" (click)="navigateToLink(item)"
+												metricsEvent="featureClick" metricsParent="Gaming.Dashboard" (click)="navigateToLink(item)"
 												(keydown.enter)="navigateToLink(item)" *ngIf="item.isCustomizable"
 												class="customizable" tabindex="1">
 												<!-- <i class="icon icon-gear"></i> -->
