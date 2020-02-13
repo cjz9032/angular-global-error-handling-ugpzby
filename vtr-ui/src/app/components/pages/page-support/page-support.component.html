@@ -34,7 +34,7 @@
 			</div>
 
 			<div class="row"
-				*ngIf="articleCategories.length > 0 && isOnline">
+				*ngIf="articleCategories.length > 0">
 				<div class="col col-12 px-0 pt-0 pb-40">
 					<div class="card quick-access">
 						<div class="quick-access-title">
@@ -57,7 +57,8 @@
 								(click)="clickCategory(category.Id)">
 								<div class="item-con">
 									<div class="item-icon">
-										<img [src]="category.Image ? category.Image : localCateIcons[i]" />
+										<img *ngIf="category.Image" [src]="category.Image" />
+										<img *ngIf="!category.Image" [src]="localCateIcons[i] | svgInline | async" />
 									</div>
 									<div class="item-title">{{ category.Title }}</div>
 
