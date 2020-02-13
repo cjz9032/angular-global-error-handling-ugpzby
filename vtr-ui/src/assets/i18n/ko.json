@@ -616,9 +616,9 @@
                 "sub1": "내 보안 설정",
                 "sub2": "바이러스 백신",
                 "sub3": "WiFi 보안",
-                "sub4": "암호 상태",
-                "sub5": "VPN 보안",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "지문"
             },
             "support": "지원",
             "privacy": "프라이버시",
@@ -644,7 +644,7 @@
             "notFound": "찾을 수 없음",
             "registered": "등록됨",
             "notRegistered": "등록되지 않음",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "지문",
             "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "완전히 보호됨",
-            "notFully": "완전히 보호되지 않음",
+            "fully": "장치를 보호하는 더 나은 상품을 보려면, 다음과 함께하세요",
+            "notFully": "장치를 더 잘 보호할 수 있는 방법을 알아보려면, 다음으로 시작하세요",
             "security101": "보안 어드바이저 101",
             "firewall": "방화벽",
             "pwdHealth": "암호 상태",

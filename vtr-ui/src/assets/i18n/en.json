@@ -618,9 +618,9 @@
                 "sub1": "My Security",
                 "sub2": "Anti-Virus",
                 "sub3": "WiFi Security",
-                "sub4": "Password Health",
-                "sub5": "VPN Security",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "Support",
             "homeSecurity": "Connected Home",
@@ -2371,7 +2371,7 @@
             "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
             "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
             "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
-            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps and services.",
             "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
             "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
             "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",

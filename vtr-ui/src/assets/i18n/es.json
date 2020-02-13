@@ -616,9 +616,9 @@
                 "sub1": "Mi seguridad",
                 "sub2": "Antivirus",
                 "sub3": "Seguridad de WiFi",
-                "sub4": "Estado de la contraseña",
-                "sub5": "Seguridad VPN",
-                "sub6": "Windows Hello"
+                "sub4": "Administrador de contraseñas",
+                "sub5": "VPN",
+                "sub6": "Huella dactilar"
             },
             "support": "Soporte",
             "privacy": "Privacidad",
@@ -632,7 +632,7 @@
             "subtitle": "COMPRUEBE SI SU DISPOSITIVO ESTÁ SEGURO.",
             "antiVirus": "Antivirus",
             "wifi": "Seguridad de WiFi",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "Administrador de contraseñas",
             "vpn": "VPN",
             "enabled": "HABILITADO",
             "disabled": "DESHABILITADO",
@@ -644,7 +644,7 @@
             "notFound": "NO ENCONTRADO",
             "registered": "REGISTRADO",
             "notRegistered": "NO REGISTRADO",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Huella dactilar",
             "privacyPolicyAndTermsOfService": "<tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Completamente protegido",
-            "notFully": "No está completamente protegido",
+            "fully": "Para obtener una mejor oferta para proteger su dispositivo, manténgase con",
+            "notFully": "Para saber cómo proteger mejor su dispositivo, comience con",
             "security101": "ASESOR DE SEGURIDAD 101",
             "firewall": "Cortafuegos",
             "pwdHealth": "Estado de la contraseña",

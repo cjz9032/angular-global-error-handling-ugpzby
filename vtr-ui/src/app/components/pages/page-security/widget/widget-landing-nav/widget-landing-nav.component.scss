@@ -5,12 +5,15 @@
   padding: 0rem;
 
   .nav-item {
-    list-style-type: none;
+	text-decoration: none;
     margin-right: 2rem;
-    min-width: 0;
-	  @media #{$mediaquery_X46} {
-		  margin-right: 1rem;
-	  }
+	min-width: 0;
+	&:hover {
+		text-decoration: none;
+	}
+	@media #{$mediaquery_X46} {
+		margin-right: 1rem;
+	}
   }
 
   .nav-link {

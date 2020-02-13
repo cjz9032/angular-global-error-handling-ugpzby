@@ -616,9 +616,9 @@
                 "sub1": "Meine Sicherheit",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-Sicherheit",
-                "sub4": "Kennwortzustand",
-                "sub5": "VPN-Sicherheit",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerabdruck"
             },
             "support": "Unterstützung",
             "privacy": "Vertraulichkeit",
@@ -644,7 +644,7 @@
             "notFound": "NICHT GEFUNDEN",
             "registered": "REGISTRIERT",
             "notRegistered": "NICHT REGISTRIERT",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Fingerabdruck",
             "privacyPolicyAndTermsOfService": "<tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Vollständig geschützt",
-            "notFully": "Nicht vollständig geschützt",
+            "fully": "Um ein besseres Angebot zum Schutz Ihrer Einheit zu erhalten, bleiben Sie bei",
+            "notFully": "Um zu erfahren, wie Sie Ihre Einheit besser schützen können, beginnen Sie mit",
             "security101": "SICHERHEITSRATGEBER 101",
             "firewall": "Firewall",
             "pwdHealth": "Kennwortzustand",

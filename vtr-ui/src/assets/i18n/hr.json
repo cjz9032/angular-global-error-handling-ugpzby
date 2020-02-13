@@ -615,10 +615,10 @@
                 "title": "Sigurnost",
                 "sub1": "Moja sigurnost",
                 "sub2": "Zaštita od virusa",
-                "sub3": "Sigurnost WiFija",
-                "sub4": "Jačina lozinke",
-                "sub5": "Sigurnost VPN mreže",
-                "sub6": "Windows Hello"
+                "sub3": "Sigurnost WiFi mreže",
+                "sub4": "Upravitelj lozinki",
+                "sub5": "VPN",
+                "sub6": "Otisak prsta"
             },
             "support": "Podrška",
             "privacy": "Zaštita privatnosti",
@@ -632,7 +632,7 @@
             "subtitle": "PROVJERITE JE LI VAŠ UREĐAJ ZAŠTIĆEN.",
             "antiVirus": "Zaštita od virusa",
             "wifi": "Sigurnost WiFi mreže",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "Upravitelj lozinki",
             "vpn": "VPN",
             "enabled": "OMOGUĆENO",
             "disabled": "ONEMOGUĆENO",
@@ -644,7 +644,7 @@
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTRIRAN",
             "notRegistered": "NIJE REGISTRIRAN",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Otisak prsta",
             "privacyPolicyAndTermsOfService": "<tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "U potpunosti zaštićen",
-            "notFully": "Nije u potpunosti zaštićen",
+            "fully": "Da biste osigurali bolju ponudu, zaštitite svoj uređaj, ostanite s",
+            "notFully": "Da biste naučili kako bolje zaštititi svoj uređaj, započnite s",
             "security101": "SAVJETNIK ZA SIGURNOST TVRTKE 101",
             "firewall": "Vatrozid",
             "pwdHealth": "Jačina lozinke",

@@ -616,9 +616,9 @@
                 "sub1": "Securitatea mea",
                 "sub2": "Antivirus",
                 "sub3": "Securitate WiFi",
-                "sub4": "Sănătatea parolei",
-                "sub5": "Securitate VPN",
-                "sub6": "Windows Hello"
+                "sub4": "Manager de parole",
+                "sub5": "VPN",
+                "sub6": "Amprentă digitală"
             },
             "support": "Asistenţă",
             "privacy": "Confidenţialitate",
@@ -632,7 +632,7 @@
             "subtitle": "VERIFICAȚI DACĂ DISPOZITIVUL DVS. ESTE SECURIZAT.",
             "antiVirus": "Antivirus",
             "wifi": "Securitate WiFi",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "Manager de parole",
             "vpn": "VPN",
             "enabled": "ACTIVAT",
             "disabled": "DEZACTIVAT",
@@ -644,7 +644,7 @@
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Amprentă digitală",
             "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Complet protejat",
-            "notFully": "Neprotejat complet",
+            "fully": "Pentru a obține o ofertă mai bună în vederea protejării dispozitivului dvs., rămâneți cu",
+            "notFully": "Pentru a afla cum să vă protejați mai bine dispozitivul, începeți cu",
             "security101": "ASISTENȚĂ PRIVIND SECURITATEA 101",
             "firewall": "Paravan de protecție",
             "pwdHealth": "Sănătatea parolei",

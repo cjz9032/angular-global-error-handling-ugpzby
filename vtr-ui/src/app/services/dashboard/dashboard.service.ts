@@ -252,7 +252,7 @@ export class DashboardService {
 		};
 
 		this.cardContentPositionC = {
-			Title: this.translateString['settings.settings'],
+			Title: this.translateString['common.menu.device.sub2'],
 			ShortTitle: '',
 			Description: '',
 			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Device-Settings.jpg',
@@ -290,13 +290,13 @@ export class DashboardService {
 		};
 
 		this.cardContentPositionE = {
-			Title: this.translateString['common.securityAdvisor.wifi'],
+			Title: this.translateString['settings.preferenceSettings'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Security-Advisor.jpg',
+			FeatureImage: '/assets/cms-cache/offline/Default-Preference-Settings.jpg',
 			Action: this.translateString['systemUpdates.readMore'],
 			ActionType: 'Internal',
-			ActionLink: 'lenovo-vantage3:wifi-security',
+			ActionLink: 'lenovo-vantage3:preference',
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',

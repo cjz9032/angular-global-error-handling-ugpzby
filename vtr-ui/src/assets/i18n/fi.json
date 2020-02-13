@@ -616,9 +616,9 @@
                 "sub1": "Oma suojaus",
                 "sub2": "Virustentorjunta",
                 "sub3": "WiFi-suojaus",
-                "sub4": "Salasanan kunto",
-                "sub5": "VPN-suojaus",
-                "sub6": "Windows Hello"
+                "sub4": "Salasanan hallinta",
+                "sub5": "VPN",
+                "sub6": "Sormenjälki"
             },
             "support": "Tuki",
             "privacy": "Yksityisyys",
@@ -632,7 +632,7 @@
             "subtitle": "TARKISTA, ONKO LAITTEESI SUOJATTU.",
             "antiVirus": "Virustentorjunta",
             "wifi": "WiFi-suojaus",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "Salasanan hallinta",
             "vpn": "VPN",
             "enabled": "KÄYTÖSSÄ",
             "disabled": "POISSA KÄYTÖSTÄ",
@@ -644,7 +644,7 @@
             "notFound": "EI LÖYTYNYT",
             "registered": "REKISTERÖITY",
             "notRegistered": "EI REKISTERÖITY",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Sormenjälki",
             "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Täysin suojattu",
-            "notFully": "Ei täysin suojattu",
+            "fully": "Jos haluat paremman tarjouksen laitteesi suojaamiseen, pysy kohdassa",
+            "notFully": "Jos haluat lisätietoja laitteen paremmasta suojauksesta, aloita kohdasta",
             "security101": "SECURITY ADVISOR 101",
             "firewall": "Palomuuri",
             "pwdHealth": "Salasanan kunto",
