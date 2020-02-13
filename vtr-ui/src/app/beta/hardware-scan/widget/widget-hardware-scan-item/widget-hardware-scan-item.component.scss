@@ -25,7 +25,10 @@
 	}
 
 	.img-icon {
-		font-size: $fontsize_xl2;
+		width: $fontsize_xl2;
+		height: $fontsize_xl2;
+		vertical-align: top;
+		padding: 0.5rem 0rem 0rem 0rem;
 	}
 
 	.description {
