@@ -27,7 +27,7 @@
 							metricsParent="Device.SmartAssist"
 							metricsItem="activeProtectionSystem"
 							[metricsValue]="!apsStatus">
-							<div class="slider">
+							<div class="slider pr-0">
 								<vtr-ui-aps-slider [apsSliderId]="'activeProtectionSystemSensitivity'"
 									[legends]="['device.smartAssist.activeProtectionSystem.APS.lowSensitivity' | translate,'device.smartAssist.activeProtectionSystem.APS.mediumSensitivity' | translate, 'device.smartAssist.activeProtectionSystem.APS.highSensitivity' | translate]"
 									[minValue]="0"
@@ -137,7 +137,7 @@
 
 				<!-- Advanced section -->
 				<li *ngIf="advanceAvailable && apsStatus"
-					class="advanced pt-3 pl-3 keep-my-display-block auto-screen-off-block">
+					class="advanced pt-3 pl-5 ml-4 keep-my-display-block auto-screen-off-block">
 					<h4 *ngIf="!advancedToggle"
 						id="activeProtectionSystem-more"
 						attr.aria-label="activeProtectionSystem-more">

@@ -304,10 +304,22 @@ export class CMSService {
 
 	getOneCMSContent(results, template, position) {
 		return results.filter((record) => {
-			return record.Template === template;
-		}).filter((record) => {
-			return record.Position === position;
-		}).sort((a, b) => a.Priority.localeCompare(b.Priority));
+			return (
+				record.Template === template &&
+				record.Position === position &&
+				(
+					!record.DisplayStartDate ||
+					new Date(record.DisplayStartDate).getTime() <= new Date().getTime()
+				)
+			);
+		}).sort(this.sortCmsContent);
+	}
+
+	sortCmsContent(a, b): number {
+		if (a.Priority === b.Priority) {
+			return new Date(b.DisplayStartDate).getTime() - new Date(a.DisplayStartDate).getTime();
+		}
+		return a.Priority.localeCompare(b.Priority);
 	}
 
 	/* const CMSOption = Object.assign(defaults, queryParams);

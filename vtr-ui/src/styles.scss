@@ -310,6 +310,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		background-color: $light;
 		font-size: 1.4rem;
 		text-align: left;
+		max-width: 40rem;
 	}
 }
 
@@ -907,7 +908,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		padding: 3rem;
 		color: $main_darker;
 		text-align: left;
-		max-width: 100%;
+		max-width: 40rem;
 
 		span {
 			font-weight: bold;
@@ -985,9 +986,20 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 .Welcome-container-Modal {
 	.modal-dialog {
-		max-width: 70rem;
+		max-width: 60rem;
 		.modal-content {
 			border-radius: $border_radius;
+			width: auto;
+			margin: 0rem auto;
+		}
+
+		@media #{$breakpoint_md} {
+			max-width: 55rem !important;
+			margin: 0.5rem auto;
+		}
+
+		@media #{$breakpoint_sm} {
+			max-width: 45rem !important;
 		}
 	}
 }
@@ -1511,3 +1523,11 @@ vtr-ui-smart-performance-scanning {
 		}
 	}
 }
+.auto-screen-lock-help-icon {
+	ngb-tooltip-window.vtr-tooltip.tooltip {
+		.tooltip-inner {
+			width: 40rem;
+		}
+	}
+}
+

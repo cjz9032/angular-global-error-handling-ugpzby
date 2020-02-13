@@ -14,11 +14,17 @@
         margin-bottom: 3rem;
     }
     .dropdown{
+		padding-right: 2rem;
         ::ng-deep .vtr-ui-dropdown{
             margin-top: 3rem;
         }
         // @media screen and (max-width:640px){
         //     width: 100%;
         // }
-    }
+	}
+	::ng-deep .vtr-ui-switch-row.white-theme {
+		.vtr-col-pad, .col-12{
+			padding-left: 0;
+		}
+	}
 }

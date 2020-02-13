@@ -1,7 +1,7 @@
 <div class="vtr-eye-care-mode"
 	*ngIf="eyeCareModeSettings">
 	<div class="row">
-		<div class="col"
+		<div class="slider-length"
 			*ngIf="eyeCareModeSettings.current">
 			<vtr-ui-range-slider [step]="100"
 				[manualRefresh]="manualRefresh"
@@ -44,6 +44,7 @@
 			attr.aria-checked="sunsetToSunriseStatus.status"
 			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
 		<label class="custom-control-label"
+			id="cb-eye-care-schedule"
 			for="cb-eye-care-schedule">
 			<span class="text-capitalize"
 				tabindex="0"
@@ -67,7 +68,7 @@
 			class="custom-control-input"
 			[checked]="sunsetToSunriseStatus.status"
 			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
-		<label class="custom-control-label" role="checkbox" tabindex="0" for="cb-eye-care-schedule"
+		<label class="custom-control-label" id="cb-eye-care-schedule" role="checkbox" tabindex="0" for="cb-eye-care-schedule"
 			attr.aria-checked="sunsetToSunriseStatus.status"
 			attr.aria-hidden="sunsetToSunriseStatus.available && !enableSunsetToSunrise" attr.aria-label="{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
 						{{sunriseToSunsetText}}">

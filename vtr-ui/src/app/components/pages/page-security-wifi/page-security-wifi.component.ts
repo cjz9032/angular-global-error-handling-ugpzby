@@ -47,7 +47,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	notificationSubscription: Subscription;
 	region = 'us';
 	segment: string;
-	showChs = false;
 	intervalId: number;
 	interval = 15000;
 	segmentConst = SegmentConst;
@@ -62,7 +61,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public translate: TranslateService,
 		private ngZone: NgZone,
 		private router: Router,
-		private configService: ConfigService,
+		public configService: ConfigService,
 		public deviceService: DeviceService,
 		private localInfoService: LocalInfoService
 	) {	}
@@ -71,7 +70,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.securityAdvisor = this.shellService.getSecurityAdvisor();
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
 		this.segment = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment, this.segmentConst.Consumer);
-		this.showChs = this.configService.showCHS;
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService, this.ngZone, this.dialogService);
 		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.commonService, this.translate, this.ngZone);
@@ -90,7 +88,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
 			this.handleError(new PluginMissingError());
 		});
-		this.showChs = this.configService.showCHS;
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
