@@ -648,7 +648,9 @@
             "notFound": "NOT FOUND",
             "registered": "REGISTERED",
             "notRegistered": "NOT REGISTERED",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+			"privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+			"enrolled": "ENROLLED",
+			"notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Q&A for your machine",
@@ -745,7 +747,7 @@
             }
         },
         "quickSettings": {
-            "title": "Quicksettings",
+            "title": "Quick settings",
             "microphone": "Microphone",
             "cameraPrivacy": "Camera",
             "eyeCareMode": "Eye Care",

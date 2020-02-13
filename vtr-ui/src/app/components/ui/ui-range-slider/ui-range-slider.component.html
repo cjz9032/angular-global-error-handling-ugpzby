@@ -1,7 +1,7 @@
 <div class="vtr-ui-range-slider"
 	[attr.data-slider-value]="value"
 	[ngClass]="{'disable-slider-pointer': enableSlider}">
-	<ng5-slider [(value)]="value"
+	<ng5-slider [(ngModel)]="value"
 		[options]="options"
 		(valueChange)="onValueChange($event)"
 		(userChange)="onChange($event)"
