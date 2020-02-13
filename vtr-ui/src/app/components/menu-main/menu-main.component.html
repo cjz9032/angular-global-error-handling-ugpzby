@@ -398,7 +398,7 @@
 								class="dropdown-item link"
 								href="javascript:void(0)"
 								(click)="onLogout(); onMenuItemClick(item)"
-								[disabled]="isLoggingOut"
+								[class.disabled]="isLoggingOut"
 								(keydown.enter)="onLogout(); onMenuItemClick(item)">{{ isLoggingOut ? ('lenovoId.loggingOut' | translate) : ('lenovoId.logout' | translate) }}</a>
 						</div>
 					</li>
