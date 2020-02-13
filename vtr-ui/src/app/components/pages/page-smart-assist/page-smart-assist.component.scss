@@ -302,6 +302,19 @@ $fontsize_xs: 1.4rem;
 				}
 			}
 		}
+
+		.auto-screen-lock-help-icon {
+			::ng-deep .vtr-ui-switch-row.white-theme {
+				.vtr-row-switch {
+					display: block !important;
+					text-align: right !important;
+					min-width: auto !important;
+					.tool-tip-icon {
+						margin-left: 0 !important;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -353,16 +366,5 @@ $fontsize_xs: 1.4rem;
 	color: $purple_navy;
 }
 
-.auto-screen-lock-help-icon {
-	::ng-deep .vtr-ui-switch-row.white-theme {
-		.vtr-row-switch {
-			display: block !important;
-			text-align: right !important;
-			min-width: auto !important;
-			.tool-tip-icon {
-				margin-left: 0 !important;
-			}
-		}
-	}
-}
+
 
