@@ -39,7 +39,9 @@
 							[metricsEvent]="'featureClick'"
 							[metricsParent]="'security'"
 							[metricsItem]="(item.showOwn ? 'haveOwn' :'notHaveOwn') + ':' +item.id"
-							[checked]="item.showOwn" attr.aria-label="defaultUnchecked" (change)="haveOwn(item.showOwn, item.id)">
+							[checked]="item.showOwn" attr.aria-label="defaultUnchecked"
+							(change)="haveOwn(item.showOwn, item.id)"
+							(keyup.enter)="haveOwn(item.showOwn, item.id)">
 						<label class="custom-control-label" for="customCheck-{{item.id}}">
 							{{item.ownTitle}}
 						</label>
