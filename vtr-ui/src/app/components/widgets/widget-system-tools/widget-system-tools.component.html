@@ -9,7 +9,7 @@
 					<ul class="system-tool-icons d-flex justify-content-around">
 						<li>
 							<a id="systemtools_systemupdates" aria-label="system update" vtrMetrics
-								[metricsItem]="'systemtools_system_update'" metricsEvent="featureClick"
+								[metricsItem]="'systemtools_system_update'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 								routerLink="/device/system-updates" tabindex="1" role="link">
 								<figure>
 									<div class="system-icon" title="">
@@ -24,7 +24,7 @@
 						</li>
 						<li *ngIf="gamingProperties.macroKeyFeature">
 							<a id="systemtools_macrokey" aria-label="macro key" vtrMetrics
-								[metricsItem]="'systemtools_macro_key'" metricsEvent="featureClick"
+								[metricsItem]="'systemtools_macro_key'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 								routerLink="/gaming/macrokey" tabindex="1" role="link">
 								<figure>
 									<div class="system-icon" title="">
@@ -38,7 +38,7 @@
 						</li>
 						<li>
 							<a id="systemtools_power" aria-label="power" vtrMetrics
-								[metricsItem]="'systemtools_power'" metricsEvent="featureClick"
+								[metricsItem]="'systemtools_power'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 								routerLink="/device/device-settings/power" tabindex="1" role="link">
 								<figure>
 
@@ -53,7 +53,7 @@
 						</li>
 						<li>
 							<a id="systemtools_displaycamera" aria-label="media" vtrMetrics
-								[metricsItem]="'systemtools_media'" metricsEvent="featureClick" tabindex="1"
+								[metricsItem]="'systemtools_media'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard" tabindex="1"
 								routerLink="/device/device-settings/display-camera" role="link">
 								<figure>
 
@@ -69,7 +69,7 @@
 
 						<li *ngIf="showHWScanMenu">
 							<a id="systemtools_hardware_scan" aria-label="hardware scan" vtrMetrics
-								[metricsItem]="'systemtools_hardware_scan'" metricsEvent="featureClick"
+								[metricsItem]="'systemtools_hardware_scan'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 								routerLink="/beta/hardware-scan" tabindex="1" role="link" aria-label="hardware scan">
 								<figure>
 									<div class="system-icon" title="">
