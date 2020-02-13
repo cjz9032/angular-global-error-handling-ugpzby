@@ -4,8 +4,8 @@
 			<div class="btn-close">
 				<a type="button" class="close" aria-hidden="true"
 				tabindex="1"  (click)="close()" (keyup.enter)="close()" vtrMetrics
-					[metricsItem]="'popover_close'" metricsEvent="featureClick" 
-					id="gamingPopupClose" attr.aria-label="gaming popup close" 
+					[metricsItem]="'popover_close'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
+					id="gamingPopupClose" attr.aria-label="gaming popup close"
 					role="button" aria-labelledby="popup_close">
 					<fa-icon [icon]="['fal', 'times']" ></fa-icon>
 			</a>
@@ -19,8 +19,8 @@
 			<a id="gaming_popup_ok" attr.aria-label="gaming popup ok" tabindex="1"
 				class="btn enable-button" vtrMetrics
 				[metricsItem]="'popover_ok'"
-				metricsEvent="featureClick"
-				(click)="close()" 
+				metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
+				(click)="close()"
 				(keyup.enter)="close()" (keydown)="runappKeyup($event)"
 				 role="button">{{'gaming.dashboard.device.legionEdge.popup.button' | translate}}</a>
 		</div>
