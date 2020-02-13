@@ -2674,7 +2674,8 @@
     },
     "lenovoId": {
         "login": "Login",
-        "logout": "Logout",
+		"logout": "Logout",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Unlock Exclusives",
         "user": "User",
         "welcomeText1": "Looking energized today, {{firstName}}!",

@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Logg på",
-        "logout": "Logg av",
+		"logout": "Logg av",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Få eksklusive tilbud",
         "user": "Bruker",
         "welcomeText1": "Ser frisk ut i dag, {{firstName}}!",

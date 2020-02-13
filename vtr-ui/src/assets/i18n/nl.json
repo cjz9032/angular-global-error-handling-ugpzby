@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Aanmelden",
-        "logout": "Afmelden",
+		"logout": "Afmelden",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Krijg toegang tot exclusieve aanbiedingen",
         "user": "Gebruiker",
         "welcomeText1": "Uw ziet er energiek uit vandaag, {{firstName}}!",

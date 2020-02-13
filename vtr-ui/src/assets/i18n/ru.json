@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Регистрация",
-        "logout": "Выход",
+		"logout": "Выход",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Разблокирование эксклюзивного содержимого",
         "user": "Пользователь",
         "welcomeText1": "У вас сегодня бодрый вид, {{firstName}}!",

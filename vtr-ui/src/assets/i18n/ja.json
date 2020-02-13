@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "ログイン",
-        "logout": "ログアウト",
+		"logout": "ログアウト",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "専用機能をロック解除",
         "user": "ユーザー",
         "welcomeText1": "今日はエネルギーにあふれているように見えます、{{firstName}} さん!",

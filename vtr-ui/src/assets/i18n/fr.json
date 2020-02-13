@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Connexion",
-        "logout": "Se déconnecter",
+		"logout": "Se déconnecter",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Profitez des offres exclusives",
         "user": "Utilisateur",
         "welcomeText1": "Vous avez bonne mine aujourd'hui, {{firstName}} !",

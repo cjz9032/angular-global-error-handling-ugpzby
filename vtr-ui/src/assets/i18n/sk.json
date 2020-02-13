@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Prihlásenie",
-        "logout": "Odhlásenie",
+		"logout": "Odhlásenie",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Odomknúť exkluzívne možnosti od spoločnosti Lenovo",
         "user": "Používateľ",
         "welcomeText1": "Dnes máte veľa energie, {{firstName}}.",

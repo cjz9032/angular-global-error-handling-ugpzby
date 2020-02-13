@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Вхід",
-        "logout": "Вихід",
+		"logout": "Вихід",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Ексклюзивний вміст",
         "user": "Користувач",
         "welcomeText1": "Сьогодні ви енергійні, {{firstName}}!",

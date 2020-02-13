@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Prijava",
-        "logout": "Odjava",
+		"logout": "Odjava",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Odklenite ekskluzivne ponudbe",
         "user": "Uporabnik",
         "welcomeText1": "Danes ste videti polni energije, {{firstName}}!",

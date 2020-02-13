@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Login",
-        "logout": "Logout",
+		"logout": "Logout",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Desbloquear Exclusivos",
         "user": "Usuário",
         "welcomeText1": "Você parece animado hoje, {{firstName}}!",

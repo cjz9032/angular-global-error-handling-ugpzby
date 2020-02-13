@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Conectare",
-        "logout": "Deconectare",
+		"logout": "Deconectare",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Deblocare Exclusive",
         "user": "Utilizator",
         "welcomeText1": "Păreți plin de energie astăzi, {{firstName}}!",

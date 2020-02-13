@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Accesso",
-        "logout": "Disconnessione",
+		"logout": "Disconnessione",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Sblocca offerte esclusive",
         "user": "Utente",
         "welcomeText1": "Oggi il dispositivo è in ottime condizioni, {{firstName}}!",
