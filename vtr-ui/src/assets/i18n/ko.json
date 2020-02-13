@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "로그인",
-        "logout": "로그아웃",
+		"logout": "로그아웃",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "독점 잠금 해제",
         "user": "사용자",
         "welcomeText1": "오늘 동력 공급 상태 보기, {{firstName}}!",

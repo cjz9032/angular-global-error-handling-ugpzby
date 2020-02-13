@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Oturum Aç",
-        "logout": "Oturumu kapat",
+		"logout": "Oturumu kapat",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Özellerin Kilidini Aç",
         "user": "Kullanıcı",
         "welcomeText1": "Bugün çok dinç görünüyorsun, {{firstName}}!",

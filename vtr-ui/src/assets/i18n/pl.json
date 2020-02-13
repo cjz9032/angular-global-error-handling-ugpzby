@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Logowanie",
-        "logout": "Wyloguj",
+		"logout": "Wyloguj",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Odblokuj dodatki specjalne",
         "user": "Użytkownik",
         "welcomeText1": "Wygląda na pełnego energii, {{firstName}}!",

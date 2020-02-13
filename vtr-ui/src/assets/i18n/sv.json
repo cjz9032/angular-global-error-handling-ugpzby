@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Inloggning",
-        "logout": "Logga ut",
+		"logout": "Logga ut",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Visa exklusiva erbjudanden",
         "user": "Användare",
         "welcomeText1": "Energin är på topp i dag, {{firstName}}!",

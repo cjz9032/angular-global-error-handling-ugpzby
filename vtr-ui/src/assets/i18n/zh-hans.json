@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "登录",
-        "logout": "注销",
+		"logout": "注销",
+		"loggingOut": "正在注销...",
         "unlockExclusives": "解锁专享功能",
         "user": "用户",
         "welcomeText1": "今天也是活力满满的一天，{{firstName}}！",

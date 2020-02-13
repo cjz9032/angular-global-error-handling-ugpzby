@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Přihlášení",
-        "logout": "Odhlásit",
+		"logout": "Odhlásit",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Odemknout exkluzivní obsah",
         "user": "Uživatel",
         "welcomeText1": "Vypadáte dnes aktivně, {{firstName}}!",

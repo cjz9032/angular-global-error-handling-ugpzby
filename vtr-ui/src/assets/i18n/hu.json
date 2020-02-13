@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Bejelentkezés",
-        "logout": "Kijelentkezés",
+		"logout": "Kijelentkezés",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Exkluzív ajánlatok",
         "user": "Felhasználó",
         "welcomeText1": "Ma energikusnak látszik, {{firstName}}!",

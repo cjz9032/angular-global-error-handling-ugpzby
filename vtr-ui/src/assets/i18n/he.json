@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "כניסה",
-        "logout": "יציאה",
+		"logout": "יציאה",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "פתחו את ה\"בלעדיים\"",
         "user": "משתמש",
         "welcomeText1": "אתה נראה רענן היום, {{firstName}}!",

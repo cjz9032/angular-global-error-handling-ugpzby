@@ -299,8 +299,7 @@ export class UserService {
 		if (auth && this.starter) {
 			this.starter = false;
 		}
-		this.devService.writeLog('SET AUTH');
-		this.devService.writeLog('LOGIN RES', auth);
+		this.devService.writeLog('setAuth(): auth = ', auth);
 		if (this.auth !== auth) {
 			this.auth = auth;
 			this.commonService.sendNotification(auth ? LenovoIdStatus.SignedIn : LenovoIdStatus.SignedOut, auth);
@@ -308,8 +307,6 @@ export class UserService {
 	}
 
 	removeAuth() {
-		this.devService.writeLog('REMOVE AUTH');
-		const self = this;
 		this.cookieService.deleteAll('/');
 		this.cookies = this.cookieService.getAll();
 
@@ -320,13 +317,10 @@ export class UserService {
 
 		if (this.lid !== undefined) {
 			const lidGuid = this.lid.userGuid;
+			this.commonService.sendNotification(LenovoIdStatus.LoggingOut, true);
 			this.lid.logout().then((result) => {
 				let metricsData: any;
 				if (result.success && result.status === 0) {
-					self.translate.stream('lenovoId.user').subscribe((value) => {
-						self.setName(value, '');
-					});
-					self.setAuth(false);
 					metricsData = {
 						ItemType: 'TaskAction',
 						TaskName: 'LID.SignOut',
@@ -335,7 +329,8 @@ export class UserService {
 						TaskParam: ''
 					};
 				} else {
-					self.popupErrorMessage(result.status);
+					this.devService.writeLog('removeAuth(): request lid.logout() failed - ', result.status);
+					this.popupErrorMessage(result.status);
 					metricsData = {
 						ItemType: 'TaskAction',
 						TaskName: 'LID.SignOut',
@@ -344,15 +339,25 @@ export class UserService {
 						TaskParam: ''
 					};
 				}
-				self.metrics.sendAsyncEx(metricsData, {
+				this.metrics.sendAsyncEx(metricsData, {
 					lidGuid
-				}).catch((res) => {
-					self.devService.writeLog('removeAuth() Exception happen when send metric ', res.message);
+				}).catch((error) => {
+					this.devService.writeLog('removeAuth(): Exception happen when send metric - ', error);
 				});
-				self.devService.writeLog('LOGOUT: ', result.success);
+				this.devService.writeLog('removeAuth(): ', result.success);
 			}).catch((error) => {
-				self.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
+				this.devService.writeLog('removeAuth(): Exception happen when request lid.logout() - ', error);
+				this.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
+			}).finally(() => {
+				this.setAuth(false);
+				this.translate.stream('lenovoId.user').subscribe((value) => {
+					this.setName(value, '');
+				});
+				this.commonService.sendNotification(LenovoIdStatus.LoggingOut, false);
+				this.commonService.sendNotification(LenovoIdStatus.SignedOut, this.auth);
 			});
+		} else {
+			this.devService.writeLog('removeAuth(): undefined lid object!');
 		}
 	}
 

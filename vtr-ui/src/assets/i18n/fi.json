@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Sisäänkirjaus",
-        "logout": "Kirjaudu ulos",
+		"logout": "Kirjaudu ulos",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Ota käyttöön erikoissisältöä",
         "user": "Käyttäjä",
         "welcomeText1": "Näytät energiseltä tänään, {{firstName}}!",

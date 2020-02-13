@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Σύνδεση",
-        "logout": "Αποσύνδεση",
+		"logout": "Αποσύνδεση",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Ξεκλείδωμα αποκλειστικοτήτων",
         "user": "Χρήστης",
         "welcomeText1": "Φαίνεστε γεμάτος/η ενέργεια σήμερα, {{firstName}}!",
