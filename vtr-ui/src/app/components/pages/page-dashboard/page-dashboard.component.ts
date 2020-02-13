@@ -222,9 +222,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			.stream([
 				'dashboard.offlineInfo.welcomeToVantage',
 				'common.menu.support',
-				'settings.settings',
+				'common.menu.device.sub2',
 				'dashboard.offlineInfo.systemHealth',
-				'common.securityAdvisor.wifi',
+				'settings.preferenceSettings',
 				'systemUpdates.title',
 				'systemUpdates.readMore'
 			])
