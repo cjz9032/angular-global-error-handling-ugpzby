@@ -615,9 +615,9 @@
                 "title": "Sigurnost",
                 "sub1": "Moja sigurnost",
                 "sub2": "Zaštita od virusa",
-                "sub3": "Sigurnost WiFi mreže",
-                "sub4": "Upravitelj lozinki",
-                "sub5": "VPN",
+                "sub3": "Sigurnost WiFija",
+                "sub4": "Jačina lozinke",
+                "sub5": "Sigurnost VPN mreže",
                 "sub6": "Otisak prsta"
             },
             "support": "Podrška",
@@ -631,9 +631,9 @@
             "title": "Savjetnik za sigurnost tvrtke",
             "subtitle": "PROVJERITE JE LI VAŠ UREĐAJ ZAŠTIĆEN.",
             "antiVirus": "Zaštita od virusa",
-            "wifi": "Sigurnost WiFi mreže",
-            "pswdMgr": "Upravitelj lozinki",
-            "vpn": "VPN",
+            "wifi": "Sigurnost WiFija",
+            "pswdMgr": "Jačina Lozinke",
+            "vpn": "Sigurnost VPN Mreže",
             "enabled": "OMOGUĆENO",
             "disabled": "ONEMOGUĆENO",
             "partiallyProtected": "DJELOMIČNO ZAŠTIĆEN",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi i povezana sigurnost doma",
+                "title": "Sigurnost WiFija",
                 "back": "NATRAG"
             },
             "container": {

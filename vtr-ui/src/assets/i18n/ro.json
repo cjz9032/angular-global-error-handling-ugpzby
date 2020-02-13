@@ -616,8 +616,8 @@
                 "sub1": "Securitatea mea",
                 "sub2": "Antivirus",
                 "sub3": "Securitate WiFi",
-                "sub4": "Manager de parole",
-                "sub5": "VPN",
+                "sub4": "Sănătatea parolei",
+                "sub5": "Securitate VPN",
                 "sub6": "Amprentă digitală"
             },
             "support": "Asistenţă",
@@ -632,8 +632,8 @@
             "subtitle": "VERIFICAȚI DACĂ DISPOZITIVUL DVS. ESTE SECURIZAT.",
             "antiVirus": "Antivirus",
             "wifi": "Securitate WiFi",
-            "pswdMgr": "Manager de parole",
-            "vpn": "VPN",
+            "pswdMgr": "Sănătatea Parolei",
+            "vpn": "Securitate VPN",
             "enabled": "ACTIVAT",
             "disabled": "DEZACTIVAT",
             "partiallyProtected": "PROTEJAT PARȚIAL",
@@ -644,7 +644,7 @@
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
-            "fingerPrint": "Amprentă digitală",
+            "fingerPrint": "Amprentă Digitală",
             "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi și securitate conectată, la domiciliu",
+                "title": "Securitate WiFi",
                 "back": "ÎNAPOI"
             },
             "container": {

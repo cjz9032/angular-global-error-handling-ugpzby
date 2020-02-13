@@ -616,8 +616,8 @@
                 "sub1": "Mijn beveiliging",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-beveiliging",
-                "sub4": "Wachtwoordbeheerder",
-                "sub5": "VPN",
+                "sub4": "Wachtwoordstatus",
+                "sub5": "VPN-beveiliging",
                 "sub6": "Vingerafdruk"
             },
             "support": "Ondersteuning",
@@ -631,9 +631,9 @@
             "title": "Beveiligingsadviseur",
             "subtitle": "CONTROLEER OF UW APPARAAT IS BEVEILIGD.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-beveiliging",
-            "pswdMgr": "Wachtwoordbeheerder",
-            "vpn": "VPN",
+            "wifi": "WiFi-Beveiliging",
+            "pswdMgr": "Wachtwoordstatus",
+            "vpn": "VPN-Beveiliging",
             "enabled": "INGESCHAKELD",
             "disabled": "UITGESCHAKELD",
             "partiallyProtected": "GEDEELTELIJK BEVEILIGD",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi en Connected Home-beveiliging",
+                "title": "WiFi-beveiliging",
                 "back": "TERUG"
             },
             "container": {

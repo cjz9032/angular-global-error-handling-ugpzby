@@ -616,8 +616,8 @@
                 "sub1": "Oma suojaus",
                 "sub2": "Virustentorjunta",
                 "sub3": "WiFi-suojaus",
-                "sub4": "Salasanan hallinta",
-                "sub5": "VPN",
+                "sub4": "Salasanan kunto",
+                "sub5": "VPN-suojaus",
                 "sub6": "Sormenjälki"
             },
             "support": "Tuki",
@@ -631,9 +631,9 @@
             "title": "Security Advisor",
             "subtitle": "TARKISTA, ONKO LAITTEESI SUOJATTU.",
             "antiVirus": "Virustentorjunta",
-            "wifi": "WiFi-suojaus",
-            "pswdMgr": "Salasanan hallinta",
-            "vpn": "VPN",
+            "wifi": "WiFi-Suojaus",
+            "pswdMgr": "Salasanan Kunto",
+            "vpn": "VPN-Suojaus",
             "enabled": "KÄYTÖSSÄ",
             "disabled": "POISSA KÄYTÖSTÄ",
             "partiallyProtected": "OSITTAIN SUOJATTU",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi-yhteyden ja Connected Home -suojaus",
+                "title": "WiFi-suojaus",
                 "back": "EDELLINEN"
             },
             "container": {

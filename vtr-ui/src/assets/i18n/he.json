@@ -616,8 +616,8 @@
                 "sub1": "האבטחה שלי",
                 "sub2": "אנטי-וירוס",
                 "sub3": "אבטחת WiFi",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "תקינות סיסמה",
+                "sub5": "אבטחת VPN",
                 "sub6": "טביעת אצבע"
             },
             "support": "תמיכה",
@@ -632,8 +632,8 @@
             "subtitle": "בדקו שההתקן שלכם מאובטח.",
             "antiVirus": "אנטי-וירוס",
             "wifi": "אבטחת WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "תקינות סיסמה",
+            "vpn": "אבטחת VPN",
             "enabled": "מופעל",
             "disabled": "מושבת",
             "partiallyProtected": "הגנה חלקית",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "אבטחת הבית המחובר ו-WiFi",
+                "title": "‏אבטחת WiFi",
                 "back": "חזרה"
             },
             "container": {

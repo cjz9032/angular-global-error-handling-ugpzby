@@ -617,7 +617,7 @@
                 "sub2": "Antivirus",
                 "sub3": "WiFi-sikkerhed",
                 "sub4": "Adgangskodesundhed",
-                "sub5": "VPN",
+                "sub5": "VPN-sikkerhed",
                 "sub6": "Fingeraftryk"
             },
             "support": "Support",
@@ -631,9 +631,9 @@
             "title": "Sikkerhedsvejledning",
             "subtitle": "KONTROLLÉR, OM DIN ENHED ER SIKRET.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-sikkerhed",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "wifi": "WiFi-Sikkerhed",
+            "pswdMgr": "Adgangskodesundhed",
+            "vpn": "VPN-Sikkerhed",
             "enabled": "AKTIVERET",
             "disabled": "DEAKTIVERET",
             "partiallyProtected": "DELVIST BESKYTTET",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi og Tilsluttet Home Security",
+                "title": "WiFi-sikkerhed",
                 "back": "TILBAGE"
             },
             "container": {

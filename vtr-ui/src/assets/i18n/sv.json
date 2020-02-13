@@ -616,8 +616,8 @@
                 "sub1": "Min säkerhet",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-säkerhet",
-                "sub4": "Lösenordshanterare",
-                "sub5": "VPN",
+                "sub4": "Lösenordstillstånd",
+                "sub5": "VPN-säkerhet",
                 "sub6": "Fingeravtryck"
             },
             "support": "Support",
@@ -631,9 +631,9 @@
             "title": "Säkerhetsrådgivare",
             "subtitle": "KONTROLLERA OM DIN ENHET ÄR SKYDDAD.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-säkerhet",
-            "pswdMgr": "Lösenordshanterare",
-            "vpn": "VPN",
+            "wifi": "WiFi-Säkerhet",
+            "pswdMgr": "Lösenordstillstånd",
+            "vpn": "VPN-Säkerhet",
             "enabled": "AKTIVERAD",
             "disabled": "INAKTIVERAD",
             "partiallyProtected": "DELVIS SKYDDAD",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi-säkerhet och Säkerhet för uppkopplat hem",
+                "title": "WiFi-säkerhet",
                 "back": "TILLBAKA"
             },
             "container": {

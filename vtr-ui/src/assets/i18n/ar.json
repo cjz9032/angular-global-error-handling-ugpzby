@@ -617,9 +617,9 @@
                 "title": "الأمان",
                 "sub1": "أمن جهازي",
                 "sub2": "مكافحة الفيروسات",
-                "sub3": "أمان شبكة WiFi",
-                "sub4": "مدير كلمة السر",
-                "sub5": "VPN",
+                "sub3": "أمان WiFi",
+                "sub4": "سلامة كلمة المرور",
+                "sub5": "أمان VPN",
                 "sub6": "بصمة"
             },
             "support": "الدعم",
@@ -633,9 +633,9 @@
             "title": "مستشار الأمان",
             "subtitle": "تحقق من أمان جهازك.",
             "antiVirus": "مكافحة الفيروسات",
-            "wifi": "أمان شبكة WiFi",
-            "pswdMgr": "مدير كلمة السر",
-            "vpn": "VPN",
+            "wifi": "أمان WiFi",
+            "pswdMgr": "سلامة كلمة المرور",
+            "vpn": "أمان VPN",
             "enabled": "ممكّن",
             "disabled": "معطل",
             "partiallyProtected": "محمي جزئيًا",
@@ -2154,7 +2154,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "أمان شبكة WiFi والمنزل المتصل",
+                "title": "‏أمان WiFi",
                 "back": "السابق"
             },
             "container": {
