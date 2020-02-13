@@ -616,8 +616,8 @@
                 "sub1": "Ma sécurité",
                 "sub2": "Antivirus",
                 "sub3": "Sécurité WiFi",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "État de santé du mot de passe",
+                "sub5": "Sécurité VPN",
                 "sub6": "Empreinte digitale"
             },
             "support": "Soutien",
@@ -632,8 +632,8 @@
             "subtitle": "VÉRIFIEZ SI VOTRE PÉRIPHÉRIQUE EST SÉCURISÉ.",
             "antiVirus": "Antivirus",
             "wifi": "Sécurité WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "État de Santé du mot de passe",
+            "vpn": "Sécurité VPN",
             "enabled": "ACTIVÉ",
             "disabled": "DÉSACTIVÉ",
             "partiallyProtected": "PARTIELLEMENT PROTÉGÉ",
@@ -644,7 +644,7 @@
             "notFound": "NON TROUVÉ",
             "registered": "ENREGISTRÉ",
             "notRegistered": "NON ENREGISTRÉ",
-            "fingerPrint": "Empreinte digitale",
+            "fingerPrint": "Empreinte Digitale",
             "privacyPolicyAndTermsOfService": "<tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi et Sécurité domestique connectée",
+                "title": "Sécurité WiFi",
                 "back": "RETOUR"
             },
             "container": {

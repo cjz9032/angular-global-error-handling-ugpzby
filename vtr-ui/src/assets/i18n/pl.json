@@ -616,8 +616,8 @@
                 "sub1": "Moje zabezpieczenie",
                 "sub2": "Antywirus",
                 "sub3": "Bezpieczeństwo WiFi",
-                "sub4": "Menedżer haseł",
-                "sub5": "VPN",
+                "sub4": "Bezpieczeństwo hasła",
+                "sub5": "Zabezpieczenia VPN",
                 "sub6": "Odcisk palca"
             },
             "support": "Pomoc techniczna",
@@ -632,8 +632,8 @@
             "subtitle": "SPRAWDŹ, CZY URZĄDZENIE JEST ZABEZPIECZONE.",
             "antiVirus": "Antywirus",
             "wifi": "Bezpieczeństwo WiFi",
-            "pswdMgr": "Menedżer haseł",
-            "vpn": "VPN",
+            "pswdMgr": "Bezpieczeństwo Hasła",
+            "vpn": "Zabezpieczenia VPN",
             "enabled": "WŁĄCZONO",
             "disabled": "WYŁĄCZONO",
             "partiallyProtected": "CZĘŚCIOWO CHRONIONE",
@@ -644,7 +644,7 @@
             "notFound": "NIE ZNALEZIONO",
             "registered": "ZAREJESTROWANY",
             "notRegistered": "NIE ZAREJESTROWANY",
-            "fingerPrint": "Odcisk palca",
+            "fingerPrint": "Odcisk Palca",
             "privacyPolicyAndTermsOfService": "<tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi i Bezpieczny Dom",
+                "title": "Bezpieczeństwo WiFi",
                 "back": "WSTECZ"
             },
             "container": {

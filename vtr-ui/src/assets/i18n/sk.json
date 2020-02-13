@@ -616,8 +616,8 @@
                 "sub1": "Moje zabezpečenie",
                 "sub2": "Antivírus",
                 "sub3": "Zabezpečenie WiFi",
-                "sub4": "Správca hesiel",
-                "sub5": "VPN",
+                "sub4": "Sila hesla",
+                "sub5": "Zabezpečenie VPN",
                 "sub6": "Odtlačok"
             },
             "support": "Technická podpora",
@@ -632,8 +632,8 @@
             "subtitle": "SKONTROLUJTE, ČI JE ZARIADENIE ZABEZPEČENÉ.",
             "antiVirus": "Antivírus",
             "wifi": "Zabezpečenie WiFi",
-            "pswdMgr": "Správca hesiel",
-            "vpn": "VPN",
+            "pswdMgr": "Sila Hesla",
+            "vpn": "Zabezpečenie VPN",
             "enabled": "ZAPNUTÉ",
             "disabled": "VYPNUTÉ",
             "partiallyProtected": "ČIASTOČNE CHRÁNENÉ",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Zabezpečenie WiFi a prepojenej domácnosti",
+                "title": "Zabezpečenie WiFi",
                 "back": "SPÄŤ"
             },
             "container": {

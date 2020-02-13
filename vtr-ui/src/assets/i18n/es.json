@@ -616,8 +616,8 @@
                 "sub1": "Mi seguridad",
                 "sub2": "Antivirus",
                 "sub3": "Seguridad de WiFi",
-                "sub4": "Administrador de contraseñas",
-                "sub5": "VPN",
+                "sub4": "Estado de la contraseña",
+                "sub5": "Seguridad VPN",
                 "sub6": "Huella dactilar"
             },
             "support": "Soporte",
@@ -631,9 +631,9 @@
             "title": "Asesor de seguridad",
             "subtitle": "COMPRUEBE SI SU DISPOSITIVO ESTÁ SEGURO.",
             "antiVirus": "Antivirus",
-            "wifi": "Seguridad de WiFi",
-            "pswdMgr": "Administrador de contraseñas",
-            "vpn": "VPN",
+            "wifi": "Seguridad De WiFi",
+            "pswdMgr": "Estado De La Contraseña",
+            "vpn": "Seguridad VPN",
             "enabled": "HABILITADO",
             "disabled": "DESHABILITADO",
             "partiallyProtected": "PARCIALMENTE PROTEGIDO",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi y seguridad de hogar conectado",
+                "title": "Seguridad de WiFi",
                 "back": "ATRÁS"
             },
             "container": {

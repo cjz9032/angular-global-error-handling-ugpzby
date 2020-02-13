@@ -616,8 +616,8 @@
                 "sub1": "Moja bezbednost",
                 "sub2": "Antivirusni program",
                 "sub3": "WiFi bezbednost",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "Ispravnost lozinke",
+                "sub5": "Bezbednost VPN mreže",
                 "sub6": "Fingerprint"
             },
             "support": "Podrška",
@@ -631,9 +631,9 @@
             "title": "Savetnik za bezb.",
             "subtitle": "PROVERITE DA LI JE UREĐAJ ZAŠTIĆEN.",
             "antiVirus": "Antivirusni program",
-            "wifi": "WiFi bezbednost",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "wifi": "WiFi Bezbednost",
+            "pswdMgr": "Ispravnost Lozinke",
+            "vpn": "Bezbednost VPN Mreže",
             "enabled": "OMOGUĆENO",
             "disabled": "ONEMOGUĆENO",
             "partiallyProtected": "DELIMIČNO ZAŠTIĆEN",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi i povezana kućna bezbednost",
+                "title": "WiFi bezbednost",
                 "back": "NAZAD"
             },
             "container": {

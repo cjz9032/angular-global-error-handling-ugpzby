@@ -616,8 +616,8 @@
                 "sub1": "我的安全性",
                 "sub2": "防毒",
                 "sub3": "WiFi 安全性",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "密碼安全狀態",
+                "sub5": "VPN 安全性",
                 "sub6": "指紋"
             },
             "support": "支援",
@@ -632,8 +632,8 @@
             "subtitle": "檢查您的裝置是否安全。",
             "antiVirus": "防毒",
             "wifi": "WiFi 安全性",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "密碼安全狀態",
+            "vpn": "VPN 安全性",
             "enabled": "已啟用",
             "disabled": "已停用",
             "partiallyProtected": "受部分保護",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi 與連線家庭安全性",
+                "title": "WiFi 安全性",
                 "back": "上一步"
             },
             "container": {

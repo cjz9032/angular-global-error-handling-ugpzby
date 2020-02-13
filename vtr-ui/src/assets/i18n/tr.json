@@ -614,10 +614,10 @@
             "security": {
                 "title": "Güvenlik",
                 "sub1": "Güvenliğim",
-                "sub2": "Virüsten Koruma",
-                "sub3": "WiFi Güvenliği",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub2": "Virüsten koruma",
+                "sub3": "WiFi güvenliği",
+                "sub4": "Parola durumu",
+                "sub5": "VPN güvenliği",
                 "sub6": "Parmak izi"
             },
             "support": "Destek",
@@ -632,8 +632,8 @@
             "subtitle": "CİHAZINIZIN GÜVENLİ OLUP OLMADIĞINI KONTROL EDİN.",
             "antiVirus": "Virüsten Koruma",
             "wifi": "WiFi Güvenliği",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Parola Durumu",
+            "vpn": "VPN Güvenliği",
             "enabled": "ETKİN",
             "disabled": "DEVRE DIŞI",
             "partiallyProtected": "KISMEN KORUNUYOR",
@@ -644,7 +644,7 @@
             "notFound": "BULUNAMADI",
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL",
-            "fingerPrint": "Parmak izi",
+            "fingerPrint": "Parmak Izi",
             "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi ve Bağlı Ev Güvenliği",
+                "title": "WiFi güvenliği",
                 "back": "GERİ"
             },
             "container": {

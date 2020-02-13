@@ -616,8 +616,8 @@
                 "sub1": "Moje zabezpečení",
                 "sub2": "Antivirus",
                 "sub3": "Zabezpečení WiFi",
-                "sub4": "Správce hesel",
-                "sub5": "VPN",
+                "sub4": "Stav hesla",
+                "sub5": "Zabezpečení VPN",
                 "sub6": "Otisk prstu"
             },
             "support": "Podpora",
@@ -632,8 +632,8 @@
             "subtitle": "ZKONTROLUJTE, ZDA JE ZAŘÍZENÍ ZABEZPEČENO.",
             "antiVirus": "Antivirus",
             "wifi": "Zabezpečení WiFi",
-            "pswdMgr": "Správce hesel",
-            "vpn": "VPN",
+            "pswdMgr": "Stav Hesla",
+            "vpn": "Zabezpečení VPN",
             "enabled": "POVOLENO",
             "disabled": "ZAKÁZÁNO",
             "partiallyProtected": "ČÁSTEČNĚ CHRÁNĚNO",
@@ -644,7 +644,7 @@
             "notFound": "NENALEZENO",
             "registered": "REGISTROVÁNO",
             "notRegistered": "NENÍ REGISTROVÁNO",
-            "fingerPrint": "Otisk prstu",
+            "fingerPrint": "Otisk Prstu",
             "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Zabezpečení WiFi a připojené domácnosti",
+                "title": "Zabezpečení WiFi",
                 "back": "ZPĚT"
             },
             "container": {

@@ -616,8 +616,8 @@
                 "sub1": "내 보안 설정",
                 "sub2": "바이러스 백신",
                 "sub3": "WiFi 보안",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "암호 상태",
+                "sub5": "VPN 보안",
                 "sub6": "지문"
             },
             "support": "지원",
@@ -632,8 +632,8 @@
             "subtitle": "이 장치에 보안 설정이 되었는지 확인하십시오.",
             "antiVirus": "바이러스 백신",
             "wifi": "WiFi 보안",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "암호 상태",
+            "vpn": "VPN 보안",
             "enabled": "사용",
             "disabled": "사용 안 함",
             "partiallyProtected": "부분적으로 보호",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi 및 홈 보안 연결",
+                "title": "WiFi 보안",
                 "back": "뒤로"
             },
             "container": {

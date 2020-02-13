@@ -616,8 +616,8 @@
                 "sub1": "Minha segurança",
                 "sub2": "Antivírus",
                 "sub3": "Segurança WiFi",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "Integridade de senha",
+                "sub5": "Segurança de VPN",
                 "sub6": "Impressão digital"
             },
             "support": "Suporte",
@@ -632,8 +632,8 @@
             "subtitle": "VERIFIQUE SE O SEU DISPOSITIVO ESTÁ PROTEGIDO.",
             "antiVirus": "Antivírus",
             "wifi": "Segurança WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Integridade de Senha",
+            "vpn": "Segurança de VPN",
             "enabled": "ATIVADO",
             "disabled": "DESATIVADO",
             "partiallyProtected": "PROTEGIDO PARCIALMENTE",
@@ -644,7 +644,7 @@
             "notFound": "NÃO ENCONTRADO",
             "registered": "REGISTRADO",
             "notRegistered": "NÃO REGISTRADO",
-            "fingerPrint": "Impressão digital",
+            "fingerPrint": "Impressão Digital",
             "privacyPolicyAndTermsOfService": "<tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Segurança doméstica conectada e WiFi",
+                "title": "Segurança WiFi",
                 "back": "VOLTAR"
             },
             "container": {
