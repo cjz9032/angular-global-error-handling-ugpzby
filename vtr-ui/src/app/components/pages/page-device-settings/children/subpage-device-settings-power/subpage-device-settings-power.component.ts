@@ -1076,7 +1076,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	isThresholdWarningMsgShown() {
-		if (this.batteryService.remainingPercentages && this.batteryService.remainingPercentages.length > 0) {
+		if (this.batteryService.remainingPercentages && this.batteryService.remainingPercentages.length > 0 && this.thresholdInfo.length > 0) {
 			if (this.thresholdInfo.length === 1) {
 				if (this.batteryService.remainingPercentages[0] && this.thresholdInfo[0].batteryNum === 1 ) {
 					this.showBCTWarningNote = this.batteryService.remainingPercentages[0] > this.thresholdInfo[0].stopValue;
@@ -1087,7 +1087,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				}
 			} else {
 				if (this.batteryService.remainingPercentages.length > 1 && this.thresholdInfo[1].stopValue) {
-					this.showBCTWarningNote = this.showBCTWarningNote || (this.batteryService.remainingPercentages[0] > this.thresholdInfo[0].stopValue);
+					this.showBCTWarningNote = this.batteryService.remainingPercentages[0] > this.thresholdInfo[0].stopValue || this.batteryService.remainingPercentages[1] > this.thresholdInfo[1].stopValue;
 				}
 			}
 		}
