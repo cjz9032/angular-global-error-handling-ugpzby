@@ -616,9 +616,9 @@
                 "sub1": "我的安全性",
                 "sub2": "防毒",
                 "sub3": "WiFi 安全性",
-                "sub4": "密碼安全狀態",
-                "sub5": "VPN 安全性",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "指紋"
             },
             "support": "支援",
             "privacy": "隱私權",
@@ -644,7 +644,7 @@
             "notFound": "找不到",
             "registered": "已註冊",
             "notRegistered": "未註冊",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "受到完整保護",
-            "notFully": "未受到完整保護",
+            "fully": "為了獲得更棒的優惠來保護您的裝置，請繼續使用",
+            "notFully": "若要了解如何更好地保護您的裝置，請開始使用",
             "security101": "安全顧問 101",
             "firewall": "防火牆",
             "pwdHealth": "密碼安全狀態",

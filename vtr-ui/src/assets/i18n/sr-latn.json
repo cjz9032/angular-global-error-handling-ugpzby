@@ -616,9 +616,9 @@
                 "sub1": "Moja bezbednost",
                 "sub2": "Antivirusni program",
                 "sub3": "WiFi bezbednost",
-                "sub4": "Ispravnost lozinke",
-                "sub5": "Bezbednost VPN mreže",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "Podrška",
             "privacy": "Privatnost",
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "U potpunosti zaštićen",
-            "notFully": "Nije u potpunosti zaštićen",
+            "fully": "Para obtener una mejor oferta para proteger su dispositivo, manténgase con",
+            "notFully": "Para saber cómo proteger mejor su dispositivo, comience con",
             "security101": "SAVETNIK ZA BEZBEDNOST 101",
             "firewall": "Zaštitni zid",
             "pwdHealth": "Ispravnost lozinke",

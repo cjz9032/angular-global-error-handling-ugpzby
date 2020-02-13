@@ -618,9 +618,9 @@
                 "sub1": "My Security",
                 "sub2": "Anti-Virus",
                 "sub3": "WiFi Security",
-                "sub4": "Password Health",
-                "sub5": "VPN Security",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerprint"
             },
             "support": "Support",
             "homeSecurity": "Connected Home",
@@ -648,7 +648,9 @@
             "notFound": "NOT FOUND",
             "registered": "REGISTERED",
             "notRegistered": "NOT REGISTERED",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+			"privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+			"enrolled": "ENROLLED",
+			"notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Q&A for your machine",
@@ -745,7 +747,7 @@
             }
         },
         "quickSettings": {
-            "title": "Quicksettings",
+            "title": "Quick settings",
             "microphone": "Microphone",
             "cameraPrivacy": "Camera",
             "eyeCareMode": "Eye Care",

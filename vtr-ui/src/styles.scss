@@ -1523,3 +1523,11 @@ vtr-ui-smart-performance-scanning {
 		}
 	}
 }
+.auto-screen-lock-help-icon {
+	ngb-tooltip-window.vtr-tooltip.tooltip {
+		.tooltip-inner {
+			width: 40rem;
+		}
+	}
+}
+
