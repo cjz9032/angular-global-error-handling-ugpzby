@@ -12,6 +12,7 @@
 				[showProgress]="isScanExecuting() || isRecoverExecuting()" (startQuickScan)="startScanWaitingModules(taskTypeEnum.QuickScan)"
 				(checkCancel)="onCancelScan()" (checkAnchor)="startScanWaitingModules(taskTypeEnum.CustomScan)" [statusText]="finalStatusToken()"
 				itemParentCancel="{{itemParentCancelScan}}"
+				[hideBack]="!isScanDone"
 				itemNameCancel= "{{itemNameCancelScan}}">
 			</vtr-widget-hardware-scan>
 		</div>
