@@ -8,7 +8,8 @@ but not to any other element on the page. using ::ng-deep
 ::ng-deep {
 	.vtr-ui-aps-slider {
 		$thumb-size: 2.8rem;
-		width: 65rem;
+		width: 85%;
+
 
 		.ng5-slider {
 			/* main slider bar */
@@ -104,7 +105,7 @@ but not to any other element on the page. using ::ng-deep
 	.disable-slider-pointer {
 		.ng5-slider {
 			.ng5-slider-pointer, .ng5-slider-selection {
-				background: #8b91a2;
+				background: #8b91a2 !important;
 			}
 		}
 	}

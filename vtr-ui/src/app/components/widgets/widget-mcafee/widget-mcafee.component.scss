@@ -10,29 +10,10 @@
     font-size: 1.4rem;
     font-weight: $weight_regular;
     line-height: 2.3rem;
-    @media #{$mediaquery_X46} { 
+    @media #{$mediaquery_lg} {
         font-size: 1.2rem;
     }
 }
-
-.button, button {
-    min-height: 6rem;
-    border-radius: 3rem;
-    min-width: 12rem;
-    background: $gradient_main;
-    border: none;
-    color: $light;
-    font-size: 1.75rem;
-    font-weight: $weight_bold;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0 2.5rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    letter-spacing: 0.1rem;
-  }
 
 .list-group {
     border-radius: $border_radius;
@@ -56,7 +37,7 @@
     font-size: 2.5rem;
     font-weight: $weight_regular;
     line-height: 2.9rem;
-    @media #{$mediaquery_X46} { 
+    @media #{$mediaquery_lg} {
         font-size: 2.2rem;
     }
 }
@@ -71,19 +52,19 @@
 }
 
 .md-margin {
-    @media #{$mediaquery_X46} {
+    @media #{$mediaquery_lg} {
         margin-bottom: 2rem;
       }
 }
 
 .vtr-widget-mcafee {
-    @media #{$mediaquery_X46} { 
+    @media #{$mediaquery_lg} {
         justify-content: center !important;
     }
 }
 
 .md-col {
-    @media #{$mediaquery_X46} {
+    @media #{$mediaquery_lg} {
       max-width: 100%;
       width: 100%;
       flex-basis: 100%;
@@ -92,8 +73,10 @@
 
 ::ng-deep {
     .vtr-ui-button {
-        @media #{$mediaquery_X46} { 
-            margin-top: 2rem;
-        }
+		.button-box {
+			.button {
+				max-width: 100%;
+			}
+		}
     }
 }

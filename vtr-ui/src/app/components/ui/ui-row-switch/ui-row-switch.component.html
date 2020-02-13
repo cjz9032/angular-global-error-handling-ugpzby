@@ -6,7 +6,7 @@
 	}">
 	<div class="container-fluid p-0" 
 	[ngClass]="{'vtr-disabled': disabled}">
-		<div class="row m-0 d-flex justify-content-between">
+		<div class="row m-0 d-flex justify-content-between position-relative">
 			<div class="vtr-col-pad"
 				[ngClass]="{'flex-grow-1': (isSwitchVisible && !resetTextAsButton),'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),'col-md-7': (resetTextAsButton && !isSwitchVisible)}"
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
@@ -117,9 +117,8 @@
 
 				</div>
 				<!-- [ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}" -->
-				<!-- [ngClass]= tool-tip-help-icon-alignment is for auto screen lock timer should be aligned with help icon of zero touch login section  -->
-				<div class="tool-tip-icon" *ngIf="rightIcon.length > 0 && !voice && !toolTipStatus && !fnCtrltoolTip"
-					[ngClass]="{'tool-tip-help-icon-alignment': !isSwitchVisible}">
+				<div class="tool-tip-icon float-right" *ngIf="rightIcon.length > 0 && !voice && !toolTipStatus && !fnCtrltoolTip"
+					[ngClass]="{'auto-screen-lock-help-icon': !isSwitchVisible}">
 					<fa-icon id="{{switchId}}-tooltip_right_icon"
 						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}" 
 						class="right-icon"
@@ -137,7 +136,7 @@
 						(keydown.enter)="onRightIconClick(rightToolTip1, $event)">
 					</fa-icon>
 				</div>
-				<div class="tool-tip-icon" 
+				<div class="tool-tip-icon float-right" 
 				[ngClass]="{'pl-4': type==='Camera'}"
 					*ngIf="rightIcon.length > 0 && toolTipStatus">
 					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}"
@@ -156,7 +155,7 @@
 						(keydown.enter)="onRightIconClick(rightToolTip2, $event)"></fa-icon>
 				</div>
 
-				<div class="tool-tip-icon"
+				<div class="tool-tip-icon float-right"
 				 [ngClass]="{'pl-4': type==='Camera'}"
 					*ngIf="rightIcon.length > 0 && fnCtrltoolTip">
 					<fa-icon id="{{switchId+ '_fnCtrl_right_icon'}}"
@@ -175,7 +174,7 @@
 						(keydown.enter)="onRightIconClick(rightToolTip3, $event)"></fa-icon>
 				</div>
 
-				<div class="tool-tip-icon"
+				<div class="tool-tip-icon float-right"
 				 *ngIf="rightIcon.length > 0 && voice">
 					<fa-icon vtrMetrics
 					 metricsEvent="FeatureClick" 

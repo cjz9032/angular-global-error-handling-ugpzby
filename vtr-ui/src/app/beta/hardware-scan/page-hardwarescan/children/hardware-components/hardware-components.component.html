@@ -45,7 +45,7 @@
 						<fa-icon class="refresh-icon"
 							placement="auto"
 							[icon]="['fal', 'redo']"
-							container="body">
+							container="vtr-root">
 						</fa-icon>
 					</a>
 				</div>
@@ -60,7 +60,7 @@
 					</vtr-ui-hardware-list>
 
 					<div class="loading-components" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
-						<fa-icon placement="auto" spin="true" [icon]="['fal', 'circle-notch']" container="body">
+						<fa-icon placement="auto" spin="true" [icon]="['fal', 'circle-notch']" container="vtr-root">
 						</fa-icon>
 					</div>
 
