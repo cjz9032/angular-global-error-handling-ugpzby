@@ -10,19 +10,19 @@
 	</div>
 	<div class="row">
 		<div class="col">
-<!-- ****************** Power Smart Settings Section ******************************** -->
+			<!-- ****************** Power Smart Settings Section ******************************** -->
 			<vtr-power-smart-settings (isPowerSmartSettingHidden)="onSetSmartSettingsCapability(false)"
 				*ngIf="!isDesktopMachine">
 			</vtr-power-smart-settings>
-<!-- ****************** Power Smart Settings Section ******************************** -->
+			<!-- ****************** Power Smart Settings Section ******************************** -->
 
-<!-- ****************** Smart Standby Section ******************************** -->
+			<!-- ****************** Smart Standby Section ******************************** -->
 			<vtr-smart-standby *ngIf="!isDesktopMachine"
 				(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
 			</vtr-smart-standby>
-<!-- ****************** Smart Standby Section ******************************** -->
+			<!-- ****************** Smart Standby Section ******************************** -->
 
-<!-- ****************** Battery Section ******************************** -->
+			<!-- ****************** Battery Section ******************************** -->
 			<div *ngIf="isBatterySectionAvailable"
 				class="row pt-5 smart-settings-card"
 				id="battery">
@@ -51,8 +51,7 @@
 									[isDisabled]="batteryService.isGaugeResetRunning"
 									[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
 									<div *ngIf="chargeThresholdStatus">
-										<vtr-battery-charge-threshold-settings
-											[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title'
+										<vtr-battery-charge-threshold-settings [title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title'
 												+ thresholdInfo[0].batteryNum | translate"
 											[isGaugeResetRunning]="batteryService.isGaugeResetRunning"
 											[bctInfo]="thresholdInfo[0]"
@@ -123,10 +122,10 @@
 					</vtr-container-collapsible>
 				</div>
 			</div>
-<!-- ****************** End Battery Section ******************************** -->
+			<!-- ****************** End Battery Section ******************************** -->
 
-<!-- ****************** Start Power Section ******************************** -->
-			 <div class="row pt-5 smart-settings-card"
+			<!-- ****************** Start Power Section ******************************** -->
+			<div class="row pt-5 smart-settings-card"
 				id="power"
 				*ngIf="isPowerSectionAvailable">
 				<div class="col-12 mx-auto container-card">
@@ -152,26 +151,20 @@
 									(toggleOnOff)="onToggleOfAirplanePowerMode($event.switchValue)">
 									<div class="row">
 										<div class="col px-5">
-											<div class="auto-set-checkbox custom-checkbox-gaming"
-												tabindex="0"
-												(keydown.enter)="cbAirplaneMode.click()"
-												[attr.aria-checked]="airplaneAutoDetection"
-												attr.aria-labelledby="cb-airplane-mode"
-												role="checkbox">
+											<div class="auto-set-checkbox custom-checkbox-gaming">
 												<input id="cb-airplane-mode"
-													#cbAirplaneMode
-													tabindex="-1"
 													class="custom-control-input"
 													attr.aria-label="cb-airplane-mode"
 													type="checkbox"
-													name="airplane-mode-checkbox-id"
+													tabindex="-1"
+													name="cb-airplane-mode"
 													[(ngModel)]="airplaneAutoDetection"
 													(ngModelChange)='onAirplaneAutoModeStatusChange()'
-													aria-hidden="true"
 													checked="" />
-
 												<span class="checkmark"></span>
-												<label for="cb-airplane-mode">
+												<label for="cb-airplane-mode"
+													tabindex="0"
+													role="text">
 													{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
 												</label>
 											</div>
@@ -237,14 +230,15 @@
 													attr.aria-label="cb-always-on-usb"
 													type="checkbox"
 													tabindex="-1"
-													name="always-on-usb-checkbox-id"
+													name="cb-always-on-usb"
 													[disabled]="!toggleAlwaysOnUsbFlag"
 													[(ngModel)]="usbChargingCheckboxFlag"
 													(ngModelChange)='onUsbChargingStatusChange()'
 													checked="" />
 												<span class="checkmark"></span>
 												<label for="cb-always-on-usb"
-													tabindex="0" role="text">
+													tabindex="0"
+													role="text">
 													{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 												</label>
 											</div>
@@ -272,10 +266,10 @@
 					</vtr-container-collapsible>
 				</div>
 			</div>
-<!-- ****************** End Power Section ******************************** -->
+			<!-- ****************** End Power Section ******************************** -->
 
 
-			 <div class="row pt-5 smart-settings-card"
+			<div class="row pt-5 smart-settings-card"
 				id="other"
 				*ngIf="vantageToolbarStatus.available">
 				<div class="col-12 mx-auto container-card">
