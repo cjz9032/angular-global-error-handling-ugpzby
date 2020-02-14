@@ -12,6 +12,10 @@
 	#goto_nightlight_link {
 		text-decoration: underline;
 	}
+	#eye-care-mode-temp-note {
+		margin-right: 15px !important;
+		width: 100%;
+	}
 	.title {
 		opacity: 0.8;
 		color: $main_darker;
@@ -218,6 +222,26 @@
 		::ng-deep .vtr-ui-switch-row.white-theme {
 			.vtr-row-switch {
 				min-height: 4rem;
+			}
+		}
+	}
+
+	.camera-block {
+		::ng-deep .vtr-ui-switch-row.white-theme {
+			.tool-tip-icon{
+				margin-left: 1.5rem;
+			}
+		}
+	}
+	.color-temp-block {
+		::ng-deep .vtr-ui-switch-row.white-theme{
+			.vtr-row-switch{
+				display: block !important;
+				text-align: right !important;
+				min-width: auto !important;
+				.tool-tip-icon {
+					margin-left: 0px !important;
+				}
 			}
 		}
 	}

@@ -618,7 +618,7 @@
                 "sub3": "Zabezpečení WiFi",
                 "sub4": "Stav hesla",
                 "sub5": "Zabezpečení VPN",
-                "sub6": "Windows Hello"
+                "sub6": "Otisk prstu"
             },
             "support": "Podpora",
             "privacy": "Soukromí",
@@ -632,8 +632,8 @@
             "subtitle": "ZKONTROLUJTE, ZDA JE ZAŘÍZENÍ ZABEZPEČENO.",
             "antiVirus": "Antivirus",
             "wifi": "Zabezpečení WiFi",
-            "pswdMgr": "Správce hesel",
-            "vpn": "Síť VPN",
+            "pswdMgr": "Stav Hesla",
+            "vpn": "Zabezpečení VPN",
             "enabled": "POVOLENO",
             "disabled": "ZAKÁZÁNO",
             "partiallyProtected": "ČÁSTEČNĚ CHRÁNĚNO",
@@ -644,7 +644,7 @@
             "notFound": "NENALEZENO",
             "registered": "REGISTROVÁNO",
             "notRegistered": "NENÍ REGISTROVÁNO",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Otisk Prstu",
             "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Úplná ochrana",
-            "notFully": "Nejste zcela chráněni",
+            "fully": "Získejte lepší nabídku pro ochranu zařízení a nadále používejte",
+            "notFully": "Chcete-li se dozvědět, jak lépe chránit zařízení, začněte používat",
             "security101": "BEZPEČNOSTNÍ RÁDCE 101",
             "firewall": "Firewall",
             "pwdHealth": "Stav hesla",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Zabezpečení WiFi a připojené domácnosti",
+                "title": "Zabezpečení WiFi",
                 "back": "ZPĚT"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Přihlášení",
-        "logout": "Odhlásit",
+		"logout": "Odhlásit",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Odemknout exkluzivní obsah",
         "user": "Uživatel",
         "welcomeText1": "Vypadáte dnes aktivně, {{firstName}}!",
@@ -2768,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Nastavení předvoleb",
+        "preferenceSettings": "Nastavení Předvoleb",
         "settings": "Nastavení",
         "settingsDescription": "Na stránce nastavení předvoleb můžete zvolit, zda chcete zapnout/vypnout oznámení o zprávách na základě kategorií zpráv aplikace Vantage. Berte na vědomí, že i když zakážete všechny kategorie zpráv, přesto občas můžete v případě potřeby obdržet z aplikace Vantage kritickou zprávu systému.",
         "messagesInLenovoVantage": "Zprávy v programu Lenovo Vantage",

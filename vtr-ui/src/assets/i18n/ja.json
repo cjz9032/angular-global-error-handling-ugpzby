@@ -618,7 +618,7 @@
                 "sub3": "WiFi セキュリティー",
                 "sub4": "パスワードの健全性",
                 "sub5": "VPN セキュリティー",
-                "sub6": "Windows Hello"
+                "sub6": "指紋"
             },
             "support": "サポート",
             "privacy": "プライバシー",
@@ -632,8 +632,8 @@
             "subtitle": "デバイスが保護されているかどうかを確認します。",
             "antiVirus": "アンチウィルス",
             "wifi": "WiFi セキュリティー",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "パスワードの健全性",
+            "vpn": "VPN セキュリティー",
             "enabled": "有効",
             "disabled": "無効",
             "partiallyProtected": "部分的に保護",
@@ -644,7 +644,7 @@
             "notFound": "見つかりませんでした",
             "registered": "登録済み",
             "notRegistered": "未登録",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "完全保護",
-            "notFully": "保護は未完全",
+            "fully": "より良いオファーを取得してデバイスを保護するために続けましょう、",
+            "notFully": "デバイスの保護を向上させる方法を知るために始めましょう、",
             "security101": "セキュリティー・アドバイザー 101",
             "firewall": "ファイアウォール",
             "pwdHealth": "パスワードの健全性",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi/接続ホーム・セキュリティー",
+                "title": "WiFi セキュリティー",
                 "back": "戻る"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "ログイン",
-        "logout": "ログアウト",
+		"logout": "ログアウト",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "専用機能をロック解除",
         "user": "ユーザー",
         "welcomeText1": "今日はエネルギーにあふれているように見えます、{{firstName}} さん!",

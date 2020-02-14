@@ -620,7 +620,7 @@
                 "sub3": "أمان WiFi",
                 "sub4": "سلامة كلمة المرور",
                 "sub5": "أمان VPN",
-                "sub6": "Windows Hello"
+                "sub6": "بصمة"
             },
             "support": "الدعم",
             "privacy": "الخصوصية",
@@ -633,9 +633,9 @@
             "title": "مستشار الأمان",
             "subtitle": "تحقق من أمان جهازك.",
             "antiVirus": "مكافحة الفيروسات",
-            "wifi": "أمان شبكة WiFi",
-            "pswdMgr": "مدير كلمة السر",
-            "vpn": "VPN",
+            "wifi": "أمان WiFi",
+            "pswdMgr": "سلامة كلمة المرور",
+            "vpn": "أمان VPN",
             "enabled": "ممكّن",
             "disabled": "معطل",
             "partiallyProtected": "محمي جزئيًا",
@@ -646,7 +646,7 @@
             "notFound": "لم يتم العثور عليه",
             "registered": "مسجل",
             "notRegistered": "غير مسجل",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "بصمة",
             "privacyPolicyAndTermsOfService": "<tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2012,8 +2012,8 @@
     },
     "security": {
         "landing": {
-            "fully": "محمي بشكل كامل",
-            "notFully": "غير محمي بشكل كامل",
+            "fully": "للحصول على عرض أفضل لحماية جهازك، تابع استخدام",
+            "notFully": "لمعرفة كيفية حماية جهازك بشكل أفضل، ابدأ باستخدام",
             "security101": "مستشار الأمان101",
             "firewall": "جدار الحماية",
             "pwdHealth": "سلامة كلمة المرور",
@@ -2154,7 +2154,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "أمان شبكة WiFi والمنزل المتصل",
+                "title": "‏أمان WiFi",
                 "back": "السابق"
             },
             "container": {
@@ -2337,7 +2337,8 @@
     },
     "lenovoId": {
         "login": "تسجيل الدخول",
-        "logout": "تسجيل الخروج",
+		"logout": "تسجيل الخروج",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "استفد من العروض الخاصة",
         "user": "المستخدم",
         "welcomeText1": "<span dir=\"rtl\">تبدو نشيطًا اليوم، {{firstName}}!</span>",

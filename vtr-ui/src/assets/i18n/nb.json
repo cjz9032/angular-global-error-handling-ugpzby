@@ -618,7 +618,7 @@
                 "sub3": "WiFi-sikkerhet",
                 "sub4": "Passordtilstand",
                 "sub5": "VPN-sikkerhet",
-                "sub6": "Windows Hello"
+                "sub6": "Fingeravtrykk"
             },
             "support": "Støtte",
             "privacy": "Personvern",
@@ -631,9 +631,9 @@
             "title": "Sikkerhetsrådgivning",
             "subtitle": "KONTROLLER OM ENHETEN ER SIKRET.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-sikkerhet",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "wifi": "WiFi-Sikkerhet",
+            "pswdMgr": "Passordtilstand",
+            "vpn": "VPN-Sikkerhet",
             "enabled": "AKTIVERT",
             "disabled": "DEAKTIVERT",
             "partiallyProtected": "DELVIS BESKYTTET",
@@ -644,7 +644,7 @@
             "notFound": "IKKE FUNNET",
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Fingeravtrykk",
             "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "FULLSTENDIG BESKYTTET",
-            "notFully": "Ikke fullstendig beskyttet",
+            "fully": "For å få et bedre tilbud bør du beskytte enheten og bli hos",
+            "notFully": "Hvis du vil vite hvordan du kan beskytte enheten din bedre, kan du starte med",
             "security101": "SIKKERHETSRÅDGIVER 101",
             "firewall": "Brannmur",
             "pwdHealth": "Passordtilstand",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi og Sikkerhet for tilkoblede hjem",
+                "title": "WiFi-sikkerhet",
                 "back": "TILBAKE"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Logg på",
-        "logout": "Logg av",
+		"logout": "Logg av",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Få eksklusive tilbud",
         "user": "Bruker",
         "welcomeText1": "Ser frisk ut i dag, {{firstName}}!",
@@ -2768,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Preferanser og innstillinger",
+        "preferenceSettings": "Preferanser Og Innstillinger",
         "settings": "Innstillinger",
         "settingsDescription": "På siden med preferanser og innstillinger kan du slå meldingsvarsler på/av basert på meldingskategoriene til Vantage. Vær obs på at selv om alle meldingskategoriene deaktiveres, kan du fremdeles få systemkritiske meldinger fra Vantage fra tid til annen.",
         "messagesInLenovoVantage": "Meldinger i Lenovo Vantage",

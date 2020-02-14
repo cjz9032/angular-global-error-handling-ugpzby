@@ -21,13 +21,13 @@
                 </div>
                 <div *ngIf="!showProgress" class="row">
                     <div class="col button-row">
-                        <button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}" 
+                        <button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}"
                             [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-                            [disabled]="disableQuickScan" 
+                            [disabled]="disableQuickScan"
                             (click)="onQuickScan()">{{buttonText}}</button>
-                        <a 
-                            vtrMetrics 
-                            metricsEvent="FeatureClick" 
+                        <a
+                            vtrMetrics
+                            metricsEvent="FeatureClick"
                             metricsParent="HardwareScan"
                             metricsItem="HardwareScan.CustomizeScan"
                             [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
@@ -55,7 +55,7 @@
                                     id="hw_cancel_scan"
                                     attr.aria-label="hw_cancel_scan"
                                     vtrMetrics
-                                    metricsEvent="FeatureClick" 
+                                    metricsEvent="FeatureClick"
                                     metricsParent="{{itemParentCancel}}"
                                     metricsItem="{{itemNameCancel}}"
                                     class="btn btn-link cancel-check"
@@ -63,10 +63,10 @@
                                     (click)="onCancel()">{{'hardwareScan.cancel' | translate}}</button>
                             </div>
                         </div>
-                        <div class="container final-result-code" *ngIf="getFinalResultCode()">
+                        <div class="col-12 final-result-code" *ngIf="getFinalResultCode()">
                             <span class="result-code-value-text">{{finalResultCodeText}}:</span>
                             <span class="result-code-complete-text">{{getFinalResultCode()}}</span>
-                            <fa-icon *ngIf="getTooltipInformation()" class="result-code-icon" triggers="click:blur" placement="auto" [ngbTooltip]="tooltipFinalResultCode" [icon]="['far', 'question-circle']" container="body" tooltipClass="vtr-tooltip">
+                            <fa-icon *ngIf="getTooltipInformation()" class="result-code-icon" triggers="click:blur" placement="auto" [ngbTooltip]="tooltipFinalResultCode" [icon]="['far', 'question-circle']" container="vtr-root" tooltipClass="vtr-tooltip">
                             </fa-icon>
                         </div>
                     </div>

@@ -618,7 +618,7 @@
                 "sub3": "WiFi-beveiliging",
                 "sub4": "Wachtwoordstatus",
                 "sub5": "VPN-beveiliging",
-                "sub6": "Windows Hello"
+                "sub6": "Vingerafdruk"
             },
             "support": "Ondersteuning",
             "privacy": "Privacy",
@@ -631,9 +631,9 @@
             "title": "Beveiligingsadviseur",
             "subtitle": "CONTROLEER OF UW APPARAAT IS BEVEILIGD.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-beveiliging",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "wifi": "WiFi-Beveiliging",
+            "pswdMgr": "Wachtwoordstatus",
+            "vpn": "VPN-Beveiliging",
             "enabled": "INGESCHAKELD",
             "disabled": "UITGESCHAKELD",
             "partiallyProtected": "GEDEELTELIJK BEVEILIGD",
@@ -644,7 +644,7 @@
             "notFound": "NIET GEVONDEN",
             "registered": "GEREGISTREERD",
             "notRegistered": "NIET GEREGISTREERD",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Vingerafdruk",
             "privacyPolicyAndTermsOfService": "<tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Volledig beveiligd",
-            "notFully": "Niet volledig beveiligd",
+            "fully": "Als u een beter aanbod voor de bescherming van uw apparaat wilt krijgen, blijf dan bij",
+            "notFully": "Als u wilt weten hoe u uw apparaat beter kunt beschermen, begint u met",
             "security101": "BEVEILIGINGSADVISEUR 101",
             "firewall": "Firewall",
             "pwdHealth": "Wachtwoordstatus",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi en Connected Home-beveiliging",
+                "title": "WiFi-beveiliging",
                 "back": "TERUG"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Aanmelden",
-        "logout": "Afmelden",
+		"logout": "Afmelden",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Krijg toegang tot exclusieve aanbiedingen",
         "user": "Gebruiker",
         "welcomeText1": "Uw ziet er energiek uit vandaag, {{firstName}}!",

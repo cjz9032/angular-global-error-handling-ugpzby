@@ -563,6 +563,11 @@
 	right: 2.2rem;
 }
 
+.disabled {
+    pointer-events: none;
+    color: #ccc !important;
+}
+
 @media #{$mediaquery_xl} {
 	.dropdown-menu {
 		top: 0 !important;

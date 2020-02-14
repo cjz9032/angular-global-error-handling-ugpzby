@@ -38,14 +38,14 @@
 								</fa-icon>
 							</div>
 						</div>
-						
+
 						<div class="title" [ngClass]="{'not-applicable': item.status === 6}">{{item.name}}</div>
 						<div class="subtitle" *ngIf="item.subname">{{item.subname}}</div>
 						<div class="span-not-applicable" *ngIf="item.status === 6">{{testNotApplicable}}</div>
 					</div>
 					<div class="item-right" *ngIf="item.information">
 						<fa-icon class="result-code-icon" triggers="click:blur" placement="auto"
-							[ngbTooltip]="tooltipRefItem" [icon]="['far', 'question-circle']" container="body"
+							[ngbTooltip]="tooltipRefItem" [icon]="['far', 'question-circle']" container="vtr-root"
 							tooltipClass="vtr-tooltip" (click)="getInformation(item.information)"></fa-icon>
 					</div>
 					<div class="item-right" *ngIf="item.result">
@@ -67,7 +67,7 @@
 								<fa-icon [icon]="['fas', 'question-circle']" *ngSwitchDefault>
 								</fa-icon>
 							</div>
-							
+
 						</div>
 					</div>
 				</div>

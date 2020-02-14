@@ -618,7 +618,7 @@
                 "sub3": "Sicurezza WiFi",
                 "sub4": "Integrità password",
                 "sub5": "Protezione VPN",
-                "sub6": "Windows Hello"
+                "sub6": "Impronta digitale"
             },
             "support": "Supporto",
             "privacy": "Vita Privata",
@@ -632,8 +632,8 @@
             "subtitle": "CONTROLLARE SE IL DISPOSITIVO È PROTETTO.",
             "antiVirus": "Antivirus",
             "wifi": "Sicurezza WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Integrità Password",
+            "vpn": "Protezione VPN",
             "enabled": "ABILITATO",
             "disabled": "DISABILITATO",
             "partiallyProtected": "PARZIALMENTE PROTETTO",
@@ -644,7 +644,7 @@
             "notFound": "NON TROVATO",
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Impronta Digitale",
             "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "COMPLETAMENTE PROTETTO",
-            "notFully": "Non completamente protetto",
+            "fully": "Per ottenere un'offerta migliore per proteggere il tuo dispositivo, scegli",
+            "notFully": "Per scoprire come proteggere al meglio il tuo dispositivo, inizia con",
             "security101": "ASSISTENTE SICUREZZA 101",
             "firewall": "Firewall",
             "pwdHealth": "Integrità password",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Protezione abitazione connessa e WiFi",
+                "title": "Sicurezza WiFi",
                 "back": "INDIETRO"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Accesso",
-        "logout": "Disconnessione",
+		"logout": "Disconnessione",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Sblocca offerte esclusive",
         "user": "Utente",
         "welcomeText1": "Oggi il dispositivo è in ottime condizioni, {{firstName}}!",
@@ -2768,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Impostazioni preferenze",
+        "preferenceSettings": "Impostazioni Preferenze",
         "settings": "Impostazioni",
         "settingsDescription": "Nella pagina di impostazione delle preferenze è possibile scegliere di attivare o disattivare la notifica del messaggio in base alle categorie del messaggio di Vantage. Tenere presente che anche se tutte le categorie di messaggi sono disabilitate, è possibile che occasionalmente si riceva un messaggio critico di sistema da Vantage, se necessario.",
         "messagesInLenovoVantage": "Messaggi in Lenovo Vantage",

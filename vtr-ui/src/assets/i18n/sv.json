@@ -618,7 +618,7 @@
                 "sub3": "WiFi-säkerhet",
                 "sub4": "Lösenordstillstånd",
                 "sub5": "VPN-säkerhet",
-                "sub6": "Windows Hello"
+                "sub6": "Fingeravtryck"
             },
             "support": "Support",
             "privacy": "Sekretess",
@@ -631,9 +631,9 @@
             "title": "Säkerhetsrådgivare",
             "subtitle": "KONTROLLERA OM DIN ENHET ÄR SKYDDAD.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-säkerhet",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "wifi": "WiFi-Säkerhet",
+            "pswdMgr": "Lösenordstillstånd",
+            "vpn": "VPN-Säkerhet",
             "enabled": "AKTIVERAD",
             "disabled": "INAKTIVERAD",
             "partiallyProtected": "DELVIS SKYDDAD",
@@ -644,7 +644,7 @@
             "notFound": "HITTADES INTE",
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Fingeravtryck",
             "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Helt skyddad",
-            "notFully": "Inte helt skyddad",
+            "fully": "För att få ett bättre erbjudande om skydd av din enhet, fortsätt med",
+            "notFully": "För att få ett bättre skydd av din enhet, börja med",
             "security101": "SÄKERHETSRÅDGIVARE",
             "firewall": "Brandvägg",
             "pwdHealth": "Lösenordstillstånd",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi-säkerhet och Säkerhet för uppkopplat hem",
+                "title": "WiFi-säkerhet",
                 "back": "TILLBAKA"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Inloggning",
-        "logout": "Logga ut",
+		"logout": "Logga ut",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Visa exklusiva erbjudanden",
         "user": "Användare",
         "welcomeText1": "Energin är på topp i dag, {{firstName}}!",

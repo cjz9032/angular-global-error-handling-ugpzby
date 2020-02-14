@@ -613,12 +613,12 @@
             },
             "security": {
                 "title": "Sicherheit",
-                "sub1": "Meine Sicherheit",
+                "sub1": "Meine sicherheit",
                 "sub2": "Antivirus",
-                "sub3": "WiFi-Sicherheit",
+                "sub3": "WiFi-sicherheit",
                 "sub4": "Kennwortzustand",
-                "sub5": "VPN-Sicherheit",
-                "sub6": "Windows Hello"
+                "sub5": "VPN-sicherheit",
+                "sub6": "Fingerabdruck"
             },
             "support": "Unterstützung",
             "privacy": "Vertraulichkeit",
@@ -632,8 +632,8 @@
             "subtitle": "PRÜFEN SIE, OB IHR GERÄT GESICHERT IST.",
             "antiVirus": "Antivirus",
             "wifi": "WiFi-Sicherheit",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Kennwortzustand",
+            "vpn": "VPN-Sicherheit",
             "enabled": "AKTIVIERT",
             "disabled": "DEAKTIVIERT",
             "partiallyProtected": "TEILWEISE GESCHÜTZT",
@@ -644,7 +644,7 @@
             "notFound": "NICHT GEFUNDEN",
             "registered": "REGISTRIERT",
             "notRegistered": "NICHT REGISTRIERT",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Fingerabdruck",
             "privacyPolicyAndTermsOfService": "<tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Vollständig geschützt",
-            "notFully": "Nicht vollständig geschützt",
+            "fully": "Um ein besseres Angebot zum Schutz Ihrer Einheit zu erhalten, bleiben Sie bei",
+            "notFully": "Um zu erfahren, wie Sie Ihre Einheit besser schützen können, beginnen Sie mit",
             "security101": "SICHERHEITSRATGEBER 101",
             "firewall": "Firewall",
             "pwdHealth": "Kennwortzustand",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi-Sicherheit und Sicherheit für das verbundene Zuhause",
+                "title": "WiFi-sicherheit",
                 "back": "ZURÜCK"
             },
             "container": {
@@ -2252,7 +2252,7 @@
         },
         "vpn": {
             "statusTitle": "SURFEASY VPN",
-            "title": "VPN-Sicherheit",
+            "title": "VPN-sicherheit",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN verschlüsselt die Informationen, die Sie senden und empfangen, damit Sie Ihren PC, Mac®, Smartphone oder Tablet bedenkenlos sicher und privat mit jeder Internetverbindung nutzen können.",
             "whatCanSufEasy1": "Ein Virtual Private Network-(VPN-)Anbieter, der Sie schützt, während Sie online sind. Ohne einen VPN kann Ihr Computer anfälliger für Angriffe und Identitätsdiebstahl sein. Der VPN wird automatisch im Hintergrund ausgeführt und sorgt für Sicherheit und Datenschutz.",
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Anmeldung",
-        "logout": "Abmelden",
+		"logout": "Abmelden",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Exklusivinhalte freischalten",
         "user": "Benutzer",
         "welcomeText1": "Sie sehen heute energiegeladen aus, {{firstName}}!",

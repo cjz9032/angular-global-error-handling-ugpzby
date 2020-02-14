@@ -618,7 +618,7 @@
                 "sub3": "Varnost WiFi-ja",
                 "sub4": "Geslo zdravje",
                 "sub5": "VPN Varnost",
-                "sub6": "Windows Hello"
+                "sub6": "Prstni odtis"
             },
             "support": "Podpora",
             "privacy": "Zasebnost",
@@ -632,8 +632,8 @@
             "subtitle": "PREVERITE, ALI JE NAPRAVA ZAVAROVANA.",
             "antiVirus": "Protivirusna zaščita",
             "wifi": "Varnost WiFi-ja",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Geslo Zdravje",
+            "vpn": "VPN Varnost",
             "enabled": "OMOGOČEN",
             "disabled": "ONEMOGOČEN",
             "partiallyProtected": "DELNO ZAŠČITENO",
@@ -644,7 +644,7 @@
             "notFound": "NI BILO MOGOČE NAJTI",
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Prstni Odtis",
             "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Popolnoma zaščitena",
-            "notFully": "Nije popolnoma zaščitena",
+            "fully": "Če želite še bolje zaščititi svojo napravo, še naprej uporabljajte",
+            "notFully": "Če želite izvedeti, kako lahko bolje zaščitite svojo napravo, začnite uporabljati",
             "security101": "VARNOSTNI SVETOVALEC 101",
             "firewall": "Požarni zid",
             "pwdHealth": "Geslo zdravje",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi & povezana domača varnost",
+                "title": "Varnost WiFi-ja",
                 "back": "NAZAJ"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Prijava",
-        "logout": "Odjava",
+		"logout": "Odjava",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Odklenite ekskluzivne ponudbe",
         "user": "Uporabnik",
         "welcomeText1": "Danes ste videti polni energije, {{firstName}}!",
@@ -2768,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Nastavitve učinkovitosti delovanja",
+        "preferenceSettings": "Nastavitve Učinkovitosti Delovanja",
         "settings": "Nastavitve",
         "settingsDescription": "Na strani za določanje nastavitev lahko vklopite/izklopite obvestila o sporočilih na podlagi kategorij sporočila orodja Vantage. Pri tem upoštevajte, da lahko po potrebi občasno prejmete nujna sistemska sporočila orodja Vantage, tudi če so vse kategorije sporočil onemogočene.",
         "messagesInLenovoVantage": "Sporočila v programu Lenovo Vantage",

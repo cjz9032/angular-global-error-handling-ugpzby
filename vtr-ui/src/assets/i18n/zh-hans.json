@@ -618,7 +618,7 @@
                 "sub3": "WiFi 安全",
                 "sub4": "密码保险箱",
                 "sub5": "VPN 安全顾问",
-                "sub6": "Windows Hello"
+                "sub6": "指纹"
             },
             "support": "支持服务",
             "privacy": "隐私",
@@ -632,8 +632,8 @@
             "subtitle": "检查设备是否受安全保护",
             "antiVirus": "病毒防护",
             "wifi": "WiFi 安全",
-            "pswdMgr": "密码管理器",
-            "vpn": "VPN",
+            "pswdMgr": "密码保险箱",
+            "vpn": "VPN 安全顾问",
             "enabled": "已启用",
             "disabled": "已禁用",
             "partiallyProtected": "部分受保护",
@@ -644,7 +644,7 @@
             "notFound": "未找到",
             "registered": "已注册",
             "notRegistered": "未注册",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "指纹",
             "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "受全面保护",
-            "notFully": "未受全面保护",
+            "fully": "为了获得更好的服务来保护您的设备，请继续使用",
+            "notFully": "要了解如何更好地保护您的设备，请开始使用",
             "security101": "安全建议入门",
             "firewall": "防火墙",
             "pwdHealth": "密码保险箱",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi 和互联家庭网络安全顾问",
+                "title": "WiFi 安全",
                 "back": "返回"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "登录",
-        "logout": "注销",
+		"logout": "注销",
+		"loggingOut": "正在注销...",
         "unlockExclusives": "解锁专享功能",
         "user": "用户",
         "welcomeText1": "今天也是活力满满的一天，{{firstName}}！",

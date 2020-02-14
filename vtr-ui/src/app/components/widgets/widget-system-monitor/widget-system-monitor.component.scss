@@ -320,7 +320,7 @@
 						.stack-container {
 							position: relative;
 							border-radius: $border_radius_sm;
-							background-color: $gaming_darker;
+							background-color: $gaming_bg;
 							margin: 1rem 0;
 							padding: 0.5rem;
 							width: 4rem;
@@ -382,7 +382,7 @@
 					left: 50%;
 					top: -7rem;
 					margin-left: -19rem;
-					background-color: $gaming_dark;
+					background-color: $gaming_darkest;
 					width: 38rem;
 					height: 38rem;
 					border-radius: 50%;
@@ -562,7 +562,7 @@
 						position: absolute;
 						top: 6rem;
 						left: 6rem;
-						background-color: $gaming_dark;
+						background-color: $gaming_bg;
 						width: 26rem;
 						height: 26rem;
 						border-radius: 50%;

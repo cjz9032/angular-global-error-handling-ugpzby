@@ -9,6 +9,7 @@ import { Subject, Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { TaskType, TaskStep } from 'src/app/beta/hardware-scan/enums/hardware-scan-metrics.enum';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -60,6 +61,7 @@ export class HardwareScanService {
 	private hardwareModulesLoaded = new Subject<boolean>();
 	private hypSettingsPromise: any = undefined;
 	private pluginVersion: string;
+	private isDesktopMachine: boolean = false;
 
 	// Used to store information related to metrics
 	private currentTaskType: TaskType;
@@ -70,6 +72,7 @@ export class HardwareScanService {
 		'memory': 'icon_hardware_memory.svg',
 		'motherboard': 'icon_hardware_motherboard.svg',
 		'pci_express': 'icon_hardware_pci-desktop.svg',
+		'pci_express_laptop': 'icon_hardware_pci-laptop.svg',
 		'wireless': 'icon_hardware_wireless.svg',
 		'storage': 'icon_hardware_hdd.svg'
 	};
@@ -101,6 +104,9 @@ export class HardwareScanService {
 			this.isAvailable().then((available) => {
 				console.log('[doPriorityRequests] isAvailable() promise returned: ', available);
 				if (available) {
+					// Validate the type of this machine to load dynamically the icons.
+					this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+
 					// Retrive the Plugin's version (it does not use the CLI)
 					this.getPluginInfo().then((hwscanPluginInfo: any) => {
 						console.log('[getPluginInfo] then: ', hwscanPluginInfo);
@@ -1289,6 +1295,11 @@ export class HardwareScanService {
 		const iconsBasePath = '/assets/icons/hardware-scan/';
 
 		if (moduleName in this.iconByModule) {
+			if (!this.isDesktopMachine) {
+				if (moduleName === 'pci_express') {
+					return iconsBasePath + this.iconByModule[moduleName + '_laptop'];
+				}
+			}
 			return iconsBasePath + this.iconByModule[moduleName];
 		}
 
@@ -1304,11 +1315,13 @@ export class HardwareScanService {
 		const result = [];
 
 		for (const module in this.iconByModule) {
-			result.push({
-				name: this.translate.instant('hardwareScan.pluginTokens.' + module),
-				subname: '',
-				icon: this.getHardwareComponentIcon(module)
-			});
+			if (module !== 'pci_express_laptop') {
+				result.push({
+					name: this.translate.instant('hardwareScan.pluginTokens.' + module),
+					subname: '',
+					icon: this.getHardwareComponentIcon(module)
+				});
+			}
 		}
 
 		return result;

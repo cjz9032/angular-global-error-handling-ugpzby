@@ -14,14 +14,11 @@
 			color: $shade_blue;
 			font-weight: $weight_light;
 			text-transform: capitalize;
+			font-size: $fontsize_xl;
 			@media #{$breakpoint_xl3}{
-				font-size: $fontsize_md;
-			}
-			@media #{$breakpoint_xl6}{
-				font-size: $fontsize_xl;
+				font-size: $fontsize_md!important;
 			}
 		}
-
 		.heading2 {
 			color: $menu_hover;
 			font-size: $fontsize_xl;
@@ -48,7 +45,7 @@
 			font-size: $fontsize_xs;
 			color: $shade_light;
 			text-decoration: underline;
-			text-transform: capitalize;
+			text-transform: capitalize; 
 			cursor: default;
 			pointer-events: none !important;
 		}
@@ -59,6 +56,7 @@
 			color: $grey_dark;
 			text-decoration: underline;
 			cursor: pointer;
+			white-space: normal;
 
 			&:hover {
 				text-decoration: none;

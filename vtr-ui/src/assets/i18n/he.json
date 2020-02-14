@@ -618,7 +618,7 @@
                 "sub3": "אבטחת WiFi",
                 "sub4": "תקינות סיסמה",
                 "sub5": "אבטחת VPN",
-                "sub6": "Windows Hello"
+                "sub6": "טביעת אצבע"
             },
             "support": "תמיכה",
             "privacy": "פרטיות",
@@ -632,8 +632,8 @@
             "subtitle": "בדקו שההתקן שלכם מאובטח.",
             "antiVirus": "אנטי-וירוס",
             "wifi": "אבטחת WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "תקינות סיסמה",
+            "vpn": "אבטחת VPN",
             "enabled": "מופעל",
             "disabled": "מושבת",
             "partiallyProtected": "הגנה חלקית",
@@ -644,7 +644,7 @@
             "notFound": "לא נמצא",
             "registered": "רשום",
             "notRegistered": "לא רשום",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "טביעת אצבע",
             "privacyPolicyAndTermsOfService": "<tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "הגנה מלאה",
-            "notFully": "אין הגנה מלאה",
+            "fully": "כדי לקבל הצעה טובה יותר להגן על המכשיר שלכם, הישארו עם",
+            "notFully": "כדי ללמוד כיצד להגן טוב יותר על המכשיר שלכם, התחילו עם",
             "security101": "יועץ האבטחה 101",
             "firewall": "חומת אש",
             "pwdHealth": "תקינות סיסמה",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "אבטחת הבית המחובר ו-WiFi",
+                "title": "‏אבטחת WiFi",
                 "back": "חזרה"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "כניסה",
-        "logout": "יציאה",
+		"logout": "יציאה",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "פתחו את ה\"בלעדיים\"",
         "user": "משתמש",
         "welcomeText1": "אתה נראה רענן היום, {{firstName}}!",

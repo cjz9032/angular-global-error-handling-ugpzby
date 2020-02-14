@@ -143,7 +143,7 @@ export class PageNetworkboostComponent implements OnInit {
 		if (!this.showTurnOnModal) {
 			this.changeListNum += 1;
 		}
-		this.hiddenScroll(false);
+		this.hiddenScroll(true);
 	}
 
 	modalCloseAddApps(action: boolean) {

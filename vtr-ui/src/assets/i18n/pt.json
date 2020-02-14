@@ -618,7 +618,7 @@
                 "sub3": "Segurança de WiFi",
                 "sub4": "Estado de palavra-passe",
                 "sub5": "Segurança de VPN",
-                "sub6": "Windows Hello"
+                "sub6": "Impressão digital"
             },
             "support": "Suporte",
             "privacy": "Privacidade",
@@ -632,8 +632,8 @@
             "subtitle": "VERIFIQUE SE O DISPOSITIVO ESTÁ SEGURO.",
             "antiVirus": "Antivírus",
             "wifi": "Segurança de WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Estado de Palavra-passe",
+            "vpn": "Segurança de VPN",
             "enabled": "ATIVADO",
             "disabled": "DESATIVADO",
             "partiallyProtected": "PARCIALMENTE PROTEGIDO",
@@ -644,7 +644,7 @@
             "notFound": "NÃO ENCONTRADO",
             "registered": "REGISTADO",
             "notRegistered": "NÃO REGISTADO",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Impressão Digital",
             "privacyPolicyAndTermsOfService": "<tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Totalmente protegido",
-            "notFully": "Não totalmente protegido",
+            "fully": "Para obter uma melhor oferta e proteger o seu dispositivo, mantenha",
+            "notFully": "Para saber como melhor proteger o seu dispositivo, comece com",
             "security101": "PRINCÍPIOS BÁSICOS DE ASSISTENTE DE SEGURANÇA",
             "firewall": "Firewall",
             "pwdHealth": "Estado de palavra-passe",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi e Segurança de Casa Conectada",
+                "title": "Segurança de WiFi",
                 "back": "RETROCEDER"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Iniciar sessão",
-        "logout": "Terminar sessão",
+		"logout": "Terminar sessão",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Desbloquear Exclusivos",
         "user": "Utilizador",
         "welcomeText1": "Parece revitalizado/a hoje, {{firstName}}!",
@@ -2768,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Definições de preferências",
+        "preferenceSettings": "Definições De Preferências",
         "settings": "Definições",
         "settingsDescription": "Na página de definições de preferências, é possível optar por ativar/desativar as notificações de mensagem com base nas categorias de mensagens do Vantage. Tenha em atenção que, mesmo se todas categorias de mensagem estiverem desativadas, poderá ocasionalmente receber, quando necessário, mensagens críticas do sistema do Vantage.",
         "messagesInLenovoVantage": "Mensagens no Lenovo Vantage",

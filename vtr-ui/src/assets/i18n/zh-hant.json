@@ -618,7 +618,7 @@
                 "sub3": "WiFi 安全性",
                 "sub4": "密碼安全狀態",
                 "sub5": "VPN 安全性",
-                "sub6": "Windows Hello"
+                "sub6": "指紋"
             },
             "support": "支援",
             "privacy": "隱私權",
@@ -632,8 +632,8 @@
             "subtitle": "檢查您的裝置是否安全。",
             "antiVirus": "防毒",
             "wifi": "WiFi 安全性",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "密碼安全狀態",
+            "vpn": "VPN 安全性",
             "enabled": "已啟用",
             "disabled": "已停用",
             "partiallyProtected": "受部分保護",
@@ -644,7 +644,7 @@
             "notFound": "找不到",
             "registered": "已註冊",
             "notRegistered": "未註冊",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "受到完整保護",
-            "notFully": "未受到完整保護",
+            "fully": "為了獲得更棒的優惠來保護您的裝置，請繼續使用",
+            "notFully": "若要了解如何更好地保護您的裝置，請開始使用",
             "security101": "安全顧問 101",
             "firewall": "防火牆",
             "pwdHealth": "密碼安全狀態",
@@ -2034,7 +2034,7 @@
             "firewallContent": "防火牆會在受信任的內部網路和不受信任的外部網路之間建立屏障，並由此屏障根據預定的安全規則來監控和控制傳入和傳出的網路流量。",
             "windowsActiveContent": "使用正版 Windows 會降低安全性威脅攻擊的風險。",
             "passwordContent": "使用更安全、更輕鬆的方式來管理您的密碼、付款和個人資訊。甚至建立強式而複雜的密碼，並在每個網站上迅速登入。",
-            "fingerprintContent": "可快速而安全登入 Windows、付款並連接到應用程式即服務的方法。",
+            "fingerprintContent": "可快速而安全登入 Windows、付款並連接到應用程式及服務的方法。",
             "uacContent": "移動此滑桿，選取您希望使用者帳戶控制讓您免受潛在有害變更的保護程度。",
             "wifiContent": "進階的軟體服務，可協助您的裝置區分安全與潛在惡意的無線網路。",
             "bitLockerContent": "透過硬碟資料的加密，協助保護您的檔案和資料夾免遭未經授權的存取。",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi 與連線家庭安全性",
+                "title": "WiFi 安全性",
                 "back": "上一步"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "登入",
-        "logout": "登出",
+		"logout": "登出",
+		"loggingOut": "正在登出...",
         "unlockExclusives": "解除鎖定獨家功能",
         "user": "使用者",
         "welcomeText1": "{{firstName}}，今天看起來充滿活力！",

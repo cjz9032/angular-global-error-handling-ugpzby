@@ -618,7 +618,7 @@
                 "sub3": "Biztonságos WiFi",
                 "sub4": "Jelszó állapota",
                 "sub5": "VPN-biztonság",
-                "sub6": "Windows Hello"
+                "sub6": "Ujjlenyomat"
             },
             "support": "Támogatás",
             "privacy": "Adatvédelem",
@@ -632,8 +632,8 @@
             "subtitle": "ELLENŐRIZZE, HOGY BIZTONSÁGOS-E A KÉSZÜLÉK.",
             "antiVirus": "Vírusirtó",
             "wifi": "Biztonságos WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Jelszó állapota",
+            "vpn": "VPN-Biztonság",
             "enabled": "ENGEDÉLYEZETT",
             "disabled": "LETILTOTT",
             "partiallyProtected": "RÉSZLEGESEN VÉDETT",
@@ -644,7 +644,7 @@
             "notFound": "NEM TALÁLHATÓ",
             "registered": "REGISZTRÁLT",
             "notRegistered": "NEM REGISZTRÁLT",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Ujjlenyomat",
             "privacyPolicyAndTermsOfService": "<tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Teljesen védett",
-            "notFully": "Nem teljesen védett",
+            "fully": "Ha jobb ajánlatot szeretne kapni eszköze védelmére, maradjon a következővel:",
+            "notFully": "Ha meg szeretné tudni, hogyan védheti meg jobban eszközeit, kezdje a következővel:",
             "security101": "BIZTONSÁGI TANÁCSADÓ 101",
             "firewall": "Tűzfal",
             "pwdHealth": "Jelszó állapota",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi és Biztonsági rendszer csatlakoztatott otthonhoz",
+                "title": "Biztonságos WiFi",
                 "back": "VISSZA"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Bejelentkezés",
-        "logout": "Kijelentkezés",
+		"logout": "Kijelentkezés",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Exkluzív ajánlatok",
         "user": "Felhasználó",
         "welcomeText1": "Ma energikusnak látszik, {{firstName}}!",
@@ -2768,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Előnyben részesített beállítások",
+        "preferenceSettings": "Előnyben Részesített Beállítások",
         "settings": "Beállítások",
         "settingsDescription": "Az előnyben részesített beállítások oldalán ki- és bekapcsolhatja az üzenetekről szóló értesítéseket a Vantage üzenetkategóriái alapján. Felhívjuk a figyelmét arra, hogy időnként még akkor is kaphat a rendszerrel kapcsolatos fontos üzeneteket a Vantage alkalmazástól, amikor minden üzenetkategória le van tiltva.",
         "messagesInLenovoVantage": "A Lenovo Vantage üzenetei",

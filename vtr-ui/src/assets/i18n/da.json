@@ -618,7 +618,7 @@
                 "sub3": "WiFi-sikkerhed",
                 "sub4": "Adgangskodesundhed",
                 "sub5": "VPN-sikkerhed",
-                "sub6": "Windows Hello"
+                "sub6": "Fingeraftryk"
             },
             "support": "Support",
             "privacy": "Anonymitet",
@@ -631,9 +631,9 @@
             "title": "Sikkerhedsvejledning",
             "subtitle": "KONTROLLÉR, OM DIN ENHED ER SIKRET.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-sikkerhed",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "wifi": "WiFi-Sikkerhed",
+            "pswdMgr": "Adgangskodesundhed",
+            "vpn": "VPN-Sikkerhed",
             "enabled": "AKTIVERET",
             "disabled": "DEAKTIVERET",
             "partiallyProtected": "DELVIST BESKYTTET",
@@ -644,7 +644,7 @@
             "notFound": "IKKE FUNDET",
             "registered": "REGISTRERET",
             "notRegistered": "IKKE REGISTRERET",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Fingeraftryk",
             "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Fuldt beskyttet",
-            "notFully": "Ikke fuldt beskyttet",
+            "fully": "Hvis du vil have et bedre tilbud til at beskytte din enhed, så fortsæt med",
+            "notFully": "Hvis du vil lære, hvordan du beskytter din enhed bedre, skal du starte med",
             "security101": "SIKKERHEDSVEJLEDNING 101",
             "firewall": "Firewall",
             "pwdHealth": "Adgangskodesundhed",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi og Tilsluttet Home Security",
+                "title": "WiFi-sikkerhed",
                 "back": "TILBAGE"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Login",
-        "logout": "Log af",
+		"logout": "Log af",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Lås Eksklusive op",
         "user": "Bruger",
         "welcomeText1": "Du ser ud til at være fuld af energi i dag, {{firstName}}!",

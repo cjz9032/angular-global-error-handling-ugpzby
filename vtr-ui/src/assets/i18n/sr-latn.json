@@ -618,7 +618,7 @@
                 "sub3": "WiFi bezbednost",
                 "sub4": "Ispravnost lozinke",
                 "sub5": "Bezbednost VPN mreže",
-                "sub6": "Windows Hello"
+                "sub6": "Fingerprint"
             },
             "support": "Podrška",
             "privacy": "Privatnost",
@@ -631,9 +631,9 @@
             "title": "Savetnik za bezb.",
             "subtitle": "PROVERITE DA LI JE UREĐAJ ZAŠTIĆEN.",
             "antiVirus": "Antivirusni program",
-            "wifi": "WiFi bezbednost",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "wifi": "WiFi Bezbednost",
+            "pswdMgr": "Ispravnost Lozinke",
+            "vpn": "Bezbednost VPN Mreže",
             "enabled": "OMOGUĆENO",
             "disabled": "ONEMOGUĆENO",
             "partiallyProtected": "DELIMIČNO ZAŠTIĆEN",
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "U potpunosti zaštićen",
-            "notFully": "Nije u potpunosti zaštićen",
+            "fully": "Para obtener una mejor oferta para proteger su dispositivo, manténgase con",
+            "notFully": "Para saber cómo proteger mejor su dispositivo, comience con",
             "security101": "SAVETNIK ZA BEZBEDNOST 101",
             "firewall": "Zaštitni zid",
             "pwdHealth": "Ispravnost lozinke",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi i povezana kućna bezbednost",
+                "title": "WiFi bezbednost",
                 "back": "NAZAD"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Prijava",
-        "logout": "Odjava",
+		"logout": "Odjava",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Otključaj ekskluzivnosti",
         "user": "Korisnik",
         "welcomeText1": "Danas izgledate puni energije, {{firstName}}!",
@@ -2768,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Postavke željenih opcija",
+        "preferenceSettings": "Postavke Željenih Opcija",
         "settings": "Postavke",
         "settingsDescription": "Na stranici „Postavke željenih opcija“, možete da odaberete da uključite/isključite obaveštenja porukama na osnovu kategorija Vantage poruka. Imajte u vidu da, čak i ako su sve kategorije poruka onemogućene, možete i dalje povremeno dobijati sistemske kritične poruke od aplikacije Vantage kada je to neophodno.",
         "messagesInLenovoVantage": "Poruke u aplikaciji Lenovo Vantage",

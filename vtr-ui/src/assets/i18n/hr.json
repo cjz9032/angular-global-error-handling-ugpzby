@@ -618,7 +618,7 @@
                 "sub3": "Sigurnost WiFija",
                 "sub4": "Jačina lozinke",
                 "sub5": "Sigurnost VPN mreže",
-                "sub6": "Windows Hello"
+                "sub6": "Otisak prsta"
             },
             "support": "Podrška",
             "privacy": "Zaštita privatnosti",
@@ -631,9 +631,9 @@
             "title": "Savjetnik za sigurnost tvrtke",
             "subtitle": "PROVJERITE JE LI VAŠ UREĐAJ ZAŠTIĆEN.",
             "antiVirus": "Zaštita od virusa",
-            "wifi": "Sigurnost WiFi mreže",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "wifi": "Sigurnost WiFija",
+            "pswdMgr": "Jačina Lozinke",
+            "vpn": "Sigurnost VPN Mreže",
             "enabled": "OMOGUĆENO",
             "disabled": "ONEMOGUĆENO",
             "partiallyProtected": "DJELOMIČNO ZAŠTIĆEN",
@@ -644,7 +644,7 @@
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTRIRAN",
             "notRegistered": "NIJE REGISTRIRAN",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Otisak prsta",
             "privacyPolicyAndTermsOfService": "<tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "U potpunosti zaštićen",
-            "notFully": "Nije u potpunosti zaštićen",
+            "fully": "Da biste osigurali bolju ponudu, zaštitite svoj uređaj, ostanite s",
+            "notFully": "Da biste naučili kako bolje zaštititi svoj uređaj, započnite s",
             "security101": "SAVJETNIK ZA SIGURNOST TVRTKE 101",
             "firewall": "Vatrozid",
             "pwdHealth": "Jačina lozinke",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi i povezana sigurnost doma",
+                "title": "Sigurnost WiFija",
                 "back": "NATRAG"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Prijava",
-        "logout": "Odjava",
+		"logout": "Odjava",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Otključaj ekskluzivne stavke",
         "user": "Korisnik",
         "welcomeText1": "Danas smo puni energije, {{firstName}}!",
@@ -2768,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Postavke postavki",
+        "preferenceSettings": "Postavke Postavki",
         "settings": "Postavke",
         "settingsDescription": "Na stranici postavki možete odabrati uključivanje / isključivanje obavijesti o porukama na temelju kategorija Vantageove poruke. Napominjemo da čak i ako su sve kategorije poruka onemogućene, još uvijek možete povremeno primati ključnu poruku sustava Vantage kada je to potrebno.",
         "messagesInLenovoVantage": "Poruke u aplikaciji Lenovo Vantage",

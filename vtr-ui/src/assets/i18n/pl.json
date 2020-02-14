@@ -618,7 +618,7 @@
                 "sub3": "Bezpieczeństwo WiFi",
                 "sub4": "Bezpieczeństwo hasła",
                 "sub5": "Zabezpieczenia VPN",
-                "sub6": "Windows Hello"
+                "sub6": "Odcisk palca"
             },
             "support": "Pomoc techniczna",
             "privacy": "Prywatność",
@@ -632,8 +632,8 @@
             "subtitle": "SPRAWDŹ, CZY URZĄDZENIE JEST ZABEZPIECZONE.",
             "antiVirus": "Antywirus",
             "wifi": "Bezpieczeństwo WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Bezpieczeństwo Hasła",
+            "vpn": "Zabezpieczenia VPN",
             "enabled": "WŁĄCZONO",
             "disabled": "WYŁĄCZONO",
             "partiallyProtected": "CZĘŚCIOWO CHRONIONE",
@@ -644,7 +644,7 @@
             "notFound": "NIE ZNALEZIONO",
             "registered": "ZAREJESTROWANY",
             "notRegistered": "NIE ZAREJESTROWANY",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Odcisk Palca",
             "privacyPolicyAndTermsOfService": "<tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Pełna ochrona",
-            "notFully": "Brak pełnej ochrony",
+            "fully": "Aby dowiedzieć się, jak lepiej chronić swoje urządzenie, pozostań z",
+            "notFully": "Aby dowiedzieć się, jak lepiej chronić swoje urządzenie, zacznij od",
             "security101": "DORADCA ZABEZPIECZEŃ 101",
             "firewall": "Zapora",
             "pwdHealth": "Bezpieczeństwo hasła",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi i Bezpieczny Dom",
+                "title": "Bezpieczeństwo WiFi",
                 "back": "WSTECZ"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Logowanie",
-        "logout": "Wyloguj",
+		"logout": "Wyloguj",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Odblokuj dodatki specjalne",
         "user": "Użytkownik",
         "welcomeText1": "Wygląda na pełnego energii, {{firstName}}!",
@@ -2768,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Ustawienia preferencji",
+        "preferenceSettings": "Ustawienia Preferencji",
         "settings": "Ustawienia",
         "settingsDescription": "Na stronie ustawień preferencji możesz włączyć lub wyłączyć powiadomienie o wiadomości na podstawie kategorii wiadomości Vantage. Należy pamiętać, że nawet jeśli wszystkie kategorie wiadomości są wyłączone, nadal mogą być czasami otrzymywane z programu Vantage krytyczne wiadomości dotyczące systemu, gdy jest to konieczne.",
         "messagesInLenovoVantage": "Wiadomości w aplikacji Lenovo Vantage",

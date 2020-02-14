@@ -618,7 +618,7 @@
                 "sub3": "Securitate WiFi",
                 "sub4": "Sănătatea parolei",
                 "sub5": "Securitate VPN",
-                "sub6": "Windows Hello"
+                "sub6": "Amprentă digitală"
             },
             "support": "Asistenţă",
             "privacy": "Confidenţialitate",
@@ -632,8 +632,8 @@
             "subtitle": "VERIFICAȚI DACĂ DISPOZITIVUL DVS. ESTE SECURIZAT.",
             "antiVirus": "Antivirus",
             "wifi": "Securitate WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Sănătatea Parolei",
+            "vpn": "Securitate VPN",
             "enabled": "ACTIVAT",
             "disabled": "DEZACTIVAT",
             "partiallyProtected": "PROTEJAT PARȚIAL",
@@ -644,7 +644,7 @@
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Amprentă Digitală",
             "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -2010,8 +2010,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Complet protejat",
-            "notFully": "Neprotejat complet",
+            "fully": "Pentru a obține o ofertă mai bună în vederea protejării dispozitivului dvs., rămâneți cu",
+            "notFully": "Pentru a afla cum să vă protejați mai bine dispozitivul, începeți cu",
             "security101": "ASISTENȚĂ PRIVIND SECURITATEA 101",
             "firewall": "Paravan de protecție",
             "pwdHealth": "Sănătatea parolei",
@@ -2152,7 +2152,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi și securitate conectată, la domiciliu",
+                "title": "Securitate WiFi",
                 "back": "ÎNAPOI"
             },
             "container": {
@@ -2335,7 +2335,8 @@
     },
     "lenovoId": {
         "login": "Conectare",
-        "logout": "Deconectare",
+		"logout": "Deconectare",
+		"loggingOut": "Logging out...",
         "unlockExclusives": "Deblocare Exclusive",
         "user": "Utilizator",
         "welcomeText1": "Păreți plin de energie astăzi, {{firstName}}!",
@@ -2768,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Setări de preferințe",
+        "preferenceSettings": "Setări De Preferințe",
         "settings": "Setări",
         "settingsDescription": "În pagina de setare a preferințelor, puteți alege să activați/dezactivați notificările pentru mesaje în funcție de categoria mesajului Vantage. Rețineți că, indiferent dacă toate categoriile de mesaje sunt dezactivate, puteți primi ocazional mesaje critice de sistem din partea Vantage când este necesar.",
         "messagesInLenovoVantage": "Mesaje în Lenovo Vantage",
