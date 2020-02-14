@@ -5,6 +5,7 @@
 
 	.module-information {
 		justify-content: space-between;
+		flex-wrap: nowrap;
 	}
 
 	.title {
@@ -25,7 +26,10 @@
 	}
 
 	.img-icon {
-		font-size: $fontsize_xl2;
+		width: 3.2rem;
+		height: 3.2rem;
+		vertical-align: top;
+		padding-top: 0.5rem;
 	}
 
 	.description {
@@ -98,7 +102,7 @@
 
 			.result-code-icon {
 				margin-left: 0.5rem;
-				margin-right: 0.5rem;
+				margin-right: 0.4rem;
 				font-size: $fontsize_lg;
 				color: $main;
 				cursor: pointer;

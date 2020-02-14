@@ -163,7 +163,7 @@
 
 		.result-code-icon {
 			margin-right: 0.5rem;
-			font-size: $fontsize_md;
+			font-size: $fontsize_lg;
 			color: $main;
 			cursor: pointer;
 
@@ -193,6 +193,7 @@
 	}
 
 	.qr-img {
-		font-size: $fontsize_xl;
+		width: 2.4rem;
+		height: 2.4rem;
 	}
 }
