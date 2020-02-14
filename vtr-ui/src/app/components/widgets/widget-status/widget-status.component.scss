@@ -25,14 +25,4 @@
 	@media #{$white-on-black} {
 		border: 0.1rem solid;
 	}
-	::ng-deep .vtr-ui-list-chevron {
-		.chevron-list li {
-			.item-text {
-				.title {
-					word-break: break-all;
-				}
-			}
-		}
-	}
-
 }
