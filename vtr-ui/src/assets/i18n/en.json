@@ -27,6 +27,12 @@
                     "title": "Quick Settings"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overclock on",
+                        "performance": "Performance",
+                        "balance": "Balance",
+                        "quiet": "Quiet"
+                    },
                     "title": "CPU Overclock",
                     "status": {
                         "alwayson": "On",
@@ -100,6 +106,96 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Thermal Mode Setting",
+                    "thermalMode2SettingDesc": "Choose mode you like to use.",
+                    "fnQDesc": "You can switch mode using shortcut Fn + Q.",
+                    "perormanceTitle": "Performance Mode",
+                    "performanceDesc": "Boost your computer preformance with more fan speed and more power consumed.",
+                    "OCDesc": "You can chose to turn on Overclocking feature.",
+                    "ac_dcDesc": "Performance Mode only available when plugged in.",
+                    "balanceTitle": "Balance Mode",
+                    "balanceDesc": "Automatically balance performance and fan speed based on temperature. Middle power consumption.",
+                    "quietTitle": "Quiet Mode",
+                    "quietDesc": "Keep quiet by reducing your computer's performance and fan speed where possible. Low power consumption.",
+                    "OC": {
+                        "cpu_gpuOC": "Enable CPU/GPU Overclocking in Preformance Mode.",
+                        "cpuOC": "Enable CPU Overclocking in Preformance Mode.",
+                        "gpuOC": "Enable GPU Overclocking in Preformance Mode.",
+                        "advance": "ADVANCED",
+                        "cpu_gpuDriverLack": "Install CPU/GPU drivers to use Overclocking function.",
+                        "cpuDriverLack": "Install CPU driver to use Overclocking function.",
+                        "gpuDriverLack": "Install GPU driver to use Overclocking function.",
+                        "goInstall": "GO INSTALL"
+                    },
+                    "autoSwitch": "Auto Switch to Performance when launching games and switch back aftetwards."	
+                },
+                "advancedOC": {
+                    "title": "Overclock Advanced Settings",
+                    "description": "Set advanced custom parameters when Overclocking is on. It could be Risky.",
+                    "gpuOverclock": "GPU Overclock",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Core Voltage",
+                        "cpuOCName116": "1 Core Ratio",
+                        "cpuOCName117": "2 Core Ratio",
+                        "cpuOCName118": "3 Core Ratio",
+                        "cpuOCName119": "4 Core Ratio",
+                        "cpuOCName34": "Core Voltage Offset",
+                        "cpuOCName120": "5 Core Ratio",
+                        "cpuOCName121": "6 Core Ratio",
+                        "cpuOCName76": "Cache Ratio",
+                        "cpuOCName77": "Cache Voltage",
+                        "cpuOCName79": "Cache Voltage Offset",
+                        "cpuOCName122": "7 Core Ratio",
+                        "cpuOCName123": "8 Core Ratio",
+                        "cpuOCName102": "Core ICCMAX",
+                        "cpuOCName106": "Cache ICCMAX",
+                        "cpuOCName114": "AVX Ratio Offset"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Set the voltage for the CPU Core.",
+                        "cpuOCTip116": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
+                        "cpuOCTip117": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
+                        "cpuOCTip118": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
+                        "cpuOCTip119": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
+                        "cpuOCTip34": "A voltage offset from the current core voltage.",
+                        "cpuOCTip120": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
+                        "cpuOCTip121": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
+                        "cpuOCTip76": "Set the maximum processor cache multiplier at which the caches can operate. The value of the cache frequency is the product of this ratio and the reference clock frequency.",
+                        "cpuOCTip77": "Voltage that is supplied to the processor's internal cache interface based on the currently selected cache voltage mode.",
+                        "cpuOCTip79": "Final voltage offset that is applied to the Cache Voltage.",
+                        "cpuOCTip122": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
+                        "cpuOCTip123": "Set the maximum core multiplier at which the cores can operate. The value of the core frequency is the product of this ratio and the reference clock frequency.",
+                        "cpuOCTip102": "Set ICCMAX for Processor Core Voltage Regulator.",
+                        "cpuOCTip106": "Set ICCMAX for Processor Cache and Ring Bus Voltage Regulator.",
+                        "cpuOCTip114": "To derive the effective active core ratio limit when AVX is active, subtract this value to the corresponding active core ratio limit."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "GPU Clock Offset",
+                        "gpuOCName1": "VRAM Clock Offset"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Add an offset to GPU clock frequency.",
+                        "gpuOCTip1": "Add an offset to memory clock frequency."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Save Change ?",
+                    "description1": "Improper settings of Overclocking may lead to irreversible hardware damage. Please do either of the following if you encounter any problem: ",
+                    "description2": "•  Press and hold the power button for 8 seconds to restart the computer and restore the default parameters.",
+                    "description3": "•  Use the “Restore Default Overclocking” toggle in BIOS settings to restore the default parameters.",
+                    "save": "SAVE",
+                    "notSave": "DON'T SAVE"
+                },
+                "defaultPromptPopup": {
+                    "title": "Set to default ?",
+                    "description": "All current and previous changes will be lost."
+                },
+                "warningPromptPopup": {
+                    "title": "Warning!",
+                    "description": "Improper settings of Overclocking  may lead to irreversible hardware damage.",
+                    "proceed": "PROCEED"
                 }
             }
         },
@@ -600,6 +696,42 @@
                 "common": {
                     "close": "close"
                 }
+            }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect":{
+                "effectName1": "Static",
+                "effectName2": "Spectrum",
+                "effectName3": "Rainbow",
+                "effectName4": "Random",
+                "effectName5": "Cool_Blue",
+                "effectName6": "Wave_Right",
+                "effectName7": "Wave_Left"
+            },
+            "lightingSpeed": {
+                "title":"Speed"
+            },
+            "colorPicker": {
+                "text2": "MORE",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Divide Area (Off): click the keyboard image below to change colors",
+                "text7": "Divide Area (On): click sections on the keyboard image below to change section colors",
+                "text8": "The current effect does not support color selection"
+            },
+            "tipText": {
+                "title1":"Use Fn+Space to switch among profiles"
             }
         }
     },

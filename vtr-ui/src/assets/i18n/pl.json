@@ -22,6 +22,12 @@
                     "rapidCharge": "Szybkie ładowanie"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Przetakt. wł.",
+                        "performance": "Wydajność",
+                        "balance": "Równowaga",
+                        "quiet": "Cichy"
+                    },
                     "title": "Przetaktowywanie CPU",
                     "status": {
                         "alwayson": "Włącz",
@@ -98,6 +104,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Szybkie ustawienia"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Ustawienia trybu term.",
+                    "thermalMode2SettingDesc": "Wybierz tryb, którego chcesz używać.",
+                    "fnQDesc": "Możesz przełączyć tryb za pomocą skrótu Fn + Q.",
+                    "perormanceTitle": "Tryb wydajny",
+                    "performanceDesc": "Zwiększ wydajność swojego komputera kosztem wyższej prędkości wentylatora i większego zużycia energii.",
+                    "OCDesc": "Możesz włączyć funkcję Przetaktowywanie.",
+                    "ac_dcDesc": "Tryb wydajny jest dostępny przy zasilaniu z sieci.",
+                    "balanceTitle": "Tryb zrównoważony",
+                    "balanceDesc": "Automatycznie równoważy wydajność komputera i prędkość wentylatora na podstawie temperatury. Średni pobór mocy.",
+                    "quietTitle": "Tryb cichy",
+                    "quietDesc": "Cicha praca dzięki zmniejszeniu wydajności komputera i prędkości wentylatora, jeśli to możliwe. Niski pobór mocy.",
+                    "OC": {
+                        "cpu_gpuOC": "Włącz taktowanie CPU/GPU w trybie wydajnym.",
+                        "cpuOC": "Włącz taktowanie CPU w trybie wydajnym.",
+                        "gpuOC": "Włącz taktowanie GPU w trybie wydajnym.",
+                        "advance": "ZAAWANSOWANE",
+                        "cpu_gpuDriverLack": "Zainstaluj sterowniki CPU/GPU w celu użycia funkcji taktowania.",
+                        "cpuDriverLack": "Zainstaluj sterownik CPU w celu użycia funkcji taktowania.",
+                        "gpuDriverLack": "Zainstaluj sterownik GPU w celu użycia funkcji taktowania.",
+                        "goInstall": "ZAINSTALUJ"
+                    },
+                    "autoSwitch": "Autom. włączaj tryb wydajny po uruchamianiu gry i wyłączaj go po jej zamknięciu."	
+                },
+                "advancedOC": {
+                    "title": "Przetaktowywanie Ust. zaaw.",
+                    "description": "Ustaw zaaw. parametry niest., gdy włączone jest Przetaktowywanie. To może być ryzykowne.",
+                    "gpuOverclock": "Przetaktowywanie GPU",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Napięcie rdzenia",
+                        "cpuOCName116": "Współczynnik rdzenia 1",
+                        "cpuOCName117": "Współczynnik rdzenia 2",
+                        "cpuOCName118": "Współczynnik rdzenia 3",
+                        "cpuOCName119": "Współczynnik rdzenia 4",
+                        "cpuOCName34": "Przesunięcie napięcia rdzenia",
+                        "cpuOCName120": "Współczynnik rdzenia 5",
+                        "cpuOCName121": "Współczynnik rdzenia 6",
+                        "cpuOCName76": "Współczynnik pamięci podręcznej",
+                        "cpuOCName77": "Napięcie pamięci podręcznej",
+                        "cpuOCName79": "Przesunięcie napięcia pam. podręcznej",
+                        "cpuOCName122": "Współczynnik rdzenia 7",
+                        "cpuOCName123": "Współczynnik rdzenia 8",
+                        "cpuOCName102": "ICCMAX rdzenia",
+                        "cpuOCName106": "ICCMAX pamięci podręcznej",
+                        "cpuOCName114": "Przesunięcie współczynnika AVX"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Ustaw napięcie rdzenia procesora.",
+                        "cpuOCTip116": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
+                        "cpuOCTip117": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
+                        "cpuOCTip118": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
+                        "cpuOCTip119": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
+                        "cpuOCTip34": "Przesunięcie napięcia od bieżącego napięcia rdzenia.",
+                        "cpuOCTip120": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
+                        "cpuOCTip121": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
+                        "cpuOCTip76": "Ustawić maksymalny mnożnik pamięci podręcznej procesora, przy którym pamięć podręczna może działać. Wartość częstotliwości pamięci podręcznej jest iloczynem tego współczynnika i częstotliwości zegara referencyjnego.",
+                        "cpuOCTip77": "Napięcie dostarczane do wewnętrznego interfejsu pamięci podręcznej procesora w oparciu o aktualnie wybrany tryb napięcia pamięci podręcznej.",
+                        "cpuOCTip79": "Ostateczne przesunięcie napięcia stosowane do napięcia pamięci podręcznej.",
+                        "cpuOCTip122": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
+                        "cpuOCTip123": "Ustaw maksymalny mnożnik rdzenia, przy którym rdzenie mogą działać. Wartość częstotliwości rdzenia jest iloczynem tego stosunku i częstotliwości zegara odniesienia.",
+                        "cpuOCTip102": "Ustaw ICCMAX dla regulatora napięcia rdzenia procesora.",
+                        "cpuOCTip106": "Ustaw ICCMAX dla regulatora napięcia pamięci podręcznej i magistrali pierścieniowej.",
+                        "cpuOCTip114": "Aby uzyskać efektywny limit współczynnika aktywnego rdzenia, gdy AVX jest aktywny, odejmij tę wartość od limitu współczynnika odpowiedniego aktywnego rdzenia."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "Przesunięcie zegara GPU",
+                        "gpuOCName1": "Przesunięcie zegara VRAM"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Dodaj przesunięcie do częstotliwości zegara GPU.",
+                        "gpuOCTip1": "Dodaj przesunięcie do częstotliwości zegara pamięci."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Zapisać zmiany?",
+                    "description1": "Nieprawidłowe ustawienia taktowania mogą nieodwracalnie uszkodzić sprzęt. W razie problemów wykonaj jedną z poniższych czynności: ",
+                    "description2": "•  Naciśnij i przytrzymaj przycisk zasilania przez 8 sekund, aby ponownie uruchomić komputer i przywrócić domyślne parametry.",
+                    "description3": "•  Użyj przełącznika „Przywróć domyślne taktowanie” w ustawieniach BIOS, aby przywrócić domyślne parametry.",
+                    "save": "ZAPISZ",
+                    "notSave": "NIE ZAPISUJ"
+                },
+                "defaultPromptPopup": {
+                    "title": "Przywrócić domyślne?",
+                    "description": "Wszystkie bieżące i poprzednie zmiany zostaną utracone."
+                },
+                "warningPromptPopup": {
+                    "title": "Ostrzeżenie!",
+                    "description": "Nieprawidłowe ustawienia Przetaktowywania mogą nieodwracalnie uszkodzić sprzęt.",
+                    "proceed": "WYKONAJ"
                 }
             }
         },
@@ -598,6 +694,42 @@
                 "common": {
                     "close": "close"
                 }
+            }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Statyczny",
+                "effectName2": "Widmo",
+                "effectName3": "Tęcza",
+                "effectName4": "Losowy",
+                "effectName5": "Chłodny_Niebieski",
+                "effectName6": "Fala_Prawo",
+                "effectName7": "Fala_Lewo"
+            },
+            "lightingSpeed": {
+                "title": "Szybkość"
+            },
+            "colorPicker": {
+                "text2": "WIĘCEJ",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Podziel obszar (wył.): kliknij klawiat. poniżej, by zmienić kolory",
+                "text7": "Podziel obszar (wł.): kliknij sekcje klaw., by zmienić ich kolory",
+                "text8": "Bieżący efekt nie obsługuje wyboru koloru"
+            },
+            "tipText": {
+                "title1": "Użyj skrótu Fn+spacja, aby przełączać się między profilami"
             }
         }
     },

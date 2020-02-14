@@ -1,0 +1,43 @@
+<div class="vtr-ui-lighting-keyboard-lnbx50">
+    <div class="keyboard-toggle" *ngIf="!isDisablled">
+        <div class="toggle-box">
+            <vtr-ui-toggle (toggleStatus)="onToggleOnOff($event)"
+                [toggleId]="'Divide Area'"
+                [value]="isDivideArea">
+            </vtr-ui-toggle>
+            <p *ngIf="isDivideArea" title="{{'gaming.lightingNewversion.colorPicker.text7' | translate}}">{{'gaming.lightingNewversion.colorPicker.text7' | translate}}.</p>
+            <p *ngIf="!isDivideArea" title="{{'gaming.lightingNewversion.colorPicker.text6' | translate}}">{{'gaming.lightingNewversion.colorPicker.text6' | translate}}.</p>
+        </div>
+        <!-- <div class="keyboard-description">
+            Click on keyboard image below to change colors.
+        </div> -->
+    </div>
+    <div *ngIf="isDisablled" class="disabled-description">{{'gaming.lightingNewversion.colorPicker.text8' | translate}}.</div>
+    <div class="keyboard-main">
+        <div class="keyboard-box">
+            <div *ngIf="isDisablled" class="disabledBox">
+                <div class="disabled-border"></div>
+            </div>
+            <div class="keyboard-area {{'keyboard-area'+areaIndex}}" 
+                *ngFor="let area of listInfo; let areaIndex = index" [id]="'keyboard-area'+areaIndex" 
+                (click)="selectAreaFn(area.lightPanelType,area.lightColor);$event.stopPropagation();" (mouseover)="mouseoverFn($event,area.lightPanelType,area.lightColor)" (mouseout)="mouseoutFn($event,area.lightPanelType)" >
+                <ul class="keyboard-area-line {{'area' + areaIndex + 'Line' + lineIndex}}" *ngFor="let line of keyboardInfo[areaIndex].area; let lineIndex = index">
+                    <li *ngFor="let item of line; let idx = index" 
+                        [ngStyle]="{'width': item.width,'padding-bottom':item.height}" 
+                        class="{{'area' + areaIndex + 'Line' + lineIndex + 'Block' + idx}}"
+                        [ngClass]="{'opacity100': (!isDisablled && isDivideArea && selectPanel === area.lightPanelType && selectedArea === area.lightPanelType) || (!isDivideArea && selectPanel != 0),
+                            'opacity20': (!isDisablled && isDivideArea && selectPanel != area.lightPanelType && selectPanel != 0),
+                            'opacity80': (!isDisablled && isDivideArea && selectPanel === 0 && selectedArea === 0) }">
+                        <span *ngIf="isDivideArea" [ngClass]="{'disabled': !item.empty && isDisablled}" [ngStyle]="{'border': item.empty?'2px solid ' + item.color:'2px solid #' + area.lightColor,
+                            'box-shadow':(!item.empty && selectPanel === area.lightPanelType)?'0px 0px 8px #'+area.lightColor :'none'}"></span>
+                        <span *ngIf="!isDivideArea" [ngClass]="{'disabled': !item.empty && isDisablled}" [ngStyle]="{'border': item.empty?'2px solid ' + item.color:'2px solid #' + area.lightColor,
+                            'box-shadow':(!item.empty && selectPanel !== 0)?'0px 0px 8px #'+area.lightColor :'none'}"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="emptyArea"></div>
+    </div>
+    
+</div>
+    

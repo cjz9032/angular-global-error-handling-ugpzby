@@ -22,6 +22,12 @@
                     "rapidCharge": "Hitro polnjenje"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Zviš. tak. vkl.",
+                        "performance": "Zmogljivost",
+                        "balance": "Ravnovesje",
+                        "quiet": "Tiho"
+                    },
                     "title": "Zvišanje takta CPE",
                     "status": {
                         "alwayson": "Vklopljeno",
@@ -98,6 +104,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Hitre nastavitve"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Nastavitev toplotnega nač.",
+                    "thermalMode2SettingDesc": "Izberite način, ki ga želite uporabljati.",
+                    "fnQDesc": "Med načini lahko preklapljate z bližnjico Fn + Q.",
+                    "perormanceTitle": "Zmogljivi način",
+                    "performanceDesc": "Povečajte zmogljivost računalnika z večjo hitrostjo ventilatorja in večjo porabo energije.",
+                    "OCDesc": "Vklopite lahko funkcijo Zvišanje takta.",
+                    "ac_dcDesc": "Zmogljivi način je na voljo samo, ko je računalnik priključen.",
+                    "balanceTitle": "Uravnoteženi način",
+                    "balanceDesc": "Samodejno uravnotežite zmogljivost in hitrost ventilatorja glede na temperaturo. Srednja poraba energije.",
+                    "quietTitle": "Tihi način",
+                    "quietDesc": "Zmanjšajte zmogljivost računalnika in hitrost ventilatorja, kadar je to mogoče, in poskrbite za tiho delovanje. Nizka poraba energije.",
+                    "OC": {
+                        "cpu_gpuOC": "Omogočite zvišanje takta CPE/GPE v zmogljivem načinu.",
+                        "cpuOC": "Omogočite zvišanje takta CPE v zmogljivem načinu.",
+                        "gpuOC": "Omogočite zvišanje takta GPE v zmogljivem načinu.",
+                        "advance": "DODATNA",
+                        "cpu_gpuDriverLack": "Za uporabo funkcije zvišanja takta namestite gonilnike za CPE/GPE.",
+                        "cpuDriverLack": "Za uporabo funkcije zvišanja takta namestite gonilnik za CPE.",
+                        "gpuDriverLack": "Za uporabo funkcije zvišanja takta namestite gonilnik za GPE.",
+                        "goInstall": "NAMESTI"
+                    },
+                    "autoSwitch": "Samodejno preklopite na zmogljivi nač. pri zagonu iger in nato preklopite nazaj."	
+                },
+                "advancedOC": {
+                    "title": "Zviš. takta – napr. nastav.",
+                    "description": "Nastavite napredne parametre po meri, ko je Zvišanje takta vklopljeno. To je lahko tvegano.",
+                    "gpuOverclock": "Zvišanje takta GPE",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Napetost jedra",
+                        "cpuOCName116": "Razmerje za 1 jedro",
+                        "cpuOCName117": "Razmerje za 2 jedri",
+                        "cpuOCName118": "Razmerje za 3 jedro",
+                        "cpuOCName119": "Razmerje za 4 jedro",
+                        "cpuOCName34": "Odmik napetosti jedra",
+                        "cpuOCName120": "Razmerje za 5 jedro",
+                        "cpuOCName121": "Razmerje za 6 jedro",
+                        "cpuOCName76": "Razmerje predpomnilnika",
+                        "cpuOCName77": "Napetost predpomnilnika",
+                        "cpuOCName79": "Odmik napetosti predpomnilnika",
+                        "cpuOCName122": "Razmerje za 7 jedro",
+                        "cpuOCName123": "Razmerje za 8 jedro",
+                        "cpuOCName102": "ICCMAX za jedro",
+                        "cpuOCName106": "ICCMAX za predpomnilnik",
+                        "cpuOCName114": "Odmik razmerja AVX"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Nastavite napetost za jedro CPE.",
+                        "cpuOCTip116": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip117": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip118": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip119": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip34": "Odmik napetosti od trenutne napetosti jedra.",
+                        "cpuOCTip120": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip121": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip76": "Nastavite največji množitelj za predpomnilnik procesorja, pri katerem lahko jedra delujejo. Vrednost frekvence predpomnilnika je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip77": "Napetost, ki se na podlagi trenutno izbranega načina napetosti predpomnilnika dovaja v vmesnik notranjega predpomnilnika procesorja.",
+                        "cpuOCTip79": "Končni odmik napetosti, ki je uporabljen za napetost predpomnilnika.",
+                        "cpuOCTip122": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip123": "Nastavite največji množitelj za jedra, pri katerem lahko jedra delujejo. Vrednost frekvence jeder je zmnožek tega razmerja in referenčne taktne frekvence.",
+                        "cpuOCTip102": "Nastavite ICCMAX za regulator napetosti jedra procesorja.",
+                        "cpuOCTip106": "Nastavite ICCMAX za regulator napetosti predpomnilnika in krožnega vodila procesorja.",
+                        "cpuOCTip114": "Veljavno omejitev razmerja aktivnih jeder, ko je AVX aktiven, izpeljete tako, da to vrednost odštejete od ustrezne omejitve razmerja aktivnih jeder."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "Odmik takta GPE",
+                        "gpuOCName1": "Odmik takta VRAM"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Dodajte odmik taktu GPE.",
+                        "gpuOCTip1": "Dodajte odmik taktu pomnilnika."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Žel. shran. sprem.?",
+                    "description1": "Nepravilne nastavitve zvišanja takta lahko okvarijo strojno opremo. Če se pojavi napaka, izvedite enega od naslednjih ukrepov: ",
+                    "description2": "•  Pritisnite gumb za vklop in ga držite 8 s, da znova zaženete računalnik in obnovite privzete parametre.",
+                    "description3": "•  Obn. priv. param. s stik. za obn. privzet. zviš. takta v nast. BIOS.",
+                    "save": "SHRANI",
+                    "notSave": "NE SHRANI"
+                },
+                "defaultPromptPopup": {
+                    "title": "Nast. na privzeto?",
+                    "description": "Vse trenutne in prejšnje spremembe bodo izgubljene."
+                },
+                "warningPromptPopup": {
+                    "title": "Opozorilo!",
+                    "description": "Nepravilne nastavitve Zvišanja takta lahko povzročijo nepopravljive poškodbe strojne opreme.",
+                    "proceed": "NADALJUJ"
                 }
             }
         },
@@ -598,6 +694,42 @@
                 "common": {
                     "close": "close"
                 }
+            }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Statično",
+                "effectName2": "Spekter",
+                "effectName3": "Mavrica",
+                "effectName4": "Naključno",
+                "effectName5": "Hladna_modra",
+                "effectName6": "Valovanje_desno",
+                "effectName7": "Valovanje_levo"
+            },
+            "lightingSpeed": {
+                "title": "Hitrost"
+            },
+            "colorPicker": {
+                "text2": "VEČ",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Območje delitve (izkl.): Za spremembo barv klikn. sliko tipkovnice",
+                "text7": "Obm. del. (vkl.): Za spr. barv razd. klikn. razd. na sliki tipk.",
+                "text8": "Trenutni učinek ne podpira izbire barv"
+            },
+            "tipText": {
+                "title1": "Med profili preklapljate z bližnjico Fn+preslednica"
             }
         }
     },
