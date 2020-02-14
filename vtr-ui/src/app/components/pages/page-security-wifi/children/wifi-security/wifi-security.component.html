@@ -1,4 +1,4 @@
-<div class="wifi-security mb-40">
+<div class="vtr-wifi-security mb-40">
 	<div class="container-fluid security-card">
 		<div class="row">
 			<div class="col">
@@ -19,11 +19,11 @@
 		</div>
 		<div class="row mb-20 no-gutters">
 			<div class="col-12">
-				<div class="wifiSecurity">
+				<div class="wifi-security">
 					<div class="card"
 						[ngClass]="{'expand': data.isLWSEnabled}">
 						<div class="card-header flex align-items-center"
-							id="wifiSecurity">
+							id="wifi-security">
 							<div class="row no-gutters">
 								<div class="col-7 subHeading align-items-center d-flex">
 									<span class="circle green"
@@ -74,7 +74,7 @@
 							[isCollapsed]="!isShowMore"
 							[allowCollapse]="true">
 							<div class="border-top-none show">
-								<div class="cardBody show">
+								<div class="card-body show">
 									<div class="row no-gutters wifi-card">
 										<div *ngFor="let history of data.histories"
 											class="col-sm-12 col-md-6 col-lg-12 col-xl-6 pr-3 wifi">
