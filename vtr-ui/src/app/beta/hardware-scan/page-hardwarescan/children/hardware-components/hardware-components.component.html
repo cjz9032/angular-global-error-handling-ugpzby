@@ -57,7 +57,7 @@
 			<div class="col">
 				<div class="hardware-lists-container">
 					<vtr-ui-hardware-list *ngIf="!isRefreshingModules() && !isScanExecuting() && !isRecoverExecuting()"
-						[items]="getItemToDisplay()">
+						[items]="itemsToDisplay">
 					</vtr-ui-hardware-list>
 
 					<div class="loading-components" *ngIf="isRefreshingModules() && !isRecoverExecuting()">

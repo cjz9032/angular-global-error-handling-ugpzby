@@ -69,6 +69,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public isOnline = true;
 	completeStatusToken: string;
 	public startScanClicked = false;
+	public itemsToDisplay: any;
 
 	// "Wrapper" value to be accessed from the HTML
 	public taskTypeEnum = TaskType;
@@ -100,6 +101,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 
+		this.itemsToDisplay = this.getItemToDisplay();
 		this.initComponent();
 		this.initResultSeverityConversion();
 	}
@@ -288,6 +290,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.timerService.start();
 		this.hardwareScanService.setLoadingStatus(false);
 		this.hardwareScanService.reloadItemsToScan(true);
+		this.itemsToDisplay = this.getItemToDisplay();
 		this.hardwareScanService.initLoadingModules(this.culture);
 
 		this.hardwareScanService.isHardwareModulesLoaded().subscribe((loaded) => {
@@ -315,11 +318,15 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				for (let i = 0; i < categoryInfo.groupList.length; i++) {
 					const group = categoryInfo.groupList[i];
 					const info = categoryInfo.name + ' - ';
-
+					if (!this.hardwareScanService.getIsDesktopMachine()) {
+						if (categoryInfo.id === 'pci_express') {
+							categoryInfo.id += '_laptop'	
+						}
+					}
 					devices.push({
 						name: info,
 						subname: group.name,
-						icon: this.hardwareScanService.getHardwareComponentIcon(categoryInfo.id),
+						icon: categoryInfo.id,
 					});
 				}
 			}
@@ -372,6 +379,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
 						'', metricsResult.scanResultJson, this.timerService.stop());
 					this.cleaningUpScan(undefined);
+					this.itemsToDisplay = this.getItemToDisplay();
 				});
 		}
 	}
@@ -682,7 +690,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		};
 
 		for (const module of this.modules) {
-
+			let module_id = module.id;			
+			if (!this.hardwareScanService.getIsDesktopMachine()) {
+				if (module_id === 'pci_express') {
+					module_id += '_laptop';
+				}
+			}
+			
 			const item = {
 				id: module.id,
 				module: module.module,
@@ -690,7 +704,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				resultCode: module.resultCode,
 				information: module.description,
 				collapsed: false,
-				icon: this.hardwareScanService.getHardwareComponentIcon(module.id),
+				icon: module_id,
 				details: [],
 				listTest: []
 			};
