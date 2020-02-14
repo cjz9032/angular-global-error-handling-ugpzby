@@ -2769,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Előnyben részesített beállítások",
+        "preferenceSettings": "Előnyben Részesített Beállítások",
         "settings": "Beállítások",
         "settingsDescription": "Az előnyben részesített beállítások oldalán ki- és bekapcsolhatja az üzenetekről szóló értesítéseket a Vantage üzenetkategóriái alapján. Felhívjuk a figyelmét arra, hogy időnként még akkor is kaphat a rendszerrel kapcsolatos fontos üzeneteket a Vantage alkalmazástól, amikor minden üzenetkategória le van tiltva.",
         "messagesInLenovoVantage": "A Lenovo Vantage üzenetei",

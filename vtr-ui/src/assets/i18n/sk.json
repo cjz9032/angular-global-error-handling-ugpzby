@@ -2769,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Nastavenia preferencií",
+        "preferenceSettings": "Nastavenia Preferencií",
         "settings": "Nastavenia",
         "settingsDescription": "Na stránke s nastaveniami preferencií si môžete vybrať zapnutie/vypnutie upozornenia na správy podľa kategórií správy aplikácie Vantage. Je potrebné, aby ste si uvedomili, že aj v prípade, keď sú všetky kategórie správ vypnuté, môžete podľa potreby príležitostne dostávať systémové kritické správy z aplikácie Vantage.",
         "messagesInLenovoVantage": "Správy v aplikácii Lenovo Vantage",

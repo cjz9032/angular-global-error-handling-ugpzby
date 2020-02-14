@@ -2769,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Preferanser og innstillinger",
+        "preferenceSettings": "Preferanser Og Innstillinger",
         "settings": "Innstillinger",
         "settingsDescription": "På siden med preferanser og innstillinger kan du slå meldingsvarsler på/av basert på meldingskategoriene til Vantage. Vær obs på at selv om alle meldingskategoriene deaktiveres, kan du fremdeles få systemkritiske meldinger fra Vantage fra tid til annen.",
         "messagesInLenovoVantage": "Meldinger i Lenovo Vantage",

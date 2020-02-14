@@ -3108,7 +3108,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Preference settings",
+        "preferenceSettings": "Preference Settings",
         "settings": "Settings",
         "settingsDescription": "In preference settings page, you can choose to turn on/off your message notification based on the categories of Vantage's message, please be noted that even if all the message categories are disabled, you may still occasionally receive System Critical message from Vantage when necessary.",
         "messagesInLenovoVantage": "Messages in Lenovo Vantage",

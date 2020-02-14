@@ -2769,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Nastavitve učinkovitosti delovanja",
+        "preferenceSettings": "Nastavitve Učinkovitosti Delovanja",
         "settings": "Nastavitve",
         "settingsDescription": "Na strani za določanje nastavitev lahko vklopite/izklopite obvestila o sporočilih na podlagi kategorij sporočila orodja Vantage. Pri tem upoštevajte, da lahko po potrebi občasno prejmete nujna sistemska sporočila orodja Vantage, tudi če so vse kategorije sporočil onemogočene.",
         "messagesInLenovoVantage": "Sporočila v programu Lenovo Vantage",

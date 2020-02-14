@@ -2769,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Configurações de preferências",
+        "preferenceSettings": "Configurações De Preferências",
         "settings": "Configurações",
         "settingsDescription": "Na página de configurações de preferências, você pode optar por ativar/desativar a notificação de mensagens com base nas categorias de mensagens do Vantage. Observe que, mesmo que todas as categorias de mensagens estejam desativadas, talvez você ainda receba ocasionalmente mensagens Críticas do Sistema do Vantage, quando necessário.",
         "messagesInLenovoVantage": "Mensagens no Lenovo Vantage",

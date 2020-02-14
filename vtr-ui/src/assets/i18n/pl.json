@@ -2769,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Ustawienia preferencji",
+        "preferenceSettings": "Ustawienia Preferencji",
         "settings": "Ustawienia",
         "settingsDescription": "Na stronie ustawień preferencji możesz włączyć lub wyłączyć powiadomienie o wiadomości na podstawie kategorii wiadomości Vantage. Należy pamiętać, że nawet jeśli wszystkie kategorie wiadomości są wyłączone, nadal mogą być czasami otrzymywane z programu Vantage krytyczne wiadomości dotyczące systemu, gdy jest to konieczne.",
         "messagesInLenovoVantage": "Wiadomości w aplikacji Lenovo Vantage",
