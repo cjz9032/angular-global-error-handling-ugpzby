@@ -2769,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Nastavení předvoleb",
+        "preferenceSettings": "Nastavení Předvoleb",
         "settings": "Nastavení",
         "settingsDescription": "Na stránce nastavení předvoleb můžete zvolit, zda chcete zapnout/vypnout oznámení o zprávách na základě kategorií zpráv aplikace Vantage. Berte na vědomí, že i když zakážete všechny kategorie zpráv, přesto občas můžete v případě potřeby obdržet z aplikace Vantage kritickou zprávu systému.",
         "messagesInLenovoVantage": "Zprávy v programu Lenovo Vantage",

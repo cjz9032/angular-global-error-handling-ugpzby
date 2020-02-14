@@ -2769,7 +2769,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Postavke željenih opcija",
+        "preferenceSettings": "Postavke Željenih Opcija",
         "settings": "Postavke",
         "settingsDescription": "Na stranici „Postavke željenih opcija“, možete da odaberete da uključite/isključite obaveštenja porukama na osnovu kategorija Vantage poruka. Imajte u vidu da, čak i ako su sve kategorije poruka onemogućene, možete i dalje povremeno dobijati sistemske kritične poruke od aplikacije Vantage kada je to neophodno.",
         "messagesInLenovoVantage": "Poruke u aplikaciji Lenovo Vantage",
