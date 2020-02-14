@@ -72,7 +72,6 @@ export class HardwareScanService {
 		'memory': 'icon_hardware_memory.svg',
 		'motherboard': 'icon_hardware_motherboard.svg',
 		'pci_express': 'icon_hardware_pci-desktop.svg',
-		'pci_express_laptop': 'icon_hardware_pci-laptop.svg',
 		'wireless': 'icon_hardware_wireless.svg',
 		'storage': 'icon_hardware_hdd.svg'
 	};
@@ -180,6 +179,10 @@ export class HardwareScanService {
 
 	public getProgress() {
 		return this.progress;
+	}
+
+	public getIsDesktopMachine() {
+		return this.isDesktopMachine;
 	}
 
 	public getViewResultItems() {
@@ -894,7 +897,12 @@ export class HardwareScanService {
 					item.groupId = group.id;
 					item.listTest = [];
 					item.name = group.name;
-					item.icon = this.getHardwareComponentIcon(item.id)
+					item.icon = item.id;
+					if (!this.isDesktopMachine) {
+						if (item.icon === 'pci_express') {
+							item.icon += "_laptop";
+						}
+					}
 					item.metaInformation = group.metaInformation;
 
 					for (const testSummary of group.testList) {
@@ -1133,7 +1141,12 @@ export class HardwareScanService {
 					item.resultCode = groupResult[i].resultCode;
 					item.information = groupResult[i].resultDescription;
 					item.collapsed = false;
-					item.icon = this.getHardwareComponentIcon(moduleName);
+					item.icon = moduleName;
+					if (!this.isDesktopMachine) {
+						if (item.icon === 'pci_express') {
+							item.icon += "_laptop";
+						}
+					}
 					item.details = [];
 
 					for (let j = 0; j < groupResultMeta.metaInformation.length; j++) {
@@ -1295,11 +1308,6 @@ export class HardwareScanService {
 		const iconsBasePath = '/assets/icons/hardware-scan/';
 
 		if (moduleName in this.iconByModule) {
-			if (!this.isDesktopMachine) {
-				if (moduleName === 'pci_express') {
-					return iconsBasePath + this.iconByModule[moduleName + '_laptop'];
-				}
-			}
 			return iconsBasePath + this.iconByModule[moduleName];
 		}
 
@@ -1315,13 +1323,17 @@ export class HardwareScanService {
 		const result = [];
 
 		for (const module in this.iconByModule) {
-			if (module !== 'pci_express_laptop') {
-				result.push({
-					name: this.translate.instant('hardwareScan.pluginTokens.' + module),
-					subname: '',
-					icon: this.getHardwareComponentIcon(module)
-				});
+			let module_type = module;
+			if (!this.isDesktopMachine) {
+				if (module === 'pci_express') {
+					module_type = module + "_laptop";
+				}
 			}
+			result.push({
+				name: this.translate.instant('hardwareScan.pluginTokens.' + module),
+				subname: '',
+				icon: module_type
+			});
 		}
 
 		return result;
