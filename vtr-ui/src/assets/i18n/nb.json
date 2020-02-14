@@ -646,7 +646,9 @@
             "notRegistered": "IKKE REGISTRERT",
             "fingerPrint": "Fingeravtrykk",
             "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
@@ -905,7 +907,7 @@
                     "Good": "<b>Batteriet er i god stand.</b>",
                     "Exhaustion": "Batterikapasiteten er <b>redusert</b>. Bytt det ut med et nytt.",
                     "Bad": "<b>Det har oppstått en batterifeil.</b> Batteriet kan ikke lades/utlades. Bytt batteri.",
-                    "NotDetected": "<b>Kan ikke gjenkjenne batteri, eller</b> batteri ikke satt i.",
+                    "NotDetected": "<b>Batteri ikke oppdaget.</b>",
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
                     "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
@@ -2335,8 +2337,8 @@
     },
     "lenovoId": {
         "login": "Logg på",
-		"logout": "Logg av",
-		"loggingOut": "Logging out...",
+        "logout": "Logg av",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Få eksklusive tilbud",
         "user": "Bruker",
         "welcomeText1": "Ser frisk ut i dag, {{firstName}}!",

@@ -646,7 +646,9 @@
             "notRegistered": "未註冊",
             "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -905,7 +907,7 @@
                     "Good": "<b>電池狀況良好。</b>",
                     "Exhaustion": "電池容量已<b>降低</b>。請更換新的電池。",
                     "Bad": "<b>發生電池錯誤。</b>電池無法充電/放電。更換電池。",
-                    "NotDetected": "<b>未偵測到電池或未</b>插入電池。",
+                    "NotDetected": "<b>未偵測到電池。</b>",
                     "NotGood": "<b>電池狀況不佳。</b>",
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
@@ -2335,8 +2337,8 @@
     },
     "lenovoId": {
         "login": "登入",
-		"logout": "登出",
-		"loggingOut": "正在登出...",
+        "logout": "登出",
+        "loggingOut": "正在登出...",
         "unlockExclusives": "解除鎖定獨家功能",
         "user": "使用者",
         "welcomeText1": "{{firstName}}，今天看起來充滿活力！",

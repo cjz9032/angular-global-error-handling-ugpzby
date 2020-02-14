@@ -646,7 +646,9 @@
             "notRegistered": "NON REGISTRATO",
             "fingerPrint": "Impronta digitale",
             "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Domande e risposte per la tua macchina",
@@ -905,7 +907,7 @@
                     "Good": "<b>La batteria è in buone condizioni.</b>",
                     "Exhaustion": "La capacità della batteria è stata <b>danneggiata</b>. Sostituire la batteria.",
                     "Bad": "<b>Si è verificato un errore della batteria.</b> La batteria non può essere caricata/scaricata. Sostituire la batteria.",
-                    "NotDetected": "<b>Nessuna batteria rilevata o</b> collegata.",
+                    "NotDetected": "<b>Nessuna batteria rilevata.</b>",
                     "NotGood": "<b>La batteria non è in buone condizioni.</b>",
                     "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b>",
                     "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente.</b>",
@@ -2335,8 +2337,8 @@
     },
     "lenovoId": {
         "login": "Accesso",
-		"logout": "Disconnessione",
-		"loggingOut": "Logging out...",
+        "logout": "Disconnessione",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Sblocca offerte esclusive",
         "user": "Utente",
         "welcomeText1": "Oggi il dispositivo è in ottime condizioni, {{firstName}}!",

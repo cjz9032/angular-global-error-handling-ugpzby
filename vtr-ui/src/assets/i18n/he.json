@@ -646,7 +646,9 @@
             "notRegistered": "לא רשום",
             "fingerPrint": "טביעת אצבע",
             "privacyPolicyAndTermsOfService": "<tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Q & A עבור המחשב שלך",
@@ -905,7 +907,7 @@
                     "Good": "<b>הסוללה במצב תקין.</b>",
                     "Exhaustion": "קיבולת הסוללה <b>נפגעה</b>. יש להחליף לסוללה חדשה.",
                     "Bad": "<b>אירעה שגיאת סוללה.</b> לא ניתן לטעון/לפרוק את הסוללה. החליפו את הסוללה.",
-                    "NotDetected": "<b>לא אותרה סוללה או שהיא</b> אינה מחוברת.",
+                    "NotDetected": "<b>לא זוהתה סוללה.</b>",
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b></span>",
                     "LimitedACAdapterSupport": "<b>מתאם AC לא יכול לספק מספיק חשמל.</b>",
@@ -2335,8 +2337,8 @@
     },
     "lenovoId": {
         "login": "כניסה",
-		"logout": "יציאה",
-		"loggingOut": "Logging out...",
+        "logout": "יציאה",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "פתחו את ה\"בלעדיים\"",
         "user": "משתמש",
         "welcomeText1": "אתה נראה רענן היום, {{firstName}}!",

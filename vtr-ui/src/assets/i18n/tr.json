@@ -646,7 +646,9 @@
             "notRegistered": "KAYITLI DEĞİL",
             "fingerPrint": "Parmak izi",
             "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Makineniz için Q & A",
@@ -905,7 +907,7 @@
                     "Good": "<b>Pil iyi durumda.</b>",
                     "Exhaustion": "Pil kapasitesi <b>düştü</b>. Lütfen yenisiyle değiştirin.",
                     "Bad": "<b>Bir pil hatası oluştu.</b> Pil doldurulamıyor/boşaltılamıyor. Pili değiştirin.",
-                    "NotDetected": "<b>Pil algılanmadı veya</b> pile takılı değil.",
+                    "NotDetected": "<b>Pil algılanmadı.</b>",
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b>",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı yeterli güç sağlayamıyor.</b>",
@@ -2335,8 +2337,8 @@
     },
     "lenovoId": {
         "login": "Oturum Aç",
-		"logout": "Oturumu kapat",
-		"loggingOut": "Logging out...",
+        "logout": "Oturumu kapat",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Özellerin Kilidini Aç",
         "user": "Kullanıcı",
         "welcomeText1": "Bugün çok dinç görünüyorsun, {{firstName}}!",

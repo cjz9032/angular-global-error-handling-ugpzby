@@ -646,7 +646,9 @@
             "notRegistered": "NICHT REGISTRIERT",
             "fingerPrint": "Fingerabdruck",
             "privacyPolicyAndTermsOfService": "<tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Q & A für Ihre Maschine",
@@ -905,7 +907,7 @@
                     "Good": "<b>Der Akku befindet sich in einem guten Zustand.</b>",
                     "Exhaustion": "Die Ladekapazität des Akkus ist <b>vermindert</b>. Setzen Sie einen neuen Akku ein.",
                     "Bad": "<b>Ein Akkufehler ist aufgetreten.</b> Der Akku kann nicht aufgeladen/entladen werden. Tauschen Sie den Akku aus.",
-                    "NotDetected": "<b>Kein Akku erkannt</b> oder nicht ordnungsgemäß eingesetzter Akku.",
+                    "NotDetected": "<b>Kein Akku erkannt.</b>",
                     "NotGood": "<b>Der Akku befindet sich nicht in einem guten Zustand.</b>",
                     "NotSupportACAdapter": "<b>Netzteil wird nicht unterstützt.</b>",
                     "LimitedACAdapterSupport": "<b>Netzteil kann nicht genügend Strom liefern.</b>",
@@ -2335,8 +2337,8 @@
     },
     "lenovoId": {
         "login": "Anmeldung",
-		"logout": "Abmelden",
-		"loggingOut": "Logging out...",
+        "logout": "Abmelden",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Exklusivinhalte freischalten",
         "user": "Benutzer",
         "welcomeText1": "Sie sehen heute energiegeladen aus, {{firstName}}!",

@@ -646,7 +646,9 @@
             "notRegistered": "NIJE REGISTROVAN",
             "fingerPrint": "Fingerprint",
             "privacyPolicyAndTermsOfService": "<tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -905,7 +907,7 @@
                     "Good": "<b>Baterija je u dobrom stanju.</b>",
                     "Exhaustion": "Kapacitet baterije je <b>smanjen</b>. Zamenite je novom.",
                     "Bad": "<b>Došlo je do greške sa baterijom.</b> Nije moguće napuniti/isprazniti bateriju. Zamenite bateriju.",
-                    "NotDetected": "<b>Baterija nije otkrivena ili nije</b> priključena.",
+                    "NotDetected": "<b>Nije otkrivena baterija.</b>",
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Adapter za naizmeničnu struju nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje.</b>",
@@ -2335,8 +2337,8 @@
     },
     "lenovoId": {
         "login": "Prijava",
-		"logout": "Odjava",
-		"loggingOut": "Logging out...",
+        "logout": "Odjava",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Otključaj ekskluzivnosti",
         "user": "Korisnik",
         "welcomeText1": "Danas izgledate puni energije, {{firstName}}!",

@@ -646,7 +646,9 @@
             "notRegistered": "EI REKISTERÖITY",
             "fingerPrint": "Sormenjälki",
             "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -905,7 +907,7 @@
                     "Good": "<b>Akun toimintakunto on hyvä.</b>",
                     "Exhaustion": "Akun kapasiteetti on <b>heikentynyt</b>. Vaihda uusi.",
                     "Bad": "<b>On tapahtunut akkuvirhe.</b> Akkua ei voi ladata tai sen varausta purkaa. Vaihda akku.",
-                    "NotDetected": "<b>Akkua ei havaittu, tai sitä ei</b> ole liitetty.",
+                    "NotDetected": "<b>Akkua ei havaittu.</b>",
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",
@@ -2335,8 +2337,8 @@
     },
     "lenovoId": {
         "login": "Sisäänkirjaus",
-		"logout": "Kirjaudu ulos",
-		"loggingOut": "Logging out...",
+        "logout": "Kirjaudu ulos",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Ota käyttöön erikoissisältöä",
         "user": "Käyttäjä",
         "welcomeText1": "Näytät energiseltä tänään, {{firstName}}!",

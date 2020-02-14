@@ -646,7 +646,9 @@
             "notRegistered": "NENÍ REGISTROVÁNO",
             "fingerPrint": "Otisk prstu",
             "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Otázky a odpovědi pro váš stroj",
@@ -905,7 +907,7 @@
                     "Good": "<b>Stav baterie je dobrý.</b>",
                     "Exhaustion": "Kapacita baterie <b>degradovala</b>. Vyměňte ji za novou.",
                     "Bad": "<b>Došlo k chybě baterie.</b> Baterii nelze nabít/vybít. Vyměňte ji.",
-                    "NotDetected": "<b>Nebyla zjištěna žádná baterie</b> nebo baterie není připojena.",
+                    "NotDetected": "<b>Nebyla zjištěna žádná baterie.</b>",
                     "NotGood": "<b>Stav baterie není dobrý.</b>",
                     "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b>",
                     "LimitedACAdapterSupport": "<b>Síťový adaptér nemůže poskytnout dostatek energie.</b>",
@@ -2335,8 +2337,8 @@
     },
     "lenovoId": {
         "login": "Přihlášení",
-		"logout": "Odhlásit",
-		"loggingOut": "Logging out...",
+        "logout": "Odhlásit",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Odemknout exkluzivní obsah",
         "user": "Uživatel",
         "welcomeText1": "Vypadáte dnes aktivně, {{firstName}}!",

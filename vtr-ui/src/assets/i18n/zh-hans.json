@@ -646,7 +646,9 @@
             "notRegistered": "未注册",
             "fingerPrint": "指纹",
             "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -906,7 +908,7 @@
                     "Good": "<b>电池状况良好。</b>",
                     "Exhaustion": "电池容量已<b>降低</b>。请更换一个新电池。",
                     "Bad": "<b>出现电池错误。</b>电池无法充电/放电。更换电池。",
-                    "NotDetected": "<b>未检测到电池或未</b>插入电池。",
+                    "NotDetected": "<b>未检测到电池。</b>",
                     "NotGood": "<b>电池状况不佳。</b>",
                     "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
                     "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
@@ -2335,8 +2337,8 @@
     },
     "lenovoId": {
         "login": "登录",
-		"logout": "注销",
-		"loggingOut": "正在注销...",
+        "logout": "注销",
+        "loggingOut": "正在注销...",
         "unlockExclusives": "解锁专享功能",
         "user": "用户",
         "welcomeText1": "今天也是活力满满的一天，{{firstName}}！",
