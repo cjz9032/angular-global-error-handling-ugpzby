@@ -158,145 +158,87 @@
 	.col-check-use-state{
 		margin: auto;
 	}
-	.card-body {
-		@media #{$breakpoint_sm} {
-			padding: 1rem
+
+	.cardBody {
+		border: 0.1rem solid $shade_lighter;
+		border-radius: $border_radius;
+		background: $light;
+
+		.status-icon {
+			position: relative;
+			padding-right: 1rem;
+			span {
+				height: 1.5rem;
+				width: 1.5rem;
+				font-size: 2rem;
+			}
+
+			fa-icon {
+				color: $main;
+			}
+
+			.circle {
+				background-color: $green_darker;
+				background-image: linear-gradient(135deg, $green_darker 25%, $green-light 100%);
+				// height: 1.5em;
+				width: 1.5rem;
+				border-radius: 2rem;
+				border: 0.1rem solid $green_darker;
+				line-height: 0.9rem;
+				display: inline-block;
+				position: absolute;
+				top: 1.3rem;
+				left: 1.3rem;
+				flex-basis: auto;
+
+				fa-icon {
+					font-size: 1rem;
+					color: $shade_extralight;
+					position: absolute;
+					left: 0.2rem;
+					top: 0.2rem;
+				}
+
+				&.red {
+					background-color: $button_red_start;
+					background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
+					border: 0.1rem solid $button_red_start;
+					fa-icon {
+						left: 0.4rem;
+						top: 0.2rem;
+					}
+				}
+			}
 		}
-		.content {
-			padding: 0.5rem;
-			@media #{$breakpoint_sm} {
-				padding: 0;
+
+		.connection-name {
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			h5 {
+				font-size: 1.4rem;
+				font-weight: $weight_bold;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 			}
 
-			.cardTitle {
-				display: flex;
-
-				h3 {
-					font-size: 2rem;
-					font-weight: 350;
-				}
-
-				.collapse-control {
-					margin-top: -0.4rem;
-					display: inline-block;
-					max-width: 70%;
-					margin-left: 1rem;
-					.collapse-text {
-						display: inline-block;
-						color: $main;
-						font-size: 1.4rem;
-						vertical-align: middle;
-						text-decoration: underline;
-						font-weight: 500;
-					}
-
-					fa-icon {
-						font-size: 2.4rem;
-						color: $main;
-						vertical-align: middle;
-						cursor: pointer;
-						padding-left: 0.8rem !important;
-					}
-					button{
-						overflow: hidden;
-						text-overflow: ellipsis;
-						white-space: nowrap;
-					}
-				}
-
-				.status {
-					font-size: 2rem;
-					margin-left: 3rem;
-					margin-top: 0.8rem;
-
-					.active {
-						text-decoration: underline;
-					}
-				}
+			.connection-status {
+				font-size: 1.4rem;
 			}
-
-			.cardBody {
-				border: 0.1rem solid $shade_lighter;
-				border-radius: $border_radius;
-				background: $light;
-
-				.status-icon {
-					position: relative;
-					padding-right: 1rem;
-					span {
-						height: 1.5rem;
-						width: 1.5rem;
-						font-size: 2rem;
-					}
-
-					fa-icon {
-						color: $main;
-					}
-
-					.circle {
-						background-color: $green_darker;
-						background-image: linear-gradient(135deg, $green_darker 25%, $green-light 100%);
-						// height: 1.5em;
-						width: 1.5rem;
-						border-radius: 2rem;
-						border: 0.1rem solid $green_darker;
-						line-height: 0.9rem;
-						display: inline-block;
-						position: absolute;
-						top: 1.3rem;
-						left: 1.3rem;
-						flex-basis: auto;
-
-						fa-icon {
-							font-size: 1rem;
-							color: $shade_extralight;
-							position: absolute;
-							left: 0.2rem;
-							top: 0.2rem;
-						}
-
-						&.red {
-							background-color: $button_red_start;
-							background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
-							border: 0.1rem solid $button_red_start;
-							fa-icon {
-								left: 0.4rem;
-								top: 0.2rem;
-							}
-						}
-					}
-				}
-
-				.connection-name {
-					overflow: hidden;
-					text-overflow: ellipsis;
-
-					h5 {
-						font-size: 1.4rem;
-						font-weight: $weight_bold;
-						overflow: hidden;
-						text-overflow: ellipsis;
-						white-space: nowrap;
-					}
-
-					.connection-status {
-						font-size: 1.4rem;
-					}
-					small {
-						font-weight: $weight_light;
-						display: block;
-					}
-				}
+			small {
+				font-weight: $weight_light;
+				display: block;
 			}
+		}
+	}
 
-			.card-foot {
-				margin-top: 2.2rem;
+	.card-foot {
+		margin-top: 2.2rem;
 
-				.show-more {
-					font-size: 1.6rem;
-					text-decoration: underline;
-				}
-			}
+		.show-more {
+			font-size: 1.6rem;
+			text-decoration: underline;
 		}
 	}
 
@@ -354,6 +296,32 @@
 			border: 0.1rem solid $shade_lighter;
 			border-bottom-left-radius: $border_radius;
 			border-bottom-right-radius: $border_radius;
+			::ng-deep .vtr-container-collapsible.white-theme {
+				box-shadow: none !important;
+				background: none !important;
+				.card-header {
+					border: none !important;
+					.header {
+						font-size: 2rem;
+						font-weight: $weight_light;
+						color: inherit !important;
+						padding-top: 0.5rem !important;
+						padding-bottom: 0.5rem !important;
+					}
+					.collapse-control {
+						.collapse-text {
+							color: $blueHyperLink !important;
+							font-weight: $weight_medium;
+							&:hover {
+								color: $blueHyperLink !important;
+							}
+						}
+					}
+				}
+				.card-body {
+					padding-top: 0 !important;
+				}
+			}
 		}
 
 		.border-top-none {

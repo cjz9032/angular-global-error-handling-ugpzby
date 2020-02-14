@@ -67,111 +67,64 @@
 						</div>
 					</div>
 					<div *ngIf="data.isLWSEnabled" class="card-history">
-						<div class="card-body">
-							<div class="content">
-								<div class="cardTitle d-flex justify-content-between">
-									<h3>{{'security.wifisecurity.container.networkHistory' | translate}}</h3>
-									<div class="collapse-control"
-										id="sa-ws-lnk-collapsecontrol"
-										role="button"
-										(click)="$event.preventDefault();"
-										[hidden]="!data.isLWSEnabled">
-										<div class="d-flex"
-											vtrMetrics
-											metricsItem="collapseWiFiHistory"
-											metricsEvent="featureClick"
-											data-toggle="collapse"
-											data-target="#wifi-collapse"
-											aria-label="sa-ws-btn-lessinfo"
-											aria-expanded="false"
-											aria-controls="wifi-collapse"
-											*ngIf="isShowMore===false"
-											(click)="isShowMore=true">
-											<button id="sa-ws-btn-lessinfo"
-												class="btn btn-link collapse-text p-0"
-												type="button"
-												title="{{'common.ui.expand' | translate}}">
-												{{'common.ui.expand' | translate}} </button>
-											<fa-icon [icon]="['fas', 'chevron-down']"
-												class="pl-3">
-											</fa-icon>
-										</div>
-										<div class="d-flex"
-											vtrMetrics
-											metricsItem="expandWiFiHistory"
-											metricsEvent="featureClick"
-											data-toggle="collapse"
-											data-target="#wifi-collapse"
-											aria-label="sa-ws-btn-moreinfo"
-											aria-expanded="false"
-											aria-controls="wifi-collapse"
-											*ngIf="isShowMore===true"
-											(click)="isShowMore=false">
-											<button id="sa-ws-btn-moreinfo"
-												class="btn btn-link collapse-text p-0"
-												type="button"
-												title="{{'common.ui.collapse' | translate}}">
-												{{'common.ui.collapse' | translate}} </button>
-											<fa-icon [icon]="['fas', 'chevron-up']"
-												class="pl-3">
-											</fa-icon>
-										</div>
-									</div>
-								</div>
-								<div class="border-top-none show" id="wifi-collapse"
-									*ngIf="data.isLWSEnabled && isShowMore===true">
-									<div class="cardBody border-top-none show">
-										<div class="row no-gutters wifi-card">
-											<div *ngFor="let history of data.histories"
-												class="col-sm-12 col-md-6 col-lg-12 col-xl-6 pr-3 wifi">
-												<div class="media pt-3 border-0">
-													<div class="status-icon pr-3 pl-3">
-														<span class="fa-stack fa-3x">
-															<fa-icon [icon]="['fal', 'wifi']"
-																class="menu-pointer"></fa-icon>
-															<span class="circle"
-																[ngClass]="{'green':history.good == 0,'red':history.good != 0}">
-																<fa-icon [icon]="['fas', 'check']"
-																	*ngIf="history.good == 0"></fa-icon>
-																<fa-icon [icon]="['fas', 'times']"
-																	*ngIf="history.good != 0"></fa-icon>
-															</span>
+						<vtr-container-collapsible
+							[collapseLinkId]="'wifi-history'"
+							[cardTitle]="'security.wifisecurity.container.networkHistory' | translate"
+							componentName="wifiHistoriesCollapsible"
+							[isCollapsed]="!isShowMore"
+							[allowCollapse]="true">
+							<div class="border-top-none show">
+								<div class="cardBody show">
+									<div class="row no-gutters wifi-card">
+										<div *ngFor="let history of data.histories"
+											class="col-sm-12 col-md-6 col-lg-12 col-xl-6 pr-3 wifi">
+											<div class="media pt-3 border-0">
+												<div class="status-icon pr-3 pl-3">
+													<span class="fa-stack fa-3x">
+														<fa-icon [icon]="['fal', 'wifi']"
+															class="menu-pointer"></fa-icon>
+														<span class="circle"
+															[ngClass]="{'green':history.good == 0,'red':history.good != 0}">
+															<fa-icon [icon]="['fas', 'check']"
+																*ngIf="history.good == 0"></fa-icon>
+															<fa-icon [icon]="['fas', 'times']"
+																*ngIf="history.good != 0"></fa-icon>
 														</span>
-													</div>
-													<div class="connection-name media-body border-0 pl-3">
-														<h5 class="mt-0"
-															title="{{history.ssid}}">{{history.ssid}}</h5>
-														<small class="connection-status text-muted">
-															{{'security.wifisecurity.container.connect' | translate}}
-															{{history.info}}
-														</small>
-													</div>
+													</span>
+												</div>
+												<div class="connection-name media-body border-0 pl-3">
+													<h5 class="mt-0"
+														title="{{history.ssid}}">{{history.ssid}}</h5>
+													<small class="connection-status text-muted">
+														{{'security.wifisecurity.container.connect' | translate}}
+														{{history.info}}
+													</small>
 												</div>
 											</div>
 										</div>
 									</div>
-									<div class="card-foot"
-										*ngIf="data.hasMore">
-										<a id="sa-ws-lnk-wh-showmore"
-											vtrMetrics
-											metricsItem="showMoreWiFiHistory"
-											metricsEvent="featureClick"
-											class="show-more"
-											href="#"
-											(click)="clickShowMore()"
-											*ngIf="isShowMoreLink">{{'security.wifisecurity.container.showmore' | translate}}</a>
-										<a id="sa-ws-lnk-wh-showless"
-											vtrMetrics
-											metricsItem="showLessWiFiHistory"
-											metricsEvent="featureClick"
-											class="show-more"
-											href="#"
-											(click)="clickShowMore()"
-											*ngIf="!isShowMoreLink">{{'security.wifisecurity.container.showless'| translate}}</a>
-									</div>
+								</div>
+								<div class="card-foot"
+									*ngIf="data.hasMore">
+									<a id="sa-ws-lnk-wh-showmore"
+										vtrMetrics
+										metricsItem="showMoreWiFiHistory"
+										metricsEvent="featureClick"
+										class="show-more"
+										href="#"
+										(click)="clickShowMore()"
+										*ngIf="isShowMoreLink">{{'security.wifisecurity.container.showmore' | translate}}</a>
+									<a id="sa-ws-lnk-wh-showless"
+										vtrMetrics
+										metricsItem="showLessWiFiHistory"
+										metricsEvent="featureClick"
+										class="show-more"
+										href="#"
+										(click)="clickShowMore()"
+										*ngIf="!isShowMoreLink">{{'security.wifisecurity.container.showless'| translate}}</a>
 								</div>
 							</div>
-						</div>
+						</vtr-container-collapsible>
 					</div>
 				</div>
 			</div>

@@ -1,4 +1,4 @@
-@import '../../../app.theme.scss'; 
+@import '../../../app.theme.scss';
 
 .vtr-widget-qa {
     border-radius: $border_radius;
@@ -38,6 +38,18 @@
 		&:first-child {
 			border-top: none;
 		}
+		a {
+			display: list-item;
+			color: inherit;
+			&:hover {
+				color: inherit;
+				text-decoration: none;
+			}
+			&:focus {
+				text-decoration: none;
+				overflow: inherit;
+			}
+		}
 	}
 
 	.item-title {
@@ -56,7 +68,7 @@
         text-align: center;
         cursor: pointer;
     }
-    
+
     .chevron-icon {
 		color: #4A81FD;
 		max-width: 2.2rem;
