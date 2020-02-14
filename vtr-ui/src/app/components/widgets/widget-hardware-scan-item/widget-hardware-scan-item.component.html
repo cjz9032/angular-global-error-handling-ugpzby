@@ -4,13 +4,14 @@
 			<div class="row module-information">
 				<div class="module-icon" *ngIf="item.icon !== undefined">
 					<div class="test-status" [ngSwitch]="item.icon">
-						<img class="img-icon" *ngSwitchCase="'cpu'" [src]="'/assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
-						<img class="img-icon" *ngSwitchCase="'memory'" [src]=" '/assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
-						<img class="img-icon" *ngSwitchCase="'motherboard'" [src]=" '/assets/icons/hardware-scan/icon_hardware_motherboard.svg' | svgInline | async" />
-						<img class="img-icon" *ngSwitchCase="'pci_express'" [src]=" '/assets/icons/hardware-scan/icon_hardware_pci-desktop.svg' | svgInline | async" />
-						<img class="img-icon" *ngSwitchCase="'pci_express_laptop'" [src]=" '/assets/icons/hardware-scan/icon_hardware_pci-laptop.svg' | svgInline | async" />
-						<img class="img-icon" *ngSwitchCase="'wireless'" [src]=" '/assets/icons/hardware-scan/icon_hardware_wireless.svg' | svgInline | async" />
-						<img class="img-icon" *ngSwitchCase="'storage'" [src]=" '/assets/icons/hardware-scan/icon_hardware_hdd.svg' | svgInline | async" />
+						<img class="qr-img" *ngSwitchCase="'cpu'" [src]="'/assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
+						<img class="qr-img" *ngSwitchCase="'memory'" [src]=" '/assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
+						<img class="qr-img" *ngSwitchCase="'motherboard'" [src]=" '/assets/icons/hardware-scan/icon_hardware_motherboard.svg' | svgInline | async" />
+						<img class="qr-img" *ngSwitchCase="'pci_express'" [src]=" '/assets/icons/hardware-scan/icon_hardware_pci-desktop.svg' | svgInline | async" />
+						<img class="qr-img" *ngSwitchCase="'pci_express_laptop'" [src]=" '/assets/icons/hardware-scan/icon_hardware_pci-laptop.svg' | svgInline | async" />
+						<img class="qr-img" *ngSwitchCase="'wireless'" [src]=" '/assets/icons/hardware-scan/icon_hardware_wireless.svg' | svgInline | async" />
+						<img class="qr-img" *ngSwitchCase="'storage'" [src]=" '/assets/icons/hardware-scan/icon_hardware_hdd.svg' | svgInline | async" />
+						<img class="qr-img" *ngSwitchDefault [src]=" '/assets/icons/hardware-scan/icon_hardware_hdd.svg' | svgInline | async" />
 					</div>
 				</div>
 				<div class="title">
