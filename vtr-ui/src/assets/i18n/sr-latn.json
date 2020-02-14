@@ -2958,7 +2958,8 @@
             "storage": "Skladištenje",
             "wireless": "Bežični"
         },
-        "warningMessage": "Imajte na umu da će testovi biti otkazani ako sistem bude u stanju spavanja ili hibernacije"
+        "warningMessage": "Imajte na umu da će testovi biti otkazani ako sistem bude u stanju spavanja ili hibernacije",
+        "refreshMessage": "Osvežavanje može da potraje jer treba da se ponovo učitaju sve komponente"
     },
     "smartPerformance": {
         "title": "Health & Support",

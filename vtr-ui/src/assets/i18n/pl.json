@@ -2958,7 +2958,8 @@
             "storage": "Pamięć masowa",
             "wireless": "Bezprzewodowe"
         },
-        "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji"
+        "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji",
+        "refreshMessage": "Odświeżanie może zająć trochę czasu, ponieważ wymaga ponownego załadowania wszystkich komponentów"
     },
     "smartPerformance": {
         "title": "Health & Support",

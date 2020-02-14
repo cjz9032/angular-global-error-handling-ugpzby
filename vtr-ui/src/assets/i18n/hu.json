@@ -2958,7 +2958,8 @@
             "storage": "Tárolás",
             "wireless": "Vezeték nélküli"
         },
-        "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül"
+        "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül",
+        "refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie"
     },
     "smartPerformance": {
         "title": "Health & Support",

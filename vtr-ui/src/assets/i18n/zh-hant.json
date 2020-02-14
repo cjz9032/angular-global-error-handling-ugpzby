@@ -2958,7 +2958,8 @@
             "storage": "儲存裝置",
             "wireless": "無線"
         },
-        "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試"
+        "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試",
+        "refreshMessage": "重新整理可能需要一些時間，因為此時需要再度載入所有元件"
     },
     "smartPerformance": {
         "title": "Health & Support",

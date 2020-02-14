@@ -2958,7 +2958,8 @@
             "storage": "Armazenamento",
             "wireless": "Wireless"
         },
-        "warningMessage": "Lembre-se de que os testes serão cancelados se o sistema entrar em suspensão ou hibernar"
+        "warningMessage": "Lembre-se de que os testes serão cancelados se o sistema entrar em suspensão ou hibernar",
+        "refreshMessage": "A atualização pode levar algum tempo, pois precisa carregar todos os componentes novamente"
     },
     "smartPerformance": {
         "title": "Health & Support",

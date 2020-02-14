@@ -2958,7 +2958,8 @@
             "storage": "Lager",
             "wireless": "Trådløs"
         },
-        "warningMessage": "Husk, at testene bliver annulleret, hvis systemet slumrer eller går i dvaletilstand"
+        "warningMessage": "Husk, at testene bliver annulleret, hvis systemet slumrer eller går i dvaletilstand",
+        "refreshMessage": "Opdateringen kan tage noget tid, da den skal indlæse alle komponenterne igen"
     },
     "smartPerformance": {
         "title": "Health & Support",

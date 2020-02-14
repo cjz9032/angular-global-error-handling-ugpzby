@@ -1359,8 +1359,8 @@
                             "alwaysOn": "Always on",
                             "never": "Never",
                             "halfTime": "Half time of display off timer",
-                            "select" : "Select",
-                            "time" : "Time"
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "TASKBAR DIMMER",
                         "backgroundDimmer": "BACKGROUND DIMMER",
@@ -1386,7 +1386,7 @@
                         "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
                         "labelText": "Enable this feature when typing passwords"
                     },
-                    "displayPriority":{
+                    "displayPriority": {
                         "title": "Display Priority Control",
                         "description":"Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
                         "options":{
@@ -1599,7 +1599,6 @@
                             "key11": "Ctrl + X",
                             "key12": "Ctrl + Y",
                             "key13": "Ctrl + Z"
-
                         },
                         "action": {
                             "heading": "Action",
@@ -3297,7 +3296,8 @@
             "storage": "Storage",
             "wireless": "Wireless"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates",
+        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
     },
     "notification": {
         "menu": {

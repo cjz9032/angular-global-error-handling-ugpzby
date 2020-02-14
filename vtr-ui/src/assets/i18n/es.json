@@ -2958,7 +2958,8 @@
             "storage": "Almacenamiento",
             "wireless": "Inalámbrica"
         },
-        "warningMessage": "Tenga en cuenta que las pruebas se cancelarán si el sistema entra en suspensión o hibernación"
+        "warningMessage": "Tenga en cuenta que las pruebas se cancelarán si el sistema entra en suspensión o hibernación",
+        "refreshMessage": "La actualización puede tomar algo de tiempo, ya que necesita volver a cargar todos los componentes"
     },
     "smartPerformance": {
         "title": "Health & Support",
