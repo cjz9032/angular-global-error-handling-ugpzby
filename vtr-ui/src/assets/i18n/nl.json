@@ -778,7 +778,9 @@
             "notRegistered": "NIET GEREGISTREERD",
             "fingerPrint": "Vingerafdruk",
             "privacyPolicyAndTermsOfService": "<tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "V & A voor uw machine",
@@ -1037,7 +1039,7 @@
                     "Good": "<b>De batterij is in goede staat.</b>",
                     "Exhaustion": "De capaciteit van de batterij is <b>verminderd</b>. Vervang deze door een nieuwe.",
                     "Bad": "<b>Er is een batterijfout opgetreden.</b> De batterij kan niet worden opgeladen/ontladen. Vervang de batterij.",
-                    "NotDetected": "<b>Er is geen batterij aangetroffen of</b> aangesloten.",
+                    "NotDetected": "<b>Geen batterij gedetecteerd.</b>",
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
                     "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b>",
                     "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan niet voldoende stroom leveren.</b>",
@@ -2467,8 +2469,8 @@
     },
     "lenovoId": {
         "login": "Aanmelden",
-		"logout": "Afmelden",
-		"loggingOut": "Logging out...",
+        "logout": "Afmelden",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Krijg toegang tot exclusieve aanbiedingen",
         "user": "Gebruiker",
         "welcomeText1": "Uw ziet er energiek uit vandaag, {{firstName}}!",

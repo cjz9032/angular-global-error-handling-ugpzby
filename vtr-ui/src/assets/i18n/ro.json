@@ -778,7 +778,9 @@
             "notRegistered": "NEÎNREGISTRAT",
             "fingerPrint": "Amprentă digitală",
             "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -1037,7 +1039,7 @@
                     "Good": "<b>Bateria este în stare bună.</b>",
                     "Exhaustion": "Capacitatea bateriei s-a <b>degradat</b>. Înlocuiţi-o cu una nouă.",
                     "Bad": "<b>A apărut o eroare la baterie.</b> Bateria nu poate fi încărcată/descărcată. Înlocuiţi bateria.",
-                    "NotDetected": "<b>Nu a fost detectată nicio baterie sau bateria nu</b> este conectată.",
+                    "NotDetected": "<b>Nu a fost detectată nicio baterie.</b>",
                     "NotGood": "<b>Bateria nu este în stare bună.</b>",
                     "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b>",
                     "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă putere.</b>",
@@ -2467,8 +2469,8 @@
     },
     "lenovoId": {
         "login": "Conectare",
-		"logout": "Deconectare",
-		"loggingOut": "Logging out...",
+        "logout": "Deconectare",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Deblocare Exclusive",
         "user": "Utilizator",
         "welcomeText1": "Păreți plin de energie astăzi, {{firstName}}!",

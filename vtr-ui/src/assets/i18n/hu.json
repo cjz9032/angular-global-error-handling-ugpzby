@@ -778,7 +778,9 @@
             "notRegistered": "NEM REGISZTRÁLT",
             "fingerPrint": "Ujjlenyomat",
             "privacyPolicyAndTermsOfService": "<tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Kérdések és válaszok a gépedhez",
@@ -1037,7 +1039,7 @@
                     "Good": "<b>Az akkumulátor jó állapotban van.</b>",
                     "Exhaustion": "Az akkumulátor kapacitása <b>tartósan csökkent</b>. Kérjük, cserélje ki egy újra.",
                     "Bad": "<b>Hiba történt az akkumulátorral.</b> Az akkumulátor nem tölthető/meríthető le. Cserélje ki az akkumulátort.",
-                    "NotDetected": "<b>Nem található akkumulátor, vagy</b> az akkumulátor nincs megfelelően behelyezve.",
+                    "NotDetected": "<b>A rendszer nem észlel akkumulátort.</b>",
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
@@ -2467,8 +2469,8 @@
     },
     "lenovoId": {
         "login": "Bejelentkezés",
-		"logout": "Kijelentkezés",
-		"loggingOut": "Logging out...",
+        "logout": "Kijelentkezés",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Exkluzív ajánlatok",
         "user": "Felhasználó",
         "welcomeText1": "Ma energikusnak látszik, {{firstName}}!",

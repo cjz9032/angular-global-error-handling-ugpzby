@@ -778,7 +778,9 @@
             "notRegistered": "ΔΕΝ ΔΗΛΩΘΗΚΕ",
             "fingerPrint": "Δακτυλικό αποτύπωμα",
             "privacyPolicyAndTermsOfService": "<tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Ε & Α για το μηχάνημά σας",
@@ -1037,7 +1039,7 @@
                     "Good": "<b>Η μπαταρία είναι σε καλή κατάσταση.</b>",
                     "Exhaustion": "Η χωρητικότητα της μπαταρίας έχει <b>υποβαθμιστεί</b>. Τοποθετήστε νέα μπαταρία.",
                     "Bad": "<b>Παρουσιάστηκε σφάλμα μπαταρίας.</b> Δεν είναι δυνατή η φόρτιση/αποφόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
-                    "NotDetected": "<b>Δεν εντοπίστηκε μπαταρία ή δεν</b> έχει συνδεθεί μπαταρία.",
+                    "NotDetected": "<b>Δεν ανιχνεύτηκε μπαταρία.</b>",
                     "NotGood": "<b>Η μπαταρία δεν είναι σε καλή κατάσταση.</b>",
                     "NotSupportACAdapter": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b>",
                     "LimitedACAdapterSupport": "<b>Ο μετασχηματιστής AC δεν μπορεί να παρέχει επαρκή ισχύ.</b>",
@@ -2467,8 +2469,8 @@
     },
     "lenovoId": {
         "login": "Σύνδεση",
-		"logout": "Αποσύνδεση",
-		"loggingOut": "Logging out...",
+        "logout": "Αποσύνδεση",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Ξεκλείδωμα αποκλειστικοτήτων",
         "user": "Χρήστης",
         "welcomeText1": "Φαίνεστε γεμάτος/η ενέργεια σήμερα, {{firstName}}!",

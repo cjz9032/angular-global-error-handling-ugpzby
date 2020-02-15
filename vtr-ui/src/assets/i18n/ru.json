@@ -778,7 +778,9 @@
             "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО",
             "fingerPrint": "Oтпечаток пальца",
             "privacyPolicyAndTermsOfService": "<tag>Политикой конфиденциальности</tag> и <tag>Условиями обслуживания</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Q & A для вашей машины",
@@ -1037,7 +1039,7 @@
                     "Good": "<b>Аккумулятор в хорошем состоянии.</b>",
                     "Exhaustion": "Емкость аккумулятора <b>уменьшилась</b>. Замените аккумулятор на новый.",
                     "Bad": "<b>Произошла ошибка аккумулятора.</b> Не удается зарядить/разрядить аккумулятор. Замените аккумулятор.",
-                    "NotDetected": "<b>Аккумулятор не найден</b> или не подключен.",
+                    "NotDetected": "<b>Аккумулятор не найден.</b>",
                     "NotGood": "<b>Аккумулятор не в хорошем состоянии.</b>",
                     "NotSupportACAdapter": "<b>Адаптер электропитания не поддерживается.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер электропитания не может обеспечить достаточное питание.</b>",
@@ -2467,8 +2469,8 @@
     },
     "lenovoId": {
         "login": "Регистрация",
-		"logout": "Выход",
-		"loggingOut": "Logging out...",
+        "logout": "Выход",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Разблокирование эксклюзивного содержимого",
         "user": "Пользователь",
         "welcomeText1": "У вас сегодня бодрый вид, {{firstName}}!",

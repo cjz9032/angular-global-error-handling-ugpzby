@@ -778,7 +778,9 @@
             "notRegistered": "NÃO REGISTADO",
             "fingerPrint": "Impressão digital",
             "privacyPolicyAndTermsOfService": "<tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Q & A para sua máquina",
@@ -1037,7 +1039,7 @@
                     "Good": "<b>A bateria está em boas condições.</b>",
                     "Exhaustion": "A capacidade da bateria <b>degradou-se</b>. Substitua por uma nova.",
                     "Bad": "<b>Ocorreu um erro de bateria.</b> Não é possível carregar/descarregar a bateria. Substitua a bateria.",
-                    "NotDetected": "<b>Nenhuma bateria detetada ou</b> bateria não ligada.",
+                    "NotDetected": "<b>Nenhuma bateria detetada.</b>",
                     "NotGood": "<b>A bateria não está em boas condições.</b>",
                     "NotSupportACAdapter": "<b>O transformador CA não é suportado.</b>",
                     "LimitedACAdapterSupport": "<b>O transformador CA não consegue fornecer energia suficiente.</b>",
@@ -2467,8 +2469,8 @@
     },
     "lenovoId": {
         "login": "Iniciar sessão",
-		"logout": "Terminar sessão",
-		"loggingOut": "Logging out...",
+        "logout": "Terminar sessão",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Desbloquear Exclusivos",
         "user": "Utilizador",
         "welcomeText1": "Parece revitalizado/a hoje, {{firstName}}!",

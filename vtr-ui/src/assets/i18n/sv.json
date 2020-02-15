@@ -778,7 +778,9 @@
             "notRegistered": "INTE REGISTRERAD",
             "fingerPrint": "Fingeravtryck",
             "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -1037,7 +1039,7 @@
                     "Good": "<b>Batteriet är i gott skick.</b>",
                     "Exhaustion": "Batteriets kapacitet har <b>försämrats</b>. Byt ut det mot ett nytt.",
                     "Bad": "<b>Ett batterifel har uppstått.</b> Batteriet går inte att ladda/ladda ur. Byt ut batteriet.",
-                    "NotDetected": "<b>Inget batteri upptäcktes</b> eller batteriet är inte anslutet.",
+                    "NotDetected": "<b>Inget batteri upptäcktes.</b>",
                     "NotGood": "<b>Batteriet är inte i gott skick.</b>",
                     "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b>",
                     "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning.</b>",
@@ -2467,8 +2469,8 @@
     },
     "lenovoId": {
         "login": "Inloggning",
-		"logout": "Logga ut",
-		"loggingOut": "Logging out...",
+        "logout": "Logga ut",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Visa exklusiva erbjudanden",
         "user": "Användare",
         "welcomeText1": "Energin är på topp i dag, {{firstName}}!",

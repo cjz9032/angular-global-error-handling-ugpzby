@@ -778,7 +778,9 @@
             "notRegistered": "NON ENREGISTRÉ",
             "fingerPrint": "Empreinte digitale",
             "privacyPolicyAndTermsOfService": "<tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Q & A pour votre machine",
@@ -1037,7 +1039,7 @@
                     "Good": "<b>La batterie est en bon état.</b>",
                     "Exhaustion": "La capacité de la batterie est <b>affaiblie</b>. Veuillez la remplacer par une nouvelle.",
                     "Bad": "<b>Une erreur batterie s'est produite.</b> La batterie ne peut pas être chargée/déchargée. Remplacez la batterie.",
-                    "NotDetected": "<b>Aucune batterie n'a été</b> détectée ou n'est connectée à la batterie.",
+                    "NotDetected": "<b>Aucune batterie détectée.</b>",
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
                     "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
                     "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
@@ -2467,8 +2469,8 @@
     },
     "lenovoId": {
         "login": "Connexion",
-		"logout": "Se déconnecter",
-		"loggingOut": "Logging out...",
+        "logout": "Se déconnecter",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Profitez des offres exclusives",
         "user": "Utilisateur",
         "welcomeText1": "Vous avez bonne mine aujourd'hui, {{firstName}} !",

@@ -778,7 +778,9 @@
             "notRegistered": "NEREGISTROVANÉ",
             "fingerPrint": "Odtlačok",
             "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -1037,7 +1039,7 @@
                     "Good": "<b>Batéria je v dobrom stave.</b>",
                     "Exhaustion": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "Bad": "<b>Vyskytla sa chyba batérie.</b> Batériu nemožno nabiť/vybiť. Vymeňte batériu.",
-                    "NotDetected": "<b>Nezistená žiadna batéria ani</b> pripojená batéria.",
+                    "NotDetected": "<b>Nebola zistená žiadna batéria.</b>",
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b>",
                     "LimitedACAdapterSupport": "<b>Sieťový adaptér nedokáže poskytnúť dostatok energie na napájanie.</b>",
@@ -2467,8 +2469,8 @@
     },
     "lenovoId": {
         "login": "Prihlásenie",
-		"logout": "Odhlásenie",
-		"loggingOut": "Logging out...",
+        "logout": "Odhlásenie",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Odomknúť exkluzívne možnosti od spoločnosti Lenovo",
         "user": "Používateľ",
         "welcomeText1": "Dnes máte veľa energie, {{firstName}}.",

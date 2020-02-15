@@ -778,7 +778,9 @@
             "notRegistered": "등록되지 않음",
             "fingerPrint": "지문",
             "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
@@ -1037,7 +1039,7 @@
                     "Good": "<b>배터리의 상태가 좋습니다.</b>",
                     "Exhaustion": "배터리 용량이 <b>저하</b>되었습니다. 새 배터리를 교체하십시오.",
                     "Bad": "<b>배터리 오류가 발생했습니다.</b> 배터리를 충전/방전할 수 없습니다. 배터리를 교체하십시오.",
-                    "NotDetected": "<b>배터리가 감지되지 않거나 배터리</b>에 꽂혀 있지 않습니다.",
+                    "NotDetected": "<b>감지된 배터리가 없습니다.</b>",
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
                     "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b>",
                     "LimitedACAdapterSupport": "<b>AC 어댑터는 충분한 전원을 공급하지 못합니다.</b>",
@@ -2467,8 +2469,8 @@
     },
     "lenovoId": {
         "login": "로그인",
-		"logout": "로그아웃",
-		"loggingOut": "Logging out...",
+        "logout": "로그아웃",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "독점 잠금 해제",
         "user": "사용자",
         "welcomeText1": "오늘 동력 공급 상태 보기, {{firstName}}!",

@@ -778,7 +778,9 @@
             "notRegistered": "NIE ZAREJESTROWANY",
             "fingerPrint": "Odcisk palca",
             "privacyPolicyAndTermsOfService": "<tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Pytania i odpowiedzi dotyczące Twojej maszyny",
@@ -1037,7 +1039,7 @@
                     "Good": "<b>Akumulator jest w dobrym stanie.</b>",
                     "Exhaustion": "Pojemność baterii <b>trwale spadła</b>. Wymień baterię na nową.",
                     "Bad": "<b>Wystąpił błąd akumulatora.</b> Nie można naładować/rozładować akumulatora. Wymień baterię.",
-                    "NotDetected": "<b>Nie wykryto akumulatora lub</b> akumulator nie jest podłączony do prądu.",
+                    "NotDetected": "<b>Nie wykryto akumulatora.</b>",
                     "NotGood": "<b>Akumulator nie jest w dobrym stanie.</b>",
                     "NotSupportACAdapter": "<b>Zasilacz nie jest obsługiwany.</b>",
                     "LimitedACAdapterSupport": "<b>Zasilacz nie zapewnia wystarczającej mocy.</b>",
@@ -2467,8 +2469,8 @@
     },
     "lenovoId": {
         "login": "Logowanie",
-		"logout": "Wyloguj",
-		"loggingOut": "Logging out...",
+        "logout": "Wyloguj",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Odblokuj dodatki specjalne",
         "user": "Użytkownik",
         "welcomeText1": "Wygląda na pełnego energii, {{firstName}}!",

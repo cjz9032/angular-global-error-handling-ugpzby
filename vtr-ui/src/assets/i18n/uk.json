@@ -778,7 +778,9 @@
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО",
             "fingerPrint": "Відбитки пальців",
             "privacyPolicyAndTermsOfService": "<tag>політику конфіденційності</tag> та <tag>умови надання послуг</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Питання та відповіді для вашої машини",
@@ -1037,7 +1039,7 @@
                     "Good": "<b>Акумулятор у доброму стані.</b>",
                     "Exhaustion": "Ємність акумулятора <b>впала</b>. Замініть акумулятор на новий.",
                     "Bad": "<b>Сталася помилка акумулятора.</b> Не вдається зарядити або розрядити акумулятор. Замініть акумулятор.",
-                    "NotDetected": "<b>Акумулятор не виявлено</b> або не підключено.",
+                    "NotDetected": "<b>Акумулятор не знайдено.</b>",
                     "NotGood": "<b>Акумулятор у поганому стані.</b>",
                     "NotSupportACAdapter": "<b>Адаптер змінного струму не підтримується.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер змінного струму не може забезпечити достатню потужність.</b>",
@@ -2467,8 +2469,8 @@
     },
     "lenovoId": {
         "login": "Вхід",
-		"logout": "Вихід",
-		"loggingOut": "Logging out...",
+        "logout": "Вихід",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Ексклюзивний вміст",
         "user": "Користувач",
         "welcomeText1": "Сьогодні ви енергійні, {{firstName}}!",
