@@ -104,6 +104,10 @@
 					/*  &.highlight {
 						color: $shade_darkest;
 					} */
+					.rtl {
+						display: flex;
+						flex-direction: row-reverse;
+					}
 				}
 			}
 			&.bad {
@@ -200,6 +204,10 @@
 					text-decoration: underline;
 					&:hover {
 						text-decoration: underline;
+					}
+					.rtl {
+						display: flex;
+						flex-direction: row-reverse;
 					}
 				}
 				fa-icon {
