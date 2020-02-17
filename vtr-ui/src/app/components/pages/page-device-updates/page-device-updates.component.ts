@@ -71,6 +71,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public isUpdatesAvailable = false;
 	public isUpdateDownloading = false;
 	public isCheckingPluginStatus = true;
+	public isCancelingStatus = false;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
 	public isInstallingAllUpdates = true;
@@ -382,6 +383,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public onCheckForUpdates() {
 		if (this.systemUpdateService.isShellAvailable) {
 			this.setUpdateTitle();
+			this.isCancelingStatus = false;
 			this.isUserCancelledUpdateCheck = false;
 			this.isUpdateCheckInProgress = true;
 			this.isUpdatesAvailable = false;
@@ -768,6 +770,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					if (this.systemUpdateService && this.systemUpdateService.updateInfo) {
 						this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					}
+					break;
+				case UpdateProgress.UpdateCheckCancelled:
+					this.isCancelingStatus = false;
 					break;
 				case UpdateProgress.IgnoredUpdates:
 					this.setUpdateByCategory(notification.payload);
