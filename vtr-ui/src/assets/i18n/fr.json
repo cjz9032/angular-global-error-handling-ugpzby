@@ -132,7 +132,7 @@
                 "advancedOC": {
                     "title": "Surfréquençage Param. avancés",
                     "description": "Définissez les param. pers. avancés lorsque le Surfréquençage est activé. Cela peut être dangereux.",
-                    "gpuOverclock": "Surfréquençage UC",
+                    "gpuOverclock": "Overclocking GPU",
                     "cpuOCNames": {
                         "cpuOCName2": "Tension du cœur",
                         "cpuOCName116": "Rapport du cœur 1",
