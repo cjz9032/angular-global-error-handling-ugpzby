@@ -162,7 +162,7 @@
 			.card {
 				background: $gaming_darkest !important;
 				span{
-					color:$gaming_lighter;
+					color:$gaming_lightest;
 				}
 			}
 		}
@@ -1016,6 +1016,40 @@
 			color: $white100;
 		}
 	}
+	&.border-blue {
+		border: 0.2rem solid $gaming_light_blue;
+		outline: none;
+		// transition: all 50ms ease-in;
+		label::after {
+			opacity: 1 !important;
+			background-color: $gaming_light_blue !important;
+		}
+	}
+	&.disabled-grey{
+		label::after {
+			opacity: 1 !important;
+			background-color: $gaming_dark !important;
+		}
+	}
+	 &.border-grey {
+		border: 0.2rem solid $gaming_dark;	
+	 }
+
+}
+.disabled-class{
+	opacity: 0.7;
+	border: 0.2rem solid $gaming_dark;
+	label {
+		&:after, &:before {
+			border-color: $gaming_dark;
+		}
+		&:after {
+			background-color: $gaming_darkest!important;
+		}
+		&:hover {
+			cursor: not-allowed;
+		}
+	}
 }
 
 .vtr-ui-rounded-rectangle-radio {	
@@ -1023,6 +1057,61 @@
 		label{
 			.label{
 				color:$white100!important;
+			}
+		}
+
+		&.border-blue {
+			border: 0.2rem solid $gaming_light_blue;
+			outline: none;
+			// transition: all 50ms ease-in;
+			label::after {
+				opacity: 1 !important;
+				background-color: $gaming_light_blue !important;
+			}
+		}
+
+		&.border-grey {
+			border: 0.2rem solid $gaming-dark;
+			// transition: all 50ms ease-in;
+			@media #{$black-on-white} {
+				border: none;
+			}
+	
+		}
+		&.border-disabled {
+			border: 0.2rem solid $gaming-dark;
+			cursor: default;
+			label {
+				.icon-circle {
+					color: $grey_darker;
+				}
+			}
+		}
+		&.border-checked-disabled {
+			border: 0.2rem solid $gaming-dark;
+			cursor: default;
+			label {
+				.icon-circle {
+					color: $grey_darker;
+				}
+			}
+		}
+		&.border-disabled {
+			border: 0.2rem solid $gaming-dark;
+			cursor: default;
+			label {
+				.icon-circle {
+					color: $grey_darker;
+				}
+			}
+		}
+		&.border-checked-disabled {
+			border: 0.2rem solid $gaming-dark;
+			cursor: default;
+			label {
+				.icon-circle {
+					color: $grey_darker;
+				}
 			}
 		}
 	}
@@ -1377,12 +1466,12 @@
 		}
 	}
 	.progress-value-text {
-		color: $light !important;
+		color: $gaming_lightest !important;
 	}
 
 	.final-result-code {
 		.result-code-value-text {
-			color: $light !important;
+			color: $gaming_lightest !important;
 		}
 
 		.left-result-code {
@@ -1394,7 +1483,7 @@
 
 	.result-code {
 		.result-code-value-text {
-			color: $light !important;
+			color: $gaming_lightest !important;
 		}
 		.left-code-result {
 			.result-code-complete-text {
