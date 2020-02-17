@@ -645,7 +645,9 @@
             "notRegistered": "NEM REGISZTRÁLT",
             "fingerPrint": "Ujjlenyomat",
             "privacyPolicyAndTermsOfService": "<tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "REGISZTRÁLT",
+            "notEnrolled": "NEM REGISZTRÁLT"
         },
         "qAndA": {
             "title": "Kérdések és válaszok a gépedhez",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Bejelentkezés",
-		"logout": "Kijelentkezés",
-		"loggingOut": "Logging out...",
+        "logout": "Kijelentkezés",
+        "loggingOut": "Kijelentkezés...",
         "unlockExclusives": "Exkluzív ajánlatok",
         "user": "Felhasználó",
         "welcomeText1": "Ma energikusnak látszik, {{firstName}}!",

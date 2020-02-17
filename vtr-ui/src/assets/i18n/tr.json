@@ -645,7 +645,9 @@
             "notRegistered": "KAYITLI DEĞİL",
             "fingerPrint": "Parmak Izi",
             "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "KAYITLI",
+            "notEnrolled": "KAYITLI DEĞİL"
         },
         "qAndA": {
             "title": "Makineniz için Q & A",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Oturum Aç",
-		"logout": "Oturumu kapat",
-		"loggingOut": "Logging out...",
+        "logout": "Oturumu kapat",
+        "loggingOut": "Oturum kapatılıyor...",
         "unlockExclusives": "Özellerin Kilidini Aç",
         "user": "Kullanıcı",
         "welcomeText1": "Bugün çok dinç görünüyorsun, {{firstName}}!",

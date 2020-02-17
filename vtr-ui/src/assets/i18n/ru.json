@@ -645,7 +645,9 @@
             "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО",
             "fingerPrint": "Oтпечаток пальца",
             "privacyPolicyAndTermsOfService": "<tag>Политикой конфиденциальности</tag> и <tag>Условиями обслуживания</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ЗАРЕГИСТРИРОВАНО",
+            "notEnrolled": "НЕ ЗАРЕГИСТРИРОВАНО"
         },
         "qAndA": {
             "title": "Q & A для вашей машины",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Регистрация",
-		"logout": "Выход",
-		"loggingOut": "Logging out...",
+        "logout": "Выход",
+        "loggingOut": "Выход...",
         "unlockExclusives": "Разблокирование эксклюзивного содержимого",
         "user": "Пользователь",
         "welcomeText1": "У вас сегодня бодрый вид, {{firstName}}!",

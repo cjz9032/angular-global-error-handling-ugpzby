@@ -645,7 +645,9 @@
             "notRegistered": "NIJE REGISTROVAN",
             "fingerPrint": "Fingerprint",
             "privacyPolicyAndTermsOfService": "<tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "REGISTROVAN",
+            "notEnrolled": "NIJE REGISTROVAN"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Prijava",
-		"logout": "Odjava",
-		"loggingOut": "Logging out...",
+        "logout": "Odjava",
+        "loggingOut": "Odjavljivanje...",
         "unlockExclusives": "Otključaj ekskluzivnosti",
         "user": "Korisnik",
         "welcomeText1": "Danas izgledate puni energije, {{firstName}}!",
