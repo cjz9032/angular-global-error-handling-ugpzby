@@ -28,7 +28,7 @@
                         "balance": "Ujednačeno",
                         "quiet": "Tiho"
                     },
-                    "title": "Overklok procesora",
+                    "title": "CPU overklok",
                     "status": {
                         "alwayson": "Uključeno",
                         "whenGaming": "Kada igrate",
