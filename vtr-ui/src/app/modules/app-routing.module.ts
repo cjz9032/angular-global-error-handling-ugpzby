@@ -23,11 +23,11 @@ const routes: Routes = [
 	},
 	{
 		path: 'gaming',
-		loadChildren: './gaming.module#GamingModule'
+		loadChildren: () => import('./gaming.module').then(m => m.GamingModule)
 	},
 	{
 		path: 'device',
-		loadChildren: './hardware-settings/hardware-settings.module#HardwareSettingsModule'
+		loadChildren: () => import('./hardware-settings/hardware-settings.module').then(m => m.HardwareSettingsModule)
 	},
 	{
 		path: 'settings',
@@ -38,40 +38,40 @@ const routes: Routes = [
 	},
 	{
 		path: 'home-security',
-		loadChildren: './connected-home-security/connected-home-security.module#ConnectedHomeSecurityModule'
+		loadChildren: () => import('./connected-home-security/connected-home-security.module').then(m => m.ConnectedHomeSecurityModule)
 	},
 	{
 		path: 'privacy',
-		loadChildren: '../components/pages/page-privacy/privacy.module#PrivacyModule'
+		loadChildren: () => import('../components/pages/page-privacy/privacy.module').then(m => m.PrivacyModule)
 	},
 	{
 		path: 'security',
-		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
+		loadChildren: () => import('./security-advisor/security-advisor.module').then(m => m.SecurityAdvisorModule)
 	},
 	{
 		path: 'support',
-		loadChildren: './support/support.module#SupportModule'
+		loadChildren: () => import('./support/support.module').then(m => m.SupportModule)
 	},
 	{
 		path: 'apps-for-you/:id',
-		loadChildren: './apps-for-you/apps-for-you.module#AppsForYouModule'
+		loadChildren: () => import('./apps-for-you/apps-for-you.module').then(m => m.AppsForYouModule)
 	},
 	{
 		path: 'android',
-		loadChildren: './android/android-dashboard.module#AndroidDashboardModule'
+		loadChildren: () => import('./android/android-dashboard.module').then(m => m.AndroidDashboardModule)
 	},
 	{
 		path: 'beta',
-		loadChildren: '../beta/beta.module#BetaModule'
+		loadChildren: () => import('../beta/beta.module').then(m => m.BetaModule)
 	},
 	{
 		path: 'support/smart-performance',
-		loadChildren: './smart-performance/smart-performance.module#SmartPerformanceModule'
+		loadChildren: () => import('./smart-performance/smart-performance.module').then(m => m.SmartPerformanceModule)
 	},
 	{
 		path: 'cpt',
 		/*component: PageCptComponent*/
-		loadChildren: './cpt/cpt.module#CptModule'
+		loadChildren: () => import('./cpt/cpt.module').then(m => m.CptModule)
 	},
 	{
 		path: '',
