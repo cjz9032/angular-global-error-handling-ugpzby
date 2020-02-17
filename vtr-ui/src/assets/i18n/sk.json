@@ -87,8 +87,7 @@
                     "line8": "<b>Rýchle nabíjanie </b><br> Hrajte sa a zvládnite toho viac vďaka rýchlejšiemu nabíjaniu batérie",
                     "line9": "<b>Zámok dotykového panela </b><br> Zabráňte chybným vstupom zakázaním dotykového panela, keď sa hráte",
                     "line10": "<b>Automatické zatvorenie </b><br> Skôr než sa začnete hrať, odstráňte procesy, ktoré na hru nepotrebujete, a maximalizujte dostupné systémové prostriedky",
-                    "line11": "<b>Tepelný režim </b><br> Nastavenie preferovaného profilu zariadenia na ovládanie otáčok ventilátora a chladenia",
-                    "line12": "<b>Kláves makra</b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Tepelný režim </b><br> Nastavenie preferovaného profilu zariadenia na ovládanie otáčok ventilátora a chladenia"
                 },
                 "systemInfo": {
                     "systenTooltip": "Umiestnením kurzora myši položky CPU/GPU/RAM a rôzne jednotky zobrazíte ich popisy vrátane informácií o výrobe a modeloch"
