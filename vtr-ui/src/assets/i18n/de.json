@@ -152,30 +152,30 @@
                         "cpuOCName114": "Offset AVX-Verhältnis"
                     },
                     "cpuOCTips": {
-                        "cpuOCTip2": "Spannung für den Prozessorkern festlegen.",
-                        "cpuOCTip116": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip117": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip118": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip119": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip34": "Ein Spannungsoffset von der aktuellen Core-Spannung.",
-                        "cpuOCTip120": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip121": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip2": "Spannung für den Prozessorkern festlegen.",
+                        "cpuOCTip116": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip117": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip118": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip119": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip34": "Ein Spannungsoffset von der aktuellen Core-Spannung.",
+                        "cpuOCTip120": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip121": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
                         "cpuOCTip76": "Stellen Sie den maximalen Prozessor-Cache-Multiplikator ein, mit dem die Caches arbeiten können. Der Wert der Cache-Frequenz ist das Produkt aus diesem Verhältnis und der Referenztaktfrequenz.",
-                        "cpuOCTip77": "Spannung, die der internen Cache-Schnittstelle des Prozessors bereitgestellt wird, basierend auf dem momentan ausgewählten Cache-Spannungsmodus.",
-                        "cpuOCTip79": "Letzter Spannungsoffset, der auf die Cache-Spannung angewendet wird.",
-                        "cpuOCTip122": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip123": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip102": "ICCMAX für Prozessorkern-Spannungsregler festlegen.",
-                        "cpuOCTip106": "ICCMAX für Prozessorcache- und Ringbus-Spannungsregler festlegen.",
-                        "cpuOCTip114": "Sie können den effektiven Grenzwert für das Verhältnis aktiver Kerne bei aktiviertem AVX ableiten, indem Sie diesen Wert vom entsprechenden Grenzwert für das Verhältnis aktiver Kerne abziehen."
+                        "cpuOCTip77": "Spannung, die der internen Cache-Schnittstelle des Prozessors bereitgestellt wird, basierend auf dem momentan ausgewählten Cache-Spannungsmodus.",
+                        "cpuOCTip79": "Letzter Spannungsoffset, der auf die Cache-Spannung angewendet wird.",
+                        "cpuOCTip122": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip123": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip102": "ICCMAX für Prozessorkern-Spannungsregler festlegen.",
+                        "cpuOCTip106": "ICCMAX für Prozessorcache- und Ringbus-Spannungsregler festlegen.",
+                        "cpuOCTip114": "Sie können den effektiven Grenzwert für das Verhältnis aktiver Kerne bei aktiviertem AVX ableiten, indem Sie diesen Wert vom entsprechenden Grenzwert für das Verhältnis aktiver Kerne abziehen."
                     },
                     "gpuOCNames": {
                         "gpuOCName0": "Offset GPU-Takt",
                         "gpuOCName1": "Offset VRAM-Takt"
                     },
                     "gpuOCTips": {
-                        "gpuOCTip0": "Offset zur GPU-Taktfrequenz hinzufügen.",
-                        "gpuOCTip1": "Offset zur Hauptspeicher-Taktfrequenz hinzufügen."
+                        "gpuOCTip0": "Offset zur GPU-Taktfrequenz hinzufügen.",
+                        "gpuOCTip1": "Offset zur Hauptspeicher-Taktfrequenz hinzufügen."
                     }
                 },
                 "savePromptPopup": {

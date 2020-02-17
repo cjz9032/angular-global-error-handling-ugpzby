@@ -28,7 +28,7 @@
                         "balance": "Echilibru",
                         "quiet": "Silențios"
                     },
-                    "title": "Suprasolicitare CPU",
+                    "title": "Overclocking CPU",
                     "status": {
                         "alwayson": "Act.",
                         "whenGaming": "În jocuri",
@@ -135,47 +135,47 @@
                     "gpuOverclock": "Overclocking GPU",
                     "cpuOCNames": {
                         "cpuOCName2": "Tensiune nucleu",
-                        "cpuOCName116": "1 raport nucleu",
-                        "cpuOCName117": "2 raport nucleu",
-                        "cpuOCName118": "3 raport nucleu",
-                        "cpuOCName119": "4 raport nucleu",
-                        "cpuOCName34": "Decalaj tensiune nucleu",
-                        "cpuOCName120": "5 raport nucleu",
-                        "cpuOCName121": "6 raport nucleu",
-                        "cpuOCName76": "Raport cache",
-                        "cpuOCName77": "Tensiune cache",
-                        "cpuOCName79": "Decalaj tensiune cache",
-                        "cpuOCName122": "7 raport nucleu",
-                        "cpuOCName123": "8 raport nucleu",
-                        "cpuOCName102": "ICCMAX nucleu",
-                        "cpuOCName106": "ICCMAX cache",
-                        "cpuOCName114": "Decalaj raport AVX"
+                        "cpuOCName116": "1 raport nucleu",
+                        "cpuOCName117": "2 raport nucleu",
+                        "cpuOCName118": "3 raport nucleu",
+                        "cpuOCName119": "4 raport nucleu",
+                        "cpuOCName34": "Decalaj tensiune nucleu",
+                        "cpuOCName120": "5 raport nucleu",
+                        "cpuOCName121": "6 raport nucleu",
+                        "cpuOCName76": "Raport cache",
+                        "cpuOCName77": "Tensiune cache",
+                        "cpuOCName79": "Decalaj tensiune cache",
+                        "cpuOCName122": "7 raport nucleu",
+                        "cpuOCName123": "8 raport nucleu",
+                        "cpuOCName102": "ICCMAX nucleu",
+                        "cpuOCName106": "ICCMAX cache",
+                        "cpuOCName114": "Decalaj raport AVX"
                     },
                     "cpuOCTips": {
-                        "cpuOCTip2": "Setați tensiunea nucleului CPU.",
-                        "cpuOCTip116": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
-                        "cpuOCTip117": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
-                        "cpuOCTip118": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
-                        "cpuOCTip119": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
-                        "cpuOCTip34": "Un decalaj al tensiunii de la tensiunea actuală a nucleului.",
-                        "cpuOCTip120": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
-                        "cpuOCTip121": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
+                        "cpuOCTip2": "Setați tensiunea nucleului CPU.",
+                        "cpuOCTip116": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
+                        "cpuOCTip117": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
+                        "cpuOCTip118": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
+                        "cpuOCTip119": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
+                        "cpuOCTip34": "Un decalaj al tensiunii de la tensiunea actuală a nucleului.",
+                        "cpuOCTip120": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
+                        "cpuOCTip121": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
                         "cpuOCTip76": "Setaţi factorul maxim de multiplicare a memoriei cache a procesorului, la care memoria cache poate funcţiona. Valoarea frecvenţei memoriei cache este produsul dintre acest raport şi frecvenţa de referinţă a ceasului.",
-                        "cpuOCTip77": "Tensiunea la care este alimentată interfața cache-ului intern al procesorului, în funcție de modul actual selectat pentru tensiunea cache-ului.",
-                        "cpuOCTip79": "Decalajul final al tensiunii care este aplicat tensiunii cache-ului.",
-                        "cpuOCTip122": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
-                        "cpuOCTip123": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
-                        "cpuOCTip102": "Setați ICCMAX pentru regulatorul de tensiune al nucleului procesorului.",
-                        "cpuOCTip106": "Setați ICCMAX pentru regulatorul de tensiune al cache-ului și al magistralei de tip inel ale procesorului.",
-                        "cpuOCTip114": "Pentru a obține limita efectivă activă a raportului nucleului atunci când AVX este activ, reduceți această valoare la limita corespunzătoare activă a raportului nucleului."
+                        "cpuOCTip77": "Tensiunea la care este alimentată interfața cache-ului intern al procesorului, în funcție de modul actual selectat pentru tensiunea cache-ului.",
+                        "cpuOCTip79": "Decalajul final al tensiunii care este aplicat tensiunii cache-ului.",
+                        "cpuOCTip122": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
+                        "cpuOCTip123": "Setați multiplicatorul maxim la care nucleele pot funcționa. Valoarea frecvenței nucleului este produsul dintre acest raport și frecvența de referință a ceasului.",
+                        "cpuOCTip102": "Setați ICCMAX pentru regulatorul de tensiune al nucleului procesorului.",
+                        "cpuOCTip106": "Setați ICCMAX pentru regulatorul de tensiune al cache-ului și al magistralei de tip inel ale procesorului.",
+                        "cpuOCTip114": "Pentru a obține limita efectivă activă a raportului nucleului atunci când AVX este activ, reduceți această valoare la limita corespunzătoare activă a raportului nucleului."
                     },
                     "gpuOCNames": {
-                        "gpuOCName0": "Decalaj ceas GPU",
-                        "gpuOCName1": "Decalaj ceas VRAM"
+                        "gpuOCName0": "Decalaj ceas GPU",
+                        "gpuOCName1": "Decalaj ceas VRAM"
                     },
                     "gpuOCTips": {
-                        "gpuOCTip0": "Adăugarea unui decalaj la frecvența ceasului GPU.",
-                        "gpuOCTip1": "Adăugarea unui decalaj la frecvența ceasului memoriei."
+                        "gpuOCTip0": "Adăugarea unui decalaj la frecvența ceasului GPU.",
+                        "gpuOCTip1": "Adăugarea unui decalaj la frecvența ceasului memoriei."
                     }
                 },
                 "savePromptPopup": {
