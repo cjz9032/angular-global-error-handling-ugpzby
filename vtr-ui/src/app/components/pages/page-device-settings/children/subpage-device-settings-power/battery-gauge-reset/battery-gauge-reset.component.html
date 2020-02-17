@@ -18,10 +18,12 @@
 							<div class="battery-text"
 								id=""
 								role="text">
-								<span *ngIf="batteryService.gaugeResetInfo?.length==1">
+								<span role="text"
+									*ngIf="batteryService.gaugeResetInfo?.length==1">
 									{{'device.deviceSettings.batteryGauge.subtitle'| translate}}
 								</span>
-								<span *ngIf="batteryService.gaugeResetInfo?.length>1">
+								<span role="text"
+									*ngIf="batteryService.gaugeResetInfo?.length>1">
 									{{ headings[i] | translate }}
 								</span>
 							</div>
@@ -157,13 +159,15 @@
 						</div>
 					</div>
 					<div class="row px-5 pt-3">
-						<span *ngIf="!batteryService.isAcAttached"
+						<span role="text"
+							*ngIf="!batteryService.isAcAttached"
 							class="note warning-note"
 							tabindex="0"
 							role="text">
 							{{'device.deviceSettings.power.batterySettings.gaugeReset.note' | translate}}
 						</span>
-						<span *ngIf="batteryService.isAcAttached && batteryService.gaugeResetInfo?.length>1"
+						<span role="text"
+							*ngIf="batteryService.isAcAttached && batteryService.gaugeResetInfo?.length>1"
 							class="note"
 							tabindex="0"
 							role="text">
