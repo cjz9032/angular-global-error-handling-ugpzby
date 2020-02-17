@@ -122,9 +122,9 @@
                         "cpuOC": "CPU-Übertaktung im Leistungsmodus aktivieren.",
                         "gpuOC": "GPU-Übertaktung im Leistungsmodus aktivieren.",
                         "advance": "ERWEITERT",
-                        "cpu_gpuDriverLack": "CPU-/GPU-Treiber installieren, um Overclocking zu verwenden.",
-                        "cpuDriverLack": "CPU-Treiber installieren, um Overclocking zu verwenden.",
-                        "gpuDriverLack": "GPU-Treiber installieren, um Overclocking zu verwenden.",
+                        "cpu_gpuDriverLack": "CPU-/GPU-Treiber installieren, um Overclocking zu verwenden.",
+                        "cpuDriverLack": "CPU-Treiber installieren, um Overclocking zu verwenden.",
+                        "gpuDriverLack": "GPU-Treiber installieren, um Overclocking zu verwenden.",
                         "goInstall": "INSTALLIEREN"
                     },
                     "autoSwitch": "Autom. Wechsel zu Leistung, wenn Spiele gestartet werden, danach zurückschalten."	
@@ -725,11 +725,11 @@
                 "text4": "G",
                 "text5": "B",
                 "text6": "Bereich teilen (aus): Ändern Sie die Farben mit dem Tastaturbild",
-                "text7": "Bereich teilen (ein): Abschnitte mit dem Tastaturbild unten ändern",
-                "text8": "Der aktuelle Effekt unterstützt keine Farbauswahl"
+                "text7": "Bereich teilen (ein): Abschnitte mit dem Tastaturbild unten ändern",
+                "text8": "Der aktuelle Effekt unterstützt keine Farbauswahl"
             },
             "tipText": {
-                "title1": "Fn+Leertaste zum Wechseln zwischen Profilen verwenden"
+                "title1": "Fn+Leertaste zum Wechseln zwischen Profilen verwenden"
             }
         }
     },

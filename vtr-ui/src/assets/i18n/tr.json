@@ -122,9 +122,9 @@
                         "cpuOC": "Performans Kipi'nde CPU Hız Aşırtma'yı etkinleştirin.",
                         "gpuOC": "Performans Kipi'nde GPU Hız Aşırtma'yı etkinleştirin.",
                         "advance": "GELİŞMİŞ",
-                        "cpu_gpuDriverLack": "Hız Aşırtma işlevini kullanmak için CPU/GPU sürücülerini yükleyin.",
+                        "cpu_gpuDriverLack": "Hız Aşırtma işlevini kullanmak için CPU/GPU sürücülerini yükleyin.",
                         "cpuDriverLack": "Hız Aşırtma işlevini kullanmak için CPU sürücüsünü yükleyin.",
-                        "gpuDriverLack": "Hız Aşırtma işlevini kullanmak için GPU sürücüsünü yükleyin.",
+                        "gpuDriverLack": "Hız Aşırtma işlevini kullanmak için GPU sürücüsünü yükleyin.",
                         "goInstall": "YÜKLE"
                     },
                     "autoSwitch": "Oyunları başlatırken Otomatik Olarak Performans Kipine Geçip sonra geriye dönün."	

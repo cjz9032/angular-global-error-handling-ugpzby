@@ -118,12 +118,12 @@
                     "quietTitle": "Mode silencieux",
                     "quietDesc": "Reste silencieux en diminuant les performances de votre ordinateur et en réduisant la vitesse du ventilateur dans la mesure du possible. Consommation électrique faible.",
                     "OC": {
-                        "cpu_gpuOC": "Activer l'overclocking de l'UCT/GPU en mode de performance.",
-                        "cpuOC": "Activer l'overclocking de l'UCT en mode de performance.",
+                        "cpu_gpuOC": "Activer l'overclocking de l'UC/GPU en mode de performance.",
+                        "cpuOC": "Activer l'overclocking de l'UC en mode de performance.",
                         "gpuOC": "Activer l'overclocking du GPU en mode de performance.",
                         "advance": "AVANCE",
-                        "cpu_gpuDriverLack": "Installer les pilotes UCT/GPU pour utiliser la fonction overclocking.",
-                        "cpuDriverLack": "Installer les pilotes UCT pour utiliser la fonction overclocking.",
+                        "cpu_gpuDriverLack": "Installer les pilotes UC/GPU pour utiliser la fonction overclocking.",
+                        "cpuDriverLack": "Installer les pilotes UC pour utiliser la fonction overclocking.",
                         "gpuDriverLack": "Installer les pilotes GPU pour utiliser la fonction overclocking.",
                         "goInstall": "PROCÉDER À L'INSTALLATION"
                     },
