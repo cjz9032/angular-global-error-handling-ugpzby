@@ -645,7 +645,9 @@
             "notRegistered": "NEÎNREGISTRAT",
             "fingerPrint": "Amprentă Digitală",
             "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ÎNREGISTRAT",
+            "notEnrolled": "NEÎNREGISTRAT"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Conectare",
-		"logout": "Deconectare",
-		"loggingOut": "Logging out...",
+        "logout": "Deconectare",
+        "loggingOut": "Se deconectează...",
         "unlockExclusives": "Deblocare Exclusive",
         "user": "Utilizator",
         "welcomeText1": "Păreți plin de energie astăzi, {{firstName}}!",

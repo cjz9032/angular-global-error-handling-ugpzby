@@ -647,7 +647,9 @@
             "notRegistered": "غير مسجل",
             "fingerPrint": "بصمة",
             "privacyPolicyAndTermsOfService": "<tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "مسجل",
+            "notEnrolled": "غير مسجل"
         },
         "qAndA": {
             "title": "سؤال وجواب لجهازك",
@@ -2336,8 +2338,8 @@
     },
     "lenovoId": {
         "login": "تسجيل الدخول",
-		"logout": "تسجيل الخروج",
-		"loggingOut": "Logging out...",
+        "logout": "تسجيل الخروج",
+        "loggingOut": "جارٍ تسجيل الخروج...",
         "unlockExclusives": "استفد من العروض الخاصة",
         "user": "المستخدم",
         "welcomeText1": "<span dir=\"rtl\">تبدو نشيطًا اليوم، {{firstName}}!</span>",

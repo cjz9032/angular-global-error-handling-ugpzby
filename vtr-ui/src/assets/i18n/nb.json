@@ -645,7 +645,9 @@
             "notRegistered": "IKKE REGISTRERT",
             "fingerPrint": "Fingeravtrykk",
             "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "REGISTRERT",
+            "notEnrolled": "IKKE REGISTRERT"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Logg på",
-		"logout": "Logg av",
-		"loggingOut": "Logging out...",
+        "logout": "Logg av",
+        "loggingOut": "Logger av...",
         "unlockExclusives": "Få eksklusive tilbud",
         "user": "Bruker",
         "welcomeText1": "Ser frisk ut i dag, {{firstName}}!",

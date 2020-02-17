@@ -645,7 +645,9 @@
             "notRegistered": "ΔΕΝ ΔΗΛΩΘΗΚΕ",
             "fingerPrint": "Δακτυλικό αποτύπωμα",
             "privacyPolicyAndTermsOfService": "<tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ΕΓΓΕΓΡΑΜΜΕΝΟΣ",
+            "notEnrolled": "ΜΗ ΕΓΓΕΓΡΑΜΜΕΝΟΣ"
         },
         "qAndA": {
             "title": "Ε & Α για το μηχάνημά σας",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Σύνδεση",
-		"logout": "Αποσύνδεση",
-		"loggingOut": "Logging out...",
+        "logout": "Αποσύνδεση",
+        "loggingOut": "Αποσύνδεση...",
         "unlockExclusives": "Ξεκλείδωμα αποκλειστικοτήτων",
         "user": "Χρήστης",
         "welcomeText1": "Φαίνεστε γεμάτος/η ενέργεια σήμερα, {{firstName}}!",

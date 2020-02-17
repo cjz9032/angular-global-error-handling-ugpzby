@@ -645,7 +645,9 @@
             "notRegistered": "לא רשום",
             "fingerPrint": "טביעת אצבע",
             "privacyPolicyAndTermsOfService": "<tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "נרשם",
+            "notEnrolled": "לא נרשם"
         },
         "qAndA": {
             "title": "Q & A עבור המחשב שלך",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "כניסה",
-		"logout": "יציאה",
-		"loggingOut": "Logging out...",
+        "logout": "יציאה",
+        "loggingOut": "מתנתק...",
         "unlockExclusives": "פתחו את ה\"בלעדיים\"",
         "user": "משתמש",
         "welcomeText1": "אתה נראה רענן היום, {{firstName}}!",

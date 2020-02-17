@@ -645,7 +645,9 @@
             "notRegistered": "NENÍ REGISTROVÁNO",
             "fingerPrint": "Otisk Prstu",
             "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "REGISTROVÁNO",
+            "notEnrolled": "NEREGISTROVÁNO"
         },
         "qAndA": {
             "title": "Otázky a odpovědi pro váš stroj",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Přihlášení",
-		"logout": "Odhlásit",
-		"loggingOut": "Logging out...",
+        "logout": "Odhlásit",
+        "loggingOut": "Odhlašování...",
         "unlockExclusives": "Odemknout exkluzivní obsah",
         "user": "Uživatel",
         "welcomeText1": "Vypadáte dnes aktivně, {{firstName}}!",

@@ -645,7 +645,9 @@
             "notRegistered": "NON REGISTRATO",
             "fingerPrint": "Impronta Digitale",
             "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "REGISTRATO",
+            "notEnrolled": "NON REGISTRATO"
         },
         "qAndA": {
             "title": "Domande e risposte per la tua macchina",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Accesso",
-		"logout": "Disconnessione",
-		"loggingOut": "Logging out...",
+        "logout": "Disconnessione",
+        "loggingOut": "Scollegamento in corso...",
         "unlockExclusives": "Sblocca offerte esclusive",
         "user": "Utente",
         "welcomeText1": "Oggi il dispositivo è in ottime condizioni, {{firstName}}!",
