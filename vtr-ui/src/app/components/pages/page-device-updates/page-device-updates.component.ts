@@ -289,7 +289,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				}
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
+				this.logger.error('fetchCMSContent error', error);
 			}
 		);
 	}
@@ -335,14 +335,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	private getLastUpdateScanDetail() {
 		if (this.systemUpdateService.isShellAvailable) {
-			// tslint:disable-next-line: no-console
-			console.time('getMostRecentUpdateInfo');
 			this.systemUpdateService.getMostRecentUpdateInfo()
 				.then((value: any) => {
-					// tslint:disable-next-line: no-console
-					console.timeEnd('getMostRecentUpdateInfo');
-
-					// console.log('getLastUpdateScanDetail.then', value);
 					if (value.lastInstallTime && value.lastInstallTime.length > 0) {
 						this.lastInstallTime = value.lastInstallTime;
 						this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateLastInstallTime, this.lastInstallTime);
@@ -542,12 +536,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					}
 					this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
 				}
-			},
-			reason => {
-				// on close
-				console.log('common-confirmation-modal on close', reason, source);
-			}
-		);
+			});
 	}
 
 	public onGetSupportClick($event: any) {

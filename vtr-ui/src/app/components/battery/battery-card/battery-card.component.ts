@@ -182,7 +182,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	onPowerBatteryGaugeResetEvent(info: BatteryGaugeReset[]) {
-		console.log('onPowerBatteryGaugeResetEvent: Information', info);
+		this.logger.info('onPowerBatteryGaugeResetEvent: Information', info);
 		let isGaugeResetRunning = false;
 		const gaugeResetInfo: BatteryGaugeReset[] = this.commonService.cloneObj(info);
 		if (gaugeResetInfo) {

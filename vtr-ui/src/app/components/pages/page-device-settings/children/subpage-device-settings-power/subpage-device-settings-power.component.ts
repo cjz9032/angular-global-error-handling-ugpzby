@@ -196,7 +196,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				}
 			}
 		} catch (error) {
-			console.log('initPowerSmartSettingFromCache', error);
+			this.logger.exception('initPowerSmartSettingFromCache', error);
 		}
 	}
 
