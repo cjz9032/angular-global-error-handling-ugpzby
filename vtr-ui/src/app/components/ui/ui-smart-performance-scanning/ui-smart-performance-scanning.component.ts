@@ -157,9 +157,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	if (this.smartPerformanceService.isShellAvailable) {
 		try {
 			const res = await this.smartPerformanceService.startScan();
-			//console.log("StartScan response -------------------", res);
-			//this.responseData = res || [];
-			//console.log("res information--------------------------------", this.responseData);
+			
 			if(res.state == true)
 			{
 				//final result
@@ -256,15 +254,12 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	}
 }
 toggle(id:string): void {
-	console.log(id);
  this.accordionComponent.expand(id);
 }
 GetScanData(i: number) {
 	this.scanData = {};
-	console.log('************',i);
 	this.scanData =  this.vdata[i];
 	this.percent = this.scanData.percentage;
-	console.log('************',this.scanData);
 	if(this.percent ==  100){
 		this.sendScanStatus.emit()
 	}
