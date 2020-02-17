@@ -295,3 +295,10 @@
 
     }
 }
+::ng-deep .vtr-page-lightingcustomize {
+	.vtr-page-left-column {
+		.vtr-page-column-shift-up {
+            overflow: visible !important;
+		}	
+	}
+}

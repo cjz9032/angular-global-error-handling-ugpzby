@@ -18,7 +18,9 @@
 		</a>
 		<h1 class="title"
 			id="{{textId}}-header-title"
-			attr.aria-label="{{textId}}-header-title"
+			attr.aria-label="{{title}}"
+			role="text"
+			tabindex="1"
 			[innerHTML]="title"></h1>
 		<ng-content></ng-content>
 		<div *ngIf="forwardLink"

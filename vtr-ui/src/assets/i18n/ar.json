@@ -129,7 +129,7 @@
                         "gpuDriverLack": "قم بتثبيت برامج التشغيل GPU لاستخدام وظيفة زيادة الاداء.",
                         "goInstall": "انتقل للتثبيت"
                     },
-                    "autoSwitch": "التبديل التلقائي إلى الأداء عند تشغيل الألعاب والعودة إلى الوضع السابق بعد ذلك."	
+                    "autoSwitch": "التبديل التلقائي إلى الأداء عند تشغيل الألعاب والعودة إلى الوضع السابق بعد ذلك."
                 },
                 "advancedOC": {
                     "title": "إعداداتسرعة الأداءالمتقدمة",
@@ -699,7 +699,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",

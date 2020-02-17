@@ -122,12 +122,12 @@
                         "cpuOC": "Performans Kipi'nde CPU Hız Aşırtma'yı etkinleştirin.",
                         "gpuOC": "Performans Kipi'nde GPU Hız Aşırtma'yı etkinleştirin.",
                         "advance": "GELİŞMİŞ",
-                        "cpu_gpuDriverLack": "Hız Aşırtma işlevini kullanmak için CPU/GPU sürücülerini yükleyin.",
+                        "cpu_gpuDriverLack": "Hız Aşırtma işlevini kullanmak için CPU/GPU sürücülerini yükleyin.",
                         "cpuDriverLack": "Hız Aşırtma işlevini kullanmak için CPU sürücüsünü yükleyin.",
-                        "gpuDriverLack": "Hız Aşırtma işlevini kullanmak için GPU sürücüsünü yükleyin.",
+                        "gpuDriverLack": "Hız Aşırtma işlevini kullanmak için GPU sürücüsünü yükleyin.",
                         "goInstall": "YÜKLE"
                     },
-                    "autoSwitch": "Oyunları başlatırken Otomatik Olarak Performans Kipine Geçip sonra geriye dönün."	
+                    "autoSwitch": "Oyunları başlatırken Otomatik Olarak Performans Kipine Geçip sonra geriye dönün."
                 },
                 "advancedOC": {
                     "title": "Hız Aşırtma Gelşmiş Ayrları",
@@ -135,21 +135,21 @@
                     "gpuOverclock": "GPU Hız Aşırtma",
                     "cpuOCNames": {
                         "cpuOCName2": "Çekirdek Voltajı",
-                        "cpuOCName116": "1 Çekirdek Oranı",
-                        "cpuOCName117": "2 Çekirdek Oranı",
-                        "cpuOCName118": "3 Çekirdek Oranı",
-                        "cpuOCName119": "4 Çekirdek Oranı",
-                        "cpuOCName34": "Çekirdek Voltajı Sapması",
-                        "cpuOCName120": "5 Çekirdek Oranı",
-                        "cpuOCName121": "6 Çekirdek Oranı",
-                        "cpuOCName76": "Önbellek Oranı",
-                        "cpuOCName77": "Önbellek Voltajı",
-                        "cpuOCName79": "Önbellek Voltajı Sapması",
-                        "cpuOCName122": "7 Çekirdek Oranı",
-                        "cpuOCName123": "8 Çekirdek Oranı",
-                        "cpuOCName102": "Çekirdek ICCMAX",
-                        "cpuOCName106": "Önbellek ICCMAX",
-                        "cpuOCName114": "AVX Oranı Sapması"
+                        "cpuOCName116": "1 Çekirdek Oranı",
+                        "cpuOCName117": "2 Çekirdek Oranı",
+                        "cpuOCName118": "3 Çekirdek Oranı",
+                        "cpuOCName119": "4 Çekirdek Oranı",
+                        "cpuOCName34": "Çekirdek Voltajı Sapması",
+                        "cpuOCName120": "5 Çekirdek Oranı",
+                        "cpuOCName121": "6 Çekirdek Oranı",
+                        "cpuOCName76": "Önbellek Oranı",
+                        "cpuOCName77": "Önbellek Voltajı",
+                        "cpuOCName79": "Önbellek Voltajı Sapması",
+                        "cpuOCName122": "7 Çekirdek Oranı",
+                        "cpuOCName123": "8 Çekirdek Oranı",
+                        "cpuOCName102": "Çekirdek ICCMAX",
+                        "cpuOCName106": "Önbellek ICCMAX",
+                        "cpuOCName114": "AVX Oranı Sapması"
                     },
                     "cpuOCTips": {
                         "cpuOCTip2": "CPU Çekirdeği için voltajı ayarlayın.",
@@ -170,8 +170,8 @@
                         "cpuOCTip114": "AVX etkin durumdayken etkili etkin çekirdek oranı sınırını elde etmek için bu değeri, karşılık gelen etkin çekirdek oranı sınırından çıkarın."
                     },
                     "gpuOCNames": {
-                        "gpuOCName0": "GPU Saati Sapması",
-                        "gpuOCName1": "VRAM Saati Sapması"
+                        "gpuOCName0": "GPU Saati Sapması",
+                        "gpuOCName1": "VRAM Saati Sapması"
                     },
                     "gpuOCTips": {
                         "gpuOCTip0": "GPU saati frekansına bir sapma ekleme.",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",

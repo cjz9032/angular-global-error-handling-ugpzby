@@ -95,7 +95,7 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "protractor": "~5.4.0",
     "recursive-readdir": "^2.2.2",
-    "standard-version": "^5.0.2",
+    "standard-version": "7.1.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.7.5"

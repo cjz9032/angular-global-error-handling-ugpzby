@@ -122,12 +122,12 @@
                         "cpuOC": "Omogočite zvišanje takta CPE v zmogljivem načinu.",
                         "gpuOC": "Omogočite zvišanje takta GPE v zmogljivem načinu.",
                         "advance": "DODATNA",
-                        "cpu_gpuDriverLack": "Za uporabo funkcije zvišanja takta namestite gonilnike za CPE/GPE.",
+                        "cpu_gpuDriverLack": "Za uporabo funkcije zvišanja takta namestite gonilnike za CPE/GPE.",
                         "cpuDriverLack": "Za uporabo funkcije zvišanja takta namestite gonilnik za CPE.",
-                        "gpuDriverLack": "Za uporabo funkcije zvišanja takta namestite gonilnik za GPE.",
+                        "gpuDriverLack": "Za uporabo funkcije zvišanja takta namestite gonilnik za GPE.",
                         "goInstall": "NAMESTI"
                     },
-                    "autoSwitch": "Samodejno preklopite na zmogljivi nač. pri zagonu iger in nato preklopite nazaj."	
+                    "autoSwitch": "Samodejno preklopite na zmogljivi nač. pri zagonu iger in nato preklopite nazaj."
                 },
                 "advancedOC": {
                     "title": "Zviš. takta – napr. nastav.",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",

@@ -23,8 +23,11 @@
 						<div class="pl-4 mt-3 ml-2">
 							<div>
 								<div *ngIf="isAutonomicCapability"
-									class="schedule_header">
-									<h5>{{ 'device.deviceSettings.power.smartStandby.subTitle' | translate }}</h5>
+									class="schedule_header"
+									role="text"
+									tabindex="0">
+									<h5 role="text">
+										{{ 'device.deviceSettings.power.smartStandby.subTitle' | translate }}</h5>
 									<vtr-ui-rounded-rectangle-radio [radioId]="'automatic_show'"
 										[group]="'smartStandByBtns'"
 										name="nMehod_show"
@@ -45,26 +48,33 @@
 									</vtr-ui-rounded-rectangle-radio>
 								</div>
 							</div>
-							<div *ngIf="!isAutonomicCapability && smartStandby?.isEnabled"
+							<div role="text"
+								tabindex="0"
+								*ngIf="!isAutonomicCapability && smartStandby?.isEnabled"
 								class="schedule_header">
-								<h5>{{ 'device.deviceSettings.power.smartStandby.subTitle2' | translate }}</h5>
+								<h5 role="text">{{ 'device.deviceSettings.power.smartStandby.subTitle2' | translate }}
+								</h5>
 							</div>
 							<div class="schedule"
+								role="text"
+								tabindex="0"
 								*ngIf="isAutonomicCapability && checkbox && smartStandby?.isEnabled">
-								<h5>
+								<h5 role="text">
 									{{ 'device.deviceSettings.power.smartStandby.subNote' | translate }}
 								</h5>
 							</div>
 							<div *ngIf="!checkbox && smartStandby?.isEnabled && isAutonomicCapability"
+								role="text"
+								tabindex="0"
 								class="schedule">
-								<h5>
+								<h5 role="text">
 									{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate }}
 								</h5>
-								<span>
+								<span role="text">
 									{{smartStandbyService.schedule}}
 								</span>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<span>
+								<span role="text">
 									{{'common.ui.from' | translate}} {{smartStandbyStartTime }}
 									{{'common.ui.to' | translate}} {{smartStandbyEndTime}}
 								</span>
@@ -82,12 +92,14 @@
 									aria-label="smart standby, time picker-toggle button">
 									<div>
 										<div *ngIf="isCollapsed"
-											class="collapse-text">
+											class="collapse-text"
+											role="text">
 											<!-- Expand -->
 											{{'common.ui.clickToChange' | translate | uppercase }}
 										</div>
 										<div *ngIf="!isCollapsed"
-											class="collapse-text">
+											class="collapse-text"
+											role="text">
 											<!-- Collapse -->
 											{{'common.ui.collapse' | translate | uppercase }}
 										</div>
@@ -126,7 +138,7 @@
 												<div class="col-md-12 pl-0">
 													<div class="note align-items-center"
 														id="smartStandby-timer-endTimeNote"
-														aria-label="smartStandby-timer-endTimeNote">
+														role="text">
 														{{ 'device.deviceSettings.power.smartStandby.timer.endTimeNote' | translate }}
 													</div>
 												</div>
@@ -152,6 +164,7 @@
 								class="hyperlink-to-graph"
 								(click)="showUsageGraph()"
 								tabindex="0"
+								role="link"
 								attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 								{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
 							</div>

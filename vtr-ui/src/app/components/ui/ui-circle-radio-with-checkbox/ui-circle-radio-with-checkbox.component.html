@@ -7,7 +7,6 @@
 	[attr.aria-checked]="checked"
 	attr.aria-label="radioId"
 	(keydown)="radioKBNavigation($event,radio)"
-	(focus)="checkOnFocus($event,radio)"
 	[ngClass]="{'white-theme': theme === 'white','blue-theme': theme === 'blue'}">
 	<div class="checkbox">
 		<input class="checkbox-custom"
