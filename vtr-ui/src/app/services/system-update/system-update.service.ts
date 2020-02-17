@@ -196,6 +196,7 @@ export class SystemUpdateService {
 					console.log('cancelUpdateCheck then', status);
 					// todo: ui changes to show on update cancel
 					this.isCheckingCancel = true;
+					this.commonService.sendNotification(UpdateProgress.UpdateCheckCancelled, status);
 				});
 		}
 	}
