@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Zainstaluj sterownik GPU w celu użycia funkcji taktowania.",
                         "goInstall": "ZAINSTALUJ"
                     },
-                    "autoSwitch": "Autom. włączaj tryb wydajny po uruchamianiu gry i wyłączaj go po jej zamknięciu."	
+                    "autoSwitch": "Autom. włączaj tryb wydajny po uruchamianiu gry i wyłączaj go po jej zamknięciu."
                 },
                 "advancedOC": {
                     "title": "Przetaktowywanie Ust. zaaw.",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",

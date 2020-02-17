@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Za uporabo funkcije zvišanja takta namestite gonilnik za GPE.",
                         "goInstall": "NAMESTI"
                     },
-                    "autoSwitch": "Samodejno preklopite na zmogljivi nač. pri zagonu iger in nato preklopite nazaj."	
+                    "autoSwitch": "Samodejno preklopite na zmogljivi nač. pri zagonu iger in nato preklopite nazaj."
                 },
                 "advancedOC": {
                     "title": "Zviš. takta – napr. nastav.",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",

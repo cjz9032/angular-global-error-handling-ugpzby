@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Hız Aşırtma işlevini kullanmak için GPU sürücüsünü yükleyin.",
                         "goInstall": "YÜKLE"
                     },
-                    "autoSwitch": "Oyunları başlatırken Otomatik Olarak Performans Kipine Geçip sonra geriye dönün."	
+                    "autoSwitch": "Oyunları başlatırken Otomatik Olarak Performans Kipine Geçip sonra geriye dönün."
                 },
                 "advancedOC": {
                     "title": "Hız Aşırtma Gelşmiş Ayrları",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",

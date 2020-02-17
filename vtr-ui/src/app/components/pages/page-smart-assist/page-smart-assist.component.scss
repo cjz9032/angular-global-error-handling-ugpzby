@@ -100,6 +100,17 @@ $fontsize_xs: 1.4rem;
 		}
 		.card-body {
 			padding: 2rem 1.8rem;
+			@media #{$black-on-white} {
+				border:0.1rem solid;
+				border-bottom-left-radius: 1rem;
+				border-bottom-right-radius: 1rem;
+			}
+			@media #{$white-on-black} {
+				border:0.1rem solid;
+				border-bottom-left-radius: 1rem;
+				border-bottom-right-radius: 1rem;
+
+			}
 		}
 		.blur-1 {
 			opacity: 0.65;

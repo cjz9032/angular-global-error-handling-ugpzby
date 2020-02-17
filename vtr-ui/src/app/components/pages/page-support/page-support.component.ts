@@ -12,7 +12,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
-//cpt
+// cpt
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -102,7 +102,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		metricsParent: 'Page.Support'
 	};
 
-	//cpt 
+	// cpt
 	private isCPTEnabled = true;
 	listCpt = {
 		iconPath: 'assets/images/support/svg_icon_cpt.svg',
@@ -120,7 +120,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		'assets/images/support/how-to.svg',
 		'assets/images/support/lifestyle-entertainment.svg',
 		'assets/images/support/software-apps.svg',
-	]
+	];
 
 	cateStartTime: any;
 	contentStartTime: any;
@@ -148,7 +148,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.fetchCMSArticleCategory();
 		this.fetchCMSContents();
 
-		//cpt
+		// cpt
 		this.isCPTEnabled = (typeof environment !== 'undefined' ? environment.isCPTEnabled : true);
 
 		this.setShowList();
@@ -200,12 +200,12 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			this.supportDatas.needHelp.splice(1, 0, this.listContactCustomerService);
 		});
 		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
-		
-		//cpt
-		if(this.isCPTEnabled){
+
+		// cpt
+		if (this.isCPTEnabled) {
 			this.supportDatas.quicklinks.push(this.listCpt);
 		}
-		
+
 	}
 
 	getWarrantyInfo() {

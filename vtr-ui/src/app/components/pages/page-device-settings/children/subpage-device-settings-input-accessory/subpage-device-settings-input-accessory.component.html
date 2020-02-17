@@ -76,10 +76,9 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<!-- commented out below lines to temporarily hide in current release -->
-					<!-- <li class="pt-3" *ngIf="machineType === 1 && isKbdBacklightAvailable">
+					<li class="pt-3" *ngIf="machineType === 1 && isKbdBacklightAvailable">
 						<vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)"></vtr-backlight-thinkpad>
-					</li> -->
+					</li>
 
 					<li class="pt-3" *ngIf="machineType === 1">
 						<vtr-top-row-functions></vtr-top-row-functions>

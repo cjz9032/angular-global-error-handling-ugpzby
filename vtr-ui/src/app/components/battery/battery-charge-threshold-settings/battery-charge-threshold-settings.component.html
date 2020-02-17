@@ -27,7 +27,7 @@
 								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow',bctInfo.checkboxValue?'disabled':'']"
 									ngbDropdownToggle
-									 #startToggle
+									#startToggle
 									[disabled]="bctInfo.checkboxValue?true:false"
 									type="button"
 									id="{{textId}}-start-dropdown"
@@ -63,6 +63,7 @@
 										(click)="[onStartValueChange(item , startToggle), $event.preventDefault()]"
 										(keydown.enter)="onStartValueChange(item , startToggle)"
 										id="{{textId}}-startAtChargeOption-{{item}}"
+										attr.aria-disabled="{{item >= bctInfo.stopValue}}"
 										attr.aria-label="{{textId}}-startAtChargeOption-{{item}}">{{item}}%</a>
 								</div>
 							</div>
@@ -111,6 +112,7 @@
 										(click)="[onStopValueChange(item , endToggle), $event.preventDefault()]"
 										(keydown.enter)="onStopValueChange(item , endToggle)"
 										id="{{textId}}-stopAtChargeOption-{{item}}"
+										attr.aria-disabled="{{!bctInfo.checkboxValue && (item <= bctInfo.startValue)}}"
 										attr.aria-label="{{textId}}-stopAtChargeOption-{{item}}">{{item}}%</a>
 								</div>
 							</div>
@@ -130,7 +132,8 @@
 									[(ngModel)]="bctInfo.checkboxValue"
 									(ngModelChange)='toggleAutoChargeSettings($event)'>
 								<span class="checkmark"></span>
-								<label [for]="isCheckedAutoInput + randomNumber">{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate}}</label>
+								<label
+									[for]="isCheckedAutoInput + randomNumber">{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate}}</label>
 							</div>
 						</div>
 					</div>

@@ -127,7 +127,7 @@
                         "gpuDriverLack": "GPU 드라이버를 설치해 오버클럭 기능 사용.",
                         "goInstall": "설치하기"
                     },
-                    "autoSwitch": "게임을 실행하고 되돌아갈 때 자동으로 Performance로 전환합니다."	
+                    "autoSwitch": "게임을 실행하고 되돌아갈 때 자동으로 Performance로 전환합니다."
                 },
                 "advancedOC": {
                     "title": "오버클럭 고급 설정",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",

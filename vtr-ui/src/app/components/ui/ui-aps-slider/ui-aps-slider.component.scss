@@ -22,6 +22,14 @@ but not to any other element on the page. using ::ng-deep
 			/* slider selected area*/
 			.ng5-slider-selection {
 				background: $main;
+				@media #{$white-on-black} {
+					background-color: $highlight_bright;
+					border: none;
+				}
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-textselected;
+					border: none;
+				}
 			}
 			/* slider thumb */
 			.ng5-slider-pointer {
