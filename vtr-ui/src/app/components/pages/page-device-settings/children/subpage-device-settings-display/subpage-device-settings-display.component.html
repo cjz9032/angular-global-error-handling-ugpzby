@@ -79,7 +79,7 @@
 												(colorPreviewValue)="setToEyeCareMode()">
 											</vtr-display-color-temp>
 											<div class="row">
-										        <!--<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4" -->
+												<!--<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4" -->
 												<div class="feature-note p-4"
 													id="day-time-color-temp-note"
 													tabindex="0"
@@ -137,7 +137,8 @@
 												</vtr-widget-permission-note>
 											</div>
 
-											<div class="row" *ngIf="missingGraphicDriver">
+											<div class="row"
+												*ngIf="missingGraphicDriver">
 												<div class="feature-note p-4 ecm-note"
 													id="eye-care-mode-temp-note"
 													tabindex="0"
@@ -197,20 +198,29 @@
 									<div class="row"
 										*ngIf="privacyGuardOnPasswordCapability">
 										<div class="col-12 ml-4">
-											<div class="custom-control custom-checkbox privacy-checkbox">
+											<div class="custom-control custom-checkbox privacy-checkbox"
+												tabindex="0"
+												(keydown.enter)="cbPrivacyGuard.click()"
+												attr.aria-disabled="{{privacyGuardToggleStatus}}"
+												[attr.aria-checked]="privacyGuardCheckBox"
+												attr.aria-labelledby="label-cb-privacy-guard"
+												role="checkbox">
 												<input type="checkbox"
-												[disabled]="privacyGuardToggleStatus"
-												class="custom-control-input"
-												[ngClass]="{'custom-control-label-disabled': privacyGuardToggleStatus}"
+													[disabled]="privacyGuardToggleStatus"
+													class="custom-control-input"
+													[ngClass]="{'custom-control-label-disabled': privacyGuardToggleStatus}"
+													#cbPrivacyGuard
 													id="cb-privacy-guard"
 													attr.aria-label="cb-privacy-guard"
+													aria-hidden="true"
 													[checked]="privacyGuardCheckBox"
 													(change)="setPrivacyGuardOnPasswordStatusVal($event)" />
 												<span class="checkmark"></span>
 												<label class="custom-control-label"
-												id="cb-privacy-guard"
+													id="label-cb-privacy-guard"
 													for="cb-privacy-guard">
 													<span id="cb-privacy-guard-description"
+														role="text"
 														attr.aria-label="privacy guard password capability note, {{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}">
 														{{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}
 													</span>
