@@ -11,7 +11,7 @@
 			<div class="container-fluid">
 				<div *ngIf="batteryService.gaugeResetInfo?.length>0">
 					<div class="row pt-1"
-						*ngFor="let battery of batteryService.gaugeResetInfo; let i=index;"
+						*ngFor="let battery of batteryService.gaugeResetInfo; let i=index"
 						tabindex="0"
 						role="text">
 						<div class="col px-5">
@@ -71,8 +71,7 @@
 										</div>
 										<div class="col-8 label-value"
 											role="text">
-											{{batteryService.remainingPercentages[battery.batteryNum - 1]}}<span
-												role="text">%</span>
+											{{batteryService.remainingPercentages[battery.batteryNum - 1]}}<span>%</span>
 										</div>
 									</div>
 									<div class="row"
@@ -144,7 +143,7 @@
 									<vtr-ui-button metricsItem="Battery.Gauge.RESET"
 										metricsParent="Page.Settings"
 										metricsEvent="FeatureClick"
-										[isRegular]="true"
+										[isFullWidth]="true"
 										[disabled]="gaugeResetBtnStatus[i] || !batteryService.isAcAttached"
 										[tabIndex]="(gaugeResetBtnStatus[i] || !batteryService.isAcAttached)?-1:0"
 										id="myDevice-settings-battery-gauge-reset-stop-btn"
