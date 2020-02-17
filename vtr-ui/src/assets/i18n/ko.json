@@ -645,7 +645,9 @@
             "notRegistered": "등록되지 않음",
             "fingerPrint": "지문",
             "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "등록됨",
+            "notEnrolled": "등록되지 않음"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "로그인",
-		"logout": "로그아웃",
-		"loggingOut": "Logging out...",
+        "logout": "로그아웃",
+        "loggingOut": "로그아웃 중...",
         "unlockExclusives": "독점 잠금 해제",
         "user": "사용자",
         "welcomeText1": "오늘 동력 공급 상태 보기, {{firstName}}!",

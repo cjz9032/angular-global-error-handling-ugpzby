@@ -645,7 +645,9 @@
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО",
             "fingerPrint": "Відбитки пальців",
             "privacyPolicyAndTermsOfService": "<tag>політику конфіденційності</tag> та <tag>умови надання послуг</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ЗАРЕЄСТРОВАНО",
+            "notEnrolled": "НЕ ЗАРЕЄСТРОВАНО"
         },
         "qAndA": {
             "title": "Питання та відповіді для вашої машини",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Вхід",
-		"logout": "Вихід",
-		"loggingOut": "Logging out...",
+        "logout": "Вихід",
+        "loggingOut": "Вихід...",
         "unlockExclusives": "Ексклюзивний вміст",
         "user": "Користувач",
         "welcomeText1": "Сьогодні ви енергійні, {{firstName}}!",

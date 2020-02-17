@@ -645,7 +645,9 @@
             "notRegistered": "NIE ZAREJESTROWANY",
             "fingerPrint": "Odcisk Palca",
             "privacyPolicyAndTermsOfService": "<tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ZAREJESTROWANO",
+            "notEnrolled": "NIE ZAREJESTROWANO"
         },
         "qAndA": {
             "title": "Pytania i odpowiedzi dotyczące Twojej maszyny",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Logowanie",
-		"logout": "Wyloguj",
-		"loggingOut": "Logging out...",
+        "logout": "Wyloguj",
+        "loggingOut": "Wylogowanie...",
         "unlockExclusives": "Odblokuj dodatki specjalne",
         "user": "Użytkownik",
         "welcomeText1": "Wygląda na pełnego energii, {{firstName}}!",

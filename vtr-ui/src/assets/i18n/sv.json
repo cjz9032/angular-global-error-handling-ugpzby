@@ -645,7 +645,9 @@
             "notRegistered": "INTE REGISTRERAD",
             "fingerPrint": "Fingeravtryck",
             "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "REGISTRERAD",
+            "notEnrolled": "INTE REGISTRERAD"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Inloggning",
-		"logout": "Logga ut",
-		"loggingOut": "Logging out...",
+        "logout": "Logga ut",
+        "loggingOut": "Loggar ut…",
         "unlockExclusives": "Visa exklusiva erbjudanden",
         "user": "Användare",
         "welcomeText1": "Energin är på topp i dag, {{firstName}}!",
