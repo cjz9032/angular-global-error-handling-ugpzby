@@ -18,6 +18,7 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 	@Input() showProgress = false;
 	@Input() isUpdateDownloading = false;
 	@Input() isCheckingPluginStatus = true;
+	@Input() isCancelingStatus = false;
 	@Input() downloadingPercent = 0;
 	@Input() installingPercent = 0;
 	@Output() checkForUpdate = new EventEmitter();
@@ -38,10 +39,12 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 
 	onCheckForUpdates() {
 		this.checkForUpdate.emit();
+		this.isCancelingStatus = false;
 		document.getElementById('system-update-back-btn').focus();
 	}
 
 	cancelUpdates() {
+		this.isCancelingStatus = true;
 		this.cancelUpdateCheck.emit();
 	}
 

@@ -221,5 +221,8 @@
 .vtr-ui-switch-row.white-theme {
 	.caption {
 		color: $grey_dark;
+		span{
+		color: $grey_dark;
+		}
 	}
 }
