@@ -125,7 +125,7 @@
                         "cpu_gpuDriverLack": "Instalar drivers CPU/GPU para usar a função Overclocking.",
                         "cpuDriverLack": "Instalar driver CPU para usar a função Overclocking.",
                         "gpuDriverLack": "Instalar driver GPU para usar a função Overclocking.",
-                        "goInstall": "IR PARA INSTALAR"
+                        "goInstall": "IR PARA INSTALAR"
                     },
                     "autoSwitch": "Mude automaticamente para Desempenho ao iniciar jogos e reverta em seguida."	
                 },
@@ -135,47 +135,47 @@
                     "gpuOverclock": "Overclock da GPU",
                     "cpuOCNames": {
                         "cpuOCName2": "Tensão do Núcleo",
-                        "cpuOCName116": "Velocidade do Núcleo 1",
-                        "cpuOCName117": "Velocidade do Núcleo 2",
-                        "cpuOCName118": "Velocidade do Núcleo 3",
-                        "cpuOCName119": "Velocidade do Núcleo 4",
-                        "cpuOCName34": "Desvio de Tensão do Núcleo",
-                        "cpuOCName120": "Velocidade do Núcleo 5",
-                        "cpuOCName121": "Velocidade do Núcleo 6",
-                        "cpuOCName76": "Velocidade da Cache",
-                        "cpuOCName77": "Tensão da Cache",
-                        "cpuOCName79": "Desvio da Tensão da Cache",
-                        "cpuOCName122": "Velocidade do Núcleo 7",
-                        "cpuOCName123": "Velocidade do Núcleo 8",
-                        "cpuOCName102": "ICCMAX do Núcleo",
-                        "cpuOCName106": "ICCMAX da Cache",
-                        "cpuOCName114": "Desvio da Velocidade do AVX"
+                        "cpuOCName116": "Velocidade do Núcleo 1",
+                        "cpuOCName117": "Velocidade do Núcleo 2",
+                        "cpuOCName118": "Velocidade do Núcleo 3",
+                        "cpuOCName119": "Velocidade do Núcleo 4",
+                        "cpuOCName34": "Desvio de Tensão do Núcleo",
+                        "cpuOCName120": "Velocidade do Núcleo 5",
+                        "cpuOCName121": "Velocidade do Núcleo 6",
+                        "cpuOCName76": "Velocidade da Cache",
+                        "cpuOCName77": "Tensão da Cache",
+                        "cpuOCName79": "Desvio da Tensão da Cache",
+                        "cpuOCName122": "Velocidade do Núcleo 7",
+                        "cpuOCName123": "Velocidade do Núcleo 8",
+                        "cpuOCName102": "ICCMAX do Núcleo",
+                        "cpuOCName106": "ICCMAX da Cache",
+                        "cpuOCName114": "Desvio da Velocidade do AVX"
                     },
                     "cpuOCTips": {
-                        "cpuOCTip2": "Defina a tensão do núcleo da CPU.",
-                        "cpuOCTip116": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
-                        "cpuOCTip117": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
-                        "cpuOCTip118": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
-                        "cpuOCTip119": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
-                        "cpuOCTip34": "Um desvio da tensão em relação à tensão do núcleo atual.",
-                        "cpuOCTip120": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
-                        "cpuOCTip121": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
-                        "cpuOCTip76": "Defina o multiplicador máximo da cache do processador no qual as caches podem funcionar. O valor de frequência da cache é o produto entre esta relação e a frequência do relógio de referência.",
-                        "cpuOCTip77": "Tensão fornecida à interface da cache interna do processador baseada no modo de tensão da cache selecionada atualmente.",
-                        "cpuOCTip79": "Desvio da tensão final que é aplicado à Tensão da cache.",
-                        "cpuOCTip122": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
-                        "cpuOCTip123": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
-                        "cpuOCTip102": "Defina o ICCMAX para o Regulador de Tensão do Núcleo do Processador.",
-                        "cpuOCTip106": "Defina o ICCMAX para o Regulador de Tensão do Barramento em Anel e da Cache do Processador.",
-                        "cpuOCTip114": "Para calcular o limite de velocidade do núcleo ativo eficaz quando o AVX está ativo, subtraia este valor ao limite de velocidade do núcleo ativo correspondente."
+                        "cpuOCTip2": "Defina a tensão do núcleo da CPU.",
+                        "cpuOCTip116": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip117": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip118": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip119": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip34": "Um desvio da tensão em relação à tensão do núcleo atual.",
+                        "cpuOCTip120": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip121": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip76": "Defina o multiplicador máximo da cache do processador no qual as caches podem funcionar. O valor de frequência da cache é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip77": "Tensão fornecida à interface da cache interna do processador baseada no modo de tensão da cache selecionada atualmente.",
+                        "cpuOCTip79": "Desvio da tensão final que é aplicado à Tensão da cache.",
+                        "cpuOCTip122": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip123": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip102": "Defina o ICCMAX para o Regulador de Tensão do Núcleo do Processador.",
+                        "cpuOCTip106": "Defina o ICCMAX para o Regulador de Tensão do Barramento em Anel e da Cache do Processador.",
+                        "cpuOCTip114": "Para calcular o limite de velocidade do núcleo ativo eficaz quando o AVX está ativo, subtraia este valor ao limite de velocidade do núcleo ativo correspondente."
                     },
                     "gpuOCNames": {
-                        "gpuOCName0": "Desvio do Relógio da GPU",
-                        "gpuOCName1": "Desvio do Relógio da VRAM"
+                        "gpuOCName0": "Desvio do Relógio da GPU",
+                        "gpuOCName1": "Desvio do Relógio da VRAM"
                     },
                     "gpuOCTips": {
-                        "gpuOCTip0": "Adicionar um desvio à frequência do relógio da GPU.",
-                        "gpuOCTip1": "Adicionar um desvio à frequência do relógio da memória."
+                        "gpuOCTip0": "Adicionar um desvio à frequência do relógio da GPU.",
+                        "gpuOCTip1": "Adicionar um desvio à frequência do relógio da memória."
                     }
                 },
                 "savePromptPopup": {
@@ -725,11 +725,11 @@
                 "text4": "G",
                 "text5": "B",
                 "text6": "Dividir Área (Desat.): clicar na imagem tecl. para alterar cores",
-                "text7": "Dividir Área (Desat.): clicar nas secções na imagem tecl. para alterar cores da secção",
-                "text8": "O efeito atual não suporta a seleção de cores"
+                "text7": "Dividir Área (Desat.): clicar nas secções na imagem tecl. para alterar cores da secção",
+                "text8": "O efeito atual não suporta a seleção de cores"
             },
             "tipText": {
-                "title1": "Utilizar Fn+barra de espaços para alternar entre perfis"
+                "title1": "Utilizar Fn+barra de espaços para alternar entre perfis"
             }
         }
     },
