@@ -84,10 +84,11 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 		this.childContent = {};
 		this.childContent.innerHTML = '';
 		console.log(this.tooltipContent);
-		this.checkToolTips();
-		this.ngZone.runOutsideAngular(() => {
-			window.addEventListener('scroll', () => { this.scrollEvent.next(); }, true);
-		});
+		// below commented due to VAN-14567
+		// this.checkToolTips();
+		// this.ngZone.runOutsideAngular(() => {
+		// 	window.addEventListener('scroll', () => { this.scrollEvent.next(); }, true);
+		// });
 
 		// this.commonService.notification.subscribe((notification: AppNotification) => {
 		// 	this.onNotification(notification);

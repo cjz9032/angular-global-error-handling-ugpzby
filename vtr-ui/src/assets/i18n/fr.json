@@ -87,8 +87,7 @@
                     "line8": "<b>Charge rapide </b><br> Jouez plus longtemps durant vos déplacements grâce au chargement plus rapide de la batterie",
                     "line9": "<b>Verrou pavé tactile </b><br> Évitez les saisies par erreur lorsque vous jouez en désactivant le pavé tactile",
                     "line10": "<b>Fermeture automatique </b><br> Effacez les processus qui ne sont pas nécessaires pour le jeu avant de commencer à jouer pour optimiser les ressources système disponibles",
-                    "line11": "<b>Mode thermique </b><br> Définissez votre profil périphérique favori pour contrôler la vitesse du ventilateur et le refroidissement",
-                    "line12": "<b>Touche de macro </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Mode thermique </b><br> Définissez votre profil périphérique favori pour contrôler la vitesse du ventilateur et le refroidissement"
                 },
                 "systemInfo": {
                     "systenTooltip": "Placez le curseur sur UC/GPU/RAM et sur différents lecteurs pour afficher leurs descriptions, y compris les informations relatives à la fabrication et au modèle"
@@ -2958,7 +2957,8 @@
             "storage": "Stockage",
             "wireless": "Sans fil"
         },
-        "warningMessage": "Gardez à l'esprit que les tests seront annulés si le système est en mode veille ou hibernation"
+        "warningMessage": "Gardez à l'esprit que les tests seront annulés si le système est en mode veille ou hibernation",
+        "refreshMessage": "L'actualisation peut prendre un certain temps, car tous les composants doivent être à nouveau chargés"
     },
     "smartPerformance": {
         "title": "Health & Support",

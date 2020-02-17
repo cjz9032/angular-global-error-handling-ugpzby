@@ -80,15 +80,14 @@
                     "line1": "Dzięki opcji Vantage Edge ustawienia zostaną automatycznie dostrojone w zależności od sposobu użytkowania. \n Maksymalna wydajność podczas grania, dłuższa żywotność baterii, gdy nie grasz.",
                     "line2": "<b>Omówienie zarządzania funkcją</b> <br> Niektóre funkcje nie są dostępne na wszystkich urządzeniach",
                     "line3": "<b>Przetaktowywanie CPU </b><br> Zwiększ maksymalną prędkość procesora",
-                    "line4": "<b>Przetaktowywanie pamięci RAM </b><br> Zwiększ maksymalną prędkość pamięci",
+                    "line4": "<b>Przetaktowywanie RAM </b><br> Zwiększ maksymalną prędkość pamięci",
                     "line5": "<b>Wspomaganie sieci </b><br> Określ priorytety ruchu sieciowego dla odtwarzanej gry",
                     "line6": "<b>Dolby </b><br> Dostrój dźwięk specjalnie do gier z technologią Dolby",
                     "line7": "<b>Tryb hybrydowy </b><br> Wyłącz zaawansowane ustawienia GPU, gdy nie grasz, aby zwiększyć wydajność baterii",
                     "line8": "<b>Szybkie ładowanie </b><br> Graj dłużej dzięki szybszemu ładowaniu baterii",
                     "line9": "<b>Blokada panelu dotyk. </b><br> Zapobiegnij błędom sterowania, wyłączając panel dotykowy na czas grania",
                     "line10": "<b>Autozamykanie </b><br> Wyczyść procesy, które nie są potrzebne do grania przed rozpoczęciem gry, aby zmaksymalizować dostępne zasoby systemowe",
-                    "line11": "<b>Tryb term </b><br> Ustaw preferowany profil urządzenia dotyczący prędkości wentylatora i sterowania chłodzeniem.",
-                    "line12": "<b>Klawisz makr</b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Tryb term </b><br> Ustaw preferowany profil urządzenia dotyczący prędkości wentylatora i sterowania chłodzeniem."
                 },
                 "systemInfo": {
                     "systenTooltip": "Najedź kursorem myszy na CPU/GPU/RAM i różne dyski, aby wyświetlić ich opis wraz z informacjami o producencie i modelu"
@@ -2958,7 +2957,8 @@
             "storage": "Pamięć masowa",
             "wireless": "Bezprzewodowe"
         },
-        "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji"
+        "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji",
+        "refreshMessage": "Odświeżanie może zająć trochę czasu, ponieważ wymaga ponownego załadowania wszystkich komponentów"
     },
     "smartPerformance": {
         "title": "Health & Support",

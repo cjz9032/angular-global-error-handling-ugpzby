@@ -87,8 +87,7 @@
                     "line8": "<b>Snabbladdning </b><br> Spela längre på språng med snabbare batteriladdning",
                     "line9": "<b>Styrplattelås </b><br> Förhindra oavsiktlig inmatning genom att inaktivera styrplattan medan du spelar",
                     "line10": "<b>Stäng auto-matiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
-                    "line11": "<b>Temperaturläge </b><br> Ange önskad enhetsprofil för fläkthastighet och kylningskontroll",
-                    "line12": "<b>Makrotangent </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Temperaturläge </b><br> Ange önskad enhetsprofil för fläkthastighet och kylningskontroll"
                 },
                 "systemInfo": {
                     "systenTooltip": "Håll muspekaren över CPU/GPU/RAM och olika enheter för att se beskrivningar, bland annat information om tillverkare och modell"
@@ -2958,7 +2957,8 @@
             "storage": "Lagring",
             "wireless": "Radio"
         },
-        "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge"
+        "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge",
+        "refreshMessage": "Uppdateringen kan ta lite tid, eftersom alla komponenter behöver läsas in igen"
     },
     "smartPerformance": {
         "title": "Health & Support",

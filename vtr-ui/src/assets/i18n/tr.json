@@ -87,8 +87,7 @@
                     "line8": "<b>Hızlı Şarj </b><br> Daha hızlı pil şarjıyla hareket halindeyken daha uzun süre oyun oynayın",
                     "line9": "<b>Touchpad Kilidi </b><br> Oyun oynarken dokunmaya duyarlı tableti devre dışı bırakarak hatalı girişleri önleyin",
                     "line10": "<b>Oto. Kapat </b><br> Kullanılabilir sistem kaynaklarını en üst düzeye çıkarmak için oyuna başlamadan önce gerekli olmayan işlemleri temizleyin",
-                    "line11": "<b>Isı Kipi </b><br> Fan hızı ve soğutma kontrolü için tercih ettiğiniz cihaz profilini ayarlayın",
-                    "line12": "<b>Makro Tuşu </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Isı Kipi </b><br> Fan hızı ve soğutma kontrolü için tercih ettiğiniz cihaz profilini ayarlayın"
                 },
                 "systemInfo": {
                     "systenTooltip": "Üretim ve model bilgilerini de içeren açıklamaları göstermek için CPU/GPU/RAM ve farklı sürücülerin üzerine gelin"
@@ -2958,7 +2957,8 @@
             "storage": "Depolama alanı",
             "wireless": "Kablosuz"
         },
-        "warningMessage": "Sistem uyku veya hazırda bekleme kipine geçerse testlerin iptal edileceğini unutmayın"
+        "warningMessage": "Sistem uyku veya hazırda bekleme kipine geçerse testlerin iptal edileceğini unutmayın",
+        "refreshMessage": "Tüm bileşenlerin tekrar yüklenmesi gerektiğinden yenileme işlemi biraz zaman alabilir"
     },
     "smartPerformance": {
         "title": "Health & Support",

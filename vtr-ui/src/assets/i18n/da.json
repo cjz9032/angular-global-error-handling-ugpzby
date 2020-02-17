@@ -87,8 +87,7 @@
                     "line8": "<b>Hurtig opladning</b><br> Spil længere tid på farten med hurtigere batteriopladning",
                     "line9": "<b>Lås på navigationsplade</b><br> Undgå forkerte input ved at deaktivere navigationspladen, mens du spiller",
                     "line10": "<b>Luk automatisk</b><br> Ryd processer, der ikke er nødvendige for spil, før du går i gang med at spille, for at maksimere tilgængelige systemressourcer",
-                    "line11": "<b>Varmetilstand</b><br> Angiv din foretrukne enhedsprofil for blæserhastighed og kølingskontrol",
-                    "line12": "<b>Makro-tast</b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Varmetilstand</b><br> Angiv din foretrukne enhedsprofil for blæserhastighed og kølingskontrol"
                 },
                 "systemInfo": {
                     "systenTooltip": "Peg på CPU-/GPU/RAM og forskellige drev for at få vist disses beskrivelser, herunder fabrikat- og modeloplysninger"
@@ -2958,7 +2957,8 @@
             "storage": "Lager",
             "wireless": "Trådløs"
         },
-        "warningMessage": "Husk, at testene bliver annulleret, hvis systemet slumrer eller går i dvaletilstand"
+        "warningMessage": "Husk, at testene bliver annulleret, hvis systemet slumrer eller går i dvaletilstand",
+        "refreshMessage": "Opdateringen kan tage noget tid, da den skal indlæse alle komponenterne igen"
     },
     "smartPerformance": {
         "title": "Health & Support",

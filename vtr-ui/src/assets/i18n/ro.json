@@ -87,8 +87,7 @@
                     "line8": "<b>Încărcare rapidă </b><br> Jucați jocuri la drum, cu ajutorul încărcării mai rapide a bateriei",
                     "line9": "<b>Blocare touchpad </b><br> Preveniți introducerile eronate, dezactivând panoul tactil în timp ce jucați jocuri",
                     "line10": "<b>Închidere automată </b><br> Eliminați procesele care sunt inutile pentru jocuri, înainte de a începe să jucați, pentru a amplifica la maximum resursele de sistem disponibile",
-                    "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii",
-                    "line12": "<b>Tastă macro </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii"
                 },
                 "systemInfo": {
                     "systenTooltip": "Plasați cursorul pe CPU/GPU/RAM și pe alte drivere pentru a afișa descrierile acestora, inclusiv informațiile de fabricare și modelul"
@@ -2958,7 +2957,8 @@
             "storage": "Stocare",
             "wireless": "Fără fir"
         },
-        "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează"
+        "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează",
+        "refreshMessage": "Actualizarea poate dura un timp, deoarece este necesar să se încarce din nou toate componentele"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -87,8 +87,7 @@
                     "line8": "<b>快速充電 </b><br> 電池充電速度提高，有更多時間隨時隨地暢玩遊戲",
                     "line9": "<b>觸控板鎖定 </b><br> 在遊戲時停用觸控板，防止錯誤的輸入",
                     "line10": "<b>自動關閉 </b><br> 在您開始暢玩遊戲之前先清除與遊戲無關的處理程序，盡可能地利用所有可用的系統資源",
-                    "line11": "<b>熱模式 </b><br> 設定您偏好的裝置設定檔中的風扇速度和冷卻控制",
-                    "line12": "<b>巨集鍵 </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>熱模式 </b><br> 設定您偏好的裝置設定檔中的風扇速度和冷卻控制"
                 },
                 "systemInfo": {
                     "systenTooltip": "將游標移至 CPU/GPU/RAM 和不同的驅動程式之上以查看其個別描述，包括製造與機型資訊"
@@ -2958,7 +2957,8 @@
             "storage": "儲存裝置",
             "wireless": "無線"
         },
-        "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試"
+        "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試",
+        "refreshMessage": "重新整理可能需要一些時間，因為此時需要再度載入所有元件"
     },
     "smartPerformance": {
         "title": "Health & Support",
