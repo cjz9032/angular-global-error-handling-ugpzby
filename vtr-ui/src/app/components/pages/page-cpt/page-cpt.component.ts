@@ -88,7 +88,7 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
       country: new FormControl(this.serverSwitchData.countryList[0], Validators.required),
       language: new FormControl(this.serverSwitchData.languageList[7], Validators.required),
       segment: new FormControl(this.serverSwitchData.segmentList[1], Validators.required),
-      cmsserver: new FormControl(this.serverSwitchData.serverList[1], Validators.required),
+      cmsserver: new FormControl(this.serverSwitchData.cmsServerList[3]['cmsserver'], Validators.required),
       oem: new FormControl(this.serverSwitchData.oemList[0], Validators.required),
       brand: new FormControl(this.serverSwitchData.brandList[0], Validators.required),
       page: new FormControl(this.serverSwitchData.pageList[0]['opt'][0], Validators.required),
