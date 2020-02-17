@@ -725,11 +725,11 @@
                 "text4": "G",
                 "text5": "B",
                 "text6": "Dividir Área (Desat.): clicar na imagem tecl. para alterar cores",
-                "text7": "Dividir Área (Desat.): clicar nas secções na imagem tecl. para alterar cores da secção",
-                "text8": "O efeito atual não suporta a seleção de cores"
+                "text7": "Dividir Área (Desat.): clicar nas secções na imagem tecl. para alterar cores da secção",
+                "text8": "O efeito atual não suporta a seleção de cores"
             },
             "tipText": {
-                "title1": "Utilizar Fn+barra de espaços para alternar entre perfis"
+                "title1": "Utilizar Fn+barra de espaços para alternar entre perfis"
             }
         }
     },
