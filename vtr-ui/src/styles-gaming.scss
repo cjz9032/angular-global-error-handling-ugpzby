@@ -278,7 +278,7 @@
 														.threshold-for-built-in-battery {
 															color: $gaming_grey_lightest;
 														}
-														.inputSection {
+														.inputSection {															
 															.btn-block button.btn-outline-shadow {
 																border: none;
 																background: $gaming-Darkslate-blue;
@@ -289,7 +289,34 @@
 																	color: $gaming_grey_lightest;
 																}
 															}
+															textarea{
+																color:$gaming_grey_lightest!important
+															}
+															.note{
+																background: $gaming_bg;
+																color:$gaming_lightest;
+																border-color: $gaming_bg;
+															}
+															.dropdown-menu{
+																background: $gaming_shade!important;
+																color: $gaming_lightest!important;
+																.dropdown-item{
+																	&:hover{
+																		background: $gaming_hover!important;
+																	}
+																	&:focus{
+																		background: $gaming_hover!important;
+																	}
+																}
+																@media #{$black-on-white} {
+																	border: 0.1rem solid $dark;
+																}
+																@media #{$white-on-black} {
+																	border: 0.1rem solid $light;
+																}	
+																}
 														}
+														
 														.row-seperator {
 															height: 0.1rem;
 															background-color: $screen_dark_20;
@@ -374,6 +401,32 @@
 																color: $gaming_grey_lightest;
 															}
 														}
+														textarea{
+															color:$gaming_grey_lightest!important
+														}
+														.note{
+															background: $gaming_bg;
+															color:$gaming_lightest;
+															border-color: $gaming_bg;
+														}
+														.dropdown-menu{
+															background: $gaming_shade!important;
+															color: $gaming_lightest!important;
+															.dropdown-item{
+																&:hover{
+																	background: $gaming_hover!important;
+																}
+																&:focus{
+																	background: $gaming_hover!important;
+																}
+															}
+															@media #{$black-on-white} {
+																border: 0.1rem solid $dark;
+															}
+															@media #{$white-on-black} {
+																border: 0.1rem solid $light;
+															}	
+															}
 													}
 													.row-seperator {
 														height: 0.1rem;
@@ -754,6 +807,32 @@
 								color: $gaming_grey_lightest;
 							}
 						}
+						textarea{
+							color:$gaming_grey_lightest!important
+						}
+						.note{
+							background: $gaming_bg;
+							color:$gaming_lightest;
+							border-color: $gaming_bg;
+						}
+						.dropdown-menu{
+							background: $gaming_shade!important;
+							color: $gaming_lightest!important;
+							.dropdown-item{
+								&:hover{
+									background: $gaming_hover!important;
+								}
+								&:focus{
+									background: $gaming_hover!important;
+								}
+							}
+							@media #{$black-on-white} {
+								border: 0.1rem solid $dark;
+							}
+							@media #{$white-on-black} {
+								border: 0.1rem solid $light;
+							}	
+							}
 					}
 					.row-seperator {
 						height: 0.1rem;
