@@ -122,9 +122,9 @@
                         "cpuOC": "CPU-Übertaktung im Leistungsmodus aktivieren.",
                         "gpuOC": "GPU-Übertaktung im Leistungsmodus aktivieren.",
                         "advance": "ERWEITERT",
-                        "cpu_gpuDriverLack": "CPU-/GPU-Treiber installieren, um Overclocking zu verwenden.",
-                        "cpuDriverLack": "CPU-Treiber installieren, um Overclocking zu verwenden.",
-                        "gpuDriverLack": "GPU-Treiber installieren, um Overclocking zu verwenden.",
+                        "cpu_gpuDriverLack": "CPU-/GPU-Treiber installieren, um Overclocking zu verwenden.",
+                        "cpuDriverLack": "CPU-Treiber installieren, um Overclocking zu verwenden.",
+                        "gpuDriverLack": "GPU-Treiber installieren, um Overclocking zu verwenden.",
                         "goInstall": "INSTALLIEREN"
                     },
                     "autoSwitch": "Autom. Wechsel zu Leistung, wenn Spiele gestartet werden, danach zurückschalten."	

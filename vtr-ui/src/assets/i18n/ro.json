@@ -122,9 +122,9 @@
                         "cpuOC": "Activați overclocking-ul CPU în modul performanță.",
                         "gpuOC": "Activați overclocking-ul GPU în modul performanță.",
                         "advance": "COMPLEXĂ",
-                        "cpu_gpuDriverLack": "Instalați driverele CPU/GPU pentru a utiliza funcția Overclocking.",
-                        "cpuDriverLack": "Instalați driverul CPU pentru a utiliza funcția Overclocking.",
-                        "gpuDriverLack": "Instalați driverul GPU pentru a utiliza funcția Overclocking.",
+                        "cpu_gpuDriverLack": "Instalați driverele CPU/GPU pentru a utiliza funcția Overclocking.",
+                        "cpuDriverLack": "Instalați driverul CPU pentru a utiliza funcția Overclocking.",
+                        "gpuDriverLack": "Instalați driverul GPU pentru a utiliza funcția Overclocking.",
                         "goInstall": "INSTALAȚI"
                     },
                     "autoSwitch": "Treceți automat la performanță când lansați jocuri și comutați înapoi ulterior."	
