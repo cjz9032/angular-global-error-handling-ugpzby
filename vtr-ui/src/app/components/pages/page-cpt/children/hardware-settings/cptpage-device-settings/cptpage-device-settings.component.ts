@@ -55,7 +55,6 @@ export class CptpageDeviceSettingsComponent implements OnInit, OnDestroy {
           console.log('fetchCMSContent error', error);
         }
       );
-
     });
   }
 

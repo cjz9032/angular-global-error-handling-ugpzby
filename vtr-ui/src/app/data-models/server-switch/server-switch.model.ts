@@ -81,4 +81,15 @@ export class ServerSwitch {
 		
 	];
 
+	/*CPT cms urls */
+	public cmsServerList: any = [
+		{'label': 'https://cm.dxp.lenovo.com (Prod Content Management)', 'cmsserver': 'https://cm.dxp.lenovo.com'},
+		{'label': 'https://stg.dxp.lenovo.com (Prod Content Staging)', 'cmsserver': 'https://stg.dxp.lenovo.com'},
+		{'label': 'https://vantage.dxp.lenovo.com (Prod Content Delivery)', 'cmsserver': 'https://vantage.dxp.lenovo.com'},
+		{'label': 'https://vantage.csw.lenovo.com (Prod LIVE/CDN)', 'cmsserver': 'https://vantage.csw.lenovo.com'},
+		{'label': 'https://cm.dxp-qa.lenovo.com (QA Content Management)', 'cmsserver': 'https://cm.dxp-qa.lenovo.com'},
+		{'label': 'https://vantage.dxp-qa.lenovo.com (QA Content Delivery)', 'cmsserver': 'https://vantage.dxp-qa.lenovo.com'},
+		{'label': 'https://vantage-qa.csw.lenovo.com (QA LIVE/CDN)', 'cmsserver': 'https://vantage-qa.csw.lenovo.com'},
+	];
+
 }
