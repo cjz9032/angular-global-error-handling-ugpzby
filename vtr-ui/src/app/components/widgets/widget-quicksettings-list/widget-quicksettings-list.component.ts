@@ -192,6 +192,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		this.gamingCapabilities.smartFanStatus = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.PrevThermalModeStatus
 		);
+		this.gamingCapabilities.thermalModeVersion = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.thermalModeVersion
+		);
 
 		if (!this.gamingCapabilities.smartFanFeature) {
 			this.quickSettings[0].isVisible = false;
@@ -239,7 +242,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 	public registerThermalModeEvent() {
 		if (this.gamingCapabilities.smartFanFeature) {
-			this.gamingThermalModeService.regThermalModeEvent();
+			this.gamingThermalModeService.regThermalModeChangeEvent();
 			this.shellServices.registerEvent(
 				EventTypes.gamingThermalModeChangeEvent,
 				this.onRegThermalModeEvent.bind(this)
@@ -281,7 +284,13 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 	public quicksettingListInit() {
 		const gamingStatus = this.gamingCapabilities;
-		this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
+		// TODO thermalModeVersion 2.0
+		if (gamingStatus.thermalModeVersion === 2) {
+			this.quickSettings[0].isVisible = false;
+		} else {
+			this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
+		}
+		// this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
 		if (gamingStatus.smartFanFeature) {
 			this.renderThermalModeStatus();
 		}
@@ -300,7 +309,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		try {
 			this.drop.curSelected = this.GetThermalModeCacheStatus();
 			if (this.gamingThermalModeService) {
-				const thermalModeStatus = await this.gamingThermalModeService.getThermalModeStatus();
+				const thermalModeStatus = await this.gamingThermalModeService.getThermalModeSettingStatus();
 				if (thermalModeStatus !== undefined) {
 					this.drop.curSelected = thermalModeStatus;
 					const ThermalModeStatusObj = new thermalModeStatus();
@@ -321,7 +330,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			}
 			this.setThermalModeStatus.thermalModeStatus = event.option.value;
 			this.gamingThermalModeService
-				.setThermalModeStatus(this.setThermalModeStatus.thermalModeStatus)
+				.setThermalModeSettingStatus(this.setThermalModeStatus.thermalModeStatus)
 				.then((statusValue: boolean) => {
 					if (!statusValue) {
 						this.drop.curSelected = this.GetThermalModeCacheStatus();

@@ -225,6 +225,26 @@
 			}
 		}
 	}
+
+	.camera-block {
+		::ng-deep .vtr-ui-switch-row.white-theme {
+			.tool-tip-icon{
+				margin-left: 1.5rem;
+			}
+		}
+	}
+	.color-temp-block {
+		::ng-deep .vtr-ui-switch-row.white-theme{
+			.vtr-row-switch{
+				display: block !important;
+				text-align: right !important;
+				min-width: auto !important;
+				.tool-tip-icon {
+					margin-left: 0px !important;
+				}
+			}
+		}
+	}
 }
 
 .ecm-note {

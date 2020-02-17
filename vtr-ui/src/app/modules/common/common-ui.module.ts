@@ -26,6 +26,8 @@ import { UiTimePickerComponent } from 'src/app/components/ui/ui-time-picker/ui-t
 import { UiTooltipsComponent } from 'src/app/components/ui/ui-tooltips/ui-tooltips.component';
 import { UiToggleComponent } from 'src/app/components/ui/ui-toggle/ui-toggle.component';
 import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
+import { UiBrightnessSliderComponent } from 'src/app/components/ui/ui-brightness-slider/ui-brightness-slider.component';
+import { UiAddReduceButtonComponent } from 'src/app/components/ui/ui-add-reduce-button/ui-add-reduce-button.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -74,7 +76,9 @@ library.add(faChevronUp);
 		UiPopoverComponent,
 		UiTooltipsComponent,
 		UiToggleComponent,
-		ContainerCollapsibleComponent
+		ContainerCollapsibleComponent,
+		UiBrightnessSliderComponent,
+		UiAddReduceButtonComponent
 	],
 	exports: [
 		UiApsSliderComponent,
@@ -102,7 +106,9 @@ library.add(faChevronUp);
 		MetricsModule,
 		UiTooltipsComponent,
 		UiToggleComponent,
-		ContainerCollapsibleComponent
+		ContainerCollapsibleComponent,
+		UiBrightnessSliderComponent,
+		UiAddReduceButtonComponent
 	],
 	imports: [
 		CommonModule,

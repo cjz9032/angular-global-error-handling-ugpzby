@@ -22,6 +22,12 @@
                     "rapidCharge": "급속 충전"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "오버클럭 켜기",
+                        "performance": "성능",
+                        "balance": "밸런스",
+                        "quiet": "저소음"
+                    },
                     "title": "CPU 오버클럭",
                     "status": {
                         "alwayson": "켜기",
@@ -98,6 +104,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "빠른 설정"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "열 모드 설정",
+                    "thermalMode2SettingDesc": "사용할 모드를 선택하십시오.",
+                    "fnQDesc": "바로 가기 Fn + Q를 사용해 모드를 전환할 수 있습니다.",
+                    "perormanceTitle": "성능 모드",
+                    "performanceDesc": "컴퓨터의 팬 속도 및 전력 소모 성능을 개선하십시오.",
+                    "OCDesc": "오버클럭 기능을 사용하도록 설정할 수 있습니다.",
+                    "ac_dcDesc": "연결된 경우에만 Performance 모드를 사용할 수 있습니다.",
+                    "balanceTitle": "균형 모드",
+                    "balanceDesc": "온도에 따라 자동으로 성능과 팬 속도를 균형있게 조정 합니다. 중간 전력 소모량.",
+                    "quietTitle": "저소음 모드",
+                    "quietDesc": "가능한 경우 컴퓨터의 성능과 팬 속도를 줄여 소음을 줄일 수 있습니다. 낮은 전력 소모량.",
+                    "OC": {
+                        "cpu_gpuOC": "Performance 모드에서 CPU/GPU 오버클럭 사용.",
+                        "cpuOC": "Performance 모드에서 CPU 오버클럭 사용.",
+                        "gpuOC": "Performance 모드에서 GPU 오버클럭 사용.",
+                        "advance": "고급",
+                        "cpu_gpuDriverLack": "CPU/GPU 드라이버를 설치해 오버클럭 기능 사용.",
+                        "cpuDriverLack": "CPU 드라이버를 설치해 오버클럭 기능 사용.",
+                        "gpuDriverLack": "GPU 드라이버를 설치해 오버클럭 기능 사용.",
+                        "goInstall": "설치하기"
+                    },
+                    "autoSwitch": "게임을 실행하고 되돌아갈 때 자동으로 Performance로 전환합니다."	
+                },
+                "advancedOC": {
+                    "title": "오버클럭 고급 설정",
+                    "description": "오버클럭이 켜져 있는 경우 고급 사용자 정의 매개 변수를 설정하십시오. 위험할 수 있습니다.",
+                    "gpuOverclock": "GPU 오버클럭",
+                    "cpuOCNames": {
+                        "cpuOCName2": "코어 전압",
+                        "cpuOCName116": "1 코어비",
+                        "cpuOCName117": "2 코어비",
+                        "cpuOCName118": "3 코어비",
+                        "cpuOCName119": "4 코어비",
+                        "cpuOCName34": "코어 전압 오프셋",
+                        "cpuOCName120": "5 코어비",
+                        "cpuOCName121": "6 코어비",
+                        "cpuOCName76": "캐시 비율",
+                        "cpuOCName77": "캐시 전압",
+                        "cpuOCName79": "캐시 전압 오프셋",
+                        "cpuOCName122": "7 코어비",
+                        "cpuOCName123": "8 코어비",
+                        "cpuOCName102": "코어 ICCMAX",
+                        "cpuOCName106": "캐시 ICCMAX",
+                        "cpuOCName114": "AVX 비율 오프셋"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "CPU 코어의 전압을 설정하십시오.",
+                        "cpuOCTip116": "코어가 작동할 수 있는 최대 코어 승산기를 설정하십시오. 코어 주파수의 값은 이 비율과 참조 클럭 주파수의 곱입니다.",
+                        "cpuOCTip117": "코어가 작동할 수 있는 최대 코어 승산기를 설정하십시오. 코어 주파수의 값은 이 비율과 참조 클럭 주파수의 곱입니다.",
+                        "cpuOCTip118": "코어가 작동할 수 있는 최대 코어 승산기를 설정하십시오. 코어 주파수의 값은 이 비율과 참조 클럭 주파수의 곱입니다.",
+                        "cpuOCTip119": "코어가 작동할 수 있는 최대 코어 승산기를 설정하십시오. 코어 주파수의 값은 이 비율과 참조 클럭 주파수의 곱입니다.",
+                        "cpuOCTip34": "현재 코어 전압에서의 전압 오프셋입니다.",
+                        "cpuOCTip120": "코어가 작동할 수 있는 최대 코어 승산기를 설정하십시오. 코어 주파수의 값은 이 비율과 참조 클럭 주파수의 곱입니다.",
+                        "cpuOCTip121": "코어가 작동할 수 있는 최대 코어 승산기를 설정하십시오. 코어 주파수의 값은 이 비율과 참조 클럭 주파수의 곱입니다.",
+                        "cpuOCTip76": "캐시가 작동할 수 있는 최대 프로세서 캐시 배수를 설정하십시오. 캐시 주파수의 값은 이 비율과 참조 클럭 주파수의 곱입니다.",
+                        "cpuOCTip77": "현재 선택된 캐시 전압 모드를 기반으로 프로세서의 내부 캐시 인터페이스에 제공되는 전압입니다.",
+                        "cpuOCTip79": "캐시 전압에 적용되는 최종 전압 오프셋입니다.",
+                        "cpuOCTip122": "코어가 작동할 수 있는 최대 코어 승산기를 설정하십시오. 코어 주파수의 값은 이 비율과 참조 클럭 주파수의 곱입니다.",
+                        "cpuOCTip123": "코어가 작동할 수 있는 최대 코어 승산기를 설정하십시오. 코어 주파수의 값은 이 비율과 참조 클럭 주파수의 곱입니다.",
+                        "cpuOCTip102": "프로세서 코어 전압 조절기에 대한 ICCMAX를 설정합니다.",
+                        "cpuOCTip106": "프로세서 캐시 및 환상 모선 조절기에 대한 ICCMAX를 설정합니다.",
+                        "cpuOCTip114": "AVX가 활성화 상태일 때 유효 활성 코어비 한계을 도출하려면, 이 값을 해당하는 활성 코어비 한계로 뺍니다."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "GPU 클럭 오프셋",
+                        "gpuOCName1": "VRAM 클럭 오프셋"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "GPU 클럭 주파수에 오프셋 추가.",
+                        "gpuOCTip1": "메모리 클럭 주파수에 오프셋 추가."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "변경 내용을 저장할까요?",
+                    "description1": "오버클럭을 제대로 설정하지 않으면 하드웨어가 영구적으로 손상될 수 있습니다. 문제가 발생하는 경우 다음 중 하나를 수행하십시오. ",
+                    "description2": "•  전원 버튼을 8초 동안 눌러 컴퓨터를 다시 시작하고 기본 매개 변수를 복원하십시오.",
+                    "description3": "•  \"기본 오버클럭 복원\"을 사용하여 기본 매개 변수를 복원하려면 BIOS 설정에서 전환하십시오.",
+                    "save": "저장",
+                    "notSave": "저장하지 않음"
+                },
+                "defaultPromptPopup": {
+                    "title": "기본값으로 설정할까요?",
+                    "description": "현재 및 이전 변경 내용이 모두 손실됩니다."
+                },
+                "warningPromptPopup": {
+                    "title": "경고!",
+                    "description": "오버클럭 설정이 적절하지 않으면 하드웨어가 영구적으로 손상될 수 있습니다.",
+                    "proceed": "계속"
                 }
             }
         },
@@ -599,6 +695,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "고정",
+                "effectName2": "스펙트럼",
+                "effectName3": "무지개",
+                "effectName4": "랜덤",
+                "effectName5": "차가운 블루",
+                "effectName6": "오른쪽으로 움직이기",
+                "effectName7": "왼쪽으로 움직이기"
+            },
+            "lightingSpeed": {
+                "title": "속도"
+            },
+            "colorPicker": {
+                "text2": "자세히",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "나누기 영역 (끄기): 색상을 변경하려면 아래의 키보드 이미지 클릭",
+                "text7": "나누기 영역 (켜기): 섹션 색상을 변경하려면 아래의 키보드 이미지 섹션 클릭",
+                "text8": "현재 효과에서는 색상을 선택할 수 없습니다"
+            },
+            "tipText": {
+                "title1": "Fn+Space를 사용하여 프로필 전환"
+            }
         }
     },
     "common": {
@@ -646,7 +778,9 @@
             "notRegistered": "등록되지 않음",
             "fingerPrint": "지문",
             "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
@@ -905,7 +1039,7 @@
                     "Good": "<b>배터리의 상태가 좋습니다.</b>",
                     "Exhaustion": "배터리 용량이 <b>저하</b>되었습니다. 새 배터리를 교체하십시오.",
                     "Bad": "<b>배터리 오류가 발생했습니다.</b> 배터리를 충전/방전할 수 없습니다. 배터리를 교체하십시오.",
-                    "NotDetected": "<b>배터리가 감지되지 않거나 배터리</b>에 꽂혀 있지 않습니다.",
+                    "NotDetected": "<b>감지된 배터리가 없습니다.</b>",
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
                     "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b>",
                     "LimitedACAdapterSupport": "<b>AC 어댑터는 충분한 전원을 공급하지 못합니다.</b>",
@@ -2336,6 +2470,7 @@
     "lenovoId": {
         "login": "로그인",
         "logout": "로그아웃",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "독점 잠금 해제",
         "user": "사용자",
         "welcomeText1": "오늘 동력 공급 상태 보기, {{firstName}}!",

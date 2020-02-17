@@ -22,6 +22,12 @@
                     "rapidCharge": "Hurtig opladning"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overclock. til",
+                        "performance": "Ydeevne",
+                        "balance": "Balance",
+                        "quiet": "Stille"
+                    },
                     "title": "CPU-overclocking",
                     "status": {
                         "alwayson": "Aktiveret",
@@ -98,6 +104,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Hurtige indstillinger"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Indstil. for varmetilstand",
+                    "thermalMode2SettingDesc": "Vælg den metode, du vil bruge.",
+                    "fnQDesc": "Du kan skifte tilstand ved hjælp af genvejen Fn + Q.",
+                    "perormanceTitle": "Ydeevnetilstand",
+                    "performanceDesc": "Boost computerens ydeevne med højere blæserhastighed og højere strømforbrug.",
+                    "OCDesc": "Du kan vælge at aktivere overclockingfunktionen.",
+                    "ac_dcDesc": "Ydeevnetilstand er kun tilgængelig ved tilslutning til stikkontakt.",
+                    "balanceTitle": "Balanceret tilstand",
+                    "balanceDesc": "Afbalancer automatisk ydeevnen og blæserhastigheden med udgangspunkt i temperaturen. Middel strømforbrug.",
+                    "quietTitle": "Stille tilstand",
+                    "quietDesc": "Bevar et lavt støjniveau ved at reducere computerens ydeevne og blæserhastighed, når det er muligt. Lavt strømforbrug.",
+                    "OC": {
+                        "cpu_gpuOC": "Aktiver CPU-/GPU-overclocking i ydeevnetilstand.",
+                        "cpuOC": "Aktiver CPU-overclocking i ydeevnetilstand.",
+                        "gpuOC": "Aktiver GPU-overclocking i ydeevnetilstand.",
+                        "advance": "UDVIDET",
+                        "cpu_gpuDriverLack": "Installer CPU/GPU-drivere for at bruge overclockingfunktionen.",
+                        "cpuDriverLack": "Installer CPU-driver for at bruge overclockingfunktionen.",
+                        "gpuDriverLack": "Installer GPU-driver for at bruge overclockingfunktionen.",
+                        "goInstall": "INSTALLER"
+                    },
+                    "autoSwitch": "Skift automatisk til ydeevne, når du starter spil, og skift tilbage bagefter."	
+                },
+                "advancedOC": {
+                    "title": "Avan. instil. f. overclock.",
+                    "description": "Angiv avancerede brugerparametre, når overclocking er aktiveret. Det kan være risikabelt.",
+                    "gpuOverclock": "GPU-overclocking",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Kernespænding",
+                        "cpuOCName116": "1 kerneforhold (Core Ratio)",
+                        "cpuOCName117": "2 kerneforhold (Core Ratio)",
+                        "cpuOCName118": "3 kerneforhold (Core Ratio)",
+                        "cpuOCName119": "4 kerneforhold (Core Ratio)",
+                        "cpuOCName34": "Forskydning for kernespænding",
+                        "cpuOCName120": "5 kerneforhold (Core Ratio)",
+                        "cpuOCName121": "6 kerneforhold (Core Ratio)",
+                        "cpuOCName76": "Cacheforhold",
+                        "cpuOCName77": "Cachespænding",
+                        "cpuOCName79": "Forskydning for cachespænding",
+                        "cpuOCName122": "7 kerneforhold (Core Ratio)",
+                        "cpuOCName123": "8 kerneforhold (Core Ratio)",
+                        "cpuOCName102": "Kerne-ICCMAX",
+                        "cpuOCName106": "Cache-ICCMAX",
+                        "cpuOCName114": "Forskydning for AVX-forhold"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Angiv spændingen for CPU-kernen.",
+                        "cpuOCTip116": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip117": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip118": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip119": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip34": "En spændingsforskydning fra den aktuelle kernespænding.",
+                        "cpuOCTip120": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip121": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip76": "Angiv den maksimale processorcachemultiplikator, som cacherne kan fungere med. Cachefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip77": "Spænding, der leveres til processorens interne cachegrænseflade med udgangspunkt i den aktuelt valgte cachespændingstilstand.",
+                        "cpuOCTip79": "Den endelige spændingsforskydning anvendes til cachespændingen.",
+                        "cpuOCTip122": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip123": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip102": "Indstil ICCMAX for spændingsregulatoren for processorkernen.",
+                        "cpuOCTip106": "Indstil ICCMAX for spændingsregulatoren for processorcachen og ringbussen.",
+                        "cpuOCTip114": "For at få den effektive, aktive grænse for kerneforholdet, når AVX er aktiv, skal du trække denne værdi fra den tilsvarende aktive kerneforholdsgrænse."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "Forskydning for GPU-clock",
+                        "gpuOCName1": "Forskydning for VRAM-clock"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Føj en forskydning til GPU-clockfrekvensen.",
+                        "gpuOCTip1": "Føj en forskydning hukommelsesclockfrekvensen."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Gem ændring?",
+                    "description1": "Forkert overclocking kan medføre uoprettelige hardwareskader. Gør ét af følgende, hvis der opstår et problem: ",
+                    "description2": "•  Hold strømknappen i nede i 8 sekunder for at genstarte computeren, og gendan standardparametrene.",
+                    "description3": "•  Brug \"Restore Default Overclock.\" i BIOS-inds., og gend. stan.param.",
+                    "save": "GEM",
+                    "notSave": "GEM IKKE"
+                },
+                "defaultPromptPopup": {
+                    "title": "Angiv som standard?",
+                    "description": "Alle aktuelle og tidligere ændringer går tabt."
+                },
+                "warningPromptPopup": {
+                    "title": "Advarsel!",
+                    "description": "Forkerte indstillinger for overclocking kan medføre hardwareskader, der ikke kan genoprettes.",
+                    "proceed": "FORTSÆT"
                 }
             }
         },
@@ -599,6 +695,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Statisk",
+                "effectName2": "Spektrum",
+                "effectName3": "Regnbue",
+                "effectName4": "Tilfældig",
+                "effectName5": "Kølig_blå",
+                "effectName6": "Bølge_højre",
+                "effectName7": "Bølge_venstre"
+            },
+            "lightingSpeed": {
+                "title": "Hastighed"
+            },
+            "colorPicker": {
+                "text2": "FLERE",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Del område (Fra): Klik på tastaturbilledet for at ændre farver",
+                "text7": "Del område (Til): Klik på afsnit på tastaturet for at ændre farver",
+                "text8": "Den aktuelle effekt understøtter ikke farvevalg"
+            },
+            "tipText": {
+                "title1": "Brug Fn+mellemrum til at skifte mellem profiler"
+            }
         }
     },
     "common": {
@@ -646,7 +778,9 @@
             "notRegistered": "IKKE REGISTRERET",
             "fingerPrint": "Fingeraftryk",
             "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -905,7 +1039,7 @@
                     "Good": "<b>Batteriets tilstand er god.</b>",
                     "Exhaustion": "Batteriets kapacitet er blevet <b>forringet</b>. Udskift det med et nyt.",
                     "Bad": "<b>Der er opstået en batterifejl.</b> Batteriet kan ikke oplades/aflades. Udskift batteriet.",
-                    "NotDetected": "<b>Der er ikke registreret et batteri</b>, eller der er ikke tilsluttet noget batteri.",
+                    "NotDetected": "<b>Der blev ikke fundet noget batteri.</b>",
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
                     "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm.</b>",
@@ -2336,6 +2470,7 @@
     "lenovoId": {
         "login": "Login",
         "logout": "Log af",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Lås Eksklusive op",
         "user": "Bruger",
         "welcomeText1": "Du ser ud til at være fuld af energi i dag, {{firstName}}!",

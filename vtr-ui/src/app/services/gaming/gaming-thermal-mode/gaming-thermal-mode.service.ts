@@ -10,14 +10,14 @@ export class GamingThermalModeService {
 
 	constructor(shellService: VantageShellService) {
 		this.gamingThermalMode = shellService.getGamingThermalMode();
-		if(this.gamingThermalMode === undefined) {
+		if (this.gamingThermalMode === undefined) {
 		}
 		if (this.gamingThermalMode) {
 			this.isShellAvailable = true;
 		}
-  }
-  
-  getThermalModeStatus(): Promise<any> {
+	}
+
+	getThermalModeSettingStatus(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
 				return this.gamingThermalMode.getThermalModeStatus();
@@ -28,7 +28,7 @@ export class GamingThermalModeService {
 		}
 	}
 
-	setThermalModeStatus(value: number): Promise<any> {
+	setThermalModeSettingStatus(value: number): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
 				return this.gamingThermalMode.setThermalModeStatus(value);
@@ -37,9 +37,9 @@ export class GamingThermalModeService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-  }
+	}
 
-  regThermalModeEvent(): Promise<any> {
+	regThermalModeChangeEvent(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
 				return this.gamingThermalMode.regThermalModeEvent();
@@ -49,6 +49,47 @@ export class GamingThermalModeService {
 			throw new Error(error.message);
 		}
 	}
-  
 
+	// Vantage 3.2, Thermal Mode 2.0
+	getThermalModeRealStatus(): Promise<any> {
+		try {
+			if(this.isShellAvailable) {
+				return this.gamingThermalMode.getThermalModeRealStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	getAutoSwitchStatus(): Promise<any> {
+		try {
+			if(this.isShellAvailable) {
+				return this.gamingThermalMode.getAutoSwitchStatus();
+			}
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	setAutoSwitchStatus(value: Boolean): Promise<any> {
+		try {
+			if(this.isShellAvailable) {
+				return this.gamingThermalMode.setAutoSwitchStatus(value);
+			}
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	regThermalModeRealStatusChangeEvent(): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingThermalMode.regThermalModeRealStatusEvent();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 }

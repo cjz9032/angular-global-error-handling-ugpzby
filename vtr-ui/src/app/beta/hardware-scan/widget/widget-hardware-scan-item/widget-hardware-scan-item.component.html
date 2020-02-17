@@ -37,7 +37,7 @@
 					<span class="result-code-complete-text"> {{item.resultCode}}</span>
 					<fa-icon *ngIf="item.information" class="result-code-icon" triggers="click:blur"
 						placement="auto" [ngbTooltip]="tooltipRefModule" [icon]="['far', 'question-circle']"
-						container="body" tooltipClass="vtr-tooltip" (click)="getInformation(item.information)">
+						container="vtr-root" tooltipClass="vtr-tooltip" (click)="getInformation(item.information)">
 					</fa-icon>
 				</div>
 			</div>

@@ -22,6 +22,12 @@
                     "rapidCharge": "快速充電"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "超頻已開啟",
+                        "performance": "效能",
+                        "balance": "平衡",
+                        "quiet": "安靜"
+                    },
                     "title": "CPU 超頻",
                     "status": {
                         "alwayson": "開啟",
@@ -98,6 +104,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "快速設定"
+                },
+                "advancedOC": {
+                    "title": "超頻進階設定",
+                    "description": "在超頻開啟時設定進階自訂參數。這可能會有風險。",
+                    "gpuOverclock": "GPU 超頻",
+                    "cpuOCNames": {
+                        "cpuOCName2": "核心電壓",
+                        "cpuOCName116": "1 核心比率",
+                        "cpuOCName117": "2 核心比率",
+                        "cpuOCName118": "3 核心比率",
+                        "cpuOCName119": "4 核心比率",
+                        "cpuOCName34": "核心電壓偏移",
+                        "cpuOCName120": "5 核心比率",
+                        "cpuOCName121": "6 核心比率",
+                        "cpuOCName76": "快取比率",
+                        "cpuOCName77": "快取電壓",
+                        "cpuOCName79": "快取電壓偏移",
+                        "cpuOCName122": "7 核心比率",
+                        "cpuOCName123": "8 核心比率",
+                        "cpuOCName102": "核心 ICCMAX",
+                        "cpuOCName106": "快取 ICCMAX",
+                        "cpuOCName114": "AVX 比率偏移"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "設定 CPU 核心的電壓。",
+                        "cpuOCTip116": "設定核心可據以運作的最大核心乘數。核心頻率的值是此比率與參考時鐘頻率的乘積。",
+                        "cpuOCTip117": "設定核心可據以運作的最大核心乘數。核心頻率的值是此比率與參考時鐘頻率的乘積。",
+                        "cpuOCTip118": "設定核心可據以運作的最大核心乘數。核心頻率的值是此比率與參考時鐘頻率的乘積。",
+                        "cpuOCTip119": "設定核心可據以運作的最大核心乘數。核心頻率的值是此比率與參考時鐘頻率的乘積。",
+                        "cpuOCTip34": "距離目前核心電壓的電壓偏移。",
+                        "cpuOCTip120": "設定核心可據以運作的最大核心乘數。核心頻率的值是此比率與參考時鐘頻率的乘積。",
+                        "cpuOCTip121": "設定核心可據以運作的最大核心乘數。核心頻率的值是此比率與參考時鐘頻率的乘積。",
+                        "cpuOCTip76": "設定快取可據以運作的最大處理器快取乘數。快取頻率的值是此比率與參考時鐘頻率的乘積。",
+                        "cpuOCTip77": "根據目前所選快取電壓模式提供給處理器的內部快取介面的電壓。",
+                        "cpuOCTip79": "套用至快取電壓的最終電壓偏移。",
+                        "cpuOCTip122": "設定核心可據以運作的最大核心乘數。核心頻率的值是此比率與參考時鐘頻率的乘積。",
+                        "cpuOCTip123": "設定核心可據以運作的最大核心乘數。核心頻率的值是此比率與參考時鐘頻率的乘積。",
+                        "cpuOCTip102": "設定處理器核心電壓整流器的 ICCMAX。",
+                        "cpuOCTip106": "設定處理器快取和環狀匯流排電壓整流器的 ICCMAX。",
+                        "cpuOCTip114": "若要得出 AVX 處於使用中狀態時的有效使用中核心比率限制，請減去此值至對應的使用中核心比率限制。"
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "GPU 時鐘偏移",
+                        "gpuOCName1": "VRAM 時鐘偏移"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "為 GPU 時鐘頻率增加偏移。",
+                        "gpuOCTip1": "為記憶體時鐘頻率增加偏移。"
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "儲存變更？",
+                    "description1": "超頻的設定不正確可能會導致無法還原的硬體損壞。如果遇到任何問題，請執行下列其中一個動作：",
+                    "description2": "•  按住電源按鈕 8 秒鐘，即可重新啟動電腦並還原預設參數。",
+                    "description3": "•  使用 BIOS 設定中的「還原為預設超頻」開關以還原預設參數。",
+                    "save": "儲存",
+                    "notSave": "不儲存"
+                },
+                "defaultPromptPopup": {
+                    "title": "設定為預設值？",
+                    "description": "所有目前和先前的變更都將遺失。"
+                },
+                "warningPromptPopup": {
+                    "title": "警告！",
+                    "description": "超頻的設定不正確可能會導致無法還原的硬體損壞。",
+                    "proceed": "繼續"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "熱模式設定",
+                    "thermalMode2SettingDesc": "選擇您要使用的模式。",
+                    "fnQDesc": "您可以使用快捷鍵 Fn + Q 切換模式。",
+                    "perormanceTitle": "效能模式",
+                    "performanceDesc": "加快風扇速度及增加耗電量以提高電腦效能。",
+                    "OCDesc": "您可以選擇開啟「超頻」功能。",
+                    "ac_dcDesc": "只有在插電時才能使用效能模式。",
+                    "balanceTitle": "平衡模式",
+                    "balanceDesc": "根據溫度自動平衡效能和風扇速度。中等耗電量。",
+                    "quietTitle": "安靜模式",
+                    "quietDesc": "盡可能降低電腦的效能和風扇速度、以保持安靜。低耗電量。",
+                    "OC": {
+                        "cpu_gpuOC": "在效能模式下啟用 CPU/GPU 超頻。",
+                        "cpuOC": "在效能模式下啟用 CPU 超頻。",
+                        "gpuOC": "在效能模式下啟用 GPU 超頻。",
+                        "advance": "進階",
+                        "cpu_gpuDriverLack": "安裝 CPU/GPU 驅動程式以使用超頻功能。",
+                        "cpuDriverLack": "安裝 CPU 驅動程式以使用超頻功能。",
+                        "gpuDriverLack": "安裝 GPU 驅動程式以使用超頻功能。",
+                        "goInstall": "執行安裝"
+                    },
+                    "autoSwitch": "啟動遊戲時自動切換到效能，之後再切換回來。"	
                 }
             }
         },
@@ -599,6 +695,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "靜態",
+                "effectName2": "光譜",
+                "effectName3": "七彩",
+                "effectName4": "隨機",
+                "effectName5": "酷藍",
+                "effectName6": "向右揮手",
+                "effectName7": "向左揮手"
+            },
+            "lightingSpeed": {
+                "title": "速度"
+            },
+            "colorPicker": {
+                "text2": "其他資訊",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "分割區域（關閉）：按一下下面的鍵盤圖像以變更色彩",
+                "text7": "分割區域（開啟）：按一下下方鍵盤圖像上的區段以變更區段色彩",
+                "text8": "目前效果不支援色彩選擇"
+            },
+            "tipText": {
+                "title1": "使用 Fn+空格鍵在設定檔之間切換"
+            }
         }
     },
     "common": {
@@ -646,7 +778,9 @@
             "notRegistered": "未註冊",
             "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -905,7 +1039,7 @@
                     "Good": "<b>電池狀況良好。</b>",
                     "Exhaustion": "電池容量已<b>降低</b>。請更換新的電池。",
                     "Bad": "<b>發生電池錯誤。</b>電池無法充電/放電。更換電池。",
-                    "NotDetected": "<b>未偵測到電池或未</b>插入電池。",
+                    "NotDetected": "<b>未偵測到電池。</b>",
                     "NotGood": "<b>電池狀況不佳。</b>",
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
@@ -2034,7 +2168,7 @@
             "firewallContent": "防火牆會在受信任的內部網路和不受信任的外部網路之間建立屏障，並由此屏障根據預定的安全規則來監控和控制傳入和傳出的網路流量。",
             "windowsActiveContent": "使用正版 Windows 會降低安全性威脅攻擊的風險。",
             "passwordContent": "使用更安全、更輕鬆的方式來管理您的密碼、付款和個人資訊。甚至建立強式而複雜的密碼，並在每個網站上迅速登入。",
-            "fingerprintContent": "可快速而安全登入 Windows、付款並連接到應用程式即服務的方法。",
+            "fingerprintContent": "可快速而安全登入 Windows、付款並連接到應用程式及服務的方法。",
             "uacContent": "移動此滑桿，選取您希望使用者帳戶控制讓您免受潛在有害變更的保護程度。",
             "wifiContent": "進階的軟體服務，可協助您的裝置區分安全與潛在惡意的無線網路。",
             "bitLockerContent": "透過硬碟資料的加密，協助保護您的檔案和資料夾免遭未經授權的存取。",
@@ -2336,6 +2470,7 @@
     "lenovoId": {
         "login": "登入",
         "logout": "登出",
+        "loggingOut": "正在登出...",
         "unlockExclusives": "解除鎖定獨家功能",
         "user": "使用者",
         "welcomeText1": "{{firstName}}，今天看起來充滿活力！",

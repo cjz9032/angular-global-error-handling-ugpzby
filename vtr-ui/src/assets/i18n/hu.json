@@ -22,6 +22,12 @@
                     "rapidCharge": "Gyorstöltés"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Túlpörgetés",
+                        "performance": "Teljesítmény",
+                        "balance": "Egyensúly",
+                        "quiet": "Csendes"
+                    },
                     "title": "CPU-túlpörgetés",
                     "status": {
                         "alwayson": "Be",
@@ -98,6 +104,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Gyorsbeállítások"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Termál mód beállítása",
+                    "thermalMode2SettingDesc": "Válassza ki a használni kívánt módot.",
+                    "fnQDesc": "Másik módra az Fn + Q paranccsal válthat.",
+                    "perormanceTitle": "Teljesítményközpontú mód",
+                    "performanceDesc": "Számítógépe teljesítményének növelése nagyobb ventilátor sebességgel és több energiafogyasztással.",
+                    "OCDesc": "Úgy is dönthet, hogy bekapcsolja a Túlpörgetés funkciót.",
+                    "ac_dcDesc": "A Teljesítményközpontú mód csak akkor érhető el, ha a számítógép be van dugva.",
+                    "balanceTitle": "Kiegyensúlyozott mód",
+                    "balanceDesc": "Automatikusan kiegyenlíti a teljesítményt és a ventilátor sebességét a hőmérséklet alapján. Középszintű energiafogyasztás.",
+                    "quietTitle": "Csendes mód",
+                    "quietDesc": "A készülék csendes marad a számítógép teljesítményének és a ventilátor sebességének csökkentésével, ahol csak lehet. Alacsony energiafogyasztás.",
+                    "OC": {
+                        "cpu_gpuOC": "CPU/GPU-túlpörgetés funkció engedélyezése Teljesítmény módban.",
+                        "cpuOC": "CPU-túlpörgetés funkció engedélyezése Teljesítmény módban.",
+                        "gpuOC": "GPU-túlpörgetés funkció engedélyezése Teljesítmény módban.",
+                        "advance": "KOMPLEX",
+                        "cpu_gpuDriverLack": "CPU/GPU-illesztőprogramok telepítése a Túlpörgetés funkcióhoz.",
+                        "cpuDriverLack": "CPU-illesztőprogram telepítése a Túlpörgetés funkcióhoz.",
+                        "gpuDriverLack": "GPU-illesztőprogram telepítése a Túlpörgetés funkcióhoz.",
+                        "goInstall": "TELEPÍTÉS"
+                    },
+                    "autoSwitch": "Automatikus váltás Teljesítmény módra játék indításakor, majd vissza."	
+                },
+                "advancedOC": {
+                    "title": "Túlpörgetés Spec. beáll.",
+                    "description": "Spec. egyéni paraméterek beáll., ha a Túlpörgetés be van kapcsolva. Ez kockázatos lehet.",
+                    "gpuOverclock": "GPU-túlpörgetés",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Magfeszültség",
+                        "cpuOCName116": "1 magos arány",
+                        "cpuOCName117": "2 magos arány",
+                        "cpuOCName118": "3 magos arány",
+                        "cpuOCName119": "4 magos arány",
+                        "cpuOCName34": "Magfeszültség eltolása",
+                        "cpuOCName120": "5 magos arány",
+                        "cpuOCName121": "6 magos arány",
+                        "cpuOCName76": "Gyorsítótár aránya",
+                        "cpuOCName77": "Gyorsítótár feszültsége",
+                        "cpuOCName79": "Gyorsítótár feszültségének eltolása",
+                        "cpuOCName122": "7 magos arány",
+                        "cpuOCName123": "8 magos arány",
+                        "cpuOCName102": "ICCMAX mag",
+                        "cpuOCName106": "ICCMAX gyorsítótár",
+                        "cpuOCName114": "AVX arány eltolása"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Állítsa be a CPU mag feszültségét.",
+                        "cpuOCTip116": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip117": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip118": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip119": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip34": "Feszültségtolás a jelenlegi magfeszültség értékéből.",
+                        "cpuOCTip120": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip121": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip76": "Állítsa be a processzor gyorsítótárának maximális szorzóját, amelyen a gyorsítótárak működhetnek. A gyorsítótár-frekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip77": "A processzor belső gyorsítótár felületét ellátó feszültség az aktuálisan kiválasztott gyorsítótár feszültségének üzemmódjától függ.",
+                        "cpuOCTip79": "A végleges feszültségtolás, amelyet a gyorsítótár feszültségére alkalmaznak.",
+                        "cpuOCTip122": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip123": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip102": "Állítsa be az ICCMAX-ot a processzor magfeszültség-szabályozójához.",
+                        "cpuOCTip106": "Állítsa be az ICCMAX-ot a processzor gyorsítótárának és gyűrűs buszának feszültségszabályozójához.",
+                        "cpuOCTip114": "Az effektív aktív magarány korlátjának meghatározásához az AVX aktív állapotában vonja le ezt az értéket a megfelelő aktív magarány korlátjából."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "GPU órajel eltolása",
+                        "gpuOCName1": "VRAM órajel eltolása"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Eltolás hozzáadása a GPU órajel frekvenciájához.",
+                        "gpuOCTip1": "Eltolás hozzáadása a memória órajel frekvenciájához."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Módosítások mentése?",
+                    "description1": "A Túlpörgetés helytelen beállítása végleg károsíthatja a hardvert. Probléma esetén tegye a következők valamelyikét: ",
+                    "description2": "•  A főkapcsoló 8 mp-ig való lenyomása után visszaállnak a paraméterek.",
+                    "description3": "•  A BIOS-ban („Alapért. túlpörgetés visszaáll.”) állítja vissza őket.",
+                    "save": "MENTÉS",
+                    "notSave": "NE MENTSE"
+                },
+                "defaultPromptPopup": {
+                    "title": "Alapértelmezett?",
+                    "description": "Az összes jelenlegi és korábbi módosítás elveszik."
+                },
+                "warningPromptPopup": {
+                    "title": "Figyelmeztetés!",
+                    "description": "A Túlpörgetés helytelen beállítása visszafordíthatatlan hardverkárosodást okozhat.",
+                    "proceed": "FOLYTATÁS"
                 }
             }
         },
@@ -599,6 +695,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Statikus",
+                "effectName2": "Színkép",
+                "effectName3": "Szivárvány",
+                "effectName4": "Véletlen",
+                "effectName5": "Hideg_kék",
+                "effectName6": "Hullám_jobb",
+                "effectName7": "Hullám_bal"
+            },
+            "lightingSpeed": {
+                "title": "Sebesség"
+            },
+            "colorPicker": {
+                "text2": "TOVÁBBIAK",
+                "text3": "P",
+                "text4": "Z",
+                "text5": "K",
+                "text6": "Területfelosztás (Ki): színek módos. kattintson a lenti bill.képre",
+                "text7": "Ter.feloszt. (Be): szakaszszín mód. katt. a bill.kép szakaszaira",
+                "text8": "A jelenlegi hatás nem támogatja a színválasztást"
+            },
+            "tipText": {
+                "title1": "Az Fn+szóköz segítségével válthat a profilok között"
+            }
         }
     },
     "common": {
@@ -646,7 +778,9 @@
             "notRegistered": "NEM REGISZTRÁLT",
             "fingerPrint": "Ujjlenyomat",
             "privacyPolicyAndTermsOfService": "<tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Kérdések és válaszok a gépedhez",
@@ -905,7 +1039,7 @@
                     "Good": "<b>Az akkumulátor jó állapotban van.</b>",
                     "Exhaustion": "Az akkumulátor kapacitása <b>tartósan csökkent</b>. Kérjük, cserélje ki egy újra.",
                     "Bad": "<b>Hiba történt az akkumulátorral.</b> Az akkumulátor nem tölthető/meríthető le. Cserélje ki az akkumulátort.",
-                    "NotDetected": "<b>Nem található akkumulátor, vagy</b> az akkumulátor nincs megfelelően behelyezve.",
+                    "NotDetected": "<b>A rendszer nem észlel akkumulátort.</b>",
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
@@ -2336,6 +2470,7 @@
     "lenovoId": {
         "login": "Bejelentkezés",
         "logout": "Kijelentkezés",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Exkluzív ajánlatok",
         "user": "Felhasználó",
         "welcomeText1": "Ma energikusnak látszik, {{firstName}}!",

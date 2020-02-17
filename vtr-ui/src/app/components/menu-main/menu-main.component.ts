@@ -34,6 +34,7 @@ import { CardService } from 'src/app/services/card/card.service';
 import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
 import { StringBooleanEnum } from '../../data-models/common/common.interface';
 import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
+import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -59,6 +60,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	private searchTipsTimeout: any;
 	private unsupportFeatureEvt: Observable<string>;
 	private subscription: Subscription;
+	public isLoggingOut = false;
 	public selfSelectStatusVal: boolean;
 	showMenu = false;
 	showHWScanMenu = false;
@@ -297,8 +299,27 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	toggleMenu(event) {
 		this.updateSearchBoxState(false);
 		this.showMenu = !this.showMenu;
+		this.colorPickerFun();
 		event.stopPropagation();
 	}
+
+	//To fix Hamburgar menu closing issue VAN-14558
+	public colorPickerFun(){
+		if(this.showMenu){
+			if(document.getElementById('colorBtn')){
+				document.getElementById('colorBtn').addEventListener('click',(event)=>{
+					this.showMenu = false;
+				});
+			}
+			for(let i=0;i<4;i++){
+				if(document.getElementById('keyboard-area'+i)){
+					document.getElementById('keyboard-area'+i).addEventListener('click',(event)=>{
+						this.showMenu = false;
+					});
+				}
+			}
+		}
+	}	
 
 	onKeyPress($event) {
 		if ($event.keyCode === 13) {
@@ -415,6 +436,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 					break;
 				case MenuItem.MenuItemChange:
 					this.updateMenu(notification.payload);
+					break;
+				case LenovoIdStatus.LoggingOut:
+					this.isLoggingOut = notification.payload;
 					break;
 				default:
 					break;

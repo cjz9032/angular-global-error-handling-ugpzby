@@ -2,8 +2,9 @@
 	[shiftRightUp]="true">
 
 	<header-content>
-		<img class="gaming-header-image"
-			[src]=" './../../../../assets/images/gaming/gaming-logo-full.svg' | svgInline | async" />
+				<img class="gaming-header-image" *ngIf="!liteGaming" [src]=" './../../../../assets/images/gaming/gaming-logo-full.svg' | svgInline | async" />
+				<img class="gaming-header-image" *ngIf="liteGaming && desktopType" [src]=" './../../../../assets/images/gaming/ideaCentre@2x.png' | svgInline | async" />
+				<img class="gaming-header-image" *ngIf="liteGaming && !desktopType" [src]=" './../../../../assets/images/gaming/ideaPad@2x.png' | svgInline | async" />
 	</header-content>
 
 	<left-content>
@@ -30,8 +31,7 @@
 				<div class="col-12 py-20 px-0">
 					<vtr-container-card *ngIf="!isOnline" order="4" role="img" tabindex="1" id="lenovo game store"
 						aria-label="lenovo game store" vtrMetrics [metricsItem]="'dashboard_gaming_banner'"
-						metricsEvent="featureClick" [metricsItem]="'dashboard_gaming_banner'"
-						metricsEvent="featureClick" [itemID]="cardContentPositionD.Id"
+						metricsEvent="featureClick" metricsParent="Gaming.Dashboard" [itemID]="cardContentPositionD.Id"
 						[img]="cardContentPositionD.FeatureImage" [title]="cardContentPositionD.Title"
 						[logoText]="cardContentPositionD.BrandName" [action]="cardContentPositionD.Action"
 						[actionType]="cardContentPositionD.ActionType" [actionLink]="cardContentPositionD.ActionLink"
@@ -40,9 +40,8 @@
 					<a class="action-link-a" *ngIf="isOnline" [href]="cardContentPositionD.ActionLink"
 						[target]="cardContentPositionD.ActionType">
 						<vtr-container-card order="4" role="img" tabindex="1" id="lenovo game store"
-							aria-label="lenovo game store" vtrMetrics [metricsItem]="'dashboard_gaming_banner'"
-							metricsEvent="featureClick" [metricsItem]="'dashboard_gaming_banner'"
-							metricsEvent="featureClick" [itemID]="cardContentPositionD.Id"
+							aria-label="lenovo game store" vtrMetrics  [metricsItem]="'dashboard_gaming_banner'"
+							metricsEvent="featureClick" metricsParent="Gaming.Dashboard" [itemID]="cardContentPositionD.Id"
 							[img]="cardContentPositionD.FeatureImage" [title]="cardContentPositionD.Title"
 							[logoText]="cardContentPositionD.BrandName" [action]="cardContentPositionD.Action"
 							[actionType]="cardContentPositionD.ActionType"

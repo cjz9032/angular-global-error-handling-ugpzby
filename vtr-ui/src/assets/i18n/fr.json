@@ -22,6 +22,12 @@
                     "rapidCharge": "Charge rapide"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Surfréquençage activé",
+                        "performance": "Performances",
+                        "balance": "Equilibre",
+                        "quiet": "Silencieux"
+                    },
                     "title": "Overclocking UC",
                     "status": {
                         "alwayson": "Activé",
@@ -98,6 +104,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Paramètres rapides"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Paramètres mode thermique",
+                    "thermalMode2SettingDesc": "Choisissez le mode que vous souhaitez utiliser.",
+                    "fnQDesc": "Vous pouvez changer de mode à l'aide du raccourci Fn + Q.",
+                    "perormanceTitle": "Mode de performance",
+                    "performanceDesc": "Améliorez les performances de votre ordinateur avec une vitesse de ventilateur supérieure et une consommation d'électricité plus élevée.",
+                    "OCDesc": "Vous pouvez choisir d'activer la fonction de surfréquençage.",
+                    "ac_dcDesc": "Le mode de performance est uniquement disponible lors du branchement.",
+                    "balanceTitle": "Mode équilibré",
+                    "balanceDesc": "Équilibre automatiquement les performances et la vitesse du ventilateur en fonction de la température. Consommation électrique moyenne.",
+                    "quietTitle": "Mode silencieux",
+                    "quietDesc": "Reste silencieux en diminuant les performances de votre ordinateur et en réduisant la vitesse du ventilateur dans la mesure du possible. Consommation électrique faible.",
+                    "OC": {
+                        "cpu_gpuOC": "Activer l'overclocking de l'UCT/GPU en mode de performance.",
+                        "cpuOC": "Activer l'overclocking de l'UCT en mode de performance.",
+                        "gpuOC": "Activer l'overclocking du GPU en mode de performance.",
+                        "advance": "AVANCE",
+                        "cpu_gpuDriverLack": "Installer les pilotes UCT/GPU pour utiliser la fonction overclocking.",
+                        "cpuDriverLack": "Installer les pilotes UCT pour utiliser la fonction overclocking.",
+                        "gpuDriverLack": "Installer les pilotes GPU pour utiliser la fonction overclocking.",
+                        "goInstall": "PROCÉDER À L'INSTALLATION"
+                    },
+                    "autoSwitch": "Passage auto au mode performance lors de jeux et revenir au mode précédent."	
+                },
+                "advancedOC": {
+                    "title": "Surfréquençage Param. avancés",
+                    "description": "Définissez les param. pers. avancés lorsque le Surfréquençage est activé. Cela peut être dangereux.",
+                    "gpuOverclock": "Surfréquençage UC",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Tension du cœur",
+                        "cpuOCName116": "Rapport du cœur 1",
+                        "cpuOCName117": "Rapport du cœur 2",
+                        "cpuOCName118": "Rapport du cœur 3",
+                        "cpuOCName119": "Rapport du cœur 4",
+                        "cpuOCName34": "Décalage de la tension du cœur",
+                        "cpuOCName120": "Rapport du cœur 5",
+                        "cpuOCName121": "Rapport du cœur 6",
+                        "cpuOCName76": "Rapport du cache",
+                        "cpuOCName77": "Tension du cache",
+                        "cpuOCName79": "Décalage de la tension du cache",
+                        "cpuOCName122": "Rapport du cœur 7",
+                        "cpuOCName123": "Rapport du cœur 8",
+                        "cpuOCName102": "Cœur ICCMAX",
+                        "cpuOCName106": "Cache ICCMAX",
+                        "cpuOCName114": "Décalage du rapport AVX"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Définissez la tension pour le cœur de l'unité centrale.",
+                        "cpuOCTip116": "Définissez le multiplicateur de cœur maximal auquel les cœurs peuvent fonctionner. La valeur de la fréquence du cœur est le produit de ce ratio et la fréquence de référence de l'horloge.",
+                        "cpuOCTip117": "Définissez le multiplicateur de cœur maximal auquel les cœurs peuvent fonctionner. La valeur de la fréquence du cœur est le produit de ce ratio et la fréquence de référence de l'horloge.",
+                        "cpuOCTip118": "Définissez le multiplicateur de cœur maximal auquel les cœurs peuvent fonctionner. La valeur de la fréquence du cœur est le produit de ce ratio et la fréquence de référence de l'horloge.",
+                        "cpuOCTip119": "Définissez le multiplicateur de cœur maximal auquel les cœurs peuvent fonctionner. La valeur de la fréquence du cœur est le produit de ce ratio et la fréquence de référence de l'horloge.",
+                        "cpuOCTip34": "Un décalage de tension par rapport à la tension du cœur actuelle.",
+                        "cpuOCTip120": "Définissez le multiplicateur de cœur maximal auquel les cœurs peuvent fonctionner. La valeur de la fréquence du cœur est le produit de ce ratio et la fréquence de référence de l'horloge.",
+                        "cpuOCTip121": "Définissez le multiplicateur de cœur maximal auquel les cœurs peuvent fonctionner. La valeur de la fréquence du cœur est le produit de ce ratio et la fréquence de référence de l'horloge.",
+                        "cpuOCTip76": "Définissez le multiplicateur du cache du processeur maximal auquel les caches peuvent fonctionner. La valeur de la fréquence du cache est le produit de ce ratio et la fréquence de référence de l'horloge.",
+                        "cpuOCTip77": "Tension fournie à l'interface du cache interne du processeur en fonction du mode de tension du cache actuellement sélectionné.",
+                        "cpuOCTip79": "Le décalage de la tension finale s'applique à la tension du cache.",
+                        "cpuOCTip122": "Définissez le multiplicateur de cœur maximal auquel les cœurs peuvent fonctionner. La valeur de la fréquence du cœur est le produit de ce ratio et la fréquence de référence de l'horloge.",
+                        "cpuOCTip123": "Définissez le multiplicateur de cœur maximal auquel les cœurs peuvent fonctionner. La valeur de la fréquence du cœur est le produit de ce ratio et la fréquence de référence de l'horloge.",
+                        "cpuOCTip102": "Définissez ICCMAX pour le régulateur de tension du cœur du processeur.",
+                        "cpuOCTip106": "Définissez ICCMAX pour le régulateur de cache et l'anneau de bus du processeur.",
+                        "cpuOCTip114": "Pour obtenir la limite du ratio du cœur actif effective lorsque AVX est actif, soustrayez cette valeur à la limite du rapport du cœur actif correspondant."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "Décalage de l'horloge GPU",
+                        "gpuOCName1": "Décalage de l'horloge VRAM"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Ajoutez un décalage à la fréquence d'horloge GPU.",
+                        "gpuOCTip1": "Ajoutez un décalage à la fréquence de l'horloge de la mémoire."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Sauver les modif. ?",
+                    "description1": "De mauvais paramètres d'overclocking entrainent de sérieux dégâts. Utilisez l'une de ces méthodes si vous rencontrez des problèmes : ",
+                    "description2": "•  Appuyez 8 secondes sur le bouton d'alimentation pour redémarrer l'ordinateur et restaurer les paramètres par défaut.",
+                    "description3": "•  Restaurez les paramètres avec \"Restaurer l'overclocking\" du BIOS.",
+                    "save": "SAUVEGARDER",
+                    "notSave": "NE PAS SAUVER"
+                },
+                "defaultPromptPopup": {
+                    "title": "Retour à la config. par défaut ?",
+                    "description": "Toutes les modifications en cours et précédentes seront perdues."
+                },
+                "warningPromptPopup": {
+                    "title": "Avertissement !",
+                    "description": "Des paramètres inadaptés du Surfréquençage peuvent entraîner des dégâts matériel irréversibles.",
+                    "proceed": "CONTINUER"
                 }
             }
         },
@@ -599,6 +695,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Statique",
+                "effectName2": "Spectre",
+                "effectName3": "Arc-en-ciel",
+                "effectName4": "Aléatoire",
+                "effectName5": "Bleu_froid",
+                "effectName6": "Vague_droite",
+                "effectName7": "Vague_gauche"
+            },
+            "lightingSpeed": {
+                "title": "Vitesse"
+            },
+            "colorPicker": {
+                "text2": "PLUS",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Diviser la zone (off) : cliquez sur l'image du clavier pour changer les couleurs",
+                "text7": "Diviser la zone (on) : cliquez sur les sections de l'image du clavier pour changer les couleurs de la section",
+                "text8": "L'effet en cours ne prend pas en charge la sélection des couleurs"
+            },
+            "tipText": {
+                "title1": "Utilisez Fn+Espace pour passer d'un profil à l'autre"
+            }
         }
     },
     "common": {
@@ -646,7 +778,9 @@
             "notRegistered": "NON ENREGISTRÉ",
             "fingerPrint": "Empreinte digitale",
             "privacyPolicyAndTermsOfService": "<tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Q & A pour votre machine",
@@ -905,7 +1039,7 @@
                     "Good": "<b>La batterie est en bon état.</b>",
                     "Exhaustion": "La capacité de la batterie est <b>affaiblie</b>. Veuillez la remplacer par une nouvelle.",
                     "Bad": "<b>Une erreur batterie s'est produite.</b> La batterie ne peut pas être chargée/déchargée. Remplacez la batterie.",
-                    "NotDetected": "<b>Aucune batterie n'a été</b> détectée ou n'est connectée à la batterie.",
+                    "NotDetected": "<b>Aucune batterie détectée.</b>",
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
                     "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
                     "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
@@ -2336,6 +2470,7 @@
     "lenovoId": {
         "login": "Connexion",
         "logout": "Se déconnecter",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Profitez des offres exclusives",
         "user": "Utilisateur",
         "welcomeText1": "Vous avez bonne mine aujourd'hui, {{firstName}} !",
