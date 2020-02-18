@@ -52,7 +52,7 @@ $line_height: 2.0rem;
 
 		.search-icon {
 			font-size: $icon_size;
-			height: calc($item_height - 2px);
+			height: calc(#{$item_height} - 2px);
 			width: $icon_size + 3rem;
 			color: $menu_hover;
 			@extend .flex-all-center;

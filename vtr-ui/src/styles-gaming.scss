@@ -1896,6 +1896,41 @@ vtr-container-card {
 			}
 		}
 	}
+	.content{
+		.title{
+			color: $gaming_lightest !important;
+		}
+	}
+}
+
+.Article-Detail-Modal{
+	*:focus{
+		outline: none;
+	}
+	overflow:hidden !important;
+	.modal-dialog{
+	 height: 100%;
+	 margin-top:0;
+	}
+	.modal-content{
+		padding: 3rem 0 3rem;
+		.modal-body{
+			max-height: 80vh;
+		}
+	 .vtr-modal-article-detail{
+	  height: auto;
+		.article-content {
+			.article-body {
+				padding:0;
+				margin:0;
+			 .spinner-content {
+				height: 50vh;
+			}
+			}
+		}
+	}
+		
+	}
 }
 
 .vtr-header-main-inner{
@@ -1903,7 +1938,201 @@ vtr-container-card {
 			padding-right: 3.2rem !important;
 		}
 }
+* {
+    padding: 0;
+    margin: 0;
+}
 
+ul,
+ol,
+li,
+dl {
+    list-style: none;
+    margin: 0;
+}
+
+button:focus {
+    outline: none;
+}
+
+button {
+    outline: none;
+    border: none;
+    background: none;
+    letter-spacing: normal;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.modal-fun {
+    overflow: hidden!important;
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+    .modal-dialog {
+        width: 66.6%!important;
+        min-width: 460px!important;
+        max-width: 1065px!important;
+        margin: 0;
+		transition: none!important;
+		font-family: "Segoe UI";
+        .modal-content {
+            background-color: transparent;
+            border-radius: .6rem;
+        }
+        .gaming-modal-fun {
+            .modal-loading {
+                font-size: 10rem;
+                color: $main;
+                .icon {
+                    display: block;
+                    text-align: center;
+                }
+            }
+            .modal-main {
+                position: relative;
+                background: $darkCell;
+                color: $gaming_lightest;
+                padding: 2.4rem;
+                border-radius: .6rem;
+                .modal-header {
+                    display: block;
+                    padding: 0;
+                    border-bottom: none;
+                    h2 {
+                        height: 2.8rem;
+                        line-height: 2.8rem;
+                        font-size: 2.4rem;
+						margin-bottom: 0;
+                    }
+                    p {
+                        font-size: 1.4rem;
+                        color: $gaming_light_05;
+                        margin-bottom: 0;
+                        padding: .5rem 0 2rem 0;
+						line-height: 2rem;
+                    }
+                    @media #{$black-on-white} {
+                        background: $gaming_darkest;
+                    }
+                    @media #{$white-on-black} {
+                        background: $gaming_darkest;
+                    }
+                    .close {
+                        width: 3.2rem;
+                        height: 3.2rem;
+                        color: $gaming_lightest;
+                        opacity: 1;
+                        font-size: 3rem;
+                        position: absolute;
+                        top: .4rem;
+                        right: .4rem;
+                        font-weight: normal;
+                        margin: 0;
+                        padding: 0;
+                        letter-spacing: normal;
+                        font-family: 'SegoeUI';
+                        @media #{$black-on-white} {
+                            color: $gaming_lightest;
+                        }
+                        @media #{$white-on-black} {
+                            color: $gaming_lightest;
+                        }
+                    }
+                }
+                .modal-body {
+                    padding: 0;
+                    height: auto;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    width: 100%;
+                    @media #{$black-on-white} {
+                        border: 0.1rem solid $gaming_darkest;
+                    }
+                    @media #{$white-on-black} {
+                        border: 0.1rem solid $gaming_darkest;
+                    }
+                }
+                .modal-footer {
+                    padding: 0;
+                    height: 4rem;
+					border-top: none;
+					margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.backdrop-prompt {
+    z-index: 10002!important;
+}
+
+.modal-prompt {
+    z-index: 10003;
+    overflow: hidden!important;
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+    .modal-dialog {
+        width: 35%!important;
+        min-width: 340px!important;
+        max-width: 560px!important;
+        margin: 0;
+        transition: none!important;
+        .modal-content {
+            border-radius: .6rem;
+        }
+    }
+}
+
+.border-radius-button {
+    font-size: 14px;
+	line-height: 1.5;
+	font-family: "Segoe UI";
+	font-weight: bold;
+	color: $white100;
+	padding: 8px 20px;
+	background-color: $blueFill;
+	border-radius: 20px;
+	transition: all 0.2s ease;
+	// &:hover {
+	// 	background-color: $blueHover;
+	// 	cursor: pointer;
+	// }
+	// &:active {
+	// 	transform: scale(0.96);
+	// }
+}
+
+.under-line-button {
+	font-size: 14px;
+	line-height: 1.5;
+	font-family: "Segoe UI";
+	font-weight: bold;
+	color: $blueFill;
+	border-bottom: 2px solid $blueFill;
+	padding: 8px 2px 0px 2px;
+	height: 32px;
+	border-radius: 0px;
+	margin-top: -8px;
+	transition: all 0.2s ease;
+	// &:hover {
+	//   color: $blueHover;
+	//   border-bottom: 2px solid $blueHover;
+	//   padding: 8px 4px 0px 4px;
+	//   cursor: pointer;
+	// }
+	// &:active {
+	//   transform: scale(0.96);
+	// }
+}
 .is-gaming,
 .gaming-help-popup,
 .battery-modal-size {

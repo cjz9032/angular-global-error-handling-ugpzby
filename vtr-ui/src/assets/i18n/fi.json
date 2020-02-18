@@ -22,6 +22,12 @@
                     "rapidCharge": "Pikalataus"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Ylikell. päällä",
+                        "performance": "Suorituskyky",
+                        "balance": "Tasapaino",
+                        "quiet": "Hiljainen"
+                    },
                     "title": "CPU-ylikellotus",
                     "status": {
                         "alwayson": "Käytössä",
@@ -97,6 +103,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Pika-asetukset"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Lämpö-tila-asetus",
+                    "thermalMode2SettingDesc": "Valitse tila, jota haluat käyttää.",
+                    "fnQDesc": "Voit vaihtaa tilaa käyttämällä pikanäppäintä Fn + Q.",
+                    "perormanceTitle": "Suorituskykytila",
+                    "performanceDesc": "Parantaa tietokoneesi suorituskykyä, lisää tuulettimen nopeutta ja kuluttaa enemmän virtaa.",
+                    "OCDesc": "Voit ottaa käyttöön ylikellotustoiminnon.",
+                    "ac_dcDesc": "Suorituskykytila on käytettävissä vain tietokoneen ollessa verkkovirrassa.",
+                    "balanceTitle": "Tasapainotettu tila",
+                    "balanceDesc": "Suorituskyvyn ja tuulettimen nopeuden automaattinen tasapainotus lämpötilan mukaan. Keskitason virrankulutus.",
+                    "quietTitle": "Hiljainen tila",
+                    "quietDesc": "Pidä laite hiljaisena alentamalla tietokoneen suorituskykyä ja tuulettimen nopeutta, jos mahdollista. Alhainen virrankulutus.",
+                    "OC": {
+                        "cpu_gpuOC": "Ota CPU:n/GPU:n ylikellotus käyttöön suorituskykytilassa.",
+                        "cpuOC": "Ota CPU-ylikellotus käyttöön suorituskykytilassa.",
+                        "gpuOC": "Ota GPU-ylikellotus käyttöön suorituskykytilassa.",
+                        "advance": "LISÄASETUKSET",
+                        "cpu_gpuDriverLack": "Asenna CPU/GPU-ajurit käyttämään ylikellotustoimintoa.",
+                        "cpuDriverLack": "Asenna CPU-ajuri käyttämään ylikellotustoimintoa.",
+                        "gpuDriverLack": "Asenna GPU-ajuri käyttämään ylikellotustoimintoa.",
+                        "goInstall": "ASENNA"
+                    },
+                    "autoSwitch": "Autom. vaihto suorituskykyyn pelien käynnistyessä ja takaisin pelin jälkeen."	
+                },
+                "advancedOC": {
+                    "title": "Ylikellotus lisäasetukset",
+                    "description": "Määritä mukautetut lisäparametrit, kun Ylikellotus on käytössä. Se voi olla vaarallista.",
+                    "gpuOverclock": "Näytönohjaimen ylikellotus",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Ydinjännite",
+                        "cpuOCName116": "1 Ytimen suhde",
+                        "cpuOCName117": "2 Ytimen suhde",
+                        "cpuOCName118": "3 Ytimen suhde",
+                        "cpuOCName119": "4 Ytimen suhde",
+                        "cpuOCName34": "Ydinjännitteen poikkeama",
+                        "cpuOCName120": "5 Ytimen suhde",
+                        "cpuOCName121": "6 Ytimen suhde",
+                        "cpuOCName76": "Välimuistisuhde",
+                        "cpuOCName77": "Välimuistijännite",
+                        "cpuOCName79": "Välimuistijännitteen poikkeama",
+                        "cpuOCName122": "7 Ytimen suhde",
+                        "cpuOCName123": "8 Ytimen suhde",
+                        "cpuOCName102": "Ytimen ICCMAX",
+                        "cpuOCName106": "Välimuistin ICCMAX",
+                        "cpuOCName114": "AVX-suhteen poikkeama"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Määritä keskusyksikön ytimen jännite.",
+                        "cpuOCTip116": "Aseta enimmäisydinkerroin, jolla ytimet voivat toimia. Ydintaajuuden arvo on tämän suhteen ja viitekellotaajuuden tuote.",
+                        "cpuOCTip117": "Aseta enimmäisydinkerroin, jolla ytimet voivat toimia. Ydintaajuuden arvo on tämän suhteen ja viitekellotaajuuden tuote.",
+                        "cpuOCTip118": "Aseta enimmäisydinkerroin, jolla ytimet voivat toimia. Ydintaajuuden arvo on tämän suhteen ja viitekellotaajuuden tuote.",
+                        "cpuOCTip119": "Aseta enimmäisydinkerroin, jolla ytimet voivat toimia. Ydintaajuuden arvo on tämän suhteen ja viitekellotaajuuden tuote.",
+                        "cpuOCTip34": "Jännitepoikkeama nykyisestä ydinjännitteestä.",
+                        "cpuOCTip120": "Aseta enimmäisydinkerroin, jolla ytimet voivat toimia. Ydintaajuuden arvo on tämän suhteen ja viitekellotaajuuden tuote.",
+                        "cpuOCTip121": "Aseta enimmäisydinkerroin, jolla ytimet voivat toimia. Ydintaajuuden arvo on tämän suhteen ja viitekellotaajuuden tuote.",
+                        "cpuOCTip76": "Aseta prosessorin välimuistin enimmäiskerroin, jolla välimuistit voivat toimia. Välimuistin taajuus on tämän suhteen ja viitekellon taajuuden tuote.",
+                        "cpuOCTip77": "Jännite, joka tuotetaan suorittimen sisäiseen välimuistiliittymään valittuna olevan välimuistin jännitetilan perusteella.",
+                        "cpuOCTip79": "Välimuistijännitteeseen sovellettava viimeinen jännitepoikkeama.",
+                        "cpuOCTip122": "Aseta enimmäisydinkerroin, jolla ytimet voivat toimia. Ydintaajuuden arvo on tämän suhteen ja viitekellotaajuuden tuote.",
+                        "cpuOCTip123": "Aseta enimmäisydinkerroin, jolla ytimet voivat toimia. Ydintaajuuden arvo on tämän suhteen ja viitekellotaajuuden tuote.",
+                        "cpuOCTip102": "Määritä ICCMAX suorittimen ydinjännitteen säätelijälle.",
+                        "cpuOCTip106": "Määritä ICCMAX suorittimen välimuistin ja rengasväylän jännitteen säätelijälle.",
+                        "cpuOCTip114": "Efektiivisen aktiivisen ydinsuhderajan laskemiseksi AVX:n ollessa aktiivinen, vähennä tämä arvo vastaavasta aktiivisesta ytimen suhteen rajasta."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "Näytönohjaimen kellon poikkeama",
+                        "gpuOCName1": "VRAM-kellon poikkeama"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Lisää poikkeama näytönohjaimen kellotaajuuteen.",
+                        "gpuOCTip1": "Lisää poikkeama muistin kellotaajuuteen."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Tallenna muutos?",
+                    "description1": "Ylikellotuksen väärät asetukset voivat vaurioittaa laitteistoa. Tee jompikumpi seuraavista toimista, jos ongelmia ilmenee: ",
+                    "description2": "•  Käynnistä tietokone uudelleen ja palauta oletusparametrit painamalla virtapainiketta 8 sekunnin ajan.",
+                    "description3": "•  Palauta oletusparametrit BIOS-asetusten Restore Default Overclocking -vaihtopainikkeella.",
+                    "save": "TALLENNA",
+                    "notSave": "ÄLÄ TALLENNA"
+                },
+                "defaultPromptPopup": {
+                    "title": "Määritä oletukseksi?",
+                    "description": "Kaikki nykyiset ja aiemmat muutokset häviävät."
+                },
+                "warningPromptPopup": {
+                    "title": "Varoitus!",
+                    "description": "Ylikellotuksen epäasianmukaiset asetukset saattavat aiheuttaa peruuttamatonta laitteistovahinkoa.",
+                    "proceed": "JATKA"
                 }
             }
         },
@@ -598,6 +694,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Staattinen",
+                "effectName2": "Spektri",
+                "effectName3": "Sateenkaari",
+                "effectName4": "Satunnainen",
+                "effectName5": "Viileä_Sininen",
+                "effectName6": "Heilautus_Oikealle",
+                "effectName7": "Heilautus_Vasemmalle"
+            },
+            "lightingSpeed": {
+                "title": "Nopeus"
+            },
+            "colorPicker": {
+                "text2": "ENEMMÄN",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Jaa alue (ei käyt.): vaihda väri napsauttamalla näppäimistön kuvaa",
+                "text7": "Jaa alue (käyt.): vaihda osan väri napauttamalla näppäimistön osaa",
+                "text8": "Nykyinen tehoste ei tue värien valintaa"
+            },
+            "tipText": {
+                "title1": "Vaihda profiilia Fn+Space -komennon avulla"
+            }
         }
     },
     "common": {
@@ -906,7 +1038,7 @@
                     "Good": "<b>Akun toimintakunto on hyvä.</b>",
                     "Exhaustion": "Akun kapasiteetti on <b>heikentynyt</b>. Vaihda uusi.",
                     "Bad": "<b>On tapahtunut akkuvirhe.</b> Akkua ei voi ladata tai sen varausta purkaa. Vaihda akku.",
-                    "NotDetected": "<b>Akkua ei havaittu, tai sitä ei</b> ole liitetty.",
+                    "NotDetected": "<b>Akkua ei havaittu.</b>",
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",

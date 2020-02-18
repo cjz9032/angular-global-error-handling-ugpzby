@@ -1,0 +1,173 @@
+@import '../../../app.theme.scss';
+button:focus{
+	outline: none;
+}
+.gaming-modal-fun{
+	.modal-header {
+		.close{
+			top: 0.4rem;
+			right: 0.4rem;
+			font-size: 3rem;
+		}
+		.header-text {
+			.title {
+				line-height: 2.8rem;
+				opacity: 0.95;
+				font-size: 2.4rem;
+				color: $gaming_lightest;
+				text-align: left;
+			}
+			.description {
+				opacity: 0.6;
+				font-size: 1.4rem;
+				color: $shade_light;
+				text-align: left;
+				padding-bottom: 2rem;
+			}
+		}
+	}
+	.modal-body {
+		max-height: 830px;
+		@media screen and (max-height: 1000) {
+            max-height: 730px;
+        }
+        @media screen and (max-height: 900) {
+            max-height: 630px;
+        }
+        @media screen and (max-height: 800) {
+            max-height: 530px;			
+        }
+        @media screen and (max-height: 700) {
+            max-height: 430px;
+        }
+        @media screen and (max-height: 600) {
+            max-height: 330px;
+        }
+		.item {
+			background-color: $background;
+			margin-bottom: 1rem;
+			display: flex;
+			align-items: center;
+			.item-left {
+				position: relative;
+				cursor: pointer;
+				width: 4rem;
+				height: 4rem;
+				margin-left: 2rem;
+				margin-right: 2rem;
+				padding: 0.5rem;
+				.item-radio-button {
+					width: 3rem;
+					height: 3rem;
+					visibility: hidden;
+				}
+				.item-radio-button + label {
+					position: absolute;
+					top: .4rem;
+					left: .4rem;
+					width: 3.2rem;
+					height: 3.2rem;
+					margin-bottom: 0rem;
+					img {
+						width: 3.2rem;
+						height: 3.2rem;
+					}
+				}
+			}
+			.item-right {
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+				margin-right: 2rem;
+				.thermal-mode-title {
+					opacity: 0.95;
+					margin-bottom: .5rem;
+					font-size: 1.8rem;
+					line-height: 2.4rem;
+					color: $gaming_lightest;
+				}
+				.description {
+					opacity: 0.6;
+					margin-bottom: 0;
+					font-size: 1.4rem;
+					line-height: 2rem;
+					color: $shade_light;
+					text-align: left;
+				}
+				.item-oc {
+					display: flex;
+					padding-top: 2rem;
+					.item-oc-left {
+						.oc-checkbox {
+							margin-right: 1rem;
+							width: 2rem;
+							height: 2rem;
+							border: 2px solid rgb(1, 96, 214);
+							border-radius: 1px;
+							background-color: rgb(251, 253, 255, 0.05);
+							&.checked{
+								background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='15px' height='15px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
+								background-repeat: no-repeat;
+								background-size: 100% auto;
+								background-color: rgb(1, 96, 214);
+								@media #{$black-on-white} {
+									background-color:  rgb(1, 96, 214);
+								}
+								@media #{$white-on-black} {
+									background-color:  rgb(1, 96, 214);
+								}
+							}
+						}
+					}
+					.oc-description {
+						margin-right: 1rem;
+						font-size: 1.4rem;
+						line-height: 2rem;
+						color: $gaming_lightest;
+						&::ng-deep .oc-advance-button {
+							cursor: pointer;
+							font-size: 1.4rem;
+							line-height: 2rem;
+							font-weight: bold;
+							color: $blueFill;
+							text-decoration: underline;
+							display: inline-block;
+						}
+						&::ng-deep .oc-driver-link {
+							cursor: pointer;
+							font-size: 1.4rem;
+							line-height: 2rem;
+							font-weight: bold;
+							color: $blueFill;
+							text-decoration: underline;
+							white-space: nowrap;
+							display: inline-block;
+						}
+					}
+				}
+			}
+		}
+		.item-auto-switch {
+			display: flex;
+			margin-top: 1rem;
+			margin-right: 2rem;
+			align-items: center;
+			.auto-switch-left {
+				.auto-switch-toggle {
+					margin-right: 1rem;
+				}
+			}
+			.auto-switch-right {
+				.description {
+					margin-top: .5rem;
+					margin-bottom: 0;
+					font-size: 1.4rem;
+					line-height: 2.4rem;
+					color: $gaming_lightest;
+				}
+			}
+		}
+	}
+	.modal-footer {
+		height: auto !important;
+	}
+}

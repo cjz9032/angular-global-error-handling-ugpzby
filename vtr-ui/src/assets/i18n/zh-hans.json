@@ -22,6 +22,12 @@
                     "rapidCharge": "快速充电"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "超频开启",
+                        "performance": "野兽模式",
+                        "balance": "智能模式",
+                        "quiet": "节能模式"
+                    },
                     "title": "CPU 超频",
                     "status": {
                         "alwayson": "开启",
@@ -97,6 +103,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "快速设置"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "散热模式设置",
+                    "thermalMode2SettingDesc": "选择要使用的模式。",
+                    "fnQDesc": "可使用快捷键 Fn + Q 切换模式。",
+                    "perormanceTitle": "野兽模式",
+                    "performanceDesc": "提升计算机性能，同时会提高风扇速度和功耗。",
+                    "OCDesc": "可选择开启“超频”功能。",
+                    "ac_dcDesc": "野兽模式仅在接通电源时可用。",
+                    "balanceTitle": "智能模式",
+                    "balanceDesc": "根据温度自动平衡性能和风扇速度。中等功耗。",
+                    "quietTitle": "节能模式",
+                    "quietDesc": "尽可能降低计算机的性能和风扇速度，以保持安静。低功耗。",
+                    "OC": {
+                        "cpu_gpuOC": "在野兽模式下启用 CPU/GPU 超频。",
+                        "cpuOC": "在野兽模式下启用 CPU 超频。",
+                        "gpuOC": "在野兽模式下启用 GPU 超频。",
+                        "advance": "高级",
+                        "cpu_gpuDriverLack": "安装 CPU/GPU 驱动程序以使用超频功能。",
+                        "cpuDriverLack": "安装 CPU 驱动程序以使用超频功能。",
+                        "gpuDriverLack": "安装 GPU 驱动程序以使用超频功能。",
+                        "goInstall": "去安装"
+                    },
+                    "autoSwitch": "启动游戏时自动切换到野兽模式并在之后切回。"	
+                },
+                "advancedOC": {
+                    "title": "超频高级设置",
+                    "description": "在超频开启时设置高级自定义参数。此操作可能有风险。",
+                    "gpuOverclock": "GPU 超频",
+                    "cpuOCNames": {
+                        "cpuOCName2": "核心电压",
+                        "cpuOCName116": "1 核心比率",
+                        "cpuOCName117": "2 核心比率",
+                        "cpuOCName118": "3 核心比率",
+                        "cpuOCName119": "4 核心比率",
+                        "cpuOCName34": "核心电压偏移量",
+                        "cpuOCName120": "5 核心比率",
+                        "cpuOCName121": "6 核心比率",
+                        "cpuOCName76": "高速缓存比率",
+                        "cpuOCName77": "高速缓存电压",
+                        "cpuOCName79": "高速缓存电压偏移量",
+                        "cpuOCName122": "7 核心比率",
+                        "cpuOCName123": "8 核心比率",
+                        "cpuOCName102": "核心 ICCMAX",
+                        "cpuOCName106": "高速缓存 ICCMAX",
+                        "cpuOCName114": "AVX 比率偏移量"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "设置 CPU 核心的电压。",
+                        "cpuOCTip116": "设置核心可运行的最大核心倍数。核心频率的值是该比率与参考时钟频率的乘积。",
+                        "cpuOCTip117": "设置核心可运行的最大核心倍数。核心频率的值是该比率与参考时钟频率的乘积。",
+                        "cpuOCTip118": "设置核心可运行的最大核心倍数。核心频率的值是该比率与参考时钟频率的乘积。",
+                        "cpuOCTip119": "设置核心可运行的最大核心倍数。核心频率的值是该比率与参考时钟频率的乘积。",
+                        "cpuOCTip34": "从当前核心电压偏移的电压。",
+                        "cpuOCTip120": "设置核心可运行的最大核心倍数。核心频率的值是该比率与参考时钟频率的乘积。",
+                        "cpuOCTip121": "设置核心可运行的最大核心倍数。核心频率的值是该比率与参考时钟频率的乘积。",
+                        "cpuOCTip76": "设置高速缓存可运行的最大处理器高速缓存倍数。高速缓存频率的值是该比率与参考时钟频率的乘积。",
+                        "cpuOCTip77": "根据当前选择的高速缓存电压模式提供给处理器内部高速缓存接口的电压。",
+                        "cpuOCTip79": "应用于高速缓存电压的最终电压偏移量。",
+                        "cpuOCTip122": "设置核心可运行的最大核心倍数。核心频率的值是该比率与参考时钟频率的乘积。",
+                        "cpuOCTip123": "设置核心可运行的最大核心倍数。核心频率的值是该比率与参考时钟频率的乘积。",
+                        "cpuOCTip102": "设置处理器核心稳压器的 ICCMAX。",
+                        "cpuOCTip106": "设置处理器高速缓存和环形总线稳压器的 ICCMAX。",
+                        "cpuOCTip114": "要在 AVX 处于活动状态时得出有效的活动核心比率限值，请将相应的活动核心比率限值减去此值。"
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "GPU 时钟偏移量",
+                        "gpuOCName1": "VRAM 时钟偏移量"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "向 GPU 时钟频率添加偏移量。",
+                        "gpuOCTip1": "向内存时钟频率添加偏移量。"
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "保存更改？",
+                    "description1": "超频设置不当可能会导致不可逆转的硬件损坏。如果遇到任何问题，请执行以下任一操作：",
+                    "description2": "•  按住电源按钮 8 秒钟，以重新启动计算机并恢复默认参数。",
+                    "description3": "•  使用 BIOS 设置中的“恢复默认超频”开关可恢复默认参数。",
+                    "save": "保存",
+                    "notSave": "不保存"
+                },
+                "defaultPromptPopup": {
+                    "title": "设为缺省设置？",
+                    "description": "所有当前和以前的更改都将丢失。"
+                },
+                "warningPromptPopup": {
+                    "title": "警告！",
+                    "description": "超频设置不当可能会导致不可逆转的硬件损坏。",
+                    "proceed": "继续"
                 }
             }
         },
@@ -598,6 +694,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{
+               "name1": "拯救者符号蓝灯",
+               "name2": "内部氛围蓝灯",
+               "name3": "后置风扇彩灯",
+               "name4": "CPU风扇彩灯",
+               "name5": "水冷水泵彩灯",
+               "name6": "水冷风扇彩灯",
+               "name7": "拯救者大Y红灯",
+               "name9": "氛围蓝灯"
+            },
+            "lightingEffect": {
+                "effectName1": "静态",
+                "effectName2": "光谱",
+                "effectName3": "彩虹",
+                "effectName4": "随机",
+                "effectName5": "酷蓝",
+                "effectName6": "向右挥手",
+                "effectName7": "向左挥手"
+            },
+            "lightingSpeed": {
+                "title": "速度"
+            },
+            "colorPicker": {
+                "text2": "更多",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "划分区域（关）：单击下面的键盘图像以更改颜色",
+                "text7": "划分区域（开）：单击下面键盘图像上的区域以更改区域颜色",
+                "text8": "当前效果不支持颜色选择"
+            },
+            "tipText": {
+                "title1": "使用 Fn+空格键在概要文件之间切换"
+            }
         }
     },
     "common": {
@@ -907,7 +1039,7 @@
                     "Good": "<b>电池状况良好。</b>",
                     "Exhaustion": "电池容量已<b>降低</b>。请更换一个新电池。",
                     "Bad": "<b>出现电池错误。</b>电池无法充电/放电。更换电池。",
-                    "NotDetected": "<b>未检测到电池或未</b>插入电池。",
+                    "NotDetected": "<b>未检测到电池。</b>",
                     "NotGood": "<b>电池状况不佳。</b>",
                     "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
                     "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
