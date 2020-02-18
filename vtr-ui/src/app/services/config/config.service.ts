@@ -149,7 +149,7 @@ export class ConfigService {
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
 			resultMenu = cloneDeep(this.menuItems);
-			if (machineType) {
+			if (machineType !== undefined) {
 				this.smartAssistFilter(machineType, resultMenu);
 			} else if (this.deviceService.isShellAvailable) {
 				await this.deviceService.getMachineType().then(async (value: number) => {
