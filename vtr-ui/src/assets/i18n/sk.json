@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Aplikácia Vantage Edge automaticky vyladí nastavenia podľa používania. \n Maximálny výkon pri hraní, dlhšia výdrž batérie, keď sa nehráte.",
                     "line2": "<b>Prehľad správy funkcií</b> <br> Niektoré funkcie nie sú k dispozícii vo všetkých zariadeniach",
-                    "line3": "<b>Pretaktovanie CPU </b><br> Zvýšte maximálnu rýchlosť procesora",
+                    "line3": "<b>Pretaktovanie CPU/GPU </b><br> Zvýšte maximálnu rýchlosť procesora",
                     "line4": "<b>Pretaktovanie RAM </b><br> Zvýšte maximálnu rýchlosť pamäte",
                     "line5": "<b>Zrýchlenie siete </b><br> Uprednostnite sieťový prenos údajov hry, ktorú hráte",
                     "line6": "<b>Dolby </b><br> Vylaďte si zvuk špeciálne na hranie vďaka technológii Dolby",
@@ -94,7 +94,7 @@
                     "line9": "<b>Zámok dotykového panela </b><br> Zabráňte chybným vstupom zakázaním dotykového panela, keď sa hráte",
                     "line10": "<b>Automatické zatvorenie </b><br> Skôr než sa začnete hrať, odstráňte procesy, ktoré na hru nepotrebujete, a maximalizujte dostupné systémové prostriedky",
                     "line11": "<b>Tepelný režim </b><br> Nastavenie preferovaného profilu zariadenia na ovládanie otáčok ventilátora a chladenia",
-                    "line12": "<b>Kláves makra</b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Kláves makra</b><br> Prispôsobte klávesové skratky svojmu hernému štýlu"
                 },
                 "systemInfo": {
                     "systenTooltip": "Umiestnením kurzora myši položky CPU/GPU/RAM a rôzne jednotky zobrazíte ich popisy vrátane informácií o výrobe a modeloch"

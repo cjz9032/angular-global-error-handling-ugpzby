@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Med Vantage Edge finjusteres innstillingene dine automatisk etter bruken. \n Maksimal ytelse når du spiller, og lengre batteritid ellers.",
                     "line2": "<b>Administrasjon av funksjoner – oversikt</b> <br> Enkelte funksjoner er ikke tilgjengelige på alle enheter",
-                    "line3": "<b>CPU-overklokking </b><br> Øk prosessorens maksimale hastighet",
+                    "line3": "<b>CPU/GPU-overklokking </b><br> Øk prosessorens maksimale hastighet",
                     "line4": "<b>RAM-overklokking </b><br> Øk minnets maksimale hastighet",
                     "line5": "<b>Nettverks-forbedring </b><br> Prioriter nettverkstrafikk for spillet du spiller",
                     "line6": "<b>Dolby </b><br> Finjuster lyden spesifikt for spilling med Dolby-teknologi",
@@ -94,7 +94,7 @@
                     "line9": "<b>Pekeplatelås </b><br> Forhindre utilsiktede inndata ved å deaktivere pekeplaten mens du spiller",
                     "line10": "<b>Lukk automatisk </b><br> For å maksimere de tilgjengelige systemressursene kan du fjerne prosesser som spillet ikke trenger, før du begynner å spille",
                     "line11": "<b>Termisk modus </b><br> Angi ønsket enhetsprofil for viftehastigheten og kjølingskontroll",
-                    "line12": "<b>Makrotast</b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Makrotast</b><br> Tilpass tastaturhandlinger slik at de passer til spillestilen din"
                 },
                 "systemInfo": {
                     "systenTooltip": "Hold pekeren over CPU/GPU/RAM og ulike stasjoner for å vise beskrivelser, deriblant informasjon om fabrikant og modell"
