@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Kun Vantage Edge on käytössä, asetuksia muokataan automaattisesti käytön mukaan. \n Paras mahdollinen suorituskyky, kun pelaat, ja pitempi akun kesto, kun et pelaa.",
                     "line2": "<b>Ominaisuuksien hallinnan yleiskuvaus</b> <br> Kaikki ominaisuudet eivät ole käytettävissä kaikissa laitteissa",
-                    "line3": "<b>CPU-ylikellotus </b><br> Tehosta suorittimen enimmäisnopeutta",
+                    "line3": "<b>CPU/GPU-ylikellotus </b><br> Tehosta suorittimen enimmäisnopeutta",
                     "line4": "<b>RAM-muistin ylikellotus </b><br> Tehosta muistin enimmäisnopeutta",
                     "line5": "<b>Verkon tehostus </b><br> Priorisoi verkkoliikenne pelille, jota pelaat",
                     "line6": "<b>Dolby </b><br> Säädä ääntä erityisesti silloin, kun pelaat Dolby-teknologian ollessa käytössä",
@@ -94,7 +94,7 @@
                     "line9": "<b>Kosketuslevyn lukitus </b><br> Estä väärät syötteet poistamalla kosketuslevy käytöstä pelaamisen ajaksi",
                     "line10": "<b>Automaattinen sulkeminen </b><br> Maksimoi käytettävissä olevat järjestelmäresurssit tyhjentämällä ennen pelaamisen aloittamista prosessit, joita ei tarvita pelaamiseen",
                     "line11": "<b>Lämpö-tila </b><br> Määritä haluamaasi laitteen profiiliin tuulettimen kierrosnopeuden ja jäähdytyksen säätö",
-                    "line12": "<b>Makronäppäin</b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Makronäppäin</b><br> Näppäimistötoimintojen mukauttaminen pelityyliisi sopiviksi"
                 },
                 "systemInfo": {
                     "systenTooltip": "Näytä keskusyksikön/näytönohjaimen/RAM-muistin kuvaukset, mukaan lukien valmistus- ja mallitiedot, viemällä osoitin näiden ja eri asemien päälle"
