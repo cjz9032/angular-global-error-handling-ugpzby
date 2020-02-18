@@ -35,6 +35,7 @@
 										[value]="'Automatic mode'"
 										[checked]="checkbox"
 										(change)="onCheckboxClicked(true);isCollapsed = true"
+										(customKeyEvent)="onCheckboxClicked(false);isCollapsed = true"
 										[disabled]="!smartStandby.isEnabled">
 									</vtr-ui-rounded-rectangle-radio>
 									<vtr-ui-rounded-rectangle-radio [radioId]="'manual_show'"
@@ -44,6 +45,7 @@
 										[value]="'Manual mode'"
 										[checked]="!checkbox"
 										(change)="onCheckboxClicked(false)"
+										(customKeyEvent)="onCheckboxClicked(true)"
 										[disabled]="!smartStandby.isEnabled">
 									</vtr-ui-rounded-rectangle-radio>
 								</div>
