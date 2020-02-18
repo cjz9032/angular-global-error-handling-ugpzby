@@ -1,15 +1,20 @@
 <div class="error-message-modal">
 	<h1>{{ header | translate }} </h1>
-	<div role="button" class="close-btn" id="{{closeButtonId}}" (click)="onCloseClick($event)">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
+	<div role="button"
+		class="close-btn"
+		id="{{closeButtonId}}"
+		(click)="onCloseClick($event)">
+		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
+			alt=""
+			srcset="">
 	</div>
-	<p class="description">
+	<p role="text"
+		class="description">
 		{{ description | translate }}
 	</p>
 	<div class="d-flex">
 		<div class="ml-0 mr-4 pl-0">
-			<vtr-ui-button
-				metricsEvent="featureClick"
+			<vtr-ui-button metricsEvent="featureClick"
 				metricsItem="closeErrorMessage"
 				(onClick)="onCloseClick($event)"
 				[title]="closeText | translate"
