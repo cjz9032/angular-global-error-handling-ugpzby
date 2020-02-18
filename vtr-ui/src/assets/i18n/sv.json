@@ -93,8 +93,7 @@
                     "line8": "<b>Snabbladdning </b><br> Spela längre på språng med snabbare batteriladdning",
                     "line9": "<b>Styrplattelås </b><br> Förhindra oavsiktlig inmatning genom att inaktivera styrplattan medan du spelar",
                     "line10": "<b>Stäng auto-matiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
-                    "line11": "<b>Temperaturläge </b><br> Ange önskad enhetsprofil för fläkthastighet och kylningskontroll",
-                    "line12": "<b>Makrotangent </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Temperaturläge </b><br> Ange önskad enhetsprofil för fläkthastighet och kylningskontroll"
                 },
                 "systemInfo": {
                     "systenTooltip": "Håll muspekaren över CPU/GPU/RAM och olika enheter för att se beskrivningar, bland annat information om tillverkare och modell"
@@ -748,8 +747,8 @@
                 "sub1": "Min säkerhet",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-säkerhet",
-                "sub4": "Lösenordshanterare",
-                "sub5": "VPN",
+                "sub4": "Lösenordstillstånd",
+                "sub5": "VPN-säkerhet",
                 "sub6": "Fingeravtryck"
             },
             "support": "Support",
@@ -763,9 +762,9 @@
             "title": "Säkerhetsrådgivare",
             "subtitle": "KONTROLLERA OM DIN ENHET ÄR SKYDDAD.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-säkerhet",
-            "pswdMgr": "Lösenordshanterare",
-            "vpn": "VPN",
+            "wifi": "WiFi-Säkerhet",
+            "pswdMgr": "Lösenordstillstånd",
+            "vpn": "VPN-Säkerhet",
             "enabled": "AKTIVERAD",
             "disabled": "INAKTIVERAD",
             "partiallyProtected": "DELVIS SKYDDAD",
@@ -779,8 +778,8 @@
             "fingerPrint": "Fingeravtryck",
             "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTRERAD",
+            "notEnrolled": "INTE REGISTRERAD"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -2286,7 +2285,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi-säkerhet och Säkerhet för uppkopplat hem",
+                "title": "WiFi-säkerhet",
                 "back": "TILLBAKA"
             },
             "container": {
@@ -2470,7 +2469,7 @@
     "lenovoId": {
         "login": "Inloggning",
         "logout": "Logga ut",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Loggar ut…",
         "unlockExclusives": "Visa exklusiva erbjudanden",
         "user": "Användare",
         "welcomeText1": "Energin är på topp i dag, {{firstName}}!",
@@ -3092,7 +3091,8 @@
             "storage": "Lagring",
             "wireless": "Radio"
         },
-        "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge"
+        "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge",
+        "refreshMessage": "Uppdateringen kan ta lite tid, eftersom alla komponenter behöver läsas in igen"
     },
     "smartPerformance": {
         "title": "Health & Support",

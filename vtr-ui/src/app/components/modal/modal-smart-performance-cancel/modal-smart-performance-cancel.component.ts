@@ -30,11 +30,11 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
       this.smartPerformanceService
         .cancelScan()
         .then((cancelScanFromService: any) => {
-          console.log('getReadiness.then', cancelScanFromService);
+         
           if(cancelScanFromService){
             //this.router.navigate(['support/smart-performance']);
             //this.stopScanning.emit();
-            console.log("Routed");
+          
             this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['support/smart-performance']));
           }
           else{
@@ -45,9 +45,6 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
          
         });
     }
-    else {
-      console.log("Shell is not available");
-    }  
     this.activeModal.close('close');
   }
 }

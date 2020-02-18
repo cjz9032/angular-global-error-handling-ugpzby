@@ -21,7 +21,7 @@
 	}
 	.lighting-porfile {
 		padding: 3rem;
-		background: $gaming_darkest;
+		background: $gaming_bg;
 		border-radius: 0.8rem;
 		.card-title {
 			color: $gaming_switch_light;
@@ -33,7 +33,7 @@
 			width: 100%;
 			border-radius: 5rem;
 			margin: auto;
-			background: $gaming_darkest;
+			background: $gaming_bg;
 			position: relative;
 			z-index: 0;
 			box-sizing: border-box;
@@ -49,7 +49,7 @@
 				bottom: 0rem;
 				right: 0rem;
 				margin: 0rem;
-				background: $gaming_darkest;
+				background: $gaming_bg;
 				z-index: -1;
 			}
 			&::before {

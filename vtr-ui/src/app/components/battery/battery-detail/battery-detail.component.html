@@ -35,44 +35,44 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.chargeStatusString)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.status' | translate }}</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								{{ model.chargeStatusString | translate }}</div>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.wattage)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.wattage' | translate }}</div>
-							<div class="col-6 battery-value-text">{{ model.wattage + " W"}}
+							<div class="battery-value-text">{{ model.wattage + " W"}}
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.barCode)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.barcode' | translate }}</div>
-							<div class="col-6 battery-value-text">{{ model.barCode }}</div>
+							<div class="battery-value-text">{{ model.barCode }}</div>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.remainingPercent)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.remainingPercent' | translate }}</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								{{ model.remainingPercent }}%</div>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.temperature)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.temp' | translate }}</div>
-							<div class="col-6 battery-value-text">{{ model.temperature }}
+							<div class="battery-value-text">{{ model.temperature }}
 								&#176;C
 							</div>
 						</div>
@@ -80,17 +80,17 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.fruPart)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.frupn' | translate }}</div>
-							<div class="col-6 battery-value-text">{{ model.fruPart }}</div>
+							<div class="battery-value-text">{{ model.fruPart }}</div>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.remainingTime)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{ model.remainingTimeText | translate }}</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								<!-- {{ model.remainingTime | minutesToHourmin }} -->
 								<span *ngIf="isValid(math.trunc(model.remainingTime/60))">
 									{{math.trunc(model.remainingTime/60)}} {{hourText | translate}}
@@ -104,19 +104,19 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.cycleCount)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.cycleCount' | translate }}</div>
-							<div class="col-6 battery-value-text">{{ model.cycleCount }}
+							<div class="battery-value-text">{{ model.cycleCount }}
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(deviceChemistry[i])">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.chemistry' | translate }}
 							</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								{{ deviceChemistry[i] | translate }}
 							</div>
 						</div>
@@ -124,10 +124,10 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.remainingCapacity)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.remainingCap' | translate }}
 							</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								{{ model.remainingCapacity }} Wh
 							</div>
 						</div>
@@ -135,10 +135,10 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.manufacturer)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.manufacturer.title' | translate }}
 							</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								{{ model.manufacturer }}
 							</div>
 						</div>
@@ -146,10 +146,10 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.designCapacity)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.designCap' | translate }}
 							</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								{{ model.designCapacity }} Wh
 							</div>
 						</div>
@@ -157,10 +157,10 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.fullChargeCapacity)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }}
 							</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								{{ model.fullChargeCapacity }} Wh
 							</div>
 						</div>
@@ -168,10 +168,10 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.manufactureDate)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.manufDt' | translate }}
 							</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								{{ model.manufactureDate | date: 'MM/dd/yyyy' }}
 							</div>
 						</div>
@@ -179,10 +179,10 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.designVoltage)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.designVolt' | translate }}
 							</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								{{ model.designVoltage }} V
 							</div>
 						</div>
@@ -190,9 +190,9 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.voltage)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.volts' | translate }}</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								{{ model.voltage }} V
 							</div>
 						</div>
@@ -200,10 +200,10 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.firstUseDate)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.firstUseDt' | translate }}
 							</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								{{ model.firstUseDate | date: 'MM/dd/yyyy' }}
 							</div>
 						</div>
@@ -211,10 +211,10 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.firmwareVersion)">
 						<div class="row px-0">
-							<div class="col-6 battery-label-text">
+							<div class="col-6 battery-label-text pl-0">
 								{{'device.deviceSettings.batteryGauge.details.firmwareVer' | translate }}
 							</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								{{ model.firmwareVersion }}
 							</div>
 						</div>

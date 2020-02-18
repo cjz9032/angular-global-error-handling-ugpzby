@@ -93,8 +93,7 @@
                     "line8": "<b>Carica rapida </b><br> Maggiore autonomia per giocare in viaggio con caricamenti più rapidi della batteria",
                     "line9": "<b>Blocco touchpad </b><br> Previeni input errati disabilitando il touchpad quando giochi",
                     "line10": "<b>Chius. auto </b><br> Termina i processi non richiesti dai videogame prima di iniziare a giocare per ottimizzare le risorse di sistema disponibili",
-                    "line11": "<b>Modalità termica </b><br> Imp. profilo dispositivo preferito per velocità ventola e controllo raffreddamento",
-                    "line12": "<b>Tasto macro </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Modalità termica </b><br> Imp. profilo dispositivo preferito per velocità ventola e controllo raffreddamento"
                 },
                 "systemInfo": {
                     "systenTooltip": "Passa il mouse su CPU/GPU/RAM e sulle differenti unità per mostrare le descrizioni, come le informazioni sul modello e la fabbricazione"
@@ -748,8 +747,8 @@
                 "sub1": "Protezione personalizzata",
                 "sub2": "Antivirus",
                 "sub3": "Sicurezza WiFi",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "Integrità password",
+                "sub5": "Protezione VPN",
                 "sub6": "Impronta digitale"
             },
             "support": "Supporto",
@@ -764,8 +763,8 @@
             "subtitle": "CONTROLLARE SE IL DISPOSITIVO È PROTETTO.",
             "antiVirus": "Antivirus",
             "wifi": "Sicurezza WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Integrità Password",
+            "vpn": "Protezione VPN",
             "enabled": "ABILITATO",
             "disabled": "DISABILITATO",
             "partiallyProtected": "PARZIALMENTE PROTETTO",
@@ -776,21 +775,21 @@
             "notFound": "NON TROVATO",
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO",
-            "fingerPrint": "Impronta digitale",
+            "fingerPrint": "Impronta Digitale",
             "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTRATO",
+            "notEnrolled": "NON REGISTRATO"
         },
         "qAndA": {
-            "title": "Domande e risposte per la tua macchina",
-            "subtitle": "Trovare alcuni suggerimenti utili per il dispositivo.",
+            "title": "Domande e risposte per il PC",
+            "subtitle": "Trova alcuni suggerimenti utili per il dispositivo.",
             "question1": "Backup e ripristino dei file",
             "question2": "Come aggiornare il PC",
-            "question3": "Informazioni sulla CPU del computer in uso",
-            "question4": "Informazioni sull'uso della batteria del computer in uso",
+            "question3": "Informazioni sulla CPU",
+            "question4": "Informazioni sull'uso della batteria",
             "question5": "Utilizzo del PC come un tablet",
-            "question6": "Informazioni su Cortana, l'assistente personale"
+            "question6": "Informazioni su Cortana, la tua assistente personale"
         },
         "ui": {
             "back": "INDIETRO",
@@ -845,17 +844,17 @@
         },
         "offlineInfo": {
             "title": "Nessuna connessione a Internet rilevata",
-            "subtitle": "Ulteriori informazioni su come risolvere i problemi di connessione in",
+            "subtitle": "Ulteriori informazioni su come risolvere i problemi di connessione sono disponibili in",
             "buttonText": "Richiedi supporto",
             "welcomeToVantage": "Benvenuto nella nuova generazione di Vantage",
-            "systemHealth": "Stato del sistema"
+            "systemHealth": "Integrità del sistema"
         },
         "feedback": {
-            "title": "Fornisci feedback",
+            "title": "Feedback",
             "subtitle": "Esprimi la tua opinione su Vantage.",
-            "button": "Fornisci feedback",
+            "button": "Invia il tuo feedback",
             "form": {
-                "email": "Email (optional)",
+                "email": "E-mail (facoltativa)",
                 "question1": "Ti piace il nuovo stile di Vantage?",
                 "question2": "Le prestazioni sono accettabili?",
                 "question3": "Utilizzerai l'applicazione più spesso in futuro?",
@@ -867,8 +866,8 @@
                 "no": "No",
                 "tips1": "Fornisci eventuali commenti aggiuntivi",
                 "comments": "Commenti...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
+                "button": "Invia",
+                "addScreenshot": "Aggiungi screenshot",
                 "sendFeedback": "Invia feedback",
                 "submitScreenShot": "Invia screenshot",
                 "messages": {
@@ -896,14 +895,14 @@
             "memory": {
                 "title": "Memoria",
                 "detail": {
-                    "notFound": "Memoria non trovata",
+                    "notFound": "Caricamento delle informazioni sulla memoria in corso",
                     "of": "di"
                 }
             },
             "diskSpace": {
                 "title": "Spazio su disco",
                 "detail": {
-                    "notFound": "Disco non trovato",
+                    "notFound": "Caricamento delle informazioni sul disco in corso",
                     "of": "di"
                 }
             },
@@ -919,7 +918,7 @@
             "systemUpdate": {
                 "title": "Aggiornamento del sistema",
                 "detail": {
-                    "update": "Aggiorna"
+                    "update": "Aggiornato"
                 }
             }
         }
@@ -927,7 +926,7 @@
     "device": {
         "myDevice": {
             "title": "Il mio dispositivo",
-            "subtitle": "Stato dispositivo personale",
+            "subtitle": "Stato del dispositivo",
             "serial": "Numero di serie",
             "productNumber": "Numero di prodotto",
             "biosVersion": "Versione BIOS",
@@ -935,7 +934,7 @@
             "freeMemory": "Memoria disponibile",
             "systemUpdate": {
                 "title": "Aggiornamento del sistema",
-                "notFound": "Aggiornamento sistema non rilevato",
+                "notFound": "Aggiornamento del sistema non rilevato",
                 "detail": {
                     "uptoDate": "Aggiornamenti controllati ",
                     "updatedOn": "controllati in data ",
@@ -946,21 +945,21 @@
             "extendedWarranty": "Garanzia estesa",
             "processor": {
                 "title": "Processore",
-                "notFound": "Caricamento informazioni processore"
+                "notFound": "Caricamento delle informazioni sul processore in corso"
             },
             "memory": {
                 "title": "Memoria",
-                "notFound": "Caricamento informazioni memoria",
+                "notFound": "Caricamento delle informazioni sulla memoria in corso",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "Spazio su disco",
-                "notFound": "Caricamento informazioni disco"
+                "notFound": "Caricamento delle informazioni sul disco in corso"
             },
             "software": "Software aggiornato",
             "updated": "Aggiornato",
             "outOfWarranty": "Fuori garanzia",
-            "expired": "Scaduto in data",
+            "expired": "Scaduta in data",
             "of": "di",
             "warranty": {
                 "notFound": "Garanzia non trovata",
@@ -969,15 +968,15 @@
                     "inWarranty": "In garanzia",
                     "daysRemaining": "giorni rimanenti",
                     "outOfWarranty": "Fuori garanzia",
-                    "expiredOn": "Scaduto in data",
+                    "expiredOn": "Scaduta in data",
                     "notAvailable": "Garanzia non disponibile",
                     "support": "Supporto"
                 }
             },
-            "helpful": "Contenuto utile"
+            "helpful": "Contenuti utili"
         },
         "deviceSettings": {
-            "helpful": "Contenuto utile",
+            "helpful": "Contenuti utili",
             "batteryGauge": {
                 "subtitle": "Durata batteria",
                 "hours": "ore",
@@ -1065,9 +1064,9 @@
             "power": {
                 "title": "Alimentazione",
                 "subtitle": "Impostazioni energetiche",
-                "description": "Questa sezione consente di regolare dinamicamente le prestazioni termiche e di ottimizzare la durata della batteria.Dispone inoltre di altre funzioni energetiche comuni. È possibile controllare le impostazioni predefinite in questa sezione e personalizzare il sistema in uso in base alle proprie esigenze.",
+                "description": "Questa sezione ti consente di regolare dinamicamente le prestazioni termiche e di ottimizzare la durata della batteria. Sono inoltre disponibili altre funzioni energetiche comuni. Puoi controllare le impostazioni predefinite sempre in questa sezione e personalizzare il sistema in base alle tue esigenze.",
                 "jumpto": {
-                    "title": "PASSA A IMPOSTAZIONI",
+                    "title": "PASSA ALLE IMPOSTAZIONI",
                     "battery": "Batteria",
                     "power": "Alimentazione",
                     "other": "Altro"
@@ -1169,8 +1168,8 @@
                     },
                     "easyResume": {
                         "title": "Ripresa facile",
-                        "description": "Abilitare questa funzione per migliorare il tempo di ripresa se si apre e chiude di frequente il coperchio del computer.",
-                        "tooltip": "Questa funzione migliorerà il tempo di ripresa se si apre e chiude di frequente il coperchio del computer. Quando abilitata, il computer entrerà in modalità di risparmio energia quando si chiude il coperchio, ma riprenderà immediatamente se si riapre il coperchio entro 15 minuti dalla chiusura. Questa funzione consente anche al notebook di tentare di finire le attività in sospeso (come l'invio di e-mail o il download di un file) prima che il sistema entri in sospensione."
+                        "description": "Abilita questa funzione per migliorare il tempo di ripresa se apri e chiudi di frequente il coperchio del computer.",
+                        "tooltip": "Questa funzione migliora il tempo di ripresa se apri e chiudi di frequente il coperchio del computer. Quando è abilitata, il computer entra in modalità di risparmio energia se chiudi il coperchio, ma si riprende immediatamente se lo riapri entro 15 minuti dalla chiusura. Questa funzione consente inoltre al notebook di tentare di completare le attività in sospeso (come l'invio di un'e-mail o il download di un file) prima che il sistema entri in modalità di sospensione."
                     },
                     "flipToBoot": {
                         "title": "Capovolgi per l'avvio",
@@ -1373,7 +1372,7 @@
             "audio": {
                 "title": "Audio",
                 "subtitle": "Impostazioni audio",
-                "description": "Questa sezione consente di ottimizzare in modo automatico o di configurare manualmente ecompletamente le impostazioni audio, ad esempio Dolby Settings, il microfono e così via.",
+                "description": "Questa sezione ti consente di ottimizzare in modo automatico o di configurare manualmente e completamente le impostazioni audio, ad esempio le impostazioni Dolby, il microfono e così via.",
                 "audioSmartsettings": {
                     "title": "Impostazioni intelligenti audio",
                     "subtitle": "IMPOSTAZIONI BASATE SULL'APPLICAZIONE",
@@ -1402,7 +1401,7 @@
                     },
                     "microphone": {
                         "title": "Microfono",
-                        "tooltip": "È possibile personalizzare l'effetto MIC regolando il volume del microfonoe specificando la modalità appropriata."
+                        "tooltip": "Puoi personalizzare l'effetto del microfono regolando il volume del microfono e specificare la modalità appropriata."
                     },
                     "volume": {
                         "title": "Volume microfono",
@@ -1414,33 +1413,33 @@
                     },
                     "suppress": {
                         "title": "Soppressione rumore tastiera",
-                        "tooltip": "Attivare questa funzione per ottimizzare l'audio MIC, eliminando il rumore della tastiera."
+                        "tooltip": "Attiva questa funzione per ottimizzare l'audio del microfono eliminando il rumore della tastiera."
                     },
                     "acoustic": {
                         "title": "Eliminazione dell'eco",
-                        "tooltip": "Attivare questa funzione per ottimizzare l'audio MIC riducendo l'eco acustica."
+                        "tooltip": "Attiva questa funzione per ottimizzare l'audio del microfono riducendo l'eco acustico."
                     },
                     "optimize": {
-                        "title": "Ottimizza microfono per:",
-                        "tooltip": "Configurare l'effetto microfono per migliorare l'esperienza audio in base a scenari e ambienti differenti.",
+                        "title": "Ottimizzazione microfono:",
+                        "tooltip": "Configura l'effetto del microfono per migliorare l'esperienza audio in base a scenari e ambienti differenti.",
                         "options": {
                             "VoiceRecognition": "RICONOSCIMENTO VOCALE",
                             "OnlyMyVoice": "SOLO LA MIA VOCE",
                             "Normal": "NORMALE",
-                            "MultipleVoices": "VOCI MULTIPLE"
+                            "MultipleVoices": "PIÙ VOCI"
                         }
                     }
                 }
             },
             "displayCamera": {
                 "title": "Schermo e fotocamera",
-                "subtitle": "Impostazioni Schermo e fotocamera",
-                "description": "Questa sezione consente di migliorare l'esperienza visiva e di configurare le proprietà della fotocamera. Esplorare ulteriori funzioni e personalizzare qui l'esperienza di visualizzazione.",
+                "subtitle": "Impostazioni schermo e fotocamera",
+                "description": "Questa sezione ti consente di migliorare l'esperienza visiva e di configurare le proprietà della fotocamera. Scopri ulteriori funzioni e personalizza qui l'esperienza con lo schermo.",
                 "jumpTo": {
-                    "title": "PASSA A IMPOSTAZIONI",
+                    "title": "PASSA ALLE IMPOSTAZIONI",
                     "shortcuts": {
                         "display": {
-                            "title": "Visualizza"
+                            "title": "Schermo"
                         },
                         "camera": {
                             "title": "Fotocamera"
@@ -1448,10 +1447,10 @@
                     }
                 },
                 "display": {
-                    "title": "Visualizza",
+                    "title": "Schermo",
                     "displayColorTemperature": {
                         "title": "Temperatura colore schermo",
-                        "description": "È possibile regolare la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi. Consente di regolare gli schermi con colori più caldi dal tramonto all'alba, per favorire il riposo notturno.",
+                        "description": "Puoi regolare la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi. Ti consente di regolare lo schermo con colori più caldi dal tramonto all'alba, per favorire il riposo notturno.",
                         "link": {
                             "click": "Fare clic",
                             "here": "qui",
@@ -1462,7 +1461,7 @@
                         "title": "Modalità Comfort Visivo",
                         "checkbox": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
                         "options": {
-                            "warm": "Caldo (migliore per gli occhi)",
+                            "warm": "Calda (migliore per gli occhi)",
                             "cold": "Fredda"
                         },
                         "reset": "Reimposta",
@@ -1470,14 +1469,14 @@
                         "onSunsetToSunriseScheduleDescription": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
                         "note": {
                             "title": "Nota",
-                            "description": "Lenovo Vantage deve accedere alle informazioni sulla posizione per calcolare l'ora del tramonto e dell'alba dell'area geografica in cui ci si trova."
+                            "description": "Lenovo Vantage deve accedere alle informazioni sulla posizione per calcolare l'ora del tramonto e dell'alba dell'area geografica in cui ti trovi."
                         },
                         "tips": "Eseguire Windows Update o installare manualmente il driver di grafica per ripristinare la modalità Comfort visivo"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura colore schermo",
                         "options": {
-                            "warm": "Caldo (migliore per gli occhi)",
+                            "warm": "Calda (migliore per gli occhi)",
                             "cold": "Fredda"
                         },
                         "reset": "Reimposta",
@@ -1485,7 +1484,7 @@
                         "onSunsetToSunriseScheduleDescription": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
                         "note": {
                             "title": "Nota",
-                            "description": "Quando la modalità comfort visivo è abilitata, la temperatura del colore non ha effetto. Tuttavia, è possibile trascinare il dispositivo di scorrimento per visualizzarne l'anteprima. Per rendere effettive le modifiche, disattivare la modalità comfort visivo."
+                            "description": "Quando la modalità Comfort visivo è abilitata, la temperatura del colore non ha effetto. Tuttavia, puoi trascinare il dispositivo di scorrimento per visualizzarne l'anteprima. Per rendere effettive le modifiche, disattiva la modalità Comfort visivo."
                         }
                     },
                     "privacyGuard": {
@@ -1532,19 +1531,19 @@
                     "title": "Fotocamera",
                     "note": {
                         "title": "Nota",
-                        "description": "Lenovo Vantage non dispone delle autorizzazioni per accedere alla fotocamera. Attivare l'accesso alla fotocamera per l'app Lenovo Vantage."
+                        "description": "Lenovo Vantage non dispone delle autorizzazioni per accedere alla fotocamera. Attiva l'accesso alla fotocamera per l'app Lenovo Vantage."
                     },
-                    "url": "Vai a Impostazioni di privacy di Windows",
+                    "url": "Vai alle impostazioni di privacy Windows",
                     "cameraPrivacy": {
                         "title": "Modalità privacy fotocamera",
-                        "tooltip": "La fotocamera non invia più immagini dal vivo quando è abilitata l'impostazione relativa alla privacy. Attivare questa impostazione solo se non si desidera condividere le proprie immagini con altri durante le videochiamate."
+                        "tooltip": "La fotocamera non invia più immagini dal vivo quando l'impostazione relativa alla privacy è abilitata. Attiva questa impostazione solo se non desideri condividere le tue immagini con altri durante le videochiamate."
                     },
                     "camera": {
                         "title": "Fotocamera",
-                        "tooltip": "Fare clic qui per ripristinare le impostazioni predefinite delle proprietà della fotocamera.",
+                        "tooltip": "Fai clic qui per ripristinare le impostazioni predefinite relative alle proprietà della fotocamera.",
                         "reset": "Reimposta"
                     },
-                    "brightness": "Liminosità",
+                    "brightness": "Luminosità",
                     "contrast": "Contrasto",
                     "autoExposure": "Esposizione automatica",
                     "autoFocus": "Messa a fuoco automatica",
@@ -1761,7 +1760,7 @@
             "title": "Assistenza intelligente",
             "description": "Rilevamento intelligente Lenovo combina vari sensori del computer per rilevare le attività, modificare le impostazioni per un risparmio ottimale dell'energia e proteggere la privacy.",
             "jumpTo": {
-                "title": "PASSA A IMPOSTAZIONI",
+                "title": "PASSA ALLE IMPOSTAZIONI",
                 "security": "Protezione",
                 "screen": "Schermo",
                 "media": "Multimedia",
@@ -2005,8 +2004,8 @@
             "title": "Sito Web del supporto Lenovo"
         },
         "banner": {
-            "neverChecked": "Benvenuto in Aggiornamento del sistema.",
-            "title": "Un sistema aggiornato è un sistema sano.",
+            "neverChecked": "Benvenuto in System Update.",
+            "title": "Un sistema aggiornato è un sistema integro.",
             "installingTitle": "Durante gli aggiornamenti, non attivare la modalità Sospensione o Ibernazione del computer.",
             "last": "Ultimo aggiornamento: ",
             "next": "Prossimo aggiornamento pianificato: ",
@@ -2211,7 +2210,7 @@
                 "title": "Antivirus",
                 "back": "INDIETRO",
                 "recommends": "Perché Lenovo consiglia <b>McAfee</b> per proteggere tutti i tuoi dispositivi",
-                "award": "Antivirus premiato",
+                "award": "Antivirus pluripremiato",
                 "mcafeePremium": "Protezione McAfee LiveSafe",
                 "protectedBy": "Attualmente è attiva la protezione di {{protectedName}}. Tuttavia, per una maggiore protezione ti consigliamo McAfee LiveSafe.",
                 "virusScan": "SCANSIONE ANTIVIRUS",
@@ -2229,13 +2228,13 @@
                 "optimallyProtected": "Al momento stai utilizzando Windows Defender. Una buona scelta, ma per garantirti sicurezza assoluta contro ransomware, malware e virus ci siamo avvalsi della collaborazione di <b>McAfee</b> per offrirti una sicurezza di livello superiore e consentirti di <b>proteggere al meglio ciò che più conta per te.</b>",
                 "windowsSubtitle": "Protezione di base Windows Defender",
                 "topTip": "Suggerimenti principali per la sicurezza online",
-                "topContent": "Scopri come proteggerti dalle più insidiose minacce online odierne <tag>VISUALIZZA SUGGERIMENTI</tag>",
-                "view": "VISUALIZZA SUGGERIMENTI",
+                "topContent": "Scopri come proteggerti dalle più insidiose minacce online di oggi <tag>SUGGERIMENTI</tag>",
+                "view": "SUGGERIMENTI",
                 "buyNow": "Acquista ora",
-                "buy": "Acquista, scarica e installa la protezione antivirus McAfee oggi stesso per sfruttare queste funzionalità di sicurezza bank-grade",
-                "onlyBasic": "In questa sezione sono disponibili solo le informazioni di base. Anche se sei protetto da alcune minacce online, potresti comunque essere vulnerabile ad altri virus.",
+                "buy": "Acquista, scarica e installa la protezione antivirus McAfee oggi stesso per sfruttare queste funzionalità di sicurezza utilizzate in ambito bancario.",
+                "onlyBasic": "È garantita solo la protezione di base. Anche se sei protetto da alcune minacce online, potresti comunque essere vulnerabile ad altri virus.",
                 "virus": "Protezione da virus",
-                "homeNetwork": "Protezione Home netWork",
+                "homeNetwork": "Protezione della rete domestica",
                 "private": "Navigazione privata e anonima",
                 "everyDevice": "Protezione per qualsiasi dispositivo",
                 "password": "Password Manager"
@@ -2286,7 +2285,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Protezione abitazione connessa e WiFi",
+                "title": "Sicurezza WiFi",
                 "back": "INDIETRO"
             },
             "container": {
@@ -2301,7 +2300,7 @@
                 "showmore": "Mostra di più",
                 "showless": "Mostra meno",
                 "button": "Abilita sicurezza WiFi",
-                "disableDescribe": "Sicurezza Lenovo WiFi è un servizio software avanzato basato su cloud che consente al dispositivo in uso di distinguere reti wireless sicure da quelle potenzialmente dannose.",
+                "disableDescribe": "Sicurezza Lenovo WiFi è un servizio software avanzato basato su cloud che consente al dispositivo in uso di distinguere le reti wireless sicure da quelle potenzialmente dannose.",
                 "enabledDescribe": "Sicurezza Lenovo WiFi sta attualmente monitorando la rete WiFi."
             },
             "threatlocator": {
@@ -2412,8 +2411,8 @@
             "getStarted1": "Fare clic sul pulsante \"Avvia SurfEasy\" in alto, per avviare SurfEasy VPN.",
             "getStarted2": "Attiva la rete VPN e attendi qualche istante per la conferma della connessione sicura.",
             "getStarted3": "Modifica l'area geografica o la posizione se necessario e inizia a utilizzare la rete privata sicura.",
-            "poweredBySurfEasy": "Basato su SurfEasy",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "poweredBySurfEasy": "Con tecnologia SurfEasy",
+            "privacyPolicyAndTermsOfService": "Ulteriori informazioni su <tag>Informativa sulla privacy</tag> e <tag>Termini di servizio</tag>"
         },
         "passwordManager": {
             "statusTitle": "STRUMENTO PER LA GESTIONE DELLE PASSWORD DASHLANE",
@@ -2442,7 +2441,7 @@
             "allowsYou3": "Proteggere i dispositivi collegati alle reti WiFi non sicure con la rete VPN integrata",
             "allowsYou4": "Condividere le password in modo sicuro",
             "poweredByDashLane": "Basato su Dashlane",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Ulteriori informazioni su <tag>Informativa sulla privacy</tag> e <tag>Termini di servizio</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2470,7 +2469,7 @@
     "lenovoId": {
         "login": "Accesso",
         "logout": "Disconnessione",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Scollegamento in corso...",
         "unlockExclusives": "Sblocca offerte esclusive",
         "user": "Utente",
         "welcomeText1": "Oggi il dispositivo è in ottime condizioni, {{firstName}}!",
@@ -2903,7 +2902,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Impostazioni preferenze",
+        "preferenceSettings": "Impostazioni Preferenze",
         "settings": "Impostazioni",
         "settingsDescription": "Nella pagina di impostazione delle preferenze è possibile scegliere di attivare o disattivare la notifica del messaggio in base alle categorie del messaggio di Vantage. Tenere presente che anche se tutte le categorie di messaggi sono disabilitate, è possibile che occasionalmente si riceva un messaggio critico di sistema da Vantage, se necessario.",
         "messagesInLenovoVantage": "Messaggi in Lenovo Vantage",
@@ -3092,7 +3091,8 @@
             "storage": "Memorizzazione",
             "wireless": "Wireless"
         },
-        "warningMessage": "I test verranno annullati se il sistema entra in modalità Ibernazione o Sospensione"
+        "warningMessage": "I test verranno annullati se il sistema entra in modalità Ibernazione o Sospensione",
+        "refreshMessage": "L'aggiornamento potrebbe richiedere del tempo poiché è necessario caricare di nuovo tutti i componenti"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3381,7 +3381,7 @@
             "extendNow": "extend now",
             "renewNow": "Renew Now",
             "poweredBy": "Powered by Coronet",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Ulteriori informazioni su <tag>Informativa sulla privacy</tag> e <tag>Termini di servizio</tag>"
         },
         "tour": {
             "back": "Back",

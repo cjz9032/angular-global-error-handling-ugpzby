@@ -93,8 +93,7 @@
                     "line8": "<b>Hitro polnjenje </b><br> S hitrejšim polnjenjem baterije igrajte dalj časa tudi, ko ste na poti",
                     "line9": "<b>Zaklepanje sledilne ploščice </b><br> Onemogočite sledilno ploščico, da preprečite napačne vnose med igranjem",
                     "line10": "<b>Samodejno zapiranje </b><br> Pred začetkom igranja počistite nepotrebne procese in v celoti izkoristite razpoložljiva sistemska sredstva",
-                    "line11": "<b>Toplotni način </b><br> Nastavite želeni profil naprave za nadzor hitrosti ventilatorja in hlajenja",
-                    "line12": "<b>Makro tipka </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Toplotni način </b><br> Nastavite želeni profil naprave za nadzor hitrosti ventilatorja in hlajenja"
                 },
                 "systemInfo": {
                     "systenTooltip": "Kazalec zadržite na CPE/GPE/RAM in različnih pogonih, če si želite ogledati njihove opise, vključno z informacijami o proizvajalcu in modelu"
@@ -748,8 +747,8 @@
                 "sub1": "Moja varnost",
                 "sub2": "Protivirusna zaščita",
                 "sub3": "Varnost WiFi-ja",
-                "sub4": "Upravitelja gesel",
-                "sub5": "VPN",
+                "sub4": "Geslo zdravje",
+                "sub5": "VPN Varnost",
                 "sub6": "Prstni odtis"
             },
             "support": "Podpora",
@@ -764,8 +763,8 @@
             "subtitle": "PREVERITE, ALI JE NAPRAVA ZAVAROVANA.",
             "antiVirus": "Protivirusna zaščita",
             "wifi": "Varnost WiFi-ja",
-            "pswdMgr": "Upravitelja gesel",
-            "vpn": "VPN",
+            "pswdMgr": "Geslo Zdravje",
+            "vpn": "VPN Varnost",
             "enabled": "OMOGOČEN",
             "disabled": "ONEMOGOČEN",
             "partiallyProtected": "DELNO ZAŠČITENO",
@@ -776,11 +775,11 @@
             "notFound": "NI BILO MOGOČE NAJTI",
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO",
-            "fingerPrint": "Prstni odtis",
+            "fingerPrint": "Prstni Odtis",
             "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTRIRANO",
+            "notEnrolled": "NEREGISTRIRANO"
         },
         "qAndA": {
             "title": "Vprašanja in odgovori za vaš računalnik",
@@ -2286,7 +2285,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi & povezana domača varnost",
+                "title": "Varnost WiFi-ja",
                 "back": "NAZAJ"
             },
             "container": {
@@ -2470,7 +2469,7 @@
     "lenovoId": {
         "login": "Prijava",
         "logout": "Odjava",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Odjavljanje...",
         "unlockExclusives": "Odklenite ekskluzivne ponudbe",
         "user": "Uporabnik",
         "welcomeText1": "Danes ste videti polni energije, {{firstName}}!",
@@ -2903,7 +2902,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Nastavitve učinkovitosti delovanja",
+        "preferenceSettings": "Nastavitve Učinkovitosti Delovanja",
         "settings": "Nastavitve",
         "settingsDescription": "Na strani za določanje nastavitev lahko vklopite/izklopite obvestila o sporočilih na podlagi kategorij sporočila orodja Vantage. Pri tem upoštevajte, da lahko po potrebi občasno prejmete nujna sistemska sporočila orodja Vantage, tudi če so vse kategorije sporočil onemogočene.",
         "messagesInLenovoVantage": "Sporočila v programu Lenovo Vantage",
@@ -3092,7 +3091,8 @@
             "storage": "Pomnilnik",
             "wireless": "Brezžično"
         },
-        "warningMessage": "Upoštevajte, da bodo preskusi preklicani, če sistem preide v stanje spanja ali mirovanja"
+        "warningMessage": "Upoštevajte, da bodo preskusi preklicani, če sistem preide v stanje spanja ali mirovanja",
+        "refreshMessage": "Osvežitev lahko traja nekaj časa, saj se morajo vse komponente znova naložiti"
     },
     "smartPerformance": {
         "title": "Health & Support",

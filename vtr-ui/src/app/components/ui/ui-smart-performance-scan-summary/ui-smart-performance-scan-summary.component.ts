@@ -21,15 +21,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
    isSubscribed:any;
    title = 'smartPerformance.title';
  public menuItems: any = [{ itemName: 'Annual' }, { itemName: 'Quarterly' }, { itemName: 'Custom' }]
-  // subscriptionDetails:any;
-  // startDate:any;
-  // endDate:any;
-  // status:any;
-  // givenDate:Date;
-  leftAnimator:any;
-  
-
-  // tslint:disable-next-line:max-line-length
+leftAnimator:any;
 @Input() isScanning = false;
 @Input() isScanningCompleted = false;
 @Input() tune = 0;
@@ -91,26 +83,7 @@ this.currentDate = new Date();
 	{ itemValue : '0 fixes', itemExpandValue : {tune:'10 GB',boost:'12',secure:'14'}, itemstatus : false, itemDate : this.today},
 	{ itemValue : '8 fixes', itemExpandValue : {tune:'10 GB',boost:'12',secure:'14'}, itemstatus : true, itemDate : this.today} ];
    this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
-  // if(this.isSubscribed)
-  // {
-  //   this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SubscribtionDetails);
-  //   this.startDate = this.subscriptionDetails[0].StartDate;
-  //   this.endDate = this.subscriptionDetails[0].EndDate;
-  //   this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
-
-  //   if(this.givenDate > this.today)
-  //     this.status = "ACTIVE";
-  //   else
-  //     this.status = "INACTIVE";
-  // }
-  // else
-  // {
-	// this.startDate="---";
-	// this.endDate="---";
-	// this.status="INACTIVE";
-  // }
-  //scan settings
-  this.selectedFrequency = this.scanFrequency[1];
+   this.selectedFrequency = this.scanFrequency[1];
 		this.selectedDay = this.days[0];
     this.isDaySelectionEnable = false;
     this.scanScheduleDate=this.selectedDate;
@@ -120,7 +93,7 @@ this.currentDate = new Date();
   {
 
     this.leftAnimator = ((this.rating*10) - 1).toString() + "%"; 
-    //console.log("Left Animator======================================", this.leftAnimator);
+   
   }
   expandRow(value) {
 	if (this.toggleValue === value) {

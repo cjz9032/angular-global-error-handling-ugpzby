@@ -93,8 +93,7 @@
                     "line8": "<b>Hurtiglading </b><br> Lad batteriet raskere for å spille mer når du er på farten",
                     "line9": "<b>Pekeplatelås </b><br> Forhindre utilsiktede inndata ved å deaktivere pekeplaten mens du spiller",
                     "line10": "<b>Lukk automatisk </b><br> For å maksimere de tilgjengelige systemressursene kan du fjerne prosesser som spillet ikke trenger, før du begynner å spille",
-                    "line11": "<b>Termisk modus </b><br> Angi ønsket enhetsprofil for viftehastigheten og kjølingskontroll",
-                    "line12": "<b>Makrotast</b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Termisk modus </b><br> Angi ønsket enhetsprofil for viftehastigheten og kjølingskontroll"
                 },
                 "systemInfo": {
                     "systenTooltip": "Hold pekeren over CPU/GPU/RAM og ulike stasjoner for å vise beskrivelser, deriblant informasjon om fabrikant og modell"
@@ -748,8 +747,8 @@
                 "sub1": "Min sikkerhet",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-sikkerhet",
-                "sub4": "Passordbehandling",
-                "sub5": "VPN",
+                "sub4": "Passordtilstand",
+                "sub5": "VPN-sikkerhet",
                 "sub6": "Fingeravtrykk"
             },
             "support": "Støtte",
@@ -763,9 +762,9 @@
             "title": "Sikkerhetsrådgivning",
             "subtitle": "KONTROLLER OM ENHETEN ER SIKRET.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-sikkerhet",
-            "pswdMgr": "Passordbehandling",
-            "vpn": "VPN",
+            "wifi": "WiFi-Sikkerhet",
+            "pswdMgr": "Passordtilstand",
+            "vpn": "VPN-Sikkerhet",
             "enabled": "AKTIVERT",
             "disabled": "DEAKTIVERT",
             "partiallyProtected": "DELVIS BESKYTTET",
@@ -779,8 +778,8 @@
             "fingerPrint": "Fingeravtrykk",
             "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTRERT",
+            "notEnrolled": "IKKE REGISTRERT"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
@@ -2286,7 +2285,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi og Sikkerhet for tilkoblede hjem",
+                "title": "WiFi-sikkerhet",
                 "back": "TILBAKE"
             },
             "container": {
@@ -2470,7 +2469,7 @@
     "lenovoId": {
         "login": "Logg på",
         "logout": "Logg av",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Logger av...",
         "unlockExclusives": "Få eksklusive tilbud",
         "user": "Bruker",
         "welcomeText1": "Ser frisk ut i dag, {{firstName}}!",
@@ -2903,7 +2902,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Preferanser og innstillinger",
+        "preferenceSettings": "Preferanser Og Innstillinger",
         "settings": "Innstillinger",
         "settingsDescription": "På siden med preferanser og innstillinger kan du slå meldingsvarsler på/av basert på meldingskategoriene til Vantage. Vær obs på at selv om alle meldingskategoriene deaktiveres, kan du fremdeles få systemkritiske meldinger fra Vantage fra tid til annen.",
         "messagesInLenovoVantage": "Meldinger i Lenovo Vantage",
@@ -3092,7 +3091,8 @@
             "storage": "Lagring",
             "wireless": "Trådløs"
         },
-        "warningMessage": "Husk at testene vil bli kansellert hvis systemet er i hvile- eller dvalemodus"
+        "warningMessage": "Husk at testene vil bli kansellert hvis systemet er i hvile- eller dvalemodus",
+        "refreshMessage": "Oppdatering kan ta litt tid siden alle komponentene må lastes inn på nytt"
     },
     "smartPerformance": {
         "title": "Health & Support",

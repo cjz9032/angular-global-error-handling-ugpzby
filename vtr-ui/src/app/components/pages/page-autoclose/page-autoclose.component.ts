@@ -118,7 +118,7 @@ export class PageAutocloseComponent implements OnInit {
 
 	modalCloseTurnOn(action: boolean) {
 		this.showTurnOnModal = action;
-		this.hiddenScroll(false);
+		this.hiddenScroll(true);
 		this.showAppsModal = true;
 	}
 

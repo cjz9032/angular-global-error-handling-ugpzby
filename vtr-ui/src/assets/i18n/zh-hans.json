@@ -96,8 +96,7 @@
                     "line8": "<b>快速充电 </b><br> 电池充电速度提高，随时随地畅玩游戏的时间随之增多",
                     "line9": "<b>触摸板锁定 </b><br> 在游戏时禁用触摸板，防止错误输入",
                     "line10": "<b>自动关闭 </b><br> 在畅玩游戏之前清理与游戏无关的进程，从而最大限度地利用可用的系统资源",
-                    "line11": "<b>散热模式 </b><br> 设置风扇速度和冷却控制的首选设备配置文件",
-                    "line12": "<b>宏键 </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>散热模式 </b><br> 设置风扇速度和冷却控制的首选设备配置文件"
                 },
                 "systemInfo": {
                     "systenTooltip": "将鼠标悬停在 CPU/GPU/RAM 和不同的驱动器上以显示其描述（包括制造和型号信息）"
@@ -748,8 +747,8 @@
                 "sub1": "我的安全顾问",
                 "sub2": "病毒防护",
                 "sub3": "WiFi 安全",
-                "sub4": "密码管理器",
-                "sub5": "VPN",
+                "sub4": "密码保险箱",
+                "sub5": "VPN 安全顾问",
                 "sub6": "指纹"
             },
             "support": "支持服务",
@@ -764,8 +763,8 @@
             "subtitle": "检查设备是否受安全保护",
             "antiVirus": "病毒防护",
             "wifi": "WiFi 安全",
-            "pswdMgr": "密码管理器",
-            "vpn": "VPN",
+            "pswdMgr": "密码保险箱",
+            "vpn": "VPN 安全顾问",
             "enabled": "已启用",
             "disabled": "已禁用",
             "partiallyProtected": "部分受保护",
@@ -779,8 +778,8 @@
             "fingerPrint": "指纹",
             "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "已登记",
+            "notEnrolled": "未登记"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -2286,7 +2285,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi 和互联家庭网络安全顾问",
+                "title": "WiFi 安全",
                 "back": "返回"
             },
             "container": {
@@ -3092,7 +3091,8 @@
             "storage": "存储器",
             "wireless": "无线"
         },
-        "warningMessage": "请记住，如果系统进入睡眠或休眠状态，则测试将被取消"
+        "warningMessage": "请记住，如果系统进入睡眠或休眠状态，则测试将被取消",
+        "refreshMessage": "刷新可能需要一些时间，因为它需要再次加载所有组件"
     },
     "smartPerformance": {
         "title": "Health & Support",

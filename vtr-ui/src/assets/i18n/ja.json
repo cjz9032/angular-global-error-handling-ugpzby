@@ -93,8 +93,7 @@
                     "line8": "<b>急速充電 </b><br> 急速充電で外出時により長くゲームをプレイできます",
                     "line9": "<b>タッチパッド・ロック </b><br> ゲーム中はタッチパッドを無効にして誤入力を防ぎます",
                     "line10": "<b>自動クローズ </b><br> プレイ開始前にゲームに不要な処理をクリアして利用可能なシステム・リソースを最大化します",
-                    "line11": "<b>サーマル・モード </b><br> ファン速度と冷却制御のために優先デバイス・プロファイルを設定する",
-                    "line12": "<b>マクロ・キー </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>サーマル・モード </b><br> ファン速度と冷却制御のために優先デバイス・プロファイルを設定する"
                 },
                 "systemInfo": {
                     "systenTooltip": "CPU/GPU/RAM およびさまざまなドライブの上にマウスを移動すると、製造元やモデル情報などの説明が表示されます"
@@ -748,8 +747,8 @@
                 "sub1": "マイ・セキュリティー",
                 "sub2": "アンチウィルス",
                 "sub3": "WiFi セキュリティー",
-                "sub4": "パスワードマネージャー",
-                "sub5": "VPN",
+                "sub4": "パスワードの健全性",
+                "sub5": "VPN セキュリティー",
                 "sub6": "指紋"
             },
             "support": "サポート",
@@ -764,8 +763,8 @@
             "subtitle": "デバイスが保護されているかどうかを確認します。",
             "antiVirus": "アンチウィルス",
             "wifi": "WiFi セキュリティー",
-            "pswdMgr": "パスワードマネージャー",
-            "vpn": "VPN",
+            "pswdMgr": "パスワードの健全性",
+            "vpn": "VPN セキュリティー",
             "enabled": "有効",
             "disabled": "無効",
             "partiallyProtected": "部分的に保護",
@@ -779,8 +778,8 @@
             "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "登録済み",
+            "notEnrolled": "未登録"
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
@@ -2286,7 +2285,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi/接続ホーム・セキュリティー",
+                "title": "WiFi セキュリティー",
                 "back": "戻る"
             },
             "container": {
@@ -2470,7 +2469,7 @@
     "lenovoId": {
         "login": "ログイン",
         "logout": "ログアウト",
-        "loggingOut": "Logging out...",
+        "loggingOut": "ログアウト中...",
         "unlockExclusives": "専用機能をロック解除",
         "user": "ユーザー",
         "welcomeText1": "今日はエネルギーにあふれているように見えます、{{firstName}} さん!",
@@ -3092,7 +3091,8 @@
             "storage": "ストレージ",
             "wireless": "ワイヤレス"
         },
-        "warningMessage": "システムがスリープ状態または休止状態になると、テストがキャンセルされることに注意してください"
+        "warningMessage": "システムがスリープ状態または休止状態になると、テストがキャンセルされることに注意してください",
+        "refreshMessage": "すべてのコンポーネントを再度読み込む必要があるため、更新に時間がかかる場合があります"
     },
     "smartPerformance": {
         "title": "Health & Support",

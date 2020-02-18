@@ -93,8 +93,7 @@
                     "line8": "<b>Rýchle nabíjanie </b><br> Hrajte sa a zvládnite toho viac vďaka rýchlejšiemu nabíjaniu batérie",
                     "line9": "<b>Zámok dotykového panela </b><br> Zabráňte chybným vstupom zakázaním dotykového panela, keď sa hráte",
                     "line10": "<b>Automatické zatvorenie </b><br> Skôr než sa začnete hrať, odstráňte procesy, ktoré na hru nepotrebujete, a maximalizujte dostupné systémové prostriedky",
-                    "line11": "<b>Tepelný režim </b><br> Nastavenie preferovaného profilu zariadenia na ovládanie otáčok ventilátora a chladenia",
-                    "line12": "<b>Kláves makra</b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Tepelný režim </b><br> Nastavenie preferovaného profilu zariadenia na ovládanie otáčok ventilátora a chladenia"
                 },
                 "systemInfo": {
                     "systenTooltip": "Umiestnením kurzora myši položky CPU/GPU/RAM a rôzne jednotky zobrazíte ich popisy vrátane informácií o výrobe a modeloch"
@@ -748,8 +747,8 @@
                 "sub1": "Moje zabezpečenie",
                 "sub2": "Antivírus",
                 "sub3": "Zabezpečenie WiFi",
-                "sub4": "Správca hesiel",
-                "sub5": "VPN",
+                "sub4": "Sila hesla",
+                "sub5": "Zabezpečenie VPN",
                 "sub6": "Odtlačok"
             },
             "support": "Technická podpora",
@@ -764,8 +763,8 @@
             "subtitle": "SKONTROLUJTE, ČI JE ZARIADENIE ZABEZPEČENÉ.",
             "antiVirus": "Antivírus",
             "wifi": "Zabezpečenie WiFi",
-            "pswdMgr": "Správca hesiel",
-            "vpn": "VPN",
+            "pswdMgr": "Sila Hesla",
+            "vpn": "Zabezpečenie VPN",
             "enabled": "ZAPNUTÉ",
             "disabled": "VYPNUTÉ",
             "partiallyProtected": "ČIASTOČNE CHRÁNENÉ",
@@ -779,8 +778,8 @@
             "fingerPrint": "Odtlačok",
             "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "ZAREGISTROVANÉ",
+            "notEnrolled": "NEZAREGISTROVANÉ"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -2286,7 +2285,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Zabezpečenie WiFi a prepojenej domácnosti",
+                "title": "Zabezpečenie WiFi",
                 "back": "SPÄŤ"
             },
             "container": {
@@ -2470,7 +2469,7 @@
     "lenovoId": {
         "login": "Prihlásenie",
         "logout": "Odhlásenie",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Prebieha odhlásenie...",
         "unlockExclusives": "Odomknúť exkluzívne možnosti od spoločnosti Lenovo",
         "user": "Používateľ",
         "welcomeText1": "Dnes máte veľa energie, {{firstName}}.",
@@ -2903,7 +2902,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Nastavenia preferencií",
+        "preferenceSettings": "Nastavenia Preferencií",
         "settings": "Nastavenia",
         "settingsDescription": "Na stránke s nastaveniami preferencií si môžete vybrať zapnutie/vypnutie upozornenia na správy podľa kategórií správy aplikácie Vantage. Je potrebné, aby ste si uvedomili, že aj v prípade, keď sú všetky kategórie správ vypnuté, môžete podľa potreby príležitostne dostávať systémové kritické správy z aplikácie Vantage.",
         "messagesInLenovoVantage": "Správy v aplikácii Lenovo Vantage",
@@ -3092,7 +3091,8 @@
             "storage": "Ukladací priestor",
             "wireless": "Bezdrôtové"
         },
-        "warningMessage": "Majte na pamäti, že testy budú zrušené, ak je systém v režime spánku alebo hibernácie"
+        "warningMessage": "Majte na pamäti, že testy budú zrušené, ak je systém v režime spánku alebo hibernácie",
+        "refreshMessage": "Obnovenie môže chvíľu trvať, pretože je potrebné znova načítať všetky súčasti"
     },
     "smartPerformance": {
         "title": "Health & Support",

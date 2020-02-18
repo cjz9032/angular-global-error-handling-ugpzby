@@ -93,8 +93,7 @@
                     "line8": "<b>Încărcare rapidă </b><br> Jucați jocuri la drum, cu ajutorul încărcării mai rapide a bateriei",
                     "line9": "<b>Blocare touchpad </b><br> Preveniți introducerile eronate, dezactivând panoul tactil în timp ce jucați jocuri",
                     "line10": "<b>Închidere automată </b><br> Eliminați procesele care sunt inutile pentru jocuri, înainte de a începe să jucați, pentru a amplifica la maximum resursele de sistem disponibile",
-                    "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii",
-                    "line12": "<b>Tastă macro </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii"
                 },
                 "systemInfo": {
                     "systenTooltip": "Plasați cursorul pe CPU/GPU/RAM și pe alte drivere pentru a afișa descrierile acestora, inclusiv informațiile de fabricare și modelul"
@@ -748,8 +747,8 @@
                 "sub1": "Securitatea mea",
                 "sub2": "Antivirus",
                 "sub3": "Securitate WiFi",
-                "sub4": "Manager de parole",
-                "sub5": "VPN",
+                "sub4": "Sănătatea parolei",
+                "sub5": "Securitate VPN",
                 "sub6": "Amprentă digitală"
             },
             "support": "Asistenţă",
@@ -764,8 +763,8 @@
             "subtitle": "VERIFICAȚI DACĂ DISPOZITIVUL DVS. ESTE SECURIZAT.",
             "antiVirus": "Antivirus",
             "wifi": "Securitate WiFi",
-            "pswdMgr": "Manager de parole",
-            "vpn": "VPN",
+            "pswdMgr": "Sănătatea Parolei",
+            "vpn": "Securitate VPN",
             "enabled": "ACTIVAT",
             "disabled": "DEZACTIVAT",
             "partiallyProtected": "PROTEJAT PARȚIAL",
@@ -776,11 +775,11 @@
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
-            "fingerPrint": "Amprentă digitală",
+            "fingerPrint": "Amprentă Digitală",
             "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "ÎNREGISTRAT",
+            "notEnrolled": "NEÎNREGISTRAT"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -2286,7 +2285,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi și securitate conectată, la domiciliu",
+                "title": "Securitate WiFi",
                 "back": "ÎNAPOI"
             },
             "container": {
@@ -2470,7 +2469,7 @@
     "lenovoId": {
         "login": "Conectare",
         "logout": "Deconectare",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Se deconectează...",
         "unlockExclusives": "Deblocare Exclusive",
         "user": "Utilizator",
         "welcomeText1": "Păreți plin de energie astăzi, {{firstName}}!",
@@ -2903,7 +2902,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Setări de preferințe",
+        "preferenceSettings": "Setări De Preferințe",
         "settings": "Setări",
         "settingsDescription": "În pagina de setare a preferințelor, puteți alege să activați/dezactivați notificările pentru mesaje în funcție de categoria mesajului Vantage. Rețineți că, indiferent dacă toate categoriile de mesaje sunt dezactivate, puteți primi ocazional mesaje critice de sistem din partea Vantage când este necesar.",
         "messagesInLenovoVantage": "Mesaje în Lenovo Vantage",
@@ -3092,7 +3091,8 @@
             "storage": "Stocare",
             "wireless": "Fără fir"
         },
-        "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează"
+        "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează",
+        "refreshMessage": "Actualizarea poate dura un timp, deoarece este necesar să se încarce din nou toate componentele"
     },
     "smartPerformance": {
         "title": "Health & Support",

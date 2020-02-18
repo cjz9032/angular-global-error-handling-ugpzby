@@ -161,6 +161,9 @@
 			background: $gaming_darkest !important;
 			.card {
 				background: $gaming_darkest !important;
+				span{
+					color:$gaming_lightest;
+				}
 			}
 		}
 	}
@@ -275,7 +278,7 @@
 														.threshold-for-built-in-battery {
 															color: $gaming_grey_lightest;
 														}
-														.inputSection {
+														.inputSection {															
 															.btn-block button.btn-outline-shadow {
 																border: none;
 																background: $gaming-Darkslate-blue;
@@ -286,7 +289,34 @@
 																	color: $gaming_grey_lightest;
 																}
 															}
+															textarea{
+																color:$gaming_grey_lightest!important
+															}
+															.note{
+																background: $gaming_bg;
+																color:$gaming_lightest;
+																border-color: $gaming_bg;
+															}
+															.dropdown-menu{
+																background: $gaming_shade!important;
+																color: $gaming_lightest!important;
+																.dropdown-item{
+																	&:hover{
+																		background: $gaming_hover!important;
+																	}
+																	&:focus{
+																		background: $gaming_hover!important;
+																	}
+																}
+																@media #{$black-on-white} {
+																	border: 0.1rem solid $dark;
+																}
+																@media #{$white-on-black} {
+																	border: 0.1rem solid $light;
+																}	
+																}
 														}
+														
 														.row-seperator {
 															height: 0.1rem;
 															background-color: $screen_dark_20;
@@ -371,6 +401,32 @@
 																color: $gaming_grey_lightest;
 															}
 														}
+														textarea{
+															color:$gaming_grey_lightest!important
+														}
+														.note{
+															background: $gaming_bg;
+															color:$gaming_lightest;
+															border-color: $gaming_bg;
+														}
+														.dropdown-menu{
+															background: $gaming_shade!important;
+															color: $gaming_lightest!important;
+															.dropdown-item{
+																&:hover{
+																	background: $gaming_hover!important;
+																}
+																&:focus{
+																	background: $gaming_hover!important;
+																}
+															}
+															@media #{$black-on-white} {
+																border: 0.1rem solid $dark;
+															}
+															@media #{$white-on-black} {
+																border: 0.1rem solid $light;
+															}	
+															}
 													}
 													.row-seperator {
 														height: 0.1rem;
@@ -453,6 +509,7 @@
 							.list-group {
 								.list-group-item {
 									background-color: $gaming-Darkslate-blue;
+									border-color:$gaming_darkest;
 									.update-title,
 									.fail-reason {
 										color: $gaming_lightest;
@@ -664,8 +721,12 @@
 	.vtr-page-support {
 		.vtr-page-left-column {
 			.vtr-widget-permission-note {
-				background: $gaming-Darkslate-blue;
+				background: $gaming_bg;
+				color:$white100;
 				border: none;
+				.text-dark{
+					color:$white100!important;
+				}
 			}
 			&.subpage-device-settings-power {
 				.auto-set-checkbox.custom-checkbox-gaming {
@@ -746,6 +807,32 @@
 								color: $gaming_grey_lightest;
 							}
 						}
+						textarea{
+							color:$gaming_grey_lightest!important
+						}
+						.note{
+							background: $gaming_bg;
+							color:$gaming_lightest;
+							border-color: $gaming_bg;
+						}
+						.dropdown-menu{
+							background: $gaming_shade!important;
+							color: $gaming_lightest!important;
+							.dropdown-item{
+								&:hover{
+									background: $gaming_hover!important;
+								}
+								&:focus{
+									background: $gaming_hover!important;
+								}
+							}
+							@media #{$black-on-white} {
+								border: 0.1rem solid $dark;
+							}
+							@media #{$white-on-black} {
+								border: 0.1rem solid $light;
+							}	
+							}
 					}
 					.row-seperator {
 						height: 0.1rem;
@@ -950,17 +1037,17 @@
 			.vtr-device-information {
 				vtr-recover-bad-sectors {
 					.vtr-recover-bad-sectors {
-						background: $dark_cell;
+						background: $gaming_darkest;
 						.header {
 							.heading1 {
-								color: $gaming_info_link;
+								color: $gaming_lightest!important;
 							}
 						}
 						.vtr-ui-list-checkbox-hardware {
 							.list-group {
 								.list-group-item {
-									background-color: $gaming-Darkslate-blue;
-									border: 0.1rem solid $screen_dark_15;
+									background-color: $gaming-bg;
+									border: 0.1rem solid $screen_dark_10;
 									.title {
 										color: $gaming_lightest;
 									}
@@ -986,10 +1073,132 @@
 			}
 
 			//till here
+////////////////////////////////////////Input-accessories section
+.vtr-ui-rectangle-radio {
+	background-color: $gaming_bg;
+	label {	
+		color: $white100!important;
+		span{
+		color: $white100!important;
+		}
+		&:before {			
+			border: 1px solid $gaming_light_blue!important;
+			background-color: $gaming_darkest!important;			
+		}
+		&:after {		
+			background-color: $gaming_darkest;			
+		}		
+		fa-icon.icon {			
+			color: $menu_hover;
+		}
+		span.question {
+			color: $white100;
+		}
+	}
+	&.border-blue {
+		border: 0.2rem solid $gaming_light_blue;
+		outline: none;
+		// transition: all 50ms ease-in;
+		label::after {
+			opacity: 1 !important;
+			background-color: $gaming_light_blue !important;
+		}
+	}
+	&.disabled-grey{
+		label::after {
+			opacity: 1 !important;
+			background-color: $gaming_dark !important;
+		}
+	}
+	 &.border-grey {
+		border: 0.2rem solid $gaming_dark;	
+	 }
 
+}
+.disabled-class{
+	opacity: 0.7;
+	border: 0.2rem solid $gaming_dark;
+	label {
+		&:after, &:before {
+			border-color: $gaming_dark;
+		}
+		&:after {
+			background-color: $gaming_darkest!important;
+		}
+		&:hover {
+			cursor: not-allowed;
+		}
+	}
+}
+
+.vtr-ui-rounded-rectangle-radio {	
+	background: $gaming_bg;	
+		label{
+			.label{
+				color:$white100!important;
+			}
+		}
+
+		&.border-blue {
+			border: 0.2rem solid $gaming_light_blue;
+			outline: none;
+			// transition: all 50ms ease-in;
+			label::after {
+				opacity: 1 !important;
+				background-color: $gaming_light_blue !important;
+			}
+		}
+
+		&.border-grey {
+			border: 0.2rem solid $gaming-dark;
+			// transition: all 50ms ease-in;
+			@media #{$black-on-white} {
+				border: none;
+			}
+	
+		}
+		&.border-disabled {
+			border: 0.2rem solid $gaming-dark;
+			cursor: default;
+			label {
+				.icon-circle {
+					color: $grey_darker;
+				}
+			}
+		}
+		&.border-checked-disabled {
+			border: 0.2rem solid $gaming-dark;
+			cursor: default;
+			label {
+				.icon-circle {
+					color: $grey_darker;
+				}
+			}
+		}
+		&.border-disabled {
+			border: 0.2rem solid $gaming-dark;
+			cursor: default;
+			label {
+				.icon-circle {
+					color: $grey_darker;
+				}
+			}
+		}
+		&.border-checked-disabled {
+			border: 0.2rem solid $gaming-dark;
+			cursor: default;
+			label {
+				.icon-circle {
+					color: $grey_darker;
+				}
+			}
+		}
+	}
+/////////////////////////////////////
 			.vtr-hardware-components {
+				background: $gaming_darkest;
 				.vtr-device-information {
-					background: $dark_cell;
+					background: $gaming_bg;
 					.header {
 						.heading1 {
 							color: $gaming_info_link;
@@ -999,8 +1208,8 @@
 						.vtr-ui-list-checkbox-hardware {
 							.list-group {
 								.list-group-item {
-									background-color: $gaming-Darkslate-blue;
-									border: 0.1rem solid $screen_dark_15;
+									background-color: $gaming-bg;
+									border: 0.1rem solid $screen_dark_10;
 									.title {
 										color: $gaming_lightest;
 									}
@@ -1016,60 +1225,14 @@
 					}
 				}
 
-				.hardware-scan-items {
-					background: $dark_cell;
-					.header {
-						.heading1 {
-							color: $gaming_info_link;
-						}
-					}
-					.hardware-lists-container {
-						vtr-ui-hardware-list {
-							.vtr-ui-list-hardware {
-								.list-group {
-									.list-group-item {
-										background-color: $gaming-Darkslate-blue;
-										border: 0.1rem solid $screen_dark_15;
-										.title {
-											color: $gaming_lightest;
-										}
-										.subtitle {
-											color: $gaming_grey_lightest;
-										}
-									}
-								}
-							}
-						}
-						vtr-widget-hardware-scan-item {
-							.vtr-widget-hardware-scan-item {
-								.title {
-									color: $gaming_lightest;
-								}
-								.subtitle {
-									color: $gaming_grey_lightest;
-								}
-							}
-							vtr-ui-hardware-list {
-								.vtr-ui-list-hardware {
-									.list-group {
-										.list-group-item {
-											background-color: $gaming-Darkslate-blue;
-											border: 0.1rem solid $screen_dark_15;
-											.title {
-												color: $gaming_lightest;
-											}
-											.subtitle {
-												color: $gaming_grey_lightest;
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
+				
 				.hardware-lists-container {
 					.vtr-widget-hardware-scan-item {
+						.description{
+							.subtitle {
+								color: $gaming_lighter;
+							}
+						}
 						.settings-container {
 							.vtr-ui-list-hardware {
 								.list-group {
@@ -1092,6 +1255,22 @@
 										}
 									}
 								}
+								.list3 {
+									.list-group-item {
+										background-color: $shade_extralight;
+										border-color: $shade_lightest;
+										.item-line{
+											.item-left{									
+												.title {
+													color: $gaming_lightest!important;
+												}				
+												.subtitle {										
+													color: $gaming_lighter!important;
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					}
@@ -1099,7 +1278,7 @@
 			}
 			vtr-hardware-view-results {
 				.vtr-hardware-components {
-					background: $dark_cell;
+					background: $gaming_darkest;
 					.header {
 						.heading1 {
 							color: $gaming_lightest;
@@ -1124,6 +1303,11 @@
 					}
 					vtr-widget-hardware-scan-item {
 						.vtr-widget-hardware-scan-item {
+							.description{
+								.subtitle {
+									color: $gaming_lighter;
+								}
+							}
 							.title {
 								color: $gaming_lightest;
 							}
@@ -1138,7 +1322,7 @@
 							.vtr-ui-list-hardware {
 								.list-group {
 									.list-group-item {
-										background-color: $gaming-Darkslate-blue;
+										background-color: $gaming-bg;
 										border: 0.1rem solid $screen_dark_15;
 										.title {
 											color: $gaming_lightest;
@@ -1158,6 +1342,7 @@
 			}
 			.vtr-widget-hardware-scan {
 				.hardwarescan-background {
+					background: #151F36;
 					.cancel-check {
 						.cancel-check-text {
 							color: $gaming_light_blue !important;
@@ -1218,7 +1403,7 @@
 				}
 			}
 			.vtr-widget-hardware-scan-status {
-				background: $dark_cell;
+				background: $gaming_darkest;
 				.title {
 					color: $gaming_lightest;
 				}
@@ -1229,13 +1414,13 @@
 					.vtr-ui-list-hardware {
 						.list-group {
 							.list-group-item {
-								background-color: $gaming-Darkslate-blue;
+								background-color: $gaming-bg;
 								border: 0.1rem solid $screen_dark_15;
 								.title {
-									color: $gaming_lightest;
+									color: $gaming_lightest!important;
 								}
 								.subtitle {
-									color: $gaming_grey_lightest;
+									color: $gaming_grey_lightest!important;
 								}
 							}
 						}
@@ -1360,12 +1545,12 @@
 		}
 	}
 	.progress-value-text {
-		color: $light !important;
+		color: $gaming_lightest !important;
 	}
 
 	.final-result-code {
 		.result-code-value-text {
-			color: $light !important;
+			color: $gaming_lightest !important;
 		}
 
 		.left-result-code {
@@ -1377,7 +1562,7 @@
 
 	.result-code {
 		.result-code-value-text {
-			color: $light !important;
+			color: $gaming_lightest !important;
 		}
 		.left-code-result {
 			.result-code-complete-text {
@@ -1528,27 +1713,12 @@
 		.wifi-card {
 			.wifi {
 				padding-bottom:0.4rem;
+				border-color:$gaming_bg!important;
 				.title {
 					color: $gaming_lightest;
 				}
 				.subtitle {
 					color: $gaming_grey_lightest;
-				}
-			}
-			div.wifi:nth-child(odd) {
-				border-bottom: 0.1rem solid $gaming_bg !important;
-				//border-right: 0.1rem solid $gaming_bg !important;
-				border-right: 0rem !important;				
-				@media only screen and (min-width: 768px) and (max-width: 991.9px){
-					border-right: 0.1rem solid $gaming_bg !important;
-				}
-			}
-			div.wifi:nth-child(even) {
-				border-bottom: 0.1rem solid $gaming_bg !important;
-			}
-			div.wifi:nth-last-child(2):nth-child(odd) {
-				@media #{$mediaquery_X5, $mediaquery_10} {
-					border-bottom: 0.1rem solid $gaming_bg !important;
 				}
 			}
 		}
@@ -1586,6 +1756,65 @@
 	.mtop{
 		margin-top:-2rem;//added to fix issue 13925
 	}
+
+
+	.hardware-scan-items {
+					background: $gaming_darkest;
+					.header {
+						.heading1 {
+							color: $gaming_lightest!important;
+						}
+					}
+					.hardware-lists-container {
+						vtr-ui-hardware-list {
+							.vtr-ui-list-hardware {
+								.list-group {
+									.list-group-item {
+										background-color: $gaming-bg;
+										border: 0.1rem solid $screen_dark_10;
+										.title {
+											color: $gaming_lightest!important;
+										}
+										.subtitle {
+											color: $gaming_grey_lightest!important;
+										}
+									}
+								}
+							}
+						}
+						vtr-widget-hardware-scan-item {
+							.vtr-widget-hardware-scan-item {
+								.title {
+									color: $gaming_lightest;
+								}
+								.description{
+									.subtitle {
+										color: $gaming_lighter;
+									}
+								}
+								.subtitle {
+									color: $gaming_grey_lightest;
+								}
+							}
+							vtr-ui-hardware-list {
+								.vtr-ui-list-hardware {
+									.list-group {
+										.list-group-item {
+											background-color: $gaming-bg;
+											border: 0.1rem solid $screen_dark_15;
+											.title {
+												color: $gaming_lightest;
+											}
+											.subtitle {
+												color: $gaming_grey_lightest;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 }
 
 .gaming-help-modal {
@@ -1604,10 +1833,10 @@
 			width: 90%;
 		}
 		.modal-content{
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
+			justify-content: center;
+			align-items: center;
+			background: transparent;
+			margin-top:18vh;
 		}
 	}
 }

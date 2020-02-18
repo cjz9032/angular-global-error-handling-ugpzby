@@ -86,15 +86,14 @@
                     "line1": "Met Vantage Edge worden uw instellingen automatisch op gebruik afgestemd. \n Maximale prestaties tijdens het gamen, langere batterijduur wanneer u dat niet bent.",
                     "line2": "<b>Overzicht functiebeheer</b> <br> Sommige functies niet op alle apparaten beschikbaar",
                     "line3": "<b>CPU overklokken </b><br> Geef de maximumsnelheid voor uw processor een boost",
-                    "line4": "<b>RAM overklok </b><br> Geef de maximumsnelheid voor uw geheugen een boost",
+                    "line4": "<b>RAM overklokken </b><br> Geef de maximumsnelheid voor uw geheugen een boost",
                     "line5": "<b>Netwerkboost </b><br> Stel prioriteiten in voor netwerkverkeer voor de game die u speelt",
                     "line6": "<b>Dolby </b><br> Stem uw audio specifiek af voor gamen met Dolby-technologie",
                     "line7": "<b>Hybride modus </b><br> Geavanceerde GPU-instellingen uitschakelen wanneer u niet aan het gamen bent om de batterijduur te verbeteren",
                     "line8": "<b>Snelladen </b><br> Onderweg langer gamen met snellere oplaadtijden",
                     "line9": "<b>Touchpadvergrendeling </b><br> Schakel het touchpad uit bij gamen om foutieve invoer te voorkomen",
                     "line10": "<b>Automatisch sluiten </b><br> Wis, voordat je begint, processen die je niet nodig hebt voor gamen om de systeembronnen optimaal te gebruiken",
-                    "line11": "<b>Thermische modus </b><br> Een profiel voor het apparaat van uw voorkeur instellen ter verbetering van de ventilatorsnelheid en het beheren van de koeling",
-                    "line12": "<b>Macrotoets</b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Thermische modus </b><br> Een profiel voor het apparaat van uw voorkeur instellen ter verbetering van de ventilatorsnelheid en het beheren van de koeling"
                 },
                 "systemInfo": {
                     "systenTooltip": "Beweeg over CPU / GPU / RAM en verschillende schijven om hun beschrijvingen weer te geven, inclusief fabrikant- en modelinformatie"
@@ -748,8 +747,8 @@
                 "sub1": "Mijn beveiliging",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-beveiliging",
-                "sub4": "Wachtwoordbeheerder",
-                "sub5": "VPN",
+                "sub4": "Wachtwoordstatus",
+                "sub5": "VPN-beveiliging",
                 "sub6": "Vingerafdruk"
             },
             "support": "Ondersteuning",
@@ -763,9 +762,9 @@
             "title": "Beveiligingsadviseur",
             "subtitle": "CONTROLEER OF UW APPARAAT IS BEVEILIGD.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-beveiliging",
-            "pswdMgr": "Wachtwoordbeheerder",
-            "vpn": "VPN",
+            "wifi": "WiFi-Beveiliging",
+            "pswdMgr": "Wachtwoordstatus",
+            "vpn": "VPN-Beveiliging",
             "enabled": "INGESCHAKELD",
             "disabled": "UITGESCHAKELD",
             "partiallyProtected": "GEDEELTELIJK BEVEILIGD",
@@ -779,8 +778,8 @@
             "fingerPrint": "Vingerafdruk",
             "privacyPolicyAndTermsOfService": "<tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "GEREGISTREERD",
+            "notEnrolled": "NIET GEREGISTREERD"
         },
         "qAndA": {
             "title": "V & A voor uw machine",
@@ -2286,7 +2285,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi en Connected Home-beveiliging",
+                "title": "WiFi-beveiliging",
                 "back": "TERUG"
             },
             "container": {
@@ -2470,7 +2469,7 @@
     "lenovoId": {
         "login": "Aanmelden",
         "logout": "Afmelden",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Bezig met afmelden...",
         "unlockExclusives": "Krijg toegang tot exclusieve aanbiedingen",
         "user": "Gebruiker",
         "welcomeText1": "Uw ziet er energiek uit vandaag, {{firstName}}!",
@@ -3092,7 +3091,8 @@
             "storage": "Opslag",
             "wireless": "Draadloos"
         },
-        "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat"
+        "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat",
+        "refreshMessage": "Het vernieuwen kan even duren omdat alle onderdelen opnieuw moeten worden geladen"
     },
     "smartPerformance": {
         "title": "Health & Support",

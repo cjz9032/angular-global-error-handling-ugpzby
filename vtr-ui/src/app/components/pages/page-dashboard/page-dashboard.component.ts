@@ -174,7 +174,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		public androidService: AndroidService,
 		private activatedRoute: ActivatedRoute,
 		private dialogService: DialogService,
-		private loggerService: LoggerService,
+		private logger: LoggerService,
 		private hypService: HypothesisService,
 		public warrantyService: WarrantyService,
 		private adPolicyService: AdPolicyService,
@@ -215,7 +215,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.dashboardService.isShellAvailable) {
-			console.log('PageDashboardComponent.getSystemInfo');
+			this.logger.info('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
 		}
 		this.translate
@@ -275,7 +275,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	ngAfterViewInit() {
 		const dashboardEnd: any = new Date();
 		const dashboardTime = dashboardEnd - this.dashboardStart;
-		this.loggerService.info(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
+		this.logger.info(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
 	}
 
 	ngOnDestroy() {
@@ -400,7 +400,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				const callCmsEndTime: any = new Date();
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 				if (response && response.length > 0) {
-					this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
+					this.logger.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
 					this.getCMSHeroBannerItems(response);
 					this.getCMSCardContentB(response);
 					this.getCMSCardContentC(response);
@@ -410,12 +410,12 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
-					this.loggerService.info(msg);
+					this.logger.info(msg);
 					this.fetchContent('en');
 				}
 			},
 			(error) => {
-				console.log('fetchCMSContent error', error);
+				this.logger.info('fetchCMSContent error', error);
 			}
 		);
 	}
@@ -626,7 +626,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				}
 			});
 		} catch (ex) {
-			this.loggerService.info(`Cause by error: ${ex}, position-B load CMS content.`);
+			this.logger.info(`Cause by error: ${ex}, position-B load CMS content.`);
 			contentCards.forEach(cardItem => {
 				this.upeRequestResult[cardItem.id] = false;
 				if (this.cmsRequestResult[cardItem.id]) {
@@ -662,7 +662,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				},
 				() => {
 					resolve();
-					console.log('get tile source failed.');
+					this.logger.info('get tile source failed.');
 				}
 			);
 		});

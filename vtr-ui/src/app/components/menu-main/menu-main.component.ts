@@ -470,7 +470,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 						inputAccessoriesCapability
 					);
 				} catch (error) {
-					console.log('initInputAccessories', error);
+					this.logger.exception('initInputAccessories', error);
 				}
 			})
 			.catch((error) => { });

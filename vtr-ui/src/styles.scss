@@ -310,7 +310,13 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		background-color: $light;
 		font-size: 1.4rem;
 		text-align: left;
-		max-width: 40rem;
+		max-width: 25rem;
+		@media #{$breakpoint_xl}{
+			max-width: 25rem !important;
+		}
+		@media #{$breakpoint_xl6}{
+			max-width: 33.3rem;
+		}
 	}
 }
 
@@ -879,7 +885,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 /*----- onclick-tooltip-style------*/
 .tooltip-click {
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-
+	background: $light;
 	&.show {
 		opacity: 1;
 	}

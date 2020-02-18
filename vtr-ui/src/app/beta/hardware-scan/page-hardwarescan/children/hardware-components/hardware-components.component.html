@@ -12,12 +12,13 @@
 				[showProgress]="isScanExecuting() || isRecoverExecuting()" (startQuickScan)="startScanWaitingModules(taskTypeEnum.QuickScan)"
 				(checkCancel)="onCancelScan()" (checkAnchor)="startScanWaitingModules(taskTypeEnum.CustomScan)" [statusText]="finalStatusToken()"
 				itemParentCancel="{{itemParentCancelScan}}"
+				[hideBack]="!isScanDone"
 				itemNameCancel= "{{itemNameCancelScan}}">
 			</vtr-widget-hardware-scan>
 		</div>
 	</div>
 
-	<div class="hardware-scan-items">
+	<div class="hardware-scan-items mb-5">
 		<div class="row">
 			<div class="col-12 px-0">
 				<div class="header">
@@ -39,7 +40,6 @@
 						metricsEvent="FeatureClick"
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.RefreshModules"
-						[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
 						[ngClass]="{'action-anchor': !startScanClicked, 'disabled-anchor': startScanClicked}"
 						(click)="refreshModules()">{{'hardwareScan.refreshModule' | translate}}
 						<fa-icon class="refresh-icon"
@@ -56,12 +56,16 @@
 			<div class="col">
 				<div class="hardware-lists-container">
 					<vtr-ui-hardware-list *ngIf="!isRefreshingModules() && !isScanExecuting() && !isRecoverExecuting()"
-						[items]="getItemToDisplay()">
+						[items]="itemsToDisplay">
 					</vtr-ui-hardware-list>
 
 					<div class="loading-components" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
 						<fa-icon placement="auto" spin="true" [icon]="['fal', 'circle-notch']" container="vtr-root">
 						</fa-icon>
+					</div>
+
+					<div class="refresh-message" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
+						{{ 'hardwareScan.refreshMessage' | translate }}
 					</div>
 
 					<vtr-widget-hardware-scan-item *ngIf="isScanExecuting()" [items]="modules"

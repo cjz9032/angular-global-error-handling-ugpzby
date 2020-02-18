@@ -86,15 +86,14 @@
                     "line1": "Dzięki opcji Vantage Edge ustawienia zostaną automatycznie dostrojone w zależności od sposobu użytkowania. \n Maksymalna wydajność podczas grania, dłuższa żywotność baterii, gdy nie grasz.",
                     "line2": "<b>Omówienie zarządzania funkcją</b> <br> Niektóre funkcje nie są dostępne na wszystkich urządzeniach",
                     "line3": "<b>Przetaktowywanie CPU </b><br> Zwiększ maksymalną prędkość procesora",
-                    "line4": "<b>Przetaktowywanie pamięci RAM </b><br> Zwiększ maksymalną prędkość pamięci",
+                    "line4": "<b>Przetaktowywanie RAM </b><br> Zwiększ maksymalną prędkość pamięci",
                     "line5": "<b>Wspomaganie sieci </b><br> Określ priorytety ruchu sieciowego dla odtwarzanej gry",
                     "line6": "<b>Dolby </b><br> Dostrój dźwięk specjalnie do gier z technologią Dolby",
                     "line7": "<b>Tryb hybrydowy </b><br> Wyłącz zaawansowane ustawienia GPU, gdy nie grasz, aby zwiększyć wydajność baterii",
                     "line8": "<b>Szybkie ładowanie </b><br> Graj dłużej dzięki szybszemu ładowaniu baterii",
                     "line9": "<b>Blokada panelu dotyk. </b><br> Zapobiegnij błędom sterowania, wyłączając panel dotykowy na czas grania",
                     "line10": "<b>Autozamykanie </b><br> Wyczyść procesy, które nie są potrzebne do grania przed rozpoczęciem gry, aby zmaksymalizować dostępne zasoby systemowe",
-                    "line11": "<b>Tryb term </b><br> Ustaw preferowany profil urządzenia dotyczący prędkości wentylatora i sterowania chłodzeniem.",
-                    "line12": "<b>Klawisz makr</b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Tryb term </b><br> Ustaw preferowany profil urządzenia dotyczący prędkości wentylatora i sterowania chłodzeniem."
                 },
                 "systemInfo": {
                     "systenTooltip": "Najedź kursorem myszy na CPU/GPU/RAM i różne dyski, aby wyświetlić ich opis wraz z informacjami o producencie i modelu"
@@ -747,9 +746,9 @@
                 "title": "Ochrona",
                 "sub1": "Moje zabezpieczenie",
                 "sub2": "Antywirus",
-                "sub3": "Bezpieczeństwo WiFi",
-                "sub4": "Menedżer haseł",
-                "sub5": "VPN",
+                "sub3": "Bezpieczeństwo Wi-Fi",
+                "sub4": "Bezpieczeństwo hasła",
+                "sub5": "Zabezpieczenia VPN",
                 "sub6": "Odcisk palca"
             },
             "support": "Pomoc techniczna",
@@ -764,8 +763,8 @@
             "subtitle": "SPRAWDŹ, CZY URZĄDZENIE JEST ZABEZPIECZONE.",
             "antiVirus": "Antywirus",
             "wifi": "Bezpieczeństwo WiFi",
-            "pswdMgr": "Menedżer haseł",
-            "vpn": "VPN",
+            "pswdMgr": "Bezpieczeństwo Hasła",
+            "vpn": "Zabezpieczenia VPN",
             "enabled": "WŁĄCZONO",
             "disabled": "WYŁĄCZONO",
             "partiallyProtected": "CZĘŚCIOWO CHRONIONE",
@@ -776,19 +775,19 @@
             "notFound": "NIE ZNALEZIONO",
             "registered": "ZAREJESTROWANY",
             "notRegistered": "NIE ZAREJESTROWANY",
-            "fingerPrint": "Odcisk palca",
+            "fingerPrint": "Odcisk Palca",
             "privacyPolicyAndTermsOfService": "<tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "ZAREJESTROWANO",
+            "notEnrolled": "NIE ZAREJESTROWANO"
         },
         "qAndA": {
-            "title": "Pytania i odpowiedzi dotyczące Twojej maszyny",
-            "subtitle": "Zobacz przydatne wskazówki dotyczące Twojego urządzenia.",
+            "title": "Pytania i odpowiedzi dotyczące Twojego komputera",
+            "subtitle": "Zobacz praktyczne wskazówki dotyczące Twojego urządzenia.",
             "question1": "Tworzenie kopii zapasowych plików i ich przywracanie",
             "question2": "Jak odświeżyć komputer",
             "question3": "Jak sprawdzić procesor komputera",
-            "question4": "Sprawdź zużycie akumulatora urządzenia",
+            "question4": "Jak sprawdzić poziom wykorzystania akumulatora urządzenia",
             "question5": "Używanie komputera jak tabletu",
             "question6": "Poznaj Cortanę, swoją osobistą asystentkę"
         },
@@ -855,7 +854,7 @@
             "subtitle": "Powiedz nam, co myślisz o aplikacji Vantage.",
             "button": "Przekaż opinię",
             "form": {
-                "email": "Email (optional)",
+                "email": "Adres e-mail (opcjonalny)",
                 "question1": "Czy podoba Ci się nowy styl aplikacji Vantage?",
                 "question2": "Czy uważasz, że wydajność jest zadowalająca?",
                 "question3": "Czy masz zamiar częściej korzystać z tej aplikacji w przyszłości?",
@@ -867,12 +866,12 @@
                 "no": "Nie",
                 "tips1": "Przekaż dodatkowe komentarze",
                 "comments": "Komentarze...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
+                "button": "Prześlij",
+                "addScreenshot": "Dodaj zrzut ekranu",
                 "sendFeedback": "Wyślij opinię",
                 "submitScreenShot": "Prześlij zrzut ekranu",
                 "messages": {
-                    "feedbackSuccess": "Dziękujemy za opinie!"
+                    "feedbackSuccess": "Dziękujemy za opinię!"
                 }
             }
         },
@@ -896,14 +895,14 @@
             "memory": {
                 "title": "Pamięć",
                 "detail": {
-                    "notFound": "Nie znaleziono pamięci",
+                    "notFound": "Ładowanie informacji o pamięci",
                     "of": "z"
                 }
             },
             "diskSpace": {
                 "title": "Miejsce na dysku",
                 "detail": {
-                    "notFound": "Nie znaleziono dysku",
+                    "notFound": "Ładowanie informacji o dysku",
                     "of": "z"
                 }
             },
@@ -937,10 +936,10 @@
                 "title": "Aktualizacja systemu",
                 "notFound": "Nie znaleziono aktualizacji systemu",
                 "detail": {
-                    "uptoDate": "Aktualizacje sprawdzone ",
+                    "uptoDate": "Sprawdzono dostępność aktualizacji ",
                     "updatedOn": "sprawdzone ",
-                    "outdated": "Ostatnio nie sprawdzano aktualizacji ",
-                    "neverRanUpdate": "nigdy nie sprawdzano aktualizacji"
+                    "outdated": "Ostatnio nie sprawdzano dostępności aktualizacji ",
+                    "neverRanUpdate": "nigdy nie sprawdzano dostępności aktualizacji"
                 }
             },
             "extendedWarranty": "Rozszerz gwarancję",
@@ -1065,10 +1064,10 @@
             "power": {
                 "title": "Zasilanie",
                 "subtitle": "Ustawienia zasilania",
-                "description": "Ta sekcja umożliwia dynamiczną regulację wydajności cieplnej i maksymalizację żywotności akumulatora.Ma także inne popularne funkcje związane z zasilaniem. Możesz sprawdzić domyślne ustawienia w tej sekcji i dostosować system do swoich potrzeb.",
+                "description": "Ta sekcja umożliwia dynamiczną regulację wydajności cieplnej i maksymalizację żywotności akumulatora. Zawiera także inne popularne funkcje związane z zasilaniem. Możesz sprawdzić domyślne ustawienia w tej sekcji i dostosować system do swoich potrzeb.",
                 "jumpto": {
                     "title": "PRZEJDŹ DO USTAWIEŃ",
-                    "battery": "akumulator",
+                    "battery": "Akumulator",
                     "power": "Zasilanie",
                     "other": "Inne"
                 },
@@ -1373,7 +1372,7 @@
             "audio": {
                 "title": "Dźwięk",
                 "subtitle": "Ustawienia dźwięku",
-                "description": "Ta sekcja umożliwia automatyczną optymalizację lub pełną,ręczną konfigurację ustawień dźwięku, takich jak ustawienia trybu Dolby, mikrofonu itp.",
+                "description": "Ta sekcja umożliwia automatyczną optymalizację lub pełną, ręczną konfigurację ustawień dźwięku, takich jak ustawienia trybu Dolby, mikrofonu itp.",
                 "audioSmartsettings": {
                     "title": "Inteligentne ustawienia dźwięku",
                     "subtitle": "USTAWIENIA APLIKACJI",
@@ -1402,11 +1401,11 @@
                     },
                     "microphone": {
                         "title": "Mikrofon",
-                        "tooltip": "Możesz dostosować efekt mikrofonu, regulując głośność mikrofonui określając odpowiedni tryb."
+                        "tooltip": "Możesz dostosować efekt mikrofonu, regulując głośność mikrofonu i określając odpowiedni tryb."
                     },
                     "volume": {
                         "title": "Głośność mikrofonu",
-                        "description": "Ciesz się głębokim i czystym dźwiękiem Dolby wysokiej jakości ulubionej zawartości. W tym celu wybierz odpowiedni tryb dla zawartości oraz sprzętu.",
+                        "description": "Technologia Dolby Audio zapewnia głęboki i czysty dźwięk podczas odtwarzania nagrań każdego rodzaju. Wystarczy wybrać odpowiedni tryb dla rodzaju treści i sprzętu.",
                         "options": {
                             "silent": "Cichy",
                             "loud": "Głośny"
@@ -1414,11 +1413,11 @@
                     },
                     "suppress": {
                         "title": "Tłum odgłosy klawiatury",
-                        "tooltip": "Włącz tę funkcję, aby zoptymalizować dźwięk MIC przez tłumienie odgłosów klawiatury."
+                        "tooltip": "Włącz tę funkcję, aby zoptymalizować dźwięk z mikrofonu przez tłumienie odgłosów klawiatury."
                     },
                     "acoustic": {
                         "title": "Eliminacja echa akustycznego",
-                        "tooltip": "Włącz tę funkcję, aby zoptymalizować dźwięk MIC, zmniejszając echo akustyczne."
+                        "tooltip": "Włącz tę funkcję, aby zoptymalizować dźwięk z mikrofonu, zmniejszając echo akustyczne."
                     },
                     "optimize": {
                         "title": "Zoptymalizuj mikrofon:",
@@ -1451,7 +1450,7 @@
                     "title": "Wyświetlanie",
                     "displayColorTemperature": {
                         "title": "Temperatura barwowa ekranu",
-                        "description": "Możesz dostosowywać temperaturę barwową ekranu, odfiltrowując niebieskie światło męczące oczy. Z kolei w okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
+                        "description": "Użytkownik może dostosowywać temperaturę barwową ekranu i regulować ilość niebieskiego światła, aby zredukować zmęczenie oczu. W okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
                         "link": {
                             "click": "Kliknij",
                             "here": "tutaj",
@@ -1485,7 +1484,7 @@
                         "onSunsetToSunriseScheduleDescription": "Ustaw tryb ochrony oczu od zachodu do wschodu słońca",
                         "note": {
                             "title": "Uwaga",
-                            "description": "Gdy włączony jest tryb ochrony oczu, ta temperatura kolorów nie działa. Można jednak przeciągnąć suwak, aby zobaczyć jej podgląd. Aby zastosować tę temperaturę kolorów, wyłącz tryb ochrony oczu."
+                            "description": "Gdy włączony jest tryb ochrony oczu, to ustawienie temperatury kolorów nie działa. Można jednak przeciągnąć suwak, aby zobaczyć jego podgląd. Aby zastosować tę temperaturę kolorów, wyłącz tryb ochrony oczu."
                         }
                     },
                     "privacyGuard": {
@@ -2210,25 +2209,25 @@
             "common": {
                 "title": "Antywirus",
                 "back": "WSTECZ",
-                "recommends": "Dlaczego Lenovo zaleca <b>McAfee</b> w celu ochrony wszystkich twoich urządzeń",
+                "recommends": "Dlaczego Lenovo zaleca <b>McAfee</b> do ochrony wszystkich twoich urządzeń",
                 "award": "Nagradzane oprogramowanie antywirusowe",
                 "mcafeePremium": "Ochrona McAfee LiveSafe",
                 "protectedBy": "Obecnie korzystasz z ochrony oprogramowania {{protectedName}}. Program McAfee LiveSafe może jednak zapewnić lepszą ochronę.",
                 "virusScan": "SKANOWANIE ANTYWIRUSOWE",
                 "firewall": "ZAPORA",
                 "disabled": "WYŁĄCZONO",
-                "awardText": "Chroń swój nowy komputer Lenovo dzięki przetestowanemu i sprawdzonemu zabezpieczeniu przed zagrożeniami internetowymi",
+                "awardText": "Chroń swój nowy komputer Lenovo za pomocą przetestowanego i sprawdzonego zabezpieczenia przed zagrożeniami internetowymi",
                 "performance": "Doskonała wydajność",
-                "performanceText": "Spójny, precyzyjny i niezawodny program antywirusowy, o którym wiesz, że zapewni ci bezpieczeństwo",
+                "performanceText": "Konsekwentny, dokładny i niezawodny program antywirusowy, na który możesz liczyć",
                 "Blazing": "Błyskawiczna prędkość",
-                "BlazingText": "Zoptymalizowany program antywirusowy, który nie spowalnia ani nie zakłóca pracy Lenovo Vantage",
+                "BlazingText": "Zoptymalizowany program antywirusowy, który nie spowalnia ani nie zakłóca pracy aplikacji Lenovo Vantage",
                 "privacyTerms": "/   <tag>Polityka prywatności</tag>  |  <tag>Warunki świadczenia usług</tag>",
                 "notAvailable": "Niedostępne"
             },
             "windowsDefender": {
                 "optimallyProtected": "Wydaje się, że obecnie korzystasz z programu Windows Defender. Nie jest to zły wybór, jednak by zapewnić najwyższy poziom zabezpieczenia przed ransomware, złośliwym oprogramowaniem i wirusami, połączyliśmy siły z <b>McAfee</b>, aby zaoferować ci wielokrotnie nagradzany program, który pomaga <b>chronić to, co jest ważne.</b>",
                 "windowsSubtitle": "Podstawowa ochrona Windows Defender",
-                "topTip": "Najważniejsze wskazówki w zakresie bezpieczeństwa w sieci",
+                "topTip": "Najważniejsze wskazówki dotyczące bezpieczeństwa w sieci",
                 "topContent": "Dowiedz się, jak możesz się bronić przed największymi współczesnymi zagrożeniami internetowymi <tag>ZAPOZNAJ SIĘ ZE WSKAZÓWKAMI</tag>",
                 "view": "ZAPOZNAJ SIĘ ZE WSKAZÓWKAMI",
                 "buyNow": "Kup teraz",
@@ -2286,7 +2285,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi i Bezpieczny Dom",
+                "title": "Bezpieczeństwo Wi-Fi",
                 "back": "WSTECZ"
             },
             "container": {
@@ -2388,7 +2387,7 @@
             "statusTitle": "SURFEASY VPN",
             "title": "Zabezpieczenia VPN",
             "header": "SurfEasy VPN",
-            "whatIsSufEasy": "SurfEasy VPN szyfruje informacje, które wysyłasz i otrzymujesz, dzięki czemu możesz bezpiecznie i prywatnie korzystać z komputera PC, Mac®, smartfona lub tabletu na dowolnym połączeniu internetowym bez obaw.",
+            "whatIsSufEasy": "SurfEasy VPN szyfruje informacje, które wysyłasz i otrzymujesz, dzięki czemu bezpiecznie i bez obaw możesz korzystać z komputera PC, Mac®, smartfona lub tabletu przez dowolne połączenie internetowe.",
             "whatCanSufEasy1": "Wirtualny dostawca prywatnej sieci, który chroni Cię, gdy jesteś online. Gdy nie używasz sieci VPN, komputer może być bardziej narażony na ataki i próby kradzieży tożsamości. VPN działa cicho w tle i zapewnia bezpieczeństwo i ochronę prywatności.",
             "startUseSufEasy4": "Użytkownicy usługi SurfEasy co 30 dni otrzymają 250 MB bezpłatnej transmisji danych! Postępuj zgodnie z instrukcjami na karcie &quot;Nagrody&quot; aplikacji SurfEasy, aby uzyskać większą transmisję danych.",
             "howToGetData": "Jak uzyskać darmową transmisję danych:",
@@ -2412,8 +2411,8 @@
             "getStarted1": "Kliknij na „Otwórz SurfEasy” przycisk powyżej, aby uruchomić SurfEasy VPN.",
             "getStarted2": "Włącz VPN i poczekaj krótką chwilę na potwierdzenie bezpiecznego połączenia.",
             "getStarted3": "W razie potrzeby zmień region lub lokalizację i korzystaj z bezpiecznej sieci prywatnej.",
-            "poweredBySurfEasy": "Zasilane przez SurfEasy",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "poweredBySurfEasy": "Na bazie technologii SurfEasy",
+            "privacyPolicyAndTermsOfService": "Przeczytaj więcej na temat <tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE MENEDŻER HASEŁ",
@@ -2442,7 +2441,7 @@
             "allowsYou3": "Bądź bezpieczny w niezabezpieczonych sieciach WiFi z wbudowanym VPN",
             "allowsYou4": "Bezpieczne udostępnianie haseł bez ujawniania ich",
             "poweredByDashLane": "Zasilany przez Dashlane",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Przeczytaj więcej na temat <tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2470,7 +2469,7 @@
     "lenovoId": {
         "login": "Logowanie",
         "logout": "Wyloguj",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Wylogowanie...",
         "unlockExclusives": "Odblokuj dodatki specjalne",
         "user": "Użytkownik",
         "welcomeText1": "Wygląda na pełnego energii, {{firstName}}!",
@@ -2903,7 +2902,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Ustawienia preferencji",
+        "preferenceSettings": "Ustawienia Preferencji",
         "settings": "Ustawienia",
         "settingsDescription": "Na stronie ustawień preferencji możesz włączyć lub wyłączyć powiadomienie o wiadomości na podstawie kategorii wiadomości Vantage. Należy pamiętać, że nawet jeśli wszystkie kategorie wiadomości są wyłączone, nadal mogą być czasami otrzymywane z programu Vantage krytyczne wiadomości dotyczące systemu, gdy jest to konieczne.",
         "messagesInLenovoVantage": "Wiadomości w aplikacji Lenovo Vantage",
@@ -3092,7 +3091,8 @@
             "storage": "Pamięć masowa",
             "wireless": "Bezprzewodowe"
         },
-        "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji"
+        "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji",
+        "refreshMessage": "Odświeżanie może zająć trochę czasu, ponieważ wymaga ponownego załadowania wszystkich komponentów"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3381,7 +3381,7 @@
             "extendNow": "extend now",
             "renewNow": "Renew Now",
             "poweredBy": "Powered by Coronet",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Przeczytaj więcej na temat <tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>"
         },
         "tour": {
             "back": "Back",

@@ -5,6 +5,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { ActivatedRoute } from '@angular/router';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-modal-article-detail',
@@ -30,6 +31,7 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 		private sanitizer: DomSanitizer,
 		private element: ElementRef,
 		private timerService: TimerService,
+		private logger: LoggerService
 	) {
 		this.metricClient = vantageShellService.getMetrics();
 		this.metricsParent = this.getPageName(activatedRoute) + '.Article';
@@ -62,7 +64,7 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 			},
 			error => {
 				this.articleBody = '<div class=\'alert alert-danger\'>Some Error Occurs Please Try again later</div>';
-				console.log('fetchCMSContent error', error);
+				this.logger.error('fetchCMSContent error', error);
 			}
 		);
 

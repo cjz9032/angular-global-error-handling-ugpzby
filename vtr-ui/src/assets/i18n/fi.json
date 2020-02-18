@@ -93,8 +93,7 @@
                     "line8": "<b>Pikalataus </b><br> Pelaa liikkeellä ollessasi pikalatauksen avulla",
                     "line9": "<b>Kosketuslevyn lukitus </b><br> Estä väärät syötteet poistamalla kosketuslevy käytöstä pelaamisen ajaksi",
                     "line10": "<b>Automaattinen sulkeminen </b><br> Maksimoi käytettävissä olevat järjestelmäresurssit tyhjentämällä ennen pelaamisen aloittamista prosessit, joita ei tarvita pelaamiseen",
-                    "line11": "<b>Lämpö-tila </b><br> Määritä haluamaasi laitteen profiiliin tuulettimen kierrosnopeuden ja jäähdytyksen säätö",
-                    "line12": "<b>Makronäppäin</b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Lämpö-tila </b><br> Määritä haluamaasi laitteen profiiliin tuulettimen kierrosnopeuden ja jäähdytyksen säätö"
                 },
                 "systemInfo": {
                     "systenTooltip": "Näytä keskusyksikön/näytönohjaimen/RAM-muistin kuvaukset, mukaan lukien valmistus- ja mallitiedot, viemällä osoitin näiden ja eri asemien päälle"
@@ -748,8 +747,8 @@
                 "sub1": "Oma suojaus",
                 "sub2": "Virustentorjunta",
                 "sub3": "WiFi-suojaus",
-                "sub4": "Salasanan hallinta",
-                "sub5": "VPN",
+                "sub4": "Salasanan kunto",
+                "sub5": "VPN-suojaus",
                 "sub6": "Sormenjälki"
             },
             "support": "Tuki",
@@ -763,9 +762,9 @@
             "title": "Security Advisor",
             "subtitle": "TARKISTA, ONKO LAITTEESI SUOJATTU.",
             "antiVirus": "Virustentorjunta",
-            "wifi": "WiFi-suojaus",
-            "pswdMgr": "Salasanan hallinta",
-            "vpn": "VPN",
+            "wifi": "WiFi-Suojaus",
+            "pswdMgr": "Salasanan Kunto",
+            "vpn": "VPN-Suojaus",
             "enabled": "KÄYTÖSSÄ",
             "disabled": "POISSA KÄYTÖSTÄ",
             "partiallyProtected": "OSITTAIN SUOJATTU",
@@ -779,8 +778,8 @@
             "fingerPrint": "Sormenjälki",
             "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REKISTERÖITY",
+            "notEnrolled": "EI REKISTERÖITY"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -2286,7 +2285,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi-yhteyden ja Connected Home -suojaus",
+                "title": "WiFi-suojaus",
                 "back": "EDELLINEN"
             },
             "container": {
@@ -2470,7 +2469,7 @@
     "lenovoId": {
         "login": "Sisäänkirjaus",
         "logout": "Kirjaudu ulos",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Uloskirjaus on meneillään...",
         "unlockExclusives": "Ota käyttöön erikoissisältöä",
         "user": "Käyttäjä",
         "welcomeText1": "Näytät energiseltä tänään, {{firstName}}!",
@@ -3092,7 +3091,8 @@
             "storage": "Tallennus",
             "wireless": "Langattomat yhteydet"
         },
-        "warningMessage": "Muista, että testit peruutetaan, jos järjestelmä on lepo- tai horrostilassa"
+        "warningMessage": "Muista, että testit peruutetaan, jos järjestelmä on lepo- tai horrostilassa",
+        "refreshMessage": "Päivitys saattaa kestää jonkin aikaa, koska kaikkien osien lataus on tehtävä uudelleen"
     },
     "smartPerformance": {
         "title": "Health & Support",

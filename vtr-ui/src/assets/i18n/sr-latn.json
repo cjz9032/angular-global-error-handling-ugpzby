@@ -89,15 +89,14 @@
                     "line1": "Uz Vantage Edge, vaše postavke će automatski biti podešene na osnovu upotrebe. \n Maksimalan učinak pri igrama, duži vek trajanja baterije kada ne igrate.",
                     "line2": "<b>Prikaz upravljanja funkcijama</b> <br> Neke funkcije nisu dostupne na svim uređajima",
                     "line3": "<b>Overkloking procesora </b><br> Povećajte maksimalnu brzinu procesora",
-                    "line4": "<b>Overklok RAM memorije </b><br> Povećajte maksimalnu brzinu memorije",
+                    "line4": "<b>Overkloking RAM memorije </b><br> Povećajte maksimalnu brzinu memorije",
                     "line5": "<b>Pojačanje mreže </b><br> Odredite prioritet mrežnog saobraćaja za igru koju igrate",
                     "line6": "<b>Dolby </b><br> Podesite vaš zvuk specifično za igru sa Dolby tehnologijom",
                     "line7": "<b>Hibridni režim </b><br> Onemogućite napredne GPU postavke kada ne igrate za povećanje performansi baterije",
                     "line8": "<b>Brzo punjenje </b><br> Igrajte igre u pokretu duže uz brže punjenje baterije",
                     "line9": "<b>Zaključ. dodirne table </b><br> Sprečite pogrešne unose onemogućavanjem dodirne table prilikom igranja",
                     "line10": "<b>Automatsko zatvaranje </b><br> Obrišite procese koji nisu potrebni za igranje pre nego što počnete kako biste maksimalno iskoristili dostupne sistemske resurse",
-                    "line11": "<b>Toplotni režim </b><br> Postavite željeni profil uređaja za kontrolu brzine ventilatora i hlađenja",
-                    "line12": "<b>Taster makroa </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Toplotni režim </b><br> Postavite željeni profil uređaja za kontrolu brzine ventilatora i hlađenja"
                 },
                 "systemInfo": {
                     "systenTooltip": "Zadržite pokazivač na procesoru (CPU) / GPU / RAM i različitim diskovima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"
@@ -748,8 +747,8 @@
                 "sub1": "Moja bezbednost",
                 "sub2": "Antivirusni program",
                 "sub3": "WiFi bezbednost",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "Ispravnost lozinke",
+                "sub5": "Bezbednost VPN mreže",
                 "sub6": "Fingerprint"
             },
             "support": "Podrška",
@@ -763,9 +762,9 @@
             "title": "Savetnik za bezb.",
             "subtitle": "PROVERITE DA LI JE UREĐAJ ZAŠTIĆEN.",
             "antiVirus": "Antivirusni program",
-            "wifi": "WiFi bezbednost",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "wifi": "WiFi Bezbednost",
+            "pswdMgr": "Ispravnost Lozinke",
+            "vpn": "Bezbednost VPN Mreže",
             "enabled": "OMOGUĆENO",
             "disabled": "ONEMOGUĆENO",
             "partiallyProtected": "DELIMIČNO ZAŠTIĆEN",
@@ -779,8 +778,8 @@
             "fingerPrint": "Fingerprint",
             "privacyPolicyAndTermsOfService": "<tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTROVAN",
+            "notEnrolled": "NIJE REGISTROVAN"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -2286,7 +2285,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi i povezana kućna bezbednost",
+                "title": "WiFi bezbednost",
                 "back": "NAZAD"
             },
             "container": {
@@ -2470,7 +2469,7 @@
     "lenovoId": {
         "login": "Prijava",
         "logout": "Odjava",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Odjavljivanje...",
         "unlockExclusives": "Otključaj ekskluzivnosti",
         "user": "Korisnik",
         "welcomeText1": "Danas izgledate puni energije, {{firstName}}!",
@@ -2903,7 +2902,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Postavke željenih opcija",
+        "preferenceSettings": "Postavke Željenih Opcija",
         "settings": "Postavke",
         "settingsDescription": "Na stranici „Postavke željenih opcija“, možete da odaberete da uključite/isključite obaveštenja porukama na osnovu kategorija Vantage poruka. Imajte u vidu da, čak i ako su sve kategorije poruka onemogućene, možete i dalje povremeno dobijati sistemske kritične poruke od aplikacije Vantage kada je to neophodno.",
         "messagesInLenovoVantage": "Poruke u aplikaciji Lenovo Vantage",
@@ -3092,7 +3091,8 @@
             "storage": "Skladištenje",
             "wireless": "Bežični"
         },
-        "warningMessage": "Imajte na umu da će testovi biti otkazani ako sistem bude u stanju spavanja ili hibernacije"
+        "warningMessage": "Imajte na umu da će testovi biti otkazani ako sistem bude u stanju spavanja ili hibernacije",
+        "refreshMessage": "Osvežavanje može da potraje jer treba da se ponovo učitaju sve komponente"
     },
     "smartPerformance": {
         "title": "Health & Support",
