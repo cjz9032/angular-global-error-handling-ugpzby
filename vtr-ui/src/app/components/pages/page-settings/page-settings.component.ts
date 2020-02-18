@@ -143,6 +143,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 				break;
 			case SelfSelectEvent.SegmentChange:
 				this.getSegment();
+				break;
+			case SelfSelectEvent.SegmentChange:
+				this.getSegment();
 				break
 			default:
 				break;

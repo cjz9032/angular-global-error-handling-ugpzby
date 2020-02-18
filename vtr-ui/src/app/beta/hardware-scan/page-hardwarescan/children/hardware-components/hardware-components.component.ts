@@ -718,6 +718,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 
 
+
 	public onViewResultsRecover() {
 		const date = new Date();
 		const day = date.getDate().toString();

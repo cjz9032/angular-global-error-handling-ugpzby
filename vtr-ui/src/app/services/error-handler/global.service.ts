@@ -32,12 +32,4 @@ export class GlobalErrorHandler implements ErrorHandler {
 	isChunkLoadError(error: ChunkLoadError | any): error is ChunkLoadError {
 		return Boolean(error && (error as ChunkLoadError).name === 'ChunkLoadError');
 	}
-
-	isPromiseError(error: PromiseError | any): error is PromiseError {
-		return Boolean(error && (error as PromiseError).rejection);
-	}
-
-	isChunkLoadError(error: ChunkLoadError | any): error is ChunkLoadError {
-		return Boolean(error && (error as ChunkLoadError).name === 'ChunkLoadError');
-	}
 }

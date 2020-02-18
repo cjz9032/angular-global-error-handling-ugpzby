@@ -653,22 +653,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		} catch (error) {}
 	}
 
-	private getSuperResolutionStatus() {
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.getSuperResolutionStatus()
-					.then((response: FeatureStatus) => {
-						this.isSuperResolutionLoading = false;
-						this.superResolution = response;
-					}).catch(error => {
-						console.error('getSuperResolutionStatus.error', error);
-					});
-			}
-		} catch (error) {
-			console.error('getSuperResolutionStatus' + error.message);
-		}
-	}
-
 	onClick(path) {
 		if (path) {
 			this.deviceService.launchUri(path);
