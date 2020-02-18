@@ -1038,7 +1038,8 @@
                         "title": "Manufacturer",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+					},
+					"fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "The battery installed is <b>not supported</b> by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system.",
