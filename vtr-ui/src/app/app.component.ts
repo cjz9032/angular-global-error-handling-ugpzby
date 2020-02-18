@@ -311,14 +311,14 @@ export class AppComponent implements OnInit, OnDestroy {
 						this.translate.use(langCode).subscribe(
 							(data) => {
 								this.setFontFamilyByLocale(langCode);
-								console.log('@sahinul trans use NEXT');
+								this.logger.info('@sahinul trans use NEXT');
 							},
-							(error) => console.log('@sahinul server switch error ', error),
+							(error) => this.logger.info('@sahinul server switch error ', error),
 							() => {
 								// Evaluate the translations for QA on language Change
 								// this.qaService.setTranslationService(this.translate);
 								// this.qaService.setCurrentLangTranslations();
-								// console.log('@sahinul server switch completed');
+								// this.logger.info('@sahinul server switch completed');
 							}
 						);
 					}
@@ -481,7 +481,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	// 		// Create a new
 	// 		const worker = new Worker('./web-worker/app-worker.worker', { type: 'module' });
 	// 		worker.onmessage = ({ data }) => {
-	// 			console.log(`page got message: ${data}`);
+	// 			this.logger.info(`page got message: ${data}`);
 	// 		};
 	// 		worker.postMessage('hello');
 	// 	} else {

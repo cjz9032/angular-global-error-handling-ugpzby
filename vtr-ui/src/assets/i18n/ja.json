@@ -645,7 +645,9 @@
             "notRegistered": "未登録",
             "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "登録済み",
+            "notEnrolled": "未登録"
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "ログイン",
-		"logout": "ログアウト",
-		"loggingOut": "Logging out...",
+        "logout": "ログアウト",
+        "loggingOut": "ログアウト中...",
         "unlockExclusives": "専用機能をロック解除",
         "user": "ユーザー",
         "welcomeText1": "今日はエネルギーにあふれているように見えます、{{firstName}} さん!",

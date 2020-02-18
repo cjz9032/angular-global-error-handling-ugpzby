@@ -645,7 +645,9 @@
             "notRegistered": "NIET GEREGISTREERD",
             "fingerPrint": "Vingerafdruk",
             "privacyPolicyAndTermsOfService": "<tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "GEREGISTREERD",
+            "notEnrolled": "NIET GEREGISTREERD"
         },
         "qAndA": {
             "title": "V & A voor uw machine",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Aanmelden",
-		"logout": "Afmelden",
-		"loggingOut": "Logging out...",
+        "logout": "Afmelden",
+        "loggingOut": "Bezig met afmelden...",
         "unlockExclusives": "Krijg toegang tot exclusieve aanbiedingen",
         "user": "Gebruiker",
         "welcomeText1": "Uw ziet er energiek uit vandaag, {{firstName}}!",

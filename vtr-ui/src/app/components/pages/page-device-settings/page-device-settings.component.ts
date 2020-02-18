@@ -107,7 +107,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		console.log('DEVICE SETTINGS INIT', this.menuItems);
+		this.logger.info('DEVICE SETTINGS INIT', this.menuItems);
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 
 		this.fetchCMSArticles();
@@ -146,8 +146,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			/* const focusParentElement = this.hsRouterOutlet.nativeElement.lastElementChild;
 			if (focusParentElement) {
 				focusParentElement.focus();
-				console.log('aa 1:: ' + this.hsRouterOutlet.nativeElement);
-				console.log('aa 2:: ' + focusParentElement);
+				this.logger.info('aa 1:: ' + this.hsRouterOutlet.nativeElement);
+				this.logger.info('aa 2:: ' + focusParentElement);
 			} */
 			/* const subPageRootElement = document.getElementsByClassName('vtr-subpage') as HTMLCollection;
 			const element = subPageRootElement[0].querySelector('[tabindex = \'0\']') as HTMLElement;
@@ -258,7 +258,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-				console.log('fetchCMSContent error', error.message);
+				this.logger.info('fetchCMSContent error', error.message);
 			}
 		);
 		this.cardContentPositionA = {

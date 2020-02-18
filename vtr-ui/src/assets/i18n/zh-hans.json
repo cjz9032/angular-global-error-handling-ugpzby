@@ -645,7 +645,9 @@
             "notRegistered": "未注册",
             "fingerPrint": "指纹",
             "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "已登记",
+            "notEnrolled": "未登记"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "登录",
-		"logout": "注销",
-		"loggingOut": "正在注销...",
+        "logout": "注销",
+        "loggingOut": "正在注销...",
         "unlockExclusives": "解锁专享功能",
         "user": "用户",
         "welcomeText1": "今天也是活力满满的一天，{{firstName}}！",

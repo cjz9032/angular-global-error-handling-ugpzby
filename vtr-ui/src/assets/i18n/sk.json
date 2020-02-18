@@ -645,7 +645,9 @@
             "notRegistered": "NEREGISTROVANÉ",
             "fingerPrint": "Odtlačok",
             "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ZAREGISTROVANÉ",
+            "notEnrolled": "NEZAREGISTROVANÉ"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Prihlásenie",
-		"logout": "Odhlásenie",
-		"loggingOut": "Logging out...",
+        "logout": "Odhlásenie",
+        "loggingOut": "Prebieha odhlásenie...",
         "unlockExclusives": "Odomknúť exkluzívne možnosti od spoločnosti Lenovo",
         "user": "Používateľ",
         "welcomeText1": "Dnes máte veľa energie, {{firstName}}.",

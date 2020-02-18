@@ -645,7 +645,9 @@
             "notRegistered": "EI REKISTERÖITY",
             "fingerPrint": "Sormenjälki",
             "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "REKISTERÖITY",
+            "notEnrolled": "EI REKISTERÖITY"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -2334,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Sisäänkirjaus",
-		"logout": "Kirjaudu ulos",
-		"loggingOut": "Logging out...",
+        "logout": "Kirjaudu ulos",
+        "loggingOut": "Uloskirjaus on meneillään...",
         "unlockExclusives": "Ota käyttöön erikoissisältöä",
         "user": "Käyttäjä",
         "welcomeText1": "Näytät energiseltä tänään, {{firstName}}!",
