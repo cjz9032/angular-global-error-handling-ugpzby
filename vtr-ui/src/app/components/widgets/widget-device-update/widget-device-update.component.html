@@ -5,22 +5,22 @@
 				<div class="row" *ngIf="!isUpdateDownloading">
 					<div class="col title"
 						id="system-update-title"
-						attr.aria-label="system-update-title">{{title}}</div>
+						role="heading">{{title}}</div>
 				</div>
 				<div class="row" *ngIf="isUpdateDownloading">
 					<div class="col title"
 						id="system-update-installing-title"
-						attr.aria-label="system-update-installing-title">{{installingTitleText}}</div>
+						role="heading">{{installingTitleText}}</div>
 				</div>
 				<div class="row">
 					<div class="col row1"
 						id="system-update-sub-title1"
-						role="heading" aria-level="positive">{{subTitle1}}</div>
+						role="heading">{{subTitle1}}</div>
 				</div>
 				<div class="row">
 					<div class="col row1"
 						id="system-update-sub-title2"
-						role="heading" aria-level="positive">{{subTitle2}}</div>
+						role="heading">{{subTitle2}}</div>
 				</div>
 				<div *ngIf="!showProgress && !isUpdateDownloading"
 					class="row">
@@ -40,20 +40,18 @@
 					<div class="col col-12 row progress-div">
 						<div class="col col-9 progress-title"
 							id="su-cheking-updates-title"
-							aria-label="su-cheking-updates-title">{{'systemUpdates.banner.checking' | translate}}</div>
+							role="article">{{'systemUpdates.banner.checking' | translate}}</div>
 						<div class="col col-3 progress-percent-text">
 							<div class="row progress-right">
-								<span class="progress-value-text">{{percent}}</span>
-								<span class="progress-complete-text"
-									id="su-progress-complete-text"
-									aria-label="su-progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
+								<span class="progress-value-text" id="su-progress-check-value" role="article">{{percent}}</span>
+								<span class="progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
 							</div>
 						</div>
 					</div>
 					<div class="col col-12 row progress-bar-div-container">
 						<div class="col col-12 progress-bar-div"
 							id="su_check_progress"
-							aria-label="su_check_progress">
+							role="progressbar">
 							<ngb-progressbar type="success"
 								[value]="percent"
 								[height]="'0.6rem'"></ngb-progressbar>
@@ -63,7 +61,6 @@
 						<div class="col col-12 cancel-check p-5">
 							<button type="button"
 								id="su_cancel_updates"
-								attr.aria-label="su_cancel_updates"
 								vtrMetrics
 								metricsEvent="ItemClick"
 								metricsParent="Pages.SystemUpdate"
@@ -91,17 +88,15 @@
 						</div>
 						<div class="col col-3 progress-percent-text">
 							<div class="row progress-right">
-								<span class="progress-value-text">{{downloadingPercent}}</span>
-								<span class="progress-complete-text"
-									id="su-progress-complete-text"
-									aria-label="su-progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
+								<span class="progress-value-text" id="su-progress-download-value" role="article">{{downloadingPercent}}</span>
+								<span class="progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
 							</div>
 						</div>
 					</div>
 					<div class="col col-12 row progress-bar-div-container">
 						<div class="col col-12 progress-bar-div"
 							id="su_download_progress"
-							aria-label="su_download_progress">
+							role="progressbar">
 							<ngb-progressbar type="success"
 								[value]="downloadingPercent"
 								[height]="'0.6rem'"></ngb-progressbar>
@@ -118,17 +113,15 @@
 						</div>
 						<div class="col col-3 progress-percent-text">
 							<div class="row progress-right">
-								<span class="progress-value-text">{{installingPercent}}</span>
-								<span class="progress-complete-text"
-									id="su-progress-complete-text"
-									aria-label="su-progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
+								<span class="progress-value-text" id="su-progress-install-value" role="article">{{installingPercent}}</span>
+								<span class="progress-complete-text">{{'systemUpdates.banner.percent' | translate}}</span>
 							</div>
 						</div>
 					</div>
 					<div class="col col-12 row progress-bar-div-container">
 						<div class="col col-12 progress-bar-div"
 							id="su_install_progress"
-							aria-label="su_install_progress">
+							role="progressbar">
 							<ngb-progressbar type="success"
 								[value]="installingPercent"
 								[height]="'0.6rem'"></ngb-progressbar>
@@ -138,7 +131,6 @@
 						<div class="col col-12 cancel-check p-5">
 							<button type="button"
 								id="su_cancel_update_download"
-								attr.aria-label="su_cancel_update_download"
 								[title]="'systemUpdates.banner.cancelUpdates' | translate"
 								vtrMetrics
 								metricsEvent="ItemClick"
