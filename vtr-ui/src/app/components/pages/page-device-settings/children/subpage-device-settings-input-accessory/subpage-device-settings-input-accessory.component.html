@@ -127,7 +127,10 @@
 												automationid="VoipHotkeys.hasInstalledAppsDescription">
 												{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsDescription' | translate}}
 											</div>
-											<ng-container *ngFor="let installedApp of installedApps; index as i;">
+											<ng-container *ngFor="let installedApp of installedApps; index as i;"
+												role="radiogroup"
+												tabindex="0"
+												aria-label="{{installedApp.appName}} selection list, select using arrow keys">
 												<vtr-ui-rectangle-radio *ngIf="installedApp.isAppInstalled"
 													[ngClass]="{'mr-5': i === 0}"
 													[radioId]="'voip-hotkeys-rectangle-radio' + i"
