@@ -407,6 +407,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				this.dialogService
 			);
 			this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
+				this.updateWifiSecurityState(false);
 				this.handleError(new PluginMissingError());
 			});
 			this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, (res) => {

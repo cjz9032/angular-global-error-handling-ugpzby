@@ -4,6 +4,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 
 import { UiLightingEffectComponent } from './ui-lighting-effect.component';
+import { HttpClient } from '@angular/common/http';
 
 describe('UiLightingEffectComponent', () => {
 	let component: UiLightingEffectComponent;
@@ -17,9 +18,8 @@ describe('UiLightingEffectComponent', () => {
 			declarations: [UiLightingEffectComponent,
 				mockPipe({ name: 'translate' }),
 				mockPipe({ name: 'sanitize' })],
-			providers: [{ provide: DeviceService, useValue: deviceServiceMock }],
-			schemas: [NO_ERRORS_SCHEMA],
-			imports: [HttpClientTestingModule]
+			providers: [{ provide: HttpClient }, { provide: DeviceService, useValue: deviceServiceMock }],
+			schemas: [NO_ERRORS_SCHEMA]
 		}).compileComponents();
 		fixture = TestBed.createComponent(UiLightingEffectComponent);
 		component = fixture.componentInstance;

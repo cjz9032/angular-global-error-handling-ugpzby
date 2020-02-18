@@ -3,6 +3,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { UiLightingSingleColorComponent } from './ui-lighting-single-color.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 describe('UiLightingSingleColorComponent', () => {
 	let component: UiLightingSingleColorComponent;
@@ -13,8 +14,8 @@ describe('UiLightingSingleColorComponent', () => {
 			declarations: [UiLightingSingleColorComponent,
 				mockPipe({ name: 'translate' }),
 				mockPipe({ name: 'sanitize' })],
-				schemas: [NO_ERRORS_SCHEMA],
-				imports: [HttpClientTestingModule]
+				providers: [{ provide: HttpClient }],
+				schemas: [NO_ERRORS_SCHEMA]
 		}).compileComponents();
 		fixture = TestBed.createComponent(UiLightingSingleColorComponent);
 		component = fixture.componentInstance;
