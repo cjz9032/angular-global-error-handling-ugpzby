@@ -287,9 +287,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					}
 				}
 			},
-			error => {
-				console.log('fetchCMSContent error', error);
-			}
+			error => {}
 		);
 	}
 
@@ -334,29 +332,24 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	private getLastUpdateScanDetail() {
 		if (this.systemUpdateService.isShellAvailable) {
-			// tslint:disable-next-line: no-console
-			console.time('getMostRecentUpdateInfo');
-			this.systemUpdateService.getMostRecentUpdateInfo()
+            this.systemUpdateService.getMostRecentUpdateInfo()
 				.then((value: any) => {
-					// tslint:disable-next-line: no-console
-					console.timeEnd('getMostRecentUpdateInfo');
-
-					// console.log('getLastUpdateScanDetail.then', value);
-					if (value.lastInstallTime && value.lastInstallTime.length > 0) {
-						this.lastInstallTime = value.lastInstallTime;
-						this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateLastInstallTime, this.lastInstallTime);
-					}
-					// this.lastScanTime = new Date(value.lastScanTime);
-					this.nextScheduleScanTime = value.nextScheduleScanTime;
-					this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateNextScheduleScanTime, this.nextScheduleScanTime);
-					this.isScheduleScanEnabled = value.scheduleScanEnabled;
-					this.getNextUpdatedScanText();
-					// lastInstallTime: "2019-03-01T10:09:53"
-					// lastScanTime: "2019-03-12T18:24:03"
-					// nextScheduleScanTime: "2019-03-15T10:07:42"
-					// scheduleScanEnabled: true
-				});
-		}
+                // console.log('getLastUpdateScanDetail.then', value);
+                if (value.lastInstallTime && value.lastInstallTime.length > 0) {
+                    this.lastInstallTime = value.lastInstallTime;
+                    this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateLastInstallTime, this.lastInstallTime);
+                }
+                // this.lastScanTime = new Date(value.lastScanTime);
+                this.nextScheduleScanTime = value.nextScheduleScanTime;
+                this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateNextScheduleScanTime, this.nextScheduleScanTime);
+                this.isScheduleScanEnabled = value.scheduleScanEnabled;
+                this.getNextUpdatedScanText();
+                // lastInstallTime: "2019-03-01T10:09:53"
+                // lastScanTime: "2019-03-12T18:24:03"
+                // nextScheduleScanTime: "2019-03-15T10:07:42"
+                // scheduleScanEnabled: true
+            });
+        }
 	}
 
 	public getLastUpdatedText() {
@@ -541,10 +534,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
 				}
 			},
-			reason => {
-				// on close
-				console.log('common-confirmation-modal on close', reason, source);
-			}
+			reason => {}
 		);
 	}
 

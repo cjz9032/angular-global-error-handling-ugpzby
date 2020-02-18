@@ -53,11 +53,10 @@ export class AnalyticsService {
 	}
 
 	send(data: ExtendedMetricsData) {
-		console.log('ANALYTICS data: ', data);
-		if (this.metrics && this.metrics.sendAsync) {
+        if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
 		}
-	}
+    }
 
 	sendPageViewData(data: DataToSendOnPageView, customPageName: string, itemType) {
 		const dataToSend = {

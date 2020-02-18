@@ -209,9 +209,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.isToggleDeviceStatistics = false;
 				}
 			}).catch((error) => {
-				console.error('getAppMetricCollectionSetting failed for exception, will hide the device metric setting.', error);
-				this.isToggleDeviceStatistics = false;
-			});
+                this.isToggleDeviceStatistics = false;
+            });
 		}
 	}
 
@@ -226,9 +225,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 						this.isMessageSettings = true;
 					}
 				}).catch((error) => {
-					console.error('getMessagingPreference failed for exception, will hide the messages setting.', error);
-					this.isMessageSettings = false;
-				});
+                    this.isMessageSettings = false;
+                });
 			} catch (error) {
 				this.loggerService.exception('PageSettingsComponent.getPreferenceSettingsValue exception', error);
 			}

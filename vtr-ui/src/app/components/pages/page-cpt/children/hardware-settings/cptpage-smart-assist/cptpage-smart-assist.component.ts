@@ -51,9 +51,7 @@ export class CptpageSmartAssistComponent implements OnInit, OnDestroy {
             }
           }
         },
-        error => {
-          console.log('fetchCMSContent error', error);
-        }
+        error => {}
       );
 
     });

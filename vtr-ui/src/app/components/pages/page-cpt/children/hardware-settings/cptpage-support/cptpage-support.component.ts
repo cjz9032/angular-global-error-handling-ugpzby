@@ -167,7 +167,6 @@ export class CptpageSupportComponent implements OnInit, OnDestroy {
 
         },
         error => {
-          console.log('fetchCMSContent error', error);
           this.getArticlesTimeout = setTimeout(() => { this.getCmsJsonResponse(); }, 5000);
         }
       );
@@ -191,7 +190,6 @@ export class CptpageSupportComponent implements OnInit, OnDestroy {
         }
       },
       error => {
-        console.log('fetchCMSArticleCategories error', error);
         setTimeout(() => { this.fetchCMSArticleCategory(); }, 5000);
       }
     );
@@ -247,7 +245,6 @@ export class CptpageSupportComponent implements OnInit, OnDestroy {
         }
       },
       error => {
-        console.log('fetchCMSArticles error', error);
         if (lang.toLowerCase() !== 'en') {
           this.getArticlesTimeout = setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
         }

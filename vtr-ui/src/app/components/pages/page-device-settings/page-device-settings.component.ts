@@ -104,26 +104,25 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
+        this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		console.log('DEVICE SETTINGS INIT', this.menuItems);
-		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+        this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 
-		this.fetchCMSArticles();
-		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+        this.fetchCMSArticles();
+        // VAN-5872, server switch feature on language change
+        this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
 		});
 
-		// Evaluate the translations for QA on language Change
-		// this.qaService.setTranslationService(this.translate);
-		// this.qaService.setCurrentLangTranslations();
-		this.qaService.getQATranslation(this.translate); // VAN-5872, server switch feature
-		this.initInputAccessories();
+        // Evaluate the translations for QA on language Change
+        // this.qaService.setTranslationService(this.translate);
+        // this.qaService.setCurrentLangTranslations();
+        this.qaService.getQATranslation(this.translate); // VAN-5872, server switch feature
+        this.initInputAccessories();
 
-		this.isOnline = this.commonService.isOnline;
-		if (this.isOnline) {
+        this.isOnline = this.commonService.isOnline;
+        if (this.isOnline) {
 			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
 			if (welcomeTutorial && welcomeTutorial.isDone) {
@@ -133,7 +132,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			this.getAudioPageSettings();
 		}
 
-		this.routerSubscription = this.router.events.subscribe((evt) => {
+        this.routerSubscription = this.router.events.subscribe((evt) => {
 			if (!(evt instanceof NavigationEnd)) {
 				return;
 			}
@@ -154,7 +153,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			element.focus(); */
 			// vtr - subpage
 		});
-	}
+    }
 
 	hidePowerPage() {
 		this.menuItems = this.commonService.removeObjById(this.menuItems, 'power');
@@ -257,9 +256,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 					}
 				}
 			},
-			error => {
-				console.log('fetchCMSContent error', error.message);
-			}
+			error => {}
 		);
 		this.cardContentPositionA = {
 			Title: '',

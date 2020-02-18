@@ -34,16 +34,14 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 	constructor(private translate: TranslateService) { }
 
 	ngOnInit() {
-		console.log('Setting Dropdown  Value', this.value);
-		this.setDropDownValue();
-	}
+        this.setDropDownValue();
+    }
 
 	ngOnChanges(changes: SimpleChanges) {
 		// only run when property "data" changed
 		if (changes['value']) {
-			console.log(' UI Dropdown value changed', this.value);
-			this.setDropDownValue();
-		}
+            this.setDropDownValue();
+        }
 	}
 
 	

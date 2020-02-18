@@ -93,9 +93,8 @@ export class ConfirmationComponent implements OnInit, OnDestroy, AfterViewInit {
 				this.isBackendError.next(false);
 				this.confirmationSuccess.emit(true);
 			}, (error) => {
-				this.isBackendError.next(true);
-				console.error('confirm code error', error);
-			});
+                this.isBackendError.next(true);
+            });
 		}
 	}
 

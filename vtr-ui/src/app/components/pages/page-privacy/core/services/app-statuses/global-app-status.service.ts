@@ -59,31 +59,29 @@ export class GlobalAppStatusService {
 	}
 
 	private calculateAppStatuses() {
-		let appStatus = AppStatuses.figLeafInstalled;
-		const isTrialLicense = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.Trial;
-		const isSubscriptionLicense = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.Subscription;
-		const isExpiredSoon = this.figleafStatus && this.figleafStatus.daysToExpiration <= 1;
-		const isTrialExpired = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.TrialExpired;
-		const isSubscriptionExpired = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.SubscriptionExpired;
+        let appStatus = AppStatuses.figLeafInstalled;
+        const isTrialLicense = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.Trial;
+        const isSubscriptionLicense = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.Subscription;
+        const isExpiredSoon = this.figleafStatus && this.figleafStatus.daysToExpiration <= 1;
+        const isTrialExpired = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.TrialExpired;
+        const isSubscriptionExpired = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.SubscriptionExpired;
 
-		if (isTrialLicense && isExpiredSoon) {
+        if (isTrialLicense && isExpiredSoon) {
 			appStatus = AppStatuses.trialSoonExpired;
 		}
 
-		if (isSubscriptionLicense && isExpiredSoon) {
+        if (isSubscriptionLicense && isExpiredSoon) {
 			appStatus = AppStatuses.subscriptionSoonExpired;
 		}
 
-		if (isTrialExpired) {
+        if (isTrialExpired) {
 			appStatus = AppStatuses.trialExpired;
 		}
 
-		if (isSubscriptionExpired) {
+        if (isSubscriptionExpired) {
 			appStatus = AppStatuses.subscriptionExpired;
 		}
 
-		console.log('calculateAppStatuses', appStatus);
-
-		return appStatus;
-	}
+        return appStatus;
+    }
 }

@@ -103,9 +103,7 @@ export class CptpageDashboardComponent implements OnInit, OnDestroy {
 					this.getCMSCardContentE(response);
 					this.getCMSCardContentF(response);
         },
-        error => {
-          console.log('fetchCMSContent error', error);
-        }
+        error => {}
       );
 
     });

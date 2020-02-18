@@ -69,21 +69,19 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 	ngOnInit() {
 		this.scheduleNewScanButtonText = this.buttonText;
 		if (this.editScan && this.editMode) {
-			const scanTime = this.editScan.time.split(':');
+            const scanTime = this.editScan.time.split(':');
 
-			console.log('[EDIT] ', this.editScan);
+            this.pickDate = this.editScan.date;
 
-			this.pickDate = this.editScan.date;
+            const dateSplitted = this.editScan.name.split('/');
 
-			const dateSplitted = this.editScan.name.split('/');
-
-			this.date = {
+            this.date = {
 				year: parseInt(dateSplitted[0], 10),
 				month: parseInt(dateSplitted[1], 10),
 				day: parseInt(dateSplitted[2], 10)
 			};
 
-			switch (this.editScan.frequency) {
+            switch (this.editScan.frequency) {
 				case 0:
 					this.selectedInterval = this.optionsInterval[0].name;
 					this.intervalOption = 0;
@@ -104,15 +102,15 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 					this.intervalOption = 0;
 			}
 
-			if (this.editScan.scanType === this.quickScan) {
+            if (this.editScan.scanType === this.quickScan) {
 				(<HTMLInputElement>document.getElementById('quick')).checked = true;
 				this.option = '0';
 			} else {
 				this.option = '1';
 				(<HTMLInputElement>document.getElementById('full')).checked = true;
 			}
-			this.hour = JSON.stringify(parseInt(scanTime[0], 10));
-			if (parseInt(scanTime[0], 10) === 0) {
+            this.hour = JSON.stringify(parseInt(scanTime[0], 10));
+            if (parseInt(scanTime[0], 10) === 0) {
 				this.hour = '12';
 				this.amPm = this.translate.instant('hardwareScan.am');
 			} else if (parseInt(scanTime[0], 10) === 12) {
@@ -127,15 +125,15 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 					this.amPm = this.translate.instant('hardwareScan.am');
 				}
 			}
-			this.minute = scanTime[1];
-			if (this.minute[0] === '0') {
+            this.minute = scanTime[1];
+            if (this.minute[0] === '0') {
 				this.minute = this.minute[1];
 			}
 
 
-			this.editScanOptions = this.buildScanOptions();
-			this.editScanOptions.taskID = this.editScan.deleteReq.taskID;
-		} else {
+            this.editScanOptions = this.buildScanOptions();
+            this.editScanOptions.taskID = this.editScan.deleteReq.taskID;
+        } else {
 			this.option = '0';
 
 			const currentDate = new Date();
@@ -157,13 +155,12 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 	}
 
 	public onScanOptionChange(entry) {
-		this.option = entry;
-		console.log('[CHANGE] ', entry);
-	}
+        this.option = entry;
+    }
 
 	public updateSelectedFrequency(data) {
-		this.selectedInterval = data;
-		switch (data) {
+        this.selectedInterval = data;
+        switch (data) {
 			case this.optionsInterval[0].name:
 				this.intervalOption = 0;
 				break;
@@ -179,10 +176,8 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 			default:
 				this.intervalOption = 0;
 		}
-		console.log('Interval option: ', this.intervalOption);
-		console.log(JSON.stringify(data));
-		this.checkParameters();
-	}
+        this.checkParameters();
+    }
 
 	public updateSelectedHour(data) {
 		this.hour = data;
@@ -200,23 +195,17 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 	}
 
 	public onDateSelect(data) {
-		console.log('[TYPE DATE] ', typeof (this.date.year));
-		this.checkParameters();
-	}
+        this.checkParameters();
+    }
 
 	public checkParameters() {
 
 		if (this.hour && this.minute && this.amPm && this.selectedInterval && this.date) {
 
 			if (this.hour && this.minute && this.amPm && this.selectedInterval && this.date) {
+                let h = '';
 
-				let h = '';
-
-				console.log(`this.translate.instant('hardwareScan.am'): `, this.translate.instant('hardwareScan.am'));
-				console.log(`this.translate.instant('hardwareScan.pm'): `, this.translate.instant('hardwareScan.pm'));
-				console.log('this.amPm', this.amPm);
-
-				if (this.hour === '12' && this.amPm === this.translate.instant('hardwareScan.am')) {
+                if (this.hour === '12' && this.amPm === this.translate.instant('hardwareScan.am')) {
 					h = '0';
 				} else if (this.hour !== '12' && this.amPm === this.translate.instant('hardwareScan.pm')) {
 					h = String((parseInt(this.hour, 10) + 12));
@@ -224,26 +213,23 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 					h = this.hour;
 				}
 
-				const chosenDate = new Date(this.date.year, this.date.month - 1, this.date.day, parseInt(h, 10), parseInt(this.minute, 10));
-				console.log('chosenDate: ', chosenDate);
+                const chosenDate = new Date(this.date.year, this.date.month - 1, this.date.day, parseInt(h, 10), parseInt(this.minute, 10));
 
-				const currentDate = new Date();
-				console.log('currentDate: ', currentDate);
+                const currentDate = new Date();
 
-				if (chosenDate > currentDate) {
+                if (chosenDate > currentDate) {
 					this.disable = false;
 				} else {
 					this.disable = true;
 				}
-			}
+            }
 		}
 	}
 
 	public buildScanOptions() {
+        let correctedHour = '';
 
-		let correctedHour = '';
-
-		if (this.amPm === this.translate.instant('hardwareScan.pm')) {
+        if (this.amPm === this.translate.instant('hardwareScan.pm')) {
 			let h = (parseInt(this.hour, 10) + 12) % 24;
 			if (h === 0) {
 				h = 12;
@@ -257,58 +243,48 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 			correctedHour = JSON.stringify(h);
 		}
 
-		this.timeScan = '';
-		if (correctedHour.length === 1) {
+        this.timeScan = '';
+        if (correctedHour.length === 1) {
 			this.timeScan += '0';
 		}
-		this.timeScan += correctedHour + ':';
+        this.timeScan += correctedHour + ':';
 
-		if (this.minute.length === 1) {
+        if (this.minute.length === 1) {
 			this.timeScan += '0';
 		}
-		this.timeScan += this.minute;
+        this.timeScan += this.minute;
 
-		const dateFormats = [];
+        const dateFormats = [];
 
-		let month = '';
-		let day = '';
+        let month = '';
+        let day = '';
 
-		if (this.date.month < 10) {
+        if (this.date.month < 10) {
 			month = '0';
 		}
-		month += JSON.stringify(this.date.month);
+        month += JSON.stringify(this.date.month);
 
-		if (this.date.day < 10) {
+        if (this.date.day < 10) {
 			day = '0';
 		}
-		day += JSON.stringify(this.date.day);
+        day += JSON.stringify(this.date.day);
 
-		console.log(month);
-		console.log(day);
+        dateFormats.push(month + '/' + day + '/' + JSON.stringify(this.date.year));
+        dateFormats.push(day + '/' + month + '/' + JSON.stringify(this.date.year));
 
-		dateFormats.push(month + '/' + day + '/' + JSON.stringify(this.date.year));
-		dateFormats.push(day + '/' + month + '/' + JSON.stringify(this.date.year));
+        let options: any;
 
-		let options: any;
-
-		console.log('[TIMESCAN]', this.timeScan);
-		console.log('[SELECTED INTERVAL]', this.selectedInterval);
-		console.log('[OPTION]', this.option);
-
-		if (typeof this.timeScan !== 'undefined' && typeof this.intervalOption !== 'undefined' && typeof this.option !== 'undefined') {
-			options = {
+        if (typeof this.timeScan !== 'undefined' && typeof this.intervalOption !== 'undefined' && typeof this.option !== 'undefined') {
+            options = {
 				interval: this.intervalOption,
 				date: dateFormats,
 				time: this.timeScan,
 				scanOption: this.option,
 			};
-			console.log(JSON.stringify(options));
-		} else {
-			console.log('Something wrong with scheduleScanOptions');
-		}
+        } else {}
 
-		return options;
-	}
+        return options;
+    }
 
 	public onDeleteScan(): void {
 
@@ -321,24 +297,21 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 	}
 
 	public onNewScanScheduling(): void {
+        const scheduleScanOptions = this.buildScanOptions();
 
-		console.log('[Start] OnNewScanScheduling (Modal)');
+        this.scheduleNewScanButtonText = this.translate.instant('hardwareScan.scheduledScan.scanScheduled');
 
-		const scheduleScanOptions = this.buildScanOptions();
-
-		this.scheduleNewScanButtonText = this.translate.instant('hardwareScan.scheduledScan.scanScheduled');
-
-		const scheduleResult = {
+        const scheduleResult = {
 			mode: 0,
 			newScan: scheduleScanOptions,
 			oldScan: null
 		};
 
-		if (this.editMode) {
+        if (this.editMode) {
 			scheduleResult.mode = 1;
 			scheduleResult.oldScan = this.editScanOptions;
 		}
 
-		this.activeModal.close(scheduleResult);
-	}
+        this.activeModal.close(scheduleResult);
+    }
 }

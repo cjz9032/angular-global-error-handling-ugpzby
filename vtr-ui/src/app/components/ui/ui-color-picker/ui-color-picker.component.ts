@@ -22,7 +22,6 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
   public isFirstTrigger:boolean;
 
   @HostListener('window:resize', ['$event']) onResize($event) {
-    console.log("resize--------------------")
     this.isColorPicker = false;
     this.isToggleColorPicker.emit(this.isColorPicker);
   }
@@ -43,9 +42,7 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
     });
   }
   
-  ngOnChanges(changes){
-     console.log("changes----------------->",changes);
-  }
+  ngOnChanges(changes){}
 
   public colorChange(index){
     this.presetColorList.forEach(element => {
@@ -59,15 +56,13 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
 
   //apply
   public colorPickerSelectFun(){
-     console.log("apply--------------------->");
-     this.setColor.emit(this.color);
-     this.isColorPicker = false;
-     this.isToggleColorPicker.emit(this.isColorPicker);
+    this.setColor.emit(this.color);
+    this.isColorPicker = false;
+    this.isToggleColorPicker.emit(this.isColorPicker);
   }
 
   //cancel
   public colorPickerCancelFun(){
-    console.log("COLOR CANCEL------------------>");
     this.isColorPicker = false;
     this.isToggleColorPicker.emit(this.isColorPicker);
   }
@@ -97,7 +92,6 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
   }
 
   public cpSliderDragEndFun(event){
-    console.log("event=--===============",event);
     if(this.clickEvent.target !== ""){
       if(this.elementRef.nativeElement){
         if(!this.elementRef.nativeElement.contains(this.clickEvent.target) && this.isFirstTrigger){
@@ -109,24 +103,21 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
   }
 
   public generalClick(event: Event) {
-    console.log("%%%%%%%%%%%%%%%-------------",event);
     this.clickEvent = event;
     this.isFirstTrigger = true;
-		if (this.elementRef.nativeElement) {
-			if (!this.elementRef.nativeElement.contains(event.target)) {
-        setTimeout(() => {
-          if(this.isSliderOut){
-            console.log("yes -------------- yes --------")
-            this.isColorPicker = true;
-            this.isSliderOut = false;
-          }else{
-            console.log("no-----------------no --------")
-            this.isColorPicker = false;
-            this.isToggleColorPicker.emit(this.isColorPicker);
-          }
-        },50)
-			}
-		}
-	}
+    if (this.elementRef.nativeElement) {
+        if (!this.elementRef.nativeElement.contains(event.target)) {
+    setTimeout(() => {
+      if(this.isSliderOut){
+        this.isColorPicker = true;
+        this.isSliderOut = false;
+      }else{
+        this.isColorPicker = false;
+        this.isToggleColorPicker.emit(this.isColorPicker);
+      }
+    },50)
+        }
+    }
+  }
 
 }

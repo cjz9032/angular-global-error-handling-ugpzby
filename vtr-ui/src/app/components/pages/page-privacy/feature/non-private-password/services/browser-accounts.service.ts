@@ -85,10 +85,9 @@ export class BrowserAccountsService {
 					),
 					take(1),
 					catchError((error) => {
-						this.installedBrowsersData$.next({browserData: [], error});
-						console.error(error);
-						return EMPTY;
-					})
+                        this.installedBrowsersData$.next({browserData: [], error});
+                        return EMPTY;
+                    })
 				);
 		} else {
 			return of(browserData.map((browser) => ({...browser, accounts: null})));

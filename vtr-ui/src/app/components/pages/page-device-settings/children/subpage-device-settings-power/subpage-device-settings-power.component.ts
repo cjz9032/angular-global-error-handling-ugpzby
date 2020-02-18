@@ -195,9 +195,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.onSetSmartSettingsCapability(true);
 				}
 			}
-		} catch (error) {
-			console.log('initPowerSmartSettingFromCache', error);
-		}
+		} catch (error) {}
 	}
 
 	initSmartStandbyFromCache() {

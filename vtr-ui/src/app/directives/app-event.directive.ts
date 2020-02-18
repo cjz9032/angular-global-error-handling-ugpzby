@@ -12,27 +12,21 @@ export class AppEventDirective {
 
 	@HostListener('mousewheel', ['$event'])
 	onMouseWheelChrome(event: any) {
-		console.log('DocumentEventDirective', event);
-
-		// this.mouseWheelFunc(event);
-		this.appEvent.emit(event);
-	}
+        // this.mouseWheelFunc(event);
+        this.appEvent.emit(event);
+    }
 
 	@HostListener('DOMMouseScroll', ['$event'])
 	onMouseWheelFirefox(event: any) {
-		console.log('DocumentEventDirective', event);
-
-		// this.mouseWheelFunc(event);
-		this.appEvent.emit(event);
-	}
+        // this.mouseWheelFunc(event);
+        this.appEvent.emit(event);
+    }
 
 	@HostListener('mousewheel', ['$event'])
 	onMouseWheelIE(event: any) {
-		console.log('DocumentEventDirective', event);
-
-		// this.mouseWheelFunc(event);
-		this.appEvent.emit(event);
-	}
+        // this.mouseWheelFunc(event);
+        this.appEvent.emit(event);
+    }
 
 	@HostListener('click', ['$event'])
 	onDocumentClick(event: Event) {

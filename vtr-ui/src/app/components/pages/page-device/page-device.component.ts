@@ -66,9 +66,7 @@ export class PageDeviceComponent implements OnInit, OnDestroy {
 					}
 				}
 			},
-			error => {
-				console.log('fetchCMSContent error', error);
-			}
+			error => {}
 		);
 	}
 

@@ -69,7 +69,6 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
   ngOnInit() {
     this.advanceGPUOCFeature = this.gamingCapabilityService.getCapabilityFromCache( LocalStorageKey.advanceGPUOCFeature);
     this.advanceCPUOCFeature = this.gamingCapabilityService.getCapabilityFromCache( LocalStorageKey.advanceCPUOCFeature);
-    console.log('advanceCPUOCFeature---:',this.advanceCPUOCFeature,'advanceGPUOCFeature---:',this.advanceGPUOCFeature)
     this.getAdvancedOCInfo();
   }
   closeModal() {
@@ -88,7 +87,6 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
         this.advancedOCInfo = advancedInfoCache;
       }
       this.gamingAdvancedOCService.getAdvancedOCInfo().then((response) => {
-        console.log('getAdvancedOCInfo-------------------',response)
         if (response && (response.cpuParameterList.length > 0 || response.gpuParameterList.length > 0)) {
           this.loading = false;
           this.advancedOCInfo = response;
@@ -102,7 +100,6 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 
   public setRangeValue (event,idx,type,tuneId,isAddReduceBtn) {
     try {
-			console.log('value========================',event,isAddReduceBtn);
       const arr1 = [2,77,34,79,102,106];
       this.isChange = true;
       if(isAddReduceBtn){
@@ -117,7 +114,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
       }else{
         this.advancedOCInfo[type][idx].OCValue = event;
       }
-		} catch (error) {
+    } catch (error) {
 			throw new Error('setRangeValue ' + error.message);
 		}
   }
@@ -125,27 +122,24 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
   public pairwiseAssociation (tuneId, event) {
     try {
 			if(tuneId === 2 || tuneId === 77){
-        this.advancedOCInfo.cpuParameterList.filter(x => {
-          if(x.tuneId === 77 || x.tuneId === 2){
-            x.OCValue = event;
-          }
-        });
-        console.log('cpuParameterList=========================================',this.advancedOCInfo.cpuParameterList)
-      }else if(tuneId === 34 || tuneId === 79){
-        this.advancedOCInfo.cpuParameterList.filter(x => {
-          if(x.tuneId === 79 || x.tuneId === 34){
-            x.OCValue = event;
-          }
-        });
-        console.log('cpuParameterList=========================================',this.advancedOCInfo.cpuParameterList)
-      }else if(tuneId === 102 || tuneId === 106){
-        this.advancedOCInfo.cpuParameterList.filter(x => {
-          if(x.tuneId === 106 || x.tuneId === 102){
-            x.OCValue = event;
-          }
-        });
-        console.log('cpuParameterList=========================================',this.advancedOCInfo.cpuParameterList)
-      }
+              this.advancedOCInfo.cpuParameterList.filter(x => {
+                if(x.tuneId === 77 || x.tuneId === 2){
+                  x.OCValue = event;
+                }
+              });
+            }else if(tuneId === 34 || tuneId === 79){
+              this.advancedOCInfo.cpuParameterList.filter(x => {
+                if(x.tuneId === 79 || x.tuneId === 34){
+                  x.OCValue = event;
+                }
+              });
+            }else if(tuneId === 102 || tuneId === 106){
+              this.advancedOCInfo.cpuParameterList.filter(x => {
+                if(x.tuneId === 106 || x.tuneId === 102){
+                  x.OCValue = event;
+                }
+              });
+            }
 		} catch (error) {
 			throw new Error('pairwiseAssociation ' + error.message);
 		}
@@ -160,7 +154,6 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
     waringModalRef.componentInstance.comfirmButton="gaming.dashboard.device.savePromptPopup.save";
     waringModalRef.componentInstance.cancelButton="gaming.dashboard.device.savePromptPopup.notSave";
     waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
-      console.log(emmitedValue,'++++++');
       if(emmitedValue === 1) {
         this.isChange = false;
         this.activeModal.close('close');
@@ -170,21 +163,20 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
         this.isChange = false;
         this.activeModal.close('close');
       }
-     });
+    });
   }
 
   public setAdvancedOCInfo (advancedOCInfo) {
     this.gamingAdvancedOCService.setAdvancedOCInfo(advancedOCInfo).then((response) => {
-      console.log('setAdvancedOCInfo-------------------',advancedOCInfo,response)
-			if (response) {
-        this.gamingAdvancedOCService.setAdvancedOCInfoCache(advancedOCInfo);
-			}else{
-        const advancedInfoCache = this.gamingAdvancedOCService.getAdvancedOCInfoCache();
-        if(advancedInfoCache){
-          this.advancedOCInfo = advancedInfoCache;
-        }
-      }
-		});
+      if (response) {
+  this.gamingAdvancedOCService.setAdvancedOCInfoCache(advancedOCInfo);
+      }else{
+  const advancedInfoCache = this.gamingAdvancedOCService.getAdvancedOCInfoCache();
+  if(advancedInfoCache){
+    this.advancedOCInfo = advancedInfoCache;
+  }
+}
+    });
   }
 
   public openSetToDefaultModal () {
@@ -194,16 +186,13 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
     waringModalRef.componentInstance.comfirmButton="gaming.dashboard.device.legionEdge.popup.button";
     waringModalRef.componentInstance.cancelButton="gaming.dashboard.device.legionEdge.driverPopup.link";
     waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
-      console.log(emmitedValue,'++++++');
       if(emmitedValue === 1) {
         this.isChange = false;
         this.setToDefaultValue(this.advancedOCInfo.cpuParameterList);
-        console.log('tthis.advancedOCInfo.cpuParameterList',this.advancedOCInfo.cpuParameterList);
         this.setToDefaultValue(this.advancedOCInfo.gpuParameterList);
-        console.log('tthis.advancedOCInfo.gpuParameterList',this.advancedOCInfo.gpuParameterList);
         this.setAdvancedOCInfo(this.advancedOCInfo);
       }
-     });
+    });
   }
 
   public setToDefaultValue (list) {

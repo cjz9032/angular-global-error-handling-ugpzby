@@ -94,21 +94,17 @@ export class HardwareScanService {
 	private doPriorityRequests() {
 		// Check whether HardwareScan is available in Hypothesis Service or not
 		if (this.hypSettingsPromise == undefined) {
-			console.log('[doPriorityRequests] Sending HWScan priority requests!');
-			this.hypSettingsPromise = this.hypSettings.getFeatureSetting(HardwareScanService.HARDWARE_SCAN_HYPHOTESIS_CONFIG_NAME);
+            this.hypSettingsPromise = this.hypSettings.getFeatureSetting(HardwareScanService.HARDWARE_SCAN_HYPHOTESIS_CONFIG_NAME);
 
-			// If HardwareScan is available, dispatch the priority requests
-			this.isAvailable().then((available) => {
-				console.log('[doPriorityRequests] isAvailable() promise returned: ', available);
-				if (available) {
+            // If HardwareScan is available, dispatch the priority requests
+            this.isAvailable().then((available) => {
+                if (available) {
 					// Retrive the Plugin's version (it does not use the CLI)
 					this.getPluginInfo().then((hwscanPluginInfo: any) => {
-						console.log('[getPluginInfo] then: ', hwscanPluginInfo);
-						if (hwscanPluginInfo) {
-							this.pluginVersion = hwscanPluginInfo.PluginVersion;
-							console.log('[getPluginInfo] Hardware Scan plugin version: ', this.pluginVersion);
-						}
-					});
+                        if (hwscanPluginInfo) {
+                            this.pluginVersion = hwscanPluginInfo.PluginVersion;
+                        }
+                    });
 
 					// Retrive the last Scan's results (it does not use the CLI)
 					this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
@@ -117,8 +113,8 @@ export class HardwareScanService {
 					this.culture = window.navigator.languages[0];
 					this.reloadItemsToScan(false);
 				}
-			});
-		}
+            });
+        }
 	}
 
 	public reloadItemsToScan(refreshing: boolean) {
@@ -334,30 +330,21 @@ export class HardwareScanService {
 	}
 
 	public deleteScan(payload) {
-		console.log('[Start] DeleteScan (hwscanService)!');
-		if (this.hardwareScanBridge) {
+        if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.deleteScan(payload)
 				.then((response) => {
-					if (response) {
-						console.log('[DELETE SCAN] ', response);
-					} else {
-						console.log('Delete Scan undefined');
-					}
+					if (response) {} else {}
 					return response;
 				});
 		}
-		return undefined;
-	}
+        return undefined;
+    }
 
 	public editScheduledScan(payload) {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.editScan(payload)
 				.then((response) => {
-					if (response) {
-						console.log('[EDIT SCAN] ', response);
-					} else {
-						console.log('EDIT Scan undefined');
-					}
+					if (response) {} else {}
 					return response;
 				});
 		}
@@ -365,65 +352,48 @@ export class HardwareScanService {
 	}
 
 	public getNextScans() {
-		console.log('[Start] NextScans (hwscanService)!');
-		if (this.hardwareScanBridge) {
+        if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getNextScans()
 				.then((response) => {
-					if (response) {
-						console.log('[NEXT SCANS] ', response);
-						console.log('[Schedule Requests] ', response.scheduleRequests);
-					} else {
-						console.log('NextScans undefined');
-					}
+					if (response) {} else {}
 					return response;
 				});
 		}
 
-		return undefined;
-	}
+        return undefined;
+    }
 
 	public getScheduleScan(payload) {
-		console.log('[Start] getScheduleScan (hwscanService)!');
-		if (this.hardwareScanBridge) {
+        if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getScheduleScan(payload)
 				.then((response) => {
-					if (response) {
-						console.log(response);
-					} else {
-						console.log('Schedule Response undefined');
-					}
+					if (response) {} else {}
 
 					return response;
 				});
 		}
-		return undefined;
-	}
+        return undefined;
+    }
 
 	public getPluginInfo() {
-		console.log('[Start]: getPluginInfo() on service');
-		if (this.hardwareScanBridge) {
+        if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getPluginInformation()
 				.then((response) => {
-					console.log(response);
-					return response;
-				});
+                return response;
+            });
 		}
-		console.log('[End]: getPluginInfo() on service');
-		return undefined;
-	}
+        return undefined;
+    }
 
 	public isAvailable() {
-		console.log('[isAvailable] Method called!');
-		return this.hypSettingsPromise
+        return this.hypSettingsPromise
 			.then((result: any) => {
-				console.log('[isAvailable] then: ', result);
-				return (result || '' ).toString() === 'true';
-			})
+            return (result || '' ).toString() === 'true';
+        })
 			.catch((error) => {
-				console.error('[isAvailable]: Hypothesis Service promise was rejected! ', error);
-				return false;
-			});
-	}
+            return false;
+        });
+    }
 
 	private isPluginCompatible(requiredVersion: string) {
 		return this.compareVersion(requiredVersion, this.pluginVersion) <= 0;
@@ -449,34 +419,27 @@ export class HardwareScanService {
 	}
 
 	public getItemsToScan(scanType: number, culture: string) {
-		console.log('[Start]: getItemsToScan() on service');
-		if (this.hardwareScanBridge) {
+        if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getItemsToScan(scanType, culture)
 				.then((response) => {
-					console.log(response);
-					return response;
-				});
+                return response;
+            });
 		}
-		console.log('[End]: getItemsToScan() on service');
-		return undefined;
-	}
+        return undefined;
+    }
 
 	public getPreScanInfo(payload) {
-		console.log('[Start]: getPreScanInfo() on service');
-		if (this.hardwareScanBridge) {
+        if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getPreScanInformation(payload)
 				.then((response) => {
-					console.log('[PRE SCAN INFO] ', response);
-					return response;
-				});
+                return response;
+            });
 		}
-		console.log('[End]: getPreScanInfo() on service');
-		return undefined;
-	}
+        return undefined;
+    }
 
 	public getDoScan(payload, modules, cancelHandler) {
-		console.log('[Start]: getDoScan() on service');
-		if (this.hardwareScanBridge) {
+        if (this.hardwareScanBridge) {
 			this.cancelRequested = false;
 			this.modules = modules;
 			this.scanExecution = true;
@@ -491,28 +454,25 @@ export class HardwareScanService {
 			this.showComponentList = true;
 
 			return this.hardwareScanBridge.getDoScan(payload, (response: any) => {
-				console.log('response', response);
-				// Keeping track of the latest response allows the right render when user
-				// navigates to another page and then come back to the Hardware Scan page
-				this.lastResponse = response;
-				this.updateProgress(response);
-				this.updateScanResponse(response);
-				this.disableCancel = false;
-			}, cancelHandler)
+                // Keeping track of the latest response allows the right render when user
+                // navigates to another page and then come back to the Hardware Scan page
+                this.lastResponse = response;
+                this.updateProgress(response);
+                this.updateScanResponse(response);
+                this.disableCancel = false;
+            }, cancelHandler)
 				.then((response) => {
-					console.log('[End]: getDoScan() on service \n ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n' + response);
-					if (response !== null && response.finalResultCode !== null) {
-						return response;
-					} else {
-						throw new Error('Scan incompleted!');
-					}
-				}).catch((ex: any) => {
-					console.error('[getDoScan on service] An exception has occurred: ', ex);
-					if (ex !== null) {
-						this.cancelRequested = true;
-					}
-					throw ex;
-				}).finally(() => {
+                if (response !== null && response.finalResultCode !== null) {
+                    return response;
+                } else {
+                    throw new Error('Scan incompleted!');
+                }
+            }).catch((ex: any) => {
+                if (ex !== null) {
+                    this.cancelRequested = true;
+                }
+                throw ex;
+            }).finally(() => {
 					this.setIsScanDone(true);
 					this.cleanUp();
 
@@ -528,8 +488,8 @@ export class HardwareScanService {
 					this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
 				});
 		}
-		return undefined;
-	}
+        return undefined;
+    }
 
 	public hasLastResponse() {
 		return this.lastResponse != undefined;
@@ -568,11 +528,8 @@ export class HardwareScanService {
 	}
 
 	public cancelScanExecution() {
-		console.log('[Service] Start Cancel Scan Execution');
-		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge.cancelScan((response: any) => {
-				console.log('[cancelScanExecution][Progress]: ', response);
-			})
+        if (this.hardwareScanBridge) {
+			return this.hardwareScanBridge.cancelScan((response: any) => {})
 			.then((response) => {
 				this.cancelRequested = true;
 				this.clearLastResponse();
@@ -581,8 +538,8 @@ export class HardwareScanService {
 				this.cleanUp();
 			});
 		}
-		return undefined;
-	}
+        return undefined;
+    }
 
 	private updateStatusOfTests(doScanResponse: any) {
 		for (const response of doScanResponse.responses) {
@@ -598,9 +555,8 @@ export class HardwareScanService {
 	}
 
 	public getRecoverBadSectors(payload) {
-		console.log('[Start] Recover on Service');
-		this.disableCancel = true;
-		if (this.hardwareScanBridge) {
+        this.disableCancel = true;
+        if (this.hardwareScanBridge) {
 			this.clearLastResponse();
 			this.cancelRequested = false;
 			this.setScanOrRBSFinished(false);
@@ -612,35 +568,30 @@ export class HardwareScanService {
 				this.updateProgressRecover(response);
 				this.disableCancel = false;
 			}).then((response) => {
-				console.log(response);
-
-				for (let i = 0; i < this.devices.length; i++) {
+                for (let i = 0; i < this.devices.length; i++) {
 					if (Number(response.devices[i].numberOfNonFixedSectors) > 0) {
 						response.devices[i].status = HardwareScanTestResult.Warning;
 					}
 				}
 
-				// Keeping track of the latest response allows the right render when user
-				// navigates to another page and then come back to the Hardware Scan page
-				this.lastResponse = response;
-				this.updateRecover(response);
-				this.updateProgressRecover(response);
-				console.log('[End]: Recover on service');
-				return response;
-			}).finally(() => {
+                // Keeping track of the latest response allows the right render when user
+                // navigates to another page and then come back to the Hardware Scan page
+                this.lastResponse = response;
+                this.updateRecover(response);
+                this.updateProgressRecover(response);
+                return response;
+            }).finally(() => {
 				this.setIsScanDone(true);
 				this.cleanUp();
 				this.setScanOrRBSFinished(true);
 			});
 		}
-	}
+    }
 
 	public updateRecover(response: any) {
-		console.log('[Start] Update Recover');
+        let statusRecover = true;
 
-		let statusRecover = true;
-
-		for (let i = 0; i < this.devices.length; i++) {
+        for (let i = 0; i < this.devices.length; i++) {
 			this.devices[i].percent = response.devices[i].percentageComplete;
 			this.devices[i].numberOfSectors = response.devices[i].numberOfSectors;
 			this.devices[i].numberOfBadSectors = response.devices[i].numberOfBadSectors;
@@ -658,61 +609,51 @@ export class HardwareScanService {
 			}
 		}
 
-		const payload = {
+        const payload = {
 			devices: this.devices,
 			deviceInRecover: this.deviceInRecover,
 			status: statusRecover
 		};
 
-		console.log('Recover Updated: ', payload);
-		this.commonService.sendNotification(HardwareScanProgress.RecoverResponse, payload);
-		console.log('[End] Update Recover');
-	}
+        this.commonService.sendNotification(HardwareScanProgress.RecoverResponse, payload);
+    }
 
 	public updateProgressRecover(response: any) {
-		console.log('[Start] Update Progress Recover');
-		let totalPercent = 0;
+        let totalPercent = 0;
 
-		for (let i = 0; i < this.devices.length; i++) {
+        for (let i = 0; i < this.devices.length; i++) {
 			totalPercent += response.devices[i].percentageComplete;
 		}
 
-		this.progress = Math.floor(totalPercent / this.devices.length);
+        this.progress = Math.floor(totalPercent / this.devices.length);
 
-		if (isNaN(this.progress)) {
+        if (isNaN(this.progress)) {
 			this.progress = 0;
 		}
 
-		console.log('[Recover Progress] ' + this.progress);
-		this.commonService.sendNotification(HardwareScanProgress.RecoverProgress, this.progress);
-		console.log('[End] Update Progress Recover');
-	}
+        this.commonService.sendNotification(HardwareScanProgress.RecoverProgress, this.progress);
+    }
 
 	public getItemsToRecoverBadSectors() {
-		console.log('[Start] Start Get Items to Recover Bad Sectors');
-		if (this.hardwareScanBridge) {
+        if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getItemsToRecoverBadSectors()
 				.then((response) => {
 					if (response) {
-						console.log(response);
-						return response;
-					} else {
-						console.log('Response to GetItemsToRecoverBadSectors is null');
-					}
+                        return response;
+                    } else {}
 				});
 		}
-	}
+    }
 
 	public async initLoadingModules(culture) {
 		this.hasItemsToRecoverBadSectors = false;
 		this.getAllItems(culture).then(() => {
 			this.getItemsToRecoverBadSectors().then((response) => {
-				this.devicesToRecoverBadSectors = response.categoryList[0];
-				console.log('this.devicesToRecoverBadSectors', this.devicesToRecoverBadSectors);
-				if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
+                this.devicesToRecoverBadSectors = response.categoryList[0];
+                if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
 					this.hasItemsToRecoverBadSectors = true;
 				}
-			});
+            });
 			this.isLoadingModulesDone = true;
 			this.loadCustomModal();
 
@@ -725,22 +666,17 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			await this.itemsToScanResponse
 				.then((response) => {
-					console.log('getAllItems(): ', response);
-					this.modulesRetrieved = response;
-					this.categoryInformationList = this.modulesRetrieved.categoryList;
+                this.modulesRetrieved = response;
+                this.categoryInformationList = this.modulesRetrieved.categoryList;
 
-					this.customScanRequest = this.buildScanRequest(this.modulesRetrieved, culture);
-					this.quickScanRequest = this.filterQuickRequest(this.customScanRequest);
-					console.log('this.customScanRequest: ', this.customScanRequest);
-					console.log('this.quickScanRequest: ', this.quickScanRequest);
+                this.customScanRequest = this.buildScanRequest(this.modulesRetrieved, culture);
+                this.quickScanRequest = this.filterQuickRequest(this.customScanRequest);
 
-					this.customScanResponse = this.buildScanResponse(this.modulesRetrieved);
-					this.quickScanResponse = this.filterQuickResponse(this.customScanResponse);
-					console.log('this.customScanResponse: ', this.customScanResponse);
-					console.log('this.quickScanResponse: ', this.quickScanResponse);
+                this.customScanResponse = this.buildScanResponse(this.modulesRetrieved);
+                this.quickScanResponse = this.filterQuickResponse(this.customScanResponse);
 
-					this.refreshingModules = false;
-				});
+                this.refreshingModules = false;
+            });
 		}
 	}
 
@@ -769,24 +705,21 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.checkItemsForRecoverBadSectors()
 				.then((response) => {
-					console.log(response);
-					return response;
-				});
+                return response;
+            });
 		}
 	}
 
 	private cleanSelectedCustomTests() {
-		console.log('[START] CLEAN CUSTOM TESTS');
-		for (let i = 0; i < this.customScanModules.length; i++) {
+        for (let i = 0; i < this.customScanModules.length; i++) {
 			this.customScanModules[i].selected = false;
 			this.customScanModules[i].indeterminate = false;
 			this.customScanModules[i].collapsed = false;
 			for (let j = 0; j < this.customScanModules[i].tests.length; j++) {
-				this.customScanModules[i].tests[j].selected = false;
-				console.log('[TEST] ', this.customScanModules[i].tests[j]);
-			}
+                this.customScanModules[i].tests[j].selected = false;
+            }
 		}
-	}
+    }
 
 	private loadCustomModal() {
 		this.customScanModules = [];
@@ -830,11 +763,10 @@ export class HardwareScanService {
 	}
 
 	private buildScanRequest(modulesRetrieved: any, culture: string) {
-		console.log('[Start] Build scan request');
-		const scanRequests = [];
-		let testRequestList = [];
+        const scanRequests = [];
+        let testRequestList = [];
 
-		if (modulesRetrieved !== undefined) {
+        if (modulesRetrieved !== undefined) {
 			for (const categoryInfo of modulesRetrieved.categoryList) {
 				for (const group of categoryInfo.groupList) {
 					for (const testSummary of group.testList) {
@@ -857,16 +789,12 @@ export class HardwareScanService {
 				testRequestList = [];
 			}
 		}
-		console.log('scanRequest: ', scanRequests);
-		console.log('[End] Build scan request');
-		return scanRequests;
-	}
+        return scanRequests;
+    }
 
 	private buildScanResponse(modulesRetrieved: any) {
-		console.log('[Start] Build scan module response');
-		console.log('Modules retrieved: ', modulesRetrieved);
-		const moduleList = [];
-		if (modulesRetrieved !== undefined) {
+        const moduleList = [];
+        if (modulesRetrieved !== undefined) {
 
 			for (const categoryInfo of modulesRetrieved.categoryList) {
 				for (const group of categoryInfo.groupList) {
@@ -907,14 +835,11 @@ export class HardwareScanService {
 			}
 		}
 
-		console.log('Modules retrieved: ', moduleList);
-		console.log('[End] Build scan module response');
-		return moduleList;
-	}
+        return moduleList;
+    }
 
 	private updateCustomScanRequest(quickScanRequest: any) {
-		console.log('[Start] Update custom scan request');
-		if (quickScanRequest !== undefined) {
+        if (quickScanRequest !== undefined) {
 			for (let i = 0; i < quickScanRequest.length; i++) {
 				const testListReverse = quickScanRequest[i].testRequestList.reverse();
 				for (const test of testListReverse) {
@@ -922,8 +847,7 @@ export class HardwareScanService {
 				}
 			}
 		}
-		console.log('[End] Update custom scan request');
-	}
+    }
 
 	// private updateCustomScanResponse(quickScanModules: any) {
 	// 	console.log('[Start] Update custom scan modules response');
@@ -939,12 +863,10 @@ export class HardwareScanService {
 	// }
 
 	private updateProgress(response: any) {
-		console.log('[Start] Update Progress');
-		console.log('updateProgress: ', response.responses);
-		let totalTests = 0;
-		let testsCompleted = 0;
+        let totalTests = 0;
+        let testsCompleted = 0;
 
-		for (const scanResp of response.responses) {
+        for (const scanResp of response.responses) {
 			for (const group of scanResp.groupResults) {
 				for (const test of group.testResultList) {
 					totalTests++;
@@ -955,35 +877,28 @@ export class HardwareScanService {
 			}
 		}
 
-		this.progress = Math.round(100 * (testsCompleted / totalTests));
+        this.progress = Math.round(100 * (testsCompleted / totalTests));
 
-		if (isNaN(this.progress)) {
+        if (isNaN(this.progress)) {
 			this.progress = 0;
 		}
 
-		this.commonService.sendNotification(HardwareScanProgress.ScanProgress, this.progress);
-
-		console.log('[End] Update Progress');
-	}
+        this.commonService.sendNotification(HardwareScanProgress.ScanProgress, this.progress);
+    }
 
 	private updateScanResponse(response: any) {
-		console.log('[Start] Update Modules');
-		const doScanResponse = response.responses;
-		console.log('[updateScanResponse] doScanResponse: ', doScanResponse);
-		const groupResults = [];
+        const doScanResponse = response.responses;
+        const groupResults = [];
 
-		this.modules.status = true;
+        this.modules.status = true;
 
-		for (const scanResponse of doScanResponse) {
+        for (const scanResponse of doScanResponse) {
 			for (const groupResult of scanResponse.groupResults) {
 				groupResults.push(groupResult);
 			}
 		}
 
-		console.log('[updateScanResponse] groupResults: ', groupResults);
-		console.log('[updateScanResponse] this.modules: ', this.modules);
-
-		for (const module of this.modules) {
+        for (const module of this.modules) {
 			const currentGroup = groupResults.find(x => x.id === module.groupId && x.moduleName === module.id);
 			module.resultCode = currentGroup.resultCode;
 			module.description = currentGroup.resultDescription;
@@ -998,32 +913,24 @@ export class HardwareScanService {
 			}
 		}
 
-		console.log('Modules Updated: ', this.modules);
-		this.commonService.sendNotification(HardwareScanProgress.ScanResponse, this.modules);
-		console.log('[End] Update Modules');
-	}
+        this.commonService.sendNotification(HardwareScanProgress.ScanResponse, this.modules);
+    }
 
 	public filterCustomTests(culture: string) {
-		console.log('[Start] Filter custom tests');
-		const customModules = this.getCustomScanModules();
-		const modules = customModules.filter(i => i.selected || i.indeterminate);
-		const modulesSelected = [];
+        const customModules = this.getCustomScanModules();
+        const modules = customModules.filter(i => i.selected || i.indeterminate);
+        const modulesSelected = [];
 
-		console.log('[filterCustomTests] customModules: ', customModules);
-		console.log('[filterCustomTests] modules: ', modules);
-
-		for (const module of modules) {
+        for (const module of modules) {
 
 			if (!modulesSelected.includes(module.moduleId)) {
-				// tests that were chosen by the user
-				const testsSelected = module.tests.filter(i => i.selected).map(x => x.test);
-				console.log('[filterCustomTests] testsSelected: ', testsSelected);
+                // tests that were chosen by the user
+                const testsSelected = module.tests.filter(i => i.selected).map(x => x.test);
 
-				// we can have more than one module of the same type (more than one device)
-				const modulesRepeated = modules.filter(x => (x.moduleId === module.moduleId) && (x.id !== module.id));
-				console.log('[filterCustomTests] modulesRepeated: ', modulesRepeated);
+                // we can have more than one module of the same type (more than one device)
+                const modulesRepeated = modules.filter(x => (x.moduleId === module.moduleId) && (x.id !== module.id));
 
-				for (const m of modulesRepeated) {
+                for (const m of modulesRepeated) {
 					for (const test of m.tests) {
 						if (test.selected) {
 							testsSelected.push(test.test);
@@ -1031,11 +938,11 @@ export class HardwareScanService {
 					}
 				}
 
-				// module already chosen
-				modulesSelected.push(module.moduleId);
+                // module already chosen
+                modulesSelected.push(module.moduleId);
 
-				// Creating request
-				const scanRequest = {
+                // Creating request
+                const scanRequest = {
 					lang: culture,
 					loopCount: 0,
 					loopRepeatMinutes: 0,
@@ -1044,105 +951,92 @@ export class HardwareScanService {
 					moduleId: module.id
 				};
 
-				console.log('[testsSelected]: ', testsSelected);
-				this.filteredCustomScanRequest.push(scanRequest);
+                this.filteredCustomScanRequest.push(scanRequest);
 
-				// Creating response
-				const moduleResponse = [];
-				const moduleFilter = this.customScanResponse.filter(x => x.id === module.moduleId);
-				for (const m of moduleFilter) {
+                // Creating response
+                const moduleResponse = [];
+                const moduleFilter = this.customScanResponse.filter(x => x.id === module.moduleId);
+                for (const m of moduleFilter) {
 					const obj = JSON.parse(JSON.stringify(m));
 					moduleResponse.push(obj);
 				}
-				console.log('[moduleResponse]: ', moduleResponse);
 
-				for (const m of moduleResponse) {
-					let filteredResponseTests = [];
-					for (const t of testsSelected) {
+                for (const m of moduleResponse) {
+                    let filteredResponseTests = [];
+                    for (const t of testsSelected) {
 						const test = m.listTest.find(x => (x.id === t.id) && (m.groupId === t.groupId));
 						if (test) {
 							filteredResponseTests.push(test);
 						}
 					}
-					m.listTest = [];
-					m.listTest = filteredResponseTests;
-					console.log('filteredResponseTests: ', filteredResponseTests);
-					filteredResponseTests = [];
-				}
+                    m.listTest = [];
+                    m.listTest = filteredResponseTests;
+                    filteredResponseTests = [];
+                }
 
-				console.log('moduleResponse: ', moduleResponse.filter(x => x.listTest.length !== 0));
-				this.filteredCustomScanResponse.push(...moduleResponse.filter(x => x.listTest.length !== 0));
-			}
+                this.filteredCustomScanResponse.push(...moduleResponse.filter(x => x.listTest.length !== 0));
+            }
 		}
-
-		console.log('[End] Filter custom tests');
-	}
+    }
 
 	public getLastResults() {
-		console.log('[Start]: getPreviousResults() on service');
-		if (this.hardwareScanBridge) {
+        if (this.hardwareScanBridge) {
 			return this.previousResultsResponse
 				.then((response) => {
-					console.log(response);
-					this.buildPreviousResults(response);
-				});
+                this.buildPreviousResults(response);
+            });
 		}
-		console.log('[End]: getPreviousResults() on service');
-		return undefined;
-	}
+        return undefined;
+    }
 
 	private buildPreviousResults(response: any) {
-		const previousResults: any = {};
-		let moduleId = 0;
-		let hasFailed = false;
-		let hasWarning = false;
-		console.log('buildPreviousResults: ', response);
-		if (response.hasPreviousResults) {
-			this.hasLastResults = response.hasPreviousResults;
-			previousResults.finalResultCode = response.scanSummary.finalResultCode;
-			previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Pass];
-			previousResults.statusValue = HardwareScanTestResult.Pass;
-			previousResults.statusToken = this.statusToken(HardwareScanTestResult.Pass);
+        const previousResults: any = {};
+        let moduleId = 0;
+        let hasFailed = false;
+        let hasWarning = false;
+        if (response.hasPreviousResults) {
+            this.hasLastResults = response.hasPreviousResults;
+            previousResults.finalResultCode = response.scanSummary.finalResultCode;
+            previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Pass];
+            previousResults.statusValue = HardwareScanTestResult.Pass;
+            previousResults.statusToken = this.statusToken(HardwareScanTestResult.Pass);
 
-			console.log('date before: ', response.scanSummary.ScanDate);
-			const date = response.scanSummary.ScanDate.toString().replace(/-/g, '/').split('T');
-			console.log('date: ', date);
-			previousResults.date = date[0] + ' ' + date[1].slice(0, 8);
+            const date = response.scanSummary.ScanDate.toString().replace(/-/g, '/').split('T');
+            previousResults.date = date[0] + ' ' + date[1].slice(0, 8);
 
-			previousResults.information = response.scanSummary.finalResultCodeDescription;
-			previousResults.items = [];
+            previousResults.information = response.scanSummary.finalResultCodeDescription;
+            previousResults.items = [];
 
-			for (const module of response.modulesResults) {
+            for (const module of response.modulesResults) {
 				const groupResult = module.response.groupResults;
 				const groupsResultMeta = module.categoryInformation.groupList;
 
 				for (let i = 0; i < module.response.groupResults.length; i++) {
-					const item: any = {};
-					const groupResultMeta = groupsResultMeta.find(x => x.id === groupResult[i].id);
-					const moduleName = groupResult[i].moduleName;
+                    const item: any = {};
+                    const groupResultMeta = groupsResultMeta.find(x => x.id === groupResult[i].id);
+                    const moduleName = groupResult[i].moduleName;
 
-					item.id = moduleId;
-					item.module = module.categoryInformation.name;
-					item.name = groupResultMeta.name;
-					item.resultCode = groupResult[i].resultCode;
-					item.information = groupResult[i].resultDescription;
-					item.collapsed = false;
-					item.icon = this.getHardwareComponentIcon(moduleName);
-					item.details = [];
+                    item.id = moduleId;
+                    item.module = module.categoryInformation.name;
+                    item.name = groupResultMeta.name;
+                    item.resultCode = groupResult[i].resultCode;
+                    item.information = groupResult[i].resultDescription;
+                    item.collapsed = false;
+                    item.icon = this.getHardwareComponentIcon(moduleName);
+                    item.details = [];
 
-					for (let j = 0; j < groupResultMeta.metaInformation.length; j++) {
+                    for (let j = 0; j < groupResultMeta.metaInformation.length; j++) {
 						const meta = groupResultMeta.metaInformation[j];
 						const detail = {};
 						detail[meta.name] = meta.value;
 						item.details.push(detail);
 					}
 
-					item.listTest = [];
-					const test = groupResult[i].testResultList;
-					console.log('test: ', test);
-					const testMeta = groupResultMeta.testList;
+                    item.listTest = [];
+                    const test = groupResult[i].testResultList;
+                    const testMeta = groupResultMeta.testList;
 
-					for (let j = 0; j < groupResult[i].testResultList.length; j++) {
+                    for (let j = 0; j < groupResult[i].testResultList.length; j++) {
 						const testInfo: any = {};
 						testInfo.id = test[j].id;
 						testInfo.name = testMeta.find(x => x.id === test[j].id).name;
@@ -1175,15 +1069,15 @@ export class HardwareScanService {
 						item.listTest.push(testInfo);
 					}
 
-					previousResults.items.push(item);
-				}
+                    previousResults.items.push(item);
+                }
 
 				moduleId++;
 			}
-			this.previousResults = previousResults;
-			this.buildPreviousResultsWidget(this.previousResults);
-		}
-	}
+            this.previousResults = previousResults;
+            this.buildPreviousResultsWidget(this.previousResults);
+        }
+    }
 
 	private buildPreviousResultsWidget(previousResults: any) {
 		const previousItems: any = {};
@@ -1274,11 +1168,10 @@ export class HardwareScanService {
 	}
 
 	public cleanUp() {
-		this.filteredCustomScanRequest = [];
-		this.filteredCustomScanResponse = [];
-		this.cleanSelectedCustomTests();
-		console.log('[CLEAN] ', this.customScanModules);
-	}
+        this.filteredCustomScanRequest = [];
+        this.filteredCustomScanResponse = [];
+        this.cleanSelectedCustomTests();
+    }
 
 	public cleanCustomTests() {
 		this.filteredCustomScanRequest = [];

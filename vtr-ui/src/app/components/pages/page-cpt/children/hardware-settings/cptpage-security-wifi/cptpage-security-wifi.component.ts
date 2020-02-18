@@ -60,9 +60,7 @@ export class CptpageSecurityWifiComponent implements OnInit, OnDestroy {
           });
 
         },
-        error => {
-          console.log('fetchCMSContent error', error);
-        }
+        error => {}
       );
 
     });

@@ -81,9 +81,8 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	}
 
 	radioKBNavigation(event, radio) {
-		this.setRadioButtons();
-		console.log(event.keyCode);
-		switch (event.keyCode) {
+        this.setRadioButtons();
+        switch (event.keyCode) {
 			case this.keyCode.TAB:
 				// this.checkOnFocus(event, radio);
 				break;
@@ -106,8 +105,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			default:
 				break;
 		}
-
-	}
+    }
 
 	setChecked(currentItem) {
 		const currentRadio = currentItem.querySelectorAll('input[type="radio"]');
@@ -139,9 +137,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 				index = this.radioButtons.indexOf(currentItem.nativeElement);
 				this.setChecked(this.radioButtons[index - 1]);
 			}
-		} catch (error) {
-			console.log('setCheckedToPreviousItem :: ' + error);
-		}
+		} catch (error) {}
 	}
 
 
@@ -156,9 +152,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 				this.setChecked(this.radioButtons[index + 1]);
 			}
 
-		} catch (error) {
-			console.log('setCheckedToNextItem :: ' + error);
-		}
+		} catch (error) {}
 
 	}
 
@@ -193,9 +187,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 					this.setFocus(this.selectedRadioButton);
 				} */
 
-		} catch (error) {
-			console.log('setRadioButtons :: ' + error);
-		}
+		} catch (error) {}
 
 
 	}

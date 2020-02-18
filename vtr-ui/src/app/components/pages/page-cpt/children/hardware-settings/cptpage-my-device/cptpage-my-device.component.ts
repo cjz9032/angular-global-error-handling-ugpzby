@@ -88,9 +88,7 @@ export class CptpageMyDeviceComponent implements OnInit, OnDestroy {
             }
           }
         },
-        error => {
-          console.log('fetchCMSContent error', error);
-        }
+        error => {}
       );
 
     });

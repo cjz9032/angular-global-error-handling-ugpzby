@@ -135,11 +135,10 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		}
 	}
 	public getLayOutversion(){
-		console.log("~~~~~~~~~~~~~~~~~~~~~~~~1111111111",this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion));
-		if(this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion) !== undefined){
+        if(this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion) !== undefined){
 			this.ledlayoutversion = this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion);
 		}else{
 			this.router.navigate(['/device-gaming']);
 		}
-	}
+    }
 }

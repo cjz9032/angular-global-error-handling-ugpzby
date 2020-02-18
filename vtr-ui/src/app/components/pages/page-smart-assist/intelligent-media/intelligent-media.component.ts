@@ -29,14 +29,11 @@ export class IntelligentMediaComponent implements OnInit {
 	}
 
 	public setVideoPauseResumeStatus(event) {
-		this.videoPlaybackToggle.emit(event.value);
-		console.log('setVideoPauseResumeStatus');
-		try {
+        this.videoPlaybackToggle.emit(event.value);
+        try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setVideoPauseResumeStatus(event.switchValue)
-					.then((value: boolean) => {
-						console.log('setVideoPauseResumeStatus.then', value);
-					}).catch(error => {
+					.then((value: boolean) => {}).catch(error => {
 						this.logger.error('setVideoPauseResumeStatus', error.message);
 						return EMPTY;
 					});
@@ -45,21 +42,15 @@ export class IntelligentMediaComponent implements OnInit {
 			this.logger.error('setVideoPauseResumeStatus' + error.message);
 			return EMPTY;
 		}
-	}
+    }
 
 	public setSuperResolutionStatus(event) {
 		this.superResolutionToggle.emit(event.value);
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setSuperResolutionStatus(event.switchValue)
-					.then((value: boolean) => {
-						console.log('setSuperResolutionStatus.then', value);
-					}).catch(error => {
-						console.error('setSuperResolutionStatus', error);
-					});
+					.then((value: boolean) => {}).catch(error => {});
 			}
-		} catch (error) {
-			console.error('setSuperResolutionStatus' + error.message);
-		}
+		} catch (error) {}
 	}
 }
