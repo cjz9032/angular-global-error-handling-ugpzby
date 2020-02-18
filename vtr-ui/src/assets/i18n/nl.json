@@ -22,12 +22,6 @@
                     "rapidCharge": "Snelladen"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "Overklok aan",
-                        "performance": "Prestaties",
-                        "balance": "Balans",
-                        "quiet": "Stil"
-                    },
                     "title": "CPU overklok",
                     "status": {
                         "alwayson": "Aan",
@@ -103,96 +97,6 @@
                 },
                 "quickSettingstitle": {
                     "title": "Snelle instellingen"
-                },
-                "thermalMode2Popup": {
-                    "thermalMode2SettingTitle": "Instelling thermische modus",
-                    "thermalMode2SettingDesc": "Kies de modus die u wilt gebruiken.",
-                    "fnQDesc": "U kunt de modus wijzigen met de sneltoets Fn + Q.",
-                    "perormanceTitle": "Prestatiemodus",
-                    "performanceDesc": "Verhoog de prestaties van uw computer met meer ventilatorsnelheid en meer energieverbruik.",
-                    "OCDesc": "U kunt de functie overklokken inschakelen.",
-                    "ac_dcDesc": "Prestatiemodus alleen beschikbaar wanneer aangesloten.",
-                    "balanceTitle": "Gebalanceerde modus",
-                    "balanceDesc": "De prestaties en ventilatorsnelheid worden automatisch aangepast aan de temperatuur. Gemiddeld energieverbruik.",
-                    "quietTitle": "Stille modus",
-                    "quietDesc": "De computer wordt stiller door de prestaties en de ventilatorsnelheid zo laag mogelijk te houden. Laag energieverbruik.",
-                    "OC": {
-                        "cpu_gpuOC": "CPU/GPU-overklokken inschakelen in prestatiemodus.",
-                        "cpuOC": "CPU-overklokken inschakelen in prestatiemodus.",
-                        "gpuOC": "GPU-overklokken inschakelen in prestatiemodus.",
-                        "advance": "GEAVANCEERD",
-                        "cpu_gpuDriverLack": "CPU/GPU-stuurprogramma's installeren om overklokken te gebruiken.",
-                        "cpuDriverLack": "CPU-stuurprogramma installeren om overklokken te gebruiken.",
-                        "gpuDriverLack": "GPU-stuurprogramma installeren om overklokken te gebruiken.",
-                        "goInstall": "GA NAAR INSTALLEREN"
-                    },
-                    "autoSwitch": "Automatisch schakelen naar prestaties bij starten games en later terugschakelen."	
-                },
-                "advancedOC": {
-                    "title": "Overklok geavanc. instell.",
-                    "description": "Stel de geavanceerde aangepaste parameters in als Overklokken aan is. Het kan riskant zijn.",
-                    "gpuOverclock": "GPU-overklok",
-                    "cpuOCNames": {
-                        "cpuOCName2": "Kernspanning",
-                        "cpuOCName116": "1 Kernverhouding",
-                        "cpuOCName117": "2 Kernverhouding",
-                        "cpuOCName118": "3 Kernverhouding",
-                        "cpuOCName119": "4 Kernverhouding",
-                        "cpuOCName34": "Offset kernspanning",
-                        "cpuOCName120": "5 Kernverhouding",
-                        "cpuOCName121": "6 Kernverhouding",
-                        "cpuOCName76": "Cache-verhouding",
-                        "cpuOCName77": "Cache-spanning",
-                        "cpuOCName79": "Cache offsetspanning",
-                        "cpuOCName122": "7 Kernverhouding",
-                        "cpuOCName123": "8 Kernverhouding",
-                        "cpuOCName102": "Kern-ICCMAX",
-                        "cpuOCName106": "Cache-ICCMAX",
-                        "cpuOCName114": "AVX-verhouding offset"
-                    },
-                    "cpuOCTips": {
-                        "cpuOCTip2": "Stel de spanning voor de CPU-kern in.",
-                        "cpuOCTip116": "Stel de maximale kernvermenigvuldiging in waarmee de kernen kunnen functioneren. De waarde van de kernfrequentie is het product van deze verhouding en de frequentie van de referentieklok.",
-                        "cpuOCTip117": "Stel de maximale kernvermenigvuldiging in waarmee de kernen kunnen functioneren. De waarde van de kernfrequentie is het product van deze verhouding en de frequentie van de referentieklok.",
-                        "cpuOCTip118": "Stel de maximale kernvermenigvuldiging in waarmee de kernen kunnen functioneren. De waarde van de kernfrequentie is het product van deze verhouding en de frequentie van de referentieklok.",
-                        "cpuOCTip119": "Stel de maximale kernvermenigvuldiging in waarmee de kernen kunnen functioneren. De waarde van de kernfrequentie is het product van deze verhouding en de frequentie van de referentieklok.",
-                        "cpuOCTip34": "Een offsetspanning van de huidige kernspanning.",
-                        "cpuOCTip120": "Stel de maximale kernvermenigvuldiging in waarmee de kernen kunnen functioneren. De waarde van de kernfrequentie is het product van deze verhouding en de frequentie van de referentieklok.",
-                        "cpuOCTip121": "Stel de maximale kernvermenigvuldiging in waarmee de kernen kunnen functioneren. De waarde van de kernfrequentie is het product van deze verhouding en de frequentie van de referentieklok.",
-                        "cpuOCTip76": "Stel de maximale cachevermenigvuldiging van de processor in waarmee de caches kunnen functioneren. De waarde van de cachefrequentie is het product van deze verhouding en de frequentie van de referentieklok.",
-                        "cpuOCTip77": "De spanning die wordt geleverd aan de interne cache-interface van de processor gebaseerd op de momenteel geselecteerde cache-spanningsmodus.",
-                        "cpuOCTip79": "De definitieve offsetspanning die wordt toegepast voor de cache-spanning.",
-                        "cpuOCTip122": "Stel de maximale kernvermenigvuldiging in waarmee de kernen kunnen functioneren. De waarde van de kernfrequentie is het product van deze verhouding en de frequentie van de referentieklok.",
-                        "cpuOCTip123": "Stel de maximale kernvermenigvuldiging in waarmee de kernen kunnen functioneren. De waarde van de kernfrequentie is het product van deze verhouding en de frequentie van de referentieklok.",
-                        "cpuOCTip102": "Stel ICCMAX in voor de kernspanningsregelaar van de processor.",
-                        "cpuOCTip106": "Stel ICCMAX in voor de cache- en ringbus-spanningsregelaar van de processor.",
-                        "cpuOCTip114": "Om de effectief actieve limiet van de kernverhouding af te leiden als de AVX actief is, trekt u deze waarde af van de overeenkomstige actieve limiet van de kernverhouding."
-                    },
-                    "gpuOCNames": {
-                        "gpuOCName0": "GPU-klok offset",
-                        "gpuOCName1": "VRAM-klok offset"
-                    },
-                    "gpuOCTips": {
-                        "gpuOCTip0": "Een offset toevoegen aan GPU-klokfrequentie.",
-                        "gpuOCTip1": "Een offset toevoegen aan geheugen-klokfrequentie."
-                    }
-                },
-                "savePromptPopup": {
-                    "title": "Wijzigingen opslaan?",
-                    "description1": "Onjuist instellen van overklokken kan leiden tot hardwareschade. Neem een van de volgende stappen als er een probleem is: ",
-                    "description2": "•  Druk aan/uit-knop 8 sec in voor herstart en herstel parameters.",
-                    "description3": "•  Optie \"stand. overklok herstel\" in BIOS voor herstel parameters.",
-                    "save": "OPSLAAN",
-                    "notSave": "NIET OPSLAAN"
-                },
-                "defaultPromptPopup": {
-                    "title": "Standaardinstelling?",
-                    "description": "Alle huidige en eerdere wijzigingen gaan verloren."
-                },
-                "warningPromptPopup": {
-                    "title": "Waarschuwing!",
-                    "description": "Foutieve instellingen van Overklokken kunnen leiden tot onherstelbare hardwarebeschadigingen.",
-                    "proceed": "DOORGAAN"
                 }
             }
         },
@@ -694,42 +598,6 @@
                     "close": "close"
                 }
             }
-        },
-        "lightingNewversion": {
-            "machineName":{  
-                "name1": "Legion Icon Lighting (Front)",
-                "name2": "Internal Ambient Lighting",
-                "name3": "Legion Rear Fan Lighting",
-                "name4": "Legion CPU Fan Lighting",
-                "name5": "Legion Liquid Cooling Pump Lighting",
-                "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
-                "name9": "Ambient  Lighting"
-            },
-            "lightingEffect": {
-                "effectName1": "Statisch",
-                "effectName2": "Spectrum",
-                "effectName3": "Regenboog",
-                "effectName4": "Willekeurig",
-                "effectName5": "Koel_blauw",
-                "effectName6": "Golf_rechts",
-                "effectName7": "Golf_links"
-            },
-            "lightingSpeed": {
-                "title": "Snelheid"
-            },
-            "colorPicker": {
-                "text2": "MEER",
-                "text3": "R",
-                "text4": "G",
-                "text5": "B",
-                "text6": "Deelgebied (uit): klik op toetsenbordafb. om kleuren te wijzigen",
-                "text7": "Deelgebied (aan): klik op secties op toetsenbordafb. om sectiekleuren te wijzigen",
-                "text8": "Het huidige effect ondersteunt geen kleurenselectie"
-            },
-            "tipText": {
-                "title1": "Gebruik Fn+spatie om tussen profielen te schakelen"
-            }
         }
     },
     "common": {
@@ -1038,7 +906,7 @@
                     "Good": "<b>De batterij is in goede staat.</b>",
                     "Exhaustion": "De capaciteit van de batterij is <b>verminderd</b>. Vervang deze door een nieuwe.",
                     "Bad": "<b>Er is een batterijfout opgetreden.</b> De batterij kan niet worden opgeladen/ontladen. Vervang de batterij.",
-                    "NotDetected": "<b>Geen batterij gedetecteerd.</b>",
+                    "NotDetected": "<b>Er is geen batterij aangetroffen of</b> aangesloten.",
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
                     "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b>",
                     "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan niet voldoende stroom leveren.</b>",

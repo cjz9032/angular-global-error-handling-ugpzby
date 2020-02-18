@@ -1,25 +1,25 @@
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { CptpageDashboardComponent } from './cptpage-dashboard.component';
+import { CptpageDashboardComponent } from './cptpage-dashboard.component';
 
-// describe('CptpageDashboardComponent', () => {
-//   let component: CptpageDashboardComponent;
-//   let fixture: ComponentFixture<CptpageDashboardComponent>;
+describe('CptpageDashboardComponent', () => {
+  let component: CptpageDashboardComponent;
+  let fixture: ComponentFixture<CptpageDashboardComponent>;
 
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [ CptpageDashboardComponent ]
-//     })
-//     .compileComponents();
-//   }));
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ CptpageDashboardComponent ]
+    })
+    .compileComponents();
+  }));
 
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(CptpageDashboardComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(CptpageDashboardComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

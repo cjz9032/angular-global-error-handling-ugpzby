@@ -22,12 +22,6 @@
                     "rapidCharge": "急速充電"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "CLKUPオン",
-                        "performance": "性能",
-                        "balance": "バランス",
-                        "quiet": "静音"
-                    },
                     "title": "CPU クロックアップ",
                     "status": {
                         "alwayson": "オン",
@@ -103,96 +97,6 @@
                 },
                 "quickSettingstitle": {
                     "title": "クイック設定"
-                },
-                "thermalMode2Popup": {
-                    "thermalMode2SettingTitle": "サーマル・モード設定",
-                    "thermalMode2SettingDesc": "使用するモードを選択します。",
-                    "fnQDesc": "ショートカット Fn + Q を使用してモードを切り替えることができます。",
-                    "perormanceTitle": "パフォーマンス・モード",
-                    "performanceDesc": "ファン速度を上げより多くの電力を消費してコンピュータのパフォーマンスを向上させます。",
-                    "OCDesc": "クロックアップ機能をオンにできます。",
-                    "ac_dcDesc": "パフォーマンス・モードは電源に接続されている場合にのみ使用できます。",
-                    "balanceTitle": "バランス・モード",
-                    "balanceDesc": "温度に基づいて自動的にパフォーマンスとファン速度のバランスを取ります。電力消費は中程度です。",
-                    "quietTitle": "静音モード",
-                    "quietDesc": "可能な場合はコンピューターのパフォーマンスとファン速度を下げて静かに動作します。電力消費は少なくなります。",
-                    "OC": {
-                        "cpu_gpuOC": "CPU/GPU クロックアップ・パフォーマンス・モードを有効化。",
-                        "cpuOC": "CPU クロックアップ・パフォーマンス・モードを有効化。",
-                        "gpuOC": "GPU クロックアップ・パフォーマンス・モードを有効化。",
-                        "advance": "拡張",
-                        "cpu_gpuDriverLack": "CPU/GPU ドライバーをインストールしてクロックアップ機能を使用。",
-                        "cpuDriverLack": "CPU ドライバーをインストールしてクロックアップ機能を使用。",
-                        "gpuDriverLack": "GPU ドライバーをインストールしてクロックアップ機能を使用。",
-                        "goInstall": "インストールする"
-                    },
-                    "autoSwitch": "ゲームの起動時に自動的にパフォーマンスに切り替え、後で元に戻します。"	
-                },
-                "advancedOC": {
-                    "title": "CLKUP詳細設定",
-                    "description": "CLKUPがオンの場合に高度なカスタム・パラメーターを設定します。リスクの可能性があります。",
-                    "gpuOverclock": "GPU クロックアップ",
-                    "cpuOCNames": {
-                        "cpuOCName2": "コア電圧",
-                        "cpuOCName116": "1 コア・レシオ",
-                        "cpuOCName117": "2 コア・レシオ",
-                        "cpuOCName118": "3 コア・レシオ",
-                        "cpuOCName119": "4 コア・レシオ",
-                        "cpuOCName34": "コア電圧オフセット",
-                        "cpuOCName120": "5 コア・レシオ",
-                        "cpuOCName121": "6 コア・レシオ",
-                        "cpuOCName76": "キャッシュ・レシオ",
-                        "cpuOCName77": "キャッシュ電圧",
-                        "cpuOCName79": "キャッシュ電圧オフセット",
-                        "cpuOCName122": "7 コア・レシオ",
-                        "cpuOCName123": "8 コア・レシオ",
-                        "cpuOCName102": "コア ICCMAX",
-                        "cpuOCName106": "キャッシュ ICCMAX",
-                        "cpuOCName114": "AVX レシオ・オフセット"
-                    },
-                    "cpuOCTips": {
-                        "cpuOCTip2": "CPU コアの電圧を設定します。",
-                        "cpuOCTip116": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
-                        "cpuOCTip117": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
-                        "cpuOCTip118": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
-                        "cpuOCTip119": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
-                        "cpuOCTip34": "現在のコア電圧からの電圧オフセット。",
-                        "cpuOCTip120": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
-                        "cpuOCTip121": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
-                        "cpuOCTip76": "キャッシュが動作できる最大プロセッサー・キャッシュ乗数を設定します。キャッシュ周波数の値は、この比率とリファレンス・クロック周波数の積です。",
-                        "cpuOCTip77": "現在選択されているキャッシュ電圧モードに基づいて、プロセッサの内部キャッシュ・インターフェイスに供給される電圧。",
-                        "cpuOCTip79": "キャッシュ電圧に適用される最終的な電圧オフセット。",
-                        "cpuOCTip122": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
-                        "cpuOCTip123": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
-                        "cpuOCTip102": "プロセッサーのコア電圧レギュレーターの ICCMAX を設定します。",
-                        "cpuOCTip106": "プロセッサーのキャッシュおよびリング・バス電圧レギュレーターの ICCMAX を設定します。",
-                        "cpuOCTip114": "AVX がアクティブなときに有効なアクティブ・コア・レシオの制限を導出するには、この値を対応するアクティブ・コア・レシオの制限から減算します。"
-                    },
-                    "gpuOCNames": {
-                        "gpuOCName0": "GPU クロック オフセット",
-                        "gpuOCName1": "VRAM クロック オフセット"
-                    },
-                    "gpuOCTips": {
-                        "gpuOCTip0": "GPU クロック周波数にオフセットを追加します。",
-                        "gpuOCTip1": "メモリー・クロック周波数にオフセットを追加します。"
-                    }
-                },
-                "savePromptPopup": {
-                    "title": "変更を保存しますか?",
-                    "description1": "この設定が不適切な場合、不可逆的に損傷する可能性があります。問題が発生した場合は、次のいずれかのことを実行してください。",
-                    "description2": "•  電源ボタンを8秒間押して再起動し、パラメーターを復元します。",
-                    "description3": "•  BIOS Restore Default Overclockを使用",
-                    "save": "保存",
-                    "notSave": "保存しない"
-                },
-                "defaultPromptPopup": {
-                    "title": "規定値に戻しますか?",
-                    "description": "現在および以前の変更はすべて失われます。"
-                },
-                "warningPromptPopup": {
-                    "title": "警告",
-                    "description": "クロックアップの設定が不適切な場合、ハードウェアが不可逆的に損傷する可能性があります。",
-                    "proceed": "続行"
                 }
             }
         },
@@ -694,42 +598,6 @@
                     "close": "close"
                 }
             }
-        },
-        "lightingNewversion": {
-            "machineName":{  
-                "name1": "Legion Icon Lighting (Front)",
-                "name2": "Internal Ambient Lighting",
-                "name3": "Legion Rear Fan Lighting",
-                "name4": "Legion CPU Fan Lighting",
-                "name5": "Legion Liquid Cooling Pump Lighting",
-                "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
-                "name9": "Ambient  Lighting"
-            },
-            "lightingEffect": {
-                "effectName1": "静的",
-                "effectName2": "スペクトラム",
-                "effectName3": "レインボー",
-                "effectName4": "ランダム",
-                "effectName5": "クール_ブルー",
-                "effectName6": "ウェーブ_右",
-                "effectName7": "ウェーブ_左"
-            },
-            "lightingSpeed": {
-                "title": "速度"
-            },
-            "colorPicker": {
-                "text2": "詳細",
-                "text3": "赤",
-                "text4": "緑",
-                "text5": "黒",
-                "text6": "分割 (オフ): 下のキーボード画像をクリックして色を変更",
-                "text7": "分割 (オン): キーボード画像の区域をクリックして区域の色を変更",
-                "text8": "現在の効果は色の選択をサポートしていません"
-            },
-            "tipText": {
-                "title1": "プロファイルの切り替えは Fn+Space を使用します"
-            }
         }
     },
     "common": {
@@ -1038,7 +906,7 @@
                     "Good": "<b>バッテリーは良好な状態です。</b>",
                     "Exhaustion": "バッテリー容量が<b>低下しています</b>。新しいバッテリーに交換してください。",
                     "Bad": "<b>バッテリー・エラーが発生しました。</b>バッテリーを充電/放電できません。バッテリーを交換してください。",
-                    "NotDetected": "<b>バッテリーが検出されませんでした。</b>",
+                    "NotDetected": "<b>バッテリーが検出されないか</b>、接続されていません。",
                     "NotGood": "<b>バッテリーは良好な状態ではありません。</b>",
                     "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>",
                     "LimitedACAdapterSupport": "<b>ACアダプターが十分な電力を供給できません。</b>",

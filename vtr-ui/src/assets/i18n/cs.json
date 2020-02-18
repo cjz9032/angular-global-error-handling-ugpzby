@@ -22,12 +22,6 @@
                     "rapidCharge": "Rych-lé nabíjení"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "Přetakt. zap.",
-                        "performance": "Výkon",
-                        "balance": "Vyvážení",
-                        "quiet": "Tichý"
-                    },
                     "title": "Přetaktování CPU",
                     "status": {
                         "alwayson": "Zapnuto",
@@ -103,96 +97,6 @@
                 },
                 "quickSettingstitle": {
                     "title": "Rychlé nastavení"
-                },
-                "thermalMode2Popup": {
-                    "thermalMode2SettingTitle": "Nastavení teplotního režimu",
-                    "thermalMode2SettingDesc": "Vyberte režim, který chcete použít.",
-                    "fnQDesc": "Režim můžete přepnout pomocí klávesové zkratky Fn + Q.",
-                    "perormanceTitle": "Režim výkonu",
-                    "performanceDesc": "Zvyšte výkon svého počítače vyšší rychlostí ventilátoru a vyšší spotřebou energie.",
-                    "OCDesc": "Můžete se rozhodnout zapnout funkci přetaktování.",
-                    "ac_dcDesc": "Režim výkonu je k dispozici pouze po připojení.",
-                    "balanceTitle": "Režim vyvážení",
-                    "balanceDesc": "Automatické vyvážení výkonu a rychlosti ventilátoru na základě teploty. Střední spotřeba energie.",
-                    "quietTitle": "Tichý režim",
-                    "quietDesc": "Pokud je to možné, snižte hlasitost redukcí výkonu počítače a rychlosti ventilátoru. Nízká spotřeba energie.",
-                    "OC": {
-                        "cpu_gpuOC": "Povolit přetaktování CPU/GPU v režimu výkonu.",
-                        "cpuOC": "Povolit přetaktování CPU v režimu výkonu.",
-                        "gpuOC": "Povolit přetaktování GPU v režimu výkonu.",
-                        "advance": "ROZŠÍŘENÉ",
-                        "cpu_gpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladače CPU/GPU.",
-                        "cpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladač CPU.",
-                        "gpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladač GPU.",
-                        "goInstall": "ZAčíT INSTALACI"
-                    },
-                    "autoSwitch": "Automatické přepínání na výkon při spouštění her a opětovné přepínání zpět."	
-                },
-                "advancedOC": {
-                    "title": "Přetaktování Upřesnit nast.",
-                    "description": "Upřesněte vlastní parametry, když je zapnuta možnost Přetaktování. Je to rizikové.",
-                    "gpuOverclock": "Přetaktování GPU",
-                    "cpuOCNames": {
-                        "cpuOCName2": "Napětí jádra",
-                        "cpuOCName116": "Poměr jádra 1",
-                        "cpuOCName117": "Poměr jádra 2",
-                        "cpuOCName118": "Poměr jádra 3",
-                        "cpuOCName119": "Poměr jádra 4",
-                        "cpuOCName34": "Kompenzace napětí jádra",
-                        "cpuOCName120": "Poměr jádra 5",
-                        "cpuOCName121": "Poměr jádra 6",
-                        "cpuOCName76": "Poměr mezipaměti",
-                        "cpuOCName77": "Napětí mezipaměti",
-                        "cpuOCName79": "Kompenzace napětí mezipaměti",
-                        "cpuOCName122": "Poměr jádra 7",
-                        "cpuOCName123": "Poměr jádra 8",
-                        "cpuOCName102": "ICCMAX jádra",
-                        "cpuOCName106": "ICCMAX mezipaměti",
-                        "cpuOCName114": "Kompenzace poměru AVX"
-                    },
-                    "cpuOCTips": {
-                        "cpuOCTip2": "Nastavte napětí jádra procesoru.",
-                        "cpuOCTip116": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
-                        "cpuOCTip117": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
-                        "cpuOCTip118": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
-                        "cpuOCTip119": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
-                        "cpuOCTip34": "Kompenzace napětí z aktuálního napětí jádra.",
-                        "cpuOCTip120": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
-                        "cpuOCTip121": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
-                        "cpuOCTip76": "Nastavte maximální násobitel mezipaměti procesoru, při kterém dokážou mezipaměti pracovat. Hodnota frekvence mezipaměti je součinem tohoto poměru a referenční taktovací frekvence.",
-                        "cpuOCTip77": "Napětí dodávané na interní rozhraní mezipaměti procesoru na základě aktuálně zvoleného režimu napětí mezipaměti.",
-                        "cpuOCTip79": "Konečná kompenzace napětí, která se použije pro napětí mezipaměti.",
-                        "cpuOCTip122": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
-                        "cpuOCTip123": "Nastavte maximální násobič jádra, při kterém mohou jádra fungovat. Hodnota frekvence jádra je produktem tohoto poměru a referenční frekvence taktu.",
-                        "cpuOCTip102": "Nastavte ICCMAX pro regulátor napětí jádra procesoru.",
-                        "cpuOCTip106": "Nastavte ICCMAX pro regulátor napětí mezipaměti a sběrnice Ring Bus procesoru.",
-                        "cpuOCTip114": "Chcete-li odvodit limit poměru aktivního jádra, když je AVX aktivní, odečtěte tuto hodnotu od odpovídajícího limitu poměru aktivního jádra."
-                    },
-                    "gpuOCNames": {
-                        "gpuOCName0": "Kompenzace taktu GPU",
-                        "gpuOCName1": "Kompenzace taktu VRAM"
-                    },
-                    "gpuOCTips": {
-                        "gpuOCTip0": "Přidejte kompenzaci k frekvenci taktu GPU.",
-                        "gpuOCTip1": "Přidejte kompenzaci k frekvenci taktu paměti."
-                    }
-                },
-                "savePromptPopup": {
-                    "title": "Uložit změnu?",
-                    "description1": "Nesprávné přetaktování může vést k nevratným škodám na hardwaru. Pokud narazíte na nějaký problém, proveďte jedno z následujících: ",
-                    "description2": "•  Restartujte PC tl. napájení na 8 s a obnovte výchozí parametry.",
-                    "description3": "•  K obn. vých. param. použ. Obnovení vých. přetaktování v nast. BIOS.",
-                    "save": "ULOžIT",
-                    "notSave": "NEUKLáDAT"
-                },
-                "defaultPromptPopup": {
-                    "title": "Nast. výchozí hodn.?",
-                    "description": "Veškeré aktuální a předchozí změny budou ztraceny."
-                },
-                "warningPromptPopup": {
-                    "title": "Varování!",
-                    "description": "Nesprávné nastavení hodnoty Přetaktování mohou způsobit nevratné poškození hardwaru.",
-                    "proceed": "POKRAčOVAT"
                 }
             }
         },
@@ -694,42 +598,6 @@
                     "close": "close"
                 }
             }
-        },
-        "lightingNewversion": {
-            "machineName":{  
-                "name1": "Legion Icon Lighting (Front)",
-                "name2": "Internal Ambient Lighting",
-                "name3": "Legion Rear Fan Lighting",
-                "name4": "Legion CPU Fan Lighting",
-                "name5": "Legion Liquid Cooling Pump Lighting",
-                "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
-                "name9": "Ambient  Lighting"
-            },
-            "lightingEffect": {
-                "effectName1": "Statická",
-                "effectName2": "Spektrum",
-                "effectName3": "Duha",
-                "effectName4": "Náhodná",
-                "effectName5": "Studená_modrá",
-                "effectName6": "Mávnout_doprava",
-                "effectName7": "Mávnout_doleva"
-            },
-            "lightingSpeed": {
-                "title": "Rychlost"
-            },
-            "colorPicker": {
-                "text2": "DALŠÍ",
-                "text3": "R",
-                "text4": "G",
-                "text5": "B",
-                "text6": "Rozdělit oblast (Vyp.): kliknutím na obr. klávesnice změníte barvy",
-                "text7": "Rozdělit obl. (Zap): kliknutím na sekce na obr. kláv. změňte barvy",
-                "text8": "Aktuální efekt nepodporuje výběr barev"
-            },
-            "tipText": {
-                "title1": "K přepínání mezi profily použijte kombinaci kláves Fn+Mezerník"
-            }
         }
     },
     "common": {
@@ -1038,7 +906,7 @@
                     "Good": "<b>Stav baterie je dobrý.</b>",
                     "Exhaustion": "Kapacita baterie <b>degradovala</b>. Vyměňte ji za novou.",
                     "Bad": "<b>Došlo k chybě baterie.</b> Baterii nelze nabít/vybít. Vyměňte ji.",
-                    "NotDetected": "<b>Nebyla zjištěna žádná baterie.</b>",
+                    "NotDetected": "<b>Nebyla zjištěna žádná baterie</b> nebo baterie není připojena.",
                     "NotGood": "<b>Stav baterie není dobrý.</b>",
                     "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b>",
                     "LimitedACAdapterSupport": "<b>Síťový adaptér nemůže poskytnout dostatek energie.</b>",
