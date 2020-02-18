@@ -22,6 +22,7 @@
 		}
 		@media #{$breakpoint_lg} {
 			max-width: 100%;
+			padding-left: 0.8rem;
 		}
 		@media #{$breakpoint_md} {
 			max-width: 60%;
