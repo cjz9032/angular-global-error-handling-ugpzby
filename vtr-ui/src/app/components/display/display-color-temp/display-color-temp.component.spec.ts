@@ -12,22 +12,22 @@ import { TranslateStore } from '@ngx-translate/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('DisplayColorTempComponent', () => {
-	//let component: DisplayColorTempComponent;
-	//let fixture: ComponentFixture<DisplayColorTempComponent>;
-	let displayColorTempSettings: EyeCareMode = {
+	// let component: DisplayColorTempComponent;
+	// let fixture: ComponentFixture<DisplayColorTempComponent>;
+	const displayColorTempSettings: EyeCareMode = {
 		available: true,
 		current: 10,
 		maximum: 100,
 		minimum: 0,
 		status: true
-	}
+	};
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [DisplayColorTempComponent, UiRangeSliderComponent, UiButtonComponent],
 			imports: [FontAwesomeModule, TranslationModule, FormsModule],
 			providers: [TranslateStore],
-			schemas: [NO_ERRORS_SCHEMA] //for derictives
+			schemas: [NO_ERRORS_SCHEMA] // for derictives
 		}).compileComponents();
 	}));
 
@@ -36,7 +36,7 @@ describe('DisplayColorTempComponent', () => {
 		function setup() {
 			const fixture = TestBed.createComponent(DisplayColorTempComponent);
 			const component = fixture.debugElement.componentInstance;
-			//const componentElement = fixture.debugElement.nativeElement; 
+			// const componentElement = fixture.debugElement.nativeElement;
 
 			return { fixture, component };
 		}
@@ -52,9 +52,7 @@ describe('DisplayColorTempComponent', () => {
 			component.enableSlider = true;
 			fixture.detectChanges();
 
-			let slider = fixture.debugElement.nativeElement.querySelector('vtr-ui-range-slider');
-			//slider.click();//worked
-			//console.log(slider);
+			const slider = fixture.debugElement.nativeElement.querySelector('vtr-ui-range-slider');
 			expect(slider).not.toBeNull();
 
 		}));
@@ -66,9 +64,9 @@ describe('DisplayColorTempComponent', () => {
 			component.displayColorTempSettings = displayColorTempSettings;
 			fixture.detectChanges();
 
-			let pt : PointerType;
+			let pt: PointerType;
 
-			let changeContext : ChangeContext = {
+			const changeContext: ChangeContext = {
 				highValue: 100,
 				pointerType : pt,
 				value: displayColorTempSettings.current
@@ -105,7 +103,7 @@ describe('DisplayColorTempComponent', () => {
 			component.dragChangeValue(new Event('click'));
 			fixture.whenStable().then(() => {
 				expect(component.colorPreviewValue.emit).toHaveBeenCalled();
-			}); 
+			});
 		}));
 
 

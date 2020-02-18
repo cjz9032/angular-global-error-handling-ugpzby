@@ -89,7 +89,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	ngAfterViewInit() {
 		const welcomeEnd: any = new Date();
 		const welcomeUseTime = welcomeEnd - this.welcomeStart;
-		console.log(`Performance: TutorialPage after view init. ${welcomeUseTime}ms`);
+		this.logger.info(`Performance: TutorialPage after view init. ${welcomeUseTime}ms`);
 		this.interestChkboxs.changes.subscribe(() => {
 			if (this.interestChkboxs.length > 8 && this.shouldManuallyFocusMoreInterest === true) {
 				this.interestChkboxs._results[this.interestChkboxs.length - 2].nativeElement.focus();
@@ -116,7 +116,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				PageContext: `page${page}`,
 				PageDuration: this.timerService.stop()
 			};
-			console.log('PageView Event', JSON.stringify(data));
+			this.logger.info('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
 			this.timerService.start();
 			this.page = page;
@@ -178,7 +178,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				PageContext: `page${page}`,
 				PageDuration: this.timerService.stop()
 			};
-			console.log('PageView Event', JSON.stringify(data));
+			this.logger.info('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
 			this.userService.sendSilentlyLoginMetric();
 			tutorialData = new WelcomeTutorial( 2, this.tutorialVersion, true, this.selfSelectService.usageType, this.selfSelectService.checkedArray);
@@ -217,8 +217,8 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		} else {
 			this.selfSelectService.checkedArray.splice(this.selfSelectService.checkedArray.indexOf(value), 1);
 		}
-		console.log(this.selfSelectService.checkedArray);
-		console.log(this.selfSelectService.checkedArray.length);
+		this.logger.info('ModalWelcomeComponent', this.selfSelectService.checkedArray);
+		this.logger.info('ModalWelcomeComponent', this.selfSelectService.checkedArray.length);
 		if (!this.isInterestProgressChanged) {
 			this.progress += 16;
 			this.isInterestProgressChanged = true;
@@ -254,12 +254,12 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	SetVantageToolbar(toolbarStatus) {
-		console.log('saveToolbar', toolbarStatus);
+		this.logger.info('saveToolbar', toolbarStatus);
 		try {
 			if (this.powerService.isShellAvailable) {
 				this.powerService.setVantageToolBarStatus(toolbarStatus)
 					.then((value: boolean) => {
-						console.log('setVantageToolBarStatus.then', toolbarStatus);
+						this.logger.info('setVantageToolBarStatus.then', toolbarStatus);
 						this.getVantageToolBarStatus();
 					}).catch(error => {
 						this.logger.error('setVantageToolBarStatus', error.message);

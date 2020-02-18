@@ -87,8 +87,7 @@
                     "line8": "<b>快速充電 </b><br> 電池充電速度提高，有更多時間隨時隨地暢玩遊戲",
                     "line9": "<b>觸控板鎖定 </b><br> 在遊戲時停用觸控板，防止錯誤的輸入",
                     "line10": "<b>自動關閉 </b><br> 在您開始暢玩遊戲之前先清除與遊戲無關的處理程序，盡可能地利用所有可用的系統資源",
-                    "line11": "<b>熱模式 </b><br> 設定您偏好的裝置設定檔中的風扇速度和冷卻控制",
-                    "line12": "<b>巨集鍵 </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>熱模式 </b><br> 設定您偏好的裝置設定檔中的風扇速度和冷卻控制"
                 },
                 "systemInfo": {
                     "systenTooltip": "將游標移至 CPU/GPU/RAM 和不同的驅動程式之上以查看其個別描述，包括製造與機型資訊"
@@ -646,7 +645,9 @@
             "notRegistered": "未註冊",
             "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "已註冊",
+            "notEnrolled": "未註冊"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -2335,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "登入",
-		"logout": "登出",
-		"loggingOut": "正在登出...",
+        "logout": "登出",
+        "loggingOut": "正在登出...",
         "unlockExclusives": "解除鎖定獨家功能",
         "user": "使用者",
         "welcomeText1": "{{firstName}}，今天看起來充滿活力！",

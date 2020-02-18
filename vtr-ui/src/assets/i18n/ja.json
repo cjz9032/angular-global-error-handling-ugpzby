@@ -87,8 +87,7 @@
                     "line8": "<b>急速充電 </b><br> 急速充電で外出時により長くゲームをプレイできます",
                     "line9": "<b>タッチパッド・ロック </b><br> ゲーム中はタッチパッドを無効にして誤入力を防ぎます",
                     "line10": "<b>自動クローズ </b><br> プレイ開始前にゲームに不要な処理をクリアして利用可能なシステム・リソースを最大化します",
-                    "line11": "<b>サーマル・モード </b><br> ファン速度と冷却制御のために優先デバイス・プロファイルを設定する",
-                    "line12": "<b>マクロ・キー </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>サーマル・モード </b><br> ファン速度と冷却制御のために優先デバイス・プロファイルを設定する"
                 },
                 "systemInfo": {
                     "systenTooltip": "CPU/GPU/RAM およびさまざまなドライブの上にマウスを移動すると、製造元やモデル情報などの説明が表示されます"
@@ -646,7 +645,9 @@
             "notRegistered": "未登録",
             "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "登録済み",
+            "notEnrolled": "未登録"
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
@@ -2335,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "ログイン",
-		"logout": "ログアウト",
-		"loggingOut": "Logging out...",
+        "logout": "ログアウト",
+        "loggingOut": "ログアウト中...",
         "unlockExclusives": "専用機能をロック解除",
         "user": "ユーザー",
         "welcomeText1": "今日はエネルギーにあふれているように見えます、{{firstName}} さん!",

@@ -19,9 +19,9 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		'device.deviceSettings.batteryGauge.details.primary',
 		'device.deviceSettings.batteryGauge.details.secondary',
 		'device.deviceSettings.batteryGauge.details.tertiary'];
-	startTimeAbbreviated = 'device.deviceSettings.power.smartStandby.timer.amPms.am';
-	lastResetTimeAbbreviated = 'device.deviceSettings.power.smartStandby.timer.amPms.am';
-	gaugeResetBtnStatus: boolean[];
+	startTimeAbbreviated = [];
+	lastResetTimeAbbreviated = [];
+	// gaugeResetBtnStatus: boolean[];
 	is12HrsFormat = false;
 	systemTimeFormatSubscription: Subscription;
 
@@ -106,33 +106,36 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
 	public setGaugeResetSection() {
 		let isResetRunning = false;
-		const gaugeResetBtnStatus = [];
+		const startTimeAbbreviated = [];
+		const lastResetTimeAbbreviated = [];
+		// const gaugeResetBtnStatus = [];
 		if (this.batteryService.gaugeResetInfo) {
 			this.batteryService.gaugeResetInfo.forEach((battery) => {
-				this.startTimeAbbreviated = new Date(battery.startTime).getHours() < 12 ?
-					'device.deviceSettings.power.smartStandby.timer.amPms.am' : 'device.deviceSettings.power.smartStandby.timer.amPms.pm';
-				this.lastResetTimeAbbreviated = new Date(battery.lastResetTime).getHours() < 12 ?
-					'device.deviceSettings.power.smartStandby.timer.amPms.am' : 'device.deviceSettings.power.smartStandby.timer.amPms.pm';
+				startTimeAbbreviated.push(new Date(battery.startTime).getHours() < 12 ?
+					'device.deviceSettings.power.smartStandby.timer.amPms.am' : 'device.deviceSettings.power.smartStandby.timer.amPms.pm');
+				lastResetTimeAbbreviated.push(new Date(battery.lastResetTime).getHours() < 12 ? 'device.deviceSettings.power.smartStandby.timer.amPms.am' : 'device.deviceSettings.power.smartStandby.timer.amPms.pm');
 				isResetRunning = isResetRunning || battery.isResetRunning;
 			});
-		} else {
-			gaugeResetBtnStatus.push(true);
 		}
 
 		// gauge reset btn status in case of dual battery
-		if (this.batteryService.gaugeResetInfo && this.batteryService.gaugeResetInfo.length > 1) {
-			if (isResetRunning) {
-				this.batteryService.gaugeResetInfo.forEach((battery) => {
-					gaugeResetBtnStatus.push(!battery.isResetRunning);
-				});
-			} else {
-				gaugeResetBtnStatus.push(false);
-				gaugeResetBtnStatus.push(false);
-			}
-		}
+		// if (this.batteryService.gaugeResetInfo && this.batteryService.gaugeResetInfo.length > 1) {
+		// 	if (isResetRunning) {
+		// 		this.batteryService.gaugeResetInfo.forEach((battery) => {
+		// 			gaugeResetBtnStatus.push(!battery.isResetRunning);
+		// 		});
+		// 	} else {
+		// 		gaugeResetBtnStatus.push(false);
+		// 		gaugeResetBtnStatus.push(false);
+		// 	}
+		// }
 
+		// this.gaugeResetBtnStatus = gaugeResetBtnStatus;
+
+
+		this.startTimeAbbreviated = startTimeAbbreviated;
+		this.lastResetTimeAbbreviated = lastResetTimeAbbreviated;
 		this.batteryService.isGaugeResetRunning = isResetRunning;
-		this.gaugeResetBtnStatus = gaugeResetBtnStatus;
 	}
 
 	updateGaugeResetInfo(value: BatteryGaugeReset) {

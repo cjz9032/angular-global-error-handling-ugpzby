@@ -162,7 +162,7 @@
 			.card {
 				background: $gaming_darkest !important;
 				span{
-					color:$gaming_lighter;
+					color:$gaming_lightest;
 				}
 			}
 		}
@@ -278,7 +278,7 @@
 														.threshold-for-built-in-battery {
 															color: $gaming_grey_lightest;
 														}
-														.inputSection {
+														.inputSection {															
 															.btn-block button.btn-outline-shadow {
 																border: none;
 																background: $gaming-Darkslate-blue;
@@ -289,7 +289,34 @@
 																	color: $gaming_grey_lightest;
 																}
 															}
+															textarea{
+																color:$gaming_grey_lightest!important
+															}
+															.note{
+																background: $gaming_bg;
+																color:$gaming_lightest;
+																border-color: $gaming_bg;
+															}
+															.dropdown-menu{
+																background: $gaming_shade!important;
+																color: $gaming_lightest!important;
+																.dropdown-item{
+																	&:hover{
+																		background: $gaming_hover!important;
+																	}
+																	&:focus{
+																		background: $gaming_hover!important;
+																	}
+																}
+																@media #{$black-on-white} {
+																	border: 0.1rem solid $dark;
+																}
+																@media #{$white-on-black} {
+																	border: 0.1rem solid $light;
+																}	
+																}
 														}
+														
 														.row-seperator {
 															height: 0.1rem;
 															background-color: $screen_dark_20;
@@ -374,6 +401,32 @@
 																color: $gaming_grey_lightest;
 															}
 														}
+														textarea{
+															color:$gaming_grey_lightest!important
+														}
+														.note{
+															background: $gaming_bg;
+															color:$gaming_lightest;
+															border-color: $gaming_bg;
+														}
+														.dropdown-menu{
+															background: $gaming_shade!important;
+															color: $gaming_lightest!important;
+															.dropdown-item{
+																&:hover{
+																	background: $gaming_hover!important;
+																}
+																&:focus{
+																	background: $gaming_hover!important;
+																}
+															}
+															@media #{$black-on-white} {
+																border: 0.1rem solid $dark;
+															}
+															@media #{$white-on-black} {
+																border: 0.1rem solid $light;
+															}	
+															}
 													}
 													.row-seperator {
 														height: 0.1rem;
@@ -754,6 +807,32 @@
 								color: $gaming_grey_lightest;
 							}
 						}
+						textarea{
+							color:$gaming_grey_lightest!important
+						}
+						.note{
+							background: $gaming_bg;
+							color:$gaming_lightest;
+							border-color: $gaming_bg;
+						}
+						.dropdown-menu{
+							background: $gaming_shade!important;
+							color: $gaming_lightest!important;
+							.dropdown-item{
+								&:hover{
+									background: $gaming_hover!important;
+								}
+								&:focus{
+									background: $gaming_hover!important;
+								}
+							}
+							@media #{$black-on-white} {
+								border: 0.1rem solid $dark;
+							}
+							@media #{$white-on-black} {
+								border: 0.1rem solid $light;
+							}	
+							}
 					}
 					.row-seperator {
 						height: 0.1rem;
@@ -1016,6 +1095,40 @@
 			color: $white100;
 		}
 	}
+	&.border-blue {
+		border: 0.2rem solid $gaming_light_blue;
+		outline: none;
+		// transition: all 50ms ease-in;
+		label::after {
+			opacity: 1 !important;
+			background-color: $gaming_light_blue !important;
+		}
+	}
+	&.disabled-grey{
+		label::after {
+			opacity: 1 !important;
+			background-color: $gaming_dark !important;
+		}
+	}
+	 &.border-grey {
+		border: 0.2rem solid $gaming_dark;	
+	 }
+
+}
+.disabled-class{
+	opacity: 0.7;
+	border: 0.2rem solid $gaming_dark;
+	label {
+		&:after, &:before {
+			border-color: $gaming_dark;
+		}
+		&:after {
+			background-color: $gaming_darkest!important;
+		}
+		&:hover {
+			cursor: not-allowed;
+		}
+	}
 }
 
 .vtr-ui-rounded-rectangle-radio {	
@@ -1023,6 +1136,61 @@
 		label{
 			.label{
 				color:$white100!important;
+			}
+		}
+
+		&.border-blue {
+			border: 0.2rem solid $gaming_light_blue;
+			outline: none;
+			// transition: all 50ms ease-in;
+			label::after {
+				opacity: 1 !important;
+				background-color: $gaming_light_blue !important;
+			}
+		}
+
+		&.border-grey {
+			border: 0.2rem solid $gaming-dark;
+			// transition: all 50ms ease-in;
+			@media #{$black-on-white} {
+				border: none;
+			}
+	
+		}
+		&.border-disabled {
+			border: 0.2rem solid $gaming-dark;
+			cursor: default;
+			label {
+				.icon-circle {
+					color: $grey_darker;
+				}
+			}
+		}
+		&.border-checked-disabled {
+			border: 0.2rem solid $gaming-dark;
+			cursor: default;
+			label {
+				.icon-circle {
+					color: $grey_darker;
+				}
+			}
+		}
+		&.border-disabled {
+			border: 0.2rem solid $gaming-dark;
+			cursor: default;
+			label {
+				.icon-circle {
+					color: $grey_darker;
+				}
+			}
+		}
+		&.border-checked-disabled {
+			border: 0.2rem solid $gaming-dark;
+			cursor: default;
+			label {
+				.icon-circle {
+					color: $grey_darker;
+				}
 			}
 		}
 	}
@@ -1377,12 +1545,12 @@
 		}
 	}
 	.progress-value-text {
-		color: $light !important;
+		color: $gaming_lightest !important;
 	}
 
 	.final-result-code {
 		.result-code-value-text {
-			color: $light !important;
+			color: $gaming_lightest !important;
 		}
 
 		.left-result-code {
@@ -1394,7 +1562,7 @@
 
 	.result-code {
 		.result-code-value-text {
-			color: $light !important;
+			color: $gaming_lightest !important;
 		}
 		.left-code-result {
 			.result-code-complete-text {
@@ -1510,10 +1678,30 @@
 		}
 	}
 
-	.wifi-security {
-		.threat-locator-container {
-			background: $gaming_darkest !important;
+	.threat-locator-container {
+		background: $gaming_darkest !important;
+		color: $gaming_lightest !important;
+		.sub-heading-2{
+			color: $gaming_lightest !important;
 		}
+		.text-regular{
+			color: $gaming_lighter !important;
+		}
+	}
+	.vtr-wifi-security{
+		.security-card {
+			background-color: $gaming_darkest !important;			
+			margin-bottom: 5em;
+			.heading{
+				color:$gaming-lightest!important;
+			}
+			.text-regular{
+				color:$gaming-lighter!important;
+			}
+		}
+	}
+	.wifi-security {		
+		color: $gaming_lightest !important;
 		.card {
 			background: $gaming_bg !important;
 			border: 0rem !important;
@@ -1528,7 +1716,7 @@
 			border: 0.1rem solid $gaming_bg !important;
 		}
 		.card-history {		
-			background: $gaming_bg !important;	
+			background: $gaming_darkest !important;	
 			border: 0.1rem solid $gaming_bg!important;			
 			color: $gaming_lightest !important;
 		}
@@ -1537,6 +1725,8 @@
 			border: 0.1rem solid $gaming_bg!important;
 			color: $gaming_lightest !important;
 			border-radius:$border_radius;
+			border-top-right-radius:0rem;
+			border-top-left-radius:0rem;
 		}
 		.cardBody {
 			border: 0.1rem solid $gaming_bg !important;
@@ -1546,6 +1736,7 @@
 			.wifi {
 				padding-bottom:0.4rem;
 				border-color:$gaming_bg!important;
+				background:$gaming_darkest;
 				.title {
 					color: $gaming_lightest;
 				}
@@ -1553,11 +1744,6 @@
 					color: $gaming_grey_lightest;
 				}
 			}
-		}
-		.security-card {
-			background-color: $gaming_darkest !important;
-			border: 0.1rem solid $gaming_bg !important;
-			margin-bottom: 5em;
 		}
 
 		.vtr-container-collapsible.white-theme {
@@ -1665,10 +1851,10 @@
 			width: 90%;
 		}
 		.modal-content{
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
+			justify-content: center;
+			align-items: center;
+			background: transparent;
+			margin-top:18vh;
 		}
 	}
 }

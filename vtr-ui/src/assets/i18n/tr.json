@@ -87,8 +87,7 @@
                     "line8": "<b>Hızlı Şarj </b><br> Daha hızlı pil şarjıyla hareket halindeyken daha uzun süre oyun oynayın",
                     "line9": "<b>Touchpad Kilidi </b><br> Oyun oynarken dokunmaya duyarlı tableti devre dışı bırakarak hatalı girişleri önleyin",
                     "line10": "<b>Oto. Kapat </b><br> Kullanılabilir sistem kaynaklarını en üst düzeye çıkarmak için oyuna başlamadan önce gerekli olmayan işlemleri temizleyin",
-                    "line11": "<b>Isı Kipi </b><br> Fan hızı ve soğutma kontrolü için tercih ettiğiniz cihaz profilini ayarlayın",
-                    "line12": "<b>Makro Tuşu </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Isı Kipi </b><br> Fan hızı ve soğutma kontrolü için tercih ettiğiniz cihaz profilini ayarlayın"
                 },
                 "systemInfo": {
                     "systenTooltip": "Üretim ve model bilgilerini de içeren açıklamaları göstermek için CPU/GPU/RAM ve farklı sürücülerin üzerine gelin"
@@ -646,14 +645,16 @@
             "notRegistered": "KAYITLI DEĞİL",
             "fingerPrint": "Parmak Izi",
             "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "KAYITLI",
+            "notEnrolled": "KAYITLI DEĞİL"
         },
         "qAndA": {
-            "title": "Makineniz için Q & A",
+            "title": "Cihazınızla ilgili Sorular ve Cevaplar",
             "subtitle": "Cihazınız için bazı yararlı ipuçları bulun.",
             "question1": "Dosyalarınızın yedeklenmesi ve geri yüklenmesi",
             "question2": "Bilgisayarınızın yenilenmesi",
-            "question3": "Makinenizin CPU\\'sunun öğrenilmesi",
+            "question3": "Cihazınızın işlemcisini öğrenme",
             "question4": "Makinenizin pil kullanımının denetlenmesi",
             "question5": "Bilgisayarınızın tablet gibi kullanılması",
             "question6": "Kişisel yardımcınız Cortana'yı tanıyın"
@@ -710,7 +711,7 @@
             "title": "Bugün çok dinç görünüyorsun "
         },
         "offlineInfo": {
-            "title": "Internet bağlantısı saptanmadı",
+            "title": "İnternet bağlantısı bulunamadı",
             "subtitle": "Bağlantı sorunlarının nasıl çözüleceğini öğrenmek için",
             "buttonText": "Destek Alın",
             "welcomeToVantage": "Yeni nesil Vantage'a hoş geldiniz",
@@ -721,7 +722,7 @@
             "subtitle": "Vantage hakkındaki düşüncelerinizi bizimle paylaşın.",
             "button": "Geri bildirim gönder",
             "form": {
-                "email": "Email (optional)",
+                "email": "Eposta (isteğe bağlı)",
                 "question1": "Vantage'ın yeni tarzını beğendiniz mi?",
                 "question2": "Performansın kabul edilir olduğunu düşünüyor musunuz?",
                 "question3": "Uygulamayı gelecekte daha sık kullanır mısınız?",
@@ -732,9 +733,9 @@
                 "yes": "Evet",
                 "no": "Hayır",
                 "tips1": "Lütfen ek yorumlarınızı bırakın",
-                "comments": "Açıklamalar...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
+                "comments": "Yorumlar...",
+                "button": "Gönder",
+                "addScreenshot": "Ekran Görüntüsü Ekle",
                 "sendFeedback": "Geri Bildirim Gönder",
                 "submitScreenShot": "Ekran Görüntüsü Gönder",
                 "messages": {
@@ -762,14 +763,14 @@
             "memory": {
                 "title": "Bellek",
                 "detail": {
-                    "notFound": "Bellek bulunamadı",
+                    "notFound": "Bellek bilgisi yükleniyor",
                     "of": "/"
                 }
             },
             "diskSpace": {
                 "title": "Disk Alanı",
                 "detail": {
-                    "notFound": "Disk bulunamadı",
+                    "notFound": "Disk bilgisi yükleniyor",
                     "of": "/"
                 }
             },
@@ -826,7 +827,7 @@
             "software": "Yazılım güncel",
             "updated": "Güncellendi",
             "outOfWarranty": "Garanti dışı",
-            "expired": "Süre dolum tarihi",
+            "expired": "Sürenin dolduğu tarih",
             "of": "/",
             "warranty": {
                 "notFound": "Garanti bulunamadı",
@@ -835,7 +836,7 @@
                     "inWarranty": "Garanti kapsamında",
                     "daysRemaining": "kalan gün",
                     "outOfWarranty": "Garanti dışı",
-                    "expiredOn": "Süre dolum tarihi",
+                    "expiredOn": "Sürenin dolduğu tarih",
                     "notAvailable": "Garanti mevcut değil",
                     "support": "Destek"
                 }
@@ -931,7 +932,7 @@
             "power": {
                 "title": "Güç",
                 "subtitle": "Güç Ayarları",
-                "description": "Bu bölüm, termal performansı dinamik olarak ayarlamanızı ve pil ömrünü en üst düzeye çıkarmanızı sağlar.Aynı zamanda, güç ile ilgili diğer popüler özelliklere de sahiptir. Bu bölümdeki varsayılan ayarları kontrol edebilir ve sisteminizi ihtiyaçlarınıza göre özelleştirebilirsiniz.",
+                "description": "Bu bölüm, termal performansı dinamik olarak ayarlamanızı ve pil ömrünü en üst düzeye çıkarmanızı sağlar. Aynı zamanda, güç ile ilgili diğer popüler özelliklere de sahiptir. Bu bölümdeki varsayılan ayarları kontrol edebilir ve sisteminizi ihtiyaçlarınıza göre özelleştirebilirsiniz.",
                 "jumpto": {
                     "title": "AYARLARA GİT",
                     "battery": "Pil",
@@ -1035,8 +1036,8 @@
                     },
                     "easyResume": {
                         "title": "Kolay Sürdür",
-                        "description": "Bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini iyileştirmek için bu özelliği etkinleştirin.",
-                        "tooltip": "Bu özellik, bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini geliştirir. Etkinleştirildiğinde, kapağını kapattığınızda bilgisayarınız düşük güç kipine girer ancak kapattıktan sonraki 15 dakika içerisinde yeniden açmanız durumunda anında sürdürülür. Bu özellik, sistem askıda kipine geçmeden önce bilgisayarınızın bekleyen etkinlikleri (e-posta gönderme veya dosya indirme gibi) tamamlamaya çalışmasına olanak sağlar."
+                        "description": "Bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız önceki konumdan sürdürme süresini iyileştirmek için bu özelliği etkinleştirin.",
+                        "tooltip": "Bu özellik, bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini kısaltır. Etkinleştirildiğinde, kapağını kapattığınızda bilgisayarınız düşük güç kipine girer ancak kapattıktan sonraki 15 dakika içerisinde yeniden açmanız durumunda anında önceki konumdan sürdürülür. Bu özellik, sistem askıda kipine geçmeden önce bilgisayarınızın bekleyen etkinlikleri (e-posta gönderme veya dosya indirme gibi) tamamlamaya çalışmasına olanak sağlar."
                     },
                     "flipToBoot": {
                         "title": "Kapağı açınca önyükle",
@@ -1239,7 +1240,7 @@
             "audio": {
                 "title": "Ses",
                 "subtitle": "Ses Ayarları",
-                "description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi durumagetirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak ayarlamanızı sağlar.",
+                "description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi duruma getirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak ayarlamanızı sağlar.",
                 "audioSmartsettings": {
                     "title": "Ses Akıllı ayarları",
                     "subtitle": "UYGULAMA TABANLI AYARLAR",
@@ -1268,11 +1269,11 @@
                     },
                     "microphone": {
                         "title": "Mikrofon",
-                        "tooltip": "Mikrofon ses düzeyini ayarlayarak MIC efektinizi özelleştirebilirve uygun kipi belirtebilirsiniz."
+                        "tooltip": "Mikrofon ses düzeyini ayarlayarak MIC efektinizi özelleştirebilir ve uygun kipi belirtebilirsiniz."
                     },
                     "volume": {
                         "title": "Mikrofon Ses Düzeyi",
-                        "description": "Dolby Ses, zevk aldığınız tüm içeriklerden zengin, net ve güçlü bir ses sunar. İçeriğiniz ve ekipmanınız için uygun kipi seçin.",
+                        "description": "Dolby Ses, zevk aldığınız tüm içeriklerden zengin, net ve güçlü bir ses sunar. İçeriğiniz ve cihazınız için uygun kipi seçin.",
                         "options": {
                             "silent": "Sessiz",
                             "loud": "Yüksek Ses"
@@ -1351,7 +1352,7 @@
                         "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
                         "note": {
                             "title": "Not",
-                            "description": "Göz Bakımı Modu etkinleştirildiğinde, bu renk sıcaklığı etkili olmaz. Ancak önizlemesini almak için kaydırıcıyı sürükleyebilirsiniz. Etkinleştirmek için Göz Bakımı Modunu kapatın."
+                            "description": "Göz Koruması Kipi etkinleştirildiğinde, bu renk sıcaklığı etkili olmaz. Ancak önizlemesini almak için kaydırıcıyı sürükleyebilirsiniz. Etkinleştirmek için Göz Koruması Kipini kapatın."
                         }
                     },
                     "privacyGuard": {
@@ -1402,7 +1403,7 @@
                     },
                     "url": "Windows gizlilik ayarlarına git",
                     "cameraPrivacy": {
-                        "title": "Kamera gizlilik kipi",
+                        "title": "Kamera Gizlilik Kipi",
                         "tooltip": "Gizlilik ayarı etkinleştirildiğinde kamera canlı görüntü göndermeyi durdurur. Yalnızca video görüşmeleri sırasında görüntülerinizin görülmesini istemediğiniz zamanlarda bu seçeneğini kullanın."
                     },
                     "camera": {
@@ -1411,7 +1412,7 @@
                         "reset": "Sıfırla"
                     },
                     "brightness": "Parlaklık",
-                    "contrast": "Karşıtlık",
+                    "contrast": "Kontrast",
                     "autoExposure": "Otomatik Pozlama",
                     "autoFocus": "Otomatik odaklanma",
                     "notAvailable": "Kamera Kullanılamıyor",
@@ -2171,7 +2172,7 @@
                 "enabledDescribe": "Lenovo WiFi Güvenliği şu anda WiFi ağınızı izliyor."
             },
             "threatlocator": {
-                "describe": "Çevrenizdeki ağların güvenliğini belirlemek için tehdit dedektörünü kullanın.",
+                "describe": "Çevrenizdeki ağların güvenliğini belirlemek için tehdit algılayıcıyı kullanın.",
                 "button": "Tehdidi denetle",
                 "connectionError": "Bağlantı Hatası",
                 "tryAgain": "Ağ kullanılamadığından size yönelik tehdidi bulamıyoruz, lütfen İnternet’e bağlanın ve yeniden deneyin."
@@ -2279,7 +2280,7 @@
             "getStarted2": "VPN'i açın ve güvenli bağlantının onaylanması için kısa bir süre bekleyin.",
             "getStarted3": "Dilerseniz bölgenizi veya konumunuzu değiştirin ve güvenli, özel ağın keyfini çıkarın.",
             "poweredBySurfEasy": "SurfEasy Tarafından Desteklenmektedir",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE PAROLA YÖNETİCİSİ",
@@ -2308,7 +2309,7 @@
             "allowsYou3": "Yerleşik VPN sayesinde, güvenli olmayan WiFi ağlarında güvende olma",
             "allowsYou4": "Parolaları göstermeden, güvenli bir şekilde paylaşma",
             "poweredByDashLane": "Dashlane Tarafından Desteklenmektedir",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2335,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Oturum Aç",
-		"logout": "Oturumu kapat",
-		"loggingOut": "Logging out...",
+        "logout": "Oturumu kapat",
+        "loggingOut": "Oturum kapatılıyor...",
         "unlockExclusives": "Özellerin Kilidini Aç",
         "user": "Kullanıcı",
         "welcomeText1": "Bugün çok dinç görünüyorsun, {{firstName}}!",
@@ -3248,7 +3249,7 @@
             "extendNow": "extend now",
             "renewNow": "Renew Now",
             "poweredBy": "Powered by Coronet",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
         },
         "tour": {
             "back": "Back",

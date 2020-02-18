@@ -80,15 +80,14 @@
                     "line1": "Postavke se uz Vantage Edge automatski prilagođavaju upotrebi. \n Maksimalne performanse tijekom igranja, dulje trajanje baterije tijekom drugih aktivnosti.",
                     "line2": "<b>Pregled upravljanja značajkama</b> <br> Neke značajke nisu dostupne na svim uređajima",
                     "line3": "<b>Overclocking CPU-a </b><br> Povećajte maksimalnu brzinu procesora",
-                    "line4": "<b>Overclock RAM-a </b><br> Povećajte maksimalnu brzinu memorije",
+                    "line4": "<b>Overclocking RAM-a </b><br> Povećajte maksimalnu brzinu memorije",
                     "line5": "<b>Ubrzanje mreže </b><br> Mrežnom prometu za igru koju igrate dodijelite viši prioritet",
                     "line6": "<b>Dolby </b><br> Prilagodite zvuk igranju pomoću tehnologije Dolby",
                     "line7": "<b>Hibridni način </b><br> Onemogućite napredne GPU postavke kada ne igrate da produžite trajanje baterije",
                     "line8": "<b>Brzo punjenje </b><br> Igrajte u pokretu uz brže punjenje baterije",
                     "line9": "<b>Zaključavanje dodirne pločice </b><br> Onemogućite dodirnu pločicu tijekom igranja da biste spriječili slučajne unose",
                     "line10": "<b>Automatsko zatvaranje </b><br> Prije igranja očistite procese koji nisu nužni za igranje da biste maksimizirali upotrebu dostupnih resursa sustava",
-                    "line11": "<b>Termički način rada </b><br> Postavite željeni profil uređaja za brzinu ventilatora i kontrolu hlađenja",
-                    "line12": "<b>Makro tipka </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Termički način rada </b><br> Postavite željeni profil uređaja za brzinu ventilatora i kontrolu hlađenja"
                 },
                 "systemInfo": {
                     "systenTooltip": "Zadržite pokazivač na CPU/GPU/RAM i različitim pogonima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"
@@ -646,7 +645,9 @@
             "notRegistered": "NIJE REGISTRIRAN",
             "fingerPrint": "Otisak prsta",
             "privacyPolicyAndTermsOfService": "<tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "UPISAN",
+            "notEnrolled": "NIJE UPISAN"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -2335,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Prijava",
-		"logout": "Odjava",
-		"loggingOut": "Logging out...",
+        "logout": "Odjava",
+        "loggingOut": "Odjavljivanje...",
         "unlockExclusives": "Otključaj ekskluzivne stavke",
         "user": "Korisnik",
         "welcomeText1": "Danas smo puni energije, {{firstName}}!",

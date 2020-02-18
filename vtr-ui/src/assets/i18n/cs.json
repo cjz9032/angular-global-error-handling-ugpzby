@@ -90,8 +90,7 @@
                     "line8": "<b>Rychlé nabíjení </b><br> Užijte si při hraní na cestách delší výdrž baterie díky rychlejšímu nabíjení",
                     "line9": "<b>Zámek dotykové plošky </b><br> Vyhněte se neúmyslným kliknutím vypnutím dotykové plošky",
                     "line10": "<b>Automaticky zavřít </b><br> Před hraním her ukončete procesy, které nepotřebuje, abyste měli k dispozici co nejvíce systémových prostředků",
-                    "line11": "<b>Režim tepl </b><br> Nastavte svůj profil zařízení pro otáčky ventilátoru a řízení chlazení",
-                    "line12": "<b>Klávesa maker</b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Režim tepl </b><br> Nastavte svůj profil zařízení pro otáčky ventilátoru a řízení chlazení"
                 },
                 "systemInfo": {
                     "systenTooltip": "Umístěním kurzoru na CPU/GPU/RAM a různé jednotky zobrazíte jejich popisy, včetně informací o výrobci a modelu"
@@ -646,7 +645,9 @@
             "notRegistered": "NENÍ REGISTROVÁNO",
             "fingerPrint": "Otisk Prstu",
             "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "REGISTROVÁNO",
+            "notEnrolled": "NEREGISTROVÁNO"
         },
         "qAndA": {
             "title": "Otázky a odpovědi pro váš stroj",
@@ -2335,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Přihlášení",
-		"logout": "Odhlásit",
-		"loggingOut": "Logging out...",
+        "logout": "Odhlásit",
+        "loggingOut": "Odhlašování...",
         "unlockExclusives": "Odemknout exkluzivní obsah",
         "user": "Uživatel",
         "welcomeText1": "Vypadáte dnes aktivně, {{firstName}}!",

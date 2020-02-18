@@ -87,8 +87,7 @@
                     "line8": "<b>Schnellladen </b><br> Länger unterwegs spielen dank hoher Akkuladegeschwindigkeit",
                     "line9": "<b>Touchpad-Sperre </b><br> Fehlerhafte Eingaben beim Spielen durch deaktiviertes Touchpad verhindern",
                     "line10": "<b>Automatisch schließen </b><br> Nicht benötigte Prozesse vor dem Spielen beenden, um verfügbare Systemressourcen zu maximieren",
-                    "line11": "<b>Wärmemodus </b><br> Stellen Sie Ihr bevorzugtes Geräteprofil für die Lüfterdrehzahl und die Kühlsteuerung ein",
-                    "line12": "<b>Makrotaste </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Wärmemodus </b><br> Stellen Sie Ihr bevorzugtes Geräteprofil für die Lüfterdrehzahl und die Kühlsteuerung ein"
                 },
                 "systemInfo": {
                     "systenTooltip": "Bewegen Sie den Mauszeiger über CPU/GPU/RAM und unterschiedlichen Laufwerke, um ihre Beschreibungen einschließlich Hersteller und Modellinformationen anzuzeigen"
@@ -646,7 +645,9 @@
             "notRegistered": "NICHT REGISTRIERT",
             "fingerPrint": "Fingerabdruck",
             "privacyPolicyAndTermsOfService": "<tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "REGISTRIERT",
+            "notEnrolled": "NICHT REGISTRIERT"
         },
         "qAndA": {
             "title": "Q & A für Ihre Maschine",
@@ -721,10 +722,10 @@
             "subtitle": "Sagen Sie uns, was Sie von Vantage halten.",
             "button": "Feedback geben",
             "form": {
-                "email": "Email (optional)",
+                "email": "E-Mail (optional)",
                 "question1": "Gefällt Ihnen der neue Stil von Vantage?",
                 "question2": "Halten Sie die Leistung für akzeptabel?",
-                "question3": "Würden Sie die Anwendung in Zukunft häufiger verwenden?",
+                "question3": "Würden Sie die Anwendung in Zukunft häufiger nutzen?",
                 "question4": "Wussten Sie schon, dass Sie mit Lenovo Vantage Softwaretreiber, Firmware und BIOS auf Ihrem Computer aktualisieren können?",
                 "question5": "Wie wahrscheinlich ist es, dass Sie die Anwendung Lenovo Vantage einem Freund oder Kollegen weiterempfehlen?",
                 "notAtAllLikely": "Gar nicht wahrscheinlich",
@@ -733,8 +734,8 @@
                 "no": "Nein",
                 "tips1": "Bitte hinterlassen Sie einen zusätzlichen Kommentar",
                 "comments": "Kommentare…",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
+                "button": "Einreichen",
+                "addScreenshot": "Bildschirmfoto hinzufügen",
                 "sendFeedback": "Feedback senden",
                 "submitScreenShot": "Screenshot senden",
                 "messages": {
@@ -762,14 +763,14 @@
             "memory": {
                 "title": "Hauptspeicher",
                 "detail": {
-                    "notFound": "Hauptspeicher nicht gefunden",
+                    "notFound": "Speicherinformationen werden geladen",
                     "of": "von"
                 }
             },
             "diskSpace": {
                 "title": "Festplattenspeicher",
                 "detail": {
-                    "notFound": "Festplatte nicht gefunden",
+                    "notFound": "Datenträgerinformationen werden geladen",
                     "of": "von"
                 }
             },
@@ -931,7 +932,7 @@
             "power": {
                 "title": "Stromversorgung",
                 "subtitle": "Einstellungen für Energieversorgung",
-                "description": "In diesem Abschnitt können Sie die Wärmeleistung dynamisch anpassen und die Akkulaufzeit maximieren.Hier finden Sie auch andere häufig genutzte Energie-Funktionen. Sie können die Standardeinstellungen in diesem Abschnitt überprüfen und das System an Ihre Bedürfnisse anpassen.",
+                "description": "In diesem Abschnitt können Sie die Wärmeleistung dynamisch anpassen und die Akkulaufzeit maximieren. Hier finden Sie auch andere häufig genutzte Energie-Funktionen. Sie können die Standardeinstellungen in diesem Abschnitt überprüfen und das System an Ihre Bedürfnisse anpassen.",
                 "jumpto": {
                     "title": "EINSTELLUNGEN AUFRUFEN",
                     "battery": "Akku",
@@ -1239,7 +1240,7 @@
             "audio": {
                 "title": "Audio",
                 "subtitle": "Audioeinstellungen",
-                "description": "In diesem Abschnitt können Sie Ihre Audioeinstellungenautomatisch manuell optimieren oder vollständig konfigurieren, wie z. B. Dolby-Einstellungen, Mikrofon usw.",
+                "description": "In diesem Abschnitt können Sie Ihre Audioeinstellungen automatisch manuell optimieren oder vollständig konfigurieren, wie z. B. Dolby-Einstellungen, Mikrofon usw.",
                 "audioSmartsettings": {
                     "title": "Audio Smart-Einstellungen",
                     "subtitle": "ANWENDUNGSBASIERTE EINSTELLUNGEN",
@@ -1279,7 +1280,7 @@
                         }
                     },
                     "suppress": {
-                        "title": "Tastaturgeräuschs unterdrücken",
+                        "title": "Tastaturgeräusche unterdrücken",
                         "tooltip": "Aktivieren Sie diese Option, um die MIC-Audiodaten zu optimieren, indem Sie Tastaturrauschen unterdrücken."
                     },
                     "acoustic": {
@@ -2279,7 +2280,7 @@
             "getStarted2": "Schalten Sie das VPN ein und warten Sie kurz auf die Bestätigung einer sicheren Verbindung.",
             "getStarted3": "Ändern Sie die Region oder den Standort nach Wunsch und genießen Sie die Nutzung eines sicheren und geschützten Netzwerks.",
             "poweredBySurfEasy": "Unterstützt von SurfEasy",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Leia a <tag>Política de privacidade</tag> e os <tag>Termos de serviço</tag> para obter mais informações"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE-KENNWORTMANAGER",
@@ -2308,7 +2309,7 @@
             "allowsYou3": "Sicherheit bei ungesicherten WiFi-Netzwerken dank integriertem VPN.",
             "allowsYou4": "Das sichere Teilen von Kennwörtern, ohne diese preiszugeben.",
             "poweredByDashLane": "Unterstützt von Dashlane",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Leia a <tag>Política de privacidade</tag> e os <tag>Termos de serviço</tag> para obter mais informações"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2335,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Anmeldung",
-		"logout": "Abmelden",
-		"loggingOut": "Logging out...",
+        "logout": "Abmelden",
+        "loggingOut": "Abmelden…",
         "unlockExclusives": "Exklusivinhalte freischalten",
         "user": "Benutzer",
         "welcomeText1": "Sie sehen heute energiegeladen aus, {{firstName}}!",
@@ -3248,7 +3249,7 @@
             "extendNow": "extend now",
             "renewNow": "Renew Now",
             "poweredBy": "Powered by Coronet",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Leia a <tag>Política de privacidade</tag> e os <tag>Termos de serviço</tag> para obter mais informações"
         },
         "tour": {
             "back": "Back",

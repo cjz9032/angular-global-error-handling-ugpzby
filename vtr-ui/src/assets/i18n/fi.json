@@ -87,8 +87,7 @@
                     "line8": "<b>Pikalataus </b><br> Pelaa liikkeellä ollessasi pikalatauksen avulla",
                     "line9": "<b>Kosketuslevyn lukitus </b><br> Estä väärät syötteet poistamalla kosketuslevy käytöstä pelaamisen ajaksi",
                     "line10": "<b>Automaattinen sulkeminen </b><br> Maksimoi käytettävissä olevat järjestelmäresurssit tyhjentämällä ennen pelaamisen aloittamista prosessit, joita ei tarvita pelaamiseen",
-                    "line11": "<b>Lämpö-tila </b><br> Määritä haluamaasi laitteen profiiliin tuulettimen kierrosnopeuden ja jäähdytyksen säätö",
-                    "line12": "<b>Makronäppäin</b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Lämpö-tila </b><br> Määritä haluamaasi laitteen profiiliin tuulettimen kierrosnopeuden ja jäähdytyksen säätö"
                 },
                 "systemInfo": {
                     "systenTooltip": "Näytä keskusyksikön/näytönohjaimen/RAM-muistin kuvaukset, mukaan lukien valmistus- ja mallitiedot, viemällä osoitin näiden ja eri asemien päälle"
@@ -646,7 +645,9 @@
             "notRegistered": "EI REKISTERÖITY",
             "fingerPrint": "Sormenjälki",
             "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "REKISTERÖITY",
+            "notEnrolled": "EI REKISTERÖITY"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -2335,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Sisäänkirjaus",
-		"logout": "Kirjaudu ulos",
-		"loggingOut": "Logging out...",
+        "logout": "Kirjaudu ulos",
+        "loggingOut": "Uloskirjaus on meneillään...",
         "unlockExclusives": "Ota käyttöön erikoissisältöä",
         "user": "Käyttäjä",
         "welcomeText1": "Näytät energiseltä tänään, {{firstName}}!",

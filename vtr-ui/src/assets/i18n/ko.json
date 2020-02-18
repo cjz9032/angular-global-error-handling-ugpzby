@@ -80,15 +80,14 @@
                     "line1": "Vantage Edge를 사용하면 사용량에 따라 설정이 자동으로 조정됩니다. \n 게임 중 최대 성능, 게임을 하지 않을 때는 배터리 수명이 연장됩니다.",
                     "line2": "<b>기능 관리 개요</b> <br> 일부 기능은 모든 장치에서 사용하지 못할 수 있음",
                     "line3": "<b>CPU 오버클럭킹 </b><br> 프로세서의 최대 속도 향상",
-                    "line4": "<b>RAM 오버클럭 </b><br> 메모리의 최대 속도 향상",
+                    "line4": "<b>RAM 오버클럭킹 </b><br> 메모리의 최대 속도 향상",
                     "line5": "<b>네트워크 향상 </b><br> 재생 중인 게임의 네트워크 트래픽 우선 순위 지정",
                     "line6": "<b>Dolby </b><br> Dolby 기술을 이용한 게임 전용 오디오 조정",
                     "line7": "<b>하이브리드 모드 </b><br> 배터리 성능을 높이기 위해 게임을 하지 않을 때 고급 GPU 설정 사용 안 함",
                     "line8": "<b>급속 충전 </b><br> 더 빠른 배터리 충전으로 이동 중 게임 시간 연장",
                     "line9": "<b>터치 패드 잠금 </b><br> 게임 중 터치패드를 비활성화하여 잘못된 입력 방지",
                     "line10": "<b>자동 닫기 </b><br> 게임을 시작하기 전에 사용 가능한 시스템 리소스를 극대화하기 위해 필요하지 않은 프로세스 지우기",
-                    "line11": "<b>열 모드 </b><br> 팬 속도 및 냉각 제어를 위해 선호하는 장치 프로파일 설정",
-                    "line12": "<b>매크로 키 </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>열 모드 </b><br> 팬 속도 및 냉각 제어를 위해 선호하는 장치 프로파일 설정"
                 },
                 "systemInfo": {
                     "systenTooltip": "제조 및 모델 정보를 포함한 설명이 표시되도록 CPU/GPU/RAM 및 다른 드라이브를 가리킴"
@@ -646,7 +645,9 @@
             "notRegistered": "등록되지 않음",
             "fingerPrint": "지문",
             "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "등록됨",
+            "notEnrolled": "등록되지 않음"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
@@ -2335,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "로그인",
-		"logout": "로그아웃",
-		"loggingOut": "Logging out...",
+        "logout": "로그아웃",
+        "loggingOut": "로그아웃 중...",
         "unlockExclusives": "독점 잠금 해제",
         "user": "사용자",
         "welcomeText1": "오늘 동력 공급 상태 보기, {{firstName}}!",

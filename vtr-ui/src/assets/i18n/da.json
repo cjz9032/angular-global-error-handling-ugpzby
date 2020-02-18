@@ -87,8 +87,7 @@
                     "line8": "<b>Hurtig opladning</b><br> Spil længere tid på farten med hurtigere batteriopladning",
                     "line9": "<b>Lås på navigationsplade</b><br> Undgå forkerte input ved at deaktivere navigationspladen, mens du spiller",
                     "line10": "<b>Luk automatisk</b><br> Ryd processer, der ikke er nødvendige for spil, før du går i gang med at spille, for at maksimere tilgængelige systemressourcer",
-                    "line11": "<b>Varmetilstand</b><br> Angiv din foretrukne enhedsprofil for blæserhastighed og kølingskontrol",
-                    "line12": "<b>Makro-tast</b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Varmetilstand</b><br> Angiv din foretrukne enhedsprofil for blæserhastighed og kølingskontrol"
                 },
                 "systemInfo": {
                     "systenTooltip": "Peg på CPU-/GPU/RAM og forskellige drev for at få vist disses beskrivelser, herunder fabrikat- og modeloplysninger"
@@ -646,7 +645,9 @@
             "notRegistered": "IKKE REGISTRERET",
             "fingerPrint": "Fingeraftryk",
             "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "REGISTRERET",
+            "notEnrolled": "IKKE REGISTRERET"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -2335,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Login",
-		"logout": "Log af",
-		"loggingOut": "Logging out...",
+        "logout": "Log af",
+        "loggingOut": "Logger af...",
         "unlockExclusives": "Lås Eksklusive op",
         "user": "Bruger",
         "welcomeText1": "Du ser ud til at være fuld af energi i dag, {{firstName}}!",

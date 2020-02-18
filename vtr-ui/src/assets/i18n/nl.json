@@ -80,15 +80,14 @@
                     "line1": "Met Vantage Edge worden uw instellingen automatisch op gebruik afgestemd. \n Maximale prestaties tijdens het gamen, langere batterijduur wanneer u dat niet bent.",
                     "line2": "<b>Overzicht functiebeheer</b> <br> Sommige functies niet op alle apparaten beschikbaar",
                     "line3": "<b>CPU overklokken </b><br> Geef de maximumsnelheid voor uw processor een boost",
-                    "line4": "<b>RAM overklok </b><br> Geef de maximumsnelheid voor uw geheugen een boost",
+                    "line4": "<b>RAM overklokken </b><br> Geef de maximumsnelheid voor uw geheugen een boost",
                     "line5": "<b>Netwerkboost </b><br> Stel prioriteiten in voor netwerkverkeer voor de game die u speelt",
                     "line6": "<b>Dolby </b><br> Stem uw audio specifiek af voor gamen met Dolby-technologie",
                     "line7": "<b>Hybride modus </b><br> Geavanceerde GPU-instellingen uitschakelen wanneer u niet aan het gamen bent om de batterijduur te verbeteren",
                     "line8": "<b>Snelladen </b><br> Onderweg langer gamen met snellere oplaadtijden",
                     "line9": "<b>Touchpadvergrendeling </b><br> Schakel het touchpad uit bij gamen om foutieve invoer te voorkomen",
                     "line10": "<b>Automatisch sluiten </b><br> Wis, voordat je begint, processen die je niet nodig hebt voor gamen om de systeembronnen optimaal te gebruiken",
-                    "line11": "<b>Thermische modus </b><br> Een profiel voor het apparaat van uw voorkeur instellen ter verbetering van de ventilatorsnelheid en het beheren van de koeling",
-                    "line12": "<b>Macrotoets</b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Thermische modus </b><br> Een profiel voor het apparaat van uw voorkeur instellen ter verbetering van de ventilatorsnelheid en het beheren van de koeling"
                 },
                 "systemInfo": {
                     "systenTooltip": "Beweeg over CPU / GPU / RAM en verschillende schijven om hun beschrijvingen weer te geven, inclusief fabrikant- en modelinformatie"
@@ -646,7 +645,9 @@
             "notRegistered": "NIET GEREGISTREERD",
             "fingerPrint": "Vingerafdruk",
             "privacyPolicyAndTermsOfService": "<tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "GEREGISTREERD",
+            "notEnrolled": "NIET GEREGISTREERD"
         },
         "qAndA": {
             "title": "V & A voor uw machine",
@@ -2335,8 +2336,8 @@
     },
     "lenovoId": {
         "login": "Aanmelden",
-		"logout": "Afmelden",
-		"loggingOut": "Logging out...",
+        "logout": "Afmelden",
+        "loggingOut": "Bezig met afmelden...",
         "unlockExclusives": "Krijg toegang tot exclusieve aanbiedingen",
         "user": "Gebruiker",
         "welcomeText1": "Uw ziet er energiek uit vandaag, {{firstName}}!",

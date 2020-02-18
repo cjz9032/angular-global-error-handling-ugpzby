@@ -1,6 +1,6 @@
 {
 	"name": "vtr-ui",
-	"version": "1.2.88",
+	"version": "1.2.90",
 	"scripts": {
 		"build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
 		"build:dev1": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --code-coverage",
@@ -96,7 +96,7 @@
 		"karma-jasmine-html-reporter": "^1.4.0",
 		"protractor": "~5.4.0",
 		"recursive-readdir": "^2.2.2",
-		"standard-version": "^5.0.2",
+		"standard-version": "7.1.0",
 		"ts-node": "~7.0.0",
 		"tslint": "~5.15.0",
 		"typescript": "~3.4.3"
