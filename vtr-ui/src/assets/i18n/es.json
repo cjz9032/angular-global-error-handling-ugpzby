@@ -22,6 +22,12 @@
                     "rapidCharge": "Carga rápida"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Acel. activada",
+                        "performance": "Rendimiento",
+                        "balance": "Equilibrio",
+                        "quiet": "Silencioso"
+                    },
                     "title": "Aceleración de CPU",
                     "status": {
                         "alwayson": "Encendido",
@@ -97,6 +103,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Configuración rápida"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Config. de modo térmico",
+                    "thermalMode2SettingDesc": "Seleccione la modalidad que desee utilizar.",
+                    "fnQDesc": "Puede cambiar de modalidad utilizando la combinación de teclas Fn + Q.",
+                    "perormanceTitle": "Modalidad de rendimiento",
+                    "performanceDesc": "Aumente el rendimiento del sistema con más velocidad del ventilador y más consumo de energía.",
+                    "OCDesc": "Puede seleccionar que se active la característica de Aceleración.",
+                    "ac_dcDesc": "Modalidad de rendimiento disponible solo conectado.",
+                    "balanceTitle": "Modalidad balanceada",
+                    "balanceDesc": "Equilibre automáticamente el rendimiento y la velocidad del ventilador según la temperatura. Consumo de energía mediano.",
+                    "quietTitle": "Modalidad silenciosa",
+                    "quietDesc": "Continúe deduciendo el rendimiento y la velocidad del ventilador de sistema siempre que sea posible. Bajo consumo de energía.",
+                    "OC": {
+                        "cpu_gpuOC": "Habilite la Aceleración de CPU/GPU en Modalidad de rendimiento.",
+                        "cpuOC": "Habilite la Aceleración de CPU en Modalidad de rendimiento.",
+                        "gpuOC": "Habilite la Aceleración de GPU en Modalidad de rendimiento.",
+                        "advance": "AVANZADO",
+                        "cpu_gpuDriverLack": "Instale controladores de CPU/GPU para utilizar función de Aceleración.",
+                        "cpuDriverLack": "Instale el controlador de CPU/GPU para usar función de Aceleración.",
+                        "gpuDriverLack": "Instale el controlador de GPU para usar la función de Aceleración.",
+                        "goInstall": "VAYA A INSTALAR"
+                    },
+                    "autoSwitch": "Cambie auto. a Rendimiento al iniciar juegos y después cambie de vuelta."	
+                },
+                "advancedOC": {
+                    "title": "Op. avanzadas aceleración",
+                    "description": "Establezca parám. person. avanzados cuando Aceleración esté activada. Podría ser arriesgado.",
+                    "gpuOverclock": "Aceleración de GPU",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Voltaje de núcleo",
+                        "cpuOCName116": "Relación de 1 núcleo",
+                        "cpuOCName117": "Relación de 2 núcleos",
+                        "cpuOCName118": "Relación de 3 núcleo",
+                        "cpuOCName119": "Relación de 4 núcleo",
+                        "cpuOCName34": "Desplazamiento de voltaje de núcleo",
+                        "cpuOCName120": "Relación de 5 núcleo",
+                        "cpuOCName121": "Relación de 6 núcleo",
+                        "cpuOCName76": "Relación de memoria caché",
+                        "cpuOCName77": "Voltaje de memoria caché",
+                        "cpuOCName79": "Desp. de voltaje de memoria caché",
+                        "cpuOCName122": "Relación de 7 núcleo",
+                        "cpuOCName123": "Relación de 8 núcleo",
+                        "cpuOCName102": "ICCMAX de núcleo",
+                        "cpuOCName106": "ICCMAX de memoria caché",
+                        "cpuOCName114": "Desplazamiento de relación de AVX"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Establezca el voltaje para el núcleo de CPU.",
+                        "cpuOCTip116": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip117": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip118": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip119": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip34": "Un desplazamiento de voltaje a partir del voltaje del núcleo actual.",
+                        "cpuOCTip120": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip121": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip76": "Establezca el multiplicador de memoria caché del procesador máximo al que la memoria caché puede funcionar. El valor de la frecuencia de la memoria caché es el producto de esta relación y la frecuencia de reloj de referencia.",
+                        "cpuOCTip77": "Voltaje que se proporciona a la interfaz de memoria caché interna del procesador según la modalidad de voltaje de memoria caché actualmente seleccionada.",
+                        "cpuOCTip79": "Desplazamiento final de voltaje que se aplica al voltaje de la memoria caché.",
+                        "cpuOCTip122": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip123": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip102": "Establezca ICCMAX para el regulador de voltaje del núcleo del procesador.",
+                        "cpuOCTip106": "Establezca ICCMAX para el regulador de voltaje de la memoria caché y bus del anillo del procesador.",
+                        "cpuOCTip114": "Para derivar el límite de velocidad del núcleo activo efectivo cuando AVX está activo, reste este valor al límite de proporción de núcleo activo correspondiente."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "Desplazamiento de reloj de GPU",
+                        "gpuOCName1": "Desplazamiento de reloj de VRAM"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Agregue un desplazamiento a la frecuencia del reloj de GPU.",
+                        "gpuOCTip1": "Agregue un desplazamiento a la frecuencia del reloj de memoria."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "¿Guardar cambios?",
+                    "description1": "Ajuste incorrecto Acel. puede causar daños de hard. irreversibles. Realice una de las siguientes acciones si encuentra algún problema: ",
+                    "description2": "•  Presione bot. enc. por 8 seg. para rein. sist. y rest. par. omisión.",
+                    "description3": "•  Use “Rest. val. predet. sinc.” en val. BIOS para rest. los par. omi.",
+                    "save": "GUARDAR",
+                    "notSave": "NO GUARDAR"
+                },
+                "defaultPromptPopup": {
+                    "title": "¿Usar val. predet.?",
+                    "description": "Se perderán todos los cambios actuales y anteriores."
+                },
+                "warningPromptPopup": {
+                    "title": "¡Advertencia!",
+                    "description": "Un ajuste inadecuado de la Aceleración puede producir daños de hardware irreversible.",
+                    "proceed": "PROCEDER"
                 }
             }
         },
@@ -598,6 +694,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Estático",
+                "effectName2": "Espectro",
+                "effectName3": "Arcoiris",
+                "effectName4": "Aleatorio",
+                "effectName5": "Azul_frío",
+                "effectName6": "Ola_derecha",
+                "effectName7": "Ola_izquierda"
+            },
+            "lightingSpeed": {
+                "title": "Velocidad"
+            },
+            "colorPicker": {
+                "text2": "MÁS",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Área div. (desac.): haga clic en imagen teclado para cambiar color",
+                "text7": "Área div. (act.): haga clic sec. imag. tec. para cambiar col. sec.",
+                "text8": "El efecto actual no admite selección de color"
+            },
+            "tipText": {
+                "title1": "Utilice Fn+Espacio para cambiar entre perfiles"
+            }
         }
     },
     "common": {
@@ -906,7 +1038,7 @@
                     "Good": "<b>La batería está en buen estado.</b>",
                     "Exhaustion": "La capacidad de la batería se ha <b>degradado</b>. Sustitúyala con una nueva.",
                     "Bad": "<b>Se produjo un error de batería.</b> No se puede cargar/descargar la batería. Sustituya la batería.",
-                    "NotDetected": "<b>No se ha detectado ninguna batería o no hay</b> ninguna batería conectada.",
+                    "NotDetected": "<b>No se detectó ninguna batería.</b>",
                     "NotGood": "<b>La batería no está en buen estado.</b>",
                     "NotSupportACAdapter": "<b>El adaptador de CA no es compatible.</b>",
                     "LimitedACAdapterSupport": "<b>El adaptador de CA no puede proporcionar suficiente energía.</b>",

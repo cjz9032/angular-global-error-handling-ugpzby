@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { UiLightingSingleColorComponent } from './ui-lighting-single-color.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';

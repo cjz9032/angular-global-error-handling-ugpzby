@@ -22,6 +22,12 @@
                     "rapidCharge": "Carregamento rápido"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overclock ativ.",
+                        "performance": "Desempenho",
+                        "balance": "Equilíbrio",
+                        "quiet": "Silencioso"
+                    },
                     "title": "Overclock da CPU",
                     "status": {
                         "alwayson": "Ligado",
@@ -97,6 +103,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Configurações rápidas"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Config. do Modo Térmico",
+                    "thermalMode2SettingDesc": "Escolha o modo que deseja usar.",
+                    "fnQDesc": "Você pode alternar o modo usando o atalho Fn + Q.",
+                    "perormanceTitle": "Modo de Desempenho",
+                    "performanceDesc": "Aumente o desempenho do computador com mais velocidade do ventilador e mais energia consumida.",
+                    "OCDesc": "Você pode optar por ativar o recurso de Overclocking.",
+                    "ac_dcDesc": "Modo de Desempenho disponível apenas quando conectado.",
+                    "balanceTitle": "Modo de Equilíbrio",
+                    "balanceDesc": "Equilibre automaticamente o desempenho e a velocidade do ventilador com base na temperatura. Consumo de energia médio.",
+                    "quietTitle": "Modo Silencioso",
+                    "quietDesc": "Mantenha silencioso reduzindo o desempenho e a velocidade do ventilador do computador sempre que possível. Consumo de energia baixo.",
+                    "OC": {
+                        "cpu_gpuOC": "Ative Overclocking da CPU/GPU no Modo de Desempenho.",
+                        "cpuOC": "Ative Overclocking da CPU no Modo de Desempenho.",
+                        "gpuOC": "Ative Overclocking da GPU no Modo de Desempenho.",
+                        "advance": "AVANÇADO",
+                        "cpu_gpuDriverLack": "Instale drivers de CPU/GPU para usar a função de Overclocking.",
+                        "cpuDriverLack": "Instale o driver da CPU para usar a função de Overclocking.",
+                        "gpuDriverLack": "Instale o driver da GPU para usar a função de Overclocking.",
+                        "goInstall": "INSTALAR"
+                    },
+                    "autoSwitch": "Alterne auto. para Desempenho ao iniciar jogos e alterne novamente ao término."	
+                },
+                "advancedOC": {
+                    "title": "Overclock Config. Avançadas",
+                    "description": "Defina parâmetros person. avançados quando Overclocking está ativado. Pode ser Arriscado.",
+                    "gpuOverclock": "Overclock da GPU",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Voltagem do Núcleo",
+                        "cpuOCName116": "1 Taxa do Núcleo",
+                        "cpuOCName117": "2 Taxa do Núcleo",
+                        "cpuOCName118": "3 Taxa do Núcleo",
+                        "cpuOCName119": "4 Taxa do Núcleo",
+                        "cpuOCName34": "Deslocamento da Voltagem do Núcleo",
+                        "cpuOCName120": "5 Taxa do Núcleo",
+                        "cpuOCName121": "6 Taxa do Núcleo",
+                        "cpuOCName76": "Taxa de Cache",
+                        "cpuOCName77": "Voltagem do Cache",
+                        "cpuOCName79": "Deslocamento da Voltagem do Cache",
+                        "cpuOCName122": "7 Taxa do Núcleo",
+                        "cpuOCName123": "8 Taxa do Núcleo",
+                        "cpuOCName102": "ICCMAX do Núcleo",
+                        "cpuOCName106": "ICCMAX do Cache",
+                        "cpuOCName114": "Deslocamento da Taxa AVX"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Defina a voltagem para o Núcleo da CPU.",
+                        "cpuOCTip116": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
+                        "cpuOCTip117": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
+                        "cpuOCTip118": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
+                        "cpuOCTip119": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
+                        "cpuOCTip34": "Um deslocamento de voltagem da voltagem atual do núcleo.",
+                        "cpuOCTip120": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
+                        "cpuOCTip121": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
+                        "cpuOCTip76": "Defina o multiplicador máximo de cache do processador no qual os caches podem operar. O valor da frequência do cache é o produto dessa taxa e a frequência do relógio de referência.",
+                        "cpuOCTip77": "Voltagem fornecida à interface de cache interna do processador com base no modo de voltagem de cache atualmente selecionado.",
+                        "cpuOCTip79": "Deslocamento final de voltagem aplicado à Voltagem do Cache.",
+                        "cpuOCTip122": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
+                        "cpuOCTip123": "Defina o multiplicador máximo de núcleos no qual os núcleos podem operar. O valor da frequência do núcleo é o produto dessa taxa e a frequência do relógio de referência.",
+                        "cpuOCTip102": "Defina ICCMAX para Regulador de Voltagem do Núcleo do Processador.",
+                        "cpuOCTip106": "Defina ICCMAX para Regulador de Voltagem do Barramento em Anel e Cache do Processador.",
+                        "cpuOCTip114": "Para derivar o limite efetivo da taxa do núcleo ativo quando o AVX estiver ativo, subtraia esse valor ao limite da taxa do núcleo ativo correspondente."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "Deslocamento do Relógio da GPU",
+                        "gpuOCName1": "Deslocamento do Relógio de VRAM"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Adicione um deslocamento à frequência do relógio da GPU.",
+                        "gpuOCTip1": "Adicione um deslocamento à frequência do relógio da memória."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Salvar Alteração?",
+                    "description1": "Config. inadequadas de Overclocking podem causar danos ao hardware. Siga um destes procedimentos se encontrar algum problema: ",
+                    "description2": "•  Segure o botão liga/desliga por 8 seg p/ reiniciar e restaurar os parâmetros padrão.",
+                    "description3": "•  Use a opção \"Restaurar Overclocking padrão\" nas configurações BIOS.",
+                    "save": "SALVAR",
+                    "notSave": "NÃO SALVAR"
+                },
+                "defaultPromptPopup": {
+                    "title": "Definir como padrão?",
+                    "description": "Todas as alterações atuais e anteriores serão perdidas."
+                },
+                "warningPromptPopup": {
+                    "title": "Aviso!",
+                    "description": "Configurações inadequadas de Overclocking podem causar danos irreversíveis ao hardware.",
+                    "proceed": "CONTINUAR"
                 }
             }
         },
@@ -598,6 +694,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Estático",
+                "effectName2": "Espectro",
+                "effectName3": "Arco-íris",
+                "effectName4": "Aleatório",
+                "effectName5": "Azulado",
+                "effectName6": "Ondulação_Direita",
+                "effectName7": "Ondulação_Esquerda"
+            },
+            "lightingSpeed": {
+                "title": "Velocidade"
+            },
+            "colorPicker": {
+                "text2": "MAIS",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Área de divisão (Desat.): clique no teclado abaixo p/ mudar cores",
+                "text7": "Área de div. (Ativ.): clique abaixo p/ mudar seções de cores",
+                "text8": "O efeito atual não suporta a seleção de cores"
+            },
+            "tipText": {
+                "title1": "Use Fn+Espaço para alternar entre perfis"
+            }
         }
     },
     "common": {
@@ -906,7 +1038,7 @@
                     "Good": "<b>A bateria está em boas condições.</b>",
                     "Exhaustion": "A capacidade da bateria foi <b>degradada</b>. Substitua por uma nova.",
                     "Bad": "<b>Ocorreu um erro na bateria.</b> Não é possível carregar/descarregar a bateria. Substitua a bateria.",
-                    "NotDetected": "<b>Nenhuma bateria detectada ou nenhuma</b> bateria conectada.",
+                    "NotDetected": "<b>Nenhuma bateria detectada.</b>",
                     "NotGood": "<b>A bateria não está em boas condições.</b>",
                     "NotSupportACAdapter": "<b>O adaptador de energia CA não é suportado.</b>",
                     "LimitedACAdapterSupport": "<b>O adaptador de energia CA não pode fornecer potência suficiente.</b>",

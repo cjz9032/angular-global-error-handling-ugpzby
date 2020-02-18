@@ -16,6 +16,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingLightingComponent } from '../../modal/modal-gaming-lighting/modal-gaming-lighting.component';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { Gaming } from './../../../enums/gaming.enum';
+import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
@@ -30,6 +33,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	startDateTime: any = new Date();
 	metrics: any;
 	dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
+	public ledlayoutversion:any;
 
 	constructor(
 		private titleService: Title,
@@ -37,9 +41,11 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		private cmsService: CMSService,
 		private route: ActivatedRoute,
 		private shellService: VantageShellService,
+		private gamingLightService: GamingLightingService,
 		public dashboardService: DashboardService,
 		private translate: TranslateService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		private router: Router
 	) {
 		this.metrics = this.shellService.getMetrics();
 		this.route.params.subscribe((params) => {
@@ -56,6 +62,12 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.getLayOutversion();
+		this.commonService.getCapabalitiesNotification().subscribe((response) => {
+			if (response.type === Gaming.GamingCapabilities) {
+				this.getLayOutversion();
+			}
+		});
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -83,15 +95,6 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 			Page: 'lighting'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
-			const cardContentPositionF = this.cmsService.getOneCMSContent(
-				response,
-				'half-width-top-image-title-link',
-				'position-F'
-			)[0];
-			if (cardContentPositionF) {
-				this.cardContentPositionF = cardContentPositionF;
-			}
-
 			const cardContentPositionC = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-title-description-link-image',
@@ -99,8 +102,17 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 			)[0];
 			if (cardContentPositionC) {
 				this.cardContentPositionC = cardContentPositionC;
-				if (this.cardContentPositionC.BrandName) {
-					this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+			}
+
+			const cardContentPositionF = this.cmsService.getOneCMSContent(
+				response,
+				'inner-page-right-side-article-image-background',
+				'position-F'
+			)[0];
+			if (cardContentPositionF) {
+				this.cardContentPositionF = cardContentPositionF;
+				if (this.cardContentPositionF.BrandName) {
+					this.cardContentPositionF.BrandName = this.cardContentPositionF.BrandName.split('|')[0];
 				}
 			}
 		});
@@ -120,6 +132,14 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
 		} else {
+		}
+	}
+	public getLayOutversion(){
+		console.log("~~~~~~~~~~~~~~~~~~~~~~~~1111111111",this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion));
+		if(this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion) !== undefined){
+			this.ledlayoutversion = this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion);
+		}else{
+			this.router.navigate(['/device-gaming']);
 		}
 	}
 }

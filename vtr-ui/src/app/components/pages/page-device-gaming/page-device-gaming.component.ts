@@ -41,6 +41,9 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 	public isOnline = true;
 	private protocolAction: any;
 	cardContentPositionD: any = {};
+	// TODO Lite Gaming
+	public liteGaming = false;
+	public desktopType = false;
 
 	constructor(
 		private router: Router,
@@ -66,8 +69,9 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
-
-		this.titleService.setTitle(this.translate.instant('gaming.common.narrator.pageTitle.device'));
+		// TODO Lite Gaming
+		this.desktopType = this.commonService.getLocalStorageValue(LocalStorageKey.desktopType);
+		this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.liteGaming);
 	}
 
 	ngOnInit() {
@@ -82,6 +86,11 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 				.then((response) => {
 					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
 					PageDeviceGamingComponent.allCapablitiyFlag = true;
+					// TODO Lite Gaming
+					this.desktopType = response.desktopType;
+					this.liteGaming = response.liteGaming;
+					// this.desktopType = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.desktopType);
+					// this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.liteGaming);
 				})
 				.catch((err) => {});
 		}
@@ -128,7 +137,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 	fetchCmsContents(lang?: string) {
 		const callCmsStartTime: any = new Date();
 		const queryOptions: any = {
-			Page: 'dashboard'
+			Page: 'gaming-dashboard'
 		};
 		// if (lang) {
 		// 	queryOptions = {

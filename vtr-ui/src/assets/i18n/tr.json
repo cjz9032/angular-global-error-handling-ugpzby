@@ -22,6 +22,12 @@
                     "rapidCharge": "Hızlı Şarj"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Hız Aşrtma açık",
+                        "performance": "Performans",
+                        "balance": "Denge",
+                        "quiet": "Sessiz"
+                    },
                     "title": "CPU Hız Aşırtma",
                     "status": {
                         "alwayson": "Açık",
@@ -97,6 +103,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Hızlı Ayarlar"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Isı Kipi Ayarı",
+                    "thermalMode2SettingDesc": "Kullanmak istediğiniz kipi seçin.",
+                    "fnQDesc": "Fn + Q kısayolunu kullanarak kipi değiştirebilirsiniz.",
+                    "perormanceTitle": "Performans Kipi",
+                    "performanceDesc": "Daha fazla fan hızıyla ve daha fazla güç tüketerek bilgisayarınızın performansını artırın.",
+                    "OCDesc": "Hız Aşırtma özelliğini açmayı seçebilirsiniz.",
+                    "ac_dcDesc": "Performans Kipi yalnızca bilgisayar fişe takılıyken kullanılabilir.",
+                    "balanceTitle": "Denge Kipi",
+                    "balanceDesc": "Performansı ve fan hızını sıcaklığa göre otomatik olarak dengeleyin. Orta düzey güç tüketimi.",
+                    "quietTitle": "Sessiz Kipi",
+                    "quietDesc": "Mümkün olduğunda bilgisayarınızın performansını ve fan hızını azaltarak sessiz olun. Düşük güç tüketimi.",
+                    "OC": {
+                        "cpu_gpuOC": "Performans Kipi'nde CPU/GPU Hız Aşırtma'yı etkinleştirin.",
+                        "cpuOC": "Performans Kipi'nde CPU Hız Aşırtma'yı etkinleştirin.",
+                        "gpuOC": "Performans Kipi'nde GPU Hız Aşırtma'yı etkinleştirin.",
+                        "advance": "GELİŞMİŞ",
+                        "cpu_gpuDriverLack": "Hız Aşırtma işlevini kullanmak için CPU/GPU sürücülerini yükleyin.",
+                        "cpuDriverLack": "Hız Aşırtma işlevini kullanmak için CPU sürücüsünü yükleyin.",
+                        "gpuDriverLack": "Hız Aşırtma işlevini kullanmak için GPU sürücüsünü yükleyin.",
+                        "goInstall": "YÜKLE"
+                    },
+                    "autoSwitch": "Oyunları başlatırken Otomatik Olarak Performans Kipine Geçip sonra geriye dönün."	
+                },
+                "advancedOC": {
+                    "title": "Hız Aşırtma Gelşmiş Ayrları",
+                    "description": "Hız Aşırtma açıkken kullanılacak gelşmiş özel parametreleri ayarlayın. Bu Riskli olabilir.",
+                    "gpuOverclock": "GPU Hız Aşırtma",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Çekirdek Voltajı",
+                        "cpuOCName116": "1 Çekirdek Oranı",
+                        "cpuOCName117": "2 Çekirdek Oranı",
+                        "cpuOCName118": "3 Çekirdek Oranı",
+                        "cpuOCName119": "4 Çekirdek Oranı",
+                        "cpuOCName34": "Çekirdek Voltajı Sapması",
+                        "cpuOCName120": "5 Çekirdek Oranı",
+                        "cpuOCName121": "6 Çekirdek Oranı",
+                        "cpuOCName76": "Önbellek Oranı",
+                        "cpuOCName77": "Önbellek Voltajı",
+                        "cpuOCName79": "Önbellek Voltajı Sapması",
+                        "cpuOCName122": "7 Çekirdek Oranı",
+                        "cpuOCName123": "8 Çekirdek Oranı",
+                        "cpuOCName102": "Çekirdek ICCMAX",
+                        "cpuOCName106": "Önbellek ICCMAX",
+                        "cpuOCName114": "AVX Oranı Sapması"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "CPU Çekirdeği için voltajı ayarlayın.",
+                        "cpuOCTip116": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip117": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip118": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip119": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip34": "Geçerli çekirdek voltajından voltaj sapması.",
+                        "cpuOCTip120": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip121": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip76": "Önbelleklerin çalışabileceği maksimum işlemci önbelleği çarpanını ayarlayın. Önbellek frekansı değeri, bu oranın ve referans saat frekansının çarpımıdır.",
+                        "cpuOCTip77": "Seçili olan önbellek voltaj moduna bağlı olarak işlemcinin dahili önbellek arabirimine sağlanan voltaj.",
+                        "cpuOCTip79": "Önbellek Voltajına uygulanan son voltaj sapması.",
+                        "cpuOCTip122": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip123": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip102": "İşlemci Çekirdek Voltaj Regülatörü için ICCMAX'i ayarlayın.",
+                        "cpuOCTip106": "İşlemci Önbellek ve Halka Veriyolu Voltaj Regülatörü için ICCMAX'i ayarlayın.",
+                        "cpuOCTip114": "AVX etkin durumdayken etkili etkin çekirdek oranı sınırını elde etmek için bu değeri, karşılık gelen etkin çekirdek oranı sınırından çıkarın."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "GPU Saati Sapması",
+                        "gpuOCName1": "VRAM Saati Sapması"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "GPU saati frekansına bir sapma ekleme.",
+                        "gpuOCTip1": "Bellek saati frekansına bir sapma ekleme."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Değişikliği Kaydet?",
+                    "description1": "Yanlış Hız Aşırtma ayarları geri dönüşü olmayan donanım hasarına yol açabilir. Herhangi bir sorunla karşılaşırsanız aşağıdakilerden birini yapın: ",
+                    "description2": "•  Bilgisayarı yeniden başlatıp varsayılan parametreleri geri yüklemek için güç düğmesini 8 saniye basılı tutun.",
+                    "description3": "•  Varsayılan parametreleri geri yüklemek için BIOS ayarlarında “Varsayılan Hız Aşırtmayı Geri Yükle” seçeneğini kullanın.",
+                    "save": "KAYDET",
+                    "notSave": "KAYDETME"
+                },
+                "defaultPromptPopup": {
+                    "title": "Varsayılana ayarla?",
+                    "description": "Mevcut ve önceki tüm değişiklikler kaybolacak."
+                },
+                "warningPromptPopup": {
+                    "title": "Uyarı!",
+                    "description": "Yanlış Hız Aşırtma ayarları geri dönüşü olmayan donanım hasarına yol açabilir.",
+                    "proceed": "DEVAM ET"
                 }
             }
         },
@@ -598,6 +694,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Statik",
+                "effectName2": "Spektrum",
+                "effectName3": "Gökkuşağı",
+                "effectName4": "Rastgele",
+                "effectName5": "Serin_Mavi",
+                "effectName6": "Dalga_Sağ",
+                "effectName7": "Dalga_Sol"
+            },
+            "lightingSpeed": {
+                "title": "Hız"
+            },
+            "colorPicker": {
+                "text2": "DAHA FAZLA",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Alanı Böl (Kapalı): Klavye resmini tıklayıp renkleri değiştirin",
+                "text7": "Alanı Böl (Açık): Klavye resmindeki bölümleri tıklayıp bölüm renklerini değiştirin",
+                "text8": "Geçerli efekt renk seçimini desteklemiyor"
+            },
+            "tipText": {
+                "title1": "Profiller arasında geçiş yapmak için Fn+Boşluk tuşlarını kullanın"
+            }
         }
     },
     "common": {
@@ -906,7 +1038,7 @@
                     "Good": "<b>Pil iyi durumda.</b>",
                     "Exhaustion": "Pil kapasitesi <b>düştü</b>. Lütfen yenisiyle değiştirin.",
                     "Bad": "<b>Bir pil hatası oluştu.</b> Pil doldurulamıyor/boşaltılamıyor. Pili değiştirin.",
-                    "NotDetected": "<b>Pil algılanmadı veya</b> pile takılı değil.",
+                    "NotDetected": "<b>Pil algılanmadı.</b>",
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b>",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı yeterli güç sağlayamıyor.</b>",

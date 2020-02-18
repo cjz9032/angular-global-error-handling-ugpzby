@@ -22,6 +22,12 @@
                     "rapidCharge": "Brzo punjenje"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overclock uklj.",
+                        "performance": "Performanse",
+                        "balance": "Balans",
+                        "quiet": "Tiho"
+                    },
                     "title": "Overclock CPU-a",
                     "status": {
                         "alwayson": "Uključeno",
@@ -97,6 +103,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Brze postavke"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Postavlj. termičkog načina",
+                    "thermalMode2SettingDesc": "Odaberite način rada kojim se želite koristiti.",
+                    "fnQDesc": "Možete prebaciti način rada s pomoću prečaca Fn + Q.",
+                    "perormanceTitle": "Način rada performansi",
+                    "performanceDesc": "Povećajte performanse računala uz veću brzinu ventilatora i veću potrošnju energije.",
+                    "OCDesc": "Možete odabrati uključivanje značajke Overclocking.",
+                    "ac_dcDesc": "Način rada performansi dostupan je samo kad je uključen.",
+                    "balanceTitle": "Način rada uravnoteženosti",
+                    "balanceDesc": "Automatski uravnotežite performanse i brzinu ventilatora na temelju temperature. Srednja potrošnja energije.",
+                    "quietTitle": "Tihi način rada",
+                    "quietDesc": "Budite tihi smanjujući performanse vašeg računala i brzinu ventilatora kad je to moguće. Niska potrošnja energije.",
+                    "OC": {
+                        "cpu_gpuOC": "Omogući Overclocking CPU/GPU-a u načinu rada.",
+                        "cpuOC": "Omogući Overclocking CPU-a u načinu rada.",
+                        "gpuOC": "Omogući Overclocking GPU-a u načinu rada.",
+                        "advance": "NAPREDNO",
+                        "cpu_gpuDriverLack": "Instalacija upravlj. prog. CPU/GPU-a za uporabu funkcije Overclocking.",
+                        "cpuDriverLack": "Instalacija upravlj. prog. CPU-a za uporabu funkcije Overclocking.",
+                        "gpuDriverLack": "Instalacija upravlj. prog. GPU-a za uporabu funk. Overclocking.",
+                        "goInstall": "INSTALIRAJ"
+                    },
+                    "autoSwitch": "Autom. se prebacite na performanse pri pokretanju igrica pa se vratite."	
+                },
+                "advancedOC": {
+                    "title": "Overclock Napredne postavke",
+                    "description": "Postavite dodatne prilagođene parametre kad je Overclocking uključen. To bi moglo biti rizično.",
+                    "gpuOverclock": "Overclock GPU-a",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Napon jezgre",
+                        "cpuOCName116": "1 omjer jezgre",
+                        "cpuOCName117": "2 omjer jezgre",
+                        "cpuOCName118": "3 omjer jezgre",
+                        "cpuOCName119": "4 omjer jezgre",
+                        "cpuOCName34": "Pomak napona jezgre",
+                        "cpuOCName120": "5 omjer jezgre",
+                        "cpuOCName121": "6 omjer jezgre",
+                        "cpuOCName76": "Omjer predmemorije",
+                        "cpuOCName77": "Napon predmemorije",
+                        "cpuOCName79": "Pomak napona predmemorije",
+                        "cpuOCName122": "7 omjer jezgre",
+                        "cpuOCName123": "8 omjer jezgre",
+                        "cpuOCName102": "Jezgra ICCMAX",
+                        "cpuOCName106": "Predmemorija ICCMAX",
+                        "cpuOCName114": "Pomak AVX omjera"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Postavite napon za jezgru CPU-a.",
+                        "cpuOCTip116": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip117": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip118": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip119": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip34": "Pomak napona od trenutačnog napona jezgre.",
+                        "cpuOCTip120": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip121": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip76": "Postavite maksimalan množitelj predmemorije procesora pri kojem predmemorije mogu raditi. Vrijednost frekvencije predmemorije proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip77": "Napon koji se isporučuje u interno sučelje predmemorije procesora na temelju trenutačno odabranog načina napona predmemorije.",
+                        "cpuOCTip79": "Konačni pomak napona koji se primjenjuje na napon predmemorije.",
+                        "cpuOCTip122": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip123": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip102": "Postavite ICCMAX za regulator napona jezgre procesora.",
+                        "cpuOCTip106": "Postavite ICCMAX za regulator napona predmemorije i prstenaste sabirnice procesora.",
+                        "cpuOCTip114": "Da biste dobili stvarno ograničenje omjera aktivne jezgre kad je AVX aktivan, oduzmite tu vrijednost od odgovarajućeg ograničenja omjera aktivne jezgre."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "Pomak takta GPU-a",
+                        "gpuOCName1": "Pomak takta VRAM-a"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Dodaj pomak frekvenciji takta GPU-a.",
+                        "gpuOCTip1": "Dodaj pomak frekvenciji takta memorije."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Spremi promjene?",
+                    "description1": "Nepr. postavke Overclocking-a mogu dovesti do nepovratnih ošt. hard. Ako naiđete na bilo koji problem učinite nešto od sljedećeg: ",
+                    "description2": "•  Pritisnite gumb nap. na 8 sek. za pon. pokr. i vraćanje zad. par.",
+                    "description3": "•  Za vrać. zad. par. upotr. prek. \"Vrati zad. Overclocking\" u BIOS-u.",
+                    "save": "SPREMI",
+                    "notSave": "NE SPREMAJ"
+                },
+                "defaultPromptPopup": {
+                    "title": "Postaviti na zadano?",
+                    "description": "Sve će trenutačne i prethodne promjene biti izgubljene."
+                },
+                "warningPromptPopup": {
+                    "title": "Upozorenje!",
+                    "description": "Neispravne postavke procesa Overclocking mogu dovesti do nepovratnog oštećenja hardvera.",
+                    "proceed": "NASTAVI"
                 }
             }
         },
@@ -598,6 +694,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Statičko",
+                "effectName2": "Spektar",
+                "effectName3": "Duga",
+                "effectName4": "Nasumično",
+                "effectName5": "Hladna_plava",
+                "effectName6": "Val_desno",
+                "effectName7": "Val_lijevo"
+            },
+            "lightingSpeed": {
+                "title": "Brzina"
+            },
+            "colorPicker": {
+                "text2": "DODATNO",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Podj. podr. (isklj.): klik. slj. sliku tipk. za promjenu boja",
+                "text7": "Podj. podr. (uklj.): klik. rubr. slj. slike tipk. za pr. boja rub.",
+                "text8": "Trenutačni efekt ne podržava odabir boja"
+            },
+            "tipText": {
+                "title1": "Upotrijebite Fn+Space za prebacivanje među profilima"
+            }
         }
     },
     "common": {
@@ -906,7 +1038,7 @@
                     "Good": "<b>Baterija je u dobrom stanju.</b>",
                     "Exhaustion": "Kapacitet baterije je <b>degradiran</b>. Zamijenite je novom.",
                     "Bad": "<b>Došlo je do pogreške baterije.</b> Bateriju nije moguće puniti/prazniti. Zamijenite bateriju.",
-                    "NotDetected": "<b>Baterija nije pronađena</b> ili nije priključena.",
+                    "NotDetected": "<b>Nije otkrivena baterija.</b>",
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Prilagodnik izmjeničnog napona nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Prilagodnik izmjeničnog napona ne može pružiti dovoljno energije.</b>",
