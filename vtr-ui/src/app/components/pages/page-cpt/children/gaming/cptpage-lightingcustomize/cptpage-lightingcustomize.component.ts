@@ -46,6 +46,7 @@ export class CptpageLightingcustomizeComponent implements OnInit, OnDestroy {
         (response: any) => {
 
           observer.next(response);//cpt
+          observer.complete();
 
           const cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
           if (cardContentPositionF) {
@@ -62,7 +63,8 @@ export class CptpageLightingcustomizeComponent implements OnInit, OnDestroy {
 
         },
         error => {
-          this.loggerService.error('cptpage-lightingcustomize.component.getCmsJsonResponse', 'fetchCMSContent error()-->' + error);
+          //this.loggerService.error('cptpage-lightingcustomize.component.getCmsJsonResponse', 'fetchCMSContent error()-->' + error);
+          observer.error(error);
         }
       );
 

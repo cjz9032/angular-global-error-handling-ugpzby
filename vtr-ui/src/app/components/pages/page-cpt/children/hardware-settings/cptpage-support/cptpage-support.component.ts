@@ -2,6 +2,7 @@ import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
 
@@ -9,6 +10,7 @@ import { SupportContentStatus } from 'src/app/enums/support-content-status.enum'
 import { Subject, Observable, empty } from 'rxjs';
 import { isEmpty } from 'rxjs/operators';
 import { isNull, isUndefined } from 'util';
+
 
 declare let JSONEditor: any;
 declare let ClipboardJS: any;
@@ -143,6 +145,7 @@ export class CptpageSupportComponent implements OnInit, OnDestroy {
         (response: any) => {
 
           observer.next(response);//cpt
+          observer.complete();
 
           if (response && response.length > 0) {
             response = response.filter(r => r.Page === 'support');
@@ -167,6 +170,7 @@ export class CptpageSupportComponent implements OnInit, OnDestroy {
 
         },
         error => {
+          observer.error(error);
           this.getArticlesTimeout = setTimeout(() => { this.getCmsJsonResponse(); }, 5000);
         }
       );
@@ -190,6 +194,7 @@ export class CptpageSupportComponent implements OnInit, OnDestroy {
         }
       },
       error => {
+        console.log('fetchCMSArticleCategories error', error);
         setTimeout(() => { this.fetchCMSArticleCategory(); }, 5000);
       }
     );
@@ -245,6 +250,7 @@ export class CptpageSupportComponent implements OnInit, OnDestroy {
         }
       },
       error => {
+        console.log('fetchCMSArticles error', error);
         if (lang.toLowerCase() !== 'en') {
           this.getArticlesTimeout = setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
         }
@@ -254,6 +260,11 @@ export class CptpageSupportComponent implements OnInit, OnDestroy {
 
   }
 
-  ngOnDestroy() { clearTimeout(this.getArticlesTimeout); }
+  ngOnDestroy() { 
+    clearTimeout(this.getArticlesTimeout); 
+    
+    // when app destroyed then remove ServerSwitch values
+    window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
+  }
 
 }

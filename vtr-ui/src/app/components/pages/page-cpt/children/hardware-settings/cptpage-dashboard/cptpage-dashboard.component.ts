@@ -94,16 +94,19 @@ export class CptpageDashboardComponent implements OnInit, OnDestroy {
       this.cmsService.fetchCMSContent(queryOptions).subscribe(
         (response: any) => {
 
-          observer.next(response);//cpt
+			observer.next(response);//cpt
+			observer.complete();
 
-          this.getCMSHeroBannerItems(response);
-					this.getCMSCardContentB(response);
-					this.getCMSCardContentC(response);
-					this.getCMSCardContentD(response);
-					this.getCMSCardContentE(response);
-					this.getCMSCardContentF(response);
+          	this.getCMSHeroBannerItems(response);
+			this.getCMSCardContentB(response);
+			this.getCMSCardContentC(response);
+			this.getCMSCardContentD(response);
+			this.getCMSCardContentE(response);
+			this.getCMSCardContentF(response);
         },
-        error => {}
+        error => {
+			observer.error(error);
+        }
       );
 
     });

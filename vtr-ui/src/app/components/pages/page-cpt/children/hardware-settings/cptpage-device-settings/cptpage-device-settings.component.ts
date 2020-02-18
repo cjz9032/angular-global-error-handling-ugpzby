@@ -8,6 +8,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subject, Observable, empty } from 'rxjs';
 import { isEmpty } from 'rxjs/operators';
 import { isNull, isUndefined } from 'util';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 @Component({
   selector: 'vtr-cptpage-device-settings',
   templateUrl: './cptpage-device-settings.component.html',
@@ -42,6 +43,7 @@ export class CptpageDeviceSettingsComponent implements OnInit, OnDestroy {
         (response: any) => {
 
           observer.next(response);//cpt
+          observer.complete();
 
           const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
           if (cardContentPositionA) {
@@ -51,11 +53,13 @@ export class CptpageDeviceSettingsComponent implements OnInit, OnDestroy {
             }
           }
         },
-        error => {}
+        error => {
+          observer.error(error);
+        }
       );
     });
   }
 
-  ngOnDestroy() { }
+  ngOnDestroy() {}
 
 }
