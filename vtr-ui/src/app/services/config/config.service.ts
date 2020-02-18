@@ -315,6 +315,8 @@ export class ConfigService {
 	async smartAssistFilter(machineType: number, items) {
 		if (machineType === 0 || machineType === 1) {
 			await this.showSmartAssist(items);
+		} else {
+			this.removeSmartAssistMenu(items);
 		}
 	}
 
