@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.92](https://bitbucket.tc.lenovo.com///compare/v1.2.91...v1.2.92) (2020-02-18)
+
+
+### Bug Fixes
+
+* **menu:** wait smart assist filter if machineType cached ([153bcdc](https://bitbucket.tc.lenovo.com///commit/153bcdcac7890fe523bbfa760244d199e8b50b49))
+
 ### [1.2.91](https://bitbucket.tc.lenovo.com///compare/v1.2.90...v1.2.91) (2020-02-18)
 
 ### [1.2.90](https://bitbucket.tc.lenovo.com///compare/v1.2.89...v1.2.90) (2020-02-18)
