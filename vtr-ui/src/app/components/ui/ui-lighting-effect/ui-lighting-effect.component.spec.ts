@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 
 import { UiLightingEffectComponent } from './ui-lighting-effect.component';
+import { HttpClient } from '@angular/common/http';
 
 describe('UiLightingEffectComponent', () => {
 	let component: UiLightingEffectComponent;
@@ -16,7 +17,7 @@ describe('UiLightingEffectComponent', () => {
 			declarations: [UiLightingEffectComponent,
 				mockPipe({ name: 'translate' }),
 				mockPipe({ name: 'sanitize' })],
-			providers: [{ provide: DeviceService, useValue: deviceServiceMock }],
+			providers: [{ provide: HttpClient }, { provide: DeviceService, useValue: deviceServiceMock }],
 			schemas: [NO_ERRORS_SCHEMA]
 		}).compileComponents();
 		fixture = TestBed.createComponent(UiLightingEffectComponent);

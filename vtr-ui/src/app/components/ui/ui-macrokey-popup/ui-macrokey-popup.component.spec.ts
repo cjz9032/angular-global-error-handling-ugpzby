@@ -25,8 +25,9 @@ describe('UiMacrokeyPopupComponent', () => {
 			bodyText: 'this is the test body',
 			btnConfirm: 'Confirm'
 		};
-		let html_x = fixture.debugElement.nativeElement;
-		html_x.classList.add("vtr-app");
+		// tslint:disable-next-line: variable-name
+		const html_x = fixture.debugElement.nativeElement;
+		html_x.classList.add('vtr-app');
 		fixture.detectChanges();
 	});
 
