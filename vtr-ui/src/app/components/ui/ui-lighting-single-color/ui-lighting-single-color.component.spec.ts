@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { UiLightingSingleColorComponent } from './ui-lighting-single-color.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
@@ -12,7 +13,8 @@ describe('UiLightingSingleColorComponent', () => {
 			declarations: [UiLightingSingleColorComponent,
 				mockPipe({ name: 'translate' }),
 				mockPipe({ name: 'sanitize' })],
-				schemas: [NO_ERRORS_SCHEMA]
+				schemas: [NO_ERRORS_SCHEMA],
+				imports: [HttpClientTestingModule]
 		}).compileComponents();
 		fixture = TestBed.createComponent(UiLightingSingleColorComponent);
 		component = fixture.componentInstance;

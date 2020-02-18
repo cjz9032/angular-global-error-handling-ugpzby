@@ -1,5 +1,6 @@
 import { DeviceService } from 'src/app/services/device/device.service';
 import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 
 import { UiLightingEffectComponent } from './ui-lighting-effect.component';
@@ -17,7 +18,8 @@ describe('UiLightingEffectComponent', () => {
 				mockPipe({ name: 'translate' }),
 				mockPipe({ name: 'sanitize' })],
 			providers: [{ provide: DeviceService, useValue: deviceServiceMock }],
-			schemas: [NO_ERRORS_SCHEMA]
+			schemas: [NO_ERRORS_SCHEMA],
+			imports: [HttpClientTestingModule]
 		}).compileComponents();
 		fixture = TestBed.createComponent(UiLightingEffectComponent);
 		component = fixture.componentInstance;
