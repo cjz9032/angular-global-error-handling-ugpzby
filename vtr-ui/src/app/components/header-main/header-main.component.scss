@@ -14,25 +14,21 @@
 		position: absolute;
 	}
 
-	.vtr-header-main-img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		position: absolute;
-	}
-
-	.vtr-header-main-img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		position: absolute;
-	}
-
-	.vtr-header-main-img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		position: absolute;
+	&.dcc {
+		background: linear-gradient(to right, #185d73 0%, #1e7390 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#185d73", endColorstr="#1e7390", GradientType=1);
+		&::before {
+			content: "";
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			background: url(/assets/images/dcc/top-image-dcc.jpg) center center no-repeat;
+			background-size: cover;
+			opacity: 0.15;
+		}
 	}
 
 	.vtr-header-main-inner {

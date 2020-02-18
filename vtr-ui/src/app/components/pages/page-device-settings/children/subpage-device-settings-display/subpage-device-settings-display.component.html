@@ -25,24 +25,6 @@
 						(toggle)="onCardCollapse($event)"
 						[collapseLinkId]="'device-settings-display'">
 						<ul class="list-group list-group-flush">
-							<li class="pt-3" *ngIf="showECMReset">
-								<vtr-ui-row-switch
-									[title]="'device.deviceSettings.displayCamera.display.displayColorTemperature.title' | translate"
-									componentName="Display color temperature"
-									[caption]="'device.deviceSettings.displayCamera.display.displayColorTemperature.description' | translate"
-									[isSwitchVisible]="false"
-									[leftIcon]="['fal', 'eye']"
-									[showChildContent]="true"
-									[theme]="'white'"
-									[switchId]="'day-time-color-temp'">
-									<div class="displayColorTemperatureLink">
-										<span>{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.click' | translate}}</span>&nbsp;
-										<a id="goto_nightlight_link" href="javascript:void()" attr.aria-label="goto_nightlight_link" (click)="launchProtocol('ms-settings:nightlight')">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.here' | translate}}</a>&nbsp;
-										<span>{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.rest' | translate}}</span>
-									</div>
-								</vtr-ui-row-switch>
-							</li>
-
 							<li class="pt-3"
 								*ngIf="showECMReset">
 								<vtr-ui-row-switch

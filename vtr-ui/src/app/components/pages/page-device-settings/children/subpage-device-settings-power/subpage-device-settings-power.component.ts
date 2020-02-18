@@ -222,7 +222,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	initAirplanePowerFromCache() {
+	initBatteryChargeThresholdFromCache() {
 		try {
 			this.chargeThresholdCache = this.commonService.getLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, undefined);
 			if (this.chargeThresholdCache) {
@@ -233,7 +233,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	initAirplanePowerFromCache() {
+	initGaugeResetInfoFromCache() {
 		try {
 			const gaugeResetCapability = this.commonService.getLocalStorageValue(LocalStorageKey.GaugeResetCapability, undefined);
 			this.gaugeResetCapability = gaugeResetCapability ? true : false;
@@ -320,7 +320,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			this.logger.info('initEnergyStarFromCache', error);
 		}
-		this.checkMenuItemsEmpty();
 	}
 
 	// ************************** End Getting Cached Data ****************************

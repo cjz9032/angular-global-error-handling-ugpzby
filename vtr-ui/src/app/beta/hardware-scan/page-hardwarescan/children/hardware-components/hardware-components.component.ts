@@ -711,12 +711,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.setIsScanDone(false);
 		this.isScanDone = true;
 	}
-	
-
-
-
-
-
 
 
 	public onViewResultsRecover() {

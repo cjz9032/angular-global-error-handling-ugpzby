@@ -32,7 +32,6 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 			this.getAllStatuses();
 		} else {
 			this.topRowKeyObj = new TopRowFunctionsCapability();
-			this.getFunctionCapabilities();
 		}
 
 		this.getFunctionCapabilities();

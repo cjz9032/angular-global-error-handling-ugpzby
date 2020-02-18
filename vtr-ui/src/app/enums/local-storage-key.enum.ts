@@ -207,7 +207,7 @@ export enum LocalStorageKey {
 	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability',
 	VOIPCapability = '[LocalStorageKey] VOIPCapability',
 	DashboardCameraPrivacy = '[LocalStorageKey] DashboardCameraPrivacy',
-	DashboardMicrophoneStatus = '[LocalStorageKey] DashboardMicrophoneStatus',
+	// DashboardMicrophoneStatus = '[LocalStorageKey] DashboardMicrophoneStatus',
 	// DashboardEyeCareMode = '[LocalStorageKey] DashboardEyeCareMode',
 
 	// Auto close storage key

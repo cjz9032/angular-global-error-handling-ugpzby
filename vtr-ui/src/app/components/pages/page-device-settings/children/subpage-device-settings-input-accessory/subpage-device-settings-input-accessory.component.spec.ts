@@ -664,16 +664,3 @@ describe("SubpageDeviceSettingsInputAccessoryComponent", () => {
 		expect(component.isKbdBacklightAvailable).toEqual(true)
 	}));
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			// public transform(query: string, ...args: any[]): any {
-			// 	return query;
-			// }
-		}
-	);
-}

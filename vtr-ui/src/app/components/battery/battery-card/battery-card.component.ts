@@ -349,21 +349,22 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
 					this.param = { value: parseFloat(percentLimit.toFixed(1)) };
 				}
-			}
-			if (this.batteryHealth === 4) {
-				if (this.batteryInfo.length > 1 && isThinkPad) {
-					if (this.batteryInfo[1].batteryHealth === 4) {
-						this.batteryIndicator.batteryNotDetected = true;
-						healthCondition = 4;
+
+				if (this.batteryHealth === 4) {
+					if (this.batteryInfo.length > 1) {
+						if (this.batteryInfo[1].batteryHealth === 4) {
+							this.batteryIndicator.batteryNotDetected = true;
+							healthCondition = 4;
+						} else {
+							this.batteryIndicator.batteryNotDetected = false;
+							healthCondition = BatteryConditionsEnum.PrimaryNotDetected;
+						}
 					} else {
-						this.batteryIndicator.batteryNotDetected = false;
-						healthCondition = BatteryConditionsEnum.PrimaryNotDetected;
+						this.batteryIndicator.batteryNotDetected = true;
 					}
 				} else {
 					this.batteryIndicator.batteryNotDetected = false;
 				}
-			} else {
-				this.batteryIndicator.batteryNotDetected = false;
 			}
 			this.isUnsupportedBattery = false;
 			this.batteryInfo[0].batteryCondition.forEach((condition) => {

@@ -141,10 +141,6 @@
 		padding: 1rem 0;
 		font-size: 1.3rem;
 		font-weight: $weight_bold;
-
-		@media #{$mediaquery_X46} {
-			font-size: 1.4rem;
-		}
 	}
 
 	span:hover {

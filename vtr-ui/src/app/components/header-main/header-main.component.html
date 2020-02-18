@@ -7,7 +7,7 @@
 			metricsItem="back"
 			(click)="goBack()"
 			id="{{backId}}"
-			href="javascript:void(0);"
+			href="javascript:void();"
 			[attr.aria-label]="back"
 			tabindex="1"
 			*ngIf="back && back.length > 0">
@@ -17,7 +17,6 @@
 			</span>
 		</a>
 		<h1 class="title"
-			*ngIf="title"
 			id="{{textId}}-header-title"
 			attr.aria-label="{{title}}"
 			role="text"

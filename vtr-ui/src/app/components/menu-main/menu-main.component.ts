@@ -417,7 +417,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	private onNotification(notification: AppNotification) {
 		if (notification) {
-			// this.logger.info(`MenuMainComponent.onNotification: ${notification.type}`, this.items);
 			switch (notification.type) {
 				case 'MachineInfo':
 					this.machineFamilyName = notification.payload.family;

@@ -27,7 +27,7 @@ describe('ModalSmartStandByComponent', () => {
 			activities: [
 				{
 					hour: 1,
-					usage: [ 20, 30, 10 ]
+					usage: [20, 30, 10]
 				}
 			]
 		}
@@ -67,7 +67,7 @@ describe('ModalSmartStandByComponent', () => {
 			return { fixture, component, powerService, httpTestingController, activeModal };
 		}
 
-		it('should create the app', () => {
+		it('should create the app', (() => {
 			const { component } = setup();
 			expect(component).toBeTruthy();
 		}));
@@ -80,24 +80,21 @@ describe('ModalSmartStandByComponent', () => {
 			component['getActivitiesData']();
 			fixture.detectChanges();
 
-		// it('getActiviesData calling powerService', async(() => {
-		// 	const { fixture, component, powerService } = setup();
-		// 	spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
-		// 	spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
+			expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
+			expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
+		}));
 
-		// 	component.getActiviesData();
-		// 	fixture.detectChanges();
+		it('getSmartStandbyActiveHours calling powerService', async(() => {
+			const { fixture, component, powerService } = setup();
+			spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
+			spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
 
-		// 	expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
-		// 	expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
-		// }));
+			component.getSmartStandbyActiveHours();
+			fixture.detectChanges();
 
-		it(
-			'getSmartStandbyActiveHours calling powerService',
-			async(() => {
-				const { fixture, component, powerService } = setup();
-				spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
-				spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
+			expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
+			expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
+		}));
 
 		// Testing exceptions
 		it('Testing exception', async(() => {
@@ -122,10 +119,6 @@ describe('ModalSmartStandByComponent', () => {
 			expect(spy).toHaveBeenCalled()
 		})
 
-				expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
-				expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
-			})
-		);
 
 		// testing http.get
 		// it('should call getActivities', (() => {

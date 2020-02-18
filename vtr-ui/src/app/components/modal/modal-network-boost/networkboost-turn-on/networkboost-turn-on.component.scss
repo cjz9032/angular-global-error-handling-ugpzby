@@ -20,7 +20,6 @@ ui-popover-turn-on {
 	}
 	@media #{$breakpoint_sm} {
 		width: 90%;
-		padding: 3rem 4rem;
 	}
 	@media #{$black-on-white}{
 		border:0.1rem solid $dark;
