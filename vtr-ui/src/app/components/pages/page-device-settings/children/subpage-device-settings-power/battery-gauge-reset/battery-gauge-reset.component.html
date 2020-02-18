@@ -84,7 +84,7 @@
 											role="text"
 											*ngIf="is12HrsFormat">
 											{{battery.startTime | date : 'M/d/yyyy h:mm:ss '}}
-											{{startTimeAbbreviated | translate}}
+											{{startTimeAbbreviated[i] | translate}}
 										</div>
 										<div class="col-8 label-value"
 											role="text"
@@ -111,7 +111,7 @@
 											role="text"
 											*ngIf="is12HrsFormat">
 											{{battery.lastResetTime | date : 'M/d/yyyy h:mm:ss '}}
-											{{ lastResetTimeAbbreviated | translate}}
+											{{ lastResetTimeAbbreviated[i] | translate}}
 											<br *ngIf="battery.lastResetTime">
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.resetLog.' + battery.resetErrorLog | translate}}
 										</div>
@@ -138,13 +138,19 @@
 
 								<div class="col-lg-8 col-md-8 col-sm-12 battery-gauge-btn"
 									[class.stop-btn]="battery.isResetRunning"
-									[class.disabled-btn]="gaugeResetBtnStatus[i] || !batteryService.isAcAttached">
+									[class.disabled-btn]="(batteryService.isGaugeResetRunning &&
+										(batteryService.gaugeResetInfo.length > 1 && !battery.isResetRunning)) ||
+										!batteryService.isAcAttached">
 									<vtr-ui-button metricsItem="Battery.Gauge.RESET"
 										metricsParent="Page.Settings"
 										metricsEvent="FeatureClick"
-										[isFullWidth]="true"
-										[disabled]="gaugeResetBtnStatus[i] || !batteryService.isAcAttached"
-										[tabIndex]="(gaugeResetBtnStatus[i] || !batteryService.isAcAttached)?-1:0"
+										[isRegular]="true"
+										[disabled]="(batteryService.isGaugeResetRunning &&
+											(batteryService.gaugeResetInfo.length > 1 && !battery.isResetRunning)) ||
+											!batteryService.isAcAttached"
+										[tabIndex]="((batteryService.isGaugeResetRunning &&
+											(batteryService.gaugeResetInfo.length > 1 && !battery.isResetRunning)) ||
+											!batteryService.isAcAttached)?-1:0"
 										id="myDevice-settings-battery-gauge-reset-stop-btn"
 										[linkId]="'myDevice-settings-battery-gauge-reset-stop-btn'"
 										[label]="battery.isResetRunning? ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.stop'|translate): ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.reset' | translate)"
