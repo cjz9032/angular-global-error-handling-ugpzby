@@ -15,7 +15,7 @@ import { UPEService } from './../../../services/upe/upe.service';
 import { MacrokeyService } from './../../../services/gaming/macrokey/macrokey.service';
 import { VantageShellService } from './../../../services/vantage-shell/vantage-shell.service';
 import { DashboardService } from './../../../services/dashboard/dashboard.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { DevService } from 'src/app/services/dev/dev.service';
@@ -168,7 +168,7 @@ describe('PageMacrokeyComponent', () => {
 				mockPipe({ name: 'sanitize' })],
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslationModule, HttpClientModule, RouterTestingModule],
-			providers: [TranslateStore, DevService, CommsService]
+			providers: [TranslateStore, DevService, CommsService, HttpClient]
 		})
 			.compileComponents();
 	}));
