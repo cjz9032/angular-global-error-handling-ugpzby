@@ -5,13 +5,17 @@
 		margin: 3.5rem 0;
 		box-sizing: unset;
 		.list-group-item {
-			background: $shade_extralight;
+			background: $grey_lighter;
 			padding: 1.5rem 1rem 1.5rem 0.2rem;
-
+			border: 0.1rem solid $note_border;
+			&:last-child {
+				border-top: none;
+			}
 			.button-box {
 				padding: 0rem;
 				margin: 0rem;
 				display: inline-block;
+
 
 				.btn-round-sm {
 					border-radius: 0.5rem;
@@ -21,12 +25,16 @@
 					border: 0rem;
 					color: $stop_light;
 					font-weight: $weight_light;
+					line-height: 1px;
 				}
 			}
 			.custom-control {
 				display: inline-block;
 				.custom-control-label {
 					padding-left: 1.2rem;
+					@media #{$breakpoint_sm} {
+						padding-bottom: 1rem;
+					}
 
 					// rounded square-box background
 					&::before {
@@ -62,7 +70,8 @@
 
 			.fail-reason {
 				padding-left: 0rem;
-				font-size: 1.5rem;
+				font-size: 1.6rem;
+				color: #2f3447;
 			}
 
 			.question {
@@ -110,10 +119,10 @@
 		}
 	}
 
-	.tooltip-container {
-		li {
-			padding: 1rem;
-			height: 4rem;
-		}
-	}
+	// .tooltip-container {
+	// 	li {
+	// 		padding: 1rem;
+	// 		height: 4rem;
+	// 	}
+	// }
 }

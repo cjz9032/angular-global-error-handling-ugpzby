@@ -66,6 +66,12 @@
 					z-index: 1;
 					padding: 2rem 2.5rem;
 					height: 100%;
+					@media #{$black-on-white} {
+						border: 0.1rem solid  $dark ;
+					}
+					@media #{$white-on-black} {
+						border: 0.1rem solid $dark ;
+					}
 
 					.title {
 						color: $light;
@@ -230,11 +236,11 @@
 					height: 100%;
 					@media #{$black-on-white} {
 						border: 0.1rem solid;
-						border-radius: 2rem;
+						border-radius: 0.8rem;
 					}
 					@media #{$white-on-black} {
 						border: 0.1rem solid;
-						border-radius: 2rem;
+						border-radius: 0.8rem;
 					}
 
 					@media #{$mediaquery_X1} {
@@ -301,6 +307,15 @@
 	}
 
 	&.card-highlight {
+		@media #{$breakpoint_xl} {
+			height: 22.3rem !important;
+		}
+		@media #{$breakpoint_lg} {
+			height: 17.6rem !important;
+		}
+		@media #{$breakpoint_sm} {
+			height: 24.5rem !important;
+		}
 		.content {
 			position: relative;
 			z-index: 1;
@@ -313,7 +328,7 @@
 				text-decoration: none;
 				cursor: pointer;
 				width: 100%;
-				height: 100%;
+				height: 100% !important;
 				display: block;
 				border-radius: $border_radius;
 				overflow: hidden;
@@ -326,7 +341,7 @@
 					// justify-content: flex-end;
 					// align-items: center;
 
-					.title {
+				.title {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
@@ -345,6 +360,7 @@
 	}
 
 	&.card-article {
+		height: 32.5rem !important;
 		.row {
 			max-width: 100%;
 		}
@@ -380,6 +396,12 @@
 				width: 100%;
 				height: 60%;
 				cursor: pointer;
+				@media #{$black-on-white} {
+					border: 0.1rem solid ;
+				}
+				@media #{$white-on-black} {
+					border: 0.1rem solid ;
+				}
 			}
 
 			.content {
@@ -394,9 +416,12 @@
 					font-weight: $weight_light;
 					text-decoration: none;
 					cursor: pointer;
-
+					height: 4.5rem !important;
 					&:hover {
 						text-decoration: underline;
+					}
+					@media #{$breakpoint_md}{
+						margin-bottom: -1rem;
 					}
 				}
 
@@ -408,12 +433,16 @@
 					cursor: pointer;
 					text-transform: uppercase;
 					color: $main;
-					@media #{$mediaquery_xl} {
-						font-size: $fontsize_xs2;
-					}
-					@media #{$mediaquery_md} {
-						font-size: $fontsize_xs2;
-					}
+					line-height: 2rem !important;
+					// @media #{$mediaquery_xl} {
+					// 	font-size: 1.1rem;
+					// }
+					// @media #{$mediaquery_lg} {
+					// 	font-size: $fontsize_xs2;
+					// }
+					// @media #{$mediaquery_md} {
+					// 	font-size: $fontsize_xs2;
+					// }
 
 					&:hover {
 						.link-label {
@@ -494,7 +523,6 @@
 				font-size: $fontsize_xs;
 				cursor: pointer;
 				text-transform: uppercase;
-
 				a {
 					color: $light;
 					text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
@@ -601,29 +629,4 @@
 .spinner-border {
 	height: 50px;
 	width: 50px;
-}
-
-.offline-icon {
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: 2;
-	width: 100%;
-	height: 100%;
-	font-size: 8rem;
-	background: rgba(25, 28, 40, 0.75);
-	border-radius: $border_radius;
-	color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	@media #{$mediaquery_X41} {
-		font-size: 12rem;
-	}
-
-	@media #{$mediaquery_X42} {
-		font-size: 6rem;
-	}
-
 }

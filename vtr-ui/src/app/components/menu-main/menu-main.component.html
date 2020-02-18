@@ -301,7 +301,7 @@
 							</a>
 							<a ngbDropdownItem
 								*ngIf="appsForYouService.showAdobeMenu()"
-								class="dropdown-item link link-lma"
+								class="dropdown-item link link-adobe"
 								tabindex="1"
 								vtrMetrics
 								id="menu-main-lnk-open-adobe"
@@ -319,8 +319,8 @@
 									*ngIf="!appsForYouService.UnreadMessageCount.adobeMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem
-								*ngIf="appsForYouService.showDccMenu()"
-								class="dropdown-item link link-lma"
+								*ngIf="commonService.isOnline && appsForYouService.showDccMenu()"
+								class="dropdown-item link link-dcc"
 								tabindex="1"
 								vtrMetrics
 								id="menu-main-lnk-open-dcc"
@@ -329,6 +329,7 @@
 								[metricsParent]="item.metricsParent"
 								metricsItem="DccRedemptionButton"
 								(click)="onMenuItemClick(item, $event)"
+								(keydown.enter)="onMenuItemClick(item, $event)"
 								href="javascript:void(0)">
 								{{ 'dcc.menuText.lenovoDigitalOffer' | translate }}
 								<span class="unread-tag"
@@ -397,7 +398,8 @@
 								class="dropdown-item link"
 								href="javascript:void(0)"
 								(click)="onLogout(); onMenuItemClick(item)"
-								(keydown.enter)="onLogout(); onMenuItemClick(item)">{{'lenovoId.logout' | translate}}</a>
+								[class.disabled]="isLoggingOut"
+								(keydown.enter)="onLogout(); onMenuItemClick(item)">{{ isLoggingOut ? ('lenovoId.loggingOut' | translate) : ('lenovoId.logout' | translate) }}</a>
 						</div>
 					</li>
 					<div *ngIf="item.id==='home-security'"

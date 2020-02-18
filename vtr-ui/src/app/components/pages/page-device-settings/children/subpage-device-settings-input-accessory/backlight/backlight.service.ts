@@ -17,7 +17,7 @@ export class BacklightService {
 	constructor(
 		private shellService: VantageShellService
 	) {
-	//	this.backlightFeature = this.shellService.getBacklight();
+		this.backlightFeature = this.shellService.getBacklight();
 	}
 
 	get backlight(): Observable<Array<BacklightStatus | BacklightLevel>> {
@@ -42,16 +42,20 @@ export class BacklightService {
 		this.cache$ = null;
 	}
 
+	clearCache() {
+		this.cache$ = null;
+	}
+
 	setBacklight(mode: BacklightMode) {
 		return from(this.backlightFeature.setBacklight({
-			settingList: {
+			settingList: [{
 				setting: [
 					{
 						key: 'KeyboardBacklightStatus',
 						value: mode.value
 					}
 				]
-			}
+			}]
 		}));
 	}
 }

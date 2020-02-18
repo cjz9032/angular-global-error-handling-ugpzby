@@ -8,9 +8,9 @@ import { TranslateService } from '@ngx-translate/core';
 	styleUrls: ['./widget-device-update.component.scss']
 })
 export class WidgetDeviceUpdateComponent implements OnInit {
-	@Input() title: string = this.title || '';
-	@Input() subTitle1: string = this.subTitle1 || '';
-	@Input() subTitle2: string = this.subTitle2 || '';
+	@Input() title: string = '';
+	@Input() subTitle1: string = '';
+	@Input() subTitle2: string = '';
 	@Input() buttonText = '';
 	@Input() installationHistory: any[];
 	@Input() percent = 0;
@@ -38,6 +38,7 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 
 	onCheckForUpdates() {
 		this.checkForUpdate.emit();
+		document.getElementById('system-update-back-btn').focus();
 	}
 
 	cancelUpdates() {

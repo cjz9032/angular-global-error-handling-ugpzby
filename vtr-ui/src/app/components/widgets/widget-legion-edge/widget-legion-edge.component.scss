@@ -2,7 +2,7 @@
 
 .vtr-widget-legion-edge {
 	border-radius: $border_radius;
-	background: $dark_cell;
+	background: $gaming_darkest;
 	box-shadow: $drop_shadow_gaming;
 	padding: 2.2rem;
 	.gaming-header-image {
@@ -34,7 +34,49 @@
 			}
 		}
 	}
-	.legionEdge-list-items {
+    .legionEdge-list-items {
+        .item {
+            background: transparent;
+            padding: 2rem 0rem;
+			font-size: 1.8rem;
+			line-height: 2rem;
+			color: $white100;
+            border: none;
+            border-bottom: 1px solid $screen_dark_15;
+            position: relative;
+            &:first-child {
+                height: 8rem;
+                cursor: pointer;
+            }
+            &:first-child div {
+                cursor: pointer;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+            .item-left {
+                float: left;
+                .title {
+                    font-weight: bold;
+                }
+                .mode-status {
+                    font-size: 1.4rem;
+					line-height: 2rem;
+					color: $shade_light;
+                }
+            }
+            .item-right {
+                height: 4rem;
+                width: 4rem;
+                float: right;
+                text-align: center;
+                color: $gaming_grey_lightest;
+                .icon {
+                    margin-top: .5rem;
+                    opacity: 0.5;
+				};
+			}
+		}
 		&::ng-deep .vtr-widget-device-update-settings {
 			background-color: transparent;
 			padding: 0;

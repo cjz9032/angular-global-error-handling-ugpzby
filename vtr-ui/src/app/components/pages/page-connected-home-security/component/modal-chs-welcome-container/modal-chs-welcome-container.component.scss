@@ -9,17 +9,18 @@
             }
         }
         .page-title {
-            font-size: 2.5rem;
+			font-size: $fontsize_lg;
+			font-weight: bold;
             color: $dark;
 			margin-bottom: 2rem;
 		}
 		.page-subtitle {
-			font-size: 1.8rem;
+			font-size: $fontsize_xs;
 			font-weight: bold;
 			color: $dark;
 		}
         .page-desc {
-            font-size: 1.8rem;
+            font-size: $fontsize_xs;
 			color: $shade_blue;
 			font-weight: $weight_light;
         }
@@ -28,7 +29,7 @@
             img {
                 height: 7rem;
             }
-        }
+		}
 
 	}
 	.page-one {
@@ -41,19 +42,21 @@
 	}
     .page-two {
 		border-bottom: none;
-		margin: 4rem;
+		margin: 2rem;
         color: $dark;
         .description {
-            font-size: 2.5rem;
+			font-size: $fontsize_lg;
+			font-weight: $weight_regular;
             letter-spacing: 0;
 		}
 		.sub-desc {
-			font-size: 2rem;
-			margin-bottom: 6rem;
+			font-size: 1.5rem;
+			font-weight: $weight_regular;
+			margin-bottom: 4rem;
 		}
         .modal-button {
-			width: 28rem;
-            font-size: 1.8rem;
+			width: 20rem;
+            font-size: $fontsize_xs;
 			padding: 1rem;
 			text-align: center;
 			border: none;
@@ -62,6 +65,7 @@
 		.allow-btn {
 			background-color: $blue_lightest;
 			color: $light;
+			margin-right: 2rem;
 		}
 		.cancel-btn {
 			background-color: $gray;
@@ -77,5 +81,27 @@
 				}
 			}
 		}
-    }
+	}
+
+	@media #{$breakpoint_sm} {
+		.page-one {
+			.page-img {
+				margin-bottom: 1.5rem !important;
+			}
+
+			.page-title {
+				margin-bottom: 2rem !important;
+			}
+		}
+
+		.page-two {
+			.sub-desc {
+				margin-bottom: 3rem;
+			}
+
+			.modal-button {
+				width: 18rem;
+			}
+		}
+	}
 }

@@ -71,7 +71,6 @@ export class LoggerService {
 		}
 	}
 
-
 	/**
 	 * add console log with ISO date time stamp
 	 * @param message message to log

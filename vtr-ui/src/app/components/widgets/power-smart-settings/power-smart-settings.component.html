@@ -1,8 +1,8 @@
 <div>
 	<div *ngIf="showIC===4 || showIC===3 || showIC===14 || showIC===13">
-		<div class="row py-5 smartsettings-card"
+		<div class="row pt-5 smart-settings-card"
 			id="smartSettings">
-			<div class="col-12 mx-auto ">
+			<div class="col mx-auto ">
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
@@ -11,6 +11,7 @@
 					<ul class="list-group list-group-flush">
 						<li class="">
 							<vtr-ui-row-switch
+								[leftIcon]="['icomoon','icomoon-ic']"
 								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | titlecase"
 								[caption]="captionText"
 								[isSwitchVisible]="showIntelligentCoolingToggle"
@@ -20,7 +21,7 @@
 								[switchId]="'ds-power-powerSmartSettings'"
 								[isLastChild]='true'
 								(toggleOnOff)="onIntelligentCoolingToggle($event)">
-								<div class="alignment">
+								<div class="alignment pl-5">
 									<div class="well"
 										*ngIf="showIC===3 && !apsStatus">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }}
@@ -39,7 +40,7 @@
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
 											[value]="'performance'"
 											[checked]="radioPerformance"
-											(change)="changePerformance($event)"
+											(optionChange)="changePerformance($event)"
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox [radioId]="'radioICQuiteCool'"
@@ -48,7 +49,7 @@
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' + showIC | translate"
 											[value]="showIC==14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x' "
 											[checked]="radioQuietCool"
-											(change)="changeQuietCool($event)"
+											(optionChange)="changeQuietCool($event)"
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14"
@@ -58,7 +59,7 @@
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
 											[value]="'performance'"
 											[checked]="radioPerformance"
-											(change)="changePerformance($event)"
+											(optionChange)="changePerformance($event)"
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14"
@@ -68,7 +69,7 @@
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.batterySaving' | translate"
 											[value]="'LE-Battery-Life-mode2x'"
 											[checked]="radioBatterySaving"
-											(change)="changeBatterySaving($event)"
+											(optionChange)="changeBatterySaving($event)"
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
@@ -85,16 +86,19 @@
 	</div>
 
 	<div *ngIf="showIC===5">
-		<div class="row py-5 smartsettings-card"
+		<div class="row pt-5 smart-settings-card"
 			id="smartSettings">
-			<div class="col-12 mx-auto ">
+			<div class="col mx-auto ">
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
 					<div class="row">
-						<div class="col-12 text-wrap subtitle">
+						<div class="col-auto left-icon">
+							<span [ngClass]="'icomoon icomoon-ic'"></span>
+						</div>
+						<div class="col text-wrap subtitle">
 							<h3 tabindex="0"
 								role="text">
 								<!-- Intelligent Cooling  -->
@@ -160,16 +164,19 @@
 		</div>
 	</div>
 	<div *ngIf="showIC===6">
-		<div class="row py-5 smartsettings-card"
+		<div class="row py-5 smart-settings-card"
 			id="smartSettings">
-			<div class="col-12 mx-auto ">
+			<div class="col mx-auto ">
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
 					<div class="row">
-						<div class="col-12 text-wrap subtitle">
+						<div class="col-auto left-icon">
+							<span [ngClass]="'icomoon icomoon-ic'"></span>
+						</div>
+						<div class="col text-wrap subtitle">
 							<h3 tabindex="0"
 								role="text">
 								<!-- Intelligent Cooling  -->

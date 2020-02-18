@@ -9,13 +9,13 @@
 
 		.heading1 {
 			color: $main_darker;
-			font-size: 3rem;
+			font-size: $fontsize_xl;
 			text-transform: capitalize;
 		}
 
 		.heading2 {
 			color: $main;
-			font-size: 3rem;
+			font-size: $fontsize_xl;
 
 			&::first-letter {
 				text-transform: uppercase;
@@ -23,7 +23,7 @@
 		}
 
 		.action-anchor {
-			font-size: 1.3rem;
+			font-size: $fontsize_xs2;
 			color: $main;
 			text-decoration: underline;
 			cursor: pointer;
@@ -46,7 +46,7 @@
 			text-align: left;
 
 			.test-status {
-				font-size: 3.6rem;
+				font-size: $fontsize_xl2;
 
 				.loading {
 					color: $main;
@@ -58,13 +58,13 @@
 
 				.title {
 					text-transform: capitalize;
-					font-size: 1.8rem;
+					font-size: $fontsize_md;
 					font-weight: $weight_bold;
 					padding-left: 1rem;
 				}
 
 				.subtitle {
-					font-size: 1.4rem;
+					font-size: $fontsize_xs;
 					padding-left: 1rem;
 					margin-top: -0.4rem;
 				}
@@ -75,21 +75,21 @@
 			text-align: right;
 
 			.result-code-value-text {
-				font-size: 1.7rem;
+				font-size: $fontsize_md;
 				color: $shade_dark;
 				font-weight:$weight_bold;
 			}
 
 			.left-result-code {
 				.result-code-complete-text {
-					font-size: 1.2rem;
+					font-size: $fontsize_xs2;
 					color: $shade_darker;
 					font-weight: $weight_bold;
 				}
 
 				.result-code-icon {
 					margin-left: 0.5rem;
-					font-size: 1.5rem;
+					font-size: $fontsize_xs;
 					color: $main;
 					cursor: pointer;
 
@@ -103,7 +103,7 @@
 
 	.text-regular {
 		color: $main_shade;
-		font-size: 1.5rem;
+		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 		padding: 1rem 1rem 1rem 0rem;
 	}
@@ -112,7 +112,7 @@
 
 		.heading {
 			color: $main_dark;
-			font-size: 2.5rem;
+			font-size: $fontsize_xl;
 		}
 
 		.button-box {
@@ -159,7 +159,7 @@
 			background: $gradient_main;
 			border: none;
 			color: $light;
-			font-size: 1.2rem;
+			font-size: $fontsize_xs2;
 			font-weight: $weight_bold;
 			text-align: center;
 			text-decoration: none;

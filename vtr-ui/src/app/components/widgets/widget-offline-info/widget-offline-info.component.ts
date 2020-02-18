@@ -11,6 +11,7 @@ export class WidgetOfflineInfoComponent implements OnInit {
 	@Input() isButtonVisible = false;
 	@Input() buttonText: string;
 	@Input() isSubtitleVisible = false;
+	@Input() offlineConnection: string;
  	@Output() buttonClick = new EventEmitter();
 
 	constructor() { }

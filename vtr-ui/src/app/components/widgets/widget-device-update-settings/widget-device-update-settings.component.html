@@ -32,7 +32,7 @@
 											</vtr-ui-gaming-driver-popup>
 											<a id="{{item.settings}}" [attr.aria-label]="item.ariaLabel + 'gear icon'"
 												vtrMetrics href="javascript:void();" [metricsItem]="item.settings"
-												metricsEvent="featureClick" (click)="navigateToLink(item)"
+												metricsEvent="featureClick" metricsParent="Gaming.Dashboard" (click)="navigateToLink(item)"
 												(keydown.enter)="navigateToLink(item)" *ngIf="item.isCustomizable"
 												class="customizable" tabindex="1">
 												<!-- <i class="icon icon-gear"></i> -->
@@ -51,7 +51,7 @@
 													[showMePartially]="item.isPopup" [descriptionLabel]="item.ariaLabel"
 													(closeClicked)="onClosed($event, in)">
 												</vtr-ui-popover>
-												<vtr-ui-gaming-driver-popup [ngClass]="{'networkboost-driver-popup': item.id === 'legionedge networkboost'}" *ngIf="item.isDriverPopup"
+												<vtr-ui-gaming-driver-popup [ngClass]="{'networkboost-driver-popup': item.id === 'legionedge networkboost','ram-overclock-driver-popup': item.id === 'legionedge ramoverlock'}" *ngIf="item.isDriverPopup"
 													 [showMePartially]="item.isDriverPopup"
 													[descriptionLabel]="item.ariaLabel"
 													[popupText]="item.driverPopupText"

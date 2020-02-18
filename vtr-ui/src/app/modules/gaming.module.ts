@@ -9,7 +9,6 @@ import { PageLightingcustomizeComponent } from '../components/pages/page-lightin
 import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
 import { UiMacrokeyPopupComponent } from '../components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
 import { UiLightingProfileToggleComponent } from '../components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
-import { UiBrightnessSliderComponent } from '../components/ui/ui-brightness-slider/ui-brightness-slider.component';
 import { UiLightingEffectComponent } from '../components/ui/ui-lighting-effect/ui-lighting-effect.component';
 import { UiLightingSingleColorComponent } from '../components/ui/ui-lighting-single-color/ui-lighting-single-color.component';
 import { UiMacrokeyCollapsibleContainerComponent } from '../components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
@@ -17,6 +16,10 @@ import { UiColorWheelComponent } from '../components/ui/ui-color-wheel/ui-color-
 import { UiMacrokeyDetailsComponent } from '../components/ui/ui-macrokey-details/ui-macrokey-details.component';
 import { UiLightingProfileComponent } from '../components/ui/ui-lighting-profile/ui-lighting-profile.component';
 import { UiMacrokeyRecordedListComponent } from '../components/ui/ui-macrokey-recorded-list/ui-macrokey-recorded-list.component';
+import { UiColorPickerComponent } from '../components/ui/ui-color-picker/ui-color-picker.component';
+import { WidgetLightingDeskComponent } from '../components/widgets/widget-lighting-desk/widget-lighting-desk.component';
+import { WidgetLightingNotebookComponent } from '../components/widgets/widget-lighting-notebook/widget-lighting-notebook.component';
+import { UiLightingKeyboardLNBx50Component } from '../components/ui/ui-lighting-keyboard-lnbx50/ui-lighting-keyboard-lnbx50.component';
 import { WidgetMacrokeySettingsComponent } from '../components/widgets/widget-macrokey-settings/widget-macrokey-settings.component';
 import { SharedModule } from './shared.module';
 import { ColorPickerModule } from 'ngx-color-picker';
@@ -62,7 +65,6 @@ library.add(faArrowAltToTop);
 		PageAutocloseComponent,
 		UiMacrokeyPopupComponent,
 		UiLightingProfileToggleComponent,
-		UiBrightnessSliderComponent,
 		UiLightingEffectComponent,
 		UiLightingSingleColorComponent,
 		UiMacrokeyCollapsibleContainerComponent,
@@ -70,6 +72,9 @@ library.add(faArrowAltToTop);
 		UiMacrokeyDetailsComponent,
 		UiLightingProfileComponent,
 		UiMacrokeyRecordedListComponent,
+		UiColorPickerComponent,
+		WidgetLightingDeskComponent,
+		WidgetLightingNotebookComponent,
 		WidgetMacrokeySettingsComponent,
 		WidgetAutocloseComponent,
 		ModalTurnOnComponent,
@@ -77,7 +82,8 @@ library.add(faArrowAltToTop);
 		WidgetNetworkboostComponent,
 		ModalAddAppsComponent,
 		NetworkboostAddAppsComponent,
-		NetworkboostTurnOnComponent
+		NetworkboostTurnOnComponent,
+		UiLightingKeyboardLNBx50Component
 	],
 	imports: [
 		CommonModule,

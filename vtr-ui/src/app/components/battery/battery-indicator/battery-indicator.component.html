@@ -16,10 +16,10 @@
 						%
 					</span>
 				</div>
-				<div class="battery-error"
+				<div class="battery-error d-flex justify-content-center align-items-center"
 					*ngIf="batteryNotDetected">
 					<span class="icomoon icomoon-NoBatteryError error-icon"></span>
-					<span class="no-battery-detected"
+					<span class="no-battery-detected" title="{{'device.deviceSettings.batteryGauge.batteryNotDetected'| translate}}"
 						id="myDevice-settings-batteryGauge-notDetected-title"
 						role="text">
 						{{'device.deviceSettings.batteryGauge.batteryNotDetected'| translate}}

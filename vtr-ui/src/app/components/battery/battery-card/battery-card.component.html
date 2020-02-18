@@ -10,21 +10,22 @@
 </div>
 <div class="vtr-battery-card"
 	*ngIf="!isLoading"
-	role="dialog"
+	role="text"
 	ngbAutofocus>
 	<ng-template #batteryDetail
-		let-modal>
+		let-modal
+		role="text">
 		<div class="modal-header"
-			role="heading">
+			role="text">
 			<h4 class="modal-title battery-detail-modal-title pl-5"
-				id="myDevice-settings-battery-deatails-heading"
 				role="text">
 				{{'device.deviceSettings.batteryGauge.details.title' | translate }}
 			</h4>
 			<button type="button"
 				class="close-button bg-white"
 				id="myDevice-settings-battery-details-card-close-icon"
-				aria-label="myDevice-settings-battery-details-card-close-icon"
+				aria-label="Close Modal"
+				role="button"
 				tabindex="0"
 				(click)="modal.dismiss('Cross click')"
 				(keydown.esc)="modal.dismiss('Cross click')">
@@ -67,15 +68,20 @@
 		<div class="row px-3"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
 			<div class="p-0 pr-2 col-auto"
+				role="text"
 				*ngIf="batteryConditions[i].condition!= batteryConditionsEnum.FullACAdapterSupport">
-				<span *ngIf="batteryConditions[i].conditionStatus == batteryStatus.Good"
+				<span role="text"
+					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Good"
 					class="icomoon icomoon-ConditionGoodBattery"></span>
-				<span *ngIf="batteryConditions[i].conditionStatus == batteryStatus.Fair"
+				<span role="text"
+					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Fair"
 					class="icomoon icomoon-ConditionFairBattery"></span>
-				<span *ngIf="batteryConditions[i].conditionStatus == batteryStatus.Poor &&
+				<span role="text"
+					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Poor &&
 				batteryConditions[i].condition!=batteryConditionsEnum.Error"
 					class="icomoon icomoon-ConditionBadBattery"></span>
-				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.NotSupportACAdapter"
+				<span role="text"
+					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.NotSupportACAdapter"
 					class="icomoon icomoon-ConditionACAdapterError"></span>
 			</div>
 			<div *ngIf="batteryConditions[i].condition == batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
@@ -83,15 +89,17 @@
 				<span class="icomoon icomoon-ConditionACAdapterError"></span>
 			</div>
 			<div class='col battery-conditions-tips'>
-				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
+				<span role="text"
+					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
 					[innerHTML]="batteryConditionNote | translate:param"
 					id="myDevice-settings-battery-condition-tip"
 					role="text"></span>
-				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
+				<span role="text"
+					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
 					[innerHTML]="batteryConditionNote | translate:acAdapterInfoParams"
 					id="myDevice-settings-battery-condition-tip"
 					role="text"></span>
-				<span
+				<span role="text"
 					*ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport"
 					[innerHTML]="batteryConditionNote | translate"
 					id="myDevice-settings-battery-condition-tip"
@@ -99,6 +107,7 @@
 				<a *ngIf="batteryConditions[i].conditionStatus===batteryStatus.AcAdapterStatus && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport && shortAcErrNote"
 					class="link-label"
 					(click)="showDetailTip(i)"
+					(keydown.enter)="showDetailTip(i)"
 					id="myDevice-settings-batteryGauge-seeDetails-link"
 					role="link">{{'device.deviceSettings.batteryGauge.seeDetailsLink' | translate}}</a>
 			</div>
@@ -120,18 +129,18 @@
 		</div>
 
 		<div class="pt-4 text-center"
-			[class.btn-disabled]="batteryService.isPowerDriverMissing">
+			[class.btn-disabled]="batteryService.isPowerDriverMissing || batteryIndicator.batteryNotDetected">
 			<vtr-ui-button metricsItem="See.Battery.Details"
 				metricsParent="Page.Settings"
 				metricsEvent="FeatureClick"
 				[isFullWidth]="true"
 				(click)="showDetailModal(batteryDetail)"
-				[isDisabled]="batteryService.isPowerDriverMissing"
+				[isDisabled]="batteryService.isPowerDriverMissing || batteryIndicator.batteryNotDetected"
 				id="myDevice-settings-battery-details-btn"
 				[linkId]="'myDevice-settings-battery-details-btn'"
 				[label]="'device.deviceSettings.batteryGauge.button' | translate"
 				attr.aria-label="myDevice-settings-battery-details-btn"
-				[attr.aria-disabled]="batteryService.isPowerDriverMissing"></vtr-ui-button>
+				[attr.aria-disabled]="batteryService.isPowerDriverMissing || batteryIndicator.batteryNotDetected"></vtr-ui-button>
 
 
 		</div>

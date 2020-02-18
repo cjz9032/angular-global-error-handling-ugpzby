@@ -52,7 +52,7 @@
 	}
 	.widget-container {
 		border-radius: $border_radius;
-		background: $dark_cell;
+		background: $gaming_darkest;
 		box-shadow: $drop_shadow_gaming;
 		padding: 4rem;
 		@media #{$breakpoint_sm} {
@@ -88,7 +88,7 @@
 		}
 	}
 	.select-wrapper {
-		background: $gaming_hover;
+		background: $white5;
 		@media #{$black-on-white} {
 			border: 0.1rem solid $dark;
 		}

@@ -2,18 +2,19 @@
 
 .top-row-key-block{
 .title-blck{
-    .left-icon {    
+    .left-icon {
         display: inline-block;
-        font-size: $section_header;
+        font-size: $subpage_menu_title;
         height: 1em;
-        width: 1.12em;
+        width: 1.5em;
         color:$menu_hover;
         overflow: visible;
-        vertical-align: -0.12em;    
+        vertical-align: -0.12em;
+        // padding: 0 0.7em 0 0;
 }
 .title {
-    font-size: $section_header;
-    color: $main_darker;
+    font-size: $fontsize_md;
+    color: $purple_navy;
     font-weight: $weight_light;
     letter-spacing: 0.05rem;
     text-transform: none;
@@ -21,14 +22,15 @@
 }
 .caption {
     .text{
-        font-size: $body;
+        font-size: $fontsize_xs;
         font-weight: $weight_light;
-        color: $main_darker;
-    }  
-    max-width: 60rem;
+		color: $grey_dark;
+    }
+	// max-width: 60rem;
+	padding-left: 3rem;
 }
     .link-text {
-        font-size: $caption;
+        font-size: $fontsize_xs2;
         font-weight: $weight_bold;
         text-decoration: underline;
         letter-spacing: 0.05rem;

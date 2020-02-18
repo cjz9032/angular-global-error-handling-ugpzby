@@ -11,6 +11,7 @@ import { LocalInfoService } from '../local-info/local-info.service';
 import { DevService } from '../dev/dev.service';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { throwError } from 'rxjs';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -154,7 +155,6 @@ export class CMSService {
 			);
 		},
 			error => {
-				console.log('getCMSContent::error', error);
 				subscriber.error(error);
 			}
 		);
@@ -197,14 +197,14 @@ export class CMSService {
 								resolve(result);
 							},
 							(reason) => {
-								console.log('fetchCMSArticleCategories:error', reason);
-								reject('fetchCMSContent error');
+								// reject('fetchCMSContent error');
+								throwError(new Error('fetchCMSContent error'))
 							}
 						);
 					},
 					error => {
-						console.log('fetchCMSArticleCategories::error', error);
-						reject('fetchCMSContent error');
+						// reject('fetchCMSContent error');
+						throwError(new Error('fetchCMSContent error'))
 					}
 				);
 		});
@@ -249,14 +249,14 @@ export class CMSService {
 								resolve(result);
 							},
 							(reason) => {
-								console.log('fetchCMSArticles:: error', reason);
-								reject('fetchCMSContent error');
+								// reject('fetchCMSContent error');
+								throwError(new Error('fetchCMSContent error'))
 							}
 						);
 					},
 					error => {
-						console.log('fetchCMSArticles:: error', error);
-						reject('fetchCMSArticles error');
+						// reject('fetchCMSArticles error');
+						throwError(new Error('fetchCMSContent error'))
 					}
 				);
 		});
@@ -304,10 +304,22 @@ export class CMSService {
 
 	getOneCMSContent(results, template, position) {
 		return results.filter((record) => {
-			return record.Template === template;
-		}).filter((record) => {
-			return record.Position === position;
-		}).sort((a, b) => a.Priority.localeCompare(b.Priority));
+			return (
+				record.Template === template &&
+				record.Position === position &&
+				(
+					!record.DisplayStartDate ||
+					new Date(record.DisplayStartDate).getTime() <= new Date().getTime()
+				)
+			);
+		}).sort(this.sortCmsContent);
+	}
+
+	sortCmsContent(a, b): number {
+		if (a.Priority === b.Priority) {
+			return new Date(b.DisplayStartDate).getTime() - new Date(a.DisplayStartDate).getTime();
+		}
+		return a.Priority.localeCompare(b.Priority);
 	}
 
 	/* const CMSOption = Object.assign(defaults, queryParams);
@@ -372,8 +384,8 @@ export class CMSService {
 						resolve(response.Results);
 					},
 					error => {
-						console.log('fetchCMSEntitledAppList::error ', error);
-						reject('fetchCMSEntitledAppList error');
+						// reject('fetchCMSEntitledAppList error');
+						throwError(new Error('fetchCMSEntitledAppList error'))
 					}
 				);
 		});
@@ -394,8 +406,8 @@ export class CMSService {
 						resolve(response.Results);
 					},
 					error => {
-						console.log('fetchCMSAppDetails::error ', error);
-						reject('fetchCMSAppDetails error');
+						// reject('fetchCMSAppDetails error');
+						throwError(new Error('fetchCMSAppDetails error'))
 					}
 				);
 		});

@@ -8,7 +8,7 @@
 	width: 100%;
 	border-radius: 5rem;
 	margin: auto;
-	background: $gaming_dark;
+	background: $gaming_darkest;
 	position: relative;
 	z-index: 0;
 	box-sizing: border-box;
@@ -24,7 +24,7 @@
 		bottom: 0rem;
 		right: 0rem;
 		margin: 0rem;
-		background: $gaming_dark;
+		background: $gaming_darkest;
 		z-index: -1;
 	}
 	&::before {

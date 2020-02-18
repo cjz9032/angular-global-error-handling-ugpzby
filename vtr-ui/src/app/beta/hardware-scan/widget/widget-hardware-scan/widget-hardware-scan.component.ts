@@ -9,14 +9,13 @@ import { HardwareScanService } from '../../services/hardware-scan/hardware-scan.
 })
 
 export class WidgetHardwareScanComponent implements OnInit {
-	@Input() title: string = this.title || '';
-	@Input() subTitle: string = this.subTitle || '';
+	@Input() title: string = '';
+	@Input() subTitle: string = '';
 	@Input() warningMessage = this.translate.instant('hardwareScan.warningMessage');
-	@Input() finalResultCode: string = this.finalResultCode || '';
-	@Input() finalResultCodeText: string = this.finalResultCodeText || '';
+	@Input() finalResultCode: string = '';
+	@Input() finalResultCodeText: string = '';
 	@Input() buttonText = '';
 	@Input() anchorText = '';
-	@Input() cancelText = this.translate.instant('hardwareScan.cancel');
 	@Input() completeText = this.translate.instant('hardwareScan.complete');
 	@Input() statusText: string;
 	@Input() lenovoSupport = '';

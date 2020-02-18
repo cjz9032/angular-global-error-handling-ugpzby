@@ -1,3 +1,4 @@
+import { AppEvent } from './../../../../../../enums/app-event.enum';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -16,7 +17,7 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 	public topRowKeyObj: TopRowFunctionsCapability;
 	public showAdvancedSection = false;
 	public topRowFunInterval: any;
-	private isCacheFound = false;
+	public isCacheFound = false;
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
@@ -43,10 +44,10 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, this.topRowKeyObj);
 	}
 
-	public getFunctionCapabilities() {
+	public async getFunctionCapabilities() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
-				Promise.all([
+				await Promise.all([
 					this.keyboardService.getTopRowFnLockCapability(),
 					this.keyboardService.getTopRowFnStickKeyCapability(),
 					this.keyboardService.getTopRowPrimaryFunctionCapability(),
@@ -54,9 +55,7 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 					this.topRowKeyObj.fnLockCap = res[0];
 					this.topRowKeyObj.stickyFunCap = res[1];
 					this.topRowKeyObj.primaryFunCap = res[2];
-					if (!this.isCacheFound) {
-						this.getAllStatuses();
-					}
+					this.getAllStatuses();
 					this.setTopRowStatusCallback();
 				});
 			}
@@ -73,7 +72,12 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 			}
 		}, 30000);
 	}
-
+	updateCustomKeyEvents(event, value) {
+		const { customeEvent } = event;
+		if (customeEvent === AppEvent.LEFT || customeEvent === AppEvent.RIGHT) {
+			this.onChangeKeyType(value);
+		}
+	}
 	public getAllStatuses() {
 		if (this.topRowKeyObj) {
 			if (this.topRowKeyObj.fnLockCap) {
@@ -108,6 +112,13 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 			this.getAllStatuses();
 		});
 	}
+	public updateFocusAndSelection(event, value) {
+		const { switchEVent } = event;
+		if (switchEVent === AppEvent.LEFT || switchEVent === AppEvent.RIGHT) {
+			this.onChangeFunType(value);
+		}
+	}
+
 	public onChangeKeyType(value: boolean) {
 		this.topRowKeyObj.stickyFunStatus = value;
 		this.keyboardService.setFnStickKeyStatus(value).then(res => {

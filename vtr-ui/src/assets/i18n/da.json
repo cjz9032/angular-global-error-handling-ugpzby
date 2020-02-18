@@ -22,6 +22,12 @@
                     "rapidCharge": "Hurtig opladning"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overclock. til",
+                        "performance": "Ydeevne",
+                        "balance": "Balance",
+                        "quiet": "Stille"
+                    },
                     "title": "CPU-overclocking",
                     "status": {
                         "alwayson": "Aktiveret",
@@ -87,7 +93,8 @@
                     "line8": "<b>Hurtig opladning</b><br> Spil længere tid på farten med hurtigere batteriopladning",
                     "line9": "<b>Lås på navigationsplade</b><br> Undgå forkerte input ved at deaktivere navigationspladen, mens du spiller",
                     "line10": "<b>Luk automatisk</b><br> Ryd processer, der ikke er nødvendige for spil, før du går i gang med at spille, for at maksimere tilgængelige systemressourcer",
-                    "line11": "<b>Varmetilstand</b><br> Angiv din foretrukne enhedsprofil for blæserhastighed og kølingskontrol"
+                    "line11": "<b>Varmetilstand</b><br> Angiv din foretrukne enhedsprofil for blæserhastighed og kølingskontrol",
+                    "line12": "<b>Makro-tast</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Peg på CPU-/GPU/RAM og forskellige drev for at få vist disses beskrivelser, herunder fabrikat- og modeloplysninger"
@@ -97,6 +104,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Hurtige indstillinger"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Indstil. for varmetilstand",
+                    "thermalMode2SettingDesc": "Vælg den metode, du vil bruge.",
+                    "fnQDesc": "Du kan skifte tilstand ved hjælp af genvejen Fn + Q.",
+                    "perormanceTitle": "Ydeevnetilstand",
+                    "performanceDesc": "Boost computerens ydeevne med højere blæserhastighed og højere strømforbrug.",
+                    "OCDesc": "Du kan vælge at aktivere overclockingfunktionen.",
+                    "ac_dcDesc": "Ydeevnetilstand er kun tilgængelig ved tilslutning til stikkontakt.",
+                    "balanceTitle": "Balanceret tilstand",
+                    "balanceDesc": "Afbalancer automatisk ydeevnen og blæserhastigheden med udgangspunkt i temperaturen. Middel strømforbrug.",
+                    "quietTitle": "Stille tilstand",
+                    "quietDesc": "Bevar et lavt støjniveau ved at reducere computerens ydeevne og blæserhastighed, når det er muligt. Lavt strømforbrug.",
+                    "OC": {
+                        "cpu_gpuOC": "Aktiver CPU-/GPU-overclocking i ydeevnetilstand.",
+                        "cpuOC": "Aktiver CPU-overclocking i ydeevnetilstand.",
+                        "gpuOC": "Aktiver GPU-overclocking i ydeevnetilstand.",
+                        "advance": "UDVIDET",
+                        "cpu_gpuDriverLack": "Installer CPU/GPU-drivere for at bruge overclockingfunktionen.",
+                        "cpuDriverLack": "Installer CPU-driver for at bruge overclockingfunktionen.",
+                        "gpuDriverLack": "Installer GPU-driver for at bruge overclockingfunktionen.",
+                        "goInstall": "INSTALLER"
+                    },
+                    "autoSwitch": "Skift automatisk til ydeevne, når du starter spil, og skift tilbage bagefter."	
+                },
+                "advancedOC": {
+                    "title": "Avan. instil. f. overclock.",
+                    "description": "Angiv avancerede brugerparametre, når overclocking er aktiveret. Det kan være risikabelt.",
+                    "gpuOverclock": "GPU-overclocking",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Kernespænding",
+                        "cpuOCName116": "1 kerneforhold (Core Ratio)",
+                        "cpuOCName117": "2 kerneforhold (Core Ratio)",
+                        "cpuOCName118": "3 kerneforhold (Core Ratio)",
+                        "cpuOCName119": "4 kerneforhold (Core Ratio)",
+                        "cpuOCName34": "Forskydning for kernespænding",
+                        "cpuOCName120": "5 kerneforhold (Core Ratio)",
+                        "cpuOCName121": "6 kerneforhold (Core Ratio)",
+                        "cpuOCName76": "Cacheforhold",
+                        "cpuOCName77": "Cachespænding",
+                        "cpuOCName79": "Forskydning for cachespænding",
+                        "cpuOCName122": "7 kerneforhold (Core Ratio)",
+                        "cpuOCName123": "8 kerneforhold (Core Ratio)",
+                        "cpuOCName102": "Kerne-ICCMAX",
+                        "cpuOCName106": "Cache-ICCMAX",
+                        "cpuOCName114": "Forskydning for AVX-forhold"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Angiv spændingen for CPU-kernen.",
+                        "cpuOCTip116": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip117": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip118": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip119": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip34": "En spændingsforskydning fra den aktuelle kernespænding.",
+                        "cpuOCTip120": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip121": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip76": "Angiv den maksimale processorcachemultiplikator, som cacherne kan fungere med. Cachefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip77": "Spænding, der leveres til processorens interne cachegrænseflade med udgangspunkt i den aktuelt valgte cachespændingstilstand.",
+                        "cpuOCTip79": "Den endelige spændingsforskydning anvendes til cachespændingen.",
+                        "cpuOCTip122": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip123": "Angiv den maksimale kernemultiplikator, som kernerne kan fungere med. Kernefrekvensens værdi er produktet af dette forhold (multiplikator) og reference-clockfrekvensen.",
+                        "cpuOCTip102": "Indstil ICCMAX for spændingsregulatoren for processorkernen.",
+                        "cpuOCTip106": "Indstil ICCMAX for spændingsregulatoren for processorcachen og ringbussen.",
+                        "cpuOCTip114": "For at få den effektive, aktive grænse for kerneforholdet, når AVX er aktiv, skal du trække denne værdi fra den tilsvarende aktive kerneforholdsgrænse."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "Forskydning for GPU-clock",
+                        "gpuOCName1": "Forskydning for VRAM-clock"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Føj en forskydning til GPU-clockfrekvensen.",
+                        "gpuOCTip1": "Føj en forskydning hukommelsesclockfrekvensen."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Gem ændring?",
+                    "description1": "Forkert overclocking kan medføre uoprettelige hardwareskader. Gør ét af følgende, hvis der opstår et problem: ",
+                    "description2": "•  Hold strømknappen i nede i 8 sekunder for at genstarte computeren, og gendan standardparametrene.",
+                    "description3": "•  Brug \"Restore Default Overclock.\" i BIOS-inds., og gend. stan.param.",
+                    "save": "GEM",
+                    "notSave": "GEM IKKE"
+                },
+                "defaultPromptPopup": {
+                    "title": "Angiv som standard?",
+                    "description": "Alle aktuelle og tidligere ændringer går tabt."
+                },
+                "warningPromptPopup": {
+                    "title": "Advarsel!",
+                    "description": "Forkerte indstillinger for overclocking kan medføre hardwareskader, der ikke kan genoprettes.",
+                    "proceed": "FORTSÆT"
                 }
             }
         },
@@ -598,6 +695,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Statisk",
+                "effectName2": "Spektrum",
+                "effectName3": "Regnbue",
+                "effectName4": "Tilfældig",
+                "effectName5": "Kølig_blå",
+                "effectName6": "Bølge_højre",
+                "effectName7": "Bølge_venstre"
+            },
+            "lightingSpeed": {
+                "title": "Hastighed"
+            },
+            "colorPicker": {
+                "text2": "FLERE",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Del område (Fra): Klik på tastaturbilledet for at ændre farver",
+                "text7": "Del område (Til): Klik på afsnit på tastaturet for at ændre farver",
+                "text8": "Den aktuelle effekt understøtter ikke farvevalg"
+            },
+            "tipText": {
+                "title1": "Brug Fn+mellemrum til at skifte mellem profiler"
+            }
         }
     },
     "common": {
@@ -616,8 +749,8 @@
                 "sub2": "Antivirus",
                 "sub3": "WiFi-sikkerhed",
                 "sub4": "Adgangskodesundhed",
-                "sub5": "Internetbeskyttelse",
-                "sub6": "Windows Hello"
+                "sub5": "VPN",
+                "sub6": "Fingeraftryk"
             },
             "support": "Support",
             "privacy": "Anonymitet",
@@ -643,8 +776,11 @@
             "notFound": "IKKE FUNDET",
             "registered": "REGISTRERET",
             "notRegistered": "IKKE REGISTRERET",
-            "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>"
+            "fingerPrint": "Fingeraftryk",
+            "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>",
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -670,6 +806,9 @@
         },
         "app-update": {
             "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"
+        },
+        "offline": {
+            "connectToUseFeature": "Opret forbindelse til internettet for at bruge denne funktion"
         }
     },
     "privacy": {
@@ -717,20 +856,24 @@
             "button": "Giv feedback",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Kommentarer...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Tak for din feedback!"
-                },
                 "question1": "Kan du lide den nye Vantage-stil?",
                 "question2": "Synes du, at ydeevnen er acceptabel?",
                 "question3": "Vil du bruge programmet mere i fremtiden?",
+                "question4": "Ved du, at du kan bruge Lenovo Vantage til at opdatere softwaredrivere, firmware og BIOS på din computer?",
+                "question5": "Hvor sandsynligt er det, at du vil anbefale Lenovo Vantage-programmet til en ven eller kollega?",
+                "notAtAllLikely": "Slet ikke sandsynligt",
+                "extremelyLikely": "Meget sandsynligt",
                 "yes": "Ja",
                 "no": "Nej",
                 "tips1": "Skriv eventuelle andre kommentarer",
+                "comments": "Kommentarer...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Send feedback",
-                "submitScreenShot": "Send skærmbillede"
+                "submitScreenShot": "Send skærmbillede",
+                "messages": {
+                    "feedbackSuccess": "Tak for din feedback!"
+                }
             }
         },
         "quickSettings": {
@@ -896,7 +1039,7 @@
                     "Good": "<b>Batteriets tilstand er god.</b>",
                     "Exhaustion": "Batteriets kapacitet er blevet <b>forringet</b>. Udskift det med et nyt.",
                     "Bad": "<b>Der er opstået en batterifejl.</b> Batteriet kan ikke oplades/aflades. Udskift batteriet.",
-                    "NotDetected": "<b>Der er ikke registreret et batteri</b>, eller der er ikke tilsluttet noget batteri.",
+                    "NotDetected": "<b>Der blev ikke fundet noget batteri.</b>",
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
                     "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm.</b>",
@@ -1085,7 +1228,7 @@
                     },
                     "airPlanePower": {
                         "title": "Flytilstand",
-                        "description": "Beskyt flyets vekselstrømskontakt ved at styre systemets strømforbrug.Når Flytilstand er aktiveret, reducerer computeren strømforbruget ved at begrænse batteriopladningshastigheden og systemets ydeevne.",
+                        "description": "Med denne funktion kan du bruge vekselstrømskontakten på et fly, hvor der gælder en bestemt effektgrænse. I denne tilstand reduceres computerens strømforbrug til et sikkert niveau ved at begrænse batteriopladningshastigheden og computerens ydeevne.",
                         "checkBoxDesc": "Automatisk registrering",
                         "note": "Hvis den automatiske søgefunktion er markeret, slår computeren automatisk Flytilstand til, når den registrerer et miljø om bord på et fly, og slår den fra, når du forlader flyet."
                     },
@@ -1104,7 +1247,7 @@
                         },
                         "progressText1": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
                         "progressText2": "{{stage}} af {{stageNum}}: Kalibrerer til lavt batteristrømniveau",
-                        "progressText3": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
+                        "progressText3": "{{stage}} af {{stageNum}}: Kalibrerer til højt batteristrømniveau",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {
@@ -1118,7 +1261,7 @@
                             "ERROR_UNEXPECTED": "Mislykkedes: Der er opstået en uventet fejl."
                         },
                         "popup": {
-                            "description1": "Nulstillingsprocessen er som følger:<br>Fuld opladning af batteriet  -->  fuld afladning af batteriet  -->  fuld genopladning af batteriet",
+                            "description1": "Nulstillingsprocessen er som følger:<br>Fuld opladning af batteriet --> afladning til lavt batteristrømniveau --> genopladning til højt batteristrømniveau eller fuld opladning",
                             "description2": "Bemærkninger: <br>1. Processen kan tage op til flere timer. Undgå at bruge computeren i denne periode.<br>2. Luk alle åbne apps, og tilslut computeren til vekselstrøm.<br>3. Under processen er opladningsgrænsen for batteriet deaktiveret.",
                             "continue": "Fortsæt",
                             "cancel": "Annuller",
@@ -1135,10 +1278,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart-standby",
-                    "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
-                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte STARTtidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller den tid for computerbrug, som vi får. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
+                    "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at genoptage dit arbejde hurtigt ved hjælp af <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Moderne standby</a> i perioder med mere intens aktivitet.",
+                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller din computerbrug. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
                     "timer": {
-                        "heading": "Det tidspunkt, hvor du normalt bruger denne computer",
+                        "heading": "Den tid, hvor du normalt bruger denne computer:",
                         "subHeading1": "starter",
                         "subHeading2": "slut",
                         "subHeading3": "brug denne tidsplan for",
@@ -1156,14 +1299,14 @@
                     "warningtip": "Vælg venligst mindst en dag.",
                     "days": {
                         "shortName": {
-                            "sun": "Søndag",
-                            "mon": "Mandag",
-                            "tue": "Tirsdag",
-                            "wed": "Onsdag",
-                            "thurs": "Torsdag",
-                            "fri": "Fredag",
-                            "sat": "Lørdag",
-                            "thu": "Thu"
+                            "sun": "Søn",
+                            "mon": "Man",
+                            "tue": "Tirs",
+                            "wed": "Ons",
+                            "thurs": "Tors",
+                            "fri": "Fre",
+                            "sat": "Lør",
+                            "thu": "Tors"
                         },
                         "name": {
                             "sun": "Søndag",
@@ -1180,11 +1323,11 @@
                         "noDaySelected": "Ingen dag valgt"
                     },
                     "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
-                    "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
+                    "hyperlinkToGraph": "Klik her for at se forbruget og den anvendte aktive tid",
                     "subTitle": "Tidsplan for din computer",
                     "automaticMode": "Automatisk tilstand",
                     "manualMode": "Manuel tilstand",
-                    "subNote": "Din computer er indstillet til at skifte til Moderne standby baseret på din brug.",
+                    "subNote": "Din computeren er indstillet til hurtigere at genoptage arbejdet baseret på brugen.",
                     "graph": {
                         "graph1Tittle": "Brug af denne computer",
                         "graph2Tittle": "Tildelt aktiv tid",
@@ -1223,7 +1366,8 @@
                     },
                     "description2": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
                     "subTitle2": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
-                    "oldTooltipText": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden."
+                    "oldTooltipText": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte START tidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
+                    "sectionTitle": "Indstillinger for standby"
                 }
             },
             "audio": {
@@ -1327,7 +1471,8 @@
                         "note": {
                             "title": "Bemærk",
                             "description": "Lenovo Vantage skal have adgang til dine placeringsoplysninger for at beregne tiden for solnedgang og solopgang i dit område."
-                        }
+                        },
+                        "tips": "Kør Windows Update, eller installer grafikdriveren manuelt for at genoprette Øjenbeskyttelsestilstand"
                     },
                     "dispColorTemp": {
                         "title": "Skærmens farvetemperatur",
@@ -1370,6 +1515,17 @@
                         "taskBarDimmer": "PROCESLINJEDÆMPER",
                         "backgroundDimmer": "BAGGRUNDSDÆMPER",
                         "displayDimmer": "SKÆRMDÆMPER"
+                    },
+                    "displayPriority": {
+                        "title": "Styring af skærmprioritet",
+                        "description": "Din enhed understøtter et maks. antal eksterne skærme. Hvis du tilslutter mere end én skærm via disse ekstra metoder, er det kun den prioriterede skærm, der vil fungere.<br/>Vælg, hvilken ekstra skærmudgangsmetode, der skal prioriteres, nedenfor:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Modul som ekstraudstyr"
+                        }
                     }
                 },
                 "camera": {
@@ -1398,7 +1554,8 @@
                         "caption": "Denne funktion slører baggrunden, når du bruger kameraet til videoopkald eller til at tage billeder. Du kan vælge en anden effekt i indstillingerne nedenfor.",
                         "blurMode": "Sløret tilstand",
                         "comicMode": "Tegneserietilstand",
-                        "sketchMode": "Skitsetilstand"
+                        "sketchMode": "Skitsetilstand",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERAET ER I BRUG",
@@ -1523,7 +1680,60 @@
                 "fnCtrlKey": {
                     "title": "Ombytning af Fn- og Ctrl-tast",
                     "description": "Hvis du ofte kommer til at trykke på Fn-tasten, når du vil trykke på Ctrl-tasten, kan du bytte om på funktionen for de to taster.",
-                    "restartNote": "Hvis du vil bytte om på funktionen for to taster, skal computeren genstartes. Er du sikker på, du vil genstarte?"
+                    "restartNote": "Hvis du vil bytte om på funktionen for to taster, skal computeren genstartes. Er du sikker på, du vil genstarte?",
+                    "title2": "Fn fungerer som Ctrl for kombinationer, der bruges ofte",
+                    "description2": "Fn-tasten fungerer som Ctrl-tasten for nogle tastekombinationer, som bruges ofte. Ctrl-tastens funktion ændres ikke.",
+                    "featureNote": "Denne funktion og funktionen til ombytning af Fn-tasten og Ctrl-tasten kan ikke være aktive på samme tid. Hvis den ene er aktiveret, blive den anden automatisk deaktiveret.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn-taster",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl-taster",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Funktion",
+                            "action1": "Markér alle",
+                            "action2": "Kopiér",
+                            "action3": "Føj websiden til mine favoritter",
+                            "action4": "Søg",
+                            "action5": "Find og erstat i Microsoft Word",
+                            "action6": "Venstrejuster og højrejuster i Microsoft Word",
+                            "action7": "Afslut (i understøttet app)",
+                            "action8": "Tilføj understregning",
+                            "action9": "Sæt ind",
+                            "action10": "Luk (pr. app)",
+                            "action11": "Klip",
+                            "action12": "Fortryd",
+                            "action13": "Fortryd"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "FLERE",
@@ -1533,16 +1743,16 @@
                     "less": "FÆRRE"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Baggrundslys for tastatur",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan også ændre indstillingerne for tastaturets baggrundslys ved at trykke på Fn+mellemrumstasten.",
+                        "auto": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan ændre indstillingerne for baggrundslyset ved at trykke på Fn+mellemrumstasten eller indstille det til \"Auto\". Indstillingen \"Auto\" justerer automatisk tastaturets baggrundslys i forhold til det omgivende lys."
                     },
                     "level": {
                         "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "low": "Lav",
+                        "high": "Høj",
+                        "off": "Deaktiveret"
                     }
                 }
             }
@@ -1705,12 +1915,12 @@
             "superResolution": {
                 "heading": "Intelligente medier",
                 "title": "Opskalering af videoopløsning",
-                "desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label> Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Når funktionen er aktiveret, anbefales det, at du slutter computeren til vekselstrøm.</label></p>",
-                "tooltip": "Funktionen fungerer kun på følgende afspillere: <br/> Windows Media player",
+                "desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label>Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand. Ellers bliver strømforbruget større, og batterilevetiden afkortes.</label></p>",
+                "tooltip": "Funktionen fungerer kun på:<br>Windows Media player",
                 "note": {
                     "description": "Denne funktion virker ikke i disse situationer:",
-                    "description1": "Computeren er ikke tilsluttet til vekselstrøm, og batteriets strømniveau er lavere end 20%.",
-                    "description2": "Computeren er ikke tilsluttet til vekselstrøm, og strømsparetilstand er aktiveret.",
+                    "description1": "Computeren er ikke sluttet til vekselstrøm.",
+                    "description2": "Strømbesparelsestilstanden er aktiveret.",
                     "description3": "CPU-temperaturen er for høj."
                 }
             },
@@ -1867,7 +2077,7 @@
             "localRepositoryDatabaseException": "Databasen til det lokale opbevaringssted findes ikke eller er ødelagt.",
             "networkInterruptedException": "Systemopdateringsserveren er i øjeblikket ikke tilgængelig. Prøv igen senere.",
             "helpCenterInvalidServerException": "Systemopdateringsserveren er ugyldig. Prøv igen senere.",
-            "catalogNotFoundException": "Der er ikke fundet nogen tilgængelige opdateringer til systemet.",
+            "catalogNotFoundException": "Der blev ikke fundet nogen tilgængelige opdateringer til systemet, da opdateringskataloget ikke blev fundet.",
             "catalogCrcErrorException": "Kataloget til dit system er ved at blive opdateret. Prøv igen senere.",
             "catalogErrorException": "Der opstod en fejl med opdateringskataloget til systemet på systemopdateringsserveren. Prøv igen senere.",
             "fileNotFoundException": "Filen blev ikke fundet."
@@ -1890,7 +2100,7 @@
             "startDate": "Startdato: ",
             "endDate": "Slutdato: ",
             "status": "Status: ",
-            "subDescription1": "Dette produkt har års begrænset garanti, og det er berettiget til deponeringsreparation. Kunder kan ringe til deres lokale servicecenter for at få flere oplysninger. Forhandlere kan yde reparation ved indlevering af dette produkt.",
+            "subDescription1": "Lenovo Begrænset Garanti gælder for computeren, og den er berettiget til depotservice. Kunder kan ringe til deres lokale servicecenter for at få flere oplysninger. Forhandlere kan yde reparation ved indlevering af dette produkt.",
             "subDescription2": "Vi kunne ikke finde garantioplysninger for din enhed. Du kan finde flere garantimuligheder ved at gå til vores supportwebsted.",
             "viewWarrantyOptions": "VIS GARANTIMULIGHEDER",
             "offlineTips1": "Opret forbindelse til internettet for at få de nyeste garantioplysninger.",
@@ -1934,8 +2144,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Fuldt beskyttet",
-            "notFully": "Ikke fuldt beskyttet",
+            "fully": "Hvis du vil have et bedre tilbud til at beskytte din enhed, så fortsæt med",
+            "notFully": "Hvis du vil lære, hvordan du beskytter din enhed bedre, skal du starte med",
             "security101": "SIKKERHEDSVEJLEDNING 101",
             "firewall": "Firewall",
             "pwdHealth": "Adgangskodesundhed",
@@ -1975,7 +2185,7 @@
             "visitHde": "Besøg harddiskkryptering",
             "haveOwnPassword": "Jeg har min egen password manager",
             "haveOwnWifi": "Jeg har min egen wifi-sikkerhed",
-            "haveOwnVpn": "Jeg har min egen VPN-sikkerhed",
+            "haveOwnVpn": "Jeg har mit eget VPN",
             "uac": "Kontrol af brugerkonti (UAC)",
             "uacTitles": "Kontrol af brugerkonti",
             "hde": "Kryptering af harddisken",
@@ -2091,7 +2301,8 @@
                 "showmore": "Vis mere",
                 "showless": "Vis mindre",
                 "button": "Aktivér WiFi-sikkerhed",
-                "disableDecribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige."
+                "disableDescribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige.",
+                "enabledDescribe": "Lenovo WiFi-sikkerhed overvåger i øjeblikket din WiFi-netværk."
             },
             "threatlocator": {
                 "describe": "Brug trusselssensoren til at bestemme sikkerheden i dine nærliggende netværk.",
@@ -2125,7 +2336,8 @@
                 "subtitle": "Få ro i sindet",
                 "subtitleDescribe": "Tilsluttet Home Security sender en advarsel, hvis systemet registrerer et sikkerhedsproblem i din enhed eller dit hjemmenetværk, eller hvis du er tilsluttet et potentielt skadeligt netværk. Få mere at vide om Tilsluttet Home Security <tag>her</tag>.",
                 "tryNow": "Prøv nu",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Indtast invitationskode",
@@ -2200,7 +2412,8 @@
             "getStarted1": "Klik på knappen \"Åbn SurfEasy\" ovenfor for at starte SurfEasy VPN.",
             "getStarted2": "Aktivér VPN, og vent et kort øjeblik for at få bekræftelse på en sikker forbindelse.",
             "getStarted3": "Rediger dit område eller din placering, og nyd sikre og private netværksaktiviteter.",
-            "poweredBySurfEasy": "Udarbejdet af SurfEasy"
+            "poweredBySurfEasy": "Udarbejdet af SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE ADGANGSKODEADMINISTRATOR",
@@ -2228,7 +2441,8 @@
             "allowsYou2": "Overvåge det mørke internet, så du er informeret",
             "allowsYou3": "Forblive sikret på ikke-sikre WiFi-netværk med indbygget VPN",
             "allowsYou4": "Dele adgangskoder sikkert uden at afsløre dem",
-            "poweredByDashLane": "Udarbejdet af Dashlane"
+            "poweredByDashLane": "Udarbejdet af Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2256,6 +2470,7 @@
     "lenovoId": {
         "login": "Login",
         "logout": "Log af",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Lås Eksklusive op",
         "user": "Bruger",
         "welcomeText1": "Du ser ud til at være fuld af energi i dag, {{firstName}}!",
@@ -2300,7 +2515,7 @@
     "faq": {
         "footer": {
             "title": "Har du ikke fundet, hvad du leder efter?",
-            "description": "Har du brug for ekstra støtte? FORSIGT IKKE AT KONTAKTE OS VIA:",
+            "description": "Har du brug for yderligere support? Kontakt os gerne med det samme via:",
             "body": "Lenovo Fællesskab",
             "button": "GÅ TIL FORUM"
         },
@@ -2510,7 +2725,7 @@
         },
         "question4": {
             "title": "Kontrollér computerens batteriforbrug",
-            "description": "<div class='faqInFs4Fb'>    Kontrollér computerens batteriforbrug</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 indeholder det nye skærmbillede <strong>Batteribrug</strong>, som viser, hvad der opbruger din bærbare computers strømlager. Det betyder, at du ved præcist, hvilke apps – både til stationære computere og 'generelle' apps til Windows 10 – der bruger for meget strøm.</p><h3 class='faqInFs25FbP10'>Påvirkede mærker</h3><ul>    <li>Bærbare og stationære computere fra Lenovo</li></ul><h3 class='faqInFs25FbP10'>Berørte systemer</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Styresystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p>Denne funktion er ny i Windows 10. Den er ikke placeret i den traditionelle visning af <strong>Kontrolpanel</strong>, men i den nye app <strong>Indstillinger</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Find skærmbilledet Batteribrug.</h3></p><p>1. Klik eller tryk på <strong>Indstillinger</strong> i menuen Start</p><p>2. I <strong>Indstillinger</strong> skal du vælge <strong>System</strong>og derefter vælge <strong>Strømsparetilstand.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klik eller tryk på linket <strong>Batteribrug</strong> under denne overskrift for at få flere oplysninger. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analysér dit strømforbrug.</h3><p>4. Du kan få skærmen Batteribrug til at vise forbruget for de seneste 24-48 timer eller den seneste uge</p><p>5. Procentangivelser for <strong>System</strong>, <strong>Skærm</strong> og <strong>Wi-Fi</strong>. Her kan du se, hvor meget batterikapacitet, systemprocesserne og skærmen har forbrugt</p><p>6. Indstillingerne <strong>I brug</strong> og <strong>Baggrund</strong> viser, hvor meget strøm der forbruges af applikationerne, mens du anvender dem, sammenlignet med applikationer, der kører i baggrunden.</p><p>7. Hvis apps forbruger strøm i baggrunden, kan du klikke eller trykke på linket <strong>Rediger indstillinger for baggrundsapp</strong>, og angiv apps til ikke at køre i baggrunden. Dette fungerer kun for de generelle Windows 10-apps.</p><p>8. Rul længere ned, hvor du får vist en liste over applikationer, som betragtes som den mest nyttige del af denne funktion. Den viser en liste over de apps, der har forbrugt batteristrøm i den aktuelle periode, og viser, hvor stor en procentdel af batteriets kapacitet hver enkelt app har forbrugt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Kontrollér computerens batteriforbrug</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 indeholder det nye skærmbillede <strong>Batteribrug</strong>, som viser, hvad der opbruger din bærbare computers strømlager. Det betyder, at du ved præcist, hvilke apps – både til stationære computere og 'generelle' apps til Windows 10 – der bruger for meget strøm.</p><h3 class='faqInFs25FbP10'>Påvirkede mærker</h3><ul>    <li>Bærbare og stationære computere fra Lenovo</li></ul><h3 class='faqInFs25FbP10'>Berørte systemer</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Styresystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p>Denne funktion er ny i Windows 10. Den er ikke placeret i den traditionelle visning af <strong>Kontrolpanel</strong>, men i den nye app <strong>Indstillinger</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Find skærmbilledet Batteribrug.</h3></p><p>1. Klik eller tryk på <strong>Indstillinger</strong> i menuen Start</p><p>2. I <strong>Indstillinger</strong> skal du vælge <strong>System</strong>og derefter vælge <strong>Strømsparetilstand.<br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klik eller tryk på linket <strong>Batteribrug</strong> under denne overskrift for at få flere oplysninger. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analysér dit strømforbrug.</h3><p>4. Du kan få skærmen Batteribrug til at vise forbruget for de seneste 24-48 timer eller den seneste uge</p><p>5. Procentangivelser for <strong>System</strong>, <strong>Skærm</strong> og <strong>Wi-Fi</strong>. Her kan du se, hvor meget batterikapacitet, systemprocesserne og skærmen har forbrugt</p><p>6. Indstillingerne <strong>I brug</strong> og <strong>Baggrund</strong> viser, hvor meget strøm der forbruges af applikationerne, mens du anvender dem, sammenlignet med applikationer, der kører i baggrunden.</p><p>7. Hvis apps forbruger strøm i baggrunden, kan du klikke eller trykke på linket <strong>Rediger indstillinger for baggrundsapp</strong>, og angiv apps til ikke at køre i baggrunden. Dette fungerer kun for de generelle Windows 10-apps.</p><p>8. Rul længere ned, hvor du får vist en liste over applikationer, som betragtes som den mest nyttige del af denne funktion. Den viser en liste over de apps, der har forbrugt batteristrøm i den aktuelle periode, og viser, hvor stor en procentdel af batteriets kapacitet hver enkelt app har forbrugt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2705,7 +2920,7 @@
         "deviceStatisticsDescription": "Send anonyme enhedsdata for at hjælpe os med at forbedre kvalitet, pålidelighed og den næste generation af enheder.",
         "userProfile": "Brugerprofil",
         "Note": "Bemærk: ",
-        "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft.",
+        "settingsNotes": "Start programmet igen for at sikre, at alle ændringer træder i kraft.",
         "betaSettingTitle": "Betaprogram",
         "betaProgram": "Betaprogram",
         "betaSettingDescription": "Prøv de nyeste funktioner, vi arbejder på."
@@ -2729,6 +2944,8 @@
         "noteDownloadAvailable": "Bemærk: Når du klikker på Download, får du muligvis en meddelelse fra Windows om at give os tilladelse til at installere programmet på din enhed. Når du er færdig med at installere, vises dine apps automatisk på skrivebordet eller i startmenuen.<br /><br />Du kan lukke siden Min software og fortsætte med at bruge Lenovo Vantage. Luk ikke Lenovo Vantage under installation.",
         "sizeText": "Størrelse",
         "versionText": "Version",
+        "redemptionCode": "Indløsningskode:",
+        "redeemWebsite": "Indløs på leverandørens websted",
         "softwareDescription": "Klik på download nedenfor for at indløse software, der er købt med din enhed. Hvis du på et tidspunkt får brug for at downloade softwaren igen, kan du gøre det ved at klikke på knappen Min software i Lenovo Vantage-menuen.",
         "title": "Min software",
         "loadingDescription": "Vent, mens vi forbereder en list over den software, der fulgte med, da du købte din enhed.",
@@ -2838,7 +3055,7 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Knappen deaktiveres, hvis lagerenhederne ikke understøtter denne funktion, mens hardwareoplysningerne indlæses, eller hvis der er en scanning i gang."
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",
@@ -3044,7 +3261,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3254,5 +3488,8 @@
             "subtitle2": "Alt-i-en-computere: strømlinet",
             "body2": "Alt-i-en-pc'er med 9. generations Intel® Core™-processorer giver dig alle kræfterne i en stationær computer i en slank skærm. Du får mindre rod, hardwarebaseret sikkerhed og en skærm med en høj opløsning."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

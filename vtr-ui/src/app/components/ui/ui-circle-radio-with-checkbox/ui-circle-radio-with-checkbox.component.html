@@ -7,7 +7,6 @@
 	[attr.aria-checked]="checked"
 	attr.aria-label="radioId"
 	(keydown)="radioKBNavigation($event,radio)"
-	(focus)="checkOnFocus($event,radio)"
 	[ngClass]="{'white-theme': theme === 'white','blue-theme': theme === 'blue'}">
 	<div class="checkbox">
 		<input class="checkbox-custom"
@@ -27,11 +26,16 @@
 			vtrMetrics
 			metricsEvent="featureClick"
 			[metricsItem]="'radio.'+label"
-			[metricsValue]="!radio.checked" tabindex="-1">
+			[metricsValue]="!radio.checked"
+			tabindex="-1">
 		<label for="{{radioId}}"
-			class="checkbox-custom-label" id="{{ radioId }}" attr.aria-label="{{ radioId }}">
+			class="checkbox-custom-label"
+			id="{{ radioId }}"
+			attr.aria-label="{{ radioId }}">
 			<div *ngIf="!hideIcon"
 				[ngClass]="'icomoon icomoon-'+getIconName(value)"></div>
+			<div *ngIf="customIcon && customIcon.length>0"
+				[ngClass]="'icomoon icomoon-'+customIcon"></div>
 			<fa-layers [fixedWidth]="true"
 				*ngIf="checked">
 				<fa-icon class="icon-circle"
@@ -45,6 +49,6 @@
 			id="{{textId}}-{{value}}-label"
 			attr.aria-label="{{textId}}-{{value}}-label"
 			[attr.aria-disabled]="disabled"
-			[attr.aria-checked]="checked">{{label | capitalizeFirst}}</div>
+			[attr.aria-checked]="checked">{{processLabel ? (label | capitalizeFirst) : label}}</div>
 	</div>
 </div>

@@ -33,26 +33,25 @@ describe('ModalSmartStandByComponent', () => {
 		}
 	];
 
-	//models coverage
-	let cameraDetail: CameraDetail = new CameraDetail();
-	let cameraSettingsResponse: CameraSettingsResponse = new CameraSettingsResponse();
-	let sunsetToSunriseStatus: SunsetToSunriseStatus = new SunsetToSunriseStatus(false, false, false, '', '');
-	let batteryConditionModels = [];
-	let i = 0;
-	for (i = 0; i <= 17; i++) {
+	// models coverage
+	const cameraDetail: CameraDetail = new CameraDetail();
+	const cameraSettingsResponse: CameraSettingsResponse = new CameraSettingsResponse();
+	const sunsetToSunriseStatus: SunsetToSunriseStatus = new SunsetToSunriseStatus(false, false, false, '', '');
+	const batteryConditionModels = [];
+	for (let i = 0; i <= 17; i++) {
 		batteryConditionModels.push(new BatteryConditionModel(i, 0).getBatteryConditionTip(i));
 	}
-	let dolbyModeResponse = new DolbyModeResponse(false, [ '' ], '');
-	let microphoneOptimizeModes = new MicrophoneOptimizeModes([ '' ], '');
-	let microphone = new Microphone(false, false, 0, '', false, false, false, false, false);
-	let inputAccessoriesCapability: InputAccessoriesCapability = new InputAccessoriesCapability();
+	const dolbyModeResponse = new DolbyModeResponse(false, [''], '');
+	const microphoneOptimizeModes = new MicrophoneOptimizeModes([''], '');
+	const microphone = new Microphone(false, false, 0, '', false, false, false, false, false);
+	const inputAccessoriesCapability: InputAccessoriesCapability = new InputAccessoriesCapability();
 
 	beforeEach(
 		async(() => {
 			TestBed.configureTestingModule({
-				declarations: [ ModalSmartStandByComponent ],
-				imports: [ FontAwesomeModule, TranslationModule, HttpClientTestingModule ],
-				providers: [ NgbActiveModal, TranslateStore ]
+				declarations: [ModalSmartStandByComponent],
+				imports: [FontAwesomeModule, TranslationModule, HttpClientTestingModule],
+				providers: [NgbActiveModal, TranslateStore]
 			}).compileComponents();
 		})
 	);
@@ -62,16 +61,24 @@ describe('ModalSmartStandByComponent', () => {
 			const fixture = TestBed.createComponent(ModalSmartStandByComponent);
 			const component = fixture.debugElement.componentInstance;
 			const powerService = fixture.debugElement.injector.get(PowerService);
-
+			const activeModal = fixture.debugElement.injector.get(NgbActiveModal)
 			const httpTestingController = fixture.debugElement.injector.get(HttpTestingController);
 
-			return { fixture, component, powerService, httpTestingController };
+			return { fixture, component, powerService, httpTestingController, activeModal };
 		}
 
 		it('should create the app', () => {
 			const { component } = setup();
 			expect(component).toBeTruthy();
-		});
+		}));
+
+		it('getActiviesData calling powerService', async(() => {
+			const { fixture, component, powerService } = setup();
+			spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
+			spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
+
+			component['getActivitiesData']();
+			fixture.detectChanges();
 
 		// it('getActiviesData calling powerService', async(() => {
 		// 	const { fixture, component, powerService } = setup();
@@ -92,43 +99,40 @@ describe('ModalSmartStandByComponent', () => {
 				spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
 				spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
 
+		// Testing exceptions
+		it('Testing exception', async(() => {
+			const { fixture, component, powerService } = setup();
+			spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(new TypeError('caught exception')));
+			spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(new TypeError('caught exception')));
+
+			fixture.detectChanges(); // onInit()
+			const excp = () => {
+				component.getActivities();
 				component.getSmartStandbyActiveHours();
-				fixture.detectChanges();
+				component.closeModal();
+				throw new TypeError('caught exception');
+			};
+			expect(excp).toThrowError(TypeError);
+		}));
+
+		it('should call closeModal', () => {
+			const { component, activeModal } = setup();
+			let spy = spyOn(activeModal, 'close')
+			component.closeModal()
+			expect(spy).toHaveBeenCalled()
+		})
 
 				expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
 				expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
 			})
 		);
 
-		//Testing exceptions
-		it(
-			'Testing exception',
-			async(() => {
-				const { fixture, component, powerService } = setup();
-				spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(
-					Promise.resolve(new TypeError('caught exception'))
-				);
-				spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(
-					Promise.resolve(new TypeError('caught exception'))
-				);
-
-				fixture.detectChanges(); // onInit()
-				let excp = function() {
-					//component.getActivities();
-					component.getSmartStandbyActiveHours();
-					component.closeModal();
-					throw new TypeError('caught exception');
-				};
-				expect(excp).toThrowError(TypeError);
-			})
-		);
-
-		//testing http.get
+		// testing http.get
 		// it('should call getActivities', (() => {
 		// 	const { fixture, component, httpTestingController } = setup();
-		// 	let mockActivities = activities;
+		// 	const mockActivities = activities;
 
-		// 	component.getActivities().subscribe(data => {
+		// 	component['getActivities']().subscribe(data => {
 		// 		expect(data).toEqual(mockActivities);
 		// 	});
 

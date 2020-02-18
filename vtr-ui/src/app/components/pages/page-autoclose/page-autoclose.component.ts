@@ -46,7 +46,7 @@ export class PageAutocloseComponent implements OnInit {
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
 		private translate: TranslateService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
 	) {
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
@@ -128,10 +128,15 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	hiddenScroll(action: boolean) {
+		const selectorVtr = (document.getElementsByClassName('vtr-app')[0] as HTMLElement);
 		if (action) {
-			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = 'hidden';
+			selectorVtr.style.overflowY = 'hidden';
+			selectorVtr.style.overflowX = 'hidden';
 		} else {
-			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = '';
+			if (selectorVtr.style.overflowY === 'hidden') {
+				selectorVtr.style.overflowY = 'auto';
+				selectorVtr.style.overflowX = 'hidden';
+			}
 		}
 	}
 
@@ -155,8 +160,8 @@ export class PageAutocloseComponent implements OnInit {
 				if (!isUndefined(appList.processList)) {
 					this.autoCloseAppList = appList.processList;
 					this.gamingAutoCloseService.setAutoCloseListCache(appList.processList);
-					console.log('get Auto close List', appList.processList);
-					console.log('Total Auto close List Apps', appList.processList.length);
+					this.loggerService.info('page-autoclose.component.refreshAutoCloseList', 'get Auto close List--->' + appList.processList);
+					this.loggerService.info('page-autoclose.component.refreshAutoCloseList', 'Total Auto close List Apps--->' + appList.processList.length);
 				}
 			});
 		} catch (error) {
@@ -207,15 +212,6 @@ export class PageAutocloseComponent implements OnInit {
 			Page: 'auto-close'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
-			const cardContentPositionF = this.cmsService.getOneCMSContent(
-				response,
-				'half-width-top-image-title-link',
-				'position-F'
-			)[0];
-			if (cardContentPositionF) {
-				this.cardContentPositionF = cardContentPositionF;
-			}
-
 			const cardContentPositionC = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-title-description-link-image',
@@ -223,8 +219,17 @@ export class PageAutocloseComponent implements OnInit {
 			)[0];
 			if (cardContentPositionC) {
 				this.cardContentPositionC = cardContentPositionC;
-				if (this.cardContentPositionC.BrandName) {
-					this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+			}
+
+			const cardContentPositionF = this.cmsService.getOneCMSContent(
+				response,
+				'inner-page-right-side-article-image-background',
+				'position-F'
+			)[0];
+			if (cardContentPositionF) {
+				this.cardContentPositionF = cardContentPositionF;
+				if (this.cardContentPositionF.BrandName) {
+					this.cardContentPositionF.BrandName = this.cardContentPositionF.BrandName.split('|')[0];
 				}
 			}
 		});
@@ -246,7 +251,7 @@ export class PageAutocloseComponent implements OnInit {
 			this.toggleStatus = await this.gamingAutoCloseService.getAutoCloseStatus();
 			this.gamingAutoCloseService.setAutoCloseStatusCache(this.toggleStatus);
 		} catch (err) {
-			console.log(`ERROR in getAutoCloseStatus()`, err);
+			this.loggerService.error('page-autoclose.component.getAutoCloseStatus', 'ERROR in getAutoCloseStatus()-->' + err);
 		}
 	}
 }

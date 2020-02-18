@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, OnDestroy, SecurityContext, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, SecurityContext, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -26,21 +26,32 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 import { DccService } from 'src/app/services/dcc/dcc.service';
-import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
+
+interface IConfigItem {
+	id: string;
+	template: string;
+	position: string;
+	cardPosition: string;
+	cmsCardPosition: string;
+	dashboardCache: string;
+}
+
 
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
 	styleUrls: ['./page-dashboard.component.scss']
 })
-export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
+export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit {
 	submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit;
+	offlineConnection = 'offline-connection';
 	public systemStatus: Status[] = [];
 	public isOnline = true;
 	public brand;
 	private protocolAction: any;
+	private lastAction: any;
 	public warrantyData: { info: { endDate: null; status: 2; startDate: null; url: string }; cache: boolean };
 	public isWarrantyVisible = false;
 	public showQuickSettings = true;
@@ -90,6 +101,57 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		tileF: 'CMS'
 	};
 
+	configDic = [
+		{
+			id: 'tileA',
+			template: 'home-page-hero-banner',
+			position: 'position-A',
+			cardPosition: 'heroBannerItems',
+			cmsCardPosition: 'heroBannerItemsCms',
+			dashboardCache: 'heroBannerItemsOnline'
+		},
+		{
+			template: 'half-width-title-description-link-image',
+			position: 'position-B',
+			id: 'tileB',
+			cardPosition: 'cardContentPositionB',
+			cmsCardPosition: 'cardContentPositionBCms',
+			dashboardCache: 'cardContentPositionBOnline'
+		},
+		{
+			template: 'half-width-title-description-link-image',
+			position: 'position-C',
+			id: 'tileC',
+			cardPosition: 'cardContentPositionC',
+			cmsCardPosition: 'cardContentPositionCCms',
+			dashboardCache: 'cardContentPositionCOnline'
+		},
+		{
+			template: 'full-width-title-image-background',
+			position: 'position-D',
+			id: 'tileD',
+			cardPosition: 'cardContentPositionD',
+			cmsCardPosition: 'cardContentPositionDCms',
+			dashboardCache: 'cardContentPositionDOnline'
+		},
+		{
+			template: 'half-width-top-image-title-link',
+			position: 'position-E',
+			id: 'tileE',
+			cardPosition: 'cardContentPositionE',
+			cmsCardPosition: 'cardContentPositionECms',
+			dashboardCache: 'cardContentPositionEOnline'
+		},
+		{
+			template: 'half-width-top-image-title-link',
+			position: 'position-F',
+			id: 'tileF',
+			cardPosition: 'cardContentPositionF',
+			cmsCardPosition: 'cardContentPositionFCms',
+			dashboardCache: 'cardContentPositionFOnline'
+		}
+	];
+
 	/*forwardLink = {
 		path: 'dashboard-customize',
 		label: 'Customize Dashboard'
@@ -119,6 +181,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		private sanitizer: DomSanitizer,
 		public dccService: DccService
 	) {
+		this.getProtocalAction();
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.deviceService.getMachineInfo().then(() => {
@@ -134,9 +197,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		// this.qaService.setTranslationService(this.translate);
 		// this.qaService.setCurrentLangTranslations();
 		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchContent();
-		});
+		// this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		// 	this.fetchContent();
+		// });
 
 		this.isOnline = this.commonService.isOnline;
 		this.isWarrantyVisible = deviceService.showWarranty;
@@ -159,9 +222,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			.stream([
 				'dashboard.offlineInfo.welcomeToVantage',
 				'common.menu.support',
-				'settings.settings',
+				'common.menu.device.sub2',
 				'dashboard.offlineInfo.systemHealth',
-				'common.securityAdvisor.wifi',
+				'settings.preferenceSettings',
 				'systemUpdates.title',
 				'systemUpdates.readMore'
 			])
@@ -176,17 +239,36 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			});
 		this.getSelfSelectStatus();
 		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
+		this.launchProtocol();
 	}
 
-	ngDoCheck(): void {
-		const lastAction = this.protocolAction;
+	private getProtocalAction() {
 		this.protocolAction = this.activatedRoute.snapshot.queryParams.action;
-		if (this.protocolAction && (lastAction !== this.protocolAction)) {
-			if (this.protocolAction.toLowerCase() === 'lenovoid') {
-				setTimeout(() => this.dialogService.openLenovoIdDialog());
-			} else if (this.protocolAction.toLowerCase() === 'modernpreload') {
-				setTimeout(() => this.dialogService.openModernPreloadModal());
+		const currentNavigate = this.router.getCurrentNavigation();
+		if (currentNavigate && this.router.getCurrentNavigation().extras !== undefined) {
+			const extras = this.router.getCurrentNavigation().extras;
+			if (!this.protocolAction && extras.queryParams !== undefined && extras.queryParams.action !== undefined) {
+				this.protocolAction = extras.queryParams.action;
 			}
+		}
+	}
+
+	private launchProtocol() {
+		if (this.protocolAction && (this.lastAction !== this.protocolAction)) {
+			if (this.protocolAction.toLowerCase() === 'lenovoid' && !this.userService.auth) {
+				const shellVersion = this.vantageShellService.getShellVersion();
+				if (this.commonService.compareVersion(shellVersion, '10.2001.9') >= 0) {
+					// New shell use await to sync with UI, launch LID immediately
+					setTimeout(() => this.dialogService.openLenovoIdDialog(), 0);
+				} else {
+					// Delay 2 seconds then launch LID, this is workarround for old shell sync issue with UI,
+					//  UI will possibly become blank in case of protocol launch
+					setTimeout(() => this.dialogService.openLenovoIdDialog(), 2000);
+				}
+			} else if (this.protocolAction.toLowerCase() === 'modernpreload') {
+				setTimeout(() => this.dialogService.openModernPreloadModal(), 0);
+			}
+			this.lastAction = this.protocolAction;
 		}
 	}
 
@@ -228,6 +310,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				if (textIndex === 2) {
 					textIndex = 3;
 				} // Do not show again in first time
+			}
+			if (textIndex === 8 && this.translate.currentLang.toLocaleLowerCase() !== 'en') {
+				textIndex = 9;
 			}
 			this.dashboardService.welcomeText = `lenovoId.welcomeText${textIndex}`;
 			this.dashboardService.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
@@ -380,16 +465,15 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		|| (!bannerItems1 && bannerItems2)) {
 			result = true;
 		} else if (bannerItems1 && bannerItems2) {
-			if (bannerItems1.length != bannerItems2.length) {
+			if (bannerItems1.length !== bannerItems2.length) {
 				result = true;
 			} else {
-				for(var i = 0; i < bannerItems1.length; i++) {
+				for (let i = 0; i < bannerItems1.length; i++) {
 					if ((bannerItems1[i] && !bannerItems2[i])
 						|| (!bannerItems1[i] && bannerItems2[i])) {
 						result = true;
 						break;
-					}
-					else if (bannerItems1[i] && bannerItems2[i]
+					} else if (bannerItems1[i] && bannerItems2[i]
 						&& JSON.stringify(bannerItems2[i]) !== JSON.stringify(bannerItems1[i])) {
 						result = true;
 						break;
@@ -491,33 +575,26 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		}
 	}
 
-	fetchUPEContent() {
-		if (this.tileSource.tileA === 'UPE') {
-			this.getUPEHeroBannerItems({ position: 'position-A' });
-		}
-		if (this.tileSource.tileB === 'UPE') {
-			this.getUPECardContentB({ position: 'position-B' });
-		}
-		if (this.tileSource.tileC === 'UPE') {
-			this.getUPECardContentC({ position: 'position-C' });
-		}
-		if (this.tileSource.tileD === 'UPE') {
-			this.getUPECardContentD({ position: 'position-D' });
-		}
-		if (this.tileSource.tileE === 'UPE') {
-			this.getUPECardContentE({ position: 'position-E' });
-		}
-		if (this.tileSource.tileF === 'UPE') {
-			this.getUPECardContentF({ position: 'position-F' });
-		}
-	}
+	async fetchUPEContent() {
+		const positions = [];
+		const contentCards: IConfigItem [] = [];
+		this.configDic.forEach(cardItem => {
+			if (this.tileSource[cardItem.id] === 'UPE') {
+				positions.push(cardItem.position);
+				contentCards.push(cardItem);
+			}
+		});
 
-	getUPEHeroBannerItems(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe(
-			(response) => {
-				const heroBannerItems = this.upeService
-					.getOneUPEContent(response, 'home-page-hero-banner', 'position-A')
-					.map((record, index) => {
+		if (positions.length === 0) {
+			return;
+		}
+
+		try {
+			const response = await this.upeService.fetchUPEContent({positions});
+			contentCards.forEach(cardItem => {
+				let articles = this.upeService.filterItems( response, cardItem.template, cardItem.position);
+				if (cardItem.position === 'position-A') {
+					articles = articles.map((record) => {
 						return {
 							albumId: 1,
 							id: record.Id,
@@ -529,157 +606,35 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 							DataSource: 'upe'
 						};
 					});
-				if (heroBannerItems && heroBannerItems.length) {
-					this.heroBannerItems = heroBannerItems;
-					this.dashboardService.heroBannerItemsOnline = heroBannerItems;
-					this.upeRequestResult.tileA = true;
-				}
-			},
-			(err) => {
-				this.loggerService.info(`Cause by error: ${err}, position-A load CMS content.`);
-				this.upeRequestResult.tileA = false;
-				if (this.cmsRequestResult.tileA) {
-					this.heroBannerItems = this.heroBannerItemsCms;
-					this.dashboardService.heroBannerItemsOnline = this.heroBannerItemsCms;
-				}
-			}
-		);
-	}
 
-	getUPECardContentB(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe(
-			(response) => {
-				const cardContentPositionB = this.upeService.getOneUPEContent(
-					response,
-					'half-width-title-description-link-image',
-					'position-B'
-				)[0];
-				if (cardContentPositionB) {
-					if (cardContentPositionB.BrandName) {
-						cardContentPositionB.BrandName = cardContentPositionB.BrandName.split('|')[0];
+					if (articles && articles.length) {
+						this[cardItem.cardPosition] = articles;
+						this.dashboardService[cardItem.dashboardCache] = articles;
+						this.upeRequestResult[cardItem.id] = true;
 					}
-					cardContentPositionB.DataSource = 'upe';
-					this.cardContentPositionB = cardContentPositionB;
-					this.dashboardService.cardContentPositionBOnline = this.cardContentPositionB;
-					this.upeRequestResult.tileB = true;
-				}
-			},
-			(err) => {
-				this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
-				this.upeRequestResult.tileB = false;
-				if (this.cmsRequestResult.tileB) {
-					this.cardContentPositionB = this.cardContentPositionBCms;
-					this.dashboardService.cardContentPositionBOnline = this.cardContentPositionBCms;
-				}
-			}
-		);
-	}
-
-	getUPECardContentC(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe(
-			(response) => {
-				const cardContentPositionC = this.upeService.getOneUPEContent(
-					response,
-					'half-width-title-description-link-image',
-					'position-C'
-				)[0];
-				if (cardContentPositionC) {
-					if (cardContentPositionC.BrandName) {
-						cardContentPositionC.BrandName = cardContentPositionC.BrandName.split('|')[0];
+				} else {
+					const article =  articles[0];
+					if (article) {
+						if (article.BrandName) {
+							article.BrandName = article.BrandName.split('|')[0];
+						}
+						article.DataSource = 'upe';
+						this[cardItem.cardPosition] = article;
+						this.dashboardService[cardItem.dashboardCache] = article;
+						this.upeRequestResult[cardItem.id] = true;
 					}
-					cardContentPositionC.DataSource = 'upe';
-					this.cardContentPositionC = cardContentPositionC;
-					this.dashboardService.cardContentPositionCOnline = this.cardContentPositionC;
-					this.upeRequestResult.tileC = true;
 				}
-			},
-			(err) => {
-				this.loggerService.info(`Cause by error: ${err}, position-C load CMS content.`);
-				this.upeRequestResult.tileC = false;
-				if (this.cmsRequestResult.tileC) {
-					this.cardContentPositionC = this.cardContentPositionCCms;
-					this.dashboardService.cardContentPositionCOnline = this.cardContentPositionCCms;
+			});
+		} catch (ex) {
+			this.loggerService.info(`Cause by error: ${ex}, position-B load CMS content.`);
+			contentCards.forEach(cardItem => {
+				this.upeRequestResult[cardItem.id] = false;
+				if (this.cmsRequestResult[cardItem.id]) {
+					this[cardItem.cardPosition] = this[cardItem.cmsCardPosition];
+					this.dashboardService[cardItem.dashboardCache] = this[cardItem.cmsCardPosition];
 				}
-			}
-		);
-	}
-
-	getUPECardContentD(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe(
-			(response) => {
-				const cardContentPositionD = this.upeService.getOneUPEContent(
-					response,
-					'full-width-title-image-background',
-					'position-D'
-				)[0];
-				if (cardContentPositionD) {
-					cardContentPositionD.DataSource = 'upe';
-					this.cardContentPositionD = cardContentPositionD;
-					this.dashboardService.cardContentPositionDOnline = this.cardContentPositionD;
-					this.upeRequestResult.tileD = true;
-				}
-			},
-			(err) => {
-				this.loggerService.info(`Cause by error: ${err}, position-D load CMS content.`);
-				this.upeRequestResult.tileD = false;
-				if (this.cmsRequestResult.tileD) {
-					this.cardContentPositionD = this.cardContentPositionDCms;
-					this.dashboardService.cardContentPositionDOnline = this.cardContentPositionDCms;
-				}
-			}
-		);
-	}
-
-	getUPECardContentE(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe(
-			(response) => {
-				const cardContentPositionE = this.upeService.getOneUPEContent(
-					response,
-					'half-width-top-image-title-link',
-					'position-E'
-				)[0];
-				if (cardContentPositionE) {
-					cardContentPositionE.DataSource = 'upe';
-					this.cardContentPositionE = cardContentPositionE;
-					this.dashboardService.cardContentPositionEOnline = this.cardContentPositionE;
-					this.upeRequestResult.tileE = true;
-				}
-			},
-			(err) => {
-				this.loggerService.info(`Cause by error: ${err}, position-E load CMS content.`);
-				this.upeRequestResult.tileE = false;
-				if (this.cmsRequestResult.tileE) {
-					this.cardContentPositionE = this.cardContentPositionECms;
-					this.dashboardService.cardContentPositionEOnline = this.cardContentPositionECms;
-				}
-			}
-		);
-	}
-
-	getUPECardContentF(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe(
-			(response) => {
-				const cardContentPositionF = this.upeService.getOneUPEContent(
-					response,
-					'half-width-top-image-title-link',
-					'position-F'
-				)[0];
-				if (cardContentPositionF) {
-					cardContentPositionF.DataSource = 'upe';
-					this.cardContentPositionF = cardContentPositionF;
-					this.dashboardService.cardContentPositionFOnline = this.cardContentPositionF;
-					this.upeRequestResult.tileF = true;
-				}
-			},
-			(err) => {
-				this.loggerService.info(`Cause by error: ${err}, position-F load CMS content.`);
-				this.upeRequestResult.tileF = false;
-				if (this.cmsRequestResult.tileF) {
-					this.cardContentPositionF = this.cardContentPositionFCms;
-					this.dashboardService.cardContentPositionFOnline = this.cardContentPositionFCms;
-				}
-			}
-		);
+			});
+		}
 	}
 
 	onFeedbackModal() {
@@ -864,6 +819,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 					} else {
 						systemUpdate.status = 1;
 					}
+					systemUpdate.status = 0;
 				}
 			});
 		}
@@ -888,7 +844,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			cache: true
 		};
 		const warranty = this.systemStatus[2];
-		const warrantyDate = this.commonService.formatDate(value.endDate);
+		const warrantyDate = this.commonService.formatUTCDate(value.endDate);
 		// in warranty
 		if (value.status === 0) {
 			this.translate.stream('dashboard.systemStatus.warranty.detail.until').subscribe((re) => {
@@ -908,6 +864,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		}
 		warranty.isHidden = !this.deviceService.showWarranty;
 		this.isWarrantyVisible = this.deviceService.showWarranty;
+		warranty.status = 0;
 	}
 
 	private onNotification(notification: AppNotification) {

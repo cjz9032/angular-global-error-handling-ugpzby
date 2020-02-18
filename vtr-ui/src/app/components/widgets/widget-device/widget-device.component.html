@@ -40,10 +40,10 @@
 					</div>
 					<div class="col device-image">
 						<div class="circleimage">
-							<img class="img-fluid" *ngIf="!deviceService.isGaming"
+							<img class="" *ngIf="!deviceService.isGaming"
 								[src]=" '/assets/icons/logo-lenovo-red.svg' | svgInline | async"
 								alt="Lenovo logo">
-							<img class="img-fluid" *ngIf="deviceService.isGaming"
+							<img class="" *ngIf="deviceService.isGaming"
 								[src]=" '/assets/icons/logo-lenovo-white.svg' | svgInline | async"
 								alt="Lenovo logo">
 						</div>
@@ -66,7 +66,7 @@
 						[hidden]="item.isHidden"
 						tabindex="0">
 						<div class="container-fluid">
-							<div class="row d-flex align-items-center {{'dirClass' | translate}}">
+							<div class="d-flex align-items-center {{'dirClass' | translate}}">
 									<div class="status-icon">
 										<div class="icon-bkg">
 											<fa-icon [icon]="['fas', !item.status?'check':'times']"></fa-icon>
@@ -98,12 +98,11 @@
 										id="myDevice-status-learn-more-{{item.id}}"
 										title="{{item.detail}}"
 										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false && item.status !== 4)">
-										<div class="detail"
+										<p class="detail"
 											[ngClass]="{'highlight':item.asLink}">
 											<span class="{{'dirClass' | translate}}"
-												dir="{{'dir' | translate}}">{{item.detail}}</span>
-											<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-										</div>
+												dir="{{'dir' | translate}}">{{item.detail}}&nbsp;<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon></span>
+										</p>
 									</a>
 									<!--Open Windows Settings /subapges if isSystemLink is not undefined or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
 									<a *ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true && item.status !== 4"
@@ -115,12 +114,11 @@
 										id="myDevice-status-learn-more-{{item.id}}"
 										title="{{item.detail}}"
 										(click)="deviceService.launchUri(item.path)">
-										<div class="detail"
+										<p class="detail"
 											[ngClass]="{'highlight':item.asLink}">
 											<span class="{{'dirClass' | translate}}"
-												dir="{{'dir' | translate}}">{{item.detail}}</span>
-											<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-										</div>
+												dir="{{'dir' | translate}}">{{item.detail}}</span>&nbsp;<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+										</p>
 									</a>
 									<!-- <div class="arrow">
 										<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>

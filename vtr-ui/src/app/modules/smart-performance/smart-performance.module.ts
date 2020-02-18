@@ -35,6 +35,7 @@ import { WidgetSubscriptiondetailsComponent } from 'src/app/components/widgets/w
 import { WidgetScansettingsComponent } from '../../components/widgets/widget-scansettings/widget-scansettings.component';
 import { PageLayoutComponent } from 'src/app/components/page-layout/page-layout.component';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
+import { SanitizeModule } from '../sanitize.module';
 library.add(faLaptop);
 library.add(faTrashAlt);
 library.add(faExclamationTriangle);
@@ -70,6 +71,7 @@ library.add(faCircle);
   HeaderMainModule,
   FontAwesomeModule,
   CommonUiModule,
+  SanitizeModule,
   TranslationModule.forChild()
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

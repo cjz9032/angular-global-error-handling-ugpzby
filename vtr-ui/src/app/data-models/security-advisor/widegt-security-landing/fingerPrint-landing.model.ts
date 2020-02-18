@@ -36,8 +36,8 @@ export class FingerPrintLandingViewModel {
 
 		translate.stream([
 			'common.securityAdvisor.loading',
-			'common.securityAdvisor.registered',
-			'common.securityAdvisor.notRegistered',
+			'common.securityAdvisor.enrolled',
+			'common.securityAdvisor.notEnrolled',
 			'security.landing.fingerprint',
 			'security.landing.fingerprintContent',
 			'security.landing.visitFingerprint',
@@ -62,8 +62,8 @@ export class FingerPrintLandingViewModel {
 		if (!this.translateString) {
 			return;
 		}
-		this.whStatus.detail = this.translateString[`common.securityAdvisor.${finger === 'active' ? 'registered' : 'notRegistered'}`];
+		this.whStatus.detail = this.translateString[`common.securityAdvisor.${finger === 'active' ? 'enrolled' : 'notEnrolled'}`];
 		this.whStatus.status = finger === 'active' ? 'enabled' : 'disabled';
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, this.whStatus.status);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, finger);
 	}
 }

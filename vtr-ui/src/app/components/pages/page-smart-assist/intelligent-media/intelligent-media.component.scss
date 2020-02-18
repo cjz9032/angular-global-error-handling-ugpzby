@@ -7,15 +7,15 @@
     width: 100%;
 }
 .feature-note {
-    background-color: $shade_lightest;
-    border: 1px solid $shade_lighter;
+    background-color: $grey_lighter;
+    border: 0.1rem solid $note_border;
     width: 100%;
-    margin-left: 4rem !important;
+    margin-left: 4.5rem !important;
     margin-right: 0.6rem !important;
     margin-bottom: 1.5rem !important;
     p {
-        font-size: $body;
-        color: $main_darker;
+        font-size: $fontsize_xs;
+        color: $shade_blue;
     }
     ul{
         list-style-type:disc;

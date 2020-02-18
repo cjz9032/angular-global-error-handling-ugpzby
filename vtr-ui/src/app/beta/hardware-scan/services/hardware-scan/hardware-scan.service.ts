@@ -8,6 +8,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subject, Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { TaskType, TaskStep } from 'src/app/beta/hardware-scan/enums/hardware-scan-metrics.enum';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -57,7 +58,7 @@ export class HardwareScanService {
 	private showComponentList: boolean = false;
 	private previousResultsResponse: any = undefined;
 	private hardwareModulesLoaded = new Subject<boolean>();
-	private pluginInfoPromise: any = undefined;
+	private hypSettingsPromise: any = undefined;
 	private pluginVersion: string;
 
 	// Used to store information related to metrics
@@ -73,7 +74,11 @@ export class HardwareScanService {
 		'storage': 'icon_hardware_hdd.svg'
 	};
 
-	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone, private translate: TranslateService) {
+	// This name must be the same used in the Hyphothesis config file (HyphotesisGroup.xml).
+	private static readonly HARDWARE_SCAN_HYPHOTESIS_CONFIG_NAME: string = 'HardwareScan';
+
+	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone,
+				private translate: TranslateService, private hypSettings: HypothesisService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 
 		// Starts all priority requests as soon as possible when this service starts.
@@ -87,19 +92,32 @@ export class HardwareScanService {
 	 *          concurrent requests.
 	 */
 	private doPriorityRequests() {
-		// Retrive the Plugin's information (it does not use the CLI)
-		if (this.pluginInfoPromise == undefined) {
-			this.pluginInfoPromise = this.getPluginInfo();
-		}
-		// Retrive the last Scan's results (it does not use the CLI)
-		if (this.previousResultsResponse == undefined) {
-			this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
-		}
+		// Check whether HardwareScan is available in Hypothesis Service or not
+		if (this.hypSettingsPromise == undefined) {
+			console.log('[doPriorityRequests] Sending HWScan priority requests!');
+			this.hypSettingsPromise = this.hypSettings.getFeatureSetting(HardwareScanService.HARDWARE_SCAN_HYPHOTESIS_CONFIG_NAME);
 
-		// Retrive the hardware component list (it does use the CLI)
-		if (this.itemsToScanResponse == undefined) {
-			this.culture = window.navigator.languages[0];
-			this.reloadItemsToScan(false);
+			// If HardwareScan is available, dispatch the priority requests
+			this.isAvailable().then((available) => {
+				console.log('[doPriorityRequests] isAvailable() promise returned: ', available);
+				if (available) {
+					// Retrive the Plugin's version (it does not use the CLI)
+					this.getPluginInfo().then((hwscanPluginInfo: any) => {
+						console.log('[getPluginInfo] then: ', hwscanPluginInfo);
+						if (hwscanPluginInfo) {
+							this.pluginVersion = hwscanPluginInfo.PluginVersion;
+							console.log('[getPluginInfo] Hardware Scan plugin version: ', this.pluginVersion);
+						}
+					});
+
+					// Retrive the last Scan's results (it does not use the CLI)
+					this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
+
+					// Retrive the hardware component list (it does use the CLI)
+					this.culture = window.navigator.languages[0];
+					this.reloadItemsToScan(false);
+				}
+			});
 		}
 	}
 
@@ -394,25 +412,17 @@ export class HardwareScanService {
 		return undefined;
 	}
 
-	public async isAvailable() {
-		let hardwareScanAvailable = false;
-
-		await this.pluginInfoPromise
-			.then((hwscanPluginInfo: any) => {
-				if (hwscanPluginInfo) {
-					this.pluginVersion = hwscanPluginInfo.PluginVersion;
-				}
-
-				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
-				hardwareScanAvailable = hwscanPluginInfo !== undefined &&
-					   hwscanPluginInfo.LegacyPlugin === false &&
-					   hwscanPluginInfo.PluginVersion !== "1.0.39"; // This version is not compatible with current version
+	public isAvailable() {
+		console.log('[isAvailable] Method called!');
+		return this.hypSettingsPromise
+			.then((result: any) => {
+				console.log('[isAvailable] then: ', result);
+				return (result || '' ).toString() === 'true';
 			})
-			.catch(() => {
-				hardwareScanAvailable = false;
+			.catch((error) => {
+				console.error('[isAvailable]: Hypothesis Service promise was rejected! ', error);
+				return false;
 			});
-
-		return hardwareScanAvailable;
 	}
 
 	private isPluginCompatible(requiredVersion: string) {
@@ -667,7 +677,7 @@ export class HardwareScanService {
 			totalPercent += response.devices[i].percentageComplete;
 		}
 
-		this.progress = Math.round(totalPercent / this.devices.length);
+		this.progress = Math.floor(totalPercent / this.devices.length);
 
 		if (isNaN(this.progress)) {
 			this.progress = 0;
@@ -868,6 +878,7 @@ export class HardwareScanService {
 						resultCode: '',
 						description: '',
 						information: '',
+						icon: '',
 						metaInformation: [],
 						listTest: []
 					};
@@ -877,6 +888,7 @@ export class HardwareScanService {
 					item.groupId = group.id;
 					item.listTest = [];
 					item.name = group.name;
+					item.icon = this.getHardwareComponentIcon(item.id)
 					item.metaInformation = group.metaInformation;
 
 					for (const testSummary of group.testList) {
@@ -1107,6 +1119,7 @@ export class HardwareScanService {
 				for (let i = 0; i < module.response.groupResults.length; i++) {
 					const item: any = {};
 					const groupResultMeta = groupsResultMeta.find(x => x.id === groupResult[i].id);
+					const moduleName = groupResult[i].moduleName;
 
 					item.id = moduleId;
 					item.module = module.categoryInformation.name;
@@ -1114,6 +1127,7 @@ export class HardwareScanService {
 					item.resultCode = groupResult[i].resultCode;
 					item.information = groupResult[i].resultDescription;
 					item.collapsed = false;
+					item.icon = this.getHardwareComponentIcon(moduleName);
 					item.details = [];
 
 					for (let j = 0; j < groupResultMeta.metaInformation.length; j++) {

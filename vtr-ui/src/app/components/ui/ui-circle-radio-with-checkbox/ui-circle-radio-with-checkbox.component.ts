@@ -19,8 +19,10 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	@Input() processIcon = false;
 	@Input() textId: string;
 	@Input() radioGroup: any;
-	@Output() change: EventEmitter<any> = new EventEmitter();
-	hideIcon: boolean = false;
+	@Input() customIcon = '';
+	@Input() hideIcon = false;
+	@Input() processLabel = true;
+	@Output() optionChange: EventEmitter<any> = new EventEmitter();
 	// These following instance variables added for Keyboard navigation to radio button.
 	keyCode = Object.freeze({
 		TAB: 9,
@@ -37,6 +39,8 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	lastRadioButton: any;
 	radioButtons: Array<any> = [];
 	@ViewChild('radioButton', { static: false }) radioButton: ElementRef<HTMLElement>;
+	selectedRadioButton: any;
+	noRadioButtonSelected: boolean;
 	constructor(private translate: TranslateService) {
 
 	}
@@ -45,10 +49,11 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 		// this.translate.stream(this.label).subscribe((result: string) => {
 		// 	this.label = result;
 		// });
+		this.setRadioButtons(); //Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
 	onChange(event) {
-		this.change.emit(event);
+		this.optionChange.emit(event);
 	}
 
 	getIconName(name: string) {
@@ -69,46 +74,35 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	}
 
 	checkOnFocus(event, radio) {
-		this.setRadioButtons();
+		/* this.setRadioButtons();
 		if (!radio.checked) {
 			radio.click();
-		}
+		} */
 	}
 
 	radioKBNavigation(event, radio) {
-
 		this.setRadioButtons();
 		console.log(event.keyCode);
-
 		switch (event.keyCode) {
 			case this.keyCode.TAB:
-				this.checkOnFocus(event, radio);
+				// this.checkOnFocus(event, radio);
 				break;
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
 				this.setChecked(this.radioButton);
 				break;
-
 			case this.keyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);
-
 				break;
-
 			case this.keyCode.DOWN:
 				this.setCheckedToNextItem(this.radioButton);
-
 				break;
-
 			case this.keyCode.LEFT:
 				this.setCheckedToPreviousItem(this.radioButton);
-
 				break;
-
 			case this.keyCode.RIGHT:
 				this.setCheckedToNextItem(this.radioButton);
-
 				break;
-
 			default:
 				break;
 		}
@@ -116,22 +110,23 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	}
 
 	setChecked(currentItem) {
+		const currentRadio = currentItem.querySelectorAll('input[type="radio"]');
+		if (currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
+			currentRadio[0].click();
+			this.radioButtons.forEach(radioButton => {
+				radioButton.setAttribute('aria-checked', 'false');
+			});
+			currentItem.setAttribute('aria-checked', 'true');
+		}
+		this.setRadioTabIndex(currentItem);
+		currentItem.focus();
+	}
 
+	private setRadioTabIndex(currentItem) {
 		this.radioButtons.forEach(radioButton => {
-			radioButton.setAttribute('aria-checked', 'false');
 			radioButton.tabIndex = -1; // the unchecked item should also be tabbable
 		});
-		/* for (let i = 0; i < this.radioButtons.length; i++) {
-			const rb = this.radioButtons[i];
-			rb.setAttribute('aria-checked', 'false');
-			rb.tabIndex = -1;
-
-
-		} */
-		currentItem.setAttribute('aria-checked', 'true');
 		currentItem.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
-		currentItem.focus();
-
 	}
 
 	setCheckedToPreviousItem(currentItem) {
@@ -174,27 +169,29 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			}
 			const rbs = this.radioGroup.querySelectorAll('[role=radio]');
 
-			if (this.radioButtons.length !== rbs.length) {
+			//if (this.radioButtons.length !== rbs.length) {
+			this.radioButtons = [];
+			rbs.forEach(radioButton => {
+				this.radioButtons.push(radioButton);
+				if (!this.firstRadioButton) {
+					this.firstRadioButton = radioButton;
+				}
+				this.lastRadioButton = radioButton;
 
-				rbs.forEach(radioButton => {
-					this.radioButtons.push(radioButton);
-					if (!this.firstRadioButton) {
-						this.firstRadioButton = radioButton;
-					}
-					this.lastRadioButton = radioButton;
-				});
-				/* for (let i = 0; i < rbs.length; i++) {
+				if (radioButton.getAttribute('aria-checked') === 'true') {
+					this.selectedRadioButton = radioButton;
+					this.noRadioButtonSelected = false;
+				}
+			});
 
-					this.radioButtons.push(rbs[i]);
-					if (!this.firstRadioButton) {
-						this.firstRadioButton = rbs[i];
-					}
-					this.lastRadioButton = rbs[i];
+			//}
+			if (this.firstRadioButton && this.noRadioButtonSelected) {
+				this.setRadioTabIndex(this.firstRadioButton);
+			}
+
+			/* 	if (this.selectedRadioButton) {
+					this.setFocus(this.selectedRadioButton);
 				} */
-			}
-			if (!this.firstRadioButton) {
-				this.firstRadioButton.nativeElement.tabIndex = 0;
-			}
 
 		} catch (error) {
 			console.log('setRadioButtons :: ' + error);

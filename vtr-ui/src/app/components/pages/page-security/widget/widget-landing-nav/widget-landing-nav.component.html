@@ -1,11 +1,18 @@
-<ul class="vtr-widget-landing-nav">
-    <li class="nav-item" [ngClass]="{'d-none': advancedItems && advancedItems.length === 0}" *ngFor="let featureConfig of featurePagesConfig">
-        <span class="nav-link" [ngClass]="{'active': featureConfig.page === currentPage}"
-        (click)="changePage(featureConfig.page)">
-            <p class="nav-title mb-0">{{featureConfig.title | translate}}</p>
+<div class="vtr-widget-landing-nav">
+	<a class="nav-item" role="button" href="javascript:void(0)"
+		[ngClass]="{'d-none': advancedItems && advancedItems.length === 0}"
+		*ngFor="let featureConfig of featurePagesConfig"
+		(click)="changePage(featureConfig.page)"
+		(keydown.enter)="changePage(featureConfig.page)"
+		vtrMetrics
+		metricsItem="change security item {{featureConfig.page}}"
+		metricsEvent="FeatureClick"
+		metricsParent="Security">
+		<span class="nav-link" [ngClass]="{'active': featureConfig.page === currentPage}">
+            <p class="nav-title text-two-ellipsis mb-0">{{featureConfig.title | translate}}</p>
         </span>
-    </li>
-</ul>
+    </a>
+</div>
 <section class="vtr-sub-page-security">
 	<vtr-widget-landing-security
 	(haveOwnChecked)="haveOwn($event)"

@@ -1,7 +1,7 @@
 <div class="vtr-eye-care-mode">
 	<div class="row">
-		<div class="col">
-			<vtr-ui-range-slider 
+		<div class="slider-length pr-0">
+			<vtr-ui-range-slider
 				[step]="100"
 				[manualRefresh]="manualRefresh"
 				[enableSlider]="enableSlider"
@@ -9,7 +9,7 @@
 				[maxValue]="displayColorTempSettings.maximum"
 				[minValueLegend]="'device.deviceSettings.displayCamera.display.dispColorTemp.options.warm' | translate"
 				[maxValueLegend]="'device.deviceSettings.displayCamera.display.dispColorTemp.options.cold' | translate"
-				(change)="onDisplayColorTemparatureChange($event)"
+				(sliderChange)="onDisplayColorTemparatureChange($event)"
 				[(value)]="displayColorTempSettings.current"
 				(valueChangeEnd)="dragChangeValue($event)"
 				[rangeSliderId]="'day-time-color-temp'">
@@ -21,6 +21,7 @@
 					metricsEvent="itemClick"
 					metricsParent="eye-care-mode"
 					metricsItem="btn.eye-care-mode.ResetTemparature"
+				    [isDisabled]="disableReset"
 					[isFullWidth]="false"
 					[label]="'device.deviceSettings.displayCamera.display.dispColorTemp.reset' | translate"
 					[linkId]="'day-time-color-temp-reset-btn'">

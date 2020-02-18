@@ -292,6 +292,7 @@ strong {
 
 ngb-tooltip-window.vtr-tooltip.tooltip {
 	border-radius: 0.4rem;
+	// z-index: 1;
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 
@@ -309,6 +310,17 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		background-color: $light;
 		font-size: 1.4rem;
 		text-align: left;
+		max-width: 40rem;
+	}
+}
+
+.fnctrl-tooltip.tooltip {
+	width: 30rem !important;
+	.tooltip-inner {
+		padding: 0.5rem 1rem !important;
+		@media #{$breakpoint_lg} {
+			padding: 0.5rem !important;
+		}
 	}
 }
 
@@ -400,6 +412,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .Battery-Charge-Threshold-Modal {
 	.modal-dialog {
 		width: 49rem;
+		max-width:90%;
+		margin:auto;
 
 		// RESPONSIVE EFFORT
 		// @media #{$mediaquery_11} {
@@ -429,9 +443,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 /*.smart-standBy-modal-styles*/
 .smart-standBy-modal {
-	.modal-dialog {
-		// max-width: 85%;
-	}
+	// .modal-dialog {
+	// 	// max-width: 85%;
+	// }
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
@@ -475,20 +489,43 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+/*.smart-standBy-modal-styles*/
+.smart-standBy-modal {
+	// .modal-dialog {
+	// 	max-width: 85%;
+	// }
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 2rem;
+		@media #{$black-on-white} {
+			border: 0.1rem solid;
+			border-radius: 1rem;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid;
+			border-radius: 1rem;
+		}
+	}
+}
+
 /*-----Voice-Modal------------*/
 .Voice-Modal {
 	.modal-dialog {
 		max-width: 35%;
-
-		// RESPONSIVE EFFORT
-		// @media #{$mediaquery_11} {
-		// 	max-width: 75%;
-		// 	margin: 0 auto;
-		// }
-
-		// @media #{$mediaquery_X8} {
-		// 	max-width: 50%;
-		// }
+		@media #{$breakpoint_xl} {
+			max-width: 45%;
+		}
+		@media #{$breakpoint_lg} {
+			max-width: 60%;
+		}
+		@media #{$breakpoint_md} {
+			max-width: 80%;
+		}
+		@media #{$breakpoint_sm} {
+			max-width: 90%;
+			margin: 0.5rem auto 0;
+		}
 	}
 
 	.modal-content {
@@ -502,22 +539,25 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .voice-install-failed-modal {
 	.modal-dialog {
 		max-width: 40%;
-
-		// RESPONSIVE EFFORT
-		// @media #{$mediaquery_11} {
-		// 	max-width: 75%;
-		// 	margin: 0 auto;
-		// }
-
-		// @media #{$mediaquery_X8} {
-		// 	max-width: 50%;
-		// }
+		@media #{$breakpoint_md} {
+			max-width: 90%;
+			margin: 0 auto;
+		}
 	}
 
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
 		padding: 4rem;
+		@media #{$black-on-white} {
+			border: 0.1rem solid;
+			border-radius: 1rem;
+		}
+
+		@media #{$white-on-black} {
+			border: 0.1rem solid;
+			border-radius: 1rem;
+		}
 	}
 }
 
@@ -545,6 +585,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		max-width: 75%;
 		margin: 1rem auto 0;
 		overflow-y: initial !important;
+		@media #{$mediaquery_15} {
+			max-width: 90%;
+		}
 	}
 
 	.modal-dialog-centered {
@@ -653,7 +696,13 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			}
 		}
 
-		img,
+		img {
+			max-width: 100%;
+			height: auto;
+			margin-bottom: 3rem;
+			border: none;
+		}
+
 		iframe {
 			max-width: 100%;
 			margin-bottom: 3rem;
@@ -810,7 +859,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .feedback-modal {
 	.modal-dialog {
 		margin: 1.75rem auto;
-		width: 52rem;
+		width: 50rem;
 		max-width: 90%;
 	}
 
@@ -868,7 +917,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		padding: 3rem;
 		color: $main_darker;
 		text-align: left;
-		max-width: 100%;
+		max-width: 40rem;
 
 		span {
 			font-weight: bold;
@@ -896,9 +945,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		}
 	}
 
-	.arrow::before {
-		border-top-color: $dark;
-	}
+	// .arrow::before {
+	// 	border-top-color: $dark;
+	// }
 }
 
 /*green and red button style*/
@@ -946,9 +995,20 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 .Welcome-container-Modal {
 	.modal-dialog {
-		max-width: 70rem;
+		max-width: 60rem;
 		.modal-content {
 			border-radius: $border_radius;
+			width: auto;
+			margin: 0rem auto;
+		}
+
+		@media #{$breakpoint_md} {
+			max-width: 55rem !important;
+			margin: 0.5rem auto;
+		}
+
+		@media #{$breakpoint_sm} {
+			max-width: 45rem !important;
 		}
 	}
 }
@@ -1044,6 +1104,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 					color: $main_lightest;
 					position: relative;
 					z-index: 5;
+					@media #{$breakpoint_xl} {
+						font-size: $fontsize_xs2;
+					}
+					@media #{$breakpoint_sm} {
+						font-size: 0.9rem;
+					}
 					.icon {
 						height: 12rem;
 						width: 10rem;
@@ -1051,6 +1117,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 						text-align: center;
 						font-size: 8rem;
 						color: $main_light;
+						@media #{$breakpoint_sm} {
+							font-size: 6rem;
+						}
 					}
 					&::before {
 						content: "";
@@ -1350,26 +1419,32 @@ vtr-ui-smart-performance-scanning {
 
 /* battery-detail-modal */
 .battery-modal-size {
+	display:flex!important;
+	align-items: center;
 	.modal-dialog {
 		max-width: 110rem;
 		@media #{$breakpoint_xl} {
-			max-width: 95rem;
+			max-width: 92rem;
 		}
 		@media #{$breakpoint_lg} {
-			max-width: 70rem;
-			top: 4rem;
+			max-width: 66rem;
 		}
 		@media #{$breakpoint_md} {
-			max-width: 55rem;
-			top: 0;
+			max-width: 54rem;
 		}
 		@media #{$breakpoint_sm} {
-			max-width: 45rem;
-			margin: 0 auto;
-			top: 2rem;
+			max-width: 40rem;
+			margin:auto;
 		}
 		.modal-content {
 			border-radius: 1rem;
+			.vtr-battery-indicator {
+				.cell{
+					@media #{$breakpoint_md} {
+						width:95%;
+					}
+				}
+			}
 		}
 	}
 }
@@ -1379,7 +1454,7 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
-.schedule-new-modal-size {
+.hardware-scan-modal-size {
 	.modal-dialog {
 		max-width: 55%;
 		margin: 0 auto;
@@ -1428,5 +1503,44 @@ vtr-ui-smart-performance-scanning {
 		border-top-right-radius: 0 !important;
 		border-bottom-left-radius: 0.7rem !important;
 		border-bottom-right-radius: 0.7rem !important;
+		box-shadow: 0 0.7rem 1.5rem 0 rgba(0,0,0,0.15) !important;
+		.card-header {
+			border-bottom: none;
+		}
 	}
 }
+
+.no-border-bottom {
+ .vtr-ui-switch-row.white-theme {
+	   border-bottom: none !important;
+   }
+}
+
+.slider-note {
+	margin-right: 0.8rem;
+	padding-left: 1.5rem;
+	.vtr-ui-rounded-rectangle-radio {
+		width: 13rem !important;
+		height: 5rem !important;
+		.label {
+			font-size: $fontsize_xs !important;
+			left: 4.5rem !important;
+		}
+		.icon-circle {
+			font-size: 2rem !important;
+			top: 1.4rem !important;
+		}
+	}
+}
+
+.np-l{
+	padding-left:0rem!important;
+}
+.auto-screen-lock-help-icon {
+	ngb-tooltip-window.vtr-tooltip.tooltip {
+		.tooltip-inner {
+			width: 40rem;
+		}
+	}
+}
+

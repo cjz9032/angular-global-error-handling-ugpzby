@@ -6,7 +6,7 @@
 
 .close-button {
 	fa-icon {
-		font-size: 2.5rem;
+		font-size: $fontsize_xl;
 		color: $main;
 		margin-right: 0.5rem;
 	}
@@ -17,7 +17,7 @@
 }
 
 .user-submit {
-	font-size: 2rem;
+	font-size: $fontsize_lg;
 	padding: 1rem 3rem;
 	border-radius: 5rem;
 }
@@ -28,7 +28,7 @@ input {
 
 .warning {
 	color: $alt;
-	font-size: 1.5rem;
+	font-size: $fontsize_xs;
 }
 
 .radiobtn {
@@ -36,7 +36,7 @@ input {
 	position: relative;
 	padding-left: 5rem;
 	cursor: pointer;
-	font-size: 2.5rem;
+	font-size: $fontsize_xl;
 	text-transform: capitalize;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -90,7 +90,7 @@ input {
 
 .subname {
 	padding: 1rem 0;
-	font-size: 1.2rem;
+	font-size: $fontsize_xs2;
 	text-align: left;
 	color: $shade;
 	font-weight: $weight_medium;
@@ -104,7 +104,7 @@ input {
 
 .recurrence {
 	color: black;
-	font-size: 3.5rem;
+	font-size: $fontsize_xl2;
 	font-weight: 400;
 	text-align: left;
 }
@@ -112,7 +112,7 @@ input {
 .calendar {
 	border: 0;
 	color: $main;
-	font-size: 2.5rem;
+	font-size: $fontsize_xl;
 	font-weight: $weight_medium;
 	text-align: left;
 	outline: none !important;
@@ -129,7 +129,7 @@ input {
 		margin-left: 1rem;
 		border-color: $shade;
 		height: 7rem;
-		font-size: 2rem;
+		font-size: $fontsize_lg;
 		font-weight: 200;
 		color: black;
 		border: #b8b8b8;
@@ -146,7 +146,7 @@ input {
 }
 
 .action-anchor {
-	font-size: 1.7rem;
+	font-size: $fontsize_sm;
 	font-weight: $weight_bold;
 	color: $shade_light;
 	border-bottom: 0.2rem solid $main_gstart;
@@ -196,7 +196,7 @@ input {
 :host ::ng-deep .custom-select {
     flex: 1 1 auto;
     /* padding: 0 .5rem; */
-    font-size: 1.4rem;
+    font-size: $fontsize_xs;
     height: auto;
 }
 

@@ -61,7 +61,7 @@ export class ConfirmationComponent implements OnInit, OnDestroy, AfterViewInit {
 			.pipe(
 				filter(Boolean),
 				takeUntil(instanceDestroyed(this))
-			).subscribe((userEmail) => {
+			).subscribe((userEmail: any) => {
 			this.userEmail = userEmail;
 		});
 	}

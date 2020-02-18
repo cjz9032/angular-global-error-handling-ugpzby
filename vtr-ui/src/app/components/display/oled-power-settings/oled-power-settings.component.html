@@ -17,12 +17,14 @@
 	</div>
 
 	<div class="dropdown row">
-		<section class="col-sm-12 col-md-4">
-			<h5 id="oled-power-settings-tb-dimmer"
-				tabindex="0"
-				attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.taskBarDimmer' | translate}}">
-				{{'device.deviceSettings.displayCamera.display.oledPowerSettings.taskBarDimmer' | translate}}
-			</h5>
+		<section class="col-sm-12 col-md-12 col-xl-4">
+			<div class="oled-dimming-portions">
+				<h5 id="oled-power-settings-tb-dimmer"
+					tabindex="0"
+					attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.taskBarDimmer' | translate}}">
+					{{'device.deviceSettings.displayCamera.display.oledPowerSettings.taskBarDimmer' | translate}}
+				</h5>
+			</div>
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="taskBarDimmerValue"
 				[textCase]="'oled'"
@@ -34,12 +36,14 @@
 				[dropDownId]="'oled-taskbar-dimmer-dropDown'">
 			</vtr-ui-dropdown>
 		</section>
-		<section class="col-sm-12 col-md-4">
-			<h5 id="oled-power-settings-bg-dimmer"
-				tabindex="0"
-				attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.backgroundDimmer' | translate}}">
-				{{'device.deviceSettings.displayCamera.display.oledPowerSettings.backgroundDimmer' | translate}}
-			</h5>
+		<section class="col-sm-12 col-md-12 col-xl-4">
+			<div class="oled-dimming-portions">
+				<h5 id="oled-power-settings-bg-dimmer"
+					tabindex="0"
+					attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.backgroundDimmer' | translate}}">
+					{{'device.deviceSettings.displayCamera.display.oledPowerSettings.backgroundDimmer' | translate}}
+				</h5>
+			</div>
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="backgroundDimmerValue"
 				[textCase]="'oled'"
@@ -51,12 +55,14 @@
 				[dropDownId]="'oled-background-dimmer-dropDown'">
 			</vtr-ui-dropdown>
 		</section>
-		<section class="col-sm-12 col-md-4">
-			<h5 id="oled-power-settings-dp-dimmer"
-				tabindex="0"
-				attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.displayDimmer' | translate}}">
-				{{'device.deviceSettings.displayCamera.display.oledPowerSettings.displayDimmer' | translate}}
-			</h5>
+		<section class="col-sm-12 col-md-12 col-xl-4">
+			<div class="oled-dimming-portions">
+				<h5 id="oled-power-settings-dp-dimmer"
+					tabindex="0"
+					attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.displayDimmer' | translate}}">
+					{{'device.deviceSettings.displayCamera.display.oledPowerSettings.displayDimmer' | translate}}
+				</h5>
+			</div>
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="displayDimmerValue"
 				(change)="onDisplayDimmerChange($event)"

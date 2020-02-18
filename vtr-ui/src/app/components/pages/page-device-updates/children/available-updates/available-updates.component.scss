@@ -2,6 +2,7 @@
 
 .vtr-available-updates {
 	background-color: $light;
+	box-shadow: 0 0.7rem 1.5rem 0 rgba(0,0,0,0.15);
 	.header {
 		.heading {
 			color: $main_darker;
@@ -32,7 +33,7 @@
 
 		.heading {
 			color: $main_dark;
-			font-size: 2.5rem;
+			font-size:$fontsize_xl;
 		}
 
 		// .button-box {

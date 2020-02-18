@@ -22,19 +22,19 @@
 									{{item.packageDesc}}</span>
 							</label>
 
-							<div class="button-box pl-1"
+							<div class="button-box pl-4"
 								*ngIf="item.packageRebootType === 'RebootForced'">
 								<div class="btn-round-sm" id="{{'su_rebootForced_'+item.packageID}}" role="article">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootRequiredTag' | translate}}
 								</div>
 							</div>
-							<div class="button-box pl-1"
+							<div class="button-box pl-4"
 								*ngIf="item.packageRebootType === 'RebootDelayed'">
 								<div class="btn-round-sm" id="{{'su_rebootDelayed_'+item.packageID}}" role="article">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootDelayTag' | translate}}
 								</div>
 							</div>
-							<div class="button-box pl-1"
+							<div class="button-box pl-4"
 								*ngIf="item.packageRebootType === 'PowerOffForced'">
 								<div class="btn-round-sm" id="{{'su_powerOffForced_'+item.packageID}}" role="article">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.shutdownRequiredTag' | translate}}
@@ -54,7 +54,7 @@
 								placement="auto"
 								[ngbTooltip]="systemUpdateTooltip"
 								[icon]="['far', 'question-circle']"
-								container="body"
+								container="vtr-root"
 								tooltipClass="tooltip-click"
 								#tooltip="ngbTooltip"
 								(click)="onTooltipClick(item, tooltip)"></fa-icon>

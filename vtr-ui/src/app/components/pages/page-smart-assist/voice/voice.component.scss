@@ -3,8 +3,11 @@ ul{
 	list-style: none;
 }
 .context{
-	font-size: $body;
+	font-size: $fontsize_xs;
 	margin-right: 0.5rem;
+	color: $purple_navy;
+	font-weight: $weight_light;
+	padding-left: 1rem;
 }
 
 .install-btn {
@@ -13,7 +16,7 @@ ul{
 	border-radius: 25rem;
 	color: $light;
 	background: linear-gradient(270deg, #4980FC 0%, #2E62D9 100%);
-	font-size: $body;
+	font-size: $fontsize_xs;
 	font-weight: $weight_bold;
 	border: none;
 	margin-top: 0.5rem;

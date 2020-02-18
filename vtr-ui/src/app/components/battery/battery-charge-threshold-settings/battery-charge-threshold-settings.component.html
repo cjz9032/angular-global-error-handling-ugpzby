@@ -3,7 +3,7 @@
 		<!--start of display title in row-->
 		<div class="row"
 			*ngIf="title && !displayNoteOnly">
-			<div class="col px-20 pb-4">
+			<div class="col px-5 pb-4">
 				<div class="threshold-for-built-in-battery"
 					id="{{textId}}-title"
 					attr.aria-label="{{textId}}-title">
@@ -20,15 +20,15 @@
 				<div class="inputSection">
 					<div class="row">
 						<!--start of left dropdown box for action in row-->
-						<div class="col-12 px-20 pb-4"
-							[class.disabled]="isCheckedAuto || isGaugeResetRunning">
+						<div class="col-12 px-5 pb-4"
+							[class.disabled]="bctInfo.checkboxValue || isGaugeResetRunning">
 							<div class="btn-group btn-block dropdown-left"
 								ngbDropdown
 								placement="bottom-right">
-								<button [ngClass]="['btn','btn-outline-shadow',isCheckedAuto?'disabled':'']"
+								<button [ngClass]="['btn','btn-outline-shadow',bctInfo.checkboxValue?'disabled':'']"
 									ngbDropdownToggle
-									 #startToggle
-									[disabled]="isCheckedAuto?true:false"
+									#startToggle
+									[disabled]="bctInfo.checkboxValue?true:false"
 									type="button"
 									id="{{textId}}-start-dropdown"
 									attr.aria-label="{{textId}}-start-dropdown">
@@ -37,13 +37,13 @@
 											<div class="select-title"
 												id="{{textId}}-startcharge"
 												attr.aria-label="{{textId}}-startcharge">
-												{{start}}
+												{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate}}
 											</div>
 
 											<div class="select-text text-left"
 												id="{{textId}}-selectedstartcharge"
 												attr.aria-label="{{textId}}-selectedstartcharge">
-												{{selectedStartAtCharge}}%
+												{{bctInfo.startValue}}%
 											</div>
 										</div>
 										<div class="col-1 pl-1 pr-1">
@@ -56,13 +56,14 @@
 								<div ngbDropdownMenu
 									aria-labelledby=""
 									role="listbox">
-									<a [ngClass]="['dropdown-item',item >= selectedStopAtCharge?'disabled':'']"
+									<a [ngClass]="['dropdown-item',item >= bctInfo.stopValue?'disabled':'']"
 										role="option"
 										tabindex="0"
 										*ngFor="let item of startAtChargeOptions"
-										(click)="[onChargeChange('startAtCharge', item , $event, startToggle),$event.preventDefault()]"
-										(keydown.enter)="onChargeChange('startAtCharge', item , $event, startToggle)"
+										(click)="[onStartValueChange(item , startToggle), $event.preventDefault()]"
+										(keydown.enter)="onStartValueChange(item , startToggle)"
 										id="{{textId}}-startAtChargeOption-{{item}}"
+										attr.aria-disabled="{{item >= bctInfo.stopValue}}"
 										attr.aria-label="{{textId}}-startAtChargeOption-{{item}}">{{item}}%</a>
 								</div>
 							</div>
@@ -71,7 +72,7 @@
 					</div>
 					<div class="row">
 						<!--start of right dropdown box for action in row-->
-						<div class="col-12 px-20 pb-4"
+						<div class="col-12 px-5 pb-4"
 							[class.disabled]="isGaugeResetRunning">
 							<div class="btn-group btn-block dropdown-right"
 								ngbDropdown
@@ -87,12 +88,12 @@
 											<div class="select-title"
 												id="{{textId}}-stopcharge"
 												attr.aria-label="{{textId}}-stopcharge">
-												{{stop}}
+												{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate}}
 											</div>
 											<div class="select-text text-left"
 												id="{{textId}}-selectedStopAtCharge"
 												attr.aria-label="{{textId}}-selectedStopAtCharge">
-												{{selectedStopAtCharge}}%
+												{{bctInfo.stopValue}}%
 											</div>
 										</div>
 										<div class="col-1 pl-0 pr-1">
@@ -104,13 +105,14 @@
 								</button>
 								<div ngbDropdownMenu
 									aria-labelledby="">
-									<a [ngClass]="['dropdown-item',isCheckedAuto ===false && (item <= selectedStartAtCharge) ?'disabled':'']"
+									<a [ngClass]="['dropdown-item',!bctInfo.checkboxValue && (item <= bctInfo.startValue) ?'disabled':'']"
 										role="option"
 										tabindex="0"
 										*ngFor="let item of stopAtChargeOptions"
-										(click)="[onChargeChange('stopAtCharge', item , $event, endToggle), $event.preventDefault()]"
-										(keydown.enter)="onChargeChange('stopAtCharge', item , $event, endToggle)"
+										(click)="[onStopValueChange(item , endToggle), $event.preventDefault()]"
+										(keydown.enter)="onStopValueChange(item , endToggle)"
 										id="{{textId}}-stopAtChargeOption-{{item}}"
+										attr.aria-disabled="{{!bctInfo.checkboxValue && (item <= bctInfo.startValue)}}"
 										attr.aria-label="{{textId}}-stopAtChargeOption-{{item}}">{{item}}%</a>
 								</div>
 							</div>
@@ -120,17 +122,18 @@
 					<div class="row"
 						*ngIf="!displayNoteOnly"
 						[class.disabled]="isGaugeResetRunning">
-						<div class="col px-20">
+						<div class="col px-5">
 							<div class="auto-set-checkbox custom-checkbox-gaming">
 								<input type="checkbox"
 									class="custom-control-input"
 									[id]="isCheckedAutoInput + randomNumber"
 									attr.aria-label="batteryThreshold-options-checkboxText"
 									[name]="isCheckedAutoInput + randomNumber"
-									[(ngModel)]="isCheckedAuto"
+									[(ngModel)]="bctInfo.checkboxValue"
 									(ngModelChange)='toggleAutoChargeSettings($event)'>
 								<span class="checkmark"></span>
-								<label [for]="isCheckedAutoInput + randomNumber">{{checkboxText}}</label>
+								<label
+									[for]="isCheckedAutoInput + randomNumber">{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate}}</label>
 							</div>
 						</div>
 					</div>
@@ -149,8 +152,8 @@
 
 		<!--start of Note -->
 		<div class="row"
-			*ngIf="showWarningMsg">
-			<div class="col px-20">
+			*ngIf="showBCTWarningNote">
+			<div class="col px-5">
 				<div class="note-box">
 					<div class="note"
 						id="battery-threshold-note"

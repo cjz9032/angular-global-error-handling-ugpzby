@@ -3,10 +3,9 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
-import { RouterChangeHandlerService } from '../../core/services/router-change-handler.service';
-
+import { DccService } from 'src/app/services/dcc/dcc.service';
 import { RoutersName } from '../../privacy-routing-name';
-import { AbTestsName } from '../../utils/ab-test/ab-tests.type';
+import { RouterChangeHandlerService } from '../../core/services/router-change-handler.service';
 
 interface PageSettings {
 	title: string;
@@ -60,6 +59,7 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 	constructor(
 		private router: Router,
 		private _location: Location,
+		public dccService: DccService,
 		private routerChangeHandler: RouterChangeHandlerService
 	) {
 	}

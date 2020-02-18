@@ -57,6 +57,7 @@ import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageLayoutModule } from '../components/page-layout/page-layout.module';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
 import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
@@ -64,8 +65,7 @@ import { ModalNewFeatureTipComponent } from '../components/modal/modal-new-featu
 import { NewFeatureTipService } from '../services/new-feature-tip/new-feature-tip.service';
 import { HardwareDashboardModule } from './hardware-settings/hardware-dashboard.module';
 import { GamingDashboardModule } from './gaming-dashboard.module';
-import { ToolbarToastModule } from '../services/toolbartoast/toolbartoast.module';
-import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
+//import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
 
 @NgModule({
 	declarations: [
@@ -76,19 +76,24 @@ import { ModalErrorMessageComponent } from '../components/modal/modal-error-mess
 		ModalDccDetailComponent,
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
+		//PageSettingsComponent,
 		ModalNewFeatureTipComponent,
-		PageSettingsComponent,
+		PageSettingsComponent
+		//ModalErrorMessageComponent
 	],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
 		AppRoutingModule,
-		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' }),
+		ServiceWorkerModule.register('ngsw-worker.js', {
+			enabled: environment.production,
+			registrationStrategy: 'registerImmediately'
+		}),
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
 				useClass: WebpackTranslateLoader,
-				deps: [HttpClient]
+				deps: [ HttpClient ]
 			},
 			missingTranslationHandler: {
 				provide: MissingTranslationHandler,
@@ -111,14 +116,7 @@ import { ModalErrorMessageComponent } from '../components/modal/modal-error-mess
 		HardwareDashboardModule,
 		GamingDashboardModule
 	],
-	exports: [
-		NavbarModule,
-		RouterModule,
-		CommonPipeModule,
-		CommonUiModule,
-		ModernPreloadModule,
-		PageLayoutModule,
-	],
+	exports: [ NavbarModule, RouterModule, CommonPipeModule, CommonUiModule, ModernPreloadModule, PageLayoutModule ],
 	providers: [
 		CommonService,
 		MetricsTranslateService,
@@ -138,11 +136,11 @@ import { ModalErrorMessageComponent } from '../components/modal/modal-error-mess
 		ModalDccDetailComponent,
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
-		ModalNewFeatureTipComponent,
-		ModalErrorMessageComponent
+		ModalNewFeatureTipComponent
+		//ModalErrorMessageComponent
 	],
-	bootstrap: [AppComponent],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA]
+	bootstrap: [ AppComponent ],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {
 	constructor() {

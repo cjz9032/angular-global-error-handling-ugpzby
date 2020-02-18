@@ -1,14 +1,15 @@
 <div class="aps">
 	<div class="row">
-		<div class="col-12">
+		<div class="col-12 px-0">
 			<p class="caption"
 				id="smart-assist-active-protection-system-desc"
-				attr.aria-label="smart-assist-active-protection-system-desc">
+				role="text"
+				tabindex="0">
 				{{'device.smartAssist.activeProtectionSystem.description' | translate}}
 			</p>
 		</div>
 
-		<div class="col-12">
+		<div class="col-12 px-0">
 			<ul class="list-group list-group-flush">
 				<!-- APS Slider -->
 				<li class="auto-screen-off-block">
@@ -27,7 +28,7 @@
 							metricsParent="Device.SmartAssist"
 							metricsItem="activeProtectionSystem"
 							[metricsValue]="!apsStatus">
-							<div class="slider">
+							<div class="slider pr-0">
 								<vtr-ui-aps-slider [apsSliderId]="'activeProtectionSystemSensitivity'"
 									[legends]="['device.smartAssist.activeProtectionSystem.APS.lowSensitivity' | translate,'device.smartAssist.activeProtectionSystem.APS.mediumSensitivity' | translate, 'device.smartAssist.activeProtectionSystem.APS.highSensitivity' | translate]"
 									[minValue]="0"
@@ -57,24 +58,33 @@
 									</vtr-ui-checkbox>
 								</div> -->
 						</vtr-ui-row-switch>
-						<div class="custom-control custom-checkbox aps-checkbox">
+						<div class="custom-control custom-checkbox aps-checkbox"
+							tabindex="0"
+							role="checkbox"
+							(keydown.enter)="apsToggleCheckbox.click()"
+							[attr.aria-checked]="repeatShock"
+							[attr.aria-disabled]="!apsStatus"
+							attr.aria-labelledby="aps-toggle-checkbox">
 							<input id="aps-toggle-checkbox"
-								attr.aria-label="aps-toggle-checkbox"
+								#apsToggleCheckbox
 								type="checkbox"
 								class="custom-control-input"
 								[checked]="repeatShock"
 								(change)="setAutoDisableSetting($event)"
 								[disabled]="!apsStatus"
+								tabindex="-1"
+								aria-hidden="true"
 								vtrMetrics
 								metricsEvent="ItemClick"
 								metricsParent="Device.SmartAssist"
 								metricsItem="ActiveProtectionSystem.AutoDisable"
 								[metricsValue]="repeatShock" />
 							<label class="custom-control-label"
-								for="aps-toggle-checkbox">
+								for="aps-toggle-checkbox"
+								role="text">
 								<span [ngClass]="{'disabled': !apsStatus}"
 									id="aps-toggle-checkbox-text"
-									attr.aria-label="aps-toggle-checkbox-text">
+									role="text">
 									{{'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate}}
 								</span>
 							</label>
@@ -104,7 +114,8 @@
 							<section class="col-sm-6">
 								<p class="text-uppercase"
 									id="smart-assist-manual-active-protection-system-desc"
-									attr.aria-label="smart-assist-manual-active-protection-system-desc">
+									role="text"
+									tabindex="0">
 									{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
 								</p>
 								<vtr-ui-dropdown [dropDownId]="'manualSnoozeTimeDropDown'"
@@ -137,22 +148,27 @@
 
 				<!-- Advanced section -->
 				<li *ngIf="advanceAvailable && apsStatus"
-					class="advanced pt-3 keep-my-display-block auto-screen-off-block">
+					role="text"
+					tabindex="0"
+					class="advanced pt-3 pl-5 ml-4 keep-my-display-block auto-screen-off-block">
 					<h4 *ngIf="!advancedToggle"
 						id="activeProtectionSystem-more"
-						attr.aria-label="activeProtectionSystem-more">
+						role="text">
 						{{ 'device.smartAssist.activeProtectionSystem.advanced.more' | translate }}</h4>
 					<a *ngIf="!advancedToggle"
 						id="activeProtectionSystem_advanced_settings_toggle"
-						attr.aria-label="activeProtectionSystem_advanced_settings_toggle"
-						(click)="toggleAdvanced()">
+						role="link"
+						tabindex="0"
+						(click)="toggleAdvanced()"
+						(keydown.enter)="toggleAdvanced()">
 						<p>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
 						</p>
 					</a>
 
 					<section *ngIf="advancedToggle"
 						id="activeProtectionSystem_advanced_settings"
-						attr.aria-label="activeProtectionSystem_advanced_settings">
+						role="text"
+						tabindex="0">
 						<h4>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
 						</h4>
 						<vtr-active-protection-system-advanced [penCapability]="penCapability"
@@ -160,8 +176,10 @@
 							[pSensorCapability]="pSensorCapability">
 						</vtr-active-protection-system-advanced>
 						<a (click)="toggleAdvanced()"
+							(keydown.enter)="toggleAdvanced()"
 							id="advancedActiveProtectionSystem_toggle"
-							attr.aria-label="advancedActiveProtectionSystem_toggle">
+							role="link"
+							tabindex="0">
 							<p>{{ 'device.smartAssist.activeProtectionSystem.advanced.hide' | translate }}</p>
 						</a>
 					</section>

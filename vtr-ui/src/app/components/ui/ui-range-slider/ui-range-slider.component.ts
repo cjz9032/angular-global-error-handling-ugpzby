@@ -4,16 +4,19 @@ import {
 	Input,
 	Output,
 	EventEmitter,
-	AfterContentChecked
+	AfterContentChecked,
+	SimpleChanges,
+	OnChanges
 } from '@angular/core';
 import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-ui-range-slider',
 	templateUrl: './ui-range-slider.component.html',
 	styleUrls: ['./ui-range-slider.component.scss']
 })
-export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
+export class UiRangeSliderComponent implements OnInit, OnChanges {
 	// package url https://angular-slider.github.io/ng5-slider/demos
 
 	public options: Options;
@@ -33,15 +36,20 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	@Input() stepsArray: Array<any>; // array with legend value for Eye care
 	@Input() manualRefresh = new EventEmitter<void>();
 
-	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() sliderChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() valueChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() valueChangeEnd: EventEmitter<ChangeContext> = new EventEmitter();
+	public highValue = undefined;
 
+	constructor(
+		private loggerService: LoggerService
+	) {
+	}
 
-	constructor() { }
-
-	ngAfterContentChecked() {
-		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
+	ngOnChanges(changes: SimpleChanges): void {
+		if (changes.enableSlider) {
+			this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
+		}
 	}
 
 	ngOnInit() {
@@ -73,13 +81,12 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	 * @param $event event data from ng5-slider component
 	 */
 	public onChange($event: ChangeContext) {
-		console.log('onChange Ui slider');
-		this.change.emit($event);
+		this.highValue = undefined;
+		this.loggerService.info('ui-range-slider.component.onChange',
+			`onChange Ui slider ---> ${$event}, ${this.highValue}`);
+		this.sliderChange.emit($event);
 	}
 
-	public onSliderChanged(event: any) {
-		console.log('slider changed');
-	}
 	public dragEnd($event: ChangeContext) {
 		this.valueChangeEnd.emit($event);
 	}

@@ -22,6 +22,12 @@
                     "rapidCharge": "Carga rápida"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Acel. activada",
+                        "performance": "Rendimiento",
+                        "balance": "Equilibrio",
+                        "quiet": "Silencioso"
+                    },
                     "title": "Aceleración de CPU",
                     "status": {
                         "alwayson": "Encendido",
@@ -87,7 +93,8 @@
                     "line8": "<b>Carga rápida </b><br> Juegue más tiempo con la carga rápida de batería",
                     "line9": "<b>Bloqueo de área táctil </b><br> Evite realizar entradas erróneas desactivando el área táctil mientras juega",
                     "line10": "<b>Cerrado automático </b><br> Cierre los procesos que no sean necesarios para jugar antes de comenzar a hacerlo, para así maximizar los recursos disponibles del sistema",
-                    "line11": "<b>Modo térmico </b><br> Especifique el perfil de dispositivo preferido para la velocidad de ventilador y control de refrigeración"
+                    "line11": "<b>Modo térmico </b><br> Especifique el perfil de dispositivo preferido para la velocidad de ventilador y control de refrigeración",
+                    "line12": "<b>Tecla de macro </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Mantenga el mouse sobre CPU/GPU/RAM y diferentes unidades para mostrar sus descripciones, incluyendo el fabricante y la información del modelo"
@@ -97,6 +104,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Configuración rápida"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Config. de modo térmico",
+                    "thermalMode2SettingDesc": "Seleccione la modalidad que desee utilizar.",
+                    "fnQDesc": "Puede cambiar de modalidad utilizando la combinación de teclas Fn + Q.",
+                    "perormanceTitle": "Modalidad de rendimiento",
+                    "performanceDesc": "Aumente el rendimiento del sistema con más velocidad del ventilador y más consumo de energía.",
+                    "OCDesc": "Puede seleccionar que se active la característica de Aceleración.",
+                    "ac_dcDesc": "Modalidad de rendimiento disponible solo conectado.",
+                    "balanceTitle": "Modalidad balanceada",
+                    "balanceDesc": "Equilibre automáticamente el rendimiento y la velocidad del ventilador según la temperatura. Consumo de energía mediano.",
+                    "quietTitle": "Modalidad silenciosa",
+                    "quietDesc": "Continúe deduciendo el rendimiento y la velocidad del ventilador de sistema siempre que sea posible. Bajo consumo de energía.",
+                    "OC": {
+                        "cpu_gpuOC": "Habilite la Aceleración de CPU/GPU en Modalidad de rendimiento.",
+                        "cpuOC": "Habilite la Aceleración de CPU en Modalidad de rendimiento.",
+                        "gpuOC": "Habilite la Aceleración de GPU en Modalidad de rendimiento.",
+                        "advance": "AVANZADO",
+                        "cpu_gpuDriverLack": "Instale controladores de CPU/GPU para utilizar función de Aceleración.",
+                        "cpuDriverLack": "Instale el controlador de CPU/GPU para usar función de Aceleración.",
+                        "gpuDriverLack": "Instale el controlador de GPU para usar la función de Aceleración.",
+                        "goInstall": "VAYA A INSTALAR"
+                    },
+                    "autoSwitch": "Cambie auto. a Rendimiento al iniciar juegos y después cambie de vuelta."	
+                },
+                "advancedOC": {
+                    "title": "Op. avanzadas aceleración",
+                    "description": "Establezca parám. person. avanzados cuando Aceleración esté activada. Podría ser arriesgado.",
+                    "gpuOverclock": "Aceleración de GPU",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Voltaje de núcleo",
+                        "cpuOCName116": "Relación de 1 núcleo",
+                        "cpuOCName117": "Relación de 2 núcleos",
+                        "cpuOCName118": "Relación de 3 núcleo",
+                        "cpuOCName119": "Relación de 4 núcleo",
+                        "cpuOCName34": "Desplazamiento de voltaje de núcleo",
+                        "cpuOCName120": "Relación de 5 núcleo",
+                        "cpuOCName121": "Relación de 6 núcleo",
+                        "cpuOCName76": "Relación de memoria caché",
+                        "cpuOCName77": "Voltaje de memoria caché",
+                        "cpuOCName79": "Desp. de voltaje de memoria caché",
+                        "cpuOCName122": "Relación de 7 núcleo",
+                        "cpuOCName123": "Relación de 8 núcleo",
+                        "cpuOCName102": "ICCMAX de núcleo",
+                        "cpuOCName106": "ICCMAX de memoria caché",
+                        "cpuOCName114": "Desplazamiento de relación de AVX"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Establezca el voltaje para el núcleo de CPU.",
+                        "cpuOCTip116": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip117": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip118": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip119": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip34": "Un desplazamiento de voltaje a partir del voltaje del núcleo actual.",
+                        "cpuOCTip120": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip121": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip76": "Establezca el multiplicador de memoria caché del procesador máximo al que la memoria caché puede funcionar. El valor de la frecuencia de la memoria caché es el producto de esta relación y la frecuencia de reloj de referencia.",
+                        "cpuOCTip77": "Voltaje que se proporciona a la interfaz de memoria caché interna del procesador según la modalidad de voltaje de memoria caché actualmente seleccionada.",
+                        "cpuOCTip79": "Desplazamiento final de voltaje que se aplica al voltaje de la memoria caché.",
+                        "cpuOCTip122": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip123": "Defina el multiplicador central máximo al que pueden funcionar los núcleos. El valor de la frecuencia básica es el producto de esta relación y la frecuencia del reloj de referencia.",
+                        "cpuOCTip102": "Establezca ICCMAX para el regulador de voltaje del núcleo del procesador.",
+                        "cpuOCTip106": "Establezca ICCMAX para el regulador de voltaje de la memoria caché y bus del anillo del procesador.",
+                        "cpuOCTip114": "Para derivar el límite de velocidad del núcleo activo efectivo cuando AVX está activo, reste este valor al límite de proporción de núcleo activo correspondiente."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "Desplazamiento de reloj de GPU",
+                        "gpuOCName1": "Desplazamiento de reloj de VRAM"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Agregue un desplazamiento a la frecuencia del reloj de GPU.",
+                        "gpuOCTip1": "Agregue un desplazamiento a la frecuencia del reloj de memoria."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "¿Guardar cambios?",
+                    "description1": "Ajuste incorrecto Acel. puede causar daños de hard. irreversibles. Realice una de las siguientes acciones si encuentra algún problema: ",
+                    "description2": "•  Presione bot. enc. por 8 seg. para rein. sist. y rest. par. omisión.",
+                    "description3": "•  Use “Rest. val. predet. sinc.” en val. BIOS para rest. los par. omi.",
+                    "save": "GUARDAR",
+                    "notSave": "NO GUARDAR"
+                },
+                "defaultPromptPopup": {
+                    "title": "¿Usar val. predet.?",
+                    "description": "Se perderán todos los cambios actuales y anteriores."
+                },
+                "warningPromptPopup": {
+                    "title": "¡Advertencia!",
+                    "description": "Un ajuste inadecuado de la Aceleración puede producir daños de hardware irreversible.",
+                    "proceed": "PROCEDER"
                 }
             }
         },
@@ -598,6 +695,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Estático",
+                "effectName2": "Espectro",
+                "effectName3": "Arcoiris",
+                "effectName4": "Aleatorio",
+                "effectName5": "Azul_frío",
+                "effectName6": "Ola_derecha",
+                "effectName7": "Ola_izquierda"
+            },
+            "lightingSpeed": {
+                "title": "Velocidad"
+            },
+            "colorPicker": {
+                "text2": "MÁS",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Área div. (desac.): haga clic en imagen teclado para cambiar color",
+                "text7": "Área div. (act.): haga clic sec. imag. tec. para cambiar col. sec.",
+                "text8": "El efecto actual no admite selección de color"
+            },
+            "tipText": {
+                "title1": "Utilice Fn+Espacio para cambiar entre perfiles"
+            }
         }
     },
     "common": {
@@ -615,9 +748,9 @@
                 "sub1": "Mi seguridad",
                 "sub2": "Antivirus",
                 "sub3": "Seguridad de WiFi",
-                "sub4": "Estado de la contraseña",
-                "sub5": "Protección de Internet",
-                "sub6": "Windows Hello"
+                "sub4": "Administrador de contraseñas",
+                "sub5": "VPN",
+                "sub6": "Huella dactilar"
             },
             "support": "Soporte",
             "privacy": "Privacidad",
@@ -631,7 +764,7 @@
             "subtitle": "COMPRUEBE SI SU DISPOSITIVO ESTÁ SEGURO.",
             "antiVirus": "Antivirus",
             "wifi": "Seguridad de WiFi",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "Administrador de contraseñas",
             "vpn": "VPN",
             "enabled": "HABILITADO",
             "disabled": "DESHABILITADO",
@@ -643,8 +776,11 @@
             "notFound": "NO ENCONTRADO",
             "registered": "REGISTRADO",
             "notRegistered": "NO REGISTRADO",
-            "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>"
+            "fingerPrint": "Huella dactilar",
+            "privacyPolicyAndTermsOfService": "<tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>",
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Preguntas y respuestas para su máquina",
@@ -670,6 +806,9 @@
         },
         "app-update": {
             "message": "¡Ey! Hay disponible una versión más reciente de Vantage, ¿desea cargarla?"
+        },
+        "offline": {
+            "connectToUseFeature": "Conéctese a Internet para utilizar esta característica"
         }
     },
     "privacy": {
@@ -717,20 +856,24 @@
             "button": "Proporcione comentarios",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Comentarios...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Gracias por sus comentarios."
-                },
                 "question1": "¿Le gusta el nuevo estilo de Vantage?",
                 "question2": "¿Cree que el rendimiento es aceptable?",
                 "question3": "¿Utilizaría la aplicación con más frecuencia en el futuro?",
+                "question4": "¿Sabía que puede utilizar Lenovo Vantage para actualizar los controladores de software, el firmware y el BIOS de su sistema?",
+                "question5": "¿Qué probabilidades hay de que recomiende la aplicación Lenovo Vantage a un amigo o colega?",
+                "notAtAllLikely": "Para nada probable",
+                "extremelyLikely": "Muy probable",
                 "yes": "Sí",
                 "no": "No",
                 "tips1": "Deje cualquier comentario adicional",
+                "comments": "Comentarios...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Enviar comentarios",
-                "submitScreenShot": "Enviar captura de pantalla"
+                "submitScreenShot": "Enviar captura de pantalla",
+                "messages": {
+                    "feedbackSuccess": "Gracias por sus comentarios."
+                }
             }
         },
         "quickSettings": {
@@ -896,7 +1039,7 @@
                     "Good": "<b>La batería está en buen estado.</b>",
                     "Exhaustion": "La capacidad de la batería se ha <b>degradado</b>. Sustitúyala con una nueva.",
                     "Bad": "<b>Se produjo un error de batería.</b> No se puede cargar/descargar la batería. Sustituya la batería.",
-                    "NotDetected": "<b>No se ha detectado ninguna batería o no hay</b> ninguna batería conectada.",
+                    "NotDetected": "<b>No se detectó ninguna batería.</b>",
                     "NotGood": "<b>La batería no está en buen estado.</b>",
                     "NotSupportACAdapter": "<b>El adaptador de CA no es compatible.</b>",
                     "LimitedACAdapterSupport": "<b>El adaptador de CA no puede proporcionar suficiente energía.</b>",
@@ -1085,7 +1228,7 @@
                     },
                     "airPlanePower": {
                         "title": "Modo de energía avión",
-                        "description": "Proteja la toma de aliment. de CA del avión controlando el consumo de energía de su sist.Cuando está habilitada la modalidad de energía Avión, el sistema reduce el consumo de energía limitando la frecuencia de carga de la batería y el rendimiento del sistema.",
+                        "description": "Esta característica le permite utilizar la toma de alimentación de CA en un avión donde se aplica un límite de energía determinado. En este modo, el consumo de energía de su equipo se reduce a un nivel seguro, limitando la frecuencia de carga de la batería y el rendimiento del equipo.",
                         "checkBoxDesc": "Autodetección",
                         "note": "Si se la detección está marcada, su sistema se encenderá automáticamente en la modalidad de energía Avión cuando detecte que está en un entorno a bordo de un avión y la desactivará cuando salga de ese entorno."
                     },
@@ -1104,7 +1247,7 @@
                         },
                         "progressText1": "{{stage}} de {{stageNum}}: Calibración a carga completa",
                         "progressText2": "{{stage}} de {{stageNum}}: Calibración a energía de batería baja",
-                        "progressText3": "{{stage}} de {{stageNum}}: Calibración a carga completa",
+                        "progressText3": "{{stage}} de {{stageNum}}: Calibración a energía de batería alta",
                         "FCCText": "De {{before}} Wh a {{after}} Wh",
                         "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {
@@ -1118,7 +1261,7 @@
                             "ERROR_UNEXPECTED": "Error: Ocurrió un error inesperado."
                         },
                         "popup": {
-                            "description1": "El proceso de restablecimiento es el siguiente:<br>Cargue completamente la batería  -->  Descargue completamente la batería  -->  Recargue totalmente la batería",
+                            "description1": "El proceso de restablecimiento es el siguiente:<br>Cargue completamente la batería --> Descargue la batería a nivel bajo --> Recargue la batería a nivel alto o carga completa",
                             "description2": "Notas: <br>1. El proceso podría tomar varias horas. Evite utilizar el sistema durante este periodo.<br>2. Cierre todas las aplicaciones abiertas y conecte el sistema a la alimentación de CA.<br>3. Durante el proceso, la función de umbral de carga de la batería está inhabilitada.",
                             "continue": "Continuar",
                             "cancel": "Cancelar",
@@ -1135,10 +1278,10 @@
                 },
                 "smartStandby": {
                     "title": "Suspensión inteligente",
-                    "description": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
-                    "tooltip": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo de tiempo está optimizado según la planificación que haya establecido o el sistema tiempo de uso que obtenemos. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos.",
+                    "description": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar la experiencia de reanudación rápida de <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Espera moderna</a> durante las horas de uso más intensivo.",
+                    "tooltip": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo está optimizado según la planificación que haya establecido o el uso del equipo. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos.",
                     "timer": {
-                        "heading": "La hora en la que normalmente utiliza su equipo",
+                        "heading": "El horario en el que normalmente utiliza este equipo:",
                         "subHeading1": "comience",
                         "subHeading2": "final",
                         "subHeading3": "utilice esta planificación para",
@@ -1163,7 +1306,7 @@
                             "thurs": "Jueves",
                             "fri": "Viernes",
                             "sat": "Sábado",
-                            "thu": "Thu"
+                            "thu": "Jueves"
                         },
                         "name": {
                             "sun": "Domingo",
@@ -1180,11 +1323,11 @@
                         "noDaySelected": "No se seleccionó el día"
                     },
                     "checkbox": "Ajuste automático del tiempo activo del sistema basándose en su uso",
-                    "hyperlinkToGraph": "Haga clic aquí para ver la actividad y el tiempo activo de la tabla sistema",
+                    "hyperlinkToGraph": "Haga clic para ver el uso y el tiempo activo aplicado",
                     "subTitle": "Programar su equipo",
                     "automaticMode": "Modalidad automática",
                     "manualMode": "Modalidad manual",
-                    "subNote": "El sistema está programado en Espera moderna según su uso.",
+                    "subNote": "El sistema está programado para una reanudación más rápida según su uso.",
                     "graph": {
                         "graph1Tittle": "Uso de este sistema",
                         "graph2Tittle": "Tiempo activo aplicado",
@@ -1223,7 +1366,8 @@
                     },
                     "description2": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
                     "subTitle2": "Establezca los horarios en los que normalmente utiliza este equipo",
-                    "oldTooltipText": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo se optimiza de acuerdo con su planificación establecida. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos."
+                    "oldTooltipText": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo se optimiza de acuerdo con su planificación establecida. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos.",
+                    "sectionTitle": "Valores de espera"
                 }
             },
             "audio": {
@@ -1327,7 +1471,8 @@
                         "note": {
                             "title": "Nota",
                             "description": "Lenovo Vantage necesita acceder a la información de ubicación para calcular la hora del atardecer y amanecer de su región."
-                        }
+                        },
+                        "tips": "Ejecute Windows Update o instale manualmente el controlador de gráficos para recuperar la modalidad de Cuidado de la visión"
                     },
                     "dispColorTemp": {
                         "title": "Temperatura del color de visualización",
@@ -1370,6 +1515,17 @@
                         "taskBarDimmer": "ATENUADOR DE BARRA DE TAREAS",
                         "backgroundDimmer": "ATENUADOR DE FONDO",
                         "displayDimmer": "ATENUADOR DE PANTALLA"
+                    },
+                    "displayPriority": {
+                        "title": "Control de prioridad de pantalla",
+                        "description": "El dispositivo admite una cantidad máxima de pantallas externas. Cuando conecte más de una pantalla utilizando estos métodos adicionales, solo funcionará una prioridad.<br/>Seleccione a continuación el método adicional de salida de pantalla para priorizar:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Estación de acoplamiento",
+                            "usb_c_dp": "USB tipo-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Módulo opcional"
+                        }
                     }
                 },
                 "camera": {
@@ -1398,7 +1554,8 @@
                         "caption": "Esta característica difumina el segundo plano cuando utiliza la cámara para realizar videollamadas o tomar fotos. Podría elegir entre distintos efectos desde las opciones a continuación.",
                         "blurMode": "Modalidad difuminado",
                         "comicMode": "Modalidad cómic",
-                        "sketchMode": "Modalidad boceto"
+                        "sketchMode": "Modalidad boceto",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "LA CÁMARA ESTÁ EN USO",
@@ -1523,7 +1680,60 @@
                 "fnCtrlKey": {
                     "title": "Cambio de teclas Fn y Ctrl",
                     "description": "Si normalmente presionaba la tecla Fn al intentar presionar la tecla Ctrl, you puede intercambiar las funciones de ambas teclas.",
-                    "restartNote": "Para intercambiar la función de dos claves es necesario reiniciar el sistema. ¿Está seguro de que desea reiniciarlo?"
+                    "restartNote": "Para intercambiar la función de dos claves es necesario reiniciar el sistema. ¿Está seguro de que desea reiniciarlo?",
+                    "title2": "Fn funciona como Ctrl para combinaciones de teclas de uso frecuente",
+                    "description2": "La tecla Fn funciona como la tecla Ctrl para algunas combinaciones de teclas de uso frecuente. La función de la tecla Ctrl no cambia.",
+                    "featureNote": "Esta función y la tecla Fn y la función de intercambio de teclas Ctrl no pueden estar habilitadas al mismo tiempo. Si una está encendida, la otra se apagará automáticamente.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Teclas Fn",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Teclas Ctrl",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Acción",
+                            "action1": "Seleccionar todos",
+                            "action2": "Copiar",
+                            "action3": "Agregar la página web a mis favoritos",
+                            "action4": "Buscar",
+                            "action5": "Buscar y reemplazar en Microsoft Word",
+                            "action6": "Alinear izquierda y derecha en Microsoft Word",
+                            "action7": "Salir (en aplicaciones admitidas)",
+                            "action8": "Agregar subrayado",
+                            "action9": "Pegar",
+                            "action10": "Cerrar (por aplicación)",
+                            "action11": "Cortar",
+                            "action12": "Rehacer",
+                            "action13": "Deshacer"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "MÁS",
@@ -1533,16 +1743,16 @@
                     "less": "MENOS"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Retroiluminación del teclado",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Active la retroiluminación del teclado para facilitar la escritura en una condición de luz oscura o deficiente. También puede cambiar los valores de la iluminación posterior pulsando la tecla Fn+barra espaciadora.",
+                        "auto": "Active la retroiluminación del teclado para facilitar la escritura en una condición de luz oscura o deficiente. Puede cambiar los valores de la iluminación posterior pulsando la tecla Fn+barra espaciadora o configurándolo en “Auto”. La opción “Auto” ajusta automáticamente la iluminación posterior del teclado según la luz ambiental."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automático",
+                        "low": "Baja",
+                        "high": "Alto",
+                        "off": "Apagado"
                     }
                 }
             }
@@ -1705,12 +1915,12 @@
             "superResolution": {
                 "heading": "Medios inteligentes",
                 "title": "Escalado de resolución de video",
-                "desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video mejorando la resolution de video. Funciona especialmente cuando el video tiene una resolución baja.</label></p> <p style='margin-top:4px;'><label> Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. Cuando está habilitada, se recomienda que conecte el sistema a la alimentación de CA.</label></p>",
-                "tooltip": "La característica solo funciona en los siguientes reproductores: <br/> Windows Media player",
+                "desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video mejorando la resolution de video. Funciona especialmente cuando el video tiene una resolución baja.</label></p> <p style='margin-top:4px;'><label>Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. No lo utilice en la modalidad de CC. De lo contrario, se acelerará el consumo de energía y se acortará la vida de la batería.</label></p>",
+                "tooltip": "La característica solo funciona en:<br>Windows Media player",
                 "note": {
                     "description": "Esta característica no funciona cuando;",
-                    "description1": "El sistema no está conectado a la alimentación de CA y la energía de la batería es inferior al 20 %.",
-                    "description2": "El sistema no está conectado a la alimentación de CA y el modo de ahorro de energía de la batería está habilitado.",
+                    "description1": "El sistema no está conectado a la alimentación de CA.",
+                    "description2": "El modo de ahorro de batería está habilitado.",
                     "description3": "La temperatura de la CPU es demasiado alta."
                 }
             },
@@ -1867,7 +2077,7 @@
             "localRepositoryDatabaseException": "No se ha podido encontrar la base de datos del depósito local o está dañada.",
             "networkInterruptedException": "El servidor de actualización de sistema no está disponible en este momento. Vuelva a intentarlo más tarde.",
             "helpCenterInvalidServerException": "El servidor de actualización de sistema no es válido. Vuelva a intentarlo más tarde.",
-            "catalogNotFoundException": "No se encontraron actualizaciones aplicables para el sistema.",
+            "catalogNotFoundException": "No se han encontrado actualizaciones aplicables para el sistema debido a que no se ha encontrado el catálogo de actualizaciones.",
             "catalogCrcErrorException": "El catálogo del sistema se está actualizando en este momento. Vuelva a intentarlo más tarde.",
             "catalogErrorException": "Se detectó un error con el catálogo de actualizaciones para el sistema en el servidor de actualización de sistema. Vuelva a intentarlo más tarde.",
             "fileNotFoundException": "No se ha encontrado el archivo."
@@ -1890,7 +2100,7 @@
             "startDate": "Fecha de inicio: ",
             "endDate": "Fecha de término: ",
             "status": "Estado: ",
-            "subDescription1": "Este producto tiene una garantía limitada por años y derecho a servicio de reparación de depósito. Los clientes pueden llamar al centro de servicio local para obtener más información. Los distribuidores pueden proporcionar reparación de entrega para este producto.",
+            "subDescription1": "La garantía limitada de Lenovo se aplica a su equipo y tiene derecho al servicio de Depot. Los clientes pueden llamar al centro de servicio local para obtener más información. Los distribuidores pueden proporcionar reparación de entrega para este producto.",
             "subDescription2": "No pudimos encontrar los detalles de garantía para su dispositivo, para tener más opciones de garantía, visite nuestro sitio web de soporte de garantía.",
             "viewWarrantyOptions": "VER OPCIONES DE GARANTÍA",
             "offlineTips1": "Conéctese a Internet para obtener la información de garantía más reciente.",
@@ -1934,8 +2144,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Completamente protegido",
-            "notFully": "No está completamente protegido",
+            "fully": "Para obtener una mejor oferta para proteger su dispositivo, manténgase con",
+            "notFully": "Para saber cómo proteger mejor su dispositivo, comience con",
             "security101": "ASESOR DE SEGURIDAD 101",
             "firewall": "Cortafuegos",
             "pwdHealth": "Estado de la contraseña",
@@ -1975,7 +2185,7 @@
             "visitHde": "Visite Cifrado de unidad de disco duro",
             "haveOwnPassword": "Tengo mi propio administrador de contraseñas",
             "haveOwnWifi": "Tengo mi propia seguridad de Wi-Fi",
-            "haveOwnVpn": "Tengo mi propia seguridad de VPN",
+            "haveOwnVpn": "Tengo mi propia VPN",
             "uac": "Control de cuentas de usuario (UAC)",
             "uacTitles": "Control de cuentas de usuario",
             "hde": "Cifrado de unidad de disco duro",
@@ -2091,7 +2301,8 @@
                 "showmore": "Mostrar más",
                 "showless": "Mostrar menos",
                 "button": "Habilitar seguridad de WiFi",
-                "disableDecribe": "Seguridad de Lenovo WiFi es un avanzado servicio de software basado en la nube que ayuda a su dispositivo a diferenciar entre redes inalámbricas seguras y aquellas posiblemente maliciosas."
+                "disableDescribe": "Seguridad de Lenovo WiFi es un avanzado servicio de software basado en la nube que ayuda a su dispositivo a diferenciar entre redes inalámbricas seguras y aquellas posiblemente maliciosas.",
+                "enabledDescribe": "Seguridad de Lenovo WiFi no está supervisando su red WiFi."
             },
             "threatlocator": {
                 "describe": "Utilice el detector de amenazas para determinar la seguridad de las redes a su alrededor.",
@@ -2125,7 +2336,8 @@
                 "subtitle": "Serenidad",
                 "subtitleDescribe": "La Seguridad de hogar conectado enviará un aviso si detecta una vulnerabilidad en su dispositivo o red doméstica o si está conectado a una red posiblemente malintencionada. Obtenga más información acerca de la Seguridad de hogar conectado <tag>aquí</tag>.",
                 "tryNow": "Probar ahora",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Introduzca código de invitación",
@@ -2200,7 +2412,8 @@
             "getStarted1": "Haga clic en el botón “Abrir SurfEasy” anterior para iniciar SurfEasy VPN.",
             "getStarted2": "Encienda el VPN y espere un breve momento para obtener confirmación de una conexión segura.",
             "getStarted3": "Cambie la región o ubicación, si lo desea, y disfrute de una red privada y segura.",
-            "poweredBySurfEasy": "Con tecnología SurfEasy"
+            "poweredBySurfEasy": "Con tecnología SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "ADMINISTRADOR DE CONTRASEÑA DASHLANE",
@@ -2228,7 +2441,8 @@
             "allowsYou2": "Monitoree la web oscura para detectar sus datos personales",
             "allowsYou3": "Permanezca seguro en las redes WiFi no seguras con VPN integrado",
             "allowsYou4": "Comparta las contraseñas de forma segura sin mostrarlas",
-            "poweredByDashLane": "Con tecnología Dashlane"
+            "poweredByDashLane": "Con tecnología Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2256,6 +2470,7 @@
     "lenovoId": {
         "login": "Inicio de sesión",
         "logout": "Cerrar sesión",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Desbloquear contenido exclusivo",
         "user": "Usuario",
         "welcomeText1": "¡Energícese hoy, {{firstName}}!",
@@ -2300,7 +2515,7 @@
     "faq": {
         "footer": {
             "title": "¿No encuentras lo que buscas?",
-            "description": "¿NECESITA APOYO ADICIONAL? NO DUDESE CONTACTARNOS A TRAVÉS DE:",
+            "description": "¿Necesita soporte adicional? No dude en ponerse en contacto con nosotros mediante:",
             "body": "Comunidad de Lenovo",
             "button": "Ir al foro"
         },
@@ -2510,7 +2725,7 @@
         },
         "question4": {
             "title": "Compruebe el uso de la batería de su equipo",
-            "description": "<div class='faqInFs4Fb'>    Compruebe el uso de la batería de su equipo</div><hr><h3 class='faqInFs25FbP10'>Síntoma</h3><p>Windows 10 incluye una nueva pantalla “<strong>uso de batería”</strong> que le muestra lo que está agotando la potencia de su equipo portátil. Esto significa que le dirá exactamente qué aplicaciones, tanto de escritorio como “universales” de Windows 10, están utilizando demasiada energía.</p><h3 class='faqInFs25FbP10'>Marcas afectadas</h3><ul>    <li>Equipos portátiles Lenovo, sistemas de escritorio</li></ul><h3 class='faqInFs25FbP10'>Sistemas afectados</h3><ul>    <li>Todo</li></ul><h3 class='faqInFs25FbP10'>Sistema operativo</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Solución</h3><p>Esta característica es nueva en Windows 10, necesitamos encontrar esta característica primero, ya que no está almacenada en su vista de <strong>panel de control </strong>tradicional, esta característica se encuentra en la nueva aplicación de <strong>“Configuración”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Busque la pantalla uso de la batería</h3></p><p>1. Haga clic o toque la opción <strong>“Configuración</strong>” en el menú Inicio</p><p>2. En <strong>Configuración </strong> seleccione <strong>“Sistema”</strong>y luego seleccione <strong>“Ahorro de batería”.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Haga clic o toque el enlace <strong>“Uso de batería”</strong> bajo este encabezado para ver más detalles. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analice su uso de energía</h3><p>4. Puede cambiar para hacer que la batería utilice la pantalla para mostrar el uso de la batería desde las últimas 24 horas hasta las últimas 48 horas o desde la semana pasada</p><p>5. Porcentajes de <strong>“Sistema”,</strong> “<strong>Pantalla</strong>” y “<strong>Wi-Fi”</strong>. Esto muestra cuánta batería han utilizado los procesos del sistema, la pantalla.</p><p>6. Las opciones <strong>“En uso”</strong> y <strong>“En segundo plano”</strong> muestran la cantidad de energía que usan las aplicaciones mientras las está utilizando, en comparación con las aplicaciones que se ejecutan en segundo plano.</p><p>7. Si las aplicaciones usan energía en segundo plano, puede hacer clic o tocar el enlace <strong>“Cambiar los valores de aplicación en segundo plano” </strong>y configurar las aplicaciones para que no se ejecuten en segundo plano. Esto solo funciona para las aplicaciones universales de Windows 10.</p><p>8. Desplácese hacia abajo y verá una lista de aplicaciones, esto se considera la sección más útil de esta característica. Se mostrará una lista de las aplicaciones que han usado batería en ese período y se le mostrará el porcentaje del poder de la batería que cada aplicación haya utilizado</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Compruebe el uso de la batería de su equipo</div><hr><h3 class='faqInFs25FbP10'>Síntoma</h3><p>Windows 10 incluye una nueva pantalla “<strong>uso de batería”</strong> que le muestra lo que está agotando la potencia de su equipo portátil. Esto significa que le dirá exactamente qué aplicaciones, tanto de escritorio como “universales” de Windows 10, están utilizando demasiada energía.</p><h3 class='faqInFs25FbP10'>Marcas afectadas</h3><ul>    <li>Equipos portátiles Lenovo, sistemas de escritorio</li></ul><h3 class='faqInFs25FbP10'>Sistemas afectados</h3><ul>    <li>Todo</li></ul><h3 class='faqInFs25FbP10'>Sistema operativo</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Solución</h3><p>Esta característica es nueva en Windows 10, necesitamos encontrar esta característica primero, ya que no está almacenada en su vista de <strong>panel de control </strong>tradicional, esta característica se encuentra en la nueva aplicación de <strong>“Configuración”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Busque la pantalla uso de la batería</h3></p><p>1. Haga clic o toque la opción <strong>“Configuración</strong>” en el menú Inicio</p><p>2. En <strong>Configuración </strong> seleccione <strong>“Sistema”</strong>y luego seleccione <strong>“Ahorro de batería”.<br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Haga clic o toque el enlace <strong>“Uso de batería”</strong> bajo este encabezado para ver más detalles. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analice su uso de energía</h3><p>4. Puede cambiar para hacer que la batería utilice la pantalla para mostrar el uso de la batería desde las últimas 24 horas hasta las últimas 48 horas o desde la semana pasada</p><p>5. Porcentajes de <strong>“Sistema”,</strong> “<strong>Pantalla</strong>” y “<strong>Wi-Fi”</strong>. Esto muestra cuánta batería han utilizado los procesos del sistema, la pantalla.</p><p>6. Las opciones <strong>“En uso”</strong> y <strong>“En segundo plano”</strong> muestran la cantidad de energía que usan las aplicaciones mientras las está utilizando, en comparación con las aplicaciones que se ejecutan en segundo plano.</p><p>7. Si las aplicaciones usan energía en segundo plano, puede hacer clic o tocar el enlace <strong>“Cambiar los valores de aplicación en segundo plano” </strong>y configurar las aplicaciones para que no se ejecuten en segundo plano. Esto solo funciona para las aplicaciones universales de Windows 10.</p><p>8. Desplácese hacia abajo y verá una lista de aplicaciones, esto se considera la sección más útil de esta característica. Se mostrará una lista de las aplicaciones que han usado batería en ese período y se le mostrará el porcentaje del poder de la batería que cada aplicación haya utilizado</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2705,7 +2920,7 @@
         "deviceStatisticsDescription": "Envíe datos de dispositivo anónimos para ayudarnos a mejorar la calidad, confiabilidad y la próxima generación de dispositivos.",
         "userProfile": "Perfil de usuario",
         "Note": "Nota: ",
-        "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto.",
+        "settingsNotes": "Vuelva a iniciar esta aplicación para asegurarse de que todos los cambios entren en efecto.",
         "betaSettingTitle": "Programa Beta",
         "betaProgram": "Programa Beta",
         "betaSettingDescription": "Pruebe las más recientes características en las que estamos trabajando."
@@ -2729,6 +2944,8 @@
         "noteDownloadAvailable": "Nota: después de hacer clic en Descargar, puede que reciba una solicitud de Windows para que nos autorice a instalar el software en su dispositivo. Una vez finalizada la instalación de las aplicaciones, estas aparecerán automáticamente en el escritorio o en el menú Inicio.<br /><br />Puede cerrar la página Mi software y continuar usando Lenovo Vantage. No cierre Lenovo Vantage durante la instalación.",
         "sizeText": "Tamaño",
         "versionText": "Versión",
+        "redemptionCode": "Código de canje:",
+        "redeemWebsite": "Canjear al sitio web del proveedor",
         "softwareDescription": "Haga clic en descargar a continuación para canjear el software que compró con su dispositivo. Si en cualquier momento necesita volver a descargar el software, puede hacerlo haciendo clic en el botón Mi software en el menú Vantage.",
         "title": "Mi software",
         "loadingDescription": "Espere mientras preparamos una lista del software que se incluyó en la compra de su dispositivo.",
@@ -2838,7 +3055,7 @@
                 "yes": "Sí",
                 "no": "No"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "El botón está deshabilitado si los dispositivos de almacenamiento no admiten esta funcionalidad, mientras que la información de hardware se está cargando o si hay un análisis en curso."
         },
         "support": {
             "title": "Descargar herramientas de diagnóstico profesionales",
@@ -3044,7 +3261,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3254,5 +3488,8 @@
             "subtitle2": "Las PC todo en uno perfeccionadas",
             "body2": "Las PC todo en uno con los procesadores Intel® Core™ de novena generación le proporcionan toda la potencia de una computadora de escritorio en una pantalla elegante, lo que significa menos desorden, seguridad basada en hardware y una pantalla de alta resolución."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

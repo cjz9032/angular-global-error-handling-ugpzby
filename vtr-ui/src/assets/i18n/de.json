@@ -22,6 +22,12 @@
                     "rapidCharge": "Schnellladen"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overclock ein",
+                        "performance": "Leistung",
+                        "balance": "Abstimmung",
+                        "quiet": "Leise"
+                    },
                     "title": "CPU-Übertaktung",
                     "status": {
                         "alwayson": "Ein",
@@ -87,7 +93,8 @@
                     "line8": "<b>Schnellladen </b><br> Länger unterwegs spielen dank hoher Akkuladegeschwindigkeit",
                     "line9": "<b>Touchpad-Sperre </b><br> Fehlerhafte Eingaben beim Spielen durch deaktiviertes Touchpad verhindern",
                     "line10": "<b>Automatisch schließen </b><br> Nicht benötigte Prozesse vor dem Spielen beenden, um verfügbare Systemressourcen zu maximieren",
-                    "line11": "<b>Wärmemodus </b><br> Stellen Sie Ihr bevorzugtes Geräteprofil für die Lüfterdrehzahl und die Kühlsteuerung ein"
+                    "line11": "<b>Wärmemodus </b><br> Stellen Sie Ihr bevorzugtes Geräteprofil für die Lüfterdrehzahl und die Kühlsteuerung ein",
+                    "line12": "<b>Makrotaste </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Bewegen Sie den Mauszeiger über CPU/GPU/RAM und unterschiedlichen Laufwerke, um ihre Beschreibungen einschließlich Hersteller und Modellinformationen anzuzeigen"
@@ -97,6 +104,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Schnell-Einstellungen"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Einstellung Wärmemodus",
+                    "thermalMode2SettingDesc": "Wählen Sie den gewünschten Modus aus.",
+                    "fnQDesc": "Sie können den Modus über die Tastenkombination Fn + Q wechseln.",
+                    "perormanceTitle": "Leistungsmodus",
+                    "performanceDesc": "Steigern Sie die Leistung Ihres Computers. Dies führt zu höherer Lüftergeschwindigkeit und mehr Stromverbrauch.",
+                    "OCDesc": "Sie können auswählen, dass die Funktion zum Übertakten aktiviert werden soll.",
+                    "ac_dcDesc": "Der Leistungsmodus ist nur bei Netzbetrieb verfügbar.",
+                    "balanceTitle": "Ausbalancierter Modus",
+                    "balanceDesc": "Die Leistung und die Lüftergeschwindigkeit werden automatisch basierend auf der Temperatur ausgeglichen. Durchschnittlicher Stromverbrauch.",
+                    "quietTitle": "Ruhemodus",
+                    "quietDesc": "Leiser Betrieb, indem die Leistung des Computers sowie die Lüftergeschwindigkeit soweit möglich reduziert werden. Niedriger Stromverbrauch.",
+                    "OC": {
+                        "cpu_gpuOC": "CPU-/GPU-Übertaktung im Leistungsmodus aktivieren.",
+                        "cpuOC": "CPU-Übertaktung im Leistungsmodus aktivieren.",
+                        "gpuOC": "GPU-Übertaktung im Leistungsmodus aktivieren.",
+                        "advance": "ERWEITERT",
+                        "cpu_gpuDriverLack": "CPU-/GPU-Treiber installieren, um Overclocking zu verwenden.",
+                        "cpuDriverLack": "CPU-Treiber installieren, um Overclocking zu verwenden.",
+                        "gpuDriverLack": "GPU-Treiber installieren, um Overclocking zu verwenden.",
+                        "goInstall": "INSTALLIEREN"
+                    },
+                    "autoSwitch": "Autom. Wechsel zu Leistung, wenn Spiele gestartet werden, danach zurückschalten."	
+                },
+                "advancedOC": {
+                    "title": "Overclock Erweiterte Einst.",
+                    "description": "Erweiterte benutzerdef. Parameter bei akt. Overclocking festlegen. Es könnte riskant sein.",
+                    "gpuOverclock": "GPU-Übertaktung",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Core-Spannung",
+                        "cpuOCName116": "1-Kern-Verhältnis",
+                        "cpuOCName117": "2-Kern-Verhältnis",
+                        "cpuOCName118": "3-Kern-Verhältnis",
+                        "cpuOCName119": "4-Kern-Verhältnis",
+                        "cpuOCName34": "Offset Core-Spannung",
+                        "cpuOCName120": "5-Kern-Verhältnis",
+                        "cpuOCName121": "6-Kern-Verhältnis",
+                        "cpuOCName76": "Cache-Verhältnis",
+                        "cpuOCName77": "Cache-Spannung",
+                        "cpuOCName79": "Offset Cache-Spannung",
+                        "cpuOCName122": "7-Kern-Verhältnis",
+                        "cpuOCName123": "8-Kern-Verhältnis",
+                        "cpuOCName102": "Core-ICCMAX",
+                        "cpuOCName106": "Cache-ICCMAX",
+                        "cpuOCName114": "Offset AVX-Verhältnis"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Spannung für den Prozessorkern festlegen.",
+                        "cpuOCTip116": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip117": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip118": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip119": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip34": "Ein Spannungsoffset von der aktuellen Core-Spannung.",
+                        "cpuOCTip120": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip121": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip76": "Stellen Sie den maximalen Prozessor-Cache-Multiplikator ein, mit dem die Caches arbeiten können. Der Wert der Cache-Frequenz ist das Produkt aus diesem Verhältnis und der Referenztaktfrequenz.",
+                        "cpuOCTip77": "Spannung, die der internen Cache-Schnittstelle des Prozessors bereitgestellt wird, basierend auf dem momentan ausgewählten Cache-Spannungsmodus.",
+                        "cpuOCTip79": "Letzter Spannungsoffset, der auf die Cache-Spannung angewendet wird.",
+                        "cpuOCTip122": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip123": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
+                        "cpuOCTip102": "ICCMAX für Prozessorkern-Spannungsregler festlegen.",
+                        "cpuOCTip106": "ICCMAX für Prozessorcache- und Ringbus-Spannungsregler festlegen.",
+                        "cpuOCTip114": "Sie können den effektiven Grenzwert für das Verhältnis aktiver Kerne bei aktiviertem AVX ableiten, indem Sie diesen Wert vom entsprechenden Grenzwert für das Verhältnis aktiver Kerne abziehen."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "Offset GPU-Takt",
+                        "gpuOCName1": "Offset VRAM-Takt"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Offset zur GPU-Taktfrequenz hinzufügen.",
+                        "gpuOCTip1": "Offset zur Hauptspeicher-Taktfrequenz hinzufügen."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Änderungen speich.?",
+                    "description1": "Falsche Übertaktungseinstellungen führen zu irreparablen Hardwareschäden. Führen Sie bei einem Fehler einen der folgenden Schritte aus: ",
+                    "description2": "•  Halten Sie für einen Neustart und Wiederherstellen der Std.parameter die Einschalttaste 8 Sek. lang gedrückt.",
+                    "description3": "•  Stellen Sie die Std.parameter mit \"Standard-Übertaktung wiederherstellen\" in den BIOS-Einstellungen wieder her.",
+                    "save": "SPEICHERN",
+                    "notSave": "ABBRECHEN"
+                },
+                "defaultPromptPopup": {
+                    "title": "Standards setzen?",
+                    "description": "Alle aktuellen und vorherigen Änderungen gehen dabei verloren."
+                },
+                "warningPromptPopup": {
+                    "title": "Warnung!",
+                    "description": "Unsachgemäße Einstellungen für Overclocking können zu irreversiblen Hardwareschaden führen.",
+                    "proceed": "FORTFAHREN"
                 }
             }
         },
@@ -598,6 +695,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Statisch",
+                "effectName2": "Spektrum",
+                "effectName3": "Regenbogen",
+                "effectName4": "Zufällig",
+                "effectName5": "Kühles_Blau",
+                "effectName6": "Welle_rechts",
+                "effectName7": "Welle_links"
+            },
+            "lightingSpeed": {
+                "title": "Geschwindigkeit"
+            },
+            "colorPicker": {
+                "text2": "MEHR",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Bereich teilen (aus): Ändern Sie die Farben mit dem Tastaturbild",
+                "text7": "Bereich teilen (ein): Abschnitte mit dem Tastaturbild unten ändern",
+                "text8": "Der aktuelle Effekt unterstützt keine Farbauswahl"
+            },
+            "tipText": {
+                "title1": "Fn+Leertaste zum Wechseln zwischen Profilen verwenden"
+            }
         }
     },
     "common": {
@@ -615,9 +748,9 @@
                 "sub1": "Meine Sicherheit",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-Sicherheit",
-                "sub4": "Kennwortzustand",
-                "sub5": "Internetschutz",
-                "sub6": "Windows Hello"
+                "sub4": "Password Manager",
+                "sub5": "VPN",
+                "sub6": "Fingerabdruck"
             },
             "support": "Unterstützung",
             "privacy": "Vertraulichkeit",
@@ -643,8 +776,11 @@
             "notFound": "NICHT GEFUNDEN",
             "registered": "REGISTRIERT",
             "notRegistered": "NICHT REGISTRIERT",
-            "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
+            "fingerPrint": "Fingerabdruck",
+            "privacyPolicyAndTermsOfService": "<tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>",
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Q & A für Ihre Maschine",
@@ -670,6 +806,9 @@
         },
         "app-update": {
             "message": "Hallo! Es ist eine neuere Version von Vantage verfügbar. Möchten Sie sie herunterladen?"
+        },
+        "offline": {
+            "connectToUseFeature": "Internetverbindung für diese Funktion erforderlich"
         }
     },
     "privacy": {
@@ -717,20 +856,24 @@
             "button": "Feedback geben",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Kommentare…",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Vielen Dank für Ihr Feedback!"
-                },
                 "question1": "Gefällt Ihnen der neue Stil von Vantage?",
                 "question2": "Halten Sie die Leistung für akzeptabel?",
                 "question3": "Würden Sie die Anwendung in Zukunft häufiger verwenden?",
+                "question4": "Wussten Sie schon, dass Sie mit Lenovo Vantage Softwaretreiber, Firmware und BIOS auf Ihrem Computer aktualisieren können?",
+                "question5": "Wie wahrscheinlich ist es, dass Sie die Anwendung Lenovo Vantage einem Freund oder Kollegen weiterempfehlen?",
+                "notAtAllLikely": "Gar nicht wahrscheinlich",
+                "extremelyLikely": "Sehr wahrscheinlich",
                 "yes": "Ja",
                 "no": "Nein",
                 "tips1": "Bitte hinterlassen Sie einen zusätzlichen Kommentar",
+                "comments": "Kommentare…",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Feedback senden",
-                "submitScreenShot": "Screenshot senden"
+                "submitScreenShot": "Screenshot senden",
+                "messages": {
+                    "feedbackSuccess": "Vielen Dank für Ihr Feedback!"
+                }
             }
         },
         "quickSettings": {
@@ -896,7 +1039,7 @@
                     "Good": "<b>Der Akku befindet sich in einem guten Zustand.</b>",
                     "Exhaustion": "Die Ladekapazität des Akkus ist <b>vermindert</b>. Setzen Sie einen neuen Akku ein.",
                     "Bad": "<b>Ein Akkufehler ist aufgetreten.</b> Der Akku kann nicht aufgeladen/entladen werden. Tauschen Sie den Akku aus.",
-                    "NotDetected": "<b>Kein Akku erkannt</b> oder nicht ordnungsgemäß eingesetzter Akku.",
+                    "NotDetected": "<b>Kein Akku erkannt.</b>",
                     "NotGood": "<b>Der Akku befindet sich nicht in einem guten Zustand.</b>",
                     "NotSupportACAdapter": "<b>Netzteil wird nicht unterstützt.</b>",
                     "LimitedACAdapterSupport": "<b>Netzteil kann nicht genügend Strom liefern.</b>",
@@ -1000,9 +1143,9 @@
                         "desc3": "Einige Modi können je nach Aktivität automatisch über einen größeren Leistungsumfang angepasst werden. Um den Automatikmodus zu aktivieren, drücken Sie die Tastenkombination FN+T.",
                         "autoMode": {
                             "title1": "Automatischer Akku-Modus",
-                            "desc1": "Der Schieberegler befindet sich auf der linken Seite. Der Modus wird dynamisch in den \"Ruhemodus\" oder \"Akkumodus\" umgeschaltet, um das beste DC-Modus-Erlebnis zu erzielen.",
+                            "desc1": "Der Schieberegler befindet sich auf der linken Seite. Der Modus wird dynamisch in den Ruhemodus oder Akkumodus umgeschaltet, um das beste DC-Modus-Erlebnis zu erzielen.",
                             "title2": "Automatischer Leistungsmodus",
-                            "desc2": "Der Schieberegler befindet sich in der Mitte oder Mitte rechts. Der Modus wird dynamisch in den \"Ruhemodus\", \"ausbalancierten Modus\" oder \"Leistungsmodus\" umgeschaltet, um das bestmögliche Erlebnis im AC-Modus zu gewährleisten.",
+                            "desc2": "Der Schieberegler befindet sich in der Mitte oder Mitte rechts. Der Modus wird dynamisch in den Ruhemodus, ausbalancierten Modus oder Leistungsmodus umgeschaltet, um das bestmögliche Erlebnis im AC-Modus zu gewährleisten.",
                             "title3": "Leistungsmodus",
                             "desc3": "Der Schieberegler ist ganz rechts. Lüftergeschwindigkeit und zulässige Oberflächentemperatur sind höher für maximale Leistung."
                         },
@@ -1085,7 +1228,7 @@
                     },
                     "airPlanePower": {
                         "title": "Flugzeug-Energiemodus",
-                        "description": "Schützen Sie das Netzteil im Flugzeug, indem Sie den Stromverbrauch des Systems steuern.Wenn die Funktion Flugzeug-Energiemodus aktiviert ist, verringert der Computer den Stromverbrauch durch Beschränkung der Akkuladerate und der Systemleistung.",
+                        "description": "Mit dieser Funktion können Sie die Netzsteckdose in einem Flugzeug verwenden, wenn eine bestimmte Leistungsbegrenzung gilt. In diesem Modus wird der Stromverbrauch Ihres Computers durch Beschränkung der Akkuladerate und der Systemleistung auf einen sicheren Wert herabgesetzt.",
                         "checkBoxDesc": "Automatische Erkennung",
                         "note": "Ist die Funktion für automatische Erkennung aktiviert, schaltet der Computer den Flugzeug-Energiemodus automatisch ein, sobald er eine Umgebung erkennt, die dem Inneren einer Flugzeugkabine entspricht, und schaltet ihn beim Verlassen dieser Umgebung wieder aus."
                     },
@@ -1104,7 +1247,7 @@
                         },
                         "progressText1": "{{stage}} von {{stageNum}}: Kalibrierung für volle Ladung",
                         "progressText2": "{{stage}} von {{stageNum}}: Kalibrierung für niedrigen Akkustand",
-                        "progressText3": "{{stage}} von {{stageNum}}: Kalibrierung für volle Ladung",
+                        "progressText3": "{{stage}} von {{stageNum}}: Kalibrierung für hohen Akkustand",
                         "FCCText": "Von {{before}} Wh auf {{after}} Wh",
                         "note": "Hinweis: Vor dem Zurücksetzen des Akkustandsanzeigers muss Ihr Computer an die Stromversorgung angeschlossen werden. ",
                         "resetLog": {
@@ -1118,7 +1261,7 @@
                             "ERROR_UNEXPECTED": "Fehlgeschlagen: Ein unerwarteter Fehler ist aufgetreten."
                         },
                         "popup": {
-                            "description1": "Das Zurücksetzen wird wie folgt durchgeführt:<br>Akku wird vollständig aufgeladen  -->  Akku wird vollständig entladen  -->  Akku wird vollständig aufgeladen",
+                            "description1": "Das Zurücksetzen wird wie folgt durchgeführt:<br>Akku wird vollständig aufgeladen --> Akku wird fast vollständig entladen --> Akku wird (fast) vollständig wieder aufgeladen",
                             "description2": "Hinweise: <br>1. Der Prozess kann mehrere Stunden dauern. Verwenden Sie den Computer während dieser Zeit nicht.<br>2. Schließen Sie alle offenen Anwendungen und schließen Sie Ihren Computer an die Stromversorgung an.<br>3. Während des Vorgangs ist die Funktion für den Schwellenwert für Akkuladung deaktiviert.",
                             "continue": "Weiter",
                             "cancel": "Abbrechen",
@@ -1135,10 +1278,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart-Standby",
-                    "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Hochfahren bei intensiverer Nutzung beeinträchtigt wird.",
-                    "tooltip": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird anhand des von Ihnen festgelegten Zeitplans oder Ihrer Computernutzungszeiten optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
+                    "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Fortsetzen von <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern-Standby</a> bei intensiverer Nutzung beeinträchtigt wird.",
+                    "tooltip": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird anhand des von Ihnen festgelegten Zeitplans oder Ihrer Computernutzung optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
                     "timer": {
-                        "heading": "Die typischen Nutzungszeiten für Ihren Computer",
+                        "heading": "Typische Nutzungszeiten für diesen Computer:",
                         "subHeading1": "innerhalb des Felds",
                         "subHeading2": "Ende",
                         "subHeading3": "Zeitplan nutzen für",
@@ -1156,14 +1299,14 @@
                     "warningtip": "Bitte wählen Sie mindestens einen Tag aus.",
                     "days": {
                         "shortName": {
-                            "sun": "Sonntag",
-                            "mon": "Montag",
-                            "tue": "Dienstag",
-                            "wed": "Mittwoch",
-                            "thurs": "Donnerstag",
-                            "fri": "Freitag",
-                            "sat": "Samstag",
-                            "thu": "Thu"
+                            "sun": "So.",
+                            "mon": "Mo.",
+                            "tue": "Di.",
+                            "wed": "Mi.",
+                            "thurs": "Do.",
+                            "fri": "Fr.",
+                            "sat": "Sa.",
+                            "thu": "Do."
                         },
                         "name": {
                             "sun": "Sonntag",
@@ -1180,11 +1323,11 @@
                         "noDaySelected": "Kein Tag ausgewählt"
                     },
                     "checkbox": "Automatische Anpassung der aktiven Zeit Ihres Computers abhängig von der Verwendung",
-                    "hyperlinkToGraph": "Klicken Sie hier, um die Tabelle mit den Aktivitäten und aktiven Zeiten Ihres Computers anzuzeigen",
+                    "hyperlinkToGraph": "Hier klicken, um die Nutzung und angewandte aktive Zeit anzuzeigen",
                     "subTitle": "Zeitplan für Ihren Computer festlegen",
                     "automaticMode": "Automatischer Modus",
                     "manualMode": "Manueller Modus",
-                    "subNote": "Für Ihren Computer ist der Modern-Standby-Modus abhängig von der Verwendung festgelegt.",
+                    "subNote": "Ihr Computer ist basierend auf der Nutzung für eine schnellere Wiederaufnahme eingeplant.",
                     "graph": {
                         "graph1Tittle": "Verwendung dieses Computers",
                         "graph2Tittle": "Aktive Zeit angewendet",
@@ -1223,7 +1366,8 @@
                     },
                     "description2": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Hochfahren bei intensiverer Nutzung beeinträchtigt wird.",
                     "subTitle2": "Typische Nutzungszeiten für diesen Computer festlegen",
-                    "oldTooltipText": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird auf Grundlage des von Ihnen festgelegten Zeitplans optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist."
+                    "oldTooltipText": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird auf Grundlage des von Ihnen festgelegten Zeitplans optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
+                    "sectionTitle": "Standby-Einstellungen"
                 }
             },
             "audio": {
@@ -1327,7 +1471,8 @@
                         "note": {
                             "title": "Anmerkung",
                             "description": "Lenovo Vantage muss auf Ihre Standortinformationen zugreifen, um die Sonnenuntergangs- und Sonnenaufgangszeit Ihrer Gegend zu berechnen."
-                        }
+                        },
+                        "tips": "Führen Sie Windows Update aus oder installieren Sie den Grafiktreiber manuell, um den Modus \"Augen schonen\" wiederherzustellen"
                     },
                     "dispColorTemp": {
                         "title": "Farbtemperatur der Anzeige",
@@ -1370,6 +1515,17 @@
                         "taskBarDimmer": "HELLIGKEITSREGLER FÜR DIE TASKLEISTE",
                         "backgroundDimmer": "HELLIGKEITSREGLER FÜR DEN HINTERGRUND",
                         "displayDimmer": "HELLIGKEITSREGLER FÜR DIE ANZEIGE"
+                    },
+                    "displayPriority": {
+                        "title": "Bildschirm-Prioritätskontrolle",
+                        "description": "Ihre Einheit unterstützt eine maximale Anzahl externer Bildschirme. Wenn Sie mithilfe dieser zusätzlichen Methoden mehrere Bildschirme anschließen, funktioniert nur der als bevorzugt festgelegte Bildschirm.<br/>Wählen Sie unten aus, welche Ausgabemethode für den zusätzlichen Bildschirm priorisiert werden soll:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Optionales Modul"
+                        }
                     }
                 },
                 "camera": {
@@ -1398,7 +1554,8 @@
                         "caption": "Mit dieser Funktion wird Ihr Hintergrund weichgezeichnet, wenn Sie die Kamera für Videokonferenzen oder die Aufnahme von Fotos verwenden. Sie können einen der unten aufgeführten Effekte auswählen.",
                         "blurMode": "Weichzeichnen-Modus",
                         "comicMode": "Comic-Modus",
-                        "sketchMode": "Skizzen-Modus"
+                        "sketchMode": "Skizzen-Modus",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA WIRD VERWENDET",
@@ -1523,7 +1680,60 @@
                 "fnCtrlKey": {
                     "title": "Austausch der Funktionen von Fn- und Strg-Taste",
                     "description": "Falls Sie aus Gewohnheit die Fn-Taste drücken, wenn Sie eigentlich die Strg-Taste drücken möchten, können Sie die Funktion der beiden Tasten vertauschen.",
-                    "restartNote": "Sie müssen den Computer neu starten, um die Funktion der beiden Tasten zu tauschen. Möchten Sie den Computer jetzt neu starten?"
+                    "restartNote": "Sie müssen den Computer neu starten, um die Funktion der beiden Tasten zu tauschen. Möchten Sie den Computer jetzt neu starten?",
+                    "title2": "Fn funktioniert wie Strg für häufig verwendete Tastenkombinationen",
+                    "description2": "Die Fn-Taste funktioniert für einige häufig verwendete Tastenkombinationen wie die Strg-Taste. Die Strg-Taste funktioniert weiterhin wie gewohnt.",
+                    "featureNote": "Diese Funktion und die Funktion zum Wechseln von Fn-Taste und Strg-Taste können nicht gleichzeitig aktiviert sein. Wenn eine Funktion eingeschaltet ist, wird die andere automatisch ausgeschaltet.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn-Tasten",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Strg-Tasten",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Aktion",
+                            "action1": "Alle auswählen",
+                            "action2": "Kopieren",
+                            "action3": "Webseite zu Lesezeichen hinzufügen",
+                            "action4": "Suchen",
+                            "action5": "Suchen und ersetzen in Microsoft Word",
+                            "action6": "Links- und rechtsbündig ausrichten in Microsoft Word",
+                            "action7": "Beenden (in unterstützter App)",
+                            "action8": "Unterstreichen",
+                            "action9": "Einfügen",
+                            "action10": "Schließen (in App)",
+                            "action11": "Ausschneiden",
+                            "action12": "Wiederholen",
+                            "action13": "Rückgängig machen"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "MEHR",
@@ -1533,16 +1743,16 @@
                     "less": "WENIGER"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Tastaturhintergrundbeleuchtung",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Tastaturbeleuchtung auch ändern, indem Sie die Tastenkombination Fn+Leertaste drücken.",
+                        "auto": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Beleuchtung ändern, indem Sie die Tastenkombination Fn+Leertaste drücken oder für die Beleuchtung \"Auto\" einstellen. Mit der Option \"Auto\" wird die Tastaturhintergrundbeleuchtung automatisch an das Umgebungslicht angepasst."
                     },
                     "level": {
-                        "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "auto": "Automatisch",
+                        "low": "Niedrig",
+                        "high": "Hoch",
+                        "off": "Aus"
                     }
                 }
             }
@@ -1705,12 +1915,12 @@
             "superResolution": {
                 "heading": "Intelligente Medien",
                 "title": "Upscaling der Videoauflösung",
-                "desc": "<p><label>Mit dieser Funktion wird die Videowiedergabe durch Verbesserung der Videoauflösung verbessert, insbesondere bei Videos mit schlechter Auflösung.</label></p> <p style='margin-top:4px;'><label> Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Wenn diese Funktion aktiviert ist, sollten Sie den Computer an die Stromversorgung anschließen.</label></p>",
-                "tooltip": "Die Funktion funktioniert nur bei folgenden Playern: <br/> Windows Media player",
+                "desc": "<p><label>Mit dieser Funktion wird die Videowiedergabe durch Verbesserung der Videoauflösung verbessert, insbesondere bei Videos mit schlechter Auflösung.</label></p> <p style='margin-top:4px;'><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus. Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
+                "tooltip": "Die Funktion funktioniert nur für:<br>Windows Media player",
                 "note": {
                     "description": "Diese Funktion funktioniert nicht, wenn:",
-                    "description1": "Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkustand weniger als 20 % beträgt.",
-                    "description2": "Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkusparmodus aktiviert ist.",
+                    "description1": "Der Computer ist nicht an Netzstrom (Wechselstrom) angeschlossen.",
+                    "description2": "Der Akkusparmodus ist aktiviert.",
                     "description3": "Die CPU-Temperatur zu hoch ist."
                 }
             },
@@ -1867,7 +2077,7 @@
             "localRepositoryDatabaseException": "Die lokale Repositorydatenbank wurde nicht gefunden oder ist beschädigt.",
             "networkInterruptedException": "Der Systemaktualisierungsserver ist zurzeit nicht verfügbar. Versuchen Sie es später erneut.",
             "helpCenterInvalidServerException": "Ungültiger Systemaktualisierungsserver. Versuchen Sie es später erneut.",
-            "catalogNotFoundException": "Es wurden keine verfügbaren Updates für Ihr System gefunden.",
+            "catalogNotFoundException": "Es wurden keine Aktualisierungen für Ihr System gefunden, da der Updatekatalog nicht gefunden wurde.",
             "catalogCrcErrorException": "Der Katalog für Ihr System wird derzeit aktualisiert. Versuchen Sie es später erneut.",
             "catalogErrorException": "Im Updatekatalog für Ihr System auf dem Systemaktualisierungsserver wurde ein Fehler gefunden. Versuchen Sie es später erneut.",
             "fileNotFoundException": "Datei nicht gefunden."
@@ -1890,7 +2100,7 @@
             "startDate": "Startdatum: ",
             "endDate": "Enddatum: ",
             "status": "Status: ",
-            "subDescription1": "Dieses Produkt hat eine jahrelange beschränkte Garantie und ist berechtigt für einen Depot-Reparaturservice. Kunden können sich für weitere Informationen an ihr lokales Service-Center wenden. Händler können für dieses Produkt eine Reparatur mit Einschicken des Geräts durch den Kunden durchführen.",
+            "subDescription1": "Die begrenzte Herstellergarantie von Lenovo gilt für Ihren Computer und berechtigt zum Depot-Service. Kunden können sich für weitere Informationen an ihr lokales Service-Center wenden. Händler können für dieses Produkt eine Reparatur mit Einschicken des Geräts durch den Kunden durchführen.",
             "subDescription2": "Wir konnten keine Garantieinformationen für Ihr Gerät finden, um weitere Garantieoptionen zu erhalten. Besuchen Sie bitte unsere Support-Website.",
             "viewWarrantyOptions": "GARANTIEOPTIONEN ANZEIGEN",
             "offlineTips1": "Stellen Sie eine Verbindung zum Internet her, um die neuesten Garantieinformationen zu erhalten.",
@@ -1934,8 +2144,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Vollständig geschützt",
-            "notFully": "Nicht vollständig geschützt",
+            "fully": "Um ein besseres Angebot zum Schutz Ihrer Einheit zu erhalten, bleiben Sie bei",
+            "notFully": "Um zu erfahren, wie Sie Ihre Einheit besser schützen können, beginnen Sie mit",
             "security101": "SICHERHEITSRATGEBER 101",
             "firewall": "Firewall",
             "pwdHealth": "Kennwortzustand",
@@ -1975,7 +2185,7 @@
             "visitHde": "Festplattenlaufwerk-Verschlüsselung besuchen",
             "haveOwnPassword": "Ich habe meinen eigenen Password Manager",
             "haveOwnWifi": "Ich habe meine eigene WiFi-Sicherheit",
-            "haveOwnVpn": "Ich habe meine eigene VPN-Sicherheit",
+            "haveOwnVpn": "Ich habe mein eigenes VPN",
             "uac": "Benutzerkontensteuerung (UAC)",
             "uacTitles": "Benutzerkontensteuerung",
             "hde": "Festplattenlaufwerk-Verschlüsselung",
@@ -2091,7 +2301,8 @@
                 "showmore": "Mehr anzeigen",
                 "showless": "Weniger anzeigen",
                 "button": "WiFi-Sicherheit aktivieren",
-                "disableDecribe": "Lenovo WiFi-Sicherheit ist eine fortschrittliche, cloud-basierte Software, dank der Ihre Einheit zwischen sicheren und potenziell unsicheren Drahtlosnetzwerken unterscheiden kann."
+                "disableDescribe": "Lenovo WiFi-Sicherheit ist eine fortschrittliche, cloud-basierte Software, dank der Ihre Einheit zwischen sicheren und potenziell unsicheren Drahtlosnetzwerken unterscheiden kann.",
+                "enabledDescribe": "Lenovo WiFi-Sicherheit überwacht zurzeit Ihr WiFi-Netzwerk."
             },
             "threatlocator": {
                 "describe": "Verwenden Sie die Bedrohungssuche, um die Sicherheit der Netzwerke um Sie herum zu ermitteln.",
@@ -2125,7 +2336,8 @@
                 "subtitle": "Immer auf Nummer sicher",
                 "subtitleDescribe": "Die Funktion \"Sicherheit für das verbundene Zuhause\" sendet Ihnen eine Warnung, wenn sie eine angreifbare Stelle in Ihrem Gerät oder privaten Netzwerk erkennt oder wenn Sie sich mit einem potenziell zerstörerischen Netzwerk verbinden. Erfahren Sie <tag>hier</tag> noch mehr über Connected Home Security.",
                 "tryNow": "Jetzt testen",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Einladungscode eingeben",
@@ -2200,7 +2412,8 @@
             "getStarted1": "Klicken Sie oben auf die Schaltfläche \"SurfEasy öffnen\", um SurfEasy VPN zu starten.",
             "getStarted2": "Schalten Sie das VPN ein und warten Sie kurz auf die Bestätigung einer sicheren Verbindung.",
             "getStarted3": "Ändern Sie die Region oder den Standort nach Wunsch und genießen Sie die Nutzung eines sicheren und geschützten Netzwerks.",
-            "poweredBySurfEasy": "Unterstützt von SurfEasy"
+            "poweredBySurfEasy": "Unterstützt von SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE-KENNWORTMANAGER",
@@ -2228,7 +2441,8 @@
             "allowsYou2": "Die Überwachung des Dark Web, um Ihre persönlichen Informationen zu schützen.",
             "allowsYou3": "Sicherheit bei ungesicherten WiFi-Netzwerken dank integriertem VPN.",
             "allowsYou4": "Das sichere Teilen von Kennwörtern, ohne diese preiszugeben.",
-            "poweredByDashLane": "Unterstützt von Dashlane"
+            "poweredByDashLane": "Unterstützt von Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2256,6 +2470,7 @@
     "lenovoId": {
         "login": "Anmeldung",
         "logout": "Abmelden",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Exklusivinhalte freischalten",
         "user": "Benutzer",
         "welcomeText1": "Sie sehen heute energiegeladen aus, {{firstName}}!",
@@ -2300,7 +2515,7 @@
     "faq": {
         "footer": {
             "title": "Nicht gefunden, wonach Sie suchen?",
-            "description": "BRAUCHEN SIE ZUSÄTZLICHE UNTERSTÜTZUNG? ZÖGERN SIE NICHT, UNS ÜBER:",
+            "description": "Benötigen Sie Hilfe? Kontaktieren Sie uns über:",
             "body": "Lenovo Community",
             "button": "GEHE ZUM FORUM"
         },
@@ -2510,7 +2725,7 @@
         },
         "question4": {
             "title": "Den Akkuverbrauch Ihres Computers überprüfen",
-            "description": "<div class='faqInFs4Fb'>    Den Akkuverbrauch Ihres Computers überprüfen</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 beinhaltet einen neuen Bildschirm namens \"<strong>Akkunutzung\"</strong>, auf dem angezeigt wird, wodurch Ihr Laptop Saft verliert. Mit anderen Worten, Sie erfahren genau, welche Apps – Desktop und \"universelle\" Windows 10-Apps – zu viel Energie verbrauchen.</p><h3 class='faqInFs25FbP10'>Betroffene Marken</h3><ul>    <li>Lenovo Laptops, Desktops</li></ul><h3 class='faqInFs25FbP10'>Betroffene Systeme</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Betriebssystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Lösung</h3><p>Diese Funktion ist neu in Windows 10. Wir müssen diese Funktion zuerst finden, da sie nicht in der traditionellen Ansicht der <strong>Systemsteuerung </strong>gespeichert ist. Diese Funktion befindet sich in der neuen App <strong>\"Einstellungen\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Den Bildschirm \"Akkunutzung\" suchen</h3></p><p>1. Klicken oder tippen Sie über das Startmenü auf die Option <strong>\"Einstellungen</strong>\"</p><p>2. Wählen Sie in <strong>Einstellungen </strong> <strong>\"System\"</strong> und anschließend <strong>\"Akkuschoner\".<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klicken Sie für weitere Details auf den Link <strong>\"Akkunutzung\"</strong> unter dieser Überschrift. </p><p> </p><h3 class='faqInFs25FbP10'>B. Ihren Energieverbrauch analysieren</h3><p>4. Sie können den Bildschirm \"Akkunutzung\" so ändern, dass die Akkunutzung der letzten 24 Stunden bis zu den letzten 48 Stunden oder der letzten Woche angezeigt wird</p><p>5. Prozentsätze für <strong>\"System\",</strong> \"<strong>Anzeige</strong>\" und \"<strong>WLAN\"</strong>. Hier wird angezeigt, wie viel Akkuleistung von Systemprozessen, dem Display verwendet wurde.</p><p>6. Die Optionen <strong>\"Verwendet\"</strong> und <strong>\"Hintergrund\"</strong> zeigen an, wie viel Energie von Anwendungen verbraucht wird, während Sie sie verwenden, bzw. von Anwendungen, die im Hintergrund ausgeführt werden.</p><p>7. Wenn Apps im Hintergrund Energie verbrauchen, können Sie auf den Link <strong>\"Einstellungen für Hintergrund-Apps ändern\" </strong>klicken oder tippen und Apps so konfigurieren, dass sie nicht im Hintergrund ausgeführt werden. Dies funktioniert nur bei universellen Windows 10-Apps.</p><p>8. Scrollen Sie weiter nach untern und es wird eine Liste von Anwendungen angezeigt. Dies wird als nützlichster Bereich dieser Funktion betrachtet. Es wird eine Liste der Apps angezeigt, die in diesem Zeitraum Akkuleistung verbraucht haben. Außerdem sehen Sie, wie viel Ihrer Akkuleistung jede App verbraucht hat</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Den Akkuverbrauch Ihres Computers überprüfen</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 beinhaltet einen neuen Bildschirm namens \"<strong>Akkunutzung\"</strong>, auf dem angezeigt wird, wodurch Ihr Laptop Saft verliert. Mit anderen Worten, Sie erfahren genau, welche Apps – Desktop und \"universelle\" Windows 10-Apps – zu viel Energie verbrauchen.</p><h3 class='faqInFs25FbP10'>Betroffene Marken</h3><ul>    <li>Lenovo Laptops, Desktops</li></ul><h3 class='faqInFs25FbP10'>Betroffene Systeme</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Betriebssystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Lösung</h3><p>Diese Funktion ist neu in Windows 10. Wir müssen diese Funktion zuerst finden, da sie nicht in der traditionellen Ansicht der <strong>Systemsteuerung </strong>gespeichert ist. Diese Funktion befindet sich in der neuen App <strong>\"Einstellungen\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Den Bildschirm \"Akkunutzung\" suchen</h3></p><p>1. Klicken oder tippen Sie über das Startmenü auf die Option <strong>\"Einstellungen</strong>\"</p><p>2. Wählen Sie in <strong>Einstellungen </strong> <strong>\"System\"</strong> und anschließend <strong>\"Akkuschoner\".<br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klicken Sie für weitere Details auf den Link <strong>\"Akkunutzung\"</strong> unter dieser Überschrift. </p><p> </p><h3 class='faqInFs25FbP10'>B. Ihren Energieverbrauch analysieren</h3><p>4. Sie können den Bildschirm \"Akkunutzung\" so ändern, dass die Akkunutzung der letzten 24 Stunden bis zu den letzten 48 Stunden oder der letzten Woche angezeigt wird</p><p>5. Prozentsätze für <strong>\"System\",</strong> \"<strong>Anzeige</strong>\" und \"<strong>WLAN\"</strong>. Hier wird angezeigt, wie viel Akkuleistung von Systemprozessen, dem Display verwendet wurde.</p><p>6. Die Optionen <strong>\"Verwendet\"</strong> und <strong>\"Hintergrund\"</strong> zeigen an, wie viel Energie von Anwendungen verbraucht wird, während Sie sie verwenden, bzw. von Anwendungen, die im Hintergrund ausgeführt werden.</p><p>7. Wenn Apps im Hintergrund Energie verbrauchen, können Sie auf den Link <strong>\"Einstellungen für Hintergrund-Apps ändern\" </strong>klicken oder tippen und Apps so konfigurieren, dass sie nicht im Hintergrund ausgeführt werden. Dies funktioniert nur bei universellen Windows 10-Apps.</p><p>8. Scrollen Sie weiter nach untern und es wird eine Liste von Anwendungen angezeigt. Dies wird als nützlichster Bereich dieser Funktion betrachtet. Es wird eine Liste der Apps angezeigt, die in diesem Zeitraum Akkuleistung verbraucht haben. Außerdem sehen Sie, wie viel Ihrer Akkuleistung jede App verbraucht hat</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2705,7 +2920,7 @@
         "deviceStatisticsDescription": "Senden Sie uns anonyme Gerätedaten, damit wir die Qualität und Zuverlässigkeit sowie die nächste Generation unserer Geräte verbessern können.",
         "userProfile": "Benutzerprofil",
         "Note": "Hinweis: ",
-        "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart dieser Anwendung durch den Benutzer, damit sie wirksam werden.",
+        "settingsNotes": "Starten Sie diese Anwendung neu, um sicherzustellen, dass alle Änderungen übernommen wurden.",
         "betaSettingTitle": "Beta-Programm",
         "betaProgram": "Beta-Programm",
         "betaSettingDescription": "Testen Sie die neuesten Funktionen, an denen wir gerade arbeiten."
@@ -2729,6 +2944,8 @@
         "noteDownloadAvailable": "Hinweis: Nach dem Klick auf „Herunterladen“ fordert Windows Sie möglicherweise dazu auf, die Installation der Software auf Ihrer Einheit zuzulassen. Nach der Installation erscheinen Ihre Apps automatisch auf dem Desktop oder im Startmenü.<br /><br />Sie können die Seite „Meine Software“ schließen und Lenovo Vantage weiterhin verwenden. Schließen Sie Lenovo Vantage nicht während der Installation.",
         "sizeText": "Größe",
         "versionText": "Version",
+        "redemptionCode": "Code zum Einlösen:",
+        "redeemWebsite": "Auf Hersteller-Website einlösen",
         "softwareDescription": "Klicken Sie unten auf „Herunterladen“, um Software, die mit Ihrem Gerät erworben wurde, einzulösen. Wenn Sie Ihre Software zu irgendeinem Zeitpunkt erneut herunterladen müssen, können Sie dies tun, indem Sie im Vantage-Menü auf die Schaltfläche „Meine Software“ klicken.",
         "title": "Meine Software",
         "loadingDescription": "Bitte warten Sie, während wir eine Liste der Software erstellen, die beim Kauf Ihres Gerätes enthalten war.",
@@ -2838,7 +3055,7 @@
                 "yes": "Ja",
                 "no": "Nein"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Falls die Speichereinheiten diese Funktionalität nicht unterstützen und die Hardwareinformationen abgerufen werden oder ein Scanvorgang durchgeführt wird, ist die Schaltfläche deaktiviert."
         },
         "support": {
             "title": "Professionelle Diagnosetools herunterladen",
@@ -3044,7 +3261,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3254,5 +3488,8 @@
             "subtitle2": "All-in-Ones: Optimiert",
             "body2": "All-in-One-PCs mit Intel® Core™-Prozessoren der neunten Generation vereinen die volle Leistung eines Desktop-PCs mit einem schlanken Bildschirm – so profitieren Sie von mehr Übersichtlichkeit, hardwarebasierter Sicherheit und einem hochauflösenden Display."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

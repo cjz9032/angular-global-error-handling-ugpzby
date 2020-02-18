@@ -3,6 +3,8 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { DevService } from '../dev/dev.service';
 
+declare var Windows;
+
 @Injectable()
 export class CommsService {
 
@@ -49,8 +51,24 @@ export class CommsService {
 			});
 	}
 
-	makeTagRequest(url, headers: any = {}) {
-		return this.http.get(url, { observe: 'response', headers });
+	async makeTagRequest(strUrl, headers: any = {}) {
+		//return this.http.get(url, { observe: 'response', headers });
+		if (!Windows) {
+			throw new Error('unknow error');
+		}
+
+		const client = new Windows.Web.Http.HttpClient();
+		const url = new Windows.Foundation.Uri(strUrl);
+		const request = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.get, url);
+
+		if (headers) {
+			Object.keys(headers).forEach(key => {
+				request.headers.append(key, headers[key]);
+			});
+		}
+
+		const response = await client.sendRequestAsync(request);
+		return await response.content.readAsStringAsync();
 	}
 
 	flatGetCall(url) {

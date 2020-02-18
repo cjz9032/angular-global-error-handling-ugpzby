@@ -8,7 +8,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import { menuItemsGaming, menuItems, appSearch, betaItem } from 'src/assets/menu/menu.json';
 import { privacyPolicyLinks } from 'src/assets/privacy-policy-links/policylinks.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
-import { BetaService } from '../beta/beta.service';
+import { BetaService, BetaStatus } from '../beta/beta.service';
 import { LoggerService } from '../logger/logger.service';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
@@ -46,15 +46,16 @@ export class ConfigService {
 	menuItems = menuItems;
 	menu = [];
 	menuBySegment = {
-		commercial : [],
-		consumer : [],
-		smb : []
+		commercial: [],
+		consumer: [],
+		smb: []
 	};
 	activeSegment: string;
 	appSearch = appSearch;
 	betaItem = betaItem;
 	privacyPolicyLinks = privacyPolicyLinks;
 	showCHS = false;
+	showCHSWithoutSegment = false;
 	wifiSecurity: WifiSecurity;
 	securityAdvisor: SecurityAdvisor;
 	windowsHello: WindowsHello;
@@ -108,6 +109,41 @@ export class ConfigService {
 						this.notifyMenuChange(menu);
 					});
 					break;
+				case MenuItem.MenuBetaItemChange:
+					this.showBetaMenu(notification.payload).then((menu) => {
+						this.notifyMenuChange(menu);
+					});
+					break;
+				default:
+					break;
+			}
+		}
+		this.initGetMenuItemsAsync().then(() => {
+			this.subscription = this.commonService.replayNotification.subscribe((notification: AppNotification) => {
+				this.onNotification(notification);
+			});
+			this.showNewFeatureTipsWithMenuItems();
+		});
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case AdPolicyEvent.AdPolicyUpdatedEvent:
+					this.showSystemUpdates().then((menu) => {
+						this.notifyMenuChange(menu);
+					});
+					break;
+				case SelfSelectEvent.SegmentChange:
+					this.updateSegmentMenu(notification.payload).then((menu) => {
+						this.notifyMenuChange(menu);
+					});
+					break;
+				case MenuItem.MenuWifiItemChange:
+					this.showWifiMenu(notification.payload).then((menu) => {
+						this.notifyMenuChange(menu);
+					});
+					break;
 				default:
 					break;
 			}
@@ -124,7 +160,7 @@ export class ConfigService {
 
 	initGetMenuItemsAsync(): Promise<any> {
 		return new Promise(async (resolve) => {
-			const isBetaUser = this.betaService.getBetaStatus();
+			const isBetaUser = this.betaService.getBetaStatus() === BetaStatus.On;
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
 			this.activeSegment = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
@@ -147,8 +183,8 @@ export class ConfigService {
 				this.smartAssistFilter(machineType, resultMenu);
 			} else if (this.deviceService.isShellAvailable) {
 				await this.deviceService.getMachineType().then(async (value: number) => {
-						await this.smartAssistFilter(value, resultMenu);
-					});
+					await this.smartAssistFilter(value, resultMenu);
+				});
 			}
 			const canShowPrivacy = await this.canShowPrivacy();
 			if (!canShowPrivacy) {
@@ -157,12 +193,16 @@ export class ConfigService {
 			this.showSecurityItem(country.toLowerCase(), resultMenu);
 			this.smodeFilter(resultMenu, this.deviceService.isSMode);
 			this.armFilter(resultMenu, this.deviceService.isArm);
+			this.menuBySegment.commercial = cloneDeep(resultMenu);
 			if (isBetaUser) {
 				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
 				if (await this.canShowSearch()) {
 					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
 			}
+			this.menuBySegment.consumer = cloneDeep(resultMenu);
+			this.menuBySegment.smb = cloneDeep(resultMenu);
+			resultMenu = this.menuBySegment[this.activeSegment.toLowerCase()];
 			if (this.hypSettings) {
 				await this.initShowCHSMenu().then((result) => {
 					const shellVersion = {
@@ -176,19 +216,16 @@ export class ConfigService {
 						&& this.isShowCHSByShellVersion(shellVersion)
 						&& !machineInfo.isGaming
 						&& this.activeSegment !== SegmentConst.Commercial;
-					const showCHSConsumer = country.toLowerCase() === 'us'
+					this.showCHSWithoutSegment = country.toLowerCase() === 'us'
 						&& locale.startsWith('en')
 						&& result
 						&& this.isShowCHSByShellVersion(shellVersion)
 						&& !machineInfo.isGaming;
-					this.menuBySegment.commercial = cloneDeep(resultMenu);
-					this.menuBySegment.consumer = cloneDeep(resultMenu);
-					this.menuBySegment.smb = cloneDeep(resultMenu);
 					if (!this.showCHS) {
 						resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 					}
 					this.menuBySegment.commercial = this.menuBySegment.commercial.filter(item => item.id !== 'home-security');
-					if (!showCHSConsumer) {
+					if (!this.showCHSWithoutSegment) {
 						this.menuBySegment.consumer = this.menuBySegment.consumer.filter(item => item.id !== 'home-security');
 						this.menuBySegment.smb = this.menuBySegment.smb.filter(item => item.id !== 'home-security');
 					}
@@ -315,93 +352,90 @@ export class ConfigService {
 		this.logger.info('MenuMainComponent.showSmartAssist: inside');
 		const myDeviceItem = items.find((item) => item.id === 'device');
 		if (myDeviceItem !== undefined) {
-			const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
-			if (!smartAssistItem) {
-				// if cache has value true for IsSmartAssistSupported, add menu item
-				const smartAssistCacheValue = this.commonService.getLocalStorageValue(
-					LocalStorageKey.IsSmartAssistSupported,
-					false
-				);
-				this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
+			// if cache has value true for IsSmartAssistSupported, add menu item
+			const smartAssistCacheValue = this.commonService.getLocalStorageValue(
+				LocalStorageKey.IsSmartAssistSupported,
+				false
+			);
+			this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
 
-				if (smartAssistCacheValue || this.isSmartAssistAvailable) {
-					this.addSmartAssistMenu(items);
-				}
-
-				// raj: promise.all breaks if any one function is breaks. adding feature wise capability check
-				const assistCapability: SmartAssistCapability = new SmartAssistCapability();
-				// HPD and Intelligent Screen capability check
-				try {
-					this.logger.info('configService.showSmartAssist: HPD and Intelligent Screen capability check');
-					assistCapability.isIntelligentSecuritySupported = await this.smartAssist.getHPDVisibility();
-					assistCapability.isIntelligentScreenSupported = await this.smartAssist.getIntelligentScreenVisibility();
-					this.logger.info('configService.showSmartAssist: HPD and Intelligent Screen capability check completed');
-				} catch (error) {
-					this.logger.exception('configService.showSmartAssist smartAssist.getHPDVisibility check', error);
-				}
-				// lenovo voice capability check
-				try {
-					this.logger.info('configService.showSmartAssist: lenovo voice capability check');
-					assistCapability.isLenovoVoiceSupported = await this.smartAssist.isLenovoVoiceAvailable();
-					this.logger.info('configService.showSmartAssist: lenovo voice capability check completed');
-
-				} catch (error) {
-					this.logger.exception('configService.showSmartAssist smartAssist.isLenovoVoiceAvailable check', error);
-				}
-				// video pause capability check
-				try {
-					this.logger.info('configService.showSmartAssist: video pause capability check');
-					assistCapability.isIntelligentMediaSupported = await this.smartAssist.getVideoPauseResumeStatus(); // returns object
-					this.logger.info('configService.showSmartAssist: video pause capability check completed');
-
-				} catch (error) {
-					this.logger.exception('configService.showSmartAssist smartAssist.getVideoPauseResumeStatus check', error);
-				}
-				// super resolution capability check
-				try {
-					this.logger.info('configService.showSmartAssist: super resolution capability check');
-					assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
-					this.logger.info('configService.showSmartAssist: super resolution capability check completed');
-				} catch (error) {
-					this.logger.exception('configService.showSmartAssist smartAssist.getSuperResolutionStatus check', error);
-				}
-
-				// APS capability check
-				try {
-					this.logger.info('configService.showSmartAssist: APS capability check');
-					assistCapability.isAPSCapable = await this.smartAssist.getAPSCapability();
-					assistCapability.isAPSSensorSupported = await this.smartAssist.getSensorStatus();
-					assistCapability.isAPSHDDStatus = await this.smartAssist.getHDDStatus();
-					assistCapability.isAPSSupported = assistCapability.isAPSCapable && assistCapability.isAPSSensorSupported && assistCapability.isAPSHDDStatus > 0; this.logger.info('MenuMainComponent.showSmartAssist: APS capability check completed');
-				} catch (error) {
-					this.logger.exception('configService.showSmartAssist APS capability check', error);
-				}
-
-
-				this.isSmartAssistAvailable =
-					assistCapability.isIntelligentSecuritySupported ||
-					assistCapability.isLenovoVoiceSupported ||
-					assistCapability.isIntelligentMediaSupported.available ||
-					assistCapability.isIntelligentScreenSupported ||
-					assistCapability.isSuperResolutionSupported.available ||
-					assistCapability.isAPSSupported;
-
-				if (this.isSmartAssistAvailable) {
-					this.addSmartAssistMenu(items);
-				} else {
-					this.removeSmartAssistMenu(items);
-				}
-
-				this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, this.isSmartAssistAvailable);
-				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, assistCapability);
-
-				this.logger.error('configService.showSmartAssist capability check',
-					{
-						smartAssistCacheValue,
-						isSmartAssistAvailable: this.isSmartAssistAvailable,
-						assistCapability
-					});
+			if (!smartAssistCacheValue) {
+				this.removeSmartAssistMenu(items);
 			}
+
+			// raj: promise.all breaks if any one function is breaks. adding feature wise capability check
+			const assistCapability: SmartAssistCapability = new SmartAssistCapability();
+			// HPD and Intelligent Screen capability check
+			try {
+				this.logger.info('configService.showSmartAssist: HPD and Intelligent Screen capability check');
+				assistCapability.isIntelligentSecuritySupported = await this.smartAssist.getHPDVisibility();
+				assistCapability.isIntelligentScreenSupported = await this.smartAssist.getIntelligentScreenVisibility();
+				this.logger.info('configService.showSmartAssist: HPD and Intelligent Screen capability check completed');
+			} catch (error) {
+				this.logger.exception('configService.showSmartAssist smartAssist.getHPDVisibility check', error);
+			}
+			// lenovo voice capability check
+			try {
+				this.logger.info('configService.showSmartAssist: lenovo voice capability check');
+				assistCapability.isLenovoVoiceSupported = await this.smartAssist.isLenovoVoiceAvailable();
+				this.logger.info('configService.showSmartAssist: lenovo voice capability check completed');
+
+			} catch (error) {
+				this.logger.exception('configService.showSmartAssist smartAssist.isLenovoVoiceAvailable check', error);
+			}
+			// video pause capability check
+			try {
+				this.logger.info('configService.showSmartAssist: video pause capability check');
+				assistCapability.isIntelligentMediaSupported = await this.smartAssist.getVideoPauseResumeStatus(); // returns object
+				this.logger.info('configService.showSmartAssist: video pause capability check completed');
+
+			} catch (error) {
+				this.logger.exception('configService.showSmartAssist smartAssist.getVideoPauseResumeStatus check', error);
+			}
+			// super resolution capability check
+			try {
+				this.logger.info('configService.showSmartAssist: super resolution capability check');
+				assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
+				this.logger.info('configService.showSmartAssist: super resolution capability check completed');
+			} catch (error) {
+				this.logger.exception('configService.showSmartAssist smartAssist.getSuperResolutionStatus check', error);
+			}
+
+			// APS capability check
+			try {
+				this.logger.info('configService.showSmartAssist: APS capability check');
+				assistCapability.isAPSCapable = await this.smartAssist.getAPSCapability();
+				assistCapability.isAPSSensorSupported = await this.smartAssist.getSensorStatus();
+				assistCapability.isAPSHDDStatus = await this.smartAssist.getHDDStatus();
+				assistCapability.isAPSSupported = assistCapability.isAPSCapable && assistCapability.isAPSSensorSupported && assistCapability.isAPSHDDStatus > 0; this.logger.info('MenuMainComponent.showSmartAssist: APS capability check completed');
+			} catch (error) {
+				this.logger.exception('configService.showSmartAssist APS capability check', error);
+			}
+
+
+			this.isSmartAssistAvailable =
+				assistCapability.isIntelligentSecuritySupported ||
+				assistCapability.isLenovoVoiceSupported ||
+				assistCapability.isIntelligentMediaSupported.available ||
+				assistCapability.isIntelligentScreenSupported ||
+				assistCapability.isSuperResolutionSupported.available ||
+				assistCapability.isAPSSupported;
+
+			if (this.isSmartAssistAvailable) {
+				this.addSmartAssistMenu(items);
+			} else {
+				this.removeSmartAssistMenu(items);
+			}
+
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, this.isSmartAssistAvailable);
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, assistCapability);
+
+			this.logger.error('configService.showSmartAssist capability check',
+				{
+					smartAssistCacheValue,
+					isSmartAssistAvailable: this.isSmartAssistAvailable,
+					assistCapability
+				});
 		}
 	}
 
@@ -410,7 +444,23 @@ export class ConfigService {
 		if (myDeviceItem) {
 			const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
 			if (!smartAssistItem) {
-				myDeviceItem.subitems.splice(3, 0, this.menuItems.find((item) => item.id === 'device').subitems.find((item) => item.id === 'smart-assist'));
+				myDeviceItem.subitems.splice(3, 0,
+					{
+						id: 'smart-assist',
+						label: 'common.menu.device.sub4',
+						path: 'smart-assist',
+						metricsEvent: 'itemClick',
+						metricsParent: 'navbar',
+						metricsItem: 'link.smartassist',
+						externallink: false,
+						routerLinkActiveOptions: {
+							exact: true
+						},
+						icon: null,
+						sMode: true,
+						subitems: []
+					}
+				);
 			}
 		}
 	}
@@ -441,13 +491,13 @@ export class ConfigService {
 	}
 
 	public canShowPrivacy(): Promise<boolean> {
-		return new Promise ( resolve => {
+		return new Promise(resolve => {
 			if (this.hypSettings) {
 				this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
 					resolve(privacy === 'enabled');
 				}, (error) => {
 					this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
-					resolve (false);
+					resolve(false);
 				});
 			}
 		});
@@ -457,7 +507,7 @@ export class ConfigService {
 		return new Promise(resolve => {
 			if (this.hypSettings) {
 				this.hypSettings.getFeatureSetting('FeatureSearch').then((searchFeature) => {
-					resolve ((searchFeature || '').toString().toLowerCase() === 'true');
+					resolve((searchFeature || '').toString().toLowerCase() === 'true');
 				}, (error) => {
 					this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
 					resolve(false);
@@ -472,6 +522,7 @@ export class ConfigService {
 				return resolve(this.menu);
 			} else {
 				this.activeSegment = segment;
+				this.showCHS = this.showCHSWithoutSegment && this.activeSegment !== SegmentConst.Commercial;
 				const seg = segment.toLowerCase();
 				this.menu = cloneDeep(this.menuBySegment[seg]);
 				return resolve(this.menu);
@@ -485,6 +536,7 @@ export class ConfigService {
 			this.updateWifiMenu(this.menuBySegment.commercial, wifiIsSupport);
 			this.updateWifiMenu(this.menuBySegment.consumer, wifiIsSupport);
 			this.updateWifiMenu(this.menuBySegment.smb, wifiIsSupport);
+			this.updateWifiStateCache(wifiIsSupport);
 			return resolve(this.menu);
 		});
 	}
@@ -492,9 +544,8 @@ export class ConfigService {
 	updateWifiMenu(menu, wifiIsSupport) {
 		const securityItem = menu.find((item) => item.id === 'security');
 		if (menu.find((item) => item.id === 'wifi-security')
-		|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
+			|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
 			this.supportFilter(menu, 'wifi-security', wifiIsSupport);
-			menu.filter(item => !item.hide);
 		} else if (wifiIsSupport && !this.deviceService.isSMode && !this.deviceService.isArm) {
 			if (securityItem && securityItem.subitems) {
 				const wifiItem = this.menuItems.find((item) => item.id === 'security').subitems.find((item) => item.id === 'wifi-security');
@@ -505,6 +556,48 @@ export class ConfigService {
 				menu.splice(supportIndex, 0, wifiItems);
 			}
 		}
+	}
+
+	updateWifiStateCache(wifiIsSupport: boolean) {
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, wifiIsSupport);
+	}
+
+	showBetaMenu(isBeta: boolean): Promise<any> {
+		return new Promise((resolve) => {
+			this.updateBetaMenu(this.menu, isBeta).then((menu) => {
+				this.menu = menu;
+				this.menu = this.segmentFilter(this.menu, this.activeSegment);
+				return resolve(this.menu);
+			});
+			this.updateBetaMenu(this.menuBySegment.consumer, isBeta).then((menu) => {
+				this.menuBySegment.consumer = menu;
+			});
+			this.updateBetaMenu(this.menuBySegment.smb, isBeta).then((menu) => {
+				this.menuBySegment.smb = menu;
+			});
+		});
+	}
+
+	updateBetaMenu(menu, isBeta: boolean): Promise<any> {
+		return new Promise((resolve) => {
+			if (isBeta) {
+				if (!menu.find((item) => item.id === 'hardware-scan') && !menu.find((item) => item.id === 'app-search')) {
+					menu.splice(menu.length - 1, 0, ...this.betaItem);
+					this.canShowSearch().then((result) => {
+						if (result) {
+							menu.splice(menu.length - 1, 0, this.appSearch);
+						}
+						return resolve(menu);
+					});
+				} else {
+					return resolve(menu);
+				}
+			} else {
+				menu = menu.filter(item => item.id !== 'hardware-scan');
+				menu = menu.filter(item => item.id !== 'app-search');
+				return resolve(menu);
+			}
+		});
 	}
 
 	showSystemUpdates(): Promise<any> {

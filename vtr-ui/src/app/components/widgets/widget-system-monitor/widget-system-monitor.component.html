@@ -6,7 +6,7 @@
 					<div class="row">
 						<div class="col-sm-12 monitor-col link-wrapper">
 							<div class="link-container">
-								<a tabindex="1" id="gaming systemstatus info"  aria-label="info" vtrMetrics [metricsItem]="'gaming_systemstatus_info'" metricsEvent="featureClick"
+								<a tabindex="1" id="gaming systemstatus info"  aria-label="info" vtrMetrics [metricsItem]="'gaming_systemstatus_info'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 									routerLink="/device" class="info-link">{{'gaming.dashboard.device.systemStatus.info' | translate}}</a>
 								<!-- <div class="icon icon-backarrow"></div> -->
 								<fa-icon class="icon" [icon]="['fas', 'arrow-left']"></fa-icon>
@@ -94,7 +94,7 @@
 						<div class="col-xl-4 col-lg-12 col-md-4 col-sm-12 monitor-col right" vtrOutsideClick (clickOutside)="toggleHDs(true)">
 							<div class="monitor-section">
 								<div class=" hds"
-									[ngClass]="{'expanded':showAllHDs,'onlyOne':hds.length===1}" (click)="toggleHDs()" (keydown.enter)="toggleHDs()" id="gaming_system_status_drives_list" 
+									[ngClass]="{'expanded':showAllHDs,'onlyOne':hds.length===1}" (click)="toggleHDs()" (keydown.enter)="toggleHDs()" id="gaming_system_status_drives_list"
 									[tabindex]="-1"  name="dropdown" role="combobox" [attr.aria-expanded]="showAllHDs" aria-haspopup="true">
 									<div class="hd-list" [ngClass]="{'single':hds.length===1}">
 										<div class="hd-item" [ngClass]="{'danger':hd.diskUsage/100>.75}"

@@ -7,7 +7,8 @@
 		border-bottom-right-radius: 0rem;
 		height: 100%;
 		width: 100%;
-		background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
+		//background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
+		background: $gaming_darkest;
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 
 		.title {
@@ -28,7 +29,7 @@
 		.row1 {
 			opacity: 0.5;
 			color: $light;
-			font-size: 1.4rem;
+			font-size: 1.75rem;
 			line-height: 2.1rem;
 			padding-left: 2.5rem;
 			padding-top: 0rem;
@@ -80,7 +81,7 @@
 
 			.progress-percent-text {
 				color: $light;
-				font-size: 2.5rem;
+				font-size: $fontsize_xl;
 				font-weight: $weight_light;
 				line-height: 2.9rem;
 				padding-top: 5rem;
@@ -93,7 +94,7 @@
 
 					.progress-value-text {
 						color: $light;
-						font-size: 1.4rem;
+						font-size: 1.75rem;
 						font-weight: $weight_light;
 						line-height: 2.9rem;
 						padding-right: 0rem;
@@ -104,7 +105,7 @@
 
 					.progress-complete-text {
 						color: $light;
-						font-size: 1.4rem;
+						font-size: 1.75rem;
 						font-weight: $weight_light;
 						line-height: 2.9rem;
 						padding-right: 0rem;
@@ -159,15 +160,13 @@
 			line-height: 1.5rem;
 			text-align: center;
 			text-transform: uppercase;
+			cursor: pointer;
+			border-bottom: 0.2rem solid $light;
+			padding: 0 0 0.1rem;
 
-			.cancel-check-text {
-				cursor: pointer;
-				text-decoration: underline;
-
-				&:hover {
-					color: $light;
-					text-decoration: none;
-				}
+			&:hover, &:focus {
+				color: $light;
+				text-decoration: none;
 			}
 		}
 	}

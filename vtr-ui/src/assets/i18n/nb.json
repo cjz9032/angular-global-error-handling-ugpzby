@@ -22,6 +22,12 @@
                     "rapidCharge": "Hurtiglading"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overklokking på",
+                        "performance": "Ytelse",
+                        "balance": "Balanse",
+                        "quiet": "Stille"
+                    },
                     "title": "CPU-overklokking",
                     "status": {
                         "alwayson": "På",
@@ -87,7 +93,8 @@
                     "line8": "<b>Hurtiglading </b><br> Lad batteriet raskere for å spille mer når du er på farten",
                     "line9": "<b>Pekeplatelås </b><br> Forhindre utilsiktede inndata ved å deaktivere pekeplaten mens du spiller",
                     "line10": "<b>Lukk automatisk </b><br> For å maksimere de tilgjengelige systemressursene kan du fjerne prosesser som spillet ikke trenger, før du begynner å spille",
-                    "line11": "<b>Termisk modus </b><br> Angi ønsket enhetsprofil for viftehastigheten og kjølingskontroll"
+                    "line11": "<b>Termisk modus </b><br> Angi ønsket enhetsprofil for viftehastigheten og kjølingskontroll",
+                    "line12": "<b>Makrotast</b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Hold pekeren over CPU/GPU/RAM og ulike stasjoner for å vise beskrivelser, deriblant informasjon om fabrikant og modell"
@@ -97,6 +104,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Hurtiginnstillinger"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Innstillinger termisk modus",
+                    "thermalMode2SettingDesc": "Velg modusen du ønsker å bruke.",
+                    "fnQDesc": "Du kan endre modus ved å bruke hurtigtastene Fn + Q.",
+                    "perormanceTitle": "Ytelsesmodus",
+                    "performanceDesc": "Øk datamaskinens ytelse med høyere viftehastighet og høyere strømforbruk.",
+                    "OCDesc": "Du kan velge å skru på overklokkingsfunksjonaliteten.",
+                    "ac_dcDesc": "Ytelsesmodus bare tilgjengelig når den er koblet til.",
+                    "balanceTitle": "Balansert modus",
+                    "balanceDesc": "Balanserer automatisk ytelse og viftehastighet basert på temperatur. Middels strømforbruk.",
+                    "quietTitle": "Stillemodus",
+                    "quietDesc": "Holdes stille ved å redusere datamaskinens ytelse og viftehastighet der det er mulig. Lavt strømforbruk.",
+                    "OC": {
+                        "cpu_gpuOC": "Aktiver CPU/GPU-overklokking i ytelsesmodus.",
+                        "cpuOC": "Aktiver CPU-overklokking i ytelsesmodus.",
+                        "gpuOC": "Aktiver GPU-overklokking i ytelsesmodus.",
+                        "advance": "AVANSERT",
+                        "cpu_gpuDriverLack": "Installer CPU/GPU-drivere for å bruke funksjonen for overklokking.",
+                        "cpuDriverLack": "Installer CPU-driver for å bruke funksjonen for overklokking.",
+                        "gpuDriverLack": "Installer GPU-driver for å bruke funksjonen for overklokking.",
+                        "goInstall": "INSTALLER"
+                    },
+                    "autoSwitch": "Bytt automatisk til ytelse når du lanserer spill og bytt tilbake etterpå."	
+                },
+                "advancedOC": {
+                    "title": "Overklokking Avansert",
+                    "description": "Angi avanserte tilpassede parametere når Overklokking er på. Dette kan være risikabelt.",
+                    "gpuOverclock": "GPU-overklokking",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Kjernespenning",
+                        "cpuOCName116": "1 Kjerne-forhold",
+                        "cpuOCName117": "2 Kjerne-forhold",
+                        "cpuOCName118": "3 Kjerne-forhold",
+                        "cpuOCName119": "4 Kjerne-forhold",
+                        "cpuOCName34": "Kjernespenning forskyvning",
+                        "cpuOCName120": "5 Kjerne-forhold",
+                        "cpuOCName121": "6 Kjerne-forhold",
+                        "cpuOCName76": "Buffer-forhold",
+                        "cpuOCName77": "Bufferspenning",
+                        "cpuOCName79": "Bufferspenningsforskyvning",
+                        "cpuOCName122": "7 Kjerne-forhold",
+                        "cpuOCName123": "8 Kjerne-forhold",
+                        "cpuOCName102": "Kjerne ICCMAX",
+                        "cpuOCName106": "Buffer ICCMAX",
+                        "cpuOCName114": "AVX-forhold forskyvning"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Angi spenning for CPU-kjerne.",
+                        "cpuOCTip116": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
+                        "cpuOCTip117": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
+                        "cpuOCTip118": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
+                        "cpuOCTip119": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
+                        "cpuOCTip34": "En spenning forskjøvet fra den aktuelle kjernespenning.",
+                        "cpuOCTip120": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
+                        "cpuOCTip121": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
+                        "cpuOCTip76": "Angi den maksimale prosessorbuffermultiplikatoren som bufferne kan fungere med. Verdien av bufferfrekvensen er produktet av dette forholdet og referanseklokkefrekvensen.",
+                        "cpuOCTip77": "Spenning som tilføres til prosessoren interne buffergrensesnitt basert på den nåværende valgte bufferspenningsmodusen.",
+                        "cpuOCTip79": "Endelig spenningsforskyvning som tilføres bufferspenningen.",
+                        "cpuOCTip122": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
+                        "cpuOCTip123": "Angi den maksimale kjernemultiplikator som kjernene kan operere ved. Verdien av kjernefrekvensen er produktet av dette forhold og referanseklokkefrekvensen.",
+                        "cpuOCTip102": "Angi ICCMAX for spenningsregulatoren til prosessorkjernen.",
+                        "cpuOCTip106": "Angi ICCMAX for prosessorbuffer og Ring Bus-spenningsregulator.",
+                        "cpuOCTip114": "For å utlede den effektive aktive kjerneforholdsgrensen når AVX er aktiv, subtraheres denne verdi fra den tilsvarende aktive kjerneforholdsgrensen."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "GPU-klokke forskyvning",
+                        "gpuOCName1": "VRAM-klokke forskyvning"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Legg til en forskyvning til GPU-klokkefrekvensen.",
+                        "gpuOCTip1": "Legg til en forskyvning til minneklokkefrekvensen."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Lagre endringer?",
+                    "description1": "Feile innstillinger for overklokking kan føre til uopprettelig skade på maskinvaren. Gjør ett av følgende hvis det oppstår problemer: ",
+                    "description2": "•  Trykk på og hold inne på/av-knappen i åtte sekunder for å starte datamaskinen på nytt og gjenopprette standardparameterne.",
+                    "description3": "•  Bruk Restore Default Overclocking i BIOS-innstillingene for å gjenopprette standardparameterne.",
+                    "save": "LAGRE",
+                    "notSave": "IKKE LAGRE"
+                },
+                "defaultPromptPopup": {
+                    "title": "Angi som standard?",
+                    "description": "Alle nåværende og tidligere endringer vil gå tapt."
+                },
+                "warningPromptPopup": {
+                    "title": "Advarsel!",
+                    "description": "Ukorrekte innstillinger av Overklokking kan føre til uopprettelige maskinvareskader.",
+                    "proceed": "FORTSETT"
                 }
             }
         },
@@ -598,6 +695,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName":{  
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Fan Lighting",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Static",
+                "effectName2": "Spekter",
+                "effectName3": "Regnbue",
+                "effectName4": "Tilfeldig",
+                "effectName5": "Kald_blå",
+                "effectName6": "Bølge_høyre",
+                "effectName7": "Bølge_venstre"
+            },
+            "lightingSpeed": {
+                "title": "Hastighet"
+            },
+            "colorPicker": {
+                "text2": "MER",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Del området (Av): Klikk på bildet under for å endre delfargene",
+                "text7": "Del området (på): Klikk på bildet under for å endre delfargene",
+                "text8": "Den nåværende effekten støtter ikke fargevalg"
+            },
+            "tipText": {
+                "title1": "Bruk Fn+mellomromstasten for å bytte mellom profiler"
+            }
         }
     },
     "common": {
@@ -615,9 +748,9 @@
                 "sub1": "Min sikkerhet",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-sikkerhet",
-                "sub4": "Passordtilstand",
-                "sub5": "Internettbeskyttelse",
-                "sub6": "Windows Hello"
+                "sub4": "Passordbehandling",
+                "sub5": "VPN",
+                "sub6": "Fingeravtrykk"
             },
             "support": "Støtte",
             "privacy": "Personvern",
@@ -631,7 +764,7 @@
             "subtitle": "KONTROLLER OM ENHETEN ER SIKRET.",
             "antiVirus": "Antivirus",
             "wifi": "WiFi-sikkerhet",
-            "pswdMgr": "Password Manager",
+            "pswdMgr": "Passordbehandling",
             "vpn": "VPN",
             "enabled": "AKTIVERT",
             "disabled": "DEAKTIVERT",
@@ -643,8 +776,11 @@
             "notFound": "IKKE FUNNET",
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT",
-            "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>"
+            "fingerPrint": "Fingeravtrykk",
+            "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENROLLED",
+            "notEnrolled": "NOT ENROLLED"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
@@ -670,6 +806,9 @@
         },
         "app-update": {
             "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"
+        },
+        "offline": {
+            "connectToUseFeature": "Koble til Internett for å bruke denne funksjonen"
         }
     },
     "privacy": {
@@ -717,20 +856,24 @@
             "button": "Gi tilbakemelding",
             "form": {
                 "email": "Email (optional)",
-                "comments": "Kommentarer...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Takk for tilbakemeldingen!"
-                },
                 "question1": "Liker du den nye stilen til Vantage?",
                 "question2": "Synes du at ytelsen er akseptabel?",
                 "question3": "Ville du brukt programmet mer i fremtiden?",
+                "question4": "Visste du at du kan bruke Lenovo Vantage til å oppdatere programvaredrivere, fastvare og BIOS på datamaskinen din?",
+                "question5": "Hvor sannsynlig er det at du anbefaler Lenovo Vantage-programmet til en venn eller kollega?",
+                "notAtAllLikely": "Ikke sannsynlig i det hele tatt",
+                "extremelyLikely": "Svært sannsynlig",
                 "yes": "Ja",
                 "no": "Nei",
                 "tips1": "Her kan du legge inn andre kommentarer",
+                "comments": "Kommentarer...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "sendFeedback": "Send tilbakemelding",
-                "submitScreenShot": "Send skjermbilde"
+                "submitScreenShot": "Send skjermbilde",
+                "messages": {
+                    "feedbackSuccess": "Takk for tilbakemeldingen!"
+                }
             }
         },
         "quickSettings": {
@@ -896,7 +1039,7 @@
                     "Good": "<b>Batteriet er i god stand.</b>",
                     "Exhaustion": "Batterikapasiteten er <b>redusert</b>. Bytt det ut med et nytt.",
                     "Bad": "<b>Det har oppstått en batterifeil.</b> Batteriet kan ikke lades/utlades. Bytt batteri.",
-                    "NotDetected": "<b>Kan ikke gjenkjenne batteri, eller</b> batteri ikke satt i.",
+                    "NotDetected": "<b>Batteri ikke oppdaget.</b>",
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
                     "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
@@ -1085,7 +1228,7 @@
                     },
                     "airPlanePower": {
                         "title": "Strømmodus for fly",
-                        "description": "Beskytt flyets strømuttak ved å kontrollere systemets strømforbruk.Når Strømmodus for fly er aktivert, reduserer datamaskinen strømforbruket ved å begrense batteriladehastigheten og systemytelsen.",
+                        "description": "Denne funksjonen lar deg bruke strømuttaket på et fly der en bestemt strømgrense er gjeldende. I denne modusen reduseres datamaskinens strømforbruk til et sikkert nivå ved å begrense batteriets ladehastighet og datamaskinens ytelse.",
                         "checkBoxDesc": "Automatisk oppdagelse",
                         "note": "Hvis automatisk oppdaging er sjekket, slår datamaskinen automatisk på strømmodusen for fly når den registrerer at du er om bord i et fly og slå av den når du drar."
                     },
@@ -1104,7 +1247,7 @@
                         },
                         "progressText1": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
                         "progressText2": "{{stage}} av {{stageNum}}: kalibrerer for lite batteristrøm",
-                        "progressText3": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
+                        "progressText3": "{{stage}} av {{stageNum}}: Kalibrerer til høy batteristrøm",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
                         "resetLog": {
@@ -1118,7 +1261,7 @@
                             "ERROR_UNEXPECTED": "Mislyktes: Det oppstod en uventet feil."
                         },
                         "popup": {
-                            "description1": "Tilbakestillingen skjer slik:<br>Lad batteriet helt opp  -->  La batteriet bli helt utladet  -->  Lad batteriet helt opp på nytt",
+                            "description1": "Tilbakestillingen skjer slik:<br>Lad batteriet helt opp --> Lad ut batteriet til lite batteristrøm --> Lad batteriet opp til høy batteristrøm eller fulladet",
                             "description2": "Merk: <br>1. Denne prosessen kan ta flere timer. Unngå å bruke datamaskinen i løpet av denne tiden.<br>2. Lukk alle åpne apper, og koble datamaskinen til strømnettet.<br>3. Batteriladeterskelen er deaktivert under prosessen.",
                             "continue": "Fortsett",
                             "cancel": "Avbryt",
@@ -1135,10 +1278,10 @@
                 },
                 "smartStandby": {
                     "title": "Smart hvilemodus",
-                    "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
-                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir, eller brukstiden vi mottar for datamaskinen. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
+                    "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker opplevelsen av rask gjenopptakelse for <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Moderne hvilemodus</a> på tidspunkter med tyngre bruk.",
+                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir, eller brukstiden for datamaskinen. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
                     "timer": {
-                        "heading": "Tidspunkter du vanligvis bruker datamaskinen",
+                        "heading": "Tidspunktet du vanligvis bruker denne datamaskinen:",
                         "subHeading1": "begynner",
                         "subHeading2": "slutt",
                         "subHeading3": "bruk denne planen for",
@@ -1156,14 +1299,14 @@
                     "warningtip": "Vennligst velg minst en dag.",
                     "days": {
                         "shortName": {
-                            "sun": "søn",
-                            "mon": "man",
-                            "tue": "tir",
-                            "wed": "ons",
-                            "thurs": "Tor",
-                            "fri": "fre",
-                            "sat": "lør",
-                            "thu": "Thu"
+                            "sun": "Søn",
+                            "mon": "Man",
+                            "tue": "Tirs",
+                            "wed": "Ons",
+                            "thurs": "Tors",
+                            "fri": "Fre",
+                            "sat": "Lør",
+                            "thu": "Tors"
                         },
                         "name": {
                             "sun": "søndag",
@@ -1180,11 +1323,11 @@
                         "noDaySelected": "Det er ikke valgt en dag"
                     },
                     "checkbox": "Automatisk justering av datamaskinens aktive tid basert på bruk",
-                    "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen",
+                    "hyperlinkToGraph": "Klikk for å se bruk og brukt aktiv tid",
                     "subTitle": "Opprett kjøreplan for datamaskinen",
                     "automaticMode": "Automatisk modus",
                     "manualMode": "Manuell modus",
-                    "subNote": "Datamaskinen din er satt i Modern Standby basert på bruken din.",
+                    "subNote": "Datamaskinen din er satt opp for raskere gjenopptakelse basert på bruk.",
                     "graph": {
                         "graph1Tittle": "Bruken av denne datamaskinen",
                         "graph2Tittle": "Brukt aktiv tid",
@@ -1223,7 +1366,8 @@
                     },
                     "description2": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
                     "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen",
-                    "oldTooltipText": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad."
+                    "oldTooltipText": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
+                    "sectionTitle": "Hvilemodus-innstillinger"
                 }
             },
             "audio": {
@@ -1327,7 +1471,8 @@
                         "note": {
                             "title": "Merk",
                             "description": "Lenovo Vantage trenger tilgang til informasjon om plasseringen din for å beregne tidspunkter for solnedgang og soloppgang for regionen din."
-                        }
+                        },
+                        "tips": "Kjør Windows Update eller installer grafikkdriver manuelt for å gjenopprette Eye Care-modus"
                     },
                     "dispColorTemp": {
                         "title": "Skjermens fargetemperatur",
@@ -1370,6 +1515,17 @@
                         "taskBarDimmer": "DIMME OPPGAVELINJE",
                         "backgroundDimmer": "BAKGRUNNSDIMMER",
                         "displayDimmer": "DIMME SKJERM"
+                    },
+                    "displayPriority": {
+                        "title": "Skjermprioritetskontroll",
+                        "description": "Enheten din støtter et maksimum antall eksterne skjermer. Når du kobler til mer enn én skjerm ved hjelp av disse ekstra metodene, fungerer bare den prioriterte.<br/>Velg nedenfor hvilken ekstra visningsmetode som skal prioriteres:",
+                        "options": {
+                            "hdmi": "HDMI",
+                            "dock": "Dokking",
+                            "usb_c_dp": "USB Type-C",
+                            "wigig": "WiGig",
+                            "cartridge": "Valgfri modul"
+                        }
                     }
                 },
                 "camera": {
@@ -1398,7 +1554,8 @@
                         "caption": "Denne funksjonen gjør bakgrunnen uskarp når du bruker kameraet til videosamtaler eller tar bilder. Du kan velge en annen effekt blant alternativene under.",
                         "blurMode": "Uskarp modus",
                         "comicMode": "Tegneseriemodus",
-                        "sketchMode": "Skissemodus"
+                        "sketchMode": "Skissemodus",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERAET ER I BRUK",
@@ -1523,7 +1680,60 @@
                 "fnCtrlKey": {
                     "title": "Bytte av Fn- og Ctrl-tasten",
                     "description": "Hvis du av vane trykket på Fn-tasten da du mente å trykke på Ctrl-tasten, kan du bytte funksjonen til de to tastene.",
-                    "restartNote": "Hvis du bytter funksjon for to taster, må du starte datamaskinen på nytt. Er du sikker på at du vil starte på nytt?"
+                    "restartNote": "Hvis du bytter funksjon for to taster, må du starte datamaskinen på nytt. Er du sikker på at du vil starte på nytt?",
+                    "title2": "Fn fungerer som Ctrl for ofte brukte tastekombinasjoner",
+                    "description2": "Fn-tasten fungerer som Ctrl-tasten for noen ofte brukte tastekombinasjoner. Funksjonen til Ctrl-tasten endres ikke.",
+                    "featureNote": "Denne funksjonen og funksjonen for bytte av Fn- og Ctrl-tasten kan ikke være aktivert samtidig. Hvis én er aktivert, deaktiveres den andre automatisk.",
+                    "tootTip": {
+                        "fnKeys": {
+                            "heading": "Fn-taster",
+                            "key1": "Fn + A",
+                            "key2": "Fn + C",
+                            "key3": "Fn + D",
+                            "key4": "Fn + F",
+                            "key5": "Fn + G",
+                            "key6": "Fn + J",
+                            "key7": "Fn + Q",
+                            "key8": "Fn + U",
+                            "key9": "Fn + V",
+                            "key10": "Fn + W",
+                            "key11": "Fn + X",
+                            "key12": "Fn + Y",
+                            "key13": "Fn + Z"
+                        },
+                        "ctrlKeys": {
+                            "heading": "Ctrl-taster",
+                            "key1": "Ctrl + A",
+                            "key2": "Ctrl + C",
+                            "key3": "Ctrl + D",
+                            "key4": "Ctrl + F",
+                            "key5": "Ctrl + G",
+                            "key6": "Ctrl + J",
+                            "key7": "Ctrl + Q",
+                            "key8": "Ctrl + U",
+                            "key9": "Ctrl + V",
+                            "key10": "Ctrl + W",
+                            "key11": "Ctrl + X",
+                            "key12": "Ctrl + Y",
+                            "key13": "Ctrl + Z"
+                        },
+                        "action": {
+                            "heading": "Gjør slik",
+                            "action1": "Velg alle",
+                            "action2": "Kopier",
+                            "action3": "Legg til nettside i mine favoritter",
+                            "action4": "Søk",
+                            "action5": "Søk og erstatt i Microsoft Word",
+                            "action6": "Juster venstre og høyre i Microsoft Word",
+                            "action7": "Avslutt (i støttede apper)",
+                            "action8": "Legge til understreking",
+                            "action9": "Lim inn",
+                            "action10": "Lukk (via app)",
+                            "action11": "Klipp ut",
+                            "action12": "Gjør om",
+                            "action13": "Angre"
+                        }
+                    }
                 },
                 "controlOptions": {
                     "more": "MER",
@@ -1533,16 +1743,16 @@
                     "less": "MINDRE"
                 },
                 "backlight": {
-                    "title": "Keyboard backlight",
+                    "title": "Bakgrunnslys for tastaturet",
                     "description": {
-                        "base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-                        "auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+                        "base": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom.",
+                        "auto": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom eller sette til Automatisk. Alternativet Automatisk justerer automatisk bakgrunnslyset for tastaturet i henhold til omgivelseslyset."
                     },
                     "level": {
                         "auto": "Auto",
-                        "low": "Low",
-                        "high": "High",
-                        "off": "Off"
+                        "low": "Lav",
+                        "high": "Høyt",
+                        "off": "Av"
                     }
                 }
             }
@@ -1705,12 +1915,12 @@
             "superResolution": {
                 "heading": "Intelligent medieavspilling",
                 "title": "Oppskalering av videooppløsning",
-                "desc": "<p><label>Denne funksjonen gir en bedre videoopplevelse ved å forbedre oppløsningen på videoen. Den fungerer spesielt bra når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label> Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Når den er aktivert, anbefales det at du kobler datamaskinen til strømnettet.</label></p>",
-                "tooltip": "Funksjonen fungerer bare på disse spillerne: <br/> Windows Media player",
+                "desc": "<p><label>Denne funksjonen gir en bedre videoopplevelse ved å forbedre oppløsningen på videoen. Den fungerer spesielt bra når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus. Ellers vil det øke strømforbruket og forkorte batteriets levetid.</label></p>",
+                "tooltip": "Funksjonen virker bare på:<br>Windows Media player",
                 "note": {
                     "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
-                    "description1": "Datamaskinen er ikke koblet til strømnettet, og batterinivået er lavere enn 20 %.",
-                    "description2": "Datamaskinen er ikke koblet til strømnettet, og batterisparingsmodus er aktivert.",
+                    "description1": "Strømadapteren er ikke tilkoblet datamaskinen.",
+                    "description2": "Batterisparemodus er aktivert.",
                     "description3": "CPU-temperaturen er for høy."
                 }
             },
@@ -1867,7 +2077,7 @@
             "localRepositoryDatabaseException": "Databasen i det lokale datalageret ble ikke funnet eller er ødelagt.",
             "networkInterruptedException": "Systemoppdateringsserveren er ikke tilgjengelig for øyeblikket. Prøv igjen senere.",
             "helpCenterInvalidServerException": "Systemoppdateringsserveren er ugyldig. Prøv igjen senere.",
-            "catalogNotFoundException": "Det ble ikke funnet noen oppdateringer som er aktuelle for systemet ditt.",
+            "catalogNotFoundException": "Det ble ikke funnet noen oppdateringer som er aktuelle for systemet ditt fordi Update-katalogen ikke ble funnet.",
             "catalogCrcErrorException": "Systemkatalogen oppdateres for øyeblikket. Prøv igjen senere.",
             "catalogErrorException": "Det ble oppdaget en feil med oppdateringskatalogen for ditt system på systemoppdateringsserveren. Prøv igjen senere.",
             "fileNotFoundException": "Fant ikke fil."
@@ -1890,7 +2100,7 @@
             "startDate": "Startdato: ",
             "endDate": "Sluttdato: ",
             "status": "Status: ",
-            "subDescription1": "Dette produktet dekkes av den begrensede garantien og er berettiget til reparasjon på servicesenter. Kunder kan ringe sitt lokale servicesenter for å få mer informasjon. Forhandlere kan tilby reparasjon av dette produktet.",
+            "subDescription1": "Lenovo garantibetingelser gjelder for datamaskinen og den er berettiget til service på servicesenter. Kunder kan ringe sitt lokale servicesenter for å få mer informasjon. Forhandlere kan tilby reparasjon av dette produktet.",
             "subDescription2": "Vi fant ikke noen garantidetaljer for enheten din. Gå til støttenettstedet vårt for å få flere garantialternativer.",
             "viewWarrantyOptions": "SE GARANTIALTERNATIVER",
             "offlineTips1": "Koble deg til Internett for å få den nyeste garantiinformasjonen.",
@@ -1934,8 +2144,8 @@
     },
     "security": {
         "landing": {
-            "fully": "FULLSTENDIG BESKYTTET",
-            "notFully": "Ikke fullstendig beskyttet",
+            "fully": "For å få et bedre tilbud bør du beskytte enheten og bli hos",
+            "notFully": "Hvis du vil vite hvordan du kan beskytte enheten din bedre, kan du starte med",
             "security101": "SIKKERHETSRÅDGIVER 101",
             "firewall": "Brannmur",
             "pwdHealth": "Passordtilstand",
@@ -1975,7 +2185,7 @@
             "visitHde": "Gå til kryptering av harddisk",
             "haveOwnPassword": "Jeg har min egen passordbehandling",
             "haveOwnWifi": "Jeg har min egen WiFi-sikkerhet",
-            "haveOwnVpn": "Jeg har min egen VPN-sikkerhet",
+            "haveOwnVpn": "Jeg har min egen VPN",
             "uac": "Brukerkontokontroll (UAC)",
             "uacTitles": "Brukerkontokontroll",
             "hde": "Kryptering av harddisk",
@@ -2091,7 +2301,8 @@
                 "showmore": "Vis mer",
                 "showless": "Vis mindre",
                 "button": "Aktiver WiFi-sikkerhet",
-                "disableDecribe": "Lenovo WiFi Sikkerhet er en avansert, skybasert programtjeneste som hjelper enhet med å skille trygge trådløse nettverk fra potensielt farlige."
+                "disableDescribe": "Lenovo WiFi Sikkerhet er en avansert, skybasert programtjeneste som hjelper enhet med å skille trygge trådløse nettverk fra potensielt farlige.",
+                "enabledDescribe": "Lenovo WiFi Security overvåker for øyeblikket WiFi-nettverket ditt."
             },
             "threatlocator": {
                 "describe": "Bruk trusseldetektoren til å finne ut hvor sikre nettverkene rundt deg er.",
@@ -2125,7 +2336,8 @@
                 "subtitle": "Trygghet",
                 "subtitleDescribe": "Sikkerhet for tilkoblede hjem sender deg et varsel hvis den oppdager et sikkerhetsproblem i enheten eller hjemmenettverket, eller hvis du er koblet til et skadelig nettverk. Lær enda mer om Sikkerhet for tilkoblede hjem <tag>her</tag>.",
                 "tryNow": "Prøv nå",
-                "visit": "Visit"
+                "visit": "Visit",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Skriv inn invitasjonskode",
@@ -2200,7 +2412,8 @@
             "getStarted1": "Klikk på knappen \"Åpne SurfEasy\" ovenfor for å starte SurfEasy VPN.",
             "getStarted2": "Slå på VPN og vent et lite øyeblikk på bekreftelse av en sikker tilkobling.",
             "getStarted3": "Endre region eller plassering hvis du ønsker, og få sikkert og privat nettverk.",
-            "poweredBySurfEasy": "Leveres av SurfEasy"
+            "poweredBySurfEasy": "Leveres av SurfEasy",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE PASSORDADMINISTRATOR",
@@ -2228,7 +2441,8 @@
             "allowsYou2": "overvåke den mørke weben for å beskytte dine personlige data",
             "allowsYou3": "være trygg på usikrede WiFi-nettverk med innebygd VPN",
             "allowsYou4": "dele passord på en sikker måte uten å oppgi dem",
-            "poweredByDashLane": "Leveres av Dashlane"
+            "poweredByDashLane": "Leveres av Dashlane",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2256,6 +2470,7 @@
     "lenovoId": {
         "login": "Logg på",
         "logout": "Logg av",
+        "loggingOut": "Logging out...",
         "unlockExclusives": "Få eksklusive tilbud",
         "user": "Bruker",
         "welcomeText1": "Ser frisk ut i dag, {{firstName}}!",
@@ -2300,7 +2515,7 @@
     "faq": {
         "footer": {
             "title": "Finner du ikke det du leter etter?",
-            "description": "Trenger du ekstra støtte? IKKE HESITERER Å KONTAKTE OSS VIA:",
+            "description": "Trenger du ytterligere støtte? Ikke nøl med å kontakte oss via:",
             "body": "Lenovo Community",
             "button": "GÅ TIL FORUM"
         },
@@ -2510,7 +2725,7 @@
         },
         "question4": {
             "title": "Kontrollere datamaskinens batteriforbruk",
-            "description": "<div class='faqInFs4Fb'>    Kontrollere datamaskinens batteriforbruk</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 inneholder et nytt <strong>batteri bruks</strong> skjerm bilde som viser hva som skjer med din bærbare juice. Det betyr at du kan se nøyaktig hvilke applikasjoner – både stasjonære og Windows 10 \"universelle\" apper-bruker for mye strøm.</p><h3 class='faqInFs25FbP10'>Berørte merker</h3><ul>    <li>Lenovo bærbare maskiner, stasjonære maskiner</li></ul><h3 class='faqInFs25FbP10'>Gjelder for følgende systemer</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p>Denne funksjonen er ny i Windows 10, men vi må først finne denne funksjonen fordi den ikke er lagret i den tradisjonelle <strong>kontroll panel </strong>visningen, denne funksjonen finnes i den nye <strong>\"Settings\"-</strong> appen</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Finn batteri bruk skjermen</h3></p><p>1. Klikk på eller trykk <strong>på \"</strong>Settings\"-alternativet på Start-menyen</p><p>2. Velg <strong>system </strong> <strong>under innstillinger</strong>, og velg <strong>deretter \"batteris paring\". <br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klikk på eller trykk <strong>\"på \"batteri Bruk\"</strong> -koblingen under denne overskriften for å se flere detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analyser strøm forbruket</h3><p>4. Du kan endre for å gjøre batteriet til å bruke skjermen til å se batteri bruk fra de siste 24 timene til de siste 48 timene eller sist fra forrige uke</p><p>5. <strong>\"system\",</strong> \"<strong>skjerm</strong>\" og \" <strong>Wi-Fi\"</strong> prosenter. Dette viser hvor mye batteri strøm som er brukt av system prosesser, skjermen,</p><p>6. <strong>\"alternativene\"</strong> i bruk og <strong> bakgrunn</strong> viser hvor mye strøm som brukes av applikasjoner mens du bruker dem, sammenlignet med programmer som kjøres i bakgrunnen.</p><p>7. Hvis apper bruker strøm i bakgrunnen, kan du klikke på eller trykke på <strong>koblingen \"endre innstillinger for bakgrunns </strong>app\" og konfigurere apper slik at de ikke kan kjøres i bakgrunnen. Dette fungerer bare for universelle Windows 10-apper.</p><p>8. Rull nedover og du vil se en liste over applikasjoner, anses dette som den mest nyttige delen av denne funksjonen. Det vil se ut som en liste over appene har brukt batteriet i den perioden, og viser deg hvilken prosent del av batteriet du har brukt i hver app</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Kontrollere datamaskinens batteriforbruk</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 inneholder et nytt <strong>batteri bruks</strong> skjerm bilde som viser hva som skjer med din bærbare juice. Det betyr at du kan se nøyaktig hvilke applikasjoner – både stasjonære og Windows 10 \"universelle\" apper-bruker for mye strøm.</p><h3 class='faqInFs25FbP10'>Berørte merker</h3><ul>    <li>Lenovo bærbare maskiner, stasjonære maskiner</li></ul><h3 class='faqInFs25FbP10'>Gjelder for følgende systemer</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p>Denne funksjonen er ny i Windows 10, men vi må først finne denne funksjonen fordi den ikke er lagret i den tradisjonelle <strong>kontroll panel </strong>visningen, denne funksjonen finnes i den nye <strong>\"Settings\"-</strong> appen</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Finn batteri bruk skjermen</h3></p><p>1. Klikk på eller trykk <strong>på \"</strong>Settings\"-alternativet på Start-menyen</p><p>2. Velg <strong>system </strong> <strong>under innstillinger</strong>, og velg <strong>deretter \"batteris paring\". <br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klikk på eller trykk <strong>\"på \"batteri Bruk\"</strong> -koblingen under denne overskriften for å se flere detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analyser strøm forbruket</h3><p>4. Du kan endre for å gjøre batteriet til å bruke skjermen til å se batteri bruk fra de siste 24 timene til de siste 48 timene eller sist fra forrige uke</p><p>5. <strong>\"system\",</strong> \"<strong>skjerm</strong>\" og \" <strong>Wi-Fi\"</strong> prosenter. Dette viser hvor mye batteri strøm som er brukt av system prosesser, skjermen,</p><p>6. <strong>\"alternativene\"</strong> i bruk og <strong> bakgrunn</strong> viser hvor mye strøm som brukes av applikasjoner mens du bruker dem, sammenlignet med programmer som kjøres i bakgrunnen.</p><p>7. Hvis apper bruker strøm i bakgrunnen, kan du klikke på eller trykke på <strong>koblingen \"endre innstillinger for bakgrunns </strong>app\" og konfigurere apper slik at de ikke kan kjøres i bakgrunnen. Dette fungerer bare for universelle Windows 10-apper.</p><p>8. Rull nedover og du vil se en liste over applikasjoner, anses dette som den mest nyttige delen av denne funksjonen. Det vil se ut som en liste over appene har brukt batteriet i den perioden, og viser deg hvilken prosent del av batteriet du har brukt i hver app</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2705,7 +2920,7 @@
         "deviceStatisticsDescription": "Send anonyme enhetsdata for å hjelpe oss med å forbedre kvalitet og pålitelighet, og utvikle neste generasjon med enheter.",
         "userProfile": "Brukerprofil",
         "Note": "Merk: ",
-        "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft.",
+        "settingsNotes": "Start programmet på nytt for å sikre at alle endringene trer i kraft.",
         "betaSettingTitle": "Beta-program",
         "betaProgram": "Beta-program",
         "betaSettingDescription": "Prøv de nyeste funksjonene vi jobber med."
@@ -2729,6 +2944,8 @@
         "noteDownloadAvailable": "Merk: Når du har klikket på Last ned, kan det hende du får en melding fra Windows som ber deg tillate at programvaren installeres på enheten. Når installasjonen er fullført, vises appene automatisk på skrivebordet eller Start-menyen.<br /><br />Du kan lukke siden Min programvare og fortsette å bruke Lenovo Vantage. Ikke lukk Lenovo Vantage under installasjonen.",
         "sizeText": "Størrelse",
         "versionText": "Versjon",
+        "redemptionCode": "Innløsningskode:",
+        "redeemWebsite": "Løs inn på leverandørnettsted",
         "softwareDescription": "Klikk på nedlastingsalternativet under for å få programvaren som var inkludert i kjøpet av enheten. Hvis du noensinne må laste ned programvaren på nytt, kan du gjøre dette ved å klikke på knappen Min programvare på Vantage-menyen.",
         "title": "Min programvare",
         "loadingDescription": "Vent litt mens det lages en liste over programvaren som var inkludert i kjøpet av enheten.",
@@ -2843,7 +3060,7 @@
                 "no": "Nei",
                 "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Knappen er deaktivert hvis lagringsenhetene ikke støtter denne funksjonaliteten, mens maskinvareinformasjonen lastes inn eller hvis det pågår en skanning."
         },
         "support": {
             "title": "Last ned profesjonelle feil søkings verktøy",
@@ -3044,7 +3261,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3254,5 +3488,8 @@
             "subtitle2": "Alt-i-ett: strømlinjeformet",
             "body2": "Alt-i-ett-PC-er med 9. generasjons Intel® Core™-prosessorer gir deg all kraften til en stasjonær PC pakket i en elegant skjerm – for mindre rot, maskinvarebasert sikkerhet og skjerm med høy oppløsning."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

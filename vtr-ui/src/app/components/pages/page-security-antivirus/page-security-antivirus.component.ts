@@ -62,7 +62,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private localInfoService: LocalInfoService,
 		public translate: TranslateService,
-	) {	}
+	) { }
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShell.getSecurityAdvisor();
@@ -283,11 +283,11 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	findArray(others: Array<phoenix.OtherInfo>, partyAvList) {
 		let show = true;
 		others.forEach((e) => {
-		  partyAvList.forEach((data) => {
-			if (e.name === data) {
-				show = false;
-			}
-		  });
+			partyAvList.forEach((data) => {
+				if (e.name === data) {
+					show = false;
+				}
+			});
 		});
 		return show;
 	}
@@ -484,6 +484,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			this.viewModel.showMetricsList = false;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricList, false);
 		} else {
+			this.viewModel.showMetricsList = true;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricList, true);
 		}
 		metricsFeature.forEach((e) => {
@@ -536,6 +537,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricButton, false);
 				return list;
 			} else {
+				this.viewModel.showMetricButton = true;
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricButton, true);
 			}
 		}

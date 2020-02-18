@@ -80,8 +80,8 @@
 															<h2>{{'smartPerformance.tunePCPerformance.title' |translate }}</h2>
 														</div>
 														<div class="status-text float-right pull-right" >
-															<vtr-widget-speedometer #speedometer *ngIf="activegroup === 'Tune up performance'"></vtr-widget-speedometer>
-															<p *ngIf="activegroup !== 'Tune up performance'">{{'smartPerformance.scanningPage.completed' |translate }}</p>
+															<vtr-widget-speedometer #speedometer *ngIf="activegroup == spCategoryenum.TUNEUPPERFORMANCE"></vtr-widget-speedometer>
+															<p *ngIf="activegroup !== spCategoryenum.TUNEUPPERFORMANCE">{{'smartPerformance.scanningPage.completed' |translate }}</p>
 														</div>
 													</div>
 													</ng-template>
@@ -89,23 +89,23 @@
 													<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-recycling-2025397"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory=='Accumilated junk'}">{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDONE}">{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-noun-touch-200038"></div>
-															<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDTWO}">{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-microsoft-windows-22"></div>
-															<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDTHREE}">{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-error-1582584"></div>
-															<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDFOUR}">{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-noun-registery-key-1581151"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory=='Registry Errors'}">{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.HUNDEREADANDFIVE}">{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}</p>
 														</div>
 													</div>
 													</ng-template>
@@ -122,9 +122,9 @@
 															<p>WAITING TO SCAN</p>
 														</div> -->
 														<div  class="status-text float-right pull-right" >
-																<vtr-widget-speedometer #speedometer  *ngIf="activegroup === 'Internet performance'"></vtr-widget-speedometer>
-																<p *ngIf="activegroup === 'Tune up performance'">{{'smartPerformance.scanningPage.waiting' |translate }}</p>
-																<p *ngIf="activegroup === 'Malware & Security'">{{'smartPerformance.scanningPage.completed' |translate }}</p>
+																<vtr-widget-speedometer #speedometer  *ngIf="activegroup === spCategoryenum.INTERNETPERFORMANCE"></vtr-widget-speedometer>
+																<p *ngIf="activegroup === spCategoryenum.TUNEUPPERFORMANCE">{{'smartPerformance.scanningPage.waiting' |translate }}</p>
+																<p *ngIf="activegroup === spCategoryenum.MALWARESECURITY">{{'smartPerformance.scanningPage.completed' |translate }}</p>
 														</div>
 													</div>
 													</ng-template>
@@ -133,23 +133,23 @@
 														<div class="icon-box d-flex justify-content-center">
 																<div class="icon icon-router"></div>
 															<!-- <p>Network Settings</p> -->
-															<p [ngClass]="{'text-primary': scanData.status.subcategory=='Network Settings'}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDONE}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-visible-to-online-trackers"></div>
-															<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDTWO}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-visible-to-online-trackers"></div>
-															<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDTHREE}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-wifi"></div>
-															<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDFOUR}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-uninstall"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory=='e-junk'}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.TWOHUNDEREADANDFIVE}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}</p>
 														</div>
 													</div>
 													</ng-template>
@@ -162,8 +162,8 @@
 															<h3>{{'smartPerformance.malwareSecurity.title' |translate }}</h3>
 														</div>
 														<div class="status-text float-right pull-right">
-																<vtr-widget-speedometer #speedometer *ngIf="activegroup === 'Malware & Security'"></vtr-widget-speedometer>
-																<p *ngIf="activegroup === 'Internet performance' || activegroup === 'Tune up performance'">
+																<vtr-widget-speedometer #speedometer *ngIf="activegroup === spCategoryenum.MALWARESECURITY"></vtr-widget-speedometer>
+																<p *ngIf="activegroup === spCategoryenum.INTERNETPERFORMANCE || activegroup === spCategoryenum.TUNEUPPERFORMANCE">
 																	{{'smartPerformance.scanningPage.waiting' |translate }}
 																</p>
 															
@@ -174,23 +174,23 @@
 													<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-virus"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory=='Malware Scan'}">{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDONE}">{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-power-agenda"></div>
-															<p>{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDTWO}">{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-malware-security"></div>
-															<p>{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDTHREE}">{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-uninstall-375971"></div>
-															<p>{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDFOUR}">{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}</p>
 														</div>
 														<div class="icon-box d-flex justify-content-center">
 															<div class="icon icon-multitasking"></div>
-															<p [ngClass]="{'text-primary': scanData.status.subcategory=='Annoying adware'}">{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}</p>
+															<p [ngClass]="{'text-primary': scanData.status.subcategory==spSubCategoryenum.THREEHUNDEREADANDFIVE}">{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}</p>
 														</div>
 													</div>
 													</ng-template>

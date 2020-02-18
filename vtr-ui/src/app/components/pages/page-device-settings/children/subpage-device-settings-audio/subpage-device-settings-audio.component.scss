@@ -1,7 +1,7 @@
 @import "../../../../../app.theme";
 
 .subpage-device-settings-audio {
-	.smartsettings-card {
+	.smart-settings-card {
 		margin-left: -1.5rem;
 		margin-right: -1.5rem;
 		.subtitle {
@@ -14,7 +14,7 @@
 				line-height: 2.8rem;
 				margin-top: 1.5rem;
 				text-transform: uppercase;
-				font-weight: $weight_medium ;
+				font-weight: $weight_medium;
 			}
 
 			p {
@@ -26,25 +26,22 @@
 				//border-bottom: 0.1rem solid $screen_light_15;
 			}
 		}
+
+		.microphone-slider-margin {
+			margin-right: 1.5rem;
+		}
 	}
-	.container-card{
+	.container-card {
 		@media #{$black-on-white} {
-			
 			border: 0.1rem solid $dark;
 			border-radius: 1rem;
 			box-sizing: border-box;
-			
-			
 		}
 		@media #{$white-on-black} {
-			
 			border: 0.1rem solid $light;
 			border-radius: 1rem;
 			box-sizing: border-box;
-			
-			
 		}
-
 	}
 
 	ul.list-group {
