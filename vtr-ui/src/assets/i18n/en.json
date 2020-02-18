@@ -853,7 +853,7 @@
         },
         "feedback": {
             "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
+            "subtitle": "Tell us what you think about Vantage.",
             "button": "Give feedback",
             "form": {
                 "email": "Email (optional)",

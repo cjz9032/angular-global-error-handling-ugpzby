@@ -1678,10 +1678,30 @@
 		}
 	}
 
-	.wifi-security {
-		.threat-locator-container {
-			background: $gaming_darkest !important;
+	.threat-locator-container {
+		background: $gaming_darkest !important;
+		color: $gaming_lightest !important;
+		.sub-heading-2{
+			color: $gaming_lightest !important;
 		}
+		.text-regular{
+			color: $gaming_lighter !important;
+		}
+	}
+	.vtr-wifi-security{
+		.security-card {
+			background-color: $gaming_darkest !important;			
+			margin-bottom: 5em;
+			.heading{
+				color:$gaming-lightest!important;
+			}
+			.text-regular{
+				color:$gaming-lighter!important;
+			}
+		}
+	}
+	.wifi-security {		
+		color: $gaming_lightest !important;
 		.card {
 			background: $gaming_bg !important;
 			border: 0rem !important;
@@ -1696,7 +1716,7 @@
 			border: 0.1rem solid $gaming_bg !important;
 		}
 		.card-history {		
-			background: $gaming_bg !important;	
+			background: $gaming_darkest !important;	
 			border: 0.1rem solid $gaming_bg!important;			
 			color: $gaming_lightest !important;
 		}
@@ -1705,6 +1725,8 @@
 			border: 0.1rem solid $gaming_bg!important;
 			color: $gaming_lightest !important;
 			border-radius:$border_radius;
+			border-top-right-radius:0rem;
+			border-top-left-radius:0rem;
 		}
 		.cardBody {
 			border: 0.1rem solid $gaming_bg !important;
@@ -1714,6 +1736,7 @@
 			.wifi {
 				padding-bottom:0.4rem;
 				border-color:$gaming_bg!important;
+				background:$gaming_darkest;
 				.title {
 					color: $gaming_lightest;
 				}
@@ -1721,11 +1744,6 @@
 					color: $gaming_grey_lightest;
 				}
 			}
-		}
-		.security-card {
-			background-color: $gaming_darkest !important;
-			border: 0.1rem solid $gaming_bg !important;
-			margin-bottom: 5em;
 		}
 
 		.vtr-container-collapsible.white-theme {

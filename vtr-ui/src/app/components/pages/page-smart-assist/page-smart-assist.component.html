@@ -75,7 +75,9 @@
 													[maxValue]="3"
 													(sliderChange)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
-													[enableSlider]="!intelligentSecurity.isZeroTouchLoginEnabled">
+													[enableSlider]="!intelligentSecurity.isZeroTouchLoginEnabled"
+													vtrMetrics [metricsItem]="'distanceSensitivity'" metricsEvent="featureClick" metricsValue="{{intelligentSecurity.zeroTouchLoginDistance}}"
+													>
 												</vtr-ui-range-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
@@ -151,7 +153,9 @@
 													[maxValue]="3"
 													(sliderChange)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
-													[enableSlider]="!intelligentSecurity.isHPDEnabled || !intelligentSecurity.isZeroTouchLoginEnabled">
+													[enableSlider]="!intelligentSecurity.isHPDEnabled || !intelligentSecurity.isZeroTouchLoginEnabled"
+													vtrMetrics [metricsItem]="'thinkpadDistanceSensitivity'" metricsEvent="featureClick" metricsValue="{{intelligentSecurity.zeroTouchLoginDistance}}"
+													>
 												</vtr-ui-range-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled || !intelligentSecurity.isHPDEnabled"
@@ -282,7 +286,9 @@
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="3"
 													[value]="sesnsitivityAdjustVal"
-													[enableSlider]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
+													[enableSlider]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled"
+													vtrMetrics [metricsItem]="'thinkpadSensitivity'" metricsEvent="featureClick" metricsValue="{{sesnsitivityAdjustVal}}"
+													>
 												</vtr-ui-range-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
