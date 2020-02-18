@@ -219,6 +219,7 @@
 						div.wifi:nth-last-child(1):nth-child(even) {
 							border-bottom-right-radius: $border_radius;
 							border-bottom: 0;
+							border-bottom-left-radius: $border_radius; 
 						}
 
 						div.wifi:nth-child(odd) {
