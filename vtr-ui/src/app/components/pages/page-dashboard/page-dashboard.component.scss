@@ -64,6 +64,18 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
+	@media #{$breakpoint_lg} {
+		padding-left: 0;
+		padding-right: 1.2rem;
+	}
+	@media #{$breakpoint_md} {
+		padding-left: 0;
+		padding-right: 1.2rem;
+	}
+	@media #{$breakpoint_sm} {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .card-right {
@@ -76,6 +88,18 @@
 	@media #{$breakpoint_xl} {
 		//padding-left: 0;
 		//padding-right: 0;
+	}
+	@media #{$breakpoint_sm} {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	@media #{$breakpoint_lg} {
+		padding-left: 1.2rem;
+		padding-right: 0;
+	}
+	@media #{$breakpoint_md} {
+		padding-left: 1.2rem;
+		padding-right: 0;
 	}
 	@media #{$breakpoint_sm} {
 		padding-left: 0;

@@ -1023,10 +1023,6 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	getBacklight(): Backlight {
-		return this.phoenix.hwsettings.input.backlight;
-	}
-
 	public getRegistryUtil(): Phoenix.RegistryFeature {
 		if (this.phoenix) {
 			return this.phoenix.registry;
