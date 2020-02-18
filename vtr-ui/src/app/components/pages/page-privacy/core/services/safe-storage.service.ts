@@ -38,9 +38,7 @@ export class SafeStorageService {
 			if (credential) {
 				this.vault.remove(credential);
 			}
-		} catch (error) {
-			console.error('removePassword error', error);
-		}
+		} catch (error) {}
 	}
 
 	setAccessToken(accessToken) {

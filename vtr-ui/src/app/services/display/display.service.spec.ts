@@ -123,7 +123,7 @@ describe('DisplayService', () => {
 	it('should start Camera privacy monitor', async () => {
 		let monitor = false;
 		await displayService
-			.startCameraPrivacyMonitor(() => console.log('Start monitoring'))
+			.startCameraPrivacyMonitor(() => {})
 			.then((flag: any) => {
 				monitor = flag; // expecting a FeatureStatus, mocked with a boolean
 			});
@@ -421,7 +421,7 @@ describe('DisplayService', () => {
 	it('should start eye care monitor', async () => {
 		let status = false;
 		await displayService
-			.startEyeCareMonitor(() => console.log('start eyecare monitoring'))
+			.startEyeCareMonitor(() => {})
 			.then(flag => {
 				status = flag;
 			});

@@ -99,9 +99,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			(cameraDetail: CameraDetail) => {
 				this.cameraDetail = cameraDetail;
 			},
-			error => {
-				console.log(error);
-			}
+			error => {}
 		);
 	}
 
@@ -136,15 +134,12 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	private async setCameraPreviewOrientation(orientationInDegrees: number) {
-		console.log('CameraControlComponent.setCameraPreviewOrientation', orientationInDegrees);
-
-		if (this.oMediaCapture && this.oMediaCapture.videoDeviceController) {
-			const props = this.oMediaCapture.videoDeviceController.getMediaStreamProperties(this.Capture.MediaStreamType.videoPreview);
-			props.properties.insert(this.RotationKey, orientationInDegrees);
-			console.log('CameraControlComponent.MediaStreamProperties', props);
-			await this.oMediaCapture.setEncodingPropertiesAsync(this.Capture.MediaStreamType.videoPreview, props, null);
-		}
-	}
+        if (this.oMediaCapture && this.oMediaCapture.videoDeviceController) {
+            const props = this.oMediaCapture.videoDeviceController.getMediaStreamProperties(this.Capture.MediaStreamType.videoPreview);
+            props.properties.insert(this.RotationKey, orientationInDegrees);
+            await this.oMediaCapture.setEncodingPropertiesAsync(this.Capture.MediaStreamType.videoPreview, props, null);
+        }
+    }
 
 	onDeviceOrientationChanged(args) {
 		this.logger.info('CameraControlComponent.onDeviceOrientationChanged: ', args);
@@ -179,15 +174,13 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 				}
 				return deviceInfo;
 			}, (error) => {
-				this.disabledAll = true;
-				console.log('findCameraDeviceByPanelAsync error ', error.message);
-			});
+            this.disabledAll = true;
+        });
 	}
 
 	initializeCameraAsync() {
-		console.log('InitializeCameraAsync');
-		// const self = this;
-		try {
+        // const self = this;
+        try {
 			// Get available devices for capturing pictures
 			return this.findCameraDeviceByPanelAsync(this.Windows.Devices.Enumeration.Panel.front)
 				.then(async (camera) => {
@@ -235,21 +228,19 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					// Initialize media capture and start the preview
 					return this.oMediaCapture.initializeAsync(settings);
 				}, (error) => {
-					this.isCameraInitialized = false;
-					console.log(`findCameraDeviceByPanelAsync error ${error.message}`);
-					this.ngZone.run(() => {
-						this.disabledAll = true;
-					});
-				}).then(() => {
+                this.isCameraInitialized = false;
+                this.ngZone.run(() => {
+                    this.disabledAll = true;
+                });
+            }).then(() => {
 					this.isCameraInitialized = true;
 					return this.startPreviewAsync();
 
 				}).done();
 		} catch (error) {
-			this.disabledAll = true;
-			console.log('initializeCameraAsync catch', error);
-		}
-	}
+            this.disabledAll = true;
+        }
+    }
 
 	startPreviewAsync() {
 		this.ngZone.run(() => {
@@ -285,15 +276,14 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	cleanupCameraAsync() {
-		this.isCameraInitialized = false;
-		console.log('cleanupCameraAsync');
-		this.stopPreview();
+        this.isCameraInitialized = false;
+        this.stopPreview();
 
-		if (this.oMediaCapture) {
+        if (this.oMediaCapture) {
 			this.oMediaCapture.close();
 			this.oMediaCapture = null;
 		}
-	}
+    }
 
 	onVisibilityChanged() {
 		if (document.hidden) {
@@ -309,23 +299,19 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	public onAutoExposureChange($event: any) {
 		try {
-			console.log('onAutoExposureChange', this.cameraSettings.exposure);
-			this.exposureToggle.emit($event);
-		} catch (error) {
+            this.exposureToggle.emit($event);
+        } catch (error) {
 			this.appLogger.error('CameraControlComponent:onAutoExposureChange', error.message);
 		}
 	}
 
 	public onBrightnessSliderChange($event: ChangeContext) {
-		console.log('Brightness changed', $event);
-		this.brightnessChange.emit($event);
-	}
+        this.brightnessChange.emit($event);
+    }
 	public onContrastSliderChange($event: ChangeContext) {
-		console.log('Contrast changed', $event);
-		this.contrastChange.emit($event);
-	}
+        this.contrastChange.emit($event);
+    }
 	public onExposureSliderChange($event: ChangeContext) {
-		console.log('exposure changed', $event);
-		this.exposureChange.emit($event);
-	}
+        this.exposureChange.emit($event);
+    }
 }

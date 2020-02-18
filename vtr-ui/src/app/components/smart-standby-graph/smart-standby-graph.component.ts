@@ -20,10 +20,9 @@ export class SmartStandbyGraphComponent implements OnInit {
 	ngOnInit() {
 		this.getActivities().subscribe(
 			(data: SmartStandbyActivityModel[]) => {
-				this.activities = data;
-				console.log(data);
-				this.renderChart(data);
-			}
+                this.activities = data;
+                this.renderChart(data);
+            }
 		);
 	}
 

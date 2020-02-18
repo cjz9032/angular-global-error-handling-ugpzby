@@ -98,11 +98,9 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 	}
 
 	public getItemsToRecoverBadSectors() {
-		console.log('[Start] Get Items to Recover Bad Sectors');
-		const devices = this.hardwareScanService.getDevicesToRecoverBadSectors();
-		this.buildDevicesRecoverList(devices.groupList);
-		console.log('[End] Get Items to Recover Bad Sectors');
-	}
+        const devices = this.hardwareScanService.getDevicesToRecoverBadSectors();
+        this.buildDevicesRecoverList(devices.groupList);
+    }
 
 	private buildDevicesRecoverList(groupList: any) {
 		const devices = [];

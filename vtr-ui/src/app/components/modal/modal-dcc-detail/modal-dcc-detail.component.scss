@@ -20,6 +20,10 @@
 		overflow-y: auto;
 	}
 
+	&:hover {
+		overflow-y: auto;
+	}
+
 	fa-icon {
 		font-size: 2rem;
 		color: $main;

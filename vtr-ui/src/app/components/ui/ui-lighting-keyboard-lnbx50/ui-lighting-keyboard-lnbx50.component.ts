@@ -211,7 +211,6 @@ export class UiLightingKeyboardLNBx50Component implements OnInit, OnChanges{
     private gamingLightingService: GamingLightingService,
   ) {
     if(this.commonService.getLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50) === undefined){
-        console.log('first--------------------------------',this.commonService.getLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50))
         this.commonService.setLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50,this.toggleStatusLNBx50);
     }
   }
@@ -221,32 +220,29 @@ export class UiLightingKeyboardLNBx50Component implements OnInit, OnChanges{
   }
 
   ngOnChanges(changes) {
-    console.log('changes====================================',changes);
-    if(changes.listInfo){
-        this.setToggleStatusCache();
-    }
-    if(changes.isColorPicker && !this.isColorPicker){
-        console.log('this.isColorPicker========================',this.isColorPicker)
-        this.selectPanel = 0;
-        this.selectedArea = 0;
-    }
+      if(changes.listInfo){
+          this.setToggleStatusCache();
+      }
+      if(changes.isColorPicker && !this.isColorPicker){
+          this.selectPanel = 0;
+          this.selectedArea = 0;
+      }
   }
   
   public selectAreaFn(area,color) {
-    this.selectedArea = area;
-    this.selectPanel = area;
-    if(this.isDivideArea){
-        this.areaSetting.emit({
-            area:area,
-            color:color
-        });
-    }else{
-        this.areaSetting.emit({
-            area:[1,2,4,8],
-            color:color
-        });
-    }
-    console.log('area--------------------------',area)
+      this.selectedArea = area;
+      this.selectPanel = area;
+      if(this.isDivideArea){
+          this.areaSetting.emit({
+              area:area,
+              color:color
+          });
+      }else{
+          this.areaSetting.emit({
+              area:[1,2,4,8],
+              color:color
+          });
+      }
   }
 
   public mouseoverFn (event,panel,color) {
@@ -267,14 +263,10 @@ export class UiLightingKeyboardLNBx50Component implements OnInit, OnChanges{
     try {
         if(event){
             let response = this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.profileId]);
-            console.log('toggle status on=========================',response,this.profileId);
             this.listInfo = response.lightInfo;
-            
         }else{
             let response = this.commonService.getLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.profileId]);
-            console.log('toggle status off=========================',response,this.profileId);
             this.listInfo = response.lightInfo;
-            
         }
     } catch (error) {
         throw new Error('getProfileInfoCache ' + error.message);
@@ -283,7 +275,6 @@ export class UiLightingKeyboardLNBx50Component implements OnInit, OnChanges{
 
   public onToggleOnOff (event) {
     try {
-        console.log('event=',event,'isDivideArea=',this.isDivideArea);
         this.isDivideArea = event;
         this.toggleStatusLNBx50 = this.commonService.getLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
         this.toggleStatusLNBx50['profileId'+this.profileId].status = this.isDivideArea;
@@ -294,18 +285,15 @@ export class UiLightingKeyboardLNBx50Component implements OnInit, OnChanges{
             lightPanelType: [1,2,4,8],
             lightColor: this.listInfo.map(o => o.lightColor)
         };
-        console.log('click toggle colorJson=========================',colorJson)
         if(this.gamingLightingService.isShellAvailable){
           this.gamingLightingService.setLightingProfileEffectColor(colorJson).then((response:any) => {
-            if(response.didSuccess) {
-                console.log('click toggle colorJson return=========================',response)
-            }else{
+            if(response.didSuccess) {}else{
                 this.isDivideArea = !this.isDivideArea;
                 this.getProfileInfoCache(this.isDivideArea);
             }
           })
         }
-      } catch (error) {
+    } catch (error) {
         throw new Error("onToggleOnOff " + error.message);
       }
   }
@@ -314,19 +302,16 @@ export class UiLightingKeyboardLNBx50Component implements OnInit, OnChanges{
     try {
         if(this.listInfo && this.profileId != 0){
             this.toggleStatusLNBx50 = this.commonService.getLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
-            console.log('status========================',this.toggleStatusLNBx50['profileId'+this.profileId].status);
             if(this.isDefault){
                 if(this.toggleStatusLNBx50['profileId'+this.profileId].defaultStatus === 'undefined') {
                     this.isDivideArea = this.gamingLightingService.checkAreaColorFn(this.listInfo);
                     this.toggleStatusLNBx50['profileId'+this.profileId].defaultStatus = this.isDivideArea;
                     this.toggleStatusLNBx50['profileId'+this.profileId].status = this.isDivideArea;
                     this.commonService.setLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50,this.toggleStatusLNBx50);
-                    console.log('listInfo=change==default=undefined=====================',this.listInfo,this.isDivideArea);
                 }else{
                     this.isDivideArea = this.toggleStatusLNBx50['profileId'+this.profileId].defaultStatus;
                     this.toggleStatusLNBx50['profileId'+this.profileId].status = this.isDivideArea;
                     this.commonService.setLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50,this.toggleStatusLNBx50);
-                    console.log('listInfo=change==default======================',this.listInfo,this.isDivideArea);
                 }
                 setTimeout(()=>{
                     this.changeIsDefault.emit(false);
@@ -336,10 +321,8 @@ export class UiLightingKeyboardLNBx50Component implements OnInit, OnChanges{
                     this.isDivideArea = this.gamingLightingService.checkAreaColorFn(this.listInfo);
                     this.toggleStatusLNBx50['profileId'+this.profileId].status = this.isDivideArea;
                     this.commonService.setLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50,this.toggleStatusLNBx50);
-                    console.log('listInfo=change==toggle=undefined=====================',this.listInfo,this.isDivideArea);
                 }else{
                     this.isDivideArea = this.toggleStatusLNBx50['profileId'+this.profileId].status;
-                    console.log('listInfo=change==toggle========================',this.listInfo,this.isDivideArea);
                 }
             }
         }

@@ -96,9 +96,8 @@ export class CommunicationWithFigleafService {
 		).subscribe((figleafStatus: MessageFromFigleaf) => {
 			this.figleafState$.next(figleafStatus.status);
 		}, (error) => {
-			console.error('send test message error: ', error);
-			this.figleafState$.next(null);
-		});
+            this.figleafState$.next(null);
+        });
 
 		this.subscription.push(figleafConnectSubscription);
 	}
@@ -122,9 +121,8 @@ export class CommunicationWithFigleafService {
 			filter((isFigleafInstalled) => isFigleafInstalled),
 			switchMap(() => from(FigleafConnector.sendMessageToFigleaf(message)) as Observable<T>),
 			catchError((error) => {
-				console.error('sendMessageToFigleaf error: ', error);
-				return EMPTY;
-			})
+                return EMPTY;
+            })
 		);
 	}
 

@@ -65,9 +65,7 @@ export class EmailVerifyService {
 				this.accessTokenService.removeAccessToken();
 				this.accessTokenService.setAccessToken(response.token);
 				this.validationStatusChanged.next();
-			}, (error) => {
-				console.error('Confirmation Error', error);
-			}),
+			}, (error) => {}),
 		);
 	}
 }

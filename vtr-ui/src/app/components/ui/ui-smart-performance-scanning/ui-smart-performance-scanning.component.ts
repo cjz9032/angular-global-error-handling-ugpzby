@@ -256,19 +256,15 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	}
 }
 toggle(id:string): void {
-	console.log(id);
- this.accordionComponent.expand(id);
+    this.accordionComponent.expand(id);
 }
 GetScanData(i: number) {
-	this.scanData = {};
-	console.log('************',i);
-	this.scanData =  this.vdata[i];
-	this.percent = this.scanData.percentage;
-	console.log('************',this.scanData);
-	if(this.percent ==  100){
+    this.scanData = {};
+    this.scanData =  this.vdata[i];
+    this.percent = this.scanData.percentage;
+    if(this.percent ==  100){
 		this.sendScanStatus.emit()
 	}
-
 }
 initSpeed() {
 		

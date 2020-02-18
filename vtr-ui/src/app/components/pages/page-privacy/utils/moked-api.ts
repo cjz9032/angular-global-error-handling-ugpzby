@@ -1,6 +1,4 @@
-if (!window['Windows']) {
-	console.error('no windows in window. Now used mocked data');
-}
+if (!window['Windows']) {}
 export const MockWindows = {
 	Foundation: {
 		Collections: {

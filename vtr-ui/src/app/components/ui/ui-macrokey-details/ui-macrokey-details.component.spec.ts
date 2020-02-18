@@ -32,9 +32,7 @@ describe('UiMacrokeyDetailsComponent', () => {
 	it('should start recording', async () => {
 		try {
 			await component.toggleRecording();
-		} catch (e) {
-			console.log(e);
-		}
+		} catch (e) {}
 		expect(component.recording).toEqual(true);
 	});
 

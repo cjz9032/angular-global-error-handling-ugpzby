@@ -38,13 +38,11 @@ export class UiDropdownHwscanComponent implements OnInit {
 	}
 
 	selected() {
-		this.selectedOption.emit(this.nrSelect);
-		console.log(JSON.stringify(this.nrSelect));
-	}
+        this.selectedOption.emit(this.nrSelect);
+    }
 
 	select(choice: string) {
-		this.selectedItem = choice;
-		this.selectedOption.emit(choice);
-		console.log(choice);
-	}
+        this.selectedItem = choice;
+        this.selectedOption.emit(choice);
+    }
 }

@@ -109,32 +109,29 @@ export class GuardService {
 				this.deviceService.isSMode)) {
 			return this.guardConstants.defaultRoute;
 		}
-		if (routerStateSnapshot.url.includes('dashboard')) {
-			console.log( `Enter Dashboard page time :: ${new Date()}`);
-		}
+		if (routerStateSnapshot.url.includes('dashboard')) {}
 		return true;
 	}
 
 	canDeactivate(component: object, activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-		window.getSelection().empty();
-		this.pageContext = activatedRouteSnapshot.data.pageContent;
-		if (this.pageContext && this.pageContext.indexOf('[LocalStorageKey]') !== -1) {
+        window.getSelection().empty();
+        this.pageContext = activatedRouteSnapshot.data.pageContent;
+        if (this.pageContext && this.pageContext.indexOf('[LocalStorageKey]') !== -1) {
 			this.pageContext = this.commonService.getLocalStorageValue(this.pageContext);
 		}
-		// const time = this.timerService.stop();
-		const focusDuration = this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
-		const blurDuration = this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;
+        // const time = this.timerService.stop();
+        const focusDuration = this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
+        const blurDuration = this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;
 
-		const data = {
+        const data = {
 			ItemType: 'PageView',
 			PageName: activatedRouteSnapshot.data.pageName,
 			PageDuration: focusDuration, // this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`, 10),
 			PageDurationBlur: blurDuration
 			// PageContext: this.pageContext, // value coming as undefined
 		};
-		console.log('------: Deactivate :------ ' + activatedRouteSnapshot.data.pageName, ' >>>>>>>>>> ', data);
-		this.previousPageName = activatedRouteSnapshot.data.pageName;
-		this.metrics.sendAsync(data);
-		return true;
-	}
+        this.previousPageName = activatedRouteSnapshot.data.pageName;
+        this.metrics.sendAsync(data);
+        return true;
+    }
 }

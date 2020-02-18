@@ -76,11 +76,8 @@ export class SupportService {
 
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
-			console.log('metrics ready!');
-			this.metrics.sendAsync(data);
-		} else {
-			console.log('can not find metrics');
-		}
+            this.metrics.sendAsync(data);
+        } else {}
 	}
 
 	widgetItemClick(clickItem: string) {

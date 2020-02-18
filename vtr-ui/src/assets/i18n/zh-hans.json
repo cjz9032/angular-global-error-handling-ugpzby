@@ -88,7 +88,7 @@
                 "legionEdgeModal": {
                     "line1": "借助 Vantage Edge，您的设置将根据使用情况自动调整。\n 在游戏时获得最佳性能，在其余时间获得更长的电池使用时间。",
                     "line2": "<b>功能管理概述</b><br> 某些功能仅在部分设备上提供",
-                    "line3": "<b>CPU 超频 </b><br> 提升处理器的最快速度",
+                    "line3": "<b>CPU/GPU 超频 </b><br> 提升处理器的最快速度",
                     "line4": "<b>RAM 超频 </b><br> 提升内存的最快速度",
                     "line5": "<b>网络增强 </b><br> 将网络流量优先分配给正在畅玩的游戏",
                     "line6": "<b>Dolby </b><br> 借助 Dolby 技术，您可以特别针对游戏调整音频",
@@ -97,7 +97,7 @@
                     "line9": "<b>触摸板锁定 </b><br> 在游戏时禁用触摸板，防止错误输入",
                     "line10": "<b>自动关闭 </b><br> 在畅玩游戏之前清理与游戏无关的进程，从而最大限度地利用可用的系统资源",
                     "line11": "<b>散热模式 </b><br> 设置风扇速度和冷却控制的首选设备配置文件",
-                    "line12": "<b>宏键 </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>宏键 </b><br> 自定义键盘操作以适合您的游戏风格"
                 },
                 "systemInfo": {
                     "systenTooltip": "将鼠标悬停在 CPU/GPU/RAM 和不同的驱动器上以显示其描述（包括制造和型号信息）"

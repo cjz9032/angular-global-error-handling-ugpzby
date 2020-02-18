@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Com o Vantage Edge, as configurações serão ajustadas automaticamente com base no uso. \n Desempenho máximo ao jogar, maior duração de bateria quando não estiver jogando.",
                     "line2": "<b>Visão geral de gerenciamento de recursos</b> <br> Alguns recursos não estão disponíveis em todos os dispositivos",
-                    "line3": "<b>Overclocking da CPU </b><br> Aumente o máximo da velocidade do processador",
+                    "line3": "<b>Overclock da CPU/GPU </b><br> Aumente o máximo da velocidade do processador",
                     "line4": "<b>Overclock da RAM </b><br> Aumente o máximo da velocidade da memória",
                     "line5": "<b>Aumento da rede </b><br> Priorize o tráfego de rede para o jogo em execução",
                     "line6": "<b>Dolby </b><br> Ajuste o áudio especificamente para jogos com a tecnologia Dolby",
@@ -94,7 +94,7 @@
                     "line9": "<b>Bloqueio do touchpad </b><br> Evite erros desativando o touchpad ao jogar",
                     "line10": "<b>Fechamento automático </b><br> Limpe os processos desnecessários para jogos antes de começar a jogar para maximizar os recursos de sistema disponíveis",
                     "line11": "<b>Modo térmico </b><br> Defina o perfil de dispositivo preferido para velocidade de ventoinha e controle de arrefecimento",
-                    "line12": "<b>Tecla macro </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Tecla macro </b><br> Personalize as ações do teclado para atender ao seu estilo de jogo"
                 },
                 "systemInfo": {
                     "systenTooltip": "Passe o mouse sobre CPU/GPU/RAM e unidades diferentes para exibir suas descrições, incluindo informações de fabricação e modelo"

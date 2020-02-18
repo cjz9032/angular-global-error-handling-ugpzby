@@ -123,9 +123,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					this.installedApps = res.appList;
 				}
 			})
-			.catch(error => {
-				console.log('getVoipHotkeysSettings error', error);
-			});
+			.catch(error => {});
 	}
 
 	setVoipHotkeysSettings(app: VoipApp) {
@@ -141,9 +139,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 				this.installedApps = VoipResponse.appList;
 			})
-			.catch(error => {
-				console.log('setVoipHotkeysSettings error', error);
-			});
+			.catch(error => {});
 	}
 
 	initDataFromCache() {
@@ -178,9 +174,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					}
 				}));
 			}
-		} catch (error) {
-			console.log('initHiddenKbdFnFromCache', error);
-		}
+		} catch (error) {}
 	}
 
 	getAdditionalCapabilitiesFromCache() {

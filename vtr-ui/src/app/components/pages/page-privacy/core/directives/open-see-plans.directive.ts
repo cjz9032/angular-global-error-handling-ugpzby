@@ -20,6 +20,6 @@ export class OpenSeePlansDirective {
 			take(1)
 		).subscribe(
 			() => {},
-			(err) => console.error('Open link error ', err));
+			err => {});
 	}
 }

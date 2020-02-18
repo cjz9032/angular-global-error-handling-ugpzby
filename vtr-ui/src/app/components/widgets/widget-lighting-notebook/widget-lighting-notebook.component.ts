@@ -36,7 +36,6 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
   @HostListener('document:click', ['$event']) onClick(event) {
     this.isSetDefault =false;
-    console.log("isSetDefault--------------------->",this.isSetDefault);
   }
   
   constructor(
@@ -51,10 +50,8 @@ export class WidgetLightingNotebookComponent implements OnInit {
     this.getCacheList();
     if(this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionNote) !== undefined){
       this.lightingCapabilities = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionNote);
-      console.log("lightingCapabilities-------------------->",this.lightingCapabilities);
       this.getLightingCapabilitiesFromcache(this.lightingCapabilities);
     }
-    console.log("lightingProfileById-------------------->",this.lightingProfileById);
     if (this.lightingProfileById !== undefined) {
       this.getLightingProfileByIdFromcache(this.lightingProfileById); 
     }
@@ -68,19 +65,15 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
   public getLightingCapabilitiesFromcache(res){
      try {
-          console.log("cache----------capalbiity-------------------------11111111",res);
-          if(res !== undefined){
-              this.lightingCapabilities = res;
-              this.getEffectList();
-          }
-     } catch (error) {
-        console.log(error);
-     }
+       if(res !== undefined){
+           this.lightingCapabilities = res;
+           this.getEffectList();
+       }
+     } catch (error) {}
   }
 
   public getLightingProfileByIdFromcache(res){
       try {
-        console.log("cache---------profile-------------------------22222222222",res);
         if(res !== undefined){
           let ProfileId;
           if(res.lightInfo !== null && res.lightInfo.length > 0){
@@ -92,27 +85,22 @@ export class WidgetLightingNotebookComponent implements OnInit {
           }
           this.getLightingCurrentDetail(res);
         }
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
   }
  
  public getLightingCapabilities(){
     try {
       if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService.getLightingCapabilities().then((response: any) => {
-          console.log("response--------capility------>3333333333",response);
-          if(response){
-            this.lightingCapabilities = response;
-            this.getEffectList();
-            this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionNote,response);
-            this.getLightingProfileById(this.currentProfileId)
-          }
-				});
+                  if(response){
+                    this.lightingCapabilities = response;
+                    this.getEffectList();
+                    this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionNote,response);
+                    this.getLightingProfileById(this.currentProfileId)
+                  }
+                });
 			}
-    } catch (error) {
-       console.log(error);
-    }
+    } catch (error) {}
   }
 
   public getLightingProfileById(currentProfileId){
@@ -126,17 +114,13 @@ export class WidgetLightingNotebookComponent implements OnInit {
       if(currentProfileId === 0) return;
       if (this.gamingLightingService.isShellAvailable) {
         this.gamingLightingService.getLightingProfileById(currentProfileId).then((response:any) => {
-          console.log("response----------profile--------444444444444---->",response);
           this.publicProfileIdInfo(response);
         });
       }
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 
   public setLightingProfileId(event){
-    console.log("--------------------------------------------->event",event);
     try {
       this.isColorPicker = false;
       this.isShow = true;
@@ -161,7 +145,6 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
       if (this.gamingLightingService.isShellAvailable) {
         this.gamingLightingService.setLightingProfileId(1, this.currentProfileId).then((response: any) => {
-          console.log("setlightingProfileId-----------response------",response);
           if (response.didSuccess) {
             this.publicProfileIdInfo(response);
           }else{
@@ -182,9 +165,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
           }
         });
       }
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 
   public regLightingProfileIdChangeEvent(){
@@ -201,15 +182,12 @@ export class WidgetLightingNotebookComponent implements OnInit {
       this.isColorPicker = false;
       this.showOptions = false;
       this.isShow = true;
-      console.log("Fn+space---event----------------->",profileId);
       this.currentProfileId = profileId;
       if(this.isSetDefault){
-        console.log("is default------------------")
         this.getCacheDefaultList();
       }else{
         this.getCacheList();
       }
-      console.log("this.lightingProfileById------------event------------->",this.lightingProfileById);
       if(this.lightingProfileById !== undefined){
         if(this.lightingProfileById.lightInfo !== null && this.lightingProfileById.lightInfo.length > 0){
           this.ifDisabledKeyboard(this.lightingProfileById.lightInfo[0].lightEffectType);
@@ -225,50 +203,44 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
   public setLightingProfileEffect(event){
     try {
-        console.log("effect----------------->",event);
-        this.ifDisabledKeyboard(event.value);
-        /* Use cache before set    start  */
-        this.getCacheList();
-        this.getLightingCurrentDetail(this.lightingProfileById);
-        /* Use cache before set    end */
-        let effectJson:any = {
-          profileId:this.currentProfileId,
-          lightPanelType:this.lightingCurrentDetail.lightPanelType,
-          lightEffectType:event.value,
-          lightLayoutVersion:2
-        };
-        if (this.gamingLightingService.isShellAvailable) {
-         this.gamingLightingService.setLightingProfileEffectColor(effectJson).then((response: any) => {
-             console.log("response-------------effect----------->",response);
-             if (response.didSuccess) {
-               this.isEffectChange = true; 
-               this.publicPageInfo(response);
-             }else{
-              this.isEffectChange = false;
-              this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
-              this.getCacheList();
-              if(this.lightingProfileById !== undefined){
-                if(this.lightingProfileById.lightInfo !== null && this.lightingProfileById.lightInfo.length > 0){
-                  this.ifDisabledKeyboard(this.lightingProfileById.lightInfo[0].lightEffectType);
-                }
-                this.getLightingCurrentDetail(this.lightingProfileById);
-              }
-             }
-           });
-       }
-    } catch (error) {
-       console.log(error);
-    }
+      this.ifDisabledKeyboard(event.value);
+      /* Use cache before set    start  */
+      this.getCacheList();
+      this.getLightingCurrentDetail(this.lightingProfileById);
+      /* Use cache before set    end */
+      let effectJson:any = {
+        profileId:this.currentProfileId,
+        lightPanelType:this.lightingCurrentDetail.lightPanelType,
+        lightEffectType:event.value,
+        lightLayoutVersion:2
+      };
+      if (this.gamingLightingService.isShellAvailable) {
+       this.gamingLightingService.setLightingProfileEffectColor(effectJson).then((response: any) => {
+         if (response.didSuccess) {
+           this.isEffectChange = true; 
+           this.publicPageInfo(response);
+         }else{
+          this.isEffectChange = false;
+          this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+          this.getCacheList();
+          if(this.lightingProfileById !== undefined){
+            if(this.lightingProfileById.lightInfo !== null && this.lightingProfileById.lightInfo.length > 0){
+              this.ifDisabledKeyboard(this.lightingProfileById.lightInfo[0].lightEffectType);
+            }
+            this.getLightingCurrentDetail(this.lightingProfileById);
+          }
+         }
+       });
+     }
+    } catch (error) {}
   }
 
   public setLightingBrightness(event){
     try {
-      console.log("event-----bright------------->",event[0]);
- 
-       /* Use cache before set    start  */
-       this.getCacheList();
-       this.getLightingCurrentDetail(this.lightingProfileById);
-       /* Use cache before set    end */
+      /* Use cache before set    start  */
+      this.getCacheList();
+      this.getLightingCurrentDetail(this.lightingProfileById);
+      /* Use cache before set    end */
 
       let brightJson:any = {
         profileId:this.currentProfileId,
@@ -278,7 +250,6 @@ export class WidgetLightingNotebookComponent implements OnInit {
       };
       if(this.gamingLightingService.isShellAvailable){
         this.gamingLightingService.setLightingProfileEffectColor(brightJson).then((response:any) => {
-          console.log("response---------brightness------------->",response);
           if(response.didSuccess) {
              this.publicPageInfo(response);
           }else{
@@ -289,68 +260,57 @@ export class WidgetLightingNotebookComponent implements OnInit {
           }
         })
       }
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 
   public setLightingSpeed(event){
      try {
-        console.log("event------speed------------->",event[0]);
+       /* Use cache before set    start  */
+       this.getCacheList();
+       this.getLightingCurrentDetail(this.lightingProfileById);
+       /* Use cache before set    end */
 
-        /* Use cache before set    start  */
-        this.getCacheList();
-        this.getLightingCurrentDetail(this.lightingProfileById);
-        /* Use cache before set    end */
-
-        let speedJson:any = {
-          profileId:this.currentProfileId,
-          lightPanelType:this.lightingCurrentDetail.lightPanelType,
-          lightSpeed:event[0],
-          lightLayoutVersion:2
-        };
-        if(this.gamingLightingService.isShellAvailable){
-          this.gamingLightingService.setLightingProfileEffectColor(speedJson).then((response:any) => {
-            console.log("response---------speed------------->",response);
-            if(response.didSuccess) {
-              this.publicPageInfo(response);
-            }else{
-              this.isValChange = false;
-              this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
-              this.getCacheList();
-              this.getLightingCurrentDetail(this.lightingProfileById);
-            }
-          })
-        }
-     } catch (error) {
-      console.log(error);
-     }
+       let speedJson:any = {
+         profileId:this.currentProfileId,
+         lightPanelType:this.lightingCurrentDetail.lightPanelType,
+         lightSpeed:event[0],
+         lightLayoutVersion:2
+       };
+       if(this.gamingLightingService.isShellAvailable){
+         this.gamingLightingService.setLightingProfileEffectColor(speedJson).then((response:any) => {
+           if(response.didSuccess) {
+             this.publicPageInfo(response);
+           }else{
+             this.isValChange = false;
+             this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+             this.getCacheList();
+             this.getLightingCurrentDetail(this.lightingProfileById);
+           }
+         })
+       }
+     } catch (error) {}
   }
 
   public setDefaultProfile(profileId){
-     try { 
-         console.log("set to default--------------------->",profileId);
-         this.isDefault = true;
-         this.isSetDefault = true;
-         /* Use cache before set  start*/
-         this.getCacheDefaultList();
-         this.getLightingCurrentDetail(this.lightingProfileById);
-         /* Use cache before set  end*/
+     try {
+       this.isDefault = true;
+       this.isSetDefault = true;
+       /* Use cache before set  start*/
+       this.getCacheDefaultList();
+       this.getLightingCurrentDetail(this.lightingProfileById);
+       /* Use cache before set  end*/
 
-         if(this.gamingLightingService.isShellAvailable){
-          this.gamingLightingService.setLightingDefaultProfileById(profileId).then((response:any) => {
-            console.log("response------default----------------->",response);
-             if(response.didSuccess){
-              this.publicDefaultInfo(response);
-             }else{
-              this.getCacheDefaultList();
-              this.publicDefaultInfo(this.lightingProfileById);
-             }
-          })
-         }
-     } catch (error) {
-      console.log(error);
-     }
+       if(this.gamingLightingService.isShellAvailable){
+        this.gamingLightingService.setLightingDefaultProfileById(profileId).then((response:any) => {
+          if(response.didSuccess){
+           this.publicDefaultInfo(response);
+          }else{
+           this.getCacheDefaultList();
+           this.publicDefaultInfo(this.lightingProfileById);
+          }
+        })
+       }
+     } catch (error) {}
   }
 
   public changeIsDefaultFn (status) {
@@ -359,24 +319,20 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
   public selectLightingArea(event){
     try {
-       console.log("select lighting  area ---------------------->",event);
-       this.showOptions = false;
-       this.lightingArea = event.area;
-       this.color = event.color;
-       if(this.isShow){
-        this.isColorPicker = true;
-        this.isShow = false;
-      }else{
-        this.isColorPicker = false;
-        this.isShow = true;
-      }
-    } catch (error) {
-      console.log(error);
-    }
+      this.showOptions = false;
+      this.lightingArea = event.area;
+      this.color = event.color;
+      if(this.isShow){
+       this.isColorPicker = true;
+       this.isShow = false;
+     }else{
+       this.isColorPicker = false;
+       this.isShow = true;
+     }
+    } catch (error) {}
   }
 
   public isEffectListFn(event){
-    console.log("isEffectList------------------",event);
     this.showOptions = event;
   }
 
@@ -384,30 +340,24 @@ export class WidgetLightingNotebookComponent implements OnInit {
     try {
         this.isColorPicker = event;
         this.isShow = true;
-    } catch (error) {
-       console.log(error);
-    }
+    } catch (error) {}
   }
 
   public setLightingColor(event){
     try {
-      console.log("event--color-------111111111111111----------->",event);
       /* Use cache before set    start  */
       this.getCacheList();
       this.getLightingCurrentDetail(this.lightingProfileById);
       /* Use cache before set    end */
       this.color = event;
-      console.log("#######################",this.color,event);
       let colorJson:any = {
         profileId:this.currentProfileId,
         lightPanelType:this.lightingArea,
         lightColor:event,
         lightLayoutVersion:2
       };
-      console.log('colorJson------------------',colorJson);
       if(this.gamingLightingService.isShellAvailable){
         this.gamingLightingService.setLightingProfileEffectColor(colorJson).then((response:any) => {
-          console.log("response--------color------------------>",response);
           if(response.didSuccess) {
               this.publicPageInfo(response);
           }else{
@@ -417,9 +367,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
           }
         })
       }
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
   
   public getCurrentName(lightingPanelImage,lightPanelType){
@@ -448,10 +396,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
            this.effectSupportSpeed(this.lightingCurrentDetail.lightEffectType);
          }
       }
-      console.log("lightingCurrentDetail------------------------>",this.lightingCurrentDetail)
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 
   public getEffectList(){
@@ -479,37 +424,29 @@ export class WidgetLightingNotebookComponent implements OnInit {
         }
       }
     }
-    console.log("this.lightingProfileById--------current---------->",this.lightingProfileById);
   }
 
   public setCacheList(){
     this.toggleStatus = this.commonService.getLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
     if(this.toggleStatus !== undefined){
-        console.log("this.currentProfileId-------------->",this.currentProfileId);
-        console.log("this.toggleStatus-------------->",this.toggleStatus['profileId'+this.currentProfileId].status);
-        if(this.currentProfileId !== 0){
-          if(this.toggleStatus['profileId'+this.currentProfileId].status !== 'undefined'){
-            if(this.toggleStatus['profileId'+this.currentProfileId].status){
-              console.log("true----------------",true);
-              this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId],this.lightingProfileById);
-            }else{
-              console.log("true----------------",false);
-              this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId],this.lightingProfileById);
-            }
+      if(this.currentProfileId !== 0){
+        if(this.toggleStatus['profileId'+this.currentProfileId].status !== 'undefined'){
+          if(this.toggleStatus['profileId'+this.currentProfileId].status){
+            this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId],this.lightingProfileById);
+          }else{
+            this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId],this.lightingProfileById);
           }
         }
+      }
     }
   }
 
   public setCacheInitList(){
     if(this.currentProfileId !== 0){
       let isDiffColor = this.gamingLightingService.checkAreaColorFn(this.lightingProfileById.lightInfo);
-      console.log("isDiffColor--------------->",isDiffColor);
       if(isDiffColor){
         let lightcolorList = this.getColorList(JSON.parse(JSON.stringify(this.lightingProfileById)));
         this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId],this.lightingProfileById);
-        console.log("this.lightingProfileById-----------",this.lightingProfileById);
-        console.log("lightcolorList-----------",lightcolorList);
         this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOff'+this.currentProfileId],lightcolorList);
       }else{
         this.commonService.setLocalStorageValue(LocalStorageKey['LightingProfileByIdNoteOn'+this.currentProfileId],this.lightingProfileById);
@@ -576,7 +513,6 @@ export class WidgetLightingNotebookComponent implements OnInit {
       if (this.gamingLightingService.isShellAvailable) {
         this.gamingLightingService.getLightingProfileId().then((response: any) => {
             if (response.didSuccess) {
-              console.log("response-----------profile------------->",response);
               this.currentProfileId = response.profileId;
               this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId,response.profileId);
               this.getLightingProfileById(this.currentProfileId);
@@ -586,7 +522,6 @@ export class WidgetLightingNotebookComponent implements OnInit {
     }else{
       if(this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) !== undefined){
         this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
-        console.log("current------------cache---------",this.currentProfileId);
       }
     }
   }

@@ -46,7 +46,6 @@ export class UiListScheduledScanComponent implements OnInit {
 	}
 
 	public onEdit() {
-		console.log("[Click] Delete Scan ",this.title);
-		this.editClick.emit({scanID: this.scanID});
-	}
+        this.editClick.emit({scanID: this.scanID});
+    }
 }

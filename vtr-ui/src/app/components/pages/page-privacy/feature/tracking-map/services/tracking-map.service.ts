@@ -125,15 +125,14 @@ export class TrackingMapService {
 				map((userHistory) => userHistory.visitedWebsites),
 				map((userHistory) => ({typeData: typeData.Users, sites: userHistory})),
 				catchError((err) => {
-					this.trackingData.next({
+                    this.trackingData.next({
 						typeData: typeData.Users,
 						trackingData: {sites: [], trackers: {}},
 						error: err
 					});
-					this.sendTaskAction();
-					console.error('VisitedWebsites err', err);
-					return EMPTY;
-				}),
+                    this.sendTaskAction();
+                    return EMPTY;
+                }),
 			);
 	}
 

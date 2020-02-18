@@ -12,9 +12,7 @@ export class UiSmartTunePcComponent implements OnInit {
   ngOnInit() {
   }
   public fetchSmartTabId($event: NgbTabChangeEvent) {
-	//	activeTab = $event.nextId
-		this.activeTab = $event.nextId;
-		console.log('selected tab' + this.activeTab);
-
-	}
+    //	activeTab = $event.nextId
+    this.activeTab = $event.nextId;
+  }
 }

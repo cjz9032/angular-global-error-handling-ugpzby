@@ -140,7 +140,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 	}
 
 	ngOnChanges(changes) {
-		if (!isUndefined(this.options)) {
+        if (!isUndefined(this.options)) {
 			if (!isUndefined(this.options)) {
 				if (!isUndefined(changes.selectedValue)) {
 					this.selectedOption = this.options.dropOptions.filter(
@@ -149,13 +149,13 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 				}
 			}
 		}
-		// if (!isUndefined(changes.effectOptionName)) {
-		// 	if (changes.effectOptionName.previousValue !== changes.effectOptionName.currentValue) {
-		// 		this.effectOptionName = changes.effectOptionName.currentValue;
-		// 	}
+        // if (!isUndefined(changes.effectOptionName)) {
+        // 	if (changes.effectOptionName.previousValue !== changes.effectOptionName.currentValue) {
+        // 		this.effectOptionName = changes.effectOptionName.currentValue;
+        // 	}
 
-		// }
-		if(!isUndefined(changes.options)){
+        // }
+        if(!isUndefined(changes.options)){
 			if(!isUndefined(changes.options.currentValue)){
 				if(!isUndefined(this.selectedValue)){
 					this.selectedOption = changes.options.currentValue.dropOptions.filter(
@@ -164,6 +164,5 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 				}
 			}
 		}
-		console.log("this.selectedOption-----------------22222222222",this.selectedOption);
-	}
+    }
 }

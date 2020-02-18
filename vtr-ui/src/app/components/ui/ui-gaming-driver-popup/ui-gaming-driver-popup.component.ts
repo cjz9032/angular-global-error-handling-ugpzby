@@ -46,9 +46,8 @@ export class UiGamingDriverPopupComponent implements OnInit {
 	}
 	
 	onOutsideClick() {
-		console.log(this.isNowOpened, this.showMePartially, '------------------------<>')
-		if (this.isNowOpened) {
+        if (this.isNowOpened) {
 			this.close();
 		}
-	}
+    }
 }

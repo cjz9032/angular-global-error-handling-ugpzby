@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Cu ajutorul Vantage Edge, setările dvs. vor fi reglate automat pe baza utilizării. \n Performanță maximă atunci când jucați jocuri, durată mai lungă de viață a bateriei atunci când nu jucați.",
                     "line2": "<b>Rezumat administrare funcții</b> <br> Unele funcții nu sunt disponibile pe toate dispozitivele",
-                    "line3": "<b>Suprasolicitare CPU </b><br> Stimulați-vă procesorul să atingă viteza maximă",
+                    "line3": "<b>Overclocking CPU/GPU </b><br> Stimulați-vă procesorul să atingă viteza maximă",
                     "line4": "<b>Suprasolicitare RAM </b><br> Stimulați memoria ca să atingă viteza maximă",
                     "line5": "<b>Stimulare rețea </b><br> Prioritizați traficul rețelei pentru jocul pe care-l jucați",
                     "line6": "<b>Dolby </b><br> Reglați-vă sunetul, special pentru jocuri, cu ajutorul tehnologiei Dolby",
@@ -94,7 +94,7 @@
                     "line9": "<b>Blocare touchpad </b><br> Preveniți introducerile eronate, dezactivând panoul tactil în timp ce jucați jocuri",
                     "line10": "<b>Închidere automată </b><br> Eliminați procesele care sunt inutile pentru jocuri, înainte de a începe să jucați, pentru a amplifica la maximum resursele de sistem disponibile",
                     "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii",
-                    "line12": "<b>Tastă macro </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Tastă macro </b><br> Personalizați-vă acțiunile tastaturii pentru a corespunde stilului dvs. de joc"
                 },
                 "systemInfo": {
                     "systenTooltip": "Plasați cursorul pe CPU/GPU/RAM și pe alte drivere pentru a afișa descrierile acestora, inclusiv informațiile de fabricare și modelul"

@@ -195,9 +195,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.onSetSmartSettingsCapability(true);
 				}
 			}
-		} catch (error) {
-			console.log('initPowerSmartSettingFromCache', error);
-		}
+		} catch (error) {}
 	}
 
 	initSmartStandbyFromCache() {
@@ -224,7 +222,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	initBatteryChargeThresholdFromCache() {
+	initAirplanePowerFromCache() {
 		try {
 			this.chargeThresholdCache = this.commonService.getLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, undefined);
 			if (this.chargeThresholdCache) {
@@ -235,7 +233,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	initGaugeResetInfoFromCache() {
+	initBatteryChargeThresholdFromCache() {
 		try {
 			const gaugeResetCapability = this.commonService.getLocalStorageValue(LocalStorageKey.GaugeResetCapability, undefined);
 			this.gaugeResetCapability = gaugeResetCapability ? true : false;

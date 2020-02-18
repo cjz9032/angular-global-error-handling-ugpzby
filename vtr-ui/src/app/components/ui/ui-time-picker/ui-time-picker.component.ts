@@ -137,13 +137,11 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 	}
 
 	handleKBNavigations(event) {
-		console.log(event.keyCode);
-
-		switch (event.keyCode) {
+        switch (event.keyCode) {
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
 				this.onToggleDropDown();
 				break;
 		}
-	}
+    }
 }

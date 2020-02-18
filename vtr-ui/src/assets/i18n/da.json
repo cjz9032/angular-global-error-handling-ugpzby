@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Med Vantage Edge justeres dine indstillinger automatisk baseret på forbrug. \n Maksimal ydeevne, når du spiller – længere batterilevetid, når du ikke gør.",
                     "line2": "<b>Oversigt over funktionsstyring</b> <br> Nogle funktioner er ikke tilgængelige på alle enheder",
-                    "line3": "<b>CPU-overclocking</b><br> Øg processorens hastighed til det optimale",
+                    "line3": "<b>CPU-/GPU-overclocking</b><br> Øg processorens hastighed til det optimale",
                     "line4": "<b>RAM-overclocking</b><br> Øg hukommelsens hastighed til det optimale",
                     "line5": "<b>Netværksfor-stærkning</b><br> Prioriter netværkstrafik for det spil, du spiller",
                     "line6": "<b>Dolby</b><br> Optimer din lyd, især til spil, med Dolby-teknologi",
@@ -94,7 +94,7 @@
                     "line9": "<b>Lås på navigationsplade</b><br> Undgå forkerte input ved at deaktivere navigationspladen, mens du spiller",
                     "line10": "<b>Luk automatisk</b><br> Ryd processer, der ikke er nødvendige for spil, før du går i gang med at spille, for at maksimere tilgængelige systemressourcer",
                     "line11": "<b>Varmetilstand</b><br> Angiv din foretrukne enhedsprofil for blæserhastighed og kølingskontrol",
-                    "line12": "<b>Makro-tast</b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Makro-tast</b><br> Tilpas tastaturhandlingerne, så de passer til din spillestil"
                 },
                 "systemInfo": {
                     "systenTooltip": "Peg på CPU-/GPU/RAM og forskellige drev for at få vist disses beskrivelser, herunder fabrikat- og modeloplysninger"

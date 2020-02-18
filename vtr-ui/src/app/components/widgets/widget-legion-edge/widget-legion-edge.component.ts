@@ -415,13 +415,12 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public renderNetworkBoostStatus() {
 		this.gamingNetworkBoostService.getNetworkBoostStatus().then((networkBoostModeStatus) => {
-			console.log('networkBoostModeStatus--------------------------', networkBoostModeStatus);
-			if (networkBoostModeStatus !== undefined) {
+            if (networkBoostModeStatus !== undefined) {
 				this.NetworkBoostStatusObj.networkBoostStatus = networkBoostModeStatus;
 				this.setNetworkBoostCacheStatus(networkBoostModeStatus);
 				this.legionUpdate[2].isChecked = networkBoostModeStatus;
 			}
-		});
+        });
 	}
 
 	public async setAutoCloseStatus(status: any) {
@@ -435,18 +434,14 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public async setNetworkBoostStatus(status: any) {
 		try {
-			console.log('STATUSOFNB', status);
-			const isStatusUpdated = await this.gamingNetworkBoostService.setNetworkBoostStatus(status);
-			if (isStatusUpdated) {
+            const isStatusUpdated = await this.gamingNetworkBoostService.setNetworkBoostStatus(status);
+            if (isStatusUpdated) {
 				this.setNetworkBoostCacheStatus(status);
 				this.legionUpdate[2].isChecked = status;
 			} else {
-				this.legionUpdate[2].isChecked = !status;
-				console.log('NETWORKBOOST status is not updated from JS Bridge', isStatusUpdated);
-			}
-		} catch (err) {
-			console.log(`ERROR in setNetworkBoostStatus()`, err);
-		}
+                this.legionUpdate[2].isChecked = !status;
+            }
+        } catch (err) {}
 	}
 
 	public getAutoCloseCacheStatus() {
