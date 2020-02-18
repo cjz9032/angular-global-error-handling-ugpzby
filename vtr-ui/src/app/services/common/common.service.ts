@@ -167,16 +167,15 @@ export class CommonService {
 
 	public getWindowsVersion(): number {
 		if (this.osVersion === 0) {
-			let version = '0';
-			navigator.userAgent.split(' ').forEach((value) => {
+            let version = '0';
+            navigator.userAgent.split(' ').forEach((value) => {
 				if (value.indexOf('Edge') !== -1) {
 					const dotIndex = value.indexOf('.');
 					version = value.substring(dotIndex + 1, value.length);
 					this.osVersion = Number(version);
 				}
 			});
-			console.log(`this.ovVersion: ${this.osVersion}`);
-		}
+        }
 		return this.osVersion;
 	}
 

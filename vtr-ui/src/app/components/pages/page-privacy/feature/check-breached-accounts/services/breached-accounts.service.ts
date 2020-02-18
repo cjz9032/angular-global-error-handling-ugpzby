@@ -121,9 +121,8 @@ export class BreachedAccountsService implements OnDestroy {
 			.pipe(
 				map((response: GetBreachedAccountsResponse) => response.payload.breaches),
 				catchError((err) => {
-					console.error('getFigleafBreachedAccountsError', err);
-					return EMPTY;
-				})
+                    return EMPTY;
+                })
 			);
 	}
 
@@ -134,13 +133,12 @@ export class BreachedAccountsService implements OnDestroy {
 	}
 
 	private handleError(error: any) {
-		console.error('onGetBreachedAccounts', error);
-		if (error !== ErrorNames.noAccessToken) {
+        if (error !== ErrorNames.noAccessToken) {
 			this.onGetBreachedAccounts.next({breaches: null, error});
 		}
-		this.sendTaskAcrion();
-		return EMPTY;
-	}
+        this.sendTaskAcrion();
+        return EMPTY;
+    }
 
 	resetBreachedAccounts(isFigleafReadyForCommunication) {
 		if (!isFigleafReadyForCommunication) {

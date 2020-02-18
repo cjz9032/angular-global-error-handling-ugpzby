@@ -265,9 +265,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
-				this.getArticlesTimeout = setTimeout(() => { this.fetchCMSContents(); }, 5000);
-			}
+                this.getArticlesTimeout = setTimeout(() => { this.fetchCMSContents(); }, 5000);
+            }
 		);
 	}
 
@@ -295,9 +294,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-				console.log('fetchCMSArticleCategories error', error);
-				setTimeout(() => { this.fetchCMSArticleCategory(); }, 5000);
-			}
+                setTimeout(() => { this.fetchCMSArticleCategory(); }, 5000);
+            }
 		);
 	}
 
@@ -343,11 +341,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-				console.log('fetchCMSArticles error', error);
-				if (lang.toLowerCase() !== 'en') {
+                if (lang.toLowerCase() !== 'en') {
 					this.getArticlesTimeout = setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
 				}
-			}
+            }
 		);
 	}
 

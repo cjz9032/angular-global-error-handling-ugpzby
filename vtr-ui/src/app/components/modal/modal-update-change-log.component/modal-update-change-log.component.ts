@@ -36,12 +36,8 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 				const result = await response.content.readAsStringAsync();
 				if (result) {
 					this.articleBody = this.sanitizer.sanitize(SecurityContext.HTML, result);
-				} else {
-					console.log('can not get log information');
-				}
-			} catch (e) {
-				console.log('can not get log information');
-			}
+				} else {}
+			} catch (e) {}
 			httpClient.close();
 		})();
 	}
@@ -60,9 +56,7 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
-		} else {
-			console.log('can not find metrics');
-		}
+		} else {}
 	}
 
 	closeModal() {

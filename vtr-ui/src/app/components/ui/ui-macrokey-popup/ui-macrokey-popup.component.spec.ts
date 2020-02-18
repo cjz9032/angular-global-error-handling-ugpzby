@@ -38,9 +38,7 @@ describe('UiMacrokeyPopupComponent', () => {
 		let result: void;
 		try {
 			result = await component.submitAction();
-		} catch (e) {
-			console.log(e);
-		}
+		} catch (e) {}
 		expect(result).toEqual(undefined);
 
 	});
@@ -49,9 +47,7 @@ describe('UiMacrokeyPopupComponent', () => {
 		let result: void;
 		try {
 			result = await component.keydownFn({which: 9});
-		} catch (e) {
-			console.log(e);
-		}
+		} catch (e) {}
 		expect(result).toEqual(undefined);
 
 	});

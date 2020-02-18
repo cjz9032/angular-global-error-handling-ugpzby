@@ -55,12 +55,11 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<InstalledBrowsers>(contract).pipe(
-			tap((response) => console.log('sendContractToPrivacyCore', response)),
+			tap(response => {}),
 			shareReplay(1),
 			catchError((err) => {
-				console.error('InstalledBrowsers err', err);
-				return EMPTY;
-			})
+                return EMPTY;
+            })
 		);
 	}
 
@@ -75,11 +74,10 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<AccessiblePasswords>(contract).pipe(
-			tap((response) => console.log('getAccessiblePasswords', response)),
+			tap(response => {}),
 			catchError((err) => {
-				console.error('AccessiblePasswords err', err);
-				return EMPTY;
-			})
+                return EMPTY;
+            })
 		);
 	}
 
@@ -94,11 +92,10 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<MaskedPasswords>(contract).pipe(
-			tap((val) => console.log('MaskedPasswords', val)),
+			tap(val => {}),
 			catchError((err) => {
-				console.error('MaskedPasswords err', err);
-				return EMPTY;
-			})
+                return EMPTY;
+            })
 		);
 	}
 
@@ -118,7 +115,7 @@ export class VantageCommunicationService {
 					return throwError('VisitedWebsites err', err);
 				})
 			)),
-			tap((response) => console.log('getVisitedWebsites', response)),
+			tap(response => {}),
 		);
 	}
 
@@ -158,8 +155,7 @@ export class VantageCommunicationService {
 		if (this.vantageShellService.getPrivacyCore()) {
 			return from(this.vantageShellService.getPrivacyCore().sendContractToPlugin(contract)) as Observable<T>;
 		} else {
-			console.error('JS bridge error');
-			return EMPTY;
-		}
+            return EMPTY;
+        }
 	}
 }

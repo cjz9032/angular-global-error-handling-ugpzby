@@ -111,11 +111,9 @@ describe("EyeCareModeComponent", () => {
 		expect(component.legendPosition(4)).toBe(undefined);
 	});
 	it("should test sliderChange method", () => {
-		expect(component.sliderChange(1)).toEqual(console.log("todo: warm"));
-		expect(component.sliderChange(2)).toEqual(
-			console.log("todo: eye care mode")
-		);
-		expect(component.sliderChange(3)).toEqual(console.log("todo: default"));
-		expect(component.sliderChange(4)).toEqual(console.log("todo: cold"));
+		expect(component.sliderChange(1)).toEqual();
+		expect(component.sliderChange(2)).toEqual();
+		expect(component.sliderChange(3)).toEqual();
+		expect(component.sliderChange(4)).toEqual();
 	});
 });

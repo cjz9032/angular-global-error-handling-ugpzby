@@ -27,7 +27,9 @@
     "analyze": "webpack-bundle-analyzer dist/vtr-ui/stats.json",
     "dev-stats": "ng build -c=dev --stats-json & webpack-bundle-analyzer dist/vtr-ui/stats.json",
     "source": "ng build & source-map-explorer 'dist/vtr-ui/*.js'",
-    "mock-serve": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng serve --port 4300 -c=mock"
+    "mock-serve": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng serve --port 4300 -c=mock",
+    "remove-console": "node node_modules/jscodeshift/bin/jscodeshift.js -t prebuild/removeConsole.js --extensions=ts --parser=ts src",
+    "detect-console": "node prebuild/detectConsole.js"
   },
   "private": true,
   "dependencies": {
@@ -86,8 +88,10 @@
     "codelyzer": "^5.1.2",
     "html-loader": "^0.5.5",
     "htmlparser2": "^4.0.0",
+    "husky": "^4.2.3",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
+    "jscodeshift": "^0.7.0",
     "karma": "~4.1.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
@@ -99,5 +103,10 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.7.5"
-  }
+  },
+  "husky": {
+		"hooks": {
+			"pre-commit": "npm run detect-console"
+		}
+	}
 }

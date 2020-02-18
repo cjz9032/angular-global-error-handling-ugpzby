@@ -196,9 +196,7 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
     this.serverSwitchResponse.componentSelector = this.serverSwitchData.page.componentSelector;
 
     //setting language
-    this.translate.use(this.serverSwitchResponse.currentLang).subscribe(() => {
-      console.log("Language loaded: " + this.serverSwitchResponse.currentLang);
-    });
+    this.translate.use(this.serverSwitchResponse.currentLang).subscribe(() => {});
 
     //for full urls 
     let defaultsURLParm = {
@@ -681,7 +679,6 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnDestroy() {
     //setting language
     this.translate.use(this.serverSwitchResponse.systemLang);
-    console.log('Revertiing lang', this.serverSwitchResponse.systemLang);
 
     // when app destroyed then remove ServerSwitch values
     window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);

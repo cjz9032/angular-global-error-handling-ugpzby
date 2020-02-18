@@ -40,12 +40,8 @@ export class UiAddReduceButtonComponent implements OnInit {
       m = Math.pow(10,Math.max(sq1, sq2));
       
       if(type){
-        console.log('this.value---add----------------------',this.value,this.step, this.value * m,this.step * m,(this.value * m + this.step * m),(this.value * m - this.step * m) / m)
-        console.log('this.value---add----------------------',this.value,this.step, Math.round(this.value * m),Math.round(num2 * m),(Math.round(num1 * m) + Math.round(num2 * m)),(Math.round(num1 * m) + Math.round(num2 * m)) / m)
           return (Math.round(num1 * m) + Math.round(num2 * m)) / m;
       }else{
-        console.log('this.value---reduce----------------------',this.value,this.step, this.value * m,this.step * m,(this.value * m - this.step * m),(this.value * m - this.step * m) / m)
-        console.log('this.value---add----------------------',this.value,this.step, Math.round(this.value * m),Math.round(num2 * m),(Math.round(num1 * m) - Math.round(num2 * m)),(Math.round(num1 * m) - Math.round(num2 * m)) / m)
           return (Math.round(num1 * m) - Math.round(num2 * m)) / m;
       }
       
@@ -57,12 +53,11 @@ export class UiAddReduceButtonComponent implements OnInit {
       if(this.isValChange){
         this.value = this.calculate(this.value,this.step,false);
       }
-    //   this.value = this.calculate(this.value,this.step,false);
+      //   this.value = this.calculate(this.value,this.step,false);
       if(this.value <= this.minData){
           this.value = this.minData;
       }
       this.setVal.emit([this.value,1]);
-      console.log('this.value-------------------------',this.value)
   }
   public addFn(){
       if(this.value == this.maxData){
@@ -71,12 +66,11 @@ export class UiAddReduceButtonComponent implements OnInit {
       if(this.isValChange){
         this.value = this.calculate(this.value,this.step,true);
       }
-    //   this.value = this.calculate(this.value,this.step,true);
+      //   this.value = this.calculate(this.value,this.step,true);
       if(this.value >= this.maxData){
           this.value = this.maxData;
       }
       this.setVal.emit([this.value,2]);
-      console.log('this.value-------------------------',this.value)
   }
 }
 

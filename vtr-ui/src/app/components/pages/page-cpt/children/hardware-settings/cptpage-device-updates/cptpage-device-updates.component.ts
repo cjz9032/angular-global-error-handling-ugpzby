@@ -50,9 +50,7 @@ export class CptpageDeviceUpdatesComponent implements OnInit, OnDestroy {
             }
           }
         },
-        error => {
-          console.log('fetchCMSContent error', error);
-        }
+        error => {}
       );
 
     });

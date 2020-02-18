@@ -40,9 +40,8 @@ export class SettingsService {
 						this.isMessageSettings = true;
 					}
 				}).catch((error) => {
-					console.error('getMessagingPreference failed for exception, will hide the messages setting.', error);
-					this.isMessageSettings = false;
-				});
+                    this.isMessageSettings = false;
+                });
 			} catch (error) {
 				this.loggerService.exception('SettingsService.getPreferenceSettingsValue exception', error);
 			}

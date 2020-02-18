@@ -52,9 +52,7 @@ export class CptpageSecurityComponent implements OnInit, OnDestroy {
             }
           }
         },
-        error => {
-          console.log('fetchCMSContent error', error);
-        }
+        error => {}
       );
 
     });

@@ -67,9 +67,8 @@ export class DataKnowledgeService {
 		return this.getKnowledgeBase().pipe(
 			map((knowledgeBase) => knowledgeBase[domain] ? knowledgeBase[domain].icon_link : defaultFavicon),
 			catchError((err) => {
-				console.error(err);
-				return of(defaultFavicon);
-			})
+                return of(defaultFavicon);
+            })
 		);
 	}
 

@@ -215,9 +215,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.dashboardService.isShellAvailable) {
-			console.log('PageDashboardComponent.getSystemInfo');
-			this.getSystemInfo();
-		}
+            this.getSystemInfo();
+        }
 		this.translate
 			.stream([
 				'dashboard.offlineInfo.welcomeToVantage',
@@ -414,9 +413,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					this.fetchContent('en');
 				}
 			},
-			(error) => {
-				console.log('fetchCMSContent error', error);
-			}
+			(error) => {}
 		);
 	}
 
@@ -661,9 +658,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					resolve();
 				},
 				() => {
-					resolve();
-					console.log('get tile source failed.');
-				}
+                    resolve();
+                }
 			);
 		});
 	}

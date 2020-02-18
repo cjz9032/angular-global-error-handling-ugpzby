@@ -114,9 +114,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.dolbyAudioToggleCache.dolbyModeResponse = this.dolbyModeResponse;
 				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
 			}
-		} catch (error) {
-			console.log('initExpressChargingFromCache', error);
-		}
+		} catch (error) {}
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -156,16 +154,13 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		try {
 			const newVal = event.target.value;
 			if (this.microOptimizeModeResponse.current == newVal) {
-				console.log('microphone already set');
-				return;
-			}
+                return;
+            }
 			this.microOptimizeModeResponse.current = newVal;
 			if (this.audioService.isShellAvailable) {
 				this.cacheFlag.currentMode = false;
 				this.audioService.setMicrophoneOpitimaztion(this.microOptimizeModeResponse.current)
-					.then((value) => {
-						console.log('onOptimizeModesRadioChange:', value);
-					}).catch(error => {
+					.then((value) => {}).catch(error => {
 						this.logger.error('onOptimizeModesRadioChange', error.message);
 						return EMPTY;
 					});
@@ -214,9 +209,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			}
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setDolbyOnOff(event.switchValue)
-					.then((value) => {
-						console.log('onAutomaticDolbyAudioToggleOnOff', value);
-					}).catch(error => {
+					.then((value) => {}).catch(error => {
 						this.logger.error('onAutomaticDolbyAudioToggleOnOff', error.message);
 						return EMPTY;
 					});
@@ -240,18 +233,16 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.getDolbyFeatureStatus()
 					.then((dolbyFeature: FeatureStatus) => {
-						this.autoDolbyFeatureStatus = dolbyFeature;
-						this.autoDolbyFeatureLoader = false;
-						this.automaticDolbyHelpIcon = (this.autoDolbyFeatureStatus.available) ? this.helpIcon : [];
+                    this.autoDolbyFeatureStatus = dolbyFeature;
+                    this.autoDolbyFeatureLoader = false;
+                    this.automaticDolbyHelpIcon = (this.autoDolbyFeatureStatus.available) ? this.helpIcon : [];
 
-						this.dolbyAudioToggleCache.available = this.autoDolbyFeatureStatus.available;
-						this.dolbyAudioToggleCache.status = this.autoDolbyFeatureStatus.status;
-						this.dolbyAudioToggleCache.loader = this.autoDolbyFeatureLoader;
-						this.dolbyAudioToggleCache.icon = this.automaticDolbyHelpIcon;
-						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
-
-						console.log('getDolbyFeatureStatus:', dolbyFeature);
-					}).catch(error => {
+                    this.dolbyAudioToggleCache.available = this.autoDolbyFeatureStatus.available;
+                    this.dolbyAudioToggleCache.status = this.autoDolbyFeatureStatus.status;
+                    this.dolbyAudioToggleCache.loader = this.autoDolbyFeatureLoader;
+                    this.dolbyAudioToggleCache.icon = this.automaticDolbyHelpIcon;
+                    this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
+                }).catch(error => {
 						this.logger.error('getDolbyFeatureStatus', error.message);
 						this.autoDolbyFeatureLoader = false;
 						this.autoDolbyFeatureStatus.available = false;
@@ -281,11 +272,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.getDolbyMode()
 					.then((response: DolbyModeResponse) => {
-						this.dolbyModeResponse = response;
-						this.dolbyAudioToggleCache.dolbyModeResponse = this.dolbyModeResponse;
-						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
-						console.log('getDolbyModesStatus:', response);
-					}).catch(error => {
+                    this.dolbyModeResponse = response;
+                    this.dolbyAudioToggleCache.dolbyModeResponse = this.dolbyModeResponse;
+                    this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
+                }).catch(error => {
 						this.logger.error('getDolbyModesStatus', error.message);
 						return EMPTY;
 					});
@@ -300,9 +290,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		try {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.startMonitorForDolby(this.startMonitorHandlerForDolby.bind(this))
-					.then((value: boolean) => {
-						console.log('startMonitorForDolby', value);
-					}).catch(error => {
+					.then((value: boolean) => {}).catch(error => {
 						this.logger.error('startMonitorForDolby', error.message);
 						return EMPTY;
 					});
@@ -317,9 +305,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		try {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.stopMonitorForDolby()
-					.then((value: boolean) => {
-						console.log('stopMonitorForDolby', value);
-					}).catch(error => {
+					.then((value: boolean) => {}).catch(error => {
 						this.logger.error('stopMonitorForDolby', error.message);
 						return EMPTY;
 					});
@@ -331,11 +317,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	startMonitorHandlerForDolby(response: DolbyModeResponse) {
-		console.log('startMonitorHandlerForDolby', response);
-		this.dolbyModeResponse = response;
-		this.dolbyAudioToggleCache.dolbyModeResponse = this.dolbyModeResponse;
-		this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
-	}
+        this.dolbyModeResponse = response;
+        this.dolbyAudioToggleCache.dolbyModeResponse = this.dolbyModeResponse;
+        this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
+    }
 
 	onDolbySeetingRadioChange(event) {
 		try {
@@ -344,9 +329,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setDolbyMode(this.dolbyModeResponse.currentMode)
-					.then((value) => {
-						console.log('onDolbySeetingRadioChange:', value);
-					}).catch(error => {
+					.then((value) => {}).catch(error => {
 						this.logger.error('onDolbySeetingRadioChange', error.message);
 						return EMPTY;
 					});
@@ -362,9 +345,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.cacheFlag.autoOptimization = false;
 				this.audioService.setMicrophoneAutoOptimization(event.switchValue)
-					.then((value) => {
-						console.log('onToggleOfMicrophoneAutoOptimization:', value);
-					}).catch(error => {
+					.then((value) => {}).catch(error => {
 						this.logger.error('onToggleOfMicrophoneAutoOptimization', error.message);
 						return EMPTY;
 					});
@@ -381,9 +362,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.microphoneProperties.volume = volume;
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setMicrophoneVolume(volume)
-					.then((value) => {
-						console.log('setVolume', value);
-					}).catch(error => {
+					.then((value) => {}).catch(error => {
 						this.logger.error('setVolume', error.message);
 						return EMPTY;
 					});
@@ -399,11 +378,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.dashboardService.isShellAvailable) {
 				this.dashboardService.setMicrophoneStatus(event.switchValue)
 					.then((value: boolean) => {
-						const status: FeatureStatus = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardMicrophone);
-						status.status = event.switchValue;
-						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);
-						console.log('onToggleOfMicrophone', value);
-					}).catch(error => {
+                    const status: FeatureStatus = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardMicrophone);
+                    status.status = event.switchValue;
+                    this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);
+                }).catch(error => {
 						this.logger.error('onToggleOfMicrophone', error.message);
 						return EMPTY;
 					});
@@ -419,9 +397,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.cacheFlag.keyboardNoiseSuppression = false;
 				this.audioService.setSuppressKeyboardNoise(event.switchValue)
-					.then((value: boolean) => {
-						console.log('onToggleOfSuppressKbdNoise', value);
-					}).catch(error => {
+					.then((value: boolean) => {}).catch(error => {
 						this.logger.error('onToggleOfSuppressKbdNoise', error.message);
 						return EMPTY;
 					});
@@ -437,9 +413,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.cacheFlag.AEC = false;
 				this.audioService.setMicrophoneAEC(event.switchValue)
-					.then((value: boolean) => {
-						console.log('setMicrophoneAEC', value);
-					}).catch(error => {
+					.then((value: boolean) => {}).catch(error => {
 						this.logger.error('setMicrophoneAEC', error.message);
 						return EMPTY;
 					});
@@ -454,9 +428,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		try {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.startMicrophoneMonitor(this.startMonitorHandler.bind(this))
-					.then((value: boolean) => {
-						console.log('startMonitor', value);
-					}).catch(error => {
+					.then((value: boolean) => {}).catch(error => {
 						this.logger.error('startMonitor', error.message);
 						return EMPTY;
 					});
@@ -471,9 +443,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		try {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.stopMicrophoneMonitor()
-					.then((value: boolean) => {
-						console.log('stopMonitor', value);
-					}).catch(error => {
+					.then((value: boolean) => {}).catch(error => {
 						this.logger.error('stopMonitor', error.message);
 						return EMPTY;
 					});
@@ -485,17 +455,16 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	startMonitorHandler(microphone: Microphone) {
-		// because microphone object only contains the changed properies
-		this.microphoneProperties = {...this.microphoneProperties, ...microphone};
-		// this.microphoneProperties = microphone;
-		// update microphone mode
-		if (this.microphoneProperties.currentMode != '') {
+        // because microphone object only contains the changed properies
+        this.microphoneProperties = {...this.microphoneProperties, ...microphone};
+        // this.microphoneProperties = microphone;
+        // update microphone mode
+        if (this.microphoneProperties.currentMode != '') {
 			this.microOptimizeModeResponse.current = this.microphoneProperties.currentMode;
 		}
-		this.microphoneLoader = false;
-		console.log('startMonitorHandler for microphone', JSON.stringify(microphone));
-		this.updateMicrophoneCache();
-	}
+        this.microphoneLoader = false;
+        this.updateMicrophoneCache();
+    }
 
 	initMockData() {
 		this.microphoneProperties = new Microphone(true, false, 0, '', false, false, false, false, true);
@@ -563,49 +532,48 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	updateMicrophoneHandler(msg: any) {
-		this.microphoneLoader = false;
+        this.microphoneLoader = false;
 
-		if (msg.hasOwnProperty('available')) {
+        if (msg.hasOwnProperty('available')) {
 			this.microphoneProperties.available = msg.available;
 		}
-		if (msg.hasOwnProperty('muteDisabled')) {
+        if (msg.hasOwnProperty('muteDisabled')) {
 			this.microphoneProperties.muteDisabled = msg.muteDisabled;
 		}
-		if (msg.hasOwnProperty('volume')) {
-			console.log('*****ready to change volume ' + msg.volume)
-			this.microphoneProperties.volume = msg.volume;
-		}
-		if (msg.hasOwnProperty('permission')) {
+        if (msg.hasOwnProperty('volume')) {
+            this.microphoneProperties.volume = msg.volume;
+        }
+        if (msg.hasOwnProperty('permission')) {
 			this.microphoneProperties.permission = msg.permission;
 			// update cache used in dashboard page
 			const status = new FeatureStatus(msg.available, msg.muteDisabled, msg.permission);
 			this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);
 		}
-		if (msg.hasOwnProperty('modes')) {
+        if (msg.hasOwnProperty('modes')) {
 			this.microOptimizeModeResponse.modes = msg.modes;
 		}
-		if (msg.hasOwnProperty('currentMode')) {
+        if (msg.hasOwnProperty('currentMode')) {
 			if(msg.currentMode && this.cacheFlag.currentMode) {
 				this.microphoneProperties.currentMode = msg.currentMode;
 				this.microOptimizeModeResponse.current = msg.currentMode;
 			}
 		}
-		if (msg.hasOwnProperty('keyboardNoiseSuppression') && this.cacheFlag.keyboardNoiseSuppression) {
+        if (msg.hasOwnProperty('keyboardNoiseSuppression') && this.cacheFlag.keyboardNoiseSuppression) {
 			this.microphoneProperties.keyboardNoiseSuppression = msg.keyboardNoiseSuppression;
 		}
-		if (msg.hasOwnProperty('AEC') && this.cacheFlag.AEC) {
+        if (msg.hasOwnProperty('AEC') && this.cacheFlag.AEC) {
 			this.microphoneProperties.AEC = msg.AEC;
 		}
-		if (msg.hasOwnProperty('disableEffect')) {
+        if (msg.hasOwnProperty('disableEffect')) {
 			this.microphoneProperties.disableEffect = msg.disableEffect;
 		}
-		if (msg.hasOwnProperty('autoOptimization') && this.cacheFlag.autoOptimization) {
+        if (msg.hasOwnProperty('autoOptimization') && this.cacheFlag.autoOptimization) {
 			this.microphoneProperties.autoOptimization = msg.autoOptimization;
 			// because this item need plugin response, so it is the last response
 			// this.microphoneLoader = false;
 		}
-		// if message has finished flag, means already get all the data, now can save to cache
-		if (msg.hasOwnProperty('finished')) {
+        // if message has finished flag, means already get all the data, now can save to cache
+        if (msg.hasOwnProperty('finished')) {
 			this.updateMicrophoneCache();
 			// reset cacheFlag
 			this.cacheFlag.AEC = true;
@@ -613,16 +581,13 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.cacheFlag.currentMode = true;
 			this.cacheFlag.keyboardNoiseSuppression = true;
 		}
-		
-		console.log('updateMicrophoneHandler ' + JSON.stringify(msg));
-	}
+    }
 
 	updateMicrophoneCache() {
-		const info = {
+        const info = {
 			data: this.microphoneProperties,
 			modes: this.microOptimizeModeResponse.modes
 		};
-		console.log('ready to update microhone cache');
-		this.commonService.setLocalStorageValue(LocalStorageKey.MicrohoneCapability, info);
-	}
+        this.commonService.setLocalStorageValue(LocalStorageKey.MicrohoneCapability, info);
+    }
 }

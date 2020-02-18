@@ -94,9 +94,7 @@ export class ScanningComponent implements OnInit, OnDestroy, Permit {
 					this.changeDetectorRef.detectChanges();
 				});
 			});
-		} catch (error) {
-			console.error(error.message);
-		}
+		} catch (error) {}
 	}
 
 	private calculateProgressTime(scanSteps: OneClickScanSteps[]): number {

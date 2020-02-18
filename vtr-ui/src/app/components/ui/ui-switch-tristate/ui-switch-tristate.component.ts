@@ -26,8 +26,7 @@ export class UiSwitchTristateComponent implements OnInit {
 	}
 
 	onChange(event) {
-		this.value = event.target.value;
-		this.change.emit(this.value);
-		console.log('TRISTATE CHANGE', this.value, event);
-	}
+        this.value = event.target.value;
+        this.change.emit(this.value);
+    }
 }

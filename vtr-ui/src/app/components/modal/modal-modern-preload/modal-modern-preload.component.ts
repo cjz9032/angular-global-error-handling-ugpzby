@@ -234,15 +234,14 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 	}
 
 	installEntitledApp() {
-		const sendAppList: AppItem[] = [];
-		this.checkedAppList.forEach(app => {
+        const sendAppList: AppItem[] = [];
+        this.checkedAppList.forEach(app => {
 			sendAppList.push({ appID: app.appID, status: app.status });
 		});
-		console.log(sendAppList);
-		this.isAppInstallError = false;
-		this.modernPreloadService.installEntitledApp(sendAppList, (response) => this.responseHandler(response));
-		this.modernPreloadService.DownloadButtonStatus = DownloadButtonStatusEnum.DOWNLOADING;
-	}
+        this.isAppInstallError = false;
+        this.modernPreloadService.installEntitledApp(sendAppList, (response) => this.responseHandler(response));
+        this.modernPreloadService.DownloadButtonStatus = DownloadButtonStatusEnum.DOWNLOADING;
+    }
 
 	retry() {
 		this.getAppList();

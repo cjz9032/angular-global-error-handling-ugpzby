@@ -66,8 +66,7 @@ export function snake2CamelCase(message: string) {
 		.replace(
 			/_(\w)/g,
 			($, $1) => $1.toUpperCase()
-		)
-		;
+		);
 }
 
 export function snake2PascalCase(message: string) {
