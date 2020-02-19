@@ -140,6 +140,7 @@ export class ConfigService {
 				if (isBetaUser && await this.canShowSearch()) {
 					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
+				this.initializeWiFiItem(resultMenu);
 				this.smodeFilter(resultMenu, this.deviceService.isSMode);
 				this.armFilter(resultMenu, this.deviceService.isArm);
 				this.menu = resultMenu.filter(item => !item.hide);
@@ -149,18 +150,11 @@ export class ConfigService {
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
 			resultMenu = cloneDeep(this.menuItems);
-			if (machineType !== undefined) {
-				// await this.smartAssistFilter(machineType, resultMenu);
-			} else if (this.deviceService.isShellAvailable) {
-				await this.deviceService.getMachineType().then(async (value: number) => {
-					// await this.smartAssistFilter(value, resultMenu);
-				});
-			}
 			const canShowPrivacy = await this.canShowPrivacy();
 			if (!canShowPrivacy) {
 				resultMenu = resultMenu.filter(item => item.id !== 'privacy');
 			}
-			this.showSecurityItem(country.toLowerCase(), resultMenu);
+			this.initializeSecurityItem(country.toLowerCase(), resultMenu);
 			this.smodeFilter(resultMenu, this.deviceService.isSMode);
 			this.armFilter(resultMenu, this.deviceService.isArm);
 			this.menuBySegment.commercial = cloneDeep(resultMenu);
@@ -210,6 +204,13 @@ export class ConfigService {
 			this.menuBySegment.commercial = this.menuBySegment.commercial.filter(item => !item.hide);
 			this.menuBySegment.consumer = this.menuBySegment.consumer.filter(item => !item.hide);
 			this.menuBySegment.smb = this.menuBySegment.smb.filter(item => !item.hide);
+			if (machineType !== undefined) {
+				this.smartAssistFilter(machineType);
+			} else if (this.deviceService.isShellAvailable) {
+				this.deviceService.getMachineType().then(async (value: number) => {
+					this.smartAssistFilter(value);
+				});
+			}
 			this.notifyMenuChange(this.menu);
 			return resolve(this.menu);
 		});
@@ -235,20 +236,24 @@ export class ConfigService {
 		}
 	}
 
-	showSecurityItem(region, items) {
+	initializeSecurityItem(region, items) {
 		const securityItem = items.find((item) => item.id === 'security');
-		const cacheWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, false);
-		items = this.supportFilter(items, 'wifi-security', cacheWifi);
-		if (typeof this.wifiSecurity.isSupported === 'boolean') {
-			items = this.supportFilter(items, 'wifi-security', this.wifiSecurity.isSupported);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
-		}
+		this.initializeWiFiItem(items);
 		if (securityItem) {
 			if (region === 'cn') {
 				items = this.supportFilter(items, 'internet-protection', false);
 			} else {
 				items = this.supportFilter(items, 'internet-protection', true);
 			}
+		}
+	}
+
+	initializeWiFiItem(items) {
+		const cacheWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, false);
+		items = this.supportFilter(items, 'wifi-security', cacheWifi);
+		if (typeof this.wifiSecurity.isSupported === 'boolean') {
+			items = this.supportFilter(items, 'wifi-security', this.wifiSecurity.isSupported);
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
 		}
 	}
 
@@ -312,27 +317,35 @@ export class ConfigService {
 		}
 	}
 
-	async smartAssistFilter(machineType: number, items) {
+	async smartAssistFilter(machineType: number) {
 		if (machineType === 0 || machineType === 1) {
-			await this.showSmartAssist(items);
+			this.showSmartAssist();
 		} else {
-			this.removeSmartAssistMenu(items);
+			this.removeSmartAssistMenu(this.menu);
+			this.removeSmartAssistMenu(this.menuBySegment.consumer);
+			this.removeSmartAssistMenu(this.menuBySegment.commercial);
+			this.removeSmartAssistMenu(this.menuBySegment.smb);
 		}
 	}
 
-	private async showSmartAssist(items) {
+	private async showSmartAssist() {
 		this.logger.info('MenuMainComponent.showSmartAssist: inside');
-		const myDeviceItem = items.find((item) => item.id === 'device');
-		if (myDeviceItem !== undefined) {
+		const myDeviceItem = this.menu.find((item) => item.id === 'device');
+		const consumerMyDeviceItem = this.menuBySegment.consumer.find((item) => item.id === 'device');
+		const commercialMyDeviceItem = this.menuBySegment.commercial.find((item) => item.id === 'device');
+		const smbMyDeviceItem = this.menuBySegment.smb.find((item) => item.id === 'device');
+		if (myDeviceItem !== undefined || consumerMyDeviceItem !== undefined || commercialMyDeviceItem !== undefined || smbMyDeviceItem !== undefined) {
 			// if cache has value true for IsSmartAssistSupported, add menu item
 			const smartAssistCacheValue = this.commonService.getLocalStorageValue(
 				LocalStorageKey.IsSmartAssistSupported,
 				false
 			);
 			this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
-
 			if (!smartAssistCacheValue) {
-				this.removeSmartAssistMenu(items);
+				this.removeSmartAssistMenu(this.menu);
+				this.removeSmartAssistMenu(this.menuBySegment.consumer);
+				this.removeSmartAssistMenu(this.menuBySegment.commercial);
+				this.removeSmartAssistMenu(this.menuBySegment.smb);
 			}
 
 			// raj: promise.all breaks if any one function is breaks. adding feature wise capability check
@@ -394,14 +407,20 @@ export class ConfigService {
 				assistCapability.isAPSSupported;
 
 			if (this.isSmartAssistAvailable) {
-				this.addSmartAssistMenu(items);
+				this.addSmartAssistMenu(this.menu);
+				this.addSmartAssistMenu(this.menuBySegment.consumer);
+				this.addSmartAssistMenu(this.menuBySegment.commercial);
+				this.addSmartAssistMenu(this.menuBySegment.smb);
 			} else {
-				this.removeSmartAssistMenu(items);
+				this.removeSmartAssistMenu(this.menu);
+				this.removeSmartAssistMenu(this.menuBySegment.consumer);
+				this.removeSmartAssistMenu(this.menuBySegment.commercial);
+				this.removeSmartAssistMenu(this.menuBySegment.smb);
 			}
 
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, this.isSmartAssistAvailable);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, assistCapability);
-
+			this.notifyMenuChange(this.menu);
 			this.logger.error('configService.showSmartAssist capability check',
 				{
 					smartAssistCacheValue,
@@ -516,17 +535,23 @@ export class ConfigService {
 	updateWifiMenu(menu, wifiIsSupport) {
 		const securityItem = menu.find((item) => item.id === 'security');
 		if (menu.find((item) => item.id === 'wifi-security')
-			|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
+		|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
 			this.supportFilter(menu, 'wifi-security', wifiIsSupport);
-		} else if (wifiIsSupport && !this.deviceService.isSMode && !this.deviceService.isArm) {
-			if (securityItem && securityItem.subitems) {
+			return;
+		} 
+
+		if (this.deviceService.isSMode || this.deviceService.isArm) return;
+		
+		if (wifiIsSupport) {
+			if (securityItem && securityItem.subitems && this.activeSegment !== SegmentConst.Gaming) {
 				const wifiItem = this.menuItems.find((item) => item.id === 'security').subitems.find((item) => item.id === 'wifi-security');
 				securityItem.subitems.splice(3, 0, wifiItem);
-			} else {
-				const supportIndex = menu.findIndex((item) => item.id === 'support');
-				const wifiItems = this.menuItems.find((item) => item.id === 'wifi-security');
-				menu.splice(supportIndex, 0, wifiItems);
+				return;
 			}
+		
+			const supportIndex = menu.findIndex((item) => item.id === 'support');
+			const wifiItems = this.activeSegment !== SegmentConst.Gaming ? this.menuItems.find((item) => item.id === 'wifi-security') : this.menuItemsGaming.find((item) => item.id === 'wifi-security');
+			menu.splice(supportIndex, 0, wifiItems);
 		}
 	}
 

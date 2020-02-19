@@ -19,6 +19,34 @@
 			"subitems": []
 		},
 		{
+			"id": "wifi-security",
+			"label": "common.menu.security.title",
+			"path": "security/wifi-security",
+			"icon": [
+				"fal",
+				"lock"
+			],
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.security",
+			"forArm": false,
+			"subitems": [
+				{
+				"id": "wifi-security",
+				"label": "common.menu.security.sub3",
+				"path": null,
+				"icon": null,
+				"metricsEvent": "itemClick",
+				"metricsParent": "navbar",
+				"metricsItem": "link.wifisecurity",
+				"routerLinkActiveOptions": {
+					"exact": true
+				},
+				"subitems": []
+			}
+		]
+		},
+		{
 			"id": "support",
 			"label": "gaming.common.menu.support.title",
 			"path": "support",
