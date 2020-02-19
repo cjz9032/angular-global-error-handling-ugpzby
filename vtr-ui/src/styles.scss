@@ -311,12 +311,15 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		font-size: 1.4rem;
 		text-align: left;
 		max-width: 24.2rem;
+		@media #{$breakpoint_xl6}{
+			max-width: 44.2rem !important;
+		}
+		@media #{$breakpoint_xl2}{
+			max-width: 32.5rem !important;
+		}
 		@media #{$breakpoint_xl}{
 			max-width: 24.2rem !important;
-		}
-		@media #{$breakpoint_xl6}{
-			max-width: 32.5rem;
-		}
+		}		
 	}
 }
 
