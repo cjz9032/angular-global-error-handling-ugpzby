@@ -74,6 +74,7 @@ export class WidgetLightingComponent implements OnInit {
 		} else if (!this.ledSetFeature && !this.ledDriver) {
 			this.isLightingVisible = false;
 		}
+		console.log("ledSwitchButtonFeature----------------",this.ledSwitchButtonFeature);
 		if(this.ledSwitchButtonFeature){
 		 this.regLightingProfileIdChangeEvent();
 		}
@@ -147,6 +148,7 @@ export class WidgetLightingComponent implements OnInit {
 
 	public setProfileEvent(profileId){
 		this.ngZone.run(()=>{
+			console.log("profileId------------event------------",profileId);
             if(this.setprofId === profileId) return;
             this.setprofId = profileId;
             if (this.setprofId !== undefined) {

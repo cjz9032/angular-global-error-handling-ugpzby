@@ -73,6 +73,7 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
   }
 
   public colorPickerChangeFun(event){
+    console.log("event----------------",event);
     this.color = this.rgbToHex(event);
   }
  
@@ -92,6 +93,7 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
   }
 
   public cpSliderDragEndFun(event){
+    console.log("slıder----------------",event);
     if(this.clickEvent.target !== ""){
       if(this.elementRef.nativeElement){
         if(!this.elementRef.nativeElement.contains(this.clickEvent.target) && this.isFirstTrigger){
@@ -107,15 +109,15 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
     this.isFirstTrigger = true;
     if (this.elementRef.nativeElement) {
         if (!this.elementRef.nativeElement.contains(event.target)) {
-    setTimeout(() => {
-      if(this.isSliderOut){
-        this.isColorPicker = true;
-        this.isSliderOut = false;
-      }else{
-        this.isColorPicker = false;
-        this.isToggleColorPicker.emit(this.isColorPicker);
-      }
-    },50)
+          setTimeout(() => {
+            if(this.isSliderOut){
+              this.isColorPicker = true;
+              this.isSliderOut = false;
+            }else{
+              this.isColorPicker = false;
+              this.isToggleColorPicker.emit(this.isColorPicker);
+            }
+          },50)
         }
     }
   }
