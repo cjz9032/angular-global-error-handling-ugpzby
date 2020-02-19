@@ -1,12 +1,19 @@
-<p>
-	<input class="styled-checkbox"
-		id="{{checkboxId+'_checkbox'}}"
-		attr.aria-label="{{checkboxId+'_checkbox'}}"
+<div class="auto-set-checkbox custom-checkbox-gaming">
+	<input [id]="componentId"
+		class="custom-control-input"
 		type="checkbox"
-		[value]="value"
-		[checked]="checked"
+		role="checkbox"
+		tabindex="-1"
+		[name]="componentId"
+		[(ngModel)]="value"
 		[disabled]="disabled"
-		(change)="onChange($event)">
-	<label [ngClass]="{'disabled': disabled}"
-		for="{{checkboxId+'_checkbox'}}">{{ label }}</label>
-</p>
+		(change)="onChange($event)"
+		[attr.aria-label]="componentId"
+		[attr.aria-checked]="checked"
+		[attr.aria-labelledby]="componentId"/>
+	<span class="checkmark"></span>
+	<label [for]="componentId"
+		tabindex="0">
+		{{ label }}
+	</label>
+</div>

@@ -27,7 +27,7 @@
 								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow',bctInfo.checkboxValue?'disabled':'']"
 									ngbDropdownToggle
-									 #startToggle
+									#startToggle
 									[disabled]="bctInfo.checkboxValue?true:false"
 									type="button"
 									id="{{textId}}-start-dropdown"
@@ -121,17 +121,12 @@
 						*ngIf="!displayNoteOnly"
 						[class.disabled]="isGaugeResetRunning">
 						<div class="col px-5">
-							<div class="auto-set-checkbox custom-checkbox-gaming">
-								<input type="checkbox"
-									class="custom-control-input"
-									[id]="isCheckedAutoInput + randomNumber"
-									attr.aria-label="batteryThreshold-options-checkboxText"
-									[name]="isCheckedAutoInput + randomNumber"
-									[(ngModel)]="bctInfo.checkboxValue"
-									(ngModelChange)='toggleAutoChargeSettings($event)'>
-								<span class="checkmark"></span>
-								<label [for]="isCheckedAutoInput + randomNumber">{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate}}</label>
-							</div>
+							<vtr-ui-checkbox [componentId]="'cb-battery-charge-threshold'"
+								[value]="bctInfo.checkboxValue"
+								[checked]="bctInfo.checkboxValue"
+								(toggle)='toggleAutoChargeSettings($event)'
+								[label]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate">
+							</vtr-ui-checkbox>
 						</div>
 					</div>
 				</div>
