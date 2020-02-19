@@ -430,7 +430,7 @@
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.hardwarescan",
-			"segment": "-[Commercial]",
+			"segment": "-[Gaming]",
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
