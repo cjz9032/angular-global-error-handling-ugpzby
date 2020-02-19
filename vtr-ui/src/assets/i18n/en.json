@@ -562,7 +562,7 @@
         },
         "networkBoost": {
             "title": "Network Boost",
-            "introLine": "Enabling Network Boost will automatically prioritize games to the highest level within your network, maximizing the speed. If you are using any apps while gaming, like Twitch or Discard, it's recommended that you add them to the below list so that they will also be prioritized on your network.",
+            "introLine": "Enabling Network Boost will automatically prioritize games to the highest level within your network, maximizing the speed. If you are using any apps while gaming, like Twitch or Discord, it's recommended that you add them to the below list so that they will also be prioritized on your network.",
             "modalTurn": {
                 "title": "Turn on Network Boost ?",
                 "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
