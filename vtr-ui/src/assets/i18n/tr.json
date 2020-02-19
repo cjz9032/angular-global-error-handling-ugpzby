@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Isı Kipi Ayarı",
                     "thermalMode2SettingDesc": "Kullanmak istediğiniz kipi seçin.",
-                    "fnQDesc": "Fn + Q kısayolunu kullanarak kipi değiştirebilirsiniz.",
+                    "fnQDesc": "Fn+Q kısayolunu kullanarak kipi değiştirebilirsiniz.",
                     "perormanceTitle": "Performans Kipi",
                     "performanceDesc": "Daha fazla fan hızıyla ve daha fazla güç tüketerek bilgisayarınızın performansını artırın.",
                     "OCDesc": "Hız Aşırtma özelliğini açmayı seçebilirsiniz.",

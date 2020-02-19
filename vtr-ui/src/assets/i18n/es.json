@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Config. de modo térmico",
                     "thermalMode2SettingDesc": "Seleccione la modalidad que desee utilizar.",
-                    "fnQDesc": "Puede cambiar de modalidad utilizando la combinación de teclas Fn + Q.",
+                    "fnQDesc": "Puede cambiar de modalidad utilizando la combinación de teclas Fn+Q.",
                     "perormanceTitle": "Modalidad de rendimiento",
                     "performanceDesc": "Aumente el rendimiento del sistema con más velocidad del ventilador y más consumo de energía.",
                     "OCDesc": "Puede seleccionar que se active la característica de Aceleración.",

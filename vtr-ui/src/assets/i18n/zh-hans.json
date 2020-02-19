@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "散热模式设置",
                     "thermalMode2SettingDesc": "选择要使用的模式。",
-                    "fnQDesc": "可使用快捷键 Fn + Q 切换模式。",
+                    "fnQDesc": "可使用快捷键 Fn+Q 切换模式。",
                     "perormanceTitle": "野兽模式",
                     "performanceDesc": "提升计算机性能，同时会提高风扇速度和功耗。",
                     "OCDesc": "可选择开启“超频”功能。",

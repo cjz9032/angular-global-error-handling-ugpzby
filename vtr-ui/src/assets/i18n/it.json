@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Impost. modalità termica",
                     "thermalMode2SettingDesc": "Selezionare la modalità da utilizzare.",
-                    "fnQDesc": "È possibile cambiare la modalità utilizzando la combinazione di tasti Fn + Q.",
+                    "fnQDesc": "È possibile cambiare la modalità utilizzando la combinazione di tasti Fn+Q.",
                     "perormanceTitle": "Modalità Prestazioni",
                     "performanceDesc": "Aumenta le prestazioni del computer con una maggiore velocità della ventola e un maggiore consumo energetico.",
                     "OCDesc": "È possibile scegliere di attivare la funzione di overclock.",

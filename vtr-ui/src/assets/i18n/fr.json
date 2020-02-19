@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Paramètres mode thermique",
                     "thermalMode2SettingDesc": "Choisissez le mode que vous souhaitez utiliser.",
-                    "fnQDesc": "Vous pouvez changer de mode à l'aide du raccourci Fn + Q.",
+                    "fnQDesc": "Vous pouvez changer de mode à l'aide du raccourci Fn+Q.",
                     "perormanceTitle": "Mode de performance",
                     "performanceDesc": "Améliorez les performances de votre ordinateur avec une vitesse de ventilateur supérieure et une consommation d'électricité plus élevée.",
                     "OCDesc": "Vous pouvez choisir d'activer la fonction de surfréquençage.",

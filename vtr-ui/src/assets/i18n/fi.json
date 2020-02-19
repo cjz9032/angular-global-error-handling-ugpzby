@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Lämpö-tila-asetus",
                     "thermalMode2SettingDesc": "Valitse tila, jota haluat käyttää.",
-                    "fnQDesc": "Voit vaihtaa tilaa käyttämällä pikanäppäintä Fn + Q.",
+                    "fnQDesc": "Voit vaihtaa tilaa käyttämällä pikanäppäintä Fn+Q.",
                     "perormanceTitle": "Suorituskykytila",
                     "performanceDesc": "Parantaa tietokoneesi suorituskykyä, lisää tuulettimen nopeutta ja kuluttaa enemmän virtaa.",
                     "OCDesc": "Voit ottaa käyttöön ylikellotustoiminnon.",

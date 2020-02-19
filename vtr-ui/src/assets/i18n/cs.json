@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Nastavení teplotního režimu",
                     "thermalMode2SettingDesc": "Vyberte režim, který chcete použít.",
-                    "fnQDesc": "Režim můžete přepnout pomocí klávesové zkratky Fn + Q.",
+                    "fnQDesc": "Režim můžete přepnout pomocí klávesové zkratky Fn+Q.",
                     "perormanceTitle": "Režim výkonu",
                     "performanceDesc": "Zvyšte výkon svého počítače vyšší rychlostí ventilátoru a vyšší spotřebou energie.",
                     "OCDesc": "Můžete se rozhodnout zapnout funkci přetaktování.",

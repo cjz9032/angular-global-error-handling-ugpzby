@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Setări mod termic",
                     "thermalMode2SettingDesc": "Alegeți modul pe care doriți să îl utilizați.",
-                    "fnQDesc": "Puteți comuta modul utilizând comanda rapidă Fn + Q.",
+                    "fnQDesc": "Puteți comuta modul utilizând comanda rapidă Fn+Q.",
                     "perormanceTitle": "Mod performanță",
                     "performanceDesc": "Măriți performanța computerului cu o viteză mai mare a ventilatorului și cu mai multă energie consumată.",
                     "OCDesc": "Puteți alege să porniți caracteristica Overclocking.",

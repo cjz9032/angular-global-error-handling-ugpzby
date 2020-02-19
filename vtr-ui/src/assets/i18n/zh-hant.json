@@ -174,7 +174,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "熱模式設定",
                     "thermalMode2SettingDesc": "選擇您要使用的模式。",
-                    "fnQDesc": "您可以使用快捷鍵 Fn + Q 切換模式。",
+                    "fnQDesc": "您可以使用快捷鍵 Fn+Q 切換模式。",
                     "perormanceTitle": "效能模式",
                     "performanceDesc": "加快風扇速度及增加耗電量以提高電腦效能。",
                     "OCDesc": "您可以選擇開啟「超頻」功能。",

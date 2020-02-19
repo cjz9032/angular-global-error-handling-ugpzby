@@ -110,7 +110,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "إعدادات الوضع الحراري",
                     "thermalMode2SettingDesc": "اختر الوضع الذي تريد استخدامه.",
-                    "fnQDesc": "يمكنك تبديل الوضع باستخدام اختصار Fn + Q.",
+                    "fnQDesc": "يمكنك تبديل الوضع باستخدام اختصار Fn+Q.",
                     "perormanceTitle": "وضع الأداء",
                     "performanceDesc": "عزز أداء الكمبيوتر لديك مع زيادة سرعة المروحة والمزيد من استهلاك الطاقة.",
                     "OCDesc": "يمكنك اختيار تشغيل ميزة زيادة الأداء.",
@@ -120,9 +120,9 @@
                     "quietTitle": "الوضع الهادئ",
                     "quietDesc": "حافظ على الهدوء من خلال تقليل أداء الكمبيوتر وسرعة المروحة كلما أمكن ذلك. استهلاك طاقة منخفض.",
                     "OC": {
-                        "cpu_gpuOC": "تمكين زيادة أداء CPU/GPU في وضع Preformance Mode.",
-                        "cpuOC": "تمكين زيادة أداء CPU في وضع Preformance Mode.",
-                        "gpuOC": "تمكين زيادة أداء GPU في وضع Preformance Mode.",
+                        "cpu_gpuOC": "تمكين زيادة أداء CPU/GPU في وضع Performance Mode.",
+                        "cpuOC": "تمكين زيادة أداء CPU في وضع Performance Mode.",
+                        "gpuOC": "تمكين زيادة أداء GPU في وضع Performance Mode.",
                         "advance": "متقدم",
                         "cpu_gpuDriverLack": "قم بتثبيت برامج التشغيل CPU/GPU لاستخدام وظيفة زيادة الأداء.",
                         "cpuDriverLack": "قم بتثبيت برامج التشغيل CPU لاستخدام وظيفة زيادة الأداء.",

@@ -174,7 +174,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Inst. för temperaturläge",
                     "thermalMode2SettingDesc": "Välj önskat läge.",
-                    "fnQDesc": "Du kan växla läge med kortkommandot Fn + Q.",
+                    "fnQDesc": "Du kan växla läge med kortkommandot Fn+Q.",
                     "perormanceTitle": "Prestandaläge",
                     "performanceDesc": "Öka datorns prestanda med högre fläkthastighet och energiförbrukning.",
                     "OCDesc": "Du kan välja att aktivera överklockningsfunktionen.",

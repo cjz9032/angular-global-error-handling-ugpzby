@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Config. do Modo Térmico",
                     "thermalMode2SettingDesc": "Escolha o modo que deseja usar.",
-                    "fnQDesc": "Você pode alternar o modo usando o atalho Fn + Q.",
+                    "fnQDesc": "Você pode alternar o modo usando o atalho Fn+Q.",
                     "perormanceTitle": "Modo de Desempenho",
                     "performanceDesc": "Aumente o desempenho do computador com mais velocidade do ventilador e mais energia consumida.",
                     "OCDesc": "Você pode optar por ativar o recurso de Overclocking.",

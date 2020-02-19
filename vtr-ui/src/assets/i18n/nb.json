@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Innstillinger termisk modus",
                     "thermalMode2SettingDesc": "Velg modusen du ønsker å bruke.",
-                    "fnQDesc": "Du kan endre modus ved å bruke hurtigtastene Fn + Q.",
+                    "fnQDesc": "Du kan endre modus ved å bruke hurtigtastene Fn+Q.",
                     "perormanceTitle": "Ytelsesmodus",
                     "performanceDesc": "Øk datamaskinens ytelse med høyere viftehastighet og høyere strømforbruk.",
                     "OCDesc": "Du kan velge å skru på overklokkingsfunksjonaliteten.",
