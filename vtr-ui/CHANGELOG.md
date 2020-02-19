@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.93](https://bitbucket.tc.lenovo.com///compare/v1.2.92...v1.2.93) (2020-02-19)
+
+
+### Bug Fixes
+
+* **smart assist:** disable smart assist IMC calls ([4ec8a67](https://bitbucket.tc.lenovo.com///commit/4ec8a6711f7d5d3bd6328ca53a3e33d313c42a1f))
+
 ### [1.2.92](https://bitbucket.tc.lenovo.com///compare/v1.2.91...v1.2.92) (2020-02-18)
 
 
