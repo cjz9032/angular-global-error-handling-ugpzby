@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Nastavitev toplotnega nač.",
                     "thermalMode2SettingDesc": "Izberite način, ki ga želite uporabljati.",
-                    "fnQDesc": "Med načini lahko preklapljate z bližnjico Fn + Q.",
+                    "fnQDesc": "Med načini lahko preklapljate z bližnjico Fn+Q.",
                     "perormanceTitle": "Zmogljivi način",
                     "performanceDesc": "Povečajte zmogljivost računalnika z večjo hitrostjo ventilatorja in večjo porabo energije.",
                     "OCDesc": "Vklopite lahko funkcijo Zvišanje takta.",

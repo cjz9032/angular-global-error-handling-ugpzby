@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Postavke toplotnog režima",
                     "thermalMode2SettingDesc": "Odaberite režim koji želite da koristite.",
-                    "fnQDesc": "Možete prebaciti režim koristeći prečicu Fn + Q.",
+                    "fnQDesc": "Možete prebaciti režim koristeći prečicu Fn+Q.",
                     "perormanceTitle": "Režim učinka",
                     "performanceDesc": "Pojačajte performanse računara pomoću veće brzine ventilatora i više utrošene struje.",
                     "OCDesc": "Možete odabrati da uključite funkciju Overklok.",

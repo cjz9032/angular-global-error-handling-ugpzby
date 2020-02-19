@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "サーマル・モード設定",
                     "thermalMode2SettingDesc": "使用するモードを選択します。",
-                    "fnQDesc": "ショートカット Fn + Q を使用してモードを切り替えることができます。",
+                    "fnQDesc": "ショートカット Fn+Q を使用してモードを切り替えることができます。",
                     "perormanceTitle": "パフォーマンス・モード",
                     "performanceDesc": "ファン速度を上げより多くの電力を消費してコンピュータのパフォーマンスを向上させます。",
                     "OCDesc": "クロックアップ機能をオンにできます。",

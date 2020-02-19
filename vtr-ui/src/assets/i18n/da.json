@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Indstil. for varmetilstand",
                     "thermalMode2SettingDesc": "Vælg den metode, du vil bruge.",
-                    "fnQDesc": "Du kan skifte tilstand ved hjælp af genvejen Fn + Q.",
+                    "fnQDesc": "Du kan skifte tilstand ved hjælp af genvejen Fn+Q.",
                     "perormanceTitle": "Ydeevnetilstand",
                     "performanceDesc": "Boost computerens ydeevne med højere blæserhastighed og højere strømforbrug.",
                     "OCDesc": "Du kan vælge at aktivere overclockingfunktionen.",

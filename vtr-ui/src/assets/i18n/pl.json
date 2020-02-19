@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Ustawienia trybu term.",
                     "thermalMode2SettingDesc": "Wybierz tryb, którego chcesz używać.",
-                    "fnQDesc": "Możesz przełączyć tryb za pomocą skrótu Fn + Q.",
+                    "fnQDesc": "Możesz przełączyć tryb za pomocą skrótu Fn+Q.",
                     "perormanceTitle": "Tryb wydajny",
                     "performanceDesc": "Zwiększ wydajność swojego komputera kosztem wyższej prędkości wentylatora i większego zużycia energii.",
                     "OCDesc": "Możesz włączyć funkcję Przetaktowywanie.",

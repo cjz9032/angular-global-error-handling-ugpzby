@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Termál mód beállítása",
                     "thermalMode2SettingDesc": "Válassza ki a használni kívánt módot.",
-                    "fnQDesc": "Másik módra az Fn + Q paranccsal válthat.",
+                    "fnQDesc": "Másik módra az Fn+Q paranccsal válthat.",
                     "perormanceTitle": "Teljesítményközpontú mód",
                     "performanceDesc": "Számítógépe teljesítményének növelése nagyobb ventilátor sebességgel és több energiafogyasztással.",
                     "OCDesc": "Úgy is dönthet, hogy bekapcsolja a Túlpörgetés funkciót.",
