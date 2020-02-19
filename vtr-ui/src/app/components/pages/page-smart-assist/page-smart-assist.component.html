@@ -210,15 +210,13 @@
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 													</p>
 													<div class="custom-control custom-checkbox smart-assist-checkbox">
-														<input id="cb-zero-touch-lock"
-															attr.aria-label="cb-zero-touch-lock"
-															type="checkbox"
+                                                            <vtr-ui-checkbox [componentId]="'cb-zero-touch-lock'" attr.aria-label="cb-zero-touch-lock"
 															name="zero-check-lock-checkbox-id"
 															class="custom-control-input"
 															[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
 												|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
 															[(ngModel)]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
-															(ngModelChange)='onZeroTouchLockFacialRecoChange()' />
+                                                            (ngModelChange)='onZeroTouchLockFacialRecoChange()'></vtr-ui-checkbox>
 														<!-- [checked]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"/> -->
 														<label for="cb-zero-touch-lock"
 															class="custom-control-label">
