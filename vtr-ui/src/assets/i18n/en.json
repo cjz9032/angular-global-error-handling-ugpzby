@@ -2274,7 +2274,7 @@
             "startTrialTitle": "Create your own Connected Home Security",
             "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
             "join": "Join",
-            "joinTitle": "Join your families Connected Home Security",
+            "joinTitle": "Join your family's Connected Home Security",
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
@@ -2553,7 +2553,7 @@
                 "titleDescribe": "Please ensure location permissions are enabled for Vantage in order to add your device to an existing Connected Home Account, and to use Connected Home Security.",
                 "enterCode": "Enter the invitation code",
                 "joinFamilyAccount": "Join family account",
-                "joinChs": "Join your families Connected Home Security",
+                "joinChs": "Join your family's Connected Home Security",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECT",
                 "addHome": "Add Home",
