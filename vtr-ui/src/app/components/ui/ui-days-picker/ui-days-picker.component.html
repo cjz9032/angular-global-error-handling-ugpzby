@@ -5,12 +5,11 @@
 		<div class="col-md-12 col-sm-12 pl-0">
 
 			<div class="dropdown">
-				<input id="{{daysId}}"
-					tabindex="-1"
+                    <vtr-ui-checkbox componentId="{{daysId}}"
+                    tabindex="-1"
 					class="dropcheck"
-					type="checkbox"
 					[checked]="showDropDown"
-					(click)="onToggleDropDown()">
+                    (click)="onToggleDropDown()"></vtr-ui-checkbox>
 				<label for="{{daysId}}" role="combobox"
 					aria-label="'smart standby, schedule dropdown days list'" [attr.aria-expanded]="showDropDown" tabindex="0" (keydown.enter)="onToggleDropDown()"
 					class="dropbtn" #dayslistbox>
@@ -30,14 +29,12 @@
 								<div class="main-block pl-5 pt-5 pb-3" role="radiogroup" tabindex="0">
 									<div *ngFor="let i of smartStandbyService.allDays">
 										<div class="custom-control custom-checkbox mb-3 ml-3">
-											<input class="custom-control-input"
-												type="checkbox"
-												role="checkbox"
+                                                <vtr-ui-checkbox componentId="{{i.shortName}}"
+                                                role="checkbox"
 												value="{{i.shortName}}"
-												id="{{i.shortName}}"
 												[(ngModel)]="i.status"
 												attr.aria-label="{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}"
-												(change)="selectDay($event)">
+                                                (change)="selectDay($event)"></vtr-ui-checkbox>
 											<label class="custom-control-label"
 
 												for="{{i.shortName}}">

@@ -192,14 +192,14 @@
 										*ngIf="privacyGuardOnPasswordCapability">
 										<div class="col-12 ml-4">
 											<div class="custom-control custom-checkbox privacy-checkbox">
-												<input type="checkbox"
-												[disabled]="privacyGuardToggleStatus"
-												class="custom-control-input"
-												[ngClass]="{'custom-control-label-disabled': privacyGuardToggleStatus}"
-													id="cb-privacy-guard"
-													attr.aria-label="cb-privacy-guard"
-													[checked]="privacyGuardCheckBox"
-													(change)="setPrivacyGuardOnPasswordStatusVal($event)" />
+                                                    <vtr-ui-checkbox [componentId]="'cb-privacy-guard'"
+                                                    [disabled]="privacyGuardToggleStatus"
+                                                    class="custom-control-input"
+                                                    [ngClass]="{'custom-control-label-disabled': privacyGuardToggleStatus}"
+                                                        attr.aria-label="cb-privacy-guard"
+                                                        [checked]="privacyGuardCheckBox"
+                                                        (change)="setPrivacyGuardOnPasswordStatusVal($event)"></vtr-ui-checkbox>
+                                                    
 												<span class="checkmark"></span>
 												<label class="custom-control-label"
 												id="cb-privacy-guard"
