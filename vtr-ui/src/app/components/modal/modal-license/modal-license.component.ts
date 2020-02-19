@@ -53,16 +53,15 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		const pageViewMetrics = {
+        const pageViewMetrics = {
 			ItemType: 'PageView',
 			PageName: this.licenseModalMetrics.pageName,
 			PageContext: this.licenseModalMetrics.pageContext,
 			PageDuration: this.timerService.stop(),
 			OnlineStatus: ''
 		};
-		this.sendMetricsAsync(pageViewMetrics);
-		console.log(pageViewMetrics);
-	}
+        this.sendMetricsAsync(pageViewMetrics);
+    }
 
 	setIframeUrl() {
 		const iframe: any = document.querySelector('#license-agreement-iframe');
@@ -81,11 +80,8 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
-			console.log('metrics ready!');
-			this.metrics.sendAsync(data);
-		} else {
-			console.log('can not find metrics');
-		}
+            this.metrics.sendAsync(data);
+        } else {}
 	}
 
 	closeModal() {

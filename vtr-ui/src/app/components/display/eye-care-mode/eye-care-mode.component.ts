@@ -58,24 +58,19 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 	public sliderChange(value: number) {
 		switch (value) {
 			case 1:
-				console.log('todo: warm');
-				break;
+                break;
 			case 2:
-				console.log('todo: eye care mode');
-				break;
+                break;
 			case 3:
-				console.log('todo: default');
-				break;
+                break;
 			case 4:
-				console.log('todo: cold');
-				break;
+                break;
 		}
 	}
 
 	public onResetTemparature($event: any) {
-		console.log('Reset Temperature');
-		this.resetTemparature.emit($event);
-	}
+        this.resetTemparature.emit($event);
+    }
 	public onEyeCareTemparatureChange($event: ChangeContext) {
 		this.eyeCareTemparatureChange.emit($event);
 	}
@@ -83,8 +78,7 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 		this.eyeCareTemparatureValueChange.emit($event);
 	}
 	public onSunsetToSunrise(event: any) {
-		this.sunsetToSunriseStatus.status = !this.sunsetToSunriseStatus.status;
-		console.log('sunset to sunrise in eyecare-mode commponent', this.sunsetToSunriseStatus);
-		this.sunsetToSunrise.emit(event);
-	}
+        this.sunsetToSunriseStatus.status = !this.sunsetToSunriseStatus.status;
+        this.sunsetToSunrise.emit(event);
+    }
 }

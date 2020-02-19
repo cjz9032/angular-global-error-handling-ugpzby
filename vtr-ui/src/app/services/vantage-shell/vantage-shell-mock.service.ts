@@ -1359,21 +1359,17 @@ export class VantageShellService {
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
 	public async deviceFilter(filter) {
-		if (this.phoenix) {
+        if (this.phoenix) {
 			try {
 				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
-			} catch (error) {
-				console.log('In VantageShellService.deviceFilter. Error:', error);
-				console.log('In VantageShellService.deviceFilter. returning mock true due to error.');
-			}
+			} catch (error) {}
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
-		console.log('In VantageShellService.deviceFilter. returning mock true');
-		return true;
-	}
+        return true;
+    }
 	public calcDeviceFilter(filter) {
 		return Promise.resolve({
 			ConnectedHomeSecurity: true,

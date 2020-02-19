@@ -88,7 +88,7 @@
                 "legionEdgeModal": {
                     "line1": "Uz Vantage Edge, vaše postavke će automatski biti podešene na osnovu upotrebe. \n Maksimalan učinak pri igrama, duži vek trajanja baterije kada ne igrate.",
                     "line2": "<b>Prikaz upravljanja funkcijama</b> <br> Neke funkcije nisu dostupne na svim uređajima",
-                    "line3": "<b>Overkloking procesora </b><br> Povećajte maksimalnu brzinu procesora",
+                    "line3": "<b>Overklok CPU/GPU </b><br> Povećajte maksimalnu brzinu procesora",
                     "line4": "<b>Overklok RAM memorije </b><br> Povećajte maksimalnu brzinu memorije",
                     "line5": "<b>Pojačanje mreže </b><br> Odredite prioritet mrežnog saobraćaja za igru koju igrate",
                     "line6": "<b>Dolby </b><br> Podesite vaš zvuk specifično za igru sa Dolby tehnologijom",
@@ -97,7 +97,7 @@
                     "line9": "<b>Zaključ. dodirne table </b><br> Sprečite pogrešne unose onemogućavanjem dodirne table prilikom igranja",
                     "line10": "<b>Automatsko zatvaranje </b><br> Obrišite procese koji nisu potrebni za igranje pre nego što počnete kako biste maksimalno iskoristili dostupne sistemske resurse",
                     "line11": "<b>Toplotni režim </b><br> Postavite željeni profil uređaja za kontrolu brzine ventilatora i hlađenja",
-                    "line12": "<b>Taster makroa </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Taster makroa </b><br> Prilagodite radnje na tastaturi tako da odgovaraju vašem stilu za igru"
                 },
                 "systemInfo": {
                     "systenTooltip": "Zadržite pokazivač na procesoru (CPU) / GPU / RAM i različitim diskovima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Instalirajte GPU upravljački program da biste koristili funkciju Overklok.",
                         "goInstall": "IDI NA INSTALACIJU"
                     },
-                    "autoSwitch": "Automatski prebaci na performanse pri pokretanju igara i vrati nakon toga."	
+                    "autoSwitch": "Automatski prebaci na performanse pri pokretanju igara i vrati nakon toga."
                 },
                 "advancedOC": {
                     "title": "Overklok Napredne postavke",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -3363,10 +3363,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

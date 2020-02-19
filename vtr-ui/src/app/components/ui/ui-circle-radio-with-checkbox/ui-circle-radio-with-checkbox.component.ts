@@ -105,7 +105,6 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			default:
 				break;
 		}
-
 	}
 
 	setChecked(currentItem, selectItem: boolean) {
@@ -145,9 +144,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 				index = this.radioButtons.indexOf(currentItem.nativeElement);
 				this.setChecked(this.radioButtons[index - 1], true);
 			}
-		} catch (error) {
-			console.log('setCheckedToPreviousItem :: ' + error);
-		}
+		} catch (error) { }
 	}
 
 
@@ -162,9 +159,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 				this.setChecked(this.radioButtons[index + 1], true);
 			}
 
-		} catch (error) {
-			console.log('setCheckedToNextItem :: ' + error);
-		}
+		} catch (error) { }
 
 	}
 
@@ -197,9 +192,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			}
 
 
-		} catch (error) {
-			console.log('setRadioButtons :: ' + error);
-		}
+		} catch (error) { }
 
 
 	}

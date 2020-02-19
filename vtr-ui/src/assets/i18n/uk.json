@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "З Vantage Edge настройки будуть автоматично корегуватися залежно від використання. \n Максимальна продуктивність під час ігор, довший час роботи від акумулятора в інших режимах.",
                     "line2": "<b>Огляд керування функцією</b> <br> Деякі функції доступні не на всіх пристроях",
-                    "line3": "<b>Розгін процесора </b><br> Підвищте максимальну швидкість процесора",
+                    "line3": "<b>Розгін ЦП/ГП </b><br> Підвищте максимальну швидкість процесора",
                     "line4": "<b>Розгін ОЗП </b><br> Підвищте максимальну швидкість пам'яті",
                     "line5": "<b>Прискорення мережі </b><br> Надавайте мережевому трафіку гри вищий пріоритет",
                     "line6": "<b>Dolby </b><br> Налаштуйте звук спеціально для ігор із технологією Dolby",
@@ -94,7 +94,7 @@
                     "line9": "<b>Блокування сенс. панелі </b><br> Відключайте сенсорну панель, щоб уникнути помилкових команд під час гри",
                     "line10": "<b>Автоматичне закриття </b><br> Закривайте процеси, які не потрібні для гри, щоб найефективніше використовувати ресурси системи",
                     "line11": "<b>Терморежим </b><br> Виберіть профіль пристрою для керування швидкістю вентилятора й охолодженням",
-                    "line12": "<b>Клавіша макросів </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Клавіша макросів </b><br> Настройте дії клавіатури відповідно до стилю гри"
                 },
                 "systemInfo": {
                     "systenTooltip": "Наводьте вказівник на ЦП/ГП/ОЗП та драйвери, щоб побачити їхній опис, зокрема дані про виробника та модель"
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Інсталюйте драйвер ГП, щоб використовувати функцію розгону.",
                         "goInstall": "ІНСТАЛЮВАТИ"
                     },
-                    "autoSwitch": "Автоматично вмикати продуктивність в іграх і вимикати після них."	
+                    "autoSwitch": "Автоматично вмикати продуктивність в іграх і вимикати після них."
                 },
                 "advancedOC": {
                     "title": "Додаткові настройки розгону",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -3363,10 +3363,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

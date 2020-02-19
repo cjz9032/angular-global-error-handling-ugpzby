@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Aplikácia Vantage Edge automaticky vyladí nastavenia podľa používania. \n Maximálny výkon pri hraní, dlhšia výdrž batérie, keď sa nehráte.",
                     "line2": "<b>Prehľad správy funkcií</b> <br> Niektoré funkcie nie sú k dispozícii vo všetkých zariadeniach",
-                    "line3": "<b>Pretaktovanie CPU </b><br> Zvýšte maximálnu rýchlosť procesora",
+                    "line3": "<b>Pretaktovanie CPU/GPU </b><br> Zvýšte maximálnu rýchlosť procesora",
                     "line4": "<b>Pretaktovanie RAM </b><br> Zvýšte maximálnu rýchlosť pamäte",
                     "line5": "<b>Zrýchlenie siete </b><br> Uprednostnite sieťový prenos údajov hry, ktorú hráte",
                     "line6": "<b>Dolby </b><br> Vylaďte si zvuk špeciálne na hranie vďaka technológii Dolby",
@@ -94,7 +94,7 @@
                     "line9": "<b>Zámok dotykového panela </b><br> Zabráňte chybným vstupom zakázaním dotykového panela, keď sa hráte",
                     "line10": "<b>Automatické zatvorenie </b><br> Skôr než sa začnete hrať, odstráňte procesy, ktoré na hru nepotrebujete, a maximalizujte dostupné systémové prostriedky",
                     "line11": "<b>Tepelný režim </b><br> Nastavenie preferovaného profilu zariadenia na ovládanie otáčok ventilátora a chladenia",
-                    "line12": "<b>Kláves makra</b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Kláves makra</b><br> Prispôsobte klávesové skratky svojmu hernému štýlu"
                 },
                 "systemInfo": {
                     "systenTooltip": "Umiestnením kurzora myši položky CPU/GPU/RAM a rôzne jednotky zobrazíte ich popisy vrátane informácií o výrobe a modeloch"
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač GPU.",
                         "goInstall": "INŠTALOVAŤ"
                     },
-                    "autoSwitch": "Pri spustení hry automaticky aktivovať vysoký výkon, potom obnoviť pôvodný režim."	
+                    "autoSwitch": "Pri spustení hry automaticky aktivovať vysoký výkon, potom obnoviť pôvodný režim."
                 },
                 "advancedOC": {
                     "title": "Detaily pretaktovania",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -3363,10 +3363,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

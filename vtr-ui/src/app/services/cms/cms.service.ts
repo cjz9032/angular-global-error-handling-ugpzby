@@ -39,9 +39,7 @@ export class CMSService {
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
-		}).catch(e => {
-			console.log(e);
-		});
+		}).catch(e => {});
 	}
 
 	deviceFilter(filters) {
@@ -295,9 +293,8 @@ export class CMSService {
 						resolve(response);
 					},
 					error => {
-						console.log('fetchCMSArticle::error', error);
-						reject('fetchCMSArticle error');
-					}
+                        reject('fetchCMSArticle error');
+                    }
 				);
 		});
 	}

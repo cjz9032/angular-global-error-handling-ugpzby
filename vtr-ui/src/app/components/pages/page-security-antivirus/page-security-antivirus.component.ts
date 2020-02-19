@@ -250,9 +250,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 					});
 				}
 			},
-			error => {
-				console.log('fetchCMSContent error', error);
-			}
+			error => {}
 		);
 	}
 

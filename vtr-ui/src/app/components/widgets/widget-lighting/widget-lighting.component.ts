@@ -46,9 +46,8 @@ export class WidgetLightingComponent implements OnInit {
 			}
 		});
 		this.deviceService.getMachineInfo().then((value: any) => {
-			this.defaultLanguage = value.locale;
-			console.log('defaultLanguagedefaultLanguagedefaultLanguagedefaultLanguage===>', this.defaultLanguage);
-		});
+            this.defaultLanguage = value.locale;
+        });
 	}
 
 	public getCapabilities() {
@@ -148,13 +147,12 @@ export class WidgetLightingComponent implements OnInit {
 
 	public setProfileEvent(profileId){
 		this.ngZone.run(()=>{
-			if(this.setprofId === profileId) return;
-			console.log("fn+space-------------home page-----------",profileId);
-			this.setprofId = profileId;
-			if (this.setprofId !== undefined) {
+            if(this.setprofId === profileId) return;
+            this.setprofId = profileId;
+            if (this.setprofId !== undefined) {
 				this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, this.setprofId);
 			}
-		})
+        })
 	}
 
 	public checkStatus(id) {

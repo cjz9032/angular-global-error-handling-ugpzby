@@ -87,10 +87,9 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	ngAfterViewInit() {
-		const welcomeEnd: any = new Date();
-		const welcomeUseTime = welcomeEnd - this.welcomeStart;
-		console.log(`Performance: TutorialPage after view init. ${welcomeUseTime}ms`);
-		this.interestChkboxs.changes.subscribe(() => {
+        const welcomeEnd: any = new Date();
+        const welcomeUseTime = welcomeEnd - this.welcomeStart;
+        this.interestChkboxs.changes.subscribe(() => {
 			if (this.interestChkboxs.length > 8 && this.shouldManuallyFocusMoreInterest === true) {
 				this.interestChkboxs._results[this.interestChkboxs.length - 2].nativeElement.focus();
 				this.shouldManuallyFocusPage2 = false;
@@ -98,96 +97,94 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			}
 		});
 
-		this.welcomepage2.changes.subscribe(() => {
+        this.welcomepage2.changes.subscribe(() => {
 			if (this.welcomepage2.length > 0 && this.shouldManuallyFocusPage2) {
 				this.welcomepage2.first.nativeElement.focus();
 				this.shouldManuallyFocusPage2 = false;
 			}
 		});
-	}
+    }
 
 	next(page) {
 		this.metrics.metricsEnabled = this.privacyPolicy === true;
 		let tutorialData;
 		if (page < 2) {
-			const data = {
+            const data = {
 				ItemType: 'PageView',
 				PageName: 'WelcomePage',
 				PageContext: `page${page}`,
 				PageDuration: this.timerService.stop()
 			};
-			console.log('PageView Event', JSON.stringify(data));
-			this.metrics.sendAsync(data);
-			this.timerService.start();
-			this.page = page;
-			this.progress = 49;
-			tutorialData = new WelcomeTutorial(1, this.tutorialVersion, false);
-			this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorialData);
-		} else {
-			const buttonClickData = {
+            this.metrics.sendAsync(data);
+            this.timerService.start();
+            this.page = page;
+            this.progress = 49;
+            tutorialData = new WelcomeTutorial(1, this.tutorialVersion, false);
+            this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorialData);
+        } else {
+            const buttonClickData = {
 				ItemType: 'FeatureClick',
 				ItemName: 'DONE',
 				ItemParent: 'WelcomePage'
 			};
 
-			this.metrics.sendAsync(buttonClickData);
+            this.metrics.sendAsync(buttonClickData);
 
-			const settingData = {
+            const settingData = {
 				ItemType: 'SettingUpdate',
 				SettingName: 'Accept Privacy Policy',
 				SettingValue: this.privacyPolicy ? 'Enabled' : 'Disabled',
 				SettingParent: 'WelcomePage'
 			};
 
-			this.metrics.sendAsyncEx(settingData, {
+            this.metrics.sendAsyncEx(settingData, {
 				forced: true
 			});
 
-			const toolbarSettingData = {
+            const toolbarSettingData = {
 				ItemType: 'SettingUpdate',
 				SettingName: 'Enable Lenovo Vantage Toolbar',
 				SettingValue: this.vantageToolbar ? 'Enabled' : 'Disabled',
 				SettingParent: 'WelcomePage'
 			};
 
-			this.metrics.sendAsync(toolbarSettingData);
+            this.metrics.sendAsync(toolbarSettingData);
 
-			const usageData = {
+            const usageData = {
 				ItemType: 'SettingUpdate',
 				SettingName: 'UsageType',
 				SettingValue: this.deviceService.isGaming ? 'Gaming' : this.selfSelectService.usageType,
 				SettingParent: 'WelcomePage'
 			};
-			this.metrics.sendAsync(usageData);
+            this.metrics.sendAsync(usageData);
 
-			const interestMetricValue = {};
-			this.selfSelectService.checkedArray.forEach(item => {
+            const interestMetricValue = {};
+            this.selfSelectService.checkedArray.forEach(item => {
 				interestMetricValue[item] = true;
 			});
-			const interestData = {
+            const interestData = {
 				ItemType: 'SettingUpdate',
 				SettingName: 'Interest',
 				SettingValue: interestMetricValue,
 				SettingParent: 'WelcomePage'
 			};
-			this.metrics.sendAsync(interestData);
+            this.metrics.sendAsync(interestData);
 
-			const data = {
+            const data = {
 				ItemType: 'PageView',
 				PageName: 'WelcomePage',
 				PageContext: `page${page}`,
 				PageDuration: this.timerService.stop()
 			};
-			console.log('PageView Event', JSON.stringify(data));
-			this.metrics.sendAsync(data);
-			this.userService.sendSilentlyLoginMetric();
-			tutorialData = new WelcomeTutorial( 2, this.tutorialVersion, true, this.selfSelectService.usageType, this.selfSelectService.checkedArray);
-			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
-			// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
-			this.activeModal.close(tutorialData);
-			this.selfSelectService.saveConfig(false);
-			this.SetVantageToolbar(this.vantageToolbar);
-		}
+            this.metrics.sendAsync(data);
+            this.userService.sendSilentlyLoginMetric();
+            tutorialData = new WelcomeTutorial( 2, this.tutorialVersion, true, this.selfSelectService.usageType, this.selfSelectService.checkedArray);
+            // this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
+            // this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
+            this.activeModal.close(tutorialData);
+            this.selfSelectService.saveConfig(false);
+            this.SetVantageToolbar(this.vantageToolbar);
+        }
 		this.page = ++page;
 	}
 
@@ -212,21 +209,19 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	toggle($event, value) {
-		if ($event.target.checked) {
+        if ($event.target.checked) {
 			this.selfSelectService.checkedArray.push(value);
 		} else {
 			this.selfSelectService.checkedArray.splice(this.selfSelectService.checkedArray.indexOf(value), 1);
 		}
-		console.log(this.selfSelectService.checkedArray);
-		console.log(this.selfSelectService.checkedArray.length);
-		if (!this.isInterestProgressChanged) {
+        if (!this.isInterestProgressChanged) {
 			this.progress += 16;
 			this.isInterestProgressChanged = true;
 		} else if (this.selfSelectService.checkedArray.length === 0) {
 			this.progress -= 16;
 			this.isInterestProgressChanged = false;
 		}
-	}
+    }
 
 	onKeyPress($event) {
 		if ($event.keyCode === 13) {
@@ -254,14 +249,12 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	SetVantageToolbar(toolbarStatus) {
-		console.log('saveToolbar', toolbarStatus);
-		try {
+        try {
 			if (this.powerService.isShellAvailable) {
 				this.powerService.setVantageToolBarStatus(toolbarStatus)
 					.then((value: boolean) => {
-						console.log('setVantageToolBarStatus.then', toolbarStatus);
-						this.getVantageToolBarStatus();
-					}).catch(error => {
+                    this.getVantageToolBarStatus();
+                }).catch(error => {
 						this.logger.error('setVantageToolBarStatus', error.message);
 						return EMPTY;
 					});
@@ -270,7 +263,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.logger.error('getVantageToolBarStatus', error.message);
 			return EMPTY;
 		}
-	}
+    }
 
 	savePrivacy($event, value) {
 		this.privacyPolicy = $event.target.checked;

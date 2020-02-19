@@ -49,7 +49,7 @@ export class TaskActionWithTimeoutService {
 						}))
 					);
 				}),
-				tap((res) => console.log('for Mars analytics >>>>', res))
+				tap(res => {})
 			);
 	}
 

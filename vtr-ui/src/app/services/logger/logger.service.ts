@@ -37,9 +37,7 @@ export class LoggerService {
 		if (this.isShellAvailable) {
 			this.logger.debug(this.getMessage(message, data));
 		}
-		if (environment.allowMockService) {
-			console.log(this.getMessage(message, data));
-		}
+		if (environment.allowMockService) {}
 	}
 
 	//
@@ -47,18 +45,14 @@ export class LoggerService {
 		if (this.isShellAvailable) {
 			this.logger.error(this.getMessage(message, data));
 		}
-		if (environment.allowMockService) {
-			console.log(this.getMessage(message, data));
-		}
+		if (environment.allowMockService) {}
 	}
 
 	public info(message: string, data: any = {}): void {
 		if (this.isShellAvailable) {
 			this.logger.info(this.getMessage(message, data));
 		}
-		if (environment.allowMockService) {
-			console.log(this.getMessage(message, data));
-		}
+		if (environment.allowMockService) {}
 	}
 
 	public exception(message: string, error: Error): void {
@@ -66,9 +60,7 @@ export class LoggerService {
 		if (this.isShellAvailable) {
 			this.logger.error(this.getMessage(message, errorMessage));
 		}
-		if (environment.allowMockService) {
-			console.log(this.getMessage(message, errorMessage));
-		}
+		if (environment.allowMockService) {}
 	}
 
 	/**

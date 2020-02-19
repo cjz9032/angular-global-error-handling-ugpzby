@@ -129,7 +129,7 @@
                         "gpuDriverLack": "Install GPU driver to use Overclocking function.",
                         "goInstall": "GO INSTALL"
                     },
-                    "autoSwitch": "Auto Switch to Performance when launching games and switch back aftetwards."	
+                    "autoSwitch": "Auto Switch to Performance when launching games and switch back aftetwards."
                 },
                 "advancedOC": {
                     "title": "Overclock Advanced Settings",
@@ -699,7 +699,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -2354,11 +2354,12 @@
             "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
-            "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+			"overviewTitle": "Overview",
+			"trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

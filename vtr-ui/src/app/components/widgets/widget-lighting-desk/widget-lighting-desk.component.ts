@@ -40,13 +40,10 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
     this.getCacheList();
     if(this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionDesk) !== undefined){
       this.lightingCapabilities = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionDesk);
-      console.log("cache-------capality----------111111111111111------------111111111111111",this.lightingCapabilities);
-      this.imgDefaultOff();  
-			this.getLightingCapabilitiesFromcache(this.lightingCapabilities); 
+      this.imgDefaultOff();
+      this.getLightingCapabilitiesFromcache(this.lightingCapabilities);
     }
-    console.log("cache------profile-----------111111111111111------------111111111111111",this.lightingProfileById);
     if (this.lightingProfileById !== undefined) {
-      console.log("cache-----------------222222222222------------222222222222222",this.lightingProfileById);
       this.getLightingProfileByIdFromcache(this.lightingProfileById,this.lightingCapabilities);
     }
     this.getLightingCapabilities();
@@ -55,24 +52,18 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
 		}
   }
 
-  ngOnChanges (changes) {
-    console.log("changes----------------",changes)
-  }
+  ngOnChanges (changes) {}
 
   public getLightingCapabilitiesFromcache(lightingCapabilitiesRes){
     try {
-      console.log("cache-----capability------------------->11111111",lightingCapabilitiesRes);
       if (lightingCapabilitiesRes !== undefined) {
         this.lightingCapabilities = lightingCapabilitiesRes;
       }
-    } catch (error){
-      console.log(error);
-    }
+    } catch (error){}
   }
 
   public getLightingProfileByIdFromcache(lightingProfileByIdRes,lightingCapabilitiesRes){
     try {
-      console.log("cache-----getProfileId------------------->222222222222",lightingProfileByIdRes);
       if(lightingProfileByIdRes !== undefined){
         let ProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
         if (ProfileId !== 'undefined') {
@@ -83,27 +74,22 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           this.lightingProfileDetail(lightingProfileByIdRes,this.countObj['count'+this.currentProfileId],lightingCapabilitiesRes);
         }
       }
-    } catch (error){
-      console.log(error);
-    }   
+    } catch (error){}   
   }
 
   public getLightingCapabilities(){
     try {
       if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService.getLightingCapabilities().then((response: any) => {
-          console.log("response--------capility------>3333333333",response);
-          if(response){
-            this.lightingCapabilities = response;
-            this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionDesk,response);
-            this.imgDefaultOff();  
-            this.getLightingProfileById(this.currentProfileId);
-          }
-				});
+                  if(response){
+                    this.lightingCapabilities = response;
+                    this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionDesk,response);
+                    this.imgDefaultOff();  
+                    this.getLightingProfileById(this.currentProfileId);
+                  }
+                });
 			}
-    } catch (error){
-      console.log(error);
-    } 
+    } catch (error){} 
   }
 
   public getLightingProfileById(currProfileId){
@@ -112,55 +98,48 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
         if(currProfileId === 0) return;
         if(this.gamingLightingService.isShellAvailable){
           this.gamingLightingService.getLightingProfileById(currProfileId).then((response:any) => {
-              console.log("response------getProfileId--------->4444444",response);
-              if(response.didSuccess){
-                this.publicPageInfo(response,1);
-              }
+            if(response.didSuccess){
+              this.publicPageInfo(response,1);
+            }
           })
          }
-    } catch (error){
-      console.log(error);
-    } 
+    } catch (error){} 
   }
 
   public setLightingProfileId(event){
-    console.log("event--------------------------------------------->",event.target.value);
-      try {
-          this.isColorPicker = false;
-          this.isShow = true;
-          let profileId = Number(event.target.value);
-          this.currentProfileId = profileId;
-          this.imgDefaultOff();  
-          if (this.currentProfileId === 0) {
-            this.isProfileOff = true;
-          } else {
-            this.isProfileOff = false;
-            /* Use cache before set    start  */
-            this.getCacheList();
-            this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
-            /* Use cache before set    end */
-          }
-          if (this.gamingLightingService.isShellAvailable) {
-            this.gamingLightingService.setLightingProfileId(1, this.currentProfileId).then((response: any) => {
-              console.log("setLightingProfileId--------------------------->",response,this.countObj['count'+this.currentProfileId]);
-              if (response.didSuccess) {
-                this.publicPageInfo(response,1);
+    try {
+        this.isColorPicker = false;
+        this.isShow = true;
+        let profileId = Number(event.target.value);
+        this.currentProfileId = profileId;
+        this.imgDefaultOff();  
+        if (this.currentProfileId === 0) {
+          this.isProfileOff = true;
+        } else {
+          this.isProfileOff = false;
+          /* Use cache before set    start  */
+          this.getCacheList();
+          this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
+          /* Use cache before set    end */
+        }
+        if (this.gamingLightingService.isShellAvailable) {
+          this.gamingLightingService.setLightingProfileId(1, this.currentProfileId).then((response: any) => {
+            if (response.didSuccess) {
+              this.publicPageInfo(response,1);
+            }else{
+              this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+              if(this.currentProfileId === 0){
+                this.isProfileOff = true;
               }else{
-                this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
-                if(this.currentProfileId === 0){
-                  this.isProfileOff = true;
-                }else{
-                  this.isProfileOff = false;
-                  this.getCacheList();
-                  this.isShowpageInfo(this.lightingProfileById);
-                  this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
-                }
+                this.isProfileOff = false;
+                this.getCacheList();
+                this.isShowpageInfo(this.lightingProfileById);
+                this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
               }
-            });
-          }
-      } catch (error) {
-        console.log(error);
-      }
+            }
+          });
+        }
+    } catch (error) {}
   } 
   
   public colorPickerFun(){
@@ -172,24 +151,19 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           this.isColorPicker = false;
           this.isShow = true;
         }
-    } catch (error){
-      console.log(error);
-    }
+    } catch (error){}
   }
 
   public isToggleColorPicker(event){
     try {
         this.isColorPicker = event;
         this.isShow = true;
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 
   public setLightingColor(event){
     try {
-       console.log("event--color------------------>",event);
-       this.lightingProfileCurrentDetail.lightColor = "#" + event;
+      this.lightingProfileCurrentDetail.lightColor = "#" + event;
       /* Use cache before set    start  */
       this.getCacheList();
       this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
@@ -202,7 +176,6 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
       };
       if(this.gamingLightingService.isShellAvailable){
         this.gamingLightingService.setLightingProfileEffectColor(colorJson).then((response:any) => {
-          console.log("response--------color---------11111--------->",response);
           if(response.didSuccess) {
             this.publicPageInfo(response,2);
           }else{
@@ -212,14 +185,11 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           }
         })
       }
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 
   public setLightingProfileEffect(event){
     try {
-      console.log("event------effect------------------->",event);
       this.supportBrightFn(event.value);
       this.supportSpeedFn(event.value);
       this.supportColorFn(event.value);
@@ -233,121 +203,103 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
          lightEffectType:event.value,
          lightLayoutVersion:3
        };
-       console.log("effectJson-------------->",effectJson)
-       if (this.gamingLightingService.isShellAvailable) {
-        this.gamingLightingService
-          .setLightingProfileEffectColor(effectJson)
-          .then((response: any) => {
-            console.log("response---------effect--------------->",response);
-            if (response.didSuccess) {
-              this.isEffectChange = true;
-              this.publicPageInfo(response,2);
-            }else{
-              this.isEffectChange = false;
-              console.log("false--------------11111111111111111")
-              this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
-              this.getCacheList();
-              console.log("false--------------222222222222222",this.lightingProfileById);
-              this.isShowpageInfo(this.lightingProfileById);
-              this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
-            }
-          });
-      }
-    } catch (error) {
-       console.log(error);
-    }
+      if (this.gamingLightingService.isShellAvailable) {
+       this.gamingLightingService
+         .setLightingProfileEffectColor(effectJson)
+         .then((response: any) => {
+         if (response.didSuccess) {
+           this.isEffectChange = true;
+           this.publicPageInfo(response,2);
+         }else{
+           this.isEffectChange = false;
+           this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+           this.getCacheList();
+           this.isShowpageInfo(this.lightingProfileById);
+           this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
+         }
+       });
+     }
+    } catch (error) {}
   }
 
   public setLightingBrightness(event){
     try {
-        console.log("event------brightness------------------>",event[0]);
-        /* Use cache before set    start  */
-        this.getCacheList();
-        this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
-        /* Use cache before set    end */
-        let brightJson:any = {
-          profileId:this.currentProfileId,
-          lightPanelType:this.lightingProfileCurrentDetail.lightPanelType,
-          lightBrightness:event[0],
-          lightLayoutVersion:3
-        };
-        if(this.gamingLightingService.isShellAvailable){
-          this.gamingLightingService.setLightingProfileEffectColor(brightJson).then((response:any) => {
-            console.log("response---------brightness------------->",response);
-            if(response.didSuccess) {
-              this.publicPageInfo(response,2);
-            }else{
-              // this.getCacheList();
-              // this.publicPageInfo(this.lightingProfileById,2);
-              this.isValChange = false;
-              this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
-              this.getCacheList();
-              this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
-            }
-          })
-        }
-    } catch (error) {
-        console.log(error);
-    }
+      /* Use cache before set    start  */
+      this.getCacheList();
+      this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
+      /* Use cache before set    end */
+      let brightJson:any = {
+        profileId:this.currentProfileId,
+        lightPanelType:this.lightingProfileCurrentDetail.lightPanelType,
+        lightBrightness:event[0],
+        lightLayoutVersion:3
+      };
+      if(this.gamingLightingService.isShellAvailable){
+        this.gamingLightingService.setLightingProfileEffectColor(brightJson).then((response:any) => {
+          if(response.didSuccess) {
+            this.publicPageInfo(response,2);
+          }else{
+            // this.getCacheList();
+            // this.publicPageInfo(this.lightingProfileById,2);
+            this.isValChange = false;
+            this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+            this.getCacheList();
+            this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
+          }
+        })
+      }
+    } catch (error) {}
   } 
   
   public setLightingSpeed(event){
     try {
-        console.log("event------speed------------------>",event[0]);
-        this.lightingProfileCurrentDetail.lightSpeed = event[0];
-        /* Use cache before set    start  */
-        this.getCacheList();
-        this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
-        /* Use cache before set    end */
-        let speedJson:any = {
-          profileId:this.currentProfileId,
-          lightPanelType:this.lightingProfileCurrentDetail.lightPanelType,
-          lightSpeed:event[0],
-          lightLayoutVersion:3
-        };
-        if(this.gamingLightingService.isShellAvailable){
-          this.gamingLightingService.setLightingProfileEffectColor(speedJson).then((response:any) => {
-            console.log("response---------speed------------->",response);
-            if(response.didSuccess) {
-               this.publicPageInfo(response,2);
-            }else{
-              // this.getCacheList();
-              // this.publicPageInfo(this.lightingProfileById,2);
-              this.isValChange = false;
-              this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
-              this.getCacheList();
-              this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
-            }
-          })
-        }
-    } catch (error) {
-        console.log(error);
-    }
+      this.lightingProfileCurrentDetail.lightSpeed = event[0];
+      /* Use cache before set    start  */
+      this.getCacheList();
+      this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
+      /* Use cache before set    end */
+      let speedJson:any = {
+        profileId:this.currentProfileId,
+        lightPanelType:this.lightingProfileCurrentDetail.lightPanelType,
+        lightSpeed:event[0],
+        lightLayoutVersion:3
+      };
+      if(this.gamingLightingService.isShellAvailable){
+        this.gamingLightingService.setLightingProfileEffectColor(speedJson).then((response:any) => {
+          if(response.didSuccess) {
+             this.publicPageInfo(response,2);
+          }else{
+            // this.getCacheList();
+            // this.publicPageInfo(this.lightingProfileById,2);
+            this.isValChange = false;
+            this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
+            this.getCacheList();
+            this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
+          }
+        })
+      }
+    } catch (error) {}
   } 
 
   public setDefaultProfile(profileId){
      try {
-        console.log("defaultId------------------>",profileId);   
-        this.isColorPicker = false;
-        this.isShow = true;
-        /* Use cache before set    start  */
-        this.getCacheDefaultList();
-        this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
-        /* Use cache before set    end */
-        if(this.gamingLightingService.isShellAvailable){
-          this.gamingLightingService.setLightingDefaultProfileById(profileId).then((response: any) => {
-            console.log("response--------default----------------->",response);
-             if(response.didSuccess){
-               this.publicDefaultInfo(response);
-             }else{
-               this.getCacheDefaultList();
-               this.publicDefaultInfo(this.lightingProfileById);
-             }
-          })
-        }   
-     } catch (error) {
-       console.log(error);
-     }
+       this.isColorPicker = false;
+       this.isShow = true;
+       /* Use cache before set    start  */
+       this.getCacheDefaultList();
+       this.lightingProfileDetail(this.lightingProfileById,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
+       /* Use cache before set    end */
+       if(this.gamingLightingService.isShellAvailable){
+         this.gamingLightingService.setLightingDefaultProfileById(profileId).then((response: any) => {
+           if(response.didSuccess){
+             this.publicDefaultInfo(response);
+           }else{
+             this.getCacheDefaultList();
+             this.publicDefaultInfo(this.lightingProfileById);
+           }
+         })
+       }
+     } catch (error) {}
   }
 
   public panelSwitchLef(){
@@ -394,7 +346,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
       if(lightingProfileByIdRes !== undefined){
         if(lightingProfileByIdRes.lightInfo !== null && lightingProfileByIdRes.lightInfo.length>0){
           //show panelImg and panelName
-          let currentNameImg;   
+          let currentNameImg;
           let currentEffectName:any;
           this.lightingProfileCurrentDetail = lightingProfileByIdRes.lightInfo[count];
           currentNameImg = this.getCurrentName(this.lightingPanelImage,this.lightingProfileCurrentDetail.lightPanelType);
@@ -428,38 +380,31 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           if(currentEffectName.length > 0){
             this.lightingProfileCurrentDetail.currentEffectName = currentEffectName[0].name;
           }
-          console.log("lightingProfileCurrentDetail--------------------->",this.lightingProfileCurrentDetail);
         }
       }
-    }catch(error){
-      console.log(error)
-    }
+    }catch(error){}
     
     
   }
  
   public supportBrightFn(val){
     if(this.lightingCapabilities.SupportBrightnessSetList.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1){   //support bright of panel
-      if(this.lightingCapabilities.SupportRGBSetList.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1){ //Rgb color
-          console.log("rgb---------------bright----1111111111111");
-          if(val === 268435456){
-            console.log("rgb---------------bright----off----off");
-            this.supportBrightness = false;
-          }else{
-            this.supportBrightness = true;
-          }
-        }else{  //single color
-          console.log("single---------------bright----2222222222");
-          if(val === 1){
-            console.log("single---------------bright----on");
-            this.supportBrightness = true;
-          }else{
-            this.supportBrightness = false;
-         } 
-         if(this.lightingCapabilities.SupportBrightnessSetList.indexOf(128) > -1){  //T550G
-            this.supportBrightness = false;
-         }
+      if(this.lightingCapabilities.SupportRGBSetList.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1){
+        if(val === 268435456){
+          this.supportBrightness = false;
+        }else{
+          this.supportBrightness = true;
+        }
+      }else{
+        if(val === 1){
+          this.supportBrightness = true;
+        }else{
+          this.supportBrightness = false;
        }
+        if(this.lightingCapabilities.SupportBrightnessSetList.indexOf(128) > -1){  //T550G
+           this.supportBrightness = false;
+        }
+      }
     }else{
       this.supportBrightness = false;
     }
@@ -549,7 +494,6 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
     this.lightingProfileById = response;
     this.currentProfileId = response.profileId;
     if(key === 1){
-      console.log("init-------------------##############")
       this.isShowpageInfo(this.lightingProfileById);
     };
     this.lightingProfileDetail(response,this.countObj['count'+this.currentProfileId],this.lightingCapabilities);
@@ -562,7 +506,6 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
       if(this.gamingLightingService.isShellAvailable){
         this.gamingLightingService.getLightingProfileId().then((response: any) => {
             if (response.didSuccess) {
-              console.log("response-----------profile------------->",response);
               this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId,response.profileId);
               this.currentProfileId = response.profileId;
               this.getLightingProfileById(this.currentProfileId);
@@ -572,7 +515,6 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
     }else{
       if(this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) !== undefined){
         this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
-        console.log("current------------cache---------",this.currentProfileId);
       }
     }
   }

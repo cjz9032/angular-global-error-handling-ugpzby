@@ -81,18 +81,17 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 
 
 	ngOnInit() {
-		this.childContent = {};
-		this.childContent.innerHTML = '';
-		console.log(this.tooltipContent);
-		this.checkToolTips();
-		this.ngZone.runOutsideAngular(() => {
+        this.childContent = {};
+        this.childContent.innerHTML = '';
+        this.checkToolTips();
+        this.ngZone.runOutsideAngular(() => {
 			window.addEventListener('scroll', () => { this.scrollEvent.next(); }, true);
 		});
 
-		// this.commonService.notification.subscribe((notification: AppNotification) => {
-		// 	this.onNotification(notification);
-		// });
-	}
+        // this.commonService.notification.subscribe((notification: AppNotification) => {
+        // 	this.onNotification(notification);
+        // });
+    }
 
 	public onOnOffChange($event) {
 		// if (this.title === 'Battery Charge Threshold') {
@@ -203,18 +202,16 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 		}
 	}
 	voicePopUp() {
-		console.log('modal open');
-		console.log(this.voiceValue);
-		const modalRef = this.modalService.open(ModalVoiceComponent,
+        const modalRef = this.modalService.open(ModalVoiceComponent,
 			{
 				backdrop: 'static',
 				size: 'sm',
 				centered: true,
 				windowClass: 'Voice-Modal',
 			});
-		modalRef.componentInstance.value = this.voiceValue;
-		modalRef.componentInstance.metricsParent = this.metricsParent;
-	}
+        modalRef.componentInstance.value = this.voiceValue;
+        modalRef.componentInstance.metricsParent = this.metricsParent;
+    }
 
 	ngOnDestroy() {
 		window.removeEventListener('scroll', () => { });

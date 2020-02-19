@@ -65,9 +65,8 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 
 		// ensure popUpId attribute exists
 		if (!popup.popUpId) {
-			console.error('Attribute `popUpId` is required! Need add `popUpId` to vtr-common-popup');
-			return;
-		}
+            return;
+        }
 
 		this.commonPopupService
 			.getOpenState(this.popUpId)

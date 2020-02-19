@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Con Vantage Edge, le impostazioni verranno ottimizzate automaticamente in base all'uso. \n Massime prestazioni per giocare, maggiore autonomia per le altre attività.",
                     "line2": "<b>Panoramica gestione funzioni</b> <br> Alcune funzioni non sono disponibili su tutti i dispositivi",
-                    "line3": "<b>Overclock della CPU </b><br> Aumenta la velocità massima del processore",
+                    "line3": "<b>Overclock CPU/GPU </b><br> Aumenta la velocità massima del processore",
                     "line4": "<b>Overclock della RAM </b><br> Aumenta la velocità massima della memoria",
                     "line5": "<b>Ottimizzazione rete </b><br> Priorità al traffico di rete del gioco in esecuzione",
                     "line6": "<b>Dolby </b><br> Ottimizza l'audio per i giochi con la tecnologia Dolby",
@@ -94,7 +94,7 @@
                     "line9": "<b>Blocco touchpad </b><br> Previeni input errati disabilitando il touchpad quando giochi",
                     "line10": "<b>Chius. auto </b><br> Termina i processi non richiesti dai videogame prima di iniziare a giocare per ottimizzare le risorse di sistema disponibili",
                     "line11": "<b>Modalità termica </b><br> Imp. profilo dispositivo preferito per velocità ventola e controllo raffreddamento",
-                    "line12": "<b>Tasto macro </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Tasto macro </b><br> Personalizza le azioni della tastiera in base al tuo stile di gioco"
                 },
                 "systemInfo": {
                     "systenTooltip": "Passa il mouse su CPU/GPU/RAM e sulle differenti unità per mostrare le descrizioni, come le informazioni sul modello e la fabbricazione"
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Installare il driver GPU per utilizzare la funzione di overclock.",
                         "goInstall": "VAI A INSTALLA"
                     },
-                    "autoSwitch": "Passa automaticamente Performance per giocare e chiudila dopo."	
+                    "autoSwitch": "Passa automaticamente Performance per giocare e chiudila dopo."
                 },
                 "advancedOC": {
                     "title": "Impost. avanzate Overclock",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -3363,10 +3363,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

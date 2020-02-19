@@ -41,9 +41,7 @@ export class SupportPopupComponent implements OnInit {
 			try {
 				const getParams = window.btoa(`appState=${licenseTypes[status.licenseType]}&appVersion=${status.appVersion || 0}`);
 				this.vantageCommunicationService.openUri(`https://figleafapp.com/lv/help/?${getParams}`);
-			} catch (error) {
-				console.error(error.message);
-			}
+			} catch (error) {}
 		});
 	}
 }

@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "עם Vantage Edge, ההגדרות שלכם יתכווננו באופן אוטומטי בהתאם לשימוש. \n ביצועים מרביים כשאתם משחקים, חיי סוללה ארוכים יותר כשאינכם משחקים.",
                     "line2": "<b>סקירה כללית של ניהול תכונות</b> <br> חלק מהתכונות אינן זמינות בכל המכשירים",
-                    "line3": "<b>אוברקלוקינג של מעבד </b><br> הגבירו את המהירות המרבית של המעבד",
+                    "line3": "<b>אוברקלוק של CPU/GPU </b><br> הגבירו את המהירות המרבית של המעבד",
                     "line4": "<b>אוברקלוק של RAM </b><br> הגבירו את המהירות המרבית של הזיכרון",
                     "line5": "<b>שיפור הרשת </b><br> קבעו סדר עדיפויות לתעבורת רשת למשחק שבו אתם משחקים",
                     "line6": "<b>Dolby </b><br> כווננו את השמע באופן ספציפי למשחק עם טכנולוגיית Dolby",
@@ -94,7 +94,7 @@
                     "line9": "<b>מנעול משטח מגע </b><br> הימנעו מהזנות מוטעות באמצעות השבתת משטח המגע בזמן שאתם משחקים",
                     "line10": "<b>סגירה אוטומטית</b><br> נקו תהליכים שאינם נדרשים למשחק לפני שאתם מתחילים לשחק כדי לשפר את המשאבים הזמינים של המערכת",
                     "line11": "<b>מצב תרמי </b><br> הגדרת פרופיל ההתקן המועדף למהירות המאוורר ובקרת הצינון",
-                    "line12": "<b>מקש מאקרו </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>מקש מאקרו </b><br> התאימו אישית את פעולות המקלדת כך שיתאימו לסגנון המשחק שלכם"
                 },
                 "systemInfo": {
                     "systenTooltip": "העבר את העכבר מעל CPU/GPU/RAM וכוננים שונים כדי להציג את התיאורים שלהם, כולל נתוני ייצור ומידע על הדגם"
@@ -193,7 +193,7 @@
                         "gpuDriverLack": "התקינו מנהל התקן של GPU כדי להשתמש בפונקציית אוברקלוקינג.",
                         "goInstall": "עברו להתקנה"
                     },
-                    "autoSwitch": "מעבר אוטומטי לביצועים בעת הפעלת משחקים ולהפך."	
+                    "autoSwitch": "מעבר אוטומטי לביצועים בעת הפעלת משחקים ולהפך."
                 }
             }
         },
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -731,7 +731,7 @@
             "tipText": {
                 "title1": "השתמשו ב- Fn+שטח כדי לעבור בין פרופילים"
             }
-        }        
+        }
     },
     "common": {
         "menu": {
@@ -3363,10 +3363,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

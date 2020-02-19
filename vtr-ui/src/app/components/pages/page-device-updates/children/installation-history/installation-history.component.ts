@@ -55,13 +55,9 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	installUpdates(event) {
-		console.log('installUpdates', event);
-	}
+	installUpdates(event) {}
 
-	installSelectedUpdates(event) {
-		console.log('installSelectedUpdates', event);
-	}
+	installSelectedUpdates(event) {}
 
 	toggleSortOrder() {
 		this.sortAsc = !this.sortAsc;

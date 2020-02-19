@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "透過 Vantage Edge，您的設定將根據使用情形自動調整。\n 最大化遊戲時的效能，非遊戲時則提供較長的電池續航力。",
                     "line2": "<b>功能管理概觀</b><br> 某些功能並非在所有裝置上都可使用",
-                    "line3": "<b>CPU 超頻 </b><br> 提升處理器的最高速度",
+                    "line3": "<b>CPU/GPU 超頻 </b><br> 提升處理器的最高速度",
                     "line4": "<b>RAM 超頻 </b><br> 提升記憶體的最高速度",
                     "line5": "<b>網路加速 </b><br> 為您正在玩的遊戲設定最高的網路流量優先順序",
                     "line6": "<b>Dolby </b><br> 透過 Dolby 技術，特別針對遊戲調整音訊",
@@ -94,7 +94,7 @@
                     "line9": "<b>觸控板鎖定 </b><br> 在遊戲時停用觸控板，防止錯誤的輸入",
                     "line10": "<b>自動關閉 </b><br> 在您開始暢玩遊戲之前先清除與遊戲無關的處理程序，盡可能地利用所有可用的系統資源",
                     "line11": "<b>熱模式 </b><br> 設定您偏好的裝置設定檔中的風扇速度和冷卻控制",
-                    "line12": "<b>巨集鍵 </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>巨集鍵 </b><br> 自訂鍵盤動作以符合您的玩樂風格"
                 },
                 "systemInfo": {
                     "systenTooltip": "將游標移至 CPU/GPU/RAM 和不同的驅動程式之上以查看其個別描述，包括製造與機型資訊"
@@ -193,7 +193,7 @@
                         "gpuDriverLack": "安裝 GPU 驅動程式以使用超頻功能。",
                         "goInstall": "執行安裝"
                     },
-                    "autoSwitch": "啟動遊戲時自動切換到效能，之後再切換回來。"	
+                    "autoSwitch": "啟動遊戲時自動切換到效能，之後再切換回來。"
                 }
             }
         },
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -3363,10 +3363,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

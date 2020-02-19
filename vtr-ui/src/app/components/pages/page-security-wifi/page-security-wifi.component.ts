@@ -163,9 +163,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 					}
 				}
 			},
-			error => {
-				console.log('fetchCMSContent error', error);
-			}
+			error => {}
 		);
 
 		this.cmsService.fetchCMSArticle(this.securityHealthArticleId, { Lang: 'EN' }).then((response: any) => {

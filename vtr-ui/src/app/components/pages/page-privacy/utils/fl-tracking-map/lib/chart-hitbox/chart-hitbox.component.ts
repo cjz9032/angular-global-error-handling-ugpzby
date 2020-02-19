@@ -39,9 +39,7 @@ export class ChartHitboxComponent implements OnInit {
 			try {
 				this.hitbox.nativeElement.onmouseenter = this.onHover.bind(this);
 				this.hitbox.nativeElement.onmouseleave = this.onLeave.bind(this);
-			} catch (err) {
-				console.error(err);
-			}
+			} catch (err) {}
 		});
 	}
 

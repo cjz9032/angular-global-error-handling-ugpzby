@@ -87,10 +87,7 @@ export class PageDashboardAndroidComponent implements OnInit {
 		}
 
 		this.isOnline = this.commonService.isOnline;
-		if (this.dashboardService.isShellAvailable) {
-			console.log('PageDashboardComponent.getSystemInfo');
-			// this.getSystemInfo();
-		}
+		if (this.dashboardService.isShellAvailable) {}
 
 		this.setDefaultCMSContent();
 
@@ -158,9 +155,7 @@ export class PageDashboardAndroidComponent implements OnInit {
 					this.cardContentPositionF = cardContentPositionF;
 				}
 			},
-			error => {
-				console.log('fetchCMSContent error', error);
-			}
+			error => {}
 		);
 	}
 

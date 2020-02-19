@@ -24,8 +24,7 @@ export class ModalScheduleScanCollisionComponent implements OnInit {
 	}
 
 	onClosing() {
-		console.log('[MODAL] User confirms');
-		this.activeModal.close();
-	}
+        this.activeModal.close();
+    }
 
 }

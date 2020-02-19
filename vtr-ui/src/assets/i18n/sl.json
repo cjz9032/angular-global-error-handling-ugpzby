@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Vantage Edge samodejno optimizira nastavitve glede na uporabo. \n Največja zmogljivost pri igranju, sicer pa daljše trajanje baterije.",
                     "line2": "<b>Pregled upravljanja funkcij</b> <br> Nekatere funkcije niso na voljo v vseh napravah",
-                    "line3": "<b>Zvišanje takta CPE </b><br> Povečajte največjo hitrost procesorja",
+                    "line3": "<b>Zvišanje takta CPE/GPE </b><br> Povečajte največjo hitrost procesorja",
                     "line4": "<b>Zvišanje takta pomnilnika RAM </b><br> Povečajte največjo hitrost pomnilnika",
                     "line5": "<b>Omrežna pospešitev </b><br> Določite prednost omrežnega prometa za igro, ki jo igrate",
                     "line6": "<b>Dolby </b><br> Optimizirajte zvok za igre s tehnologijo Dolby",
@@ -94,7 +94,7 @@
                     "line9": "<b>Zaklepanje sledilne ploščice </b><br> Onemogočite sledilno ploščico, da preprečite napačne vnose med igranjem",
                     "line10": "<b>Samodejno zapiranje </b><br> Pred začetkom igranja počistite nepotrebne procese in v celoti izkoristite razpoložljiva sistemska sredstva",
                     "line11": "<b>Toplotni način </b><br> Nastavite želeni profil naprave za nadzor hitrosti ventilatorja in hlajenja",
-                    "line12": "<b>Makro tipka </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Makro tipka </b><br>Prilagodite dejanja tipkovnice, da se bodo prilegale vašemu slogu igranja"
                 },
                 "systemInfo": {
                     "systenTooltip": "Kazalec zadržite na CPE/GPE/RAM in različnih pogonih, če si želite ogledati njihove opise, vključno z informacijami o proizvajalcu in modelu"
@@ -3363,10 +3363,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

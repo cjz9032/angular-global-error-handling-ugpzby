@@ -233,9 +233,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 						return undefined;
 					})
 				).subscribe();
-			} catch (error) {
-				console.log('Backlight error: ', error);
-			}
+			} catch (error) {}
 
 		}
 
@@ -469,9 +467,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
 						inputAccessoriesCapability
 					);
-				} catch (error) {
-					console.log('initInputAccessories', error);
-				}
+				} catch (error) {}
 			})
 			.catch((error) => { });
 		this.keyboardService.getVoipHotkeysSettings()

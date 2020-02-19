@@ -32,9 +32,8 @@ export class AbTestsGenerateConfigService {
 					this.storageService.setItem(AB_TESTS_CONFIG, JSON.stringify(res.tests));
 					this.abTestsService.setCurrentOptions(res.tests);
 				} catch (err) {
-					console.error(err);
-					this.abTestsBackendService.sendError(err);
-				}
+                    this.abTestsBackendService.sendError(err);
+                }
 			}, (err) => this.abTestsBackendService.sendError(err));
 	}
 

@@ -45,6 +45,7 @@ export class CptpageSecurityAntivirusComponent implements OnInit, OnDestroy {
         (response: any) => {
 
           observer.next(response);//cpt
+          observer.complete();
 
           const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
           if (cardContentPositionA) {
@@ -63,7 +64,7 @@ export class CptpageSecurityAntivirusComponent implements OnInit, OnDestroy {
 
         },
         error => {
-          console.log('fetchCMSContent error', error);
+          observer.error(error);
         }
       );
 

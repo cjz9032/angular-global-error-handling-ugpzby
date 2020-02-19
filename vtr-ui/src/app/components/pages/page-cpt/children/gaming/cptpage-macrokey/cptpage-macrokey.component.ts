@@ -44,6 +44,7 @@ export class CptpageMacrokeyComponent implements OnInit, OnDestroy {
         (response: any) => {
 
           observer.next(response);//cpt
+          observer.complete();
 
           const cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
           if (cardContentPositionF) {
@@ -60,7 +61,7 @@ export class CptpageMacrokeyComponent implements OnInit, OnDestroy {
 
         },
         error => {
-          console.log('fetchCMSContent error', error);
+          observer.error(error);
         }
       );
 

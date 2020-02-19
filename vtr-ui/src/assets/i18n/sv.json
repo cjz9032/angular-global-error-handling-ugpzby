@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Med Vantage Edge justeras inställningarna automatiskt baserat på din användning. \n Maximal prestanda när du spelar, längre batteritid när du inte gör det.",
                     "line2": "<b>Översikt över funktionshantering</b> <br> Vissa funktioner är inte tillgängliga på alla enheter",
-                    "line3": "<b>CPU-överklockning </b><br> Öka maxhastigheten för processorn",
+                    "line3": "<b>CPU/GPU-överklockning </b><br> Öka maxhastigheten för processorn",
                     "line4": "<b>RAM-överklockning </b><br> Öka maxhastigheten för minnet",
                     "line5": "<b>Nätverkspre-standa </b><br> Prioritera nätverkstrafik för det aktuella spelet",
                     "line6": "<b>Dolby </b><br> Specialanpassa ljudet för spel med Dolby-teknik",
@@ -94,7 +94,7 @@
                     "line9": "<b>Styrplattelås </b><br> Förhindra oavsiktlig inmatning genom att inaktivera styrplattan medan du spelar",
                     "line10": "<b>Stäng auto-matiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
                     "line11": "<b>Temperaturläge </b><br> Ange önskad enhetsprofil för fläkthastighet och kylningskontroll",
-                    "line12": "<b>Makrotangent </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Makrotangent </b><br> Anpassa tangentbordsåtgärderna så att de passar din spelstil"
                 },
                 "systemInfo": {
                     "systenTooltip": "Håll muspekaren över CPU/GPU/RAM och olika enheter för att se beskrivningar, bland annat information om tillverkare och modell"
@@ -193,7 +193,7 @@
                         "gpuDriverLack": "Installera GPU-drivrutinen om du vill använda överklockning.",
                         "goInstall": "INSTALLERA"
                     },
-                    "autoSwitch": "Växla automatiskt till prestandaläge vid spelstart och växla tillbaka efteråt."	
+                    "autoSwitch": "Växla automatiskt till prestandaläge vid spelstart och växla tillbaka efteråt."
                 }
             }
         },
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -3363,10 +3363,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

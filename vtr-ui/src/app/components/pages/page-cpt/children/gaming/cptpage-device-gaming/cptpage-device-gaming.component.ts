@@ -42,6 +42,7 @@ export class CptpageDeviceGamingComponent implements OnInit, OnDestroy {
         (response: any) => {
 
           observer.next(response);//cpt
+          observer.complete();
 
           const cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
           if (cardContentPositionD) {
@@ -52,7 +53,7 @@ export class CptpageDeviceGamingComponent implements OnInit, OnDestroy {
           }
         },
         error => {
-          console.log('fetchCMSContent error', error);
+          observer.error(error);
         }
       );
 

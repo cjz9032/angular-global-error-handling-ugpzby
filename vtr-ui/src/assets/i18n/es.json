@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Con Vantage Edge, la configuración se ajusta automáticamente según el uso. \n Máximo rendimiento al jugar, mayor duración de la batería cuando no está jugando.",
                     "line2": "<b>Intro a la gestión de característica</b> <br> Algunas características no están disponibles en todos los dispositivos",
-                    "line3": "<b>Aceleración de CPU </b><br> Mejore la velocidad máxima del procesador",
+                    "line3": "<b>Aceleración de CPU/GPU </b><br> Mejore la velocidad máxima del procesador",
                     "line4": "<b>Aceleración de RAM </b><br> Mejore la velocidad máxima de la memoria",
                     "line5": "<b>Mejora de red </b><br> Priorice el tráfico de red del juego que está disfrutando",
                     "line6": "<b>Dolby </b><br> Ajuste específicamente el audio y juegue con tecnología Dolby",
@@ -94,7 +94,7 @@
                     "line9": "<b>Bloqueo de área táctil </b><br> Evite realizar entradas erróneas desactivando el área táctil mientras juega",
                     "line10": "<b>Cerrado automático </b><br> Cierre los procesos que no sean necesarios para jugar antes de comenzar a hacerlo, para así maximizar los recursos disponibles del sistema",
                     "line11": "<b>Modo térmico </b><br> Especifique el perfil de dispositivo preferido para la velocidad de ventilador y control de refrigeración",
-                    "line12": "<b>Tecla de macro </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Tecla de macro </b><br>Personalice las acciones del teclado para ajustarse al estilo de juego"
                 },
                 "systemInfo": {
                     "systenTooltip": "Mantenga el mouse sobre CPU/GPU/RAM y diferentes unidades para mostrar sus descripciones, incluyendo el fabricante y la información del modelo"
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Instale el controlador de GPU para usar la función de Aceleración.",
                         "goInstall": "VAYA A INSTALAR"
                     },
-                    "autoSwitch": "Cambie auto. a Rendimiento al iniciar juegos y después cambie de vuelta."	
+                    "autoSwitch": "Cambie auto. a Rendimiento al iniciar juegos y después cambie de vuelta."
                 },
                 "advancedOC": {
                     "title": "Op. avanzadas aceleración",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -3363,10 +3363,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

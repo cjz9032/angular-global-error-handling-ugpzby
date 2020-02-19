@@ -90,7 +90,7 @@
                 "legionEdgeModal": {
                     "line1": "سيتم تشغيل إعداداتك تلقائيًا تبعًا للاستخدام. \n أقصى أداء عند اللعب، عمر بطارية أطول في حالة التوقف عن اللعب.",
                     "line2": "<b>نظرة عامة حول إدارة الميزات</b> <br> بعض الميزات غير متوفرة علي جميع الأجهزة",
-                    "line3": "<b>كسر سرعة وحدة CPU</b><br> تعزيز السرعة القصوى للمعالج",
+                    "line3": "<b>زيادة أداء CPU/GPU</b><br> تعزيز السرعة القصوى للمعالج",
                     "line4": "<b>كسر سرعة وحدة RAM</b><br> تعزيز السرعة القصوى للذاكرة",
                     "line5": "<b>تعزيز الشبكة</b><br> إعطاء الأولوية لحركة البيانات على الشبكة للّعبة التي تلعبها",
                     "line6": "<b>Dolby</b><br> ضبط الصوت الخاص بك خصيصًا للألعاب مع تقنية Dolby",
@@ -99,7 +99,7 @@
                     "line9": "<b>قفل لوحه اللمس</b><br> منع الإدخالات الخاطئة من خلال تعطيل لوحة اللمس أثناء اللعب",
                     "line10": "<b>إغلاق تلقائي</b><br> مسح العمليات غير اللازمة للألعاب قبل البدء في اللعب لزيادة موارد النظام المتاحة إلى أقصى حد",
                     "line11": "<b>الوضع الحراري</b><br> تعيين ملف تعريف الجهاز المفضل لسرعة المروحة والتحكم في التبريد",
-                    "line12": "<b>مفتاح الماكرو </b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>مفتاح الماكرو </b><br> يمكنك تخصيص إجراءات لوحة المفاتيح لتتناسب مع نمط اللعب الخاص بك"
                 },
                 "systemInfo": {
                     "systenTooltip": "قم بتمرير الماوس فوق CPU/GPU/RAM ومحركات الأقراص المختلفة لإظهار أوصافها بما في ذلك معلومات التصنيع والطراز"
@@ -3365,10 +3365,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

@@ -70,7 +70,11 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
     currentLang: '',
     jsonresponse: {},
     isloading: null,
-    showeditor: true
+    showeditor: true,
+    responseError: {
+      isError: false,
+      message: ''
+    }
   };
 
   editor: any;
@@ -102,7 +106,7 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
 
   }
 
-  ngAfterViewInit() { }
+  ngAfterViewInit() {}
 
 
   /**
@@ -197,7 +201,7 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
 
     //setting language
     this.translate.use(this.serverSwitchResponse.currentLang).subscribe(() => {
-      console.log("Language loaded: " + this.serverSwitchResponse.currentLang);
+      //console.log("Language loaded: " + this.serverSwitchResponse.currentLang);
     });
 
     //for full urls 
@@ -209,6 +213,7 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
       Brand: serverSwitchLocalData.brand,
       OS: 'Windows'
     };
+    let queryParams = {};
 
     //jsonEditor 
     if (!this.editor) {
@@ -219,6 +224,12 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
     if (!this.clipboard) {
       this.clipboard = new ClipboardJS('.btnCopy');
     }
+
+    //response error handler 
+    this.serverSwitchResponse.responseError = {
+      isError: false,
+      message: ''
+    };
 
     //add components cms logic with switch block
     //load components from page dropdown
@@ -234,21 +245,29 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageDashboardComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'dashboard'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
           (jresponse: any) => {
 
-            //for full urls 
-            let queryParams = {
-              Page: 'dashboard'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+            // //for full urls 
+            // let queryParams = {
+            //   Page: 'dashboard'
+            // };
+            // this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
 
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
-
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -259,21 +278,22 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageMyDeviceComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'device'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
           (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'device'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
-
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -284,20 +304,22 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageDeviceSettingsComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'device-settings'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
           (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'device-settings'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -308,20 +330,22 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageDeviceUpdatesComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'system-updates'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
           (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'system-updates'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -332,20 +356,22 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageSmartAssistComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'device-settings'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
-          (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'device-settings'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
+          (jresponse: any) => {            
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -356,20 +382,22 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageSecurityComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'security'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
-          (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'security'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
+          (jresponse: any) => {      
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -380,21 +408,23 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageSecurityAntivirusComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'anti-virus',
+          Template: 'inner-page-right-side-article-image-background'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
-          (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'anti-virus',
-              Template: 'inner-page-right-side-article-image-background'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
+          (jresponse: any) => {            
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -405,20 +435,22 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageSecurityPasswordComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'password-protection'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
-          (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'password-protection'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
+          (jresponse: any) => {            
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -429,20 +461,22 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageSecurityWifiComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'wifi-security'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
-          (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'wifi-security'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
+          (jresponse: any) => {            
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -453,20 +487,22 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageSecurityInternetComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'internet-protection'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
-          (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'internet-protection'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
+          (jresponse: any) => {            
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -477,24 +513,28 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageSupportComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'support'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
-          (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'support'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
+          (jresponse: any) => {            
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+            this.serverSwitchResponse.responseError.isError = false;
+            this.serverSwitchResponse.responseError.message = '';
 
             //setting child variables
             this.currentComponent.currentSelection.defaultArticleUrl = this.parseCMSUrl(defaultsURLParm, {}, this.serverSwitchResponse.cmsserver,true);
 
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -505,20 +545,22 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageDeviceGamingComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'dashboard'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
-          (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'dashboard'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
+          (jresponse: any) => {            
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -529,20 +571,22 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageMacrokeyComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'macro-key'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
-          (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'macro-key'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
+          (jresponse: any) => {            
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -553,20 +597,22 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageLightingcustomizeComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'lighting'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
-          (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'lighting'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
+          (jresponse: any) => {            
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -577,20 +623,22 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageNetworkboostComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'network-boost'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
-          (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'network-boost'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
+          (jresponse: any) => {            
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -601,20 +649,22 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageAutocloseComponent>componentRef.instance);
 
+        //for full urls 
+        queryParams = {
+          Page: 'auto-close'
+        };
+        this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
+
         //calling child methods
         this.currentSubscriber = this.currentComponent.getCmsJsonResponse().subscribe(
-          (jresponse: any) => {
-
-            //for full urls 
-            let queryParams = {
-              Page: 'auto-close'
-            };
-            this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
-
+          (jresponse: any) => {            
             this.serverSwitchResponse.jsonresponse = jresponse;
             this.editor.set(jresponse);
 
             this.serverSwitchResponse.isloading = false;
+          },
+          (error : any) => {
+            this.serverSwitchResponseErrorHandler(error.message);
           }
         );
 
@@ -625,7 +675,7 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         this.editor.set(this.serverSwitchResponse.jsonresponse);
         this.serverSwitchResponse.isloading = false;
         break;
-    }
+    }//end switch
   }
 
   parseCMSUrl(defaultsURLParm, queryParams, cmsserver, isArticle = false) {
@@ -677,19 +727,35 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
+  serverSwitchResponseErrorHandler(message: string) {
+    this.serverSwitchResponse.responseError.isError = true;
+    this.serverSwitchResponse.responseError.message = message;
+    this.vc.clear();
+    if(this.editor){
+      this.editor.set({});
+    }
+    this.serverSwitchResponse.isloading = false;
+  }
+
 
   ngOnDestroy() {
-    //setting language
-    this.translate.use(this.serverSwitchResponse.systemLang);
-    console.log('Revertiing lang', this.serverSwitchResponse.systemLang);
 
+    this.vc.clear();
     // when app destroyed then remove ServerSwitch values
-    window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
+    //window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
+
+    //due to cache, lets set the flag to false to deactive the serverswitch
+    const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+    serverSwitchLocalData.forceit = false;
+    this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
 
     //destroy the subscriber
     if (!isNull(this.currentSubscriber)) {
       this.currentSubscriber.unsubscribe();
     }
+
+    //setting language
+    this.translate.use(this.serverSwitchResponse.systemLang);
   }
 
 }

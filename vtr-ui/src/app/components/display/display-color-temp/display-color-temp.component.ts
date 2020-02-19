@@ -19,18 +19,15 @@ export class DisplayColorTempComponent implements OnInit {
 
 	constructor() { }
 
-	ngOnInit() {
-		console.log(this.displayColorTempSettings);
-	}
+	ngOnInit() {}
 
 	public onDisplayColorTemparatureChange($event: ChangeContext) {
 		this.displayColorTempChange.emit($event);
 	}
 
 	public onResetTemparature($event: any) {
-		console.log('Reset Temperature');
-		this.resetTemparature.emit($event);
-	}
+        this.resetTemparature.emit($event);
+    }
 
 	public dragChangeValue($event: any) {
 		this.colorPreviewValue.emit($event);

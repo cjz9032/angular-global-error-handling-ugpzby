@@ -61,14 +61,13 @@ export class GetBreachesService {
 				return [this.transformBreachesFromServer(breaches, accessToken)];
 			}),
 			catchError((error) => {
-				console.error('Confirmation Error', error);
-				this.loading.next(false);
-				if (error.status === INVALID_TOKEN) {
+                this.loading.next(false);
+                if (error.status === INVALID_TOKEN) {
 					this.accessTokenService.removeAccessToken();
 					return of([]);
 				}
-				return throwError('get breaches from server error');
-			})
+                return throwError('get breaches from server error');
+            })
 		);
 	}
 
