@@ -208,9 +208,26 @@
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }}
 							</div>
-							<div class="col-6 battery-value-text"
-								role="text">
-								{{ model.fullChargeCapacity }} Wh
+							<div class="col-6 battery-value-text">
+								<span>{{ model.fullChargeCapacity }} Wh</span>
+								<span *ngIf="model.isTemporaryChargeMode">
+									<fa-icon id="fullChargeCapacity_tooltip_icon"
+										attr.aria-label="{{ 'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }} tooltip, which reads: {{ 'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate }}"
+										tabindex="0"
+										class="fcc-tooltip-icon"
+										triggers="manual"
+										placement="auto"
+										autoClose="false"
+										[ngbTooltip]="fcctooltipRef"
+										#fccTooltip="ngbTooltip"
+										autoClose="true"
+										[icon]="['far', 'question-circle']"
+										container="vtr-root"
+										tooltipClass="vtr-tooltip  fcc-note-tooltip"
+										(click)="onFccIconClick(fccTooltip, $event)"
+										(keydown.enter)="onFccIconClick(fccTooltip, $event)">
+									</fa-icon>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -293,3 +310,12 @@
 		</div>
 	</div>
 </div>
+
+
+<ng-template #fcctooltipRef>
+	<div [innerHTML]="'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate"
+		id="fullChargeCapacity-toolTip"
+		tabindex="0"
+		attr.aria-label="fccTooltipText">
+	</div>
+</ng-template>
