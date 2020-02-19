@@ -84,10 +84,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			// udk capability
 			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
 			this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
-
-			// The fnCtrlSwap & FnAsCtrl features hidden in 3.2
-			/* this.getFnCtrlSwapCapability();
-			// this.getFnAsCtrlCapability(); */
+			this.getFnCtrlSwapCapability();
+			this.getFnAsCtrlCapability();
 		}
 		this.getMouseAndTouchPadCapability();
 		this.getVoipHotkeysSettings();
@@ -205,8 +203,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					if (value) {
 						this.getKBDMachineType(value);
-						// FnCtrl feature hidden in 3.2
-						// this.getLayoutTable(value);
+						this.getLayoutTable(value);
 					}
 				})
 					.catch(error => {
