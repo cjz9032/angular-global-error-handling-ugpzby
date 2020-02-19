@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output,	EventEmitter, OnChanges, ElementRef, HostListener } from '@angular/core';
 import { LightingDataList } from 'src/app/data-models/gaming/lighting-new-version/lighting-data-list';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
   selector: 'vtr-ui-color-picker',
@@ -26,7 +27,9 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
     this.isToggleColorPicker.emit(this.isColorPicker);
   }
   
-  constructor(private elementRef: ElementRef,) { 
+  constructor(
+    private elementRef: ElementRef,
+    private logger: LoggerService) { 
     if (document.getElementById('menu-main-btn-navbar-toggler')) {
 			document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
 				this.generalClick(event);
@@ -73,6 +76,7 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
   }
 
   public colorPickerChangeFun(event){
+    this.logger.info("event: ",event);
     this.color = this.rgbToHex(event);
   }
  
@@ -92,6 +96,7 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
   }
 
   public cpSliderDragEndFun(event){
+    this.logger.info("slıder: ",event);
     if(this.clickEvent.target !== ""){
       if(this.elementRef.nativeElement){
         if(!this.elementRef.nativeElement.contains(this.clickEvent.target) && this.isFirstTrigger){
@@ -107,15 +112,15 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
     this.isFirstTrigger = true;
     if (this.elementRef.nativeElement) {
         if (!this.elementRef.nativeElement.contains(event.target)) {
-    setTimeout(() => {
-      if(this.isSliderOut){
-        this.isColorPicker = true;
-        this.isSliderOut = false;
-      }else{
-        this.isColorPicker = false;
-        this.isToggleColorPicker.emit(this.isColorPicker);
-      }
-    },50)
+          setTimeout(() => {
+            if(this.isSliderOut){
+              this.isColorPicker = true;
+              this.isSliderOut = false;
+            }else{
+              this.isColorPicker = false;
+              this.isToggleColorPicker.emit(this.isColorPicker);
+            }
+          },50)
         }
     }
   }
