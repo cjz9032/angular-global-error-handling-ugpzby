@@ -14,7 +14,7 @@
 		color: $shade_blue;
 		font-size: $fontsize_xl;
 		font-weight: $weight_600;
-		
+
 		.module-name {
 			padding-left: 1rem;
 		}
@@ -103,8 +103,8 @@
 			.result-code-icon {
 				margin-left: 0.5rem;
 				margin-right: 0.4rem;
-				font-size: $fontsize_lg;
-				color: $main;
+				font-size: $fontsize_sm;
+				color: $menu_hover;
 				cursor: pointer;
 
 				&:hover {
