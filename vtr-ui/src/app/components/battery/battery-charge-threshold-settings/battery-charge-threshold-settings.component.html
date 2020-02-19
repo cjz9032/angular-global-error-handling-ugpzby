@@ -123,6 +123,7 @@
 						<div class="col px-5">
 							<vtr-ui-checkbox [componentId]="'cb-battery-charge-threshold'"
 								[value]="bctInfo.checkboxValue"
+								[disabled]="isGaugeResetRunning"
 								[checked]="bctInfo.checkboxValue"
 								(toggle)='toggleAutoChargeSettings($event)'
 								[label]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate">
