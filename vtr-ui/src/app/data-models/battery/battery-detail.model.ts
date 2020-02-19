@@ -33,6 +33,7 @@ class BatteryDetail {
 	public fruPart: string;
 	public batteryHealth: number;
 	public batteryCondition: string[];
+	public isTemporaryChargeMode: boolean;
 	// #end region
 }
 

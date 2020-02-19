@@ -109,27 +109,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Thermal Mode Setting",
-                    "thermalMode2SettingDesc": "Choose mode you like to use.",
-                    "fnQDesc": "You can switch mode using shortcut Fn + Q.",
+                    "thermalMode2SettingDesc": "Choose the mode you want to use.",
+                    "fnQDesc": "You can switch mode using shortcut Fn+Q.",
                     "perormanceTitle": "Performance Mode",
-                    "performanceDesc": "Boost your computer preformance with more fan speed and more power consumed.",
-                    "OCDesc": "You can chose to turn on Overclocking feature.",
-                    "ac_dcDesc": "Performance Mode only available when plugged in.",
+                    "performanceDesc": "Boost your computer performance with higher fan speed and power consumption.",
+                    "OCDesc": "You can choose to turn on the Overclocking function.",
+                    "ac_dcDesc": "Performance Mode is applicable only when ac power adaptor is plugged in.",
                     "balanceTitle": "Balance Mode",
-                    "balanceDesc": "Automatically balance performance and fan speed based on temperature. Middle power consumption.",
+                    "balanceDesc": "Automatically balance performance and fan speed based on temperature with medium power consumption.",
                     "quietTitle": "Quiet Mode",
-                    "quietDesc": "Keep quiet by reducing your computer's performance and fan speed where possible. Low power consumption.",
+                    "quietDesc": "Keep quiet by reducing your computer performance and fan speed where possible with low power consumption.",
                     "OC": {
-                        "cpu_gpuOC": "Enable CPU/GPU Overclocking in Preformance Mode.",
-                        "cpuOC": "Enable CPU Overclocking in Preformance Mode.",
-                        "gpuOC": "Enable GPU Overclocking in Preformance Mode.",
+                        "cpu_gpuOC": "Enable CPU/GPU Overclocking in Performance Mode.",
+                        "cpuOC": "Enable CPU Overclocking in Performance Mode.",
+                        "gpuOC": "Enable GPU Overclocking in Performance Mode.",
                         "advance": "ADVANCED",
-                        "cpu_gpuDriverLack": "Install CPU/GPU drivers to use Overclocking function.",
-                        "cpuDriverLack": "Install CPU driver to use Overclocking function.",
-                        "gpuDriverLack": "Install GPU driver to use Overclocking function.",
+                        "cpu_gpuDriverLack": "Install CPU/GPU drivers to use the Overclocking function.",
+                        "cpuDriverLack": "Install CPU driver to use the Overclocking function.",
+                        "gpuDriverLack": "Install GPU driver to use the Overclocking function.",
                         "goInstall": "GO INSTALL"
                     },
-                    "autoSwitch": "Auto Switch to Performance when launching games and switch back aftetwards."	
+                    "autoSwitch": "Automatically switch to Performance Mode when launching games and switch back after exiting the game."
                 },
                 "advancedOC": {
                     "title": "Overclock Advanced Settings",
@@ -659,7 +659,7 @@
         },
         "networkBoost": {
             "title": "Network Boost",
-            "introLine": "Enabling Network Boost will automatically prioritize games to the highest level within your network, maximizing the speed. If you are using any apps while gaming, like Twitch or Dsicard, it's recommended that you add them to the below list so that they will also be prioritized on your network.",
+            "introLine": "Enabling Network Boost will automatically prioritize games to the highest level within your network, maximizing the speed. If you are using any apps while gaming, like Twitch or Discard, it's recommended that you add them to the below list so that they will also be prioritized on your network.",
             "modalTurn": {
                 "title": "Turn on Network Boost ?",
                 "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
@@ -699,7 +699,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -1038,7 +1038,8 @@
                         "title": "Manufacturer",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+					},
+					"fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "The battery installed is <b>not supported</b> by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system.",
@@ -2354,11 +2355,12 @@
             "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
-            "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+			"overviewTitle": "Overview",
+			"trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

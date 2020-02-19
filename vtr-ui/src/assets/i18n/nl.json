@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Instelling thermische modus",
                     "thermalMode2SettingDesc": "Kies de modus die u wilt gebruiken.",
-                    "fnQDesc": "U kunt de modus wijzigen met de sneltoets Fn + Q.",
+                    "fnQDesc": "U kunt de modus wijzigen met de sneltoets Fn+Q.",
                     "perormanceTitle": "Prestatiemodus",
                     "performanceDesc": "Verhoog de prestaties van uw computer met meer ventilatorsnelheid en meer energieverbruik.",
                     "OCDesc": "U kunt de functie overklokken inschakelen.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "GPU-stuurprogramma installeren om overklokken te gebruiken.",
                         "goInstall": "GA NAAR INSTALLEREN"
                     },
-                    "autoSwitch": "Automatisch schakelen naar prestaties bij starten games en later terugschakelen."	
+                    "autoSwitch": "Automatisch schakelen naar prestaties bij starten games en later terugschakelen."
                 },
                 "advancedOC": {
                     "title": "Overklok geavanc. instell.",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -3363,10 +3363,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

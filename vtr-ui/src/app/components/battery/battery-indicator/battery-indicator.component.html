@@ -3,7 +3,7 @@
 	<div class="cell">
 		<div class="battery-shadow"></div>
 		<div #battery
-			 *ngIf="!isWinRTLoading"
+			*ngIf="!isWinRTLoading"
 			[class]="isInDetailsModal?'battery detail-battery': 'battery'">
 			<div class="acid-container">
 				<div class="fill"></div>
@@ -19,7 +19,9 @@
 				<div class="battery-error d-flex justify-content-center align-items-center"
 					*ngIf="batteryNotDetected">
 					<span class="icomoon icomoon-NoBatteryError error-icon"></span>
-					<span class="no-battery-detected" title="{{'device.deviceSettings.batteryGauge.batteryNotDetected'| translate}}"
+					<span role="text"
+						class="no-battery-detected"
+						title="{{'device.deviceSettings.batteryGauge.batteryNotDetected'| translate}}"
 						id="myDevice-settings-batteryGauge-notDetected-title"
 						role="text">
 						{{'device.deviceSettings.batteryGauge.batteryNotDetected'| translate}}

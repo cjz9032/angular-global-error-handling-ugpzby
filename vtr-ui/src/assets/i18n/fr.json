@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Paramètres mode thermique",
                     "thermalMode2SettingDesc": "Choisissez le mode que vous souhaitez utiliser.",
-                    "fnQDesc": "Vous pouvez changer de mode à l'aide du raccourci Fn + Q.",
+                    "fnQDesc": "Vous pouvez changer de mode à l'aide du raccourci Fn+Q.",
                     "perormanceTitle": "Mode de performance",
                     "performanceDesc": "Améliorez les performances de votre ordinateur avec une vitesse de ventilateur supérieure et une consommation d'électricité plus élevée.",
                     "OCDesc": "Vous pouvez choisir d'activer la fonction de surfréquençage.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Installer les pilotes GPU pour utiliser la fonction overclocking.",
                         "goInstall": "PROCÉDER À L'INSTALLATION"
                     },
-                    "autoSwitch": "Passage auto au mode performance lors de jeux et revenir au mode précédent."	
+                    "autoSwitch": "Passage auto au mode performance lors de jeux et revenir au mode précédent."
                 },
                 "advancedOC": {
                     "title": "Surfréquençage Param. avancés",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -3363,10 +3363,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

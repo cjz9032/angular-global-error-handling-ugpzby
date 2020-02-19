@@ -11,17 +11,19 @@
 			<div class="container-fluid">
 				<div *ngIf="batteryService.gaugeResetInfo?.length>0">
 					<div class="row pt-1"
-						*ngFor="let battery of batteryService.gaugeResetInfo; let i=index"
+						*ngFor="let battery of batteryService.gaugeResetInfo; let i=index;"
 						tabindex="0"
 						role="text">
 						<div class="col px-5">
 							<div class="battery-text"
 								id=""
 								role="text">
-								<span *ngIf="batteryService.gaugeResetInfo?.length==1">
+								<span role="text"
+									*ngIf="batteryService.gaugeResetInfo?.length==1">
 									{{'device.deviceSettings.batteryGauge.subtitle'| translate}}
 								</span>
-								<span *ngIf="batteryService.gaugeResetInfo?.length>1">
+								<span role="text"
+									*ngIf="batteryService.gaugeResetInfo?.length>1">
 									{{ headings[i] | translate }}
 								</span>
 							</div>
@@ -71,7 +73,9 @@
 										</div>
 										<div class="col-8 label-value"
 											role="text">
-											{{batteryService.remainingPercentages[battery.batteryNum - 1]}}<span>%</span></div>
+											{{batteryService.remainingPercentages[battery.batteryNum - 1]}}<span
+												role="text">%</span>
+										</div>
 									</div>
 									<div class="row"
 										*ngIf="battery.startTime">
@@ -155,13 +159,15 @@
 						</div>
 					</div>
 					<div class="row px-5 pt-3">
-						<span *ngIf="!batteryService.isAcAttached"
+						<span role="text"
+							*ngIf="!batteryService.isAcAttached"
 							class="note warning-note"
 							tabindex="0"
 							role="text">
 							{{'device.deviceSettings.power.batterySettings.gaugeReset.note' | translate}}
 						</span>
-						<span *ngIf="batteryService.isAcAttached && batteryService.gaugeResetInfo?.length>1"
+						<span role="text"
+							*ngIf="batteryService.isAcAttached && batteryService.gaugeResetInfo?.length>1"
 							class="note"
 							tabindex="0"
 							role="text">

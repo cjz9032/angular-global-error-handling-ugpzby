@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Ρύθ. θερμικής λειτουργίας",
                     "thermalMode2SettingDesc": "Επιλέξτε τη λειτ. που θέλετε να χρησιμοποιήσετε.",
-                    "fnQDesc": "Μπορείτε να αλλάξετε τη λειτουργία χρησιμοποιώντας τη συντόμευση Fn + Q.",
+                    "fnQDesc": "Μπορείτε να αλλάξετε τη λειτουργία χρησιμοποιώντας τη συντόμευση Fn+Q.",
                     "perormanceTitle": "Λειτουργία απόδοσης",
                     "performanceDesc": "Ενισχύστε την απόδοση του υπολογιστή σας με μεγαλύτερη ταχύτητα ανεμιστήρα και περισσότερη κατανάλωση ενέργειας.",
                     "OCDesc": "Μπορείτε να επιλέξετε να ενεργοποιήσετε τη δυνατότητα Υπερχρονισμού.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Εγκαταστήστε προγραμ.οδήγησης GPU για χρήση της λειτ.Υπερχρονισμού.",
                         "goInstall": "ΕΓΚΑΤΑΣΤΑΣΗ"
                     },
-                    "autoSwitch": "Αυτόματη μετάβαση στην Απόδοση κατά την εκκίνηση παιχνιδιών και μετά επιστροφή."	
+                    "autoSwitch": "Αυτόματη μετάβαση στην Απόδοση κατά την εκκίνηση παιχνιδιών και μετά επιστροφή."
                 },
                 "advancedOC": {
                     "title": "Υπερχρον. Ρυθ. για προχ.",
@@ -137,16 +137,16 @@
                         "cpuOCName2": "Τάση πυρήνα",
                         "cpuOCName116": "Αναλογία 1 πυρήνα",
                         "cpuOCName117": "Αναλογία 2 πυρήνων",
-                        "cpuOCName118": "Αναλογία 3 πυρήνα",
-                        "cpuOCName119": "Αναλογία 4 πυρήνα",
+                        "cpuOCName118": "Αναλογία 3 πυρήνων",
+                        "cpuOCName119": "Αναλογία 4 πυρήνων",
                         "cpuOCName34": "Μετατόπιση τάσης πυρήνα",
-                        "cpuOCName120": "Αναλογία 5 πυρήνα",
-                        "cpuOCName121": "Αναλογία 6 πυρήνα",
+                        "cpuOCName120": "Αναλογία 5 πυρήνων",
+                        "cpuOCName121": "Αναλογία 6 πυρήνων",
                         "cpuOCName76": "Αναλογία cache",
                         "cpuOCName77": "Τάση cache",
                         "cpuOCName79": "Μετατόπιση τάσης cache",
-                        "cpuOCName122": "Αναλογία 7 πυρήνα",
-                        "cpuOCName123": "Αναλογία 8 πυρήνα",
+                        "cpuOCName122": "Αναλογία 7 πυρήνων",
+                        "cpuOCName123": "Αναλογία 8 πυρήνων",
                         "cpuOCName102": "IccMax πυρήνα",
                         "cpuOCName106": "IccMax μνήμης cache",
                         "cpuOCName114": "Μετατόπιση αναλογίας AVX"
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName":{
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -3363,10 +3363,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId":"Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

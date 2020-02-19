@@ -5,6 +5,7 @@ import { GamingLightingService } from './../../../services/gaming/lighting/gamin
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LightingDataList } from 'src/app/data-models/gaming/lighting-new-version/lighting-data-list';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
   selector: 'vtr-widget-lighting-notebook',
@@ -42,7 +43,8 @@ export class WidgetLightingNotebookComponent implements OnInit {
     private ngZone:NgZone,
     private commonService: CommonService,
     private gamingLightingService: GamingLightingService,
-		public shellServices: VantageShellService,
+    public shellServices: VantageShellService,
+    private logger: LoggerService
   ) { }
 
   ngOnInit() {
@@ -50,6 +52,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
     this.getCacheList();
     if(this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionNote) !== undefined){
       this.lightingCapabilities = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionNote);
+      this.logger.info("this.lightingCapabilities cache ",this.lightingCapabilities);
       this.getLightingCapabilitiesFromcache(this.lightingCapabilities);
     }
     if (this.lightingProfileById !== undefined) {
@@ -58,6 +61,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
     this.getLightingCapabilities();
 
     this.ledSwitchButtonFeature = this.commonService.getLocalStorageValue(LocalStorageKey.LedSwitchButtonFeature);
+    this.logger.info("ledSwitchButtonFeature: ",this.ledSwitchButtonFeature);
     if(this.ledSwitchButtonFeature){
       this.regLightingProfileIdChangeEvent();
     }
@@ -92,13 +96,14 @@ export class WidgetLightingNotebookComponent implements OnInit {
     try {
       if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService.getLightingCapabilities().then((response: any) => {
-                  if(response){
-                    this.lightingCapabilities = response;
-                    this.getEffectList();
-                    this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionNote,response);
-                    this.getLightingProfileById(this.currentProfileId)
-                  }
-                });
+          this.logger.info("LightingCapabilities: ",response);
+          if(response){
+            this.lightingCapabilities = response;
+            this.getEffectList();
+            this.commonService.setLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionNote,response);
+            this.getLightingProfileById(this.currentProfileId)
+          }
+        });
 			}
     } catch (error) {}
   }
@@ -114,6 +119,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
       if(currentProfileId === 0) return;
       if (this.gamingLightingService.isShellAvailable) {
         this.gamingLightingService.getLightingProfileById(currentProfileId).then((response:any) => {
+          this.logger.info("getLightingProfileById: ",response);
           this.publicProfileIdInfo(response);
         });
       }
@@ -145,6 +151,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
       if (this.gamingLightingService.isShellAvailable) {
         this.gamingLightingService.setLightingProfileId(1, this.currentProfileId).then((response: any) => {
+          this.logger.info("setLightingProfileId: ",response);
           if (response.didSuccess) {
             this.publicProfileIdInfo(response);
           }else{
@@ -178,6 +185,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
   public getProfileEvent(profileId){
     this.ngZone.run(()=> {
+      this.logger.info("profileId event ",profileId);
       if(this.currentProfileId === profileId) return;
       this.isColorPicker = false;
       this.showOptions = false;
@@ -214,8 +222,10 @@ export class WidgetLightingNotebookComponent implements OnInit {
         lightEffectType:event.value,
         lightLayoutVersion:2
       };
+      this.logger.info("effectJson: ",effectJson);
       if (this.gamingLightingService.isShellAvailable) {
        this.gamingLightingService.setLightingProfileEffectColor(effectJson).then((response: any) => {
+         this.logger.info("setLightingProfileEffect: ",response);
          if (response.didSuccess) {
            this.isEffectChange = true; 
            this.publicPageInfo(response);
@@ -248,8 +258,10 @@ export class WidgetLightingNotebookComponent implements OnInit {
         lightBrightness:event[0],
         lightLayoutVersion:2
       };
+      this.logger.info("brightJson: ",brightJson);
       if(this.gamingLightingService.isShellAvailable){
         this.gamingLightingService.setLightingProfileEffectColor(brightJson).then((response:any) => {
+          this.logger.info("setLightingBrightness: ",response);
           if(response.didSuccess) {
              this.publicPageInfo(response);
           }else{
@@ -276,8 +288,10 @@ export class WidgetLightingNotebookComponent implements OnInit {
          lightSpeed:event[0],
          lightLayoutVersion:2
        };
+       this.logger.info("speedJson: ",speedJson);
        if(this.gamingLightingService.isShellAvailable){
          this.gamingLightingService.setLightingProfileEffectColor(speedJson).then((response:any) => {
+          this.logger.info("setLightingSpeed: ",response);
            if(response.didSuccess) {
              this.publicPageInfo(response);
            }else{
@@ -302,6 +316,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
        if(this.gamingLightingService.isShellAvailable){
         this.gamingLightingService.setLightingDefaultProfileById(profileId).then((response:any) => {
+          this.logger.info("setDefaultProfile: ",response);
           if(response.didSuccess){
            this.publicDefaultInfo(response);
           }else{
@@ -356,8 +371,10 @@ export class WidgetLightingNotebookComponent implements OnInit {
         lightColor:event,
         lightLayoutVersion:2
       };
+      this.logger.info('colorJson: ',colorJson);
       if(this.gamingLightingService.isShellAvailable){
         this.gamingLightingService.setLightingProfileEffectColor(colorJson).then((response:any) => {
+          this.logger.info('setLightingColor: ',response);
           if(response.didSuccess) {
               this.publicPageInfo(response);
           }else{
@@ -374,11 +391,13 @@ export class WidgetLightingNotebookComponent implements OnInit {
     let nameObj = lightingPanelImage.filter((element) => {
       return element.value === lightPanelType;
     });
+    this.logger.info("nameObj: ",nameObj);
     return nameObj;
   }
 
   public getLightingCurrentDetail(res){
     try {
+      this.logger.info("detaile: ",res);
       if (this.currentProfileId === 0) {
         this.isProfileOff = true;
       }else{
@@ -394,6 +413,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
            }
            this.lightingEffectList.curSelected = this.lightingCurrentDetail.lightEffectType;
            this.effectSupportSpeed(this.lightingCurrentDetail.lightEffectType);
+           this.logger.info("this.lightingCurrentDetail: ",this.lightingCurrentDetail);
          }
       }
     } catch (error) {}
@@ -404,11 +424,13 @@ export class WidgetLightingNotebookComponent implements OnInit {
       (i) => this.lightingCapabilities.LedType_Complex.includes(i.value)
     )
     this.lightingEffectList = this.lightingEffectData;
+    this.logger.info("effectList: ",this.lightingEffectList);
   }
 
   public getCacheList(){
     this.lightingProfileById = undefined;
     this.toggleStatus = this.commonService.getLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
+    this.logger.info(`this.toggleStatus:  ${this.toggleStatus} ----this.currentProfileId: ${this.currentProfileId}`);
     if(this.toggleStatus !== undefined){
       if(this.currentProfileId !== 0){
         if(this.toggleStatus['profileId'+this.currentProfileId].status !== 'undefined'){
@@ -424,6 +446,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
         }
       }
     }
+    this.logger.info("this.lightingProfileById: ",this.lightingProfileById);
   }
 
   public setCacheList(){
@@ -509,6 +532,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
   }
 
   public initProfileId(){
+    this.logger.info("this.currentProfileId init: ",this.currentProfileId);
     if(this.currentProfileId === null || this.currentProfileId === undefined){
       if (this.gamingLightingService.isShellAvailable) {
         this.gamingLightingService.getLightingProfileId().then((response: any) => {
@@ -524,6 +548,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
         this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
       }
     }
+    this.logger.info("this.currentProfileId: ",this.currentProfileId);
   }
 
   public publicPageInfo(response){

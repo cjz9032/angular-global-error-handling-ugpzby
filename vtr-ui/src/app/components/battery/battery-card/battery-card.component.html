@@ -11,14 +11,18 @@
 <div class="vtr-battery-card"
 	*ngIf="!isLoading"
 	role="text"
+	aria-describedby="heading"
 	ngbAutofocus>
 	<ng-template #batteryDetail
 		let-modal
-		role="text">
+		role="text"
+		aria-describedby="heading">
 		<div class="modal-header"
-			role="text">
+			role="modal"
+			aria-describedby="heading">
 			<h4 class="modal-title battery-detail-modal-title pl-5"
-				role="text">
+				role="heading"
+				id="heading">
 				{{'device.deviceSettings.batteryGauge.details.title' | translate }}
 			</h4>
 			<button type="button"
@@ -140,7 +144,8 @@
 				[linkId]="'myDevice-settings-battery-details-btn'"
 				[label]="'device.deviceSettings.batteryGauge.button' | translate"
 				attr.aria-label="myDevice-settings-battery-details-btn"
-				[attr.aria-disabled]="batteryService.isPowerDriverMissing || batteryIndicator.batteryNotDetected"></vtr-ui-button>
+				[attr.aria-disabled]="batteryService.isPowerDriverMissing || batteryIndicator.batteryNotDetected">
+			</vtr-ui-button>
 
 
 		</div>

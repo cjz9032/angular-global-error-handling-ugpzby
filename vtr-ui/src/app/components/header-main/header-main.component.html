@@ -1,5 +1,6 @@
 <div class="vtr-header-main">
-	<img class="vtr-header-main-img" [src]="dccService.headerBackground">
+	<img class="vtr-header-main-img"
+		[src]="dccService.headerBackground">
 	<div class="vtr-header-main-inner">
 		<a class="back"
 			vtrMetrics
@@ -25,7 +26,8 @@
 		<ng-content></ng-content>
 		<div *ngIf="forwardLink"
 			class="forward-link">
-			<a routerLink="/{{forwardLink.path}}"><span class="forward-link-label">{{forwardLink.label}}</span>
+			<a routerLink="/{{forwardLink.path}}"><span role="text"
+					class="forward-link-label">{{forwardLink.label}}</span>
 				<fa-icon [icon]="['fas', 'arrow-right']"
 					class="forward-link-icon"></fa-icon>
 			</a>
