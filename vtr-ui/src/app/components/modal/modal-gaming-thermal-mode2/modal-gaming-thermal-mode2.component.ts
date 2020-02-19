@@ -10,6 +10,7 @@ import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/mo
 import { GamingOCService } from 'src/app/services/gaming/gaming-OC/gaming-oc.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
   selector: 'vtr-modal-gaming-thermal-mode2',
@@ -38,6 +39,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
     private gamingCapabilityService: GamingAllCapabilitiesService,
     private thermalModeService: GamingThermalModeService,
     private gamingOCService: GamingOCService,
+    private logger: LoggerService
   ) {
     this.gamingCapabilities.desktopType = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.desktopType);
     this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.smartFanFeature);
@@ -111,12 +113,14 @@ export class ModalGamingThermalMode2Component implements OnInit {
     try {
       this.thermalModeService.getThermalModeSettingStatus().then(res => {
         if (!this.isThermalModeSetted && res !== this.thermalModeSettingStatus && res !== undefined) {
+          this.logger.info(`Modal-ThermalMode2-GetThermalModeSettingStatus: origion status ${this.thermalModeSettingStatus}, now status ${res}`);
           this.commonService.setLocalStorageValue(LocalStorageKey.PrevThermalModeStatus, this.thermalModeSettingStatus);
           this.commonService.setLocalStorageValue(LocalStorageKey.CurrentThermalModeStatus, res);
           this.thermalModeSettingStatus = res;
         }
       });
     } catch (error) {
+      this.logger.error('Modal-ThermamMode2-GetThermalModeSettingStatus: get thermal mode settings status fail; Error message: ', error.message);
       throw new Error(error.message);
     }
   }
@@ -151,6 +155,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
     try {
       this.gamingOCService.getPerformanceOCSetting().then(res => {
         if (!this.isPerformancOCSetted && res !== this.OCSettings) {
+          this.logger.info(`Modal-ThermamMode2-GetThermalModeSettingStatus: origion performance OC Setting ${this.OCSettings}, now performance OC Setting ${res}`);
           let OCStatus = res ? 1 : 3;
           if (this.gamingCapabilities.cpuOCFeature) {
             this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, OCStatus);
@@ -162,6 +167,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
         }
       });
     } catch (error) {
+      this.logger.error('Modal-ThermamMode2-GetThermalModeSettingStatus: get performance OC Settings fail; Error message: ', error.message);
       throw new Error(error.message);
     }
   }
@@ -214,11 +220,13 @@ export class ModalGamingThermalMode2Component implements OnInit {
     try {
       this.thermalModeService.getAutoSwitchStatus().then(res => {
         if (res !== this.autoSwitchStatus) {
+          this.logger.info(`Modal-ThermamMode2-GetThermalModeSettingStatus: origion auto switch status ${this.autoSwitchStatus}, new auto switch status ${res}`);
           this.commonService.setLocalStorageValue(LocalStorageKey.autoSwitchStatus, res);
           this.autoSwitchStatus = res;
         }
       });
     } catch (error) {
+      this.logger.error('Modal-ThermamMode2-GetThermalModeSettingStatus: get auto switch status fail; Error message: ', error.message);
       throw new Error(error.message);
     }
   }
