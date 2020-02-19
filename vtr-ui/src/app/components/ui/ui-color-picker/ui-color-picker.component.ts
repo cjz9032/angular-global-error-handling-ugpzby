@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output,	EventEmitter, OnChanges, ElementRef, HostListener } from '@angular/core';
 import { LightingDataList } from 'src/app/data-models/gaming/lighting-new-version/lighting-data-list';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
   selector: 'vtr-ui-color-picker',
@@ -26,7 +27,9 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
     this.isToggleColorPicker.emit(this.isColorPicker);
   }
   
-  constructor(private elementRef: ElementRef,) { 
+  constructor(
+    private elementRef: ElementRef,
+    private logger: LoggerService) { 
     if (document.getElementById('menu-main-btn-navbar-toggler')) {
 			document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
 				this.generalClick(event);
@@ -73,7 +76,7 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
   }
 
   public colorPickerChangeFun(event){
-    console.log("event----------------",event);
+    this.logger.info("event: ",event);
     this.color = this.rgbToHex(event);
   }
  
@@ -93,7 +96,7 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
   }
 
   public cpSliderDragEndFun(event){
-    console.log("slıder----------------",event);
+    this.logger.info("slıder: ",event);
     if(this.clickEvent.target !== ""){
       if(this.elementRef.nativeElement){
         if(!this.elementRef.nativeElement.contains(this.clickEvent.target) && this.isFirstTrigger){

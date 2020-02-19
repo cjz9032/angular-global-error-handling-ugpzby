@@ -8,6 +8,7 @@ import { Component, OnInit, Input, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-widget-lighting',
@@ -34,7 +35,8 @@ export class WidgetLightingComponent implements OnInit {
 		private gamingLightingService: GamingLightingService,
 		private commonService: CommonService,
 		private deviceService: DeviceService,
-		public shellServices: VantageShellService
+		public shellServices: VantageShellService,
+		private logger: LoggerService
 	) { }
 
 	ngOnInit() {
@@ -74,7 +76,7 @@ export class WidgetLightingComponent implements OnInit {
 		} else if (!this.ledSetFeature && !this.ledDriver) {
 			this.isLightingVisible = false;
 		}
-		console.log("ledSwitchButtonFeature----------------",this.ledSwitchButtonFeature);
+		this.logger.info("ledSwitchButtonFeature: ",this.ledSwitchButtonFeature);
 		if(this.ledSwitchButtonFeature){
 		 this.regLightingProfileIdChangeEvent();
 		}
@@ -148,7 +150,7 @@ export class WidgetLightingComponent implements OnInit {
 
 	public setProfileEvent(profileId){
 		this.ngZone.run(()=>{
-			console.log("profileId------------event------------",profileId);
+			this.logger.info("profileId event ",profileId);
             if(this.setprofId === profileId) return;
             this.setprofId = profileId;
             if (this.setprofId !== undefined) {

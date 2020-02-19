@@ -5,6 +5,7 @@ import { GamingLightingService } from './../../../services/gaming/lighting/gamin
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LightingDataList } from 'src/app/data-models/gaming/lighting-new-version/lighting-data-list';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
   selector: 'vtr-widget-lighting-notebook',
@@ -42,7 +43,8 @@ export class WidgetLightingNotebookComponent implements OnInit {
     private ngZone:NgZone,
     private commonService: CommonService,
     private gamingLightingService: GamingLightingService,
-		public shellServices: VantageShellService,
+    public shellServices: VantageShellService,
+    private logger: LoggerService
   ) { }
 
   ngOnInit() {
@@ -50,7 +52,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
     this.getCacheList();
     if(this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionNote) !== undefined){
       this.lightingCapabilities = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilitiesNewversionNote);
-      console.log("this.lightingCapabilities----------cache---------",this.lightingCapabilities);
+      this.logger.info("this.lightingCapabilities cache ",this.lightingCapabilities);
       this.getLightingCapabilitiesFromcache(this.lightingCapabilities);
     }
     if (this.lightingProfileById !== undefined) {
@@ -59,7 +61,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
     this.getLightingCapabilities();
 
     this.ledSwitchButtonFeature = this.commonService.getLocalStorageValue(LocalStorageKey.LedSwitchButtonFeature);
-    console.log("ledSwitchButtonFeature------------",this.ledSwitchButtonFeature);
+    this.logger.info("ledSwitchButtonFeature: ",this.ledSwitchButtonFeature);
     if(this.ledSwitchButtonFeature){
       this.regLightingProfileIdChangeEvent();
     }
@@ -94,7 +96,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
     try {
       if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService.getLightingCapabilities().then((response: any) => {
-          console.log("LightingCapabilities----------------",response);
+          this.logger.info("LightingCapabilities: ",response);
           if(response){
             this.lightingCapabilities = response;
             this.getEffectList();
@@ -117,7 +119,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
       if(currentProfileId === 0) return;
       if (this.gamingLightingService.isShellAvailable) {
         this.gamingLightingService.getLightingProfileById(currentProfileId).then((response:any) => {
-          console.log("getLightingProfileById------------------",response);
+          this.logger.info("getLightingProfileById: ",response);
           this.publicProfileIdInfo(response);
         });
       }
@@ -149,7 +151,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
       if (this.gamingLightingService.isShellAvailable) {
         this.gamingLightingService.setLightingProfileId(1, this.currentProfileId).then((response: any) => {
-          console.log("setLightingProfileId------------------",response);
+          this.logger.info("setLightingProfileId: ",response);
           if (response.didSuccess) {
             this.publicProfileIdInfo(response);
           }else{
@@ -183,7 +185,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
   public getProfileEvent(profileId){
     this.ngZone.run(()=> {
-      console.log("profileId--------event--------",profileId);
+      this.logger.info("profileId event ",profileId);
       if(this.currentProfileId === profileId) return;
       this.isColorPicker = false;
       this.showOptions = false;
@@ -220,10 +222,10 @@ export class WidgetLightingNotebookComponent implements OnInit {
         lightEffectType:event.value,
         lightLayoutVersion:2
       };
-      console.log("effectJson------------------",effectJson);
+      this.logger.info("effectJson: ",effectJson);
       if (this.gamingLightingService.isShellAvailable) {
        this.gamingLightingService.setLightingProfileEffectColor(effectJson).then((response: any) => {
-        console.log("setLightingProfileEffect------------------",response);
+         this.logger.info("setLightingProfileEffect: ",response);
          if (response.didSuccess) {
            this.isEffectChange = true; 
            this.publicPageInfo(response);
@@ -256,10 +258,10 @@ export class WidgetLightingNotebookComponent implements OnInit {
         lightBrightness:event[0],
         lightLayoutVersion:2
       };
-      console.log("brightJson------------------",brightJson);
+      this.logger.info("brightJson: ",brightJson);
       if(this.gamingLightingService.isShellAvailable){
         this.gamingLightingService.setLightingProfileEffectColor(brightJson).then((response:any) => {
-          console.log("setLightingBrightness------------------",response);
+          this.logger.info("setLightingBrightness: ",response);
           if(response.didSuccess) {
              this.publicPageInfo(response);
           }else{
@@ -286,10 +288,10 @@ export class WidgetLightingNotebookComponent implements OnInit {
          lightSpeed:event[0],
          lightLayoutVersion:2
        };
-       console.log("speedJson------------------",speedJson);
+       this.logger.info("speedJson: ",speedJson);
        if(this.gamingLightingService.isShellAvailable){
          this.gamingLightingService.setLightingProfileEffectColor(speedJson).then((response:any) => {
-          console.log("setLightingSpeed------------------",response);
+          this.logger.info("setLightingSpeed: ",response);
            if(response.didSuccess) {
              this.publicPageInfo(response);
            }else{
@@ -314,7 +316,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
        if(this.gamingLightingService.isShellAvailable){
         this.gamingLightingService.setLightingDefaultProfileById(profileId).then((response:any) => {
-          console.log("setDefaultProfile------------------",response);
+          this.logger.info("setDefaultProfile: ",response);
           if(response.didSuccess){
            this.publicDefaultInfo(response);
           }else{
@@ -369,10 +371,10 @@ export class WidgetLightingNotebookComponent implements OnInit {
         lightColor:event,
         lightLayoutVersion:2
       };
-      console.log('colorJson--------------',colorJson);
+      this.logger.info('colorJson: ',colorJson);
       if(this.gamingLightingService.isShellAvailable){
         this.gamingLightingService.setLightingProfileEffectColor(colorJson).then((response:any) => {
-          console.log('setLightingColor--------------',response);
+          this.logger.info('setLightingColor: ',response);
           if(response.didSuccess) {
               this.publicPageInfo(response);
           }else{
@@ -389,13 +391,13 @@ export class WidgetLightingNotebookComponent implements OnInit {
     let nameObj = lightingPanelImage.filter((element) => {
       return element.value === lightPanelType;
     });
-    console.log("nameObj--------------",nameObj);
+    this.logger.info("nameObj: ",nameObj);
     return nameObj;
   }
 
   public getLightingCurrentDetail(res){
     try {
-      console.log("detaile----------------",res);
+      this.logger.info("detaile: ",res);
       if (this.currentProfileId === 0) {
         this.isProfileOff = true;
       }else{
@@ -411,7 +413,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
            }
            this.lightingEffectList.curSelected = this.lightingCurrentDetail.lightEffectType;
            this.effectSupportSpeed(this.lightingCurrentDetail.lightEffectType);
-           console.log("this.lightingCurrentDetail-------------",this.lightingCurrentDetail);
+           this.logger.info("this.lightingCurrentDetail: ",this.lightingCurrentDetail);
          }
       }
     } catch (error) {}
@@ -422,13 +424,13 @@ export class WidgetLightingNotebookComponent implements OnInit {
       (i) => this.lightingCapabilities.LedType_Complex.includes(i.value)
     )
     this.lightingEffectList = this.lightingEffectData;
-    console.log("effectList-----------",this.lightingEffectList);
+    this.logger.info("effectList: ",this.lightingEffectList);
   }
 
   public getCacheList(){
     this.lightingProfileById = undefined;
     this.toggleStatus = this.commonService.getLocalStorageValue(LocalStorageKey.KeyboardToggleStatusLNBx50);
-    console.log("toggleStatus------------------",this.toggleStatus,this.currentProfileId);
+    this.logger.info(`this.toggleStatus:  ${this.toggleStatus} ----this.currentProfileId: ${this.currentProfileId}`);
     if(this.toggleStatus !== undefined){
       if(this.currentProfileId !== 0){
         if(this.toggleStatus['profileId'+this.currentProfileId].status !== 'undefined'){
@@ -444,7 +446,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
         }
       }
     }
-    console.log("this.lightingProfileById-----------------------",this.lightingProfileById);
+    this.logger.info("this.lightingProfileById: ",this.lightingProfileById);
   }
 
   public setCacheList(){
@@ -530,7 +532,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
   }
 
   public initProfileId(){
-    console.log("this.currentProfileId-------------init-----",this.currentProfileId);
+    this.logger.info("this.currentProfileId init: ",this.currentProfileId);
     if(this.currentProfileId === null || this.currentProfileId === undefined){
       if (this.gamingLightingService.isShellAvailable) {
         this.gamingLightingService.getLightingProfileId().then((response: any) => {
@@ -546,7 +548,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
         this.currentProfileId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId);
       }
     }
-    console.log("this.currentProfileId------------------",this.currentProfileId);
+    this.logger.info("this.currentProfileId: ",this.currentProfileId);
   }
 
   public publicPageInfo(response){
