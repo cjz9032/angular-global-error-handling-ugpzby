@@ -152,7 +152,7 @@
 				}
 			}
 		}
-		
+
 		.cancel-check {
 			color: $light;
 			font-size: $fontsize_xs;
@@ -196,8 +196,8 @@
 			}
 			.result-code-icon {
 				margin-left: 0.5rem;
-				font-size: $fontsize_lg;
-				color: $main;
+				font-size: $fontsize_sm;
+				color: $menu_hover;
 				cursor: pointer;
 				&:hover {
 					color: $highlight;
