@@ -150,10 +150,10 @@ export class ConfigService {
 			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
 			resultMenu = cloneDeep(this.menuItems);
 			if (machineType !== undefined) {
-				await this.smartAssistFilter(machineType, resultMenu);
+				// await this.smartAssistFilter(machineType, resultMenu);
 			} else if (this.deviceService.isShellAvailable) {
 				await this.deviceService.getMachineType().then(async (value: number) => {
-					await this.smartAssistFilter(value, resultMenu);
+					// await this.smartAssistFilter(value, resultMenu);
 				});
 			}
 			const canShowPrivacy = await this.canShowPrivacy();
