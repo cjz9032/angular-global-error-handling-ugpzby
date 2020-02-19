@@ -42,9 +42,9 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 			showTicks: this.stepsArray && this.stepsArray.length > 0,
 			customValueToPosition: this.legendPositionFunction,
 			stepsArray: this.stepsArray,
-			floor: Number(this.minValue), // min value
-			ceil: Number(this.maxValue), // max value
-			step: Number(this.step), // value to change on each slide, default is 1
+			floor: this.minValue, // min value
+			ceil: this.maxValue, // max value
+			step: this.step, // value to change on each slide, default is 1
 			ariaLabel: 'Brightness'
 		};
 	}

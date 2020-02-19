@@ -42,10 +42,6 @@ import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.mod
 import { ModalGamingLightingComponent } from '../components/modal/modal-gaming-lighting/modal-gaming-lighting.component';
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
 import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
-import { ModalGamingPromptComponent } from '../components/modal/modal-gaming-prompt/modal-gaming-prompt.component';
-import { ModalGamingAdvancedOCComponent } from '../components/modal/modal-gaming-advanced-oc/modal-gaming-advanced-oc.component';
-import { ModalGamingThermalMode2Component } from '../components/modal/modal-gaming-thermal-mode2/modal-gaming-thermal-mode2.component';
-import { GamingOCService } from '../services/gaming/gaming-OC/gaming-oc.service';
 
 library.add(faKeyboard);
 library.add(faQuestionCircle);
@@ -66,10 +62,7 @@ library.add(faCheck);
 		WidgetSystemToolsComponent,
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
-		WidgetLightingComponent,
-		ModalGamingPromptComponent,
-		ModalGamingAdvancedOCComponent,
-		ModalGamingThermalMode2Component
+		WidgetLightingComponent
 	],
 	imports: [
 		CommonModule,
@@ -98,7 +91,7 @@ library.add(faCheck);
 		PageLayoutModule
 	],
 	exports: [TranslateModule, ContainerCardModule, MetricsModule, WidgetOfflineModule],
-	providers: [MockService, DialogService,GamingOCService],
+	providers: [MockService, DialogService],
 	entryComponents: [
 		WidgetLegionEdgeComponent,
 		ModalGamingLegionedgeComponent,
@@ -106,10 +99,7 @@ library.add(faCheck);
 		WidgetSystemToolsComponent,
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
-		WidgetLightingComponent,
-		ModalGamingPromptComponent,
-		ModalGamingAdvancedOCComponent,
-		ModalGamingThermalMode2Component
+		WidgetLightingComponent
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })

@@ -22,12 +22,6 @@
                     "rapidCharge": "Rýchle nabíjanie"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "Pretakt. zap.",
-                        "performance": "Výkon",
-                        "balance": "Vyvážený",
-                        "quiet": "Tichý"
-                    },
                     "title": "Pretaktovanie CPU",
                     "status": {
                         "alwayson": "Zap.",
@@ -103,96 +97,6 @@
                 },
                 "quickSettingstitle": {
                     "title": "Rýchle nastavenia"
-                },
-                "thermalMode2Popup": {
-                    "thermalMode2SettingTitle": "Nastavenie tepelného režimu",
-                    "thermalMode2SettingDesc": "Vyberte režim, ktorý chcete používať.",
-                    "fnQDesc": "Režim môžete prepínať pomocou klávesovej skratky Fn + Q.",
-                    "perormanceTitle": "Režim vysokého výkonu",
-                    "performanceDesc": "Zvýšte výkon počítača zvýšením otáčok ventilátora a spotreby energie.",
-                    "OCDesc": "Môžete zapnúť funkciu pretaktovania.",
-                    "ac_dcDesc": "Režim vysokého výkonu je dostupný len pri sieťovom napájaní.",
-                    "balanceTitle": "Vyvážený režim",
-                    "balanceDesc": "Automatické nastavovanie rovnováhy medzi výkonom a otáčkami ventilátora v závislosti od teploty. Stredná spotreba energie.",
-                    "quietTitle": "Tichý režim",
-                    "quietDesc": "Udržiavanie nízkej hlučnosti znížením výkonu počítača a otáčok ventilátora, pokiaľ je to možné. Nízka spotreba energie.",
-                    "OC": {
-                        "cpu_gpuOC": "Povoľte pretaktovanie CPU/GPU v režime vysokého výkonu.",
-                        "cpuOC": "Povoľte pretaktovanie CPU v režime vysokého výkonu.",
-                        "gpuOC": "Povoľte pretaktovanie GPU v režime vysokého výkonu.",
-                        "advance": "VYSOKÁ",
-                        "cpu_gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládače CPU/GPU.",
-                        "cpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač CPU.",
-                        "gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač GPU.",
-                        "goInstall": "INŠTALOVAŤ"
-                    },
-                    "autoSwitch": "Pri spustení hry automaticky aktivovať vysoký výkon, potom obnoviť pôvodný režim."	
-                },
-                "advancedOC": {
-                    "title": "Detaily pretaktovania",
-                    "description": "Nastavenie rozšírených vlastných parametrov pretaktovania. Môže to byť riskantné.",
-                    "gpuOverclock": "Pretaktovanie GPU",
-                    "cpuOCNames": {
-                        "cpuOCName2": "Napätie jadra",
-                        "cpuOCName116": "Násobič jadra 1",
-                        "cpuOCName117": "Násobič jadra 2",
-                        "cpuOCName118": "Násobič jadra 3",
-                        "cpuOCName119": "Násobič jadra 4",
-                        "cpuOCName34": "Zmena napätia jadra",
-                        "cpuOCName120": "Násobič jadra 5",
-                        "cpuOCName121": "Násobič jadra 6",
-                        "cpuOCName76": "Násobič vyrovnávacej pamäte",
-                        "cpuOCName77": "Napätie vyrovnávacej pamäte",
-                        "cpuOCName79": "Zmena napätia vyrovnávacej pamäte",
-                        "cpuOCName122": "Násobič jadra 7",
-                        "cpuOCName123": "Násobič jadra 8",
-                        "cpuOCName102": "ICCMAX jadra",
-                        "cpuOCName106": "ICCMAX vyrovnávacej pamäte",
-                        "cpuOCName114": "Zmena násobiča pre AVX"
-                    },
-                    "cpuOCTips": {
-                        "cpuOCTip2": "Nastavenie napätia jadra CPU.",
-                        "cpuOCTip116": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
-                        "cpuOCTip117": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
-                        "cpuOCTip118": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
-                        "cpuOCTip119": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
-                        "cpuOCTip34": "Zmena napätia oproti aktuálnemu napätiu jadra.",
-                        "cpuOCTip120": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
-                        "cpuOCTip121": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
-                        "cpuOCTip76": "Nastavenie maximálneho násobiča vyrovnávacej pamäte procesora, pri ktorej môže vyrovnávacia pamäť pracovať. Frekvencia vyrovnávacej pamäte je súčinom tohto násobiča a referenčnej frekvencie.",
-                        "cpuOCTip77": "Napätie dodávané do rozhrania internej vyrovnávacej pamäte procesora na základe aktuálne vybratého režimu napätia vyrovnávacej pamäte.",
-                        "cpuOCTip79": "Finálna zmena napätia, ktorá sa použije na napätie vyrovnávacej pamäte.",
-                        "cpuOCTip122": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
-                        "cpuOCTip123": "Nastavenie maximálneho násobiča jadra. Frekvencia jadra je súčinom tohto násobiča a referenčnej frekvencie.",
-                        "cpuOCTip102": "Nastavenie hodnoty ICCMAX pre regulátor napätia jadra procesora.",
-                        "cpuOCTip106": "Nastavenie hodnoty ICCMAX pre regulátor napätia vyrovnávacej pamäte procesora a kruhovej zbernice.",
-                        "cpuOCTip114": "Ak chcete odvodiť limit násobiča aktívneho jadra, keď je aktívny súbor inštrukcií AVX, odpočítajte túto hodnotu od príslušného limitu násobiča aktívneho jadra."
-                    },
-                    "gpuOCNames": {
-                        "gpuOCName0": "Zmena frekvencie GPU",
-                        "gpuOCName1": "Zmena frekvencie VRAM"
-                    },
-                    "gpuOCTips": {
-                        "gpuOCTip0": "Pridanie zmeny k frekvencii GPU.",
-                        "gpuOCTip1": "Pridanie zmeny k frekvencii pamäte."
-                    }
-                },
-                "savePromptPopup": {
-                    "title": "Uložiť zmeny?",
-                    "description1": "Zlé nastavenie taktovania môže viesť k trvalému poškodeniu hardvéru. V prípade problému postupujte jedným z týchto spôsobov: ",
-                    "description2": "•  podržaním tl. nap. na 8 s reštartujte PC a obnovte predv. par.,",
-                    "description3": "•  na obn. pred. par. stl. „Obnoviť predvolené pretaktovanie” v BIOS-e.",
-                    "save": "ULOŽIŤ",
-                    "notSave": "NEULOŽIŤ"
-                },
-                "defaultPromptPopup": {
-                    "title": "Nastaviť predvolené?",
-                    "description": "Všetky súčasné a predchádzajúce zmeny sa stratia."
-                },
-                "warningPromptPopup": {
-                    "title": "Pozor!",
-                    "description": "Nesprávne nastavenie pretaktovania môže viesť k nezvratnému poškodeniu hardvéru.",
-                    "proceed": "POKRAČOVAŤ"
                 }
             }
         },
@@ -694,42 +598,6 @@
                     "close": "close"
                 }
             }
-        },
-        "lightingNewversion": {
-            "machineName":{  
-                "name1": "Legion Icon Lighting (Front)",
-                "name2": "Internal Ambient Lighting",
-                "name3": "Legion Rear Fan Lighting",
-                "name4": "Legion CPU Fan Lighting",
-                "name5": "Legion Liquid Cooling Pump Lighting",
-                "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
-                "name9": "Ambient  Lighting"
-            },
-            "lightingEffect": {
-                "effectName1": "Statické",
-                "effectName2": "Spektrum",
-                "effectName3": "Dúha",
-                "effectName4": "Náhodné",
-                "effectName5": "Studené modré",
-                "effectName6": "Vlna doprava",
-                "effectName7": "Vlna doľava"
-            },
-            "lightingSpeed": {
-                "title": "Rýchlosť"
-            },
-            "colorPicker": {
-                "text2": "VIAC",
-                "text3": "R",
-                "text4": "G",
-                "text5": "B",
-                "text6": "Rozdelenie (vyp.): kliknutím na obrázok klávesnice zmeňte farbu",
-                "text7": "Rozdelenie (zap.): kliknutím na časti klávesnice zmeňte ich farby",
-                "text8": "Aktuálny efekt nepodporuje výber farby"
-            },
-            "tipText": {
-                "title1": "Pomocou kombinácie klávesov Fn+medzerník môžete prepínať medzi profilmi"
-            }
         }
     },
     "common": {
@@ -1038,7 +906,7 @@
                     "Good": "<b>Batéria je v dobrom stave.</b>",
                     "Exhaustion": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "Bad": "<b>Vyskytla sa chyba batérie.</b> Batériu nemožno nabiť/vybiť. Vymeňte batériu.",
-                    "NotDetected": "<b>Nebola zistená žiadna batéria.</b>",
+                    "NotDetected": "<b>Nezistená žiadna batéria ani</b> pripojená batéria.",
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b>",
                     "LimitedACAdapterSupport": "<b>Sieťový adaptér nedokáže poskytnúť dostatok energie na napájanie.</b>",

@@ -206,6 +206,15 @@ export class PageNetworkboostComponent implements OnInit {
 			Page: 'network-boost'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+			const cardContentPositionF = this.cmsService.getOneCMSContent(
+				response,
+				'half-width-top-image-title-link',
+				'position-F'
+			)[0];
+			if (cardContentPositionF) {
+				this.cardContentPositionF = cardContentPositionF;
+			}
+
 			const cardContentPositionC = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-title-description-link-image',
@@ -213,17 +222,8 @@ export class PageNetworkboostComponent implements OnInit {
 			)[0];
 			if (cardContentPositionC) {
 				this.cardContentPositionC = cardContentPositionC;
-			}
-
-			const cardContentPositionF = this.cmsService.getOneCMSContent(
-				response,
-				'inner-page-right-side-article-image-background',
-				'position-F'
-			)[0];
-			if (cardContentPositionF) {
-				this.cardContentPositionF = cardContentPositionF;
-				if (this.cardContentPositionF.BrandName) {
-					this.cardContentPositionF.BrandName = this.cardContentPositionF.BrandName.split('|')[0];
+				if (this.cardContentPositionC.BrandName) {
+					this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
 				}
 			}
 		});

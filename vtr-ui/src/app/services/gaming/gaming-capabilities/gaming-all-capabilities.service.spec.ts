@@ -58,18 +58,18 @@ describe('Shared service:', () => {
 
     });
 
-    // it('should call setCapabilityValuesGlobally', () => {
-    //   // tslint:disable-next-line: no-shadowed-variable
-    //   const { service } = setup();
-    //   spyOn(service, 'setCapabilityValuesGlobally').and.callThrough();
-    //   service.setCapabilityValuesGlobally(capabilities);
-    //   expect(service.setCapabilityValuesGlobally).toHaveBeenCalled();
+    it('should call setCapabilityValuesGlobally', () => {
+      // tslint:disable-next-line: no-shadowed-variable
+      const { service } = setup();
+      spyOn(service, 'setCapabilityValuesGlobally').and.callThrough();
+      service.setCapabilityValuesGlobally(capabilities);
+      expect(service.setCapabilityValuesGlobally).toHaveBeenCalled();
 
-    //   service.isShellAvailable = false;
-    //   service.setCapabilityValuesGlobally(capabilities);
-    //   expect(service.setCapabilityValuesGlobally).toHaveBeenCalled();
+      service.isShellAvailable = false;
+      service.setCapabilityValuesGlobally(capabilities);
+      expect(service.setCapabilityValuesGlobally).toHaveBeenCalled();
 
-    // });
+    });
 
     it('should call getCapabilityFromCache', () => {
       // tslint:disable-next-line: no-shadowed-variable

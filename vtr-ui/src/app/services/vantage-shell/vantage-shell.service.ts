@@ -765,15 +765,6 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-	public getGamingAdvancedOC() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingAdvancedOC;
-		}
-		return undefined;
-	}
 	/***
      * returns macroKeyClearInfo object from VantageShellService of JS Bridge
      ***/

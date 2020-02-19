@@ -241,12 +241,12 @@ describe('MacrokeyService', () => {
 			expect(macrokeyService.getMacrokeyInitialKeyDataCache).toHaveBeenCalled();
 		});
 
-		// it('should call updateMacrokeyInitialKeyRepeatDataCache', async () => {
-		// 	const macrokeyService = getService();
-		// 	spyOn(macrokeyService, 'updateMacrokeyInitialKeyRepeatDataCache').and.callThrough();
-		// 	macrokeyService.updateMacrokeyInitialKeyRepeatDataCache(2);
-		// 	expect(macrokeyService.updateMacrokeyInitialKeyRepeatDataCache).toHaveBeenCalled();
-		// });
+		it('should call updateMacrokeyInitialKeyRepeatDataCache', async () => {
+			const macrokeyService = getService();
+			spyOn(macrokeyService, 'updateMacrokeyInitialKeyRepeatDataCache').and.callThrough();
+			macrokeyService.updateMacrokeyInitialKeyRepeatDataCache(2);
+			expect(macrokeyService.updateMacrokeyInitialKeyRepeatDataCache).toHaveBeenCalled();
+		});
 
 		it('should call updateMacrokeyInitialKeyIntervalDataCache', async () => {
 			const macrokeyService = getService();

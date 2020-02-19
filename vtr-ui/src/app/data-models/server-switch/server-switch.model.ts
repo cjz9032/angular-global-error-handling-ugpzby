@@ -30,10 +30,7 @@ export class ServerSwitch {
 		'https://ce-qa.csw.lenovo.com',
 		'https://vantage-qa.csw.lenovo.com',
 		'https://ce-dev.csw.lenovo.com',
-		'https://vantage-dev.csw.lenovo.com',
-		'https://cm.dxp.lenovo.com',
-		'https://cm.dxp-qa.lenovo.com',
-		'https://stg.dxp.lenovo.com'
+		'https://vantage-dev.csw.lenovo.com'
 	];
 
 	public brandList: string[] = [

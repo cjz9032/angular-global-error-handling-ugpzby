@@ -15,10 +15,8 @@
 			</div>
 			<div class="row mb-60">
 				<div class="col col-12 pt-0 px-0">
-					<vtr-ui-lighting-profile [currentProfileId]="currentProfileId" *ngIf="ledlayoutversion === 1">
+					<vtr-ui-lighting-profile [currentProfileId]="currentProfileId">
 					</vtr-ui-lighting-profile>
-					<vtr-widget-lighting-desk  [currentProfileId]="currentProfileId" *ngIf="ledlayoutversion === 3"></vtr-widget-lighting-desk>
-					<vtr-widget-lighting-notebook  [currentProfileId]="currentProfileId" *ngIf="ledlayoutversion === 2"></vtr-widget-lighting-notebook>
 				</div>
 			</div>
 		</div>
@@ -27,24 +25,26 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col col-12  px-0 pt-0 pb-40 mtop">
-					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="1" [itemID]="cardContentPositionC.id"
-						[img]="cardContentPositionC.FeatureImage" [title]="cardContentPositionC.Title"
-						[logoText]="cardContentPositionC.BrandName" [action]="cardContentPositionC.Action"
-						[dataSource]="cardContentPositionC.DataSource" [actionType]="cardContentPositionC.ActionType"
-						[actionLink]="cardContentPositionC.ActionLink" [type]="'subpage-article'" [ratio]="1"
-						id="lighting_customize_crm_card_A" aria-label="lighting_customize_crm_card_A">
-					</vtr-container-card>
+				<div class="col col-12 pt-0 pb-40 px-0 mtop">
+						<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="1" [itemID]="cardContentPositionF.Id"
+							[img]="cardContentPositionF.FeatureImage" [title]="cardContentPositionF.Title"
+							[logoText]="cardContentPositionF.BrandName" [action]="cardContentPositionF.Action"
+							[dataSource]="cardContentPositionF.DataSource"
+							[actionType]="cardContentPositionF.ActionType"
+							[actionLink]="cardContentPositionF.ActionLink" [type]="'subpage-article'" [ratio]="1" id="lighting_customize_crm_card_A" aria-label="lighting_customize_crm_card_A">
+						</vtr-container-card>
 				</div>
-				<div class="col col-12 px-0 pt-0 pb-40">
-					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="2" [itemID]="cardContentPositionF.Id"
-						[img]="cardContentPositionF.FeatureImage" [caption]="cardContentPositionF.Description"
-						[title]="cardContentPositionF.Title" [logoText]="cardContentPositionF.BrandName"
-						[action]="cardContentPositionF.Action" [dataSource]="cardContentPositionF.DataSource"
-						[actionType]="cardContentPositionF.ActionType" [actionLink]="cardContentPositionF.ActionLink"
-						[type]="'subpage-corner'" [ratio]="2" [cornerShift]="'large'" 
-						id="lighting_customize_crm_card_B" aria-label="lighting_customize_crm_card_B">
-					</vtr-container-card>
+				<div class="col col-12 pt-0 pb-40 px-0">
+						<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="2" [itemID]="cardContentPositionC.id"
+							[dynamicmetricsItem]="dynamic_metricsItem" [img]="cardContentPositionC.FeatureImage"
+							[caption]="cardContentPositionC.Description" [title]="cardContentPositionC.Title"
+							[logoText]="cardContentPositionC.BrandName" [action]="cardContentPositionC.Action"
+							[dataSource]="cardContentPositionC.DataSource"
+							[actionType]="cardContentPositionC.ActionType"
+							[actionLink]="cardContentPositionC.ActionLink" [type]="'subpage-corner'"
+							[ratio]="2" [cornerShift]="'large'" id="lighting_customize_crm_card_B"
+							aria-label="lighting_customize_crm_card_B">
+						</vtr-container-card>
 				</div>
 			</div>
 		</div>

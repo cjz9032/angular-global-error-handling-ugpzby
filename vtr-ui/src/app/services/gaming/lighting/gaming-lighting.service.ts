@@ -5,7 +5,7 @@ import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 	providedIn: 'root'
 })
 export class GamingLightingService {
-	private getGamingLighting: any;
+	public getGamingLighting: any;
 	public isShellAvailable = false;
 
 	public cardContentPositionF: any = {
@@ -88,34 +88,6 @@ export class GamingLightingService {
 				return this.getGamingLighting.getLightingCapabilities();
 			}
 			return undefined;
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
-
-	//X50 new interface
-	regLightingProfileIdChangeEvent(): Promise<any> {
-		try {
-			if (this.isShellAvailable) {
-				return this.getGamingLighting.regLightingProfileIdChangeEvent();
-			}
-			return undefined;
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
-
-	checkAreaColorFn (listInfo) {
-		try {
-			const array = listInfo.map(o => o.lightColor);
-			console.log('arr================================',array)
-			if (array.length > 0) {
-				return array.some(function(value, index) {
-					return value !== array[0];
-				});
-			} else {
-				return false;
-			}
 		} catch (error) {
 			throw new Error(error.message);
 		}

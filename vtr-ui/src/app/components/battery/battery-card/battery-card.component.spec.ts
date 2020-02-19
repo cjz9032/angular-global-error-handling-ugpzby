@@ -198,25 +198,25 @@ describe('BatteryCardComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	// it('should call onPowerBatteryGaugeResetEvent', () => {
-	// 	const info: BatteryGaugeReset[] = [
-	// 		{
-	// 			barCode: 'X2XP899J0N0',
-	// 			batteryNum: 1,
-	// 			FCCAfter: 4,
-	// 			FCCBefore: 1,
-	// 			isResetRunning: false,
-	// 			lastResetTime: '',
-	// 			resetErrorLog: 'ERROR_UNEXPECTED',
-	// 			stage: 0,
-	// 			stageNum: 0,
-	// 			startTime: ''
-	// 		}
-	// 	];
-	// 	let spy = spyOn(commonService, 'cloneObj').and.returnValue(info);
-	// 	component.onPowerBatteryGaugeResetEvent(info);
-	// 	expect(spy).toHaveBeenCalled();
-	// });
+	it('should call onPowerBatteryGaugeResetEvent', () => {
+		const info: BatteryGaugeReset[] = [
+			{
+				barCode: 'X2XP899J0N0',
+				batteryNum: 1,
+				FCCAfter: 4,
+				FCCBefore: 1,
+				isResetRunning: false,
+				lastResetTime: '',
+				resetErrorLog: 'ERROR_UNEXPECTED',
+				stage: 0,
+				stageNum: 0,
+				startTime: ''
+			}
+		];
+		let spy = spyOn(commonService, 'cloneObj').and.returnValue(info);
+		component.onPowerBatteryGaugeResetEvent(info);
+		expect(spy).toHaveBeenCalled();
+	});
 
 	it('should call getBatteryDetailOnCard - else case', () => {
 		let spy = spyOn(component, 'getBatteryDetails');

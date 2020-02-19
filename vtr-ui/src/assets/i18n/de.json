@@ -22,12 +22,6 @@
                     "rapidCharge": "Schnellladen"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "Overclock ein",
-                        "performance": "Leistung",
-                        "balance": "Abstimmung",
-                        "quiet": "Leise"
-                    },
                     "title": "CPU-Übertaktung",
                     "status": {
                         "alwayson": "Ein",
@@ -103,96 +97,6 @@
                 },
                 "quickSettingstitle": {
                     "title": "Schnell-Einstellungen"
-                },
-                "thermalMode2Popup": {
-                    "thermalMode2SettingTitle": "Einstellung Wärmemodus",
-                    "thermalMode2SettingDesc": "Wählen Sie den gewünschten Modus aus.",
-                    "fnQDesc": "Sie können den Modus über die Tastenkombination Fn + Q wechseln.",
-                    "perormanceTitle": "Leistungsmodus",
-                    "performanceDesc": "Steigern Sie die Leistung Ihres Computers. Dies führt zu höherer Lüftergeschwindigkeit und mehr Stromverbrauch.",
-                    "OCDesc": "Sie können auswählen, dass die Funktion zum Übertakten aktiviert werden soll.",
-                    "ac_dcDesc": "Der Leistungsmodus ist nur bei Netzbetrieb verfügbar.",
-                    "balanceTitle": "Ausbalancierter Modus",
-                    "balanceDesc": "Die Leistung und die Lüftergeschwindigkeit werden automatisch basierend auf der Temperatur ausgeglichen. Durchschnittlicher Stromverbrauch.",
-                    "quietTitle": "Ruhemodus",
-                    "quietDesc": "Leiser Betrieb, indem die Leistung des Computers sowie die Lüftergeschwindigkeit soweit möglich reduziert werden. Niedriger Stromverbrauch.",
-                    "OC": {
-                        "cpu_gpuOC": "CPU-/GPU-Übertaktung im Leistungsmodus aktivieren.",
-                        "cpuOC": "CPU-Übertaktung im Leistungsmodus aktivieren.",
-                        "gpuOC": "GPU-Übertaktung im Leistungsmodus aktivieren.",
-                        "advance": "ERWEITERT",
-                        "cpu_gpuDriverLack": "CPU-/GPU-Treiber installieren, um Overclocking zu verwenden.",
-                        "cpuDriverLack": "CPU-Treiber installieren, um Overclocking zu verwenden.",
-                        "gpuDriverLack": "GPU-Treiber installieren, um Overclocking zu verwenden.",
-                        "goInstall": "INSTALLIEREN"
-                    },
-                    "autoSwitch": "Autom. Wechsel zu Leistung, wenn Spiele gestartet werden, danach zurückschalten."	
-                },
-                "advancedOC": {
-                    "title": "Overclock Erweiterte Einst.",
-                    "description": "Erweiterte benutzerdef. Parameter bei akt. Overclocking festlegen. Es könnte riskant sein.",
-                    "gpuOverclock": "GPU-Übertaktung",
-                    "cpuOCNames": {
-                        "cpuOCName2": "Core-Spannung",
-                        "cpuOCName116": "1-Kern-Verhältnis",
-                        "cpuOCName117": "2-Kern-Verhältnis",
-                        "cpuOCName118": "3-Kern-Verhältnis",
-                        "cpuOCName119": "4-Kern-Verhältnis",
-                        "cpuOCName34": "Offset Core-Spannung",
-                        "cpuOCName120": "5-Kern-Verhältnis",
-                        "cpuOCName121": "6-Kern-Verhältnis",
-                        "cpuOCName76": "Cache-Verhältnis",
-                        "cpuOCName77": "Cache-Spannung",
-                        "cpuOCName79": "Offset Cache-Spannung",
-                        "cpuOCName122": "7-Kern-Verhältnis",
-                        "cpuOCName123": "8-Kern-Verhältnis",
-                        "cpuOCName102": "Core-ICCMAX",
-                        "cpuOCName106": "Cache-ICCMAX",
-                        "cpuOCName114": "Offset AVX-Verhältnis"
-                    },
-                    "cpuOCTips": {
-                        "cpuOCTip2": "Spannung für den Prozessorkern festlegen.",
-                        "cpuOCTip116": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip117": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip118": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip119": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip34": "Ein Spannungsoffset von der aktuellen Core-Spannung.",
-                        "cpuOCTip120": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip121": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip76": "Stellen Sie den maximalen Prozessor-Cache-Multiplikator ein, mit dem die Caches arbeiten können. Der Wert der Cache-Frequenz ist das Produkt aus diesem Verhältnis und der Referenztaktfrequenz.",
-                        "cpuOCTip77": "Spannung, die der internen Cache-Schnittstelle des Prozessors bereitgestellt wird, basierend auf dem momentan ausgewählten Cache-Spannungsmodus.",
-                        "cpuOCTip79": "Letzter Spannungsoffset, der auf die Cache-Spannung angewendet wird.",
-                        "cpuOCTip122": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip123": "Maximalen Kernmultiplikator festlegen, bei dem die Kerne betrieben werden können. Der Wert der Kerntaktfrequenz ist das Produkt dieses Verhältnisses und der Referenz-Taktfrequenz.",
-                        "cpuOCTip102": "ICCMAX für Prozessorkern-Spannungsregler festlegen.",
-                        "cpuOCTip106": "ICCMAX für Prozessorcache- und Ringbus-Spannungsregler festlegen.",
-                        "cpuOCTip114": "Sie können den effektiven Grenzwert für das Verhältnis aktiver Kerne bei aktiviertem AVX ableiten, indem Sie diesen Wert vom entsprechenden Grenzwert für das Verhältnis aktiver Kerne abziehen."
-                    },
-                    "gpuOCNames": {
-                        "gpuOCName0": "Offset GPU-Takt",
-                        "gpuOCName1": "Offset VRAM-Takt"
-                    },
-                    "gpuOCTips": {
-                        "gpuOCTip0": "Offset zur GPU-Taktfrequenz hinzufügen.",
-                        "gpuOCTip1": "Offset zur Hauptspeicher-Taktfrequenz hinzufügen."
-                    }
-                },
-                "savePromptPopup": {
-                    "title": "Änderungen speich.?",
-                    "description1": "Falsche Übertaktungseinstellungen führen zu irreparablen Hardwareschäden. Führen Sie bei einem Fehler einen der folgenden Schritte aus: ",
-                    "description2": "•  Halten Sie für einen Neustart und Wiederherstellen der Std.parameter die Einschalttaste 8 Sek. lang gedrückt.",
-                    "description3": "•  Stellen Sie die Std.parameter mit \"Standard-Übertaktung wiederherstellen\" in den BIOS-Einstellungen wieder her.",
-                    "save": "SPEICHERN",
-                    "notSave": "ABBRECHEN"
-                },
-                "defaultPromptPopup": {
-                    "title": "Standards setzen?",
-                    "description": "Alle aktuellen und vorherigen Änderungen gehen dabei verloren."
-                },
-                "warningPromptPopup": {
-                    "title": "Warnung!",
-                    "description": "Unsachgemäße Einstellungen für Overclocking können zu irreversiblen Hardwareschaden führen.",
-                    "proceed": "FORTFAHREN"
                 }
             }
         },
@@ -694,42 +598,6 @@
                     "close": "close"
                 }
             }
-        },
-        "lightingNewversion": {
-            "machineName":{  
-                "name1": "Legion Icon Lighting (Front)",
-                "name2": "Internal Ambient Lighting",
-                "name3": "Legion Rear Fan Lighting",
-                "name4": "Legion CPU Fan Lighting",
-                "name5": "Legion Liquid Cooling Pump Lighting",
-                "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
-                "name9": "Ambient  Lighting"
-            },
-            "lightingEffect": {
-                "effectName1": "Statisch",
-                "effectName2": "Spektrum",
-                "effectName3": "Regenbogen",
-                "effectName4": "Zufällig",
-                "effectName5": "Kühles_Blau",
-                "effectName6": "Welle_rechts",
-                "effectName7": "Welle_links"
-            },
-            "lightingSpeed": {
-                "title": "Geschwindigkeit"
-            },
-            "colorPicker": {
-                "text2": "MEHR",
-                "text3": "R",
-                "text4": "G",
-                "text5": "B",
-                "text6": "Bereich teilen (aus): Ändern Sie die Farben mit dem Tastaturbild",
-                "text7": "Bereich teilen (ein): Abschnitte mit dem Tastaturbild unten ändern",
-                "text8": "Der aktuelle Effekt unterstützt keine Farbauswahl"
-            },
-            "tipText": {
-                "title1": "Fn+Leertaste zum Wechseln zwischen Profilen verwenden"
-            }
         }
     },
     "common": {
@@ -1038,7 +906,7 @@
                     "Good": "<b>Der Akku befindet sich in einem guten Zustand.</b>",
                     "Exhaustion": "Die Ladekapazität des Akkus ist <b>vermindert</b>. Setzen Sie einen neuen Akku ein.",
                     "Bad": "<b>Ein Akkufehler ist aufgetreten.</b> Der Akku kann nicht aufgeladen/entladen werden. Tauschen Sie den Akku aus.",
-                    "NotDetected": "<b>Kein Akku erkannt.</b>",
+                    "NotDetected": "<b>Kein Akku erkannt</b> oder nicht ordnungsgemäß eingesetzter Akku.",
                     "NotGood": "<b>Der Akku befindet sich nicht in einem guten Zustand.</b>",
                     "NotSupportACAdapter": "<b>Netzteil wird nicht unterstützt.</b>",
                     "LimitedACAdapterSupport": "<b>Netzteil kann nicht genügend Strom liefern.</b>",

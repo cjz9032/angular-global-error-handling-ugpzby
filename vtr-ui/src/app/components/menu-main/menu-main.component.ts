@@ -299,27 +299,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	toggleMenu(event) {
 		this.updateSearchBoxState(false);
 		this.showMenu = !this.showMenu;
-		this.colorPickerFun();
 		event.stopPropagation();
 	}
-
-	//To fix Hamburgar menu closing issue VAN-14558
-	public colorPickerFun(){
-		if(this.showMenu){
-			if(document.getElementById('colorBtn')){
-				document.getElementById('colorBtn').addEventListener('click',(event)=>{
-					this.showMenu = false;
-				});
-			}
-			for(let i=0;i<4;i++){
-				if(document.getElementById('keyboard-area'+i)){
-					document.getElementById('keyboard-area'+i).addEventListener('click',(event)=>{
-						this.showMenu = false;
-					});
-				}
-			}
-		}
-	}	
 
 	onKeyPress($event) {
 		if ($event.keyCode === 13) {

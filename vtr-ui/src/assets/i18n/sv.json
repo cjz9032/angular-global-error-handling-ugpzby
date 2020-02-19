@@ -22,12 +22,6 @@
                     "rapidCharge": "Snabbladdning"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "Överklockn. på",
-                        "performance": "Prestanda",
-                        "balance": "Balans",
-                        "quiet": "Tyst"
-                    },
                     "title": "CPU-överklockning",
                     "status": {
                         "alwayson": "På",
@@ -103,96 +97,6 @@
                 },
                 "quickSettingstitle": {
                     "title": "Snabbinställningar"
-                },
-                "advancedOC": {
-                    "title": "Avancerade överklockn.inst.",
-                    "description": "Ställ in avancerade anpassade parametrar för aktiverad överklockning. Kan medföra risk.",
-                    "gpuOverclock": "GPU-överklockning",
-                    "cpuOCNames": {
-                        "cpuOCName2": "Kärnspänning",
-                        "cpuOCName116": "Förhållande 1 kärna",
-                        "cpuOCName117": "Förhållande 2 kärnor",
-                        "cpuOCName118": "Förhållande 3 kärna",
-                        "cpuOCName119": "Förhållande 4 kärna",
-                        "cpuOCName34": "Förskjutning av kärnspänning",
-                        "cpuOCName120": "Förhållande 5 kärna",
-                        "cpuOCName121": "Förhållande 6 kärna",
-                        "cpuOCName76": "Cacheförhållande",
-                        "cpuOCName77": "Cachespänning",
-                        "cpuOCName79": "Förskjutning av cachespänning",
-                        "cpuOCName122": "Förhållande 7 kärna",
-                        "cpuOCName123": "Förhållande 8 kärna",
-                        "cpuOCName102": "Kärn-ICCMAX",
-                        "cpuOCName106": "Cache-ICCMAX",
-                        "cpuOCName114": "Förskjutning av AVX-förhållande"
-                    },
-                    "cpuOCTips": {
-                        "cpuOCTip2": "Ställ in spänning för processorkärnan.",
-                        "cpuOCTip116": "Ställ in maximal kärnmultiplikator med vilken kärnorna kan fungera. Värdet på kärnfrekvensen är produkten av detta förhållande och referensklockfrekvensen.",
-                        "cpuOCTip117": "Ställ in maximal kärnmultiplikator med vilken kärnorna kan fungera. Värdet på kärnfrekvensen är produkten av detta förhållande och referensklockfrekvensen.",
-                        "cpuOCTip118": "Ställ in maximal kärnmultiplikator med vilken kärnorna kan fungera. Värdet på kärnfrekvensen är produkten av detta förhållande och referensklockfrekvensen.",
-                        "cpuOCTip119": "Ställ in maximal kärnmultiplikator med vilken kärnorna kan fungera. Värdet på kärnfrekvensen är produkten av detta förhållande och referensklockfrekvensen.",
-                        "cpuOCTip34": "En spänningsförskjutning från den aktuella kärnspänningen.",
-                        "cpuOCTip120": "Ställ in maximal kärnmultiplikator med vilken kärnorna kan fungera. Värdet på kärnfrekvensen är produkten av detta förhållande och referensklockfrekvensen.",
-                        "cpuOCTip121": "Ställ in maximal kärnmultiplikator med vilken kärnorna kan fungera. Värdet på kärnfrekvensen är produkten av detta förhållande och referensklockfrekvensen.",
-                        "cpuOCTip76": "Ställ in multiplikatorn för maximalt processorcacheminne med vilken cacheminnena kan fungera. Värdet på cacheminnesfrekvensen är produkten av detta förhållande och referensklockfrekvensen.",
-                        "cpuOCTip77": "Spänning som levereras till processorns interna cachegränssnitt baserat på valt cachespänningsläge.",
-                        "cpuOCTip79": "Den slutliga förskjutning som tillämpas på cachespänningen.",
-                        "cpuOCTip122": "Ställ in maximal kärnmultiplikator med vilken kärnorna kan fungera. Värdet på kärnfrekvensen är produkten av detta förhållande och referensklockfrekvensen.",
-                        "cpuOCTip123": "Ställ in maximal kärnmultiplikator med vilken kärnorna kan fungera. Värdet på kärnfrekvensen är produkten av detta förhållande och referensklockfrekvensen.",
-                        "cpuOCTip102": "Ställ in ICCMAX för processorns kärnspänningsregulator.",
-                        "cpuOCTip106": "Ställ in ICCMAX för processorcache- och ringbusspänningsregulator.",
-                        "cpuOCTip114": "Härled faktisk gräns för aktivt kärnförhållande när AVX är aktivt genom att subtrahera detta värde från motsvarande gräns för aktivt kärnförhållande."
-                    },
-                    "gpuOCNames": {
-                        "gpuOCName0": "Förskjutning av GPU-klocka",
-                        "gpuOCName1": "Förskjutning av VRAM-klocka"
-                    },
-                    "gpuOCTips": {
-                        "gpuOCTip0": "Lägg till förskjutning av GPU-klockfrekvens.",
-                        "gpuOCTip1": "Lägg till förskjutning av minnesklockfrekvens."
-                    }
-                },
-                "savePromptPopup": {
-                    "title": "Spara ändringar?",
-                    "description1": "Fel överklockningsinställningar kan ge bestående maskinvaruskador. Gör någon av de följande sakerna om du stöter på problem: ",
-                    "description2": "•  Håll in strömbrytaren i 8 sekunder så att datorn startar om och återställ standardparametrarna.",
-                    "description3": "•  Återställ standardparametrarna i BIOS med Restore Default Overclocking.",
-                    "save": "SPARA",
-                    "notSave": "SPARA INTE"
-                },
-                "defaultPromptPopup": {
-                    "title": "Ange som standard?",
-                    "description": "Alla aktuella och tidigare ändringar går förlorade."
-                },
-                "warningPromptPopup": {
-                    "title": "Varning!",
-                    "description": "Felaktiga inställningar av överklockning kan leda till bestående skador på maskinvaran.",
-                    "proceed": "FORTSÄTT"
-                },
-                "thermalMode2Popup": {
-                    "thermalMode2SettingTitle": "Inst. för temperaturläge",
-                    "thermalMode2SettingDesc": "Välj önskat läge.",
-                    "fnQDesc": "Du kan växla läge med kortkommandot Fn + Q.",
-                    "perormanceTitle": "Prestandaläge",
-                    "performanceDesc": "Öka datorns prestanda med högre fläkthastighet och energiförbrukning.",
-                    "OCDesc": "Du kan välja att aktivera överklockningsfunktionen.",
-                    "ac_dcDesc": "Prestandaläget är endast tillgängligt vid nätdrift.",
-                    "balanceTitle": "Balansläge",
-                    "balanceDesc": "Balansera automatiskt prestanda och fläkthastighet baserat på temperatur. Medelhög energiförbrukning.",
-                    "quietTitle": "Tyst läge",
-                    "quietDesc": "Gör datorn tystare genom att minska datorns prestanda och fläkthastighet när det är möjligt. Låg energiförbrukning.",
-                    "OC": {
-                        "cpu_gpuOC": "Aktivera CPU-/GPU-överklockning i prestandaläge.",
-                        "cpuOC": "Aktivera CPU-överklockning i prestandaläge.",
-                        "gpuOC": "Aktivera GPU-överklockning i prestandaläge.",
-                        "advance": "AVANCERAT",
-                        "cpu_gpuDriverLack": "Installera CPU-/GPU-drivrutiner för att använda överklockning.",
-                        "cpuDriverLack": "Installera CPU-drivrutinen om du vill använda överklockning.",
-                        "gpuDriverLack": "Installera GPU-drivrutinen om du vill använda överklockning.",
-                        "goInstall": "INSTALLERA"
-                    },
-                    "autoSwitch": "Växla automatiskt till prestandaläge vid spelstart och växla tillbaka efteråt."	
                 }
             }
         },
@@ -694,42 +598,6 @@
                     "close": "close"
                 }
             }
-        },
-        "lightingNewversion": {
-            "machineName":{  
-                "name1": "Legion Icon Lighting (Front)",
-                "name2": "Internal Ambient Lighting",
-                "name3": "Legion Rear Fan Lighting",
-                "name4": "Legion CPU Fan Lighting",
-                "name5": "Legion Liquid Cooling Pump Lighting",
-                "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
-                "name9": "Ambient  Lighting"
-            },
-            "lightingEffect": {
-                "effectName1": "Statisk",
-                "effectName2": "Spektrum",
-                "effectName3": "Regnbåge",
-                "effectName4": "Slumpval",
-                "effectName5": "Svalt blå",
-                "effectName6": "Våg höger",
-                "effectName7": "Våg vänster"
-            },
-            "lightingSpeed": {
-                "title": "Hastighet"
-            },
-            "colorPicker": {
-                "text2": "MER",
-                "text3": "R",
-                "text4": "G",
-                "text5": "B",
-                "text6": "Dela upp (av): Klicka på tangentbordet nedan för att ändra färg",
-                "text7": "Dela upp (på): Klicka på delar av tangentbordet nedan för att ändra färg",
-                "text8": "Aktuell effekt tillåter inte val av färg"
-            },
-            "tipText": {
-                "title1": "Tryck på Fn+Blanksteg för att växla mellan profiler"
-            }
         }
     },
     "common": {
@@ -1038,7 +906,7 @@
                     "Good": "<b>Batteriet är i gott skick.</b>",
                     "Exhaustion": "Batteriets kapacitet har <b>försämrats</b>. Byt ut det mot ett nytt.",
                     "Bad": "<b>Ett batterifel har uppstått.</b> Batteriet går inte att ladda/ladda ur. Byt ut batteriet.",
-                    "NotDetected": "<b>Inget batteri upptäcktes.</b>",
+                    "NotDetected": "<b>Inget batteri upptäcktes</b> eller batteriet är inte anslutet.",
                     "NotGood": "<b>Batteriet är inte i gott skick.</b>",
                     "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b>",
                     "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning.</b>",

@@ -72,26 +72,26 @@ describe('ModalAddAppsComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	// it('should show running app list', done => {
-	// 	const p = new Promise((resolve, reject) =>
-	// 	  setTimeout(() => resolve(''), 1000)
-	// 	);
+	it('should show running app list', done => {
+		const p = new Promise((resolve, reject) =>
+		  setTimeout(() => resolve(''), 1000)
+		);
 
-	// 	p.then(result => {
-	// 		fakeAsync(() => {
-	// 			gamingAutoCloseServiceMock.getAppsAutoCloseRunningList.and.returnValue(
-	// 				Promise.resolve(sampleRunningAppList)
-	// 			);
-	// 			component.refreshRunningList();
-	// 			fixture.detectChanges();
-	// 			tick(16);
-	// 			expect(sampleRunningAppList.processList).toBeDefined();
-	// 			expect(sampleRunningAppList.processList.length).toBeGreaterThan(0);
-	// 			fixture.destroy();
-	// 		});
-	// 	 done();
-	// 	});
-	//   });
+		p.then(result => {
+			fakeAsync(() => {
+				gamingAutoCloseServiceMock.getAppsAutoCloseRunningList.and.returnValue(
+					Promise.resolve(sampleRunningAppList)
+				);
+				component.refreshRunningList();
+				fixture.detectChanges();
+				tick(16);
+				expect(sampleRunningAppList.processList).toBeDefined();
+				expect(sampleRunningAppList.processList.length).toBeGreaterThan(0);
+				fixture.destroy();
+			});
+		 done();
+		});
+	  });
 
 	it('runappKeyup', fakeAsync(() => {
 		component.runningList = [1];

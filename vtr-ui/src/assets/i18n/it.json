@@ -22,12 +22,6 @@
                     "rapidCharge": "Carica rapida"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "Overclock att.",
-                        "performance": "Prestazioni",
-                        "balance": "Bilanciamento",
-                        "quiet": "Silenzioso"
-                    },
                     "title": "Overclock della CPU",
                     "status": {
                         "alwayson": "Attivato",
@@ -103,96 +97,6 @@
                 },
                 "quickSettingstitle": {
                     "title": "Impostazioni rapide"
-                },
-                "thermalMode2Popup": {
-                    "thermalMode2SettingTitle": "Impost. modalità termica",
-                    "thermalMode2SettingDesc": "Selezionare la modalità da utilizzare.",
-                    "fnQDesc": "È possibile cambiare la modalità utilizzando la combinazione di tasti Fn + Q.",
-                    "perormanceTitle": "Modalità Prestazioni",
-                    "performanceDesc": "Aumenta le prestazioni del computer con una maggiore velocità della ventola e un maggiore consumo energetico.",
-                    "OCDesc": "È possibile scegliere di attivare la funzione di overclock.",
-                    "ac_dcDesc": "Modalità Performance disponibile solamente se collegato.",
-                    "balanceTitle": "Modalità bilanciata",
-                    "balanceDesc": "Bilancia automaticamente le prestazioni e la velocità della ventola in base alla temperatura. Consumo energetico medio.",
-                    "quietTitle": "Modalità silenziosa",
-                    "quietDesc": "Aumenta la silenziosità riducendo le prestazioni del computer e la velocità della ventola, laddove possibile. Basso consumo energetico.",
-                    "OC": {
-                        "cpu_gpuOC": "Attivare overclock CPU/GPU in modalità Performance.",
-                        "cpuOC": "Attivare overclock CPU in modalità Performance.",
-                        "gpuOC": "Attivare overclock GPU in modalità Performance.",
-                        "advance": "AVANZATO",
-                        "cpu_gpuDriverLack": "Installare i driver CPU/GPU per utilizzare la funzione di overclock.",
-                        "cpuDriverLack": "Installare il driver CPU per utilizzare la funzione di overclock.",
-                        "gpuDriverLack": "Installare il driver GPU per utilizzare la funzione di overclock.",
-                        "goInstall": "VAI A INSTALLA"
-                    },
-                    "autoSwitch": "Passa automaticamente Performance per giocare e chiudila dopo."	
-                },
-                "advancedOC": {
-                    "title": "Impost. avanzate Overclock",
-                    "description": "Impostare parametri personalizzati avanzati con overclocking attivo. Potrebbe essere rischioso.",
-                    "gpuOverclock": "Overclock GPU",
-                    "cpuOCNames": {
-                        "cpuOCName2": "Tensione core",
-                        "cpuOCName116": "1 rapporto core",
-                        "cpuOCName117": "2 rapporto core",
-                        "cpuOCName118": "3 rapporto core",
-                        "cpuOCName119": "4 rapporto core",
-                        "cpuOCName34": "Offset voltaggio core",
-                        "cpuOCName120": "5 rapporto core",
-                        "cpuOCName121": "6 rapporto core",
-                        "cpuOCName76": "Rapporto cache",
-                        "cpuOCName77": "Tensione cache",
-                        "cpuOCName79": "Offset voltaggio cache",
-                        "cpuOCName122": "7 rapporto core",
-                        "cpuOCName123": "8 rapporto core",
-                        "cpuOCName102": "Core ICCMAX",
-                        "cpuOCName106": "Cache ICCMAX",
-                        "cpuOCName114": "Offset rapporto AVX"
-                    },
-                    "cpuOCTips": {
-                        "cpuOCTip2": "Impostare la tensione core CPU.",
-                        "cpuOCTip116": "Impostare il moltiplicatore core massimo a cui i core possono funzionare. Il valore della frequenza core è il prodotto di questo rapporto e della frequenza del clock di riferimento.",
-                        "cpuOCTip117": "Impostare il moltiplicatore core massimo a cui i core possono funzionare. Il valore della frequenza core è il prodotto di questo rapporto e della frequenza del clock di riferimento.",
-                        "cpuOCTip118": "Impostare il moltiplicatore core massimo a cui i core possono funzionare. Il valore della frequenza core è il prodotto di questo rapporto e della frequenza del clock di riferimento.",
-                        "cpuOCTip119": "Impostare il moltiplicatore core massimo a cui i core possono funzionare. Il valore della frequenza core è il prodotto di questo rapporto e della frequenza del clock di riferimento.",
-                        "cpuOCTip34": "Un offset di tensione dalla tensione core corrente.",
-                        "cpuOCTip120": "Impostare il moltiplicatore core massimo a cui i core possono funzionare. Il valore della frequenza core è il prodotto di questo rapporto e della frequenza del clock di riferimento.",
-                        "cpuOCTip121": "Impostare il moltiplicatore core massimo a cui i core possono funzionare. Il valore della frequenza core è il prodotto di questo rapporto e della frequenza del clock di riferimento.",
-                        "cpuOCTip76": "Impostare il moltiplicatore cache processore massimo al quale i core possono funzionare. Il valore di frequenza cache è il prodotto tra questo rapporto e la frequenza del clock di riferimento.",
-                        "cpuOCTip77": "Tensione erogata all'interfaccia cache interna del processore sulla base della modalità di tensione cache attualmente selezionata.",
-                        "cpuOCTip79": "Offset tensione finale applicato alla tensione cache.",
-                        "cpuOCTip122": "Impostare il moltiplicatore core massimo a cui i core possono funzionare. Il valore della frequenza core è il prodotto di questo rapporto e della frequenza del clock di riferimento.",
-                        "cpuOCTip123": "Impostare il moltiplicatore core massimo a cui i core possono funzionare. Il valore della frequenza core è il prodotto di questo rapporto e della frequenza del clock di riferimento.",
-                        "cpuOCTip102": "Impostare ICCMAX per il regolatore di tensione core processore.",
-                        "cpuOCTip106": "Impostare ICCMAX per il regolatore di tensione cache e ring bus processore.",
-                        "cpuOCTip114": "Per ricavare il limite del rapporto core attivo effettivo quando AVX è attivo, sottrarre questo valore dal limite del rapporto core attivo corrispondente."
-                    },
-                    "gpuOCNames": {
-                        "gpuOCName0": "Offset clock GPU",
-                        "gpuOCName1": "Offset clock VRAM"
-                    },
-                    "gpuOCTips": {
-                        "gpuOCTip0": "Aggiungere un offset alla frequenza del clock GPU.",
-                        "gpuOCTip1": "Aggiungere un offset alla frequenza del clock della memoria."
-                    }
-                },
-                "savePromptPopup": {
-                    "title": "Salvare la modifica?",
-                    "description1": "Impostazioni overclock errate possono causare danni HW irreversibili Eseguire una delle seguenti operazioni se si verifica un problema: ",
-                    "description2": "•  Tenere premuto il pulsante di alim. 8 sec per riavviare il PC e ripristinare i parametri predefiniti.",
-                    "description3": "•  Per ripristinare overclock predefinito, passare a impostazioni BIOS.",
-                    "save": "SALVA",
-                    "notSave": "NON SALVARE"
-                },
-                "defaultPromptPopup": {
-                    "title": "Imp. val. predef.?",
-                    "description": "Tutte le modifiche correnti e precedenti andranno perse."
-                },
-                "warningPromptPopup": {
-                    "title": "Avvertenza!",
-                    "description": "Impostazioni non corrette dell'overclock possono provocare danni hardware irreversibili.",
-                    "proceed": "CONTINUA"
                 }
             }
         },
@@ -694,42 +598,6 @@
                     "close": "close"
                 }
             }
-        },
-        "lightingNewversion": {
-            "machineName":{  
-                "name1": "Legion Icon Lighting (Front)",
-                "name2": "Internal Ambient Lighting",
-                "name3": "Legion Rear Fan Lighting",
-                "name4": "Legion CPU Fan Lighting",
-                "name5": "Legion Liquid Cooling Pump Lighting",
-                "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
-                "name9": "Ambient  Lighting"
-            },
-            "lightingEffect": {
-                "effectName1": "Statico",
-                "effectName2": "Spettro",
-                "effectName3": "Arcobaleno",
-                "effectName4": "Casuale",
-                "effectName5": "Blu_Freddo",
-                "effectName6": "Onda_Destra",
-                "effectName7": "Onda_Sinistra"
-            },
-            "lightingSpeed": {
-                "title": "Velocità"
-            },
-            "colorPicker": {
-                "text2": "ALTRO",
-                "text3": "R",
-                "text4": "V",
-                "text5": "B",
-                "text6": "Dividi area (off): clic sull'imm. tastiera per cambiare i colori",
-                "text7": "Dividi area (on): clic sull'imm. tast. per cambiare i colori sez.",
-                "text8": "L'effetto corrente non supporta la selezione del colore"
-            },
-            "tipText": {
-                "title1": "Utilizzare Fn+spazio per alternare tra i profili"
-            }
         }
     },
     "common": {
@@ -1038,7 +906,7 @@
                     "Good": "<b>La batteria è in buone condizioni.</b>",
                     "Exhaustion": "La capacità della batteria è stata <b>danneggiata</b>. Sostituire la batteria.",
                     "Bad": "<b>Si è verificato un errore della batteria.</b> La batteria non può essere caricata/scaricata. Sostituire la batteria.",
-                    "NotDetected": "<b>Nessuna batteria rilevata.</b>",
+                    "NotDetected": "<b>Nessuna batteria rilevata o</b> collegata.",
                     "NotGood": "<b>La batteria non è in buone condizioni.</b>",
                     "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b>",
                     "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente.</b>",
