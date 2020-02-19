@@ -25,7 +25,7 @@
 										</vtr-ui-switch-onoff> -->
 										<vtr-ui-toggle *ngIf='toggleStatus !== undefined' [label]="'networkBoost'"
 											[toggleId]="'networkBoost'" [onOffSwitchId]="'networkboostSwitch'"
-											(toggle)="setNetworkBoostStatus($event)" [value]="toggleStatus">
+											(toggle)="setNetworkBoostStatus($event)" [value]="toggleStatus" [parentId]="'Gaming.NetworkBoost'">
 										</vtr-ui-toggle>
 										<p class="intro-text">
 											{{'gaming.networkBoost.introLine' | translate}}</p>

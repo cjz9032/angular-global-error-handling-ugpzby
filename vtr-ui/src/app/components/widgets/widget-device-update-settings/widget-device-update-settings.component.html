@@ -44,7 +44,7 @@
 												<vtr-ui-toggle (toggle)="onToggleOnOff($event)"
 													[focus]="item.focus || false" [label]="item.ariaLabel"
 													[toggleId]="item.id" [name]="item.type" [onOffSwitchId]="item.name"
-													[value]="item.isChecked" [notChange]="item.readonly">
+													[value]="item.isChecked" [notChange]="item.readonly" [parentId]="'Gaming.Dashboard'">
 												</vtr-ui-toggle>
 
 												<vtr-ui-popover *ngIf="item.isPopup" [item]="item"
