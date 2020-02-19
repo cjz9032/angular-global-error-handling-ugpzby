@@ -41,7 +41,7 @@
 			[checked]="sunsetToSunriseStatus.status"
 			attr.aria-hidden="sunsetToSunriseStatus.available && enableSunsetToSunrise"
 			attr.aria-checked="sunsetToSunriseStatus.status"
-            (change)="onSunsetToSunrise(sunsetToSunriseStatus)"></vtr-ui-checkbox>
+            (toggle)="onSunsetToSunrise(sunsetToSunriseStatus)"></vtr-ui-checkbox>
 		<label class="custom-control-label"
 			id="cb-eye-care-schedule"
 			for="cb-eye-care-schedule">
@@ -65,7 +65,7 @@
 		    [disabled]="missingGraphicDriver"
 			class="custom-control-input"
 			[checked]="sunsetToSunriseStatus.status"
-            (change)="onSunsetToSunrise(sunsetToSunriseStatus)"></vtr-ui-checkbox>
+            (toggle)="onSunsetToSunrise(sunsetToSunriseStatus)"></vtr-ui-checkbox>
 		<label class="custom-control-label" id="cb-eye-care-schedule" role="checkbox" tabindex="0" for="cb-eye-care-schedule"
 			attr.aria-checked="sunsetToSunriseStatus.status"
 			attr.aria-hidden="sunsetToSunriseStatus.available && !enableSunsetToSunrise" attr.aria-label="{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}

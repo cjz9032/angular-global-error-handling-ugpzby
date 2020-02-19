@@ -198,7 +198,7 @@
                                                     [ngClass]="{'custom-control-label-disabled': privacyGuardToggleStatus}"
                                                         attr.aria-label="cb-privacy-guard"
                                                         [checked]="privacyGuardCheckBox"
-                                                        (change)="setPrivacyGuardOnPasswordStatusVal($event)"></vtr-ui-checkbox>
+                                                        (toggle)="setPrivacyGuardOnPasswordStatusVal($event)"></vtr-ui-checkbox>
                                                     
 												<span class="checkmark"></span>
 												<label class="custom-control-label"

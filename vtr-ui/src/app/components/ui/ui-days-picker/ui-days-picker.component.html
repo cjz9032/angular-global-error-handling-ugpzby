@@ -34,7 +34,7 @@
 												value="{{i.shortName}}"
 												[(ngModel)]="i.status"
 												attr.aria-label="{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}"
-                                                (change)="selectDay($event)"></vtr-ui-checkbox>
+                                                (toggle)="selectDay($event)"></vtr-ui-checkbox>
 											<label class="custom-control-label"
 
 												for="{{i.shortName}}">
