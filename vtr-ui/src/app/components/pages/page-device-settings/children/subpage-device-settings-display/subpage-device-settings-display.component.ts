@@ -1210,8 +1210,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			});
 	}
 
-	public setPrivacyGuardOnPasswordStatusVal(event) {
-		this.displayService.setPrivacyGuardOnPasswordStatus(event.target.checked).then((response: boolean) => {
+	public setPrivacyGuardOnPasswordStatusVal($event: boolean) {
+		this.privacyGuardCheckBox = $event;
+		this.displayService.setPrivacyGuardOnPasswordStatus($event).then((response: boolean) => {
 			// this.logger.debug('set privacy guard on password status here -------------.>', response);
 		})
 			.catch(error => {

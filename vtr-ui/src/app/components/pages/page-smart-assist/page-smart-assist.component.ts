@@ -521,11 +521,11 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	public onZeroTouchLockFacialRecoChange() {
-		const value = this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled;
-		this.smartAssist.setZeroTouchLockFacialRecoStatus(value)
+	public onZeroTouchLockFacialRecoChange($event: boolean) {
+		this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = $event;
+		this.smartAssist.setZeroTouchLockFacialRecoStatus($event)
 			.then((isSuccess: boolean) => {
-				this.logger.info(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus ${isSuccess} ; ${value}`);
+				this.logger.info(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus ${isSuccess} ; ${$event}`);
 			});
 	}
 

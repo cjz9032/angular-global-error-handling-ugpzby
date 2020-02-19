@@ -6,7 +6,7 @@
 				[caption]="'device.deviceSettings.displayCamera.description' | translate"
 				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate"
 				[textId]="'ds-display-camera'">
-		</vtr-ui-header-subpage>
+			</vtr-ui-header-subpage>
 		</div>
 	</div>
 	<div class="row">
@@ -74,7 +74,7 @@
 												(colorPreviewValue)="setToEyeCareMode()">
 											</vtr-display-color-temp>
 											<div class="row">
-										        <!--<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4" -->
+												<!--<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4" -->
 												<div class="feature-note p-4"
 													id="day-time-color-temp-note"
 													tabindex="0"
@@ -132,12 +132,14 @@
 												</vtr-widget-permission-note>
 											</div>
 
-											<div class="row" *ngIf="missingGraphicDriver">
+											<div class="row"
+												*ngIf="missingGraphicDriver">
 												<div class="feature-note p-4 ecm-note"
-													 id="eye-care-mode-temp-note"
-													 tabindex="0"
-													 attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.eyeCareMode.tips' | translate }}">
-													<p>{{'device.deviceSettings.displayCamera.display.eyeCareMode.tips' | translate}}</p>
+													id="eye-care-mode-temp-note"
+													tabindex="0"
+													attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.eyeCareMode.tips' | translate }}">
+													<p>{{'device.deviceSettings.displayCamera.display.eyeCareMode.tips' | translate}}
+													</p>
 												</div>
 											</div>
 											<!-- <span *ngIf="!enableSunsetToSunrise; else vtrwidgetpermissionnote"></span>
@@ -192,28 +194,17 @@
 										*ngIf="privacyGuardOnPasswordCapability">
 										<div class="col-12 ml-4">
 											<div class="custom-control custom-checkbox privacy-checkbox">
-                                                    <vtr-ui-checkbox [componentId]="'cb-privacy-guard'"
-                                                    [disabled]="privacyGuardToggleStatus"
-                                                    class="custom-control-input"
-                                                    [ngClass]="{'custom-control-label-disabled': privacyGuardToggleStatus}"
-                                                        attr.aria-label="cb-privacy-guard"
-                                                        [checked]="privacyGuardCheckBox"
-                                                        (toggle)="setPrivacyGuardOnPasswordStatusVal($event)"></vtr-ui-checkbox>
-                                                    
-												<span class="checkmark"></span>
-												<label class="custom-control-label"
-												id="cb-privacy-guard"
-													for="cb-privacy-guard">
-													<span id="cb-privacy-guard-description"
-														attr.aria-label="privacy guard password capability note, {{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}">
-														{{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}
-													</span>
-												</label>
+												<vtr-ui-checkbox [componentId]="'cb-privacy-guard'"
+													[disabled]="privacyGuardToggleStatus"
+													[ngClass]="{'custom-control-label-disabled': privacyGuardToggleStatus}"
+													[value]="privacyGuardCheckBox"
+													[checked]="privacyGuardCheckBox"
+													[label]="'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate"
+													(toggle)="setPrivacyGuardOnPasswordStatusVal($event)">
+												</vtr-ui-checkbox>
 											</div>
-
 										</div>
 									</div>
-
 								</vtr-ui-row-switch>
 							</li>
 
@@ -424,8 +415,7 @@
 									(toggleOnOff)="onCameraBackgroundBlur($event)"
 									[theme]="'white'"
 									[tooltipText]="'device.deviceSettings.displayCamera.camera.camerablur.tooltip' | translate"
-									[switchId]="'device-settings-camera-blur'"
-									>
+									[switchId]="'device-settings-camera-blur'">
 									<div class="row"
 										*ngIf="cameraBlur.enabled">
 										<div class="col-12 pr-0 my-3">

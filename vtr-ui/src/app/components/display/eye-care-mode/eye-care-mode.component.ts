@@ -67,9 +67,9 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 	public onEyeCareTemparatureValueChange($event: ChangeContext) {
 		this.eyeCareTemparatureValueChange.emit($event);
 	}
-	public onSunsetToSunrise(event: any) {
+	public onSunsetToSunrise() {
 		this.sunsetToSunriseStatus.status = !this.sunsetToSunriseStatus.status;
 		this.logger.info('sunset to sunrise in eyecare-mode commponent', this.sunsetToSunriseStatus);
-		this.sunsetToSunrise.emit(event);
+		this.sunsetToSunrise.emit(this.sunsetToSunriseStatus);
 	}
 }

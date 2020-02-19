@@ -2,18 +2,27 @@
 	<input [id]="componentId"
 		class="custom-control-input"
 		type="checkbox"
-		role="checkbox"
-		tabindex="-1"
 		[name]="componentId"
-		[(ngModel)]="value"
+		[value]="value"
 		[disabled]="disabled"
-		(change)="onChange($event)"
+		[checked]="checked"
+		tabindex="-1"
+		role="checkbox"
 		[attr.aria-label]="componentId"
+		[attr.aria-disabled]="disabled"
 		[attr.aria-checked]="checked"
-		[attr.aria-labelledby]="componentId"/>
+		[attr.aria-labelledby]="componentId"
+		(change)="onChange($event)" />
 	<span class="checkmark"></span>
-	<label [for]="componentId"
+	<label *ngIf="hasChild; else elseBlock"
+		[for]="componentId"
 		tabindex="0">
-		{{ label }}
+		<ng-content></ng-content>
 	</label>
+	<ng-template #elseBlock>
+		<label [for]="componentId"
+			tabindex="0">
+			{{ label }}
+		</label>
+	</ng-template>
 </div>

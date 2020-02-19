@@ -18,7 +18,7 @@ export class UiCheckboxComponent implements OnInit {
 	@Input() checked: boolean;
 	@Input() disabled: boolean;
 	@Input() value: any;
-
+	@Input() hasChild = false; // for ng-content
 	@Output() toggle: EventEmitter<boolean> = new EventEmitter();
 
 	constructor() { }
