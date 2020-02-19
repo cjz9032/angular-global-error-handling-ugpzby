@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-ui-circle-radio-with-checkbox',
@@ -41,7 +42,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	@ViewChild('radioButton', { static: false }) radioButton: ElementRef<HTMLElement>;
 	selectedRadioButton: any;
 	noRadioButtonSelected: boolean;
-	constructor(private translate: TranslateService) {
+	constructor(private translate: TranslateService, private logger: LoggerService) {
 
 	}
 
@@ -146,7 +147,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 				this.setChecked(this.radioButtons[index - 1], true);
 			}
 		} catch (error) {
-			console.log('setCheckedToPreviousItem :: ' + error);
+			this.logger.error('setCheckedToPreviousItem error occured ::', error);
 		}
 	}
 
@@ -163,7 +164,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			}
 
 		} catch (error) {
-			console.log('setCheckedToNextItem :: ' + error);
+			this.logger.error('setCheckedToNextItem error occured :: ', error);
 		}
 
 	}
@@ -198,7 +199,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 
 
 		} catch (error) {
-			console.log('setRadioButtons :: ' + error);
+			this.logger.error('setRadioButtons error occured ::', error);
 		}
 
 
