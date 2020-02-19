@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Definição de Modo Térmico",
                     "thermalMode2SettingDesc": "Escolha o modo que pretende utilizar.",
-                    "fnQDesc": "Pode mudar de modo através do atalho Fn + Q.",
+                    "fnQDesc": "Pode mudar de modo através do atalho Fn+Q.",
                     "perormanceTitle": "Modo de Desempenho",
                     "performanceDesc": "Aumente o desempenho do computador ao aumentar a velocidade da ventoinha e o consumo energético.",
                     "OCDesc": "Pode optar por ativar a funcionalidade Overclocking.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Instalar driver GPU para usar a função Overclocking.",
                         "goInstall": "IR PARA INSTALAR"
                     },
-                    "autoSwitch": "Mude automaticamente para Desempenho ao iniciar jogos e reverta em seguida."	
+                    "autoSwitch": "Mude automaticamente para Desempenho ao iniciar jogos e reverta em seguida."
                 },
                 "advancedOC": {
                     "title": "Def. Avançadas de Overclock",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -1032,7 +1032,8 @@
                         "title": "Fabricante",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "A bateria instalada <b>não é suportada</b> pelo sistema e não será carregada. Substitua a bateria pela bateria correta da Lenovo para este sistema.",
@@ -3363,10 +3364,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

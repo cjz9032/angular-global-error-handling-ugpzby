@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Температурный режим",
                     "thermalMode2SettingDesc": "Выберите предпочитаемый режим.",
-                    "fnQDesc": "Для переключения режима можно использовать сочетание клавиш Fn + Q.",
+                    "fnQDesc": "Для переключения режима можно использовать сочетание клавиш Fn+Q.",
                     "perormanceTitle": "Режим производительности",
                     "performanceDesc": "Повышение производительности компьютера за счет увеличения скорости вентиляторов и энергопотребления.",
                     "OCDesc": "Можно включить функцию разгона.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Установить драйвер ГП для использования функции разгона.",
                         "goInstall": "ПЕРЕЙТИ К УСТАНОВКЕ"
                     },
-                    "autoSwitch": "Авт. переход в режим производительности при запуске игр с последующим возвратом."	
+                    "autoSwitch": "Авт. переход в режим производительности при запуске игр с последующим возвратом."
                 },
                 "advancedOC": {
                     "title": "Доп. параметры разгона",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -1032,7 +1032,8 @@
                         "title": "Производитель",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "Установленный аккумулятор <b>не поддерживается</b> данной системой и не будет заряжаться. Замените аккумулятор на соответствующий данной системе аккумулятор Lenovo.",
@@ -3363,10 +3364,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

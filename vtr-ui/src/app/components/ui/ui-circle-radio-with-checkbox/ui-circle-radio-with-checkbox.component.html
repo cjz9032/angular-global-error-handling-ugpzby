@@ -1,5 +1,5 @@
 <div class="vtr-ui-circle-radio-with-checkbox col-aut0 px-0"
-	attr.aria-labelledby="{{radioId}}"
+	attr.aria-labelledby="{{textId}}-{{value}}-label"
 	#radioButton
 	role="radio"
 	[tabIndex]="checked? 0 :-1"
@@ -31,7 +31,7 @@
 		<label for="{{radioId}}"
 			class="checkbox-custom-label"
 			id="{{ radioId }}"
-			attr.aria-label="{{ radioId }}">
+			attr.aria-label="{{radioId}}">
 			<div *ngIf="!hideIcon"
 				[ngClass]="'icomoon icomoon-'+getIconName(value)"></div>
 			<div *ngIf="customIcon && customIcon.length>0"
@@ -47,7 +47,6 @@
 		</label>
 		<div [ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']"
 			id="{{textId}}-{{value}}-label"
-			attr.aria-label="{{textId}}-{{value}}-label"
 			[attr.aria-disabled]="disabled"
 			[attr.aria-checked]="checked">{{processLabel ? (label | capitalizeFirst) : label}}</div>
 	</div>

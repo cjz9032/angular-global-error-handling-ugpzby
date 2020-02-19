@@ -32,7 +32,8 @@
 						</h2>
 					</div>
 				</div>
-				<div class="row px-0">
+				<div class="row px-0"
+					role="text">
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.chargeStatusString)">
 						<div class="row px-0"
@@ -105,7 +106,8 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
-						*ngIf="isValid(model.remainingTime)">
+						*ngIf="isValid(model.remainingTime)"
+						role="text">
 						<div class="row px-0"
 							role="text">
 							<div class="col-6 battery-label-text"
@@ -125,7 +127,8 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
-						*ngIf="isValid(model.cycleCount)">
+						*ngIf="isValid(model.cycleCount)"
+						role="text">
 						<div class="row px-0"
 							role="text">
 							<div class="col-6 battery-label-text"
@@ -137,7 +140,8 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
-						*ngIf="isValid(deviceChemistry[i])">
+						*ngIf="isValid(deviceChemistry[i])"
+						role="text">
 						<div class="row px-0"
 							role="text">
 							<div class="col-6 battery-label-text"
@@ -151,8 +155,10 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
-						*ngIf="isValid(model.remainingCapacity)">
-						<div class="row px-0">
+						*ngIf="isValid(model.remainingCapacity)"
+						role="text">
+						<div class="row px-0"
+							role="text">
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.remainingCap' | translate }}
@@ -166,7 +172,8 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.manufacturer)"
 						role="text">
-						<div class="row px-0">
+						<div class="row px-0"
+							role="text">
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.manufacturer.title' | translate }}
@@ -180,7 +187,8 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
 						*ngIf="isValid(model.designCapacity)"
 						role="text">
-						<div class="row px-0">
+						<div class="row px-0"
+							role="text">
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.designCap' | translate }}
@@ -192,21 +200,42 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
-						*ngIf="isValid(model.fullChargeCapacity)">
-						<div class="row px-0">
+						*ngIf="isValid(model.fullChargeCapacity)"
+						role="text">
+						<div class="row px-0"
+							role="text">
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }}
 							</div>
-							<div class="col-6 battery-value-text"
-								role="text">
-								{{ model.fullChargeCapacity }} Wh
+							<div class="col-6 battery-value-text">
+								<span>{{ model.fullChargeCapacity }} Wh</span>
+								<span *ngIf="model.isTemporaryChargeMode">
+									<fa-icon id="fullChargeCapacity_tooltip_icon"
+										attr.aria-label="{{ 'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }} tooltip, which reads: {{ 'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate }}"
+										tabindex="0"
+										class="fcc-tooltip-icon"
+										triggers="manual"
+										placement="auto"
+										autoClose="false"
+										[ngbTooltip]="fcctooltipRef"
+										#fccTooltip="ngbTooltip"
+										autoClose="true"
+										[icon]="['far', 'question-circle']"
+										container="vtr-root"
+										tooltipClass="vtr-tooltip  fcc-note-tooltip"
+										(click)="onFccIconClick(fccTooltip, $event)"
+										(keydown.enter)="onFccIconClick(fccTooltip, $event)">
+									</fa-icon>
+								</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
-						*ngIf="isValid(model.manufactureDate)">
-						<div class="row px-0">
+						*ngIf="isValid(model.manufactureDate)"
+						role="text">
+						<div class="row px-0"
+							role="text">
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.manufDt' | translate }}
@@ -218,8 +247,10 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
-						*ngIf="isValid(model.designVoltage)">
-						<div class="row px-0">
+						*ngIf="isValid(model.designVoltage)"
+						role="text">
+						<div class="row px-0"
+							role="text">
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.designVolt' | translate }}
@@ -231,8 +262,10 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
-						*ngIf="isValid(model.voltage)">
-						<div class="row px-0">
+						*ngIf="isValid(model.voltage)"
+						role="text">
+						<div class="row px-0"
+							role="text">
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.volts' | translate }}</div>
@@ -243,8 +276,10 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
-						*ngIf="isValid(model.firstUseDate)">
-						<div class="row px-0">
+						*ngIf="isValid(model.firstUseDate)"
+						role="text">
+						<div class="row px-0"
+							role="text">
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.firstUseDt' | translate }}
@@ -256,8 +291,10 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
-						*ngIf="isValid(model.firmwareVersion)">
-						<div class="row px-0">
+						*ngIf="isValid(model.firmwareVersion)"
+						role="text">
+						<div class="row px-0"
+							role="text">
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.firmwareVer' | translate }}
@@ -273,3 +310,12 @@
 		</div>
 	</div>
 </div>
+
+
+<ng-template #fcctooltipRef>
+	<div [innerHTML]="'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate"
+		id="fullChargeCapacity-toolTip"
+		tabindex="0"
+		attr.aria-label="fccTooltipText">
+	</div>
+</ng-template>

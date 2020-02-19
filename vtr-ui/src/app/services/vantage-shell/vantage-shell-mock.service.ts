@@ -1067,8 +1067,12 @@ export class VantageShellService {
 					designVoltage: 11.1,
 					deviceChemistry: 'Li-Polymer',
 					firmwareVersion: '0005-0232-0100-0005',
+					firstUseDate: new Date(),
+					isDlsPiCapable: false,
+					isTemporaryChargeMode: false,
 					fruPart: '01AV446',
 					fullChargeCapacity: 46.69,
+					manufactureDate: new Date(),
 					manufacturer: 'SMP',
 					remainingCapacity: 23.84,
 					remainingChargeCapacity: 0,
@@ -1076,7 +1080,7 @@ export class VantageShellService {
 					remainingTime: 99,
 					temperature: 32,
 					voltage: 11.222,
-					wattage: 10.57
+					wattage: 10.57,
 				}
 			],
 			batteryIndicatorInfo: {
@@ -1085,10 +1089,12 @@ export class VantageShellService {
 				acWattage: 0,
 				isAirplaneModeEnabled: false,
 				isAttached: false,
+				isChargeThresholdOn: false,
+				isEmDriverInstalled: true,
 				isExpressCharging: false,
 				isPowerDriverMissing: false,
-				percentage: 61,
-				time: 111,
+				percentage: 91,
+				time: 316,
 				timeType: 'timeRemaining'
 			}
 		};
@@ -1359,7 +1365,7 @@ export class VantageShellService {
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
 	public async deviceFilter(filter) {
-        if (this.phoenix) {
+		if (this.phoenix) {
 			try {
 				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
@@ -1368,8 +1374,8 @@ export class VantageShellService {
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
-        return true;
-    }
+		return true;
+	}
 	public calcDeviceFilter(filter) {
 		return Promise.resolve({
 			ConnectedHomeSecurity: true,
@@ -1740,7 +1746,7 @@ export class VantageShellService {
 			setKeyLockStatus: this.getPromise(true)
 		};
 		return gamingKeyLock;
-		//return undefined;
+		// return undefined;
 	}
 
 	public getGamingHybridMode() {

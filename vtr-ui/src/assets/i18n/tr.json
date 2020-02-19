@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Isı Kipi Ayarı",
                     "thermalMode2SettingDesc": "Kullanmak istediğiniz kipi seçin.",
-                    "fnQDesc": "Fn + Q kısayolunu kullanarak kipi değiştirebilirsiniz.",
+                    "fnQDesc": "Fn+Q kısayolunu kullanarak kipi değiştirebilirsiniz.",
                     "perormanceTitle": "Performans Kipi",
                     "performanceDesc": "Daha fazla fan hızıyla ve daha fazla güç tüketerek bilgisayarınızın performansını artırın.",
                     "OCDesc": "Hız Aşırtma özelliğini açmayı seçebilirsiniz.",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -1032,7 +1032,8 @@
                         "title": "Üretici",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "Takılı pil, sistem tarafından <b>desteklenmiyor</b> ve doldurulmayacak. Lütfen yerine bu sistem için doğru olan Lenovo pilini takın.",
@@ -3363,10 +3364,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

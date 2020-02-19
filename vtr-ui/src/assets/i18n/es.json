@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Config. de modo térmico",
                     "thermalMode2SettingDesc": "Seleccione la modalidad que desee utilizar.",
-                    "fnQDesc": "Puede cambiar de modalidad utilizando la combinación de teclas Fn + Q.",
+                    "fnQDesc": "Puede cambiar de modalidad utilizando la combinación de teclas Fn+Q.",
                     "perormanceTitle": "Modalidad de rendimiento",
                     "performanceDesc": "Aumente el rendimiento del sistema con más velocidad del ventilador y más consumo de energía.",
                     "OCDesc": "Puede seleccionar que se active la característica de Aceleración.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Instale el controlador de GPU para usar la función de Aceleración.",
                         "goInstall": "VAYA A INSTALAR"
                     },
-                    "autoSwitch": "Cambie auto. a Rendimiento al iniciar juegos y después cambie de vuelta."	
+                    "autoSwitch": "Cambie auto. a Rendimiento al iniciar juegos y después cambie de vuelta."
                 },
                 "advancedOC": {
                     "title": "Op. avanzadas aceleración",
@@ -137,16 +137,16 @@
                         "cpuOCName2": "Voltaje de núcleo",
                         "cpuOCName116": "Relación de 1 núcleo",
                         "cpuOCName117": "Relación de 2 núcleos",
-                        "cpuOCName118": "Relación de 3 núcleo",
-                        "cpuOCName119": "Relación de 4 núcleo",
+                        "cpuOCName118": "Relación de 3 núcleos",
+                        "cpuOCName119": "Relación de 4 núcleos",
                         "cpuOCName34": "Desplazamiento de voltaje de núcleo",
-                        "cpuOCName120": "Relación de 5 núcleo",
-                        "cpuOCName121": "Relación de 6 núcleo",
+                        "cpuOCName120": "Relación de 5 núcleos",
+                        "cpuOCName121": "Relación de 6 núcleos",
                         "cpuOCName76": "Relación de memoria caché",
                         "cpuOCName77": "Voltaje de memoria caché",
                         "cpuOCName79": "Desp. de voltaje de memoria caché",
-                        "cpuOCName122": "Relación de 7 núcleo",
-                        "cpuOCName123": "Relación de 8 núcleo",
+                        "cpuOCName122": "Relación de 7 núcleos",
+                        "cpuOCName123": "Relación de 8 núcleos",
                         "cpuOCName102": "ICCMAX de núcleo",
                         "cpuOCName106": "ICCMAX de memoria caché",
                         "cpuOCName114": "Desplazamiento de relación de AVX"
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -1032,7 +1032,8 @@
                         "title": "Fabricante",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "El sistema <b>no admite</b> la batería instalada, por lo que esta no cargará. Sustituya la batería con la batería Lenovo correcta para este sistema.",
@@ -3363,10 +3364,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

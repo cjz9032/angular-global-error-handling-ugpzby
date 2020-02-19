@@ -113,16 +113,16 @@
                         "cpuOCName2": "Kärnspänning",
                         "cpuOCName116": "Förhållande 1 kärna",
                         "cpuOCName117": "Förhållande 2 kärnor",
-                        "cpuOCName118": "Förhållande 3 kärna",
-                        "cpuOCName119": "Förhållande 4 kärna",
+                        "cpuOCName118": "Förhållande 3 kärnor",
+                        "cpuOCName119": "Förhållande 4 kärnor",
                         "cpuOCName34": "Förskjutning av kärnspänning",
-                        "cpuOCName120": "Förhållande 5 kärna",
-                        "cpuOCName121": "Förhållande 6 kärna",
+                        "cpuOCName120": "Förhållande 5 kärnor",
+                        "cpuOCName121": "Förhållande 6 kärnor",
                         "cpuOCName76": "Cacheförhållande",
                         "cpuOCName77": "Cachespänning",
                         "cpuOCName79": "Förskjutning av cachespänning",
-                        "cpuOCName122": "Förhållande 7 kärna",
-                        "cpuOCName123": "Förhållande 8 kärna",
+                        "cpuOCName122": "Förhållande 7 kärnor",
+                        "cpuOCName123": "Förhållande 8 kärnor",
                         "cpuOCName102": "Kärn-ICCMAX",
                         "cpuOCName106": "Cache-ICCMAX",
                         "cpuOCName114": "Förskjutning av AVX-förhållande"
@@ -174,7 +174,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Inst. för temperaturläge",
                     "thermalMode2SettingDesc": "Välj önskat läge.",
-                    "fnQDesc": "Du kan växla läge med kortkommandot Fn + Q.",
+                    "fnQDesc": "Du kan växla läge med kortkommandot Fn+Q.",
                     "perormanceTitle": "Prestandaläge",
                     "performanceDesc": "Öka datorns prestanda med högre fläkthastighet och energiförbrukning.",
                     "OCDesc": "Du kan välja att aktivera överklockningsfunktionen.",
@@ -193,7 +193,7 @@
                         "gpuDriverLack": "Installera GPU-drivrutinen om du vill använda överklockning.",
                         "goInstall": "INSTALLERA"
                     },
-                    "autoSwitch": "Växla automatiskt till prestandaläge vid spelstart och växla tillbaka efteråt."	
+                    "autoSwitch": "Växla automatiskt till prestandaläge vid spelstart och växla tillbaka efteråt."
                 }
             }
         },
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -1032,7 +1032,8 @@
                         "title": "Tillverkare",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "Det installerade batteriet <b>stöds inte</b> på enheten och kommer inte att laddas. Byt ut batteriet mot ett Lenovo-batteri.",
@@ -3363,10 +3364,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

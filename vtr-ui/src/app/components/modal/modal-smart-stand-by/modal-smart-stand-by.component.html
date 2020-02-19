@@ -6,7 +6,7 @@
 				vtrMetrics
 				metricsItem="SmartStandbyModalCloseButton"
 				metricsEvent="featureClick"
-				metricsParent="Device.deviceSettings"				
+				metricsParent="Device.deviceSettings"
 				id="modal_smartStandby_close"
 				class="close"
 				tabindex="1"
@@ -33,24 +33,31 @@
 					{{'device.deviceSettings.power.smartStandby.graph.legends.none' | translate}}
 				</span>
 				<!-- <span *ngFor="let bgcolor of items[0].colors.first" class="graph-legend" [innerHtml]="items[0].legends" [style.backgroundColor]="bgcolor"></span> -->
-				<span class="legends-box d-flex justify-content-end">
-					<span class="graph-legend"
+				<span role="text"
+					class="legends-box d-flex justify-content-end">
+					<span role="text"
+						class="graph-legend"
 						[innerHtml]="items[0].legends"
 						[style.backgroundColor]="colors.first[0]"></span>
-					<span class="graph-legend"
+					<span role="text"
+						class="graph-legend"
 						[innerHtml]="items[0].legends"
 						[style.backgroundColor]="colors.first[1]"></span>
-					<span class="graph-legend"
+					<span role="text"
+						class="graph-legend"
 						[innerHtml]="items[0].legends"
 						[style.backgroundColor]="colors.first[2]"></span>
-					<span class="graph-legend"
+					<span role="text"
+						class="graph-legend"
 						[innerHtml]="items[0].legends"
 						[style.backgroundColor]="colors.first[3]"></span>
-					<span class="graph-legend"
+					<span role="text"
+						class="graph-legend"
 						[innerHtml]="items[0].legends"
 						[style.backgroundColor]="colors.first[4]"></span>
 				</span>
-				<span class="ml-1">
+				<span role="text"
+					class="ml-1">
 					{{'device.deviceSettings.power.smartStandby.graph.legends.frequent' | translate}}
 				</span>
 			</div>
@@ -76,7 +83,7 @@
 				vtrMetrics
 				metricsItem="SmartStandbyModalCloseButton"
 				metricsEvent="featureClick"
-				metricsParent="Device.deviceSettings"				
+				metricsParent="Device.deviceSettings"
 				id="modal_smartStandby_close"
 				attr.aria-label="smart-standby-close"
 				tabindex="1"

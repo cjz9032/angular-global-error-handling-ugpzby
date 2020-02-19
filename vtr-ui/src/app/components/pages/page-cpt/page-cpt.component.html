@@ -121,6 +121,9 @@
                                     Url</button>
                             </div>
                             <p class="text-break mt-1">{{serverSwitchResponse.fullcmsserver}}</p>
+                            <p class="text-break mt-1" [ngClass]="{'text-danger': serverSwitchResponse.responseError.isError}"  *ngIf="serverSwitchResponse.responseError.isError">
+                                Error Response: {{serverSwitchResponse.responseError.message}}
+                            </p>
                         </div>
                     </div>
                     <div class="row mb-40">

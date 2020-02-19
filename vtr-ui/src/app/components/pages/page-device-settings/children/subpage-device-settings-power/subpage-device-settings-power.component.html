@@ -151,19 +151,25 @@
 									(toggleOnOff)="onToggleOfAirplanePowerMode($event.switchValue)">
 									<div class="row">
 										<div class="col px-5">
-											<div class="auto-set-checkbox custom-checkbox-gaming">
+											<div class="auto-set-checkbox custom-checkbox-gaming"
+												tabindex="0"
+												(keydown.enter)="cbAirplaneMode.click()"
+												[attr.aria-checked]="airplaneAutoDetection"
+												attr.aria-labelledby="cb-airplane-mode"
+												role="checkbox">
 												<input id="cb-airplane-mode"
+													#cbAirplaneMode
+													tabindex="-1"
 													class="custom-control-input"
 													attr.aria-label="cb-airplane-mode"
 													type="checkbox"
-													tabindex="-1"
 													name="cb-airplane-mode"
 													[(ngModel)]="airplaneAutoDetection"
 													(ngModelChange)='onAirplaneAutoModeStatusChange()'
+													aria-hidden="true"
 													checked="" />
 												<span class="checkmark"></span>
 												<label for="cb-airplane-mode"
-													tabindex="0"
 													role="text">
 													{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
 												</label>
@@ -223,11 +229,19 @@
 									</div>
 									<div class="row">
 										<div class="col px-5">
-											<div class="auto-set-checkbox custom-checkbox-gaming"
-												*ngIf="usbChargingInBatteryModeStatus">
+											<div *ngIf="usbChargingInBatteryModeStatus"
+												class="auto-set-checkbox custom-checkbox-gaming"
+												tabindex="0"
+												(keydown.enter)="cbAlwaysOnUSB.click()"
+												[attr.aria-checked]="usbChargingCheckboxFlag"
+												attr.aria-labelledby="cb-always-on-usb"
+												attr.aria-disabled="{{!toggleAlwaysOnUsbFlag}}"
+												role="checkbox">
 												<input id="cb-always-on-usb"
+													#cbAlwaysOnUSB
 													class="custom-control-input"
 													attr.aria-label="cb-always-on-usb"
+													aria-hidden="true"
 													type="checkbox"
 													tabindex="-1"
 													name="cb-always-on-usb"
@@ -237,7 +251,6 @@
 													checked="" />
 												<span class="checkmark"></span>
 												<label for="cb-always-on-usb"
-													tabindex="0"
 													role="text">
 													{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 												</label>
@@ -314,7 +327,8 @@
 									src="/assets/images/energystar.png">
 							</div>
 							<div class="col-9 col-sm-8 col-md-10 pl-0 align-self-center">
-								<p class="energystar-text">
+								<p role="text"
+									class="energystar-text">
 									{{'device.deviceSettings.power.energyStar.description' | translate}}
 								</p>
 							</div>

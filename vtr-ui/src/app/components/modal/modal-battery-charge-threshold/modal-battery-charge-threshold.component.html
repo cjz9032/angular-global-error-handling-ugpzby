@@ -5,27 +5,34 @@
 		<h1 id="ds-threshold-popup"
 			attr.aria-label="ds-threshold-popup"
 			[innerHTML]="title | translate"></h1>
-		<p id="ds-thresholdpopup-description1"
+		<p role="text"
+			id="ds-thresholdpopup-description1"
 			attr.aria-label="ds-thresholdpopup-description1"
 			[innerHTML]="description1 | translate"></p>
-		<p id="ds-thresholdpopup-description2"
+		<p role="text"
+			id="ds-thresholdpopup-description2"
 			attr.aria-label="ds-thresholdpopup-description2"
 			[innerHTML]="description2 | translate"></p>
-		<hr>
+		<hr aria-hidden="true">
 		<div class="row">
 			<button id="battery-threshold-popup-enable"
 				attr.aria-label="battery-threshold-popup-enable"
+				tabindex="0"
 				class="btn enable-button"
-				(click)="enableBatteryChargeThreshold()">
+				(click)="enableBatteryChargeThreshold()"
+				(keydown.enter)="enableBatteryChargeThreshold()">
 				{{positiveResponseText | translate}}
 			</button>
 			<a id="battery-threshold-popup-cancel"
 				attr.aria-label="battery-threshold-popup-cancel"
+				role="button"
+				tabindex="0"
+				(keydown.enter)="closeModal()"
 				(click)="closeModal()"
 				class="cancel-link active">{{negativeResponseText | translate}}</a>
 		</div>
 	</div>
-	<a role="button"
+	<a role="link"
 		href="javascript:;"
 		class="close-btn"
 		vtrMetrics

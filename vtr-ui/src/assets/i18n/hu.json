@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "A Vantage Edge segítségével a beállítások a használat alapján automatikusan hangolódnak. \n Maximális teljesítmény játék során, hosszabb akkumulátoros üzemidő máskor.",
                     "line2": "<b>Szolgáltatáskezelés – áttekintés</b> <br> Egyes szolgáltatások nem érhetők el minden eszközön",
-                    "line3": "<b>CPU-túlpörgetés </b><br> Fokozza a processzora maximális sebességét",
+                    "line3": "<b>CPU/GPU-túlpörgetés</b><br> Fokozza a processzora maximális sebességét",
                     "line4": "<b>RAM-túlpörgetés </b><br> Fokozza a memória maximális sebességét",
                     "line5": "<b>Hálózat erősítése </b><br> Hálózati forgalom átirányítása a játszott játékhoz",
                     "line6": "<b>Dolby </b><br> Hang beállítása a Dolby technológiával rendelkező játékokhoz",
@@ -94,7 +94,7 @@
                     "line9": "<b>Érintőfelület zárolása </b><br> A véletlenszerű műveletek elkerülése az érintőfelület játék közbeni letiltásával",
                     "line10": "<b>Automatikus bezárás </b><br> A rendszer erőforrásainak maximalizálásához törölje a nem használt folyamatokat a játék megkezdése előtt",
                     "line11": "<b>Termál mód </b><br> Preferált eszközprofil beállítása a ventilátorsebesség és hűtés vezérléséhez",
-                    "line12": "<b>Makróbillentyű</b><br> Customize your keyboard actions to suit your playing style"
+                    "line12": "<b>Makróbillentyű</b><br>Billentyűzet műveleteinek testre szabása, hogy illeszkedjen játékstílusához"
                 },
                 "systemInfo": {
                     "systenTooltip": "Vigye az egeret a CPU/GPU/RAM vagy a különböző meghajtók fölé, és láthatja a leírásukat, többek között a gyártmányukat és a típusukat"
@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Termál mód beállítása",
                     "thermalMode2SettingDesc": "Válassza ki a használni kívánt módot.",
-                    "fnQDesc": "Másik módra az Fn + Q paranccsal válthat.",
+                    "fnQDesc": "Másik módra az Fn+Q paranccsal válthat.",
                     "perormanceTitle": "Teljesítményközpontú mód",
                     "performanceDesc": "Számítógépe teljesítményének növelése nagyobb ventilátor sebességgel és több energiafogyasztással.",
                     "OCDesc": "Úgy is dönthet, hogy bekapcsolja a Túlpörgetés funkciót.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "GPU-illesztőprogram telepítése a Túlpörgetés funkcióhoz.",
                         "goInstall": "TELEPÍTÉS"
                     },
-                    "autoSwitch": "Automatikus váltás Teljesítmény módra játék indításakor, majd vissza."	
+                    "autoSwitch": "Automatikus váltás Teljesítmény módra játék indításakor, majd vissza."
                 },
                 "advancedOC": {
                     "title": "Túlpörgetés Spec. beáll.",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -1032,7 +1032,8 @@
                         "title": "Gyártó",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "A telepített akkumulátort a rendszer <b>nem támogatja</b> és nem tölti fel. Cserélje ki az akkumulátort egy a rendszerhez megfelelő Lenovo akkumulátorra.",
@@ -3363,10 +3364,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",

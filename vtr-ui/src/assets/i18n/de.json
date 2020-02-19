@@ -108,7 +108,7 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Einstellung Wärmemodus",
                     "thermalMode2SettingDesc": "Wählen Sie den gewünschten Modus aus.",
-                    "fnQDesc": "Sie können den Modus über die Tastenkombination Fn + Q wechseln.",
+                    "fnQDesc": "Sie können den Modus über die Tastenkombination Fn+Q wechseln.",
                     "perormanceTitle": "Leistungsmodus",
                     "performanceDesc": "Steigern Sie die Leistung Ihres Computers. Dies führt zu höherer Lüftergeschwindigkeit und mehr Stromverbrauch.",
                     "OCDesc": "Sie können auswählen, dass die Funktion zum Übertakten aktiviert werden soll.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "GPU-Treiber installieren, um Overclocking zu verwenden.",
                         "goInstall": "INSTALLIEREN"
                     },
-                    "autoSwitch": "Autom. Wechsel zu Leistung, wenn Spiele gestartet werden, danach zurückschalten."	
+                    "autoSwitch": "Autom. Wechsel zu Leistung, wenn Spiele gestartet werden, danach zurückschalten."
                 },
                 "advancedOC": {
                     "title": "Overclock Erweiterte Einst.",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{  
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -1032,7 +1032,8 @@
                         "title": "Hersteller",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "Der installierte Akku wird vom System <b>nicht unterstützt</b> und kann nicht geladen werden. Ersetzen Sie den Akku mit dem richtigen Lenovo Akku für dieses System.",
@@ -3363,10 +3364,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
