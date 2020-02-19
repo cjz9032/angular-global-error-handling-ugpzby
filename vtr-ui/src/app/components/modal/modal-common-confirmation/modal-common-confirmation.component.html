@@ -13,14 +13,17 @@
 			alt=""
 			srcset="">
 	</div>
-	<p class="description" id="modal_confirm_description" role="article">
+	<p class="description"
+		id="modal_confirm_description"
+		role="article">
 		{{ description | translate }}
 	</p>
 
 	<div class="packages"
 		*ngIf="packages!==undefined && packages.length>0">
 		<ul>
-			<li *ngFor="let package of packages" id="{{'modal_confirm_package_'+package}}">{{ package }}</li>
+			<li *ngFor="let package of packages"
+				id="{{'modal_confirm_package_'+package}}">{{ package }}</li>
 		</ul>
 	</div>
 

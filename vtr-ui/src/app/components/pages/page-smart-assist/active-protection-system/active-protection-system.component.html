@@ -83,6 +83,7 @@
 								for="aps-toggle-checkbox"
 								role="text">
 								<span [ngClass]="{'disabled': !apsStatus}"
+									aria-disabled="{{!apsStatus}}}"
 									id="aps-toggle-checkbox-text"
 									role="text">
 									{{'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate}}

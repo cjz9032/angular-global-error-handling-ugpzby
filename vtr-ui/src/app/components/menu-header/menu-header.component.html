@@ -10,11 +10,14 @@
 			attr.aria-label="myDevice-settings-header-menu-{{tab.icon}}">
 			<div class="tab-label"
 				id="myDevice-settings-header-menu-{{tab.icon}}-title"
-				attr.aria-label="myDevice-settings-header-menu-{{tab.icon}}-title" title="{{tab.label}}">
+				attr.aria-label="myDevice-settings-header-menu-{{tab.icon}}-title"
+				title="{{tab.label}}">
 				<i class="icomoon {{tab.iconClass}}"></i>
-				<span class="text">{{tab.label}}</span>
+				<span role="text"
+					class="text">{{tab.label}}</span>
 			</div>
-			<fa-icon [icon]="['fas', 'square']"	class="menu-pointer"></fa-icon>
+			<fa-icon [icon]="['fas', 'square']"
+				class="menu-pointer"></fa-icon>
 		</div>
 	</ng-container>
 </div>
