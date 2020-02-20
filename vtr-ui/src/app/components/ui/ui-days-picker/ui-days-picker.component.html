@@ -7,7 +7,7 @@
 			<div class="dropdown">
 				<vtr-ui-checkbox componentId="{{daysId}}"
 					tabindex="-1"
-					class="dropcheck"
+					class="dropcheck d-none"
 					[checked]="showDropDown"
 					(click)="onToggleDropDown()"></vtr-ui-checkbox>
 				<label for="{{daysId}}"
@@ -37,16 +37,18 @@
 									role="radiogroup"
 									tabindex="0">
 									<div *ngFor="let i of smartStandbyService.allDays">
-										<div class="custom-control custom-checkbox mb-3 ml-3">
+										<div class="custom-control custom-checkbox mb-3">
 											<vtr-ui-checkbox componentId="{{i.shortName}}"
 												role="checkbox"
 												[value]="i.status"
+												[checked]="i.status"
 												attr.aria-label="{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}"
-												(toggle)="selectDay($event, i.shortName)"></vtr-ui-checkbox>
-											<label class="custom-control-label"
+												(toggle)="selectDay($event, i.shortName)"												
+												[label]="'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate"></vtr-ui-checkbox>
+											<!-- <label class="custom-control-label"
 												for="{{i.shortName}}">
 												{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}
-											</label>
+											</label> -->
 										</div>
 									</div>
 								</div>
