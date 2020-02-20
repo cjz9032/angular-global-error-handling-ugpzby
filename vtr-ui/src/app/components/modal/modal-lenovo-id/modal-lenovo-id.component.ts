@@ -30,6 +30,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private startBind: any;
 	private completeBInd: any;
 	private notificationSubscription: Subscription;
+	readonly KEYCODE_RETURN = 13;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -83,7 +84,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					.holder .spinner { display: block; width: 100%; height: 100%; border-radius: 50%; border: 3px solid #ccc; border-top-color: #07d; animation: spinner .8s linear infinite; }
 				</style>
 				<div id=\'btnClose\' style=\'padding: 2px 16px;background-color: white;color: black;border-bottom: 1px solid #e5e5e5;\'>
-					<span class=\'close\' id=\'txtClose\' aria-current=\'true\'>&times;</span>
+					<span class=\'close\' id=\'txtClose\' tabindex=\'99\' aria-current=\'true\'>&times;</span>
 					<div style=\'height:45px;\'></div>
 				</div>
 				<div style=\'height: 100%; min-height: 400px;\' id=\'webviewBorder\'>
@@ -107,6 +108,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		if (!this.cacheCleared) {
 			// Hide browser while clearing cache
 			await this.webView.changeVisibility('webviewPlaceHolder', false);
+			this.isBroswerVisible = false;
 
 			// This is the link to clear cache for SSO production environment
 			await this.webView.navigate('https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
@@ -119,9 +121,12 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			return;
 		}
 		const eventData = JSON.parse(e);
-		if (eventData && eventData.event === 'click' && eventData.id === 'btnClose') {
-			this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn, this.appFeature);
-			this.activeModal.dismiss();
+		if (eventData) {
+			if ((eventData.event === 'click' && eventData.id === 'btnClose') ||
+				(eventData.event === 'keypress' && eventData.id === 'btnClose' && eventData.keyCode === this.KEYCODE_RETURN)) {
+				this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn, this.appFeature);
+				this.activeModal.dismiss();
+			}
 		}
 	}
 
@@ -134,20 +139,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	//  2, if url was changed by facebook the workaround will not work anymore.
 	//
 	async onNavigationStart(e) {
-		const self = this;
 		if (!e) {
 			return;
 		}
 		const url = e;
-
-		if (url.indexOf('passport.lenovo.com/wauthen5/userLogin') !== -1 ||
-			url.indexOf('sso.lenovo.com') !== -1 ||
-			url.indexOf('facebook.com') !== -1 ||
-			url.indexOf('accounts.google.com') !== -1 ||
-			url.indexOf('login.live.com') !== -1 ||
-			url.indexOf('login.yahoo.co.jp') !== -1) {
-			await this.webView.changeVisibility('spinnerCtrl', true);
-		}
 
 		if (url.indexOf('facebook.com/r.php') !== -1 ||
 			url.indexOf('facebook.com/reg/') !== -1) {
@@ -159,8 +154,18 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			// Prevent navigations to create facebook account
 			// EventArgs.preventDefault();
 			return;
-		} else {
-			await self.webView.changeVisibility('webviewPlaceHolder', false);
+		}
+
+		if (url.indexOf('passport.lenovo.com/wauthen5/userLogin') !== -1 ||
+			url.indexOf('sso.lenovo.com') !== -1 ||
+			url.indexOf('facebook.com') !== -1 ||
+			url.indexOf('accounts.google.com') !== -1 ||
+			url.indexOf('login.live.com') !== -1 ||
+			url.indexOf('login.yahoo.co.jp') !== -1) {
+			this.setFocus('txtClose');
+			this.isBroswerVisible = false;
+			await this.webView.changeVisibility('spinnerCtrl', true);
+			await this.webView.changeVisibility('webviewPlaceHolder', false);
 		}
 	}
 
@@ -174,6 +179,8 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			if (eventData.url.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
 				return;
 			}
+			self.isBroswerVisible = true;
+			self.setFocus('webviewPlaceHolder');
 			await self.webView.changeVisibility('spinnerCtrl', false);
 			await self.webView.changeVisibility('webviewPlaceHolder', true);
 			const htmlContent = eventData.content;
@@ -382,6 +389,34 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
+		}
+	}
+
+	private setFocus(id: string) {
+		if (typeof this.webView.setFocus === 'function') {
+			this.webView.setFocus(id);
+		}
+	}
+
+	@HostListener('document:keydown', ['$event'])
+	onKeyDown(event: KeyboardEvent) {
+		if (event.key === 'Tab') {
+			// Tab key pressed
+			if (document.activeElement.tagName === 'BODY') {
+				// Focus leave webview, set focus to close button
+				this.setFocus('txtClose');
+				event.preventDefault();
+				event.stopPropagation();
+			} else if (document.activeElement.tagName === 'NGB-MODAL-WINDOW') {
+				// This is first tab key press or press during loading
+				if (this.isBroswerVisible) {
+					this.setFocus('webviewPlaceHolder');
+				} else {
+					this.setFocus('txtClose');
+				}
+				event.preventDefault();
+				event.stopPropagation();
+			}
 		}
 	}
 
