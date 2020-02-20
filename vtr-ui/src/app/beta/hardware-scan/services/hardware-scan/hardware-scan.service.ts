@@ -467,8 +467,9 @@ export class HardwareScanService {
                 this.updateScanResponse(response);
                 this.disableCancel = false;
             }, cancelHandler)
-				.then((response) => {
+			.then((response) => {
                 if (response !== null && response.finalResultCode !== null) {
+					this.lastResponse = response;
                     return response;
                 } else {
                     throw new Error('Scan incompleted!');
@@ -479,20 +480,19 @@ export class HardwareScanService {
                 }
                 throw ex;
             }).finally(() => {
-					this.setIsScanDone(true);
-					this.cleanUp();
+				this.setIsScanDone(true);
+				this.cleanUp();
 
-					if (this.cancelRequested === true) {
-						this.scanExecution = false;
-						// this.isLoadingModulesDone = false;
-					}
+				if (this.cancelRequested === true) {
+					this.scanExecution = false;
+				}
 
-					this.workDone.next(true);
-					this.setScanOrRBSFinished(true);
+				this.workDone.next(true);
+				this.setScanOrRBSFinished(true);
 
-					// Retrieve an updated version of Scan's last results
-					this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
-				});
+				// Retrieve an updated version of Scan's last results
+				this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
+			});
 		}
         return undefined;
     }
