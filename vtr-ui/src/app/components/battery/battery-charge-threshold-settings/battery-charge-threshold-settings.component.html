@@ -121,7 +121,7 @@
 						*ngIf="!displayNoteOnly"
 						[class.disabled]="isGaugeResetRunning">
 						<div class="col px-5">
-							<vtr-ui-checkbox [componentId]="'cb-battery-charge-threshold'"
+							<vtr-ui-checkbox [componentId]=" 'cb-'+ textId"
 								[value]="bctInfo.checkboxValue"
 								[checked]="bctInfo.checkboxValue"
 								(toggle)='toggleAutoChargeSettings($event)'
