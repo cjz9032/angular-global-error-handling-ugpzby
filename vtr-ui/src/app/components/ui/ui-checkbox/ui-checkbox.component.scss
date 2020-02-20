@@ -10,7 +10,6 @@
 		top: 0.5rem;
 		margin-right: 0.5rem;
 		z-index: 0;
-		opacity: 1;
 		outline: 0;
 	}
 	label {
@@ -24,10 +23,8 @@
 
 	.custom-control-label {
 		font-size: $caption;
-		font-weight: $weight_bold;
-		text-transform: uppercase;
+		text-transform: none;
 		padding-left: 0.5rem;
-		line-height: 1.15;
 
 		// rounded square-box background
 		&::before {
