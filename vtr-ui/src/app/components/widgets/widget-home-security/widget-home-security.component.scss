@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import "../../../app.theme";
 
 .vtr-home-security {
 	.header {
@@ -55,6 +55,8 @@
 			color: $main_dark;
 
 			&.good {
+				padding-top: 0;
+				padding-bottom: 0;
 				.bullet-icon {
 					.icon-bkg {
 						background: $green_gradient;

@@ -5,14 +5,19 @@ import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-arti
 import { CMSService } from 'src/app/services/cms/cms.service';
 
 @Component({
-	selector: 'vtr-home-security',
-	templateUrl: './home-security.component.html',
-	styleUrls: ['./home-security.component.scss']
+	selector: 'vtr-widget-home-security',
+	templateUrl: './widget-home-security.component.html',
+	styleUrls: ['./widget-home-security.component.scss']
 })
-export class HomeSecurityComponent {
+export class WidgetHomeSecurityComponent {
 	peaceOfMindArticleId = '988BE19B75554E09B5A914D5F803C3F3';
 	peaceOfMindArticleCategory: string;
 
+	items = [
+		'security.homeprotection.homesecurity.homeSecurityAffect1',
+		'security.homeprotection.homesecurity.homeSecurityAffect2',
+		'security.homeprotection.homesecurity.homeSecurityAffect3'
+	];
 
 	constructor(
 		public dialogService: DialogService,
