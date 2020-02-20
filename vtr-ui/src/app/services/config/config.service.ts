@@ -134,94 +134,67 @@ export class ConfigService {
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
 			this.activeSegment = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
-			const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
-			let resultMenu = cloneDeep(this.menuItemsGaming);
+			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
+			let resultMenu;
+
 			if (machineInfo.isGaming) {
-				if (isBetaUser && await this.canShowSearch()) {
-					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
-				}
+				resultMenu = cloneDeep(this.menuItemsGaming);
+				this.initializeBetaMenu(resultMenu, isBetaUser);
 				this.initializeWiFiItem(resultMenu);
-				this.smodeFilter(resultMenu, this.deviceService.isSMode);
-				this.armFilter(resultMenu, this.deviceService.isArm);
-				this.menu = resultMenu.filter(item => !item.hide);
+				this.menu = this.filterMenu(resultMenu, SegmentConst.Gaming);
 				this.notifyMenuChange(this.menu);
 				return resolve(this.menu);
 			}
-			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
-			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
+			
 			resultMenu = cloneDeep(this.menuItems);
-			if (machineType) {
-				this.smartAssistFilter(machineType, resultMenu);
-			} else if (this.deviceService.isShellAvailable) {
-				await this.deviceService.getMachineType().then(async (value: number) => {
-					await this.smartAssistFilter(value, resultMenu);
-				});
-			}
-			const canShowPrivacy = await this.canShowPrivacy();
-			if (!canShowPrivacy) {
-				resultMenu = resultMenu.filter(item => item.id !== 'privacy');
-			}
+			await this.initializeSmartAssist(resultMenu);
+			resultMenu = await this.initializePrivacy(resultMenu);
 			this.initializeSecurityItem(country.toLowerCase(), resultMenu);
-			this.smodeFilter(resultMenu, this.deviceService.isSMode);
-			this.armFilter(resultMenu, this.deviceService.isArm);
-			this.menuBySegment.commercial = cloneDeep(resultMenu);
-			if (isBetaUser) {
-				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
-				if (await this.canShowSearch()) {
-					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
-				}
+			if (this.hypSettings) {
+				resultMenu = await this.initShowCHSMenu(country, resultMenu, machineInfo);
 			}
+
+			this.menuBySegment.commercial = cloneDeep(resultMenu);
+			await this.initializeBetaMenu(resultMenu, isBetaUser);
 			this.menuBySegment.consumer = cloneDeep(resultMenu);
 			this.menuBySegment.smb = cloneDeep(resultMenu);
-			resultMenu = this.menuBySegment[this.activeSegment.toLowerCase()];
-			if (this.hypSettings) {
-				await this.initShowCHSMenu().then((result) => {
-					const shellVersion = {
-						major: 10,
-						minor: 1910,
-						build: 12
-					};
-					this.showCHS = country.toLowerCase() === 'us'
-						&& locale.startsWith('en')
-						&& result
-						&& this.isShowCHSByShellVersion(shellVersion)
-						&& !machineInfo.isGaming
-						&& this.activeSegment !== SegmentConst.Commercial;
-					this.showCHSWithoutSegment = country.toLowerCase() === 'us'
-						&& locale.startsWith('en')
-						&& result
-						&& this.isShowCHSByShellVersion(shellVersion)
-						&& !machineInfo.isGaming;
-					if (!this.showCHS) {
-						resultMenu = resultMenu.filter(item => item.id !== 'home-security');
-					}
-					this.menuBySegment.commercial = this.menuBySegment.commercial.filter(item => item.id !== 'home-security');
-					if (!this.showCHSWithoutSegment) {
-						this.menuBySegment.consumer = this.menuBySegment.consumer.filter(item => item.id !== 'home-security');
-						this.menuBySegment.smb = this.menuBySegment.smb.filter(item => item.id !== 'home-security');
-					}
-				});
-			}
-			resultMenu = this.segmentFilter(resultMenu, this.activeSegment);
-			this.menuBySegment.commercial = this.segmentFilter(this.menuBySegment.commercial, SegmentConst.Commercial);
-			this.menuBySegment.consumer = this.segmentFilter(this.menuBySegment.consumer, SegmentConst.Consumer);
-			this.menuBySegment.smb = this.segmentFilter(this.menuBySegment.smb, SegmentConst.SMB);
 
-			this.menu = resultMenu.filter(item => !item.hide);
-			this.menuBySegment.commercial = this.menuBySegment.commercial.filter(item => !item.hide);
-			this.menuBySegment.consumer = this.menuBySegment.consumer.filter(item => !item.hide);
-			this.menuBySegment.smb = this.menuBySegment.smb.filter(item => !item.hide);
+			this.menuBySegment.commercial = this.filterMenu(this.menuBySegment.commercial, SegmentConst.Commercial);
+			this.menuBySegment.consumer = this.filterMenu(this.menuBySegment.consumer, SegmentConst.Consumer);
+			this.menuBySegment.smb = this.filterMenu(this.menuBySegment.smb, SegmentConst.SMB);
+
+			this.menu = this.menuBySegment[this.activeSegment.toLowerCase()];
 			this.notifyMenuChange(this.menu);
 			return resolve(this.menu);
 		});
 	}
 
-	initShowCHSMenu() {
-		return this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((result) => {
+	private async initShowCHSMenu(country: string, menu: Array<any>, machineInfo: any) : Promise<Array<any>> {
+		const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
+		const chsHypsis = await this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((result) => {
 			return ((result || '').toString() === 'true');
 		}, (error) => {
 			this.logger.error('ConfigService.initShowCHSMenu: promise rejected ', error);
 		});
+
+		const shellVersion = {
+			major: 10,
+			minor: 1910,
+			build: 12
+		};
+
+		this.showCHSWithoutSegment = country.toLowerCase() === 'us'
+			&& locale.startsWith('en')
+			&& chsHypsis
+			&& this.isShowCHSByShellVersion(shellVersion)
+			&& !machineInfo.isGaming;
+		this.showCHS = this.showCHSWithoutSegment && (this.activeSegment !== SegmentConst.Commercial);
+
+		if (!this.showCHSWithoutSegment) {
+			menu = menu.filter(item => item.id !== 'home-security');
+		}
+
+		return menu;
 	}
 
 	isShowCHSByShellVersion(shellVersion: ShellVersion) {
@@ -559,20 +532,27 @@ export class ConfigService {
 		});
 	}
 
-	updateBetaMenu(menu, isBeta: boolean): Promise<any> {
+	initializeBetaMenu(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
+		return this.updateBetaMenu(menu, isBeta);
+	}
+
+	updateBetaMenu(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
 		return new Promise((resolve) => {
 			if (isBeta) {
-				if (!menu.find((item) => item.id === 'hardware-scan') && !menu.find((item) => item.id === 'app-search')) {
+				if (!menu.find((item) => item.id === 'hardware-scan')) {
 					menu.splice(menu.length - 1, 0, ...this.betaItem);
-					this.canShowSearch().then((result) => {
+				}
+
+				if (!menu.find((item) => item.id === 'app-search')) {
+					return this.canShowSearch().then((result) => {
 						if (result) {
 							menu.splice(menu.length - 1, 0, this.appSearch);
 						}
 						return resolve(menu);
 					});
-				} else {
-					return resolve(menu);
 				}
+				
+				return resolve(menu);
 			} else {
 				menu = menu.filter(item => item.id !== 'hardware-scan');
 				menu = menu.filter(item => item.id !== 'app-search');
@@ -646,6 +626,31 @@ export class ConfigService {
 				this.newFeatureTipService.create();
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, newFeatureVersion);
+		}
+	}
+
+	private filterMenu(menu: Array<any>, segment: string) : Array<any> {
+		this.smodeFilter(menu, this.deviceService.isSMode);
+		this.armFilter(menu, this.deviceService.isArm);
+		this.segmentFilter(menu, segment);
+		return menu.filter(item => !item.hide);
+	}
+
+	private async initializeSmartAssist(menu: Array<any>) : Promise<any> {
+		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
+		if (machineType) {
+			this.smartAssistFilter(machineType, menu);
+		} else if (this.deviceService.isShellAvailable) {
+			await this.deviceService.getMachineType().then(async (value: number) => {
+				await this.smartAssistFilter(value, menu);
+			});
+		}
+	}
+
+	private async initializePrivacy(menu: Array<any>) : Promise<Array<any>> {
+		const canShowPrivacy = await this.canShowPrivacy();
+		if (!canShowPrivacy) {
+			return menu.filter(item => item.id !== 'privacy');
 		}
 	}
 }
