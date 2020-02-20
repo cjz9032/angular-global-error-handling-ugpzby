@@ -620,7 +620,6 @@
                 "sub6": "Fingeravtrykk"
             },
             "support": "Støtte",
-            "privacy": "Personvern",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Koble til Internett for å bruke denne funksjonen"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Personvern"
         }
     },
     "tutorial": {
@@ -3300,8 +3294,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nå kan du finne ut om personopplysningene dine er på avveie eller brukes av sporingsverktøy på nettet uten at du vet om det.",
-            "security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
+			"security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
             "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep."
         }
     },

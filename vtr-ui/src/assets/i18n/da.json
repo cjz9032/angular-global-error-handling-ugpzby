@@ -620,7 +620,6 @@
                 "sub6": "Fingeraftryk"
             },
             "support": "Support",
-            "privacy": "Anonymitet",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Opret forbindelse til internettet for at bruge denne funktion"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Anonymitet"
         }
     },
     "tutorial": {
@@ -3300,8 +3294,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nu kan du finde ud af, om der har været et sikkerhedsbrud, så dine personlige oplysninger er blevet registreret eller brugt af online-trackere, uden at du ved det.",
-            "security": "Vidste du det? Selvom du ikke har et antivirusprogram installeret, tilbyder vi stadig en grundlæggende sikkerhedsbeskyttelse til din enhed.",
+			"security": "Vidste du det? Selvom du ikke har et antivirusprogram installeret, tilbyder vi stadig en grundlæggende sikkerhedsbeskyttelse til din enhed.",
             "connectedHomeSecurity": "Få overvågning i realtid og advarsler om din netværkssikkerhed derhjemme. Du er den første, der får det at vide, hvis nogen af dine smart-enheder er udsat for et sikkerhedsangreb."
         }
     },

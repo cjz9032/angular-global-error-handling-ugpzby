@@ -620,7 +620,6 @@
                 "sub6": "Fingerabdruck"
             },
             "support": "Unterstützung",
-            "privacy": "Vertraulichkeit",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Internetverbindung für diese Funktion erforderlich"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Vertraulichkeit"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Sie können nun herausfinden, ob Ihre persönlichen Daten ohne Ihr Wissen durch Online-Tracking erfasst oder verwendet wurden.",
             "security": "Schon gewusst? Auch wenn Sie keine Antivirensoftware installiert haben, bieten wir einen grundlegenden Sicherheitsschutz für Ihre Einheit.",
             "connectedHomeSecurity": "Mit uns erhalten Sie Echtzeit-Überwachung und ‑Benachrichtigungen über Ihre Netzwerksicherheit zu Hause. Sie erfahren umgehend, ob eine Ihrer intelligenten Einheiten einem Sicherheitsangriff ausgesetzt ist."
         }

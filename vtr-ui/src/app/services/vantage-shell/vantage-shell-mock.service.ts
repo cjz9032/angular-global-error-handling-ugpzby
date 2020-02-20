@@ -58,7 +58,6 @@ export class VantageShellService {
 				Phoenix.Features.DeviceFilter,
 				Phoenix.Features.Metrics,
 				Phoenix.Features.ModernPreload,
-				Phoenix.Features.Privacy,
 				Phoenix.Features.LenovoVoiceFeature,
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
@@ -1398,7 +1397,6 @@ export class VantageShellService {
 	public calcDeviceFilter(filter) {
 		return Promise.resolve({
 			ConnectedHomeSecurity: true,
-			PrivacyTab: 'enabled',
 			FeatureSearch: null,
 			TileBSource: 'UPE'
 		});
@@ -1416,130 +1414,6 @@ export class VantageShellService {
 			return win.Windows;
 		}
 		return undefined;
-	}
-
-	public getPrivacyCore() {
-		return {
-			openInstaller: () => of(true),
-			openUriInDefaultBrowser: (uri) => of(true),
-			openFigleafByUrl: (uri) => of(true),
-			sendContractToPlugin: (contract): any => {
-				switch (contract.command) {
-					case 'Get-InstalledBrowsers':
-						return of({ browsers: ['chrome', 'firefox', 'edge'] });
-					case 'Get-AccessiblePasswords':
-						return of({ chrome: 11, firefox: 1, edge: 1 });
-					case 'Get-MaskedPasswords':
-						return of({
-							edge: [
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								}
-							],
-							chrome: [
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								}
-							],
-							firefox: [
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								}
-							]
-						});
-					case 'Get-VisitedWebsites':
-						return of({
-							visitedWebsites: [
-								{
-									domain: 'google.com',
-									totalVisitsCount: 26871,
-									lastVisitTimeUtc: '2019-10-24T10:50:28Z'
-								},
-								{
-									domain: 'facebook.com',
-									totalVisitsCount: 3715,
-									lastVisitTimeUtc: '2019-10-24T08:16:21Z'
-								}
-							]
-						});
-				}
-			}
-		};
 	}
 
 	public getUserGuide() {

@@ -49,7 +49,6 @@ export class VantageShellService {
 				Phoenix.Features.DeviceFilter,
 				Phoenix.Features.Metrics,
 				Phoenix.Features.ModernPreload,
-				Phoenix.Features.Privacy,
 				Phoenix.Features.LenovoVoiceFeature,
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
@@ -607,13 +606,6 @@ export class VantageShellService {
 		const win: any = window;
 		if (win.Windows) {
 			return win.Windows;
-		}
-		return undefined;
-	}
-
-	public getPrivacyCore() {
-		if (this.phoenix && this.phoenix.privacy) {
-			return this.phoenix.privacy;
 		}
 		return undefined;
 	}

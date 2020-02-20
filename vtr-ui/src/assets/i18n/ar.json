@@ -622,7 +622,6 @@
                 "sub6": "بصمة"
             },
             "support": "الدعم",
-            "privacy": "الخصوصية",
             "beta": {
                 "title": "beta"
             },
@@ -678,11 +677,6 @@
         },
         "offline": {
             "connectToUseFeature": "اتصل بالإنترنت لاستخدام هذه الميزة"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "الخصوصية"
         }
     },
     "tutorial": {

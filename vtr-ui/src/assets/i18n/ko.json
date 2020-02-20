@@ -620,7 +620,6 @@
                 "sub6": "지문"
             },
             "support": "지원",
-            "privacy": "프라이버시",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "이 기능을 사용하려면 인터넷에 연결하십시오"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "프라이버시"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "이제 사용자 모르게 개인 정보가 온라인 추적기에 의해 침해되거나 사용되었는지 확인할 수 있습니다.",
             "security": "알고 있습니다? 바이러스 백신 소프트웨어가 설치되어 있지 않더라도, 장치에 대한 기본 보안 보호 기능이 제공됩니다.",
             "connectedHomeSecurity": "가정에서 네트워크 보안에 대한 실시간 모니터링 및 경고를 얻습니다. 스마트 장치가 보안 공격을 하고 있는 경우, 첫 번째 사용자는 이를 확인할 수 있습니다."
         }

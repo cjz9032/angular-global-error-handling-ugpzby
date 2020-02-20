@@ -620,7 +620,6 @@
                 "sub6": "指纹"
             },
             "support": "支持服务",
-            "privacy": "隐私",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "连接到英特网以使用此功能"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "隐私"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "现在，您可以查找您的私人信息是否已外泄，或在您不知情的情况下被在线跟踪器所使用。",
             "security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
             "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。"
         }

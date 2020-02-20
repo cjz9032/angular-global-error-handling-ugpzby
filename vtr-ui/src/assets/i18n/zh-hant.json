@@ -620,7 +620,6 @@
                 "sub6": "指紋"
             },
             "support": "支援",
-            "privacy": "隱私權",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "連接到網際網路以使用此功能"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "隱私權"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "現在您可以查明您的私人資訊是否已外洩，或在您不知情的情況下被線上追蹤器所使用。",
             "security": "您知道嗎？即使您沒有安裝防毒軟體，我們仍會為您的裝置提供基本的安全保護。",
             "connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。"
         }

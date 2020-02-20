@@ -620,7 +620,6 @@
                 "sub6": "Impressão digital"
             },
             "support": "Suporte",
-            "privacy": "Privacidade",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Conecte-se à Internet para usar este recurso"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Privacidade"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Agora você pode descobrir se suas informações privadas foram violadas ou usadas por rastreadores online sem o seu conhecimento.",
             "security": "Você sabia? Mesmo que você não tenha um software antivírus instalado, ainda fornecemos proteção de segurança básica para o seu dispositivo.",
             "connectedHomeSecurity": "Obtenha monitoramento e alertas em tempo real sobre a segurança da sua rede doméstica. Você será o primeiro a saber se algum dos seus dispositivos inteligentes está sofrendo um ataque de segurança."
         }

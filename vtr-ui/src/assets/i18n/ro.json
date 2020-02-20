@@ -620,7 +620,6 @@
                 "sub6": "Amprentă digitală"
             },
             "support": "Asistenţă",
-            "privacy": "Confidenţialitate",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Pentru a utiliza această caracteristică, trebuie să vă conectați la internet"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Confidenţialitate"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Acum puteţi afla dacă informaţiile dvs. private au fost încălcate sau utilizate de trackerele online, fără să ştiţi.",
             "security": "Ştiaţi că? Chiar dacă nu aveţi instalat software antivirus, vă oferim în continuare protecţie de bază de securitate pentru dispozitivul dvs.",
             "connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate."
         }

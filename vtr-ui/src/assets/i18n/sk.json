@@ -620,7 +620,6 @@
                 "sub6": "Odtlačok"
             },
             "support": "Technická podpora",
-            "privacy": "Ochrana osobných údajov",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Na používanie tejto funkcie sa pripojte k internetu"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Ochrana osobných údajov"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Teraz môžete zistiť, či došlo k úniku vašich súkromných údajov alebo či ich bez vášho vedomia použili nástroje na sledovanie online.",
             "security": "Vedeli ste to? Aj keď nemáte nainštalovaný antivírusový softvér, poskytujeme základnú bezpečnostnú ochranu vášho zariadenia.",
             "connectedHomeSecurity": "Získajte monitorovanie v reálnom čase a upozornenia týkajúce zabezpečenia siete v domácnosti. Ak bude ktorékoľvek z vašich inteligentných zariadení čeliť bezpečnostnému útoku, dozviete sa o tom ako prví."
         }

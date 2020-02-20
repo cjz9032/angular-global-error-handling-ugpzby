@@ -620,7 +620,6 @@
                 "sub6": "Odcisk palca"
             },
             "support": "Pomoc techniczna",
-            "privacy": "Prywatność",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Połącz się z Internetem, aby korzystać z tej funkcji"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Prywatność"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Teraz możesz dowiedzieć się, czy twoje prywatne dane zostały naruszone lub wykorzystane przez narzędzia do śledzenia online bez twojej wiedzy.",
             "security": "Czy wiesz? Nawet jeśli nie masz zainstalowanego oprogramowania antywirusowego, nadal zapewniamy podstawową ochronę twojego urządzenia.",
             "connectedHomeSecurity": "Zyskaj monitorowanie w czasie rzeczywistym i otrzymuj alerty dotyczące bezpieczeństwa sieci w domu. Jako pierwszy dowiesz się, czy któreś z twoich inteligentnych urządzeń jest narażone na zagrożenia."
         }

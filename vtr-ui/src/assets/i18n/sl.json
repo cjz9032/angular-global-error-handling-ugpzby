@@ -620,7 +620,6 @@
                 "sub6": "Prstni odtis"
             },
             "support": "Podpora",
-            "privacy": "Zasebnost",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Za uporabo te funkcije se povežite v internet"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Zasebnost"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Zdaj lahko ugotovite, ali so spletni sledilci brez vaše vednosti kršili ali uporabljali vaše zasebne podatke.",
             "security": "Ali veste? Čeprav nimate nameščene protivirusne programske opreme, še vedno zagotavljamo osnovno varnostno zaščito za vašo napravo.",
             "connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena."
         }

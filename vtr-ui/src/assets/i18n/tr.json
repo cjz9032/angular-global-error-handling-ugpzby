@@ -620,7 +620,6 @@
                 "sub6": "Parmak izi"
             },
             "support": "Destek",
-            "privacy": "Gizlilik",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Bu özelliği kullanmak için İnternet'e bağlanın"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Gizlilik"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Artık özel bilgilerinizin çevrimiçi izleyiciler tarafından sizin bilginiz dışında ihlal edilip edilmediğini veya kullanılıp kullanılmadığını öğrenebilirsiniz.",
             "security": "Bunu biliyor muydunuz? Kurulu bir antivirüs yazılımınız olmasa bile, cihazınız için temel güvenlik koruması sağlamaya devam ediyoruz.",
             "connectedHomeSecurity": "Evde ağ güvenliğinizle ilgili gerçek zamanlı izleme olanağı elde edin ve uyarılar alın. Akıllı cihazlarınızdan herhangi birinin güvenlik saldırısı ile karşı karşıya olup olmadığını bilen ilk kişi siz olursunuz."
         }

@@ -47,10 +47,6 @@ const routes: Routes = [
 		loadChildren: './connected-home-security/connected-home-security.module#ConnectedHomeSecurityModule'
 	},
 	{
-		path: 'privacy',
-		loadChildren: '../components/pages/page-privacy/privacy.module#PrivacyModule'
-	},
-	{
 		path: 'security',
 		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
 	},

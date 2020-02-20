@@ -620,7 +620,6 @@
                 "sub6": "Vingerafdruk"
             },
             "support": "Ondersteuning",
-            "privacy": "Privacy",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Verbinding maken met internet om deze functie te gebruiken"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Privacy"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nu kunt u nagaan of uw persoonlijke gegevens zijn geschonden of gebruikt door online trackers zonder dat u ervan af wist.",
             "security": "Wist u dat? Zelfs als er geen antivirussoftware op uw computer is geïnstalleerd, bieden wij nog steeds basisbescherming voor uw apparaat.",
             "connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd."
         }

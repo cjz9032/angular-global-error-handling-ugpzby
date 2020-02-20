@@ -620,7 +620,6 @@
                 "sub6": "Fingerprint"
             },
             "support": "Podrška",
-            "privacy": "Privatnost",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Povežite se sa internetom da biste koristili ovu funkciju"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Privatnost"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Sada možete da saznate da li je privatnost vaših informacija ugrožena ili da vaše privatne informacije koriste sistemi za praćenje na mreži bez vašeg znanja.",
             "security": "Da li znate? Čak i da nemate instaliran antivirusni softver, mi vam i dalje pružamo osnovnu bezbednosnu zaštitu za uređaj.",
             "connectedHomeSecurity": "Nabavite nadzor i upozorenja u realnom vremenu o bezbednosti mreže kod kuće. Bićete prvi koji će znati da li se neki od pametnih uređaja suočavaju sa bezbednosnim napadom."
         }

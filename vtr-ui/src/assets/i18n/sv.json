@@ -620,7 +620,6 @@
                 "sub6": "Fingeravtryck"
             },
             "support": "Support",
-            "privacy": "Sekretess",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Anslut till Internet om du vill använda den här funktionen"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Sekretess"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nu kan du ta reda på om din privata information har äventyrats eller använts av onlinespårare utan din vetskap.",
             "security": "Visste du detta? Även om du inte har ett antivirusprogram är din enhet fortfarande skyddad med grundläggande säkerhetsfunktioner.",
             "connectedHomeSecurity": "Du få övervakning i realtid och varningar om nätverkssäkerheten i ditt hem. Du blir den första som får veta om någon av dina smarta enheter utsätts för en säkerhetsattack."
         }

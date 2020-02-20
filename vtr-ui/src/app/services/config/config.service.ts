@@ -150,10 +150,6 @@ export class ConfigService {
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
 			resultMenu = cloneDeep(this.menuItems);
-			const canShowPrivacy = await this.canShowPrivacy();
-			if (!canShowPrivacy) {
-				resultMenu = resultMenu.filter(item => item.id !== 'privacy');
-			}
 			this.initializeSecurityItem(country.toLowerCase(), resultMenu);
 			this.smodeFilter(resultMenu, this.deviceService.isSMode);
 			this.armFilter(resultMenu, this.deviceService.isArm);
@@ -481,19 +477,6 @@ export class ConfigService {
 		this.commonService.sendNotification(MenuItem.MenuItemChange, payload);
 	}
 
-	public canShowPrivacy(): Promise<boolean> {
-		return new Promise(resolve => {
-			if (this.hypSettings) {
-				this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
-					resolve(privacy === 'enabled');
-				}, (error) => {
-					this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
-					resolve(false);
-				});
-			}
-		});
-	}
-
 	public canShowSearch(): Promise<boolean> {
 		return new Promise(resolve => {
 			if (this.hypSettings) {
@@ -538,17 +521,17 @@ export class ConfigService {
 		|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
 			this.supportFilter(menu, 'wifi-security', wifiIsSupport);
 			return;
-		} 
+		}
 
 		if (this.deviceService.isSMode || this.deviceService.isArm) return;
-		
+
 		if (wifiIsSupport) {
 			if (securityItem && securityItem.subitems && this.activeSegment !== SegmentConst.Gaming) {
 				const wifiItem = this.menuItems.find((item) => item.id === 'security').subitems.find((item) => item.id === 'wifi-security');
 				securityItem.subitems.splice(3, 0, wifiItem);
 				return;
 			}
-		
+
 			const supportIndex = menu.findIndex((item) => item.id === 'support');
 			const wifiItems = this.activeSegment !== SegmentConst.Gaming ? this.menuItems.find((item) => item.id === 'wifi-security') : this.menuItemsGaming.find((item) => item.id === 'wifi-security');
 			menu.splice(supportIndex, 0, wifiItems);
@@ -653,12 +636,11 @@ export class ConfigService {
 		const newFeatureTipsShowComplete = this.commonService.getLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion);
 		if ((!newFeatureTipsShowComplete || newFeatureTipsShowComplete < newFeatureVersion)
 			&& Array.isArray(this.menu)) {
-			const privacyItem = this.menu.find((item: any) => item.id === 'privacy');
 			const securityItem = this.menu.find((item: any) => item.id === 'security');
 			const chsItem = this.menu.find((item: any) => item.id === 'home-security');
 			let isHideMenuToggle = true;
 			if (window.innerWidth < 1200) { isHideMenuToggle = false; }
-			if ((privacyItem || securityItem || chsItem) && isHideMenuToggle) {
+			if ((securityItem || chsItem) && isHideMenuToggle) {
 				this.newFeatureTipService.create();
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, newFeatureVersion);

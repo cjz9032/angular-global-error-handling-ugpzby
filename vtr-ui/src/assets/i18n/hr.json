@@ -620,7 +620,6 @@
                 "sub6": "Otisak prsta"
             },
             "support": "Podrška",
-            "privacy": "Zaštita privatnosti",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Povežite se s internetom da biste koristili ovu značajku"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Zaštita privatnosti"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Sada možete saznati jesu li internetski tragači zloupotrijebili ili koristili vaše privatne podatke bez vašeg znanja.",
             "security": "Znate li? Čak i ako nemate instaliran antivirusni softver, još uvijek vam pružamo osnovnu sigurnosnu zaštitu vašeg uređaja.",
             "connectedHomeSecurity": "Dobijte praćenje u stvarnom vremenu i upozorenja o mrežnoj sigurnosti vašeg doma. Prvi ćete saznati ako se bilo koji od vaših pametnih uređaja suoči sa sigurnosnim napadom."
         }

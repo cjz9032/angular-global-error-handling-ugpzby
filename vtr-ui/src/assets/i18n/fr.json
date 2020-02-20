@@ -620,7 +620,6 @@
                 "sub6": "Empreinte digitale"
             },
             "support": "Soutien",
-            "privacy": "Confidentialité",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Connectez-vous à Internet pour utiliser cette fonction"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Confidentialité"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Vous pouvez désormais déterminer si vos informations privées ont été compromises ou utilisées par des traqueurs en ligne à votre insu.",
             "security": "Le saviez-vous ? Même si vous n'avez pas installé de logiciel antivirus, nous proposons toujours une protection de base pour votre périphérique.",
             "connectedHomeSecurity": "Profitez d'une surveillance et d'alertes en temps réel concernant la sécurité de votre réseau à domicile. Vous serez le premier informé si l'un de vos périphériques intelligents est confronté à une attaque de sécurité."
         }

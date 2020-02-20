@@ -23,7 +23,6 @@ import { AppNotification } from './data-models/common/app-notification.model';
 import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
 import { AppUpdateService } from './services/app-update/app-update.service';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
@@ -32,7 +31,6 @@ import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service'
 // import { AppUpdateService } from './services/app-update/app-update.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
-import { AbTestsGenerateConfigService } from './components/pages/page-privacy/core/ab-tests/ab-tests-generate-config.service';
 import { ToolbarToastService } from './services/toolbartoast/toolbartoast.service';
 
 declare var Windows;
@@ -67,7 +65,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		private appUpdateService: AppUpdateService,
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
-		private abTestsGenerateConfigService: AbTestsGenerateConfigService,
 		private toolbarToast: ToolbarToastService
 		// private appUpdateService: AppUpdateService
 	) {
@@ -133,7 +130,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		}
 
 		this.setRunVersionToRegistry();
-		this.abTestsGenerateConfigService.shuffle();
 		this.toolbarToast.showVantageToolbarToast();
 	}
 

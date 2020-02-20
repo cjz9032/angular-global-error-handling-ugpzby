@@ -620,7 +620,6 @@
                 "sub6": "Sormenjälki"
             },
             "support": "Tuki",
-            "privacy": "Yksityisyys",
             "beta": {
                 "title": "beta"
             },
@@ -676,11 +675,6 @@
         },
         "offline": {
             "connectToUseFeature": "Muodosta Internet-yhteys, jotta voit käyttää tätä toimintoa"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Yksityisyys"
         }
     },
     "tutorial": {
@@ -3300,7 +3294,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nyt voit selvittää, onko yksityisiä tietojasi katseltu luvatta tai ovatko verkkoseuraajat käyttäneet niitä tietämättäsi.",
             "security": "Tiedätkö? Vaikka tietokoneeseen ei ole asennettu virustentorjuntaohjelmistoa, se sisältää silti perussuojauksen.",
             "connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi."
         }
