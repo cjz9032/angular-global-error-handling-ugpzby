@@ -312,7 +312,7 @@ export class CMSService {
 					this.getDateTime(record.DisplayStartDate) <= new Date().getTime()
 				)
 			);
-		}).sort(this.sortCmsContent);
+		}).sort(this.sortCmsContent.bind(this));
 	}
 
 	sortCmsContent(a, b): number {
@@ -323,9 +323,11 @@ export class CMSService {
 	}
 
 	getDateTime(date: any): number {
-		if (date && typeof date === 'string') {
-			return new Date(date.replace(/\./g, '\/')).getTime();
-		}
+		try{
+			if (date && typeof date === 'string') {
+				return new Date(date.replace(/\./g, '\/')).getTime();
+			}
+		}catch(e){}
 		return -1;
 	}
 
