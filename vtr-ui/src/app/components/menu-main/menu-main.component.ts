@@ -19,7 +19,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 import { Observable, Subscription } from 'rxjs';
-import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';

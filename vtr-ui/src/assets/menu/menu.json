@@ -386,7 +386,7 @@
 		{
 			"id": "hardware-scan",
 			"label": "hardwareScan.name",
-			"path": "beta/hardware-scan",
+			"path": "hardware-scan",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.hardwarescan",

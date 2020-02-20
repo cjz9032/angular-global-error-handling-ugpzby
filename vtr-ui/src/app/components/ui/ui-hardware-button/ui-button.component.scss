@@ -1,0 +1,75 @@
+@import "../../../app.theme";
+
+.beta-vtr-ui-button {
+	display: block;
+
+	.button-box {
+		padding: 0.5rem;
+		@media #{$mediaquery_7} {
+			margin-top: 1.2rem;
+		}
+
+		.button {
+			@media #{$mediaquery_X4} {
+				min-width: 10rem;
+			}
+			min-height: 6rem;
+			border-radius: 3rem;
+			min-width: 12rem;
+			background: $gradient_main;
+			border: none;
+			color: $light;
+			font-size: $fontsize_xs;
+			font-weight: $weight_bold;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			// cursor: pointer;
+			padding: 0 2.5rem;
+			// max-width: 33rem;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+
+		.text-upper-case {
+			text-transform: uppercase;
+		}
+
+		.disable {
+			background: gray;
+		}
+
+		.fullWidth {
+			width: 95%;
+		}
+
+		.halfWidth {
+			width: 50%;
+		}
+
+		.regular-width {
+			width: 25rem;
+		}
+		.min-height {
+			min-height: 32px !important;
+		}
+
+		.action-button-disable {
+			background: $light_grey;
+			cursor: default;
+		}
+
+		.btn-gradient {
+			-moz-animation: html-css 2s ease-out;
+			-webkit-animation: html-css 2s ease-out;
+			background-color: #2e62d9;
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#2e62d9), to(#4980fc));
+			background-image: -webkit-linear-gradient(to right, #2e62d9, #4980fc);
+			background-image: -moz-linear-gradient(to right, #2e62d9, #4980fc);
+			background-image: -ms-linear-gradient(to right, #2e62d9, #4980fc);
+			background-image: -o-linear-gradient(to right, #2e62d9, #4980fc);
+			background-image: linear-gradient(to right, #2e62d9, #4980fc);
+		}
+	}
+}
