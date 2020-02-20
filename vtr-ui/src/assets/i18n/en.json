@@ -1053,7 +1053,7 @@
                     "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
                     "LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power.</b>",
                     "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter.",
-                    "MissingDriver": "<b>The Lenovo Power Manager driver</b> is not installed or not working properly. Please run Windows Update to install the latest driver. You also can install the driver from <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">here</a>. After the installation, restart your computer.",
+					"MissingDriver": "<b>The Lenovo Power Manager driver</b> is not installed or not working properly. Please run Windows Update or manually install it from <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">here</a>. After the installation, restart your computer.",
                     "StoreLimitation": "<b>The battery can only store {{value}}% of</b> it's original full charge capacity.",
                     "HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
                     "TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
