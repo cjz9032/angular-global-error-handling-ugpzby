@@ -218,6 +218,7 @@
 															[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
 												|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
 															[value]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
+															[checked]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
 															[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate"
 															(toggle)='onZeroTouchLockFacialRecoChange($event)'>
 														</vtr-ui-checkbox>

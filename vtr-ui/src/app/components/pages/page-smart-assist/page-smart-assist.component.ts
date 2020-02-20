@@ -723,7 +723,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.intelligentSecurity.facilRecognitionCameraAccess = res.cameraPermission;
 				this.intelligentSecurity.facialRecognitionCameraPrivacyMode = res.privacyModeStatus;
 			}
-			this.logger.info(`getFacialRecognitionStatus refresh successed`);
+			this.logger.info(`getFacialRecognitionStatus refresh successed`, res);
 		});
 	}
 
