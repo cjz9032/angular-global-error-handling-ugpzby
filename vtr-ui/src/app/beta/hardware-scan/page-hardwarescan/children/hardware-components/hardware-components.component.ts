@@ -70,7 +70,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	completeStatusToken: string;
 	public startScanClicked = false;
 	public itemsToDisplay: any;
-	public modulesRetrieved: boolean = false;
 
 	// "Wrapper" value to be accessed from the HTML
 	public taskTypeEnum = TaskType;
