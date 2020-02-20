@@ -19,6 +19,10 @@ export class UiCheckboxComponent implements OnInit {
 	@Input() disabled: boolean;
 	@Input() value: any;
 	@Input() hasChild = false; // for ng-content
+	@Input() metricsEvent = 'ItemClick';
+	@Input() metricsParent: string;
+	@Input() metricsItem: string;
+	@Input() metricsValue: any;
 	@Output() toggle: EventEmitter<boolean> = new EventEmitter();
 
 	constructor() { }

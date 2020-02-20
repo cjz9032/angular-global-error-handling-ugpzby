@@ -44,32 +44,29 @@
 								</vtr-ui-aps-slider>
 							</div>
 						</vtr-ui-row-switch>
-						<div class="custom-control custom-checkbox aps-checkbox">
-							<input id="aps-toggle-checkbox"
-								attr.aria-label="aps-toggle-checkbox"
-								type="checkbox"
-								class="custom-control-input"
-								[checked]="repeatShock"
-								(change)="setAutoDisableSetting($event)"
-								[disabled]="!apsStatus"
-								vtrMetrics
-								metricsEvent="ItemClick"
-								metricsParent="Device.SmartAssist"
-								metricsItem="ActiveProtectionSystem.AutoDisable"
-								[metricsValue]="repeatShock" />
-							<label class="custom-control-label"
-								for="aps-toggle-checkbox">
-								<span [ngClass]="{'disabled': !apsStatus}"
-									id="aps-toggle-checkbox-text"
-									attr.aria-label="aps-toggle-checkbox-text">
-									{{'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate}}
-								</span>
-							</label>
+						<div class="row">
+							<div class="col px-5 aps-checkbox">
+								<vtr-ui-checkbox [componentId]="'aps-toggle-checkbox'"
+									[checked]="repeatShock"
+									(toggle)="setAutoDisableSetting($event)"
+									[disabled]="!apsStatus"
+									[hasChild]="true"
+									[metricsEvent]="'ItemClick'"
+									[metricsParent]="'Device.SmartAssist'"
+									[metricsItem]="'ActiveProtectionSystem.AutoDisable'"
+									[metricsValue]="repeatShock">
+									<span [ngClass]="{'disabled': !apsStatus}"
+										id="aps-toggle-checkbox-text"
+										attr.aria-label="aps-toggle-checkbox-text">
+										{{'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate}}
+									</span>
+								</vtr-ui-checkbox>
+							</div>
 						</div>
 					</div>
 				</li>
 
-				<!-- Manual Overide -->
+				<!-- Manual Override -->
 				<li class="pt-3 keep-my-display-block auto-screen-off-block">
 					<vtr-ui-row-switch [switchId]="'manualActiveProtectionSuspension'"
 						[title]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.title' | translate"

@@ -190,24 +190,7 @@ $fontsize_xs: 1.4rem;
 				margin-top: -6rem;
 			}
 		}
-		.auto-set-checkbox {
-			margin-top: 2rem;
-			position: relative;
-			input {
-				width: 1.5rem;
-				height: 1.5rem;
-				position: absolute;
-				top: 0.5rem;
-				margin-right: 0.5rem;
-			}
-			label {
-				color: $shade_blue;
-				font-size: $fontsize_xs;
-				font-weight: $weight_light;
-				text-align: left;
-				padding-left: 2rem;
-			}
-		}
+
 		// .custom-control-input:disabled ~ .custom-control-label::before {
 		// 	// background-color: $light-grey;
 		// 	//border-color: $shade;
