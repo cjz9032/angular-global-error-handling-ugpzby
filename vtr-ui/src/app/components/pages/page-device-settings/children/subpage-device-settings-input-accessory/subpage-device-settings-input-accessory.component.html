@@ -92,10 +92,9 @@
 								*ngIf="machineType === 0 && fnLockCapability">
 								<vtr-top-row-functions-ideapad></vtr-top-row-functions-ideapad>
 							</li>
-							<!--							temporary remove backlight -->
-							<!--					<li class="pt-3" *ngIf="backlightCapability$ | async">-->
-							<!--						<vtr-backlight [isLastChild]="!showVoipHotkeysSection && !hasUDKCapability"></vtr-backlight>-->
-							<!--					</li>-->
+							<li class="pt-3" *ngIf="backlightCapability$ | async">
+								<vtr-backlight [isLastChild]="!showVoipHotkeysSection && !hasUDKCapability"></vtr-backlight>
+							</li>
 							<li class="pt-3 voip"
 								*ngIf="showVoipHotkeysSection">
 								<vtr-ui-row-switch
@@ -194,7 +193,7 @@
 										</div>
 									</ng-template>
 								</vtr-ui-row-switch>
-							</li>							
+							</li>
 						<li class="pt-3" *ngIf="machineType == 1 && fnCtrlSwapCapability">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title' | translate"
