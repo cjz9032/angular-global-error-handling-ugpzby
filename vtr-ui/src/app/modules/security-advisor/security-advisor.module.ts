@@ -6,7 +6,6 @@ import { SecurityAdvisorRoutingModule } from './security-advisor-routing.module'
 import { PageSecurityComponent } from 'src/app/components/pages/page-security/page-security.component';
 import { PageSecurityAntivirusComponent } from 'src/app/components/pages/page-security-antivirus/page-security-antivirus.component';
 import { WifiSecurityComponent } from 'src/app/components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
-import { HomeSecurityComponent } from 'src/app/components/pages/page-security-wifi/children/home-security/home-security.component';
 import { PageSecurityPasswordComponent } from 'src/app/components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from 'src/app/components/pages/page-security-internet/page-security-internet.component';
 import { PageSecurityWifiComponent } from 'src/app/components/pages/page-security-wifi/page-security-wifi.component';
@@ -88,7 +87,6 @@ library.add(
 		PageSecurityAntivirusComponent,
 		PageSecurityWifiComponent,
 		WifiSecurityComponent,
-		HomeSecurityComponent,
 		ConnectedHomeStatusComponent,
 		PageSecurityPasswordComponent,
 		PageSecurityInternetComponent,
