@@ -1077,6 +1077,27 @@ export class VantageShellService {
 					temperature: 32,
 					voltage: 11.222,
 					wattage: 10.57
+				},
+				{
+					barCode: 'X2XP888JB2S',
+					batteryCondition: ['Normal'],
+					batteryHealth: 0,
+					chargeStatus: 2,
+					cycleCount: 98,
+					designCapacity: 45.28,
+					designVoltage: 11.1,
+					deviceChemistry: 'Li-Polymer',
+					firmwareVersion: '0005-0232-0100-0005',
+					fruPart: '01AV446',
+					fullChargeCapacity: 46.69,
+					manufacturer: 'SMP',
+					remainingCapacity: 23.84,
+					remainingChargeCapacity: 0,
+					remainingPercent: 52,
+					remainingTime: 99,
+					temperature: 32,
+					voltage: 11.222,
+					wattage: 10.57
 				}
 			],
 			batteryIndicatorInfo: {
@@ -1254,18 +1275,18 @@ export class VantageShellService {
 	public getPowerThinkPad(): any {
 		const batteryThresholdInfo: any = [
 			{
-				batteryNumber: 1,
+				batteryNum: 1,
 				checkboxValue: false,
 				isCapable: true,
-				isEnabled: false,
+				isEnabled: true,
 				startValue: 75,
 				stopValue: 80
 			},
 			{
-				batteryNumber: 2,
+				batteryNum: 2,
 				checkboxValue: false,
 				isCapable: true,
-				isEnabled: false,
+				isEnabled: true,
 				startValue: 75,
 				stopValue: 80
 			}
