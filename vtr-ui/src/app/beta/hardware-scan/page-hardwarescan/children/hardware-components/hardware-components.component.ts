@@ -152,6 +152,16 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	public disableRefreshAnchor() {
+		return this.startScanClicked || !this.isModulesRetrieved();
+	}
+
+	public isModulesRetrieved() {
+		if (this.hardwareScanService) {
+			return this.hardwareScanService.getModulesRetrieved() !== undefined;
+		}
+	}
+
 	public isLoadingDone() {
 		if (this.hardwareScanService) {
 			return this.hardwareScanService.isLoadingDone();

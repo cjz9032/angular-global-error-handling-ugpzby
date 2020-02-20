@@ -40,7 +40,7 @@
 						metricsEvent="FeatureClick"
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.RefreshModules"
-						[ngClass]="{'action-anchor': !startScanClicked, 'disabled-anchor': startScanClicked}"
+						[ngClass]="{'action-anchor': !disableRefreshAnchor() , 'disabled-anchor': disableRefreshAnchor()}"
 						(click)="refreshModules()">{{'hardwareScan.refreshModule' | translate}}
 						<fa-icon class="refresh-icon"
 							placement="auto"
