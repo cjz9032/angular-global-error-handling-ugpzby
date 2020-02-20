@@ -147,12 +147,23 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	updateMenu(menu) {
 		if (menu && menu.length > 0) {
 			this.items = menu;
-			const chsItem = this.items.find((item) => item.id === 'home-security');
-			if (!chsItem) {
-				return;
-			}
-			this.preloadImages = [].concat(chsItem.pre);
+			this.preloadImages = this.collectPreloadAssets(menu);
 		}
+	}
+
+	private collectPreloadAssets(menu: Array<any>) : string[] {
+		let assets = [];
+		menu.forEach(item => {
+			if (!item.hide && item.pre) {
+				assets = assets.concat(item.pre);
+			}
+
+			if (item.subitems.length > 0) {
+				assets = assets.concat(this.collectPreloadAssets(item.subitems));
+			}
+		})
+
+		return assets;
 	}
 
 	private initComponent() {

@@ -19,6 +19,37 @@
 			"subitems": []
 		},
 		{
+			"id": "wifi-security",
+			"label": "common.menu.security.title",
+			"path": "security/wifi-security",
+			"icon": [
+				"fal",
+				"lock"
+			],
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.security",
+			"forArm": false,
+			"subitems": [
+				{
+				"id": "wifi-security",
+				"label": "common.menu.security.sub3",
+				"path": null,
+				"icon": null,
+				"metricsEvent": "itemClick",
+				"metricsParent": "navbar",
+				"metricsItem": "link.wifisecurity",
+				"routerLinkActiveOptions": {
+					"exact": true
+				},
+				"subitems": [],
+				"pre": [
+					"assets/images/coronet-logo-gaming.svg"
+				]
+			}
+		]
+		},
+		{
 			"id": "support",
 			"label": "gaming.common.menu.support.title",
 			"path": "support",
@@ -34,6 +65,9 @@
 			},
 			"forArm": false,
 			"sMode": true,
+			"pre": [
+				"assets/images/support/svg_icon_about_us.svg"
+			],
 			"subitems": [
 				{
 					"id": "support",
@@ -272,7 +306,10 @@
 					"routerLinkActiveOptions": {
 						"exact": true
 					},
-					"subitems": []
+					"subitems": [],
+					"pre": [
+						"assets/images/coronet-logo.svg"
+					]
 				},
 				{
 					"id": "internet-protection",
@@ -315,7 +352,10 @@
 				"routerLinkActiveOptions": {
 					"exact": true
 				},
-				"subitems": []
+				"subitems": [],
+				"pre": [
+					"assets/images/coronet-logo.svg"
+				]
 			}
 		]
 		},
@@ -335,6 +375,9 @@
 			},
 			"forArm": false,
 			"sMode": true,
+			"pre": [
+				"assets/images/support/svg_icon_about_us.svg"
+			],
 			"subitems": []
 		},
 		{
@@ -402,7 +445,7 @@
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.hardwarescan",
-			"segment": "-[Commercial]",
+			"segment": "-[Gaming]",
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
