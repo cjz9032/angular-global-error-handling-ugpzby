@@ -87,7 +87,7 @@ export class MetricsDirective {
 		if (this.metricsParam) {
 			data.ItemParm = this.metricsParam;
 		}
-		if (typeof this.metricsValue !== 'undefined') {
+		if (this.metricsValue !== undefined) {
 			data.ItemValue = this.metricsValue;
 		}
 	}
@@ -96,7 +96,7 @@ export class MetricsDirective {
 		data.ItemType = 'ArticleClick';
 		data.ItemName = this.metricsTranslateService.translate(this.metricsItem);
 		data.ItemParent = this.metricsParent;
-		if (typeof this.viewOrderService[this.metricsParent] === 'undefined') {
+		if (this.viewOrderService[this.metricsParent] === undefined) {
 			this.viewOrderService[this.metricsParent] = 0;
 		}
 		data.ItemParm = this.metricsParam;

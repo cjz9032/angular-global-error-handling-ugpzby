@@ -178,10 +178,6 @@ export class VantageShellService {
 	}
 
 	private normalizeEventName(eventName) {
-		if (!eventName) {
-			return 'unknown';
-		}
-
 		eventName = eventName.toLowerCase();
 		switch (eventName) {
 			case 'firstrun':
@@ -227,6 +223,11 @@ export class VantageShellService {
 				break;
 			case 'userfeedback':
 				eventName = 'UserFeedback';
+				break;
+			case '':
+			case undefined:
+			case null:
+				eventName = 'unknown';
 				break;
 		}
 
@@ -548,15 +549,15 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getSmartPerformance() {
-        if (this.phoenix) {
-            if (!this.phoenix.smartPerformance) {
-                return this.phoenix.loadFeatures([Phoenix.Features.SmartPerformance]);
-            }
-            return this.phoenix.smartPerformance;
-        }
-        return undefined;
-    }
+	public getSmartPerformance() {
+		if (this.phoenix) {
+			if (!this.phoenix.smartPerformance) {
+				return this.phoenix.loadFeatures([Phoenix.Features.SmartPerformance]);
+			}
+			return this.phoenix.smartPerformance;
+		}
+		return undefined;
+	}
 
 	// public getSmartPerformance() {
 	// 	console.log('----------CALLING');
