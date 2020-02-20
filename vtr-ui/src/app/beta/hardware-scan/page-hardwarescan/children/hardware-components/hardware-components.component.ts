@@ -70,6 +70,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	completeStatusToken: string;
 	public startScanClicked = false;
 	public itemsToDisplay: any;
+	public modulesRetrieved: boolean = false;
 
 	// "Wrapper" value to be accessed from the HTML
 	public taskTypeEnum = TaskType;
@@ -149,6 +150,16 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				this.hardwareScanService.setFinalResponse(null);
 				this.hardwareScanService.setEnableViewResults(false);
 			}
+		}
+	}
+
+	public disableRefreshAnchor() {
+		return this.startScanClicked || !this.isModulesRetrieved();
+	}
+
+	public isModulesRetrieved() {
+		if (this.hardwareScanService) {
+			return this.hardwareScanService.getModulesRetrieved() !== undefined;
 		}
 	}
 
