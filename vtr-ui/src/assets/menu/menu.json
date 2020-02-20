@@ -42,7 +42,10 @@
 				"routerLinkActiveOptions": {
 					"exact": true
 				},
-				"subitems": []
+				"subitems": [],
+				"pre": [
+					"assets/images/coronet-logo-gaming.svg"
+				]
 			}
 		]
 		},
@@ -62,6 +65,9 @@
 			},
 			"forArm": false,
 			"sMode": true,
+			"pre": [
+				"assets/images/support/svg_icon_about_us.svg"
+			],
 			"subitems": [
 				{
 					"id": "support",
@@ -300,7 +306,10 @@
 					"routerLinkActiveOptions": {
 						"exact": true
 					},
-					"subitems": []
+					"subitems": [],
+					"pre": [
+						"assets/images/coronet-logo.svg"
+					]
 				},
 				{
 					"id": "internet-protection",
@@ -343,7 +352,10 @@
 				"routerLinkActiveOptions": {
 					"exact": true
 				},
-				"subitems": []
+				"subitems": [],
+				"pre": [
+					"assets/images/coronet-logo.svg"
+				]
 			}
 		]
 		},
@@ -363,6 +375,9 @@
 			},
 			"forArm": false,
 			"sMode": true,
+			"pre": [
+				"assets/images/support/svg_icon_about_us.svg"
+			],
 			"subitems": []
 		},
 		{
@@ -430,7 +445,7 @@
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.hardwarescan",
-			"segment": "-[Commercial]",
+			"segment": "-[Gaming]",
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
