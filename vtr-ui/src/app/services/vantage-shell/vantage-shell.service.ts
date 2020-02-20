@@ -178,6 +178,10 @@ export class VantageShellService {
 	}
 
 	private normalizeEventName(eventName) {
+		if (!eventName) {
+			return 'unknown';
+		}
+
 		eventName = eventName.toLowerCase();
 		switch (eventName) {
 			case 'firstrun':
