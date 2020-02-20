@@ -35,10 +35,10 @@
 		max-width: $max_page_width;
 		margin: 0 auto;
 		position: relative;
-		padding: 5rem $padding_side 8rem $padding_side;
-		@media #{$breakpoint_sm} {
-			padding: 5rem 0rem 8rem 0rem;
-		}
+		padding: 2rem $padding_side 6rem $padding_side;
+		// @media #{$breakpoint_sm} {
+		// 	padding: 5rem 0rem 8rem 0rem;
+		// }
 		height: 100%;
 
 		&.show-back-btn {

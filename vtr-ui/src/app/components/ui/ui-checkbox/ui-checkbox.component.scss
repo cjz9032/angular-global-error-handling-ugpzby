@@ -11,6 +11,7 @@
 		margin-right: 0.5rem;
 		z-index: 0;
 		outline: 0;
+		background: transparent;
 	}
 	label {
 		color: $shade_blue;
@@ -18,7 +19,7 @@
 		font-weight: $weight_light;
 		text-align: left;
 		padding-left: 2rem;
-		line-height: 1.6;
+		line-height: 1.7;
 	}
 
 	.custom-control-label {

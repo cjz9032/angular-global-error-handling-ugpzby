@@ -1106,15 +1106,17 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				bctCapability = bctCapability || battery.isCapable;
 				bctStatus = bctStatus || battery.isEnabled;
 
-				const startValue = battery.startValue - (battery.startValue % 5);
-				let stopValue = battery.stopValue - (battery.stopValue % 5);
-				if (startValue === stopValue) {
-					stopValue = stopValue + 5;
-				}
-				if (battery.startValue !== startValue || battery.stopValue !== stopValue) {
-					battery.startValue = startValue;
-					battery.stopValue = stopValue;
-					this.onBCTInfoChange(battery, count);
+				if (bctCapability && bctStatus) {
+					const startValue = battery.startValue - (battery.startValue % 5);
+					let stopValue = battery.stopValue - (battery.stopValue % 5);
+					if (startValue === stopValue) {
+						stopValue = stopValue + 5;
+					}
+					if (battery.startValue !== startValue || battery.stopValue !== stopValue) {
+						battery.startValue = startValue;
+						battery.stopValue = stopValue;
+						this.onBCTInfoChange(battery, count);
+					}
 				}
 				count++;
 			});
