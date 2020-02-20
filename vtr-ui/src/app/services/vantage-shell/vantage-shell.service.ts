@@ -224,6 +224,11 @@ export class VantageShellService {
 			case 'userfeedback':
 				eventName = 'UserFeedback';
 				break;
+			case '':
+			case undefined:
+			case null:
+				eventName = 'unknown';
+				break;
 		}
 
 		return eventName;
@@ -544,15 +549,15 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getSmartPerformance() {
-        if (this.phoenix) {
-            if (!this.phoenix.smartPerformance) {
-                return this.phoenix.loadFeatures([Phoenix.Features.SmartPerformance]);
-            }
-            return this.phoenix.smartPerformance;
-        }
-        return undefined;
-    }
+	public getSmartPerformance() {
+		if (this.phoenix) {
+			if (!this.phoenix.smartPerformance) {
+				return this.phoenix.loadFeatures([Phoenix.Features.SmartPerformance]);
+			}
+			return this.phoenix.smartPerformance;
+		}
+		return undefined;
+	}
 
 	// public getSmartPerformance() {
 	// 	console.log('----------CALLING');
