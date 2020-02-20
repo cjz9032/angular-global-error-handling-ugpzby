@@ -65,6 +65,8 @@ import { ModalNewFeatureTipComponent } from '../components/modal/modal-new-featu
 import { NewFeatureTipService } from '../services/new-feature-tip/new-feature-tip.service';
 import { HardwareDashboardModule } from './hardware-settings/hardware-dashboard.module';
 import { GamingDashboardModule } from './gaming-dashboard.module';
+import { HardwareScanRoutingModule } from '../beta/hardware-scan/hardware-scan-routing.module';
+import { HardwareScanModule } from '../beta/hardware-scan/hardware-scan.module';
 //import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
 
 @NgModule({
@@ -114,7 +116,9 @@ import { GamingDashboardModule } from './gaming-dashboard.module';
 		PageLayoutModule,
 		FontAwesomeModule,
 		HardwareDashboardModule,
-		GamingDashboardModule
+		GamingDashboardModule,
+		HardwareScanModule,
+		HardwareScanRoutingModule,
 	],
 	exports: [ NavbarModule, RouterModule, CommonPipeModule, CommonUiModule, ModernPreloadModule, PageLayoutModule ],
 	providers: [

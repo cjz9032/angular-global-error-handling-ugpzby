@@ -10,7 +10,7 @@ import { GuardService } from 'src/app/services/guard/guardService.service';
 
 const routes: Routes = [
 	{
-		path: 'hardware-scan',
+		path: '',
 		component: PageHardwareScanComponent,
 		canDeactivate: [GuardService],
 		canActivate: [GuardService, HardwareScanGuard],

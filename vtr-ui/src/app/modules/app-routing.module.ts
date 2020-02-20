@@ -5,6 +5,8 @@ import { PageSettingsComponent } from '../components/pages/page-settings/page-se
 import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
 import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
 import { GuardService } from 'src/app/services/guard/guardService.service';
+import { HardwareScanRoutingModule } from '../beta/hardware-scan/hardware-scan-routing.module';
+import { HardwareScanModule } from '../beta/hardware-scan/hardware-scan.module';
 
 const routes: Routes = [
 
@@ -67,6 +69,10 @@ const routes: Routes = [
 		loadChildren: '../beta/beta.module#BetaModule'
 	},
 	{
+		path: 'beta/hardware-scan',
+		loadChildren: '../beta/hardware-scan/hardware-scan.module#HardwareScanModule'
+	},
+	{
 		path: 'support/smart-performance',
 		loadChildren: './smart-performance/smart-performance.module#SmartPerformanceModule'
 	},
@@ -100,4 +106,5 @@ const routes: Routes = [
 	],
 	exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

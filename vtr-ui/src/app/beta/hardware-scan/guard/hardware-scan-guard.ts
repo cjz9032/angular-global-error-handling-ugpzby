@@ -13,19 +13,12 @@ import { BetaService } from 'src/app/services/beta/beta.service';
 	providedIn: 'root'
 })
 export class HardwareScanGuard implements CanActivate, CanActivateChild {
-	constructor(private router: Router, private betaService: BetaService) {}
-
-	private available(): boolean {
-		return this.betaService.showBetaFeature();
-	}
+	constructor(private router: Router) {}
 
 	canActivate(
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): boolean | UrlTree {
-		if (!this.available()) {
-			return this.router.parseUrl('/dashboard');
-		}
 		return true;
 	}
 
