@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.3](https://bitbucket.tc.lenovo.com///compare/v1.2.86...v1.3.3) (2020-02-21)
+
+
+### Features
+
+* **VAN-14642:** backlight multi levels move back ([c91afff](https://bitbucket.tc.lenovo.com///commit/c91afff0428334311366fc103c0a34092fd23530))
+
 ### [1.3.2](https://bitbucket.tc.lenovo.com///compare/v1.2.86...v1.3.2) (2020-02-20)
 
 
