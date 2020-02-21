@@ -40,7 +40,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public machineType: any;
 	public thresholdLoadingStatus = false;
 	public conservationModeStatus = new FeatureStatus(false, true);
-
+	public microPhoneGreyOut = true;
 	public quickSettingsWidget = [
 		{
 			// tooltipText: 'MICROPHONE',
@@ -74,6 +74,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		private vantageShellService: VantageShellService,
 		private router: Router) {
 		this.cameraStatus.permission = false;
+		this.microphoneStatus.isLoading = false;
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
@@ -306,7 +307,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService.getMicrophoneStatus()
 				.then((featureStatus: FeatureStatus) => {
-                this.microphoneStatus = featureStatus;
+				this.microphoneStatus = featureStatus;
+				this.microPhoneGreyOut = false;
                 if (featureStatus.available) {
                     const win: any = window;
                     if (win.VantageShellExtension && win.VantageShellExtension.AudioClient) {

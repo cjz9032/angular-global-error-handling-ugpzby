@@ -10,7 +10,7 @@
 					<div class="">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Microphone2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Microphone---slash2x'"
-							[value]="microphoneStatus.status && microphoneStatus.permission"
+							[value]="microphoneStatus.status && microphoneStatus.permission && !microPhoneGreyOut"
 							[title]="'dashboard.quickSettings.microphone' | translate"
 							metricsItem="microphone"
 							id="qs-switch-microphone"
@@ -18,7 +18,7 @@
 							[switchId]="'microphone'"
 							[isBlocked]="!microphoneStatus.status"
 							(toggle)="onMicrophoneStatusToggle($event)"
-							[disable]="!(microphoneStatus.permission && microphoneStatus.available && quickSettingsWidget[0].state)"
+							[disable]="!(microphoneStatus.permission && microphoneStatus.available && quickSettingsWidget[0].state) || microPhoneGreyOut"
 							[isLoading]="microphoneStatus.isLoading">
 						</vtr-widget-switch-icon>
 					</div>
