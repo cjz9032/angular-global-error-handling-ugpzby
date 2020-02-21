@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
+import { Component, OnInit, NgZone, OnDestroy, HostListener } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription, EMPTY } from 'rxjs';
 import { HardwareScanProgress } from 'src/app/beta/hardware-scan/enums/hw-scan-progress.enum';
@@ -92,6 +92,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.viewResultsPath = '/beta/hardware-scan/view-results';
 		this.isOnline = this.commonService.isOnline;
 		this.metrics = this.shellService.getMetrics();
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		if (this.hardwareScanService.hasLastResponse()) {
+			this.hardwareScanService.renderLastResponse();
+		}
 	}
 
 	ngOnInit() {
