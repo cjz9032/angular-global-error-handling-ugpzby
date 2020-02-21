@@ -394,9 +394,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		}
 	}
 
-	private async setFocus(id: string) {
+	private setFocus(id: string) {
 		if (typeof this.webView.setFocus === 'function') {
-			await this.webView.setFocus(id);
+			this.webView.setFocus(id);
 		}
 	}
 
