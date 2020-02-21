@@ -20,8 +20,8 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-sm-12">
-										<vtr-ui-toggle *ngIf='toggleStatus !== undefined' [toggleId]="'Auto close '"
-											(toggle)="toggleAutoClose($event)" [value]="toggleStatus">
+										<vtr-ui-toggle *ngIf='toggleStatus !== undefined' [toggleId]="'Auto close'"
+											(toggle)="toggleAutoClose($event)" [value]="toggleStatus" [parentId]="'Gaming.AutoClose'">
 										</vtr-ui-toggle>
 										<p class="intro-text">
 											{{'gaming.autoClose.introLine' | translate}}</p>
