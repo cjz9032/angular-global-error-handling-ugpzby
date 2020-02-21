@@ -319,7 +319,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		}
 		@media #{$breakpoint_xl}{
 			max-width: 24.2rem !important;
-		}		
+		}
 	}
 }
 
@@ -1549,6 +1549,14 @@ vtr-ui-smart-performance-scanning {
 	ngb-tooltip-window.vtr-tooltip.tooltip {
 		.tooltip-inner {
 			width: 40rem;
+		}
+	}
+}
+
+.vtr-page-dashboard {
+	.vtr-header-main {
+		.vtr-header-main-inner {
+			padding: 1rem $padding_side 6rem $padding_side !important;
 		}
 	}
 }
