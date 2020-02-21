@@ -25,7 +25,6 @@ import { HardwareComponentsComponent } from '../../components/pages/page-hardwar
 import { RecoverBadSectorsComponent } from '../../components/pages/page-hardwarescan/children/recover-bad-sectors/recover-bad-sectors.component';
 import { HardwareViewResultsComponent } from '../../components/pages/page-hardwarescan/children/hardware-view-results/hardware-view-results.component';
 import { SharedModule } from 'src/app/modules/shared.module';
-//import { HeaderMainComponent } from '../../components/header-main/header-main.component';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { UiButtonModule } from '../../components/ui/ui-button-hwscan/ui-button-hwscan.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
