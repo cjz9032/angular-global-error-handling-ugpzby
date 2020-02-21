@@ -20,6 +20,8 @@ export class GamingOCService {
 			if(this.isShellAvailable) {
 				return this.gamingOverClock.getPerformanceOCSetting();
 			}
+			this.logger.error(`Service-GamingOC-GetPerformanceOCSetting: return undefined, shell Available: ${this.isShellAvailable}`);
+			return undefined;
 		} catch (error) {
 			this.logger.error('Service-GamingOC-GetPerformanceOCSetting: get fail; Error message: ', error.message);
 			throw new Error(error.message);
@@ -31,8 +33,10 @@ export class GamingOCService {
 			if(this.isShellAvailable) {
 				return this.gamingOverClock.setPerformanceOCSetting(value);
 			}
+			this.logger.error(`Service-GamingOC-SetPerformanceOCSetting: return undefined, shell Available: ${this.isShellAvailable}`);
+			return undefined;
 		} catch (error) {
-			this.logger.error('Service-GamingOC-setPerformanceOCSetting: set fail; Error message: ', error.message);
+			this.logger.error('Service-GamingOC-SetPerformanceOCSetting: set fail; Error message: ', error.message);
 			throw new Error(error.message);
 		}
 	}

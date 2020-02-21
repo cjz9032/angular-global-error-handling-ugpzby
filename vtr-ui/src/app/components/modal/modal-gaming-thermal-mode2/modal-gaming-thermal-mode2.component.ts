@@ -260,7 +260,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
         this.logger.info('Modal-ThermalMode2-RegisterThermalModeChangeEvent: register success');
       } catch (error) {
         this.logger.error('Modal-ThermalMode2-RegisterThermalModeChangeEvent: register fail; Error message: ', error.message);
-				throw new Error(error.message);
+        throw new Error(error.message);
       }
 		}
   }

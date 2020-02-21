@@ -528,7 +528,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public onRegThermalModeRealStatusChangeEvent(currentRealStatus: any) {
 		this.ngZone.run(() => {
-			this.logger.info(`Widget-LegionEdge-OnRegThermalModeRealStatusChangeEvent-: call back from ${this.thermalModeRealStatus} to ${currentRealStatus}`);
+			this.logger.info(`Widget-LegionEdge-OnRegThermalModeRealStatusChangeEvent: call back from ${this.thermalModeRealStatus} to ${currentRealStatus}`);
 			if (currentRealStatus !== undefined && this.thermalModeRealStatus !== currentRealStatus) {
 				this.thermalModeRealStatus = currentRealStatus;
 				this.commonService.setLocalStorageValue(LocalStorageKey.RealThermalModeStatus, this.thermalModeRealStatus);
@@ -571,7 +571,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.logger.error('Widget-LegionEdge-RenderThermalMode2OCSettings: get fail; Error message: ', error.message);
 			throw new Error(error.message);
 		}
-
 	}
 
 	onOptionSelected(event: any) {
