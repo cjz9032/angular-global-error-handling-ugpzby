@@ -394,12 +394,31 @@ export class HardwareScanService {
 	public isAvailable() {
         return this.hypSettingsPromise
 			.then((result: any) => {
-            return (result || '' ).toString() === 'true';
+            return (((result || '' ).toString() === 'true') && this.isMachineAvailable());
         })
 			.catch((error) => {
             return false;
         });
     }
+
+	/**
+	 * This method validate if the machine family name is in the blacklist
+	 * If yes, the HWScan menu not appear.
+	 */
+	public isMachineAvailable() {
+
+		//Variable containing machine names without HWScan enabled
+		const blackList = ["thinkstationp520", "thinkstationp520c", "thinkstationp720", "thinkstationp920"]
+
+		//Variable containing machine family name in the specific format
+		const machineFamily = this.commonService
+								.getLocalStorageValue(LocalStorageKey.MachineFamilyName)
+								.replace(/ /g, "")
+								.toString()
+								.toLowerCase();
+
+		return blackList.find(element => machineFamily.includes(element)) === undefined;
+	}
 
 	private isPluginCompatible(requiredVersion: string) {
 		return this.compareVersion(requiredVersion, this.pluginVersion) <= 0;
