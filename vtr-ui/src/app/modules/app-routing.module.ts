@@ -67,6 +67,10 @@ const routes: Routes = [
 		loadChildren: '../beta/beta.module#BetaModule'
 	},
 	{
+		path: 'hardware-scan',
+		loadChildren: './hardware-scan/hardware-scan.module#HardwareScanModule'
+	},
+	{
 		path: 'support/smart-performance',
 		loadChildren: './smart-performance/smart-performance.module#SmartPerformanceModule'
 	},

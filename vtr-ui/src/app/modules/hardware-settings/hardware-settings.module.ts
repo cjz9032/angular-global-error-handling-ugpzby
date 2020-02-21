@@ -31,7 +31,6 @@ import { OledPowerSettingsComponent } from 'src/app/components/display/oled-powe
 import { PageDeviceComponent } from 'src/app/components/pages/page-device/page-device.component';
 import { PageDeviceSettingsComponent } from 'src/app/components/pages/page-device-settings/page-device-settings.component';
 import { PageDeviceUpdatesComponent } from 'src/app/components/pages/page-device-updates/page-device-updates.component';
-import { PageHardwarescanComponent } from 'src/app/components/pages/page-hardwarescan/page-hardwarescan.component';
 import { PageQuestionsComponent } from 'src/app/components/pages/page-questions/page-questions.component';
 import { PageSmartAssistComponent } from 'src/app/components/pages/page-smart-assist/page-smart-assist.component';
 import { PageSupportDetailComponent } from 'src/app/components/pages/page-support-detail/page-support-detail.component';
@@ -116,7 +115,6 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 		PageDeviceComponent,
 		PageDeviceSettingsComponent,
 		PageDeviceUpdatesComponent,
-		PageHardwarescanComponent,
 		PageQuestionsComponent,
 		PageSmartAssistComponent,
 		PageSupportDetailComponent,

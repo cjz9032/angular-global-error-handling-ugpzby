@@ -541,10 +541,6 @@ export class ConfigService {
 	updateBetaMenu(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
 		return new Promise((resolve) => {
 			if (isBeta) {
-				if (!menu.find((item) => item.id === 'hardware-scan')) {
-					menu.splice(menu.length - 1, 0, ...this.betaItem);
-				}
-
 				if (!menu.find((item) => item.id === 'app-search')) {
 					return this.canShowSearch().then((result) => {
 						if (result) {
@@ -556,7 +552,6 @@ export class ConfigService {
 
 				return resolve(menu);
 			} else {
-				menu = menu.filter(item => item.id !== 'hardware-scan');
 				menu = menu.filter(item => item.id !== 'app-search');
 				return resolve(menu);
 			}
