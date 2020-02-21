@@ -147,7 +147,6 @@ export class ConfigService {
 			}
 			
 			resultMenu = cloneDeep(this.menuItems);
-			await this.initializeSmartAssist(resultMenu);
 			resultMenu = await this.initializePrivacy(resultMenu);
 			this.initializeSecurityItem(country.toLowerCase(), resultMenu);
 			if (this.hypSettings) {
@@ -164,6 +163,7 @@ export class ConfigService {
 			this.menuBySegment.smb = this.filterMenu(this.menuBySegment.smb, SegmentConst.SMB);
 
 			this.menu = this.menuBySegment[this.activeSegment.toLowerCase()];
+			this.initializeSmartAssist();
 			this.notifyMenuChange(this.menu);
 			return resolve(this.menu);
 		});
@@ -290,25 +290,35 @@ export class ConfigService {
 		}
 	}
 
-	async smartAssistFilter(machineType: number, items) {
+	private smartAssistFilter(machineType: number) {
 		if (machineType === 0 || machineType === 1) {
-			await this.showSmartAssist(items);
+			this.showSmartAssist();
+		} else {
+			this.removeSmartAssistMenu(this.menu);
+			this.removeSmartAssistMenu(this.menuBySegment.consumer);
+			this.removeSmartAssistMenu(this.menuBySegment.commercial);
+			this.removeSmartAssistMenu(this.menuBySegment.smb);
 		}
 	}
 
-	private async showSmartAssist(items) {
+	private async showSmartAssist() : Promise<any> {
 		this.logger.info('MenuMainComponent.showSmartAssist: inside');
-		const myDeviceItem = items.find((item) => item.id === 'device');
-		if (myDeviceItem !== undefined) {
+		const myDeviceItem = this.menu.find((item) => item.id === 'device');
+		const consumerMyDeviceItem = this.menuBySegment.consumer.find((item) => item.id === 'device');
+		const commercialMyDeviceItem = this.menuBySegment.commercial.find((item) => item.id === 'device');
+		const smbMyDeviceItem = this.menuBySegment.smb.find((item) => item.id === 'device');
+		if (myDeviceItem !== undefined || consumerMyDeviceItem !== undefined || commercialMyDeviceItem !== undefined || smbMyDeviceItem !== undefined) {
 			// if cache has value true for IsSmartAssistSupported, add menu item
 			const smartAssistCacheValue = this.commonService.getLocalStorageValue(
 				LocalStorageKey.IsSmartAssistSupported,
 				false
 			);
 			this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
-
 			if (!smartAssistCacheValue) {
-				this.removeSmartAssistMenu(items);
+				this.removeSmartAssistMenu(this.menu);
+				this.removeSmartAssistMenu(this.menuBySegment.consumer);
+				this.removeSmartAssistMenu(this.menuBySegment.commercial);
+				this.removeSmartAssistMenu(this.menuBySegment.smb);
 			}
 
 			// raj: promise.all breaks if any one function is breaks. adding feature wise capability check
@@ -370,14 +380,20 @@ export class ConfigService {
 				assistCapability.isAPSSupported;
 
 			if (this.isSmartAssistAvailable) {
-				this.addSmartAssistMenu(items);
+				this.addSmartAssistMenu(this.menu);
+				this.addSmartAssistMenu(this.menuBySegment.consumer);
+				this.addSmartAssistMenu(this.menuBySegment.commercial);
+				this.addSmartAssistMenu(this.menuBySegment.smb);
 			} else {
-				this.removeSmartAssistMenu(items);
+				this.removeSmartAssistMenu(this.menu);
+				this.removeSmartAssistMenu(this.menuBySegment.consumer);
+				this.removeSmartAssistMenu(this.menuBySegment.commercial);
+				this.removeSmartAssistMenu(this.menuBySegment.smb);
 			}
 
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, this.isSmartAssistAvailable);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, assistCapability);
-
+			this.notifyMenuChange(this.menu);
 			this.logger.error('configService.showSmartAssist capability check',
 				{
 					smartAssistCacheValue,
@@ -636,13 +652,13 @@ export class ConfigService {
 		return menu.filter(item => !item.hide);
 	}
 
-	private async initializeSmartAssist(menu: Array<any>) : Promise<any> {
+	private initializeSmartAssist() {
 		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
 		if (machineType) {
-			this.smartAssistFilter(machineType, menu);
+			this.smartAssistFilter(machineType);
 		} else if (this.deviceService.isShellAvailable) {
-			await this.deviceService.getMachineType().then(async (value: number) => {
-				await this.smartAssistFilter(value, menu);
+			this.deviceService.getMachineType().then((value: number) => {
+				this.smartAssistFilter(value);
 			});
 		}
 	}
