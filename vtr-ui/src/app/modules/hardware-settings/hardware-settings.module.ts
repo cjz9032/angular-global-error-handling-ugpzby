@@ -153,7 +153,6 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 		PageLayoutModule,
 		SettingsPageLayoutModule,
 		BacklightModule
-		//PageHardwareScanComponent
 	],
 	exports: [
 		CommonModule,

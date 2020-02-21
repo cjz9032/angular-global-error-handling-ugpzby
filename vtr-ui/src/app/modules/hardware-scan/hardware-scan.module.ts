@@ -93,7 +93,6 @@ library.add(faBan);
 		ContainerCardModule,
 		MetricsModule,
 		PageLayoutModule
-		//HeaderMainComponent
 	],
 	exports: [
 		NgbCollapseModule
