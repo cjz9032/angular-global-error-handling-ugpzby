@@ -27,7 +27,7 @@ import { HardwareViewResultsComponent } from '../../components/pages/page-hardwa
 import { SharedModule } from 'src/app/modules/shared.module';
 //import { HeaderMainComponent } from '../../components/header-main/header-main.component';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
-import { UiButtonModule } from '../../components/ui/ui-hardware-button/ui-button.module';
+import { UiButtonModule } from '../../components/ui/ui-button-hwscan/ui-button-hwscan.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { MetricsModule } from 'src/app/directives/metrics.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';

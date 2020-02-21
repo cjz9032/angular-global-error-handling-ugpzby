@@ -17,7 +17,7 @@
             </vtr-ui-list-scheduled-scan>
           </div>
           <div class="button-row">
-			  <beta-vtr-ui-button (onClick)="onScheduleScanModal(false)"
+			  <vtr-ui-button-hwscan (onClick)="onScheduleScanModal(false)"
 			  [metricsEvent]="'FeatureClick'"
 			  [metricsItem]="'btn.Modal.Schedule'"
 			  [metricsParent]="'Page.HardwareScan'"
@@ -25,7 +25,7 @@
               [icon] ="['far', 'clock']"
               [label]="buttonText"
               [tooltipText]="buttonText"
-              [isDisabled]="disable()"> </beta-vtr-ui-button>
+              [isDisabled]="disable()"> </vtr-ui-button-hwscan>
             </div>
         </div>
       </div>

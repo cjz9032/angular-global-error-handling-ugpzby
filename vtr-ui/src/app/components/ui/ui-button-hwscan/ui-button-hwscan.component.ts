@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-	selector: 'beta-vtr-ui-button',
-	templateUrl: './ui-button.component.html',
-	styleUrls: ['./ui-button.component.scss']
+	selector: 'vtr-ui-button-hwscan',
+	templateUrl: './ui-button-hwscan.component.html',
+	styleUrls: ['./ui-button-hwscan.component.scss']
 })
-export class UiButtonComponent implements OnInit {
+export class UiButtonHWScanComponent implements OnInit {
 	@Input() label: string;
 	@Input() isFullWidth: boolean;
 	@Input() isHalfWidth: boolean;

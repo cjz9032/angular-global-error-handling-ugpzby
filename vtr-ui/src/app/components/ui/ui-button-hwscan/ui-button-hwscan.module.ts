@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { UiButtonComponent } from './ui-button.component';
+import { UiButtonHWScanComponent } from './ui-button-hwscan.component';
 import { MetricsModule } from 'src/app/directives/metrics.module';
 import { RouterModule } from '@angular/router';
 @NgModule({
 	declarations: [
-		UiButtonComponent
+		UiButtonHWScanComponent
 	],
 	exports: [
-		UiButtonComponent
+		UiButtonHWScanComponent
 	],
 	imports: [
 		CommonModule,
