@@ -136,7 +136,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 				state: this.account.state,
 				role: this.account.role,
-				lenovoId: this.account.lenovoId,
 				expirationDay: this.account.expirationDay
 			});
 			if (this.account.state !== CHSAccountState.local) {
@@ -166,7 +165,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 					state: this.account.state,
 					role: this.account.role,
-					lenovoId: this.account.lenovoId,
 					expirationDay: this.account.expirationDay
 				});
 				if (this.account.state !== CHSAccountState.local) {
