@@ -45,7 +45,7 @@
                     "ramOverlock": "Přetaktování RAM",
                     "popup": {
                         "text": "Změny se projeví po restartování počítače.",
-                        "button": "U redu"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Je vyžadována instalace ovladače",
