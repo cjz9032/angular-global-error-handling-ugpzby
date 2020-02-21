@@ -931,6 +931,8 @@ export class HardwareScanService {
         const customModules = this.getCustomScanModules();
         const modules = customModules.filter(i => i.selected || i.indeterminate);
         const modulesSelected = [];
+		this.filteredCustomScanRequest = [];
+		this.filteredCustomScanResponse = [];
 
         for (const module of modules) {
 
