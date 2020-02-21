@@ -22,12 +22,6 @@
                     "rapidCharge": "快速充电"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "超频开启",
-                        "performance": "野兽模式",
-                        "balance": "智能模式",
-                        "quiet": "节能模式"
-                    },
                     "title": "CPU 超频",
                     "status": {
                         "alwayson": "开启",
@@ -748,12 +742,11 @@
                 "sub1": "我的安全顾问",
                 "sub2": "病毒防护",
                 "sub3": "WiFi 安全",
-                "sub4": "密码管理器",
-                "sub5": "VPN",
+                "sub4": "密码保险箱",
+                "sub5": "VPN 安全顾问",
                 "sub6": "指纹"
             },
             "support": "支持服务",
-            "privacy": "隐私",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +757,8 @@
             "subtitle": "检查设备是否受安全保护",
             "antiVirus": "病毒防护",
             "wifi": "WiFi 安全",
-            "pswdMgr": "密码管理器",
-            "vpn": "VPN",
+            "pswdMgr": "密码保险箱",
+            "vpn": "VPN 安全顾问",
             "enabled": "已启用",
             "disabled": "已禁用",
             "partiallyProtected": "部分受保护",
@@ -779,8 +772,8 @@
             "fingerPrint": "指纹",
             "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "已登记",
+            "notEnrolled": "未登记"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -809,11 +802,6 @@
         },
         "offline": {
             "connectToUseFeature": "连接到英特网以使用此功能"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "隐私"
         }
     },
     "tutorial": {
@@ -1041,7 +1029,7 @@
                     "Good": "<b>电池状况良好。</b>",
                     "Exhaustion": "电池容量已<b>降低</b>。请更换一个新电池。",
                     "Bad": "<b>出现电池错误。</b>电池无法充电/放电。更换电池。",
-                    "NotDetected": "<b>未检测到电池。</b>",
+                    "NotDetected": "<b>未检测到电池或未</b>插入电池。",
                     "NotGood": "<b>电池状况不佳。</b>",
                     "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
                     "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
@@ -2287,7 +2275,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi 和互联家庭网络安全顾问",
+                "title": "WiFi 安全",
                 "back": "返回"
             },
             "container": {
@@ -3093,7 +3081,8 @@
             "storage": "存储器",
             "wireless": "无线"
         },
-        "warningMessage": "请记住，如果系统进入睡眠或休眠状态，则测试将被取消"
+        "warningMessage": "请记住，如果系统进入睡眠或休眠状态，则测试将被取消",
+        "refreshMessage": "刷新可能需要一些时间，因为它需要再次加载所有组件"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3423,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "现在，您可以查找您的私人信息是否已外泄，或在您不知情的情况下被在线跟踪器所使用。",
             "security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
             "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。"
         }

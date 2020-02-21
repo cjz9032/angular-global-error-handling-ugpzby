@@ -10,7 +10,7 @@ export class UiHardwareListComponent implements OnInit {
 	@Input() items: Array<any>;
 	@Input() details: Array<any>;
 	@Input() template = 1;
-	@Input() collapsed: boolean = false;
+	@Input() collapsed = false;
   	public testNotApplicable = this.translate.instant('hardwareScan.testNotApplicable');
 	public information: string;
 

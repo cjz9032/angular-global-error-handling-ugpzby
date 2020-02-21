@@ -9,6 +9,7 @@ import { Subject, Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { TaskType, TaskStep } from 'src/app/beta/hardware-scan/enums/hardware-scan-metrics.enum';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -60,6 +61,7 @@ export class HardwareScanService {
 	private hardwareModulesLoaded = new Subject<boolean>();
 	private hypSettingsPromise: any = undefined;
 	private pluginVersion: string;
+	private isDesktopMachine: boolean = false;
 
 	// Used to store information related to metrics
 	private currentTaskType: TaskType;
@@ -170,6 +172,10 @@ export class HardwareScanService {
 
 	public getProgress() {
 		return this.progress;
+	}
+
+	public getIsDesktopMachine() {
+		return this.isDesktopMachine;
 	}
 
 	public getViewResultItems() {
@@ -816,7 +822,12 @@ export class HardwareScanService {
 					item.groupId = group.id;
 					item.listTest = [];
 					item.name = group.name;
-					item.icon = this.getHardwareComponentIcon(item.id)
+					item.icon = item.id;
+					if (!this.isDesktopMachine) {
+						if (item.icon === 'pci_express') {
+							item.icon += "_laptop";
+						}
+					}
 					item.metaInformation = group.metaInformation;
 
 					for (const testSummary of group.testList) {
@@ -1132,7 +1143,7 @@ export class HardwareScanService {
 			if (!this.isPluginCompatible('1.0.42')) {
 				reject('GetStatus is not implemented on plugin ' + this.pluginVersion);
 			}
-	
+
 			if (this.hardwareScanBridge) {
 				return this.hardwareScanBridge.getStatus()
 					.then((response) => {
@@ -1197,10 +1208,16 @@ export class HardwareScanService {
 		const result = [];
 
 		for (const module in this.iconByModule) {
+			let module_type = module;
+			if (!this.isDesktopMachine) {
+				if (module === 'pci_express') {
+					module_type = module + "_laptop";
+				}
+			}
 			result.push({
 				name: this.translate.instant('hardwareScan.pluginTokens.' + module),
 				subname: '',
-				icon: this.getHardwareComponentIcon(module)
+				icon: module_type
 			});
 		}
 

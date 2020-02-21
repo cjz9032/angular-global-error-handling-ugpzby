@@ -2,9 +2,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col d-flex justify-content-between">
-				<img class="gaming-header-image" *ngIf="!gamingCapabilities.liteGaming" [src]="'./../../../../assets/images/gaming/legionEdge.png'  | svgInline | async" />
-				<img class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && gamingCapabilities.desktopType" [src]="'./../../../../assets/images/gaming/ideaCentre@2x.png'  | svgInline | async" />
-				<img class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && !gamingCapabilities.desktopType" [src]="'./../../../../assets/images/gaming/ideaPad@2x.png'  | svgInline | async" />
+				<img class="gaming-header-image" src="./../../../../assets/images/gaming/legionEdge.png" />
 				<div class="help-box" >
 					<button (click)="openModal()" id="legion_edge_help"
 					 tabindex="1" aria-label="legion edge help">
@@ -14,28 +12,9 @@
 				</div>
 			</div>
 		</div>
-	</div>    
+	</div>
 	<div class="row">
 		<div class="col legionEdge-list-items">
-			<div class="item" *ngIf = "gamingCapabilities.thermalModeVersion === 2 && gamingCapabilities.smartFanFeature" (click)="openThermalMode2Modal()">
-				<div class="item-left">
-					<div class="title">{{'gaming.dashboard.device.quickSettings.title' | translate}}</div>
-					<div class="mode-status">
-						<span *ngIf = "thermalModeRealStatus === 3">{{'gaming.dashboard.device.legionEdge.thermalMode2.performance' | translate}}</span>
-						<span *ngIf = "thermalModeRealStatus === 3 && OCSettings === 1"> | {{'gaming.dashboard.device.legionEdge.thermalMode2.OC_On' | translate}}</span>
-						<span *ngIf = "thermalModeRealStatus === 2">{{'gaming.dashboard.device.legionEdge.thermalMode2.balance' | translate}}</span>
-						<span *ngIf = "thermalModeRealStatus === 1">{{'gaming.dashboard.device.legionEdge.thermalMode2.quiet' | translate}}</span>
-					</div>
-				</div>
-				<div class="item-right">
-					<div  class="icon">
-						<img *ngIf = "thermalModeRealStatus === 3" [src] = " '/assets/images/gaming/thermalMode2/performance.svg' | svgInline | async">
-						<img *ngIf = "thermalModeRealStatus === 2" [src] = " '/assets/images/gaming/thermalMode2/balance.svg' | svgInline | async">
-						<img *ngIf = "thermalModeRealStatus === 1" [src] = " '/assets/images/gaming/thermalMode2/quiet.svg' | svgInline | async ">
-					</div>
-				</div>
-			</div>
-
 			<vtr-widget-device-update-settings componentName="Legion Edge" [items]="legionUpdate" [options]="drop"
 				[disableButtons]="disableButtons" (toggleOnOff)="toggleOnOffRamOCStatus($event)"
 				(optionSelected)="onOptionSelected($event)" (popupClosed)="onPopupClosed($event)"

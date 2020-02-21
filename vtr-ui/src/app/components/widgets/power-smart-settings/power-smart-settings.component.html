@@ -21,7 +21,7 @@
 								[isLastChild]='true'
 								(toggleOnOff)="onIntelligentCoolingToggle($event)">
 								<div class="alignment pl-5">
-									<div class="well"
+									<div class="well ml-2"
 										*ngIf="showIC===3 && !apsStatus">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }}
 									</div>
@@ -29,7 +29,7 @@
 										class="optimize">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }}
 									</div>
-									<div class="row no-gutters"
+									<div class="row no-gutters ml-2"
 										*ngIf="isShowIntelligentCoolingModes()"
 										role="radiogroup">
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC!==14"
@@ -72,7 +72,7 @@
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
-									<div class="well"
+									<div class="well ml-2"
 										*ngIf="showIC===14"> {{ selectedModeText }} </div>
 								</div>
 

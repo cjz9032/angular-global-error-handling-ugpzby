@@ -149,24 +149,6 @@
 			"subitems": []
 		},
 		{
-			"id": "privacy",
-			"label": "common.menu.privacy",
-			"path": "privacy",
-			"icon": [
-				"fal",
-				"user-shield"
-			],
-			"segment": "-[Commercial]",
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.privacy",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"forArm": false,
-			"subitems": []
-		},
-		{
 			"id": "device",
 			"label": "common.menu.device.title",
 			"path": "device",

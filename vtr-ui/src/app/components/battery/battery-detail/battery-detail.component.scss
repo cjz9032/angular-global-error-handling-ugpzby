@@ -41,6 +41,7 @@
 			.battery-label-text {
 				font-size: $body;
 				color: $shade_light;
+				word-break: break-all;
 			}
 			.battery-value-text {
 				font-size: $body;

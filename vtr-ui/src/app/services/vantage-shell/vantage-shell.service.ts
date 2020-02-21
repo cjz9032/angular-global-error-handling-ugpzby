@@ -49,7 +49,6 @@ export class VantageShellService {
 				Phoenix.Features.DeviceFilter,
 				Phoenix.Features.Metrics,
 				Phoenix.Features.ModernPreload,
-				Phoenix.Features.Privacy,
 				Phoenix.Features.LenovoVoiceFeature,
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
@@ -223,6 +222,11 @@ export class VantageShellService {
 				break;
 			case 'userfeedback':
 				eventName = 'UserFeedback';
+				break;
+			case '':
+			case undefined:
+			case null:
+				eventName = 'unknown';
 				break;
 		}
 
@@ -544,15 +548,15 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getSmartPerformance() {
-        if (this.phoenix) {
-            if (!this.phoenix.smartPerformance) {
-                return this.phoenix.loadFeatures([Phoenix.Features.SmartPerformance]);
-            }
-            return this.phoenix.smartPerformance;
-        }
-        return undefined;
-    }
+	public getSmartPerformance() {
+		if (this.phoenix) {
+			if (!this.phoenix.smartPerformance) {
+				return this.phoenix.loadFeatures([Phoenix.Features.SmartPerformance]);
+			}
+			return this.phoenix.smartPerformance;
+		}
+		return undefined;
+	}
 
 	// public getSmartPerformance() {
 	// 	console.log('----------CALLING');
@@ -598,13 +602,6 @@ export class VantageShellService {
 		const win: any = window;
 		if (win.Windows) {
 			return win.Windows;
-		}
-		return undefined;
-	}
-
-	public getPrivacyCore() {
-		if (this.phoenix && this.phoenix.privacy) {
-			return this.phoenix.privacy;
 		}
 		return undefined;
 	}
@@ -758,15 +755,6 @@ export class VantageShellService {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingAutoClose;
-		}
-		return undefined;
-	}
-	public getGamingAdvancedOC() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingAdvancedOC;
 		}
 		return undefined;
 	}

@@ -27,6 +27,6 @@
 		"allowEmptyCodegenFiles": false,
 		"fullTemplateTypeCheck": true,
 		"strictInjectionParameters": true,
-		// "strictMetadataEmit": true
+		"strictMetadataEmit": true
 	}
 }

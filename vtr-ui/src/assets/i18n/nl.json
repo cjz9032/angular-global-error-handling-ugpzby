@@ -22,12 +22,6 @@
                     "rapidCharge": "Snelladen"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "Overklok aan",
-                        "performance": "Prestaties",
-                        "balance": "Balans",
-                        "quiet": "Stil"
-                    },
                     "title": "CPU overklok",
                     "status": {
                         "alwayson": "Aan",
@@ -748,12 +742,11 @@
                 "sub1": "Mijn beveiliging",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-beveiliging",
-                "sub4": "Wachtwoordbeheerder",
-                "sub5": "VPN",
+                "sub4": "Wachtwoordstatus",
+                "sub5": "VPN-beveiliging",
                 "sub6": "Vingerafdruk"
             },
             "support": "Ondersteuning",
-            "privacy": "Privacy",
             "beta": {
                 "title": "beta"
             },
@@ -763,9 +756,9 @@
             "title": "Beveiligingsadviseur",
             "subtitle": "CONTROLEER OF UW APPARAAT IS BEVEILIGD.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-beveiliging",
-            "pswdMgr": "Wachtwoordbeheerder",
-            "vpn": "VPN",
+            "wifi": "WiFi-Beveiliging",
+            "pswdMgr": "Wachtwoordstatus",
+            "vpn": "VPN-Beveiliging",
             "enabled": "INGESCHAKELD",
             "disabled": "UITGESCHAKELD",
             "partiallyProtected": "GEDEELTELIJK BEVEILIGD",
@@ -779,8 +772,8 @@
             "fingerPrint": "Vingerafdruk",
             "privacyPolicyAndTermsOfService": "<tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "GEREGISTREERD",
+            "notEnrolled": "NIET GEREGISTREERD"
         },
         "qAndA": {
             "title": "V & A voor uw machine",
@@ -809,11 +802,6 @@
         },
         "offline": {
             "connectToUseFeature": "Verbinding maken met internet om deze functie te gebruiken"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Privacy"
         }
     },
     "tutorial": {
@@ -1040,7 +1028,7 @@
                     "Good": "<b>De batterij is in goede staat.</b>",
                     "Exhaustion": "De capaciteit van de batterij is <b>verminderd</b>. Vervang deze door een nieuwe.",
                     "Bad": "<b>Er is een batterijfout opgetreden.</b> De batterij kan niet worden opgeladen/ontladen. Vervang de batterij.",
-                    "NotDetected": "<b>Geen batterij gedetecteerd.</b>",
+                    "NotDetected": "<b>Er is geen batterij aangetroffen of</b> aangesloten.",
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
                     "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b>",
                     "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan niet voldoende stroom leveren.</b>",
@@ -2287,7 +2275,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi en Connected Home-beveiliging",
+                "title": "WiFi-beveiliging",
                 "back": "TERUG"
             },
             "container": {
@@ -2471,7 +2459,7 @@
     "lenovoId": {
         "login": "Aanmelden",
         "logout": "Afmelden",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Bezig met afmelden...",
         "unlockExclusives": "Krijg toegang tot exclusieve aanbiedingen",
         "user": "Gebruiker",
         "welcomeText1": "Uw ziet er energiek uit vandaag, {{firstName}}!",
@@ -3093,7 +3081,8 @@
             "storage": "Opslag",
             "wireless": "Draadloos"
         },
-        "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat"
+        "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat",
+        "refreshMessage": "Het vernieuwen kan even duren omdat alle onderdelen opnieuw moeten worden geladen"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3423,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nu kunt u nagaan of uw persoonlijke gegevens zijn geschonden of gebruikt door online trackers zonder dat u ervan af wist.",
             "security": "Wist u dat? Zelfs als er geen antivirussoftware op uw computer is geïnstalleerd, bieden wij nog steeds basisbescherming voor uw apparaat.",
             "connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd."
         }

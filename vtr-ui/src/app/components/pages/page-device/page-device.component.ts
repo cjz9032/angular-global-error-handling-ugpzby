@@ -4,6 +4,7 @@ import { QaService } from '../../../services/qa/qa.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-page-device',
@@ -23,6 +24,7 @@ export class PageDeviceComponent implements OnInit, OnDestroy {
 		public qaService: QaService,
 		private cmsService: CMSService,
 		private translate: TranslateService,
+		private logger: LoggerService
 	) {
 		this.fetchCMSArticles();
 		// Evaluate the translations for QA on language Change
@@ -66,7 +68,9 @@ export class PageDeviceComponent implements OnInit, OnDestroy {
 					}
 				}
 			},
-			error => {}
+			error => {
+				this.logger.error('fetchCMSContent error', error);
+			}
 		);
 	}
 

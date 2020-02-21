@@ -3,7 +3,7 @@
 	[pageCssClass]="'hardware-scan'"
 	[shiftLeftUp]="true"
 	[shiftRightUp]="true"
-	[hideBack]="(!isScanDoneExecuting() && isScanExecuting()) || (!isScanDoneExecuting() && isRecoverExecuting())"
+	[hideBack]="!isScanDoneExecuting() && (isScanExecuting() || isRecoverExecuting())"
 	[back]="'common.ui.back' | translate"
 	[backId]="'myDevice-back-btn'"
 	[isInnerBack]="isScanDoneExecuting()"

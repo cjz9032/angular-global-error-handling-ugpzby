@@ -3,7 +3,15 @@
 		<div class="row">
 			<div class="row module-information">
 				<div class="module-icon" *ngIf="item.icon !== undefined">
-					<img class="img-icon" src={{item.icon}} />
+					<div class="test-status" [ngSwitch]="item.icon">
+						<img class="img-icon" *ngSwitchCase="'cpu'" [src]="'/assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
+						<img class="img-icon" *ngSwitchCase="'memory'" [src]=" '/assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
+						<img class="img-icon" *ngSwitchCase="'motherboard'" [src]=" '/assets/icons/hardware-scan/icon_hardware_motherboard.svg' | svgInline | async" />
+						<img class="img-icon" *ngSwitchCase="'pci_express'" [src]=" '/assets/icons/hardware-scan/icon_hardware_pci-desktop.svg' | svgInline | async" />
+						<img class="img-icon" *ngSwitchCase="'pci_express_laptop'" [src]=" '/assets/icons/hardware-scan/icon_hardware_pci-laptop.svg' | svgInline | async" />
+						<img class="img-icon" *ngSwitchCase="'wireless'" [src]=" '/assets/icons/hardware-scan/icon_hardware_wireless.svg' | svgInline | async" />
+						<img class="img-icon" *ngSwitchCase="'storage'" [src]=" '/assets/icons/hardware-scan/icon_hardware_hdd.svg' | svgInline | async" />
+					</div>
 				</div>
 				<div class="title">
 					<div class="row col-12 module-name">

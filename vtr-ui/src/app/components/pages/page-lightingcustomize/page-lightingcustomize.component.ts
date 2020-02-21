@@ -1,7 +1,7 @@
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -18,7 +18,6 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Gaming } from './../../../enums/gaming.enum';
 import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
-import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
@@ -41,7 +40,6 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		private cmsService: CMSService,
 		private route: ActivatedRoute,
 		private shellService: VantageShellService,
-		private gamingLightService: GamingLightingService,
 		public dashboardService: DashboardService,
 		private translate: TranslateService,
 		public deviceService: DeviceService,
@@ -62,12 +60,6 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.getLayOutversion();
-		this.commonService.getCapabalitiesNotification().subscribe((response) => {
-			if (response.type === Gaming.GamingCapabilities) {
-				this.getLayOutversion();
-			}
-		});
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -95,6 +87,15 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 			Page: 'lighting'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+			const cardContentPositionF = this.cmsService.getOneCMSContent(
+				response,
+				'half-width-top-image-title-link',
+				'position-F'
+			)[0];
+			if (cardContentPositionF) {
+				this.cardContentPositionF = cardContentPositionF;
+			}
+
 			const cardContentPositionC = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-title-description-link-image',
@@ -102,17 +103,8 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 			)[0];
 			if (cardContentPositionC) {
 				this.cardContentPositionC = cardContentPositionC;
-			}
-
-			const cardContentPositionF = this.cmsService.getOneCMSContent(
-				response,
-				'inner-page-right-side-article-image-background',
-				'position-F'
-			)[0];
-			if (cardContentPositionF) {
-				this.cardContentPositionF = cardContentPositionF;
-				if (this.cardContentPositionF.BrandName) {
-					this.cardContentPositionF.BrandName = this.cardContentPositionF.BrandName.split('|')[0];
+				if (this.cardContentPositionC.BrandName) {
+					this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
 				}
 			}
 		});

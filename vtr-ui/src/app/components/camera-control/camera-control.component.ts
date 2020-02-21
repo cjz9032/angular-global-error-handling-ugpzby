@@ -97,7 +97,9 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			(cameraDetail: CameraDetail) => {
 				this.cameraDetail = cameraDetail;
 			},
-			error => { }
+			error => {
+				this.logger.info(error);
+			}
 		);
 	}
 
@@ -173,10 +175,12 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 				return deviceInfo;
 			}, (error) => {
 				this.disabledAll = true;
+				this.logger.info('findCameraDeviceByPanelAsync error ', error.message);
 			});
 	}
 
 	initializeCameraAsync() {
+		this.logger.info('InitializeCameraAsync');
 		// const self = this;
 		try {
 			// Get available devices for capturing pictures
@@ -229,6 +233,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					return this.oMediaCapture.initializeAsync(settings);
 				}, (error) => {
 					this.isCameraInitialized = false;
+					this.logger.info('findCameraDeviceByPanelAsync error', error.message);
 					this.ngZone.run(() => {
 						this.disabledAll = true;
 					});
@@ -239,6 +244,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 				}).done();
 		} catch (error) {
 			this.disabledAll = true;
+			this.logger.info('initializeCameraAsync catch', error);
 		}
 	}
 
@@ -277,6 +283,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	cleanupCameraAsync() {
 		this.isCameraInitialized = false;
+		this.logger.info('cleanupCameraAsync');
 		this.stopPreview();
 
 		if (this.oMediaCapture) {
@@ -299,6 +306,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	public onAutoExposureChange($event: any) {
 		try {
+			this.logger.info('onAutoExposureChange', this.cameraSettings.exposure);
 			this.exposureToggle.emit($event);
 		} catch (error) {
 			this.logger.error('CameraControlComponent:onAutoExposureChange', error.message);
@@ -306,12 +314,15 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	public onBrightnessSliderChange($event: ChangeContext) {
+		this.logger.info('Brightness changed', $event);
 		this.brightnessChange.emit($event);
 	}
 	public onContrastSliderChange($event: ChangeContext) {
+		this.logger.info('Contrast changed', $event);
 		this.contrastChange.emit($event);
 	}
 	public onExposureSliderChange($event: ChangeContext) {
+		this.logger.info('exposure changed', $event);
 		this.exposureChange.emit($event);
 	}
 }

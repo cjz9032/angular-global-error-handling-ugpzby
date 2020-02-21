@@ -9,11 +9,11 @@ import { HardwareScanService } from '../../services/hardware-scan/hardware-scan.
 })
 
 export class WidgetHardwareScanComponent implements OnInit {
-	@Input() title: string = '';
-	@Input() subTitle: string = '';
+	@Input() title = '';
+	@Input() subTitle = '';
 	@Input() warningMessage = this.translate.instant('hardwareScan.warningMessage');
-	@Input() finalResultCode: string = '';
-	@Input() finalResultCodeText: string = '';
+	@Input() finalResultCode = '';
+	@Input() finalResultCodeText = '';
 	@Input() buttonText = '';
 	@Input() anchorText = '';
 	@Input() completeText = this.translate.instant('hardwareScan.complete');
@@ -35,7 +35,7 @@ export class WidgetHardwareScanComponent implements OnInit {
 	@Output() checkCancel = new EventEmitter();
 	@Output() checkAnchor = new EventEmitter();
 
-	constructor(private hardwareScanService: HardwareScanService,private translate: TranslateService) { }
+	constructor(private hardwareScanService: HardwareScanService, private translate: TranslateService) { }
 
 	ngOnInit() { }
 

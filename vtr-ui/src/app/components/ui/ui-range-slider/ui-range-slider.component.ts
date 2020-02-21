@@ -16,7 +16,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	templateUrl: './ui-range-slider.component.html',
 	styleUrls: ['./ui-range-slider.component.scss']
 })
-export class UiRangeSliderComponent implements OnInit, OnChanges {
+export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	// package url https://angular-slider.github.io/ng5-slider/demos
 
 	public options: Options;
@@ -46,11 +46,7 @@ export class UiRangeSliderComponent implements OnInit, OnChanges {
 	) {
 	}
 
-	ngOnChanges(changes: SimpleChanges): void {
-		if (changes.enableSlider) {
-			this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
-		}
-	}
+
 
 	ngOnInit() {
 		this.options = {
@@ -66,7 +62,14 @@ export class UiRangeSliderComponent implements OnInit, OnChanges {
 			step: this.step // value to change on each slide, default is 1
 		};
 	}
-
+	// ngOnChanges(changes: SimpleChanges): void {
+	// 	if (changes.enableSlider) {
+	// 		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
+	// 	}
+	// }
+	ngAfterContentChecked() {
+		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
+	}
 	/**
 	 * This event is fired when value property is changed programmatically.
 	 * Its two way binding event
@@ -81,9 +84,9 @@ export class UiRangeSliderComponent implements OnInit, OnChanges {
 	 * @param $event event data from ng5-slider component
 	 */
 	public onChange($event: ChangeContext) {
-		this.highValue = undefined;
-		this.loggerService.info('ui-range-slider.component.onChange',
-			`onChange Ui slider ---> ${$event}, ${this.highValue}`);
+		//  this.highValue = undefined;
+		// this.loggerService.info('ui-range-slider.component.onChange',
+		// 	`onChange Ui slider ---> ${$event}, ${this.highValue}`);
 		this.sliderChange.emit($event);
 	}
 

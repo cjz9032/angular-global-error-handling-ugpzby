@@ -30,7 +30,7 @@
 	.list2 {
 		margin-top: 1rem;
 		.list-group-item {
-			background-color: $shade_extralight;			
+			background-color: $shade_extralight;
 			//border-radius: 0rem !important;// as per new spec
 			border: 0.1rem solid $shade_lighter;
 			padding: 1.5rem 1rem 1.5rem 0.2rem;
@@ -148,6 +148,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex-wrap: nowrap;
 	}
 
 	.item-left {
@@ -163,8 +164,8 @@
 
 		.result-code-icon {
 			margin-right: 0.5rem;
-			font-size: $fontsize_md;
-			color: $main;
+			font-size: $fontsize_sm;
+			color: $menu_hover;
 			cursor: pointer;
 
 			&:hover {
@@ -193,6 +194,7 @@
 	}
 
 	.qr-img {
-		font-size: $fontsize_xl;
+		width: 2.4rem;
+		height: 2.4rem;
 	}
 }

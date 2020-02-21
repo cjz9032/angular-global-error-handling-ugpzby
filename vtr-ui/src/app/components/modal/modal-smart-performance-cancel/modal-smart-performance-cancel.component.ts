@@ -9,39 +9,40 @@ import { Router } from '@angular/router';
   styleUrls: ['./modal-smart-performance-cancel.component.scss']
 })
 export class ModalSmartPerformanceCancelComponent implements OnInit {
-  //@Output() stopScanning = new EventEmitter();
-  constructor(public activeModal: NgbActiveModal, 
-    public smartPerformanceService: SmartPerformanceService, 
-    private router: Router) { }
+  // @Output() stopScanning = new EventEmitter();
+  constructor(public activeModal: NgbActiveModal,
+	public smartPerformanceService: SmartPerformanceService,
+	private router: Router) { }
 
   ngOnInit() {
   }
   closeModal() {
-    this.activeModal.close('close');
+	this.activeModal.close('close');
   }
   @HostListener('window: focus')
   onFocus(): void {
   const modal = document.querySelector('.cancel-modal') as HTMLElement;
 		modal.focus();
   }
-  cancelScan()
-  {
-    if (this.smartPerformanceService.isShellAvailable) {
-      this.smartPerformanceService
-        .cancelScan()
-        .then((cancelScanFromService: any) => {
-        if(cancelScanFromService){
-          this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['support/smart-performance']));
-        }
-        else{
-          //this.isScanning = false;
-        }
-      })
-        .catch(error => {
-         
-        });
-    }
-    else {}  
-    this.activeModal.close('close');
+  cancelScan() {
+	if (this.smartPerformanceService.isShellAvailable) {
+		this.smartPerformanceService
+		.cancelScan()
+		.then((cancelScanFromService: any) => {
+
+			if (cancelScanFromService) {
+			// this.router.navigate(['support/smart-performance']);
+			// this.stopScanning.emit();
+
+			this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['support/smart-performance']));
+			} else {
+			// this.isScanning = false;
+			}
+		})
+		.catch(error => {
+
+		});
+	}
+	this.activeModal.close('close');
   }
 }

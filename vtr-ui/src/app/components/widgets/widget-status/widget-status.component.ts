@@ -8,11 +8,11 @@ import { BaseComponent } from '../../base/base.component';
 })
 export class WidgetStatusComponent extends BaseComponent implements OnInit {
 
-	@Input() type: string = 'system';
-	@Input() title: string = '';
-	@Input() description: string = '';
+	@Input() type = 'system';
+	@Input() title = '';
+	@Input() description = '';
 	@Input() items = [];
-	@Input() linkId:string;
+	@Input() linkId: string;
 	constructor() {
 		super();
 	}

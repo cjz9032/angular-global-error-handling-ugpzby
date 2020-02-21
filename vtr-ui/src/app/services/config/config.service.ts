@@ -145,9 +145,8 @@ export class ConfigService {
 				this.notifyMenuChange(this.menu);
 				return resolve(this.menu);
 			}
-			
+
 			resultMenu = cloneDeep(this.menuItems);
-			resultMenu = await this.initializePrivacy(resultMenu);
 			this.initializeSecurityItem(country.toLowerCase(), resultMenu);
 			if (this.hypSettings) {
 				resultMenu = await this.initShowCHSMenu(country, resultMenu, machineInfo);
@@ -169,7 +168,7 @@ export class ConfigService {
 		});
 	}
 
-	private async initShowCHSMenu(country: string, menu: Array<any>, machineInfo: any) : Promise<Array<any>> {
+	private async initShowCHSMenu(country: string, menu: Array<any>, machineInfo: any): Promise<Array<any>> {
 		const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
 		const chsHypsis = await this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((result) => {
 			return ((result || '').toString() === 'true');
@@ -301,7 +300,7 @@ export class ConfigService {
 		}
 	}
 
-	private async showSmartAssist() : Promise<any> {
+	private async showSmartAssist(): Promise<any> {
 		this.logger.info('MenuMainComponent.showSmartAssist: inside');
 		const myDeviceItem = this.menu.find((item) => item.id === 'device');
 		const consumerMyDeviceItem = this.menuBySegment.consumer.find((item) => item.id === 'device');
@@ -454,19 +453,6 @@ export class ConfigService {
 		this.commonService.sendNotification(MenuItem.MenuItemChange, payload);
 	}
 
-	public canShowPrivacy(): Promise<boolean> {
-		return new Promise(resolve => {
-			if (this.hypSettings) {
-				this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
-					resolve(privacy === 'enabled');
-				}, (error) => {
-					this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
-					resolve(false);
-				});
-			}
-		});
-	}
-
 	public canShowSearch(): Promise<boolean> {
 		return new Promise(resolve => {
 			if (this.hypSettings) {
@@ -511,17 +497,17 @@ export class ConfigService {
 		|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
 			this.supportFilter(menu, 'wifi-security', wifiIsSupport);
 			return;
-		} 
+		}
 
-		if (this.deviceService.isSMode || this.deviceService.isArm) return;
-		
+		if (this.deviceService.isSMode || this.deviceService.isArm) { return; }
+
 		if (wifiIsSupport) {
 			if (securityItem && securityItem.subitems && this.activeSegment !== SegmentConst.Gaming) {
 				const wifiItem = this.menuItems.find((item) => item.id === 'security').subitems.find((item) => item.id === 'wifi-security');
 				securityItem.subitems.splice(3, 0, wifiItem);
 				return;
 			}
-		
+
 			const supportIndex = menu.findIndex((item) => item.id === 'support');
 			const wifiItems = this.activeSegment !== SegmentConst.Gaming ? this.menuItems.find((item) => item.id === 'wifi-security') : this.menuItemsGaming.find((item) => item.id === 'wifi-security');
 			menu.splice(supportIndex, 0, wifiItems);
@@ -567,7 +553,7 @@ export class ConfigService {
 						return resolve(menu);
 					});
 				}
-				
+
 				return resolve(menu);
 			} else {
 				menu = menu.filter(item => item.id !== 'hardware-scan');
@@ -633,19 +619,18 @@ export class ConfigService {
 		const newFeatureTipsShowComplete = this.commonService.getLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion);
 		if ((!newFeatureTipsShowComplete || newFeatureTipsShowComplete < newFeatureVersion)
 			&& Array.isArray(this.menu)) {
-			const privacyItem = this.menu.find((item: any) => item.id === 'privacy');
 			const securityItem = this.menu.find((item: any) => item.id === 'security');
 			const chsItem = this.menu.find((item: any) => item.id === 'home-security');
 			let isHideMenuToggle = true;
 			if (window.innerWidth < 1200) { isHideMenuToggle = false; }
-			if ((privacyItem || securityItem || chsItem) && isHideMenuToggle) {
+			if ((securityItem || chsItem) && isHideMenuToggle) {
 				this.newFeatureTipService.create();
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, newFeatureVersion);
 		}
 	}
 
-	private filterMenu(menu: Array<any>, segment: string) : Array<any> {
+	private filterMenu(menu: Array<any>, segment: string): Array<any> {
 		this.smodeFilter(menu, this.deviceService.isSMode);
 		this.armFilter(menu, this.deviceService.isArm);
 		this.segmentFilter(menu, segment);
@@ -660,13 +645,6 @@ export class ConfigService {
 			this.deviceService.getMachineType().then((value: number) => {
 				this.smartAssistFilter(value);
 			});
-		}
-	}
-
-	private async initializePrivacy(menu: Array<any>) : Promise<Array<any>> {
-		const canShowPrivacy = await this.canShowPrivacy();
-		if (!canShowPrivacy) {
-			return menu.filter(item => item.id !== 'privacy');
 		}
 	}
 }
