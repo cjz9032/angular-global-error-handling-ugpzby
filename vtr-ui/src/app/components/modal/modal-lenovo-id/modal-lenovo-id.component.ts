@@ -180,7 +180,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				return;
 			}
 			self.isBroswerVisible = true;
-			self.setFocus('webviewPlaceHolder');
+			setTimeout(() => {
+				self.setFocus('webviewPlaceHolder');
+			}, 0);
 			await self.webView.changeVisibility('spinnerCtrl', false);
 			await self.webView.changeVisibility('webviewPlaceHolder', true);
 			const htmlContent = eventData.content;
@@ -392,22 +394,22 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		}
 	}
 
-	private setFocus(id: string) {
+	private async setFocus(id: string) {
 		if (typeof this.webView.setFocus === 'function') {
-			this.webView.setFocus(id);
+			await this.webView.setFocus(id);
 		}
 	}
 
 	@HostListener('document:keydown', ['$event'])
 	onKeyDown(event: KeyboardEvent) {
-		if (event.key === 'Tab') {
+		if (event.key.toUpperCase() === 'TAB') {
 			// Tab key pressed
-			if (document.activeElement.tagName === 'BODY') {
+			if (document.activeElement.tagName.toUpperCase() === 'BODY') {
 				// Focus leave webview, set focus to close button
 				this.setFocus('txtClose');
 				event.preventDefault();
 				event.stopPropagation();
-			} else if (document.activeElement.tagName === 'NGB-MODAL-WINDOW') {
+			} else if (document.activeElement.tagName.toUpperCase() === 'NGB-MODAL-WINDOW') {
 				// This is first tab key press or press during loading
 				if (this.isBroswerVisible) {
 					this.setFocus('webviewPlaceHolder');
