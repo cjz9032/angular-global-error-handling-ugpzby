@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.4](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.3...v1.3.4) (2020-02-22)
+
+
+### Features
+
+* **overall:** merge release/vantage3.2-stage1 to develop ([d3eafbc](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/d3eafbc3af30ab80c2968588772288a1a0f4a894))
+
 ### [1.3.3](https://bitbucket.tc.lenovo.com///compare/v1.2.86...v1.3.3) (2020-02-21)
 
 
