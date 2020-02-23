@@ -141,27 +141,30 @@ export class MetricsDirective {
 			data = this.composedItem;
 		}
 
-		// composedItem could be a metric id, we would get the metric from the dic
+		// composedItem could be a metric id, we would get the metric from the metric map
 		if (typeof data === 'string') {
-			data = metricsMap[data as string] || data;
-		}
-
-		// if composedItem could be a complete metric object
-		if (data instanceof MetricEvents.IMetricEvent) {
-			data.ItemType = MetricHelper.normalizeEventName(data.ItemType);
-
-			const tmpData: any = data;
-			if (tmpData.ItemType === EventName.SettingUpdate && !tmpData.SettingParent) {
-				tmpData.SettingParent = this.getItemParent();
-			} else if ((tmpData.ItemType === EventName.FeatureClick || tmpData.ItemType === EventName.ArticleClick)
-				&& !tmpData.ItemParent) {
-				tmpData.ItemParent = this.getItemParent();
+			const srcData = metricsMap[data];
+			if (srcData) {
+				data = { ...srcData };	// copy the object value in case of the data source in the map was tampered
 			}
 		}
 
 		// if data is null/undefined or
 		if (!data || !data.ItemType) {
 			data = { ItemType: EventName.Unknown, content: data };
+		}
+
+		// Normalize the item type
+		data.ItemType = MetricHelper.normalizeEventName(data.ItemType);
+
+		// automatically fill the item parent
+		const tmpData: any = data;
+		if (!data.SettingParent) {
+			if (tmpData.ItemType === EventName.SettingUpdate ) {
+				tmpData.SettingParent = this.getItemParent();
+			} else if ((tmpData.ItemType === EventName.FeatureClick || tmpData.ItemType === EventName.ArticleClick)) {
+				tmpData.ItemParent = this.getItemParent();
+			}
 		}
 
 		return data;
