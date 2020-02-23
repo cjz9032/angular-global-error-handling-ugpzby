@@ -28,7 +28,7 @@ import { SharedModule } from 'src/app/modules/shared.module';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { UiButtonModule } from '../../components/ui/ui-button-hwscan/ui-button-hwscan.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
-import { MetricsModule } from 'src/app/directives/metrics.module';
+import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
 import { library } from '@fortawesome/fontawesome-svg-core';

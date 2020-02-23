@@ -25,7 +25,7 @@ import { HardwareSettingRoutingModule } from './hardware-settings-routing.module
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { InstallationHistoryComponent } from 'src/app/components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { IntelligentMediaComponent } from 'src/app/components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
-import { MetricsModule } from 'src/app/directives/metrics.module';
+import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { NgbDropdownModule, NgbTooltipModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { OledPowerSettingsComponent } from 'src/app/components/display/oled-power-settings/oled-power-settings.component';
 import { PageDeviceComponent } from 'src/app/components/pages/page-device/page-device.component';

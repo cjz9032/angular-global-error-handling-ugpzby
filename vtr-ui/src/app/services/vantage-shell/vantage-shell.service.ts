@@ -3,11 +3,9 @@ import * as Phoenix from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
-import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
-import { TopRowFunctionsIdeapad } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
 import { Backlight } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.interface';
 declare var window;
 
@@ -176,134 +174,15 @@ export class VantageShellService {
 		return '';
 	}
 
-	private normalizeEventName(eventName) {
-		eventName = eventName.toLowerCase();
-		switch (eventName) {
-			case 'firstrun':
-				eventName = 'FirstRun';
-				break;
-			case 'apploaded':
-				eventName = 'AppLoaded';
-				break;
-			case 'articledisplay':
-				eventName = 'ArticleDisplay';
-				break;
-			case 'appaction':
-				eventName = 'AppAction';
-				break;
-			case 'getenvinfo':
-				eventName = 'GetEnvInfo';
-				break;
-			case 'pageview':
-				eventName = 'PageView';
-				break;
-			case 'featureclick':
-			case 'itemclick':
-				eventName = 'FeatureClick';
-				break;
-			case 'itemview':
-				eventName = 'ItemView';
-				break;
-			case 'articleclick':
-			case 'docclick':
-				eventName = 'ArticleClick';
-				break;
-			case 'articleview':
-				eventName = 'ArticleView';
-				break;
-			case 'docview':
-				eventName = 'DocView';
-				break;
-			case 'taskaction':
-				eventName = 'TaskAction';
-				break;
-			case 'settingupdate':
-				eventName = 'SettingUpdate';
-				break;
-			case 'userfeedback':
-				eventName = 'UserFeedback';
-				break;
-			case '':
-			case undefined:
-			case null:
-				eventName = 'unknown';
-				break;
-		}
-
-		return eventName;
-	}
-
 	/**
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
 	public getMetrics(): any {
 		if (this.phoenix && this.phoenix.metrics) {
-			const metricClient = this.phoenix.metrics;
-			if (!metricClient.isInit) {
-				const jsBridgeVesion = this.getVersion() || '';
-				const shellVersion = this.getShellVersion();
-				metricClient.init({
-					appVersion: `Web:${environment.appVersion};Bridge:${jsBridgeVesion};Shell:${shellVersion}`,
-					appId: MetricHelper.getAppId('dß'),
-					appName: 'vantage3',
-					channel: '',
-					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
-				});
-				const that = this;
-				metricClient.isInit = true;
-				metricClient.sendAsyncOrignally = metricClient.sendAsync;
-				metricClient.commonService = this.commonService;
-				metricClient.sendAsync = async function sendAsync(data) {
-					const win: any = window;
-
-					try {
-						// automatically fill the OnlineStatus for page view event
-						if (!data.OnlineStatus) {
-							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
-						}
-
-						const isBeta = that.commonService.getLocalStorageValue(LocalStorageKey.BetaTag, false);
-						if (isBeta) {
-							data.IsBetaUser = true;
-						}
-
-						if (win.VantageStub && win.VantageStub.toastMsgName) {
-							data.LaunchByToast = win.VantageStub.toastMsgName;
-						}
-
-						MetricHelper.setupMetricDbg(that, this, data);
-
-						data.ItemType = that.normalizeEventName(data.ItemType);
-						return await this.sendAsyncOrignally(data);
-					} catch (ex) {
-						return Promise.resolve({
-							status: 0,
-							desc: 'ok'
-						});
-					}
-				};
-			}
-
-			return metricClient;
+			return this.phoenix.metrics;
 		}
 
-		const defaultMetricsClient = {
-			sendAsync() {
-				return Promise.resolve({
-					status: 0,
-					desc: 'ok'
-				});
-			},
-			sendAsyncEx() {
-				return Promise.resolve({
-					status: 0,
-					desc: 'ok'
-				});
-			},
-			metricsEnabled: false
-		};
-
-		return defaultMetricsClient;
+		return null;
 	}
 
 	public getMetricsPolicy(callback) {
