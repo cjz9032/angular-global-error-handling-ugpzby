@@ -11,7 +11,7 @@ export class MetricHelper {
 	constructor() {
 	}
 
-	public static timeSpan(dateEnd, dateStart) {
+	public static timeSpan(dateEnd: Date, dateStart: Date) {
 		return Math.round((dateEnd.getTime() - dateStart.getTime()) / 1000);
 	}
 
@@ -26,7 +26,7 @@ export class MetricHelper {
 		if (metricClient.enableDbg === undefined) {
 			try {
 				const hyp = await hypothesisService.getAllSettings() as any;
-				metricClient.enableDbg = hyp && hyp.metricDbg === true;
+				metricClient.enableDbg = (hyp && hyp.metricDbg === 'true');
 			} catch (ex) {
 				metricClient.enableDbg = false; // not use
 			}

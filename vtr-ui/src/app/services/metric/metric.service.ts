@@ -50,7 +50,7 @@ export class MetricService {
 	}
 
 	private onResumeSession() {
-		if (this.blurStart) {
+		if (!this.blurStart) {
 			return;
 		}
 
@@ -58,7 +58,7 @@ export class MetricService {
 		if (this.metricsClient.updateSessionId && idleDuration > 1800) { // 30 * min
 			this.metricsClient.updateSessionId();
 		}
-		this.blurStart = null;
+		this.blurStart = 0;
 	}
 
 	private onInvisable() {
