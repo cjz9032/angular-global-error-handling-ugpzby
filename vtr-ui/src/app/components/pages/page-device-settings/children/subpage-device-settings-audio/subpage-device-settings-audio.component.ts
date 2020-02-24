@@ -59,6 +59,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		this.commonService.checkPowerPageFlagAndHide();
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {

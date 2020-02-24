@@ -156,9 +156,11 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	hidePowerPage() {
+	hidePowerPage(routeTo: boolean = true) {
 		this.menuItems = this.commonService.removeObjById(this.menuItems, 'power');
-		this.router.navigate(['device/device-settings/audio'], { replaceUrl: true });
+		if (routeTo) {
+			this.router.navigate(['device/device-settings/audio'], { replaceUrl: true });
+		}
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -173,6 +175,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				case LocalStorageKey.IsPowerPageAvailable:
 					if (!payload) {
 						this.hidePowerPage();
+					} else if (typeof payload === 'object') {
+						this.hidePowerPage(payload.link);
 					}
 					break;
 				default:
