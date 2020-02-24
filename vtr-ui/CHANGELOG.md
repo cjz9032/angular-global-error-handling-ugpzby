@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.5](https://bitbucket.tc.lenovo.com///compare/v1.3.4...v1.3.5) (2020-02-24)
+
+
+### Features
+
+* **gaming:** correct more merging error ([90001bc](https://bitbucket.tc.lenovo.com///commit/90001bc45dc3eddc40940591e7b07016dcf8c748))
+* **gaming:** more correction ([ac78b51](https://bitbucket.tc.lenovo.com///commit/ac78b51ecad57e921d4ff3a71c39109d74c61579))
+* **gaming:** recover 3.2.0.1 code ([4882c98](https://bitbucket.tc.lenovo.com///commit/4882c98d4158d60523c7c40d6312719fcc4c515f))
+
 ### [1.3.4](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.3...v1.3.4) (2020-02-22)
 
 
