@@ -267,7 +267,8 @@ export enum LocalStorageKey {
 
 	// TEMP battery condition
 	BatteryCondition = '[LocalStorageKey] batteryCondition',
-
+	// DPM
+	DPMAllPowerPlans = '[LocalStorageKey] DPMAllPowerPlans',
 	// UPE
 	UPEChannelTags = '[LocalStorageKey] UPEChannelTags',
 	PriorityControlCapability = '[LocalStorageKey] PriorityControlCapability'

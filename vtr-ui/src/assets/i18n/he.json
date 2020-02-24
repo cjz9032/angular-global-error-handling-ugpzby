@@ -1264,7 +1264,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "מוצר עם אישור ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "צריכת חשמל",
+					"subtitle": "הגדרות צריכת חשמל",
+					"description": "סעיף זה מאפשר לכם לבדוק את הגדרות ברירת המחדל ולהתאים אישית את צריכת החשמל ואת תוכנית צריכת החשמל שלכם בהתאם לצרכים.",
+					"globalPowerSettings": {
+						"title": "הגדרות צריכת חשמל כלליות",
+						"description": "תכונה זו תעקוף את הגדרות תוכנית צריכת החשמל או צריכת החשמל.",
+						"powerButton": {
+							"label": "מתג הפעלה:",
+							"items": {
+								"doNothing": "שום פעולה",
+								"sleep": "שינה",
+								"hibernate": "תרדמה",
+								"shutDown": "כיבוי",
+								"turnOffTheDisplay": "כיבוי הצג"
+							}
+						},
+						"requiredSignIn": {
+							"label": "נדרשת כניסה:",
+							"items": {
+								"never": "לעולם לא",
+								"fromSleep": "כאשר המחשב יוצא ממצב שינה"
+							},
+							"tip": "הערה: זה עובד רק אם מוגדרת סיסמת מערכת."
+						}
+					},
+					"powerUse": {
+						"title": "צריכת חשמל",
+						"description": "אם המערכת לא פעילה:",
+						"turnOffDisplay": "כיבוי הצג כעבור:",
+						"turnOffHDD": "כיבוי ה-HDD כעבור:",
+						"sleep": "מעבר למצב שינה כעבור:",
+						"hibernate": "מעבר למצב המתנה כעבור:",
+						"items": {
+							"never": "לעולם לא",
+							"minute": "דקה",
+							"minutes": "דקות",
+							"hour": "שעה",
+							"hours": "שעות"
+						}
+					},
+					"powerPlan": {
+						"title": "תוכנית צריכת חשמל",
+						"description": "בחרו תוכנית צריכת חשמל כדי לשלוט בביצועי המחשב, בטמפרטורת המערכת ובצריכת החשמל.",
+						"currentPowerPlan": {
+							"label": "תוכנית נוכחית"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "המתנה חכמה",
                     "description": "תכונה זו קובעת זמן למחשב שלכם שבו יבוצע מיטוב של חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, כדי שלא לפגוע בחוויית הפעלה מחדש מהירה של <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">הפעלה מודרנית</a> שנדרשת בשעות שבהן נעשה שימוש במחשב.",

@@ -1264,7 +1264,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UM PRODUTO COM CERTIFICAÇÃO ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Energia",
+					"subtitle": "Configurações de energia",
+					"description": "Esta seção permite que você verifique as configurações padrão e personalize o uso de energia e o plano de energia de acordo com suas necessidades.",
+					"globalPowerSettings": {
+						"title": "Configurações de energia globais",
+						"description": "Esse recurso substituirá as configurações do Plano de energia ou do Uso de energia.",
+						"powerButton": {
+							"label": "BOTÃO LIGA/DESLIGA:",
+							"items": {
+								"doNothing": "Não fazer nada",
+								"sleep": "Suspender",
+								"hibernate": "Hibernar",
+								"shutDown": "Encerrar",
+								"turnOffTheDisplay": "Desligar o monitor"
+							}
+						},
+						"requiredSignIn": {
+							"label": "ACESSO NECESSÁRIO:",
+							"items": {
+								"never": "Nunca",
+								"fromSleep": "Quando o PC sair do modo de suspensão"
+							},
+							"tip": "Nota: Isso funciona apenas se a senha do sistema foi definida."
+						}
+					},
+					"powerUse": {
+						"title": "Uso de energia",
+						"description": "SE O SISTEMA ESTIVER OCIOSO:",
+						"turnOffDisplay": "DESLIGAR O MONITOR APÓS:",
+						"turnOffHDD": "DESLIGAR O HDD APÓS:",
+						"sleep": "SUSPENDER APÓS:",
+						"hibernate": "HIBERNAR APÓS:",
+						"items": {
+							"never": "Nunca",
+							"minute": "minuto",
+							"minutes": "minutos",
+							"hour": "hora",
+							"hours": "horas"
+						}
+					},
+					"powerPlan": {
+						"title": "Plano de energia",
+						"description": "Escolha um plano de energia para controlar o desempenho do computador, a temperatura do sistema e o consumo de energia.",
+						"currentPowerPlan": {
+							"label": "PLANO ATUAL"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Suspensão inteligente",
                     "description": "Esse recurso programa o computador para otimizar a economia de carga da bateria durante horas ociosas sem prejudicar a experiência de continuidade rápida da <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Suspensão moderna</a> durante horas de maior uso.",

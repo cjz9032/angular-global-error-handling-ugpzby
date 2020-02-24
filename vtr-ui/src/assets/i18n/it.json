@@ -1264,7 +1264,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UN PRODOTTO CON CERTIFICAZIONE ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Alimentazione",
+					"subtitle": "Impostazioni energetiche",
+					"description": "Questa sezione consente di controllare le impostazioni predefinite e personalizzare l'utilizzo dell'alimentazione e il piano di alimentazione in base alle proprie esigenze.",
+					"globalPowerSettings": {
+						"title": "Impostazioni di alimentazione globale",
+						"description": "Questa funzione avrà priorità sul piano di alimentazione o sulle impostazioni di utilizzo dell'alimentazione.",
+						"powerButton": {
+							"label": "PULSANTE DI ACCENSIONE:",
+							"items": {
+								"doNothing": "Nessuna azione",
+								"sleep": "Sospensione",
+								"hibernate": "Sospendi",
+								"shutDown": "Spegni",
+								"turnOffTheDisplay": "Spegnere lo schermo"
+							}
+						},
+						"requiredSignIn": {
+							"label": "È NECESSARIO ESEGUIRE L'ACCESSO:",
+							"items": {
+								"never": "Mai",
+								"fromSleep": "Quando il PC viene riattivato dalla modalità di sospensione"
+							},
+							"tip": "Nota: Funziona solo se è impostata la password di sistema."
+						}
+					},
+					"powerUse": {
+						"title": "Uso dell'alimentazione",
+						"description": "SE IL SISTEMA È INATTIVO:",
+						"turnOffDisplay": "DISATTIVAZIONE DELLO SCHERMO DOPO:",
+						"turnOffHDD": "SPEGNIMENTO DELL'UNITÀ DISCO FISSO DOPO:",
+						"sleep": "SOSPENSIONE DOPO:",
+						"hibernate": "IBERNAZIONE DOPO:",
+						"items": {
+							"never": "Mai",
+							"minute": "minuto",
+							"minutes": "minuti",
+							"hour": "ora",
+							"hours": "ore"
+						}
+					},
+					"powerPlan": {
+						"title": "Piano di alimentazione",
+						"description": "Selezionare un piano di alimentazione per controllare le prestazioni del computer, la temperatura del sistema e l'utilizzo dell'alimentazione.",
+						"currentPowerPlan": {
+							"label": "PIANO CORRENTE"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Standby intelligente",
                     "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne il ripristino rapido dalla modalità <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Standby moderno</a> durante i picchi di utilizzo.",
