@@ -30,6 +30,13 @@
 		.microphone-slider-margin {
 			margin-right: 1.5rem;
 		}
+		.microphone-on-off {
+			::ng-deep .vtr-ui-switch-row.white-theme {
+				.vtr-row-switch {
+					min-width: 7.5rem;
+				}
+			}
+		}
 	}
 	.container-card {
 		@media #{$black-on-white} {
