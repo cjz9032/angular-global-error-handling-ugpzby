@@ -161,7 +161,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		]
 	};
 	public gamingSettings: any = {};
-	public isQuickSettingsVisible = true;
+	public isQuickSettingsVisible = false;
 	constructor(
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingThermalModeService: GamingThermalModeService,
@@ -191,9 +191,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 		this.gamingCapabilities.smartFanStatus = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.PrevThermalModeStatus
-		);
-		this.gamingCapabilities.thermalModeVersion = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.thermalModeVersion
 		);
 
 		if (!this.gamingCapabilities.smartFanFeature) {
@@ -242,7 +239,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 	public registerThermalModeEvent() {
 		if (this.gamingCapabilities.smartFanFeature) {
-			this.gamingThermalModeService.regThermalModeChangeEvent();
+			this.gamingThermalModeService.regThermalModeEvent();
 			this.shellServices.registerEvent(
 				EventTypes.gamingThermalModeChangeEvent,
 				this.onRegThermalModeEvent.bind(this)
@@ -284,13 +281,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 	public quicksettingListInit() {
 		const gamingStatus = this.gamingCapabilities;
-		// TODO thermalModeVersion 2.0
-		if (gamingStatus.thermalModeVersion === 2) {
-			this.quickSettings[0].isVisible = false;
-		} else {
-			this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
-		}
-		// this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
+		this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
 		if (gamingStatus.smartFanFeature) {
 			this.renderThermalModeStatus();
 		}
@@ -309,7 +300,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		try {
 			this.drop.curSelected = this.GetThermalModeCacheStatus();
 			if (this.gamingThermalModeService) {
-				const thermalModeStatus = await this.gamingThermalModeService.getThermalModeSettingStatus();
+				const thermalModeStatus = await this.gamingThermalModeService.getThermalModeStatus();
 				if (thermalModeStatus !== undefined) {
 					this.drop.curSelected = thermalModeStatus;
 					const ThermalModeStatusObj = new thermalModeStatus();
@@ -330,7 +321,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			}
 			this.setThermalModeStatus.thermalModeStatus = event.option.value;
 			this.gamingThermalModeService
-				.setThermalModeSettingStatus(this.setThermalModeStatus.thermalModeStatus)
+				.setThermalModeStatus(this.setThermalModeStatus.thermalModeStatus)
 				.then((statusValue: boolean) => {
 					if (!statusValue) {
 						this.drop.curSelected = this.GetThermalModeCacheStatus();
@@ -407,6 +398,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				this.dialogService
 			);
 			this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
+				this.updateWifiSecurityState(false);
 				this.handleError(new PluginMissingError());
 			});
 			this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, (res) => {

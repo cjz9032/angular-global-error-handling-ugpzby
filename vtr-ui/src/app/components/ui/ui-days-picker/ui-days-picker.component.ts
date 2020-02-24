@@ -57,13 +57,14 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 
 	}
 
-	selectDay(event) {
-        if (event.target.checked) {
-			this.smartStandbyService.selectedDays.push(event.target.value);
+	selectDay($event: boolean, shortName: string) {
+		const value = $event;
+		if (value) {
+			this.smartStandbyService.selectedDays.push(shortName);
 		} else {
-			const index = this.smartStandbyService.selectedDays.indexOf(event.target.value);
+			const index = this.smartStandbyService.selectedDays.indexOf(shortName);
 			this.smartStandbyService.selectedDays.splice(index, 1);
 		}
-        this.smartStandbyService.checkedLength = this.smartStandbyService.selectedDays.length;
-    }
+		this.smartStandbyService.checkedLength = this.smartStandbyService.selectedDays.length;
+	}
 }

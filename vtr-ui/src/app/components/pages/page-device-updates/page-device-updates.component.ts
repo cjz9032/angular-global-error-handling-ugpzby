@@ -71,6 +71,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public isUpdatesAvailable = false;
 	public isUpdateDownloading = false;
 	public isCheckingPluginStatus = true;
+	public isCancelingStatus = false;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
 	public isInstallingAllUpdates = true;
@@ -287,7 +288,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					}
 				}
 			},
-			error => {}
+			error => {
+				this.logger.error('fetchCMSContent error', error);
+			}
 		);
 	}
 
@@ -332,24 +335,23 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	private getLastUpdateScanDetail() {
 		if (this.systemUpdateService.isShellAvailable) {
-            this.systemUpdateService.getMostRecentUpdateInfo()
+			this.systemUpdateService.getMostRecentUpdateInfo()
 				.then((value: any) => {
-                // console.log('getLastUpdateScanDetail.then', value);
-                if (value.lastInstallTime && value.lastInstallTime.length > 0) {
-                    this.lastInstallTime = value.lastInstallTime;
-                    this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateLastInstallTime, this.lastInstallTime);
-                }
-                // this.lastScanTime = new Date(value.lastScanTime);
-                this.nextScheduleScanTime = value.nextScheduleScanTime;
-                this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateNextScheduleScanTime, this.nextScheduleScanTime);
-                this.isScheduleScanEnabled = value.scheduleScanEnabled;
-                this.getNextUpdatedScanText();
-                // lastInstallTime: "2019-03-01T10:09:53"
-                // lastScanTime: "2019-03-12T18:24:03"
-                // nextScheduleScanTime: "2019-03-15T10:07:42"
-                // scheduleScanEnabled: true
-            });
-        }
+					if (value.lastInstallTime && value.lastInstallTime.length > 0) {
+						this.lastInstallTime = value.lastInstallTime;
+						this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateLastInstallTime, this.lastInstallTime);
+					}
+					// this.lastScanTime = new Date(value.lastScanTime);
+					this.nextScheduleScanTime = value.nextScheduleScanTime;
+					this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateNextScheduleScanTime, this.nextScheduleScanTime);
+					this.isScheduleScanEnabled = value.scheduleScanEnabled;
+					this.getNextUpdatedScanText();
+					// lastInstallTime: "2019-03-01T10:09:53"
+					// lastScanTime: "2019-03-12T18:24:03"
+					// nextScheduleScanTime: "2019-03-15T10:07:42"
+					// scheduleScanEnabled: true
+				});
+		}
 	}
 
 	public getLastUpdatedText() {
@@ -375,6 +377,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public onCheckForUpdates() {
 		if (this.systemUpdateService.isShellAvailable) {
 			this.setUpdateTitle();
+			this.isCancelingStatus = false;
 			this.isUserCancelledUpdateCheck = false;
 			this.isUpdateCheckInProgress = true;
 			this.isUpdatesAvailable = false;
@@ -533,9 +536,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					}
 					this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
 				}
-			},
-			reason => {}
-		);
+			});
 	}
 
 	public onGetSupportClick($event: any) {
@@ -758,6 +759,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					if (this.systemUpdateService && this.systemUpdateService.updateInfo) {
 						this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					}
+					break;
+				case UpdateProgress.UpdateCheckCancelled:
+					this.isCancelingStatus = false;
 					break;
 				case UpdateProgress.IgnoredUpdates:
 					this.setUpdateByCategory(notification.payload);

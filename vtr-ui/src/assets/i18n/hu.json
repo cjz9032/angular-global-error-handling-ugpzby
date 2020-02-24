@@ -22,12 +22,6 @@
                     "rapidCharge": "Gyorstöltés"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "Túlpörgetés",
-                        "performance": "Teljesítmény",
-                        "balance": "Egyensúly",
-                        "quiet": "Csendes"
-                    },
                     "title": "CPU-túlpörgetés",
                     "status": {
                         "alwayson": "Be",
@@ -748,12 +742,11 @@
                 "sub1": "Saját biztonság",
                 "sub2": "Vírusirtó",
                 "sub3": "Biztonságos WiFi",
-                "sub4": "Jelszókezelő",
-                "sub5": "VPN",
+                "sub4": "Jelszó állapota",
+                "sub5": "VPN-biztonság",
                 "sub6": "Ujjlenyomat"
             },
             "support": "Támogatás",
-            "privacy": "Adatvédelem",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +757,8 @@
             "subtitle": "ELLENŐRIZZE, HOGY BIZTONSÁGOS-E A KÉSZÜLÉK.",
             "antiVirus": "Vírusirtó",
             "wifi": "Biztonságos WiFi",
-            "pswdMgr": "Jelszókezelő",
-            "vpn": "VPN",
+            "pswdMgr": "Jelszó állapota",
+            "vpn": "VPN-Biztonság",
             "enabled": "ENGEDÉLYEZETT",
             "disabled": "LETILTOTT",
             "partiallyProtected": "RÉSZLEGESEN VÉDETT",
@@ -779,8 +772,8 @@
             "fingerPrint": "Ujjlenyomat",
             "privacyPolicyAndTermsOfService": "<tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISZTRÁLT",
+            "notEnrolled": "NEM REGISZTRÁLT"
         },
         "qAndA": {
             "title": "Kérdések és válaszok a gépedhez",
@@ -809,11 +802,6 @@
         },
         "offline": {
             "connectToUseFeature": "Csatlakozzon az internethez a funkció használatához"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Adatvédelem"
         }
     },
     "tutorial": {
@@ -1040,7 +1028,7 @@
                     "Good": "<b>Az akkumulátor jó állapotban van.</b>",
                     "Exhaustion": "Az akkumulátor kapacitása <b>tartósan csökkent</b>. Kérjük, cserélje ki egy újra.",
                     "Bad": "<b>Hiba történt az akkumulátorral.</b> Az akkumulátor nem tölthető/meríthető le. Cserélje ki az akkumulátort.",
-                    "NotDetected": "<b>A rendszer nem észlel akkumulátort.</b>",
+                    "NotDetected": "<b>Nem található akkumulátor, vagy</b> az akkumulátor nincs megfelelően behelyezve.",
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
@@ -2287,7 +2275,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi és Biztonsági rendszer csatlakoztatott otthonhoz",
+                "title": "Biztonságos WiFi",
                 "back": "VISSZA"
             },
             "container": {
@@ -2471,7 +2459,7 @@
     "lenovoId": {
         "login": "Bejelentkezés",
         "logout": "Kijelentkezés",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Kijelentkezés...",
         "unlockExclusives": "Exkluzív ajánlatok",
         "user": "Felhasználó",
         "welcomeText1": "Ma energikusnak látszik, {{firstName}}!",
@@ -2904,7 +2892,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Előnyben részesített beállítások",
+        "preferenceSettings": "Előnyben Részesített Beállítások",
         "settings": "Beállítások",
         "settingsDescription": "Az előnyben részesített beállítások oldalán ki- és bekapcsolhatja az üzenetekről szóló értesítéseket a Vantage üzenetkategóriái alapján. Felhívjuk a figyelmét arra, hogy időnként még akkor is kaphat a rendszerrel kapcsolatos fontos üzeneteket a Vantage alkalmazástól, amikor minden üzenetkategória le van tiltva.",
         "messagesInLenovoVantage": "A Lenovo Vantage üzenetei",
@@ -3093,7 +3081,8 @@
             "storage": "Tárolás",
             "wireless": "Vezeték nélküli"
         },
-        "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül"
+        "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül",
+        "refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3423,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Most kiderítheti, hogy a személyes adataihoz online nyomkövetők illetéktelenül hozzáfértek-e vagy az Ön tudta nélkül felhasználták-e azokat.",
             "security": "Tudta ezt? Ha Ön semmilyen antivírus szoftvert nem telepített az eszközére, mi akkor is gondoskodunk egy alapvető biztonsági védelemről.",
             "connectedHomeSecurity": "Gondoskodjon otthoni hálózatának valós idejű felügyeletéről és az azonnali értesítésekről. Ön fog elsőként értesülni arról, ha valamelyik okos eszközének biztonságát valamilyen fenyegetés veszélyezteti."
         }

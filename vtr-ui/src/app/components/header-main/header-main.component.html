@@ -7,6 +7,7 @@
 			metricsEvent="FeatureClick"
 			metricsItem="back"
 			(click)="goBack()"
+			[hidden]="hideBack"
 			id="{{backId}}"
 			href="javascript:void();"
 			[attr.aria-label]="back"

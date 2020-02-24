@@ -6,12 +6,12 @@
 		<div class="col-md-12 col-sm-12 pl-0">
 
 			<div class="dropdown">
-				<input id="{{daysId}}"
+				<vtr-ui-checkbox componentId="{{daysId}}"
 					tabindex="-1"
-					class="dropcheck"
-					type="checkbox"
+					class="dropcheck d-none"
 					[checked]="showDropDown"
 					(click)="onToggleDropDown()">
+				</vtr-ui-checkbox>
 				<label for="{{daysId}}"
 					role="combobox"
 					aria-label="'smart standby, schedule dropdown days list'"
@@ -39,28 +39,18 @@
 									role="radiogroup"
 									tabindex="0">
 									<div *ngFor="let i of smartStandbyService.allDays">
-										<div class="custom-control custom-checkbox mb-3 ml-3"
-											tabindex="0"
-											(keydown.enter)="customControlInput.click()"
-											[attr.aria-checked]="i.status"
-											attr.aria-labelledby="{{i.shortName}}"
-											role="checkbox">
-											<input class="custom-control-input"
-												#customControlInput
-												type="checkbox"
+										<div class="custom-control custom-checkbox mb-3">
+											<vtr-ui-checkbox componentId="{{i.shortName}}"
 												role="checkbox"
-												aria-hidden="true"
-												tabindex="-1"
-												value="{{i.shortName}}"
-												id="{{i.shortName}}"
-												[(ngModel)]="i.status"
+												[value]="i.status"
+												[checked]="i.status"
 												attr.aria-label="{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}"
-												(change)="selectDay($event)">
-											<label class="custom-control-label"
-												for="{{i.shortName}}"
-												role="text">
+												(toggle)="selectDay($event, i.shortName)"
+												[label]="'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate"></vtr-ui-checkbox>
+											<!-- <label class="custom-control-label"
+												for="{{i.shortName}}">
 												{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}
-											</label>
+											</label> -->
 										</div>
 									</div>
 								</div>

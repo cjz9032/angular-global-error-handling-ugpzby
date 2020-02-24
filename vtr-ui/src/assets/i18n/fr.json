@@ -22,12 +22,6 @@
                     "rapidCharge": "Charge rapide"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "Surfréquençage activé",
-                        "performance": "Performances",
-                        "balance": "Equilibre",
-                        "quiet": "Silencieux"
-                    },
                     "title": "Overclocking UC",
                     "status": {
                         "alwayson": "Activé",
@@ -748,12 +742,11 @@
                 "sub1": "Ma sécurité",
                 "sub2": "Antivirus",
                 "sub3": "Sécurité WiFi",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "État de santé du mot de passe",
+                "sub5": "Sécurité VPN",
                 "sub6": "Empreinte digitale"
             },
             "support": "Soutien",
-            "privacy": "Confidentialité",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +757,8 @@
             "subtitle": "VÉRIFIEZ SI VOTRE PÉRIPHÉRIQUE EST SÉCURISÉ.",
             "antiVirus": "Antivirus",
             "wifi": "Sécurité WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "État de Santé du mot de passe",
+            "vpn": "Sécurité VPN",
             "enabled": "ACTIVÉ",
             "disabled": "DÉSACTIVÉ",
             "partiallyProtected": "PARTIELLEMENT PROTÉGÉ",
@@ -776,21 +769,21 @@
             "notFound": "NON TROUVÉ",
             "registered": "ENREGISTRÉ",
             "notRegistered": "NON ENREGISTRÉ",
-            "fingerPrint": "Empreinte digitale",
+            "fingerPrint": "Empreinte Digitale",
             "privacyPolicyAndTermsOfService": "<tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "ENREGISTRÉ",
+            "notEnrolled": "NON ENREGISTRÉ"
         },
         "qAndA": {
-            "title": "Q & A pour votre machine",
+            "title": "FAQ pour votre machine",
             "subtitle": "Trouvez des astuces utiles pour votre appareil.",
             "question1": "Sauvegarde et restauration de vos fichiers",
             "question2": "Procédure pour l'actualisation de votre ordinateur",
             "question3": "Procédure pour connaître l'unité centrale de votre ordinateur",
             "question4": "Vérifiez l'utilisation de la batterie de votre ordinateur",
             "question5": "Utilisez votre ordinateur comme une tablette",
-            "question6": "Faites la connaissance de Cortana, votre assistant personnel"
+            "question6": "Faites la connaissance de Cortana, votre assistante personnelle"
         },
         "ui": {
             "back": "RETOUR",
@@ -809,11 +802,6 @@
         },
         "offline": {
             "connectToUseFeature": "Connectez-vous à Internet pour utiliser cette fonction"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Confidentialité"
         }
     },
     "tutorial": {
@@ -847,7 +835,7 @@
             "title": "Aucune connexion Internet n'a été détectée",
             "subtitle": "En savoir plus sur la résolution des incidents de connexion dans notre",
             "buttonText": "Obtenir de l'aide",
-            "welcomeToVantage": "Bienvenue dans la prochaine génération de Vantage",
+            "welcomeToVantage": "Bienvenue dans la prochaine génération Vantage",
             "systemHealth": "État du système"
         },
         "feedback": {
@@ -855,8 +843,8 @@
             "subtitle": "Dites-nous ce que vous pensez de Vantage.",
             "button": "Donnez votre avis",
             "form": {
-                "email": "Email (optional)",
-                "question1": "Aimez-vous le nouveau style de Vantage ?",
+                "email": "Email (en option)",
+                "question1": "Aimez-vous le nouveau style Vantage ?",
                 "question2": "Pensez-vous que les performances sont acceptables ?",
                 "question3": "Avez-vous l'intention d'utiliser plus souvent l'application à l'avenir ?",
                 "question4": "Saviez-vous que vous pouvez utiliser Lenovo Vantage pour mettre à jour les pilotes de logiciels, le microprogramme et le BIOS de votre ordinateur ?",
@@ -867,23 +855,23 @@
                 "no": "Non",
                 "tips1": "Veuillez ajouter tout commentaire supplémentaire",
                 "comments": "Commentaires...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "sendFeedback": "Envoyer des commentaires",
+                "button": "Soumettre",
+                "addScreenshot": "Ajouter une capture d'écran",
+                "sendFeedback": "Envoyer un commentaire",
                 "submitScreenShot": "Envoyer une capture d'écran",
                 "messages": {
-                    "feedbackSuccess": "Merci pour vos commentaires !"
+                    "feedbackSuccess": "Merci pour votre commentaire !"
                 }
             }
         },
         "quickSettings": {
-            "title": "Vos paramètres rapides",
+            "title": "Votre configuration rapide des paramètres",
             "microphone": "Microphone",
             "cameraPrivacy": "Caméra",
-            "eyeCareMode": "Protection yeux",
+            "eyeCareMode": "Protection visuelle",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage n'a pas accès à la caméra et au micro.",
-                "accessUrl": "Accéder aux paramètres Windows pour donner accès",
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage n'a pas accès à la caméra ni au micro.",
+                "accessUrl": "Accéder aux paramètres Windows pour permettre l'accès",
                 "microphoneNote": "Lenovo Vantage n'a pas accès au micro.",
                 "cameraPrivacyNote": "Lenovo Vantage n'a pas accès à la caméra."
             },
@@ -892,18 +880,18 @@
         },
         "systemStatus": {
             "title": "État du système",
-            "subtitle": "Détectez rapidement l'état de votre appareil.",
+            "subtitle": "Détecter rapidement l'état de votre appareil.",
             "memory": {
                 "title": "Mémoire",
                 "detail": {
-                    "notFound": "Mémoire introuvable",
+                    "notFound": "Chargement des informations sur la mémoire",
                     "of": "sur"
                 }
             },
             "diskSpace": {
                 "title": "Espace disque",
                 "detail": {
-                    "notFound": "Disque introuvable",
+                    "notFound": "Chargement des informations sur le disque",
                     "of": "sur"
                 }
             },
@@ -930,7 +918,7 @@
             "subtitle": "État de mon périphérique",
             "serial": "Série",
             "productNumber": "Numéro de produit",
-            "biosVersion": "Version du bios",
+            "biosVersion": "Version du BIOS",
             "learnMore": "En savoir plus",
             "freeMemory": "Mémoire disponible",
             "systemUpdate": {
@@ -943,7 +931,7 @@
                     "neverRanUpdate": "mises à jour jamais vérifiées"
                 }
             },
-            "extendedWarranty": "Garantie prolongée",
+            "extendedWarranty": "Prolonger la garantie",
             "processor": {
                 "title": "Processeur",
                 "notFound": "Chargement des informations sur le processeur"
@@ -965,7 +953,7 @@
             "warranty": {
                 "notFound": "Impossible de trouver la garantie",
                 "detail": {
-                    "title": "Garantie prolongée",
+                    "title": "Prolonger la garantie",
                     "inWarranty": "Sous garantie",
                     "daysRemaining": "jours restants",
                     "outOfWarranty": "Hors garantie",
@@ -1040,7 +1028,7 @@
                     "Good": "<b>La batterie est en bon état.</b>",
                     "Exhaustion": "La capacité de la batterie est <b>affaiblie</b>. Veuillez la remplacer par une nouvelle.",
                     "Bad": "<b>Une erreur batterie s'est produite.</b> La batterie ne peut pas être chargée/déchargée. Remplacez la batterie.",
-                    "NotDetected": "<b>Aucune batterie détectée.</b>",
+                    "NotDetected": "<b>Aucune batterie n'a été</b> détectée ou n'est connectée à la batterie.",
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
                     "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
                     "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
@@ -1066,7 +1054,7 @@
             "power": {
                 "title": "Alimentation",
                 "subtitle": "Paramètres d'alimentation",
-                "description": "Cette section vous permet d'ajuster dynamiquement les performances thermiques et de maximiser la durée de vie de la batterie.Elle propose également d'autres fonctions d'alimentation populaires. Vous pouvez vérifier les paramètres par défaut de cette section et personnaliser votre système en fonction de vos besoins.",
+                "description": "Cette section vous permet d'ajuster dynamiquement les performances thermiques et de maximiser la durée de vie de la batterie.Elle propose également d'autres fonctions d'alimentation fréquemment utilisées. Vous pouvez vérifier les paramètres par défaut de cette section et personnaliser votre système en fonction de vos besoins.",
                 "jumpto": {
                     "title": "ACCÉDER AUX PARAMÈTRES",
                     "battery": "Batterie",
@@ -1170,8 +1158,8 @@
                     },
                     "easyResume": {
                         "title": "Reprise facile",
-                        "description": "Activez cette fonctionnalité pour améliorer la sortie du mode veille si vous ouvrez et rabattez fréquemment le capot de l'ordinateur.",
-                        "tooltip": "Cette fonctionnalité améliorera la sortie du mode veille de votre ordinateur si vous ouvrez et rabattez fréquemment le capot de votre ordinateur. Lorsque cette fonctionnalité est activée, votre ordinateur se mettra en mode économie d'énergie lorsque vous fermez son capot, et sortira du mode veille instantanément si vous le réouvrez moins de 15 minutes après l'avoir fermé. Cette fonctionnalité permet également à votre ordinateur de tenter de terminer les activités en cours (par exemple, l'envoi d'un e-mail ou le téléchargement d'un fichier) avant que le système ne s'interrompe."
+                        "description": "Activez cette fonction pour améliorer la sortie du mode veille si vous ouvrez et rabattez fréquemment l'écran de votre ordinateur.",
+                        "tooltip": "Cette fonction améliorera la sortie du mode veille de votre ordinateur si vous ouvrez et rabattez fréquemment l'écran. Lorsque cette fonction est activée, votre ordinateur se mettra en mode économie d'énergie lorsque vous le fermez, et sortira du mode veille instantanément si vous le réouvrez moins de 15 minutes après l'avoir fermé. Cette fonction permet également à votre ordinateur de tenter de terminer les activités en cours (par exemple, l'envoi d'un email ou le téléchargement d'un fichier) avant que le système ne s'interrompe."
                     },
                     "flipToBoot": {
                         "title": "Retourner pour démarrer",
@@ -1374,7 +1362,7 @@
             "audio": {
                 "title": "Audio",
                 "subtitle": "Paramètres audio",
-                "description": "Cette section vous permet d'optimiser automatiquement ou de configurercomplètement vos paramètres audio manuellement, tels que les paramètres Dolby, le micro, etc.",
+                "description": "Cette section vous permet d'optimiser automatiquement ou de configurer tous vos paramètres audio manuellement, tels que les paramètres Dolby, le micro, etc.",
                 "audioSmartsettings": {
                     "title": "Paramètres audio intelligents",
                     "subtitle": "PARAMÈTRES BASÉS SUR LES APPLICATIONS",
@@ -1403,27 +1391,27 @@
                     },
                     "microphone": {
                         "title": "Microphone",
-                        "tooltip": "Vous pouvez personnaliser l'effet du micro en réglant le volume du microet en spécifiant le mode approprié."
+                        "tooltip": "Vous pouvez personnaliser l'effet du micro en réglant le volume du micro et en spécifiant le mode approprié."
                     },
                     "volume": {
                         "title": "Volume du micro",
-                        "description": "Le Dolby audio offre un son puissant, clair et performant pour tous les contenus dont vous profitez, sélectionnez le mode approprié pour votre contenu et votre équipement.",
+                        "description": "Le Dolby Audio offre un son puissant, clair et performant pour tous les contenus que vous utilisez, sélectionnez le mode approprié pour votre contenu et votre équipement.",
                         "options": {
-                            "silent": "Silencieux",
-                            "loud": "Sonore"
+                            "silent": "Volume maximum",
+                            "loud": "Volume minimum"
                         }
                     },
                     "suppress": {
                         "title": "Supprimer le bruit du clavier",
-                        "tooltip": "Activer cette fonction pour optimiser le son du micro en supprimant le bruit du clavier."
+                        "tooltip": "Activez cette fonction pour optimiser le son du micro en supprimant le bruit du clavier."
                     },
                     "acoustic": {
-                        "title": "Annulation de l'écho acoustique",
+                        "title": "Suppression de l'écho acoustique",
                         "tooltip": "Activez cette fonction pour optimiser le son du micro en diminuant l'écho acoustique."
                     },
                     "optimize": {
                         "title": "Optimiser mon micro pour :",
-                        "tooltip": "Configurez l'effet micro pour améliorer votre expérience audio pour des scénarios et des environnements différents.",
+                        "tooltip": "Configurez l'effet micro pour améliorer votre expérience audio pour des situations et des environnements différents.",
                         "options": {
                             "VoiceRecognition": "RECONNAISSANCE VOCALE",
                             "OnlyMyVoice": "UNIQUEMENT MA VOIX",
@@ -1452,23 +1440,23 @@
                     "title": "Affichage",
                     "displayColorTemperature": {
                         "title": "Température de couleur de l'écran",
-                        "description": "Vous pouvez régler la température des couleurs de votre écran pour filtrer la lumière bleue et réduire la fatigue oculaire. Permet d'ajuster les couleurs de l'écran pour qu'elles soient plus chaudes du coucher du soleil jusqu'à l'aube pour vous aider à dormir.",
+                        "description": "Vous pouvez régler la température de couleur de votre écran pour filtrer la lumière bleue et réduire la fatigue oculaire. Cela permet d'ajuster les couleurs de l'écran pour qu'elles soient plus chaudes du coucher du soleil jusqu'à l'aube pour vous aider à vous endormir.",
                         "link": {
                             "click": "Cliquez",
                             "here": "ici",
-                            "rest": "pour changer la température des couleurs."
+                            "rest": "pour changer la température de couleur."
                         }
                     },
                     "eyeCareMode": {
-                        "title": "Mode Protection des yeux",
-                        "checkbox": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
+                        "title": "Mode Protection visuelle",
+                        "checkbox": "Programmer le mode Protection visuelle entre le coucher et le lever du soleil",
                         "options": {
-                            "warm": "Chaud (meilleur pour les yeux)",
+                            "warm": "Chaude (meilleur pour les yeux)",
                             "cold": "Froide"
                         },
                         "reset": "Réinitialiser",
-                        "tooltip": "Le mode protection des yeux règle la température des couleurs de votre écran pour filtrer la lumière bleue afin de l'atténuer et ainsi réduire la fatigue oculaire.",
-                        "onSunsetToSunriseScheduleDescription": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
+                        "tooltip": "Le mode Protection visuelle règle la température de couleur de votre écran pour filtrer la lumière bleue et ainsi réduire la fatigue des yeux.",
+                        "onSunsetToSunriseScheduleDescription": "Programmer le mode Protection visuelle entre le coucher et le lever du soleil",
                         "note": {
                             "title": "Important",
                             "description": "Lenovo Vantage doit accéder aux informations concernant votre emplacement pour calculer l'heure du coucher et du lever du soleil pour votre région."
@@ -1478,15 +1466,15 @@
                     "dispColorTemp": {
                         "title": "Température de couleur de l'écran",
                         "options": {
-                            "warm": "Chaud (meilleur pour les yeux)",
+                            "warm": "Chaude (meilleur pour les yeux)",
                             "cold": "Froide"
                         },
                         "reset": "Réinitialiser",
-                        "tooltip": "Le mode protection des yeux règle la température des couleurs de votre écran pour filtrer la lumière bleue afin de l'atténuer et ainsi réduire la fatigue oculaire.",
-                        "onSunsetToSunriseScheduleDescription": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
+                        "tooltip": "Le mode Protection visuelle règle la température de couleur de votre écran pour filtrer la lumière bleue et ainsi réduire la fatigue des yeux.",
+                        "onSunsetToSunriseScheduleDescription": "Programmer le mode Protection visuelle entre le coucher et le lever du soleil",
                         "note": {
                             "title": "Important",
-                            "description": "Lorsque le Mode Protection des yeux est activé, cette température de couleur ne prend pas effet. Cependant, vous pouvez faire glisser le curseur pour en obtenir un aperçu. Pour l'activer, désactivez le Mode Protection des yeux."
+                            "description": "Lorsque le mode Protection visuelle est activé, ce réglage de la température de couleur n'est pas disponible. Cependant, vous pouvez faire glisser le curseur pour en obtenir un aperçu. Pour l'activer, désactivez le mode Protection visuelle."
                         }
                     },
                     "privacyGuard": {
@@ -1537,8 +1525,8 @@
                     },
                     "url": "Accédez aux paramètres de confidentialité Windows",
                     "cameraPrivacy": {
-                        "title": "Mode de confidentialité de la caméra",
-                        "tooltip": "En mode privé, la caméra n'envoie plus d'images en direct. Activez cette fonctionnalité uniquement lorsque vous ne souhaitez pas montrer votre image à vos interlocuteurs lors d'appels vidéo."
+                        "title": "Mode privé de la caméra",
+                        "tooltip": "En mode privé, la caméra n'envoie plus d'images en direct. Activez cette fonction uniquement lorsque vous ne souhaitez pas partager d'images avec vos interlocuteurs lors d'appels vidéo."
                     },
                     "camera": {
                         "title": "Caméra",
@@ -2006,8 +1994,8 @@
             "title": "Site Web du support Lenovo"
         },
         "banner": {
-            "neverChecked": "Vous êtes invité à utiliser la mise à jour du système.",
-            "title": "Un système à jour est un système sain.",
+            "neverChecked": "Vous êtes invité à mettre à jour le système.",
+            "title": "Un système mis à jour est un système sain.",
             "installingTitle": "Pendant les mises à jour, ne mettez pas votre ordinateur en mode veille ni en hibernation.",
             "last": "Dernière mise à jour : ",
             "next": "Prochaine mise à jour prévue : ",
@@ -2218,23 +2206,23 @@
                 "virusScan": "RECHERCHE DE VIRUS",
                 "firewall": "PARE-FEU",
                 "disabled": "DÉSACTIVÉ",
-                "awardText": "Protégez votre nouveau PC Lenovo avec une protection testée et éprouvée contre les menaces en ligne",
-                "performance": "Des performances excpetionnelles",
-                "performanceText": "Antivirus constant, précis et fiable sur lequel vous pouvez compter pour vous protéger",
-                "Blazing": "Vitesse fulgurante",
-                "BlazingText": "Antivirus optimisé qui ne ralentira pas ou n'interrompra pas votre expérience Lenovo Vantage",
+                "awardText": "Protégez votre nouveau PC Lenovo avec une solution de sécurité testée et éprouvée contre les menaces en ligne",
+                "performance": "Des performances exceptionnelles",
+                "performanceText": "Un antivirus systématique, précis et fiable sur lequel vous pouvez compter pour vous protéger",
+                "Blazing": "Une vitesse fulgurante",
+                "BlazingText": "Un antivirus optimisé qui ne ralentira pas ou n'interrompra pas votre expérience Lenovo Vantage",
                 "privacyTerms": "/   <tag>Politique de confidentialité</tag>  |  <tag>Conditions générales</tag>",
                 "notAvailable": "Non disponible"
             },
             "windowsDefender": {
-                "optimallyProtected": "Il semble que vous utilisez actuellement Windows Defender. Ceci n'est pas un mauvais choix, mais pour la sécurité ultime contre les rançongiciels, les logiciels malveillants et les virus, nous nous sommes associés avec <b>McAfee</b> pour vous offrir la sécurité primée et ainsi <b>protéger ce qui compte.</b>",
+                "optimallyProtected": "Il semble que vous utilisez actuellement Windows Defender. Ceci n'est pas un mauvais choix, mais pour une sécurité optimale contre les rançongiciels, les logiciels malveillants et les virus, nous nous sommes associés à <b>McAfee</b> pour vous offrir une solution de sécurité primée et ainsi <b>protéger ce qui compte.</b>",
                 "windowsSubtitle": "Protection de base Windows Defender",
                 "topTip": "Les conseils indispensables pour la sécurité en ligne",
-                "topContent": "Découvrez comment vous pouvez vous défendre contre les plus grandes menaces en ligne d'aujourd'hui <tag>AFFICHER LES CONSEILS</tag>",
+                "topContent": "Découvrez comment vous pouvez vous protéger contre les plus grandes menaces en ligne d'aujourd'hui <tag>AFFICHER LES CONSEILS</tag>",
                 "view": "AFFICHER LES CONSEILS",
                 "buyNow": "Acheter maintenant",
-                "buy": "Achetez, téléchargez et installez la protection antivirus McAfee aujourd'hui pour profiter de caractéristiques de sécurité de niveau bancaire",
-                "onlyBasic": "Uniquement les bases ici. Même si vous êtes protégé contre certaines menaces en ligne, vous pouvez rester exposé à d'autres.",
+                "buy": "Achetez, téléchargez et installez la protection antivirus McAfee aujourd'hui pour profiter du même niveau de sécurité que les banques",
+                "onlyBasic": "Propose uniquement les fonctions de base. Même si vous êtes protégé contre certaines menaces en ligne, vous pouvez rester exposé à d'autres.",
                 "virus": "Protection antivirus",
                 "homeNetwork": "Protection du réseau domestique",
                 "private": "Navigation privée et anonyme",
@@ -2287,7 +2275,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi et Sécurité domestique connectée",
+                "title": "Sécurité WiFi",
                 "back": "RETOUR"
             },
             "container": {
@@ -2306,8 +2294,8 @@
                 "enabledDescribe": "La sécurité WiFi Lenovo surveille actuellement l'activité de votre réseau WiFi."
             },
             "threatlocator": {
-                "describe": "Utiliser l'outil de détection des menaces pour déterminer la sécurité des réseaux alentours.",
-                "button": "Vérifier les menaces",
+                "describe": "Utiliser l'outil de détection des menaces pour déterminer la sécurité des réseaux près de vous.",
+                "button": "Détecter les menaces",
                 "connectionError": "Erreur de connexion",
                 "tryAgain": "Impossible de localiser les menaces car le réseau n'est pas disponible. Connectez-vous à Internet et réessayez."
             },
@@ -2389,7 +2377,7 @@
             "statusTitle": "SURFEASY VPN",
             "title": "Sécurité VPN",
             "header": "SurfEasy VPN",
-            "whatIsSufEasy": "SurfEasy VPN chiffre les informations que vous envoyez et recevez de sorte que vous pouvez utilisez à titre privé et en toute sécurité votre PC, Mac®, smartphone ou tablette sur toutes les connexions Internet sans souci.",
+            "whatIsSufEasy": "SurfEasy VPN chiffre les informations que vous envoyez et recevez de sorte que vous puissiez utiliser de manière confidentielle et en toute sécurité votre PC, Mac®, smartphone ou tablette sur toutes les connexions Internet sans aucun souci.",
             "whatCanSufEasy1": "Un fournisseur de réseau privé virtuel qui vous protège lorsque vous êtes en ligne. Sans VPN, votre ordinateur peut être plus vulnérable aux attaques des pirates informatiques et aux risques d'usurpation d'identité. Le VPN s'exécute silencieusement en arrière-plan et offre une protection de la sécurité et de la confidentialité.",
             "startUseSufEasy4": "Les utilisateurs SurfEasy profitent de 250 Mo de trafic gratuits tous les 30 jours ! Suivez les instructions de l'onglet &quot;Récompenses&quot; de l'application SurfEasy pour obtenir plus de trafic.",
             "howToGetData": "Comment obtenir du trafic gratuitement :",
@@ -2414,7 +2402,7 @@
             "getStarted2": "Activer le VPN et attendre un court instant pour la confirmation d'une connexion sécurisée.",
             "getStarted3": "Modifiez votre région ou l'emplacement si vous le souhaitez et profitez de l'utilisation d'un réseau sécurisée et privée.",
             "poweredBySurfEasy": "Fourni par SurfEasy",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Pour en savoir plus sur les <tag>Règles de confidentialité</tag> et les <tag>Dispositions relatives au service</tag>"
         },
         "passwordManager": {
             "statusTitle": "GESTIONNAIRE DE MOT DE PASSE DASHLANE",
@@ -2443,7 +2431,7 @@
             "allowsYou3": "Rester en sécurité sur les réseaux WiFi non sécurisés grâce au VPN intégré",
             "allowsYou4": "Partager les mots de passe en sécurité sans les révéler",
             "poweredByDashLane": "Fourni par Dashlane",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Pour en savoir plus sur les <tag>Règles de confidentialité</tag> et les <tag>Dispositions relatives au service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2471,7 +2459,7 @@
     "lenovoId": {
         "login": "Connexion",
         "logout": "Se déconnecter",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Déconnexion...",
         "unlockExclusives": "Profitez des offres exclusives",
         "user": "Utilisateur",
         "welcomeText1": "Vous avez bonne mine aujourd'hui, {{firstName}} !",
@@ -2904,7 +2892,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Définition des préférences",
+        "preferenceSettings": "Définition Des Préférences",
         "settings": "Paramètres",
         "settingsDescription": "Dans la page des paramètres de préférences, vous pouvez choisir d'activer/désactiver la notification des messages en fonction des catégories de message de Vantage, veuillez noter que même si toutes les catégories de message sont désactivées, il se peut toutefois que vous receviez occasionnellement, lorsque nécessaire, des messages critiques du système de la part de Vantage.",
         "messagesInLenovoVantage": "Messages dans Lenovo Vantage",
@@ -3093,7 +3081,8 @@
             "storage": "Stockage",
             "wireless": "Sans fil"
         },
-        "warningMessage": "Gardez à l'esprit que les tests seront annulés si le système est en mode veille ou hibernation"
+        "warningMessage": "Gardez à l'esprit que les tests seront annulés si le système est en mode veille ou hibernation",
+        "refreshMessage": "L'actualisation peut prendre un certain temps, car tous les composants doivent être à nouveau chargés"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3383,7 +3372,7 @@
             "extendNow": "extend now",
             "renewNow": "Renew Now",
             "poweredBy": "Powered by Coronet",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Pour en savoir plus sur les <tag>Règles de confidentialité</tag> et les <tag>Dispositions relatives au service</tag>"
         },
         "tour": {
             "back": "Back",
@@ -3434,7 +3423,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Vous pouvez désormais déterminer si vos informations privées ont été compromises ou utilisées par des traqueurs en ligne à votre insu.",
             "security": "Le saviez-vous ? Même si vous n'avez pas installé de logiciel antivirus, nous proposons toujours une protection de base pour votre périphérique.",
             "connectedHomeSecurity": "Profitez d'une surveillance et d'alertes en temps réel concernant la sécurité de votre réseau à domicile. Vous serez le premier informé si l'un de vos périphériques intelligents est confronté à une attaque de sécurité."
         }

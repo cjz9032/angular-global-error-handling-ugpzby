@@ -748,12 +748,11 @@
                 "sub1": "Moja bezbednost",
                 "sub2": "Antivirusni program",
                 "sub3": "WiFi bezbednost",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "Ispravnost lozinke",
+                "sub5": "Bezbednost VPN mreže",
                 "sub6": "Fingerprint"
             },
             "support": "Podrška",
-            "privacy": "Privatnost",
             "beta": {
                 "title": "beta"
             },
@@ -763,9 +762,9 @@
             "title": "Savetnik za bezb.",
             "subtitle": "PROVERITE DA LI JE UREĐAJ ZAŠTIĆEN.",
             "antiVirus": "Antivirusni program",
-            "wifi": "WiFi bezbednost",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "wifi": "WiFi Bezbednost",
+            "pswdMgr": "Ispravnost Lozinke",
+            "vpn": "Bezbednost VPN Mreže",
             "enabled": "OMOGUĆENO",
             "disabled": "ONEMOGUĆENO",
             "partiallyProtected": "DELIMIČNO ZAŠTIĆEN",
@@ -779,8 +778,8 @@
             "fingerPrint": "Fingerprint",
             "privacyPolicyAndTermsOfService": "<tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTROVAN",
+            "notEnrolled": "NIJE REGISTROVAN"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Povežite se sa internetom da biste koristili ovu funkciju"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Privatnost"
         }
     },
     "tutorial": {
@@ -1040,7 +1034,7 @@
                     "Good": "<b>Baterija je u dobrom stanju.</b>",
                     "Exhaustion": "Kapacitet baterije je <b>smanjen</b>. Zamenite je novom.",
                     "Bad": "<b>Došlo je do greške sa baterijom.</b> Nije moguće napuniti/isprazniti bateriju. Zamenite bateriju.",
-                    "NotDetected": "<b>Nije otkrivena baterija.</b>",
+                    "NotDetected": "<b>Baterija nije otkrivena ili nije</b> priključena.",
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Adapter za naizmeničnu struju nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje.</b>",
@@ -2287,7 +2281,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi i povezana kućna bezbednost",
+                "title": "WiFi bezbednost",
                 "back": "NAZAD"
             },
             "container": {
@@ -2471,7 +2465,7 @@
     "lenovoId": {
         "login": "Prijava",
         "logout": "Odjava",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Odjavljivanje...",
         "unlockExclusives": "Otključaj ekskluzivnosti",
         "user": "Korisnik",
         "welcomeText1": "Danas izgledate puni energije, {{firstName}}!",
@@ -2904,7 +2898,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Postavke željenih opcija",
+        "preferenceSettings": "Postavke Željenih Opcija",
         "settings": "Postavke",
         "settingsDescription": "Na stranici „Postavke željenih opcija“, možete da odaberete da uključite/isključite obaveštenja porukama na osnovu kategorija Vantage poruka. Imajte u vidu da, čak i ako su sve kategorije poruka onemogućene, možete i dalje povremeno dobijati sistemske kritične poruke od aplikacije Vantage kada je to neophodno.",
         "messagesInLenovoVantage": "Poruke u aplikaciji Lenovo Vantage",
@@ -3093,7 +3087,8 @@
             "storage": "Skladištenje",
             "wireless": "Bežični"
         },
-        "warningMessage": "Imajte na umu da će testovi biti otkazani ako sistem bude u stanju spavanja ili hibernacije"
+        "warningMessage": "Imajte na umu da će testovi biti otkazani ako sistem bude u stanju spavanja ili hibernacije",
+        "refreshMessage": "Osvežavanje može da potraje jer treba da se ponovo učitaju sve komponente"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3429,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Sada možete da saznate da li je privatnost vaših informacija ugrožena ili da vaše privatne informacije koriste sistemi za praćenje na mreži bez vašeg znanja.",
             "security": "Da li znate? Čak i da nemate instaliran antivirusni softver, mi vam i dalje pružamo osnovnu bezbednosnu zaštitu za uređaj.",
             "connectedHomeSecurity": "Nabavite nadzor i upozorenja u realnom vremenu o bezbednosti mreže kod kuće. Bićete prvi koji će znati da li se neki od pametnih uređaja suočavaju sa bezbednosnim napadom."
         }

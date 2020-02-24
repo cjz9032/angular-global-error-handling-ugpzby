@@ -4,6 +4,7 @@
 	.left-icon {
 		margin-top: 1.25rem;
 		color: white;
+		padding-right: 1rem;
 	}
 	.subtitle {
 		width: 100%;
@@ -56,11 +57,12 @@
 		background: #225faa;
 		border-radius: 10px;
 		opacity: 0.9;
-		font-size: 1.7rem;
+		font-size: $fontsize_xs;
 		color: $light;
 		margin-top: 3rem;
 		margin-right:0rem;
 		max-width: 100%;
+		min-height: 2.8rem;
 	}
 
 	.alignment {
@@ -118,7 +120,7 @@
 	}
 	.optimize {
 		color: $light;
-		font-size: 1.6rem;
+		font-size: $fontsize_xs;
 		font-weight: 700;
 		margin-bottom: 10px;
 		margin-top: 2rem;

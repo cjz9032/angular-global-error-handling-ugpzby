@@ -73,12 +73,12 @@ export class SystemUpdateService {
 		if (this.systemUpdateBridge) {
 			return this.systemUpdateBridge.getUpdateSchedule()
 				.then((response) => {
-                this.autoUpdateStatus = {
-                    criticalAutoUpdates: (response.criticalAutoUpdates === 'ON') ? true : false,
-                    recommendedAutoUpdates: (response.recommendedAutoUpdates === 'ON') ? true : false
-                };
-                this.commonService.sendNotification(UpdateProgress.AutoUpdateStatus, this.autoUpdateStatus);
-            });
+				this.autoUpdateStatus = {
+					criticalAutoUpdates: (response.criticalAutoUpdates === 'ON') ? true : false,
+					recommendedAutoUpdates: (response.recommendedAutoUpdates === 'ON') ? true : false
+				};
+				this.commonService.sendNotification(UpdateProgress.AutoUpdateStatus, this.autoUpdateStatus);
+			});
 		}
 		return undefined;
 	}
@@ -122,9 +122,9 @@ export class SystemUpdateService {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.getUpdateHistory()
 				.then((response: Array<UpdateHistory>) => {
-                this.installationHistory = response;
-                this.commonService.sendNotification(UpdateProgress.FullHistory, this.installationHistory);
-            });
+				this.installationHistory = response;
+				this.commonService.sendNotification(UpdateProgress.FullHistory, this.installationHistory);
+			});
 		}
 	}
 
@@ -135,14 +135,14 @@ export class SystemUpdateService {
 			this.isCheckForUpdateComplete = false;
 			this.isInstallationCompleted = false;
 			this.systemUpdateBridge.checkForUpdates((progressPercentage: number) => {
-                this.percentCompleted = progressPercentage;
-                this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, progressPercentage);
-            }).then(async (response) => {
-                this.isCheckForUpdateComplete = true;
-                const status = parseInt(response.status, 10);
-                this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
+				this.percentCompleted = progressPercentage;
+				this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, progressPercentage);
+			}).then(async (response) => {
+				this.isCheckForUpdateComplete = true;
+				const status = parseInt(response.status, 10);
+				this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
 
-                if (status === SystemUpdateStatus.SUCCESS) { // success
+				if (status === SystemUpdateStatus.SUCCESS) { // success
 					this.percentCompleted = 0;
 					this.isUpdatesAvailable = true;
 					this.updateInfo = { status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
@@ -164,7 +164,7 @@ export class SystemUpdateService {
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
 				}
-            }).catch((error) => {
+			}).catch((error) => {
 				this.percentCompleted = 0;
 				this.metricHelper.sendSystemUpdateMetric(
 					0,
@@ -189,27 +189,28 @@ export class SystemUpdateService {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.cancelSearch()
 				.then((status: boolean) => {
-                // todo: ui changes to show on update cancel
-                this.isCheckingCancel = true;
-            });
+					// todo: ui changes to show on update cancel
+					this.isCheckingCancel = true;
+					this.commonService.sendNotification(UpdateProgress.UpdateCheckCancelled, status);
+				});
 		}
 	}
 
 	public getScheduleUpdateStatus(canReportProgress: boolean) {
 		if (this.systemUpdateBridge) {
-            this.systemUpdateBridge.getStatus(canReportProgress, (response: any) => {
-                this.processScheduleUpdate(response.payload, true);
-            }).then((response: ScheduleUpdateStatus) => {
-                this.isImcErrorOrEmptyResponse = false;
-                this.processScheduleUpdate(response, false);
-            }).catch((error) => {
+			this.systemUpdateBridge.getStatus(canReportProgress, (response: any) => {
+				this.processScheduleUpdate(response.payload, true);
+			}).then((response: ScheduleUpdateStatus) => {
+				this.isImcErrorOrEmptyResponse = false;
+				this.processScheduleUpdate(response, false);
+			}).catch((error) => {
 				if (error && error.errorcode === 606) {
 					setTimeout(() => {
 						this.getScheduleUpdateStatus(canReportProgress);
 					}, 200);
 				}
 			});
-        }
+		}
 	}
 
 	private processScheduleUpdate(response: any, isInProgress: boolean) {
@@ -549,14 +550,14 @@ export class SystemUpdateService {
 		this.commonService.sendNotification(UpdateProgress.InstallingUpdate, { downloadPercentage: 0, installPercentage: 0 });
 
 		this.systemUpdateBridge.installUpdates(updates, (progress: any) => {
-            this.isUpdateDownloading = true;
-            this.installationPercent = progress.installPercentage;
-            if (this.downloadingPercent < 100) {
+			this.isUpdateDownloading = true;
+			this.installationPercent = progress.installPercentage;
+			if (this.downloadingPercent < 100) {
 				this.downloadingPercent = progress.downloadPercentage;
 			}
-            this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
-        }).then((response: any) => {
-            if (response && response.updateResultList && response.updateResultList.length > 0) {
+			this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
+		}).then((response: any) => {
+			if (response && response.updateResultList && response.updateResultList.length > 0) {
 				this.isUpdateDownloading = false;
 				if (!this.isDownloadingCancel) {
 					this.isInstallationCompleted = true;
@@ -585,7 +586,7 @@ export class SystemUpdateService {
 				}, 2500);
 				this.isImcErrorOrEmptyResponse = true;
 			}
-        }).catch((error) => {
+		}).catch((error) => {
 			if (error &&
 				((error.description && error.description.includes('errorcode: 606'))
 					|| (error.errorcode && error.errorcode === 606))) {

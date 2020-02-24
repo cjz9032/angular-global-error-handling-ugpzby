@@ -22,12 +22,6 @@
                     "rapidCharge": "快速充電"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "超頻已開啟",
-                        "performance": "效能",
-                        "balance": "平衡",
-                        "quiet": "安靜"
-                    },
                     "title": "CPU 超頻",
                     "status": {
                         "alwayson": "開啟",
@@ -748,12 +742,11 @@
                 "sub1": "我的安全性",
                 "sub2": "防毒",
                 "sub3": "WiFi 安全性",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "密碼安全狀態",
+                "sub5": "VPN 安全性",
                 "sub6": "指紋"
             },
             "support": "支援",
-            "privacy": "隱私權",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +757,8 @@
             "subtitle": "檢查您的裝置是否安全。",
             "antiVirus": "防毒",
             "wifi": "WiFi 安全性",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "密碼安全狀態",
+            "vpn": "VPN 安全性",
             "enabled": "已啟用",
             "disabled": "已停用",
             "partiallyProtected": "受部分保護",
@@ -779,8 +772,8 @@
             "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "已註冊",
+            "notEnrolled": "未註冊"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -809,11 +802,6 @@
         },
         "offline": {
             "connectToUseFeature": "連接到網際網路以使用此功能"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "隱私權"
         }
     },
     "tutorial": {
@@ -1040,7 +1028,7 @@
                     "Good": "<b>電池狀況良好。</b>",
                     "Exhaustion": "電池容量已<b>降低</b>。請更換新的電池。",
                     "Bad": "<b>發生電池錯誤。</b>電池無法充電/放電。更換電池。",
-                    "NotDetected": "<b>未偵測到電池。</b>",
+                    "NotDetected": "<b>未偵測到電池或未</b>插入電池。",
                     "NotGood": "<b>電池狀況不佳。</b>",
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
@@ -2287,7 +2275,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi 與連線家庭安全性",
+                "title": "WiFi 安全性",
                 "back": "上一步"
             },
             "container": {
@@ -3093,7 +3081,8 @@
             "storage": "儲存裝置",
             "wireless": "無線"
         },
-        "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試"
+        "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試",
+        "refreshMessage": "重新整理可能需要一些時間，因為此時需要再度載入所有元件"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3423,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "現在您可以查明您的私人資訊是否已外洩，或在您不知情的情況下被線上追蹤器所使用。",
             "security": "您知道嗎？即使您沒有安裝防毒軟體，我們仍會為您的裝置提供基本的安全保護。",
             "connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。"
         }

@@ -21,19 +21,19 @@ import {
 
 export interface MetricsData {
 	ItemType: string;
-	ItemName ? : string;
-	ItemParent ? : string;
-	ItemParm ? : string;
-	ItemValue ? : string;
-	viewOrder ? : number;
-	ItemID ? : string;
-	ItemCategory ? : string;
-	ItemPosition ? : string;
-	PageNumber ? : string;
-	SettingParent ? : string;
-	SettingName ? : string;
-	SettingValue ? : string;
-	SettingParm ? : string;
+	ItemName?: string;
+	ItemParent?: string;
+	ItemParm?: string;
+	ItemValue?: string;
+	viewOrder?: number;
+	ItemID?: string;
+	ItemCategory?: string;
+	ItemPosition?: string;
+	PageNumber?: string;
+	SettingParent?: string;
+	SettingName?: string;
+	SettingValue?: string;
+	SettingParm?: string;
 }
 
 
@@ -80,6 +80,42 @@ export class MetricsDirective {
 	@Input() metricsSettingParm: string;
 	@Input() metricsSettingValue: string;
 
+	fillFeatureClickEvent(data: any) {
+		data.ItemType = 'FeatureClick';
+		data.ItemName = this.metricsTranslateService.translate(this.metricsItem);
+		data.ItemParent = this.metricsParent;
+		if (this.metricsParam) {
+			data.ItemParm = this.metricsParam;
+		}
+		if (this.metricsValue !== undefined) {
+			data.ItemValue = this.metricsValue;
+		}
+	}
+
+	fillArticleClickEvent(data: any) {
+		data.ItemType = 'ArticleClick';
+		data.ItemName = this.metricsTranslateService.translate(this.metricsItem);
+		data.ItemParent = this.metricsParent;
+		if (this.viewOrderService[this.metricsParent] === undefined) {
+			this.viewOrderService[this.metricsParent] = 0;
+		}
+		data.ItemParm = this.metricsParam;
+		data.viewOrder = (++this.viewOrderService[this.metricsParent]);
+		data.ItemID = this.metricsItemID;
+		data.ItemCategory = this.metricsItemCategory;
+		data.ItemPosition = this.metricsItemPosition;
+		data.PageNumber = this.metricsPageNumber || 1;
+	}
+
+	fillSettingUpdateEvent(data: any) {
+		data.ItemType = 'SettingUpdate';
+		data.SettingParent = this.metricsParent;
+		data.SettingName = this.metricsSettingName;
+		data.SettingValue = this.metricsSettingValue;
+		if (this.metricsSettingParm) {
+			data.SettingParm = this.metricsSettingParm;
+		}
+	}
 	composeMetricsData() {
 		const data: any = {};
 		const eventName = this.metricsEvent.toLowerCase();
@@ -88,46 +124,28 @@ export class MetricsDirective {
 			case 'FeatureClick':
 			case 'ItemClick':
 			case 'itemclick': {
-				data.ItemType = 'FeatureClick';
-				data.ItemName = this.metricsTranslateService.translate(this.metricsItem);
-				data.ItemParent = this.metricsParent;
-				if (this.metricsParam) {
-					data.ItemParm = this.metricsParam;
-				}
-				if (typeof this.metricsValue !== 'undefined') {
-					data.ItemValue = this.metricsValue;
-				}
+				this.fillFeatureClickEvent(data);
 				break;
 			}
 
 			case 'articleclick':
 			case 'ArticleClick':
 			case 'docclick': {
-				data.ItemType = 'ArticleClick';
-				data.ItemName = this.metricsTranslateService.translate(this.metricsItem);
-				data.ItemParent = this.metricsParent;
-				if (typeof this.viewOrderService[this.metricsParent] === 'undefined') {
-					this.viewOrderService[this.metricsParent] = 0;
-				}
-				data.ItemParm = this.metricsParam;
-				data.viewOrder = (++this.viewOrderService[this.metricsParent]);
-				data.ItemID = this.metricsItemID;
-				data.ItemCategory = this.metricsItemCategory;
-				data.ItemPosition = this.metricsItemPosition;
-				data.PageNumber = this.metricsPageNumber || 1;
+				this.fillArticleClickEvent(data);
 				break;
 			}
 
 			case 'settingupdate': {
-				data.ItemType = 'SettingUpdate';
-				data.SettingParent = this.metricsParent;
-				data.SettingName = this.metricsSettingName;
-				data.SettingValue = this.metricsSettingValue;
-				if (this.metricsSettingParm) {
-					data.SettingParm = this.metricsSettingParm;
-				}
+				this.fillSettingUpdateEvent(data);
 				break;
 			}
+			default:
+				// fill all data for unknown event
+				this.fillFeatureClickEvent(data);
+				this.fillArticleClickEvent(data);
+				this.fillSettingUpdateEvent(data);
+				data.ItemType = eventName;
+				break;
 		}
 		return data;
 	}
@@ -146,9 +164,14 @@ export class MetricsDirective {
 			this.metricsParent = this.activatedRoute.snapshot.data.pageName;
 		}
 
-        if (!this.metricsEvent || !this.metricsParent) {
-			this.devService.writeLog('sending metric breaks, missing event name or parent');
-			return;
+		if (!this.metricsEvent) {
+			this.metricsEvent = 'unknown';
+			this.devService.writeLog('sending metric, missing event name');
+		}
+
+		if (!this.metricsParent) {
+			this.metricsParent = 'unknown';
+			this.devService.writeLog('sending metric, missing event parent');
 		}
 
         const data = this.composeMetricsData();

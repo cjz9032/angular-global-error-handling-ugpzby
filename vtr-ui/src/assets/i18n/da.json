@@ -22,12 +22,6 @@
                     "rapidCharge": "Hurtig opladning"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "Overclock. til",
-                        "performance": "Ydeevne",
-                        "balance": "Balance",
-                        "quiet": "Stille"
-                    },
                     "title": "CPU-overclocking",
                     "status": {
                         "alwayson": "Aktiveret",
@@ -749,11 +743,10 @@
                 "sub2": "Antivirus",
                 "sub3": "WiFi-sikkerhed",
                 "sub4": "Adgangskodesundhed",
-                "sub5": "VPN",
+                "sub5": "VPN-sikkerhed",
                 "sub6": "Fingeraftryk"
             },
             "support": "Support",
-            "privacy": "Anonymitet",
             "beta": {
                 "title": "beta"
             },
@@ -763,9 +756,9 @@
             "title": "Sikkerhedsvejledning",
             "subtitle": "KONTROLLÉR, OM DIN ENHED ER SIKRET.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-sikkerhed",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "wifi": "WiFi-Sikkerhed",
+            "pswdMgr": "Adgangskodesundhed",
+            "vpn": "VPN-Sikkerhed",
             "enabled": "AKTIVERET",
             "disabled": "DEAKTIVERET",
             "partiallyProtected": "DELVIST BESKYTTET",
@@ -779,8 +772,8 @@
             "fingerPrint": "Fingeraftryk",
             "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTRERET",
+            "notEnrolled": "IKKE REGISTRERET"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -809,11 +802,6 @@
         },
         "offline": {
             "connectToUseFeature": "Opret forbindelse til internettet for at bruge denne funktion"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Anonymitet"
         }
     },
     "tutorial": {
@@ -1040,7 +1028,7 @@
                     "Good": "<b>Batteriets tilstand er god.</b>",
                     "Exhaustion": "Batteriets kapacitet er blevet <b>forringet</b>. Udskift det med et nyt.",
                     "Bad": "<b>Der er opstået en batterifejl.</b> Batteriet kan ikke oplades/aflades. Udskift batteriet.",
-                    "NotDetected": "<b>Der blev ikke fundet noget batteri.</b>",
+                    "NotDetected": "<b>Der er ikke registreret et batteri</b>, eller der er ikke tilsluttet noget batteri.",
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
                     "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm.</b>",
@@ -2287,7 +2275,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi og Tilsluttet Home Security",
+                "title": "WiFi-sikkerhed",
                 "back": "TILBAGE"
             },
             "container": {
@@ -2471,7 +2459,7 @@
     "lenovoId": {
         "login": "Login",
         "logout": "Log af",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Logger af...",
         "unlockExclusives": "Lås Eksklusive op",
         "user": "Bruger",
         "welcomeText1": "Du ser ud til at være fuld af energi i dag, {{firstName}}!",
@@ -3093,7 +3081,8 @@
             "storage": "Lager",
             "wireless": "Trådløs"
         },
-        "warningMessage": "Husk, at testene bliver annulleret, hvis systemet slumrer eller går i dvaletilstand"
+        "warningMessage": "Husk, at testene bliver annulleret, hvis systemet slumrer eller går i dvaletilstand",
+        "refreshMessage": "Opdateringen kan tage noget tid, da den skal indlæse alle komponenterne igen"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,8 +3423,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nu kan du finde ud af, om der har været et sikkerhedsbrud, så dine personlige oplysninger er blevet registreret eller brugt af online-trackere, uden at du ved det.",
-            "security": "Vidste du det? Selvom du ikke har et antivirusprogram installeret, tilbyder vi stadig en grundlæggende sikkerhedsbeskyttelse til din enhed.",
+			"security": "Vidste du det? Selvom du ikke har et antivirusprogram installeret, tilbyder vi stadig en grundlæggende sikkerhedsbeskyttelse til din enhed.",
             "connectedHomeSecurity": "Få overvågning i realtid og advarsler om din netværkssikkerhed derhjemme. Du er den første, der får det at vide, hvis nogen af dine smart-enheder er udsat for et sikkerhedsangreb."
         }
     },

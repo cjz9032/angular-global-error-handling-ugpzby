@@ -60,9 +60,10 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 		button.focus();
 	}
 
-	public toggleAutoChargeSettings(event: any) {
+	public toggleAutoChargeSettings($event: boolean) {
 		const bctInfo = this.commonService.cloneObj(this.bctInfo);
-		if (event) {
+		bctInfo.checkboxValue = $event;
+		if ($event) {
 			bctInfo.startValue = this.bctInfo.stopValue - 5;
 		}
 		this.autoChecked.emit(bctInfo);

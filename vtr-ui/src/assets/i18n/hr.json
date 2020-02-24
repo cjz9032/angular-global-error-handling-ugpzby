@@ -22,12 +22,6 @@
                     "rapidCharge": "Brzo punjenje"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "Overclock uklj.",
-                        "performance": "Performanse",
-                        "balance": "Balans",
-                        "quiet": "Tiho"
-                    },
                     "title": "Overclock CPU-a",
                     "status": {
                         "alwayson": "Uključeno",
@@ -747,13 +741,12 @@
                 "title": "Sigurnost",
                 "sub1": "Moja sigurnost",
                 "sub2": "Zaštita od virusa",
-                "sub3": "Sigurnost WiFi mreže",
-                "sub4": "Upravitelj lozinki",
-                "sub5": "VPN",
+                "sub3": "Sigurnost WiFija",
+                "sub4": "Jačina lozinke",
+                "sub5": "Sigurnost VPN mreže",
                 "sub6": "Otisak prsta"
             },
             "support": "Podrška",
-            "privacy": "Zaštita privatnosti",
             "beta": {
                 "title": "beta"
             },
@@ -763,9 +756,9 @@
             "title": "Savjetnik za sigurnost tvrtke",
             "subtitle": "PROVJERITE JE LI VAŠ UREĐAJ ZAŠTIĆEN.",
             "antiVirus": "Zaštita od virusa",
-            "wifi": "Sigurnost WiFi mreže",
-            "pswdMgr": "Upravitelj lozinki",
-            "vpn": "VPN",
+            "wifi": "Sigurnost WiFija",
+            "pswdMgr": "Jačina Lozinke",
+            "vpn": "Sigurnost VPN Mreže",
             "enabled": "OMOGUĆENO",
             "disabled": "ONEMOGUĆENO",
             "partiallyProtected": "DJELOMIČNO ZAŠTIĆEN",
@@ -779,8 +772,8 @@
             "fingerPrint": "Otisak prsta",
             "privacyPolicyAndTermsOfService": "<tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "UPISAN",
+            "notEnrolled": "NIJE UPISAN"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -809,11 +802,6 @@
         },
         "offline": {
             "connectToUseFeature": "Povežite se s internetom da biste koristili ovu značajku"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Zaštita privatnosti"
         }
     },
     "tutorial": {
@@ -1040,7 +1028,7 @@
                     "Good": "<b>Baterija je u dobrom stanju.</b>",
                     "Exhaustion": "Kapacitet baterije je <b>degradiran</b>. Zamijenite je novom.",
                     "Bad": "<b>Došlo je do pogreške baterije.</b> Bateriju nije moguće puniti/prazniti. Zamijenite bateriju.",
-                    "NotDetected": "<b>Nije otkrivena baterija.</b>",
+                    "NotDetected": "<b>Baterija nije pronađena</b> ili nije priključena.",
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Prilagodnik izmjeničnog napona nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Prilagodnik izmjeničnog napona ne može pružiti dovoljno energije.</b>",
@@ -2287,7 +2275,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi i povezana sigurnost doma",
+                "title": "Sigurnost WiFija",
                 "back": "NATRAG"
             },
             "container": {
@@ -2471,7 +2459,7 @@
     "lenovoId": {
         "login": "Prijava",
         "logout": "Odjava",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Odjavljivanje...",
         "unlockExclusives": "Otključaj ekskluzivne stavke",
         "user": "Korisnik",
         "welcomeText1": "Danas smo puni energije, {{firstName}}!",
@@ -2904,7 +2892,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Postavke postavki",
+        "preferenceSettings": "Postavke Postavki",
         "settings": "Postavke",
         "settingsDescription": "Na stranici postavki možete odabrati uključivanje / isključivanje obavijesti o porukama na temelju kategorija Vantageove poruke. Napominjemo da čak i ako su sve kategorije poruka onemogućene, još uvijek možete povremeno primati ključnu poruku sustava Vantage kada je to potrebno.",
         "messagesInLenovoVantage": "Poruke u aplikaciji Lenovo Vantage",
@@ -3093,7 +3081,8 @@
             "storage": "Pohrana",
             "wireless": "Bežična veza"
         },
-        "warningMessage": "Napominjemo da će se testovi otkazati ako je sustav u stanju mirovanja ili hibernacije"
+        "warningMessage": "Napominjemo da će se testovi otkazati ako je sustav u stanju mirovanja ili hibernacije",
+        "refreshMessage": "Osvježavanje može potrajati neko vrijeme jer je potrebno ponovno učitati sve komponente"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3423,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Sada možete saznati jesu li internetski tragači zloupotrijebili ili koristili vaše privatne podatke bez vašeg znanja.",
             "security": "Znate li? Čak i ako nemate instaliran antivirusni softver, još uvijek vam pružamo osnovnu sigurnosnu zaštitu vašeg uređaja.",
             "connectedHomeSecurity": "Dobijte praćenje u stvarnom vremenu i upozorenja o mrežnoj sigurnosti vašeg doma. Prvi ćete saznati ako se bilo koji od vaših pametnih uređaja suoči sa sigurnosnim napadom."
         }

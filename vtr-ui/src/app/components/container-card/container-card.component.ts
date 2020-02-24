@@ -46,7 +46,6 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	}
 
 	handleLoading() {
-		// console.log(this.img, '+++++++++---------');
 		if (this.img) {
 			this.isLoading = false;
 		} else {

@@ -18,11 +18,6 @@ import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-cap
 import { Router } from '@angular/router';
 import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
-import { ModalGamingThermalMode2Component } from '../../modal/modal-gaming-thermal-mode2/modal-gaming-thermal-mode2.component';
-import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
-import { GamingOCService } from 'src/app/services/gaming/gaming-OC/gaming-oc.service';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { EventTypes } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-widget-legion-edge',
@@ -214,13 +209,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			}
 		]
 	};
-
-	// TODO lite gaming
-	// public desktopType = false;
-	// TODO thermal mode 2.0
-	public thermalModeRealStatus: number = 2;
-	public OCSettings: number = 3;
-
 	public cpuOCStatus: CPUOCStatus = new CPUOCStatus();
 	public setCpuOCStatus: any;
 	public cacheMemOCFeature = false;
@@ -229,7 +217,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	constructor(
 		private modalService: NgbModal,
 		private ngZone: NgZone,
-		private shellServices: VantageShellService,
 		private gamingSystemUpdateService: GamingSystemUpdateService,
 		private gamingAllCapabilities: GamingAllCapabilitiesService,
 		private commonService: CommonService,
@@ -238,33 +225,15 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingNetworkBoostService: NetworkBoostService,
 		private gamingAutoCloseService: GamingAutoCloseService,
-		private gamingThermalModeService: GamingThermalModeService,
-		private gamingOCService: GamingOCService,
 		private router: Router
 	) { }
 	ngOnInit() {
-		// TODO Lite Gaming
-		this.gamingCapabilities.desktopType = this.commonService.getLocalStorageValue( LocalStorageKey.desktopType);
-		this.gamingCapabilities.liteGaming = this.gamingCapabilityService.getCapabilityFromCache( LocalStorageKey.liteGaming);
-		// TODO Thermal Mode 2.0 capabilities
-		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.smartFanFeature
-		);
-		this.gamingCapabilities.thermalModeVersion = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.thermalModeVersion
-		);
-
 		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hybridModeFeature
 		);
 		this.gamingCapabilities.cpuOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.cpuOCFeature
 		);
-		// TODO OC capabilities for Thermal Mode 2.0
-		this.gamingCapabilities.gpuOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.gpuOCFeature
-		);
-
 		this.gamingCapabilities.memOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.memOCFeature
 		);
@@ -286,40 +255,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.gamingCapabilities.xtuService = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.xtuService
 		);
-		// TODO OC driver status
-		this.gamingCapabilities.nvDriver = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.nvDriver
-		);
-
 		this.gamingCapabilities.fbnetFilter = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.fbNetFilter
 		);
-		// TODO init item for Thermal Mode 2.0 
-		if (this.gamingCapabilities.smartFanFeature) {
-			if (this.gamingCapabilities.thermalModeVersion === 2) {
-				this.thermalModeRealStatus = this.gamingCapabilityService.getCapabilityFromCache(
-					LocalStorageKey.RealThermalModeStatus
-				);
-				if (this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
-					if (this.gamingCapabilities.xtuService && this.gamingCapabilities.nvDriver) {
-						if (this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus) === 1 && this.commonService.getLocalStorageValue(LocalStorageKey.GpuOCStatus) === 1) {
-							this.OCSettings = 1;
-						} else {
-							this.OCSettings = 3;
-						}
-					}
-				} else if (this.gamingCapabilities.cpuOCFeature && !this.gamingCapabilities.gpuOCFeature) {
-					if (this.gamingCapabilities.xtuService) {
-						this.OCSettings = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
-					}
-				} else if (!this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
-					if (this.gamingCapabilities.nvDriver) {
-						this.OCSettings = this.commonService.getLocalStorageValue(LocalStorageKey.GpuOCStatus);
-					}
-				}
-			}
-		}
-
 		this.cacheMemOCFeature = this.commonService.getLocalStorageValue(LocalStorageKey.memOCFeatureStatus);
 		this.legionUpdate[1].isChecked = this.cacheMemOCFeature;
 
@@ -334,25 +272,14 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
 				this.gamingCapabilities = response.payload;
-				this.unRegisterThermalModeRealStatusChangeEvent();
 				this.legionEdgeInit();
 			}
 		});
 	}
 
-	ngOnDestroy(): void {
-		this.unRegisterThermalModeRealStatusChangeEvent();
-	}
-
 	legionEdgeInit() {
 		const gamingStatus = this.gamingCapabilities;
-		// TODO thermalMode 2.0
-		if (gamingStatus.thermalModeVersion === 2) {
-			this.legionUpdate[0].isVisible = false;
-		} else {
-			this.legionUpdate[0].isVisible = gamingStatus.cpuOCFeature;
-		}
-		// this.legionUpdate[0].isVisible = gamingStatus.cpuOCFeature;
+		this.legionUpdate[0].isVisible = gamingStatus.cpuOCFeature;
 		this.legionUpdate[1].isVisible = gamingStatus.memOCFeature;
 		this.legionUpdate[3].isVisible = gamingStatus.optimizationFeature || false;
 		this.legionUpdate[2].isVisible = gamingStatus.networkBoostFeature || false;
@@ -369,16 +296,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		} else {
 			this.drop.hideDropDown = false;
 		}
-		// TODO Thermal Mode 2  
-		// this.renderThermalMode2Status();
-		if (gamingStatus.smartFanFeature && gamingStatus.thermalModeVersion === 2) {
-			this.renderThermalMode2RealStatus();
-			this.registerThermalModeRealStatusChangeEvent();
-			if (gamingStatus.cpuOCFeature || gamingStatus.gpuOCFeature) {
-				this.renderThermalMode2OCSettings();
-			}
-		}
-		if (gamingStatus.cpuOCFeature && gamingStatus.thermalModeVersion === 1) {
+
+		if (gamingStatus.cpuOCFeature) {
 			this.renderCPUOverClockStatus();
 		}
 		if (gamingStatus.memOCFeature) {
@@ -480,71 +399,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			});
 		} catch (error) { }
 	}
-	public renderThermalMode2RealStatus() {
-		//TODO thermal mode real status
-		this.gamingThermalModeService.getThermalModeRealStatus().then(res => {
-			if (res !== this.thermalModeRealStatus && res !== undefined) {
-				this.thermalModeRealStatus = res;
-				this.commonService.setLocalStorageValue(LocalStorageKey.RealThermalModeStatus, this.thermalModeRealStatus);
-			}
-		});
-	}
-
-	public registerThermalModeRealStatusChangeEvent() {
-		if (this.gamingCapabilities.smartFanFeature) {
-			this.gamingThermalModeService.regThermalModeRealStatusChangeEvent();
-			this.shellServices.registerEvent(
-				EventTypes.gamingThermalModeRealStatusChangeEvent,
-				this.onRegThermalModeRealStatusChangeEvent.bind(this)
-			);
-		}
-	}
-
-	public unRegisterThermalModeRealStatusChangeEvent() {
-		this.shellServices.unRegisterEvent(
-			EventTypes.gamingThermalModeRealStatusChangeEvent,
-			this.onRegThermalModeRealStatusChangeEvent.bind(this)
-		);
-	}
-
-	public onRegThermalModeRealStatusChangeEvent(currentRealStatus: any) {
-		this.ngZone.run(() => {
-			if (currentRealStatus !== undefined && this.thermalModeRealStatus !== currentRealStatus) {
-				this.thermalModeRealStatus = currentRealStatus;
-				this.commonService.setLocalStorageValue(LocalStorageKey.RealThermalModeStatus, this.thermalModeRealStatus);
-			}
-		});	
-	}
-
-	public renderThermalMode2OCSettings() {
-		this.gamingOCService.getPerformanceOCSetting().then(res => {
-			if (this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
-				if (this.gamingCapabilities.xtuService && this.gamingCapabilities.nvDriver) {
-					this.OCSettings = res ? 1 : 3;
-					this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.OCSettings);
-					this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, this.OCSettings);
-				} else {
-					this.OCSettings = 3;
-				}
-			} else if (this.gamingCapabilities.cpuOCFeature && !this.gamingCapabilities.gpuOCFeature) {
-				if (this.gamingCapabilities.xtuService) {
-					this.OCSettings = res ? 1 : 3;
-					this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.OCSettings);
-				} else {
-					this.OCSettings = 3;
-				}
-			} else if (!this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
-				if (this.gamingCapabilities.nvDriver) {
-					this.OCSettings = res ? 1 : 3;
-					this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, this.OCSettings);
-				} else {
-					this.OCSettings = 3;
-				}
-			} else {
-				this.OCSettings = 3;
-			}
-		});
-	}
 
 	onOptionSelected(event: any) {
 		if (event.target.name === 'gaming.dashboard.device.legionEdge.title') {
@@ -567,15 +421,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 	openModal() {
 		this.modalService.open(ModalGamingLegionedgeComponent, { backdrop: true, windowClass: 'gaming-help-modal' });
-	}
-	openThermalMode2Modal() {
-		let modalRef = this.modalService.open(ModalGamingThermalMode2Component, { backdrop: 'static', windowClass: 'modal-fun' });
-		// modalRef.componentInstance.thermalModeMsg.subscribe(res => {
-		// 	this.thermalModeStatus = res;
-		// });
-		modalRef.componentInstance.OCSettingsMsg.subscribe(res => {
-			this.OCSettings = res;
-		});
 	}
 	public renderRamOverClockStatus() {
 		if (this.gamingCapabilities.xtuService === true) {

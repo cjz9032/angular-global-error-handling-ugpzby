@@ -22,12 +22,6 @@
                     "rapidCharge": "Hurtiglading"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "Overklokking på",
-                        "performance": "Ytelse",
-                        "balance": "Balanse",
-                        "quiet": "Stille"
-                    },
                     "title": "CPU-overklokking",
                     "status": {
                         "alwayson": "På",
@@ -748,12 +742,11 @@
                 "sub1": "Min sikkerhet",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-sikkerhet",
-                "sub4": "Passordbehandling",
-                "sub5": "VPN",
+                "sub4": "Passordtilstand",
+                "sub5": "VPN-sikkerhet",
                 "sub6": "Fingeravtrykk"
             },
             "support": "Støtte",
-            "privacy": "Personvern",
             "beta": {
                 "title": "beta"
             },
@@ -763,9 +756,9 @@
             "title": "Sikkerhetsrådgivning",
             "subtitle": "KONTROLLER OM ENHETEN ER SIKRET.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-sikkerhet",
-            "pswdMgr": "Passordbehandling",
-            "vpn": "VPN",
+            "wifi": "WiFi-Sikkerhet",
+            "pswdMgr": "Passordtilstand",
+            "vpn": "VPN-Sikkerhet",
             "enabled": "AKTIVERT",
             "disabled": "DEAKTIVERT",
             "partiallyProtected": "DELVIS BESKYTTET",
@@ -779,8 +772,8 @@
             "fingerPrint": "Fingeravtrykk",
             "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTRERT",
+            "notEnrolled": "IKKE REGISTRERT"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
@@ -809,11 +802,6 @@
         },
         "offline": {
             "connectToUseFeature": "Koble til Internett for å bruke denne funksjonen"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Personvern"
         }
     },
     "tutorial": {
@@ -1040,7 +1028,7 @@
                     "Good": "<b>Batteriet er i god stand.</b>",
                     "Exhaustion": "Batterikapasiteten er <b>redusert</b>. Bytt det ut med et nytt.",
                     "Bad": "<b>Det har oppstått en batterifeil.</b> Batteriet kan ikke lades/utlades. Bytt batteri.",
-                    "NotDetected": "<b>Batteri ikke oppdaget.</b>",
+                    "NotDetected": "<b>Kan ikke gjenkjenne batteri, eller</b> batteri ikke satt i.",
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
                     "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
@@ -2287,7 +2275,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi og Sikkerhet for tilkoblede hjem",
+                "title": "WiFi-sikkerhet",
                 "back": "TILBAKE"
             },
             "container": {
@@ -2471,7 +2459,7 @@
     "lenovoId": {
         "login": "Logg på",
         "logout": "Logg av",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Logger av...",
         "unlockExclusives": "Få eksklusive tilbud",
         "user": "Bruker",
         "welcomeText1": "Ser frisk ut i dag, {{firstName}}!",
@@ -2904,7 +2892,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Preferanser og innstillinger",
+        "preferenceSettings": "Preferanser Og Innstillinger",
         "settings": "Innstillinger",
         "settingsDescription": "På siden med preferanser og innstillinger kan du slå meldingsvarsler på/av basert på meldingskategoriene til Vantage. Vær obs på at selv om alle meldingskategoriene deaktiveres, kan du fremdeles få systemkritiske meldinger fra Vantage fra tid til annen.",
         "messagesInLenovoVantage": "Meldinger i Lenovo Vantage",
@@ -3093,7 +3081,8 @@
             "storage": "Lagring",
             "wireless": "Trådløs"
         },
-        "warningMessage": "Husk at testene vil bli kansellert hvis systemet er i hvile- eller dvalemodus"
+        "warningMessage": "Husk at testene vil bli kansellert hvis systemet er i hvile- eller dvalemodus",
+        "refreshMessage": "Oppdatering kan ta litt tid siden alle komponentene må lastes inn på nytt"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,8 +3423,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nå kan du finne ut om personopplysningene dine er på avveie eller brukes av sporingsverktøy på nettet uten at du vet om det.",
-            "security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
+			"security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
             "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep."
         }
     },

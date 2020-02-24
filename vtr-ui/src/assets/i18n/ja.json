@@ -22,12 +22,6 @@
                     "rapidCharge": "急速充電"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
-                        "OC_On": "CLKUPオン",
-                        "performance": "性能",
-                        "balance": "バランス",
-                        "quiet": "静音"
-                    },
                     "title": "CPU クロックアップ",
                     "status": {
                         "alwayson": "オン",
@@ -748,12 +742,11 @@
                 "sub1": "マイ・セキュリティー",
                 "sub2": "アンチウィルス",
                 "sub3": "WiFi セキュリティー",
-                "sub4": "パスワードマネージャー",
-                "sub5": "VPN",
+                "sub4": "パスワードの健全性",
+                "sub5": "VPN セキュリティー",
                 "sub6": "指紋"
             },
             "support": "サポート",
-            "privacy": "プライバシー",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +757,8 @@
             "subtitle": "デバイスが保護されているかどうかを確認します。",
             "antiVirus": "アンチウィルス",
             "wifi": "WiFi セキュリティー",
-            "pswdMgr": "パスワードマネージャー",
-            "vpn": "VPN",
+            "pswdMgr": "パスワードの健全性",
+            "vpn": "VPN セキュリティー",
             "enabled": "有効",
             "disabled": "無効",
             "partiallyProtected": "部分的に保護",
@@ -779,8 +772,8 @@
             "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "登録済み",
+            "notEnrolled": "未登録"
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
@@ -809,11 +802,6 @@
         },
         "offline": {
             "connectToUseFeature": "この機能を使用するには、インターネットに接続してください"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "プライバシー"
         }
     },
     "tutorial": {
@@ -1040,7 +1028,7 @@
                     "Good": "<b>バッテリーは良好な状態です。</b>",
                     "Exhaustion": "バッテリー容量が<b>低下しています</b>。新しいバッテリーに交換してください。",
                     "Bad": "<b>バッテリー・エラーが発生しました。</b>バッテリーを充電/放電できません。バッテリーを交換してください。",
-                    "NotDetected": "<b>バッテリーが検出されませんでした。</b>",
+                    "NotDetected": "<b>バッテリーが検出されないか</b>、接続されていません。",
                     "NotGood": "<b>バッテリーは良好な状態ではありません。</b>",
                     "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>",
                     "LimitedACAdapterSupport": "<b>ACアダプターが十分な電力を供給できません。</b>",
@@ -2287,7 +2275,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi/接続ホーム・セキュリティー",
+                "title": "WiFi セキュリティー",
                 "back": "戻る"
             },
             "container": {
@@ -2471,7 +2459,7 @@
     "lenovoId": {
         "login": "ログイン",
         "logout": "ログアウト",
-        "loggingOut": "Logging out...",
+        "loggingOut": "ログアウト中...",
         "unlockExclusives": "専用機能をロック解除",
         "user": "ユーザー",
         "welcomeText1": "今日はエネルギーにあふれているように見えます、{{firstName}} さん!",
@@ -3093,7 +3081,8 @@
             "storage": "ストレージ",
             "wireless": "ワイヤレス"
         },
-        "warningMessage": "システムがスリープ状態または休止状態になると、テストがキャンセルされることに注意してください"
+        "warningMessage": "システムがスリープ状態または休止状態になると、テストがキャンセルされることに注意してください",
+        "refreshMessage": "すべてのコンポーネントを再度読み込む必要があるため、更新に時間がかかる場合があります"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3423,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "これで、個人情報が知らないうちにオンライン・トラッカーによって侵害されたり使用されたりしたかどうかを知ることができます。",
             "security": "ご存知ですか。ウイルス対策ソフトウェアをインストールしていない場合でも、デバイスの基本的なセキュリティ保護を提供します。",
             "connectedHomeSecurity": "自宅でネットワーク・セキュリティに関するリアルタイムの監視とアラートを実現します。スマート・デバイスのいずれかがセキュリティ攻撃に直面しているかどうかを知る最初の人物になります。"
         }

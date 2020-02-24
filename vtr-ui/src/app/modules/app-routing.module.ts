@@ -19,15 +19,21 @@ const routes: Routes = [
 	},
 	{
 		path: 'device-gaming',
-		component: PageDeviceGamingComponent
+		component: PageDeviceGamingComponent,
+		canDeactivate: [ GuardService ],
+		canActivate: [ GuardService ],
+		data: {
+			pageName: 'Gaming.Dashboard',
+			pageContent: 'Gaming Dashboard'
+		}
 	},
 	{
 		path: 'gaming',
-		loadChildren: () => import('./gaming.module').then(m => m.GamingModule)
+		loadChildren: './gaming.module#GamingModule'
 	},
 	{
 		path: 'device',
-		loadChildren: () => import('./hardware-settings/hardware-settings.module').then(m => m.HardwareSettingsModule)
+		loadChildren: './hardware-settings/hardware-settings.module#HardwareSettingsModule'
 	},
 	{
 		path: 'settings',
@@ -38,40 +44,40 @@ const routes: Routes = [
 	},
 	{
 		path: 'home-security',
-		loadChildren: () => import('./connected-home-security/connected-home-security.module').then(m => m.ConnectedHomeSecurityModule)
-	},
-	{
-		path: 'privacy',
-		loadChildren: () => import('../components/pages/page-privacy/privacy.module').then(m => m.PrivacyModule)
+		loadChildren: './connected-home-security/connected-home-security.module#ConnectedHomeSecurityModule'
 	},
 	{
 		path: 'security',
-		loadChildren: () => import('./security-advisor/security-advisor.module').then(m => m.SecurityAdvisorModule)
+		loadChildren: './security-advisor/security-advisor.module#SecurityAdvisorModule'
 	},
 	{
 		path: 'support',
-		loadChildren: () => import('./support/support.module').then(m => m.SupportModule)
+		loadChildren: './support/support.module#SupportModule'
 	},
 	{
 		path: 'apps-for-you/:id',
-		loadChildren: () => import('./apps-for-you/apps-for-you.module').then(m => m.AppsForYouModule)
+		loadChildren: './apps-for-you/apps-for-you.module#AppsForYouModule'
 	},
 	{
 		path: 'android',
-		loadChildren: () => import('./android/android-dashboard.module').then(m => m.AndroidDashboardModule)
+		loadChildren: './android/android-dashboard.module#AndroidDashboardModule'
 	},
 	{
 		path: 'beta',
-		loadChildren: () => import('../beta/beta.module').then(m => m.BetaModule)
+		loadChildren: '../beta/beta.module#BetaModule'
+	},
+	{
+		path: 'hardware-scan',
+		loadChildren: './hardware-scan/hardware-scan.module#HardwareScanModule'
 	},
 	{
 		path: 'support/smart-performance',
-		loadChildren: () => import('./smart-performance/smart-performance.module').then(m => m.SmartPerformanceModule)
+		loadChildren: './smart-performance/smart-performance.module#SmartPerformanceModule'
 	},
 	{
 		path: 'cpt',
 		/*component: PageCptComponent*/
-		loadChildren: () => import('./cpt/cpt.module').then(m => m.CptModule)
+		loadChildren: './cpt/cpt.module#CptModule'
 	},
 	{
 		path: '',
