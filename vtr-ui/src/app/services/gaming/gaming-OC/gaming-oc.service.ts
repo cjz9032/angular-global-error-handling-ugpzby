@@ -1,11 +1,13 @@
 import { VantageShellService } from './../../vantage-shell/vantage-shell.service';
+import { LoggerService } from '../../logger/logger.service';
 
 export class GamingOCService {
   private gamingOverClock: any;
   public isShellAvailable = false;
 
   constructor(
-    shellService: VantageShellService
+	shellService: VantageShellService,
+	private logger: LoggerService
   ) { 
     this.gamingOverClock = shellService.getGamingThermalMode();
     if(this.gamingOverClock) {
@@ -18,7 +20,10 @@ export class GamingOCService {
 			if(this.isShellAvailable) {
 				return this.gamingOverClock.getPerformanceOCSetting();
 			}
+			this.logger.error(`Service-GamingOC-GetPerformanceOCSetting: return undefined, shell Available: ${this.isShellAvailable}`);
+			return undefined;
 		} catch (error) {
+			this.logger.error('Service-GamingOC-GetPerformanceOCSetting: get fail; Error message: ', error.message);
 			throw new Error(error.message);
 		}
 	}
@@ -28,7 +33,10 @@ export class GamingOCService {
 			if(this.isShellAvailable) {
 				return this.gamingOverClock.setPerformanceOCSetting(value);
 			}
+			this.logger.error(`Service-GamingOC-SetPerformanceOCSetting: return undefined, shell Available: ${this.isShellAvailable}`);
+			return undefined;
 		} catch (error) {
+			this.logger.error('Service-GamingOC-SetPerformanceOCSetting: set fail; Error message: ', error.message);
 			throw new Error(error.message);
 		}
 	}
