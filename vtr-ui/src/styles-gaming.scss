@@ -379,7 +379,8 @@
 														}
 														label {
 															color: $white100;
-															margin-left: 0.8rem;
+															margin-left: 0.8rem;															
+															font-size:$fontsize_xs2;
 														}
 													}
 													.auto-detection-note {
@@ -792,6 +793,7 @@
 					label {
 						color: $gaming_grey_lightest;
 						margin-left: 0.8rem;
+						font-size: $fontsize_xs2;
 					}
 				}
 				.auto-detection-note {

@@ -31,7 +31,7 @@
                     </h2>
                     <p class="description">
                         {{ 'gaming.dashboard.device.thermalMode2Popup.performanceDesc' | translate }}
-                        <span *ngIf="gamingCapabilities.cpuOCFeature || gamingCapabilities.gpuOCFeature"> {{ 'gaming.dashboard.device.thermalMode2Popup.OCDesc' | translate }}</span>
+                        <span *ngIf="OCsupportted !== 0"> {{ 'gaming.dashboard.device.thermalMode2Popup.OCDesc' | translate }}</span>
                         <span *ngIf="!gamingCapabilities.desktopType"> {{ 'gaming.dashboard.device.thermalMode2Popup.ac_dcDesc' | translate }}</span>
                     </p>
                     <div class="item-oc" *ngIf="OCsupportted !== 0">
