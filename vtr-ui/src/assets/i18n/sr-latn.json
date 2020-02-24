@@ -1270,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "SERTIFIKOVANI ENERGY STAR PROIZVOD"
-                },
+				},
+				"dpm": {
+					"title": "Napajanje",
+					"subtitle": "Postavke napajanja",
+					"description": "Ovaj odeljak vam omogućava proveru podrazumevanih postavki i prilagođavanje potrošnje struje i plana napajanja prema svojim potrebama.",
+					"globalPowerSettings": {
+						"title": "Opšte postavke napajanja",
+						"description": "Ova funkcija će zameniti postavke plana napajanja ili potrošnje struje.",
+						"powerButton": {
+							"label": "DUGME ZA NAPAJANJE:",
+							"items": {
+								"doNothing": "Nemoj ništa da uradiš",
+								"sleep": "Stanje spavanja",
+								"hibernate": "stanje hibernacije",
+								"shutDown": "Isključi",
+								"turnOffTheDisplay": "Isključite ekran"
+							}
+						},
+						"requiredSignIn": {
+							"label": "OBAVEZNO PRIJAVLJIVANJE U:",
+							"items": {
+								"never": "Nikada",
+								"fromSleep": "Kada se računar probudi iz stanja spavanja"
+							},
+							"tip": "Napomena: Ovo funkcioniše samo ako je postavljena sistemska lozinka."
+						}
+					},
+					"powerUse": {
+						"title": "Potrošnja struje",
+						"description": "AKO JE SISTEM NEAKTIVAN:",
+						"turnOffDisplay": "ISKLJUČI EKRAN POSLE:",
+						"turnOffHDD": "ISKLJUČI HDD POSLE:",
+						"sleep": "REŽIM SPAVANJA POSLE:",
+						"hibernate": "HIBERNACIJA POSLE:",
+						"items": {
+							"never": "Nikada",
+							"minute": "minut",
+							"minutes": "minuti",
+							"hour": "sat",
+							"hours": "sati"
+						}
+					},
+					"powerPlan": {
+						"title": "Plan napajanja",
+						"description": "Odaberite plan napajanja da biste kontrolisali performanse računara, temperaturu sistema i potrošnju struje.",
+						"currentPowerPlan": {
+							"label": "TRENUTNI PLAN"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Pametno stanje pripravnosti",
                     "description": "Ova funkcija zakazuje optimizovanje uštede baterije dok je računar u stanju mirovanja, a da se, pritom, ne žrtvuje brzo vraćanje opcije <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> (Moderno čekanje) tokom perioda intenzivnijeg korišćenja.",

@@ -1265,6 +1265,55 @@
                     "title": "Energy Star",
                     "description": "ENERGY STAR 認證產品"
                 },
+                "dpm": {
+                    "title": "電源",
+                    "subtitle": "電源設定",
+                    "description": "此區段可讓您檢查預設值，並根據您的需求來自訂電源使用情形和電源計劃。",
+                    "globalPowerSettings": {
+                        "title": "整體電源設定",
+                        "description": "此功能將覆寫電源計劃或電源使用情形設定。",
+                        "powerButton": {
+                            "label": "電源按鈕：",
+                            "items": {
+                                "doNothing": "不執行任何動作",
+                                "sleep": "睡眠",
+                                "hibernate": "休眠",
+                                "shutDown": "關機",
+                                "turnOffTheDisplay": "關閉顯示器"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "需要登入：",
+                            "items": {
+                                "never": "永不",
+                                "fromSleep": "當 PC 從睡眠中喚醒時"
+                            },
+                            "tip": "附註：此選項僅在設定了系統密碼後才會運作。"
+                        }
+                    },
+                    "powerUse": {
+                        "title": "電源使用情形",
+                        "description": "如果系統處於閒置狀態：",
+                        "turnOffDisplay": "在下列時間後關閉顯示器：",
+                        "turnOffHDD": "在下列時間後關閉 HDD：",
+                        "sleep": "在下列時間後進入睡眠：",
+                        "hibernate": "在下列時間後進入休眠：",
+                        "items": {
+                            "never": "永不",
+                            "minute": "分鐘",
+                            "minutes": "分鐘",
+                            "hour": "小時",
+                            "hours": "小時"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "電源計劃",
+                        "description": "選擇電源計劃以控制電腦效能、系統溫度和電源使用情形。",
+                        "currentPowerPlan": {
+                            "label": "目前計劃"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "智慧型待命",
                     "description": "這個功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可體驗<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">新式待命</a>的快速回復。",

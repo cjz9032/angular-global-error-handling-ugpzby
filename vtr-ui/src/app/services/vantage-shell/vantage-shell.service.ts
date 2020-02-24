@@ -536,6 +536,14 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getPowerDPM(): any {
+		if (this.getPowerSettings() && this.getPowerSettings().dpm) {
+			return this.getPowerSettings().dpm;
+		}
+		return undefined;
+	}
+
 	// public getPowerItsIntelligentCooling(): any {
 	// 	if(this.phoenix){
 	// 		return this.phoenix.hwsettings.power.its.IntelligentCooling ;
@@ -574,7 +582,7 @@ export class VantageShellService {
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
 	public async deviceFilter(filter) {
-		if (this.phoenix) {
+        if (this.phoenix) {
 			try {
 				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);

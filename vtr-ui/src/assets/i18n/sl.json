@@ -1264,7 +1264,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "IZDELEK S POTRDILOM ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Napajanje",
+					"subtitle": "Nastavitve napajanja",
+					"description": "V tem razdelku lahko preverite privzete nastavitve in prilagodite porabo energije in načrt porabe energije glede na vaše potrebe.",
+					"globalPowerSettings": {
+						"title": "Globalne nastavitve napajanja",
+						"description": "Ta funkcija bo preglasila nastavitve načrta porabe energije in porabe energije.",
+						"powerButton": {
+							"label": "GUMB ZA VKLOP:",
+							"items": {
+								"doNothing": "Ne stori ničesar",
+								"sleep": "Spanje",
+								"hibernate": "Mirovanje",
+								"shutDown": "Zaustavitev",
+								"turnOffTheDisplay": "Izklop zaslona"
+							}
+						},
+						"requiredSignIn": {
+							"label": "OBVEZEN VPIS:",
+							"items": {
+								"never": "Nikoli",
+								"fromSleep": "Ko se računalnik zbudi iz spanja"
+							},
+							"tip": "Opomba: To deluje le, če je sistemsko geslo nastavljeno."
+						}
+					},
+					"powerUse": {
+						"title": "Poraba energija",
+						"description": "ČE JE SISTEM V NAČINU NEDEJAVNOSTI:",
+						"turnOffDisplay": "IZKLOPI ZASLON PO:",
+						"turnOffHDD": "IZKLOPI HDD PO:",
+						"sleep": "PREKLOP V SPANJE PO:",
+						"hibernate": "PREKLOP V MIROVANJE PO:",
+						"items": {
+							"never": "Nikoli",
+							"minute": "minuta",
+							"minutes": "minut",
+							"hour": "ura",
+							"hours": "ur"
+						}
+					},
+					"powerPlan": {
+						"title": "Načrt porabe energije",
+						"description": "Izberite načrt porabe za nadzorovanje učinkovitosti delovanja, temperature sistema in porabo energije računalnika.",
+						"currentPowerPlan": {
+							"label": "TRENUTNI NAČRT"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Pametno stanje pripravljenosti",
                     "description": "Ta funkcija nastavi časovni razpored za optimiziranje varčevanja z energijo baterije med neuporabo računalnika, ne da bi to vplivalo na možnost hitrega nadaljevanja delovanja v sklopu <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">sodobnega stanja pripravljenosti</a> med intenzivnejšo uporabo.",

@@ -90,7 +90,14 @@ import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-graph/smart-standby-graph.component';
 import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.component';
+import { SubpageDeviceSettingsPowerDpmComponent } from "../../components/pages/page-device-settings/children/subpage-device-settings-power-dpm/subpage-device-settings-power-dpm.component";
+import { PowerPlanComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-dpm/power-plan/power-plan.component';
+import { PowerAgendaComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-dpm/power-agenda/power-agenda.component';
+import { PowerSettingsComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-dpm/power-settings/power-settings.component';
+import { PowerUseComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-dpm/power-use/power-use.component';
 import { BacklightModule } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.module';
+import { SubpageDeviceSettingsPowerContainerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-container/subpage-device-settings-power-container.component';
+
 import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight-thinkpad/backlight-thinkpad.component';
 
 @NgModule({
@@ -130,6 +137,12 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 		VoiceComponent,
 		SmartStandbyGraphComponent,
 		TopRowFunctionsIdeapadComponent,
+		PowerUseComponent,
+		PowerPlanComponent,
+		PowerAgendaComponent,
+		PowerSettingsComponent,
+		SubpageDeviceSettingsPowerDpmComponent,
+		SubpageDeviceSettingsPowerContainerComponent,
 
 		BacklightThinkpadComponent
 	],
