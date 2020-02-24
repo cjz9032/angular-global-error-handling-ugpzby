@@ -22,6 +22,12 @@
                     "rapidCharge": "Schnellladen"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Overclock ein",
+                        "performance": "Leistung",
+                        "balance": "Abstimmung",
+                        "quiet": "Leise"
+                    },
                     "title": "CPU-Übertaktung",
                     "status": {
                         "alwayson": "Ein",
@@ -1264,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "EIN ENERGY STAR-ZERTIFIZIERTES PRODUKT"
-                },
+				},
+				"dpm": {
+					"title": "Stromversorgung",
+					"subtitle": "Einstellungen für Energieversorgung",
+					"description": "In diesem Abschnitt können Sie die Standardeinstellungen überprüfen und Energieverbrauch und Energieschema an Ihre Bedürfnisse anpassen.",
+					"globalPowerSettings": {
+						"title": "Globale Einstellungen für Energieversorgung",
+						"description": "Mit dieser Funktion werden die Einstellungen für Energieschema oder Energieverbrauch außer Kraft gesetzt.",
+						"powerButton": {
+							"label": "BETRIEBSSPANNUNGSSCHALTER:",
+							"items": {
+								"doNothing": "Keine Aktion",
+								"sleep": "Energie sparen",
+								"hibernate": "Hibernation",
+								"shutDown": "Herunterfahren",
+								"turnOffTheDisplay": "Anzeige ausschalten"
+							}
+						},
+						"requiredSignIn": {
+							"label": "ANMELDUNG ERFORDERLICH:",
+							"items": {
+								"never": "Nie",
+								"fromSleep": "Bei Beendigung des Standbymodus des PCs"
+							},
+							"tip": "Hinweis: Dies funktioniert nur, wenn ein Systemkennwort festgelegt ist."
+						}
+					},
+					"powerUse": {
+						"title": "Energieverbrauch",
+						"description": "BEI INAKTIVEM SYSTEM:",
+						"turnOffDisplay": "ANZEIGE AUSSCHALTEN NACH:",
+						"turnOffHDD": "FESTPLATTENLAUFWERK AUSSCHALTEN NACH:",
+						"sleep": "ENERGIE SPAREN NACH:",
+						"hibernate": "RUHEZUSTAND NACH:",
+						"items": {
+							"never": "Nie",
+							"minute": "Minute",
+							"minutes": "Minuten",
+							"hour": "Stunde",
+							"hours": "Stunden"
+						}
+					},
+					"powerPlan": {
+						"title": "Energieschema",
+						"description": "Wählen Sie ein Energieschema, um Leistung, Systemtemperatur und Energieverbrauch des Computers zu steuern.",
+						"currentPowerPlan": {
+							"label": "AKTUELLES SCHEMA"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Smart-Standby",
                     "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Fortsetzen von <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern-Standby</a> bei intensiverer Nutzung beeinträchtigt wird.",

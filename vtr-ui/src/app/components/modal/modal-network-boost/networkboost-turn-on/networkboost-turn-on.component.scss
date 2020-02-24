@@ -88,13 +88,13 @@ ui-popover-turn-on {
 	h1 {
 		font-size: $fontsize_xl;
 		font-weight: normal;
-		color: $blue-dark;
+		color: $darkText;
 		padding-right: 2.5rem;
 	}
 
 	p {
-		font-size: 1.6rem;
-		color: $light-grey;
+		font-size: $fontsize_xs;
+		color: $darkText;
 		padding: 0.5rem 0;
 	}
 
@@ -108,37 +108,33 @@ ui-popover-turn-on {
 	.action-container{
 		width: 100%;
 		.enable-button {
-		background: $gradient_main;
-		border-radius: 3rem;
-		color: $light;
-		font-size: $fontsize_sm;
-		padding: 1rem 3rem;
-		margin-top: 1rem;
-		margin-right: 3rem;
-		font-weight: $weight_600;
+			background: $blueFill;
+			border-radius: 3rem;
+			color: $light;
+			font-size: $fontsize_sm;
+			padding: 1rem 3rem;
+			//margin-top: 1rem;
+			margin-right: 3rem;
+			font-weight: $weight_bold;
 		&:active {
 			transform: scale(0.95);
 		}
 	}
-		.cancel-link {
+	.cancel-link {
 		height: 2.5rem;
-		color: $btn_secondary_color;
-		font-size:$fontsize_sm;
+		color: $blueFill;
+		font-size: $fontsize_sm;
 		vertical-align: middle;
-		padding: 0 0.5rem;
+		padding: 1rem 0.5rem 0rem;
 		font-weight: $weight_600;
 		margin-top: 1rem;
-		border-bottom: 2px solid $btn_secondary_color;
-		display: inline-block;
+		border-bottom: 2px solid $blueFill;
 		cursor: pointer;
 		&:hover {
-			color: $btn_primary_color;
-			border-bottom: 2px solid $btn_primary_color;
-			text-decoration: none;
-		}
-		&:active {
-			transform: scale(0.95);
-		}
+			color: $blueHover;
+			border-bottom: 2px solid $blueHover;			
+			cursor: pointer;
+		  }		
 	}
 	}
 	

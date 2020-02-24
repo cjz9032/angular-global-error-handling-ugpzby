@@ -82,7 +82,9 @@
 											<label id="ip-webseiteurl"
 												attr.aria-label="ip-webseiteurl">{{'device.deviceSettings.inputAccessories.userDefinedKey.website.url' | translate}}</label>
 											<textarea class="form-control"
-												spellcheck="false"
+                                                spellcheck="false"
+                                                id="ip-webseiteurl-text"
+												attr.aria-label="ip-webseiteurl-text"
 												[(ngModel)]="url"
 												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.website.placeholder' | translate"
 												name="url"
@@ -132,7 +134,9 @@
 												attr.aria-label="ip-texttobe-entered">{{'device.deviceSettings.inputAccessories.userDefinedKey.enterText.title' | translate}}</label>
 											<textarea class="form-control"
 												[(ngModel)]="description"
-												name="description"
+                                                name="description"
+                                                id="ip-text-entered"
+												attr.aria-label="ip-text-entered"
 												spellcheck="false"
 												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.enterText.placeholder' | translate"
 												(keydown)="onKeydown($event)"

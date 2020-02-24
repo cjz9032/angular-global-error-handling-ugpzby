@@ -22,6 +22,12 @@
                     "rapidCharge": "Hurtiglading"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Overklokking på",
+                        "performance": "Ytelse",
+                        "balance": "Balanse",
+                        "quiet": "Stille"
+                    },
                     "title": "CPU-overklokking",
                     "status": {
                         "alwayson": "På",
@@ -1264,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ET ENERGY STAR SERTIFISERT PRODUKT"
-                },
+				},
+				"dpm": {
+					"title": "Strøm",
+					"subtitle": "Strøminnstillinger",
+					"description": "Denne delen lar deg kontrollere standardinnstillingene og tilpasse strømbruk og strømplan etter behov.",
+					"globalPowerSettings": {
+						"title": "Globale strøminnstillinger",
+						"description": "Denne funksjonen overstyrer innstillingene for Strømplan eller Strømbruk.",
+						"powerButton": {
+							"label": "AV/PÅ-KNAPP:",
+							"items": {
+								"doNothing": "Ikke gjør noe",
+								"sleep": "Sov",
+								"hibernate": "Dvalemodus",
+								"shutDown": "Avslutt",
+								"turnOffTheDisplay": "Slå av skjermen"
+							}
+						},
+						"requiredSignIn": {
+							"label": "KREVER PÅLOGGING:",
+							"items": {
+								"never": "Aldri",
+								"fromSleep": "Når PC-en starter opp fra hvilemodus"
+							},
+							"tip": "Merk: Dette fungerer bare hvis det er angitt systempassord."
+						}
+					},
+					"powerUse": {
+						"title": "Strømbruk",
+						"description": "HVIS SYSTEMET ER INAKTIVT:",
+						"turnOffDisplay": "SLÅ AV SKJERM ETTER:",
+						"turnOffHDD": "SLÅ AV HARDDISK ETTER:",
+						"sleep": "HVILEMODUS ETTER:",
+						"hibernate": "DVALEMODUS ETTER:",
+						"items": {
+							"never": "Aldri",
+							"minute": "minutt",
+							"minutes": "minutter",
+							"hour": "time",
+							"hours": "timer"
+						}
+					},
+					"powerPlan": {
+						"title": "Strømplan",
+						"description": "Velg en strømplan for å styre datamaskinens ytelse, systemets temperatur og strømbruk.",
+						"currentPowerPlan": {
+							"label": "GJELDENDE PLAN"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Smart hvilemodus",
                     "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker opplevelsen av rask gjenopptakelse for <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Moderne hvilemodus</a> på tidspunkter med tyngre bruk.",

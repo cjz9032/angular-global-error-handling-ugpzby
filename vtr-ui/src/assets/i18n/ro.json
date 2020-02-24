@@ -1270,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UN PRODUS CERTIFICAT ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Alimentare",
+					"subtitle": "Setări alimentare",
+					"description": "Această secțiune vă permite să verificați setările implicite și să personalizați consumul de energie și planul de alimentare, conform cerințelor dvs.",
+					"globalPowerSettings": {
+						"title": "Setări alimentare globale",
+						"description": "Această caracteristică va suprascrie setările planului de alimentare sau ale consumului de energie.",
+						"powerButton": {
+							"label": "BUTON DE ALIMENTARE:",
+							"items": {
+								"doNothing": "Nu se întâmplă nimic",
+								"sleep": "Repaus",
+								"hibernate": "Hibernare",
+								"shutDown": "Închidere",
+								"turnOffTheDisplay": "Stingere afișaj"
+							}
+						},
+						"requiredSignIn": {
+							"label": "ESTE NECESARĂ CONECTAREA:",
+							"items": {
+								"never": "Niciodată",
+								"fromSleep": "Când PC-ul se activează din repaus"
+							},
+							"tip": "Notă: Această opțiune funcționează numai dacă este setată parola de sistem."
+						}
+					},
+					"powerUse": {
+						"title": "Consum de energie",
+						"description": "DACĂ SISTEMUL ESTE INACTIV:",
+						"turnOffDisplay": "OPRIRE AFIȘAJ DUPĂ:",
+						"turnOffHDD": "OPRIRE HDD DUPĂ:",
+						"sleep": "REPAUS DUPĂ:",
+						"hibernate": "HIBERNARE DUPĂ:",
+						"items": {
+							"never": "Niciodată",
+							"minute": "minut",
+							"minutes": "minute",
+							"hour": "oră",
+							"hours": "ore"
+						}
+					},
+					"powerPlan": {
+						"title": "Plan de alimentare",
+						"description": "Alegeți un plan de alimentare pentru a controla performanța computerului, temperatura sistemului și consumul de energie.",
+						"currentPowerPlan": {
+							"label": "PLAN ACTUAL"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Stare de veghe inteligentă",
                     "description": "Această caracteristică programează computerul să optimizeze modul de economisire a energiei bateriei în timpul orelor de inactivitate, fără a afecta experiența de reluare rapidă pentru <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a>, în timpul orelor de utilizare intensivă.",

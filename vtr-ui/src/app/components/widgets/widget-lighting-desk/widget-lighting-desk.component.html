@@ -1,0 +1,83 @@
+<div class="ui-lighting-desk">
+    <div class="lighting-desk-content">
+        <div class="lighting-profile-toggle">
+            <vtr-ui-lighting-profile-toggle [currentProfile]="currentProfileId" 
+            (setLightingProfileId)="setLightingProfileId($event)"
+            [id]="'profile'"></vtr-ui-lighting-profile-toggle>
+        </div>
+        <div class="lighting-panel-select" *ngIf="!isProfileOff">
+            <div class="lighting-arrow lighting-arrow-lef" (click)="panelSwitchLef()"  
+            [ngClass]="{'disabled-lef':isDisabledlef[this.currentProfileId-1] === true}" *ngIf= "lightingProfileCurrentDetail.panelImageType">
+                <fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
+            </div>
+            <div class="lighting-panel-name"
+            [ngClass]="{'text-center':lightingProfileCurrentDetail.panelImageType === false}">
+            <span *ngIf= "lightingProfileCurrentDetail.panelImageType">
+                {{countObj['count'+this.currentProfileId]+1}} / {{lightingProfileCurrentDetail.length}}. 
+            </span>
+            {{lightingProfileCurrentDetail.panelName | translate}}
+            </div>
+            <div class="lighting-arrow lighting-arrow-rig" (click)="panelSwitchRig()" 
+            [ngClass]="{'disabled-rig':isDisabledrig[this.currentProfileId-1] === true}" *ngIf= "lightingProfileCurrentDetail.panelImageType">
+                <fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
+            </div>
+        </div>
+        <div class="lighting-desk-panel d-flex align-items-center">
+            <div class="lighting-desk-panel-lef d-flex align-items-center" [ngClass]="{'is-off':isProfileOff}">
+                <div class="lighting-lef-img">
+                    <img src='{{lightingProfileCurrentDetail.panelImage}}' alt="">
+                    <svg viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" #svg class="svg"
+                        *ngIf= "!isProfileOff"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" [ngStyle]="{'filter':'drop-shadow(0px 0px 10px #'+lightingProfileCurrentDetail.lightColor+')',opacity:0.6}">
+                        <title>6.20pxIcon/add</title>
+                        <desc>Created with Sketch.</desc>
+                        <g id="6.20pxIcon/add" stroke="none" stroke-width="1" fill="rgba(255,255,255,0.6)"
+                            fill-rule="evenodd">
+                            <path  filter="drop-shadow(0px 0px 10px rgba(0,233,0,0.7))"
+                                [attr.d]="lightingProfileCurrentDetail.pathUrl" id="Shape" [attr.fill]="'#'+lightingProfileCurrentDetail.lightColor" fill-rule="nonzero" fill-opacity="0.6" #path class="path"></path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div *ngIf="!isProfileOff" class="lighting-desk-panel-rig">
+                <div class="lighting-panel-box">
+                    <h3 class="content-title">{{'gaming.lightingProfile.profile.text3.title' | translate}} </h3>
+                    <vtr-ui-lighting-effect [options]="lightingEffectList" 
+                        [effectOptionName]="lightingProfileCurrentDetail.currentEffectName" [selectedValue]="lightingProfileCurrentDetail.lightEffectType" 
+                        [isEffectChange] = "isEffectChange" (change)="setLightingProfileEffect($event)" [tabindex]="0">
+                    </vtr-ui-lighting-effect>
+                    <div class="lighting-panel-group">
+                       <div class="lighting-panel-brightness" *ngIf="supportBrightness">
+                           <h1 class="content-title">{{'device.deviceSettings.displayCamera.camera.brightness' | translate}} </h1>
+                           <vtr-ui-add-reduce-button [minData]="1" [maxData]="lightingCapabilities.BrightAdjustLevel" [step]="1" [value]="lightingProfileCurrentDetail.lightBrightness"
+                           (setVal) = "setLightingBrightness($event)" [isValChange] = "isValChange"></vtr-ui-add-reduce-button>
+                       </div> 
+                       <div class="lighting-panel-speed" *ngIf="supportSpeed"
+                        [ngClass]="{'bright-hide':supportBrightness === false}">
+                           <h1 class="content-title">{{'gaming.lightingNewversion.lightingSpeed.title' | translate}} </h1>
+                           <vtr-ui-add-reduce-button [minData]="1" [maxData]="lightingCapabilities.SpeedSetLevel" [step]="1" [value]="lightingProfileCurrentDetail.lightSpeed"
+                           (setVal) = "setLightingSpeed($event)" [isValChange] = "isValChange"></vtr-ui-add-reduce-button>
+                       </div> 
+                    </div>
+                    <div class="lighting-color" *ngIf="supportColor">
+                        <h3 class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}}</h3>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="color-default" [ngStyle]="{'background':'#'+lightingProfileCurrentDetail.lightColor}" 
+                            (click)="colorPickerFun();$event.stopPropagation();" id="colorBtn"></button>
+                            <vtr-ui-color-picker *ngIf="isColorPicker" [color]="lightingProfileCurrentDetail.lightColor" [isColorPicker]="isColorPicker"
+                            (isToggleColorPicker)="isToggleColorPicker($event)" (setColor)="setLightingColor($event)"></vtr-ui-color-picker>
+                        </div>
+                    </div>
+                </div>
+                <div class="lighting-default-text">
+                    <button vtrMetrics [metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+                    class="under-line-button"  (click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</button>
+                </div>
+            </div>
+            <div *ngIf="isProfileOff"
+                 class="lighting-off d-flex justify-content-center align-items-center">
+               {{'gaming.lightingProfile.profile.text1.title' | translate}}
+            </div>
+        </div>
+    </div>
+</div>

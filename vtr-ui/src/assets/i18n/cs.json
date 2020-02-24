@@ -22,6 +22,12 @@
                     "rapidCharge": "Rych-lé nabíjení"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Přetakt. zap.",
+                        "performance": "Výkon",
+                        "balance": "Vyvážení",
+                        "quiet": "Tichý"
+                    },
                     "title": "Přetaktování CPU",
                     "status": {
                         "alwayson": "Zapnuto",
@@ -39,7 +45,7 @@
                     "ramOverlock": "Přetaktování RAM",
                     "popup": {
                         "text": "Změny se projeví po restartování počítače.",
-                        "button": "U redu"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Je vyžadována instalace ovladače",
@@ -1264,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ZAŘÍZENÍ S CERTIFIKACÍ ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Napájení",
+					"subtitle": "Nastavení napájení",
+					"description": "V této části můžete zkontrolovat výchozí nastavení a přizpůsobit spotřebu energie a schéma napájení svým potřebám.",
+					"globalPowerSettings": {
+						"title": "Globální nastavení napájení",
+						"description": "Tato funkce slouží k potlačení schématu napájení nebo nastavení spotřeby energie.",
+						"powerButton": {
+							"label": "HLAVNÍ VYPÍNAČ:",
+							"items": {
+								"doNothing": "Nedělat nic",
+								"sleep": "Režim spánku",
+								"hibernate": "Režim hibernace",
+								"shutDown": "Vypnout",
+								"turnOffTheDisplay": "Vypnout displej"
+							}
+						},
+						"requiredSignIn": {
+							"label": "JE VYŽADOVÁNO PŘIHLÁŠENÍ:",
+							"items": {
+								"never": "Nikdy",
+								"fromSleep": "Když se počítač probudí z režimu spánku"
+							},
+							"tip": "Poznámka: Funguje pouze v případě, že je nastavené heslo k systému."
+						}
+					},
+					"powerUse": {
+						"title": "Spotřeba energie",
+						"description": "KDYŽ JE SYSTÉM NEČINNÝ:",
+						"turnOffDisplay": "VYPNOUT DISPLEJ PO:",
+						"turnOffHDD": "VYPNOUT PEVNÝ DISK PO:",
+						"sleep": "USPAT PO:",
+						"hibernate": "HIBERNOVAT PO:",
+						"items": {
+							"never": "Nikdy",
+							"minute": "minuta",
+							"minutes": "minuty",
+							"hour": "hodina",
+							"hours": "hodiny"
+						}
+					},
+					"powerPlan": {
+						"title": "Schéma napájení",
+						"description": "Vyberte schéma napájení, kterým chcete řídit výkon počítače, teplotu systému a spotřebu energie.",
+						"currentPowerPlan": {
+							"label": "AKTUÁLNÍ SCHÉMA"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Chytrý pohotovostní režim",
                     "description": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost opětovného spuštění <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">moderního pohotovostního režimu</a> v době vyšší zátěže.",

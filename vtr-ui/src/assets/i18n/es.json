@@ -22,6 +22,12 @@
                     "rapidCharge": "Carga rápida"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Acel. activada",
+                        "performance": "Rendimiento",
+                        "balance": "Equilibrio",
+                        "quiet": "Silencioso"
+                    },
                     "title": "Aceleración de CPU",
                     "status": {
                         "alwayson": "Encendido",
@@ -1264,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UN PRODUCTO CERTIFICADO POR ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Energía",
+					"subtitle": "Configuración de energía",
+					"description": "Esta sección le permite comprobar los valores predeterminados y personalizar su uso de energía y plan de energía según sus necesidades.",
+					"globalPowerSettings": {
+						"title": "Valores de energía globales",
+						"description": "Esta característica invalidará los valores del plan de energía o del uso de energía.",
+						"powerButton": {
+							"label": "BOTÓN DE ENCENDIDO/APAGADO:",
+							"items": {
+								"doNothing": "No hacer nada",
+								"sleep": "Suspender",
+								"hibernate": "Entrar en hibernación",
+								"shutDown": "Concluir",
+								"turnOffTheDisplay": "Apagar la pantalla"
+							}
+						},
+						"requiredSignIn": {
+							"label": "INICIO DE SESIÓN NECESARIO:",
+							"items": {
+								"never": "Nunca",
+								"fromSleep": "Cuando el PC se reactiva desde la suspensión"
+							},
+							"tip": "Nota: Esto solo funciona si se ha establecido la contraseña del sistema."
+						}
+					},
+					"powerUse": {
+						"title": "Uso de energía",
+						"description": "SI EL SISTEMA ESTÁ INACTIVO:",
+						"turnOffDisplay": "APAGAR LA PANTALLA DESPUÉS DE:",
+						"turnOffHDD": "APAGAR EL DISCO DURO DESPUÉS DE:",
+						"sleep": "SUSPENDER DESPUÉS DE:",
+						"hibernate": "HIBERNAR DESPUÉS DE:",
+						"items": {
+							"never": "Nunca",
+							"minute": "minuto",
+							"minutes": "minutos",
+							"hour": "hora",
+							"hours": "horas"
+						}
+					},
+					"powerPlan": {
+						"title": "Plan de energía",
+						"description": "Elija un plan de energía para controlar el rendimiento de la computadora, la temperatura del sistema y el uso de energía.",
+						"currentPowerPlan": {
+							"label": "PLAN ACTUAL"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Suspensión inteligente",
                     "description": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar la experiencia de reanudación rápida de <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Espera moderna</a> durante las horas de uso más intensivo.",

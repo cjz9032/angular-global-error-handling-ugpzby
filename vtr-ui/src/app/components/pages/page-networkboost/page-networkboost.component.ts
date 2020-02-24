@@ -90,12 +90,7 @@ export class PageNetworkboostComponent implements OnInit {
 			this.needToAsk = this.needToAsk === undefined || isNaN(this.needToAsk) ? 0 : this.needToAsk;
 			this.loggerService.info('page-networkboost.component.openTargetModal', 'NEED TO ASK FROM LOCAL --->' + this.needToAsk);
 			this.loggerService.info('page-networkboost.component.openTargetModal', 'TOGGLE STATUS --->' + this.toggleStatus);
-			if (this.toggleStatus) {
-				this.showAppsModal = true;
-			} else if (this.needToAsk === 1 || this.needToAsk === 2) {
-				if (this.needToAsk === 2) {
-					this.setNetworkBoostStatus({ switchValue: true });
-				}
+			if (this.toggleStatus || this.needToAsk === 1 || this.needToAsk === 2) {
 				this.showAppsModal = true;
 			} else {
 				this.showTurnOnModal = true;
@@ -230,11 +225,11 @@ export class PageNetworkboostComponent implements OnInit {
 
 		if (!this.isOnline) {
 			this.cardContentPositionF = {
-				FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
+				FeatureImage: './../../../../assets/cms-cache/GamingPosC.jpg'
 			};
 
 			this.cardContentPositionC = {
-				FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
+				FeatureImage: './../../../../assets/cms-cache/network_boost_offline.jpg'
 			};
 		}
 	}

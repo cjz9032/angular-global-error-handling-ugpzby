@@ -215,6 +215,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 
 	ngOnInit() {
 		this.logger.debug('subpage-device-setting-display onInit');
+		this.commonService.checkPowerPageFlagAndHide();
 		this.initDataFromCache();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);

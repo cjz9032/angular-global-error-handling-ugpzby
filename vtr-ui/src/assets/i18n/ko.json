@@ -22,6 +22,12 @@
                     "rapidCharge": "급속 충전"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "오버클럭 켜기",
+                        "performance": "성능",
+                        "balance": "밸런스",
+                        "quiet": "저소음"
+                    },
                     "title": "CPU 오버클럭",
                     "status": {
                         "alwayson": "켜기",
@@ -1264,6 +1270,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR 인증 제품"
+                },
+                "dpm": {
+                    "title": "전원",
+                    "subtitle": "전원 설정",
+                    "description": "이 섹션에서 기본 설정을 확인하고, 필요에 따라 전원 사용 및 전원 계획을 사용자 정의할 수 있습니다.",
+                    "globalPowerSettings": {
+                        "title": "글로벌 전원 설정",
+                        "description": "이 기능은 전원 계획 또는 전원 사용 설정을 재정의합니다.",
+                        "powerButton": {
+                            "label": "전원 버튼:",
+                            "items": {
+                                "doNothing": "아무 작업도 하지 않음",
+                                "sleep": "절전",
+                                "hibernate": "최대 절전",
+                                "shutDown": "시스템 종료",
+                                "turnOffTheDisplay": "디스플레이 끄기"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "로그인 필수:",
+                            "items": {
+                                "never": "사용 안 함",
+                                "fromSleep": "PC가 절전 모드에서 깨어날 때"
+                            },
+                            "tip": "참고: 시스템 암호가 설정된 경우에만 작동합니다."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "전원 사용",
+                        "description": "시스템이 유휴 상태인 경우:",
+                        "turnOffDisplay": "다음 시간이 경과하면 디스플레이 끄기:",
+                        "turnOffHDD": "다음 시간이 경과하면 HDD 끄기:",
+                        "sleep": "다음 시간이 경과하면 절전 모드 실행:",
+                        "hibernate": "다음 시간이 경과하면 최대 절전 모드 실행:",
+                        "items": {
+                            "never": "사용 안 함",
+                            "minute": "분",
+                            "minutes": "분",
+                            "hour": "시",
+                            "hours": "시"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "전원 구성",
+                        "description": "전원 계획을 선택하여 컴퓨터 성능, 시스템 온도 및 전력 사용량을 제어합니다.",
+                        "currentPowerPlan": {
+                            "label": "현재 계획"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "스마트 대기",

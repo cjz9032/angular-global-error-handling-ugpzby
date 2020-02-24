@@ -22,6 +22,12 @@
                     "rapidCharge": "Charge rapide"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Surfréquençage activé",
+                        "performance": "Performances",
+                        "balance": "Equilibre",
+                        "quiet": "Silencieux"
+                    },
                     "title": "Overclocking UC",
                     "status": {
                         "alwayson": "Activé",
@@ -1264,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UN PRODUIT CERTIFIÉ ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Alimentation",
+					"subtitle": "Paramètres d'alimentation",
+					"description": "Cette section vous permet de vérifier les paramètres par défaut et de personnaliser votre utilisation de l'alimentation et votre mode de gestion de l'alimentation en fonction de vos besoins.",
+					"globalPowerSettings": {
+						"title": "Paramètres d'alimentation globaux",
+						"description": "Cette fonctionnalité remplacera les paramètres de mode de gestion de l'alimentation ou d'utilisation de l'alimentation.",
+						"powerButton": {
+							"label": "BOUTON D'ALIMENTATION :",
+							"items": {
+								"doNothing": "Ne rien faire",
+								"sleep": "Veille",
+								"hibernate": "Hibernation",
+								"shutDown": "Arrêt",
+								"turnOffTheDisplay": "Mise hors tension de l'écran"
+							}
+						},
+						"requiredSignIn": {
+							"label": "CONNEXION OBLIGATOIRE :",
+							"items": {
+								"never": "Jamais",
+								"fromSleep": "Quand le PC quitte le mode veille"
+							},
+							"tip": "Remarque : Cela ne fonctionne que si un mot de passe système est défini."
+						}
+					},
+					"powerUse": {
+						"title": "Utilisation de l'alimentation",
+						"description": "SI LE SYSTÈME EST INACTIF :",
+						"turnOffDisplay": "DÉSACTIVER L'ÉCRAN APRÈS :",
+						"turnOffHDD": "DÉSACTIVER HDD APRÈS :",
+						"sleep": "METTRE EN VEILLE APRÈS :",
+						"hibernate": "METTRE EN HIBERNATION APRÈS :",
+						"items": {
+							"never": "Jamais",
+							"minute": "minute",
+							"minutes": "minutes",
+							"hour": "heure",
+							"hours": "heures"
+						}
+					},
+					"powerPlan": {
+						"title": "Mode de gestion de l'alimentation",
+						"description": "Choisissez un mode de gestion de l'alimentation pour contrôler les performances, la température système et l'utilisation de l'alimentation de l'ordinateur.",
+						"currentPowerPlan": {
+							"label": "MODE ACTUEL"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Veille intelligente",
                     "description": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant une sortie rapide de la <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">veille moderne</a> pendant les heures d'utilisation intense.",

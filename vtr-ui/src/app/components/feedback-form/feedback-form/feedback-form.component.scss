@@ -79,6 +79,12 @@ $normalPadding: 2.4rem;
 				width: 1.4rem;
 				height: 1.4rem;
 				margin: 0.3rem 0 0 0.3rem;
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-textselected;
+				}
+				@media #{$white-on-black} {
+					background-color: $high-contrast-black-textselected;
+				}
 			}
 			label {
 				font-size: $body;
@@ -112,6 +118,7 @@ $normalPadding: 2.4rem;
 					height: 2rem;
 					content: "";
 					background: no-repeat 50%/50% 50%;
+					
 				}
 			}
 			.likely-content {
@@ -143,6 +150,7 @@ $normalPadding: 2.4rem;
 					&::after {
 						top: 2.4rem;
 						margin-left: 1rem;
+						
 					}
 				}
 			}
@@ -275,5 +283,13 @@ $normalPadding: 2.4rem;
 			width: 100%;
 			height: 100%;
 		}
+	}
+	@media #{$black-on-white} {
+		border: 1px solid $dark !important ;
+		border-radius: 1rem;
+	}
+	@media #{$white-on-black} {
+		border: 1px solid $light !important ;
+		border-radius: 1rem;
 	}
 }

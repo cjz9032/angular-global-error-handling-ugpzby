@@ -79,12 +79,6 @@
 							</li>
 
 							<li class="pt-3"
-								*ngIf="machineType === 1 && isKbdBacklightAvailable">
-								<vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)">
-								</vtr-backlight-thinkpad>
-							</li>
-
-							<li class="pt-3"
 								*ngIf="machineType === 1">
 								<vtr-top-row-functions></vtr-top-row-functions>
 							</li>
@@ -92,7 +86,13 @@
 								*ngIf="machineType === 0 && fnLockCapability">
 								<vtr-top-row-functions-ideapad></vtr-top-row-functions-ideapad>
 							</li>
-							<li class="pt-3" *ngIf="backlightCapability$ | async">
+
+							<li class="pt-3"
+								*ngIf="machineType === 1 && isKbdBacklightAvailable">
+								<vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)">
+								</vtr-backlight-thinkpad>
+							</li>
+							<li class="pt-3" *ngIf="machineType !== 1 && backlightCapability$ | async">
 								<vtr-backlight [isLastChild]="!showVoipHotkeysSection && !hasUDKCapability"></vtr-backlight>
 							</li>
 							<li class="pt-3 voip"

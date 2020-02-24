@@ -27,6 +27,12 @@
                     "title": "Quick Settings"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Overclock on",
+                        "performance": "Performance",
+                        "balance": "Balance",
+                        "quiet": "Quiet"
+                    },
                     "title": "CPU Overclock",
                     "status": {
                         "alwayson": "On",
@@ -95,7 +101,8 @@
                     "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
                     "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
                     "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+					"line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control",
+					"line12": "<b>Macro key </b><br> Customize your keyboard actions to suit your playing style"
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
@@ -1358,6 +1365,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "An ENERGY STAR certified product"
+                },
+                "dpm": {
+					"title": "Power",
+					"subtitle": "Power settings",
+					"description":"This section enables you check the default settings and customize your power use and power plan according to your needs.",
+                    "globalPowerSettings": {
+                        "title": "Global power settings",
+                        "description": "This feature will override Power plan or Power use settings.",
+                        "powerButton": {
+                            "label": "POWER BUTTON:",
+                            "items": {
+                                "doNothing": "Do nothing",
+                                "sleep": "Sleep",
+                                "hibernate": "Hibernate",
+                                "shutDown": "Shut down",
+                                "turnOffTheDisplay": "Turn off the display"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "REQUIRED SIGN IN:",
+                            "items": {
+                                "never": "Never",
+                                "fromSleep": "When PC wakes up from sleep"
+                            },
+                            "tip": "Note: This only works if system password set."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Power use",
+                        "description": "IF SYSTEM IS IN IDLE:",
+                        "turnOffDisplay": "TURN OFF DISPALY AFTER:",
+                        "turnOffHDD": "TURN OFF HDD AFTER:",
+                        "sleep": "SLEEP AFTER:",
+                        "hibernate": "HIBERNATE AFTER:",
+                        "items": {
+                            "never": "Never",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "hour": "hour",
+                            "hours": "hours"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Power plan",
+                        "description": "Choose a power plan to control the computer performance, system temperature, and power usage.",
+                        "currentPowerPlan": {
+                            "label": "CURRENT PLAN"
+                        }
+                    }
                 }
             },
             "audio": {

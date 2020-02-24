@@ -22,6 +22,12 @@
                     "rapidCharge": "Rýchle nabíjanie"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Pretakt. zap.",
+                        "performance": "Výkon",
+                        "balance": "Vyvážený",
+                        "quiet": "Tichý"
+                    },
                     "title": "Pretaktovanie CPU",
                     "status": {
                         "alwayson": "Zap.",
@@ -1264,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "CERTIFIKOVANÝ PRODUKT ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Napájanie",
+					"subtitle": "Nastavenia napájania",
+					"description": "V tejto časti si môžete pozrieť predvolené nastavenia a prispôsobiť používanie napájania a plán napájania podľa vlastných potrieb.",
+					"globalPowerSettings": {
+						"title": "Globálne nastavenia napájania",
+						"description": "Táto funkcia potlačí plán napájania alebo nastavenia používania napájania.",
+						"powerButton": {
+							"label": "TLAČIDLO NAPÁJANIA:",
+							"items": {
+								"doNothing": "Nerobiť nič",
+								"sleep": "Spánok",
+								"hibernate": "Dlhodobý spánok",
+								"shutDown": "Vypnúť",
+								"turnOffTheDisplay": "Vypnúť obrazovku"
+							}
+						},
+						"requiredSignIn": {
+							"label": "POŽADOVANÉ PRIHLÁSENIE:",
+							"items": {
+								"never": "Nikdy",
+								"fromSleep": "Keď sa počítač prebudí zo spánku"
+							},
+							"tip": "Poznámka: Funguje len v prípade nastaveného systémového hesla."
+						}
+					},
+					"powerUse": {
+						"title": "Používanie napájania",
+						"description": "AK JE SYSTÉM NEČINNÝ:",
+						"turnOffDisplay": "VYPNÚŤ OBRAZOVKU PO:",
+						"turnOffHDD": "VYPNÚŤ PEVNÝ DISK PO:",
+						"sleep": "SPÁNOK PO:",
+						"hibernate": "DLHODOBÝ SPÁNOK PO:",
+						"items": {
+							"never": "Nikdy",
+							"minute": "minúta",
+							"minutes": "minúty",
+							"hour": "hodina",
+							"hours": "hodiny"
+						}
+					},
+					"powerPlan": {
+						"title": "Plán napájania",
+						"description": "Vyberte plán napájania na ovládanie výkonu počítača, teplotu systému a spotrebu napájania.",
+						"currentPowerPlan": {
+							"label": "PLÁN PRÚDU"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Inteligentný pohotovostný režim",
                     "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">moderného pohotovostného režimu</a> pri náročnejšom využívaní.",

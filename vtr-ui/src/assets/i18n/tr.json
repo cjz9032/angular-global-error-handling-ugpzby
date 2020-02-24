@@ -22,6 +22,12 @@
                     "rapidCharge": "Hızlı Şarj"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Hız Aşrtma açık",
+                        "performance": "Performans",
+                        "balance": "Denge",
+                        "quiet": "Sessiz"
+                    },
                     "title": "CPU Hız Aşırtma",
                     "status": {
                         "alwayson": "Açık",
@@ -1264,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR SERTİFİKALI ÜRÜN"
-                },
+				},
+				"dpm": {
+					"title": "Güç",
+					"subtitle": "Güç ayarları",
+					"description": "Bu bölümden varsayılan ayarları denetleyebilir, güç kullanımınızı ve güç planınızı ihtiyaçlarınıza göre özelleştirebilirsiniz.",
+					"globalPowerSettings": {
+						"title": "Genel güç ayarları",
+						"description": "Bu özellik, Güç planı ve Güç kullanımı ayarlarını geçersiz kılacaktır.",
+						"powerButton": {
+							"label": "AÇMA/KAPAMA DÜĞMESİ:",
+							"items": {
+								"doNothing": "Hiçbir şey yapma",
+								"sleep": "Uyku",
+								"hibernate": "Hazırda bekleme kipine geç",
+								"shutDown": "Kapat",
+								"turnOffTheDisplay": "Görüntü birimini kapat"
+							}
+						},
+						"requiredSignIn": {
+							"label": "OTURUM AÇMA GEREKLİ:",
+							"items": {
+								"never": "Hiçbir zaman",
+								"fromSleep": "PC uyku kipinden çağrıldığında"
+							},
+							"tip": "Not: Bu yalnızca sistem parolası belirlenmişse geçerlidir."
+						}
+					},
+					"powerUse": {
+						"title": "Güç kullanımı",
+						"description": "SİSTEM BOŞTAYSA:",
+						"turnOffDisplay": "EKRAN KAPATMAK İÇİN BEKLENECEK SÜRE:",
+						"turnOffHDD": "HDD'Yİ KAPATMAK İÇİN BEKLENECEK SÜRE:",
+						"sleep": "UYKU KİPİNE GEÇMEK İÇİN BEKLENECEK SÜRE:",
+						"hibernate": "HAZIRDA BEKLEME KİPİNE GEÇMEK İÇİN BEKLENECEK SÜRE:",
+						"items": {
+							"never": "Hiçbir zaman",
+							"minute": "dakika",
+							"minutes": "dakika",
+							"hour": "saat",
+							"hours": "saat"
+						}
+					},
+					"powerPlan": {
+						"title": "Güç planı",
+						"description": "Bilgisayar performansını, sistem sıcaklığını ve güç kullanımını denetlemek için bir güç planı seçin.",
+						"currentPowerPlan": {
+							"label": "GEÇERLİ PLAN"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Akıllı Bekleme",
                     "description": "Bu özellik, yoğun kullanım zamanlarında <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Bekleme Durumu</a> hızlı başlatma deneyiminden ödün vermeden, bilgisayar boşta olduğunda pil gücü tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",

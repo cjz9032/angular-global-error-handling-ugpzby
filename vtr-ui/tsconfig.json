@@ -26,7 +26,6 @@
 		"enableIvy": false,
 		"allowEmptyCodegenFiles": false,
 		"fullTemplateTypeCheck": true,
-		"strictInjectionParameters": true,
-		"strictMetadataEmit": true
+		"strictInjectionParameters": true
 	}
 }

@@ -22,6 +22,12 @@
                     "rapidCharge": "Szybkie ładowanie"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Przetakt. wł.",
+                        "performance": "Wydajność",
+                        "balance": "Równowaga",
+                        "quiet": "Cichy"
+                    },
                     "title": "Przetaktowywanie CPU",
                     "status": {
                         "alwayson": "Włącz",
@@ -1264,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "PRODUKT Z CERTYFIKATEM ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Zasilanie",
+					"subtitle": "Ustawienia zasilania",
+					"description": "Możesz sprawdzić domyślne ustawienia w tej sekcji i dostosować zużycie energii i plan zasilania do swoich potrzeb.",
+					"globalPowerSettings": {
+						"title": "Globalne ustawienia zasilania",
+						"description": "Funkcja zastąpi ustawienia planu zasilania lub zużycia energii.",
+						"powerButton": {
+							"label": "PRZYCISK ZASILANIA:",
+							"items": {
+								"doNothing": "Nie rób nic",
+								"sleep": "Uśpienie",
+								"hibernate": "Hibernuj",
+								"shutDown": "Zamknij",
+								"turnOffTheDisplay": "Wyłącz ekran"
+							}
+						},
+						"requiredSignIn": {
+							"label": "WYMAGANE ZALOGOWANIE:",
+							"items": {
+								"never": "Nigdy",
+								"fromSleep": "Gdy komputer budzi się z trybu uśpienia"
+							},
+							"tip": "Uwaga: Działa to tylko wtedy, jeśli ustawiono hasło systemu."
+						}
+					},
+					"powerUse": {
+						"title": "Zużycie energii",
+						"description": "JEŚLI SYSTEM NIE JEST UŻYWANY:",
+						"turnOffDisplay": "WYŁĄCZ EKRAN PO:",
+						"turnOffHDD": "WYŁĄCZ HDD PO:",
+						"sleep": "PRZEJDŹ DO TRYBU UŚPIENIA PO:",
+						"hibernate": "PRZEJDŹ DO TRYBU HIBERNACJI PO:",
+						"items": {
+							"never": "Nigdy",
+							"minute": "minuta",
+							"minutes": "minut(y)",
+							"hour": "godzina",
+							"hours": "godzin(y)"
+						}
+					},
+					"powerPlan": {
+						"title": "Plan zasilania",
+						"description": "Wybierz plan zasilania, aby kontrolować wydajność, temperaturę komputera i zużycie energii.",
+						"currentPowerPlan": {
+							"label": "OBECNY PLAN"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Inteligentne wstrzymanie",
                     "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie wznawianie z <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">trybu wstrzymania</a> w godzinach bardziej intensywnego korzystania.",

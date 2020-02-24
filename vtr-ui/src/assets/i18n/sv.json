@@ -22,6 +22,12 @@
                     "rapidCharge": "Snabbladdning"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Överklockn. på",
+                        "performance": "Prestanda",
+                        "balance": "Balans",
+                        "quiet": "Tyst"
+                    },
                     "title": "CPU-överklockning",
                     "status": {
                         "alwayson": "På",
@@ -1264,6 +1270,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "EN ENERGY STAR-CERTIFIERAD PRODUKT"
+                },
+                "dpm": {
+                    "title": "Ström",
+                    "subtitle": "Ströminställningar",
+                    "description": "I detta avsnitt kan du kontrollera standardinställningarna och anpassa energiförbrukningen och energischemat efter dina behov.",
+                    "globalPowerSettings": {
+                        "title": "Globala energiinställningar",
+                        "description": "Funktionen åsidosätter inställningarna för Energischema och Energiförbrukning.",
+                        "powerButton": {
+                            "label": "STRÖMBRYTARE:",
+                            "items": {
+                                "doNothing": "Gör ingenting",
+                                "sleep": "Strömsparläge",
+                                "hibernate": "Viloläge",
+                                "shutDown": "Stäng av",
+                                "turnOffTheDisplay": "Stäng av bildskärmen"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "INLOGGNING KRÄVS:",
+                            "items": {
+                                "never": "Aldrig",
+                                "fromSleep": "När datorn aktiveras från strömsparläge"
+                            },
+                            "tip": "Obs! Fungerar bara om du har ställt in ett systemlösenord."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Energianvändning",
+                        "description": "OM SYSTEMET ÄR INAKTIVT:",
+                        "turnOffDisplay": "STÄNG AV BILDSKÄRM EFTER:",
+                        "turnOffHDD": "STÄNG AV HÅRDDISK EFTER:",
+                        "sleep": "STRÖMSPARLÄGE EFTER:",
+                        "hibernate": "VILOLÄGE EFTER:",
+                        "items": {
+                            "never": "Aldrig",
+                            "minute": "minut",
+                            "minutes": "minuter",
+                            "hour": "timme",
+                            "hours": "timmar"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Energischema",
+                        "description": "Välj ett energischema för att styra datorprestanda, systemtemperatur och energiförbrukning.",
+                        "currentPowerPlan": {
+                            "label": "AKTUELLT SCHEMA"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Smart vänteläge",

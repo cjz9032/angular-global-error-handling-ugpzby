@@ -22,6 +22,12 @@
                     "rapidCharge": "Pikalataus"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Ylikell. päällä",
+                        "performance": "Suorituskyky",
+                        "balance": "Tasapaino",
+                        "quiet": "Hiljainen"
+                    },
                     "title": "CPU-ylikellotus",
                     "status": {
                         "alwayson": "Käytössä",
@@ -1264,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR -VAATIMUSTEN MUKAINEN TUOTE"
-                },
+				},
+				"dpm": {
+					"title": "Virta",
+					"subtitle": "Virta-asetukset",
+					"description": "Tämän osan avulla voit tarkistaa oletusasetukset ja mukauttaa virrankäyttösi ja virrankäyttösuunnitelmasi tarpeidesi mukaan.",
+					"globalPowerSettings": {
+						"title": "Yleiset virrankäyttöasetukset",
+						"description": "Tämä ominaisuus ohittaa virrankäyttösuunnitelman tai virrankäyttöasetukset.",
+						"powerButton": {
+							"label": "VIRTAPAINIKE:",
+							"items": {
+								"doNothing": "Älä tee mitään",
+								"sleep": "Lepotila",
+								"hibernate": "Lepotila",
+								"shutDown": "Lopputoimet",
+								"turnOffTheDisplay": "Katkaise näytöstä virta"
+							}
+						},
+						"requiredSignIn": {
+							"label": "PAKOLLINEN KIRJAUTUMINEN:",
+							"items": {
+								"never": "Ei koskaan",
+								"fromSleep": "Kun tietokone herää lepotilasta"
+							},
+							"tip": "Huomautus: Tämä toimii vain, jos järjestelmän salasana on määritetty."
+						}
+					},
+					"powerUse": {
+						"title": "Virrankäyttö",
+						"description": "JOS JÄRJESTELMÄ ON JOUTOAIKA-TILASSA:",
+						"turnOffDisplay": "KATKAISE NÄYTÖSTÄ VIRTA, KUN:",
+						"turnOffHDD": "SAMMUTA KIINTOLEVY, KUN:",
+						"sleep": "SIIRRY LEPOTILAAN, KUN:",
+						"hibernate": "SIIRRY HORROSTILAAN, KUN:",
+						"items": {
+							"never": "Ei koskaan",
+							"minute": "minuutti",
+							"minutes": "minuuttia",
+							"hour": "tunti",
+							"hours": "tuntia"
+						}
+					},
+					"powerPlan": {
+						"title": "Virrankäyttösuunnitelma",
+						"description": "Valitse virrankäyttösuunnitelma tietokoneen suorituskykyvyn, järjestelmän lämpötilan ja virrankäytön hallintaa varten.",
+						"currentPowerPlan": {
+							"label": "NYKYINEN VIRRANKÄYTTÖSUUNNITELMA"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Älykäs valmiustila",
                     "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysaikana ilman, että <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> -ominaisuuden nopea käynnistys hidastuu kovan käytön aikana.",

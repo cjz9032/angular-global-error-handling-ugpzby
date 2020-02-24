@@ -2326,6 +2326,11 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getPowerDPM(){
+		return undefined;
+	}
+	
 	public getInstalledApplicationList() {
 		if (this.phoenix) {
 				const installedAppList: any = {

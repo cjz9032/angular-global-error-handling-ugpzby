@@ -22,6 +22,12 @@
                     "rapidCharge": "Snelladen"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Overklok aan",
+                        "performance": "Prestaties",
+                        "balance": "Balans",
+                        "quiet": "Stil"
+                    },
                     "title": "CPU overklok",
                     "status": {
                         "alwayson": "Aan",
@@ -1264,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy star",
                     "description": "EEN DOOR ENERGY STAR GECERTIFICEERD PRODUCT"
-                },
+				},
+				"dpm": {
+					"title": "Energiebeheer",
+					"subtitle": "Energie-instellingen",
+					"description": "In dit gedeelte kunt u de standaardinstellingen bekijken en uw energieverbruik en energieschema aanpassen aan uw behoeften.",
+					"globalPowerSettings": {
+						"title": "Algemene instellingen voor energiebeheer",
+						"description": "Deze functie negeert de instellingen voor energieschema of energieverbruik.",
+						"powerButton": {
+							"label": "AAN/UIT-KNOP:",
+							"items": {
+								"doNothing": "Niets doen",
+								"sleep": "Slaapstand",
+								"hibernate": "Slaapstand",
+								"shutDown": "Afsluiten",
+								"turnOffTheDisplay": "Beeldscherm uitzetten"
+							}
+						},
+						"requiredSignIn": {
+							"label": "VEREISTE AANMELDING:",
+							"items": {
+								"never": "Nooit",
+								"fromSleep": "Als pc uit de slaapstand wordt gehaald"
+							},
+							"tip": "Opmerking: Dit werkt alleen als er een systeemwachtwoord is ingesteld."
+						}
+					},
+					"powerUse": {
+						"title": "Energieverbruik",
+						"description": "ALS HET SYSTEEM INACTIEF IS:",
+						"turnOffDisplay": "BEELDSCHERM UITSCHAKELEN NA:",
+						"turnOffHDD": "HDD UITSCHAKELEN NA:",
+						"sleep": "SLAAPSTAND NA:",
+						"hibernate": "SLUIMERSTAND NA:",
+						"items": {
+							"never": "Nooit",
+							"minute": "minuut",
+							"minutes": "minuten",
+							"hour": "uur",
+							"hours": "uur"
+						}
+					},
+					"powerPlan": {
+						"title": "Energiebeheerschema",
+						"description": "Kies een energieschema om de prestaties, de systeemtemperatuur en het energieverbruik van de computer te regelen.",
+						"currentPowerPlan": {
+							"label": "HUIDIG SCHEMA"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Slim stand-by",
                     "description": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de snelle hervatting van <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern stand-by</a> bij zwaarder gebruik bestaan.",

@@ -319,17 +319,14 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		}
 		@media #{$breakpoint_xl}{
 			max-width: 24.2rem !important;
-		}		
+		}
 	}
 }
 
 .fnctrl-tooltip.tooltip {
 	width: 30rem !important;
 	.tooltip-inner {
-		padding: 0.5rem 1rem !important;
-		@media #{$breakpoint_lg} {
-			padding: 0.5rem !important;
-		}
+		padding: 0.5rem !important;
 	}
 }
 
@@ -1549,6 +1546,14 @@ vtr-ui-smart-performance-scanning {
 	ngb-tooltip-window.vtr-tooltip.tooltip {
 		.tooltip-inner {
 			width: 40rem;
+		}
+	}
+}
+
+.vtr-page-dashboard {
+	.vtr-header-main {
+		.vtr-header-main-inner {
+			padding: 1rem $padding_side 6rem $padding_side !important;
 		}
 	}
 }

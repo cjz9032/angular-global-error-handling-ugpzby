@@ -92,6 +92,26 @@
 	  content: $icomoon-dpc-wigig; 
 	}
   }
+  .icomoon-dpm-global-settings {
+	&:before {
+	  content: $icomoon-dpm-global-settings; 
+	}
+  }
+  .icomoon-dpm-power-agenda {
+	&:before {
+	  content: $icomoon-dpm-power-agenda; 
+	}
+  }
+  .icomoon-dpm-power-plan {
+	&:before {
+	  content: $icomoon-dpm-power-plan; 
+	}
+  }
+  .icomoon-dpm-power-use {
+	&:before {
+	  content: $icomoon-dpm-power-use; 
+	}
+  }
   .icomoon-DS-ic-list_Smart-standby {
 	&:before {
 	  content: $icomoon-DS-ic-list_Smart-standby; 

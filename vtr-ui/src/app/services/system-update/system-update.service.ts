@@ -754,15 +754,17 @@ export class SystemUpdateService {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.cancelDownload()
 				.then((status: boolean) => {
-					this.isUpdateDownloading = false;
-					this.percentCompleted = 0;
-					this.isUpdatesAvailable = true;
-					this.installationPercent = 0;
-					this.downloadingPercent = 0;
-					this.isInstallationCompleted = false;
-					this.isDownloadingCancel = true;
-					this.isInstallingAllUpdates = true;
-					this.commonService.sendNotification(UpdateProgress.UpdateDownloadCancelled, status);
+					if (status === true) {
+						this.isUpdateDownloading = false;
+						this.percentCompleted = 0;
+						this.isUpdatesAvailable = true;
+						this.installationPercent = 0;
+						this.downloadingPercent = 0;
+						this.isInstallationCompleted = false;
+						this.isDownloadingCancel = true;
+						this.isInstallingAllUpdates = true;
+						this.commonService.sendNotification(UpdateProgress.UpdateDownloadCancelled, status);
+					}
 				});
 		}
 	}

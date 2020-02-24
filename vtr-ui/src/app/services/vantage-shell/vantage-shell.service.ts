@@ -536,6 +536,14 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getPowerDPM(): any {
+		if (this.getPowerSettings() && this.getPowerSettings().dpm) {
+			return this.getPowerSettings().dpm;
+		}
+		return undefined;
+	}
+
 	// public getPowerItsIntelligentCooling(): any {
 	// 	if(this.phoenix){
 	// 		return this.phoenix.hwsettings.power.its.IntelligentCooling ;
@@ -583,8 +591,8 @@ export class VantageShellService {
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
-        return true;
-    }
+		return true;
+	}
 	public calcDeviceFilter(filter) {
 		if (this.phoenix) {
 			return this.phoenix.deviceFilter.calc(filter);
@@ -755,6 +763,15 @@ export class VantageShellService {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingAutoClose;
+		}
+		return undefined;
+	}
+	public getGamingAdvancedOC() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingAdvancedOC;
 		}
 		return undefined;
 	}

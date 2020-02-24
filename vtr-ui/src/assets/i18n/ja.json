@@ -22,6 +22,12 @@
                     "rapidCharge": "急速充電"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "CLKUPオン",
+                        "performance": "性能",
+                        "balance": "バランス",
+                        "quiet": "静音"
+                    },
                     "title": "CPU クロックアップ",
                     "status": {
                         "alwayson": "オン",
@@ -1264,6 +1270,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR 認定製品"
+                },
+                "dpm": {
+                    "title": "電源",
+                    "subtitle": "電源設定",
+                    "description": "このセクションでは、デフォルト設定を確認し、必要に応じて電力消費と電源プランをカスタマイズできます。",
+                    "globalPowerSettings": {
+                        "title": "共通省電力設定",
+                        "description": "この機能は、電源プランまたは電力消費設定を上書きします。",
+                        "powerButton": {
+                            "label": "電源ボタン:",
+                            "items": {
+                                "doNothing": "何もしない",
+                                "sleep": "スリープ",
+                                "hibernate": "休止",
+                                "shutDown": "シャットダウン",
+                                "turnOffTheDisplay": "ディスプレイの電源をオフにする"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "次の場合にサインインが必要です：",
+                            "items": {
+                                "never": "なし",
+                                "fromSleep": "PC がスリープから復帰したとき"
+                            },
+                            "tip": "注: これは、システム・パスワードが設定されている場合にのみ機能します。"
+                        }
+                    },
+                    "powerUse": {
+                        "title": "電力消費",
+                        "description": "システムがアイドルの場合:",
+                        "turnOffDisplay": "ディスプレイをオフにする:",
+                        "turnOffHDD": "HDD をオフにする:",
+                        "sleep": "スリープ状態にする:",
+                        "hibernate": "休止状態にする:",
+                        "items": {
+                            "never": "なし",
+                            "minute": "分",
+                            "minutes": "分",
+                            "hour": "時間",
+                            "hours": "時間"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "電源プラン",
+                        "description": "電源プランを選択して、コンピューターのパフォーマンス、システム温度、および電力使用率を制御します。",
+                        "currentPowerPlan": {
+                            "label": "現在のプラン"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "スマート・スタンバイ",

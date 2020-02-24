@@ -151,7 +151,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private collectPreloadAssets(menu: Array<any>) : string[] {
+	private collectPreloadAssets(menu: Array<any>): string[] {
 		let assets = [];
 		menu.forEach(item => {
 			if (!item.hide && item.pre) {
@@ -161,7 +161,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			if (item.subitems.length > 0) {
 				assets = assets.concat(this.collectPreloadAssets(item.subitems));
 			}
-		})
+		});
 
 		return assets;
 	}
@@ -308,7 +308,25 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	toggleMenu(event) {
 		this.updateSearchBoxState(false);
 		this.showMenu = !this.showMenu;
+		this.colorPickerFun();
 		event.stopPropagation();
+	}
+
+	public colorPickerFun() {
+		if (this.showMenu) {
+			if (document.getElementById('colorBtn')) {
+				document.getElementById('colorBtn').addEventListener('click', (event) => {
+					this.showMenu = false;
+				});
+			}
+			for (let i = 0; i < 4; i++) {
+				if (document.getElementById('keyboard-area' + i)) {
+					document.getElementById('keyboard-area' + i).addEventListener('click', (event) => {
+						this.showMenu = false;
+					});
+				}
+			}
+		}
 	}
 
 	onKeyPress($event) {

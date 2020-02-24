@@ -26,6 +26,8 @@ import { UiTimePickerComponent } from 'src/app/components/ui/ui-time-picker/ui-t
 import { UiTooltipsComponent } from 'src/app/components/ui/ui-tooltips/ui-tooltips.component';
 import { UiToggleComponent } from 'src/app/components/ui/ui-toggle/ui-toggle.component';
 import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
+import { UiBrightnessSliderComponent } from 'src/app/components/ui/ui-brightness-slider/ui-brightness-slider.component';
+import { UiAddReduceButtonComponent } from 'src/app/components/ui/ui-add-reduce-button/ui-add-reduce-button.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -37,6 +39,7 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
 import { faCircle as falCircle } from '@fortawesome/free-regular-svg-icons/faCircle';
 import { faChevronDown as falChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faChevronUp as falChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
+import { UiDpmDropdownComponent } from 'src/app/components/ui/ui-dpm-dropdown/ui-dpm-dropdown.component';
 import { SpinnerComponent } from 'src/app/components/common/spinner/spinner.component';
 
 library.add(faCircle);
@@ -74,7 +77,10 @@ library.add(faChevronUp);
 		UiPopoverComponent,
 		UiTooltipsComponent,
 		UiToggleComponent,
-		ContainerCollapsibleComponent
+		ContainerCollapsibleComponent,
+		UiDpmDropdownComponent,
+		UiBrightnessSliderComponent,
+		UiAddReduceButtonComponent
 	],
 	exports: [
 		UiApsSliderComponent,
@@ -102,7 +108,10 @@ library.add(faChevronUp);
 		MetricsModule,
 		UiTooltipsComponent,
 		UiToggleComponent,
-		ContainerCollapsibleComponent
+		ContainerCollapsibleComponent,
+		UiDpmDropdownComponent,
+		UiBrightnessSliderComponent,
+		UiAddReduceButtonComponent
 	],
 	imports: [
 		CommonModule,

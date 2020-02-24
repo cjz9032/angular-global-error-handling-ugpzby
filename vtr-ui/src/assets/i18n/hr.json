@@ -22,6 +22,12 @@
                     "rapidCharge": "Brzo punjenje"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Overclock uklj.",
+                        "performance": "Performanse",
+                        "balance": "Balans",
+                        "quiet": "Tiho"
+                    },
                     "title": "Overclock CPU-a",
                     "status": {
                         "alwayson": "Uključeno",
@@ -1264,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "PROIZVOD S CERTIFIKATOM ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Napajanje",
+					"subtitle": "Postavke napajanja",
+					"description": "Ovaj odjeljak omogućuje vam provjeru zadanih postavki i prilagođavanje potrošnje i plana napajanja prema vašim potrebama.",
+					"globalPowerSettings": {
+						"title": "Globalne postavke napajanja",
+						"description": "Ova će značajka nadvladati postavke napajanja ili postavke upotrebe energije.",
+						"powerButton": {
+							"label": "GUMB ZA NAPAJANJE:",
+							"items": {
+								"doNothing": "Nemojte učiniti ništa",
+								"sleep": "Stanje mirovanja",
+								"hibernate": "Hibernacija",
+								"shutDown": "Isključi",
+								"turnOffTheDisplay": "Isključite zaslon"
+							}
+						},
+						"requiredSignIn": {
+							"label": "POTREBNA PRIJAVA:",
+							"items": {
+								"never": "Nikada",
+								"fromSleep": "Kada se računalo probudi iz sna"
+							},
+							"tip": "Napomena: Ovo funkcionira samo ako je postavljena lozinka sustava."
+						}
+					},
+					"powerUse": {
+						"title": "Uporaba napajanja",
+						"description": "AKO JE SUSTAV U PRAZNOM HODU:",
+						"turnOffDisplay": "ISKLJUČITE ZASLON NAKON:",
+						"turnOffHDD": "ISKLJUČITE TVRDI DISK NAKON:",
+						"sleep": "STANJE MIROVANJA NAKON:",
+						"hibernate": "HIBERNACIJA NAKON:",
+						"items": {
+							"never": "Nikada",
+							"minute": "min",
+							"minutes": "min",
+							"hour": "h",
+							"hours": "h"
+						}
+					},
+					"powerPlan": {
+						"title": "Plan napajanja",
+						"description": "Odaberite plan napajanja da bist eupravljali performansama računala, temperaturom sustava i potrošnjom energije.",
+						"currentPowerPlan": {
+							"label": "TRENUTNI PLAN"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Pametno stanje mirovanja",
                     "description": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja iskustva brzog nastavka rada u <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Suvremenom stanju pripravnosti</a> tijekom rada s većim opterećenjem.",

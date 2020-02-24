@@ -22,6 +22,12 @@
                     "rapidCharge": "Gyorstöltés"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Túlpörgetés",
+                        "performance": "Teljesítmény",
+                        "balance": "Egyensúly",
+                        "quiet": "Csendes"
+                    },
                     "title": "CPU-túlpörgetés",
                     "status": {
                         "alwayson": "Be",
@@ -1264,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR-TANÚSÍTVÁNNYAL RENDELKEZŐ TERMÉK"
-                },
+				},
+				"dpm": {
+					"title": "Tápellátás",
+					"subtitle": "Energiagazdálkodási beállítások",
+					"description": "Ez a szakasz lehetővé teszi az alapértelmezett beállítások ellenőrzését, valamint az energiafelhasználás és az energiaséma testreszabását az igényeinek megfelelően.",
+					"globalPowerSettings": {
+						"title": "Globális energiagazdálkodási beállítások",
+						"description": "Ez a funkció felülbírálja az Energiaséma vagy Energiafelhasználás beállításait.",
+						"powerButton": {
+							"label": "FŐKAPCSOLÓ:",
+							"items": {
+								"doNothing": "Ne tegyen semmit",
+								"sleep": "Alvó mód",
+								"hibernate": "Hibernálás",
+								"shutDown": "Leállítás",
+								"turnOffTheDisplay": "Kapcsolja ki a kijelzőt"
+							}
+						},
+						"requiredSignIn": {
+							"label": "BEJELENTKEZÉS SZÜKSÉGES:",
+							"items": {
+								"never": "Soha",
+								"fromSleep": "Amikor a számítógép felébred alvásból"
+							},
+							"tip": "Megjegyzés: Ez csak akkor működik, ha a rendszer jelszava be van állítva."
+						}
+					},
+					"powerUse": {
+						"title": "Energiahasználat",
+						"description": "HA A RENDSZER TÉTLEN:",
+						"turnOffDisplay": "KIJELZŐ KIKAPCSOLÁSA ENNYI IDŐ ELTELTÉVEL:",
+						"turnOffHDD": "HDD KIKAPCSOLÁSA ENNYI IDŐ ELTELTÉVEL:",
+						"sleep": "ALVÓ ÁLLAPOT ENNYI IDŐ ELTELTÉVEL:",
+						"hibernate": "HIBERNÁLÁS ENNYI IDŐ ELTELTÉVEL:",
+						"items": {
+							"never": "Soha",
+							"minute": "perc",
+							"minutes": "perc",
+							"hour": "óra",
+							"hours": "óra"
+						}
+					},
+					"powerPlan": {
+						"title": "Energiaséma",
+						"description": "Válasszon egy energiasémát, amely vezérli a számítógép teljesítményét, a rendszer hőmérsékletét és az energiafelhasználást.",
+						"currentPowerPlan": {
+							"label": "AKTUÁLIS SÉMA"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Intelligens készenlét",
                     "description": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern készenléti állapot</a> visszaállási művelete nem lesz lassabb a gép komolyabb használata során.",
