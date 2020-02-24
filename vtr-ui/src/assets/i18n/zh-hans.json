@@ -22,7 +22,7 @@
                     "rapidCharge": "快速充电"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "超频开启",
                         "performance": "野兽模式",
                         "balance": "智能模式",
@@ -748,12 +748,11 @@
                 "sub1": "我的安全顾问",
                 "sub2": "病毒防护",
                 "sub3": "WiFi 安全",
-                "sub4": "密码管理器",
-                "sub5": "VPN",
+                "sub4": "密码保险箱",
+                "sub5": "VPN 安全顾问",
                 "sub6": "指纹"
             },
             "support": "支持服务",
-            "privacy": "隐私",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "检查设备是否受安全保护",
             "antiVirus": "病毒防护",
             "wifi": "WiFi 安全",
-            "pswdMgr": "密码管理器",
-            "vpn": "VPN",
+            "pswdMgr": "密码保险箱",
+            "vpn": "VPN 安全顾问",
             "enabled": "已启用",
             "disabled": "已禁用",
             "partiallyProtected": "部分受保护",
@@ -779,8 +778,8 @@
             "fingerPrint": "指纹",
             "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "已登记",
+            "notEnrolled": "未登记"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "连接到英特网以使用此功能"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "隐私"
         }
     },
     "tutorial": {
@@ -1041,7 +1035,7 @@
                     "Good": "<b>电池状况良好。</b>",
                     "Exhaustion": "电池容量已<b>降低</b>。请更换一个新电池。",
                     "Bad": "<b>出现电池错误。</b>电池无法充电/放电。更换电池。",
-                    "NotDetected": "<b>未检测到电池。</b>",
+                    "NotDetected": "<b>未检测到电池或未</b>插入电池。",
                     "NotGood": "<b>电池状况不佳。</b>",
                     "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
                     "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
@@ -1276,6 +1270,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR 认证产品"
+                },
+                "dpm": {
+                    "title": "电源管理",
+                    "subtitle": "电源设置",
+                    "description": "此部分可让您检查缺省设置，并根据需要自定义您的电源使用和电源计划。",
+                    "globalPowerSettings": {
+                        "title": "全局电源设置",
+                        "description": "此功能将覆盖电源计划或电源使用设置。",
+                        "powerButton": {
+                            "label": "电源按钮：",
+                            "items": {
+                                "doNothing": "什么都不做",
+                                "sleep": "睡眠",
+                                "hibernate": "休眠",
+                                "shutDown": "关机",
+                                "turnOffTheDisplay": "关闭显示屏"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "需要登录：",
+                            "items": {
+                                "never": "从不",
+                                "fromSleep": "当电脑从睡眠中唤醒时"
+                            },
+                            "tip": "注意：仅在设置了系统密码后才能使用。"
+                        }
+                    },
+                    "powerUse": {
+                        "title": "电源使用",
+                        "description": "如果系统空闲：",
+                        "turnOffDisplay": "在等待以下时间后关闭显示屏：",
+                        "turnOffHDD": "在等待以下时间后关闭硬盘：",
+                        "sleep": "在等待以下时间后睡眠：",
+                        "hibernate": "在等待以下时间后休眠：",
+                        "items": {
+                            "never": "从不",
+                            "minute": "分钟",
+                            "minutes": "分钟",
+                            "hour": "小时",
+                            "hours": "小时"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "电源计划",
+                        "description": "选择一项电源计划以控制计算机性能、系统温度及电源使用情况。",
+                        "currentPowerPlan": {
+                            "label": "当前计划"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "智能待机",
@@ -2287,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi 和互联家庭网络安全顾问",
+                "title": "WiFi 安全",
                 "back": "返回"
             },
             "container": {
@@ -3093,7 +3136,8 @@
             "storage": "存储器",
             "wireless": "无线"
         },
-        "warningMessage": "请记住，如果系统进入睡眠或休眠状态，则测试将被取消"
+        "warningMessage": "请记住，如果系统进入睡眠或休眠状态，则测试将被取消",
+        "refreshMessage": "刷新可能需要一些时间，因为它需要再次加载所有组件"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "现在，您可以查找您的私人信息是否已外泄，或在您不知情的情况下被在线跟踪器所使用。",
             "security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
             "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。"
         }

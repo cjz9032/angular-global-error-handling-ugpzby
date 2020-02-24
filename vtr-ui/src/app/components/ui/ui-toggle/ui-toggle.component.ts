@@ -20,6 +20,7 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	public disabled = true;
 	public timer = 0;
 	uiSubscription: Subscription;
+	@Input() parentId: string;
 
 
 

@@ -6,7 +6,7 @@
 	[attr.aria-label]="value ? toggleId+' on' : toggleId+' off'"
 	vtrMetrics
 	metricsEvent="featureClick"
-	metricsParent="Gaming.Dashboard"
+	[metricsParent]="parentId"
 	[metricsItem]="onOffSwitchId"
 	[metricsValue]="!value">
 		<button tabindex="-1" class="btnRound" [ngClass]="{'selected': value}" [attr.name]="onOffSwitchId" [value]="value"

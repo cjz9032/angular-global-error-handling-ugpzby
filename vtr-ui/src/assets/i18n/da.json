@@ -22,7 +22,7 @@
                     "rapidCharge": "Hurtig opladning"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Overclock. til",
                         "performance": "Ydeevne",
                         "balance": "Balance",
@@ -749,11 +749,10 @@
                 "sub2": "Antivirus",
                 "sub3": "WiFi-sikkerhed",
                 "sub4": "Adgangskodesundhed",
-                "sub5": "VPN",
+                "sub5": "VPN-sikkerhed",
                 "sub6": "Fingeraftryk"
             },
             "support": "Support",
-            "privacy": "Anonymitet",
             "beta": {
                 "title": "beta"
             },
@@ -763,9 +762,9 @@
             "title": "Sikkerhedsvejledning",
             "subtitle": "KONTROLLÉR, OM DIN ENHED ER SIKRET.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-sikkerhed",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "wifi": "WiFi-Sikkerhed",
+            "pswdMgr": "Adgangskodesundhed",
+            "vpn": "VPN-Sikkerhed",
             "enabled": "AKTIVERET",
             "disabled": "DEAKTIVERET",
             "partiallyProtected": "DELVIST BESKYTTET",
@@ -779,8 +778,8 @@
             "fingerPrint": "Fingeraftryk",
             "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTRERET",
+            "notEnrolled": "IKKE REGISTRERET"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Opret forbindelse til internettet for at bruge denne funktion"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Anonymitet"
         }
     },
     "tutorial": {
@@ -1040,7 +1034,7 @@
                     "Good": "<b>Batteriets tilstand er god.</b>",
                     "Exhaustion": "Batteriets kapacitet er blevet <b>forringet</b>. Udskift det med et nyt.",
                     "Bad": "<b>Der er opstået en batterifejl.</b> Batteriet kan ikke oplades/aflades. Udskift batteriet.",
-                    "NotDetected": "<b>Der blev ikke fundet noget batteri.</b>",
+                    "NotDetected": "<b>Der er ikke registreret et batteri</b>, eller der er ikke tilsluttet noget batteri.",
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
                     "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm.</b>",
@@ -1276,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ET ENERGY STAR-CERTIFICERET PRODUKT"
-                },
+				},
+				"dpm": {
+					"title": "Strøm",
+					"subtitle": "Strømindstillinger",
+					"description": "I denne sektion kan du tjekke standardindstillingerne og tilpasse dit strømforbrug og din strømplan i overensstemmelse med dine behov.",
+					"globalPowerSettings": {
+						"title": "Globale strømindstillinger",
+						"description": "Denne funktion tilsidesætter indstillingerne for Strømplan eller Strømforbrug.",
+						"powerButton": {
+							"label": "TÆND/SLUK-KNAP:",
+							"items": {
+								"doNothing": "Gør intet",
+								"sleep": "Slumre",
+								"hibernate": "Dvale",
+								"shutDown": "Luk computeren",
+								"turnOffTheDisplay": "Sluk for skærmen"
+							}
+						},
+						"requiredSignIn": {
+							"label": "DER KRÆVES LOGON:",
+							"items": {
+								"never": "Aldrig",
+								"fromSleep": "Når pc'en vågner op fra slumretilstand"
+							},
+							"tip": "Bemærk: Dette virker kun, hvis systemadgangskoden er angivet."
+						}
+					},
+					"powerUse": {
+						"title": "Strømforbrug",
+						"description": "HVIS SYSTEMET ER INAKTIVT:",
+						"turnOffDisplay": "SLUK FOR SKÆRMEN EFTER:",
+						"turnOffHDD": "SLUK FOR HARDDISKEN EFTER:",
+						"sleep": "SKIFT TIL SLUMRETILSTAND EFTER:",
+						"hibernate": "SKIFT TIL DVALETILSTAND EFTER:",
+						"items": {
+							"never": "Aldrig",
+							"minute": "minut",
+							"minutes": "minutter",
+							"hour": "time",
+							"hours": "timer"
+						}
+					},
+					"powerPlan": {
+						"title": "Strømskema",
+						"description": "Vælg en strømplan til at styre din computers ydeevne, systemtemperatur og strømforbrug.",
+						"currentPowerPlan": {
+							"label": "NUVÆRENDE PLAN"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Smart-standby",
                     "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at genoptage dit arbejde hurtigt ved hjælp af <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Moderne standby</a> i perioder med mere intens aktivitet.",
@@ -2287,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi og Tilsluttet Home Security",
+                "title": "WiFi-sikkerhed",
                 "back": "TILBAGE"
             },
             "container": {
@@ -2471,7 +2514,7 @@
     "lenovoId": {
         "login": "Login",
         "logout": "Log af",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Logger af...",
         "unlockExclusives": "Lås Eksklusive op",
         "user": "Bruger",
         "welcomeText1": "Du ser ud til at være fuld af energi i dag, {{firstName}}!",
@@ -3093,7 +3136,8 @@
             "storage": "Lager",
             "wireless": "Trådløs"
         },
-        "warningMessage": "Husk, at testene bliver annulleret, hvis systemet slumrer eller går i dvaletilstand"
+        "warningMessage": "Husk, at testene bliver annulleret, hvis systemet slumrer eller går i dvaletilstand",
+        "refreshMessage": "Opdateringen kan tage noget tid, da den skal indlæse alle komponenterne igen"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,8 +3478,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nu kan du finde ud af, om der har været et sikkerhedsbrud, så dine personlige oplysninger er blevet registreret eller brugt af online-trackere, uden at du ved det.",
-            "security": "Vidste du det? Selvom du ikke har et antivirusprogram installeret, tilbyder vi stadig en grundlæggende sikkerhedsbeskyttelse til din enhed.",
+			"security": "Vidste du det? Selvom du ikke har et antivirusprogram installeret, tilbyder vi stadig en grundlæggende sikkerhedsbeskyttelse til din enhed.",
             "connectedHomeSecurity": "Få overvågning i realtid og advarsler om din netværkssikkerhed derhjemme. Du er den første, der får det at vide, hvis nogen af dine smart-enheder er udsat for et sikkerhedsangreb."
         }
     },

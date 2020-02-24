@@ -22,7 +22,7 @@
                     "rapidCharge": "Carga rápida"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Acel. activada",
                         "performance": "Rendimiento",
                         "balance": "Equilibrio",
@@ -748,12 +748,11 @@
                 "sub1": "Mi seguridad",
                 "sub2": "Antivirus",
                 "sub3": "Seguridad de WiFi",
-                "sub4": "Administrador de contraseñas",
-                "sub5": "VPN",
+                "sub4": "Estado de la contraseña",
+                "sub5": "Seguridad VPN",
                 "sub6": "Huella dactilar"
             },
             "support": "Soporte",
-            "privacy": "Privacidad",
             "beta": {
                 "title": "beta"
             },
@@ -763,9 +762,9 @@
             "title": "Asesor de seguridad",
             "subtitle": "COMPRUEBE SI SU DISPOSITIVO ESTÁ SEGURO.",
             "antiVirus": "Antivirus",
-            "wifi": "Seguridad de WiFi",
-            "pswdMgr": "Administrador de contraseñas",
-            "vpn": "VPN",
+            "wifi": "Seguridad De WiFi",
+            "pswdMgr": "Estado De La Contraseña",
+            "vpn": "Seguridad VPN",
             "enabled": "HABILITADO",
             "disabled": "DESHABILITADO",
             "partiallyProtected": "PARCIALMENTE PROTEGIDO",
@@ -779,12 +778,12 @@
             "fingerPrint": "Huella dactilar",
             "privacyPolicyAndTermsOfService": "<tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTRADO",
+            "notEnrolled": "NO REGISTRADO"
         },
         "qAndA": {
-            "title": "Preguntas y respuestas para su máquina",
-            "subtitle": "Encuentre consejos útiles para su dispositivo.",
+            "title": "Preguntas y respuestas acerca de su máquina",
+            "subtitle": "Descubra algunos consejos útiles acerca de su dispositivo",
             "question1": "Cree copias de seguridad y restaure sus archivos",
             "question2": "Cómo renovar su equipo",
             "question3": "Cómo conocer la CPU de su equipo",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Conéctese a Internet para utilizar esta característica"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Privacidad"
         }
     },
     "tutorial": {
@@ -852,10 +846,10 @@
         },
         "feedback": {
             "title": "Proporcionar comentarios",
-            "subtitle": "Cuéntenos lo que piensa de Vantage.",
-            "button": "Proporcione comentarios",
+            "subtitle": "Cuéntenos su opinión acerca de Vantage",
+            "button": "Proporcionar comentarios",
             "form": {
-                "email": "Email (optional)",
+                "email": "Correo electrónico (opcional)",
                 "question1": "¿Le gusta el nuevo estilo de Vantage?",
                 "question2": "¿Cree que el rendimiento es aceptable?",
                 "question3": "¿Utilizaría la aplicación con más frecuencia en el futuro?",
@@ -867,8 +861,8 @@
                 "no": "No",
                 "tips1": "Deje cualquier comentario adicional",
                 "comments": "Comentarios...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
+                "button": "Enviar",
+                "addScreenshot": "Agregar captura de pantalla",
                 "sendFeedback": "Enviar comentarios",
                 "submitScreenShot": "Enviar captura de pantalla",
                 "messages": {
@@ -882,8 +876,8 @@
             "cameraPrivacy": "Cámara",
             "eyeCareMode": "Cuidado visión",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage no tiene acceso a la cámara y el micrófono.",
-                "accessUrl": "Vaya a la configuración de Windows para dar acceso",
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage no tiene acceso a la cámara ni al micrófono",
+                "accessUrl": "Vaya a la configuración de Windows para otorgar acceso a Vantage",
                 "microphoneNote": "Lenovo Vantage no tiene acceso al micrófono.",
                 "cameraPrivacyNote": "Lenovo Vantage no tiene acceso a la cámara."
             },
@@ -892,25 +886,25 @@
         },
         "systemStatus": {
             "title": "Estado del sistema",
-            "subtitle": "Actualización rápida del estado de su dispositivo.",
+            "subtitle": "Una rápida puesta al día acerca del estado de su dispositivo.",
             "memory": {
                 "title": "Memoria",
                 "detail": {
-                    "notFound": "No se encontró la memoria",
+                    "notFound": "Cargando información de memoria",
                     "of": "de"
                 }
             },
             "diskSpace": {
                 "title": "Espacio de disco",
                 "detail": {
-                    "notFound": "No se encontró el disco",
+                    "notFound": "Cargando información de disco",
                     "of": "de"
                 }
             },
             "warranty": {
                 "title": "Garantía",
                 "detail": {
-                    "notFound": "No se encontró garantía",
+                    "notFound": "No se encontró una garantía",
                     "until": "Hasta",
                     "expiredOn": "Garantía expirada el",
                     "notAvailable": "Garantía no disponible"
@@ -1040,7 +1034,7 @@
                     "Good": "<b>La batería está en buen estado.</b>",
                     "Exhaustion": "La capacidad de la batería se ha <b>degradado</b>. Sustitúyala con una nueva.",
                     "Bad": "<b>Se produjo un error de batería.</b> No se puede cargar/descargar la batería. Sustituya la batería.",
-                    "NotDetected": "<b>No se detectó ninguna batería.</b>",
+                    "NotDetected": "<b>No se ha detectado ninguna batería o no hay</b> ninguna batería conectada.",
                     "NotGood": "<b>La batería no está en buen estado.</b>",
                     "NotSupportACAdapter": "<b>El adaptador de CA no es compatible.</b>",
                     "LimitedACAdapterSupport": "<b>El adaptador de CA no puede proporcionar suficiente energía.</b>",
@@ -1066,7 +1060,7 @@
             "power": {
                 "title": "Energía",
                 "subtitle": "Valores de energía",
-                "description": "Esta sección le permite ajustar de forma dinámica el rendimiento térmico y maximizar la duración de la batería.También tiene otras características comunes relacionadas con la energía. Puede comprobar los valores predeterminados de esta sección y personalizar el sistema según sus necesidades.",
+                "description": "Esta sección le permite ajustar de forma dinámica el rendimiento térmico y maximizar la duración de la batería. También tiene otras características comunes relacionadas con la energía. Puede comprobar los valores predeterminados de esta sección y personalizar el sistema según sus necesidades.",
                 "jumpto": {
                     "title": "IR A CONFIGURACIÓN",
                     "battery": "Batería",
@@ -1276,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UN PRODUCTO CERTIFICADO POR ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Energía",
+					"subtitle": "Configuración de energía",
+					"description": "Esta sección le permite comprobar los valores predeterminados y personalizar su uso de energía y plan de energía según sus necesidades.",
+					"globalPowerSettings": {
+						"title": "Valores de energía globales",
+						"description": "Esta característica invalidará los valores del plan de energía o del uso de energía.",
+						"powerButton": {
+							"label": "BOTÓN DE ENCENDIDO/APAGADO:",
+							"items": {
+								"doNothing": "No hacer nada",
+								"sleep": "Suspender",
+								"hibernate": "Entrar en hibernación",
+								"shutDown": "Concluir",
+								"turnOffTheDisplay": "Apagar la pantalla"
+							}
+						},
+						"requiredSignIn": {
+							"label": "INICIO DE SESIÓN NECESARIO:",
+							"items": {
+								"never": "Nunca",
+								"fromSleep": "Cuando el PC se reactiva desde la suspensión"
+							},
+							"tip": "Nota: Esto solo funciona si se ha establecido la contraseña del sistema."
+						}
+					},
+					"powerUse": {
+						"title": "Uso de energía",
+						"description": "SI EL SISTEMA ESTÁ INACTIVO:",
+						"turnOffDisplay": "APAGAR LA PANTALLA DESPUÉS DE:",
+						"turnOffHDD": "APAGAR EL DISCO DURO DESPUÉS DE:",
+						"sleep": "SUSPENDER DESPUÉS DE:",
+						"hibernate": "HIBERNAR DESPUÉS DE:",
+						"items": {
+							"never": "Nunca",
+							"minute": "minuto",
+							"minutes": "minutos",
+							"hour": "hora",
+							"hours": "horas"
+						}
+					},
+					"powerPlan": {
+						"title": "Plan de energía",
+						"description": "Elija un plan de energía para controlar el rendimiento de la computadora, la temperatura del sistema y el uso de energía.",
+						"currentPowerPlan": {
+							"label": "PLAN ACTUAL"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Suspensión inteligente",
                     "description": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar la experiencia de reanudación rápida de <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Espera moderna</a> durante las horas de uso más intensivo.",
@@ -1374,7 +1417,7 @@
             "audio": {
                 "title": "Audio",
                 "subtitle": "Valores de audio",
-                "description": "Esta sección le permite optimizar automáticamente o configurarcompletamente los valores de audio de forma manual, como por ejemplo los valores Dolby, de micrófono, etc.",
+                "description": "Esta sección le permite optimizar automáticamente o configurar todos los valores de audio de forma manual, como por ejemplo los valores Dolby, de micrófono, etc.",
                 "audioSmartsettings": {
                     "title": "Valores de audio inteligente",
                     "subtitle": "CONFIGURACIÓN BASADA EN LA APLICACIÓN",
@@ -1403,7 +1446,7 @@
                     },
                     "microphone": {
                         "title": "Micrófono",
-                        "tooltip": "Puede personalizar el efecto del micrófono ajustando el volumen del micrófonoy especificando la modalidad adecuada."
+                        "tooltip": "Puede personalizar el efecto del micrófono ajustando el volumen del micrófono y especificando la modalidad adecuada."
                     },
                     "volume": {
                         "title": "Volumen del micrófono",
@@ -1415,11 +1458,11 @@
                     },
                     "suppress": {
                         "title": "Eliminar sonido del teclado",
-                        "tooltip": "Active esta función para optimizar el audio de MIC suprimiendo el ruido del teclado."
+                        "tooltip": "Active esta función para optimizar el audio del micrófono al suprimir los sonidos del teclado."
                     },
                     "acoustic": {
                         "title": "Cancelación del eco acústico",
-                        "tooltip": "Active esta característica para optimizar el audio de MIC reduciendo el eco acústico."
+                        "tooltip": "Active esta función para optimizar el audio del micrófono al reducir el eco acústico."
                     },
                     "optimize": {
                         "title": "Optimizar el micrófono para:",
@@ -1454,21 +1497,21 @@
                         "title": "Temperatura del color de visualización",
                         "description": "Puede ajustar la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos. Ajusta la pantalla a colores más cálidos desde el atardecer al amanecer para ayudarle a dormir.",
                         "link": {
-                            "click": "Hacer clic en",
+                            "click": "Haga clic",
                             "here": "aquí",
                             "rest": "para cambiar la temperatura de color."
                         }
                     },
                     "eyeCareMode": {
                         "title": "Modalidad de cuidado de la visión",
-                        "checkbox": "Planificación del modo de cuidado ocular de anochecer a amanecer",
+                        "checkbox": "Programar el modo de cuidado ocular de anochecer a amanecer",
                         "options": {
                             "warm": "Cálido (mejor para los ojos)",
                             "cold": "Frío"
                         },
                         "reset": "Restablecer",
                         "tooltip": "La modalidad de cuidado de la visión ajusta la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos.",
-                        "onSunsetToSunriseScheduleDescription": "Planificación del modo de cuidado ocular de anochecer a amanecer",
+                        "onSunsetToSunriseScheduleDescription": "Programar el modo de cuidado ocular de anochecer a amanecer",
                         "note": {
                             "title": "Nota",
                             "description": "Lenovo Vantage necesita acceder a la información de ubicación para calcular la hora del atardecer y amanecer de su región."
@@ -1483,10 +1526,10 @@
                         },
                         "reset": "Restablecer",
                         "tooltip": "La modalidad de cuidado de la visión ajusta la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos.",
-                        "onSunsetToSunriseScheduleDescription": "Planificación del modo de cuidado ocular de anochecer a amanecer",
+                        "onSunsetToSunriseScheduleDescription": "Programar el modo de cuidado ocular de anochecer a amanecer",
                         "note": {
                             "title": "Nota",
-                            "description": "Cuando el Modo de cuidado ocular está habilitado, esta temperatura de color no surte efecto. Sin embargo, puede arrastrar el control deslizante para obtener una vista previa del mismo. Para que sea eficaz, desactive el Modo de cuidado ocular."
+                            "description": "Cuando el Modo de cuidado ocular está habilitado, esta temperatura de color no se aplica. Sin embargo, puede arrastrar el control deslizante para obtener una vista previa del mismo. Para aplicar los valores seleccionados, desactive el Modo de cuidado ocular."
                         }
                     },
                     "privacyGuard": {
@@ -2227,14 +2270,14 @@
                 "notAvailable": "No disponible"
             },
             "windowsDefender": {
-                "optimallyProtected": "Parece que actualmente usa Windows Defender. No es una mala elección, pero para la máxima seguridad contra ransomware, malware y virus, nos hemos asociado con <b>McAfee</b> para ofrecerle una seguridad galardonada para que pueda <b>proteger las cosas más importantes.</b>",
+                "optimallyProtected": "Parece que actualmente usa Windows Defender. No es una mala elección, pero para entregar la máxima seguridad contra ransomware, malware y virus, nos hemos asociado con <b>McAfee</b> para ofrecerle una seguridad galardonada, de modo que pueda <b>proteger aquello que es lo más importante.</b>",
                 "windowsSubtitle": "Protección básica de Windows Defender",
                 "topTip": "Consejos principales para la seguridad en línea",
                 "topContent": "Descubra cómo puede defenderse de las mayores amenazas en línea de la actualidad <tag>VER CONSEJOS</tag>",
                 "view": "VER CONSEJOS",
                 "buyNow": "Comprar ahora",
-                "buy": "Compre, descargue e instale la protección contra virus de McAfee hoy para aprovechar estas funciones de seguridad de nivel bancario",
-                "onlyBasic": "Solo los conceptos básicos aquí. Aunque esté protegido frente a algunas amenazas en línea, es posible que aún esté expuesto a otras.",
+                "buy": "Compre, descargue e instale la protección contra virus de McAfee hoy para aprovechar estas funciones de seguridad de nivel financiero",
+                "onlyBasic": "Aquí solo se presentan los aspectos más básicos. Aunque esté protegido frente a algunas amenazas en línea, es posible que siga estando expuesto a otras.",
                 "virus": "Protección antivirus",
                 "homeNetwork": "Protección de red hogareña",
                 "private": "Navegación privada y anónima",
@@ -2287,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi y seguridad de hogar conectado",
+                "title": "Seguridad de WiFi",
                 "back": "ATRÁS"
             },
             "container": {
@@ -2414,7 +2457,7 @@
             "getStarted2": "Encienda el VPN y espere un breve momento para obtener confirmación de una conexión segura.",
             "getStarted3": "Cambie la región o ubicación, si lo desea, y disfrute de una red privada y segura.",
             "poweredBySurfEasy": "Con tecnología SurfEasy",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Obtenga más información en la <tag>Política de privacidad</tag> y los <tag>Términos de servicio</tag>"
         },
         "passwordManager": {
             "statusTitle": "ADMINISTRADOR DE CONTRASEÑA DASHLANE",
@@ -2443,7 +2486,7 @@
             "allowsYou3": "Permanezca seguro en las redes WiFi no seguras con VPN integrado",
             "allowsYou4": "Comparta las contraseñas de forma segura sin mostrarlas",
             "poweredByDashLane": "Con tecnología Dashlane",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Obtenga más información en la <tag>Política de privacidad</tag> y los <tag>Términos de servicio</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2471,7 +2514,7 @@
     "lenovoId": {
         "login": "Inicio de sesión",
         "logout": "Cerrar sesión",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Cerrando la sesión...",
         "unlockExclusives": "Desbloquear contenido exclusivo",
         "user": "Usuario",
         "welcomeText1": "¡Energícese hoy, {{firstName}}!",
@@ -2904,7 +2947,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Establecimiento de preferencias",
+        "preferenceSettings": "Establecimiento De Preferencias",
         "settings": "Configuración",
         "settingsDescription": "En la página de configuración de preferencias, puede elegir entre activar/desactivar la notificación de mensajes basándose en las categorías de mensaje de Vantage, tenga en cuenta que, incluso si todas las categorías de mensajes están inhabilitadas, puede recibir ocasionalmente un mensaje crítico del sistema de Vantage cuando sea necesario.",
         "messagesInLenovoVantage": "Mensajes en Lenovo Vantage",
@@ -3093,7 +3136,8 @@
             "storage": "Almacenamiento",
             "wireless": "Inalámbrica"
         },
-        "warningMessage": "Tenga en cuenta que las pruebas se cancelarán si el sistema entra en suspensión o hibernación"
+        "warningMessage": "Tenga en cuenta que las pruebas se cancelarán si el sistema entra en suspensión o hibernación",
+        "refreshMessage": "La actualización puede tomar algo de tiempo, ya que necesita volver a cargar todos los componentes"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3383,7 +3427,7 @@
             "extendNow": "extend now",
             "renewNow": "Renew Now",
             "poweredBy": "Powered by Coronet",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Obtenga más información en la <tag>Política de privacidad</tag> y los <tag>Términos de servicio</tag>"
         },
         "tour": {
             "back": "Back",
@@ -3434,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Ahora puede averiguar si rastreadores en línea han infringido o utilizado su información privada sin su conocimiento.",
             "security": "¿Sabía usted? Incluso si no tiene instalado software antivirus, aun así proporcionamos protección básica de seguridad para su dispositivo.",
             "connectedHomeSecurity": "Obtenga supervisión y alertas en tiempo real sobre la seguridad de su red en el hogar. Será el primero en saber si alguno de sus dispositivos inteligentes está enfrentando un ataque de seguridad."
         }

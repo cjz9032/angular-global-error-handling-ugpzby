@@ -25,10 +25,11 @@
 		outline: none;
 		.time {
 			display: inline-block;
-			font-size: 1.6rem;
+			font-size: $fontsize_xs;
 			padding: 0 1rem;
-			color: #6c757d;
+			color: $shade_blue;
 			align-self: center;
+			font-weight: $weight_light;
 			p {
 				font-weight: 600;
 			}
@@ -56,10 +57,11 @@
 			background-color: #fff;
 			li {
 				padding: 0.8rem 0.4rem;
-				font-size: 1.4rem;
+				font-size: $fontsize_xs;
 				list-style: none;
-				color: #6c757d;
+				color: $shade_blue;
 				cursor: pointer;
+				font-weight: $weight_light;
 				&:hover {
 					color: rgba(71, 77, 82, 1);
 					text-decoration: underline;

@@ -1,7 +1,7 @@
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -18,7 +18,6 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Gaming } from './../../../enums/gaming.enum';
 import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
-import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
@@ -33,7 +32,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	startDateTime: any = new Date();
 	metrics: any;
 	dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
-	public ledlayoutversion:any;
+	public ledlayoutversion: any;
 
 	constructor(
 		private titleService: Title,
@@ -119,11 +118,11 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 
 		if (!this.isOnline) {
 			this.cardContentPositionF = {
-				FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
+				FeatureImage: './../../../../assets/cms-cache/GamingPosC.jpg'
 			};
 
 			this.cardContentPositionC = {
-				FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
+				FeatureImage: './../../../../assets/cms-cache/lighting_offline.jpg'
 			};
 		}
 	}
@@ -134,11 +133,11 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		} else {
 		}
 	}
-	public getLayOutversion(){
-        if(this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion) !== undefined){
+	public getLayOutversion() {
+		if (this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion) !== undefined) {
 			this.ledlayoutversion = this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion);
-		}else{
+		} else {
 			this.router.navigate(['/device-gaming']);
 		}
-    }
+	}
 }

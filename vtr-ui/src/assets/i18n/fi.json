@@ -22,7 +22,7 @@
                     "rapidCharge": "Pikalataus"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Ylikell. päällä",
                         "performance": "Suorituskyky",
                         "balance": "Tasapaino",
@@ -748,12 +748,11 @@
                 "sub1": "Oma suojaus",
                 "sub2": "Virustentorjunta",
                 "sub3": "WiFi-suojaus",
-                "sub4": "Salasanan hallinta",
-                "sub5": "VPN",
+                "sub4": "Salasanan kunto",
+                "sub5": "VPN-suojaus",
                 "sub6": "Sormenjälki"
             },
             "support": "Tuki",
-            "privacy": "Yksityisyys",
             "beta": {
                 "title": "beta"
             },
@@ -763,9 +762,9 @@
             "title": "Security Advisor",
             "subtitle": "TARKISTA, ONKO LAITTEESI SUOJATTU.",
             "antiVirus": "Virustentorjunta",
-            "wifi": "WiFi-suojaus",
-            "pswdMgr": "Salasanan hallinta",
-            "vpn": "VPN",
+            "wifi": "WiFi-Suojaus",
+            "pswdMgr": "Salasanan Kunto",
+            "vpn": "VPN-Suojaus",
             "enabled": "KÄYTÖSSÄ",
             "disabled": "POISSA KÄYTÖSTÄ",
             "partiallyProtected": "OSITTAIN SUOJATTU",
@@ -779,8 +778,8 @@
             "fingerPrint": "Sormenjälki",
             "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REKISTERÖITY",
+            "notEnrolled": "EI REKISTERÖITY"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Muodosta Internet-yhteys, jotta voit käyttää tätä toimintoa"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Yksityisyys"
         }
     },
     "tutorial": {
@@ -1040,7 +1034,7 @@
                     "Good": "<b>Akun toimintakunto on hyvä.</b>",
                     "Exhaustion": "Akun kapasiteetti on <b>heikentynyt</b>. Vaihda uusi.",
                     "Bad": "<b>On tapahtunut akkuvirhe.</b> Akkua ei voi ladata tai sen varausta purkaa. Vaihda akku.",
-                    "NotDetected": "<b>Akkua ei havaittu.</b>",
+                    "NotDetected": "<b>Akkua ei havaittu, tai sitä ei</b> ole liitetty.",
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",
@@ -1276,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR -VAATIMUSTEN MUKAINEN TUOTE"
-                },
+				},
+				"dpm": {
+					"title": "Virta",
+					"subtitle": "Virta-asetukset",
+					"description": "Tämän osan avulla voit tarkistaa oletusasetukset ja mukauttaa virrankäyttösi ja virrankäyttösuunnitelmasi tarpeidesi mukaan.",
+					"globalPowerSettings": {
+						"title": "Yleiset virrankäyttöasetukset",
+						"description": "Tämä ominaisuus ohittaa virrankäyttösuunnitelman tai virrankäyttöasetukset.",
+						"powerButton": {
+							"label": "VIRTAPAINIKE:",
+							"items": {
+								"doNothing": "Älä tee mitään",
+								"sleep": "Lepotila",
+								"hibernate": "Lepotila",
+								"shutDown": "Lopputoimet",
+								"turnOffTheDisplay": "Katkaise näytöstä virta"
+							}
+						},
+						"requiredSignIn": {
+							"label": "PAKOLLINEN KIRJAUTUMINEN:",
+							"items": {
+								"never": "Ei koskaan",
+								"fromSleep": "Kun tietokone herää lepotilasta"
+							},
+							"tip": "Huomautus: Tämä toimii vain, jos järjestelmän salasana on määritetty."
+						}
+					},
+					"powerUse": {
+						"title": "Virrankäyttö",
+						"description": "JOS JÄRJESTELMÄ ON JOUTOAIKA-TILASSA:",
+						"turnOffDisplay": "KATKAISE NÄYTÖSTÄ VIRTA, KUN:",
+						"turnOffHDD": "SAMMUTA KIINTOLEVY, KUN:",
+						"sleep": "SIIRRY LEPOTILAAN, KUN:",
+						"hibernate": "SIIRRY HORROSTILAAN, KUN:",
+						"items": {
+							"never": "Ei koskaan",
+							"minute": "minuutti",
+							"minutes": "minuuttia",
+							"hour": "tunti",
+							"hours": "tuntia"
+						}
+					},
+					"powerPlan": {
+						"title": "Virrankäyttösuunnitelma",
+						"description": "Valitse virrankäyttösuunnitelma tietokoneen suorituskykyvyn, järjestelmän lämpötilan ja virrankäytön hallintaa varten.",
+						"currentPowerPlan": {
+							"label": "NYKYINEN VIRRANKÄYTTÖSUUNNITELMA"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Älykäs valmiustila",
                     "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysaikana ilman, että <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> -ominaisuuden nopea käynnistys hidastuu kovan käytön aikana.",
@@ -2287,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi-yhteyden ja Connected Home -suojaus",
+                "title": "WiFi-suojaus",
                 "back": "EDELLINEN"
             },
             "container": {
@@ -2471,7 +2514,7 @@
     "lenovoId": {
         "login": "Sisäänkirjaus",
         "logout": "Kirjaudu ulos",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Uloskirjaus on meneillään...",
         "unlockExclusives": "Ota käyttöön erikoissisältöä",
         "user": "Käyttäjä",
         "welcomeText1": "Näytät energiseltä tänään, {{firstName}}!",
@@ -3093,7 +3136,8 @@
             "storage": "Tallennus",
             "wireless": "Langattomat yhteydet"
         },
-        "warningMessage": "Muista, että testit peruutetaan, jos järjestelmä on lepo- tai horrostilassa"
+        "warningMessage": "Muista, että testit peruutetaan, jos järjestelmä on lepo- tai horrostilassa",
+        "refreshMessage": "Päivitys saattaa kestää jonkin aikaa, koska kaikkien osien lataus on tehtävä uudelleen"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nyt voit selvittää, onko yksityisiä tietojasi katseltu luvatta tai ovatko verkkoseuraajat käyttäneet niitä tietämättäsi.",
             "security": "Tiedätkö? Vaikka tietokoneeseen ei ole asennettu virustentorjuntaohjelmistoa, se sisältää silti perussuojauksen.",
             "connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi."
         }

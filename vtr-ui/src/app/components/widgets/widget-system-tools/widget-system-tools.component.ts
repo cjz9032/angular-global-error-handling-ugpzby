@@ -5,7 +5,7 @@ import { isUndefined } from 'util';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Gaming } from 'src/app/enums/gaming.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 
 @Component({
 	selector: 'vtr-widget-system-tools',

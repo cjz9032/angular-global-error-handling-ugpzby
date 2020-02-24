@@ -15,7 +15,7 @@ export class ModalGamingLegionedgeComponent implements OnInit {
 	constructor(
 		public activeModal: NgbActiveModal,
 		private commonService: CommonService,
-	) { 
+	) {
 		this.desktopMachine = this.commonService.getLocalStorageValue( LocalStorageKey.desktopType);
 		this.liteGaming = this.commonService.getLocalStorageValue( LocalStorageKey.liteGaming);
 	}

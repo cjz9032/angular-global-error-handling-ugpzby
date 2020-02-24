@@ -2,9 +2,8 @@
 	[shiftRightUp]="true">
 
 	<header-content>
-				<img class="gaming-header-image" *ngIf="!liteGaming" [src]=" './../../../../assets/images/gaming/gaming-logo-full.svg' | svgInline | async" />
-				<img class="gaming-header-image" *ngIf="liteGaming && desktopType" [src]=" './../../../../assets/images/gaming/ideaCentre@2x.png' | svgInline | async" />
-				<img class="gaming-header-image" *ngIf="liteGaming && !desktopType" [src]=" './../../../../assets/images/gaming/ideaPad@2x.png' | svgInline | async" />
+		<img class="gaming-header-image"
+			[src]=" './../../../../assets/images/gaming/gaming-logo-full.svg' | svgInline | async" />
 	</header-content>
 
 	<left-content>

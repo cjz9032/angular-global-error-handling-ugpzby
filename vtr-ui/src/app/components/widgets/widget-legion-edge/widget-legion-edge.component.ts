@@ -294,7 +294,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.gamingCapabilities.fbnetFilter = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.fbNetFilter
 		);
-		// TODO init item for Thermal Mode 2.0 
+		// TODO init item for Thermal Mode 2.0
 		if (this.gamingCapabilities.smartFanFeature) {
 			if (this.gamingCapabilities.thermalModeVersion === 2) {
 				this.thermalModeRealStatus = this.gamingCapabilityService.getCapabilityFromCache(
@@ -369,7 +369,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		} else {
 			this.drop.hideDropDown = false;
 		}
-		// TODO Thermal Mode 2  
+		// TODO Thermal Mode 2
 		// this.renderThermalMode2Status();
 		if (gamingStatus.smartFanFeature && gamingStatus.thermalModeVersion === 2) {
 			this.renderThermalMode2RealStatus();
@@ -513,7 +513,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.thermalModeRealStatus = currentRealStatus;
 				this.commonService.setLocalStorageValue(LocalStorageKey.RealThermalModeStatus, this.thermalModeRealStatus);
 			}
-		});	
+		});
 	}
 
 	public renderThermalMode2OCSettings() {

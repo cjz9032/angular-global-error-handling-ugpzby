@@ -7,7 +7,7 @@ import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
-import { HardwareScanShellMock } from 'src/app/beta/hardware-scan/mock/hardware-scan-shell-mock';
+import { HardwareScanShellMock } from 'src/app/services/hardware-scan/hardware-scan-shell-mock';
 import { WinRT, CHSAccountState, EventTypes } from '@lenovo/tan-client-bridge';
 import { of } from 'rxjs';
 import { TopRowFunctionsIdeapad, KeyType } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
@@ -58,7 +58,6 @@ export class VantageShellService {
 				Phoenix.Features.DeviceFilter,
 				Phoenix.Features.Metrics,
 				Phoenix.Features.ModernPreload,
-				Phoenix.Features.Privacy,
 				Phoenix.Features.LenovoVoiceFeature,
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
@@ -1080,7 +1079,28 @@ export class VantageShellService {
 					remainingTime: 99,
 					temperature: 32,
 					voltage: 11.222,
-					wattage: 10.57,
+					wattage: 10.57
+				},
+				{
+					barCode: 'X2XP888JB2S',
+					batteryCondition: ['Normal'],
+					batteryHealth: 0,
+					chargeStatus: 2,
+					cycleCount: 98,
+					designCapacity: 45.28,
+					designVoltage: 11.1,
+					deviceChemistry: 'Li-Polymer',
+					firmwareVersion: '0005-0232-0100-0005',
+					fruPart: '01AV446',
+					fullChargeCapacity: 46.69,
+					manufacturer: 'SMP',
+					remainingCapacity: 23.84,
+					remainingChargeCapacity: 0,
+					remainingPercent: 52,
+					remainingTime: 99,
+					temperature: 32,
+					voltage: 11.222,
+					wattage: 10.57
 				}
 			],
 			batteryIndicatorInfo: {
@@ -1260,18 +1280,18 @@ export class VantageShellService {
 	public getPowerThinkPad(): any {
 		const batteryThresholdInfo: any = [
 			{
-				batteryNumber: 1,
+				batteryNum: 1,
 				checkboxValue: false,
 				isCapable: true,
-				isEnabled: false,
+				isEnabled: true,
 				startValue: 75,
 				stopValue: 80
 			},
 			{
-				batteryNumber: 2,
+				batteryNum: 2,
 				checkboxValue: false,
 				isCapable: true,
-				isEnabled: false,
+				isEnabled: true,
 				startValue: 75,
 				stopValue: 80
 			}
@@ -1379,7 +1399,6 @@ export class VantageShellService {
 	public calcDeviceFilter(filter) {
 		return Promise.resolve({
 			ConnectedHomeSecurity: true,
-			PrivacyTab: 'enabled',
 			FeatureSearch: null,
 			TileBSource: 'UPE'
 		});
@@ -1397,130 +1416,6 @@ export class VantageShellService {
 			return win.Windows;
 		}
 		return undefined;
-	}
-
-	public getPrivacyCore() {
-		return {
-			openInstaller: () => of(true),
-			openUriInDefaultBrowser: (uri) => of(true),
-			openFigleafByUrl: (uri) => of(true),
-			sendContractToPlugin: (contract): any => {
-				switch (contract.command) {
-					case 'Get-InstalledBrowsers':
-						return of({ browsers: ['chrome', 'firefox', 'edge'] });
-					case 'Get-AccessiblePasswords':
-						return of({ chrome: 11, firefox: 1, edge: 1 });
-					case 'Get-MaskedPasswords':
-						return of({
-							edge: [
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								}
-							],
-							chrome: [
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								}
-							],
-							firefox: [
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								}
-							]
-						});
-					case 'Get-VisitedWebsites':
-						return of({
-							visitedWebsites: [
-								{
-									domain: 'google.com',
-									totalVisitsCount: 26871,
-									lastVisitTimeUtc: '2019-10-24T10:50:28Z'
-								},
-								{
-									domain: 'facebook.com',
-									totalVisitsCount: 3715,
-									lastVisitTimeUtc: '2019-10-24T08:16:21Z'
-								}
-							]
-						});
-				}
-			}
-		};
 	}
 
 	public getUserGuide() {
@@ -2431,6 +2326,11 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getPowerDPM(){
+		return undefined;
+	}
+	
 	public getInstalledApplicationList() {
 		if (this.phoenix) {
 				const installedAppList: any = {

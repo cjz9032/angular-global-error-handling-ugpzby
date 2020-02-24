@@ -11,7 +11,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-color: rgba(41, 60, 79, 0.8);
+		background-color: rgba(17, 25, 44, 0.8);
 		z-index: 9;
 		color: $gaming_lightest;
 		font-size: 2rem;
@@ -20,14 +20,6 @@
 		padding: 4rem;
 		padding-top: 16rem;
 		box-sizing: border-box;
-		@media #{$mediaquery_X7} {
-		}
-		@media #{$mediaquery_10} {
-
-		}
-		@media #{$mediaquery_X29} {
-
-		}
 	}
 
 	.rgb-header {

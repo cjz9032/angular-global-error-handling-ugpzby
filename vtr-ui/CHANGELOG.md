@@ -2,12 +2,69 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.3.2](https://bitbucket.tc.lenovo.com///compare/v1.2.86...v1.3.2) (2020-02-20)
+### [1.3.4](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.3...v1.3.4) (2020-02-22)
+
+
+### Features
+
+* **overall:** merge release/vantage3.2-stage1 to develop ([d3eafbc](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/d3eafbc3af30ab80c2968588772288a1a0f4a894))
+
+### [1.3.3](https://bitbucket.tc.lenovo.com///compare/v1.2.86...v1.3.3) (2020-02-21)
 
 
 ### Features
 
 * **VAN-14642:** backlight multi levels move back ([c91afff](https://bitbucket.tc.lenovo.com///commit/c91afff0428334311366fc103c0a34092fd23530))
+
+### [1.3.2](https://bitbucket.tc.lenovo.com///compare/v1.2.86...v1.3.2) (2020-02-20)
+
+### Features
+
+* **VAN-14642:** backlight multi levels move back ([c91afff](https://bitbucket.tc.lenovo.com///commit/c91afff0428334311366fc103c0a34092fd23530))
+
+### [1.2.98](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.2.97...v1.2.98) (2020-02-21)
+
+### [1.2.97](https://bitbucket.tc.lenovo.com///compare/v1.2.96...v1.2.97) (2020-02-20)
+
+### Features
+
+* **privacy:** remove privacy code ([417a999](https://bitbucket.tc.lenovo.com///commit/417a999c3f4165398b541452ef2b9b0851eaebf9))
+
+### [1.2.96](https://bitbucket.tc.lenovo.com///compare/v1.2.95...v1.2.96) (2020-02-20)
+
+## [1.2.95](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.2.94...v1.2.95) (2020-02-19)
+
+
+
+## [1.2.94](https://bitbucket.tc.lenovo.com///compare/v1.2.93...v1.2.94) (2020-02-19)
+
+### [1.2.93](https://bitbucket.tc.lenovo.com///compare/v1.2.92...v1.2.93) (2020-02-19)
+
+
+### Bug Fixes
+
+* **smart assist:** disable smart assist IMC calls ([4ec8a67](https://bitbucket.tc.lenovo.com///commit/4ec8a6711f7d5d3bd6328ca53a3e33d313c42a1f))
+
+### [1.2.92](https://bitbucket.tc.lenovo.com///compare/v1.2.91...v1.2.92) (2020-02-18)
+
+
+### Bug Fixes
+
+* **menu:** wait smart assist filter if machineType cached ([153bcdc](https://bitbucket.tc.lenovo.com///commit/153bcdcac7890fe523bbfa760244d199e8b50b49))
+
+### [1.2.91](https://bitbucket.tc.lenovo.com///compare/v1.2.90...v1.2.91) (2020-02-18)
+
+### [1.2.90](https://bitbucket.tc.lenovo.com///compare/v1.2.89...v1.2.90) (2020-02-18)
+
+### [1.2.89](https://bitbucket.tc.lenovo.com///compare/v1.2.87...v1.2.89) (2020-02-17)
+
+## [1.2.88](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.2.87...v1.2.88) (2020-02-14)
+
+
+
+## [1.2.87](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/compare/v1.2.86...v1.2.87) (2020-02-14)
+
+
 
 ## [1.2.86](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/compare/v1.2.85...v1.2.86) (2020-02-13)
 
