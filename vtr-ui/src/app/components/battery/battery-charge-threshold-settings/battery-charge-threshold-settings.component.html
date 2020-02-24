@@ -123,7 +123,16 @@
 						*ngIf="!displayNoteOnly"
 						[class.disabled]="isGaugeResetRunning">
 						<div class="col px-5">
-							<div class="auto-set-checkbox custom-checkbox-gaming"
+							<vtr-ui-checkbox [componentId]="isCheckedAutoInput + randomNumber"
+								[disabled]="false"
+								[value]="bctInfo.checkboxValue"
+								[checked]="bctInfo.checkboxValue"
+								[label]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate"
+								(toggle)='toggleAutoChargeSettings($event)'>
+							</vtr-ui-checkbox>
+							<!--
+								commented to replace with common component
+								<div class="auto-set-checkbox custom-checkbox-gaming"
 								tabindex="0"
 								role="checkbox"
 								(keydown.enter)="customControlInput.click()"
@@ -143,7 +152,7 @@
 								<span class="checkmark"></span>
 								<label
 									[for]="isCheckedAutoInput + randomNumber">{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate}}</label>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
