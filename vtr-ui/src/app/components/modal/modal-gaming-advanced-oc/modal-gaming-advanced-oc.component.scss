@@ -1,0 +1,111 @@
+@import '../../../app.theme.scss';
+.gaming-modal-fun {
+    .modal-body {
+        max-height: 789px;
+        @media screen and (max-height: 1000) {
+            max-height: 689px;
+        }
+        @media screen and (max-height: 900) {
+            max-height: 589px;
+        }
+        @media screen and (max-height: 800) {
+            max-height: 489px;
+        }
+        @media screen and (max-height: 700) {
+            max-height: 389px;
+        }
+        @media screen and (max-height: 600){
+            max-height: 289px;
+        }
+        .overclock-box {
+            border-radius: .6rem;
+            background: $background;
+            padding: 2rem;
+            h3 {
+                height: 2.4rem;
+                line-height: 2.4rem;
+                font-size: 1.8rem;
+            }
+            ul {
+                width: 100%;
+                overflow: hidden;
+                margin-bottom: 0;
+                padding: 0;
+                list-style: none;
+                li {
+                    width: 47%;
+                    height: 9rem;
+                    float: left;
+                    padding-top: 2rem;
+                    margin-bottom: 1rem;
+                    &:nth-child(even) {
+                        margin-left: 6%;
+                    }
+                    &:last-child,
+                    &:nth-last-child(2){
+                        margin-bottom: 0;
+                    }
+                    @media #{$mediaquery_xl} { 
+                        width: 100%;
+                        &:nth-child(even) {
+                            margin-left: 0;
+                        }
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                        &:nth-last-child(2){
+                            margin-bottom: 1rem;
+                        }
+                    }
+                    p.overclock-name {
+                        height: 2rem;
+                        line-height: 2rem;
+                        font-size: 1.4rem;
+                    }
+                    div.overclock-range {
+                        height: 4rem;
+                        display: flex;
+                        .left-slider {
+                            height: 4rem;
+                            flex: 1px;
+                        }
+                        .right-range {
+                            width: 15rem;
+                            height: 4rem;
+                            margin-left: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .gpu-overclock-box {
+            margin-bottom: 1rem;
+        }
+        .marginBtnNone {
+            margin-bottom: 0;
+        }
+        ::ng-deep {
+            &.ng5-slider{
+                margin-top: 1.8rem;
+            }
+            &.ng5-slider-bar {
+                height: 6px;
+                border-radius: 3px;
+            }
+            &.ng5-slider-pointer {
+                background-image: none!important;
+                background-color: $light!important;
+                height: 20px!important;
+                width: 20px!important;
+                top: -7px!important;
+                &:focus {
+                    outline: none!important;
+                }
+            }
+        }
+    }
+    .modal-footer {
+        padding-top: 1.73rem;
+        justify-content: flex-end;
+    }
+}

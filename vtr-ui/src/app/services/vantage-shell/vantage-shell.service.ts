@@ -574,7 +574,7 @@ export class VantageShellService {
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
 	public async deviceFilter(filter) {
-        if (this.phoenix) {
+		if (this.phoenix) {
 			try {
 				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
@@ -583,8 +583,8 @@ export class VantageShellService {
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
-        return true;
-    }
+		return true;
+	}
 	public calcDeviceFilter(filter) {
 		if (this.phoenix) {
 			return this.phoenix.deviceFilter.calc(filter);
@@ -755,6 +755,15 @@ export class VantageShellService {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingAutoClose;
+		}
+		return undefined;
+	}
+	public getGamingAdvancedOC() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingAdvancedOC;
 		}
 		return undefined;
 	}

@@ -1,0 +1,5 @@
+<div class="vtr-ui-add-reduce-button">
+    <button (click)="reduceFn()" [ngClass]="{'disabled': value == minData}" [ngStyle]="{'width':btnWidth}">-</button>
+    <p> <span>{{value}}<span *ngIf="unit">{{unit}}</span></span> </p>
+    <button (click)="addFn()" [ngClass]="{'disabled': value == maxData}" [ngStyle]="{'width':btnWidth}">+</button>
+</div>
