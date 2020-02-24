@@ -3,6 +3,14 @@
 .vtr-modal-reboot-machine {
 	&.modal-body {
 		padding: 0;
+		.btn-close {
+			position: absolute;
+			top: -4rem;
+			right: -4rem;
+			padding: 0.6rem 1.2rem;
+			width: 4rem;
+			height: 4rem;
+			}
 	}
 
 	fa-icon {
@@ -13,38 +21,39 @@
 	h1 {
 		font-size: $fontsize_xl;
 		font-weight: normal;
-		color: $blue-dark;
+		color: $darkText;
 	}
 
 	p {
 		font-size: 1.6rem;
-		color: $light-grey;
+		color: $darkText;
 		padding: 0.5rem 0;
 	}
 
 	.enable-button {
-		background: $gradient_main;
+		background: $blueFill;
 		border-radius: 3rem;
 		color: $light;
-		font-size: $fontsize_xs;
+		font-size: $fontsize_sm;
 		padding: 1rem 3rem;
-		font-weight: 500;
 		margin-top: 1rem;
+		margin-right: 3rem;
 		font-weight: $weight_bold;
 	}
-
 	.cancel-link {
-		color: $main;
-		font-size: $fontsize_xs;
-		text-decoration: underline;
+		height: 2.5rem;
+		color: $blueFill;
+		font-size: $fontsize_sm;
 		vertical-align: middle;
-		padding: 1rem 3rem;
-		font-weight: $weight_bold;
-		margin-top: 1rem;
+		padding: 0 0.5rem;
+		font-weight: $weight_600;
+		margin-top: 2rem;
+		border-bottom: 2px solid $blueFill;
 		cursor: pointer;
-
 		&:hover {
-			text-decoration: underline;
-		}
+			color: $blueHover;
+			border-bottom: 2px solid $blueHover;			
+			cursor: pointer;
+		  }		
 	}
 }
