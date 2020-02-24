@@ -13,16 +13,16 @@
 			.card-header {
 				background: none;
 				border-color: $border;
-				@media #{$black-on-white} {
-					border:0.1rem solid;
-					border-top-left-radius: 1rem;
-					border-top-right-radius: 1rem;
-				}
-				@media #{$white-on-black} {
-					border:0.1rem solid;
-					border-top-left-radius: 1rem;
-					border-top-right-radius: 1rem;
-				}
+				// @media #{$black-on-white} {
+				// 	border:0.1rem solid;
+				// 	border-top-left-radius: 1rem;
+				// 	border-top-right-radius: 1rem;
+				// }
+				// @media #{$white-on-black} {
+				// 	border:0.1rem solid;
+				// 	border-top-left-radius: 1rem;
+				// 	border-top-right-radius: 1rem;
+				// }
 
 				&.hide-border-bottom{
 					border-bottom: none;
@@ -77,6 +77,15 @@
 					}
 				}
 			}
+		}
+
+		@media #{$black-on-white} {
+			border:0.1rem solid;
+			border-radius: 1rem;
+		}
+		@media #{$white-on-black} {
+			border:0.1rem solid;
+			border-radius: 1rem;
 		}
 	}
 }

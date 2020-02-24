@@ -98,9 +98,11 @@
 	}
 	@media #{$black-on-white} {
 		border: 0.1rem solid ;
+		border-radius: $border_radius;
 	}
 	@media #{$white-on-black} {
 		border: 0.1rem solid ;
+		border-radius: $border_radius;
 	}
 }
 

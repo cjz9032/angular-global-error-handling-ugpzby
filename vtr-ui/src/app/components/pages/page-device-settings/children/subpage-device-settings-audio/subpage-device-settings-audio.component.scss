@@ -31,18 +31,18 @@
 			margin-right: 1.5rem;
 		}
 	}
-	.container-card {
-		@media #{$black-on-white} {
-			border: 0.1rem solid $dark;
-			border-radius: 1rem;
-			box-sizing: border-box;
-		}
-		@media #{$white-on-black} {
-			border: 0.1rem solid $light;
-			border-radius: 1rem;
-			box-sizing: border-box;
-		}
-	}
+	// .container-card {
+	// 	@media #{$black-on-white} {
+	// 		border: 0.1rem solid $dark;
+	// 		border-radius: 1rem;
+	// 		box-sizing: border-box;
+	// 	}
+	// 	@media #{$white-on-black} {
+	// 		border: 0.1rem solid $light;
+	// 		border-radius: 1rem;
+	// 		box-sizing: border-box;
+	// 	}
+	// }
 
 	ul.list-group {
 		list-style-type: none;
