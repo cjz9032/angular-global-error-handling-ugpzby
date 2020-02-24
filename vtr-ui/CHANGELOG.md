@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.8](https://bitbucket.tc.lenovo.com///compare/v1.3.6...v1.3.8) (2020-02-24)
+
+
+### Bug Fixes
+
+* **nls:** add missing line for legion edge modal - line 12 ([28e4949](https://bitbucket.tc.lenovo.com///commit/28e4949f0d08c76c22620c606e8209a9d65aaee2))
+
 ### [1.3.7](https://bitbucket.tc.lenovo.com///compare/v1.3.6...v1.3.7) (2020-02-24)
 
 
