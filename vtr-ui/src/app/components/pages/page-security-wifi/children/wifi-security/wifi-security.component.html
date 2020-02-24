@@ -74,7 +74,7 @@
 							[isCollapsed]="!isShowMore"
 							[allowCollapse]="true">
 							<div class="border-top-none show">
-								<div class="card-body show" *ngIf="data.histories.length > 0">
+								<div class="card-body show" [ngClass]="{'d-none': data.histories.length === 0}">
 									<div class="row no-gutters wifi-card">
 										<div *ngFor="let history of data.histories"
 											class="col-sm-12 col-md-6 col-lg-12 col-xl-6 pr-3 wifi">
