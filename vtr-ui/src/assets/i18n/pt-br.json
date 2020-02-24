@@ -740,7 +740,7 @@
                 "title": "Dispositivo",
                 "sub1": "Meu Dispositivo",
                 "sub2": "Configurações do meu dispositivo",
-                "sub3": "Atualização do Sistema",
+                "sub3": "Atualização do sistema",
                 "sub4": "Assistência inteligente"
             },
             "security": {
@@ -928,7 +928,7 @@
             "learnMore": "Saber mais",
             "freeMemory": "Memoria livre",
             "systemUpdate": {
-                "title": "Atualização do Sistema",
+                "title": "Atualização do sistema",
                 "notFound": "Atualização do sistema não encontrada",
                 "detail": {
                     "uptoDate": "Atualizações verificadas ",
@@ -2003,7 +2003,7 @@
         }
     },
     "systemUpdates": {
-        "title": "Atualização do Sistema",
+        "title": "Atualização do sistema",
         "back": "VOLTAR",
         "history": "HISTÓRICO COMPLETO",
         "notAvailable": "Não Disponível",
@@ -2119,11 +2119,11 @@
             "autoScriptEvaluationException": "Houve um erro ao avaliar o script de configuração automático.",
             "localRepositoryConnectionFailureException": "Impossível conectar-se ao Repositório Local.",
             "localRepositoryDatabaseException": "O banco de dados do repositório local não pôde ser localizado ou está corrompido.",
-            "networkInterruptedException": "O Servidor de Atualização do Sistema está indisponível atualmente. Tente novamente mais tarde.",
-            "helpCenterInvalidServerException": "O Servidor de Atualização do Sistema é inválido. Tente novamente mais tarde.",
+            "networkInterruptedException": "O Servidor de Atualização do sistema está indisponível atualmente. Tente novamente mais tarde.",
+            "helpCenterInvalidServerException": "O Servidor de Atualização do sistema é inválido. Tente novamente mais tarde.",
             "catalogNotFoundException": "Não foram encontradas atualizações aplicáveis para o seu sistema, pois o catálogo de atualizações não foi encontrado.",
             "catalogCrcErrorException": "O catálogo do sistema está sendo atualizado no momento. Tente novamente mais tarde.",
-            "catalogErrorException": "Erro detectado no catálogo de atualizações para seu sistema no Servidor de Atualização do Sistema. Tente novamente mais tarde.",
+            "catalogErrorException": "Erro detectado no catálogo de atualizações para seu sistema no Servidor de Atualização do sistema. Tente novamente mais tarde.",
             "fileNotFoundException": "Arquivo não encontrado."
         }
     },
@@ -2952,7 +2952,7 @@
         "settingsDescription": "Na página de configurações de preferências, você pode optar por ativar/desativar a notificação de mensagens com base nas categorias de mensagens do Vantage. Observe que, mesmo que todas as categorias de mensagens estejam desativadas, talvez você ainda receba ocasionalmente mensagens Críticas do Sistema do Vantage, quando necessário.",
         "messagesInLenovoVantage": "Mensagens no Lenovo Vantage",
         "appFeatures": "Recursos do aplicativo",
-        "appFeaturesDescription": "Mensagens sobre Atualização do Sistema, artigos e outros recursos notáveis.",
+        "appFeaturesDescription": "Mensagens sobre Atualização do sistema, artigos e outros recursos notáveis.",
         "marketing": "Marketing",
         "marketingDescription": "Mensagens de promoções, incluindo ofertas especiais da Lenovo.",
         "actionTriggered": "Ação acionadas",
