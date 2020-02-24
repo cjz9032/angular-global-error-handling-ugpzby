@@ -22,6 +22,12 @@
                     "rapidCharge": "Rýchle nabíjanie"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Pretakt. zap.",
+                        "performance": "Výkon",
+                        "balance": "Vyvážený",
+                        "quiet": "Tichý"
+                    },
                     "title": "Pretaktovanie CPU",
                     "status": {
                         "alwayson": "Zap.",

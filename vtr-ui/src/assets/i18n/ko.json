@@ -22,6 +22,12 @@
                     "rapidCharge": "급속 충전"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "오버클럭 켜기",
+                        "performance": "성능",
+                        "balance": "밸런스",
+                        "quiet": "저소음"
+                    },
                     "title": "CPU 오버클럭",
                     "status": {
                         "alwayson": "켜기",

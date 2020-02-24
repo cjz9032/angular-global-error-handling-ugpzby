@@ -22,6 +22,12 @@
                     "rapidCharge": "Carica rapida"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Overclock att.",
+                        "performance": "Prestazioni",
+                        "balance": "Bilanciamento",
+                        "quiet": "Silenzioso"
+                    },
                     "title": "Overclock della CPU",
                     "status": {
                         "alwayson": "Attivato",

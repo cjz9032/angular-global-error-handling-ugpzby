@@ -22,6 +22,12 @@
                     "rapidCharge": "Brzo punjenje"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Overclock uklj.",
+                        "performance": "Performanse",
+                        "balance": "Balans",
+                        "quiet": "Tiho"
+                    },
                     "title": "Overclock CPU-a",
                     "status": {
                         "alwayson": "Uključeno",

@@ -22,6 +22,12 @@
                     "rapidCharge": "Carga rápida"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Acel. activada",
+                        "performance": "Rendimiento",
+                        "balance": "Equilibrio",
+                        "quiet": "Silencioso"
+                    },
                     "title": "Aceleración de CPU",
                     "status": {
                         "alwayson": "Encendido",

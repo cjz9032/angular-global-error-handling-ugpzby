@@ -22,6 +22,12 @@
                     "rapidCharge": "Snelladen"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Overklok aan",
+                        "performance": "Prestaties",
+                        "balance": "Balans",
+                        "quiet": "Stil"
+                    },
                     "title": "CPU overklok",
                     "status": {
                         "alwayson": "Aan",

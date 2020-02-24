@@ -27,6 +27,7 @@ export class WidgetLightingComponent implements OnInit {
 	public isdriverpopup = false;
 	public isPopupVisible: any;
 	public defaultLanguage: any;
+	public ledlayoutversion: any;
 	public ledSwitchButtonFeature: boolean;
 
 	constructor(
@@ -54,6 +55,8 @@ export class WidgetLightingComponent implements OnInit {
 	public getCapabilities() {
 		this.ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
 		this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
+		this.ledlayoutversion = this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion);
+		this.ledSwitchButtonFeature = this.commonService.getLocalStorageValue(LocalStorageKey.LedSwitchButtonFeature);
 
 		if (this.ledSetFeature) {
 			if (LocalStorageKey.ProfileId !== undefined) {

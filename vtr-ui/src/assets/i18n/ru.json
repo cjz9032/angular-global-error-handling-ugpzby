@@ -22,6 +22,12 @@
                     "rapidCharge": "Быстрая зарядка"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Разгон включен",
+                        "performance": "Производ-ть",
+                        "balance": "Баланс",
+                        "quiet": "Тихий"
+                    },
                     "title": "Разгон ЦП",
                     "status": {
                         "alwayson": "Вкл.",

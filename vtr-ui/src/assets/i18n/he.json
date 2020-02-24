@@ -22,6 +22,12 @@
                     "rapidCharge": "טעינה מהירה"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "אוברקלוק פועל",
+                        "performance": "ביצועים",
+                        "balance": "איזון",
+                        "quiet": "שקט"
+                    },
                     "title": "אוברקלוק של מעבד",
                     "status": {
                         "alwayson": "פועל",

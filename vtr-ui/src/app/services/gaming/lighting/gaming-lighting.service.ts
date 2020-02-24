@@ -5,7 +5,7 @@ import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 	providedIn: 'root'
 })
 export class GamingLightingService {
-	public getGamingLighting: any;
+	private getGamingLighting: any;
 	public isShellAvailable = false;
 
 	public cardContentPositionF: any = {

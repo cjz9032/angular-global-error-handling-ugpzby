@@ -22,6 +22,12 @@
                     "rapidCharge": "急速充電"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "CLKUPオン",
+                        "performance": "性能",
+                        "balance": "バランス",
+                        "quiet": "静音"
+                    },
                     "title": "CPU クロックアップ",
                     "status": {
                         "alwayson": "オン",

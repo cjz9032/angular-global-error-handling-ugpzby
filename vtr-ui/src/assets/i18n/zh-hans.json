@@ -22,6 +22,12 @@
                     "rapidCharge": "快速充电"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "超频开启",
+                        "performance": "野兽模式",
+                        "balance": "智能模式",
+                        "quiet": "节能模式"
+                    },
                     "title": "CPU 超频",
                     "status": {
                         "alwayson": "开启",

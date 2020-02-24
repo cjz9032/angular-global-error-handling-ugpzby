@@ -24,6 +24,12 @@
                     "rapidCharge": "الشحن السريع"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "زيادة الأداء تعمل",
+                        "performance": "الأداء",
+                        "balance": "التوازن",
+                        "quiet": "هادئ"
+                    },
                     "title": "كسر سرعة وحدة CPU",
                     "status": {
                         "alwayson": "تشغيل",

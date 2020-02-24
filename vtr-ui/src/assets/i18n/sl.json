@@ -22,6 +22,12 @@
                     "rapidCharge": "Hitro polnjenje"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Zviš. tak. vkl.",
+                        "performance": "Zmogljivost",
+                        "balance": "Ravnovesje",
+                        "quiet": "Tiho"
+                    },
                     "title": "Zvišanje takta CPE",
                     "status": {
                         "alwayson": "Vklopljeno",

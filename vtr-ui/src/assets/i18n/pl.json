@@ -22,6 +22,12 @@
                     "rapidCharge": "Szybkie ładowanie"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Przetakt. wł.",
+                        "performance": "Wydajność",
+                        "balance": "Równowaga",
+                        "quiet": "Cichy"
+                    },
                     "title": "Przetaktowywanie CPU",
                     "status": {
                         "alwayson": "Włącz",

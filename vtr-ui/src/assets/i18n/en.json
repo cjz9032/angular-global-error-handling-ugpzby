@@ -27,6 +27,12 @@
                     "title": "Quick Settings"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Overclock on",
+                        "performance": "Performance",
+                        "balance": "Balance",
+                        "quiet": "Quiet"
+                    },
                     "title": "CPU Overclock",
                     "status": {
                         "alwayson": "On",

@@ -22,6 +22,12 @@
                     "rapidCharge": "Hurtiglading"
                 },
                 "legionEdge": {
+					"thermalMode2": {
+                        "OC_On": "Overklokking på",
+                        "performance": "Ytelse",
+                        "balance": "Balanse",
+                        "quiet": "Stille"
+                    },
                     "title": "CPU-overklokking",
                     "status": {
                         "alwayson": "På",
