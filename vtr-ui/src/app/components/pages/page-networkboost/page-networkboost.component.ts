@@ -90,12 +90,7 @@ export class PageNetworkboostComponent implements OnInit {
 			this.needToAsk = this.needToAsk === undefined || isNaN(this.needToAsk) ? 0 : this.needToAsk;
 			this.loggerService.info('page-networkboost.component.openTargetModal', 'NEED TO ASK FROM LOCAL --->' + this.needToAsk);
 			this.loggerService.info('page-networkboost.component.openTargetModal', 'TOGGLE STATUS --->' + this.toggleStatus);
-			if (this.toggleStatus) {
-				this.showAppsModal = true;
-			} else if (this.needToAsk === 1 || this.needToAsk === 2) {
-				if (this.needToAsk === 2) {
-					this.setNetworkBoostStatus({ switchValue: true });
-				}
+			if (this.toggleStatus || this.needToAsk === 1 || this.needToAsk === 2) {
 				this.showAppsModal = true;
 			} else {
 				this.showTurnOnModal = true;

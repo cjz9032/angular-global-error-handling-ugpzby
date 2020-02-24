@@ -219,8 +219,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	// TODO lite gaming
 	// public desktopType = false;
 	// TODO thermal mode 2.0
-	public thermalModeRealStatus: number = 2;
-	public OCSettings: number = 3;
+	public thermalModeRealStatus = 2;
+	public OCSettings = 3;
 
 	public cpuOCStatus: CPUOCStatus = new CPUOCStatus();
 	public setCpuOCStatus: any;
@@ -246,8 +246,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	) { }
 	ngOnInit() {
 		// TODO Lite Gaming
-		this.gamingCapabilities.desktopType = this.commonService.getLocalStorageValue( LocalStorageKey.desktopType);
-		this.gamingCapabilities.liteGaming = this.gamingCapabilityService.getCapabilityFromCache( LocalStorageKey.liteGaming);
+		this.gamingCapabilities.desktopType = this.commonService.getLocalStorageValue(LocalStorageKey.desktopType);
+		this.gamingCapabilities.liteGaming = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.liteGaming);
 		// TODO Thermal Mode 2.0 capabilities
 		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.smartFanFeature
@@ -303,7 +303,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					LocalStorageKey.RealThermalModeStatus
 				);
 				if (thermalModeRealStatusCache !== undefined) {
-					this.thermalModeRealStatus = thermalModeRealStatusCache
+					this.thermalModeRealStatus = thermalModeRealStatusCache;
 				}
 				if (this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
 					if (this.gamingCapabilities.xtuService && this.gamingCapabilities.nvDriver) {
@@ -420,12 +420,17 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public renderNetworkBoostStatus() {
 		this.gamingNetworkBoostService.getNetworkBoostStatus().then((networkBoostModeStatus) => {
-            if (networkBoostModeStatus !== undefined) {
+			if (networkBoostModeStatus !== undefined) {
 				this.NetworkBoostStatusObj.networkBoostStatus = networkBoostModeStatus;
 				this.setNetworkBoostCacheStatus(networkBoostModeStatus);
 				this.legionUpdate[2].isChecked = networkBoostModeStatus;
+				if (!networkBoostModeStatus) {
+					if (this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup) === 2) {
+						this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup, 1);
+					}
+				}
 			}
-        });
+		});
 	}
 
 	public async setAutoCloseStatus(status: any) {
@@ -439,14 +444,14 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public async setNetworkBoostStatus(status: any) {
 		try {
-            const isStatusUpdated = await this.gamingNetworkBoostService.setNetworkBoostStatus(status);
-            if (isStatusUpdated) {
+			const isStatusUpdated = await this.gamingNetworkBoostService.setNetworkBoostStatus(status);
+			if (isStatusUpdated) {
 				this.setNetworkBoostCacheStatus(status);
 				this.legionUpdate[2].isChecked = status;
 			} else {
-                this.legionUpdate[2].isChecked = !status;
-            }
-        } catch (err) {}
+				this.legionUpdate[2].isChecked = !status;
+			}
+		} catch (err) { }
 	}
 
 	public getAutoCloseCacheStatus() {
@@ -486,10 +491,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		} catch (error) { }
 	}
 	public renderThermalMode2RealStatus() {
-		//TODO thermal mode real status
+		// TODO thermal mode real status
 		try {
 			this.gamingThermalModeService.getThermalModeRealStatus().then(res => {
-				this.logger.info(`Widget-LegionEdge-RenderThermalMode2RealStatus: get value from ${this.thermalModeRealStatus} to ${res}`);
+				this.logger.info(`Widget-LegionEdge-RenderThermalMode2RealStatus: get value from ${ this.thermalModeRealStatus } to ${ res }`);
 				if (res !== this.thermalModeRealStatus && res !== undefined) {
 					this.thermalModeRealStatus = res;
 					this.commonService.setLocalStorageValue(LocalStorageKey.RealThermalModeStatus, this.thermalModeRealStatus);
@@ -528,7 +533,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public onRegThermalModeRealStatusChangeEvent(currentRealStatus: any) {
 		this.ngZone.run(() => {
-			this.logger.info(`Widget-LegionEdge-OnRegThermalModeRealStatusChangeEvent: call back from ${this.thermalModeRealStatus} to ${currentRealStatus}`);
+			this.logger.info(`Widget-LegionEdge-OnRegThermalModeRealStatusChangeEvent: call back from ${ this.thermalModeRealStatus } to ${ currentRealStatus }`);
 			if (currentRealStatus !== undefined && this.thermalModeRealStatus !== currentRealStatus) {
 				this.thermalModeRealStatus = currentRealStatus;
 				this.commonService.setLocalStorageValue(LocalStorageKey.RealThermalModeStatus, this.thermalModeRealStatus);
@@ -539,7 +544,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public renderThermalMode2OCSettings() {
 		try {
 			this.gamingOCService.getPerformanceOCSetting().then(res => {
-				this.logger.info(`Widget-LegionEdge-RenderThermalMode2OCSettings: get value from ${this.OCSettings} to ${res}`);
+				this.logger.info(`Widget-LegionEdge-RenderThermalMode2OCSettings: get value from ${ this.OCSettings } to ${ res }`);
 				if (this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
 					if (this.gamingCapabilities.xtuService && this.gamingCapabilities.nvDriver) {
 						this.OCSettings = res ? 1 : 3;
@@ -596,7 +601,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.modalService.open(ModalGamingLegionedgeComponent, { backdrop: true, windowClass: 'gaming-help-modal' });
 	}
 	openThermalMode2Modal() {
-		let modalRef = this.modalService.open(ModalGamingThermalMode2Component, { backdrop: 'static', windowClass: 'modal-fun' });
+		const modalRef = this.modalService.open(ModalGamingThermalMode2Component, { backdrop: 'static', windowClass: 'modal-fun' });
 		modalRef.componentInstance.OCSettingsMsg.subscribe(res => {
 			this.OCSettings = res;
 		});
