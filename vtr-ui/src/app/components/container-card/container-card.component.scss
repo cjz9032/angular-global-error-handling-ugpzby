@@ -253,17 +253,17 @@
 						padding: 2rem;
 					}
 
-					@media #{$mediaquery_10} {
-						padding: 1.5rem 2rem;
-					}
+					// @media #{$mediaquery_10} {
+					// 	padding: 1.5rem 2rem;
+					// }
 
-					@media #{$mediaquery_X7} {
-						padding: 1.5rem;
-					}
+					// @media #{$mediaquery_X7} {
+					// 	padding: 1.5rem;
+					// }
 
-					@media #{$mediaquery_18} {
-						padding: 1.5rem;
-					}
+					// @media #{$mediaquery_18} {
+					// 	padding: 1.5rem;
+					// }
 
 					.title {
 						color: $light;
@@ -352,6 +352,7 @@
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+						font-size: $fontsize_xl2;
 					}
 				}
 			}
@@ -517,7 +518,7 @@
 			.title {
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-				font-size: $fontsize_xl;
+				font-size: $fontsize_xl2;
 				font-weight: $weight_light;
 				line-height: 1.4;
 				cursor: pointer;

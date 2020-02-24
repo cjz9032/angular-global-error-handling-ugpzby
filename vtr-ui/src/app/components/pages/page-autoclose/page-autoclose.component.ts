@@ -118,7 +118,7 @@ export class PageAutocloseComponent implements OnInit {
 
 	modalCloseTurnOn(action: boolean) {
 		this.showTurnOnModal = action;
-		this.hiddenScroll(false);
+		this.hiddenScroll(true);
 		this.showAppsModal = true;
 	}
 
@@ -212,6 +212,15 @@ export class PageAutocloseComponent implements OnInit {
 			Page: 'auto-close'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+			const cardContentPositionF = this.cmsService.getOneCMSContent(
+				response,
+				'half-width-top-image-title-link',
+				'position-F'
+			)[0];
+			if (cardContentPositionF) {
+				this.cardContentPositionF = cardContentPositionF;
+			}
+
 			const cardContentPositionC = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-title-description-link-image',
@@ -219,28 +228,19 @@ export class PageAutocloseComponent implements OnInit {
 			)[0];
 			if (cardContentPositionC) {
 				this.cardContentPositionC = cardContentPositionC;
-			}
-
-			const cardContentPositionF = this.cmsService.getOneCMSContent(
-				response,
-				'inner-page-right-side-article-image-background',
-				'position-F'
-			)[0];
-			if (cardContentPositionF) {
-				this.cardContentPositionF = cardContentPositionF;
-				if (this.cardContentPositionF.BrandName) {
-					this.cardContentPositionF.BrandName = this.cardContentPositionF.BrandName.split('|')[0];
+				if (this.cardContentPositionC.BrandName) {
+					this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
 				}
 			}
 		});
 
 		if (!this.isOnline) {
 			this.cardContentPositionF = {
-				FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
+				FeatureImage: './../../../../assets/cms-cache/GamingPosC.jpg'
 			};
 
 			this.cardContentPositionC = {
-				FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
+				FeatureImage: './../../../../assets/cms-cache/autoclose_offline.jpg'
 			};
 		}
 	}

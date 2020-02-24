@@ -19,7 +19,13 @@ const routes: Routes = [
 	},
 	{
 		path: 'device-gaming',
-		component: PageDeviceGamingComponent
+		component: PageDeviceGamingComponent,
+		canDeactivate: [ GuardService ],
+		canActivate: [ GuardService ],
+		data: {
+			pageName: 'Gaming.Dashboard',
+			pageContent: 'Gaming Dashboard'
+		}
 	},
 	{
 		path: 'gaming',
@@ -39,10 +45,6 @@ const routes: Routes = [
 	{
 		path: 'home-security',
 		loadChildren: () => import('./connected-home-security/connected-home-security.module').then(m => m.ConnectedHomeSecurityModule)
-	},
-	{
-		path: 'privacy',
-		loadChildren: () => import('../components/pages/page-privacy/privacy.module').then(m => m.PrivacyModule)
 	},
 	{
 		path: 'security',

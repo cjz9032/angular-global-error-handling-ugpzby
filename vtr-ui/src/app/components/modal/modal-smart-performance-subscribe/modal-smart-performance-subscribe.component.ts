@@ -23,7 +23,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 	countryCode: any;
 	langCode: any;
 	paymenturl: string;
-	//default url "https://uatpcsupport.lenovo.com/us/en/upgradewarranty?serial=pc0bms6n&mt=20en&source=vantage"
+	// default url "https://uatpcsupport.lenovo.com/us/en/upgradewarranty?serial=pc0bms6n&mt=20en&source=vantage"
 
 	public subscriptionDetails = [
 		{
@@ -37,8 +37,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		private commonService: CommonService,
 		private supportService: SupportService,
 		private loggerService: LoggerService
-	) // private router: Router
-	{
+	) {
 	}
 
 	ngOnInit() {
@@ -72,13 +71,13 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		this.activeModal.close('close');
 	}
 	selectBilledMonthly() {
-        alert('You Have Successfully Subscibed');
-        this.commonService.setLocalStorageValue(LocalStorageKey.IsSubscribed, true);
-        this.commonService.setLocalStorageValue(LocalStorageKey.SubscribtionDetails, this.subscriptionDetails);
-        this.closeModal();
-        location.reload();
-        // this.router.navigate(['device/smart-performance']);
-    }
+		alert('You Have Successfully Subscibed');
+		this.commonService.setLocalStorageValue(LocalStorageKey.IsSubscribed, true);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SubscribtionDetails, this.subscriptionDetails);
+		this.closeModal();
+		location.reload();
+		// this.router.navigate(['device/smart-performance']);
+	}
 
 	@HostListener('window: focus')
 	onFocus(): void {

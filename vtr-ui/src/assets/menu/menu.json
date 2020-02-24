@@ -149,24 +149,6 @@
 			"subitems": []
 		},
 		{
-			"id": "privacy",
-			"label": "common.menu.privacy",
-			"path": "privacy",
-			"icon": [
-				"fal",
-				"user-shield"
-			],
-			"segment": "-[Commercial]",
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.privacy",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"forArm": false,
-			"subitems": []
-		},
-		{
 			"id": "device",
 			"label": "common.menu.device.title",
 			"path": "device",
@@ -402,6 +384,24 @@
 			]
 		},
 		{
+			"id": "hardware-scan",
+			"label": "hardwareScan.name",
+			"path": "hardware-scan",
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.hardwarescan",
+			"segment": "-[Gaming]",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"icon": [
+				"fal",
+				"flask"
+			],
+			"forArm": false,
+			"subitems": []
+		},
+		{
 			"id": "user",
 			"label": "User",
 			"path": "user",
@@ -437,24 +437,6 @@
 		"subitems": []
 	},
 	"betaItem": [
-		{
-			"id": "hardware-scan",
-			"label": "hardwareScan.name",
-			"beta": true,
-			"path": "beta/hardware-scan",
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.hardwarescan",
-			"segment": "-[Gaming]",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"icon": [
-				"fal",
-				"flask"
-			],
-			"forArm": false,
-			"subitems": []
-		}
+		
 	]
 }

@@ -1,26 +1,25 @@
 <div class="vtr-widget-qa">
-  <div class="qa_head">
-      <h4 class="qa_title">{{mainTitle}}</h4>
-  </div>
-  <ul class="qa_list">
-    <li class="qa_item"
-      *ngFor="let item of questions; let i = index">
-	  <div class="d-flex align-items-center row"
-        (click)="openAccordion(i)">
-        <fa-icon [icon]="['fal', item.icon]" class="item-icon col-2"></fa-icon>
-        <div class="item-title col-8">
-          <span class="list-text">{{item.title | translate}}</span>
-        </div>
-        <fa-icon [icon]="['fal', 'chevron-down']" class="chevron-icon col-2"
-          *ngIf="openId !==i"></fa-icon>
-        <fa-icon [icon]="['fal', 'chevron-up']" class="chevron-icon col-2"
-          *ngIf="openId === i">
-        </fa-icon>
-      </div>
-      <div class="item-description"
-       *ngIf="openId === i">
-      {{item.text | translate}}
-      </div>
-    </li>
-  </ul>
+	<div class="qa_head">
+		<h4 class="qa_title">{{mainTitle}}</h4>
+	</div>
+	<ul class="qa_list">
+		<li class="qa_item" *ngFor="let item of questions; let i = index">
+			<a href="javascript:void(0);" (click)="openAccordion(i)">
+				<div class="d-flex align-items-center row">
+					<div class="d-flex col-10">
+						<fa-icon [icon]="['fal', item.icon]" class="item-icon d-flex align-items-center"></fa-icon>
+						<div class="item-title col-10">
+							<span class="list-text">{{item.title | translate}}</span>
+						</div>
+					</div>
+					<fa-icon [icon]="['fal', 'chevron-down']" class="chevron-icon col-2 text-right" *ngIf="openId !==i"></fa-icon>
+					<fa-icon [icon]="['fal', 'chevron-up']" class="chevron-icon col-2 text-right" *ngIf="openId === i"></fa-icon>
+				</div>
+			</a>
+			<div class="item-description" *ngIf="openId === i">
+				{{item.text | translate}}
+			</div>
+
+		</li>
+	</ul>
 </div>

@@ -20,7 +20,6 @@ import { ActivatedRoute } from '@angular/router';
 import { takeWhile } from 'rxjs/operators';
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { WinRT } from '@lenovo/tan-client-bridge';
 import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
 import { Md5 } from 'ts-md5';
 import {BatteryDetailService} from 'src/app/services/battery-detail/battery-detail.service';
@@ -1209,8 +1208,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			});
 	}
 
-	public setPrivacyGuardOnPasswordStatusVal(event) {
-		this.displayService.setPrivacyGuardOnPasswordStatus(event.target.checked).then((response: boolean) => {
+	public setPrivacyGuardOnPasswordStatusVal($event: boolean) {
+		this.privacyGuardCheckBox = $event;
+		this.displayService.setPrivacyGuardOnPasswordStatus($event).then((response: boolean) => {
 			// this.logger.debug('set privacy guard on password status here -------------.>', response);
 		})
 			.catch(error => {
@@ -1256,7 +1256,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	}
 
 	launchProtocol(protocol: string) {
-		WinRT.launchUri(protocol);
+		this.deviceService.launchUri(protocol);
 	}
 
 	resetEyecaremodeAllSettings() {

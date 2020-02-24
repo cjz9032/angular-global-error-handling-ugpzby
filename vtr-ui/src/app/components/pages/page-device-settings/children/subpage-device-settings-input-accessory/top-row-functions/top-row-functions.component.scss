@@ -1,34 +1,40 @@
 @import "../../../../../../app.theme.scss";
 
 .top-row-key-block{
-.title-blck{
-    .left-icon {
-        display: inline-block;
-        font-size: $subpage_menu_title;
-        height: 1em;
-        width: 1.5em;
-        color:$menu_hover;
-        overflow: visible;
-        vertical-align: -0.12em;
-        // padding: 0 0.7em 0 0;
-}
-.title {
-    font-size: $fontsize_md;
-    color: $purple_navy;
-    font-weight: $weight_light;
-    letter-spacing: 0.05rem;
-    text-transform: none;
-}
-}
-.caption {
-    .text{
-        font-size: $fontsize_xs;
-        font-weight: $weight_light;
-		color: $grey_dark;
+    .left-icon-column {
+        padding: 0 1rem 0 0;
     }
-	// max-width: 60rem;
-	padding-left: 3rem;
-}
+    .left-icon-block {
+        width: 2rem;
+        position: relative;
+        .left-icon {
+            font-size: $subpage_menu_title;
+            height: 2em;
+            width: 2em;
+            color:$menu_hover;
+            overflow: visible;
+            vertical-align: -0.12em;
+            // padding: 0 0.7em 0 0;
+        }
+    }
+    .title-blck{
+        .title {
+            font-size: $fontsize_md;
+            color: $purple_navy;
+            font-weight: $weight_light;
+            letter-spacing: 0.05rem;
+            text-transform: none;
+        }
+    }
+    .caption {
+        .text{
+            font-size: $fontsize_xs;
+            font-weight: $weight_light;
+            color: $grey_dark;
+        }
+        // max-width: 60rem;
+        padding-left: 3rem;
+    }
     .link-text {
         font-size: $fontsize_xs2;
         font-weight: $weight_bold;

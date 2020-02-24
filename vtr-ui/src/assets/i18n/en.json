@@ -27,7 +27,7 @@
                     "title": "Quick Settings"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Overclock on",
                         "performance": "Performance",
                         "balance": "Balance",
@@ -93,16 +93,15 @@
                 "legionEdgeModal": {
                     "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
                     "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-                    "line3": "<b>CPU/GPU Overclock</b><br> Boost the maximum speed for your processor",
-                    "line4": "<b>RAM Overclock </b><br> Boost the maximum speed for your memory",
+                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
+                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
                     "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
                     "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
                     "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
                     "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
                     "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
                     "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control",
-					"line12": "<b>Macro key </b><br> Customize your keyboard actions to suit your playing style"
+                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
                 },
                 "systemInfo": {
                     "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
@@ -747,16 +746,15 @@
             },
             "security": {
                 "title": "Security",
-                "sub1": "My Security",
-                "sub2": "Anti-Virus",
-                "sub3": "WiFi Security",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub1": "My security",
+                "sub2": "Anti-virus",
+                "sub3": "WiFi security",
+                "sub4": "Password health",
+                "sub5": "VPN security",
                 "sub6": "Fingerprint"
             },
             "support": "Support",
             "homeSecurity": "Connected Home",
-            "privacy": "Privacy",
             "beta": {
                 "title": "beta"
             }
@@ -766,8 +764,8 @@
             "subtitle": "Check if your device is secured.",
             "antiVirus": "Anti-Virus",
             "wifi": "WiFi Security",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Password Health",
+            "vpn": "VPN Security",
             "fingerPrint": "Fingerprint",
             "windowsHello": "Windows Hello",
             "enabled": "ENABLED",
@@ -813,11 +811,6 @@
             "connectToUseFeature": "Connect to the internet to use this feature"
         }
     },
-    "privacy": {
-        "headerMain": {
-            "title": "Privacy"
-        }
-    },
     "tutorial": {
         "almostThere": "Almost there!",
         "para1": "Just a few more buttons to press before we can have liftoff.",
@@ -854,7 +847,7 @@
         },
         "feedback": {
             "title": "Give Feedback",
-            "subtitle": "Tell us what you think about vantage.",
+            "subtitle": "Tell us what you think about Vantage.",
             "button": "Give feedback",
             "form": {
                 "email": "Email (optional)",
@@ -1371,6 +1364,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "An ENERGY STAR certified product"
+                },
+                "dpm": {
+					"title": "Power",
+					"subtitle": "Power settings",
+					"description":"This section enables you check the default settings and customize your power use and power plan according to your needs.",
+                    "globalPowerSettings": {
+                        "title": "Global power settings",
+                        "description": "This feature will override Power plan or Power use settings.",
+                        "powerButton": {
+                            "label": "POWER BUTTON:",
+                            "items": {
+                                "doNothing": "Do nothing",
+                                "sleep": "Sleep",
+                                "hibernate": "Hibernate",
+                                "shutDown": "Shut down",
+                                "turnOffTheDisplay": "Turn off the display"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "REQUIRED SIGN IN:",
+                            "items": {
+                                "never": "Never",
+                                "fromSleep": "When PC wakes up from sleep"
+                            },
+                            "tip": "Note: This only works if system password set."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Power use",
+                        "description": "IF SYSTEM IS IN IDLE:",
+                        "turnOffDisplay": "TURN OFF DISPALY AFTER:",
+                        "turnOffHDD": "TURN OFF HDD AFTER:",
+                        "sleep": "SLEEP AFTER:",
+                        "hibernate": "HIBERNATE AFTER:",
+                        "items": {
+                            "never": "Never",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "hour": "hour",
+                            "hours": "hours"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Power plan",
+                        "description": "Choose a power plan to control the computer performance, system temperature, and power usage.",
+                        "currentPowerPlan": {
+                            "label": "CURRENT PLAN"
+                        }
+                    }
                 }
             },
             "audio": {
@@ -1492,8 +1534,8 @@
                             "alwaysOn": "Always on",
                             "never": "Never",
                             "halfTime": "Half time of display off timer",
-                            "select" : "Select",
-                            "time" : "Time"
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "TASKBAR DIMMER",
                         "backgroundDimmer": "BACKGROUND DIMMER",
@@ -1519,7 +1561,7 @@
                         "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
                         "labelText": "Enable this feature when typing passwords"
                     },
-                    "displayPriority":{
+                    "displayPriority": {
                         "title": "Display Priority Control",
                         "description":"Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
                         "options":{
@@ -1732,7 +1774,6 @@
                             "key11": "Ctrl + X",
                             "key12": "Ctrl + Y",
                             "key13": "Ctrl + Z"
-
                         },
                         "action": {
                             "heading": "Action",
@@ -2487,7 +2528,7 @@
             "firewall": "Firewall",
             "pwdHealth": "Password Health",
             "vpnSecurity": "VPN Security",
-            "vpnVirtual": "Virtual Private Network (VPN) security",
+            "vpnVirtual": "Virtual Private Network (VPN) Security",
             "wifiConnected": "WiFi Security",
             "connectedHomeSecurity": "Connected Home Security",
             "fingerprint": "Fingerprint Reader",
@@ -2547,7 +2588,7 @@
         },
         "antivirus": {
             "common": {
-                "title": "Anti-Virus",
+                "title": "Anti-virus",
                 "back": "BACK",
                 "recommends": "Why Lenovo recommends <b>McAfee</b> to protect all your devices",
                 "award": "Award-winning antivirus",
@@ -2625,7 +2666,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi Security",
+                "title": "WiFi security",
                 "back": "BACK"
             },
             "container": {
@@ -2689,7 +2730,7 @@
                 "titleDescribe": "Please ensure location permissions are enabled for Vantage in order to add your device to an existing Connected Home Account, and to use Connected Home Security.",
                 "enterCode": "Enter the invitation code",
                 "joinFamilyAccount": "Join family account",
-                "joinChs": "join your family's Connected Home Security",
+                "joinChs": "Join your family's Connected Home Security",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECT",
                 "addHome": "Add Home",
@@ -2725,7 +2766,7 @@
         },
         "vpn": {
             "statusTitle": "SURFEASY VPN",
-            "title": "VPN Security",
+            "title": "VPN security",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN encrypts the information you send and receive so you can safely and privately use your PC, Mac®, smartphone or tablet on any Internet connection without worry.",
             "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
@@ -2756,7 +2797,7 @@
         },
         "passwordManager": {
             "statusTitle": "DASHLANE PASSWORD MANAGER",
-            "title": "Password Health",
+            "title": "Password health",
             "header": "Dashlane",
             "whatIsPmNotInstalled": "The safest, easiest way to save strong, complex passwords and log in instantly on every site.",
             "whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
@@ -3242,7 +3283,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Preference settings",
+        "preferenceSettings": "Preference Settings",
         "settings": "Settings",
         "settingsDescription": "In preference settings page, you can choose to turn on/off your message notification based on the categories of Vantage's message, please be noted that even if all the message categories are disabled, you may still occasionally receive System Critical message from Vantage when necessary.",
         "messagesInLenovoVantage": "Messages in Lenovo Vantage",
@@ -3431,11 +3472,11 @@
             "storage": "Storage",
             "wireless": "Wireless"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates",
+        "refreshMessage": "Refresh may take some time as it needs to load all the components again"
     },
     "notification": {
         "menu": {
-            "privacy": "Now you can find out if your private information has been breached or used by online trackers without your knowlege.",
             "security": "Do you know? Even you don't have anti-virus software installed, we still provide basic security protection for your device.",
             "connectedHomeSecurity": "Get real-time monitoring and alerts about your network security at home. You will be the first one to know if any of your smart devices are facing a security attack."
         }

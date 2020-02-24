@@ -39,6 +39,7 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
 import { faCircle as falCircle } from '@fortawesome/free-regular-svg-icons/faCircle';
 import { faChevronDown as falChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faChevronUp as falChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
+import { UiDpmDropdownComponent } from 'src/app/components/ui/ui-dpm-dropdown/ui-dpm-dropdown.component';
 import { SpinnerComponent } from 'src/app/components/common/spinner/spinner.component';
 
 library.add(faCircle);
@@ -77,6 +78,7 @@ library.add(faChevronUp);
 		UiTooltipsComponent,
 		UiToggleComponent,
 		ContainerCollapsibleComponent,
+		UiDpmDropdownComponent,
 		UiBrightnessSliderComponent,
 		UiAddReduceButtonComponent
 	],
@@ -107,6 +109,7 @@ library.add(faChevronUp);
 		UiTooltipsComponent,
 		UiToggleComponent,
 		ContainerCollapsibleComponent,
+		UiDpmDropdownComponent,
 		UiBrightnessSliderComponent,
 		UiAddReduceButtonComponent
 	],

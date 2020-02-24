@@ -306,17 +306,26 @@ export class CMSService {
 				record.Position === position &&
 				(
 					!record.DisplayStartDate ||
-					new Date(record.DisplayStartDate).getTime() <= new Date().getTime()
+					this.getDateTime(record.DisplayStartDate) <= new Date().getTime()
 				)
 			);
-		}).sort(this.sortCmsContent);
+		}).sort(this.sortCmsContent.bind(this));
 	}
 
 	sortCmsContent(a, b): number {
 		if (a.Priority === b.Priority) {
-			return new Date(b.DisplayStartDate).getTime() - new Date(a.DisplayStartDate).getTime();
+			return this.getDateTime(b.DisplayStartDate) - this.getDateTime(a.DisplayStartDate);
 		}
 		return a.Priority.localeCompare(b.Priority);
+	}
+
+	getDateTime(date: any): number {
+		try{
+			if (date && typeof date === 'string') {
+				return new Date(date.replace(/\./g, '\/')).getTime();
+			}
+		}catch(e){}
+		return -1;
 	}
 
 	/* const CMSOption = Object.assign(defaults, queryParams);

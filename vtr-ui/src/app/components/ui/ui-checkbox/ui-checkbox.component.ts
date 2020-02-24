@@ -13,14 +13,17 @@ import {
 })
 export class UiCheckboxComponent implements OnInit {
 
-	@Input() checkboxId: string;
+	@Input() componentId: string;
 	@Input() label: string;
-	@Input() tooltip: string;
 	@Input() checked: boolean;
 	@Input() disabled: boolean;
 	@Input() value: any;
-
-	@Output() toggle: EventEmitter<any> = new EventEmitter();
+	@Input() hasChild = false; // for ng-content
+	@Input() metricsEvent = 'ItemClick';
+	@Input() metricsParent: string;
+	@Input() metricsItem: string;
+	@Input() metricsValue: any;
+	@Output() toggle: EventEmitter<boolean> = new EventEmitter();
 
 	constructor() { }
 

@@ -748,12 +748,11 @@
                 "sub1": "Securitatea mea",
                 "sub2": "Antivirus",
                 "sub3": "Securitate WiFi",
-                "sub4": "Manager de parole",
-                "sub5": "VPN",
+                "sub4": "Sănătatea parolei",
+                "sub5": "Securitate VPN",
                 "sub6": "Amprentă digitală"
             },
             "support": "Asistenţă",
-            "privacy": "Confidenţialitate",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "VERIFICAȚI DACĂ DISPOZITIVUL DVS. ESTE SECURIZAT.",
             "antiVirus": "Antivirus",
             "wifi": "Securitate WiFi",
-            "pswdMgr": "Manager de parole",
-            "vpn": "VPN",
+            "pswdMgr": "Sănătatea Parolei",
+            "vpn": "Securitate VPN",
             "enabled": "ACTIVAT",
             "disabled": "DEZACTIVAT",
             "partiallyProtected": "PROTEJAT PARȚIAL",
@@ -776,11 +775,11 @@
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
-            "fingerPrint": "Amprentă digitală",
+            "fingerPrint": "Amprentă Digitală",
             "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "ÎNREGISTRAT",
+            "notEnrolled": "NEÎNREGISTRAT"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Pentru a utiliza această caracteristică, trebuie să vă conectați la internet"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Confidenţialitate"
         }
     },
     "tutorial": {
@@ -1040,7 +1034,7 @@
                     "Good": "<b>Bateria este în stare bună.</b>",
                     "Exhaustion": "Capacitatea bateriei s-a <b>degradat</b>. Înlocuiţi-o cu una nouă.",
                     "Bad": "<b>A apărut o eroare la baterie.</b> Bateria nu poate fi încărcată/descărcată. Înlocuiţi bateria.",
-                    "NotDetected": "<b>Nu a fost detectată nicio baterie.</b>",
+                    "NotDetected": "<b>Nu a fost detectată nicio baterie sau bateria nu</b> este conectată.",
                     "NotGood": "<b>Bateria nu este în stare bună.</b>",
                     "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b>",
                     "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă putere.</b>",
@@ -1276,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UN PRODUS CERTIFICAT ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Alimentare",
+					"subtitle": "Setări alimentare",
+					"description": "Această secțiune vă permite să verificați setările implicite și să personalizați consumul de energie și planul de alimentare, conform cerințelor dvs.",
+					"globalPowerSettings": {
+						"title": "Setări alimentare globale",
+						"description": "Această caracteristică va suprascrie setările planului de alimentare sau ale consumului de energie.",
+						"powerButton": {
+							"label": "BUTON DE ALIMENTARE:",
+							"items": {
+								"doNothing": "Nu se întâmplă nimic",
+								"sleep": "Repaus",
+								"hibernate": "Hibernare",
+								"shutDown": "Închidere",
+								"turnOffTheDisplay": "Stingere afișaj"
+							}
+						},
+						"requiredSignIn": {
+							"label": "ESTE NECESARĂ CONECTAREA:",
+							"items": {
+								"never": "Niciodată",
+								"fromSleep": "Când PC-ul se activează din repaus"
+							},
+							"tip": "Notă: Această opțiune funcționează numai dacă este setată parola de sistem."
+						}
+					},
+					"powerUse": {
+						"title": "Consum de energie",
+						"description": "DACĂ SISTEMUL ESTE INACTIV:",
+						"turnOffDisplay": "OPRIRE AFIȘAJ DUPĂ:",
+						"turnOffHDD": "OPRIRE HDD DUPĂ:",
+						"sleep": "REPAUS DUPĂ:",
+						"hibernate": "HIBERNARE DUPĂ:",
+						"items": {
+							"never": "Niciodată",
+							"minute": "minut",
+							"minutes": "minute",
+							"hour": "oră",
+							"hours": "ore"
+						}
+					},
+					"powerPlan": {
+						"title": "Plan de alimentare",
+						"description": "Alegeți un plan de alimentare pentru a controla performanța computerului, temperatura sistemului și consumul de energie.",
+						"currentPowerPlan": {
+							"label": "PLAN ACTUAL"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Stare de veghe inteligentă",
                     "description": "Această caracteristică programează computerul să optimizeze modul de economisire a energiei bateriei în timpul orelor de inactivitate, fără a afecta experiența de reluare rapidă pentru <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a>, în timpul orelor de utilizare intensivă.",
@@ -2287,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi și securitate conectată, la domiciliu",
+                "title": "Securitate WiFi",
                 "back": "ÎNAPOI"
             },
             "container": {
@@ -2471,7 +2514,7 @@
     "lenovoId": {
         "login": "Conectare",
         "logout": "Deconectare",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Se deconectează...",
         "unlockExclusives": "Deblocare Exclusive",
         "user": "Utilizator",
         "welcomeText1": "Păreți plin de energie astăzi, {{firstName}}!",
@@ -2904,7 +2947,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Setări de preferințe",
+        "preferenceSettings": "Setări De Preferințe",
         "settings": "Setări",
         "settingsDescription": "În pagina de setare a preferințelor, puteți alege să activați/dezactivați notificările pentru mesaje în funcție de categoria mesajului Vantage. Rețineți că, indiferent dacă toate categoriile de mesaje sunt dezactivate, puteți primi ocazional mesaje critice de sistem din partea Vantage când este necesar.",
         "messagesInLenovoVantage": "Mesaje în Lenovo Vantage",
@@ -3093,7 +3136,8 @@
             "storage": "Stocare",
             "wireless": "Fără fir"
         },
-        "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează"
+        "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează",
+        "refreshMessage": "Actualizarea poate dura un timp, deoarece este necesar să se încarce din nou toate componentele"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Acum puteţi afla dacă informaţiile dvs. private au fost încălcate sau utilizate de trackerele online, fără să ştiţi.",
             "security": "Ştiaţi că? Chiar dacă nu aveţi instalat software antivirus, vă oferim în continuare protecţie de bază de securitate pentru dispozitivul dvs.",
             "connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate."
         }

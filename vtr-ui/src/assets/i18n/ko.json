@@ -22,7 +22,7 @@
                     "rapidCharge": "급속 충전"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "오버클럭 켜기",
                         "performance": "성능",
                         "balance": "밸런스",
@@ -748,12 +748,11 @@
                 "sub1": "내 보안 설정",
                 "sub2": "바이러스 백신",
                 "sub3": "WiFi 보안",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "암호 상태",
+                "sub5": "VPN 보안",
                 "sub6": "지문"
             },
             "support": "지원",
-            "privacy": "프라이버시",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "이 장치에 보안 설정이 되었는지 확인하십시오.",
             "antiVirus": "바이러스 백신",
             "wifi": "WiFi 보안",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "암호 상태",
+            "vpn": "VPN 보안",
             "enabled": "사용",
             "disabled": "사용 안 함",
             "partiallyProtected": "부분적으로 보호",
@@ -779,8 +778,8 @@
             "fingerPrint": "지문",
             "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "등록됨",
+            "notEnrolled": "등록되지 않음"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "이 기능을 사용하려면 인터넷에 연결하십시오"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "프라이버시"
         }
     },
     "tutorial": {
@@ -1040,7 +1034,7 @@
                     "Good": "<b>배터리의 상태가 좋습니다.</b>",
                     "Exhaustion": "배터리 용량이 <b>저하</b>되었습니다. 새 배터리를 교체하십시오.",
                     "Bad": "<b>배터리 오류가 발생했습니다.</b> 배터리를 충전/방전할 수 없습니다. 배터리를 교체하십시오.",
-                    "NotDetected": "<b>감지된 배터리가 없습니다.</b>",
+                    "NotDetected": "<b>배터리가 감지되지 않거나 배터리</b>에 꽂혀 있지 않습니다.",
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
                     "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b>",
                     "LimitedACAdapterSupport": "<b>AC 어댑터는 충분한 전원을 공급하지 못합니다.</b>",
@@ -1276,6 +1270,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR 인증 제품"
+                },
+                "dpm": {
+                    "title": "전원",
+                    "subtitle": "전원 설정",
+                    "description": "이 섹션에서 기본 설정을 확인하고, 필요에 따라 전원 사용 및 전원 계획을 사용자 정의할 수 있습니다.",
+                    "globalPowerSettings": {
+                        "title": "글로벌 전원 설정",
+                        "description": "이 기능은 전원 계획 또는 전원 사용 설정을 재정의합니다.",
+                        "powerButton": {
+                            "label": "전원 버튼:",
+                            "items": {
+                                "doNothing": "아무 작업도 하지 않음",
+                                "sleep": "절전",
+                                "hibernate": "최대 절전",
+                                "shutDown": "시스템 종료",
+                                "turnOffTheDisplay": "디스플레이 끄기"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "로그인 필수:",
+                            "items": {
+                                "never": "사용 안 함",
+                                "fromSleep": "PC가 절전 모드에서 깨어날 때"
+                            },
+                            "tip": "참고: 시스템 암호가 설정된 경우에만 작동합니다."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "전원 사용",
+                        "description": "시스템이 유휴 상태인 경우:",
+                        "turnOffDisplay": "다음 시간이 경과하면 디스플레이 끄기:",
+                        "turnOffHDD": "다음 시간이 경과하면 HDD 끄기:",
+                        "sleep": "다음 시간이 경과하면 절전 모드 실행:",
+                        "hibernate": "다음 시간이 경과하면 최대 절전 모드 실행:",
+                        "items": {
+                            "never": "사용 안 함",
+                            "minute": "분",
+                            "minutes": "분",
+                            "hour": "시",
+                            "hours": "시"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "전원 구성",
+                        "description": "전원 계획을 선택하여 컴퓨터 성능, 시스템 온도 및 전력 사용량을 제어합니다.",
+                        "currentPowerPlan": {
+                            "label": "현재 계획"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "스마트 대기",
@@ -2287,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi 및 홈 보안 연결",
+                "title": "WiFi 보안",
                 "back": "뒤로"
             },
             "container": {
@@ -2471,7 +2514,7 @@
     "lenovoId": {
         "login": "로그인",
         "logout": "로그아웃",
-        "loggingOut": "Logging out...",
+        "loggingOut": "로그아웃 중...",
         "unlockExclusives": "독점 잠금 해제",
         "user": "사용자",
         "welcomeText1": "오늘 동력 공급 상태 보기, {{firstName}}!",
@@ -3093,7 +3136,8 @@
             "storage": "저장 장치",
             "wireless": "무선"
         },
-        "warningMessage": "시스템이 절전 또는 최대 절전 모드 상태인 경우 테스트가 취소됩니다"
+        "warningMessage": "시스템이 절전 또는 최대 절전 모드 상태인 경우 테스트가 취소됩니다",
+        "refreshMessage": "모든 구성 요소를 다시 로드해야 하므로 새로 고침이 오래 걸릴 수 있습니다"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "이제 사용자 모르게 개인 정보가 온라인 추적기에 의해 침해되거나 사용되었는지 확인할 수 있습니다.",
             "security": "알고 있습니다? 바이러스 백신 소프트웨어가 설치되어 있지 않더라도, 장치에 대한 기본 보안 보호 기능이 제공됩니다.",
             "connectedHomeSecurity": "가정에서 네트워크 보안에 대한 실시간 모니터링 및 경고를 얻습니다. 스마트 장치가 보안 공격을 하고 있는 경우, 첫 번째 사용자는 이를 확인할 수 있습니다."
         }

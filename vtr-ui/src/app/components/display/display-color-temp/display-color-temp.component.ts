@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, EventEmitter, Output, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
 import { ChangeContext } from 'ng5-slider';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-display-color-temp',
@@ -17,17 +18,20 @@ export class DisplayColorTempComponent implements OnInit {
 	@Output() colorPreviewValue: EventEmitter<ChangeContext> = new EventEmitter();
 
 
-	constructor() { }
+	constructor(private logger: LoggerService) { }
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.logger.info('DisplayColorTempComponent', this.displayColorTempSettings);
+	}
 
 	public onDisplayColorTemparatureChange($event: ChangeContext) {
 		this.displayColorTempChange.emit($event);
 	}
 
 	public onResetTemparature($event: any) {
-        this.resetTemparature.emit($event);
-    }
+		this.logger.info('Reset Temperature');
+		this.resetTemparature.emit($event);
+	}
 
 	public dragChangeValue($event: any) {
 		this.colorPreviewValue.emit($event);

@@ -22,7 +22,7 @@
                     "rapidCharge": "Snabbladdning"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Överklockn. på",
                         "performance": "Prestanda",
                         "balance": "Balans",
@@ -748,12 +748,11 @@
                 "sub1": "Min säkerhet",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-säkerhet",
-                "sub4": "Lösenordshanterare",
-                "sub5": "VPN",
+                "sub4": "Lösenordstillstånd",
+                "sub5": "VPN-säkerhet",
                 "sub6": "Fingeravtryck"
             },
             "support": "Support",
-            "privacy": "Sekretess",
             "beta": {
                 "title": "beta"
             },
@@ -763,9 +762,9 @@
             "title": "Säkerhetsrådgivare",
             "subtitle": "KONTROLLERA OM DIN ENHET ÄR SKYDDAD.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-säkerhet",
-            "pswdMgr": "Lösenordshanterare",
-            "vpn": "VPN",
+            "wifi": "WiFi-Säkerhet",
+            "pswdMgr": "Lösenordstillstånd",
+            "vpn": "VPN-Säkerhet",
             "enabled": "AKTIVERAD",
             "disabled": "INAKTIVERAD",
             "partiallyProtected": "DELVIS SKYDDAD",
@@ -779,8 +778,8 @@
             "fingerPrint": "Fingeravtryck",
             "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTRERAD",
+            "notEnrolled": "INTE REGISTRERAD"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Anslut till Internet om du vill använda den här funktionen"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Sekretess"
         }
     },
     "tutorial": {
@@ -1040,7 +1034,7 @@
                     "Good": "<b>Batteriet är i gott skick.</b>",
                     "Exhaustion": "Batteriets kapacitet har <b>försämrats</b>. Byt ut det mot ett nytt.",
                     "Bad": "<b>Ett batterifel har uppstått.</b> Batteriet går inte att ladda/ladda ur. Byt ut batteriet.",
-                    "NotDetected": "<b>Inget batteri upptäcktes.</b>",
+                    "NotDetected": "<b>Inget batteri upptäcktes</b> eller batteriet är inte anslutet.",
                     "NotGood": "<b>Batteriet är inte i gott skick.</b>",
                     "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b>",
                     "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning.</b>",
@@ -1276,6 +1270,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "EN ENERGY STAR-CERTIFIERAD PRODUKT"
+                },
+                "dpm": {
+                    "title": "Ström",
+                    "subtitle": "Ströminställningar",
+                    "description": "I detta avsnitt kan du kontrollera standardinställningarna och anpassa energiförbrukningen och energischemat efter dina behov.",
+                    "globalPowerSettings": {
+                        "title": "Globala energiinställningar",
+                        "description": "Funktionen åsidosätter inställningarna för Energischema och Energiförbrukning.",
+                        "powerButton": {
+                            "label": "STRÖMBRYTARE:",
+                            "items": {
+                                "doNothing": "Gör ingenting",
+                                "sleep": "Strömsparläge",
+                                "hibernate": "Viloläge",
+                                "shutDown": "Stäng av",
+                                "turnOffTheDisplay": "Stäng av bildskärmen"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "INLOGGNING KRÄVS:",
+                            "items": {
+                                "never": "Aldrig",
+                                "fromSleep": "När datorn aktiveras från strömsparläge"
+                            },
+                            "tip": "Obs! Fungerar bara om du har ställt in ett systemlösenord."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Energianvändning",
+                        "description": "OM SYSTEMET ÄR INAKTIVT:",
+                        "turnOffDisplay": "STÄNG AV BILDSKÄRM EFTER:",
+                        "turnOffHDD": "STÄNG AV HÅRDDISK EFTER:",
+                        "sleep": "STRÖMSPARLÄGE EFTER:",
+                        "hibernate": "VILOLÄGE EFTER:",
+                        "items": {
+                            "never": "Aldrig",
+                            "minute": "minut",
+                            "minutes": "minuter",
+                            "hour": "timme",
+                            "hours": "timmar"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Energischema",
+                        "description": "Välj ett energischema för att styra datorprestanda, systemtemperatur och energiförbrukning.",
+                        "currentPowerPlan": {
+                            "label": "AKTUELLT SCHEMA"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Smart vänteläge",
@@ -2287,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi-säkerhet och Säkerhet för uppkopplat hem",
+                "title": "WiFi-säkerhet",
                 "back": "TILLBAKA"
             },
             "container": {
@@ -2471,7 +2514,7 @@
     "lenovoId": {
         "login": "Inloggning",
         "logout": "Logga ut",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Loggar ut…",
         "unlockExclusives": "Visa exklusiva erbjudanden",
         "user": "Användare",
         "welcomeText1": "Energin är på topp i dag, {{firstName}}!",
@@ -3093,7 +3136,8 @@
             "storage": "Lagring",
             "wireless": "Radio"
         },
-        "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge"
+        "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge",
+        "refreshMessage": "Uppdateringen kan ta lite tid, eftersom alla komponenter behöver läsas in igen"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nu kan du ta reda på om din privata information har äventyrats eller använts av onlinespårare utan din vetskap.",
             "security": "Visste du detta? Även om du inte har ett antivirusprogram är din enhet fortfarande skyddad med grundläggande säkerhetsfunktioner.",
             "connectedHomeSecurity": "Du få övervakning i realtid och varningar om nätverkssäkerheten i ditt hem. Du blir den första som får veta om någon av dina smarta enheter utsätts för en säkerhetsattack."
         }

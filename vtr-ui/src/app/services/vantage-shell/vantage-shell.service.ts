@@ -49,7 +49,6 @@ export class VantageShellService {
 				Phoenix.Features.DeviceFilter,
 				Phoenix.Features.Metrics,
 				Phoenix.Features.ModernPreload,
-				Phoenix.Features.Privacy,
 				Phoenix.Features.LenovoVoiceFeature,
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
@@ -223,6 +222,11 @@ export class VantageShellService {
 				break;
 			case 'userfeedback':
 				eventName = 'UserFeedback';
+				break;
+			case '':
+			case undefined:
+			case null:
+				eventName = 'unknown';
 				break;
 		}
 
@@ -532,6 +536,14 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getPowerDPM(): any {
+		if (this.getPowerSettings() && this.getPowerSettings().dpm) {
+			return this.getPowerSettings().dpm;
+		}
+		return undefined;
+	}
+
 	// public getPowerItsIntelligentCooling(): any {
 	// 	if(this.phoenix){
 	// 		return this.phoenix.hwsettings.power.its.IntelligentCooling ;
@@ -544,15 +556,15 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getSmartPerformance() {
-        if (this.phoenix) {
-            if (!this.phoenix.smartPerformance) {
-                return this.phoenix.loadFeatures([Phoenix.Features.SmartPerformance]);
-            }
-            return this.phoenix.smartPerformance;
-        }
-        return undefined;
-    }
+	public getSmartPerformance() {
+		if (this.phoenix) {
+			if (!this.phoenix.smartPerformance) {
+				return this.phoenix.loadFeatures([Phoenix.Features.SmartPerformance]);
+			}
+			return this.phoenix.smartPerformance;
+		}
+		return undefined;
+	}
 
 	// public getSmartPerformance() {
 	// 	console.log('----------CALLING');
@@ -579,8 +591,8 @@ export class VantageShellService {
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
-        return true;
-    }
+		return true;
+	}
 	public calcDeviceFilter(filter) {
 		if (this.phoenix) {
 			return this.phoenix.deviceFilter.calc(filter);
@@ -598,13 +610,6 @@ export class VantageShellService {
 		const win: any = window;
 		if (win.Windows) {
 			return win.Windows;
-		}
-		return undefined;
-	}
-
-	public getPrivacyCore() {
-		if (this.phoenix && this.phoenix.privacy) {
-			return this.phoenix.privacy;
 		}
 		return undefined;
 	}

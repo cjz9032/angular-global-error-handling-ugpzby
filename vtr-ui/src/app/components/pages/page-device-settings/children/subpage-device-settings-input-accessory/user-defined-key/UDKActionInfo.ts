@@ -18,7 +18,7 @@ export class UDKActionInfo {
 				&& response.UDKType[0].SettingList[0].Setting) {
 				const info = response.UDKType[0].SettingList[0].Setting;
 				for (const data of info) {
-                    switch (data.key) {
+					switch (data.key) {
 						case 'UserDefinedKeyType':
 							this.keyType = Number(data.value);
 							break;
@@ -34,8 +34,10 @@ export class UDKActionInfo {
 							this.index = 1;
 							break;
 					}
-                }
-			} else {}
-		} catch (error) {}
+				}
+			} else {
+			}
+		} catch (error) {
+		}
 	}
 }
