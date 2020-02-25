@@ -119,10 +119,4 @@ export class SupportService {
 		}
 	}
 
-	public getWarrantyUrl(serialNumber: string): string {
-		if (serialNumber && serialNumber.length > 0) {
-			return `https://www.lenovo.com/us/en/warrantyApos?serialNumber=${serialNumber}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
-		}
-		return this.warrantyNormalUrl;
-	}
 }
