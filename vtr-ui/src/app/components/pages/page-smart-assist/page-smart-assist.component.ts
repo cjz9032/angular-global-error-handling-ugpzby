@@ -194,20 +194,20 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
 				this.checkMenuItemsLength();
 			}
-            this.lenovoVoice.available = this.smartAssistCapability.isLenovoVoiceSupported;
-            if (!this.smartAssistCapability.isLenovoVoiceSupported) {
+			this.lenovoVoice.available = this.smartAssistCapability.isLenovoVoiceSupported;
+			if (!this.smartAssistCapability.isLenovoVoiceSupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'voice');
 				this.checkMenuItemsLength();
 			}
-            if (!this.smartAssistCapability.isIntelligentMediaSupported.available) {
+			if (!this.smartAssistCapability.isIntelligentMediaSupported.available) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 				this.checkMenuItemsLength();
 			}
-            if (!this.smartAssistCapability.isIntelligentScreenSupported) {
+			if (!this.smartAssistCapability.isIntelligentScreenSupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen');
 				this.checkMenuItemsLength();
 			}
-            if (!this.smartAssistCapability.isAPSSupported) {
+			if (!this.smartAssistCapability.isAPSSupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 				this.checkMenuItemsLength();
 			}
@@ -294,7 +294,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				if (this.sensitivityVisibility) {
 					this.getHPDLeaveSensitivityStatus();
 				}
-            });
+			});
 
 		} catch (error) {
 			this.logger.error('getHPDLeaveSensitivityVisibilityStatus', error.message);
@@ -369,10 +369,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.checkMenuItemsLength();
 			}
 
-            this.smartAssistCache.intelligentScreen = this.intelligentScreen;
-            this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
-            this.getAutoScreenOffNoteStatusFunc();
-        }).catch(error => {
+			this.smartAssistCache.intelligentScreen = this.intelligentScreen;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+			this.getAutoScreenOffNoteStatusFunc();
+		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error.message);
 			return EMPTY;
 		});
@@ -487,8 +487,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.logger.info('setZeroTouchLoginSensitivity', event);
 		this.intelligentSecurity.zeroTouchLoginDistance = event.value;
 
-        this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
-        this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 
 		this.smartAssist.setZeroTouchLoginDistance(event.value)
 			.then((isSuccess: boolean) => {
@@ -523,9 +523,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	public onZeroTouchLockFacialRecoChange($event: boolean) {
 		this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = $event;
+		this.logger.info(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus before API ${$event}`);
 		this.smartAssist.setZeroTouchLockFacialRecoStatus($event)
 			.then((isSuccess: boolean) => {
-				this.logger.info(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus ${isSuccess} ; ${$event}`);
+				this.logger.info(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus after API ${isSuccess} ; ${$event}`);
 			});
 	}
 
@@ -619,10 +620,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 		if (this.intelligentSecurity.isZeroTouchLockFacialRecoVisible) {
 			this.smartAssist.resetFacialRecognitionStatus().then((res) => {
-                if (this.smartAssist.isShellAvailable) {
+				if (this.smartAssist.isShellAvailable) {
 					this.getFacialRecognitionStatus();
 				}
-				this.logger.info(`HPDReset - resetFacialRecognitionStatus ${res}`);
+				            this.logger.info(`HPDReset - resetFacialRecognitionStatus ${res}`);
 			});
 		}
 	}
@@ -710,13 +711,13 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	getFacialRecognitionStatus() {
 		return this.smartAssist.getZeroTouchLockFacialRecoStatus().then((res: any) => {
-            if (res) {
+			if (res) {
 				this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = res.available;
 				this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = res.status;
 				this.intelligentSecurity.facilRecognitionCameraAccess = res.cameraPermission;
 				this.intelligentSecurity.facialRecognitionCameraPrivacyMode = res.privacyModeStatus;
 			}
-			this.logger.info(`getFacialRecognitionStatus refresh successed`, res);
+			         this.logger.info(`getFacialRecognitionStatus refresh successed`, res);
 		});
 	}
 
