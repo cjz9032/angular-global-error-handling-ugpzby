@@ -15,15 +15,13 @@
 		[attr.aria-checked]="value"
 		[attr.aria-disabled]="disabled"
 		[attr.aria-readonly]="readonly"
-		[attr.aria-labelledby]="onOffSwitchId+'_checkbox'"
+		[attr.aria-label]="ariaLabel"
 		role="switch"
 		[tabIndex]="disabled?-1:tabIndex">
 		<label class="pb-1 pl-1"
 			#toggleLabel
 			(keydown.enter)="sendChangeEvent(toggle)"
-            (keyup.enter)="onChange(toggle)">
-            
-           
+			(keyup.enter)="onChange(toggle)">
 			<input type="checkbox"
 				vtrMetrics
 				metricsEvent="featureClick"
@@ -31,8 +29,8 @@
 				[metricsValue]="!value"
 				id="{{onOffSwitchId+'_checkbox'}}"
 				#toggle
-                tabindex="-1"
-                [name]="onOffSwitchId"
+				tabindex="-1"
+				[name]="onOffSwitchId"
 				class="switch"
 				[ngClass]="{'wifi-checked': value===true}"
 				[value]="value"
@@ -42,7 +40,7 @@
 				[attr.aria-checked]="value"
 				[attr.aria-disabled]="disabled"
 				[attr.aria-readonly]="readonly"
-				[attr.aria-hidden]="false"
+				[attr.aria-hidden]="true"
 				(change)="onChange($event)"
 				(keydown.enter)="onChange($event)"
 				(click)="sendChangeEvent(toggle)" />
@@ -53,17 +51,18 @@
 				<small></small>
 			</span>
 			<div *ngIf="!value"
-                [attr.aria-checked]="value"
+				[attr.aria-hidden]="true"
+				[attr.aria-checked]="value"
 				id="{{onOffSwitchId+'_off_sizeStopProp'}}"
 				[attr.aria-label]="'OFF'"
 				(click)="stopPropagation($event);"
 				(keydown.enter)="stopPropagation($event);"
 				class="switch-label off-label">{{'common.ui.off' | translate}}</div>
 			<div *ngIf="value"
-				[attr.aria-hidden]="false"
-                [attr.aria-checked]="value"
+				[attr.aria-hidden]="true"
+				[attr.aria-checked]="value"
 				id="{{onOffSwitchId+'_on_sizeStopProp'}}"
-                [attr.aria-label]="'ON'"
+				[attr.aria-label]="'ON'"
 				(click)="stopPropagation($event);"
 				(keydown.enter)="stopPropagation($event);"
 				class="switch-label on-label">{{'common.ui.on' | translate}}</div>
