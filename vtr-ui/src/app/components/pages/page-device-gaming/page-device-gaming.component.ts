@@ -137,15 +137,8 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 	fetchCmsContents(lang?: string) {
 		const callCmsStartTime: any = new Date();
 		const queryOptions: any = {
-			Page: 'dashboard'
+			Page: 'gaming-dashboard'
 		};
-		// if (lang) {
-		// 	queryOptions = {
-		// 		Page: 'dashboard',
-		// 		Lang: lang,
-		// 		GEO: 'US'
-		// 	};
-		// }
 		if (this.isOnline) {
 			if (this.dashboardService.cardContentPositionDOnline) {
 				this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;

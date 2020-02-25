@@ -176,13 +176,13 @@
                     "thermalMode2SettingDesc": "選擇您要使用的模式。",
                     "fnQDesc": "您可以使用快捷鍵 Fn+Q 切換模式。",
                     "perormanceTitle": "效能模式",
-                    "performanceDesc": "加快風扇速度及增加耗電量以提高電腦效能。",
-                    "OCDesc": "您可以選擇開啟「超頻」功能。",
-                    "ac_dcDesc": "只有在插電時才能使用效能模式。",
+                    "performanceDesc": "以更高的風扇速度和耗電量提高電腦效能。",
+                    "OCDesc": "您可以選擇開啟超頻功能。",
+                    "ac_dcDesc": "只有在已插入 AC 電源整流器時，才適用效能模式。",
                     "balanceTitle": "平衡模式",
-                    "balanceDesc": "根據溫度自動平衡效能和風扇速度。中等耗電量。",
+                    "balanceDesc": "根據溫度自動平衡效能和風扇速度，耗電量中等。",
                     "quietTitle": "安靜模式",
-                    "quietDesc": "盡可能降低電腦的效能和風扇速度、以保持安靜。低耗電量。",
+                    "quietDesc": "盡可能降低電腦效能和風扇速度以保持安靜，耗電量低。",
                     "OC": {
                         "cpu_gpuOC": "在效能模式下啟用 CPU/GPU 超頻。",
                         "cpuOC": "在效能模式下啟用 CPU 超頻。",
@@ -193,7 +193,7 @@
                         "gpuDriverLack": "安裝 GPU 驅動程式以使用超頻功能。",
                         "goInstall": "執行安裝"
                     },
-                    "autoSwitch": "啟動遊戲時自動切換到效能，之後再切換回來。"
+                    "autoSwitch": "啟動遊戲時自動切換到效能模式，結束遊戲之後再切換回來。"	
                 }
             }
         },

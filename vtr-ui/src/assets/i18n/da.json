@@ -107,16 +107,16 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Indstil. for varmetilstand",
-                    "thermalMode2SettingDesc": "Vælg den metode, du vil bruge.",
+                    "thermalMode2SettingDesc": "Vælg den tilstand, du vil bruge.",
                     "fnQDesc": "Du kan skifte tilstand ved hjælp af genvejen Fn+Q.",
                     "perormanceTitle": "Ydeevnetilstand",
-                    "performanceDesc": "Boost computerens ydeevne med højere blæserhastighed og højere strømforbrug.",
+                    "performanceDesc": "Boost computerens ydeevne med højere blæserhastighed og strømforbrug. ",
                     "OCDesc": "Du kan vælge at aktivere overclockingfunktionen.",
-                    "ac_dcDesc": "Ydeevnetilstand er kun tilgængelig ved tilslutning til stikkontakt.",
+                    "ac_dcDesc": "Ydeevnetilstand kan kun benyttes, når vekselstrømsadapteren er tilsluttet.",
                     "balanceTitle": "Balanceret tilstand",
-                    "balanceDesc": "Afbalancer automatisk ydeevnen og blæserhastigheden med udgangspunkt i temperaturen. Middel strømforbrug.",
+                    "balanceDesc": "Afbalancer automatisk ydeevnen og blæserhastigheden med udgangspunkt i temperaturen og med mellemstort strømforbrug.",
                     "quietTitle": "Stille tilstand",
-                    "quietDesc": "Bevar et lavt støjniveau ved at reducere computerens ydeevne og blæserhastighed, når det er muligt. Lavt strømforbrug.",
+                    "quietDesc": "Bevar et lavt støjniveau ved at reducere computerens ydeevne og blæserhastighed, når det er muligt, med et lavt strømforbrug.",
                     "OC": {
                         "cpu_gpuOC": "Aktiver CPU-/GPU-overclocking i ydeevnetilstand.",
                         "cpuOC": "Aktiver CPU-overclocking i ydeevnetilstand.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Installer GPU-driver for at bruge overclockingfunktionen.",
                         "goInstall": "INSTALLER"
                     },
-                    "autoSwitch": "Skift automatisk til ydeevne, når du starter spil, og skift tilbage bagefter."
+                    "autoSwitch": "Skift automatisk til ydeevnetilstand, når du starter spil, og skift tilbage, når spillet af afsluttet."	
                 },
                 "advancedOC": {
                     "title": "Avan. instil. f. overclock.",

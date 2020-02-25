@@ -107,16 +107,16 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Lämpö-tila-asetus",
-                    "thermalMode2SettingDesc": "Valitse tila, jota haluat käyttää.",
+                    "thermalMode2SettingDesc": "Valitse haluamasi tila.",
                     "fnQDesc": "Voit vaihtaa tilaa käyttämällä pikanäppäintä Fn+Q.",
                     "perormanceTitle": "Suorituskykytila",
-                    "performanceDesc": "Parantaa tietokoneesi suorituskykyä, lisää tuulettimen nopeutta ja kuluttaa enemmän virtaa.",
-                    "OCDesc": "Voit ottaa käyttöön ylikellotustoiminnon.",
-                    "ac_dcDesc": "Suorituskykytila on käytettävissä vain tietokoneen ollessa verkkovirrassa.",
+                    "performanceDesc": "Paranna tietokoneesi suorituskykyä korkeammalla tuulettimen nopeudella ja virrankulutuksella. ",
+                    "OCDesc": "Voit halutessasi ottaa käyttöön ylikellotustoiminnon.",
+                    "ac_dcDesc": "Suorituskykytila on käytettävissä vain, kun verkkolaite on liitetty tietokoneeseen.",
                     "balanceTitle": "Tasapainotettu tila",
-                    "balanceDesc": "Suorituskyvyn ja tuulettimen nopeuden automaattinen tasapainotus lämpötilan mukaan. Keskitason virrankulutus.",
+                    "balanceDesc": "Suorituskyvyn ja tuulettimen nopeuden automaattinen tasapainotus lämpötilan mukaan, keskitason virrankulutus.",
                     "quietTitle": "Hiljainen tila",
-                    "quietDesc": "Pidä laite hiljaisena alentamalla tietokoneen suorituskykyä ja tuulettimen nopeutta, jos mahdollista. Alhainen virrankulutus.",
+                    "quietDesc": "Pidä laite hiljaisena alentamalla tietokoneen suorituskykyä ja tuulettimen nopeutta, jos mahdollista, alhainen virrankulutus.",
                     "OC": {
                         "cpu_gpuOC": "Ota CPU:n/GPU:n ylikellotus käyttöön suorituskykytilassa.",
                         "cpuOC": "Ota CPU-ylikellotus käyttöön suorituskykytilassa.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Asenna GPU-ajuri käyttämään ylikellotustoimintoa.",
                         "goInstall": "ASENNA"
                     },
-                    "autoSwitch": "Autom. vaihto suorituskykyyn pelien käynnistyessä ja takaisin pelin jälkeen."
+                    "autoSwitch": "Automaattinen vaihto suorituskykytilaan pelien käynnistyessä ja paluu takaisin pelin jälkeen."	
                 },
                 "advancedOC": {
                     "title": "Ylikellotus lisäasetukset",

@@ -32,7 +32,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	/** Input fields names */
 	startChargeInput = 'startAtCharge';
 	stopAtChargeInput = 'stopAtCharge';
-	isCheckedAutoInput = 'isCheckedAuto';
+	isCheckedAutoInput = 'is-auto-battery-threshold-settings';
 	public selectedOptionsData: any = {};
 
 	constructor(private commonService: CommonService) { }

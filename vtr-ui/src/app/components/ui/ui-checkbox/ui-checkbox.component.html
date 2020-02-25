@@ -1,5 +1,13 @@
-<div class="auto-set-checkbox custom-checkbox-gaming custom-control custom-checkbox">
+<div class="auto-set-checkbox custom-checkbox-gaming custom-control custom-checkbox"
+	role="checkbox"
+	[attr.aria-label]="componentId"
+	[attr.aria-disabled]="disabled"
+	[attr.aria-checked]="checked"
+	[attr.aria-labelledby]="componentId"
+	tabindex="0"
+	(keydown.enter)="checkBox.click();">
 	<input [id]="componentId"
+		#checkBox
 		class="custom-control-input"
 		type="checkbox"
 		[name]="componentId"
@@ -8,10 +16,6 @@
 		[checked]="checked"
 		tabindex="-1"
 		role="checkbox"
-		[attr.aria-label]="componentId"
-		[attr.aria-disabled]="disabled"
-		[attr.aria-checked]="checked"
-		[attr.aria-labelledby]="componentId"
 		vtrMetrics
 		[metricsEvent]="metricsEvent"
 		[metricsParent]="metricsParent"
@@ -22,13 +26,13 @@
 	<label *ngIf="hasChild; else elseBlock"
 		class="custom-control-label"
 		[for]="componentId"
-		tabindex="0">
+		role="text">
 		<ng-content></ng-content>
 	</label>
 	<ng-template #elseBlock>
 		<label [for]="componentId"
 			class="custom-control-label"
-			tabindex="0">
+			role="text">
 			{{ label }}
 		</label>
 	</ng-template>

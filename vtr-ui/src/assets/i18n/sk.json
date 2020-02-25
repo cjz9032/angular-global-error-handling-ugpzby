@@ -107,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Nastavenie tepelného režimu",
-                    "thermalMode2SettingDesc": "Vyberte režim, ktorý chcete používať.",
+                    "thermalMode2SettingDesc": "Vyberte režim, ktorý chcete použiť.",
                     "fnQDesc": "Režim môžete prepínať pomocou klávesovej skratky Fn+Q.",
                     "perormanceTitle": "Režim vysokého výkonu",
-                    "performanceDesc": "Zvýšte výkon počítača zvýšením otáčok ventilátora a spotreby energie.",
-                    "OCDesc": "Môžete zapnúť funkciu pretaktovania.",
-                    "ac_dcDesc": "Režim vysokého výkonu je dostupný len pri sieťovom napájaní.",
+                    "performanceDesc": "Zvýšte výkon počítača zvýšením otáčok ventilátora a spotreby energie. ",
+                    "OCDesc": "Môžete sa rozhodnúť zapnúť funkciu pretaktovania.",
+                    "ac_dcDesc": "Režim vysokého výkonu je možné použiť, len ak je pripojený sieťový adaptér.",
                     "balanceTitle": "Vyvážený režim",
-                    "balanceDesc": "Automatické nastavovanie rovnováhy medzi výkonom a otáčkami ventilátora v závislosti od teploty. Stredná spotreba energie.",
+                    "balanceDesc": "Automatické nastavovanie rovnováhy medzi výkonom a otáčkami ventilátora v závislosti od teploty so strednou spotrebou energie.",
                     "quietTitle": "Tichý režim",
-                    "quietDesc": "Udržiavanie nízkej hlučnosti znížením výkonu počítača a otáčok ventilátora, pokiaľ je to možné. Nízka spotreba energie.",
+                    "quietDesc": "Udržiavanie nízkej hlučnosti znížením výkonu počítača a otáčok ventilátora, pokiaľ je to možné, s nízkou spotrebou energie.",
                     "OC": {
                         "cpu_gpuOC": "Povoľte pretaktovanie CPU/GPU v režime vysokého výkonu.",
                         "cpuOC": "Povoľte pretaktovanie CPU v režime vysokého výkonu.",
                         "gpuOC": "Povoľte pretaktovanie GPU v režime vysokého výkonu.",
                         "advance": "VYSOKÁ",
-                        "cpu_gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládače CPU/GPU.",
-                        "cpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač CPU.",
-                        "gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač GPU.",
+                        "cpu_gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládače procesora/grafického procesora.",
+                        "cpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač procesora.",
+                        "gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač grafického procesora.",
                         "goInstall": "INŠTALOVAŤ"
                     },
-                    "autoSwitch": "Pri spustení hry automaticky aktivovať vysoký výkon, potom obnoviť pôvodný režim."
+                    "autoSwitch": "Automaticky prepínajte do režimu vysokého výkonu pri spustení hry a po ukončení hry prepnite späť."	
                 },
                 "advancedOC": {
                     "title": "Detaily pretaktovania",

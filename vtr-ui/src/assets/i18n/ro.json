@@ -110,24 +110,24 @@
                     "thermalMode2SettingDesc": "Alegeți modul pe care doriți să îl utilizați.",
                     "fnQDesc": "Puteți comuta modul utilizând comanda rapidă Fn+Q.",
                     "perormanceTitle": "Mod performanță",
-                    "performanceDesc": "Măriți performanța computerului cu o viteză mai mare a ventilatorului și cu mai multă energie consumată.",
-                    "OCDesc": "Puteți alege să porniți caracteristica Overclocking.",
-                    "ac_dcDesc": "Modul performanță este disponibil numai când PC-ul este conectat la o sursă de alimentare.",
+                    "performanceDesc": "Măriți performanța computerului crescând viteza ventilatorului și consumul de energie. ",
+                    "OCDesc": "Puteți porni funcția Overclocking.",
+                    "ac_dcDesc": "Modul Performanță este disponibil numai atunci când este conectat un adaptor de c. a.",
                     "balanceTitle": "Mod echilibrat",
-                    "balanceDesc": "Echilibrați automat performanța și viteza ventilatorului în funcție de temperatură. Consum de energie mediu.",
+                    "balanceDesc": "Echilibrați automat performanța și viteza ventilatorului în funcție de temperatură, cu ajutorul consumului mediu de energie.",
                     "quietTitle": "Mod silențios",
-                    "quietDesc": "Păstrați liniștea reducând performanța computerului și viteza ventilatorului, atunci când este posibil. Consum de energie redus.",
+                    "quietDesc": "Mențineți o funcționare silențioasă a computerului, reducând performanța acestuia și viteza ventilatorului, atunci când este posibil, cu ajutorul consumului redus de energie.",
                     "OC": {
                         "cpu_gpuOC": "Activați overclocking-ul CPU/GPU în modul performanță.",
                         "cpuOC": "Activați overclocking-ul CPU în modul performanță.",
                         "gpuOC": "Activați overclocking-ul GPU în modul performanță.",
                         "advance": "COMPLEXĂ",
-                        "cpu_gpuDriverLack": "Instalați driverele CPU/GPU pentru a utiliza funcția Overclocking.",
-                        "cpuDriverLack": "Instalați driverul CPU pentru a utiliza funcția Overclocking.",
-                        "gpuDriverLack": "Instalați driverul GPU pentru a utiliza funcția Overclocking.",
+                        "cpu_gpuDriverLack": "Pentru a utiliza funcția Overclocking, instalați driverele CPU/GPU.",
+                        "cpuDriverLack": "Pentru a utiliza funcția Overclocking, instalați driverul CPU.",
+                        "gpuDriverLack": "Pentru a utiliza funcția Overclocking, instalați driverul GPU.",
                         "goInstall": "INSTALAȚI"
                     },
-                    "autoSwitch": "Treceți automat la performanță când lansați jocuri și comutați înapoi ulterior."
+                    "autoSwitch": "Treceți automat la modul Performanță atunci când lansați jocuri și reveniți după ce ieșiți din joc."	
                 },
                 "advancedOC": {
                     "title": "Setări complexe Overclock",

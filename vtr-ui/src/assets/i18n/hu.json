@@ -110,9 +110,9 @@
                     "thermalMode2SettingDesc": "Válassza ki a használni kívánt módot.",
                     "fnQDesc": "Másik módra az Fn+Q paranccsal válthat.",
                     "perormanceTitle": "Teljesítményközpontú mód",
-                    "performanceDesc": "Számítógépe teljesítményének növelése nagyobb ventilátor sebességgel és több energiafogyasztással.",
+                    "performanceDesc": "Számítógépe teljesítményének növelése nagyobb ventilátorsebességgel és energiafogyasztással. ",
                     "OCDesc": "Úgy is dönthet, hogy bekapcsolja a Túlpörgetés funkciót.",
-                    "ac_dcDesc": "A Teljesítményközpontú mód csak akkor érhető el, ha a számítógép be van dugva.",
+                    "ac_dcDesc": "A Teljesítmény mód csak akkor alkalmazható, ha a hálózati adapter csatlakoztatva van.",
                     "balanceTitle": "Kiegyensúlyozott mód",
                     "balanceDesc": "Automatikusan kiegyenlíti a teljesítményt és a ventilátor sebességét a hőmérséklet alapján. Középszintű energiafogyasztás.",
                     "quietTitle": "Csendes mód",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "GPU-illesztőprogram telepítése a Túlpörgetés funkcióhoz.",
                         "goInstall": "TELEPÍTÉS"
                     },
-                    "autoSwitch": "Automatikus váltás Teljesítmény módra játék indításakor, majd vissza."
+                    "autoSwitch": "Automatikus váltás Teljesítmény módra játék indításakor, majd visszaváltás a játékból való kilépést követően."	
                 },
                 "advancedOC": {
                     "title": "Túlpörgetés Spec. beáll.",

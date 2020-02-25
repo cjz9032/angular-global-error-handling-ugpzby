@@ -93,8 +93,8 @@
 				"legionEdgeModal": {
 					"line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
 					"line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-					"line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
-					"line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
+					"line3": "<b>CPU/GPU Overclock </b><br> Boost the maximum speed for your processor",
+					"line4": "<b>RAM Overclock </b><br> Boost the maximum speed for your memory",
 					"line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
 					"line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
 					"line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
@@ -1956,7 +1956,7 @@
 				"heading": "Intelligent Media",
 				"title": "Zero Touch Video Playback",
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+				"tooltip": "This feature is not applicable on<br>Web video players.<br>The supported players are listed<br>as follows:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
 			},
 			"superResolution": {
 				"heading": "Intelligent Media",

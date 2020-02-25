@@ -107,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Innstillinger termisk modus",
-                    "thermalMode2SettingDesc": "Velg modusen du ønsker å bruke.",
+                    "thermalMode2SettingDesc": "Velg modusen du vil bruke.",
                     "fnQDesc": "Du kan endre modus ved å bruke hurtigtastene Fn+Q.",
                     "perormanceTitle": "Ytelsesmodus",
-                    "performanceDesc": "Øk datamaskinens ytelse med høyere viftehastighet og høyere strømforbruk.",
-                    "OCDesc": "Du kan velge å skru på overklokkingsfunksjonaliteten.",
-                    "ac_dcDesc": "Ytelsesmodus bare tilgjengelig når den er koblet til.",
+                    "performanceDesc": "Øk datamaskinens ytelse med høyere viftehastighet og høyere strømforbruk. ",
+                    "OCDesc": "Du kan velge å skru på funksjonen for overklokking.",
+                    "ac_dcDesc": "Ytelsesmodus er bare tilgjengelig når en strømadapter er koblet til.",
                     "balanceTitle": "Balansert modus",
-                    "balanceDesc": "Balanserer automatisk ytelse og viftehastighet basert på temperatur. Middels strømforbruk.",
+                    "balanceDesc": "Balanserer automatisk ytelse og viftehastighet basert på temperatur, med middels strømforbruk.",
                     "quietTitle": "Stillemodus",
-                    "quietDesc": "Holdes stille ved å redusere datamaskinens ytelse og viftehastighet der det er mulig. Lavt strømforbruk.",
+                    "quietDesc": "Holdes stille ved å redusere datamaskinens ytelse og viftehastighet der det er mulig, med lavt strømforbruk.",
                     "OC": {
                         "cpu_gpuOC": "Aktiver CPU/GPU-overklokking i ytelsesmodus.",
                         "cpuOC": "Aktiver CPU-overklokking i ytelsesmodus.",
                         "gpuOC": "Aktiver GPU-overklokking i ytelsesmodus.",
                         "advance": "AVANSERT",
-                        "cpu_gpuDriverLack": "Installer CPU/GPU-drivere for å bruke funksjonen for overklokking.",
-                        "cpuDriverLack": "Installer CPU-driver for å bruke funksjonen for overklokking.",
-                        "gpuDriverLack": "Installer GPU-driver for å bruke funksjonen for overklokking.",
+                        "cpu_gpuDriverLack": "Installer CPU/GPU-drivere for å bruke funksjonen for overklokking.",
+                        "cpuDriverLack": "Installer CPU-driver for å bruke funksjonen for overklokking.",
+                        "gpuDriverLack": "Installer GPU-driver for å bruke funksjonen for overklokking.",
                         "goInstall": "INSTALLER"
                     },
-                    "autoSwitch": "Bytt automatisk til ytelse når du lanserer spill og bytt tilbake etterpå."
+                    "autoSwitch": "Bytt automatisk til ytelsesmodus når du starter spill, og bytt tilbake etter at du har avsluttet spillet."	
                 },
                 "advancedOC": {
                     "title": "Overklokking Avansert",
