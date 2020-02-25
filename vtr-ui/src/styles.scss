@@ -323,6 +323,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.fcc-note-tooltip {
+		.tooltip-inner {
+			width: 32.5rem !important;
+		}
+}
+
 .fnctrl-tooltip.tooltip {
 	width: 30rem !important;
 	.tooltip-inner {
