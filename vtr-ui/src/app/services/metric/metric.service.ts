@@ -6,7 +6,6 @@ import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service'
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { MetricHelper } from './metrics.helper';
 import { CommonService } from '../common/common.service';
-import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 declare var Windows;
@@ -119,7 +118,7 @@ export class MetricService {
 				imcVersion,
 				srvVersion: hsaSrvInfo.vantageSvcVersion,
 				shellVersion,
-				windowSize: `${Math.floor(displayWidth / 100) * 100}x${Math.floor(displayHeight / 100) * 100}`,
+				windowSize: `${Math.floor(window.outerWidth / 100) * 100}x${Math.floor(window.outerHeight / 100) * 100}`,
 				displaySize: `${Math.floor(displayWidth * scale / 100) * 100}x${Math.floor(
 					displayHeight * scale / 100
 				) * 100}`,
