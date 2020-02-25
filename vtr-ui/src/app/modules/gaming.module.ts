@@ -29,7 +29,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GamingRoutingModule } from '../modules/gaming-routing.module';
 import { WidgetAutocloseComponent } from '../components/widgets/widget-autoclose/widget-autoclose.component';
 import { ContainerCardModule } from '../components/container-card/container-card.module';
-import { MetricsModule } from '../directives/metrics.module';
+import { MetricsModule } from '../services/metric/metrics.module';
 import { WidgetOfflineModule } from '../components/widgets/widget-offline-info/widget-offline.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalTurnOnComponent } from '../components/modal/modal-autoclose/modal-turn-on/modal-turn-on.component';

@@ -21,11 +21,11 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { UpdateFailToastMessage } from 'src/app/enums/update.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -43,7 +43,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private lastUpdatedText = 'systemUpdates.banner.last';
 	private nextScanText = 'systemUpdates.banner.next';
 	private neverCheckedText = 'systemUpdates.banner.neverChecked';
-	private metricHelper: MetricHelper;
 	private metrics: any;
 	private lastInstallTime: string;
 	// private lastScanTime = new Date('1970-01-01T01:00:00');
@@ -173,9 +172,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		private deviceService: DeviceService,
 		private router: Router,
 		private logger: LoggerService,
+		private metricService: MetricService
 	) {
 		this.isOnline = this.commonService.isOnline;
-		this.metricHelper = new MetricHelper(shellService.getMetrics());
 		this.metrics = shellService.getMetrics();
 		this.fetchCMSArticles();
 
@@ -644,17 +643,17 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			});
 
 			const packageIds = this.mapPackageListToIdString(ignoredUpdates);
-			this.metricHelper.sendInstallUpdateMetric(ignoredUpdates.length, packageIds, 'Ignored-NotInstallDueToACAdapterNotPluggedIn');
+			this.metricService.sendInstallUpdateMetric(ignoredUpdates.length, packageIds, 'Ignored-NotInstallDueToACAdapterNotPluggedIn');
 		}
 
 		if (successUpdates.length > 0) {
 			const packageIds = this.mapPackageListToIdString(successUpdates);
-			this.metricHelper.sendInstallUpdateMetric(successUpdates.length, packageIds, 'success');
+			this.metricService.sendInstallUpdateMetric(successUpdates.length, packageIds, 'success');
 		}
 
 		if (failedUpdates.length > 0) {
 			const packageIds = this.mapPackageListToIdString(failedUpdates);
-			this.metricHelper.sendInstallUpdateMetric(failedUpdates.length, packageIds, 'failure');
+			this.metricService.sendInstallUpdateMetric(failedUpdates.length, packageIds, 'failure');
 		}
 	}
 
@@ -680,9 +679,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						this.setUpdateTitle(payload.status);
 					}
 
-					this.metricHelper.sendSystemUpdateMetric(
-						0, '', messageKey,
-						MetricHelper.timeSpan(new Date(), this.timeStartSearch));
+					this.metricService.sendSystemUpdateMetric(0, '', messageKey, this.timeStartSearch);
 					break;
 				case UpdateProgress.UpdatesAvailable:
 					this.isUpdateCheckInProgress = false;
@@ -692,11 +689,11 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.setUpdateByCategory(payload.updateList);
 					this.systemUpdateService.getIgnoredUpdates();
 					if (payload.updateList && this.timeStartSearch) {
-						this.metricHelper.sendSystemUpdateMetric(
+						this.metricService.sendSystemUpdateMetric(
 							payload.updateList.length,
 							this.mapPackageListToIdString(payload.updateList),
 							'success',
-							MetricHelper.timeSpan(new Date(), this.timeStartSearch));
+							this.timeStartSearch);
 					}
 
 					break;

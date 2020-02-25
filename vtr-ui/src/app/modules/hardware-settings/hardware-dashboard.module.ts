@@ -6,7 +6,7 @@ import { HardwareDashboardRoutingModule } from './hardware-dashboard-routing.mod
 import { TranslationModule } from '../translation.module';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { PageDashboardComponent } from 'src/app/components/pages/page-dashboard/page-dashboard.component';
-import { MetricsModule } from 'src/app/directives/metrics.module';
+import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 import { WidgetQuicksettingsComponent } from 'src/app/components/widgets/widget-quicksettings/widget-quicksettings.component';

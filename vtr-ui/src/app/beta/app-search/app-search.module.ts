@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SearchDropdownComponent } from './search-dropdown/search-dropdown.component';
 import { AppSearchScrollerDirective } from 'src/app/beta/app-search/app-search-scroller.directive';
-import { MetricsModule } from 'src/app/directives/metrics.module';
+import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { CommonPipeModule } from 'src/app/modules/common/common-pipe.module';
 import { AppSearchRoutingModule } from 'src/app/beta/app-search/app-search-routing.module';
 import { FormsModule } from '@angular/forms';
