@@ -9,7 +9,7 @@ import lowerCase from 'lodash/lowerCase';
 })
 export class SubpageDeviceSettingsPowerContainerComponent implements OnInit {
 
-	public showDpm = false;
+	public showDpm = null;
 
 	constructor(
 		private deviceService: DeviceService,
@@ -17,12 +17,19 @@ export class SubpageDeviceSettingsPowerContainerComponent implements OnInit {
 
 	ngOnInit() {
 		this.deviceService.getMachineInfo().then((info) => {
-			const brand = info.brand.toLowerCase();
-			const subBrand = info.subBrand.toLowerCase();
-			if ((brand === 'think' || brand === 'lenovo')
-				&& (subBrand === 'thinkcentre' || subBrand === 'thinkcenter')) {
-				this.showDpm = true;
+			if (info) {
+				const brand = info.brand.toLowerCase();
+				const subBrand = info.subBrand.toLowerCase();
+				if ((brand === 'think' || brand === 'lenovo')
+					&& (subBrand === 'thinkcentre' || subBrand === 'thinkcenter')) {
+					this.showDpm = true;
+				} else {
+					this.showDpm = false;
+				}
+			} else {
+				this.showDpm = false;
 			}
+
 		});
 	}
 }

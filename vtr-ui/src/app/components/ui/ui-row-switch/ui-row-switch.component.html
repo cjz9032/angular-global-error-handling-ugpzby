@@ -86,7 +86,7 @@
 					*ngIf="isSwitchVisible">
 					<vtr-ui-switch-onoff [onOffSwitchId]="switchId"
 						[value]="isSwitchChecked"
-						[ariaLabel]="label"
+						[ariaLabel]="title"
 						[disabled]="disabled || isDisabled"
 						(toggle)="onOnOffChange($event)"
 						[showLoader]="showLoaderState"

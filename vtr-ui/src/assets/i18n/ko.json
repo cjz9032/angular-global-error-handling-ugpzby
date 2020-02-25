@@ -107,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "열 모드 설정",
-                    "thermalMode2SettingDesc": "사용할 모드를 선택하십시오.",
+                    "thermalMode2SettingDesc": "사용할 모드를 선택합니다.",
                     "fnQDesc": "바로 가기 Fn+Q를 사용해 모드를 전환할 수 있습니다.",
                     "perormanceTitle": "Performance 모드",
-                    "performanceDesc": "컴퓨터의 팬 속도 및 전력 소모 성능을 개선하십시오.",
-                    "OCDesc": "오버클럭 기능을 사용하도록 설정할 수 있습니다.",
-                    "ac_dcDesc": "연결된 경우에만 Performance 모드를 사용할 수 있습니다.",
+                    "performanceDesc": "팬 속도와 전력 소모 수준을 높여 컴퓨터 성능을 향상시킵니다. ",
+                    "OCDesc": "오버클럭 기능을 사용하도록 선택할 수 있습니다.",
+                    "ac_dcDesc": "Performance 모드는 AC 전원 어댑터가 연결되어 있는 경우에만 적용됩니다.",
                     "balanceTitle": "균형 모드",
-                    "balanceDesc": "온도에 따라 자동으로 성능과 팬 속도를 균형있게 조정 합니다. 중간 전력 소모량.",
+                    "balanceDesc": "중간 전력 소모 수준에서 온도에 따라 자동으로 성능과 팬 속도를 균형있게 조정합니다.",
                     "quietTitle": "저소음 모드",
-                    "quietDesc": "가능한 경우 컴퓨터의 성능과 팬 속도를 줄여 소음을 줄일 수 있습니다. 낮은 전력 소모량.",
+                    "quietDesc": "낮은 전력 소모 수준에서 가능한 경우 컴퓨터의 성능과 팬 속도를 줄여 소음을 줄일 수 있습니다.",
                     "OC": {
                         "cpu_gpuOC": "Performance 모드에서 CPU/GPU 오버클럭 사용.",
                         "cpuOC": "Performance 모드에서 CPU 오버클럭 사용.",
                         "gpuOC": "Performance 모드에서 GPU 오버클럭 사용.",
                         "advance": "고급",
-                        "cpu_gpuDriverLack": "CPU/GPU 드라이버를 설치해 오버클럭 기능 사용.",
-                        "cpuDriverLack": "CPU 드라이버를 설치해 오버클럭 기능 사용.",
-                        "gpuDriverLack": "GPU 드라이버를 설치해 오버클럭 기능 사용.",
+                        "cpu_gpuDriverLack": "오버클럭 기능을 사용하려면 CPU/GPU 드라이버를 설치합니다.",
+                        "cpuDriverLack": "오버클럭 기능을 사용하려면 CPU 드라이버를 설치합니다.",
+                        "gpuDriverLack": "오버클럭 기능을 사용하려면 GPU 드라이버를 설치합니다.",
                         "goInstall": "설치하기"
                     },
-                    "autoSwitch": "게임을 실행하고 되돌아갈 때 자동으로 Performance로 전환합니다."
+                    "autoSwitch": "게임을 실행하면 Performance 모드로 자동으로 전환되고 게임을 종료하면 다시 전환됩니다."	
                 },
                 "advancedOC": {
                     "title": "오버클럭 고급 설정",

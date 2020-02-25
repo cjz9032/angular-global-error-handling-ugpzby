@@ -173,27 +173,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Inst. för temperaturläge",
-                    "thermalMode2SettingDesc": "Välj önskat läge.",
+                    "thermalMode2SettingDesc": "Välj det läge du vill använda.",
                     "fnQDesc": "Du kan växla läge med kortkommandot Fn+Q.",
                     "perormanceTitle": "Prestandaläge",
-                    "performanceDesc": "Öka datorns prestanda med högre fläkthastighet och energiförbrukning.",
-                    "OCDesc": "Du kan välja att aktivera överklockningsfunktionen.",
-                    "ac_dcDesc": "Prestandaläget är endast tillgängligt vid nätdrift.",
+                    "performanceDesc": "Öka datorns prestanda med högre fläkthastighet och effektförbrukning. ",
+                    "OCDesc": "Du kan välja att slå på överklockningsfunktionen.",
+                    "ac_dcDesc": "Prestandaläget går bara att använda när nätadaptern är inkopplad.",
                     "balanceTitle": "Balansläge",
-                    "balanceDesc": "Balansera automatiskt prestanda och fläkthastighet baserat på temperatur. Medelhög energiförbrukning.",
+                    "balanceDesc": "Gör en automatisk avvägning mellan prestanda och fläkthastighet utifrån temperatur med medelhög effektförbrukning.",
                     "quietTitle": "Tyst läge",
-                    "quietDesc": "Gör datorn tystare genom att minska datorns prestanda och fläkthastighet när det är möjligt. Låg energiförbrukning.",
+                    "quietDesc": "Gör datorn tystare genom att minska datorns prestanda och fläkthastighet med låg effektförbrukning när det är möjligt.",
                     "OC": {
                         "cpu_gpuOC": "Aktivera CPU-/GPU-överklockning i prestandaläge.",
                         "cpuOC": "Aktivera CPU-överklockning i prestandaläge.",
                         "gpuOC": "Aktivera GPU-överklockning i prestandaläge.",
                         "advance": "AVANCERAT",
-                        "cpu_gpuDriverLack": "Installera CPU-/GPU-drivrutiner för att använda överklockning.",
-                        "cpuDriverLack": "Installera CPU-drivrutinen om du vill använda överklockning.",
-                        "gpuDriverLack": "Installera GPU-drivrutinen om du vill använda överklockning.",
+                        "cpu_gpuDriverLack": "Installera CPU-/GPU-drivrutiner om du vill använda överklockningsfunktionen.",
+                        "cpuDriverLack": "Installera CPU-drivrutinen om du vill använda överklockningsfunktionen.",
+                        "gpuDriverLack": "Installera GPU-drivrutinen om du vill använda överklockningsfunktionen.",
                         "goInstall": "INSTALLERA"
                     },
-                    "autoSwitch": "Växla automatiskt till prestandaläge vid spelstart och växla tillbaka efteråt."
+                    "autoSwitch": "Växla automatiskt till prestandaläge när du startar spel och växla tillbaka när du är klar."	
                 }
             }
         },

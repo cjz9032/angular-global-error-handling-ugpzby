@@ -110,24 +110,24 @@
                     "thermalMode2SettingDesc": "Wybierz tryb, którego chcesz używać.",
                     "fnQDesc": "Możesz przełączyć tryb za pomocą skrótu Fn+Q.",
                     "perormanceTitle": "Tryb wydajny",
-                    "performanceDesc": "Zwiększ wydajność swojego komputera kosztem wyższej prędkości wentylatora i większego zużycia energii.",
-                    "OCDesc": "Możesz włączyć funkcję Przetaktowywanie.",
-                    "ac_dcDesc": "Tryb wydajny jest dostępny przy zasilaniu z sieci.",
+                    "performanceDesc": "Zwiększ wydajność swojego komputera z wyższą prędkością wentylatora i większym zużyciem energii. ",
+                    "OCDesc": "Możesz włączyć funkcję Przetaktowania.",
+                    "ac_dcDesc": "Tryb wydajności ma zastosowanie tylko wtedy, gdy podłączony jest zasilacz sieciowy.",
                     "balanceTitle": "Tryb zrównoważony",
-                    "balanceDesc": "Automatycznie równoważy wydajność komputera i prędkość wentylatora na podstawie temperatury. Średni pobór mocy.",
+                    "balanceDesc": "Automatycznie równoważy wydajność komputera i prędkość wentylatora na podstawie temperatury przy średnim zużyciu mocy.",
                     "quietTitle": "Tryb cichy",
-                    "quietDesc": "Cicha praca dzięki zmniejszeniu wydajności komputera i prędkości wentylatora, jeśli to możliwe. Niski pobór mocy.",
+                    "quietDesc": "Cicha praca dzięki zmniejszeniu wydajności komputera i prędkości wentylatora, jeśli to możliwe, przy niskim zużyciu mocy.",
                     "OC": {
                         "cpu_gpuOC": "Włącz taktowanie CPU/GPU w trybie wydajnym.",
                         "cpuOC": "Włącz taktowanie CPU w trybie wydajnym.",
                         "gpuOC": "Włącz taktowanie GPU w trybie wydajnym.",
                         "advance": "ZAAWANSOWANE",
-                        "cpu_gpuDriverLack": "Zainstaluj sterowniki CPU/GPU w celu użycia funkcji taktowania.",
-                        "cpuDriverLack": "Zainstaluj sterownik CPU w celu użycia funkcji taktowania.",
-                        "gpuDriverLack": "Zainstaluj sterownik GPU w celu użycia funkcji taktowania.",
+                        "cpu_gpuDriverLack": "Zainstaluj sterowniki CPU/GPU w celu użycia funkcji Przetaktowania.",
+                        "cpuDriverLack": "Zainstaluj sterownik CPU w celu użycia funkcji Przetaktowania.",
+                        "gpuDriverLack": "Zainstaluj sterownik GPU w celu użycia funkcji Przetaktowania.",
                         "goInstall": "ZAINSTALUJ"
                     },
-                    "autoSwitch": "Autom. włączaj tryb wydajny po uruchamianiu gry i wyłączaj go po jej zamknięciu."
+                    "autoSwitch": "Automatycznie włączaj tryb wydajności po uruchomianiu gry i wyłączaj go po jej zamknięciu."	
                 },
                 "advancedOC": {
                     "title": "Przetaktowywanie Ust. zaaw.",

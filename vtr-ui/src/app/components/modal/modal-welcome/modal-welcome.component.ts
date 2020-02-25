@@ -15,6 +15,7 @@ import { PowerService } from 'src/app/services/power/power.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { LanguageService } from 'src/app/services/language/language.service';
+import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -62,8 +63,10 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		public commonService: CommonService,
 		public selfSelectService: SelfSelectService,
 		private timerService: TimerService,
-		private userService: UserService) {
+		private userService: UserService,
+		private metricService: MetricService) {
 		this.metrics = shellService.getMetrics();
+
 		this.privacyPolicy = this.metrics.metricsEnabled;
 		const self = this;
 		shellService.getMetricsPolicy((result) => {
@@ -187,6 +190,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.activeModal.close(tutorialData);
 			this.selfSelectService.saveConfig(false);
 			this.SetVantageToolbar(this.vantageToolbar);
+			this.metricService.handleWelcomeDone();
 		}
 		this.page = ++page;
 	}

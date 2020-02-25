@@ -107,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Instelling thermische modus",
-                    "thermalMode2SettingDesc": "Kies de modus die u wilt gebruiken.",
+                    "thermalMode2SettingDesc": "Selecteer de modus die u wilt gebruiken.",
                     "fnQDesc": "U kunt de modus wijzigen met de sneltoets Fn+Q.",
                     "perormanceTitle": "Prestatiemodus",
-                    "performanceDesc": "Verhoog de prestaties van uw computer met meer ventilatorsnelheid en meer energieverbruik.",
-                    "OCDesc": "U kunt de functie overklokken inschakelen.",
-                    "ac_dcDesc": "Prestatiemodus alleen beschikbaar wanneer aangesloten.",
+                    "performanceDesc": "Verhoog de prestaties van uw computer met een hogere ventilatorsnelheid en een hoger energieverbruik. ",
+                    "OCDesc": "U kunt de functie Overklokken inschakelen.",
+                    "ac_dcDesc": "De prestatiemodus is alleen te gebruiken als de netvoedingsadapter is aangesloten.",
                     "balanceTitle": "Gebalanceerde modus",
-                    "balanceDesc": "De prestaties en ventilatorsnelheid worden automatisch aangepast aan de temperatuur. Gemiddeld energieverbruik.",
+                    "balanceDesc": "Laat de prestaties en ventilatorsnelheid automatisch aanpassen op basis van de temperatuur en met middelhoog energieverbruik.",
                     "quietTitle": "Stille modus",
-                    "quietDesc": "De computer wordt stiller door de prestaties en de ventilatorsnelheid zo laag mogelijk te houden. Laag energieverbruik.",
+                    "quietDesc": "Zorg voor een stille computer door de prestaties en de ventilatorsnelheid indien mogelijk te verlagen, met een laag energieverbruik.",
                     "OC": {
                         "cpu_gpuOC": "CPU/GPU-overklokken inschakelen in prestatiemodus.",
                         "cpuOC": "CPU-overklokken inschakelen in prestatiemodus.",
                         "gpuOC": "GPU-overklokken inschakelen in prestatiemodus.",
                         "advance": "GEAVANCEERD",
-                        "cpu_gpuDriverLack": "CPU/GPU-stuurprogramma's installeren om overklokken te gebruiken.",
-                        "cpuDriverLack": "CPU-stuurprogramma installeren om overklokken te gebruiken.",
-                        "gpuDriverLack": "GPU-stuurprogramma installeren om overklokken te gebruiken.",
+                        "cpu_gpuDriverLack": "Installeer CPU/GPU-stuurprogramma's om de functie Overklokken te gebruiken.",
+                        "cpuDriverLack": "Installeer CPU-stuurprogramma om de functie Overklokken te gebruiken.",
+                        "gpuDriverLack": "Installeer GPU-stuurprogramma om de functie Overklokken te gebruiken.",
                         "goInstall": "GA NAAR INSTALLEREN"
                     },
-                    "autoSwitch": "Automatisch schakelen naar prestaties bij starten games en later terugschakelen."
+                    "autoSwitch": "Schakel automatisch naar de prestatiemodus bij het starten van games en schakel terug na het afsluiten van de game."	
                 },
                 "advancedOC": {
                     "title": "Overklok geavanc. instell.",
