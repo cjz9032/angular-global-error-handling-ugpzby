@@ -1,7 +1,7 @@
 <div class="vtr-widget-device">
 	<div class="container-fluid my-dev-pad">
 		<div class="d-flex device-status">
-				<div class="col device-info">
+				<div class="col device-info" tabindex="0" role="text">
 						<div class="family"
 							id="myDevice-machine-info"
 							attr.aria-label="myDevice-machine-info">{{myDevice.family}}</div>
@@ -52,7 +52,7 @@
 
 		<div class="row">
 			<div class="col">
-				<div class="subheader"
+				<div class="subheader" tabindex="0" role="heading"
 					id="myDevice-status-title"
 					attr.aria-label="myDevice-status-title"
 					dir="{{'dir' | translate}}">{{'device.myDevice.subtitle'|translate}}</div>
@@ -76,7 +76,7 @@
 									<div class="title"
 										[ngClass]="[!item.status?'good':'bad']"
 										id="myDevice-system-details-{{item.id}}"
-										attr.aria-label="myDevice-system-details-{{item.id}}"
+										attr.aria-label="myDevice-system-details-{{item.title}}-{{item.systemDetails}}"
 										dir="{{'dir' | translate}}">
 										{{item.title}}
 										<span *ngIf="item.systemDetails"
