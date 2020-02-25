@@ -5,8 +5,6 @@ import { MetricService } from './metric.service';
 	selector: '[vtrPageLoadedDetector]'
 })
 export class PageLoadedDetectorDirective implements AfterViewInit {
-	@Input('vtrPageLoadedDetector') isWelcomePage: any;
-
 	constructor(private metricService: MetricService) { }
 
 	ngAfterViewInit() {
