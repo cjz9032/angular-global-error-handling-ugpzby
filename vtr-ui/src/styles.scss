@@ -487,10 +487,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		background: $light;
 		padding: 4rem;
 		@media #{$black-on-white} {
-			border: 0.1rem solid $gaming_darkest;
+			border: 0.1rem solid $dark;
 		}
 		@media #{$white-on-black} {
-			border: 0.1rem solid $gaming_darkest;
+			border: 0.1rem solid $light;
 		}
 	}
 }

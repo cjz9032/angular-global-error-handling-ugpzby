@@ -242,4 +242,12 @@
 			flex-grow: 8;
 		}
 	}*/
+
+		@media #{$black-on-white} {
+		border: 0.1rem solid;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid;
+		}
+
 }
