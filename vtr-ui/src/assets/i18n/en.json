@@ -1731,14 +1731,25 @@
 					"enterText": {
 						"title": "TEXT TO BE ENTERED",
 						"placeholder": "Please type here"
-					},
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles":{
+                        "applicationTitle":"You need to delete one app first",
+                        "fileTitle":"You need to delete one file first"
+                    },
 					"dropDown": {
 						"title": "ACTION USER DEFINED KEY",
 						"note": "Note: This can be used to enter commonly entered key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information.",
-						"options": {
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function.",
+                        "options": {
 							"option1": "Please select",
 							"option2": "Open website",
-							"option3": "Enter text"
+                            "option3": "Enter text",
+                            "option4":"Open applications or files",
+                            "option5":"Invoke key sequence"
 						}
 					}
 				},
