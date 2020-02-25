@@ -1,13 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { MetricsDirective } from 'src/app/services/metric/metrics.directive';
+import { PageLoadedDetectorDirective } from './page-loaded-detector.directive';
 
 @NgModule({
 	declarations: [
-		MetricsDirective
+		MetricsDirective,
+		PageLoadedDetectorDirective
 	],
 	exports: [
-		MetricsDirective
+		MetricsDirective,
+		PageLoadedDetectorDirective
 	],
 	imports: [
 		CommonModule

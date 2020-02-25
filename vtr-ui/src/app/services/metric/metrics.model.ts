@@ -19,14 +19,6 @@ export interface MetricsData {
 
 export class IMetricEvent {
 	public ItemType: string;
-	public static normalizeMetric(data) {
-		if (!data || data.ItemType) {
-			return null;
-		}
-
-		if (data.ItemType) {
-		}
-	}
 }
 
 export class FirstRun extends IMetricEvent {

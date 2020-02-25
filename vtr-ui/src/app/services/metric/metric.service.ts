@@ -6,6 +6,8 @@ import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service'
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { MetricHelper } from './metrics.helper';
 import { CommonService } from '../common/common.service';
+import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 declare var Windows;
 
@@ -18,12 +20,14 @@ export class MetricService {
 	private focusDurationCounter;
 	private blurDurationCounter;
 	private suspendDurationCounter;
+	private dashboardFirstLoaded = 0;
+	private hasSendAppLoadedEvent = false;
 
 	constructor(
 		private shellService: VantageShellService,
 		private timerService: TimerServiceEx,
 		hypothesisService: HypothesisService,
-		commonService: CommonService,
+		private commonService: CommonService,
 	) {
 		this.metricsClient = this.shellService.getMetrics();
 		MetricHelper.initializeMetricClient(this.metricsClient, shellService, commonService, hypothesisService);
@@ -87,7 +91,7 @@ export class MetricService {
 		);
 	}
 
-	public async sendEnvInfoMetric(isFirstLaunch) {
+	private async sendEnvInfoMetric() {
 		let imcVersion = null;
 		let hsaSrvInfo: any = {};
 		let shellVersion = null;
@@ -109,6 +113,7 @@ export class MetricService {
 		const scale = window.devicePixelRatio || 1;
 		const displayWidth = window.screen.width;
 		const displayHeight = window.screen.height;
+		const isFirstLaunch: boolean = !this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		this.metricsClient.sendAsync(
 			new GetEnvInfo({
 				imcVersion,
@@ -124,9 +129,9 @@ export class MetricService {
 		);
 	}
 
-	public sendAppLoadedMetric() {
+	private sendAppLoadedMetric(dashboardFirstLoaded: number) {
 		const vanStub = this.shellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppLoaded((Date.now() - vanStub.navigateTime)));
+		this.metricsClient.sendAsync(new AppLoaded((dashboardFirstLoaded - vanStub.navigateTime)));
 	}
 
 	public sendAppLaunchMetric() {
@@ -184,5 +189,32 @@ export class MetricService {
 		));
 	}
 
+	private handleAppLoadedEvent() {
+		if (!this.dashboardFirstLoaded) {
+			this.dashboardFirstLoaded = Date.now();
+		}
 
+		this.hasSendAppLoadedEvent = true;
+		this.sendEnvInfoMetric();
+		this.sendAppLoadedMetric(this.dashboardFirstLoaded);
+	}
+
+	public onPageLoaded() {
+		if (this.dashboardFirstLoaded) {
+			return; 	// run once
+		}
+
+		this.dashboardFirstLoaded = Date.now(); // save the time while app finish loading.
+		if (this.metricsClient.metricsEnabled && !this.hasSendAppLoadedEvent) {	// in normal case for first run, if the welcome page was not done, the metrics will be disable.
+			this.handleAppLoadedEvent();	// send these metric event in dashboard at the scenarios when welcome page was done.
+		}
+
+		// else the welcome page need to check if it should send the metrics after the metrics option was determined
+	}
+
+	public handleWelcomeDone() {
+		if (this.metricsClient.metricsEnabled && !this.hasSendAppLoadedEvent) {
+			this.handleAppLoadedEvent();
+		}
+	}
 }

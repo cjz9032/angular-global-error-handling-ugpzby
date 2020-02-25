@@ -249,8 +249,6 @@ export class AppComponent implements OnInit, OnDestroy {
 					this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
 					this.metricService.sendFirstRunEvent(value);
 				}
-
-				this.metricService.sendEnvInfoMetric(appFirstRun);
 			}
 		} catch (e) {
 			this.vantageShellService.getLogger().error(JSON.stringify(e));
@@ -353,7 +351,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	@HostListener('window:load', ['$event'])
 	onLoad(event) {
-		this.metricService.sendAppLoadedMetric();
 		const scale = 1 / (window.devicePixelRatio || 1);
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
