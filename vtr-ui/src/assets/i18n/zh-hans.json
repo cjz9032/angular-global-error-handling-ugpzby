@@ -112,7 +112,7 @@
                     "perormanceTitle": "野兽模式",
                     "performanceDesc": "提升计算机性能，同时会提高风扇速度和功耗。",
                     "OCDesc": "可选择开启超频功能。",
-                    "ac_dcDesc": "仅在插入交流电源适配器时才能使用性能模式。",
+                    "ac_dcDesc": "仅在插入交流电源适配器时才能使用野兽模式。",
                     "balanceTitle": "智能模式",
                     "balanceDesc": "根据温度自动平衡性能和风扇速度，产生中等程度的功耗。",
                     "quietTitle": "节能模式",
