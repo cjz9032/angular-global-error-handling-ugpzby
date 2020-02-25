@@ -107,16 +107,16 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Impost. modalità termica",
-                    "thermalMode2SettingDesc": "Selezionare la modalità da utilizzare.",
+                    "thermalMode2SettingDesc": "Seleziona la modalità che preferisci.",
                     "fnQDesc": "È possibile cambiare la modalità utilizzando la combinazione di tasti Fn+Q.",
                     "perormanceTitle": "Modalità Prestazioni",
-                    "performanceDesc": "Aumenta le prestazioni del computer con una maggiore velocità della ventola e un maggiore consumo energetico.",
+                    "performanceDesc": "Aumenta le prestazioni del computer con una velocità della ventola e un consumo energetico più elevati. ",
                     "OCDesc": "È possibile scegliere di attivare la funzione di overclock.",
-                    "ac_dcDesc": "Modalità Performance disponibile solamente se collegato.",
+                    "ac_dcDesc": "La modalità Prestazioni è attivabile solo quando l'adattatore di alimentazione CA è collegato.",
                     "balanceTitle": "Modalità bilanciata",
-                    "balanceDesc": "Bilancia automaticamente le prestazioni e la velocità della ventola in base alla temperatura. Consumo energetico medio.",
+                    "balanceDesc": "Bilancia automaticamente le prestazioni e la velocità della ventola in base alla temperatura con un consumo energetico intermedio.",
                     "quietTitle": "Modalità silenziosa",
-                    "quietDesc": "Aumenta la silenziosità riducendo le prestazioni del computer e la velocità della ventola, laddove possibile. Basso consumo energetico.",
+                    "quietDesc": "Laddove possibile, aumenta la silenziosità riducendo le prestazioni del computer e la velocità della ventola, ottenendo un consumo energetico più basso.",
                     "OC": {
                         "cpu_gpuOC": "Attivare overclock CPU/GPU in modalità Performance.",
                         "cpuOC": "Attivare overclock CPU in modalità Performance.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Installare il driver GPU per utilizzare la funzione di overclock.",
                         "goInstall": "VAI A INSTALLA"
                     },
-                    "autoSwitch": "Passa automaticamente Performance per giocare e chiudila dopo."
+                    "autoSwitch": "Passa automaticamente alla modalità Prestazioni per giocare e chiudila quando esci dal gioco."	
                 },
                 "advancedOC": {
                     "title": "Impost. avanzate Overclock",

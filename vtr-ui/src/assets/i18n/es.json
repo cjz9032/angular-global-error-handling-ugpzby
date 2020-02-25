@@ -107,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Config. de modo térmico",
-                    "thermalMode2SettingDesc": "Seleccione la modalidad que desee utilizar.",
+                    "thermalMode2SettingDesc": "Seleccione la modalidad que desea utilizar.",
                     "fnQDesc": "Puede cambiar de modalidad utilizando la combinación de teclas Fn+Q.",
                     "perormanceTitle": "Modalidad de rendimiento",
-                    "performanceDesc": "Aumente el rendimiento del sistema con más velocidad del ventilador y más consumo de energía.",
-                    "OCDesc": "Puede seleccionar que se active la característica de Aceleración.",
-                    "ac_dcDesc": "Modalidad de rendimiento disponible solo conectado.",
+                    "performanceDesc": "Aumente el rendimiento del equipo con mayor velocidad del ventilador y consumo de energía. ",
+                    "OCDesc": "Puede seleccionar que se active la función de Aceleración.",
+                    "ac_dcDesc": "La modalidad de rendimiento solo se aplica cuando está conectado el adaptador de alimentación de CA.",
                     "balanceTitle": "Modalidad balanceada",
-                    "balanceDesc": "Equilibre automáticamente el rendimiento y la velocidad del ventilador según la temperatura. Consumo de energía mediano.",
+                    "balanceDesc": "Equilibre automáticamente el rendimiento y la velocidad del ventilador según la temperatura con un consumo de energía medio.",
                     "quietTitle": "Modalidad silenciosa",
-                    "quietDesc": "Continúe deduciendo el rendimiento y la velocidad del ventilador de sistema siempre que sea posible. Bajo consumo de energía.",
+                    "quietDesc": "Continúe deduciendo el rendimiento y la velocidad del ventilador de equipo siempre que sea posible con el consumo de energía bajo.",
                     "OC": {
                         "cpu_gpuOC": "Habilite la Aceleración de CPU/GPU en Modalidad de rendimiento.",
                         "cpuOC": "Habilite la Aceleración de CPU en Modalidad de rendimiento.",
                         "gpuOC": "Habilite la Aceleración de GPU en Modalidad de rendimiento.",
                         "advance": "AVANZADO",
-                        "cpu_gpuDriverLack": "Instale controladores de CPU/GPU para utilizar función de Aceleración.",
-                        "cpuDriverLack": "Instale el controlador de CPU/GPU para usar función de Aceleración.",
+                        "cpu_gpuDriverLack": "Instale controladores de CPU/GPU para utilizar la función de Aceleración.",
+                        "cpuDriverLack": "Instale el controlador de CPU para usar la función de Aceleración.",
                         "gpuDriverLack": "Instale el controlador de GPU para usar la función de Aceleración.",
                         "goInstall": "VAYA A INSTALAR"
                     },
-                    "autoSwitch": "Cambie auto. a Rendimiento al iniciar juegos y después cambie de vuelta."
+                    "autoSwitch": "Cambie automáticamente a la modalidad de rendimiento al iniciar juegos y vuelva a cambiar después de salir del juego."	
                 },
                 "advancedOC": {
                     "title": "Op. avanzadas aceleración",

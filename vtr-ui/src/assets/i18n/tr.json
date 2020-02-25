@@ -110,13 +110,13 @@
                     "thermalMode2SettingDesc": "Kullanmak istediğiniz kipi seçin.",
                     "fnQDesc": "Fn+Q kısayolunu kullanarak kipi değiştirebilirsiniz.",
                     "perormanceTitle": "Performans Kipi",
-                    "performanceDesc": "Daha fazla fan hızıyla ve daha fazla güç tüketerek bilgisayarınızın performansını artırın.",
-                    "OCDesc": "Hız Aşırtma özelliğini açmayı seçebilirsiniz.",
-                    "ac_dcDesc": "Performans Kipi yalnızca bilgisayar fişe takılıyken kullanılabilir.",
+                    "performanceDesc": "Daha yüksek fan hızı ve daha fazla güç tüketimi ile bilgisayarınızın performansını artırın. ",
+                    "OCDesc": "Hız Aşırtma işlevini açmayı seçebilirsiniz.",
+                    "ac_dcDesc": "Performans Kipi yalnızca AC güç bağdaştırıcısı takılıyken geçerlidir.",
                     "balanceTitle": "Denge Kipi",
-                    "balanceDesc": "Performansı ve fan hızını sıcaklığa göre otomatik olarak dengeleyin. Orta düzey güç tüketimi.",
+                    "balanceDesc": "Orta düzeyde güç tüketimiyle performansı ve fan hızını sıcaklığa göre otomatik olarak dengeleyin.",
                     "quietTitle": "Sessiz Kipi",
-                    "quietDesc": "Mümkün olduğunda bilgisayarınızın performansını ve fan hızını azaltarak sessiz olun. Düşük güç tüketimi.",
+                    "quietDesc": "Düşük güç tüketimiyle mümkün olduğunda bilgisayarınızın performansını ve fan hızını azaltarak sessiz olun.",
                     "OC": {
                         "cpu_gpuOC": "Performans Kipi'nde CPU/GPU Hız Aşırtma'yı etkinleştirin.",
                         "cpuOC": "Performans Kipi'nde CPU Hız Aşırtma'yı etkinleştirin.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Hız Aşırtma işlevini kullanmak için GPU sürücüsünü yükleyin.",
                         "goInstall": "YÜKLE"
                     },
-                    "autoSwitch": "Oyunları başlatırken Otomatik Olarak Performans Kipine Geçip sonra geriye dönün."
+                    "autoSwitch": "Oyunları başlatırken otomatik olarak Performans Kipi'ne geçip oyundan çıktıktan sonra eski kipe geri dönün."	
                 },
                 "advancedOC": {
                     "title": "Hız Aşırtma Gelşmiş Ayrları",

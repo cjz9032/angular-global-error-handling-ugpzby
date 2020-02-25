@@ -110,24 +110,24 @@
                     "thermalMode2SettingDesc": "Odaberite režim koji želite da koristite.",
                     "fnQDesc": "Možete prebaciti režim koristeći prečicu Fn+Q.",
                     "perormanceTitle": "Režim učinka",
-                    "performanceDesc": "Pojačajte performanse računara pomoću veće brzine ventilatora i više utrošene struje.",
-                    "OCDesc": "Možete odabrati da uključite funkciju Overklok.",
-                    "ac_dcDesc": "Režim performansi je dostupan samo kada je priključen.",
+                    "performanceDesc": "Pojačajte performanse računara pomoću veće brzine ventilatora i veće potrošnje struje. ",
+                    "OCDesc": "Možete odabrati da uključite funkciju Overkloking.",
+                    "ac_dcDesc": "Režim performansi je primenljiv samo kada je uključen adapter za napajanja na struju.",
                     "balanceTitle": "Ujednačeni režim",
-                    "balanceDesc": "Automatski balansira performanse i brzinu ventilatora na osnovu temperature. Srednji utrošak energije.",
+                    "balanceDesc": "Automatski balansira performanse i brzinu ventilatora na osnovu temperature sa srednjom potrošnjom struje.",
                     "quietTitle": "Tihi režim",
-                    "quietDesc": "Budite tihi tako što ćete smanjiti performanse računara i brzinu ventilatora gde je to moguće. Nizak utrošak energije.",
+                    "quietDesc": "Budite tihi tako što ćete smanjiti performanse računara i brzinu ventilatora gde je to moguće sa malom potrošnjom struje.",
                     "OC": {
                         "cpu_gpuOC": "Omogući CPU/GPU Overklok u režimu performansi.",
                         "cpuOC": "Omogući CPU Overklok u režimu performansi.",
                         "gpuOC": "Omogući GPU Overklok u režimu performansi.",
                         "advance": "NAPREDNA",
-                        "cpu_gpuDriverLack": "Instalirajte CPU/GPU uprav. programe da biste koristili Overklok.",
-                        "cpuDriverLack": "Instalirajte CPU upravljački program da biste koristili Overklok.",
-                        "gpuDriverLack": "Instalirajte GPU upravljački program da biste koristili funkciju Overklok.",
+                        "cpu_gpuDriverLack": "Instalirajte CPU/GPU uprav. programe da biste koristili funkciju Overkloking.",
+                        "cpuDriverLack": "Instalirajte CPU upravljački program da biste koristili funkciju Overkloking.",
+                        "gpuDriverLack": "Instalirajte GPU upravljački program da biste koristili funkciju Overkloking.",
                         "goInstall": "IDI NA INSTALACIJU"
                     },
-                    "autoSwitch": "Automatski prebaci na performanse pri pokretanju igara i vrati nakon toga."
+                    "autoSwitch": "Automatski prebacite na režim performansi pri pokretanju igara i vratite se iz njega nakon što izađete iz igre."	
                 },
                 "advancedOC": {
                     "title": "Overklok Napredne postavke",

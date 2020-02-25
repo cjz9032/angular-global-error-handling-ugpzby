@@ -107,16 +107,16 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Nastavitev toplotnega nač.",
-                    "thermalMode2SettingDesc": "Izberite način, ki ga želite uporabljati.",
+                    "thermalMode2SettingDesc": "Izberite način, ki ga želite uporabiti.",
                     "fnQDesc": "Med načini lahko preklapljate z bližnjico Fn+Q.",
                     "perormanceTitle": "Zmogljivi način",
-                    "performanceDesc": "Povečajte zmogljivost računalnika z večjo hitrostjo ventilatorja in večjo porabo energije.",
+                    "performanceDesc": "Povečajte zmogljivost računalnika z večjo hitrostjo ventilatorja in večjo porabo energije. ",
                     "OCDesc": "Vklopite lahko funkcijo Zvišanje takta.",
-                    "ac_dcDesc": "Zmogljivi način je na voljo samo, ko je računalnik priključen.",
+                    "ac_dcDesc": "Zmogljivejši način lahko uporabite le, kadar je v računalnik priključen napajalnik.",
                     "balanceTitle": "Uravnoteženi način",
-                    "balanceDesc": "Samodejno uravnotežite zmogljivost in hitrost ventilatorja glede na temperaturo. Srednja poraba energije.",
+                    "balanceDesc": "Samodejno uravnotežite zmogljivost in hitrost ventilatorja glede na temperaturo pri srednje visoki porabi energije.",
                     "quietTitle": "Tihi način",
-                    "quietDesc": "Zmanjšajte zmogljivost računalnika in hitrost ventilatorja, kadar je to mogoče, in poskrbite za tiho delovanje. Nizka poraba energije.",
+                    "quietDesc": "Zmanjšajte zmogljivost računalnika in hitrost ventilatorja, kadar je to mogoče, in poskrbite za tiho delovanje pri nizki porabi energije.",
                     "OC": {
                         "cpu_gpuOC": "Omogočite zvišanje takta CPE/GPE v zmogljivem načinu.",
                         "cpuOC": "Omogočite zvišanje takta CPE v zmogljivem načinu.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Za uporabo funkcije zvišanja takta namestite gonilnik za GPE.",
                         "goInstall": "NAMESTI"
                     },
-                    "autoSwitch": "Samodejno preklopite na zmogljivi nač. pri zagonu iger in nato preklopite nazaj."
+                    "autoSwitch": "Samodejno preklopite na zmogljivejši način pri zagonu iger in preklopite nazaj po izhodu iz igre."	
                 },
                 "advancedOC": {
                     "title": "Zviš. takta – napr. nastav.",
