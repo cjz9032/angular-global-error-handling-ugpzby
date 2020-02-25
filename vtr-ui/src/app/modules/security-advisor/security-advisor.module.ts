@@ -10,7 +10,7 @@ import { PageSecurityPasswordComponent } from 'src/app/components/pages/page-sec
 import { PageSecurityInternetComponent } from 'src/app/components/pages/page-security-internet/page-security-internet.component';
 import { PageSecurityWifiComponent } from 'src/app/components/pages/page-security-wifi/page-security-wifi.component';
 import { ConnectedHomeStatusComponent } from 'src/app/components/pages/page-security-wifi/children/connected-home-status/connected-home-status.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { WidgetMcafeeComponent } from 'src/app/components/widgets/widget-mcafee/widget-mcafee.component';
 import { WidgetSecurityComponent } from 'src/app/components/widgets/widget-security/widget-security.component';
 import { UiLandingFeatureComponent } from 'src/app/components/ui/ui-landing-feature/ui-landing-feature.component';
@@ -30,7 +30,7 @@ import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-se
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { UiListChevronModule } from 'src/app/components/ui/ui-list-chevron/ui-list-chevron.module';
-import { library } from '@fortawesome/fontawesome-svg-core';
+
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
@@ -61,25 +61,7 @@ import { WidgetLandingSecurityComponent } from '../../components/pages/page-secu
 import { WidgetLandingNavComponent } from '../../components/pages/page-security/widget/widget-landing-nav/widget-landing-nav.component';
 import { WidgetSvgCircleComponent } from 'src/app/components/pages/page-security/widget/widget-svg-circle/widget-svg-circle.component';
 import { ThreatLocatorComponent } from '../../components/pages/page-security-wifi/children/threat-locator/threat-locator.component';
-library.add(
-	faLockAlt,
-	faQuestionCircle,
-	faKey,
-	falKey,
-	faDatabase,
-	falDatabase,
-	faTools,
-	falTools,
-	faChevronUp,
-	faChevronDown,
-	falTimes,
-	falCheck,
-	falWifi,
-	faWifi,
-	faTimes,
-	faCheck,
-	faCircle
-);
+
 
 @NgModule({
 	declarations: [
@@ -137,4 +119,26 @@ library.add(
 		CUSTOM_ELEMENTS_SCHEMA
 	]
 })
-export class SecurityAdvisorModule { }
+export class SecurityAdvisorModule {
+	constructor(library: FaIconLibrary) {
+		library.addIcons(
+			faLockAlt,
+			faQuestionCircle,
+			faKey,
+			falKey,
+			faDatabase,
+			falDatabase,
+			faTools,
+			falTools,
+			faChevronUp,
+			faChevronDown,
+			falTimes,
+			falCheck,
+			falWifi,
+			faWifi,
+			faTimes,
+			faCheck,
+			faCircle
+		);
+	}
+}

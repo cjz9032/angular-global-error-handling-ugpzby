@@ -22,7 +22,7 @@
 					alt="L" />
 			</a>
 		</div>
-		<div *ngIf="items.length> 0 && (deviceService.isGaming || loadMenuItem.hideMenus)"
+		<div *ngIf="items.length> 0 && (deviceService.isGaming || loadMenuItem?.hideMenus)"
 			class="navbar-brand pt-0 logo-y">
 
 			<div *ngIf="isGamingHome">
@@ -81,7 +81,7 @@
 				*ngIf="appsForYouService.UnreadMessageCount.totalMessage">{{appsForYouService.UnreadMessageCount.totalMessage}}</span>
 		</a>
 		<div class="collapse navbar-collapse"
-			*ngIf="!loadMenuItem.hideMenus"
+			*ngIf="!loadMenuItem?.hideMenus"
 			#menuTarget
 			[ngClass]="{'show':showMenu}">
 			<ul class="navbar-nav ml-auto"
