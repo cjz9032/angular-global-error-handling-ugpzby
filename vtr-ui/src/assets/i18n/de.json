@@ -110,24 +110,24 @@
                     "thermalMode2SettingDesc": "Wählen Sie den gewünschten Modus aus.",
                     "fnQDesc": "Sie können den Modus über die Tastenkombination Fn+Q wechseln.",
                     "perormanceTitle": "Leistungsmodus",
-                    "performanceDesc": "Steigern Sie die Leistung Ihres Computers. Dies führt zu höherer Lüftergeschwindigkeit und mehr Stromverbrauch.",
-                    "OCDesc": "Sie können auswählen, dass die Funktion zum Übertakten aktiviert werden soll.",
-                    "ac_dcDesc": "Der Leistungsmodus ist nur bei Netzbetrieb verfügbar.",
+                    "performanceDesc": "Steigert die Leistung Ihres Computers. Dies führt zu höherer Lüftergeschwindigkeit und mehr Stromverbrauch. ",
+                    "OCDesc": "Sie können die Overclocking-Funktion aktivieren.",
+                    "ac_dcDesc": "Der Leistungsmodus kann nur eingesetzt werden, wenn das Netzteil angeschlossen ist.",
                     "balanceTitle": "Ausbalancierter Modus",
-                    "balanceDesc": "Die Leistung und die Lüftergeschwindigkeit werden automatisch basierend auf der Temperatur ausgeglichen. Durchschnittlicher Stromverbrauch.",
+                    "balanceDesc": "Automatische Anpassung von Leistung und Lüftergeschwindigkeit basierend auf der Temperatur für einen durchschnittlichen Stromverbrauch.",
                     "quietTitle": "Ruhemodus",
-                    "quietDesc": "Leiser Betrieb, indem die Leistung des Computers sowie die Lüftergeschwindigkeit soweit möglich reduziert werden. Niedriger Stromverbrauch.",
+                    "quietDesc": "Leiser Betrieb durch Senken der Leistung und Lüftergeschwindigkeit des Computers für niedrigen Stromverbrauch.",
                     "OC": {
                         "cpu_gpuOC": "CPU-/GPU-Übertaktung im Leistungsmodus aktivieren.",
                         "cpuOC": "CPU-Übertaktung im Leistungsmodus aktivieren.",
                         "gpuOC": "GPU-Übertaktung im Leistungsmodus aktivieren.",
                         "advance": "ERWEITERT",
-                        "cpu_gpuDriverLack": "CPU-/GPU-Treiber installieren, um Overclocking zu verwenden.",
-                        "cpuDriverLack": "CPU-Treiber installieren, um Overclocking zu verwenden.",
-                        "gpuDriverLack": "GPU-Treiber installieren, um Overclocking zu verwenden.",
+                        "cpu_gpuDriverLack": "CPU-/GPU-Treiber installieren, um die Overclocking-Funktion zu verwenden.",
+                        "cpuDriverLack": "CPU-Treiber installieren, um die Overclocking-Funktion zu verwenden.",
+                        "gpuDriverLack": "GPU-Treiber installieren, um die Overclocking-Funktion zu verwenden.",
                         "goInstall": "INSTALLIEREN"
                     },
-                    "autoSwitch": "Autom. Wechsel zu Leistung, wenn Spiele gestartet werden, danach zurückschalten."
+                    "autoSwitch": "Automatischer Wechsel in den Leistungsmodus, wenn Spiele gestartet werden. Nach dem Beenden des Spiels wird der Modus automatisch zurückgeschaltet."	
                 },
                 "advancedOC": {
                     "title": "Overclock Erweiterte Einst.",

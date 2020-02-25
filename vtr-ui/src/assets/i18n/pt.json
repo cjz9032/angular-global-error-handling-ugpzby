@@ -110,13 +110,13 @@
                     "thermalMode2SettingDesc": "Escolha o modo que pretende utilizar.",
                     "fnQDesc": "Pode mudar de modo através do atalho Fn+Q.",
                     "perormanceTitle": "Modo de Desempenho",
-                    "performanceDesc": "Aumente o desempenho do computador ao aumentar a velocidade da ventoinha e o consumo energético.",
-                    "OCDesc": "Pode optar por ativar a funcionalidade Overclocking.",
-                    "ac_dcDesc": "O Modo de Desempenho só está disponível quando está ligado.",
+                    "performanceDesc": "Aumente o desempenho do computador com maior velocidade da ventoinha e consumo energético. ",
+                    "OCDesc": "Pode optar por ativar a função Overclocking.",
+                    "ac_dcDesc": "O Modo de Desempenho é aplicável apenas quando o transformador CA está ligado à corrente.",
                     "balanceTitle": "Modo Equilibrado",
-                    "balanceDesc": "Equilibre automaticamente o desempenho e a velocidade da ventoinha em função da temperatura. Consumo energético intermédio.",
+                    "balanceDesc": "Equilibre automaticamente o desempenho e a velocidade da ventoinha em função da temperatura com um consumo energético médio.",
                     "quietTitle": "Modo Silencioso",
-                    "quietDesc": "Mantenha o silêncio ao reduzir o desempenho do computador e a velocidade da ventoinha sempre que possível. Consumo energético reduzido.",
+                    "quietDesc": "Mantenha o silêncio ao reduzir o desempenho do computador e a velocidade da ventoinha com um baixo consumo energético.",
                     "OC": {
                         "cpu_gpuOC": "Habilitar overclocking CPU/GPU no Modo de desempenho.",
                         "cpuOC": "Habilitar overclocking CPU no Modo de desempenho.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Instalar driver GPU para usar a função Overclocking.",
                         "goInstall": "IR PARA INSTALAR"
                     },
-                    "autoSwitch": "Mude automaticamente para Desempenho ao iniciar jogos e reverta em seguida."
+                    "autoSwitch": "Mude automaticamente para o Modo de Desempenho ao iniciar jogos e reverta quando sair do jogo."	
                 },
                 "advancedOC": {
                     "title": "Def. Avançadas de Overclock",

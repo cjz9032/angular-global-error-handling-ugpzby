@@ -111,12 +111,12 @@
                     "fnQDesc": "可使用快捷键 Fn+Q 切换模式。",
                     "perormanceTitle": "野兽模式",
                     "performanceDesc": "提升计算机性能，同时会提高风扇速度和功耗。",
-                    "OCDesc": "可选择开启“超频”功能。",
-                    "ac_dcDesc": "野兽模式仅在接通电源时可用。",
+                    "OCDesc": "可选择开启超频功能。",
+                    "ac_dcDesc": "仅在插入交流电源适配器时才能使用性能模式。",
                     "balanceTitle": "智能模式",
-                    "balanceDesc": "根据温度自动平衡性能和风扇速度。中等功耗。",
+                    "balanceDesc": "根据温度自动平衡性能和风扇速度，产生中等程度的功耗。",
                     "quietTitle": "节能模式",
-                    "quietDesc": "尽可能降低计算机的性能和风扇速度，以保持安静。低功耗。",
+                    "quietDesc": "尽可能降低计算机的性能和风扇速度以保持安静，产生较低的功耗。",
                     "OC": {
                         "cpu_gpuOC": "在野兽模式下启用 CPU/GPU 超频。",
                         "cpuOC": "在野兽模式下启用 CPU 超频。",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "安装 GPU 驱动程序以使用超频功能。",
                         "goInstall": "去安装"
                     },
-                    "autoSwitch": "启动游戏时自动切换到野兽模式并在之后切回。"
+                    "autoSwitch": "启动游戏时自动切换到野兽模式并在退出游戏后切换回来。"	
                 },
                 "advancedOC": {
                     "title": "超频高级设置",
