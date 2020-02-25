@@ -13,6 +13,7 @@ import { TopRowFunctionsIdeapad, KeyType } from 'src/app/components/pages/page-d
 import { VoipErrorCodeEnum } from 'src/app/enums/voip.enum';
 import { CommonErrorCode } from 'src/app/data-models/common/common.interface';
 import { BacklightStatusEnum, BacklightLevelEnum } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
+import { MetricHelper } from 'src/app/services/metric/metrics.helper';
 
 declare var Windows;
 
@@ -393,21 +394,7 @@ export class VantageShellService {
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
 	public getMetrics(): any {
-		return {
-			sendAsync() {
-				return Promise.resolve({
-					status: 0,
-					desc: 'ok'
-				});
-			},
-			sendAsyncEx() {
-				return Promise.resolve({
-					status: 0,
-					desc: 'ok'
-				});
-			},
-			metricsEnabled: false
-		};
+		return MetricHelper.createSimulateObj();
 	}
 
 	public getMetricsPolicy(callback) {
@@ -2233,7 +2220,7 @@ export class VantageShellService {
 	public getPowerDPM(){
 		return undefined;
 	}
-	
+
 	public getInstalledApplicationList() {
 		if (this.phoenix) {
 				const installedAppList: any = {
