@@ -107,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Postavlj. termičkog načina",
-                    "thermalMode2SettingDesc": "Odaberite način rada kojim se želite koristiti.",
+                    "thermalMode2SettingDesc": "Odaberite način rada koji želite koristiti.",
                     "fnQDesc": "Možete prebaciti način rada s pomoću prečaca Fn+Q.",
                     "perormanceTitle": "Način rada performansi",
-                    "performanceDesc": "Povećajte performanse računala uz veću brzinu ventilatora i veću potrošnju energije.",
-                    "OCDesc": "Možete odabrati uključivanje značajke Overclocking.",
-                    "ac_dcDesc": "Način rada performansi dostupan je samo kad je uključen.",
+                    "performanceDesc": "Povećajte performanse računala uz veću brzinu ventilatora i bolju potrošnju energije. ",
+                    "OCDesc": "Možete odabrati uključivanje funkcije overclockinga.",
+                    "ac_dcDesc": "Način performansi rada primjenjiv je samo kad je uključen ispravljač.",
                     "balanceTitle": "Način rada uravnoteženosti",
-                    "balanceDesc": "Automatski uravnotežite performanse i brzinu ventilatora na temelju temperature. Srednja potrošnja energije.",
+                    "balanceDesc": "Automatski uravnotežite performanse i brzinu ventilatora na temelju temperature sa srednjom potrošnjom energije.",
                     "quietTitle": "Tihi način rada",
-                    "quietDesc": "Budite tihi smanjujući performanse vašeg računala i brzinu ventilatora kad je to moguće. Niska potrošnja energije.",
+                    "quietDesc": "Zadržite tihi rad smanjujući performanse računala i brzinu ventilatora kad je to moguće uz smanjenje potrošnje energije.",
                     "OC": {
                         "cpu_gpuOC": "Omogući Overclocking CPU/GPU-a u načinu rada.",
                         "cpuOC": "Omogući Overclocking CPU-a u načinu rada.",
                         "gpuOC": "Omogući Overclocking GPU-a u načinu rada.",
                         "advance": "NAPREDNO",
-                        "cpu_gpuDriverLack": "Instalacija upravlj. prog. CPU/GPU-a za uporabu funkcije Overclocking.",
-                        "cpuDriverLack": "Instalacija upravlj. prog. CPU-a za uporabu funkcije Overclocking.",
-                        "gpuDriverLack": "Instalacija upravlj. prog. GPU-a za uporabu funk. Overclocking.",
+                        "cpu_gpuDriverLack": "Instalirajte CPU/GPU upravljačke programe za upotrebu funkcije overclockinga.",
+                        "cpuDriverLack": "Instalirajte CPU upravljački program za upotrebu funkcije overclockinga.",
+                        "gpuDriverLack": "Instalirajte upravljački program GPU za upotrebu funkcije overclockinga.",
                         "goInstall": "INSTALIRAJ"
                     },
-                    "autoSwitch": "Autom. se prebacite na performanse pri pokretanju igrica pa se vratite."
+                    "autoSwitch": "Automatski prebacite u način rada performansi pri pokretanju igara i vratite natrag nakon zatvaranja igre."	
                 },
                 "advancedOC": {
                     "title": "Overclock Napredne postavke",
