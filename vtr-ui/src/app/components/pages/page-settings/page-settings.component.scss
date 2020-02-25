@@ -22,13 +22,6 @@
 		font-size: 1.5rem;
 		letter-spacing: 0.05rem;
 
-		:host-context(.is-gaming) {
-			.user-profile-section {
-				display: none;
-				visibility: hidden;
-			}
-		}
-
 		.user-profile-title {
 			font-size: $section_header;
 			color: $color;
