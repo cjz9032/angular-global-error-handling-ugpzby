@@ -16,7 +16,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import * as CryptoJS from 'crypto-js';
+import AES from 'crypto-js/aes';
+import enc_utf8 from 'crypto-js/enc-utf8';
 
 declare var Windows;
 
@@ -154,7 +155,7 @@ export class UserService {
 			undefined
 		);
 		if (firstName && userGuid) {
-			const decrptedFirstName = CryptoJS.AES.decrypt(firstName, userGuid).toString(CryptoJS.enc.Utf8);
+			const decrptedFirstName = AES.decrypt(firstName, userGuid).toString(enc_utf8);
 			return decrptedFirstName;
 		} else {
 			return undefined;

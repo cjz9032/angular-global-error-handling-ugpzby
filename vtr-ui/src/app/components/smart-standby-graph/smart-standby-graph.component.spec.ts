@@ -14,96 +14,96 @@ import { By } from '@angular/platform-browser';
 
 describe('SmartStandbyGraphComponent', () => {
 
-    const activities: SmartStandbyActivityModel[] = [
-        {
-            day: 'sunday',
-            activities: [
-                {
-                    hour: 1,
-                    usage: [20, 30, 10]
-                }
-            ]
-        }
-    ];
+	const activities: SmartStandbyActivityModel[] = [
+		{
+			day: 'sunday',
+			activities: [
+				{
+					hour: 1,
+					usage: [20, 30, 10]
+				}
+			]
+		}
+	];
 
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
-            declarations: [SmartStandbyGraphComponent],
-            imports: [FontAwesomeModule, TranslationModule, HttpClientTestingModule],
-            providers: [TranslateStore]
-        }).compileComponents();
-    }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [SmartStandbyGraphComponent],
+			imports: [FontAwesomeModule, TranslationModule, HttpClientTestingModule],
+			providers: [TranslateStore]
+		}).compileComponents();
+	}));
 
 
-    describe(':', () => {
+	describe(':', () => {
 
-        function setup() {
-            const fixture = TestBed.createComponent(SmartStandbyGraphComponent);
-            const component = fixture.debugElement.componentInstance;
-            //const powerService = fixture.debugElement.injector.get(PowerService);
+		function setup() {
+			const fixture = TestBed.createComponent(SmartStandbyGraphComponent);
+			const component = fixture.debugElement.componentInstance;
+			// const powerService = fixture.debugElement.injector.get(PowerService);
 
-            const httpTestingController = fixture.debugElement.injector.get(HttpTestingController);
+			const httpTestingController = fixture.debugElement.injector.get(HttpTestingController);
 
-            return { fixture, component, httpTestingController };
-        }
+			return { fixture, component, httpTestingController };
+		}
 
-        it('should create the app', (() => {
-            const { component } = setup();
-            expect(component).toBeTruthy();
-        }));
-
-        it('should call getActivities, renderChart', fakeAsync(() => {
-            const { fixture, component } = setup();
-            spyOn(component, 'renderChart');
-            let mockActivities = activities;
-
-            spyOn(component, 'getActivities').and.returnValue(
-                Observable.create((observer: Observer<SmartStandbyActivityModel[]>) => {
-                    observer.next(mockActivities);
-                    return observer;
-                })
-            );
-
-            tick();
-            fixture.detectChanges();//ngOnInit
-            expect(component.renderChart).toHaveBeenCalled();
-            expect(component.getActivities).toHaveBeenCalled();
-        }));
-
-        //not async func
-        it('should render chart', (() => {
-            const { fixture, component } = setup();
-            //spyOn(component, 'renderChart');
-
-            fixture.detectChanges();
-            component.renderChart(activities);
-
-            let dom = fixture.debugElement.nativeElement.querySelector('div[class^="app-smart-standby-activity"]');
-            //console.log(dom);
-            expect(dom).toBeTruthy();
-            
+		it('should create the app', (() => {
+			const { component } = setup();
+			expect(component).toBeTruthy();
 		}));
-        
-        //testing http.get
-        it('should call http get', (() => {
-            const { fixture, component, httpTestingController } = setup();
-            let mockActivities = activities;
 
-            component.getActivities().subscribe(data => {
-                expect(data).toEqual(mockActivities);
-            });
+		it('should call getActivities, renderChart', fakeAsync(() => {
+			const { fixture, component } = setup();
+			spyOn(component, 'renderChart');
+			let mockActivities = activities;
 
-            const req = httpTestingController.expectOne('/assets/activities.json');
+			spyOn(component, 'getActivities').and.returnValue(
+				Observable.create((observer: Observer<SmartStandbyActivityModel[]>) => {
+					observer.next(mockActivities);
+					return observer;
+				})
+			);
 
-            expect(req.request.method).toBe('GET');
+			tick();
+			fixture.detectChanges();// ngOnInit
+			expect(component.renderChart).toHaveBeenCalled();
+			expect(component.getActivities).toHaveBeenCalled();
+		}));
 
-            req.flush(mockActivities);
-        }));
+		// not async func
+		it('should render chart', (() => {
+			const { fixture, component } = setup();
+			// spyOn(component, 'renderChart');
 
-        // afterEach(() => {
-        // 	const { httpTestingController } = setup();
-        // 	httpTestingController.verify();
-        // });
+			fixture.detectChanges();
+			component.renderChart(activities);
 
-    });
+			let dom = fixture.debugElement.nativeElement.querySelector('div[class^="app-smart-standby-activity"]');
+			// console.log(dom);
+			expect(dom).toBeTruthy();
+
+		}));
+
+		// testing http.get
+		it('should call http get', (() => {
+			const { fixture, component, httpTestingController } = setup();
+			let mockActivities = activities;
+
+			component.getActivities().subscribe(data => {
+				expect(data).toEqual(mockActivities);
+			});
+
+			const req = httpTestingController.expectOne('/assets/activities.json');
+
+			expect(req.request.method).toBe('GET');
+
+			req.flush(mockActivities);
+		}));
+
+		// afterEach(() => {
+		// 	const { httpTestingController } = setup();
+		// 	httpTestingController.verify();
+		// });
+
+	});
 });

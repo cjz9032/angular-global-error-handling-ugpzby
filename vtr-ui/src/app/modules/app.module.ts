@@ -40,11 +40,10 @@ import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { GlobalErrorHandler } from '../services/error-handler/global.service';
 import { HomeComponent } from './../components/home/home.component';
 import { HttpClient } from '@angular/common/http';
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
 import { MissingTranslationHandler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -147,31 +146,31 @@ import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {
-	constructor() {
-		library.add(faCheck);
-		library.add(faExclamation);
-		library.add(faBolt);
-		library.add(faChevronRight);
-		library.add(faTimesCircle);
-		library.add(faCaretUp);
-		library.add(faCaretRight);
-		library.add(faCaretDown);
-		library.add(faPlusCircle);
-		library.add(faMinusCircle);
-		library.add(faChevronUp);
-		library.add(faChevronDown);
-		library.add(faCircleNotch);
-		library.add(faBrowser);
-		library.add(faGift);
-		library.add(faCommentAltDots);
-		library.add(faShoePrints);
-		library.add(faWifiSlash);
-		library.add(faFlask);
-		library.add(faExclamationTriangle);
-		library.add(faExclamationCircle);
-		library.add(faQuestionCircle);
-		library.add(faCloudDownload);
-		library.add(faLaptop);
-		library.add(faHeart);
+	constructor(library: FaIconLibrary) {
+		library.addIcons(faCheck);
+		library.addIcons(faExclamation);
+		library.addIcons(faBolt);
+		library.addIcons(faChevronRight);
+		library.addIcons(faTimesCircle);
+		library.addIcons(faCaretUp);
+		library.addIcons(faCaretRight);
+		library.addIcons(faCaretDown);
+		library.addIcons(faPlusCircle);
+		library.addIcons(faMinusCircle);
+		library.addIcons(faChevronUp);
+		library.addIcons(faChevronDown);
+		library.addIcons(faCircleNotch);
+		library.addIcons(faBrowser);
+		library.addIcons(faGift);
+		library.addIcons(faCommentAltDots);
+		library.addIcons(faShoePrints);
+		library.addIcons(faWifiSlash);
+		library.addIcons(faFlask);
+		library.addIcons(faExclamationTriangle);
+		library.addIcons(faExclamationCircle);
+		library.addIcons(faQuestionCircle);
+		library.addIcons(faCloudDownload);
+		library.addIcons(faLaptop);
+		library.addIcons(faHeart);
 	}
 }
