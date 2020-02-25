@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { MetricsDirective } from 'src/app/directives/metrics.directive';
+import { MetricsDirective } from 'src/app/services/metric/metrics.directive';
 
 @NgModule({
 	declarations: [

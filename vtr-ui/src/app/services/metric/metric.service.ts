@@ -1,8 +1,11 @@
-import { Injectable, HostListener } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import * as MetricsConst from 'src/app/enums/metrics.enum';
-import { AppAction, GetEnvInfo, AppLoaded } from 'src/app/data-models/metrics/events.model';
+import { MetricConst } from 'src/app/enums/metrics.enum';
+import { AppAction, GetEnvInfo, AppLoaded, FirstRun, TaskAction } from 'src/app/services/metric/metrics.model';
 import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { MetricHelper } from './metrics.helper';
+import { CommonService } from '../common/common.service';
 
 declare var Windows;
 
@@ -16,8 +19,15 @@ export class MetricService {
 	private blurDurationCounter;
 	private suspendDurationCounter;
 
-	constructor(private shellService: VantageShellService, private timerService: TimerServiceEx) {
+	constructor(
+		private shellService: VantageShellService,
+		private timerService: TimerServiceEx,
+		hypothesisService: HypothesisService,
+		commonService: CommonService,
+	) {
 		this.metricsClient = this.shellService.getMetrics();
+		MetricHelper.initializeMetricClient(this.metricsClient, shellService, commonService, hypothesisService);
+
 		document.addEventListener('vantageSessionLose', () => {
 			this.onLoseSession();
 		});
@@ -35,6 +45,30 @@ export class MetricService {
 		});
 	}
 
+	private onLoseSession() {
+		this.blurStart = Date.now();
+	}
+
+	private onResumeSession() {
+		if (!this.blurStart) {
+			return;
+		}
+
+		const idleDuration = Math.floor((Date.now() - this.blurStart) / 1000);
+		if (this.metricsClient.updateSessionId && idleDuration > 1800) { // 30 * min
+			this.metricsClient.updateSessionId();
+		}
+		this.blurStart = 0;
+	}
+
+	private onInvisable() {
+		this.sendAppSuspendMetric();
+	}
+
+	private onVisable() {
+		this.sendAppResumeMetric();
+	}
+
 	public sendMetrics(data: any) {
 		if (this.metricsClient && this.metricsClient.sendAsync) {
 			this.metricsClient.sendAsync(data);
@@ -46,11 +80,7 @@ export class MetricService {
 		if (machineInfo) {
 			isGaming = machineInfo.isGaming;
 		}
-		this.metricsClient.sendAsyncEx(
-			{
-				ItemType: 'FirstRun',
-				IsGaming: isGaming
-			},
+		this.metricsClient.sendAsyncEx(new FirstRun(isGaming),
 			{
 				forced: true
 			}
@@ -104,7 +134,7 @@ export class MetricService {
 		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
 
 		const stub = this.shellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionOpen, stub.launchParms, stub.launchType, 0, 0));
+		this.metricsClient.sendAsync(new AppAction(MetricConst.ActionOpen, stub.launchParms, stub.launchType, 0, 0));
 	}
 
 	public sendAppResumeMetric() {
@@ -113,7 +143,7 @@ export class MetricService {
 
 		const stub = this.shellService.getVantageStub();
 		const suspendDuration = this.suspendDurationCounter ? this.suspendDurationCounter.getDuration() : 0;
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionResume, stub.launchParms, stub.launchType, suspendDuration, 0));
+		this.metricsClient.sendAsync(new AppAction(MetricConst.ActionResume, stub.launchParms, stub.launchType, suspendDuration, 0));
 	}
 
 	public sendAppSuspendMetric() {
@@ -121,30 +151,38 @@ export class MetricService {
 		const focusDuration = this.focusDurationCounter ? this.focusDurationCounter.getDuration() : 0;
 		const blurDuration = this.blurDurationCounter ? this.blurDurationCounter.getDuration() : 0;
 		const stub = this.shellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionSuspend, stub.launchParms, stub.launchType, focusDuration, blurDuration));
+		this.metricsClient.sendAsync(new AppAction(MetricConst.ActionSuspend, stub.launchParms, stub.launchType, focusDuration, blurDuration));
 	}
 
-	private onLoseSession() {
-		this.blurStart = Date.now();
+	public sendSystemUpdateMetric(avilablePackage: number, packageIdArray: string, message: string, searchStart: Date) {
+		this.metricsClient.sendAsync(new TaskAction(
+			MetricConst.TaskCheckSystemUpdate,
+			avilablePackage,
+			packageIdArray,
+			message,
+			MetricHelper.timeSpan(new Date(), searchStart)
+		));
 	}
 
-	private onResumeSession() {
-		if (this.blurStart) {
-			return;
-		}
-
-		const idleDuration = Math.floor((Date.now() - this.blurStart) / 1000);
-		if (this.metricsClient.updateSessionId && idleDuration > 1800) { // 30 * min
-			this.metricsClient.updateSessionId();
-		}
-		this.blurStart = null;
+	public sendInstallUpdateMetric(avilablePackage: number, packageIdArray: string, message: string) {
+		this.metricsClient.sendAsync(new TaskAction(
+			MetricConst.TaskInstallSystemUpdate,
+			avilablePackage,
+			packageIdArray,
+			message,
+			0
+		));
 	}
 
-	private onInvisable() {
-		this.sendAppSuspendMetric();
+	public sendSetUpdateSchedure(taskParam, response) {
+		this.metricsClient.sendAsync(new TaskAction(
+			MetricConst.TaskSetUpdateSchedule,
+			1,
+			taskParam,
+			response,
+			0
+		));
 	}
 
-	private onVisable() {
-		this.sendAppResumeMetric();
-	}
+
 }

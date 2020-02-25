@@ -114,15 +114,17 @@
 			</div>
 		</div>
 	</div>
-	<div class="feedback-success"
+	<div class="feedback-success d-flex align-items-center justify-content-center"
 		*ngIf="feedbackSuccess">
-		<div class="success-icon">
-			<fa-icon [icon]="['fal', 'check-circle']"></fa-icon>
+		<div>
+			<div class="success-icon">
+				<fa-icon [icon]="['fal', 'check-circle']"></fa-icon>
+			</div>
+			<div class="thank-you"
+				id="feedback-modal-thank-you"
+				attr.aria-label="feedback-modal-thank-you">{{ 'dashboard.feedback.form.messages.feedbackSuccess' | translate }}</div>
+			<div class="left-time">{{ leftTime }}</div>
 		</div>
-		<div class="thank-you"
-			id="feedback-modal-thank-you"
-			attr.aria-label="feedback-modal-thank-you">{{ 'dashboard.feedback.form.messages.feedbackSuccess' | translate }}</div>
-		<div class="left-time">{{ leftTime }}</div>
 	</div>
 
 	<a role="button"

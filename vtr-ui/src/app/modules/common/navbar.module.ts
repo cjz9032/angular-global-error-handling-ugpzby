@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { MetricsModule } from 'src/app/directives/metrics.module';
+import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { MenuMainComponent } from 'src/app/components/menu-main/menu-main.component';
 import { UiHeaderWarrantyComponent } from 'src/app/components/ui/ui-header-warranty/ui-header-warranty.component';
 import { TranslationModule } from '../translation.module';

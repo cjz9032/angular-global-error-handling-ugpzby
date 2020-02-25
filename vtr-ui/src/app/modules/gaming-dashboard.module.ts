@@ -23,7 +23,7 @@ import { WidgetSystemMonitorComponent } from '../components/widgets/widget-syste
 import { WidgetQuicksettingsListComponent } from '../components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 import { WidgetLightingComponent } from '../components/widgets/widget-lighting/widget-lighting.component';
 import { ContainerCardModule } from '../components/container-card/container-card.module';
-import { MetricsModule } from '../directives/metrics.module';
+import { MetricsModule } from '../services/metric/metrics.module';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faQuestionCircle } from '@fortawesome/pro-light-svg-icons/faQuestionCircle';
 import { faKeyboard } from '@fortawesome/pro-light-svg-icons/faKeyboard';

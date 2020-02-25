@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 import { TranslateStore } from '@ngx-translate/core';
 import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 import { UiRoundedRectangleRadioComponent } from '../ui/ui-rounded-rectangle-radio/ui-rounded-rectangle-radio.component';
-import { MetricsDirective } from 'src/app/directives/metrics.directive';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('CameraBackgroundBlurComponent', () => {
@@ -33,7 +32,7 @@ describe('CameraBackgroundBlurComponent', () => {
     function setup() {
       const fixture = TestBed.createComponent(CameraBackgroundBlurComponent);
       const component = fixture.debugElement.componentInstance;
-      //const componentElement = fixture.debugElement.nativeElement; 
+      //const componentElement = fixture.debugElement.nativeElement;
 
       return { fixture, component };
     }
