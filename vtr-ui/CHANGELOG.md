@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.9](https://bitbucket.tc.lenovo.com///compare/v1.3.8...v1.3.9) (2020-02-25)
+
+
+### Bug Fixes
+
+* **nls:** merge test to develop ([60ed425](https://bitbucket.tc.lenovo.com///commit/60ed4250dcbd86606dc8baf968818825efbc2896))
+
+### [1.3.7](https://bitbucket.tc.lenovo.com///compare/v1.3.6...v1.3.7) (2020-02-24)
+
 ### [1.3.8](https://bitbucket.tc.lenovo.com///compare/v1.3.6...v1.3.8) (2020-02-24)
 
 
