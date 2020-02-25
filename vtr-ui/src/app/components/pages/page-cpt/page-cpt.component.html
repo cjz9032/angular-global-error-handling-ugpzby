@@ -128,7 +128,7 @@
                     </div>
                     <div class="row mb-40">
                         <div class="col col-12"
-                            [ngClass]="{'showEditor': serverSwitchResponse.showeditor, 'hideEditor': !serverSwitchResponse.showeditor}"
+                            [ngClass]="{'showEditor': serverSwitchResponse.showeditor && !serverSwitchResponse.responseError.isError, 'hideEditor': !serverSwitchResponse.showeditor || serverSwitchResponse.responseError.isError}"
                             role="text" tabindex="0" id="cpt-cms-response">
                             <h2>CMS Response:</h2>
                             <span *ngIf="serverSwitchResponse.isloading == null"></span>

@@ -1318,7 +1318,7 @@
 						},
 						"progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
 						"progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-						"progressText3": "{{stage}} of {{stageNum}}: Calibrating to high battery power",
+						"progressText3": "Step {{stage}}, out of {{stageNum}} steps in total",
 						"FCCText": "From {{before}} Wh to {{after}} Wh",
 						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
 						"dual_note": "Note: Only one battery can be reset at a time.",
