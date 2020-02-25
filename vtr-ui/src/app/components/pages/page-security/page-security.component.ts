@@ -205,7 +205,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.advanceItems = [];
 		if (!this.pluginSupport) {
 			this.windowsActiveLandingViewModel = undefined;
-			this.uacLandingViewModel = undefined;
 			this.bitLockerLandingViewModel = undefined;
 		}
 		this.baseItems.push(this.antivirusLandingViewModel.avStatus,
@@ -232,7 +231,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		};
 		if (!this.pluginSupport) {
 			this.windowsActiveLandingViewModel = undefined;
-			this.uacLandingViewModel = undefined;
 			this.bitLockerLandingViewModel = undefined;
 		}
 		statusList.basic = new Array(

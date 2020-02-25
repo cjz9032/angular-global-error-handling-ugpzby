@@ -26,7 +26,6 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	@Input() securityAdvisor: SecurityAdvisor;
 	items: Array<WidgetItem>;
 	region: string;
-	pluginSupport = true;
 
 	@Input() linkId: string;
 	constructor(
@@ -50,13 +49,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			this.region = 'us';
 			this.showVpn();
 		});
-		this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
-			this.pluginSupport = result === 'true';
-		}).catch((e) => {
-			this.pluginSupport = false;
-		}).finally(() => {
-			this.showUac();
-		});
+
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
 			this.items.splice(this.items.length - 1, 0, new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
@@ -113,15 +106,6 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		} else {
 			if (vpnItem) {
 				this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-vpn'));
-			}
-		}
-	}
-
-	showUac() {
-		const uacItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-uac'));
-		if (!this.pluginSupport) {
-			if (uacItem) {
-				this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-uac'));
 			}
 		}
 	}
