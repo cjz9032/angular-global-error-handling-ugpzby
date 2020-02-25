@@ -60,6 +60,18 @@
 					.button {
 						background: $grey_light;
 						color: $button_disable_text;
+						
+							@media #{$black-on-white} {
+								background: $grey_light;
+								color: $button_disable_text;
+										}
+									@media #{$white-on-black} {
+						
+										background: $grey_light;
+										color: $button_disable_text;
+						
+									}
+									
 					}
 				}
 			}

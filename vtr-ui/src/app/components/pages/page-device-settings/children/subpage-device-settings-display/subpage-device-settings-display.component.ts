@@ -369,8 +369,11 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			'671f1454b4101503f00ff4f786d44fa0',
 			'479a92a1dccaf9467d168ede8848faba',
 		];
-		return this.deviceService.getDeviceInfo()
-			.then(res => whitelist.includes(Md5.hashStr(res.bios.substr(0, 5)) as string));
+		return this.deviceService.getMachineInfo()
+			.then(res => res.hasOwnProperty('biosVersion')
+					&& res.biosVersion === 'string'
+					&& res.biosVersion.length >= 5
+					&& whitelist.includes(Md5.hashStr(res.biosVersion.substr(0, 5)) as string));
 	}
 
 	async initCameraSection() {
