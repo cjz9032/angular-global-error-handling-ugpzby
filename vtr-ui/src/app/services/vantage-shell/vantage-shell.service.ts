@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
 import { Backlight } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.interface';
+import { MetricHelper } from 'src/app/services/metric/metrics.helper';
+
 declare var window;
 
 @Injectable({
@@ -182,7 +184,7 @@ export class VantageShellService {
 			return this.phoenix.metrics;
 		}
 
-		return null;
+		return MetricHelper.createSimulateObj();
 	}
 
 	public getMetricsPolicy(callback) {
