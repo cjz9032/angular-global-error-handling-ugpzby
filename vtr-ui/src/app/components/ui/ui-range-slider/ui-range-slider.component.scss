@@ -124,23 +124,17 @@ but not to any other element on the page. using ::ng-deep
 		.ng5-slider {
 			.ng5-slider-pointer, .ng5-slider-selection {
 				background: #8b91a2 !important;
+				@media #{$white-on-black} {
+					background: $high-contrast-black-disabled !important;
+					border: none;
+				}
+				@media #{$black-on-white} {
+					background: $high-contrast-white-disabled !important;
+					border: none;
+				}
 			}
 		}
 	}
 
-	// [disabled].ng5-slider .ng5-slider-pointer {
-	// 	background-color: initial;
-	// }
-
-	// [disabled].ng5-slider .ng5-slider-selection {
-	// 	@media #{$white-on-black}{
-	// 		background-color: $go_dark;
-
-	// 	}
-	// 	@media #{$black-on-white}{
-
-	// 		background-color: $high-contrast-white-disabled;
-
-	// 	}
-	// }
+	
 }

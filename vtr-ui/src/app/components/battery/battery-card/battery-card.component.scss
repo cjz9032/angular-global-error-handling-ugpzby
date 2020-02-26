@@ -90,28 +90,17 @@
 				}
 			}
 			@media #{$black-on-white} {
-				border: 0.1rem brown;  
+				border: 0.1rem $high-contrast-white-disabled;  
 				border-radius: 5rem;
 				padding-top: 25px;
 			}
 			@media #{$white-on-black} {
-				border: 0.1rem green;
+				border: 0.1rem high-contrast-black-disabled;
 				border-radius: 5rem;
 				padding-top: 25px;
 			}
 		}
-		// .btn-disabled{
-		// 	@media #{$black-on-white} {
-		// 		border: 0.1rem brown;
-		// 		border-radius: 5rem;
-		// 		padding-top: 25px;
-		// 	}
-		// 	@media #{$white-on-black} {
-		// 		border: 0.1rem green;
-		// 		border-radius: 5rem;
-		// 		padding-top: 25px;
-		// 	}
-		// }
+		
 
 		.feature-note {
 			background-color: $grey_lighter;
@@ -193,12 +182,10 @@
 
 	}
 	@media #{$black-on-white} {
-
 		border: 0.1rem solid $dark;
 		border-radius: 1rem;
 	}
 	@media #{$white-on-black} {
-
 		border: 0.1rem solid $light;
 		border-radius: 1rem;
 	}
@@ -206,25 +193,17 @@
 }
 .modal-header{
 	@media #{$black-on-white} {
-
 		border: 0.1rem solid $dark;
-		//border-radius: 1rem;
 	}
 	@media #{$white-on-black} {
-
 		border: 0.1rem solid $light;
-		//border-radius: 1rem;
-	}
+		}
 	}
 	.modal-body{
 		@media #{$black-on-white} {
-
 			border: 0.1rem solid $dark;
-			//border-radius: 1rem;
 		}
 		@media #{$white-on-black} {
-
 			border: 0.1rem solid $light;
-			//border-radius: 1rem;
 		}
 	}
