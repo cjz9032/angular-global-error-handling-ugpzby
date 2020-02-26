@@ -374,7 +374,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		];
 		return this.deviceService.getMachineInfo()
 			.then(res => res.hasOwnProperty('biosVersion')
-					&& res.biosVersion === 'string'
+					&& typeof res.biosVersion === 'string'
 					&& res.biosVersion.length >= 5
 					&& whitelist.includes(Md5.hashStr(res.biosVersion.substr(0, 5)) as string));
 	}
