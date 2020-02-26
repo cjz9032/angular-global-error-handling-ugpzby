@@ -311,8 +311,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			return EMPTY;
 		}
 	}
+	// fnCtrlSwap & fnAsCtrl features hidden in 3.2.001
  	// FnCtrlSwap feature start here
-	public getFnCtrlSwapCapability() {
+	/*public getFnCtrlSwapCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetFnCtrlSwapCapability().then(res => {
@@ -363,10 +364,11 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			return EMPTY;
 		}
 	}
+	*/
  	// FnCtrlSwap feature end here
 
 	// FnAsCtrl feature start here
-	public getFnAsCtrlCapability() {
+	/*public getFnAsCtrlCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetFnAsCtrlCapability().then(res => {
@@ -413,6 +415,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			return EMPTY;
 		}
 	}
+	*/
 	public getLayoutTable(layOutName) {
 		this.fnCtrlKeyTooltipContent = [];
 		let array = [];
