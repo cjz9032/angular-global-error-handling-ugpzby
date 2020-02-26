@@ -46,24 +46,7 @@
 			color: $main;
 		}
 	}
-		// .container-card{
-		// 	@media #{$black-on-white} {
-		// 		//background-color: $high-contrast-grey;
-		// 		border: 0.1rem solid $dark;
-		// 		border-radius: 1rem;
-		// 		box-sizing: border-box;
-
-
-		// 	}
-		// 	@media #{$white-on-black} {
-		// 		//background-color: $high-contrast-grey;
-		// 		border: 0.1rem solid $light;
-		// 		border-radius: 1rem;
-		// 		box-sizing: border-box;
-
-
-		// 	}
-		// }
+		
 	.smart-settings-card {
 		margin-left: -1.5rem;
 		margin-right: -1.5rem;
@@ -102,7 +85,7 @@
 					border:none;
 				}
 				@media #{$white-on-black} {
-					color: $yellow;
+					color: $high-contrast-black-yellow;
 					border:none;
 				}
 			}
@@ -213,7 +196,7 @@
 				border:none;
 			}
 			@media #{$white-on-black} {
-				color: $yellow;
+				color: $high-contrast-black-yellow;
 				border: none;
 			}
 		}
