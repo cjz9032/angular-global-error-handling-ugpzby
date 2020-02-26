@@ -22,7 +22,7 @@
                     "rapidCharge": "Hurtiglading"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Overklokking på",
                         "performance": "Ytelse",
                         "balance": "Balanse",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Installer GPU-driver for å bruke funksjonen for overklokking.",
                         "goInstall": "INSTALLER"
                     },
-                    "autoSwitch": "Bytt automatisk til ytelsesmodus når du starter spill, og bytt tilbake etter at du har avsluttet spillet."	
+                    "autoSwitch": "Bytt automatisk til ytelsesmodus når du starter spill, og bytt tilbake etter at du har avsluttet spillet."
                 },
                 "advancedOC": {
                     "title": "Overklokking Avansert",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Send skjermbilde",
                 "messages": {
                     "feedbackSuccess": "Takk for tilbakemeldingen!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Batteriet er i god stand.</b>",
                     "Exhaustion": "Batterikapasiteten er <b>redusert</b>. Bytt det ut med et nytt.",
                     "Bad": "<b>Det har oppstått en batterifeil.</b> Batteriet kan ikke lades/utlades. Bytt batteri.",
-                    "NotDetected": "<b>Kan ikke gjenkjenne batteri, eller</b> batteri ikke satt i.",
+                    "NotDetected": "<b>Batteri ikke oppdaget.</b>",
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
                     "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ET ENERGY STAR SERTIFISERT PRODUKT"
-				},
-				"dpm": {
-					"title": "Strøm",
-					"subtitle": "Strøminnstillinger",
-					"description": "Denne delen lar deg kontrollere standardinnstillingene og tilpasse strømbruk og strømplan etter behov.",
-					"globalPowerSettings": {
-						"title": "Globale strøminnstillinger",
-						"description": "Denne funksjonen overstyrer innstillingene for Strømplan eller Strømbruk.",
-						"powerButton": {
-							"label": "AV/PÅ-KNAPP:",
-							"items": {
-								"doNothing": "Ikke gjør noe",
-								"sleep": "Sov",
-								"hibernate": "Dvalemodus",
-								"shutDown": "Avslutt",
-								"turnOffTheDisplay": "Slå av skjermen"
-							}
-						},
-						"requiredSignIn": {
-							"label": "KREVER PÅLOGGING:",
-							"items": {
-								"never": "Aldri",
-								"fromSleep": "Når PC-en starter opp fra hvilemodus"
-							},
-							"tip": "Merk: Dette fungerer bare hvis det er angitt systempassord."
-						}
-					},
-					"powerUse": {
-						"title": "Strømbruk",
-						"description": "HVIS SYSTEMET ER INAKTIVT:",
-						"turnOffDisplay": "SLÅ AV SKJERM ETTER:",
-						"turnOffHDD": "SLÅ AV HARDDISK ETTER:",
-						"sleep": "HVILEMODUS ETTER:",
-						"hibernate": "DVALEMODUS ETTER:",
-						"items": {
-							"never": "Aldri",
-							"minute": "minutt",
-							"minutes": "minutter",
-							"hour": "time",
-							"hours": "timer"
-						}
-					},
-					"powerPlan": {
-						"title": "Strømplan",
-						"description": "Velg en strømplan for å styre datamaskinens ytelse, systemets temperatur og strømbruk.",
-						"currentPowerPlan": {
-							"label": "GJELDENDE PLAN"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Strøm",
+                    "subtitle": "Strøminnstillinger",
+                    "description": "Denne delen lar deg kontrollere standardinnstillingene og tilpasse strømbruk og strømplan etter behov.",
+                    "globalPowerSettings": {
+                        "title": "Globale strøminnstillinger",
+                        "description": "Denne funksjonen overstyrer innstillingene for Strømplan eller Strømbruk.",
+                        "powerButton": {
+                            "label": "AV/PÅ-KNAPP:",
+                            "items": {
+                                "doNothing": "Ikke gjør noe",
+                                "sleep": "Sov",
+                                "hibernate": "Dvalemodus",
+                                "shutDown": "Avslutt",
+                                "turnOffTheDisplay": "Slå av skjermen"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "KREVER PÅLOGGING:",
+                            "items": {
+                                "never": "Aldri",
+                                "fromSleep": "Når PC-en starter opp fra hvilemodus"
+                            },
+                            "tip": "Merk: Dette fungerer bare hvis det er angitt systempassord."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Strømbruk",
+                        "description": "HVIS SYSTEMET ER INAKTIVT:",
+                        "turnOffDisplay": "SLÅ AV SKJERM ETTER:",
+                        "turnOffHDD": "SLÅ AV HARDDISK ETTER:",
+                        "sleep": "HVILEMODUS ETTER:",
+                        "hibernate": "DVALEMODUS ETTER:",
+                        "items": {
+                            "never": "Aldri",
+                            "minute": "minutt",
+                            "minutes": "minutter",
+                            "hour": "time",
+                            "hours": "timer"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Strømplan",
+                        "description": "Velg en strømplan for å styre datamaskinens ytelse, systemets temperatur og strømbruk.",
+                        "currentPowerPlan": {
+                            "label": "GJELDENDE PLAN"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Smart hvilemodus",
                     "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker opplevelsen av rask gjenopptakelse for <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Moderne hvilemodus</a> på tidspunkter med tyngre bruk.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Vennligst velg",
                             "option2": "Åpen nettside",
-                            "option3": "Skriv inn tekst"
-                        }
+                            "option3": "Skriv inn tekst",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Innhold som skal fylles ut",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "TEKST SOM SKAL SKRIVES INN",
                         "placeholder": "Skriv her"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Intelligent medieavspilling",
                 "title": "Berøringsfri videoavspilling",
                 "desc": "Denne funksjonen setter videoen på pause når du forlater datamaskinen, og fortsetter avspillingen når du kommer tilbake.",
-                "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
+                "tooltip": "Denne funksjonen støttes ikke på<br>nettvideospillere.<br>De støttede spillerne er listet opp som følger<br>: 5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Intelligent medieavspilling",
@@ -3478,7 +3495,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-			"security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
+            "security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
             "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep."
         }
     },

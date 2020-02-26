@@ -22,7 +22,7 @@
                     "rapidCharge": "Быстрая зарядка"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Разгон включен",
                         "performance": "Производ-ть",
                         "balance": "Баланс",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Установите драйвер ГП для использования функции разгона.",
                         "goInstall": "ПЕРЕЙТИ К УСТАНОВКЕ"
                     },
-                    "autoSwitch": "Автоматический переход в режим производительности при запуске игр с последующим возвратом после выхода из игры."	
+                    "autoSwitch": "Автоматический переход в режим производительности при запуске игр с последующим возвратом после выхода из игры."
                 },
                 "advancedOC": {
                     "title": "Доп. параметры разгона",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Отправить снимок экрана",
                 "messages": {
                     "feedbackSuccess": "Благодарим за отзыв!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Аккумулятор в хорошем состоянии.</b>",
                     "Exhaustion": "Емкость аккумулятора <b>уменьшилась</b>. Замените аккумулятор на новый.",
                     "Bad": "<b>Произошла ошибка аккумулятора.</b> Не удается зарядить/разрядить аккумулятор. Замените аккумулятор.",
-                    "NotDetected": "<b>Аккумулятор не найден</b> или не подключен.",
+                    "NotDetected": "<b>Аккумулятор не найден.</b>",
                     "NotGood": "<b>Аккумулятор не в хорошем состоянии.</b>",
                     "NotSupportACAdapter": "<b>Адаптер электропитания не поддерживается.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер электропитания не может обеспечить достаточное питание.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ПРОДУКТ С СЕРТИФИКАТОМ ENERGY STAR"
-				},
-				"dpm": {
-					"title": "Питание",
-					"subtitle": "Параметры питания",
-					"description": "В этом разделе вы можете проверить параметры по умолчанию и настроить использование электропитание и план электропитания с учетом ваших потребностей.",
-					"globalPowerSettings": {
-						"title": "Глобальные параметры питания",
-						"description": "Эта функция переопределяет параметры использования электропитания и плана электропитания.",
-						"powerButton": {
-							"label": "КНОПКА ПИТАНИЯ:",
-							"items": {
-								"doNothing": "Ничего не делать",
-								"sleep": "Спящий режим",
-								"hibernate": "Спящий режим",
-								"shutDown": "Выключить",
-								"turnOffTheDisplay": "Отключить дисплей"
-							}
-						},
-						"requiredSignIn": {
-							"label": "ТРЕБУЕТСЯ ВЫПОЛНИТЬ ВХОД:",
-							"items": {
-								"never": "Никогда",
-								"fromSleep": "При выходе компьютера из спящего режима"
-							},
-							"tip": "Примечание. Эта функция работает, только если установлен системный пароль."
-						}
-					},
-					"powerUse": {
-						"title": "Использование электропитания",
-						"description": "ЕСЛИ СИСТЕМА БЕЗДЕЙСТВУЕТ:",
-						"turnOffDisplay": "ВЫКЛЮЧИТЬ ДИСПЛЕЙ ЧЕРЕЗ:",
-						"turnOffHDD": "ОТКЛЮЧИТЬ ЖЕСТКИЙ ДИСК ЧЕРЕЗ:",
-						"sleep": "ПЕРЕЙТИ В СПЯЩИЙ РЕЖИМ ЧЕРЕЗ:",
-						"hibernate": "ПЕРЕЙТИ В РЕЖИМ ГИБЕРНАЦИИ ЧЕРЕЗ:",
-						"items": {
-							"never": "Никогда",
-							"minute": "минута",
-							"minutes": "мин",
-							"hour": "час",
-							"hours": "часы"
-						}
-					},
-					"powerPlan": {
-						"title": "План электропитания",
-						"description": "Выберите план электропитания для управления производительностью, температурой системы и энергопотреблением устройства.",
-						"currentPowerPlan": {
-							"label": "ТЕКУЩИЙ ПЛАН"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Питание",
+                    "subtitle": "Параметры питания",
+                    "description": "В этом разделе вы можете проверить параметры по умолчанию и настроить использование электропитание и план электропитания с учетом ваших потребностей.",
+                    "globalPowerSettings": {
+                        "title": "Глобальные параметры питания",
+                        "description": "Эта функция переопределяет параметры использования электропитания и плана электропитания.",
+                        "powerButton": {
+                            "label": "КНОПКА ПИТАНИЯ:",
+                            "items": {
+                                "doNothing": "Ничего не делать",
+                                "sleep": "Спящий режим",
+                                "hibernate": "Спящий режим",
+                                "shutDown": "Выключить",
+                                "turnOffTheDisplay": "Отключить дисплей"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "ТРЕБУЕТСЯ ВЫПОЛНИТЬ ВХОД:",
+                            "items": {
+                                "never": "Никогда",
+                                "fromSleep": "При выходе компьютера из спящего режима"
+                            },
+                            "tip": "Примечание. Эта функция работает, только если установлен системный пароль."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Использование электропитания",
+                        "description": "ЕСЛИ СИСТЕМА БЕЗДЕЙСТВУЕТ:",
+                        "turnOffDisplay": "ВЫКЛЮЧИТЬ ДИСПЛЕЙ ЧЕРЕЗ:",
+                        "turnOffHDD": "ОТКЛЮЧИТЬ ЖЕСТКИЙ ДИСК ЧЕРЕЗ:",
+                        "sleep": "ПЕРЕЙТИ В СПЯЩИЙ РЕЖИМ ЧЕРЕЗ:",
+                        "hibernate": "ПЕРЕЙТИ В РЕЖИМ ГИБЕРНАЦИИ ЧЕРЕЗ:",
+                        "items": {
+                            "never": "Никогда",
+                            "minute": "минута",
+                            "minutes": "мин",
+                            "hour": "час",
+                            "hours": "часы"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "План электропитания",
+                        "description": "Выберите план электропитания для управления производительностью, температурой системы и энергопотреблением устройства.",
+                        "currentPowerPlan": {
+                            "label": "ТЕКУЩИЙ ПЛАН"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Интеллектуальный режим ожидания",
                     "description": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого возвращения к работе в <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">текущем режиме ожидания</a> в часы интенсивного использования.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Выберите",
                             "option2": "Открытый сайт",
-                            "option3": "Введите текст"
-                        }
+                            "option3": "Введите текст",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Заполняемое содержимое",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "ВВОДИМЫЙ ТЕКСТ",
                         "placeholder": "Введите адрес здесь"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Интеллектуальная работа с мультимедиа",
                 "title": "Бесконтактное воспроизведение видео",
                 "desc": "Эта функция приостанавливает воспроизведение видео, когда вы уходите от компьютера, и возобновляет воспроизведение, как только вы снова оказываетесь у компьютера.",
-                "tooltip": "Эта функция не распространяется на интернет-проигрыватели видео. Самые популярные локальные видеопроигрыватели (например,проигрыватель Windows Media Player, 5KPlayer и т. д.) поддерживают эту функцию."
+                "tooltip": "Эта функция не распространяется на<br>интернет-проигрыватели видео.<br>Поддерживаются следующие проигрыватели:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Интеллектуальная работа с мультимедиа",

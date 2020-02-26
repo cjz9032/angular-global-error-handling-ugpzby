@@ -22,7 +22,7 @@
                     "rapidCharge": "Carregamento rápido"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Overclock ativo",
                         "performance": "Desempenho",
                         "balance": "Equilíbrio",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Instalar driver GPU para usar a função Overclocking.",
                         "goInstall": "IR PARA INSTALAR"
                     },
-                    "autoSwitch": "Mude automaticamente para o Modo de Desempenho ao iniciar jogos e reverta quando sair do jogo."	
+                    "autoSwitch": "Mude automaticamente para o Modo de Desempenho ao iniciar jogos e reverta quando sair do jogo."
                 },
                 "advancedOC": {
                     "title": "Def. Avançadas de Overclock",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Enviar captura de ecrã",
                 "messages": {
                     "feedbackSuccess": "Agradecemos os seus comentários!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>A bateria está em boas condições.</b>",
                     "Exhaustion": "A capacidade da bateria <b>degradou-se</b>. Substitua por uma nova.",
                     "Bad": "<b>Ocorreu um erro de bateria.</b> Não é possível carregar/descarregar a bateria. Substitua a bateria.",
-                    "NotDetected": "<b>Nenhuma bateria detetada ou</b> bateria não ligada.",
+                    "NotDetected": "<b>Nenhuma bateria detetada.</b>",
                     "NotGood": "<b>A bateria não está em boas condições.</b>",
                     "NotSupportACAdapter": "<b>O transformador CA não é suportado.</b>",
                     "LimitedACAdapterSupport": "<b>O transformador CA não consegue fornecer energia suficiente.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UM PRODUTO COM CERTIFICAÇÃO ENERGY STAR"
-				},
-				"dpm": {
-					"title": "Alimentação",
-					"subtitle": "Definições de alimentação",
-					"description": "Esta secção permite verificar as predefinições, bem como personalizar a utilização de energia e o plano de alimentação de acordo com as suas necessidades.",
-					"globalPowerSettings": {
-						"title": "Definições gerais de alimentação",
-						"description": "Esta funcionalidade substituirá as definições do Plano de alimentação ou da Utilização da energia.",
-						"powerButton": {
-							"label": "INTERRUPTOR DE ALIMENTAÇÃO:",
-							"items": {
-								"doNothing": "Não fazer nada",
-								"sleep": "Suspensão",
-								"hibernate": "Hibernar",
-								"shutDown": "Encerrar",
-								"turnOffTheDisplay": "Desligar o ecrã"
-							}
-						},
-						"requiredSignIn": {
-							"label": "INÍCIO DE SESSÃO OBRIGATÓRIO:",
-							"items": {
-								"never": "Nunca",
-								"fromSleep": "Quando o PC é reativado do modo de suspensão"
-							},
-							"tip": "Nota: Isto só funciona se a palavra-passe de sistema estiver definida."
-						}
-					},
-					"powerUse": {
-						"title": "Utilização da alimentação",
-						"description": "SE O SISTEMA ESTIVER INATIVO:",
-						"turnOffDisplay": "DESLIGAR O ECRÃ APÓS:",
-						"turnOffHDD": "DESLIGAR HDD APÓS:",
-						"sleep": "ATIVAR MODO DE SUSPENSÃO APÓS:",
-						"hibernate": "HIBERNAR APÓS:",
-						"items": {
-							"never": "Nunca",
-							"minute": "minuto",
-							"minutes": "minutos",
-							"hour": "hora",
-							"hours": "horas"
-						}
-					},
-					"powerPlan": {
-						"title": "Plano de alimentação",
-						"description": "Escolha um plano de alimentação para controlar o desempenho do computador, a temperatura do sistema e a utilização da energia.",
-						"currentPowerPlan": {
-							"label": "PLANO ATUAL"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Alimentação",
+                    "subtitle": "Definições de alimentação",
+                    "description": "Esta secção permite verificar as predefinições, bem como personalizar a utilização de energia e o plano de alimentação de acordo com as suas necessidades.",
+                    "globalPowerSettings": {
+                        "title": "Definições gerais de alimentação",
+                        "description": "Esta funcionalidade substituirá as definições do Plano de alimentação ou da Utilização da energia.",
+                        "powerButton": {
+                            "label": "INTERRUPTOR DE ALIMENTAÇÃO:",
+                            "items": {
+                                "doNothing": "Não fazer nada",
+                                "sleep": "Suspensão",
+                                "hibernate": "Hibernar",
+                                "shutDown": "Encerrar",
+                                "turnOffTheDisplay": "Desligar o ecrã"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "INÍCIO DE SESSÃO OBRIGATÓRIO:",
+                            "items": {
+                                "never": "Nunca",
+                                "fromSleep": "Quando o PC é reativado do modo de suspensão"
+                            },
+                            "tip": "Nota: Isto só funciona se a palavra-passe de sistema estiver definida."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Utilização da alimentação",
+                        "description": "SE O SISTEMA ESTIVER INATIVO:",
+                        "turnOffDisplay": "DESLIGAR O ECRÃ APÓS:",
+                        "turnOffHDD": "DESLIGAR HDD APÓS:",
+                        "sleep": "ATIVAR MODO DE SUSPENSÃO APÓS:",
+                        "hibernate": "HIBERNAR APÓS:",
+                        "items": {
+                            "never": "Nunca",
+                            "minute": "minuto",
+                            "minutes": "minutos",
+                            "hour": "hora",
+                            "hours": "horas"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Plano de alimentação",
+                        "description": "Escolha um plano de alimentação para controlar o desempenho do computador, a temperatura do sistema e a utilização da energia.",
+                        "currentPowerPlan": {
+                            "label": "PLANO ATUAL"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Modo de Suspensão Inteligente",
                     "description": "Esta funcionalidade programa a otimização da poupança de energia da bateria do computador durante os períodos de inatividade sem sacrificar a experiência de retoma rápida a partir do <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modo de Suspensão Moderno</a> durante os horários de utilização intensiva.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Selecione",
                             "option2": "Abrir site",
-                            "option3": "Digite o texto"
-                        }
+                            "option3": "Digite o texto",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Conteúdo a ser preenchido",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "TEXTO A INSERIR",
                         "placeholder": "Digite aqui"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Multimédia Inteligente",
                 "title": "Reprodução de vídeo Zero Touch",
                 "desc": "Esta funcionalidade irá colocar o vídeo em pausa quando o utilizador deixar o computador e retomar o vídeo quando este voltar.",
-                "tooltip": "Esta funcionalidade não se aplica a leitores de vídeo Web. Os leitores de vídeo locais populares, tais como o Windows Media Player e o 5KPlayer, entre outros, suportam esta funcionalidade."
+                "tooltip": "Esta funcionalidade não se aplica a<br>leitores de vídeo Web.<br>Os leitores suportados estão listados da seguinte forma:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Multimédia Inteligente",

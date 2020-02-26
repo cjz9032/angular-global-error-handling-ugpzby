@@ -22,7 +22,7 @@
                     "rapidCharge": "Snabbladdning"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Överklockn. på",
                         "performance": "Prestanda",
                         "balance": "Balans",
@@ -193,7 +193,7 @@
                         "gpuDriverLack": "Installera GPU-drivrutinen om du vill använda överklockningsfunktionen.",
                         "goInstall": "INSTALLERA"
                     },
-                    "autoSwitch": "Växla automatiskt till prestandaläge när du startar spel och växla tillbaka när du är klar."	
+                    "autoSwitch": "Växla automatiskt till prestandaläge när du startar spel och växla tillbaka när du är klar."
                 }
             }
         },
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Skicka skärmdump",
                 "messages": {
                     "feedbackSuccess": "Tack för din feedback!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Batteriet är i gott skick.</b>",
                     "Exhaustion": "Batteriets kapacitet har <b>försämrats</b>. Byt ut det mot ett nytt.",
                     "Bad": "<b>Ett batterifel har uppstått.</b> Batteriet går inte att ladda/ladda ur. Byt ut batteriet.",
-                    "NotDetected": "<b>Inget batteri upptäcktes</b> eller batteriet är inte anslutet.",
+                    "NotDetected": "<b>Inget batteri upptäcktes.</b>",
                     "NotGood": "<b>Batteriet är inte i gott skick.</b>",
                     "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b>",
                     "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning.</b>",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Välj",
                             "option2": "Öppna hemsidan",
-                            "option3": "Skriv text"
-                        }
+                            "option3": "Skriv text",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Platshållare för innehåll",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "PLATSHÅLLARE FÖR TEXT",
                         "placeholder": "Skriv här"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Intelligenta medier",
                 "title": "Beröringsfri videouppspelning",
                 "desc": "Videon pausas när du lämnar datorn och återupptas när du är tillbaka.",
-                "tooltip": "Denna funktion fungerar inte på onlinevideospelare. Vanliga lokala videospelare (som Windows Media Player och 5KPlayer) har stöd för denna funktion."
+                "tooltip": "Denna funktion fungerar inte på<br>onlinevideospelare.<br>Funktionen är kompatibel med följande spelare:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Intelligenta medier",

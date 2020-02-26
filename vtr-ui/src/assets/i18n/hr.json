@@ -22,7 +22,7 @@
                     "rapidCharge": "Brzo punjenje"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Overclock uklj.",
                         "performance": "Performanse",
                         "balance": "Balans",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Instalirajte upravljački program GPU za upotrebu funkcije overclockinga.",
                         "goInstall": "INSTALIRAJ"
                     },
-                    "autoSwitch": "Automatski prebacite u način rada performansi pri pokretanju igara i vratite natrag nakon zatvaranja igre."	
+                    "autoSwitch": "Automatski prebacite u način rada performansi pri pokretanju igara i vratite natrag nakon zatvaranja igre."
                 },
                 "advancedOC": {
                     "title": "Overclock Napredne postavke",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Pošalji snimku zaslona",
                 "messages": {
                     "feedbackSuccess": "Hvala vam na povratnim informacijama!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Baterija je u dobrom stanju.</b>",
                     "Exhaustion": "Kapacitet baterije je <b>degradiran</b>. Zamijenite je novom.",
                     "Bad": "<b>Došlo je do pogreške baterije.</b> Bateriju nije moguće puniti/prazniti. Zamijenite bateriju.",
-                    "NotDetected": "<b>Baterija nije pronađena</b> ili nije priključena.",
+                    "NotDetected": "<b>Nije otkrivena baterija.</b>",
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Prilagodnik izmjeničnog napona nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Prilagodnik izmjeničnog napona ne može pružiti dovoljno energije.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "PROIZVOD S CERTIFIKATOM ENERGY STAR"
-				},
-				"dpm": {
-					"title": "Napajanje",
-					"subtitle": "Postavke napajanja",
-					"description": "Ovaj odjeljak omogućuje vam provjeru zadanih postavki i prilagođavanje potrošnje i plana napajanja prema vašim potrebama.",
-					"globalPowerSettings": {
-						"title": "Globalne postavke napajanja",
-						"description": "Ova će značajka nadvladati postavke napajanja ili postavke upotrebe energije.",
-						"powerButton": {
-							"label": "GUMB ZA NAPAJANJE:",
-							"items": {
-								"doNothing": "Nemojte učiniti ništa",
-								"sleep": "Stanje mirovanja",
-								"hibernate": "Hibernacija",
-								"shutDown": "Isključi",
-								"turnOffTheDisplay": "Isključite zaslon"
-							}
-						},
-						"requiredSignIn": {
-							"label": "POTREBNA PRIJAVA:",
-							"items": {
-								"never": "Nikada",
-								"fromSleep": "Kada se računalo probudi iz sna"
-							},
-							"tip": "Napomena: Ovo funkcionira samo ako je postavljena lozinka sustava."
-						}
-					},
-					"powerUse": {
-						"title": "Uporaba napajanja",
-						"description": "AKO JE SUSTAV U PRAZNOM HODU:",
-						"turnOffDisplay": "ISKLJUČITE ZASLON NAKON:",
-						"turnOffHDD": "ISKLJUČITE TVRDI DISK NAKON:",
-						"sleep": "STANJE MIROVANJA NAKON:",
-						"hibernate": "HIBERNACIJA NAKON:",
-						"items": {
-							"never": "Nikada",
-							"minute": "min",
-							"minutes": "min",
-							"hour": "h",
-							"hours": "h"
-						}
-					},
-					"powerPlan": {
-						"title": "Plan napajanja",
-						"description": "Odaberite plan napajanja da bist eupravljali performansama računala, temperaturom sustava i potrošnjom energije.",
-						"currentPowerPlan": {
-							"label": "TRENUTNI PLAN"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Napajanje",
+                    "subtitle": "Postavke napajanja",
+                    "description": "Ovaj odjeljak omogućuje vam provjeru zadanih postavki i prilagođavanje potrošnje i plana napajanja prema vašim potrebama.",
+                    "globalPowerSettings": {
+                        "title": "Globalne postavke napajanja",
+                        "description": "Ova će značajka nadvladati postavke napajanja ili postavke upotrebe energije.",
+                        "powerButton": {
+                            "label": "GUMB ZA NAPAJANJE:",
+                            "items": {
+                                "doNothing": "Nemojte učiniti ništa",
+                                "sleep": "Stanje mirovanja",
+                                "hibernate": "Hibernacija",
+                                "shutDown": "Isključi",
+                                "turnOffTheDisplay": "Isključite zaslon"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "POTREBNA PRIJAVA:",
+                            "items": {
+                                "never": "Nikada",
+                                "fromSleep": "Kada se računalo probudi iz sna"
+                            },
+                            "tip": "Napomena: Ovo funkcionira samo ako je postavljena lozinka sustava."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Uporaba napajanja",
+                        "description": "AKO JE SUSTAV U PRAZNOM HODU:",
+                        "turnOffDisplay": "ISKLJUČITE ZASLON NAKON:",
+                        "turnOffHDD": "ISKLJUČITE TVRDI DISK NAKON:",
+                        "sleep": "STANJE MIROVANJA NAKON:",
+                        "hibernate": "HIBERNACIJA NAKON:",
+                        "items": {
+                            "never": "Nikada",
+                            "minute": "min",
+                            "minutes": "min",
+                            "hour": "h",
+                            "hours": "h"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Plan napajanja",
+                        "description": "Odaberite plan napajanja da bist eupravljali performansama računala, temperaturom sustava i potrošnjom energije.",
+                        "currentPowerPlan": {
+                            "label": "TRENUTNI PLAN"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Pametno stanje mirovanja",
                     "description": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja iskustva brzog nastavka rada u <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Suvremenom stanju pripravnosti</a> tijekom rada s većim opterećenjem.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Odaberite",
                             "option2": "Otvori web-lokaciju",
-                            "option3": "Unesite tekst"
-                        }
+                            "option3": "Unesite tekst",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Sadržaj treba popuniti",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "TEKST ZA UNOS",
                         "placeholder": "Pišite ovdje"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Zero Touch reprodukcija videozapisa",
                 "desc": "Ta će značajka pauzirati reprodukciju videozapisa kada se udaljite od računala i nastaviti je kada se vratite.",
-                "tooltip": "Ta značajka nije primjenjiva na web-reproduktore videosadržaja. Popularni lokalni reproduktori videosadržaja, kao što su Windows Media Player, 5KPlayer itd., podržavaju tu značajku."
+                "tooltip": "Ova značajka nije primjenjiva na<br>web video uređajima za reprodukciju.<br>Igrači koji su podržani su navedeni na sljedeći način:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Inteligentni mediji",

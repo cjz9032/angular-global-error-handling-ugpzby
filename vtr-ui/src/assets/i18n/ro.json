@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Pentru a utiliza funcția Overclocking, instalați driverul GPU.",
                         "goInstall": "INSTALAȚI"
                     },
-                    "autoSwitch": "Treceți automat la modul Performanță atunci când lansați jocuri și reveniți după ce ieșiți din joc."	
+                    "autoSwitch": "Treceți automat la modul Performanță atunci când lansați jocuri și reveniți după ce ieșiți din joc."
                 },
                 "advancedOC": {
                     "title": "Setări complexe Overclock",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Trimiteți captura de ecran",
                 "messages": {
                     "feedbackSuccess": "Vă mulţumim pentru feedbackul furnizat!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Bateria este în stare bună.</b>",
                     "Exhaustion": "Capacitatea bateriei s-a <b>degradat</b>. Înlocuiţi-o cu una nouă.",
                     "Bad": "<b>A apărut o eroare la baterie.</b> Bateria nu poate fi încărcată/descărcată. Înlocuiţi bateria.",
-                    "NotDetected": "<b>Nu a fost detectată nicio baterie sau bateria nu</b> este conectată.",
+                    "NotDetected": "<b>Nu a fost detectată nicio baterie.</b>",
                     "NotGood": "<b>Bateria nu este în stare bună.</b>",
                     "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b>",
                     "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă putere.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UN PRODUS CERTIFICAT ENERGY STAR"
-				},
-				"dpm": {
-					"title": "Alimentare",
-					"subtitle": "Setări alimentare",
-					"description": "Această secțiune vă permite să verificați setările implicite și să personalizați consumul de energie și planul de alimentare, conform cerințelor dvs.",
-					"globalPowerSettings": {
-						"title": "Setări alimentare globale",
-						"description": "Această caracteristică va suprascrie setările planului de alimentare sau ale consumului de energie.",
-						"powerButton": {
-							"label": "BUTON DE ALIMENTARE:",
-							"items": {
-								"doNothing": "Nu se întâmplă nimic",
-								"sleep": "Repaus",
-								"hibernate": "Hibernare",
-								"shutDown": "Închidere",
-								"turnOffTheDisplay": "Stingere afișaj"
-							}
-						},
-						"requiredSignIn": {
-							"label": "ESTE NECESARĂ CONECTAREA:",
-							"items": {
-								"never": "Niciodată",
-								"fromSleep": "Când PC-ul se activează din repaus"
-							},
-							"tip": "Notă: Această opțiune funcționează numai dacă este setată parola de sistem."
-						}
-					},
-					"powerUse": {
-						"title": "Consum de energie",
-						"description": "DACĂ SISTEMUL ESTE INACTIV:",
-						"turnOffDisplay": "OPRIRE AFIȘAJ DUPĂ:",
-						"turnOffHDD": "OPRIRE HDD DUPĂ:",
-						"sleep": "REPAUS DUPĂ:",
-						"hibernate": "HIBERNARE DUPĂ:",
-						"items": {
-							"never": "Niciodată",
-							"minute": "minut",
-							"minutes": "minute",
-							"hour": "oră",
-							"hours": "ore"
-						}
-					},
-					"powerPlan": {
-						"title": "Plan de alimentare",
-						"description": "Alegeți un plan de alimentare pentru a controla performanța computerului, temperatura sistemului și consumul de energie.",
-						"currentPowerPlan": {
-							"label": "PLAN ACTUAL"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Alimentare",
+                    "subtitle": "Setări alimentare",
+                    "description": "Această secțiune vă permite să verificați setările implicite și să personalizați consumul de energie și planul de alimentare, conform cerințelor dvs.",
+                    "globalPowerSettings": {
+                        "title": "Setări alimentare globale",
+                        "description": "Această caracteristică va suprascrie setările planului de alimentare sau ale consumului de energie.",
+                        "powerButton": {
+                            "label": "BUTON DE ALIMENTARE:",
+                            "items": {
+                                "doNothing": "Nu se întâmplă nimic",
+                                "sleep": "Repaus",
+                                "hibernate": "Hibernare",
+                                "shutDown": "Închidere",
+                                "turnOffTheDisplay": "Stingere afișaj"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "ESTE NECESARĂ CONECTAREA:",
+                            "items": {
+                                "never": "Niciodată",
+                                "fromSleep": "Când PC-ul se activează din repaus"
+                            },
+                            "tip": "Notă: Această opțiune funcționează numai dacă este setată parola de sistem."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Consum de energie",
+                        "description": "DACĂ SISTEMUL ESTE INACTIV:",
+                        "turnOffDisplay": "OPRIRE AFIȘAJ DUPĂ:",
+                        "turnOffHDD": "OPRIRE HDD DUPĂ:",
+                        "sleep": "REPAUS DUPĂ:",
+                        "hibernate": "HIBERNARE DUPĂ:",
+                        "items": {
+                            "never": "Niciodată",
+                            "minute": "minut",
+                            "minutes": "minute",
+                            "hour": "oră",
+                            "hours": "ore"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Plan de alimentare",
+                        "description": "Alegeți un plan de alimentare pentru a controla performanța computerului, temperatura sistemului și consumul de energie.",
+                        "currentPowerPlan": {
+                            "label": "PLAN ACTUAL"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Stare de veghe inteligentă",
                     "description": "Această caracteristică programează computerul să optimizeze modul de economisire a energiei bateriei în timpul orelor de inactivitate, fără a afecta experiența de reluare rapidă pentru <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a>, în timpul orelor de utilizare intensivă.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Selectaţi",
                             "option2": "Deschideți site-ul web",
-                            "option3": "Introduceți text"
-                        }
+                            "option3": "Introduceți text",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Conținut de completat",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "TEXT DE INTRODUS",
                         "placeholder": "Tastaţi aici"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Medii inteligente",
                 "title": "Redare video fără atingere",
                 "desc": "Această funcție întrerupe videoclipul atunci când părăsiți computerul și reia redarea atunci când vă întoarceți.",
-                "tooltip": "Această funcție nu se aplică jucătorilor de jocuri video pe web. Cele mai populare playere video locale, cum ar fi Windows Media Player, 5KPlayer și altele, acceptă această funcție."
+                "tooltip": "Această caracteristică nu se aplică<br>playerelor video web.<br>Playerele acceptate sunt afișate după cum urmează:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Medii inteligente",

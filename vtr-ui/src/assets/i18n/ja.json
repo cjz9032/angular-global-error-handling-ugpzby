@@ -22,7 +22,7 @@
                     "rapidCharge": "急速充電"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "CLKUPオン",
                         "performance": "性能",
                         "balance": "バランス",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "GPU ドライバーをインストールしてクロックアップ機能を使用。",
                         "goInstall": "インストールする"
                     },
-                    "autoSwitch": "ゲームの起動時に自動的にパフォーマンス・モードに切り替え、ゲーム終了後は元に戻します。"	
+                    "autoSwitch": "ゲームの起動時に自動的にパフォーマンス・モードに切り替え、ゲーム終了後は元に戻します。"
                 },
                 "advancedOC": {
                     "title": "CLKUP詳細設定",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "スクリーンショットを送信する",
                 "messages": {
                     "feedbackSuccess": "フィードバックをありがとうございました!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>バッテリーは良好な状態です。</b>",
                     "Exhaustion": "バッテリー容量が<b>低下しています</b>。新しいバッテリーに交換してください。",
                     "Bad": "<b>バッテリー・エラーが発生しました。</b>バッテリーを充電/放電できません。バッテリーを交換してください。",
-                    "NotDetected": "<b>バッテリーが検出されないか</b>、接続されていません。",
+                    "NotDetected": "<b>バッテリーが検出されませんでした。</b>",
                     "NotGood": "<b>バッテリーは良好な状態ではありません。</b>",
                     "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>",
                     "LimitedACAdapterSupport": "<b>ACアダプターが十分な電力を供給できません。</b>",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "選択してください",
                             "option2": "ウェブサイトを開く",
-                            "option3": "テキストを入力"
-                        }
+                            "option3": "テキストを入力",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "記入する内容",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "入力するテキスト",
                         "placeholder": "ここに入力してください"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "インテリジェント・メディア",
                 "title": "ビデオの自動再生",
                 "desc": "この機能では、コンピューターを離れるときにビデオを一時停止し、戻ったときにビデオを再開します。",
-                "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
+                "tooltip": "この機能は Web ビデオ・プレイヤーに<br>適用できません。<br>サポートされているプレーヤーは次のとおりです。<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "インテリジェント・メディア",

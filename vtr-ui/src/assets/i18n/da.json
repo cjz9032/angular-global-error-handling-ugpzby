@@ -22,7 +22,7 @@
                     "rapidCharge": "Hurtig opladning"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Overclock. til",
                         "performance": "Ydeevne",
                         "balance": "Balance",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Installer GPU-driver for at bruge overclockingfunktionen.",
                         "goInstall": "INSTALLER"
                     },
-                    "autoSwitch": "Skift automatisk til ydeevnetilstand, når du starter spil, og skift tilbage, når spillet af afsluttet."	
+                    "autoSwitch": "Skift automatisk til ydeevnetilstand, når du starter spil, og skift tilbage, når spillet af afsluttet."
                 },
                 "advancedOC": {
                     "title": "Avan. instil. f. overclock.",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Send skærmbillede",
                 "messages": {
                     "feedbackSuccess": "Tak for din feedback!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Batteriets tilstand er god.</b>",
                     "Exhaustion": "Batteriets kapacitet er blevet <b>forringet</b>. Udskift det med et nyt.",
                     "Bad": "<b>Der er opstået en batterifejl.</b> Batteriet kan ikke oplades/aflades. Udskift batteriet.",
-                    "NotDetected": "<b>Der er ikke registreret et batteri</b>, eller der er ikke tilsluttet noget batteri.",
+                    "NotDetected": "<b>Der blev ikke fundet noget batteri.</b>",
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
                     "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ET ENERGY STAR-CERTIFICERET PRODUKT"
-				},
-				"dpm": {
-					"title": "Strøm",
-					"subtitle": "Strømindstillinger",
-					"description": "I denne sektion kan du tjekke standardindstillingerne og tilpasse dit strømforbrug og din strømplan i overensstemmelse med dine behov.",
-					"globalPowerSettings": {
-						"title": "Globale strømindstillinger",
-						"description": "Denne funktion tilsidesætter indstillingerne for Strømplan eller Strømforbrug.",
-						"powerButton": {
-							"label": "TÆND/SLUK-KNAP:",
-							"items": {
-								"doNothing": "Gør intet",
-								"sleep": "Slumre",
-								"hibernate": "Dvale",
-								"shutDown": "Luk computeren",
-								"turnOffTheDisplay": "Sluk for skærmen"
-							}
-						},
-						"requiredSignIn": {
-							"label": "DER KRÆVES LOGON:",
-							"items": {
-								"never": "Aldrig",
-								"fromSleep": "Når pc'en vågner op fra slumretilstand"
-							},
-							"tip": "Bemærk: Dette virker kun, hvis systemadgangskoden er angivet."
-						}
-					},
-					"powerUse": {
-						"title": "Strømforbrug",
-						"description": "HVIS SYSTEMET ER INAKTIVT:",
-						"turnOffDisplay": "SLUK FOR SKÆRMEN EFTER:",
-						"turnOffHDD": "SLUK FOR HARDDISKEN EFTER:",
-						"sleep": "SKIFT TIL SLUMRETILSTAND EFTER:",
-						"hibernate": "SKIFT TIL DVALETILSTAND EFTER:",
-						"items": {
-							"never": "Aldrig",
-							"minute": "minut",
-							"minutes": "minutter",
-							"hour": "time",
-							"hours": "timer"
-						}
-					},
-					"powerPlan": {
-						"title": "Strømskema",
-						"description": "Vælg en strømplan til at styre din computers ydeevne, systemtemperatur og strømforbrug.",
-						"currentPowerPlan": {
-							"label": "NUVÆRENDE PLAN"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Strøm",
+                    "subtitle": "Strømindstillinger",
+                    "description": "I denne sektion kan du tjekke standardindstillingerne og tilpasse dit strømforbrug og din strømplan i overensstemmelse med dine behov.",
+                    "globalPowerSettings": {
+                        "title": "Globale strømindstillinger",
+                        "description": "Denne funktion tilsidesætter indstillingerne for Strømplan eller Strømforbrug.",
+                        "powerButton": {
+                            "label": "TÆND/SLUK-KNAP:",
+                            "items": {
+                                "doNothing": "Gør intet",
+                                "sleep": "Slumre",
+                                "hibernate": "Dvale",
+                                "shutDown": "Luk computeren",
+                                "turnOffTheDisplay": "Sluk for skærmen"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "DER KRÆVES LOGON:",
+                            "items": {
+                                "never": "Aldrig",
+                                "fromSleep": "Når pc'en vågner op fra slumretilstand"
+                            },
+                            "tip": "Bemærk: Dette virker kun, hvis systemadgangskoden er angivet."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Strømforbrug",
+                        "description": "HVIS SYSTEMET ER INAKTIVT:",
+                        "turnOffDisplay": "SLUK FOR SKÆRMEN EFTER:",
+                        "turnOffHDD": "SLUK FOR HARDDISKEN EFTER:",
+                        "sleep": "SKIFT TIL SLUMRETILSTAND EFTER:",
+                        "hibernate": "SKIFT TIL DVALETILSTAND EFTER:",
+                        "items": {
+                            "never": "Aldrig",
+                            "minute": "minut",
+                            "minutes": "minutter",
+                            "hour": "time",
+                            "hours": "timer"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Strømskema",
+                        "description": "Vælg en strømplan til at styre din computers ydeevne, systemtemperatur og strømforbrug.",
+                        "currentPowerPlan": {
+                            "label": "NUVÆRENDE PLAN"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Smart-standby",
                     "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at genoptage dit arbejde hurtigt ved hjælp af <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Moderne standby</a> i perioder med mere intens aktivitet.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Vælg",
                             "option2": "Åben hjemmeside",
-                            "option3": "Indtast tekst"
-                        }
+                            "option3": "Indtast tekst",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Indhold, der skal udfyldes",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "TEKST, DER SKAL SKRIVES",
                         "placeholder": "Skriv her"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Intelligente medier",
                 "title": "Videoafspilning uden berøring",
                 "desc": "Denne funktion afbryder videoen, når du forlader computeren, og genoptager videoen, når du er tilbage.",
-                "tooltip": "Denne funktion kan ikke bruges med internetvideoafspillere. Populære lokale videoafspillere som f.eks. Windows Media Player, 5KPlayer osv. understøtter denne funktion."
+                "tooltip": "Denne funktion kan ikke bruges med<br>internetvideoafspillere.<br>Følgende afspillere understøttes:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Intelligente medier",
@@ -3478,7 +3495,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-			"security": "Vidste du det? Selvom du ikke har et antivirusprogram installeret, tilbyder vi stadig en grundlæggende sikkerhedsbeskyttelse til din enhed.",
+            "security": "Vidste du det? Selvom du ikke har et antivirusprogram installeret, tilbyder vi stadig en grundlæggende sikkerhedsbeskyttelse til din enhed.",
             "connectedHomeSecurity": "Få overvågning i realtid og advarsler om din netværkssikkerhed derhjemme. Du er den første, der får det at vide, hvis nogen af dine smart-enheder er udsat for et sikkerhedsangreb."
         }
     },
