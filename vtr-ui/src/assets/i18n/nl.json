@@ -22,7 +22,7 @@
                     "rapidCharge": "Snelladen"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Overklok aan",
                         "performance": "Prestaties",
                         "balance": "Balans",
@@ -107,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Instelling thermische modus",
-                    "thermalMode2SettingDesc": "Kies de modus die u wilt gebruiken.",
+                    "thermalMode2SettingDesc": "Selecteer de modus die u wilt gebruiken.",
                     "fnQDesc": "U kunt de modus wijzigen met de sneltoets Fn+Q.",
                     "perormanceTitle": "Prestatiemodus",
-                    "performanceDesc": "Verhoog de prestaties van uw computer met meer ventilatorsnelheid en meer energieverbruik.",
-                    "OCDesc": "U kunt de functie overklokken inschakelen.",
-                    "ac_dcDesc": "Prestatiemodus alleen beschikbaar wanneer aangesloten.",
+                    "performanceDesc": "Verhoog de prestaties van uw computer met een hogere ventilatorsnelheid en een hoger energieverbruik. ",
+                    "OCDesc": "U kunt de functie Overklokken inschakelen.",
+                    "ac_dcDesc": "De prestatiemodus is alleen te gebruiken als de netvoedingsadapter is aangesloten.",
                     "balanceTitle": "Gebalanceerde modus",
-                    "balanceDesc": "De prestaties en ventilatorsnelheid worden automatisch aangepast aan de temperatuur. Gemiddeld energieverbruik.",
+                    "balanceDesc": "Laat de prestaties en ventilatorsnelheid automatisch aanpassen op basis van de temperatuur en met middelhoog energieverbruik.",
                     "quietTitle": "Stille modus",
-                    "quietDesc": "De computer wordt stiller door de prestaties en de ventilatorsnelheid zo laag mogelijk te houden. Laag energieverbruik.",
+                    "quietDesc": "Zorg voor een stille computer door de prestaties en de ventilatorsnelheid indien mogelijk te verlagen, met een laag energieverbruik.",
                     "OC": {
                         "cpu_gpuOC": "CPU/GPU-overklokken inschakelen in prestatiemodus.",
                         "cpuOC": "CPU-overklokken inschakelen in prestatiemodus.",
                         "gpuOC": "GPU-overklokken inschakelen in prestatiemodus.",
                         "advance": "GEAVANCEERD",
-                        "cpu_gpuDriverLack": "CPU/GPU-stuurprogramma's installeren om overklokken te gebruiken.",
-                        "cpuDriverLack": "CPU-stuurprogramma installeren om overklokken te gebruiken.",
-                        "gpuDriverLack": "GPU-stuurprogramma installeren om overklokken te gebruiken.",
+                        "cpu_gpuDriverLack": "Installeer CPU/GPU-stuurprogramma's om de functie Overklokken te gebruiken.",
+                        "cpuDriverLack": "Installeer CPU-stuurprogramma om de functie Overklokken te gebruiken.",
+                        "gpuDriverLack": "Installeer GPU-stuurprogramma om de functie Overklokken te gebruiken.",
                         "goInstall": "GA NAAR INSTALLEREN"
                     },
-                    "autoSwitch": "Automatisch schakelen naar prestaties bij starten games en later terugschakelen."
+                    "autoSwitch": "Schakel automatisch naar de prestatiemodus bij het starten van games en schakel terug na het afsluiten van de game."	
                 },
                 "advancedOC": {
                     "title": "Overklok geavanc. instell.",
@@ -748,12 +748,11 @@
                 "sub1": "Mijn beveiliging",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-beveiliging",
-                "sub4": "Wachtwoordbeheerder",
-                "sub5": "VPN",
+                "sub4": "Wachtwoordstatus",
+                "sub5": "VPN-beveiliging",
                 "sub6": "Vingerafdruk"
             },
             "support": "Ondersteuning",
-            "privacy": "Privacy",
             "beta": {
                 "title": "beta"
             },
@@ -763,9 +762,9 @@
             "title": "Beveiligingsadviseur",
             "subtitle": "CONTROLEER OF UW APPARAAT IS BEVEILIGD.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-beveiliging",
-            "pswdMgr": "Wachtwoordbeheerder",
-            "vpn": "VPN",
+            "wifi": "WiFi-Beveiliging",
+            "pswdMgr": "Wachtwoordstatus",
+            "vpn": "VPN-Beveiliging",
             "enabled": "INGESCHAKELD",
             "disabled": "UITGESCHAKELD",
             "partiallyProtected": "GEDEELTELIJK BEVEILIGD",
@@ -779,8 +778,8 @@
             "fingerPrint": "Vingerafdruk",
             "privacyPolicyAndTermsOfService": "<tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "GEREGISTREERD",
+            "notEnrolled": "NIET GEREGISTREERD"
         },
         "qAndA": {
             "title": "V & A voor uw machine",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Verbinding maken met internet om deze functie te gebruiken"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Privacy"
         }
     },
     "tutorial": {
@@ -1040,7 +1034,7 @@
                     "Good": "<b>De batterij is in goede staat.</b>",
                     "Exhaustion": "De capaciteit van de batterij is <b>verminderd</b>. Vervang deze door een nieuwe.",
                     "Bad": "<b>Er is een batterijfout opgetreden.</b> De batterij kan niet worden opgeladen/ontladen. Vervang de batterij.",
-                    "NotDetected": "<b>Geen batterij gedetecteerd.</b>",
+                    "NotDetected": "<b>Er is geen batterij aangetroffen of</b> aangesloten.",
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
                     "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b>",
                     "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan niet voldoende stroom leveren.</b>",
@@ -1276,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy star",
                     "description": "EEN DOOR ENERGY STAR GECERTIFICEERD PRODUCT"
-                },
+				},
+				"dpm": {
+					"title": "Energiebeheer",
+					"subtitle": "Energie-instellingen",
+					"description": "In dit gedeelte kunt u de standaardinstellingen bekijken en uw energieverbruik en energieschema aanpassen aan uw behoeften.",
+					"globalPowerSettings": {
+						"title": "Algemene instellingen voor energiebeheer",
+						"description": "Deze functie negeert de instellingen voor energieschema of energieverbruik.",
+						"powerButton": {
+							"label": "AAN/UIT-KNOP:",
+							"items": {
+								"doNothing": "Niets doen",
+								"sleep": "Slaapstand",
+								"hibernate": "Slaapstand",
+								"shutDown": "Afsluiten",
+								"turnOffTheDisplay": "Beeldscherm uitzetten"
+							}
+						},
+						"requiredSignIn": {
+							"label": "VEREISTE AANMELDING:",
+							"items": {
+								"never": "Nooit",
+								"fromSleep": "Als pc uit de slaapstand wordt gehaald"
+							},
+							"tip": "Opmerking: Dit werkt alleen als er een systeemwachtwoord is ingesteld."
+						}
+					},
+					"powerUse": {
+						"title": "Energieverbruik",
+						"description": "ALS HET SYSTEEM INACTIEF IS:",
+						"turnOffDisplay": "BEELDSCHERM UITSCHAKELEN NA:",
+						"turnOffHDD": "HDD UITSCHAKELEN NA:",
+						"sleep": "SLAAPSTAND NA:",
+						"hibernate": "SLUIMERSTAND NA:",
+						"items": {
+							"never": "Nooit",
+							"minute": "minuut",
+							"minutes": "minuten",
+							"hour": "uur",
+							"hours": "uur"
+						}
+					},
+					"powerPlan": {
+						"title": "Energiebeheerschema",
+						"description": "Kies een energieschema om de prestaties, de systeemtemperatuur en het energieverbruik van de computer te regelen.",
+						"currentPowerPlan": {
+							"label": "HUIDIG SCHEMA"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Slim stand-by",
                     "description": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de snelle hervatting van <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern stand-by</a> bij zwaarder gebruik bestaan.",
@@ -2287,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi en Connected Home-beveiliging",
+                "title": "WiFi-beveiliging",
                 "back": "TERUG"
             },
             "container": {
@@ -2471,7 +2514,7 @@
     "lenovoId": {
         "login": "Aanmelden",
         "logout": "Afmelden",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Bezig met afmelden...",
         "unlockExclusives": "Krijg toegang tot exclusieve aanbiedingen",
         "user": "Gebruiker",
         "welcomeText1": "Uw ziet er energiek uit vandaag, {{firstName}}!",
@@ -3093,7 +3136,8 @@
             "storage": "Opslag",
             "wireless": "Draadloos"
         },
-        "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat"
+        "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat",
+        "refreshMessage": "Het vernieuwen kan even duren omdat alle onderdelen opnieuw moeten worden geladen"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nu kunt u nagaan of uw persoonlijke gegevens zijn geschonden of gebruikt door online trackers zonder dat u ervan af wist.",
             "security": "Wist u dat? Zelfs als er geen antivirussoftware op uw computer is geïnstalleerd, bieden wij nog steeds basisbescherming voor uw apparaat.",
             "connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd."
         }

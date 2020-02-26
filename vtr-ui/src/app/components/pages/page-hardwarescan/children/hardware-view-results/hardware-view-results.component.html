@@ -1,0 +1,79 @@
+<div class="vtr-hardware-components p-5 mb-5">
+	<div class="row">
+		<div class="col-12">
+			<div class="header">
+				<div [ngClass]="{'heading1': !showProgress, 'heading2': showProgress}">{{ title }}</div>
+				<!-- <a class="action-anchor">{{ anchorText }}</a> -->
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<div class="hardware-lists-container">
+
+				<div class="final-result">
+					<div class="col col-5 status">
+						<div class="test-status">
+							<div [ngSwitch]="item.statusValue">
+								<fa-icon [icon]="['fas', 'circle-notch']" [spin]="true" class="loading"
+									*ngSwitchCase="0">
+								</fa-icon>
+								<span class="progress-value-text" *ngSwitchCase="1">{{item.percent}}%</span>
+								<fa-icon [icon]="['fas', 'check-circle']" class="success" *ngSwitchCase="2">
+								</fa-icon>
+								<fa-icon [icon]="['fas', 'times-circle']" class="failure" *ngSwitchCase="3">
+								</fa-icon>
+								<fa-icon [icon]="['fas', 'exclamation-triangle']" class="warning" *ngSwitchCase="4">
+								</fa-icon>
+								<fa-icon [icon]="['fas', 'exclamation-circle']" class="failure" *ngSwitchDefault>
+								</fa-icon>
+							</div>
+						</div>
+						<div class="text-status">
+							<div class="title">{{ item.statusToken }}</div>
+							<div class="subtitle">{{ item.date }}</div>
+						</div>
+					</div>
+					<div class="col col-7">
+						<div class="final-result-code" *ngIf="item.finalResultCode">
+							<div class="result-code-value-text"><span>{{finalResultCodeText}}:</span></div>
+							<div class="left-result-code">
+								<span class="result-code-complete-text"> {{item.finalResultCode}}</span>
+								<fa-icon class="result-code-icon" triggers="click:blur" placement="auto"
+									[ngbTooltip]="tooltipRef" [icon]="['far', 'question-circle']" container="vtr-root"
+									tooltipClass="vtr-tooltip"></fa-icon>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<hr>
+
+				<vtr-widget-hardware-scan-item [items]="item.items" [resultCodeText]="resultCodeText"
+					[detailsText]="detailsText"
+					[isLoadingDone]="true">
+				</vtr-widget-hardware-scan-item>
+			</div>
+		</div>
+	</div>
+</div>
+
+<ng-template #tooltipRef>
+	<div [innerHTML]="item.information"></div>
+	<div class='button-box'>
+		<a
+			[attr.href]="'https://support.lenovo.com/contactus'"
+			target="_blank"
+			vtrMetrics
+			metricsItemID="HardwareScan.ResultSupport"
+			metricsItemPosition="r1"
+			metricsItemCategory="partnerarticle"
+			metricsEvent="articleclick"
+			metricsPageNumber="1">
+			<button class='btn button'>
+				{{ lenovoSupport }}
+			</button>
+		</a>
+	</div>
+</ng-template>

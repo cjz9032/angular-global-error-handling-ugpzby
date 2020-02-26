@@ -9,7 +9,7 @@ import { RouterLinkWithHref } from '@angular/router';
 import { By } from '@angular/platform-browser';
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { InstallUpdate } from 'src/app/data-models/system-update/install-update.model';
-import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 
 const hardwareScanServiceMock = jasmine.createSpyObj('HardwareScanService', ['isShellAvailable']);

@@ -81,38 +81,38 @@ describe('BatteryIndicatorComponent', () => {
 
 	});
 
-	it('#getLevelCssValues should should set values green', () => {
-		const {
-			borderColor,
-			borderShadowColor,
-			fillColor
-		} = component.getLevelCssValues(50);
-		expect(borderColor).toEqual(' rgba(49, 228, 182, 0.4)');
-		expect(borderShadowColor).toEqual(' rgba(49, 228, 182, 0.4)');
-		expect(fillColor).toEqual(' linear-gradient( 315deg, #35e6b9 0%, #2ecc71 100% )');
-	});
+	// it('#getLevelCssValues should should set values green', () => {
+	// 	const {
+	// 		borderColor,
+	// 		borderShadowColor,
+	// 		fillColor
+	// 	} = component.getLevelCssValues(50);
+	// 	expect(borderColor).toEqual(' rgba(49, 228, 182, 0.4)');
+	// 	expect(borderShadowColor).toEqual(' rgba(49, 228, 182, 0.4)');
+	// 	expect(fillColor).toEqual(' linear-gradient( 315deg, #35e6b9 0%, #2ecc71 100% )');
+	// });
 
-	it('#getLevelCssValues should should set values red', () => {
-		const {
-			borderColor,
-			borderShadowColor,
-			fillColor
-		} = component.getLevelCssValues(10);
-		expect(borderColor).toEqual(' rgba(217, 72, 57, 0.4)');
-		expect(borderShadowColor).toEqual(' rgba(217, 72, 57, 0.4)');
-		expect(fillColor).toEqual(' linear-gradient( 315deg, #f17f14 0%, #ed4e04 100% )');
-	});
+	// it('#getLevelCssValues should should set values red', () => {
+	// 	const {
+	// 		borderColor,
+	// 		borderShadowColor,
+	// 		fillColor
+	// 	} = component.getLevelCssValues(10);
+	// 	expect(borderColor).toEqual(' rgba(217, 72, 57, 0.4)');
+	// 	expect(borderShadowColor).toEqual(' rgba(217, 72, 57, 0.4)');
+	// 	expect(fillColor).toEqual(' linear-gradient( 315deg, #f17f14 0%, #ed4e04 100% )');
+	// });
 
-	it('#getLevelCssValues should should set values orange', () => {
-		const {
-			borderColor,
-			borderShadowColor,
-			fillColor
-		} = component.getLevelCssValues(20);
-		expect(borderColor).toEqual(' rgba(255, 165, 0, 0.4)');
-		expect(borderShadowColor).toEqual(' rgba(255, 165, 0, 0.4)');
-		expect(fillColor).toEqual(' linear-gradient( 315deg, #fad961 0%, #ffaf00 100% )');
-	});
+	// it('#getLevelCssValues should should set values orange', () => {
+	// 	const {
+	// 		borderColor,
+	// 		borderShadowColor,
+	// 		fillColor
+	// 	} = component.getLevelCssValues(20);
+	// 	expect(borderColor).toEqual(' rgba(255, 165, 0, 0.4)');
+	// 	expect(borderShadowColor).toEqual(' rgba(255, 165, 0, 0.4)');
+	// 	expect(fillColor).toEqual(' linear-gradient( 315deg, #fad961 0%, #ffaf00 100% )');
+	// });
 
 	// it('#getTimeRemaining should set remaining time to 3 hour 12 minutes', () => {
 	// 	component.remainingHour = 3;

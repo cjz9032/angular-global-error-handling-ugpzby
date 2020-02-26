@@ -1,0 +1,77 @@
+<div class="modal-header">
+	<button type="button" class="close close-button" aria-label="Close" (click)="activeModal.dismiss('Cross click')"
+		vtrMetrics metricsEvent="FeatureClick" metricsItem="btn.Close.Schedule" metricsParent="Page.HardwareScan">
+		<fa-icon [icon]="['fal', 'times']"></fa-icon>
+	</button>
+</div>
+<div class="modal-body">
+	<form name="ScheduleNewScan" class="schedulenewscan-modal" (submit)="onNewScanScheduling()" novalidate>
+	</form>
+
+	<div class="recurrence">{{recurrence}}</div>
+
+	<div class="warning">{{warning}}</div>
+
+	<div class="subname">{{interval}}</div>
+
+	<vtr-ui-dropdown-hwscan [title]="interval" [items]="optionsInterval" [selectedItem]="selectedInterval"
+		(selectedOption)="updateSelectedFrequency($event)"></vtr-ui-dropdown-hwscan>
+
+	<div class="subname">{{dateToken}}</div>
+
+
+	<form class="form-inline">
+		<div class="form-group">
+			<div class="input-group date-assets">
+				<input class="form-control calendar-text" placeholder="{{pickDate}}" readonly name="dp"
+					[(ngModel)]="date" ngbDatepicker #d="ngbDatepicker" (dateSelect)="onDateSelect($event)">
+				<div class="input-group-append">
+					<button class="btn calendar" (click)="d.toggle()" type="button">
+						<fa-icon class="icon" [icon]="['far', 'calendar-alt']"></fa-icon>
+					</button>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<div class="subname">{{time}}</div>
+
+	<div class="time">
+		<vtr-ui-dropdown-hwscan [subtitle]="hours" [items]="optionsHours" [selectedItem]="hour" [isSmall]="true"
+			(selectedOption)="updateSelectedHour($event)"></vtr-ui-dropdown-hwscan>
+		<vtr-ui-dropdown-hwscan [subtitle]="minutes" [items]="optionsMinute" [selectedItem]="minute" [isSmall]="true"
+			(selectedOption)="updateSelectedMinute($event)"></vtr-ui-dropdown-hwscan>
+		<vtr-ui-dropdown-hwscan [subtitle]="ampm" [items]="optionsAMPM" [selectedItem]="amPm" [isSmall]="true"
+			(selectedOption)="updateSelectedAMPM($event)"></vtr-ui-dropdown-hwscan>
+	</div>
+
+	<div>
+		<div class="subname">{{typeOfScan}}</div>
+
+		<div class="radiobutton">
+			<label class="radiobtn" for="quick">{{quickScan}}
+				<input type="radio" id="quick" name="scantype" value="quick" (change)="onScanOptionChange('0')">
+				<div class="checkmark"></div>
+			</label>
+
+			<label class="radiobtn" for="full">{{fullScan}}
+				<input type="radio" id="full" name="scantype" value="full" (change)="onScanOptionChange('1')">
+				<div class="checkmark"></div>
+			</label>
+		</div>
+	</div>
+
+	<br />
+
+	<div class="row">
+		<div class="col buttons">
+			<vtr-ui-button-hwscan [label]="scheduleNewScanButtonText" [isDisabled]="disable"
+				[metricsEvent]="'FeatureClick'" [metricsItem]="'btn.New.Schedule'" [metricsParent]="'Page.HardwareScan'"
+				(onClick)="onNewScanScheduling()" [tooltipText]="scheduleNewScanButtonText"></vtr-ui-button-hwscan>
+
+			<a *ngIf="editMode" class="action-anchor" (click)="onDeleteScan()" vtrMetrics metricsEvent="FeatureClick"
+				metricsItem="btn.Delete.Schedule" metricsParent="Page.HardwareScan">{{ delete }}</a>
+		</div>
+
+	</div>
+</div>

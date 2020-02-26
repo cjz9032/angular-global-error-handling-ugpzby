@@ -139,13 +139,6 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 		const queryOptions: any = {
 			Page: 'gaming-dashboard'
 		};
-		// if (lang) {
-		// 	queryOptions = {
-		// 		Page: 'dashboard',
-		// 		Lang: lang,
-		// 		GEO: 'US'
-		// 	};
-		// }
 		if (this.isOnline) {
 			if (this.dashboardService.cardContentPositionDOnline) {
 				this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;

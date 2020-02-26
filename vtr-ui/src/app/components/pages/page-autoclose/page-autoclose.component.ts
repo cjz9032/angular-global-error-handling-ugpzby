@@ -118,7 +118,7 @@ export class PageAutocloseComponent implements OnInit {
 
 	modalCloseTurnOn(action: boolean) {
 		this.showTurnOnModal = action;
-		this.hiddenScroll(false);
+		this.hiddenScroll(true);
 		this.showAppsModal = true;
 	}
 
@@ -220,7 +220,6 @@ export class PageAutocloseComponent implements OnInit {
 			if (cardContentPositionC) {
 				this.cardContentPositionC = cardContentPositionC;
 			}
-
 			const cardContentPositionF = this.cmsService.getOneCMSContent(
 				response,
 				'inner-page-right-side-article-image-background',
@@ -236,11 +235,11 @@ export class PageAutocloseComponent implements OnInit {
 
 		if (!this.isOnline) {
 			this.cardContentPositionF = {
-				FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
+				FeatureImage: './../../../../assets/cms-cache/GamingPosC.jpg'
 			};
 
 			this.cardContentPositionC = {
-				FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
+				FeatureImage: './../../../../assets/cms-cache/autoclose_offline.jpg'
 			};
 		}
 	}

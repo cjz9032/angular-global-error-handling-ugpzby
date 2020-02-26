@@ -22,7 +22,7 @@
                     "rapidCharge": "Hitro polnjenje"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Zviš. tak. vkl.",
                         "performance": "Zmogljivost",
                         "balance": "Ravnovesje",
@@ -107,16 +107,16 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Nastavitev toplotnega nač.",
-                    "thermalMode2SettingDesc": "Izberite način, ki ga želite uporabljati.",
+                    "thermalMode2SettingDesc": "Izberite način, ki ga želite uporabiti.",
                     "fnQDesc": "Med načini lahko preklapljate z bližnjico Fn+Q.",
                     "perormanceTitle": "Zmogljivi način",
-                    "performanceDesc": "Povečajte zmogljivost računalnika z večjo hitrostjo ventilatorja in večjo porabo energije.",
+                    "performanceDesc": "Povečajte zmogljivost računalnika z večjo hitrostjo ventilatorja in večjo porabo energije. ",
                     "OCDesc": "Vklopite lahko funkcijo Zvišanje takta.",
-                    "ac_dcDesc": "Zmogljivi način je na voljo samo, ko je računalnik priključen.",
+                    "ac_dcDesc": "Zmogljivejši način lahko uporabite le, kadar je v računalnik priključen napajalnik.",
                     "balanceTitle": "Uravnoteženi način",
-                    "balanceDesc": "Samodejno uravnotežite zmogljivost in hitrost ventilatorja glede na temperaturo. Srednja poraba energije.",
+                    "balanceDesc": "Samodejno uravnotežite zmogljivost in hitrost ventilatorja glede na temperaturo pri srednje visoki porabi energije.",
                     "quietTitle": "Tihi način",
-                    "quietDesc": "Zmanjšajte zmogljivost računalnika in hitrost ventilatorja, kadar je to mogoče, in poskrbite za tiho delovanje. Nizka poraba energije.",
+                    "quietDesc": "Zmanjšajte zmogljivost računalnika in hitrost ventilatorja, kadar je to mogoče, in poskrbite za tiho delovanje pri nizki porabi energije.",
                     "OC": {
                         "cpu_gpuOC": "Omogočite zvišanje takta CPE/GPE v zmogljivem načinu.",
                         "cpuOC": "Omogočite zvišanje takta CPE v zmogljivem načinu.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Za uporabo funkcije zvišanja takta namestite gonilnik za GPE.",
                         "goInstall": "NAMESTI"
                     },
-                    "autoSwitch": "Samodejno preklopite na zmogljivi nač. pri zagonu iger in nato preklopite nazaj."
+                    "autoSwitch": "Samodejno preklopite na zmogljivejši način pri zagonu iger in preklopite nazaj po izhodu iz igre."	
                 },
                 "advancedOC": {
                     "title": "Zviš. takta – napr. nastav.",
@@ -748,12 +748,11 @@
                 "sub1": "Moja varnost",
                 "sub2": "Protivirusna zaščita",
                 "sub3": "Varnost WiFi-ja",
-                "sub4": "Upravitelja gesel",
-                "sub5": "VPN",
+                "sub4": "Geslo zdravje",
+                "sub5": "VPN Varnost",
                 "sub6": "Prstni odtis"
             },
             "support": "Podpora",
-            "privacy": "Zasebnost",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "PREVERITE, ALI JE NAPRAVA ZAVAROVANA.",
             "antiVirus": "Protivirusna zaščita",
             "wifi": "Varnost WiFi-ja",
-            "pswdMgr": "Upravitelja gesel",
-            "vpn": "VPN",
+            "pswdMgr": "Geslo Zdravje",
+            "vpn": "VPN Varnost",
             "enabled": "OMOGOČEN",
             "disabled": "ONEMOGOČEN",
             "partiallyProtected": "DELNO ZAŠČITENO",
@@ -776,11 +775,11 @@
             "notFound": "NI BILO MOGOČE NAJTI",
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO",
-            "fingerPrint": "Prstni odtis",
+            "fingerPrint": "Prstni Odtis",
             "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTRIRANO",
+            "notEnrolled": "NEREGISTRIRANO"
         },
         "qAndA": {
             "title": "Vprašanja in odgovori za vaš računalnik",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Za uporabo te funkcije se povežite v internet"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Zasebnost"
         }
     },
     "tutorial": {
@@ -1040,7 +1034,7 @@
                     "Good": "<b>Baterija je v dobrem stanju.</b>",
                     "Exhaustion": "Zmogljivost baterije je <b>zmanjšana</b>. Prosimo, zamenjajte jo z novo.",
                     "Bad": "<b>Prišlo je do napake baterije.</b> Baterije ni mogoče polniti/prazniti. Zamenjajte baterijo.",
-                    "NotDetected": "<b>Baterija ni zaznana.</b>",
+                    "NotDetected": "<b>Baterija ni zaznana ali ni</b> priključena.",
                     "NotGood": "<b>Baterija ni v dobrem stanju.</b>",
                     "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b>",
                     "LimitedACAdapterSupport": "<b>Napajalnik ni dovolj zmogljiv.</b>",
@@ -1276,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "IZDELEK S POTRDILOM ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Napajanje",
+					"subtitle": "Nastavitve napajanja",
+					"description": "V tem razdelku lahko preverite privzete nastavitve in prilagodite porabo energije in načrt porabe energije glede na vaše potrebe.",
+					"globalPowerSettings": {
+						"title": "Globalne nastavitve napajanja",
+						"description": "Ta funkcija bo preglasila nastavitve načrta porabe energije in porabe energije.",
+						"powerButton": {
+							"label": "GUMB ZA VKLOP:",
+							"items": {
+								"doNothing": "Ne stori ničesar",
+								"sleep": "Spanje",
+								"hibernate": "Mirovanje",
+								"shutDown": "Zaustavitev",
+								"turnOffTheDisplay": "Izklop zaslona"
+							}
+						},
+						"requiredSignIn": {
+							"label": "OBVEZEN VPIS:",
+							"items": {
+								"never": "Nikoli",
+								"fromSleep": "Ko se računalnik zbudi iz spanja"
+							},
+							"tip": "Opomba: To deluje le, če je sistemsko geslo nastavljeno."
+						}
+					},
+					"powerUse": {
+						"title": "Poraba energija",
+						"description": "ČE JE SISTEM V NAČINU NEDEJAVNOSTI:",
+						"turnOffDisplay": "IZKLOPI ZASLON PO:",
+						"turnOffHDD": "IZKLOPI HDD PO:",
+						"sleep": "PREKLOP V SPANJE PO:",
+						"hibernate": "PREKLOP V MIROVANJE PO:",
+						"items": {
+							"never": "Nikoli",
+							"minute": "minuta",
+							"minutes": "minut",
+							"hour": "ura",
+							"hours": "ur"
+						}
+					},
+					"powerPlan": {
+						"title": "Načrt porabe energije",
+						"description": "Izberite načrt porabe za nadzorovanje učinkovitosti delovanja, temperature sistema in porabo energije računalnika.",
+						"currentPowerPlan": {
+							"label": "TRENUTNI NAČRT"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Pametno stanje pripravljenosti",
                     "description": "Ta funkcija nastavi časovni razpored za optimiziranje varčevanja z energijo baterije med neuporabo računalnika, ne da bi to vplivalo na možnost hitrega nadaljevanja delovanja v sklopu <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">sodobnega stanja pripravljenosti</a> med intenzivnejšo uporabo.",
@@ -2287,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi & povezana domača varnost",
+                "title": "Varnost WiFi-ja",
                 "back": "NAZAJ"
             },
             "container": {
@@ -2471,7 +2514,7 @@
     "lenovoId": {
         "login": "Prijava",
         "logout": "Odjava",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Odjavljanje...",
         "unlockExclusives": "Odklenite ekskluzivne ponudbe",
         "user": "Uporabnik",
         "welcomeText1": "Danes ste videti polni energije, {{firstName}}!",
@@ -2904,7 +2947,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Nastavitve učinkovitosti delovanja",
+        "preferenceSettings": "Nastavitve Učinkovitosti Delovanja",
         "settings": "Nastavitve",
         "settingsDescription": "Na strani za določanje nastavitev lahko vklopite/izklopite obvestila o sporočilih na podlagi kategorij sporočila orodja Vantage. Pri tem upoštevajte, da lahko po potrebi občasno prejmete nujna sistemska sporočila orodja Vantage, tudi če so vse kategorije sporočil onemogočene.",
         "messagesInLenovoVantage": "Sporočila v programu Lenovo Vantage",
@@ -3093,7 +3136,8 @@
             "storage": "Pomnilnik",
             "wireless": "Brezžično"
         },
-        "warningMessage": "Upoštevajte, da bodo preskusi preklicani, če sistem preide v stanje spanja ali mirovanja"
+        "warningMessage": "Upoštevajte, da bodo preskusi preklicani, če sistem preide v stanje spanja ali mirovanja",
+        "refreshMessage": "Osvežitev lahko traja nekaj časa, saj se morajo vse komponente znova naložiti"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Zdaj lahko ugotovite, ali so spletni sledilci brez vaše vednosti kršili ali uporabljali vaše zasebne podatke.",
             "security": "Ali veste? Čeprav nimate nameščene protivirusne programske opreme, še vedno zagotavljamo osnovno varnostno zaščito za vašo napravo.",
             "connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena."
         }

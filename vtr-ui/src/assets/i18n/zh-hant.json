@@ -22,7 +22,7 @@
                     "rapidCharge": "快速充電"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "超頻已開啟",
                         "performance": "效能",
                         "balance": "平衡",
@@ -176,13 +176,13 @@
                     "thermalMode2SettingDesc": "選擇您要使用的模式。",
                     "fnQDesc": "您可以使用快捷鍵 Fn+Q 切換模式。",
                     "perormanceTitle": "效能模式",
-                    "performanceDesc": "加快風扇速度及增加耗電量以提高電腦效能。",
-                    "OCDesc": "您可以選擇開啟「超頻」功能。",
-                    "ac_dcDesc": "只有在插電時才能使用效能模式。",
+                    "performanceDesc": "以更高的風扇速度和耗電量提高電腦效能。",
+                    "OCDesc": "您可以選擇開啟超頻功能。",
+                    "ac_dcDesc": "只有在已插入 AC 電源整流器時，才適用效能模式。",
                     "balanceTitle": "平衡模式",
-                    "balanceDesc": "根據溫度自動平衡效能和風扇速度。中等耗電量。",
+                    "balanceDesc": "根據溫度自動平衡效能和風扇速度，耗電量中等。",
                     "quietTitle": "安靜模式",
-                    "quietDesc": "盡可能降低電腦的效能和風扇速度、以保持安靜。低耗電量。",
+                    "quietDesc": "盡可能降低電腦效能和風扇速度以保持安靜，耗電量低。",
                     "OC": {
                         "cpu_gpuOC": "在效能模式下啟用 CPU/GPU 超頻。",
                         "cpuOC": "在效能模式下啟用 CPU 超頻。",
@@ -193,7 +193,7 @@
                         "gpuDriverLack": "安裝 GPU 驅動程式以使用超頻功能。",
                         "goInstall": "執行安裝"
                     },
-                    "autoSwitch": "啟動遊戲時自動切換到效能，之後再切換回來。"
+                    "autoSwitch": "啟動遊戲時自動切換到效能模式，結束遊戲之後再切換回來。"	
                 }
             }
         },
@@ -748,12 +748,11 @@
                 "sub1": "我的安全性",
                 "sub2": "防毒",
                 "sub3": "WiFi 安全性",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "密碼安全狀態",
+                "sub5": "VPN 安全性",
                 "sub6": "指紋"
             },
             "support": "支援",
-            "privacy": "隱私權",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "檢查您的裝置是否安全。",
             "antiVirus": "防毒",
             "wifi": "WiFi 安全性",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "密碼安全狀態",
+            "vpn": "VPN 安全性",
             "enabled": "已啟用",
             "disabled": "已停用",
             "partiallyProtected": "受部分保護",
@@ -779,8 +778,8 @@
             "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "已註冊",
+            "notEnrolled": "未註冊"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "連接到網際網路以使用此功能"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "隱私權"
         }
     },
     "tutorial": {
@@ -1040,7 +1034,7 @@
                     "Good": "<b>電池狀況良好。</b>",
                     "Exhaustion": "電池容量已<b>降低</b>。請更換新的電池。",
                     "Bad": "<b>發生電池錯誤。</b>電池無法充電/放電。更換電池。",
-                    "NotDetected": "<b>未偵測到電池。</b>",
+                    "NotDetected": "<b>未偵測到電池或未</b>插入電池。",
                     "NotGood": "<b>電池狀況不佳。</b>",
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
@@ -1276,6 +1270,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR 認證產品"
+                },
+                "dpm": {
+                    "title": "電源",
+                    "subtitle": "電源設定",
+                    "description": "此區段可讓您檢查預設值，並根據您的需求來自訂電源使用情形和電源計劃。",
+                    "globalPowerSettings": {
+                        "title": "整體電源設定",
+                        "description": "此功能將覆寫電源計劃或電源使用情形設定。",
+                        "powerButton": {
+                            "label": "電源按鈕：",
+                            "items": {
+                                "doNothing": "不執行任何動作",
+                                "sleep": "睡眠",
+                                "hibernate": "休眠",
+                                "shutDown": "關機",
+                                "turnOffTheDisplay": "關閉顯示器"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "需要登入：",
+                            "items": {
+                                "never": "永不",
+                                "fromSleep": "當 PC 從睡眠中喚醒時"
+                            },
+                            "tip": "附註：此選項僅在設定了系統密碼後才會運作。"
+                        }
+                    },
+                    "powerUse": {
+                        "title": "電源使用情形",
+                        "description": "如果系統處於閒置狀態：",
+                        "turnOffDisplay": "在下列時間後關閉顯示器：",
+                        "turnOffHDD": "在下列時間後關閉 HDD：",
+                        "sleep": "在下列時間後進入睡眠：",
+                        "hibernate": "在下列時間後進入休眠：",
+                        "items": {
+                            "never": "永不",
+                            "minute": "分鐘",
+                            "minutes": "分鐘",
+                            "hour": "小時",
+                            "hours": "小時"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "電源計劃",
+                        "description": "選擇電源計劃以控制電腦效能、系統溫度和電源使用情形。",
+                        "currentPowerPlan": {
+                            "label": "目前計劃"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "智慧型待命",
@@ -2287,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi 與連線家庭安全性",
+                "title": "WiFi 安全性",
                 "back": "上一步"
             },
             "container": {
@@ -3093,7 +3136,8 @@
             "storage": "儲存裝置",
             "wireless": "無線"
         },
-        "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試"
+        "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試",
+        "refreshMessage": "重新整理可能需要一些時間，因為此時需要再度載入所有元件"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "現在您可以查明您的私人資訊是否已外洩，或在您不知情的情況下被線上追蹤器所使用。",
             "security": "您知道嗎？即使您沒有安裝防毒軟體，我們仍會為您的裝置提供基本的安全保護。",
             "connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。"
         }

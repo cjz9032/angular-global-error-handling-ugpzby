@@ -80,14 +80,14 @@ describe('PageDeviceGamingComponent', () => {
 
 	});
 
-	it('#PageDeviceGamingComponent : onNotification network status offline ', () => {
-		//spyOn(component.dashboardService, 'getSystemInfo').and.returnValue(Promise.resolve());
-		const onNotificationSpy = spyOn<any>(component, 'onNotification').withArgs(mockNetworkStatusOffline).and.callThrough();
-		onNotificationSpy.call(component, mockNetworkStatusOffline);
-		fixture.detectChanges();
-		expect(component['onNotification']).toHaveBeenCalled();
+	// it('#PageDeviceGamingComponent : onNotification network status offline ', () => {
+	// 	//spyOn(component.dashboardService, 'getSystemInfo').and.returnValue(Promise.resolve());
+	// 	const onNotificationSpy = spyOn<any>(component, 'onNotification').withArgs(mockNetworkStatusOffline).and.callThrough();
+	// 	onNotificationSpy.call(component, mockNetworkStatusOffline);
+	// 	fixture.detectChanges();
+	// 	expect(component['onNotification']).toHaveBeenCalled();
 
-	});
+	// });
 
 	it('#PageDeviceGamingComponent : onNotification network status online ', () => {
 		//spyOn(component.dashboardService, 'getSystemInfo').and.returnValue(Promise.resolve());

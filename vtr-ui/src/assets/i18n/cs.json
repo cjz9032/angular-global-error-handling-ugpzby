@@ -22,7 +22,7 @@
                     "rapidCharge": "Rych-lé nabíjení"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Přetakt. zap.",
                         "performance": "Výkon",
                         "balance": "Vyvážení",
@@ -45,7 +45,7 @@
                     "ramOverlock": "Přetaktování RAM",
                     "popup": {
                         "text": "Změny se projeví po restartování počítače.",
-                        "button": "U redu"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Je vyžadována instalace ovladače",
@@ -110,24 +110,24 @@
                     "thermalMode2SettingDesc": "Vyberte režim, který chcete použít.",
                     "fnQDesc": "Režim můžete přepnout pomocí klávesové zkratky Fn+Q.",
                     "perormanceTitle": "Režim výkonu",
-                    "performanceDesc": "Zvyšte výkon svého počítače vyšší rychlostí ventilátoru a vyšší spotřebou energie.",
+                    "performanceDesc": "Zvyšte výkon svého počítače vyšší rychlostí ventilátoru a vyšší spotřebou energie. ",
                     "OCDesc": "Můžete se rozhodnout zapnout funkci přetaktování.",
-                    "ac_dcDesc": "Režim výkonu je k dispozici pouze po připojení.",
+                    "ac_dcDesc": "Režim Performance (Výkon) je použitelný pouze v případě, že je připojen napájecí adaptér.",
                     "balanceTitle": "Režim vyvážení",
-                    "balanceDesc": "Automatické vyvážení výkonu a rychlosti ventilátoru na základě teploty. Střední spotřeba energie.",
+                    "balanceDesc": "Automatické vyvážení výkonu a rychlosti ventilátoru na základě teploty se středně vysokou spotřebou.",
                     "quietTitle": "Tichý režim",
-                    "quietDesc": "Pokud je to možné, snižte hlasitost redukcí výkonu počítače a rychlosti ventilátoru. Nízká spotřeba energie.",
+                    "quietDesc": "Pokud je to možné, snižte hlasitost redukcí výkonu počítače a rychlosti ventilátoru díky nízké spotřebě.",
                     "OC": {
-                        "cpu_gpuOC": "Povolit přetaktování CPU/GPU v režimu výkonu.",
-                        "cpuOC": "Povolit přetaktování CPU v režimu výkonu.",
-                        "gpuOC": "Povolit přetaktování GPU v režimu výkonu.",
+                        "cpu_gpuOC": "Povolit přetaktování CPU/GPU v režimu výkonu.",
+                        "cpuOC": "Povolit přetaktování CPU v režimu výkonu.",
+                        "gpuOC": "Povolit přetaktování GPU v režimu výkonu.",
                         "advance": "ROZŠÍŘENÉ",
-                        "cpu_gpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladače CPU/GPU.",
-                        "cpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladač CPU.",
-                        "gpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladač GPU.",
+                        "cpu_gpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladače CPU/GPU.",
+                        "cpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladač CPU.",
+                        "gpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladač GPU.",
                         "goInstall": "ZAčíT INSTALACI"
                     },
-                    "autoSwitch": "Automatické přepínání na výkon při spouštění her a opětovné přepínání zpět."
+                    "autoSwitch": "Automatické přepínání do režimu Performance (Výkon) na výkon při spouštění her a jeho ukončení po opuštění hry."	
                 },
                 "advancedOC": {
                     "title": "Přetaktování Upřesnit nast.",
@@ -748,12 +748,11 @@
                 "sub1": "Moje zabezpečení",
                 "sub2": "Antivirus",
                 "sub3": "Zabezpečení WiFi",
-                "sub4": "Správce hesel",
-                "sub5": "VPN",
+                "sub4": "Stav hesla",
+                "sub5": "Zabezpečení VPN",
                 "sub6": "Otisk prstu"
             },
             "support": "Podpora",
-            "privacy": "Soukromí",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "ZKONTROLUJTE, ZDA JE ZAŘÍZENÍ ZABEZPEČENO.",
             "antiVirus": "Antivirus",
             "wifi": "Zabezpečení WiFi",
-            "pswdMgr": "Správce hesel",
-            "vpn": "VPN",
+            "pswdMgr": "Stav Hesla",
+            "vpn": "Zabezpečení VPN",
             "enabled": "POVOLENO",
             "disabled": "ZAKÁZÁNO",
             "partiallyProtected": "ČÁSTEČNĚ CHRÁNĚNO",
@@ -776,11 +775,11 @@
             "notFound": "NENALEZENO",
             "registered": "REGISTROVÁNO",
             "notRegistered": "NENÍ REGISTROVÁNO",
-            "fingerPrint": "Otisk prstu",
+            "fingerPrint": "Otisk Prstu",
             "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTROVÁNO",
+            "notEnrolled": "NEREGISTROVÁNO"
         },
         "qAndA": {
             "title": "Otázky a odpovědi pro váš stroj",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Chcete-li tuto funkci používat, připojte se k internetu."
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Soukromí"
         }
     },
     "tutorial": {
@@ -1040,7 +1034,7 @@
                     "Good": "<b>Stav baterie je dobrý.</b>",
                     "Exhaustion": "Kapacita baterie <b>degradovala</b>. Vyměňte ji za novou.",
                     "Bad": "<b>Došlo k chybě baterie.</b> Baterii nelze nabít/vybít. Vyměňte ji.",
-                    "NotDetected": "<b>Nebyla zjištěna žádná baterie.</b>",
+                    "NotDetected": "<b>Nebyla zjištěna žádná baterie</b> nebo baterie není připojena.",
                     "NotGood": "<b>Stav baterie není dobrý.</b>",
                     "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b>",
                     "LimitedACAdapterSupport": "<b>Síťový adaptér nemůže poskytnout dostatek energie.</b>",
@@ -1276,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ZAŘÍZENÍ S CERTIFIKACÍ ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Napájení",
+					"subtitle": "Nastavení napájení",
+					"description": "V této části můžete zkontrolovat výchozí nastavení a přizpůsobit spotřebu energie a schéma napájení svým potřebám.",
+					"globalPowerSettings": {
+						"title": "Globální nastavení napájení",
+						"description": "Tato funkce slouží k potlačení schématu napájení nebo nastavení spotřeby energie.",
+						"powerButton": {
+							"label": "HLAVNÍ VYPÍNAČ:",
+							"items": {
+								"doNothing": "Nedělat nic",
+								"sleep": "Režim spánku",
+								"hibernate": "Režim hibernace",
+								"shutDown": "Vypnout",
+								"turnOffTheDisplay": "Vypnout displej"
+							}
+						},
+						"requiredSignIn": {
+							"label": "JE VYŽADOVÁNO PŘIHLÁŠENÍ:",
+							"items": {
+								"never": "Nikdy",
+								"fromSleep": "Když se počítač probudí z režimu spánku"
+							},
+							"tip": "Poznámka: Funguje pouze v případě, že je nastavené heslo k systému."
+						}
+					},
+					"powerUse": {
+						"title": "Spotřeba energie",
+						"description": "KDYŽ JE SYSTÉM NEČINNÝ:",
+						"turnOffDisplay": "VYPNOUT DISPLEJ PO:",
+						"turnOffHDD": "VYPNOUT PEVNÝ DISK PO:",
+						"sleep": "USPAT PO:",
+						"hibernate": "HIBERNOVAT PO:",
+						"items": {
+							"never": "Nikdy",
+							"minute": "minuta",
+							"minutes": "minuty",
+							"hour": "hodina",
+							"hours": "hodiny"
+						}
+					},
+					"powerPlan": {
+						"title": "Schéma napájení",
+						"description": "Vyberte schéma napájení, kterým chcete řídit výkon počítače, teplotu systému a spotřebu energie.",
+						"currentPowerPlan": {
+							"label": "AKTUÁLNÍ SCHÉMA"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Chytrý pohotovostní režim",
                     "description": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost opětovného spuštění <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">moderního pohotovostního režimu</a> v době vyšší zátěže.",
@@ -2287,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Zabezpečení WiFi a připojené domácnosti",
+                "title": "Zabezpečení WiFi",
                 "back": "ZPĚT"
             },
             "container": {
@@ -2471,7 +2514,7 @@
     "lenovoId": {
         "login": "Přihlášení",
         "logout": "Odhlásit",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Odhlašování...",
         "unlockExclusives": "Odemknout exkluzivní obsah",
         "user": "Uživatel",
         "welcomeText1": "Vypadáte dnes aktivně, {{firstName}}!",
@@ -2904,7 +2947,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Nastavení předvoleb",
+        "preferenceSettings": "Nastavení Předvoleb",
         "settings": "Nastavení",
         "settingsDescription": "Na stránce nastavení předvoleb můžete zvolit, zda chcete zapnout/vypnout oznámení o zprávách na základě kategorií zpráv aplikace Vantage. Berte na vědomí, že i když zakážete všechny kategorie zpráv, přesto občas můžete v případě potřeby obdržet z aplikace Vantage kritickou zprávu systému.",
         "messagesInLenovoVantage": "Zprávy v programu Lenovo Vantage",
@@ -3093,7 +3136,8 @@
             "storage": "Úložiště",
             "wireless": "Bezdrátové"
         },
-        "warningMessage": "Mějte na paměti, že testy budou zrušeny, pokud je systém v režimu spánku nebo hibernace"
+        "warningMessage": "Mějte na paměti, že testy budou zrušeny, pokud je systém v režimu spánku nebo hibernace",
+        "refreshMessage": "Obnovení může nějakou dobu trvat, protože je třeba znovu načíst všechny součásti"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nyní můžete zjistit, zda došlo k úniku vašich osobních údajů nebo zda byly tyto údaje bez vašeho vědomí použity online sledovacími nástroji.",
             "security": "Víte, že…? I když nemáte nainstalovaný antivirový software, stále poskytujeme základní bezpečnostní ochranu pro vaše zařízení.",
             "connectedHomeSecurity": "Získejte sledování v reálném čase a upozornění na zabezpečení vaší domácí sítě. A jako první se dozvíte, zda některé z vašich chytrých zařízení čelí bezpečnostnímu útoku."
         }

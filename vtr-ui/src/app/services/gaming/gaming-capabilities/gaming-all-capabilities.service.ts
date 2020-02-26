@@ -43,14 +43,14 @@ export class GamingAllCapabilitiesService {
 		this.commonService.setLocalStorageValue(LocalStorageKey.liteGaming, capabilities.liteGaming);
 		this.commonService.setLocalStorageValue(LocalStorageKey.thermalModeVersion, capabilities.thermalModeVersion);
 		// Prevent error of SupporttedThermalMode  191227 by Guo Jing
-		if(capabilities.supporttedThermalMode.length > 1) {
+		if (capabilities.supporttedThermalMode.length > 1) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.supporttedThermalMode, capabilities.supporttedThermalMode);
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.gpuOCFeature, capabilities.gpuOCFeature);
 		this.commonService.setLocalStorageValue(LocalStorageKey.advanceCPUOCFeature, capabilities.advanceCPUOCFeature);
 		this.commonService.setLocalStorageValue(LocalStorageKey.advanceGPUOCFeature, capabilities.advanceGPUOCFeature);
 		this.commonService.setLocalStorageValue(LocalStorageKey.nvDriver, capabilities.nvDriver);
-		//X50 lighting layout
+		// X50 lighting layout
 		this.commonService.setLocalStorageValue(LocalStorageKey.ledLayoutVersion, capabilities.ledLayoutVersion);
 		this.commonService.setLocalStorageValue(LocalStorageKey.LedSwitchButtonFeature, capabilities.ledSwitchButtonFeature);
 		this.commonService.setLocalStorageValue(LocalStorageKey.smartFanFeature, capabilities.smartFanFeature);

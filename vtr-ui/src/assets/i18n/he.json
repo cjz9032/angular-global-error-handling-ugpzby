@@ -22,7 +22,7 @@
                     "rapidCharge": "טעינה מהירה"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "אוברקלוק פועל",
                         "performance": "ביצועים",
                         "balance": "איזון",
@@ -173,16 +173,16 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "הגדרת מצב תרמי",
-                    "thermalMode2SettingDesc": "בחרו במצב הרצוי.",
+                    "thermalMode2SettingDesc": "בחרו את המצב הרצוי.",
                     "fnQDesc": "ניתן להחליף מצב באמצעות קיצור דרך Fn+Q.",
                     "perormanceTitle": "מצב ביצועים",
-                    "performanceDesc": "שפרו את ביצועי המחשב עם מהירות מאוורר גבוהה יותר וצריכת חשמל רבה יותר.",
+                    "performanceDesc": "שפרו את ביצועי המחשב עם מהירות מאוורר גבוהה יותר וצריכת חשמל רבה יותר. ",
                     "OCDesc": "תוכלו לבחור להפעיל את התכונה 'אוברקלוקינג'.",
-                    "ac_dcDesc": "מצב ביצועים זמין רק במצב מחובר.",
+                    "ac_dcDesc": "מצב הביצועים רלוונטי רק כאשר מתאם מתח AC מחובר לחשמל.",
                     "balanceTitle": "מצב מאוזן",
-                    "balanceDesc": "מאזן ביצועים ומהירות מאוורר באופן אוטומטי בהתבסס על טמפרטורה. צריכת חשמל בינונית.",
+                    "balanceDesc": "מאזן ביצועים ומהירות מאוורר באופן אוטומטי בהתבסס על טמפרטורה עם צריכת חשמל בינונית.",
                     "quietTitle": "מצב שקט",
-                    "quietDesc": "שומר על שקט על ידי הפחתת ביצועי המחשב ומהירות המאוורר במידת האפשר. צריכת חשמל נמוכה.",
+                    "quietDesc": "שומר על שקט על ידי הפחתת ביצועי המחשב ומהירות המאוורר במידת האפשר עם צריכת חשמל נמוכה.",
                     "OC": {
                         "cpu_gpuOC": "הפעילו אוברקלוקינג של CPU/GPU במצב ביצועים.",
                         "cpuOC": "הפעילו אוברקלוקינג של CPU במצב ביצועים.",
@@ -193,7 +193,7 @@
                         "gpuDriverLack": "התקינו מנהל התקן של GPU כדי להשתמש בפונקציית אוברקלוקינג.",
                         "goInstall": "עברו להתקנה"
                     },
-                    "autoSwitch": "מעבר אוטומטי לביצועים בעת הפעלת משחקים ולהפך."
+                    "autoSwitch": "מעבר אוטומטי למצב ביצועים בעת הפעלת משחקים ולהפך כאשר יוצאים מהמשחק."	
                 }
             }
         },
@@ -748,12 +748,11 @@
                 "sub1": "האבטחה שלי",
                 "sub2": "אנטי-וירוס",
                 "sub3": "אבטחת WiFi",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "תקינות סיסמה",
+                "sub5": "אבטחת VPN",
                 "sub6": "טביעת אצבע"
             },
             "support": "תמיכה",
-            "privacy": "פרטיות",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "בדקו שההתקן שלכם מאובטח.",
             "antiVirus": "אנטי-וירוס",
             "wifi": "אבטחת WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "תקינות סיסמה",
+            "vpn": "אבטחת VPN",
             "enabled": "מופעל",
             "disabled": "מושבת",
             "partiallyProtected": "הגנה חלקית",
@@ -779,8 +778,8 @@
             "fingerPrint": "טביעת אצבע",
             "privacyPolicyAndTermsOfService": "<tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "נרשם",
+            "notEnrolled": "לא נרשם"
         },
         "qAndA": {
             "title": "Q & A עבור המחשב שלך",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "התחבר לאינטרנט כדי להשתמש בתכונה זו"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "פרטיות"
         }
     },
     "tutorial": {
@@ -1040,7 +1034,7 @@
                     "Good": "<b>הסוללה במצב תקין.</b>",
                     "Exhaustion": "קיבולת הסוללה <b>נפגעה</b>. יש להחליף לסוללה חדשה.",
                     "Bad": "<b>אירעה שגיאת סוללה.</b> לא ניתן לטעון/לפרוק את הסוללה. החליפו את הסוללה.",
-                    "NotDetected": "<b>לא זוהתה סוללה.</b>",
+                    "NotDetected": "<b>לא אותרה סוללה או שהיא</b> אינה מחוברת.",
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b></span>",
                     "LimitedACAdapterSupport": "<b>מתאם AC לא יכול לספק מספיק חשמל.</b>",
@@ -1276,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "מוצר עם אישור ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "צריכת חשמל",
+					"subtitle": "הגדרות צריכת חשמל",
+					"description": "סעיף זה מאפשר לכם לבדוק את הגדרות ברירת המחדל ולהתאים אישית את צריכת החשמל ואת תוכנית צריכת החשמל שלכם בהתאם לצרכים.",
+					"globalPowerSettings": {
+						"title": "הגדרות צריכת חשמל כלליות",
+						"description": "תכונה זו תעקוף את הגדרות תוכנית צריכת החשמל או צריכת החשמל.",
+						"powerButton": {
+							"label": "מתג הפעלה:",
+							"items": {
+								"doNothing": "שום פעולה",
+								"sleep": "שינה",
+								"hibernate": "תרדמה",
+								"shutDown": "כיבוי",
+								"turnOffTheDisplay": "כיבוי הצג"
+							}
+						},
+						"requiredSignIn": {
+							"label": "נדרשת כניסה:",
+							"items": {
+								"never": "לעולם לא",
+								"fromSleep": "כאשר המחשב יוצא ממצב שינה"
+							},
+							"tip": "הערה: זה עובד רק אם מוגדרת סיסמת מערכת."
+						}
+					},
+					"powerUse": {
+						"title": "צריכת חשמל",
+						"description": "אם המערכת לא פעילה:",
+						"turnOffDisplay": "כיבוי הצג כעבור:",
+						"turnOffHDD": "כיבוי ה-HDD כעבור:",
+						"sleep": "מעבר למצב שינה כעבור:",
+						"hibernate": "מעבר למצב המתנה כעבור:",
+						"items": {
+							"never": "לעולם לא",
+							"minute": "דקה",
+							"minutes": "דקות",
+							"hour": "שעה",
+							"hours": "שעות"
+						}
+					},
+					"powerPlan": {
+						"title": "תוכנית צריכת חשמל",
+						"description": "בחרו תוכנית צריכת חשמל כדי לשלוט בביצועי המחשב, בטמפרטורת המערכת ובצריכת החשמל.",
+						"currentPowerPlan": {
+							"label": "תוכנית נוכחית"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "המתנה חכמה",
                     "description": "תכונה זו קובעת זמן למחשב שלכם שבו יבוצע מיטוב של חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, כדי שלא לפגוע בחוויית הפעלה מחדש מהירה של <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">הפעלה מודרנית</a> שנדרשת בשעות שבהן נעשה שימוש במחשב.",
@@ -2287,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "אבטחת הבית המחובר ו-WiFi",
+                "title": "‏אבטחת WiFi",
                 "back": "חזרה"
             },
             "container": {
@@ -2471,7 +2514,7 @@
     "lenovoId": {
         "login": "כניסה",
         "logout": "יציאה",
-        "loggingOut": "Logging out...",
+        "loggingOut": "מתנתק...",
         "unlockExclusives": "פתחו את ה\"בלעדיים\"",
         "user": "משתמש",
         "welcomeText1": "אתה נראה רענן היום, {{firstName}}!",
@@ -3093,7 +3136,8 @@
             "storage": "אחסון",
             "wireless": "אלחוטי"
         },
-        "warningMessage": "קחו בחשבון שהבדיקות יבוטלו אם המערכת במצב שינה או המתנה"
+        "warningMessage": "קחו בחשבון שהבדיקות יבוטלו אם המערכת במצב שינה או המתנה",
+        "refreshMessage": "הרענון עשוי לארוך זמן מה מכיוון שהמחשב צריך לטעון את כל הרכיבים מחדש"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3434,7 +3478,6 @@
     "dirClass": "rtl",
     "notification": {
         "menu": {
-            "privacy": "כעת תוכלו לגלות אם המידע הפרטי שלכם נפרץ או שנעשה בו שימוש על ידי עוקבים באינטרנט, ללא ידיעתכם.",
             "security": "האם אתם יודעים? גם אם אין לכם תוכנת אנטי-וירוס מותקנת, אנחנו עדיין מספקים הגנת אבטחה בסיסית למכשיר שלכם.",
             "connectedHomeSecurity": "קבלו ניטור והתראות בזמן אמת לאבטחת הרשת הביתית. תהיו הראשונים לדעת אם אחד מהמכשירים החכמים שלכם מתמודד עם מתקפת אבטחה."
         }

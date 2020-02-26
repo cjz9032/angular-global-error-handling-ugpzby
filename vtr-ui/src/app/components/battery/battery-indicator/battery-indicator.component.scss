@@ -222,11 +222,11 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				.percentage {
 					@extend .base-percentage-text;
 					font-size: 4.5rem;
-					color: $main_dark;
+					color: $shade_blue;
 
 					.percentage-symbol {
 						position: relative;
-						font-size: $section_header;
+						font-size: $fontsize_xs2;
 						left: -1.2rem;
 					}
 				}
@@ -245,12 +245,12 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			.remaining-time {
 				@extend .base-remaining-text;
 				bottom: 19%;
-				color: $main_dark;
+				color: $shade_blue;
 			}
 
 			.remaining-text {
 				@extend .base-remaining-text;
-				color: $main_dark;
+				color: $shade_blue;
 				bottom: 5%;
 				font-weight: $weight_light;
 				font-size: 1.3rem;

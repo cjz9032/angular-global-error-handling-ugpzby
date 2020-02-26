@@ -20,7 +20,6 @@ import { ActivatedRoute } from '@angular/router';
 import { takeWhile } from 'rxjs/operators';
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { WinRT } from '@lenovo/tan-client-bridge';
 import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
 import { Md5 } from 'ts-md5';
 import {BatteryDetailService} from 'src/app/services/battery-detail/battery-detail.service';
@@ -216,6 +215,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 
 	ngOnInit() {
 		this.logger.debug('subpage-device-setting-display onInit');
+		this.commonService.checkPowerPageFlagAndHide();
 		this.initDataFromCache();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
@@ -369,8 +369,11 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			'671f1454b4101503f00ff4f786d44fa0',
 			'479a92a1dccaf9467d168ede8848faba',
 		];
-		return this.deviceService.getDeviceInfo()
-			.then(res => whitelist.includes(Md5.hashStr(res.bios.substr(0, 5)) as string));
+		return this.deviceService.getMachineInfo()
+			.then(res => res.hasOwnProperty('biosVersion')
+					&& res.biosVersion === 'string'
+					&& res.biosVersion.length >= 5
+					&& whitelist.includes(Md5.hashStr(res.biosVersion.substr(0, 5)) as string));
 	}
 
 	async initCameraSection() {
@@ -1209,8 +1212,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			});
 	}
 
-	public setPrivacyGuardOnPasswordStatusVal(event) {
-		this.displayService.setPrivacyGuardOnPasswordStatus(event.target.checked).then((response: boolean) => {
+	public setPrivacyGuardOnPasswordStatusVal($event: boolean) {
+		this.privacyGuardCheckBox = $event;
+		this.displayService.setPrivacyGuardOnPasswordStatus($event).then((response: boolean) => {
 			// this.logger.debug('set privacy guard on password status here -------------.>', response);
 		})
 			.catch(error => {
@@ -1256,7 +1260,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	}
 
 	launchProtocol(protocol: string) {
-		WinRT.launchUri(protocol);
+		this.deviceService.launchUri(protocol);
 	}
 
 	resetEyecaremodeAllSettings() {

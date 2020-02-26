@@ -80,7 +80,7 @@
 											</vtr-display-color-temp>
 											<div class="row">
 												<!--<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4" -->
-												<div class="feature-note p-4"
+												<div class="feature-note p-4 ml-4"
 													id="day-time-color-temp-note"
 													tabindex="0"
 													attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate }}">
@@ -199,38 +199,18 @@
 									<div class="row"
 										*ngIf="privacyGuardOnPasswordCapability">
 										<div class="col-12 ml-4">
-											<div class="custom-control custom-checkbox privacy-checkbox"
-												tabindex="0"
-												(keydown.enter)="cbPrivacyGuard.click()"
-												attr.aria-disabled="{{privacyGuardToggleStatus}}"
-												[attr.aria-checked]="privacyGuardCheckBox"
-												attr.aria-labelledby="label-cb-privacy-guard"
-												role="checkbox">
-												<input type="checkbox"
+											<div class="custom-control custom-checkbox privacy-checkbox">
+												<vtr-ui-checkbox [componentId]="'cb-privacy-guard'"
 													[disabled]="privacyGuardToggleStatus"
-													class="custom-control-input"
 													[ngClass]="{'custom-control-label-disabled': privacyGuardToggleStatus}"
-													#cbPrivacyGuard
-													id="cb-privacy-guard"
-													attr.aria-label="cb-privacy-guard"
-													aria-hidden="true"
+													[value]="privacyGuardCheckBox"
 													[checked]="privacyGuardCheckBox"
-													(change)="setPrivacyGuardOnPasswordStatusVal($event)" />
-												<span class="checkmark"></span>
-												<label class="custom-control-label"
-													id="label-cb-privacy-guard"
-													for="cb-privacy-guard">
-													<span id="cb-privacy-guard-description"
-														role="text"
-														attr.aria-label="privacy guard password capability note, {{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}">
-														{{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}
-													</span>
-												</label>
+													[label]="'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate"
+													(toggle)="setPrivacyGuardOnPasswordStatusVal($event)">
+												</vtr-ui-checkbox>
 											</div>
-
 										</div>
 									</div>
-
 								</vtr-ui-row-switch>
 							</li>
 
@@ -265,7 +245,7 @@
 
 							<!-- commented out below lines to temporarily hide in current release -->
 							<!-- Display Priority Control -->
-							<!-- <li class="pt-3" *ngIf="displayPriorityModal.capability">
+							<li class="pt-3" *ngIf="displayPriorityModal.capability">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.displayPriority.title' | translate | capitalizeFirst"
 									[caption]="'device.deviceSettings.displayCamera.display.displayPriority.description' | translate"
@@ -294,8 +274,7 @@
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
 								</vtr-ui-row-switch>
-							</li> -->
-
+							</li>
 						</ul>
 					</vtr-container-collapsible>
 				</div>
@@ -334,7 +313,7 @@
 									[isDisabled]="shouldCameraSectionDisabled"
 									[showLoaderState]="cameraPrivacyModeStatus.isLoading">
 									<div class="row">
-										<div class="col-12 pr-0">
+										<div class="col-12 pr-0 pl-5">
 											<div *ngIf="hideNote"
 												class="row permission-note mt-5">
 												<div class="col-12 p-3 d-flex">

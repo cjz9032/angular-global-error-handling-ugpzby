@@ -8,9 +8,9 @@ import { TranslateService } from '@ngx-translate/core';
 	styleUrls: ['./widget-device-update.component.scss']
 })
 export class WidgetDeviceUpdateComponent implements OnInit {
-	@Input() title: string = '';
-	@Input() subTitle1: string = '';
-	@Input() subTitle2: string = '';
+	@Input() title = '';
+	@Input() subTitle1 = '';
+	@Input() subTitle2 = '';
 	@Input() buttonText = '';
 	@Input() installationHistory: any[];
 	@Input() percent = 0;
@@ -18,6 +18,7 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 	@Input() showProgress = false;
 	@Input() isUpdateDownloading = false;
 	@Input() isCheckingPluginStatus = true;
+	@Input() isCancelingStatus = false;
 	@Input() downloadingPercent = 0;
 	@Input() installingPercent = 0;
 	@Output() checkForUpdate = new EventEmitter();
@@ -38,10 +39,12 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 
 	onCheckForUpdates() {
 		this.checkForUpdate.emit();
+		this.isCancelingStatus = false;
 		document.getElementById('system-update-back-btn').focus();
 	}
 
 	cancelUpdates() {
+		this.isCancelingStatus = true;
 		this.cancelUpdateCheck.emit();
 	}
 

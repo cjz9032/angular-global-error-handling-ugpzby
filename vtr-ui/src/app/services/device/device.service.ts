@@ -31,7 +31,6 @@ export class DeviceService {
 	public showSearch = false;
 	public machineType: number;
 	private Windows: any;
-	showPrivacy: boolean;
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService,
@@ -47,7 +46,6 @@ export class DeviceService {
 			this.isShellAvailable = true;
 		}
 		this.initIsArm();
-		this.initshowPrivacy();
 		this.initShowSearch();
 	}
 
@@ -65,17 +63,6 @@ export class DeviceService {
 		} catch (error) {
 			this.logger.error('getIsARM' + error.message);
 			return this.isArm;
-		}
-	}
-
-	private initshowPrivacy() {
-		// set this.showPrivacy appropriately based on machineInfo data
-		if (this.hypSettings) {
-			this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
-				this.showPrivacy = (privacy === 'enabled');
-			}, (error) => {
-				this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
-			});
 		}
 	}
 

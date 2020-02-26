@@ -25,11 +25,11 @@ import { SharedModule } from './shared.module';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { CommonUiModule } from './common/common-ui.module';
 import { CommonWidgetModule } from './common/common-widget.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { GamingRoutingModule } from '../modules/gaming-routing.module';
 import { WidgetAutocloseComponent } from '../components/widgets/widget-autoclose/widget-autoclose.component';
 import { ContainerCardModule } from '../components/container-card/container-card.module';
-import { MetricsModule } from '../directives/metrics.module';
+import { MetricsModule } from '../services/metric/metrics.module';
 import { WidgetOfflineModule } from '../components/widgets/widget-offline-info/widget-offline.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalTurnOnComponent } from '../components/modal/modal-autoclose/modal-turn-on/modal-turn-on.component';
@@ -40,7 +40,6 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
 // Load Icons for Gaming
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons/faQuestionCircle';
 import { faCog } from '@fortawesome/pro-light-svg-icons/faCog';
 import { faCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
@@ -50,13 +49,6 @@ import { faArrowAltToTop } from '@fortawesome/pro-light-svg-icons/faArrowAltToTo
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { FeedbackModule } from './feedback/feedback.module';
 
-library.add(faSpinner);
-library.add(faCog);
-library.add(faQuestionCircle);
-library.add(faCheck);
-library.add(faCheckCircle);
-library.add(faChevronDown);
-library.add(faArrowAltToTop);
 
 @NgModule({
 	declarations: [
@@ -107,4 +99,14 @@ library.add(faArrowAltToTop);
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 	entryComponents: []
 })
-export class GamingModule {}
+export class GamingModule {
+	constructor(library: FaIconLibrary) {
+		library.addIcons(faSpinner);
+		library.addIcons(faCog);
+		library.addIcons(faQuestionCircle);
+		library.addIcons(faCheck);
+		library.addIcons(faCheckCircle);
+		library.addIcons(faChevronDown);
+		library.addIcons(faArrowAltToTop);
+	}
+}

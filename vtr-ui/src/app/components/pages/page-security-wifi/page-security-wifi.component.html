@@ -1,4 +1,4 @@
-<vtr-page-layout [title]="'common.securityAdvisor.wifi' | translate"
+<vtr-page-layout [title]="'security.wifisecurity.header.title' | translate"
 	[textId]="'security-wifi'"
 	[pageCssClass]="'security-wifi'"
 	[shiftLeftUp]="true"
@@ -24,7 +24,7 @@
 		</div>
 		<div id="home-security" *ngIf="configService?.showCHS"
 			class="connected-home-container">
-			<vtr-home-security></vtr-home-security>
+			<vtr-widget-home-security></vtr-widget-home-security>
 		</div>
 		<div class="bottom-content" hidden>
 			<div class="d-none d-md-block">

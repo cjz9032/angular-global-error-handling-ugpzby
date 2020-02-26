@@ -17,7 +17,7 @@ import { SPCategory, SPSubCategory } from 'src/app/enums/smart-performance.enum'
 export class UiSmartPerformanceScanningComponent implements OnInit {
 	// @ViewChild('speedometer') speedometer: WidgetSpeedometerComponent;
 	@ViewChild('speedometer', { static: false }) speedometer: WidgetSpeedometerComponent;
-	@ViewChild('acc', {static:false}) accordionComponent: NgbAccordion;
+	@ViewChild('acc', {static: false}) accordionComponent: NgbAccordion;
 	loop;
 	delay;
 	title = 'smartPerformance.title';
@@ -29,109 +29,109 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	public twohundreadFlag = true;
 	public threehundreadFlag = true;
 	public smartperformanceScanningStatusEventRef: any;
-	public responseData : any;
+	public responseData: any;
 	public panelID;
-	public spCategoryenum:any;
-	public spSubCategoryenum:any;
-	
+	public spCategoryenum: any;
+	public spSubCategoryenum: any;
+
 	sampleDesc = 'This is a brief description of what Accumulated Junk means to a user and why they should know more about it. What is it, why is it important, how is it affecting my computer performance, how will I benifit from the junk being cleaned up';
 	index = 0;
-	public activegroup:any;
+	public activegroup: any;
 	currentCategory = 1;
 	subItems: any = {};
-	public vdata=[
+	public vdata = [
 		{
-			"percentage":0,
-			"status":{
-			   "category":"Tune Pc Performance",
-			   "subcategory":"Accumilated junk",
-			   "final":"completed"
+			'percentage': 0,
+			'status': {
+			   'category':'Tune Pc Performance',
+			   'subcategory':'Accumilated junk',
+			   'final':'completed'
 			},
-			"result":{
-			   "Tune":34,
-			   "Boost":14,
-			   "Secure":12
+			'result': {
+			   'Tune': 34,
+			   'Boost': 14,
+			   'Secure': 12
 			},
-			"rating":7
+			'rating': 7
 		 },
 		{
-			"percentage":25,
-			"status":{
-			   "category":"Tune Pc Performance",
-			   "subcategory":"Registry Errors",
-			   "final":"completed"
+			'percentage': 25,
+			'status': {
+			   'category':'Tune Pc Performance',
+			   'subcategory':'Registry Errors',
+			   'final':'completed'
 			},
-			"result":{
-			   "Tune":34,
-			   "Boost":14,
-			   "Secure":12
+			'result': {
+			   'Tune': 34,
+			   'Boost': 14,
+			   'Secure': 12
 			},
-			"rating":7
+			'rating': 7
 		 },
 		 {
-			"percentage":45,
-			"status":{
-			   "category":"internetperformance",
-			   "subcategory":"Network Settings",
-			   "final":"completed"
+			'percentage': 45,
+			'status': {
+			   'category':'internetperformance',
+			   'subcategory':'Network Settings',
+			   'final':'completed'
 			},
-			"result":{
-			   "Tune":34,
-			   "Boost":14,
-			   "Secure":12
+			'result': {
+			   'Tune': 34,
+			   'Boost': 14,
+			   'Secure': 12
 			},
-			"rating":7
+			'rating': 7
 		 },
 		 {
-			"percentage":60,
-			"status":{
-			   "category":"internetperformance",
-			   "subcategory":"e-junk",
-			   "final":"completed"
+			'percentage': 60,
+			'status': {
+			   'category':'internetperformance',
+			   'subcategory':'e-junk',
+			   'final':'completed'
 			},
-			"result":{
-			   "Tune":34,
-			   "Boost":14,
-			   "Secure":12
+			'result': {
+			   'Tune': 34,
+			   'Boost': 14,
+			   'Secure': 12
 			},
-			"rating":7
+			'rating': 7
 		 },
 	 {
-		"percentage":75,
-		"status":{
-		   "category":"Malware & Security",
-		   "subcategory":"Malware Scan",
-		   "final":"completed"
+		'percentage': 75,
+		'status': {
+		   'category':'Malware & Security',
+		   'subcategory':'Malware Scan',
+		   'final':'completed'
 		},
-		"result":{
-		   "Tune":34,
-		   "Boost":14,
-		   "Secure":12
+		'result': {
+		   'Tune': 34,
+		   'Boost': 14,
+		   'Secure': 12
 		},
-		"rating":7
+		'rating': 7
 	 },
 	 {
-		"percentage":100,
-		"status":{
-		   "category":"Malware & Security",
-		   "subcategory":"Annoying adware",
-		   "final":"completed"
+		'percentage': 100,
+		'status': {
+		   'category':'Malware & Security',
+		   'subcategory':'Annoying adware',
+		   'final':'completed'
 		},
-		"result":{
-		   "Tune":34,
-		   "Boost":14,
-		   "Secure":12
+		'result': {
+		   'Tune': 34,
+		   'Boost': 14,
+		   'Secure': 12
 		},
-		"rating":7
+		'rating': 7
 	 }
-	 
-	]
-	 public scanData : any = {};
+
+	];
+	 public scanData: any = {};
 	 public timer: any;
   constructor(private modalService: NgbModal,
-	public shellServices: VantageShellService,
-	public smartPerformanceService: SmartPerformanceService,
-	private logger: LoggerService) { }
+	             public shellServices: VantageShellService,
+	             public smartPerformanceService: SmartPerformanceService,
+	             private logger: LoggerService) { }
 
   ngOnInit() {
 	this.spCategoryenum = SPCategory;
@@ -139,12 +139,12 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
 	this.smartperformanceScanningStatusEventRef = this.getSmartPerformanceStartScanStatusEvent.bind(this);
 	this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus, this.smartperformanceScanningStatusEventRef);
-	
+
 	this.getSmartPerformanceStartScanInformation();
-	//this.scanData = this.vdata[0];
+	// this.scanData = this.vdata[0];
 	this.initSpeed();
-	//this.GetScanStatus();	
-	this.updateTuneUpPerformanceSubItems('Performance', this.sampleDesc); 
+	// this.GetScanStatus();
+	this.updateTuneUpPerformanceSubItems('Performance', this.sampleDesc);
   }
 
    getSmartPerformanceStartScanStatusEvent(response) {
@@ -157,50 +157,34 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	if (this.smartPerformanceService.isShellAvailable) {
 		try {
 			const res = await this.smartPerformanceService.startScan();
-			//console.log("StartScan response -------------------", res);
-			//this.responseData = res || [];
-			//console.log("res information--------------------------------", this.responseData);
-			if(res.state == true)
-			{
-				//final result
-				this.sendScanStatus.emit({rating:res.rating, tune:res.result.tune, boost:res.result.boost, secure:res.result.secure});
-			}
-			else
-			{
-				//intermediate result
+
+			if (res.state == true) {
+				// final result
+				this.sendScanStatus.emit({rating: res.rating, tune: res.result.tune, boost: res.result.boost, secure: res.result.secure});
+			} else {
+				// intermediate result
 				this.percent = this.responseData.percentage;
 				this.scanData = this.responseData.payload;
-				//this.activegroup = this.scanData.status.category;
-				if(this.scanData.status.category == this.spSubCategoryenum.HUNDEREAD)
-				{
+				// this.activegroup = this.scanData.status.category;
+				if (this.scanData.status.category == this.spSubCategoryenum.HUNDEREAD) {
 					this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
-				}
-				else if(this.scanData.status.category == this.spSubCategoryenum.TWOHUNDEREAD)
-				{
+				} else if (this.scanData.status.category == this.spSubCategoryenum.TWOHUNDEREAD) {
 					this.activegroup = this.spCategoryenum.INTERNETPERFORMANCE;
-				}
-				else if(this.scanData.status.category == this.spSubCategoryenum.THREEHUNDEREAD)
-				{
+				} else if (this.scanData.status.category == this.spSubCategoryenum.THREEHUNDEREAD) {
 					this.activegroup = this.spCategoryenum.MALWARESECURITY;
 				}
-				if(this.scanData.status.category == this.spSubCategoryenum.HUNDEREAD)
-				{
-					if(this.onehundreadFlag == true)
-					{
-						this.updateTuneUpPerformanceSubItems('Performance', this.sampleDesc)
+				if (this.scanData.status.category == this.spSubCategoryenum.HUNDEREAD) {
+					if (this.onehundreadFlag == true) {
+						this.updateTuneUpPerformanceSubItems('Performance', this.sampleDesc);
 						this.onehundreadFlag = false;
 					}
-				}
-				else if(this.scanData.status.category == this.spSubCategoryenum.TWOHUNDEREAD && this.twohundreadFlag == true)
-				{
-					this.currentCategory=2;
+				} else if (this.scanData.status.category == this.spSubCategoryenum.TWOHUNDEREAD && this.twohundreadFlag == true) {
+					this.currentCategory = 2;
 					this.updateInternetPerformanceSubItems('Internet performance', this.sampleDesc);
 					this.initSpeed();
 					this.twohundreadFlag = false;
-				}
-				else if(this.scanData.status.category == this.spSubCategoryenum.THREEHUNDEREAD && this.threehundreadFlag == true)
-				{
-					this.currentCategory=3;
+				} else if (this.scanData.status.category == this.spSubCategoryenum.THREEHUNDEREAD && this.threehundreadFlag == true) {
+					this.currentCategory = 3;
 					this.updateMalwareSubItems('Malware', this.sampleDesc);
 					this.initSpeed();
 					this.threehundreadFlag = false;
@@ -224,56 +208,53 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	});
   }
   GetScanStatus() {
-	if(this.percent!==100)
-	{
+	if (this.percent !== 100) {
 		this.timer = setInterval(() => {
-			if(this.index < this.vdata.length){
-			 this.GetScanData(this.index)
+			if (this.index < this.vdata.length) {
+			 this.GetScanData(this.index);
 			 this.index++;
-			 if(this.index<=1){
+			 if (this.index <= 1) {
 				this.toggle(this.activegroup);
 			 }
-			 if(this.index==2)
-			 {
+			 if (this.index == 2) {
 				this.activegroup = this.spCategoryenum.INTERNETPERFORMANCE;
-				this.currentCategory=2;
+				this.currentCategory = 2;
 				this.updateInternetPerformanceSubItems('Internet performance', this.sampleDesc);
 				this.toggle(this.activegroup);
 				this.initSpeed();
 			 }
-			 if(this.index==4)
-			 {
+			 if (this.index == 4) {
 				this.activegroup = this.spCategoryenum.MALWARESECURITY;
-				this.currentCategory=3;
+				this.currentCategory = 3;
 				this.updateMalwareSubItems('Malware', this.sampleDesc);
 				this.toggle(this.activegroup);
 				this.initSpeed();
 			 }
-			
+
 			}
 		 }, 2000);
-	
+
 	}
 }
-toggle(id:string): void {
-    this.accordionComponent.expand(id);
+toggle(id: string): void {
+	this.accordionComponent.expand(id);
 }
 GetScanData(i: number) {
-    this.scanData = {};
-    this.scanData =  this.vdata[i];
-    this.percent = this.scanData.percentage;
-    if(this.percent ==  100){
-		this.sendScanStatus.emit()
+	this.scanData = {};
+	this.scanData =  this.vdata[i];
+	this.percent = this.scanData.percentage;
+	if (this.percent ==  100) {
+		this.sendScanStatus.emit();
 	}
 }
 initSpeed() {
-		
+
 	const self = this;
-	self.loop = setInterval(function(){
-		self.speedometer.speedCurrent = Math.floor(Math.random() * (self.speedometer.speedMax/2)) + 1;
+	self.loop = setInterval(function() {
+		self.speedometer.speedCurrent = Math.floor(Math.random() * (self.speedometer.speedMax / 2)) + 1;
 	}, 1000);
 
-	self.delay = setTimeout(function(){
+	self.delay = setTimeout(function() {
 		clearInterval(self.loop);
 		self.speedometer.speedCurrent = self.speedometer.speedMax * .9;
 	}, 10000);
@@ -288,7 +269,7 @@ updateTuneUpPerformanceSubItems(name, desc) {
 			{key: 'Tune Pc Performance Dummy Data 3'},
 			{key: 'Tune Pc Performance Dummy Data 4'}
 		]};
-	//this.subItemsList.emit(this.subItems);
+	// this.subItemsList.emit(this.subItems);
 }
 updateMalwareSubItems(name, desc) {
 	this.subItems = {
@@ -306,7 +287,7 @@ updateMalwareSubItems(name, desc) {
 			{key: 'Malware & Security Dummy Data 9'},
 			{key: 'Malware & Security Dummy Data 10'},
 	]};
-	//this.subItemsList.emit(this.subItems);
+	// this.subItemsList.emit(this.subItems);
 }
 
 updateInternetPerformanceSubItems(name, desc) {
@@ -319,6 +300,6 @@ updateInternetPerformanceSubItems(name, desc) {
 			{key: 'Internet performance Dummy Data 3'},
 			{key: 'Internet performance Dummy Data 4'}
 	]};
-	//this.subItemsList.emit(this.subItems);
+	// this.subItemsList.emit(this.subItems);
 }
 }
