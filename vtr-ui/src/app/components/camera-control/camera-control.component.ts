@@ -256,7 +256,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			this.videoElement = this.cameraPreview.nativeElement;
 			this.videoElement.src = previewUrl;
 			this.videoElement.play();
-			this.logger.info('CameraControlComponent.onOrientationChanged', { previewUrl, videoElement: this.videoElement });
+			this.logger.info('CameraControlComponent.startPreviewAsync', { previewUrl, videoElement: this.videoElement });
 
 
 			this.videoElement.addEventListener('playing', () => {

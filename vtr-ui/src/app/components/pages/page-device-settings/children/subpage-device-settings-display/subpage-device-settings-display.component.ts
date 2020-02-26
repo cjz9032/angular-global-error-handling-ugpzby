@@ -359,7 +359,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.getOLEDPowerControlCapability();
 		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (machineType === 1) {
-			this.getPriorityControlCapability();
+			//commented below line to temporarily hide in current release
+			//this.getPriorityControlCapability();
 		} else {
 			this.displayPriorityModal.capability = false;
 			this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
