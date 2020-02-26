@@ -12,14 +12,12 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 
 import { CommonPipeModule } from '../common/common-pipe.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { ModalAppsForYouScreenshotComponent } from 'src/app/components/modal/modal-apps-for-you-screenshot/modal-apps-for-you-screenshot.component';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
-library.add(faChevronLeft);
-library.add(faChevronRight);
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
 	declarations: [
@@ -35,7 +33,8 @@ library.add(faChevronRight);
 		SharedModule,
 		WidgetOfflineModule,
 		PageLayoutModule,
-		NgbModalModule
+		NgbModalModule,
+		FontAwesomeModule
 	],
 	providers: [
 		SystemUpdateService,
@@ -45,4 +44,11 @@ library.add(faChevronRight);
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppsForYouModule { }
+export class AppsForYouModule {
+	constructor(library: FaIconLibrary) {
+		library.addIcons(
+			faChevronLeft,
+			faChevronRight
+		);
+	}
+}
