@@ -34,7 +34,8 @@ export class UserDefinedKeyComponent implements OnInit {
 	public keyCode:string="";
 	public keyCodeValue:string="";
 	public applicationType:string;
-	public counter=0;
+    public counter=0;
+    public delete: string = this.translateService.instant('hardwareScan.scheduledScan.delete');
 	public keyboardMappedValues=[];
 	private regExForUrlWithParam = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
 

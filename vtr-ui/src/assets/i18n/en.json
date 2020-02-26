@@ -1734,16 +1734,14 @@
                     },
                     "invokeKeySequence": {
                         "title": "KEY SEQUENCE",
-                        "placeholder": "5 keys at most",
-                        "delete":"DELETE"
+                        "placeholder": "5 keys at most"
                     },
                     "openapplicationsorfiles":{
                         "applicationTitle":"You need to delete one app first",
                         "fileTitle":"You need to delete one file first",
                         "applicationsToOpen":"APPLICATIONS TO OPEN",
                         "filesToOpen":"FILES TO OPEN",
-                        "add":"ADD",
-                        "delete":"Delete"
+                        "add":"ADD"
                     },
 					"dropDown": {
 						"title": "ACTION USER DEFINED KEY",

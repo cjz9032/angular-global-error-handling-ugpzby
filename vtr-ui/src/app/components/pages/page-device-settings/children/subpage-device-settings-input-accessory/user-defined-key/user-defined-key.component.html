@@ -161,7 +161,7 @@
                                                     <div class="app-name delete-app" id="delete-app-{{i+1}}"
                                                         attr-aria-label="delete-app-{{i+1}}"
                                                         (click)="deleteApplicationOrFile('0',application.key,application.value,i,'APPLICATIONS');">
-                                                        {{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.delete' | translate}}</div>
+                                                        {{delete}}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -198,7 +198,7 @@
                                                     <div class="app-name delete-app" id="delete-file-{{i+1}}"
                                                         attr-aria-label="delete-file-{{i+1}}"
                                                         (click)="deleteApplicationOrFile('0',file.key,file.value,i,'FILES');">
-                                                        {{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.delete' | translate}}</div>
+                                                        {{delete}}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -225,7 +225,7 @@
                                                     (keydown)="invokeKeySequence($event)" required></textarea>
                                                 <div class="del-btn" *ngIf="this.keyCode" id="delete-key-sequence"
                                                     attr.aria-label="delete-key-sequence"
-                                                    (click)="resetInvokeSequence($event);"><a>Delete</a></div>
+                                                    (click)="resetInvokeSequence($event);"><a>{{delete | uppercase}}</a></div>
                                             </div>
                                         </div>
                                         <div class="col-12">
