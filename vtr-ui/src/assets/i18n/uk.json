@@ -22,7 +22,7 @@
                     "rapidCharge": "Миттєве заряджання"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Розгін увімк.",
                         "performance": "Потужність",
                         "balance": "Баланс",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Інсталюйте драйвер ГП, щоб використовувати функцію розгону.",
                         "goInstall": "ІНСТАЛЮВАТИ"
                     },
-                    "autoSwitch": "Автоматично вмикати продуктивний режим в іграх і вимикати після них."	
+                    "autoSwitch": "Автоматично вмикати продуктивний режим в іграх і вимикати після них."
                 },
                 "advancedOC": {
                     "title": "Додаткові настройки розгону",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Надіслати знімок екрана",
                 "messages": {
                     "feedbackSuccess": "Дякуємо за ваш відгук!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Акумулятор у доброму стані.</b>",
                     "Exhaustion": "Ємність акумулятора <b>впала</b>. Замініть акумулятор на новий.",
                     "Bad": "<b>Сталася помилка акумулятора.</b> Не вдається зарядити або розрядити акумулятор. Замініть акумулятор.",
-                    "NotDetected": "<b>Акумулятор не виявлено</b> або не підключено.",
+                    "NotDetected": "<b>Акумулятор не знайдено.</b>",
                     "NotGood": "<b>Акумулятор у поганому стані.</b>",
                     "NotSupportACAdapter": "<b>Адаптер змінного струму не підтримується.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер змінного струму не може забезпечити достатню потужність.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ПРОДУКТ ІЗ СЕРТИФІКАТОМ ENERGY STAR"
-				},
-				"dpm": {
-					"title": "Живлення",
-					"subtitle": "Настройки живлення",
-					"description": "У цьому розділі ви можете перевірити настройки за замовчуванням і налаштувати енергоспоживання та план живлення відповідно до своїх потреб.",
-					"globalPowerSettings": {
-						"title": "Основні настройки живлення",
-						"description": "Ця функція перевизначить параметри плану живлення або настройки енергоспоживання.",
-						"powerButton": {
-							"label": "КНОПКА ЖИВЛЕННЯ:",
-							"items": {
-								"doNothing": "Нічого не робити",
-								"sleep": "Режим сну",
-								"hibernate": "Режим глибокого сну",
-								"shutDown": "Завершити роботу",
-								"turnOffTheDisplay": "Вимкнення екрана"
-							}
-						},
-						"requiredSignIn": {
-							"label": "ПОТРІБЕН ВХІД:",
-							"items": {
-								"never": "Ніколи",
-								"fromSleep": "Коли ПК виходить із режиму сну"
-							},
-							"tip": "Примітка. Ця функція працює, тільки якщо задано системний пароль."
-						}
-					},
-					"powerUse": {
-						"title": "Енергоспоживання",
-						"description": "ЯКЩО СИСТЕМА В РЕЖИМІ ОЧІКУВАННЯ:",
-						"turnOffDisplay": "ВИМИКАТИ ДИСПЛЕЙ ЧЕРЕЗ:",
-						"turnOffHDD": "ВИМИКАТИ ЖОРСТКИЙ ДИСК ЧЕРЕЗ:",
-						"sleep": "ПЕРЕХОДИТИ В РЕЖИМ СНУ ЧЕРЕЗ:",
-						"hibernate": "ПЕРЕХОДИТИ В РЕЖИМ ГЛИБОКОГО СНУ ЧЕРЕЗ:",
-						"items": {
-							"never": "Ніколи",
-							"minute": "хвилина",
-							"minutes": "хв.",
-							"hour": "година",
-							"hours": "години"
-						}
-					},
-					"powerPlan": {
-						"title": "План живлення",
-						"description": "Виберіть план живлення, щоб керувати продуктивністю, енергоспоживанням пристрою та температурою системи.",
-						"currentPowerPlan": {
-							"label": "ПОТОЧНИЙ ПЛАН"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Живлення",
+                    "subtitle": "Настройки живлення",
+                    "description": "У цьому розділі ви можете перевірити настройки за замовчуванням і налаштувати енергоспоживання та план живлення відповідно до своїх потреб.",
+                    "globalPowerSettings": {
+                        "title": "Основні настройки живлення",
+                        "description": "Ця функція перевизначить параметри плану живлення або настройки енергоспоживання.",
+                        "powerButton": {
+                            "label": "КНОПКА ЖИВЛЕННЯ:",
+                            "items": {
+                                "doNothing": "Нічого не робити",
+                                "sleep": "Режим сну",
+                                "hibernate": "Режим глибокого сну",
+                                "shutDown": "Завершити роботу",
+                                "turnOffTheDisplay": "Вимкнення екрана"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "ПОТРІБЕН ВХІД:",
+                            "items": {
+                                "never": "Ніколи",
+                                "fromSleep": "Коли ПК виходить із режиму сну"
+                            },
+                            "tip": "Примітка. Ця функція працює, тільки якщо задано системний пароль."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Енергоспоживання",
+                        "description": "ЯКЩО СИСТЕМА В РЕЖИМІ ОЧІКУВАННЯ:",
+                        "turnOffDisplay": "ВИМИКАТИ ДИСПЛЕЙ ЧЕРЕЗ:",
+                        "turnOffHDD": "ВИМИКАТИ ЖОРСТКИЙ ДИСК ЧЕРЕЗ:",
+                        "sleep": "ПЕРЕХОДИТИ В РЕЖИМ СНУ ЧЕРЕЗ:",
+                        "hibernate": "ПЕРЕХОДИТИ В РЕЖИМ ГЛИБОКОГО СНУ ЧЕРЕЗ:",
+                        "items": {
+                            "never": "Ніколи",
+                            "minute": "хвилина",
+                            "minutes": "хв.",
+                            "hour": "година",
+                            "hours": "години"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "План живлення",
+                        "description": "Виберіть план живлення, щоб керувати продуктивністю, енергоспоживанням пристрою та температурою системи.",
+                        "currentPowerPlan": {
+                            "label": "ПОТОЧНИЙ ПЛАН"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Розумне очікування",
                     "description": "Ця функція допомагає комп’ютеру заощаджувати заряд акумулятора в години простою та зберігати швидкість запуску на рівні <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">сучасного режиму очікування</a> для періодів інтенсивного використання.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Виберіть",
                             "option2": "Відкрити веб-сайт",
-                            "option3": "Введіть текст"
-                        }
+                            "option3": "Введіть текст",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Вміст, який необхідно заповнити",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "ТЕКСТ ДЛЯ ВВЕДЕННЯ",
                         "placeholder": "Введіть тут"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Інтелектуальне відтворення мультимедіа",
                 "title": "Автоматичне відтворення відео",
                 "desc": "Ця функція призупинятиме відео, коли ви відходите від комп'ютера, та відновлятиме відтворення, коли ви повертаєтесь.",
-                "tooltip": "Ця функція не застосовується до програвачів онлайн-відео. Популярніші місцеві відеоплеєри (як-от Windows Media Player, 5KPlayer тощо) підтримують цю функцію."
+                "tooltip": "Ця функція не застосовується до<br>програвачів онлайн-відео.<br>Список підтримуваних програвачів наведено нижче.<br>5kPlayer<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Інтелектуальне відтворення мультимедіа",

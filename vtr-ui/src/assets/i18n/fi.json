@@ -22,7 +22,7 @@
                     "rapidCharge": "Pikalataus"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Ylikell. päällä",
                         "performance": "Suorituskyky",
                         "balance": "Tasapaino",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Asenna GPU-ajuri käyttämään ylikellotustoimintoa.",
                         "goInstall": "ASENNA"
                     },
-                    "autoSwitch": "Automaattinen vaihto suorituskykytilaan pelien käynnistyessä ja paluu takaisin pelin jälkeen."	
+                    "autoSwitch": "Automaattinen vaihto suorituskykytilaan pelien käynnistyessä ja paluu takaisin pelin jälkeen."
                 },
                 "advancedOC": {
                     "title": "Ylikellotus lisäasetukset",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Lähetä näyttökuva",
                 "messages": {
                     "feedbackSuccess": "Kiitos palautteestasi."
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Akun toimintakunto on hyvä.</b>",
                     "Exhaustion": "Akun kapasiteetti on <b>heikentynyt</b>. Vaihda uusi.",
                     "Bad": "<b>On tapahtunut akkuvirhe.</b> Akkua ei voi ladata tai sen varausta purkaa. Vaihda akku.",
-                    "NotDetected": "<b>Akkua ei havaittu, tai sitä ei</b> ole liitetty.",
+                    "NotDetected": "<b>Akkua ei havaittu.</b>",
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR -VAATIMUSTEN MUKAINEN TUOTE"
-				},
-				"dpm": {
-					"title": "Virta",
-					"subtitle": "Virta-asetukset",
-					"description": "Tämän osan avulla voit tarkistaa oletusasetukset ja mukauttaa virrankäyttösi ja virrankäyttösuunnitelmasi tarpeidesi mukaan.",
-					"globalPowerSettings": {
-						"title": "Yleiset virrankäyttöasetukset",
-						"description": "Tämä ominaisuus ohittaa virrankäyttösuunnitelman tai virrankäyttöasetukset.",
-						"powerButton": {
-							"label": "VIRTAPAINIKE:",
-							"items": {
-								"doNothing": "Älä tee mitään",
-								"sleep": "Lepotila",
-								"hibernate": "Lepotila",
-								"shutDown": "Lopputoimet",
-								"turnOffTheDisplay": "Katkaise näytöstä virta"
-							}
-						},
-						"requiredSignIn": {
-							"label": "PAKOLLINEN KIRJAUTUMINEN:",
-							"items": {
-								"never": "Ei koskaan",
-								"fromSleep": "Kun tietokone herää lepotilasta"
-							},
-							"tip": "Huomautus: Tämä toimii vain, jos järjestelmän salasana on määritetty."
-						}
-					},
-					"powerUse": {
-						"title": "Virrankäyttö",
-						"description": "JOS JÄRJESTELMÄ ON JOUTOAIKA-TILASSA:",
-						"turnOffDisplay": "KATKAISE NÄYTÖSTÄ VIRTA, KUN:",
-						"turnOffHDD": "SAMMUTA KIINTOLEVY, KUN:",
-						"sleep": "SIIRRY LEPOTILAAN, KUN:",
-						"hibernate": "SIIRRY HORROSTILAAN, KUN:",
-						"items": {
-							"never": "Ei koskaan",
-							"minute": "minuutti",
-							"minutes": "minuuttia",
-							"hour": "tunti",
-							"hours": "tuntia"
-						}
-					},
-					"powerPlan": {
-						"title": "Virrankäyttösuunnitelma",
-						"description": "Valitse virrankäyttösuunnitelma tietokoneen suorituskykyvyn, järjestelmän lämpötilan ja virrankäytön hallintaa varten.",
-						"currentPowerPlan": {
-							"label": "NYKYINEN VIRRANKÄYTTÖSUUNNITELMA"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Virta",
+                    "subtitle": "Virta-asetukset",
+                    "description": "Tämän osan avulla voit tarkistaa oletusasetukset ja mukauttaa virrankäyttösi ja virrankäyttösuunnitelmasi tarpeidesi mukaan.",
+                    "globalPowerSettings": {
+                        "title": "Yleiset virrankäyttöasetukset",
+                        "description": "Tämä ominaisuus ohittaa virrankäyttösuunnitelman tai virrankäyttöasetukset.",
+                        "powerButton": {
+                            "label": "VIRTAPAINIKE:",
+                            "items": {
+                                "doNothing": "Älä tee mitään",
+                                "sleep": "Lepotila",
+                                "hibernate": "Lepotila",
+                                "shutDown": "Lopputoimet",
+                                "turnOffTheDisplay": "Katkaise näytöstä virta"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "PAKOLLINEN KIRJAUTUMINEN:",
+                            "items": {
+                                "never": "Ei koskaan",
+                                "fromSleep": "Kun tietokone herää lepotilasta"
+                            },
+                            "tip": "Huomautus: Tämä toimii vain, jos järjestelmän salasana on määritetty."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Virrankäyttö",
+                        "description": "JOS JÄRJESTELMÄ ON JOUTOAIKA-TILASSA:",
+                        "turnOffDisplay": "KATKAISE NÄYTÖSTÄ VIRTA, KUN:",
+                        "turnOffHDD": "SAMMUTA KIINTOLEVY, KUN:",
+                        "sleep": "SIIRRY LEPOTILAAN, KUN:",
+                        "hibernate": "SIIRRY HORROSTILAAN, KUN:",
+                        "items": {
+                            "never": "Ei koskaan",
+                            "minute": "minuutti",
+                            "minutes": "minuuttia",
+                            "hour": "tunti",
+                            "hours": "tuntia"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Virrankäyttösuunnitelma",
+                        "description": "Valitse virrankäyttösuunnitelma tietokoneen suorituskykyvyn, järjestelmän lämpötilan ja virrankäytön hallintaa varten.",
+                        "currentPowerPlan": {
+                            "label": "NYKYINEN VIRRANKÄYTTÖSUUNNITELMA"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Älykäs valmiustila",
                     "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysaikana ilman, että <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> -ominaisuuden nopea käynnistys hidastuu kovan käytön aikana.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Valitse",
                             "option2": "Avaa verkkosivusto",
-                            "option3": "Kirjoita teksti"
-                        }
+                            "option3": "Kirjoita teksti",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Täytettävä sisältö",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "KIRJOITETTAVA TEKSTI",
                         "placeholder": "Kirjoita tähän"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Älykäs tietoväline",
                 "title": "Zero Touch -videon toisto",
                 "desc": "Tämä ominaisuus keskeyttää videon toiston, kun poistut tietokoneelta, ja jatkaa toistoa, kun palaat takaisin.",
-                "tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
+                "tooltip": "Tämä ominaisuus ei ole käytettävissä<br>verkkovideosoittimissa.<br>Tuetut soittimet on lueteltu seuraavassa:<br>5KPlayer<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Älykäs tietoväline",

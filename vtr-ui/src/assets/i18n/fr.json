@@ -22,7 +22,7 @@
                     "rapidCharge": "Charge rapide"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Surfréquençage activé",
                         "performance": "Performances",
                         "balance": "Equilibre",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Installer les pilotes GPU pour utiliser la fonction overclocking.",
                         "goInstall": "PROCÉDER À L'INSTALLATION"
                     },
-                    "autoSwitch": "Passage automatique au mode performance lors du lancement d'un jeu et retour au mode précédent à la fermeture du jeu."	
+                    "autoSwitch": "Passage automatique au mode performance lors du lancement d'un jeu et retour au mode précédent à la fermeture du jeu."
                 },
                 "advancedOC": {
                     "title": "Surfréquençage Param. avancés",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Envoyer une capture d'écran",
                 "messages": {
                     "feedbackSuccess": "Merci pour votre commentaire !"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>La batterie est en bon état.</b>",
                     "Exhaustion": "La capacité de la batterie est <b>affaiblie</b>. Veuillez la remplacer par une nouvelle.",
                     "Bad": "<b>Une erreur batterie s'est produite.</b> La batterie ne peut pas être chargée/déchargée. Remplacez la batterie.",
-                    "NotDetected": "<b>Aucune batterie n'a été</b> détectée ou n'est connectée à la batterie.",
+                    "NotDetected": "<b>Aucune batterie détectée.</b>",
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
                     "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
                     "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UN PRODUIT CERTIFIÉ ENERGY STAR"
-				},
-				"dpm": {
-					"title": "Alimentation",
-					"subtitle": "Paramètres d'alimentation",
-					"description": "Cette section vous permet de vérifier les paramètres par défaut et de personnaliser votre utilisation de l'alimentation et votre mode de gestion de l'alimentation en fonction de vos besoins.",
-					"globalPowerSettings": {
-						"title": "Paramètres d'alimentation globaux",
-						"description": "Cette fonctionnalité remplacera les paramètres de mode de gestion de l'alimentation ou d'utilisation de l'alimentation.",
-						"powerButton": {
-							"label": "BOUTON D'ALIMENTATION :",
-							"items": {
-								"doNothing": "Ne rien faire",
-								"sleep": "Veille",
-								"hibernate": "Hibernation",
-								"shutDown": "Arrêt",
-								"turnOffTheDisplay": "Mise hors tension de l'écran"
-							}
-						},
-						"requiredSignIn": {
-							"label": "CONNEXION OBLIGATOIRE :",
-							"items": {
-								"never": "Jamais",
-								"fromSleep": "Quand le PC quitte le mode veille"
-							},
-							"tip": "Remarque : Cela ne fonctionne que si un mot de passe système est défini."
-						}
-					},
-					"powerUse": {
-						"title": "Utilisation de l'alimentation",
-						"description": "SI LE SYSTÈME EST INACTIF :",
-						"turnOffDisplay": "DÉSACTIVER L'ÉCRAN APRÈS :",
-						"turnOffHDD": "DÉSACTIVER HDD APRÈS :",
-						"sleep": "METTRE EN VEILLE APRÈS :",
-						"hibernate": "METTRE EN HIBERNATION APRÈS :",
-						"items": {
-							"never": "Jamais",
-							"minute": "minute",
-							"minutes": "minutes",
-							"hour": "heure",
-							"hours": "heures"
-						}
-					},
-					"powerPlan": {
-						"title": "Mode de gestion de l'alimentation",
-						"description": "Choisissez un mode de gestion de l'alimentation pour contrôler les performances, la température système et l'utilisation de l'alimentation de l'ordinateur.",
-						"currentPowerPlan": {
-							"label": "MODE ACTUEL"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Alimentation",
+                    "subtitle": "Paramètres d'alimentation",
+                    "description": "Cette section vous permet de vérifier les paramètres par défaut et de personnaliser votre utilisation de l'alimentation et votre mode de gestion de l'alimentation en fonction de vos besoins.",
+                    "globalPowerSettings": {
+                        "title": "Paramètres d'alimentation globaux",
+                        "description": "Cette fonctionnalité remplacera les paramètres de mode de gestion de l'alimentation ou d'utilisation de l'alimentation.",
+                        "powerButton": {
+                            "label": "BOUTON D'ALIMENTATION :",
+                            "items": {
+                                "doNothing": "Ne rien faire",
+                                "sleep": "Veille",
+                                "hibernate": "Hibernation",
+                                "shutDown": "Arrêt",
+                                "turnOffTheDisplay": "Mise hors tension de l'écran"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "CONNEXION OBLIGATOIRE :",
+                            "items": {
+                                "never": "Jamais",
+                                "fromSleep": "Quand le PC quitte le mode veille"
+                            },
+                            "tip": "Remarque : Cela ne fonctionne que si un mot de passe système est défini."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Utilisation de l'alimentation",
+                        "description": "SI LE SYSTÈME EST INACTIF :",
+                        "turnOffDisplay": "DÉSACTIVER L'ÉCRAN APRÈS :",
+                        "turnOffHDD": "DÉSACTIVER HDD APRÈS :",
+                        "sleep": "METTRE EN VEILLE APRÈS :",
+                        "hibernate": "METTRE EN HIBERNATION APRÈS :",
+                        "items": {
+                            "never": "Jamais",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "hour": "heure",
+                            "hours": "heures"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Mode de gestion de l'alimentation",
+                        "description": "Choisissez un mode de gestion de l'alimentation pour contrôler les performances, la température système et l'utilisation de l'alimentation de l'ordinateur.",
+                        "currentPowerPlan": {
+                            "label": "MODE ACTUEL"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Veille intelligente",
                     "description": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant une sortie rapide de la <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">veille moderne</a> pendant les heures d'utilisation intense.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Sélectionnez",
                             "option2": "Site ouvert",
-                            "option3": "Entrez du texte"
-                        }
+                            "option3": "Entrez du texte",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Contenu à remplir",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "TEXTE À SAISIR",
                         "placeholder": "Veuillez saisir votre texte ici"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Support intelligent",
                 "title": "Lecture de la vidéo sans pression tactile",
                 "desc": "Cette fonctionnalité interrompra la vidéo lorsque vous quittez l'ordinateur et reprendra sa lecture lorsque vous revenez.",
-                "tooltip": "Cette fonction n'est pas applicable aux lecteurs vidéo Web. Les lecteurs vidéo locaux populaires tels que Windows Media Player, 5KPlayer, etc. prennent en charge cette fonction."
+                "tooltip": "Cette fonction ne s'applique pas aux<br>lecteurs vidéo Web.<br>Les lecteurs compatibles sont les suivants :<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Support intelligent",
