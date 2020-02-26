@@ -85,9 +85,9 @@ export class WarrantyService {
 
 	getWarrantyUrl(): string {
 		if (this.sn) {
-			return `https://www.lenovo.com/us/en/warrantyApos?serialNumber=${this.sn}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
+			return `https://pcsupport.lenovo.com/warrantylookup?sn=${this.sn}&upgrade&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
 		}
-		return `https://www.lenovo.com/us/en/warrantyApos`;
+		return `https://pcsupport.lenovo.com/warrantylookup`;
 	}
 
 	getRoundYear(dayDiff: number) {
