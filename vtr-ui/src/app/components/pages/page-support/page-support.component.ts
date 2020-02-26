@@ -11,6 +11,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
+import { LicensesService } from 'src/app/services/licenses/licenses.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -112,6 +114,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 	cateStartTime: any;
 	contentStartTime: any;
+	actionSubscription: Subscription;
 
 	constructor(
 		public mockService: MockService,
@@ -121,6 +124,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		public localInfoService: LocalInfoService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
+		private licensesService: LicensesService,
+		private activatedRoute: ActivatedRoute,
 		private loggerService: LoggerService,
 	) {
 		this.isOnline = this.commonService.isOnline;
@@ -130,6 +135,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
+		this.getProtocalActions();
 		this.getWarrantyInfo();
 
 		this.fetchCMSArticleCategory();
@@ -139,6 +145,12 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		clearTimeout(this.getArticlesTimeout);
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+		if (this.actionSubscription) {
+			this.actionSubscription.unsubscribe();
+		}
 	}
 
 	onNotification(notification: AppNotification) {
@@ -171,6 +183,14 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 					break;
 			}
 		}
+	}
+
+	getProtocalActions() {
+		this.actionSubscription = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+			if (params.has('action') && this.activatedRoute.snapshot.queryParams.action === 'licenseagreement') {
+				this.licensesService.openLicensesAgreement();
+			}
+		});
 	}
 
 	setShowList() {
