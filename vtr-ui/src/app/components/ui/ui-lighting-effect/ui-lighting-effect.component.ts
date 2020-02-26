@@ -41,7 +41,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 	dropdownEle: ElementRef;
 	intervalObj: any;
 	isItemsFocused = false;
-        @Output() public isEffectList = new EventEmitter<any>();
+    @Output() public isEffectList = new EventEmitter<any>();
 	// for macrokey
 	@Input() public enableDescription = true;
 	@Input() isRecording = false;
