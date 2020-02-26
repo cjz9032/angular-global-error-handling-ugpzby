@@ -211,7 +211,11 @@
 							<div class="battery-value-text">
 								<span>{{ model.fullChargeCapacity }} Wh</span>
 								<span *ngIf="model.isTemporaryChargeMode">
-									<fa-icon id="fullChargeCapacity_tooltip_icon"
+									<fa-icon vtrMetrics
+										metricsEvent="FeatureClick"
+										metricsParent="Device.BatteryDetails"
+										metricsItem="FullChargeCapacityTooltip"
+										id="fullChargeCapacity_tooltip_icon"
 										attr.aria-label="{{ 'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }} tooltip, which reads: {{ 'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate }}"
 										tabindex="0"
 										class="fcc-tooltip-icon"
