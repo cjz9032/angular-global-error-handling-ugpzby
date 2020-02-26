@@ -233,10 +233,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.intelligentSecurity.facilRecognitionCameraAccess = true;
 		this.intelligentSecurity.facialRecognitionCameraPrivacyMode = false;
 		this.intelligentSecurity.isDistanceSensitivityVisible = false;
-		this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = false;
-		this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = false;
-		this.intelligentSecurity.facilRecognitionCameraAccess = true;
-		this.intelligentSecurity.facialRecognitionCameraPrivacyMode = false;
 	}
 
 	private setIntelligentScreen() {
@@ -527,6 +523,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.smartAssist.setZeroTouchLockFacialRecoStatus($event)
 			.then((isSuccess: boolean) => {
 				this.logger.info(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus after API ${isSuccess} ; ${$event}`);
+				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			});
 	}
 
@@ -623,7 +621,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				if (this.smartAssist.isShellAvailable) {
 					this.getFacialRecognitionStatus();
 				}
-				            this.logger.info(`HPDReset - resetFacialRecognitionStatus ${res}`);
+				this.logger.info(`HPDReset - resetFacialRecognitionStatus ${res}`);
 			});
 		}
 	}
@@ -679,7 +677,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					}).catch(error => {
 					});
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	private getSuperResolutionStatus() {
@@ -689,9 +687,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					.then((response: FeatureStatus) => {
 						this.isSuperResolutionLoading = false;
 						this.superResolution = response;
-					}).catch(error => {});
+					}).catch(error => { });
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	onClick(path) {
@@ -710,14 +708,17 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	getFacialRecognitionStatus() {
+		this.logger.info(`getFacialRecognitionStatus.getZeroTouchLockFacialRecoStatus before API call`);
 		return this.smartAssist.getZeroTouchLockFacialRecoStatus().then((res: any) => {
 			if (res) {
 				this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = res.available;
 				this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = res.status;
 				this.intelligentSecurity.facilRecognitionCameraAccess = res.cameraPermission;
 				this.intelligentSecurity.facialRecognitionCameraPrivacyMode = res.privacyModeStatus;
+				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			}
-			         this.logger.info(`getFacialRecognitionStatus refresh successed`, res);
+			this.logger.info(`getFacialRecognitionStatus.getZeroTouchLockFacialRecoStatus after API call`, res);
 		});
 	}
 
