@@ -230,6 +230,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 				this.statusChangedLocationPermission();
 				this.initEyecaremodeSettings();
 				this.startEyeCareMonitor();
+				this.commonService.setLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus, 'false');
+				this.showECMReset = false;
 			} else {
 				this.showECMReset = true;
 				this.resetEyecaremodeAllSettings();
@@ -349,6 +351,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	}
 
 	inWhiteList() {
+		// noinspection SpellCheckingInspection
 		const whitelist = [
 			'40346638a8da4aa73c765af43a709673',
 			'a8c959c9d2f5f73734de9fb94a7065a2',
