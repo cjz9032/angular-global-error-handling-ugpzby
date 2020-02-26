@@ -176,16 +176,9 @@ export class ConfigService {
 			this.logger.error('ConfigService.initShowCHSMenu: promise rejected ', error);
 		});
 
-		const shellVersion = {
-			major: 10,
-			minor: 1910,
-			build: 12
-		};
-
 		this.showCHSWithoutSegment = country.toLowerCase() === 'us'
 			&& locale.startsWith('en')
 			&& chsHypsis
-			&& this.isShowCHSByShellVersion(shellVersion)
 			&& !machineInfo.isGaming;
 		this.showCHS = this.showCHSWithoutSegment && (this.activeSegment !== SegmentConst.Commercial);
 
@@ -194,18 +187,6 @@ export class ConfigService {
 		}
 
 		return menu;
-	}
-
-	isShowCHSByShellVersion(shellVersion: ShellVersion) {
-		const Windows = this.vantageShellService.getWindows();
-		if (Windows) {
-			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
-			return packageVersion.major !== shellVersion.major ? packageVersion.major > shellVersion.major :
-				packageVersion.minor !== shellVersion.minor ? packageVersion.minor > shellVersion.minor :
-					packageVersion.build >= shellVersion.build;
-		} else {
-			return true;
-		}
 	}
 
 	initializeSecurityItem(region, items) {

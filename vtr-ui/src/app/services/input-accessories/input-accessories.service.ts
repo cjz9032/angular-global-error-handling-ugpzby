@@ -36,8 +36,30 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 
-	}
+    }
+    
+    public AddApplicationOrFiles(selectedUDK: string,appSelectorType: string): Promise<any> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.AddApplicationOrFiles(selectedUDK,appSelectorType);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
 
+	}
+	public DeleteUDKApplication(udkType: string,itemId: string,displayName: string): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.DeleteUDKApplication(udkType,itemId,displayName);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+
+	}
 	//  Check Keyboard UDK Compatability Status and KeyboardMapCapability
 	public GetAllCapability(): Promise<any> {
 		try {
