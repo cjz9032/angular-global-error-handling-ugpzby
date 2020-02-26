@@ -1,0 +1,30 @@
+@import '../../../app.theme.scss';
+
+.vtr-widget-system-update {
+	border-radius: $border_radius;
+	background-size: cover;
+	color: $light;
+	box-shadow: $drop_shadow;
+	letter-spacing: 0;
+	padding: 2.4rem;
+  background-image: linear-gradient(239deg, #B773E4 0%, #7728AC 100%);
+  background-size: cover;
+
+	.title {
+		font-size: $fontsize_xl;
+		font-weight: $weight_600;
+		text-transform : capitalize;
+		margin-bottom: 0.5rem;
+  }
+  
+	.description {
+		font-size: $fontsize_xs;
+		font-weight: $weight_regular;
+		margin-bottom: 2rem;
+  }
+
+	.button-box {
+		padding: 0;
+		margin-top: 2.7rem;
+	}
+}

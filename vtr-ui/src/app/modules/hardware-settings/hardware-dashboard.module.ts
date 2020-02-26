@@ -25,12 +25,14 @@ import { CommonPipeModule } from '../common/common-pipe.module';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/widget-dashboard-warranty/widget-dashboard-warranty.component';
 import { FeedbackModule } from '../feedback/feedback.module';
+import { WidgetSystemUpdateComponent } from 'src/app/components/widgets/widget-system-update/widget-system-update.component';
 
 @NgModule({
 	declarations: [
 		PageDashboardComponent,
 		WidgetSwitchIconComponent,
 		WidgetQuicksettingsComponent,
+		WidgetSystemUpdateComponent,
 		WidgetDashboardWarrantyComponent
 	],
 	imports: [

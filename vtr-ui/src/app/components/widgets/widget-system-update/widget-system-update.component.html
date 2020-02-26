@@ -1,0 +1,23 @@
+<div class="vtr-widget-system-update">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<div class="title">{{'systemUpdates.title' | translate}}</div>
+				<div class="description"
+					id="widget-system-update-description"
+					role="text"
+					[innerHTML]="'Update your drivers, BIOS, and other software.'"></div>
+				<div class="button-box">
+					<vtr-ui-button linkId="btn-heck-for-system-updates"
+						metricsEvent="FeatureClick"
+						metricsItem="CheckForSystemUpdatesButton"
+						metricsParent="Page.Dashboard"
+						buttonColor="gray"
+            [isFullWidth]="true"
+            (onClick)="gotoAndCheckSystemUpdate()"
+						[label]="'Check for system updates'"></vtr-ui-button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
