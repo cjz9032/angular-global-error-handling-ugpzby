@@ -56,6 +56,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	isUnsupportedBattery = false;
 	isThinkPad = false;
 
+	disableBatteryDetails: boolean;
+
 	constructor(
 		private modalService: NgbModal,
 		public batteryService: BatteryDetailService,
@@ -292,12 +294,15 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	public updateBatteryDetails() {
-
+		let batteryErrorCount = 0;
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
 			this.initBatteryInformation();
 			const remainingPercentages = [];
 			this.batteryInfo.forEach((info) => {
 				remainingPercentages.push(info.remainingPercent);
+				if (info.chargeStatus === -1 || info.chargeStatus === -2) {
+					batteryErrorCount = batteryErrorCount + 1;
+				}
 			});
 			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 			// this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
@@ -309,6 +314,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 		this.batteryService.isPowerDriverMissing = this.batteryGauge.isPowerDriverMissing;
 		this.commonService.sendNotification('IsPowerDriverMissing', this.batteryService.isPowerDriverMissing);
+
+		this.disableBatteryDetails = this.batteryService.isPowerDriverMissing ||
+			this.batteryIndicator.batteryNotDetected || batteryErrorCount === this.batteryInfo.length;
 
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryService.gaugePercent = this.batteryGauge.percentage;
