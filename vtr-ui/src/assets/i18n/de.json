@@ -22,7 +22,7 @@
                     "rapidCharge": "Schnellladen"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Overclock ein",
                         "performance": "Leistung",
                         "balance": "Abstimmung",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "GPU-Treiber installieren, um die Overclocking-Funktion zu verwenden.",
                         "goInstall": "INSTALLIEREN"
                     },
-                    "autoSwitch": "Automatischer Wechsel in den Leistungsmodus, wenn Spiele gestartet werden. Nach dem Beenden des Spiels wird der Modus automatisch zurückgeschaltet."	
+                    "autoSwitch": "Automatischer Wechsel in den Leistungsmodus, wenn Spiele gestartet werden. Nach dem Beenden des Spiels wird der Modus automatisch zurückgeschaltet."
                 },
                 "advancedOC": {
                     "title": "Overclock Erweiterte Einst.",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Screenshot senden",
                 "messages": {
                     "feedbackSuccess": "Vielen Dank für Ihr Feedback!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Der Akku befindet sich in einem guten Zustand.</b>",
                     "Exhaustion": "Die Ladekapazität des Akkus ist <b>vermindert</b>. Setzen Sie einen neuen Akku ein.",
                     "Bad": "<b>Ein Akkufehler ist aufgetreten.</b> Der Akku kann nicht aufgeladen/entladen werden. Tauschen Sie den Akku aus.",
-                    "NotDetected": "<b>Kein Akku erkannt</b> oder nicht ordnungsgemäß eingesetzter Akku.",
+                    "NotDetected": "<b>Kein Akku erkannt.</b>",
                     "NotGood": "<b>Der Akku befindet sich nicht in einem guten Zustand.</b>",
                     "NotSupportACAdapter": "<b>Netzteil wird nicht unterstützt.</b>",
                     "LimitedACAdapterSupport": "<b>Netzteil kann nicht genügend Strom liefern.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "EIN ENERGY STAR-ZERTIFIZIERTES PRODUKT"
-				},
-				"dpm": {
-					"title": "Stromversorgung",
-					"subtitle": "Einstellungen für Energieversorgung",
-					"description": "In diesem Abschnitt können Sie die Standardeinstellungen überprüfen und Energieverbrauch und Energieschema an Ihre Bedürfnisse anpassen.",
-					"globalPowerSettings": {
-						"title": "Globale Einstellungen für Energieversorgung",
-						"description": "Mit dieser Funktion werden die Einstellungen für Energieschema oder Energieverbrauch außer Kraft gesetzt.",
-						"powerButton": {
-							"label": "BETRIEBSSPANNUNGSSCHALTER:",
-							"items": {
-								"doNothing": "Keine Aktion",
-								"sleep": "Energie sparen",
-								"hibernate": "Hibernation",
-								"shutDown": "Herunterfahren",
-								"turnOffTheDisplay": "Anzeige ausschalten"
-							}
-						},
-						"requiredSignIn": {
-							"label": "ANMELDUNG ERFORDERLICH:",
-							"items": {
-								"never": "Nie",
-								"fromSleep": "Bei Beendigung des Standbymodus des PCs"
-							},
-							"tip": "Hinweis: Dies funktioniert nur, wenn ein Systemkennwort festgelegt ist."
-						}
-					},
-					"powerUse": {
-						"title": "Energieverbrauch",
-						"description": "BEI INAKTIVEM SYSTEM:",
-						"turnOffDisplay": "ANZEIGE AUSSCHALTEN NACH:",
-						"turnOffHDD": "FESTPLATTENLAUFWERK AUSSCHALTEN NACH:",
-						"sleep": "ENERGIE SPAREN NACH:",
-						"hibernate": "RUHEZUSTAND NACH:",
-						"items": {
-							"never": "Nie",
-							"minute": "Minute",
-							"minutes": "Minuten",
-							"hour": "Stunde",
-							"hours": "Stunden"
-						}
-					},
-					"powerPlan": {
-						"title": "Energieschema",
-						"description": "Wählen Sie ein Energieschema, um Leistung, Systemtemperatur und Energieverbrauch des Computers zu steuern.",
-						"currentPowerPlan": {
-							"label": "AKTUELLES SCHEMA"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Stromversorgung",
+                    "subtitle": "Einstellungen für Energieversorgung",
+                    "description": "In diesem Abschnitt können Sie die Standardeinstellungen überprüfen und Energieverbrauch und Energieschema an Ihre Bedürfnisse anpassen.",
+                    "globalPowerSettings": {
+                        "title": "Globale Einstellungen für Energieversorgung",
+                        "description": "Mit dieser Funktion werden die Einstellungen für Energieschema oder Energieverbrauch außer Kraft gesetzt.",
+                        "powerButton": {
+                            "label": "BETRIEBSSPANNUNGSSCHALTER:",
+                            "items": {
+                                "doNothing": "Keine Aktion",
+                                "sleep": "Energie sparen",
+                                "hibernate": "Hibernation",
+                                "shutDown": "Herunterfahren",
+                                "turnOffTheDisplay": "Anzeige ausschalten"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "ANMELDUNG ERFORDERLICH:",
+                            "items": {
+                                "never": "Nie",
+                                "fromSleep": "Bei Beendigung des Standbymodus des PCs"
+                            },
+                            "tip": "Hinweis: Dies funktioniert nur, wenn ein Systemkennwort festgelegt ist."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Energieverbrauch",
+                        "description": "BEI INAKTIVEM SYSTEM:",
+                        "turnOffDisplay": "ANZEIGE AUSSCHALTEN NACH:",
+                        "turnOffHDD": "FESTPLATTENLAUFWERK AUSSCHALTEN NACH:",
+                        "sleep": "ENERGIE SPAREN NACH:",
+                        "hibernate": "RUHEZUSTAND NACH:",
+                        "items": {
+                            "never": "Nie",
+                            "minute": "Minute",
+                            "minutes": "Minuten",
+                            "hour": "Stunde",
+                            "hours": "Stunden"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Energieschema",
+                        "description": "Wählen Sie ein Energieschema, um Leistung, Systemtemperatur und Energieverbrauch des Computers zu steuern.",
+                        "currentPowerPlan": {
+                            "label": "AKTUELLES SCHEMA"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Smart-Standby",
                     "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Fortsetzen von <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern-Standby</a> bei intensiverer Nutzung beeinträchtigt wird.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Bitte auswählen",
                             "option2": "Webseite öffnen",
-                            "option3": "Text eingeben"
-                        }
+                            "option3": "Text eingeben",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Auszufüllender Inhalt",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "EINZUGEBENDER TEXT",
                         "placeholder": "Text hier eingeben"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Intelligente Medien",
                 "title": "Zero-Touch-Videowiedergabe",
                 "desc": "Diese Funktion pausiert das Video, wenn Sie sich vom Computer entfernen, und spielt es weiter ab, wenn Sie zurück sind.",
-                "tooltip": "Diese Funktion funktioniert nicht bei Web-Videoplayern. Bekannte lokale Videoplayer unterstützen diese Funktion, z. B. Windows Media Player, 5KPlayer etc."
+                "tooltip": "Diese Funktion ist nicht verfügbar bei<br>Web-Videoplayern.<br>Die folgenden Player werden unterstützt:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Intelligente Medien",

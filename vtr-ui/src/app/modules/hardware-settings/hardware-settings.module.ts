@@ -52,8 +52,7 @@ import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-se
 import { CommonModalModule } from '../common/common-modal.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faBatteryThreeQuarters } from '@fortawesome/free-solid-svg-icons/faBatteryThreeQuarters';
@@ -88,6 +87,7 @@ import { faCircle as falCircle } from '@fortawesome/free-solid-svg-icons/faCircl
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
+import { faPlusSquare } from '@fortawesome/pro-light-svg-icons/faPlusSquare';
 import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-graph/smart-standby-graph.component';
 import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.component';
 import { SubpageDeviceSettingsPowerDpmComponent } from "../../components/pages/page-device-settings/children/subpage-device-settings-power-dpm/subpage-device-settings-power-dpm.component";
@@ -181,41 +181,42 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class HardwareSettingsModule {
-	constructor() {
-		library.add(faCheck);
-		library.add(faCheckCircle);
-		library.add(faChevronCircleUp);
-		library.add(faPlane);
-		library.add(faThumbtack);
-		library.add(faQuestionCircle);
-		library.add(faBatteryHalf);
-		library.add(faBatteryBolt);
-		library.add(faBatteryQuarter);
-		library.add(faUsb);
-		library.add(faTachometerFast);
-		library.add(faMicrophone);
-		library.add(faKeyboard);
-		library.add(faEye);
-		library.add(faTv);
-		library.add(faCamera);
-		library.add(faGem);
-		library.add(faBatteryThreeQuarters);
-		library.add(faBatteryFull);
-		library.add(faChevronDown);
-		library.add(faChevronUp);
-		library.add(faCaretUp);
-		library.add(faCaretDown);
-		library.add(faTimesCircle);
-		library.add(faPlusCircle);
-		library.add(faMinusCircle);
-		library.add(falCheck);
-		library.add(falTimes);
-		library.add(faCircle);
-		library.add(falCircle);
-		library.add(faSync);
-		library.add(faCircleNotch);
-		library.add(faAngleRight);
-		library.add(faCalendarAlt);
-		library.add(faBriefcase);
+	constructor(library: FaIconLibrary) {
+		library.addIcons(faCheck);
+		library.addIcons(faCheckCircle);
+		library.addIcons(faChevronCircleUp);
+		library.addIcons(faPlane);
+		library.addIcons(faThumbtack);
+		library.addIcons(faQuestionCircle);
+		library.addIcons(faBatteryHalf);
+		library.addIcons(faBatteryBolt);
+		library.addIcons(faBatteryQuarter);
+		library.addIcons(faUsb);
+		library.addIcons(faTachometerFast);
+		library.addIcons(faMicrophone);
+		library.addIcons(faKeyboard);
+		library.addIcons(faEye);
+		library.addIcons(faTv);
+		library.addIcons(faCamera);
+		library.addIcons(faGem);
+		library.addIcons(faBatteryThreeQuarters);
+		library.addIcons(faBatteryFull);
+		library.addIcons(faChevronDown);
+		library.addIcons(faChevronUp);
+		library.addIcons(faCaretUp);
+		library.addIcons(faCaretDown);
+		library.addIcons(faTimesCircle);
+		library.addIcons(faPlusCircle);
+		library.addIcons(faMinusCircle);
+		library.addIcons(falCheck);
+		library.addIcons(falTimes);
+		library.addIcons(faCircle);
+		library.addIcons(falCircle);
+		library.addIcons(faSync);
+		library.addIcons(faCircleNotch);
+		library.addIcons(faAngleRight);
+		library.addIcons(faCalendarAlt);
+        library.addIcons(faBriefcase);
+        library.addIcons(faPlusSquare);
 	}
 }

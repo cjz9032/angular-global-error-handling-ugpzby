@@ -22,7 +22,7 @@
                     "rapidCharge": "Gyorstöltés"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Túlpörgetés",
                         "performance": "Teljesítmény",
                         "balance": "Egyensúly",
@@ -114,9 +114,9 @@
                     "OCDesc": "Úgy is dönthet, hogy bekapcsolja a Túlpörgetés funkciót.",
                     "ac_dcDesc": "A Teljesítmény mód csak akkor alkalmazható, ha a hálózati adapter csatlakoztatva van.",
                     "balanceTitle": "Kiegyensúlyozott mód",
-                    "balanceDesc": "Automatikusan kiegyenlíti a teljesítményt és a ventilátor sebességét a hőmérséklet alapján. Középszintű energiafogyasztás.",
+                    "balanceDesc": "Automatikusan kiegyenlíti a teljesítményt és a ventilátor sebességét a hőmérséklet alapján, közepes energiafogyasztás mellett.",
                     "quietTitle": "Csendes mód",
-                    "quietDesc": "A készülék csendes marad a számítógép teljesítményének és a ventilátor sebességének csökkentésével, ahol csak lehet. Alacsony energiafogyasztás.",
+                    "quietDesc": "A készülék csendes marad a számítógép teljesítményének és a ventilátor sebességének csökkentésével, ahol csak lehet, alacsony energiafogyasztás mellett.",
                     "OC": {
                         "cpu_gpuOC": "CPU/GPU-túlpörgetés funkció engedélyezése Teljesítmény módban.",
                         "cpuOC": "CPU-túlpörgetés funkció engedélyezése Teljesítmény módban.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "GPU-illesztőprogram telepítése a Túlpörgetés funkcióhoz.",
                         "goInstall": "TELEPÍTÉS"
                     },
-                    "autoSwitch": "Automatikus váltás Teljesítmény módra játék indításakor, majd visszaváltás a játékból való kilépést követően."	
+                    "autoSwitch": "Automatikus váltás Teljesítmény módra játék indításakor, majd visszaváltás a játékból való kilépést követően."
                 },
                 "advancedOC": {
                     "title": "Túlpörgetés Spec. beáll.",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Képernyőkép küldése",
                 "messages": {
                     "feedbackSuccess": "Köszönjük a visszajelzését."
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Az akkumulátor jó állapotban van.</b>",
                     "Exhaustion": "Az akkumulátor kapacitása <b>tartósan csökkent</b>. Kérjük, cserélje ki egy újra.",
                     "Bad": "<b>Hiba történt az akkumulátorral.</b> Az akkumulátor nem tölthető/meríthető le. Cserélje ki az akkumulátort.",
-                    "NotDetected": "<b>Nem található akkumulátor, vagy</b> az akkumulátor nincs megfelelően behelyezve.",
+                    "NotDetected": "<b>A rendszer nem észlel akkumulátort.</b>",
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR-TANÚSÍTVÁNNYAL RENDELKEZŐ TERMÉK"
-				},
-				"dpm": {
-					"title": "Tápellátás",
-					"subtitle": "Energiagazdálkodási beállítások",
-					"description": "Ez a szakasz lehetővé teszi az alapértelmezett beállítások ellenőrzését, valamint az energiafelhasználás és az energiaséma testreszabását az igényeinek megfelelően.",
-					"globalPowerSettings": {
-						"title": "Globális energiagazdálkodási beállítások",
-						"description": "Ez a funkció felülbírálja az Energiaséma vagy Energiafelhasználás beállításait.",
-						"powerButton": {
-							"label": "FŐKAPCSOLÓ:",
-							"items": {
-								"doNothing": "Ne tegyen semmit",
-								"sleep": "Alvó mód",
-								"hibernate": "Hibernálás",
-								"shutDown": "Leállítás",
-								"turnOffTheDisplay": "Kapcsolja ki a kijelzőt"
-							}
-						},
-						"requiredSignIn": {
-							"label": "BEJELENTKEZÉS SZÜKSÉGES:",
-							"items": {
-								"never": "Soha",
-								"fromSleep": "Amikor a számítógép felébred alvásból"
-							},
-							"tip": "Megjegyzés: Ez csak akkor működik, ha a rendszer jelszava be van állítva."
-						}
-					},
-					"powerUse": {
-						"title": "Energiahasználat",
-						"description": "HA A RENDSZER TÉTLEN:",
-						"turnOffDisplay": "KIJELZŐ KIKAPCSOLÁSA ENNYI IDŐ ELTELTÉVEL:",
-						"turnOffHDD": "HDD KIKAPCSOLÁSA ENNYI IDŐ ELTELTÉVEL:",
-						"sleep": "ALVÓ ÁLLAPOT ENNYI IDŐ ELTELTÉVEL:",
-						"hibernate": "HIBERNÁLÁS ENNYI IDŐ ELTELTÉVEL:",
-						"items": {
-							"never": "Soha",
-							"minute": "perc",
-							"minutes": "perc",
-							"hour": "óra",
-							"hours": "óra"
-						}
-					},
-					"powerPlan": {
-						"title": "Energiaséma",
-						"description": "Válasszon egy energiasémát, amely vezérli a számítógép teljesítményét, a rendszer hőmérsékletét és az energiafelhasználást.",
-						"currentPowerPlan": {
-							"label": "AKTUÁLIS SÉMA"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Tápellátás",
+                    "subtitle": "Energiagazdálkodási beállítások",
+                    "description": "Ez a szakasz lehetővé teszi az alapértelmezett beállítások ellenőrzését, valamint az energiafelhasználás és az energiaséma testreszabását az igényeinek megfelelően.",
+                    "globalPowerSettings": {
+                        "title": "Globális energiagazdálkodási beállítások",
+                        "description": "Ez a funkció felülbírálja az Energiaséma vagy Energiafelhasználás beállításait.",
+                        "powerButton": {
+                            "label": "FŐKAPCSOLÓ:",
+                            "items": {
+                                "doNothing": "Ne tegyen semmit",
+                                "sleep": "Alvó mód",
+                                "hibernate": "Hibernálás",
+                                "shutDown": "Leállítás",
+                                "turnOffTheDisplay": "Kapcsolja ki a kijelzőt"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "BEJELENTKEZÉS SZÜKSÉGES:",
+                            "items": {
+                                "never": "Soha",
+                                "fromSleep": "Amikor a számítógép felébred alvásból"
+                            },
+                            "tip": "Megjegyzés: Ez csak akkor működik, ha a rendszer jelszava be van állítva."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Energiahasználat",
+                        "description": "HA A RENDSZER TÉTLEN:",
+                        "turnOffDisplay": "KIJELZŐ KIKAPCSOLÁSA ENNYI IDŐ ELTELTÉVEL:",
+                        "turnOffHDD": "HDD KIKAPCSOLÁSA ENNYI IDŐ ELTELTÉVEL:",
+                        "sleep": "ALVÓ ÁLLAPOT ENNYI IDŐ ELTELTÉVEL:",
+                        "hibernate": "HIBERNÁLÁS ENNYI IDŐ ELTELTÉVEL:",
+                        "items": {
+                            "never": "Soha",
+                            "minute": "perc",
+                            "minutes": "perc",
+                            "hour": "óra",
+                            "hours": "óra"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Energiaséma",
+                        "description": "Válasszon egy energiasémát, amely vezérli a számítógép teljesítményét, a rendszer hőmérsékletét és az energiafelhasználást.",
+                        "currentPowerPlan": {
+                            "label": "AKTUÁLIS SÉMA"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Intelligens készenlét",
                     "description": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern készenléti állapot</a> visszaállási művelete nem lesz lassabb a gép komolyabb használata során.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Válasszon",
                             "option2": "Nyissa meg a webhelyet",
-                            "option3": "Írja be a szöveget"
-                        }
+                            "option3": "Írja be a szöveget",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Kitöltendő tartalom",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "MEGADANDÓ SZÖVEG",
                         "placeholder": "Írja be ide"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Intelligens média",
                 "title": "Zero Touch Videolejátszás",
                 "desc": "Ez a funkció szünetelteti a videólejátszást, amikor a felhasználó magára hagyja a számítógépet, és újraindítja a lejátszást, amikor visszatér.",
-                "tooltip": "Ez a funkció nem használható internetes videólejátszókhoz. A népszerű helyi videólejátszók (pl. a Windows Media Player vagy a 5KPlayer) támogatják ezt a funkciót."
+                "tooltip": "Ez a funkció nem használható<br>internetes videólejátszókhoz.<br>A támogatott lejátszók az alábbi felsorolásban láthatók:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Intelligens média",

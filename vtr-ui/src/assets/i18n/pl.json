@@ -22,7 +22,7 @@
                     "rapidCharge": "Szybkie ładowanie"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Przetakt. wł.",
                         "performance": "Wydajność",
                         "balance": "Równowaga",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Zainstaluj sterownik GPU w celu użycia funkcji Przetaktowania.",
                         "goInstall": "ZAINSTALUJ"
                     },
-                    "autoSwitch": "Automatycznie włączaj tryb wydajności po uruchomianiu gry i wyłączaj go po jej zamknięciu."	
+                    "autoSwitch": "Automatycznie włączaj tryb wydajności po uruchomianiu gry i wyłączaj go po jej zamknięciu."
                 },
                 "advancedOC": {
                     "title": "Przetaktowywanie Ust. zaaw.",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Prześlij zrzut ekranu",
                 "messages": {
                     "feedbackSuccess": "Dziękujemy za opinię!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Akumulator jest w dobrym stanie.</b>",
                     "Exhaustion": "Pojemność baterii <b>trwale spadła</b>. Wymień baterię na nową.",
                     "Bad": "<b>Wystąpił błąd akumulatora.</b> Nie można naładować/rozładować akumulatora. Wymień baterię.",
-                    "NotDetected": "<b>Nie wykryto akumulatora lub</b> akumulator nie jest podłączony do prądu.",
+                    "NotDetected": "<b>Nie wykryto akumulatora.</b>",
                     "NotGood": "<b>Akumulator nie jest w dobrym stanie.</b>",
                     "NotSupportACAdapter": "<b>Zasilacz nie jest obsługiwany.</b>",
                     "LimitedACAdapterSupport": "<b>Zasilacz nie zapewnia wystarczającej mocy.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "PRODUKT Z CERTYFIKATEM ENERGY STAR"
-				},
-				"dpm": {
-					"title": "Zasilanie",
-					"subtitle": "Ustawienia zasilania",
-					"description": "Możesz sprawdzić domyślne ustawienia w tej sekcji i dostosować zużycie energii i plan zasilania do swoich potrzeb.",
-					"globalPowerSettings": {
-						"title": "Globalne ustawienia zasilania",
-						"description": "Funkcja zastąpi ustawienia planu zasilania lub zużycia energii.",
-						"powerButton": {
-							"label": "PRZYCISK ZASILANIA:",
-							"items": {
-								"doNothing": "Nie rób nic",
-								"sleep": "Uśpienie",
-								"hibernate": "Hibernuj",
-								"shutDown": "Zamknij",
-								"turnOffTheDisplay": "Wyłącz ekran"
-							}
-						},
-						"requiredSignIn": {
-							"label": "WYMAGANE ZALOGOWANIE:",
-							"items": {
-								"never": "Nigdy",
-								"fromSleep": "Gdy komputer budzi się z trybu uśpienia"
-							},
-							"tip": "Uwaga: Działa to tylko wtedy, jeśli ustawiono hasło systemu."
-						}
-					},
-					"powerUse": {
-						"title": "Zużycie energii",
-						"description": "JEŚLI SYSTEM NIE JEST UŻYWANY:",
-						"turnOffDisplay": "WYŁĄCZ EKRAN PO:",
-						"turnOffHDD": "WYŁĄCZ HDD PO:",
-						"sleep": "PRZEJDŹ DO TRYBU UŚPIENIA PO:",
-						"hibernate": "PRZEJDŹ DO TRYBU HIBERNACJI PO:",
-						"items": {
-							"never": "Nigdy",
-							"minute": "minuta",
-							"minutes": "minut(y)",
-							"hour": "godzina",
-							"hours": "godzin(y)"
-						}
-					},
-					"powerPlan": {
-						"title": "Plan zasilania",
-						"description": "Wybierz plan zasilania, aby kontrolować wydajność, temperaturę komputera i zużycie energii.",
-						"currentPowerPlan": {
-							"label": "OBECNY PLAN"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Zasilanie",
+                    "subtitle": "Ustawienia zasilania",
+                    "description": "Możesz sprawdzić domyślne ustawienia w tej sekcji i dostosować zużycie energii i plan zasilania do swoich potrzeb.",
+                    "globalPowerSettings": {
+                        "title": "Globalne ustawienia zasilania",
+                        "description": "Funkcja zastąpi ustawienia planu zasilania lub zużycia energii.",
+                        "powerButton": {
+                            "label": "PRZYCISK ZASILANIA:",
+                            "items": {
+                                "doNothing": "Nie rób nic",
+                                "sleep": "Uśpienie",
+                                "hibernate": "Hibernuj",
+                                "shutDown": "Zamknij",
+                                "turnOffTheDisplay": "Wyłącz ekran"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "WYMAGANE ZALOGOWANIE:",
+                            "items": {
+                                "never": "Nigdy",
+                                "fromSleep": "Gdy komputer budzi się z trybu uśpienia"
+                            },
+                            "tip": "Uwaga: Działa to tylko wtedy, jeśli ustawiono hasło systemu."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Zużycie energii",
+                        "description": "JEŚLI SYSTEM NIE JEST UŻYWANY:",
+                        "turnOffDisplay": "WYŁĄCZ EKRAN PO:",
+                        "turnOffHDD": "WYŁĄCZ HDD PO:",
+                        "sleep": "PRZEJDŹ DO TRYBU UŚPIENIA PO:",
+                        "hibernate": "PRZEJDŹ DO TRYBU HIBERNACJI PO:",
+                        "items": {
+                            "never": "Nigdy",
+                            "minute": "minuta",
+                            "minutes": "minut(y)",
+                            "hour": "godzina",
+                            "hours": "godzin(y)"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Plan zasilania",
+                        "description": "Wybierz plan zasilania, aby kontrolować wydajność, temperaturę komputera i zużycie energii.",
+                        "currentPowerPlan": {
+                            "label": "OBECNY PLAN"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Inteligentne wstrzymanie",
                     "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie wznawianie z <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">trybu wstrzymania</a> w godzinach bardziej intensywnego korzystania.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Wybierz",
                             "option2": "Otwórz stronę internetową",
-                            "option3": "Wprowadź tekst"
-                        }
+                            "option3": "Wprowadź tekst",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Treść do wypełnienia",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "TEKST DO WPROWADZENIA",
                         "placeholder": "Proszę wpisać tutaj"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Inteligentne multimedia",
                 "title": "Odtwarzanie wideo bez dotyku",
                 "desc": "Ta funkcja wstrzymuje odtwarzanie wideo, gdy odchodzisz od komputera, i wznawia je, gdy wracasz.",
-                "tooltip": "Ta funkcja nie dotyczy odtwarzaczy wideo w sieci Web. Popularne lokalne odtwarzacze wideo, takie jak program Windows Media Player, 5KPlayer itd., obsługują tę funkcję."
+                "tooltip": "Ta funkcja nie dotyczy<br>odtwarzaczy wideo w sieci Web.<br>Obsługiwane są następujące odtwarzacze:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Inteligentne multimedia",

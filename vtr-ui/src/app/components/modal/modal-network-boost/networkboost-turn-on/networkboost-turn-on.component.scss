@@ -56,9 +56,10 @@ ui-popover-turn-on {
 			vertical-align: middle;
 		}
 		.status-text {
-			font-size: 1.6rem;
+			font-size: $fontsize_xs;
 			padding-left: 3rem;
 			line-height: 1.5rem;
+			color: $darkText;
 		}
 		.ask-again{
 			position: absolute;

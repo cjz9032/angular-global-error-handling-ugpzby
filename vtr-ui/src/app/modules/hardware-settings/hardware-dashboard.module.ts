@@ -17,8 +17,7 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 import { WidgetCarouselModule } from 'src/app/components/widgets/widget-carousel/widget-carousel.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
 import { faCheckCircle } from '@fortawesome/pro-light-svg-icons/faCheckCircle';
@@ -74,9 +73,9 @@ import { FeedbackModule } from '../feedback/feedback.module';
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class HardwareDashboardModule {
-	constructor() {
-		library.add(faTimes);
-		library.add(faExclamationCircle);
-		library.add(faCheckCircle);
+	constructor(library: FaIconLibrary) {
+		library.addIcons(faTimes);
+		library.addIcons(faExclamationCircle);
+		library.addIcons(faCheckCircle);
 	}
 }

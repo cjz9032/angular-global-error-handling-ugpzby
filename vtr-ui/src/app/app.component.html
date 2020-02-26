@@ -3,8 +3,10 @@
 	attr.aria-label="{{ pageTitle | translate }}"
 	id="main-wrapper"
 	role="document">
-	<vtr-menu-main *ngIf="isMachineInfoLoaded && !deviceService.isAndroid"
-		[loadMenuItem]="machineInfo">
+	<vtr-menu-main
+		[hidden]="!isMachineInfoLoaded || deviceService.isAndroid"
+		[loadMenuItem]="machineInfo"
+		>
 	</vtr-menu-main>
 	<div class="vtr-app container-fluid"
 		[ngClass]="{'is-android': deviceService.isAndroid}">

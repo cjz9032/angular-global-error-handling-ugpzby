@@ -22,7 +22,7 @@
                     "rapidCharge": "Hızlı Şarj"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Hız Aşrtma açık",
                         "performance": "Performans",
                         "balance": "Denge",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Hız Aşırtma işlevini kullanmak için GPU sürücüsünü yükleyin.",
                         "goInstall": "YÜKLE"
                     },
-                    "autoSwitch": "Oyunları başlatırken otomatik olarak Performans Kipi'ne geçip oyundan çıktıktan sonra eski kipe geri dönün."	
+                    "autoSwitch": "Oyunları başlatırken otomatik olarak Performans Kipi'ne geçip oyundan çıktıktan sonra eski kipe geri dönün."
                 },
                 "advancedOC": {
                     "title": "Hız Aşırtma Gelşmiş Ayrları",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Ekran Görüntüsü Gönder",
                 "messages": {
                     "feedbackSuccess": "Geri bildiriminiz için teşekkürler!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Pil iyi durumda.</b>",
                     "Exhaustion": "Pil kapasitesi <b>düştü</b>. Lütfen yenisiyle değiştirin.",
                     "Bad": "<b>Bir pil hatası oluştu.</b> Pil doldurulamıyor/boşaltılamıyor. Pili değiştirin.",
-                    "NotDetected": "<b>Pil algılanmadı veya</b> pile takılı değil.",
+                    "NotDetected": "<b>Pil algılanmadı.</b>",
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b>",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı yeterli güç sağlayamıyor.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR SERTİFİKALI ÜRÜN"
-				},
-				"dpm": {
-					"title": "Güç",
-					"subtitle": "Güç ayarları",
-					"description": "Bu bölümden varsayılan ayarları denetleyebilir, güç kullanımınızı ve güç planınızı ihtiyaçlarınıza göre özelleştirebilirsiniz.",
-					"globalPowerSettings": {
-						"title": "Genel güç ayarları",
-						"description": "Bu özellik, Güç planı ve Güç kullanımı ayarlarını geçersiz kılacaktır.",
-						"powerButton": {
-							"label": "AÇMA/KAPAMA DÜĞMESİ:",
-							"items": {
-								"doNothing": "Hiçbir şey yapma",
-								"sleep": "Uyku",
-								"hibernate": "Hazırda bekleme kipine geç",
-								"shutDown": "Kapat",
-								"turnOffTheDisplay": "Görüntü birimini kapat"
-							}
-						},
-						"requiredSignIn": {
-							"label": "OTURUM AÇMA GEREKLİ:",
-							"items": {
-								"never": "Hiçbir zaman",
-								"fromSleep": "PC uyku kipinden çağrıldığında"
-							},
-							"tip": "Not: Bu yalnızca sistem parolası belirlenmişse geçerlidir."
-						}
-					},
-					"powerUse": {
-						"title": "Güç kullanımı",
-						"description": "SİSTEM BOŞTAYSA:",
-						"turnOffDisplay": "EKRAN KAPATMAK İÇİN BEKLENECEK SÜRE:",
-						"turnOffHDD": "HDD'Yİ KAPATMAK İÇİN BEKLENECEK SÜRE:",
-						"sleep": "UYKU KİPİNE GEÇMEK İÇİN BEKLENECEK SÜRE:",
-						"hibernate": "HAZIRDA BEKLEME KİPİNE GEÇMEK İÇİN BEKLENECEK SÜRE:",
-						"items": {
-							"never": "Hiçbir zaman",
-							"minute": "dakika",
-							"minutes": "dakika",
-							"hour": "saat",
-							"hours": "saat"
-						}
-					},
-					"powerPlan": {
-						"title": "Güç planı",
-						"description": "Bilgisayar performansını, sistem sıcaklığını ve güç kullanımını denetlemek için bir güç planı seçin.",
-						"currentPowerPlan": {
-							"label": "GEÇERLİ PLAN"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Güç",
+                    "subtitle": "Güç ayarları",
+                    "description": "Bu bölümden varsayılan ayarları denetleyebilir, güç kullanımınızı ve güç planınızı ihtiyaçlarınıza göre özelleştirebilirsiniz.",
+                    "globalPowerSettings": {
+                        "title": "Genel güç ayarları",
+                        "description": "Bu özellik, Güç planı ve Güç kullanımı ayarlarını geçersiz kılacaktır.",
+                        "powerButton": {
+                            "label": "AÇMA/KAPAMA DÜĞMESİ:",
+                            "items": {
+                                "doNothing": "Hiçbir şey yapma",
+                                "sleep": "Uyku",
+                                "hibernate": "Hazırda bekleme kipine geç",
+                                "shutDown": "Kapat",
+                                "turnOffTheDisplay": "Görüntü birimini kapat"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "OTURUM AÇMA GEREKLİ:",
+                            "items": {
+                                "never": "Hiçbir zaman",
+                                "fromSleep": "PC uyku kipinden çağrıldığında"
+                            },
+                            "tip": "Not: Bu yalnızca sistem parolası belirlenmişse geçerlidir."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Güç kullanımı",
+                        "description": "SİSTEM BOŞTAYSA:",
+                        "turnOffDisplay": "EKRAN KAPATMAK İÇİN BEKLENECEK SÜRE:",
+                        "turnOffHDD": "HDD'Yİ KAPATMAK İÇİN BEKLENECEK SÜRE:",
+                        "sleep": "UYKU KİPİNE GEÇMEK İÇİN BEKLENECEK SÜRE:",
+                        "hibernate": "HAZIRDA BEKLEME KİPİNE GEÇMEK İÇİN BEKLENECEK SÜRE:",
+                        "items": {
+                            "never": "Hiçbir zaman",
+                            "minute": "dakika",
+                            "minutes": "dakika",
+                            "hour": "saat",
+                            "hours": "saat"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Güç planı",
+                        "description": "Bilgisayar performansını, sistem sıcaklığını ve güç kullanımını denetlemek için bir güç planı seçin.",
+                        "currentPowerPlan": {
+                            "label": "GEÇERLİ PLAN"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Akıllı Bekleme",
                     "description": "Bu özellik, yoğun kullanım zamanlarında <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Bekleme Durumu</a> hızlı başlatma deneyiminden ödün vermeden, bilgisayar boşta olduğunda pil gücü tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Lütfen seçin:",
                             "option2": "Web sitesini aç",
-                            "option3": "Metin gir"
-                        }
+                            "option3": "Metin gir",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Doldurulacak içerik",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "GİRİLECEK METİN",
                         "placeholder": "Lütfen buraya yazın"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Akıllı Medya",
                 "title": "Sıfır Dokunma ile Video Oynatma",
                 "desc": "Bu özellik, bilgisayarın başından ayrıldığınızda videoyu duraklatır ve geri döndüğünüzde videoyu oynatmaya devam eder.",
-                "tooltip": "Bu özellik, Web üzerindeki video oynatıcılar için geçerli değildir. Windows Media Player ya da 5KPlayer gibi popüler yerel video oynatıcılar bu özelliği destekler."
+                "tooltip": "Bu özellik, Web üzerindeki<br>video oynatıcılar için geçerli değildir.<br>Şu oynatıcılar desteklenmektedir:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Akıllı Medya",

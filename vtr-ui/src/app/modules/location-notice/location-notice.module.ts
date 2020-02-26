@@ -11,29 +11,20 @@ import { RouterModule } from '@angular/router';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslationModule } from '../translation.module';
 
-
 @NgModule({
-  declarations: [ModalWifiSecuriryLocationNoticeComponent],
-  imports: [
-    CommonModule,
-    TranslationModule.forChild(),
-    LocationNoticeRoutingModule,
-    CommonPipeModule,
-    UiButtonModule,
-    WidgetOfflineModule,
-    FontAwesomeModule,
-    RouterModule,
-    NgbModalModule,
-  ],
-  exports: [
-    NgbModalModule
-  ],
-  entryComponents: [
-    ModalWifiSecuriryLocationNoticeComponent
-
-  ],
+	declarations: [ModalWifiSecuriryLocationNoticeComponent],
+	imports: [
+		CommonModule,
+		TranslationModule.forChild(),
+		LocationNoticeRoutingModule,
+		CommonPipeModule,
+		UiButtonModule,
+		WidgetOfflineModule,
+		FontAwesomeModule,
+		RouterModule,
+		NgbModalModule
+	],
+	exports: [NgbModalModule],
+	entryComponents: [ModalWifiSecuriryLocationNoticeComponent]
 })
-export class LocationNoticeModule { }
-
-
-
+export class LocationNoticeModule {}

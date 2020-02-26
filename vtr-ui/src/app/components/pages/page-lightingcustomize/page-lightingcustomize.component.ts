@@ -117,11 +117,11 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		});
 
 		if (!this.isOnline) {
-			this.cardContentPositionF = {
+			this.cardContentPositionC = {
 				FeatureImage: './../../../../assets/cms-cache/GamingPosC.jpg'
 			};
 
-			this.cardContentPositionC = {
+			this.cardContentPositionF = {
 				FeatureImage: './../../../../assets/cms-cache/lighting_offline.jpg'
 			};
 		}

@@ -22,7 +22,7 @@
                     "rapidCharge": "Snelladen"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Overklok aan",
                         "performance": "Prestaties",
                         "balance": "Balans",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Installeer GPU-stuurprogramma om de functie Overklokken te gebruiken.",
                         "goInstall": "GA NAAR INSTALLEREN"
                     },
-                    "autoSwitch": "Schakel automatisch naar de prestatiemodus bij het starten van games en schakel terug na het afsluiten van de game."	
+                    "autoSwitch": "Schakel automatisch naar de prestatiemodus bij het starten van games en schakel terug na het afsluiten van de game."
                 },
                 "advancedOC": {
                     "title": "Overklok geavanc. instell.",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Schermafbeelding verzenden",
                 "messages": {
                     "feedbackSuccess": "Bedankt voor uw feedback."
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>De batterij is in goede staat.</b>",
                     "Exhaustion": "De capaciteit van de batterij is <b>verminderd</b>. Vervang deze door een nieuwe.",
                     "Bad": "<b>Er is een batterijfout opgetreden.</b> De batterij kan niet worden opgeladen/ontladen. Vervang de batterij.",
-                    "NotDetected": "<b>Er is geen batterij aangetroffen of</b> aangesloten.",
+                    "NotDetected": "<b>Geen batterij gedetecteerd.</b>",
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
                     "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b>",
                     "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan niet voldoende stroom leveren.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy star",
                     "description": "EEN DOOR ENERGY STAR GECERTIFICEERD PRODUCT"
-				},
-				"dpm": {
-					"title": "Energiebeheer",
-					"subtitle": "Energie-instellingen",
-					"description": "In dit gedeelte kunt u de standaardinstellingen bekijken en uw energieverbruik en energieschema aanpassen aan uw behoeften.",
-					"globalPowerSettings": {
-						"title": "Algemene instellingen voor energiebeheer",
-						"description": "Deze functie negeert de instellingen voor energieschema of energieverbruik.",
-						"powerButton": {
-							"label": "AAN/UIT-KNOP:",
-							"items": {
-								"doNothing": "Niets doen",
-								"sleep": "Slaapstand",
-								"hibernate": "Slaapstand",
-								"shutDown": "Afsluiten",
-								"turnOffTheDisplay": "Beeldscherm uitzetten"
-							}
-						},
-						"requiredSignIn": {
-							"label": "VEREISTE AANMELDING:",
-							"items": {
-								"never": "Nooit",
-								"fromSleep": "Als pc uit de slaapstand wordt gehaald"
-							},
-							"tip": "Opmerking: Dit werkt alleen als er een systeemwachtwoord is ingesteld."
-						}
-					},
-					"powerUse": {
-						"title": "Energieverbruik",
-						"description": "ALS HET SYSTEEM INACTIEF IS:",
-						"turnOffDisplay": "BEELDSCHERM UITSCHAKELEN NA:",
-						"turnOffHDD": "HDD UITSCHAKELEN NA:",
-						"sleep": "SLAAPSTAND NA:",
-						"hibernate": "SLUIMERSTAND NA:",
-						"items": {
-							"never": "Nooit",
-							"minute": "minuut",
-							"minutes": "minuten",
-							"hour": "uur",
-							"hours": "uur"
-						}
-					},
-					"powerPlan": {
-						"title": "Energiebeheerschema",
-						"description": "Kies een energieschema om de prestaties, de systeemtemperatuur en het energieverbruik van de computer te regelen.",
-						"currentPowerPlan": {
-							"label": "HUIDIG SCHEMA"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Energiebeheer",
+                    "subtitle": "Energie-instellingen",
+                    "description": "In dit gedeelte kunt u de standaardinstellingen bekijken en uw energieverbruik en energieschema aanpassen aan uw behoeften.",
+                    "globalPowerSettings": {
+                        "title": "Algemene instellingen voor energiebeheer",
+                        "description": "Deze functie negeert de instellingen voor energieschema of energieverbruik.",
+                        "powerButton": {
+                            "label": "AAN/UIT-KNOP:",
+                            "items": {
+                                "doNothing": "Niets doen",
+                                "sleep": "Slaapstand",
+                                "hibernate": "Slaapstand",
+                                "shutDown": "Afsluiten",
+                                "turnOffTheDisplay": "Beeldscherm uitzetten"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "VEREISTE AANMELDING:",
+                            "items": {
+                                "never": "Nooit",
+                                "fromSleep": "Als pc uit de slaapstand wordt gehaald"
+                            },
+                            "tip": "Opmerking: Dit werkt alleen als er een systeemwachtwoord is ingesteld."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Energieverbruik",
+                        "description": "ALS HET SYSTEEM INACTIEF IS:",
+                        "turnOffDisplay": "BEELDSCHERM UITSCHAKELEN NA:",
+                        "turnOffHDD": "HDD UITSCHAKELEN NA:",
+                        "sleep": "SLAAPSTAND NA:",
+                        "hibernate": "SLUIMERSTAND NA:",
+                        "items": {
+                            "never": "Nooit",
+                            "minute": "minuut",
+                            "minutes": "minuten",
+                            "hour": "uur",
+                            "hours": "uur"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Energiebeheerschema",
+                        "description": "Kies een energieschema om de prestaties, de systeemtemperatuur en het energieverbruik van de computer te regelen.",
+                        "currentPowerPlan": {
+                            "label": "HUIDIG SCHEMA"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Slim stand-by",
                     "description": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de snelle hervatting van <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern stand-by</a> bij zwaarder gebruik bestaan.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Maak een keuze",
                             "option2": "Open de website",
-                            "option3": "Tekst invoeren"
-                        }
+                            "option3": "Tekst invoeren",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "In te vullen inhoud",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "IN TE VOEREN TEKST",
                         "placeholder": "Typ hier"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Intelligente media",
                 "title": "Zero Touch Video afspelen",
                 "desc": "Met deze functie wordt de video gepauzeerd wanneer u weggaat bij de computer en hervat wanneer u terugkeert.",
-                "tooltip": "Deze functie is niet van toepassing op webvideospelers. Populaire lokale videospelers, zoals Windows Media Player, 5KPlayer en dergelijke, ondersteunen deze functie."
+                "tooltip": "Deze functie is niet van toepassing<br>op webvideospelers.<br>De ondersteunde spelers worden als volgt weergegeven:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Intelligente media",

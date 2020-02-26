@@ -4,6 +4,7 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
 import { ModalDccDetailComponent } from 'src/app/components/modal/modal-dcc-detail/modal-dcc-detail.component';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
+import { DeviceService } from '../device/device.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,7 +13,8 @@ export class CardService {
 
 	constructor(
 		private modalService: NgbModal,
-		private appsForYouService: AppsForYouService
+		private appsForYouService: AppsForYouService,
+		public deviceService: DeviceService,
 	) { }
 
 	linkClicked(actionType: string, actionLink: string, isOfflineArm?: boolean) {
@@ -41,11 +43,12 @@ export class CardService {
 	}
 
 	openArticleModal(articleId: string) {
+		const articleClass = this.deviceService.isGaming ? 'Article-Detail-Modal content-gaming' : 'Article-Detail-Modal';
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
 			backdrop: true, /*'static',*/
 			size: 'lg',
 			centered: true,
-			windowClass: 'Article-Detail-Modal',
+			windowClass: articleClass,
 			keyboard: false,
 			beforeDismiss: () => {
 				if (articleDetailModal.componentInstance.onBeforeDismiss) {

@@ -13,28 +13,30 @@ export class FeedbackFormComponent implements OnInit {
 	feedbackForm: FormGroup;
 	feedbackSuccess = false;
 	leftTime = 3;
+	countryCode = '';
 
 	private metrics: any;
 
 	questions = [
 		{
-			idYes: 'feedback-qa-new-style-yes',
-			idNo: 'feedback-qa-new-style-no',
-			name: 'qaNewStyle',
-			question: 'dashboard.feedback.form.question1'
+			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			name: 'remommendVantageToFriend',
+			question: 'dashboard.feedback.form.question6'
 		},
 		{
 			idYes: 'feedback-su-awareness-yes',
 			idNo: 'feedback-su-awareness-no',
 			name: 'systemUpdateAwareness',
-			question: 'dashboard.feedback.form.question4'
+			question: 'dashboard.feedback.form.question7'
 		},
 		{
-			likelyValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-			name: 'remommendVantageToFriend',
-			question: 'dashboard.feedback.form.question5'
+			idYes: 'feedback-qa-new-style-yes',
+			idNo: 'feedback-qa-new-style-no',
+			name: 'qaNewStyle',
+			question: 'dashboard.feedback.form.question8'
 		}
 	];
+	showEmailField = true;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -47,8 +49,19 @@ export class FeedbackFormComponent implements OnInit {
 	ngOnInit() {
 		this.createFeedbackForm();
 		setTimeout(() => { document.getElementById('feedback-form-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
+		this.getCurrentRegion();
 	}
 
+	 getCurrentRegion() {
+		 this.deviceService.getMachineInfo().then(machineInfo => {
+			 this.countryCode = machineInfo.country.toUpperCase();
+			 if (this.countryCode === 'CN' ||
+				 this.countryCode === 'VN' ||
+				 this.countryCode === 'RU') {
+				 this.showEmailField = false;
+			 }
+		 });
+	 }
 	public onFeedBackSubmit(): void {
 		const formData = this.feedbackForm.value;
 		const data = {
@@ -78,7 +91,7 @@ export class FeedbackFormComponent implements OnInit {
 
 	private createFeedbackForm(): void {
 		this.feedbackForm = new FormGroup({
-			// userEmail: new FormControl('', [Validators.email]),
+			userEmail: new FormControl('', [Validators.email]),
 			userComment: new FormControl('', [
 				Validators.required,
 				Validators.minLength(1)

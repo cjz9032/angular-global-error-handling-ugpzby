@@ -22,7 +22,7 @@
                     "rapidCharge": "טעינה מהירה"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "אוברקלוק פועל",
                         "performance": "ביצועים",
                         "balance": "איזון",
@@ -193,7 +193,7 @@
                         "gpuDriverLack": "התקינו מנהל התקן של GPU כדי להשתמש בפונקציית אוברקלוקינג.",
                         "goInstall": "עברו להתקנה"
                     },
-                    "autoSwitch": "מעבר אוטומטי למצב ביצועים בעת הפעלת משחקים ולהפך כאשר יוצאים מהמשחק."	
+                    "autoSwitch": "מעבר אוטומטי למצב ביצועים בעת הפעלת משחקים ולהפך כאשר יוצאים מהמשחק."
                 }
             }
         },
@@ -867,7 +867,13 @@
                 "submitScreenShot": "שליחת צילום מסך",
                 "messages": {
                     "feedbackSuccess": "תודה על המשוב!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>הסוללה במצב תקין.</b>",
                     "Exhaustion": "קיבולת הסוללה <b>נפגעה</b>. יש להחליף לסוללה חדשה.",
                     "Bad": "<b>אירעה שגיאת סוללה.</b> לא ניתן לטעון/לפרוק את הסוללה. החליפו את הסוללה.",
-                    "NotDetected": "<b>לא אותרה סוללה או שהיא</b> אינה מחוברת.",
+                    "NotDetected": "<b>לא זוהתה סוללה.</b>",
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b></span>",
                     "LimitedACAdapterSupport": "<b>מתאם AC לא יכול לספק מספיק חשמל.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "מוצר עם אישור ENERGY STAR"
-				},
-				"dpm": {
-					"title": "צריכת חשמל",
-					"subtitle": "הגדרות צריכת חשמל",
-					"description": "סעיף זה מאפשר לכם לבדוק את הגדרות ברירת המחדל ולהתאים אישית את צריכת החשמל ואת תוכנית צריכת החשמל שלכם בהתאם לצרכים.",
-					"globalPowerSettings": {
-						"title": "הגדרות צריכת חשמל כלליות",
-						"description": "תכונה זו תעקוף את הגדרות תוכנית צריכת החשמל או צריכת החשמל.",
-						"powerButton": {
-							"label": "מתג הפעלה:",
-							"items": {
-								"doNothing": "שום פעולה",
-								"sleep": "שינה",
-								"hibernate": "תרדמה",
-								"shutDown": "כיבוי",
-								"turnOffTheDisplay": "כיבוי הצג"
-							}
-						},
-						"requiredSignIn": {
-							"label": "נדרשת כניסה:",
-							"items": {
-								"never": "לעולם לא",
-								"fromSleep": "כאשר המחשב יוצא ממצב שינה"
-							},
-							"tip": "הערה: זה עובד רק אם מוגדרת סיסמת מערכת."
-						}
-					},
-					"powerUse": {
-						"title": "צריכת חשמל",
-						"description": "אם המערכת לא פעילה:",
-						"turnOffDisplay": "כיבוי הצג כעבור:",
-						"turnOffHDD": "כיבוי ה-HDD כעבור:",
-						"sleep": "מעבר למצב שינה כעבור:",
-						"hibernate": "מעבר למצב המתנה כעבור:",
-						"items": {
-							"never": "לעולם לא",
-							"minute": "דקה",
-							"minutes": "דקות",
-							"hour": "שעה",
-							"hours": "שעות"
-						}
-					},
-					"powerPlan": {
-						"title": "תוכנית צריכת חשמל",
-						"description": "בחרו תוכנית צריכת חשמל כדי לשלוט בביצועי המחשב, בטמפרטורת המערכת ובצריכת החשמל.",
-						"currentPowerPlan": {
-							"label": "תוכנית נוכחית"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "צריכת חשמל",
+                    "subtitle": "הגדרות צריכת חשמל",
+                    "description": "סעיף זה מאפשר לכם לבדוק את הגדרות ברירת המחדל ולהתאים אישית את צריכת החשמל ואת תוכנית צריכת החשמל שלכם בהתאם לצרכים.",
+                    "globalPowerSettings": {
+                        "title": "הגדרות צריכת חשמל כלליות",
+                        "description": "תכונה זו תעקוף את הגדרות תוכנית צריכת החשמל או צריכת החשמל.",
+                        "powerButton": {
+                            "label": "מתג הפעלה:",
+                            "items": {
+                                "doNothing": "שום פעולה",
+                                "sleep": "שינה",
+                                "hibernate": "תרדמה",
+                                "shutDown": "כיבוי",
+                                "turnOffTheDisplay": "כיבוי הצג"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "נדרשת כניסה:",
+                            "items": {
+                                "never": "לעולם לא",
+                                "fromSleep": "כאשר המחשב יוצא ממצב שינה"
+                            },
+                            "tip": "הערה: זה עובד רק אם מוגדרת סיסמת מערכת."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "צריכת חשמל",
+                        "description": "אם המערכת לא פעילה:",
+                        "turnOffDisplay": "כיבוי הצג כעבור:",
+                        "turnOffHDD": "כיבוי ה-HDD כעבור:",
+                        "sleep": "מעבר למצב שינה כעבור:",
+                        "hibernate": "מעבר למצב המתנה כעבור:",
+                        "items": {
+                            "never": "לעולם לא",
+                            "minute": "דקה",
+                            "minutes": "דקות",
+                            "hour": "שעה",
+                            "hours": "שעות"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "תוכנית צריכת חשמל",
+                        "description": "בחרו תוכנית צריכת חשמל כדי לשלוט בביצועי המחשב, בטמפרטורת המערכת ובצריכת החשמל.",
+                        "currentPowerPlan": {
+                            "label": "תוכנית נוכחית"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "המתנה חכמה",
                     "description": "תכונה זו קובעת זמן למחשב שלכם שבו יבוצע מיטוב של חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, כדי שלא לפגוע בחוויית הפעלה מחדש מהירה של <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">הפעלה מודרנית</a> שנדרשת בשעות שבהן נעשה שימוש במחשב.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "יש לבחור",
                             "option2": "פתח אתר אינטרנט",
-                            "option3": "הזן טקסט"
-                        }
+                            "option3": "הזן טקסט",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "תוכן למילוי",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "טקסט להזנה",
                         "placeholder": "הקלד כאן"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "מדיה חכמה",
                 "title": "הפעלת וידאו ללא מגע",
                 "desc": "תכונה זו תשהה את הווידאו כאשר אתם עוזבים את המחשב ותחדש את הווידאו כשאתם חוזרים.",
-                "tooltip": "תכונה זו לא ישימה עבור נגני וידאו באינטרנט. נגני וידאו פופולריים, כמו Windows Media Player‏, 5KPlayer וכן הלאה תומכים בתכונה זו."
+                "tooltip": "תכונה זו לא ישימה עבור<br>נגני וידאו באינטרנט.<br>הנגנים הנתמכים הם:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "מדיה חכמה",

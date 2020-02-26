@@ -12,7 +12,7 @@
 					<div class="">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Microphone2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Microphone---slash2x'"
-							[value]="microphoneStatus.status && microphoneStatus.permission"
+							[value]="microphoneStatus.status && microphoneStatus.permission && !microPhoneGreyOut"
 							[title]="'dashboard.quickSettings.microphone' | translate"
 							metricsItem="microphone"
 							id="qs-switch-microphone"
@@ -20,7 +20,7 @@
 							[switchId]="'microphone'"
 							[isBlocked]="!microphoneStatus.status"
 							(toggle)="onMicrophoneStatusToggle($event)"
-							[disable]="!(microphoneStatus.permission && microphoneStatus.available && quickSettingsWidget[0].state)"
+							[disable]="!(microphoneStatus.permission && microphoneStatus.available && quickSettingsWidget[0].state) || microPhoneGreyOut"
 							[isLoading]="microphoneStatus.isLoading">
 						</vtr-widget-switch-icon>
 					</div>
@@ -28,7 +28,7 @@
 						class="">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-Camera'"
 							[offIconDefinition]="'icomoon icomoon-Camera-slash'"
-							[value]="!cameraStatus.status && cameraStatus.permission"
+							[value]="!cameraStatus.status && cameraStatus.permission && !cameraPrivacyGreyOut"
 							[title]="'dashboard.quickSettings.cameraPrivacy' | translate"
 							metricsItem="camera"
 							id="qs-switch-camera"
@@ -37,7 +37,7 @@
 							[isBlocked]="cameraStatus.status || !cameraStatus.permission"
 							[isCamera]="true"
 							(toggle)="onCameraStatusToggle($event)"
-							[disable]="!(cameraStatus.available && cameraStatus.permission && quickSettingsWidget[1].state)"
+							[disable]="!(cameraStatus.available && cameraStatus.permission && quickSettingsWidget[1].state) || cameraPrivacyGreyOut"
 							[isLoading]="cameraStatus.isLoading">
 						</vtr-widget-switch-icon>
 					</div>
@@ -122,7 +122,7 @@
 			</div>
 		</div>
 		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">
-			<div *ngIf="!microphoneStatus.permission && cameraStatus.permission"
+			<div *ngIf="(!microphoneStatus.permission && cameraStatus.permission) || (!microphoneStatus.permission && !isCameraPrivacyCacheExist && !microPhoneGreyOut && cameraPrivacyGreyOut)"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
@@ -146,7 +146,7 @@
 					</div>
 				</div>
 			</div>
-			<div *ngIf="!cameraStatus.permission && !cameraStatus.isLoading && cameraStatus.available && microphoneStatus.permission"
+			<div *ngIf="!cameraStatus.permission && !cameraStatus.isLoading && cameraStatus.available && microphoneStatus.permission && cameraNoAccessNoteShow"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
@@ -170,7 +170,7 @@
 					</div>
 				</div>
 			</div>
-			<div *ngIf="!microphoneStatus.permission && !cameraStatus.permission && !cameraStatus.isLoading"
+			<div *ngIf="!microphoneStatus.permission && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
