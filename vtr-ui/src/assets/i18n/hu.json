@@ -114,9 +114,9 @@
                     "OCDesc": "Úgy is dönthet, hogy bekapcsolja a Túlpörgetés funkciót.",
                     "ac_dcDesc": "A Teljesítmény mód csak akkor alkalmazható, ha a hálózati adapter csatlakoztatva van.",
                     "balanceTitle": "Kiegyensúlyozott mód",
-                    "balanceDesc": "Automatikusan kiegyenlíti a teljesítményt és a ventilátor sebességét a hőmérséklet alapján. Középszintű energiafogyasztás.",
+                    "balanceDesc": "Automatikusan kiegyenlíti a teljesítményt és a ventilátor sebességét a hőmérséklet alapján, közepes energiafogyasztás mellett.",
                     "quietTitle": "Csendes mód",
-                    "quietDesc": "A készülék csendes marad a számítógép teljesítményének és a ventilátor sebességének csökkentésével, ahol csak lehet. Alacsony energiafogyasztás.",
+                    "quietDesc": "A készülék csendes marad a számítógép teljesítményének és a ventilátor sebességének csökkentésével, ahol csak lehet, alacsony energiafogyasztás mellett.",
                     "OC": {
                         "cpu_gpuOC": "CPU/GPU-túlpörgetés funkció engedélyezése Teljesítmény módban.",
                         "cpuOC": "CPU-túlpörgetés funkció engedélyezése Teljesítmény módban.",

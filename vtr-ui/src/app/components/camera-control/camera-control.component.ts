@@ -107,12 +107,14 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
-		document.removeEventListener('visibilitychange', this.visibilityChange);
+		if (document) {
+			document.removeEventListener('visibilitychange', this.visibilityChange);
+		}
 		//#region unregister orientation change event
-		if (this.Windows) {
-			if (this.orientationSensor != null) {
-				this.orientationSensor.removeEventListener(this.orientationChangedEvent, this.onDeviceOrientationChanged);
-			}
+		if (this.orientationSensor != null) {
+			this.orientationSensor.removeEventListener(this.orientationChangedEvent, this.onDeviceOrientationChanged);
+		}
+		if (this.oMediaCapture) {
 			this.oMediaCapture.removeEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
 		}
 		//#endregion
