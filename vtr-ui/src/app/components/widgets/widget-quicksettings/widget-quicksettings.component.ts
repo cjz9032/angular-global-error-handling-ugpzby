@@ -43,6 +43,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public cameraPrivacyGreyOut = true;
 	public microPhoneGreyOut = true;
 	public cameraNoAccessNoteShow = false;
+	public isCameraPrivacyCacheExist = false;
 	public quickSettingsWidget = [
 		{
 			// tooltipText: 'MICROPHONE',
@@ -112,16 +113,17 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	initDataFromCache() {
 		const cameraState: FeatureStatus = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
 		if (cameraState) {
-			this.cameraStatus.available = cameraState.available;
-			this.cameraStatus.status = cameraState.status;
-			this.cameraStatus.isLoading = false;
-			this.cameraStatus.permission = cameraState.permission;
 			if (cameraState.permission) {
 				this.cameraPrivacyGreyOut = false;
 			} else {
 				this.cameraNoAccessNoteShow = true;
 			}
-		}
+			this.isCameraPrivacyCacheExist = true;
+			this.cameraStatus.available = cameraState.available;
+			this.cameraStatus.status = cameraState.status;
+			this.cameraStatus.isLoading = false;
+			this.cameraStatus.permission = cameraState.permission;
+		} 
 	}
 
 	ngOnDestroy() {

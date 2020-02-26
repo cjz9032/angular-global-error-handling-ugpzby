@@ -122,7 +122,7 @@
 			</div>
 		</div>
 		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">
-			<div *ngIf="(!microphoneStatus.permission && cameraStatus.permission) || (!microphoneStatus.permission && !microPhoneGreyOut && cameraPrivacyGreyOut)"
+			<div *ngIf="(!microphoneStatus.permission && cameraStatus.permission) || (!microphoneStatus.permission && !isCameraPrivacyCacheExist && !microPhoneGreyOut && cameraPrivacyGreyOut)"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
