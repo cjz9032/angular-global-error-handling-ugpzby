@@ -20,20 +20,28 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 	@Output() public change = new EventEmitter<any>();
 	@Input() enableBrightCondition1: boolean;
 	@Input() showDescription: boolean;
-	@Input() isEffectChange = true;
-	@Input() showOptions = false;
+	@Input() isEffectChange:boolean = true;
+	@Input() showOptions:boolean = false;
 	public buttonName: any = 'Show';
 	public selected = false;
 	public currentOption: string;
 	public currentDescription: string;
 	public selectedDescription: string;
 	@Input() effectOptionName: string;
-	public selectedOption: any;
+	public selectedOption: any = {
+		header: "",
+		id: "",
+		label: "",
+		metricitem: "",
+		name: "",
+		value: 1
+	};
 	@Input() defaultLang: any;
 	@ViewChild('dropdownLightingEle', { static: false })
 	dropdownEle: ElementRef;
 	intervalObj: any;
 	isItemsFocused = false;
+        @Output() public isEffectList = new EventEmitter<any>();
 	// for macrokey
 	@Input() public enableDescription = true;
 	@Input() isRecording = false;
@@ -68,6 +76,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 		} else {
 			this.buttonName = 'Show';
 		}
+		this.isEffectList.emit(this.showOptions);
 	}
 
 	itemsFocused() {
@@ -93,8 +102,10 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 
 	public optionSelected(option) {
 		this.selectedOption = option;
-		if (option.value === 4 || option.value === 8) {
-			this.effectOptionName = option.name;
+		if(this.isEffectChange){
+			if (option.value === 4 || option.value === 8) {
+				this.effectOptionName = option.name;
+			}
 		}
 
 		this.showOptions = false;
