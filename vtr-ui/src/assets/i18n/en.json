@@ -1731,28 +1731,28 @@
 					"enterText": {
 						"title": "TEXT TO BE ENTERED",
 						"placeholder": "Please type here"
-                    },
-                    "invokeKeySequence": {
-                        "title": "KEY SEQUENCE",
-                        "placeholder": "5 keys at most"
-                    },
-                    "openapplicationsorfiles":{
-                        "applicationTitle":"You need to delete one app first",
-                        "fileTitle":"You need to delete one file first",
-                        "applicationsToOpen":"APPLICATIONS TO OPEN",
-                        "filesToOpen":"FILES TO OPEN",
-                        "add":"ADD"
-                    },
+					},
+					"invokeKeySequence": {
+						"title": "KEY SEQUENCE",
+						"placeholder": "5 keys at most"
+					},
+					"openapplicationsorfiles": {
+						"applicationTitle": "You need to delete one app first",
+						"fileTitle": "You need to delete one file first",
+						"applicationsToOpen": "APPLICATIONS TO OPEN",
+						"filesToOpen": "FILES TO OPEN",
+						"add": "ADD"
+					},
 					"dropDown": {
 						"title": "ACTION USER DEFINED KEY",
 						"note": "Note: This can be used to enter commonly entered key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information.",
-                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function.",
-                        "options": {
+						"invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function.",
+						"options": {
 							"option1": "Please select",
 							"option2": "Open website",
-                            "option3": "Enter text",
-                            "option4":"Open applications or files",
-                            "option5":"Invoke key sequence"
+							"option3": "Enter text",
+							"option4": "Open applications or files",
+							"option5": "Invoke key sequence"
 						}
 					}
 				},
@@ -1976,7 +1976,8 @@
 				"heading": "Intelligent Media",
 				"title": "Zero Touch Video Playback",
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature." 			},
+				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+			},
 			"superResolution": {
 				"heading": "Intelligent Media",
 				"title": "Video Resolution Upscaling",
