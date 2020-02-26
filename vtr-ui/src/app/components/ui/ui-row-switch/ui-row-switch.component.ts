@@ -96,6 +96,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 
 	public onOnOffChange($event) {
 		// if (this.title === 'Battery Charge Threshold') {
+		const activeElement = document.activeElement as HTMLElement;
 		if (this.title === this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.title')) {
 			this.isSwitchChecked = !this.isSwitchChecked;
 			if (this.isSwitchChecked) {
@@ -117,10 +118,8 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 							this.toggleOnOff.emit($event);
 						} else if (result === 'negative') {
 							this.isSwitchChecked = !this.isSwitchChecked;
-							if (document.getElementById('ds-power-battery-threshold-onOffButton')) {
-								document.getElementById('ds-power-battery-threshold-onOffButton').focus();
-							}
 						}
+						activeElement.focus();
 					},
 					reason => {
 					}
@@ -134,6 +133,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 		this.rebootConfirm($event);
 	}
 	public rebootConfirm($event) {
+		const activeElement = document.activeElement as HTMLElement;
 		if (this.title === this.translate.instant('device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title') || this.isRebootRequired) {
 			this.isSwitchChecked = !this.isSwitchChecked;
 			const modalRef = this.modalService.open(ModalRebootConfirmComponent, {
@@ -154,6 +154,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 					} else if (result === 'close') {
 						this.isSwitchChecked = !this.isSwitchChecked;
 					}
+					activeElement.focus();
 				},
 				reason => {
 				}
