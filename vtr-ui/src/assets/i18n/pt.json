@@ -22,7 +22,7 @@
                     "rapidCharge": "Carregamento rápido"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Overclock ativo",
                         "performance": "Desempenho",
                         "balance": "Equilíbrio",
@@ -108,15 +108,15 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Definição de Modo Térmico",
                     "thermalMode2SettingDesc": "Escolha o modo que pretende utilizar.",
-                    "fnQDesc": "Pode mudar de modo através do atalho Fn + Q.",
+                    "fnQDesc": "Pode mudar de modo através do atalho Fn+Q.",
                     "perormanceTitle": "Modo de Desempenho",
-                    "performanceDesc": "Aumente o desempenho do computador ao aumentar a velocidade da ventoinha e o consumo energético.",
-                    "OCDesc": "Pode optar por ativar a funcionalidade Overclocking.",
-                    "ac_dcDesc": "O Modo de Desempenho só está disponível quando está ligado.",
+                    "performanceDesc": "Aumente o desempenho do computador com maior velocidade da ventoinha e consumo energético. ",
+                    "OCDesc": "Pode optar por ativar a função Overclocking.",
+                    "ac_dcDesc": "O Modo de Desempenho é aplicável apenas quando o transformador CA está ligado à corrente.",
                     "balanceTitle": "Modo Equilibrado",
-                    "balanceDesc": "Equilibre automaticamente o desempenho e a velocidade da ventoinha em função da temperatura. Consumo energético intermédio.",
+                    "balanceDesc": "Equilibre automaticamente o desempenho e a velocidade da ventoinha em função da temperatura com um consumo energético médio.",
                     "quietTitle": "Modo Silencioso",
-                    "quietDesc": "Mantenha o silêncio ao reduzir o desempenho do computador e a velocidade da ventoinha sempre que possível. Consumo energético reduzido.",
+                    "quietDesc": "Mantenha o silêncio ao reduzir o desempenho do computador e a velocidade da ventoinha com um baixo consumo energético.",
                     "OC": {
                         "cpu_gpuOC": "Habilitar overclocking CPU/GPU no Modo de desempenho.",
                         "cpuOC": "Habilitar overclocking CPU no Modo de desempenho.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Instalar driver GPU para usar a função Overclocking.",
                         "goInstall": "IR PARA INSTALAR"
                     },
-                    "autoSwitch": "Mude automaticamente para Desempenho ao iniciar jogos e reverta em seguida."
+                    "autoSwitch": "Mude automaticamente para o Modo de Desempenho ao iniciar jogos e reverta quando sair do jogo."	
                 },
                 "advancedOC": {
                     "title": "Def. Avançadas de Overclock",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -748,12 +748,11 @@
                 "sub1": "A minha segurança",
                 "sub2": "Antivírus",
                 "sub3": "Segurança de WiFi",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "Estado de palavra-passe",
+                "sub5": "Segurança de VPN",
                 "sub6": "Impressão digital"
             },
             "support": "Suporte",
-            "privacy": "Privacidade",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "VERIFIQUE SE O DISPOSITIVO ESTÁ SEGURO.",
             "antiVirus": "Antivírus",
             "wifi": "Segurança de WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Estado de Palavra-passe",
+            "vpn": "Segurança de VPN",
             "enabled": "ATIVADO",
             "disabled": "DESATIVADO",
             "partiallyProtected": "PARCIALMENTE PROTEGIDO",
@@ -776,11 +775,11 @@
             "notFound": "NÃO ENCONTRADO",
             "registered": "REGISTADO",
             "notRegistered": "NÃO REGISTADO",
-            "fingerPrint": "Impressão digital",
+            "fingerPrint": "Impressão Digital",
             "privacyPolicyAndTermsOfService": "<tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "INSCRITO",
+            "notEnrolled": "NÃO INSCRITO"
         },
         "qAndA": {
             "title": "Q & A para sua máquina",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Ligue-se à Internet para utilizar esta funcionalidade"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Privacidade"
         }
     },
     "tutorial": {
@@ -1032,14 +1026,15 @@
                         "title": "Fabricante",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "A bateria instalada <b>não é suportada</b> pelo sistema e não será carregada. Substitua a bateria pela bateria correta da Lenovo para este sistema.",
                     "Good": "<b>A bateria está em boas condições.</b>",
                     "Exhaustion": "A capacidade da bateria <b>degradou-se</b>. Substitua por uma nova.",
                     "Bad": "<b>Ocorreu um erro de bateria.</b> Não é possível carregar/descarregar a bateria. Substitua a bateria.",
-                    "NotDetected": "<b>Nenhuma bateria detetada.</b>",
+                    "NotDetected": "<b>Nenhuma bateria detetada ou</b> bateria não ligada.",
                     "NotGood": "<b>A bateria não está em boas condições.</b>",
                     "NotSupportACAdapter": "<b>O transformador CA não é suportado.</b>",
                     "LimitedACAdapterSupport": "<b>O transformador CA não consegue fornecer energia suficiente.</b>",
@@ -1275,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UM PRODUTO COM CERTIFICAÇÃO ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Alimentação",
+					"subtitle": "Definições de alimentação",
+					"description": "Esta secção permite verificar as predefinições, bem como personalizar a utilização de energia e o plano de alimentação de acordo com as suas necessidades.",
+					"globalPowerSettings": {
+						"title": "Definições gerais de alimentação",
+						"description": "Esta funcionalidade substituirá as definições do Plano de alimentação ou da Utilização da energia.",
+						"powerButton": {
+							"label": "INTERRUPTOR DE ALIMENTAÇÃO:",
+							"items": {
+								"doNothing": "Não fazer nada",
+								"sleep": "Suspensão",
+								"hibernate": "Hibernar",
+								"shutDown": "Encerrar",
+								"turnOffTheDisplay": "Desligar o ecrã"
+							}
+						},
+						"requiredSignIn": {
+							"label": "INÍCIO DE SESSÃO OBRIGATÓRIO:",
+							"items": {
+								"never": "Nunca",
+								"fromSleep": "Quando o PC é reativado do modo de suspensão"
+							},
+							"tip": "Nota: Isto só funciona se a palavra-passe de sistema estiver definida."
+						}
+					},
+					"powerUse": {
+						"title": "Utilização da alimentação",
+						"description": "SE O SISTEMA ESTIVER INATIVO:",
+						"turnOffDisplay": "DESLIGAR O ECRÃ APÓS:",
+						"turnOffHDD": "DESLIGAR HDD APÓS:",
+						"sleep": "ATIVAR MODO DE SUSPENSÃO APÓS:",
+						"hibernate": "HIBERNAR APÓS:",
+						"items": {
+							"never": "Nunca",
+							"minute": "minuto",
+							"minutes": "minutos",
+							"hour": "hora",
+							"hours": "horas"
+						}
+					},
+					"powerPlan": {
+						"title": "Plano de alimentação",
+						"description": "Escolha um plano de alimentação para controlar o desempenho do computador, a temperatura do sistema e a utilização da energia.",
+						"currentPowerPlan": {
+							"label": "PLANO ATUAL"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Modo de Suspensão Inteligente",
                     "description": "Esta funcionalidade programa a otimização da poupança de energia da bateria do computador durante os períodos de inatividade sem sacrificar a experiência de retoma rápida a partir do <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modo de Suspensão Moderno</a> durante os horários de utilização intensiva.",
@@ -2286,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi e Segurança de Casa Conectada",
+                "title": "Segurança de WiFi",
                 "back": "RETROCEDER"
             },
             "container": {
@@ -2470,7 +2514,7 @@
     "lenovoId": {
         "login": "Iniciar sessão",
         "logout": "Terminar sessão",
-        "loggingOut": "Logging out...",
+        "loggingOut": "A terminar sessão...",
         "unlockExclusives": "Desbloquear Exclusivos",
         "user": "Utilizador",
         "welcomeText1": "Parece revitalizado/a hoje, {{firstName}}!",
@@ -2903,7 +2947,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Definições de preferências",
+        "preferenceSettings": "Definições De Preferências",
         "settings": "Definições",
         "settingsDescription": "Na página de definições de preferências, é possível optar por ativar/desativar as notificações de mensagem com base nas categorias de mensagens do Vantage. Tenha em atenção que, mesmo se todas categorias de mensagem estiverem desativadas, poderá ocasionalmente receber, quando necessário, mensagens críticas do sistema do Vantage.",
         "messagesInLenovoVantage": "Mensagens no Lenovo Vantage",
@@ -3092,7 +3136,8 @@
             "storage": "Memória",
             "wireless": "Sem fios"
         },
-        "warningMessage": "Tenha em atenção que os testes serão cancelados se o sistema entrar em modo de suspensão ou hibernação"
+        "warningMessage": "Tenha em atenção que os testes serão cancelados se o sistema entrar em modo de suspensão ou hibernação",
+        "refreshMessage": "A atualização pode demorar algum tempo por precisar de voltar a carregar todos os componentes"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3364,10 +3409,10 @@
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
             "trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId":"Lenovo ID:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3433,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Agora pode saber se as suas informações privadas foram comprometidas ou utilizadas por ferramentas de monitorização online sem o seu conhecimento.",
             "security": "Sabia que... Mesmo que não tenha software antivírus instalado, oferecemos uma proteção de segurança básica ao seu dispositivo.",
             "connectedHomeSecurity": "Obtenha monitorização e alertas em tempo real sobre a segurança da sua rede em casa. Será o primeiro a saber se algum dos seus dispositivos inteligentes está a ser alvo de um ataque de segurança."
         }

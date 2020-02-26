@@ -1,22 +1,30 @@
 <div class='vtr-ui-days-picker'>
-	<p class="sub-heading">
+	<p class="sub-heading"
+		role="heading">
 		{{ subHeadingText | translate | uppercase }}</p>
 	<div class="row">
 		<div class="col-md-12 col-sm-12 pl-0">
 
 			<div class="dropdown">
-				<input id="{{daysId}}"
+				<vtr-ui-checkbox componentId="{{daysId}}"
 					tabindex="-1"
-					class="dropcheck"
-					type="checkbox"
+					class="dropcheck d-none"
 					[checked]="showDropDown"
 					(click)="onToggleDropDown()">
-				<label for="{{daysId}}" role="combobox"
-					aria-label="'smart standby, schedule dropdown days list'" [attr.aria-expanded]="showDropDown" tabindex="0" (keydown.enter)="onToggleDropDown()"
-					class="dropbtn" #dayslistbox>
+				</vtr-ui-checkbox>
+				<label for="{{daysId}}"
+					role="combobox"
+					aria-label="'smart standby, schedule dropdown days list'"
+					[attr.aria-expanded]="showDropDown"
+					tabindex="0"
+					(keydown.enter)="onToggleDropDown()"
+					class="dropbtn"
+					#dayslistbox>
 					<div class="row align-items-center d-flex justify-content-between pl-5">
-						<h5 id="smartStandby-shedule" attr.aria-label="smartStandby-shedule">{{smartStandbyService.schedule}}</h5>
-						<div class="toggle-icon" id="smartStandby-days-picker-dropDown">
+						<h5 id="smartStandby-shedule"
+							attr.aria-label="smartStandby-shedule">{{smartStandbyService.schedule}}</h5>
+						<div class="toggle-icon"
+							id="smartStandby-days-picker-dropDown">
 							<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 						</div>
 					</div>
@@ -27,28 +35,30 @@
 					<section class="weekdays-block">
 						<div class="row">
 							<div class="col">
-								<div class="main-block pl-5 pt-5 pb-3" role="radiogroup" tabindex="0">
+								<div class="main-block pl-5 pt-5 pb-3"
+									role="radiogroup"
+									tabindex="0">
 									<div *ngFor="let i of smartStandbyService.allDays">
-										<div class="custom-control custom-checkbox mb-3 ml-3">
-											<input class="custom-control-input"
-												type="checkbox"
+										<div class="custom-control custom-checkbox mb-3">
+											<vtr-ui-checkbox componentId="{{i.shortName}}"
 												role="checkbox"
-												value="{{i.shortName}}"
-												id="{{i.shortName}}"
-												[(ngModel)]="i.status"
+												[value]="i.status"
+												[checked]="i.status"
 												attr.aria-label="{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}"
-												(change)="selectDay($event)">
-											<label class="custom-control-label"
-
+												(toggle)="selectDay($event, i.shortName)"
+												[label]="'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate"></vtr-ui-checkbox>
+											<!-- <label class="custom-control-label"
 												for="{{i.shortName}}">
 												{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}
-											</label>
+											</label> -->
 										</div>
 									</div>
 								</div>
 								<div class="d-flex justify-content-end py-3">
 									<p class="select-close"
-										*ngIf="!smartStandbyService.checkedLength" id="smartStandby-warningtip"
+										*ngIf="!smartStandbyService.checkedLength"
+										id="smartStandby-warningtip"
+										role="text"
 										aria-label="smartStandby-warningtip">
 										{{ 'device.deviceSettings.power.smartStandby.warningtip' | translate }}</p>
 									<div class="banner-middle">

@@ -103,7 +103,7 @@
 				}
 			}
 			&:nth-child(odd) {
-				background-color: $gaming_hover;
+				background-color: $white5;
 				@media #{$black-on-white} {
 					background-color: $high-contrast-grey;
 				}

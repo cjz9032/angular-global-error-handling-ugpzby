@@ -22,7 +22,7 @@
                     "rapidCharge": "急速充電"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "CLKUPオン",
                         "performance": "性能",
                         "balance": "バランス",
@@ -108,15 +108,15 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "サーマル・モード設定",
                     "thermalMode2SettingDesc": "使用するモードを選択します。",
-                    "fnQDesc": "ショートカット Fn + Q を使用してモードを切り替えることができます。",
+                    "fnQDesc": "ショートカット Fn+Q を使用してモードを切り替えることができます。",
                     "perormanceTitle": "パフォーマンス・モード",
-                    "performanceDesc": "ファン速度を上げより多くの電力を消費してコンピュータのパフォーマンスを向上させます。",
+                    "performanceDesc": "ファン速度と電力消費を上げコンピューターのパフォーマンスを向上させます。",
                     "OCDesc": "クロックアップ機能をオンにできます。",
-                    "ac_dcDesc": "パフォーマンス・モードは電源に接続されている場合にのみ使用できます。",
+                    "ac_dcDesc": "パフォーマンス・モードは、AC 電源アダプターが接続されている場合にのみ適用できます。",
                     "balanceTitle": "バランス・モード",
-                    "balanceDesc": "温度に基づいて自動的にパフォーマンスとファン速度のバランスを取ります。電力消費は中程度です。",
+                    "balanceDesc": "中程度の電力消費で温度に基づいて自動的にパフォーマンスとファン速度のバランスを取ります。",
                     "quietTitle": "静音モード",
-                    "quietDesc": "可能な場合はコンピューターのパフォーマンスとファン速度を下げて静かに動作します。電力消費は少なくなります。",
+                    "quietDesc": "可能な場合は低電力消費でコンピューターのパフォーマンスとファン速度を下げて静かに動作します。",
                     "OC": {
                         "cpu_gpuOC": "CPU/GPU クロックアップ・パフォーマンス・モードを有効化。",
                         "cpuOC": "CPU クロックアップ・パフォーマンス・モードを有効化。",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "GPU ドライバーをインストールしてクロックアップ機能を使用。",
                         "goInstall": "インストールする"
                     },
-                    "autoSwitch": "ゲームの起動時に自動的にパフォーマンスに切り替え、後で元に戻します。"
+                    "autoSwitch": "ゲームの起動時に自動的にパフォーマンス・モードに切り替え、ゲーム終了後は元に戻します。"	
                 },
                 "advancedOC": {
                     "title": "CLKUP詳細設定",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -748,12 +748,11 @@
                 "sub1": "マイ・セキュリティー",
                 "sub2": "アンチウィルス",
                 "sub3": "WiFi セキュリティー",
-                "sub4": "パスワードマネージャー",
-                "sub5": "VPN",
+                "sub4": "パスワードの健全性",
+                "sub5": "VPN セキュリティー",
                 "sub6": "指紋"
             },
             "support": "サポート",
-            "privacy": "プライバシー",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "デバイスが保護されているかどうかを確認します。",
             "antiVirus": "アンチウィルス",
             "wifi": "WiFi セキュリティー",
-            "pswdMgr": "パスワードマネージャー",
-            "vpn": "VPN",
+            "pswdMgr": "パスワードの健全性",
+            "vpn": "VPN セキュリティー",
             "enabled": "有効",
             "disabled": "無効",
             "partiallyProtected": "部分的に保護",
@@ -779,8 +778,8 @@
             "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "登録済み",
+            "notEnrolled": "未登録"
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "この機能を使用するには、インターネットに接続してください"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "プライバシー"
         }
     },
     "tutorial": {
@@ -1032,14 +1026,15 @@
                         "title": "製造元",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "取り付けられているバッテリーはシステムでは<b>サポートされない</b>ため、充電は行われません。ご使用のシステムに適した Lenovo バッテリーに交換してください。",
                     "Good": "<b>バッテリーは良好な状態です。</b>",
                     "Exhaustion": "バッテリー容量が<b>低下しています</b>。新しいバッテリーに交換してください。",
                     "Bad": "<b>バッテリー・エラーが発生しました。</b>バッテリーを充電/放電できません。バッテリーを交換してください。",
-                    "NotDetected": "<b>バッテリーが検出されませんでした。</b>",
+                    "NotDetected": "<b>バッテリーが検出されないか</b>、接続されていません。",
                     "NotGood": "<b>バッテリーは良好な状態ではありません。</b>",
                     "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>",
                     "LimitedACAdapterSupport": "<b>ACアダプターが十分な電力を供給できません。</b>",
@@ -1275,6 +1270,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR 認定製品"
+                },
+                "dpm": {
+                    "title": "電源",
+                    "subtitle": "電源設定",
+                    "description": "このセクションでは、デフォルト設定を確認し、必要に応じて電力消費と電源プランをカスタマイズできます。",
+                    "globalPowerSettings": {
+                        "title": "共通省電力設定",
+                        "description": "この機能は、電源プランまたは電力消費設定を上書きします。",
+                        "powerButton": {
+                            "label": "電源ボタン:",
+                            "items": {
+                                "doNothing": "何もしない",
+                                "sleep": "スリープ",
+                                "hibernate": "休止",
+                                "shutDown": "シャットダウン",
+                                "turnOffTheDisplay": "ディスプレイの電源をオフにする"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "次の場合にサインインが必要です：",
+                            "items": {
+                                "never": "なし",
+                                "fromSleep": "PC がスリープから復帰したとき"
+                            },
+                            "tip": "注: これは、システム・パスワードが設定されている場合にのみ機能します。"
+                        }
+                    },
+                    "powerUse": {
+                        "title": "電力消費",
+                        "description": "システムがアイドルの場合:",
+                        "turnOffDisplay": "ディスプレイをオフにする:",
+                        "turnOffHDD": "HDD をオフにする:",
+                        "sleep": "スリープ状態にする:",
+                        "hibernate": "休止状態にする:",
+                        "items": {
+                            "never": "なし",
+                            "minute": "分",
+                            "minutes": "分",
+                            "hour": "時間",
+                            "hours": "時間"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "電源プラン",
+                        "description": "電源プランを選択して、コンピューターのパフォーマンス、システム温度、および電力使用率を制御します。",
+                        "currentPowerPlan": {
+                            "label": "現在のプラン"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "スマート・スタンバイ",
@@ -2144,8 +2188,8 @@
     },
     "security": {
         "landing": {
-            "fully": "より良いオファーを取得してデバイスを保護するために続けましょう、",
-            "notFully": "デバイスの保護を向上させる方法を知るために始めましょう、",
+            "fully": "より良いオファーを取得してデバイスを保護するために セキュリティー・アドバイザー 101 を続けましょう",
+            "notFully": "デバイスの保護を向上させる方法を知るために セキュリティー・アドバイザー 101 を始めましょう",
             "security101": "セキュリティー・アドバイザー 101",
             "firewall": "ファイアウォール",
             "pwdHealth": "パスワードの健全性",
@@ -2286,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi/接続ホーム・セキュリティー",
+                "title": "WiFi セキュリティー",
                 "back": "戻る"
             },
             "container": {
@@ -2470,7 +2514,7 @@
     "lenovoId": {
         "login": "ログイン",
         "logout": "ログアウト",
-        "loggingOut": "Logging out...",
+        "loggingOut": "ログアウト中...",
         "unlockExclusives": "専用機能をロック解除",
         "user": "ユーザー",
         "welcomeText1": "今日はエネルギーにあふれているように見えます、{{firstName}} さん!",
@@ -3092,7 +3136,8 @@
             "storage": "ストレージ",
             "wireless": "ワイヤレス"
         },
-        "warningMessage": "システムがスリープ状態または休止状態になると、テストがキャンセルされることに注意してください"
+        "warningMessage": "システムがスリープ状態または休止状態になると、テストがキャンセルされることに注意してください",
+        "refreshMessage": "すべてのコンポーネントを再度読み込む必要があるため、更新に時間がかかる場合があります"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3364,10 +3409,10 @@
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
             "trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId":"Lenovo ID:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3433,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "これで、個人情報が知らないうちにオンライン・トラッカーによって侵害されたり使用されたりしたかどうかを知ることができます。",
             "security": "ご存知ですか。ウイルス対策ソフトウェアをインストールしていない場合でも、デバイスの基本的なセキュリティ保護を提供します。",
             "connectedHomeSecurity": "自宅でネットワーク・セキュリティに関するリアルタイムの監視とアラートを実現します。スマート・デバイスのいずれかがセキュリティ攻撃に直面しているかどうかを知る最初の人物になります。"
         }

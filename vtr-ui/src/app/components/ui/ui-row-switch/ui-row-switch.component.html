@@ -86,7 +86,7 @@
 					*ngIf="isSwitchVisible">
 					<vtr-ui-switch-onoff [onOffSwitchId]="switchId"
 						[value]="isSwitchChecked"
-						[ariaLabel]="label"
+						[ariaLabel]="title"
 						[disabled]="disabled || isDisabled"
 						(toggle)="onOnOffChange($event)"
 						[showLoader]="showLoaderState"
@@ -125,7 +125,7 @@
 						class="right-icon"
 						tabindex="0"
 						triggers="manual"
-						placement="auto"
+						placement="left"
 						autoClose="false"
 						[ngbTooltip]="tooltipRef"
 						#rightToolTip1="ngbTooltip"
@@ -145,7 +145,7 @@
 						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
 						class="right-icon"
 						triggers="manual"
-						placement="auto"
+						placement="left"
 						[ngbTooltip]="smartTooltipRef"
 						#rightToolTip2="ngbTooltip"
 						autoClose="true"
@@ -164,7 +164,7 @@
 						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
 						class="right-icon"
 						triggers="manual"
-						placement="auto"
+						placement="left"
 						[ngbTooltip]="fnCtrltoolTipRef"
 						#rightToolTip3="ngbTooltip"
 						autoClose="true"
@@ -231,7 +231,7 @@
 		<div class="row m-0"
 			*ngIf="showChildContent">
 			<!-- <div class="col-1 pr-0"></div> -->
-			<div class="col-12 pr-0">
+			<div class="col-12 pr-0 ml-2">
 				<ng-content #childContent></ng-content>
 				<!-- <div class="col-1"></div> -->
 			</div>

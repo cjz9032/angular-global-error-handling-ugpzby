@@ -119,19 +119,17 @@
 						</vtr-widget-permission-note>
 						<ul class="list-group list-group-flush"
 							*ngIf="microphoneProperties.permission">
-							<li class="">
+							<li class="microphone-on-off">
 								<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.title' | translate"
 									[name]="'device.deviceSettings.audio.microphone.title' | translate"
 									componentName="Microphone"
 									[caption]=""
 									[isSwitchVisible]=true
 									[leftIcon]="['fal', 'microphone']"
-									[rightIcon]="helpIcon"
 									[readMoreText]="''"
 									[showChildContent]="true"
 									[theme]="'white'"
 									[disabled]="!microphoneProperties.permission"
-									[tooltipText]="'device.deviceSettings.audio.microphone.microphone.tooltip' | translate"
 									(toggleOnOff)="onToggleOfMicrophone($event)"
 									[isSwitchChecked]="microphoneProperties.muteDisabled"
 									[showLoaderState]="microphoneLoader"
@@ -229,7 +227,7 @@
 										[theme]="'white'"
 										[isLastChild]="true"
 										[switchId]="'audio-microphone-optimize'">
-										<div class="row no-gutters"
+										<div class="row no-gutters pl-3 ml-3"
 											role="radiogroup"
 											tabindex="0"
 											aria-label="microphone optimizemore list, select using arrow keys">

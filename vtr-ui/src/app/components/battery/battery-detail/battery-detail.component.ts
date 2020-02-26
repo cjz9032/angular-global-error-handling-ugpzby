@@ -126,6 +126,16 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		});
 	}
 
+	onFccIconClick(tooltip, canOpen = false) {
+		if (tooltip) {
+			if (tooltip.isOpen()) {
+				tooltip.close();
+			} else if (canOpen) {
+				tooltip.open();
+			}
+		}
+	}
+
 	isValid(val: any) {
 		if (!val || val === null) {
 			return false;

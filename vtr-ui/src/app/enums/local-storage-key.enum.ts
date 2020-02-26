@@ -92,7 +92,7 @@ export enum LocalStorageKey {
 	LightingRGBSide = '[LocalStorageKey] LightingRGBSide',
 	LightingSetDefaultProfile = '[LocalStorageKey] LightingSetDefaultProfile',
 
-	//DTX50 lighting page
+	// DTX50 lighting page
 	LightingCapabilitiesNewversionDesk = '[LocalStorageKey] LightingCapabilitiesNewversionDesk',
 	ledLayoutVersion = '[LocalStorageKey] ledLayoutVersion',
 
@@ -104,7 +104,7 @@ export enum LocalStorageKey {
 	LightingProfileDeskDefault2 = '[LocalStorageKey] LightingProfileDeskDefault2',
 	LightingProfileDeskDefault3= '[LocalStorageKey] LightingProfileDeskDefault3',
 
-	//LNBX50 lighting page
+	// LNBX50 lighting page
 	KeyboardToggleStatusLNBx50 = '[LocalStorageKey] KeyboardToggleStatusLNBx50',
 	LightingCapabilitiesNewversionNote = '[LocalStorageKey] LightingCapabilitiesNewversionNote',
 	LightingProfileByIdNewversionNote = '[LocalStorageKey] LightingProfileByIdNewversionNote',
@@ -267,7 +267,8 @@ export enum LocalStorageKey {
 
 	// TEMP battery condition
 	BatteryCondition = '[LocalStorageKey] batteryCondition',
-
+	// DPM
+	DPMAllPowerPlans = '[LocalStorageKey] DPMAllPowerPlans',
 	// UPE
 	UPEChannelTags = '[LocalStorageKey] UPEChannelTags',
 	PriorityControlCapability = '[LocalStorageKey] PriorityControlCapability'

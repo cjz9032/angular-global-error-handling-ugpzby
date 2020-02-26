@@ -10,8 +10,7 @@
 					[theme]="'blue'">
 					<ul class="list-group list-group-flush">
 						<li class="">
-							<vtr-ui-row-switch
-								[leftIcon]="['icomoon','icomoon-ic']"
+							<vtr-ui-row-switch [leftIcon]="['icomoon','icomoon-ic']"
 								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | titlecase"
 								[caption]="captionText"
 								[isSwitchVisible]="showIntelligentCoolingToggle"
@@ -22,7 +21,7 @@
 								[isLastChild]='true'
 								(toggleOnOff)="onIntelligentCoolingToggle($event)">
 								<div class="alignment pl-5">
-									<div class="well"
+									<div class="well ml-2"
 										*ngIf="showIC===3 && !apsStatus">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }}
 									</div>
@@ -30,7 +29,7 @@
 										class="optimize">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }}
 									</div>
-									<div class="row no-gutters"
+									<div class="row no-gutters ml-2"
 										*ngIf="isShowIntelligentCoolingModes()"
 										role="radiogroup">
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC!==14"
@@ -73,7 +72,7 @@
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
-									<div class="well"
+									<div class="well ml-2"
 										*ngIf="showIC===14"> {{ selectedModeText }} </div>
 								</div>
 
@@ -145,7 +144,8 @@
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
 								</p>
 							</div>
-							<p class="text-right more-info">
+							<p role="text"
+								class="text-right more-info">
 								<!-- Do not need to add keydown.enter event handling for modal dialogue default will work without event handling provided the link is button , a href keyboard support will not work-->
 								<button alt=""
 									class="more-info-button"
@@ -193,15 +193,17 @@
 							<div class="row mb-4">
 								<div>
 									<img role="img"
-									class="img-fluid mx-auto d-block"
-									src="assets/images/dytc6_toolbar.png">
+										class="img-fluid mx-auto d-block"
+										src="assets/images/dytc6_toolbar.png">
 								</div>
 							</div>
-							<p *ngIf="dytc6IsAutoModeSupported && (dytc6Mode === 'autoMode')" tabindex="0"
+							<p *ngIf="dytc6IsAutoModeSupported && (dytc6Mode === 'autoMode')"
+								tabindex="0"
 								role="text">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc3_1' | translate}}
 							</p>
-							<p *ngIf="dytc6IsAutoModeSupported && (dytc6Mode === 'manualMode')" tabindex="0"
+							<p *ngIf="dytc6IsAutoModeSupported && (dytc6Mode === 'manualMode')"
+								tabindex="0"
 								role="text">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc3' | translate}}
 							</p>
@@ -216,7 +218,7 @@
 										class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title1" | translate}}:
 									</span>
-										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc1" | translate}}
+									{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc1" | translate}}
 								</p>
 								<p tabindex="0"
 									id="readMoreDytc6Mode2"
@@ -225,7 +227,7 @@
 										class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title2" | translate}}:
 									</span>
-										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc2" | translate}}
+									{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc2" | translate}}
 								</p>
 								<p tabindex="0"
 									id="readMoreDytc6Mode3"
@@ -234,7 +236,7 @@
 										class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title3" | translate}}:
 									</span>
-										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc3" | translate}}
+									{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc3" | translate}}
 								</p>
 
 							</div>
@@ -243,14 +245,16 @@
 								tabindex="0"
 								role="link"
 								attr.aria-label="powerSmartSettings-intelligentCooling-more-info">
-								<div class="more-info-button mr-2" *ngIf="!isCollapsed">
+								<div class="more-info-button mr-2"
+									*ngIf="!isCollapsed">
 									{{'device.deviceSettings.inputAccessories.controlOptions.more' | translate}}
 								</div>
-								<div class="more-info-button mr-2" *ngIf="isCollapsed">
+								<div class="more-info-button mr-2"
+									*ngIf="isCollapsed">
 									{{'device.deviceSettings.inputAccessories.controlOptions.less' | translate}}
 								</div>
 								<fa-icon *ngIf="!isCollapsed"
-										[icon]="['fal', 'chevron-down']"></fa-icon>
+									[icon]="['fal', 'chevron-down']"></fa-icon>
 								<fa-icon *ngIf="isCollapsed"
 									[icon]="['fal', 'chevron-up']"></fa-icon>
 							</div>

@@ -55,7 +55,13 @@
 			z-index: 2;
 			cursor: pointer;
 			transition: all 200ms ease-in;
-		}
+			
+			@media #{$black-on-white} {
+				background-color: $high-contrast-white-textselected;
+			}
+			@media #{$white-on-black} {
+				background-color: $high-contrast-black-textselected;
+			}		}
 
 		.label {
 			position: absolute;
@@ -91,6 +97,7 @@
 			font-size: 1.8rem;
 			color: $main;
 		}
+
 	}
 
 	input[type="radio"]:not(:checked) + label::after {

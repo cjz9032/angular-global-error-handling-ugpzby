@@ -110,26 +110,26 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "إعدادات الوضع الحراري",
                     "thermalMode2SettingDesc": "اختر الوضع الذي تريد استخدامه.",
-                    "fnQDesc": "يمكنك تبديل الوضع باستخدام اختصار Fn + Q.",
+                    "fnQDesc": "يمكنك تبديل الوضع باستخدام اختصار Fn+Q.",
                     "perormanceTitle": "وضع الأداء",
-                    "performanceDesc": "عزز أداء الكمبيوتر لديك مع زيادة سرعة المروحة والمزيد من استهلاك الطاقة.",
-                    "OCDesc": "يمكنك اختيار تشغيل ميزة زيادة الأداء.",
-                    "ac_dcDesc": "وضع الأداء متاح فقط عند توصيله.",
+                    "performanceDesc": "عزز أداء الكمبيوتر لديك مع زيادة سرعة المروحة والمزيد من استهلاك الطاقة. ",
+                    "OCDesc": "يمكنك اختيار تشغيل وظيفة زيادة الأداء.",
+                    "ac_dcDesc": "لا ينطبق وضع الأداء إلا عند توصيل محول التيار المتردد.",
                     "balanceTitle": "‏‫الوضع المتوازن",
-                    "balanceDesc": "توازن الأداء وسرعة المروحة تلقائيًا حسب درجة الحرارة. استهلاك طاقة متوسط.",
+                    "balanceDesc": "توازن الأداء وسرعة المروحة تلقائيًا حسب درجة الحرارة مع استهلاك متوسط للطاقة.",
                     "quietTitle": "الوضع الهادئ",
-                    "quietDesc": "حافظ على الهدوء من خلال تقليل أداء الكمبيوتر وسرعة المروحة كلما أمكن ذلك. استهلاك طاقة منخفض.",
+                    "quietDesc": "حافظ على الهدوء من خلال تقليل أداء الكمبيوتر وسرعة المروحة كلما أمكن ذلك مع استهلاك منخفض للطاقة.",
                     "OC": {
-                        "cpu_gpuOC": "تمكين زيادة أداء CPU/GPU في وضع Preformance Mode.",
-                        "cpuOC": "تمكين زيادة أداء CPU في وضع Preformance Mode.",
-                        "gpuOC": "تمكين زيادة أداء GPU في وضع Preformance Mode.",
+                        "cpu_gpuOC": "تمكين زيادة أداء CPU/GPU في وضع Performance Mode.",
+                        "cpuOC": "تمكين زيادة أداء CPU في وضع Performance Mode.",
+                        "gpuOC": "تمكين زيادة أداء GPU في وضع Performance Mode.",
                         "advance": "متقدم",
                         "cpu_gpuDriverLack": "قم بتثبيت برامج التشغيل CPU/GPU لاستخدام وظيفة زيادة الأداء.",
-                        "cpuDriverLack": "قم بتثبيت برامج التشغيل CPU لاستخدام وظيفة زيادة الأداء.",
-                        "gpuDriverLack": "قم بتثبيت برامج التشغيل GPU لاستخدام وظيفة زيادة الاداء.",
+                        "cpuDriverLack": "قم بتثبيت برنامج تشغيل CPU لاستخدام وظيفة زيادة الأداء.",
+                        "gpuDriverLack": "قم بتثبيت برنامج تشغيل GPU لاستخدام وظيفة زيادة الأداء.",
                         "goInstall": "انتقل للتثبيت"
                     },
-                    "autoSwitch": "التبديل التلقائي إلى الأداء عند تشغيل الألعاب والعودة إلى الوضع السابق بعد ذلك."
+                    "autoSwitch": "قم بالتبديل التلقائي إلى وضع الأداء عند تشغيل الألعاب والعودة إلى الوضع السابق بعد الخروج من اللعبة."
                 },
                 "advancedOC": {
                     "title": "إعداداتسرعة الأداءالمتقدمة",
@@ -699,7 +699,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -749,13 +749,12 @@
                 "title": "الأمان",
                 "sub1": "أمن جهازي",
                 "sub2": "مكافحة الفيروسات",
-                "sub3": "أمان شبكة WiFi",
-                "sub4": "مدير كلمة السر",
-                "sub5": "VPN",
+                "sub3": "أمان WiFi",
+                "sub4": "سلامة كلمة المرور",
+                "sub5": "أمان VPN",
                 "sub6": "بصمة"
             },
             "support": "الدعم",
-            "privacy": "الخصوصية",
             "beta": {
                 "title": "beta"
             },
@@ -765,9 +764,9 @@
             "title": "مستشار الأمان",
             "subtitle": "تحقق من أمان جهازك.",
             "antiVirus": "مكافحة الفيروسات",
-            "wifi": "أمان شبكة WiFi",
-            "pswdMgr": "مدير كلمة السر",
-            "vpn": "VPN",
+            "wifi": "أمان WiFi",
+            "pswdMgr": "سلامة كلمة المرور",
+            "vpn": "أمان VPN",
             "enabled": "ممكّن",
             "disabled": "معطل",
             "partiallyProtected": "محمي جزئيًا",
@@ -781,8 +780,8 @@
             "fingerPrint": "بصمة",
             "privacyPolicyAndTermsOfService": "<tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "مسجل",
+            "notEnrolled": "غير مسجل"
         },
         "qAndA": {
             "title": "سؤال وجواب لجهازك",
@@ -811,11 +810,6 @@
         },
         "offline": {
             "connectToUseFeature": "اتصل بالإنترنت لاستخدام هذه الميزة"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "الخصوصية"
         }
     },
     "tutorial": {
@@ -1034,14 +1028,15 @@
                         "title": "الشركة المصنعة",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "البطارية المركّبة <b>غير مدعومة</b> بواسطة النظام ولن يتم شحنها. الرجاء استبدال البطارية ببطارية Lenovo المناسبة لهذا النظام.",
                     "Good": "<b>البطارية بحالة جيدة.</b>",
                     "Exhaustion": "لقد <b>تراجعت‏‎</b> سعة البطارية. يرجى استبدالها بواحدة جديدة.",
                     "Bad": "<b>حدث خطأ في البطارية.</b> لا يمكن شحن/تفريغ البطارية. استبدل البطارية.",
-                    "NotDetected": "<b>لم يتم الكشف عن أي بطارية.</b>",
+                    "NotDetected": "<b>لم يتم الكشف عن بطارية أو</b> البطارية غير موصولة.",
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b></span>",
                     "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
@@ -1263,7 +1258,7 @@
                             "ERROR_UNEXPECTED": "فشل: حدث خطأ غير متوقع."
                         },
                         "popup": {
-                            "description1": "تتم عملية إعادة التعيين على الشكل التالي:<br>شحن البطارية بشكل كامل --> إفراغ البطارية إلى طاقة البطارية منخفضة‬‏ --> إعادة شحن البطارية إلى طاقة البطارية العالية أو بشكل كامل",
+                            "description1": "تتم عملية إعادة التعيين على الشكل التالي:<br>شحن البطارية بشكل كامل --> إفراغ البطارية إلى طاقة البطارية منخفضة‬‏--> إعادة شحن البطارية إلى طاقة البطارية العالية أو بشكل كامل",
                             "description2": "ملاحظات: <br>1. قد تستغرق العملية عدة ساعات. يرجى تجنب استخدام الكمبيوتر خلال هذه الفترة.<br>2. أغلق جميع التطبيقات المفتوحة وقم بتوصيل الكمبيوتر بطاقة التيار المتردد.<br>3. أثناء العملية، يتم تعطيل وظيفة حد شحن البطارية.",
                             "continue": "استمر",
                             "cancel": "إلغاء",
@@ -1277,6 +1272,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "منتج حاصل على اعتماد ENERGY STAR"
+                },
+                "dpm": {
+                    "title": "الطاقة",
+                    "subtitle": "إعدادات الطاقة",
+                    "description": "‏‫يمكّنك هذا القسم من التحقق من الإعدادات الافتراضية وتخصيص استخدام الطاقة ومخطط الطاقة وفقًا لاحتياجاتك.",
+                    "globalPowerSettings": {
+                        "title": "إعدادات الطاقة العمومية",
+                        "description": "ستتجاوز هذه الميزة إعدادات مخطط الطاقة أو استخدام الطاقة.",
+                        "powerButton": {
+                            "label": "زر الطاقة:",
+                            "items": {
+                                "doNothing": "لا شيء",
+                                "sleep": "السكون",
+                                "hibernate": "الإسبات",
+                                "shutDown": "إيقاف التشغيل",
+                                "turnOffTheDisplay": "إيقاف تشغيل الشاشة"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "تسجيل الدخول المطلوب:",
+                            "items": {
+                                "never": "أبدًا",
+                                "fromSleep": "عندما ينشط الكمبيوتر من وضع السكون"
+                            },
+                            "tip": "ملاحظة: ينطبق هذا فقط إذا تم تعيين كلمة مرور النظام."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "استخدام الطاقة",
+                        "description": "إذا كان النظام خاملاً:",
+                        "turnOffDisplay": "‏‫إيقاف تشغيل جهاز العرض بعد:",
+                        "turnOffHDD": "‏‫إيقاف تشغيل محرك القرص الثابت بعد‬:",
+                        "sleep": "السكون بعد:",
+                        "hibernate": "الإسبات بعد:",
+                        "items": {
+                            "never": "أبدًا",
+                            "minute": "دقيقة",
+                            "minutes": "دقائق",
+                            "hour": "ساعة",
+                            "hours": "ساعات"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "مخطط الطاقة",
+                        "description": "اختر مخطط طاقة للتحكم في أداء الكمبيوتر ودرجة حرارة النظام واستخدام الطاقة.",
+                        "currentPowerPlan": {
+                            "label": "المخطط الحالي"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "وضع الاستعداد الذكي",
@@ -2288,7 +2332,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "أمان شبكة WiFi والمنزل المتصل",
+                "title": "‏أمان WiFi",
                 "back": "السابق"
             },
             "container": {
@@ -2472,7 +2516,7 @@
     "lenovoId": {
         "login": "تسجيل الدخول",
         "logout": "تسجيل الخروج",
-        "loggingOut": "Logging out...",
+        "loggingOut": "جارٍ تسجيل الخروج...",
         "unlockExclusives": "استفد من العروض الخاصة",
         "user": "المستخدم",
         "welcomeText1": "<span dir=\"rtl\">تبدو نشيطًا اليوم، {{firstName}}!</span>",
@@ -3094,7 +3138,8 @@
             "storage": "السعة التخزينية",
             "wireless": "اللاسلكية"
         },
-        "warningMessage": "يُرجى العلم أن الاختبارات سوف تُلغى إذا دخل النظام في وضع السكون أو الإسبات"
+        "warningMessage": "يُرجى العلم أن الاختبارات سوف تُلغى إذا دخل النظام في وضع السكون أو الإسبات",
+        "refreshMessage": "قد يستغرق التحديث بعض الوقت لأنه يحتاج إلى تحميل جميع المكونات مرةً أخرى"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3366,10 +3411,10 @@
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
             "trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId":"Lenovo ID:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3433,7 +3478,6 @@
     },
     "notification": {
         "menu": {
-            "privacy": "يمكنك الآن معرفة ما إذا كانت معلوماتك قد تعرضت للانتهاك أو ما إذا تم استخدامها من قِبل متتبعين عبر الإنترنت من دون علمك.",
             "security": "هل تعلم؟ حتى لو لم يكن لديك برامج للحماية من الفيروسات مثبتة على جهازك، فنحن نوفر مع ذلك حماية الأمان الأساسية لجهازك.",
             "connectedHomeSecurity": "احصل على مراقبة وتنبيهات في الوقت الحقيقي حول أمان شبكتك في المنزل. ستكون أول من يعرف ما إذا كان أحد أجهزتك الذكية يتعرض لهجوم أمني."
         }

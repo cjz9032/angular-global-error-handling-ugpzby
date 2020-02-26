@@ -93,7 +93,7 @@ export class GamingLightingService {
 		}
 	}
 
-	//X50 new interface
+	// X50 new interface
 	regLightingProfileIdChangeEvent(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
@@ -105,17 +105,17 @@ export class GamingLightingService {
 		}
 	}
 
-	checkAreaColorFn (listInfo) {
+	checkAreaColorFn(listInfo) {
 		try {
-            const array = listInfo.map(o => o.lightColor);
-            if (array.length > 0) {
+			const array = listInfo.map(o => o.lightColor);
+			if (array.length > 0) {
 				return array.some(function(value, index) {
 					return value !== array[0];
 				});
 			} else {
 				return false;
 			}
-        } catch (error) {
+		} catch (error) {
 			throw new Error(error.message);
 		}
 	}

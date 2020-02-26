@@ -22,7 +22,7 @@
                     "rapidCharge": "Brzo punjenje"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Overclock uklj.",
                         "performance": "Performanse",
                         "balance": "Balans",
@@ -107,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Postavlj. termičkog načina",
-                    "thermalMode2SettingDesc": "Odaberite način rada kojim se želite koristiti.",
-                    "fnQDesc": "Možete prebaciti način rada s pomoću prečaca Fn + Q.",
+                    "thermalMode2SettingDesc": "Odaberite način rada koji želite koristiti.",
+                    "fnQDesc": "Možete prebaciti način rada s pomoću prečaca Fn+Q.",
                     "perormanceTitle": "Način rada performansi",
-                    "performanceDesc": "Povećajte performanse računala uz veću brzinu ventilatora i veću potrošnju energije.",
-                    "OCDesc": "Možete odabrati uključivanje značajke Overclocking.",
-                    "ac_dcDesc": "Način rada performansi dostupan je samo kad je uključen.",
+                    "performanceDesc": "Povećajte performanse računala uz veću brzinu ventilatora i bolju potrošnju energije. ",
+                    "OCDesc": "Možete odabrati uključivanje funkcije overclockinga.",
+                    "ac_dcDesc": "Način performansi rada primjenjiv je samo kad je uključen ispravljač.",
                     "balanceTitle": "Način rada uravnoteženosti",
-                    "balanceDesc": "Automatski uravnotežite performanse i brzinu ventilatora na temelju temperature. Srednja potrošnja energije.",
+                    "balanceDesc": "Automatski uravnotežite performanse i brzinu ventilatora na temelju temperature sa srednjom potrošnjom energije.",
                     "quietTitle": "Tihi način rada",
-                    "quietDesc": "Budite tihi smanjujući performanse vašeg računala i brzinu ventilatora kad je to moguće. Niska potrošnja energije.",
+                    "quietDesc": "Zadržite tihi rad smanjujući performanse računala i brzinu ventilatora kad je to moguće uz smanjenje potrošnje energije.",
                     "OC": {
                         "cpu_gpuOC": "Omogući Overclocking CPU/GPU-a u načinu rada.",
                         "cpuOC": "Omogući Overclocking CPU-a u načinu rada.",
                         "gpuOC": "Omogući Overclocking GPU-a u načinu rada.",
                         "advance": "NAPREDNO",
-                        "cpu_gpuDriverLack": "Instalacija upravlj. prog. CPU/GPU-a za uporabu funkcije Overclocking.",
-                        "cpuDriverLack": "Instalacija upravlj. prog. CPU-a za uporabu funkcije Overclocking.",
-                        "gpuDriverLack": "Instalacija upravlj. prog. GPU-a za uporabu funk. Overclocking.",
+                        "cpu_gpuDriverLack": "Instalirajte CPU/GPU upravljačke programe za upotrebu funkcije overclockinga.",
+                        "cpuDriverLack": "Instalirajte CPU upravljački program za upotrebu funkcije overclockinga.",
+                        "gpuDriverLack": "Instalirajte upravljački program GPU za upotrebu funkcije overclockinga.",
                         "goInstall": "INSTALIRAJ"
                     },
-                    "autoSwitch": "Autom. se prebacite na performanse pri pokretanju igrica pa se vratite."
+                    "autoSwitch": "Automatski prebacite u način rada performansi pri pokretanju igara i vratite natrag nakon zatvaranja igre."	
                 },
                 "advancedOC": {
                     "title": "Overclock Napredne postavke",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -747,13 +747,12 @@
                 "title": "Sigurnost",
                 "sub1": "Moja sigurnost",
                 "sub2": "Zaštita od virusa",
-                "sub3": "Sigurnost WiFi mreže",
-                "sub4": "Upravitelj lozinki",
-                "sub5": "VPN",
+                "sub3": "Sigurnost WiFija",
+                "sub4": "Jačina lozinke",
+                "sub5": "Sigurnost VPN mreže",
                 "sub6": "Otisak prsta"
             },
             "support": "Podrška",
-            "privacy": "Zaštita privatnosti",
             "beta": {
                 "title": "beta"
             },
@@ -763,9 +762,9 @@
             "title": "Savjetnik za sigurnost tvrtke",
             "subtitle": "PROVJERITE JE LI VAŠ UREĐAJ ZAŠTIĆEN.",
             "antiVirus": "Zaštita od virusa",
-            "wifi": "Sigurnost WiFi mreže",
-            "pswdMgr": "Upravitelj lozinki",
-            "vpn": "VPN",
+            "wifi": "Sigurnost WiFija",
+            "pswdMgr": "Jačina Lozinke",
+            "vpn": "Sigurnost VPN Mreže",
             "enabled": "OMOGUĆENO",
             "disabled": "ONEMOGUĆENO",
             "partiallyProtected": "DJELOMIČNO ZAŠTIĆEN",
@@ -779,8 +778,8 @@
             "fingerPrint": "Otisak prsta",
             "privacyPolicyAndTermsOfService": "<tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "UPISAN",
+            "notEnrolled": "NIJE UPISAN"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Povežite se s internetom da biste koristili ovu značajku"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Zaštita privatnosti"
         }
     },
     "tutorial": {
@@ -1032,14 +1026,15 @@
                         "title": "Proizvođač",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "Ovaj sustav <b>ne podržava</b> umetnutu bateriju te je neće puniti. Bateriju zamijenite odgovarajućom baterijom tvrtke Lenovo za ovaj sustav.",
                     "Good": "<b>Baterija je u dobrom stanju.</b>",
                     "Exhaustion": "Kapacitet baterije je <b>degradiran</b>. Zamijenite je novom.",
                     "Bad": "<b>Došlo je do pogreške baterije.</b> Bateriju nije moguće puniti/prazniti. Zamijenite bateriju.",
-                    "NotDetected": "<b>Nije otkrivena baterija.</b>",
+                    "NotDetected": "<b>Baterija nije pronađena</b> ili nije priključena.",
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Prilagodnik izmjeničnog napona nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Prilagodnik izmjeničnog napona ne može pružiti dovoljno energije.</b>",
@@ -1275,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "PROIZVOD S CERTIFIKATOM ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Napajanje",
+					"subtitle": "Postavke napajanja",
+					"description": "Ovaj odjeljak omogućuje vam provjeru zadanih postavki i prilagođavanje potrošnje i plana napajanja prema vašim potrebama.",
+					"globalPowerSettings": {
+						"title": "Globalne postavke napajanja",
+						"description": "Ova će značajka nadvladati postavke napajanja ili postavke upotrebe energije.",
+						"powerButton": {
+							"label": "GUMB ZA NAPAJANJE:",
+							"items": {
+								"doNothing": "Nemojte učiniti ništa",
+								"sleep": "Stanje mirovanja",
+								"hibernate": "Hibernacija",
+								"shutDown": "Isključi",
+								"turnOffTheDisplay": "Isključite zaslon"
+							}
+						},
+						"requiredSignIn": {
+							"label": "POTREBNA PRIJAVA:",
+							"items": {
+								"never": "Nikada",
+								"fromSleep": "Kada se računalo probudi iz sna"
+							},
+							"tip": "Napomena: Ovo funkcionira samo ako je postavljena lozinka sustava."
+						}
+					},
+					"powerUse": {
+						"title": "Uporaba napajanja",
+						"description": "AKO JE SUSTAV U PRAZNOM HODU:",
+						"turnOffDisplay": "ISKLJUČITE ZASLON NAKON:",
+						"turnOffHDD": "ISKLJUČITE TVRDI DISK NAKON:",
+						"sleep": "STANJE MIROVANJA NAKON:",
+						"hibernate": "HIBERNACIJA NAKON:",
+						"items": {
+							"never": "Nikada",
+							"minute": "min",
+							"minutes": "min",
+							"hour": "h",
+							"hours": "h"
+						}
+					},
+					"powerPlan": {
+						"title": "Plan napajanja",
+						"description": "Odaberite plan napajanja da bist eupravljali performansama računala, temperaturom sustava i potrošnjom energije.",
+						"currentPowerPlan": {
+							"label": "TRENUTNI PLAN"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Pametno stanje mirovanja",
                     "description": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja iskustva brzog nastavka rada u <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Suvremenom stanju pripravnosti</a> tijekom rada s većim opterećenjem.",
@@ -2286,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi i povezana sigurnost doma",
+                "title": "Sigurnost WiFija",
                 "back": "NATRAG"
             },
             "container": {
@@ -2470,7 +2514,7 @@
     "lenovoId": {
         "login": "Prijava",
         "logout": "Odjava",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Odjavljivanje...",
         "unlockExclusives": "Otključaj ekskluzivne stavke",
         "user": "Korisnik",
         "welcomeText1": "Danas smo puni energije, {{firstName}}!",
@@ -2903,7 +2947,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Postavke postavki",
+        "preferenceSettings": "Postavke Postavki",
         "settings": "Postavke",
         "settingsDescription": "Na stranici postavki možete odabrati uključivanje / isključivanje obavijesti o porukama na temelju kategorija Vantageove poruke. Napominjemo da čak i ako su sve kategorije poruka onemogućene, još uvijek možete povremeno primati ključnu poruku sustava Vantage kada je to potrebno.",
         "messagesInLenovoVantage": "Poruke u aplikaciji Lenovo Vantage",
@@ -3092,7 +3136,8 @@
             "storage": "Pohrana",
             "wireless": "Bežična veza"
         },
-        "warningMessage": "Napominjemo da će se testovi otkazati ako je sustav u stanju mirovanja ili hibernacije"
+        "warningMessage": "Napominjemo da će se testovi otkazati ako je sustav u stanju mirovanja ili hibernacije",
+        "refreshMessage": "Osvježavanje može potrajati neko vrijeme jer je potrebno ponovno učitati sve komponente"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3364,10 +3409,10 @@
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
             "trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId":"Lenovo ID:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3433,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Sada možete saznati jesu li internetski tragači zloupotrijebili ili koristili vaše privatne podatke bez vašeg znanja.",
             "security": "Znate li? Čak i ako nemate instaliran antivirusni softver, još uvijek vam pružamo osnovnu sigurnosnu zaštitu vašeg uređaja.",
             "connectedHomeSecurity": "Dobijte praćenje u stvarnom vremenu i upozorenja o mrežnoj sigurnosti vašeg doma. Prvi ćete saznati ako se bilo koji od vaših pametnih uređaja suoči sa sigurnosnim napadom."
         }

@@ -1,12 +1,39 @@
-<p>
-	<input class="styled-checkbox"
-		id="{{checkboxId+'_checkbox'}}"
-		attr.aria-label="{{checkboxId+'_checkbox'}}"
+<div class="auto-set-checkbox custom-checkbox-gaming custom-control custom-checkbox"
+	role="checkbox"
+	[attr.aria-label]="componentId"
+	[attr.aria-disabled]="disabled"
+	[attr.aria-checked]="checked"
+	[attr.aria-labelledby]="componentId"
+	tabindex="0"
+	(keydown.enter)="checkBox.click();">
+	<input [id]="componentId"
+		#checkBox
+		class="custom-control-input"
 		type="checkbox"
+		[name]="componentId"
 		[value]="value"
-		[checked]="checked"
 		[disabled]="disabled"
-		(change)="onChange($event)">
-	<label [ngClass]="{'disabled': disabled}"
-		for="{{checkboxId+'_checkbox'}}">{{ label }}</label>
-</p>
+		[checked]="checked"
+		tabindex="-1"
+		role="checkbox"
+		vtrMetrics
+		[metricsEvent]="metricsEvent"
+		[metricsParent]="metricsParent"
+		[metricsItem]="metricsItem"
+		[metricsValue]="metricsValue"
+		(change)="onChange($event)" />
+	<!-- <span class="checkmark"></span> -->
+	<label *ngIf="hasChild; else elseBlock"
+		class="custom-control-label"
+		[for]="componentId"
+		role="text">
+		<ng-content></ng-content>
+	</label>
+	<ng-template #elseBlock>
+		<label [for]="componentId"
+			class="custom-control-label"
+			role="text">
+			{{ label }}
+		</label>
+	</ng-template>
+</div>

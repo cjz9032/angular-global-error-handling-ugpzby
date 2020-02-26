@@ -44,55 +44,30 @@
 									metricsItem="ActiveProtectionSystem.Sensitivity.Slider">
 								</vtr-ui-aps-slider>
 							</div>
-							<!-- <div class="checkbox">
-									<vtr-ui-checkbox [checkboxId]="'activeProtectionCheckbox'"
-										[label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate"
-										[checked]="repeatShock"
-										(toggle)="setAutoDisableSetting($event)"
-										[disabled]="!apsStatus"
-										vtrMetrics
-										metricsEvent="ItemClick"
-										metricsParent="Device.SmartAssist"
-										metricsItem="ActiveProtectionSystem.AutoDisable"
-										[metricsValue]="repeatShock" >
-									</vtr-ui-checkbox>
-								</div> -->
 						</vtr-ui-row-switch>
-						<div class="custom-control custom-checkbox aps-checkbox"
-							tabindex="0"
-							role="checkbox"
-							(keydown.enter)="apsToggleCheckbox.click()"
-							[attr.aria-checked]="repeatShock"
-							[attr.aria-disabled]="!apsStatus"
-							attr.aria-labelledby="aps-toggle-checkbox">
-							<input id="aps-toggle-checkbox"
-								#apsToggleCheckbox
-								type="checkbox"
-								class="custom-control-input"
-								[checked]="repeatShock"
-								(change)="setAutoDisableSetting($event)"
-								[disabled]="!apsStatus"
-								tabindex="-1"
-								aria-hidden="true"
-								vtrMetrics
-								metricsEvent="ItemClick"
-								metricsParent="Device.SmartAssist"
-								metricsItem="ActiveProtectionSystem.AutoDisable"
-								[metricsValue]="repeatShock" />
-							<label class="custom-control-label"
-								for="aps-toggle-checkbox"
-								role="text">
-								<span [ngClass]="{'disabled': !apsStatus}"
-									id="aps-toggle-checkbox-text"
-									role="text">
-									{{'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate}}
-								</span>
-							</label>
+						<div class="row">
+							<div class="col px-5 aps-checkbox">
+								<vtr-ui-checkbox [componentId]="'aps-toggle-checkbox'"
+									[checked]="repeatShock"
+									(toggle)="setAutoDisableSetting($event)"
+									[disabled]="!apsStatus"
+									[hasChild]="true"
+									[metricsEvent]="'ItemClick'"
+									[metricsParent]="'Device.SmartAssist'"
+									[metricsItem]="'ActiveProtectionSystem.AutoDisable'"
+									[metricsValue]="repeatShock">
+									<span [ngClass]="{'disabled': !apsStatus}"
+										id="aps-toggle-checkbox-text"
+										attr.aria-label="aps-toggle-checkbox-text">
+										{{'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate}}
+									</span>
+								</vtr-ui-checkbox>
+							</div>
 						</div>
 					</div>
 				</li>
 
-				<!-- Manual Overide -->
+				<!-- Manual Override -->
 				<li class="pt-3 keep-my-display-block auto-screen-off-block">
 					<vtr-ui-row-switch [switchId]="'manualActiveProtectionSuspension'"
 						[title]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.title' | translate"

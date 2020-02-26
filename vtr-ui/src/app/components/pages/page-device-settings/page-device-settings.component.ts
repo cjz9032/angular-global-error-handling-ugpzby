@@ -104,25 +104,26 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-        this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
+		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-        this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		this.logger.info('DEVICE SETTINGS INIT', this.menuItems);
+		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 
-        this.fetchCMSArticles();
-        // VAN-5872, server switch feature on language change
-        this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		this.fetchCMSArticles();
+		// VAN-5872, server switch feature on language change
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
 		});
 
-        // Evaluate the translations for QA on language Change
-        // this.qaService.setTranslationService(this.translate);
-        // this.qaService.setCurrentLangTranslations();
-        this.qaService.getQATranslation(this.translate); // VAN-5872, server switch feature
-        this.initInputAccessories();
+		// Evaluate the translations for QA on language Change
+		// this.qaService.setTranslationService(this.translate);
+		// this.qaService.setCurrentLangTranslations();
+		this.qaService.getQATranslation(this.translate); // VAN-5872, server switch feature
+		this.initInputAccessories();
 
-        this.isOnline = this.commonService.isOnline;
-        if (this.isOnline) {
+		this.isOnline = this.commonService.isOnline;
+		if (this.isOnline) {
 			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
 			if (welcomeTutorial && welcomeTutorial.isDone) {
@@ -132,7 +133,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			this.getAudioPageSettings();
 		}
 
-        this.routerSubscription = this.router.events.subscribe((evt) => {
+		this.routerSubscription = this.router.events.subscribe((evt) => {
 			if (!(evt instanceof NavigationEnd)) {
 				return;
 			}
@@ -145,19 +146,21 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			/* const focusParentElement = this.hsRouterOutlet.nativeElement.lastElementChild;
 			if (focusParentElement) {
 				focusParentElement.focus();
-				console.log('aa 1:: ' + this.hsRouterOutlet.nativeElement);
-				console.log('aa 2:: ' + focusParentElement);
+				this.logger.info('aa 1:: ' + this.hsRouterOutlet.nativeElement);
+				this.logger.info('aa 2:: ' + focusParentElement);
 			} */
 			/* const subPageRootElement = document.getElementsByClassName('vtr-subpage') as HTMLCollection;
 			const element = subPageRootElement[0].querySelector('[tabindex = \'0\']') as HTMLElement;
 			element.focus(); */
 			// vtr - subpage
 		});
-    }
+	}
 
-	hidePowerPage() {
+	hidePowerPage(routeTo: boolean = true) {
 		this.menuItems = this.commonService.removeObjById(this.menuItems, 'power');
-		this.router.navigate(['device/device-settings/audio'], { replaceUrl: true });
+		if (routeTo) {
+			this.router.navigate(['device/device-settings/audio'], { replaceUrl: true });
+		}
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -172,6 +175,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				case LocalStorageKey.IsPowerPageAvailable:
 					if (!payload) {
 						this.hidePowerPage();
+					} else if (typeof payload === 'object') {
+						this.hidePowerPage(payload.link);
 					}
 					break;
 				default:
@@ -256,7 +261,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 					}
 				}
 			},
-			error => {}
+			error => {
+				this.logger.info('fetchCMSContent error', error.message);
+			}
 		);
 		this.cardContentPositionA = {
 			Title: '',

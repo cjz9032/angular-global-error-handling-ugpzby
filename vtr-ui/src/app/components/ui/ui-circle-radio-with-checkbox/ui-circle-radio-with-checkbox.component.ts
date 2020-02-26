@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-ui-circle-radio-with-checkbox',
@@ -41,7 +42,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	@ViewChild('radioButton', { static: false }) radioButton: ElementRef<HTMLElement>;
 	selectedRadioButton: any;
 	noRadioButtonSelected: boolean;
-	constructor(private translate: TranslateService) {
+	constructor(private translate: TranslateService, private logger: LoggerService) {
 
 	}
 
@@ -73,22 +74,22 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 		}
 	}
 
-	checkOnFocus(event, radio) {
-		/* this.setRadioButtons();
+	/* checkOnFocus(event, radio) {
+		 this.setRadioButtons();
 		if (!radio.checked) {
 			radio.click();
-		} */
-	}
+		}
+	} */
 
 	radioKBNavigation(event, radio) {
-        this.setRadioButtons();
-        switch (event.keyCode) {
+		this.setRadioButtons();
+		switch (event.keyCode) {
 			case this.keyCode.TAB:
 				// this.checkOnFocus(event, radio);
 				break;
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
-				this.setChecked(this.radioButton);
+				this.setChecked(this.radioButton, true);
 				break;
 			case this.keyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);
@@ -105,18 +106,26 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			default:
 				break;
 		}
-    }
 
-	setChecked(currentItem) {
-		const currentRadio = currentItem.querySelectorAll('input[type="radio"]');
-		if (currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
+	}
+
+	setChecked(currentItem, selectItem: boolean) {
+		let currentRadio = [];
+		try {
+			currentRadio = currentItem.querySelectorAll('input[type="radio"]');
+		} catch (error) {
+			currentRadio = currentItem.nativeElement.querySelectorAll('input[type="radio"]');
+		}
+
+		if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
 			currentRadio[0].click();
 			this.radioButtons.forEach(radioButton => {
 				radioButton.setAttribute('aria-checked', 'false');
 			});
 			currentItem.setAttribute('aria-checked', 'true');
+			this.setRadioTabIndex(currentItem);
 		}
-		this.setRadioTabIndex(currentItem);
+
 		currentItem.focus();
 	}
 
@@ -132,12 +141,14 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			let index;
 
 			if (currentItem.nativeElement === this.firstRadioButton) {
-				this.setChecked(this.lastRadioButton);
+				this.setChecked(this.lastRadioButton, true);
 			} else {
 				index = this.radioButtons.indexOf(currentItem.nativeElement);
-				this.setChecked(this.radioButtons[index - 1]);
+				this.setChecked(this.radioButtons[index - 1], true);
 			}
-		} catch (error) {}
+		} catch (error) {
+			this.logger.error('setCheckedToPreviousItem error occured ::', error);
+		}
 	}
 
 
@@ -146,13 +157,15 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			let index;
 
 			if (currentItem.nativeElement === this.lastRadioButton) {
-				this.setChecked(this.firstRadioButton);
+				this.setChecked(this.firstRadioButton, true);
 			} else {
 				index = this.radioButtons.indexOf(currentItem.nativeElement);
-				this.setChecked(this.radioButtons[index + 1]);
+				this.setChecked(this.radioButtons[index + 1], true);
 			}
 
-		} catch (error) {}
+		} catch (error) {
+			this.logger.error('setCheckedToNextItem error occured :: ', error);
+		}
 
 	}
 
@@ -180,14 +193,14 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 
 			//}
 			if (this.firstRadioButton && this.noRadioButtonSelected) {
-				this.setRadioTabIndex(this.firstRadioButton);
+				this.firstRadioButton.focus();
+				//this.setRadioTabIndex(this.firstRadioButton);
 			}
 
-			/* 	if (this.selectedRadioButton) {
-					this.setFocus(this.selectedRadioButton);
-				} */
 
-		} catch (error) {}
+		} catch (error) {
+			this.logger.error('setRadioButtons error occured ::', error);
+		}
 
 
 	}

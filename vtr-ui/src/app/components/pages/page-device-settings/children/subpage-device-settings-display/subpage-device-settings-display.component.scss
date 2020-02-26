@@ -6,8 +6,8 @@
 		padding-left: 3rem;
 		font-size: 1.4rem;
 		font-weight: 300;
+		color:$grey_dark;
 		// TODO: check this if it is necessary.
-		// color: $white60;
 	}
 	#goto_nightlight_link {
 		text-decoration: underline;
@@ -46,24 +46,24 @@
 			color: $main;
 		}
 	}
-		.container-card{
-			@media #{$black-on-white} {
-				//background-color: $high-contrast-grey;
-				border: 0.1rem solid $dark;
-				border-radius: 1rem;
-				box-sizing: border-box;
+		// .container-card{
+		// 	@media #{$black-on-white} {
+		// 		//background-color: $high-contrast-grey;
+		// 		border: 0.1rem solid $dark;
+		// 		border-radius: 1rem;
+		// 		box-sizing: border-box;
 
 
-			}
-			@media #{$white-on-black} {
-				//background-color: $high-contrast-grey;
-				border: 0.1rem solid $light;
-				border-radius: 1rem;
-				box-sizing: border-box;
+		// 	}
+		// 	@media #{$white-on-black} {
+		// 		//background-color: $high-contrast-grey;
+		// 		border: 0.1rem solid $light;
+		// 		border-radius: 1rem;
+		// 		box-sizing: border-box;
 
 
-			}
-		}
+		// 	}
+		// }
 	.smart-settings-card {
 		margin-left: -1.5rem;
 		margin-right: -1.5rem;

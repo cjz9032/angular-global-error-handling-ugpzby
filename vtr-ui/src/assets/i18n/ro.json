@@ -108,26 +108,26 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Setări mod termic",
                     "thermalMode2SettingDesc": "Alegeți modul pe care doriți să îl utilizați.",
-                    "fnQDesc": "Puteți comuta modul utilizând comanda rapidă Fn + Q.",
+                    "fnQDesc": "Puteți comuta modul utilizând comanda rapidă Fn+Q.",
                     "perormanceTitle": "Mod performanță",
-                    "performanceDesc": "Măriți performanța computerului cu o viteză mai mare a ventilatorului și cu mai multă energie consumată.",
-                    "OCDesc": "Puteți alege să porniți caracteristica Overclocking.",
-                    "ac_dcDesc": "Modul performanță este disponibil numai când PC-ul este conectat la o sursă de alimentare.",
+                    "performanceDesc": "Măriți performanța computerului crescând viteza ventilatorului și consumul de energie. ",
+                    "OCDesc": "Puteți porni funcția Overclocking.",
+                    "ac_dcDesc": "Modul Performanță este disponibil numai atunci când este conectat un adaptor de c. a.",
                     "balanceTitle": "Mod echilibrat",
-                    "balanceDesc": "Echilibrați automat performanța și viteza ventilatorului în funcție de temperatură. Consum de energie mediu.",
+                    "balanceDesc": "Echilibrați automat performanța și viteza ventilatorului în funcție de temperatură, cu ajutorul consumului mediu de energie.",
                     "quietTitle": "Mod silențios",
-                    "quietDesc": "Păstrați liniștea reducând performanța computerului și viteza ventilatorului, atunci când este posibil. Consum de energie redus.",
+                    "quietDesc": "Mențineți o funcționare silențioasă a computerului, reducând performanța acestuia și viteza ventilatorului, atunci când este posibil, cu ajutorul consumului redus de energie.",
                     "OC": {
                         "cpu_gpuOC": "Activați overclocking-ul CPU/GPU în modul performanță.",
                         "cpuOC": "Activați overclocking-ul CPU în modul performanță.",
                         "gpuOC": "Activați overclocking-ul GPU în modul performanță.",
                         "advance": "COMPLEXĂ",
-                        "cpu_gpuDriverLack": "Instalați driverele CPU/GPU pentru a utiliza funcția Overclocking.",
-                        "cpuDriverLack": "Instalați driverul CPU pentru a utiliza funcția Overclocking.",
-                        "gpuDriverLack": "Instalați driverul GPU pentru a utiliza funcția Overclocking.",
+                        "cpu_gpuDriverLack": "Pentru a utiliza funcția Overclocking, instalați driverele CPU/GPU.",
+                        "cpuDriverLack": "Pentru a utiliza funcția Overclocking, instalați driverul CPU.",
+                        "gpuDriverLack": "Pentru a utiliza funcția Overclocking, instalați driverul GPU.",
                         "goInstall": "INSTALAȚI"
                     },
-                    "autoSwitch": "Treceți automat la performanță când lansați jocuri și comutați înapoi ulterior."
+                    "autoSwitch": "Treceți automat la modul Performanță atunci când lansați jocuri și reveniți după ce ieșiți din joc."	
                 },
                 "advancedOC": {
                     "title": "Setări complexe Overclock",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -748,12 +748,11 @@
                 "sub1": "Securitatea mea",
                 "sub2": "Antivirus",
                 "sub3": "Securitate WiFi",
-                "sub4": "Manager de parole",
-                "sub5": "VPN",
+                "sub4": "Sănătatea parolei",
+                "sub5": "Securitate VPN",
                 "sub6": "Amprentă digitală"
             },
             "support": "Asistenţă",
-            "privacy": "Confidenţialitate",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "VERIFICAȚI DACĂ DISPOZITIVUL DVS. ESTE SECURIZAT.",
             "antiVirus": "Antivirus",
             "wifi": "Securitate WiFi",
-            "pswdMgr": "Manager de parole",
-            "vpn": "VPN",
+            "pswdMgr": "Sănătatea Parolei",
+            "vpn": "Securitate VPN",
             "enabled": "ACTIVAT",
             "disabled": "DEZACTIVAT",
             "partiallyProtected": "PROTEJAT PARȚIAL",
@@ -776,11 +775,11 @@
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
-            "fingerPrint": "Amprentă digitală",
+            "fingerPrint": "Amprentă Digitală",
             "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "ÎNREGISTRAT",
+            "notEnrolled": "NEÎNREGISTRAT"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Pentru a utiliza această caracteristică, trebuie să vă conectați la internet"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Confidenţialitate"
         }
     },
     "tutorial": {
@@ -1032,14 +1026,15 @@
                         "title": "Producător",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "Bateria instalată <b>nu este acceptată</b> de sistem şi nu se va încărca. Înlocuiţi bateria cu bateria Lenovo corectă pentru acest sistem.",
                     "Good": "<b>Bateria este în stare bună.</b>",
                     "Exhaustion": "Capacitatea bateriei s-a <b>degradat</b>. Înlocuiţi-o cu una nouă.",
                     "Bad": "<b>A apărut o eroare la baterie.</b> Bateria nu poate fi încărcată/descărcată. Înlocuiţi bateria.",
-                    "NotDetected": "<b>Nu a fost detectată nicio baterie.</b>",
+                    "NotDetected": "<b>Nu a fost detectată nicio baterie sau bateria nu</b> este conectată.",
                     "NotGood": "<b>Bateria nu este în stare bună.</b>",
                     "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b>",
                     "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă putere.</b>",
@@ -1275,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UN PRODUS CERTIFICAT ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Alimentare",
+					"subtitle": "Setări alimentare",
+					"description": "Această secțiune vă permite să verificați setările implicite și să personalizați consumul de energie și planul de alimentare, conform cerințelor dvs.",
+					"globalPowerSettings": {
+						"title": "Setări alimentare globale",
+						"description": "Această caracteristică va suprascrie setările planului de alimentare sau ale consumului de energie.",
+						"powerButton": {
+							"label": "BUTON DE ALIMENTARE:",
+							"items": {
+								"doNothing": "Nu se întâmplă nimic",
+								"sleep": "Repaus",
+								"hibernate": "Hibernare",
+								"shutDown": "Închidere",
+								"turnOffTheDisplay": "Stingere afișaj"
+							}
+						},
+						"requiredSignIn": {
+							"label": "ESTE NECESARĂ CONECTAREA:",
+							"items": {
+								"never": "Niciodată",
+								"fromSleep": "Când PC-ul se activează din repaus"
+							},
+							"tip": "Notă: Această opțiune funcționează numai dacă este setată parola de sistem."
+						}
+					},
+					"powerUse": {
+						"title": "Consum de energie",
+						"description": "DACĂ SISTEMUL ESTE INACTIV:",
+						"turnOffDisplay": "OPRIRE AFIȘAJ DUPĂ:",
+						"turnOffHDD": "OPRIRE HDD DUPĂ:",
+						"sleep": "REPAUS DUPĂ:",
+						"hibernate": "HIBERNARE DUPĂ:",
+						"items": {
+							"never": "Niciodată",
+							"minute": "minut",
+							"minutes": "minute",
+							"hour": "oră",
+							"hours": "ore"
+						}
+					},
+					"powerPlan": {
+						"title": "Plan de alimentare",
+						"description": "Alegeți un plan de alimentare pentru a controla performanța computerului, temperatura sistemului și consumul de energie.",
+						"currentPowerPlan": {
+							"label": "PLAN ACTUAL"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Stare de veghe inteligentă",
                     "description": "Această caracteristică programează computerul să optimizeze modul de economisire a energiei bateriei în timpul orelor de inactivitate, fără a afecta experiența de reluare rapidă pentru <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a>, în timpul orelor de utilizare intensivă.",
@@ -2286,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi și securitate conectată, la domiciliu",
+                "title": "Securitate WiFi",
                 "back": "ÎNAPOI"
             },
             "container": {
@@ -2470,7 +2514,7 @@
     "lenovoId": {
         "login": "Conectare",
         "logout": "Deconectare",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Se deconectează...",
         "unlockExclusives": "Deblocare Exclusive",
         "user": "Utilizator",
         "welcomeText1": "Păreți plin de energie astăzi, {{firstName}}!",
@@ -2903,7 +2947,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Setări de preferințe",
+        "preferenceSettings": "Setări De Preferințe",
         "settings": "Setări",
         "settingsDescription": "În pagina de setare a preferințelor, puteți alege să activați/dezactivați notificările pentru mesaje în funcție de categoria mesajului Vantage. Rețineți că, indiferent dacă toate categoriile de mesaje sunt dezactivate, puteți primi ocazional mesaje critice de sistem din partea Vantage când este necesar.",
         "messagesInLenovoVantage": "Mesaje în Lenovo Vantage",
@@ -3092,7 +3136,8 @@
             "storage": "Stocare",
             "wireless": "Fără fir"
         },
-        "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează"
+        "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează",
+        "refreshMessage": "Actualizarea poate dura un timp, deoarece este necesar să se încarce din nou toate componentele"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3364,10 +3409,10 @@
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
             "trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId":"Lenovo ID:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3433,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Acum puteţi afla dacă informaţiile dvs. private au fost încălcate sau utilizate de trackerele online, fără să ştiţi.",
             "security": "Ştiaţi că? Chiar dacă nu aveţi instalat software antivirus, vă oferim în continuare protecţie de bază de securitate pentru dispozitivul dvs.",
             "connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate."
         }

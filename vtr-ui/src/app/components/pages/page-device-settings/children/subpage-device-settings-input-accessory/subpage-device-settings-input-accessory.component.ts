@@ -75,6 +75,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	}
 
 	ngOnInit() {
+		this.commonService.checkPowerPageFlagAndHide();
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType === 1) {
 			this.initDataFromCache();
@@ -84,10 +85,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			// udk capability
 			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
 			this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
-
-			// The fnCtrlSwap & FnAsCtrl features hidden in 3.2
-			/* this.getFnCtrlSwapCapability();
-			// this.getFnAsCtrlCapability(); */
+			this.getFnCtrlSwapCapability();
+			this.getFnAsCtrlCapability();
 		}
 		this.getMouseAndTouchPadCapability();
 		this.getVoipHotkeysSettings();
@@ -123,7 +122,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					this.installedApps = res.appList;
 				}
 			})
-			.catch(error => {});
+			.catch(error => {
+				this.logger.error('getVoipHotkeysSettings error', error);
+			});
 	}
 
 	setVoipHotkeysSettings(app: VoipApp) {
@@ -139,7 +140,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 				this.installedApps = VoipResponse.appList;
 			})
-			.catch(error => {});
+			.catch(error => {
+				this.logger.error('setVoipHotkeysSettings error', error);
+			});
 	}
 
 	initDataFromCache() {
@@ -174,7 +177,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					}
 				}));
 			}
-		} catch (error) {}
+		} catch (error) {
+			this.logger.exception('initHiddenKbdFnFromCache', error);
+		}
 	}
 
 	getAdditionalCapabilitiesFromCache() {
@@ -205,8 +210,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					if (value) {
 						this.getKBDMachineType(value);
-						// FnCtrl feature hidden in 3.2
-						// this.getLayoutTable(value);
+						this.getLayoutTable(value);
 					}
 				})
 					.catch(error => {

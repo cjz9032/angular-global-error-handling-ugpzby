@@ -24,53 +24,53 @@ describe('ModalIntelligentCoolingModesComponent', () => {
 		}
 
 		it('should create the app', (() => {
-            const { component } = setup();
-            expect(component).toBeTruthy();
+			const { component } = setup();
+			expect(component).toBeTruthy();
 		}));
-		
+
 		it('closeModal calling activeModal close', async(() => {
-            const { fixture, component } = setup();
-            spyOn(component.activeModal, 'close').and.returnValue(Promise.resolve('close'));
+			const { fixture, component } = setup();
+			spyOn(component.activeModal, 'close').and.returnValue(Promise.resolve('close'));
 
-            fixture.detectChanges();//ngOnInit
-            component.closeModal();
+			fixture.detectChanges();// ngOnInit
+			component.closeModal();
 
-            expect(component.activeModal.close).toHaveBeenCalled();
+			expect(component.activeModal.close).toHaveBeenCalled();
 		}));
-		
+
 		it('onKeydownHandler calling activeModal close', async(() => {
-            const { fixture, component } = setup();
-            spyOn(component, 'closeModal');
+			const { fixture, component } = setup();
+			spyOn(component, 'closeModal');
 
-            fixture.detectChanges();//ngOnInit
-            component.onKeydownHandler(KeyboardEvent);
+			fixture.detectChanges();// ngOnInit
+			component.onKeydownHandler(KeyboardEvent);
 
-            expect(component.closeModal).toHaveBeenCalled();
+			expect(component.closeModal).toHaveBeenCalled();
 		}));
 
 		it('onKeydownEnterHandler calling activeModal close', async(() => {
-            const { fixture, component } = setup();
-            spyOn(component, 'closeModal');
+			const { fixture, component } = setup();
+			spyOn(component, 'closeModal');
 
-            fixture.detectChanges();//ngOnInit
-            component.onKeydownEnterHandler(KeyboardEvent);
+			fixture.detectChanges();// ngOnInit
+			component.onKeydownEnterHandler(KeyboardEvent);
 
-            expect(component.closeModal).toHaveBeenCalled();
+			expect(component.closeModal).toHaveBeenCalled();
 		}));
 
 		it('onFocus calling modal focus', (() => {
-            const { fixture, component } = setup();
+			const { fixture, component } = setup();
 
-            fixture.detectChanges();//ngOnInit
+			fixture.detectChanges();// ngOnInit
 
-            let modal = document.createElement('div');
-            modal.setAttribute('class','Intelligent-Cooling-Modes-Modal');
-            fixture.debugElement.nativeElement.append(modal);
-            component.onFocus();
+			let modal = document.createElement('div');
+			modal.setAttribute('class','Intelligent-Cooling-Modes-Modal');
+			fixture.debugElement.nativeElement.append(modal);
+			component.onFocus();
 
-            expect(modal).toBeTruthy();
-        }));
-		
+			expect(modal).toBeTruthy();
+		}));
+
 
 
 

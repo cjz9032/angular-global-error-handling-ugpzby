@@ -6,7 +6,7 @@ import { GamingAdvancedOCService } from 'src/app/services/gaming/gaming-advanced
 import { CommonService } from 'src/app/services/common/common.service';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 import { AdvancedOCItemUnit } from 'src/app/data-models/gaming/advanced-overclock-unit';
-
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
   selector: 'vtr-modal-gaming-advanced-oc',
@@ -63,12 +63,14 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
     public activeModal: NgbActiveModal,
     public commonService: CommonService,
     public gamingCapabilityService: GamingAllCapabilitiesService,
-    private gamingAdvancedOCService: GamingAdvancedOCService
+    private gamingAdvancedOCService: GamingAdvancedOCService,
+    private logger: LoggerService,
   ) { }
 
   ngOnInit() {
     this.advanceGPUOCFeature = this.gamingCapabilityService.getCapabilityFromCache( LocalStorageKey.advanceGPUOCFeature);
     this.advanceCPUOCFeature = this.gamingCapabilityService.getCapabilityFromCache( LocalStorageKey.advanceCPUOCFeature);
+    this.logger.info('advanceCPUOCFeature init cache:' + this.advanceCPUOCFeature + ';  advanceGPUOCFeature init cache:' + this.advanceGPUOCFeature + ' ;');
     this.getAdvancedOCInfo();
   }
   closeModal() {
@@ -87,6 +89,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
         this.advancedOCInfo = advancedInfoCache;
       }
       this.gamingAdvancedOCService.getAdvancedOCInfo().then((response) => {
+        this.logger.info('getAdvancedOCInfo response',response)
         if (response && (response.cpuParameterList.length > 0 || response.gpuParameterList.length > 0)) {
           this.loading = false;
           this.advancedOCInfo = response;
@@ -100,6 +103,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 
   public setRangeValue (event,idx,type,tuneId,isAddReduceBtn) {
     try {
+			this.logger.info(`setRangeValue event: ${event} ; isAddReduceBtn: ${isAddReduceBtn}`);
       const arr1 = [2,77,34,79,102,106];
       this.isChange = true;
       if(isAddReduceBtn){
@@ -127,18 +131,21 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
                   x.OCValue = event;
                 }
               });
+        this.logger.info('pairwiseAssociation cpuParameterList 1',this.advancedOCInfo.cpuParameterList);
             }else if(tuneId === 34 || tuneId === 79){
               this.advancedOCInfo.cpuParameterList.filter(x => {
                 if(x.tuneId === 79 || x.tuneId === 34){
                   x.OCValue = event;
                 }
               });
+        this.logger.info('pairwiseAssociation cpuParameterList 2',this.advancedOCInfo.cpuParameterList);
             }else if(tuneId === 102 || tuneId === 106){
               this.advancedOCInfo.cpuParameterList.filter(x => {
                 if(x.tuneId === 106 || x.tuneId === 102){
                   x.OCValue = event;
                 }
               });
+        this.logger.info('pairwiseAssociation cpuParameterList 3',this.advancedOCInfo.cpuParameterList);
             }
 		} catch (error) {
 			throw new Error('pairwiseAssociation ' + error.message);
@@ -154,6 +161,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
     waringModalRef.componentInstance.comfirmButton="gaming.dashboard.device.savePromptPopup.save";
     waringModalRef.componentInstance.cancelButton="gaming.dashboard.device.savePromptPopup.notSave";
     waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
+      this.logger.info('openSaveChangeModal emmitedValue',emmitedValue);
       if(emmitedValue === 1) {
         this.isChange = false;
         this.activeModal.close('close');
@@ -168,6 +176,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 
   public setAdvancedOCInfo (advancedOCInfo) {
     this.gamingAdvancedOCService.setAdvancedOCInfo(advancedOCInfo).then((response) => {
+      this.logger.info(`setAdvancedOCInfo response: ${response} ; advancedOCInfo: ${JSON.stringify(advancedOCInfo)}`);
       if (response) {
   this.gamingAdvancedOCService.setAdvancedOCInfoCache(advancedOCInfo);
       }else{
@@ -186,6 +195,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
     waringModalRef.componentInstance.comfirmButton="gaming.dashboard.device.legionEdge.popup.button";
     waringModalRef.componentInstance.cancelButton="gaming.dashboard.device.legionEdge.driverPopup.link";
     waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
+      this.logger.info('openSetToDefaultModal emmitedValue',emmitedValue);
       if(emmitedValue === 1) {
         this.isChange = false;
         this.setToDefaultValue(this.advancedOCInfo.cpuParameterList);

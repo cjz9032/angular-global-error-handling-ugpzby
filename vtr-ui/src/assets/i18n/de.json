@@ -22,7 +22,7 @@
                     "rapidCharge": "Schnellladen"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Overclock ein",
                         "performance": "Leistung",
                         "balance": "Abstimmung",
@@ -108,26 +108,26 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Einstellung Wärmemodus",
                     "thermalMode2SettingDesc": "Wählen Sie den gewünschten Modus aus.",
-                    "fnQDesc": "Sie können den Modus über die Tastenkombination Fn + Q wechseln.",
+                    "fnQDesc": "Sie können den Modus über die Tastenkombination Fn+Q wechseln.",
                     "perormanceTitle": "Leistungsmodus",
-                    "performanceDesc": "Steigern Sie die Leistung Ihres Computers. Dies führt zu höherer Lüftergeschwindigkeit und mehr Stromverbrauch.",
-                    "OCDesc": "Sie können auswählen, dass die Funktion zum Übertakten aktiviert werden soll.",
-                    "ac_dcDesc": "Der Leistungsmodus ist nur bei Netzbetrieb verfügbar.",
+                    "performanceDesc": "Steigert die Leistung Ihres Computers. Dies führt zu höherer Lüftergeschwindigkeit und mehr Stromverbrauch. ",
+                    "OCDesc": "Sie können die Overclocking-Funktion aktivieren.",
+                    "ac_dcDesc": "Der Leistungsmodus kann nur eingesetzt werden, wenn das Netzteil angeschlossen ist.",
                     "balanceTitle": "Ausbalancierter Modus",
-                    "balanceDesc": "Die Leistung und die Lüftergeschwindigkeit werden automatisch basierend auf der Temperatur ausgeglichen. Durchschnittlicher Stromverbrauch.",
+                    "balanceDesc": "Automatische Anpassung von Leistung und Lüftergeschwindigkeit basierend auf der Temperatur für einen durchschnittlichen Stromverbrauch.",
                     "quietTitle": "Ruhemodus",
-                    "quietDesc": "Leiser Betrieb, indem die Leistung des Computers sowie die Lüftergeschwindigkeit soweit möglich reduziert werden. Niedriger Stromverbrauch.",
+                    "quietDesc": "Leiser Betrieb durch Senken der Leistung und Lüftergeschwindigkeit des Computers für niedrigen Stromverbrauch.",
                     "OC": {
                         "cpu_gpuOC": "CPU-/GPU-Übertaktung im Leistungsmodus aktivieren.",
                         "cpuOC": "CPU-Übertaktung im Leistungsmodus aktivieren.",
                         "gpuOC": "GPU-Übertaktung im Leistungsmodus aktivieren.",
                         "advance": "ERWEITERT",
-                        "cpu_gpuDriverLack": "CPU-/GPU-Treiber installieren, um Overclocking zu verwenden.",
-                        "cpuDriverLack": "CPU-Treiber installieren, um Overclocking zu verwenden.",
-                        "gpuDriverLack": "GPU-Treiber installieren, um Overclocking zu verwenden.",
+                        "cpu_gpuDriverLack": "CPU-/GPU-Treiber installieren, um die Overclocking-Funktion zu verwenden.",
+                        "cpuDriverLack": "CPU-Treiber installieren, um die Overclocking-Funktion zu verwenden.",
+                        "gpuDriverLack": "GPU-Treiber installieren, um die Overclocking-Funktion zu verwenden.",
                         "goInstall": "INSTALLIEREN"
                     },
-                    "autoSwitch": "Autom. Wechsel zu Leistung, wenn Spiele gestartet werden, danach zurückschalten."
+                    "autoSwitch": "Automatischer Wechsel in den Leistungsmodus, wenn Spiele gestartet werden. Nach dem Beenden des Spiels wird der Modus automatisch zurückgeschaltet."	
                 },
                 "advancedOC": {
                     "title": "Overclock Erweiterte Einst.",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -745,15 +745,14 @@
             },
             "security": {
                 "title": "Sicherheit",
-                "sub1": "Meine Sicherheit",
+                "sub1": "Meine sicherheit",
                 "sub2": "Antivirus",
-                "sub3": "WiFi-Sicherheit",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub3": "WiFi-sicherheit",
+                "sub4": "Kennwortzustand",
+                "sub5": "VPN-sicherheit",
                 "sub6": "Fingerabdruck"
             },
             "support": "Unterstützung",
-            "privacy": "Vertraulichkeit",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "PRÜFEN SIE, OB IHR GERÄT GESICHERT IST.",
             "antiVirus": "Antivirus",
             "wifi": "WiFi-Sicherheit",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Kennwortzustand",
+            "vpn": "VPN-Sicherheit",
             "enabled": "AKTIVIERT",
             "disabled": "DEAKTIVIERT",
             "partiallyProtected": "TEILWEISE GESCHÜTZT",
@@ -779,8 +778,8 @@
             "fingerPrint": "Fingerabdruck",
             "privacyPolicyAndTermsOfService": "<tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTRIERT",
+            "notEnrolled": "NICHT REGISTRIERT"
         },
         "qAndA": {
             "title": "Q & A für Ihre Maschine",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Internetverbindung für diese Funktion erforderlich"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Vertraulichkeit"
         }
     },
     "tutorial": {
@@ -855,10 +849,10 @@
             "subtitle": "Sagen Sie uns, was Sie von Vantage halten.",
             "button": "Feedback geben",
             "form": {
-                "email": "Email (optional)",
+                "email": "E-Mail (optional)",
                 "question1": "Gefällt Ihnen der neue Stil von Vantage?",
                 "question2": "Halten Sie die Leistung für akzeptabel?",
-                "question3": "Würden Sie die Anwendung in Zukunft häufiger verwenden?",
+                "question3": "Würden Sie die Anwendung in Zukunft häufiger nutzen?",
                 "question4": "Wussten Sie schon, dass Sie mit Lenovo Vantage Softwaretreiber, Firmware und BIOS auf Ihrem Computer aktualisieren können?",
                 "question5": "Wie wahrscheinlich ist es, dass Sie die Anwendung Lenovo Vantage einem Freund oder Kollegen weiterempfehlen?",
                 "notAtAllLikely": "Gar nicht wahrscheinlich",
@@ -867,8 +861,8 @@
                 "no": "Nein",
                 "tips1": "Bitte hinterlassen Sie einen zusätzlichen Kommentar",
                 "comments": "Kommentare…",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
+                "button": "Einreichen",
+                "addScreenshot": "Bildschirmfoto hinzufügen",
                 "sendFeedback": "Feedback senden",
                 "submitScreenShot": "Screenshot senden",
                 "messages": {
@@ -896,14 +890,14 @@
             "memory": {
                 "title": "Hauptspeicher",
                 "detail": {
-                    "notFound": "Hauptspeicher nicht gefunden",
+                    "notFound": "Speicherinformationen werden geladen",
                     "of": "von"
                 }
             },
             "diskSpace": {
                 "title": "Festplattenspeicher",
                 "detail": {
-                    "notFound": "Festplatte nicht gefunden",
+                    "notFound": "Datenträgerinformationen werden geladen",
                     "of": "von"
                 }
             },
@@ -1032,14 +1026,15 @@
                         "title": "Hersteller",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "Der installierte Akku wird vom System <b>nicht unterstützt</b> und kann nicht geladen werden. Ersetzen Sie den Akku mit dem richtigen Lenovo Akku für dieses System.",
                     "Good": "<b>Der Akku befindet sich in einem guten Zustand.</b>",
                     "Exhaustion": "Die Ladekapazität des Akkus ist <b>vermindert</b>. Setzen Sie einen neuen Akku ein.",
                     "Bad": "<b>Ein Akkufehler ist aufgetreten.</b> Der Akku kann nicht aufgeladen/entladen werden. Tauschen Sie den Akku aus.",
-                    "NotDetected": "<b>Kein Akku erkannt.</b>",
+                    "NotDetected": "<b>Kein Akku erkannt</b> oder nicht ordnungsgemäß eingesetzter Akku.",
                     "NotGood": "<b>Der Akku befindet sich nicht in einem guten Zustand.</b>",
                     "NotSupportACAdapter": "<b>Netzteil wird nicht unterstützt.</b>",
                     "LimitedACAdapterSupport": "<b>Netzteil kann nicht genügend Strom liefern.</b>",
@@ -1065,7 +1060,7 @@
             "power": {
                 "title": "Stromversorgung",
                 "subtitle": "Einstellungen für Energieversorgung",
-                "description": "In diesem Abschnitt können Sie die Wärmeleistung dynamisch anpassen und die Akkulaufzeit maximieren.Hier finden Sie auch andere häufig genutzte Energie-Funktionen. Sie können die Standardeinstellungen in diesem Abschnitt überprüfen und das System an Ihre Bedürfnisse anpassen.",
+                "description": "In diesem Abschnitt können Sie die Wärmeleistung dynamisch anpassen und die Akkulaufzeit maximieren. Hier finden Sie auch andere häufig genutzte Energie-Funktionen. Sie können die Standardeinstellungen in diesem Abschnitt überprüfen und das System an Ihre Bedürfnisse anpassen.",
                 "jumpto": {
                     "title": "EINSTELLUNGEN AUFRUFEN",
                     "battery": "Akku",
@@ -1275,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "EIN ENERGY STAR-ZERTIFIZIERTES PRODUKT"
-                },
+				},
+				"dpm": {
+					"title": "Stromversorgung",
+					"subtitle": "Einstellungen für Energieversorgung",
+					"description": "In diesem Abschnitt können Sie die Standardeinstellungen überprüfen und Energieverbrauch und Energieschema an Ihre Bedürfnisse anpassen.",
+					"globalPowerSettings": {
+						"title": "Globale Einstellungen für Energieversorgung",
+						"description": "Mit dieser Funktion werden die Einstellungen für Energieschema oder Energieverbrauch außer Kraft gesetzt.",
+						"powerButton": {
+							"label": "BETRIEBSSPANNUNGSSCHALTER:",
+							"items": {
+								"doNothing": "Keine Aktion",
+								"sleep": "Energie sparen",
+								"hibernate": "Hibernation",
+								"shutDown": "Herunterfahren",
+								"turnOffTheDisplay": "Anzeige ausschalten"
+							}
+						},
+						"requiredSignIn": {
+							"label": "ANMELDUNG ERFORDERLICH:",
+							"items": {
+								"never": "Nie",
+								"fromSleep": "Bei Beendigung des Standbymodus des PCs"
+							},
+							"tip": "Hinweis: Dies funktioniert nur, wenn ein Systemkennwort festgelegt ist."
+						}
+					},
+					"powerUse": {
+						"title": "Energieverbrauch",
+						"description": "BEI INAKTIVEM SYSTEM:",
+						"turnOffDisplay": "ANZEIGE AUSSCHALTEN NACH:",
+						"turnOffHDD": "FESTPLATTENLAUFWERK AUSSCHALTEN NACH:",
+						"sleep": "ENERGIE SPAREN NACH:",
+						"hibernate": "RUHEZUSTAND NACH:",
+						"items": {
+							"never": "Nie",
+							"minute": "Minute",
+							"minutes": "Minuten",
+							"hour": "Stunde",
+							"hours": "Stunden"
+						}
+					},
+					"powerPlan": {
+						"title": "Energieschema",
+						"description": "Wählen Sie ein Energieschema, um Leistung, Systemtemperatur und Energieverbrauch des Computers zu steuern.",
+						"currentPowerPlan": {
+							"label": "AKTUELLES SCHEMA"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Smart-Standby",
                     "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Fortsetzen von <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern-Standby</a> bei intensiverer Nutzung beeinträchtigt wird.",
@@ -1373,7 +1417,7 @@
             "audio": {
                 "title": "Audio",
                 "subtitle": "Audioeinstellungen",
-                "description": "In diesem Abschnitt können Sie Ihre Audioeinstellungenautomatisch manuell optimieren oder vollständig konfigurieren, wie z. B. Dolby-Einstellungen, Mikrofon usw.",
+                "description": "In diesem Abschnitt können Sie Ihre Audioeinstellungen automatisch manuell optimieren oder vollständig konfigurieren, wie z. B. Dolby-Einstellungen, Mikrofon usw.",
                 "audioSmartsettings": {
                     "title": "Audio Smart-Einstellungen",
                     "subtitle": "ANWENDUNGSBASIERTE EINSTELLUNGEN",
@@ -1413,7 +1457,7 @@
                         }
                     },
                     "suppress": {
-                        "title": "Tastaturgeräuschs unterdrücken",
+                        "title": "Tastaturgeräusche unterdrücken",
                         "tooltip": "Aktivieren Sie diese Option, um die MIC-Audiodaten zu optimieren, indem Sie Tastaturrauschen unterdrücken."
                     },
                     "acoustic": {
@@ -2286,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi-Sicherheit und Sicherheit für das verbundene Zuhause",
+                "title": "WiFi-sicherheit",
                 "back": "ZURÜCK"
             },
             "container": {
@@ -2386,7 +2430,7 @@
         },
         "vpn": {
             "statusTitle": "SURFEASY VPN",
-            "title": "VPN-Sicherheit",
+            "title": "VPN-sicherheit",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN verschlüsselt die Informationen, die Sie senden und empfangen, damit Sie Ihren PC, Mac®, Smartphone oder Tablet bedenkenlos sicher und privat mit jeder Internetverbindung nutzen können.",
             "whatCanSufEasy1": "Ein Virtual Private Network-(VPN-)Anbieter, der Sie schützt, während Sie online sind. Ohne einen VPN kann Ihr Computer anfälliger für Angriffe und Identitätsdiebstahl sein. Der VPN wird automatisch im Hintergrund ausgeführt und sorgt für Sicherheit und Datenschutz.",
@@ -2413,7 +2457,7 @@
             "getStarted2": "Schalten Sie das VPN ein und warten Sie kurz auf die Bestätigung einer sicheren Verbindung.",
             "getStarted3": "Ändern Sie die Region oder den Standort nach Wunsch und genießen Sie die Nutzung eines sicheren und geschützten Netzwerks.",
             "poweredBySurfEasy": "Unterstützt von SurfEasy",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Leia a <tag>Política de privacidade</tag> e os <tag>Termos de serviço</tag> para obter mais informações"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE-KENNWORTMANAGER",
@@ -2442,7 +2486,7 @@
             "allowsYou3": "Sicherheit bei ungesicherten WiFi-Netzwerken dank integriertem VPN.",
             "allowsYou4": "Das sichere Teilen von Kennwörtern, ohne diese preiszugeben.",
             "poweredByDashLane": "Unterstützt von Dashlane",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Leia a <tag>Política de privacidade</tag> e os <tag>Termos de serviço</tag> para obter mais informações"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2470,7 +2514,7 @@
     "lenovoId": {
         "login": "Anmeldung",
         "logout": "Abmelden",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Abmelden…",
         "unlockExclusives": "Exklusivinhalte freischalten",
         "user": "Benutzer",
         "welcomeText1": "Sie sehen heute energiegeladen aus, {{firstName}}!",
@@ -3092,7 +3136,8 @@
             "storage": "Speicher",
             "wireless": "Drahtlos"
         },
-        "warningMessage": "Beachten Sie, dass die Tests abgebrochen werden, wenn das System im Ruhemodus oder im Ruhezustand ist"
+        "warningMessage": "Beachten Sie, dass die Tests abgebrochen werden, wenn das System im Ruhemodus oder im Ruhezustand ist",
+        "refreshMessage": "Die Aktualisierung kann einige Zeit in Anspruch nehmen, da alle Komponenten erneut geladen werden müssen"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3364,10 +3409,10 @@
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
             "trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId":"Lenovo ID:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3382,7 +3427,7 @@
             "extendNow": "extend now",
             "renewNow": "Renew Now",
             "poweredBy": "Powered by Coronet",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Leia a <tag>Política de privacidade</tag> e os <tag>Termos de serviço</tag> para obter mais informações"
         },
         "tour": {
             "back": "Back",
@@ -3433,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Sie können nun herausfinden, ob Ihre persönlichen Daten ohne Ihr Wissen durch Online-Tracking erfasst oder verwendet wurden.",
             "security": "Schon gewusst? Auch wenn Sie keine Antivirensoftware installiert haben, bieten wir einen grundlegenden Sicherheitsschutz für Ihre Einheit.",
             "connectedHomeSecurity": "Mit uns erhalten Sie Echtzeit-Überwachung und ‑Benachrichtigungen über Ihre Netzwerksicherheit zu Hause. Sie erfahren umgehend, ob eine Ihrer intelligenten Einheiten einem Sicherheitsangriff ausgesetzt ist."
         }

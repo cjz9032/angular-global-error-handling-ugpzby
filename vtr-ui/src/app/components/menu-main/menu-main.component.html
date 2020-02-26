@@ -2,7 +2,8 @@
 	<nav class="navbar navbar-expand-xl pr-0">
 		<div *ngIf="!deviceService.isGaming && !isGamingHome"
 			class="navbar-brand p-0">
-			<img class="menu-main-logo" *ngIf="dashboardService.isDashboardDisplayed"
+			<img class="menu-main-logo"
+				*ngIf="dashboardService.isDashboardDisplayed"
 				[src]="VantageLogo | sanitize : 'resourceUrl'"
 				alt="L" />
 			<a vtrMetrics
@@ -21,7 +22,7 @@
 					alt="L" />
 			</a>
 		</div>
-		<div *ngIf="items.length> 0 && (deviceService.isGaming || loadMenuItem.hideMenus)"
+		<div *ngIf="items.length> 0 && (deviceService.isGaming || loadMenuItem?.hideMenus)"
 			class="navbar-brand pt-0 logo-y">
 
 			<div *ngIf="isGamingHome">
@@ -48,13 +49,15 @@
 		<div class="navbar-text clearfix">
 			<span *ngIf="configService.appBrand && configService.appName">
 				<div class="app-title">{{configService.appBrand}}
-					<span class="app-name">{{configService.appName}}</span>
+					<span role="text"
+						class="app-name">{{configService.appName}}</span>
 				</div>
 			</span>
 			<span>
 				<div class="device-type">
 					<span *ngIf="!machineFamilyName">&nbsp;</span>
-					<span *ngIf="machineFamilyName">{{machineFamilyName}}</span>
+					<span role="text"
+						*ngIf="machineFamilyName">{{machineFamilyName}}</span>
 					<vtr-ui-header-warranty *ngIf="machineFamilyName"
 						[pageParent]="'NavBar'"></vtr-ui-header-warranty>
 				</div>
@@ -73,11 +76,12 @@
 			</span>
 			<!-- <fa-icon [icon]="['fas', 'bars']">
 					</fa-icon> -->
-			<span class="unread-count-tag"
+			<span role="text"
+				class="unread-count-tag"
 				*ngIf="appsForYouService.UnreadMessageCount.totalMessage">{{appsForYouService.UnreadMessageCount.totalMessage}}</span>
 		</a>
 		<div class="collapse navbar-collapse"
-			*ngIf="!loadMenuItem.hideMenus"
+			*ngIf="!loadMenuItem?.hideMenus"
 			#menuTarget
 			[ngClass]="{'show':showMenu}">
 			<ul class="navbar-nav ml-auto"
@@ -114,7 +118,8 @@
 								class="beta">Beta</span>
 						</a>
 					</li>
-					<li ngbDropdown #menudropdown="ngbDropdown"
+					<li ngbDropdown
+						#menudropdown="ngbDropdown"
 						*ngIf="item.subitems.length>0
 						&&isCommomItem(item)
 						&&showItem(item)"
@@ -157,7 +162,8 @@
 							<fa-icon [icon]="['fas', 'square']"
 								class="menu-pointer"></fa-icon>
 							<span *ngFor="let subitem of item.subitems; let ii=index">
-								<a ngbDropdownItem *ngIf="subitem.externallink && showItem(subitem)"
+								<a ngbDropdownItem
+									*ngIf="subitem.externallink && showItem(subitem)"
 									vtrMetrics
 									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-external-{{item.id}}-{{ii}}"
@@ -263,7 +269,6 @@
 							aria-expanded="false"
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
-
 							(keydown.enter)="onMenuItemClick(item)">
 							<div class="user-initials">
 								{{deviceService.isArm || userService.starter || !commonService.isOnline || !userService.isLenovoIdSupported() ? 'L' : userService.initials }}

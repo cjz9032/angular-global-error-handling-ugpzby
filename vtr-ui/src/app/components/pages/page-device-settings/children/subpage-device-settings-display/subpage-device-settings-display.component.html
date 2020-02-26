@@ -79,8 +79,8 @@
 												(colorPreviewValue)="setToEyeCareMode()">
 											</vtr-display-color-temp>
 											<div class="row">
-										        <!--<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4" -->
-												<div class="feature-note p-4"
+												<!--<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4" -->
+												<div class="feature-note p-4 ml-4"
 													id="day-time-color-temp-note"
 													tabindex="0"
 													attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate }}">
@@ -137,7 +137,8 @@
 												</vtr-widget-permission-note>
 											</div>
 
-											<div class="row" *ngIf="missingGraphicDriver">
+											<div class="row"
+												*ngIf="missingGraphicDriver">
 												<div class="feature-note p-4 ecm-note"
 													id="eye-care-mode-temp-note"
 													tabindex="0"
@@ -174,7 +175,8 @@
 									[switchId]="'privacy-guard'">
 									<div class="row">
 										<div class="col d-flex justify-content-between pt-2 pr-3">
-											<p class="privacy-guard-caption"
+											<p role="text"
+												class="privacy-guard-caption"
 												tabindex="0"
 												id="privacy-guard-description"
 												attr.aria-label="privacy guard description, {{'device.deviceSettings.displayCamera.display.privacyGuard.description' | translate}}">
@@ -198,28 +200,17 @@
 										*ngIf="privacyGuardOnPasswordCapability">
 										<div class="col-12 ml-4">
 											<div class="custom-control custom-checkbox privacy-checkbox">
-												<input type="checkbox"
-												[disabled]="privacyGuardToggleStatus"
-												class="custom-control-input"
-												[ngClass]="{'custom-control-label-disabled': privacyGuardToggleStatus}"
-													id="cb-privacy-guard"
-													attr.aria-label="cb-privacy-guard"
+												<vtr-ui-checkbox [componentId]="'cb-privacy-guard'"
+													[disabled]="privacyGuardToggleStatus"
+													[ngClass]="{'custom-control-label-disabled': privacyGuardToggleStatus}"
+													[value]="privacyGuardCheckBox"
 													[checked]="privacyGuardCheckBox"
-													(change)="setPrivacyGuardOnPasswordStatusVal($event)" />
-												<span class="checkmark"></span>
-												<label class="custom-control-label"
-												id="cb-privacy-guard"
-													for="cb-privacy-guard">
-													<span id="cb-privacy-guard-description"
-														attr.aria-label="privacy guard password capability note, {{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}">
-														{{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}
-													</span>
-												</label>
+													[label]="'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate"
+													(toggle)="setPrivacyGuardOnPasswordStatusVal($event)">
+												</vtr-ui-checkbox>
 											</div>
-
 										</div>
 									</div>
-
 								</vtr-ui-row-switch>
 							</li>
 
@@ -254,7 +245,7 @@
 
 							<!-- commented out below lines to temporarily hide in current release -->
 							<!-- Display Priority Control -->
-							<!-- <li class="pt-3" *ngIf="displayPriorityModal.capability">
+							<li class="pt-3" *ngIf="displayPriorityModal.capability">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.displayPriority.title' | translate | capitalizeFirst"
 									[caption]="'device.deviceSettings.displayCamera.display.displayPriority.description' | translate"
@@ -283,8 +274,7 @@
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
 								</vtr-ui-row-switch>
-							</li> -->
-
+							</li>
 						</ul>
 					</vtr-container-collapsible>
 				</div>
@@ -323,7 +313,7 @@
 									[isDisabled]="shouldCameraSectionDisabled"
 									[showLoaderState]="cameraPrivacyModeStatus.isLoading">
 									<div class="row">
-										<div class="col-12 pr-0">
+										<div class="col-12 pr-0 pl-5">
 											<div *ngIf="hideNote"
 												class="row permission-note mt-5">
 												<div class="col-12 p-3 d-flex">
@@ -333,7 +323,8 @@
 														</fa-icon>
 													</div>
 													<div class="col-11 pr-0 pl-2">
-														<p class="mb-0 mt-auto"
+														<p role="text"
+															class="mb-0 mt-auto"
 															id="camera-privacy-mode-note"
 															attr.aria-label="camera-privacy-mode-note">
 															{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
@@ -380,7 +371,8 @@
 														</fa-icon>
 													</div>
 													<div class="col-11 pr-0 pl-2">
-														<p class="mb-0 mt-auto"
+														<p role="text"
+															class="mb-0 mt-auto"
 															id="device-settings-camera-privacy-note"
 															attr.aria-label="device-settings-camera-privacy-note">
 															{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}

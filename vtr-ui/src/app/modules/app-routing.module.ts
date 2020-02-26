@@ -19,7 +19,13 @@ const routes: Routes = [
 	},
 	{
 		path: 'device-gaming',
-		component: PageDeviceGamingComponent
+		component: PageDeviceGamingComponent,
+		canDeactivate: [ GuardService ],
+		canActivate: [ GuardService ],
+		data: {
+			pageName: 'Gaming.Dashboard',
+			pageContent: 'Gaming Dashboard'
+		}
 	},
 	{
 		path: 'gaming',
@@ -41,10 +47,6 @@ const routes: Routes = [
 		loadChildren: () => import('./connected-home-security/connected-home-security.module').then(m => m.ConnectedHomeSecurityModule)
 	},
 	{
-		path: 'privacy',
-		loadChildren: () => import('../components/pages/page-privacy/privacy.module').then(m => m.PrivacyModule)
-	},
-	{
 		path: 'security',
 		loadChildren: () => import('./security-advisor/security-advisor.module').then(m => m.SecurityAdvisorModule)
 	},
@@ -63,6 +65,10 @@ const routes: Routes = [
 	{
 		path: 'beta',
 		loadChildren: () => import('../beta/beta.module').then(m => m.BetaModule)
+	},
+	{
+		path: 'hardware-scan',
+		loadChildren: () => import('./hardware-scan/hardware-scan.module').then(m => m.HardwareScanModule)
 	},
 	{
 		path: 'support/smart-performance',

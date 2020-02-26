@@ -22,7 +22,7 @@
                     "rapidCharge": "Hurtiglading"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Overklokking på",
                         "performance": "Ytelse",
                         "balance": "Balanse",
@@ -107,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Innstillinger termisk modus",
-                    "thermalMode2SettingDesc": "Velg modusen du ønsker å bruke.",
-                    "fnQDesc": "Du kan endre modus ved å bruke hurtigtastene Fn + Q.",
+                    "thermalMode2SettingDesc": "Velg modusen du vil bruke.",
+                    "fnQDesc": "Du kan endre modus ved å bruke hurtigtastene Fn+Q.",
                     "perormanceTitle": "Ytelsesmodus",
-                    "performanceDesc": "Øk datamaskinens ytelse med høyere viftehastighet og høyere strømforbruk.",
-                    "OCDesc": "Du kan velge å skru på overklokkingsfunksjonaliteten.",
-                    "ac_dcDesc": "Ytelsesmodus bare tilgjengelig når den er koblet til.",
+                    "performanceDesc": "Øk datamaskinens ytelse med høyere viftehastighet og høyere strømforbruk. ",
+                    "OCDesc": "Du kan velge å skru på funksjonen for overklokking.",
+                    "ac_dcDesc": "Ytelsesmodus er bare tilgjengelig når en strømadapter er koblet til.",
                     "balanceTitle": "Balansert modus",
-                    "balanceDesc": "Balanserer automatisk ytelse og viftehastighet basert på temperatur. Middels strømforbruk.",
+                    "balanceDesc": "Balanserer automatisk ytelse og viftehastighet basert på temperatur, med middels strømforbruk.",
                     "quietTitle": "Stillemodus",
-                    "quietDesc": "Holdes stille ved å redusere datamaskinens ytelse og viftehastighet der det er mulig. Lavt strømforbruk.",
+                    "quietDesc": "Holdes stille ved å redusere datamaskinens ytelse og viftehastighet der det er mulig, med lavt strømforbruk.",
                     "OC": {
                         "cpu_gpuOC": "Aktiver CPU/GPU-overklokking i ytelsesmodus.",
                         "cpuOC": "Aktiver CPU-overklokking i ytelsesmodus.",
                         "gpuOC": "Aktiver GPU-overklokking i ytelsesmodus.",
                         "advance": "AVANSERT",
-                        "cpu_gpuDriverLack": "Installer CPU/GPU-drivere for å bruke funksjonen for overklokking.",
-                        "cpuDriverLack": "Installer CPU-driver for å bruke funksjonen for overklokking.",
-                        "gpuDriverLack": "Installer GPU-driver for å bruke funksjonen for overklokking.",
+                        "cpu_gpuDriverLack": "Installer CPU/GPU-drivere for å bruke funksjonen for overklokking.",
+                        "cpuDriverLack": "Installer CPU-driver for å bruke funksjonen for overklokking.",
+                        "gpuDriverLack": "Installer GPU-driver for å bruke funksjonen for overklokking.",
                         "goInstall": "INSTALLER"
                     },
-                    "autoSwitch": "Bytt automatisk til ytelse når du lanserer spill og bytt tilbake etterpå."
+                    "autoSwitch": "Bytt automatisk til ytelsesmodus når du starter spill, og bytt tilbake etter at du har avsluttet spillet."	
                 },
                 "advancedOC": {
                     "title": "Overklokking Avansert",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -748,12 +748,11 @@
                 "sub1": "Min sikkerhet",
                 "sub2": "Antivirus",
                 "sub3": "WiFi-sikkerhet",
-                "sub4": "Passordbehandling",
-                "sub5": "VPN",
+                "sub4": "Passordtilstand",
+                "sub5": "VPN-sikkerhet",
                 "sub6": "Fingeravtrykk"
             },
             "support": "Støtte",
-            "privacy": "Personvern",
             "beta": {
                 "title": "beta"
             },
@@ -763,9 +762,9 @@
             "title": "Sikkerhetsrådgivning",
             "subtitle": "KONTROLLER OM ENHETEN ER SIKRET.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-sikkerhet",
-            "pswdMgr": "Passordbehandling",
-            "vpn": "VPN",
+            "wifi": "WiFi-Sikkerhet",
+            "pswdMgr": "Passordtilstand",
+            "vpn": "VPN-Sikkerhet",
             "enabled": "AKTIVERT",
             "disabled": "DEAKTIVERT",
             "partiallyProtected": "DELVIS BESKYTTET",
@@ -779,8 +778,8 @@
             "fingerPrint": "Fingeravtrykk",
             "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "REGISTRERT",
+            "notEnrolled": "IKKE REGISTRERT"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Koble til Internett for å bruke denne funksjonen"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Personvern"
         }
     },
     "tutorial": {
@@ -1032,14 +1026,15 @@
                         "title": "Produsent",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "Det installerte batteriet <b>støttes ikke</b> av dette systemet, og vil ikke kunne lades opp. Batteriet må bare byttes ut med korrekt Lenovo-batteri for dette systemet.",
                     "Good": "<b>Batteriet er i god stand.</b>",
                     "Exhaustion": "Batterikapasiteten er <b>redusert</b>. Bytt det ut med et nytt.",
                     "Bad": "<b>Det har oppstått en batterifeil.</b> Batteriet kan ikke lades/utlades. Bytt batteri.",
-                    "NotDetected": "<b>Batteri ikke oppdaget.</b>",
+                    "NotDetected": "<b>Kan ikke gjenkjenne batteri, eller</b> batteri ikke satt i.",
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
                     "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
@@ -1275,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ET ENERGY STAR SERTIFISERT PRODUKT"
-                },
+				},
+				"dpm": {
+					"title": "Strøm",
+					"subtitle": "Strøminnstillinger",
+					"description": "Denne delen lar deg kontrollere standardinnstillingene og tilpasse strømbruk og strømplan etter behov.",
+					"globalPowerSettings": {
+						"title": "Globale strøminnstillinger",
+						"description": "Denne funksjonen overstyrer innstillingene for Strømplan eller Strømbruk.",
+						"powerButton": {
+							"label": "AV/PÅ-KNAPP:",
+							"items": {
+								"doNothing": "Ikke gjør noe",
+								"sleep": "Sov",
+								"hibernate": "Dvalemodus",
+								"shutDown": "Avslutt",
+								"turnOffTheDisplay": "Slå av skjermen"
+							}
+						},
+						"requiredSignIn": {
+							"label": "KREVER PÅLOGGING:",
+							"items": {
+								"never": "Aldri",
+								"fromSleep": "Når PC-en starter opp fra hvilemodus"
+							},
+							"tip": "Merk: Dette fungerer bare hvis det er angitt systempassord."
+						}
+					},
+					"powerUse": {
+						"title": "Strømbruk",
+						"description": "HVIS SYSTEMET ER INAKTIVT:",
+						"turnOffDisplay": "SLÅ AV SKJERM ETTER:",
+						"turnOffHDD": "SLÅ AV HARDDISK ETTER:",
+						"sleep": "HVILEMODUS ETTER:",
+						"hibernate": "DVALEMODUS ETTER:",
+						"items": {
+							"never": "Aldri",
+							"minute": "minutt",
+							"minutes": "minutter",
+							"hour": "time",
+							"hours": "timer"
+						}
+					},
+					"powerPlan": {
+						"title": "Strømplan",
+						"description": "Velg en strømplan for å styre datamaskinens ytelse, systemets temperatur og strømbruk.",
+						"currentPowerPlan": {
+							"label": "GJELDENDE PLAN"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Smart hvilemodus",
                     "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker opplevelsen av rask gjenopptakelse for <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Moderne hvilemodus</a> på tidspunkter med tyngre bruk.",
@@ -2286,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi og Sikkerhet for tilkoblede hjem",
+                "title": "WiFi-sikkerhet",
                 "back": "TILBAKE"
             },
             "container": {
@@ -2470,7 +2514,7 @@
     "lenovoId": {
         "login": "Logg på",
         "logout": "Logg av",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Logger av...",
         "unlockExclusives": "Få eksklusive tilbud",
         "user": "Bruker",
         "welcomeText1": "Ser frisk ut i dag, {{firstName}}!",
@@ -2903,7 +2947,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Preferanser og innstillinger",
+        "preferenceSettings": "Preferanser Og Innstillinger",
         "settings": "Innstillinger",
         "settingsDescription": "På siden med preferanser og innstillinger kan du slå meldingsvarsler på/av basert på meldingskategoriene til Vantage. Vær obs på at selv om alle meldingskategoriene deaktiveres, kan du fremdeles få systemkritiske meldinger fra Vantage fra tid til annen.",
         "messagesInLenovoVantage": "Meldinger i Lenovo Vantage",
@@ -3092,7 +3136,8 @@
             "storage": "Lagring",
             "wireless": "Trådløs"
         },
-        "warningMessage": "Husk at testene vil bli kansellert hvis systemet er i hvile- eller dvalemodus"
+        "warningMessage": "Husk at testene vil bli kansellert hvis systemet er i hvile- eller dvalemodus",
+        "refreshMessage": "Oppdatering kan ta litt tid siden alle komponentene må lastes inn på nytt"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3364,10 +3409,10 @@
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
             "trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId":"Lenovo ID:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3433,8 +3478,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nå kan du finne ut om personopplysningene dine er på avveie eller brukes av sporingsverktøy på nettet uten at du vet om det.",
-            "security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
+			"security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
             "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep."
         }
     },

@@ -22,7 +22,7 @@
                     "rapidCharge": "Hızlı Şarj"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Hız Aşrtma açık",
                         "performance": "Performans",
                         "balance": "Denge",
@@ -108,15 +108,15 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Isı Kipi Ayarı",
                     "thermalMode2SettingDesc": "Kullanmak istediğiniz kipi seçin.",
-                    "fnQDesc": "Fn + Q kısayolunu kullanarak kipi değiştirebilirsiniz.",
+                    "fnQDesc": "Fn+Q kısayolunu kullanarak kipi değiştirebilirsiniz.",
                     "perormanceTitle": "Performans Kipi",
-                    "performanceDesc": "Daha fazla fan hızıyla ve daha fazla güç tüketerek bilgisayarınızın performansını artırın.",
-                    "OCDesc": "Hız Aşırtma özelliğini açmayı seçebilirsiniz.",
-                    "ac_dcDesc": "Performans Kipi yalnızca bilgisayar fişe takılıyken kullanılabilir.",
+                    "performanceDesc": "Daha yüksek fan hızı ve daha fazla güç tüketimi ile bilgisayarınızın performansını artırın. ",
+                    "OCDesc": "Hız Aşırtma işlevini açmayı seçebilirsiniz.",
+                    "ac_dcDesc": "Performans Kipi yalnızca AC güç bağdaştırıcısı takılıyken geçerlidir.",
                     "balanceTitle": "Denge Kipi",
-                    "balanceDesc": "Performansı ve fan hızını sıcaklığa göre otomatik olarak dengeleyin. Orta düzey güç tüketimi.",
+                    "balanceDesc": "Orta düzeyde güç tüketimiyle performansı ve fan hızını sıcaklığa göre otomatik olarak dengeleyin.",
                     "quietTitle": "Sessiz Kipi",
-                    "quietDesc": "Mümkün olduğunda bilgisayarınızın performansını ve fan hızını azaltarak sessiz olun. Düşük güç tüketimi.",
+                    "quietDesc": "Düşük güç tüketimiyle mümkün olduğunda bilgisayarınızın performansını ve fan hızını azaltarak sessiz olun.",
                     "OC": {
                         "cpu_gpuOC": "Performans Kipi'nde CPU/GPU Hız Aşırtma'yı etkinleştirin.",
                         "cpuOC": "Performans Kipi'nde CPU Hız Aşırtma'yı etkinleştirin.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Hız Aşırtma işlevini kullanmak için GPU sürücüsünü yükleyin.",
                         "goInstall": "YÜKLE"
                     },
-                    "autoSwitch": "Oyunları başlatırken Otomatik Olarak Performans Kipine Geçip sonra geriye dönün."
+                    "autoSwitch": "Oyunları başlatırken otomatik olarak Performans Kipi'ne geçip oyundan çıktıktan sonra eski kipe geri dönün."	
                 },
                 "advancedOC": {
                     "title": "Hız Aşırtma Gelşmiş Ayrları",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -746,14 +746,13 @@
             "security": {
                 "title": "Güvenlik",
                 "sub1": "Güvenliğim",
-                "sub2": "Virüsten Koruma",
-                "sub3": "WiFi Güvenliği",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub2": "Virüsten koruma",
+                "sub3": "WiFi güvenliği",
+                "sub4": "Parola durumu",
+                "sub5": "VPN güvenliği",
                 "sub6": "Parmak izi"
             },
             "support": "Destek",
-            "privacy": "Gizlilik",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "CİHAZINIZIN GÜVENLİ OLUP OLMADIĞINI KONTROL EDİN.",
             "antiVirus": "Virüsten Koruma",
             "wifi": "WiFi Güvenliği",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Parola Durumu",
+            "vpn": "VPN Güvenliği",
             "enabled": "ETKİN",
             "disabled": "DEVRE DIŞI",
             "partiallyProtected": "KISMEN KORUNUYOR",
@@ -776,18 +775,18 @@
             "notFound": "BULUNAMADI",
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL",
-            "fingerPrint": "Parmak izi",
+            "fingerPrint": "Parmak Izi",
             "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "KAYITLI",
+            "notEnrolled": "KAYITLI DEĞİL"
         },
         "qAndA": {
-            "title": "Makineniz için Q & A",
+            "title": "Cihazınızla ilgili Sorular ve Cevaplar",
             "subtitle": "Cihazınız için bazı yararlı ipuçları bulun.",
             "question1": "Dosyalarınızın yedeklenmesi ve geri yüklenmesi",
             "question2": "Bilgisayarınızın yenilenmesi",
-            "question3": "Makinenizin CPU\\'sunun öğrenilmesi",
+            "question3": "Cihazınızın işlemcisini öğrenme",
             "question4": "Makinenizin pil kullanımının denetlenmesi",
             "question5": "Bilgisayarınızın tablet gibi kullanılması",
             "question6": "Kişisel yardımcınız Cortana'yı tanıyın"
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Bu özelliği kullanmak için İnternet'e bağlanın"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Gizlilik"
         }
     },
     "tutorial": {
@@ -844,7 +838,7 @@
             "title": "Bugün çok dinç görünüyorsun "
         },
         "offlineInfo": {
-            "title": "Internet bağlantısı saptanmadı",
+            "title": "İnternet bağlantısı bulunamadı",
             "subtitle": "Bağlantı sorunlarının nasıl çözüleceğini öğrenmek için",
             "buttonText": "Destek Alın",
             "welcomeToVantage": "Yeni nesil Vantage'a hoş geldiniz",
@@ -855,7 +849,7 @@
             "subtitle": "Vantage hakkındaki düşüncelerinizi bizimle paylaşın.",
             "button": "Geri bildirim gönder",
             "form": {
-                "email": "Email (optional)",
+                "email": "Eposta (isteğe bağlı)",
                 "question1": "Vantage'ın yeni tarzını beğendiniz mi?",
                 "question2": "Performansın kabul edilir olduğunu düşünüyor musunuz?",
                 "question3": "Uygulamayı gelecekte daha sık kullanır mısınız?",
@@ -866,9 +860,9 @@
                 "yes": "Evet",
                 "no": "Hayır",
                 "tips1": "Lütfen ek yorumlarınızı bırakın",
-                "comments": "Açıklamalar...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
+                "comments": "Yorumlar...",
+                "button": "Gönder",
+                "addScreenshot": "Ekran Görüntüsü Ekle",
                 "sendFeedback": "Geri Bildirim Gönder",
                 "submitScreenShot": "Ekran Görüntüsü Gönder",
                 "messages": {
@@ -896,14 +890,14 @@
             "memory": {
                 "title": "Bellek",
                 "detail": {
-                    "notFound": "Bellek bulunamadı",
+                    "notFound": "Bellek bilgisi yükleniyor",
                     "of": "/"
                 }
             },
             "diskSpace": {
                 "title": "Disk Alanı",
                 "detail": {
-                    "notFound": "Disk bulunamadı",
+                    "notFound": "Disk bilgisi yükleniyor",
                     "of": "/"
                 }
             },
@@ -960,7 +954,7 @@
             "software": "Yazılım güncel",
             "updated": "Güncellendi",
             "outOfWarranty": "Garanti dışı",
-            "expired": "Süre dolum tarihi",
+            "expired": "Sürenin dolduğu tarih",
             "of": "/",
             "warranty": {
                 "notFound": "Garanti bulunamadı",
@@ -969,7 +963,7 @@
                     "inWarranty": "Garanti kapsamında",
                     "daysRemaining": "kalan gün",
                     "outOfWarranty": "Garanti dışı",
-                    "expiredOn": "Süre dolum tarihi",
+                    "expiredOn": "Sürenin dolduğu tarih",
                     "notAvailable": "Garanti mevcut değil",
                     "support": "Destek"
                 }
@@ -1032,14 +1026,15 @@
                         "title": "Üretici",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "Takılı pil, sistem tarafından <b>desteklenmiyor</b> ve doldurulmayacak. Lütfen yerine bu sistem için doğru olan Lenovo pilini takın.",
                     "Good": "<b>Pil iyi durumda.</b>",
                     "Exhaustion": "Pil kapasitesi <b>düştü</b>. Lütfen yenisiyle değiştirin.",
                     "Bad": "<b>Bir pil hatası oluştu.</b> Pil doldurulamıyor/boşaltılamıyor. Pili değiştirin.",
-                    "NotDetected": "<b>Pil algılanmadı.</b>",
+                    "NotDetected": "<b>Pil algılanmadı veya</b> pile takılı değil.",
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b>",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı yeterli güç sağlayamıyor.</b>",
@@ -1065,7 +1060,7 @@
             "power": {
                 "title": "Güç",
                 "subtitle": "Güç Ayarları",
-                "description": "Bu bölüm, termal performansı dinamik olarak ayarlamanızı ve pil ömrünü en üst düzeye çıkarmanızı sağlar.Aynı zamanda, güç ile ilgili diğer popüler özelliklere de sahiptir. Bu bölümdeki varsayılan ayarları kontrol edebilir ve sisteminizi ihtiyaçlarınıza göre özelleştirebilirsiniz.",
+                "description": "Bu bölüm, termal performansı dinamik olarak ayarlamanızı ve pil ömrünü en üst düzeye çıkarmanızı sağlar. Aynı zamanda, güç ile ilgili diğer popüler özelliklere de sahiptir. Bu bölümdeki varsayılan ayarları kontrol edebilir ve sisteminizi ihtiyaçlarınıza göre özelleştirebilirsiniz.",
                 "jumpto": {
                     "title": "AYARLARA GİT",
                     "battery": "Pil",
@@ -1169,8 +1164,8 @@
                     },
                     "easyResume": {
                         "title": "Kolay Sürdür",
-                        "description": "Bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini iyileştirmek için bu özelliği etkinleştirin.",
-                        "tooltip": "Bu özellik, bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini geliştirir. Etkinleştirildiğinde, kapağını kapattığınızda bilgisayarınız düşük güç kipine girer ancak kapattıktan sonraki 15 dakika içerisinde yeniden açmanız durumunda anında sürdürülür. Bu özellik, sistem askıda kipine geçmeden önce bilgisayarınızın bekleyen etkinlikleri (e-posta gönderme veya dosya indirme gibi) tamamlamaya çalışmasına olanak sağlar."
+                        "description": "Bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız önceki konumdan sürdürme süresini iyileştirmek için bu özelliği etkinleştirin.",
+                        "tooltip": "Bu özellik, bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini kısaltır. Etkinleştirildiğinde, kapağını kapattığınızda bilgisayarınız düşük güç kipine girer ancak kapattıktan sonraki 15 dakika içerisinde yeniden açmanız durumunda anında önceki konumdan sürdürülür. Bu özellik, sistem askıda kipine geçmeden önce bilgisayarınızın bekleyen etkinlikleri (e-posta gönderme veya dosya indirme gibi) tamamlamaya çalışmasına olanak sağlar."
                     },
                     "flipToBoot": {
                         "title": "Kapağı açınca önyükle",
@@ -1275,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR SERTİFİKALI ÜRÜN"
-                },
+				},
+				"dpm": {
+					"title": "Güç",
+					"subtitle": "Güç ayarları",
+					"description": "Bu bölümden varsayılan ayarları denetleyebilir, güç kullanımınızı ve güç planınızı ihtiyaçlarınıza göre özelleştirebilirsiniz.",
+					"globalPowerSettings": {
+						"title": "Genel güç ayarları",
+						"description": "Bu özellik, Güç planı ve Güç kullanımı ayarlarını geçersiz kılacaktır.",
+						"powerButton": {
+							"label": "AÇMA/KAPAMA DÜĞMESİ:",
+							"items": {
+								"doNothing": "Hiçbir şey yapma",
+								"sleep": "Uyku",
+								"hibernate": "Hazırda bekleme kipine geç",
+								"shutDown": "Kapat",
+								"turnOffTheDisplay": "Görüntü birimini kapat"
+							}
+						},
+						"requiredSignIn": {
+							"label": "OTURUM AÇMA GEREKLİ:",
+							"items": {
+								"never": "Hiçbir zaman",
+								"fromSleep": "PC uyku kipinden çağrıldığında"
+							},
+							"tip": "Not: Bu yalnızca sistem parolası belirlenmişse geçerlidir."
+						}
+					},
+					"powerUse": {
+						"title": "Güç kullanımı",
+						"description": "SİSTEM BOŞTAYSA:",
+						"turnOffDisplay": "EKRAN KAPATMAK İÇİN BEKLENECEK SÜRE:",
+						"turnOffHDD": "HDD'Yİ KAPATMAK İÇİN BEKLENECEK SÜRE:",
+						"sleep": "UYKU KİPİNE GEÇMEK İÇİN BEKLENECEK SÜRE:",
+						"hibernate": "HAZIRDA BEKLEME KİPİNE GEÇMEK İÇİN BEKLENECEK SÜRE:",
+						"items": {
+							"never": "Hiçbir zaman",
+							"minute": "dakika",
+							"minutes": "dakika",
+							"hour": "saat",
+							"hours": "saat"
+						}
+					},
+					"powerPlan": {
+						"title": "Güç planı",
+						"description": "Bilgisayar performansını, sistem sıcaklığını ve güç kullanımını denetlemek için bir güç planı seçin.",
+						"currentPowerPlan": {
+							"label": "GEÇERLİ PLAN"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Akıllı Bekleme",
                     "description": "Bu özellik, yoğun kullanım zamanlarında <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Bekleme Durumu</a> hızlı başlatma deneyiminden ödün vermeden, bilgisayar boşta olduğunda pil gücü tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
@@ -1373,7 +1417,7 @@
             "audio": {
                 "title": "Ses",
                 "subtitle": "Ses Ayarları",
-                "description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi durumagetirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak ayarlamanızı sağlar.",
+                "description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi duruma getirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak ayarlamanızı sağlar.",
                 "audioSmartsettings": {
                     "title": "Ses Akıllı ayarları",
                     "subtitle": "UYGULAMA TABANLI AYARLAR",
@@ -1402,11 +1446,11 @@
                     },
                     "microphone": {
                         "title": "Mikrofon",
-                        "tooltip": "Mikrofon ses düzeyini ayarlayarak MIC efektinizi özelleştirebilirve uygun kipi belirtebilirsiniz."
+                        "tooltip": "Mikrofon ses düzeyini ayarlayarak MIC efektinizi özelleştirebilir ve uygun kipi belirtebilirsiniz."
                     },
                     "volume": {
                         "title": "Mikrofon Ses Düzeyi",
-                        "description": "Dolby Ses, zevk aldığınız tüm içeriklerden zengin, net ve güçlü bir ses sunar. İçeriğiniz ve ekipmanınız için uygun kipi seçin.",
+                        "description": "Dolby Ses, zevk aldığınız tüm içeriklerden zengin, net ve güçlü bir ses sunar. İçeriğiniz ve cihazınız için uygun kipi seçin.",
                         "options": {
                             "silent": "Sessiz",
                             "loud": "Yüksek Ses"
@@ -1485,7 +1529,7 @@
                         "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
                         "note": {
                             "title": "Not",
-                            "description": "Göz Bakımı Modu etkinleştirildiğinde, bu renk sıcaklığı etkili olmaz. Ancak önizlemesini almak için kaydırıcıyı sürükleyebilirsiniz. Etkinleştirmek için Göz Bakımı Modunu kapatın."
+                            "description": "Göz Koruması Kipi etkinleştirildiğinde, bu renk sıcaklığı etkili olmaz. Ancak önizlemesini almak için kaydırıcıyı sürükleyebilirsiniz. Etkinleştirmek için Göz Koruması Kipini kapatın."
                         }
                     },
                     "privacyGuard": {
@@ -1536,7 +1580,7 @@
                     },
                     "url": "Windows gizlilik ayarlarına git",
                     "cameraPrivacy": {
-                        "title": "Kamera gizlilik kipi",
+                        "title": "Kamera Gizlilik Kipi",
                         "tooltip": "Gizlilik ayarı etkinleştirildiğinde kamera canlı görüntü göndermeyi durdurur. Yalnızca video görüşmeleri sırasında görüntülerinizin görülmesini istemediğiniz zamanlarda bu seçeneğini kullanın."
                     },
                     "camera": {
@@ -1545,7 +1589,7 @@
                         "reset": "Sıfırla"
                     },
                     "brightness": "Parlaklık",
-                    "contrast": "Karşıtlık",
+                    "contrast": "Kontrast",
                     "autoExposure": "Otomatik Pozlama",
                     "autoFocus": "Otomatik odaklanma",
                     "notAvailable": "Kamera Kullanılamıyor",
@@ -2286,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi ve Bağlı Ev Güvenliği",
+                "title": "WiFi güvenliği",
                 "back": "GERİ"
             },
             "container": {
@@ -2305,7 +2349,7 @@
                 "enabledDescribe": "Lenovo WiFi Güvenliği şu anda WiFi ağınızı izliyor."
             },
             "threatlocator": {
-                "describe": "Çevrenizdeki ağların güvenliğini belirlemek için tehdit dedektörünü kullanın.",
+                "describe": "Çevrenizdeki ağların güvenliğini belirlemek için tehdit algılayıcıyı kullanın.",
                 "button": "Tehdidi denetle",
                 "connectionError": "Bağlantı Hatası",
                 "tryAgain": "Ağ kullanılamadığından size yönelik tehdidi bulamıyoruz, lütfen İnternet’e bağlanın ve yeniden deneyin."
@@ -2413,7 +2457,7 @@
             "getStarted2": "VPN'i açın ve güvenli bağlantının onaylanması için kısa bir süre bekleyin.",
             "getStarted3": "Dilerseniz bölgenizi veya konumunuzu değiştirin ve güvenli, özel ağın keyfini çıkarın.",
             "poweredBySurfEasy": "SurfEasy Tarafından Desteklenmektedir",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE PAROLA YÖNETİCİSİ",
@@ -2442,7 +2486,7 @@
             "allowsYou3": "Yerleşik VPN sayesinde, güvenli olmayan WiFi ağlarında güvende olma",
             "allowsYou4": "Parolaları göstermeden, güvenli bir şekilde paylaşma",
             "poweredByDashLane": "Dashlane Tarafından Desteklenmektedir",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2470,7 +2514,7 @@
     "lenovoId": {
         "login": "Oturum Aç",
         "logout": "Oturumu kapat",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Oturum kapatılıyor...",
         "unlockExclusives": "Özellerin Kilidini Aç",
         "user": "Kullanıcı",
         "welcomeText1": "Bugün çok dinç görünüyorsun, {{firstName}}!",
@@ -2903,7 +2947,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Tercih ayarları",
+        "preferenceSettings": "Tercih Ayarları",
         "settings": "Ayarlar",
         "settingsDescription": "Tercih ayarı sayfasında, ileti bildirimini Vantage'ın ileti kategorilerine göre açıp kapatabilirsiniz. Tüm ileti kategorileri devre dışı bırakılmış olsa bile Vantage uygulamasından gerektiğinde Sistem Kritik iletileri alabileceğinizi lütfen unutmayın.",
         "messagesInLenovoVantage": "Lenovo Vantage'da İletiler",
@@ -3092,7 +3136,8 @@
             "storage": "Depolama alanı",
             "wireless": "Kablosuz"
         },
-        "warningMessage": "Sistem uyku veya hazırda bekleme kipine geçerse testlerin iptal edileceğini unutmayın"
+        "warningMessage": "Sistem uyku veya hazırda bekleme kipine geçerse testlerin iptal edileceğini unutmayın",
+        "refreshMessage": "Tüm bileşenlerin tekrar yüklenmesi gerektiğinden yenileme işlemi biraz zaman alabilir"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3364,10 +3409,10 @@
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
             "trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId":"Lenovo ID:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3382,7 +3427,7 @@
             "extendNow": "extend now",
             "renewNow": "Renew Now",
             "poweredBy": "Powered by Coronet",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
         },
         "tour": {
             "back": "Back",
@@ -3433,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Artık özel bilgilerinizin çevrimiçi izleyiciler tarafından sizin bilginiz dışında ihlal edilip edilmediğini veya kullanılıp kullanılmadığını öğrenebilirsiniz.",
             "security": "Bunu biliyor muydunuz? Kurulu bir antivirüs yazılımınız olmasa bile, cihazınız için temel güvenlik koruması sağlamaya devam ediyoruz.",
             "connectedHomeSecurity": "Evde ağ güvenliğinizle ilgili gerçek zamanlı izleme olanağı elde edin ve uyarılar alın. Akıllı cihazlarınızdan herhangi birinin güvenlik saldırısı ile karşı karşıya olup olmadığını bilen ilk kişi siz olursunuz."
         }

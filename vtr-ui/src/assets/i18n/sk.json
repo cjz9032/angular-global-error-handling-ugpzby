@@ -22,7 +22,7 @@
                     "rapidCharge": "Rýchle nabíjanie"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Pretakt. zap.",
                         "performance": "Výkon",
                         "balance": "Vyvážený",
@@ -107,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Nastavenie tepelného režimu",
-                    "thermalMode2SettingDesc": "Vyberte režim, ktorý chcete používať.",
-                    "fnQDesc": "Režim môžete prepínať pomocou klávesovej skratky Fn + Q.",
+                    "thermalMode2SettingDesc": "Vyberte režim, ktorý chcete použiť.",
+                    "fnQDesc": "Režim môžete prepínať pomocou klávesovej skratky Fn+Q.",
                     "perormanceTitle": "Režim vysokého výkonu",
-                    "performanceDesc": "Zvýšte výkon počítača zvýšením otáčok ventilátora a spotreby energie.",
-                    "OCDesc": "Môžete zapnúť funkciu pretaktovania.",
-                    "ac_dcDesc": "Režim vysokého výkonu je dostupný len pri sieťovom napájaní.",
+                    "performanceDesc": "Zvýšte výkon počítača zvýšením otáčok ventilátora a spotreby energie. ",
+                    "OCDesc": "Môžete sa rozhodnúť zapnúť funkciu pretaktovania.",
+                    "ac_dcDesc": "Režim vysokého výkonu je možné použiť, len ak je pripojený sieťový adaptér.",
                     "balanceTitle": "Vyvážený režim",
-                    "balanceDesc": "Automatické nastavovanie rovnováhy medzi výkonom a otáčkami ventilátora v závislosti od teploty. Stredná spotreba energie.",
+                    "balanceDesc": "Automatické nastavovanie rovnováhy medzi výkonom a otáčkami ventilátora v závislosti od teploty so strednou spotrebou energie.",
                     "quietTitle": "Tichý režim",
-                    "quietDesc": "Udržiavanie nízkej hlučnosti znížením výkonu počítača a otáčok ventilátora, pokiaľ je to možné. Nízka spotreba energie.",
+                    "quietDesc": "Udržiavanie nízkej hlučnosti znížením výkonu počítača a otáčok ventilátora, pokiaľ je to možné, s nízkou spotrebou energie.",
                     "OC": {
                         "cpu_gpuOC": "Povoľte pretaktovanie CPU/GPU v režime vysokého výkonu.",
                         "cpuOC": "Povoľte pretaktovanie CPU v režime vysokého výkonu.",
                         "gpuOC": "Povoľte pretaktovanie GPU v režime vysokého výkonu.",
                         "advance": "VYSOKÁ",
-                        "cpu_gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládače CPU/GPU.",
-                        "cpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač CPU.",
-                        "gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač GPU.",
+                        "cpu_gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládače procesora/grafického procesora.",
+                        "cpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač procesora.",
+                        "gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač grafického procesora.",
                         "goInstall": "INŠTALOVAŤ"
                     },
-                    "autoSwitch": "Pri spustení hry automaticky aktivovať vysoký výkon, potom obnoviť pôvodný režim."
+                    "autoSwitch": "Automaticky prepínajte do režimu vysokého výkonu pri spustení hry a po ukončení hry prepnite späť."	
                 },
                 "advancedOC": {
                     "title": "Detaily pretaktovania",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -748,12 +748,11 @@
                 "sub1": "Moje zabezpečenie",
                 "sub2": "Antivírus",
                 "sub3": "Zabezpečenie WiFi",
-                "sub4": "Správca hesiel",
-                "sub5": "VPN",
+                "sub4": "Sila hesla",
+                "sub5": "Zabezpečenie VPN",
                 "sub6": "Odtlačok"
             },
             "support": "Technická podpora",
-            "privacy": "Ochrana osobných údajov",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "SKONTROLUJTE, ČI JE ZARIADENIE ZABEZPEČENÉ.",
             "antiVirus": "Antivírus",
             "wifi": "Zabezpečenie WiFi",
-            "pswdMgr": "Správca hesiel",
-            "vpn": "VPN",
+            "pswdMgr": "Sila Hesla",
+            "vpn": "Zabezpečenie VPN",
             "enabled": "ZAPNUTÉ",
             "disabled": "VYPNUTÉ",
             "partiallyProtected": "ČIASTOČNE CHRÁNENÉ",
@@ -779,8 +778,8 @@
             "fingerPrint": "Odtlačok",
             "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "ZAREGISTROVANÉ",
+            "notEnrolled": "NEZAREGISTROVANÉ"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Na používanie tejto funkcie sa pripojte k internetu"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Ochrana osobných údajov"
         }
     },
     "tutorial": {
@@ -1032,14 +1026,15 @@
                         "title": "Výrobca",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "Tento systém <b>nepodporuje</b> nainštalovanú batériu, ktorá sa preto nebude nabíjať. Vymeňte batériu za správnu batériu Lenovo určenú pre tento systém.",
                     "Good": "<b>Batéria je v dobrom stave.</b>",
                     "Exhaustion": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "Bad": "<b>Vyskytla sa chyba batérie.</b> Batériu nemožno nabiť/vybiť. Vymeňte batériu.",
-                    "NotDetected": "<b>Nebola zistená žiadna batéria.</b>",
+                    "NotDetected": "<b>Nezistená žiadna batéria ani</b> pripojená batéria.",
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b>",
                     "LimitedACAdapterSupport": "<b>Sieťový adaptér nedokáže poskytnúť dostatok energie na napájanie.</b>",
@@ -1275,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "CERTIFIKOVANÝ PRODUKT ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Napájanie",
+					"subtitle": "Nastavenia napájania",
+					"description": "V tejto časti si môžete pozrieť predvolené nastavenia a prispôsobiť používanie napájania a plán napájania podľa vlastných potrieb.",
+					"globalPowerSettings": {
+						"title": "Globálne nastavenia napájania",
+						"description": "Táto funkcia potlačí plán napájania alebo nastavenia používania napájania.",
+						"powerButton": {
+							"label": "TLAČIDLO NAPÁJANIA:",
+							"items": {
+								"doNothing": "Nerobiť nič",
+								"sleep": "Spánok",
+								"hibernate": "Dlhodobý spánok",
+								"shutDown": "Vypnúť",
+								"turnOffTheDisplay": "Vypnúť obrazovku"
+							}
+						},
+						"requiredSignIn": {
+							"label": "POŽADOVANÉ PRIHLÁSENIE:",
+							"items": {
+								"never": "Nikdy",
+								"fromSleep": "Keď sa počítač prebudí zo spánku"
+							},
+							"tip": "Poznámka: Funguje len v prípade nastaveného systémového hesla."
+						}
+					},
+					"powerUse": {
+						"title": "Používanie napájania",
+						"description": "AK JE SYSTÉM NEČINNÝ:",
+						"turnOffDisplay": "VYPNÚŤ OBRAZOVKU PO:",
+						"turnOffHDD": "VYPNÚŤ PEVNÝ DISK PO:",
+						"sleep": "SPÁNOK PO:",
+						"hibernate": "DLHODOBÝ SPÁNOK PO:",
+						"items": {
+							"never": "Nikdy",
+							"minute": "minúta",
+							"minutes": "minúty",
+							"hour": "hodina",
+							"hours": "hodiny"
+						}
+					},
+					"powerPlan": {
+						"title": "Plán napájania",
+						"description": "Vyberte plán napájania na ovládanie výkonu počítača, teplotu systému a spotrebu napájania.",
+						"currentPowerPlan": {
+							"label": "PLÁN PRÚDU"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Inteligentný pohotovostný režim",
                     "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">moderného pohotovostného režimu</a> pri náročnejšom využívaní.",
@@ -2286,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Zabezpečenie WiFi a prepojenej domácnosti",
+                "title": "Zabezpečenie WiFi",
                 "back": "SPÄŤ"
             },
             "container": {
@@ -2470,7 +2514,7 @@
     "lenovoId": {
         "login": "Prihlásenie",
         "logout": "Odhlásenie",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Prebieha odhlásenie...",
         "unlockExclusives": "Odomknúť exkluzívne možnosti od spoločnosti Lenovo",
         "user": "Používateľ",
         "welcomeText1": "Dnes máte veľa energie, {{firstName}}.",
@@ -2903,7 +2947,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Nastavenia preferencií",
+        "preferenceSettings": "Nastavenia Preferencií",
         "settings": "Nastavenia",
         "settingsDescription": "Na stránke s nastaveniami preferencií si môžete vybrať zapnutie/vypnutie upozornenia na správy podľa kategórií správy aplikácie Vantage. Je potrebné, aby ste si uvedomili, že aj v prípade, keď sú všetky kategórie správ vypnuté, môžete podľa potreby príležitostne dostávať systémové kritické správy z aplikácie Vantage.",
         "messagesInLenovoVantage": "Správy v aplikácii Lenovo Vantage",
@@ -3092,7 +3136,8 @@
             "storage": "Ukladací priestor",
             "wireless": "Bezdrôtové"
         },
-        "warningMessage": "Majte na pamäti, že testy budú zrušené, ak je systém v režime spánku alebo hibernácie"
+        "warningMessage": "Majte na pamäti, že testy budú zrušené, ak je systém v režime spánku alebo hibernácie",
+        "refreshMessage": "Obnovenie môže chvíľu trvať, pretože je potrebné znova načítať všetky súčasti"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3364,10 +3409,10 @@
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
             "trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId":"Lenovo ID:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3433,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Teraz môžete zistiť, či došlo k úniku vašich súkromných údajov alebo či ich bez vášho vedomia použili nástroje na sledovanie online.",
             "security": "Vedeli ste to? Aj keď nemáte nainštalovaný antivírusový softvér, poskytujeme základnú bezpečnostnú ochranu vášho zariadenia.",
             "connectedHomeSecurity": "Získajte monitorovanie v reálnom čase a upozornenia týkajúce zabezpečenia siete v domácnosti. Ak bude ktorékoľvek z vašich inteligentných zariadení čeliť bezpečnostnému útoku, dozviete sa o tom ako prví."
         }

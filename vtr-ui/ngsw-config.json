@@ -20,8 +20,7 @@
 			"resources": {
 				"files": [
 					"/assets/**",
-					"!/assets/i18n/**",
-					"!/assets/privacy-json/trackers.json"
+					"!/assets/i18n/**"
 				],
 				"urls": [
 					"https://qa.csw.lenovo.com/**",

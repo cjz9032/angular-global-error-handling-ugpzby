@@ -19,7 +19,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 import { Observable, Subscription } from 'rxjs';
-import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
@@ -147,12 +147,23 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	updateMenu(menu) {
 		if (menu && menu.length > 0) {
 			this.items = menu;
-			const chsItem = this.items.find((item) => item.id === 'home-security');
-			if (!chsItem) {
-				return;
-			}
-			this.preloadImages = [].concat(chsItem.pre);
+			this.preloadImages = this.collectPreloadAssets(menu);
 		}
+	}
+
+	private collectPreloadAssets(menu: Array<any>): string[] {
+		let assets = [];
+		menu.forEach(item => {
+			if (!item.hide && item.pre) {
+				assets = assets.concat(item.pre);
+			}
+
+			if (item.subitems.length > 0) {
+				assets = assets.concat(this.collectPreloadAssets(item.subitems));
+			}
+		});
+
+		return assets;
 	}
 
 	private initComponent() {
@@ -301,23 +312,22 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		event.stopPropagation();
 	}
 
-	//To fix Hamburgar menu closing issue VAN-14558
-	public colorPickerFun(){
-		if(this.showMenu){
-			if(document.getElementById('colorBtn')){
-				document.getElementById('colorBtn').addEventListener('click',(event)=>{
+	public colorPickerFun() {
+		if (this.showMenu) {
+			if (document.getElementById('colorBtn')) {
+				document.getElementById('colorBtn').addEventListener('click', (event) => {
 					this.showMenu = false;
 				});
 			}
-			for(let i=0;i<4;i++){
-				if(document.getElementById('keyboard-area'+i)){
-					document.getElementById('keyboard-area'+i).addEventListener('click',(event)=>{
+			for (let i = 0; i < 4; i++) {
+				if (document.getElementById('keyboard-area' + i)) {
+					document.getElementById('keyboard-area' + i).addEventListener('click', (event) => {
 						this.showMenu = false;
 					});
 				}
 			}
 		}
-	}	
+	}
 
 	onKeyPress($event) {
 		if ($event.keyCode === 13) {
@@ -467,7 +477,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
 						inputAccessoriesCapability
 					);
-				} catch (error) {}
+				} catch (error) {
+					this.logger.exception('initInputAccessories', error);
+				}
 			})
 			.catch((error) => { });
 		this.keyboardService.getVoipHotkeysSettings()

@@ -22,7 +22,7 @@
                     "rapidCharge": "Миттєве заряджання"
                 },
                 "legionEdge": {
-                    "thermalMode2": {
+					"thermalMode2": {
                         "OC_On": "Розгін увімк.",
                         "performance": "Потужність",
                         "balance": "Баланс",
@@ -108,15 +108,15 @@
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Настройки терморежиму",
                     "thermalMode2SettingDesc": "Виберіть потрібний режим.",
-                    "fnQDesc": "Переключайте режими сполученням клавіш Fn + Q.",
+                    "fnQDesc": "Переключайте режими сполученням клавіш Fn+Q.",
                     "perormanceTitle": "Режим продуктивності",
-                    "performanceDesc": "Підвищити продуктивність комп'ютера з більшою швидкістю вентилятора та більшими витратами енергії.",
+                    "performanceDesc": "Підвищити продуктивність комп'ютера з вищою швидкістю вентилятора та витратами енергії. ",
                     "OCDesc": "Ви можете ввімкнути функцію розгону.",
-                    "ac_dcDesc": "Режим продуктивності доступний, коли комп'ютер підключено до розетки.",
+                    "ac_dcDesc": "Продуктивний режим застосовується лише тоді, коли підключено адаптер змінного струму.",
                     "balanceTitle": "Збалансований режим",
-                    "balanceDesc": "Автоматично балансувати продуктивність і швидкість вентилятора залежно від температури. Середній рівень енергоспоживання.",
+                    "balanceDesc": "Автоматично балансувати продуктивність і швидкість вентилятора з середнім енергоспоживанням.",
                     "quietTitle": "Тихий режим",
-                    "quietDesc": "Працювати якомога тихіше за рахунок зменшення продуктивності комп'ютера та швидкості вентилятора. Низький рівень енергоспоживання.",
+                    "quietDesc": "Працювати якомога тихіше за рахунок зменшення продуктивності комп'ютера та швидкості вентилятора з низьким енергоспоживанням.",
                     "OC": {
                         "cpu_gpuOC": "Вмикати розгін ЦП/ГП в режимі продуктивності.",
                         "cpuOC": "Вмикати розгін ЦП в режимі продуктивності.",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Інсталюйте драйвер ГП, щоб використовувати функцію розгону.",
                         "goInstall": "ІНСТАЛЮВАТИ"
                     },
-                    "autoSwitch": "Автоматично вмикати продуктивність в іграх і вимикати після них."
+                    "autoSwitch": "Автоматично вмикати продуктивний режим в іграх і вимикати після них."	
                 },
                 "advancedOC": {
                     "title": "Додаткові настройки розгону",
@@ -697,7 +697,7 @@
             }
         },
         "lightingNewversion": {
-            "machineName":{
+            "machineName": {
                 "name1": "Legion Icon Lighting (Front)",
                 "name2": "Internal Ambient Lighting",
                 "name3": "Legion Rear Fan Lighting",
@@ -748,12 +748,11 @@
                 "sub1": "Моя безпека",
                 "sub2": "Антивірус",
                 "sub3": "Безпека WiFi",
-                "sub4": "Password Manager",
-                "sub5": "VPN",
+                "sub4": "Надійність паролю",
+                "sub5": "Безпека VPN",
                 "sub6": "Відбитки пальців"
             },
             "support": "підтримка",
-            "privacy": "Конфіденційність",
             "beta": {
                 "title": "beta"
             },
@@ -764,8 +763,8 @@
             "subtitle": "ПЕРЕВІРТЕ СТАН ЗАХИСТУ СВОГО ПРИСТРОЮ.",
             "antiVirus": "Антивірус",
             "wifi": "Безпека WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "Надійність паролю",
+            "vpn": "Безпека VPN",
             "enabled": "УВІМКНУТО",
             "disabled": "ВИМКНУТО",
             "partiallyProtected": "ЧАСТКОВО ЗАХИЩЕНО",
@@ -779,8 +778,8 @@
             "fingerPrint": "Відбитки пальців",
             "privacyPolicyAndTermsOfService": "<tag>політику конфіденційності</tag> та <tag>умови надання послуг</tag>",
             "windowsHello": "Windows Hello",
-            "enrolled": "ENROLLED",
-            "notEnrolled": "NOT ENROLLED"
+            "enrolled": "ЗАРЕЄСТРОВАНО",
+            "notEnrolled": "НЕ ЗАРЕЄСТРОВАНО"
         },
         "qAndA": {
             "title": "Питання та відповіді для вашої машини",
@@ -809,11 +808,6 @@
         },
         "offline": {
             "connectToUseFeature": "Підключіться до Інтернету, щоб використовувати цю функцію"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Конфіденційність"
         }
     },
     "tutorial": {
@@ -1032,14 +1026,15 @@
                         "title": "Виробник",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
                 },
                 "condition": {
                     "Illegal": "Установлений акумулятор <b>не підтримується</b> цією системою та не буде заряджатися. Замініть акумулятор акумулятором Lenovo, придатним для цієї системи.",
                     "Good": "<b>Акумулятор у доброму стані.</b>",
                     "Exhaustion": "Ємність акумулятора <b>впала</b>. Замініть акумулятор на новий.",
                     "Bad": "<b>Сталася помилка акумулятора.</b> Не вдається зарядити або розрядити акумулятор. Замініть акумулятор.",
-                    "NotDetected": "<b>Акумулятор не знайдено.</b>",
+                    "NotDetected": "<b>Акумулятор не виявлено</b> або не підключено.",
                     "NotGood": "<b>Акумулятор у поганому стані.</b>",
                     "NotSupportACAdapter": "<b>Адаптер змінного струму не підтримується.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер змінного струму не може забезпечити достатню потужність.</b>",
@@ -1275,7 +1270,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ПРОДУКТ ІЗ СЕРТИФІКАТОМ ENERGY STAR"
-                },
+				},
+				"dpm": {
+					"title": "Живлення",
+					"subtitle": "Настройки живлення",
+					"description": "У цьому розділі ви можете перевірити настройки за замовчуванням і налаштувати енергоспоживання та план живлення відповідно до своїх потреб.",
+					"globalPowerSettings": {
+						"title": "Основні настройки живлення",
+						"description": "Ця функція перевизначить параметри плану живлення або настройки енергоспоживання.",
+						"powerButton": {
+							"label": "КНОПКА ЖИВЛЕННЯ:",
+							"items": {
+								"doNothing": "Нічого не робити",
+								"sleep": "Режим сну",
+								"hibernate": "Режим глибокого сну",
+								"shutDown": "Завершити роботу",
+								"turnOffTheDisplay": "Вимкнення екрана"
+							}
+						},
+						"requiredSignIn": {
+							"label": "ПОТРІБЕН ВХІД:",
+							"items": {
+								"never": "Ніколи",
+								"fromSleep": "Коли ПК виходить із режиму сну"
+							},
+							"tip": "Примітка. Ця функція працює, тільки якщо задано системний пароль."
+						}
+					},
+					"powerUse": {
+						"title": "Енергоспоживання",
+						"description": "ЯКЩО СИСТЕМА В РЕЖИМІ ОЧІКУВАННЯ:",
+						"turnOffDisplay": "ВИМИКАТИ ДИСПЛЕЙ ЧЕРЕЗ:",
+						"turnOffHDD": "ВИМИКАТИ ЖОРСТКИЙ ДИСК ЧЕРЕЗ:",
+						"sleep": "ПЕРЕХОДИТИ В РЕЖИМ СНУ ЧЕРЕЗ:",
+						"hibernate": "ПЕРЕХОДИТИ В РЕЖИМ ГЛИБОКОГО СНУ ЧЕРЕЗ:",
+						"items": {
+							"never": "Ніколи",
+							"minute": "хвилина",
+							"minutes": "хв.",
+							"hour": "година",
+							"hours": "години"
+						}
+					},
+					"powerPlan": {
+						"title": "План живлення",
+						"description": "Виберіть план живлення, щоб керувати продуктивністю, енергоспоживанням пристрою та температурою системи.",
+						"currentPowerPlan": {
+							"label": "ПОТОЧНИЙ ПЛАН"
+						}
+					}
+				},
                 "smartStandby": {
                     "title": "Розумне очікування",
                     "description": "Ця функція допомагає комп’ютеру заощаджувати заряд акумулятора в години простою та зберігати швидкість запуску на рівні <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">сучасного режиму очікування</a> для періодів інтенсивного використання.",
@@ -2286,7 +2330,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Безпека WiFi і Безпека підключеного дому",
+                "title": "Безпека WiFi",
                 "back": "НАЗАД"
             },
             "container": {
@@ -2470,7 +2514,7 @@
     "lenovoId": {
         "login": "Вхід",
         "logout": "Вихід",
-        "loggingOut": "Logging out...",
+        "loggingOut": "Вихід...",
         "unlockExclusives": "Ексклюзивний вміст",
         "user": "Користувач",
         "welcomeText1": "Сьогодні ви енергійні, {{firstName}}!",
@@ -2903,7 +2947,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Настройки параметрів",
+        "preferenceSettings": "Настройки Параметрів",
         "settings": "Настройки",
         "settingsDescription": "На сторінці настройок параметрів можна ввімкнути або вимкнути певні категорії сповіщень у Vantage. Зверніть увагу: навіть якщо всі категорії повідомлень відключені, ви все одно можете час від часу отримувати від Vantage повідомлення про критичні помилки системи.",
         "messagesInLenovoVantage": "Повідомлення в Lenovo Vantage",
@@ -3092,7 +3136,8 @@
             "storage": "Пам'ять",
             "wireless": "Безпровідні підключення"
         },
-        "warningMessage": "Зауважте: тести буде скасовано, якщо система перейде до режиму сну або глибокого сну"
+        "warningMessage": "Зауважте: тести буде скасовано, якщо система перейде до режиму сну або глибокого сну",
+        "refreshMessage": "Оновлення може зайняти деякий час – потрібно знову завантажити всі компоненти"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3364,10 +3409,10 @@
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
             "trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId":"Lenovo ID:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3433,7 +3478,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Тепер ви можете легко дізнатись, якщо онлайн-трекери або зловмисники намагаються отримати вашу приватну інформацію без вашого відома.",
             "security": "Чи ви знали? Навіть якщо у вас не інстальовано антивірусну програму, ми забезпечуємо мінімальний захист вашого пристрою.",
             "connectedHomeSecurity": "Отримайте моніторинг у режимі реального часу та сповіщення про безпеку домашньої мережі. Ми оперативно поінформуємо вас, якщо один із ваших смарт-пристроїв зазнає нападу."
         }

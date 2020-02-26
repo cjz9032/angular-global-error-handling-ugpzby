@@ -1,0 +1,40 @@
+<div class="vtr-widget-device-recover-bad-sectors">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<div class="row">
+					<div class="title">{{title}}</div>
+					<div class="title-question-mark">
+						<fa-icon class="recover-question-icon" triggers="click:blur" placement="auto"
+							[ngbTooltip]="tooltipRef" [icon]="['far', 'question-circle']" container="vtr-root"
+							tooltipClass="vtr-tooltip"></fa-icon>
+					</div>
+				</div>
+				<div class="description">{{'hardwareScan.recoverBadSectors.waitAvailability' | translate}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="button-row">
+					<vtr-ui-button-hwscan
+						metricsEvent="FeatureClick"
+						metricsParent="HardwareScan"
+						metricsItem="HardwareScan.RecoverBadSectors"
+						[isFullWidth]="true"
+						[tooltip]="false"
+						[icon] ="['fal', 'arrow-right']"
+						[label]="textButton"
+						[isDisabled]="disable"
+						[routerPath] = "recoverPath"
+						[active]="'true'"
+						[tooltipText]="tooltipText">
+					</vtr-ui-button-hwscan>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<ng-template #tooltipRef>
+	<div>{{description}}</div>
+</ng-template>

@@ -182,9 +182,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	onPowerBatteryGaugeResetEvent(info: BatteryGaugeReset[]) {
-        let isGaugeResetRunning = false;
-        const gaugeResetInfo: BatteryGaugeReset[] = this.commonService.cloneObj(info);
-        if (gaugeResetInfo) {
+		this.logger.info('onPowerBatteryGaugeResetEvent: Information', info);
+		let isGaugeResetRunning = false;
+		const gaugeResetInfo: BatteryGaugeReset[] = this.commonService.cloneObj(info);
+		if (gaugeResetInfo) {
 			const formatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(' shorttime');
 			this.commonService.setSystemTimeFormat(formatter.clock === '12HourClock');
 			gaugeResetInfo.forEach((battery) => {
@@ -199,7 +200,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryService.gaugeResetInfo = gaugeResetInfo;
 			this.batteryService.isGaugeResetRunning = isGaugeResetRunning;
 		}
-    }
+	}
 
 	onPowerBatteryStatusEvent(thresholdInfo: ChargeThreshold[]) {
 		this.batteryService.setChargeThresholdInfo(thresholdInfo);

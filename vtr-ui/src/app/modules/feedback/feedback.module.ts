@@ -12,34 +12,36 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModalModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
+import { MetricsModule } from 'src/app/services/metric/metrics.module';
 
 @NgModule({
-  declarations: [
-    FeedbackFormComponent,
-    WidgetFeedbackComponent,
-  ],
-  imports: [
-    CommonModule,
-    TranslationModule.forChild(),
-    FeedbackRoutingModule,
-    CommonPipeModule,
-    UiButtonModule,
-    NgbDropdownModule,
-    WidgetOfflineModule,
-    FontAwesomeModule,
-    RouterModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgbModalModule,
-  ],
-  exports: [
-    FeedbackFormComponent,
-    WidgetFeedbackComponent,
-  ],
-  providers: [],
-  entryComponents: [
-    FeedbackFormComponent
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+	declarations: [
+		FeedbackFormComponent,
+		WidgetFeedbackComponent,
+	],
+	imports: [
+		CommonModule,
+		TranslationModule.forChild(),
+		FeedbackRoutingModule,
+		CommonPipeModule,
+		UiButtonModule,
+		NgbDropdownModule,
+		WidgetOfflineModule,
+		FontAwesomeModule,
+		RouterModule,
+		FormsModule,
+		ReactiveFormsModule,
+		NgbModalModule,
+		MetricsModule
+	],
+	exports: [
+		FeedbackFormComponent,
+		WidgetFeedbackComponent,
+	],
+	providers: [],
+	entryComponents: [
+		FeedbackFormComponent
+	],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class FeedbackModule { }

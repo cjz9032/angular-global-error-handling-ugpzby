@@ -8,6 +8,7 @@ import { Component, OnInit, Input, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-widget-lighting',
@@ -26,15 +27,16 @@ export class WidgetLightingComponent implements OnInit {
 	public isdriverpopup = false;
 	public isPopupVisible: any;
 	public defaultLanguage: any;
-	public ledlayoutversion:any;
+	public ledlayoutversion: any;
 	public ledSwitchButtonFeature: boolean;
-	
+
 	constructor(
 		private ngZone: NgZone,
 		private gamingLightingService: GamingLightingService,
 		private commonService: CommonService,
 		private deviceService: DeviceService,
-		public shellServices: VantageShellService
+		public shellServices: VantageShellService,
+		private logger: LoggerService
 	) { }
 
 	ngOnInit() {
@@ -46,8 +48,8 @@ export class WidgetLightingComponent implements OnInit {
 			}
 		});
 		this.deviceService.getMachineInfo().then((value: any) => {
-            this.defaultLanguage = value.locale;
-        });
+			this.defaultLanguage = value.locale;
+		});
 	}
 
 	public getCapabilities() {
@@ -74,7 +76,8 @@ export class WidgetLightingComponent implements OnInit {
 		} else if (!this.ledSetFeature && !this.ledDriver) {
 			this.isLightingVisible = false;
 		}
-		if(this.ledSwitchButtonFeature){
+		this.logger.info('ledSwitchButtonFeature: ', this.ledSwitchButtonFeature);
+		if (this.ledSwitchButtonFeature) {
 		 this.regLightingProfileIdChangeEvent();
 		}
 	}
@@ -137,7 +140,7 @@ export class WidgetLightingComponent implements OnInit {
 	}
 
 
-	public regLightingProfileIdChangeEvent(){
+	public regLightingProfileIdChangeEvent() {
 		this.gamingLightingService.regLightingProfileIdChangeEvent();
 		this.shellServices.registerEvent(
 		  EventTypes.gamingLightingProfileIdChangeEvent,
@@ -145,14 +148,15 @@ export class WidgetLightingComponent implements OnInit {
 		);
 	}
 
-	public setProfileEvent(profileId){
-		this.ngZone.run(()=>{
-            if(this.setprofId === profileId) return;
-            this.setprofId = profileId;
-            if (this.setprofId !== undefined) {
+	public setProfileEvent(profileId) {
+		this.ngZone.run(() => {
+			this.logger.info('profileId event ', profileId);
+			if (this.setprofId === profileId) { return; }
+			this.setprofId = profileId;
+			if (this.setprofId !== undefined) {
 				this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, this.setprofId);
 			}
-        })
+		});
 	}
 
 	public checkStatus(id) {

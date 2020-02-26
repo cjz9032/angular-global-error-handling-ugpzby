@@ -1,18 +1,16 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { BacklightStatusEnum, BacklightLevelEnum } from '../backlight/backlight.enum';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
-import { debug } from 'util';
-import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-backlight-thinkpad',
 	templateUrl: './backlight-thinkpad.component.html',
 	styleUrls: ['./backlight-thinkpad.component.scss']
 })
-export class BacklightThinkpadComponent implements OnInit {
-
+export class BacklightThinkpadComponent implements OnInit, OnDestroy {
+	private kbdBacklightInterval: any;
 	currentMode: BacklightStatusEnum = BacklightStatusEnum.OFF;
 	@Output() showHide = new EventEmitter<boolean>();
 	modes = [
@@ -39,12 +37,15 @@ export class BacklightThinkpadComponent implements OnInit {
 	];
 	constructor(
 		private keyboardService: InputAccessoriesService,
-		private logger: LoggerService,
-		private commonService: CommonService) {
+		private logger: LoggerService) {
 			this.getKBDBacklightCapability();
 		}
 
 	ngOnInit() {
+		this.kbdBacklightInterval = setInterval(async () => {
+			this.logger.debug('Trying after 30 seconds for getting kbdBacklight status');
+			this.getKBDBacklightCapability();
+		}, 30000);
 	}
 
 	public updateMode(mode) {
@@ -213,6 +214,10 @@ export class BacklightThinkpadComponent implements OnInit {
 			case BacklightStatusEnum.OFF:
 				return BacklightStatusEnum.OFF;
 		}
+	}
+
+	ngOnDestroy() {
+		clearInterval(this.kbdBacklightInterval);
 	}
 
 }

@@ -151,23 +151,12 @@
 									(toggleOnOff)="onToggleOfAirplanePowerMode($event.switchValue)">
 									<div class="row">
 										<div class="col px-5">
-											<div class="auto-set-checkbox custom-checkbox-gaming">
-												<input id="cb-airplane-mode"
-													class="custom-control-input"
-													attr.aria-label="cb-airplane-mode"
-													type="checkbox"
-													tabindex="-1"
-													name="cb-airplane-mode"
-													[(ngModel)]="airplaneAutoDetection"
-													(ngModelChange)='onAirplaneAutoModeStatusChange()'
-													checked="" />
-												<span class="checkmark"></span>
-												<label for="cb-airplane-mode"
-													tabindex="0"
-													role="text">
-													{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
-												</label>
-											</div>
+											<vtr-ui-checkbox [componentId]="'cb-airplane-mode'"
+												[value]="airplaneAutoDetection"
+												[checked]="airplaneAutoDetection"
+												[label]="'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate"
+												(toggle)='onAirplaneAutoModeStatusChange($event)'>
+											</vtr-ui-checkbox>
 											<label *ngIf="airplaneAutoDetection"
 												role="text"
 												tabindex="0"
@@ -223,25 +212,14 @@
 									</div>
 									<div class="row">
 										<div class="col px-5">
-											<div class="auto-set-checkbox custom-checkbox-gaming"
-												*ngIf="usbChargingInBatteryModeStatus">
-												<input id="cb-always-on-usb"
-													class="custom-control-input"
-													attr.aria-label="cb-always-on-usb"
-													type="checkbox"
-													tabindex="-1"
-													name="cb-always-on-usb"
-													[disabled]="!toggleAlwaysOnUsbFlag"
-													[(ngModel)]="usbChargingCheckboxFlag"
-													(ngModelChange)='onUsbChargingStatusChange()'
-													checked="" />
-												<span class="checkmark"></span>
-												<label for="cb-always-on-usb"
-													tabindex="0"
-													role="text">
-													{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
-												</label>
-											</div>
+											<vtr-ui-checkbox *ngIf="usbChargingInBatteryModeStatus"
+												[componentId]="'cb-always-on-usb'"
+												[disabled]="!toggleAlwaysOnUsbFlag"
+												[value]="usbChargingCheckboxFlag"
+												[checked]="usbChargingCheckboxFlag"
+												[label]="'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate"
+												(toggle)='onUsbChargingStatusChange($event)'>
+											</vtr-ui-checkbox>
 										</div>
 									</div>
 								</vtr-ui-row-switch>
@@ -314,7 +292,8 @@
 									src="/assets/images/energystar.png">
 							</div>
 							<div class="col-9 col-sm-8 col-md-10 pl-0 align-self-center">
-								<p class="energystar-text">
+								<p role="text"
+									class="energystar-text">
 									{{'device.deviceSettings.power.energyStar.description' | translate}}
 								</p>
 							</div>

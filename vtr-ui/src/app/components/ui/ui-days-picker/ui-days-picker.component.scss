@@ -70,10 +70,11 @@
       }
     }
 
-    .custom-control-label {
-      font-size: 1.6rem;
+    ::ng-deep .auto-set-checkbox .custom-control-label {
+      font-size: 1.4rem;
       padding-left: 0.8rem;
       line-height: 1.2;
+      font-weight: 600;
     }
     .custom-control-label::before {
       width: 1.6rem;

@@ -1,0 +1,25 @@
+<div>
+	<vtr-ui-row-switch [title]="'device.deviceSettings.power.dpm.globalPowerSettings.title' | translate"
+		componentName="dpm-powersetting"
+		[caption]="'device.deviceSettings.power.dpm.globalPowerSettings.description' | translate"
+		[leftIcon]="['icomoon', 'icomoon-dpm-global-settings']" [showChildContent]="true" [isLastChild]="true"
+		[theme]="'white'">
+		<div class="content">
+			<section>
+				<h5 tabindex="0">
+					{{'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.label' | translate}}
+				</h5>
+				<vtr-ui-dpm-dropdown [list]="powerbutton_actions" [value]="selectAction"
+					(change)="onActionChange($event)" [dropDownId]="'dpm-powersetting-action-dropDown'">
+				</vtr-ui-dpm-dropdown>
+				<h5 tabindex="0">
+					{{'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.label' | translate}}
+				</h5>
+				<vtr-ui-dpm-dropdown [list]="signInOptions" [value]="selectedSignInOptionVal"
+					(change)="onSignInOptionChanged($event)" [dropDownId]="'sign-in-options-dropDown'">
+				</vtr-ui-dpm-dropdown>
+				<div class="note">{{'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.tip' | translate}}</div>
+			</section>
+		</div>
+	</vtr-ui-row-switch>
+</div>

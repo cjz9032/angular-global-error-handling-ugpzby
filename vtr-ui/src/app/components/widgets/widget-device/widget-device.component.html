@@ -5,7 +5,7 @@
 						<div class="family"
 							id="myDevice-machine-info"
 							attr.aria-label="myDevice-machine-info">{{myDevice.family}}</div>
-							<div class="col-12 px-0 dir={{direction}}">
+							<div class="col-12 px-0 {{'dirClass' | translate}}">
 									<span class="sub-header-separator">
 										<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 									</span>
@@ -117,7 +117,7 @@
 										<p class="detail"
 											[ngClass]="{'highlight':item.asLink}">
 											<span class="{{'dirClass' | translate}}"
-												dir="{{'dir' | translate}}">{{item.detail}}</span>&nbsp;<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+												dir="{{'dir' | translate}}">{{item.detail}}&nbsp;<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon></span>
 										</p>
 									</a>
 									<!-- <div class="arrow">

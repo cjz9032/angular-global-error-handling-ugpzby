@@ -49,9 +49,12 @@
 
 		.icon-circle {
 			font-size: 3rem;
-			color: $menu_hover;
+			color: $grey_darker;
 			top: 1.5rem;
 			left: 1.3rem;
+			.checked-circle{
+				color: $menu_hover;
+			}
 			@media #{$white-on-black}{
 				background-color: $dark;
 				border:none;
@@ -151,6 +154,4 @@
 .large-width {
 	width: 29rem;
 }
-.large-width {
-	width: 29rem;
-}
+

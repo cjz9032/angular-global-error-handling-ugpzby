@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 import { CommonModule } from '@angular/common';
 import { CommonPipeModule } from 'src/app/modules/common/common-pipe.module';
 import { ContainerCardComponent } from './container-card.component';
-import { MetricsModule } from 'src/app/directives/metrics.module';
+import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SanitizeModule } from 'src/app/modules/sanitize.module';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
