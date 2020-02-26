@@ -24,15 +24,15 @@ export class LicensesService {
 			pageContext: 'License agreement',
 			closeButton: 'LicenseAgreementCloseButton',
 		};
-		const aboutModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
+		const LicenseModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
 			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'license-Modal'
 		});
-		aboutModal.componentInstance.url = agreementUrl;
-		aboutModal.componentInstance.type = 'html';
-		aboutModal.componentInstance.licenseModalMetrics = licenseModalMetrics;
+		LicenseModal.componentInstance.url = agreementUrl;
+		LicenseModal.componentInstance.type = 'html';
+		LicenseModal.componentInstance.licenseModalMetrics = licenseModalMetrics;
 	}
 
 	openOpenSource() {
@@ -42,15 +42,15 @@ export class LicensesService {
 			pageContext: 'Other Software Licenses',
 			closeButton: 'OtherSoftwareLicensesCloseButton',
 		};
-		const aboutModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
+		const LicenseModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
 			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'license-Modal'
 		});
-		aboutModal.componentInstance.url = openSourceUrl;
-		aboutModal.componentInstance.type = 'txt';
-		aboutModal.componentInstance.licenseModalMetrics = licenseModalMetrics;
+		LicenseModal.componentInstance.url = openSourceUrl;
+		LicenseModal.componentInstance.type = 'txt';
+		LicenseModal.componentInstance.licenseModalMetrics = licenseModalMetrics;
 	}
 
 	checkLangName(lang: string) {
