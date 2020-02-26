@@ -223,6 +223,20 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		if (this.commonService.getLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus) === 'true') {
 			this.showECMReset = true;
 		}
+		this.inWhiteList().then(isSupport => {
+			if (isSupport) {
+				this.initDisplayColorTempFromCache();
+				this.initEyeCareModeFromCache();
+				this.statusChangedLocationPermission();
+				this.initEyecaremodeSettings();
+				this.startEyeCareMonitor();
+				this.commonService.setLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus, 'false');
+				this.showECMReset = false;
+			} else {
+				this.showECMReset = true;
+				this.resetEyecaremodeAllSettings();
+			}
+		});
 
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
@@ -353,7 +367,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	}
 
 	inWhiteList() {
-		// return Promise.resolve(true);
+		// noinspection SpellCheckingInspection
 		const whitelist = [
 			'40346638a8da4aa73c765af43a709673',
 			'a8c959c9d2f5f73734de9fb94a7065a2',
@@ -376,7 +390,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		];
 		return this.deviceService.getMachineInfo()
 			.then(res => res.hasOwnProperty('biosVersion')
-				&& res.biosVersion === 'string'
+				&& typeof res.biosVersion === 'string'
 				&& res.biosVersion.length >= 5
 				&& whitelist.includes(Md5.hashStr(res.biosVersion.substr(0, 5)) as string));
 	}
