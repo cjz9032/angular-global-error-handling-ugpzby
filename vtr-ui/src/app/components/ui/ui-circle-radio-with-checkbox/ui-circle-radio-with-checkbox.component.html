@@ -45,7 +45,7 @@
 			</fa-layers>
 
 		</label>
-		<div [ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']"
+		<div [ngClass]="['title','text-center']"
 			id="{{textId}}-{{value}}-label"
 			[attr.aria-disabled]="disabled"
 			[attr.aria-checked]="checked">{{processLabel ? (label | capitalizeFirst) : label}}</div>
