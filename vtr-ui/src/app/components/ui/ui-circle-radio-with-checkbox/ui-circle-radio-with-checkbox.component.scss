@@ -1,6 +1,6 @@
 @import './../../../app.theme';
 
-@mixin theme($name, $background, $foreground) {
+@mixin theme($name, $background, $foreground, $label-color) {
 	.vtr-ui-circle-radio-with-checkbox.#{$name} {
 		margin-right: 1.5rem;
 		.checkbox {
@@ -66,7 +66,7 @@
 			right: 0;
 			font-weight: $weight_light;
 			font-size: $fontsize_xs;
-			color: $shade_light;
+			color: $label-color;
 			//top: 75px;
 			// white-space: nowrap;
 		}
@@ -120,5 +120,5 @@
 	}
 }
 
-@include theme(white-theme, $main, $light);
-@include theme(blue-theme, $light, $main);
+@include theme(white-theme, $main, $light, $menu_hover);
+@include theme(blue-theme, $light, $main, $light);
