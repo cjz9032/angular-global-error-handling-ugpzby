@@ -224,11 +224,11 @@ export class PageNetworkboostComponent implements OnInit {
 		});
 
 		if (!this.isOnline) {
-			this.cardContentPositionF = {
+			this.cardContentPositionC = {
 				FeatureImage: './../../../../assets/cms-cache/GamingPosC.jpg'
 			};
 
-			this.cardContentPositionC = {
+			this.cardContentPositionF = {
 				FeatureImage: './../../../../assets/cms-cache/network_boost_offline.jpg'
 			};
 		}
