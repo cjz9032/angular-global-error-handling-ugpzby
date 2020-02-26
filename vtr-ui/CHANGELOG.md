@@ -1,6 +1,13 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.3.12](https://bitbucket.tc.lenovo.com///compare/v1.3.11...v1.3.12) (2020-02-26)
+
+
+### Bug Fixes
+
+* **FontAwesome:** migrated to v5 and refactor the necessary ([d75063b](https://bitbucket.tc.lenovo.com///commit/d75063bfb89a13c1970316bf5978267565a145b8))
 
 ## [1.3.11](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/compare/v1.3.10...v1.3.11) (2020-02-25)
 
