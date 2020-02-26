@@ -25,6 +25,7 @@ import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/mo
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
 import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { LicensesService } from 'src/app/services/licenses/licenses.service';
 
 
 library.add(faBook);
@@ -56,6 +57,7 @@ library.add(falHeart);
 	],
 	providers: [
 		SupportService,
+		LicensesService,
 	],
 	entryComponents: [
 		ModalLicenseComponent,
