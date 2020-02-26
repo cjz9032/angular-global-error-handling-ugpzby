@@ -857,12 +857,18 @@
 				"question3": "Would you use the application more often in the future?",
 				"question4": "Were you aware that you can use Lenovo Vantage to update software drivers, firmware, and BIOS on your computer?",
 				"question5": "How likely is it that you would recommend the Lenovo Vantage application to a friend of colleague?",
+				"question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+				"question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+				"question8": "Have you used Lenovo Vantage to access support information about your computer?",
 				"notAtAllLikely": "Not at all likely",
 				"extremelyLikely": "Extremely likely",
 				"yes": "Yes",
 				"no": "No",
 				"tips1": "Please leave any additional comments",
+				"tips2": "Please leave any additional comments below",
 				"comments": "Comments...",
+				"emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+				"emailAddress": "Email address",
 				"button": "Submit",
 				"addScreenshot": "Add Screenshot",
 				"sendFeedback": "Send Feedback",
@@ -1725,14 +1731,25 @@
 					"enterText": {
 						"title": "TEXT TO BE ENTERED",
 						"placeholder": "Please type here"
-					},
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles":{
+                        "applicationTitle":"You need to delete one app first",
+                        "fileTitle":"You need to delete one file first"
+                    },
 					"dropDown": {
 						"title": "ACTION USER DEFINED KEY",
 						"note": "Note: This can be used to enter commonly entered key, such as e-mail or postal addresses. Lenovo recommends never using this feature for storing and entering passwords or any other private information.",
-						"options": {
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function.",
+                        "options": {
 							"option1": "Please select",
 							"option2": "Open website",
-							"option3": "Enter text"
+                            "option3": "Enter text",
+                            "option4":"Open applications or files",
+                            "option5":"Invoke key sequence"
 						}
 					}
 				},
