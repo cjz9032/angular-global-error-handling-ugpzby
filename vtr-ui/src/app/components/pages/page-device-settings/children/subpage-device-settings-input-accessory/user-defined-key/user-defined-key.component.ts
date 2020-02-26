@@ -63,18 +63,18 @@ export class UserDefinedKeyComponent implements OnInit {
 				path: '3',
 				actionType: OPEN_WEB.str
             },
-            {
-				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option4',
-				value: 4,
-				path: '4',
-				actionType: OPEN_APPLICATIONS_OR_FILES.str
-			},
-			{
-				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option5',
-				value: 5,
-				path: '5',
-				actionType: INVOKE_KEY_SEQUENCE.str
-			}
+            // {
+			// 	title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option4',
+			// 	value: 4,
+			// 	path: '4',
+			// 	actionType: OPEN_APPLICATIONS_OR_FILES.str
+			// },
+			// {
+			// 	title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option5',
+			// 	value: 5,
+			// 	path: '5',
+			// 	actionType: INVOKE_KEY_SEQUENCE.str
+			// }
         ];
 		this.selectedValue = this.userDefinedKeyOptions[0];
 	}
@@ -156,7 +156,7 @@ export class UserDefinedKeyComponent implements OnInit {
 					.then((value: any) => {
 						this.logger.info('keyboard getUDKTypeList here -------------.>', value);
 						this.logger.info(value);
-						this.udkActionInfo = new UDKActionInfo(value,this.applicationType);
+						this.udkActionInfo = new UDKActionInfo(value);
 						this.initValues(this.udkActionInfo);
 					}).catch(error => {
 						this.logger.error('keyboard getUDKTypeList error here', error.message);
@@ -189,61 +189,61 @@ export class UserDefinedKeyComponent implements OnInit {
 		}
     }
     
-    public setApplication(selectedUDK: string,appSelectorType: string,applicationOrFile) {
-		try {
-			if (this.keyboardService.isShellAvailable) {
-				this.keyboardService.AddApplicationOrFiles(selectedUDK,appSelectorType)
-					.then((value: any) => {
-						this.udkFormSubmitted = false;
-						this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
-						const applicationValue = value.UDKType[0].FileList[0].Setting[0].value;
-						const applicationKey = value.UDKType[0].FileList[0].Setting[0].key;
-						if(applicationOrFile=='4'){
-							let applicationList = {value:applicationValue,key:applicationKey};
-                            if (this.applicationList.find((test) => test.key === applicationKey) === undefined) {
-                                 this.applicationList.push(applicationList);
-							   }
-						}
-						else{
-							let fileList = {value:applicationValue,key:applicationKey};
-                            if (this.fileList.find((test) => test.key === applicationKey) === undefined) {
-                                 this.fileList.push(fileList);
-							   }
-						}
-					}).catch(error => {
-						this.logger.error('AddApplicationOrFiles error here', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('keyboard AddApplicationOrFiles error here', error.message);
-			return EMPTY;
-		}
-	}
+//     public setApplication(selectedUDK: string,appSelectorType: string,applicationOrFile) {
+// 		try {
+// 			if (this.keyboardService.isShellAvailable) {
+// 				this.keyboardService.AddApplicationOrFiles(selectedUDK,appSelectorType)
+// 					.then((value: any) => {
+// 						this.udkFormSubmitted = false;
+// 						this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+// 						const applicationValue = value.UDKType[0].FileList[0].Setting[0].value;
+// 						const applicationKey = value.UDKType[0].FileList[0].Setting[0].key;
+// 						if(applicationOrFile=='4'){
+// 							let applicationList = {value:applicationValue,key:applicationKey};
+//                             if (this.applicationList.find((test) => test.key === applicationKey) === undefined) {
+//                                  this.applicationList.push(applicationList);
+// 							   }
+// 						}
+// 						else{
+// 							let fileList = {value:applicationValue,key:applicationKey};
+//                             if (this.fileList.find((test) => test.key === applicationKey) === undefined) {
+//                                  this.fileList.push(fileList);
+// 							   }
+// 						}
+// 					}).catch(error => {
+// 						this.logger.error('AddApplicationOrFiles error here', error.message);
+// 						return EMPTY;
+// 					});
+// 			}
+// 		} catch (error) {
+// 			this.logger.error('keyboard AddApplicationOrFiles error here', error.message);
+// 			return EMPTY;
+// 		}
+// 	}
 
-public deleteApplicationOrFile(udkType: string,itemId: string,displayName: string,index,selectedDropdownType) {
-		try {
-			if (this.keyboardService.isShellAvailable) {
-				this.keyboardService.DeleteUDKApplication(udkType,itemId,displayName)
-					.then((value: any) => {
-						this.udkFormSubmitted = false;
-						this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
-						if(selectedDropdownType=='APPLICATIONS'){
-							this.applicationList.splice(index,1);
-						}
-						else{
-							this.fileList.splice(index,1);
-						}						
-					}).catch(error => {
-						this.logger.error('AddApplicationOrFiles error here', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('keyboard AddApplicationOrFiles error here', error.message);
-			return EMPTY;
-		}
-	}
+// public deleteApplicationOrFile(udkType: string,itemId: string,displayName: string,index,selectedDropdownType) {
+// 		try {
+// 			if (this.keyboardService.isShellAvailable) {
+// 				this.keyboardService.DeleteUDKApplication(udkType,itemId,displayName)
+// 					.then((value: any) => {
+// 						this.udkFormSubmitted = false;
+// 						this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+// 						if(selectedDropdownType=='APPLICATIONS'){
+// 							this.applicationList.splice(index,1);
+// 						}
+// 						else{
+// 							this.fileList.splice(index,1);
+// 						}						
+// 					}).catch(error => {
+// 						this.logger.error('AddApplicationOrFiles error here', error.message);
+// 						return EMPTY;
+// 					});
+// 			}
+// 		} catch (error) {
+// 			this.logger.error('keyboard AddApplicationOrFiles error here', error.message);
+// 			return EMPTY;
+// 		}
+// 	}
 	udkSubmit(value: number) {
 		this.logger.debug('UserDefinedKeyComponent.udkSubmit function called', value);
 		this.udkFormSubmitted = true;
@@ -260,16 +260,16 @@ public deleteApplicationOrFile(udkType: string,itemId: string,displayName: strin
 					this.setUDKTypeList('0', INPUT_TEXT.value, INPUT_TEXT.str, this.description);
                 }
                 break;
-            case 4:
-                this.setApplication('0',OPEN_APPLICATIONS.value,value);
-                break;
-            case 5:
-                this.setApplication('0',OPEN_FILES.value,value);
-                break;
-            case 6:
-                if(this.keyCode && this.keyCode.length>0){
-                    this.setUDKTypeList('0', INVOKE_KEY_SEQUENCE.value, INVOKE_KEY_SEQUENCE.str,this.keyCodeValue);
-                    }		    
+            // case 4:
+            //     this.setApplication('0',OPEN_APPLICATIONS.value,value);
+            //     break;
+            // case 5:
+            //     this.setApplication('0',OPEN_FILES.value,value);
+            //     break;
+            // case 6:
+            //     if(this.keyCode && this.keyCode.length>0){
+            //         this.setUDKTypeList('0', INVOKE_KEY_SEQUENCE.value, INVOKE_KEY_SEQUENCE.str,this.keyCodeValue);
+            //         }		    
 		}
 	}
 

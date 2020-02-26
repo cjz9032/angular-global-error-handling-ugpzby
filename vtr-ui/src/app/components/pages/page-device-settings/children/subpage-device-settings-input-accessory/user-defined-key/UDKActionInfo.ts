@@ -12,9 +12,9 @@ export class UDKActionInfo {
     applicationList=[];
 	fileList=[];
 	index = 0;
-	constructor(response,value) {
+	constructor(response) {
         this.processGetResponse(response);
-        this.processGetResponseFilesOrApplications(response,value);
+        //this.processGetResponseFilesOrApplications(response,value);
 
 	}
 	processGetResponse(response: any) {
@@ -53,27 +53,27 @@ export class UDKActionInfo {
 		} catch (error) {
 		}
     }
-    processGetResponseFilesOrApplications(response: any,applicationType:string) {
-		try {
-			if (response
-				&& response.UDKType
-				&& response.UDKType.length
-				&& response.UDKType[0].FileList
-				&& response.UDKType[0].FileList.length
-				&& response.UDKType[0].FileList[0].Setting) {
-				const info = response.UDKType[0].FileList[0].Setting;
-				for (const data of info) {
-					if(data.type=="1"){
-						this.applicationList.push({value:data.value,key:data.key});
-					}
-					else{
-                        this.fileList.push({value:data.value,key:data.key});
-					}
-					this.index = 3;  
-				}
-			} else {
-			}
-		} catch (error) {
-		}
-	}
+    // processGetResponseFilesOrApplications(response: any,applicationType:string) {
+	// 	try {
+	// 		if (response
+	// 			&& response.UDKType
+	// 			&& response.UDKType.length
+	// 			&& response.UDKType[0].FileList
+	// 			&& response.UDKType[0].FileList.length
+	// 			&& response.UDKType[0].FileList[0].Setting) {
+	// 			const info = response.UDKType[0].FileList[0].Setting;
+	// 			for (const data of info) {
+	// 				if(data.type=="1"){
+	// 					this.applicationList.push({value:data.value,key:data.key});
+	// 				}
+	// 				else{
+    //                     this.fileList.push({value:data.value,key:data.key});
+	// 				}
+	// 				this.index = 3;  
+	// 			}
+	// 		} else {
+	// 		}
+	// 	} catch (error) {
+	// 	}
+	// }
 }
