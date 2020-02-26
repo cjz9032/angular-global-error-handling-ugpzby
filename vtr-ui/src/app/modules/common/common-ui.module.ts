@@ -29,8 +29,7 @@ import { ContainerCollapsibleComponent } from 'src/app/components/container-coll
 import { UiBrightnessSliderComponent } from 'src/app/components/ui/ui-brightness-slider/ui-brightness-slider.component';
 import { UiAddReduceButtonComponent } from 'src/app/components/ui/ui-add-reduce-button/ui-add-reduce-button.component';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons/faCheckCircle';
@@ -42,14 +41,6 @@ import { faChevronUp as falChevronUp } from '@fortawesome/pro-light-svg-icons/fa
 import { UiDpmDropdownComponent } from 'src/app/components/ui/ui-dpm-dropdown/ui-dpm-dropdown.component';
 import { SpinnerComponent } from 'src/app/components/common/spinner/spinner.component';
 
-library.add(faCircle);
-library.add(faCheckCircle);
-library.add(faChevronDown);
-library.add(falCircle);
-library.add(faExclamationCircle);
-library.add(falChevronDown);
-library.add(falChevronUp);
-library.add(faChevronUp);
 
 @NgModule({
 	declarations: [
@@ -124,4 +115,15 @@ library.add(faChevronUp);
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class CommonUiModule { }
+export class CommonUiModule {
+	constructor(library: FaIconLibrary) {
+		library.addIcons(faCircle);
+		library.addIcons(faCheckCircle);
+		library.addIcons(faChevronDown);
+		library.addIcons(falCircle);
+		library.addIcons(faExclamationCircle);
+		library.addIcons(falChevronDown);
+		library.addIcons(falChevronUp);
+		library.addIcons(faChevronUp);
+	}
+}

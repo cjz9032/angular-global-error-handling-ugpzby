@@ -7,7 +7,7 @@
 		<!-- <span [innerHTML]="'common.ui.loader' | translate"
 			class="spinner-text"></span> -->
 	</div>
-	<div *ngIf="!showLoader"
+	<div [hidden]="showLoader"
 		class="checkbox"
 		[ngClass]="{'switch-disable': isSwitchDisable}"
 		#toggleMain

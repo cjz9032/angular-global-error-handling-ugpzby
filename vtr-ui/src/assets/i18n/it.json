@@ -22,7 +22,7 @@
                     "rapidCharge": "Carica rapida"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Overclock att.",
                         "performance": "Prestazioni",
                         "balance": "Bilanciamento",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Installare il driver GPU per utilizzare la funzione di overclock.",
                         "goInstall": "VAI A INSTALLA"
                     },
-                    "autoSwitch": "Passa automaticamente alla modalità Prestazioni per giocare e chiudila quando esci dal gioco."	
+                    "autoSwitch": "Passa automaticamente alla modalità Prestazioni per giocare e chiudila quando esci dal gioco."
                 },
                 "advancedOC": {
                     "title": "Impost. avanzate Overclock",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Invia screenshot",
                 "messages": {
                     "feedbackSuccess": "Grazie del feedback!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>La batteria è in buone condizioni.</b>",
                     "Exhaustion": "La capacità della batteria è stata <b>danneggiata</b>. Sostituire la batteria.",
                     "Bad": "<b>Si è verificato un errore della batteria.</b> La batteria non può essere caricata/scaricata. Sostituire la batteria.",
-                    "NotDetected": "<b>Nessuna batteria rilevata o</b> collegata.",
+                    "NotDetected": "<b>Nessuna batteria rilevata.</b>",
                     "NotGood": "<b>La batteria non è in buone condizioni.</b>",
                     "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b>",
                     "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UN PRODOTTO CON CERTIFICAZIONE ENERGY STAR"
-				},
-				"dpm": {
-					"title": "Alimentazione",
-					"subtitle": "Impostazioni energetiche",
-					"description": "Questa sezione consente di controllare le impostazioni predefinite e personalizzare l'utilizzo dell'alimentazione e il piano di alimentazione in base alle proprie esigenze.",
-					"globalPowerSettings": {
-						"title": "Impostazioni di alimentazione globale",
-						"description": "Questa funzione avrà priorità sul piano di alimentazione o sulle impostazioni di utilizzo dell'alimentazione.",
-						"powerButton": {
-							"label": "PULSANTE DI ACCENSIONE:",
-							"items": {
-								"doNothing": "Nessuna azione",
-								"sleep": "Sospensione",
-								"hibernate": "Sospendi",
-								"shutDown": "Spegni",
-								"turnOffTheDisplay": "Spegnere lo schermo"
-							}
-						},
-						"requiredSignIn": {
-							"label": "È NECESSARIO ESEGUIRE L'ACCESSO:",
-							"items": {
-								"never": "Mai",
-								"fromSleep": "Quando il PC viene riattivato dalla modalità di sospensione"
-							},
-							"tip": "Nota: Funziona solo se è impostata la password di sistema."
-						}
-					},
-					"powerUse": {
-						"title": "Uso dell'alimentazione",
-						"description": "SE IL SISTEMA È INATTIVO:",
-						"turnOffDisplay": "DISATTIVAZIONE DELLO SCHERMO DOPO:",
-						"turnOffHDD": "SPEGNIMENTO DELL'UNITÀ DISCO FISSO DOPO:",
-						"sleep": "SOSPENSIONE DOPO:",
-						"hibernate": "IBERNAZIONE DOPO:",
-						"items": {
-							"never": "Mai",
-							"minute": "minuto",
-							"minutes": "minuti",
-							"hour": "ora",
-							"hours": "ore"
-						}
-					},
-					"powerPlan": {
-						"title": "Piano di alimentazione",
-						"description": "Selezionare un piano di alimentazione per controllare le prestazioni del computer, la temperatura del sistema e l'utilizzo dell'alimentazione.",
-						"currentPowerPlan": {
-							"label": "PIANO CORRENTE"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Alimentazione",
+                    "subtitle": "Impostazioni energetiche",
+                    "description": "Questa sezione consente di controllare le impostazioni predefinite e personalizzare l'utilizzo dell'alimentazione e il piano di alimentazione in base alle proprie esigenze.",
+                    "globalPowerSettings": {
+                        "title": "Impostazioni di alimentazione globale",
+                        "description": "Questa funzione avrà priorità sul piano di alimentazione o sulle impostazioni di utilizzo dell'alimentazione.",
+                        "powerButton": {
+                            "label": "PULSANTE DI ACCENSIONE:",
+                            "items": {
+                                "doNothing": "Nessuna azione",
+                                "sleep": "Sospensione",
+                                "hibernate": "Sospendi",
+                                "shutDown": "Spegni",
+                                "turnOffTheDisplay": "Spegnere lo schermo"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "È NECESSARIO ESEGUIRE L'ACCESSO:",
+                            "items": {
+                                "never": "Mai",
+                                "fromSleep": "Quando il PC viene riattivato dalla modalità di sospensione"
+                            },
+                            "tip": "Nota: Funziona solo se è impostata la password di sistema."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Uso dell'alimentazione",
+                        "description": "SE IL SISTEMA È INATTIVO:",
+                        "turnOffDisplay": "DISATTIVAZIONE DELLO SCHERMO DOPO:",
+                        "turnOffHDD": "SPEGNIMENTO DELL'UNITÀ DISCO FISSO DOPO:",
+                        "sleep": "SOSPENSIONE DOPO:",
+                        "hibernate": "IBERNAZIONE DOPO:",
+                        "items": {
+                            "never": "Mai",
+                            "minute": "minuto",
+                            "minutes": "minuti",
+                            "hour": "ora",
+                            "hours": "ore"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Piano di alimentazione",
+                        "description": "Selezionare un piano di alimentazione per controllare le prestazioni del computer, la temperatura del sistema e l'utilizzo dell'alimentazione.",
+                        "currentPowerPlan": {
+                            "label": "PIANO CORRENTE"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Standby intelligente",
                     "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne il ripristino rapido dalla modalità <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Standby moderno</a> durante i picchi di utilizzo.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Selezionare",
                             "option2": "Apri sito Web",
-                            "option3": "Inserire il testo"
-                        }
+                            "option3": "Inserire il testo",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Contenuto da riempire",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "TESTO DA IMMETTERE",
                         "placeholder": "Digitare qui"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Supporti intelligenti",
                 "title": "Riproduzione video zero touch",
                 "desc": "Questa funzione metterà in pausa il video quando ci si allontana dal computer e riprenderà la riproduzione del video al rientro dell'utente.",
-                "tooltip": "Questa funzione non è applicabile ai lettori video Web. I principali lettori video locali, come Windows Media Player, 5KPlayer e così via supportano questa funzione."
+                "tooltip": "Questa funzione non è applicabile ai<br>lettori video Web.<br>I lettori supportati sono i seguenti:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Supporti intelligenti",

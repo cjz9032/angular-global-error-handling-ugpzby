@@ -141,4 +141,23 @@ export class MetricHelper {
 			}
 		};
 	}
+
+	public static createSimulateObj() {
+		return {
+			init() {},
+			sendAsync() {
+				return Promise.resolve({
+					status: 0,
+					desc: 'ok'
+				});
+			},
+			sendAsyncEx() {
+				return Promise.resolve({
+					status: 0,
+					desc: 'ok'
+				});
+			},
+			metricsEnabled: false
+		};
+	}
 }

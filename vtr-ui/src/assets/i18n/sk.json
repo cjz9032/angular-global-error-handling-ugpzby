@@ -22,7 +22,7 @@
                     "rapidCharge": "Rýchle nabíjanie"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Pretakt. zap.",
                         "performance": "Výkon",
                         "balance": "Vyvážený",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač grafického procesora.",
                         "goInstall": "INŠTALOVAŤ"
                     },
-                    "autoSwitch": "Automaticky prepínajte do režimu vysokého výkonu pri spustení hry a po ukončení hry prepnite späť."	
+                    "autoSwitch": "Automaticky prepínajte do režimu vysokého výkonu pri spustení hry a po ukončení hry prepnite späť."
                 },
                 "advancedOC": {
                     "title": "Detaily pretaktovania",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Odoslať snímku obrazovky",
                 "messages": {
                     "feedbackSuccess": "Ďakujeme vám za spätnú väzbu!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Batéria je v dobrom stave.</b>",
                     "Exhaustion": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "Bad": "<b>Vyskytla sa chyba batérie.</b> Batériu nemožno nabiť/vybiť. Vymeňte batériu.",
-                    "NotDetected": "<b>Nezistená žiadna batéria ani</b> pripojená batéria.",
+                    "NotDetected": "<b>Nebola zistená žiadna batéria.</b>",
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b>",
                     "LimitedACAdapterSupport": "<b>Sieťový adaptér nedokáže poskytnúť dostatok energie na napájanie.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "CERTIFIKOVANÝ PRODUKT ENERGY STAR"
-				},
-				"dpm": {
-					"title": "Napájanie",
-					"subtitle": "Nastavenia napájania",
-					"description": "V tejto časti si môžete pozrieť predvolené nastavenia a prispôsobiť používanie napájania a plán napájania podľa vlastných potrieb.",
-					"globalPowerSettings": {
-						"title": "Globálne nastavenia napájania",
-						"description": "Táto funkcia potlačí plán napájania alebo nastavenia používania napájania.",
-						"powerButton": {
-							"label": "TLAČIDLO NAPÁJANIA:",
-							"items": {
-								"doNothing": "Nerobiť nič",
-								"sleep": "Spánok",
-								"hibernate": "Dlhodobý spánok",
-								"shutDown": "Vypnúť",
-								"turnOffTheDisplay": "Vypnúť obrazovku"
-							}
-						},
-						"requiredSignIn": {
-							"label": "POŽADOVANÉ PRIHLÁSENIE:",
-							"items": {
-								"never": "Nikdy",
-								"fromSleep": "Keď sa počítač prebudí zo spánku"
-							},
-							"tip": "Poznámka: Funguje len v prípade nastaveného systémového hesla."
-						}
-					},
-					"powerUse": {
-						"title": "Používanie napájania",
-						"description": "AK JE SYSTÉM NEČINNÝ:",
-						"turnOffDisplay": "VYPNÚŤ OBRAZOVKU PO:",
-						"turnOffHDD": "VYPNÚŤ PEVNÝ DISK PO:",
-						"sleep": "SPÁNOK PO:",
-						"hibernate": "DLHODOBÝ SPÁNOK PO:",
-						"items": {
-							"never": "Nikdy",
-							"minute": "minúta",
-							"minutes": "minúty",
-							"hour": "hodina",
-							"hours": "hodiny"
-						}
-					},
-					"powerPlan": {
-						"title": "Plán napájania",
-						"description": "Vyberte plán napájania na ovládanie výkonu počítača, teplotu systému a spotrebu napájania.",
-						"currentPowerPlan": {
-							"label": "PLÁN PRÚDU"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Napájanie",
+                    "subtitle": "Nastavenia napájania",
+                    "description": "V tejto časti si môžete pozrieť predvolené nastavenia a prispôsobiť používanie napájania a plán napájania podľa vlastných potrieb.",
+                    "globalPowerSettings": {
+                        "title": "Globálne nastavenia napájania",
+                        "description": "Táto funkcia potlačí plán napájania alebo nastavenia používania napájania.",
+                        "powerButton": {
+                            "label": "TLAČIDLO NAPÁJANIA:",
+                            "items": {
+                                "doNothing": "Nerobiť nič",
+                                "sleep": "Spánok",
+                                "hibernate": "Dlhodobý spánok",
+                                "shutDown": "Vypnúť",
+                                "turnOffTheDisplay": "Vypnúť obrazovku"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "POŽADOVANÉ PRIHLÁSENIE:",
+                            "items": {
+                                "never": "Nikdy",
+                                "fromSleep": "Keď sa počítač prebudí zo spánku"
+                            },
+                            "tip": "Poznámka: Funguje len v prípade nastaveného systémového hesla."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Používanie napájania",
+                        "description": "AK JE SYSTÉM NEČINNÝ:",
+                        "turnOffDisplay": "VYPNÚŤ OBRAZOVKU PO:",
+                        "turnOffHDD": "VYPNÚŤ PEVNÝ DISK PO:",
+                        "sleep": "SPÁNOK PO:",
+                        "hibernate": "DLHODOBÝ SPÁNOK PO:",
+                        "items": {
+                            "never": "Nikdy",
+                            "minute": "minúta",
+                            "minutes": "minúty",
+                            "hour": "hodina",
+                            "hours": "hodiny"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Plán napájania",
+                        "description": "Vyberte plán napájania na ovládanie výkonu počítača, teplotu systému a spotrebu napájania.",
+                        "currentPowerPlan": {
+                            "label": "PLÁN PRÚDU"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Inteligentný pohotovostný režim",
                     "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">moderného pohotovostného režimu</a> pri náročnejšom využívaní.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Vyberte",
                             "option2": "Otvorte webovú stránku",
-                            "option3": "Zadajte text"
-                        }
+                            "option3": "Zadajte text",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Obsah, ktorý sa má vyplniť",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "TEXT, KTORÝ SA MÁ ZADAŤ",
                         "placeholder": "Tu napíšte"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Inteligentné médiá",
                 "title": "Bezdotykové prehrávanie videa",
                 "desc": "Táto funkcia pozastaví prehrávanie videa, keď odídete od počítača a obnoví prehrávanie videa, keď sa vrátite.",
-                "tooltip": "Táto funkcia sa nevzťahuje na webové video prehrávače. Obľúbené lokálne prehrávače videa (prehrávač Windows Media Player, 5KPlayer a pod.) túto funkciu podporujú."
+                "tooltip": "Táto funkcia sa nevzťahuje na<br>webové video prehrávače.<br>Podporované prehrávače sú tieto:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Inteligentné médiá",

@@ -166,7 +166,7 @@ $normalPadding: 2.4rem;
 			margin-bottom: 1.5rem;
 		}
 
-		.user-comment {
+		.user-comment, .user-email {
 			border: 1px solid $shade_lighter;
 			border-radius: 5px;
 			background-color: #FFFFFF;
@@ -183,7 +183,9 @@ $normalPadding: 2.4rem;
 				border-color: $main;
 			}
 		}
-
+		.user-email {		
+			height: 6rem;			
+		}
 		.comment-count {
 			color: $grey_dark;
 			font-size: $caption;
@@ -228,6 +230,9 @@ $normalPadding: 2.4rem;
 			}
 			.user-comment {
 				height: 10rem;
+			}
+			.user-email{
+				height: 5rem;
 			}
 		}
 	}

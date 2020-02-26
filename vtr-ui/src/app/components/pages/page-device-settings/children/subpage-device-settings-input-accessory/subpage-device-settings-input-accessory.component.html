@@ -87,7 +87,7 @@
 								<vtr-top-row-functions-ideapad></vtr-top-row-functions-ideapad>
 							</li>
 
-							<li class="pt-3"
+							<li class="pt-3 keyboard-backlight-block"
 								*ngIf="machineType === 1 && isKbdBacklightAvailable">
 								<vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)">
 								</vtr-backlight-thinkpad>
@@ -194,50 +194,51 @@
 									</ng-template>
 								</vtr-ui-row-switch>
 							</li>
-						<li class="pt-3" *ngIf="machineType == 1 && fnCtrlSwapCapability">
-						<vtr-ui-row-switch
-							[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title' | translate"
-							componentName="Fn key and Ctrl key swap "
-							[caption]="'device.deviceSettings.inputAccessories.fnCtrlKey.description' | translate"
-							[leftIcon]="['fal','sync']" [showChildContent]="true" [theme]="'white'"
-							[isSwitchVisible]="true" [isSwitchChecked]="fnCtrlSwapStatus"
-							(rebootToggleOnOff)="fnCtrlKey($event)"
-							[switchId]="'inputAccessories-fnCtrlKey'"
-							[isRebootRequired] ="isRestartRequired">
-							<div class="row">
-								<div class="col-auto pt-3 img-block">
-									<img *ngIf="fnCtrlSwapStatus === true"
-										src="assets/images/Fn-Ctrl-key.PNG">
-									<img *ngIf="fnCtrlSwapStatus === false"
-										src="assets/images/Fn-Ctrl-key.PNG">
-								</div>
-							</div>
-						</vtr-ui-row-switch>
-					</li>
-
-					 <li class="pt-3" *ngIf="machineType == 1 && fnAsCtrlCapability">
-						<vtr-ui-row-switch
-							[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title2' | translate"
-							componentName="Fn works as Ctrl for frequently used key combinations"
-							[caption]="'device.deviceSettings.inputAccessories.fnCtrlKey.description2' | translate"
-							[leftIcon]="['fal','sync']"
-							[showChildContent]="true"
-							[theme]="'white'"
-							(toggleOnOff)="setFnAsCtrl($event)"
-							[isSwitchVisible]="true"
-							[isSwitchChecked]="fnAsCtrlStatus"
-							[rightIcon]="['far', 'question-circle']"
-							[fnCtrltoolTip]="true"
-							[tooltipContent]="fnCtrlKeyTooltipContent"
-							[switchId]="'inputAccessories-fnCtrlKey1'">
-							<div class="row">
-								<div class="feature-note note p-4">
-									<p id="fnCtrlKey-featureNote">{{'device.deviceSettings.inputAccessories.fnCtrlKey.featureNote' | translate}}</p>
-								</div>
-							</div>
-						</vtr-ui-row-switch>
-					</li>
-
+							<!-- fnCtrlSwap & fnAsCtrl features hidden in 3.2.001 -->
+							<!-- <li class="pt-3" *ngIf="machineType == 1 && fnCtrlSwapCapability">
+													<vtr-ui-row-switch
+														[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title' | translate"
+														componentName="Fn key and Ctrl key swap "
+														[caption]="'device.deviceSettings.inputAccessories.fnCtrlKey.description' | translate"
+														[leftIcon]="['fal','sync']" [showChildContent]="true" [theme]="'white'"
+														[isSwitchVisible]="true" [isSwitchChecked]="fnCtrlSwapStatus"
+														(rebootToggleOnOff)="fnCtrlKey($event)"
+														[switchId]="'inputAccessories-fnCtrlKey'"
+														[isRebootRequired] ="isRestartRequired">
+														<div class="row">
+															<div class="col-auto pt-3 img-block">
+																<img *ngIf="fnCtrlSwapStatus === true"
+																	src="assets/images/Fn-Ctrl-key.PNG">
+																<img *ngIf="fnCtrlSwapStatus === false"
+																	src="assets/images/Fn-Ctrl-key.PNG">
+															</div>
+														</div>
+													</vtr-ui-row-switch>
+												</li> -->
+							
+							<!-- <li class="pt-3" *ngIf="machineType == 1 && fnAsCtrlCapability">
+													<vtr-ui-row-switch
+														[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title2' | translate"
+														componentName="Fn works as Ctrl for frequently used key combinations"
+														[caption]="'device.deviceSettings.inputAccessories.fnCtrlKey.description2' | translate"
+														[leftIcon]="['fal','sync']"
+														[showChildContent]="true"
+														[theme]="'white'"
+														(toggleOnOff)="setFnAsCtrl($event)"
+														[isSwitchVisible]="true"
+														[isSwitchChecked]="fnAsCtrlStatus"
+														[rightIcon]="['far', 'question-circle']"
+														[fnCtrltoolTip]="true"
+														[tooltipContent]="fnCtrlKeyTooltipContent"
+														[switchId]="'inputAccessories-fnCtrlKey1'">
+														<div class="row">
+															<div class="feature-note note p-4">
+																<p id="fnCtrlKey-featureNote">{{'device.deviceSettings.inputAccessories.fnCtrlKey.featureNote' | translate}}</p>
+															</div>
+														</div>
+													</vtr-ui-row-switch>
+												</li> -->
+							
 							<li *ngIf="machineType === 1">
 								<vtr-user-defined-key></vtr-user-defined-key>
 							</li>

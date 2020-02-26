@@ -13,7 +13,7 @@ import { CommonUiModule } from '../common/common-ui.module';
 import { CommonWidgetModule } from '../common/common-widget.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faBook } from '@fortawesome/pro-light-svg-icons/faBook';
 import { faCommentAlt } from '@fortawesome/pro-light-svg-icons/faCommentAlt';
 import { faShareAlt } from '@fortawesome/pro-light-svg-icons/faShareAlt';
@@ -29,14 +29,6 @@ import { FeedbackModule } from '../feedback/feedback.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
 
-library.add(faBook);
-library.add(faCommentAlt);
-library.add(faShareAlt);
-library.add(faTicketAlt);
-library.add(faBriefcase);
-library.add(falHeart);
-
-
 @NgModule({
 	declarations: [
 		PageSupportComponent,
@@ -49,6 +41,7 @@ library.add(falHeart);
 	imports: [
 		CommonModule,
 		SupportRoutingModule,
+		FontAwesomeModule,
 		CommonUiModule,
 		CommonPipeModule,
 		CommonWidgetModule,
@@ -73,4 +66,13 @@ library.add(falHeart);
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class SupportModule { }
+export class SupportModule {
+	constructor(library: FaIconLibrary) {
+		library.addIcons(faBook);
+		library.addIcons(faCommentAlt);
+		library.addIcons(faShareAlt);
+		library.addIcons(faTicketAlt);
+		library.addIcons(faBriefcase);
+		library.addIcons(falHeart);
+	}
+}

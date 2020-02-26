@@ -41,7 +41,7 @@
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.status' | translate }}</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">
 								{{ model.chargeStatusString | translate }}</div>
 						</div>
@@ -74,7 +74,7 @@
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.remainingPercent' | translate }}</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">
 								{{ model.remainingPercent }}%</div>
 						</div>
@@ -87,7 +87,7 @@
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.temp' | translate }}</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">{{ model.temperature }}
 								&#176;C
 							</div>
@@ -101,7 +101,7 @@
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.frupn' | translate }}</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">{{ model.fruPart }}</div>
 						</div>
 					</div>
@@ -113,7 +113,7 @@
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{ model.remainingTimeText | translate }}</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">
 								<!-- {{ model.remainingTime | minutesToHourmin }} -->
 								<span role="text"
@@ -134,7 +134,7 @@
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.cycleCount' | translate }}</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">{{ model.cycleCount }}
 							</div>
 						</div>
@@ -148,7 +148,7 @@
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.chemistry' | translate }}
 							</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">
 								{{ deviceChemistry[i] | translate }}
 							</div>
@@ -163,7 +163,7 @@
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.remainingCap' | translate }}
 							</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">
 								{{ model.remainingCapacity }} Wh
 							</div>
@@ -178,7 +178,7 @@
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.manufacturer.title' | translate }}
 							</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">
 								{{ model.manufacturer }}
 							</div>
@@ -193,7 +193,7 @@
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.designCap' | translate }}
 							</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">
 								{{ model.designCapacity }} Wh
 							</div>
@@ -208,7 +208,7 @@
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }}
 							</div>
-							<div class="col-6 battery-value-text">
+							<div class="battery-value-text">
 								<span>{{ model.fullChargeCapacity }} Wh</span>
 								<span *ngIf="model.isTemporaryChargeMode">
 									<fa-icon id="fullChargeCapacity_tooltip_icon"
@@ -240,7 +240,7 @@
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.manufDt' | translate }}
 							</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">
 								{{ model.manufactureDate | date: 'MM/dd/yyyy' }}
 							</div>
@@ -255,7 +255,7 @@
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.designVolt' | translate }}
 							</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">
 								{{ model.designVoltage }} V
 							</div>
@@ -269,7 +269,7 @@
 							<div class="col-6 battery-label-text"
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.volts' | translate }}</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">
 								{{ model.voltage }} V
 							</div>
@@ -284,7 +284,7 @@
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.firstUseDt' | translate }}
 							</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">
 								{{ model.firstUseDate | date: 'MM/dd/yyyy' }}
 							</div>
@@ -299,7 +299,7 @@
 								role="text">
 								{{'device.deviceSettings.batteryGauge.details.firmwareVer' | translate }}
 							</div>
-							<div class="col-6 battery-value-text"
+							<div class="battery-value-text"
 								role="text">
 								{{ model.firmwareVersion }}
 							</div>

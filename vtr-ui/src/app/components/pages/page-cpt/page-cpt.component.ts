@@ -28,15 +28,6 @@ import { CptpageAutocloseComponent } from 'src/app/components/pages/page-cpt/chi
 
 declare let JSONEditor: any;
 declare let ClipboardJS: any;
-/**
- * Gaming Dashboard
-Gaming Macrokey
-Gaming Lighting
-Gaming NetworkBoost
-Gaming AutoClose 
-
-src\app\modules\gaming-routing.module.ts
- */
 
 @Component({
   selector: 'vtr-page-cpt',
@@ -102,7 +93,9 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
     this.serverSwitchResponse.systemLang = this.translate.currentLang;
 
     // when app loads for the 1st time then remove ServerSwitch values
-    window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
+    if (this.commonService.haveLocalStorageKey(LocalStorageKey.ServerSwitchKey)) {
+      window.localStorage.removeItem(LocalStorageKey.ServerSwitchKey);
+    }
 
   }
 
@@ -547,7 +540,7 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
 
         //for full urls 
         queryParams = {
-          Page: 'dashboard'
+          Page: 'gaming-dashboard'
         };
         this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
 
@@ -746,9 +739,10 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
 
     //due to cache, lets set the flag to false to deactive the serverswitch
     const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
-    serverSwitchLocalData.forceit = false;
-    this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
-
+    if(serverSwitchLocalData){
+      serverSwitchLocalData.forceit = false;
+      this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
+    }
     //destroy the subscriber
     if (!isNull(this.currentSubscriber)) {
       this.currentSubscriber.unsubscribe();
