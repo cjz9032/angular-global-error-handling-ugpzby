@@ -130,17 +130,17 @@
                                 <br>
                                 <form #form1="ngForm" novalidate>
                                     <div class="row">
-                                        <div class="col title">Applications to open:</div>
+                                        <div class="col title">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.applicationsToOpen' | translate}}</div>
                                         <div class="col-auto px-0">
                                             <button *ngIf="applicationList.length<6 && applicationList.length"
                                                 id="add-application" attr.aria-label="add-application"
-                                                (click)="udkSubmit(4);" class="title add">add</button>
+                                                (click)="udkSubmit(4);" class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
                                             <span *ngIf="applicationList.length>=6" tabindex="0" data-toggle="tooltip"
                                                 title="{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.applicationTitle' | translate}}">
                                                 <button *ngIf=applicationList.length (click)="udkSubmit(4);"
                                                     id="add-application" attr.aria-label="add-application"
                                                     [disabled]="applicationList.length>=6"
-                                                    class="title add">add</button>
+                                                    class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
                                             </span>
                                         </div>
                                     </div>
@@ -161,7 +161,7 @@
                                                     <div class="app-name delete-app" id="delete-app-{{i+1}}"
                                                         attr-aria-label="delete-app-{{i+1}}"
                                                         (click)="deleteApplicationOrFile('0',application.key,application.value,i,'APPLICATIONS');">
-                                                        Delete</div>
+                                                        {{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.delete' | translate}}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -170,16 +170,16 @@
                                 <br>
                                 <form #form1="ngForm" novalidate>
                                     <div class="row">
-                                        <div class="col title">Files to open:</div>
+                                        <div class="col title">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.filesToOpen' | translate}}</div>
                                         <div class="col-auto px-0">
                                             <button *ngIf="fileList.length<6 && fileList.length" (click)="udkSubmit(5);"
-                                                id="add-file" attr.aria-label="add-file" class="title add">add</button>
+                                                id="add-file" attr.aria-label="add-file" class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
                                             <span *ngIf="fileList.length>=6" class="d-inline-block disabled-tooltip"
                                                 tabindex="0" data-toggle="tooltip"
                                                 title="{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.fileTitle' | translate}}">
                                                 <button *ngIf=fileList.length (click)="udkSubmit(5);" id="add-file"
                                                     attr.aria-label="add-file" [disabled]="fileList.length>=6"
-                                                    class="title add">add</button>
+                                                    class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
                                             </span>
                                         </div>
                                     </div>
@@ -198,7 +198,7 @@
                                                     <div class="app-name delete-app" id="delete-file-{{i+1}}"
                                                         attr-aria-label="delete-file-{{i+1}}"
                                                         (click)="deleteApplicationOrFile('0',file.key,file.value,i,'FILES');">
-                                                        Delete</div>
+                                                        {{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.delete' | translate}}</div>
                                                 </div>
                                             </div>
                                         </div>
