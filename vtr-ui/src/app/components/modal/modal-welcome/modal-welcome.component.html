@@ -69,12 +69,14 @@
 				</div>
 				<div class="content-page-2"
 					id="welcome-body-scroll">
-					<div class="row justify-content-center align-items-center font-14-bold mb-20">
-						<div class="col-auto title2 uppercase text-center">
+					<div class="row justify-content-center align-items-center font-14-bold mb-20"
+						[hidden]="deviceService.isGaming">
+						<div class="col-auto title2 uppercase">
 							{{ "welcometutorial.subtitle1" | translate }}
 						</div>
 					</div>
 					<div class="row mb-5"
+						[hidden]="deviceService.isGaming"
 						[ngClass]="{'radio-is-selected' : usageType !== null && usageType !== segmentConst.Gaming}">
 						<div class="col-4 device-image-content d-flex justify-content-center">
 							<div class="device-image"

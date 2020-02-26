@@ -397,10 +397,7 @@ export class AppComponent implements OnInit, OnDestroy {
 					this.deviceService.getMachineInfo()
 						.then((info) => {
 							if (info) {
-								if (info.isGaming) {
-									const gamingTutorialData = new WelcomeTutorial(2, '', true, SegmentConst.Gaming);
-									this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, gamingTutorialData);
-								} else if (info.cpuArchitecture && info.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
+								if (info.cpuArchitecture && info.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
 									const armTutorialData = new WelcomeTutorial(2, '', true, SegmentConst.Consumer);
 									this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, armTutorialData);
 								} else {
