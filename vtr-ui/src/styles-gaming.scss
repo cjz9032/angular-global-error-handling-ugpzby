@@ -698,6 +698,41 @@
 						}
 					}
 
+					.vtr-ui-list-support {
+						.support-list {
+							background-color: $gaming-bg !important;
+							border: none !important;
+	
+							button {
+								&:hover {
+									background-color: transparent !important;
+								}
+							}
+	
+							.title {
+								color: $gaming_lightest;
+							}
+	
+							.arrow {
+								color: $gaming_lightest !important;
+							}
+	
+							.description {
+								color: $gaming_grey_lightest;
+								font-size: 1.2rem;
+							}
+	
+							li {
+								border-bottom: 0.1rem solid $screen_dark_15 !important;
+	
+								a {
+									&:hover {
+										background-color: transparent !important;
+									}
+								}
+							}
+						}
+					}
 					vtr-widget-questions {
 						.vtr-widget-questions {
 							background-color: auto;
