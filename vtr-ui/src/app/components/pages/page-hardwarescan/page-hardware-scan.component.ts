@@ -50,11 +50,6 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 		this.routeSubscription = this.router.events.subscribe(() => this.observerURL());
-
-		let self = this;
-		window.onfocus = function(){
-			self.validateScanState();
-		};
 	}
 
 	ngOnDestroy() {
@@ -65,19 +60,6 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 			this.routeSubscription.unsubscribe();
 		}
 
-	}
-	
-	private validateScanState() {
-		if (this.hardwareScanService.isScanExecuting() && !this.hardwareScanService.isScanDoneExecuting()) {
-			this.hardwareScanService.getStatus().then((response: any) => {
-				if (response) {
-					if (response.isScanInProgress === false) {
-                        // Reloading the page!
-                        location.reload();
-                    } else {}
-				} else {}
-			}).catch((error) => {});
-		}
 	}
 
 	private observerURL() {
