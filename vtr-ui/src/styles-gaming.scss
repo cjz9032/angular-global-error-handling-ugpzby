@@ -1890,6 +1890,13 @@
 			}
 		}
 	}
+	vtr-container-card {
+		.content{
+			.title{
+				color: $gaming_lightest !important;
+			}
+		}
+	}
 }
 
 .gaming-help-modal {
@@ -1953,15 +1960,10 @@ vtr-container-card {
 			}
 		}
 	}
-	.content{
-		.title{
-			color: $gaming_lightest !important;
-		}
-	}
 }
-
 .Article-Detail-Modal{
-	*:focus{
+	&.content-gaming{
+		*:focus{
 		outline: none;
 	}
 	overflow:hidden !important;
@@ -1970,22 +1972,23 @@ vtr-container-card {
 	 margin-top:0;
 	}
 	.modal-content{
-		padding: 3rem 0 3rem;
-		.modal-body{
-			max-height: 80vh;
-		}
-	 .vtr-modal-article-detail{
-	  height: auto;
-		.article-content {
-			.article-body {
-				padding:0;
-				margin:0;
-			 .spinner-content {
-				height: 50vh;
+	    padding: 3rem 0 3rem;
+			.modal-body{
+				max-height: 80vh;
 			}
+			.vtr-modal-article-detail{
+				height: auto;
+				.article-content {
+					.article-body {
+						padding:0;
+						margin:0;
+						.spinner-content {
+						height: 50vh;
+						}
+					}
+				}
 			}
 		}
-	}
 	}
 }
 
