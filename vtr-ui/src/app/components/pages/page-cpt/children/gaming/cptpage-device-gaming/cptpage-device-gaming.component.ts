@@ -14,7 +14,7 @@ import { isNull, isUndefined } from 'util';
   styleUrls: ['./cptpage-device-gaming.component.scss']
 })
 export class CptpageDeviceGamingComponent implements OnInit, OnDestroy {
-  title = 'Dashboard';
+  title = 'Gaming Dashboard';
   cardContentPositionD: any = {};
 
   constructor(
@@ -34,7 +34,7 @@ export class CptpageDeviceGamingComponent implements OnInit, OnDestroy {
      */
   getCmsJsonResponse() {
     const queryOptions = {
-      Page: 'dashboard'
+      Page: 'gaming-dashboard'
     };
 
     return new Observable((observer) => {

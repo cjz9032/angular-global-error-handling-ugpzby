@@ -64,13 +64,12 @@
 					<div class="likely-text text-right">{{ 'dashboard.feedback.form.extremelyLikely' | translate }}</div>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col">
 					<div class="comment-tip"
 						id="feedback-form-additional-comments"
 						attr.aria-label="feedback-form-additional-comments">
-						{{'dashboard.feedback.form.tips1' | translate}}:
+						{{'dashboard.feedback.form.tips2' | translate}}:
 					</div>
 					<textarea #feedbackComment placeholder="{{'dashboard.feedback.form.comments' | translate}}"
 						class="form-control user-comment mb-1"
@@ -84,6 +83,13 @@
 					<div class="w-100 text-right comment-count">{{feedbackComment.value.length}}/1000</div>
 				</div>
 			</div>
+			<div class="row qa-item" *ngIf="showEmailField">
+				<div class="question" id="feedback-form-userEmail" attr.aria-label="feedback-form-userEmail">
+					{{'dashboard.feedback.form.emailAddressLabel' | translate}}
+				</div>
+				<input class="user-email w-100" type="email" tabindex="-1" formControlName="userEmail"
+					placeholder="{{'dashboard.feedback.form.emailAddress' | translate}}">
+			</div>
 		</form>
 		<div class="line"></div>
 		<div class="d-flex align-items-center btn-box">
@@ -91,7 +97,7 @@
 				<vtr-ui-button linkId="modal-btn-sendfeedback"
 					metricsEvent="FeatureClick"
 					metricsItem="SendFeedbackButton"
-					metricsParent="Page.Dashboard"
+					metricsParent="Dialog.Feedback"
 					[tabIndex]="feedbackSuccess ? -1 : 0"
 					[btnHeight]="true"
 					[isFullWidth]="true"
@@ -99,7 +105,7 @@
 					[label]="'dashboard.feedback.form.sendFeedback' | translate"
 					(onClick)="onFeedBackSubmit()"></vtr-ui-button>
 			</div>
-			<div class="btn-submit-screenshot text-ellipsis"
+			<!-- <div class="btn-submit-screenshot text-ellipsis"
 				[tabindex]="feedbackSuccess ? -1 : 0"
 				vtrMetrics
 				id="modal-btn-submitScreeenshot"
@@ -111,7 +117,7 @@
 				(keyup.enter)="goToMailUtility()"
 				(click)="goToMailUtility()">
 				{{'dashboard.feedback.form.submitScreenShot' | translate}}
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<div class="feedback-success d-flex align-items-center justify-content-center"

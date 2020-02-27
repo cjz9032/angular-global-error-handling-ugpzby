@@ -22,7 +22,7 @@
                     "rapidCharge": "Γρήγορη φόρτιση"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "Υπερχρον.ενεργ.",
                         "performance": "Απόδοση",
                         "balance": "Ισορροπία",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "Εγκαταστήστε πρόγραμμα οδήγησης GPU για να χρησιμοποιήσετε τη λειτουργία Υπερχρονισμού.",
                         "goInstall": "ΕΓΚΑΤΑΣΤΑΣΗ"
                     },
-                    "autoSwitch": "Μεταβείτε αυτόματα στη λειτουργία Απόδοσης κατά την εκκίνηση παιχνιδιών και επιστρέψτε μετά την έξοδο."	
+                    "autoSwitch": "Μεταβείτε αυτόματα στη λειτουργία Απόδοσης κατά την εκκίνηση παιχνιδιών και επιστρέψτε μετά την έξοδο."
                 },
                 "advancedOC": {
                     "title": "Υπερχρον. Ρυθ. για προχ.",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "Υποβολή στιγμιότυπου οθόνης",
                 "messages": {
                     "feedbackSuccess": "Σας ευχαριστούμε για τα σχόλιά σας!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>Η μπαταρία είναι σε καλή κατάσταση.</b>",
                     "Exhaustion": "Η χωρητικότητα της μπαταρίας έχει <b>υποβαθμιστεί</b>. Τοποθετήστε νέα μπαταρία.",
                     "Bad": "<b>Παρουσιάστηκε σφάλμα μπαταρίας.</b> Δεν είναι δυνατή η φόρτιση/αποφόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
-                    "NotDetected": "<b>Δεν εντοπίστηκε μπαταρία ή δεν</b> έχει συνδεθεί μπαταρία.",
+                    "NotDetected": "<b>Δεν ανιχνεύτηκε μπαταρία.</b>",
                     "NotGood": "<b>Η μπαταρία δεν είναι σε καλή κατάσταση.</b>",
                     "NotSupportACAdapter": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b>",
                     "LimitedACAdapterSupport": "<b>Ο μετασχηματιστής AC δεν μπορεί να παρέχει επαρκή ισχύ.</b>",
@@ -1270,56 +1276,56 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ΠΡΟΪΟΝ ΜΕ ΠΙΣΤΟΠΟΙΗΣΗ ENERGY STAR"
-				},
-				"dpm": {
-					"title": "Ενέργεια",
-					"subtitle": "Ρυθμίσεις ενέργειας",
-					"description": "Αυτή η ενότητα σας επιτρέπει να ελέγξετε τις προεπιλεγμένες ρυθμίσεις και να προσαρμόσετε τη χρήση ενέργειας και το σχέδιο παροχής ενέργειας ανάλογα με τις ανάγκες σας.",
-					"globalPowerSettings": {
-						"title": "Καθολικές ρυθμίσεις ενέργειας",
-						"description": "Αυτή η λειτουργία παρακάμπτει τις ρυθμίσεις σχεδίου παροχής ενέργειας ή τη χρήση ενέργειας.",
-						"powerButton": {
-							"label": "ΚΟΥΜΠΙ ΛΕΙΤΟΥΡΓΙΑΣ:",
-							"items": {
-								"doNothing": "Να μην γίνει τίποτα",
-								"sleep": "Αναστολή",
-								"hibernate": "Αδρανοποίηση",
-								"shutDown": "Τερματισμός λειτουργίας",
-								"turnOffTheDisplay": "Απενεργοποίηση οθόνης"
-							}
-						},
-						"requiredSignIn": {
-							"label": "ΑΠΑΙΤΕΙΤΑΙ ΣΥΝΔΕΣΗ:",
-							"items": {
-								"never": "Ποτέ",
-								"fromSleep": "Όταν ο υπολογιστής επανέρχεται σε λειτουργία μετά από αναστολή λειτουργίας"
-							},
-							"tip": "Σημείωση: Αυτό λειτουργεί μόνο όταν έχει οριστεί κωδικός πρόσβασης συστήματος."
-						}
-					},
-					"powerUse": {
-						"title": "Χρήση ενέργειας",
-						"description": "ΑΝ ΤΟ ΣΥΣΤΗΜΑ ΕΙΝΑΙ ΑΔΡΑΝΕΣ:",
-						"turnOffDisplay": "ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ ΟΘΟΝΗΣ ΜΕΤΑ ΑΠΟ:",
-						"turnOffHDD": "ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ ΤΟΥ HDD ΜΕΤΑ ΑΠΟ:",
-						"sleep": "ΑΝΑΣΤΟΛΗ ΜΕΤΑ ΑΠΟ:",
-						"hibernate": "ΑΔΡΑΝΟΠΟΙΗΣΗ ΜΕΤΑ ΑΠΟ:",
-						"items": {
-							"never": "Ποτέ",
-							"minute": "λεπτό",
-							"minutes": "λεπτά",
-							"hour": "ώρα",
-							"hours": "ώρες"
-						}
-					},
-					"powerPlan": {
-						"title": "Σχέδιο παροχής ενέργειας",
-						"description": "Επιλέξτε ένα σχέδιο παροχής ενέργειας για να ελέγξετε την απόδοση, τη θερμοκρασία του συστήματος και τη χρήση ενέργειας του υπολογιστή.",
-						"currentPowerPlan": {
-							"label": "ΤΡΕΧΟΝ ΣΧΕΔΙΟ"
-						}
-					}
-				},
+                },
+                "dpm": {
+                    "title": "Ενέργεια",
+                    "subtitle": "Ρυθμίσεις ενέργειας",
+                    "description": "Αυτή η ενότητα σας επιτρέπει να ελέγξετε τις προεπιλεγμένες ρυθμίσεις και να προσαρμόσετε τη χρήση ενέργειας και το σχέδιο παροχής ενέργειας ανάλογα με τις ανάγκες σας.",
+                    "globalPowerSettings": {
+                        "title": "Καθολικές ρυθμίσεις ενέργειας",
+                        "description": "Αυτή η λειτουργία παρακάμπτει τις ρυθμίσεις σχεδίου παροχής ενέργειας ή τη χρήση ενέργειας.",
+                        "powerButton": {
+                            "label": "ΚΟΥΜΠΙ ΛΕΙΤΟΥΡΓΙΑΣ:",
+                            "items": {
+                                "doNothing": "Να μην γίνει τίποτα",
+                                "sleep": "Αναστολή",
+                                "hibernate": "Αδρανοποίηση",
+                                "shutDown": "Τερματισμός λειτουργίας",
+                                "turnOffTheDisplay": "Απενεργοποίηση οθόνης"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "ΑΠΑΙΤΕΙΤΑΙ ΣΥΝΔΕΣΗ:",
+                            "items": {
+                                "never": "Ποτέ",
+                                "fromSleep": "Όταν ο υπολογιστής επανέρχεται σε λειτουργία μετά από αναστολή λειτουργίας"
+                            },
+                            "tip": "Σημείωση: Αυτό λειτουργεί μόνο όταν έχει οριστεί κωδικός πρόσβασης συστήματος."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Χρήση ενέργειας",
+                        "description": "ΑΝ ΤΟ ΣΥΣΤΗΜΑ ΕΙΝΑΙ ΑΔΡΑΝΕΣ:",
+                        "turnOffDisplay": "ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ ΟΘΟΝΗΣ ΜΕΤΑ ΑΠΟ:",
+                        "turnOffHDD": "ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ ΤΟΥ HDD ΜΕΤΑ ΑΠΟ:",
+                        "sleep": "ΑΝΑΣΤΟΛΗ ΜΕΤΑ ΑΠΟ:",
+                        "hibernate": "ΑΔΡΑΝΟΠΟΙΗΣΗ ΜΕΤΑ ΑΠΟ:",
+                        "items": {
+                            "never": "Ποτέ",
+                            "minute": "λεπτό",
+                            "minutes": "λεπτά",
+                            "hour": "ώρα",
+                            "hours": "ώρες"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Σχέδιο παροχής ενέργειας",
+                        "description": "Επιλέξτε ένα σχέδιο παροχής ενέργειας για να ελέγξετε την απόδοση, τη θερμοκρασία του συστήματος και τη χρήση ενέργειας του υπολογιστή.",
+                        "currentPowerPlan": {
+                            "label": "ΤΡΕΧΟΝ ΣΧΕΔΙΟ"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "Έξυπνη αναμονή",
                     "description": "Αυτή η δυνατότητα επιτρέπει τη ρύθμιση χρονοδιαγραμμάτων στον υπολογιστή σας, με σκοπό τη βελτιστοποίηση της εξοικονόμησης ισχύος της μπαταρίας κατά τις ώρες αδράνειας, χωρίς να επηρεάζεται η εμπειρία γρήγορης συνέχισης της κατάστασης <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Σύγχρονης αναμονής</a> κατά τις ώρες πιο εντατικής χρήσης.",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "Επιλέξτε",
                             "option2": "Άνοιγμα ιστότοπου",
-                            "option3": "Εισαγάγετε κείμενο"
-                        }
+                            "option3": "Εισαγάγετε κείμενο",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Περιεχόμενο προς συμπλήρωση",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "ΚΕΙΜΕΝΟ ΠΡΟΣ ΕΙΣΑΓΩΓΗ",
                         "placeholder": "Πληκτρολογήστε εδώ"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "Έξυπνα μέσα",
                 "title": "Αναπαραγωγή βίντεο μηδενικής αφής",
                 "desc": "Αυτή η δυνατότητα διακόπτει την αναπαραγωγή του βίντεο μόλις απομακρυνθείτε από τον υπολογιστή και συνεχίζει την αναπαραγωγή του βίντεο μόλις επιστρέψετε.",
-                "tooltip": "Αυτή η δυνατότητα δεν ισχύει για προγράμματα αναπαραγωγής βίντεο Web. Αυτή η δυνατότητα υποστηρίζεται από τα πλέον δημοφιλή τοπικά προγράμματα αναπαραγωγής βίντεο, π.χ. Windows Media Player, 5KPlayer κ.λπ."
+                "tooltip": "Αυτή η δυνατότητα δεν ισχύει για<br>προγράμματα αναπαραγωγής βίντεο Web.<br>Τα υποστηριζόμενα προγράμματα αναπαραγωγής αναγράφονται ως εξής:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Έξυπνα μέσα",

@@ -29,23 +29,26 @@ export class MetricService {
 		private commonService: CommonService,
 	) {
 		this.metricsClient = this.shellService.getMetrics();
-		MetricHelper.initializeMetricClient(this.metricsClient, shellService, commonService, hypothesisService);
 
-		document.addEventListener('vantageSessionLose', () => {
-			this.onLoseSession();
-		});
+		if (this.metricsClient) {
+			MetricHelper.initializeMetricClient(this.metricsClient, shellService, commonService, hypothesisService);
 
-		document.addEventListener('vantageSessionResume', () => {
-			this.onResumeSession();
-		});
+			document.addEventListener('vantageSessionLose', () => {
+				this.onLoseSession();
+			});
 
-		document.addEventListener('visibilitychange', () => {
-			if (document.hidden) {
-				this.onInvisable();
-			} else {
-				this.onVisable();
-			}
-		});
+			document.addEventListener('vantageSessionResume', () => {
+				this.onResumeSession();
+			});
+
+			document.addEventListener('visibilitychange', () => {
+				if (document.hidden) {
+					this.onInvisable();
+				} else {
+					this.onVisable();
+				}
+			});
+		}
 	}
 
 	private onLoseSession() {

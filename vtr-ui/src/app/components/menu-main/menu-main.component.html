@@ -22,7 +22,7 @@
 					alt="L" />
 			</a>
 		</div>
-		<div *ngIf="items.length> 0 && (deviceService.isGaming || loadMenuItem.hideMenus)"
+		<div *ngIf="items.length> 0 && (deviceService.isGaming || loadMenuItem?.hideMenus)"
 			class="navbar-brand pt-0 logo-y">
 
 			<div *ngIf="isGamingHome">
@@ -81,7 +81,7 @@
 				*ngIf="appsForYouService.UnreadMessageCount.totalMessage">{{appsForYouService.UnreadMessageCount.totalMessage}}</span>
 		</a>
 		<div class="collapse navbar-collapse"
-			*ngIf="!loadMenuItem.hideMenus"
+			*ngIf="!loadMenuItem?.hideMenus"
 			#menuTarget
 			[ngClass]="{'show':showMenu}">
 			<ul class="navbar-nav ml-auto"
@@ -365,6 +365,18 @@
 								routerLink="settings"
 								(click)="onMenuItemClick(item)"
 								(keydown.enter)="onMenuItemClick(item); menuItemKeyDown('settings')">{{ 'settings.preferenceSettings' | translate }}</a>
+							<a ngbDropdownItem
+								*ngIf="commonService.isOnline"
+								vtrMetrics
+								tabindex="1"
+								id="menu-main-lnk-open-feedback"
+								attr.aria-label="menu-main-lnk-open-feedback"
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="GiveFeedbackButton"
+								class="dropdown-item link"
+								href="javascript:void(0)"
+								(click)="openFeedbackModal()">{{ 'dashboard.feedback.title' | translate }}</a>
 							<a ngbDropdownItem
 								*ngIf="!deviceService.isArm && !userService.auth && !userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 								vtrMetrics

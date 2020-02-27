@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.13](https://bitbucket.tc.lenovo.com///compare/v1.3.12...v1.3.13) (2020-02-26)
+
+### [1.3.12](https://bitbucket.tc.lenovo.com///compare/v1.3.11...v1.3.12) (2020-02-26)
+
+
+### Bug Fixes
+
+* **FontAwesome:** migrated to v5 and refactor the necessary ([d75063b](https://bitbucket.tc.lenovo.com///commit/d75063bfb89a13c1970316bf5978267565a145b8))
+
+## [1.3.11](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/compare/v1.3.10...v1.3.11) (2020-02-25)
+
+
+### Bug Fixes
+
+* **overall:** fix tslint error in smart performance module file ([c5be239](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/commits/c5be239))
+* **overall:** update deps for ng9 and refactor the necessary ([ef87de8](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/commits/ef87de8))
+
+
+
+## [1.3.10](https://bitbucket.tc.lenovo.com///compare/v1.3.9...v1.3.10) (2020-02-25)
+
+### [1.3.9](https://bitbucket.tc.lenovo.com///compare/v1.3.8...v1.3.9) (2020-02-25)
+
+
+### Bug Fixes
+
+* **nls:** merge test to develop ([60ed425](https://bitbucket.tc.lenovo.com///commit/60ed4250dcbd86606dc8baf968818825efbc2896))
+
+### [1.3.7](https://bitbucket.tc.lenovo.com///compare/v1.3.6...v1.3.7) (2020-02-24)
+
 ### [1.3.8](https://bitbucket.tc.lenovo.com///compare/v1.3.6...v1.3.8) (2020-02-24)
 
 

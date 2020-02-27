@@ -40,7 +40,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public machineType: any;
 	public thresholdLoadingStatus = false;
 	public conservationModeStatus = new FeatureStatus(false, true);
-
+	public cameraPrivacyGreyOut = true;
+	public microPhoneGreyOut = true;
+	public cameraNoAccessNoteShow = false;
+	public isCameraPrivacyCacheExist = false;
 	public quickSettingsWidget = [
 		{
 			// tooltipText: 'MICROPHONE',
@@ -74,6 +77,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		private vantageShellService: VantageShellService,
 		private router: Router) {
 		this.cameraStatus.permission = false;
+		this.cameraStatus.isLoading = false;
+		this.microphoneStatus.isLoading = false;
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
@@ -108,11 +113,17 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	initDataFromCache() {
 		const cameraState: FeatureStatus = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
 		if (cameraState) {
+			if (cameraState.permission) {
+				this.cameraPrivacyGreyOut = false;
+			} else {
+				this.cameraNoAccessNoteShow = true;
+			}
+			this.isCameraPrivacyCacheExist = true;
 			this.cameraStatus.available = cameraState.available;
 			this.cameraStatus.status = cameraState.status;
 			this.cameraStatus.isLoading = false;
 			this.cameraStatus.permission = cameraState.permission;
-		}
+		} 
 	}
 
 	ngOnDestroy() {
@@ -189,8 +200,12 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				// this.cameraStatus.isLoading = true;
 				this.displayService.getCameraSettingsInfo()
 					.then((result) => {
-                    this.cameraStatus.isLoading = false;
+					this.cameraStatus.isLoading = false;
+					this.cameraPrivacyGreyOut = false;
                     if (result) {
+						if (!result.permission) {
+							this.cameraNoAccessNoteShow = true;
+						}
                         this.cameraStatus.permission = result.permission;
                         this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus); this.cameraStatus.isLoading = false;
                     }
@@ -306,7 +321,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService.getMicrophoneStatus()
 				.then((featureStatus: FeatureStatus) => {
-                this.microphoneStatus = featureStatus;
+				this.microphoneStatus = featureStatus;
+				this.microPhoneGreyOut = false;
                 if (featureStatus.available) {
                     const win: any = window;
                     if (win.VantageShellExtension && win.VantageShellExtension.AudioClient) {

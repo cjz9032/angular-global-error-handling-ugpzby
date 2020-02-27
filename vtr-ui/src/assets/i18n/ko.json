@@ -22,7 +22,7 @@
                     "rapidCharge": "급속 충전"
                 },
                 "legionEdge": {
-					"thermalMode2": {
+                    "thermalMode2": {
                         "OC_On": "오버클럭 켜기",
                         "performance": "성능",
                         "balance": "밸런스",
@@ -127,7 +127,7 @@
                         "gpuDriverLack": "오버클럭 기능을 사용하려면 GPU 드라이버를 설치합니다.",
                         "goInstall": "설치하기"
                     },
-                    "autoSwitch": "게임을 실행하면 Performance 모드로 자동으로 전환되고 게임을 종료하면 다시 전환됩니다."	
+                    "autoSwitch": "게임을 실행하면 Performance 모드로 자동으로 전환되고 게임을 종료하면 다시 전환됩니다."
                 },
                 "advancedOC": {
                     "title": "오버클럭 고급 설정",
@@ -867,7 +867,13 @@
                 "submitScreenShot": "스크린 샷 제출",
                 "messages": {
                     "feedbackSuccess": "소중한 의견을 들려주셔서 감사합니다!"
-                }
+                },
+                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
+                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
+                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
+                "tips2": "Please leave any additional comments below",
+                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
+                "emailAddress": "Email address"
             }
         },
         "quickSettings": {
@@ -1034,7 +1040,7 @@
                     "Good": "<b>배터리의 상태가 좋습니다.</b>",
                     "Exhaustion": "배터리 용량이 <b>저하</b>되었습니다. 새 배터리를 교체하십시오.",
                     "Bad": "<b>배터리 오류가 발생했습니다.</b> 배터리를 충전/방전할 수 없습니다. 배터리를 교체하십시오.",
-                    "NotDetected": "<b>배터리가 감지되지 않거나 배터리</b>에 꽂혀 있지 않습니다.",
+                    "NotDetected": "<b>감지된 배터리가 없습니다.</b>",
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
                     "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b>",
                     "LimitedACAdapterSupport": "<b>AC 어댑터는 충분한 전원을 공급하지 못합니다.</b>",
@@ -1703,8 +1709,11 @@
                         "options": {
                             "option1": "선택하십시오.",
                             "option2": "웹 사이트 열기",
-                            "option3": "텍스트 입력"
-                        }
+                            "option3": "텍스트 입력",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "채워질 콘텐츠",
                     "apply": {
@@ -1719,6 +1728,14 @@
                     "enterText": {
                         "title": "입력할 텍스트",
                         "placeholder": "여기에 입력해 주십시오"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first"
                     }
                 },
                 "fnCtrlKey": {
@@ -1954,7 +1971,7 @@
                 "heading": "지능형 미디어",
                 "title": "제로 터치 비디오 재생",
                 "desc": "이 기능은 컴퓨터를 두고 자리를 떠나면 비디오를 일시 정지하고 자리에 다시 돌아 오면 비디오를 다시 시작합니다.",
-                "tooltip": "이 기능은 웹 비디오 플레이어에는 적용되지 않습니다. 대중적인 비디오 플레이어(예: Windows Media Player, 5KPlayer 등)가 이 기능을 지원합니다."
+                "tooltip": "이 기능은<br>웹 비디오 플레이어에서 사용할 수 없습니다.<br>지원 가능한 플레이어는 다음과 같습니다.<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "지능형 미디어",
