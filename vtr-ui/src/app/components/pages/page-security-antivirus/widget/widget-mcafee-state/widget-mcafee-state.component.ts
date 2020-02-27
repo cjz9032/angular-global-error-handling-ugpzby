@@ -42,7 +42,8 @@ export class WidgetMcafeeStateComponent implements OnInit {
 	}
   }
 
-  retry() {
+  retry(status) {
+	  status = 'loading';
 	  this.common.refresh();
   }
 }

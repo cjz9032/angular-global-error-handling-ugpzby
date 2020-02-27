@@ -83,8 +83,13 @@ export class AntiVirusViewModel {
 			this.setDefenderStatus(this.windowsDefender.status,
 				this.windowsDefender.firewallStatus,
 				this.currentPage);
-		} else if (cacheWindowsDefender) {
-			this.windowsDefender = cacheWindowsDefender;
+		} else {
+			if (cacheWindowsDefender) {
+				this.windowsDefender = cacheWindowsDefender;
+				this.setDefenderStatus(this.windowsDefender.status,
+					this.windowsDefender.firewallStatus,
+					this.currentPage);
+			}
 		}
 
 		const cacheShowMetricButton = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowMetricButton);
@@ -238,6 +243,8 @@ export class AntiVirusViewModel {
 		}).on(EventTypes.avMcafeeTrialUrlEvent, (data) => {
 			this.mcafee.trialUrl = data;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeTrialUrl, this.mcafee.trialUrl);
+		}).on(EventTypes.avRefreshedEvent, (data) => {
+			this.antiVirusPage(data);
 		});
 
 	}
@@ -253,6 +260,13 @@ export class AntiVirusViewModel {
 			this.currentPage = 'others';
 		} else {
 			this.currentPage = 'windows';
+			if (antiVirus.windowsDefender) {
+				this.setDefenderStatus(
+					antiVirus.windowsDefender.status !== undefined ? antiVirus.windowsDefender.status : null,
+					antiVirus.windowsDefender.firewallStatus !== undefined ? antiVirus.windowsDefender.firewallStatus : null,
+					this.currentPage
+				);
+			}
 			this.mcafeeInstall = false;
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.currentPage);
@@ -542,6 +556,8 @@ export class AntiVirusViewModel {
 				avStatus = 'loading';
 				setTimeout(() => {
 					avStatus = 'failedLoad';
+					this.windowsDefenderstatusList[0].status = avStatus;
+					console.log(` time out av status: ${this.windowsDefenderstatusList[0].status}`)
 				}, 15000);
 			}
 		} else if (typeof av === 'boolean' && typeof fw !== 'boolean') {
@@ -550,6 +566,7 @@ export class AntiVirusViewModel {
 				fwStatus = 'loading';
 				setTimeout(() => {
 					fwStatus = 'failedLoad';
+					this.windowsDefenderstatusList[1].status = fwStatus;
 				}, 15000);
 			}
 		} else {
@@ -571,5 +588,7 @@ export class AntiVirusViewModel {
 			title: this.homeNetwork,
 		}];
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.windowsDefenderstatusList);
+		console.log(`av status: ${this.windowsDefenderstatusList[0].status}`);
+		console.log(`fw status: ${this.windowsDefenderstatusList[1].status}`);
 	}
 }
