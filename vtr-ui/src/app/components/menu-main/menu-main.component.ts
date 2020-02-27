@@ -35,6 +35,7 @@ import { BacklightService } from '../pages/page-device-settings/children/subpage
 import { StringBooleanEnum } from '../../data-models/common/common.interface';
 import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
+import { FeedbackService } from 'src/app/services/feedback/feedback.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -113,6 +114,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		private newFeatureTipService: NewFeatureTipService,
 		private viewContainerRef: ViewContainerRef,
 		public cardService: CardService,
+		private feedbackService: FeedbackService,
 		private backlightService: BacklightService
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
@@ -494,5 +496,10 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	openModernPreloadModal() {
 		this.showMenu = false;
 		this.dialogService.openModernPreloadModal();
+	}
+
+	openFeedbackModal() {
+		this.showMenu = false;
+		this.feedbackService.openFeedbackModal();
 	}
 }

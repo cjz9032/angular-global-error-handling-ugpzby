@@ -146,6 +146,18 @@
 			</div>
 
 			<div class="row"
+				[vtrAppSearchScroller]="['search-feedback']">
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
+						[description]="'dashboard.feedback.subtitle' | translate"
+						[actionName]="'dashboard.feedback.button' | translate"
+						[isOnline]="isOnline"
+						(feedBackClick)="openFeedbackModal()">
+					</vtr-widget-feedback>
+				</div>
+			</div>
+
+			<div class="row"
 				[vtrAppSearchScroller]="['search-user-guide']">
 				<div class="col col-12 px-0 pt-0 pb-40">
 					<vtr-widget-support [title]="'support.documentation.title' | translate"

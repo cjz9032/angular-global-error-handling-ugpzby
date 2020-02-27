@@ -846,6 +846,10 @@
 			"welcomeToVantage": "Welcome to the next generation of Vantage",
 			"systemHealth": "System Health"
 		},
+		"systemUpdate": {
+			"subtitle": "Update your drivers, BIOS, and other software.",
+			"CheckForSystemUpdates": "Check for system updates"
+		},
 		"feedback": {
 			"title": "Give Feedback",
 			"subtitle": "Tell us what you think about Vantage.",
