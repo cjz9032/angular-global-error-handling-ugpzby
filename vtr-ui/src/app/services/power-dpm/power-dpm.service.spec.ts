@@ -102,16 +102,16 @@ describe('PowerDpmService', () => {
 		powerDpmService.ngOnDestroy();
 	}));
 
-	it('#getCurrentPowerPlanObs should emit current PowerPlan', () => {
-		let currentPowerPlan = null;
-		let mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
-		powerDpmService = TestBed.get(PowerDpmService);
-		spyOn(powerDpmService, 'getAllPowerPlansObs').and.returnValue(of(mockAllPowerPlans));
-		powerDpmService.getCurrentPowerPlanObs().subscribe((p) => {
-			currentPowerPlan = p;
-		});
-		expect(currentPowerPlan.powerPlanName).toEqual('Balanced');
-	});
+	// it('#getCurrentPowerPlanObs should emit current PowerPlan', () => {
+	// 	let currentPowerPlan = null;
+	// 	let mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
+	// 	powerDpmService = TestBed.get(PowerDpmService);
+	// 	spyOn(powerDpmService, 'getAllPowerPlansObs').and.returnValue(of(mockAllPowerPlans));
+	// 	powerDpmService.getCurrentPowerPlanObs().subscribe((p) => {
+	// 		currentPowerPlan = p;
+	// 	});
+	// 	expect(currentPowerPlan.powerPlanName).toEqual('Balanced');
+	// });
 
 	it('#setPowerButton should call devicePowerDPM.setPowerButton', () => {
 		let mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;

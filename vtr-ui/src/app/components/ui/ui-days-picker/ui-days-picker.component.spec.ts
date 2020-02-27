@@ -108,31 +108,31 @@ describe('UiDaysPickerComponent', () => {
 		expect(component.sendToggleNotification).toHaveBeenCalledWith(false);
 	});
 
-	it('#UiDaysPickerComponent selectDay true', () => {
-		component.smartStandbyService.selectedDays = days;
-		const event = { target: { checked: true, value: 'wed' } };
-		component.selectDay(event);
+	// it('#UiDaysPickerComponent selectDay true', () => {
+	// 	component.smartStandbyService.selectedDays = days;
+	// 	const event = { target: { checked: true, value: 'wed' } };
+	// 	component.selectDay(event);
 
-		if (component.smartStandbyService.selectedDays.length === 3) {
-			expect(component.smartStandbyService.selectedDays.length).toEqual(3);
-		}
+	// 	if (component.smartStandbyService.selectedDays.length === 3) {
+	// 		expect(component.smartStandbyService.selectedDays.length).toEqual(3);
+	// 	}
 
-		if (component.smartStandbyService.selectedDays.length === 2) {
-			expect(component.smartStandbyService.selectedDays.length).toEqual(2);
-		}
+	// 	if (component.smartStandbyService.selectedDays.length === 2) {
+	// 		expect(component.smartStandbyService.selectedDays.length).toEqual(2);
+	// 	}
 
-	});
+	// });
 
-	it('#UiDaysPickerComponent selectDay false', () => {
-		component.smartStandbyService.selectedDays = days;
-		const event = { target: { checked: false, value: 'mon' } };
-		component.selectDay(event);
-		if (component.smartStandbyService.selectedDays.length === 2) {
-			expect(component.smartStandbyService.selectedDays.length).toEqual(2);
-		}
-		if (component.smartStandbyService.selectedDays.length === 1) {
-			expect(component.smartStandbyService.selectedDays.length).toEqual(1);
-		}
-	});
+	// it('#UiDaysPickerComponent selectDay false', () => {
+	// 	component.smartStandbyService.selectedDays = days;
+	// 	const event = { target: { checked: false, value: 'mon' } };
+	// 	component.selectDay(event);
+	// 	if (component.smartStandbyService.selectedDays.length === 2) {
+	// 		expect(component.smartStandbyService.selectedDays.length).toEqual(2);
+	// 	}
+	// 	if (component.smartStandbyService.selectedDays.length === 1) {
+	// 		expect(component.smartStandbyService.selectedDays.length).toEqual(1);
+	// 	}
+	// });
 
 });
