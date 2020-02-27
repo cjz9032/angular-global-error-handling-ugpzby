@@ -13,10 +13,10 @@ export class ToolbarToastService {
     ) {
 
     }
-    showVantageToolbarToast() {
-	    this.logger.debug('toolBarToast service Call showVantageToolbarToast ');
-        this.toolbartoast = this.shellService.getToolbarToastFeature();
-        this.toolbartoast.showVantageToolbarToast();
-    }
+    // showVantageToolbarToast() {
+	//     this.logger.debug('toolBarToast service Call showVantageToolbarToast ');
+    //     this.toolbartoast = this.shellService.getToolbarToastFeature();
+    //     this.toolbartoast.showVantageToolbarToast();
+    // }
 }
 
