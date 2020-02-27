@@ -439,14 +439,11 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 
 	public updateWifiSecurityState(state = false) {
-		if (!state) {
-			this.quickSettings[2].isVisible = false;
-		} else {
-			this.commonService.setLocalStorageValue(LocalStorageKey.WifiSecurityCache, true);
-			this.quickSettings[2].isVisible = true;
-		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.WifiSecurityCache, state);
+		this.quickSettings[2].isVisible = state;
 		this.checkQuickSettingsVisibility();
 	}
+
 	public runLocationService() {
 		const wifiSecurity = this.securityAdvisor.wifiSecurity;
 		if (this.wifiSecurity) {
