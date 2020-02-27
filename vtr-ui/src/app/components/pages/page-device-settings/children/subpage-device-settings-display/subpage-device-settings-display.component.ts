@@ -223,20 +223,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		if (this.commonService.getLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus) === 'true') {
 			this.showECMReset = true;
 		}
-		this.inWhiteList().then(isSupport => {
-			if (isSupport) {
-				this.initDisplayColorTempFromCache();
-				this.initEyeCareModeFromCache();
-				this.statusChangedLocationPermission();
-				this.initEyecaremodeSettings();
-				this.startEyeCareMonitor();
-				this.commonService.setLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus, 'false');
-				this.showECMReset = false;
-			} else {
-				this.showECMReset = true;
-				this.resetEyecaremodeAllSettings();
-			}
-		});
 
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
@@ -271,6 +257,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				this.statusChangedLocationPermission();
 				this.initEyecaremodeSettings();
 				this.startEyeCareMonitor();
+				this.commonService.setLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus, 'false');
+				this.showECMReset = false;
 			} else {
 				this.showECMReset = true;
 				this.resetEyecaremodeAllSettings();
@@ -359,8 +347,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.getOLEDPowerControlCapability();
 		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (machineType === 1) {
-			//commented below line to temporarily hide in current release
-			//this.getPriorityControlCapability();
+			// commented below line to temporarily hide in current release
+			// this.getPriorityControlCapability();
 		} else {
 			this.displayPriorityModal.capability = false;
 			this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
