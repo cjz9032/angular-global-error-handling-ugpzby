@@ -62,7 +62,7 @@ export class UserDefinedKeyComponent implements OnInit {
 				value: 3,
 				path: '3',
 				actionType: OPEN_WEB.str
-            },
+            }
             // {
 			// 	title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option4',
 			// 	value: 4,
@@ -117,28 +117,29 @@ export class UserDefinedKeyComponent implements OnInit {
 				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
 				this.description = this.udkActionInfo.actionValue;
                 this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
-            case 3:
-                this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
-                this.applicationList = this.udkActionInfo.applicationList;
-                this.fileList = this.udkActionInfo.fileList;
-                this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
                 break;
-            case 4:
-                this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
-                this.keyCode = this.udkActionInfo.actionValue;
-                this.keyCodeValue=this.keyCode;
-                var splitted = this.keyCode.split(" "); 
-                var mappedString="";
-                for(let i = 0; i < splitted.length; i++)
-                    {
-                        this.keyboardMappedValues[splitted[i]] = this.keyboardMappedValues[splitted[i]] ? this.keyboardMappedValues[splitted[i]].charAt(0).toUpperCase() + this.keyboardMappedValues[splitted[i]].substr(1).toLowerCase() : ''
-                        mappedString = mappedString + "+ " +  this.keyboardMappedValues[splitted[i]];
-                        this.counter++;
-                        }
-                    mappedString = mappedString.substring(1);
-                    this.keyCode=mappedString;
-                    this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
-                    break;		    
+            // case 3:
+            //     this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
+            //     this.applicationList = this.udkActionInfo.applicationList;
+            //     this.fileList = this.udkActionInfo.fileList;
+            //     this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+            //     break;
+            // case 4:
+            //     this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
+            //     this.keyCode = this.udkActionInfo.actionValue;
+            //     this.keyCodeValue=this.keyCode;
+            //     var splitted = this.keyCode.split(" "); 
+            //     var mappedString="";
+            //     for(let i = 0; i < splitted.length; i++)
+            //         {
+            //             this.keyboardMappedValues[splitted[i]] = this.keyboardMappedValues[splitted[i]] ? this.keyboardMappedValues[splitted[i]].charAt(0).toUpperCase() + this.keyboardMappedValues[splitted[i]].substr(1).toLowerCase() : ''
+            //             mappedString = mappedString + "+ " +  this.keyboardMappedValues[splitted[i]];
+            //             this.counter++;
+            //             }
+            //         mappedString = mappedString.substring(1);
+            //         this.keyCode=mappedString;
+            //         this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+            //         break;		    
 		}
 	}
 	checkDropDown(userDefineDrop: any, i, event) {

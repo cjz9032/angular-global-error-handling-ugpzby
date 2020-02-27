@@ -212,9 +212,11 @@ export class PowerDpmService implements OnDestroy {
 	}
 	private getCurrentPowerPlan(allPowerPlans: AllPowerPlans): PowerPlan {
 		let currentPowerPlan = null;
-		let currentPowerPlanName = allPowerPlans.activePowerPlan;
-		if (currentPowerPlanName && allPowerPlans.powerPlanList) {
-			currentPowerPlan = allPowerPlans.powerPlanList.find(p => p.powerPlanName == currentPowerPlanName);
+		if(allPowerPlans){
+			let currentPowerPlanName = allPowerPlans.activePowerPlan;
+			if (currentPowerPlanName && allPowerPlans.powerPlanList) {
+				currentPowerPlan = allPowerPlans.powerPlanList.find(p => p.powerPlanName == currentPowerPlanName);
+			}
 		}
 		return currentPowerPlan;
 	}
