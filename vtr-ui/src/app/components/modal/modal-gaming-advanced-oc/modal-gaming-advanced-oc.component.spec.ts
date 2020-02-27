@@ -1,25 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalGamingAdvancedOCComponent } from './modal-gaming-advanced-oc.component';
+// import { ModalGamingAdvancedOCComponent } from './modal-gaming-advanced-oc.component';
 
-describe('ModalGamingAdvancedOCComponent', () => {
-  let component: ModalGamingAdvancedOCComponent;
-  let fixture: ComponentFixture<ModalGamingAdvancedOCComponent>;
+// describe('ModalGamingAdvancedOCComponent', () => {
+//   let component: ModalGamingAdvancedOCComponent;
+//   let fixture: ComponentFixture<ModalGamingAdvancedOCComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ModalGamingAdvancedOCComponent ]
-    })
-    .compileComponents();
-  }));
+//   beforeEach(async(() => {
+//     TestBed.configureTestingModule({
+//       declarations: [ ModalGamingAdvancedOCComponent ]
+//     })
+//     .compileComponents();
+//   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ModalGamingAdvancedOCComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//   beforeEach(() => {
+//     fixture = TestBed.createComponent(ModalGamingAdvancedOCComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });
