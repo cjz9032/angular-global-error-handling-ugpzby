@@ -103,10 +103,8 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 	}
 
 	retry(item, e) {
+		e.stopPropagation();
 		item.retryText = undefined;
 		item.retry();
-		e.stopPropagation();
-		e.preventDefault();
-		return false;
 	}
 }
