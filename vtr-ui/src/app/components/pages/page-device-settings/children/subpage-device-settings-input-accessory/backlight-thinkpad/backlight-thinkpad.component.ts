@@ -3,6 +3,8 @@ import { BacklightStatusEnum, BacklightLevelEnum } from '../backlight/backlight.
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-backlight-thinkpad',
@@ -13,6 +15,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	private kbdBacklightInterval: any;
 	currentMode: BacklightStatusEnum = BacklightStatusEnum.OFF;
 	@Output() showHide = new EventEmitter<boolean>();
+	baseAuto = 'base';
 	modes = [
 		{
 			title: 'device.deviceSettings.inputAccessories.backlight.level.auto',
@@ -35,21 +38,34 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 			available: true
 		},
 	];
+	cacheData = {modes: this.modes, currentMode: this.currentMode};
+
 	constructor(
 		private keyboardService: InputAccessoriesService,
-		private logger: LoggerService) {
+		private logger: LoggerService,
+		private commonService: CommonService) {
 			this.getKBDBacklightCapability();
 		}
 
 	ngOnInit() {
+		this.initDataFromCache();
 		this.kbdBacklightInterval = setInterval(async () => {
 			this.logger.debug('Trying after 30 seconds for getting kbdBacklight status');
 			this.getKBDBacklightCapability();
 		}, 30000);
 	}
 
+	private initDataFromCache() {
+		this.cacheData = this.commonService.getLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
+		this.modes = this.cacheData.modes;
+		this.currentMode = this.cacheData.currentMode;
+		this.isBaseAuto(this.modes, BacklightStatusEnum.AUTO);
+	}
+
 	public updateMode(mode) {
 		this.currentMode = mode;
+		this.cacheData.currentMode = this.currentMode;
+		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
 		if (this.currentMode === BacklightStatusEnum.AUTO) {
 			this.setKBDBacklightStatus(BacklightStatusEnum.OFF);
 			this.setAutomaticKBDBacklight(true);
@@ -72,6 +88,8 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 							this.modes = this.removeObjByValue(this.modes, BacklightStatusEnum.LEVEL_1);
 							this.modes = this.removeObjByValue(this.modes, BacklightStatusEnum.LEVEL_2);
 							this.modes = this.removeObjByValue(this.modes, BacklightStatusEnum.OFF);
+							this.cacheData.modes = this.modes;
+							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
 						}
 					}).catch(error => {
 						this.logger.error('BacklightThinkpadComponent:GetKBDBacklightCapability', error.message);
@@ -88,6 +106,15 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		return array.filter(e => e.value !== value);
 	}
 
+	public isBaseAuto(array: any[], value: string) {
+		const element = array.find(e => e.value === value);
+		if (element) {
+			this.baseAuto = 'auto';
+		} else {
+			this.baseAuto = 'base';
+		}
+	}
+
 	public getAutoKBDBacklightCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
@@ -98,6 +125,9 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 							this.getAutoKBDStatus();
 						} else {
 							this.modes = this.removeObjByValue(this.modes, BacklightStatusEnum.AUTO);
+							this.isBaseAuto(this.modes, BacklightStatusEnum.AUTO);
+							this.cacheData.modes = this.modes;
+							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
 						}
 					}).catch(error => {
 						this.logger.error('BacklightThinkpadComponent:getAutoKBDBacklightCapability', error.message);
@@ -118,6 +148,8 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 						this.logger.info('BacklightThinkpadComponent:getAutoKBDStatus', res);
 						if (res) {
 							this.currentMode = BacklightStatusEnum.AUTO;
+							this.cacheData.currentMode = this.currentMode;
+							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
 						}
 					}).catch(error => {
 						this.logger.error('BacklightThinkpadComponent:GetAutoKBDStatus', error.message);
@@ -138,6 +170,8 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 						this.logger.info('BacklightThinkpadComponent:getKBDBacklightStatus', res);
 						if (res !== BacklightStatusEnum.AUTO && this.currentMode !== BacklightStatusEnum.AUTO) {
 							this.currentMode = this.compare(res);
+							this.cacheData.currentMode = this.currentMode;
+							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
 						}
 					}).catch(error => {
 						this.logger.error('BacklightThinkpadComponent:GetKBDBacklightStatus', error.message);
@@ -160,9 +194,13 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 							this.modes = this.removeObjByValue(this.modes, BacklightStatusEnum.OFF);
 							this.modes = this.removeObjByValue(this.modes, BacklightStatusEnum.LEVEL_1);
 							this.modes = this.removeObjByValue(this.modes, BacklightStatusEnum.LEVEL_2);
+							this.cacheData.modes = this.modes;
+							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
 						} else {
 							if (res === BacklightLevelEnum.ONE_LEVEL) {
 								this.modes = this.removeObjByValue(this.modes, BacklightStatusEnum.LEVEL_2);
+								this.cacheData.modes = this.modes;
+								this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
 							}
 							this.getKBDBacklightStatus();
 						}

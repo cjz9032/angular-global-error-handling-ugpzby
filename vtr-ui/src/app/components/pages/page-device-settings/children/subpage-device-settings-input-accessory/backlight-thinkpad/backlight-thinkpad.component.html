@@ -1,7 +1,7 @@
 <vtr-ui-row-switch *ngIf="modes.length !== 0"
 	[title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"
 	componentName="Input Accessories"
-	[caption]="'device.deviceSettings.inputAccessories.backlight.description.base' | translate"
+	[caption]="'device.deviceSettings.inputAccessories.backlight.description.' + baseAuto | translate"
 	[leftIcon]="['fal', 'keyboard']"
 	[showChildContent]="true"
 	[theme]="'white'"

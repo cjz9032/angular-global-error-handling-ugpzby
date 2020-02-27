@@ -90,7 +90,7 @@ ui-popover {
 		}
 
 		.enable-button {
-			background: $gradient_main;
+			background: $blueFill;
 			border-radius: 3rem;
 			color: $light;
 			font-size: $fontsize_sm;
@@ -102,17 +102,19 @@ ui-popover {
 
 		.cancel-link {
 			height: 2.5rem;
-			color: $main;
+			color: $blueFill;
 			font-size: $fontsize_sm;
 			vertical-align: middle;
 			padding: 0 0.5rem;
 			font-weight: $weight_600;
 			margin-top: 1rem;
-			border-bottom: 2px solid $btn_secondary_color;
+			border-bottom: 2px solid $blueFill;
 			cursor: pointer;
-			&:hover{
-				text-decoration: none;
-			}
+			&:hover {
+				color: $blueHover;
+				border-bottom: 2px solid $blueHover;			
+				cursor: pointer;
+			  }		
 		}
 	}
 	#restart_popup{
