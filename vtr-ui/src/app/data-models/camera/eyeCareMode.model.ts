@@ -8,7 +8,7 @@ export class EyeCareMode {
 export class SunsetToSunriseStatus {
 	constructor(
 		public available: boolean,
-		public status = false,
+		public status: boolean,
 		public permission: boolean,
 		public sunriseTime: string,
 		public sunsetTime: string
