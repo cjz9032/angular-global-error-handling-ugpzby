@@ -37,6 +37,7 @@ export class AntiVirusLandingViewModel {
 	};
 	currentPage: string;
 	translateString: any;
+	loadTime = 15000;
 	constructor(translate: TranslateService, avModel: phoenix.Antivirus, public commonService: CommonService) {
 		avModel.on(EventTypes.avRefreshedEvent, (av) => {
 			this.setPage(av);
@@ -50,7 +51,8 @@ export class AntiVirusLandingViewModel {
 			'security.landing.antivirusContent',
 			'security.landing.goAntivirus',
 			'security.landing.firewallContent',
-			'security.landing.goFirewall'
+			'security.landing.goFirewall',
+			'common.ui.failedLoad'
 		]).subscribe((res: any) => {
 			this.translateString = res;
 			if (!this.avStatus.detail) {
@@ -109,6 +111,7 @@ export class AntiVirusLandingViewModel {
 	}
 
 	setAntivirusStatus(av: boolean | undefined, fw: boolean | undefined, currentPage: string) {
+		fw = undefined;
 		if (!this.translateString) {
 			return;
 		}
@@ -126,6 +129,10 @@ export class AntiVirusLandingViewModel {
 			if (currentPage === 'windows') {
 				this.fwStatus.status = 'loading';
 				this.fwStatus.detail = this.translateString['common.securityAdvisor.loading'];
+				setTimeout(() => {
+					this.fwStatus.status = 'failedLoad';
+					this.fwStatus.detail = this.translateString['common.ui.failedLoad'];
+				}, this.loadTime);
 			}
 		} else if (typeof av !== 'boolean' && typeof fw === 'boolean') {
 			this.fwStatus.status = fw ? 'enabled' : 'disabled';
@@ -133,6 +140,23 @@ export class AntiVirusLandingViewModel {
 			if (currentPage === 'windows') {
 				this.avStatus.status = 'loading';
 				this.avStatus.detail = this.translateString['common.securityAdvisor.loading'];
+				setTimeout(() => {
+					this.avStatus.status = 'failedLoad';
+					this.avStatus.detail = this.translateString['common.ui.failedLoad'];
+				}, this.loadTime);
+			}
+		} else {
+			if (currentPage === 'windows') {
+				this.avStatus.status = 'loading';
+				this.avStatus.detail = this.translateString['common.securityAdvisor.loading'];
+				this.fwStatus.status = 'loading';
+				this.fwStatus.detail = this.translateString['common.securityAdvisor.loading'];
+				setTimeout(() => {
+					this.avStatus.status = 'failedLoad';
+					this.avStatus.detail = this.translateString['common.ui.failedLoad'];
+					this.fwStatus.status = 'failedLoad';
+					this.fwStatus.detail = this.translateString['common.ui.failedLoad'];
+				}, this.loadTime);
 			}
 		}
 	}

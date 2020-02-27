@@ -117,4 +117,8 @@ export class AntivirusCommon {
 		return this.nls.get('*');
 	}
 
+	refresh() {
+		this.antivirus.refresh();
+	}
+
 }

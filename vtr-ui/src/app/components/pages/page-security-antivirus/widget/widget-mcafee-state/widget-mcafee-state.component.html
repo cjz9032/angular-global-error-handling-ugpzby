@@ -6,15 +6,15 @@
             <div *ngIf="list.status !== 'disabled' && list.status !== 'not-installed'" class="icon-bkg icon-check">
               <fa-icon [icon]="['fas', 'check']"></fa-icon>
             </div>
-            <div *ngIf="list.status === 'disabled' || list.status === 'not-installed'" class="icon-bkg icon-times">
+            <div *ngIf="list.status === 'disabled' || list.status === 'not-installed' || list.status === 'failedLoad'" class="icon-bkg icon-times">
               <fa-icon [icon]="['fas', 'times']"></fa-icon>
             </div>
           </div>
           <div *ngIf="list.status==='loading'" class="spinner-content">
             <div class="spinner-border text-primary progress-spinner" role="status"></div>
-          </div>
+		  </div>
         </div>
-        <div class="col-7 text px-0 text-ellipsis"
+        <div class="col-7 text px-0"
 			title="{{list.title | translate}}"
 			[innerHTML]="list.title | translate | characterLimit:28">
         </div>
@@ -22,9 +22,12 @@
 		     <h3 class="text-ellipsis text-color mb-0"
 		      [ngClass]="{'text-d-color': list.status !== 'enabled' && list.status !== 'installed' }">
 			    <span class="text-uppercase"
-				title="{{list.status | statusText | translate | uppercase}}"
-				[innerHTML]="list.status | statusText | translate">
-			</span>
+					title="{{list.status | statusText | translate | uppercase}}"
+					[innerHTML]="list.status | statusText | translate">
+				</span>
+			<a *ngIf="list.status === 'failedLoad'"
+				href="javascript:void(0);"
+				(click)="retry()">{{'common.ui.retry' | translate}}</a>
 		  </h3>
         </div>
       </div>
@@ -38,7 +41,7 @@
             </div>
           </div>
         </div>
-		<div class="col-7 text px-0 line-through text-ellipsis"
+		<div class="col-7 text px-0 line-through"
 			title="{{list.title | translate}}"
 			[innerHTML]="list.title | translate | characterLimit:26">
 		</div>

@@ -139,8 +139,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			});
 		});
 		this.fetchCMSArticles();
-		const antivirus = new AntivirusErrorHandle(this.antivirus);
-		antivirus.refreshAntivirus();
+		// const antivirus = new AntivirusErrorHandle(this.antivirus);
+		// antivirus.refreshAntivirus();
 	}
 
 	ngOnDestroy() {

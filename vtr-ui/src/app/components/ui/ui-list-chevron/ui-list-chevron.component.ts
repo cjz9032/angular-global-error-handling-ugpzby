@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { BaseComponent } from '../../base/base.component';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
 	selector: 'vtr-ui-list-chevron',
@@ -28,7 +29,8 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 		3: 'orange',
 		4: 'text-dark',
 		5: 'black',
-		6: 'text-blue'
+		6: 'text-blue',
+		7: 'text-gray'
 	};
 
 	/**
@@ -43,7 +45,7 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 		6: 'circle'
 	};
 
-	constructor(private deviceService: DeviceService) { super(); }
+	constructor(private deviceService: DeviceService, public router: Router) { super(); }
 
 
 	getItemStatusClass(item) {
@@ -98,5 +100,13 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 		if (path) {
 			this.deviceService.launchUri(path);
 		}
+	}
+
+	retry(item, e) {
+		item.retryText = undefined;
+		item.retry();
+		e.stopPropagation();
+		e.preventDefault();
+		return false;
 	}
 }

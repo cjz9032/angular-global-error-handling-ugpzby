@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { Antivirus } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-widget-landing-security',
@@ -12,9 +14,14 @@ export class WidgetLandingSecurityComponent implements OnInit {
 	@Input() items: Array<any>;
 	@Output() haveOwnChecked = new EventEmitter<any>();
 	checkedList: any;
-	constructor(public commonService: CommonService) {}
+	antivirus: Antivirus;
+	constructor(
+		public commonService: CommonService,
+		private shellService: VantageShellService
+		) {}
 	badgeContent = 'security.landing.haveOwn';
 	ngOnInit() {
+		this.antivirus = this.shellService.getSecurityAdvisor().antivirus;
 		this.checkedList = {
 			passwordManager: this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, undefined),
 			vpn: this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingVPNShowOwn, undefined),
@@ -42,4 +49,8 @@ export class WidgetLandingSecurityComponent implements OnInit {
 		}
 	}
 
+	retry(item) {
+		item.status = 'loading';
+		this.antivirus.refresh();
+	}
 }

@@ -41,4 +41,8 @@ export class WidgetMcafeeStateComponent implements OnInit {
 		this.windowsList = this.windowsMcAfee.slice(2);
 	}
   }
+
+  retry() {
+	  this.common.refresh();
+  }
 }
