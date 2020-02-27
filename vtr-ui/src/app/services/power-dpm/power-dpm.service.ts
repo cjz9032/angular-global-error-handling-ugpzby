@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { from, Observable, BehaviorSubject } from 'rxjs';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { AllPowerPlans } from 'src/app/data-models/dpm/all-power-plans.model';
@@ -7,7 +7,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { PowerPlan } from 'src/app/data-models/dpm/power-plan.model';
 import { map, filter } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
-export class PowerDpmService {
+export class PowerDpmService implements OnDestroy {
+
 	private devicePowerDPM: any;
 	private allPowerPlansSubject: BehaviorSubject<AllPowerPlans>;
 	private _currentPowerPlanObs: Observable<PowerPlan>;
@@ -136,7 +137,12 @@ export class PowerDpmService {
 		private commonService: CommonService) {
 		this.devicePowerDPM = this.shellService.getPowerDPM();
 	}
-
+	ngOnDestroy(): void {
+		if (this.refreshInterval) {
+			clearInterval(this.refreshInterval);
+			this.refreshInterval = null;
+		}
+	}
 	getAllPowerPlansObs(): Observable<AllPowerPlans> {
 		if (!this.allPowerPlansSubject) {
 			let localCacheVal = this.commonService.getLocalStorageValue(LocalStorageKey.DPMAllPowerPlans, null);
@@ -159,7 +165,7 @@ export class PowerDpmService {
 	}
 
 	private preprocessAllPowerPlans(allPowerPlans: AllPowerPlans): AllPowerPlans {
-		if(allPowerPlans){
+		if (allPowerPlans) {
 			allPowerPlans.powerPlanList.forEach(p => {
 				p.settingList.forEach(s => {
 					switch (s.key) {
@@ -228,10 +234,7 @@ export class PowerDpmService {
 		if (this.devicePowerDPM) {
 			this.devicePowerDPM.getAllPowerPlans().then(response => {
 				//response = this.mockResponse;
-				if(response){
-					this.allPowerPlansSubject.next(response);
-					this.updateCache(response);
-				}
+				this.resolveCommonResponse(response);
 			});
 		}
 	}
@@ -239,10 +242,7 @@ export class PowerDpmService {
 		if (this.devicePowerDPM) {
 			return this.devicePowerDPM.setPowerButton(action).then(response => {
 				// response = this.mockResponse;
-				if(response){
-					this.allPowerPlansSubject.next(response);
-					this.updateCache(response);
-				}
+				this.resolveCommonResponse(response);
 			});
 		}
 		return undefined;
@@ -251,10 +251,7 @@ export class PowerDpmService {
 		if (this.devicePowerDPM) {
 			return this.devicePowerDPM.setSignInOption(option).then(response => {
 				// response = this.mockResponse;
-				if(response){
-					this.allPowerPlansSubject.next(response);
-					this.updateCache(response);
-				}
+				this.resolveCommonResponse(response);
 			});
 		}
 	}
@@ -263,10 +260,7 @@ export class PowerDpmService {
 		if (this.devicePowerDPM) {
 			return this.devicePowerDPM.setTurnoffDisplay(option).then(response => {
 				// response = this.mockResponse;
-				if(response){
-					this.allPowerPlansSubject.next(response);
-					this.updateCache(response);
-				}
+				this.resolveCommonResponse(response);
 			});
 		}
 	}
@@ -274,10 +268,7 @@ export class PowerDpmService {
 		if (this.devicePowerDPM) {
 			return this.devicePowerDPM.setTurnoffHDD(option).then(response => {
 				// response = this.mockResponse;
-				if(response){
-					this.allPowerPlansSubject.next(response);
-					this.updateCache(response);
-				}
+				this.resolveCommonResponse(response);
 			});
 		}
 	}
@@ -285,10 +276,7 @@ export class PowerDpmService {
 		if (this.devicePowerDPM) {
 			return this.devicePowerDPM.setSleepAfter(option).then(response => {
 				// response = this.mockResponse;
-				if(response){
-					this.allPowerPlansSubject.next(response);
-					this.updateCache(response);
-				}
+				this.resolveCommonResponse(response);
 			});
 		}
 	}
@@ -296,25 +284,32 @@ export class PowerDpmService {
 		if (this.devicePowerDPM) {
 			return this.devicePowerDPM.setHibernateAfter(option).then(response => {
 				// response = this.mockResponse;
-				if(response){
-					this.allPowerPlansSubject.next(response);
-					this.updateCache(response);
-				}
+				this.resolveCommonResponse(response);
 			});
 		}
 	}
 
 	public setCurrentPowerPlan(planName: string) {
-		this.allPowerPlansCache.activePowerPlan = planName;
-		this.allPowerPlansSubject.next(this.allPowerPlansCache);
+		if (this.allPowerPlansCache) {
+			this.allPowerPlansCache.activePowerPlan = planName;
+		}
+		if (this.allPowerPlansSubject) {
+			this.allPowerPlansSubject.next(this.allPowerPlansCache);
+		}
 		if (this.devicePowerDPM) {
 			return this.devicePowerDPM.setCurrentPowerPlan(planName).then(response => {
 				// response = this.mockResponse;
-				if(response){
-					this.allPowerPlansSubject.next(response);
-					this.updateCache(response);
-				}
+				this.resolveCommonResponse(response);
 			});
+		}
+	}
+
+	private resolveCommonResponse(response: any) {
+		if (response) {
+			if (this.allPowerPlansSubject) {
+				this.allPowerPlansSubject.next(response);
+			}
+			this.updateCache(response);
 		}
 	}
 
