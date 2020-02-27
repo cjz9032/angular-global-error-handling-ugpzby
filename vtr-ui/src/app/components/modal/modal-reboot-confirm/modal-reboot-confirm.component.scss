@@ -21,11 +21,12 @@
 	h1 {
 		font-size: $fontsize_xl;
 		font-weight: normal;
-		color: $darkText;
+		color: $darkText;		
+		padding-right: 2.5rem;
 	}
 
 	p {
-		font-size: 1.6rem;
+		font-size: $fontsize_xs;
 		color: $darkText;
 		padding: 0.5rem 0;
 	}
