@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.298](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.0.297...v1.0.298) (2020-02-27)
+
+
+### Bug Fixes
+
+* **VAN-11693:** show tutorial page in gaming ([e5473a4](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commits/e5473a4))
+
+
+
 ## [1.0.297](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.296...v1.0.297) (2020-01-20)
 
 
