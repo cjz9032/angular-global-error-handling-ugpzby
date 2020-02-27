@@ -34,9 +34,11 @@ export class AntiVirusViewModel {
 	windowsDefenderstatusList: Array<any> = [{
 		status: this.windowsDefender.status,
 		title: 'security.antivirus.windowsDefender.virus',
+		type: 'antivirus'
 	}, {
 		status: this.windowsDefender.firewallStatus,
 		title: 'security.antivirus.windowsDefender.homeNetwork',
+		type: 'firewall'
 	}];
 	othersAntistatusList: Array<any> = [];
 	othersFirewallstatusList: Array<any> = [];
@@ -54,10 +56,11 @@ export class AntiVirusViewModel {
 	quickClean = 'security.antivirus.mcafee.quickClean';
 	vulnerability = 'security.antivirus.mcafee.vulnerability';
 
-	constructor(antiVirus: Antivirus, private commonService: CommonService, private translate: TranslateService, ) {
+	constructor(public antiVirus: Antivirus, private commonService: CommonService, public translate: TranslateService, ) {
 		translate.stream(this.otherAntiVirus.name).subscribe((res) => {
 			this.otherAntiVirus.name = res;
 		});
+		this.waitTimeout();
 
 		const cacheCurrentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
 		if (antiVirus.mcafee || antiVirus.others || antiVirus.windowsDefender) {
@@ -78,17 +81,18 @@ export class AntiVirusViewModel {
 
 		const cacheWindowsDefender = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsDefender);
 		if (antiVirus.windowsDefender) {
-			this.windowsDefender = antiVirus.windowsDefender;
+			this.windowsDefender = this.antiVirus.windowsDefender;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefender, this.windowsDefender);
 			this.setDefenderStatus(this.windowsDefender.status,
 				this.windowsDefender.firewallStatus,
-				this.currentPage);
+				this.currentPage)
 		} else {
 			if (cacheWindowsDefender) {
 				this.windowsDefender = cacheWindowsDefender;
 				this.setDefenderStatus(this.windowsDefender.status,
 					this.windowsDefender.firewallStatus,
-					this.currentPage);
+					this.currentPage)
+
 			}
 		}
 
@@ -215,17 +219,17 @@ export class AntiVirusViewModel {
 			}
 			this.antiVirusPage(antiVirus);
 		}).on(EventTypes.avWindowsDefenderAntivirusStatusEvent, (data) => {
-			// this.windowsDefender.status = data;
-			this.antiVirusPage(antiVirus);
-			this.setDefenderStatus(data,
-				this.windowsDefender.firewallStatus,
-				this.currentPage);
-		}).on(EventTypes.avWindowsDefenderFirewallStatusEvent, (data) => {
-			// this.windowsDefender.firewallStatus = data;
-			this.antiVirusPage(antiVirus);
+			this.windowsDefender.status = data;
 			this.setDefenderStatus(this.windowsDefender.status,
-				data,
-				this.currentPage);
+				this.windowsDefender.firewallStatus,
+				this.currentPage)
+			this.antiVirusPage(this.antiVirus);
+		}).on(EventTypes.avWindowsDefenderFirewallStatusEvent, (data) => {
+			this.windowsDefender.firewallStatus = data;
+			this.setDefenderStatus(this.windowsDefender.status,
+				this.windowsDefender.firewallStatus,
+				this.currentPage)
+			this.antiVirusPage(this.antiVirus);
 		}).on(EventTypes.avMcafeeExpireAtEvent, (data) => {
 			this.mcafee.expireAt = data;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.mcafee);
@@ -243,8 +247,6 @@ export class AntiVirusViewModel {
 		}).on(EventTypes.avMcafeeTrialUrlEvent, (data) => {
 			this.mcafee.trialUrl = data;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeTrialUrl, this.mcafee.trialUrl);
-		}).on(EventTypes.avRefreshedEvent, (data) => {
-			this.antiVirusPage(data);
 		});
 
 	}
@@ -260,13 +262,6 @@ export class AntiVirusViewModel {
 			this.currentPage = 'others';
 		} else {
 			this.currentPage = 'windows';
-			if (antiVirus.windowsDefender) {
-				this.setDefenderStatus(
-					antiVirus.windowsDefender.status !== undefined ? antiVirus.windowsDefender.status : null,
-					antiVirus.windowsDefender.firewallStatus !== undefined ? antiVirus.windowsDefender.firewallStatus : null,
-					this.currentPage
-				);
-			}
 			this.mcafeeInstall = false;
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.currentPage);
@@ -554,41 +549,49 @@ export class AntiVirusViewModel {
 			fwStatus = fw ? 'enabled' : 'disabled';
 			if (currentPage === 'windows') {
 				avStatus = 'loading';
-				setTimeout(() => {
-					avStatus = 'failedLoad';
-					this.windowsDefenderstatusList[0].status = avStatus;
-					console.log(` time out av status: ${this.windowsDefenderstatusList[0].status}`)
-				}, 15000);
 			}
 		} else if (typeof av === 'boolean' && typeof fw !== 'boolean') {
 			avStatus = av ? 'enabled' : 'disabled';
 			if (currentPage === 'windows') {
 				fwStatus = 'loading';
-				setTimeout(() => {
-					fwStatus = 'failedLoad';
-					this.windowsDefenderstatusList[1].status = fwStatus;
-				}, 15000);
 			}
 		} else {
 			if (currentPage === 'windows') {
 				avStatus = 'loading';
 				fwStatus = 'loading';
-				setTimeout(() => {
-					avStatus = 'failedLoad';
-					fwStatus = 'failedLoad';
-				}, 15000);
 			}
 		}
 
 		this.windowsDefenderstatusList = [{
 			status: avStatus,
 			title: this.virus,
+			type: 'antivirus'
 		}, {
 			status: fwStatus,
 			title: this.homeNetwork,
+			type: 'firewall'
 		}];
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.windowsDefenderstatusList);
-		console.log(`av status: ${this.windowsDefenderstatusList[0].status}`);
-		console.log(`fw status: ${this.windowsDefenderstatusList[1].status}`);
+	}
+
+	retry(type) {
+		if (type === 'antivirus') {
+			this.windowsDefenderstatusList[0].status = 'loading';
+		}
+		if (type === 'firewall') {
+			this.windowsDefenderstatusList[1].status = 'loading';
+		}
+		this.waitTimeout();
+		this.antiVirus.refresh();
+	}
+
+	waitTimeout() {
+		setTimeout(() => {
+			this.windowsDefenderstatusList.forEach(element => {
+				if (element.status === 'loading') {
+					element.status = 'failedLoad';
+				}
+			});
+		}, 15000);
 	}
 }

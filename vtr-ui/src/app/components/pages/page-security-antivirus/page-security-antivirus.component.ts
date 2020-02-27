@@ -36,7 +36,6 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	notificationSubscription: Subscription;
 	common: AntivirusCommon;
 
-
 	@HostListener('window:focus')
 	onFocus(): void {
 		const id = document.activeElement.id;
@@ -140,6 +139,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 					break;
 			}
 		}
+	}
+
+	public retry(type) {
+		this.viewModel.retry(type);
 	}
 
 }

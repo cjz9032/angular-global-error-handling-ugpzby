@@ -88,6 +88,7 @@
 					<div class="subtitle" [innerHTML]="'security.antivirus.windowsDefender.onlyBasic' | translate">
 					</div>
 					<vtr-widget-mcafee-state [windowsDefender]="true"
+						(retryClick)="retry($event)"
 						[statusList]="viewModel.windowsDefenderstatusList" [isOnline]="isOnline">
 					</vtr-widget-mcafee-state>
 				</div>

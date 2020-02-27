@@ -381,4 +381,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
+
+	retry(id) {
+		this.antivirusLandingViewModel.retry(id)
+	}
 }

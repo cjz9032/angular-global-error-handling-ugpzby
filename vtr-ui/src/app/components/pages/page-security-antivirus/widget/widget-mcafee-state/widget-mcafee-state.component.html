@@ -20,7 +20,8 @@
         </div>
         <div class="col-3 text-right px-0 ml-auto">
 		     <h3 class="text-ellipsis text-color mb-0"
-				[ngClass]="{'text-d-color': list.status !== 'enabled' && list.status !== 'installed' }">
+				[ngClass]="{'text-d-color': list.status === 'disabled' || list.status === 'not-installed',
+							'text-gray': list.status === 'loading' || list.status === 'failedLoad'}">
 					<span class="text-uppercase"
 						title="{{list.status | statusText | translate | uppercase}}"
 						[innerHTML]="list.status | statusText | translate">
@@ -28,7 +29,7 @@
 			</h3>
 			<a *ngIf="list.status === 'failedLoad'"
 				href="javascript:void(0);"
-				(click)="retry(list.status)">{{'common.ui.retry' | translate}}</a>
+				(click)="retry(list);">{{'common.ui.retry' | translate}}</a>
         </div>
       </div>
     </li>

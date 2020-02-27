@@ -5,9 +5,8 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 
 export class AntivirusWidgetItem extends WidgetItem {
-	antivirus: Antivirus;
 	currentPage: string;
-	constructor(antivirus: Antivirus, public commonService: CommonService, public translateService: TranslateService) {
+	constructor(public antivirus: Antivirus, public commonService: CommonService, public translateService: TranslateService) {
 		super({
 			id: 'sa-widget-lnk-av',
 			path: 'security/anti-virus',
@@ -15,6 +14,8 @@ export class AntivirusWidgetItem extends WidgetItem {
 			isSystemLink: false,
 			metricsItemName: 'Anti-Virus',
 		}, translateService);
+
+		this.waitTimeout();
 		this.translateService.stream('common.securityAdvisor.antiVirus').subscribe((value) => {
 			this.title = value;
 		});
@@ -76,19 +77,7 @@ export class AntivirusWidgetItem extends WidgetItem {
 				this.detail = value;
 				this.status = 1;
 			});
-		}  else if (av === undefined || fw === undefined) {
-			if (currentPage === 'windows') {
-				setTimeout(() => {
-					this.translateService.stream('common.ui.failedLoad').subscribe((value) => {
-						this.detail = value;
-						this.status = 7;
-					});
-					this.translateService.stream('common.ui.retry').subscribe((value) => {
-						this.retryText = value;
-					});
-				}, 15000);
-			}
-		} else {
+		}  else if (typeof av === 'boolean' && typeof fw === 'boolean') {
 			this.translateService.stream('common.securityAdvisor.partiallyProtected').subscribe((value) => {
 				this.detail = value;
 				this.status = 3;
@@ -101,6 +90,21 @@ export class AntivirusWidgetItem extends WidgetItem {
 			this.detail = value;
 			this.status = 4;
 		});
+		this.waitTimeout();
 		this.antivirus.refresh();
+	}
+
+	waitTimeout() {
+		setTimeout(() => {
+			if (this.status === 4) {
+				this.status = 7;
+				this.translateService.stream('common.ui.failedLoad').subscribe((value) => {
+					this.detail = value;
+				});
+				this.translateService.stream('common.ui.retry').subscribe((value) => {
+					this.retryText = value;
+				});
+			}
+		}, 15000)
 	}
 }

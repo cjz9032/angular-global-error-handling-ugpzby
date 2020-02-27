@@ -13,6 +13,7 @@ export class WidgetLandingSecurityComponent implements OnInit {
 
 	@Input() items: Array<any>;
 	@Output() haveOwnChecked = new EventEmitter<any>();
+	@Output() retryClick = new EventEmitter<any>();
 	checkedList: any;
 	antivirus: Antivirus;
 	constructor(
@@ -50,7 +51,6 @@ export class WidgetLandingSecurityComponent implements OnInit {
 	}
 
 	retry(item) {
-		item.status = 'loading';
-		this.antivirus.refresh();
+		this.retryClick.emit(item.id);
 	}
 }
