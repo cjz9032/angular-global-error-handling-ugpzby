@@ -101,7 +101,7 @@ describe("BatteryChargeThresholdSettingsComponent", () => {
 		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent)
 		component = fixture.componentInstance
 		commonService = TestBed.get(CommonService)
-		const event = new Event('click')
+		const event = true
 		component.bctInfo = {...bctInfo}
 		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfo)
 		component.toggleAutoChargeSettings(event)

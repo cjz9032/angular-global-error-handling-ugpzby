@@ -38,10 +38,10 @@ export class UDKActionInfo {
 							this.actionValue = data.value;
 							this.index = 2;
                             break;
-                        case INVOKE_KEY_SEQUENCE.str:
-                            this.actionValue = data.value;
-                            this.index = 4;
-                            break;    
+                        // case INVOKE_KEY_SEQUENCE.str:
+                        //     this.actionValue = data.value;
+                        //     this.index = 4;
+                        //     break;    
 						case OPEN_WEB.str:
 							this.actionValue = data.value;
 							this.index = 1;
