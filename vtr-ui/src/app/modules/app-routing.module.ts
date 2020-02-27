@@ -4,16 +4,28 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
 import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
+import { GuardService } from 'src/app/services/guard/guardService.service';
 
 const routes: Routes = [
 
 	{
 		path: 'dashboard',
-		component: PageDashboardComponent
+		component: PageDashboardComponent,
+		canDeactivate: [GuardService],
+		canActivate: [ GuardService ],
+		data: {
+			pageName: 'Dashboard'
+		}
 	},
 	{
 		path: 'device-gaming',
-		component: PageDeviceGamingComponent
+		component: PageDeviceGamingComponent,
+		canDeactivate: [ GuardService ],
+		canActivate: [ GuardService ],
+		data: {
+			pageName: 'Gaming.Dashboard',
+			pageContent: 'Gaming Dashboard'
+		}
 	},
 	{
 		path: 'gaming',
