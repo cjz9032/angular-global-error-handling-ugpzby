@@ -678,12 +678,12 @@ export class HardwareScanService {
                 if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
 					this.hasItemsToRecoverBadSectors = true;
 				}
+
+				// Signalizes that the hardware list has been retrieved
+				this.hardwareModulesLoaded.next(true);
             });
 			this.isLoadingModulesDone = true;
 			this.loadCustomModal();
-
-			// Signalizes that the hardware list has been retrieved
-			this.hardwareModulesLoaded.next(true);
 		});
 	}
 
