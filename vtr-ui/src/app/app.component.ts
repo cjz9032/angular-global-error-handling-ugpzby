@@ -31,7 +31,6 @@ import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service'
 // import { AppUpdateService } from './services/app-update/app-update.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
-import { ToolbarToastService } from './services/toolbartoast/toolbartoast.service';
 
 declare var Windows;
 @Component({
@@ -65,7 +64,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		private appUpdateService: AppUpdateService,
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
-		private toolbarToast: ToolbarToastService
 		// private appUpdateService: AppUpdateService
 	) {
 		// to check web and js bridge version in browser console
@@ -130,7 +128,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		}
 
 		this.setRunVersionToRegistry();
-		this.toolbarToast.showVantageToolbarToast();
 	}
 
 	ngOnDestroy() {
