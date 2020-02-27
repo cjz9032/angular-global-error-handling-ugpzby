@@ -50,7 +50,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			header: 'gaming.dashboard.device.quickSettings.title',
 			name: 'gaming.dashboard.device.quickSettings.title',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCollapsible: true,
 			readonly: false,
 			isCheckBoxVisible: false,
@@ -72,7 +72,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isCustomizable: false,
 			setLink: '',
 			readonly: false,
-			isVisible: true,
+			isVisible: false,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
@@ -92,7 +92,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			subHeader: '',
 			isCustomizable: true,
 			routerLink: '/security/wifi-security',
-			isVisible: true,
+			isVisible: false,
 			readonly: true,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -113,7 +113,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			subHeader: '',
 			isCustomizable: true,
 			routerLink: '/device/device-settings/audio',
-			isVisible: true,
+			isVisible: false,
 			isCollapsible: false,
 			readonly: false,
 			isCheckBoxVisible: true,
@@ -160,7 +160,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			}
 		]
 	};
-	public gamingSettings: any = {};
 	public isQuickSettingsVisible = false;
 	constructor(
 		private gamingCapabilityService: GamingAllCapabilitiesService,
@@ -200,9 +199,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.quickSettings[0].isVisible = false;
 		}
 
-		if (!this.gamingSettings.winKeyLockFeature) {
-			this.quickSettings[2].isVisible = true;
-		}
 		this.checkQuickSettingsVisibility();
 		// Initialize Quicksetting;
 		this.quicksettingListInit();
