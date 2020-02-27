@@ -49,14 +49,14 @@ describe('UiApsSliderComponent', () => {
 		expect(spy).toHaveBeenCalled()
 	});
 
-	it('should call onSliderChanged', () => {
-		const event: any = {event: 'click'}
-		fixture = TestBed.createComponent(UiApsSliderComponent);
-		component = fixture.componentInstance;
-		const spy = spyOn(console, 'log')
-		component.onSliderChanged(event)
-		expect(spy).toHaveBeenCalled()
-	});
+	// it('should call onSliderChanged', () => {
+	// 	const event: any = {event: 'click'}
+	// 	fixture = TestBed.createComponent(UiApsSliderComponent);
+	// 	component = fixture.componentInstance;
+	// 	const spy = spyOn(console, 'log')
+	// 	component.onSliderChanged(event)
+	// 	expect(spy).toHaveBeenCalled()
+	// });
 
 	it('should call dragEnd', () => {
 		fixture = TestBed.createComponent(UiApsSliderComponent);

@@ -10,8 +10,6 @@ import SmartStandbyActivityModel from 'src/app/data-models/smart-standby-graph/s
 import SmartStandbyActivityDetailModel from 'src/app/data-models/smart-standby-graph/smart-standby-activity-detail.model';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { throwError } from 'rxjs';
-import { error } from 'util';
 import { CameraDetail, CameraSettingsResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
