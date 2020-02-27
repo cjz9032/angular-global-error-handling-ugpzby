@@ -922,6 +922,10 @@
                     "update": "Uppdatera"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "För att förlänga batteritiden har vi optimerat kapaciteten för full laddning baserat på din användning. Full batterikapacitet kan kräva att batteriet laddas ur till 20 % och sedan laddas om."
                 },
                 "condition": {
                     "Illegal": "Det installerade batteriet <b>stöds inte</b> på enheten och kommer inte att laddas. Byt ut batteriet mot ett Lenovo-batteri.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>Batteriet är inte i gott skick.</b>",
                     "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b>",
                     "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning.</b>",
-                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update för att installera den senaste drivrutinen. Du kan även installera drivrutinen <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">härifrån</a>. Starta om datorn efter installationen.",
+                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update eller installera programmet manuellt <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">här</a>. Starta om datorn efter installationen.",
                     "StoreLimitation": "<b>Batteriet kan endast lagra {{value}}% av</b> sin ursprungliga laddningskapacitet.",
                     "HighTemperature": "<b>Urladdning</b> har stoppats på grund av att <b>batteritemperaturen är för hög.</b>",
                     "TrickleCharge": "Batteriet var <b>helt urladdat</b> och måste laddas. Det kan ta tio timmer eller mer.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
                         "progressText2": "{{stage}} av {{stageNum}}: Kalibrerar för låg batterinivå",
-                        "progressText3": "{{stage}} av {{stageNum}}: Kalibrerar för hög batterinivå",
+                        "progressText3": "Steg {{stage}} av totalt {{stageNum}} steg",
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {

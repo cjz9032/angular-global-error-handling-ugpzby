@@ -922,6 +922,10 @@
                     "update": "עדכון"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "להארכת משך חיי הסוללה, ביצענו מיטוב של קיבולת הטעינה המלאה שלה בהתאם לשימוש. יתכן שקיבולת הסוללה המלאה לא תהיה זמינה עד שהסוללה תתרוקן עד 20% ותוטען מחדש."
                 },
                 "condition": {
                     "Illegal": "הסוללה המותקנת <b>אינה נתמכת</b> על-ידי המערכת ולא תיטען. החליפו אותה בסוללה של Lenovo המתאימה למערכת זו.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b></span>",
                     "LimitedACAdapterSupport": "<b>מתאם AC לא יכול לספק מספיק חשמל.</b>",
-                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. הפעילו את Windows Update כדי להתקין את מנהל ההתקן העדכני ביותר. ניתן גם להתקין את מנהל ההתקן מ <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">כאן</a>. לאחר ההתקנה, הפעילו מחדש את המחשב.",
+                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. יש להפעיל את Windows Update או להתקין את התוכנית באופן ידני <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">מכאן</a>. לאחר ההתקנה, הפעילו מחדש את המחשב.",
                     "StoreLimitation": "<b>הסוללה יכולה לאחסן רק {{value}}% מתוך</b> קיבולת הטעינה המקורית שלה.",
                     "HighTemperature": "<b>הפריקה</b> נעצרה מכיוון <b>שטמפרטורת הסוללה גבוהה מדי.</b>",
                     "TrickleCharge": "הסוללה <b>התרוקנה לחלוטין</b> ויש לטעון אותה מחדש. התהליך עשוי לארוך עשר שעות או יותר.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} מתוך {{stageNum}}: כיול לטעינה מלאה",
                         "progressText2": "{{stage}} מתוך {{stageNum}}: כיול לרמת חשמל נמוכה של הסוללה",
-                        "progressText3": "{{stage}} מתוך {{stageNum}}: כיול לרמת צריכת חשמל גבוהה של הסוללה",
+                        "progressText3": "שלב {{stage}}, מתוך {{stageNum}} שלבים בסך הכל",
                         "FCCText": "מ-{{before}} ואט עד {{after}} ואט",
                         "note": "הערה: לפני איפוס מד הסוללה, הקפידו לחבר את המחשב שלכם לחשמל. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {

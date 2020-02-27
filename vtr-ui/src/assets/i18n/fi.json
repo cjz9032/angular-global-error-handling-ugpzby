@@ -922,6 +922,10 @@
                     "update": "Päivitä"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Akun käyttöiän pidentämiseksi olemme optimoineet sen täyden varauskapasiteetin käyttösi perusteella. Akun täysi kapasiteetti on ehkä käytettävissä vasta sitten, kun purat ensin akun varauksen 20 %:iin ja lataat sitten akun uudelleen."
                 },
                 "condition": {
                     "Illegal": "Järjestelmä <b>ei tue</b> asennettua akkua, ja sitä ei ladata. Vaihda akku oikeaan, tälle järjestelmälle tarkoitettuun Lenovon akkuun.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri. Voit myös asentaa ajurin <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">täältä</a>. Käynnistä tietokone uudelleen asennuksen jälkeen.",
+                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update -ohjelmisto tai asenna se manuaalisesti <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tästä</a>. Käynnistä tietokone uudelleen asennuksen jälkeen.",
                     "StoreLimitation": "<b>Akku voi tallentaa vain {{value}}%</b> sen alkuperäisestä täydestä varauskapasiteetista.",
                     "HighTemperature": "<b>Latauksen purkaminen</b> on keskeytetty <b>akun korkean lämpötilan vuoksi.</b>",
                     "TrickleCharge": "Akun lataus on <b>purettu kokonaan</b>, ja akku on ladattava uudelleen. Tämä saattaa kestää yli kymmenen tuntia.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
                         "progressText2": "{{stage}} / {{stageNum}}: Kalibroidaan akun alhaiseen varaukseen",
-                        "progressText3": "{{stage}} / {{stageNum}}: Kalibroidaan akun korkeaan varaukseen",
+                        "progressText3": "Vaihe {{stage}}/{{stageNum}} (yhteensä)",
                         "FCCText": "{{before}}Wh- {{after}} Wh",
                         "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {

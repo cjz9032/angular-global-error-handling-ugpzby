@@ -922,6 +922,10 @@
                     "update": "Ažuriraj"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Da biste produžili vek trajanja baterije, optimizovali su njen pun kapacitet punjenja na osnovu vašeg korišćenja. Pun kapacitet baterije možda neće biti dostupan sve dok je ne ispraznite na 20% i dopunite."
                 },
                 "condition": {
                     "Illegal": "Ovaj sistem <b>ne podržava</b> instaliranu bateriju i ona se neće puniti. Zamenite bateriju odgovarajućom Lenovo baterijom za ovaj sistem.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Adapter za naizmeničnu struju nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program. Upravljački program možete da instalirate sa lokacije koja se nalazi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovde</a>. Nakon instalacije, ponovo pokrenite računar.",
+                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update ili ga ručno instalirajte <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odavde</a>. Nakon instalacije, ponovo pokrenite računar.",
                     "StoreLimitation": "<b>Baterija može da uskladišti samo {{value}}%</b> svog originalnog punog kapaciteta.",
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno zato što je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je u <b>potpunosti ispražnjena</b> i mora da se napuni. To može potrajati deset sati ili duže.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} od {{stageNum}}: kalibracija na pun kapacitet punjenja",
                         "progressText2": "{{stage}} od {{stageNum}}: kalibracija na nizak nivo napunjenosti baterije",
-                        "progressText3": "{{stage}} od {{stageNum}}: kalibracija na visok nivo napunjenosti baterije",
+                        "progressText3": "Korak {{stage}}, od ukupno {{stageNum}} koraka",
                         "FCCText": "Sa {{before}} Wh na {{after}} Wh",
                         "note": "Napomena: pre nego što resetujete pokazivač napunjenosti baterije, obavezno povežite računar sa napajanjem naizmeničnom strujom. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
