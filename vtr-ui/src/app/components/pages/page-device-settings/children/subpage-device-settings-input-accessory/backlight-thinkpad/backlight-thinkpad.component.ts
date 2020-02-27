@@ -15,6 +15,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	private kbdBacklightInterval: any;
 	currentMode: BacklightStatusEnum = BacklightStatusEnum.OFF;
 	@Output() showHide = new EventEmitter<boolean>();
+	baseAuto = 'base';
 	modes = [
 		{
 			title: 'device.deviceSettings.inputAccessories.backlight.level.auto',
@@ -58,6 +59,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		this.cacheData = this.commonService.getLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
 		this.modes = this.cacheData.modes;
 		this.currentMode = this.cacheData.currentMode;
+		this.isBaseAuto(this.modes, BacklightStatusEnum.AUTO);
 	}
 
 	public updateMode(mode) {
@@ -104,6 +106,15 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		return array.filter(e => e.value !== value);
 	}
 
+	public isBaseAuto(array: any[], value: string) {
+		const element = array.find(e => e.value === value);
+		if (element) {
+			this.baseAuto = 'auto';
+		} else {
+			this.baseAuto = 'base';
+		}
+	}
+
 	public getAutoKBDBacklightCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
@@ -114,6 +125,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 							this.getAutoKBDStatus();
 						} else {
 							this.modes = this.removeObjByValue(this.modes, BacklightStatusEnum.AUTO);
+							this.isBaseAuto(this.modes, BacklightStatusEnum.AUTO);
 							this.cacheData.modes = this.modes;
 							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
 						}
