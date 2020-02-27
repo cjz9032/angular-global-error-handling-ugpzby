@@ -922,6 +922,10 @@
                     "update": "Oppdater"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "For å forlenge batteriets levetid har vi optimalisert full ladekapasitet basert på bruken din. Full batterikapasitet er kanskje ikke tilgjengelig før det er ladet ut til 20 % og ladet opp igjen."
                 },
                 "condition": {
                     "Illegal": "Det installerte batteriet <b>støttes ikke</b> av dette systemet, og vil ikke kunne lades opp. Batteriet må bare byttes ut med korrekt Lenovo-batteri for dette systemet.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
                     "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
-                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update for å installere den nyeste driveren. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>. Etter installeringen må du starte datamaskinen på nytt.",
+                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update, eller installer den manuelt fra <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">her</a>. Etter installeringen må du starte datamaskinen på nytt.",
                     "StoreLimitation": "<b>Batteriet kan bare lagre {{value}}% av</b> opprinnelig full ladekapasitet.",
                     "HighTemperature": "<b>Utladingen</b> har stoppet fordi <b>batteritemperaturen er for høy.</b>",
                     "TrickleCharge": "Batteriet ble <b>helt utladet</b> og må lades opp på nytt. Dette kan ta ti timer eller mer.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
                         "progressText2": "{{stage}} av {{stageNum}}: kalibrerer for lite batteristrøm",
-                        "progressText3": "{{stage}} av {{stageNum}}: Kalibrerer til høy batteristrøm",
+                        "progressText3": "Trinn {{stage}} av i alt {{stageNum}} trinn",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {

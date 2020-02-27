@@ -924,6 +924,10 @@
                     "update": "تعديل"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1035,7 +1039,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "لتمديد عمر البطارية، قمنا بتحسين سعة شحنها الكاملة بالاستناد إلى استخدامك. قد لا تتوفر سعة البطارية الكاملة حتى تفريغ الشحنة إلى 20% وإعادة الشحن."
                 },
                 "condition": {
                     "Illegal": "البطارية المركّبة <b>غير مدعومة</b> بواسطة النظام ولن يتم شحنها. الرجاء استبدال البطارية ببطارية Lenovo المناسبة لهذا النظام.",
@@ -1046,7 +1050,7 @@
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b></span>",
                     "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
-                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل. يمكنك أيضًا تثبيت برنامج التشغيل من <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">هنا</a>. بعد التثبيت، أعد تشغيل الكمبيوتر.",
+                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update أو تثبيته يدوياً من <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">هنا</a>. بعد التثبيت، أعد تشغيل الكمبيوتر.",
                     "StoreLimitation": "<b>بإمكان البطارية تخزين فقط {{value}}% من</b> سعة شحنتها الأصلية.",
                     "HighTemperature": "<b>تم إيقاف التفريغ</b> لأن <b>درجة حرارة البطارية مرتفعة أكثر من اللازم.</b>",
                     "TrickleCharge": "تم <b>تفريغ البطارية بشكل كامل</b> ويجب إعادة شحنها. قد تستغرق هذه العملية 10 ساعات أو أكثر.",
@@ -1250,7 +1254,7 @@
                         },
                         "progressText1": "{{stage}} من {{stageNum}}: معايرة إلى الشحن الكامل",
                         "progressText2": "{{stage}} من {{stageNum}}: معايرة إلى طاقة البطارية المنخفضة",
-                        "progressText3": "{{stage}} من {{stageNum}}: المعايرة إلى طاقة البطارية العالية",
+                        "progressText3": "الخطوة {{stage}}، من {{stageNum}} خطوات إجماليًا",
                         "FCCText": "من {{before}} واط بالساعة‬ إلى {{after}} واط بالساعة‬",
                         "note": "ملاحظة: قبل إعادة تعيين مقياس البطارية، تأكد من توصيل الكمبيوتر بطاقة التيار المتردد. ",
                         "resetLog": {
@@ -1737,7 +1741,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {

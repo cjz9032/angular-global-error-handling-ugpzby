@@ -922,6 +922,10 @@
                     "update": "업데이트"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "배터리 수명을 연장하기 위해 사용량에 따라 완전 충전 용량을 최적화했습니다. 완전 충전 용량은 배터리를 20%까지 방전시킨 다음 재충전해야 사용할 수 있습니다."
                 },
                 "condition": {
                     "Illegal": "시스템에서 <b>지원되지 않는</b> 배터리를 설치하여 충전되지 않습니다. 이 시스템에 맞는 Lenovo 배터리로 교체하십시오.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
                     "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b>",
                     "LimitedACAdapterSupport": "<b>AC 어댑터는 충분한 전원을 공급하지 못합니다.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. 최신 드라이버를 설치하려면 Windows 업데이트를 실행하십시오. <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">여기</a>에서 드라이버를 설치할 수도 있습니다. 설치한 후 컴퓨터를 다시 시작하십시오.",
+                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. Windows 업데이트를 실행하거나 <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">여기</a>에서 수동으로 설치하십시오. 설치한 후 컴퓨터를 다시 시작하십시오.",
                     "StoreLimitation": "<b>배터리는 원래 완전 충전 용량의 {{value}}%만</b> 저장할 수 있습니다.",
                     "HighTemperature": "배터리 온도가 너무 높아 <b>방전</b>이 <b>중단되었습니다.</b>",
                     "TrickleCharge": "배터리가 <b>완전히 방전되어</b> 다시 충전해야 합니다. 이 작업은 10시간 이상이 소요될 수 있습니다.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
                         "progressText2": "{{stageNum}}의 {{stage}}: 저전력으로 보정 중",
-                        "progressText3": "{{stageNum}}의 {{stage}}: 고전력으로 보정 중",
+                        "progressText3": "총 {{stageNum}}단계 중 {{stage}}단계",
                         "FCCText": "{{before}} Wh에서 {{after}} Wh",
                         "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {

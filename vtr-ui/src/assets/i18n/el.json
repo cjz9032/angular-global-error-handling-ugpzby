@@ -922,6 +922,10 @@
                     "update": "Ενημέρωση"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Για να παρατείνετε τη διάρκεια ζωής της μπαταρίας, έχουμε βελτιστοποιήσει τη χωρητικότητα πλήρους φόρτισης της μπαταρίας με βάση τη χρήση σας. Η χωρητικότητα πλήρους φόρτισης της μπαταρίας ενδέχεται να μην είναι διαθέσιμη έως ότου αποφορτιστεί στα 20% και, στη συνέχεια, επαναφορτιστεί."
                 },
                 "condition": {
                     "Illegal": "Η εγκατεστημένη μπαταρία <b>δεν υποστηρίζεται</b> από το σύστημα και δεν θα φορτιστεί. Αντικαταστήστε την μπαταρία με τη σωστή μπαταρία της Lenovo για αυτό το σύστημα.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>Η μπαταρία δεν είναι σε καλή κατάσταση.</b>",
                     "NotSupportACAdapter": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b>",
                     "LimitedACAdapterSupport": "<b>Ο μετασχηματιστής AC δεν μπορεί να παρέχει επαρκή ισχύ.</b>",
-                    "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update για να εγκαταστήσετε το πιο πρόσφατο πρόγραμμα οδήγησης. Μπορείτε επίσης να εγκαταστήσετε το πρόγραμμα οδήγησης από <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">εδώ</a>. Μετά την εγκατάσταση, επανεκκινήστε τον υπολογιστή σας.",
+                    "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update ή εγκαταστήστε το χειροκίνητα από <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">εδώ</a>. Μετά την εγκατάσταση, επανεκκινήστε τον υπολογιστή σας.",
                     "StoreLimitation": "<b>Η μπαταρία μπορεί να αποθηκεύσει μόνο το {{value}}% από</b> την αρχική της χωρητικότητα πλήρους φόρτισης.",
                     "HighTemperature": "Η <b>αποφόρτιση</b> διακόπηκε, επειδή η <b>θερμοκρασία της μπαταρίας είναι πολύ υψηλή.</b>",
                     "TrickleCharge": "Η μπαταρία <b>αποφορτίστηκε εντελώς</b> και πρέπει να ξαναφορτιστεί. Η διαδικασία ενδέχεται να διαρκέσει δέκα ώρες ή και περισσότερο.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} από {{stageNum}}: Βαθμονόμηση σε πλήρη φόρτιση",
                         "progressText2": "{{stage}} από {{stageNum}}: Βαθμονόμηση σε χαμηλό επίπεδο φόρτισης μπαταρίας",
-                        "progressText3": "{{stage}} από {{stageNum}}: Βαθμονόμηση σε υψηλό επίπεδο ισχύος μπαταρίας",
+                        "progressText3": "Βήμα {{stage}}, από {{stageNum}} βήματα συνολικά",
                         "FCCText": "Από {{before}} Wh σε {{after}} Wh",
                         "note": "Σημείωση: Πριν επαναφέρετε τον μετρητή μπαταρίας, βεβαιωθείτε ότι έχετε συνδέσει τον υπολογιστή σας σε παροχή εναλλασσόμενου ρεύματος. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {

@@ -922,6 +922,10 @@
                     "update": "Atualizar"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Para prolongar a vida útil da bateria, otimizámos a capacidade de carga completa com na sua utilização. A capacidade total da bateria poderá não estar disponível enquanto não a descarregar até 20% e a voltar a carregar."
                 },
                 "condition": {
                     "Illegal": "A bateria instalada <b>não é suportada</b> pelo sistema e não será carregada. Substitua a bateria pela bateria correta da Lenovo para este sistema.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>A bateria não está em boas condições.</b>",
                     "NotSupportACAdapter": "<b>O transformador CA não é suportado.</b>",
                     "LimitedACAdapterSupport": "<b>O transformador CA não consegue fornecer energia suficiente.</b>",
-                    "MissingDriver": "<b>O controlador do Lenovo Power Manager</b> não está instalado ou não está a funcionar corretamente. Execute o Windows Update para instalar o controlador mais recente. Também é possível instalar o controlador a partir <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">daqui</a>. Após a instalação, reinicie o computador.",
+                    "MissingDriver": "<b>O controlador do Lenovo Power Manager</b> não está instalado ou não está a funcionar corretamente. Execute o Windows Update ou instale-o manualmente a partir <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">daqui</a>. Após a instalação, reinicie o computador.",
                     "StoreLimitation": "<b>A bateria apenas pode armazenar {{value}}% da</b> respetiva capacidade original de carga total.",
                     "HighTemperature": "<b>A descarga</b> parou porque a <b>temperatura da bateria é demasiado elevada.</b>",
                     "TrickleCharge": "A bateria foi <b>totalmente descarregada</b> e necessita de ser recarregada. Esta operação pode demorar dez horas ou mais.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} de {{stageNum}}: calibrar até carga completa",
                         "progressText2": "{{stage}} de {{stageNum}}: calibrar até bateria fraca",
-                        "progressText3": "{{stage}} de {{stageNum}}: a calibrar para carga da bateria cheia",
+                        "progressText3": "Passo {{stage}} de {{stageNum}} passos no total",
                         "FCCText": "De {{before}} Wh até {{after}} Wh",
                         "note": "Nota: antes de repor o indicador de bateria, certifique-se de que liga o computador à alimentação CA. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
