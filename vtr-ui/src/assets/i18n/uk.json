@@ -750,7 +750,7 @@
                 "sub3": "Безпека WiFi",
                 "sub4": "Надійність паролю",
                 "sub5": "Безпека VPN",
-                "sub6": "Відбитки пальців"
+                "sub6": "Відбиток"
             },
             "support": "підтримка",
             "beta": {
@@ -775,7 +775,7 @@
             "notFound": "НЕ ВИЯВЛЕНО",
             "registered": "ЗАРЕЄСТРОВАНО",
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО",
-            "fingerPrint": "Відбитки пальців",
+            "fingerPrint": "Відбиток",
             "privacyPolicyAndTermsOfService": "<tag>політику конфіденційності</tag> та <tag>умови надання послуг</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "ЗАРЕЄСТРОВАНО",

@@ -750,7 +750,7 @@
                 "sub3": "Безопасность WiFi",
                 "sub4": "Надежность пароля",
                 "sub5": "Безопасность VPN",
-                "sub6": "Oтпечаток пальца"
+                "sub6": "Отпечаток пальца"
             },
             "support": "Поддержка",
             "beta": {
@@ -775,7 +775,7 @@
             "notFound": "НЕ ОБНАРУЖЕНО",
             "registered": "ЗАРЕГИСТРИРОВАНО",
             "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО",
-            "fingerPrint": "Oтпечаток пальца",
+            "fingerPrint": "Отпечаток пальца",
             "privacyPolicyAndTermsOfService": "<tag>Политикой конфиденциальности</tag> и <tag>Условиями обслуживания</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "ЗАРЕГИСТРИРОВАНО",

@@ -2241,7 +2241,7 @@
             "goWifi": "zur Wifi-Sicherheit wechseln",
             "goVpn": "zur VPN-Sicherheit wechseln",
             "visitWindows": "Aktivierung von Windows besuchen",
-            "visitFingerprint": "Fingerprint Reader besuchen",
+            "visitFingerprint": "Lesegerät für Fingerabdrücke besuchen",
             "visitUac": "Benutzerkontensteuerung besuchen",
             "visitHde": "Festplattenlaufwerk-Verschlüsselung besuchen",
             "haveOwnPassword": "Ich habe meinen eigenen Password Manager",

@@ -2214,7 +2214,7 @@
             "vpnVirtual": "Virtuelt privat nettverk",
             "wifiConnected": "WiFi og Sikkerhet for tilkoblede hjem",
             "connectedHomeSecurity": "Sikkerhet for tilkoblede hjem",
-            "fingerprint": "Fingeravtrykkleser",
+            "fingerprint": "Fingerprint Reader",
             "uacTitle": "Hva er UAC-varsling?",
             "uacText": "Brukerkontokontroll er en svært viktig sikkerhetsfunksjon i Windows som bidrar til å hindre at potensielt skadelige programmer gjør endringer på systemet.",
             "windowsTitle": "Hvorfor må jeg aktive Windows?",

@@ -750,7 +750,7 @@
                 "sub3": "Zabezpečenie WiFi",
                 "sub4": "Sila hesla",
                 "sub5": "Zabezpečenie VPN",
-                "sub6": "Odtlačok"
+                "sub6": "Odtlačok prsta"
             },
             "support": "Technická podpora",
             "beta": {
@@ -775,7 +775,7 @@
             "notFound": "NENÁJDENÉ",
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ",
-            "fingerPrint": "Odtlačok",
+            "fingerPrint": "Odtlačok Prsta",
             "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "ZAREGISTROVANÉ",
