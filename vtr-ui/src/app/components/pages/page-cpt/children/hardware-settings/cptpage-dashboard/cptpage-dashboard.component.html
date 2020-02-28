@@ -12,47 +12,31 @@
         </vtr-widget-carousel>
     </div>
     <div class="col-xl-6 col-sm-6 pb-20 card-left">
-        <vtr-container-card order="2" [itemID]="cardContentPositionB.Id" [img]="cardContentPositionB.FeatureImage"
-            [caption]="cardContentPositionB.Description" [title]="cardContentPositionB.Title"
-            [logoText]="cardContentPositionB.BrandName" [action]="cardContentPositionB.Action"
-            [actionType]="cardContentPositionB.ActionType" [actionLink]="cardContentPositionB.ActionLink"
-            [dataSource]="cardContentPositionB.DataSource" [isOfflineArm]="cardContentPositionB.isLocal"
+        <vtr-container-card order="2" [item]="cardContentPositionB" [isOfflineArm]="cardContentPositionB.isLocal"
             [type]="'corner'" [ratio]="2" [cornerShift]="'large'" [containerCardId]="'dashboard-lnk-content-b'"
             id="dashboard-card-b" aria-label="dashboard-card-b">
         </vtr-container-card>
     </div>
     <div class="col-xl-6 col-sm-6 pb-20 card-right">
-        <vtr-container-card order="3" [itemID]="cardContentPositionC.Id" [img]="cardContentPositionC.FeatureImage"
-            [caption]="cardContentPositionC.Description" [title]="cardContentPositionC.Title"
-            [logoText]="cardContentPositionC.BrandName" [action]="cardContentPositionC.Action"
-            [actionType]="cardContentPositionC.ActionType" [actionLink]="cardContentPositionC.ActionLink"
+        <vtr-container-card order="3" [item]="cardContentPositionC"
             [isOfflineArm]="cardContentPositionC.isLocal" [type]="'corner'" [ratio]="2"
             [containerCardId]="'dashboard-lnk-content-c'" id="dashboard-card-c" aria-label="dashboard-card-c">
         </vtr-container-card>
     </div>
     <div class="col-sm-12 pb-20 px-0">
-        <vtr-container-card order="4" [itemID]="cardContentPositionD.Id" [img]="cardContentPositionD.FeatureImage"
-            [title]="cardContentPositionD.Title" [logoText]="cardContentPositionD.BrandName"
-            [action]="cardContentPositionD.Action" [actionType]="cardContentPositionD.ActionType"
-            [actionLink]="cardContentPositionD.ActionLink" [isOfflineArm]="cardContentPositionD.isLocal"
+        <vtr-container-card order="4" [item]="cardContentPositionD" [isOfflineArm]="cardContentPositionD.isLocal"
             [type]="'highlight'" [ratio]="4" [containerCardId]="'dashboard-lnk-content-d'" id="dashboard-card-d"
             aria-label="dashboard-card-d">
         </vtr-container-card>
     </div>
     <div class="col-xl-6 col-sm-6 pb-20 card-left">
-        <vtr-container-card order="5" [itemID]="cardContentPositionE.Id" [img]="cardContentPositionE.FeatureImage"
-            [title]="cardContentPositionE.Title" [logoText]="cardContentPositionE.BrandName"
-            [action]="cardContentPositionE.Action" [actionType]="cardContentPositionE.ActionType"
-            [actionLink]="cardContentPositionE.ActionLink" [isOfflineArm]="cardContentPositionE.isLocal"
+        <vtr-container-card order="5" [item]="cardContentPositionE" [isOfflineArm]="cardContentPositionE.isLocal"
             [type]="'article'" [ratio]="1" [containerCardId]="'dashboard-lnk-content-e'" id="dashboard-card-e"
             aria-label="dashboard-card-e">
         </vtr-container-card>
     </div>
     <div class="col-xl-6 col-sm-6 pb-20 card-right">
-        <vtr-container-card order="6" [itemID]="cardContentPositionF.Id" [img]="cardContentPositionF.FeatureImage"
-            [title]="cardContentPositionF.Title" [logoText]="cardContentPositionF.BrandName"
-            [action]="cardContentPositionF.Action" [actionType]="cardContentPositionF.ActionType"
-            [actionLink]="cardContentPositionF.ActionLink" [isOfflineArm]="cardContentPositionF.isLocal"
+        <vtr-container-card order="6" [item]="cardContentPositionF" [isOfflineArm]="cardContentPositionF.isLocal"
             [type]="'article'" [ratio]="1" [containerCardId]="'dashboard-lnk-content-f'" id="dashboard-card-f"
             aria-label="dashboard-card-f">
         </vtr-container-card>
