@@ -3,15 +3,20 @@
 	<div #toggleBtn class="input" (click)="toggle()" (keydown.enter)="toggle()" role="combobox" [attr.aria-expanded]="isDropDownOpen" aria-haspopup="true" tabindex="0">
 		<div class="list" *ngIf="isDropDownOpen && !disabled" role="listbox" tabindex="0" [attr.aria-hidden]="!isDropDownOpen">
 			<ul>
-				<li (click)="[select(i, toggleBtn),toggle()]" role="option" (keydown.enter)="[select(i, toggleBtn),toggle()]" tabindex="0" attr.aria-label="{{ i.text }}" *ngFor="let i of list" >
-					<span *ngIf="textCase === 'default'">{{i.text | titlecase }}</span>
-					<span *ngIf="textCase === 'oled'" >{{customCamelCase(i.text)}}</span>
-				</li>
+				<li (click)="[select(i, toggleBtn),toggle()]" role="option" (keydown.enter)="[select(i, toggleBtn),toggle()]" tabindex="0"  *ngFor="let i of list" >
+                    <span *ngIf="textCase === 'default'" role="link" id="{{i.text}}"
+                        attr.aria-label="{{ i.text }}">{{i.text | titlecase }}</span>
+                    <span *ngIf="textCase === 'oled'" role="link" id="{{i.text}}"
+                        attr.aria-label="{{ i.text }}">{{customCamelCase(i.text)}}</span>
+                </li>
+                
 			</ul>
 		</div>
 		<div class="time">
-			<span *ngIf="textCase === 'default'">{{name}} {{placeholder | titlecase }} </span>
-			<span *ngIf="textCase === 'oled'" >{{name}} {{placeholder | lowercase }} </span>
+            <span *ngIf="textCase === 'default'" role="link" id="{{name}}" attr.aria-label="{{ name }}">{{name}}
+                {{placeholder | titlecase }} </span>
+            <span *ngIf="textCase === 'oled'" role="link" id="{{name}}" attr.aria-label="{{ name }}">{{name}}
+                {{placeholder | lowercase }} </span>
 		</div>
 		<p class="chevron">
 			<fa-icon *ngIf="!isDropDownOpen" [icon]="['fal', 'chevron-down']">

@@ -247,21 +247,17 @@
 								</p>
 
                             </div>
-							<div class="more-info mt-5 row"
-								(click)="showMoreDytc6()"
-								tabindex="0"
-                                role="link"
-                                id="{{automationId}}"
-								attr.aria-label="{{automationId}}"
-                                >
-								<div class="more-info-button mr-2"
-									*ngIf="!isCollapsed">
-									{{'device.deviceSettings.inputAccessories.controlOptions.more' | translate}}
-								</div>
-								<div class="more-info-button mr-2"
-									*ngIf="isCollapsed">
-									{{'device.deviceSettings.inputAccessories.controlOptions.less' | translate}}
-								</div>
+                            <div class="more-info mt-5 row" (click)="showMoreDytc6()">
+                                <div class="more-info-button mr-2" *ngIf="!isCollapsed" tabindex="0" role="link"
+                                    id="powerSmartSettings-intelligentCooling-more-info"
+                                    attr.aria-label="powerSmartSettings-intelligentCooling-more-info">
+                                    {{'device.deviceSettings.inputAccessories.controlOptions.more' | translate}}
+                                </div>
+                                <div class="more-info-button mr-2" *ngIf="isCollapsed" tabindex="0" role="link"
+                                    id="powerSmartSettings-intelligentCooling-less-info"
+                                    attr.aria-label="powerSmartSettings-intelligentCooling-less-info">
+                                    {{'device.deviceSettings.inputAccessories.controlOptions.less' | translate}}
+                                </div>
 								<fa-icon *ngIf="!isCollapsed"
 									[icon]="['fal', 'chevron-down']"></fa-icon>
 								<fa-icon *ngIf="isCollapsed"

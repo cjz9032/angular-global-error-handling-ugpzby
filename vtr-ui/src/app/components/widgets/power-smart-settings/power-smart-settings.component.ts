@@ -47,7 +47,6 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	public dytc6Mode: string = DYTC6Modes.Manual;
 	public dytc6IsAutoModeSupported = true;
     private amtCapabilityInterval: any;
-    public automationId:string="powerSmartSettings-intelligentCooling-more-info";
 	@Output() isPowerSmartSettingHidden = new EventEmitter<any>();
 
 	constructor(
@@ -179,12 +178,6 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 
 	public showMoreDytc6() {
         this.isCollapsed = !this.isCollapsed;
-        if(this.isCollapsed){
-            this.automationId="powerSmartSettings-intelligentCooling-less-info"
-        }
-        else{
-            this.automationId="powerSmartSettings-intelligentCooling-more-info"
-        }
 	}
 
 	// Start Power Smart Settings for IdeaPad
