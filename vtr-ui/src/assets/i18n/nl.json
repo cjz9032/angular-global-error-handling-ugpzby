@@ -922,6 +922,10 @@
                     "update": "Updaten"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Om de werkingsduur van de batterij te verlengen, hebben we de volledige laadcapaciteit op basis van uw gebruik geoptimaliseerd. De volledige batterijcapaciteit is mogelijk pas beschikbaar nadat u tot 20% hebt ontladen en opnieuw hebt opgeladen."
                 },
                 "condition": {
                     "Illegal": "De geïnstalleerde batterij wordt <b>niet ondersteund</b> door het systeem en kan niet worden opgeladen. Vervang de batterij door een Lenovo-batterij die geschikt is voor dit systeem.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
                     "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b>",
                     "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan niet voldoende stroom leveren.</b>",
-                    "MissingDriver": "<b>Het stuurprogramma voor Lenovo Power Manager</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit om het meest recente stuurprogramma te installeren. U kunt het stuurprogramma ook vanaf <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a> installeren. Start uw computer na het installeren opnieuw op.",
+                    "MissingDriver": "<b>Het stuurprogramma voor Lenovo Power Manager</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit of installeer het handmatig van <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a>. Start uw computer na het installeren opnieuw op.",
                     "StoreLimitation": "<b>De batterij kan slechts {{value}}% van</b> de oorspronkelijke volledige laadcapaciteit opslaan.",
                     "HighTemperature": "<b>Het ontladen</b> is gestopt omdat de <b>batterij te heet is geworden.</b>",
                     "TrickleCharge": "De batterij is <b>volledig ontladen</b> en moet opnieuw worden opgeladen. Dit kan tien uur of langer duren.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} van {{stageNum}}: kalibreren naar volledig opladen",
                         "progressText2": "{{stage}} van {{stageNum}}: kalibreren naar bijna lege batterij",
-                        "progressText3": "{{stage}} van {{stageNum}}: kalibreren naar bijna volle batterij",
+                        "progressText3": "Stap {{stage}} van in totaal {{stageNum}} stappen",
                         "FCCText": "Van {{before}} Wh tot {{after}} Wh",
                         "note": "Opmerking: voordat u de batterijmeter opnieuw instelt, zorg ervoor dat de computer is aangesloten op de netvoeding. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {

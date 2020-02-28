@@ -94,10 +94,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.metrics = this.shellService.getMetrics();
 	}
 
-	@HostListener('window: focus')
-	onFocus(): void {
-		if (this.hardwareScanService.hasLastResponse()) {
-			this.hardwareScanService.renderLastResponse();
+	@HostListener('document: visibilitychange')
+	onVisibilityChange(): void {
+		const visibility = document.visibilityState;
+		if (visibility === 'visible') {
+			if (this.hardwareScanService.hasLastResponse()) {
+				this.hardwareScanService.renderLastResponse();
+			}
 		}
 	}
 

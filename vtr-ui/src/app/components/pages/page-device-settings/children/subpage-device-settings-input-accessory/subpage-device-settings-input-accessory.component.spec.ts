@@ -265,267 +265,267 @@ describe("SubpageDeviceSettingsInputAccessoryComponent", () => {
 		expect(component.shortcutKeys.length).toEqual(5)
 	}));
 
-	it('should call getFnCtrlSwapCapability', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = true
-		keyboardService.keyboardManager = {
-			GetFnCtrlSwapCapability() {
-				return
-			}
-		}
-		const spy = spyOn(keyboardService, 'GetFnCtrlSwapCapability').and.returnValue(Promise.resolve(keyboardService.keyboardManager))
-		component.getFnCtrlSwapCapability()
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call getFnCtrlSwapCapability', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = true
+	// 	keyboardService.keyboardManager = {
+	// 		GetFnCtrlSwapCapability() {
+	// 			return
+	// 		}
+	// 	}
+	// 	const spy = spyOn(keyboardService, 'GetFnCtrlSwapCapability').and.returnValue(Promise.resolve(keyboardService.keyboardManager))
+	// 	component.getFnCtrlSwapCapability()
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call getFnCtrlSwapCapability -inner else case', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = true
-		const spy = spyOn(keyboardService, 'GetFnCtrlSwapCapability').and.returnValue(Promise.resolve(undefined))
-		component.getFnCtrlSwapCapability()
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call getFnCtrlSwapCapability -inner else case', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = true
+	// 	const spy = spyOn(keyboardService, 'GetFnCtrlSwapCapability').and.returnValue(Promise.resolve(undefined))
+	// 	component.getFnCtrlSwapCapability()
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call getFnCtrlSwapCapability - catch block', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = true
-		const error = {message: 'error'}
-		const spy = spyOn(keyboardService, 'GetFnCtrlSwapCapability').and.returnValue(Promise.reject(error))
-		component.getFnCtrlSwapCapability()
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call getFnCtrlSwapCapability - catch block', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = true
+	// 	const error = {message: 'error'}
+	// 	const spy = spyOn(keyboardService, 'GetFnCtrlSwapCapability').and.returnValue(Promise.reject(error))
+	// 	component.getFnCtrlSwapCapability()
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call getFnCtrlSwapCapability - isShellAvailable is false', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = false
-		const spy = spyOn(keyboardService, 'GetFnCtrlSwapCapability')
-		component.getFnCtrlSwapCapability()
-		expect(spy).not.toHaveBeenCalled()
-	}));
+	// it('should call getFnCtrlSwapCapability - isShellAvailable is false', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = false
+	// 	const spy = spyOn(keyboardService, 'GetFnCtrlSwapCapability')
+	// 	component.getFnCtrlSwapCapability()
+	// 	expect(spy).not.toHaveBeenCalled()
+	// }));
 
-	it('should call getFnCtrlSwapCapability - throw error', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		const error = {message: 'error'}
-		const spy = spyOn<any>(keyboardService, 'GetFnCtrlSwapCapability').and.returnValue(error)
-		component.getFnCtrlSwapCapability()
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call getFnCtrlSwapCapability - throw error', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	const error = {message: 'error'}
+	// 	const spy = spyOn<any>(keyboardService, 'GetFnCtrlSwapCapability').and.returnValue(error)
+	// 	component.getFnCtrlSwapCapability()
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call getFnCtrlSwap', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = true
-		keyboardService.keyboardManager = {
-			GetFnCtrlSwap() {
-				return
-			}
-		}
-		const spy = spyOn(keyboardService, 'GetFnCtrlSwap').and.returnValue(Promise.resolve(keyboardService.keyboardManager));
-		component.getFnCtrlSwap()
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call getFnCtrlSwap', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = true
+	// 	keyboardService.keyboardManager = {
+	// 		GetFnCtrlSwap() {
+	// 			return
+	// 		}
+	// 	}
+	// 	const spy = spyOn(keyboardService, 'GetFnCtrlSwap').and.returnValue(Promise.resolve(keyboardService.keyboardManager));
+	// 	component.getFnCtrlSwap()
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call getFnCtrlSwap - catch block inner', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = true
-		const error = {message: 'error'}
-		const spy = spyOn(keyboardService, 'GetFnCtrlSwap').and.returnValue(Promise.reject(error));
-		component.getFnCtrlSwap()
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call getFnCtrlSwap - catch block inner', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = true
+	// 	const error = {message: 'error'}
+	// 	const spy = spyOn(keyboardService, 'GetFnCtrlSwap').and.returnValue(Promise.reject(error));
+	// 	component.getFnCtrlSwap()
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call fnCtrlKey', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		const event = {
-			switchValue: true
-		}
-		const res = {
-			RebootRequired: true
-		}
-		keyboardService.isShellAvailable = true
-		spyOn(keyboardService, 'SetFnCtrlSwap').and.returnValue(Promise.resolve(res))
-		component.fnCtrlKey(event)
-		expect(component.fnCtrlSwapStatus).toEqual(event.switchValue)
-	}));
+	// it('should call fnCtrlKey', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	const event = {
+	// 		switchValue: true
+	// 	}
+	// 	const res = {
+	// 		RebootRequired: true
+	// 	}
+	// 	keyboardService.isShellAvailable = true
+	// 	spyOn(keyboardService, 'SetFnCtrlSwap').and.returnValue(Promise.resolve(res))
+	// 	component.fnCtrlKey(event)
+	// 	expect(component.fnCtrlSwapStatus).toEqual(event.switchValue)
+	// }));
 
-	it('should call fnCtrlKey - inner else', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		const event = {
-			switchValue: true
-		}
-		const res = {
-			RebootRequired: false
-		}
-		keyboardService.isShellAvailable = true
-		const spy = spyOn(keyboardService, 'SetFnCtrlSwap').and.returnValue(Promise.resolve(res))
-		component.fnCtrlKey(event)
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call fnCtrlKey - inner else', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	const event = {
+	// 		switchValue: true
+	// 	}
+	// 	const res = {
+	// 		RebootRequired: false
+	// 	}
+	// 	keyboardService.isShellAvailable = true
+	// 	const spy = spyOn(keyboardService, 'SetFnCtrlSwap').and.returnValue(Promise.resolve(res))
+	// 	component.fnCtrlKey(event)
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call fnCtrlKey - outer else', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		const event = {
-			switchValue: true
-		}
-		keyboardService.isShellAvailable = false
-		const spy = spyOn(keyboardService, 'SetFnCtrlSwap')
-		component.fnCtrlKey(event)
-		expect(spy).not.toHaveBeenCalled()
-	}));
+	// it('should call fnCtrlKey - outer else', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	const event = {
+	// 		switchValue: true
+	// 	}
+	// 	keyboardService.isShellAvailable = false
+	// 	const spy = spyOn(keyboardService, 'SetFnCtrlSwap')
+	// 	component.fnCtrlKey(event)
+	// 	expect(spy).not.toHaveBeenCalled()
+	// }));
 
-	it('should call fnCtrlKey - catch block', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		const event = {
-			switchValue: true
-		}
-		keyboardService.isShellAvailable = true
-		const error = {message: 'error'}
-		const spy = spyOn(keyboardService, 'SetFnCtrlSwap').and.returnValue(error)
-		component.fnCtrlKey(event)
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call fnCtrlKey - catch block', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	const event = {
+	// 		switchValue: true
+	// 	}
+	// 	keyboardService.isShellAvailable = true
+	// 	const error = {message: 'error'}
+	// 	const spy = spyOn(keyboardService, 'SetFnCtrlSwap').and.returnValue(error)
+	// 	component.fnCtrlKey(event)
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call getFnAsCtrlCapability', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = true
-		const spy = spyOn(keyboardService, 'GetFnAsCtrlCapability').and.returnValue(Promise.resolve(true))
-		component.getFnAsCtrlCapability()
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call getFnAsCtrlCapability', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = true
+	// 	const spy = spyOn(keyboardService, 'GetFnAsCtrlCapability').and.returnValue(Promise.resolve(true))
+	// 	component.getFnAsCtrlCapability()
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call getFnAsCtrlCapability - inner catch block', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = true
-		const error = {message: 'error'}
-		const spy = spyOn(keyboardService, 'GetFnAsCtrlCapability').and.returnValue(Promise.reject(error))
-		component.getFnAsCtrlCapability()
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call getFnAsCtrlCapability - inner catch block', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = true
+	// 	const error = {message: 'error'}
+	// 	const spy = spyOn(keyboardService, 'GetFnAsCtrlCapability').and.returnValue(Promise.reject(error))
+	// 	component.getFnAsCtrlCapability()
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call getFnAsCtrlCapability - inner else case', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = true
-		const spy = spyOn(keyboardService, 'GetFnAsCtrlCapability').and.returnValue(Promise.resolve(false))
-		component.getFnAsCtrlCapability()
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call getFnAsCtrlCapability - inner else case', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = true
+	// 	const spy = spyOn(keyboardService, 'GetFnAsCtrlCapability').and.returnValue(Promise.resolve(false))
+	// 	component.getFnAsCtrlCapability()
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call getFnAsCtrlCapability - outer else case', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = false
-		const spy = spyOn(keyboardService, 'GetFnAsCtrlCapability')
-		component.getFnAsCtrlCapability()
-		expect(spy).not.toHaveBeenCalled()
-	}));
+	// it('should call getFnAsCtrlCapability - outer else case', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = false
+	// 	const spy = spyOn(keyboardService, 'GetFnAsCtrlCapability')
+	// 	component.getFnAsCtrlCapability()
+	// 	expect(spy).not.toHaveBeenCalled()
+	// }));
 
-	it('should call getFnAsCtrlCapability - outer catch block', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = true
-		const error: any = {message: 'error'}
-		const spy = spyOn(keyboardService, 'GetFnAsCtrlCapability').and.returnValue(error)
-		component.getFnAsCtrlCapability()
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call getFnAsCtrlCapability - outer catch block', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = true
+	// 	const error: any = {message: 'error'}
+	// 	const spy = spyOn(keyboardService, 'GetFnAsCtrlCapability').and.returnValue(error)
+	// 	component.getFnAsCtrlCapability()
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call getFnAsCtrlStatus', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = true
-		spyOn(keyboardService, 'GetFnAsCtrl').and.returnValue(Promise.resolve(true))
-		component.getFnAsCtrlStatus()
-		expect(component.fnAsCtrlStatus).toEqual(false)
-	}));
+	// it('should call getFnAsCtrlStatus', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = true
+	// 	spyOn(keyboardService, 'GetFnAsCtrl').and.returnValue(Promise.resolve(true))
+	// 	component.getFnAsCtrlStatus()
+	// 	expect(component.fnAsCtrlStatus).toEqual(false)
+	// }));
 
-	it('should call getFnAsCtrlStatus - inner catch block', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = true
-		const error = {message: 'error'}
-		spyOn(keyboardService, 'GetFnAsCtrl').and.returnValue(Promise.reject(error))
-		component.getFnAsCtrlStatus()
-		expect(component.fnAsCtrlStatus).toEqual(false)
-	}));
+	// it('should call getFnAsCtrlStatus - inner catch block', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = true
+	// 	const error = {message: 'error'}
+	// 	spyOn(keyboardService, 'GetFnAsCtrl').and.returnValue(Promise.reject(error))
+	// 	component.getFnAsCtrlStatus()
+	// 	expect(component.fnAsCtrlStatus).toEqual(false)
+	// }));
 
-	it('should call getFnAsCtrlStatus - outer catch block', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService);
-		keyboardService.isShellAvailable = false
-		const spy = spyOn(keyboardService, 'GetFnAsCtrl')
-		component.getFnAsCtrlStatus()
-		expect(spy).not.toHaveBeenCalled()
-	}));
+	// it('should call getFnAsCtrlStatus - outer catch block', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService);
+	// 	keyboardService.isShellAvailable = false
+	// 	const spy = spyOn(keyboardService, 'GetFnAsCtrl')
+	// 	component.getFnAsCtrlStatus()
+	// 	expect(spy).not.toHaveBeenCalled()
+	// }));
 
 	it('should call getLayoutTable - layout is TURKISH_F', async(() => {
 		fixture = TestBed.createComponent(
@@ -593,67 +593,67 @@ describe("SubpageDeviceSettingsInputAccessoryComponent", () => {
 		expect(component.fnCtrlKeyTooltipContent.length).not.toEqual(0)
 	}));
 
-	it('should call setFnAsCtrl', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService)
-		keyboardService.isShellAvailable = true
-		const event = {
-			switchValue: true
-		}
-		const spy = spyOn(keyboardService, 'SetFnAsCtrl').and.returnValue(Promise.resolve(true))
-		component.setFnAsCtrl(event)
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call setFnAsCtrl', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService)
+	// 	keyboardService.isShellAvailable = true
+	// 	const event = {
+	// 		switchValue: true
+	// 	}
+	// 	const spy = spyOn(keyboardService, 'SetFnAsCtrl').and.returnValue(Promise.resolve(true))
+	// 	component.setFnAsCtrl(event)
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call setFnAsCtrl - inner catch block', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService)
-		keyboardService.isShellAvailable = true
-		const event = {
-			switchValue: true
-		}
-		const error = {message: 'error'}
-		const spy = spyOn(keyboardService, 'SetFnAsCtrl').and.returnValue(Promise.reject(error))
-		component.setFnAsCtrl(event)
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call setFnAsCtrl - inner catch block', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService)
+	// 	keyboardService.isShellAvailable = true
+	// 	const event = {
+	// 		switchValue: true
+	// 	}
+	// 	const error = {message: 'error'}
+	// 	const spy = spyOn(keyboardService, 'SetFnAsCtrl').and.returnValue(Promise.reject(error))
+	// 	component.setFnAsCtrl(event)
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call setFnAsCtrl - else case', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService)
-		keyboardService.isShellAvailable = false
-		const event = {
-			switchValue: true
-		}
-		const spy = spyOn(keyboardService, 'SetFnAsCtrl')
-		component.setFnAsCtrl(event)
-		expect(spy).not.toHaveBeenCalled()
-	}));
+	// it('should call setFnAsCtrl - else case', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService)
+	// 	keyboardService.isShellAvailable = false
+	// 	const event = {
+	// 		switchValue: true
+	// 	}
+	// 	const spy = spyOn(keyboardService, 'SetFnAsCtrl')
+	// 	component.setFnAsCtrl(event)
+	// 	expect(spy).not.toHaveBeenCalled()
+	// }));
 
-	it('should call setFnAsCtrl - outer catch block', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsInputAccessoryComponent
-		);
-		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService)
-		keyboardService.isShellAvailable = true
-		const event = {
-			switchValue: true
-		}
-		const error = {message: 'error'}
-		const spy = spyOn(keyboardService, 'SetFnAsCtrl').and.returnValue(error)
-		component.setFnAsCtrl(event)
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call setFnAsCtrl - outer catch block', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsInputAccessoryComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	keyboardService = TestBed.get(InputAccessoriesService)
+	// 	keyboardService.isShellAvailable = true
+	// 	const event = {
+	// 		switchValue: true
+	// 	}
+	// 	const error = {message: 'error'}
+	// 	const spy = spyOn(keyboardService, 'SetFnAsCtrl').and.returnValue(error)
+	// 	component.setFnAsCtrl(event)
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
 	it('should call showHideKeyboardBacklight', async(() => {
 		fixture = TestBed.createComponent(

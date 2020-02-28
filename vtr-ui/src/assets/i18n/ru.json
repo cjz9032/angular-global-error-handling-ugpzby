@@ -922,6 +922,10 @@
                     "update": "Обновление"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Чтобы увеличить срок службы аккумулятора, мы оптимизировали его емкость полной зарядки с учетом характера использования. Емкость полной зарядки может быть недоступна, пока аккумулятор не будет разряжен до 20% и снова заряжен."
                 },
                 "condition": {
                     "Illegal": "Установленный аккумулятор <b>не поддерживается</b> данной системой и не будет заряжаться. Замените аккумулятор на соответствующий данной системе аккумулятор Lenovo.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>Аккумулятор не в хорошем состоянии.</b>",
                     "NotSupportACAdapter": "<b>Адаптер электропитания не поддерживается.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер электропитания не может обеспечить достаточное питание.</b>",
-                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не установлен или работает неправильно. Запустите Центр обновления Windows, чтобы установить последнюю версию драйвера. Также можно установить драйвер по <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">этой ссылке</a>. После установки перезагрузите компьютер.",
+                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не установлен или работает неправильно. Запустите Центр обновления Windows или установите драйвер вручную по <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">этой ссылке</a>. После установки перезагрузите компьютер.",
                     "StoreLimitation": "<b>Аккумулятор может хранить только {{value}}% от</b> своей исходной емкости полного заряда.",
                     "HighTemperature": "<b>Разрядка</b> остановлена из-за <b>слишком высокой температуры аккумулятора.</b>",
                     "TrickleCharge": "Аккумулятор <b>полностью разряжен,</b> требуется повторная зарядка. Для этого может потребоваться более десяти часов.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} из {{stageNum}}: калибровка до полной зарядки",
                         "progressText2": "{{stage}} из {{stageNum}}: калибровка до низкого уровня заряда аккумулятора",
-                        "progressText3": "{{stage}} из {{stageNum}}: калибровка до высокого уровня заряда аккумулятора",
+                        "progressText3": "Шаг {{stage}} из {{stageNum}}",
                         "FCCText": "С {{before}} Вт·ч до {{after}} Вт·ч",
                         "note": "Примечание. Перед сбросом индикатора аккумулятора обязательно подключите компьютер к сети переменного тока. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {

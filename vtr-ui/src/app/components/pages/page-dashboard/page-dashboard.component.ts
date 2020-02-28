@@ -10,7 +10,6 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { AndroidService } from 'src/app/services/android/android.service';
@@ -37,15 +36,13 @@ interface IConfigItem {
 	dashboardCache: string;
 }
 
-
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
 	styleUrls: ['./page-dashboard.component.scss']
 })
 export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit {
-	submit = this.translate.instant('dashboard.feedback.form.button');
-	feedbackButtonText = this.submit;
+
 	offlineConnection = 'offline-connection';
 	public systemStatus: Status[] = [];
 	public isOnline = true;
@@ -189,10 +186,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		});
 		// this.brand = this.deviceService.getMachineInfoSync().brand;
 		this.brand = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, -1);
-		translate.stream('dashboard.feedback.form.button').subscribe((value) => {
-			this.submit = value;
-			this.feedbackButtonText = this.submit;
-		});
 		// Evaluate the translations for QA on language Change
 		// this.qaService.setTranslationService(this.translate);
 		// this.qaService.setCurrentLangTranslations();
@@ -635,15 +628,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				}
 			});
 		}
-	}
-
-	onFeedbackModal() {
-		this.modalService.open(FeedbackFormComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'feedback-modal'
-		});
 	}
 
 	private getTileSource() {

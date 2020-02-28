@@ -13,22 +13,12 @@
 					attr.aria-label="dashboard-give-feedback-description"
 					[innerHTML]="description"></div>
 				<div *ngIf="actionName"
-					class="button-box d-none d-lg-block">
+					class="button-box">
 					<vtr-ui-button (onClick)="feedback($event)"
+						[tabIndex]="100"
 						id="widget-btn-feedback"
 						aria-label="widget-btn-feedback"
-						vtrMetrics="giveFeedbacEvent"
-						[isFullWidth]="true"
-						[label]="actionName"
-						[isDisabled]="!isOnline"
-						[linkId]="'dashboard-btn-feedback'"></vtr-ui-button>
-				</div>
-				<div *ngIf="actionName"
-					class="button-box d-lg-none">
-					<vtr-ui-button (onClick)="feedback($event)"
-						id="widget-btn-feedback"
-						aria-label="widget-btn-feedback"
-						vtrMetrics="giveFeedbacEvent"
+						vtrMetrics="giveFeedbackEvent"
 						[isFullWidth]="true"
 						[label]="actionName"
 						[isDisabled]="!isOnline"

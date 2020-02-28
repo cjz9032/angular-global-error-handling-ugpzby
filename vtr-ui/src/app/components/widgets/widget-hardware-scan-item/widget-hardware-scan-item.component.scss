@@ -85,10 +85,10 @@
 	.result-code {
 		width: 100%;
 		text-align: right;
+		line-height: 3.3rem;
 		padding-right: 1.2rem;
 		.result-code-value-text {
 			color: $shade_blue;
-			line-height: 3.3rem;
 			font-size: $fontsize_xs2;
 			font-weight: $weight_600;
 		}

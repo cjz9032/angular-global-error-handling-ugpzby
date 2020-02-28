@@ -1,277 +1,178 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 
-import { BatteryDetailComponent } from './battery-detail.component';
-import { BatteryIndicatorComponent } from '../battery-indicator/battery-indicator.component';
-import { TranslationModule } from 'src/app/modules/translation.module';
-import { TranslateStore } from '@ngx-translate/core';
-import { MinutesToHourminPipe } from 'src/app/pipe/minutes-to-hourmin.pipe';
-import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
+import { BatteryDetailComponent } from "./battery-detail.component";
+
+import { CommonService } from "src/app/services/common/common.service";
+import { VantageShellService } from "src/app/services/vantage-shell/vantage-shell.service";
+import { LoggerService } from "src/app/services/logger/logger.service";
+
+import { TranslateModule } from "@ngx-translate/core";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
+import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { BatteryInformation } from 'src/app/enums/battery-information.enum';
 import { BatteryConditionsEnum } from 'src/app/enums/battery-conditions.enum';
 
-describe('BatteryDetailComponent', () => {
-	let component: BatteryDetailComponent;
-	let fixture: ComponentFixture<BatteryDetailComponent>;
-	let debugElement;
-	// let commonService;
-	const dataInfo: BatteryDetail[] = [{
-
-		heading: '',
-		chargeStatusString: 'device.deviceSettings.batteryGauge.details.chargeStatusString.charging',
-		remainingTimeText: 'device.deviceSettings.batteryGauge.details.chargeCompletionTime',
-
-		barCode: 'X2XP899J0N0',
-		batteryCondition: ['Normal'],
+const dataInfo: BatteryDetail[] = [
+	{
+		heading: "",
+		chargeStatusString:
+			"device.deviceSettings.batteryGauge.details.chargeStatusString.charging",
+		remainingTimeText:
+			"device.deviceSettings.batteryGauge.details.chargeCompletionTime",
+		barCode: "X2XP899J0N0",
+		batteryCondition: ["Normal"],
 		batteryHealth: 0,
 		chargeStatus: 2,
 		cycleCount: 138,
 		designCapacity: 45.28,
 		designVoltage: 11.1,
-		deviceChemistry: 'Li-Polymer',
-		firmwareVersion: '0005-0234-0100-0005',
-		firstUseDate: new Date('12/21/2018'),
-		fruPart: '01AV464',
+		deviceChemistry: "Li-Polymer",
+		firmwareVersion: "0005-0234-0100-0005",
+		firstUseDate: new Date("12/21/2018"),
+		fruPart: "01AV464",
 		fullChargeCapacity: 46.74,
-		manufactureDate: new Date('12/21/2018'),
-		manufacturer: 'SMP',
+		manufactureDate: new Date("12/21/2018"),
+		manufacturer: "SMP",
 		remainingCapacity: 11.74,
 		remainingPercent: 25,
 		remainingTime: 67,
 		temperature: 34,
 		voltage: 10.843,
-		wattage: 9
-	}];
+		wattage: 9,
+		isTemporaryChargeMode: false
+	}
+];
 
-	const dataIndicator: BatteryIndicator = {
-		batteryNotDetected: false,
-		charging: false,
-		expressCharging: false,
-		hours: 0,
-		isAirplaneMode: false,
-		isChargeThresholdOn: false,
-		minutes: 31,
-		percent: 14,
-		timeText: 'timeRemaining',
+const dataIndicator: BatteryIndicator = {
+	percent: 14,
+	charging: false,
+	batteryNotDetected: false,
+	expressCharging: false,
+	hours: 0,
+	minutes: 31,
+	timeText: "timeRemaining",
+	isAirplaneMode: false,
+	isChargeThresholdOn: false,
+	convertMin: (totalMin: number) => {
+		this.hours = Math.trunc(totalMin / 60);
+		this.minutes = Math.trunc(totalMin % 60);
+	}
+};
 
-		convertMin(totalMin: number) {
-			this.hours = Math.trunc(totalMin / 60);
-			this.minutes = Math.trunc(totalMin % 60);
-		}
-	};
-
-	const dataConditionsGood: BatteryConditionModel[] = [{
+const dataConditionsGood: BatteryConditionModel[] = [
+	{
 		condition: 0,
 		conditionStatus: 0,
 
 		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.Good';
+			return "device.deviceSettings.batteryGauge.condition.Good";
 		}
-	}];
+	}
+];
 
-	const dataConditionsBad: BatteryConditionModel[] = [{
+const dataConditionsBad: BatteryConditionModel[] = [
+	{
 		condition: BatteryConditionsEnum.Bad,
 		conditionStatus: 2,
 		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.Bad';
+			return "device.deviceSettings.batteryGauge.condition.Bad";
 		}
-	}];
+	}
+];
 
-	/* {
-		condition: BatteryConditionsEnum.Bad,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.Bad';
-		}
-	},
-	{
-		condition: BatteryConditionsEnum.Illegal,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.Illegal';
-		}
-	},
-	{
-		condition: BatteryConditionsEnum.Exhaustion,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.Exhaustion';
-		}
-	},
-	{
-		condition: BatteryConditionsEnum.NotDetected,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.NotDetected';
-		}
-	},
-	{
-		condition: BatteryConditionsEnum.MissingDriver,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.MissingDriver';
-		}
-	},
-	{
-		condition: BatteryConditionsEnum.NotSupportACAdapter,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.NotSupportACAdapter';
-		}
-	},
-	{
-		condition: BatteryConditionsEnum.FullACAdapterSupport,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.FullACAdapterSupport';
-		}
-	},
-	{
-		condition: BatteryConditionsEnum.LimitedACAdapterSupport,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.LimitedACAdapterSupport';
-		}
-	},
-	{
-		condition: BatteryConditionsEnum.StoreLimitation,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.StoreLimitation';
-		}
-	},
-	{
-		condition: BatteryConditionsEnum.HighTemperature,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.HighTemperature';
-		}
-	},
-	{
-		condition: BatteryConditionsEnum.OverheatedBattery,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.OverheatedBattery';
-		}
-	},
-	{
-		condition: BatteryConditionsEnum.TrickleCharge,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.TrickleCharge';
-		}
-	},
-	{
-		condition: BatteryConditionsEnum.PermanentError,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.PermanentError';
-		}
-	},
-	{
-		condition: BatteryConditionsEnum.UnsupportedBattery,
-		conditionStatus: 0,
-
-		getBatteryConditionTip(condition: number): string {
-			return 'device.deviceSettings.batteryGauge.condition.Illegal';
-		}
-	} */
-
-	const notification: AppNotification = {
-		type: BatteryInformation.BatteryInfo,
-		payload: { detail: dataInfo, indicator: dataIndicator, conditions: dataConditionsGood }
-	};
-
-	const notificationBad: AppNotification = {
-		type: BatteryInformation.BatteryInfo,
-		payload: { detail: dataInfo, indicator: dataIndicator, conditions: dataConditionsBad }
-	};
-	/*
-		const notificationIllegal: AppNotification = {
-			type: BatteryInformation.BatteryInfo,
-			payload: { detail: dataInfo, indicator: dataIndicator, conditions: dataConditionsBad }
-		}; */
+describe("Battery Details Component:", () => {
+	let component: BatteryDetailComponent;
+	let fixture: ComponentFixture<BatteryDetailComponent>;
+	let commonService: CommonService;
+	let shellService: VantageShellService;
+	let logger: LoggerService;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [BatteryDetailComponent, BatteryIndicatorComponent, MinutesToHourminPipe],
-			imports: [TranslationModule],
-			providers: [TranslateStore]
-		}).compileComponents();
+			schemas: [NO_ERRORS_SCHEMA],
+			imports: [
+				HttpClientTestingModule,
+				TranslateModule.forRoot(),
+				NgbModule
+			],
+			declarations: [BatteryDetailComponent],
+			providers: [CommonService, VantageShellService, LoggerService]
+		});
 	}));
 
-	beforeEach(() => {
+	it("should create component", async(() => {
 		fixture = TestBed.createComponent(BatteryDetailComponent);
-		debugElement = fixture.debugElement;
 		component = fixture.componentInstance;
-		component.dataInfo = dataInfo;
-		component.dataIndicator = dataIndicator;
-		component.dataConditions = dataConditionsGood;
+		component.dataInfo = [...dataInfo];
+		component.dataConditions = [...dataConditionsGood];
+		component.dataIndicator = dataIndicator
 		fixture.detectChanges();
-
-		component.batteryIndicator = new BatteryIndicator();
-	});
-
-	it('should create', () => {
 		expect(component).toBeTruthy();
+	}));
+
+	it("should call preProcessBatteryDetailResponse with no deviceChemistry", async(() => {
+		fixture = TestBed.createComponent(BatteryDetailComponent);
+		component = fixture.componentInstance;
+		component.dataInfo = [...dataInfo];
+		component.dataInfo[0].deviceChemistry = '';
+		// component.dataInfo[0].chargeStatus = 0
+		component.dataConditions = [...dataConditionsGood];
+		component.dataIndicator = dataIndicator;
+		component.dataIndicator.timeText = 'timeCompletion'
+		const response = {
+			detail: component.dataInfo,
+			indicator: component.dataIndicator,
+			conditions: component.dataConditions
+		}
+		component.preProcessBatteryDetailResponse(response);
+		expect(component.dataSource).toEqual(response.detail)
+	}));
+
+	it('should call onFccIconClick', () => {
+		fixture = TestBed.createComponent(BatteryDetailComponent);
+		component = fixture.componentInstance;
+		const tooltip = {
+			isOpen() {
+				return true
+			},
+			close() {
+				return false
+			}
+		}
+		const canOpen  = false
+		const spy = spyOn(tooltip, 'close')
+		component.onFccIconClick(tooltip, canOpen)
+		expect(spy).toHaveBeenCalled()
 	});
 
-	it('#ngOnInit should call preProcessBatteryDetailResponse', () => {
-		spyOn(component, 'preProcessBatteryDetailResponse');
-		component.ngOnInit();
-		expect(component.preProcessBatteryDetailResponse).toHaveBeenCalledWith({ detail: dataInfo, indicator: dataIndicator, conditions: dataConditionsGood });
+	it('should call onFccIconClick canOpen is true', () => {
+		fixture = TestBed.createComponent(BatteryDetailComponent);
+		component = fixture.componentInstance;
+		const tooltip = {
+			isOpen() {
+				return false
+			},
+			close() {
+				return false
+			},
+			open() {
+				return true
+			}
+		}
+		const canOpen = true
+		const spy = spyOn(tooltip, 'open')
+		component.onFccIconClick(tooltip, canOpen)
+		expect(spy).toHaveBeenCalled()
 	});
 
-	it('#onNotification should call preProcessBatteryDetailResponse', () => {
-		spyOn(component, 'preProcessBatteryDetailResponse');
-		component.onNotification(notification);
-		expect(component.preProcessBatteryDetailResponse).toHaveBeenCalledWith(notification.payload);
+	it('should call isValid with val equal to null', () => {
+		fixture = TestBed.createComponent(BatteryDetailComponent);
+		component = fixture.componentInstance;
+		const val = null;
+		const res = component.isValid(val)
+		expect(res).toEqual(false)
 	});
-
-	it('#isValid should return false', () => {
-		expect(component.isValid(undefined)).toBeFalsy();
-		expect(component.isValid(null)).toBeFalsy();
-		expect(component.isValid('')).toBeFalsy();
-		expect(component.isValid(0)).toBeFalsy();
-	});
-	it('#isValid should return true', () => {
-		expect(component.isValid(23)).toBeTruthy();
-		expect(component.isValid('Discharging')).toBeTruthy();
-	});
-
-
-	it('#onNotification should call preProcessBatteryDetailResponse with battery conditon good ', () => {
-		spyOn(component, 'preProcessBatteryDetailResponse');
-		// component.dataConditions = dataConditionsBad;
-		// notification.payload.dataConditions = dataConditionsGood;
-		component.onNotification(notification);
-		expect(component.preProcessBatteryDetailResponse).toHaveBeenCalledWith(notification.payload);
-	});
-
-	it('#onNotification should call preProcessBatteryDetailResponse with battery conditon bad ', () => {
-		spyOn(component, 'preProcessBatteryDetailResponse');
-		component.dataConditions = dataConditionsBad;
-		notification.payload.dataConditions = dataConditionsBad;
-		component.onNotification(notificationBad);
-		expect(component.preProcessBatteryDetailResponse).toHaveBeenCalledWith(notificationBad.payload);
-	});
-
-
-
-
 });

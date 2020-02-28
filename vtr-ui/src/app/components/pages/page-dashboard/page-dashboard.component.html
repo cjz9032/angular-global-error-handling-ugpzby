@@ -154,24 +154,17 @@
 
 	<right-content>
 		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12 col-md-12 pb-20 px-0">
+					<vtr-widget-system-update></vtr-widget-system-update>
+				</div>
+			</div>
 			<div class="row"
 				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible">
 				<div class="col-sm-12 col-md-12 pb-20 px-0">
 					<vtr-widget-dashboard-warranty [item]="warrantyData"
 						[isConnected]="isOnline">
 					</vtr-widget-dashboard-warranty>
-				</div>
-			</div>
-			<div class="row"
-				*ngIf="!(warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible)">
-				<div class="col-sm-12 col-md-12 pb-20 px-0">
-					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
-						[description]="'dashboard.feedback.subtitle' | translate"
-						[actionName]="'dashboard.feedback.button' | translate"
-						[action]="'feedback'"
-						[isOnline]="isOnline"
-						(feedBackClick)="onFeedbackModal()">
-					</vtr-widget-feedback>
 				</div>
 			</div>
 
@@ -215,18 +208,6 @@
 				</div>
 			</div> -->
 
-			<div class="row"
-				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible"
-				[vtrAppSearchScroller]="['search-feedback']">
-				<div class="col-sm-12 px-0 py-20">
-					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
-						[description]="'dashboard.feedback.subtitle' | translate"
-						[actionName]="'dashboard.feedback.button' | translate"
-						[isOnline]="isOnline"
-						(feedBackClick)="onFeedbackModal()">
-					</vtr-widget-feedback>
-				</div>
-			</div>
 		</div>
 	</right-content>
 

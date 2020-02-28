@@ -271,5 +271,6 @@ export enum LocalStorageKey {
 	DPMAllPowerPlans = '[LocalStorageKey] DPMAllPowerPlans',
 	// UPE
 	UPEChannelTags = '[LocalStorageKey] UPEChannelTags',
-	PriorityControlCapability = '[LocalStorageKey] PriorityControlCapability'
+	PriorityControlCapability = '[LocalStorageKey] PriorityControlCapability',
+	KBDBacklightThinkPadCapability =  '[LocalStorageKey] KBDBacklightThinkPadCapability'
 }
