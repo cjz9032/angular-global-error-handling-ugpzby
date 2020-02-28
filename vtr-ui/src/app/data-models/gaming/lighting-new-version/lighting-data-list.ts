@@ -277,7 +277,7 @@ export class LightingDataList{
             label: 'gaming.lightingNewversion.lightingEffect.effectName5',
             metricitem: 'lighting_effect_cool_blue',
             value: 1024,
-						show_tool_tip: true
+            show_tool_tip: true
           },
           {
             header: 'gaming.lightingNewversion.lightingEffect.effectName6',
@@ -286,7 +286,7 @@ export class LightingDataList{
             label: 'gaming.lightingNewversion.lightingEffect.effectName6',
             metricitem: 'lighting_effect_wave_right',
             value: 4096,
-						show_tool_tip: true
+            show_tool_tip: true
           },
           {
             header: 'gaming.lightingNewversion.lightingEffect.effectName7',
@@ -295,7 +295,7 @@ export class LightingDataList{
             label: 'gaming.lightingNewversion.lightingEffect.effectName7',
             metricitem: 'lighting_effect_wave_left',
             value: 8192,
-						show_tool_tip: true
+            show_tool_tip: true
           }
       ]
     };
