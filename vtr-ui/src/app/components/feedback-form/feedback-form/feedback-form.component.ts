@@ -69,6 +69,7 @@ export class FeedbackFormComponent implements OnInit {
 			ItemName: 'Submit',
 			ItemParent: 'Dialog.Feedback',
 			Content: formData.userComment,
+			UserEmail: formData.userEmail,
 			QA: {
 				QaNewStyle: formData.qaNewStyle,
 				SystemUpdateAwareness: formData.systemUpdateAwareness,
@@ -91,7 +92,7 @@ export class FeedbackFormComponent implements OnInit {
 
 	private createFeedbackForm(): void {
 		this.feedbackForm = new FormGroup({
-			userEmail: new FormControl('', [Validators.email]),
+			userEmail: new FormControl('', [Validators.required, Validators.email]),
 			userComment: new FormControl('', [
 				Validators.required,
 				Validators.minLength(1)

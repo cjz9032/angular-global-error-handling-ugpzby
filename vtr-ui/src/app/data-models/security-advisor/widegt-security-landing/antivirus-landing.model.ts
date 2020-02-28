@@ -37,9 +37,25 @@ export class AntiVirusLandingViewModel {
 	};
 	currentPage: string;
 	translateString: any;
-	constructor(translate: TranslateService, avModel: phoenix.Antivirus, public commonService: CommonService) {
+	loadTime = 15000;
+	constructor(translate: TranslateService, public avModel: phoenix.Antivirus, public commonService: CommonService) {
+		this.waitTimeout('antivirus');
+		this.waitTimeout('firewall');
 		avModel.on(EventTypes.avRefreshedEvent, (av) => {
 			this.setPage(av);
+		}).on(EventTypes.avStartRefreshEvent, () => {
+			if (this.currentPage === 'windows') {
+				if (this.avStatus.status === 'failedLoad') {
+					this.avStatus.status = 'loading';
+					this.avStatus.detail = this.translateString['common.securityAdvisor.loading'];
+					this.waitTimeout('antivirus');
+				}
+				if (this.fwStatus.status === 'failedLoad') {
+					this.fwStatus.status = 'loading';
+					this.fwStatus.detail = this.translateString['common.securityAdvisor.loading'];
+					this.waitTimeout('firewall');
+				}
+			}
 		});
 		translate.stream([
 			'common.securityAdvisor.enabled',
@@ -50,7 +66,8 @@ export class AntiVirusLandingViewModel {
 			'security.landing.antivirusContent',
 			'security.landing.goAntivirus',
 			'security.landing.firewallContent',
-			'security.landing.goFirewall'
+			'security.landing.goFirewall',
+			'common.ui.failedLoad'
 		]).subscribe((res: any) => {
 			this.translateString = res;
 			if (!this.avStatus.detail) {
@@ -123,17 +140,37 @@ export class AntiVirusLandingViewModel {
 		} else if (typeof fw !== 'boolean' && typeof av === 'boolean') {
 			this.avStatus.status = av ? 'enabled' : 'disabled';
 			this.avStatus.detail = this.translateString[`common.securityAdvisor.${av ? 'enabled' : 'disabled'}`];
-			if (currentPage === 'windows') {
-				this.fwStatus.status = 'loading';
-				this.fwStatus.detail = this.translateString['common.securityAdvisor.loading'];
-			}
 		} else if (typeof av !== 'boolean' && typeof fw === 'boolean') {
 			this.fwStatus.status = fw ? 'enabled' : 'disabled';
 			this.fwStatus.detail = this.translateString[`common.securityAdvisor.${fw ? 'enabled' : 'disabled'}`];
-			if (currentPage === 'windows') {
-				this.avStatus.status = 'loading';
-				this.avStatus.detail = this.translateString['common.securityAdvisor.loading'];
-			}
 		}
+	}
+
+	retry(id) {
+		if (id.includes('antivirus')) {
+			this.avStatus.status = 'loading';
+			this.avStatus.detail = this.translateString['common.securityAdvisor.loading'];
+			this.waitTimeout('antivirus');
+		}
+		if (id.includes('firewall')) {
+			this.fwStatus.status = 'loading';
+			this.fwStatus.detail = this.translateString['common.securityAdvisor.loading'];
+			this.waitTimeout('firewall');
+		}
+
+		this.avModel.refresh();
+	}
+
+	waitTimeout(type: string) {
+		setTimeout(() => {
+			if ((this.avStatus.status === undefined || this.avStatus.status === 'loading') && type === 'antivirus') {
+				this.avStatus.status = 'failedLoad';
+				this.avStatus.detail = this.translateString['common.ui.failedLoad'];
+			}
+			if ((this.fwStatus.status === undefined || this.fwStatus.status === 'loading') && type === 'firewall') {
+				this.fwStatus.status = 'failedLoad';
+				this.fwStatus.detail = this.translateString['common.ui.failedLoad'];
+			}
+		}, this.loadTime);
 	}
 }

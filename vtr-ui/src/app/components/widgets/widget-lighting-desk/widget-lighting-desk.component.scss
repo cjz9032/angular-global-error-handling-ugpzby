@@ -227,7 +227,6 @@
                         }
                         vtr-ui-color-picker{
                             position: absolute;
-                            z-index: 999;
                             margin-left: 4.1rem;
                             @media #{$below-large-screen} {
                                top: 50%;
@@ -262,6 +261,13 @@
                 .lighting-default-text{
                     text-align: right;
                     padding: 1.7rem 0 1.2rem 0;
+                    .under-line-button{
+                        max-width: 100%;
+                        display: inline-block;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
             .lighting-off{

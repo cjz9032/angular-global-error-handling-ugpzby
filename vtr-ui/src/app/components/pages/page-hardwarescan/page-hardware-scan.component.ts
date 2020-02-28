@@ -10,6 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Router } from '@angular/router';
 import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
+import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
 @Component({
 	selector: 'vtr-page-hardware-scan',
@@ -23,12 +24,11 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	backarrow = '< ';
 	cardContentPositionA: any;
 	notificationSubscription: Subscription;
-	supportTitle = this.translate.instant('hardwareScan.support.title');
+	hardwareScanSupportCard: FeatureContent = new FeatureContent();
 	routeSubscription: Subscription;
 	currentRouter: any;
 	hidePreviousResult = false;
 	hideRecover = false;
-
 
 	constructor(
 		public deviceService: DeviceService,
@@ -40,9 +40,6 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		private router: Router,
 	) {
 		// this.fetchCMSArticles();
-		if (!this.commonService.isOnline) {
-			this.supportTitle = this.translate.instant('hardwareScan.offline');
-		}
 	}
 
 	ngOnInit() {
@@ -50,6 +47,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 		this.routeSubscription = this.router.events.subscribe(() => this.observerURL());
+		this.initSupportCard();
 	}
 
 	ngOnDestroy() {
@@ -60,6 +58,20 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 			this.routeSubscription.unsubscribe();
 		}
 
+	}
+
+	private initSupportCard() {
+		Object.assign(this.hardwareScanSupportCard, {
+			Id: 'HardwareScan.DiagnosticsTools',
+			Title: this.translate.instant('hardwareScan.support.title'),
+			FeatureImage: 'assets/images/support.jpg',
+			Action: 'Read More',
+			ActionType: 'External',
+			ActionLink: 'https://pcsupport.lenovo.com/lenovodiagnosticsolutions/downloads',
+		});
+		if (!this.commonService.isOnline) {
+			this.hardwareScanSupportCard.Title = this.translate.instant('hardwareScan.offline');
+		}
 	}
 
 	private observerURL() {
@@ -165,10 +177,10 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 			const { type, payload } = notification;
 			switch (type) {
 				case NetworkStatus.Online:
-					this.supportTitle = this.translate.instant('hardwareScan.support.title');
+					this.hardwareScanSupportCard.Title = this.translate.instant('hardwareScan.support.title');
 					break;
 				case NetworkStatus.Offline:
-					this.supportTitle = this.translate.instant('hardwareScan.offline');
+					this.hardwareScanSupportCard.Title = this.translate.instant('hardwareScan.offline');
 					break;
 				default:
 					break;

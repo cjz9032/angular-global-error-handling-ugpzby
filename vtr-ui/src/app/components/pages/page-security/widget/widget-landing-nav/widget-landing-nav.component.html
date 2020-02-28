@@ -16,6 +16,7 @@
 <section class="vtr-sub-page-security">
 	<vtr-widget-landing-security
 	(haveOwnChecked)="haveOwn($event)"
+	(retryClick)="retry($event)"
     *ngIf="currentPage === 'base-security'"
     [items]="baseItems | statusTransform"></vtr-widget-landing-security>
 	<vtr-widget-landing-security

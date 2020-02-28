@@ -297,7 +297,7 @@ export class CommonService {
 
 	checkPowerPageFlagAndHide() {
 		// Solution to fix the issue VAN-14826.
-		const isPowerPageAvailable = this.getLocalStorageValue(LocalStorageKey.IsPowerPageAvailable, false);
+		const isPowerPageAvailable = this.getLocalStorageValue(LocalStorageKey.IsPowerPageAvailable, true);
 		if (!isPowerPageAvailable) {
 			this.sendNotification(LocalStorageKey.IsPowerPageAvailable, {available: isPowerPageAvailable, link: false });
 		}

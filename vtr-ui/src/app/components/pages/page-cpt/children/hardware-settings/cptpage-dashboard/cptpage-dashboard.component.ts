@@ -12,6 +12,7 @@ import { isNull, isUndefined } from 'util';
 
 //from dashboard
 import { DomSanitizer } from '@angular/platform-browser';
+import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
 @Component({
   selector: 'vtr-cptpage-dashboard',
@@ -26,21 +27,21 @@ export class CptpageDashboardComponent implements OnInit, OnDestroy {
 	public isOnline = true;
 
   heroBannerItems = []; // tile A
-	cardContentPositionB: any = {};
-	cardContentPositionC: any = {};
-	cardContentPositionD: any = {};
-	cardContentPositionE: any = {};
-	cardContentPositionF: any = {};
+	cardContentPositionB: FeatureContent = new FeatureContent();
+	cardContentPositionC: FeatureContent = new FeatureContent();
+	cardContentPositionD: FeatureContent = new FeatureContent();
+	cardContentPositionE: FeatureContent = new FeatureContent();
+	cardContentPositionF: FeatureContent = new FeatureContent();
 
 	heroBannerDemoItems = [];
 	canShowDccDemo$: Promise<boolean>;
 
-	heroBannerItemsCms: []; // tile A
-	cardContentPositionBCms: any = {};
-	cardContentPositionCCms: any = {};
-	cardContentPositionDCms: any = {};
-	cardContentPositionECms: any = {};
-	cardContentPositionFCms: any = {};
+	heroBannerItemsCms: any[]; // tile A
+	cardContentPositionBCms: FeatureContent = new FeatureContent();
+	cardContentPositionCCms: FeatureContent = new FeatureContent();
+	cardContentPositionDCms: FeatureContent = new FeatureContent();
+	cardContentPositionECms: FeatureContent = new FeatureContent();
+	cardContentPositionFCms: FeatureContent = new FeatureContent();
 
 	upeRequestResult = {
 		tileA: true,
