@@ -124,7 +124,8 @@
 		}
 	}
 	.gaming-dropdown-menu {
-		width: 100%;
+		min-width: 100%;
+		max-width: 150%;
 		background-color: $gaming_shade;
 		@media #{$black-on-white} {
 			border: 0.1rem solid $dark;
@@ -157,10 +158,11 @@
 				height: 5.5rem;
 				line-height: 5.5rem;
 				position: relative;
-				padding-left: 5rem;
+				padding-left: 4rem;
+				padding-right: 2rem;
 				.icon {
 					position: absolute;
-					left: 2rem;
+					left: 1.3rem;
 					font-size: 2rem;
 					background: $gaming_green_gradient;
 					-webkit-background-clip: text;

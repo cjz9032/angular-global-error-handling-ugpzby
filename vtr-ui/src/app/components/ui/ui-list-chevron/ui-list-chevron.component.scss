@@ -203,6 +203,10 @@
 						color: $main_gstart;
 					}
 
+					&.text-gray {
+						color: $grey_darker;
+					}
+
 					&.orange {
 						color: $yellow_dark;
 					}
@@ -240,6 +244,12 @@
 					overflow: hidden;
 					text-overflow: ellipsis;
 				}
+			}
+
+			.retryLink {
+				color: $blueHyperLink;
+				z-index: 999;
+				text-decoration: underline;
 			}
 
 			.arrow {

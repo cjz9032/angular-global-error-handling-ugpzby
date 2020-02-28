@@ -1,36 +1,48 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { CardService } from 'src/app/services/card/card.service';
+import { CardService, CardOverlayTheme } from 'src/app/services/card/card.service';
+import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
 @Component({
 	selector: 'vtr-container-card',
 	templateUrl: './container-card.component.html',
 	styleUrls: ['./container-card.component.scss', './container-card.component.gaming.scss']
 })
-export class ContainerCardComponent implements OnInit, OnChanges {
-	@Input() img = '';
-	@Input() caption = '';
-	@Input() title = '';
-	@Input() logo = '';
-	@Input() logoText = '';
-	@Input() action = '';
-	@Input() actionType = '';
-	@Input() actionLink = '';
+export class ContainerCardComponent implements OnInit {
 	@Input() type = '';
 	@Input() ratio = 0.5;
 	@Input() cornerShift = '';
 	@Input() order: number;
-	@Input() itemID: string;
 	@Input() sideFlag = '';
 	@Input() containerCardId = '';
 	@Input() dataSource = '';
 	@Input() dynamicmetricsItem = '';
 	@Input() isOfflineArm = false;
 
+	overlayThemeDefaultIsDark = true;
+	overlayThemeDefaultIsLight = true;
+
 	isLoading = true;
 	isOnline = true;
+
+	private _item: FeatureContent;
+
+	@Input() set item(itemValue: any) {
+		if (itemValue && itemValue.FeatureImage) {
+			this.isLoading = false;
+			this.overlayThemeDefaultIsDark = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Light
+			this.overlayThemeDefaultIsLight = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Dark
+			this._item = itemValue;
+		} else {
+			this._item = new FeatureContent();
+		}
+	}
+
+	get item() {
+		return this._item;
+	}
 
 	constructor(
 		private commonService: CommonService,
@@ -38,7 +50,6 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	) { }
 
 	ngOnInit() {
-		this.handleLoading();
 		this.isOnline = this.commonService.isOnline;
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -46,14 +57,16 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	}
 
 	handleLoading() {
-		if (this.img) {
+		if (this.item && this.item.FeatureImage) {
 			this.isLoading = false;
+			this.overlayThemeDefaultIsDark = !this.item.OverlayTheme || this.item.OverlayTheme !== CardOverlayTheme.Light
+			this.overlayThemeDefaultIsLight = !this.item.OverlayTheme || this.item.OverlayTheme !== CardOverlayTheme.Dark
 		} else {
 			const image = new Image();
 			image.onload = () => {
 				this.isLoading = false;
 			};
-			image.src = this.img;
+			image.src = this.item.FeatureImage;
 		}
 	}
 
@@ -74,7 +87,4 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 		}
 	}
 
-	ngOnChanges(changes) {
-		this.handleLoading();
-	}
 }

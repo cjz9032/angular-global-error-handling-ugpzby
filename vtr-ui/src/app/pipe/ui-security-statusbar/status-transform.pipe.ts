@@ -16,12 +16,18 @@ export class StatusTransformPipe implements PipeTransform {
 						e.status = 'disabled';
 						break;
 					case undefined:
-						e.status = 'loading';
+						if (e.reload) {
+							e.status = 'failedLoad';
+						} else {
+							e.status = 'loading';
+						}
 						break;
 					case null:
 						if (e.installed) {
 							e.status = 'installed';
-						} else { e.status = 'not-installed'; }
+						} else {
+							e.status = 'not-installed';
+						}
 						break;
 				}
 			});

@@ -26,6 +26,7 @@ import { AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
+import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -38,7 +39,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	backarrow = '< ';
 	updateToDateTitle = 'systemUpdates.banner.title';
 
-	cardContentPositionA: any = {};
+	supportWebsiteCard: FeatureContent = new FeatureContent()
+	cardContentPositionA: FeatureContent = new FeatureContent();
 
 	private lastUpdatedText = 'systemUpdates.banner.last';
 	private nextScanText = 'systemUpdates.banner.next';
@@ -241,6 +243,17 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.systemUpdateService.getUpdateHistory();
 		this.setUpdateTitle();
 		this.popRebootDialogIfNecessary();
+		this.initSupportCard();
+	}
+
+	private initSupportCard() {
+		Object.assign(this.supportWebsiteCard, {
+			Id: 'LenovoSupportWebsite',
+			Title: this.translate.instant('systemUpdates.support.title'),
+			FeatureImage: 'assets/images/support.jpg',
+			ActionType: 'External',
+			ActionLink: this.supportLink,
+		})
 	}
 
 	popRebootDialogIfNecessary() {

@@ -37,7 +37,7 @@ export class InputAccessoriesService {
 		}
 
     }
-    
+
     public AddApplicationOrFiles(selectedUDK: string,appSelectorType: string): Promise<any> {
 		try {
 			if (this.keyboardManager) {
@@ -459,6 +459,17 @@ export class InputAccessoriesService {
 		try {
 			if (this.keyboard) {
 				return this.keyboard.SetAutomaticKBDBacklight(level);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setAutoKBDEnableStatus(): Promise<boolean> {
+		try {
+			if (this.keyboard) {
+				return this.keyboard.SetAutoKBDEnableStatus(true);
 			}
 			return undefined;
 		} catch (error) {

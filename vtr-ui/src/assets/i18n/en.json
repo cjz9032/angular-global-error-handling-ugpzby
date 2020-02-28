@@ -803,7 +803,9 @@
 			"loading": "Loading...",
 			"from": "from",
 			"to": "to",
-			"clickToChange": "click to change"
+			"clickToChange": "click to change",
+			"failedLoad": "Failed to load",
+			"retry": "Retry"
 		},
 		"app-update": {
 			"message": "Hey! A newer version of Vantage is available, do you want to load it?"

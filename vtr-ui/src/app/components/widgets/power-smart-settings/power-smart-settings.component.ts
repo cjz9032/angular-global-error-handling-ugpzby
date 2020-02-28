@@ -46,7 +46,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	legacyManualModeCapability = true;
 	public dytc6Mode: string = DYTC6Modes.Manual;
 	public dytc6IsAutoModeSupported = true;
-	private amtCapabilityInterval: any;
+    private amtCapabilityInterval: any;
 	@Output() isPowerSmartSettingHidden = new EventEmitter<any>();
 
 	constructor(
@@ -177,7 +177,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
     }
 
 	public showMoreDytc6() {
-		this.isCollapsed = !this.isCollapsed;
+        this.isCollapsed = !this.isCollapsed;
 	}
 
 	// Start Power Smart Settings for IdeaPad
