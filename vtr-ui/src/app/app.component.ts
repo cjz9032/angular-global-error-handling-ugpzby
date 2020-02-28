@@ -44,6 +44,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	public isGaming: any = false;
 	private subscription: Subscription;
 	private vantageFocusHelper = new VantageFocusHelper();
+	private newTutorialVersion = '3.1.2';
 
 	constructor(
 		private displayService: DisplayService,
@@ -156,8 +157,19 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.deviceService.getIsARM()
 			.then((status: boolean) => {
 				if ((!status || !this.deviceService.isAndroid)) {
-					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
-					const newTutorialVersion = '3.1.2';
+					const gamingTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.GamingTutorial);
+					let tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+					if (this.deviceService.isGaming) {
+						if (gamingTutorial) {
+							tutorial = gamingTutorial;
+						} else if (tutorial && tutorial.isDone && tutorial.tutorialVersion === ''){
+							tutorial.tutorialVersion = this.newTutorialVersion;// 3.1.6 will save tutorial empty version in gaming
+							this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, tutorial);
+							this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorial);
+						}
+					}
+
+					const newTutorialVersion = this.newTutorialVersion;
 					if ((tutorial === undefined || tutorial.tutorialVersion !== newTutorialVersion) && navigator.onLine) {
 						this.openWelcomeModal(1, newTutorialVersion);
 					} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
@@ -179,11 +191,17 @@ export class AppComponent implements OnInit, OnDestroy {
 		modalRef.result.then(
 			(result: WelcomeTutorial) => {
 				// on open
+				if (this.deviceService.isGaming) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, result);
+				}
 				this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
 			},
 			(reason: WelcomeTutorial) => {
 				// on close
 				if (reason instanceof WelcomeTutorial) {
+					if (this.deviceService.isGaming) {
+						this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, reason);
+					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
 				}
 			}
@@ -379,7 +397,7 @@ export class AppComponent implements OnInit, OnDestroy {
 					.then((info) => {
 						if (info) {
 							if (info.cpuArchitecture && info.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
-								const armTutorialData = new WelcomeTutorial(2, '', true, SegmentConst.Consumer);
+								const armTutorialData = new WelcomeTutorial(2, this.newTutorialVersion, true, SegmentConst.Consumer);
 								this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, armTutorialData);
 							} else {
 								setTimeout(() => {
