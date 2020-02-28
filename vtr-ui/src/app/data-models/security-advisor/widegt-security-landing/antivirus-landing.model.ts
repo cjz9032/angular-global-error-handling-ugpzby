@@ -39,15 +39,18 @@ export class AntiVirusLandingViewModel {
 	translateString: any;
 	loadTime = 15000;
 	constructor(translate: TranslateService, public avModel: phoenix.Antivirus, public commonService: CommonService) {
-		this.waitTimeout();
+		this.waitTimeout('antivirus');
+		this.waitTimeout('firewall');
 		avModel.on(EventTypes.avRefreshedEvent, (av) => {
 			this.setPage(av);
 		}).on(EventTypes.avStartRefreshEvent, () => {
 			if (this.currentPage === 'windows') {
 				if (this.avStatus.status === 'failedLoad') {
-					this.retry('antivirus', true);
+					this.avStatus.status = 'loading';
+					this.waitTimeout('antivirus');
 				} else if (this.fwStatus.status === 'failedLoad') {
-					this.retry('firewall', true);
+					this.fwStatus.status = 'loading';
+					this.waitTimeout('firewall');
 				}
 			}
 		});
@@ -156,28 +159,28 @@ export class AntiVirusLandingViewModel {
 		}
 	}
 
-	retry(id, refreshed?) {
+	retry(id) {
 		if (id.includes('antivirus')) {
 			this.avStatus.status = 'loading';
 			this.avStatus.detail = this.translateString['common.securityAdvisor.load'];
+			this.waitTimeout('antivirus');
 		}
 		if (id.includes('firewall')) {
 			this.fwStatus.status = 'loading';
 			this.fwStatus.detail = this.translateString['common.securityAdvisor.load'];
+			this.waitTimeout('firewall');
 		}
-		this.waitTimeout();
-		if (!refreshed) {
-			this.avModel.refresh();
-		}
+
+		this.avModel.refresh();
 	}
 
-	waitTimeout() {
+	waitTimeout(type: string) {
 		setTimeout(() => {
-			if (this.avStatus.status === undefined || this.avStatus.status === 'loading') {
+			if ((this.avStatus.status === undefined || this.avStatus.status === 'loading') && type === 'antivirus') {
 				this.avStatus.status = 'failedLoad';
 				this.avStatus.detail = this.translateString['common.ui.failedLoad'];
 			}
-			if (this.fwStatus.status === undefined ||this.fwStatus.status === 'loading') {
+			if ((this.fwStatus.status === undefined || this.fwStatus.status === 'loading') && type === 'firewall') {
 				this.fwStatus.status = 'failedLoad';
 				this.fwStatus.detail = this.translateString['common.ui.failedLoad'];
 			}

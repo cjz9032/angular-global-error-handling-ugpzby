@@ -2,6 +2,7 @@ import { Antivirus, McAfeeInfo, WindowsDefender, OtherInfo, EventTypes, McafeeMe
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { element } from 'protractor';
 
 export class AntiVirusViewModel {
 	currentPage = 'windows';
@@ -60,7 +61,8 @@ export class AntiVirusViewModel {
 		translate.stream(this.otherAntiVirus.name).subscribe((res) => {
 			this.otherAntiVirus.name = res;
 		});
-		this.waitTimeout();
+
+		this.windowsDefenderstatusList.forEach(element => this.waitTimeout(element.type));
 
 		const cacheCurrentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
 		if (antiVirus.mcafee || antiVirus.others || antiVirus.windowsDefender) {
@@ -249,14 +251,14 @@ export class AntiVirusViewModel {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeTrialUrl, this.mcafee.trialUrl);
 		}).on(EventTypes.avStartRefreshEvent, () => {
 			if (this.currentPage === 'windows') {
-				if (this.windowsDefenderstatusList[0].status === 'failedLoad') {
-					this.retry('antivirus', true);
-				} else if (this.windowsDefenderstatusList[1].status === 'failedLoad') {
-					this.retry('firewall', true);
-				}
+				this.windowsDefenderstatusList.forEach(element => {
+					if(element.status === 'failedLoad') {
+						element.status = 'loading';
+						this.waitTimeout(element.type);
+					}
+				});
 			}
 		});
-
 	}
 
 	antiVirusPage(antiVirus: Antivirus) {
@@ -582,24 +584,23 @@ export class AntiVirusViewModel {
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.windowsDefenderstatusList);
 	}
 
-	retry(type, refreshed?) {
-		if (type === 'antivirus') {
-			this.windowsDefenderstatusList[0].status = 'loading';
-		}
-		if (type === 'firewall') {
-			this.windowsDefenderstatusList[1].status = 'loading';
-		}
-		this.waitTimeout();
-		if (!refreshed) {
-			this.antiVirus.refresh();
-		}
+	retry(type: string) {
+		this.windowsDefenderstatusList.forEach(element => {
+			if (element.type === type) {
+				element.status = 'loading';
+				this.waitTimeout(type);
+				this.antiVirus.refresh();
+				return;
+			}
+		});
 	}
 
-	waitTimeout() {
+	waitTimeout(type: string) {
 		setTimeout(() => {
 			this.windowsDefenderstatusList.forEach(element => {
-				if (element.status === 'loading') {
+				if (element.status === 'loading' && element.type === type) {
 					element.status = 'failedLoad';
+					return;
 				}
 			});
 		}, 15000);

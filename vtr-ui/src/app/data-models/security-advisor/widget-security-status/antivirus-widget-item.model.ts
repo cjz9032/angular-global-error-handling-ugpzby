@@ -32,7 +32,14 @@ export class AntivirusWidgetItem extends WidgetItem {
 		antivirus.on(EventTypes.avRefreshedEvent, (av) => {
 			this.setPage(av);
 		}).on(EventTypes.avStartRefreshEvent, () => {
-			this.retry(true);
+			if (this.status === 7) {
+				this.translateService.stream('common.securityAdvisor.loading').subscribe((value) => {
+					this.detail = value;
+					this.status = 4;
+					this.retryText = undefined;
+				});
+				this.waitTimeout();
+			}
 		});
 	}
 
@@ -87,16 +94,14 @@ export class AntivirusWidgetItem extends WidgetItem {
 		}
 	}
 
-	retry(refreshed?) {
+	retry() {
 		this.translateService.stream('common.securityAdvisor.loading').subscribe((value) => {
 			this.detail = value;
 			this.status = 4;
 			this.retryText = undefined;
 		});
 		this.waitTimeout();
-		if (!refreshed) {
-			this.antivirus.refresh();
-		}
+		this.antivirus.refresh();
 	}
 
 	waitTimeout() {
