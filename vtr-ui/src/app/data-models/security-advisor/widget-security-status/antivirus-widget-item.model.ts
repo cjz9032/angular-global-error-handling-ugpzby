@@ -72,7 +72,6 @@ export class AntivirusWidgetItem extends WidgetItem {
 	}
 
 	setAntivirusStatus(av: boolean | undefined, fw: boolean | undefined, currentPage: string) {
-		av = undefined;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, av !== undefined ? av : null);
 

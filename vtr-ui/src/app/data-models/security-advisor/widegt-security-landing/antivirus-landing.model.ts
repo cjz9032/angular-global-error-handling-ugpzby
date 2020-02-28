@@ -123,7 +123,6 @@ export class AntiVirusLandingViewModel {
 	}
 
 	setAntivirusStatus(av: boolean | undefined, fw: boolean | undefined, currentPage: string) {
-		fw = undefined;
 		if (!this.translateString) {
 			return;
 		}

@@ -547,7 +547,6 @@ export class AntiVirusViewModel {
 	}
 
 	setDefenderStatus(av: boolean | undefined, fw: boolean | undefined, currentPage: string) {
-		av = undefined;
 		let avStatus: string;
 		let fwStatus: string;
 
