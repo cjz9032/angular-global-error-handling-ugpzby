@@ -775,7 +775,7 @@
             "notFound": "BULUNAMADI",
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL",
-            "fingerPrint": "Parmak Izi",
+            "fingerPrint": "Parmak İzi",
             "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "KAYITLI",
@@ -922,6 +922,10 @@
                     "update": "Güncelle"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Pilinizin ömrünü uzatmak için tam dolum kapasitesini kullanımınıza göre iyileştirdik. Pil kapasitesinin tamamını kullanmak için pili %20'ye kadar boşaltıp yeniden doldurmanız gerekmektedir."
                 },
                 "condition": {
                     "Illegal": "Takılı pil, sistem tarafından <b>desteklenmiyor</b> ve doldurulmayacak. Lütfen yerine bu sistem için doğru olan Lenovo pilini takın.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b>",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı yeterli güç sağlayamıyor.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın. Sürücüyü <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">buradan</a> da yükleyebilirsiniz. Kurulumdan sonra bilgisayarınızı yeniden başlatın.",
+                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. Lütfen Windows Update'i çalıştırın veya <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">buradan</a> manuel olarak yükleyin. Kurulumdan sonra bilgisayarınızı yeniden başlatın.",
                     "StoreLimitation": "<b>Pil orijinal tam dolum kapasitesinin yalnızca {{value}}% kadarını</b> depolayabilir.",
                     "HighTemperature": "<b>Pil çok ısındığı için</b> <b>boşaltma</b> işlemi durduruldu.",
                     "TrickleCharge": "Pil <b>tamamen boşaldı</b> ve yeniden doldurulması gerekiyor. Doldurma işlemi on saat ya da daha fazla sürebilir.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
                         "progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
-                        "progressText3": "{{stage}} / {{stageNum}}: Yüksek pil gücü için kalibre ediliyor",
+                        "progressText3": "Adım {{stage}} (toplam {{stageNum}} adım yer alıyor)",
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {

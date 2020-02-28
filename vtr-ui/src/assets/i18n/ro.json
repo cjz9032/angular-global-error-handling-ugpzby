@@ -750,7 +750,7 @@
                 "sub3": "Securitate WiFi",
                 "sub4": "Sănătatea parolei",
                 "sub5": "Securitate VPN",
-                "sub6": "Amprentă digitală"
+                "sub6": "Amprentă"
             },
             "support": "Asistenţă",
             "beta": {
@@ -775,7 +775,7 @@
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
-            "fingerPrint": "Amprentă Digitală",
+            "fingerPrint": "Amprentă",
             "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "ÎNREGISTRAT",
@@ -922,6 +922,10 @@
                     "update": "Actualizare"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Pentru a extinde durata de viață a bateriei, am optimizat capacitatea de încărcare completă a acesteia, în funcție de utilizare. Capacitatea completă a bateriei este posibil să nu fie disponibilă până când nu o descărcați la 20% și o reîncărcați."
                 },
                 "condition": {
                     "Illegal": "Bateria instalată <b>nu este acceptată</b> de sistem şi nu se va încărca. Înlocuiţi bateria cu bateria Lenovo corectă pentru acest sistem.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>Bateria nu este în stare bună.</b>",
                     "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b>",
                     "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă putere.</b>",
-                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver. Puteți instala driverul și de <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aici</a>. După instalare, reporniţi computerul.",
+                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulați Windows Update sau instalați aplicația manual de <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aici</a>. După instalare, reporniți computerul.",
                     "StoreLimitation": "<b>Bateria poate stoca doar {{value}}% din</b> capacitatea iniţială completă de încărcare.",
                     "HighTemperature": "<b>Descărcarea</b> a fost oprită, deoarece <b>temperatura bateriei este prea mare.</b>",
                     "TrickleCharge": "Bateria a fost <b>descărcată complet</b> şi trebuie reîncărcată. Această operaţiune poate dura zece ore sau mai mult.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
                         "progressText2": "{{stage}} din {{stageNum}}: se calibrează la nivel scăzut al bateriei",
-                        "progressText3": "{{stage}} din {{stageNum}}: se calibrează la nivel ridicat al bateriei",
+                        "progressText3": "Pasul {{stage}} din {{stageNum}} pași în total",
                         "FCCText": "De la {{before}} Wh la {{after}} Wh",
                         "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2241,7 +2248,7 @@
             "goWifi": "accesaţi secţiunea pentru securitatea Wi-Fi",
             "goVpn": "accesaţi secţiunea pentru securitatea VPN",
             "visitWindows": "Accesaţi secţiunea pentru activarea Windows",
-            "visitFingerprint": "Accesaţi secţiunea pentru cititorul de amprentă",
+            "visitFingerprint": "Accesați secțiunea pentru cititorul de amprentă",
             "visitUac": "Accesaţi secţiunea pentru Control cont utilizator",
             "visitHde": "Accesaţi secţiunea pentru criptarea unităţii de hard disk",
             "haveOwnPassword": "Am propriul meu manager de parole",

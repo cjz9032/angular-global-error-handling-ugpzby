@@ -750,7 +750,7 @@
                 "sub3": "Zabezpečenie WiFi",
                 "sub4": "Sila hesla",
                 "sub5": "Zabezpečenie VPN",
-                "sub6": "Odtlačok"
+                "sub6": "Odtlačok prsta"
             },
             "support": "Technická podpora",
             "beta": {
@@ -775,7 +775,7 @@
             "notFound": "NENÁJDENÉ",
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ",
-            "fingerPrint": "Odtlačok",
+            "fingerPrint": "Odtlačok Prsta",
             "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "ZAREGISTROVANÉ",
@@ -922,6 +922,10 @@
                     "update": "Aktualizovať"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Aby sme predĺžili životnosť batérie, optimalizovali sme jej plnú kapacitu nabíjania na základe vášho používania. Plná kapacita batérie nemusí byť k dispozícii, kým ju nevybijete na 20% a znova nenabijete."
                 },
                 "condition": {
                     "Illegal": "Tento systém <b>nepodporuje</b> nainštalovanú batériu, ktorá sa preto nebude nabíjať. Vymeňte batériu za správnu batériu Lenovo určenú pre tento systém.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b>",
                     "LimitedACAdapterSupport": "<b>Sieťový adaptér nedokáže poskytnúť dostatok energie na napájanie.</b>",
-                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač. Ovládač môžete nainštalovať aj <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>. Po inštalácii reštartujte počítač.",
+                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update alebo ju nainštalujte manuálne <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>. Po inštalácii reštartujte počítač.",
                     "StoreLimitation": "<b>Batéria má kapacitu len {{value}}%</b> zo svojej pôvodnej kapacity pri úplnom nabití.",
                     "HighTemperature": "<b>Vybíjanie</b> sa zastavilo, pretože <b>teplota batérie je príliš vysoká.</b>",
                     "TrickleCharge": "Batéria je <b>úplne vybitá</b> a musí sa nabiť. Môže to trvať desať hodín alebo dlhšie.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibrácia na úplné nabitie",
                         "progressText2": "{{stage}} z {{stageNum}}: Kalibrácia na nízku úroveň nabitia batérie",
-                        "progressText3": "{{stage}} z {{stageNum}}: Kalibrácia na vysokú úroveň nabitia batérie",
+                        "progressText3": "Krok {{stage}} z celkového počtu ({{stageNum}})",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Pred resetovaním ukazovateľa batérie pripojte počítač k zdroju napájania. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {

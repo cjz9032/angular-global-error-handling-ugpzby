@@ -750,7 +750,7 @@
                 "sub3": "Безпека WiFi",
                 "sub4": "Надійність паролю",
                 "sub5": "Безпека VPN",
-                "sub6": "Відбитки пальців"
+                "sub6": "Відбиток"
             },
             "support": "підтримка",
             "beta": {
@@ -775,7 +775,7 @@
             "notFound": "НЕ ВИЯВЛЕНО",
             "registered": "ЗАРЕЄСТРОВАНО",
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО",
-            "fingerPrint": "Відбитки пальців",
+            "fingerPrint": "Відбиток",
             "privacyPolicyAndTermsOfService": "<tag>політику конфіденційності</tag> та <tag>умови надання послуг</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "ЗАРЕЄСТРОВАНО",
@@ -922,6 +922,10 @@
                     "update": "Оновлення"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Щоб продовжити термін служби акумулятора, ми оптимізували повну ємність його заряду відповідно до вашої роботи. Повна ємність акумулятора може бути недоступною, доки ви не розрядите його до 20% і не перезарядите знову."
                 },
                 "condition": {
                     "Illegal": "Установлений акумулятор <b>не підтримується</b> цією системою та не буде заряджатися. Замініть акумулятор акумулятором Lenovo, придатним для цієї системи.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>Акумулятор у поганому стані.</b>",
                     "NotSupportACAdapter": "<b>Адаптер змінного струму не підтримується.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер змінного струму не може забезпечити достатню потужність.</b>",
-                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер. Ви також можете інсталювати драйвер <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">звідси</a>. Перезавантажте комп'ютер після завершення інсталяції.",
+                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update або інсталюйте його вручну <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">звідси</a>. Перезавантажте комп'ютер після завершення інсталяції.",
                     "StoreLimitation": "<b>Акумулятор може заряджатися лише на {{value}}%</b> від своєї початкової повної ємності.",
                     "HighTemperature": "<b>Розряджання</b> зупинено <b>через зависоку температуру акумулятора.</b>",
                     "TrickleCharge": "Акумулятор <b>повністю розряджено</b>, його потрібно зарядити. Це може зайняти десять або більше годин.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} з {{stageNum}}: калібрування до повного заряду",
                         "progressText2": "{{stage}} з {{stageNum}}: калібрування до низького заряду",
-                        "progressText3": "{{stage}} з {{stageNum}}: калібрування до високого заряду",
+                        "progressText3": "Крок {{stage}} з {{stageNum}}",
                         "FCCText": "З {{before}} Вт·год до {{after}} Вт·год",
                         "note": "Примітка. Перед скиданням акумуляторного вольтметра обов'язково підключіть комп'ютер до джерела живлення змінного струму. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {

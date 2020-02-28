@@ -922,6 +922,10 @@
                     "update": "Aktualisierung"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Um die Lebensdauer Ihres Akkus zu verlängern, haben wir die volle Ladekapazität anhand Ihrer Nutzung optimiert. Die volle Akkukapazität ist möglicherweise erst verfügbar, wenn Sie den Akku bis auf 20 % entladen und anschließend wieder laden."
                 },
                 "condition": {
                     "Illegal": "Der installierte Akku wird vom System <b>nicht unterstützt</b> und kann nicht geladen werden. Ersetzen Sie den Akku mit dem richtigen Lenovo Akku für dieses System.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>Der Akku befindet sich nicht in einem guten Zustand.</b>",
                     "NotSupportACAdapter": "<b>Netzteil wird nicht unterstützt.</b>",
                     "LimitedACAdapterSupport": "<b>Netzteil kann nicht genügend Strom liefern.</b>",
-                    "MissingDriver": "Der <b>Lenovo Power Manager-Treiber</b> ist nicht installiert oder funktioniert nicht ordnungsgemäß. Führen Sie Windows Update aus, um den aktuellen Treiber zu installieren. Sie können den Treiber auch von <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a> installieren. Starten Sie den Computer nach der Installation neu.",
+                    "MissingDriver": "Der <b>Lenovo Power Manager-Treiber</b> ist nicht installiert oder funktioniert nicht ordnungsgemäß. Führen Sie Windows Update aus oder installieren Sie den Treiber manuell von <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a>. Starten Sie den Computer nach der Installation neu.",
                     "StoreLimitation": "Der Akku kann <b>nur {{value}}% der ursprünglichen vollen Ladekapazität</b> speichern.",
                     "HighTemperature": "Das <b>Entladen</b> wurde gestoppt, da die <b>Temperatur des Akkus zu hoch</b> ist.",
                     "TrickleCharge": "Der Akku wurde <b>komplett entladen</b> und muss aufgeladen werden. Das kann zehn Stunden oder länger dauern.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} von {{stageNum}}: Kalibrierung für volle Ladung",
                         "progressText2": "{{stage}} von {{stageNum}}: Kalibrierung für niedrigen Akkustand",
-                        "progressText3": "{{stage}} von {{stageNum}}: Kalibrierung für hohen Akkustand",
+                        "progressText3": "Schritt {{stage}} von {{stageNum}} Schritten",
                         "FCCText": "Von {{before}} Wh auf {{after}} Wh",
                         "note": "Hinweis: Vor dem Zurücksetzen des Akkustandsanzeigers muss Ihr Computer an die Stromversorgung angeschlossen werden. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2241,7 +2248,7 @@
             "goWifi": "zur Wifi-Sicherheit wechseln",
             "goVpn": "zur VPN-Sicherheit wechseln",
             "visitWindows": "Aktivierung von Windows besuchen",
-            "visitFingerprint": "Fingerprint Reader besuchen",
+            "visitFingerprint": "Lesegerät für Fingerabdrücke besuchen",
             "visitUac": "Benutzerkontensteuerung besuchen",
             "visitHde": "Festplattenlaufwerk-Verschlüsselung besuchen",
             "haveOwnPassword": "Ich habe meinen eigenen Password Manager",

@@ -922,6 +922,10 @@
                     "update": "Opdatér"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "For at forlænge batterilevetiden har vi optimeret dets kapacitet ved fuld opladning baseret på din brug. Den fulde batterikapacitet er muligvis ikke tilgængelig, før du aflader til 20 % og oplader igen."
                 },
                 "condition": {
                     "Illegal": "Det batteri, der er installeret, <b>understøttes ikke</b> af dette system og vil ikke blive opladet. Udskift batteriet med det korrekte Lenovo-batteri til systemet.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
                     "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update for at installere den sidste nye driver. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>. Genstart computeren efter installationen.",
+                    "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update, eller installer den manuelt fra <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">her</a>. Genstart computeren efter installationen.",
                     "StoreLimitation": "<b>Batteriet kan kun lagre {{value}}% af</b> dets oprindelige kapacitet ved fuld opladning.",
                     "HighTemperature": "<b>Afladning</b> er stoppet, fordi <b>batteriets temperatur er for høj.</b>",
                     "TrickleCharge": "Batteriet er blevet <b>fuldstændigt afladet</b> og skal genoplades. Dette kan tage op til ti timer eller mere.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
                         "progressText2": "{{stage}} af {{stageNum}}: Kalibrerer til lavt batteristrømniveau",
-                        "progressText3": "{{stage}} af {{stageNum}}: Kalibrerer til højt batteristrømniveau",
+                        "progressText3": "Trin {{stage}}, ud af {{stageNum}} trin i alt",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2241,7 +2248,7 @@
             "goWifi": "gå til wifi-sikkerhed",
             "goVpn": "gå til VPN-sikkerhed",
             "visitWindows": "Besøg Windows-aktivering",
-            "visitFingerprint": "Besøg Fingerprint Reader",
+            "visitFingerprint": "Besøg Fingeraftrykslæser",
             "visitUac": "Besøg Kontrol af brugerkonti",
             "visitHde": "Besøg harddiskkryptering",
             "haveOwnPassword": "Jeg har min egen password manager",

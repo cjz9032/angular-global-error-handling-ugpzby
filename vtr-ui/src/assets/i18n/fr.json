@@ -922,6 +922,10 @@
                     "update": "Mettre à jour"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Pour prolonger la durée de vie de votre batterie, nous avons optimisé sa capacité de charge complète en fonction de votre utilisation. La capacité totale de la batterie peut ne pas être disponible tant que vous n'avez pas laissé la batterie se vider jusqu'à 20 % avant de la recharger."
                 },
                 "condition": {
                     "Illegal": "La batterie installée n'est <b>pas prise en charge</b> par ce système et ne va pas se charger. Remplacez la batterie par une batterie agréée par Lenovo et compatible avec ce système.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
                     "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
                     "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
-                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote. Vous pouvez également installer le pilote à partir <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">d'ici</a>. Après l'installation, redémarrez votre ordinateur.",
+                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update ou l'installer manuellement depuis <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ici</a>. Après l'installation, redémarrez votre ordinateur.",
                     "StoreLimitation": "<b>La batterie peut seulement stocker {{value}}% de</b> sa capacité de charge totale initiale.",
                     "HighTemperature": "Le <b>déchargement</b> a été interrompu, car la <b>température de la batterie est trop élevée.</b>",
                     "TrickleCharge": "La batterie est <b>complètement déchargée</b> et doit être rechargée. Cette opération peut durer plus de dix heures.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
                         "progressText2": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie faible",
-                        "progressText3": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie pleine",
+                        "progressText3": "Étape {{stage}}, de {{stageNum}} étapes au total",
                         "FCCText": "De {{before}} Wh à {{after}} Wh",
                         "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2241,7 +2248,7 @@
             "goWifi": "accéder à la sécurité wifi",
             "goVpn": "accéder à la sécurité VPN",
             "visitWindows": "Visiter Activation de Windows",
-            "visitFingerprint": "Visiter Fingerprint Reader",
+            "visitFingerprint": "Visiter Lecteur d'empreintes digitales",
             "visitUac": "Visiter le Contrôle de compte d'utilisateur",
             "visitHde": "Visiter le chiffrement du disque dur",
             "haveOwnPassword": "J'ai mon propre Password Manager",

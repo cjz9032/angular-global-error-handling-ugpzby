@@ -922,6 +922,10 @@
                     "update": "更新"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "為了延長電池的壽命，我們已根據您的使用情形將其原始充飽容量最佳化。在您放電至 20％ 並重新充電之前，可能無法使用電池的充飽容量。"
                 },
                 "condition": {
                     "Illegal": "此系統<b>不支援</b>安裝的電池，因此無法充電。請使用此系統適用的正確 Lenovo 電池進行更換。",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>電池狀況不佳。</b>",
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。您也可以從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>安裝驅動程式。安裝之後，重新啟動電腦。",
+                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 或從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>手動安裝。安裝之後，重新啟動電腦。",
                     "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "步驟{{stage}}（共{{stageNum}}個步驟）：充飽校準",
                         "progressText2": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為放電到低電量",
-                        "progressText3": "{{stageNum}} 的 {{stage}}：電池電力充足校準",
+                        "progressText3": "步驟 {{stage}}，總計 {{stageNum}} 個步驟",
                         "FCCText": "從 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重設電池計量器之前，請確定將電腦連接到 AC 電源。",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2241,7 +2248,7 @@
             "goWifi": "前往 Wifi 安全性",
             "goVpn": "前往 VPN 安全性",
             "visitWindows": "造訪 Windows 啟用",
-            "visitFingerprint": "造訪 Fingerprint Reader",
+            "visitFingerprint": "造訪指紋辨識器",
             "visitUac": "造訪使用者帳戶控制",
             "visitHde": "造訪硬碟加密",
             "haveOwnPassword": "我有自己的 Password Manager",

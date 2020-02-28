@@ -922,6 +922,10 @@
                     "update": "Aggiornato"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Update your drivers, BIOS, and other software.",
+            "CheckForSystemUpdates": "Check for system updates"
         }
     },
     "device": {
@@ -1033,7 +1037,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Per estendere la durata di vita della batteria, ne abbiamo ottimizzato la capacità di carica completa in base all'uso. La capacità completa della batteria potrebbe non essere disponibile finché questa non si scarica al 20% e non viene ricaricata."
                 },
                 "condition": {
                     "Illegal": "La batteria installata <b>non è supportata</b> dal sistema e non verrà caricata. Sostituire la batteria con la batteria Lenovo corretta per questo sistema.",
@@ -1044,7 +1048,7 @@
                     "NotGood": "<b>La batteria non è in buone condizioni.</b>",
                     "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b>",
                     "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente.</b>",
-                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente. È anche possibile installare il driver da <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">qui</a>. Al termine dell'installazione, riavviare il computer.",
+                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update o installarlo manualmente da <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">qui</a>. Al termine dell'installazione, riavviare il computer.",
                     "StoreLimitation": "<b>La batteria può mantenere solo il {{value}}% della</b> sua capacità di carica completa originale.",
                     "HighTemperature": "<b>Lo scaricamento</b> è stato interrotto poiché la <b>temperatura della batteria è troppo elevata.</b>",
                     "TrickleCharge": "La batteria è <b>completamente scarica</b> e deve essere ricaricata. Questa operazione potrebbe richiedere almeno dieci ore.",
@@ -1248,7 +1252,7 @@
                         },
                         "progressText1": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
                         "progressText2": "{{stage}} di {{stageNum}}: calibrazione per batteria scarica in corso",
-                        "progressText3": "{{stage}} di {{stageNum}}: calibrazione per batteria carica in corso",
+                        "progressText3": "Passo {{stage}} di {{stageNum}} passi in totale",
                         "FCCText": "Da {{before}} Wh a {{after}} Wh",
                         "note": "Nota: prima di reimpostare l'indicatore della batteria, assicurarsi di collegare il computer all'alimentazione CA. ",
                         "resetLog": {
@@ -1735,7 +1739,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2241,7 +2248,7 @@
             "goWifi": "vai alla sicurezza Wi-Fi",
             "goVpn": "vai alla sicurezza VPN",
             "visitWindows": "Visita Attivazione di Windows",
-            "visitFingerprint": "Visita Fingerprint Reader",
+            "visitFingerprint": "Visita Lettore impronte digitali",
             "visitUac": "Visita Controllo dell'account utente",
             "visitHde": "Visita Crittografia unità disco fisso",
             "haveOwnPassword": "Ho il mio Password Manager",
