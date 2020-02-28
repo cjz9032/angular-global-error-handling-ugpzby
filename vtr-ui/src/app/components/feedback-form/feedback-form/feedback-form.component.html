@@ -101,7 +101,7 @@
 					[tabIndex]="feedbackSuccess ? -1 : 0"
 					[btnHeight]="true"
 					[isFullWidth]="true"
-					[isDisabled]="!feedbackForm.value.userComment && feedbackForm.value.qaNewStyle === null && feedbackForm.value.systemUpdateAwareness === null && feedbackForm.value.remommendVantageToFriend === null"
+					[isDisabled]="!feedbackForm.value.userComment && feedbackForm.value.qaNewStyle === null && feedbackForm.value.systemUpdateAwareness === null && feedbackForm.value.remommendVantageToFriend === null && feedbackForm.get('userEmail').invalid"
 					[label]="'dashboard.feedback.form.sendFeedback' | translate"
 					(onClick)="onFeedBackSubmit()"></vtr-ui-button>
 			</div>
