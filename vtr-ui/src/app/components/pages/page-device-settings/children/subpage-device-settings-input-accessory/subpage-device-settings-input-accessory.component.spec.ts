@@ -1,13 +1,11 @@
 import { async, TestBed, ComponentFixture } from "@angular/core/testing";
-import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 
 import { TranslateModule } from "@ngx-translate/core";
-import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 
 import { SubpageDeviceSettingsInputAccessoryComponent } from "./subpage-device-settings-input-accessory.component";
-
 import { BacklightService } from "./backlight/backlight.service";
 import { TopRowFunctionsIdeapadService } from "./top-row-functions-ideapad/top-row-functions-ideapad.service";
 import { LoggerService } from "src/app/services/logger/logger.service";
@@ -23,9 +21,12 @@ import {
 	BacklightStatus,
 	BacklightLevel
 } from "./backlight/backlight.interface";
-import { VoipApp, VoipResponse } from 'src/app/data-models/input-accessories/voip.model';
-import { SupportedAppEnum } from 'src/app/enums/voip.enum';
-import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import {
+	VoipApp,
+	VoipResponse
+} from "src/app/data-models/input-accessories/voip.model";
+import { SupportedAppEnum } from "src/app/enums/voip.enum";
+import { InputAccessoriesCapability } from "src/app/data-models/input-accessories/input-accessories-capability.model";
 
 describe("SubpageDeviceSettingsInputAccessoryComponent", () => {
 	let component: SubpageDeviceSettingsInputAccessoryComponent;
@@ -125,101 +126,119 @@ describe("SubpageDeviceSettingsInputAccessoryComponent", () => {
 		expect(component).toBeTruthy();
 	}));
 
-	it('should call getVoipHotkeysSettings - res is available', async(() => {
+	it("should call getVoipHotkeysSettings - res is available", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
 		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService)
-		const res: any = [{
-			errorCode: 0,
-			capability: true,
-			appList: [{
-				isAppInstalled: false,
-				isSelected: false
-			}]
-		}]
-		const spy = spyOn(keyboardService, 'getVoipHotkeysSettings').and.returnValue(Promise.resolve(res))
-		component.getVoipHotkeysSettings()
-		expect(spy).toHaveBeenCalled()
+		keyboardService = TestBed.get(InputAccessoriesService);
+		const res: any = [
+			{
+				errorCode: 0,
+				capability: true,
+				appList: [
+					{
+						isAppInstalled: false,
+						isSelected: false
+					}
+				]
+			}
+		];
+		const spy = spyOn(
+			keyboardService,
+			"getVoipHotkeysSettings"
+		).and.returnValue(Promise.resolve(res));
+		component.getVoipHotkeysSettings();
+		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call getVoipHotkeysSettings - error catch block', async(() => {
+	it("should call getVoipHotkeysSettings - error catch block", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
 		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService)
-		const error = {}
-		const spy = spyOn(keyboardService, 'getVoipHotkeysSettings').and.returnValue(Promise.reject(error))
-		component.getVoipHotkeysSettings()
-		expect(spy).toHaveBeenCalled()
+		keyboardService = TestBed.get(InputAccessoriesService);
+		const error = {};
+		const spy = spyOn(
+			keyboardService,
+			"getVoipHotkeysSettings"
+		).and.returnValue(Promise.reject(error));
+		component.getVoipHotkeysSettings();
+		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call setVoipHotkeysSettings', async(() => {
+	it("should call setVoipHotkeysSettings", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
 		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService)
+		keyboardService = TestBed.get(InputAccessoriesService);
 		const app: VoipApp = {
 			appName: SupportedAppEnum.MICROSOFT_TEAMS,
 			isAppInstalled: true,
-			isSelected: true			
-		}
+			isSelected: true
+		};
 		const voipRes: VoipResponse = {
 			errorCode: -1,
 			capability: true
-		}
-		component.selectedApp = app
-		const spy = spyOn(keyboardService, 'setVoipHotkeysSettings').and.returnValue(Promise.resolve(voipRes))
-		component.setVoipHotkeysSettings(app)
-		expect(spy).toHaveBeenCalled()
+		};
+		component.selectedApp = app;
+		const spy = spyOn(
+			keyboardService,
+			"setVoipHotkeysSettings"
+		).and.returnValue(Promise.resolve(voipRes));
+		component.setVoipHotkeysSettings(app);
+		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call setVoipHotkeysSettings - else case', async(() => {
+	it("should call setVoipHotkeysSettings - else case", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
 		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService)
+		keyboardService = TestBed.get(InputAccessoriesService);
 		const app: VoipApp = {
 			appName: SupportedAppEnum.MICROSOFT_TEAMS,
 			isAppInstalled: true,
-			isSelected: true			
-		}
+			isSelected: true
+		};
 		const voipRes: VoipResponse = {
 			errorCode: 0,
 			capability: true,
 			appList: []
-		}
-		spyOn(keyboardService, 'setVoipHotkeysSettings').and.returnValue(Promise.resolve(voipRes))
-		component.setVoipHotkeysSettings(app)
-		expect(component.installedApps).toEqual(voipRes.appList)
+		};
+		spyOn(keyboardService, "setVoipHotkeysSettings").and.returnValue(
+			Promise.resolve(voipRes)
+		);
+		component.setVoipHotkeysSettings(app);
+		expect(component.installedApps).toEqual(voipRes.appList);
 	}));
 
-	it('should call setVoipHotkeysSettings - catch block', async(() => {
+	it("should call setVoipHotkeysSettings - catch block", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
 		component = fixture.componentInstance;
-		keyboardService = TestBed.get(InputAccessoriesService)
+		keyboardService = TestBed.get(InputAccessoriesService);
 		const app: VoipApp = {
 			appName: SupportedAppEnum.MICROSOFT_TEAMS,
 			isAppInstalled: true,
-			isSelected: true			
-		}
+			isSelected: true
+		};
 		const voipRes: VoipResponse = {
 			errorCode: 0,
 			capability: true,
 			appList: []
-		}
-		const spy = spyOn(keyboardService, 'setVoipHotkeysSettings').and.returnValue(Promise.reject())
-		component.setVoipHotkeysSettings(app)
-		expect(spy).toHaveBeenCalled()
+		};
+		const spy = spyOn(
+			keyboardService,
+			"setVoipHotkeysSettings"
+		).and.returnValue(Promise.reject());
+		component.setVoipHotkeysSettings(app);
+		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call initHiddwnKbdFnfromCache', async(() => {
+	it("should call initHiddwnKbdFnfromCache", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
@@ -229,28 +248,30 @@ describe("SubpageDeviceSettingsInputAccessoryComponent", () => {
 			isKeyboardMapAvailable: true,
 			isUdkAvailable: true,
 			isVoipAvailable: true,
-			image: '890',
+			image: "890",
 			additionalCapabilitiesObj: {},
-			keyboardVersion: '4.0.1',
-			keyboardLayoutName: 'hello'
-		}
-		spyOn(commonService, 'getLocalStorageValue').and.returnValue(inputAccessories)
+			keyboardVersion: "4.0.1",
+			keyboardLayoutName: "hello"
+		};
+		spyOn(commonService, "getLocalStorageValue").and.returnValue(
+			inputAccessories
+		);
 		component.initHiddenKbdFnFromCache();
-		expect(component.cacheFound).toEqual(true)
+		expect(component.cacheFound).toEqual(true);
 	}));
 
-	it('should call initHiddwnKbdFnfromCache - else case', async(() => {
+	it("should call initHiddwnKbdFnfromCache - else case", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
 		component = fixture.componentInstance;
 		commonService = TestBed.get(CommonService);
-		spyOn(commonService, 'getLocalStorageValue').and.returnValue(undefined)
+		spyOn(commonService, "getLocalStorageValue").and.returnValue(undefined);
 		component.initHiddenKbdFnFromCache();
-		expect(component.cacheFound).toEqual(false)
+		expect(component.cacheFound).toEqual(false);
 	}));
 
-	it('should call getAdditionalCapabilitiesFromCache', async(() => {
+	it("should call getAdditionalCapabilitiesFromCache", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
@@ -260,9 +281,34 @@ describe("SubpageDeviceSettingsInputAccessoryComponent", () => {
 			privacy: true,
 			magnifier: true,
 			backLight: true
-		}
-		component.getAdditionalCapabilitiesFromCache()
-		expect(component.shortcutKeys.length).toEqual(5)
+		};
+		component.getAdditionalCapabilitiesFromCache();
+		expect(component.shortcutKeys.length).toEqual(5);
+	}));
+
+	it('should call getKBDLayoutName - else case', async(() => {
+		fixture = TestBed.createComponent(
+			SubpageDeviceSettingsInputAccessoryComponent
+		);
+		component = fixture.componentInstance;
+		keyboardService = TestBed.get(InputAccessoriesService);
+		keyboardService.isShellAvailable = false;
+		const spy = spyOn(keyboardService, 'GetKBDLayoutName')
+		component.getKBDLayoutName()
+		expect(spy).not.toHaveBeenCalled()
+	}));
+
+	it('should call getKBDMachineType - else case', async(() => {
+		fixture = TestBed.createComponent(
+			SubpageDeviceSettingsInputAccessoryComponent
+		);
+		component = fixture.componentInstance;
+		keyboardService = TestBed.get(InputAccessoriesService);
+		keyboardService.isShellAvailable = false;
+		const spy = spyOn(keyboardService, 'GetKBDLayoutName')
+		const layoutName = "turkish_f";
+		component.getKBDMachineType(layoutName)
+		expect(spy).not.toHaveBeenCalled()
 	}));
 
 	// it('should call getFnCtrlSwapCapability', async(() => {
@@ -527,70 +573,148 @@ describe("SubpageDeviceSettingsInputAccessoryComponent", () => {
 	// 	expect(spy).not.toHaveBeenCalled()
 	// }));
 
-	it('should call getLayoutTable - layout is TURKISH_F', async(() => {
+	it("should call getKeyboardMap keyboardVersion is 1", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
 		component = fixture.componentInstance;
-		const layoutName = 'turkish_f'
-		const spy = spyOn(component, 'generateLayOutTable')
-		component.getLayoutTable(layoutName)
+		const layoutName = "turkish_f";
+		component.imagesArray = [
+			"Belgium.png",
+			"French.png",
+			"French_Canadian.png",
+			"German.png",
+			"Italian.png",
+			"Spanish.png",
+			"Turkish_F.png",
+			"Standered.png"
+		];
+		const machineType = 'grafevo'
+		component.keyboardVersion = '1'
+		component.getKeyboardMap(layoutName, machineType)
+		expect(component.image).not.toEqual('')
+	}));
+
+	it("should call getKeyboardMap type is grafevo", async(() => {
+		fixture = TestBed.createComponent(
+			SubpageDeviceSettingsInputAccessoryComponent
+		);
+		component = fixture.componentInstance;
+		const layoutName = "turkish_f";
+		component.imagesArray = [
+			"Belgium.png",
+			"French.png",
+			"French_Canadian.png",
+			"German.png",
+			"Italian.png",
+			"Spanish.png",
+			"Turkish_F.png",
+			"Standered.png"
+		];
+		const machineType = 'grafevo'
+		component.keyboardVersion = '2'
+		component.getKeyboardMap(layoutName, machineType)
+		expect(component.image).not.toEqual('')
+	}));
+
+	it('should call getAdditionalCapabilities - empty response', async(() => {
+		fixture = TestBed.createComponent(
+			SubpageDeviceSettingsInputAccessoryComponent
+		);
+		component = fixture.componentInstance;
+		keyboardService = TestBed.get(InputAccessoriesService);
+		keyboardService.isShellAvailable = true;
+		component.inputAccessoriesCapability = {
+			isKeyboardMapAvailable: true,
+			isUdkAvailable: true,
+			isVoipAvailable: true,
+			image: "890",
+			additionalCapabilitiesObj: {},
+			keyboardVersion: "4.0.1",
+			keyboardLayoutName: "hello"
+		}
+		const res: any = []
+		const spy = spyOn(keyboardService, 'GetKbdHiddenKeyPerformanceModeCapability').and.returnValue(Promise.resolve(res));
+		component.getAdditionalCapabilities()
 		expect(spy).toHaveBeenCalled()
 	}));
 
-	it('should call getLayoutTable - layout is BELGIUM', async(() => {
+	it('should call getAdditionalCapabilities - else case', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
 		component = fixture.componentInstance;
-		const layoutName = 'belgium'
-		const spy = spyOn(component, 'generateLayOutTable')
-		component.getLayoutTable(layoutName)
-		expect(spy).toHaveBeenCalled()
+		keyboardService = TestBed.get(InputAccessoriesService);
+		keyboardService.isShellAvailable = false;
+		const spy = spyOn(keyboardService, 'GetKbdHiddenKeyPerformanceModeCapability');
+		component.getAdditionalCapabilities()
+		expect(spy).not.toHaveBeenCalled()
 	}));
 
-	it('should call getLayoutTable - layout is FRENCH', async(() => {
+	it("should call getLayoutTable - layout is TURKISH_F", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
 		component = fixture.componentInstance;
-		const layoutName = 'french'
-		const spy = spyOn(component, 'generateLayOutTable')
-		component.getLayoutTable(layoutName)
-		expect(spy).toHaveBeenCalled()
+		const layoutName = "turkish_f";
+		const spy = spyOn(component, "generateLayOutTable");
+		component.getLayoutTable(layoutName);
+		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call getLayoutTable - layout is FRENC_CANADIAN', async(() => {
+	it("should call getLayoutTable - layout is BELGIUM", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
 		component = fixture.componentInstance;
-		const layoutName = 'french_canadian'
-		const spy = spyOn(component, 'generateLayOutTable')
-		component.getLayoutTable(layoutName)
-		expect(spy).toHaveBeenCalled()
+		const layoutName = "belgium";
+		const spy = spyOn(component, "generateLayOutTable");
+		component.getLayoutTable(layoutName);
+		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call getLayoutTable - layout is \'\'', async(() => {
+	it("should call getLayoutTable - layout is FRENCH", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
 		component = fixture.componentInstance;
-		const layoutName = ''
-		const spy = spyOn(component, 'generateLayOutTable')
-		component.getLayoutTable(layoutName)
-		expect(spy).toHaveBeenCalled()
+		const layoutName = "french";
+		const spy = spyOn(component, "generateLayOutTable");
+		component.getLayoutTable(layoutName);
+		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call generateLayOutTable', async(() => {
+	it("should call getLayoutTable - layout is FRENC_CANADIAN", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
 		component = fixture.componentInstance;
-		const array = [7, 4, 10, 11, 2, 9, 13, 12]
-		component.isFrenchKeyboard = true
-		component.generateLayOutTable(array)
-		expect(component.fnCtrlKeyTooltipContent.length).not.toEqual(0)
+		const layoutName = "french_canadian";
+		const spy = spyOn(component, "generateLayOutTable");
+		component.getLayoutTable(layoutName);
+		expect(spy).toHaveBeenCalled();
+	}));
+
+	it("should call getLayoutTable - layout is ''", async(() => {
+		fixture = TestBed.createComponent(
+			SubpageDeviceSettingsInputAccessoryComponent
+		);
+		component = fixture.componentInstance;
+		const layoutName = "";
+		const spy = spyOn(component, "generateLayOutTable");
+		component.getLayoutTable(layoutName);
+		expect(spy).toHaveBeenCalled();
+	}));
+
+	it("should call generateLayOutTable", async(() => {
+		fixture = TestBed.createComponent(
+			SubpageDeviceSettingsInputAccessoryComponent
+		);
+		component = fixture.componentInstance;
+		const array = [7, 4, 10, 11, 2, 9, 13, 12];
+		component.isFrenchKeyboard = true;
+		component.generateLayOutTable(array);
+		expect(component.fnCtrlKeyTooltipContent.length).not.toEqual(0);
 	}));
 
 	// it('should call setFnAsCtrl', async(() => {
@@ -655,12 +779,24 @@ describe("SubpageDeviceSettingsInputAccessoryComponent", () => {
 	// 	expect(spy).toHaveBeenCalled()
 	// }));
 
-	it('should call showHideKeyboardBacklight', async(() => {
+	it("should call showHideKeyboardBacklight", async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsInputAccessoryComponent
 		);
 		component = fixture.componentInstance;
-		component.showHideKeyboardBacklight(true)
-		expect(component.isKbdBacklightAvailable).toEqual(true)
+		component.showHideKeyboardBacklight(true);
+		expect(component.isKbdBacklightAvailable).toEqual(true);
+	}));
+
+	it("should call getMouseAndTouchPadCapability - else case", async(() => {
+		fixture = TestBed.createComponent(
+			SubpageDeviceSettingsInputAccessoryComponent
+		);
+		component = fixture.componentInstance;
+		keyboardService = TestBed.get(InputAccessoriesService);
+		keyboardService.isShellAvailable = false;
+		const spy = spyOn(keyboardService, "getMouseCapability");
+		component.getMouseAndTouchPadCapability();
+		expect(spy).not.toHaveBeenCalled();
 	}));
 });
