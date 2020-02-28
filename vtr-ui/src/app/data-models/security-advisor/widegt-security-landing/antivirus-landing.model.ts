@@ -47,9 +47,12 @@ export class AntiVirusLandingViewModel {
 			if (this.currentPage === 'windows') {
 				if (this.avStatus.status === 'failedLoad') {
 					this.avStatus.status = 'loading';
+					this.avStatus.detail = this.translateString['common.securityAdvisor.loading'];
 					this.waitTimeout('antivirus');
-				} else if (this.fwStatus.status === 'failedLoad') {
+				}
+				if (this.fwStatus.status === 'failedLoad') {
 					this.fwStatus.status = 'loading';
+					this.fwStatus.detail = this.translateString['common.securityAdvisor.loading'];
 					this.waitTimeout('firewall');
 				}
 			}
