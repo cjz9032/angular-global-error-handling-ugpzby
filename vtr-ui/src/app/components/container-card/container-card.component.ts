@@ -11,7 +11,7 @@ import { FeatureContent } from 'src/app/data-models/common/feature-content.model
 	styleUrls: ['./container-card.component.scss', './container-card.component.gaming.scss']
 })
 export class ContainerCardComponent implements OnInit, OnChanges {
-	@Input() item: FeatureContent;
+	@Input() item: FeatureContent = new FeatureContent();
 	@Input() type = '';
 	@Input() ratio = 0.5;
 	@Input() cornerShift = '';
