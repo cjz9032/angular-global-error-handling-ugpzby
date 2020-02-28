@@ -7,7 +7,7 @@ export class LightingDataList{
               header: 'gaming.lightingProfile.effect.option8.title', 
               name: 'gaming.lightingProfile.effect.option8.title',
               id: 'lighting_effect_off',
-              label: 'Off',
+              label: 'gaming.lightingProfile.effect.option8.title',
               metricitem: 'lighting_effect_off',
               value: 268435456
             },
@@ -15,7 +15,7 @@ export class LightingDataList{
               header: 'gaming.lightingNewversion.lightingEffect.effectName1',
               name: 'gaming.lightingNewversion.lightingEffect.effectName1',
               id: 'lighting_effect_static',
-              label: 'Static',
+              label: 'gaming.lightingNewversion.lightingEffect.effectName1',
               metricitem: 'lighting_effect_static',
               value: 1
             },
@@ -23,7 +23,7 @@ export class LightingDataList{
               header: 'gaming.lightingProfile.effect.option2.title',
               name: 'gaming.lightingProfile.effect.option2.title',
               id: 'lighting_effect_flicker',
-              label: 'Flicker',
+              label: 'gaming.lightingProfile.effect.option2.title',
               metricitem: 'lighting_effect_flicker',
               value: 2
             },
@@ -31,7 +31,7 @@ export class LightingDataList{
               header: 'gaming.lightingProfile.effect.option3.title',
               name: 'gaming.lightingProfile.effect.option3.title',
               id: 'lighting_effect_breath',
-              label: 'Breath',
+              label: 'gaming.lightingProfile.effect.option3.title',
               metricitem: 'lighting_effect_breath',
               value: 4
             },
@@ -39,7 +39,7 @@ export class LightingDataList{
               header: 'gaming.lightingProfile.effect.option4.title',
               name: 'gaming.lightingProfile.effect.option4.title',
               id: 'lighting_effect_wave',
-              label: 'Wave',
+              label: 'gaming.lightingProfile.effect.option4.title',
               metricitem: 'lighting_effect_wave',
               value: 8
             },
@@ -47,7 +47,7 @@ export class LightingDataList{
               header: 'gaming.lightingNewversion.lightingEffect.effectName2',
               name: 'gaming.lightingNewversion.lightingEffect.effectName2',
               id: 'lighting_effect_spectrum',
-              label: 'Spectrum',
+              label: 'gaming.lightingNewversion.lightingEffect.effectName2',
               metricitem: 'lighting_effect_spectrum',
               value: 32
             },
@@ -55,15 +55,16 @@ export class LightingDataList{
               header: 'gaming.lightingProfile.effect.option6.title',
               name: 'gaming.lightingProfile.effect.option6.title',
               id: 'lighting_effect_cpu_temperature',
-              label: 'CPU Temperature',  
+              label: 'gaming.lightingProfile.effect.option6.title',  
               metricitem: 'lighting_effect_cpu_temperature',
-              value: 64
+              value: 64,
+              show_tool_tip: true
             },
             {
               header: 'gaming.lightingNewversion.lightingEffect.effectName3',
               name: 'gaming.lightingNewversion.lightingEffect.effectName3',
               id: 'lighting_effect_rainbow',
-              label: 'Rainbow',
+              label: 'gaming.lightingNewversion.lightingEffect.effectName3',
               metricitem: 'lighting_effect_rainbow',
               value: 256
             },
@@ -71,7 +72,7 @@ export class LightingDataList{
               header: 'gaming.lightingNewversion.lightingEffect.effectName4',
               name: 'gaming.lightingNewversion.lightingEffect.effectName4',
               id: 'lighting_effect_random',
-              label: 'Random',
+              label: 'gaming.lightingNewversion.lightingEffect.effectName4',
               metricitem: 'lighting_effect_random',
               value: 512
             }
@@ -85,7 +86,7 @@ export class LightingDataList{
             header: 'gaming.lightingProfile.effect.option8.title',
             name: 'gaming.lightingProfile.effect.option8.title',
             id: 'lighting_effect_off',
-            label: 'Off',
+            label: 'gaming.lightingProfile.effect.option8.title',
             metricitem: 'lighting_effect_off',
             value: 268435456
           },
@@ -93,31 +94,34 @@ export class LightingDataList{
               header: 'gaming.lightingProfile.lightingSingleLightingOption.option1.title',
               name: 'gaming.lightingProfile.lightingSingleLightingOption.option1.title',
               id: 'lighting_effect_always',
-              label: 'Always On',
+              label: 'gaming.lightingProfile.lightingSingleLightingOption.option1.title',
               metricitem: 'lighting_effect_always',
-              value: 1
+              value: 1,
+              show_tool_tip: true
           },
           {
               header: 'gaming.lightingProfile.lightingSingleLightingOption.option2.title',
               name: 'gaming.lightingProfile.lightingSingleLightingOption.option2.title',
               id: 'lighting_effect_fast_blink',
-              label: 'Fast Blink',
+              label: 'gaming.lightingProfile.lightingSingleLightingOption.option2.title',
               metricitem: 'lighting_effect_fast_blink',
-              value: 2
+              value: 2,
+              show_tool_tip: true
           },
           {
               header: 'gaming.lightingProfile.lightingSingleLightingOption.option4.title',
               name: 'gaming.lightingProfile.lightingSingleLightingOption.option4.title',
               id: 'lighting_effect_slow_blink',
-              label: 'Slow Blink',
+              label: 'gaming.lightingProfile.lightingSingleLightingOption.option4.title',
               metricitem: 'lighting_effect_slow_blink',
-              value: 3
+              value: 3,
+              show_tool_tip: true
           },
           {
               header: 'gaming.lightingProfile.effect.option3.title',
               name: 'gaming.lightingProfile.effect.option3.title',
               id: 'lighting_effect_breath',
-              label: 'Breath',
+              label: 'gaming.lightingProfile.effect.option3.title',
               metricitem: 'lighting_effect_breath',
               value: 4
           },
@@ -238,7 +242,7 @@ export class LightingDataList{
             header: 'gaming.lightingProfile.effect.option8.title',
             name: 'gaming.lightingProfile.effect.option8.title',
             id: 'lighting_effect_off',
-            label: 'Off',
+            label: 'gaming.lightingProfile.effect.option8.title',
             metricitem: 'lighting_effect_off',
             value: 268435456
           },
@@ -246,7 +250,7 @@ export class LightingDataList{
             header: 'gaming.lightingNewversion.lightingEffect.effectName1',
             name: 'gaming.lightingNewversion.lightingEffect.effectName1',
             id: 'lighting_effect_static',
-            label: 'Static',
+            label: 'gaming.lightingNewversion.lightingEffect.effectName1',
             metricitem: 'lighting_effect_static',
             value: 1
           },
@@ -254,7 +258,7 @@ export class LightingDataList{
             header: 'gaming.lightingProfile.effect.option3.title',
             name: 'gaming.lightingProfile.effect.option3.title',
             id: 'lighting_effect_breath',
-            label: 'Breath',
+            label: 'gaming.lightingProfile.effect.option3.title',
             metricitem: 'lighting_effect_breath',
             value: 4
           },
@@ -262,7 +266,7 @@ export class LightingDataList{
             header: 'gaming.lightingProfile.effect.option5.title',
             name: 'gaming.lightingProfile.effect.option5.title',
             id: 'lighting_effect_smooth',
-            label: 'Smooth',
+            label: 'gaming.lightingProfile.effect.option5.title',
             metricitem: 'lighting_effect_smooth',
             value: 32
           },
@@ -270,25 +274,28 @@ export class LightingDataList{
             header: 'gaming.lightingNewversion.lightingEffect.effectName5',
             name: 'gaming.lightingNewversion.lightingEffect.effectName5',
             id: 'lighting_effect_cool_blue',
-            label: 'Cool_Blue',
+            label: 'gaming.lightingNewversion.lightingEffect.effectName5',
             metricitem: 'lighting_effect_cool_blue',
-            value: 1024
+            value: 1024,
+						show_tool_tip: true
           },
           {
             header: 'gaming.lightingNewversion.lightingEffect.effectName6',
             name: 'gaming.lightingNewversion.lightingEffect.effectName6',
             id: 'lighting_effect_wave_right',
-            label: 'Wave_Right',
+            label: 'gaming.lightingNewversion.lightingEffect.effectName6',
             metricitem: 'lighting_effect_wave_right',
-            value: 4096
+            value: 4096,
+						show_tool_tip: true
           },
           {
             header: 'gaming.lightingNewversion.lightingEffect.effectName7',
             name: 'gaming.lightingNewversion.lightingEffect.effectName7',
             id: 'lighting_effect_wave_left',
-            label: 'Wave_Left',
+            label: 'gaming.lightingNewversion.lightingEffect.effectName7',
             metricitem: 'lighting_effect_wave_left',
-            value: 8192
+            value: 8192,
+						show_tool_tip: true
           }
       ]
     };
