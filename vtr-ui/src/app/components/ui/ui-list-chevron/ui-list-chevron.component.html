@@ -113,7 +113,7 @@
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
-							<div *ngIf="item.retryText">
+							<div [hidden]="!item.retryText">
 								<a href="javascript:void(0);"
 									class="retryLink"
 									(click)="retry(item, $event)">{{item.retryText}}</a>

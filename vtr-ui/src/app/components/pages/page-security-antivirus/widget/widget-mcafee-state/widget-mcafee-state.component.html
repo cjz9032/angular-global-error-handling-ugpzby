@@ -2,15 +2,15 @@
     <li class="group-item" *ngFor="let list of statusList">
       <div class="row align-items-center">
         <div class="col-auto pl-0 windows-padding">
-          <div *ngIf="list.status!=='loading'" class="bullet-icon">
-            <div *ngIf="list.status !== 'disabled' && list.status !== 'not-installed' && list.status !== 'failedLoad'" class="icon-bkg icon-check">
+          <div [hidden]="list.status==='loading'" class="bullet-icon">
+            <div [hidden]="list.status === 'disabled' || list.status === 'not-installed' || list.status === 'failedLoad'"  class="icon-bkg icon-check">
               <fa-icon [icon]="['fas', 'check']"></fa-icon>
             </div>
-            <div *ngIf="list.status === 'disabled' || list.status === 'not-installed' || list.status === 'failedLoad'" class="icon-bkg icon-times">
+            <div [hidden]="list.status === 'enabled' || list.status === 'installed'" class="icon-bkg icon-times">
               <fa-icon [icon]="['fas', 'times']"></fa-icon>
             </div>
           </div>
-          <div *ngIf="list.status==='loading'" class="spinner-content">
+          <div [hidden]="list.status!=='loading'" class="spinner-content">
             <div class="spinner-border text-primary progress-spinner" role="status"></div>
 		  </div>
         </div>
@@ -27,7 +27,7 @@
 						[innerHTML]="list.status | statusText | translate">
 					</span>
 			</h3>
-			<a *ngIf="list.status === 'failedLoad'"
+			<a [hidden]="list.status !== 'failedLoad'"
 				href="javascript:void(0);"
 				(click)="retry(list);">{{'common.ui.retry' | translate}}</a>
         </div>
