@@ -58,14 +58,8 @@
 			</div>
 			<div class="row mb-5">
 				<div class="col col-12">
-					<vtr-container-card [img]="cardContentPositionA.FeatureImage"
-						[itemID]="cardContentPositionA.Id"
-						[caption]="cardContentPositionA.Description"
-						[title]="cardContentPositionA.Title"
-						[logoText]="cardContentPositionA.BrandName"
-						[action]="cardContentPositionA.Action"
-						[actionType]="cardContentPositionA.ActionType"
-						[actionLink]="cardContentPositionA.ActionLink"
+					<vtr-container-card
+						[item]="cardContentPositionA"
 						[type]="'subpage-corner'"
 						[ratio]="2"
 						order="3"
