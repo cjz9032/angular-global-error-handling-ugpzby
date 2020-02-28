@@ -15,7 +15,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { AndroidService } from 'src/app/services/android/android.service';
 import { DevService } from 'src/app/services/dev/dev.service';
 
-fdescribe('SubpageDeviceSettingsPowerContainerComponent', () => {
+describe('SubpageDeviceSettingsPowerContainerComponent', () => {
 	let component: SubpageDeviceSettingsPowerContainerComponent;
 	let fixture: ComponentFixture<SubpageDeviceSettingsPowerContainerComponent>;
 	let deviceService: DeviceService;
