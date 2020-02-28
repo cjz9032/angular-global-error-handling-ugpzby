@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter, NgZone } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter, NgZone, AfterViewInit } from '@angular/core';
 import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
@@ -13,7 +13,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	styleUrls: ['./camera-control.component.scss']
 })
 
-export class CameraControlComponent implements OnInit, OnDestroy {
+export class CameraControlComponent implements OnInit, OnDestroy, AfterViewInit {
 	@Input() cameraSettings: CameraSettingsResponse = new CameraSettingsResponse();
 	@Input() cameraFeatureAccess: CameraFeatureAccess;
 	@Input() manualRefresh: any;
@@ -24,8 +24,9 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Output() exposureToggle: EventEmitter<any> = new EventEmitter();
 	@Output() cameraAvailable: EventEmitter<boolean> = new EventEmitter();
 	@Output() cameraDisable: EventEmitter<boolean> = new EventEmitter();
+	@ViewChild('cameraPreview', { static: false }) cameraPreview: ElementRef<HTMLVideoElement>;
 	public cameraDetail = new CameraDetail();
-	private cameraPreview: ElementRef;
+	// private cameraPreview: ElementRef;
 	private videoElement: HTMLVideoElement;
 	private cameraDetailSubscription: Subscription;
 	private Windows: any;
@@ -50,17 +51,17 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private simpleOrientation: any;
 
 
-	@ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
-		// when camera preview video element is visible then start camera feed
-		this.cameraPreview = content;
-		if (!this.isCameraInitialized) {
-			if (content && !this.cameraDetail.isPrivacyModeEnabled) {
-				this.initializeCameraAsync();
-			} else {
-				this.cleanupCameraAsync();
-			}
-		}
-	}
+	// @ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
+	// 	// when camera preview video element is visible then start camera feed
+	// 	this.cameraPreview = content;
+	// 	if (!this.isCameraInitialized) {
+	// 		if (content && !this.cameraDetail.isPrivacyModeEnabled) {
+	// 			this.initializeCameraAsync();
+	// 		} else {
+	// 			this.cleanupCameraAsync();
+	// 		}
+	// 	}
+	// }
 
 	constructor(
 		public cameraFeedService: CameraFeedService,
@@ -102,6 +103,20 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			}
 		);
 	}
+
+	ngAfterViewInit() {
+		// @ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
+		// when camera preview video element is visible then start camera feed
+		// this.cameraPreview = content;
+		if (!this.isCameraInitialized) {
+			if (!this.cameraDetail.isPrivacyModeEnabled) {
+				this.initializeCameraAsync();
+			} else {
+				this.cleanupCameraAsync();
+			}
+		}
+	}
+	// }
 
 	ngOnDestroy() {
 		if (this.cameraDetailSubscription) {
