@@ -750,7 +750,7 @@
                 "sub3": "Segurança WiFi",
                 "sub4": "Integridade de senha",
                 "sub5": "Segurança VPN",
-                "sub6": "Impressão digital"
+                "sub6": "Impressões digitais"
             },
             "support": "Suporte",
             "beta": {
@@ -775,7 +775,7 @@
             "notFound": "NÃO ENCONTRADO",
             "registered": "REGISTRADO",
             "notRegistered": "NÃO REGISTRADO",
-            "fingerPrint": "Impressão Digital",
+            "fingerPrint": "Impressões digitais",
             "privacyPolicyAndTermsOfService": "<tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "CADASTRADO",

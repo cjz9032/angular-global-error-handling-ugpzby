@@ -775,7 +775,7 @@
             "notFound": "BULUNAMADI",
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL",
-            "fingerPrint": "Parmak Izi",
+            "fingerPrint": "Parmak İzi",
             "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "KAYITLI",
