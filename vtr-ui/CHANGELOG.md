@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.16](https://bitbucket.tc.lenovo.com///compare/v1.3.15...v1.3.16) (2020-02-28)
+
 ### [1.3.15](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.14...v1.3.15) (2020-02-28)
 
 
