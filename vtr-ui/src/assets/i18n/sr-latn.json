@@ -750,7 +750,7 @@
                 "sub3": "WiFi bezbednost",
                 "sub4": "Ispravnost lozinke",
                 "sub5": "Bezbednost VPN mreže",
-                "sub6": "Fingerprint"
+                "sub6": "Otisak"
             },
             "support": "Podrška",
             "beta": {
@@ -775,7 +775,7 @@
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTROVAN",
             "notRegistered": "NIJE REGISTROVAN",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Otisak",
             "privacyPolicyAndTermsOfService": "<tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "REGISTROVAN",
