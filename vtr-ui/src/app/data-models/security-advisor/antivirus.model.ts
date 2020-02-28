@@ -2,7 +2,6 @@ import { Antivirus, McAfeeInfo, WindowsDefender, OtherInfo, EventTypes, McafeeMe
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
-import { element } from 'protractor';
 
 export class AntiVirusViewModel {
 	currentPage = 'windows';

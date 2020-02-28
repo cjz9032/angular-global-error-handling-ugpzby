@@ -138,36 +138,21 @@ export class AntiVirusLandingViewModel {
 		} else if (typeof fw !== 'boolean' && typeof av === 'boolean') {
 			this.avStatus.status = av ? 'enabled' : 'disabled';
 			this.avStatus.detail = this.translateString[`common.securityAdvisor.${av ? 'enabled' : 'disabled'}`];
-			if (currentPage === 'windows') {
-				this.fwStatus.status = 'loading';
-				this.fwStatus.detail = this.translateString['common.securityAdvisor.loading'];
-			}
 		} else if (typeof av !== 'boolean' && typeof fw === 'boolean') {
 			this.fwStatus.status = fw ? 'enabled' : 'disabled';
 			this.fwStatus.detail = this.translateString[`common.securityAdvisor.${fw ? 'enabled' : 'disabled'}`];
-			if (currentPage === 'windows') {
-				this.avStatus.status = 'loading';
-				this.avStatus.detail = this.translateString['common.securityAdvisor.loading'];
-			}
-		} else {
-			if (currentPage === 'windows') {
-				this.avStatus.status = 'loading';
-				this.avStatus.detail = this.translateString['common.securityAdvisor.loading'];
-				this.fwStatus.status = 'loading';
-				this.fwStatus.detail = this.translateString['common.securityAdvisor.loading'];
-			}
 		}
 	}
 
 	retry(id) {
 		if (id.includes('antivirus')) {
 			this.avStatus.status = 'loading';
-			this.avStatus.detail = this.translateString['common.securityAdvisor.load'];
+			this.avStatus.detail = this.translateString['common.securityAdvisor.loading'];
 			this.waitTimeout('antivirus');
 		}
 		if (id.includes('firewall')) {
 			this.fwStatus.status = 'loading';
-			this.fwStatus.detail = this.translateString['common.securityAdvisor.load'];
+			this.fwStatus.detail = this.translateString['common.securityAdvisor.loading'];
 			this.waitTimeout('firewall');
 		}
 
