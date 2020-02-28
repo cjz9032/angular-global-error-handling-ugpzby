@@ -47,6 +47,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	private totalDuration = 0; // itermittant app duratin will be added to it
 	private vantageFocusHelper = new VantageFocusHelper();
 	private isServerSwitchEnabled = true;
+	private shellVersion;
 
 	constructor(
 		private displayService: DisplayService,
@@ -68,10 +69,16 @@ export class AppComponent implements OnInit, OnDestroy {
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
+		this.shellVersion = this.vantageShellService.getShellVersion();
+
 		win.webAppVersion = {
 			web: environment.appVersion,
-			bridge: version
+			bridge: version,
+			shell: this.shellVersion
 		};
+
+		// using error because by default its enabled in all
+		this.logger.error('APP VERSION', win.webAppVersion);
 
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -413,7 +420,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	private setRunVersionToRegistry() {
 		setTimeout(() => {
-			const runVersion = this.vantageShellService.getShellVersion();
+			const runVersion = this.shellVersion;
 			const regUtil = this.vantageShellService.getRegistryUtil();
 			if (runVersion && regUtil) {
 				const regPath = 'HKEY_CURRENT_USER\\Software\\Lenovo\\ImController';

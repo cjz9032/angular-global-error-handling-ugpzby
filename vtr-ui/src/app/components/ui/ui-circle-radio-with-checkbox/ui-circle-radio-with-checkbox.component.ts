@@ -50,7 +50,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 		// this.translate.stream(this.label).subscribe((result: string) => {
 		// 	this.label = result;
 		// });
-		this.setRadioButtons(); //Set up radio buttons first , last etc and if none selected,set tabindex to first element
+		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
 	onChange(event) {
@@ -147,7 +147,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 				this.setChecked(this.radioButtons[index - 1], true);
 			}
 		} catch (error) {
-			this.logger.error('setCheckedToPreviousItem error occured ::', error);
+			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
 	}
 
@@ -164,7 +164,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			}
 
 		} catch (error) {
-			this.logger.error('setCheckedToNextItem error occured :: ', error);
+			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
 
 	}
@@ -176,7 +176,6 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			}
 			const rbs = this.radioGroup.querySelectorAll('[role=radio]');
 
-			//if (this.radioButtons.length !== rbs.length) {
 			this.radioButtons = [];
 			rbs.forEach(radioButton => {
 				this.radioButtons.push(radioButton);
@@ -191,18 +190,12 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 				}
 			});
 
-			//}
 			if (this.firstRadioButton && this.noRadioButtonSelected) {
 				this.firstRadioButton.focus();
-				//this.setRadioTabIndex(this.firstRadioButton);
+				// this.setRadioTabIndex(this.firstRadioButton);
 			}
-
-
 		} catch (error) {
-			this.logger.error('setRadioButtons error occured ::', error);
+			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
-
-
 	}
-
 }
