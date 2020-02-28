@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
@@ -10,8 +10,7 @@ import { FeatureContent } from 'src/app/data-models/common/feature-content.model
 	templateUrl: './container-card.component.html',
 	styleUrls: ['./container-card.component.scss', './container-card.component.gaming.scss']
 })
-export class ContainerCardComponent implements OnInit, OnChanges {
-	@Input() item: FeatureContent = new FeatureContent();
+export class ContainerCardComponent implements OnInit {
 	@Input() type = '';
 	@Input() ratio = 0.5;
 	@Input() cornerShift = '';
@@ -28,13 +27,29 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	isLoading = true;
 	isOnline = true;
 
+	private _item: FeatureContent;
+
+	@Input() set item(itemValue: any) {
+		if (itemValue && itemValue.FeatureImage) {
+			this.isLoading = false;
+			this.overlayThemeDefaultIsDark = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Light
+			this.overlayThemeDefaultIsLight = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Dark
+			this._item = itemValue;
+		} else {
+			this._item = new FeatureContent();
+		}
+	}
+
+	get item() {
+		return this._item;
+	}
+
 	constructor(
 		private commonService: CommonService,
 		private cardService: CardService,
 	) { }
 
 	ngOnInit() {
-		this.handleLoading();
 		this.isOnline = this.commonService.isOnline;
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -72,7 +87,4 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 		}
 	}
 
-	ngOnChanges(changes) {
-		this.handleLoading();
-	}
 }
