@@ -1059,7 +1059,7 @@
                     "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>",
                     "EmDriverInstalled": "Detaliile privind bateria sunt indisponibile. Rulaţi Windows Update->Căutaţi actualizări pentru a instala driverul <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
-                "batteryNotDetected": "Nu se detectează nicio baterie",
+                "batteryNotDetected": "Nu a fost detectată nicio baterie",
                 "thresholdNote": "<b>Notă:</b> bateria nu poate fi încărcată complet atunci când este activat pragul de încărcare a bateriei.",
                 "seeDetailsLink": "Vedeți detaliile",
                 "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a.",

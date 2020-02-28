@@ -1059,7 +1059,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájení je připojené.</b>",
                     "EmDriverInstalled": "Podrobnosti o baterii nejsou dostupné. Pro instalaci ovladače <b>Lenovo ACPI - Compliant Virtual Power Controller</b> přejděte do nabídky Windows Update -> Zkontrolovat aktualizace."
                 },
-                "batteryNotDetected": "Baterie nebyla nalezena",
+                "batteryNotDetected": "Nebyla zjištěna žádná baterie",
                 "thresholdNote": "<b>Poznámka:</b> Pokud je aktivován Limit nabíjení baterie, nelze baterii plně nabít.",
                 "seeDetailsLink": "Zobrazit podrobnosti",
                 "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér.",
