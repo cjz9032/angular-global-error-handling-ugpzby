@@ -1524,7 +1524,7 @@
                         "onSunsetToSunriseScheduleDescription": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
                         "note": {
                             "title": "Nota",
-                            "description": "O Lenovo Vantage precisa acessar suas informações de localização para calcular o horário do pôr do sol e do nascer do sol da sua região."
+                            "description": "O Lenovo Vantage precisa acessar suas informações de localização para calcular o horário do pôr do sol e do nascer do sol de sua região."
                         },
                         "tips": "Execute o Windows Update ou instale manualmente o driver gráfico para recuperar o modo Proteção Ocular"
                     },
@@ -1591,7 +1591,7 @@
                     "url": "Ir para as configurações de privacidade do Windows",
                     "cameraPrivacy": {
                         "title": "Modo de privacidade da câmera",
-                        "tooltip": "A câmera para de enviar imagens ao vivo quando a configuração de privacidade é ativada. Ative essa configuração somente quando não desejar compartilhar suas imagens com outras pessoas durante chamadas com vídeo."
+                        "tooltip": "A câmera interrompe o envio de imagens ao vivo quando a configuração de privacidade está ativada. Ative essa configuração somente quando não desejar compartilhar suas imagens durante chamadas com vídeo."
                     },
                     "camera": {
                         "title": "Câmera",

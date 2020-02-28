@@ -1059,7 +1059,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanje je povezano.</b>",
                     "EmDriverInstalled": "Pojedinosti o bateriji nisu dostupne. Pokrenite Windows ažuriranje-> Provjerite postoje li ažuriranja da biste instalirali Upravljački program za <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
-                "batteryNotDetected": "Baterija nije pronađena",
+                "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Ako je omogućen prag napunjenosti baterije baterija se ne može potpuno napuniti.",
                 "seeDetailsLink": "Prikaži pojedinosti",
                 "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen.",

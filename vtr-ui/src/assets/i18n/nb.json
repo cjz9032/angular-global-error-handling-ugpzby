@@ -1059,7 +1059,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>",
                     "EmDriverInstalled": "Detaljert batteriinformasjon er utilgjengelig. Kjør Windows Update -> Se etter oppdateringer for å installere <b>Lenovo ACPI – Compliant Virtual Power Controller</b>-driveren."
                 },
-                "batteryNotDetected": "Kan ikke gjenkjenne batteri",
+                "batteryNotDetected": "Batteri ikke oppdaget",
                 "thresholdNote": "<b>Merk:</b> Batteriet kan ikke lades fullstendig når batteriladeterskelen er aktivert.",
                 "seeDetailsLink": "For detaljer se",
                 "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet.",
