@@ -244,11 +244,11 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 
 	public async setAutomaticKBDBacklight(level: boolean) {
 		if (this.keyboardService.isShellAvailable) {
-			if (!this.isAutoKBDEnable) {
-				await this.keyboardService.setAutoKBDEnableStatus();
-				this.isAutoKBDEnable = true;
-				this.cacheData.isAutoKBDEnable = this.isAutoKBDEnable;
-			}
+			// if (!this.isAutoKBDEnable) {
+			// 	await this.keyboardService.setAutoKBDEnableStatus();
+			// 	this.isAutoKBDEnable = true;
+			// 	this.cacheData.isAutoKBDEnable = this.isAutoKBDEnable;
+			// }
 			this.keyboardService.setAutomaticKBDBacklight(level)
 			.then((value: boolean) => {
 				this.logger.info('BacklightThinkpadComponent:setAutomaticKBDBacklight.then', value);
