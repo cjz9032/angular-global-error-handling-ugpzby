@@ -10,7 +10,7 @@
             background: #283756;
             box-shadow: 0 0 1px #283756;
             padding-bottom: 35px;
-            box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+            // box-shadow: 0 16px 32px rgba(0,0,0,0.2);
             ul{
                 width: 100%;
                 padding: 10px 20px 0 10px;
@@ -50,7 +50,7 @@
             }
         }
         .inp-color-picker{
-            box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+            // box-shadow: 0 16px 32px rgba(0,0,0,0.2);
         }
         .color-inp{
             width: 0;
@@ -131,9 +131,9 @@
         }
         .color-name{
             width: 100%;
-            position: absolute;
+            position: relative;
             z-index:999999;
-            bottom: 83px;
+            top: -107px;
             padding: 0 24px;
             font-size: 14px;
             color: $light;
