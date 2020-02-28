@@ -103,6 +103,9 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.page = page;
 			this.progress = 49;
 			tutorialData = new WelcomeTutorial(1, this.tutorialVersion, false);
+			if (this.deviceService.isGaming) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, tutorialData);
+			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorialData);
 		} else {
 			const settingData = {

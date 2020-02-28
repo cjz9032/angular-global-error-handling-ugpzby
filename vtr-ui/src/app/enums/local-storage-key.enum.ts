@@ -3,6 +3,7 @@
  */
 export enum LocalStorageKey {
 	WelcomeTutorial = '[LocalStorageKey] WelcomeTutorial',
+	GamingTutorial = '[LocalStorageKey] GamingTutorial',
 	SecurityVPNStatus = '[LocalStorageKey] SecurityVPNStatus',
 	SecurityPasswordManagerStatus = '[LocalStorageKey] SecurityPasswordManagerStatus',
 	SecurityWindowsHelloStatus = '[LocalStorageKey] SecurityWindowsHelloStatus',
