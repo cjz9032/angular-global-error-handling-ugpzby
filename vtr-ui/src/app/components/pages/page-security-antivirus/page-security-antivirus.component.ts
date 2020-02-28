@@ -3,7 +3,6 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { AntiVirusViewModel } from '../../../data-models/security-advisor/antivirus.model';
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
-import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -15,7 +14,6 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { AntivirusCommon } from 'src/app/data-models/security-advisor/antivirus-common.model';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { TranslateService } from '@ngx-translate/core';
-import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -69,8 +67,6 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		if (!this.guard.previousPageName.startsWith('Security')) {
 			this.antiVirus.refresh();
 		}
-		// const antivirus = new AntivirusErrorHandle(this.antiVirus);
-		// antivirus.refreshAntivirus();
 	}
 
 	ngOnDestroy() {
