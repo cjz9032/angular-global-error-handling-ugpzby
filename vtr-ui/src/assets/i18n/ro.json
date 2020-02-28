@@ -750,7 +750,7 @@
                 "sub3": "Securitate WiFi",
                 "sub4": "Sănătatea parolei",
                 "sub5": "Securitate VPN",
-                "sub6": "Amprentă digitală"
+                "sub6": "Amprentă"
             },
             "support": "Asistenţă",
             "beta": {
@@ -775,7 +775,7 @@
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
-            "fingerPrint": "Amprentă Digitală",
+            "fingerPrint": "Amprentă",
             "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "ÎNREGISTRAT",
@@ -2248,7 +2248,7 @@
             "goWifi": "accesaţi secţiunea pentru securitatea Wi-Fi",
             "goVpn": "accesaţi secţiunea pentru securitatea VPN",
             "visitWindows": "Accesaţi secţiunea pentru activarea Windows",
-            "visitFingerprint": "Accesaţi secţiunea pentru cititorul de amprentă",
+            "visitFingerprint": "Accesați secțiunea pentru cititorul de amprentă",
             "visitUac": "Accesaţi secţiunea pentru Control cont utilizator",
             "visitHde": "Accesaţi secţiunea pentru criptarea unităţii de hard disk",
             "haveOwnPassword": "Am propriul meu manager de parole",
