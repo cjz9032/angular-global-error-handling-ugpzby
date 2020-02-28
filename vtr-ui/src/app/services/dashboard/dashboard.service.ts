@@ -9,6 +9,7 @@ import { DeviceService } from '../device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SegmentConst } from '../self-select/self-select.service';
 import { LocalInfoService } from '../local-info/local-info.service';
+import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 @Injectable({
 	providedIn: 'root'
 })
@@ -22,18 +23,17 @@ export class DashboardService {
 	public isDashboardDisplayed = false;
 	private commonService: CommonService;
 	public heroBannerItems = [];
-	public cardContentPositionA: any = {};
-	public cardContentPositionB: any = {};
-	public cardContentPositionC: any = {};
-	public cardContentPositionD: any = {};
-	public cardContentPositionE: any = {};
+	public cardContentPositionB: FeatureContent = new FeatureContent();
+	public cardContentPositionC: FeatureContent = new FeatureContent();
+	public cardContentPositionD: FeatureContent = new FeatureContent();
+	public cardContentPositionE: FeatureContent = new FeatureContent();
+	public cardContentPositionF: FeatureContent = new FeatureContent();
 	public heroBannerItemsOnline = [];
-	public cardContentPositionF: any = {};
-	public cardContentPositionBOnline: any;
-	public cardContentPositionCOnline: any;
-	public cardContentPositionDOnline: any;
-	public cardContentPositionEOnline: any;
-	public cardContentPositionFOnline: any;
+	public cardContentPositionBOnline: FeatureContent;
+	public cardContentPositionCOnline: FeatureContent;
+	public cardContentPositionDOnline: FeatureContent;
+	public cardContentPositionEOnline: FeatureContent;
+	public cardContentPositionFOnline: FeatureContent;
 	translateString: any;
 
 	welcomeText = '';

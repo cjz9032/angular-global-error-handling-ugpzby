@@ -45,23 +45,24 @@
 	<div class="page page-two" *ngIf="showWhichPage === 'disconnect'">
 		<p class="description" [innerHTML]="'homeSecurity.modal.disconnectedTitle' | translate"></p>
 		<p class="sub-desc mb-5" [innerHTML]="'homeSecurity.modal.disconnectedDesc' | translate"></p>
-		<div class="btn-group pt-5 d-flex">
+		<div class="btn-group pt-5 d-flex align-items-center">
 			<vtr-ui-button
 				linkId="chs-modal-btn-disconnect"
 				metricsEvent="FeatureClick"
 				metricsItem="CHSDisconnectButton"
 				metricsParent="{{metricsParent}}"
+				btnHeight="true"
 				buttonColor="red"
 				(onClick)="disconnect()"
 				[label]="'homeSecurity.overview.disconnect' | translate"></vtr-ui-button>
-			<vtr-ui-button
-				linkId="chs-modal-btn-cancel"
-				metricsEvent="FeatureClick"
+			<button id="chs-modal-btn-cancel" class="cancel-button"
+				vtrMetrics
 				metricsItem="CHSDisconnectCancelButton"
+				metricsEvent="featureClick"
 				metricsParent="{{metricsParent}}"
-				buttonColor="gray"
-				(onClick)="closeModal()"
-				[label]="'security.wifisecurity.locationmodal.cancel' | translate"></vtr-ui-button>
+				(click)="closeModal()"
+				[innerHTML]="'security.wifisecurity.locationmodal.cancel' | translate">
+			</button>
 		</div>
 	</div>
 	<!-- end of page2-->

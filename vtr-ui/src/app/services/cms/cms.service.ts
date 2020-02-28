@@ -6,6 +6,7 @@ import { CommonService } from '../common/common.service'; // VAN-5872, server sw
 import { LocalStorageKey } from '../../enums/local-storage-key.enum'; // VAN-5872, server switch feature
 import { Observable } from 'rxjs/internal/Observable';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { DevService } from '../dev/dev.service';
@@ -299,7 +300,7 @@ export class CMSService {
 		});
 	}
 
-	getOneCMSContent(results, template, position) {
+	getOneCMSContent(results, template, position): FeatureContent[] {
 		return results.filter((record) => {
 			return (
 				record.Template === template &&
