@@ -31,6 +31,8 @@ export class AntivirusWidgetItem extends WidgetItem {
 
 		antivirus.on(EventTypes.avRefreshedEvent, (av) => {
 			this.setPage(av);
+		}).on(EventTypes.avStartRefreshEvent, () => {
+			this.retry(true);
 		});
 	}
 
@@ -85,13 +87,16 @@ export class AntivirusWidgetItem extends WidgetItem {
 		}
 	}
 
-	retry() {
+	retry(refreshed?) {
 		this.translateService.stream('common.securityAdvisor.loading').subscribe((value) => {
 			this.detail = value;
 			this.status = 4;
+			this.retryText = undefined;
 		});
 		this.waitTimeout();
-		this.antivirus.refresh();
+		if (!refreshed) {
+			this.antivirus.refresh();
+		}
 	}
 
 	waitTimeout() {

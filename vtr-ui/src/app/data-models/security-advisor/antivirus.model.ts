@@ -247,6 +247,14 @@ export class AntiVirusViewModel {
 		}).on(EventTypes.avMcafeeTrialUrlEvent, (data) => {
 			this.mcafee.trialUrl = data;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeTrialUrl, this.mcafee.trialUrl);
+		}).on(EventTypes.avStartRefreshEvent, () => {
+			if (this.currentPage === 'windows') {
+				if (this.windowsDefenderstatusList[0].status === 'failedLoad') {
+					this.retry('antivirus', true);
+				} else if (this.windowsDefenderstatusList[1].status === 'failedLoad') {
+					this.retry('firewall', true);
+				}
+			}
 		});
 
 	}
@@ -574,7 +582,7 @@ export class AntiVirusViewModel {
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.windowsDefenderstatusList);
 	}
 
-	retry(type) {
+	retry(type, refreshed?) {
 		if (type === 'antivirus') {
 			this.windowsDefenderstatusList[0].status = 'loading';
 		}
@@ -582,7 +590,9 @@ export class AntiVirusViewModel {
 			this.windowsDefenderstatusList[1].status = 'loading';
 		}
 		this.waitTimeout();
-		this.antiVirus.refresh();
+		if (!refreshed) {
+			this.antiVirus.refresh();
+		}
 	}
 
 	waitTimeout() {

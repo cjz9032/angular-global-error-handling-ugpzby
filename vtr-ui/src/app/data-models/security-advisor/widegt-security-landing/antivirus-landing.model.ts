@@ -42,6 +42,14 @@ export class AntiVirusLandingViewModel {
 		this.waitTimeout();
 		avModel.on(EventTypes.avRefreshedEvent, (av) => {
 			this.setPage(av);
+		}).on(EventTypes.avStartRefreshEvent, () => {
+			if (this.currentPage === 'windows') {
+				if (this.avStatus.status === 'failedLoad') {
+					this.retry('antivirus', true);
+				} else if (this.fwStatus.status === 'failedLoad') {
+					this.retry('firewall', true);
+				}
+			}
 		});
 		translate.stream([
 			'common.securityAdvisor.enabled',
@@ -148,7 +156,7 @@ export class AntiVirusLandingViewModel {
 		}
 	}
 
-	retry(id) {
+	retry(id, refreshed?) {
 		if (id.includes('antivirus')) {
 			this.avStatus.status = 'loading';
 			this.avStatus.detail = this.translateString['common.securityAdvisor.load'];
@@ -158,7 +166,9 @@ export class AntiVirusLandingViewModel {
 			this.fwStatus.detail = this.translateString['common.securityAdvisor.load'];
 		}
 		this.waitTimeout();
-		this.avModel.refresh();
+		if (!refreshed) {
+			this.avModel.refresh();
+		}
 	}
 
 	waitTimeout() {
