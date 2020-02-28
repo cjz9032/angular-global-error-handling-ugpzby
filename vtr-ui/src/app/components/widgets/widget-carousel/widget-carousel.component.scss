@@ -1,5 +1,17 @@
 @import "../../../app.theme";
 
+@mixin overlay {
+	content: "";
+	background: rgba(0, 0, 0, 0);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	border-radius: $border_radius;
+	z-index: 0;
+}
+
 .vtr-widget-carousel {
 	box-shadow: $drop_shadow;
 	border-radius: $border_radius;
@@ -12,18 +24,6 @@
 	}
 	@media #{$breakpoint_sm} {
 		height: 18.6rem !important;
-	}
-
-	&::after {
-		content: "";
-		background: rgba(0, 0, 0, 0.4);
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		position: absolute;
-		border-radius: $border_radius;
-		z-index: 0;
 	}
 
 	.carousel-link {
@@ -88,6 +88,13 @@
 		width: 100%;
 		background-size: cover;
 		background-position: center center;
+
+		&.overlay-dark {
+			&::after {
+				@include overlay();
+				background: rgba(0, 0, 0, 0.4);
+			}
+		}
 
 		@media #{$breakpoint_md} {
 			height: 24.3rem !important;

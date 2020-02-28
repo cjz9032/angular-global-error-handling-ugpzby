@@ -2,7 +2,8 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { CardService } from 'src/app/services/card/card.service';
+import { CardService, CardOverlayTheme } from 'src/app/services/card/card.service';
+import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
 @Component({
 	selector: 'vtr-container-card',
@@ -10,24 +11,19 @@ import { CardService } from 'src/app/services/card/card.service';
 	styleUrls: ['./container-card.component.scss', './container-card.component.gaming.scss']
 })
 export class ContainerCardComponent implements OnInit, OnChanges {
-	@Input() img = '';
-	@Input() caption = '';
-	@Input() title = '';
-	@Input() logo = '';
-	@Input() logoText = '';
-	@Input() action = '';
-	@Input() actionType = '';
-	@Input() actionLink = '';
+	@Input() item: FeatureContent;
 	@Input() type = '';
 	@Input() ratio = 0.5;
 	@Input() cornerShift = '';
 	@Input() order: number;
-	@Input() itemID: string;
 	@Input() sideFlag = '';
 	@Input() containerCardId = '';
 	@Input() dataSource = '';
 	@Input() dynamicmetricsItem = '';
 	@Input() isOfflineArm = false;
+
+	overlayThemeDefaultIsDark = true;
+	overlayThemeDefaultIsLight = true;
 
 	isLoading = true;
 	isOnline = true;
@@ -46,14 +42,16 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	}
 
 	handleLoading() {
-		if (this.img) {
+		if (this.item && this.item.FeatureImage) {
 			this.isLoading = false;
+			this.overlayThemeDefaultIsDark = !this.item.OverlayTheme || this.item.OverlayTheme !== CardOverlayTheme.Light
+			this.overlayThemeDefaultIsLight = !this.item.OverlayTheme || this.item.OverlayTheme !== CardOverlayTheme.Dark
 		} else {
 			const image = new Image();
 			image.onload = () => {
 				this.isLoading = false;
 			};
-			image.src = this.img;
+			image.src = this.item.FeatureImage;
 		}
 	}
 

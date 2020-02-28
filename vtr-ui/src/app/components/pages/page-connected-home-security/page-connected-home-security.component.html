@@ -31,13 +31,7 @@
 				*ngIf="account?.state !== 'local' && showContentA">
 				<div class="col-12 px-0 pb-20 pt-0">
 					<vtr-container-card order="1"
-						[itemID]="cardContentPositionA.Id"
-						[img]="cardContentPositionA.FeatureImage"
-						[title]="cardContentPositionA.Title"
-						[logoText]="cardContentPositionA.BrandName"
-						[action]="cardContentPositionA.Action"
-						[actionType]="cardContentPositionA.ActionType"
-						[actionLink]="cardContentPositionA.ActionLink"
+						[item]="cardContentPositionA"
 						[type]="'subpage-article'"
 						[ratio]="1"
 						ariaLabel="chs-banner-bottom-article"
@@ -151,13 +145,7 @@
 				*ngIf="showContentB">
 				<div class="col col-12 px-0 pb-20 pt-0">
 					<vtr-container-card order="2"
-						[itemID]="cardContentPositionB.Id"
-						[img]="cardContentPositionB.FeatureImage"
-						[title]="cardContentPositionB.Title"
-						[logoText]="cardContentPositionB.BrandName"
-						[action]="cardContentPositionB.Action"
-						[actionType]="cardContentPositionB.ActionType"
-						[actionLink]="cardContentPositionB.ActionLink"
+						[item]="cardContentPositionB"
 						[type]="'subpage-article'"
 						[ratio]="1"
 						cornerShift="large"

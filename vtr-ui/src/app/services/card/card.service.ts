@@ -77,3 +77,9 @@ export class CardService {
 		});
 	}
 }
+
+export const CardOverlayTheme = {
+	Default: 'default',
+	Light: 'light',
+	Dark: 'dark',
+}
