@@ -32,11 +32,11 @@ export class AntiVirusViewModel {
 	otherFirewall: OtherInfo;
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [{
-		status: this.windowsDefender.status,
+		status: 'loading',
 		title: 'security.antivirus.windowsDefender.virus',
 		type: 'antivirus'
 	}, {
-		status: this.windowsDefender.firewallStatus,
+		status: 'loading',
 		title: 'security.antivirus.windowsDefender.homeNetwork',
 		type: 'firewall'
 	}];
