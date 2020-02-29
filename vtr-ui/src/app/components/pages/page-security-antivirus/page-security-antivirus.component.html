@@ -99,7 +99,7 @@
 		<div *ngIf="viewModel?.currentPage ==='mcafee'" [ngClass]="{'mcafee': !viewModel.showMetricButton}">
 			<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
 				[isSubtitleVisible]="false" [isButtonVisible]="false"></vtr-widget-offline-info>
-			<div class="subheader">
+			<div class="subheader mb-5">
 				<div class="rounded-card-with-shadow p-5 bg-white">
 					<div class="row" [ngClass]="{'xl-display': viewModel.showMetricsList}">
 						<div *ngIf="viewModel.showMetricsList" class="col-xl-5 px-0 col-12">
