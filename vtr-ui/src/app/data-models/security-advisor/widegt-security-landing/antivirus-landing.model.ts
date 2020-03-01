@@ -91,7 +91,7 @@ export class AntiVirusLandingViewModel {
 			if (avModel.mcafee || avModel.windowsDefender || avModel.others) {
 				this.setPage(avModel);
 			} else if (cacheAvStatus !== undefined || cacheFwStatus !== undefined) {
-				this.setAntivirusStatus(cacheAvStatus, cacheFwStatus, cacheCurrentPage);
+				this.setAntivirusStatus(cacheAvStatus, cacheFwStatus);
 			}
 
 		});
@@ -102,31 +102,28 @@ export class AntiVirusLandingViewModel {
 			this.currentPage = 'mcafee';
 			this.setAntivirusStatus(
 				antiVirus.mcafee.status !== undefined ? antiVirus.mcafee.status : null,
-				antiVirus.mcafee.firewallStatus !== undefined ? antiVirus.mcafee.firewallStatus : null,
-				this.currentPage
+				antiVirus.mcafee.firewallStatus !== undefined ? antiVirus.mcafee.firewallStatus : null
 			);
 		} else if (antiVirus.others) {
 			this.currentPage = 'others';
 			this.setAntivirusStatus(
 				antiVirus.others.antiVirus.length > 0 ? antiVirus.others.antiVirus[0].status : null,
-				antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : antiVirus.windowsDefender.firewallStatus,
-				this.currentPage
+				antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : antiVirus.windowsDefender.firewallStatus
 			);
 		} else {
 			this.currentPage = 'windows';
 			if (antiVirus.windowsDefender) {
 				this.setAntivirusStatus(
 					antiVirus.windowsDefender.status !== undefined ? antiVirus.windowsDefender.status : null,
-					antiVirus.windowsDefender.firewallStatus !== undefined ? antiVirus.windowsDefender.firewallStatus : null,
-					this.currentPage
+					antiVirus.windowsDefender.firewallStatus !== undefined ? antiVirus.windowsDefender.firewallStatus : null
 				);
 			}
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.currentPage);
 	}
 
-	setAntivirusStatus(av: boolean | undefined, fw: boolean | undefined, currentPage: string) {
-		if (!this.translateString) {
+	setAntivirusStatus(av: boolean | undefined, fw: boolean | undefined) {
+		if (!this.translateString || ((typeof av !== 'boolean' && typeof fw !== 'boolean'))) {
 			return;
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);

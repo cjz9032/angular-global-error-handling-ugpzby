@@ -75,17 +75,20 @@ export class AntivirusWidgetItem extends WidgetItem {
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, av !== undefined ? av : null);
 
-		if (av && fw) {
+		if (typeof av !== 'boolean' && typeof fw !== 'boolean') { return; }
+		if ((av && fw)
+			|| (av && typeof fw !== 'boolean')
+			|| (fw && typeof av !== 'boolean')) {
 			this.translateService.stream('common.securityAdvisor.enabled').subscribe((value) => {
 				this.detail = value;
 				this.status = 0;
 			});
-		} else if (av === false && fw === false) {
+		} else if (!av && !fw) {
 			this.translateService.stream('common.securityAdvisor.disabled').subscribe((value) => {
 				this.detail = value;
 				this.status = 1;
 			});
-		}  else if (typeof av === 'boolean' && typeof fw === 'boolean') {
+		} else {
 			this.translateService.stream('common.securityAdvisor.partiallyProtected').subscribe((value) => {
 				this.detail = value;
 				this.status = 3;
