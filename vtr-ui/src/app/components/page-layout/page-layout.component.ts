@@ -21,6 +21,7 @@ export class PageLayoutComponent implements OnInit {
 	@Input() hideBack = false;
 	@Output() innerBack = new EventEmitter();
 	@Input() showDemo: boolean;
+	@Input() hideTitle: boolean;
 
 	constructor(
 		public dccService: DccService
