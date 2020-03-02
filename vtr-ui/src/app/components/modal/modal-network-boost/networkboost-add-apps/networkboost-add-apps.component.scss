@@ -37,6 +37,12 @@ ui-popover-apps {
 	.top-header {
 		border: 0;
 		.close {
+			@media #{$black-on-white}{
+				background-color: $high-contrast-grey;
+				}
+				@media #{$white-on-black}{
+				background-color: $high-contrast-grey;
+				}
 			position: relative;
 			top: 1.5rem;
 			right: 1.5rem;

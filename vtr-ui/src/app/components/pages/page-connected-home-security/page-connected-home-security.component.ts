@@ -280,6 +280,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false);
 		this.cancelPullingCHS();
+		if (this.wifiSecurity) {
+			this.wifiSecurity.cancelGetWifiSecurityState();
+		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
