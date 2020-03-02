@@ -220,7 +220,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	private handleError(err) {
-		if (err && err instanceof PluginMissingError) {
+		if (err && err instanceof PluginMissingError && this.router.url === '/security/wifi-security') {
 			this.dialogService.wifiSecurityErrorMessageDialog();
 		}
 	}
