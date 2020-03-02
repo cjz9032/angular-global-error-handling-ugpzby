@@ -941,7 +941,7 @@
             "freeMemory": "Freier Speicher",
             "systemUpdate": {
                 "title": "Systemaktualisierung",
-                "notFound": "System Update nicht gefunden",
+                "notFound": "Systemaktualisierung nicht gefunden",
                 "detail": {
                     "uptoDate": "Updates geprüft ",
                     "updatedOn": "geprüft am ",
