@@ -27,7 +27,7 @@ import { SecureMath } from '@lenovo/tan-client-bridge';
 import { DccService } from 'src/app/services/dcc/dcc.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
-
+import {SelfSelectService,SegmentConst} from 'src/app/services/self-select/self-select.service';
 interface IConfigItem {
 	id: string;
 	template: string;
@@ -54,6 +54,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	public isWarrantyVisible = false;
 	public showQuickSettings = true;
 	dashboardStart: any = new Date();
+	private hideTitle = false;
 
 	heroBannerItems = []; // tile A
 	cardContentPositionB: FeatureContent = new FeatureContent();
@@ -177,7 +178,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		public warrantyService: WarrantyService,
 		private adPolicyService: AdPolicyService,
 		private sanitizer: DomSanitizer,
-		public dccService: DccService
+		public dccService: DccService,
+		private selfselectService:SelfSelectService
 	) {
 		this.getProtocalAction();
 		config.backdrop = 'static';
@@ -234,6 +236,11 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.getSelfSelectStatus();
 		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
 		this.launchProtocol();
+		this.selfselectService.getConfig().then((re)=>{
+			if(re.usageType === SegmentConst.Commercial ){
+				this.hideTitle = true;
+			}
+		})
 	}
 
 	private getProtocalAction() {

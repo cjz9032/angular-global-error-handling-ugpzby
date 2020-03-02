@@ -23,7 +23,9 @@
 			attr.aria-label="{{title}}"
 			role="text"
 			tabindex="1"
+			*ngIf="!hideTitle"
 			[innerHTML]="title"></h1>
+			<div class="welcomeText-placeholder" *ngIf="hideTitle"></div>
 		<ng-content></ng-content>
 		<div *ngIf="forwardLink"
 			class="forward-link">
