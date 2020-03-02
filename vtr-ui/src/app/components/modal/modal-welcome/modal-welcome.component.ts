@@ -233,7 +233,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	getNextIdById(id: string, reverse?: boolean): string {
 		const idArrayPage1 = ['tutorial_next_btn'];
-		let idArrayPage2 = [
+		let idArrayPage2 = this.deviceService.isGaming ? [] : [
 			'segment-choose-personal-use',
 			'segment-choose-business-use',
 			'segment-choose-custom-use',
