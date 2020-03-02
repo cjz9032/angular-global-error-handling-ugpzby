@@ -1,9 +1,19 @@
 <div class="modal-body vtr-modal-article-detail" id="article-dialog" role="dialog">
 	<h1 id="article-title" role="heading">{{articleTitle}}</h1>
-	<div class="article-content" tabindex="0">
+	<div class="article-content" tabindex="0" [ngSwitch]="contentStatus">
 		<img [hidden]="!articleImage" src="{{articleImage}}"
 			alt="">
-		<div class="article-body" [innerHTML]="articleBody"> </div>
+		<div class="article-body" *ngSwitchCase="AllContentStatus.Content" [innerHTML]="articleBody"> </div>
+		<div class="article-body" *ngSwitchCase="AllContentStatus.Loading">
+			<div class="spinner-content">
+				<div class="spinner-border text-primary progress-spinner" role="status"></div>
+			</div>
+		</div>
+		<div class="article-body" *ngSwitchCase="AllContentStatus.Empty">
+			<div class="empty-content w-100 text-center">
+				<img src="/assets/images/support/empty.png" />
+			</div>
+		</div>
 	</div>
 	<div tabindex="0"
 		role="button"
