@@ -1176,7 +1176,7 @@
                     },
                     "easyResume": {
                         "title": "Retomada fácil",
-                        "description": "Ative este recurso para diminuir o tempo de retomada ao abrir e fechar a tampa do computador com frequência",
+                        "description": "Ative este recurso para diminuir o tempo de retomada ao abrir e fechar a tampa do computador com frequência.",
                         "tooltip": "Este recurso diminui o tempo de retomada ao abrir e fechar a tampa do computador com frequência. Quando o recurso está ativado, o computador entra no modo de baixo consumo de energia ao fechar a tampa e retoma imediatamente ao reabrir a tampa, desde que isso ocorra em até 15 minutos depois de fechá-la. Esse recurso também permite que o notebook tente concluir atividades pendentes (como envio de email ou download de arquivo) antes de o sistema entrar em suspensão."
                     },
                     "flipToBoot": {
