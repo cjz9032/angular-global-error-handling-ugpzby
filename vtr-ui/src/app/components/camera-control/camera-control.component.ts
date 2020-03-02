@@ -13,7 +13,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	styleUrls: ['./camera-control.component.scss']
 })
 
-export class CameraControlComponent implements OnInit, OnDestroy, AfterViewInit {
+export class CameraControlComponent implements OnInit, OnDestroy {
 	@Input() cameraSettings: CameraSettingsResponse = new CameraSettingsResponse();
 	@Input() cameraFeatureAccess: CameraFeatureAccess;
 	@Input() manualRefresh: any;
@@ -24,9 +24,8 @@ export class CameraControlComponent implements OnInit, OnDestroy, AfterViewInit 
 	@Output() exposureToggle: EventEmitter<any> = new EventEmitter();
 	@Output() cameraAvailable: EventEmitter<boolean> = new EventEmitter();
 	@Output() cameraDisable: EventEmitter<boolean> = new EventEmitter();
-	@ViewChild('cameraPreview', { static: false }) cameraPreview: ElementRef<HTMLVideoElement>;
 	public cameraDetail = new CameraDetail();
-	// private cameraPreview: ElementRef;
+	private cameraPreview: ElementRef;
 	private videoElement: HTMLVideoElement;
 	private cameraDetailSubscription: Subscription;
 	private Windows: any;
@@ -49,18 +48,19 @@ export class CameraControlComponent implements OnInit, OnDestroy, AfterViewInit 
 	private deviceOrientation: any;
 	private simpleOrientation: any;
 
-
-	// @ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
-	// 	// when camera preview video element is visible then start camera feed
-	// 	this.cameraPreview = content;
-	// 	if (!this.isCameraInitialized) {
-	// 		if (content && !this.cameraDetail.isPrivacyModeEnabled) {
-	// 			this.initializeCameraAsync();
-	// 		} else {
-	// 			this.cleanupCameraAsync();
-	// 		}
-	// 	}
-	// }
+	@ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
+		// when camera preview video element is visible then start camera feed
+		if (content) {
+			this.cameraPreview = content;
+			if (!this.isCameraInitialized) {
+				if (content && !this.cameraDetail.isPrivacyModeEnabled) {
+					this.initializeCameraAsync();
+				} else {
+					this.cleanupCameraAsync('ViewChild.cameraPreview');
+				}
+			}
+		}
+	}
 
 	constructor(
 		public cameraFeedService: CameraFeedService,
@@ -102,20 +102,6 @@ export class CameraControlComponent implements OnInit, OnDestroy, AfterViewInit 
 			}
 		);
 	}
-
-	ngAfterViewInit() {
-		// @ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
-		// when camera preview video element is visible then start camera feed
-		// this.cameraPreview = content;
-		if (!this.isCameraInitialized) {
-			if (!this.cameraDetail.isPrivacyModeEnabled) {
-				this.initializeCameraAsync();
-			} else {
-				this.cleanupCameraAsync('ngOnDestroy');
-			}
-		}
-	}
-	// }
 
 	ngOnDestroy() {
 		if (this.cameraDetailSubscription) {
