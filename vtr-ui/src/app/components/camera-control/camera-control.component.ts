@@ -34,6 +34,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private DeviceClass: any;
 	private oMediaCapture: any;
 	private visibilityChange: any;
+	private videoPreviewEvent: any;
 	private cameraStreamStateChanged: any;
 	public cameraErrorTitle: string;
 	public cameraErrorDescription: string;
@@ -256,12 +257,13 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			this.videoElement = this.cameraPreview.nativeElement;
 			this.videoElement.src = previewUrl;
 			this.videoElement.play();
-			this.videoElement.addEventListener('playing', this.cameraPreviewPlaying.bind(this));
+			this.videoPreviewEvent = this.videoPreviewPlaying.bind(this);
+			this.videoElement.addEventListener('playing', this.videoPreviewEvent);
 			this.logger.info('CameraControlComponent.startPreviewAsync', { previewUrl, videoElement: this.videoElement });
 		});
 	}
 
-	cameraPreviewPlaying() {
+	videoPreviewPlaying() {
 		if (this.orientationSensor) {
 			this.deviceOrientation = this.orientationSensor.getCurrentOrientation();
 			// when device rotation is detected by sensors, below event will be fired
@@ -274,7 +276,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		this.ngZone.run(() => {
 			// Cleanup the UI
 			if (this.videoElement) {
-				this.videoElement.removeEventListener('playing', this.cameraPreviewPlaying.bind(this));
+				this.videoElement.removeEventListener('playing', this.videoPreviewEvent);
 				this.videoElement.pause();
 				this.videoElement.src = '';
 			}
