@@ -767,6 +767,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 	public onSunsetToSunrise($featureStatus: any) {
+		this.sunsetToSunriseModeStatus.status = $featureStatus.status
 		try {
 			this.logger.debug('sunset to sunrise event', $featureStatus);
 			if (this.displayService.isShellAvailable) {
