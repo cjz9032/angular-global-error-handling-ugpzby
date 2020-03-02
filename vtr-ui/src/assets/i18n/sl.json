@@ -2064,7 +2064,7 @@
             },
             "recommended": {
                 "title": "Priporočene posodobitve",
-                "tooltip": "Priporočene posodobitve gonilnikov omogočajo"
+                "tooltip": "Priporočene posodobitve gonilnikov zagotavljajo, da računalnik deluje optimalno."
             },
             "windows": {
                 "title": "Posodobitve za Windows",
