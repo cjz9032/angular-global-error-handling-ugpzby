@@ -801,7 +801,9 @@
             "loading": "Läser in...",
             "from": "från",
             "to": "till",
-            "clickToChange": "klicka för att ändra"
+            "clickToChange": "klicka för att ändra",
+            "failedLoad": "Det gick inte att läsa in.",
+            "retry": "Försök igen"
         },
         "app-update": {
             "message": "Hej! Det finns en nyare version av Vantage. Vill du läsa in den?"

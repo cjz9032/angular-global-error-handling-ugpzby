@@ -801,7 +801,9 @@
             "loading": "...טעינה",
             "from": "מ:",
             "to": "בשורה",
-            "clickToChange": "לחצו כדי לשנות"
+            "clickToChange": "לחצו כדי לשנות",
+            "failedLoad": "הטעינה נכשלה.",
+            "retry": "נסו שוב"
         },
         "app-update": {
             "message": "היי! יש גרסה חדשה יותר של Vantage, האם ברצונכם לטעון אותה?"

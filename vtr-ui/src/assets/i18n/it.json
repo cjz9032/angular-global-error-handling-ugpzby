@@ -801,7 +801,9 @@
             "loading": "Caricamento in corso...",
             "from": "da",
             "to": "a",
-            "clickToChange": "fare clic per modificare"
+            "clickToChange": "fare clic per modificare",
+            "failedLoad": "Caricamento fallito.",
+            "retry": "Riprova"
         },
         "app-update": {
             "message": "Ciao! È disponibile una versione più recente di Vantage. Caricarla?"

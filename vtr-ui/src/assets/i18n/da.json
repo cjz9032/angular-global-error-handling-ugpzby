@@ -801,7 +801,9 @@
             "loading": "Indlæser...",
             "from": "fra",
             "to": "til",
-            "clickToChange": "klik for at ændre"
+            "clickToChange": "klik for at ændre",
+            "failedLoad": "Kunne ikke indlæses.",
+            "retry": "Prøv igen"
         },
         "app-update": {
             "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"

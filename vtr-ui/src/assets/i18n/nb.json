@@ -801,7 +801,9 @@
             "loading": "Laster...",
             "from": "fra",
             "to": "til",
-            "clickToChange": "klikk for å endre"
+            "clickToChange": "klikk for å endre",
+            "failedLoad": "Kunne ikke lastes inn.",
+            "retry": "Prøv igjen"
         },
         "app-update": {
             "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"

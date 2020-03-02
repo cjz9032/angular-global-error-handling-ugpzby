@@ -801,7 +801,9 @@
             "loading": "Chargement...",
             "from": "à partir de",
             "to": "pour",
-            "clickToChange": "cliquez pour modifier"
+            "clickToChange": "cliquez pour modifier",
+            "failedLoad": "Echec du chargement.",
+            "retry": "Réess."
         },
         "app-update": {
             "message": "Bonjour, Une version plus récente de Vantage est disponible. Voulez-vous la télécharger ?"

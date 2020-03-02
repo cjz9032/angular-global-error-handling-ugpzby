@@ -803,7 +803,9 @@
             "loading": "...جار التحميل",
             "from": "من",
             "to": "الى",
-            "clickToChange": "انقر للتغيير"
+            "clickToChange": "انقر للتغيير",
+            "failedLoad": "تعذّر التحميل.",
+            "retry": "أعد المحاولة"
         },
         "app-update": {
             "message": "مرحبا! يتوفر إصدار أحدث من Vantage، هل تريد تحميله؟"

@@ -801,7 +801,9 @@
             "loading": "Cargando...",
             "from": "a partir de",
             "to": "en",
-            "clickToChange": "haga clic para cambiar"
+            "clickToChange": "haga clic para cambiar",
+            "failedLoad": "Error al cargar.",
+            "retry": "Reint."
         },
         "app-update": {
             "message": "¡Ey! Hay disponible una versión más reciente de Vantage, ¿desea cargarla?"

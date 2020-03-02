@@ -801,7 +801,9 @@
             "loading": "載入中...",
             "from": "從",
             "to": "至",
-            "clickToChange": "按一下以變更"
+            "clickToChange": "按一下以變更",
+            "failedLoad": "無法載入。",
+            "retry": "重試"
         },
         "app-update": {
             "message": "嘿！已有更新版的 Vantage，您要載入嗎？"

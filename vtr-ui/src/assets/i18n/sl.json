@@ -801,7 +801,9 @@
             "loading": "nalaganje...",
             "from": "od",
             "to": "do",
-            "clickToChange": "kliknite, če želite spremeniti"
+            "clickToChange": "kliknite, če želite spremeniti",
+            "failedLoad": "Nalaganje ni uspelo.",
+            "retry": "Znova poskusi"
         },
         "app-update": {
             "message": "Živijo! Na voljo je novejša različica aplikacije Vantage, jo želite naložiti?"
