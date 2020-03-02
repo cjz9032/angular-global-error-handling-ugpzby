@@ -54,7 +54,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	public isWarrantyVisible = false;
 	public showQuickSettings = true;
 	dashboardStart: any = new Date();
-	private hideTitle = false;
+	public hideTitle = false;
 
 	heroBannerItems = []; // tile A
 	cardContentPositionB: FeatureContent = new FeatureContent();
