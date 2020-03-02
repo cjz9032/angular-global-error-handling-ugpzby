@@ -21,12 +21,16 @@
 								[isLastChild]='true'
 								(toggleOnOff)="onIntelligentCoolingToggle($event)">
 								<div class="alignment pl-5">
-									<div class="well ml-2"
+									<div class="well ml-2" role="text"
+                                         id="power.powerSmartSettings.intelligentCooling.apsHint"
+                                         attr.aria-label="power.powerSmartSettings.intelligentCooling.apsHint"
                                         *ngIf="showIC===3 && !apsStatus">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }}
 									</div>
 									<div *ngIf="showIC===3 && isShowIntelligentCoolingModes()"
-										class="optimize">
+                                        class="optimize"
+                                        role="text" id="power.powerSmartSettings.intelligentCooling.optimize"
+                                        attr.aria-label="power.powerSmartSettings.intelligentCooling.optimize">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }}
 									</div>
 									<div class="row no-gutters ml-2"
@@ -72,9 +76,11 @@
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
-									<div class="well ml-2"
-                                        *ngIf="showIC===14"> {{ selectedModeText }} </div>
-								</div>
+                                    <div class="well ml-2" id="powerSmartSettings-maximum-system-protection-note"
+                                        attr.aria-label="powerSmartSettings-maximum-system-protection-note" role="text" *ngIf="showIC===14">
+                                        {{ selectedModeText }}
+                                    </div>
+							    </div>
 
 							</vtr-ui-row-switch>
 						</li>
