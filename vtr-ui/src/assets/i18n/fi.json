@@ -801,7 +801,9 @@
             "loading": "Ladataan...",
             "from": "kohteesta",
             "to": "kohteeseen",
-            "clickToChange": "muuta napsauttamalla tätä"
+            "clickToChange": "muuta napsauttamalla tätä",
+            "failedLoad": "Lataus epäonnistui.",
+            "retry": "Yritä uudelleen"
         },
         "app-update": {
             "message": "Hei! Vantage on saatavilla uudempi versio. Haluatko ladata sen?"

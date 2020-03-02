@@ -801,7 +801,9 @@
             "loading": "Načítání...",
             "from": "z",
             "to": "změňte na",
-            "clickToChange": "kliknutím upravte"
+            "clickToChange": "kliknutím upravte",
+            "failedLoad": "Načtení selhalo.",
+            "retry": "Opakovat"
         },
         "app-update": {
             "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"

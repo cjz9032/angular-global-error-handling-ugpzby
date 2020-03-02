@@ -801,7 +801,9 @@
             "loading": "Betöltés...",
             "from": "ettől",
             "to": "sort",
-            "clickToChange": "a módosításhoz kattintson ide"
+            "clickToChange": "a módosításhoz kattintson ide",
+            "failedLoad": "A betöltés sikertelen volt.",
+            "retry": "Újrapróbálkozás"
         },
         "app-update": {
             "message": "Szia! Megjelent a Vantage legújabb verziója, szeretnéd letölteni?"

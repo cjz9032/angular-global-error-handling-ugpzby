@@ -801,7 +801,9 @@
             "loading": "se incarca...",
             "from": "de la",
             "to": "cu",
-            "clickToChange": "faceţi clic pentru a schimba"
+            "clickToChange": "faceţi clic pentru a schimba",
+            "failedLoad": "Încărcarea nu a reușit.",
+            "retry": "Reîncercați"
         },
         "app-update": {
             "message": "Bună ziua! Este disponibilă o versiune mai nouă de Vantage, doriți să o încărcați?"

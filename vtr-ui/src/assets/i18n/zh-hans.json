@@ -801,7 +801,9 @@
             "loading": "载入中...",
             "from": "从",
             "to": "到",
-            "clickToChange": "单击以更改"
+            "clickToChange": "单击以更改",
+            "failedLoad": "未能加载。",
+            "retry": "重试"
         },
         "app-update": {
             "message": "您好！已有较新版本的 Vantage，您要加载吗？"

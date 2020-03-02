@@ -801,7 +801,9 @@
             "loading": "Bezig met laden...",
             "from": "uit",
             "to": "naar",
-            "clickToChange": "klik om te wijzigen"
+            "clickToChange": "klik om te wijzigen",
+            "failedLoad": "Laden is mislukt.",
+            "retry": "Opnieuw proberen"
         },
         "app-update": {
             "message": "Hallo! Er is een nieuwere versie van Vantage beschikbaar, wilt u deze laden?"

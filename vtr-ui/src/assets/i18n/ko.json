@@ -801,7 +801,9 @@
             "loading": "로드 중...",
             "from": "백업 선택",
             "to": "백업 위치 지정",
-            "clickToChange": "클릭하여 변경"
+            "clickToChange": "클릭하여 변경",
+            "failedLoad": "로드에 실패했습니다.",
+            "retry": "다시 시도"
         },
         "app-update": {
             "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"

@@ -801,7 +801,9 @@
             "loading": "Učitavam...",
             "from": "od",
             "to": "do",
-            "clickToChange": "kliknite za izmjenu"
+            "clickToChange": "kliknite za izmjenu",
+            "failedLoad": "Učitavanje nije uspjelo.",
+            "retry": "Pokušajte ponovno"
         },
         "app-update": {
             "message": "Hej! Dostupna je novija verzija programa Vantage, želite li je učitati?"

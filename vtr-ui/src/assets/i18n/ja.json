@@ -801,7 +801,9 @@
             "loading": "ロード中...",
             "from": "から",
             "to": "～",
-            "clickToChange": "クリックして変更"
+            "clickToChange": "クリックして変更",
+            "failedLoad": "ロードに失敗しました。",
+            "retry": "再試行"
         },
         "app-update": {
             "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"

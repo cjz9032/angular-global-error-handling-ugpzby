@@ -801,7 +801,9 @@
             "loading": "Yükleniyor...",
             "from": "başlangıç",
             "to": "->",
-            "clickToChange": "değiştirmek için tıklatın"
+            "clickToChange": "değiştirmek için tıklatın",
+            "failedLoad": "Yüklenemedi.",
+            "retry": "Yeniden Dene"
         },
         "app-update": {
             "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
