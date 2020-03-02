@@ -77,6 +77,14 @@
 						justify-content: center;
 						text-align: center;
 						cursor: pointer;
+						&:hover{
+							@media #{$black-on-white}{
+								background-color: $high-contrast-grey;
+								}
+								@media #{$white-on-black}{
+								background-color: $high-contrast-grey;
+								}
+						}
 
 						.item-icon {
 							height: 5rem;
@@ -93,7 +101,8 @@
 							img {
 								position: relative;
 								top: 0;
-								height: 3.6rem;
+								height: 3.6rem;								
+								
 							}
 						}
 
