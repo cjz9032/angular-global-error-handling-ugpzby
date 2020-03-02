@@ -45,6 +45,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	// Reference: http://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868174.aspx
 	private readonly RotationKey = 'C380465D-2271-428C-9B83-ECEA3B4A85C1';
 	private readonly orientationChangedEvent = 'orientationchanged';
+	private orientationEvent: any;
 	private orientationSensor: any;
 	private deviceOrientation: any;
 	private simpleOrientation: any;
@@ -113,7 +114,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		}
 		//#region unregister orientation change event
 		if (this.orientationSensor != null) {
-			this.orientationSensor.removeEventListener(this.orientationChangedEvent, this.onDeviceOrientationChanged);
+			this.orientationSensor.removeEventListener(this.orientationChangedEvent, this.orientationEvent);
 		}
 		if (this.oMediaCapture) {
 			this.oMediaCapture.removeEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
@@ -266,9 +267,10 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	videoPreviewPlaying() {
 		if (this.orientationSensor) {
 			this.deviceOrientation = this.orientationSensor.getCurrentOrientation();
+			this.orientationEvent = this.onDeviceOrientationChanged.bind(this);
 			// when device rotation is detected by sensors, below event will be fired
 			this.orientationSensor.addEventListener(this.orientationChangedEvent
-				, this.onDeviceOrientationChanged.bind(this));
+				, this.orientationEvent);
 		}
 	}
 
