@@ -228,6 +228,7 @@
                         vtr-ui-color-picker{
                             position: absolute;
                             margin-left: 4.1rem;
+                            z-index: 2;
                             @media #{$below-large-screen} {
                                top: 50%;
                             }
