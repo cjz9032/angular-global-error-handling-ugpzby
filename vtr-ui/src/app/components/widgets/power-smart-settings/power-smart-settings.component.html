@@ -99,12 +99,16 @@
 						</div>
 						<div class="col text-wrap subtitle">
 							<h3 tabindex="0"
-								role="text">
+                                role="text"
+                                id="powerSmartSettings.intelligentCooling.title"
+                                attr.aria-label="powerSmartSettings.intelligentCooling.title">
 								<!-- Intelligent Cooling  -->
 								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}
 							</h3>
 							<p tabindex="0"
-								role="text">
+                                role="text"
+                                id="powerSmartSettings.description"
+                                attr.aria-label="powerSmartSettings.description">
 								{{'device.deviceSettings.power.powerSmartSettings.description5' | translate}}
 								<a class="read-more-link"
 									#readMoreLink
@@ -113,7 +117,8 @@
 									(click)="readMoreLink.blur();readMore(readMoreDiv)"
 									(keydown.enter)="readMoreLink.blur();readMore(readMoreDiv);"
 									tabindex="0"
-									role="link"
+                                    role="link"
+                                    id="powerSmartSettings-intelligentCooling-read-more"
 									attr.aria-label="powerSmartSettings-intelligentCooling-read-more">
 									{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
 							</p>
@@ -125,22 +130,23 @@
 								<p tabindex="0"
 									id="readMoreMode1"
 									role="text">
-									<span role="text"
-										class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}:</span>
+                                    <span role="text" class="cooling-modes"
+                                        id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}:</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
 								</p>
 								<p tabindex="0"
 									role="text"
 									id="readMoreMode2">
-									<span role="text"
-										class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}:</span>
+                                    <span role="text" class="cooling-modes"
+                                        id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}:</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
 								</p>
 								<p tabindex="0"
 									id="readMoreMode3"
 									role="text">
 									<span role="text"
-										class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}:</span>
+                                        class="cooling-modes"
+                                        id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}:</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
 								</p>
 							</div>
@@ -152,7 +158,8 @@
 									type="button"
 									(click)="coolingModesPopUp()"
 									tabindex="0"
-									role="link"
+                                    role="link"
+                                    id="powerSmartSettings-intelligentCooling-more-info"
 									attr.aria-label="powerSmartSettings-intelligentCooling-more-info ">
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate}}
 								</button>

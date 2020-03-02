@@ -2064,7 +2064,7 @@
             },
             "recommended": {
                 "title": "Anbefalede opdateringer",
-                "tooltip": "Anbefalede driveropdateringer sikrer"
+                "tooltip": "Anbefalede driveropdateringer sikrer optimal ydeevne for computeren."
             },
             "windows": {
                 "title": "Windows-opdateringer",

@@ -767,6 +767,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 	public onSunsetToSunrise($featureStatus: any) {
+		this.sunsetToSunriseModeStatus.status = $featureStatus.status
 		try {
 			this.logger.debug('sunset to sunrise event', $featureStatus);
 			if (this.displayService.isShellAvailable) {
@@ -782,10 +783,10 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 							// this.isEyeCareMode = this.eyeCareModeStatus.status;
 							this.enableSlider = response.eyecaremodeState;
 							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
-
 							this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
 							this.eyeCareModeCache.enableSlider = this.enableSlider;
 							this.eyeCareModeCache.eyeCareDataSource = this.eyeCareDataSource;
+							this.eyeCareModeCache.sunsetToSunriseStatus.status = $featureStatus.status;
 							this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 						}
 
