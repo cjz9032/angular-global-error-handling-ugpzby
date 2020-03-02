@@ -128,9 +128,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
 		if (this.securityAdvisor.wifiSecurity) {
 			this.securityAdvisor.wifiSecurity.cancelGetWifiHistory();
-			if (this.router.routerState.snapshot.url.indexOf('security') === -1) {
-				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
-			}
+			this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
