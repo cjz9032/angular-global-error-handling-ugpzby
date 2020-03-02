@@ -237,9 +237,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
 		this.launchProtocol();
 		this.selfselectService.getConfig().then((re)=>{
-			if(re.usageType === SegmentConst.Commercial ){
-				this.hideTitle = true;
-			}
+			this.hideTitle = re.usageType === SegmentConst.Commercial;
 		})
 	}
 
