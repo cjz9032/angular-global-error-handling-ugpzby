@@ -60,10 +60,14 @@
 :host ::ng-deep {
 	.spinner-content {
 		width: 100%;
-		height: calc(83vh - 1rem);
+		height: calc(100vh - 13.5rem);
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		img {
+			width: 75%;
+		}
 
 		.spinner-border {
 			width: 5rem !important;

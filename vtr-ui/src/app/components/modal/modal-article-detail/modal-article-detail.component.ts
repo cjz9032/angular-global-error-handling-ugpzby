@@ -18,6 +18,7 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 	articleTitle = '';
 	articleImage = '';
 	articleBody: SafeHtml = '<div class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>';
+	emptyArticleBody: SafeHtml = '<div class="spinner-content w-100 text-center""><img src="/assets/images/support/empty.png" /></div>';
 	articleCategory: string;
 	metricClient: any;
 	enterTime: number;
@@ -59,11 +60,11 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 					}
 				} else {
 					this.articleTitle = response.title;
-					this.articleBody = '';
+					this.articleBody = this.emptyArticleBody;
 				}
 			},
 			error => {
-				this.articleBody = '<div class=\'alert alert-danger\'>Some Error Occurs Please Try again later</div>';
+				this.articleBody = this.emptyArticleBody;
 				this.logger.error('fetchCMSContent error', error);
 			}
 		);
