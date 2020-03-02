@@ -78,7 +78,7 @@ export class ConfigService {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (this.securityAdvisor) {
 			this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-			this.wifiSecurity.getWifiSecurityState();
+			this.wifiSecurity.getWifiSecurityStateOnce();
 			this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, (status) => {
 				this.commonService.sendReplayNotification(MenuItem.MenuWifiItemChange, status);
 			});
