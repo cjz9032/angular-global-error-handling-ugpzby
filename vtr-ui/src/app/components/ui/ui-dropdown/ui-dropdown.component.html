@@ -1,6 +1,6 @@
 <div class='cover' id="{{dropDownId}}" attr.aria-label="{{dropDownId}}" *ngIf='isDropDownOpen' [attr.aria-hidden]="!isDropDownOpen" (click)="toggle()" (keydown.enter)="toggle()" tabindex="0"></div>
 <section class="vtr-ui-dropdown">
-	<div #toggleBtn class="input" (click)="toggle()" (keydown.enter)="toggle()" role="combobox" [attr.aria-expanded]="isDropDownOpen" aria-haspopup="true" tabindex="0">
+	<div #toggleBtn class="input" (click)="toggle()" (keydown.enter)="toggle()" id="{{dropDownId}}" role="combobox" [attr.aria-expanded]="isDropDownOpen" aria-haspopup="true" tabindex="0">
 		<div class="list" *ngIf="isDropDownOpen && !disabled" role="listbox" tabindex="0" [attr.aria-hidden]="!isDropDownOpen">
 			<ul>
 				<li (click)="[select(i, toggleBtn),toggle()]" role="option" (keydown.enter)="[select(i, toggleBtn),toggle()]" tabindex="0" vtrMetrics metricsEvent="FeatureClick" [metricsItem]="dropDownName" [metricsValue]="i" *ngFor="let i of list" >
