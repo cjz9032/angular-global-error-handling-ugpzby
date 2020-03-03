@@ -33,7 +33,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private DeviceInformation: any;
 	private DeviceClass: any;
 	private oMediaCapture: any;
-	private visibilityChange: any;
 	private videoPreviewEvent: any;
 	private cameraStreamStateChanged: any;
 	public cameraErrorTitle: string;
@@ -84,8 +83,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		//#region below logic required to re-enable camera feed when window is maximized from minimized state
 		this.logger.info('constructor camera');
 		this.oMediaCapture = new this.Capture.MediaCapture();
-		// this.visibilityChange = this.onVisibilityChanged.bind(this);
-		// document.addEventListener('visibilitychange', this.visibilityChange);
 		//#endregion
 
 		//#region hook up orientation change event
@@ -109,9 +106,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
-		// if (document) {
-		// 	document.removeEventListener('visibilitychange', this.visibilityChange);
-		// }
+
 		//#region unregister orientation change event
 		if (this.orientationSensor != null) {
 			this.orientationSensor.removeEventListener(this.orientationChangedEvent, this.orientationEvent);
@@ -242,7 +237,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 						this.disabledAll = true;
 					});
 				}).then(() => {
-					this.isCameraInitialized = true;
+					// this.isCameraInitialized = true;
 					return this.startPreviewAsync();
 
 				}).done();
@@ -296,21 +291,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	/*
-	onVisibilityChanged() {
-		this.isPageVisible = !this.isPageVisible;
-		this.logger.info('CameraControlComponent.onVisibilityChanged'
-			, { isHidden: document.hidden, isPageVisible: this.isPageVisible, isCameraInitialized: this.isCameraInitialized });
-
-		if (document.hidden) {
-			this.cleanupCameraAsync('onVisibilityChanged');
-		} else {
-			if (!this.isCameraInitialized) {
-				this.initializeCameraAsync();
-			}
-		}
-	}*/
-
 	@HostListener('document: visibilitychange')
 	onVisibilityChange(): void {
 		const visibility = document.visibilityState;
@@ -318,9 +298,11 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 		if (visibility.toLowerCase() === 'visible') {
 			if (!this.isCameraInitialized) {
+				this.isCameraInitialized = true;
 				this.initializeCameraAsync();
 			}
 		} else {
+			this.isCameraInitialized = false;
 			this.cleanupCameraAsync('onVisibilityChange');
 		}
 	}
