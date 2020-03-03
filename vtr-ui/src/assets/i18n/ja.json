@@ -926,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "ドライバー、BIOS、およびソフトウェアのを更新します。",
+            "checkForSystemUpdates": "システム更新を確認"
         }
     },
     "device": {

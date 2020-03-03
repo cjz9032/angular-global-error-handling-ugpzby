@@ -928,8 +928,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "تحديث برامج التشغيل ونظام BIOS وبرامج أخرى.",
+            "checkForSystemUpdates": "التحقق من وجود تحديثات النظام"
         }
     },
     "device": {

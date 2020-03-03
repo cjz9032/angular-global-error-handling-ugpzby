@@ -926,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "עדכן את מנהלי התקנים, ה-BIOS ותוכנות אחרות.",
+            "checkForSystemUpdates": "בדוק אם קיימים עדכוני מערכת"
         }
     },
     "device": {

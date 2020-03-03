@@ -926,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Päivitä ajurisi, BIOS ja muut ohjelmistosi.",
+            "checkForSystemUpdates": "Tarkista järjestelmäpäivitysten saatavuus"
         }
     },
     "device": {

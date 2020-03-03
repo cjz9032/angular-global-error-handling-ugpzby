@@ -926,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Обновите драйверы, BIOS и прочее программное обеспечение.",
+            "checkForSystemUpdates": "Проверить наличие обновлений системы"
         }
     },
     "device": {

@@ -926,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Ažurirajte upravljačke programe, BIOS i drugi softver.",
+            "checkForSystemUpdates": "Proveri da li postoje sistemske ispravke"
         }
     },
     "device": {
