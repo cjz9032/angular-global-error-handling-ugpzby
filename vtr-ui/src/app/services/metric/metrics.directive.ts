@@ -170,9 +170,18 @@ export class MetricsDirective {
 		return data;
 	}
 
+	private async metricReady() {
+		return this.metrics.initializationResolved || this.metrics.initPromise;
+	}
+
 	@HostListener('click', ['$event'])
 	async onclick(event) {
-		if (!this.metrics || !this.metrics.metricsEnabled) {
+		if (!this.metrics) {
+			return;
+		}
+
+		await this.metricReady();
+		if (!this.metrics.metricsEnabled) {
 			return;
 		}
 
