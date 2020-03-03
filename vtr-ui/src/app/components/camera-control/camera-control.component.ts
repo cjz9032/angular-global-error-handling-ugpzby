@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter, NgZone, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter, NgZone, AfterViewInit, HostListener } from '@angular/core';
 import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
@@ -84,8 +84,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		//#region below logic required to re-enable camera feed when window is maximized from minimized state
 		this.logger.info('constructor camera');
 		this.oMediaCapture = new this.Capture.MediaCapture();
-		this.visibilityChange = this.onVisibilityChanged.bind(this);
-		document.addEventListener('visibilitychange', this.visibilityChange);
+		// this.visibilityChange = this.onVisibilityChanged.bind(this);
+		// document.addEventListener('visibilitychange', this.visibilityChange);
 		//#endregion
 
 		//#region hook up orientation change event
@@ -109,9 +109,9 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
-		if (document) {
-			document.removeEventListener('visibilitychange', this.visibilityChange);
-		}
+		// if (document) {
+		// 	document.removeEventListener('visibilitychange', this.visibilityChange);
+		// }
 		//#region unregister orientation change event
 		if (this.orientationSensor != null) {
 			this.orientationSensor.removeEventListener(this.orientationChangedEvent, this.orientationEvent);
@@ -296,7 +296,12 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	/*
 	onVisibilityChanged() {
+		this.isPageVisible = !this.isPageVisible;
+		this.logger.info('CameraControlComponent.onVisibilityChanged'
+			, { isHidden: document.hidden, isPageVisible: this.isPageVisible, isCameraInitialized: this.isCameraInitialized });
+
 		if (document.hidden) {
 			this.cleanupCameraAsync('onVisibilityChanged');
 		} else {
@@ -304,16 +309,28 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 				this.initializeCameraAsync();
 			}
 		}
+	}*/
+
+	@HostListener('document: visibilitychange')
+	onVisibilityChange(): void {
+		const visibility = document.visibilityState;
+		this.logger.info('CameraControlComponent.onVisibilityChange', { visibility, isCameraInitialized: this.isCameraInitialized });
+
+		if (visibility.toLowerCase() === 'visible') {
+			if (!this.isCameraInitialized) {
+				this.initializeCameraAsync();
+			}
+		} else {
+			this.cleanupCameraAsync('onVisibilityChange');
+		}
 	}
-
-
 
 	public onAutoExposureChange($event: any) {
 		try {
-			this.logger.info('onAutoExposureChange', this.cameraSettings.exposure);
+			this.logger.info('CameraControlComponent.onAutoExposureChange', this.cameraSettings.exposure);
 			this.exposureToggle.emit($event);
 		} catch (error) {
-			this.logger.error('CameraControlComponent:onAutoExposureChange', error.message);
+			this.logger.error('CameraControlComponent.onAutoExposureChange', error.message);
 		}
 	}
 
