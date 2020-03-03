@@ -246,7 +246,8 @@
 						<div class="control-options-block"
 							*ngIf="isTouchPadVisible || isMouseVisible">
 							<div class="row">
-								<div class="col-auto">
+								<div class="col-auto" id="inputAccessories.controlOptions.more" 
+								     attr-aria-label="inputAccessories.controlOptions.more" role="text">
 									<p>{{'device.deviceSettings.inputAccessories.controlOptions.more' | translate}}</p>
 								</div>
 							</div>
@@ -257,7 +258,9 @@
 										(keydown.enter)='launchProtocol("ms-settings:devices-touchpad")'
 										role="text"
 										tabindex="0"><span
-											role="text">{{'device.deviceSettings.inputAccessories.controlOptions.control1' | translate}}</span></a>
+											role="text" 
+											id="inputAccessories.controlOptions.touchpad"
+											attr.aria-label="inputAccessories.controlOptions.touchpad">{{'device.deviceSettings.inputAccessories.controlOptions.control1' | translate}}</span></a>
 								</div>
 								<div class="col-auto"
 									*ngIf="isMouseVisible">
@@ -266,12 +269,15 @@
 										(keydown.enter)='launchProtocol("ms-settings:mousetouchpad")'
 										role="text"
 										tabindex="0"><span
-											role="text">{{'device.deviceSettings.inputAccessories.controlOptions.control3' | translate}}</span></a>
+										role="text"
+										id="inputAccessories.controlOptions.trackpoint"
+										attr.aria-label="inputAccessories.controlOptions.trackpoint">{{'device.deviceSettings.inputAccessories.controlOptions.control3' | translate}}</span></a>
 									<ng-template #otherMachine><a role="text"
 											tabindex="0"
 											(click)='launchProtocol("ms-settings:mousetouchpad")'
 											(keydown.enter)='launchProtocol("ms-settings:mousetouchpad")'><span
-												role="text">{{'device.deviceSettings.inputAccessories.controlOptions.control2' | translate}}</span></a>
+											role="text" id="inputAccessories.controlOptions.mousecontrol"
+											attr.aria-label="inputAccessories.controlOptions.mousecontrol">{{'device.deviceSettings.inputAccessories.controlOptions.control2' | translate}}</span></a>
 									</ng-template>
 								</div>
 							</div>
