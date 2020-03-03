@@ -926,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Illesztőprogramok, a BIOS és más szoftverek frissítése.",
+            "checkForSystemUpdates": "Rendszerfrissítések keresése"
         }
     },
     "device": {

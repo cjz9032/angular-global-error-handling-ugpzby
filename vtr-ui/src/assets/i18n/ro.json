@@ -926,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Actualizați-vă driverele, BIOS-ul și alte software-uri.",
+            "checkForSystemUpdates": "Căutați actualizări de sistem"
         }
     },
     "device": {

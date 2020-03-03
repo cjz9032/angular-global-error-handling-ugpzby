@@ -850,7 +850,7 @@
 		},
 		"systemUpdate": {
 			"subtitle": "Update your drivers, BIOS, and other software.",
-			"CheckForSystemUpdates": "Check for system updates"
+			"checkForSystemUpdates": "Check for system updates"
 		},
 		"feedback": {
 			"title": "Give Feedback",

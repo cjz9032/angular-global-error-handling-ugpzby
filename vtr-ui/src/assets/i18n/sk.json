@@ -926,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Aktualizovať ovládače, systém BIOS a iný softvér.",
+            "checkForSystemUpdates": "Vyhľadať aktualizácie systému"
         }
     },
     "device": {

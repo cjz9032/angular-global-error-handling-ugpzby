@@ -926,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Ενημερώστε τα προγράμματα οδήγησης, το BIOS και άλλα στοιχεία λογισμικού.",
+            "checkForSystemUpdates": "Ελέγξτε για ενημερώσεις συστήματος"
         }
     },
     "device": {

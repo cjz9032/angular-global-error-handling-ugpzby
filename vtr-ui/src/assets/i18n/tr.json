@@ -926,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Sürücülerinizi, BIOS'u ve diğer yazılımları güncelleyin.",
+            "checkForSystemUpdates": "Sistem güncellemelerini denetle"
         }
     },
     "device": {
