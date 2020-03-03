@@ -6,10 +6,9 @@
 		[showNavigationIndicators]="carouselModel.length>1">
 		<ng-template *ngFor="let model of carouselModel let cIndex = index"
 			ngbSlide id="ngb-slide-{{cIndex}}">
-			<a [href]="model.link"
+			<a [href]="model.link" tabindex="0"
 				vtrMetrics
 				id="{{carouselId}}-{{cIndex}}"
-				attr.aria-label="{{carouselId}}-{{cIndex}}"
 				metricsEvent="articleclick"
 				[metricsItemID]="model.id"
 				[metricsItemPosition]="order"
@@ -24,12 +23,12 @@
 				<div class="image img-fluid"
 						[style.backgroundImage]="'url(' + model.image + ')'"
 						[style.height.px]="carouselContainer.clientWidth * 340 / 944"></div>
-				<div class="carousel-caption">
-					<h3 class="source"
+				<div class="carousel-caption" role="text">
+					<h3 class="source" attr.aria-label={{model.source}}
 						[title]="model.source | htmlText"
 						[innerHTML]="model.source"
 						id="{{carouselId}}-{{cIndex}}-source"></h3>
-					<h2 class="title"
+					<h2 class="title" attr.aria-label={{model.cardTitle}}
 						[title]="model.cardTitle | htmlText"
 						[innerHTML]="model.cardTitle"
 						id="{{carouselId}}-{{cIndex}}-title"></h2>
