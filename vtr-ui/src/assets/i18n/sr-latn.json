@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Učitavanje...",
             "from": "iz",
             "to": "u",
-            "clickToChange": "kliknite za promenu"
+            "clickToChange": "kliknite za promenu",
+            "failedLoad": "Učitavanje nije uspelo.",
+            "retry": "Ponovo pokušaj"
         },
         "app-update": {
             "message": "Hej! Novija verzija programa Vantage je raspoloživa, želite li da ga učitate?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Ažurirajte upravljačke programe, BIOS i drugi softver.",
+            "checkForSystemUpdates": "Proveri da li postoje sistemske ispravke"
         }
     },
     "device": {

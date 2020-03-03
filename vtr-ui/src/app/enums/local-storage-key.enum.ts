@@ -4,6 +4,7 @@
 export enum LocalStorageKey {
 	EyeCareModeResetStatus = '[LocalStorageKey] EyeCareModeResetStatus',
 	WelcomeTutorial = '[LocalStorageKey] WelcomeTutorial',
+	GamingTutorial = '[LocalStorageKey] GamingTutorial',
 	SecurityVPNStatus = '[LocalStorageKey] SecurityVPNStatus',
 	SecurityPasswordManagerStatus = '[LocalStorageKey] SecurityPasswordManagerStatus',
 	SecurityLandingPasswordManagerShowOwn = '[LocalStorageKey] SecurityLandingPasswordManagerShowOwn',

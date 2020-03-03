@@ -6,7 +6,8 @@
 				<div class="description"
 					id="widget-system-update-description"
 					role="text"
-					[innerHTML]="'Update your drivers, BIOS, and other software.'"></div>
+					[dir]="'dir' | translate"
+					[innerHTML]="'dashboard.systemUpdate.subtitle' | translate"></div>
 				<div class="button-box">
 					<vtr-ui-button linkId="btn-heck-for-system-updates"
 						metricsEvent="FeatureClick"
@@ -14,7 +15,7 @@
 						buttonColor="gray"
             [isFullWidth]="true"
             (onClick)="gotoAndCheckSystemUpdate()"
-						[label]="'Check for system updates'"></vtr-ui-button>
+						[label]="'dashboard.systemUpdate.checkForSystemUpdates' | translate"></vtr-ui-button>
 				</div>
 			</div>
 		</div>

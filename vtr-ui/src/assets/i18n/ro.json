@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "se incarca...",
             "from": "de la",
             "to": "cu",
-            "clickToChange": "faceţi clic pentru a schimba"
+            "clickToChange": "faceţi clic pentru a schimba",
+            "failedLoad": "Încărcarea nu a reușit.",
+            "retry": "Reîncercați"
         },
         "app-update": {
             "message": "Bună ziua! Este disponibilă o versiune mai nouă de Vantage, doriți să o încărcați?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Actualizați-vă driverele, BIOS-ul și alte software-uri.",
+            "checkForSystemUpdates": "Căutați actualizări de sistem"
         }
     },
     "device": {
@@ -1059,7 +1061,7 @@
                     "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>",
                     "EmDriverInstalled": "Detaliile privind bateria sunt indisponibile. Rulaţi Windows Update->Căutaţi actualizări pentru a instala driverul <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
-                "batteryNotDetected": "Nu se detectează nicio baterie",
+                "batteryNotDetected": "Nu a fost detectată nicio baterie",
                 "thresholdNote": "<b>Notă:</b> bateria nu poate fi încărcată complet atunci când este activat pragul de încărcare a bateriei.",
                 "seeDetailsLink": "Vedeți detaliile",
                 "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a.",

@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Carregando...",
             "from": "de",
             "to": "para",
-            "clickToChange": "clique para alterar"
+            "clickToChange": "clique para alterar",
+            "failedLoad": "Falha ao carregar.",
+            "retry": "Tentar Novamente"
         },
         "app-update": {
             "message": "Ei! Uma versão mais recente do Vantage está disponível. Deseja carregá-la?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Atualize os drivers, BIOS e outros softwares.",
+            "checkForSystemUpdates": "Verificar se há atualizações do sistema"
         }
     },
     "device": {
@@ -1524,7 +1526,7 @@
                         "onSunsetToSunriseScheduleDescription": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
                         "note": {
                             "title": "Nota",
-                            "description": "O Lenovo Vantage precisa acessar suas informações de localização para calcular o horário do pôr do sol e do nascer do sol da sua região."
+                            "description": "O Lenovo Vantage precisa acessar suas informações de localização para calcular o horário do pôr do sol e do nascer do sol de sua região."
                         },
                         "tips": "Execute o Windows Update ou instale manualmente o driver gráfico para recuperar o modo Proteção Ocular"
                     },
@@ -1591,7 +1593,7 @@
                     "url": "Ir para as configurações de privacidade do Windows",
                     "cameraPrivacy": {
                         "title": "Modo de privacidade da câmera",
-                        "tooltip": "A câmera para de enviar imagens ao vivo quando a configuração de privacidade é ativada. Ative essa configuração somente quando não desejar compartilhar suas imagens com outras pessoas durante chamadas com vídeo."
+                        "tooltip": "A câmera interrompe o envio de imagens ao vivo quando a configuração de privacidade está ativada. Ative essa configuração somente quando não desejar compartilhar suas imagens durante chamadas com vídeo."
                     },
                     "camera": {
                         "title": "Câmera",

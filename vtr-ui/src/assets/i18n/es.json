@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Cargando...",
             "from": "a partir de",
             "to": "en",
-            "clickToChange": "haga clic para cambiar"
+            "clickToChange": "haga clic para cambiar",
+            "failedLoad": "Error al cargar.",
+            "retry": "Reint."
         },
         "app-update": {
             "message": "¡Ey! Hay disponible una versión más reciente de Vantage, ¿desea cargarla?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Actualice sus controladores, BIOS y otro software.",
+            "checkForSystemUpdates": "Compruebe si hay actualizaciones del sistema"
         }
     },
     "device": {

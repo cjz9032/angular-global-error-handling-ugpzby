@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Ladataan...",
             "from": "kohteesta",
             "to": "kohteeseen",
-            "clickToChange": "muuta napsauttamalla tätä"
+            "clickToChange": "muuta napsauttamalla tätä",
+            "failedLoad": "Lataus epäonnistui.",
+            "retry": "Yritä uudelleen"
         },
         "app-update": {
             "message": "Hei! Vantage on saatavilla uudempi versio. Haluatko ladata sen?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Päivitä ajurisi, BIOS ja muut ohjelmistosi.",
+            "checkForSystemUpdates": "Tarkista järjestelmäpäivitysten saatavuus"
         }
     },
     "device": {

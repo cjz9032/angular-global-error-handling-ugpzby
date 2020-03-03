@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 @Component({
 	selector: 'vtr-widget-landing-security',
 	templateUrl: './widget-landing-security.component.html',
@@ -11,8 +11,12 @@ export class WidgetLandingSecurityComponent implements OnInit {
 
 	@Input() items: Array<any>;
 	@Output() haveOwnChecked = new EventEmitter<any>();
+	@Output() retryClick = new EventEmitter<any>();
 	checkedList: any;
-	constructor(public commonService: CommonService) {}
+	constructor(
+		public commonService: CommonService,
+		private shellService: VantageShellService
+		) {}
 	badgeContent = 'security.landing.haveOwn';
 	ngOnInit() {
 		this.checkedList = {
@@ -42,4 +46,7 @@ export class WidgetLandingSecurityComponent implements OnInit {
 		}
 	}
 
+	retry(item) {
+		this.retryClick.emit(item.id);
+	}
 }

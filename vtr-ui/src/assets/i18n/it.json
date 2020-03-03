@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Caricamento in corso...",
             "from": "da",
             "to": "a",
-            "clickToChange": "fare clic per modificare"
+            "clickToChange": "fare clic per modificare",
+            "failedLoad": "Caricamento fallito.",
+            "retry": "Riprova"
         },
         "app-update": {
             "message": "Ciao! È disponibile una versione più recente di Vantage. Caricarla?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Aggiornare driver, BIOS e altri software.",
+            "checkForSystemUpdates": "Controllare gli aggiornamenti di sistema"
         }
     },
     "device": {
@@ -1059,7 +1061,7 @@
                     "FullACAdapterSupport": "<b>L'alimentazione {{acAdapterType}} da {{acWattage}} W è collegata.</b>",
                     "EmDriverInstalled": "Dettagli della batteria non disponibili. Eseguire Windows Update -> Verifica disponibilità aggiornamenti per installare il driver <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
-                "batteryNotDetected": "Non è stata rilevata alcuna batteria",
+                "batteryNotDetected": "Nessuna batteria rilevata",
                 "thresholdNote": "<b>Nota:</b> la batteria non può essere caricata completamente quando è abilitata l'opzione Soglia di carica batteria.",
                 "seeDetailsLink": "Visualizza dettagli",
                 "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA.",
@@ -2073,7 +2075,7 @@
             "title": "Sito Web del supporto Lenovo"
         },
         "banner": {
-            "neverChecked": "Benvenuto in System Update.",
+            "neverChecked": "Benvenuto in Aggiornamento del sistema.",
             "title": "Un sistema aggiornato è un sistema integro.",
             "installingTitle": "Durante gli aggiornamenti, non attivare la modalità Sospensione o Ibernazione del computer.",
             "last": "Ultimo aggiornamento: ",

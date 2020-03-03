@@ -5,15 +5,19 @@
 				<span class="col-1 basis-width" [ngClass]="['icomoon', 'icomoon-' + item.icon]"></span>
 				<div class="col-11 pl-3 row align-items-center justify-content-between flex-nowrap">
 					<h3 class="mb-0">{{item.title}}</h3>
-					<span *ngIf="!item.showOwn" class="badge text-ellipsis ml-auto"
+					<span [hidden]="item.showOwn" class="badge text-ellipsis ml-auto"
 						title="{{item.detail}}"
 						[ngClass]="{'status-enabled':item.status === 'enabled' || item.status === 'installed' ,
 						'status-disabled': item.status === 'disabled' || item.status === 'not-installed',
-						'status-loading': item.status === 'loading' || item.status === 'installing'}">
+						'status-loading': item.status === 'loading' || item.status === 'installing' || item.status === 'failedLoad'}">
 						{{item.detail}}</span>
-					<span *ngIf="item.showOwn" class="badge text-ellipsis status-haveOwn ml-auto"
+					<span [hidden]="!item.showOwn" class="badge text-ellipsis status-haveOwn ml-auto"
 						title="{{badgeContent | translate}}">
 						{{badgeContent | translate}}</span>
+					<a [hidden]="item.status !== 'failedLoad'"
+						class="ml-3"
+						href="javascript:void(0);"
+						(click)="retry(item)">{{'common.ui.retry' | translate}}</a>
 				</div>
 			</div>
 			<div class="desc-box row no-gutters">

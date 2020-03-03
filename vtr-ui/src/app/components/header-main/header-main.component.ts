@@ -24,6 +24,7 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 	@Input() textId: string;
 	@Input() hideBack = false;
 	@Output() innerBack = new EventEmitter();
+	@Input() hideTitle = false;
 	prevUrl: string;
 
 	constructor(

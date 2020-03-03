@@ -24,6 +24,7 @@
 			<section class="landing-nav mb-40">
 				<vtr-widget-landing-nav
 					(haveOwnChecked)="updateStatus($event)"
+					(retryClick)="retry($event)"
 					[baseItems]="baseItems"
 					[intermediateItems]="intermediateItems"
 					[advancedItems]="advanceItems"></vtr-widget-landing-nav>

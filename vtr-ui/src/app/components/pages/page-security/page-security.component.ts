@@ -41,7 +41,6 @@ import { WindowsActiveLandingViewModel } from 'src/app/data-models/security-advi
 import { UacLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/uac-landing.model';
 import { BitLockerLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/bitLocker-landing.model';
 import { SecurityTypeConst } from 'src/app/data-models/security-advisor/status-info.model';
-import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
@@ -139,12 +138,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			});
 		});
 		this.fetchCMSArticles();
-		const antivirus = new AntivirusErrorHandle(this.antivirus);
-		antivirus.refreshAntivirus();
 	}
 
 	ngOnDestroy() {
-		if (this.router.routerState.snapshot.url.indexOf('security') === -1 && this.wifiSecurity) {
+		if (this.wifiSecurity) {
 			this.wifiSecurity.cancelGetWifiSecurityState();
 		}
 		if (this.notificationSubscription) {
@@ -380,5 +377,9 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 					break;
 			}
 		}
+	}
+
+	retry(id) {
+		this.antivirusLandingViewModel.retry(id)
 	}
 }

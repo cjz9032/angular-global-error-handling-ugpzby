@@ -68,10 +68,8 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if (this.router.routerState.snapshot.url.indexOf('security') === -1) {
-			if (this.securityAdvisor.wifiSecurity) {
-				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
-			}
+		if (this.securityAdvisor.wifiSecurity) {
+			this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();

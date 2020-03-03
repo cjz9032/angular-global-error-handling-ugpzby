@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Načítání...",
             "from": "z",
             "to": "změňte na",
-            "clickToChange": "kliknutím upravte"
+            "clickToChange": "kliknutím upravte",
+            "failedLoad": "Načtení selhalo.",
+            "retry": "Opakovat"
         },
         "app-update": {
             "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Aktualizace ovladačů, systému BIOS a dalšího softwaru.",
+            "checkForSystemUpdates": "Vyhledat aktualizace systému"
         }
     },
     "device": {
@@ -1059,7 +1061,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájení je připojené.</b>",
                     "EmDriverInstalled": "Podrobnosti o baterii nejsou dostupné. Pro instalaci ovladače <b>Lenovo ACPI - Compliant Virtual Power Controller</b> přejděte do nabídky Windows Update -> Zkontrolovat aktualizace."
                 },
-                "batteryNotDetected": "Baterie nebyla nalezena",
+                "batteryNotDetected": "Nebyla zjištěna žádná baterie",
                 "thresholdNote": "<b>Poznámka:</b> Pokud je aktivován Limit nabíjení baterie, nelze baterii plně nabít.",
                 "seeDetailsLink": "Zobrazit podrobnosti",
                 "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér.",

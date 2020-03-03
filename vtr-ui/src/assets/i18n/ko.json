@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "로드 중...",
             "from": "백업 선택",
             "to": "백업 위치 지정",
-            "clickToChange": "클릭하여 변경"
+            "clickToChange": "클릭하여 변경",
+            "failedLoad": "로드에 실패했습니다.",
+            "retry": "다시 시도"
         },
         "app-update": {
             "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "드라이버, BIOS 및 기타 소프트웨어를 업데이트하십시오.",
+            "checkForSystemUpdates": "시스템 업데이트 확인"
         }
     },
     "device": {
@@ -1059,7 +1061,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 전원이 연결돼 있습니다.</b>",
                     "EmDriverInstalled": "배터리 세부사항을 사용할 수 없습니다. <b>Lenovo ACPI - Compliant Virtual Power Controller</b> 드라이버를 설치하려면 Windows 업데이트->업데이트 확인을 실행하십시오."
                 },
-                "batteryNotDetected": "배터리 없음",
+                "batteryNotDetected": "감지된 배터리가 없습니다",
                 "thresholdNote": "<b>참고:</b> 배터리 충전 임계값을 사용하는 경우 배터리가 완전히 충전되지 않습니다.",
                 "seeDetailsLink": "세부사항 참조",
                 "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오.",

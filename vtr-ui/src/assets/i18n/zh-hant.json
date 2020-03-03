@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "載入中...",
             "from": "從",
             "to": "至",
-            "clickToChange": "按一下以變更"
+            "clickToChange": "按一下以變更",
+            "failedLoad": "無法載入。",
+            "retry": "重試"
         },
         "app-update": {
             "message": "嘿！已有更新版的 Vantage，您要載入嗎？"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "更新您的驅動程式、BIOS 及其他軟體。",
+            "checkForSystemUpdates": "檢查系統更新"
         }
     },
     "device": {

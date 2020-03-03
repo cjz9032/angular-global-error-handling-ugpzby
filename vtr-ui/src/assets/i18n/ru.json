@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "загрузка...",
             "from": "с",
             "to": "на",
-            "clickToChange": "щелкните для изменения"
+            "clickToChange": "щелкните для изменения",
+            "failedLoad": "Не удалось выполнить загрузку.",
+            "retry": "Еще раз"
         },
         "app-update": {
             "message": "Привет! Доступна более новая версия Vantage. Загрузить?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Обновите драйверы, BIOS и прочее программное обеспечение.",
+            "checkForSystemUpdates": "Проверить наличие обновлений системы"
         }
     },
     "device": {
@@ -1532,7 +1534,7 @@
                         "title": "Цветовая температура экрана",
                         "options": {
                             "warm": "Теплые тона (лучше для глаз)",
-                            "cold": "Холодный"
+                            "cold": "Холодные"
                         },
                         "reset": "Сбросить",
                         "tooltip": "В режиме защиты глаз цветовая температура экрана регулируется для фильтрации синего света и уменьшения напряжения глаз.",

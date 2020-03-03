@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Učitavam...",
             "from": "od",
             "to": "do",
-            "clickToChange": "kliknite za izmjenu"
+            "clickToChange": "kliknite za izmjenu",
+            "failedLoad": "Učitavanje nije uspjelo.",
+            "retry": "Pokušajte ponovno"
         },
         "app-update": {
             "message": "Hej! Dostupna je novija verzija programa Vantage, želite li je učitati?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Ažurirajte upravljačke programe, BIOS i drugi softver.",
+            "checkForSystemUpdates": "Provjerite ažuriranja sustava"
         }
     },
     "device": {
@@ -1059,7 +1061,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanje je povezano.</b>",
                     "EmDriverInstalled": "Pojedinosti o bateriji nisu dostupne. Pokrenite Windows ažuriranje-> Provjerite postoje li ažuriranja da biste instalirali Upravljački program za <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
-                "batteryNotDetected": "Baterija nije pronađena",
+                "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Ako je omogućen prag napunjenosti baterije baterija se ne može potpuno napuniti.",
                 "seeDetailsLink": "Prikaži pojedinosti",
                 "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen.",

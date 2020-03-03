@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Yükleniyor...",
             "from": "başlangıç",
             "to": "->",
-            "clickToChange": "değiştirmek için tıklatın"
+            "clickToChange": "değiştirmek için tıklatın",
+            "failedLoad": "Yüklenemedi.",
+            "retry": "Yeniden Dene"
         },
         "app-update": {
             "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Sürücülerinizi, BIOS'u ve diğer yazılımları güncelleyin.",
+            "checkForSystemUpdates": "Sistem güncellemelerini denetle"
         }
     },
     "device": {
@@ -2062,7 +2064,7 @@
             },
             "recommended": {
                 "title": "Önerilen Güncellemeler",
-                "tooltip": "Önerilen sürücü güncellemeleri"
+                "tooltip": "Önerilen sürücü güncellemeleri bilgisayarınızın en iyi performansla çalışmasını sağlar."
             },
             "windows": {
                 "title": "Windows Güncellemeleri",

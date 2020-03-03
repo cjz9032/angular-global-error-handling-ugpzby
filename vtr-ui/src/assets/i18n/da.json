@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Indlæser...",
             "from": "fra",
             "to": "til",
-            "clickToChange": "klik for at ændre"
+            "clickToChange": "klik for at ændre",
+            "failedLoad": "Kunne ikke indlæses.",
+            "retry": "Prøv igen"
         },
         "app-update": {
             "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Opdater dine drivere, BIOS og anden software.",
+            "checkForSystemUpdates": "Søg efter systemopdateringer"
         }
     },
     "device": {
@@ -2062,7 +2064,7 @@
             },
             "recommended": {
                 "title": "Anbefalede opdateringer",
-                "tooltip": "Anbefalede driveropdateringer sikrer"
+                "tooltip": "Anbefalede driveropdateringer sikrer optimal ydeevne for computeren."
             },
             "windows": {
                 "title": "Windows-opdateringer",

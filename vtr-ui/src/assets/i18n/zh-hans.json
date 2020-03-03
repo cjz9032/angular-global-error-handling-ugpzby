@@ -801,7 +801,9 @@
             "loading": "载入中...",
             "from": "从",
             "to": "到",
-            "clickToChange": "单击以更改"
+            "clickToChange": "单击以更改",
+            "failedLoad": "未能加载。",
+            "retry": "重试"
         },
         "app-update": {
             "message": "您好！已有较新版本的 Vantage，您要加载吗？"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "更新驱动程序、BIOS 和其他软件。",
+            "checkForSystemUpdates": "检查系统更新"
         }
     },
     "device": {
@@ -2541,30 +2543,30 @@
         "loggingOut": "正在注销...",
         "unlockExclusives": "解锁专享功能",
         "user": "用户",
-        "welcomeText1": "今天也是活力满满的一天，{{firstName}}！",
+        "welcomeText1": "加油，热干面！",
         "welcomeText2": "很高兴再次见到您，{{firstName}}",
-        "welcomeText3": "多么令人惊喜，{{firstName}}",
-        "welcomeText4": "微笑一下，{{firstName}}，一起开心吧 :)",
-        "welcomeText5": "叮咚，{{firstName}}，你还在吗？",
-        "welcomeText6": "我们一起探索美好世界！",
+        "welcomeText3": "青山一道同云雨，明月何曾是两乡",
+        "welcomeText4": "同气连枝，共盼春来",
+        "welcomeText5": "长风破浪会有时，直挂云帆济沧海",
+        "welcomeText6": "联想与您共克时艰",
         "welcomeText7": "让我们开启元气满满的一天，{{firstName}}！",
         "welcomeText8": "要不要来一杯快乐肥宅水？",
-        "welcomeText9": "派对开始了，{{firstName}}！",
+        "welcomeText9": "今日关中事，萧何共尔忧",
         "welcomeText10": "保持冷静，Vantage 就来了",
         "welcomeText11": "Vantage 物美价廉",
         "welcomeText12": "将 Vantage 带回家",
         "welcomeText13": "吃好、睡好，起来接着玩转Vantage！",
         "welcomeText14": "Vantage 每一刻都新鲜",
         "welcomeText15": "Vantage 发挥最大作用",
-        "welcomeTextWithoutUserName1": "今天也是活力满满的一天！",
+        "welcomeTextWithoutUserName1": "加油，热干面！",
         "welcomeTextWithoutUserName2": "很高兴再次见到您",
-        "welcomeTextWithoutUserName3": "多么令人惊喜",
-        "welcomeTextWithoutUserName4": "微笑一下，一起开心吧 :)",
-        "welcomeTextWithoutUserName5": "叮咚，你还在吗？",
-        "welcomeTextWithoutUserName6": "我们一起探索美好世界！",
+        "welcomeTextWithoutUserName3": "青山一道同云雨，明月何曾是两乡",
+        "welcomeTextWithoutUserName4": "同气连枝，共盼春来",
+        "welcomeTextWithoutUserName5": "长风破浪会有时，直挂云帆济沧海",
+        "welcomeTextWithoutUserName6": "联想与您共克时艰",
         "welcomeTextWithoutUserName7": "让我们开启元气满满的一天！",
         "welcomeTextWithoutUserName8": "要不要来一杯快乐肥宅水？",
-        "welcomeTextWithoutUserName9": "派对开始了！",
+        "welcomeTextWithoutUserName9": "今日关中事，萧何共尔忧",
         "welcomeTextWithoutUserName10": "保持冷静，Vantage 就来了",
         "welcomeTextWithoutUserName11": "Vantage 物美价廉",
         "welcomeTextWithoutUserName12": "将 Vantage 带回家",
@@ -2941,7 +2943,7 @@
     "welcometutorial": {
         "description": "您好！欢迎使用Vantage<br>Vantage是为您量身定制的系统管家。我们在Vantage中集成了多种功能以便您轻松掌握系统状态，并使系统持续处于最优状态。也可在您系统遇到问题时，为您快速运行诊断程序，定位问题。",
         "bullets1": "系统整体状态在首页清晰可览。",
-        "bullets2": "安全顾问助您轻松改善系统安全状况。",
+        "bullets2": "安全顾问助您轻松改善系统安全状况（适用于特定系统）。",
         "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型 和 windows S mode 机型不可用)。",
         "subtitle1": "您将如何使用您的设备？",
         "subtitle2": "请告诉我们您的兴趣（选填）",

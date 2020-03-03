@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Laster...",
             "from": "fra",
             "to": "til",
-            "clickToChange": "klikk for å endre"
+            "clickToChange": "klikk for å endre",
+            "failedLoad": "Kunne ikke lastes inn.",
+            "retry": "Prøv igjen"
         },
         "app-update": {
             "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Oppdater drivere, BIOS og annen programvare.",
+            "checkForSystemUpdates": "Se etter systemoppdateringer"
         }
     },
     "device": {
@@ -1059,7 +1061,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>",
                     "EmDriverInstalled": "Detaljert batteriinformasjon er utilgjengelig. Kjør Windows Update -> Se etter oppdateringer for å installere <b>Lenovo ACPI – Compliant Virtual Power Controller</b>-driveren."
                 },
-                "batteryNotDetected": "Kan ikke gjenkjenne batteri",
+                "batteryNotDetected": "Batteri ikke oppdaget",
                 "thresholdNote": "<b>Merk:</b> Batteriet kan ikke lades fullstendig når batteriladeterskelen er aktivert.",
                 "seeDetailsLink": "For detaljer se",
                 "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet.",

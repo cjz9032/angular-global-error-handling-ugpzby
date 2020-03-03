@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Načítava...",
             "from": "od",
             "to": "zmeňte na",
-            "clickToChange": "kliknutím zmeňte"
+            "clickToChange": "kliknutím zmeňte",
+            "failedLoad": "Načítanie zlyhalo.",
+            "retry": "Skúsiť znova"
         },
         "app-update": {
             "message": "Dobrý deň. K dispozícii je novšia verzia aplikácie Vantage, chcete ju načítať?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Aktualizovať ovládače, systém BIOS a iný softvér.",
+            "checkForSystemUpdates": "Vyhľadať aktualizácie systému"
         }
     },
     "device": {
@@ -2062,7 +2064,7 @@
             },
             "recommended": {
                 "title": "Odporúčané aktualizácie",
-                "tooltip": "Odporúčané aktualizácie ovládačov zabezpečia"
+                "tooltip": "Odporúčané aktualizácie ovládačov umožňujú zachovať optimálny výkon počítača."
             },
             "windows": {
                 "title": "Aktualizácie systému Windows",

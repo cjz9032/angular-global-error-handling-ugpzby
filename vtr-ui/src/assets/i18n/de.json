@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Wird geladen...",
             "from": "von",
             "to": "nach",
-            "clickToChange": "zum Ändern klicken"
+            "clickToChange": "zum Ändern klicken",
+            "failedLoad": "Fehler beim Laden.",
+            "retry": "Wiederholen"
         },
         "app-update": {
             "message": "Hallo! Es ist eine neuere Version von Vantage verfügbar. Möchten Sie sie herunterladen?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "Aktualisieren Sie Ihre Treiber, das BIOS und weitere Software.",
+            "checkForSystemUpdates": "Nach Systemaktualisierungen suchen"
         }
     },
     "device": {
@@ -939,7 +941,7 @@
             "freeMemory": "Freier Speicher",
             "systemUpdate": {
                 "title": "Systemaktualisierung",
-                "notFound": "System Update nicht gefunden",
+                "notFound": "Systemaktualisierung nicht gefunden",
                 "detail": {
                     "uptoDate": "Updates geprüft ",
                     "updatedOn": "geprüft am ",
@@ -2062,7 +2064,7 @@
             },
             "recommended": {
                 "title": "Empfohlene Updates",
-                "tooltip": "Empfohlene Treiberupdates sorgen dafür"
+                "tooltip": "Durch empfohlene Treiberaktualisierungen wird Ihr Computer bei optimaler Leistung betrieben."
             },
             "windows": {
                 "title": "Windows-Updates",
@@ -2481,7 +2483,7 @@
             "getStarted2": "Schalten Sie das VPN ein und warten Sie kurz auf die Bestätigung einer sicheren Verbindung.",
             "getStarted3": "Ändern Sie die Region oder den Standort nach Wunsch und genießen Sie die Nutzung eines sicheren und geschützten Netzwerks.",
             "poweredBySurfEasy": "Unterstützt von SurfEasy",
-            "privacyPolicyAndTermsOfService": "Leia a <tag>Política de privacidade</tag> e os <tag>Termos de serviço</tag> para obter mais informações"
+            "privacyPolicyAndTermsOfService": "Weitere Informationen erhalten Sie bei den <tag>Datenschutz-Bestimmungen</tag> und <tag>TNutzungsbedingungen</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE-KENNWORTMANAGER",

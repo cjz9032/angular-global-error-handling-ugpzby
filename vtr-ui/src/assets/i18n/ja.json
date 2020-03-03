@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Big-Y Lighting",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "ロード中...",
             "from": "から",
             "to": "～",
-            "clickToChange": "クリックして変更"
+            "clickToChange": "クリックして変更",
+            "failedLoad": "ロードに失敗しました。",
+            "retry": "再試行"
         },
         "app-update": {
             "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"
@@ -924,8 +926,8 @@
             }
         },
         "systemUpdate": {
-            "subtitle": "Update your drivers, BIOS, and other software.",
-            "CheckForSystemUpdates": "Check for system updates"
+            "subtitle": "ドライバー、BIOS、およびソフトウェアのを更新します。",
+            "checkForSystemUpdates": "システム更新を確認"
         }
     },
     "device": {
@@ -1333,7 +1335,7 @@
                 "smartStandby": {
                     "title": "スマート・スタンバイ",
                     "description": "この機能は、使用頻度の高い時間中の<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">モダン・スタンバイ</a>の高速再開エクスペリエンスに影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
-                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。この期間は、設定したスケジュールまたはコンピューターの使用状況に基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
+                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時刻より前にモダン・スタンバイに切り替わり、バッテリー駆動で一定時間操作がなければ休止状態に移行します。その時間は入力されたスケジュール、またはコンピューターの使用時間に基づいて最適化されます。コンピューターはスケジュールされた曜日のみ休止状態からモダン・スタンバイに切り替わり、スケジュールされた日に連続して操作がなかった場合は切り替わりません。",
                     "timer": {
                         "heading": "通常このコンピューターを使用する時刻:",
                         "subHeading1": "フィールドの",
