@@ -152,7 +152,7 @@ export class SystemUpdateService {
 					const payload = { ...response, status };
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
-					this.getScheduleUpdateStatus(true);
+					this.getScheduleUpdateStatus(false);
 				}
 			}).catch((error) => {
 				this.percentCompleted = 0;
