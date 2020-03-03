@@ -409,7 +409,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, (res) => {
 				this.updateWifiSecurityState(res);
 			});
-			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
+			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard, true);
 			this.commonService.setSessionStorageValue(
 				SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
 				true
@@ -475,7 +475,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 
 	public async setWifiSecuritySettings(value: any) {
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard) === true) {
 			if (this.wifiHomeViewModel.isLWSEnabled) {
 				this.wifiHomeViewModel.wifiSecurity.disableWifiSecurity().then((res) => {
 					if (res === true) {
@@ -576,7 +576,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 	ngOnDestroy(): void {
 		this.unRegisterThermalModeEvent();
-		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
 		if (
 			this.router.routerState.snapshot.url.indexOf('security') === -1 &&
