@@ -1,7 +1,6 @@
 <div>
     <vtr-ui-row-switch [title]="'device.deviceSettings.power.dpm.powerPlan.title' | translate"
-        componentName="dpm-powerplan"
-        [caption]="'device.deviceSettings.power.dpm.powerPlan.description' | translate"
+        componentName="dpm-powerplan" [caption]="'device.deviceSettings.power.dpm.powerPlan.description' | translate"
         [leftIcon]="['icomoon', 'icomoon-dpm-power-plan']" [showChildContent]="true" [isLastChild]="true"
         [theme]="'white'">
         <div class="content">
@@ -9,9 +8,10 @@
                 <h5 tabindex="0">
                     {{'device.deviceSettings.power.dpm.powerPlan.currentPowerPlan.label' | translate}}
                 </h5>
-                <vtr-ui-dpm-dropdown [list]="powerPlanIntervals" [value]="selectedPowerPlanVal" (change)="onPowerPlanChange($event)"
-                    [dropDownId]="'dpm-powerplan-action-dropDown'">
+                <vtr-ui-dpm-dropdown [list]="powerPlanIntervals" [value]="selectedPowerPlanVal"
+                    (change)="onPowerPlanChange($event)" [dropDownId]="'dpm-powerplan-action-dropDown'">
                 </vtr-ui-dpm-dropdown>
+                <vtr-ui-dpm-energy></vtr-ui-dpm-energy>
             </section>
         </div>
     </vtr-ui-row-switch>
