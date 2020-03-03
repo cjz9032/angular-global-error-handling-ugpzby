@@ -201,13 +201,17 @@ export class MetricService {
 		this.sendAppLoadedMetric(this.dashboardFirstLoaded);
 	}
 
+	public async metricReady() {
+		return this.metricsClient.initializationResolved || this.metricsClient.initPromise;
+	}
+
 	public onPageLoaded() {
 		if (this.dashboardFirstLoaded) {
 			return; 	// run once
 		}
 
 		this.dashboardFirstLoaded = Date.now(); // save the time while app finish loading.
-		if (this.metricsClient.metricsEnabled && !this.hasSendAppLoadedEvent) {	// in normal case for first run, if the welcome page was not done, the metrics will be disable.
+		if (!this.hasSendAppLoadedEvent) {	// in normal case for first run, if the welcome page was not done, the metrics will be disable.
 			this.handleAppLoadedEvent();	// send these metric event in dashboard at the scenarios when welcome page was done.
 		}
 
@@ -215,7 +219,7 @@ export class MetricService {
 	}
 
 	public handleWelcomeDone() {
-		if (this.metricsClient.metricsEnabled && !this.hasSendAppLoadedEvent) {
+		if (!this.hasSendAppLoadedEvent) {
 			this.handleAppLoadedEvent();
 		}
 	}

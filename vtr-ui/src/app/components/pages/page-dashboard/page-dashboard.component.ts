@@ -591,9 +591,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		try {
 			const response = await this.upeService.fetchUPEContent({ positions });
 			contentCards.forEach(cardItem => {
-				let articles = this.upeService.filterItems(response, cardItem.template, cardItem.position);
+				const articles = this.cmsService.getOneCMSContent(response, cardItem.template, cardItem.position);
 				if (cardItem.position === 'position-A') {
-					articles = articles.map((record) => {
+					const bannerArticles = articles.map((record) => {
 						return {
 							albumId: 1,
 							id: record.Id,
@@ -606,9 +606,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 						};
 					});
 
-					if (articles && articles.length) {
-						this[cardItem.cardPosition] = articles;
-						this.dashboardService[cardItem.dashboardCache] = articles;
+					if (bannerArticles && bannerArticles.length) {
+						this[cardItem.cardPosition] = bannerArticles;
+						this.dashboardService[cardItem.dashboardCache] = bannerArticles;
 						this.upeRequestResult[cardItem.id] = true;
 					}
 				} else {

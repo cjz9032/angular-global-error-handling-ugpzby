@@ -45,7 +45,7 @@
                     &:nth-last-child(2){
                         margin-bottom: 0;
                     }
-                    @media #{$mediaquery_xl} { 
+                    @media #{$breakpoint_xl} { 
                         width: 100%;
                         &:nth-child(even) {
                             margin-left: 0;

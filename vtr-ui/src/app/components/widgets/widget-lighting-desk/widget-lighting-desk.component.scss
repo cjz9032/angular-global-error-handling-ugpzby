@@ -235,6 +235,9 @@
                             @media #{$small-screen} {
                                 top: 50%;
                             }
+                            @media #{$mediaquery_X49} {
+                                margin-left: 32px;
+                            }
                             ::ng-deep{
                                 .ui-color-picker{
                                     .preset-color{

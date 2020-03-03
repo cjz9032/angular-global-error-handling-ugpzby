@@ -9,7 +9,7 @@
             <div class="col-12 pt-3 pl-5">
                 <div class="row">
                     <div class="col-auto pl-0">
-                        <img class="img-fluid f12-img" src="assets/images/F12-key.PNG">
+                        <img class="img-fluid f12-img" role="text" id="f12-key" attr.aria-label="f12-key" src="assets/images/F12-key.PNG">
                         <!-- <p class="pressf12"
 							style="text-align: center">press F12</p> -->
                     </div>
@@ -72,16 +72,20 @@
                                         </div>
                                         <div class="col-12">
                                             <div *ngIf="isUDFSetSuccessVisible"
-                                                class="select-text pt-3 udf-set-success">
+                                                class="select-text pt-3 udf-set-success"
+                                                id="userDefinedKey.website.successMessage"
+                                                attr.aria-label="userDefinedKey.website.successMessage"
+                                                role="text">
                                                 {{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'| translate}}
                                             </div>
-                                            <div *ngIf="isUDFSetFailedVisible" class="select-text pt-3 udf-set-failed">
+                                            <div *ngIf="isUDFSetFailedVisible" id="userDefinedKey.website.invalidURLMessage" attr.aria-label="userDefinedKey.website.invalidURLMessage" role="text" class="select-text pt-3 udf-set-failed">
                                                 {{'device.deviceSettings.inputAccessories.userDefinedKey.website.invalidURLMessage'
 										| translate}}
                                             </div>
                                             <button type="submit" class="button"
                                                 title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}"
                                                 id="ip-userdefined-key-applybtn"
+                                                role="text"
                                                 attr.aria-label="ip-userdefined-key-applybtn">
                                                 {{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
                                             </button>
@@ -92,8 +96,8 @@
 
 
                             <div class="col" *ngIf="selectedValue.value == 3">
-                                <div class="note align-items-center" id="ip-accesories-note"
-                                    attr.aria-label="ip-accesories-note">
+                                <div class="note align-items-center" id="inputAccessories.userDefinedKey.dropDown.note"
+                                    attr.aria-label="inputAccessories.userDefinedKey.dropDown.note" role="text">
                                     {{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.note' | translate}}
                                 </div>
                             </div>
@@ -113,12 +117,16 @@
                                         </div>
                                         <div class="col-12">
                                             <div *ngIf="isUDFSetSuccessVisible"
-                                                class="select-text pt-3 udf-set-success">
+                                                class="select-text pt-3 udf-set-success"
+                                                id="userDefinedKey.website.successMessage"
+                                                role="text"
+                                                attr.aria-label="userDefinedKey.website.successMessage">
                                                 {{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage' | translate}}
                                             </div>
                                             <button id="ip-userdefined-key-applybtn"
                                                 attr.aria-label="ip-userdefined-key-applybtn" type="submit"
                                                 class="button"
+                                                role="text"
                                                 title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
                                                 {{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
                                             </button>

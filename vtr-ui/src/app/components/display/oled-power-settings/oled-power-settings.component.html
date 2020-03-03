@@ -1,7 +1,8 @@
 <div class="vtr-oled-power-settings">
 	<div class="row">
 		<div class="col">
-			<p role="text" class="caption mb-0"
+			<p role="text"
+				class="caption mb-0"
 				tabindex="0"
 				id="oled-power-settings-caption1"
 				attr.aria-label="{{ description[0] }}">
@@ -30,10 +31,7 @@
 				[value]="taskBarDimmerValue"
 				[textCase]="'oled'"
 				(change)="onTaskBarDimmerChange($event)"
-				vtrMetrics
-				metricsEvent="FeatureClick"
-				metricsParent="Page.Settings"
-				metricsName="OledPowerSettings.TaskBarDimmer"
+				[dropDownName]="'OledPowerSettings.TaskBarDimmer'"
 				[dropDownId]="'oled-taskbar-dimmer-dropDown'">
 			</vtr-ui-dropdown>
 		</section>
@@ -49,10 +47,7 @@
 				[value]="backgroundDimmerValue"
 				[textCase]="'oled'"
 				(change)="onBackgroundDimmerChange($event)"
-				vtrMetrics
-				metricsEvent="FeatureClick"
-				metricsParent="Page.Settings"
-				metricsName="OledPowerSettings.BackgroundDimmer"
+				[dropDownName]="'OledPowerSettings.TaskBarDimmer'"
 				[dropDownId]="'oled-background-dimmer-dropDown'">
 			</vtr-ui-dropdown>
 		</section>
@@ -68,10 +63,7 @@
 				[value]="displayDimmerValue"
 				(change)="onDisplayDimmerChange($event)"
 				[textCase]="'oled'"
-				vtrMetrics
-				metricsEvent="FeatureClick"
-				metricsParent="Page.Settings"
-				metricsName="OledPowerSettings.DisplayDimmer"
+				[dropDownName]="'OledPowerSettings.TaskBarDimmer'"
 				[dropDownId]="'oled-display-dimmer-dropDown'">
 			</vtr-ui-dropdown>
 		</section>
