@@ -237,7 +237,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 						this.disabledAll = true;
 					});
 				}).then(() => {
-					this.isCameraInitialized = true;
+					// this.isCameraInitialized = true;
 					return this.startPreviewAsync();
 
 				}).done();
