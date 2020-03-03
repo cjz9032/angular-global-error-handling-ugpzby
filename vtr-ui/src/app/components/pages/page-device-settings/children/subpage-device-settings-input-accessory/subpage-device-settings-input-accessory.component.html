@@ -92,7 +92,7 @@
 								<vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)">
 								</vtr-backlight-thinkpad>
 							</li>
-							<li class="pt-3" *ngIf="machineType !== 1 && backlightCapability$ | async">
+							<li class="pt-3 keyboard-backlight-block" *ngIf="machineType !== 1 && backlightCapability$ | async">
 								<vtr-backlight [isLastChild]="!showVoipHotkeysSection && !hasUDKCapability"></vtr-backlight>
 							</li>
 							<li class="pt-3 voip"
@@ -246,7 +246,7 @@
 						<div class="control-options-block"
 							*ngIf="isTouchPadVisible || isMouseVisible">
 							<div class="row">
-								<div class="col-auto" id="inputAccessories.controlOptions.more" 
+								<div class="col-auto" id="inputAccessories.controlOptions.more"
 								     attr-aria-label="inputAccessories.controlOptions.more" role="text">
 									<p>{{'device.deviceSettings.inputAccessories.controlOptions.more' | translate}}</p>
 								</div>
@@ -258,7 +258,7 @@
 										(keydown.enter)='launchProtocol("ms-settings:devices-touchpad")'
 										role="text"
 										tabindex="0"><span
-											role="text" 
+											role="text"
 											id="inputAccessories.controlOptions.touchpad"
 											attr.aria-label="inputAccessories.controlOptions.touchpad">{{'device.deviceSettings.inputAccessories.controlOptions.control1' | translate}}</span></a>
 								</div>
