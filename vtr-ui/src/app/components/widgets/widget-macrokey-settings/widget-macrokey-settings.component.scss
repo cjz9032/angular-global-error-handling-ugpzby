@@ -98,7 +98,7 @@
 		border-radius: 0.8rem;
 		padding-bottom: 1.4rem;
 		margin: 1rem 0;
-		@media #{$mediaquery_xl} {
+		@media #{$breakpoint_xl} {
 			width: auto;
 		}
 		.dropdown-toggle {
