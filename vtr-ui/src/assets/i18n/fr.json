@@ -1072,7 +1072,7 @@
             "power": {
                 "title": "Alimentation",
                 "subtitle": "Paramètres d'alimentation",
-                "description": "Cette section vous permet d'ajuster dynamiquement les performances thermiques et de maximiser la durée de vie de la batterie.Elle propose également d'autres fonctions d'alimentation fréquemment utilisées. Vous pouvez vérifier les paramètres par défaut de cette section et personnaliser votre système en fonction de vos besoins.",
+                "description": "Cette section vous permet d'ajuster dynamiquement les performances thermiques et de maximiser la durée de vie de la batterie. Elle propose également d'autres fonctions d'alimentation fréquemment utilisées. Vous pouvez vérifier les paramètres par défaut de cette section et personnaliser votre système en fonction de vos besoins.",
                 "jumpto": {
                     "title": "ACCÉDER AUX PARAMÈTRES",
                     "battery": "Batterie",
