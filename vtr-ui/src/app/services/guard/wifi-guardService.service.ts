@@ -21,12 +21,15 @@ export class WifiGuardService implements CanActivate {
 		private logger: LoggerService
 	) { }
 
-	private getWiFiSupportStateFromUrl(state: RouterStateSnapshot) : boolean {
-		return this.commonService.getQueryParamterFromUrl(state.url, 'plugin') === 'lenovowifisecurityplugin';
+	private waitAsyncCallTimeout(func: Function, millisecond: number) : Promise<any> {
+		const timeout = new Promise((resolve, reject) => {
+			setTimeout(() => reject(new Error('Timeout')), millisecond);
+		});
+		return Promise.race([func(), timeout]);
 	}
 
 	async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-		if (this.getWiFiSupportStateFromUrl(state)) {
+		if (state.root.queryParams['amp;plugin'] === 'lenovowifisecurityplugin') {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, true);
 			return true;
 		}
@@ -36,7 +39,7 @@ export class WifiGuardService implements CanActivate {
 		const cacheState : boolean | undefined = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity);
 		if (cacheState === undefined) {
 			try {
-				await this.commonService.waitAsyncCallTimeout(this.wifiSecurity.getWifiSecurityStateOnce, 5000);
+				await this.waitAsyncCallTimeout(this.wifiSecurity.getWifiSecurityStateOnce, 5000);
 			} catch (error) {
 				this.logger.error('getWifiSecurityStateOnce call timeout');
 			}
