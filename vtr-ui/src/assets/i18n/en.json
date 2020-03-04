@@ -875,6 +875,7 @@
 				"comments": "Comments...",
 				"emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
 				"emailAddress": "Email address",
+				"invalidEmailMsg": "Invalid email address",
 				"button": "Submit",
 				"addScreenshot": "Add Screenshot",
 				"sendFeedback": "Send Feedback",
@@ -2002,11 +2003,11 @@
 				"installBtnText": "Install",
 				"launchBtnText": "Launch",
 				"voiceToText": {
-					"title": "Voice to Text",
+					"title": "Voice to text",
 					"caption": "This feature provides voice typing function that converts voice into text for quick input."
 				},
 				"translation": {
-					"title": "Translation",
+					"title": "Translation Assistant",
 					"caption": "This feature provides real-time translation assistance of speeches and all the translated will be shown in text. Multiple languages are available for the source and target language."
 				},
 				"modalPopUp": {

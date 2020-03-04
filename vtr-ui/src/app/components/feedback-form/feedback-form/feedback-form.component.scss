@@ -186,6 +186,15 @@ $normalPadding: 2.4rem;
 		.user-email {		
 			height: 6rem;			
 		}
+		.invalid-email{
+			background: $text_light 0% 0% no-repeat padding-box;
+			border: 1px solid $button_red_start;
+			color: $button_red_start;
+		}
+		.email-error-msg{
+			font-size: $base;
+			color: $button_red_start;
+		}
 		.comment-count {
 			color: $grey_dark;
 			font-size: $caption;
