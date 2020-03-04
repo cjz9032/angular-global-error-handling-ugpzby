@@ -36,26 +36,34 @@ export class LoggerService {
 	public debug(message: string, data: any = {}): void {
 		if (this.isShellAvailable) {
 			this.logger.debug(this.getMessage(message, data));
-		} else {}
+		} else {
+			console.debug(this.getMessage(message, data));
+		}
 	}
 
 	//
 	public error(message: string, data: any = {}): void {
 		if (this.isShellAvailable) {
 			this.logger.error(this.getMessage(message, data));
-		} else {}
+		} else {
+			console.error(this.getMessage(message, data));
+		}
 	}
 
 	public info(message: string, data: any = {}): void {
 		if (this.isShellAvailable) {
 			this.logger.info(this.getMessage(message, data));
-		} else {}
+		} else {
+			console.info(this.getMessage(message, data));
+		}
 	}
 
 	public exception(message: string, error: Error): void {
 		const errorMessage = JSON.stringify({ message: error.message, stackTrace: error.stack });
 		if (this.isShellAvailable) {
 			this.logger.error(this.getMessage(message, errorMessage));
-		} else {}
+		} else {
+			console.error(this.getMessage(message, errorMessage));
+		}
 	}
 }

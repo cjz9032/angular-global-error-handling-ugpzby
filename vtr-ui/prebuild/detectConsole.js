@@ -1,5 +1,5 @@
 const { exec } = require('child_process');
-const cmd = 'node node_modules/jscodeshift/bin/jscodeshift.js -t prebuild/removeConsole.js --extensions=ts --parser=ts src -d';
+const cmd = 'node node_modules/jscodeshift/bin/jscodeshift.js -t prebuild/removeConsole.js --extensions=ts --parser=ts src -d --ignore-pattern=src/**/logger.service.ts';
 exec(cmd, function(error, stdout, stderr) {
     if (stderr || error) {
         console.log(stderr);
