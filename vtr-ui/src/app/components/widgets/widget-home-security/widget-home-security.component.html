@@ -13,8 +13,8 @@
 		<div class="row mt-20">
 			<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 text-content">
 				<ul class="bullet-list">
-					<li class="good" *ngFor="let item of items">
-						<div class="container-fluid">
+					<li class="good" *ngFor="let item of items; let i = index">
+						<div class="container-fluid" id="{{'desc-'+i}}">
 							<div class="row align-items-center">
 								<div class="col-auto pl-0">
 									<div class="bullet-icon">
@@ -24,7 +24,7 @@
 									</div>
 								</div>
 								<div class="col">
-									<div class="text-regular">
+									<div class="text-regular pt-0">
 										{{item | translate}}
 									</div>
 								</div>
@@ -32,7 +32,7 @@
 						</div>
 					</li>
 
-					<li>
+					<li [hidden]="descMoreThanImg">
 						<div class="container-fluid">
 							<div class="row align-items-center">
 								<div class="col">
@@ -45,16 +45,26 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6">
-				<div class="gem-box">
-					<div class="gem">
+			<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 p-0 flex-shrink-1">
+				<div class="gem-box mb-5">
+					<div class="gem" id="gem">
 						<img src="assets/images/Banner_no_logo_h&f.jpg"
 							center />
 					</div>
 				</div>
 			</div>
 		</div>
-
+		<div class="row" [hidden]="!descMoreThanImg">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col">
+						<div class="text-regular">
+							{{'security.homeprotection.homesecurity.describe' | translate}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-12 text-content">
 				<div class="peace-of-mind row">

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ElementRef, HostListener } from '@angular/core';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
@@ -12,6 +12,7 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 export class WidgetHomeSecurityComponent {
 	peaceOfMindArticleId = '988BE19B75554E09B5A914D5F803C3F3';
 	peaceOfMindArticleCategory: string;
+	descMoreThanImg: boolean;
 
 	items = [
 		'security.homeprotection.homesecurity.homeSecurityAffect1',
@@ -25,6 +26,12 @@ export class WidgetHomeSecurityComponent {
 		private cmsService: CMSService,
 	) {
 		this.fetchCMSArticles();
+		this.getOffsetTop();
+	}
+
+	@HostListener('window:resize', ['$event'])
+	onResize(event) {
+		this.getOffsetTop();
 	}
 
 	fetchCMSArticles() {
@@ -51,5 +58,13 @@ export class WidgetHomeSecurityComponent {
 		});
 
 		articleDetailModal.componentInstance.articleId = this.peaceOfMindArticleId;
+	}
+
+	getOffsetTop() {
+		const descEle = document.getElementById('desc-2');
+		const ImgEle = document.getElementById('gem');
+		const descTop = descEle ? descEle.getBoundingClientRect().bottom + 32 : 0; // 32 is the padding of this element and the next element.
+		const imgTop = ImgEle ? ImgEle.getBoundingClientRect().bottom : 0
+		this.descMoreThanImg = descTop > imgTop;
 	}
 }
