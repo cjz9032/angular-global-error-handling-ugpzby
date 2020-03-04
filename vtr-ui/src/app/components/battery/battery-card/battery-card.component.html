@@ -72,7 +72,7 @@
 		<div class="row px-3"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
 			<div class="p-0 pr-2 col-auto"
-				role="tree" 
+				role="text" 
 				id="batteryConditionNote{{i}}"
 				*ngIf="batteryConditions[i].condition!= batteryConditionsEnum.FullACAdapterSupport">
 				<span role="img"
@@ -99,7 +99,7 @@
 			</div>
 			<div *ngIf="batteryConditions[i].condition == batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
 				class="p-0 pr-2 col-auto adapter-support">
-				<span id="icon-ConditionACAdapterError" attr.aria-label="icon-ConditionACAdapterError"  class="icomoon icomoon-ConditionACAdapterError"></span>
+				<span  class="icomoon icomoon-ConditionACAdapterError" role="img" id="icon-ConditionACAdapterError" ></span>
 			</div>
 			<div class='col battery-conditions-tips'>
 				<span role="text"
