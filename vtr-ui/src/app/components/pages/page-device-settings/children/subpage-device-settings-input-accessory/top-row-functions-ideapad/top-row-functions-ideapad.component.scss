@@ -2,11 +2,17 @@
 
 .top-row-key-block{
 	.title-blck{
+		.left-icon-column {
+			padding: 0 1rem 0 0;
+		}
+		.left-icon-block {
+			width: 2rem;
+			position: relative;
+		}
 		.left-icon {
-			display: inline-block;
-			font-size: $fontsize_md;
-			height: 1em;
-			width: 1.12em;
+			font-size: $fontsize_lg;
+			height: 2em;
+			width: 2em;
 			color:$menu_hover;
 			overflow: visible;
 			vertical-align: -0.12em;
