@@ -870,12 +870,12 @@
                 "messages": {
                     "feedbackSuccess": "Kiitos palautteestasi."
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Kuinka todennäköisesti suosittelisit Lenovo Vantage -sovellusta ystävälle tai työtoverille?",
+                "question7": "Tiesitkö, että voit käyttää Lenovo Vantage -ohjelmaa pitääksesi tietokoneesi ohjelmistot (ohjaimet, laiteohjelmistot ja BIOS:n) ajan tasalla?",
+                "question8": "Oletko käyttänyt Lenovo Vantage -palvelua tietokonettasi koskevien tukitietojen hakemiseen?",
+                "tips2": "Kirjoita halutessasi muita kommentteja alle",
+                "emailAddressLabel": "Syötä sähköpostiosoitteesi, jos haluat, että Lenovo Vantage -tiimi ottaa sinuun yhteyttä.",
+                "emailAddress": "Sähköpostiosoite"
             }
         },
         "quickSettings": {
@@ -1050,7 +1050,7 @@
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update -ohjelmisto tai asenna se manuaalisesti <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tästä</a>. Käynnistä tietokone uudelleen asennuksen jälkeen.",
+                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri. Voit myös asentaa ajurin <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">täältä</a>. Käynnistä tietokone uudelleen asennuksen jälkeen.",
                     "StoreLimitation": "<b>Akku voi tallentaa vain {{value}}%</b> sen alkuperäisestä täydestä varauskapasiteetista.",
                     "HighTemperature": "<b>Latauksen purkaminen</b> on keskeytetty <b>akun korkean lämpötilan vuoksi.</b>",
                     "TrickleCharge": "Akun lataus on <b>purettu kokonaan</b>, ja akku on ladattava uudelleen. Tämä saattaa kestää yli kymmenen tuntia.",

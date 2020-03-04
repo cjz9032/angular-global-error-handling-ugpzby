@@ -870,12 +870,12 @@
                 "messages": {
                     "feedbackSuccess": "Hvala vam na povratnim informacijama!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Kolika je vjerojatnost da preporučite Lenovo Vantage aplikaciju prijatelju ili kolegi?",
+                "question7": "Jeste li znali da Lenovo Vantage možete koristiti da biste ažurirali softver (upravljačke programe, firmver i BIOS) na računalu?",
+                "question8": "Jeste li Lenovo Vantage koristili za pristup informacijama o podršci vašem računalu?",
+                "tips2": "U nastavku unesite bilo kakve dodatne komentare",
+                "emailAddressLabel": "Ostavite svoju adresu e-pošte ako želite da vas tim Lenovo Vantage kontaktira.",
+                "emailAddress": "Adresa e-pošte"
             }
         },
         "quickSettings": {
@@ -1050,7 +1050,7 @@
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Prilagodnik izmjeničnog napona nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Prilagodnik izmjeničnog napona ne može pružiti dovoljno energije.</b>",
-                    "MissingDriver": "<b>Upravljački program Lenovo Power Manager</b> nije instaliran ili ne radi pravilno. Pokrenite Windows Update ili ga ručno instalirajte <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odavde</a>. Nakon instalacije ponovo pokrenite računalo.",
+                    "MissingDriver": "<b>Upravljački program Lenovo Power Manager</b> nije instaliran ili ne radi pravilno. Pokrenite Windows Update za instalaciju najnovijeg upravljačkog programa. Upravljački program za instalaciju također možete preuzeti <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovdje</a>. Nakon instalacije ponovo pokrenite računalo.",
                     "StoreLimitation": "<b>Baterija može pohraniti samo {{value}}% od</b> svojeg punog izvornog kapaciteta.",
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno jer je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>potpuno ispražnjena</b> i mora se napuniti. To možete potrajati više od deset sati.",

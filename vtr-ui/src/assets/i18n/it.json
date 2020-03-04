@@ -870,12 +870,12 @@
                 "messages": {
                     "feedbackSuccess": "Grazie del feedback!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Con quale probabilità consiglieresti l'applicazione Lenovo Vantage a un amico o un collega?",
+                "question7": "Sapevi che è possibile utilizzare Lenovo Vantage per aggiornare il software (driver, firmware e BIOS) del computer?",
+                "question8": "Hai utilizzato Lenovo Vantage per accedere alle informazioni di supporto relative al computer?",
+                "tips2": "Fornisci di seguito eventuali commenti aggiuntivi",
+                "emailAddressLabel": "Fornisci il tuo indirizzo e-mail se vuoi essere contattato dal team Lenovo Vantage.",
+                "emailAddress": "Indirizzo e-mail"
             }
         },
         "quickSettings": {
@@ -1050,7 +1050,7 @@
                     "NotGood": "<b>La batteria non è in buone condizioni.</b>",
                     "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b>",
                     "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente.</b>",
-                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update o installarlo manualmente da <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">qui</a>. Al termine dell'installazione, riavviare il computer.",
+                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente. È anche possibile installare il driver da <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">qui</a>. Al termine dell'installazione, riavviare il computer.",
                     "StoreLimitation": "<b>La batteria può mantenere solo il {{value}}% della</b> sua capacità di carica completa originale.",
                     "HighTemperature": "<b>Lo scaricamento</b> è stato interrotto poiché la <b>temperatura della batteria è troppo elevata.</b>",
                     "TrickleCharge": "La batteria è <b>completamente scarica</b> e deve essere ricaricata. Questa operazione potrebbe richiedere almeno dieci ore.",

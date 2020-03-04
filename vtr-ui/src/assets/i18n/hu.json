@@ -870,12 +870,12 @@
                 "messages": {
                     "feedbackSuccess": "Köszönjük a visszajelzését."
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Mennyire valószínű, hogy ajánlaná a Lenovo Vantage alkalmazást egy ismerősének vagy munkatársának?",
+                "question7": "Tudta, hogy a Lenovo Vantage segítségével naprakészen tarthatja a számítógép szoftvereit (illesztőprogramjait, firmware-jét és BIOS-át)?",
+                "question8": "Használta már a Lenovo Vantage alkalmazást a számítógépével kapcsolatos támogatási információk eléréséhez?",
+                "tips2": "Ha van további megjegyzése, írja le alább.",
+                "emailAddressLabel": "Ha szeretné, hogy a Lenovo Vantage csapata felvehesse Önnel a kapcsolatot, adja meg az e-mail-címét.",
+                "emailAddress": "E-mail-cím"
             }
         },
         "quickSettings": {
@@ -1050,7 +1050,7 @@
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
-                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Kérjük, futtassa a Windows Update szolgáltatást, vagy telepítse manuálisan <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">innen</a>. A telepítés után indítsa újra a számítógépet.",
+                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez. A <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">helyről letöltött illesztőprogramot itt</a> is telepítheti. A telepítés után indítsa újra a számítógépet.",
                     "StoreLimitation": "<b>Az akkumulátor csak az eredeti teljes töltési kapacitás {{value}}%-át</b> tudja tárolni.",
                     "HighTemperature": "A <b>lemerítés</b> leállt, mert az <b>akkumulátor túl meleg.</b>",
                     "TrickleCharge": "Az akkumulátor <b>teljesen lemerült</b>, fel kell tölteni. Ez akár 10 órán át vagy tovább is eltarthat.",

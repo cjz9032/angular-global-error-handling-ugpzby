@@ -870,12 +870,12 @@
                 "messages": {
                     "feedbackSuccess": "소중한 의견을 들려주셔서 감사합니다!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "친구나 동료들에게 Lenovo Vantage 어플리케이션을 추천할 가능성이 얼마나 됩니까?",
+                "question7": "Lenovo Vantage를 사용하면 소프트웨어(드라이버, 펌웨어, BIOS)를 최신 상태로 유지할 수 있다는 사실을 알고 계십니까?",
+                "question8": "Lenovo Vantage를 사용하여 컴퓨터 관련 지원 정보를 얻은 적이 있으십니까?",
+                "tips2": "추가 의견은 아래에 남겨주시기 바랍니다",
+                "emailAddressLabel": "혹시 Lenovo Vantage 팀에게 연락을 받길 원하신다면 이메일 주소를 남겨주시기 바랍니다.",
+                "emailAddress": "이메일 주소"
             }
         },
         "quickSettings": {
@@ -1050,7 +1050,7 @@
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
                     "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b>",
                     "LimitedACAdapterSupport": "<b>AC 어댑터는 충분한 전원을 공급하지 못합니다.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. Windows 업데이트를 실행하거나 <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">여기</a>에서 수동으로 설치하십시오. 설치한 후 컴퓨터를 다시 시작하십시오.",
+                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. 최신 드라이버를 설치하려면 Windows 업데이트를 실행하십시오. <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">여기</a>에서 드라이버를 설치할 수도 있습니다. 설치한 후 컴퓨터를 다시 시작하십시오.",
                     "StoreLimitation": "<b>배터리는 원래 완전 충전 용량의 {{value}}%만</b> 저장할 수 있습니다.",
                     "HighTemperature": "배터리 온도가 너무 높아 <b>방전</b>이 <b>중단되었습니다.</b>",
                     "TrickleCharge": "배터리가 <b>완전히 방전되어</b> 다시 충전해야 합니다. 이 작업은 10시간 이상이 소요될 수 있습니다.",

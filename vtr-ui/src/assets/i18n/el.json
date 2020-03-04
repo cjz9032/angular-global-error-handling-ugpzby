@@ -870,12 +870,12 @@
                 "messages": {
                     "feedbackSuccess": "Σας ευχαριστούμε για τα σχόλιά σας!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Πόσο πιθανό είναι να συστήσετε την εφαρμογή Lenovo Vantage σε φίλο ή συνάδελφο;",
+                "question7": "Γνωρίζατε ότι μπορείτε να χρησιμοποιήσετε το Lenovo Vantage για να ενημερώνετε το λογισμικό (προγράμματα οδήγησης, υλικολογισμικό και BIOS) του υπολογιστής σας;",
+                "question8": "Έχετε χρησιμοποιήσει το Lenovo Vantage για να αποκτήσετε πρόσβαση σε πληροφορίες υποστήριξης σχετικά με τον υπολογιστή σας;",
+                "tips2": "Παρακαλούμε αφήστε τυχόν επιπλέον σχόλια παρακάτω",
+                "emailAddressLabel": "Παρακαλούμε αφήστε τη διεύθυνση email σας, εάν θα θέλατε να επικοινωνήσει μαζί σας η ομάδα Lenovo Vantage.",
+                "emailAddress": "Διεύθυνση email"
             }
         },
         "quickSettings": {
@@ -1050,7 +1050,7 @@
                     "NotGood": "<b>Η μπαταρία δεν είναι σε καλή κατάσταση.</b>",
                     "NotSupportACAdapter": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b>",
                     "LimitedACAdapterSupport": "<b>Ο μετασχηματιστής AC δεν μπορεί να παρέχει επαρκή ισχύ.</b>",
-                    "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update ή εγκαταστήστε το χειροκίνητα από <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">εδώ</a>. Μετά την εγκατάσταση, επανεκκινήστε τον υπολογιστή σας.",
+                    "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update για να εγκαταστήσετε το πιο πρόσφατο πρόγραμμα οδήγησης. Μπορείτε επίσης να εγκαταστήσετε το πρόγραμμα οδήγησης από <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">εδώ</a>. Μετά την εγκατάσταση, επανεκκινήστε τον υπολογιστή σας.",
                     "StoreLimitation": "<b>Η μπαταρία μπορεί να αποθηκεύσει μόνο το {{value}}% από</b> την αρχική της χωρητικότητα πλήρους φόρτισης.",
                     "HighTemperature": "Η <b>αποφόρτιση</b> διακόπηκε, επειδή η <b>θερμοκρασία της μπαταρίας είναι πολύ υψηλή.</b>",
                     "TrickleCharge": "Η μπαταρία <b>αποφορτίστηκε εντελώς</b> και πρέπει να ξαναφορτιστεί. Η διαδικασία ενδέχεται να διαρκέσει δέκα ώρες ή και περισσότερο.",

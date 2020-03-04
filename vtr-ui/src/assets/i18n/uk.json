@@ -870,12 +870,12 @@
                 "messages": {
                     "feedbackSuccess": "Дякуємо за ваш відгук!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Наскільки ймовірно, що ви б порекомендували програму Lenovo Vantage другу або колезі?",
+                "question7": "Чи знали ви, що можете використовувати Lenovo Vantage для оновлення програмного забезпечення (драйверів, мікропрограм і BIOS) на своєму комп'ютері?",
+                "question8": "Чи використовували ви Lenovo Vantage для отримання довідкової інформації про свій комп'ютер?",
+                "tips2": "Залишіть додаткові коментарі нижче",
+                "emailAddressLabel": "Укажіть свою електронну адресу, якщо ви хочете, щоб з вами могла зв'язатися команда Lenovo Vantage.",
+                "emailAddress": "Ел. адреса"
             }
         },
         "quickSettings": {
@@ -1050,7 +1050,7 @@
                     "NotGood": "<b>Акумулятор у поганому стані.</b>",
                     "NotSupportACAdapter": "<b>Адаптер змінного струму не підтримується.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер змінного струму не може забезпечити достатню потужність.</b>",
-                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update або інсталюйте його вручну <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">звідси</a>. Перезавантажте комп'ютер після завершення інсталяції.",
+                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер. Ви також можете інсталювати драйвер <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">звідси</a>. Перезавантажте комп'ютер після завершення інсталяції.",
                     "StoreLimitation": "<b>Акумулятор може заряджатися лише на {{value}}%</b> від своєї початкової повної ємності.",
                     "HighTemperature": "<b>Розряджання</b> зупинено <b>через зависоку температуру акумулятора.</b>",
                     "TrickleCharge": "Акумулятор <b>повністю розряджено</b>, його потрібно зарядити. Це може зайняти десять або більше годин.",

@@ -870,12 +870,12 @@
                 "messages": {
                     "feedbackSuccess": "Hvala za povratne informacije."
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Ali bi program Lenovo Vantage priporočili prijatelju ali sodelavcu?",
+                "question7": "Ali ste vedeli, da program Lenovo Vantage lahko uporabite za posodabljanje programske opreme (gonilnikov, vdelane programske opreme in BIOS-a) v računalniku?",
+                "question8": "Ali ste program Lenovo Vantage že uporabili za dostop do informacij o podpori za vaš računalnik?",
+                "tips2": "Spodaj napišite morebitne dodatne komentarje",
+                "emailAddressLabel": "Če želite, da ekipa programa Lenovo Vantage po potrebi vzpostavi stik z vami, vnesite svoj e-poštni naslov.",
+                "emailAddress": "E-poštni naslov"
             }
         },
         "quickSettings": {
@@ -1050,7 +1050,7 @@
                     "NotGood": "<b>Baterija ni v dobrem stanju.</b>",
                     "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b>",
                     "LimitedACAdapterSupport": "<b>Napajalnik ni dovolj zmogljiv.</b>",
-                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update ali gonilnik namestite ročno <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>. Po končani namestitvi znova zaženite računalnik.",
+                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik. Gonilnik lahko dobite tudi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>. Po končani namestitvi znova zaženite računalnik.",
                     "StoreLimitation": "<b>Baterija lahko shrani samo do {{value}}%</b> svoje prvotne polne zmogljivosti polnjenja.",
                     "HighTemperature": "<b>Praznjenje</b> je ustavljeno, ker je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>popolnoma izpraznjena</b> in jo je treba znova napolniti. To lahko traja deset ali več ur.",

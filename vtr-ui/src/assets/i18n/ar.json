@@ -872,12 +872,12 @@
                 "messages": {
                     "feedbackSuccess": "نشكرك على تعليقاتك!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "ما مدى احتمال أن توصي أحد الأصدقاء أو الزملاء بتطبيق Lenovo Vantage؟",
+                "question7": "هل تعلم أنه يمكنك استخدام تطبيق Lenovo Vantage للمحافظة على تحديث البرنامج (برامج التشغيل والبرامج الثابتة وBIOS) على الكمبيوتر؟",
+                "question8": "هل استخدمت Lenovo Vantage للوصول إلى معلومات الدعم الخاصة بالكمبيوتر؟",
+                "tips2": "يرجى ترك أي تعليقات إضافية أدناه",
+                "emailAddressLabel": "يرجى ترك عنوان بريدك الإلكتروني إذا كنت ترغب في أن يتصل بك فريق Lenovo Vantage.",
+                "emailAddress": "عنوان البريد الالكتروني"
             }
         },
         "quickSettings": {
@@ -1052,7 +1052,7 @@
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b></span>",
                     "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
-                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update أو تثبيته يدوياً من <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">هنا</a>. بعد التثبيت، أعد تشغيل الكمبيوتر.",
+                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل. يمكنك أيضًا تثبيت برنامج التشغيل من <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">هنا</a>. بعد التثبيت، أعد تشغيل الكمبيوتر.",
                     "StoreLimitation": "<b>بإمكان البطارية تخزين فقط {{value}}% من</b> سعة شحنتها الأصلية.",
                     "HighTemperature": "<b>تم إيقاف التفريغ</b> لأن <b>درجة حرارة البطارية مرتفعة أكثر من اللازم.</b>",
                     "TrickleCharge": "تم <b>تفريغ البطارية بشكل كامل</b> ويجب إعادة شحنها. قد تستغرق هذه العملية 10 ساعات أو أكثر.",
