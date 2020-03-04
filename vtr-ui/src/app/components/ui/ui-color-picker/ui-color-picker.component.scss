@@ -65,6 +65,11 @@
             border-radius: 0.5rem;
             box-shadow: 0 0 1rem #283756;
             z-index: 1 !important;
+            .cursor{
+                background: $light;
+                box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+                border: none !important;
+            }
             .rgba-text{
                 .box{
                    padding: 0 16px 8px 16px !important;

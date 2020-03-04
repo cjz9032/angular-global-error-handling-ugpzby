@@ -10,8 +10,10 @@ export class ModalVoiceComponent implements OnInit {
 
 	constructor(public activeModal: NgbActiveModal) { }
 	value: any;
+	lowerCaseValue;
 	metricsParent: any;
 	ngOnInit() {
+		this.lowerCaseValue = this.value.toLowerCase();
 	}
 
 	closeModal() {

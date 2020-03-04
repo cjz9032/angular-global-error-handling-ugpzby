@@ -40,14 +40,15 @@
 										tabindex="0"
 										role="text">
 										<span
-											role="text">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.click' | translate}}</span>&nbsp;
-										<a id="goto_nightlight_link"
+											role="text" id="displayColorTemperature-link-click">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.click' | translate}}</span>&nbsp;
+										<a id="goto-nightlight-link"
 											href="javascript:void()"
-											attr.aria-label="goto_nightlight_link"
+											role="link"
+											attr.aria-label="goto-nightlight-link"
 											(click)="launchProtocol('ms-settings:nightlight')"
 											(keydown.enter)="launchProtocol('ms-settings:nightlight')">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.here' | translate}}</a>&nbsp;
 										<span
-											role="text">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.rest' | translate}}</span>
+											role="text" id="displayColorTemperature-link">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.rest' | translate}}</span>
 									</div>
 								</vtr-ui-row-switch>
 							</li>
