@@ -124,7 +124,7 @@
 						[class.disabled]="isGaugeResetRunning">
 						<div class="col px-5">
 							<vtr-ui-checkbox [componentId]="'cb' + textId"
-								[disabled]="false"
+								[disabled]="isGaugeResetRunning"
 								[value]="bctInfo.checkboxValue"
 								[checked]="bctInfo.checkboxValue"
 								[label]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate"
