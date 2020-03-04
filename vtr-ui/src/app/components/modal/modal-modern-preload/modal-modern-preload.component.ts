@@ -7,6 +7,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { ModernPreloadEnum } from 'src/app/enums/modern-preload.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { ClipboardService } from 'ngx-clipboard';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 
 @Component({
 	selector: 'vtr-modal-modern-preload',
@@ -16,8 +17,8 @@ import { ClipboardService } from 'ngx-clipboard';
 export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	private notificationSubscription: Subscription;
-	@ViewChild('redeemUrlCopy', {static: false}) redeemUrlCopy: ElementRef;
-	@ViewChild('redeemCodeCopy', {static: false}) redeemCodeCopy: ElementRef;
+	@ViewChild('redeemUrlCopy', { static: false }) redeemUrlCopy: ElementRef;
+	@ViewChild('redeemCodeCopy', { static: false }) redeemCodeCopy: ElementRef;
 
 	isOnline: boolean;
 	isAppInstallError = false;
@@ -35,6 +36,8 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 		INSTALLING: 5,
 		FAILED_INSTALL: -1,
 	};
+
+	redemptionSupport = false;
 
 	successIconBase64 = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciI
 		HZpZXdCb3g9IjAgMCAyMSAyMSI+PHRpdGxlPmltZ19teV9zb2Z0d2FyZV9ncmVlbl9jaGVjazwvdGl0bGU+PHBhdGggZD0iTTI
@@ -63,11 +66,18 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 		public activeModal: NgbActiveModal,
 		private commonService: CommonService,
 		public modernPreloadService: ModernPreloadService,
+		private hypSettings: HypothesisService,
 		private clipboardService: ClipboardService,
 	) { }
 
 	ngOnInit() {
-		this.getAppList();
+		this.hypSettings.getFeatureSetting('ModernPreload_Redemption').then((result) => {
+			this.redemptionSupport = result === 'true';
+		}).catch((e) => {
+			this.redemptionSupport = false;
+		}).finally(() => {
+			this.getAppList();
+		});
 		if (this.modernPreloadService.IsInstalling && !this.modernPreloadService.IsCancelInstall) {
 			this.modernPreloadService.DownloadButtonStatus = DownloadButtonStatusEnum.DOWNLOADING;
 		}
@@ -151,7 +161,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 			}
 			this.appList.push(app);
 		});
-		this.setAppProps();
+		if (this.redemptionSupport) { this.setAppProps(); }
 		this.checkedApp();
 		this.modernPreloadService.DownloadButtonStatus = DownloadButtonStatusEnum.DOWNLOAD;
 	}
@@ -221,7 +231,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 	}
 
 	isAppCheckDisabled(appItem: AppItem) {
-		return this.modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || appItem.isCheckDisabled;
+		return !!(this.modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || appItem.isCheckDisabled);
 	}
 
 	checkedApp() {
@@ -234,14 +244,14 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 	}
 
 	installEntitledApp() {
-        const sendAppList: AppItem[] = [];
-        this.checkedAppList.forEach(app => {
+		const sendAppList: AppItem[] = [];
+		this.checkedAppList.forEach(app => {
 			sendAppList.push({ appID: app.appID, status: app.status });
 		});
-        this.isAppInstallError = false;
-        this.modernPreloadService.installEntitledApp(sendAppList, (response) => this.responseHandler(response));
-        this.modernPreloadService.DownloadButtonStatus = DownloadButtonStatusEnum.DOWNLOADING;
-    }
+		this.isAppInstallError = false;
+		this.modernPreloadService.installEntitledApp(sendAppList, (response) => this.responseHandler(response));
+		this.modernPreloadService.DownloadButtonStatus = DownloadButtonStatusEnum.DOWNLOADING;
+	}
 
 	retry() {
 		this.getAppList();

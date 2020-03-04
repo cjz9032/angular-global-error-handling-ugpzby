@@ -55,7 +55,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			this.cameraPreview = content;
 			if (!this.isCameraInitialized) {
 				if (content && !this.cameraDetail.isPrivacyModeEnabled) {
-					this.initializeCameraAsync();
+					this.initializeCameraAsync('ViewChild.cameraPreview');
 				} else {
 					this.cleanupCameraAsync('ViewChild.cameraPreview');
 				}
@@ -178,8 +178,9 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	initializeCameraAsync() {
-		this.logger.info('InitializeCameraAsync');
+	initializeCameraAsync(source: string) {
+		this.isCameraInitialized = true;
+		this.logger.info('InitializeCameraAsync', source);
 		// const self = this;
 		try {
 			// Get available devices for capturing pictures
@@ -218,7 +219,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 								this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedTitle';
 								this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedDescription';
 								this.logger.error('CameraControlComponent.MediaCaptureFailed try to reinitialize once', error);
-								this.initializeCameraAsync();
+								this.initializeCameraAsync('oMediaCapture.failed');
 							}
 						});
 					});
@@ -298,11 +299,9 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 		if (visibility.toLowerCase() === 'visible') {
 			if (!this.isCameraInitialized) {
-				this.isCameraInitialized = true;
-				this.initializeCameraAsync();
+				this.initializeCameraAsync('onVisibilityChange');
 			}
 		} else {
-			this.isCameraInitialized = false;
 			this.cleanupCameraAsync('onVisibilityChange');
 		}
 	}
