@@ -89,7 +89,7 @@
 						<div class="col col-1 text-center"
 							*ngIf="iconPlacement==='right'">
 							<div class="item-icon status"
-								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4 && !item.retryText">
+								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4 && item.status !== 7">
 								<div class="icon-bkg"
 									id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
@@ -113,7 +113,7 @@
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
-							<div [hidden]="!item.retryText">
+							<div [hidden]="item.status !== 7">
 								<a href="javascript:void(0);"
 									class="retryLink"
 									(click)="retry(item, $event)">{{item.retryText}}</a>
