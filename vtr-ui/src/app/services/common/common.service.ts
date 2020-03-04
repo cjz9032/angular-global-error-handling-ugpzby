@@ -7,6 +7,7 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { Subject } from 'rxjs/internal/Subject';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { ReplaySubject } from 'rxjs';
+import { error } from 'protractor';
 
 @Injectable({
 	providedIn: 'root'
@@ -301,5 +302,39 @@ export class CommonService {
 		if (!isPowerPageAvailable) {
 			this.sendNotification(LocalStorageKey.IsPowerPageAvailable, {available: isPowerPageAvailable, link: false });
 		}
+	}
+
+	public getQueryParamterFromUrl(url: string, query?: string): Object | string | null {
+		const queryStr = url.substring(url.lastIndexOf('?') + 1);
+		const queryObj = {};
+		if (!queryStr) {
+			return null;
+		}
+
+		const queryArray = queryStr
+		.split('&')
+		.filter((str) => str.includes('='))
+		.map((str) => str.replace('amp;', ''));
+
+		queryArray.forEach((str) => {
+			const keyValueArray = str.split('=');
+			queryObj[keyValueArray[0]] = keyValueArray[1];
+		});
+
+		if (query) {
+			return queryObj[query] ? queryObj[query] : null;
+		}
+
+		return queryObj;
+	}
+
+	public waitAsyncCallTimeout(func: Function, milliseconds: number) : Promise<any> {
+		return new Promise((rev, rej) => {
+			setTimeout(() => {
+				rej(new Error('timeout'));
+			}, milliseconds);
+
+			func().then(rev, rej);
+		})
 	}
 }
