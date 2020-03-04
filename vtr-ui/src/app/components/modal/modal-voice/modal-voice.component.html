@@ -33,7 +33,6 @@
 		*ngIf="value=='translation'">
 		{{'device.smartAssist.voice.translation.title' | translate}}</h1>
 	<h1 class="mb-3 sub-heading">{{'device.smartAssist.voice.modalPopUp.heading' | translate}}</h1>
-
 	<div class="row">
 		<div class="col">
 			<div class="number-list">
@@ -42,10 +41,14 @@
 						<div class="serial-bakcground">
 							<p class="serial">1.</p>
 						</div>
-						<span role="text"
+						<span *ngIf="lowerCaseValue === 'voicetotext'" role="text"
 							class="text-regular"
 							id="voice-modal-{{value}}-point-1"
 							attr.aria-label="voice-modal-{{value}}-point-1">{{'device.smartAssist.voice.modalPopUp.point1' | translate}}</span>
+							<span *ngIf="lowerCaseValue === 'translation'" role="text"
+							class="text-regular"
+							id="voice-modal-{{value}}-point-1"
+							attr.aria-label="voice-modal-{{value}}-point-1">{{'device.smartAssist.voice.modalPopUp.point10' | translate}}</span>
 					</div>
 				</li>
 			</div>
