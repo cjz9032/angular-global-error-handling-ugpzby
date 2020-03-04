@@ -8,6 +8,9 @@
 	.gaming-header-image {
 		height: 4rem;
 		margin-top: 0.8rem;
+		@media #{$black-on-white}{
+			background-color: $high-contrast-grey;
+			}			
 	}
 	.help-box {
 		height: 4rem;
