@@ -29,7 +29,7 @@ export class WifiGuardService implements CanActivate {
 	}
 
 	async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-		if (state.root.queryParams['amp;plugin'] === 'lenovowifisecurityplugin') {
+		if (state.root.queryParams['plugin'] === 'lenovowifisecurityplugin') {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, true);
 			return true;
 		}
