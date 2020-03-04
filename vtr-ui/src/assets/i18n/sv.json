@@ -870,12 +870,12 @@
                 "messages": {
                     "feedbackSuccess": "Tack för din feedback!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Hur troligt är det att du skulle rekommendera en vän eller kollega programmet Lenovo Vantage?",
+                "question7": "Visste du att du kan använda Lenovo Vantage för att hålla programvara (drivrutiner, fast programvara och BIOS) på datorn uppdaterade?",
+                "question8": "Har du använt Lenovo Vantage för att få supportinformation om datorn?",
+                "tips2": "Lämna eventuella övriga kommentarer nedan",
+                "emailAddressLabel": "Lämna din e-postadress om du kan tänka dig att eventuellt bli kontaktad av Lenovo Vantage-teamet.",
+                "emailAddress": "E-postadress"
             }
         },
         "quickSettings": {
@@ -1050,7 +1050,7 @@
                     "NotGood": "<b>Batteriet är inte i gott skick.</b>",
                     "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b>",
                     "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning.</b>",
-                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update eller installera programmet manuellt <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">här</a>. Starta om datorn efter installationen.",
+                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update för att installera den senaste drivrutinen. Du kan även installera drivrutinen <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">härifrån</a>. Starta om datorn efter installationen.",
                     "StoreLimitation": "<b>Batteriet kan endast lagra {{value}}% av</b> sin ursprungliga laddningskapacitet.",
                     "HighTemperature": "<b>Urladdning</b> har stoppats på grund av att <b>batteritemperaturen är för hög.</b>",
                     "TrickleCharge": "Batteriet var <b>helt urladdat</b> och måste laddas. Det kan ta tio timmer eller mer.",

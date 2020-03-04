@@ -870,12 +870,12 @@
                 "messages": {
                     "feedbackSuccess": "謝謝您的意見回饋！"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "您將 Lenovo Vantage 應用程式推薦給朋友或同事的可能性有多大？",
+                "question7": "您知道可以使用 Lenovo Vantage 讓您電腦上的軟體（驅動程式、韌體和 BIOS）保持在最新版本嗎？",
+                "question8": "您是否使用 Lenovo Vantage 存取您的電腦的相關支援資訊？",
+                "tips2": "請在下方將任何其他意見告訴我們",
+                "emailAddressLabel": "如果您希望 Lenovo Vantage 團隊與您聯絡，請留下您的電子郵件地址。",
+                "emailAddress": "電子郵件地址"
             }
         },
         "quickSettings": {
@@ -1050,7 +1050,7 @@
                     "NotGood": "<b>電池狀況不佳。</b>",
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 或從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>手動安裝。安裝之後，重新啟動電腦。",
+                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。您也可以從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>安裝驅動程式。安裝之後，重新啟動電腦。",
                     "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",

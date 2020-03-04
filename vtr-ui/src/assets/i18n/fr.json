@@ -870,12 +870,12 @@
                 "messages": {
                     "feedbackSuccess": "Merci pour votre commentaire !"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Quelle est la probabilité que vous recommandiez l'application Lenovo Vantage à un ami ou collègue ?",
+                "question7": "Saviez-vous que vous pouvez utiliser Lenovo Vantage pour mettre à jour les logiciels (pilotes, microprogramme et BIOS) de votre ordinateur ?",
+                "question8": "Avez-vous utilisé Lenovo Vantage pour accéder aux informations d'aide concernant votre ordinateur ?",
+                "tips2": "Veuillez ajouter tout commentaire supplémentaire ci-dessous",
+                "emailAddressLabel": "Indiquez votre adresse e-mail si vous souhaitez être contacté par l'équipe Lenovo Vantage.",
+                "emailAddress": "Adresse e-mail"
             }
         },
         "quickSettings": {
@@ -1050,7 +1050,7 @@
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
                     "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
                     "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
-                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update ou l'installer manuellement depuis <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ici</a>. Après l'installation, redémarrez votre ordinateur.",
+                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote. Vous pouvez également installer le pilote à partir <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">d'ici</a>. Après l'installation, redémarrez votre ordinateur.",
                     "StoreLimitation": "<b>La batterie peut seulement stocker {{value}}% de</b> sa capacité de charge totale initiale.",
                     "HighTemperature": "Le <b>déchargement</b> a été interrompu, car la <b>température de la batterie est trop élevée.</b>",
                     "TrickleCharge": "La batterie est <b>complètement déchargée</b> et doit être rechargée. Cette opération peut durer plus de dix heures.",

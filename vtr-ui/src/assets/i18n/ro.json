@@ -870,12 +870,12 @@
                 "messages": {
                     "feedbackSuccess": "Vă mulţumim pentru feedbackul furnizat!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Care este probabilitatea de a recomanda aplicația Lenovo Vantage unui prieten sau unui coleg?",
+                "question7": "Știați că puteți utiliza Lenovo Vantage pentru a menține actualizat software-ul computerului (driverele, firmware-ul și BIOS-ul)?",
+                "question8": "Ați utilizat Lenovo Vantage pentru a accesa informațiile referitoare la asistența pentru computer?",
+                "tips2": "Vă rugăm să lăsați orice comentarii suplimentare mai jos",
+                "emailAddressLabel": "Dacă doriți să fiți contactat de către echipa Lenovo Vantage, vă rugăm să ne lăsați adresa dvs. de e-mail.",
+                "emailAddress": "Adresă de e-mail"
             }
         },
         "quickSettings": {
@@ -1050,7 +1050,7 @@
                     "NotGood": "<b>Bateria nu este în stare bună.</b>",
                     "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b>",
                     "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă putere.</b>",
-                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulați Windows Update sau instalați aplicația manual de <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aici</a>. După instalare, reporniți computerul.",
+                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver. Puteți instala driverul și de <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aici</a>. După instalare, reporniţi computerul.",
                     "StoreLimitation": "<b>Bateria poate stoca doar {{value}}% din</b> capacitatea iniţială completă de încărcare.",
                     "HighTemperature": "<b>Descărcarea</b> a fost oprită, deoarece <b>temperatura bateriei este prea mare.</b>",
                     "TrickleCharge": "Bateria a fost <b>descărcată complet</b> şi trebuie reîncărcată. Această operaţiune poate dura zece ore sau mai mult.",

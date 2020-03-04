@@ -870,12 +870,12 @@
                 "messages": {
                     "feedbackSuccess": "תודה על המשוב!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "באיזו מידה סביר שתמליצו על היישום Lenovo Vantage לחבר או לעמית?",
+                "question7": "הידעתם שאתם יכולים להשתמש ב-Lenovo Vantage כדי לשמור על עדכניות התוכנה (מנהלי התקנים, קושחה ו-BIOS) במחשב שלכם?",
+                "question8": "האם השתמשתם ב-Lenovo Vantage כדי לגשת למידע בנושא תמיכה במחשב שלכם?",
+                "tips2": "השאירו הערות נוספות למטה",
+                "emailAddressLabel": "השאירו את כתובת הדוא\"ל שלכם אם ברצונכם שצוות Lenovo Vantage יוכל ליצור איתכם קשר.",
+                "emailAddress": "כתובת דואר אלקטרוני"
             }
         },
         "quickSettings": {
@@ -1050,7 +1050,7 @@
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b></span>",
                     "LimitedACAdapterSupport": "<b>מתאם AC לא יכול לספק מספיק חשמל.</b>",
-                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. יש להפעיל את Windows Update או להתקין את התוכנית באופן ידני <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">מכאן</a>. לאחר ההתקנה, הפעילו מחדש את המחשב.",
+                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. הפעילו את Windows Update כדי להתקין את מנהל ההתקן העדכני ביותר. ניתן גם להתקין את מנהל ההתקן מ <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">כאן</a>. לאחר ההתקנה, הפעילו מחדש את המחשב.",
                     "StoreLimitation": "<b>הסוללה יכולה לאחסן רק {{value}}% מתוך</b> קיבולת הטעינה המקורית שלה.",
                     "HighTemperature": "<b>הפריקה</b> נעצרה מכיוון <b>שטמפרטורת הסוללה גבוהה מדי.</b>",
                     "TrickleCharge": "הסוללה <b>התרוקנה לחלוטין</b> ויש לטעון אותה מחדש. התהליך עשוי לארוך עשר שעות או יותר.",
