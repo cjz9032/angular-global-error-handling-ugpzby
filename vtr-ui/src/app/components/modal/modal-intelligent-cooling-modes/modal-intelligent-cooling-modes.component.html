@@ -4,15 +4,11 @@
         id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.title' | translate}}">
 		{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.title' | translate}}
 	</h4>
-	<button class="close-button bg-white"
-		tabindex="1"
-		(click)="closeModal()"
-		(keydown.enter)="closeModal()"
-		attr.aria-label="intelligentCoolingModesModal-close-button"
-		id="intelligentCoolingModesModal-close-button">
-        <fa-icon role="img" id="intelligentCoolingModesModal-close-button"
-         attr.aria-label="intelligentCoolingModesModal-close-button" 
-         [icon]="['fal', 'times']"></fa-icon>
+	<button class="close-button bg-white" tabindex="1" (click)="closeModal()" (keydown.enter)="closeModal()"
+		attr.aria-label="intelligentCoolingModesModal-close-icon" id="intelligentCoolingModesModal-close-icon">
+		<fa-icon role="img" id="intelligentCoolingModesModal-close-icon"
+			attr.aria-label="intelligentCoolingModesModal-close-icon" [icon]="['fal', 'times']">
+		</fa-icon>
 	</button>
 </div>
 <div class="modal-body vtr-modal-intelligent-cooling-modes">
