@@ -223,9 +223,15 @@
 				overflow: hidden;
 				cursor: pointer;
 				color: $shade_light;
+				@media #{$black-on-white}{
+					color: $high-contrast-grey;
+					}
+					@media #{$white-on-black}{
+					color: $high-contrast-grey;
+					}
 				line-height: 1.5rem;
 				&:hover {
-					color: $gaming_lightest;
+					color: $gaming_lightest;					
 					.icon{
 						background:$screen_dark_20;
 						color: $gaming_lightest;
