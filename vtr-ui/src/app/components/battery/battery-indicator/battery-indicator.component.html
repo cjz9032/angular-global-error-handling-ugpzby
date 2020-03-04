@@ -54,15 +54,15 @@
 			<div class="battery-charging"
 				*ngIf="!batteryNotDetected">
 				<span *ngIf="(isCharging && !(isExpressCharging || isAirplaneMode || isChargeThresholdOn))"
-					class="icomoon icomoon-FA-Plug2x" id="batteryIcon-Charging"></span>
+					class="icomoon icomoon-FA-Plug2x" role="img" id="batteryIcon-Charging"></span>
 				<span *ngIf="(isCharging && isExpressCharging)"
-					class="icomoon icomoon-LE-expressCharging2x" id="batteryIcon-ExpressCharging"></span>
+					class="icomoon icomoon-LE-expressCharging2x" role="img" id="batteryIcon-ExpressCharging"></span>
 				<span *ngIf="(!isCharging && isAirplaneMode)"
-					class="icomoon icomoon-LE-Airplanemode2x" id="batteryIcon-AirplaneMode"></span>
+					class="icomoon icomoon-LE-Airplanemode2x" role="img" id="batteryIcon-AirplaneMode"></span>
 				<span *ngIf="(isCharging && isAirplaneMode)"
-					class="icomoon icomoon-LE-AirplanemodeCharging2x" id="batteryIcon-Charging-AirplaneMode"></span>
+					class="icomoon icomoon-LE-AirplanemodeCharging2x" role="img" id="batteryIcon-Charging-AirplaneMode"></span>
 				<span *ngIf="(isCharging && isChargeThresholdOn && !isAirplaneMode)"
-					class="icomoon icomoon-LE-ConservationCharging2x" id="batteryIcon-ChargeThresholdOn"></span>
+					class="icomoon icomoon-LE-ConservationCharging2x" role="img" id="batteryIcon-ChargeThresholdOn"></span>
 			</div>
 		</div>
 	</div>

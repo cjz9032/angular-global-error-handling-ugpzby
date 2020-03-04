@@ -36,9 +36,8 @@
 									<div class="row pl-3">
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 											<!-- <img src="../../../../../../assets/icons/Hidden keyboard functions.svg" alt="">-->
-											<div class="img-preview"
-												automationId="keyboardMap.background-image"
-												[ngStyle]="{ 'background-image': 'url(' + image + ')'}">
+                                            <div class="img-preview" id="keyboardMap-background-image" role="img" attr.aria-label="keyboardMap-background-image"
+                                                automationId="keyboardMap.background-image" [ngStyle]="{ 'background-image': 'url(' + image + ')'}">
 												<div class="img-preview"
 													[style.background-image]="additionalCapabilitiesObj.privacy ? 'url(' + privacyIcon + ')': ''">
 													<div class="img-preview"
@@ -57,10 +56,10 @@
 									</div>
 									<div class="row keys-row">
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex"
-											*ngFor="let key of shortcutKeys">
+											*ngFor="let key of shortcutKeys;let i=index;">
 											<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 px-0">
 												<h4 class="caption-tittle"
-													id="title-caption"
+													id="keys-title-{{i+1}}"
 													attr.aria-label="{{key.title}}-title">
 													{{key + '.tittle' | translate}}
 												</h4>
@@ -68,7 +67,7 @@
 											<div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 px-0">
 												<p role="text"
 													class="hidden-keyboard-text mb-0"
-													id="title-description"
+													id="keys-description-{{i+1}}"
 													attr.aria-label="{{key.title}}-description">
 													{{key + '.description' | translate}}
 												</p>
@@ -110,12 +109,11 @@
 									[switchId]="'inputAccessories-VoipHotkeys'"
 									automationId="[VoipHotkeys.title, VoipHotkeys.description.main, VoipHotkeys.tooltip]">
 									<div class="row adjust-indent pt-2 caption">
+                                        <div class="col-12 adjust-margin" automationId="VoipHotkeys.description.f10" id="VoipHotkeys-description-f10" role="text">
+                                            {{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f10' | translate}}
+                                        </div>
 										<div class="col-12 adjust-margin"
-											automationId="VoipHotkeys.description.f10">
-											{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f10' | translate}}
-										</div>
-										<div class="col-12 adjust-margin"
-											automationId="VoipHotkeys.description.f11">
+											automationId="VoipHotkeys.description.f11" id="VoipHotkeys-description-f11" role="text">
 											{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f11' | translate}}
 										</div>
 									</div>
@@ -123,7 +121,7 @@
 										*ngIf="installedApps.length > 0; else noAppInstalled">
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 											<div class="pt-3 pb-4 prompting"
-												automationid="VoipHotkeys.hasInstalledAppsDescription">
+												automationid="VoipHotkeys.hasInstalledAppsDescription" role="text" id="VoipHotkeys-hasInstalledAppsDescription">
 												{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsDescription' | translate}}
 											</div>
 											<ng-container *ngFor="let installedApp of installedApps; index as i;"
@@ -146,11 +144,9 @@
 												<div class="feature-note col-12 p-4"
 													id="hasInstalledApps-note"
 													attr.aria-label="hasInstalledApps-note">
-													<p role="text"
-														class="mb-0"
-														automationid="VoipHotkeys.hasInstalledAppsNote">
-														{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsNote' | translate}}
-													</p>
+                                                    <p role="text" class="mb-0" id="VoipHotkeys-hasInstalledAppsNote" automationid="VoipHotkeys.hasInstalledAppsNote">
+                                                        {{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsNote' | translate}}
+                                                    </p>
 												</div>
 											</div>
 										</div>
@@ -158,25 +154,25 @@
 									<ng-template #noAppInstalled>
 										<div class="row adjust-indent">
 											<div class="col-12 adjust-margin">
-												<div class="pt-3 pb-4 prompting"
-													automationid="VoipHotkeys.noInstalledAppsDescription">
-													{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsDescription' | translate}}
-												</div>
+                                                <div class="pt-3 pb-4 prompting" role="text" id="VoipHotkeys-noInstalledAppsDescription"
+                                                    automationid="VoipHotkeys.noInstalledAppsDescription">
+                                                    {{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsDescription' | translate}}
+                                                </div>
 											</div>
 										</div>
 										<div class="row adjust-indent mt-2">
 											<div class="col-12 adjust-margin">
-												<span role="text"
+												<span role="img" id="app-icon-skype"
 													class="app-icon icon-s4b mr-4"></span>
-												<span role="text"
+												<span role="text" id="skype-for-business"
 													class="app-text">Skype for Business 2016</span>
 											</div>
 										</div>
 										<div class="row adjust-indent mt-5 pb-4 mb-5">
 											<div class="col-12 adjust-margin">
-												<span role="text"
+												<span role="text" id="app-icon-microsoft"
 													class="app-icon icon-teams mr-4"></span>
-												<span role="text"
+												<span role="text" id="microsoft-teams-1.0"
 													class="app-text">Microsoft Teams 1.0</span>
 											</div>
 										</div>
@@ -185,7 +181,8 @@
 												id="noInstalledApps-note"
 												attr.aria-label="noInstalledApps-note">
 												<p role="text"
-													class="mb-0"
+                                                    class="mb-0"
+                                                    id="VoipHotkeys-noInstalledAppsNote"
 													automationid="VoipHotkeys.noInstalledAppsNote">
 													{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsNote' | translate}}
 												</p>

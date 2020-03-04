@@ -338,7 +338,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
 	}
 
-	onDolbySeetingRadioChange(event) {
+	onDolbySettingRadioChange(event) {
 		try {
 			this.dolbyModeResponse.currentMode = event.target.value;
 			this.dolbyAudioToggleCache.dolbyModeResponse = this.dolbyModeResponse;
@@ -360,6 +360,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	onToggleOfMicrophoneAutoOptimization(event) {
 		try {
+
+			this.microphoneProperties.autoOptimization = event.switchValue;
+			this.updateMicrophoneCache();
 			if (this.audioService.isShellAvailable) {
 				this.cacheFlag.autoOptimization = false;
 				this.audioService.setMicrophoneAutoOptimization(event.switchValue)
@@ -380,6 +383,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		const volume = event.value;
 		try {
 			this.microphoneProperties.volume = volume;
+			this.updateMicrophoneCache();
+
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setMicrophoneVolume(volume)
 					.then((value) => {
@@ -397,6 +402,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	public onToggleOfMicrophone(event) {
 		try {
+			this.microphoneProperties.muteDisabled = event.switchValue;
+			this.updateMicrophoneCache();
+
 			if (this.dashboardService.isShellAvailable) {
 				this.dashboardService.setMicrophoneStatus(event.switchValue)
 					.then((value: boolean) => {
@@ -417,6 +425,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	public onToggleOfSuppressKbdNoise(event) {
 		try {
+			this.microphoneProperties.keyboardNoiseSuppression = event.switchValue;
+			this.updateMicrophoneCache();
+
 			if (this.audioService.isShellAvailable) {
 				this.cacheFlag.keyboardNoiseSuppression = false;
 				this.audioService.setSuppressKeyboardNoise(event.switchValue)
@@ -435,6 +446,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	public setMicrophoneAEC(event) {
 		try {
+			this.microphoneProperties.AEC = event.switchValue;
+			this.updateMicrophoneCache();
+
 			if (this.audioService.isShellAvailable) {
 				this.cacheFlag.AEC = false;
 				this.audioService.setMicrophoneAEC(event.switchValue)
@@ -564,12 +578,12 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	updateMicrophoneHandler(msg: any) {
-        this.microphoneLoader = false;
+		this.microphoneLoader = false;
 
-        if (msg.hasOwnProperty('available')) {
+		if (msg.hasOwnProperty('available')) {
 			this.microphoneProperties.available = msg.available;
 		}
-        if (msg.hasOwnProperty('muteDisabled')) {
+		if (msg.hasOwnProperty('muteDisabled')) {
 			this.microphoneProperties.muteDisabled = msg.muteDisabled;
 		}
 		if (msg.hasOwnProperty('volume')) {
@@ -582,7 +596,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			const status = new FeatureStatus(msg.available, msg.muteDisabled, msg.permission);
 			this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);
 		}
-        if (msg.hasOwnProperty('modes')) {
+		if (msg.hasOwnProperty('modes')) {
 			this.microOptimizeModeResponse.modes = msg.modes;
 		}
 		if (msg.hasOwnProperty('currentMode')) {
@@ -591,22 +605,22 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.microOptimizeModeResponse.current = msg.currentMode;
 			}
 		}
-        if (msg.hasOwnProperty('keyboardNoiseSuppression') && this.cacheFlag.keyboardNoiseSuppression) {
+		if (msg.hasOwnProperty('keyboardNoiseSuppression') && this.cacheFlag.keyboardNoiseSuppression) {
 			this.microphoneProperties.keyboardNoiseSuppression = msg.keyboardNoiseSuppression;
 		}
-        if (msg.hasOwnProperty('AEC') && this.cacheFlag.AEC) {
+		if (msg.hasOwnProperty('AEC') && this.cacheFlag.AEC) {
 			this.microphoneProperties.AEC = msg.AEC;
 		}
-        if (msg.hasOwnProperty('disableEffect')) {
+		if (msg.hasOwnProperty('disableEffect')) {
 			this.microphoneProperties.disableEffect = msg.disableEffect;
 		}
-        if (msg.hasOwnProperty('autoOptimization') && this.cacheFlag.autoOptimization) {
+		if (msg.hasOwnProperty('autoOptimization') && this.cacheFlag.autoOptimization) {
 			this.microphoneProperties.autoOptimization = msg.autoOptimization;
 			// because this item need plugin response, so it is the last response
 			// this.microphoneLoader = false;
 		}
-        // if message has finished flag, means already get all the data, now can save to cache
-        if (msg.hasOwnProperty('finished')) {
+		// if message has finished flag, means already get all the data, now can save to cache
+		if (msg.hasOwnProperty('finished')) {
 			this.updateMicrophoneCache();
 			// reset cacheFlag
 			this.cacheFlag.AEC = true;
@@ -619,7 +633,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	updateMicrophoneCache() {
-        const info = {
+		const info = {
 			data: this.microphoneProperties,
 			modes: this.microOptimizeModeResponse.modes
 		};
