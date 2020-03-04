@@ -87,9 +87,20 @@
 
 	.gem-box {
 		height: auto;
-		width: 100%;
-		max-width: 100%;
-
+		width: 50%;
+		float: right;
+		@media #{$mediaquery_X4} { // 768~0
+			float: none;
+			width: 100%;
+		}
+		@media #{$mediaquery_X46} { // 992-768
+			float: right;
+			width: 50%;
+		}
+		@media #{$mediaquery_X45} { // 1200-992
+			float: none;
+			width: 100%;
+		}
 		.gem {
 			width: 100%;
 			height: 100%;
