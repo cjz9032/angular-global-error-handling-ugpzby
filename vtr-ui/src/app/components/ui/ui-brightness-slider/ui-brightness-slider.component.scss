@@ -13,12 +13,22 @@
 	.ng5-slider {
 		margin: 0;
 		margin-top: 2.3rem;
+		background: $shade_lightest;
+		border: 0.1rem solid $shade_lighter;
 		::ng-deep {
 			&.ng5-slider-bubble {
 				display: none;
 			}
 			&.ng5-slider-selection {
 				background: $gaming_lighting_gradient;
+				@media #{$white-on-black} {
+					background-color: $highlight_bright;
+					border: none;
+				}
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-textselected;
+					border: none;
+				}
 			}
 
 			&.ng5-slider-pointer {
