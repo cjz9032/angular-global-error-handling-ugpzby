@@ -47,11 +47,11 @@
 								tabindex="-1"
 								[(ngModel)]="app.isChecked"
 								id="modern-preload-app-{{app.udcId}}"
-								[disabled]="modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || app.isCheckDisabled"
+								[disabled]="!!(modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || app.isCheckDisabled)"
 								attr.aria-label="modern-preload-app-{{app.udcId}}"
 								(change)="checkedApp()" />
 							<label class="custom-control-label"
-								[tabindex]="(modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || app.isCheckDisabled) ? -1 : 0"
+								[tabindex]="!!(modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || app.isCheckDisabled) ? -1 : 0"
 								(keydown.enter)="setAppCheckStatus(app)"
 								for="modern-preload-app-{{app.udcId}}">
 								<div class="app-logo">
@@ -126,7 +126,7 @@
 							<div *ngIf="app.size">{{'modernPreload.sizeText' | translate}}: {{ app.size }}</div>
 							<div *ngIf="app.version">{{'modernPreload.versionText' | translate}}: {{ app.version }}
 							</div>
-							<div *ngIf="app.activationCode"
+							<div *ngIf="redemptionSupport && app.activationCode"
 								class="redemption-code-content mb-3">
 								<div class="text"
 									role="text"
@@ -176,7 +176,7 @@
 								</div>
 							</div>
 							<div class="redemption-url d-flex align-items-center"
-								*ngIf="app.redemptionURL">
+								*ngIf="redemptionSupport && app.redemptionURL">
 								<a class="mr-2"
 									[href]="app.redemptionURL"
 									target="_blank"
