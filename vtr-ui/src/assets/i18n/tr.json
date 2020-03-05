@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Big-Y Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -870,16 +870,17 @@
                 "messages": {
                     "feedbackSuccess": "Geri bildiriminiz için teşekkürler!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Lenovo Vantage uygulamasını bir arkadaşınıza veya meslektaşınıza tavsiye etme olasılığınız nedir?",
+                "question7": "Bilgisayarınızdaki yazılımları (sürücüler, sabit yazılım ve BIOS) güncel tutmak için Lenovo Vantage'ı kullanabileceğinizi biliyor muydunuz?",
+                "question8": "Bilgisayarınızla ilgili destek bilgilerine erişmek için Lenovo Vantage'ı kullandınız mı?",
+                "tips2": "Lütfen ek yorumlarınızı aşağıya bırakın",
+                "emailAddressLabel": "Potansiyel olarak Lenovo Vantage ekibinin sizinle iletişime geçmesini istiyorsanız lütfen e-posta adresinizi belirtin.",
+                "emailAddress": "E-posta adresi",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Hızlı Ayarlarınız",
+            "title": "Hızlı ayarlar",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Göz Koruması",
@@ -1050,7 +1051,7 @@
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b>",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı yeterli güç sağlayamıyor.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. Lütfen Windows Update'i çalıştırın veya <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">buradan</a> manuel olarak yükleyin. Kurulumdan sonra bilgisayarınızı yeniden başlatın.",
+                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın. Sürücüyü <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">buradan</a> da yükleyebilirsiniz. Kurulumdan sonra bilgisayarınızı yeniden başlatın.",
                     "StoreLimitation": "<b>Pil orijinal tam dolum kapasitesinin yalnızca {{value}}% kadarını</b> depolayabilir.",
                     "HighTemperature": "<b>Pil çok ısındığı için</b> <b>boşaltma</b> işlemi durduruldu.",
                     "TrickleCharge": "Pil <b>tamamen boşaldı</b> ve yeniden doldurulması gerekiyor. Doldurma işlemi on saat ya da daha fazla sürebilir.",
@@ -1252,9 +1253,9 @@
                             "reset": "Sıfırla",
                             "stop": "Durdur"
                         },
-                        "progressText1": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
-                        "progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
-                        "progressText3": "Adım {{stage}} (toplam {{stageNum}} adım yer alıyor)",
+                        "progressText1": "Adım {{stage}}/{{stageNum}}: Tam şarj için kalibre ediliyor",
+                        "progressText2": "Adım {{stage}}/{{stageNum}}: Düşük pil gücü için kalibre ediliyor",
+                        "progressText3": "Adım {{stage}}/{{stageNum}}: Yüksek pil gücü için kalibre ediliyor",
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "İstediğiniz kaynak dili ve hedef dili seçin.",
                     "point8": "Gereksinimlerinize bağlı olarak ses girişini Hoparlör veya Mikrofon olacak şekilde ayarlayın.",
                     "point9": "Konuşmaya başlamak için mikrofon simgesine tıklayın",
-                    "closeText": "kapat"
+                    "closeText": "kapat",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "tamam",

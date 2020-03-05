@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Big-Y Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -870,16 +870,17 @@
                 "messages": {
                     "feedbackSuccess": "Tak for din feedback!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Hvor sandsynligt er det, at du vil anbefale Lenovo Vantage-programmet til en ven eller kollega?",
+                "question7": "Ved du, at du kan bruge Lenovo Vantage til at holde softwaren (drivere, firmware og BIOS) på din computer opdateret?",
+                "question8": "Har du brugt Lenovo Vantage til at få adgang til supportoplysninger om computeren?",
+                "tips2": "Skriv eventuelle andre kommentarer nedenfor",
+                "emailAddressLabel": "Angiv din e-mailadresse, hvis du vil have mulighed for at blive kontaktet af Lenovo Vantage-teamet.",
+                "emailAddress": "E-mailadresse",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Dine Hurtige indstillinger",
+            "title": "Hurtige indstillinger",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Øjenpleje",
@@ -1050,7 +1051,7 @@
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
                     "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update, eller installer den manuelt fra <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">her</a>. Genstart computeren efter installationen.",
+                    "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update for at installere den sidste nye driver. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>. Genstart computeren efter installationen.",
                     "StoreLimitation": "<b>Batteriet kan kun lagre {{value}}% af</b> dets oprindelige kapacitet ved fuld opladning.",
                     "HighTemperature": "<b>Afladning</b> er stoppet, fordi <b>batteriets temperatur er for høj.</b>",
                     "TrickleCharge": "Batteriet er blevet <b>fuldstændigt afladet</b> og skal genoplades. Dette kan tage op til ti timer eller mere.",
@@ -1252,9 +1253,9 @@
                             "reset": "Nulstil",
                             "stop": "Stop"
                         },
-                        "progressText1": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
-                        "progressText2": "{{stage}} af {{stageNum}}: Kalibrerer til lavt batteristrømniveau",
-                        "progressText3": "Trin {{stage}}, ud af {{stageNum}} trin i alt",
+                        "progressText1": "Trin {{stage}} ud af i alt {{stageNum}} trin: Kalibrerer til fuld opladning",
+                        "progressText2": "Trin {{stage}} ud af i alt {{stageNum}} trin: Kalibrerer til lavt batteristrømniveau",
+                        "progressText3": "Trin {{stage}} ud af i alt {{stageNum}} trin: Kalibrerer til højt batteristrømniveau",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Vælg det ønskede kildesprog og målsprog.",
                     "point8": "Angiv stemmeinput fra højttaler eller fra mikrofon afhængigt af dine behov.",
                     "point9": "Klik på mikrofonikonet for at begynde at tale",
-                    "closeText": "luk"
+                    "closeText": "luk",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

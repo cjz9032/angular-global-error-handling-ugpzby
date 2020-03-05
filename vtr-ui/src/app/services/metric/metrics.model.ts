@@ -220,8 +220,8 @@ export class SettingUpdate extends IMetricEvent {
 	}
 
 	public SettingName: string;
-	public SettingValue: string;
-	public SettingParm: string;
+	public SettingValue: any;
+	public SettingParm?: string;
 	public SettingParent: string;
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter, NgZone, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter, NgZone, AfterViewInit, HostListener } from '@angular/core';
 import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
@@ -33,7 +33,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private DeviceInformation: any;
 	private DeviceClass: any;
 	private oMediaCapture: any;
-	private visibilityChange: any;
 	private videoPreviewEvent: any;
 	private cameraStreamStateChanged: any;
 	public cameraErrorTitle: string;
@@ -56,7 +55,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			this.cameraPreview = content;
 			if (!this.isCameraInitialized) {
 				if (content && !this.cameraDetail.isPrivacyModeEnabled) {
-					this.initializeCameraAsync();
+					this.initializeCameraAsync('ViewChild.cameraPreview');
 				} else {
 					this.cleanupCameraAsync('ViewChild.cameraPreview');
 				}
@@ -84,8 +83,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		//#region below logic required to re-enable camera feed when window is maximized from minimized state
 		this.logger.info('constructor camera');
 		this.oMediaCapture = new this.Capture.MediaCapture();
-		this.visibilityChange = this.onVisibilityChanged.bind(this);
-		document.addEventListener('visibilitychange', this.visibilityChange);
 		//#endregion
 
 		//#region hook up orientation change event
@@ -109,9 +106,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
-		if (document) {
-			document.removeEventListener('visibilitychange', this.visibilityChange);
-		}
+
 		//#region unregister orientation change event
 		if (this.orientationSensor != null) {
 			this.orientationSensor.removeEventListener(this.orientationChangedEvent, this.orientationEvent);
@@ -183,8 +178,9 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	initializeCameraAsync() {
-		this.logger.info('InitializeCameraAsync');
+	initializeCameraAsync(source: string) {
+		this.isCameraInitialized = true;
+		this.logger.info('InitializeCameraAsync', source);
 		// const self = this;
 		try {
 			// Get available devices for capturing pictures
@@ -223,7 +219,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 								this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedTitle';
 								this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedDescription';
 								this.logger.error('CameraControlComponent.MediaCaptureFailed try to reinitialize once', error);
-								this.initializeCameraAsync();
+								this.initializeCameraAsync('oMediaCapture.failed');
 							}
 						});
 					});
@@ -242,7 +238,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 						this.disabledAll = true;
 					});
 				}).then(() => {
-					this.isCameraInitialized = true;
+					// this.isCameraInitialized = true;
 					return this.startPreviewAsync();
 
 				}).done();
@@ -296,24 +292,26 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onVisibilityChanged() {
-		if (document.hidden) {
-			this.cleanupCameraAsync('onVisibilityChanged');
-		} else {
+	@HostListener('document: visibilitychange')
+	onVisibilityChange(): void {
+		const visibility = document.visibilityState;
+		this.logger.info('CameraControlComponent.onVisibilityChange', { visibility, isCameraInitialized: this.isCameraInitialized });
+
+		if (visibility.toLowerCase() === 'visible') {
 			if (!this.isCameraInitialized) {
-				this.initializeCameraAsync();
+				this.initializeCameraAsync('onVisibilityChange');
 			}
+		} else {
+			this.cleanupCameraAsync('onVisibilityChange');
 		}
 	}
 
-
-
 	public onAutoExposureChange($event: any) {
 		try {
-			this.logger.info('onAutoExposureChange', this.cameraSettings.exposure);
+			this.logger.info('CameraControlComponent.onAutoExposureChange', this.cameraSettings.exposure);
 			this.exposureToggle.emit($event);
 		} catch (error) {
-			this.logger.error('CameraControlComponent:onAutoExposureChange', error.message);
+			this.logger.error('CameraControlComponent.onAutoExposureChange', error.message);
 		}
 	}
 

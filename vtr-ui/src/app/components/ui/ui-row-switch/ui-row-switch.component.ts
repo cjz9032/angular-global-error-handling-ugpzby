@@ -19,6 +19,7 @@ import { BaseComponent } from '../../base/base.component';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.component';
+import {DomSanitizer} from '@angular/platform-browser';
 
 
 @Component({
@@ -75,7 +76,10 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 	subscriptionList = [];
 
 	constructor(
-		public modalService: NgbModal, private deviceService: DeviceService, private translate: TranslateService,
+		public modalService: NgbModal, 
+		private deviceService: DeviceService, 
+		private translate: TranslateService,
+		protected html_sanitizer:DomSanitizer,
 		private ngZone: NgZone
 	) { super(); }
 
@@ -173,7 +177,9 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 		this.toggleToolTip(tooltip, true);
 		this.tooltipClick.emit($event);
 	}
-
+    htmlSanitizer(html_content){
+		return this.html_sanitizer.bypassSecurityTrustHtml(html_content);
+	}
 	checkToolTips() {
 		// console.log('==THROTTLE');
 		const subscription = this.scrollEvent.asObservable().pipe(throttleTime(100)).subscribe(event => {

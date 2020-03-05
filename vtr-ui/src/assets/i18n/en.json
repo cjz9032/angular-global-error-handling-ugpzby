@@ -706,7 +706,7 @@
 				"name4": "Legion CPU Fan Lighting",
 				"name5": "Legion Liquid Cooling Pump Lighting",
 				"name6": "Legion Liquid Cooling Fan Lighting",
-				"name7": "Legion Big-Y Lighting",
+				"name7": "Legion Icon (Front)",
 				"name9": "Ambient  Lighting"
 			},
 			"lightingEffect": {
@@ -875,6 +875,7 @@
 				"comments": "Comments...",
 				"emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
 				"emailAddress": "Email address",
+				"invalidEmailMsg": "Invalid email address",
 				"button": "Submit",
 				"addScreenshot": "Add Screenshot",
 				"sendFeedback": "Send Feedback",
@@ -1198,7 +1199,7 @@
 				"smartStandby": {
 					"sectionTitle": "Standby settings",
 					"title": "Smart standby",
-					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> during hours of heavier use.",
+					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of <a target=\"_blank\"' role=\"text\"  id=\"modern-standby-link\" attr.aria-label=\"modern-standby-link\" href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> during hours of heavier use.",
 					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set, or your computer usage. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
 					"oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
 					"subTitle": "Schedule your computer",
@@ -1998,28 +1999,29 @@
 			},
 			"voice": {
 				"title": "Voice",
-				"description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
+				"description": "Lenovo Voice converts your voice into text with the Voice to Text and provides assistance of real-time speech translation with the Translation Assistant.",
 				"installBtnText": "Install",
 				"launchBtnText": "Launch",
 				"voiceToText": {
 					"title": "Voice to Text",
-					"caption": "This feature helps to convert your voice into texts."
+					"caption": "This feature provides voice typing function that converts voice into text for quick input."
 				},
 				"translation": {
 					"title": "Translation",
-					"caption": "This feature provides real-time translation to the voice. The translated contents are shown in texts. You can choose the source languages and target languages according to your needs."
+					"caption": "This feature provides real-time translation assistance of speeches and all the translated will be shown in text. Multiple languages are available for the source and target language."
 				},
 				"modalPopUp": {
 					"heading": "Getting started:",
-					"point1": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
-					"point2": "Open the file where you want to record the converted text.",
+					"point1": "Start Lenovo Voice from Start Menu and the Lenovo Voice icon is displayed in the Windows system tray.",
+					"point2": "Open the application where you want to type in text.",
 					"point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
-					"point4": "Select your desired language and click the microphone icon to start.",
-					"point5": "Put the cursor to where you want to edit and begin to speak.",
-					"point6": "Click on the Lenovo Voice icon and select Translation.",
-					"point7": "Set your origin (left) and destination (right) languages.",
-					"point8": "Choose the speaker or microphone audio input source (lower right).",
-					"point9": "Click the main microphone button to start translating.",
+					"point4": "Select the languages by your need and click the microphone icon to start.",
+					"point5": "Put the cursor in the application and begin to speak.",
+					"point6": "Click the Lenovo Voice icon in the Windows system tray and select Translation.",
+					"point7": "Select your source language and target language.",
+					"point8": "Depending on your need, set the voice input from Speaker or from Microphone.",
+					"point9": "Click the microphone icon to start speaking.",
+					"point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray.",
 					"closeText": "close"
 				},
 				"modalInstallationFailed": {

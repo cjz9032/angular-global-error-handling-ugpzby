@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Big-Y Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -870,16 +870,17 @@
                 "messages": {
                     "feedbackSuccess": "Благодарим за отзыв!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Насколько вероятно, что вы порекомендуете приложение Lenovo Vantage другу или коллеге?",
+                "question7": "Знали ли вы, что с помощью Lenovo Vantage можно обновлять драйверы программного обеспечения, микропрограмму и BIOS компьютера?",
+                "question8": "Пробовали ли вы получить информацию о поддержке для вашего компьютера с помощью Lenovo Vantage?",
+                "tips2": "Оставьте любые дополнительные комментарии ниже",
+                "emailAddressLabel": "Укажите ваш адрес электронной почты, если вы хотите, чтобы команда Lenovo Vantage могла с вами связаться.",
+                "emailAddress": "Адрес электронной почты",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Ваша панель быстрой настройки параметров",
+            "title": "Быстрые настройки",
             "microphone": "Микрофон",
             "cameraPrivacy": "Фотокамера",
             "eyeCareMode": "Защита глаз",
@@ -1050,7 +1051,7 @@
                     "NotGood": "<b>Аккумулятор не в хорошем состоянии.</b>",
                     "NotSupportACAdapter": "<b>Адаптер электропитания не поддерживается.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер электропитания не может обеспечить достаточное питание.</b>",
-                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не установлен или работает неправильно. Запустите Центр обновления Windows или установите драйвер вручную по <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">этой ссылке</a>. После установки перезагрузите компьютер.",
+                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не установлен или работает неправильно. Запустите Центр обновления Windows, чтобы установить последнюю версию драйвера. Также можно установить драйвер по <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">этой ссылке</a>. После установки перезагрузите компьютер.",
                     "StoreLimitation": "<b>Аккумулятор может хранить только {{value}}% от</b> своей исходной емкости полного заряда.",
                     "HighTemperature": "<b>Разрядка</b> остановлена из-за <b>слишком высокой температуры аккумулятора.</b>",
                     "TrickleCharge": "Аккумулятор <b>полностью разряжен,</b> требуется повторная зарядка. Для этого может потребоваться более десяти часов.",
@@ -1252,9 +1253,9 @@
                             "reset": "Сбросить",
                             "stop": "Стоп"
                         },
-                        "progressText1": "{{stage}} из {{stageNum}}: калибровка до полной зарядки",
-                        "progressText2": "{{stage}} из {{stageNum}}: калибровка до низкого уровня заряда аккумулятора",
-                        "progressText3": "Шаг {{stage}} из {{stageNum}}",
+                        "progressText1": "Шаг {{stage}} из {{stageNum}}: калибровка до полной зарядки",
+                        "progressText2": "Шаг {{stage}} из {{stageNum}}: калибровка до низкого уровня заряда аккумулятора",
+                        "progressText3": "Шаг {{stage}} из {{stageNum}}: калибровка до высокого уровня заряда аккумулятора",
                         "FCCText": "С {{before}} Вт·ч до {{after}} Вт·ч",
                         "note": "Примечание. Перед сбросом индикатора аккумулятора обязательно подключите компьютер к сети переменного тока. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Выберите нужный исходный язык и целевой язык.",
                     "point8": "В зависимости от потребностей задайте голосовой ввод с динамиков или с микрофона.",
                     "point9": "Нажмите значок микрофона, чтобы начать говорить",
-                    "closeText": "закрыть"
+                    "closeText": "закрыть",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ОК",

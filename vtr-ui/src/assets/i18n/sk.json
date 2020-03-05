@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Big-Y Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -870,16 +870,17 @@
                 "messages": {
                     "feedbackSuccess": "Ďakujeme vám za spätnú väzbu!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Aká je pravdepodobnosť, že by ste aplikáciu Lenovo Vantage odporučili priateľom alebo kolegom?",
+                "question7": "Vedeli ste, že Lenovo Vantage môžete použiť na aktualizáciu softvéru (ovládače, firmvér a BIOS) vášho počítača?",
+                "question8": "Použili ste Lenovo Vantage na prístup k informáciám o podpore vášho počítača?",
+                "tips2": "Nižšie uveďte doplňujúce komentáre",
+                "emailAddressLabel": "Ak chcete, aby vás tím Lenovo Vantage kontaktoval, zanechajte svoju e-mailovú adresu.",
+                "emailAddress": "E-mailová adresa",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Vaše rýchle nastavenia",
+            "title": "Rýchle nastavenia",
             "microphone": "Mikrofón",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Ochrana zraku",
@@ -1050,7 +1051,7 @@
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b>",
                     "LimitedACAdapterSupport": "<b>Sieťový adaptér nedokáže poskytnúť dostatok energie na napájanie.</b>",
-                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update alebo ju nainštalujte manuálne <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>. Po inštalácii reštartujte počítač.",
+                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač. Ovládač môžete nainštalovať aj <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>. Po inštalácii reštartujte počítač.",
                     "StoreLimitation": "<b>Batéria má kapacitu len {{value}}%</b> zo svojej pôvodnej kapacity pri úplnom nabití.",
                     "HighTemperature": "<b>Vybíjanie</b> sa zastavilo, pretože <b>teplota batérie je príliš vysoká.</b>",
                     "TrickleCharge": "Batéria je <b>úplne vybitá</b> a musí sa nabiť. Môže to trvať desať hodín alebo dlhšie.",
@@ -1252,9 +1253,9 @@
                             "reset": "Obnoviť predvolené",
                             "stop": "Zastaviť"
                         },
-                        "progressText1": "{{stage}} z {{stageNum}}: Kalibrácia na úplné nabitie",
-                        "progressText2": "{{stage}} z {{stageNum}}: Kalibrácia na nízku úroveň nabitia batérie",
-                        "progressText3": "Krok {{stage}} z celkového počtu ({{stageNum}})",
+                        "progressText1": "Krok {{stage}}z celkového počtu {{stageNum}}: Kalibrácia na úplné nabitie",
+                        "progressText2": "Krok {{stage}}z celkového počtu {{stageNum}}: Kalibrácia na nízku úroveň nabitia batérie",
+                        "progressText3": "Krok {{stage}}z celkového počtu {{stageNum}}: Kalibrácia na vysokú úroveň nabitia batérie",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Pred resetovaním ukazovateľa batérie pripojte počítač k zdroju napájania. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Vyberte požadovaný zdrojový jazyk a cieľový jazyk.",
                     "point8": "V závislosti od svojich potrieb nastavte hlasový vstup z reproduktora alebo mikrofónu.",
                     "point9": "Kliknite na ikonu mikrofónu a začnite hovoriť.",
-                    "closeText": "zatvoriť"
+                    "closeText": "zatvoriť",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

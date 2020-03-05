@@ -706,7 +706,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Big-Y Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -872,16 +872,17 @@
                 "messages": {
                     "feedbackSuccess": "نشكرك على تعليقاتك!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "ما مدى احتمال أن توصي أحد الأصدقاء أو الزملاء بتطبيق Lenovo Vantage؟",
+                "question7": "هل تعلم أنه يمكنك استخدام تطبيق Lenovo Vantage للمحافظة على تحديث البرنامج (برامج التشغيل والبرامج الثابتة وBIOS) على الكمبيوتر؟",
+                "question8": "هل استخدمت Lenovo Vantage للوصول إلى معلومات الدعم الخاصة بالكمبيوتر؟",
+                "tips2": "يرجى ترك أي تعليقات إضافية أدناه",
+                "emailAddressLabel": "يرجى ترك عنوان بريدك الإلكتروني إذا كنت ترغب في أن يتصل بك فريق Lenovo Vantage.",
+                "emailAddress": "عنوان البريد الالكتروني",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "إعداداتك السريعة",
+            "title": "الإعدادات السريعة",
             "microphone": "الميكروفون",
             "cameraPrivacy": "الكاميرا",
             "eyeCareMode": "العناية بالعين",
@@ -1052,7 +1053,7 @@
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b></span>",
                     "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
-                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update أو تثبيته يدوياً من <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">هنا</a>. بعد التثبيت، أعد تشغيل الكمبيوتر.",
+                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل. يمكنك أيضًا تثبيت برنامج التشغيل من <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">هنا</a>. بعد التثبيت، أعد تشغيل الكمبيوتر.",
                     "StoreLimitation": "<b>بإمكان البطارية تخزين فقط {{value}}% من</b> سعة شحنتها الأصلية.",
                     "HighTemperature": "<b>تم إيقاف التفريغ</b> لأن <b>درجة حرارة البطارية مرتفعة أكثر من اللازم.</b>",
                     "TrickleCharge": "تم <b>تفريغ البطارية بشكل كامل</b> ويجب إعادة شحنها. قد تستغرق هذه العملية 10 ساعات أو أكثر.",
@@ -1254,9 +1255,9 @@
                             "reset": "إعادة تعيين",
                             "stop": "إيقاف"
                         },
-                        "progressText1": "{{stage}} من {{stageNum}}: معايرة إلى الشحن الكامل",
-                        "progressText2": "{{stage}} من {{stageNum}}: معايرة إلى طاقة البطارية المنخفضة",
-                        "progressText3": "الخطوة {{stage}}، من {{stageNum}} خطوات إجماليًا",
+                        "progressText1": "الخطوة {{stage}} من {{stageNum}} خطوة (خطوات) في المجموع: معايرة إلى الشحن الكامل",
+                        "progressText2": "الخطوة {{stage}} من {{stageNum}} خطوة (خطوات) في المجموع: معايرة إلى طاقة البطارية المنخفضة‬",
+                        "progressText3": "الخطوة {{stage}} من {{stageNum}} خطوة (خطوات) في المجموع: معايرة إلى طاقة البطارية العالية‬",
                         "FCCText": "من {{before}} واط بالساعة‬ إلى {{after}} واط بالساعة‬",
                         "note": "ملاحظة: قبل إعادة تعيين مقياس البطارية، تأكد من توصيل الكمبيوتر بطاقة التيار المتردد. ",
                         "resetLog": {
@@ -2020,7 +2021,8 @@
                     "point7": "حدد لغتك المطلوبة، اللغة المصدر واللغة الهدف.",
                     "point8": "حسب احتياجاتك، اضبط الإدخال الصوتي من السماعة أو من الميكروفون.",
                     "point9": "انقر فوق رمز الميكروفون لبدء التحدث",
-                    "closeText": "إغلاق"
+                    "closeText": "إغلاق",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "موافق",

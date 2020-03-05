@@ -1,8 +1,5 @@
 @import "../../../../../app.theme.scss";
 
-// TODO: remove below line in 3.2
-$fontsize_xs: 1.4rem;
-
 .subpage-device-settings-input-accessories {
 	ul.list-group {
 		list-style-type: none;
@@ -268,7 +265,7 @@ $fontsize_xs: 1.4rem;
 	.keyboard-backlight-block {
 		::ng-deep .vtr-ui-switch-row.white-theme {
 			.col-12 {
-				margin-left: 0.5rem;
+				margin-left: 3rem;
 			}
 		}
 	}
@@ -278,7 +275,7 @@ $fontsize_xs: 1.4rem;
 	.caption,
 	.prompting,
 	.app-text {
-		font-size: 1.75rem;
+		font-size: $fontsize_xs;
 		font-weight: 300;
 	}
 

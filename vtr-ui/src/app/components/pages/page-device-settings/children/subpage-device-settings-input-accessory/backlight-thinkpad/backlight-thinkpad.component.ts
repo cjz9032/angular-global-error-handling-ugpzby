@@ -63,12 +63,12 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		this.isBaseAuto(this.modes, BacklightStatusEnum.AUTO);
 	}
 
-	public updateMode(mode) {
+	public async updateMode(mode) {
 		this.currentMode = mode;
 		this.cacheData.currentMode = this.currentMode;
 		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
 		if (this.currentMode === BacklightStatusEnum.AUTO) {
-			this.setKBDBacklightStatus(BacklightStatusEnum.OFF);
+			await this.setKBDBacklightStatus(BacklightStatusEnum.OFF);
 			this.setAutomaticKBDBacklight(true);
 		} else {
 			this.setKBDBacklightStatus(this.currentMode);
@@ -232,23 +232,17 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 
 	public setKBDBacklightStatus(level: string) {
 		if (this.keyboardService.isShellAvailable) {
-			this.keyboardService.setKBDBacklightStatus(level)
-			.then((value: boolean) => {
-				this.logger.info('BacklightThinkpadComponent:setKBDBacklightStatus.then', value);
-			}).catch(error => {
-				this.logger.error('BacklightThinkpadComponent:setKBDBacklightStatus', error.message);
-				return EMPTY;
-			});
+			return this.keyboardService.setKBDBacklightStatus(level);
 		}
 	}
 
 	public async setAutomaticKBDBacklight(level: boolean) {
 		if (this.keyboardService.isShellAvailable) {
-			// if (!this.isAutoKBDEnable) {
-			// 	await this.keyboardService.setAutoKBDEnableStatus();
-			// 	this.isAutoKBDEnable = true;
-			// 	this.cacheData.isAutoKBDEnable = this.isAutoKBDEnable;
-			// }
+			if (!this.isAutoKBDEnable) {
+				await this.keyboardService.setAutoKBDEnableStatus();
+				this.isAutoKBDEnable = true;
+				this.cacheData.isAutoKBDEnable = this.isAutoKBDEnable;
+			}
 			this.keyboardService.setAutomaticKBDBacklight(level)
 			.then((value: boolean) => {
 				this.logger.info('BacklightThinkpadComponent:setAutomaticKBDBacklight.then', value);

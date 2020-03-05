@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Big-Y Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -870,16 +870,17 @@
                 "messages": {
                     "feedbackSuccess": "Hvala nam na povratnim informacijama!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Koliko je verovatno da ćete preporučiti aplikaciju Lenovo Vantage prijatelju ili kolegi?",
+                "question7": "Da li ste znali da možete da koristite Lenovo Vantage za stalno ažuriranje softvera (upravljačkih programa, firmvera i sistema BIOS) na vašem računaru?",
+                "question8": "Da li ste koristili Lenovo Vantage za pristupanje informacijama o podršci računara?",
+                "tips2": "Ostavite dodatne komentare u nastavku",
+                "emailAddressLabel": "Ostavite svoju e-adresu ako biste želeli da vas kontaktira Lenovo Vantage tim.",
+                "emailAddress": "Adresa e-pošte",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Vaše brze postavke",
+            "title": "Brze postavke",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Zaštita vida",
@@ -1050,7 +1051,7 @@
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Adapter za naizmeničnu struju nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update ili ga ručno instalirajte <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odavde</a>. Nakon instalacije, ponovo pokrenite računar.",
+                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program. Upravljački program možete da instalirate sa lokacije koja se nalazi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovde</a>. Nakon instalacije, ponovo pokrenite računar.",
                     "StoreLimitation": "<b>Baterija može da uskladišti samo {{value}}%</b> svog originalnog punog kapaciteta.",
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno zato što je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je u <b>potpunosti ispražnjena</b> i mora da se napuni. To može potrajati deset sati ili duže.",
@@ -1252,9 +1253,9 @@
                             "reset": "Poništi",
                             "stop": "Zaustavi"
                         },
-                        "progressText1": "{{stage}} od {{stageNum}}: kalibracija na pun kapacitet punjenja",
-                        "progressText2": "{{stage}} od {{stageNum}}: kalibracija na nizak nivo napunjenosti baterije",
-                        "progressText3": "Korak {{stage}}, od ukupno {{stageNum}} koraka",
+                        "progressText1": "Korak {{stage}}, od ukupno {{stageNum}} koraka: kalibracija na pun kapacitet punjenja",
+                        "progressText2": "Korak {{stage}}, od ukupno {{stageNum}} koraka: kalibracija na nizak nivo napunjenosti baterije",
+                        "progressText3": "Korak {{stage}}, od ukupno {{stageNum}} koraka: kalibracija na visok nivo napunjenosti baterije",
                         "FCCText": "Sa {{before}} Wh na {{after}} Wh",
                         "note": "Napomena: pre nego što resetujete pokazivač napunjenosti baterije, obavezno povežite računar sa napajanjem naizmeničnom strujom. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Izaberite željeni izvorni i ciljni jezik.",
                     "point8": "U zavisnosti od vaših potreba, podesite unos glasa sa Zvučnika ili Mikrofona.",
                     "point9": "Kliknite na ikonu mikrofona da biste započeli sa govorom",
-                    "closeText": "zatvori"
+                    "closeText": "zatvori",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "u redu",
