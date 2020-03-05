@@ -1194,6 +1194,7 @@ export class HardwareScanService {
 				test.percent = 0;
 				test.status = HardwareScanTestResult.NotStarted;
 			}
+			moduleObject.resultCode = '';
 		}
 
 		for (const moduleObject of this.customScanResponse) {
@@ -1201,6 +1202,7 @@ export class HardwareScanService {
 				test.percent = 0;
 				test.status = HardwareScanTestResult.NotStarted;
 			}
+			moduleObject.resultCode = '';
 		}
 	}
 
