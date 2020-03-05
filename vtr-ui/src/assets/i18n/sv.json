@@ -875,11 +875,12 @@
                 "question8": "Har du använt Lenovo Vantage för att få supportinformation om datorn?",
                 "tips2": "Lämna eventuella övriga kommentarer nedan",
                 "emailAddressLabel": "Lämna din e-postadress om du kan tänka dig att eventuellt bli kontaktad av Lenovo Vantage-teamet.",
-                "emailAddress": "E-postadress"
+                "emailAddress": "E-postadress",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Dina snabbinställningar",
+            "title": "Snabbinställningar",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Ögonskydd",
@@ -1252,9 +1253,9 @@
                             "reset": "Återställ",
                             "stop": "Stopp"
                         },
-                        "progressText1": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
-                        "progressText2": "{{stage}} av {{stageNum}}: Kalibrerar för låg batterinivå",
-                        "progressText3": "Steg {{stage}} av totalt {{stageNum}} steg",
+                        "progressText1": "Steg {{stage}} av {{stageNum}}: kalibrering till full laddning",
+                        "progressText2": "Steg {{stage}} av {{stageNum}}: kalibrering för låg batterinivå",
+                        "progressText3": "Steg {{stage}} av {{stageNum}}: kalibrering för hög batterinivå",
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Välj önskade käll- och målspråk.",
                     "point8": "Ställ in röstinmatning från Högtalare eller Mikrofon.",
                     "point9": "Klicka på mikrofonikonen och börja tala",
-                    "closeText": "stäng"
+                    "closeText": "stäng",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

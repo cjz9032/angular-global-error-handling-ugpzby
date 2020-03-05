@@ -875,11 +875,12 @@
                 "question8": "Har du brugt Lenovo Vantage til at få adgang til supportoplysninger om computeren?",
                 "tips2": "Skriv eventuelle andre kommentarer nedenfor",
                 "emailAddressLabel": "Angiv din e-mailadresse, hvis du vil have mulighed for at blive kontaktet af Lenovo Vantage-teamet.",
-                "emailAddress": "E-mailadresse"
+                "emailAddress": "E-mailadresse",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Dine Hurtige indstillinger",
+            "title": "Hurtige indstillinger",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Øjenpleje",
@@ -1252,9 +1253,9 @@
                             "reset": "Nulstil",
                             "stop": "Stop"
                         },
-                        "progressText1": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
-                        "progressText2": "{{stage}} af {{stageNum}}: Kalibrerer til lavt batteristrømniveau",
-                        "progressText3": "Trin {{stage}}, ud af {{stageNum}} trin i alt",
+                        "progressText1": "Trin {{stage}} ud af i alt {{stageNum}} trin: Kalibrerer til fuld opladning",
+                        "progressText2": "Trin {{stage}} ud af i alt {{stageNum}} trin: Kalibrerer til lavt batteristrømniveau",
+                        "progressText3": "Trin {{stage}} ud af i alt {{stageNum}} trin: Kalibrerer til højt batteristrømniveau",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Vælg det ønskede kildesprog og målsprog.",
                     "point8": "Angiv stemmeinput fra højttaler eller fra mikrofon afhængigt af dine behov.",
                     "point9": "Klik på mikrofonikonet for at begynde at tale",
-                    "closeText": "luk"
+                    "closeText": "luk",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

@@ -877,11 +877,12 @@
                 "question8": "هل استخدمت Lenovo Vantage للوصول إلى معلومات الدعم الخاصة بالكمبيوتر؟",
                 "tips2": "يرجى ترك أي تعليقات إضافية أدناه",
                 "emailAddressLabel": "يرجى ترك عنوان بريدك الإلكتروني إذا كنت ترغب في أن يتصل بك فريق Lenovo Vantage.",
-                "emailAddress": "عنوان البريد الالكتروني"
+                "emailAddress": "عنوان البريد الالكتروني",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "إعداداتك السريعة",
+            "title": "الإعدادات السريعة",
             "microphone": "الميكروفون",
             "cameraPrivacy": "الكاميرا",
             "eyeCareMode": "العناية بالعين",
@@ -1254,9 +1255,9 @@
                             "reset": "إعادة تعيين",
                             "stop": "إيقاف"
                         },
-                        "progressText1": "{{stage}} من {{stageNum}}: معايرة إلى الشحن الكامل",
-                        "progressText2": "{{stage}} من {{stageNum}}: معايرة إلى طاقة البطارية المنخفضة",
-                        "progressText3": "الخطوة {{stage}}، من {{stageNum}} خطوات إجماليًا",
+                        "progressText1": "الخطوة {{stage}} من {{stageNum}} خطوة (خطوات) في المجموع: معايرة إلى الشحن الكامل",
+                        "progressText2": "الخطوة {{stage}} من {{stageNum}} خطوة (خطوات) في المجموع: معايرة إلى طاقة البطارية المنخفضة‬",
+                        "progressText3": "الخطوة {{stage}} من {{stageNum}} خطوة (خطوات) في المجموع: معايرة إلى طاقة البطارية العالية‬",
                         "FCCText": "من {{before}} واط بالساعة‬ إلى {{after}} واط بالساعة‬",
                         "note": "ملاحظة: قبل إعادة تعيين مقياس البطارية، تأكد من توصيل الكمبيوتر بطاقة التيار المتردد. ",
                         "resetLog": {
@@ -2020,7 +2021,8 @@
                     "point7": "حدد لغتك المطلوبة، اللغة المصدر واللغة الهدف.",
                     "point8": "حسب احتياجاتك، اضبط الإدخال الصوتي من السماعة أو من الميكروفون.",
                     "point9": "انقر فوق رمز الميكروفون لبدء التحدث",
-                    "closeText": "إغلاق"
+                    "closeText": "إغلاق",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "موافق",

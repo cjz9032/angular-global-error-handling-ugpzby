@@ -875,11 +875,12 @@
                 "question8": "Használta már a Lenovo Vantage alkalmazást a számítógépével kapcsolatos támogatási információk eléréséhez?",
                 "tips2": "Ha van további megjegyzése, írja le alább.",
                 "emailAddressLabel": "Ha szeretné, hogy a Lenovo Vantage csapata felvehesse Önnel a kapcsolatot, adja meg az e-mail-címét.",
-                "emailAddress": "E-mail-cím"
+                "emailAddress": "E-mail-cím",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Saját gyorsbeállítások",
+            "title": "Gyorsbeállítások",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Szemvédő",
@@ -1252,9 +1253,9 @@
                             "reset": "Visszaállítás",
                             "stop": "Leállítás"
                         },
-                        "progressText1": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
-                        "progressText2": "{{stage}}/{{stageNum}}: Kalibrálás alacsony akkumulátortöltöttségre",
-                        "progressText3": "{{stage}}. lépés ennyiből: {{stageNum}}",
+                        "progressText1": "{{stage}}. lépés (összesen {{stageNum}} lépés): Kalibrálás teljes feltöltésre",
+                        "progressText2": "{{stage}}. lépés (összesen {{stageNum}} lépés): Kalibrálás alacsony akkumulátortöltöttségre",
+                        "progressText3": "{{stage}}. lépés (összesen {{stageNum}} lépés): Kalibrálás magas akkumulátortöltöttségre",
                         "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
                         "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Válassza ki a forrásnyelvet és a célnyelvet.",
                     "point8": "Szükség szerint állítsa be a hangbemenetet (Hangszóró vagy Mikrofon).",
                     "point9": "Kattintson a mikrofon ikonra, és kezdjen beszélni",
-                    "closeText": "bezárás"
+                    "closeText": "bezárás",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

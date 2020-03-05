@@ -875,11 +875,12 @@
                 "question8": "Bilgisayarınızla ilgili destek bilgilerine erişmek için Lenovo Vantage'ı kullandınız mı?",
                 "tips2": "Lütfen ek yorumlarınızı aşağıya bırakın",
                 "emailAddressLabel": "Potansiyel olarak Lenovo Vantage ekibinin sizinle iletişime geçmesini istiyorsanız lütfen e-posta adresinizi belirtin.",
-                "emailAddress": "E-posta adresi"
+                "emailAddress": "E-posta adresi",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Hızlı Ayarlarınız",
+            "title": "Hızlı ayarlar",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Göz Koruması",
@@ -1252,9 +1253,9 @@
                             "reset": "Sıfırla",
                             "stop": "Durdur"
                         },
-                        "progressText1": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
-                        "progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
-                        "progressText3": "Adım {{stage}} (toplam {{stageNum}} adım yer alıyor)",
+                        "progressText1": "Adım {{stage}}/{{stageNum}}: Tam şarj için kalibre ediliyor",
+                        "progressText2": "Adım {{stage}}/{{stageNum}}: Düşük pil gücü için kalibre ediliyor",
+                        "progressText3": "Adım {{stage}}/{{stageNum}}: Yüksek pil gücü için kalibre ediliyor",
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "İstediğiniz kaynak dili ve hedef dili seçin.",
                     "point8": "Gereksinimlerinize bağlı olarak ses girişini Hoparlör veya Mikrofon olacak şekilde ayarlayın.",
                     "point9": "Konuşmaya başlamak için mikrofon simgesine tıklayın",
-                    "closeText": "kapat"
+                    "closeText": "kapat",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "tamam",

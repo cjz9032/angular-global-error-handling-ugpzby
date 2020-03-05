@@ -875,7 +875,8 @@
                 "question8": "Lenovo Vantage を使用して、コンピューターに関するサポート情報にアクセスされましたか?",
                 "tips2": "追加のコメントを以下に残してください",
                 "emailAddressLabel": "Lenovo Vantage チームから連絡を受ける可能性がある場合は、メール・アドレスを残してください。",
-                "emailAddress": "メール・アドレス"
+                "emailAddress": "メール・アドレス",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
@@ -1208,8 +1209,8 @@
                         },
                         "popup": {
                             "title": "バッテリー充電しきい値を有効にする",
-                            "description1": "カスタムのバッテリー充電を有効にすると、このデバイスを使用したときに全般的なバッテリー状態が持続します。しかし、フル充電していないと、バッテリーによる稼働時間が少なくなります。",
-                            "description2": "この機能を完全に有効にするには、マシンの電源を切り、充電停止しきい値以下までバッテリーを放電してください。",
+                            "description1": "バッテリーのカスタム充電を有効にすると、バッテリー状態がより長期間良好に保たれる可能性が高くなります。ただし、フル充電したときよりバッテリー持ち時間は短くなります。",
+                            "description2": "この機能を完全に有効にするには、ACアダプターを抜き、充電停止しきい値以下までバッテリーを放電してください。",
                             "enable": "有効にする",
                             "cancel": "キャンセル"
                         },
@@ -1252,9 +1253,9 @@
                             "reset": "リセット",
                             "stop": "停止"
                         },
-                        "progressText1": "{{stage}}/{{stageNum}}: 満充電にして調整",
-                        "progressText2": "{{stage}}/{{stageNum}}: 低バッテリー残量にして調整",
-                        "progressText3": "ステップ {{stage}}、合計 {{stageNum}} ステップのうち",
+                        "progressText1": "ステップ {{stage}} / 合計 {{stageNum}} ステップ: 満充電にして調整",
+                        "progressText2": "ステップ {{stage}} / 合計 {{stageNum}} ステップ: 低バッテリー残量にして調整",
+                        "progressText3": "ステップ {{stage}} / 合計 {{stageNum}} ステップ: 高バッテリー残量にして調整",
                         "FCCText": "{{before}} Wh から {{after}} Wh",
                         "note": "注: バッテリー・ゲージをリセットする前に、コンピューターを AC 電源に接続してください。",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "目的の原文言語と訳文言語を選択します。",
                     "point8": "必要に応じて、スピーカーまたはマイクからの音声入力を設定します。",
                     "point9": "マイクのアイコンをクリックして話し始めます",
-                    "closeText": "閉じる"
+                    "closeText": "閉じる",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

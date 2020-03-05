@@ -875,11 +875,12 @@
                 "question8": "Použili ste Lenovo Vantage na prístup k informáciám o podpore vášho počítača?",
                 "tips2": "Nižšie uveďte doplňujúce komentáre",
                 "emailAddressLabel": "Ak chcete, aby vás tím Lenovo Vantage kontaktoval, zanechajte svoju e-mailovú adresu.",
-                "emailAddress": "E-mailová adresa"
+                "emailAddress": "E-mailová adresa",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Vaše rýchle nastavenia",
+            "title": "Rýchle nastavenia",
             "microphone": "Mikrofón",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Ochrana zraku",
@@ -1252,9 +1253,9 @@
                             "reset": "Obnoviť predvolené",
                             "stop": "Zastaviť"
                         },
-                        "progressText1": "{{stage}} z {{stageNum}}: Kalibrácia na úplné nabitie",
-                        "progressText2": "{{stage}} z {{stageNum}}: Kalibrácia na nízku úroveň nabitia batérie",
-                        "progressText3": "Krok {{stage}} z celkového počtu ({{stageNum}})",
+                        "progressText1": "Krok {{stage}}z celkového počtu {{stageNum}}: Kalibrácia na úplné nabitie",
+                        "progressText2": "Krok {{stage}}z celkového počtu {{stageNum}}: Kalibrácia na nízku úroveň nabitia batérie",
+                        "progressText3": "Krok {{stage}}z celkového počtu {{stageNum}}: Kalibrácia na vysokú úroveň nabitia batérie",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Pred resetovaním ukazovateľa batérie pripojte počítač k zdroju napájania. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Vyberte požadovaný zdrojový jazyk a cieľový jazyk.",
                     "point8": "V závislosti od svojich potrieb nastavte hlasový vstup z reproduktora alebo mikrofónu.",
                     "point9": "Kliknite na ikonu mikrofónu a začnite hovoriť.",
-                    "closeText": "zatvoriť"
+                    "closeText": "zatvoriť",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

@@ -875,11 +875,12 @@
                 "question8": "Jeste li Lenovo Vantage koristili za pristup informacijama o podršci vašem računalu?",
                 "tips2": "U nastavku unesite bilo kakve dodatne komentare",
                 "emailAddressLabel": "Ostavite svoju adresu e-pošte ako želite da vas tim Lenovo Vantage kontaktira.",
-                "emailAddress": "Adresa e-pošte"
+                "emailAddress": "Adresa e-pošte",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Vaše Brze postavke",
+            "title": "Brze postavke",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Ugodnost za oči",
@@ -1252,9 +1253,9 @@
                             "reset": "Ponovno postavljanje",
                             "stop": "Zaustavi"
                         },
-                        "progressText1": "{{stage}} od {{stageNum}}: Kalibriranje do potpune napunjenosti",
-                        "progressText2": "{{stage}} od {{stageNum}}: Kalibriranje na nisku razinu baterije",
-                        "progressText3": "Korak {{stage}}, od sveukupno {{stageNum}} koraka",
+                        "progressText1": "Korak {{stage}}, od ukupno {{stageNum}} koraka: Kalibriranje do potpuno napunjene baterije",
+                        "progressText2": "Korak {{stage}}, od ukupno {{stageNum}} koraka: Kalibriranje na nisku razinu napunjenosti baterije",
+                        "progressText3": "Korak {{stage}}, od ukupno {{stageNum}} koraka: Kalibriranje na visoku razinu napunjenosti baterije",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Napomena: Prije ponovnog postavljanja prikaza napunjenosti baterije obavezno povežite računalo na izmjenično napajanje. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Odaberite željeni izvorni i ciljni jezik.",
                     "point8": "Ovisno o vašim potrebama, postavite glasovni ulaz iz zvučnika ili iz mikrofona.",
                     "point9": "Da biste počeli govoriti, kliknite ikonu mikrofona",
-                    "closeText": "zatvori"
+                    "closeText": "zatvori",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "u redu",

@@ -875,11 +875,12 @@
                 "question8": "Utilizou o Lenovo Vantage para aceder às informações de suporte sobre o seu computador?",
                 "tips2": "Forneça quaisquer comentários adicionais abaixo",
                 "emailAddressLabel": "Introduza o seu endereço de e-mail se pretende ser contactado pela equipa do Lenovo Vantage.",
-                "emailAddress": "Endereço de correio eletrónico"
+                "emailAddress": "Endereço de correio eletrónico",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "As suas definições rápidas",
+            "title": "Definições rápidas",
             "microphone": "Microfone",
             "cameraPrivacy": "Câmara",
             "eyeCareMode": "Cuidados c/Visão",
@@ -1252,9 +1253,9 @@
                             "reset": "Redefinir",
                             "stop": "Parar"
                         },
-                        "progressText1": "{{stage}} de {{stageNum}}: calibrar até carga completa",
-                        "progressText2": "{{stage}} de {{stageNum}}: calibrar até bateria fraca",
-                        "progressText3": "Passo {{stage}} de {{stageNum}} passos no total",
+                        "progressText1": "Passo {{stage}} de {{stageNum}} passos no total: a calibrar para carga completa",
+                        "progressText2": "Passo {{stage}} de {{stageNum}} passos no total: a calibrar para bateria fraca",
+                        "progressText3": "Passo {{stage}} de {{stageNum}} passos no total: a calibrar para bateria cheia",
                         "FCCText": "De {{before}} Wh até {{after}} Wh",
                         "note": "Nota: antes de repor o indicador de bateria, certifique-se de que liga o computador à alimentação CA. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Selecione os idiomas de origem e destino pretendidos.",
                     "point8": "Dependendo das suas necessidades, defina a entrada de voz da Coluna ou do Microfone.",
                     "point9": "Clique no ícone de microfone para começar a falar",
-                    "closeText": "fechar"
+                    "closeText": "fechar",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
