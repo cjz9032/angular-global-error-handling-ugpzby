@@ -1465,8 +1465,8 @@
                         "title": "Volume du micro",
                         "description": "Le Dolby Audio offre un son puissant, clair et performant pour tous les contenus que vous utilisez, sélectionnez le mode approprié pour votre contenu et votre équipement.",
                         "options": {
-                            "silent": "Volume maximum",
-                            "loud": "Volume minimum"
+                            "silent": "Volume minimum",
+                            "loud": "Volume maximum"
                         }
                     },
                     "suppress": {
