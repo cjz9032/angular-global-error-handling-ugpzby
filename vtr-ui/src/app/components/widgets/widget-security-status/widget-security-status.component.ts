@@ -25,6 +25,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	@Input() securityAdvisor: SecurityAdvisor;
 	items: Array<WidgetItem>;
 	region: string;
+	pluginSupport: boolean;
 
 	@Input() linkId: string;
 	constructor(
@@ -47,6 +48,14 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		}).catch(() => {
 			this.region = 'us';
 			this.showVpn();
+		});
+
+		this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
+			this.pluginSupport = result === 'true';
+		}).catch((e) => {
+			this.pluginSupport = false;
+		}).finally(() => {
+			this.showUac();
 		});
 
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
@@ -104,6 +113,13 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			if (vpnItem) {
 				this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-vpn'));
 			}
+		}
+	}
+
+	showUac() {
+		const uacItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-uac'));
+		if (!this.pluginSupport && uacItem) {
+			this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-uac'));
 		}
 	}
 
