@@ -55,9 +55,6 @@ import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.mod
 		SupportService,
 	],
 	exports: [
-		//cpt
-		UIArticleItemComponent,
-		ContainerArticleComponent,
 	],
 	entryComponents: [
 		ModalLicenseComponent,
