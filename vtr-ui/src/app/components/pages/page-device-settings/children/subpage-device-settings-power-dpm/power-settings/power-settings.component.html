@@ -18,7 +18,7 @@
 				<vtr-ui-dpm-dropdown [list]="signInOptions" [value]="selectedSignInOptionVal"
 					(change)="onSignInOptionChanged($event)" [dropDownId]="'sign-in-options-dropDown'">
 				</vtr-ui-dpm-dropdown>
-				<div class="note">{{'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.tip' | translate}}</div>
+				<div tabindex="0" class="note" attr.aria-label="{{'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.tip' | translate}}">{{'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.tip' | translate}}</div>
 			</section>
 		</div>
 	</vtr-ui-row-switch>
