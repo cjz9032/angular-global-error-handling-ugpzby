@@ -76,24 +76,24 @@
 				id="batteryConditionNote{{i}}"
 				*ngIf="batteryConditions[i].condition!= batteryConditionsEnum.FullACAdapterSupport">
 				<span role="img"
-					id="batteryConditionIcon-ConditionGoodBattery"
-					attr.aria-label="batteryConditionIcon-ConditionGoodBattery"
+					id="batteryConditionIcon-GoodBattery"
+					attr.aria-label="batteryConditionIcon-GoodBattery"
 					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Good"
 					class="icomoon icomoon-ConditionGoodBattery"></span>
-				<span role="text"
-				id="batteryConditionIcon-ConditionFairBattery"
-				attr.aria-label="batteryConditionIcon-ConditionFairBattery"
+				<span role="img"
+				id="batteryConditionIcon-FairBattery"
+				attr.aria-label="batteryConditionIcon-FairBattery"
 					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Fair"
 					class="icomoon icomoon-ConditionFairBattery"></span>
-				<span role="text"
-				id="batteryConditionIcon-ConditionBadBattery"
-				attr.aria-label="batteryConditionIcon-ConditionBadBattery"
+				<span role="img"
+				id="batteryConditionIcon-BadBattery"
+				attr.aria-label="batteryConditionIcon-BadBattery"
 					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Poor &&
 				batteryConditions[i].condition!=batteryConditionsEnum.Error"
 					class="icomoon icomoon-ConditionBadBattery"></span>
-				<span role="text"
-				id="batteryConditionIcon-NotSupportACAdapter"
-				attr.aria-label="batteryConditionIcon-NotSupportACAdapter"
+				<span role="img"
+				id="batteryConditionIcon-ACAdapter-notSupported"
+				attr.aria-label="batteryConditionIcon-ACAdapter-notSupported"
 					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.NotSupportACAdapter"
 					class="icomoon icomoon-ConditionACAdapterError"></span>
 			</div>
