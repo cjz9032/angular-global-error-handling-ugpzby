@@ -2003,11 +2003,11 @@
 				"installBtnText": "Install",
 				"launchBtnText": "Launch",
 				"voiceToText": {
-					"title": "Voice to text",
+					"title": "Voice to Text",
 					"caption": "This feature provides voice typing function that converts voice into text for quick input."
 				},
 				"translation": {
-					"title": "Translation Assistant",
+					"title": "Translation",
 					"caption": "This feature provides real-time translation assistance of speeches and all the translated will be shown in text. Multiple languages are available for the source and target language."
 				},
 				"modalPopUp": {
