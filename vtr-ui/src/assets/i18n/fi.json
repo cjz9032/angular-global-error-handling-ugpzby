@@ -875,11 +875,12 @@
                 "question8": "Oletko käyttänyt Lenovo Vantage -palvelua tietokonettasi koskevien tukitietojen hakemiseen?",
                 "tips2": "Kirjoita halutessasi muita kommentteja alle",
                 "emailAddressLabel": "Syötä sähköpostiosoitteesi, jos haluat, että Lenovo Vantage -tiimi ottaa sinuun yhteyttä.",
-                "emailAddress": "Sähköpostiosoite"
+                "emailAddress": "Sähköpostiosoite",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Pika-asetuksesi",
+            "title": "Pika-asetukset",
             "microphone": "Mikrofoni",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Silmien hoito",
@@ -1252,9 +1253,9 @@
                             "reset": "Uudelleenasetus",
                             "stop": "Pysäytä"
                         },
-                        "progressText1": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
-                        "progressText2": "{{stage}} / {{stageNum}}: Kalibroidaan akun alhaiseen varaukseen",
-                        "progressText3": "Vaihe {{stage}}/{{stageNum}} (yhteensä)",
+                        "progressText1": "Vaihe {{stage}}/{{stageNum}}: Kalibroidaan täyteen lataukseen",
+                        "progressText2": "Vaihe {{stage}}/{{stageNum}}: Kalibroidaan akun alhaiseen varaukseen",
+                        "progressText3": "Vaihe {{stage}}/{{stageNum}}: Kalibroidaan akun korkeaan varaukseen",
                         "FCCText": "{{before}}Wh- {{after}} Wh",
                         "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Valitse haluamasi lähde- ja kohdekieli.",
                     "point8": "Määritä äänisyöttö kaiuttimesta tai mikrofonista tarpeen mukaan.",
                     "point9": "Napsauta mikrofonikuvaketta ja aloita puhuminen",
-                    "closeText": "sulje"
+                    "closeText": "sulje",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

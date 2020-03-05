@@ -875,11 +875,12 @@
                 "question8": "Haben Sie Lenovo Vantage bereits verwendet, um auf Unterstützungsinformationen Ihres Computers zuzugreifen?",
                 "tips2": "Weitere Kommentare können Sie unten hinterlassen",
                 "emailAddressLabel": "Geben Sie Ihre E‑Mail-Adresse ein, wenn das Lenovo Vantage-Team Sie kontaktieren darf.",
-                "emailAddress": "E-Mail-Adresse"
+                "emailAddress": "E-Mail-Adresse",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Ihre Schnelleinstellungen",
+            "title": "Schnelleinstellungen",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Augen schonen",
@@ -1252,9 +1253,9 @@
                             "reset": "Zurücksetzen",
                             "stop": "Stoppen"
                         },
-                        "progressText1": "{{stage}} von {{stageNum}}: Kalibrierung für volle Ladung",
-                        "progressText2": "{{stage}} von {{stageNum}}: Kalibrierung für niedrigen Akkustand",
-                        "progressText3": "Schritt {{stage}} von {{stageNum}} Schritten",
+                        "progressText1": "Schritt {{stage}} von {{stageNum}} Schritten: Kalibrierung für volle Ladung",
+                        "progressText2": "Schritt {{stage}} von {{stageNum}} Schritten: Kalibrierung für niedrige Ladung",
+                        "progressText3": "Schritt {{stage}} von {{stageNum}} Schritten: Kalibrierung für hohe Ladung",
                         "FCCText": "Von {{before}} Wh auf {{after}} Wh",
                         "note": "Hinweis: Vor dem Zurücksetzen des Akkustandsanzeigers muss Ihr Computer an die Stromversorgung angeschlossen werden. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Wählen Sie die gewünschte Ausgangs‑ und Zielsprache aus.",
                     "point8": "Stellen Sie abhängig von Ihren Anforderungen ein, ob die Spracheingabe vom Lautsprecher oder vom Mikrofon stammt.",
                     "point9": "Klicken Sie auf das Mikrofonsymbol und beginnen Sie zu sprechen",
-                    "closeText": "schließen"
+                    "closeText": "schließen",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "OK",

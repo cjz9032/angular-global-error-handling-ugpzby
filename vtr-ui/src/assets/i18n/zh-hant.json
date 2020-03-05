@@ -875,11 +875,12 @@
                 "question8": "您是否使用 Lenovo Vantage 存取您的電腦的相關支援資訊？",
                 "tips2": "請在下方將任何其他意見告訴我們",
                 "emailAddressLabel": "如果您希望 Lenovo Vantage 團隊與您聯絡，請留下您的電子郵件地址。",
-                "emailAddress": "電子郵件地址"
+                "emailAddress": "電子郵件地址",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "您的快速設定",
+            "title": "快速設定",
             "microphone": "麥克風",
             "cameraPrivacy": "相機",
             "eyeCareMode": "護眼",
@@ -1252,9 +1253,9 @@
                             "reset": "重設",
                             "stop": "停止"
                         },
-                        "progressText1": "步驟{{stage}}（共{{stageNum}}個步驟）：充飽校準",
-                        "progressText2": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為放電到低電量",
-                        "progressText3": "步驟 {{stage}}，總計 {{stageNum}} 個步驟",
+                        "progressText1": "步驟 {{stage}}，總計 {{stageNum}} 個步驟：充飽校準",
+                        "progressText2": "步驟 {{stage}}，總計 {{stageNum}} 個步驟：電池電力不足校準",
+                        "progressText3": "步驟 {{stage}}，總計 {{stageNum}} 個步驟：電池電力充足校準",
                         "FCCText": "從 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重設電池計量器之前，請確定將電腦連接到 AC 電源。",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "選擇所需的來源語言和目標語言。",
                     "point8": "根據您的需求，設定從喇叭或麥克風輸入語音。",
                     "point9": "按一下麥克風圖示開始說話",
-                    "closeText": "關閉"
+                    "closeText": "關閉",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "確定",

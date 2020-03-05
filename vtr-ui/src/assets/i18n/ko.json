@@ -875,7 +875,8 @@
                 "question8": "Lenovo Vantage를 사용하여 컴퓨터 관련 지원 정보를 얻은 적이 있으십니까?",
                 "tips2": "추가 의견은 아래에 남겨주시기 바랍니다",
                 "emailAddressLabel": "혹시 Lenovo Vantage 팀에게 연락을 받길 원하신다면 이메일 주소를 남겨주시기 바랍니다.",
-                "emailAddress": "이메일 주소"
+                "emailAddress": "이메일 주소",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
@@ -1252,9 +1253,9 @@
                             "reset": "재설정",
                             "stop": "중지"
                         },
-                        "progressText1": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
-                        "progressText2": "{{stageNum}}의 {{stage}}: 저전력으로 보정 중",
-                        "progressText3": "총 {{stageNum}}단계 중 {{stage}}단계",
+                        "progressText1": "총 {{stageNum}} 단계 중, {{stage}} 단계: 완전 충전으로 보정",
+                        "progressText2": "총 {{stageNum}} 단계 중, {{stage}} 단계: 저전력으로 보정",
+                        "progressText3": "총 {{stageNum}} 단계 중, {{stage}} 단계: 고전력으로 보정",
                         "FCCText": "{{before}} Wh에서 {{after}} Wh",
                         "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "원하는 소스 언어 및 대상 언어를 선택하십시오.",
                     "point8": "필요에 따라 스피커 또는 마이크에서 음성 입력을 설정하십시오.",
                     "point9": "말하기를 시작하려면 마이크 아이콘을 클릭하십시오",
-                    "closeText": "닫기"
+                    "closeText": "닫기",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "확인",

@@ -875,11 +875,12 @@
                 "question8": "Czy aplikacja Lenovo Vantage była używana do uzyskiwania dostępu do informacji pomocy technicznej dotyczącej komputera?",
                 "tips2": "Wprowadź dodatkowe komentarze poniżej",
                 "emailAddressLabel": "Podaj adres e-mail, jeśli chcesz, aby zespół ds. aplikacji Lenovo Vantage mógł się z Tobą kontaktować.",
-                "emailAddress": "Adres e-mail"
+                "emailAddress": "Adres e-mail",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Twoje szybkie ustawienia",
+            "title": "Szybkie ustawienia",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Aparat",
             "eyeCareMode": "Ochrona oczu",
@@ -1252,9 +1253,9 @@
                             "reset": "Resetuj",
                             "stop": "Zatrzymaj"
                         },
-                        "progressText1": "{{stage}} z {{stageNum}}: Kalibracja do całkowitego naładowania",
-                        "progressText2": "{{stage}} z {{stageNum}}: Kalibracja do niskiego poziomu naładowania baterii",
-                        "progressText3": "Krok {{stage}}, z {{stageNum}} kroków łącznie",
+                        "progressText1": "Krok {{stage}} z {{stageNum}} kroków łącznie: Kalibracja do całkowitego naładowania",
+                        "progressText2": "Krok {{stage}} z {{stageNum}} kroków łącznie: Kalibracja do niskiego poziomu naładowania baterii",
+                        "progressText3": "Krok {{stage}} z {{stageNum}} kroków łącznie: Kalibracja do wysokiego poziomu naładowania baterii",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Wybierz żądany język źródłowy oraz docelowy.",
                     "point8": "W zależności od potrzeb ustaw wejście głosowe z głośnika lub z mikrofonu.",
                     "point9": "Kliknij ikonę mikrofonu, aby zacząć mówić",
-                    "closeText": "zamknij"
+                    "closeText": "zamknij",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
