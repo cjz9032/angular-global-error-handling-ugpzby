@@ -248,6 +248,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	// invoke HPD related JS bridge calls
 	private initSmartAssist(isFirstTimeLoad: boolean) {
+		this.logger.info('PageSmartAssistComponent.initSmartAssist', {isFirstTimeLoad});
 		this.apsAvailability();
 
 		if (this.smartAssistCapability === undefined) {
@@ -609,19 +610,19 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public onResetDefaultSettings($event) {
 		this.smartAssist.resetHPDSetting()
 			.then((isSuccess: boolean) => {
+				this.logger.info('onResetDefaultSettings.resetHPDSetting', isSuccess);
 				if (this.smartAssist.isShellAvailable) {
 					this.initSmartAssist(false);
 				}
 				this.getHPDLeaveSensitivityStatus();
-				this.logger.info('onResetDefaultSettings.resetHPDSetting', isSuccess);
 			});
 
 		if (this.intelligentSecurity.isZeroTouchLockFacialRecoVisible) {
 			this.smartAssist.resetFacialRecognitionStatus().then((res) => {
+				this.logger.info(`HPDReset - resetFacialRecognitionStatus ${res}`);
 				if (this.smartAssist.isShellAvailable) {
 					this.getFacialRecognitionStatus();
 				}
-				this.logger.info(`HPDReset - resetFacialRecognitionStatus ${res}`);
 			});
 		}
 	}
