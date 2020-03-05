@@ -1897,13 +1897,32 @@ export class VantageShellService {
 		// 	}
 		// 	return this.phoenix.gaming.gamingThermalmode;
 		// }
+		if (this.phoenix) {
+			const gamingThermalMode = {
+				getThermalModeStatus: this.getPromise(true),
+				setThermalModeStatus: this.getPromise(true),
+				regThermalModeEvent: this.getPromise(true),
+				getPerformanceOCSetting: this.getPromise(true),
+				setPerformanceOCSetting: this.getPromise(true)
+			};
+			return gamingThermalMode;
+		}
+		return undefined;
+	}
 
-		const gamingThermalMode = {
-			getThermalModeStatus: this.getPromise(true),
-			setThermalModeStatus: this.getPromise(true),
-			regThermalModeEvent: this.getPromise(true),
+	public getGamingAdvancedOC() {
+		// if (this.phoenix) {
+		// 	if (!this.phoenix.gaming) {
+		// 		this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+		// 	}
+		// 	return this.phoenix.gaming.gamingThermalmode;
+		// }
+
+		const gamingAdvancedOC = {
+			getAdvancedOCInfo: this.getPromise(true),
+			setAdvancedOCInfo: this.getPromise(true),
 		};
-		return gamingThermalMode;
+		return gamingAdvancedOC;
 	}
 
 	public getImcHelper(): any {

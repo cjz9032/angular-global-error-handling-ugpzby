@@ -9,6 +9,7 @@ export class GamingOCService {
 	shellService: VantageShellService,
 	private logger: LoggerService
   ) { 
+	// performance OC is a sub-feature of thermal mode 2
     this.gamingOverClock = shellService.getGamingThermalMode();
     if(this.gamingOverClock) {
       this.isShellAvailable = true;
