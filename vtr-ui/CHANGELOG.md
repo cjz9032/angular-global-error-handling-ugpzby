@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.26](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.25...v1.3.26) (2020-03-05)
+
+
+### Features
+
+* **cpt:** remove CPT ([59117ba](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/59117ba57bfe9a8da7183272f0f6e61dd294326d))
+* **smart performance:** remove Smart Performance UI ([ed6fceb](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/ed6fceb4d87b281075e000f3edd32eb052edd996))
+
 ### [1.3.25](https://bitbucket.tc.lenovo.com///compare/v1.3.24...v1.3.25) (2020-03-05)
 
 ### [1.3.24](https://bitbucket.tc.lenovo.com///compare/v1.3.23...v1.3.24) (2020-03-05)
