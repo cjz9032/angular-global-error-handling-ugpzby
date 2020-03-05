@@ -875,11 +875,12 @@
                 "question8": "Пробовали ли вы получить информацию о поддержке для вашего компьютера с помощью Lenovo Vantage?",
                 "tips2": "Оставьте любые дополнительные комментарии ниже",
                 "emailAddressLabel": "Укажите ваш адрес электронной почты, если вы хотите, чтобы команда Lenovo Vantage могла с вами связаться.",
-                "emailAddress": "Адрес электронной почты"
+                "emailAddress": "Адрес электронной почты",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Ваша панель быстрой настройки параметров",
+            "title": "Быстрые настройки",
             "microphone": "Микрофон",
             "cameraPrivacy": "Фотокамера",
             "eyeCareMode": "Защита глаз",
@@ -1252,9 +1253,9 @@
                             "reset": "Сбросить",
                             "stop": "Стоп"
                         },
-                        "progressText1": "{{stage}} из {{stageNum}}: калибровка до полной зарядки",
-                        "progressText2": "{{stage}} из {{stageNum}}: калибровка до низкого уровня заряда аккумулятора",
-                        "progressText3": "Шаг {{stage}} из {{stageNum}}",
+                        "progressText1": "Шаг {{stage}} из {{stageNum}}: калибровка до полной зарядки",
+                        "progressText2": "Шаг {{stage}} из {{stageNum}}: калибровка до низкого уровня заряда аккумулятора",
+                        "progressText3": "Шаг {{stage}} из {{stageNum}}: калибровка до высокого уровня заряда аккумулятора",
                         "FCCText": "С {{before}} Вт·ч до {{after}} Вт·ч",
                         "note": "Примечание. Перед сбросом индикатора аккумулятора обязательно подключите компьютер к сети переменного тока. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Выберите нужный исходный язык и целевой язык.",
                     "point8": "В зависимости от потребностей задайте голосовой ввод с динамиков или с микрофона.",
                     "point9": "Нажмите значок микрофона, чтобы начать говорить",
-                    "closeText": "закрыть"
+                    "closeText": "закрыть",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ОК",

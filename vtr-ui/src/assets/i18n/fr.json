@@ -875,11 +875,12 @@
                 "question8": "Avez-vous utilisé Lenovo Vantage pour accéder aux informations d'aide concernant votre ordinateur ?",
                 "tips2": "Veuillez ajouter tout commentaire supplémentaire ci-dessous",
                 "emailAddressLabel": "Indiquez votre adresse e-mail si vous souhaitez être contacté par l'équipe Lenovo Vantage.",
-                "emailAddress": "Adresse e-mail"
+                "emailAddress": "Adresse e-mail",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Votre configuration rapide des paramètres",
+            "title": "Paramètres rapides",
             "microphone": "Microphone",
             "cameraPrivacy": "Caméra",
             "eyeCareMode": "Protection visuelle",
@@ -1252,9 +1253,9 @@
                             "reset": "Réinitialiser",
                             "stop": "Arrêt"
                         },
-                        "progressText1": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
-                        "progressText2": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie faible",
-                        "progressText3": "Étape {{stage}}, de {{stageNum}} étapes au total",
+                        "progressText1": "Étape {{stage}} sur {{stageNum}} étapes au total : étalonnage sur charge complète",
+                        "progressText2": "Étape {{stage}} sur {{stageNum}} étapes au total : étalonnage sur charge de batterie faible",
+                        "progressText3": "Étape {{stage}} sur {{stageNum}} étapes au total : étalonnage sur charge de batterie pleine",
                         "FCCText": "De {{before}} Wh à {{after}} Wh",
                         "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {
@@ -1464,8 +1465,8 @@
                         "title": "Volume du micro",
                         "description": "Le Dolby Audio offre un son puissant, clair et performant pour tous les contenus que vous utilisez, sélectionnez le mode approprié pour votre contenu et votre équipement.",
                         "options": {
-                            "silent": "Volume maximum",
-                            "loud": "Volume minimum"
+                            "silent": "Volume minimum",
+                            "loud": "Volume maximum"
                         }
                     },
                     "suppress": {
@@ -2018,7 +2019,8 @@
                     "point7": "Sélectionnez la langue source et la langue cible souhaitées.",
                     "point8": "En fonction de vos besoins, définissez la saisie vocale à partir du haut-parleur ou du micro.",
                     "point9": "Cliquez sur l'icône du micro pour commencer à parler",
-                    "closeText": "fermer"
+                    "closeText": "fermer",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

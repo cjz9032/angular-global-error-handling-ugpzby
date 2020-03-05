@@ -875,7 +875,8 @@
                 "question8": "Hai utilizzato Lenovo Vantage per accedere alle informazioni di supporto relative al computer?",
                 "tips2": "Fornisci di seguito eventuali commenti aggiuntivi",
                 "emailAddressLabel": "Fornisci il tuo indirizzo e-mail se vuoi essere contattato dal team Lenovo Vantage.",
-                "emailAddress": "Indirizzo e-mail"
+                "emailAddress": "Indirizzo e-mail",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
@@ -1252,9 +1253,9 @@
                             "reset": "Reimposta",
                             "stop": "Interrompi"
                         },
-                        "progressText1": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
-                        "progressText2": "{{stage}} di {{stageNum}}: calibrazione per batteria scarica in corso",
-                        "progressText3": "Passo {{stage}} di {{stageNum}} passi in totale",
+                        "progressText1": "Passo {{stage}} di {{stageNum}} passi totali: calibrazione fino a carica completa",
+                        "progressText2": "Passo {{stage}} di {{stageNum}} passi totali: calibrazione fino ad alimentazione batteria bassa",
+                        "progressText3": "Passo {{stage}} di {{stageNum}} passi totali: calibrazione fino ad alimentazione batteria alta",
                         "FCCText": "Da {{before}} Wh a {{after}} Wh",
                         "note": "Nota: prima di reimpostare l'indicatore della batteria, assicurarsi di collegare il computer all'alimentazione CA. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Selezionare la lingua di origine e di destinazione desiderate.",
                     "point8": "In base alle proprie esigenze, impostare l'ingresso vocale dall'altoparlante o dal microfono.",
                     "point9": "Fare clic sull'icona del microfono per iniziare a parlare",
-                    "closeText": "chiudi"
+                    "closeText": "chiudi",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

@@ -875,11 +875,12 @@
                 "question8": "¿Ha utilizado Lenovo Vantage para tener acceso a información de soporte de su equipo?",
                 "tips2": "Deje cualquier comentario adicional a continuación",
                 "emailAddressLabel": "Deje su dirección de correo electrónico si desea que el equipo de Lenovo Vantage se ponga en contacto con usted.",
-                "emailAddress": "Dirección de correo electrónico"
+                "emailAddress": "Dirección de correo electrónico",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Su configuración rápida",
+            "title": "Configuración rápida",
             "microphone": "Micrófono",
             "cameraPrivacy": "Cámara",
             "eyeCareMode": "Cuidado visión",
@@ -1252,9 +1253,9 @@
                             "reset": "Restablecer",
                             "stop": "Detener"
                         },
-                        "progressText1": "{{stage}} de {{stageNum}}: Calibración a carga completa",
-                        "progressText2": "{{stage}} de {{stageNum}}: Calibración a energía de batería baja",
-                        "progressText3": "Paso {{stage}}, de {{stageNum}} pasos en total",
+                        "progressText1": "Paso {{stage}} de {{stageNum}} pasos en total: calibración con carga completa",
+                        "progressText2": "Paso {{stage}} de {{stageNum}} pasos en total: calibración con energía de batería baja",
+                        "progressText3": "Paso {{stage}} de {{stageNum}} pasos en total: calibración con batería alta",
                         "FCCText": "De {{before}} Wh a {{after}} Wh",
                         "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {
@@ -2018,7 +2019,8 @@
                     "point7": "Seleccione el idioma origen y el idioma de destino que desee.",
                     "point8": "En función de sus necesidades, establezca la entrada de voz de altavoz o del micrófono.",
                     "point9": "Haga clic en el icono de micrófono para empezar a hablar",
-                    "closeText": "cerrar"
+                    "closeText": "cerrar",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "aceptar",

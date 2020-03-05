@@ -76,52 +76,52 @@
 				id="batteryConditionNote{{i}}"
 				*ngIf="batteryConditions[i].condition!= batteryConditionsEnum.FullACAdapterSupport">
 				<span role="img"
-					id="batteryConditionIcon-ConditionGoodBattery"
-					attr.aria-label="batteryConditionIcon-ConditionGoodBattery"
+					id="batteryConditionIcon-GoodBattery"
+					attr.aria-label="batteryConditionIcon-GoodBattery"
 					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Good"
 					class="icomoon icomoon-ConditionGoodBattery"></span>
-				<span role="text"
-				id="batteryConditionIcon-ConditionFairBattery"
-				attr.aria-label="batteryConditionIcon-ConditionFairBattery"
+				<span role="img"
+				id="batteryConditionIcon-FairBattery"
+				attr.aria-label="batteryConditionIcon-FairBattery"
 					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Fair"
 					class="icomoon icomoon-ConditionFairBattery"></span>
-				<span role="text"
-				id="batteryConditionIcon-ConditionBadBattery"
-				attr.aria-label="batteryConditionIcon-ConditionBadBattery"
+				<span role="img"
+				id="batteryConditionIcon-BadBattery"
+				attr.aria-label="batteryConditionIcon-BadBattery"
 					*ngIf="batteryConditions[i].conditionStatus == batteryStatus.Poor &&
 				batteryConditions[i].condition!=batteryConditionsEnum.Error"
 					class="icomoon icomoon-ConditionBadBattery"></span>
-				<span role="text"
-				id="batteryConditionIcon-ConditionACAdapterError"
-				attr.aria-label="batteryConditionIcon-ConditionACAdapterError"
+				<span role="img"
+				id="batteryConditionIcon-ACAdapter-notSupported"
+				attr.aria-label="batteryConditionIcon-ACAdapter-notSupported"
 					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.NotSupportACAdapter"
 					class="icomoon icomoon-ConditionACAdapterError"></span>
 			</div>
 			<div *ngIf="batteryConditions[i].condition == batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
 				class="p-0 pr-2 col-auto adapter-support">
-				<span  class="icomoon icomoon-ConditionACAdapterError" role="img" id="icon-ConditionACAdapterError" ></span>
+				<span  class="icomoon icomoon-ConditionACAdapterError" role="img" id="icon-FullACAdapterSupport" attr.aria-label="icon-FullACAdapterSupport" ></span>
 			</div>
 			<div class='col battery-conditions-tips'>
 				<span role="text"
 					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
 					[innerHTML]="batteryConditionNote | translate:param"
-					id="myDevice-settings-battery-condition-tip-{{i}}"
+					id="battery-condition-tip-StoreLimitation"
 					role="text"></span>
 				<span role="text"
 					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
 					[innerHTML]="batteryConditionNote | translate:acAdapterInfoParams"
-					id="myDevice-settings-battery-condition-tip-{{i}}"
+					id="battery-condition-tip-FullACAdapterSupport"
 					role="text"></span>
 				<span role="text"
 					*ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport"
 					[innerHTML]="batteryConditionNote | translate"
-					id="myDevice-settings-battery-condition-tip-{{i}}"
+					id="battery-condition-tip-Good"
 					role="text"></span>
 				<a *ngIf="batteryConditions[i].conditionStatus===batteryStatus.AcAdapterStatus && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport && shortAcErrNote"
 					class="link-label"
 					(click)="showDetailTip(i)"
 					(keydown.enter)="showDetailTip(i)"
-					id="myDevice-settings-batteryGauge-seeDetails-link"
+					id="battery-condition-tip-ACAdapterError-seeDetails-link"
 					role="link">{{'device.deviceSettings.batteryGauge.seeDetailsLink' | translate}}</a>
 			</div>
 
