@@ -15,11 +15,9 @@
 		margin-top: 2.3rem;
 		@media #{$white-on-black} {
 			background: $shade_lightest;
-			border: 0.1rem solid $shade_lighter;
 		}
 		@media #{$black-on-white} {
 			background: $shade_lightest;
-			border: 0.1rem solid $shade_lighter;
 		}
 		
 		::ng-deep {
@@ -59,6 +57,15 @@
 	&.ng5-slider-span {
 		&.ng5-slider-bar {
 			width: 99% !important;
+				@media #{$white-on-black} {
+					background:none;
+					border: none;
+					}
+				@media #{$black-on-white} {
+					background: none;
+					border: none;
+					}
+			  
 		}
 	}
 }
