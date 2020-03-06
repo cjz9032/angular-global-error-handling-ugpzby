@@ -87,7 +87,7 @@
 				<div class="question" id="feedback-form-userEmail" attr.aria-label="feedback-form-userEmail">
 					{{'dashboard.feedback.form.emailAddressLabel' | translate}}
 				</div>
-				<input class="user-email w-100" [ngClass]="[(feedbackForm.value.userEmail && feedbackForm.get('userEmail').invalid && isSubmitted) ? 'invalid-email': '']" type="text" tabindex="-1" formControlName="userEmail"
+				<input [tabindex]="feedbackSuccess ? -1 : 0" class="user-email w-100" [ngClass]="[(feedbackForm.value.userEmail && feedbackForm.get('userEmail').invalid && isSubmitted) ? 'invalid-email': '']" type="text" formControlName="userEmail"
 					placeholder="{{'dashboard.feedback.form.emailAddress' | translate}}">
 					<p class="email-error-msg" *ngIf="feedbackForm.value.userEmail && feedbackForm.get('userEmail').invalid && isSubmitted">{{'dashboard.feedback.form.invalidEmailMsg' | translate}}</p>
 			</div>
@@ -102,7 +102,7 @@
 					[tabIndex]="feedbackSuccess ? -1 : 0"
 					[btnHeight]="true"
 					[isFullWidth]="true"
-					[isDisabled]="!feedbackForm.value.userComment && feedbackForm.value.qaNewStyle === null && feedbackForm.value.systemUpdateAwareness === null && feedbackForm.value.remommendVantageToFriend === null && !feedbackForm.value.userEmail"
+					[isDisabled]="!feedbackForm.value.userComment && feedbackForm.value.qaNewStyle === null && feedbackForm.value.systemUpdateAwareness === null && feedbackForm.value.remommendVantageToFriend === null"
 					[label]="'dashboard.feedback.form.sendFeedback' | translate"
 					(onClick)="onFeedBackSubmit()"></vtr-ui-button>
 			</div>
