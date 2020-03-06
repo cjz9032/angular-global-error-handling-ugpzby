@@ -7,12 +7,12 @@
 						<fa-icon class="left-icon" [icon]="['fal', 'keyboard']"></fa-icon >
 					</div>
 				</div>
-                <div class="title" role="text" automationid="topRowFunctionsIdeapad.title" id="topRowFunctionsIdeapad-title">
+                <div class="title" role="text"  id="topRowFunctionsIdeapad-title">
                     {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.title' | translate}}
                 </div>
 			</div>
             <div class="col-12 pr-0 caption">
-                <div class="text" role="text" automationid="topRowFunctionsIdeapad.description"
+                <div class="text" role="text" 
                     id="topRowFunctionsIdeapad-description">
                     {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.description' | translate}}
                 </div>
@@ -26,7 +26,7 @@
 								[iconName]="'icomoon icomoon-Special-function'"
 								(change)="update$.next(keyType.HOTKEY)"
 								[value]="keyType.HOTKEY"
-								automationid="topRowFunctionsIdeapad.subSection.radioButton.sFunKey">
+								>
 							</vtr-ui-rectangle-radio>
 						</div>
 						<div>
@@ -37,24 +37,16 @@
 								[iconName]="'icomoon icomoon-F1-F12-funciton'"
 								(change)="update$.next(keyType.FNKEY)"
 								[value]="keyType.FNKEY"
-								automationid="topRowFunctionsIdeapad.subSection.radioButton.fnKey">
+								>
 							</vtr-ui-rectangle-radio>
 						</div>
 					</div>
-					<p role="text"
-						class="text mt-3"
-						*ngIf="hotkey$ | async"
-                        automationid="topRowFunctionsIdeapad.note.sFunKey"
-                        id="topRowFunctionsIdeapad-note-sFunKey">
-						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.sFunKey' | translate}}
-					</p>
-					<p role="text"
-						class="text mt-3"
-						*ngIf="fnkey$ | async"
-                        automationid="topRowFunctionsIdeapad.note.fnKey"
-                        id="topRowFunctionsIdeapad-note-fnKey">
-						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.fnKey' | translate}}
-					</p>
+                    <p role="text" class="text mt-3" *ngIf="hotkey$ | async" id="topRowFunctionsIdeapad-note-sFunKey">
+                        {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.sFunKey' | translate}}
+                    </p>
+                    <p role="text" class="text mt-3" *ngIf="fnkey$ | async" id="topRowFunctionsIdeapad-note-fnKey">
+                        {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.fnKey' | translate}}
+                    </p>
 				</div>
 			</div>
 		</div>
