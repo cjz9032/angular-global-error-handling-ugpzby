@@ -1633,7 +1633,7 @@
                         "description": "Tipko Fn v spodnjem levem kotu tipkovnice lahko pritisnite hkrati z drugimi tipkami, da sprožite ukaze, prikazane na sliki tipkovnice spodaj."
                     },
                     "firstKeyObj": {
-                        "tittle": "Fn + tabulatorka",
+                        "tittle": "Fn + Tab",
                         "description": "omogočanje funkcije povečave in pomanjšave pri zaslonih velike ločljivosti",
                         "image": ""
                     },
