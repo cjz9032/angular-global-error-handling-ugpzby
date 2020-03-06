@@ -13,7 +13,7 @@
 			</ul>
 		</div>
 		<div class="time">
-            <span *ngIf="textCase === 'default'" role="link" id="{{name}}" attr.aria-label="{{ name }}">{{name}}
+            <span *ngIf="textCase === 'default'" role="link" id="{{name}} {{placeholder}}" attr.aria-label="{{ name }} {{placeholder}}">{{name}}
                 {{placeholder | titlecase }} </span>
             <span *ngIf="textCase === 'oled'" role="link" id="{{name}}" attr.aria-label="{{ name }}">{{name}}
                 {{placeholder | lowercase }} </span>
