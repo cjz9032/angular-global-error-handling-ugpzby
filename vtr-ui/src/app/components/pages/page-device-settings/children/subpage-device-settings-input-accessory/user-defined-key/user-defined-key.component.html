@@ -1,4 +1,4 @@
-<li class="pt-3 user-defined-key-block" *ngIf="hasUDKCapability && machineType === 1">
+<li class="user-defined-key-block" *ngIf="hasUDKCapability && machineType === 1">
     <vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.userDefinedKey.title' | translate"
         componentName="User defined key"
         [caption]="'device.deviceSettings.inputAccessories.userDefinedKey.caption' | translate"
@@ -134,7 +134,7 @@
                                     </div>
                                 </form>
                             </div>
-<!--                             
+<!--
                             <div class="col" *ngIf="selectedValue.value == 4">
                                 <br>
                                 <form #form1="ngForm" novalidate>
