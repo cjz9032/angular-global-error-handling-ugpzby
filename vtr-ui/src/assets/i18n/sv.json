@@ -1633,7 +1633,7 @@
                         "description": "Du kan trycka på Fn-tangenten, längst ned till vänster på tangentbordet, samtidigt som du trycker på andra tangenter för att aktivera kommandon som visas på tangentbordsöversikten nedan."
                     },
                     "firstKeyObj": {
-                        "tittle": "Fn + Tabb",
+                        "tittle": "Fn + Tab",
                         "description": "aktivera zoomningsfunktionen på HD-skärmar",
                         "image": ""
                     },
