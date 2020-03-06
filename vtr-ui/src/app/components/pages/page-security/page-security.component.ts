@@ -203,6 +203,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		if (!this.pluginSupport) {
 			this.windowsActiveLandingViewModel = undefined;
 			this.bitLockerLandingViewModel = undefined;
+			this.uacLandingViewModel = undefined;
 		}
 		this.baseItems.push(this.antivirusLandingViewModel.avStatus,
 			this.antivirusLandingViewModel.fwStatus,
@@ -229,6 +230,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		if (!this.pluginSupport) {
 			this.windowsActiveLandingViewModel = undefined;
 			this.bitLockerLandingViewModel = undefined;
+			this.uacLandingViewModel = undefined;
 		}
 		statusList.basic = new Array(
 			this.antivirusLandingViewModel.avStatus.status,

@@ -2,8 +2,8 @@ import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/cor
 import { BacklightStatusEnum, BacklightLevelEnum } from '../backlight/backlight.enum';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
 import { CommonService } from 'src/app/services/common/common.service';
+import { EMPTY } from 'rxjs';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
@@ -69,7 +69,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
 		if (this.currentMode === BacklightStatusEnum.AUTO) {
 			await this.setKBDBacklightStatus(BacklightStatusEnum.OFF);
-			this.setAutomaticKBDBacklight(true);
+			this.setAutomaticKBDBacklight(false);
 		} else {
 			this.setKBDBacklightStatus(this.currentMode);
 			this.setAutomaticKBDBacklight(false);
@@ -80,9 +80,15 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.getKBDBacklightCapability()
-					.then(res => {
+					.then(async res => {
 						this.logger.info('BacklightThinkpadComponent:GetKBDBacklightCapability', res);
-						this.getAutoKBDBacklightCapability();
+						const autoCapability = await this.getAutoKBDBacklightCapability();
+						if (autoCapability) {
+							this.modes = [];
+							this.cacheData.modes = this.modes;
+							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
+							return;
+						}
 						if (res) {
 							this.getKBDBacklightLevel();
 						} else {
@@ -129,20 +135,20 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	public getAutoKBDBacklightCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
-				this.keyboardService.getAutoKBDBacklightCapability()
-					.then(res => {
-						this.logger.info('BacklightThinkpadComponent:getAutoKBDBacklightCapability', res);
-						if (res) {
-							this.addToObjectsList(this.autoObject);
-							this.getAutoKBDStatus();
-						} else {
-							this.removeObjByValue(BacklightStatusEnum.AUTO);
-						}
-						this.isBaseAuto(this.modes, BacklightStatusEnum.AUTO);
-					}).catch(error => {
-						this.logger.error('BacklightThinkpadComponent:getAutoKBDBacklightCapability', error.message);
-						return EMPTY;
-					});
+				return this.keyboardService.getAutoKBDBacklightCapability()
+					// .then(res => {
+					// 	this.logger.info('BacklightThinkpadComponent:getAutoKBDBacklightCapability', res);
+					// 	if (res) {
+					// 		this.addToObjectsList(this.autoObject);
+					// 		this.getAutoKBDStatus();
+					// 	} else {
+					// 		this.removeObjByValue(BacklightStatusEnum.AUTO);
+					// 	}
+					// 	this.isBaseAuto(this.modes, BacklightStatusEnum.AUTO);
+					// }).catch(error => {
+					// 	this.logger.error('BacklightThinkpadComponent:getAutoKBDBacklightCapability', error.message);
+					// 	return EMPTY;
+					// });
 			}
 		} catch (error) {
 			this.logger.error('BacklightThinkpadComponent:getAutoKBDBacklightCapability', error.message);
