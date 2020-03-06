@@ -23,7 +23,7 @@
 									{{'device.deviceSettings.batteryGauge.subtitle'| translate}}
 								</span>
 								<span role="text"
-									*ngIf="batteryService.gaugeResetInfo?.length>1" id="gaugeResetInfo-{{i}}">
+									*ngIf="batteryService.gaugeResetInfo?.length>1" id="Battery-{{i+1}}-details">
 									{{ headings[i] | translate }}
 								</span>
 							</div>
@@ -33,11 +33,11 @@
 								<div>
 									<div class="row">
 										<div class="col-4 label-text"
-											role="text" id="battery-barcode-title-{{i}}">
+											role="text" id="battery-barcode-title-{{i+1}}">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.barCode' | translate}}
 										</div>
 										<div class="col-8 label-value"
-											role="text" id="battery-barcode-value-{{i}}">{{battery.barCode}}</div>
+											role="text" id="battery-barcode-value-{{i+1}}">{{battery.barCode}}</div>
 									</div>
 								</div>
 
@@ -97,7 +97,7 @@
 										</div>
 									</div>
 									<div class="row pt-3">
-										<div class="col-12 percent-note" id="batterySettings-gaugeReset-percentNote">
+										<div class="col-12 percent-note" role="text" id="batterySettings-gaugeReset-percentNote" >
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.percentNote' | translate}}
 										</div>
 									</div>
@@ -108,12 +108,12 @@
 									<div class="row"
 										*ngIf="battery.lastResetTime && battery.resetErrorLog">
 										<div class="col-4 label-text"
-											role="text" id="batterySettings-gaugeReset-lastReset-title-{{i}}">
+											role="text" id="batterySettings-gaugeReset-lastReset-title-{{i+1}}">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.lastReset' | translate}}
 										</div>
 										<div class="col-8 label-value"
 											role="text"
-											*ngIf="is12HrsFormat" id="batterySettings-battery-lastResetTime-value-12hrs-{{i}}">
+											*ngIf="is12HrsFormat" id="batterySettings-battery-lastResetTime-value-12hrs-{{i+1}}">
 											{{battery.lastResetTime | date : 'M/d/yyyy h:mm:ss '}}
 											{{ lastResetTimeAbbreviated[i] | translate}}
 											<br *ngIf="battery.lastResetTime">
@@ -121,7 +121,7 @@
 										</div>
 										<div class="col-8 label-value"
 											role="text"
-											*ngIf="!is12HrsFormat" id="batterySettings-battery-lastResetTime-value-not12hrs-{{i}}">
+											*ngIf="!is12HrsFormat" id="batterySettings-battery-lastResetTime-value-not12hrs-{{i+1}}">
 											{{battery.lastResetTime | date : 'M/d/yyyy H:mm:ss '}}
 											<br>
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.resetLog.' + battery.resetErrorLog | translate}}
@@ -130,11 +130,11 @@
 									<div class="row"
 										*ngIf="battery.FCCBefore && battery.FCCAfter">
 										<div class="col-4 label-text"
-											role="text" id="batterySettings-gaugeReset-fullChargeCapacity">
+											role="text" id="BattergaugeReset-fullChargeCapacity-title-{{i+1}}">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.fullChargeCapacity' | translate}}
 										</div>
 										<div class="col-8 label-value"
-											role="text"
+											role="text" id="BattergaugeReset-fullChargeCapacity-value-{{i+1}}"
 											[innerHTML]="'device.deviceSettings.power.batterySettings.gaugeReset.FCCText' | translate: { before: battery.FCCBefore, after: battery.FCCAfter } ">
 										</div>
 									</div>
@@ -156,7 +156,7 @@
 											(batteryService.gaugeResetInfo.length > 1 && !battery.isResetRunning)) ||
 											!batteryService.isAcAttached)?-1:0"
 										
-										[linkId]="'myDevice-settings-battery-gauge-reset-stop-btn'"
+										linkId="myDevice-settings-battery-gauge-reset-stop-btn{{i+1}}" 
 										[label]="battery.isResetRunning? ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.stop'|translate): ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.reset' | translate)"
 										
 										(click)="onBatteryGaugeReset(i)"></vtr-ui-button>
