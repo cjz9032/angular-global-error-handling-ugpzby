@@ -15,6 +15,7 @@ export class GamingThermalModeService {
 	) {
 		this.gamingThermalMode = shellService.getGamingThermalMode();
 		if (this.gamingThermalMode === undefined) {
+			this.logger.error(`Service-GamingThermalMode-Constructor: gamingThermalMode is undefined, shell Available: ${this.isShellAvailable}`);
 		}
 		if (this.gamingThermalMode) {
 			this.isShellAvailable = true;

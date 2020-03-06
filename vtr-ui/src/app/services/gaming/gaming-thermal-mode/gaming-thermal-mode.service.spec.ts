@@ -1,9 +1,9 @@
 import { TestBed, async, fakeAsync, tick } from '@angular/core/testing';
-import { GamingThermalModeService } from './gaming-thermal-mode.service';
 import { HttpClientModule } from '@angular/common/http';
+
+import { GamingThermalModeService } from './gaming-thermal-mode.service';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { LoggerService } from '../../logger/logger.service';
-import { throwError } from 'rxjs';
 // use spy replace with mock-service
 // import { VantageShellService } from '../../vantage-shell/vantage-shell-mock.service';
 
