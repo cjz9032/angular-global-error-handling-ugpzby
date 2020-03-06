@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.25](https://bitbucket.tc.lenovo.com///compare/v1.3.24...v1.3.25) (2020-03-05)
+
+### [1.3.24](https://bitbucket.tc.lenovo.com///compare/v1.3.23...v1.3.24) (2020-03-05)
+
+### [1.3.23](https://bitbucket.tc.lenovo.com///compare/v1.3.22...v1.3.23) (2020-03-05)
+
+### [1.3.22](https://bitbucket.tc.lenovo.com///compare/v1.3.21...v1.3.22) (2020-03-05)
+
+### [1.3.21](https://bitbucket.tc.lenovo.com///compare/v1.3.20...v1.3.21) (2020-03-04)
+
+### [1.3.20](https://bitbucket.tc.lenovo.com///compare/v1.3.19...v1.3.20) (2020-03-04)
+
+### [1.3.19](https://bitbucket.tc.lenovo.com///compare/v1.3.18...v1.3.19) (2020-03-03)
+
+### [1.3.18](https://bitbucket.tc.lenovo.com///compare/v1.3.17...v1.3.18) (2020-03-03)
+
+### [1.3.17](https://bitbucket.tc.lenovo.com///compare/v1.3.16...v1.3.17) (2020-03-02)
+
+### [1.3.16](https://bitbucket.tc.lenovo.com///compare/v1.3.15...v1.3.16) (2020-02-28)
+
+### [1.3.15](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.14...v1.3.15) (2020-02-28)
+
+
+### Bug Fixes
+
+* **header:** can only go back to non-shell-provided pages ([e82f26c](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/e82f26cea1054e5a2bcfa189a70274ddae683c27))
+
+### [1.3.14](https://bitbucket.tc.lenovo.com///compare/v1.3.13...v1.3.14) (2020-02-27)
+
+### [1.3.13](https://bitbucket.tc.lenovo.com///compare/v1.3.12...v1.3.13) (2020-02-26)
+
 ### [1.3.12](https://bitbucket.tc.lenovo.com///compare/v1.3.11...v1.3.12) (2020-02-26)
 
 

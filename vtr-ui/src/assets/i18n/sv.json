@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Läser in...",
             "from": "från",
             "to": "till",
-            "clickToChange": "klicka för att ändra"
+            "clickToChange": "klicka för att ändra",
+            "failedLoad": "Det gick inte att läsa in.",
+            "retry": "Försök igen"
         },
         "app-update": {
             "message": "Hej! Det finns en nyare version av Vantage. Vill du läsa in den?"
@@ -868,16 +870,17 @@
                 "messages": {
                     "feedbackSuccess": "Tack för din feedback!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Hur troligt är det att du skulle rekommendera en vän eller kollega programmet Lenovo Vantage?",
+                "question7": "Visste du att du kan använda Lenovo Vantage för att hålla programvara (drivrutiner, fast programvara och BIOS) på datorn uppdaterade?",
+                "question8": "Har du använt Lenovo Vantage för att få supportinformation om datorn?",
+                "tips2": "Lämna eventuella övriga kommentarer nedan",
+                "emailAddressLabel": "Lämna din e-postadress om du kan tänka dig att eventuellt bli kontaktad av Lenovo Vantage-teamet.",
+                "emailAddress": "E-postadress",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Dina snabbinställningar",
+            "title": "Snabbinställningar",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Ögonskydd",
@@ -922,6 +925,10 @@
                     "update": "Uppdatera"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Uppdatera drivrutiner, BIOS och annan programvara.",
+            "checkForSystemUpdates": "Sök efter systemuppdateringar"
         }
     },
     "device": {
@@ -1033,7 +1040,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "För att förlänga batteritiden har vi optimerat kapaciteten för full laddning baserat på din användning. Full batterikapacitet kan kräva att batteriet laddas ur till 20 % och sedan laddas om."
                 },
                 "condition": {
                     "Illegal": "Det installerade batteriet <b>stöds inte</b> på enheten och kommer inte att laddas. Byt ut batteriet mot ett Lenovo-batteri.",
@@ -1246,9 +1253,9 @@
                             "reset": "Återställ",
                             "stop": "Stopp"
                         },
-                        "progressText1": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
-                        "progressText2": "{{stage}} av {{stageNum}}: Kalibrerar för låg batterinivå",
-                        "progressText3": "{{stage}} av {{stageNum}}: Kalibrerar för hög batterinivå",
+                        "progressText1": "Steg {{stage}} av {{stageNum}}: kalibrering till full laddning",
+                        "progressText2": "Steg {{stage}} av {{stageNum}}: kalibrering för låg batterinivå",
+                        "progressText3": "Steg {{stage}} av {{stageNum}}: kalibrering för hög batterinivå",
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
@@ -1735,7 +1742,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2009,7 +2019,8 @@
                     "point7": "Välj önskade käll- och målspråk.",
                     "point8": "Ställ in röstinmatning från Högtalare eller Mikrofon.",
                     "point9": "Klicka på mikrofonikonen och börja tala",
-                    "closeText": "stäng"
+                    "closeText": "stäng",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

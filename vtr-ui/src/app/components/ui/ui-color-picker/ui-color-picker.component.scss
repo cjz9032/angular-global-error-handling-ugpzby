@@ -10,6 +10,7 @@
             background: #283756;
             box-shadow: 0 0 1px #283756;
             padding-bottom: 35px;
+            box-shadow: 0 16px 32px rgba(0,0,0,0.2);
             ul{
                 width: 100%;
                 padding: 10px 20px 0 10px;
@@ -48,6 +49,9 @@
                 }
             }
         }
+        .inp-color-picker{
+            box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+        }
         .color-inp{
             width: 0;
             height: 0;
@@ -60,6 +64,12 @@
             border: 1px solid #283756 !important;
             border-radius: 0.5rem;
             box-shadow: 0 0 1rem #283756;
+            z-index: 1 !important;
+            .cursor{
+                background: $light;
+                box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+                border: none !important;
+            }
             .rgba-text{
                 .box{
                    padding: 0 16px 8px 16px !important;
@@ -126,9 +136,9 @@
         }
         .color-name{
             width: 100%;
-            position: relative;
+            position: absolute;
             z-index:999999;
-            top: -107px;
+            bottom: 83px;
             padding: 0 24px;
             font-size: 14px;
             color: $light;

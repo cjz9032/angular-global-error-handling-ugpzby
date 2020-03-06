@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Chargement...",
             "from": "à partir de",
             "to": "pour",
-            "clickToChange": "cliquez pour modifier"
+            "clickToChange": "cliquez pour modifier",
+            "failedLoad": "Echec du chargement.",
+            "retry": "Réess."
         },
         "app-update": {
             "message": "Bonjour, Une version plus récente de Vantage est disponible. Voulez-vous la télécharger ?"
@@ -868,16 +870,17 @@
                 "messages": {
                     "feedbackSuccess": "Merci pour votre commentaire !"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Quelle est la probabilité que vous recommandiez l'application Lenovo Vantage à un ami ou collègue ?",
+                "question7": "Saviez-vous que vous pouvez utiliser Lenovo Vantage pour mettre à jour les logiciels (pilotes, microprogramme et BIOS) de votre ordinateur ?",
+                "question8": "Avez-vous utilisé Lenovo Vantage pour accéder aux informations d'aide concernant votre ordinateur ?",
+                "tips2": "Veuillez ajouter tout commentaire supplémentaire ci-dessous",
+                "emailAddressLabel": "Indiquez votre adresse e-mail si vous souhaitez être contacté par l'équipe Lenovo Vantage.",
+                "emailAddress": "Adresse e-mail",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Votre configuration rapide des paramètres",
+            "title": "Paramètres rapides",
             "microphone": "Microphone",
             "cameraPrivacy": "Caméra",
             "eyeCareMode": "Protection visuelle",
@@ -922,6 +925,10 @@
                     "update": "Mettre à jour"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Mettez à jour vos pilotes, BIOS et logiciels.",
+            "checkForSystemUpdates": "Rechercher les mises à jour du système"
         }
     },
     "device": {
@@ -1033,7 +1040,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Pour prolonger la durée de vie de votre batterie, nous avons optimisé sa capacité de charge complète en fonction de votre utilisation. La capacité totale de la batterie peut ne pas être disponible tant que vous n'avez pas laissé la batterie se vider jusqu'à 20 % avant de la recharger."
                 },
                 "condition": {
                     "Illegal": "La batterie installée n'est <b>pas prise en charge</b> par ce système et ne va pas se charger. Remplacez la batterie par une batterie agréée par Lenovo et compatible avec ce système.",
@@ -1066,7 +1073,7 @@
             "power": {
                 "title": "Alimentation",
                 "subtitle": "Paramètres d'alimentation",
-                "description": "Cette section vous permet d'ajuster dynamiquement les performances thermiques et de maximiser la durée de vie de la batterie.Elle propose également d'autres fonctions d'alimentation fréquemment utilisées. Vous pouvez vérifier les paramètres par défaut de cette section et personnaliser votre système en fonction de vos besoins.",
+                "description": "Cette section vous permet d'ajuster dynamiquement les performances thermiques et de maximiser la durée de vie de la batterie. Elle propose également d'autres fonctions d'alimentation fréquemment utilisées. Vous pouvez vérifier les paramètres par défaut de cette section et personnaliser votre système en fonction de vos besoins.",
                 "jumpto": {
                     "title": "ACCÉDER AUX PARAMÈTRES",
                     "battery": "Batterie",
@@ -1246,9 +1253,9 @@
                             "reset": "Réinitialiser",
                             "stop": "Arrêt"
                         },
-                        "progressText1": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
-                        "progressText2": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie faible",
-                        "progressText3": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie pleine",
+                        "progressText1": "Étape {{stage}} sur {{stageNum}} étapes au total : étalonnage sur charge complète",
+                        "progressText2": "Étape {{stage}} sur {{stageNum}} étapes au total : étalonnage sur charge de batterie faible",
+                        "progressText3": "Étape {{stage}} sur {{stageNum}} étapes au total : étalonnage sur charge de batterie pleine",
                         "FCCText": "De {{before}} Wh à {{after}} Wh",
                         "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {
@@ -1458,8 +1465,8 @@
                         "title": "Volume du micro",
                         "description": "Le Dolby Audio offre un son puissant, clair et performant pour tous les contenus que vous utilisez, sélectionnez le mode approprié pour votre contenu et votre équipement.",
                         "options": {
-                            "silent": "Volume maximum",
-                            "loud": "Volume minimum"
+                            "silent": "Volume minimum",
+                            "loud": "Volume maximum"
                         }
                     },
                     "suppress": {
@@ -1735,7 +1742,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2009,7 +2019,8 @@
                     "point7": "Sélectionnez la langue source et la langue cible souhaitées.",
                     "point8": "En fonction de vos besoins, définissez la saisie vocale à partir du haut-parleur ou du micro.",
                     "point9": "Cliquez sur l'icône du micro pour commencer à parler",
-                    "closeText": "fermer"
+                    "closeText": "fermer",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2241,7 +2252,7 @@
             "goWifi": "accéder à la sécurité wifi",
             "goVpn": "accéder à la sécurité VPN",
             "visitWindows": "Visiter Activation de Windows",
-            "visitFingerprint": "Visiter Fingerprint Reader",
+            "visitFingerprint": "Visiter Lecteur d'empreintes digitales",
             "visitUac": "Visiter le Contrôle de compte d'utilisateur",
             "visitHde": "Visiter le chiffrement du disque dur",
             "haveOwnPassword": "J'ai mon propre Password Manager",

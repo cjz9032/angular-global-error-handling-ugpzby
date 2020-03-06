@@ -7,6 +7,7 @@ export enum SessionStorageKey {
 	AvailableUpdates = '[SessionStorageKey] AvailableUpdates',
 	SecurityWifiSecurityLocationFlag = '[SessionStorageKey] SecurityWifiSecurityLocationFlag',
 	SecurityWifiSecurityInWifiPage = '[SessionStorageKey] SecurityWifiSecurityInWifiPage',
+	SecurityWifiSecurityInGamingDashboard = '[SessionStorageKey] SecurityWifiSecurityInGamingDashboard',
 	SecurityWifiSecurityShowPluginMissingDialog = '[SessionStorageKey] SecurityWifiSecurityShowPluginMissingDialog',
 	SecurityWifiSecurityShowHistoryNum = '[SessionStorageKey] SecurityWifiSecurityShowHistoryNum',
 	HomeProtectionInCHSPage = '[SessionStorageKey] HomeProtectionInCHSPage',

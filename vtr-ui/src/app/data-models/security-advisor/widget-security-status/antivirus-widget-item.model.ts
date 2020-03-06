@@ -5,75 +5,85 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 
 export class AntivirusWidgetItem extends WidgetItem {
-	antivirus: Antivirus;
-	constructor(antivirus: Antivirus, commonService: CommonService, private translateService: TranslateService) {
+	currentPage: string;
+	constructor(public antivirus: Antivirus, public commonService: CommonService, public translateService: TranslateService) {
 		super({
 			id: 'sa-widget-lnk-av',
 			path: 'security/anti-virus',
 			type: 'security',
 			isSystemLink: false,
-			metricsItemName: 'Anti-Virus'
+			metricsItemName: 'Anti-Virus',
 		}, translateService);
+
+		this.waitTimeout();
 		this.translateService.stream('common.securityAdvisor.antiVirus').subscribe((value) => {
 			this.title = value;
 		});
 		const cacheAvStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
 		const cacheFwStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
-		this.updateStatus(cacheAvStatus, cacheFwStatus, commonService);
+		const cacheCurrentPage = commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
 
 		if (antivirus.mcafee || antivirus.windowsDefender || antivirus.others) {
-			this.updateStatusByAv(antivirus, commonService);
+			this.setPage(antivirus);
+		} else if (cacheAvStatus !== undefined || cacheFwStatus !== undefined) {
+			this.setAntivirusStatus(cacheAvStatus, cacheFwStatus, cacheCurrentPage);
 		}
 
-		antivirus.on(EventTypes.avMcafeeFeaturesEvent, () => {
-			this.updateStatusByAv(antivirus, commonService);
-		}).on(EventTypes.avOthersEvent, () => {
-			this.updateStatusByAv(antivirus, commonService);
-		}).on(EventTypes.avWindowsDefenderAntivirusStatusEvent, () => {
-			this.updateStatusByAv(antivirus, commonService);
-		}).on(EventTypes.avWindowsDefenderFirewallStatusEvent, () => {
-			this.updateStatusByAv(antivirus, commonService);
+		antivirus.on(EventTypes.avRefreshedEvent, (av) => {
+			this.setPage(av);
+		}).on(EventTypes.avStartRefreshEvent, () => {
+			if (this.status === 7) {
+				this.translateService.stream('common.securityAdvisor.loading').subscribe((value) => {
+					this.detail = value;
+					this.status = 4;
+					this.retryText = undefined;
+				});
+				this.waitTimeout();
+			}
 		});
 	}
 
-	updateStatusByAv(antivirus: Antivirus, commonService: CommonService): void {
-		const mcafee = antivirus.mcafee;
-		const defender = antivirus.windowsDefender;
-		const others = antivirus.others;
-		let avStatus: boolean;
-		let fwStatus: boolean;
-		if (mcafee && (mcafee.enabled || !others || !others.enabled) && mcafee.expireAt > 0) {
-			avStatus = typeof mcafee.status === 'boolean' ? mcafee.status : false;
-			fwStatus = typeof mcafee.firewallStatus === 'boolean' ? mcafee.firewallStatus : false;
-		} else if (others) {
-			avStatus = null;
-			fwStatus = null;
-			if (others.antiVirus && others.antiVirus.length > 0) {
-				avStatus = others.antiVirus[0].status;
-			}
-			if (others.firewall && others.firewall.length > 0) {
-				fwStatus = others.firewall[0].status;
-			}
-		} else if (defender) {
-			avStatus = typeof defender.status === 'boolean' ? defender.status : false;
-			fwStatus = typeof defender.firewallStatus === 'boolean' ? defender.firewallStatus : false;
+	setPage(antiVirus: Antivirus) {
+		if (antiVirus.mcafee && (antiVirus.mcafee.enabled || !antiVirus.others || !antiVirus.others.enabled) && antiVirus.mcafee.expireAt > 0) {
+			this.currentPage = 'mcafee';
+			this.setAntivirusStatus(
+				antiVirus.mcafee.status !== undefined ? antiVirus.mcafee.status : null,
+				antiVirus.mcafee.firewallStatus !== undefined ? antiVirus.mcafee.firewallStatus : null,
+				this.currentPage
+			);
+		} else if (antiVirus.others) {
+			this.currentPage = 'others';
+			this.setAntivirusStatus(
+				antiVirus.others.antiVirus.length > 0 ? antiVirus.others.antiVirus[0].status : null,
+				antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : antiVirus.windowsDefender.firewallStatus,
+				this.currentPage
+			);
 		} else {
-			avStatus = null;
-			fwStatus = null;
+			this.currentPage = 'windows';
+			if (antiVirus.windowsDefender) {
+				this.setAntivirusStatus(
+					antiVirus.windowsDefender.status !== undefined ? antiVirus.windowsDefender.status : null,
+					antiVirus.windowsDefender.firewallStatus !== undefined ? antiVirus.windowsDefender.firewallStatus : null,
+					this.currentPage
+				);
+			}
 		}
-		this.updateStatus(avStatus, fwStatus, commonService);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.currentPage);
 	}
 
-	updateStatus(avStatus: boolean, fwStatus: boolean, commonService: CommonService): void {
-		if (typeof avStatus !== 'boolean' && typeof fwStatus !== 'boolean') { return; }
-		if ((avStatus && fwStatus)
-			|| (avStatus && typeof fwStatus !== 'boolean')
-			|| (fwStatus && typeof avStatus !== 'boolean')) {
+	setAntivirusStatus(av: boolean | undefined, fw: boolean | undefined, currentPage: string) {
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, av !== undefined ? av : null);
+
+		if (typeof av !== 'boolean' && typeof fw !== 'boolean') { return; }
+		if ((av && fw)
+			|| (av && typeof fw !== 'boolean')
+			|| (fw && typeof av !== 'boolean')) {
 			this.translateService.stream('common.securityAdvisor.enabled').subscribe((value) => {
 				this.detail = value;
 				this.status = 0;
 			});
-		} else if (!avStatus && !fwStatus) {
+		} else if (!av && !fw) {
 			this.translateService.stream('common.securityAdvisor.disabled').subscribe((value) => {
 				this.detail = value;
 				this.status = 1;
@@ -84,7 +94,29 @@ export class AntivirusWidgetItem extends WidgetItem {
 				this.status = 3;
 			});
 		}
-		commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, avStatus);
-		commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fwStatus);
+	}
+
+	retry() {
+		this.translateService.stream('common.securityAdvisor.loading').subscribe((value) => {
+			this.detail = value;
+			this.status = 4;
+			this.retryText = undefined;
+		});
+		this.waitTimeout();
+		this.antivirus.refresh();
+	}
+
+	waitTimeout() {
+		setTimeout(() => {
+			if (this.status === 4) {
+				this.status = 7;
+				this.translateService.stream('common.ui.failedLoad').subscribe((value) => {
+					this.detail = value;
+				});
+				this.translateService.stream('common.ui.retry').subscribe((value) => {
+					this.retryText = value;
+				});
+			}
+		}, 15000)
 	}
 }

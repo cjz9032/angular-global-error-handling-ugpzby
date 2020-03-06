@@ -101,6 +101,9 @@ export class HardwareScanService {
             // If HardwareScan is available, dispatch the priority requests
             this.isAvailable().then((available) => {
                 if (available) {
+					// Validate the type of this machine to load dynamically the icons.
+					this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+
 					// Retrive the Plugin's version (it does not use the CLI)
 					this.getPluginInfo().then((hwscanPluginInfo: any) => {
                         if (hwscanPluginInfo) {
@@ -678,12 +681,12 @@ export class HardwareScanService {
                 if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
 					this.hasItemsToRecoverBadSectors = true;
 				}
+
+				// Signalizes that the hardware list has been retrieved
+				this.hardwareModulesLoaded.next(true);
             });
 			this.isLoadingModulesDone = true;
 			this.loadCustomModal();
-
-			// Signalizes that the hardware list has been retrieved
-			this.hardwareModulesLoaded.next(true);
 		});
 	}
 
@@ -1194,6 +1197,7 @@ export class HardwareScanService {
 				test.percent = 0;
 				test.status = HardwareScanTestResult.NotStarted;
 			}
+			moduleObject.resultCode = '';
 		}
 
 		for (const moduleObject of this.customScanResponse) {
@@ -1201,6 +1205,7 @@ export class HardwareScanService {
 				test.percent = 0;
 				test.status = HardwareScanTestResult.NotStarted;
 			}
+			moduleObject.resultCode = '';
 		}
 	}
 

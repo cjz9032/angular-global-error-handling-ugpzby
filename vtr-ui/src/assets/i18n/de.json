@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Wird geladen...",
             "from": "von",
             "to": "nach",
-            "clickToChange": "zum Ändern klicken"
+            "clickToChange": "zum Ändern klicken",
+            "failedLoad": "Fehler beim Laden.",
+            "retry": "Wiederholen"
         },
         "app-update": {
             "message": "Hallo! Es ist eine neuere Version von Vantage verfügbar. Möchten Sie sie herunterladen?"
@@ -868,16 +870,17 @@
                 "messages": {
                     "feedbackSuccess": "Vielen Dank für Ihr Feedback!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Wie wahrscheinlich ist es, dass Sie Lenovo Vantage einem Freund oder Kollegen weiterempfehlen würden?",
+                "question7": "Wussten Sie, dass Sie mit Lenovo Vantage die Software auf Ihrem Computer (Treiber, Firmware und BIOS) aktualisieren können?",
+                "question8": "Haben Sie Lenovo Vantage bereits verwendet, um auf Unterstützungsinformationen Ihres Computers zuzugreifen?",
+                "tips2": "Weitere Kommentare können Sie unten hinterlassen",
+                "emailAddressLabel": "Geben Sie Ihre E‑Mail-Adresse ein, wenn das Lenovo Vantage-Team Sie kontaktieren darf.",
+                "emailAddress": "E-Mail-Adresse",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Ihre Schnelleinstellungen",
+            "title": "Schnelleinstellungen",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Augen schonen",
@@ -922,6 +925,10 @@
                     "update": "Aktualisierung"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Aktualisieren Sie Ihre Treiber, das BIOS und weitere Software.",
+            "checkForSystemUpdates": "Nach Systemaktualisierungen suchen"
         }
     },
     "device": {
@@ -935,7 +942,7 @@
             "freeMemory": "Freier Speicher",
             "systemUpdate": {
                 "title": "Systemaktualisierung",
-                "notFound": "System Update nicht gefunden",
+                "notFound": "Systemaktualisierung nicht gefunden",
                 "detail": {
                     "uptoDate": "Updates geprüft ",
                     "updatedOn": "geprüft am ",
@@ -1033,7 +1040,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Um die Lebensdauer Ihres Akkus zu verlängern, haben wir die volle Ladekapazität anhand Ihrer Nutzung optimiert. Die volle Akkukapazität ist möglicherweise erst verfügbar, wenn Sie den Akku bis auf 20 % entladen und anschließend wieder laden."
                 },
                 "condition": {
                     "Illegal": "Der installierte Akku wird vom System <b>nicht unterstützt</b> und kann nicht geladen werden. Ersetzen Sie den Akku mit dem richtigen Lenovo Akku für dieses System.",
@@ -1246,9 +1253,9 @@
                             "reset": "Zurücksetzen",
                             "stop": "Stoppen"
                         },
-                        "progressText1": "{{stage}} von {{stageNum}}: Kalibrierung für volle Ladung",
-                        "progressText2": "{{stage}} von {{stageNum}}: Kalibrierung für niedrigen Akkustand",
-                        "progressText3": "{{stage}} von {{stageNum}}: Kalibrierung für hohen Akkustand",
+                        "progressText1": "Schritt {{stage}} von {{stageNum}} Schritten: Kalibrierung für volle Ladung",
+                        "progressText2": "Schritt {{stage}} von {{stageNum}} Schritten: Kalibrierung für niedrige Ladung",
+                        "progressText3": "Schritt {{stage}} von {{stageNum}} Schritten: Kalibrierung für hohe Ladung",
                         "FCCText": "Von {{before}} Wh auf {{after}} Wh",
                         "note": "Hinweis: Vor dem Zurücksetzen des Akkustandsanzeigers muss Ihr Computer an die Stromversorgung angeschlossen werden. ",
                         "resetLog": {
@@ -1735,7 +1742,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2009,7 +2019,8 @@
                     "point7": "Wählen Sie die gewünschte Ausgangs‑ und Zielsprache aus.",
                     "point8": "Stellen Sie abhängig von Ihren Anforderungen ein, ob die Spracheingabe vom Lautsprecher oder vom Mikrofon stammt.",
                     "point9": "Klicken Sie auf das Mikrofonsymbol und beginnen Sie zu sprechen",
-                    "closeText": "schließen"
+                    "closeText": "schließen",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "OK",
@@ -2055,7 +2066,7 @@
             },
             "recommended": {
                 "title": "Empfohlene Updates",
-                "tooltip": "Empfohlene Treiberupdates sorgen dafür"
+                "tooltip": "Durch empfohlene Treiberaktualisierungen wird Ihr Computer bei optimaler Leistung betrieben."
             },
             "windows": {
                 "title": "Windows-Updates",
@@ -2241,7 +2252,7 @@
             "goWifi": "zur Wifi-Sicherheit wechseln",
             "goVpn": "zur VPN-Sicherheit wechseln",
             "visitWindows": "Aktivierung von Windows besuchen",
-            "visitFingerprint": "Fingerprint Reader besuchen",
+            "visitFingerprint": "Lesegerät für Fingerabdrücke besuchen",
             "visitUac": "Benutzerkontensteuerung besuchen",
             "visitHde": "Festplattenlaufwerk-Verschlüsselung besuchen",
             "haveOwnPassword": "Ich habe meinen eigenen Password Manager",
@@ -2474,7 +2485,7 @@
             "getStarted2": "Schalten Sie das VPN ein und warten Sie kurz auf die Bestätigung einer sicheren Verbindung.",
             "getStarted3": "Ändern Sie die Region oder den Standort nach Wunsch und genießen Sie die Nutzung eines sicheren und geschützten Netzwerks.",
             "poweredBySurfEasy": "Unterstützt von SurfEasy",
-            "privacyPolicyAndTermsOfService": "Leia a <tag>Política de privacidade</tag> e os <tag>Termos de serviço</tag> para obter mais informações"
+            "privacyPolicyAndTermsOfService": "Weitere Informationen erhalten Sie bei den <tag>Datenschutz-Bestimmungen</tag> und <tag>TNutzungsbedingungen</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE-KENNWORTMANAGER",

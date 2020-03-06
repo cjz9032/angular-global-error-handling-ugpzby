@@ -706,7 +706,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -752,7 +752,7 @@
                 "sub3": "أمان WiFi",
                 "sub4": "سلامة كلمة المرور",
                 "sub5": "أمان VPN",
-                "sub6": "بصمة"
+                "sub6": "بصمة الإصبع"
             },
             "support": "الدعم",
             "beta": {
@@ -777,7 +777,7 @@
             "notFound": "لم يتم العثور عليه",
             "registered": "مسجل",
             "notRegistered": "غير مسجل",
-            "fingerPrint": "بصمة",
+            "fingerPrint": "بصمة الإصبع",
             "privacyPolicyAndTermsOfService": "<tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "مسجل",
@@ -803,7 +803,9 @@
             "loading": "...جار التحميل",
             "from": "من",
             "to": "الى",
-            "clickToChange": "انقر للتغيير"
+            "clickToChange": "انقر للتغيير",
+            "failedLoad": "تعذّر التحميل.",
+            "retry": "أعد المحاولة"
         },
         "app-update": {
             "message": "مرحبا! يتوفر إصدار أحدث من Vantage، هل تريد تحميله؟"
@@ -870,16 +872,17 @@
                 "messages": {
                     "feedbackSuccess": "نشكرك على تعليقاتك!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "ما مدى احتمال أن توصي أحد الأصدقاء أو الزملاء بتطبيق Lenovo Vantage؟",
+                "question7": "هل تعلم أنه يمكنك استخدام تطبيق Lenovo Vantage للمحافظة على تحديث البرنامج (برامج التشغيل والبرامج الثابتة وBIOS) على الكمبيوتر؟",
+                "question8": "هل استخدمت Lenovo Vantage للوصول إلى معلومات الدعم الخاصة بالكمبيوتر؟",
+                "tips2": "يرجى ترك أي تعليقات إضافية أدناه",
+                "emailAddressLabel": "يرجى ترك عنوان بريدك الإلكتروني إذا كنت ترغب في أن يتصل بك فريق Lenovo Vantage.",
+                "emailAddress": "عنوان البريد الالكتروني",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "إعداداتك السريعة",
+            "title": "الإعدادات السريعة",
             "microphone": "الميكروفون",
             "cameraPrivacy": "الكاميرا",
             "eyeCareMode": "العناية بالعين",
@@ -924,6 +927,10 @@
                     "update": "تعديل"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "تحديث برامج التشغيل ونظام BIOS وبرامج أخرى.",
+            "checkForSystemUpdates": "التحقق من وجود تحديثات النظام"
         }
     },
     "device": {
@@ -1035,7 +1042,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "لتمديد عمر البطارية، قمنا بتحسين سعة شحنها الكاملة بالاستناد إلى استخدامك. قد لا تتوفر سعة البطارية الكاملة حتى تفريغ الشحنة إلى 20% وإعادة الشحن."
                 },
                 "condition": {
                     "Illegal": "البطارية المركّبة <b>غير مدعومة</b> بواسطة النظام ولن يتم شحنها. الرجاء استبدال البطارية ببطارية Lenovo المناسبة لهذا النظام.",
@@ -1248,9 +1255,9 @@
                             "reset": "إعادة تعيين",
                             "stop": "إيقاف"
                         },
-                        "progressText1": "{{stage}} من {{stageNum}}: معايرة إلى الشحن الكامل",
-                        "progressText2": "{{stage}} من {{stageNum}}: معايرة إلى طاقة البطارية المنخفضة",
-                        "progressText3": "{{stage}} من {{stageNum}}: المعايرة إلى طاقة البطارية العالية",
+                        "progressText1": "الخطوة {{stage}} من {{stageNum}} خطوة (خطوات) في المجموع: معايرة إلى الشحن الكامل",
+                        "progressText2": "الخطوة {{stage}} من {{stageNum}} خطوة (خطوات) في المجموع: معايرة إلى طاقة البطارية المنخفضة‬",
+                        "progressText3": "الخطوة {{stage}} من {{stageNum}} خطوة (خطوات) في المجموع: معايرة إلى طاقة البطارية العالية‬",
                         "FCCText": "من {{before}} واط بالساعة‬ إلى {{after}} واط بالساعة‬",
                         "note": "ملاحظة: قبل إعادة تعيين مقياس البطارية، تأكد من توصيل الكمبيوتر بطاقة التيار المتردد. ",
                         "resetLog": {
@@ -1737,7 +1744,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2011,7 +2021,8 @@
                     "point7": "حدد لغتك المطلوبة، اللغة المصدر واللغة الهدف.",
                     "point8": "حسب احتياجاتك، اضبط الإدخال الصوتي من السماعة أو من الميكروفون.",
                     "point9": "انقر فوق رمز الميكروفون لبدء التحدث",
-                    "closeText": "إغلاق"
+                    "closeText": "إغلاق",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "موافق",

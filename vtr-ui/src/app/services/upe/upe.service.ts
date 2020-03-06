@@ -135,7 +135,11 @@ export class UPEService {
 
 		const result = await this.httpRequestForTags(upeEssential);
 		if (result.success) {
-			this.channelTags = result.content ? result.content : [];
+			if (result.content && result.content.length > 0) {
+				this.channelTags = result.content.map(item => item.toString());	// VAN-15331 The API does not return string array as spec, but another api need string array
+			} else {
+				this.channelTags = [];
+			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.UPEChannelTags, this.channelTags);
 		}
 
@@ -204,7 +208,7 @@ export class UPEService {
 				EnclosureType: systeminfo.enclosureType,
 				UpeTags: channelTags
 			},
-			filterItemSize: 3,
+			// filterItemSize: 3,
 			positions: upeParams.positions
 		};
 		return queryParam;

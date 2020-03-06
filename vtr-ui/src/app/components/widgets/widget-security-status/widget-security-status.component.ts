@@ -11,7 +11,6 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
-import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
 import { UACWidgetItemViewModel } from 'src/app/data-models/security-advisor/widget-security-status/uac-widget-item.model';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { DeviceService } from 'src/app/services/device/device.service';
@@ -26,6 +25,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	@Input() securityAdvisor: SecurityAdvisor;
 	items: Array<WidgetItem>;
 	region: string;
+	pluginSupport: boolean;
 
 	@Input() linkId: string;
 	constructor(
@@ -48,6 +48,14 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		}).catch(() => {
 			this.region = 'us';
 			this.showVpn();
+		});
+
+		this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
+			this.pluginSupport = result === 'true';
+		}).catch((e) => {
+			this.pluginSupport = false;
+		}).finally(() => {
+			this.showUac();
 		});
 
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
@@ -78,8 +86,6 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, () => {
 			this.showWifiSecurityItem();
 		});
-		const antivirus = new AntivirusErrorHandle(this.securityAdvisor.antivirus);
-		antivirus.refreshAntivirus();
 	}
 
 	showWindowsHelloItem() {
@@ -107,6 +113,13 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			if (vpnItem) {
 				this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-vpn'));
 			}
+		}
+	}
+
+	showUac() {
+		const uacItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-uac'));
+		if (!this.pluginSupport && uacItem) {
+			this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-uac'));
 		}
 	}
 

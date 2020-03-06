@@ -8,6 +8,7 @@ export class WidgetItem {
 	type: string;
 	metricsItemName: string;
 	isSystemLink: boolean;
+	retryText: string;
 
 	constructor(arg: any = {}, translateService: TranslateService) {
 		this.status = arg.status;
@@ -25,4 +26,5 @@ export class WidgetItem {
 			}
 		});
 	}
+
 }

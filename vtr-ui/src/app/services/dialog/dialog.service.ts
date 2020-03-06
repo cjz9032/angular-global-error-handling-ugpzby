@@ -49,7 +49,7 @@ export class DialogService {
 		if (this.modalService.hasOpenModals()) {
 			return;
 		}
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage)) {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) || this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard)) {
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
 			const modal = this.modalService.open(ModalWifiSecuriryLocationNoticeComponent,
 			{

@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "nalaganje...",
             "from": "od",
             "to": "do",
-            "clickToChange": "kliknite, če želite spremeniti"
+            "clickToChange": "kliknite, če želite spremeniti",
+            "failedLoad": "Nalaganje ni uspelo.",
+            "retry": "Znova poskusi"
         },
         "app-update": {
             "message": "Živijo! Na voljo je novejša različica aplikacije Vantage, jo želite naložiti?"
@@ -868,16 +870,17 @@
                 "messages": {
                     "feedbackSuccess": "Hvala za povratne informacije."
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Ali bi program Lenovo Vantage priporočili prijatelju ali sodelavcu?",
+                "question7": "Ali ste vedeli, da program Lenovo Vantage lahko uporabite za posodabljanje programske opreme (gonilnikov, vdelane programske opreme in BIOS-a) v računalniku?",
+                "question8": "Ali ste program Lenovo Vantage že uporabili za dostop do informacij o podpori za vaš računalnik?",
+                "tips2": "Spodaj napišite morebitne dodatne komentarje",
+                "emailAddressLabel": "Če želite, da ekipa programa Lenovo Vantage po potrebi vzpostavi stik z vami, vnesite svoj e-poštni naslov.",
+                "emailAddress": "E-poštni naslov",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Vaše hitre nastavitve",
+            "title": "Hitre nastavitve",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Očem prijazno",
@@ -922,6 +925,10 @@
                     "update": "Posodobitev"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Posodobite gonilnike, BIOS in drugo programsko opremo.",
+            "checkForSystemUpdates": "Preveri, ali so na voljo sistemske posodobitve"
         }
     },
     "device": {
@@ -1033,7 +1040,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Na podlagi vaše uporabe računalnika smo optimizirali zmogljivost baterije pri polni napolnjenosti in tako podaljšali njeno življenjsko dobo. Polna zmogljivost baterije morda ne bo na voljo, dokler se ne izprazni na 20 % in znova napolni."
                 },
                 "condition": {
                     "Illegal": "Sistem <b>ne podpira</b> nameščene baterije, zato se ne bo polnila. Baterijo zamenjajte z ustrezno baterijo Lenovo za ta sistem.",
@@ -1246,9 +1253,9 @@
                             "reset": "Ponastavitev",
                             "stop": "Ustavi"
                         },
-                        "progressText1": "{{stage}} od {{stageNum}}: umerjanje do povsem napolnjene baterije",
-                        "progressText2": "{{stage}} od {{stageNum}}: umerjanje do skoraj prazne baterije",
-                        "progressText3": "{{stage}} od {{stageNum}}: umerjanje na visoko napolnjenost baterije",
+                        "progressText1": "Korak {{stage}} od skupaj {{stageNum}} korakov: umerjanje do povsem napolnjene baterije",
+                        "progressText2": "Korak {{stage}} od skupaj {{stageNum}} korakov: umerjanje do skoraj prazne baterije",
+                        "progressText3": "Korak {{stage}} od skupaj {{stageNum}} korakov: umerjanje na visoko napolnjenost baterije",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Opomba: pred ponastavitvijo merilnika za baterijo poskrbite, da bo računalnik priključen na izmenično napajanje. ",
                         "resetLog": {
@@ -1735,7 +1742,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2009,7 +2019,8 @@
                     "point7": "Izberite želeni izvorni in ciljni jezik.",
                     "point8": "Zvočni vhod nastavite na zvočnik ali mikrofon (odvisno od vaših potreb).",
                     "point9": "Če želite začeti govoriti, kliknite ikono mikrofona",
-                    "closeText": "zapri"
+                    "closeText": "zapri",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "V redu",
@@ -2055,7 +2066,7 @@
             },
             "recommended": {
                 "title": "Priporočene posodobitve",
-                "tooltip": "Priporočene posodobitve gonilnikov omogočajo"
+                "tooltip": "Priporočene posodobitve gonilnikov zagotavljajo, da računalnik deluje optimalno."
             },
             "windows": {
                 "title": "Posodobitve za Windows",
@@ -2214,7 +2225,7 @@
             "vpnVirtual": "Navidezno zasebno omrežje",
             "wifiConnected": "WiFi & povezana domača varnost",
             "connectedHomeSecurity": "Povezana domača varnost",
-            "fingerprint": "Čitalec prstnih odtisov",
+            "fingerprint": "Bralnik prstnih odtisov",
             "uacTitle": "Kaj je obvestilo nadzora uporabniškega računa?",
             "uacText": "Nadzor uporabniškega računa je zelo pomembna varnostna funkcija sistema Windows, ki morebitno škodljivim programom preprečuje spreminjanje sistema.",
             "windowsTitle": "Zakaj moram aktivirati Windows?",

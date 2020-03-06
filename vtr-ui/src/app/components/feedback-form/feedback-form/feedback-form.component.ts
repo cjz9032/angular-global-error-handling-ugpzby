@@ -14,6 +14,7 @@ export class FeedbackFormComponent implements OnInit {
 	feedbackSuccess = false;
 	leftTime = 3;
 	countryCode = '';
+	public isSubmitted = false;
 
 	private metrics: any;
 
@@ -63,12 +64,21 @@ export class FeedbackFormComponent implements OnInit {
 		 });
 	 }
 	public onFeedBackSubmit(): void {
+		this.isSubmitted = true;
+		if(!this.feedbackForm.value.userEmail){
+			this.prepareDataTosubmit();
+		} else if(this.feedbackForm.value.userEmail && !this.feedbackForm.get('userEmail').invalid){
+			this.prepareDataTosubmit();
+		}
+	}
+	prepareDataTosubmit(){
 		const formData = this.feedbackForm.value;
 		const data = {
 			ItemType: 'UserFeedback',
 			ItemName: 'Submit',
 			ItemParent: 'Dialog.Feedback',
 			Content: formData.userComment,
+			UserEmail: formData.userEmail,
 			QA: {
 				QaNewStyle: formData.qaNewStyle,
 				SystemUpdateAwareness: formData.systemUpdateAwareness,
@@ -90,8 +100,9 @@ export class FeedbackFormComponent implements OnInit {
 	}
 
 	private createFeedbackForm(): void {
+		const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		this.feedbackForm = new FormGroup({
-			userEmail: new FormControl('', [Validators.email]),
+			userEmail: new FormControl('', [Validators.required, Validators.pattern(emailPattern)]),
 			userComment: new FormControl('', [
 				Validators.required,
 				Validators.minLength(1)

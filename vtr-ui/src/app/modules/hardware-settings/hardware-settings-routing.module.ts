@@ -58,7 +58,10 @@ const routes: Routes = [
 				path: 'power',
 				component: SubpageDeviceSettingsPowerContainerComponent,
 				canDeactivate: [GuardService],
-				canActivate: [GuardService]
+				canActivate: [GuardService],
+				data: {
+					pageName: 'Device.MyDeviceSettings'
+				}
 			},
 			{
 				path: 'audio',

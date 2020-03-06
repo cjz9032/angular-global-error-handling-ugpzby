@@ -154,6 +154,12 @@ ui-popover-turn-on {
 	}
 
 	.btn-close {
+		@media #{$black-on-white}{
+			color: $high-contrast-grey;
+			}
+			@media #{$white-on-black}{
+			color: $high-contrast-grey;
+			}
 		button.close {
 			&:hover {
 				opacity: 0.75;
@@ -168,7 +174,7 @@ ui-popover-turn-on {
 			color: $light;
 			font-size: $fontsize_sm;
 			padding: 1rem 3rem;
-			//margin-top: 1rem;
+			margin-top: 1rem;
 			margin-right: 3rem;
 			font-weight: $weight_bold;
 		&:active {

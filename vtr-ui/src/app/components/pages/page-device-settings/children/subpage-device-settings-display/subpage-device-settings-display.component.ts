@@ -223,20 +223,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		if (this.commonService.getLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus) === 'true') {
 			this.showECMReset = true;
 		}
-		this.inWhiteList().then(isSupport => {
-			if (isSupport) {
-				this.initDisplayColorTempFromCache();
-				this.initEyeCareModeFromCache();
-				this.statusChangedLocationPermission();
-				this.initEyecaremodeSettings();
-				this.startEyeCareMonitor();
-				this.commonService.setLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus, 'false');
-				this.showECMReset = false;
-			} else {
-				this.showECMReset = true;
-				this.resetEyecaremodeAllSettings();
-			}
-		});
 
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
@@ -271,6 +257,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				this.statusChangedLocationPermission();
 				this.initEyecaremodeSettings();
 				this.startEyeCareMonitor();
+				this.commonService.setLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus, 'false');
+				this.showECMReset = false;
 			} else {
 				this.showECMReset = true;
 				this.resetEyecaremodeAllSettings();
@@ -359,8 +347,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.getOLEDPowerControlCapability();
 		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (machineType === 1) {
-			//commented below line to temporarily hide in current release
-			//this.getPriorityControlCapability();
+			// commented below line to temporarily hide in current release
+			// this.getPriorityControlCapability();
 		} else {
 			this.displayPriorityModal.capability = false;
 			this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
@@ -779,6 +767,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 	public onSunsetToSunrise($featureStatus: any) {
+		this.sunsetToSunriseModeStatus.status = $featureStatus.status
 		try {
 			this.logger.debug('sunset to sunrise event', $featureStatus);
 			if (this.displayService.isShellAvailable) {
@@ -794,10 +783,10 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 							// this.isEyeCareMode = this.eyeCareModeStatus.status;
 							this.enableSlider = response.eyecaremodeState;
 							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
-
 							this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
 							this.eyeCareModeCache.enableSlider = this.enableSlider;
 							this.eyeCareModeCache.eyeCareDataSource = this.eyeCareDataSource;
+							this.eyeCareModeCache.sunsetToSunriseStatus.status = $featureStatus.status;
 							this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 						}
 

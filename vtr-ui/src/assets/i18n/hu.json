@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Betöltés...",
             "from": "ettől",
             "to": "sort",
-            "clickToChange": "a módosításhoz kattintson ide"
+            "clickToChange": "a módosításhoz kattintson ide",
+            "failedLoad": "A betöltés sikertelen volt.",
+            "retry": "Újrapróbálkozás"
         },
         "app-update": {
             "message": "Szia! Megjelent a Vantage legújabb verziója, szeretnéd letölteni?"
@@ -868,16 +870,17 @@
                 "messages": {
                     "feedbackSuccess": "Köszönjük a visszajelzését."
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Mennyire valószínű, hogy ajánlaná a Lenovo Vantage alkalmazást egy ismerősének vagy munkatársának?",
+                "question7": "Tudta, hogy a Lenovo Vantage segítségével naprakészen tarthatja a számítógép szoftvereit (illesztőprogramjait, firmware-jét és BIOS-át)?",
+                "question8": "Használta már a Lenovo Vantage alkalmazást a számítógépével kapcsolatos támogatási információk eléréséhez?",
+                "tips2": "Ha van további megjegyzése, írja le alább.",
+                "emailAddressLabel": "Ha szeretné, hogy a Lenovo Vantage csapata felvehesse Önnel a kapcsolatot, adja meg az e-mail-címét.",
+                "emailAddress": "E-mail-cím",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Saját gyorsbeállítások",
+            "title": "Gyorsbeállítások",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Szemvédő",
@@ -922,6 +925,10 @@
                     "update": "Frissítés"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Illesztőprogramok, a BIOS és más szoftverek frissítése.",
+            "checkForSystemUpdates": "Rendszerfrissítések keresése"
         }
     },
     "device": {
@@ -1033,7 +1040,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Az akkumulátor élettartamának meghosszabbítása érdekében optimalizáltuk az akkumulátor teljes töltési kapacitását a használati séma alapján. Előfordulhat, hogy a teljes akkumulátorkapacitás csak azután áll rendelkezésre, hogy az akkumulátor 20%-ra lemerült és feltöltődött."
                 },
                 "condition": {
                     "Illegal": "A telepített akkumulátort a rendszer <b>nem támogatja</b> és nem tölti fel. Cserélje ki az akkumulátort egy a rendszerhez megfelelő Lenovo akkumulátorra.",
@@ -1246,9 +1253,9 @@
                             "reset": "Visszaállítás",
                             "stop": "Leállítás"
                         },
-                        "progressText1": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
-                        "progressText2": "{{stage}}/{{stageNum}}: Kalibrálás alacsony akkumulátortöltöttségre",
-                        "progressText3": "{{stage}}/{{stageNum}}: Kalibrálás magas akkumulátortöltöttségre",
+                        "progressText1": "{{stage}}. lépés (összesen {{stageNum}} lépés): Kalibrálás teljes feltöltésre",
+                        "progressText2": "{{stage}}. lépés (összesen {{stageNum}} lépés): Kalibrálás alacsony akkumulátortöltöttségre",
+                        "progressText3": "{{stage}}. lépés (összesen {{stageNum}} lépés): Kalibrálás magas akkumulátortöltöttségre",
                         "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
                         "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {
@@ -1735,7 +1742,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2009,7 +2019,8 @@
                     "point7": "Válassza ki a forrásnyelvet és a célnyelvet.",
                     "point8": "Szükség szerint állítsa be a hangbemenetet (Hangszóró vagy Mikrofon).",
                     "point9": "Kattintson a mikrofon ikonra, és kezdjen beszélni",
-                    "closeText": "bezárás"
+                    "closeText": "bezárás",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "...טעינה",
             "from": "מ:",
             "to": "בשורה",
-            "clickToChange": "לחצו כדי לשנות"
+            "clickToChange": "לחצו כדי לשנות",
+            "failedLoad": "הטעינה נכשלה.",
+            "retry": "נסו שוב"
         },
         "app-update": {
             "message": "היי! יש גרסה חדשה יותר של Vantage, האם ברצונכם לטעון אותה?"
@@ -868,12 +870,13 @@
                 "messages": {
                     "feedbackSuccess": "תודה על המשוב!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "באיזו מידה סביר שתמליצו על היישום Lenovo Vantage לחבר או לעמית?",
+                "question7": "הידעתם שאתם יכולים להשתמש ב-Lenovo Vantage כדי לשמור על עדכניות התוכנה (מנהלי התקנים, קושחה ו-BIOS) במחשב שלכם?",
+                "question8": "האם השתמשתם ב-Lenovo Vantage כדי לגשת למידע בנושא תמיכה במחשב שלכם?",
+                "tips2": "השאירו הערות נוספות למטה",
+                "emailAddressLabel": "השאירו את כתובת הדוא\"ל שלכם אם ברצונכם שצוות Lenovo Vantage יוכל ליצור איתכם קשר.",
+                "emailAddress": "כתובת דואר אלקטרוני",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
@@ -922,6 +925,10 @@
                     "update": "עדכון"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "עדכן את מנהלי התקנים, ה-BIOS ותוכנות אחרות.",
+            "checkForSystemUpdates": "בדוק אם קיימים עדכוני מערכת"
         }
     },
     "device": {
@@ -1033,7 +1040,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "להארכת משך חיי הסוללה, ביצענו מיטוב של קיבולת הטעינה המלאה שלה בהתאם לשימוש. יתכן שקיבולת הסוללה המלאה לא תהיה זמינה עד שהסוללה תתרוקן עד 20% ותוטען מחדש."
                 },
                 "condition": {
                     "Illegal": "הסוללה המותקנת <b>אינה נתמכת</b> על-ידי המערכת ולא תיטען. החליפו אותה בסוללה של Lenovo המתאימה למערכת זו.",
@@ -1246,9 +1253,9 @@
                             "reset": "איפוס",
                             "stop": "עצירה"
                         },
-                        "progressText1": "{{stage}} מתוך {{stageNum}}: כיול לטעינה מלאה",
-                        "progressText2": "{{stage}} מתוך {{stageNum}}: כיול לרמת חשמל נמוכה של הסוללה",
-                        "progressText3": "{{stage}} מתוך {{stageNum}}: כיול לרמת צריכת חשמל גבוהה של הסוללה",
+                        "progressText1": "שלב {{stage}}, מתוך {{stageNum}} שלבים סך הכל: כיול לטעינה מלאה",
+                        "progressText2": "שלב {{stage}}, מתוך {{stageNum}} שלבים סך הכל: כיול לרמת חשמל נמוכה של הסוללה‬",
+                        "progressText3": "שלב {{stage}}, מתוך {{stageNum}} שלבים סך הכל: כיול לרמת צריכת חשמל גבוהה של הסוללה‬",
                         "FCCText": "מ-{{before}} ואט עד {{after}} ואט",
                         "note": "הערה: לפני איפוס מד הסוללה, הקפידו לחבר את המחשב שלכם לחשמל. ",
                         "resetLog": {
@@ -1735,7 +1742,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2009,7 +2019,8 @@
                     "point7": "בחרו את שפת המקור ואת שפת היעד הרצויות.",
                     "point8": "בהתאם לצרכים, הגדירו את קלט הקול מרמקול או ממיקרופון.",
                     "point9": "לחצו על סמל המיקרופון כדי להתחיל לדבר",
-                    "closeText": "סגירה"
+                    "closeText": "סגירה",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "אישור",

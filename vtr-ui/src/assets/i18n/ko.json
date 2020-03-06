@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "로드 중...",
             "from": "백업 선택",
             "to": "백업 위치 지정",
-            "clickToChange": "클릭하여 변경"
+            "clickToChange": "클릭하여 변경",
+            "failedLoad": "로드에 실패했습니다.",
+            "retry": "다시 시도"
         },
         "app-update": {
             "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
@@ -868,12 +870,13 @@
                 "messages": {
                     "feedbackSuccess": "소중한 의견을 들려주셔서 감사합니다!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "친구나 동료들에게 Lenovo Vantage 어플리케이션을 추천할 가능성이 얼마나 됩니까?",
+                "question7": "Lenovo Vantage를 사용하면 소프트웨어(드라이버, 펌웨어, BIOS)를 최신 상태로 유지할 수 있다는 사실을 알고 계십니까?",
+                "question8": "Lenovo Vantage를 사용하여 컴퓨터 관련 지원 정보를 얻은 적이 있으십니까?",
+                "tips2": "추가 의견은 아래에 남겨주시기 바랍니다",
+                "emailAddressLabel": "혹시 Lenovo Vantage 팀에게 연락을 받길 원하신다면 이메일 주소를 남겨주시기 바랍니다.",
+                "emailAddress": "이메일 주소",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
@@ -922,6 +925,10 @@
                     "update": "업데이트"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "드라이버, BIOS 및 기타 소프트웨어를 업데이트하십시오.",
+            "checkForSystemUpdates": "시스템 업데이트 확인"
         }
     },
     "device": {
@@ -1033,7 +1040,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "배터리 수명을 연장하기 위해 사용량에 따라 완전 충전 용량을 최적화했습니다. 완전 충전 용량은 배터리를 20%까지 방전시킨 다음 재충전해야 사용할 수 있습니다."
                 },
                 "condition": {
                     "Illegal": "시스템에서 <b>지원되지 않는</b> 배터리를 설치하여 충전되지 않습니다. 이 시스템에 맞는 Lenovo 배터리로 교체하십시오.",
@@ -1055,7 +1062,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 전원이 연결돼 있습니다.</b>",
                     "EmDriverInstalled": "배터리 세부사항을 사용할 수 없습니다. <b>Lenovo ACPI - Compliant Virtual Power Controller</b> 드라이버를 설치하려면 Windows 업데이트->업데이트 확인을 실행하십시오."
                 },
-                "batteryNotDetected": "배터리 없음",
+                "batteryNotDetected": "감지된 배터리가 없습니다",
                 "thresholdNote": "<b>참고:</b> 배터리 충전 임계값을 사용하는 경우 배터리가 완전히 충전되지 않습니다.",
                 "seeDetailsLink": "세부사항 참조",
                 "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오.",
@@ -1246,9 +1253,9 @@
                             "reset": "재설정",
                             "stop": "중지"
                         },
-                        "progressText1": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
-                        "progressText2": "{{stageNum}}의 {{stage}}: 저전력으로 보정 중",
-                        "progressText3": "{{stageNum}}의 {{stage}}: 고전력으로 보정 중",
+                        "progressText1": "총 {{stageNum}} 단계 중, {{stage}} 단계: 완전 충전으로 보정",
+                        "progressText2": "총 {{stageNum}} 단계 중, {{stage}} 단계: 저전력으로 보정",
+                        "progressText3": "총 {{stageNum}} 단계 중, {{stage}} 단계: 고전력으로 보정",
                         "FCCText": "{{before}} Wh에서 {{after}} Wh",
                         "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {
@@ -1735,7 +1742,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2009,7 +2019,8 @@
                     "point7": "원하는 소스 언어 및 대상 언어를 선택하십시오.",
                     "point8": "필요에 따라 스피커 또는 마이크에서 음성 입력을 설정하십시오.",
                     "point9": "말하기를 시작하려면 마이크 아이콘을 클릭하십시오",
-                    "closeText": "닫기"
+                    "closeText": "닫기",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "확인",

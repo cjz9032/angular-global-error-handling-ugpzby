@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Φόρτωση...",
             "from": "από",
             "to": "σε",
-            "clickToChange": "κάντε κλικ για αλλαγή"
+            "clickToChange": "κάντε κλικ για αλλαγή",
+            "failedLoad": "Η φόρτωση απέτυχε.",
+            "retry": "Επανάληψη"
         },
         "app-update": {
             "message": "Γεια! Υπάρχει διαθέσιμη μια νεότερη έκδοση του Vantage, θέλετε να τη φορτώσετε;"
@@ -868,16 +870,17 @@
                 "messages": {
                     "feedbackSuccess": "Σας ευχαριστούμε για τα σχόλιά σας!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Πόσο πιθανό είναι να συστήσετε την εφαρμογή Lenovo Vantage σε φίλο ή συνάδελφο;",
+                "question7": "Γνωρίζατε ότι μπορείτε να χρησιμοποιήσετε το Lenovo Vantage για να ενημερώνετε το λογισμικό (προγράμματα οδήγησης, υλικολογισμικό και BIOS) του υπολογιστής σας;",
+                "question8": "Έχετε χρησιμοποιήσει το Lenovo Vantage για να αποκτήσετε πρόσβαση σε πληροφορίες υποστήριξης σχετικά με τον υπολογιστή σας;",
+                "tips2": "Παρακαλούμε αφήστε τυχόν επιπλέον σχόλια παρακάτω",
+                "emailAddressLabel": "Παρακαλούμε αφήστε τη διεύθυνση email σας, εάν θα θέλατε να επικοινωνήσει μαζί σας η ομάδα Lenovo Vantage.",
+                "emailAddress": "Διεύθυνση email",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Οι γρήγορες ρυθμίσεις σας",
+            "title": "Γρήγορες ρυθμίσεις",
             "microphone": "Μικρόφωνο",
             "cameraPrivacy": "Κάμερα",
             "eyeCareMode": "Φροντίδα ματιών",
@@ -922,6 +925,10 @@
                     "update": "Ενημέρωση"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Ενημερώστε τα προγράμματα οδήγησης, το BIOS και άλλα στοιχεία λογισμικού.",
+            "checkForSystemUpdates": "Ελέγξτε για ενημερώσεις συστήματος"
         }
     },
     "device": {
@@ -1033,7 +1040,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Για να παρατείνετε τη διάρκεια ζωής της μπαταρίας, έχουμε βελτιστοποιήσει τη χωρητικότητα πλήρους φόρτισης της μπαταρίας με βάση τη χρήση σας. Η χωρητικότητα πλήρους φόρτισης της μπαταρίας ενδέχεται να μην είναι διαθέσιμη έως ότου αποφορτιστεί στα 20% και, στη συνέχεια, επαναφορτιστεί."
                 },
                 "condition": {
                     "Illegal": "Η εγκατεστημένη μπαταρία <b>δεν υποστηρίζεται</b> από το σύστημα και δεν θα φορτιστεί. Αντικαταστήστε την μπαταρία με τη σωστή μπαταρία της Lenovo για αυτό το σύστημα.",
@@ -1055,7 +1062,7 @@
                     "FullACAdapterSupport": "<b>Συνδέεται τροφοδοσία {{acWattage}} W {{acAdapterType}}.</b>",
                     "EmDriverInstalled": "Δεν υπάρχουν διαθέσιμες πληροφορίες για την μπαταρία. Εκτελέστε τη λειτουργία Windows Update->Έλεγχος για ενημερωμένες εκδόσεις για να εγκαταστήσετε το πρόγραμμα οδήγησης <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
-                "batteryNotDetected": "Δεν εντοπίστηκε μπαταρία",
+                "batteryNotDetected": "Δεν ανιχνεύτηκε μπαταρία",
                 "thresholdNote": "<b>Σημείωση:</b> Δεν είναι δυνατή η πλήρης φόρτιση της μπαταρίας όταν έχει ενεργοποιηθεί το όριο φορτίου μπαταρίας.",
                 "seeDetailsLink": "Βλέπε λεπτομέρειες",
                 "gaugeResetWarning": "<b>Σημείωση:</b> Η επαναφορά του μετρητή μπαταρίας βρίσκεται σε εξέλιξη. Διατηρήστε τον μετασχηματιστή εναλλασσόμενου ρεύματος (ac) συνδεδεμένο.",
@@ -1246,9 +1253,9 @@
                             "reset": "Επαναφορά",
                             "stop": "Διακοπή"
                         },
-                        "progressText1": "{{stage}} από {{stageNum}}: Βαθμονόμηση σε πλήρη φόρτιση",
-                        "progressText2": "{{stage}} από {{stageNum}}: Βαθμονόμηση σε χαμηλό επίπεδο φόρτισης μπαταρίας",
-                        "progressText3": "{{stage}} από {{stageNum}}: Βαθμονόμηση σε υψηλό επίπεδο ισχύος μπαταρίας",
+                        "progressText1": "Βήμα {{stage}} από {{stageNum}} βήματα συνολικά: Βαθμονόμηση πλήρους φόρτισης",
+                        "progressText2": "Βήμα {{stage}} από {{stageNum}} βήματα συνολικά: Βαθμονόμηση χαμηλής ισχύος μπαταρίας",
+                        "progressText3": "Βήμα {{stage}} από {{stageNum}} βήματα συνολικά: Βαθμονόμηση υψηλής ισχύος μπαταρίας",
                         "FCCText": "Από {{before}} Wh σε {{after}} Wh",
                         "note": "Σημείωση: Πριν επαναφέρετε τον μετρητή μπαταρίας, βεβαιωθείτε ότι έχετε συνδέσει τον υπολογιστή σας σε παροχή εναλλασσόμενου ρεύματος. ",
                         "resetLog": {
@@ -1735,7 +1742,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2009,7 +2019,8 @@
                     "point7": "Επιλέξτε την επιθυμητή γλώσσα-πηγή και γλώσσα-στόχο.",
                     "point8": "Ανάλογα με τις ανάγκες σας, ορίστε την είσοδο φωνής από το Ηχείο ή από το Μικρόφωνο.",
                     "point9": "Κάντε κλικ στο εικονίδιο μικροφώνου για να αρχίσετε να μιλάτε",
-                    "closeText": "κλείσιμο"
+                    "closeText": "κλείσιμο",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "OK",

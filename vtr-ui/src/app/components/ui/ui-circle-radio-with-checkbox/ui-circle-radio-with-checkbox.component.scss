@@ -113,3 +113,12 @@
 
 @include theme(white-theme, $main, $light, $menu_hover);
 @include theme(blue-theme, $light, $main, $light);
+
+.vtr-ui-circle-radio-with-checkbox.white-theme {
+	.check-circle {
+		color: $main;
+	}
+	.icon-circle {
+		color: $light;
+	}
+}

@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -750,7 +750,7 @@
                 "sub3": "Segurança WiFi",
                 "sub4": "Integridade de senha",
                 "sub5": "Segurança VPN",
-                "sub6": "Impressão digital"
+                "sub6": "Impressões digitais"
             },
             "support": "Suporte",
             "beta": {
@@ -775,7 +775,7 @@
             "notFound": "NÃO ENCONTRADO",
             "registered": "REGISTRADO",
             "notRegistered": "NÃO REGISTRADO",
-            "fingerPrint": "Impressão Digital",
+            "fingerPrint": "Impressões digitais",
             "privacyPolicyAndTermsOfService": "<tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "CADASTRADO",
@@ -801,7 +801,9 @@
             "loading": "Carregando...",
             "from": "de",
             "to": "para",
-            "clickToChange": "clique para alterar"
+            "clickToChange": "clique para alterar",
+            "failedLoad": "Falha ao carregar.",
+            "retry": "Tentar Novamente"
         },
         "app-update": {
             "message": "Ei! Uma versão mais recente do Vantage está disponível. Deseja carregá-la?"
@@ -868,12 +870,13 @@
                 "messages": {
                     "feedbackSuccess": "Agradecemos seus comentários."
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Qual a probabilidade de você recomendar o aplicativo Lenovo Vantage a um amigo ou colega?",
+                "question7": "Você sabia que pode usar o Lenovo Vantage para atualizar o software (drivers, firmware e BIOS) no seu computador?",
+                "question8": "Você usou o Lenovo Vantage para acessar informações de suporte sobre o seu computador?",
+                "tips2": "Deixe comentários adicionais abaixo",
+                "emailAddressLabel": "Deixe seu endereço de e-mail se desejar ser contatado pela equipe do Lenovo Vantage.",
+                "emailAddress": "Endereço de email",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
@@ -922,6 +925,10 @@
                     "update": "Atualizar"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Atualize os drivers, BIOS e outros softwares.",
+            "checkForSystemUpdates": "Verificar se há atualizações do sistema"
         }
     },
     "device": {
@@ -1033,7 +1040,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Para estender a vida útil da bateria, otimizamos sua capacidade de carga máxima com base no seu uso. A capacidade máxima da bateria pode não estar disponível até você descarregar para 20% e recarregar."
                 },
                 "condition": {
                     "Illegal": "A bateria instalada <b>não é aceita</b> pelo sistema e não será carregada. Substitua a bateria pela bateria correta da Lenovo para esse sistema.",
@@ -1170,7 +1177,7 @@
                     },
                     "easyResume": {
                         "title": "Retomada fácil",
-                        "description": "Ative este recurso para diminuir o tempo de retomada ao abrir e fechar a tampa do computador com frequência",
+                        "description": "Ative este recurso para diminuir o tempo de retomada ao abrir e fechar a tampa do computador com frequência.",
                         "tooltip": "Este recurso diminui o tempo de retomada ao abrir e fechar a tampa do computador com frequência. Quando o recurso está ativado, o computador entra no modo de baixo consumo de energia ao fechar a tampa e retoma imediatamente ao reabrir a tampa, desde que isso ocorra em até 15 minutos depois de fechá-la. Esse recurso também permite que o notebook tente concluir atividades pendentes (como envio de email ou download de arquivo) antes de o sistema entrar em suspensão."
                     },
                     "flipToBoot": {
@@ -1246,9 +1253,9 @@
                             "reset": "Redefinir",
                             "stop": "Parar"
                         },
-                        "progressText1": "{{stage}} de {{stageNum}}: Calibrando em carga máxima",
-                        "progressText2": "{{stage}} de {{stageNum}}: Calibrando em bateria fraca",
-                        "progressText3": "{{stage}} de {{stageNum}}: Calibrando em bateria alta",
+                        "progressText1": "Etapa {{stage}} de {{stageNum}} etapas no total: Calibrando em carga máxima",
+                        "progressText2": "Etapa {{stage}} de {{stageNum}} etapas no total: Calibrando em bateria fraca",
+                        "progressText3": "Etapa {{stage}} de {{stageNum}} etapas no total: Calibrando em bateria alta",
                         "FCCText": "De {{before}} Wh para {{after}} Wh",
                         "note": "Nota: Antes de redefinir o medidor da bateria, certifique-se de conectar o computador à energia CA. ",
                         "resetLog": {
@@ -1520,7 +1527,7 @@
                         "onSunsetToSunriseScheduleDescription": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
                         "note": {
                             "title": "Nota",
-                            "description": "O Lenovo Vantage precisa acessar suas informações de localização para calcular o horário do pôr do sol e do nascer do sol da sua região."
+                            "description": "O Lenovo Vantage precisa acessar suas informações de localização para calcular o horário do pôr do sol e do nascer do sol de sua região."
                         },
                         "tips": "Execute o Windows Update ou instale manualmente o driver gráfico para recuperar o modo Proteção Ocular"
                     },
@@ -1587,7 +1594,7 @@
                     "url": "Ir para as configurações de privacidade do Windows",
                     "cameraPrivacy": {
                         "title": "Modo de privacidade da câmera",
-                        "tooltip": "A câmera para de enviar imagens ao vivo quando a configuração de privacidade é ativada. Ative essa configuração somente quando não desejar compartilhar suas imagens com outras pessoas durante chamadas com vídeo."
+                        "tooltip": "A câmera interrompe o envio de imagens ao vivo quando a configuração de privacidade está ativada. Ative essa configuração somente quando não desejar compartilhar suas imagens durante chamadas com vídeo."
                     },
                     "camera": {
                         "title": "Câmera",
@@ -1735,7 +1742,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2009,7 +2019,8 @@
                     "point7": "Selecione o idioma de origem e o idioma de destino desejados.",
                     "point8": "Dependendo das suas necessidades, defina a entrada de voz do alto-falante ou do microfone.",
                     "point9": "Clique no ícone do microfone para começar a falar",
-                    "closeText": "fechar"
+                    "closeText": "fechar",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "OK",

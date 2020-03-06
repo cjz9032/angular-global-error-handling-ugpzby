@@ -8,12 +8,14 @@
               <fa-icon class="left-icon" [icon]="['fal', 'keyboard']"></fa-icon >
             </div>
           </div>
-          <div class="title" role="text" >
+          <div class="title" role="text" id="inputAccessory.topRowFunctions.title"
+          attr.aria-label="inputAccessory.topRowFunctions.title" >
             {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.title' | translate}}
           </div>
         </div>
         <div class="col-12 pr-0 caption">
-          <div class="text" role="text" tabindex="0" >
+          <div class="text" role="text" tabindex="0" id="inputAccessory.topRowFunctions.description"
+          attr.aria-label="inputAccessory.topRowFunctions.description" >
             {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.description' | translate}}
           </div>
           <div class="my-3">
@@ -40,11 +42,14 @@
                 </vtr-ui-rectangle-radio>
               </div>
             </div>
-            <p class="text mt-3">
+            <p class="text mt-3"  role="text" tabindex="0" id="inputAccessory.topRowFunctions.subSection.description"
+            attr.aria-label="inputAccessory.topRowFunctions.subSection.description">
               {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.description' | translate}}
             </p>
             <div *ngIf="!showAdvancedSection">
-              <span class="link-text mt-4"  role="text" tabindex="0" (click)="showAdvancedSection = true" (keydown.enter)="showAdvancedSection = true">
+              <span class="link-text mt-4"  role="text" tabindex="0" 
+                    id="inputAccessory.topRowFunctions.showAdvSettings" attr-aria-label="inputAccessory.topRowFunctions.showAdvSettings"
+                    (click)="showAdvancedSection = true" (keydown.enter)="showAdvancedSection = true">
                 {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
               </span>
             </div>
@@ -68,14 +73,18 @@
     <div *ngIf="topRowKeyObj.stickyFunCap">
       <div class="col-12 pl-3 sectn-padding">
         <div class="col-12 title-blck px-0 d-flex">
-          <div class="title pl-5 ml-2">
-            {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.title' | translate}}
+          <div class="title pl-5 ml-2" role="text"
+               id="inputAccessory.topRowFunctions.subSectionThree.title"
+               attr-aria-label="inputAccessory.topRowFunctions.subSectionThree.title">
+              {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.title' | translate}}
           </div>
         </div>
         <div class="col-12 pl-5 pr-0">
           <div class="caption pl-2">
-            <div class="text">
-              {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.description' | translate}}
+            <div class="text" role="text" 
+                 id="inputAccessory.topRowFunctions.subSectionThree.description"
+                 attr-aria-label="inputAccessory.topRowFunctions.subSectionThree.description">
+                {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.description' | translate}}
             </div>
           </div>
           <div class="pl-2 pr-0 mt-5">
@@ -101,8 +110,10 @@
       </div>
     </div>
     <div class="pl-5" >
-      <span class="link-text mt-2 ml-4" role="text" tabindex="0" (click)="showAdvancedSection = false" (keydown.enter)="showAdvancedSection = false">
-        {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.hideAdvSettings' | translate}}
+      <span class="link-text mt-2 ml-4" role="text" tabindex="0" 
+            id="inputAccessory.topRowFunctions.hideAdvSettings" attr.aria-label="inputAccessory.topRowFunctions.hideAdvSettings"
+            (click)="showAdvancedSection = false" (keydown.enter)="showAdvancedSection = false">
+            {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.hideAdvSettings' | translate}}
       </span>
     </div>
     <vtr-ui-row-switch></vtr-ui-row-switch>

@@ -801,7 +801,9 @@
             "loading": "载入中...",
             "from": "从",
             "to": "到",
-            "clickToChange": "单击以更改"
+            "clickToChange": "单击以更改",
+            "failedLoad": "未能加载。",
+            "retry": "重试"
         },
         "app-update": {
             "message": "您好！已有较新版本的 Vantage，您要加载吗？"
@@ -868,16 +870,17 @@
                 "messages": {
                     "feedbackSuccess": "感谢您的反馈！"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "您将 Lenovo Vantage 应用程序推荐给同事或朋友的可能性有多大？",
+                "question7": "您是否知道可以使用 Lenovo Vantage 让计算机上的软件（驱动程序、固件和 BIOS）保持最新状态？",
+                "question8": "您是否使用过 Lenovo Vantage 来访问有关计算机的支持信息？",
+                "tips2": "如有任何其他意见，请在下面提出",
+                "emailAddressLabel": "如果您想与 Lenovo Vantage 团队联系，请留下您的电子邮件地址。",
+                "emailAddress": "电子邮件地址",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "您的设置",
+            "title": "快速设置",
             "microphone": "麦克风",
             "cameraPrivacy": "相机",
             "eyeCareMode": "护眼",
@@ -922,6 +925,10 @@
                     "update": "更新"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "更新驱动程序、BIOS 和其他软件。",
+            "checkForSystemUpdates": "检查系统更新"
         }
     },
     "device": {
@@ -1034,7 +1041,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "为延长电池的使用寿命，我们根据您的使用情况优化了其完全充电电量。要想使用完全电池电量，可能需要先放电至 20% 并重新充电。"
                 },
                 "condition": {
                     "Illegal": "系统<b>不支持</b>所安装的电池，电池无法充电。请将该电池更换为用于此系统的正确 Lenovo 电池。",
@@ -1246,9 +1253,9 @@
                             "reset": "重置",
                             "stop": "停止"
                         },
-                        "progressText1": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为完全充电",
-                        "progressText2": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为放电到低电量",
-                        "progressText3": "{{stageNum}} 的 {{stage}}：校准为电池电量充足",
+                        "progressText1": "步骤 {{stage}}，总共 {{stageNum}} 步：校准为完全充电",
+                        "progressText2": "步骤 {{stage}}，总共 {{stageNum}} 步：校准为电池电量不足",
+                        "progressText3": "步骤 {{stage}}，总共 {{stageNum}} 步：校准为电池电量充足",
                         "FCCText": "从 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重置电池电量表之前，请确保将计算机连接到交流电源。",
                         "resetLog": {
@@ -1735,7 +1742,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2009,7 +2019,8 @@
                     "point7": "选择所需的源语言和目标语言。",
                     "point8": "根据您的需要，从扬声器或麦克风处设置语音输入。",
                     "point9": "单击麦克风图标开始说话",
-                    "closeText": "关闭"
+                    "closeText": "关闭",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "确定",
@@ -2534,30 +2545,30 @@
         "loggingOut": "正在注销...",
         "unlockExclusives": "解锁专享功能",
         "user": "用户",
-        "welcomeText1": "今天也是活力满满的一天，{{firstName}}！",
+        "welcomeText1": "加油，热干面！",
         "welcomeText2": "很高兴再次见到您，{{firstName}}",
-        "welcomeText3": "多么令人惊喜，{{firstName}}",
-        "welcomeText4": "微笑一下，{{firstName}}，一起开心吧 :)",
-        "welcomeText5": "叮咚，{{firstName}}，你还在吗？",
-        "welcomeText6": "我们一起探索美好世界！",
+        "welcomeText3": "青山一道同云雨，明月何曾是两乡",
+        "welcomeText4": "同气连枝，共盼春来",
+        "welcomeText5": "长风破浪会有时，直挂云帆济沧海",
+        "welcomeText6": "联想与您共克时艰",
         "welcomeText7": "让我们开启元气满满的一天，{{firstName}}！",
         "welcomeText8": "要不要来一杯快乐肥宅水？",
-        "welcomeText9": "派对开始了，{{firstName}}！",
+        "welcomeText9": "今日关中事，萧何共尔忧",
         "welcomeText10": "保持冷静，Vantage 就来了",
         "welcomeText11": "Vantage 物美价廉",
         "welcomeText12": "将 Vantage 带回家",
         "welcomeText13": "吃好、睡好，起来接着玩转Vantage！",
         "welcomeText14": "Vantage 每一刻都新鲜",
         "welcomeText15": "Vantage 发挥最大作用",
-        "welcomeTextWithoutUserName1": "今天也是活力满满的一天！",
+        "welcomeTextWithoutUserName1": "加油，热干面！",
         "welcomeTextWithoutUserName2": "很高兴再次见到您",
-        "welcomeTextWithoutUserName3": "多么令人惊喜",
-        "welcomeTextWithoutUserName4": "微笑一下，一起开心吧 :)",
-        "welcomeTextWithoutUserName5": "叮咚，你还在吗？",
-        "welcomeTextWithoutUserName6": "我们一起探索美好世界！",
+        "welcomeTextWithoutUserName3": "青山一道同云雨，明月何曾是两乡",
+        "welcomeTextWithoutUserName4": "同气连枝，共盼春来",
+        "welcomeTextWithoutUserName5": "长风破浪会有时，直挂云帆济沧海",
+        "welcomeTextWithoutUserName6": "联想与您共克时艰",
         "welcomeTextWithoutUserName7": "让我们开启元气满满的一天！",
         "welcomeTextWithoutUserName8": "要不要来一杯快乐肥宅水？",
-        "welcomeTextWithoutUserName9": "派对开始了！",
+        "welcomeTextWithoutUserName9": "今日关中事，萧何共尔忧",
         "welcomeTextWithoutUserName10": "保持冷静，Vantage 就来了",
         "welcomeTextWithoutUserName11": "Vantage 物美价廉",
         "welcomeTextWithoutUserName12": "将 Vantage 带回家",
@@ -2934,7 +2945,7 @@
     "welcometutorial": {
         "description": "您好！欢迎使用Vantage<br>Vantage是为您量身定制的系统管家。我们在Vantage中集成了多种功能以便您轻松掌握系统状态，并使系统持续处于最优状态。也可在您系统遇到问题时，为您快速运行诊断程序，定位问题。",
         "bullets1": "系统整体状态在首页清晰可览。",
-        "bullets2": "安全顾问助您轻松改善系统安全状况。",
+        "bullets2": "安全顾问助您轻松改善系统安全状况（适用于特定系统）。",
         "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型 和 windows S mode 机型不可用)。",
         "subtitle1": "您将如何使用您的设备？",
         "subtitle2": "请告诉我们您的兴趣（选填）",

@@ -38,10 +38,8 @@
 								{{ title }}
 							</div>
 							<span *ngIf="caption">
-								<div class="caption"
-									id="{{switchId}}-caption"
-									role="text"
-									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
+								<div class="caption" id="{{switchId}}-caption" attr.aria-label="{{switchId}}-caption" role="text"
+									[innerHTML]="htmlSanitizer(caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption)">
 								</div>
 							</span>
 							<!-- {{ caption. add it only if there is a readmore, else comment it}} -->
@@ -120,16 +118,19 @@
 				<div class="tool-tip-icon float-right"
 					*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus && !fnCtrltoolTip"
 					[ngClass]="{'auto-screen-lock-help-icon': !isSwitchVisible}">
-					<fa-icon id="{{switchId}}-tooltip_right_icon"
-						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
+					<fa-icon 
+					    id="{{switchId}}-tooltip_right_icon"
+					    attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
 						class="right-icon"
 						tabindex="0"
+						role="img"
 						triggers="manual"
 						placement="left"
 						autoClose="false"
 						[ngbTooltip]="tooltipRef"
 						#rightToolTip1="ngbTooltip"
 						autoClose="true"
+                        tabindex="0"  
 						[icon]="rightIcon"
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"

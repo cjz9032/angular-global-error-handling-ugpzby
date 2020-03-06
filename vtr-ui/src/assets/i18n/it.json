@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "Caricamento in corso...",
             "from": "da",
             "to": "a",
-            "clickToChange": "fare clic per modificare"
+            "clickToChange": "fare clic per modificare",
+            "failedLoad": "Caricamento fallito.",
+            "retry": "Riprova"
         },
         "app-update": {
             "message": "Ciao! È disponibile una versione più recente di Vantage. Caricarla?"
@@ -868,12 +870,13 @@
                 "messages": {
                     "feedbackSuccess": "Grazie del feedback!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Con quale probabilità consiglieresti l'applicazione Lenovo Vantage a un amico o un collega?",
+                "question7": "Sapevi che è possibile utilizzare Lenovo Vantage per aggiornare il software (driver, firmware e BIOS) del computer?",
+                "question8": "Hai utilizzato Lenovo Vantage per accedere alle informazioni di supporto relative al computer?",
+                "tips2": "Fornisci di seguito eventuali commenti aggiuntivi",
+                "emailAddressLabel": "Fornisci il tuo indirizzo e-mail se vuoi essere contattato dal team Lenovo Vantage.",
+                "emailAddress": "Indirizzo e-mail",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
@@ -922,6 +925,10 @@
                     "update": "Aggiornato"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Aggiornare driver, BIOS e altri software.",
+            "checkForSystemUpdates": "Controllare gli aggiornamenti di sistema"
         }
     },
     "device": {
@@ -1033,7 +1040,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Per estendere la durata di vita della batteria, ne abbiamo ottimizzato la capacità di carica completa in base all'uso. La capacità completa della batteria potrebbe non essere disponibile finché questa non si scarica al 20% e non viene ricaricata."
                 },
                 "condition": {
                     "Illegal": "La batteria installata <b>non è supportata</b> dal sistema e non verrà caricata. Sostituire la batteria con la batteria Lenovo corretta per questo sistema.",
@@ -1055,7 +1062,7 @@
                     "FullACAdapterSupport": "<b>L'alimentazione {{acAdapterType}} da {{acWattage}} W è collegata.</b>",
                     "EmDriverInstalled": "Dettagli della batteria non disponibili. Eseguire Windows Update -> Verifica disponibilità aggiornamenti per installare il driver <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
-                "batteryNotDetected": "Non è stata rilevata alcuna batteria",
+                "batteryNotDetected": "Nessuna batteria rilevata",
                 "thresholdNote": "<b>Nota:</b> la batteria non può essere caricata completamente quando è abilitata l'opzione Soglia di carica batteria.",
                 "seeDetailsLink": "Visualizza dettagli",
                 "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA.",
@@ -1246,9 +1253,9 @@
                             "reset": "Reimposta",
                             "stop": "Interrompi"
                         },
-                        "progressText1": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
-                        "progressText2": "{{stage}} di {{stageNum}}: calibrazione per batteria scarica in corso",
-                        "progressText3": "{{stage}} di {{stageNum}}: calibrazione per batteria carica in corso",
+                        "progressText1": "Passo {{stage}} di {{stageNum}} passi totali: calibrazione fino a carica completa",
+                        "progressText2": "Passo {{stage}} di {{stageNum}} passi totali: calibrazione fino ad alimentazione batteria bassa",
+                        "progressText3": "Passo {{stage}} di {{stageNum}} passi totali: calibrazione fino ad alimentazione batteria alta",
                         "FCCText": "Da {{before}} Wh a {{after}} Wh",
                         "note": "Nota: prima di reimpostare l'indicatore della batteria, assicurarsi di collegare il computer all'alimentazione CA. ",
                         "resetLog": {
@@ -1735,7 +1742,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2009,7 +2019,8 @@
                     "point7": "Selezionare la lingua di origine e di destinazione desiderate.",
                     "point8": "In base alle proprie esigenze, impostare l'ingresso vocale dall'altoparlante o dal microfono.",
                     "point9": "Fare clic sull'icona del microfono per iniziare a parlare",
-                    "closeText": "chiudi"
+                    "closeText": "chiudi",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2066,7 +2077,7 @@
             "title": "Sito Web del supporto Lenovo"
         },
         "banner": {
-            "neverChecked": "Benvenuto in System Update.",
+            "neverChecked": "Benvenuto in Aggiornamento del sistema.",
             "title": "Un sistema aggiornato è un sistema integro.",
             "installingTitle": "Durante gli aggiornamenti, non attivare la modalità Sospensione o Ibernazione del computer.",
             "last": "Ultimo aggiornamento: ",
@@ -2241,7 +2252,7 @@
             "goWifi": "vai alla sicurezza Wi-Fi",
             "goVpn": "vai alla sicurezza VPN",
             "visitWindows": "Visita Attivazione di Windows",
-            "visitFingerprint": "Visita Fingerprint Reader",
+            "visitFingerprint": "Visita Lettore impronte digitali",
             "visitUac": "Visita Controllo dell'account utente",
             "visitHde": "Visita Crittografia unità disco fisso",
             "haveOwnPassword": "Ho il mio Password Manager",

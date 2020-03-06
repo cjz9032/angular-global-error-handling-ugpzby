@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -775,7 +775,7 @@
             "notFound": "BULUNAMADI",
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL",
-            "fingerPrint": "Parmak Izi",
+            "fingerPrint": "Parmak İzi",
             "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "KAYITLI",
@@ -801,7 +801,9 @@
             "loading": "Yükleniyor...",
             "from": "başlangıç",
             "to": "->",
-            "clickToChange": "değiştirmek için tıklatın"
+            "clickToChange": "değiştirmek için tıklatın",
+            "failedLoad": "Yüklenemedi.",
+            "retry": "Yeniden Dene"
         },
         "app-update": {
             "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
@@ -868,16 +870,17 @@
                 "messages": {
                     "feedbackSuccess": "Geri bildiriminiz için teşekkürler!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Lenovo Vantage uygulamasını bir arkadaşınıza veya meslektaşınıza tavsiye etme olasılığınız nedir?",
+                "question7": "Bilgisayarınızdaki yazılımları (sürücüler, sabit yazılım ve BIOS) güncel tutmak için Lenovo Vantage'ı kullanabileceğinizi biliyor muydunuz?",
+                "question8": "Bilgisayarınızla ilgili destek bilgilerine erişmek için Lenovo Vantage'ı kullandınız mı?",
+                "tips2": "Lütfen ek yorumlarınızı aşağıya bırakın",
+                "emailAddressLabel": "Potansiyel olarak Lenovo Vantage ekibinin sizinle iletişime geçmesini istiyorsanız lütfen e-posta adresinizi belirtin.",
+                "emailAddress": "E-posta adresi",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Hızlı Ayarlarınız",
+            "title": "Hızlı ayarlar",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Göz Koruması",
@@ -922,6 +925,10 @@
                     "update": "Güncelle"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Sürücülerinizi, BIOS'u ve diğer yazılımları güncelleyin.",
+            "checkForSystemUpdates": "Sistem güncellemelerini denetle"
         }
     },
     "device": {
@@ -1033,7 +1040,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Pilinizin ömrünü uzatmak için tam dolum kapasitesini kullanımınıza göre iyileştirdik. Pil kapasitesinin tamamını kullanmak için pili %20'ye kadar boşaltıp yeniden doldurmanız gerekmektedir."
                 },
                 "condition": {
                     "Illegal": "Takılı pil, sistem tarafından <b>desteklenmiyor</b> ve doldurulmayacak. Lütfen yerine bu sistem için doğru olan Lenovo pilini takın.",
@@ -1246,9 +1253,9 @@
                             "reset": "Sıfırla",
                             "stop": "Durdur"
                         },
-                        "progressText1": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
-                        "progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
-                        "progressText3": "{{stage}} / {{stageNum}}: Yüksek pil gücü için kalibre ediliyor",
+                        "progressText1": "Adım {{stage}}/{{stageNum}}: Tam şarj için kalibre ediliyor",
+                        "progressText2": "Adım {{stage}}/{{stageNum}}: Düşük pil gücü için kalibre ediliyor",
+                        "progressText3": "Adım {{stage}}/{{stageNum}}: Yüksek pil gücü için kalibre ediliyor",
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
@@ -1735,7 +1742,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2009,7 +2019,8 @@
                     "point7": "İstediğiniz kaynak dili ve hedef dili seçin.",
                     "point8": "Gereksinimlerinize bağlı olarak ses girişini Hoparlör veya Mikrofon olacak şekilde ayarlayın.",
                     "point9": "Konuşmaya başlamak için mikrofon simgesine tıklayın",
-                    "closeText": "kapat"
+                    "closeText": "kapat",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "tamam",
@@ -2055,7 +2066,7 @@
             },
             "recommended": {
                 "title": "Önerilen Güncellemeler",
-                "tooltip": "Önerilen sürücü güncellemeleri"
+                "tooltip": "Önerilen sürücü güncellemeleri bilgisayarınızın en iyi performansla çalışmasını sağlar."
             },
             "windows": {
                 "title": "Windows Güncellemeleri",

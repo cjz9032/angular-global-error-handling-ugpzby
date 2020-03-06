@@ -32,9 +32,9 @@
 						</h2>
 					</div>
 				</div>
-				<div class="row px-0"
+				<div class="row px-0 d-flex battery-detail-block"
 					role="text">
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.chargeStatusString)">
 						<div class="row px-0"
 							role="text">
@@ -46,7 +46,7 @@
 								{{ model.chargeStatusString | translate }}</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.wattage)">
 						<div class="row px-0"
 							role="text">
@@ -57,7 +57,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.barCode)">
 						<div class="row px-0"
 							role="text">
@@ -67,7 +67,7 @@
 							<div class="battery-value-text">{{ model.barCode }}</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.remainingPercent)">
 						<div class="row px-0"
 							role="text">
@@ -79,7 +79,7 @@
 								{{ model.remainingPercent }}%</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						role="text"
 						*ngIf="isValid(model.temperature)">
 						<div class="row px-0"
@@ -93,7 +93,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						role="text"
 						*ngIf="isValid(model.fruPart)">
 						<div class="row px-0"
@@ -105,7 +105,7 @@
 								role="text">{{ model.fruPart }}</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.remainingTime)"
 						role="text">
 						<div class="row px-0"
@@ -126,7 +126,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.cycleCount)"
 						role="text">
 						<div class="row px-0"
@@ -139,7 +139,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(deviceChemistry[i])"
 						role="text">
 						<div class="row px-0"
@@ -154,7 +154,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.remainingCapacity)"
 						role="text">
 						<div class="row px-0"
@@ -169,7 +169,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.manufacturer)"
 						role="text">
 						<div class="row px-0"
@@ -184,7 +184,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.designCapacity)"
 						role="text">
 						<div class="row px-0"
@@ -199,7 +199,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.fullChargeCapacity)"
 						role="text">
 						<div class="row px-0"
@@ -211,12 +211,16 @@
 							<div class="battery-value-text">
 								<span>{{ model.fullChargeCapacity }} Wh</span>
 								<span *ngIf="model.isTemporaryChargeMode">
-									<fa-icon id="fullChargeCapacity_tooltip_icon"
+									<fa-icon vtrMetrics
+										metricsEvent="FeatureClick"
+										metricsParent="Device.BatteryDetails"
+										metricsItem="FullChargeCapacityTooltip"
+										id="fullChargeCapacity_tooltip_icon"
 										attr.aria-label="{{ 'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }} tooltip, which reads: {{ 'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate }}"
 										tabindex="0"
 										class="fcc-tooltip-icon"
 										triggers="manual"
-										placement="auto"
+										placement="left"
 										autoClose="false"
 										[ngbTooltip]="fcctooltipRef"
 										#fccTooltip="ngbTooltip"
@@ -231,7 +235,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.manufactureDate)"
 						role="text">
 						<div class="row px-0"
@@ -246,7 +250,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.designVoltage)"
 						role="text">
 						<div class="row px-0"
@@ -261,7 +265,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.voltage)"
 						role="text">
 						<div class="row px-0"
@@ -275,7 +279,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.firstUseDate)"
 						role="text">
 						<div class="row px-0"
@@ -290,7 +294,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 px-0"
+					<div class="battery-details px-0"
 						*ngIf="isValid(model.firmwareVersion)"
 						role="text">
 						<div class="row px-0"

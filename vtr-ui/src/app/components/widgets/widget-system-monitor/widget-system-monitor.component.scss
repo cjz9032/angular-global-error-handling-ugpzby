@@ -9,7 +9,7 @@
 		background:$gaming_darkest;
 		box-shadow: $drop_shadow_gaming;
 		padding: 2rem 4rem 3.5rem 4rem;
-		height:auto;	
+		height:auto;			
 		@media #{$breakpoint_lg} {
 			padding: 2rem;			
 		}
@@ -98,7 +98,8 @@
 			.monitor-section {
 				border-radius: $border_radius_sm;
 				//background-color: $gaming_darkest;
-				background-color:$gaming_bg;
+				background-color:$gaming_bg;				
+				border: 1px solid $gaming_bg;
 				height: 24rem;
 				position: relative;
 				@media #{$breakpoint_xl3} {
@@ -113,10 +114,22 @@
 					border-radius: $border_radius_sm;		
 					background-color: $gaming_bg;
 					border: 1px solid $gaming_bg;
+					@media #{$black-on-white}{
+						border: 0px solid $gaming_bg;
+						}
+						@media #{$white-on-black}{
+							border: 0px solid $gaming_bg;
+						}
 					@media #{$breakpoint_md} {
 						float:left;	
 						padding-bottom:2rem;
 						position:relative;
+						@media #{$black-on-white}{
+							padding-bottom:0rem;
+							}
+							@media #{$white-on-black}{
+								padding-bottom:0rem;
+							}
 						}
 					@media screen and (min-width: 992px) and (max-width: 1199.9px) { 
 						float:left;	
@@ -386,6 +399,12 @@
 					width: 38rem;
 					height: 38rem;
 					border-radius: 50%;
+					@media #{$black-on-white}{
+						border:1px solid $high-contrast-grey;
+						}
+						@media #{$white-on-black}{
+						border:1px solid $high-contrast-grey;
+						}
 					@media #{$breakpoint_xl3} {
 						top: -3.5rem;
 						width: 29rem;

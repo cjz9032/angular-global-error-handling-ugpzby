@@ -157,6 +157,7 @@
                                 border-radius: 0.6rem;
                                 background: rgba(251, 253, 255, 0.05);
                                 margin-bottom: 2rem;
+                                position:static !important;
                                 .dropdown-toggle {
                                     cursor: pointer;
                                     padding-left: 2rem;
@@ -226,13 +227,16 @@
                         }
                         vtr-ui-color-picker{
                             position: absolute;
-                            z-index: 999;
                             margin-left: 4.1rem;
+                            z-index: 2;
                             @media #{$below-large-screen} {
                                top: 50%;
                             }
                             @media #{$small-screen} {
                                 top: 50%;
+                            }
+                            @media #{$mediaquery_X49} {
+                                margin-left: 32px;
                             }
                             ::ng-deep{
                                 .ui-color-picker{
@@ -261,6 +265,13 @@
                 .lighting-default-text{
                     text-align: right;
                     padding: 1.7rem 0 1.2rem 0;
+                    .under-line-button{
+                        max-width: 100%;
+                        display: inline-block;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
             .lighting-off{

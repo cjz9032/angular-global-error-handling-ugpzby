@@ -24,6 +24,7 @@
 			<section class="landing-nav mb-40">
 				<vtr-widget-landing-nav
 					(haveOwnChecked)="updateStatus($event)"
+					(retryClick)="retry($event)"
 					[baseItems]="baseItems"
 					[intermediateItems]="intermediateItems"
 					[advancedItems]="advanceItems"></vtr-widget-landing-nav>
@@ -35,14 +36,7 @@
 		<div class="container-fluid">
 			<div class="row mb-40">
 				<div class="col col-12">
-					<vtr-container-card [img]="cardContentPositionA.FeatureImage"
-						[caption]="cardContentPositionA.Description"
-						[title]="cardContentPositionA.Title"
-						[logoText]="cardContentPositionA.BrandName"
-						[action]="cardContentPositionA.Action"
-						[actionType]="cardContentPositionA.ActionType"
-						[actionLink]="cardContentPositionA.ActionLink"
-						[itemID]="cardContentPositionA.ActionLink"
+					<vtr-container-card [item]="cardContentPositionA"
 						[ratio]="2"
 						type="subpage-corner"
 						order="1"

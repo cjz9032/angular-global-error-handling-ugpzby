@@ -10,7 +10,6 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { AndroidService } from 'src/app/services/android/android.service';
@@ -27,7 +26,8 @@ import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 import { DccService } from 'src/app/services/dcc/dcc.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
-
+import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
+import {SelfSelectService,SegmentConst} from 'src/app/services/self-select/self-select.service';
 interface IConfigItem {
 	id: string;
 	template: string;
@@ -37,15 +37,13 @@ interface IConfigItem {
 	dashboardCache: string;
 }
 
-
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
 	styleUrls: ['./page-dashboard.component.scss']
 })
 export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit {
-	submit = this.translate.instant('dashboard.feedback.form.button');
-	feedbackButtonText = this.submit;
+
 	offlineConnection = 'offline-connection';
 	public systemStatus: Status[] = [];
 	public isOnline = true;
@@ -56,23 +54,24 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	public isWarrantyVisible = false;
 	public showQuickSettings = true;
 	dashboardStart: any = new Date();
+	public hideTitle = false;
 
 	heroBannerItems = []; // tile A
-	cardContentPositionB: any = {};
-	cardContentPositionC: any = {};
-	cardContentPositionD: any = {};
-	cardContentPositionE: any = {};
-	cardContentPositionF: any = {};
+	cardContentPositionB: FeatureContent = new FeatureContent();
+	cardContentPositionC: FeatureContent = new FeatureContent();
+	cardContentPositionD: FeatureContent = new FeatureContent();
+	cardContentPositionE: FeatureContent = new FeatureContent();
+	cardContentPositionF: FeatureContent = new FeatureContent();
 
 	heroBannerDemoItems = [];
 	canShowDccDemo$: Promise<boolean>;
 
-	heroBannerItemsCms: []; // tile A
-	cardContentPositionBCms: any = {};
-	cardContentPositionCCms: any = {};
-	cardContentPositionDCms: any = {};
-	cardContentPositionECms: any = {};
-	cardContentPositionFCms: any = {};
+	heroBannerItemsCms: any[]; // tile A
+	cardContentPositionBCms: FeatureContent = new FeatureContent();
+	cardContentPositionCCms: FeatureContent = new FeatureContent();
+	cardContentPositionDCms: FeatureContent = new FeatureContent();
+	cardContentPositionECms: FeatureContent = new FeatureContent();
+	cardContentPositionFCms: FeatureContent = new FeatureContent();
 
 	upeRequestResult = {
 		tileA: true,
@@ -179,7 +178,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		public warrantyService: WarrantyService,
 		private adPolicyService: AdPolicyService,
 		private sanitizer: DomSanitizer,
-		public dccService: DccService
+		public dccService: DccService,
+		private selfselectService:SelfSelectService
 	) {
 		this.getProtocalAction();
 		config.backdrop = 'static';
@@ -189,10 +189,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		});
 		// this.brand = this.deviceService.getMachineInfoSync().brand;
 		this.brand = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, -1);
-		translate.stream('dashboard.feedback.form.button').subscribe((value) => {
-			this.submit = value;
-			this.feedbackButtonText = this.submit;
-		});
 		// Evaluate the translations for QA on language Change
 		// this.qaService.setTranslationService(this.translate);
 		// this.qaService.setCurrentLangTranslations();
@@ -240,6 +236,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.getSelfSelectStatus();
 		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
 		this.launchProtocol();
+		this.selfselectService.getConfig().then((re)=>{
+			this.hideTitle = re.usageType === SegmentConst.Commercial;
+		})
 	}
 
 	private getProtocalAction() {
@@ -592,9 +591,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		try {
 			const response = await this.upeService.fetchUPEContent({ positions });
 			contentCards.forEach(cardItem => {
-				let articles = this.upeService.filterItems(response, cardItem.template, cardItem.position);
+				const articles = this.cmsService.getOneCMSContent(response, cardItem.template, cardItem.position);
 				if (cardItem.position === 'position-A') {
-					articles = articles.map((record) => {
+					const bannerArticles = articles.map((record) => {
 						return {
 							albumId: 1,
 							id: record.Id,
@@ -607,9 +606,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 						};
 					});
 
-					if (articles && articles.length) {
-						this[cardItem.cardPosition] = articles;
-						this.dashboardService[cardItem.dashboardCache] = articles;
+					if (bannerArticles && bannerArticles.length) {
+						this[cardItem.cardPosition] = bannerArticles;
+						this.dashboardService[cardItem.dashboardCache] = bannerArticles;
 						this.upeRequestResult[cardItem.id] = true;
 					}
 				} else {
@@ -635,15 +634,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				}
 			});
 		}
-	}
-
-	onFeedbackModal() {
-		this.modalService.open(FeedbackFormComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'feedback-modal'
-		});
 	}
 
 	private getTileSource() {

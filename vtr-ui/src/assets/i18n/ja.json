@@ -704,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -801,7 +801,9 @@
             "loading": "ロード中...",
             "from": "から",
             "to": "～",
-            "clickToChange": "クリックして変更"
+            "clickToChange": "クリックして変更",
+            "failedLoad": "ロードに失敗しました。",
+            "retry": "再試行"
         },
         "app-update": {
             "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"
@@ -868,12 +870,13 @@
                 "messages": {
                     "feedbackSuccess": "フィードバックをありがとうございました!"
                 },
-                "question6": "How likely are you to recommend the Lenovo Vantage application to a friend or colleague?",
-                "question7": "Did you know that you could use Lenovo Vantage to keep the software (drivers, firmware and BIOS) on your computer up-to-date?",
-                "question8": "Have you used Lenovo Vantage to access support information about your computer?",
-                "tips2": "Please leave any additional comments below",
-                "emailAddressLabel": "Please leave your email address if you would like to potentially be contacted by the Lenovo Vantage team.",
-                "emailAddress": "Email address"
+                "question6": "Lenovo Vantage アプリケーションを友人または同僚におすすめする可能性はどのくらいありますか?",
+                "question7": "Lenovo Vantage でコンピューターのソフトウェア・ドライバー、ファームウェア、および BIOS を最新の状態に維持できることをご存知でしたか?",
+                "question8": "Lenovo Vantage を使用して、コンピューターに関するサポート情報にアクセスされましたか?",
+                "tips2": "追加のコメントを以下に残してください",
+                "emailAddressLabel": "Lenovo Vantage チームから連絡を受ける可能性がある場合は、メール・アドレスを残してください。",
+                "emailAddress": "メール・アドレス",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
@@ -922,6 +925,10 @@
                     "update": "更新"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "ドライバー、BIOS、およびソフトウェアのを更新します。",
+            "checkForSystemUpdates": "システム更新を確認"
         }
     },
     "device": {
@@ -1033,7 +1040,7 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "バッテリーの寿命を延ばすために、使用状況に基づいてフル充電容量を最適化しました。20% まで放電して再充電するまで、バッテリーの全容量を使用できない場合があります。"
                 },
                 "condition": {
                     "Illegal": "取り付けられているバッテリーはシステムでは<b>サポートされない</b>ため、充電は行われません。ご使用のシステムに適した Lenovo バッテリーに交換してください。",
@@ -1192,18 +1199,18 @@
                     "batteryThreshold": {
                         "title": "バッテリー充電のしきい値",
                         "description": "コンピューターを主に AC アダプターに接続して使用し、バッテリー電源はそれほど使用しない場合は、充電のしきい値を 100 % より下に変更してバッテリー寿命を延ばすことができます。それほど使用しないバッテリーは完全に充電しない状態を維持することで寿命が長くなるため、効果的です。",
-                        "tooltip": "現状でバッテリーが充電停止しきい値を超えて充電されている場合は、電源を取り外して、バッテリーを充電停止しきい値以下まで放電させてください。バッテリーの状態 (古いまたは新しい) によって、充電の正確な開始点および停止点は、最大 2 パーセントのポイントで異なります。この機能が有効の場合、バッテリーの状態が正しく報告されるように定期的にバッテリー・ゲージのリセットを実行することをお勧めします。",
+                        "tooltip": "現状でバッテリーが充電停止しきい値を超えて充電されている場合は、ACアダプターを取り外して、バッテリーを充電停止しきい値以下まで放電させてください。バッテリーの状態 (古いまたは新しい) によって、充電の正確な開始点および停止点は、最大 2 パーセントのポイントで異なります。この機能が有効の場合、バッテリーの状態が正しく報告されるように定期的にバッテリー・ゲージのリセットを実行することをお勧めします。",
                         "note": "お願い",
                         "readMoreText": "表示を多くする。",
-                        "noteInfo": " バッテリー充電のしきい値がまだ完全にアクティブではありません。マシンの電源を切り、充電停止しきい値以下までバッテリを放電してください。",
+                        "noteInfo": " バッテリー充電のしきい値はまだ完全に有効になっていません。ACアダプターを抜き、充電停止しきい値以下までバッテリを放電してください。",
                         "settings": {
                             "title1": "プライマリー・バッテリーのしきい値",
                             "title2": "セカンダリ・バッテリーのしきい値"
                         },
                         "popup": {
                             "title": "バッテリー充電しきい値を有効にする",
-                            "description1": "カスタムのバッテリー充電を有効にすると、このデバイスを使用したときに全般的なバッテリー状態が持続します。しかし、フル充電していないと、バッテリーによる稼働時間が少なくなります。",
-                            "description2": "この機能を完全に有効にするには、マシンの電源を切り、充電停止しきい値以下までバッテリーを放電してください。",
+                            "description1": "バッテリーのカスタム充電を有効にすると、バッテリー状態がより長期間良好に保たれる可能性が高くなります。ただし、フル充電したときよりバッテリー持ち時間は短くなります。",
+                            "description2": "この機能を完全に有効にするには、ACアダプターを抜き、充電停止しきい値以下までバッテリーを放電してください。",
                             "enable": "有効にする",
                             "cancel": "キャンセル"
                         },
@@ -1246,9 +1253,9 @@
                             "reset": "リセット",
                             "stop": "停止"
                         },
-                        "progressText1": "{{stage}}/{{stageNum}}: 満充電にして調整",
-                        "progressText2": "{{stage}}/{{stageNum}}: 低バッテリー残量にして調整",
-                        "progressText3": "{{stage}}/{{stageNum}}: 高バッテリー残量にして調整",
+                        "progressText1": "ステップ {{stage}} / 合計 {{stageNum}} ステップ: 満充電にして調整",
+                        "progressText2": "ステップ {{stage}} / 合計 {{stageNum}} ステップ: 低バッテリー残量にして調整",
+                        "progressText3": "ステップ {{stage}} / 合計 {{stageNum}} ステップ: 高バッテリー残量にして調整",
                         "FCCText": "{{before}} Wh から {{after}} Wh",
                         "note": "注: バッテリー・ゲージをリセットする前に、コンピューターを AC 電源に接続してください。",
                         "resetLog": {
@@ -1328,10 +1335,10 @@
                 },
                 "smartStandby": {
                     "title": "スマート・スタンバイ",
-                    "description": "この機能は、使用頻度の高い時間中の<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">モダン・スタンバイ</a>の高速再開エクスペリエンスに影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
-                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。この期間は、設定したスケジュールまたはコンピューターの使用状況に基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
+                    "description": "あなたがコンピューターを使わない時間にバッテリー消費を最適化しながら、よく使う時間に<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">モダン・スタンバイ</a>によりすばやく作業を再開できるようにします。",
+                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時刻より前にモダン・スタンバイに切り替わり、バッテリー駆動で一定時間操作がなければ休止状態に移行します。その時間は入力されたスケジュール、またはコンピューターの使用時間に基づいて最適化されます。コンピューターはスケジュールされた曜日のみ休止状態からモダン・スタンバイに切り替わり、スケジュールされた日に連続して操作がなかった場合は切り替わりません。",
                     "timer": {
-                        "heading": "通常このコンピューターを使用する時刻:",
+                        "heading": "ふだんこのコンピューターを使用する時間帯:",
                         "subHeading1": "フィールドの",
                         "subHeading2": "終了",
                         "subHeading3": "このスケジュールを使用する期間",
@@ -1373,16 +1380,16 @@
                         "noDaySelected": "日が選択されていません"
                     },
                     "checkbox": "使用状況に基づいてコンピューターのアクティブ時間を自動調整する",
-                    "hyperlinkToGraph": "クリックして使用状況と適用されたアクティブ時間を確認します",
+                    "hyperlinkToGraph": "コンピューターの使用状況とアクティブ時間を確認する",
                     "subTitle": "コンピューターのスケジュール",
                     "automaticMode": "自動モード",
                     "manualMode": "手動モード",
-                    "subNote": "お使いのコンピューターは、使用状況に基づいて迅速に再開するようにスケジュールされています。",
+                    "subNote": "お使いのコンピューターは、使用状況に基づいて迅速に再開するようスケジュールされます。",
                     "graph": {
                         "graph1Tittle": "このコンピューターの使用状況",
                         "graph2Tittle": "適用されたアクティブ時間",
                         "graphSubtittle": "この期間中は、コンピューターをより迅速に再開できる状態にします。",
-                        "graphNote": "このコンピューターの活動データは、自動スケジューリングのプロファイルを提供するには不十分です。スマート・スタンバイは、十分なデータを利用できるようになるまで、手動モード・スケジュールを使用します。",
+                        "graphNote": "自動モードの設定に必要なコンピュータの使用データが足りません。スマート・スタンバイは、十分なデータが得られるまで、手動モードに設定されているスケジュールを適用します。",
                         "legends": {
                             "none": "なし",
                             "frequent": "頻繁"
@@ -1414,9 +1421,9 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "この機能は、使用頻度の高い時間中の高速スタートアップ時間に影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
-                    "subTitle2": "通常このコンピューターを使用する時刻を設定します",
-                    "oldTooltipText": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。時間は設定されたスケジュールに基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
+                    "description2": "あなたがコンピューターを使わない時間にバッテリー消費を最適化しながら、よく使う時間にすばやく作業を再開できるようにします。",
+                    "subTitle2": "ふだんこのコンピューターを使う時間帯を入力してください",
+                    "oldTooltipText": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時刻より前にモダン・スタンバイに切り替わり、バッテリー駆動で一定時間操作がなければ休止状態に移行します。その時間は入力されたスケジュールに基づいて最適化されます。コンピューターはスケジュールされた曜日のみ休止状態からモダン・スタンバイに切り替わり、スケジュールされた日に連続して操作がなかった場合は切り替わりません。",
                     "sectionTitle": "スタンバイ設定"
                 }
             },
@@ -1735,7 +1742,10 @@
                     },
                     "openapplicationsorfiles": {
                         "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first"
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -2009,7 +2019,8 @@
                     "point7": "目的の原文言語と訳文言語を選択します。",
                     "point8": "必要に応じて、スピーカーまたはマイクからの音声入力を設定します。",
                     "point9": "マイクのアイコンをクリックして話し始めます",
-                    "closeText": "閉じる"
+                    "closeText": "閉じる",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -3130,7 +3141,7 @@
         },
         "battery": {
             "title": "バッテリー充電しきい値を有効にする",
-            "description": "カスタムのバッテリー充電を有効にすると、このデバイスを使用したときに全般的なバッテリー状態が持続します。しかし、フル充電していないと、バッテリーによる稼働時間が少なくなります。この機能を完全に有効にするには、マシンの電源を切り、充電停止しきい値以下までバッテリーを放電してください。",
+            "description": "バッテリーのカスタム充電を有効にすると、バッテリー状態がより長期間良好に保たれる可能性が高くなります。ただし、フル充電したときよりバッテリー持ち時間は短くなります。この機能を完全に有効にするには、ACアダプターを抜き、充電停止しきい値以下までバッテリーを放電してください。",
             "enable": "有効にする"
         },
         "refreshModule": "モジュールの更新",
