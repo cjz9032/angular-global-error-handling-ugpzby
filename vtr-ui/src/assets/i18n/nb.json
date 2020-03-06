@@ -1633,7 +1633,7 @@
                         "description": "Du kan trykke på Fn-tasten nederst til venstre på tastaturet samtidig med andre taster for å aktivere kommandoene som vises i tastaturkartet nedenfor."
                     },
                     "firstKeyObj": {
-                        "tittle": "FN + tab",
+                        "tittle": "Fn + Tab",
                         "description": "aktiver zoomefunksjonen på skjermer med høy oppløsning",
                         "image": ""
                     },

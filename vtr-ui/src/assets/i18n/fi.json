@@ -1633,7 +1633,7 @@
                         "description": "Voit painaa Fn-näppäintä (näppäimistön vasemmassa alareunassa) samanaikaisesti toisen näppäimen kanssa, jos haluat käyttää alla olevassa näppäimistökartassa esitettyjä toimintoja."
                     },
                     "firstKeyObj": {
-                        "tittle": "Fn+Sarkain",
+                        "tittle": "Fn + Tab",
                         "description": "ota zoomaustoiminto käyttöön suuritarkkuuksisissa näytöissä",
                         "image": ""
                     },
