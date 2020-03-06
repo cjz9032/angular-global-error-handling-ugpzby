@@ -1,7 +1,6 @@
 <div>
     <vtr-ui-row-switch [title]="'device.deviceSettings.power.dpm.powerPlan.title' | translate"
-        componentName="dpm-powerplan"
-        [caption]="'device.deviceSettings.power.dpm.powerPlan.description' | translate"
+        componentName="dpm-powerplan" [caption]="'device.deviceSettings.power.dpm.powerPlan.description' | translate"
         [leftIcon]="['icomoon', 'icomoon-dpm-power-plan']" [showChildContent]="true" [isLastChild]="true"
         [theme]="'white'">
         <div class="content">
@@ -9,9 +8,32 @@
                 <h5 tabindex="0">
                     {{'device.deviceSettings.power.dpm.powerPlan.currentPowerPlan.label' | translate}}
                 </h5>
-                <vtr-ui-dpm-dropdown [list]="powerPlanIntervals" [value]="selectedPowerPlanVal" (change)="onPowerPlanChange($event)"
-                    [dropDownId]="'dpm-powerplan-action-dropDown'">
-                </vtr-ui-dpm-dropdown>
+                <div>
+                    <vtr-ui-dpm-dropdown [list]="powerPlanIntervals" [value]="selectedPowerPlanVal"
+                        (change)="onPowerPlanChange($event)" [dropDownId]="'dpm-powerplan-action-dropDown'">
+                    </vtr-ui-dpm-dropdown>
+                </div>
+                <div>
+                    <div class="boldtitle">PLAN profile:</div>
+                    <div>
+                        <div class="lefttitle">MAX performance:</div>
+                        <vtr-ui-dpm-energy *ngIf="selectedPowerPlanVal" [value]="selectedPowerPlanVal.performance">
+                        </vtr-ui-dpm-energy>
+                        <vtr-ui-dpm-energy *ngIf="!selectedPowerPlanVal"></vtr-ui-dpm-energy>
+                    </div>
+                    <div>
+                        <div class="lefttitle">Max system temperature:</div>
+                        <vtr-ui-dpm-energy *ngIf="selectedPowerPlanVal" [value]="selectedPowerPlanVal.temperature">
+                        </vtr-ui-dpm-energy>
+                        <vtr-ui-dpm-energy *ngIf="!selectedPowerPlanVal"></vtr-ui-dpm-energy>
+                    </div>
+                    <div>
+                        <div class="lefttitle">Max power usage:</div>
+                        <vtr-ui-dpm-energy *ngIf="selectedPowerPlanVal" [value]="selectedPowerPlanVal.powerUsage">
+                        </vtr-ui-dpm-energy>
+                        <vtr-ui-dpm-energy *ngIf="!selectedPowerPlanVal"></vtr-ui-dpm-energy>
+                    </div>
+                </div>
             </section>
         </div>
     </vtr-ui-row-switch>

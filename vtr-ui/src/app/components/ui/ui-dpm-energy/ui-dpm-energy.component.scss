@@ -1,0 +1,21 @@
+.dpmenergy-root{
+    border-color: #707070;
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    float: left;
+        
+    .energy{
+        border-color: #707070;
+        border-width: 0px 0px 0px 1px;
+        border-style: solid;
+        width: 2rem;
+        height: 2rem;
+        float: left;
+    }
+    .energy.normal{
+        background-color: white;
+    }
+    .energy.filled{
+        background-color: #2ECC7A;
+    }
+}
