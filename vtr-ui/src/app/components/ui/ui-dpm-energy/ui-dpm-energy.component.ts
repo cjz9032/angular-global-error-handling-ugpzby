@@ -6,15 +6,30 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./ui-dpm-energy.component.scss']
 })
 export class UiDpmEnergyComponent implements OnInit {
-  @Input() value: number;
+
+  private _value: number;
+  @Input()
+  public get value(): number {
+    return this._value;
+  }
+  public set value(v: number) {
+    if (v < 0) v = 0;
+    if (v > this.totalCount) v = this.totalCount;
+    this._value = v;
+    this.setItems();
+  }
+
   private totalCount = 7;
   items: boolean[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    if (this.value < 0) this.value = 0;
-    if (this.value > this.totalCount) this.value = this.totalCount;
+    this.setItems();
+  }
+
+  private setItems() {
+    this.items = [];
     for (let i = 0; i < this.totalCount; i++) {
       if (i < this.value)
         this.items.push(true);
