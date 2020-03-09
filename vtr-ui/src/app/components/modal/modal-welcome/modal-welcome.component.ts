@@ -26,7 +26,6 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	public segmentConst = SegmentConst;
 	public vantageToolbarStatus = new FeatureStatus(false, true);
-	public direction = 'ltr';
 	progress = 49;
 	isInterestProgressChanged = false;
 	page = 1;
@@ -75,10 +74,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		deviceService.getMachineInfo().then((val) => {
 			this.machineInfo = val;
 		});
-
-		if (this.languageService.currentLanguage.toLowerCase() === 'ar' || this.languageService.currentLanguage.toLowerCase() === 'he' ) {
-			this.direction = 'rtl';
-		}
 	}
 
 	async ngOnInit() {
