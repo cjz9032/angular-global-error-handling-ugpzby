@@ -58,12 +58,12 @@
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex"
 											*ngFor="let key of shortcutKeys;let i=index;">
 											<div class="col-4 px-0">
-												<h4 class="caption-tittle" id="keys-title-{{key.id}}">
+												<h4 class="caption-tittle" id="keys-{{key.id}-title}">
 													{{key.text + '.tittle' | translate}}
 												</h4>
 											</div>
 											<div class="col-8 px-0">
-												<p role="text" class="hidden-keyboard-text mb-0" id="keys-description-{{key.desc}}">
+												<p role="text" class="hidden-keyboard-text mb-0" id="keys-{{key.id}}-description">
 													{{key.text + '.description' | translate}}
 												</p>
 											</div>
