@@ -211,7 +211,7 @@ export class UserService {
 						self.setName(firstName, '');
 					}
 					self.lid.getUserProfile().then(profile => {
-						self.hasFirstName = !!profile.firstName;
+						self.hasFirstName = Boolean(profile.firstName);
 						if (profile.success && profile.status === 0) {
 							if (profile.firstName && profile.firstName !== firstName) {
 								self.setName(profile.firstName, profile.lastName);
