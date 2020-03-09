@@ -28,7 +28,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private cameraPreview: ElementRef;
 	private videoElement: HTMLVideoElement;
 	private cameraDetailSubscription: Subscription;
-	private logger: any;
 	private Windows: any;
 	private Capture: any;
 	private DeviceInformation: any;
@@ -68,27 +67,37 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		public cameraFeedService: CameraFeedService,
 		public baseCameraDetail: BaseCameraDetail,
 		private vantageShellService: VantageShellService,
-		private appLogger: LoggerService,
+		private logger: LoggerService,
 		private ngZone: NgZone
-	) { }
+	) {
+		this.Windows = this.vantageShellService.getWindows();
+		if (this.Windows) {
+			this.Capture = this.Windows.Media.Capture;
+			this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
+			this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
+			this.simpleOrientation = this.Windows.Devices.Sensors.SimpleOrientation;
+		}
+	}
 
 	ngOnInit() {
-		this.Windows = this.vantageShellService.getWindows();
-		this.Capture = this.Windows.Media.Capture;
-		this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
-		this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
-
 		//#region below logic required to re-enable camera feed when window is maximized from minimized state
-		this.logger = this.vantageShellService.getLogger();
 		this.logger.info('constructor camera');
 		this.oMediaCapture = new this.Capture.MediaCapture();
+		//#endregion
+
+		//#region hook up orientation change event
+		if (this.Windows) {
+			this.cameraStreamStateChanged = this.onCameraStreamStateChanged.bind(this);
+			this.oMediaCapture.addEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
+			this.orientationSensor = this.Windows.Devices.Sensors.SimpleOrientationSensor.getDefault();
+		}
 		//#endregion
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			(cameraDetail: CameraDetail) => {
 				this.cameraDetail = cameraDetail;
 			},
 			error => {
-				console.log(error);
+				this.logger.info(error);
 			}
 		);
 	}
@@ -165,7 +174,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 				return deviceInfo;
 			}, (error) => {
 				this.disabledAll = true;
-				console.log('findCameraDeviceByPanelAsync error ', error.message);
+				this.logger.info('findCameraDeviceByPanelAsync error ', error.message);
 			});
 	}
 
@@ -176,7 +185,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		try {
 			// Get available devices for capturing pictures
 			return this.findCameraDeviceByPanelAsync(this.Windows.Devices.Enumeration.Panel.front)
-				.then((camera) => {
+				.then(async (camera) => {
 					if (!camera) {
 						this.ngZone.run(() => {
 							this.cameraAvailable.emit(false);
@@ -188,7 +197,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 						this.cameraAvailable.emit(true);
 					});
 
-					self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
+					this.oMediaCapture = new this.Windows.Media.Capture.MediaCapture();
 					// Register for a notification when something goes wrong
 					// define the fail handle callback and show error message maybe... there's a chance another app is previewing camera, that's when failed happen.
 					this.oMediaCapture.addEventListener('failed', (error) => {
@@ -215,16 +224,16 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 						});
 					});
 
-					const settings = new self.Capture.MediaCaptureInitializationSettings();
+					const settings = new this.Capture.MediaCaptureInitializationSettings();
 					settings.videoDeviceId = camera.id;
 					settings.streamingCaptureMode = 2; // video
 					settings.photoCaptureSource = 0; // auto
 
 					// Initialize media capture and start the preview
-					return self.oMediaCapture.initializeAsync(settings);
-
+					return this.oMediaCapture.initializeAsync(settings);
 				}, (error) => {
-					console.log('findCameraDeviceByPanelAsync error', error.message);
+					this.isCameraInitialized = false;
+					this.logger.info('findCameraDeviceByPanelAsync error', error.message);
 					this.ngZone.run(() => {
 						this.disabledAll = true;
 					});
@@ -235,7 +244,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 				}).done();
 		} catch (error) {
 			this.disabledAll = true;
-			console.log('initializeCameraAsync catch', error);
+			this.logger.info('initializeCameraAsync catch', error);
 		}
 	}
 
@@ -307,15 +316,15 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	public onBrightnessSliderChange($event: ChangeContext) {
-		console.log('Brightness changed', $event);
+		this.logger.info('Brightness changed', $event);
 		this.brightnessChange.emit($event);
 	}
 	public onContrastSliderChange($event: ChangeContext) {
-		console.log('Contrast changed', $event);
+		this.logger.info('Contrast changed', $event);
 		this.contrastChange.emit($event);
 	}
 	public onExposureSliderChange($event: ChangeContext) {
-		console.log('exposure changed', $event);
+		this.logger.info('exposure changed', $event);
 		this.exposureChange.emit($event);
 	}
 }

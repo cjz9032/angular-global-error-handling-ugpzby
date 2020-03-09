@@ -9,7 +9,7 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			<div class="row pt-5 smartsettings-card pb-40"
+			<div class="row py-5 smart-settings-card"
 				id="Input & Accessories"
 				attr.aria-label="Input & Accessories">
 				<div class="col-12 px-0">
@@ -20,7 +20,8 @@
 						componentName="Input & Accessories"
 						[isCollapsed]="false"
 						[allowCollapse]="true"
-						[theme]="'white'">
+						[theme]="'white'"
+						[tabIndex]="0">
 						<ul class="list-group list-group-flush">
 							<li class="pt-3"
 								*ngIf="machineType == 1 && keyboardCompatibility">
@@ -32,7 +33,7 @@
 									[showChildContent]="true"
 									[theme]="'white'"
 									[switchId]="'inputAccessories-hiddenKeyboardFunctions'">
-									<div class="row">
+									<div class="row pl-3">
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 											<!-- <img src="../../../../../../assets/icons/Hidden keyboard functions.svg" alt="">-->
                                             <div class="img-preview" id="keyboardMap-background-image" role="img" attr.aria-label="keyboardMap-background-image"
@@ -50,6 +51,8 @@
 													</div>
 												</div>
 
+											</div>
+										</div>
 									</div>
 									<div class="row keys-row">
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex"
@@ -276,16 +279,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-auto" *ngIf="isMouseVisible">
-							<a *ngIf="machineType === 1;else otherMachine"
-								(click)='launchProtocol("ms-settings:mousetouchpad")'><span>{{'device.deviceSettings.inputAccessories.controlOptions.control3' | translate}}</span></a>
-							<ng-template #otherMachine><a
-									(click)='launchProtocol("ms-settings:mousetouchpad")'><span>{{'device.deviceSettings.inputAccessories.controlOptions.control2' | translate}}</span></a>
-							</ng-template>
-						</div>
-					</div>
+					</vtr-container-collapsible>
 				</div>
-			</vtr-container-collapsible>
+			</div>
 		</div>
-	</div>
-</div>

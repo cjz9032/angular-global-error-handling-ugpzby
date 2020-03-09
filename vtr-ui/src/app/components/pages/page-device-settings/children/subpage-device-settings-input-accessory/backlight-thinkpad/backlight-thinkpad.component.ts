@@ -7,9 +7,9 @@ import { EMPTY } from 'rxjs';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
-  selector: 'vtr-backlight-thinkpad',
-  templateUrl: './backlight-thinkpad.component.html',
-  styleUrls: ['./backlight-thinkpad.component.scss']
+	selector: 'vtr-backlight-thinkpad',
+	templateUrl: './backlight-thinkpad.component.html',
+	styleUrls: ['./backlight-thinkpad.component.scss']
 })
 export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	private kbdBacklightInterval: any;
@@ -259,9 +259,20 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		}
 	}
 
-  updateMode(mode) {
-	this.currentMode = mode;
-  }
+	private compare(value: string): BacklightStatusEnum {
+		switch (value) {
+			case BacklightStatusEnum.AUTO:
+				return BacklightStatusEnum.AUTO;
+			case BacklightStatusEnum.DISABLED_OFF:
+				return BacklightStatusEnum.DISABLED_OFF;
+			case BacklightStatusEnum.LEVEL_1:
+				return BacklightStatusEnum.LEVEL_1;
+			case BacklightStatusEnum.LEVEL_2:
+				return BacklightStatusEnum.LEVEL_2;
+			case BacklightStatusEnum.OFF:
+				return BacklightStatusEnum.OFF;
+		}
+	}
 
 	ngOnDestroy() {
 		clearInterval(this.kbdBacklightInterval);

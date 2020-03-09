@@ -62,6 +62,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	private topRowFunctionsIdeapadSubscription: Subscription;
 	backlightCapability$: Observable<boolean>;
 	public fnCtrlKeyTooltipContent = [];
+	public isKbdBacklightAvailable = true;
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -125,7 +126,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 			})
 			.catch(error => {
-				console.log('getVoipHotkeysSettings error', error);
+				this.logger.error('getVoipHotkeysSettings error', error);
 			});
 	}
 
@@ -143,7 +144,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				this.installedApps = VoipResponse.appList;
 			})
 			.catch(error => {
-				console.log('setVoipHotkeysSettings error', error);
+				this.logger.error('setVoipHotkeysSettings error', error);
 			});
 	}
 
@@ -180,7 +181,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}));
 			}
 		} catch (error) {
-			console.log('initHiddenKbdFnFromCache', error);
+			this.logger.exception('initHiddenKbdFnFromCache', error);
 		}
 	}
 
@@ -476,6 +477,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				this.logger.error('SubpageDeviceSettingsInputAccessoryComponent: error in getMouseAndTouchPadCapability.Promise.all()', error);
 			});
 		}
+	}
+
+	public showHideKeyboardBacklight(available: any) {
+		this.isKbdBacklightAvailable = available;
 	}
 
 	ngOnDestroy(): void {

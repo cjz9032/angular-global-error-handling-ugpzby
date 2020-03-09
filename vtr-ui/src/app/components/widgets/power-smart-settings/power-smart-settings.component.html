@@ -1,6 +1,6 @@
 <div>
 	<div *ngIf="showIC===4 || showIC===3 || showIC===14 || showIC===13">
-		<div class="row pt-5 smartsettings-card"
+		<div class="row pt-5 smart-settings-card"
 			id="smartSettings">
 			<div class="col mx-auto ">
 				<vtr-container-collapsible
@@ -10,8 +10,7 @@
 					[theme]="'blue'">
 					<ul class="list-group list-group-flush">
 						<li class="">
-							<vtr-ui-row-switch
-								[leftIcon]="['icomoon','icomoon-ic']"
+							<vtr-ui-row-switch [leftIcon]="['icomoon','icomoon-ic']"
 								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | titlecase"
 								[caption]="captionText"
 								[isSwitchVisible]="showIntelligentCoolingToggle"
@@ -92,7 +91,7 @@
 	</div>
 
 	<div *ngIf="showIC===5">
-		<div class="row pt-5 smartsettings-card"
+		<div class="row pt-5 smart-settings-card"
 			id="smartSettings">
 			<div class="col mx-auto ">
 				<vtr-container-collapsible
@@ -101,7 +100,10 @@
 					[allowCollapse]="false"
 					[theme]="'blue'">
 					<div class="row">
-						<div class="col-12 text-wrap subtitle">
+						<div class="col-auto left-icon">
+							<span [ngClass]="'icomoon icomoon-ic'"></span>
+						</div>
+						<div class="col text-wrap subtitle">
 							<h3 tabindex="0"
                                 role="text"
                                 id="powerSmartSettings.intelligentCooling.title"
@@ -154,7 +156,8 @@
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
 								</p>
 							</div>
-							<p class="text-right more-info">
+							<p role="text"
+								class="text-right more-info">
 								<!-- Do not need to add keydown.enter event handling for modal dialogue default will work without event handling provided the link is button , a href keyboard support will not work-->
 								<button alt=""
 									class="more-info-button"
@@ -174,7 +177,7 @@
 		</div>
 	</div>
 	<div *ngIf="showIC===6">
-		<div class="row pt-5 smartsettings-card pb-40"
+		<div class="row py-5 smart-settings-card"
 			id="smartSettings">
 			<div class="col mx-auto ">
 				<vtr-container-collapsible
@@ -183,7 +186,10 @@
 					[allowCollapse]="false"
 					[theme]="'blue'">
 					<div class="row">
-						<div class="col-12 text-wrap subtitle">
+						<div class="col-auto left-icon">
+							<span [ngClass]="'icomoon icomoon-ic'"></span>
+						</div>
+						<div class="col text-wrap subtitle">
 							<h3 tabindex="0"
 								role="text" id="powersmartsettings-intelligentCooling-title"
                                 attr.aria-label="powersmartsettings-intelligentCooling-title">
@@ -232,7 +238,7 @@
 										class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title1" | translate}}:
 									</span>
-										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc1" | translate}}
+									{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc1" | translate}}
 								</p>
 								<p tabindex="0"
 									id="readMoreDytc6Mode2"
@@ -241,7 +247,7 @@
 										class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title2" | translate}}:
 									</span>
-										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc2" | translate}}
+									{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc2" | translate}}
 								</p>
 								<p tabindex="0"
 									id="readMoreDytc6Mode3"
@@ -250,7 +256,7 @@
 										class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title3" | translate}}:
 									</span>
-										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc3" | translate}}
+									{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc3" | translate}}
 								</p>
 
                             </div>
@@ -266,7 +272,7 @@
                                     {{'device.deviceSettings.inputAccessories.controlOptions.less' | translate}}
                                 </div>
 								<fa-icon *ngIf="!isCollapsed"
-										[icon]="['fal', 'chevron-down']"></fa-icon>
+									[icon]="['fal', 'chevron-down']"></fa-icon>
 								<fa-icon *ngIf="isCollapsed"
 									[icon]="['fal', 'chevron-up']"></fa-icon>
 							</div>

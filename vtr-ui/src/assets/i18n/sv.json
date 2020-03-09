@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Med Vantage Edge justeras inställningarna automatiskt baserat på din användning. \n Maximal prestanda när du spelar, längre batteritid när du inte gör det.",
                     "line2": "<b>Översikt över funktionshantering</b> <br> Vissa funktioner är inte tillgängliga på alla enheter",
-                    "line3": "<b>CPU-överklockning </b><br> Öka maxhastigheten för processorn",
+                    "line3": "<b>CPU/GPU-överklockning </b><br> Öka maxhastigheten för processorn",
                     "line4": "<b>RAM-överklockning </b><br> Öka maxhastigheten för minnet",
                     "line5": "<b>Nätverkspre-standa </b><br> Prioritera nätverkstrafik för det aktuella spelet",
                     "line6": "<b>Dolby </b><br> Specialanpassa ljudet för spel med Dolby-teknik",
@@ -93,7 +93,8 @@
                     "line8": "<b>Snabbladdning </b><br> Spela längre på språng med snabbare batteriladdning",
                     "line9": "<b>Styrplattelås </b><br> Förhindra oavsiktlig inmatning genom att inaktivera styrplattan medan du spelar",
                     "line10": "<b>Stäng auto-matiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
-                    "line11": "<b>Temperaturläge </b><br> Ange önskad enhetsprofil för fläkthastighet och kylningskontroll"
+                    "line11": "<b>Temperaturläge </b><br> Ange önskad enhetsprofil för fläkthastighet och kylningskontroll",
+                    "line12": "<b>Makrotangent </b><br> Anpassa tangentbordsåtgärderna så att de passar din spelstil"
                 },
                 "systemInfo": {
                     "systenTooltip": "Håll muspekaren över CPU/GPU/RAM och olika enheter för att se beskrivningar, bland annat information om tillverkare och modell"
@@ -748,11 +749,10 @@
                 "sub2": "Antivirus",
                 "sub3": "WiFi-säkerhet",
                 "sub4": "Lösenordstillstånd",
-                "sub5": "Internetskydd",
-                "sub6": "Windows Hello"
+                "sub5": "VPN-säkerhet",
+                "sub6": "Fingeravtryck"
             },
             "support": "Support",
-            "privacy": "Sekretess",
             "beta": {
                 "title": "beta"
             },
@@ -762,9 +762,9 @@
             "title": "Säkerhetsrådgivare",
             "subtitle": "KONTROLLERA OM DIN ENHET ÄR SKYDDAD.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-säkerhet",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "wifi": "WiFi-Säkerhet",
+            "pswdMgr": "Lösenordstillstånd",
+            "vpn": "VPN-Säkerhet",
             "enabled": "AKTIVERAD",
             "disabled": "INAKTIVERAD",
             "partiallyProtected": "DELVIS SKYDDAD",
@@ -775,9 +775,11 @@
             "notFound": "HITTADES INTE",
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Fingeravtryck",
             "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "REGISTRERAD",
+            "notEnrolled": "INTE REGISTRERAD"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -808,11 +810,6 @@
         },
         "offline": {
             "connectToUseFeature": "Anslut till Internet om du vill använda den här funktionen"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Sekretess"
         }
     },
     "tutorial": {
@@ -1239,7 +1236,7 @@
                     },
                     "airPlanePower": {
                         "title": "Flygenergiläge",
-                        "description": "Skydda flygplanets eluttag genom att kontrollera systemets strömförbrukning.När Flygenergiläge är aktiverat minskas strömförbrukningen genom att batteriladdningstakten och systemprestanda begränsas.",
+                        "description": "Med denna funktion kan du använda nätuttaget på ett flygplan där vissa effektbegränsningar gäller. I detta läge minskas datorns effektförbrukning till en säker nivå genom att begränsa batteriladdningstakten och datorns prestanda.",
                         "checkBoxDesc": "Aktivera automatisk upptäckt",
                         "note": "Om funktionen Autodetektering är markerad slås flygläget på automatiskt när datorn upptäcker en flygplansmiljö och stänger av det när du lämnar miljön."
                     },
@@ -1272,7 +1269,7 @@
                             "ERROR_UNEXPECTED": "Misslyckades: Ett oväntat fel inträffade."
                         },
                         "popup": {
-                            "description1": "Återställningsprocessen består av följande steg:<br>batteriet laddas upp helt  -->  batteriet laddas ur helt  -->  batteriet laddas upp helt",
+                            "description1": "Så här återställer du enheten:<br>Ladda batteriet helt --> Ladda ur till låg batterinivå --> Ladda batteriet till hög batterinivå eller full laddning",
                             "description2": "Obs! <br>1. Åtgärden kan ta flera timmar. Undvik att använda datorn under tiden.<br>2. Stäng alla öppna program och anslut datorn till nätström.<br>3. Funktionen Gränsvärde för batteriladdning är inaktiverad medan processen pågår.",
                             "continue": "Fortsätt",
                             "cancel": "Avbryt",
@@ -1363,10 +1360,10 @@
                             "mon": "mån",
                             "tue": "tis",
                             "wed": "ons",
-                            "thurs": "tors",
+                            "thurs": "tor",
                             "fri": "fre",
                             "sat": "lör",
-                            "thu": "Thu"
+                            "thu": "tor"
                         },
                         "name": {
                             "sun": "söndag",
@@ -1387,7 +1384,7 @@
                     "subTitle": "Schemalägg datorn",
                     "automaticMode": "Automatiskt läge",
                     "manualMode": "Manuellt läge",
-                    "subNote": "Datorn är schemalagd för modernt vänteläge baserat på din användning.",
+                    "subNote": "Datorn har schemalagts för snabbare återgång baserat på användningen.",
                     "graph": {
                         "graph1Tittle": "Datoranvändning",
                         "graph2Tittle": "Tillämpad aktiv tid",
@@ -1426,7 +1423,8 @@
                     },
                     "description2": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
                     "subTitle2": "Ange vilken tid du använder datorn mest",
-                    "oldTooltipText": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda START tiden och i viloläge när den inte har använts under en viss tid på batterikraft. Denna tidsperiod optimeras utifrån schemat du har angett. Datorn övergår från viloläge till modernt vänteläge endast på schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad."
+                    "oldTooltipText": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda START tiden och i viloläge när den inte har använts under en viss tid på batterikraft. Denna tidsperiod optimeras utifrån schemat du har angett. Datorn övergår från viloläge till modernt vänteläge endast på schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
+                    "sectionTitle": "Inställningar för vänteläge"
                 }
             },
             "audio": {
@@ -1530,7 +1528,8 @@
                         "note": {
                             "title": "Anmärkning",
                             "description": "Lenovo Vantage behöver åtkomst till din platsinformation för att kunna beräkna solnedgång och soluppgång i din region."
-                        }
+                        },
+                        "tips": "Kör Windows Update eller installera grafikdrivrutinen manuellt för att återställa ögonskyddsläge"
                     },
                     "dispColorTemp": {
                         "title": "Bildskärmens färgtemperatur",
@@ -1575,14 +1574,14 @@
                         "displayDimmer": "BILDSKÄRMSDIMMER"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Kontroll av bildskärmsprioritet",
+                        "description": "Enheten har stöd för maximalt antal externa bildskärmar. När du ansluter flera bildskärmar via dessa extra utgångar fungerar endast den prioriterade.<br/>Välj nedan vilken extra bildskärmsutgång som ska prioriteras:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
+                            "dock": "Dockning",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Tillvalsmodul"
                         }
                     }
                 },
@@ -1612,7 +1611,8 @@
                         "caption": "Med denna funktion görs bakgrunden oskarp när du använder kameran för att ringa videosamtal eller ta foton. Du kan välja bland effekterna nedan.",
                         "blurMode": "Oskärpeläge",
                         "comicMode": "Komiskt läge",
-                        "sketchMode": "Skissläge"
+                        "sketchMode": "Skissläge",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERAN ANVÄNDS",
@@ -1752,12 +1752,12 @@
                     "title": "Växla funktion på Fn- och Ctrl-tangenten",
                     "description": "Om du ofta trycker på Fn-tangenten när du avser att trycka på Ctrl-tangenten kan du växla de två tangenternas funktion.",
                     "restartNote": "Du måste starta om datorn om du vill byta två tangenters funktion. Vill du verkligen göra det?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "Fn fungerar som Ctrl för tangentkombinationer som används ofta",
+                    "description2": "Fn-tangenten fungerar som Ctrl-tangenten för vissa tangentkombinationer som används ofta. Funktionen för Ctrl-tangenten ändras inte.",
+                    "featureNote": "Den här funktionen och Fn-tangenten och att byta funktion på Ctrl-tangenten fungerar inte samtidigt. Om någon av dem är aktiverade kommer den andra stängas av automatiskt.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Fn-tangenter",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1773,7 +1773,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Ctrl-tangenter",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1789,20 +1789,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Åtgärd",
+                            "action1": "Markera alla",
+                            "action2": "Kopiera",
+                            "action3": "Lägg till webbsidan som favorit",
+                            "action4": "Sök",
+                            "action5": "Sök och ersätt i Microsoft Word",
+                            "action6": "Justera åt vänster eller höger i Microsoft Word",
+                            "action7": "Avsluta (i appar som stöds)",
+                            "action8": "Lägg till understrykning",
+                            "action9": "Klistra in",
+                            "action10": "Stäng (per app)",
+                            "action11": "Klipp ut",
+                            "action12": "Gör om",
+                            "action13": "Ångra"
                         }
                     }
                 },
@@ -1813,19 +1813,19 @@
                     "control3": "TRACKPOINT-KONTROLLER",
                     "less": "MINDRE"
                 },
-				"backlight": {
-					"title": "Bakgrundsbelysning för tangentbord",
-					"description": {
-						"base": "Aktivera tangentbordets bakgrundsbelysning om du vill göra det lättare att skriva i mörker eller dåligt ljus. Du kan också ändra inställningarna för tangentbordets bakgrundsbelysning genom att trycka på Fn+Mellanslag.",
-						"auto": "Aktivera tangentbordets bakgrundsbelysning om du vill göra det lättare att skriva i mörker eller dåligt ljus. Du kan ändra inställningarna för bakgrundsbelysningen genom att trycka på Fn+Mellanslag eller ange inställningen till Automatisk. Med alternativet Automatisk anpassas tangentbordets bakgrundsbelysning efter omgivande ljusförhållanden."
-					},
-					"level": {
-						"auto": "Automatisk",
-						"low": "Låg",
-						"high": "Hög",
-						"off": "Av"
-					}
-				}
+                "backlight": {
+                    "title": "Bakgrundsbelysning för tangentbord",
+                    "description": {
+                        "base": "Aktivera tangentbordets bakgrundsbelysning om du vill göra det lättare att skriva i mörker eller dåligt ljus. Du kan också ändra inställningarna för tangentbordets bakgrundsbelysning genom att trycka på Fn+Mellanslag.",
+                        "auto": "Aktivera tangentbordets bakgrundsbelysning om du vill göra det lättare att skriva i mörker eller dåligt ljus. Du kan ändra inställningarna för bakgrundsbelysningen genom att trycka på Fn+Mellanslag eller ange inställningen till Automatisk. Med alternativet Automatisk anpassas tangentbordets bakgrundsbelysning efter omgivande ljusförhållanden."
+                    },
+                    "level": {
+                        "auto": "Automatisk",
+                        "low": "Låg",
+                        "high": "Hög",
+                        "off": "Av"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2216,8 +2216,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Helt skyddad",
-            "notFully": "Inte helt skyddad",
+            "fully": "För att få ett bättre erbjudande om skydd av din enhet, fortsätt med",
+            "notFully": "För att få ett bättre skydd av din enhet, börja med",
             "security101": "SÄKERHETSRÅDGIVARE",
             "firewall": "Brandvägg",
             "pwdHealth": "Lösenordstillstånd",
@@ -2358,7 +2358,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi-säkerhet och Säkerhet för uppkopplat hem",
+                "title": "WiFi-säkerhet",
                 "back": "TILLBAKA"
             },
             "container": {
@@ -2374,7 +2374,7 @@
                 "showless": "Visa mindre",
                 "button": "Aktivera WiFi-säkerhet",
                 "disableDescribe": "Lenovo WiFi-säkerhet är en avancerad molnbaserad programvarutjänst som hjälper din enhet att skilja mellan säkra trådlösa nätverk och potentiellt skadliga.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Lenovo WiFi-säkerhet övervakar WiFi-nätverket."
             },
             "threatlocator": {
                 "describe": "Använd hotidentifieraren för att utvärdera säkerheten i nätverken.",
@@ -2542,6 +2542,7 @@
     "lenovoId": {
         "login": "Inloggning",
         "logout": "Logga ut",
+        "loggingOut": "Loggar ut…",
         "unlockExclusives": "Visa exklusiva erbjudanden",
         "user": "Användare",
         "welcomeText1": "Energin är på topp i dag, {{firstName}}!",
@@ -2586,7 +2587,7 @@
     "faq": {
         "footer": {
             "title": "Hitta inte det du letar efter?",
-            "description": "Behöver du ytterligare stöd? INTE FÖRSÄLJA ATT KONTAKTA OSS VIA:",
+            "description": "Behöver du mer support? Tveka inte att kontakta oss via:",
             "body": "Lenovo Community",
             "button": "Gå till forum"
         },
@@ -2796,7 +2797,7 @@
         },
         "question4": {
             "title": "Kontrollera datorns batteriförbrukning",
-            "description": "<div class='faqInFs4Fb'>    Kontrollera datorns batteriförbrukning</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 har en ny <strong>”batterianvändnings-skärm”</strong> som visar vad det är som tömmer datorns batteri. Det betyder att du kan se exakt vilka appar (både skrivbordsappar och Windows 10:s universalappar) som använder för mycket batteri.</p><h3 class='faqInFs25FbP10'>Berörda varumärken</h3><ul>    <li>Lenovos bärbara och stationära datorer</li></ul><h3 class='faqInFs25FbP10'>Berörda system</h3><ul>    <li>Alla</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Lösning</h3><p>Den här funktionen är ny i Windows 10, vi behöver hitta den här funktionen eftersom den inte finns i din vanliga <strong>kontrollpanel</strong>. Du hittar den istället i den nya appen <strong>”Inställningar”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Hitta batterianvändningsskärmen</h3></p><p>1. Klicka eller tryck på alternativet <strong>Inställningar</strong> i startmenyn</p><p>2. Väl inne i <strong>Inställningar</strong> klickar du på <strong>”System”</strong> och sedan <strong>”Batterisparfunktionen”.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klicka eller tryck på länken <strong>”Batterianvändning”</strong> under rubriken för att se detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analysera din energiförbrukning</h3><p>4. Du kan ändra från att visa batterianvändning för de senaste 24 timmarna till de senaste 48 timmarna eller den senaste veckan</p><p>5. Procent för <strong>”System,”</strong> ”<strong>Bildskärm</strong>” och ”<strong>Wi-Fi”</strong>. Detta visas hur mycket av batteriet som har används av systemet, bildskärmen,</p><p>6. Alternativen <strong>”Används”</strong> och <strong>”Bakgrund”</strong> visar hur mycket energi som används av appar medan de används jämfört med appar som körs i bakgrunden.</p><p>7. Om appar använder energi i bakgrunden kan du klicka eller trycka på <strong>Ändra inställningarna för bakgrundsappar</strong> och konfigurera appar så att de inte körs i bakgrunden. Detta fungerar endast för universella Windows 10-appar.</p><p>8. Längre ned hittar du en lista på appar, och den är den mest användbara delen av den här funktionen. Den visar alla appar som har använt batteri under den valda perioden och hur stor del av batterienergin i procent som varje app har använt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Kontrollera datorns batteriförbrukning</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 har en ny <strong>”batterianvändnings-skärm”</strong> som visar vad det är som tömmer datorns batteri. Det betyder att du kan se exakt vilka appar (både skrivbordsappar och Windows 10:s universalappar) som använder för mycket batteri.</p><h3 class='faqInFs25FbP10'>Berörda varumärken</h3><ul>    <li>Lenovos bärbara och stationära datorer</li></ul><h3 class='faqInFs25FbP10'>Berörda system</h3><ul>    <li>Alla</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Lösning</h3><p>Den här funktionen är ny i Windows 10, vi behöver hitta den här funktionen eftersom den inte finns i din vanliga <strong>kontrollpanel</strong>. Du hittar den istället i den nya appen <strong>”Inställningar”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Hitta batterianvändningsskärmen</h3></p><p>1. Klicka eller tryck på alternativet <strong>Inställningar</strong> i startmenyn</p><p>2. Väl inne i <strong>Inställningar</strong> klickar du på <strong>”System”</strong> och sedan <strong>”Batterisparfunktionen”.<br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klicka eller tryck på länken <strong>”Batterianvändning”</strong> under rubriken för att se detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analysera din energiförbrukning</h3><p>4. Du kan ändra från att visa batterianvändning för de senaste 24 timmarna till de senaste 48 timmarna eller den senaste veckan</p><p>5. Procent för <strong>”System,”</strong> ”<strong>Bildskärm</strong>” och ”<strong>Wi-Fi”</strong>. Detta visas hur mycket av batteriet som har används av systemet, bildskärmen,</p><p>6. Alternativen <strong>”Används”</strong> och <strong>”Bakgrund”</strong> visar hur mycket energi som används av appar medan de används jämfört med appar som körs i bakgrunden.</p><p>7. Om appar använder energi i bakgrunden kan du klicka eller trycka på <strong>Ändra inställningarna för bakgrundsappar</strong> och konfigurera appar så att de inte körs i bakgrunden. Detta fungerar endast för universella Windows 10-appar.</p><p>8. Längre ned hittar du en lista på appar, och den är den mest användbara delen av den här funktionen. Den visar alla appar som har använt batteri under den valda perioden och hur stor del av batterienergin i procent som varje app har använt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2864,7 +2865,7 @@
         },
         "question5": {
             "title": "Använda datorn som pekplatta",
-            "description": "<div class='faqInFs4Fb'>    Använda datorn som pekplatta</div><hr><p>Surfplatteläget gör Windows mer intuitivt och användarvänligt när du använder en enhet med pekskärm.</p><h3 class='faqInFs25FbP10'>Använda surfplatteläge</h3><p>Aktivera surfplatteläge genom att klicka på <strong>åtgärdscenter</strong> i aktivitetsfältet och sedan markera <strong>Surfplatteläge</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>Anmärkning</h3><p>Vissa enheter kan automatiskt aktivera surfplatteläge. Sök efter din enhet på tillverkarens webbplats för att se om din kan det. Stöd för den här funktionen beror på maskinvaran, drivrutinen och hur enheten konfigurerats av tillverkaren. </p><p> </p><p>I surfplatteläge öppnas appar på hela skärmen, vilket ger dig mer plats att arbeta på. Om du vill stänga en app drar du den längst ner på skärmen.</p><p> </p><h3 class='faqInFs25FbP10'>Tips</h3><p>Aktivitetsfältet visas när datorn är i surfplatteläge, men du kan dölja det om du vill ha mer utrymme på skärmen. Klicka på <strong>Start</strong>-knappen och sedan <strong>Inställningar </strong>> <strong>System </strong>> <strong> Surfplatteläge</strong>. Tryck sedan på <strong>Dölj aktivitetsfältet automatiskt i surfplatteläge</strong>. För att se det dolda aktivitetsfältet sveper du uppåt från skärmens nederkant eller håller muspekaren där.</p><h3 class='faqInFs25FbP10'>Använda två appar samtidigt</h3><p>För att använda två appar sida vid sida i surfplatteläge drar du en öppen app nedåt och åt ena sidan. Du ser var den fäster och sedan ser du alla andra öppna appar vid sidan av den.</p><p>I samma vy kan du också:</p><ul>    <li>Ta tag i kanten mellan de två fästa apparna för att ändra storlek på båda två på samma gång.</li>    <li>Öppna en ny app från aktivitetsvyn. Klicka på <strong>Aktivitetsvy</strong> i aktivitetsfältet, välj en app och dra den åt sidan för att fästa den på din delade skärm.</li>    <li>Använd tillbakaknappen på aktivitetsfältet för att gå tillbaka i appen eller för att öppna en app du använde tidigare.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Använda datorn som pekplatta</div><hr><p>Surfplatteläget gör Windows mer intuitivt och användarvänligt när du använder en enhet med pekskärm.</p><h3 class='faqInFs25FbP10'>Använda surfplatteläge</h3><p>Aktivera surfplatteläge genom att klicka på <strong>åtgärdscenter</strong> i aktivitetsfältet och sedan markera <strong>Surfplatteläge</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Anmärkning</h3><p>Vissa enheter kan automatiskt aktivera surfplatteläge. Sök efter din enhet på tillverkarens webbplats för att se om din kan det. Stöd för den här funktionen beror på maskinvaran, drivrutinen och hur enheten konfigurerats av tillverkaren. </p><p> </p><p>I surfplatteläge öppnas appar på hela skärmen, vilket ger dig mer plats att arbeta på. Om du vill stänga en app drar du den längst ner på skärmen.</p><p> </p><h3 class='faqInFs25FbP10'>Tips</h3><p>Aktivitetsfältet visas när datorn är i surfplatteläge, men du kan dölja det om du vill ha mer utrymme på skärmen. Klicka på <strong>Start</strong>-knappen och sedan <strong>Inställningar </strong>> <strong>System </strong>> <strong> Surfplatteläge</strong>. Tryck sedan på <strong>Dölj aktivitetsfältet automatiskt i surfplatteläge</strong>. För att se det dolda aktivitetsfältet sveper du uppåt från skärmens nederkant eller håller muspekaren där.</p><h3 class='faqInFs25FbP10'>Använda två appar samtidigt</h3><p>För att använda två appar sida vid sida i surfplatteläge drar du en öppen app nedåt och åt ena sidan. Du ser var den fäster och sedan ser du alla andra öppna appar vid sidan av den.</p><p>I samma vy kan du också:</p><ul>    <li>Ta tag i kanten mellan de två fästa apparna för att ändra storlek på båda två på samma gång.</li>    <li>Öppna en ny app från aktivitetsvyn. Klicka på <strong>Aktivitetsvy</strong> i aktivitetsfältet, välj en app och dra den åt sidan för att fästa den på din delade skärm.</li>    <li>Använd tillbakaknappen på aktivitetsfältet för att gå tillbaka i appen eller för att öppna en app du använde tidigare.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -3126,7 +3127,7 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Knappen är inaktiverad om lagringsenheterna inte stöder den här funktionen, om maskinvaruinformationen läses in eller om en genomsökning pågår."
         },
         "support": {
             "title": "Hämta professionella diagnostikverktyg",
@@ -3163,7 +3164,8 @@
             "storage": "Lagring",
             "wireless": "Radio"
         },
-        "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge"
+        "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge",
+        "refreshMessage": "Uppdateringen kan ta lite tid, eftersom alla komponenter behöver läsas in igen"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3332,7 +3334,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3417,10 +3436,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3486,7 +3506,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nu kan du ta reda på om din privata information har äventyrats eller använts av onlinespårare utan din vetskap.",
             "security": "Visste du detta? Även om du inte har ett antivirusprogram är din enhet fortfarande skyddad med grundläggande säkerhetsfunktioner.",
             "connectedHomeSecurity": "Du få övervakning i realtid och varningar om nätverkssäkerheten i ditt hem. Du blir den första som får veta om någon av dina smarta enheter utsätts för en säkerhetsattack."
         }
@@ -3542,5 +3561,8 @@
             "subtitle2": "Allt-i-ett: smidigt och enkelt",
             "body2": "Allt-i-ett-datorer med 9:e generationens Intel® Core™-processorer ger dig alla fördelar med en stationär dator förpackade i en slimmad bildskärm – för en renare arbetsyta, maskinvarubaserad säkerhet och högupplöst bild."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

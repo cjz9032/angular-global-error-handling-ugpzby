@@ -6,7 +6,7 @@
 	}">
 	<div class="container-fluid p-0"
 		[ngClass]="{'vtr-disabled': disabled}">
-		<div class="row m-0 d-flex justify-content-between">
+		<div class="row m-0 d-flex justify-content-between position-relative">
 			<div class="vtr-col-pad"
 				[ngClass]="{'flex-grow-1': (isSwitchVisible && !resetTextAsButton),'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),'col-md-7': (resetTextAsButton && !isSwitchVisible)}"
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
@@ -67,6 +67,7 @@
 					*ngIf="resetText.length > 0">
 					<!-- attr.aria-label="three  {{switchId+ '-reset-btn'}}"   -->
 					<button id="{{switchId+ '-reset-btn'}}"
+						title={{resetText}}
 						tabindex="0"
 						type="button"
 						[disabled]="disabledAll"
@@ -90,8 +91,7 @@
 						[theme]="theme"
 						[isSwitchDisable]="isDisabled"
 						[tabIndex]="0"
-						id="{{switchId}}-onOffButton"
-						></vtr-ui-switch-onoff>
+						id="{{switchId}}-onOffButton"></vtr-ui-switch-onoff>
 				</div>
 				<div *ngIf="!isSwitchVisible && linkText"
 					class="p-0 link-text">
@@ -134,45 +134,49 @@
 						[icon]="rightIcon"
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
-						(click)="onRightIconClick($event)"
-						(keydown.enter)="onRightIconClick($event)">
+						(click)="onRightIconClick(rightToolTip1, $event)"
+						(keydown.enter)="onRightIconClick(rightToolTip1, $event)">
 					</fa-icon>
 				</div>
-				<div class="tool-tip-icon"
+				<div class="tool-tip-icon float-right"
 					[ngClass]="{'pl-4': type==='Camera'}"
 					*ngIf="rightIcon.length > 0 && toolTipStatus">
 					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}"
 						tabindex="0"
 						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
 						class="right-icon"
-						triggers="click:blur keydown.enter:keydown.Tab"
-						placement="auto"
+						triggers="manual"
+						placement="left"
 						[ngbTooltip]="smartTooltipRef"
+						#rightToolTip2="ngbTooltip"
+						autoClose="true"
 						[icon]="rightIcon"
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
-						(click)="onRightIconClick($event)"
-						(keydown.enter)="onRightIconClick($event)"></fa-icon>
+						(click)="onRightIconClick(rightToolTip2, $event)"
+						(keydown.enter)="onRightIconClick(rightToolTip2, $event)"></fa-icon>
 				</div>
 
-				<div class="tool-tip-icon"
+				<div class="tool-tip-icon float-right"
 					[ngClass]="{'pl-4': type==='Camera'}"
 					*ngIf="rightIcon.length > 0 && fnCtrltoolTip">
 					<fa-icon id="{{switchId+ '_fnCtrl_right_icon'}}"
 						tabindex="0"
 						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
 						class="right-icon"
-						triggers="click:blur keydown.enter:keydown.Tab"
-						placement="auto"
+						triggers="manual"
+						placement="left"
 						[ngbTooltip]="fnCtrltoolTipRef"
+						#rightToolTip3="ngbTooltip"
+						autoClose="true"
 						[icon]="rightIcon"
 						container="vtr-root"
 						tooltipClass="vtr-tooltip fnctrl-tooltip"
-						(click)="onRightIconClick($event)"
-						(keydown.enter)="onRightIconClick($event)"></fa-icon>
+						(click)="onRightIconClick(rightToolTip3, $event)"
+						(keydown.enter)="onRightIconClick(rightToolTip3, $event)"></fa-icon>
 				</div>
 
-				<div class="tool-tip-icon"
+				<div class="tool-tip-icon float-right"
 					*ngIf="rightIcon.length > 0 && voice">
 					<fa-icon vtrMetrics
 						metricsEvent="FeatureClick"
@@ -315,18 +319,18 @@
 <ng-template #fnCtrltoolTipRef>
 	<table class="table table-bordered">
 		<thead>
-		  <tr>
-			<th>{{ "device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.heading" | translate}}</th>
-			<th>{{ "device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.heading" | translate}}</th>
-			<th>{{ "device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.heading" | translate}}</th>
-		  </tr>
+			<tr>
+				<th>{{ "device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.fnKeys.heading" | translate}}</th>
+				<th>{{ "device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.ctrlKeys.heading" | translate}}</th>
+				<th>{{ "device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.action.heading" | translate}}</th>
+			</tr>
 		</thead>
 		<tbody>
-		  <tr *ngFor="let item of tooltipContent">
-			<td>{{item.fnkey | translate}}</td>
-			<td>{{item.ctrlKey | translate}}</td>
-			<td>{{item.action | translate}}</td>
-		  </tr>
+			<tr *ngFor="let item of tooltipContent">
+				<td>{{item.fnkey | translate}}</td>
+				<td>{{item.ctrlKey | translate}}</td>
+				<td>{{item.action | translate}}</td>
+			</tr>
 		</tbody>
-	  </table>
+	</table>
 </ng-template>

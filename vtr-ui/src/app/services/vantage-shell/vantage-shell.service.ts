@@ -49,7 +49,6 @@ export class VantageShellService {
 				Phoenix.Features.DeviceFilter,
 				Phoenix.Features.Metrics,
 				Phoenix.Features.ModernPreload,
-				Phoenix.Features.Privacy,
 				Phoenix.Features.LenovoVoiceFeature,
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
@@ -59,6 +58,7 @@ export class VantageShellService {
 				Phoenix.Features.Registry,
 				Phoenix.Features.SelfSelect,
 				Phoenix.Features.UpeAgent,
+				Phoenix.Features.SmartPerformance,
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -67,10 +67,7 @@ export class VantageShellService {
 
 	public registerEvent(eventType: any, handler: any) {
 		if (this.phoenix) {
-			this.phoenix.on(eventType, (val) => {
-				// 	console.log('Event fired: ', eventType, val);
-				handler(val);
-			});
+			this.phoenix.on(eventType, handler);
 		}
 	}
 
@@ -440,6 +437,16 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getSmartPerformance() {
+		if (this.phoenix) {
+			if (!this.phoenix.smartPerformance) {
+				return this.phoenix.loadFeatures([Phoenix.Features.SmartPerformance]);
+			}
+			return this.phoenix.smartPerformance;
+		}
+		return undefined;
+	}
+
 	// public getSmartPerformance() {
 	// 	console.log('----------CALLING');
 	// 	if (this.phoenix) {
@@ -456,15 +463,12 @@ export class VantageShellService {
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
 	public async deviceFilter(filter) {
-		if (this.phoenix) {
+        if (this.phoenix) {
 			try {
 				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
-			} catch (error) {
-				console.log('In VantageShellService.deviceFilter. Error:', error);
-				console.log('In VantageShellService.deviceFilter. returning mock true due to error.');
-			}
+			} catch (error) {}
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
@@ -487,13 +491,6 @@ export class VantageShellService {
 		const win: any = window;
 		if (win.Windows) {
 			return win.Windows;
-		}
-		return undefined;
-	}
-
-	public getPrivacyCore() {
-		if (this.phoenix && this.phoenix.privacy) {
-			return this.phoenix.privacy;
 		}
 		return undefined;
 	}
@@ -811,6 +808,17 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	/**
+	 * returns Keyboard object  from VantageShellService of JS Bridge
+	 */
+	public getKeyboardObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.keyboard;
+		}
+		return undefined;
+	}
+
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
 		if (this.phoenix) {
@@ -824,6 +832,13 @@ export class VantageShellService {
 	public getOledSettings(): any {
 		if (this.getHwSettings()) {
 			return this.getHwSettings().display.OLEDSettings;
+		}
+		return undefined;
+	}
+
+	public getPriorityControl(): any {
+		if (this.getHwSettings()) {
+			return this.getHwSettings().display.priorityControl;
 		}
 		return undefined;
 	}

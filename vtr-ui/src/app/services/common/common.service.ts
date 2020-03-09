@@ -6,7 +6,6 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { Subject } from 'rxjs/internal/Subject';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
-import { WinRT } from '@lenovo/tan-client-bridge';
 import { ReplaySubject } from 'rxjs';
 
 @Injectable({
@@ -24,6 +23,7 @@ export class CommonService {
 	public gamingCapabalities: any = new Subject();
 	private RS5Version = 17600;
 	public osVersion = 0;
+	public systemTimeFormat12Hrs: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
 	constructor() {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(
@@ -45,10 +45,10 @@ export class CommonService {
 			return '0 Bytes';
 		}
 
-		const k = 1024,
-			dm = decimals <= 0 ? 0 : decimals || 2,
-			sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
-			i = Math.floor(Math.log(bytes) / Math.log(k));
+		const k = 1024;
+		const dm = decimals <= 0 ? 0 : decimals || 2;
+		const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+		const i = Math.floor(Math.log(bytes) / Math.log(k));
 		return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 	}
 
@@ -78,12 +78,12 @@ export class CommonService {
 	 * Returns date formatted in YYYY/MM/DD format
 	 * @param date date object to format
 	 */
-	public formatDate(dateString: string): string {
+	public formatUTCDate(dateString: string): string {
 		const date = new Date(dateString);
-		const mm = date.getMonth() + 1; // getMonth() is zero-based
-		const dd = date.getDate();
+		const mm = date.getUTCMonth() + 1; // getMonth() is zero-based
+		const dd = date.getUTCDate();
 
-		return [date.getFullYear(),
+		return [date.getUTCFullYear(),
 			'/',
 		(mm > 9 ? '' : '0') + mm,
 			'/',
@@ -175,7 +175,6 @@ export class CommonService {
 					this.osVersion = Number(version);
 				}
 			});
-			console.log(`this.ovVersion: ${this.osVersion}`);
 		}
 		return this.osVersion;
 	}

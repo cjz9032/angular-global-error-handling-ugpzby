@@ -1,304 +1,189 @@
 @import "../../../../../app.theme";
 
-.wifi-security {
+.vtr-wifi-security {
 	.security-card {
 		box-shadow: $drop_shadow;
 		border-radius: $border_radius;
 		background-color: $light;
 		padding: 2rem;
+
 		@media #{$breakpoint_sm} {
 			padding: $fontsize_xl;
 		}
+
 		@media #{$breakpoint_lg} {
 			margin-bottom: 3rem;
 		}
-		.loading {
-			text-align: center;
-		}
-	}
 
-	.vtr-container-collapsible.white-theme {
-		background: $shade_lighter;
-	}
-
-	.heading {
-		color: $main_dark;
-		font-size: 2.4rem;
-		font-weight: $weight_regular;
-	}
-
-	.sub-heading {
-		color: $main_dark;
-		font-size: 2rem;
-		font-weight: $weight_medium;
-		text-transform: uppercase;
-		margin-bottom: 1rem;
-	}
-
-	.sub-heading-2 {
-		color: $main_dark;
-		font-weight: $weight_bold;
-		font-size: 2.4rem;
-	}
-
-	.sub-heading-text {
-		color: $main_dark;
-		font-size: 1.5rem;
-		margin-top: 2.3rem;
-	}
-
-	.coronet-logo {
-		width: 10rem;
-	}
-
-	.text-regular {
-		color: $main_dark;
-		font-size: 1.4rem;
-	}
-
-	.btn-round-xs {
-		border-radius: 5rem;
-		padding-left: 1rem;
-		padding-right: 1rem;
-	}
-
-	.btn-round-sm {
-		border-radius: 4.5rem;
-		padding: 1rem 4rem 1rem 4rem;
-		font-size: 1.8rem;
-	}
-
-	.bullet-list {
-		margin-top: 1rem;
-		list-style: none;
-		padding: 0;
-
-		li {
-			margin: 0;
-			padding: 1rem 1rem 1rem 0;
+		.heading {
 			color: $main_dark;
-
-			.text-regular {
-				color: $main_dark;
-				font-size: 1.6rem;
-			}
-
-			&.good {
-				.bullet-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $green_darker 0%, $green-light 100%);
-						background-color: $green_darker;
-						border-color: $green_darker;
-					}
-				}
-			}
-
-			&.bad {
-				.bullet-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $button_red_start 0%, $button_red_end 100%);
-						background-color: $button_red_start;
-						border-color: $button_red_start;
-					}
-				}
-
-				.detail {
-					color: $stop;
-				}
-
-				.arrow {
-					color: $stop;
-				}
-			}
-
-			.bullet-icon {
-				.icon-bkg {
-					display: inline-block;
-					border-radius: 50%;
-					height: 3rem;
-					width: 3rem;
-					border-width: 0.3rem;
-					border-style: solid;
-					text-align: center;
-
-					fa-icon {
-						font-size: 1.6rem;
-						line-height: 2.4rem;
-						color: $light;
-					}
-				}
-
-				.icon-installed {
-					border-width: 0.9rem;
-					border-color: $main !important;
-				}
-			}
+			font-size: 2.4rem;
+			font-weight: $weight_regular;
 		}
-	}
 
-	::ng-deep vtr-ui-switch-onoff {
-		.checkbox {
-			> label {
-				.switch-label {
-					cursor: pointer;
-				}
-			}
-			.switch {
-				margin-right: 0rem;
-			}
+		.coronet-logo {
+			width: 10rem;
 		}
-	}
 
-	.button-box {
-		text-align: left;
-		padding: 1rem;
-		margin: 1.2rem;
-	}
-
-	.col-check-use-state{
-		margin: auto;
-	}
-	.card-body {
-		@media #{$breakpoint_sm} {
-			padding: 1rem
+		.text-regular {
+			color: $main_dark;
+			font-size: 1.4rem;
 		}
-		.content {
-			padding: 0.5rem;
-			@media #{$breakpoint_sm} {
-				padding: 0;
-			}
 
-			.cardTitle {
-				display: flex;
 
-				h3 {
-					font-size: 2rem;
-					font-weight: 350;
-				}
+		.wifi-security {
 
-				.collapse-control {
-					margin-top: -0.4rem;
-					display: inline-block;
-					max-width: 70%;
-					margin-left: 1rem;
-					.collapse-text {
-						display: inline-block;
-						color: $main;
-						font-size: 1.4rem;
-						vertical-align: middle;
-						text-decoration: underline;
-						font-weight: 500;
-					}
-
-					fa-icon {
-						font-size: 2.4rem;
-						color: $main;
-						vertical-align: middle;
-						cursor: pointer;
-						padding-left: 0.8rem !important;
-					}
-					button{
-						overflow: hidden;
-						text-overflow: ellipsis;
-						white-space: nowrap;
-					}
-				}
-
-				.status {
-					font-size: 2rem;
-					margin-left: 3rem;
-					margin-top: 0.8rem;
-
-					.active {
-						text-decoration: underline;
-					}
-				}
-			}
-
-			.cardBody {
-				border: 0.1rem solid $shade_lighter;
+			.card {
 				border-radius: $border_radius;
-				background: $light;
 
-				.status-icon {
-					position: relative;
-					padding-right: 1rem;
-					span {
-						height: 1.5rem;
-						width: 1.5rem;
-						font-size: 2rem;
+				&.expand {
+					border-bottom-left-radius: 0rem;
+					border-bottom-right-radius: 0rem;
+				}
+
+				.no-gutters {
+					width: 100%;
+					display: flex;
+
+					.wifisecurity-container-name {
+						line-height: 2rem;
+						font-size: 1.2rem;
 					}
 
-					fa-icon {
-						color: $main;
+					.wifisecurity-container-enable {
+						line-height: 1;
+						overflow: hidden;
+
+						span {
+							display: inline-block;
+							overflow: hidden;
+							white-space: nowrap;
+							text-overflow: ellipsis;
+							font-size: 1.2rem;
+							max-width: 100%;
+
+							&.badge-success {
+								background-color: $green_dark;
+							}
+
+							&.badge-danger {
+								background-color: $button_red_start;
+							}
+						}
+					}
+				}
+
+				.subHeading {
+
+					.loading {
+						margin-right: 1rem;
+						text-align: center;
 					}
 
 					.circle {
 						background-color: $green_darker;
 						background-image: linear-gradient(135deg, $green_darker 25%, $green-light 100%);
-						// height: 1.5em;
-						width: 1.5rem;
-						border-radius: 2rem;
+						height: 2rem;
+						width: 2rem;
+						border-radius: 100%;
 						border: 0.1rem solid $green_darker;
-						line-height: 0.9rem;
+						text-align: center;
 						display: inline-block;
-						position: absolute;
-						top: 1.3rem;
-						left: 1.3rem;
-						flex-basis: auto;
+						margin-right: 1rem;
+						flex-shrink: 0;
 
 						fa-icon {
-							font-size: 1rem;
-							color: $shade_extralight;
-							position: absolute;
-							left: 0.2rem;
-							top: 0.2rem;
+							font-size: 1.2rem;
+							color: $light;
 						}
 
 						&.red {
 							background-color: $button_red_start;
 							background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
 							border: 0.1rem solid $button_red_start;
-							fa-icon {
-								left: 0.4rem;
-								top: 0.2rem;
+						}
+					}
+
+					.line-height-2 {
+						line-height: 2rem;
+						height: 2rem;
+					}
+
+					h3 {
+						font-weight: $weight_bold;
+						text-transform: uppercase;
+						line-height: 1;
+					}
+				}
+
+				.sm-device-responsive {
+
+					vtr-ui-switch-onoff {
+						display: inline-block;
+
+						::ng-deep .checkbox {
+							input.wifi-checked+.switch {
+								background: linear-gradient($gradient_angle, $green_darker 0%, $green-light 100%);
+							}
+						}
+					}
+
+					.switch-disable {
+						opacity: 0.3;
+						cursor: auto;
+
+						::ng-deep .checkbox {
+							opacity: 0.3;
+							cursor: default;
+
+							.switch {
+								cursor: default;
+							}
+
+							.switch-label {
+								cursor: default;
+							}
+						}
+					}
+				}
+			}
+
+			.card-history {
+				background: $shade_extralight;
+				border: 0.1rem solid $shade_lighter;
+				border-bottom-left-radius: $border_radius;
+				border-bottom-right-radius: $border_radius;
+
+				::ng-deep .vtr-container-collapsible.white-theme {
+					box-shadow: none !important;
+					background: none !important;
+
+					.card-header {
+						border: none !important;
+						.header {
+							font-size: 2rem;
+							font-weight: $weight_light;
+							color: inherit !important;
+						}
+
+						.collapse-control {
+							.collapse-text {
+								color: $blueHyperLink !important;
+								font-weight: $weight_medium;
+
+								&:hover {
+									color: $blueHyperLink !important;
+								}
 							}
 						}
 					}
 				}
 
-				.connection-name {
-					overflow: hidden;
-					text-overflow: ellipsis;
-
-					h5 {
-						font-size: 1.4rem;
-						font-weight: $weight_bold;
-						overflow: hidden;
-						text-overflow: ellipsis;
-						white-space: nowrap;
-					}
-
-					.connection-status {
-						font-size: 1.4rem;
-					}
-					small {
-						font-weight: $weight_light;
-						display: block;
-					}
+				.border-top-none {
+					border-radius: $border_radius;
+					border-top-left-radius: 0rem;
+					border-top-right-radius: 0rem;
 				}
-			}
-
-			.card-foot {
-				margin-top: 2.2rem;
-
-				.show-more {
-					font-size: 1.6rem;
-					text-decoration: underline;
-				}
-			}
-		}
-	}
 
 				.card-body {
 					border: 0.1rem solid $shade_lighter;
@@ -320,194 +205,145 @@
 							border-right: 0.1rem solid $shade_lighter;
 						}
 
-	.wifiSecurity {
-		.card {
-			border-radius: $border_radius;
+						div.wifi:nth-child(even) {
+							border-bottom: 0.1rem solid $shade_lighter;
+						}
 
-			&.expand {
-				border-bottom-left-radius: 0rem;
-				border-bottom-right-radius: 0rem;
-			}
+						div.wifi:nth-last-child(1):nth-child(odd),
+						div.wifi:nth-last-child(2):nth-child(odd) {
+							border-bottom-left-radius: $border_radius;
+							border-bottom: 0;
+						}
 
 						div.wifi:nth-last-child(1):nth-child(even) {
 							border-bottom-right-radius: $border_radius;
 							border-bottom: 0;
 							border-bottom-left-radius: $border_radius;
 						}
-						&.badge-danger {
-							background-color: $button_red_start;
+
+						div.wifi:nth-child(odd) {
+							@media #{$mediaquery_md, $mediaquery_X45} {
+								border-right: 0;
+							}
 						}
+
+						div.wifi:nth-last-child(2):nth-child(odd) {
+							@media #{$mediaquery_md, $mediaquery_X45} {
+								border-bottom-left-radius: 0;
+								border-bottom: 0.1rem solid $shade_lighter;
+							}
+						}
+
+						.connection-name {
+							overflow: hidden;
+							text-overflow: ellipsis;
+
+							h5 {
+								font-size: 1.4rem;
+								font-weight: $weight_bold;
+								overflow: hidden;
+								text-overflow: ellipsis;
+								white-space: nowrap;
+								line-height: 2.2rem;
+							}
+
+							.connection-status {
+								font-size: 1.4rem;
+							}
+
+							small {
+								font-weight: $weight_light;
+								display: block;
+							}
+						}
+
+						.status-icon {
+							position: relative;
+							padding-right: 1rem;
+
+							span {
+								height: 1.5rem;
+								width: 1.5rem;
+								font-size: 2rem;
+							}
+
+							fa-icon {
+								color: $main;
+							}
+
+							.circle {
+								background-color: $green_darker;
+								background-image: linear-gradient(135deg, $green_darker 25%, $green-light 100%);
+								// height: 1.5em;
+								width: 1.5rem;
+								border-radius: 2rem;
+								border: 0.1rem solid $green_darker;
+								line-height: 0.9rem;
+								display: inline-block;
+								position: absolute;
+								top: 1.3rem;
+								left: 1.3rem;
+								flex-basis: auto;
+
+								fa-icon {
+									font-size: 1rem;
+									color: $shade_extralight;
+									position: absolute;
+									left: 0.2rem;
+									top: 0.2rem;
+								}
+
+								&.red {
+									background-color: $button_red_start;
+									background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
+									border: 0.1rem solid $button_red_start;
+
+									fa-icon {
+										left: 0.4rem;
+										top: 0.2rem;
+									}
+								}
+							}
+						}
+					}
+
+				}
+
+				.card-foot {
+					margin-top: 2.2rem;
+
+					.show-more {
+						font-size: 1.6rem;
+						text-decoration: underline;
 					}
 				}
 			}
-		}
 
-		.card-header {
-			padding: 1.5rem;
-			background: $shade_extralight;
-			border: 0rem;
-			border-radius: $border_radius;
-			@media #{$breakpoint_sm} {
-				padding: 1rem;
-			}
-		}
+			.card-header {
+				border: none !important;
+				padding: 1.5rem 1rem;
+				background: $shade_extralight;
+				border-radius: $border_radius;
 
-		.card-history {
-			background: $shade_extralight;
-			border: 0.1rem solid $shade_lighter;
-			border-bottom-left-radius: $border_radius;
-			border-bottom-right-radius: $border_radius;
-		}
-
-		.border-top-none {
-			border-radius: $border_radius;
-			border-top-left-radius: 0rem;
-			border-top-right-radius: 0rem;
-		}
-
-		.half {
-			width: 50%;
-			float: left;
-
-			&:last-child {
-				display: flex;
-				flex-wrap: wrap-reverse;
-				flex-direction: row-reverse;
-
-				.btn-link {
-					font-size: 1.5rem;
-					letter-spacing: 0rem;
-				}
-
-				.switch vtr-ui-switch-onoff .checkbox {
-					margin-bottom: 0rem;
-				}
-
-			}
-		}
-
-		.subHeading {
-			// display: flex;
-			.loading {
-				margin-right: 1rem;
-			}
-			// width: 50%;
-			// justify-content: flex-start;
-			.circle {
-				background-color: $green_darker;
-				background-image: linear-gradient(135deg, $green_darker 25%, $green-light 100%);
-				height: 2rem;
-				width: 2rem;
-				border-radius: 100%;
-				border: 0.1rem solid $green_darker;
-				text-align: center;
-				display: inline-block;
-				margin-right: 1rem;
-				flex-shrink: 0;
-
-				fa-icon {
-					font-size: 1.2rem;
-					color: $light;
-				}
-
-				&.red {
-					background-color: $button_red_start;
-					background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
-					border: 0.1rem solid $button_red_start;
+				@media #{$breakpoint_sm} {
+					padding: 1rem;
 				}
 			}
-			.line-height-2 {
-				line-height: 2rem;
-				height: 2rem;
-			}
 
-			h3 {
-				font-weight: $weight_bold;
-				text-transform: uppercase;
-				line-height: 1;
-			}
-		}
-	}
+			::ng-deep vtr-ui-switch-onoff {
+				.checkbox {
+					>label {
+						.switch-label {
+							cursor: pointer;
+						}
+					}
 
-	.wifi-card {
-		div.wifi {
-			padding-right: 1rem;
-			.media {
-				justify-content: center;
-				align-items: center;
-			}
-		}
-		div.wifi:nth-child(odd) {
-			border-bottom: 0.1rem solid $shade_lighter;
-			border-right: 0.1rem solid $shade_lighter;
-		}
-		div.wifi:nth-child(even) {
-			border-bottom: 0.1rem solid $shade_lighter;
-		}
-
-		div.wifi:nth-last-child(1):nth-child(odd),
-		div.wifi:nth-last-child(2):nth-child(odd) {
-			border-bottom-left-radius: $border_radius;
-			border-bottom: 0;
-		}
-		div.wifi:nth-last-child(1):nth-child(even) {
-			border-bottom-right-radius: $border_radius;
-			border-bottom: 0;
-		}
-		div.wifi:nth-child(odd) {
-			@media #{$mediaquery_md, $mediaquery_X45} {
-				border-right: 0;
-			}
-		}
-		div.wifi:nth-last-child(2):nth-child(odd) {
-			@media #{$mediaquery_md, $mediaquery_X45} {
-				border-bottom-left-radius: 0;
-				border-bottom: 0.1rem solid $shade_lighter;
-			}
-		}
-		.connection-name {
-			h5 {
-				line-height: 2.2rem;
-			}
-		}
-
-	}
-	.sm-device-responsive{
-		// width: 50%;
-		// display: flex;
-		// justify-content: flex-end;
-
-		vtr-ui-switch-onoff {
-			display: inline-block;
-			::ng-deep .checkbox {
-				input.wifi-checked + .switch {
-					background: linear-gradient($gradient_angle, $green_darker 0%, $green-light 100%);
+					.switch {
+						margin-right: 0rem;
+					}
 				}
 			}
-		}
-		.switch-disable {
-			opacity: 0.3;
-			cursor: auto;
-			::ng-deep .checkbox {
-				opacity: 0.3;
-				cursor: default;
 
-				.switch {
-					cursor: default;
-				}
-
-				.switch-label {
-					cursor: default;
-				}
-			}
-		}
-	}
-	vtr-ui-button {
-		::ng-deep .vtr-ui-button{
-			max-width: 100% !important;
-			.button-box .button{
-				max-width: 100% !important;
-			}
 		}
 	}
 }

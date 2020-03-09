@@ -5,7 +5,8 @@
 	z-index: 2;
 	.widget-container {
 		border-radius: $border_radius;
-		background: $dark_cell;
+		//background: $dark_cell;
+		background:$gaming_darkest;
 		box-shadow: $drop_shadow_gaming;
 		padding: 2rem 4rem 3.5rem 4rem;
 		height:auto;			
@@ -332,7 +333,7 @@
 						.stack-container {
 							position: relative;
 							border-radius: $border_radius_sm;
-							background-color: $gaming_darker;
+							background-color: $gaming_bg;
 							margin: 1rem 0;
 							padding: 0.5rem;
 							width: 4rem;
@@ -394,7 +395,7 @@
 					left: 50%;
 					top: -7rem;
 					margin-left: -19rem;
-					background-color: $gaming_dark;
+					background-color: $gaming_darkest;
 					width: 38rem;
 					height: 38rem;
 					border-radius: 50%;
@@ -486,7 +487,7 @@
 						}
 						.mask-obj {
 							overflow: hidden;
-							background-color: $gaming_dark;
+							background-color: $gaming_darkest;
 							width: 17.25rem;
 							height: 34.5rem;
 							position: absolute;
@@ -514,7 +515,7 @@
 								position: absolute;
 								left: 0;
 								border-radius: 50%;
-								background-color: $gaming_darkest;
+								background-color: $gaming_bg;
 								@media #{$breakpoint_xl3} {
 									width: 27rem;
 									height: 27rem;
@@ -537,10 +538,10 @@
 								left: 14.45rem;
 							}
 							@media #{$breakpoint_xl2} {
-								left: 12rem;
+								left: 11.95rem;
 							}
 							.mask-obj {
-								background-color: $gaming_dark;
+								//background-color: $gaming_darkest;
 								content: "";
 								position: absolute;
 								width: 17.25rem;
@@ -602,7 +603,7 @@
 							top: 50%;
 							left: 50%;
 							transform: translateX(-50%) translateY(-50%);
-							background-color: $gaming_darkest;
+							background-color: $gaming_bg;
 							width: 21.5rem;
 							height: 21.5rem;
 							border-radius: 50%;
@@ -885,7 +886,7 @@
 								}
 								.mask-obj {
 									overflow: hidden;
-									background-color: $gaming_dark;
+									background-color: $gaming_darkest;
 									width: 100%;
 									height: 100%;
 									position: absolute;
@@ -903,7 +904,7 @@
 										height: 100%;
 										position: absolute;
 										left: 0;
-										background-color: $gaming_hdd_ring;
+										background-color: $gaming_bg;
 										@media #{$black-on-white}{
 											background-color: $high-contrast-grey;
 										}
@@ -915,7 +916,7 @@
 								&.right {
 									left: 50%;
 									.mask-obj {
-										background-color: $gaming_hdd_ring;
+										background-color: $gaming_bg;
 										content: "";
 										position: absolute;
 										width: 100%;

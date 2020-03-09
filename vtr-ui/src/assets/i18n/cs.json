@@ -88,7 +88,7 @@
                 "legionEdgeModal": {
                     "line1": "S Vantage Edge bude vaše nastavení automaticky vyladěno na základě využití. \n Maximální výkon při hraní her a delší výdrž baterie, když hrát nebudete.",
                     "line2": "<b>Přehled správy funkcí</b> <br> Některé funkce nejsou k dispozici na všech zařízeních",
-                    "line3": "<b>Přetaktování CPU </b><br> Zvyšte maximální rychlost procesoru",
+                    "line3": "<b>Přetaktování CPU/GPU </b><br> Zvyšte maximální rychlost procesoru",
                     "line4": "<b>Přetaktování RAM </b><br> Zvyšte maximální rychlost paměti",
                     "line5": "<b>Zvýšení vý-konu sítě </b><br> Upřednostněte v síťovém provozu hru, kterou hrajete",
                     "line6": "<b>Dolby </b><br> Vylaďte zvuk přímo pro hraní her pomocí technologie Dolby",
@@ -96,7 +96,8 @@
                     "line8": "<b>Rychlé nabíjení </b><br> Užijte si při hraní na cestách delší výdrž baterie díky rychlejšímu nabíjení",
                     "line9": "<b>Zámek dotykové plošky </b><br> Vyhněte se neúmyslným kliknutím vypnutím dotykové plošky",
                     "line10": "<b>Automaticky zavřít </b><br> Před hraním her ukončete procesy, které nepotřebuje, abyste měli k dispozici co nejvíce systémových prostředků",
-                    "line11": "<b>Režim tepl </b><br> Nastavte svůj profil zařízení pro otáčky ventilátoru a řízení chlazení"
+                    "line11": "<b>Režim tepl </b><br> Nastavte svůj profil zařízení pro otáčky ventilátoru a řízení chlazení",
+                    "line12": "<b>Klávesa maker</b><br>Přizpůsobte si akce na klávesnici podle svého stylu hraní"
                 },
                 "systemInfo": {
                     "systenTooltip": "Umístěním kurzoru na CPU/GPU/RAM a různé jednotky zobrazíte jejich popisy, včetně informací o výrobci a modelu"
@@ -748,11 +749,10 @@
                 "sub2": "Antivirus",
                 "sub3": "Zabezpečení WiFi",
                 "sub4": "Stav hesla",
-                "sub5": "Internetová ochrana",
-                "sub6": "Windows Hello"
+                "sub5": "Zabezpečení VPN",
+                "sub6": "Otisk prstu"
             },
             "support": "Podpora",
-            "privacy": "Soukromí",
             "beta": {
                 "title": "beta"
             },
@@ -763,8 +763,8 @@
             "subtitle": "ZKONTROLUJTE, ZDA JE ZAŘÍZENÍ ZABEZPEČENO.",
             "antiVirus": "Antivirus",
             "wifi": "Zabezpečení WiFi",
-            "pswdMgr": "Správce hesel",
-            "vpn": "Síť VPN",
+            "pswdMgr": "Stav Hesla",
+            "vpn": "Zabezpečení VPN",
             "enabled": "POVOLENO",
             "disabled": "ZAKÁZÁNO",
             "partiallyProtected": "ČÁSTEČNĚ CHRÁNĚNO",
@@ -775,9 +775,11 @@
             "notFound": "NENALEZENO",
             "registered": "REGISTROVÁNO",
             "notRegistered": "NENÍ REGISTROVÁNO",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Otisk Prstu",
             "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "REGISTROVÁNO",
+            "notEnrolled": "NEREGISTROVÁNO"
         },
         "qAndA": {
             "title": "Otázky a odpovědi pro váš stroj",
@@ -808,11 +810,6 @@
         },
         "offline": {
             "connectToUseFeature": "Chcete-li tuto funkci používat, připojte se k internetu."
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Soukromí"
         }
     },
     "tutorial": {
@@ -1239,7 +1236,7 @@
                     },
                     "airPlanePower": {
                         "title": "Napájecí schéma Letadlo",
-                        "description": "Chrání elektrickou zásuvku v letadle řízením spotřeby vašeho počítače.Je-li aktivní napájecí režim Letadlo, omezí počítač spotřebu elektrické energie zpomalením nabíjení baterie a snížením výkonu systému.",
+                        "description": "Tato funkce umožňuje používat elektrické zásuvky v letadlech, které dokážou dodávat jen omezené množství energie. Tento režim snižuje rychlost dobíjení baterie a výkon hardwaru, aby byla omezena spotřeba energie počítačem na bezpečnou úroveň.",
                         "checkBoxDesc": "Automatická detekce",
                         "note": "Je li zaškrtnuta automatická detekce, aktivuje počítač automaticky napájecí schéma Letadlo, když detekuje prostředí letadla a vypne jej, když prostředí letadla opustíte."
                     },
@@ -1272,7 +1269,7 @@
                             "ERROR_UNEXPECTED": "Selhání: Došlo k neočekávané chybě."
                         },
                         "popup": {
-                            "description1": "Proces resetování je následující:<br>Plné nabití baterie  -->  Plné vybití baterie  -->  Plné opětovné nabití baterie",
+                            "description1": "Proces resetování je následující:<br>Plné nabití baterie --> Vybití na nízké nabití --> Dobití na vysoké nebo úplné nabití",
                             "description2": "Poznámky: <br>1. Tento proces může trvat několik hodin. Během této doby počítač nepoužívejte.<br>2. Zavřete všechny otevřené aplikace a připojte počítač k napájení.<br>3. Během procesu je funkce prahu nabití baterie deaktivována.",
                             "continue": "Pokračuj",
                             "cancel": "Storno",
@@ -1359,14 +1356,14 @@
                     "warningtip": "Vyberte prosím alespoň jeden den.",
                     "days": {
                         "shortName": {
-                            "sun": "neděle",
-                            "mon": "pondělí",
-                            "tue": "úterý",
-                            "wed": "středa",
-                            "thurs": "Čtvrtek",
-                            "fri": "pátek",
-                            "sat": "sobota",
-                            "thu": "Thu"
+                            "sun": "Ne",
+                            "mon": "Po",
+                            "tue": "Út",
+                            "wed": "St",
+                            "thurs": "Čt",
+                            "fri": "Pá",
+                            "sat": "So",
+                            "thu": "Čt"
                         },
                         "name": {
                             "sun": "neděle",
@@ -1387,7 +1384,7 @@
                     "subTitle": "Plánování počítače",
                     "automaticMode": "Automatický režim",
                     "manualMode": "Ruční režim",
-                    "subNote": "Váš počítač je naplánován na přepnutí do moderního pohotovostního režimu na základě vašeho použití.",
+                    "subNote": "Na základě používání má počítač nastaveno rychlejší obnovování činnosti.",
                     "graph": {
                         "graph1Tittle": "Použití tohoto počítače",
                         "graph2Tittle": "Použitý aktivní čas",
@@ -1426,7 +1423,8 @@
                     },
                     "description2": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění.",
                     "subTitle2": "Nastavte čas, kdy počítač obvykle používáte",
-                    "oldTooltipText": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným ZAČÁTKEM přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové rozmezí se optimalizuje na základě nastaveného plánu. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů."
+                    "oldTooltipText": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným ZAČÁTKEM přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové rozmezí se optimalizuje na základě nastaveného plánu. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů.",
+                    "sectionTitle": "Nastavení pohotovostního režimu"
                 }
             },
             "audio": {
@@ -1530,7 +1528,8 @@
                         "note": {
                             "title": "Poznámka",
                             "description": "Program Lenovo Vantage potřebuje získat přístup k informacím o umístění pro výpočet času západu a východu slunce."
-                        }
+                        },
+                        "tips": "Režim Péče o oči obnovíte spuštěním Windows Update nebo ruční instalací ovladače grafické karty"
                     },
                     "dispColorTemp": {
                         "title": "Teplota barev displeje",
@@ -1575,14 +1574,14 @@
                         "displayDimmer": "ZTMAVOVÁNÍ DISPLEJE"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Ovládání priority zobrazení",
+                        "description": "Vaše zařízení podporuje maximální počet externích displejů. Pokud připojíte více než jeden displej pomocí těchto metod, bude fungovat pouze displej s prioritou.<br/>Níže vyberte, která metoda výstupu displeje bude mít prioritu:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
+                            "dock": "Dokování",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Volitelný modul"
                         }
                     }
                 },
@@ -1612,7 +1611,8 @@
                         "caption": "Tato funkce rozostří pozadí při použití kamery pro libovolný videohovor nebo fotografování. V následujících volbách si můžete vybrat jiný efekt.",
                         "blurMode": "Režim Rozostření",
                         "comicMode": "Režim Komiks",
-                        "sketchMode": "Režim Skica"
+                        "sketchMode": "Režim Skica",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA SE POUŽÍVÁ",
@@ -1752,12 +1752,12 @@
                     "title": "Záměna kláves Fn a Ctrl",
                     "description": "Pokud se vám stává, že místo klávesy Ctrl stisknete klávesu Fn, funkce obou kláves můžete zaměnit.",
                     "restartNote": "Záměna funkcí dvou kláves vyžaduje restart počítače. Opravdu chcete počítač restartovat?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "U často používaných kombinací kláves funguje klávesa Fn jako klávesa Ctrl",
+                    "description2": "U některých často používaných kombinací kláves funguje klávesa Fn jako klávesa Ctrl. Funkce klávesy Ctrl se nemění.",
+                    "featureNote": "Tuto funkci a funkci záměny klávesy Fn a Ctrl nelze mít zapnutou současně. V případě zapnutí jedné z nich se druhá automaticky vypne.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Klávesa Fn",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1773,7 +1773,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Klávesa Ctrl",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1789,20 +1789,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "Akce",
+                            "action1": "Vybrat vše",
+                            "action2": "Kopírovat",
+                            "action3": "Přidat webovou stránku do složky Oblíbené",
+                            "action4": "Vyhledat",
+                            "action5": "Najít a zaměnit v aplikaci Microsoft Word",
+                            "action6": "Zarovnat vlevo a vpravo v aplikaci Microsoft Word",
+                            "action7": "Ukončit (v podporované aplikaci)",
+                            "action8": "Přidat podtržení",
+                            "action9": "Vložit",
+                            "action10": "Zavřít (dle aplikace)",
+                            "action11": "Vyjmout",
+                            "action12": "Znovu",
+                            "action13": "Zpět"
                         }
                     }
                 },
@@ -1813,19 +1813,19 @@
                     "control3": "OVLÁDÁNÍ TRACKPOINT",
                     "less": "MÉNĚ"
                 },
-				"backlight": {
-					"title": "Podsvícení klávesnice",
-					"description": {
-						"base": "Zapněte podsvícení klávesnice a usnadněte si tak psaní při špatném osvětlení nebo ve tmě. Nastavení podsvícení klávesnice můžete změnit stisknutím klávesy Fn+Space.",
-						"auto": "Zapněte podsvícení klávesnice a usnadněte si tak psaní při špatném osvětlení nebo ve tmě. Nastavení podsvícení klávesnice můžete změnit stisknutím klávesy Fn+Space nebo ho nastavit jako „Auto“. Volba „Auto“ automaticky nastaví podsvícení klávesnice podle okolního světla."
-					},
-					"level": {
-						"auto": "Automatické",
-						"low": "Nízká",
-						"high": "Vysoká",
-						"off": "Vypnuto"
-					}
-				}
+                "backlight": {
+                    "title": "Podsvícení klávesnice",
+                    "description": {
+                        "base": "Zapněte podsvícení klávesnice a usnadněte si tak psaní při špatném osvětlení nebo ve tmě. Nastavení podsvícení klávesnice můžete změnit stisknutím klávesy Fn+Space.",
+                        "auto": "Zapněte podsvícení klávesnice a usnadněte si tak psaní při špatném osvětlení nebo ve tmě. Nastavení podsvícení klávesnice můžete změnit stisknutím klávesy Fn+Space nebo ho nastavit jako „Auto“. Volba „Auto“ automaticky nastaví podsvícení klávesnice podle okolního světla."
+                    },
+                    "level": {
+                        "auto": "Automatické",
+                        "low": "Nízká",
+                        "high": "Vysoká",
+                        "off": "Vypnuto"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2216,8 +2216,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Úplná ochrana",
-            "notFully": "Nejste zcela chráněni",
+            "fully": "Získejte lepší nabídku pro ochranu zařízení a nadále používejte",
+            "notFully": "Chcete-li se dozvědět, jak lépe chránit zařízení, začněte používat",
             "security101": "BEZPEČNOSTNÍ RÁDCE 101",
             "firewall": "Firewall",
             "pwdHealth": "Stav hesla",
@@ -2358,7 +2358,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Zabezpečení WiFi a připojené domácnosti",
+                "title": "Zabezpečení WiFi",
                 "back": "ZPĚT"
             },
             "container": {
@@ -2374,7 +2374,7 @@
                 "showless": "Zobrazit méně",
                 "button": "Zapnout zabezpečení WiFi",
                 "disableDescribe": "Zabezpečení WiFi Lenovo je pokročilá cloudová softwarová služba, která pomáhá vašemu zařízení odlišit bezpečné bezdrátové sítě od potenciálně škodlivých.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Zabezpečení Lenovo WiFi aktuálně sleduje vaši síť WiFi."
             },
             "threatlocator": {
                 "describe": "Vyhledávač hrozeb vám pomůže zjistit, jak bezpečné jsou sítě kolem vás.",
@@ -2542,6 +2542,7 @@
     "lenovoId": {
         "login": "Přihlášení",
         "logout": "Odhlásit",
+        "loggingOut": "Odhlašování...",
         "unlockExclusives": "Odemknout exkluzivní obsah",
         "user": "Uživatel",
         "welcomeText1": "Vypadáte dnes aktivně, {{firstName}}!",
@@ -2586,7 +2587,7 @@
     "faq": {
         "footer": {
             "title": "Nenajdete to, co hledáte?",
-            "description": "POTŘEBUJÍ DODATEČNÁ PODPORA? NEZABEZPEČUJTE KONTAKTUJTE NÁS VIA:",
+            "description": "Potřebujete další podporu? Neváhejte nás kontaktovat prostřednictvím:",
             "body": "Společnost Lenovo",
             "button": "Jděte do fóra"
         },
@@ -2796,7 +2797,7 @@
         },
         "question4": {
             "title": "Kontrola využití baterie počítače",
-            "description": "<div class='faqInFs4Fb'>    Kontrola využití baterie počítače</div><hr><h3 class='faqInFs25FbP10'>Příznak</h3><p>Windows 10 obsahuje novou obrazovku <strong>Využití baterie</strong>, která vás informuje, co přesně spotřebovává energii notebooku. To znamená, že budete přesně vědět, které počítačové aplikace nebo univerzální aplikace systému Windows 10 využívají nejvíce energie.</p><h3 class='faqInFs25FbP10'>Značky, kterých se to týká</h3><ul>    <li>Notebooky a stolní počítače Lenovo</li></ul><h3 class='faqInFs25FbP10'>Systémy, kterých se to týká</h3><ul>    <li>Všechny</li></ul><h3 class='faqInFs25FbP10'>Operační systém</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Řešení</h3><p>Jelikož je tato funkce nově přidaná do systému Windows 10, musíte ji nejprve najít, protože se nenachází klasicky na <strong>Ovládacích panelech</strong>, ale je součástí nové aplikace <strong>Nastavení</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Přejděte na obrazovku Využití baterie</h3></p><p>1. V nabídce Start klikněte nebo klepněte na možnost <strong>Nastavení</strong></p><p>2. V části <strong>Nastavení</strong> vyberte položku <strong>Systém</strong> a poté vyberte volbu <strong>Spořič baterie.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.png' /></p><p>3. Kliknutím nebo klepnutím na odkaz <strong>Využití baterie</strong> pod záhlavím Spořič baterie zobrazíte další podrobnosti. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analyzujte využití energie</h3><p>4. Údaje na obrazovce Využití baterie můžete změnit, aby se zobrazovalo využití baterie za posledních 24 nebo 48 hodin, nebo za minulý týden</p><p>5. Procenta u položek <strong>Systém</strong>, <strong>Displej</strong> a <strong>Wi-Fi</strong>. znázorňují, kolik energie baterie používají systémové procesy a displej.</p><p>6. Volby <strong>Využití</strong> a <strong>Na pozadí</strong> ukazují, kolik energie spotřebují aplikace, když je používáte, ve srovnání s aplikacemi běžícími na pozadí.</p><p>7. Pokud aplikace používají napájení na pozadí, můžete kliknout nebo klepnout na ikonu <strong>Změnit nastavení aplikací běžících na pozadí </strong>a změnit jejich konfiguraci, aby neběžely na pozadí. To však platí pouze pro univerzální aplikace systému Windows 10.</p><p>8. Přejděte dále dolů, kde se nachází seznam aplikací, což je asi nejužitečnější část této funkce. Seznam obsahuje aplikace, které využily energii baterie za dané období, a u každé z nich je uvedeno procento využité energie</p><p><img src='./../../../assets/images/qa/4.2.png' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Kontrola využití baterie počítače</div><hr><h3 class='faqInFs25FbP10'>Příznak</h3><p>Windows 10 obsahuje novou obrazovku <strong>Využití baterie</strong>, která vás informuje, co přesně spotřebovává energii notebooku. To znamená, že budete přesně vědět, které počítačové aplikace nebo univerzální aplikace systému Windows 10 využívají nejvíce energie.</p><h3 class='faqInFs25FbP10'>Značky, kterých se to týká</h3><ul>    <li>Notebooky a stolní počítače Lenovo</li></ul><h3 class='faqInFs25FbP10'>Systémy, kterých se to týká</h3><ul>    <li>Všechny</li></ul><h3 class='faqInFs25FbP10'>Operační systém</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Řešení</h3><p>Jelikož je tato funkce nově přidaná do systému Windows 10, musíte ji nejprve najít, protože se nenachází klasicky na <strong>Ovládacích panelech</strong>, ale je součástí nové aplikace <strong>Nastavení</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Přejděte na obrazovku Využití baterie</h3></p><p>1. V nabídce Start klikněte nebo klepněte na možnost <strong>Nastavení</strong></p><p>2. V části <strong>Nastavení</strong> vyberte položku <strong>Systém</strong> a poté vyberte volbu <strong>Spořič baterie.<br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Kliknutím nebo klepnutím na odkaz <strong>Využití baterie</strong> pod záhlavím Spořič baterie zobrazíte další podrobnosti. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analyzujte využití energie</h3><p>4. Údaje na obrazovce Využití baterie můžete změnit, aby se zobrazovalo využití baterie za posledních 24 nebo 48 hodin, nebo za minulý týden</p><p>5. Procenta u položek <strong>Systém</strong>, <strong>Displej</strong> a <strong>Wi-Fi</strong>. znázorňují, kolik energie baterie používají systémové procesy a displej.</p><p>6. Volby <strong>Využití</strong> a <strong>Na pozadí</strong> ukazují, kolik energie spotřebují aplikace, když je používáte, ve srovnání s aplikacemi běžícími na pozadí.</p><p>7. Pokud aplikace používají napájení na pozadí, můžete kliknout nebo klepnout na ikonu <strong>Změnit nastavení aplikací běžících na pozadí </strong>a změnit jejich konfiguraci, aby neběžely na pozadí. To však platí pouze pro univerzální aplikace systému Windows 10.</p><p>8. Přejděte dále dolů, kde se nachází seznam aplikací, což je asi nejužitečnější část této funkce. Seznam obsahuje aplikace, které využily energii baterie za dané období, a u každé z nich je uvedeno procento využité energie</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2864,7 +2865,7 @@
         },
         "question5": {
             "title": "Použití počítače jako tabletu",
-            "description": "<div class='faqInFs4Fb'>    Použití počítače jako tabletu</div><hr><p>Pokud máte zařízení s dotykovou obrazovkou, režim tabletu umožňuje intuitivnější a snadnější použití systému Windows.</p><h3 class='faqInFs25FbP10'>Použití režimu tabletu</h3><p>Chcete-li zapnout režim tabletu, na hlavním panelu vyberte <strong>centrum akcí</strong> a zvolte <strong>Režim tabletu</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>Poznámka</h3><p>Pokud chcete vědět, zda se vaše zařízení umí automaticky přepnout do režimu tabletu, vyhledejte své zařízení na webu jeho výrobce. Podpora této funkce závisí na hardwaru, nainstalovaném ovladači a způsobu nastavení zařízení výrobcem. </p><p> </p><p>V režimu tabletu se aplikace otevírají na celou obrazovku, díky čemuž máte více prostoru pro práci. Chcete-li aplikaci zavřít, přetáhněte ji do dolní části obrazovky.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>V režimu tabletu se zobrazuje hlavní panel, ale pokud chcete na obrazovce více prostoru, můžete jej skrýt. Vyberte tlačítko <strong>Start</strong>, vyberte položky <strong>Nastavení </strong>> <strong>Systém </strong>> <strong>Režim tabletu</strong> a zapněte funkci <strong>Automaticky skrývat hlavní panel v režimu tabletu</strong>. Chcete-li skrytý hlavní panel zobrazit, od dolní části obrazovky přejeďte prstem nahoru nebo do dolní části obrazovky umístěte ukazatel myši.</p><h3 class='faqInFs25FbP10'>Použití dvou aplikací současně</h3><p>Chcete-li v režimu tabletu používat dvě aplikace vedle sebe, přetáhněte otevřenou aplikaci dolů a na stranu. Uvidíte, kam se přichytí, a vedle ní uvidíte všechny otevřené aplikace.</p><p>V tomto zobrazení také můžete:</p><ul>    <li>Pomocí sdílené hrany mezi dvěma přichycenými aplikacemi změnit velikost obou aplikací najednou.</li>    <li>V zobrazení úloh otevřít novou aplikaci: Na hlavním panelu vyberte <strong>zobrazení úloh</strong>, vyberte aplikaci a přetáhněte ji na jednu stranu rozdělené obrazovky.</li>    <li>Pomocí tlačítka Zpět na hlavním panelu přejít zpět do aplikace nebo otevřít aplikaci, kterou jste používali dříve.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Použití počítače jako tabletu</div><hr><p>Pokud máte zařízení s dotykovou obrazovkou, režim tabletu umožňuje intuitivnější a snadnější použití systému Windows.</p><h3 class='faqInFs25FbP10'>Použití režimu tabletu</h3><p>Chcete-li zapnout režim tabletu, na hlavním panelu vyberte <strong>centrum akcí</strong> a zvolte <strong>Režim tabletu</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Poznámka</h3><p>Pokud chcete vědět, zda se vaše zařízení umí automaticky přepnout do režimu tabletu, vyhledejte své zařízení na webu jeho výrobce. Podpora této funkce závisí na hardwaru, nainstalovaném ovladači a způsobu nastavení zařízení výrobcem. </p><p> </p><p>V režimu tabletu se aplikace otevírají na celou obrazovku, díky čemuž máte více prostoru pro práci. Chcete-li aplikaci zavřít, přetáhněte ji do dolní části obrazovky.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>V režimu tabletu se zobrazuje hlavní panel, ale pokud chcete na obrazovce více prostoru, můžete jej skrýt. Vyberte tlačítko <strong>Start</strong>, vyberte položky <strong>Nastavení </strong>> <strong>Systém </strong>> <strong>Režim tabletu</strong> a zapněte funkci <strong>Automaticky skrývat hlavní panel v režimu tabletu</strong>. Chcete-li skrytý hlavní panel zobrazit, od dolní části obrazovky přejeďte prstem nahoru nebo do dolní části obrazovky umístěte ukazatel myši.</p><h3 class='faqInFs25FbP10'>Použití dvou aplikací současně</h3><p>Chcete-li v režimu tabletu používat dvě aplikace vedle sebe, přetáhněte otevřenou aplikaci dolů a na stranu. Uvidíte, kam se přichytí, a vedle ní uvidíte všechny otevřené aplikace.</p><p>V tomto zobrazení také můžete:</p><ul>    <li>Pomocí sdílené hrany mezi dvěma přichycenými aplikacemi změnit velikost obou aplikací najednou.</li>    <li>V zobrazení úloh otevřít novou aplikaci: Na hlavním panelu vyberte <strong>zobrazení úloh</strong>, vyberte aplikaci a přetáhněte ji na jednu stranu rozdělené obrazovky.</li>    <li>Pomocí tlačítka Zpět na hlavním panelu přejít zpět do aplikace nebo otevřít aplikaci, kterou jste používali dříve.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2974,7 +2975,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Nastavení předvoleb",
+        "preferenceSettings": "Nastavení Předvoleb",
         "settings": "Nastavení",
         "settingsDescription": "Na stránce nastavení předvoleb můžete zvolit, zda chcete zapnout/vypnout oznámení o zprávách na základě kategorií zpráv aplikace Vantage. Berte na vědomí, že i když zakážete všechny kategorie zpráv, přesto občas můžete v případě potřeby obdržet z aplikace Vantage kritickou zprávu systému.",
         "messagesInLenovoVantage": "Zprávy v programu Lenovo Vantage",
@@ -3126,7 +3127,7 @@
                 "yes": "Ano",
                 "no": "Ne"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Tlačítko je vypnuto, pokud úložná zařízení nepodporují tuto funkci v průběhu načítaní informací o hardwaru nebo pokud probíhá kontrola."
         },
         "support": {
             "title": "Stáhnout profesionální diagnostické nástroje",
@@ -3163,7 +3164,8 @@
             "storage": "Úložiště",
             "wireless": "Bezdrátové"
         },
-        "warningMessage": "Mějte na paměti, že testy budou zrušeny, pokud je systém v režimu spánku nebo hibernace"
+        "warningMessage": "Mějte na paměti, že testy budou zrušeny, pokud je systém v režimu spánku nebo hibernace",
+        "refreshMessage": "Obnovení může nějakou dobu trvat, protože je třeba znovu načíst všechny součásti"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3332,7 +3334,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3417,10 +3436,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3486,7 +3506,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Nyní můžete zjistit, zda došlo k úniku vašich osobních údajů nebo zda byly tyto údaje bez vašeho vědomí použity online sledovacími nástroji.",
             "security": "Víte, že…? I když nemáte nainstalovaný antivirový software, stále poskytujeme základní bezpečnostní ochranu pro vaše zařízení.",
             "connectedHomeSecurity": "Získejte sledování v reálném čase a upozornění na zabezpečení vaší domácí sítě. A jako první se dozvíte, zda některé z vašich chytrých zařízení čelí bezpečnostnímu útoku."
         }
@@ -3542,5 +3561,8 @@
             "subtitle2": "Počítače all-in-one zjednodušeně",
             "body2": "Počítače all-in-one s procesory Intel® Core™ 9. generace vám poskytují veškerý výkon stolního počítače zabalený v elegantním displeji. Zabírají méně místa a nabízejí hardwarové zabezpečení a obraz s vysokým rozlišením."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

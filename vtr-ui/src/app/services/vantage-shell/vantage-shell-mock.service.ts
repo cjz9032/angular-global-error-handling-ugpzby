@@ -6,7 +6,7 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
-import { HardwareScanShellMock } from 'src/app/beta/hardware-scan/mock/hardware-scan-shell-mock';
+import { HardwareScanShellMock } from 'src/app/services/hardware-scan/hardware-scan-shell-mock';
 import { WinRT, CHSAccountState, EventTypes } from '@lenovo/tan-client-bridge';
 import { of } from 'rxjs';
 import { TopRowFunctionsIdeapad, KeyType } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
@@ -24,7 +24,7 @@ export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	public phoenix: any;
 	private shell: any;
-	private isGamingDevice = true;
+	private isGamingDevice = false;
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
@@ -58,7 +58,6 @@ export class VantageShellService {
 				Phoenix.Features.DeviceFilter,
 				Phoenix.Features.Metrics,
 				Phoenix.Features.ModernPreload,
-				Phoenix.Features.Privacy,
 				Phoenix.Features.LenovoVoiceFeature,
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
@@ -873,7 +872,7 @@ export class VantageShellService {
 	public getMicrophoneSettings(): any {
 		const microphone: any = {};
 		const micSupportedModes: any = {
-			current: 'MultipleVoices',
+			currentMode: 'MultipleVoices',
 			modes: ['VoiceRecognition', 'OnlyMyVoice', 'Normal', 'MultipleVoices']
 		};
 
@@ -898,6 +897,10 @@ export class VantageShellService {
 		microphone.setMicrophoneOpitimaztion = this.getPromise(true);
 		microphone.startMonitor = this.getPromise(true);
 		microphone.stopMonitor = this.getPromise(true);
+		microphone.getMicrophoneSettingsAsync = (handler) => {
+			this.getPromise(true);
+			handler(micSupportedModes);
+		};
 
 		return microphone;
 	}
@@ -953,6 +956,31 @@ export class VantageShellService {
 					designVoltage: 11.1,
 					deviceChemistry: 'Li-Polymer',
 					firmwareVersion: '0005-0232-0100-0005',
+					firstUseDate: new Date(),
+					isDlsPiCapable: false,
+					isTemporaryChargeMode: false,
+					fruPart: '01AV446',
+					fullChargeCapacity: 46.69,
+					manufactureDate: new Date(),
+					manufacturer: 'SMP',
+					remainingCapacity: 23.84,
+					remainingChargeCapacity: 0,
+					remainingPercent: 52,
+					remainingTime: 99,
+					temperature: 32,
+					voltage: 11.222,
+					wattage: 10.57
+				},
+				{
+					barCode: 'X2XP888JB2S',
+					batteryCondition: ['Normal'],
+					batteryHealth: 0,
+					chargeStatus: 2,
+					cycleCount: 98,
+					designCapacity: 45.28,
+					designVoltage: 11.1,
+					deviceChemistry: 'Li-Polymer',
+					firmwareVersion: '0005-0232-0100-0005',
 					fruPart: '01AV446',
 					fullChargeCapacity: 46.69,
 					manufacturer: 'SMP',
@@ -971,10 +999,12 @@ export class VantageShellService {
 				acWattage: 0,
 				isAirplaneModeEnabled: false,
 				isAttached: false,
+				isChargeThresholdOn: false,
+				isEmDriverInstalled: true,
 				isExpressCharging: false,
 				isPowerDriverMissing: false,
-				percentage: 61,
-				time: 111,
+				percentage: 91,
+				time: 316,
 				timeType: 'timeRemaining'
 			}
 		};
@@ -1140,18 +1170,18 @@ export class VantageShellService {
 	public getPowerThinkPad(): any {
 		const batteryThresholdInfo: any = [
 			{
-				batteryNumber: 1,
-				checkBoxValue: false,
+				batteryNum: 1,
+				checkboxValue: false,
 				isCapable: true,
-				isOn: false,
+				isEnabled: true,
 				startValue: 75,
 				stopValue: 80
 			},
 			{
-				batteryNumber: 2,
-				checkBoxValue: false,
+				batteryNum: 2,
+				checkboxValue: false,
 				isCapable: true,
-				isOn: false,
+				isEnabled: true,
 				startValue: 75,
 				stopValue: 80
 			}
@@ -1250,20 +1280,15 @@ export class VantageShellService {
 				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
-			} catch (error) {
-				console.log('In VantageShellService.deviceFilter. Error:', error);
-				console.log('In VantageShellService.deviceFilter. returning mock true due to error.');
-			}
+			} catch (error) {}
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
-		console.log('In VantageShellService.deviceFilter. returning mock true');
 		return true;
 	}
 	public calcDeviceFilter(filter) {
 		return Promise.resolve({
 			ConnectedHomeSecurity: true,
-			PrivacyTab: 'enabled',
 			FeatureSearch: null,
 			TileBSource: 'UPE'
 		});
@@ -1281,130 +1306,6 @@ export class VantageShellService {
 			return win.Windows;
 		}
 		return undefined;
-	}
-
-	public getPrivacyCore() {
-		return {
-			openInstaller: () => of(true),
-			openUriInDefaultBrowser: (uri) => of(true),
-			openFigleafByUrl: (uri) => of(true),
-			sendContractToPlugin: (contract): any => {
-				switch (contract.command) {
-					case 'Get-InstalledBrowsers':
-						return of({ browsers: ['chrome', 'firefox', 'edge'] });
-					case 'Get-AccessiblePasswords':
-						return of({ chrome: 11, firefox: 1, edge: 1 });
-					case 'Get-MaskedPasswords':
-						return of({
-							edge: [
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								}
-							],
-							chrome: [
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								},
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								}
-							],
-							firefox: [
-								{
-									url: 'https://test.test.com/my.policy',
-									domain: 'test.com',
-									login: 't****',
-									password: 't*************)'
-								}
-							]
-						});
-					case 'Get-VisitedWebsites':
-						return of({
-							visitedWebsites: [
-								{
-									domain: 'google.com',
-									totalVisitsCount: 26871,
-									lastVisitTimeUtc: '2019-10-24T10:50:28Z'
-								},
-								{
-									domain: 'facebook.com',
-									totalVisitsCount: 3715,
-									lastVisitTimeUtc: '2019-10-24T08:16:21Z'
-								}
-							]
-						});
-				}
-			}
-		};
 	}
 
 	public getUserGuide() {
@@ -1553,13 +1454,21 @@ export class VantageShellService {
 		return gamingLighting;
 	}
 	public getGamingOverClock(): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingOverclock;
-		}
-		return undefined;
+		// if (this.phoenix) {
+		// 	if (!this.phoenix.gaming) {
+		// 		this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+		// 	}
+		// 	return this.phoenix.gaming.gamingOverclock;
+		// }
+		// return undefined;
+		const gamingOverClock = {
+			getCpuOCStatus: this.getPromise(true),
+			getRamOCStatus: this.getPromise(true),
+			setCpuOCStatus: this.getPromise(true),
+			setRamOCStatus: this.getPromise(true),
+		};
+		return gamingOverClock;
+
 	}
 
 	public getIntelligentSensing(): any {
@@ -1609,27 +1518,38 @@ export class VantageShellService {
 	}
 
 	public getGamingKeyLock() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingKeyLock;
-		}
-		return undefined;
+
+		// if (this.phoenix) {
+		// 	if (!this.phoenix.gaming) {
+		// 		this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+		// 	}
+
+		// 	return this.phoenix.gaming.gamingKeyLock;
+		// }
+		const gamingKeyLock: any = {
+			getKeyLockStatus: this.getPromise(true),
+			setKeyLockStatus: this.getPromise(true)
+		};
+		return gamingKeyLock;
+		// return undefined;
 	}
 
 	public getGamingHybridMode() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingHybridMode;
-		}
-		return undefined;
+
+		const gamingHybridMode: any = {
+			getHybridModeStatus: this.getPromise(true),
+			setHybridModeStatus: this.getPromise(true)
+		};
+		return gamingHybridMode;
+
 	}
 
 	public getGamingHwInfo() {
-		const gamingHwInfo: any = {};
+		const gamingHwInfo: any = {
+			getDynamicInformation: this.getPromise(true),
+			getMachineInfomation: this.getPromise(true)
+		};
+
 		const hwINFOObj = {
 			cpuBaseFrequence: '1.80GHz',
 			cpuModuleName: 'Intel(R) Core(TM) i10-8250U CPU @ 1.60GHz',
@@ -1648,6 +1568,9 @@ export class VantageShellService {
 		// }
 		// return undefined;
 	}
+
+
+
 
 	public getIntelligentMedia(): any {
 		const media = {
@@ -1740,7 +1663,7 @@ export class VantageShellService {
 			getNetUsingProcesses: this.getPromise(runningList),
 			getStatus: this.getPromise(true),
 			setStatus: this.getPromise(true),
-			addProcessToNetBoost:this.getPromise(true)
+			addProcessToNetBoost: this.getPromise(true)
 		};
 		return gamingNetworkBoost;
 	}
@@ -1968,12 +1891,19 @@ export class VantageShellService {
 	}
 
 	public getGamingThermalMode() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingThermalmode;
-		}
+		// if (this.phoenix) {
+		// 	if (!this.phoenix.gaming) {
+		// 		this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+		// 	}
+		// 	return this.phoenix.gaming.gamingThermalmode;
+		// }
+
+		const gamingThermalMode = {
+			getThermalModeStatus: this.getPromise(true),
+			setThermalModeStatus: this.getPromise(true),
+			regThermalModeEvent: this.getPromise(true),
+		};
+		return gamingThermalMode;
 	}
 
 	public getImcHelper(): any {
@@ -2036,6 +1966,7 @@ export class VantageShellService {
 
 		return kbdManager;
 	}
+
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
 		const voice = {
@@ -2060,8 +1991,31 @@ export class VantageShellService {
 			setDisplayDimmerSetting: this.getPromise(true),
 
 		};
-
 		return oledSettings;
+	}
+
+	public getPriorityControl(): any {
+		const priorityControl = {
+			getPriorityControlCapability: this.getPromise(true),
+			getPriorityControlSetting: this.getPromise(true),
+			setPriorityControlSetting: this.getPromise(true),
+		};
+
+		return priorityControl;
+	}
+
+	public getKeyboardObject(): any {
+		const keyboard = {
+			getAutoKBDBacklightCapability: this.getPromise(true),
+			getKBDBacklightCapability: this.getPromise(true),
+			getAutoKBDStatus: this.getPromise(true),
+			getKBDBacklightStatus: this.getPromise(true),
+			getKBDBacklightLevel: this.getPromise(true),
+			setKBDBacklightStatus: this.getPromise(true),
+			setAutomaticKBDBacklight: this.getPromise(true)
+		};
+
+		return keyboard;
 	}
 
 	public getVersion(): any {
@@ -2241,6 +2195,17 @@ export class VantageShellService {
 	public getRegistryUtil(): Phoenix.RegistryFeature {
 		if (this.phoenix) {
 			return this.phoenix.registry;
+		}
+		return undefined;
+	}
+
+	getToolbarToastFeature(): any {
+		return this.phoenix.hwsettings.toolbar.ToolbarToast;
+	}
+
+	public getUpeAgent(): any {
+		if (this.phoenix) {
+			return this.phoenix.upeAgent;
 		}
 		return undefined;
 	}

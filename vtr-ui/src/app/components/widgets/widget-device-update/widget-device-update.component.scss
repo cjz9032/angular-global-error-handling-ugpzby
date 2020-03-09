@@ -7,7 +7,8 @@
 		border-bottom-right-radius: 0rem;
 		height: 100%;
 		width: 100%;
-		background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
+		//background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
+		background: $gaming_darkest;
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 
 		.title {
@@ -80,7 +81,7 @@
 
 			.progress-percent-text {
 				color: $light;
-				font-size: 2.5rem;
+				font-size: $fontsize_xl;
 				font-weight: $weight_light;
 				line-height: 2.9rem;
 				padding-top: 5rem;
@@ -163,7 +164,7 @@
 			border-bottom: 0.2rem solid $light;
 			padding: 0 0 0.1rem;
 
-			&:hover {
+			&:hover, &:focus {
 				color: $light;
 				text-decoration: none;
 			}

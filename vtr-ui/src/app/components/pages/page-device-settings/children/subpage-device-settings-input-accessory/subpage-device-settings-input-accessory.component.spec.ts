@@ -77,27 +77,51 @@ describe("SubpageDeviceSettingsInputAccessoryComponent", () => {
 		component.keyboardCompatibility = true;
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
-  });
-	it('#ngOnInit should call initDataFromCache', () => {
-		const { fixture, component } = setup();
-		spyOn(component, 'initDataFromCache');
-		fixture.detectChanges();
-		component.ngOnInit();
-		component.initDataFromCache();
-		expect(component.initDataFromCache).toHaveBeenCalled();
-  });
- it('#initHiddenKbdFnFromCache should call', async () => {
-		const { fixture, component } = setup();
-		spyOn(component, 'initHiddenKbdFnFromCache');
-		fixture.detectChanges();
-		component.ngOnInit();
-		await component.initHiddenKbdFnFromCache();
-		expect(component.initHiddenKbdFnFromCache).toHaveBeenCalled();
-  });
+		expect(component.fnLockCapability).toEqual(true);
+	}));
 
-	it('#getKBDLayoutName should call', () => {
-		const { fixture, component, } = setup();
-		spyOn(inputAccessoriesService, 'GetKBDLayoutName').and.returnValue(Promise.resolve('Standard'));
+	it("should create SubpageDeviceSettingsInputAccessoryComponent - capability else case", async(() => {
+		fixture = TestBed.createComponent(
+			SubpageDeviceSettingsInputAccessoryComponent
+		);
+		component = fixture.componentInstance;
+		commonService = TestBed.get(CommonService);
+		topRowFunctionsIdeapadService = TestBed.get(
+			TopRowFunctionsIdeapadService
+		);
+		const capabilities: any = [{ key: "FnLock", value: "False" }];
+		spyOn(commonService, "getLocalStorageValue").and.returnValue(1);
+		spyOn(component, "initHiddenKbdFnFromCache");
+		spyOn<any>(
+			topRowFunctionsIdeapadService,
+			"requestCapability"
+		).and.returnValue(of(capabilities));
+		component.keyboardCompatibility = true;
+		fixture.detectChanges();
+		expect(component).toBeTruthy();
+		expect(component.fnLockCapability).toEqual(false);
+	}));
+
+	it("should create SubpageDeviceSettingsInputAccessoryComponent - keyboardCompatibility else case", async(() => {
+		fixture = TestBed.createComponent(
+			SubpageDeviceSettingsInputAccessoryComponent
+		);
+		component = fixture.componentInstance;
+		commonService = TestBed.get(CommonService);
+		spyOn(commonService, "getLocalStorageValue").and.returnValue(1);
+		spyOn(component, "initHiddenKbdFnFromCache");
+		component.keyboardCompatibility = false;
+		fixture.detectChanges();
+		expect(component).toBeTruthy();
+	}));
+
+	it("should create SubpageDeviceSettingsInputAccessoryComponent - machineType else case", async(() => {
+		fixture = TestBed.createComponent(
+			SubpageDeviceSettingsInputAccessoryComponent
+		);
+		component = fixture.componentInstance;
+		commonService = TestBed.get(CommonService);
+		spyOn(commonService, "getLocalStorageValue").and.returnValue(0);
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
 	}));

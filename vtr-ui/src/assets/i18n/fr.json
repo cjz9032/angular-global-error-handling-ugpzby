@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Avec Vantage Edge, vos paramètres seront automatiquement réglées selon l'utilisation. \n Performance maximale lorsque vous jouez, durée de vie de la batterie plus longue quand vous ne jouez pas.",
                     "line2": "<b>Aperçu de la gestion des fonctions</b> <br> Certaines fonctions non disponibles sur tous les périphériques",
-                    "line3": "<b>Overclocking UC </b><br> Améliorez la vitesse maximale pour votre processeur",
+                    "line3": "<b>Surfréquençage UC/GPU </b><br> Améliorez la vitesse maximale pour votre processeur",
                     "line4": "<b>Overclocking RAM </b><br> Améliorez la vitesse maximale pour votre mémoire",
                     "line5": "<b>Amélioration réseau </b><br> Priorisez le trafic réseau pour le jeu lorsque vous jouez",
                     "line6": "<b>Dolby </b><br> Réglez les paramètres audio spécialement pour le jeu grâce à la technologie Dolby",
@@ -93,7 +93,8 @@
                     "line8": "<b>Charge rapide </b><br> Jouez plus longtemps durant vos déplacements grâce au chargement plus rapide de la batterie",
                     "line9": "<b>Verrou pavé tactile </b><br> Évitez les saisies par erreur lorsque vous jouez en désactivant le pavé tactile",
                     "line10": "<b>Fermeture automatique </b><br> Effacez les processus qui ne sont pas nécessaires pour le jeu avant de commencer à jouer pour optimiser les ressources système disponibles",
-                    "line11": "<b>Mode thermique </b><br> Définissez votre profil périphérique favori pour contrôler la vitesse du ventilateur et le refroidissement"
+                    "line11": "<b>Mode thermique </b><br> Définissez votre profil périphérique favori pour contrôler la vitesse du ventilateur et le refroidissement",
+                    "line12": "<b>Touche de macro </b><br> Personnalisez les actions du clavier en fonction de votre style de jeu"
                 },
                 "systemInfo": {
                     "systenTooltip": "Placez le curseur sur UC/GPU/RAM et sur différents lecteurs pour afficher leurs descriptions, y compris les informations relatives à la fabrication et au modèle"
@@ -748,11 +749,10 @@
                 "sub2": "Antivirus",
                 "sub3": "Sécurité WiFi",
                 "sub4": "État de santé du mot de passe",
-                "sub5": "Protection Internet",
-                "sub6": "Windows Hello"
+                "sub5": "Sécurité VPN",
+                "sub6": "Empreinte digitale"
             },
             "support": "Soutien",
-            "privacy": "Confidentialité",
             "beta": {
                 "title": "beta"
             },
@@ -763,8 +763,8 @@
             "subtitle": "VÉRIFIEZ SI VOTRE PÉRIPHÉRIQUE EST SÉCURISÉ.",
             "antiVirus": "Antivirus",
             "wifi": "Sécurité WiFi",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "État de Santé du mot de passe",
+            "vpn": "Sécurité VPN",
             "enabled": "ACTIVÉ",
             "disabled": "DÉSACTIVÉ",
             "partiallyProtected": "PARTIELLEMENT PROTÉGÉ",
@@ -775,19 +775,21 @@
             "notFound": "NON TROUVÉ",
             "registered": "ENREGISTRÉ",
             "notRegistered": "NON ENREGISTRÉ",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Empreinte Digitale",
             "privacyPolicyAndTermsOfService": "<tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "ENREGISTRÉ",
+            "notEnrolled": "NON ENREGISTRÉ"
         },
         "qAndA": {
-            "title": "Q & A pour votre machine",
+            "title": "FAQ pour votre machine",
             "subtitle": "Trouvez des astuces utiles pour votre appareil.",
             "question1": "Sauvegarde et restauration de vos fichiers",
             "question2": "Procédure pour l'actualisation de votre ordinateur",
             "question3": "Procédure pour connaître l'unité centrale de votre ordinateur",
             "question4": "Vérifiez l'utilisation de la batterie de votre ordinateur",
             "question5": "Utilisez votre ordinateur comme une tablette",
-            "question6": "Faites la connaissance de Cortana, votre assistant personnel"
+            "question6": "Faites la connaissance de Cortana, votre assistante personnelle"
         },
         "ui": {
             "back": "RETOUR",
@@ -808,11 +810,6 @@
         },
         "offline": {
             "connectToUseFeature": "Connectez-vous à Internet pour utiliser cette fonction"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Confidentialité"
         }
     },
     "tutorial": {
@@ -846,7 +843,7 @@
             "title": "Aucune connexion Internet n'a été détectée",
             "subtitle": "En savoir plus sur la résolution des incidents de connexion dans notre",
             "buttonText": "Obtenir de l'aide",
-            "welcomeToVantage": "Bienvenue dans la prochaine génération de Vantage",
+            "welcomeToVantage": "Bienvenue dans la prochaine génération Vantage",
             "systemHealth": "État du système"
         },
         "feedback": {
@@ -854,8 +851,8 @@
             "subtitle": "Dites-nous ce que vous pensez de Vantage.",
             "button": "Donnez votre avis",
             "form": {
-                "email": "Email (optional)",
-                "question1": "Aimez-vous le nouveau style de Vantage ?",
+                "email": "Email (en option)",
+                "question1": "Aimez-vous le nouveau style Vantage ?",
                 "question2": "Pensez-vous que les performances sont acceptables ?",
                 "question3": "Avez-vous l'intention d'utiliser plus souvent l'application à l'avenir ?",
                 "question4": "Saviez-vous que vous pouvez utiliser Lenovo Vantage pour mettre à jour les pilotes de logiciels, le microprogramme et le BIOS de votre ordinateur ?",
@@ -866,9 +863,9 @@
                 "no": "Non",
                 "tips1": "Veuillez ajouter tout commentaire supplémentaire",
                 "comments": "Commentaires...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "sendFeedback": "Envoyer des commentaires",
+                "button": "Soumettre",
+                "addScreenshot": "Ajouter une capture d'écran",
+                "sendFeedback": "Envoyer un commentaire",
                 "submitScreenShot": "Envoyer une capture d'écran",
                 "messages": {
                     "feedbackSuccess": "Merci pour votre commentaire !"
@@ -886,10 +883,10 @@
             "title": "Paramètres rapides",
             "microphone": "Microphone",
             "cameraPrivacy": "Caméra",
-            "eyeCareMode": "Protection yeux",
+            "eyeCareMode": "Protection visuelle",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage n'a pas accès à la caméra et au micro.",
-                "accessUrl": "Accéder aux paramètres Windows pour donner accès",
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage n'a pas accès à la caméra ni au micro.",
+                "accessUrl": "Accéder aux paramètres Windows pour permettre l'accès",
                 "microphoneNote": "Lenovo Vantage n'a pas accès au micro.",
                 "cameraPrivacyNote": "Lenovo Vantage n'a pas accès à la caméra."
             },
@@ -898,18 +895,18 @@
         },
         "systemStatus": {
             "title": "État du système",
-            "subtitle": "Détectez rapidement l'état de votre appareil.",
+            "subtitle": "Détecter rapidement l'état de votre appareil.",
             "memory": {
                 "title": "Mémoire",
                 "detail": {
-                    "notFound": "Mémoire introuvable",
+                    "notFound": "Chargement des informations sur la mémoire",
                     "of": "sur"
                 }
             },
             "diskSpace": {
                 "title": "Espace disque",
                 "detail": {
-                    "notFound": "Disque introuvable",
+                    "notFound": "Chargement des informations sur le disque",
                     "of": "sur"
                 }
             },
@@ -940,7 +937,7 @@
             "subtitle": "État de mon périphérique",
             "serial": "Série",
             "productNumber": "Numéro de produit",
-            "biosVersion": "Version du bios",
+            "biosVersion": "Version du BIOS",
             "learnMore": "En savoir plus",
             "freeMemory": "Mémoire disponible",
             "systemUpdate": {
@@ -953,7 +950,7 @@
                     "neverRanUpdate": "mises à jour jamais vérifiées"
                 }
             },
-            "extendedWarranty": "Garantie prolongée",
+            "extendedWarranty": "Prolonger la garantie",
             "processor": {
                 "title": "Processeur",
                 "notFound": "Chargement des informations sur le processeur"
@@ -975,7 +972,7 @@
             "warranty": {
                 "notFound": "Impossible de trouver la garantie",
                 "detail": {
-                    "title": "Garantie prolongée",
+                    "title": "Prolonger la garantie",
                     "inWarranty": "Sous garantie",
                     "daysRemaining": "jours restants",
                     "outOfWarranty": "Hors garantie",
@@ -1180,8 +1177,8 @@
                     },
                     "easyResume": {
                         "title": "Reprise facile",
-                        "description": "Activez cette fonctionnalité pour améliorer la sortie du mode veille si vous ouvrez et rabattez fréquemment le capot de l'ordinateur.",
-                        "tooltip": "Cette fonctionnalité améliorera la sortie du mode veille de votre ordinateur si vous ouvrez et rabattez fréquemment le capot de votre ordinateur. Lorsque cette fonctionnalité est activée, votre ordinateur se mettra en mode économie d'énergie lorsque vous fermez son capot, et sortira du mode veille instantanément si vous le réouvrez moins de 15 minutes après l'avoir fermé. Cette fonctionnalité permet également à votre ordinateur de tenter de terminer les activités en cours (par exemple, l'envoi d'un e-mail ou le téléchargement d'un fichier) avant que le système ne s'interrompe."
+                        "description": "Activez cette fonction pour améliorer la sortie du mode veille si vous ouvrez et rabattez fréquemment l'écran de votre ordinateur.",
+                        "tooltip": "Cette fonction améliorera la sortie du mode veille de votre ordinateur si vous ouvrez et rabattez fréquemment l'écran. Lorsque cette fonction est activée, votre ordinateur se mettra en mode économie d'énergie lorsque vous le fermez, et sortira du mode veille instantanément si vous le réouvrez moins de 15 minutes après l'avoir fermé. Cette fonction permet également à votre ordinateur de tenter de terminer les activités en cours (par exemple, l'envoi d'un email ou le téléchargement d'un fichier) avant que le système ne s'interrompe."
                     },
                     "flipToBoot": {
                         "title": "Retourner pour démarrer",
@@ -1239,7 +1236,7 @@
                     },
                     "airPlanePower": {
                         "title": "Mode d'alimentation pour avion",
-                        "description": "Protégez la prise avion en contrôlant la consommation d'énergie de votre système.Lorsque le mode d'alimentation pour avion est activé, l'ordinateur réduit la consommation d'énergie en limitant la vitesse de chargement de la batterie et les performances du système.",
+                        "description": "Cette fonction vous permet d'utiliser la prise d'alimentation secteur dans un avion où une limite de puissance électrique s'applique. Sous ce mode, la consommation d'énergie de votre ordinateur est réduite pour atteindre un niveau de sécurité en limitant la vitesse de chargement de la batterie et les performances de l'ordinateur.",
                         "checkBoxDesc": "Détection automatique",
                         "note": "Si la détection automatique est cochée, votre ordinateur passe automatiquement en mode d'alimentation pour avion dès qu'il détecte que vous embarquez dans un avion et le désactive quand vous le quittez."
                     },
@@ -1272,7 +1269,7 @@
                             "ERROR_UNEXPECTED": "Échec : une erreur inattendue est survenue."
                         },
                         "popup": {
-                            "description1": "Le processus de réinitialisation est le suivant :<br>Charge complète de la batterie  -->  Décharge complète de la batterie  -->  Recharge complète de la batterie",
+                            "description1": "Le processus de réinitialisation est le suivant :<br>Charge complète de la batterie --> Décharge jusqu'à charge de batterie faible --> Recharge jusqu'à charge de batterie élevée ou charge complète de la batterie",
                             "description2": "Remarques : <br>1. Ce processus peut durer plusieurs heures. Veuillez éviter d'utiliser votre ordinateur pendant cette opération.<br>2. Fermez toutes les applications ouvertes et connectez votre ordinateur à l'alimentation secteur.<br>3. Pendant le processus, la fonction de seuil de chargement de la batterie est désactivée.",
                             "continue": "Continuer",
                             "cancel": "Annuler",
@@ -1366,7 +1363,7 @@
                             "thurs": "Jeudi",
                             "fri": "Vendredi",
                             "sat": "Samedi",
-                            "thu": "Thu"
+                            "thu": "Jeudi"
                         },
                         "name": {
                             "sun": "Dimanche",
@@ -1387,7 +1384,7 @@
                     "subTitle": "Programmer votre ordinateur",
                     "automaticMode": "Mode Automatique",
                     "manualMode": "Mode Manuel",
-                    "subNote": "Votre ordinateur est programmé en Veille moderne en fonction de votre utilisation.",
+                    "subNote": "Votre ordinateur est programmé pour effectuer une reprise de veille plus rapide en fonction de l'utilisation.",
                     "graph": {
                         "graph1Tittle": "Utilisation de cet ordinateur",
                         "graph2Tittle": "Durée d'activité appliquée",
@@ -1426,13 +1423,14 @@
                     },
                     "description2": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
                     "subTitle2": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur",
-                    "oldTooltipText": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs."
+                    "oldTooltipText": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
+                    "sectionTitle": "Paramètres du mode veille"
                 }
             },
             "audio": {
                 "title": "Audio",
                 "subtitle": "Paramètres audio",
-                "description": "Cette section vous permet d'optimiser automatiquement ou de configurercomplètement vos paramètres audio manuellement, tels que les paramètres Dolby, le micro, etc.",
+                "description": "Cette section vous permet d'optimiser automatiquement ou de configurer tous vos paramètres audio manuellement, tels que les paramètres Dolby, le micro, etc.",
                 "audioSmartsettings": {
                     "title": "Paramètres audio intelligents",
                     "subtitle": "PARAMÈTRES BASÉS SUR LES APPLICATIONS",
@@ -1461,11 +1459,11 @@
                     },
                     "microphone": {
                         "title": "Microphone",
-                        "tooltip": "Vous pouvez personnaliser l'effet du micro en réglant le volume du microet en spécifiant le mode approprié."
+                        "tooltip": "Vous pouvez personnaliser l'effet du micro en réglant le volume du micro et en spécifiant le mode approprié."
                     },
                     "volume": {
                         "title": "Volume du micro",
-                        "description": "Le Dolby audio offre un son puissant, clair et performant pour tous les contenus dont vous profitez, sélectionnez le mode approprié pour votre contenu et votre équipement.",
+                        "description": "Le Dolby Audio offre un son puissant, clair et performant pour tous les contenus que vous utilisez, sélectionnez le mode approprié pour votre contenu et votre équipement.",
                         "options": {
                             "silent": "Volume minimum",
                             "loud": "Volume maximum"
@@ -1473,15 +1471,15 @@
                     },
                     "suppress": {
                         "title": "Supprimer le bruit du clavier",
-                        "tooltip": "Activer cette fonction pour optimiser le son du micro en supprimant le bruit du clavier."
+                        "tooltip": "Activez cette fonction pour optimiser le son du micro en supprimant le bruit du clavier."
                     },
                     "acoustic": {
-                        "title": "Annulation de l'écho acoustique",
+                        "title": "Suppression de l'écho acoustique",
                         "tooltip": "Activez cette fonction pour optimiser le son du micro en diminuant l'écho acoustique."
                     },
                     "optimize": {
                         "title": "Optimiser mon micro pour :",
-                        "tooltip": "Configurez l'effet micro pour améliorer votre expérience audio pour des scénarios et des environnements différents.",
+                        "tooltip": "Configurez l'effet micro pour améliorer votre expérience audio pour des situations et des environnements différents.",
                         "options": {
                             "VoiceRecognition": "RECONNAISSANCE VOCALE",
                             "OnlyMyVoice": "UNIQUEMENT MA VOIX",
@@ -1510,40 +1508,41 @@
                     "title": "Affichage",
                     "displayColorTemperature": {
                         "title": "Température de couleur de l'écran",
-                        "description": "Vous pouvez régler la température des couleurs de votre écran pour filtrer la lumière bleue et réduire la fatigue oculaire. Permet d'ajuster les couleurs de l'écran pour qu'elles soient plus chaudes du coucher du soleil jusqu'à l'aube pour vous aider à dormir.",
+                        "description": "Vous pouvez régler la température de couleur de votre écran pour filtrer la lumière bleue et réduire la fatigue oculaire. Cela permet d'ajuster les couleurs de l'écran pour qu'elles soient plus chaudes du coucher du soleil jusqu'à l'aube pour vous aider à vous endormir.",
                         "link": {
                             "click": "Cliquez",
                             "here": "ici",
-                            "rest": "pour changer la température des couleurs."
+                            "rest": "pour changer la température de couleur."
                         }
                     },
                     "eyeCareMode": {
-                        "title": "Mode Protection des yeux",
-                        "checkbox": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
+                        "title": "Mode Protection visuelle",
+                        "checkbox": "Programmer le mode Protection visuelle entre le coucher et le lever du soleil",
                         "options": {
-                            "warm": "Chaud (meilleur pour les yeux)",
+                            "warm": "Chaude (meilleur pour les yeux)",
                             "cold": "Froide"
                         },
                         "reset": "Réinitialiser",
-                        "tooltip": "Le mode protection des yeux règle la température des couleurs de votre écran pour filtrer la lumière bleue afin de l'atténuer et ainsi réduire la fatigue oculaire.",
-                        "onSunsetToSunriseScheduleDescription": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
+                        "tooltip": "Le mode Protection visuelle règle la température de couleur de votre écran pour filtrer la lumière bleue et ainsi réduire la fatigue des yeux.",
+                        "onSunsetToSunriseScheduleDescription": "Programmer le mode Protection visuelle entre le coucher et le lever du soleil",
                         "note": {
                             "title": "Important",
                             "description": "Lenovo Vantage doit accéder aux informations concernant votre emplacement pour calculer l'heure du coucher et du lever du soleil pour votre région."
-                        }
+                        },
+                        "tips": "Exécutez Windows Update ou installez manuellement le pilote graphique pour restaurer le mode Protection des yeux"
                     },
                     "dispColorTemp": {
                         "title": "Température de couleur de l'écran",
                         "options": {
-                            "warm": "Chaud (meilleur pour les yeux)",
+                            "warm": "Chaude (meilleur pour les yeux)",
                             "cold": "Froide"
                         },
                         "reset": "Réinitialiser",
-                        "tooltip": "Le mode protection des yeux règle la température des couleurs de votre écran pour filtrer la lumière bleue afin de l'atténuer et ainsi réduire la fatigue oculaire.",
-                        "onSunsetToSunriseScheduleDescription": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
+                        "tooltip": "Le mode Protection visuelle règle la température de couleur de votre écran pour filtrer la lumière bleue et ainsi réduire la fatigue des yeux.",
+                        "onSunsetToSunriseScheduleDescription": "Programmer le mode Protection visuelle entre le coucher et le lever du soleil",
                         "note": {
                             "title": "Important",
-                            "description": "Lorsque le Mode Protection des yeux est activé, cette température de couleur ne prend pas effet. Cependant, vous pouvez faire glisser le curseur pour en obtenir un aperçu. Pour l'activer, désactivez le Mode Protection des yeux."
+                            "description": "Lorsque le mode Protection visuelle est activé, ce réglage de la température de couleur n'est pas disponible. Cependant, vous pouvez faire glisser le curseur pour en obtenir un aperçu. Pour l'activer, désactivez le mode Protection visuelle."
                         }
                     },
                     "privacyGuard": {
@@ -1575,14 +1574,14 @@
                         "displayDimmer": "RÉDUCTION DE LA LUMINOSITÉ DE L'ÉCRAN"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "Commande priorité affichage",
+                        "description": "Votre périphérique prend en charge un nombre maximal d'écrans externes. Lorsque vous connectez plus d'un écran à l'aide de ces méthodes supplémentaires, seule celle définit comme prioritaire fonctionnera.<br/>Sélectionnez ci-dessous la méthode de sortie d'affichage supplémentaire à traiter comme prioritaire :",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
+                            "dock": "Station d'accueil",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "Module optionnel"
                         }
                     }
                 },
@@ -1594,8 +1593,8 @@
                     },
                     "url": "Accédez aux paramètres de confidentialité Windows",
                     "cameraPrivacy": {
-                        "title": "Mode de confidentialité de la caméra",
-                        "tooltip": "En mode privé, la caméra n'envoie plus d'images en direct. Activez cette fonctionnalité uniquement lorsque vous ne souhaitez pas montrer votre image à vos interlocuteurs lors d'appels vidéo."
+                        "title": "Mode privé de la caméra",
+                        "tooltip": "En mode privé, la caméra n'envoie plus d'images en direct. Activez cette fonction uniquement lorsque vous ne souhaitez pas partager d'images avec vos interlocuteurs lors d'appels vidéo."
                     },
                     "camera": {
                         "title": "Caméra",
@@ -1612,7 +1611,8 @@
                         "caption": "Cette fonction floute votre arrière-plan lorsque vous utilisez la caméra pour un appel vidéo ou pour prendre des photos. Vous pouvez choisir différents effets parmi les sélections ci-dessous.",
                         "blurMode": "Mode flou",
                         "comicMode": "Mode comique",
-                        "sketchMode": "Mode croquis"
+                        "sketchMode": "Mode croquis",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "L'APPAREIL PHOTO EST EN COURS D'UTILISATION",
@@ -1752,12 +1752,12 @@
                     "title": "Permutation touches Fn et Ctrl",
                     "description": "Si vous appuyez habituellement sur la touche Fn pour utiliser la touche Ctrl, vous pouvez permuter les fonctions de ces deux touches.",
                     "restartNote": "La permutation de la fonction de deux touches nécessite le redémarrage de l'ordinateur, voulez-vous vraiment redémarrer ?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "La touche Fn fonctionne en tant que touche Ctrl pour les combinaisons de touches fréquemment utilisées",
+                    "description2": "La touche Fn fonctionne comme la touche Ctrl pour certaines combinaisons de touches fréquemment utilisées. La fonction de la touche Ctrl n'est pas modifiée.",
+                    "featureNote": "Cette fonction et l'inversion des touches Fn et Ctrl ne peuvent pas être activées en même temps. Si une des fonctions est activée, l'autre sera automatiquement désactivée.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Touches Fn",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1773,7 +1773,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Touches Ctrl",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1790,19 +1790,19 @@
                         },
                         "action": {
                             "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "action1": "Tout sélectionner",
+                            "action2": "Copier",
+                            "action3": "Ajouter une page Web à mes favoris",
+                            "action4": "Rechercher",
+                            "action5": "Rechercher et remplacer dans Microsoft Word",
+                            "action6": "Aligner le texte à gauche et à droite dans Microsoft Word",
+                            "action7": "Quitter (dans les applications prises en charge)",
+                            "action8": "Souligner",
+                            "action9": "Coller",
+                            "action10": "Fermer (par application)",
+                            "action11": "Couper",
+                            "action12": "Rétablir",
+                            "action13": "Défaire"
                         }
                     }
                 },
@@ -1813,19 +1813,19 @@
                     "control3": "PARAMÈTRES TRACKPOINT",
                     "less": "MOINS"
                 },
-				"backlight": {
-					"title": "Rétro-éclairage du clavier",
-					"description": {
-						"base": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez également modifier les paramètres de rétro-éclairage du clavier en appuyant sur la touche FN+espace.",
-						"auto": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez modifier les paramètres de rétro-éclairage en appuyant sur la touche FN+espace ou le paramétrer sur \"Auto\". L'option \"Auto\" règle automatiquement le rétro-éclairage du clavier en fonction de la lumière ambiante."
-					},
-					"level": {
-						"auto": "Auto",
-						"low": "Faible",
-						"high": "Elevée",
-						"off": "Désactivé"
-					}
-				}
+                "backlight": {
+                    "title": "Rétro-éclairage du clavier",
+                    "description": {
+                        "base": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez également modifier les paramètres de rétro-éclairage du clavier en appuyant sur la touche FN+espace.",
+                        "auto": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez modifier les paramètres de rétro-éclairage en appuyant sur la touche FN+espace ou le paramétrer sur \"Auto\". L'option \"Auto\" règle automatiquement le rétro-éclairage du clavier en fonction de la lumière ambiante."
+                    },
+                    "level": {
+                        "auto": "Auto",
+                        "low": "Faible",
+                        "high": "Elevée",
+                        "off": "Désactivé"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2077,8 +2077,8 @@
             "title": "Site Web du support Lenovo"
         },
         "banner": {
-            "neverChecked": "Vous êtes invité à utiliser la mise à jour du système.",
-            "title": "Un système à jour est un système sain.",
+            "neverChecked": "Vous êtes invité à mettre à jour le système.",
+            "title": "Un système mis à jour est un système sain.",
             "installingTitle": "Pendant les mises à jour, ne mettez pas votre ordinateur en mode veille ni en hibernation.",
             "last": "Dernière mise à jour : ",
             "next": "Prochaine mise à jour prévue : ",
@@ -2216,8 +2216,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Totalement protégé",
-            "notFully": "Non totalement protégé",
+            "fully": "Pour obtenir une meilleure offre et protéger votre appareil, restez avec",
+            "notFully": "Pour apprendre à mieux protéger votre appareil, commencez par",
             "security101": "CONSEIL SÉCURITÉ 101",
             "firewall": "Pare-feu",
             "pwdHealth": "État de santé du mot de passe",
@@ -2289,23 +2289,23 @@
                 "virusScan": "RECHERCHE DE VIRUS",
                 "firewall": "PARE-FEU",
                 "disabled": "DÉSACTIVÉ",
-                "awardText": "Protégez votre nouveau PC Lenovo avec une protection testée et éprouvée contre les menaces en ligne",
-                "performance": "Des performances excpetionnelles",
-                "performanceText": "Antivirus constant, précis et fiable sur lequel vous pouvez compter pour vous protéger",
-                "Blazing": "Vitesse fulgurante",
-                "BlazingText": "Antivirus optimisé qui ne ralentira pas ou n'interrompra pas votre expérience Lenovo Vantage",
+                "awardText": "Protégez votre nouveau PC Lenovo avec une solution de sécurité testée et éprouvée contre les menaces en ligne",
+                "performance": "Des performances exceptionnelles",
+                "performanceText": "Un antivirus systématique, précis et fiable sur lequel vous pouvez compter pour vous protéger",
+                "Blazing": "Une vitesse fulgurante",
+                "BlazingText": "Un antivirus optimisé qui ne ralentira pas ou n'interrompra pas votre expérience Lenovo Vantage",
                 "privacyTerms": "/   <tag>Politique de confidentialité</tag>  |  <tag>Conditions générales</tag>",
                 "notAvailable": "Non disponible"
             },
             "windowsDefender": {
-                "optimallyProtected": "Il semble que vous utilisez actuellement Windows Defender. Ceci n'est pas un mauvais choix, mais pour la sécurité ultime contre les rançongiciels, les logiciels malveillants et les virus, nous nous sommes associés avec <b>McAfee</b> pour vous offrir la sécurité primée et ainsi <b>protéger ce qui compte.</b>",
+                "optimallyProtected": "Il semble que vous utilisez actuellement Windows Defender. Ceci n'est pas un mauvais choix, mais pour une sécurité optimale contre les rançongiciels, les logiciels malveillants et les virus, nous nous sommes associés à <b>McAfee</b> pour vous offrir une solution de sécurité primée et ainsi <b>protéger ce qui compte.</b>",
                 "windowsSubtitle": "Protection de base Windows Defender",
                 "topTip": "Les conseils indispensables pour la sécurité en ligne",
-                "topContent": "Découvrez comment vous pouvez vous défendre contre les plus grandes menaces en ligne d'aujourd'hui <tag>AFFICHER LES CONSEILS</tag>",
+                "topContent": "Découvrez comment vous pouvez vous protéger contre les plus grandes menaces en ligne d'aujourd'hui <tag>AFFICHER LES CONSEILS</tag>",
                 "view": "AFFICHER LES CONSEILS",
                 "buyNow": "Acheter maintenant",
-                "buy": "Achetez, téléchargez et installez la protection antivirus McAfee aujourd'hui pour profiter de caractéristiques de sécurité de niveau bancaire",
-                "onlyBasic": "Uniquement les bases ici. Même si vous êtes protégé contre certaines menaces en ligne, vous pouvez rester exposé à d'autres.",
+                "buy": "Achetez, téléchargez et installez la protection antivirus McAfee aujourd'hui pour profiter du même niveau de sécurité que les banques",
+                "onlyBasic": "Propose uniquement les fonctions de base. Même si vous êtes protégé contre certaines menaces en ligne, vous pouvez rester exposé à d'autres.",
                 "virus": "Protection antivirus",
                 "homeNetwork": "Protection du réseau domestique",
                 "private": "Navigation privée et anonyme",
@@ -2358,7 +2358,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi et Sécurité domestique connectée",
+                "title": "Sécurité WiFi",
                 "back": "RETOUR"
             },
             "container": {
@@ -2374,11 +2374,11 @@
                 "showless": "Afficher moins",
                 "button": "Activer la sécurité WiFi",
                 "disableDescribe": "La Sécurité WiFi Lenovo est un service logiciel avancé basé dans le Cloud qui permet à votre appareil de différencier les réseaux sans fil sûrs de ceux potentiellement malveillants.",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "La sécurité WiFi Lenovo surveille actuellement l'activité de votre réseau WiFi."
             },
             "threatlocator": {
-                "describe": "Utiliser l'outil de détection des menaces pour déterminer la sécurité des réseaux alentours.",
-                "button": "Vérifier les menaces",
+                "describe": "Utiliser l'outil de détection des menaces pour déterminer la sécurité des réseaux près de vous.",
+                "button": "Détecter les menaces",
                 "connectionError": "Erreur de connexion",
                 "tryAgain": "Impossible de localiser les menaces car le réseau n'est pas disponible. Connectez-vous à Internet et réessayez."
             },
@@ -2460,7 +2460,7 @@
             "statusTitle": "SURFEASY VPN",
             "title": "Sécurité VPN",
             "header": "SurfEasy VPN",
-            "whatIsSufEasy": "SurfEasy VPN chiffre les informations que vous envoyez et recevez de sorte que vous pouvez utilisez à titre privé et en toute sécurité votre PC, Mac®, smartphone ou tablette sur toutes les connexions Internet sans souci.",
+            "whatIsSufEasy": "SurfEasy VPN chiffre les informations que vous envoyez et recevez de sorte que vous puissiez utiliser de manière confidentielle et en toute sécurité votre PC, Mac®, smartphone ou tablette sur toutes les connexions Internet sans aucun souci.",
             "whatCanSufEasy1": "Un fournisseur de réseau privé virtuel qui vous protège lorsque vous êtes en ligne. Sans VPN, votre ordinateur peut être plus vulnérable aux attaques des pirates informatiques et aux risques d'usurpation d'identité. Le VPN s'exécute silencieusement en arrière-plan et offre une protection de la sécurité et de la confidentialité.",
             "startUseSufEasy4": "Les utilisateurs SurfEasy profitent de 250 Mo de trafic gratuits tous les 30 jours ! Suivez les instructions de l'onglet &quot;Récompenses&quot; de l'application SurfEasy pour obtenir plus de trafic.",
             "howToGetData": "Comment obtenir du trafic gratuitement :",
@@ -2485,7 +2485,7 @@
             "getStarted2": "Activer le VPN et attendre un court instant pour la confirmation d'une connexion sécurisée.",
             "getStarted3": "Modifiez votre région ou l'emplacement si vous le souhaitez et profitez de l'utilisation d'un réseau sécurisée et privée.",
             "poweredBySurfEasy": "Fourni par SurfEasy",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Pour en savoir plus sur les <tag>Règles de confidentialité</tag> et les <tag>Dispositions relatives au service</tag>"
         },
         "passwordManager": {
             "statusTitle": "GESTIONNAIRE DE MOT DE PASSE DASHLANE",
@@ -2514,7 +2514,7 @@
             "allowsYou3": "Rester en sécurité sur les réseaux WiFi non sécurisés grâce au VPN intégré",
             "allowsYou4": "Partager les mots de passe en sécurité sans les révéler",
             "poweredByDashLane": "Fourni par Dashlane",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Pour en savoir plus sur les <tag>Règles de confidentialité</tag> et les <tag>Dispositions relatives au service</tag>"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2542,6 +2542,7 @@
     "lenovoId": {
         "login": "Connexion",
         "logout": "Se déconnecter",
+        "loggingOut": "Déconnexion...",
         "unlockExclusives": "Profitez des offres exclusives",
         "user": "Utilisateur",
         "welcomeText1": "Vous avez bonne mine aujourd'hui, {{firstName}} !",
@@ -2586,7 +2587,7 @@
     "faq": {
         "footer": {
             "title": "Vous ne trouvez pas ce que vous cherchez?",
-            "description": "BESOIN D'UN SUPPORT SUPPLÉMENTAIRE? N'HÉSITEZ PAS À NOUS CONTACTER VIA:",
+            "description": "Besoin d'un support supplémentaire ? N'hésitez pas à nous contacter via :",
             "body": "Communauté Lenovo",
             "button": "ALLEZ AU FORUM"
         },
@@ -2796,7 +2797,7 @@
         },
         "question4": {
             "title": "Vérifiez l'utilisation de la batterie de votre ordinateur",
-            "description": "<div class='faqInFs4Fb'>    Vérifiez l'utilisation de la batterie de votre ordinateur</div><hr><h3 class='faqInFs25FbP10'>Symptôme</h3><p>Windows 10 comprend un nouvel écran \"<strong> Utilisation de la Batterie\"</strong> qui vous permet de voir ce qui épuise la batterie de votre ordinateur portable. Cela signifie qu'il vous indiquera exactement les applications (les applications bureautiques et Windows 10 \"universelles\" qui utilisent trop d'énergie).</p><h3 class='faqInFs25FbP10'>Marques concernées</h3><ul>    <li>Ordinateurs portables Lenovo, ordinateurs de bureau</li></ul><h3 class='faqInFs25FbP10'>Systèmes concernés</h3><ul>    <li>Tout</li></ul><h3 class='faqInFs25FbP10'>Système d'exploitation</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Solution</h3><p>Cette fonction est nouvelle dans Windows 10, nous devons tout d'abord trouver cette fonction, car elle n'est pas stockée dans la vue du <strong>panneau de configuration </strong>traditionnelle, cette fonction se trouve dans la nouvelle application <strong>\"paramètres\"</strong> </p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Trouvez l'écran d'utilisation de la batterie</h3></p><p>1. Cliquez sur l'option <strong>\"paramètres </strong>\" du menu Démarrer</p><p>2. Dans <strong>paramètres </strong>, sélectionnez <strong>\"système\"</strong>, puis <strong>\"économiseur de batterie\". <br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Cliquez ou appuyez sur le lien <strong>\"utilisation de la batterie\"</strong> sous cet en-tête pour plus de détails. </p><p> </p><h3 class='faqInFs25FbP10'>B. analysez l'utilisation de l'alimentation</h3><p>4. vous pouvez modifier l'écran d'utilisation de la batterie pour afficher l'utilisation de la batterie des dernières 24 heures aux 48 dernières heures ou de la semaine dernière</p><p>5. pourcentages<strong> \"Système\",</strong> \"<strong>Affichage</strong>\" et \"<strong>Wi-Fi\"</strong>. Indique la quantité de batterie utilisée par les processus système, l'écran,</p><p>6. les <strong>options \"en cours</strong> d' <strong>utilisation\" et</strong> \"arrière-plan\" montrent la quantité d'énergie utilisée par les applications lorsque vous les utilisez, par rapport aux applications exécutées en arrière-plan.</p><p>7. si les applications utilisent l'alimentation en arrière-plan, vous pouvez cliquer sur <strong>le lien « Changer paramètres d'application d'arrière-plan » </strong>et configurer les applications pour qu'elles ne s'exécutent pas en arrière-plan. Cela ne fonctionne que pour les applications universelles Windows 10.</p><p>8. faites défiler la liste des applications et vous verrez s'afficher la section la plus utile de cette fonction. Elle affichera une liste des applications utilisées par la batterie pendant cette période et vous montrera le pourcentage de charge de la batterie utilisé par chaque application</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Vérifiez l'utilisation de la batterie de votre ordinateur</div><hr><h3 class='faqInFs25FbP10'>Symptôme</h3><p>Windows 10 comprend un nouvel écran \"<strong> Utilisation de la Batterie\"</strong> qui vous permet de voir ce qui épuise la batterie de votre ordinateur portable. Cela signifie qu'il vous indiquera exactement les applications (les applications bureautiques et Windows 10 \"universelles\" qui utilisent trop d'énergie).</p><h3 class='faqInFs25FbP10'>Marques concernées</h3><ul>    <li>Ordinateurs portables Lenovo, ordinateurs de bureau</li></ul><h3 class='faqInFs25FbP10'>Systèmes concernés</h3><ul>    <li>Tout</li></ul><h3 class='faqInFs25FbP10'>Système d'exploitation</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Solution</h3><p>Cette fonction est nouvelle dans Windows 10, nous devons tout d'abord trouver cette fonction, car elle n'est pas stockée dans la vue du <strong>panneau de configuration </strong>traditionnelle, cette fonction se trouve dans la nouvelle application <strong>\"paramètres\"</strong> </p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Trouvez l'écran d'utilisation de la batterie</h3></p><p>1. Cliquez sur l'option <strong>\"paramètres </strong>\" du menu Démarrer</p><p>2. Dans <strong>paramètres </strong>, sélectionnez <strong>\"système\"</strong>, puis <strong>\"économiseur de batterie\". <br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Cliquez ou appuyez sur le lien <strong>\"utilisation de la batterie\"</strong> sous cet en-tête pour plus de détails. </p><p> </p><h3 class='faqInFs25FbP10'>B. analysez l'utilisation de l'alimentation</h3><p>4. vous pouvez modifier l'écran d'utilisation de la batterie pour afficher l'utilisation de la batterie des dernières 24 heures aux 48 dernières heures ou de la semaine dernière</p><p>5. pourcentages<strong> \"Système\",</strong> \"<strong>Affichage</strong>\" et \"<strong>Wi-Fi\"</strong>. Indique la quantité de batterie utilisée par les processus système, l'écran,</p><p>6. les <strong>options \"en cours</strong> d' <strong>utilisation\" et</strong> \"arrière-plan\" montrent la quantité d'énergie utilisée par les applications lorsque vous les utilisez, par rapport aux applications exécutées en arrière-plan.</p><p>7. si les applications utilisent l'alimentation en arrière-plan, vous pouvez cliquer sur <strong>le lien « Changer paramètres d'application d'arrière-plan » </strong>et configurer les applications pour qu'elles ne s'exécutent pas en arrière-plan. Cela ne fonctionne que pour les applications universelles Windows 10.</p><p>8. faites défiler la liste des applications et vous verrez s'afficher la section la plus utile de cette fonction. Elle affichera une liste des applications utilisées par la batterie pendant cette période et vous montrera le pourcentage de charge de la batterie utilisé par chaque application</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2974,7 +2975,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Définition des préférences",
+        "preferenceSettings": "Définition Des Préférences",
         "settings": "Paramètres",
         "settingsDescription": "Dans la page des paramètres de préférences, vous pouvez choisir d'activer/désactiver la notification des messages en fonction des catégories de message de Vantage, veuillez noter que même si toutes les catégories de message sont désactivées, il se peut toutefois que vous receviez occasionnellement, lorsque nécessaire, des messages critiques du système de la part de Vantage.",
         "messagesInLenovoVantage": "Messages dans Lenovo Vantage",
@@ -3126,7 +3127,7 @@
                 "yes": "Oui",
                 "no": "Non"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "Le bouton est désactivé si les unités de stockage ne prennent pas en charge cette fonctionnalité alors que les informations matérielles sont chargées ou qu'une analyse est en cours."
         },
         "support": {
             "title": "Télécharger les outils de diagnostic professionnels",
@@ -3163,7 +3164,8 @@
             "storage": "Stockage",
             "wireless": "Sans fil"
         },
-        "warningMessage": "Gardez à l'esprit que les tests seront annulés si le système est en mode veille ou hibernation"
+        "warningMessage": "Gardez à l'esprit que les tests seront annulés si le système est en mode veille ou hibernation",
+        "refreshMessage": "L'actualisation peut prendre un certain temps, car tous les composants doivent être à nouveau chargés"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3332,7 +3334,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3417,10 +3436,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3435,7 +3455,7 @@
             "extendNow": "extend now",
             "renewNow": "Renew Now",
             "poweredBy": "Powered by Coronet",
-            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "Pour en savoir plus sur les <tag>Règles de confidentialité</tag> et les <tag>Dispositions relatives au service</tag>"
         },
         "tour": {
             "back": "Back",
@@ -3486,7 +3506,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "Vous pouvez désormais déterminer si vos informations privées ont été compromises ou utilisées par des traqueurs en ligne à votre insu.",
             "security": "Le saviez-vous ? Même si vous n'avez pas installé de logiciel antivirus, nous proposons toujours une protection de base pour votre périphérique.",
             "connectedHomeSecurity": "Profitez d'une surveillance et d'alertes en temps réel concernant la sécurité de votre réseau à domicile. Vous serez le premier informé si l'un de vos périphériques intelligents est confronté à une attaque de sécurité."
         }
@@ -3542,5 +3561,8 @@
             "subtitle2": "Ordinateurs tout en un : simplifié",
             "body2": "Les PC tout-en-un dotés de la 9ème génération de processeurs Intel® Core™ vous offrent toute la puissance d'un ordinateur de bureau avec un écran élégant : pour une sécurité basée matériel moins encombrante et un écran haute résolution."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

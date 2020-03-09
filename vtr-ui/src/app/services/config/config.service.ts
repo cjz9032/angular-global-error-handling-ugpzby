@@ -134,89 +134,43 @@ export class ConfigService {
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
 			this.activeSegment = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
-			const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
-			let resultMenu = cloneDeep(this.menuItemsGaming);
+			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
+			let resultMenu;
+
 			if (machineInfo.isGaming) {
-				if (isBetaUser && await this.canShowSearch()) {
-					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
-				}
-				this.smodeFilter(resultMenu, this.deviceService.isSMode);
-				this.armFilter(resultMenu, this.deviceService.isArm);
-				this.menu = resultMenu.filter(item => !item.hide);
+				resultMenu = cloneDeep(this.menuItemsGaming);
+				this.initializeBetaMenu(resultMenu, isBetaUser);
+				this.initializeWiFiItem(resultMenu);
+				this.menu = this.filterMenu(resultMenu, SegmentConst.Gaming);
 				this.notifyMenuChange(this.menu);
 				return resolve(this.menu);
 			}
-			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
-			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
+
 			resultMenu = cloneDeep(this.menuItems);
-			if (machineType) {
-				this.smartAssistFilter(machineType, resultMenu);
-			} else if (this.deviceService.isShellAvailable) {
-				await this.deviceService.getMachineType().then(async (value: number) => {
-					await this.smartAssistFilter(value, resultMenu);
-				});
+			this.initializeSecurityItem(country.toLowerCase(), resultMenu);
+			if (this.hypSettings) {
+				resultMenu = await this.initShowCHSMenu(country, resultMenu, machineInfo);
 			}
-			const canShowPrivacy = await this.canShowPrivacy();
-			if (!canShowPrivacy) {
-				resultMenu = resultMenu.filter(item => item.id !== 'privacy');
-			}
-			this.showSecurityItem(country.toLowerCase(), resultMenu);
-			this.smodeFilter(resultMenu, this.deviceService.isSMode);
-			this.armFilter(resultMenu, this.deviceService.isArm);
+
 			this.menuBySegment.commercial = cloneDeep(resultMenu);
-			if (isBetaUser) {
-				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
-				if (await this.canShowSearch()) {
-					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
-				}
-			}
+			await this.initializeBetaMenu(resultMenu, isBetaUser);
 			this.menuBySegment.consumer = cloneDeep(resultMenu);
 			this.menuBySegment.smb = cloneDeep(resultMenu);
-			resultMenu = this.menuBySegment[this.activeSegment.toLowerCase()];
-			if (this.hypSettings) {
-				await this.initShowCHSMenu().then((result) => {
-					const shellVersion = {
-						major: 10,
-						minor: 1910,
-						build: 12
-					};
-					this.showCHS = country.toLowerCase() === 'us'
-						&& locale.startsWith('en')
-						&& result
-						&& this.isShowCHSByShellVersion(shellVersion)
-						&& !machineInfo.isGaming
-						&& this.activeSegment !== SegmentConst.Commercial;
-					this.showCHSWithoutSegment = country.toLowerCase() === 'us'
-						&& locale.startsWith('en')
-						&& result
-						&& this.isShowCHSByShellVersion(shellVersion)
-						&& !machineInfo.isGaming;
-					if (!this.showCHS) {
-						resultMenu = resultMenu.filter(item => item.id !== 'home-security');
-					}
-					this.menuBySegment.commercial = this.menuBySegment.commercial.filter(item => item.id !== 'home-security');
-					if (!this.showCHSWithoutSegment) {
-						this.menuBySegment.consumer = this.menuBySegment.consumer.filter(item => item.id !== 'home-security');
-						this.menuBySegment.smb = this.menuBySegment.smb.filter(item => item.id !== 'home-security');
-					}
-				});
-			}
-			resultMenu = this.segmentFilter(resultMenu, this.activeSegment);
-			this.menuBySegment.commercial = this.segmentFilter(this.menuBySegment.commercial, SegmentConst.Commercial);
-			this.menuBySegment.consumer = this.segmentFilter(this.menuBySegment.consumer, SegmentConst.Consumer);
-			this.menuBySegment.smb = this.segmentFilter(this.menuBySegment.smb, SegmentConst.SMB);
 
-			this.menu = resultMenu.filter(item => !item.hide);
-			this.menuBySegment.commercial = this.menuBySegment.commercial.filter(item => !item.hide);
-			this.menuBySegment.consumer = this.menuBySegment.consumer.filter(item => !item.hide);
-			this.menuBySegment.smb = this.menuBySegment.smb.filter(item => !item.hide);
+			this.menuBySegment.commercial = this.filterMenu(this.menuBySegment.commercial, SegmentConst.Commercial);
+			this.menuBySegment.consumer = this.filterMenu(this.menuBySegment.consumer, SegmentConst.Consumer);
+			this.menuBySegment.smb = this.filterMenu(this.menuBySegment.smb, SegmentConst.SMB);
+
+			this.menu = this.menuBySegment[this.activeSegment.toLowerCase()];
+			this.initializeSmartAssist();
 			this.notifyMenuChange(this.menu);
 			return resolve(this.menu);
 		});
 	}
 
-	initShowCHSMenu() {
-		return this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((result) => {
+	private async initShowCHSMenu(country: string, menu: Array<any>, machineInfo: any): Promise<Array<any>> {
+		const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
+		const chsHypsis = await this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((result) => {
 			return ((result || '').toString() === 'true');
 		}, (error) => {
 			this.logger.error('ConfigService.initShowCHSMenu: promise rejected ', error);
@@ -237,18 +191,22 @@ export class ConfigService {
 
 	initializeSecurityItem(region, items) {
 		const securityItem = items.find((item) => item.id === 'security');
-		const cacheWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, false);
-		items = this.supportFilter(items, 'wifi-security', cacheWifi);
-		if (typeof this.wifiSecurity.isSupported === 'boolean') {
-			items = this.supportFilter(items, 'wifi-security', this.wifiSecurity.isSupported);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
-		}
+		this.initializeWiFiItem(items);
 		if (securityItem) {
 			if (region === 'cn') {
 				items = this.supportFilter(items, 'internet-protection', false);
 			} else {
 				items = this.supportFilter(items, 'internet-protection', true);
 			}
+		}
+	}
+
+	initializeWiFiItem(items) {
+		const cacheWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, false);
+		items = this.supportFilter(items, 'wifi-security', cacheWifi);
+		if (typeof this.wifiSecurity.isSupported === 'boolean') {
+			items = this.supportFilter(items, 'wifi-security', this.wifiSecurity.isSupported);
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
 		}
 	}
 
@@ -312,25 +270,35 @@ export class ConfigService {
 		}
 	}
 
-	async smartAssistFilter(machineType: number, items) {
+	private smartAssistFilter(machineType: number) {
 		if (machineType === 0 || machineType === 1) {
-			await this.showSmartAssist(items);
+			this.showSmartAssist();
+		} else {
+			this.removeSmartAssistMenu(this.menu);
+			this.removeSmartAssistMenu(this.menuBySegment.consumer);
+			this.removeSmartAssistMenu(this.menuBySegment.commercial);
+			this.removeSmartAssistMenu(this.menuBySegment.smb);
 		}
 	}
 
-	private async showSmartAssist(items) {
+	private async showSmartAssist(): Promise<any> {
 		this.logger.info('MenuMainComponent.showSmartAssist: inside');
-		const myDeviceItem = items.find((item) => item.id === 'device');
-		if (myDeviceItem !== undefined) {
+		const myDeviceItem = this.menu.find((item) => item.id === 'device');
+		const consumerMyDeviceItem = this.menuBySegment.consumer.find((item) => item.id === 'device');
+		const commercialMyDeviceItem = this.menuBySegment.commercial.find((item) => item.id === 'device');
+		const smbMyDeviceItem = this.menuBySegment.smb.find((item) => item.id === 'device');
+		if (myDeviceItem !== undefined || consumerMyDeviceItem !== undefined || commercialMyDeviceItem !== undefined || smbMyDeviceItem !== undefined) {
 			// if cache has value true for IsSmartAssistSupported, add menu item
 			const smartAssistCacheValue = this.commonService.getLocalStorageValue(
 				LocalStorageKey.IsSmartAssistSupported,
 				false
 			);
 			this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
-
-			if (!smartAssistCacheValue || !this.isSmartAssistAvailable) {
-				this.removeSmartAssistMenu(items);
+			if (!smartAssistCacheValue) {
+				this.removeSmartAssistMenu(this.menu);
+				this.removeSmartAssistMenu(this.menuBySegment.consumer);
+				this.removeSmartAssistMenu(this.menuBySegment.commercial);
+				this.removeSmartAssistMenu(this.menuBySegment.smb);
 			}
 
 			// raj: promise.all breaks if any one function is breaks. adding feature wise capability check
@@ -392,14 +360,20 @@ export class ConfigService {
 				assistCapability.isAPSSupported;
 
 			if (this.isSmartAssistAvailable) {
-				this.addSmartAssistMenu(items);
+				this.addSmartAssistMenu(this.menu);
+				this.addSmartAssistMenu(this.menuBySegment.consumer);
+				this.addSmartAssistMenu(this.menuBySegment.commercial);
+				this.addSmartAssistMenu(this.menuBySegment.smb);
 			} else {
-				this.removeSmartAssistMenu(items);
+				this.removeSmartAssistMenu(this.menu);
+				this.removeSmartAssistMenu(this.menuBySegment.consumer);
+				this.removeSmartAssistMenu(this.menuBySegment.commercial);
+				this.removeSmartAssistMenu(this.menuBySegment.smb);
 			}
 
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, this.isSmartAssistAvailable);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, assistCapability);
-
+			this.notifyMenuChange(this.menu);
 			this.logger.error('configService.showSmartAssist capability check',
 				{
 					smartAssistCacheValue,
@@ -414,7 +388,23 @@ export class ConfigService {
 		if (myDeviceItem) {
 			const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
 			if (!smartAssistItem) {
-				myDeviceItem.subitems.splice(3, 0, this.menuItems.find((item) => item.id === 'device').subitems.find((item) => item.id === 'smart-assist'));
+				myDeviceItem.subitems.splice(3, 0,
+					{
+						id: 'smart-assist',
+						label: 'common.menu.device.sub4',
+						path: 'smart-assist',
+						metricsEvent: 'itemClick',
+						metricsParent: 'navbar',
+						metricsItem: 'link.smartassist',
+						externallink: false,
+						routerLinkActiveOptions: {
+							exact: true
+						},
+						icon: null,
+						sMode: true,
+						subitems: []
+					}
+				);
 			}
 		}
 	}
@@ -442,19 +432,6 @@ export class ConfigService {
 
 	notifyMenuChange(payload?) {
 		this.commonService.sendNotification(MenuItem.MenuItemChange, payload);
-	}
-
-	public canShowPrivacy(): Promise<boolean> {
-		return new Promise(resolve => {
-			if (this.hypSettings) {
-				this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
-					resolve(privacy === 'enabled');
-				}, (error) => {
-					this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
-					resolve(false);
-				});
-			}
-		});
 	}
 
 	public canShowSearch(): Promise<boolean> {
@@ -490,6 +467,7 @@ export class ConfigService {
 			this.updateWifiMenu(this.menuBySegment.commercial, wifiIsSupport);
 			this.updateWifiMenu(this.menuBySegment.consumer, wifiIsSupport);
 			this.updateWifiMenu(this.menuBySegment.smb, wifiIsSupport);
+			this.updateWifiStateCache(wifiIsSupport);
 			return resolve(this.menu);
 		});
 	}
@@ -497,18 +475,28 @@ export class ConfigService {
 	updateWifiMenu(menu, wifiIsSupport) {
 		const securityItem = menu.find((item) => item.id === 'security');
 		if (menu.find((item) => item.id === 'wifi-security')
-			|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
+		|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
 			this.supportFilter(menu, 'wifi-security', wifiIsSupport);
-		} else if (wifiIsSupport && !this.deviceService.isSMode && !this.deviceService.isArm) {
-			if (securityItem && securityItem.subitems) {
+			return;
+		}
+
+		if (this.deviceService.isSMode || this.deviceService.isArm) { return; }
+
+		if (wifiIsSupport) {
+			if (securityItem && securityItem.subitems && this.activeSegment !== SegmentConst.Gaming) {
 				const wifiItem = this.menuItems.find((item) => item.id === 'security').subitems.find((item) => item.id === 'wifi-security');
 				securityItem.subitems.splice(3, 0, wifiItem);
-			} else {
-				const supportIndex = menu.findIndex((item) => item.id === 'support');
-				const wifiItems = this.menuItems.find((item) => item.id === 'wifi-security');
-				menu.splice(supportIndex, 0, wifiItems);
+				return;
 			}
+
+			const supportIndex = menu.findIndex((item) => item.id === 'support');
+			const wifiItems = this.activeSegment !== SegmentConst.Gaming ? this.menuItems.find((item) => item.id === 'wifi-security') : this.menuItemsGaming.find((item) => item.id === 'wifi-security');
+			menu.splice(supportIndex, 0, wifiItems);
 		}
+	}
+
+	updateWifiStateCache(wifiIsSupport: boolean) {
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, wifiIsSupport);
 	}
 
 	showBetaMenu(isBeta: boolean): Promise<any> {
@@ -527,22 +515,24 @@ export class ConfigService {
 		});
 	}
 
-	updateBetaMenu(menu, isBeta: boolean): Promise<any> {
+	initializeBetaMenu(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
+		return this.updateBetaMenu(menu, isBeta);
+	}
+
+	updateBetaMenu(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
 		return new Promise((resolve) => {
 			if (isBeta) {
-				if (!menu.find((item) => item.id === 'hardware-scan') && !menu.find((item) => item.id === 'app-search')) {
-					menu.splice(menu.length - 1, 0, ...this.betaItem);
-					this.canShowSearch().then((result) => {
+				if (!menu.find((item) => item.id === 'app-search')) {
+					return this.canShowSearch().then((result) => {
 						if (result) {
 							menu.splice(menu.length - 1, 0, this.appSearch);
 						}
 						return resolve(menu);
 					});
-				} else {
-					return resolve(menu);
 				}
+
+				return resolve(menu);
 			} else {
-				menu = menu.filter(item => item.id !== 'hardware-scan');
 				menu = menu.filter(item => item.id !== 'app-search');
 				return resolve(menu);
 			}
@@ -605,15 +595,32 @@ export class ConfigService {
 		const newFeatureTipsShowComplete = this.commonService.getLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion);
 		if ((!newFeatureTipsShowComplete || newFeatureTipsShowComplete < newFeatureVersion)
 			&& Array.isArray(this.menu)) {
-			const privacyItem = this.menu.find((item: any) => item.id === 'privacy');
 			const securityItem = this.menu.find((item: any) => item.id === 'security');
 			const chsItem = this.menu.find((item: any) => item.id === 'home-security');
 			let isHideMenuToggle = true;
 			if (window.innerWidth < 1200) { isHideMenuToggle = false; }
-			if ((privacyItem || securityItem || chsItem) && isHideMenuToggle) {
+			if ((securityItem || chsItem) && isHideMenuToggle) {
 				this.newFeatureTipService.create();
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, newFeatureVersion);
+		}
+	}
+
+	private filterMenu(menu: Array<any>, segment: string): Array<any> {
+		this.smodeFilter(menu, this.deviceService.isSMode);
+		this.armFilter(menu, this.deviceService.isArm);
+		this.segmentFilter(menu, segment);
+		return menu.filter(item => !item.hide);
+	}
+
+	private initializeSmartAssist() {
+		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
+		if (machineType) {
+			this.smartAssistFilter(machineType);
+		} else if (this.deviceService.isShellAvailable) {
+			this.deviceService.getMachineType().then((value: number) => {
+				this.smartAssistFilter(value);
+			});
 		}
 	}
 }

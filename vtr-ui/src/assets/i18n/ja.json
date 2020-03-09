@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Vantage Edgeを使用すると、設定は使用状況に基づいて自動的に調整されます。\n ゲーム中は最大パフォーマンス、不在時はバッテリーを節約。",
                     "line2": "<b>機能管理の概要</b><br> 一部の機能を使用できないデバイスもあります",
-                    "line3": "<b>CPU クロックアップ </b><br> プロセッサーの最大速度を上げます",
+                    "line3": "<b>CPU/GPU クロックアップ </b><br> プロセッサーの最大速度を上げます",
                     "line4": "<b>RAM クロックアップ </b><br> メモリーの最大速度を上げます",
                     "line5": "<b>ネットワーク・ブースト </b><br> プレイしているゲームのネットワーク・トラフィックを優先します",
                     "line6": "<b>Dolby </b><br> Dolbyテクノロジーを使用してオーディオをゲームに特化してチューニングします",
@@ -93,7 +93,8 @@
                     "line8": "<b>急速充電 </b><br> 急速充電で外出時により長くゲームをプレイできます",
                     "line9": "<b>タッチパッド・ロック </b><br> ゲーム中はタッチパッドを無効にして誤入力を防ぎます",
                     "line10": "<b>自動クローズ </b><br> プレイ開始前にゲームに不要な処理をクリアして利用可能なシステム・リソースを最大化します",
-                    "line11": "<b>サーマル・モード </b><br> ファン速度と冷却制御のために優先デバイス・プロファイルを設定する"
+                    "line11": "<b>サーマル・モード </b><br> ファン速度と冷却制御のために優先デバイス・プロファイルを設定する",
+                    "line12": "<b>マクロ・キー </b><br> プレイ・スタイルに合わせてキーボード・アクションをカスタマイズします"
                 },
                 "systemInfo": {
                     "systenTooltip": "CPU/GPU/RAM およびさまざまなドライブの上にマウスを移動すると、製造元やモデル情報などの説明が表示されます"
@@ -748,11 +749,10 @@
                 "sub2": "アンチウィルス",
                 "sub3": "WiFi セキュリティー",
                 "sub4": "パスワードの健全性",
-                "sub5": "インターネット保護",
-                "sub6": "Windows Hello"
+                "sub5": "VPN セキュリティー",
+                "sub6": "指紋"
             },
             "support": "サポート",
-            "privacy": "プライバシー",
             "beta": {
                 "title": "beta"
             },
@@ -763,8 +763,8 @@
             "subtitle": "デバイスが保護されているかどうかを確認します。",
             "antiVirus": "アンチウィルス",
             "wifi": "WiFi セキュリティー",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
+            "pswdMgr": "パスワードの健全性",
+            "vpn": "VPN セキュリティー",
             "enabled": "有効",
             "disabled": "無効",
             "partiallyProtected": "部分的に保護",
@@ -775,9 +775,11 @@
             "notFound": "見つかりませんでした",
             "registered": "登録済み",
             "notRegistered": "未登録",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "指紋",
             "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>",
-            "windowsHello": "Windows Hello"
+            "windowsHello": "Windows Hello",
+            "enrolled": "登録済み",
+            "notEnrolled": "未登録"
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
@@ -808,11 +810,6 @@
         },
         "offline": {
             "connectToUseFeature": "この機能を使用するには、インターネットに接続してください"
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "プライバシー"
         }
     },
     "tutorial": {
@@ -1239,7 +1236,7 @@
                     },
                     "airPlanePower": {
                         "title": "飛行機電源モード",
-                        "description": "システムの消費電力量を制御することで飛行機の AC 電源コンセントを保護します。飛行機電源モードを有効にすると、コンピューターはバッテリー充電率とシステム・パフォーマンスを制限して電力消費量を抑えます。",
+                        "description": "この機能により、特定の電力制限が適用される飛行機の AC 電源コンセントを使用できます。このモードでは、バッテリー充電率とコンピューターのパフォーマンスを制限してお使いのコンピューターの電力消費量を安全なレベルまで抑えます。",
                         "checkBoxDesc": "自動検出",
                         "note": "自動検出が選択されている場合は、コンピューターは飛行機に搭乗している環境を検出すると自動的に飛行機電源モードをオンにし、飛行機を離れると飛行機電源モードをオフにします。"
                     },
@@ -1272,7 +1269,7 @@
                             "ERROR_UNEXPECTED": "失敗: 予期しないエラーが発生しました。"
                         },
                         "popup": {
-                            "description1": "リセット・プロセスは次のとおりです。<br>バッテリーを完全に充電  -->  バッテリーを完全に放電  -->  バッテリーを完全に再充電",
+                            "description1": "リセット・プロセスは次のとおりです。<br>バッテリーを完全に充電 --> 低バッテリー残量まで放電 --> 高バッテリー残量または満充電まで再充電",
                             "description2": "注: <br>1. この処理には数時間かかる場合があります。この間、コンピューターの使用は避けてください。<br>2. 開いているすべてのアプリを閉じて、コンピューターを AC 電源に接続します。<br>3. プロセス中、バッテリー充電のしきい値機能は無効になります。",
                             "continue": "続行",
                             "cancel": "キャンセル",
@@ -1359,14 +1356,14 @@
                     "warningtip": "少なくとも1日を選択してください。",
                     "days": {
                         "shortName": {
-                            "sun": "日曜日",
-                            "mon": "月曜日",
-                            "tue": "火曜日",
-                            "wed": "水曜日",
-                            "thurs": "木曜日",
-                            "fri": "金曜日",
-                            "sat": "土曜日",
-                            "thu": "Thu"
+                            "sun": "日",
+                            "mon": "月",
+                            "tue": "火",
+                            "wed": "水",
+                            "thurs": "木",
+                            "fri": "金",
+                            "sat": "土",
+                            "thu": "木"
                         },
                         "name": {
                             "sun": "日曜日",
@@ -1531,7 +1528,8 @@
                         "note": {
                             "title": "お願い",
                             "description": "Lenovo Vantage はその地域の日没と日の出の時刻を計算するために、位置情報にアクセスする必要があります。"
-                        }
+                        },
+                        "tips": "Windows Update を実行するか、グラフィック・ドライバーを手動でインストールして、アイ・ケア・モードを復元してください"
                     },
                     "dispColorTemp": {
                         "title": "ディスプレイの色温度",
@@ -1576,14 +1574,14 @@
                         "displayDimmer": "ディスプレイを暗くする"
                     },
                     "displayPriority": {
-                        "title": "Display Priority Control",
-                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
+                        "title": "ディスプレイ優先度コントロール",
+                        "description": "デバイスは最大数の外部ディスプレイをサポートしています。これらの追加方法を使用して複数のディスプレイを接続する場合、優先順位の高いディスプレイのみが機能します。<br/>優先する追加のディスプレイ出力方法を以下から選択します。",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Docking",
+                            "dock": "ドッキング",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optional Module"
+                            "cartridge": "オプション・モジュール"
                         }
                     }
                 },
@@ -1613,7 +1611,8 @@
                         "caption": "この機能は、ビデオ通話または写真撮影にカメラを使用する際に背景をぼかします。以下の選択肢から別の効果を選択できます。",
                         "blurMode": "ぼかしモード",
                         "comicMode": "コミック モード",
-                        "sketchMode": "スケッチ モード"
+                        "sketchMode": "スケッチ モード",
+                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "カメラは使用中です",
@@ -1753,12 +1752,12 @@
                     "title": "Fn キーと Ctr キーの入れ替え",
                     "description": "Ctrl キーを押そうとする際に Fn キーを押してしまう場合は、2 つのキーの機能を入れ替えることができます。",
                     "restartNote": "2 つのキーの機能を交換するには、コンピューターを再起動する必要があります。再起動してもよろしいですか?",
-                    "title2": "Fn works as Ctrl for frequently used key combinations",
-                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
-                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
+                    "title2": "頻繁に使用する組み合わせキーとして Fn キーが Ctrl キーとして機能する",
+                    "description2": "一部の頻繁に使用する組み合わせキーに関して、Fn キーがCtrl キーとして機能します。Ctrl キーの機能は変更されません。",
+                    "featureNote": "この機能と Fn キーおよび Ctrl キーの入れ替え機能を同時にオンにすることはできません。モードのいずれかがオンの場合は、もう一方のモードは自動的にオフになります。",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn Keys",
+                            "heading": "Fn キー",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1774,7 +1773,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl Keys",
+                            "heading": "Ctrl キー",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1790,20 +1789,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Action",
-                            "action1": "Select all",
-                            "action2": "Copy",
-                            "action3": "Add web page to my favorite",
-                            "action4": "Search",
-                            "action5": "Find and replace in Microsoft Word",
-                            "action6": "Align left and right in Microsoft Word",
-                            "action7": "Quit (in supported app)",
-                            "action8": "Add underline",
-                            "action9": "Paste",
-                            "action10": "close (per app)",
-                            "action11": "Cut",
-                            "action12": "Redo",
-                            "action13": "Undo"
+                            "heading": "アクション",
+                            "action1": "すべて選択",
+                            "action2": "コピー",
+                            "action3": "お気に入りに Web ページを追加する",
+                            "action4": "検索",
+                            "action5": "Microsoft Word で検索して置換する",
+                            "action6": "Microsoft Word で左右を合わせる",
+                            "action7": "終了 (サポートされているアプリ)",
+                            "action8": "下線を追加",
+                            "action9": "貼り付け",
+                            "action10": "閉じる (アプリごと)",
+                            "action11": "切り取り",
+                            "action12": "再実行",
+                            "action13": "元に戻す"
                         }
                     }
                 },
@@ -1814,19 +1813,19 @@
                     "control3": "TRACKPOINT 制御",
                     "less": "非表示にする"
                 },
-				"backlight": {
-					"title": "キーボードのバックライト",
-					"description": {
-						"base": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を変更することもできます。",
-						"auto": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を「自動」に変更することもできます。「自動」オプションでは、周囲の明るさに応じてキーボードのバックライトが自動的に調整されます。"
-					},
-					"level": {
-						"auto": "自動",
-						"low": "低",
-						"high": "高",
-						"off": "オフ"
-					}
-				}
+                "backlight": {
+                    "title": "キーボードのバックライト",
+                    "description": {
+                        "base": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を変更することもできます。",
+                        "auto": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを押して、キーボードのバックライトの設定を「自動」に変更することもできます。「自動」オプションでは、周囲の明るさに応じてキーボードのバックライトが自動的に調整されます。"
+                    },
+                    "level": {
+                        "auto": "自動",
+                        "low": "低",
+                        "high": "高",
+                        "off": "オフ"
+                    }
+                }
             }
         },
         "smartAssist": {
@@ -2217,8 +2216,8 @@
     },
     "security": {
         "landing": {
-            "fully": "完全保護",
-            "notFully": "保護は未完全",
+            "fully": "より良いオファーを取得してデバイスを保護するために セキュリティー・アドバイザー 101 を続けましょう",
+            "notFully": "デバイスの保護を向上させる方法を知るために セキュリティー・アドバイザー 101 を始めましょう",
             "security101": "セキュリティー・アドバイザー 101",
             "firewall": "ファイアウォール",
             "pwdHealth": "パスワードの健全性",
@@ -2359,7 +2358,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi/接続ホーム・セキュリティー",
+                "title": "WiFi セキュリティー",
                 "back": "戻る"
             },
             "container": {
@@ -2375,7 +2374,7 @@
                 "showless": "その他の情報を表示しない",
                 "button": "WiFi セキュリティーを有効にする",
                 "disableDescribe": "Lenovo WiFi セキュリティーは高度なクラウドベースのソフトウェアサービスで、デバイスが安全な無線ネットワークを潜在的に悪意のあるものと区別するのに役立ちます。",
-                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
+                "enabledDescribe": "Lenovo WiFi セキュリティーが現在 WiFi ネットワークを監視しています。"
             },
             "threatlocator": {
                 "describe": "脅威検出器を使用して、周囲のネットワークの安全性を判断します。",
@@ -2543,6 +2542,7 @@
     "lenovoId": {
         "login": "ログイン",
         "logout": "ログアウト",
+        "loggingOut": "ログアウト中...",
         "unlockExclusives": "専用機能をロック解除",
         "user": "ユーザー",
         "welcomeText1": "今日はエネルギーにあふれているように見えます、{{firstName}} さん!",
@@ -2587,7 +2587,7 @@
     "faq": {
         "footer": {
             "title": "探しているものが見つかりませんか？",
-            "description": "追加サポートが必要ですか？ 次のことで米国に連絡することを躊躇しないでください。",
+            "description": "追加のサポートが必要ですか?以下からお気軽にお問い合わせください:",
             "body": "レノボコミュニティ",
             "button": "フォーラムへ"
         },
@@ -2797,7 +2797,7 @@
         },
         "question4": {
             "title": "マシンのバッテリーの使用を確認する",
-            "description": "<div class='faqInFs4Fb'>    マシンのバッテリーの使用を確認する</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>Windows 10 には、ラップトップのバッテリー残量を表示する、新しい<strong>「バッテリーの使用」</strong>画面が含まれます。この画面では、どのアプリ (デスクトップと Windows 10 の両方の「ユニバーサル」アプリ) が電力を消費しすぎているのかを正確に知ることができます。</p><h3 class='faqInFs25FbP10'>影響を受けるブランド</h3><ul>    <li>Lenovo のラップトップ、デスクトップ</li></ul><h3 class='faqInFs25FbP10'>影響を受けるシステム</h3><ul>    <li>すべて</li></ul><h3 class='faqInFs25FbP10'>オペレーティング・システム</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決法</h3><p>この機能は Windows 10で新しく追加されました。従来の<strong>「コントロール パネル」</strong>の表示には格納されていないため、この機能を最初に見つける必要があります。この機能は新しい<strong>「設定」</strong>アプリにあります</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. バッテリー使用画面を見つける</h3></p><p>1.「スタート」メニューから<strong>「設定」</strong>のオプションをクリックまたはタップします</p><p>2.<strong>「設定」</strong>で、<strong>「システム」</strong><strong>「バッテリー節約機能」の順に選択します。 <br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/ja/4.1.jpg' /></p><p>3.この見出しの下の<strong>「バッテリーの使用」</strong>リンクをクリックまたはタップして、詳細を表示します。</p><p> </p><h3 class='faqInFs25FbP10'>B. 電力使用率を分析する</h3><p>4. バッテリー使用画面を変更して、過去 24 時間、48 時間、または先週からのバッテリー使用量を表示することができます</p><p>5. <strong>「システム」</strong>、<strong>「ディスプレイ」、</strong><strong>「Wi-Fi」</strong>の割合がわかります。これは、システムの処理、ディスプレイで消費された電力を表示します。</p><p>6. <strong>「使用中」</strong>および<strong>「バックグラウンド」</strong>オプションは、バックグラウンドで実行中のアプリと比較して、アプリ使用中の消費電力を示します。</p><p>7. バックグラウンドで電力を消費するアプリがある場合、<strong>「バックグラウンド アプリの設定を変更する」</strong>リンクをクリックまたはタップして、アプリがバックグラウンドで起動しないように設定します。これは、ユニバーサル Windows 10 アプリにのみ有効です。</p><p>8. 下にスクロールすると、アプリの一覧が表示されます。これは、この機能の最も便利なセクションです。一定期間にバッテリーを消費したアプリの一覧を表示します。また、各アプリが使用した電力の割合を示します</p><p><img src='./../../../assets/images/qa/ja/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    マシンのバッテリーの使用を確認する</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>Windows 10 には、ラップトップのバッテリー残量を表示する、新しい<strong>「バッテリーの使用」</strong>画面が含まれます。この画面では、どのアプリ (デスクトップと Windows 10 の両方の「ユニバーサル」アプリ) が電力を消費しすぎているのかを正確に知ることができます。</p><h3 class='faqInFs25FbP10'>影響を受けるブランド</h3><ul>    <li>Lenovo のラップトップ、デスクトップ</li></ul><h3 class='faqInFs25FbP10'>影響を受けるシステム</h3><ul>    <li>すべて</li></ul><h3 class='faqInFs25FbP10'>オペレーティング・システム</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決法</h3><p>この機能は Windows 10で新しく追加されました。従来の<strong>「コントロール パネル」</strong>の表示には格納されていないため、この機能を最初に見つける必要があります。この機能は新しい<strong>「設定」</strong>アプリにあります</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. バッテリー使用画面を見つける</h3></p><p>1.「スタート」メニューから<strong>「設定」</strong>のオプションをクリックまたはタップします</p><p>2.<strong>「設定」</strong>で、<strong>「システム」</strong><strong>「バッテリー節約機能」の順に選択します。 <br /></strong><strong></strong></p><p><img src='./../../../assets/images/qa/ja/4.1.jpg' /></p><p>3.この見出しの下の<strong>「バッテリーの使用」</strong>リンクをクリックまたはタップして、詳細を表示します。</p><p> </p><h3 class='faqInFs25FbP10'>B. 電力使用率を分析する</h3><p>4. バッテリー使用画面を変更して、過去 24 時間、48 時間、または先週からのバッテリー使用量を表示することができます</p><p>5. <strong>「システム」</strong>、<strong>「ディスプレイ」、</strong><strong>「Wi-Fi」</strong>の割合がわかります。これは、システムの処理、ディスプレイで消費された電力を表示します。</p><p>6. <strong>「使用中」</strong>および<strong>「バックグラウンド」</strong>オプションは、バックグラウンドで実行中のアプリと比較して、アプリ使用中の消費電力を示します。</p><p>7. バックグラウンドで電力を消費するアプリがある場合、<strong>「バックグラウンド アプリの設定を変更する」</strong>リンクをクリックまたはタップして、アプリがバックグラウンドで起動しないように設定します。これは、ユニバーサル Windows 10 アプリにのみ有効です。</p><p>8. 下にスクロールすると、アプリの一覧が表示されます。これは、この機能の最も便利なセクションです。一定期間にバッテリーを消費したアプリの一覧を表示します。また、各アプリが使用した電力の割合を示します</p><p><img src='./../../../assets/images/qa/ja/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -3127,7 +3127,7 @@
                 "yes": "はい",
                 "no": "いいえ"
             },
-            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
+            "waitAvailability": "ストレージ・デバイスがこの機能をサポートしていない場合、ハードウェア情報を読み込み中の場合、またはスキャンが進行中の場合は、ボタンが無効になります。"
         },
         "support": {
             "title": "プロの診断ツールをダウンロードする",
@@ -3164,7 +3164,8 @@
             "storage": "ストレージ",
             "wireless": "ワイヤレス"
         },
-        "warningMessage": "システムがスリープ状態または休止状態になると、テストがキャンセルされることに注意してください"
+        "warningMessage": "システムがスリープ状態または休止状態になると、テストがキャンセルされることに注意してください",
+        "refreshMessage": "すべてのコンポーネントを再度読み込む必要があるため、更新に時間がかかる場合があります"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3333,7 +3334,24 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            }
+            },
+            "tune": "{{tune}} ISSUES",
+            "boost": "{{boost}} ISSUES",
+            "secure": "{{secure}} ISSUES",
+            "tunepc": {
+                "accumulatedjunkscannedareas": {
+                    "OptimizingWindowssettings": "Optimizing Windows settings",
+                    "Preventingnon-essential": "Preventing non-essential service from running",
+                    "Applyingregistry": "Applying registry and shortcut fixes",
+                    "Removingunnecessary": "Removing unnecessary residual fies",
+                    "Scanningandfixing": "Scanning and fixing critical services",
+                    "RemovingOS": "Removing OS and application log files"
+                }
+            },
+            "Diskspace": "Disk Space Reclaimed :",
+            "Performanceimprovements": "Performance Improvements :",
+            "Securityimprovements": "Security Improvements:",
+            "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3418,10 +3436,11 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "trialPeriod": "Trial period:",
+            "subscriptionPeriod": "Subscription period:",
+            "expired": "Expired",
+            "remainingDay": "{{remainingDay}} days remaining",
+            "lenovoId": "Lenovo ID:",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3487,7 +3506,6 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-            "privacy": "これで、個人情報が知らないうちにオンライン・トラッカーによって侵害されたり使用されたりしたかどうかを知ることができます。",
             "security": "ご存知ですか。ウイルス対策ソフトウェアをインストールしていない場合でも、デバイスの基本的なセキュリティ保護を提供します。",
             "connectedHomeSecurity": "自宅でネットワーク・セキュリティに関するリアルタイムの監視とアラートを実現します。スマート・デバイスのいずれかがセキュリティ攻撃に直面しているかどうかを知る最初の人物になります。"
         }
@@ -3543,5 +3561,8 @@
             "subtitle2": "オールインワン: 簡素化",
             "body2": "第 9 世代 Intel® Core™ プロセッサーを搭載したオールインワン PC によって、あらゆるデスクトップの強みが光沢のあるディスプレイに詰め込まれていることで、乱雑さが抑えられ、ハードウェアベースのセキュリティーと高解像度のディスプレイが実現されています。"
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }
