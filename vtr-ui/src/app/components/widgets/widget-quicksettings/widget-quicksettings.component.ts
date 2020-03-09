@@ -148,7 +148,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.cameraStatus.status = cameraState.status;
 			this.cameraStatus.isLoading = false;
 			this.cameraStatus.permission = cameraState.permission;
-		} 
+		}
 	}
 
 	ngOnDestroy() {
@@ -364,7 +364,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.dashboardService.getMicrophoneStatus()
 				.then((featureStatus: FeatureStatus) => {
 					this.microphoneStatus = featureStatus;
-					if (featureStatus.available) {
+					this.microPhoneGreyOut = false;if (featureStatus.available) {
 						const win: any = window;
 						if (win.VantageShellExtension && win.VantageShellExtension.AudioClient) {
 							try {
