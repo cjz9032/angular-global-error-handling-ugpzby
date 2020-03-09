@@ -170,6 +170,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					// Default to enable SSO after login success
 					self.userService.enableSSO(useruad, username, userid, userguid).then(result => {
 						if (result.success && result.status === 0) {
+							self.userService.hasFirstName = Boolean(firstname);
 							self.userService.setName(firstname, lastname);
 							self.userService.setAuth(true);
 							// Close logon dialog
