@@ -2,7 +2,7 @@
 	<ui-popover id="close" attr.aria-label = "{{modalContent.popupWindowTitle | translate}}" tabindex="1">
 		<div class="vtr-ui-macrokey-popup modal-body">
 			<div class="btn-close">
-					<button type="button" class="close" aria-hidden="true" (click)="submitAction(false)"
+					<button type="button" class="close" (click)="submitAction(false)"
 					attr.aria-label="{{ 'gaming.macroKey.narrator.popupClose' | translate }}" vtrMetrics [metricsItem]="'macrokey_popup_close'" metricsEvent="featureClick"
 						tabindex="1" (keyup.enter)="submitAction(false)">
 						<fa-icon [icon]="['fal', 'times']"></fa-icon>
