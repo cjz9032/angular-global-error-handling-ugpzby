@@ -85,16 +85,15 @@
                 "legionEdgeModal": {
                     "line1": "Vantage Edge를 사용하면 사용량에 따라 설정이 자동으로 조정됩니다. \n 게임 중 최대 성능, 게임을 하지 않을 때는 배터리 수명이 연장됩니다.",
                     "line2": "<b>기능 관리 개요</b> <br> 일부 기능은 모든 장치에서 사용하지 못할 수 있음",
-                    "line3": "<b>CPU/GPU 오버클럭 </b><br> 프로세서의 최대 속도 향상",
-                    "line4": "<b>RAM 오버클럭 </b><br> 메모리의 최대 속도 향상",
+                    "line3": "<b>CPU 오버클럭킹 </b><br> 프로세서의 최대 속도 향상",
+                    "line4": "<b>RAM 오버클럭킹 </b><br> 메모리의 최대 속도 향상",
                     "line5": "<b>네트워크 향상 </b><br> 재생 중인 게임의 네트워크 트래픽 우선 순위 지정",
                     "line6": "<b>Dolby </b><br> Dolby 기술을 이용한 게임 전용 오디오 조정",
                     "line7": "<b>하이브리드 모드 </b><br> 배터리 성능을 높이기 위해 게임을 하지 않을 때 고급 GPU 설정 사용 안 함",
                     "line8": "<b>급속 충전 </b><br> 더 빠른 배터리 충전으로 이동 중 게임 시간 연장",
                     "line9": "<b>터치 패드 잠금 </b><br> 게임 중 터치패드를 비활성화하여 잘못된 입력 방지",
                     "line10": "<b>자동 닫기 </b><br> 게임을 시작하기 전에 사용 가능한 시스템 리소스를 극대화하기 위해 필요하지 않은 프로세스 지우기",
-                    "line11": "<b>열 모드 </b><br> 팬 속도 및 냉각 제어를 위해 선호하는 장치 프로파일 설정",
-                    "line12": "<b>매크로 키 </b><br> 게임 스타일에 맞게 키보드 동작을 사용자 정의합니다"
+                    "line11": "<b>열 모드 </b><br> 팬 속도 및 냉각 제어를 위해 선호하는 장치 프로파일 설정"
                 },
                 "systemInfo": {
                     "systenTooltip": "제조 및 모델 정보를 포함한 설명이 표시되도록 CPU/GPU/RAM 및 다른 드라이브를 가리킴"
@@ -749,10 +748,11 @@
                 "sub2": "바이러스 백신",
                 "sub3": "WiFi 보안",
                 "sub4": "암호 상태",
-                "sub5": "VPN 보안",
-                "sub6": "지문"
+                "sub5": "인터넷 보호",
+                "sub6": "Windows Hello"
             },
             "support": "지원",
+            "privacy": "프라이버시",
             "beta": {
                 "title": "beta"
             },
@@ -763,8 +763,8 @@
             "subtitle": "이 장치에 보안 설정이 되었는지 확인하십시오.",
             "antiVirus": "바이러스 백신",
             "wifi": "WiFi 보안",
-            "pswdMgr": "암호 상태",
-            "vpn": "VPN 보안",
+            "pswdMgr": "Password Manager",
+            "vpn": "VPN",
             "enabled": "사용",
             "disabled": "사용 안 함",
             "partiallyProtected": "부분적으로 보호",
@@ -775,11 +775,9 @@
             "notFound": "찾을 수 없음",
             "registered": "등록됨",
             "notRegistered": "등록되지 않음",
-            "fingerPrint": "지문",
+            "fingerPrint": "Fingerprint",
             "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>",
-            "windowsHello": "Windows Hello",
-            "enrolled": "등록됨",
-            "notEnrolled": "등록되지 않음"
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
@@ -810,6 +808,11 @@
         },
         "offline": {
             "connectToUseFeature": "이 기능을 사용하려면 인터넷에 연결하십시오"
+        }
+    },
+    "privacy": {
+        "headerMain": {
+            "title": "프라이버시"
         }
     },
     "tutorial": {
@@ -1236,7 +1239,7 @@
                     },
                     "airPlanePower": {
                         "title": "비행기 전원 모드",
-                        "description": "이 기능을 사용하면 특정 전력 한계가 적용되는 항공기에서 AC 전원 콘센트를 사용할 수 있습니다. 이 모드에서는 배터리 충전 속도와 컴퓨터 성능을 제한하여 컴퓨터의 전력 소모를 안전한 수준으로 줄입니다.",
+                        "description": "시스템의 전력 소모를 제어하여 비행기의 AC 전원 콘센트를 보호하십시오.비행기 전원 모드를 사용하면, 컴퓨터가 배터리 충전율과 시스템 성능을 제한하여 전력 소모를 줄입니다.",
                         "checkBoxDesc": "자동 검색",
                         "note": "자동 탐지를 선택하면 비행기 탑승 환경을 탐지했을 때 컴퓨터가 비행기 전원 모드를 자동으로 켜고 비행기에서 내리면 끕니다."
                     },
@@ -1269,7 +1272,7 @@
                             "ERROR_UNEXPECTED": "실패: 예상치 않은 오류가 발생했습니다."
                         },
                         "popup": {
-                            "description1": "리셋 절차는 다음과 같습니다.<br>배터리 완전 충전 --> 저전력 상태까지 배터리 방전 --> 고전력 상태까지 배터리 재충전 또는 완전 충전",
+                            "description1": "리셋 절차는 다음과 같습니다.<br>배터리 완충  -->  배터리 방전  -->  배터리 완전히 재충전",
                             "description2": "참고: <br>1. 이 절차는 몇 시간 정도 걸릴 수 있습니다. 이 시간 동안 컴퓨터 사용을 지양하십시오.<br>2. 열려 있는 모든 앱을 닫고 컴퓨터를 AC 전원에 연결하십시오.<br>3. 절차가 진행되는 동안, 배터리 충전 임계값 기능은 꺼집니다.",
                             "continue": "계속",
                             "cancel": "취소",
@@ -1356,14 +1359,14 @@
                     "warningtip": "적어도 하루를 선택하십시오.",
                     "days": {
                         "shortName": {
-                            "sun": "일",
-                            "mon": "월",
-                            "tue": "화",
-                            "wed": "수",
-                            "thurs": "목",
-                            "fri": "금",
-                            "sat": "토",
-                            "thu": "목"
+                            "sun": "일요일",
+                            "mon": "월요일",
+                            "tue": "화요일",
+                            "wed": "수요일",
+                            "thurs": "목요일",
+                            "fri": "금요일",
+                            "sat": "토요일",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "일요일",
@@ -1384,7 +1387,7 @@
                     "subTitle": "컴퓨터 예약",
                     "automaticMode": "자동 모드",
                     "manualMode": "수동 모드",
-                    "subNote": "사용량에 따라 빠르게 다시 시작할 수 있도록 컴퓨터가 예약되어 있습니다.",
+                    "subNote": "사용량에 기반하여 컴퓨터가 모던 대기 모드가 되도록 예약되어 있습니다.",
                     "graph": {
                         "graph1Tittle": "이 컴퓨터 사용량",
                         "graph2Tittle": "적용된 활성 시간",
@@ -1423,8 +1426,7 @@
                     },
                     "description2": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
                     "subTitle2": "이 컴퓨터를 주로 사용하는 시간 설정",
-                    "oldTooltipText": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 시간은 사용자가 설정한 스케줄을 토대로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며 비활성화되도록 예약된 날에는 전환되지 않습니다.",
-                    "sectionTitle": "대기 설정"
+                    "oldTooltipText": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 시간은 사용자가 설정한 스케줄을 토대로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며 비활성화되도록 예약된 날에는 전환되지 않습니다."
                 }
             },
             "audio": {
@@ -1528,8 +1530,7 @@
                         "note": {
                             "title": "주",
                             "description": "Lenovo Vantage는 위치 정보에 액세스하여 지역의 일몰 및 일출 시간을 계산해야 합니다."
-                        },
-                        "tips": "Windows 업데이트를 실행하거나 그래픽 드라이버를 수동으로 설치하여 Eye Care 모드로 복구하십시오"
+                        }
                     },
                     "dispColorTemp": {
                         "title": "디스플레이 색상 온도",
@@ -1574,14 +1575,14 @@
                         "displayDimmer": "디스플레이 채광"
                     },
                     "displayPriority": {
-                        "title": "디스플레이 우선순위 제어",
-                        "description": "장치는 최대 개수의 외장 디스플레이를 지원합니다. 이러한 추가적인 수단을 이용하여 하나 이상의 디스플레이를 연결할 때, 우선 순위가 지정된 항목만 작동합니다.<br/>우선 순위를 정할 추가 디스플레이 출력 방법을 선택하십시오.",
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "도킹",
-                            "usb_c_dp": "USB 유형-C",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "옵션 모듈"
+                            "cartridge": "Optional Module"
                         }
                     }
                 },
@@ -1611,8 +1612,7 @@
                         "caption": "이 기능을 사용하면 카메라에서 영상 통화를 하거나 사진을 촬영할 때 배경이 흐려집니다. 아래의 선택 사항에서 다른 효과를 선택할 수 있습니다.",
                         "blurMode": "흐림 모드",
                         "comicMode": "만화 모드",
-                        "sketchMode": "스케치 모드",
-                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
+                        "sketchMode": "스케치 모드"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "카메라 사용 중",
@@ -1752,12 +1752,12 @@
                     "title": "Fn 키와 Ctrl 키 바꾸기",
                     "description": "Ctrl 키를 눌러야 하는 데 습관적으로 Fn 키를 누르는 경우 두 키의 기능을 바꿀 수 있습니다.",
                     "restartNote": "두 키의 기능을 바꾸어도 컴퓨터를 다시 시작해야 합니다. 다시 시작하시겠습니까?",
-                    "title2": "Fn이 자주 사용하는 키 조합의 Ctrl로 작동",
-                    "description2": "Fn 키가 몇 가지 자주 사용하는 키 조합의 Ctrl 키로 작동합니다. Ctrl 키의 기능은 변경되지 않습니다.",
-                    "featureNote": "이 기능 및 Fn 키와 Ctrl 키 스왑 기능은 동시에 사용할 수 없습니다. 하나가 켜져 있으면 다른 모드는 자동으로 꺼집니다.",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn 키",
+                            "heading": "Fn Keys",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1773,7 +1773,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl 키",
+                            "heading": "Ctrl Keys",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1789,20 +1789,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "동작",
-                            "action1": "모두 선택",
-                            "action2": "복사",
-                            "action3": "웹 페이지를 내 즐겨찾기에 추가",
-                            "action4": "검색",
-                            "action5": "Microsoft Word의 찾기 및 바꾸기",
-                            "action6": "Microsoft Word의 왼쪽 및 오른쪽 맞춤",
-                            "action7": "종료(앱에서 지원하는 경우)",
-                            "action8": "밑줄 추가",
-                            "action9": "붙여넣기",
-                            "action10": "닫기(앱에 따라 다름)",
-                            "action11": "잘라내기",
-                            "action12": "다시 실행",
-                            "action13": "실행 취소"
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
                         }
                     }
                 },
@@ -1813,19 +1813,19 @@
                     "control3": "TRACKPOINT 제어",
                     "less": "간단히"
                 },
-                "backlight": {
-                    "title": "키보드 백라이트",
-                    "description": {
-                        "base": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. 또한 Fn+Space 키를 눌러 키보드 백라이트 설정을 변경할 수도 있습니다.",
-                        "auto": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. Fn+Space 키를 눌러 키보드 백라이트 설정을 변경하거나 이를 \"자동\"으로 설정할 수 있습니다. \"자동\" 옵션은 주변 밝기에 따라 키보드 조명을 자동으로 조정합니다."
-                    },
-                    "level": {
-                        "auto": "자동",
-                        "low": "낮음",
-                        "high": "높음",
-                        "off": "끄기"
-                    }
-                }
+				"backlight": {
+					"title": "키보드 백라이트",
+					"description": {
+						"base": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. 또한 Fn+Space 키를 눌러 키보드 백라이트 설정을 변경할 수도 있습니다.",
+						"auto": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. Fn+Space 키를 눌러 키보드 백라이트 설정을 변경하거나 이를 \"자동\"으로 설정할 수 있습니다. \"자동\" 옵션은 주변 밝기에 따라 키보드 조명을 자동으로 조정합니다."
+					},
+					"level": {
+						"auto": "자동",
+						"low": "낮음",
+						"high": "높음",
+						"off": "끄기"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -2216,8 +2216,8 @@
     },
     "security": {
         "landing": {
-            "fully": "장치를 보호하는 더 나은 상품을 보려면, 다음과 함께하세요",
-            "notFully": "장치를 더 잘 보호할 수 있는 방법을 알아보려면, 다음으로 시작하세요",
+            "fully": "완전히 보호됨",
+            "notFully": "완전히 보호되지 않음",
             "security101": "보안 어드바이저 101",
             "firewall": "방화벽",
             "pwdHealth": "암호 상태",
@@ -2358,7 +2358,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi 보안",
+                "title": "WiFi 및 홈 보안 연결",
                 "back": "뒤로"
             },
             "container": {
@@ -2374,7 +2374,7 @@
                 "showless": "간단하게 표시",
                 "button": "WiFi 보안 사용",
                 "disableDescribe": "Lenovo WiFi 보안은 장치가 안전한 무선 네트워크와 잠재적인 악성 네트워크를 구분할 수 있도록 도와주는 첨단 클라우드 기반 소프트웨어 서비스입니다.",
-                "enabledDescribe": "Lenovo WiFi 보안이 현재 WiFi 네트워크를 모니터링하고 있습니다."
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "위협 감지기를 사용하여 주변 네트워크의 안전성을 확인합니다.",
@@ -2542,7 +2542,6 @@
     "lenovoId": {
         "login": "로그인",
         "logout": "로그아웃",
-        "loggingOut": "로그아웃 중...",
         "unlockExclusives": "독점 잠금 해제",
         "user": "사용자",
         "welcomeText1": "오늘 동력 공급 상태 보기, {{firstName}}!",
@@ -2587,7 +2586,7 @@
     "faq": {
         "footer": {
             "title": "당신이 찾고있는 것을 찾지 못했습니까?",
-            "description": "추가 지원이 필요하십니까? 다음을 통해 문의하십시오:",
+            "description": "추가 지원이 필요하십니까? VIA에 연락을 주저하지 마십시오.",
             "body": "Lenovo 커뮤니티",
             "button": "포럼으로 이동"
         },
@@ -2797,7 +2796,7 @@
         },
         "question4": {
             "title": "시스템의 배터리 사용 확인",
-            "description": "<div class='faqInFs4Fb'>    시스템의 배터리 사용 확인</div><hr><h3 class='faqInFs25FbP10'>증상</h3><p>Windows 10에는 노트북의 전력을 소모하는 것이 무엇인지 나타내는 새로운 <strong>배터리 사용</strong> 화면이 화면이 포함되어 있습니다. 이 화면은 데스크톱 앱과 Windows 10 \"범용\" 앱에서 모두 너무 많은 전력을 사용하는 앱이 어떤 것인지 정확하게 알려 줍니다.</p><h3 class='faqInFs25FbP10'>영향을 받는 브랜드</h3><ul>    <li>Lenovo 노트북, 데스크탑</li></ul><h3 class='faqInFs25FbP10'>영향을 받는 시스템</h3><ul>    <li>모두</li></ul><h3 class='faqInFs25FbP10'>운영 체제</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>해결 방법</h3><p>이 기능은 Windows 10에서 새로운 기능입니다. 기존의 <strong>제어판</strong> 보기에 저장되어 있지 않으므로 먼저 이 기능을 찾아야 하며, 새로운 <strong>\"설정\"</strong> 앱에 저장되어 있습니다</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. 배터리 사용 화면 검색</h3></p><p>1. 시작 메뉴에서 <strong>\"설정\"</strong> 옵션을 클릭하거나 누르십시오</p><p>2. <strong>설정</strong>에서 <strong>\"시스템\"</strong>과 <strong>\"배터리 절약 모드 를 차례로 선택합니다.<br /> </strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. 자세한 정보를 보려면, 이 제목 아래에 있는 <strong>\"배터리 사용\"</strong> 링크를 클릭하십시오. </p><p> </p><h3 class='faqInFs25FbP10'>B. 전원 사용 분석</h3><p>4. 배터리 사용 화면을 변경하여 지난 24시간에서 48시간까지 또는 지난 주부터 마지막 시간까지 배터리 사용을 표시하기 위해 할 수 있음</p><p>5. <strong>\"시스템\"</strong>, \"<strong>디스플레이,</strong>\" 및 \"<strong>Wi-Fi\"</strong> 비율. 이 기능은 시스템 프로세스에서 사용한 배터리 전력량를 나타냅니다, 디스플레이.</p><p>6. <strong>\"사용 중\"</strong> 및 <strong>\"배경\"</strong> 옵션에서는 이 애플리케이션을 사용하는 동안 배경에서 실행되는 애플리케이션에 비해 얼마나 많은 전력이 사용되는지 나타냅니다.</p><p>7. 앱이 배경에서 전력을 사용하는 경우, <strong>\"배경 앱 설정 변경\" </strong>링크를 클릭하거나 눌러 앱이 배경에서 실행되지 않도록 구성할 수 있습니다. 이 기능은 범용 Windows 10 응용 프로그램에서만 작동합니다.</p><p>8. 아래로 더 스크롤하면 응용 프로그램 목록이 표시되며, 이 기능의 가장 유용한 섹션으로 간주할 수 있습니다. 이 프로그램은 해당 기간에 배터리 전력을 사용하여 앱 목록을 표시하고, 각 앱에 사용된 배터리 전원의 비율이 얼마인지을 보여 줌</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    시스템의 배터리 사용 확인</div><hr><h3 class='faqInFs25FbP10'>증상</h3><p>Windows 10에는 노트북의 전력을 소모하는 것이 무엇인지 나타내는 새로운 <strong>배터리 사용</strong> 화면이 화면이 포함되어 있습니다. 이 화면은 데스크톱 앱과 Windows 10 \"범용\" 앱에서 모두 너무 많은 전력을 사용하는 앱이 어떤 것인지 정확하게 알려 줍니다.</p><h3 class='faqInFs25FbP10'>영향을 받는 브랜드</h3><ul>    <li>Lenovo 노트북, 데스크탑</li></ul><h3 class='faqInFs25FbP10'>영향을 받는 시스템</h3><ul>    <li>모두</li></ul><h3 class='faqInFs25FbP10'>운영 체제</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>해결 방법</h3><p>이 기능은 Windows 10에서 새로운 기능입니다. 기존의 <strong>제어판</strong> 보기에 저장되어 있지 않으므로 먼저 이 기능을 찾아야 하며, 새로운 <strong>\"설정\"</strong> 앱에 저장되어 있습니다</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. 배터리 사용 화면 검색</h3></p><p>1. 시작 메뉴에서 <strong>\"설정\"</strong> 옵션을 클릭하거나 누르십시오</p><p>2. <strong>설정</strong>에서 <strong>\"시스템\"</strong>과 <strong>\"배터리 절약 모드\"<br />를 차례로 선택합니다.<br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. 자세한 정보를 보려면, 이 제목 아래에 있는 <strong>\"배터리 사용\"</strong> 링크를 클릭하십시오. </p><p> </p><h3 class='faqInFs25FbP10'>B. 전원 사용 분석</h3><p>4. 배터리 사용 화면을 변경하여 지난 24시간에서 48시간까지 또는 지난 주부터 마지막 시간까지 배터리 사용을 표시하기 위해 할 수 있음</p><p>5. <strong>\"시스템\"</strong>, \"<strong>디스플레이,</strong>\" 및 \"<strong>Wi-Fi\"</strong> 비율. 이 기능은 시스템 프로세스에서 사용한 배터리 전력량를 나타냅니다, 디스플레이.</p><p>6. <strong>\"사용 중\"</strong> 및 <strong>\"배경\"</strong> 옵션에서는 이 애플리케이션을 사용하는 동안 배경에서 실행되는 애플리케이션에 비해 얼마나 많은 전력이 사용되는지 나타냅니다.</p><p>7. 앱이 배경에서 전력을 사용하는 경우, <strong>\"배경 앱 설정 변경\" </strong>링크를 클릭하거나 눌러 앱이 배경에서 실행되지 않도록 구성할 수 있습니다. 이 기능은 범용 Windows 10 응용 프로그램에서만 작동합니다.</p><p>8. 아래로 더 스크롤하면 응용 프로그램 목록이 표시되며, 이 기능의 가장 유용한 섹션으로 간주할 수 있습니다. 이 프로그램은 해당 기간에 배터리 전력을 사용하여 앱 목록을 표시하고, 각 앱에 사용된 배터리 전원의 비율이 얼마인지을 보여 줌</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2865,7 +2864,7 @@
         },
         "question5": {
             "title": "태블릿 같은 PC 사용",
-            "description": "<div class='faqInFs4Fb'>    태블릿 같은 PC 사용</div><hr><p>태블릿 모드는 터치 스크린 장치가 있는 경우 Windows를 더욱 직관적이고 사용하기 쉽게 만듭니다.</p><h3 class='faqInFs25FbP10'>태블릿 모드 사용</h3><p>태블릿 모드를 켜려면, 작업 표시줄에서 <strong>관리 센터</strong>를 선택한 다음 <strong>태블릿 모드</strong>를 선택하십시오.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>주</h3><p>장치에서 태블릿 모드를 자동으로 켤 수 있는지 확인하려면, 제조업체 웹 사이트에서 장치를 검색하십시오. 이 기능에 대한 지원은 하드웨어, 설치된 드라이버 및 제조업체에서 장치를 설정하는 방법에 따라 다릅니다. </p><p> </p><p>태블릿 모드에서는 앱이 전체 화면을 열기 때문에 작업 공간이 더 많이 제공됩니다. 앱을 닫으려면, 화면 맨 아래로 끄십시오.</p><p> </p><h3 class='faqInFs25FbP10'>팁</h3><p>작업 표시줄은 PC가 태블릿 모드에 있는 경우에 사용할 수 있지만, 화면에 여유 공간을 추가로 원한다면 숨길 수 있습니다. <strong>시작</strong> 버튼, <strong>설정 </strong>> <strong>시스템 </strong>> <strong> 태블릿 모드</strong>를 차례로 선택한 다음, <strong>태블릿 모드에서 자동으로 작업 표시줄 자동으로 숨기기</strong>를 켭니다. 숨겨진 작업 표시줄을 표시하려면, 화면 하단에서 위로 살짝 밀어 올리거나 마우스를 사용하여 위치를 가리킵니다.</p><h3 class='faqInFs25FbP10'>동시에 두 개의 앱 사용</h3><p>태블릿 모드에서 두 개의 앱을 나란히 사용하려면, 열려 있는 앱을 아래로 및 옆으로 끄십시오. 그러면 표시되는 위치를 볼 수 있으며, 옆에 열려 있는 앱이 표시됩니다.</p><p>이 보기에서 다음을 수행할 수도 있습니다.</p><ul>    <li>두 개의 딸각 소리가 나는 앱 사이의 공유 가장자리를 사용하여 동시에 두 앱의 크기를 조정하십시오.</li>    <li>작업 보기에서 새 앱 열기 &mdash; <strong>작업 표시줄</strong>에서 작업 보기를 선택하고 앱을 선택한 후, 한 쪽으로 끌어서 분할된 화면에 맞춥니다.</li>    <li>앱에서 작업 표시줄의 뒤로 버튼을 사용하여 돌아가거나 전에 사용하던 앱을 여십시오.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    태블릿 같은 PC 사용</div><hr><p>태블릿 모드는 터치 스크린 장치가 있는 경우 Windows를 더욱 직관적이고 사용하기 쉽게 만듭니다.</p><h3 class='faqInFs25FbP10'>태블릿 모드 사용</h3><p>태블릿 모드를 켜려면, 작업 표시줄에서 <strong>관리 센터</strong>를 선택한 다음 <strong>태블릿 모드</strong>를 선택하십시오.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>주</h3><p>장치에서 태블릿 모드를 자동으로 켤 수 있는지 확인하려면, 제조업체 웹 사이트에서 장치를 검색하십시오. 이 기능에 대한 지원은 하드웨어, 설치된 드라이버 및 제조업체에서 장치를 설정하는 방법에 따라 다릅니다. </p><p> </p><p>태블릿 모드에서는 앱이 전체 화면을 열기 때문에 작업 공간이 더 많이 제공됩니다. 앱을 닫으려면, 화면 맨 아래로 끄십시오.</p><p> </p><h3 class='faqInFs25FbP10'>팁</h3><p>작업 표시줄은 PC가 태블릿 모드에 있는 경우에 사용할 수 있지만, 화면에 여유 공간을 추가로 원한다면 숨길 수 있습니다. <strong>시작</strong> 버튼, <strong>설정 </strong>> <strong>시스템 </strong>> <strong> 태블릿 모드</strong>를 차례로 선택한 다음, <strong>태블릿 모드에서 자동으로 작업 표시줄 자동으로 숨기기</strong>를 켭니다. 숨겨진 작업 표시줄을 표시하려면, 화면 하단에서 위로 살짝 밀어 올리거나 마우스를 사용하여 위치를 가리킵니다.</p><h3 class='faqInFs25FbP10'>동시에 두 개의 앱 사용</h3><p>태블릿 모드에서 두 개의 앱을 나란히 사용하려면, 열려 있는 앱을 아래로 및 옆으로 끄십시오. 그러면 표시되는 위치를 볼 수 있으며, 옆에 열려 있는 앱이 표시됩니다.</p><p>이 보기에서 다음을 수행할 수도 있습니다.</p><ul>    <li>두 개의 딸각 소리가 나는 앱 사이의 공유 가장자리를 사용하여 동시에 두 앱의 크기를 조정하십시오.</li>    <li>작업 보기에서 새 앱 열기 &mdash; <strong>작업 표시줄</strong>에서 작업 보기를 선택하고 앱을 선택한 후, 한 쪽으로 끌어서 분할된 화면에 맞춥니다.</li>    <li>앱에서 작업 표시줄의 뒤로 버튼을 사용하여 돌아가거나 전에 사용하던 앱을 여십시오.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -3127,7 +3126,7 @@
                 "yes": "예",
                 "no": "아니요"
             },
-            "waitAvailability": "하드웨어 정보가 로드되고 있거나 스캔 중인 파일이 있을 때 저장 장치가 해당 기능을 지원하지 않는 경우 버튼이 비활성화 됩니다."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "전문 진단 도구 다운로드",
@@ -3164,8 +3163,7 @@
             "storage": "저장 장치",
             "wireless": "무선"
         },
-        "warningMessage": "시스템이 절전 또는 최대 절전 모드 상태인 경우 테스트가 취소됩니다",
-        "refreshMessage": "모든 구성 요소를 다시 로드해야 하므로 새로 고침이 오래 걸릴 수 있습니다"
+        "warningMessage": "시스템이 절전 또는 최대 절전 모드 상태인 경우 테스트가 취소됩니다"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3334,24 +3332,7 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
-            "tunepc": {
-                "accumulatedjunkscannedareas": {
-                    "OptimizingWindowssettings": "Optimizing Windows settings",
-                    "Preventingnon-essential": "Preventing non-essential service from running",
-                    "Applyingregistry": "Applying registry and shortcut fixes",
-                    "Removingunnecessary": "Removing unnecessary residual fies",
-                    "Scanningandfixing": "Scanning and fixing critical services",
-                    "RemovingOS": "Removing OS and application log files"
-                }
-            },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week"
+            }
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3436,11 +3417,10 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period:",
-            "subscriptionPeriod": "Subscription period:",
-            "expired": "Expired",
-            "remainingDay": "{{remainingDay}} days remaining",
-            "lenovoId": "Lenovo ID:",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3506,6 +3486,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
+            "privacy": "이제 사용자 모르게 개인 정보가 온라인 추적기에 의해 침해되거나 사용되었는지 확인할 수 있습니다.",
             "security": "알고 있습니다? 바이러스 백신 소프트웨어가 설치되어 있지 않더라도, 장치에 대한 기본 보안 보호 기능이 제공됩니다.",
             "connectedHomeSecurity": "가정에서 네트워크 보안에 대한 실시간 모니터링 및 경고를 얻습니다. 스마트 장치가 보안 공격을 하고 있는 경우, 첫 번째 사용자는 이를 확인할 수 있습니다."
         }
@@ -3561,8 +3542,5 @@
             "subtitle2": "간소화된 올인원",
             "body2": "올인원 PC는 9세대 Intel® Core™ 프로세서를 사용하며, 간편함, 하드웨어 기반 보안성 및 고해상도 디스플레이까지 모두 포함하는 데스크탑의 모든 기능을 세련된 디스플레이로 제공합니다."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }

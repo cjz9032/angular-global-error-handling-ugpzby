@@ -81,20 +81,26 @@ export class QaService {
 					this.translate.stream(qa.title).subscribe((value) => {
 						qa.title = value;
 					});
-				} catch (e) {}
+				} catch (e) {
+					console.log('QA title translation : already translated');
+				}
 
 				try {
 					qa.description = this.translate.instant(qa.description);
 					this.translate.stream(qa.description).subscribe((value) => {
 						qa.description = value;
 					});
-				} catch (e) {}
+				} catch (e) {
+					console.log('QA description by HTML MAP : already translated');
+				}
 
 				try {
 					this.translate.get(qa.keys).subscribe((translation: [string]) => {
 						qa.keys = translation;
 					});
-				} catch (e) {}
+				} catch (e) {
+					console.log('QA description by KEY_VALUE MAP : already translated');
+				}
 			});
 
 			// sahinul, 24June2019 VAN-5534
@@ -103,7 +109,9 @@ export class QaService {
 				this.translate.stream(this.title).subscribe((value) => {
 					this.title = value;
 				});
-			} catch (e) {}
+			} catch (e) {
+				console.log('QA Page title translation : already translated');
+			}
 		});
 
 		this.qas.forEach((qa) => {
@@ -112,20 +120,26 @@ export class QaService {
 				this.translate.stream(qa.title).subscribe((value) => {
 					qa.title = value;
 				});
-			} catch (e) {}
+			} catch (e) {
+				console.log('QA title translation : already translated');
+			}
 
 			try {
 				qa.description = this.translate.instant(qa.description);
 				this.translate.stream(qa.description).subscribe((value) => {
 					qa.description = value;
 				});
-			} catch (e) {}
+			} catch (e) {
+				console.log('QA description by HTML MAP : already translated');
+			}
 
 			try {
 				this.translate.get(qa.keys).subscribe((translation: [string]) => {
 					qa.keys = translation;
 				});
-			} catch (e) {}
+			} catch (e) {
+				console.log('QA description by KEY_VALUE MAP : already translated');
+			}
 		});
 
 		// sahinul, 24June2019 VAN-5534
@@ -134,7 +148,9 @@ export class QaService {
 			this.translate.stream(this.title).subscribe((value) => {
 				this.title = value;
 			});
-		} catch (e) {}
+		} catch (e) {
+			console.log('QA Page title translation : already translated');
+		}
 	}
 
 	// VAN-5872, server switch feature
@@ -181,7 +197,9 @@ export class QaService {
 					qa.description = value;
 				});
 			});
-		} catch (err) {}
+		} catch (err) {
+			console.log('getQATranslation Error', err);
+		}
 	}
 
 	// key=> faq.question1.title
@@ -199,9 +217,10 @@ export class QaService {
 	}
 
 	destroyChangeSubscribed() {
-        if (this.preserveTransKeys.isSubscribed) {
+		if (this.preserveTransKeys.isSubscribed) {
 			this.preserveTransKeys.isSubscribed = false;
 			// this.preserveTransKeys.isSubscribed.unsubscribe();
 		}
-    }
+		console.log('@destroyChangeSubscribed');
+	}
 }

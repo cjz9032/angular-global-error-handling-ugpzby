@@ -88,7 +88,7 @@
                 "legionEdgeModal": {
                     "line1": "借助 Vantage Edge，您的设置将根据使用情况自动调整。\n 在游戏时获得最佳性能，在其余时间获得更长的电池使用时间。",
                     "line2": "<b>功能管理概述</b><br> 某些功能仅在部分设备上提供",
-                    "line3": "<b>CPU/GPU 超频 </b><br> 提升处理器的最快速度",
+                    "line3": "<b>CPU 超频 </b><br> 提升处理器的最快速度",
                     "line4": "<b>RAM 超频 </b><br> 提升内存的最快速度",
                     "line5": "<b>网络增强 </b><br> 将网络流量优先分配给正在畅玩的游戏",
                     "line6": "<b>Dolby </b><br> 借助 Dolby 技术，您可以特别针对游戏调整音频",
@@ -96,8 +96,7 @@
                     "line8": "<b>快速充电 </b><br> 电池充电速度提高，随时随地畅玩游戏的时间随之增多",
                     "line9": "<b>触摸板锁定 </b><br> 在游戏时禁用触摸板，防止错误输入",
                     "line10": "<b>自动关闭 </b><br> 在畅玩游戏之前清理与游戏无关的进程，从而最大限度地利用可用的系统资源",
-                    "line11": "<b>散热模式 </b><br> 设置风扇速度和冷却控制的首选设备配置文件",
-                    "line12": "<b>宏键 </b><br> 自定义键盘操作以适合您的游戏风格"
+                    "line11": "<b>散热模式 </b><br> 设置风扇速度和冷却控制的首选设备配置文件"
                 },
                 "systemInfo": {
                     "systenTooltip": "将鼠标悬停在 CPU/GPU/RAM 和不同的驱动器上以显示其描述（包括制造和型号信息）"
@@ -695,42 +694,6 @@
                     "close": "close"
                 }
             }
-        },
-        "lightingNewversion": {
-            "machineName": {
-                "name1": "拯救者符号蓝灯",
-                "name2": "内部氛围蓝灯",
-                "name3": "后置风扇彩灯",
-                "name4": "CPU风扇彩灯",
-                "name5": "水冷水泵彩灯",
-                "name6": "水冷风扇彩灯",
-                "name7": "拯救者大Y红灯",
-                "name9": "氛围蓝灯"
-            },
-            "lightingEffect": {
-                "effectName1": "静态",
-                "effectName2": "光谱",
-                "effectName3": "彩虹",
-                "effectName4": "随机",
-                "effectName5": "酷蓝",
-                "effectName6": "向右挥手",
-                "effectName7": "向左挥手"
-            },
-            "lightingSpeed": {
-                "title": "速度"
-            },
-            "colorPicker": {
-                "text2": "更多",
-                "text3": "R",
-                "text4": "G",
-                "text5": "B",
-                "text6": "划分区域（关）：单击下面的键盘图像以更改颜色",
-                "text7": "划分区域（开）：单击下面键盘图像上的区域以更改区域颜色",
-                "text8": "当前效果不支持颜色选择"
-            },
-            "tipText": {
-                "title1": "使用 Fn+空格键在概要文件之间切换"
-            }
         }
     },
     "common": {
@@ -749,10 +712,11 @@
                 "sub2": "病毒防护",
                 "sub3": "WiFi 安全",
                 "sub4": "密码保险箱",
-                "sub5": "VPN 安全顾问",
-                "sub6": "指纹"
+                "sub5": "网络保护",
+                "sub6": "Windows Hello"
             },
             "support": "支持服务",
+            "privacy": "隐私",
             "beta": {
                 "title": "beta"
             },
@@ -763,8 +727,8 @@
             "subtitle": "检查设备是否受安全保护",
             "antiVirus": "病毒防护",
             "wifi": "WiFi 安全",
-            "pswdMgr": "密码保险箱",
-            "vpn": "VPN 安全顾问",
+            "pswdMgr": "密码管理器",
+            "vpn": "VPN",
             "enabled": "已启用",
             "disabled": "已禁用",
             "partiallyProtected": "部分受保护",
@@ -775,11 +739,9 @@
             "notFound": "未找到",
             "registered": "已注册",
             "notRegistered": "未注册",
-            "fingerPrint": "指纹",
+            "fingerPrint": "Fingerprint",
             "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>",
-            "windowsHello": "Windows Hello",
-            "enrolled": "已登记",
-            "notEnrolled": "未登记"
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -810,6 +772,11 @@
         },
         "offline": {
             "connectToUseFeature": "连接到英特网以使用此功能"
+        }
+    },
+    "privacy": {
+        "headerMain": {
+            "title": "隐私"
         }
     },
     "tutorial": {
@@ -1236,7 +1203,7 @@
                     },
                     "airPlanePower": {
                         "title": "飞行电源模式",
-                        "description": "此功能让您可以在有一定功率限制的飞机上使用交流电源插座。在此模式下，通过限制电池充电速度和计算机性能，计算机功耗将降低到一个安全的级别。",
+                        "description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。",
                         "checkBoxDesc": "自动检测",
                         "note": "如果已勾选自动检测功能，计算机将在其检测到机上环境后自动打开飞行电源模式，并在您离开时将其关闭。"
                     },
@@ -1269,7 +1236,7 @@
                             "ERROR_UNEXPECTED": "失败：发生意外错误。"
                         },
                         "popup": {
-                            "description1": "重置过程如下：<br>为电池充满电 --> 将电池放电至电量不足 --> 重新为电池充电至电量充足或完全充满电",
+                            "description1": "重置过程如下：<br>为电池充满电  -->  将电池完全放电  -->  重新为电池充满电",
                             "description2": "注意：<br>1. 此过程可能耗时数小时。在此期间，请不要使用计算机。<br>2. 关闭所有打开的应用程序，然后将计算机连接到交流电源。<br>3. 在此过程中，将禁用电池充电阈值功能。",
                             "continue": "继续",
                             "cancel": "取消",
@@ -1356,14 +1323,14 @@
                     "warningtip": "请至少选择一天。",
                     "days": {
                         "shortName": {
-                            "sun": "周日",
-                            "mon": "周一",
-                            "tue": "周二",
-                            "wed": "周三",
-                            "thurs": "周四",
-                            "fri": "周五",
-                            "sat": "周六",
-                            "thu": "周四"
+                            "sun": "星期日",
+                            "mon": "星期一",
+                            "tue": "星期二",
+                            "wed": "星期三",
+                            "thurs": "星期四",
+                            "fri": "星期五",
+                            "sat": "星期六",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "星期日",
@@ -1384,7 +1351,7 @@
                     "subTitle": "安排您的计算机",
                     "automaticMode": "自动模式",
                     "manualMode": "手动模式",
-                    "subNote": "根据使用情况来安排计算机进行更快的恢复。",
+                    "subNote": "根据您的使用情况将您的计算机安排为现代待机模式。",
                     "graph": {
                         "graph1Tittle": "此电脑的使用情况",
                         "graph2Tittle": "应用的活动时间",
@@ -1423,8 +1390,7 @@
                     },
                     "description2": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
                     "subTitle2": "设置通常使用此计算机的时间",
-                    "oldTooltipText": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
-                    "sectionTitle": "待机设置"
+                    "oldTooltipText": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。"
                 }
             },
             "audio": {
@@ -1528,8 +1494,7 @@
                         "note": {
                             "title": "注",
                             "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日落日出时间。"
-                        },
-                        "tips": "请运行 Windows Update 或手动安装显卡驱动程序以恢复护眼模式"
+                        }
                     },
                     "oledPowerSettings": {
                         "title": "OLED 电源设置",
@@ -1574,14 +1539,14 @@
                         "labelText": "输入密码时启用此功能"
                     },
                     "displayPriority": {
-                        "title": "显示优先级控制",
-                        "description": "设备支持外接显示屏数目的上限。当使用这些其他方法连接多个显示屏时，只有优先显示的显示屏才会工作。<br/>在下面选择要优先使用的其他显示输出方法：",
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "扩展坞",
+                            "dock": "Docking",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "可选模块"
+                            "cartridge": "Optional Module"
                         }
                     }
                 },
@@ -1611,8 +1576,7 @@
                         "caption": "当您使用摄像头进行视频通话或拍摄照片时，该功能可以使背景变得模糊。您可以从下面的选项中选择不同的效果。",
                         "blurMode": "模糊模式",
                         "comicMode": "漫画模式",
-                        "sketchMode": "素描模式",
-                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
+                        "sketchMode": "素描模式"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "摄像头正在使用中",
@@ -1752,12 +1716,12 @@
                     "title": "互换 Fn 键和 Ctrl 键",
                     "description": "如果当您想要按 Ctrl 键时却习惯按下 Fn 键，则您可以互换这两个键的功能。",
                     "restartNote": "交换两个键的功能需要重新启动计算机，确定要重新启动吗？",
-                    "title2": "Fn 可以作为常用组合键的 Ctrl",
-                    "description2": "Fn 键可以作为一些常用组合键的 Ctrl 键。Ctrl 键的功能不变。",
-                    "featureNote": "此功能与 Fn 键和 Ctrl 键互换功能不能同时开启。如果开启其中一个功能，则将自动关闭另一个功能。",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn 键",
+                            "heading": "Fn Keys",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1773,7 +1737,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl 键",
+                            "heading": "Ctrl Keys",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1789,20 +1753,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "操作",
-                            "action1": "全选",
-                            "action2": "复制",
-                            "action3": "将 Web 页面添加到收藏夹",
-                            "action4": "搜索",
-                            "action5": "在 Microsoft Word 中查找并替换",
-                            "action6": "在 Microsoft Word 中靠左靠右对齐",
-                            "action7": "退出（在支持的应用中）",
-                            "action8": "添加下划线",
-                            "action9": "粘贴",
-                            "action10": "关闭（单个应用）",
-                            "action11": "剪切",
-                            "action12": "重做",
-                            "action13": "撤销"
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
                         }
                     }
                 },
@@ -1813,19 +1777,19 @@
                     "control3": "TRACKPOINT 控制",
                     "less": "更少"
                 },
-                "backlight": {
-                    "title": "键盘背光",
-                    "description": {
-                        "base": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn+空格键更改键盘背光设置。",
-                        "auto": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn+空格键更改键盘背光设置，或将其设置为“自动”。“自动”选项会根据周围环境光线自动调整键盘背光。"
-                    },
-                    "level": {
-                        "auto": "自动",
-                        "low": "低",
-                        "high": "高",
-                        "off": "关闭"
-                    }
-                }
+				"backlight": {
+					"title": "键盘背光",
+					"description": {
+						"base": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn+空格键更改键盘背光设置。",
+						"auto": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn+空格键更改键盘背光设置，或将其设置为“自动”。“自动”选项会根据周围环境光线自动调整键盘背光。"
+					},
+					"level": {
+						"auto": "自动",
+						"low": "低",
+						"high": "高",
+						"off": "关闭"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -2216,8 +2180,8 @@
     },
     "security": {
         "landing": {
-            "fully": "为了获得更好的服务来保护您的设备，请继续使用",
-            "notFully": "要了解如何更好地保护您的设备，请开始使用",
+            "fully": "受全面保护",
+            "notFully": "未受全面保护",
             "security101": "安全建议入门",
             "firewall": "防火墙",
             "pwdHealth": "密码保险箱",
@@ -2358,7 +2322,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi 安全",
+                "title": "WiFi 和互联家庭网络安全顾问",
                 "back": "返回"
             },
             "container": {
@@ -2374,7 +2338,7 @@
                 "showless": "显示更少内容",
                 "button": "启用 WiFi 安全",
                 "disableDescribe": "Lenovo WiFi 安全是一项基于云的先进软件服务，可帮助您的设备区分安全的无线网络与潜在的恶意网络。",
-                "enabledDescribe": "Lenovo WiFi 安全目前正在监控您的 WiFi 网络。"
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "使用威胁检测程序来确定您周围网络的安全性。",
@@ -2542,7 +2506,6 @@
     "lenovoId": {
         "login": "登录",
         "logout": "注销",
-        "loggingOut": "正在注销...",
         "unlockExclusives": "解锁专享功能",
         "user": "用户",
         "welcomeText1": "加油，热干面！",
@@ -2588,7 +2551,7 @@
         "pageTitle": "支持细节",
         "footer": {
             "title": "没找到所需信息？",
-            "description": "需要更多支持吗？欢迎通过以下方式联系我们：",
+            "description": "需要更多支持吗？欢迎通过以下方式联系我们：​",
             "body": "Lenovo 社区",
             "button": "访问论坛"
         },
@@ -3127,7 +3090,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "如果存储设备不支持此功能，当正在加载硬件信息或正在进行扫描时，将禁用此按钮。"
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "下载专业诊断工具",
@@ -3164,8 +3127,7 @@
             "storage": "存储器",
             "wireless": "无线"
         },
-        "warningMessage": "请记住，如果系统进入睡眠或休眠状态，则测试将被取消",
-        "refreshMessage": "刷新可能需要一些时间，因为它需要再次加载所有组件"
+        "warningMessage": "请记住，如果系统进入睡眠或休眠状态，则测试将被取消"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3334,24 +3296,7 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
-            "tunepc": {
-                "accumulatedjunkscannedareas": {
-                    "OptimizingWindowssettings": "Optimizing Windows settings",
-                    "Preventingnon-essential": "Preventing non-essential service from running",
-                    "Applyingregistry": "Applying registry and shortcut fixes",
-                    "Removingunnecessary": "Removing unnecessary residual fies",
-                    "Scanningandfixing": "Scanning and fixing critical services",
-                    "RemovingOS": "Removing OS and application log files"
-                }
-            },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week"
+            }
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3436,11 +3381,10 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period:",
-            "subscriptionPeriod": "Subscription period:",
-            "expired": "Expired",
-            "remainingDay": "{{remainingDay}} days remaining",
-            "lenovoId": "Lenovo ID:",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3506,6 +3450,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
+            "privacy": "现在，您可以查找您的私人信息是否已外泄，或在您不知情的情况下被在线跟踪器所使用。",
             "security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
             "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。"
         }
@@ -3561,8 +3506,5 @@
             "subtitle2": "多功能：简化",
             "body2": "配备第九代 Intel® Core™ 处理器的一体机，将桌面的所有功能都装入设计时尚的显示屏中 - 干扰更少，具有基于硬件的安全性和高分辨率的显示效果。"
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }

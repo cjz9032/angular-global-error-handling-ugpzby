@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Vantage Edge samodejno optimizira nastavitve glede na uporabo. \n Največja zmogljivost pri igranju, sicer pa daljše trajanje baterije.",
                     "line2": "<b>Pregled upravljanja funkcij</b> <br> Nekatere funkcije niso na voljo v vseh napravah",
-                    "line3": "<b>Zvišanje takta CPE/GPE </b><br> Povečajte največjo hitrost procesorja",
+                    "line3": "<b>Zvišanje takta CPE </b><br> Povečajte največjo hitrost procesorja",
                     "line4": "<b>Zvišanje takta pomnilnika RAM </b><br> Povečajte največjo hitrost pomnilnika",
                     "line5": "<b>Omrežna pospešitev </b><br> Določite prednost omrežnega prometa za igro, ki jo igrate",
                     "line6": "<b>Dolby </b><br> Optimizirajte zvok za igre s tehnologijo Dolby",
@@ -93,8 +93,7 @@
                     "line8": "<b>Hitro polnjenje </b><br> S hitrejšim polnjenjem baterije igrajte dalj časa tudi, ko ste na poti",
                     "line9": "<b>Zaklepanje sledilne ploščice </b><br> Onemogočite sledilno ploščico, da preprečite napačne vnose med igranjem",
                     "line10": "<b>Samodejno zapiranje </b><br> Pred začetkom igranja počistite nepotrebne procese in v celoti izkoristite razpoložljiva sistemska sredstva",
-                    "line11": "<b>Toplotni način </b><br> Nastavite želeni profil naprave za nadzor hitrosti ventilatorja in hlajenja",
-                    "line12": "<b>Makro tipka </b><br>Prilagodite dejanja tipkovnice, da se bodo prilegale vašemu slogu igranja"
+                    "line11": "<b>Toplotni način </b><br> Nastavite želeni profil naprave za nadzor hitrosti ventilatorja in hlajenja"
                 },
                 "systemInfo": {
                     "systenTooltip": "Kazalec zadržite na CPE/GPE/RAM in različnih pogonih, če si želite ogledati njihove opise, vključno z informacijami o proizvajalcu in modelu"
@@ -749,10 +748,11 @@
                 "sub2": "Protivirusna zaščita",
                 "sub3": "Varnost WiFi-ja",
                 "sub4": "Geslo zdravje",
-                "sub5": "VPN Varnost",
-                "sub6": "Prstni odtis"
+                "sub5": "Internetna zaščita",
+                "sub6": "Windows Hello"
             },
             "support": "Podpora",
+            "privacy": "Zasebnost",
             "beta": {
                 "title": "beta"
             },
@@ -763,8 +763,8 @@
             "subtitle": "PREVERITE, ALI JE NAPRAVA ZAVAROVANA.",
             "antiVirus": "Protivirusna zaščita",
             "wifi": "Varnost WiFi-ja",
-            "pswdMgr": "Geslo Zdravje",
-            "vpn": "VPN Varnost",
+            "pswdMgr": "Password Manager",
+            "vpn": "VPN",
             "enabled": "OMOGOČEN",
             "disabled": "ONEMOGOČEN",
             "partiallyProtected": "DELNO ZAŠČITENO",
@@ -775,11 +775,9 @@
             "notFound": "NI BILO MOGOČE NAJTI",
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO",
-            "fingerPrint": "Prstni Odtis",
+            "fingerPrint": "Fingerprint",
             "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>",
-            "windowsHello": "Windows Hello",
-            "enrolled": "REGISTRIRANO",
-            "notEnrolled": "NEREGISTRIRANO"
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Vprašanja in odgovori za vaš računalnik",
@@ -810,6 +808,11 @@
         },
         "offline": {
             "connectToUseFeature": "Za uporabo te funkcije se povežite v internet"
+        }
+    },
+    "privacy": {
+        "headerMain": {
+            "title": "Zasebnost"
         }
     },
     "tutorial": {
@@ -1236,7 +1239,7 @@
                     },
                     "airPlanePower": {
                         "title": "Način porabe za letalo",
-                        "description": "Ta funkcija omogoča priklop v električno vtičnico na letalu, pri čemer velja določena omejitev napajanja. V tem načinu se poraba energije računalnika zmanjša na varno raven tako, da se omejita hitrost polnjenja baterije in učinkovitost delovanja računalnika.",
+                        "description": "Zaščitite letalski napajalni priključek za izmenični tok z nadzorom porabe sistema.Če je omogočen način porabe za letalo, računalnik zmanjša porabo energije z omejevanjem hitrosti polnjenja baterije in učinkovitosti delovanja sistema.",
                         "checkBoxDesc": "Samodejno zaznavanje",
                         "note": "Če je označeno potrditveno polje za samodejno zaznavanje, bo računalnik samodejno vklopil način porabe za letalo, ko zazna, da ste v letalu, in ga izklopil, ko se izkrcate."
                     },
@@ -1269,7 +1272,7 @@
                             "ERROR_UNEXPECTED": "Neuspešno: Prišlo je do nepričakovane napake."
                         },
                         "popup": {
-                            "description1": "Postopek ponastavitve je sledeč:<br>Povsem napolnite baterijo --> Naj se baterija skoraj povsem izprazni --> Baterijo napolnite do visoke ali polne ravni napolnjenosti",
+                            "description1": "Postopek ponastavitve je naslednji:<br>povsem napolnite baterijo  -->  popolnoma izpraznite baterijo  -->  popolnoma napolnite baterijo",
                             "description2": "Opombe: <br>1. Ta postopek lahko traja več ur. Računalnika v tem času ne uporabljajte.<br>2. Zaprite vse odprte programe in računalnik priključite na električno vtičnico.<br>3. Med postopkom je funkcija praga polnjenja baterije onemogočena.",
                             "continue": "Nadaljuj",
                             "cancel": "Prekliči",
@@ -1356,14 +1359,14 @@
                     "warningtip": "Izberite vsaj en dan.",
                     "days": {
                         "shortName": {
-                            "sun": "Ned",
-                            "mon": "Pon",
-                            "tue": "Tor",
-                            "wed": "Sre",
-                            "thurs": "Čet",
-                            "fri": "Pet",
-                            "sat": "Sob",
-                            "thu": "Čet"
+                            "sun": "Nedelja",
+                            "mon": "Ponedeljek",
+                            "tue": "Torek",
+                            "wed": "Sreda",
+                            "thurs": "Četrtek",
+                            "fri": "Petek",
+                            "sat": "Sobota",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Nedelja",
@@ -1384,7 +1387,7 @@
                     "subTitle": "Nastavitev časovnega razporeda delovanja računalnika",
                     "automaticMode": "Samodejni način",
                     "manualMode": "Ročni način",
-                    "subNote": "Vaš računalnik ima nastavljen časovni razpored za hitrejše nadaljevanje delovanja na podlagi njegove uporabe.",
+                    "subNote": "Vaš računalnik ima nastavljen časovni razpored za preklop v sodobno stanje pripravljenosti na podlagi njegove uporabe.",
                     "graph": {
                         "graph1Tittle": "Uporaba tega računalnika",
                         "graph2Tittle": "Uporabljeni aktivni čas",
@@ -1423,8 +1426,7 @@
                     },
                     "description2": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
                     "subTitle2": "Nastavite uro, ko običajno uporabljate ta računalnik",
-                    "oldTooltipText": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na urnik, ki ga nastavite. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
-                    "sectionTitle": "Nastavitve stanja pripravljenosti"
+                    "oldTooltipText": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na urnik, ki ga nastavite. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni."
                 }
             },
             "audio": {
@@ -1528,8 +1530,7 @@
                         "note": {
                             "title": "Opomba",
                             "description": "Lenovo Vantage potrebuje dostop do informacij o vaši lokaciji za izračun časa sončnega zahoda in vzhoda v vaši regiji."
-                        },
-                        "tips": "Za obnovitev očem prijaznega načina zaženite Windows Update ali ročno namestite grafični gonilnik"
+                        }
                     },
                     "dispColorTemp": {
                         "title": "Barvna temperatura zaslona",
@@ -1574,14 +1575,14 @@
                         "displayDimmer": "ZATEMNJEVANJE ZASLONA"
                     },
                     "displayPriority": {
-                        "title": "Nadzor prednosti zaslona",
-                        "description": "Vaša naprava podpira največje število zunanjih zaslonov. Če na dodatne načine povežete več zaslonov, bo deloval le prednostni.<br/>Spodaj izberite prednostni dodatni zaslonski izhod:",
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Priključitvena enota",
+                            "dock": "Docking",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Izbirni modul"
+                            "cartridge": "Optional Module"
                         }
                     }
                 },
@@ -1611,8 +1612,7 @@
                         "caption": "Ta funkcija zamegli ozadje, ko kamero uporabljate za videoklice ali fotografiranje. Med spodnjimi možnostmi lahko izberete različne učinke.",
                         "blurMode": "Način zameglitve",
                         "comicMode": "Način stripa",
-                        "sketchMode": "Način skice",
-                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
+                        "sketchMode": "Način skice"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA JE V UPORABI",
@@ -1752,12 +1752,12 @@
                     "title": "Zamenjava tipk Fn in Ctrl",
                     "description": "Če stalno pritiskate tipko Fn, ko nameravate pritisniti tipko Ctrl, lahko zamenjate funkcijo obeh tipk.",
                     "restartNote": "Če zamenjate funkcijo dveh tipk, morate znova zagnati računalnik. Ali ste prepričani, da ga želite znova zagnati?",
-                    "title2": "Pri pogosto uporabljenih kombinacijah tipk deluje Fn kot Ctrl",
-                    "description2": "Tipka Fn pri nekaterih pogosto uporabljenih kombinacijah tipk deluje kot tipka Ctrl. Delovanje tipke Ctrl se ne spreminja.",
-                    "featureNote": "Ta funkcija in funkcija zamenjave tipke Fn in tipke Ctrl ne moreta biti obe vklopljeni hkrati. Ob vklopu ene se druga samodejno izklopi.",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Tipki Fn",
+                            "heading": "Fn Keys",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1773,7 +1773,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Tipki Ctrl",
+                            "heading": "Ctrl Keys",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1789,20 +1789,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Ukrep",
-                            "action1": "Izberi vse",
-                            "action2": "Kopiraj",
-                            "action3": "Dodaj spletno stran med moje priljubljene",
-                            "action4": "Iskanje",
-                            "action5": "Poišči in zamenjaj v aplikaciji Microsoft Word",
-                            "action6": "Poravnaj levo ali desno v aplikaciji Microsoft Word",
-                            "action7": "Izhod (v podprtem programu)",
-                            "action8": "Podčrtaj besedilo",
-                            "action9": "Prilepi",
-                            "action10": "Zapri (posamezen program)",
-                            "action11": "Izreži",
-                            "action12": "Uveljavi",
-                            "action13": "Razveljavi"
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
                         }
                     }
                 },
@@ -1813,19 +1813,19 @@
                     "control3": "KONTROLNIKI TRACKPOINT",
                     "less": "MANJ"
                 },
-                "backlight": {
-                    "title": "Osvetlitev tipkovnice",
-                    "description": {
-                        "base": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabih svetlobnih pogojih. S tipkama »Fn+preslednica« lahko tudi spremenite nastavitve osvetlitve tipkovnice.",
-                        "auto": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabih svetlobnih pogojih. S tipkama »Fn+preslednica« lahko tudi spremenite nastavitve osvetlitve tipkovnice ali pa osvetlitev nastavite na »Samodejno«. Možnost »Samodejno« bo samodejno prilagodila osvetlitev tipkovnice glede na okoljsko svetlobo."
-                    },
-                    "level": {
-                        "auto": "Samodejno",
-                        "low": "Nizko",
-                        "high": "Visoko",
-                        "off": "Izklopljeno"
-                    }
-                }
+				"backlight": {
+					"title": "Osvetlitev tipkovnice",
+					"description": {
+						"base": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabih svetlobnih pogojih. S tipkama »Fn+preslednica« lahko tudi spremenite nastavitve osvetlitve tipkovnice.",
+						"auto": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabih svetlobnih pogojih. S tipkama »Fn+preslednica« lahko tudi spremenite nastavitve osvetlitve tipkovnice ali pa osvetlitev nastavite na »Samodejno«. Možnost »Samodejno« bo samodejno prilagodila osvetlitev tipkovnice glede na okoljsko svetlobo."
+					},
+					"level": {
+						"auto": "Samodejno",
+						"low": "Nizko",
+						"high": "Visoko",
+						"off": "Izklopljeno"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -2216,8 +2216,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Če želite še bolje zaščititi svojo napravo, še naprej uporabljajte",
-            "notFully": "Če želite izvedeti, kako lahko bolje zaščitite svojo napravo, začnite uporabljati",
+            "fully": "Popolnoma zaščitena",
+            "notFully": "Nije popolnoma zaščitena",
             "security101": "VARNOSTNI SVETOVALEC 101",
             "firewall": "Požarni zid",
             "pwdHealth": "Geslo zdravje",
@@ -2358,7 +2358,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Varnost WiFi-ja",
+                "title": "WiFi & povezana domača varnost",
                 "back": "NAZAJ"
             },
             "container": {
@@ -2374,7 +2374,7 @@
                 "showless": "Pokaži manj",
                 "button": "Omogoči varnost WiFi-ja",
                 "disableDescribe": "Program družbe Lenovo za varnost WiFi-ja je napredna oblačna storitev programske opreme, ki vaši napravi pomaga razlikovati med varnimi brezžičnimi omrežji in morebitnimi zlonamernimi.",
-                "enabledDescribe": "Program družbe Lenovo za varnost WiFi-ja trenutno nadzoruje omrežje WiFi."
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Če želite ugotoviti, kako varna so omrežja okrog vas, uporabite detektor groženj.",
@@ -2542,7 +2542,6 @@
     "lenovoId": {
         "login": "Prijava",
         "logout": "Odjava",
-        "loggingOut": "Odjavljanje...",
         "unlockExclusives": "Odklenite ekskluzivne ponudbe",
         "user": "Uporabnik",
         "welcomeText1": "Danes ste videti polni energije, {{firstName}}!",
@@ -2587,7 +2586,7 @@
     "faq": {
         "footer": {
             "title": "Ne najdete, kar iščete?",
-            "description": "Potrebujete dodatno podporo? Vabimo vas, da se obrnite na nas na te načine:",
+            "description": "POTREBUJE DODATNO PODPORO? Ne oklevajte, da nas kontaktirate:",
             "body": "Skupnost Lenovo",
             "button": "Pojdi na forum"
         },
@@ -2797,7 +2796,7 @@
         },
         "question4": {
             "title": "Preverjanje uporabe baterije računalnika",
-            "description": "<div class='faqInFs4Fb'>    Preverjanje uporabe baterije računalnika</div><hr><h3 class='faqInFs25FbP10'>Znamenje težav</h3><p>Sistem Windows 10 vključuje nov zaslon <strong>Poraba energije baterije</strong>, na katerem so prikazani največji porabniki energije baterije prenosnega računalnika. To pomeni, da si lahko natančno ogledate, kateri programi – t.i. univerzalni programi tako za namizne računalnike kot sistema Windows 10 – porabljajo preveč energije.</p><h3 class='faqInFs25FbP10'>Blagovne znamke, na katere to vpliva</h3><ul>    <li>Prenosni in namizni računalniki Lenovo</li></ul><h3 class='faqInFs25FbP10'>Sistemi, na katere to vpliva</h3><ul>    <li>Vse</li></ul><h3 class='faqInFs25FbP10'>Operacijski sistem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Rešitev</h3><p>Ta funkcija je novost v sistemu Windows 10 in jo je treba najprej poiskati, saj ni vključena v običajnem pogledu <strong>nadzorne plošče</strong>. Funkcijo najdete v novem programu <strong>Nastavitve</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Poiščite zaslon »Poraba energije baterije«</h3></p><p>1. V meniju Start kliknite ali tapnite možnost <strong>Nastavitve</strong></p><p>2. V oknu <strong>Nastavitve</strong> izberite <strong>Sistem</strong> in nato še <strong>Ohranjevalnik baterije.<br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Če si želite ogledati več podrobnosti, pod naslovom kliknite ali tapnite povezavo <strong>Poraba energije baterije</strong>. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizirajte porabo energije</h3><p>4. Na zaslonu »Poraba energije baterije« lahko izbirate med prikazom porabe energije baterije v zadnjih 24 ali 48 urah ali v zadnjem tednu</p><p>5. Poraba je izražena v odstotkih za razdelke <strong>Sistem</strong>, <strong>Zaslon</strong> in <strong>Wi-Fi</strong>. Prikazano je, koliko energije baterije so porabili sistemski procesi in zaslon.</p><p>6. Možnosti <strong>V uporabi</strong> in <strong>V ozadju</strong> prikazujeta primerjavo med porabo energije programov, ki jih uporabljate, in programov, ki se izvajajo v ozadju.</p><p>7. Če programi porabljajo energijo v ozadju, lahko kliknete ali tapnete povezavo <strong>Spremenite nastavitve izvajanja programov v ozadju</strong> in nastavite, naj se posamezni programi ne izvajajo v ozadju. To velja samo za univerzalne programe sistema Windows 10.</p><p>8. Če se pomaknete navzdol, si lahko ogledate seznam programov, ki je najuporabnejši del te funkcije. Prikaže se seznam programov, ki so v izbranem obdobju porabljale energijo baterije, ob vsakem od njih pa je naveden odstotek porabe</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Preverjanje uporabe baterije računalnika</div><hr><h3 class='faqInFs25FbP10'>Znamenje težav</h3><p>Sistem Windows 10 vključuje nov zaslon <strong>Poraba energije baterije</strong>, na katerem so prikazani največji porabniki energije baterije prenosnega računalnika. To pomeni, da si lahko natančno ogledate, kateri programi – t.i. univerzalni programi tako za namizne računalnike kot sistema Windows 10 – porabljajo preveč energije.</p><h3 class='faqInFs25FbP10'>Blagovne znamke, na katere to vpliva</h3><ul>    <li>Prenosni in namizni računalniki Lenovo</li></ul><h3 class='faqInFs25FbP10'>Sistemi, na katere to vpliva</h3><ul>    <li>Vse</li></ul><h3 class='faqInFs25FbP10'>Operacijski sistem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Rešitev</h3><p>Ta funkcija je novost v sistemu Windows 10 in jo je treba najprej poiskati, saj ni vključena v običajnem pogledu <strong>nadzorne plošče</strong>. Funkcijo najdete v novem programu <strong>Nastavitve</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Poiščite zaslon »Poraba energije baterije«</h3></p><p>1. V meniju Start kliknite ali tapnite možnost <strong>Nastavitve</strong></p><p>2. V oknu <strong>Nastavitve</strong> izberite <strong>Sistem</strong> in nato še <strong>Ohranjevalnik baterije</strong>.<br /> <br /> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.png' /></p><p>3. Če si želite ogledati več podrobnosti, pod naslovom kliknite ali tapnite povezavo <strong>Poraba energije baterije</strong>. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizirajte porabo energije</h3><p>4. Na zaslonu »Poraba energije baterije« lahko izbirate med prikazom porabe energije baterije v zadnjih 24 ali 48 urah ali v zadnjem tednu</p><p>5. Poraba je izražena v odstotkih za razdelke <strong>Sistem</strong>, <strong>Zaslon</strong> in <strong>Wi-Fi</strong>. Prikazano je, koliko energije baterije so porabili sistemski procesi in zaslon.</p><p>6. Možnosti <strong>V uporabi</strong> in <strong>V ozadju</strong> prikazujeta primerjavo med porabo energije programov, ki jih uporabljate, in programov, ki se izvajajo v ozadju.</p><p>7. Če programi porabljajo energijo v ozadju, lahko kliknete ali tapnete povezavo <strong>Spremenite nastavitve izvajanja programov v ozadju</strong> in nastavite, naj se posamezni programi ne izvajajo v ozadju. To velja samo za univerzalne programe sistema Windows 10.</p><p>8. Če se pomaknete navzdol, si lahko ogledate seznam programov, ki je najuporabnejši del te funkcije. Prikaže se seznam programov, ki so v izbranem obdobju porabljale energijo baterije, ob vsakem od njih pa je naveden odstotek porabe</p><p><img src='./../../../assets/images/qa/4.2.png' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2865,7 +2864,7 @@
         },
         "question5": {
             "title": "Uporaba računalnika kot tabličnega računalnika",
-            "description": "<div class='faqInFs4Fb'>    Uporaba računalnika kot tabličnega računalnika</div><hr><p>S tabličnim načinom lahko naredite sistem Windows intuitivnejši in preprostejši za uporabo, če ima naprava vgrajen zaslon na dotik.</p><h3 class='faqInFs25FbP10'>Uporaba tabličnega načina</h3><p>Če želite vklopiti tablični način, v opravilni vrstici izberite <strong>Središče za opravila</strong> in nato še <strong>Tablični način</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Opomba</h3><p>Če želite izvedeti, ali lahko vaša naprava samodejno vklopi tablični način, jo poiščite na spletnem mestu proizvajalca. Možnost uporabe te funkcije je odvisna od strojne opreme, nameščenega gonilnika in proizvajalčeve nastavitve naprave. </p><p> </p><p>V tabličnem načinu se programi odpirajo v celozaslonskem pogledu, da imate na voljo večjo delovno površino. Program zaprete tako, da ga povlečete na dno zaslona.</p><p> </p><h3 class='faqInFs25FbP10'>Namig</h3><p>Ko je računalnik v tabličnem načinu, je opravilna vrstica prikazana. Če pa želite imeti večjo delovno površino, jo lahko po želji skrijete. Izberite gumb <strong>Start</strong>, odprite <strong>Nastavitve</strong> > <strong>Sistem</strong> > <strong>Tablični način</strong> in vklopite možnost <strong>Samodejno skrij opravilno vrstico v tabličnem načinu</strong>. Če želite prikazati skrito opravilno vrstico, s prstom povlecite z dna zaslona navzgor ali pa miško zadržite na dnu zaslona.</p><h3 class='faqInFs25FbP10'>Hkratna uporaba dveh aplikacij</h3><p>Če želite v tabličnem načinu dva programa uporabljati enega ob drugem, povlecite odprti program navzdol in na stran. S tem program zataknete za rob, ob njem pa se prikažejo morebitni preostali odprti programi.</p><p>V tem pogledu lahko storite tudi to:</p><ul>    <li>Z vlečenjem skupne stranice lahko spreminjate velikost obeh za rob zataknjenih programov hkrati.</li>    <li>V pogledu opravil lahko odprete nov program: v opravilni vrstici izberite <strong>Pogled opravil</strong> in želeni program, ki ga nato povlečete na eno stran, da se zatakne ob rob razdeljenega zaslona.</li>    <li>Gumb za vračanje nazaj v opravilni vrstici lahko uporabite za pomik nazaj v programu ali odpiranje predhodno uporabljenega programa.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Uporaba računalnika kot tabličnega računalnika</div><hr><p>S tabličnim načinom lahko naredite sistem Windows intuitivnejši in preprostejši za uporabo, če ima naprava vgrajen zaslon na dotik.</p><h3 class='faqInFs25FbP10'>Uporaba tabličnega načina</h3><p>Če želite vklopiti tablični način, v opravilni vrstici izberite <strong>Središče za opravila</strong> in nato še <strong>Tablični način</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>Opomba</h3><p>Če želite izvedeti, ali lahko vaša naprava samodejno vklopi tablični način, jo poiščite na spletnem mestu proizvajalca. Možnost uporabe te funkcije je odvisna od strojne opreme, nameščenega gonilnika in proizvajalčeve nastavitve naprave. </p><p> </p><p>V tabličnem načinu se programi odpirajo v celozaslonskem pogledu, da imate na voljo večjo delovno površino. Program zaprete tako, da ga povlečete na dno zaslona.</p><p> </p><h3 class='faqInFs25FbP10'>Namig</h3><p>Ko je računalnik v tabličnem načinu, je opravilna vrstica prikazana. Če pa želite imeti večjo delovno površino, jo lahko po želji skrijete. Izberite gumb <strong>Start</strong>, odprite <strong>Nastavitve</strong> > <strong>Sistem</strong> > <strong>Tablični način</strong> in vklopite možnost <strong>Samodejno skrij opravilno vrstico v tabličnem načinu</strong>. Če želite prikazati skrito opravilno vrstico, s prstom povlecite z dna zaslona navzgor ali pa miško zadržite na dnu zaslona.</p><h3 class='faqInFs25FbP10'>Hkratna uporaba dveh aplikacij</h3><p>Če želite v tabličnem načinu dva programa uporabljati enega ob drugem, povlecite odprti program navzdol in na stran. S tem program zataknete za rob, ob njem pa se prikažejo morebitni preostali odprti programi.</p><p>V tem pogledu lahko storite tudi to:</p><ul>    <li>Z vlečenjem skupne stranice lahko spreminjate velikost obeh za rob zataknjenih programov hkrati.</li>    <li>V pogledu opravil lahko odprete nov program: v opravilni vrstici izberite <strong>Pogled opravil</strong> in želeni program, ki ga nato povlečete na eno stran, da se zatakne ob rob razdeljenega zaslona.</li>    <li>Gumb za vračanje nazaj v opravilni vrstici lahko uporabite za pomik nazaj v programu ali odpiranje predhodno uporabljenega programa.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2975,7 +2974,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Nastavitve Učinkovitosti Delovanja",
+        "preferenceSettings": "Nastavitve učinkovitosti delovanja",
         "settings": "Nastavitve",
         "settingsDescription": "Na strani za določanje nastavitev lahko vklopite/izklopite obvestila o sporočilih na podlagi kategorij sporočila orodja Vantage. Pri tem upoštevajte, da lahko po potrebi občasno prejmete nujna sistemska sporočila orodja Vantage, tudi če so vse kategorije sporočil onemogočene.",
         "messagesInLenovoVantage": "Sporočila v programu Lenovo Vantage",
@@ -3127,7 +3126,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "Gumb je onemogočen, če shranjevalne naprave ne podpirajo te funkcije, če poteka nalaganje informacij o strojni opremi ali če se izvaja pregled strojne opreme."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Prenos profesionalnih diagnostičnih orodij",
@@ -3164,8 +3163,7 @@
             "storage": "Pomnilnik",
             "wireless": "Brezžično"
         },
-        "warningMessage": "Upoštevajte, da bodo preskusi preklicani, če sistem preide v stanje spanja ali mirovanja",
-        "refreshMessage": "Osvežitev lahko traja nekaj časa, saj se morajo vse komponente znova naložiti"
+        "warningMessage": "Upoštevajte, da bodo preskusi preklicani, če sistem preide v stanje spanja ali mirovanja"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3334,24 +3332,7 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
-            "tunepc": {
-                "accumulatedjunkscannedareas": {
-                    "OptimizingWindowssettings": "Optimizing Windows settings",
-                    "Preventingnon-essential": "Preventing non-essential service from running",
-                    "Applyingregistry": "Applying registry and shortcut fixes",
-                    "Removingunnecessary": "Removing unnecessary residual fies",
-                    "Scanningandfixing": "Scanning and fixing critical services",
-                    "RemovingOS": "Removing OS and application log files"
-                }
-            },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week"
+            }
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3436,11 +3417,10 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period:",
-            "subscriptionPeriod": "Subscription period:",
-            "expired": "Expired",
-            "remainingDay": "{{remainingDay}} days remaining",
-            "lenovoId": "Lenovo ID:",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3506,6 +3486,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
+            "privacy": "Zdaj lahko ugotovite, ali so spletni sledilci brez vaše vednosti kršili ali uporabljali vaše zasebne podatke.",
             "security": "Ali veste? Čeprav nimate nameščene protivirusne programske opreme, še vedno zagotavljamo osnovno varnostno zaščito za vašo napravo.",
             "connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena."
         }
@@ -3561,8 +3542,5 @@
             "subtitle2": "Računalniki »vse-v-enem«: učinkovito",
             "body2": "Računalniki »vse-v-enem« s procesorji Intel® Core™ 9. generacije vam nudijo vso zmogljivost namiznega računalnika, vse pa je zapakirano v eleganten zaslon za manj nereda, varnosti, ki temelji na strojni opremi, in z zaslonom z visoko ločljivostjo."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }

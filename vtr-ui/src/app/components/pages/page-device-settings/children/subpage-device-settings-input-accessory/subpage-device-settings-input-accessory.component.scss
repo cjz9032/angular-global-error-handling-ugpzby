@@ -14,8 +14,7 @@
 	}
 
 	.keys-row {
-		margin-top: 1.3rem;
-		margin-left: 1.4rem;
+		margin-top: 13px;
 
 		.caption-tittle {
 			color: $grey_dark;
@@ -252,11 +251,10 @@
 		p {
 			font-size: $fontsize_xs;
 			color: $shade_blue;
-			font-weight: $weight_light;
 		}
 		&.note {
 			margin-top: 1rem;
-			margin-left: 3rem;
+			margin-left: 2rem;
 		}
 	}
 
@@ -285,7 +283,7 @@
 	}
 
 	.adjust-margin {
-		margin-left: 4.5rem !important;
+		margin-left: 4rem !important;
 		padding-left: 0;
 	}
 

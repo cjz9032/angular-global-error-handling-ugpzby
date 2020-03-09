@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-ui-circle-radio-with-checkbox',
@@ -22,7 +21,6 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	@Input() radioGroup: any;
 	@Input() customIcon = '';
 	@Input() hideIcon = false;
-	@Input() processLabel = true;
 	@Output() optionChange: EventEmitter<any> = new EventEmitter();
 	// These following instance variables added for Keyboard navigation to radio button.
 	keyCode = Object.freeze({
@@ -40,9 +38,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	lastRadioButton: any;
 	radioButtons: Array<any> = [];
 	@ViewChild('radioButton', { static: false }) radioButton: ElementRef<HTMLElement>;
-	selectedRadioButton: any;
-	noRadioButtonSelected: boolean;
-	constructor(private translate: TranslateService, private logger: LoggerService) {
+	constructor(private translate: TranslateService) {
 
 	}
 
@@ -74,66 +70,70 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 		}
 	}
 
-	/* checkOnFocus(event, radio) {
-		 this.setRadioButtons();
+	checkOnFocus(event, radio) {
+		this.setRadioButtons();
 		if (!radio.checked) {
 			radio.click();
 		}
-	} */
+	}
 
 	radioKBNavigation(event, radio) {
+
 		this.setRadioButtons();
+		console.log(event.keyCode);
+
 		switch (event.keyCode) {
 			case this.keyCode.TAB:
-				// this.checkOnFocus(event, radio);
+				this.checkOnFocus(event, radio);
 				break;
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
-				this.setChecked(this.radioButton, true);
+				this.setChecked(this.radioButton);
 				break;
+
 			case this.keyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);
+
 				break;
+
 			case this.keyCode.DOWN:
 				this.setCheckedToNextItem(this.radioButton);
+
 				break;
+
 			case this.keyCode.LEFT:
 				this.setCheckedToPreviousItem(this.radioButton);
+
 				break;
+
 			case this.keyCode.RIGHT:
 				this.setCheckedToNextItem(this.radioButton);
+
 				break;
+
 			default:
 				break;
 		}
 
 	}
 
-	setChecked(currentItem, selectItem: boolean) {
-		let currentRadio = [];
-		try {
-			currentRadio = currentItem.querySelectorAll('input[type="radio"]');
-		} catch (error) {
-			currentRadio = currentItem.nativeElement.querySelectorAll('input[type="radio"]');
-		}
+	setChecked(currentItem) {
 
-		if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
-			currentRadio[0].click();
-			this.radioButtons.forEach(radioButton => {
-				radioButton.setAttribute('aria-checked', 'false');
-			});
-			currentItem.setAttribute('aria-checked', 'true');
-			this.setRadioTabIndex(currentItem);
-		}
-
-		currentItem.focus();
-	}
-
-	private setRadioTabIndex(currentItem) {
 		this.radioButtons.forEach(radioButton => {
+			radioButton.setAttribute('aria-checked', 'false');
 			radioButton.tabIndex = -1; // the unchecked item should also be tabbable
 		});
+		/* for (let i = 0; i < this.radioButtons.length; i++) {
+			const rb = this.radioButtons[i];
+			rb.setAttribute('aria-checked', 'false');
+			rb.tabIndex = -1;
+
+
+		} */
+		currentItem.setAttribute('aria-checked', 'true');
 		currentItem.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
+		currentItem.focus();
+
 	}
 
 	setCheckedToPreviousItem(currentItem) {
@@ -141,10 +141,10 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			let index;
 
 			if (currentItem.nativeElement === this.firstRadioButton) {
-				this.setChecked(this.lastRadioButton, true);
+				this.setChecked(this.lastRadioButton);
 			} else {
 				index = this.radioButtons.indexOf(currentItem.nativeElement);
-				this.setChecked(this.radioButtons[index - 1], true);
+				this.setChecked(this.radioButtons[index - 1]);
 			}
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
@@ -157,10 +157,10 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			let index;
 
 			if (currentItem.nativeElement === this.lastRadioButton) {
-				this.setChecked(this.firstRadioButton, true);
+				this.setChecked(this.firstRadioButton);
 			} else {
 				index = this.radioButtons.indexOf(currentItem.nativeElement);
-				this.setChecked(this.radioButtons[index + 1], true);
+				this.setChecked(this.radioButtons[index + 1]);
 			}
 
 		} catch (error) {

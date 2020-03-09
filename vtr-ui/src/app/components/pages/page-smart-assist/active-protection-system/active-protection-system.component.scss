@@ -17,24 +17,23 @@
 		font-size: $fontsize_xs;
 		color: $purple_navy;
 		font-weight: $weight_light;
-		padding-left: 1rem;
 	}
 	.switch {
 		.caption {
 			font-size: $fontsize_xs;
-			color: $grey_dark;
+			color: $purple_navy;
 			font-weight: $weight_light;
 		}
 	}
 	.slider {
-		padding: 0 3rem 0 3rem;
+		padding: 0 3rem 0 2rem;
 	}
 	.checkbox {
 		padding: 0 3rem 0 2rem;
 	}
 	.dropdown {
 		margin-top: 1.5rem;
-		padding-left: 3rem;
+		padding: 0 2rem;
 		section {
 			margin-bottom: 3rem;
 			padding: 0 2rem 0 0;
@@ -42,6 +41,7 @@
 				font-size: 1.2rem;
 				font-weight: 600;
 				color: $main_shade;
+				padding-left: 0.3rem;
 			}
 		}
 		.suspend-now-box {
@@ -74,7 +74,6 @@
 .aps-checkbox {
 	margin: 1rem 0rem 1rem 1.5rem;
 	font-size: $fontsize_xs;
-	font-weight: $weight_light;
 	padding-left: 5rem;
 }
 

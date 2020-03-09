@@ -241,17 +241,17 @@ describe('NetworkboostAddAppsComponent', () => {
 	})
 	);
 
-	// it(
-	// 	'Networkboost added apps list',
-	// 	fakeAsync(() => {
-	// 		const addedApps = 'google chrome';
-	// 		component.addedApps = 3;
-	// 		gamingNetworkBoostMock.addProcessToNetworkBoost.and.returnValue(Promise.resolve());
-	// 		component.addAppToList(addedApps);
-	// 		tick(20);
-	// 		expect(component.addedApps).toBeDefined();
-	// 	})
-	// );
+	it(
+		'Networkboost added apps list',
+		fakeAsync(() => {
+			const addedApps = 'google chrome';
+			component.addedApps = 3;
+			gamingNetworkBoostMock.addProcessToNetworkBoost.and.returnValue(Promise.resolve());
+			component.addAppToList(addedApps);
+			tick(20);
+			expect(component.addedApps).toBeDefined();
+		})
+	);
 
 	it(
 		'Networkboost remove  apps list',

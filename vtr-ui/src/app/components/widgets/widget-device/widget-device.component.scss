@@ -21,8 +21,6 @@
 		}
 		.device-info {
 			flex-grow: 2;
-			max-width: 65%;
-			padding-right: 1rem;
 		}
 		.device-image {
 			display: flex;
@@ -34,16 +32,19 @@
 
 			}
 			.circleimage {
-				width: 22.5rem;
+				@media #{$breakpoint_lg} {
+					width: 200px;
+
+				}
 			}
 		}
 		.family {
 			color: $main_dark;
 			font-size: $fontsize_xl2;
-			// overflow: hidden;
-			// text-overflow: ellipsis;
-			// white-space: nowrap;
-			word-break: break-all;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			max-width: 95%;
 			font-weight: $weight_light;
 		}
 	}
@@ -100,14 +101,10 @@
 				}
 
 				.detail {
-					color: $charcoal;
+					color: $shade_blue;
 					/*  &.highlight {
 						color: $shade_darkest;
 					} */
-					.rtl {
-						display: flex;
-						flex-direction: row-reverse;
-					}
 				}
 			}
 			&.bad {
@@ -155,36 +152,38 @@
 			}
 			.status-content {
 				flex-grow: 8;
-				// @media #{$breakpoint_xl} {
-				// 	flex-direction: column;
-				// 	flex-grow: 0;
-				// 	width: 100%;
+				@media #{$breakpoint_xl} {
+					flex-direction: column;
+					flex-grow: 0;
+					width: 100%;
 
-				// }
-				// @media #{$breakpoint_lg} {
-				// 	flex-direction: row;
-				// }
-				// @media #{$breakpoint_md} {
-				// 	flex-direction: column;
-				// 	flex-grow: 0;
-				// }
-				// @media #{$breakpoint_sm} {
-				// 	flex-direction: column;
-				// 	flex-grow: 0;
-				// }
+				}
+				@media #{$breakpoint_lg} {
+					flex-direction: row;
+				}
+				@media #{$breakpoint_md} {
+					flex-direction: column;
+					flex-grow: 0;
+				}
+				@media #{$breakpoint_sm} {
+					flex-direction: column;
+					flex-grow: 0;
+				}
 			}
 			.title {
 				font-size: $fontsize_sm;
 				font-weight: $weight_light;
 				margin-bottom: 0.5rem;
 				color: $charcoal;
-				width: 60%;
-				// @media #{$breakpoint_md} {
-				// 	width: 100%;
-				// }
-				// @media #{$breakpoint_sm} {
-				// 	width: 100%;
-				// }
+				width: 70%;
+				@media #{$breakpoint_md} {
+					width: 100%;
+				}
+				@media #{$breakpoint_sm} {
+					width: 100%;
+				}
+
+
 				.systemDetails {
 					font-size: $fontsize_xs;
 					font-weight: $weight_light;
@@ -199,25 +198,17 @@
 				font-size: $fontsize_xs;
 				text-decoration: underline;
 				font-weight: $weight_light;
-				white-space: nowrap;
 				&.highlight {
 					text-decoration: underline;
 					&:hover {
 						text-decoration: underline;
 					}
-					.rtl {
-						display: flex;
-						flex-direction: row-reverse;
-					}
 				}
 				fa-icon {
-					margin-left: 0.3rem;
+					margin-left: .5em;
 					position: relative;
 					top: .1em;
 					color: $menu_hover;
-				}
-				.rtl {
-					margin-right: 0.4rem;
 				}
 			}
 			.arrow {

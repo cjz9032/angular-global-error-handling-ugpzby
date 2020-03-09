@@ -10,17 +10,12 @@ export class InputAccessoriesService {
 	private mouseAndTouchPad: any;
 	public isShellAvailable = false;
 	private voipHotkeys;
-	public keyboard;
 
 	constructor(shellService: VantageShellService) {
 		this.voipHotkeys = shellService.getVoipHotkeysObject();
 		this.keyboardManager = shellService.getKeyboardManagerObject();
 		this.mouseAndTouchPad = shellService.getMouseAndTouchPad();
-		this.keyboard = shellService.getKeyboardObject();
 		if (this.keyboardManager) {
-			this.isShellAvailable = true;
-		}
-		if (this.keyboard) {
 			this.isShellAvailable = true;
 		}
 	}

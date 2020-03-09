@@ -7,13 +7,11 @@
 	[showChildContent]="true"
 	[theme]="'white'"
 	[isLastChild]="false"
-	[switchId]="'inputAccessories-backlight-thinkpad'"
+	[switchId]="'inputAccessories-backlight'"
 	automationId="[backlight.title, backlight.description.base]">
-	<div class="row"
-		role="radiogroup"
-		tabindex="0"
-		aria-label="backlight mode list, select using arrow keys">
-		<vtr-ui-circle-radio-with-checkbox *ngFor="let mode of modes"
+	<div class="row">
+		<vtr-ui-circle-radio-with-checkbox
+			*ngFor="let mode of modes"
 			[theme]="'white'"
 			[radioId]="'backlightMode' + mode.value | removeSpace"
 			[group]="'backlight'"
@@ -21,7 +19,7 @@
 			[value]="mode.value"
 			[checked]="mode.value === currentMode"
 			(optionChange)="updateMode(mode.value)"
-			[textId]="'myDevice-settings-inputAccessories-backlight-thinkpad'">
+			[textId]="'myDevice-settings-inputAccessories-backlight'">
 		</vtr-ui-circle-radio-with-checkbox>
 	</div>
 </vtr-ui-row-switch>

@@ -68,6 +68,29 @@ ul.list-group {
 	}
 }
 
+.auto-set-checkbox {
+	margin-left: 1rem;
+	position: relative;
+	margin-bottom: 2rem;
+	input {
+		width: 1.5rem;
+		height: 1.5rem;
+		position: absolute;
+		top: 0.5rem;
+		margin-right: 0.5rem;
+		z-index: 0;
+		opacity: 1;
+		outline: 0;
+	}
+	label {
+		color: $shade_blue;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
+		text-align: left;
+		padding-left: 2rem;
+	}
+}
+
 .hyperlink-to-graph {
 	margin-left: 1rem;
 	font-size: $body;
@@ -77,12 +100,6 @@ ul.list-group {
 	margin-top: 3rem;
 	display: inline-block;
 	cursor: pointer;
-	@media #{$black-on-white} {
-		color: darkviolet;
-	}
-	@media #{$white-on-black} {
-		color: yellow;
-	}
 }
 .disabled {
 	margin-left: 1rem;
@@ -124,6 +141,29 @@ ul.list-group {
 			font-size: 1.4rem;
 			color: $shade_blue;
 		}
+	}
+}
+
+.auto-set-checkbox {
+	margin-left: 1rem;
+	position: relative;
+	margin-bottom: 2rem;
+	input {
+		width: 1.5rem;
+		height: 1.5rem;
+		position: absolute;
+		top: 0.5rem;
+		margin-right: 0.5rem;
+		z-index: 0;
+		opacity: 1;
+		outline: 0;
+	}
+	label {
+		color: $shade_darker;
+		font-size: 1.5rem;
+		font-weight: $weight_light;
+		text-align: left;
+		padding-left: 2rem;
 	}
 }
 

@@ -1,4 +1,4 @@
-@import "../../../app.theme";
+@import "../../../../app.theme";
 
 .vtr-ui-hardware-list-test {
 	padding-top: 1.5rem;
@@ -17,7 +17,7 @@
 				justify-content: space-between;
 				align-items: center;
 				padding: 0 1.5rem;
-				height: 5.25rem;
+				height: 5rem;
 
 				.rotate {
 					-webkit-transform: rotate(180deg);
@@ -62,7 +62,6 @@
 				.custom-control-label {
 					padding-left: 1rem;
 					cursor: pointer;
-					line-height: 1.35;
 
 					// rounded square-box background
 					&::before {
@@ -89,17 +88,16 @@
 			}
 
 			.subname {
-				font-size: $fontsize_xs;
 				font-weight: $weight_light !important;
 			}
 
 			.name-test {
-				font-size: $fontsize_xs;
+				font-size: 1.5rem;
 				font-weight: $weight_medium;
 			}
 
 			fa-icon {
-				font-size: $fontsize_xl;
+				font-size: 3.5rem;
 				cursor: pointer;
 			}
 		}

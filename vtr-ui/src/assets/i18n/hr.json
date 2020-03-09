@@ -85,16 +85,15 @@
                 "legionEdgeModal": {
                     "line1": "Postavke se uz Vantage Edge automatski prilagođavaju upotrebi. \n Maksimalne performanse tijekom igranja, dulje trajanje baterije tijekom drugih aktivnosti.",
                     "line2": "<b>Pregled upravljanja značajkama</b> <br> Neke značajke nisu dostupne na svim uređajima",
-                    "line3": "<b>Overclock CPU-a/GPU-a </b><br> Povećajte maksimalnu brzinu procesora",
-                    "line4": "<b>Overclock RAM-a </b><br> Povećajte maksimalnu brzinu memorije",
+                    "line3": "<b>Overclocking CPU-a </b><br> Povećajte maksimalnu brzinu procesora",
+                    "line4": "<b>Overclocking RAM-a </b><br> Povećajte maksimalnu brzinu memorije",
                     "line5": "<b>Ubrzanje mreže </b><br> Mrežnom prometu za igru koju igrate dodijelite viši prioritet",
                     "line6": "<b>Dolby </b><br> Prilagodite zvuk igranju pomoću tehnologije Dolby",
                     "line7": "<b>Hibridni način </b><br> Onemogućite napredne GPU postavke kada ne igrate da produžite trajanje baterije",
                     "line8": "<b>Brzo punjenje </b><br> Igrajte u pokretu uz brže punjenje baterije",
                     "line9": "<b>Zaključavanje dodirne pločice </b><br> Onemogućite dodirnu pločicu tijekom igranja da biste spriječili slučajne unose",
                     "line10": "<b>Automatsko zatvaranje </b><br> Prije igranja očistite procese koji nisu nužni za igranje da biste maksimizirali upotrebu dostupnih resursa sustava",
-                    "line11": "<b>Termički način rada </b><br> Postavite željeni profil uređaja za brzinu ventilatora i kontrolu hlađenja",
-                    "line12": "<b>Makro tipka </b><br> Prilagodite radnje tipkovnice u skladu s vašim stilom igranja"
+                    "line11": "<b>Termički način rada </b><br> Postavite željeni profil uređaja za brzinu ventilatora i kontrolu hlađenja"
                 },
                 "systemInfo": {
                     "systenTooltip": "Zadržite pokazivač na CPU/GPU/RAM i različitim pogonima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"
@@ -749,10 +748,11 @@
                 "sub2": "Zaštita od virusa",
                 "sub3": "Sigurnost WiFija",
                 "sub4": "Jačina lozinke",
-                "sub5": "Sigurnost VPN mreže",
-                "sub6": "Otisak prsta"
+                "sub5": "Zaštita na internetu",
+                "sub6": "Windows Hello"
             },
             "support": "Podrška",
+            "privacy": "Zaštita privatnosti",
             "beta": {
                 "title": "beta"
             },
@@ -762,9 +762,9 @@
             "title": "Savjetnik za sigurnost tvrtke",
             "subtitle": "PROVJERITE JE LI VAŠ UREĐAJ ZAŠTIĆEN.",
             "antiVirus": "Zaštita od virusa",
-            "wifi": "Sigurnost WiFija",
-            "pswdMgr": "Jačina Lozinke",
-            "vpn": "Sigurnost VPN Mreže",
+            "wifi": "Sigurnost WiFi mreže",
+            "pswdMgr": "Password Manager",
+            "vpn": "VPN",
             "enabled": "OMOGUĆENO",
             "disabled": "ONEMOGUĆENO",
             "partiallyProtected": "DJELOMIČNO ZAŠTIĆEN",
@@ -775,11 +775,9 @@
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTRIRAN",
             "notRegistered": "NIJE REGISTRIRAN",
-            "fingerPrint": "Otisak prsta",
+            "fingerPrint": "Fingerprint",
             "privacyPolicyAndTermsOfService": "<tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>",
-            "windowsHello": "Windows Hello",
-            "enrolled": "UPISAN",
-            "notEnrolled": "NIJE UPISAN"
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -810,6 +808,11 @@
         },
         "offline": {
             "connectToUseFeature": "Povežite se s internetom da biste koristili ovu značajku"
+        }
+    },
+    "privacy": {
+        "headerMain": {
+            "title": "Zaštita privatnosti"
         }
     },
     "tutorial": {
@@ -1236,7 +1239,7 @@
                     },
                     "airPlanePower": {
                         "title": "Način napajanja u zrakoplovu",
-                        "description": "Ova značajka omogućuje vam da koristite izmjeničnu utičnicu u zrakoplovu gdje vrijedi određeno ogranićenje snage. U ovom se načinu potrošnja energije vašeg računala smanjuje na sigurnu razinu ograničavanjem brzine napunjenosti baterije i performansi računala.",
+                        "description": "Kontrolom utroška energije sustava štitite naponsku utičnicu u zrakoplovu.Kada je omogućen način napajanja u zrakoplovu, računalo smanjuje potrošnju energije tako da ograničava brzinu punjenja baterije i performanse sustava.",
                         "checkBoxDesc": "Automatsko otkrivanje",
                         "note": "Ako je označeno Automatsko otkrivanje, računalo će automatski uključiti Način napajanja u zrakoplovu kada otkrije okruženje unutar zrakoplova i isključiti ga po napuštanju okruženja."
                     },
@@ -1269,7 +1272,7 @@
                             "ERROR_UNEXPECTED": "Neuspjeh: došlo je do neočekivane pogreške."
                         },
                         "popup": {
-                            "description1": "Postupak ponovnog postavljanja je sljedeći:<br>Potpuno napunite bateriju --> Bateriju ispraznite skoro do kraja --> Napunite bateriju skoro do kraja ili potpuno do kraja",
+                            "description1": "Postupak ponovnog postavljanja je sljedeći:<br>Potpuno napunite bateriju  -->  Potpuno ispraznite bateriju  -->  Potpuno napunite bateriju",
                             "description2": "Napomene: <br>1. Postupak može potrajati nekoliko sati. Izbjegavajte korištenje računala tijekom ovog postupka.<br>2. Zatvorite sve otvorene aplikacije i povežite računalo na napajanje izmjeničnom strujom.<br>3. Tijekom postupka je onemogućena funkcija praga punjenja baterije.",
                             "continue": "Nastavi",
                             "cancel": "Odustani",
@@ -1356,14 +1359,14 @@
                     "warningtip": "Odaberite barem jedan dan.",
                     "days": {
                         "shortName": {
-                            "sun": "ned",
-                            "mon": "pon",
-                            "tue": "uto",
-                            "wed": "sri",
-                            "thurs": "čet",
-                            "fri": "pet",
-                            "sat": "sub",
-                            "thu": "čet"
+                            "sun": "Nedjelja",
+                            "mon": "Ponedjeljak",
+                            "tue": "Utorak",
+                            "wed": "Srijeda",
+                            "thurs": "četvrtak",
+                            "fri": "Petak",
+                            "sat": "Subota",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Nedjelja",
@@ -1384,7 +1387,7 @@
                     "subTitle": "Zakažite raspored za svoje računalo",
                     "automaticMode": "Automatski način rada",
                     "manualMode": "Ručni način rada",
-                    "subNote": "Računalo je zakazano za brži nastavak na temelju upotrebe.",
+                    "subNote": "Na vašem je računalu predviđeno moderno stanje pripravnosti na temelju vaše upotrebe.",
                     "graph": {
                         "graph1Tittle": "Upotreba ovog računala",
                         "graph2Tittle": "Primijenjeno aktivno vrijeme",
@@ -1423,8 +1426,7 @@
                     },
                     "description2": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja vremena brzog pokretanja tijekom rada s većim opterećenjem.",
                     "subTitle2": "Postavite vrijeme kada obično koristite računalo",
-                    "oldTooltipText": "Kad je omogućeno Pametno stanje pripravnosti, vaše se računalo prebacuje na Suvremeno stanje pripravnosti prije zakazanog vremena POKRETANJA i prelazi u hibernaciju nakon što je određeno vrijeme neaktivno na baterijskom napajanju. To je vrijeme optimizirano na temelju rasporeda koji ste postavili. Računalo će se prebaciti iz hibernacije u moderno stanje mirovanja samo tijekom zakazanih dana i neće se prebaciti kada nije aktivno tijekom uzastopnih zakazanih dana.",
-                    "sectionTitle": "Postavke pripravnosti"
+                    "oldTooltipText": "Kad je omogućeno Pametno stanje pripravnosti, vaše se računalo prebacuje na Suvremeno stanje pripravnosti prije zakazanog vremena POKRETANJA i prelazi u hibernaciju nakon što je određeno vrijeme neaktivno na baterijskom napajanju. To je vrijeme optimizirano na temelju rasporeda koji ste postavili. Računalo će se prebaciti iz hibernacije u moderno stanje mirovanja samo tijekom zakazanih dana i neće se prebaciti kada nije aktivno tijekom uzastopnih zakazanih dana."
                 }
             },
             "audio": {
@@ -1528,8 +1530,7 @@
                         "note": {
                             "title": "Napomena",
                             "description": "Lenovo Vantage mora pristupiti informacijama o lokaciji kako bi izračunao vrijeme zalaska i izlaska sunca u vašoj regiji."
-                        },
-                        "tips": "Pokrenite Windows Update ili ručno instalirajte grafički upravljački program da biste oporavili način Eye Care"
+                        }
                     },
                     "dispColorTemp": {
                         "title": "Temperatura boje prikaza",
@@ -1574,14 +1575,14 @@
                         "displayDimmer": "ZATAMNJIVANJE ZASLONA"
                     },
                     "displayPriority": {
-                        "title": "Kontrola prioriteta prikaza",
-                        "description": "Vaš uređaj podržava maksimalni broj vanjskih zaslona. Pri povezivanju više od jednog zaslona pomoću tih dodatnih metoda, radit će samo jedan prioritetni.<br/>U nastavku odaberite koji dodatni način prikaza prikazivanja prioriteta:",
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Spajanje",
-                            "usb_c_dp": "USB tip C",
+                            "dock": "Docking",
+                            "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Opcionalni modul"
+                            "cartridge": "Optional Module"
                         }
                     }
                 },
@@ -1611,8 +1612,7 @@
                         "caption": "Ova značajka zamagljuje pozadinu kada se koristite kamerom za videopoziv ili fotografiranje. Možete odabrati različite efekte iz odabira u nastavku.",
                         "blurMode": "Način zamagljenja",
                         "comicMode": "Način stripa",
-                        "sketchMode": "Način skice",
-                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
+                        "sketchMode": "Način skice"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERA SE KORISTI",
@@ -1752,12 +1752,12 @@
                     "title": "Zamjena tipki Fn i Ctrl",
                     "description": "Ako obično pritisnete tipku Fn kada ste namjeravali pritisnuti tipku Ctrl, možete zamijeniti funkcije te dvije tipke.",
                     "restartNote": "Zamjena funkcije dvije tipke zahtijeva ponovno pokretanje, jeste li sigurni da želite ponovno pokrenuti računalo?",
-                    "title2": "Fn funkcionira kao Ctrl za najčešće korištene kombinacije tipki",
-                    "description2": "Tipka Fn funkcionira kao tipka Ctrl za najčešće korištene kombinacije tipki. Funkcija tipke Ctrl neće se promijeniti.",
-                    "featureNote": "Ova funkcija i tipka Fn i tipka Ctrl za zamjenu tipki ne mogu biti uključene istovremeno. Ako je jedno na drugom, automatski će se isključiti.",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Tipke Fn",
+                            "heading": "Fn Keys",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1773,7 +1773,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Tipke Ctrl",
+                            "heading": "Ctrl Keys",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1789,20 +1789,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Postupak",
-                            "action1": "Odaberi sve",
-                            "action2": "Kopija",
-                            "action3": "Dodaj web-stranicu među favorite",
-                            "action4": "Pretraživanje",
-                            "action5": "Traženje i zamjena u programu Microsoft Word",
-                            "action6": "Poravnaj lijevo i desno u programu Microsoft Word",
-                            "action7": "Zatvori (u podržanoj aplikaciji)",
-                            "action8": "Dodaj podvlaku",
-                            "action9": "Zalijepi",
-                            "action10": "Zatvori (po aplikaciji)",
-                            "action11": "Izreži",
-                            "action12": "Ponovi poništeno",
-                            "action13": "Poništi"
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
                         }
                     }
                 },
@@ -1813,19 +1813,19 @@
                     "control3": "TRACKPOINT KONTROLE",
                     "less": "MANJE"
                 },
-                "backlight": {
-                    "title": "Pozadinsko osvjetljenje tipkovnice",
-                    "description": {
-                        "base": "Aktivirajte pozadinsko osvjetljenje tipkovnice kako biste olakšali tipkanje u uvjetima tamnog ili slabog svjetla. Također možete promijeniti postavke pozadinskog osvjetljenja tipkovnice pritiskom na tipku Fn+razmak.",
-                        "auto": "Aktivirajte pozadinsko osvjetljenje tipkovnice kako biste olakšali tipkanje u uvjetima tamnog ili slabog svjetla. Postavke pozadinskog osvjetljenja možete promijeniti pritiskom tipke Fn+ili je postavite na \"Auto\". Mogućnost \"Auto\" automatski podešava pozadinsko osvjetljenje tipkovnice prema ambijentalnom svjetlu."
-                    },
-                    "level": {
-                        "auto": "Automatski",
-                        "low": "Nisko",
-                        "high": "Visoko",
-                        "off": "Isključeno"
-                    }
-                }
+				"backlight": {
+					"title": "Pozadinsko osvjetljenje tipkovnice",
+					"description": {
+						"base": "Aktivirajte pozadinsko osvjetljenje tipkovnice kako biste olakšali tipkanje u uvjetima tamnog ili slabog svjetla. Također možete promijeniti postavke pozadinskog osvjetljenja tipkovnice pritiskom na tipku Fn+razmak.",
+						"auto": "Aktivirajte pozadinsko osvjetljenje tipkovnice kako biste olakšali tipkanje u uvjetima tamnog ili slabog svjetla. Postavke pozadinskog osvjetljenja možete promijeniti pritiskom tipke Fn+ili je postavite na \"Auto\". Mogućnost \"Auto\" automatski podešava pozadinsko osvjetljenje tipkovnice prema ambijentalnom svjetlu."
+					},
+					"level": {
+						"auto": "Automatski",
+						"low": "Nisko",
+						"high": "Visoko",
+						"off": "Isključeno"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -2216,8 +2216,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Da biste osigurali bolju ponudu, zaštitite svoj uređaj, ostanite s",
-            "notFully": "Da biste naučili kako bolje zaštititi svoj uređaj, započnite s",
+            "fully": "U potpunosti zaštićen",
+            "notFully": "Nije u potpunosti zaštićen",
             "security101": "SAVJETNIK ZA SIGURNOST TVRTKE 101",
             "firewall": "Vatrozid",
             "pwdHealth": "Jačina lozinke",
@@ -2358,7 +2358,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Sigurnost WiFija",
+                "title": "WiFi i povezana sigurnost doma",
                 "back": "NATRAG"
             },
             "container": {
@@ -2374,7 +2374,7 @@
                 "showless": "Pokaži manje",
                 "button": "Omogući sigurnost WiFi mreže",
                 "disableDescribe": "Sigurnost WiFija tvrtke Lenovo napredna je softverska usluga u oblaku koja vašem uređaju pojednostavnjuje razlikovanje sigurnih bežičnih veza od potencijalno zlonamjernih.",
-                "enabledDescribe": "Lenovo WiFi Security trenutno nadgleda vašu WiFi mrežu."
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Upotrijebite alat za lociranje prijetnji da biste utvrdili sigurnost mreža koje su vam dostupne.",
@@ -2542,7 +2542,6 @@
     "lenovoId": {
         "login": "Prijava",
         "logout": "Odjava",
-        "loggingOut": "Odjavljivanje...",
         "unlockExclusives": "Otključaj ekskluzivne stavke",
         "user": "Korisnik",
         "welcomeText1": "Danas smo puni energije, {{firstName}}!",
@@ -2587,7 +2586,7 @@
     "faq": {
         "footer": {
             "title": "Niste pronašli ono što tražite?",
-            "description": "Trebate dodatnu podršku? Slobodno nam se obratite putem:",
+            "description": "POTREBNA DODATNA PODRŠKA? NE ODBIJETI KONTAKTIRAJTE NAS:",
             "body": "Zajednica tvrtke Lenovo",
             "button": "Idite na forum"
         },
@@ -2797,7 +2796,7 @@
         },
         "question4": {
             "title": "Provjerite korištenje baterije uređaja",
-            "description": "<div class='faqInFs4Fb'>    Provjerite korištenje baterije uređaja</div><hr><h3 class='faqInFs25FbP10'>Simptom</h3><p>Windows 10 obuhvaća novi zaslon „<strong>Battery Use”</strong> (Korištenje baterije) koji vam pokazuje što troši energiju prijenosnog računala. To znači da će vam točno reći koje aplikacije, aplikacije radne ploče i „univerzalne” aplikacije sustava Windows 10, upotrebljavaju previše energije.</p><h3 class='faqInFs25FbP10'>Zahvaćene robne marke</h3><ul>    <li>Lenovo prijenosna računala, stolna računala</li></ul><h3 class='faqInFs25FbP10'>Zahvaćeni sustavi</h3><ul>    <li>Sve</li></ul><h3 class='faqInFs25FbP10'>Operacijski sustav</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Rješenje</h3><p>Ova je značajka nova u sustavu Windows 10, a trebamo je najprije pronaći jer nije pohranjena u vašem standardnom prikazu <strong>upravljačke ploče</strong>, ta se značajka se nalazi u novoj aplikaciji <strong> „Settings”</strong> (Postavke)</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Pronađite zaslon za upotrebu baterije</h3></p><p>1. Kliknite ili dodirnite <strong>„Settings</strong>” (Postavke) u izborniku Start</p><p>2. U <strong>Settings </strong> (Postavke) odaberite <strong>„System”</strong> (Sustav), a zatim odaberite <strong>„Battery saver” (Ušteda baterije).<br /></strong><strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Kliknite ili dodirnite <strong>„Battery use”</strong> (Korištenje baterije) ispod ovog naslova kako biste pogledali više pojedinosti. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizirajte potrošnju energije</h3><p>4. Možete promijeniti zaslon za korištenje baterije kako bi se prikazala potrošnja baterije od zadnja 24 sata do 48 sati ili posljednja od prošlog tjedna</p><p>5. Postotci za <strong>„System”</strong> (Sustav), „<strong>Display</strong>” (Prikaz) i „<strong>Wi-Fi”</strong>. To pokazuje koliko je napajanja baterije korišteno u procesima sustava, zaslonu,</p><p>6. Opcije <strong>„In use”</strong> (U upotrebi) i <strong>„Background”</strong> (Pozadina) pokazuju koliko energije troše aplikacije dok ih upotrebljavate u usporedbi s aplikacijama koje se izvode u pozadini.</p><p>7. Ako aplikacije u pozadini troše napajanje, možete kliknuti ili dodirnuti poveznicu <strong>„Change background app settings”</strong> (Promjena postavki pozadinskih aplikacija) i konfigurirati aplikacije da ne rade u pozadini. Ovo funkcionira samo za univerzalne aplikacije sustava Windows 10.</p><p>8. Pomaknite se prema dolje i vidjet ćete popis aplikacija, što se smatra najkorisnijim dijelom ove značajke. Prikazat će se popis aplikacija koje su u tom razdoblju trošile napajanje baterije i prikazat će se postotak napajanja koji je svaka aplikacija potrošila</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Provjerite korištenje baterije uređaja</div><hr><h3 class='faqInFs25FbP10'>Simptom</h3><p>Windows 10 obuhvaća novi zaslon „<strong>Battery Use”</strong> (Korištenje baterije) koji vam pokazuje što troši energiju prijenosnog računala. To znači da će vam točno reći koje aplikacije, aplikacije radne ploče i „univerzalne” aplikacije sustava Windows 10, upotrebljavaju previše energije.</p><h3 class='faqInFs25FbP10'>Zahvaćene robne marke</h3><ul>    <li>Lenovo prijenosna računala, stolna računala</li></ul><h3 class='faqInFs25FbP10'>Zahvaćeni sustavi</h3><ul>    <li>Sve</li></ul><h3 class='faqInFs25FbP10'>Operacijski sustav</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Rješenje</h3><p>Ova je značajka nova u sustavu Windows 10, a trebamo je najprije pronaći jer nije pohranjena u vašem standardnom prikazu <strong>upravljačke ploče</strong>, ta se značajka se nalazi u novoj aplikaciji <strong> „Settings”</strong> (Postavke)</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Pronađite zaslon za upotrebu baterije</h3></p><p>1. Kliknite ili dodirnite <strong>„Settings</strong>” (Postavke) u izborniku Start</p><p>2. U <strong>Settings </strong> (Postavke) odaberite <strong>„System”</strong> (Sustav), a zatim odaberite <strong>„Battery saver” (Ušteda baterije).<br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Kliknite ili dodirnite <strong>„Battery use”</strong> (Korištenje baterije) ispod ovog naslova kako biste pogledali više pojedinosti. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizirajte potrošnju energije</h3><p>4. Možete promijeniti zaslon za korištenje baterije kako bi se prikazala potrošnja baterije od zadnja 24 sata do 48 sati ili posljednja od prošlog tjedna</p><p>5. Postotci za <strong>„System”</strong> (Sustav), „<strong>Display</strong>” (Prikaz) i „<strong>Wi-Fi”</strong>. To pokazuje koliko je napajanja baterije korišteno u procesima sustava, zaslonu,</p><p>6. Opcije <strong>„In use”</strong> (U upotrebi) i <strong>„Background”</strong> (Pozadina) pokazuju koliko energije troše aplikacije dok ih upotrebljavate u usporedbi s aplikacijama koje se izvode u pozadini.</p><p>7. Ako aplikacije u pozadini troše napajanje, možete kliknuti ili dodirnuti poveznicu <strong>„Change background app settings”</strong> (Promjena postavki pozadinskih aplikacija) i konfigurirati aplikacije da ne rade u pozadini. Ovo funkcionira samo za univerzalne aplikacije sustava Windows 10.</p><p>8. Pomaknite se prema dolje i vidjet ćete popis aplikacija, što se smatra najkorisnijim dijelom ove značajke. Prikazat će se popis aplikacija koje su u tom razdoblju trošile napajanje baterije i prikazat će se postotak napajanja koji je svaka aplikacija potrošila</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2975,7 +2974,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Postavke Postavki",
+        "preferenceSettings": "Postavke postavki",
         "settings": "Postavke",
         "settingsDescription": "Na stranici postavki možete odabrati uključivanje / isključivanje obavijesti o porukama na temelju kategorija Vantageove poruke. Napominjemo da čak i ako su sve kategorije poruka onemogućene, još uvijek možete povremeno primati ključnu poruku sustava Vantage kada je to potrebno.",
         "messagesInLenovoVantage": "Poruke u aplikaciji Lenovo Vantage",
@@ -3127,7 +3126,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "Gumb je onemogućen ako uređaji za pohranu ne podržavaju ovu funkciju, dok se podaci o hardveru učitavaju ili je u tijeku skeniranje."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alate",
@@ -3164,8 +3163,7 @@
             "storage": "Pohrana",
             "wireless": "Bežična veza"
         },
-        "warningMessage": "Napominjemo da će se testovi otkazati ako je sustav u stanju mirovanja ili hibernacije",
-        "refreshMessage": "Osvježavanje može potrajati neko vrijeme jer je potrebno ponovno učitati sve komponente"
+        "warningMessage": "Napominjemo da će se testovi otkazati ako je sustav u stanju mirovanja ili hibernacije"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3334,24 +3332,7 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
-            "tunepc": {
-                "accumulatedjunkscannedareas": {
-                    "OptimizingWindowssettings": "Optimizing Windows settings",
-                    "Preventingnon-essential": "Preventing non-essential service from running",
-                    "Applyingregistry": "Applying registry and shortcut fixes",
-                    "Removingunnecessary": "Removing unnecessary residual fies",
-                    "Scanningandfixing": "Scanning and fixing critical services",
-                    "RemovingOS": "Removing OS and application log files"
-                }
-            },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week"
+            }
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3436,11 +3417,10 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period:",
-            "subscriptionPeriod": "Subscription period:",
-            "expired": "Expired",
-            "remainingDay": "{{remainingDay}} days remaining",
-            "lenovoId": "Lenovo ID:",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3506,6 +3486,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
+            "privacy": "Sada možete saznati jesu li internetski tragači zloupotrijebili ili koristili vaše privatne podatke bez vašeg znanja.",
             "security": "Znate li? Čak i ako nemate instaliran antivirusni softver, još uvijek vam pružamo osnovnu sigurnosnu zaštitu vašeg uređaja.",
             "connectedHomeSecurity": "Dobijte praćenje u stvarnom vremenu i upozorenja o mrežnoj sigurnosti vašeg doma. Prvi ćete saznati ako se bilo koji od vaših pametnih uređaja suoči sa sigurnosnim napadom."
         }
@@ -3561,8 +3542,5 @@
             "subtitle2": "Sve u jednom: pojednostavljeno",
             "body2": "Sve-u-jednom osobna računala s procesorima Intel® Core™ 9. generacije daju vam svu snagu stolnog računala upakiranog u elegantan zaslon - za manje nereda, sigurnost zasnovanu na hardveru i prikaz visoke razlučivosti."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }

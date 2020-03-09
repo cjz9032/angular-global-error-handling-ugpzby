@@ -256,17 +256,17 @@
 						padding: 2rem;
 					}
 
-					// @media #{$mediaquery_10} {
-					// 	padding: 1.5rem 2rem;
-					// }
+					@media #{$mediaquery_10} {
+						padding: 1.5rem 2rem;
+					}
 
-					// @media #{$mediaquery_X7} {
-					// 	padding: 1.5rem;
-					// }
+					@media #{$mediaquery_X7} {
+						padding: 1.5rem;
+					}
 
-					// @media #{$mediaquery_18} {
-					// 	padding: 1.5rem;
-					// }
+					@media #{$mediaquery_18} {
+						padding: 1.5rem;
+					}
 
 					.title {
 						color: $light;
@@ -348,12 +348,10 @@
 					// justify-content: flex-end;
 					// align-items: center;
 
-
 					.title {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
-						font-size: $fontsize_xl2;
 					}
 				}
 			}
@@ -369,7 +367,6 @@
 	}
 
 	&.card-article {
-		height: 32.5rem !important;
 		.row {
 			max-width: 100%;
 		}
@@ -425,12 +422,9 @@
 					font-weight: $weight_light;
 					text-decoration: none;
 					cursor: pointer;
-					height: 4.5rem !important;
+
 					&:hover {
 						text-decoration: underline;
-					}
-					@media #{$breakpoint_md}{
-						margin-bottom: -1rem;
 					}
 				}
 
@@ -442,16 +436,15 @@
 					cursor: pointer;
 					text-transform: uppercase;
 					color: $main;
-					line-height: 2rem !important;
-					// @media #{$mediaquery_xl} {
-					// 	font-size: 1.1rem;
-					// }
-					// @media #{$mediaquery_lg} {
-					// 	font-size: $fontsize_xs2;
-					// }
-					// @media #{$mediaquery_md} {
-					// 	font-size: $fontsize_xs2;
-					// }
+					@media #{$mediaquery_xl} {
+						font-size: 1.1rem;
+					}
+					@media #{$mediaquery_lg} {
+						font-size: $fontsize_xs2;
+					}
+					@media #{$mediaquery_md} {
+						font-size: $fontsize_xs2;
+					}
 
 					&:hover {
 						.link-label {
@@ -519,7 +512,7 @@
 			.title {
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-				font-size: $fontsize_xl2;
+				font-size: $fontsize_xl;
 				font-weight: $weight_light;
 				line-height: 1.4;
 				cursor: pointer;
@@ -532,6 +525,7 @@
 				font-size: $fontsize_xs;
 				cursor: pointer;
 				text-transform: uppercase;
+
 				a {
 					color: $light;
 					text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
@@ -597,7 +591,7 @@
 		.description {
 			color: $main_dark;
 			font-size: 1.1rem;
-			line-height: 1.4;
+			line-height: 1.2;
 		}
 
 		.caption {

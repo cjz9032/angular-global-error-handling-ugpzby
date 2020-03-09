@@ -55,9 +55,6 @@
 	.smart-settings-card {
 		margin-left: -1.5rem;
 		margin-right: -1.5rem;
-		&:last-child {
-			padding-bottom: 3rem;
-		}
 		.subtitle {
 			width: 100%;
 
@@ -189,7 +186,27 @@
 		background-color: $grey_lighter;
 		border: 0.1rem solid  $note_border;
 	}
-
+	.auto-set-checkbox {
+		margin-top: 2rem;
+		position: relative;
+		input {
+			width: 1.5rem;
+			height: 1.5rem;
+			position: absolute;
+			top: 0.5rem;
+			margin-right: 0.5rem;
+			z-index: 0;
+			opacity: 1;
+			outline: 0;
+		}
+		label {
+			color: $shade_blue;
+			font-size: $fontsize_xs;
+			font-weight: $weight_light;
+			text-align: left;
+			padding-left: 2rem;
+		}
+	}
 	.energystar-container {
 		width: 100%;
 		height: auto;
@@ -199,17 +216,15 @@
 		background-color: $shade_extralight;
 		margin: 1rem 0rem 1.5rem 0rem;
 		.energystar-text {
-			color: $shade_blue;
+			color: $main_darker;
 			font-size: 1.5rem;
-			font-weight: $weight_light;
+			font-weight: $weight_bold;
 			margin: 0.5rem 0 0 0;
-			text-transform: uppercase;
-			letter-spacing: 0.89px;
 		}
-		// .energystar-text {
-		// 	@media #{$mediaquery_11} {
-		// 		text-align: center;
-		// 	}
-		// }
+		.energystar-text {
+			@media #{$mediaquery_11} {
+				text-align: center;
+			}
+		}
 	}
 }

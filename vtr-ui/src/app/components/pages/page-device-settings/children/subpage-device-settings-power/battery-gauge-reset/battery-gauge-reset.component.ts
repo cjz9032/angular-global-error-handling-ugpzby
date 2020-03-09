@@ -5,45 +5,37 @@ import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/m
 import { PowerService } from 'src/app/services/power/power.service';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { CommonService } from 'src/app/services/common/common.service';
-import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-battery-gauge-reset',
 	templateUrl: './battery-gauge-reset.component.html',
 	styleUrls: ['./battery-gauge-reset.component.scss']
 })
-export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
+export class BatteryGaugeResetComponent implements OnInit {
 
 	headings = [
 		'device.deviceSettings.batteryGauge.details.primary',
 		'device.deviceSettings.batteryGauge.details.secondary',
 		'device.deviceSettings.batteryGauge.details.tertiary'];
-	startTimeAbbreviated = [];
-	lastResetTimeAbbreviated = [];
-	// gaugeResetBtnStatus: boolean[];
-	is12HrsFormat = false;
-	systemTimeFormatSubscription: Subscription;
+	isStartTimeAmPm = true;
+	isLastResetTimeAmPm = true;
 
-	constructor(private logger: LoggerService, public modalService: NgbModal, public powerService: PowerService, public batteryService: BatteryDetailService, private commonService: CommonService) { }
+	constructor(private logger: LoggerService, public modalService: NgbModal, public powerService: PowerService, public batteryService: BatteryDetailService) { }
 
 	ngOnInit() {
 		this.logger.info('Init Gauge Reset Feature', this.batteryService.gaugeResetInfo);
 		this.initBatteryGaugeResetInfo();
-		this.setGaugeResetSection();
-		this.systemTimeFormatSubscription = this.commonService.getSystemTimeFormat().subscribe((value: boolean) => {
-			this.is12HrsFormat = value;
-		});
-	}
-
-	ngOnDestroy() {
-		this.systemTimeFormatSubscription.unsubscribe();
 	}
 
 	initBatteryGaugeResetInfo() {
 		// this.batteryGaugeResetInfo.push(new BatteryGaugeReset());
 		// this.batteryGaugeResetInfo.push(new BatteryGaugeReset());
 		// this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
+	}
+
+	getIsAmPm(time) {
+		const date = new Date(time);
+		return date.getHours() < 12;
 	}
 
 	onBatteryGaugeReset(index) {
@@ -76,6 +68,9 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 						this.stopBatteryGaugeReset(index);
 					}
 
+
+				} else if (result === 'negative') {
+
 				}
 			},
 			reason => {
@@ -87,7 +82,9 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		const gaugeResetInfo = this.batteryService.gaugeResetInfo[index];
 		try {
 			const response = await this.powerService.startBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
-			this.logger.info('start battery reset succeeded', response);
+			if (response) {
+				this.logger.info('start battery reset succeeded', response);
+			}
 		} catch (error) {
 			this.logger.info('start battery reset failed', error);
 		}
@@ -97,45 +94,33 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		const gaugeResetInfo = this.batteryService.gaugeResetInfo[index];
 		try {
 			const response = await this.powerService.stopBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
-			this.logger.info('start battery reset succeeded', response);
+			if (response) {
+				this.logger.info('start battery reset succeeded', response);
+			}
 		} catch (error) {
 			this.logger.info('start battery reset failed', error);
 		}
 	}
 
 
-	public setGaugeResetSection() {
-		let isResetRunning = false;
-		const startTimeAbbreviated = [];
-		const lastResetTimeAbbreviated = [];
-		// const gaugeResetBtnStatus = [];
-		if (this.batteryService.gaugeResetInfo) {
-			this.batteryService.gaugeResetInfo.forEach((battery) => {
-				startTimeAbbreviated.push(new Date(battery.startTime).getHours() < 12 ?
-					'device.deviceSettings.power.smartStandby.timer.amPms.am' : 'device.deviceSettings.power.smartStandby.timer.amPms.pm');
-				lastResetTimeAbbreviated.push(new Date(battery.lastResetTime).getHours() < 12 ? 'device.deviceSettings.power.smartStandby.timer.amPms.am' : 'device.deviceSettings.power.smartStandby.timer.amPms.pm');
-				isResetRunning = isResetRunning || battery.isResetRunning;
-			});
+	public isResetBtnDisabled(index) {
+		if (this.batteryService.gaugeResetInfo && this.batteryService.gaugeResetInfo.length > 1) {
+			if (index === 0) {
+				if (this.batteryService.gaugeResetInfo[1].isResetRunning) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				if (this.batteryService.gaugeResetInfo[0].isResetRunning) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		} else {
+			return false;
 		}
-
-		// gauge reset btn status in case of dual battery
-		// if (this.batteryService.gaugeResetInfo && this.batteryService.gaugeResetInfo.length > 1) {
-		// 	if (isResetRunning) {
-		// 		this.batteryService.gaugeResetInfo.forEach((battery) => {
-		// 			gaugeResetBtnStatus.push(!battery.isResetRunning);
-		// 		});
-		// 	} else {
-		// 		gaugeResetBtnStatus.push(false);
-		// 		gaugeResetBtnStatus.push(false);
-		// 	}
-		// }
-
-		// this.gaugeResetBtnStatus = gaugeResetBtnStatus;
-
-
-		this.startTimeAbbreviated = startTimeAbbreviated;
-		this.lastResetTimeAbbreviated = lastResetTimeAbbreviated;
-		this.batteryService.isGaugeResetRunning = isResetRunning;
 	}
 
 	updateGaugeResetInfo(value: BatteryGaugeReset) {
@@ -144,20 +129,19 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 			index = 0;
 		}
 		this.batteryService.gaugeResetInfo[index] = value;
-		this.setGaugeResetSection();
 	}
 
-	// isValid(val: any) {
-	// 	if (!val || val === null) {
-	// 		return false;
-	// 	}
-	// 	if (typeof val === 'number' && val === 0) {
-	// 		return false;
-	// 	}
-	// 	if (typeof val === 'string' && val === '') {
-	// 		return false;
-	// 	}
-	// 	return true;
-	// }
+	isValid(val: any) {
+		if (!val || val === null) {
+			return false;
+		}
+		if (typeof val === 'number' && val === 0) {
+			return false;
+		}
+		if (typeof val === 'string' && val === '') {
+			return false;
+		}
+		return true;
+	}
 
 }

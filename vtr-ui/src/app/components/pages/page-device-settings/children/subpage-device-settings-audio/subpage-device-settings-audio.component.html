@@ -10,7 +10,7 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			<div class="row pt-5 smart-settings-card"
+			<div class="row pt-5 smartsettings-card"
 				*ngIf="dolbyModeResponse.available"
 				id="audio">
 				<div class="col-12 mx-auto">
@@ -23,15 +23,13 @@
 						[theme]="'blue'"
 						[collapseLinkId]="'audio-smart-settings'">
 						<div class="row">
-							<div class="col-auto text-wrap subtitle"
-								tabindex="0"
-								role="text">
-								<h3 role="text"
-									id="audio-audioSmartSettings-sub-title"
+							<div class="col-auto text-wrap subtitle">
+								<h3 id="audio-audioSmartSettings-sub-title"
+									tabindex="0"
 									attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.subtitle' | translate }}">
 									{{'device.deviceSettings.audio.audioSmartsettings.subtitle' | translate }}</h3>
-								<p role="text"
-									id="audio-audioSmartSettings-description"
+								<p id="audio-audioSmartSettings-description"
+									tabindex="0"
 									attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.description' | translate }}">
 									{{'device.deviceSettings.audio.audioSmartsettings.description' | translate }}</p>
 							</div>
@@ -56,7 +54,7 @@
 									[switchId]="'audio-automatic-dolby'">
 									<div class="row no-gutters"
 										*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available"
-										role="radiogroup"
+										role="list"
 										tabindex="0"
 										aria-label="dolby audio more list, select using arrow keys">
 										<vtr-ui-circle-radio-with-checkbox
@@ -97,7 +95,7 @@
 					</vtr-container-collapsible>
 				</div>
 			</div>
-			<div class="row py-5 smart-settings-card"
+			<div class="row pt-5 smartsettings-card pb-40"
 				id="microphone">
 				<div class="col-12 mx-auto container-card ">
 					<vtr-container-collapsible componentName="Microphone"
@@ -126,10 +124,12 @@
 									[caption]=""
 									[isSwitchVisible]=true
 									[leftIcon]="['fal', 'microphone']"
+									[rightIcon]="helpIcon"
 									[readMoreText]="''"
 									[showChildContent]="true"
 									[theme]="'white'"
 									[disabled]="!microphoneProperties.permission"
+									[tooltipText]="'device.deviceSettings.audio.microphone.microphone.tooltip' | translate"
 									(toggleOnOff)="onToggleOfMicrophone($event)"
 									[isSwitchChecked]="microphoneProperties.muteDisabled"
 									[showLoaderState]="microphoneLoader"
@@ -150,14 +150,13 @@
 									[theme]="'white'"
 									[switchId]="'audio-microphone-volume'">
 									<div class="row">
-										<div class="microphone-slider-margin"></div>
-										<div class="col-11">
+										<div class="col-10">
 											<vtr-ui-range-slider
 												[minValueLegend]="'device.deviceSettings.audio.microphone.volume.options.silent' | translate"
 												[minValue]="0"
 												[maxValueLegend]="'device.deviceSettings.audio.microphone.volume.options.loud' | translate"
 												[maxValue]="100"
-												(sliderChange)="setVolume($event)"
+												(change)="setVolume($event)"
 												[enableSlider]="!microphoneProperties.permission"
 												[value]="microphoneProperties.volume"
 												[manualRefresh]="manualRefresh"
@@ -166,6 +165,28 @@
 										</div>
 										<div class="col-2"></div>
 									</div>
+								</vtr-ui-row-switch>
+                            </li>
+                            <div *ngIf="microphoneProperties?.currentMode!='NotSupported'">
+							<li class=""
+								*ngIf="microphoneProperties.keyboardNoiseSuppression">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
+									[name]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
+									componentName="Supress Keyboard noise"
+									[caption]=""
+									[isSwitchVisible]=true
+									[leftIcon]="['fal', 'keyboard']"
+									[rightIcon]="helpIcon"
+									[readMoreText]="''"
+									[showChildContent]="true"
+									[theme]="'white'"
+									[tooltipText]="'device.deviceSettings.audio.microphone.suppress.tooltip' | translate"
+									(toggleOnOff)="onToggleOfSuppressKbdNoise($event)"
+									[disabled]="microphoneProperties.disableEffect || microOptimizeModeResponse.current === 'VoiceRecognition'"
+									[isSwitchChecked]="microphoneProperties.keyboardNoiseSuppression"
+									[showLoaderState]="microphoneLoader"
+									[switchId]="'audio-microphone-suppress'">
 								</vtr-ui-row-switch>
 							</li>
 							<div

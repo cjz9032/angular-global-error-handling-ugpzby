@@ -1,6 +1,5 @@
 <div class="vtr-ui-time-picker">
-	<p role="heading"
-		class="sub-heading">
+	<p class="sub-heading">
 		{{ subHeadingText | translate | uppercase }}</p>
 	<div class="row">
 		<div class="col-md-12 col-sm-12 pl-0">
@@ -24,8 +23,7 @@
 						<div class="row">
 							<div class="col align-items-center d-flex justify-content-between">
 								<div class="time-headings">
-									<p role="text"
-										class=""
+									<p class=""
 										id="smartStandby-{{linkId}}-hours"
 										attr.aria-label="smartStandby-{{linkId}}-hours">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}
@@ -33,8 +31,7 @@
 									<span class="" role="text" id="smartStandby-{{linkId}}-hours">{{hours[hour]}}</span>
 								</div>
 								<div class="time-headings">
-									<p role="text"
-										class=""
+									<p class=""
 										id="smartStandby-{{linkId}}-minutes"
 										attr.aria-label="smartStandby-{{linkId}}-minutes">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}
@@ -42,8 +39,7 @@
 									<span class="" role="text" id="smartStandby-{{linkId}}-minutes">{{minutes[minute]}}</span>
 								</div>
 								<div class="time-headings">
-									<p role="text"
-										class=""
+									<p class=""
 										id="smartStandby-{{linkId}}-amPm"
 										attr.aria-label="smartStandby-{{linkId}}-amPm">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
@@ -147,8 +143,7 @@
 													tabindex="-1"
 													[checked]="copyAmPm==0"
 													(click)="setAmPm(0)" />
-												<p role="text"
-													class="label-text">{{ amPms[0] | translate }}</p>
+												<p class="label-text">{{ amPms[0] | translate }}</p>
 											</label>
 										</span><br>
 										<span>
@@ -166,8 +161,7 @@
 													value="1"
 													[checked]="copyAmPm==1"
 													(click)="setAmPm(1)" />
-												<p role="text"
-													class="label-text">{{ amPms[1] | translate }}</p>
+												<p class="label-text">{{ amPms[1] | translate }}</p>
 											</label>
 										</span>
 									</div>

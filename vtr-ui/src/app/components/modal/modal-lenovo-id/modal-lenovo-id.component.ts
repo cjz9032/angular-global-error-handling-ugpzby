@@ -30,7 +30,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private startBind: any;
 	private completeBInd: any;
 	private notificationSubscription: Subscription;
-	readonly KEYCODE_RETURN = 13;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -69,34 +68,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			return;
 		}
 
-		const webDom = `
-		<div style=\'display: block;position: fixed;z-index: 1;padding-top:5%;width: 100%;height: 100%;overflow: auto;\'>
-			<div class=\'queryHeight\'>
-				<style>
-					.queryHeight { position: relative;background-color: #fefefe;margin: auto;padding: auto;border: 1px solid #888;max-width: 460px; height: 80%;}
-					@media only screen and (min-height: 768px) {.queryHeight{height: 60%;}}
-					@media only screen and (min-height: 1080px) {.queryHeight{height: 50%;}}
-					@media only screen and (min-height: 2160px) {.queryHeight{height: 40%;}}
-					.close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}
-					.close:hover, .close:focus {  color: black;  text-decoration: none;  cursor: pointer;}
-					@keyframes spinner { to {transform: rotate(360deg);} }
-					.holder { position: absolute; width: 60px; height: 60px; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-					.holder .spinner { display: block; width: 100%; height: 100%; border-radius: 50%; border: 3px solid #ccc; border-top-color: #07d; animation: spinner .8s linear infinite; }
-				</style>
-				<div id=\'btnClose\' style=\'padding: 2px 16px;background-color: white;color: black;border-bottom: 1px solid #e5e5e5;\'>
-					<span class=\'close\' id=\'txtClose\' tabindex=\'99\' aria-current=\'true\'>&times;</span>
-					<div style=\'height:45px;\'></div>
-				</div>
-				<div style=\'height: 100%; min-height: 400px;\' id=\'webviewBorder\'>
-					<div class=\'holder\'><span id=\'spinnerCtrl\' class=\'spinner\'></span></div>
-					<div id=\'webviewPlaceHolder\' attr.aria-label=\'lid-login-dialog-webview\'></div>
-				</div>
-			</div>
-		</div>
-	`.replace(/[\r\n]/g, '').replace(/[\t]/g, ' ');
-
-		await this.webView.create(webDom);
-
+		await this.webView.create('<div style=\'display: block;position: fixed;z-index: 1;padding-top:5%;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);\'>  <div class=\'queryHeight\'>  <style>.queryHeight { position: relative;background-color: #fefefe;margin: auto;padding: auto;border: 1px solid #888;max-width: 460px; height: 80%;} @media only screen and (min-height: 768px) {.queryHeight{height: 60%;}} @media only screen and (min-height: 1080px) {.queryHeight{height: 50%;}} @media only screen and (min-height: 2160px) {.queryHeight{height: 40%;}} .close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}.close:hover,.close:focus {  color: black;  text-decoration: none;  cursor: pointer;} @keyframes spinner {  to {transform: rotate(360deg);}} .holder { position: absolute; width: 60px; height: 60px; left: 50%; top: 50%; transform: translate(-50%, -50%); } .holder .spinner { display: block; width: 100%; height: 100%; border-radius: 50%; border: 3px solid #ccc; border-top-color: #07d; animation: spinner .8s linear infinite; } </style>  <div id=\'btnClose\' style=\'padding: 2px 16px;background-color: white;color: black;border-bottom: 1px solid #e5e5e5;\'>  <span class=\'close\' id=\'txtClose\' aria-current=\'true\'>&times;</span> <div style=\'height:45px;\'></div>  </div>    <div style=\'height: 100%; min-height: 400px;\' id=\'webviewBorder\'> <div class=\'holder\'><span id=\'spinnerCtrl\' class=\'spinner\'></span></div> <div id=\'webviewPlaceHolder\' attr.aria-label=\'lid-login-dialog-webview\'></div>    </div>  </div></div>');
 		await this.webView.show();
 		this.eventBind = this.onEvent.bind(this);
 		this.startBind = this.onNavigationStart.bind(this);
@@ -108,7 +80,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		if (!this.cacheCleared) {
 			// Hide browser while clearing cache
 			await this.webView.changeVisibility('webviewPlaceHolder', false);
-			this.isBroswerVisible = false;
 
 			// This is the link to clear cache for SSO production environment
 			await this.webView.navigate('https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
@@ -121,12 +92,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			return;
 		}
 		const eventData = JSON.parse(e);
-		if (eventData) {
-			if ((eventData.event === 'click' && eventData.id === 'btnClose') ||
-				(eventData.event === 'keypress' && eventData.id === 'btnClose' && eventData.keyCode === this.KEYCODE_RETURN)) {
-				this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn, this.appFeature);
-				this.activeModal.dismiss();
-			}
+		if (eventData && eventData.event === 'click' && eventData.id === 'btnClose') {
+			this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn, this.appFeature);
+			this.activeModal.dismiss();
 		}
 	}
 
@@ -139,10 +107,20 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	//  2, if url was changed by facebook the workaround will not work anymore.
 	//
 	async onNavigationStart(e) {
+		const self = this;
 		if (!e) {
 			return;
 		}
 		const url = e;
+
+		if (url.indexOf('passport.lenovo.com/wauthen5/userLogin') !== -1 ||
+			url.indexOf('sso.lenovo.com') !== -1 ||
+			url.indexOf('facebook.com') !== -1 ||
+			url.indexOf('accounts.google.com') !== -1 ||
+			url.indexOf('login.live.com') !== -1 ||
+			url.indexOf('login.yahoo.co.jp') !== -1) {
+			await this.webView.changeVisibility('spinnerCtrl', true);
+		}
 
 		if (url.indexOf('facebook.com/r.php') !== -1 ||
 			url.indexOf('facebook.com/reg/') !== -1) {
@@ -154,18 +132,8 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			// Prevent navigations to create facebook account
 			// EventArgs.preventDefault();
 			return;
-		}
-
-		if (url.indexOf('passport.lenovo.com/wauthen5/userLogin') !== -1 ||
-			url.indexOf('sso.lenovo.com') !== -1 ||
-			url.indexOf('facebook.com') !== -1 ||
-			url.indexOf('accounts.google.com') !== -1 ||
-			url.indexOf('login.live.com') !== -1 ||
-			url.indexOf('login.yahoo.co.jp') !== -1) {
-			this.setFocus('txtClose');
-			this.isBroswerVisible = false;
-			await this.webView.changeVisibility('spinnerCtrl', true);
-			await this.webView.changeVisibility('webviewPlaceHolder', false);
+		} else {
+			await self.webView.changeVisibility('webviewPlaceHolder', false);
 		}
 	}
 
@@ -179,10 +147,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			if (eventData.url.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
 				return;
 			}
-			self.isBroswerVisible = true;
-			setTimeout(() => {
-				self.setFocus('webviewPlaceHolder');
-			}, 0);
 			await self.webView.changeVisibility('spinnerCtrl', false);
 			await self.webView.changeVisibility('webviewPlaceHolder', true);
 			const htmlContent = eventData.content;
@@ -379,9 +343,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	}
 
 	async ngOnDestroy(): Promise<void> {
-		// Before close, stop on-going navigation.
-		await this.webView.navigate('about:blank');
-
 		if (this.webView) {
 			this.webView.removeEventListener('eventtriggered', this.eventBind);
 			this.webView.removeEventListener('navigationstarting', this.startBind);
@@ -392,34 +353,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
-		}
-	}
-
-	private setFocus(id: string) {
-		if (typeof this.webView.setFocus === 'function') {
-			this.webView.setFocus(id);
-		}
-	}
-
-	@HostListener('document:keydown', ['$event'])
-	onKeyDown(event: KeyboardEvent) {
-		if (event.key.toUpperCase() === 'TAB') {
-			// Tab key pressed
-			if (document.activeElement.tagName.toUpperCase() === 'BODY') {
-				// Focus leave webview, set focus to close button
-				this.setFocus('txtClose');
-				event.preventDefault();
-				event.stopPropagation();
-			} else if (document.activeElement.tagName.toUpperCase() === 'NGB-MODAL-WINDOW') {
-				// This is first tab key press or press during loading
-				if (this.isBroswerVisible) {
-					this.setFocus('webviewPlaceHolder');
-				} else {
-					this.setFocus('txtClose');
-				}
-				event.preventDefault();
-				event.stopPropagation();
-			}
 		}
 	}
 

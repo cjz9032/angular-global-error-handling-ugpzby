@@ -182,7 +182,6 @@
 			line-height: 13px;
 			text-align: center;
 			display: block;
-			white-space: nowrap;
 		}
 	}
 
@@ -194,6 +193,7 @@
 		}
 	}
 
+
 	.disabled {
 		opacity: 0.5;
 		pointer-events: none;
@@ -202,6 +202,11 @@
 
 .ml-52 {
 	margin-left: 1rem;
+}
+
+.align-right {
+	text-align: right !important;
+	width: 25%;
 }
 
 .align-right {

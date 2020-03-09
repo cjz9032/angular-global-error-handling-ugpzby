@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "Med Vantage Edge finjusteres innstillingene dine automatisk etter bruken. \n Maksimal ytelse når du spiller, og lengre batteritid ellers.",
                     "line2": "<b>Administrasjon av funksjoner – oversikt</b> <br> Enkelte funksjoner er ikke tilgjengelige på alle enheter",
-                    "line3": "<b>CPU/GPU-overklokking </b><br> Øk prosessorens maksimale hastighet",
+                    "line3": "<b>CPU-overklokking </b><br> Øk prosessorens maksimale hastighet",
                     "line4": "<b>RAM-overklokking </b><br> Øk minnets maksimale hastighet",
                     "line5": "<b>Nettverks-forbedring </b><br> Prioriter nettverkstrafikk for spillet du spiller",
                     "line6": "<b>Dolby </b><br> Finjuster lyden spesifikt for spilling med Dolby-teknologi",
@@ -93,8 +93,7 @@
                     "line8": "<b>Hurtiglading </b><br> Lad batteriet raskere for å spille mer når du er på farten",
                     "line9": "<b>Pekeplatelås </b><br> Forhindre utilsiktede inndata ved å deaktivere pekeplaten mens du spiller",
                     "line10": "<b>Lukk automatisk </b><br> For å maksimere de tilgjengelige systemressursene kan du fjerne prosesser som spillet ikke trenger, før du begynner å spille",
-                    "line11": "<b>Termisk modus </b><br> Angi ønsket enhetsprofil for viftehastigheten og kjølingskontroll",
-                    "line12": "<b>Makrotast</b><br> Tilpass tastaturhandlinger slik at de passer til spillestilen din"
+                    "line11": "<b>Termisk modus </b><br> Angi ønsket enhetsprofil for viftehastigheten og kjølingskontroll"
                 },
                 "systemInfo": {
                     "systenTooltip": "Hold pekeren over CPU/GPU/RAM og ulike stasjoner for å vise beskrivelser, deriblant informasjon om fabrikant og modell"
@@ -749,10 +748,11 @@
                 "sub2": "Antivirus",
                 "sub3": "WiFi-sikkerhet",
                 "sub4": "Passordtilstand",
-                "sub5": "VPN-sikkerhet",
-                "sub6": "Fingeravtrykk"
+                "sub5": "Internettbeskyttelse",
+                "sub6": "Windows Hello"
             },
             "support": "Støtte",
+            "privacy": "Personvern",
             "beta": {
                 "title": "beta"
             },
@@ -762,9 +762,9 @@
             "title": "Sikkerhetsrådgivning",
             "subtitle": "KONTROLLER OM ENHETEN ER SIKRET.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-Sikkerhet",
-            "pswdMgr": "Passordtilstand",
-            "vpn": "VPN-Sikkerhet",
+            "wifi": "WiFi-sikkerhet",
+            "pswdMgr": "Password Manager",
+            "vpn": "VPN",
             "enabled": "AKTIVERT",
             "disabled": "DEAKTIVERT",
             "partiallyProtected": "DELVIS BESKYTTET",
@@ -775,11 +775,9 @@
             "notFound": "IKKE FUNNET",
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT",
-            "fingerPrint": "Fingeravtrykk",
+            "fingerPrint": "Fingerprint",
             "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
-            "windowsHello": "Windows Hello",
-            "enrolled": "REGISTRERT",
-            "notEnrolled": "IKKE REGISTRERT"
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
@@ -810,6 +808,11 @@
         },
         "offline": {
             "connectToUseFeature": "Koble til Internett for å bruke denne funksjonen"
+        }
+    },
+    "privacy": {
+        "headerMain": {
+            "title": "Personvern"
         }
     },
     "tutorial": {
@@ -1236,7 +1239,7 @@
                     },
                     "airPlanePower": {
                         "title": "Strømmodus for fly",
-                        "description": "Denne funksjonen lar deg bruke strømuttaket på et fly der en bestemt strømgrense er gjeldende. I denne modusen reduseres datamaskinens strømforbruk til et sikkert nivå ved å begrense batteriets ladehastighet og datamaskinens ytelse.",
+                        "description": "Beskytt flyets strømuttak ved å kontrollere systemets strømforbruk.Når Strømmodus for fly er aktivert, reduserer datamaskinen strømforbruket ved å begrense batteriladehastigheten og systemytelsen.",
                         "checkBoxDesc": "Automatisk oppdagelse",
                         "note": "Hvis automatisk oppdaging er sjekket, slår datamaskinen automatisk på strømmodusen for fly når den registrerer at du er om bord i et fly og slå av den når du drar."
                     },
@@ -1269,7 +1272,7 @@
                             "ERROR_UNEXPECTED": "Mislyktes: Det oppstod en uventet feil."
                         },
                         "popup": {
-                            "description1": "Tilbakestillingen skjer slik:<br>Lad batteriet helt opp --> Lad ut batteriet til lite batteristrøm --> Lad batteriet opp til høy batteristrøm eller fulladet",
+                            "description1": "Tilbakestillingen skjer slik:<br>Lad batteriet helt opp  -->  La batteriet bli helt utladet  -->  Lad batteriet helt opp på nytt",
                             "description2": "Merk: <br>1. Denne prosessen kan ta flere timer. Unngå å bruke datamaskinen i løpet av denne tiden.<br>2. Lukk alle åpne apper, og koble datamaskinen til strømnettet.<br>3. Batteriladeterskelen er deaktivert under prosessen.",
                             "continue": "Fortsett",
                             "cancel": "Avbryt",
@@ -1356,14 +1359,14 @@
                     "warningtip": "Vennligst velg minst en dag.",
                     "days": {
                         "shortName": {
-                            "sun": "Søn",
-                            "mon": "Man",
-                            "tue": "Tirs",
-                            "wed": "Ons",
-                            "thurs": "Tors",
-                            "fri": "Fre",
-                            "sat": "Lør",
-                            "thu": "Tors"
+                            "sun": "søn",
+                            "mon": "man",
+                            "tue": "tir",
+                            "wed": "ons",
+                            "thurs": "Tor",
+                            "fri": "fre",
+                            "sat": "lør",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "søndag",
@@ -1384,7 +1387,7 @@
                     "subTitle": "Opprett kjøreplan for datamaskinen",
                     "automaticMode": "Automatisk modus",
                     "manualMode": "Manuell modus",
-                    "subNote": "Datamaskinen din er satt opp for raskere gjenopptakelse basert på bruk.",
+                    "subNote": "Datamaskinen din er satt i Modern Standby basert på bruken din.",
                     "graph": {
                         "graph1Tittle": "Bruken av denne datamaskinen",
                         "graph2Tittle": "Brukt aktiv tid",
@@ -1423,8 +1426,7 @@
                     },
                     "description2": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
                     "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen",
-                    "oldTooltipText": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
-                    "sectionTitle": "Hvilemodus-innstillinger"
+                    "oldTooltipText": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad."
                 }
             },
             "audio": {
@@ -1528,8 +1530,7 @@
                         "note": {
                             "title": "Merk",
                             "description": "Lenovo Vantage trenger tilgang til informasjon om plasseringen din for å beregne tidspunkter for solnedgang og soloppgang for regionen din."
-                        },
-                        "tips": "Kjør Windows Update eller installer grafikkdriver manuelt for å gjenopprette Eye Care-modus"
+                        }
                     },
                     "dispColorTemp": {
                         "title": "Skjermens fargetemperatur",
@@ -1574,14 +1575,14 @@
                         "displayDimmer": "DIMME SKJERM"
                     },
                     "displayPriority": {
-                        "title": "Skjermprioritetskontroll",
-                        "description": "Enheten din støtter et maksimum antall eksterne skjermer. Når du kobler til mer enn én skjerm ved hjelp av disse ekstra metodene, fungerer bare den prioriterte.<br/>Velg nedenfor hvilken ekstra visningsmetode som skal prioriteres:",
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Dokking",
+                            "dock": "Docking",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Valgfri modul"
+                            "cartridge": "Optional Module"
                         }
                     }
                 },
@@ -1611,8 +1612,7 @@
                         "caption": "Denne funksjonen gjør bakgrunnen uskarp når du bruker kameraet til videosamtaler eller tar bilder. Du kan velge en annen effekt blant alternativene under.",
                         "blurMode": "Uskarp modus",
                         "comicMode": "Tegneseriemodus",
-                        "sketchMode": "Skissemodus",
-                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
+                        "sketchMode": "Skissemodus"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "KAMERAET ER I BRUK",
@@ -1752,12 +1752,12 @@
                     "title": "Bytte av Fn- og Ctrl-tasten",
                     "description": "Hvis du av vane trykket på Fn-tasten da du mente å trykke på Ctrl-tasten, kan du bytte funksjonen til de to tastene.",
                     "restartNote": "Hvis du bytter funksjon for to taster, må du starte datamaskinen på nytt. Er du sikker på at du vil starte på nytt?",
-                    "title2": "Fn fungerer som Ctrl for ofte brukte tastekombinasjoner",
-                    "description2": "Fn-tasten fungerer som Ctrl-tasten for noen ofte brukte tastekombinasjoner. Funksjonen til Ctrl-tasten endres ikke.",
-                    "featureNote": "Denne funksjonen og funksjonen for bytte av Fn- og Ctrl-tasten kan ikke være aktivert samtidig. Hvis én er aktivert, deaktiveres den andre automatisk.",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn-taster",
+                            "heading": "Fn Keys",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1773,7 +1773,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl-taster",
+                            "heading": "Ctrl Keys",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1789,20 +1789,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Gjør slik",
-                            "action1": "Velg alle",
-                            "action2": "Kopier",
-                            "action3": "Legg til nettside i mine favoritter",
-                            "action4": "Søk",
-                            "action5": "Søk og erstatt i Microsoft Word",
-                            "action6": "Juster venstre og høyre i Microsoft Word",
-                            "action7": "Avslutt (i støttede apper)",
-                            "action8": "Legge til understreking",
-                            "action9": "Lim inn",
-                            "action10": "Lukk (via app)",
-                            "action11": "Klipp ut",
-                            "action12": "Gjør om",
-                            "action13": "Angre"
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
                         }
                     }
                 },
@@ -1813,19 +1813,19 @@
                     "control3": "TRACKPOINT-KONTROLLER",
                     "less": "MINDRE"
                 },
-                "backlight": {
-                    "title": "Bakgrunnslys for tastaturet",
-                    "description": {
-                        "base": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom.",
-                        "auto": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom eller sette til Automatisk. Alternativet Automatisk justerer automatisk bakgrunnslyset for tastaturet i henhold til omgivelseslyset."
-                    },
-                    "level": {
-                        "auto": "Auto",
-                        "low": "Lav",
-                        "high": "Høyt",
-                        "off": "Av"
-                    }
-                }
+				"backlight": {
+					"title": "Bakgrunnslys for tastaturet",
+					"description": {
+						"base": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom.",
+						"auto": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom eller sette til Automatisk. Alternativet Automatisk justerer automatisk bakgrunnslyset for tastaturet i henhold til omgivelseslyset."
+					},
+					"level": {
+						"auto": "Auto",
+						"low": "Lav",
+						"high": "Høyt",
+						"off": "Av"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -2216,8 +2216,8 @@
     },
     "security": {
         "landing": {
-            "fully": "For å få et bedre tilbud bør du beskytte enheten og bli hos",
-            "notFully": "Hvis du vil vite hvordan du kan beskytte enheten din bedre, kan du starte med",
+            "fully": "FULLSTENDIG BESKYTTET",
+            "notFully": "Ikke fullstendig beskyttet",
             "security101": "SIKKERHETSRÅDGIVER 101",
             "firewall": "Brannmur",
             "pwdHealth": "Passordtilstand",
@@ -2358,7 +2358,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi-sikkerhet",
+                "title": "WiFi og Sikkerhet for tilkoblede hjem",
                 "back": "TILBAKE"
             },
             "container": {
@@ -2374,7 +2374,7 @@
                 "showless": "Vis mindre",
                 "button": "Aktiver WiFi-sikkerhet",
                 "disableDescribe": "Lenovo WiFi Sikkerhet er en avansert, skybasert programtjeneste som hjelper enhet med å skille trygge trådløse nettverk fra potensielt farlige.",
-                "enabledDescribe": "Lenovo WiFi Security overvåker for øyeblikket WiFi-nettverket ditt."
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Bruk trusseldetektoren til å finne ut hvor sikre nettverkene rundt deg er.",
@@ -2542,7 +2542,6 @@
     "lenovoId": {
         "login": "Logg på",
         "logout": "Logg av",
-        "loggingOut": "Logger av...",
         "unlockExclusives": "Få eksklusive tilbud",
         "user": "Bruker",
         "welcomeText1": "Ser frisk ut i dag, {{firstName}}!",
@@ -2587,7 +2586,7 @@
     "faq": {
         "footer": {
             "title": "Finner du ikke det du leter etter?",
-            "description": "Trenger du ytterligere støtte? Ikke nøl med å kontakte oss via:",
+            "description": "Trenger du ekstra støtte? IKKE HESITERER Å KONTAKTE OSS VIA:",
             "body": "Lenovo Community",
             "button": "GÅ TIL FORUM"
         },
@@ -2797,7 +2796,7 @@
         },
         "question4": {
             "title": "Kontrollere datamaskinens batteriforbruk",
-            "description": "<div class='faqInFs4Fb'>    Kontrollere datamaskinens batteriforbruk</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 inneholder et nytt <strong>batteri bruks</strong> skjerm bilde som viser hva som skjer med din bærbare juice. Det betyr at du kan se nøyaktig hvilke applikasjoner – både stasjonære og Windows 10 \"universelle\" apper-bruker for mye strøm.</p><h3 class='faqInFs25FbP10'>Berørte merker</h3><ul>    <li>Lenovo bærbare maskiner, stasjonære maskiner</li></ul><h3 class='faqInFs25FbP10'>Gjelder for følgende systemer</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p>Denne funksjonen er ny i Windows 10, men vi må først finne denne funksjonen fordi den ikke er lagret i den tradisjonelle <strong>kontroll panel </strong>visningen, denne funksjonen finnes i den nye <strong>\"Settings\"-</strong> appen</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Finn batteri bruk skjermen</h3></p><p>1. Klikk på eller trykk <strong>på \"</strong>Settings\"-alternativet på Start-menyen</p><p>2. Velg <strong>system </strong> <strong>under innstillinger</strong>, og velg <strong>deretter \"batteris paring\". <br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klikk på eller trykk <strong>\"på \"batteri Bruk\"</strong> -koblingen under denne overskriften for å se flere detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analyser strøm forbruket</h3><p>4. Du kan endre for å gjøre batteriet til å bruke skjermen til å se batteri bruk fra de siste 24 timene til de siste 48 timene eller sist fra forrige uke</p><p>5. <strong>\"system\",</strong> \"<strong>skjerm</strong>\" og \" <strong>Wi-Fi\"</strong> prosenter. Dette viser hvor mye batteri strøm som er brukt av system prosesser, skjermen,</p><p>6. <strong>\"alternativene\"</strong> i bruk og <strong> bakgrunn</strong> viser hvor mye strøm som brukes av applikasjoner mens du bruker dem, sammenlignet med programmer som kjøres i bakgrunnen.</p><p>7. Hvis apper bruker strøm i bakgrunnen, kan du klikke på eller trykke på <strong>koblingen \"endre innstillinger for bakgrunns </strong>app\" og konfigurere apper slik at de ikke kan kjøres i bakgrunnen. Dette fungerer bare for universelle Windows 10-apper.</p><p>8. Rull nedover og du vil se en liste over applikasjoner, anses dette som den mest nyttige delen av denne funksjonen. Det vil se ut som en liste over appene har brukt batteriet i den perioden, og viser deg hvilken prosent del av batteriet du har brukt i hver app</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Kontrollere datamaskinens batteriforbruk</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 inneholder et nytt <strong>batteri bruks</strong> skjerm bilde som viser hva som skjer med din bærbare juice. Det betyr at du kan se nøyaktig hvilke applikasjoner – både stasjonære og Windows 10 \"universelle\" apper-bruker for mye strøm.</p><h3 class='faqInFs25FbP10'>Berørte merker</h3><ul>    <li>Lenovo bærbare maskiner, stasjonære maskiner</li></ul><h3 class='faqInFs25FbP10'>Gjelder for følgende systemer</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p>Denne funksjonen er ny i Windows 10, men vi må først finne denne funksjonen fordi den ikke er lagret i den tradisjonelle <strong>kontroll panel </strong>visningen, denne funksjonen finnes i den nye <strong>\"Settings\"-</strong> appen</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Finn batteri bruk skjermen</h3></p><p>1. Klikk på eller trykk <strong>på \"</strong>Settings\"-alternativet på Start-menyen</p><p>2. Velg <strong>system </strong> <strong>under innstillinger</strong>, og velg <strong>deretter \"batteris paring\". <br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klikk på eller trykk <strong>\"på \"batteri Bruk\"</strong> -koblingen under denne overskriften for å se flere detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analyser strøm forbruket</h3><p>4. Du kan endre for å gjøre batteriet til å bruke skjermen til å se batteri bruk fra de siste 24 timene til de siste 48 timene eller sist fra forrige uke</p><p>5. <strong>\"system\",</strong> \"<strong>skjerm</strong>\" og \" <strong>Wi-Fi\"</strong> prosenter. Dette viser hvor mye batteri strøm som er brukt av system prosesser, skjermen,</p><p>6. <strong>\"alternativene\"</strong> i bruk og <strong> bakgrunn</strong> viser hvor mye strøm som brukes av applikasjoner mens du bruker dem, sammenlignet med programmer som kjøres i bakgrunnen.</p><p>7. Hvis apper bruker strøm i bakgrunnen, kan du klikke på eller trykke på <strong>koblingen \"endre innstillinger for bakgrunns </strong>app\" og konfigurere apper slik at de ikke kan kjøres i bakgrunnen. Dette fungerer bare for universelle Windows 10-apper.</p><p>8. Rull nedover og du vil se en liste over applikasjoner, anses dette som den mest nyttige delen av denne funksjonen. Det vil se ut som en liste over appene har brukt batteriet i den perioden, og viser deg hvilken prosent del av batteriet du har brukt i hver app</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2865,7 +2864,7 @@
         },
         "question5": {
             "title": "Bruke datamaskinen som et nettbrett",
-            "description": "<div class='faqInFs4Fb'>    Bruke datamaskinen som et nettbrett</div><hr><p>Nett brett modus gjør Windows mer intuitiv og enklere å bruke når du har en berørings enhet.</p><h3 class='faqInFs25FbP10'>Bruk tavlemodus</h3><p>Hvis du vil slå på nett brett <strong>modus</strong> velger du handlings senter på oppgave linjen <strong>og velger deretter nett brett modus</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Merk</h3><p>Hvis du vil finne ut om enheten kan slå på nett brett modus automatisk, søker du etter enheten på produsentens nettsted. Støtte for denne funksjonen avhenger av maskin varen, driveren som er installert og hvordan enheten ble konfigurert av produsenten. </p><p> </p><p>I nett brett modus åpner apper full skjerm og gir deg mer plass å arbeide på. Hvis du vil lukke en app, drar du den til bunnen av skjermen.</p><p> </p><h3 class='faqInFs25FbP10'>Spiss</h3><p>Oppgave linjen er tilgjengelig når PC-en er i nett brett modus, men du kan skjule den hvis du vil ha mer plass på skjermen. Velg <strong>på Start</strong>-knappen, <strong>Velg</strong> innstillinger <strong>> </strong>system <strong> > nett </strong>brett modus, og <strong>slå på automatisk Skjul oppgave linjen i nett brett modus</strong>. Hvis du vil se den skjulte oppgave linjen, sveiper du ned nederst på skjermen, eller du kan bruke musen til å peke der.</p><h3 class='faqInFs25FbP10'>Bruk to apper samtidig</h3><p>Hvis du vil bruke to applikasjoner side ved side i nett brett modus, drar du en åpen app ned og til siden. Du vil se hvor den kan festes, og du vil se eventuelle åpne apper ved siden av den.</p><p>I denne visningen kan du også:</p><ul>    <li>Bruk den delte kanten mellom to festede applikasjoner til å endre størrelse på begge appene samtidig.</li>    <li>Åpne en ny app fra oppgave visning-Velg <strong>oppgave visning</strong> på oppgave linjen, Velg en app, og dra den til den ene siden for å feste den på den delte skjermen.</li>    <li>Bruk tilbake-knappen på oppgave linjen for å gå tilbake i en app eller åpne en app som du brukte tidligere.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Bruke datamaskinen som et nettbrett</div><hr><p>Nett brett modus gjør Windows mer intuitiv og enklere å bruke når du har en berørings enhet.</p><h3 class='faqInFs25FbP10'>Bruk tavlemodus</h3><p>Hvis du vil slå på nett brett <strong>modus</strong> velger du handlings senter på oppgave linjen <strong>og velger deretter nett brett modus</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>Merk</h3><p>Hvis du vil finne ut om enheten kan slå på nett brett modus automatisk, søker du etter enheten på produsentens nettsted. Støtte for denne funksjonen avhenger av maskin varen, driveren som er installert og hvordan enheten ble konfigurert av produsenten. </p><p> </p><p>I nett brett modus åpner apper full skjerm og gir deg mer plass å arbeide på. Hvis du vil lukke en app, drar du den til bunnen av skjermen.</p><p> </p><h3 class='faqInFs25FbP10'>Spiss</h3><p>Oppgave linjen er tilgjengelig når PC-en er i nett brett modus, men du kan skjule den hvis du vil ha mer plass på skjermen. Velg <strong>på Start</strong>-knappen, <strong>Velg</strong> innstillinger <strong>> </strong>system <strong> > nett </strong>brett modus, og <strong>slå på automatisk Skjul oppgave linjen i nett brett modus</strong>. Hvis du vil se den skjulte oppgave linjen, sveiper du ned nederst på skjermen, eller du kan bruke musen til å peke der.</p><h3 class='faqInFs25FbP10'>Bruk to apper samtidig</h3><p>Hvis du vil bruke to applikasjoner side ved side i nett brett modus, drar du en åpen app ned og til siden. Du vil se hvor den kan festes, og du vil se eventuelle åpne apper ved siden av den.</p><p>I denne visningen kan du også:</p><ul>    <li>Bruk den delte kanten mellom to festede applikasjoner til å endre størrelse på begge appene samtidig.</li>    <li>Åpne en ny app fra oppgave visning-Velg <strong>oppgave visning</strong> på oppgave linjen, Velg en app, og dra den til den ene siden for å feste den på den delte skjermen.</li>    <li>Bruk tilbake-knappen på oppgave linjen for å gå tilbake i en app eller åpne en app som du brukte tidligere.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2975,7 +2974,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Preferanser Og Innstillinger",
+        "preferenceSettings": "Preferanser og innstillinger",
         "settings": "Innstillinger",
         "settingsDescription": "På siden med preferanser og innstillinger kan du slå meldingsvarsler på/av basert på meldingskategoriene til Vantage. Vær obs på at selv om alle meldingskategoriene deaktiveres, kan du fremdeles få systemkritiske meldinger fra Vantage fra tid til annen.",
         "messagesInLenovoVantage": "Meldinger i Lenovo Vantage",
@@ -3132,7 +3131,7 @@
                 "no": "Nei",
                 "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?"
             },
-            "waitAvailability": "Knappen er deaktivert hvis lagringsenhetene ikke støtter denne funksjonaliteten, mens maskinvareinformasjonen lastes inn eller hvis det pågår en skanning."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Last ned profesjonelle feil søkings verktøy",
@@ -3164,8 +3163,7 @@
             "storage": "Lagring",
             "wireless": "Trådløs"
         },
-        "warningMessage": "Husk at testene vil bli kansellert hvis systemet er i hvile- eller dvalemodus",
-        "refreshMessage": "Oppdatering kan ta litt tid siden alle komponentene må lastes inn på nytt"
+        "warningMessage": "Husk at testene vil bli kansellert hvis systemet er i hvile- eller dvalemodus"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3334,24 +3332,7 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
-            "tunepc": {
-                "accumulatedjunkscannedareas": {
-                    "OptimizingWindowssettings": "Optimizing Windows settings",
-                    "Preventingnon-essential": "Preventing non-essential service from running",
-                    "Applyingregistry": "Applying registry and shortcut fixes",
-                    "Removingunnecessary": "Removing unnecessary residual fies",
-                    "Scanningandfixing": "Scanning and fixing critical services",
-                    "RemovingOS": "Removing OS and application log files"
-                }
-            },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week"
+            }
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3436,11 +3417,10 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period:",
-            "subscriptionPeriod": "Subscription period:",
-            "expired": "Expired",
-            "remainingDay": "{{remainingDay}} days remaining",
-            "lenovoId": "Lenovo ID:",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3561,8 +3541,5 @@
             "subtitle2": "Alt-i-ett: strømlinjeformet",
             "body2": "Alt-i-ett-PC-er med 9. generasjons Intel® Core™-prosessorer gir deg all kraften til en stasjonær PC pakket i en elegant skjerm – for mindre rot, maskinvarebasert sikkerhet og skjerm med høy oppløsning."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }

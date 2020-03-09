@@ -19,37 +19,6 @@
 			"subitems": []
 		},
 		{
-			"id": "wifi-security",
-			"label": "common.menu.security.title",
-			"path": "security/wifi-security",
-			"icon": [
-				"fal",
-				"lock"
-			],
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.security",
-			"forArm": false,
-			"subitems": [
-				{
-				"id": "wifi-security",
-				"label": "common.menu.security.sub3",
-				"path": null,
-				"icon": null,
-				"metricsEvent": "itemClick",
-				"metricsParent": "navbar",
-				"metricsItem": "link.wifisecurity",
-				"routerLinkActiveOptions": {
-					"exact": true
-				},
-				"subitems": [],
-				"pre": [
-					"assets/images/coronet-logo-gaming.svg"
-				]
-			}
-		]
-		},
-		{
 			"id": "support",
 			"label": "gaming.common.menu.support.title",
 			"path": "support",
@@ -65,9 +34,6 @@
 			},
 			"forArm": false,
 			"sMode": true,
-			"pre": [
-				"assets/images/support/svg_icon_about_us.svg"
-			],
 			"subitems": [
 				{
 					"id": "support",
@@ -146,6 +112,24 @@
 			},
 			"forArm": true,
 			"sMode": true,
+			"subitems": []
+		},
+		{
+			"id": "privacy",
+			"label": "common.menu.privacy",
+			"path": "privacy",
+			"icon": [
+				"fal",
+				"user-shield"
+			],
+			"segment": "-[Commercial]",
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.privacy",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"forArm": false,
 			"subitems": []
 		},
 		{
@@ -288,10 +272,7 @@
 					"routerLinkActiveOptions": {
 						"exact": true
 					},
-					"subitems": [],
-					"pre": [
-						"assets/images/coronet-logo.svg"
-					]
+					"subitems": []
 				},
 				{
 					"id": "internet-protection",
@@ -334,10 +315,7 @@
 				"routerLinkActiveOptions": {
 					"exact": true
 				},
-				"subitems": [],
-				"pre": [
-					"assets/images/coronet-logo.svg"
-				]
+				"subitems": []
 			}
 		]
 		},
@@ -357,10 +335,37 @@
 			},
 			"forArm": false,
 			"sMode": true,
-			"pre": [
-				"assets/images/support/svg_icon_about_us.svg"
-			],
-			"subitems": []
+			"subitems": [
+				{
+					"id": "support",
+					"label": "common.menu.support",
+					"path":null,
+					"icon": null,
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.support",
+					"routerLinkActiveOptions": {
+						"exact": true},
+						"forArm": false,
+						"sMode": true,
+					"subitems": []
+					},
+				{
+					"id": "smart-performance",
+					"label": "gaming.common.menu.smartPerformance",
+					"path": "smart-performance",
+					"icon": "",
+					"metricsEvent": "itemClick",
+					"externallink": false,
+					"metricsParent": "navbar",
+					"metricsItem": "",
+					"sMode": true,
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"subitems": []
+				}
+			]
 		},
 		{
 			"id": "home-security",
@@ -382,24 +387,6 @@
 			"pre": [
 				"assets/images/connected-home-security/welcome-slide1@2x.png"
 			]
-		},
-		{
-			"id": "hardware-scan",
-			"label": "hardwareScan.name",
-			"path": "hardware-scan",
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.hardwarescan",
-			"segment": "-[Gaming]",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"icon": [
-				"fal",
-				"flask"
-			],
-			"forArm": false,
-			"subitems": []
 		},
 		{
 			"id": "user",
@@ -437,6 +424,24 @@
 		"subitems": []
 	},
 	"betaItem": [
-		
+		{
+			"id": "hardware-scan",
+			"label": "hardwareScan.name",
+			"beta": true,
+			"path": "beta/hardware-scan",
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.hardwarescan",
+			"segment": "-[Commercial]",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"icon": [
+				"fal",
+				"flask"
+			],
+			"forArm": false,
+			"subitems": []
+		}
 	]
 }

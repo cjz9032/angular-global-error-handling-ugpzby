@@ -85,16 +85,15 @@
                 "legionEdgeModal": {
                     "line1": "Met Vantage Edge worden uw instellingen automatisch op gebruik afgestemd. \n Maximale prestaties tijdens het gamen, langere batterijduur wanneer u dat niet bent.",
                     "line2": "<b>Overzicht functiebeheer</b> <br> Sommige functies niet op alle apparaten beschikbaar",
-                    "line3": "<b>CPU/GPU-overklok </b><br> Geef de maximumsnelheid voor uw processor een boost",
-                    "line4": "<b>RAM overklok </b><br> Geef de maximumsnelheid voor uw geheugen een boost",
+                    "line3": "<b>CPU overklokken </b><br> Geef de maximumsnelheid voor uw processor een boost",
+                    "line4": "<b>RAM overklokken </b><br> Geef de maximumsnelheid voor uw geheugen een boost",
                     "line5": "<b>Netwerkboost </b><br> Stel prioriteiten in voor netwerkverkeer voor de game die u speelt",
                     "line6": "<b>Dolby </b><br> Stem uw audio specifiek af voor gamen met Dolby-technologie",
                     "line7": "<b>Hybride modus </b><br> Geavanceerde GPU-instellingen uitschakelen wanneer u niet aan het gamen bent om de batterijduur te verbeteren",
                     "line8": "<b>Snelladen </b><br> Onderweg langer gamen met snellere oplaadtijden",
                     "line9": "<b>Touchpadvergrendeling </b><br> Schakel het touchpad uit bij gamen om foutieve invoer te voorkomen",
                     "line10": "<b>Automatisch sluiten </b><br> Wis, voordat je begint, processen die je niet nodig hebt voor gamen om de systeembronnen optimaal te gebruiken",
-                    "line11": "<b>Thermische modus </b><br> Een profiel voor het apparaat van uw voorkeur instellen ter verbetering van de ventilatorsnelheid en het beheren van de koeling",
-                    "line12": "<b>Macrotoets</b><br> De toetsenbordacties aanpassen aan uw speelstijl"
+                    "line11": "<b>Thermische modus </b><br> Een profiel voor het apparaat van uw voorkeur instellen ter verbetering van de ventilatorsnelheid en het beheren van de koeling"
                 },
                 "systemInfo": {
                     "systenTooltip": "Beweeg over CPU / GPU / RAM en verschillende schijven om hun beschrijvingen weer te geven, inclusief fabrikant- en modelinformatie"
@@ -749,10 +748,11 @@
                 "sub2": "Antivirus",
                 "sub3": "WiFi-beveiliging",
                 "sub4": "Wachtwoordstatus",
-                "sub5": "VPN-beveiliging",
-                "sub6": "Vingerafdruk"
+                "sub5": "Internetbeveiliging",
+                "sub6": "Windows Hello"
             },
             "support": "Ondersteuning",
+            "privacy": "Privacy",
             "beta": {
                 "title": "beta"
             },
@@ -762,9 +762,9 @@
             "title": "Beveiligingsadviseur",
             "subtitle": "CONTROLEER OF UW APPARAAT IS BEVEILIGD.",
             "antiVirus": "Antivirus",
-            "wifi": "WiFi-Beveiliging",
-            "pswdMgr": "Wachtwoordstatus",
-            "vpn": "VPN-Beveiliging",
+            "wifi": "WiFi-beveiliging",
+            "pswdMgr": "Password Manager",
+            "vpn": "VPN",
             "enabled": "INGESCHAKELD",
             "disabled": "UITGESCHAKELD",
             "partiallyProtected": "GEDEELTELIJK BEVEILIGD",
@@ -775,11 +775,9 @@
             "notFound": "NIET GEVONDEN",
             "registered": "GEREGISTREERD",
             "notRegistered": "NIET GEREGISTREERD",
-            "fingerPrint": "Vingerafdruk",
+            "fingerPrint": "Fingerprint",
             "privacyPolicyAndTermsOfService": "<tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>",
-            "windowsHello": "Windows Hello",
-            "enrolled": "GEREGISTREERD",
-            "notEnrolled": "NIET GEREGISTREERD"
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "V & A voor uw machine",
@@ -810,6 +808,11 @@
         },
         "offline": {
             "connectToUseFeature": "Verbinding maken met internet om deze functie te gebruiken"
+        }
+    },
+    "privacy": {
+        "headerMain": {
+            "title": "Privacy"
         }
     },
     "tutorial": {
@@ -1236,7 +1239,7 @@
                     },
                     "airPlanePower": {
                         "title": "Energiemodus aan boord van een vliegtuig",
-                        "description": "Met deze functie kunt u het stopcontact in een vliegtuig gebruiken waarvoor een bepaalde voedingslimiet geldt. In deze modus wordt het energieverbruik van uw computer gereduceerd tot een veilig niveau door de batterijlaadsnelheid en de computerprestaties te beperken.",
+                        "description": "Bescherm het stopcontact aan boord door het energieverbruik van uw systeem te beheren.Als het energieschema voor voeding aan boord van een vliegtuig is ingeschakeld, reduceert de computer het energieverbruik door de batterijlaadsnelheid en de systeemprestaties te verlagen.",
                         "checkBoxDesc": "Automatische detectie",
                         "note": "Als automatische detectie is aangevinkt, wordt het energieschema voor voeding aan boord van een vliegtuig automatisch ingeschakeld wanneer de computer een vliegtuigomgeving detecteert. Dit wordt weer uitgeschakeld wanneer u het vliegtuig verlaat."
                     },
@@ -1269,7 +1272,7 @@
                             "ERROR_UNEXPECTED": "Mislukt: er is een onverwachte fout opgetreden."
                         },
                         "popup": {
-                            "description1": "Het proces voor opnieuw instellen verloopt als volgt:<br>de batterij wordt volledig opgeladen --> de batterij wordt ontladen naar een bijna lege batterij --> de batterij wordt opnieuw opgeladen totdat hij bijna of helemaal vol is",
+                            "description1": "Het proces voor opnieuw instellen verloopt als volgt:<br>de batterij wordt volledig opgeladen  -->  de batterij wordt volledig ontladen  -->  de batterij wordt opnieuw volledig opgeladen",
                             "description2": "Opmerkingen: <br>1. Dit proces kan enkele uren duren. Gebruik de computer in deze periode niet.<br>2. Sluit alle open apps en sluit de computer aan op de netvoeding.<br>3. Tijdens het proces is de functie drempelwaarde voor batterijlading uitgeschakeld.",
                             "continue": "Doorgaan",
                             "cancel": "Annuleren",
@@ -1356,14 +1359,14 @@
                     "warningtip": "Selecteer minimaal één dag.",
                     "days": {
                         "shortName": {
-                            "sun": "Zo",
-                            "mon": "Ma",
-                            "tue": "Di",
-                            "wed": "Wo",
-                            "thurs": "Do",
-                            "fri": "Vr",
-                            "sat": "Za",
-                            "thu": "Do"
+                            "sun": "zon",
+                            "mon": "maan",
+                            "tue": "dins",
+                            "wed": "woens",
+                            "thurs": "donder",
+                            "fri": "vrij",
+                            "sat": "zater",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "zondag",
@@ -1384,7 +1387,7 @@
                     "subTitle": "Uw computer plannen",
                     "automaticMode": "Automatische modus",
                     "manualMode": "Handmatige modus",
-                    "subNote": "Uw computer staat op basis van het gebruik ingesteld op snelle hervatting.",
+                    "subNote": "Uw computer staat op basis van uw gebruik ingesteld op Modern stand-by.",
                     "graph": {
                         "graph1Tittle": "Gebruik van deze computer",
                         "graph2Tittle": "Toegepaste actieve tijd",
@@ -1423,8 +1426,7 @@
                     },
                     "description2": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de opstarttijd snel bij zwaarder gebruik.",
                     "subTitle2": "Stel de tijd in waarop u deze computer gewoonlijk gebruikt",
-                    "oldTooltipText": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
-                    "sectionTitle": "Instellingen voor stand-by"
+                    "oldTooltipText": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen."
                 }
             },
             "audio": {
@@ -1528,8 +1530,7 @@
                         "note": {
                             "title": "Opmerking",
                             "description": "Lenovo Vantage heeft toegang nodig tot uw locatiegegevens voor het berekenen van de tijd voor zonsondergang en zonsopgang van uw regio."
-                        },
-                        "tips": "Voer Windows Update uit of installeer handmatig een grafisch stuurprogramma om de Oogzorg-modus te herstellen"
+                        }
                     },
                     "dispColorTemp": {
                         "title": "Kleurtemperatuur weergeven",
@@ -1574,14 +1575,14 @@
                         "displayDimmer": "BEELDSCHERMDIMMER"
                     },
                     "displayPriority": {
-                        "title": "Prioriteitsinstelling beeldscherm",
-                        "description": "Uw apparaat ondersteunt een maximum aantal externe beeldschermen. Als er meer dan één beeldscherm met deze extra methoden wordt verbonden, werkt het display dat prioriteit heeft.<br/>Selecteer hieronder welke uitvoermethode voor een extra display prioriteit heeft:",
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
                         "options": {
                             "hdmi": "HDMI",
                             "dock": "Docking",
-                            "usb_c_dp": "USB-type-C",
+                            "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Optionele module"
+                            "cartridge": "Optional Module"
                         }
                     }
                 },
@@ -1611,8 +1612,7 @@
                         "caption": "Deze functie vervaagt de achtergrond wanneer u de camera gebruikt voor een videogesprek of het maken van foto's. U kunt verschillende effecten kiezen uit onderstaande selecties.",
                         "blurMode": "Vervaagmodus",
                         "comicMode": "Stripmodus",
-                        "sketchMode": "Schetsmodus",
-                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
+                        "sketchMode": "Schetsmodus"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "CAMERA IS IN GEBRUIK",
@@ -1752,12 +1752,12 @@
                     "title": "Fn-toets en Ctrl-toets wisselen",
                     "description": "Als u uit gewoonte op de Fn-toets drukt als u op de Ctrl-toets wilt drukken, kunt u de functie van de twee toetsen omwisselen.",
                     "restartNote": "Als u de functie van twee toetsen wilt wisselen, moet u de computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?",
-                    "title2": "Fn werkt als Ctrl voor vaak gebruikte toetsencombinaties",
-                    "description2": "De Fn-toets werkt als de Ctrl-toets voor sommige vaak gebruikte toetsencombinaties. De functie van de Ctrl-toets wijzigt niet.",
-                    "featureNote": "U kunt deze functie en de Fn-toets en de Ctrl-toets niet tegelijk gebruiken. Als de ene wordt ingeschakeld, wordt de andere automatisch uitgeschakeld.",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn-toetsen",
+                            "heading": "Fn Keys",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1773,7 +1773,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl-toetsen",
+                            "heading": "Ctrl Keys",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1789,20 +1789,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Actie",
-                            "action1": "Alles selecteren",
-                            "action2": "Kopiëren",
-                            "action3": "Webpagina toevoegen aan mijn favorieten",
-                            "action4": "Zoeken",
-                            "action5": "Zoeken en vervangen in Microsoft Word",
-                            "action6": "Links en rechts uitlijnen in Microsoft Word",
-                            "action7": "Afsluiten (in ondersteunde app)",
-                            "action8": "Onderstrepen toevoegen",
-                            "action9": "Plakken",
-                            "action10": "Sluiten (per app)",
-                            "action11": "Knippen",
-                            "action12": "Opnieuw",
-                            "action13": "Ongedaan maken"
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
                         }
                     }
                 },
@@ -1813,19 +1813,19 @@
                     "control3": "TRACKPOINT-BESTURINGSELEMENTEN",
                     "less": "MINDER"
                 },
-                "backlight": {
-                    "title": "Achtergrondverlichting toetsenbord",
-                    "description": {
-                        "base": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting van het toetsenbord ook wijzigen door op Fn+spatiebalk te drukken.",
-                        "auto": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting wijzigen door op Fn+spatiebalk te drukken of door deze op \"Automatisch\" in te stellen. Bij de optie \"Automatisch\" wordt de achtergrondverlichting van het toetsenbord automatisch aan het omgevingslicht aangepast."
-                    },
-                    "level": {
-                        "auto": "Automatisch",
-                        "low": "Laag",
-                        "high": "Hoog",
-                        "off": "Uit"
-                    }
-                }
+				"backlight": {
+					"title": "Achtergrondverlichting toetsenbord",
+					"description": {
+						"base": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting van het toetsenbord ook wijzigen door op Fn+spatiebalk te drukken.",
+						"auto": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting wijzigen door op Fn+spatiebalk te drukken of door deze op \"Automatisch\" in te stellen. Bij de optie \"Automatisch\" wordt de achtergrondverlichting van het toetsenbord automatisch aan het omgevingslicht aangepast."
+					},
+					"level": {
+						"auto": "Automatisch",
+						"low": "Laag",
+						"high": "Hoog",
+						"off": "Uit"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -2216,8 +2216,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Als u een beter aanbod voor de bescherming van uw apparaat wilt krijgen, blijf dan bij",
-            "notFully": "Als u wilt weten hoe u uw apparaat beter kunt beschermen, begint u met",
+            "fully": "Volledig beveiligd",
+            "notFully": "Niet volledig beveiligd",
             "security101": "BEVEILIGINGSADVISEUR 101",
             "firewall": "Firewall",
             "pwdHealth": "Wachtwoordstatus",
@@ -2358,7 +2358,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi-beveiliging",
+                "title": "WiFi en Connected Home-beveiliging",
                 "back": "TERUG"
             },
             "container": {
@@ -2374,7 +2374,7 @@
                 "showless": "Minder weergeven",
                 "button": "WiFi-beveiliging inschakelen",
                 "disableDescribe": "Lenovo WiFi-beveiliging is een geavanceerde cloudgebaseerde softwareservice die uw apparaat helpt onderscheid te maken tussen veilige draadloze netwerken en mogelijk schadelijke.",
-                "enabledDescribe": "Lenovo WiFi-beveiliging bewaakt je WiFi-netwerk op dit moment."
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "Gebruik de dreigingsdetector om de veiligheid van de netwerken om u heen te bepalen.",
@@ -2542,7 +2542,6 @@
     "lenovoId": {
         "login": "Aanmelden",
         "logout": "Afmelden",
-        "loggingOut": "Bezig met afmelden...",
         "unlockExclusives": "Krijg toegang tot exclusieve aanbiedingen",
         "user": "Gebruiker",
         "welcomeText1": "Uw ziet er energiek uit vandaag, {{firstName}}!",
@@ -2587,7 +2586,7 @@
     "faq": {
         "footer": {
             "title": "Niet vinden wat je zoekt?",
-            "description": "Hebt u extra ondersteuning nodig? Neem dan contact met ons op via:",
+            "description": "NODIG AANVULLENDE SUPPORT? AARZEL NIET ONS VIA TE CONTACTEREN:",
             "body": "Lenovo Community",
             "button": "GA NAAR FORUM"
         },
@@ -2797,7 +2796,7 @@
         },
         "question4": {
             "title": "Uw batterijgebruik controleren",
-            "description": "<div class='faqInFs4Fb'>    Uw batterijgebruik controleren</div><hr><h3 class='faqInFs25FbP10'>Symptoom</h3><p>Windows 10 bevat een nieuw scherm <strong>\"Batterijgebruik\"</strong>, waar wordt weergegeven waardoor de batterij van uw laptop leegloopt. Dat betekent dat het u precies vertelt welke apps – zowel bureaublad-apps als \"universele\" apps in Windows 10 – te veel energie verbruiken.</p><h3 class='faqInFs25FbP10'>Merken waarbij dit van toepassing is</h3><ul>    <li>Lenovo-laptops, -desktops</li></ul><h3 class='faqInFs25FbP10'>Systemen waarbij dit van toepassing is</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Besturingssysteem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Oplossing</h3><p>Deze functie is nieuw in Windows 10. Deze functie moet eerst worden gezocht, aangezien deze niet is opgeslagen in de traditionele weergave van het <strong>Configuratiescherm</strong>. Deze functie bevindt zich in de nieuwe app <strong>\"Instellingen\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Het scherm Batterijgebruik zoeken</h3></p><p>1. Klik of tik op de optie <strong>\"Instellingen\"</strong> in het menu Start</p><p>2. In <strong>Instellingen</strong> selecteert u <strong>\"Systeem\"</strong> en selecteert u vervolgens <strong>\"Batterijbesparing\".<br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klik of tik op de koppeling <strong>\"Batterijgebruik\"</strong> onder deze kop voor meer informatie. </p><p> </p><h3 class='faqInFs25FbP10'>B. Uw energieverbruik analyseren</h3><p>4. U kunt het scherm over het batterijgebruik wijzigen om het batterijgebruik van de afgelopen 24 uur tot de afgelopen 48 uur of van de afgelopen week weer te geven</p><p>5. U ziet de percentages <strong>\"Systeem\"</strong>, <strong>\"Beeldscherm\"</strong> en <strong>\"Wi-Fi\"</strong>. Dit geeft weer hoeveel batterijvoeding is gebruikt door systeemprocessen en het beeldscherm.</p><p>6. De opties <strong>\"In gebruik\"</strong> en <strong>\"Achtergrond\"</strong> geven weer hoeveel energie wordt verbruikt door toepassingen terwijl u deze gebruikt en hoeveel door toepassingen die op de achtergrond worden uitgevoerd.</p><p>7. Als apps energie op de achtergrond verbruiken, kunt u op de koppeling <strong>\"Instellingen voor achtergrond-apps wijzigen\"</strong> klikken of tikken en apps zo configureren dat ze niet op de achtergrond worden uitgevoerd. Dit werkt alleen voor universele Windows 10-apps.</p><p>8. Schuif verder omlaag en u ziet een lijst met toepassingen. Dit wordt beschouwd als het nuttigste gedeelte van deze functie. Er wordt een lijst met apps weergegeven die batterijvoeding in die periode hebben gebruikt. Er wordt weergegeven welk percentage van uw batterijvoeding elke app heeft gebruikt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Uw batterijgebruik controleren</div><hr><h3 class='faqInFs25FbP10'>Symptoom</h3><p>Windows 10 bevat een nieuw scherm <strong>\"Batterijgebruik\"</strong>, waar wordt weergegeven waardoor de batterij van uw laptop leegloopt. Dat betekent dat het u precies vertelt welke apps – zowel bureaublad-apps als \"universele\" apps in Windows 10 – te veel energie verbruiken.</p><h3 class='faqInFs25FbP10'>Merken waarbij dit van toepassing is</h3><ul>    <li>Lenovo-laptops, -desktops</li></ul><h3 class='faqInFs25FbP10'>Systemen waarbij dit van toepassing is</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Besturingssysteem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Oplossing</h3><p>Deze functie is nieuw in Windows 10. Deze functie moet eerst worden gezocht, aangezien deze niet is opgeslagen in de traditionele weergave van het <strong>Configuratiescherm</strong>. Deze functie bevindt zich in de nieuwe app <strong>\"Instellingen\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Het scherm Batterijgebruik zoeken</h3></p><p>1. Klik of tik op de optie <strong>\"Instellingen\"</strong> in het menu Start</p><p>2. In <strong>Instellingen</strong> selecteert u <strong>\"Systeem\"</strong> en selecteert u vervolgens <strong>\"Batterijbesparing\".<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klik of tik op de koppeling <strong>\"Batterijgebruik\"</strong> onder deze kop voor meer informatie. </p><p> </p><h3 class='faqInFs25FbP10'>B. Uw energieverbruik analyseren</h3><p>4. U kunt het scherm over het batterijgebruik wijzigen om het batterijgebruik van de afgelopen 24 uur tot de afgelopen 48 uur of van de afgelopen week weer te geven</p><p>5. U ziet de percentages <strong>\"Systeem\"</strong>, <strong>\"Beeldscherm\"</strong> en <strong>\"Wi-Fi\"</strong>. Dit geeft weer hoeveel batterijvoeding is gebruikt door systeemprocessen en het beeldscherm.</p><p>6. De opties <strong>\"In gebruik\"</strong> en <strong>\"Achtergrond\"</strong> geven weer hoeveel energie wordt verbruikt door toepassingen terwijl u deze gebruikt en hoeveel door toepassingen die op de achtergrond worden uitgevoerd.</p><p>7. Als apps energie op de achtergrond verbruiken, kunt u op de koppeling <strong>\"Instellingen voor achtergrond-apps wijzigen\"</strong> klikken of tikken en apps zo configureren dat ze niet op de achtergrond worden uitgevoerd. Dit werkt alleen voor universele Windows 10-apps.</p><p>8. Schuif verder omlaag en u ziet een lijst met toepassingen. Dit wordt beschouwd als het nuttigste gedeelte van deze functie. Er wordt een lijst met apps weergegeven die batterijvoeding in die periode hebben gebruikt. Er wordt weergegeven welk percentage van uw batterijvoeding elke app heeft gebruikt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2865,7 +2864,7 @@
         },
         "question5": {
             "title": "Uw pc als tablet gebruiken",
-            "description": "<div class='faqInFs4Fb'>    Uw pc als tablet gebruiken</div><hr><p>In de tabletmodus is Windows intuïtiever en gemakkelijker te gebruiken wanneer u een aanraakapparaat hebt.</p><h3 class='faqInFs25FbP10'>Tabletmodus gebruiken</h3><p>Als u de tabletmodus wilt inschakelen, selecteert u <strong>Actiecentrum</strong> op de taakbalk en selecteert u vervolgens <strong>Tabletmodus</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Opmerking</h3><p>Als u wilt weten of uw apparaat automatisch de tabletmodus kan inschakelen, zoekt u naar uw apparaat op de website van de fabrikant. Ondersteuning voor deze functie is afhankelijk van de hardware, het stuurprogramma dat is geïnstalleerd, en hoe het apparaat door de fabrikant is ingesteld. </p><p> </p><p>In de tabletmodus worden apps op het volledige scherm geopend, zodat u meer ruimte hebt om in te werken. Sleep een app naar de onderkant van het scherm om deze te sluiten.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>De taakbalk is beschikbaar wanneer uw pc zich in de tabletmodus bevindt, maar u kunt deze desgewenst verbergen als u meer ruimte op het scherm wilt. Selecteer de knop <strong>Start</strong>, selecteer <strong>Instellingen</strong> > <strong>Systeem</strong> > <strong>Tabletmodus</strong> en schakel vervolgens <strong>De taakbalk automatisch verbergen in tabletmodus</strong> in. Als u de verborgen taakbalk wilt zien, swipet u omhoog vanaf de onderkant van het scherm of verplaatst u de muisaanwijzer naar de onderkant van het scherm.</p><h3 class='faqInFs25FbP10'>Twee apps tegelijk gebruiken</h3><p>Als u twee apps naast elkaar in de tabletmodus wilt gebruiken, sleept u een geopende app omlaag en naar de zijkant. U ziet waar de app wordt vastgemaakt en u ziet alle geopende apps ernaast.</p><p>Er zijn nog meer dingen die u in deze weergave kunt doen:</p><ul>    <li>Gebruik de gedeelde rand tussen twee vastgemaakte apps om het formaat van beide apps tegelijk te wijzigen.</li>    <li>Open een nieuwe app vanuit de taakweergave: selecteer <strong>Taakweergave</strong> op de taakbalk, selecteer een app en sleep deze vervolgens naar één kant om deze in uw gesplitste venster vast te maken.</li>    <li>Gebruik de knop Vorige op de taakbalk om in een app terug te gaan of om een app te openen die u eerder hebt gebruikt.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Uw pc als tablet gebruiken</div><hr><p>In de tabletmodus is Windows intuïtiever en gemakkelijker te gebruiken wanneer u een aanraakapparaat hebt.</p><h3 class='faqInFs25FbP10'>Tabletmodus gebruiken</h3><p>Als u de tabletmodus wilt inschakelen, selecteert u <strong>Actiecentrum</strong> op de taakbalk en selecteert u vervolgens <strong>Tabletmodus</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>Opmerking</h3><p>Als u wilt weten of uw apparaat automatisch de tabletmodus kan inschakelen, zoekt u naar uw apparaat op de website van de fabrikant. Ondersteuning voor deze functie is afhankelijk van de hardware, het stuurprogramma dat is geïnstalleerd, en hoe het apparaat door de fabrikant is ingesteld. </p><p> </p><p>In de tabletmodus worden apps op het volledige scherm geopend, zodat u meer ruimte hebt om in te werken. Sleep een app naar de onderkant van het scherm om deze te sluiten.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>De taakbalk is beschikbaar wanneer uw pc zich in de tabletmodus bevindt, maar u kunt deze desgewenst verbergen als u meer ruimte op het scherm wilt. Selecteer de knop <strong>Start</strong>, selecteer <strong>Instellingen</strong> > <strong>Systeem</strong> > <strong>Tabletmodus</strong> en schakel vervolgens <strong>De taakbalk automatisch verbergen in tabletmodus</strong> in. Als u de verborgen taakbalk wilt zien, swipet u omhoog vanaf de onderkant van het scherm of verplaatst u de muisaanwijzer naar de onderkant van het scherm.</p><h3 class='faqInFs25FbP10'>Twee apps tegelijk gebruiken</h3><p>Als u twee apps naast elkaar in de tabletmodus wilt gebruiken, sleept u een geopende app omlaag en naar de zijkant. U ziet waar de app wordt vastgemaakt en u ziet alle geopende apps ernaast.</p><p>Er zijn nog meer dingen die u in deze weergave kunt doen:</p><ul>    <li>Gebruik de gedeelde rand tussen twee vastgemaakte apps om het formaat van beide apps tegelijk te wijzigen.</li>    <li>Open een nieuwe app vanuit de taakweergave: selecteer <strong>Taakweergave</strong> op de taakbalk, selecteer een app en sleep deze vervolgens naar één kant om deze in uw gesplitste venster vast te maken.</li>    <li>Gebruik de knop Vorige op de taakbalk om in een app terug te gaan of om een app te openen die u eerder hebt gebruikt.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -3127,7 +3126,7 @@
                 "yes": "Ja",
                 "no": "Nee"
             },
-            "waitAvailability": "De knop wordt uitgeschakeld als de opslagapparaten deze functionaliteit niet ondersteunen, terwijl de hardwaregegevens worden geladen of als er een scan wordt uitgevoerd."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Professionele diagnosehulpprogramma's downloaden",
@@ -3164,8 +3163,7 @@
             "storage": "Opslag",
             "wireless": "Draadloos"
         },
-        "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat",
-        "refreshMessage": "Het vernieuwen kan even duren omdat alle onderdelen opnieuw moeten worden geladen"
+        "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3334,24 +3332,7 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
-            "tunepc": {
-                "accumulatedjunkscannedareas": {
-                    "OptimizingWindowssettings": "Optimizing Windows settings",
-                    "Preventingnon-essential": "Preventing non-essential service from running",
-                    "Applyingregistry": "Applying registry and shortcut fixes",
-                    "Removingunnecessary": "Removing unnecessary residual fies",
-                    "Scanningandfixing": "Scanning and fixing critical services",
-                    "RemovingOS": "Removing OS and application log files"
-                }
-            },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week"
+            }
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3436,11 +3417,10 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period:",
-            "subscriptionPeriod": "Subscription period:",
-            "expired": "Expired",
-            "remainingDay": "{{remainingDay}} days remaining",
-            "lenovoId": "Lenovo ID:",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3506,6 +3486,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
+            "privacy": "Nu kunt u nagaan of uw persoonlijke gegevens zijn geschonden of gebruikt door online trackers zonder dat u ervan af wist.",
             "security": "Wist u dat? Zelfs als er geen antivirussoftware op uw computer is geïnstalleerd, bieden wij nog steeds basisbescherming voor uw apparaat.",
             "connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd."
         }
@@ -3561,8 +3542,5 @@
             "subtitle2": "Alles-in-één computers: gestroomlijnd",
             "body2": "Alles-in-één pc's met 9e generatie Intel® Core™ processoren voorzien u van de kracht van een desktop in een strak design — voor minder volume, op hardware gebaseerde beveiliging en een scherm met hoge resolutie."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }

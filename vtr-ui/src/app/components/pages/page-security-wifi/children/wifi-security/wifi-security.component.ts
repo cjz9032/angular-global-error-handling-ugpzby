@@ -29,7 +29,6 @@ import {
 	DialogService
 } from 'src/app/services/dialog/dialog.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
-import { ConfigService } from 'src/app/services/config/config.service';
 
 @Component({
 	selector: 'wifi-security',
@@ -38,6 +37,7 @@ import { ConfigService } from 'src/app/services/config/config.service';
 })
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
+	@Input() showChs = false;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
 	isWifiSecurityEnabled = true;
@@ -52,16 +52,13 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		public modalService: NgbModal,
 		private commonService: CommonService,
 		public	deviceService: DeviceService,
-		private dialogService: DialogService,
-		private configService: ConfigService
+		private dialogService: DialogService
 	) {
 		super();
 	}
 
 	ngOnInit() {
-		if (this.configService) {
-			this.isShowMore = !this.configService.showCHS;
-		}
+		this.isShowMore = !this.showChs;
 		this.data.wifiSecurity.on('cancelClick', () => {
 			this.cancelClick = true;
 		}).on('cancelClickFinish', () => {

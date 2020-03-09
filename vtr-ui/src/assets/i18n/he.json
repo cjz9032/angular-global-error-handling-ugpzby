@@ -85,16 +85,15 @@
                 "legionEdgeModal": {
                     "line1": "עם Vantage Edge, ההגדרות שלכם יתכווננו באופן אוטומטי בהתאם לשימוש. \n ביצועים מרביים כשאתם משחקים, חיי סוללה ארוכים יותר כשאינכם משחקים.",
                     "line2": "<b>סקירה כללית של ניהול תכונות</b> <br> חלק מהתכונות אינן זמינות בכל המכשירים",
-                    "line3": "<b>אוברקלוק של CPU/GPU </b><br> הגבירו את המהירות המרבית של המעבד",
-                    "line4": "<b>אוברקלוק של RAM </b><br> הגבירו את המהירות המרבית של הזיכרון",
+                    "line3": "<b>אוברקלוקינג של מעבד </b><br> הגבירו את המהירות המרבית של המעבד",
+                    "line4": "<b>אוברקלוקינג של RAM </b><br> הגבירו את המהירות המרבית של הזיכרון",
                     "line5": "<b>שיפור הרשת </b><br> קבעו סדר עדיפויות לתעבורת רשת למשחק שבו אתם משחקים",
                     "line6": "<b>Dolby </b><br> כווננו את השמע באופן ספציפי למשחק עם טכנולוגיית Dolby",
                     "line7": "<b>מצב היברידי </b><br> השביתו את ההגדרות המתקדמות של GPU כשאתם לא משחקים כדי לשפר את ביצועי הסוללה",
                     "line8": "<b>טעינה מהירה </b><br> שחקו זמן רב יותר בדרכים עם טעינת סוללה מהירה יותר",
                     "line9": "<b>מנעול משטח מגע </b><br> הימנעו מהזנות מוטעות באמצעות השבתת משטח המגע בזמן שאתם משחקים",
                     "line10": "<b>סגירה אוטומטית</b><br> נקו תהליכים שאינם נדרשים למשחק לפני שאתם מתחילים לשחק כדי לשפר את המשאבים הזמינים של המערכת",
-                    "line11": "<b>מצב תרמי </b><br> הגדרת פרופיל ההתקן המועדף למהירות המאוורר ובקרת הצינון",
-                    "line12": "<b>מקש מאקרו </b><br> התאימו אישית את פעולות המקלדת כך שיתאימו לסגנון המשחק שלכם"
+                    "line11": "<b>מצב תרמי </b><br> הגדרת פרופיל ההתקן המועדף למהירות המאוורר ובקרת הצינון"
                 },
                 "systemInfo": {
                     "systenTooltip": "העבר את העכבר מעל CPU/GPU/RAM וכוננים שונים כדי להציג את התיאורים שלהם, כולל נתוני ייצור ומידע על הדגם"
@@ -749,10 +748,11 @@
                 "sub2": "אנטי-וירוס",
                 "sub3": "אבטחת WiFi",
                 "sub4": "תקינות סיסמה",
-                "sub5": "אבטחת VPN",
-                "sub6": "טביעת אצבע"
+                "sub5": "הגנה באינטרנט",
+                "sub6": "Windows Hello"
             },
             "support": "תמיכה",
+            "privacy": "פרטיות",
             "beta": {
                 "title": "beta"
             },
@@ -763,8 +763,8 @@
             "subtitle": "בדקו שההתקן שלכם מאובטח.",
             "antiVirus": "אנטי-וירוס",
             "wifi": "אבטחת WiFi",
-            "pswdMgr": "תקינות סיסמה",
-            "vpn": "אבטחת VPN",
+            "pswdMgr": "Password Manager",
+            "vpn": "VPN",
             "enabled": "מופעל",
             "disabled": "מושבת",
             "partiallyProtected": "הגנה חלקית",
@@ -775,11 +775,9 @@
             "notFound": "לא נמצא",
             "registered": "רשום",
             "notRegistered": "לא רשום",
-            "fingerPrint": "טביעת אצבע",
+            "fingerPrint": "Fingerprint",
             "privacyPolicyAndTermsOfService": "<tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>",
-            "windowsHello": "Windows Hello",
-            "enrolled": "נרשם",
-            "notEnrolled": "לא נרשם"
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Q & A עבור המחשב שלך",
@@ -810,6 +808,11 @@
         },
         "offline": {
             "connectToUseFeature": "התחבר לאינטרנט כדי להשתמש בתכונה זו"
+        }
+    },
+    "privacy": {
+        "headerMain": {
+            "title": "פרטיות"
         }
     },
     "tutorial": {
@@ -1236,7 +1239,7 @@
                     },
                     "airPlanePower": {
                         "title": "מצב צריכת חשמל בטיסה",
-                        "description": "תכונה זו מאפשרת לך להשתמש בשקע חשמל AC במטוס כאשר יש מגבלה מסוימת מבחינת צריכת החשמל. במצב זה, המחשב מצמצם את צריכת החשמל על-ידי הגבלת קצב טעינת הסוללה וביצועי המחשב.",
+                        "description": "הגנה על שקע החשמל לשימוש במטוס באמצעות שליטה בצריכת החשמל של המערכת שלכם.כאשר מצב צריכת החשמל בטיסה מופעל, המחשב מצמצם את צריכת החשמל על-ידי הגבלת קצב טעינת הסוללה וביצועי המערכת.",
                         "checkBoxDesc": "זיהוי אוטומטי",
                         "note": "אם הזיהוי האוטומטי מסומן, המחשב יפעיל את מצב הטיסה באופן אוטומטי כשהוא יזהה ציוד שנמצא במטוסים ויכבה את מצב הטיסה כאשר תצאו מהמטוס."
                     },
@@ -1269,7 +1272,7 @@
                             "ERROR_UNEXPECTED": "נכשל: ארעה שגיאה בלתי צפויה."
                         },
                         "popup": {
-                            "description1": "תהליך האיפוס מתבצע באופן הבא:<br>טענו את הסוללה במלואה --> רוקנו לרמת חשמל נמוכה של הסוללה --> טענו לרמת חשמל גבוהה של הסוללה או לטעינה מלאה",
+                            "description1": "תהליך האיפוס מתבצע באופן הבא:<br>סוללה טעונה במלואה  -->  פריקה מלאה של הסוללה  -->  סוללה טעונה במלואה",
                             "description2": "הערות: <br>1. התהליך עשוי להימשך מספר שעות. הימנעו משימוש במחשב בפרק זמן זה.<br>2. סגרו את כל היישומים בפתוחים וחברו את המחשב לחשמל.<br>3. במהלך התהליך, פונקציית סף טעינת הסוללה מושבתת.",
                             "continue": "המשך",
                             "cancel": "ביטול",
@@ -1356,14 +1359,14 @@
                     "warningtip": "בחר לפחות יום אחד.",
                     "days": {
                         "shortName": {
-                            "sun": "ראשון",
-                            "mon": "שני",
-                            "tue": "שלישי",
-                            "wed": "רביעי",
-                            "thurs": "חמישי",
-                            "fri": "שישי",
-                            "sat": "שבת",
-                            "thu": "חמישי"
+                            "sun": "יום ראשון",
+                            "mon": "יום שני",
+                            "tue": "יום שלישי",
+                            "wed": "יום רביעי",
+                            "thurs": "יום חמישי",
+                            "fri": "יום שישי",
+                            "sat": "יום שבת",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "יום ראשון",
@@ -1384,7 +1387,7 @@
                     "subTitle": "תזמון המחשב",
                     "automaticMode": "מצב אוטומטי",
                     "manualMode": "מצב ידני",
-                    "subNote": "המחשב מתוכנן לחזרה מהירה יותר ממצב המתנה בהתבסס על השימוש.",
+                    "subNote": "המחשב מתוזמן למצב 'המתנה מודרנית' בהתאם לשימוש.",
                     "graph": {
                         "graph1Tittle": "השימוש במחשב זה",
                         "graph2Tittle": "זמן פעיל מעשי",
@@ -1423,8 +1426,7 @@
                     },
                     "description2": "תכונה זו קובעת זמן למחשב שלכם שבו יבוצע מיטוב של חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, כדי שלא לפגוע בזמן הפעלה מחדש מהירה שנדרש בשעות שבהן נעשה שימוש במחשב.",
                     "subTitle2": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב",
-                    "oldTooltipText": "כאשר תכונת 'המתנה חכמה' פועלת, המחשב עובר ל'המתנה מודרנית' לפני מועד ההתחלה שנקבע, והוא עובר למצב שינה אם הוא בלתי פעיל במשך פרק זמן מסוים כאשר הוא מופעל באמצעות סוללה. פרק הזמן הזה עובר מיטוב לפי לוח הזמנים שקבעתם. המחשב עובר ממצב שינה למצב 'המתנה מודרנית' רק בימים שנקבעו, ואינו עובר כאשר הוא במצב בלתי פעיל במשך כמה ימים ברצף, לפי מה שקבעתם.",
-                    "sectionTitle": "הגדרות המתנה"
+                    "oldTooltipText": "כאשר תכונת 'המתנה חכמה' פועלת, המחשב עובר ל'המתנה מודרנית' לפני מועד ההתחלה שנקבע, והוא עובר למצב שינה אם הוא בלתי פעיל במשך פרק זמן מסוים כאשר הוא מופעל באמצעות סוללה. פרק הזמן הזה עובר מיטוב לפי לוח הזמנים שקבעתם. המחשב עובר ממצב שינה למצב 'המתנה מודרנית' רק בימים שנקבעו, ואינו עובר כאשר הוא במצב בלתי פעיל במשך כמה ימים ברצף, לפי מה שקבעתם."
                 }
             },
             "audio": {
@@ -1528,8 +1530,7 @@
                         "note": {
                             "title": "הערה",
                             "description": "Lenovo Vantage צריך לגשת לפרטי המיקום שלכם לחישוב זמן השקיעה והזריחה באזורכם."
-                        },
-                        "tips": "הפעילו את Windows Update או התקינו מנהל התקן גרפי באופן ידני כדי לשחזר את מצב השמירה על העיניים"
+                        }
                     },
                     "dispColorTemp": {
                         "title": "טמפרטורת צבע התצוגה",
@@ -1574,14 +1575,14 @@
                         "displayDimmer": "עמעם תצוגה"
                     },
                     "displayPriority": {
-                        "title": "הציגו אמצעי בקרה לסדר עדיפות",
-                        "description": "המכשיר שלכם תומך במספר מרבי של צגים חיצוניים. כשמחברים יותר מצג אחד באמצעות השיטות הנוספות הללו, רק הצג בעדיפות הגבוהה יפעל.<br/>בחרו למטה בשיטת פלט התצוגה הנוספת שברצונכם לתעדף:",
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "עגינה",
+                            "dock": "Docking",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "מודול אופציונלי"
+                            "cartridge": "Optional Module"
                         }
                     }
                 },
@@ -1611,8 +1612,7 @@
                         "caption": "תכונה זו מטשטשת את הרקע כשמשתמשים במצלמה לשיחת וידאו או לצילום תמונות. ניתן לבחור אפקט אחר מבין האפקטים הבאים.",
                         "blurMode": "מצב טשטוש",
                         "comicMode": "מצב קומיקס",
-                        "sketchMode": "מצב ציור",
-                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
+                        "sketchMode": "מצב ציור"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "המצלמה בשימוש",
@@ -1752,12 +1752,12 @@
                     "title": "‏‫החלפה בין מקש Fn למקש Ctrl‬",
                     "description": "אם אתם לוחצים לעתים קרובות על מקש Fn במקום ללחוץ על מקש Ctrl, אפשר להחליף בין הפונקציות של שני המקשים.",
                     "restartNote": "החלפת הפונקציה של שני מקשים מחייבת הפעלה מחדש של המחשב, האם אתם בטוחים שברצונכם להפעיל מחדש?",
-                    "title2": "Fn פועל כ-Ctrl עבור צירופי מקשים שנמצאים בשימוש תכוף",
-                    "description2": "מקש Fn פועל בתור מקש Ctrl עבור כמה צירופי מקשים שכיחים. הפונקציה של מקש Ctrl אינה משתנה.",
-                    "featureNote": "לא ניתן להפעיל פונקציה זו ו‫החלפה בין מקש Fn למקש Ctrl‬ בו זמנית. אם מפעילים אחד מהמצבים, השני יושבת אוטומטית.",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "מקשי Fn",
+                            "heading": "Fn Keys",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1773,7 +1773,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "מקשי Ctrl",
+                            "heading": "Ctrl Keys",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1789,20 +1789,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "פעולה",
-                            "action1": "בחרו הכל",
-                            "action2": "העתקה",
-                            "action3": "הוסף דף אינטרנט למועדפים שלי",
-                            "action4": "חיפוש",
-                            "action5": "חיפוש והחלפה ב-Microsoft Word",
-                            "action6": "יישור לשמאל ולימין ב-Microsoft Word",
-                            "action7": "יציאה (ביישום נתמך)",
-                            "action8": "הוספת קו תחתון",
-                            "action9": "הדבקה",
-                            "action10": "סגירה (לכל יישום)",
-                            "action11": "גזירה",
-                            "action12": "ביצוע חוזר",
-                            "action13": "ביטול פעולה אחרונה"
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
                         }
                     }
                 },
@@ -1813,19 +1813,19 @@
                     "control3": "בקרי TRACKPOINT",
                     "less": "פחות"
                 },
-                "backlight": {
-                    "title": "תאורת המקלדת",
-                    "description": {
-                        "base": "הפעילו את התאורה האחורית של המקלדת כדי להקל על ההקלדה בתנאי תאורה חלשה או מקום חשוך. ניתן גם לשנות את הגדרות התאורה האחורית של המקלדת על ידי לחיצה על המקש Fn+רווח.",
-                        "auto": "הפעילו את התאורה האחורית של המקלדת כדי להקל על ההקלדה בתנאי תאורה חלשה או מקום חשוך. ניתן גם לשנות את הגדרות התאורה האחורית של המקלדת על ידי לחיצה על המקש Fn+רווח או להגדיר אותה למצב \"אוטומטי\". האפשרות \"אוטומטי\" מתאימה אוטומטית את התאורה האחורית של המקלדת בהתאם לאור הסביבה."
-                    },
-                    "level": {
-                        "auto": "אוטומטי",
-                        "low": "נמוך",
-                        "high": "גבוה",
-                        "off": "כבוי"
-                    }
-                }
+				"backlight": {
+					"title": "תאורת המקלדת",
+					"description": {
+						"base": "הפעילו את התאורה האחורית של המקלדת כדי להקל על ההקלדה בתנאי תאורה חלשה או מקום חשוך. ניתן גם לשנות את הגדרות התאורה האחורית של המקלדת על ידי לחיצה על המקש Fn+רווח.",
+						"auto": "הפעילו את התאורה האחורית של המקלדת כדי להקל על ההקלדה בתנאי תאורה חלשה או מקום חשוך. ניתן גם לשנות את הגדרות התאורה האחורית של המקלדת על ידי לחיצה על המקש Fn+רווח או להגדיר אותה למצב \"אוטומטי\". האפשרות \"אוטומטי\" מתאימה אוטומטית את התאורה האחורית של המקלדת בהתאם לאור הסביבה."
+					},
+					"level": {
+						"auto": "אוטומטי",
+						"low": "נמוך",
+						"high": "גבוה",
+						"off": "כבוי"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -2216,8 +2216,8 @@
     },
     "security": {
         "landing": {
-            "fully": "כדי לקבל הצעה טובה יותר להגן על המכשיר שלכם, הישארו עם",
-            "notFully": "כדי ללמוד כיצד להגן טוב יותר על המכשיר שלכם, התחילו עם",
+            "fully": "הגנה מלאה",
+            "notFully": "אין הגנה מלאה",
             "security101": "יועץ האבטחה 101",
             "firewall": "חומת אש",
             "pwdHealth": "תקינות סיסמה",
@@ -2358,7 +2358,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "‏אבטחת WiFi",
+                "title": "אבטחת הבית המחובר ו-WiFi",
                 "back": "חזרה"
             },
             "container": {
@@ -2374,7 +2374,7 @@
                 "showless": "הצג פחות",
                 "button": "הפעלת אבטחת WiFi",
                 "disableDescribe": "אבטחת WiFi של Lenovo היא תוכנה מתקדמת המבוססת על ענן שמסייעת למכשיר להבדיל בין רשתות אלחוטיות בטוחות ורשתות העלולות להיות זדוניות.",
-                "enabledDescribe": "אבטחת WiFi של Lenovo עוקבת כעת אחר רשת ה-WiFi שלכם."
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "השתמשו ב'גלאי האיומים' כדי לבדוק את רמת הבטיחות של הרשתות שסביבכם.",
@@ -2542,7 +2542,6 @@
     "lenovoId": {
         "login": "כניסה",
         "logout": "יציאה",
-        "loggingOut": "מתנתק...",
         "unlockExclusives": "פתחו את ה\"בלעדיים\"",
         "user": "משתמש",
         "welcomeText1": "אתה נראה רענן היום, {{firstName}}!",
@@ -2587,7 +2586,7 @@
     "faq": {
         "footer": {
             "title": "לא למצוא את מה שאתה מחפש?",
-            "description": "נדרשת תמיכה נוספת? אל תהססו לפנות אלינו באמצעות:",
+            "description": "זקוק לתמיכה נוספת? אל תהסס לפנות אלינו באמצעות:",
             "body": "קהילת Lenovo",
             "button": "עבור אל פורום"
         },
@@ -2797,7 +2796,7 @@
         },
         "question4": {
             "title": "בדיקת השימוש בסוללה של המחשב",
-            "description": "<div class='faqInFs4Fb'>    בדיקת השימוש בסוללה של המחשב</div><hr><h3 class='faqInFs25FbP10'>תסמין</h3><p>Windows 10 כוללת את המסך החדש <strong>\"שימוש בסוללה\"</strong> שמראה לכם מה גורם לניצול מהיר של סוללת המחשב הנייד. כלומר, המסך יציג אילו יישומים בדיוק, הן יישומי שולחן העבודה והן היישומים \"האוניברסליים\" של Windows 10, צורכים מתח רב מדי.</p><h3 class='faqInFs25FbP10'>מותגים מושפעים</h3><ul>    <li>מחשבים שולחניים ומחשבים ניידים של Lenovo</li></ul><h3 class='faqInFs25FbP10'>המערכות המושפעות</h3><ul>    <li>הכל</li></ul><h3 class='faqInFs25FbP10'>מערכת הפעלה</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>פתרון</h3><p>זוהי תכונה חדשה ב-Windows 10, ותחילה עלינו לאתר אותה מפני שהיא אינה ממוקמת בתצוגת <strong>לוח הבקרה </strong>המסורתית. התכונה נמצאת ביישום החדש <strong>\"הגדרות\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>א. איתור המסך \"שימוש בסוללה\"</h3></p><p>1.הקישו או לחצו על האפשרות <strong>\"הגדרות\"</strong> בתפריט \"התחל\"</p><p>2.במקטע <strong>הגדרות </strong> בחרו <strong>\"מערכת\"</strong>ולאחר מכן בחרו <strong>\"חיסכון בצריכת הסוללה\".<br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.לחצו או הקישו על הקישור <strong>\"שימוש בסוללה\"</strong> תחת כותרת זו לצפייה בפרטים נוספים. </p><p> </p><h3 class='faqInFs25FbP10'>ב. ניתוח צריכת החשמל שלכם</h3><p>4. תוכלו לשנות את הגדרות מסך השימוש בסוללה כך שיציג שימוש בסוללה במשך 24 השעות האחרונות עד 48 השעות האחרונות או במשך השבוע האחרון</p><p>5. אחוזי <strong>\"מערכת\",</strong> <strong>\"צג\"</strong> ו-<strong>\"Wi-Fi\"</strong>. מדד זה מראה כמה מתח סוללה מנוצל על-ידי תהליכי המערכת והצג.</p><p>6. האפשרויות <strong>\"בשימוש\"</strong> ו<strong>\"רקע\"</strong> מציגות כמה מתח מנוצל על-ידי יישומים כאשר אתם משתמשים בהם, בהשוואה ליישומים שרצים ברקע.</p><p>7. אם יישומים משתמשים במתח כאשר הם רצים ברקע, תוכלו ללחוץ או להקיש על הקישור <strong> \"שנה את ההגדרות של יישומים ברקע\" </strong>ולהגדיר את היישומים כך שלא יפעלו ברקע. אפשרות זו פועלת רק עבור היישומים האוניברסליים של Windows 10.</p><p>8. המשיכו לגלול למטה ותראו רשימת יישומים, זה נחשב למקטע המועיל ביותר של תכונה זו.הוא יציג את רשימת היישומים שהשתמשו במתח הסוללה בתקופה זו, ויציג לכם באיזה אחוז של מתח הסוללה השתמש כל אחד מהיישומים</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    בדיקת השימוש בסוללה של המחשב</div><hr><h3 class='faqInFs25FbP10'>תסמין</h3><p>Windows 10 כוללת את המסך החדש <strong>\"שימוש בסוללה\"</strong> שמראה לכם מה גורם לניצול מהיר של סוללת המחשב הנייד. כלומר, המסך יציג אילו יישומים בדיוק, הן יישומי שולחן העבודה והן היישומים \"האוניברסליים\" של Windows 10, צורכים מתח רב מדי.</p><h3 class='faqInFs25FbP10'>מותגים מושפעים</h3><ul>    <li>מחשבים שולחניים ומחשבים ניידים של Lenovo</li></ul><h3 class='faqInFs25FbP10'>המערכות המושפעות</h3><ul>    <li>הכל</li></ul><h3 class='faqInFs25FbP10'>מערכת הפעלה</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>פתרון</h3><p>זוהי תכונה חדשה ב-Windows 10, ותחילה עלינו לאתר אותה מפני שהיא אינה ממוקמת בתצוגת <strong>לוח הבקרה </strong>המסורתית. התכונה נמצאת ביישום החדש <strong>\"הגדרות\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>א. איתור המסך \"שימוש בסוללה\"</h3></p><p>1.הקישו או לחצו על האפשרות <strong>\"הגדרות\"</strong> בתפריט \"התחל\"</p><p>2.במקטע <strong>הגדרות </strong> בחרו <strong>\"מערכת\"</strong>ולאחר מכן בחרו <strong>\"חיסכון בצריכת הסוללה\".<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.לחצו או הקישו על הקישור <strong>\"שימוש בסוללה\"</strong> תחת כותרת זו לצפייה בפרטים נוספים. </p><p> </p><h3 class='faqInFs25FbP10'>ב. ניתוח צריכת החשמל שלכם</h3><p>4. תוכלו לשנות את הגדרות מסך השימוש בסוללה כך שיציג שימוש בסוללה במשך 24 השעות האחרונות עד 48 השעות האחרונות או במשך השבוע האחרון</p><p>5. אחוזי <strong>\"מערכת\",</strong> <strong>\"צג\"</strong> ו-<strong>\"Wi-Fi\"</strong>. מדד זה מראה כמה מתח סוללה מנוצל על-ידי תהליכי המערכת והצג.</p><p>6. האפשרויות <strong>\"בשימוש\"</strong> ו<strong>\"רקע\"</strong> מציגות כמה מתח מנוצל על-ידי יישומים כאשר אתם משתמשים בהם, בהשוואה ליישומים שרצים ברקע.</p><p>7. אם יישומים משתמשים במתח כאשר הם רצים ברקע, תוכלו ללחוץ או להקיש על הקישור <strong> \"שנה את ההגדרות של יישומים ברקע\" </strong>ולהגדיר את היישומים כך שלא יפעלו ברקע. אפשרות זו פועלת רק עבור היישומים האוניברסליים של Windows 10.</p><p>8. המשיכו לגלול למטה ותראו רשימת יישומים, זה נחשב למקטע המועיל ביותר של תכונה זו.הוא יציג את רשימת היישומים שהשתמשו במתח הסוללה בתקופה זו, ויציג לכם באיזה אחוז של מתח הסוללה השתמש כל אחד מהיישומים</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2904,7 +2903,7 @@
         },
         "question6": {
             "title": "היכרות עם Cortana, העוזרת האישית",
-            "description": "<div class='faqInFs4Fb'>    היכרות עם Cortana, העוזרת האישית</div><hr><h3 class='faqInFs25FbP10'>מהי Cortana?</h3><hr /><p>Cortana היא הסוכנת הדיגיטלית שלכם.היא תעזור לכם לבצע את עבודתכם.</p><p>ככל שתשתמשו יותר ב-Cortana, כך החוויה תהיה אישית יותר.</p><p>לתחילת העבודה, הקלידו שאלה בתיבת החיפוש, או בחרו מיקרופון ודברו אל Cortana.(הקלדה פועלת עבור כל סוגי המחשבים, אך נדרש מיקרופון כדי לדבר).</p><p>אם אינכם בטוחים מה לומר, תראו הצעות במסך הנעילה שלכם ובדף הבית של Cortana בעת בחירתה בתיבת החיפוש מתוך שורת המשימות.</p><p><img src='./../../../assets/images/qa/6.1.jpg'  /></p><ol class='listingNone'>    <li dir=\"rtl\">1. דף הבית 2. מחשב נייד 3. הגדרות 4. משוב</li></ol><p>להלן חלק מהפעולות ש-Cortana יכולה לבצע עבורכם:</p><ul>    <li>לתת לכם תזכורות בהתבסס על זמן, מקומות או אנשים.</li>    <li>לעקוב אחר חבילות, צוותים, תחומי עניין וטיסות.</li>    <li>לשלוח הודעות דואר אלקטרוני וטקסטים.</li>    <li>לנהל את היומן שלכם ולעדכן אתכם בכל מה שקורה.</li>    <li>ליצור ולנהל רשימות.</li>    <li>לפטפט אתכם ולשחק משחקים.</li>    <li>למצוא עובדות, קבצים, מקומות ומידע.</li>    <li>לפתוח כל יישום במערכת שלכם.</li></ul><h3 class='faqInFs25FbP10'>נסו זאת: הגדרת תזכורת</h3><hr /><p>אחת מהפעולות ש-Cortana יכולה לבצע זה לתת לכם תזכורות.היא יכולה להזכיר לכם לבצע דברים בהתבסס על זמן, מקומות או אפילו אנשים.</p><p>לדוגמה, הקלידו או הגידו \"הזכירי לי לברך את תמי בפעם הבאה שהיא מתקשרת\".</p><p>התזכורת תופיע כאשר תמי תתקשר אליכם.</p><p>בונוס נוסף - אם יש לכם Windows Phone או Cortana ל-iPhone או Android, תוכלו להגדיר את Cortana לסנכרון הודעות בין המחשב לטלפון.</p><p><img src='./../../../assets/images/qa/6.2.jpg'  /></p><h3 class='faqInFs25FbP10'>היי Cortana?</h3><hr /><p>הגדירו את Cortana כך שתשמע אתכם בכל פעם שאתם אומרים \"היי Cortana\".בחרו את תיבת החיפוש בשורת המשימות כדי לפתוח את דף הבית של Cortana. לאחר מכן בחרו <strong>הגדרות</strong> והפעילו את האפשרות <strong>אפשר ל-Cortana להגיב ל\"היי Cortana\".</strong></p><p><img src='./../../../assets/images/qa/6.3.jpg'  /></p><p class='faqInFs25FbP10'>הערה</p><p>Cortana זמינה רק בארצות/אזורים מסוימים, ותכונות מסוימות של Cortana עשויות שלא להיות זמינות בכל מקום.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    היכרות עם Cortana, העוזרת האישית</div><hr><h3 class='faqInFs25FbP10'>מהי Cortana?</h3><hr /><p>Cortana היא הסוכנת הדיגיטלית שלכם.היא תעזור לכם לבצע את עבודתכם.</p><p>ככל שתשתמשו יותר ב-Cortana, כך החוויה תהיה אישית יותר.</p><p>לתחילת העבודה, הקלידו שאלה בתיבת החיפוש, או בחרו מיקרופון ודברו אל Cortana.(הקלדה פועלת עבור כל סוגי המחשבים, אך נדרש מיקרופון כדי לדבר).</p><p>אם אינכם בטוחים מה לומר, תראו הצעות במסך הנעילה שלכם ובדף הבית של Cortana בעת בחירתה בתיבת החיפוש מתוך שורת המשימות.</p><p><img src='./../../../assets/images/qa/6.1.jpg'  /></p><ol>    <li dir=\"rtl\">1. דף הבית 2. מחשב נייד 3. הגדרות 4. משוב</li></ol><p>להלן חלק מהפעולות ש-Cortana יכולה לבצע עבורכם:</p><ul>    <li>לתת לכם תזכורות בהתבסס על זמן, מקומות או אנשים.</li>    <li>לעקוב אחר חבילות, צוותים, תחומי עניין וטיסות.</li>    <li>לשלוח הודעות דואר אלקטרוני וטקסטים.</li>    <li>לנהל את היומן שלכם ולעדכן אתכם בכל מה שקורה.</li>    <li>ליצור ולנהל רשימות.</li>    <li>לפטפט אתכם ולשחק משחקים.</li>    <li>למצוא עובדות, קבצים, מקומות ומידע.</li>    <li>לפתוח כל יישום במערכת שלכם.</li></ul><h3 class='faqInFs25FbP10'>נסו זאת: הגדרת תזכורת</h3><hr /><p>אחת מהפעולות ש-Cortana יכולה לבצע זה לתת לכם תזכורות.היא יכולה להזכיר לכם לבצע דברים בהתבסס על זמן, מקומות או אפילו אנשים.</p><p>לדוגמה, הקלידו או הגידו \"הזכירי לי לברך את תמי בפעם הבאה שהיא מתקשרת\".</p><p>התזכורת תופיע כאשר תמי תתקשר אליכם.</p><p>בונוס נוסף - אם יש לכם Windows Phone או Cortana ל-iPhone או Android, תוכלו להגדיר את Cortana לסנכרון הודעות בין המחשב לטלפון.</p><p><img src='./../../../assets/images/qa/6.2.jpg'  /></p><h3 class='faqInFs25FbP10'>היי Cortana?</h3><hr /><p>הגדירו את Cortana כך שתשמע אתכם בכל פעם שאתם אומרים \"היי Cortana\".בחרו את תיבת החיפוש בשורת המשימות כדי לפתוח את דף הבית של Cortana. לאחר מכן בחרו <strong>הגדרות</strong> והפעילו את האפשרות <strong>אפשר ל-Cortana להגיב ל\"היי Cortana\".</strong></p><p><img src='./../../../assets/images/qa/6.3.jpg'  /></p><p class='faqInFs25FbP10'>הערה</p><p>Cortana זמינה רק בארצות/אזורים מסוימים, ותכונות מסוימות של Cortana עשויות שלא להיות זמינות בכל מקום.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -3127,7 +3126,7 @@
                 "yes": "כן",
                 "no": "לא"
             },
-            "waitAvailability": "הלחצן מושבת אם התקני האחסון לא תומכים בפונקציונליות זו, בזמן שמידע מהחומרה נטען או אם מתבצעת סריקה."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "הורידו כלי אבחון מקצועיים",
@@ -3164,8 +3163,7 @@
             "storage": "אחסון",
             "wireless": "אלחוטי"
         },
-        "warningMessage": "קחו בחשבון שהבדיקות יבוטלו אם המערכת במצב שינה או המתנה",
-        "refreshMessage": "הרענון עשוי לארוך זמן מה מכיוון שהמחשב צריך לטעון את כל הרכיבים מחדש"
+        "warningMessage": "קחו בחשבון שהבדיקות יבוטלו אם המערכת במצב שינה או המתנה"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3334,24 +3332,7 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
-            "tunepc": {
-                "accumulatedjunkscannedareas": {
-                    "OptimizingWindowssettings": "Optimizing Windows settings",
-                    "Preventingnon-essential": "Preventing non-essential service from running",
-                    "Applyingregistry": "Applying registry and shortcut fixes",
-                    "Removingunnecessary": "Removing unnecessary residual fies",
-                    "Scanningandfixing": "Scanning and fixing critical services",
-                    "RemovingOS": "Removing OS and application log files"
-                }
-            },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week"
+            }
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3436,11 +3417,10 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period:",
-            "subscriptionPeriod": "Subscription period:",
-            "expired": "Expired",
-            "remainingDay": "{{remainingDay}} days remaining",
-            "lenovoId": "Lenovo ID:",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3506,6 +3486,7 @@
     "dirClass": "rtl",
     "notification": {
         "menu": {
+            "privacy": "כעת תוכלו לגלות אם המידע הפרטי שלכם נפרץ או שנעשה בו שימוש על ידי עוקבים באינטרנט, ללא ידיעתכם.",
             "security": "האם אתם יודעים? גם אם אין לכם תוכנת אנטי-וירוס מותקנת, אנחנו עדיין מספקים הגנת אבטחה בסיסית למכשיר שלכם.",
             "connectedHomeSecurity": "קבלו ניטור והתראות בזמן אמת לאבטחת הרשת הביתית. תהיו הראשונים לדעת אם אחד מהמכשירים החכמים שלכם מתמודד עם מתקפת אבטחה."
         }
@@ -3561,8 +3542,5 @@
             "subtitle2": "מחשבי All-in-One: יעילות",
             "body2": "מחשבי All-in-One עם מעבדי ™Intel® Core מדור תשיעי, מעניקים לכם את כל העוצמה של שולחן העבודה ארוזה בתצוגה מלוטשת - לקבלת פחות עומס, אבטחה מבוססת חומרה ותצוגה ברזולוציה גבוהה."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }

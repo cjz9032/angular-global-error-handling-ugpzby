@@ -8,12 +8,12 @@
 	[shiftRightUp]="true">
 
 	<left-content>
-		<div class="mt-2">
+		<div class="mt-5">
 			<div class="row">
 				<div class="col">
 					<vtr-ui-header-subpage [items]="headerMenuItems"
 						[caption]="'device.smartAssist.description' | translate"
-						[menuTitle]="jumpToSettingsTitle"
+						[menuTitle]="jumpTosettingsTitle"
 						[textId]="'smart-assist'"
 						[metricsParent]="'Device.SmartAssist'">
 					</vtr-ui-header-subpage>
@@ -22,7 +22,7 @@
 			<div class="row">
 				<div class="col">
 					<!-- Start of Intelligent Security -->
-					<div class="row pt-5 smart-assist-card"
+					<div class="row py-5 smart-assist-card"
 						id="security"
 						*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
 						<div class="col-12 px-0">
@@ -52,7 +52,8 @@
 											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.tooltip' | translate">
 										</vtr-ui-row-switch>
 										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
-											*ngIf="intelligentSecurity.isDistanceSensitivityVisible">
+											*ngIf="intelligentSecurity.isDistanceSensitivityVisible"
+											>
 											<vtr-ui-row-switch [switchId]="'distanceSensitivity'"
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
@@ -73,13 +74,9 @@
 													[minValue]="1"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="3"
-													(sliderChange)="setZeroTouchLoginSensitivity($event)"
+													(change)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
-													[enableSlider]="!intelligentSecurity.isZeroTouchLoginEnabled"
-													vtrMetrics
-													[metricsItem]="'distanceSensitivity'"
-													metricsEvent="featureClick"
-													metricsValue="{{intelligentSecurity.zeroTouchLoginDistance}}">
+													[enableSlider]="!intelligentSecurity.isZeroTouchLoginEnabled">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
@@ -92,16 +89,12 @@
 												</div> -->
 															<div class="col">
 																<p id="smart-assist-intelligent-security-note"
-																	role="text"
-																	tabindex="0">
+																	attr.aria-label="smart-assist-intelligent-security-note">
 																	{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
 																	<a id="goto_hello_link"
-																		role="link"
+																		attr.aria-label="goto_hello_link"
 																		(click)="launchFaceEnrollment()"
-																		(keydown.enter)="launchFaceEnrollment()"
-																		tabindex="0"
-																		href="javascript:void()">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
-																	</a>
+																		href="javascript:void()">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}</a>
 																</p>
 															</div>
 														</div>
@@ -126,7 +119,8 @@
 											[theme]="'white'">
 										</vtr-ui-row-switch>
 									</li>
-									<li class="pt-3 no-border-bottom">
+									<li class="pt-3 no-border-bottom"
+										>
 										<vtr-ui-row-switch [switchId]="'thinkpadZeroTouchLogin'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
@@ -138,7 +132,8 @@
 											[theme]="'white'"
 											[disabled]="!intelligentSecurity.isHPDEnabled">
 										</vtr-ui-row-switch>
-										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom">
+										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
+											>
 											<vtr-ui-row-switch [switchId]="'thinkpadDistanceSensitivity'"
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[isSwitchVisible]="false"
@@ -157,13 +152,9 @@
 													[minValue]="1"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="3"
-													(sliderChange)="setZeroTouchLoginSensitivity($event)"
+													(change)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
-													[enableSlider]="!intelligentSecurity.isHPDEnabled || !intelligentSecurity.isZeroTouchLoginEnabled"
-													vtrMetrics
-													[metricsItem]="'thinkpadDistanceSensitivity'"
-													metricsEvent="featureClick"
-													metricsValue="{{intelligentSecurity.zeroTouchLoginDistance}}">
+													[enableSlider]="!intelligentSecurity.isHPDEnabled || !intelligentSecurity.isZeroTouchLoginEnabled">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled || !intelligentSecurity.isHPDEnabled"
@@ -176,16 +167,12 @@
 												</div> -->
 															<div class="col">
 																<p id="smart-assist-intelligent-security-note"
-																	tabindex="0"
-																	role="text">
+																	attr.aria-label="smart-assist-intelligent-security-note">
 																	{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
 																	<a (click)="launchFaceEnrollment()"
 																		id="thinkpad_goto_hello_link"
-																		tabindex="0"
-																		(keydown.enter)="launchFaceEnrollment()"
-																		role="link"
-																		href="javascript:void()">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
-																	</a>
+																		attr.aria-label="thinkpad_goto_hello_link"
+																		href="javascript:void()">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}</a>
 																</p>
 															</div>
 														</div>
@@ -212,120 +199,106 @@
 											[disabled]="!intelligentSecurity.isHPDEnabled">
 											<div class="row fac-control">
 												<div class="col mt-10 facial-recognition"
-													role="text"
-													tabindex="0"
 													*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible">
-													<h3 id="smart-assist-zero-touch-lock-faical-recognition-title mt-2">
+													<h3 id="smart-assist-zero-touch-lock-faical-recognition-title"
+														attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-title">
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.title' | translate}}
 													</h3>
 													<p id="smart-assist-zero-touch-lock-faical-recognition-desc" role="text"
 													    attr-aria-label="smart-assist-zero-touch-lock-faical-recognition-desc">
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 													</p>
-													<div class="smart-assist-checkbox">
-														<vtr-ui-checkbox [componentId]="'cb-zero-touch-lock'"
+													<div class="custom-control custom-checkbox smart-assist-checkbox">
+														<input id="cb-zero-touch-lock"
+															attr.aria-label="cb-zero-touch-lock"
+															type="checkbox"
+															name="zero-check-lock-checkbox-id"
+															class="custom-control-input"
 															[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
 												|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
-															[value]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
-															[checked]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
-															[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate"
-															(toggle)='onZeroTouchLockFacialRecoChange($event)'>
-														</vtr-ui-checkbox>
+															[(ngModel)]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
+															(ngModelChange)='onZeroTouchLockFacialRecoChange()' />
+														<!-- [checked]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"/> -->
+														<label for="cb-zero-touch-lock"
+															class="custom-control-label">
+															{{ 'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate }}
+														</label>
 													</div>
-													<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess || intelligentSecurity.facialRecognitionCameraPrivacyMode"
-														class="permission-note p-4">
-														<div class="row">
-															<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess"
-																class="col pr-3"
-																role="text"
-																tabindex="0">
-																<span class="mb-0 mt-auto"
-																	id="ztl-facial-recognition-permission-note"
-																	role="text">
-																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.permission' | translate}}
-																</span>
-																<button type="button"
-																	class="btn btn-link privacy-button pl-0"
-																	(click)="onClick('ms-settings:privacy-webcam')"
-																	(keydown.enter)="onClick('ms-settings:privacy-webcam')"
-																	id="ztl-facial-recognition-access-url"
-																	role="button"
-																	tabindex="0"
-																	[attr.aria-disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
-																	[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
-																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.windowsLink' | translate}}
-																</button>
-															</div>
-															<div class="col pl-3"
-																role="text"
-																tabindex="0"
-																*ngIf="intelligentSecurity.facilRecognitionCameraAccess && intelligentSecurity.facialRecognitionCameraPrivacyMode">
-																<span class="mb-0 mt-auto"
-																	id="ztl-facial-recognition-privacy-note"
-																	role="text">
-																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyMode' | translate}}
-																</span>
-																<button type="button"
-																	class="btn btn-link privacy-button pl-0"
-																	(click)="onJumpClick()"
-																	(keydown.enter)="onJumpClick()"
-																	id="ztl-facial-recognition-privacy-url"
-																	role="button"
-																	tabindex="0"
-																	[attr.aria-disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
-																	[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
-																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyLink' | translate}}
-																</button>
+													<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess || intelligentSecurity.facialRecognitionCameraPrivacyMode" class="permission-note p-4">
+															<div class="row">
+																<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess"
+																	class="col">
+																	<span class="mb-0 mt-auto"
+																		id="ztl-facial-recognition-permission-note"
+																		attr.aria-label="ztl-facial-recognition-permission-note">
+																		{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.permission' | translate}}
+																	</span>
+																	<button type="button"
+																		class="btn btn-link privacy-button pl-0"
+																		(click)="onClick('ms-settings:privacy-webcam')"
+																		id="ztl-facial-recognition-access-url"
+																		attr.aria-label="ztl-facial-recognition-access-url"
+																		[disabled] = "!intelligentSecurity.isZeroTouchLockEnabled">
+																		{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.windowsLink' | translate}}
+																	</button>
+																</div>
+																<div class="col"
+																	*ngIf="intelligentSecurity.facilRecognitionCameraAccess && intelligentSecurity.facialRecognitionCameraPrivacyMode">
+																	<span class="mb-0 mt-auto"
+																		id="ztl-facial-recognition-privacy-note"
+																		attr.aria-label="ztl-facial-recognition-privacy-note">
+																		{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyMode' | translate}}
+																	</span>
+																	<button type="button"
+																		class="btn btn-link privacy-button pl-0"
+																		(click)="onJumpClick()"
+																		id="ztl-facial-recognition-privacy-url"
+																		attr.aria-label="ztl-facial-recognition-privacy-url"
+																		[disabled] ="!intelligentSecurity.isZeroTouchLockEnabled">
+																		{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyLink' | translate}}
+																	</button>
+																</div>
 															</div>
 														</div>
-													</div>
 												</div>
 											</div>
 										</vtr-ui-row-switch>
-										<div *ngIf="sensitivityVisibility"
-											class="pl-5 bold-title no-border-bottom pb-4">
-											<vtr-ui-row-switch [switchId]="'thinkpadSensitivity'"
-												[title]="'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate"
-												[isSwitchVisible]="false"
-												[showChildContent]="true"
-												[isSwitchChecked]="false"
-												[theme]="'white'"
-												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
-											</vtr-ui-row-switch>
-											<div class="slider-note"
-												[class.disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
-												<vtr-ui-range-slider [rangeSliderId]="'thinkpadSensitivity'"
-													[manualRefresh]="manualRefresh"
-													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
-													[minValue]="1"
-													(sliderChange)="setHPDLeaveSensitivitySetting($event)"
-													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
-													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
-													[maxValue]="3"
-													[value]="sesnsitivityAdjustVal"
-													[enableSlider]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled"
-													vtrMetrics
-													[metricsItem]="'thinkpadSensitivity'"
-													metricsEvent="featureClick"
-													metricsValue="{{sesnsitivityAdjustVal}}">
-												</vtr-ui-range-slider>
-												<div class="pt-3"
-													[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
-													<div class="feature-note p-4">
-														<div class="row blur">
-															<div class="col">
-																<p id="smart-assist-intelligent-security-note"
-																	role="text"
-																	tabindex="0">
-																	{{'device.smartAssist.intelligentSecurity.note.description7' | translate}}
-																</p>
-															</div>
+										<div *ngIf="sensitivityVisibility" class="pl-5 bold-title no-border-bottom pb-4"
+										>
+										<vtr-ui-row-switch [switchId]="'thinkpadSensitivity'"
+											[title]="'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate"
+											[isSwitchVisible]="false" [showChildContent]="true"
+											[isSwitchChecked]="false" [theme]="'white'"
+											[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
+										</vtr-ui-row-switch>
+										<div class="slider-note"
+											[class.disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
+											<vtr-ui-range-slider [rangeSliderId]="'thinkpadSensitivity'"
+												[manualRefresh]="manualRefresh"
+												[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
+												[minValue]="1" (change)="setHPDLeaveSensitivitySetting($event)"
+												[mediumValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
+												[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
+												[maxValue]="3"
+												[value]="sesnsitivityAdjustVal"
+												[enableSlider]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
+											</vtr-ui-range-slider>
+											<div class="pt-3"
+												[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
+												<div class="feature-note p-4">
+													<div class="row blur">
+														<div class="col">
+															<p id="smart-assist-intelligent-security-note"
+																attr.aria-label="smart-assist-intelligent-security-note">
+																{{'device.smartAssist.intelligentSecurity.note.description7' | translate}}
+															</p>
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-										<div class="bold-title no-border-bottom pl-5 pb-4 border-bottom auto-screen-lock-help-icon"
+									</div>
+										<div class="bold-title no-border-bottom pl-5 pb-4 border-bottom"
 											*ngIf="intelligentSecurity.isZeroTouchLockVisible"
 											[class.col-pad-margin]="isThinkPad">
 											<vtr-ui-row-switch [switchId]="'autoScreenLockTimer'"
@@ -372,8 +345,7 @@
 														<div class="row blur">
 															<div class="col">
 																<p id="smart-assist-zeroTouchLock-note"
-																	role="text"
-																	tabindex="0">
+																	attr.aria-label="smart-assist-zeroTouchLock-note">
 																	{{'device.smartAssist.intelligentSecurity.note.description2' | translate}}
 																</p>
 															</div>
@@ -385,24 +357,22 @@
 									</li>
 								</ul>
 								<div class="row">
-									<div class="feature-note p-4 my-4 mx-3"
-										role="text"
-										tabindex="0">
+									<div class="feature-note p-4 m-4">
 										<p id="smart-assist-intelligent-security-note-desc1"
-											role="text">
+											attr.aria-label="smart-assist-intelligent-security-note-desc1">
 											{{'device.smartAssist.intelligentSecurity.note.description3' | translate}}
 										</p>
 										<p id="smart-assist-intelligent-security-note-desc2"
-											role="text">
+											attr.aria-label="smart-assist-intelligent-security-note-desc2">
 											{{'device.smartAssist.intelligentSecurity.note.description4' | translate}}
 										</p>
 										<p id="smart-assist-intelligent-security-note-desc3"
-											role="text">
+											attr.aria-label="smart-assist-intelligent-security-note-desc3">
 											{{'device.smartAssist.intelligentSecurity.note.description5' | translate}}
 										</p>
-										<p role="text"
-											*ngIf="isThinkPad && intelligentSecurity.isZeroTouchLoginVisible && intelligentSecurity.isZeroTouchLockVisible && (hpdSensorType == 2)"
-											id="smart-assist-intelligent-security-note-desc4">
+										<p *ngIf="isThinkPad && intelligentSecurity.isZeroTouchLoginVisible && intelligentSecurity.isZeroTouchLockVisible && (hpdSensorType == 2)"
+											id="smart-assist-intelligent-security-note-desc4"
+											attr.aria-label="smart-assist-intelligent-security-note-desc4">
 											{{'device.smartAssist.intelligentSecurity.note.description6' | translate}}
 										</p>
 									</div>
@@ -410,7 +380,6 @@
 								<div class="row ml-3">
 									<vtr-ui-button [linkId]="'intelligentSecurity_reset_btn'"
 										(onClick)="onResetDefaultSettings($event)"
-										(keydown.enter)="onResetDefaultSettings($event)"
 										[upperCaseLabel]="true"
 										[label]="'device.smartAssist.intelligentSecurity.resetToDefault' | translate"
 										metricsParent="Pages.SmartAssist.security"
@@ -422,7 +391,7 @@
 					<!-- End of Intelligent Security -->
 
 					<!-- Start of Intelligent Screen -->
-					<div class="row pt-5 smart-assist-card"
+					<div class="row py-5 smart-assist-card"
 						id="screen"
 						*ngIf="intelligentScreen.isIntelligentScreenVisible">
 						<div class="col-12 px-0">
@@ -435,13 +404,11 @@
 								[theme]="'white'"
 								(toggle)="onCardCollapse($event)">
 
-								<div class="intligent-screen">
-									<div class="col-12 px-0">
-										<div class="int-screen-desc"
-											role="text"
-											tabindex="0">
+								<div class="row">
+									<div class="col-auto">
+										<div class="int-screen-desc">
 											<p id="smart-assist-intelligent-screen-desc"
-												role="text">
+												attr.aria-label="smart-assist-intelligent-screen-desc">
 												{{'device.smartAssist.intelligentScreen.description' | translate}}
 											</p>
 										</div>
@@ -463,11 +430,9 @@
 										</vtr-ui-row-switch>
 										<div class="row"
 											*ngIf="intelligentScreen.isAutoScreenOffNoteVisible">
-											<div class="feature-note auto-screen-off-note p-4"
-												role="text"
-												tabindex="0">
+											<div class="feature-note auto-screen-off-note p-4 m-4">
 												<p id="smart-assist-auto-screen-off-note"
-													role="text">
+													attr.aria-label="smart-assist-auto-screen-off-note">
 													{{'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate}}
 												</p>
 												<!-- <a href="javascript:void();"
@@ -475,7 +440,8 @@
 											</div>
 										</div>
 									</li>
-									<li class="pt-3 keep-my-display-block">
+									<li class="pt-3 keep-my-display-block"
+										*ngIf="intelligentScreen.isReadingOrBrowsingVisible">
 										<vtr-ui-row-switch [switchId]="'keepMyDisplay'"
 											[title]="'device.smartAssist.intelligentScreen.keepMyDisplay.title' | translate"
 											[caption]="'device.smartAssist.intelligentScreen.keepMyDisplay.caption' | translate"
@@ -485,11 +451,10 @@
 											[showChildContent]="true"
 											(toggleOnOff)="onKeepMyDisplayToggle($event)"
 											[isSwitchChecked]="intelligentScreen.isReadingOrBrowsingEnabled">
-											<div class="pl-4 ml-4 pt-4">
+											<div class="pl-5 ml-5 pt-4">
 												<div class="display-dim-title"
 													id="smart-assist-display-slider-title"
-													role="text"
-													tabindex="0">
+													attr.aria-label="smart-assist-display-slider-title">
 													{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}
 												</div>
 												<vtr-ui-range-slider [rangeSliderId]="'keepMyDisplay'"
@@ -514,22 +479,21 @@
 
 
 					<!-- Start of Intelligent Media -->
-					<div class="smart-assist-card">
-						<vtr-intelligent-media id="media"
-							*ngIf="intelligentMedia.available || superResolution.available"
-							[isLoading]="isIntelligentMediaLoading"
-							[isChecked]="intelligentMedia.status"
-							[isSRLoading]="isSuperResolutionLoading"
-							[isSRChecked]="superResolution.status"
-							[intelligentMediaAvailable]="intelligentMedia.available"
-							[superResolutionAvailable]="superResolution.available">
-						</vtr-intelligent-media>
-					</div>
+
+					<vtr-intelligent-media id="media"
+						*ngIf="intelligentMedia.available || superResolution.available"
+						[isLoading]="isIntelligentMediaLoading"
+						[isChecked]="intelligentMedia.status"
+						[isSRLoading]="isSuperResolutionLoading"
+						[isSRChecked]="superResolution.status"
+						[intelligentMediaAvailable]="intelligentMedia.available"
+						[superResolutionAvailable]="superResolution.available">
+					</vtr-intelligent-media>
 
 					<!-- End of Intelligent Media -->
 
 					<!-- Start of Active Protection System -->
-					<div class="row pt-5 smart-assist-card"
+					<div class="row py-5 smart-assist-card"
 						id="aps"
 						*ngIf='isAPSAvailable'>
 						<div class="col-12 px-0">
@@ -548,7 +512,7 @@
 					<!-- End of Active Protection System -->
 
 					<!-- Start of voice -->
-					<div class="row pt-5 smart-assist-card"
+					<div class="row py-5 smart-assist-card"
 						id="voice"
 						*ngIf="lenovoVoice.available">
 						<div class="col-12 px-0">
@@ -573,7 +537,7 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col col-12 pb-5">
+				<div class="col col-12 pb-20">
 					<vtr-container-card [containerCardId]="'smart-assist-container-card'"
 						[item]="cardContentPositionA"
 						[type]="'subpage-corner'"
@@ -585,14 +549,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col col-12 mb-3 help-heading"
-					role="text"
-					tabindex="0">
-					{{ 'device.deviceSettings.helpful' | translate }}
-				</div>
-			</div>
-			<div class="row">
-				<div class="col col-12 cont pb-5">
+				<div class="col col-12 cont py-20">
 					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 						[description]="'common.qAndA.subtitle' | translate"
 						[items]="qaService.qas"

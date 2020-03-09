@@ -53,7 +53,6 @@ export class BacklightComponent implements OnInit, OnDestroy {
 	isSwitchChecked = false;
 	private oneLevelSubscription: Subscription;
 	private autoSubscription: Subscription;
-	private twoLevelSubscription: Subscription;
 
 	constructor(
 		private backlightService: BacklightService,
@@ -120,18 +119,6 @@ export class BacklightComponent implements OnInit, OnDestroy {
 					}
 				}
 			});
-		this.twoLevelSubscription = this.level$
-			.pipe(
-				takeWhile(item => item.value === BacklightLevelEnum.TWO_LEVELS),
-				switchMap(() => this.status$),
-			)
-			.subscribe((status) => {
-				for (const mode of this.modes) {
-					if (mode.value === status.value) {
-						mode.checked = true;
-					}
-				}
-			});
 		this.update$.subscribe(mode => {
 			for (const modeItem of this.modes) {
 				modeItem.checked = false;
@@ -146,12 +133,6 @@ export class BacklightComponent implements OnInit, OnDestroy {
 		}
 		if (this.oneLevelSubscription) {
 			this.oneLevelSubscription.unsubscribe();
-		}
-		if (this.twoLevelSubscription ) {
-			this.twoLevelSubscription.unsubscribe();
-		}
-		if (this.autoSubscription ) {
-			this.autoSubscription.unsubscribe();
 		}
 		this.backlightService.clearCache();
 	}

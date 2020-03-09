@@ -255,12 +255,12 @@ describe('MacrokeyService', () => {
 			expect(macrokeyService.updateMacrokeyInitialKeyIntervalDataCache).toHaveBeenCalled();
 		});
 
-		// it('should call updateMacrokeyInitialKeyDataCache', async () => {
-		// 	const macrokeyService = getService();
-		// 	spyOn(macrokeyService, 'updateMacrokeyInitialKeyDataCache').and.callThrough();
-		// 	macrokeyService.updateMacrokeyInitialKeyDataCache([]);
-		// 	expect(macrokeyService.updateMacrokeyInitialKeyDataCache).toHaveBeenCalled();
-		// });
+		it('should call updateMacrokeyInitialKeyDataCache', async () => {
+			const macrokeyService = getService();
+			spyOn(macrokeyService, 'updateMacrokeyInitialKeyDataCache').and.callThrough();
+			macrokeyService.updateMacrokeyInitialKeyDataCache([]);
+			expect(macrokeyService.updateMacrokeyInitialKeyDataCache).toHaveBeenCalled();
+		});
 
 		it('should call setMacrokeyChangeStatusCache', async () => {
 			const macrokeyService = getService();

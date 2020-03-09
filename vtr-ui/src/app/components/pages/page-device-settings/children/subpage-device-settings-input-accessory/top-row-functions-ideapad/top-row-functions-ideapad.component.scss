@@ -18,8 +18,8 @@
 			vertical-align: -0.12em;
 		}
 		.title {
-			font-size: $fontsize_md;
-			color: $purple_navy;
+			font-size: $section_header;
+			color: $main_darker;
 			font-weight: $weight_light;
 			letter-spacing: 0.05rem;
 			text-transform: none;
@@ -27,15 +27,15 @@
 	}
 	.caption {
 		.text{
-			font-size: $fontsize_xs;
+			font-size: $body;
 			font-weight: $weight_light;
-			color:$grey_dark;
+			color: $main_darker;
+			padding-left: 2.6rem;
 		}
-		// max-width: 60rem;
-		padding-left: 3rem;
+		max-width: 60rem;
 	}
 	.link-text {
-		font-size: $fontsize_xs2;
+		font-size: $caption;
 		font-weight: $weight_bold;
 		text-decoration: underline;
 		letter-spacing: 0.05rem;

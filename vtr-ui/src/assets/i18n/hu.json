@@ -85,7 +85,7 @@
                 "legionEdgeModal": {
                     "line1": "A Vantage Edge segítségével a beállítások a használat alapján automatikusan hangolódnak. \n Maximális teljesítmény játék során, hosszabb akkumulátoros üzemidő máskor.",
                     "line2": "<b>Szolgáltatáskezelés – áttekintés</b> <br> Egyes szolgáltatások nem érhetők el minden eszközön",
-                    "line3": "<b>CPU/GPU-túlpörgetés</b><br> Fokozza a processzora maximális sebességét",
+                    "line3": "<b>CPU-túlpörgetés </b><br> Fokozza a processzora maximális sebességét",
                     "line4": "<b>RAM-túlpörgetés </b><br> Fokozza a memória maximális sebességét",
                     "line5": "<b>Hálózat erősítése </b><br> Hálózati forgalom átirányítása a játszott játékhoz",
                     "line6": "<b>Dolby </b><br> Hang beállítása a Dolby technológiával rendelkező játékokhoz",
@@ -93,8 +93,7 @@
                     "line8": "<b>Gyorstöltés </b><br> Hosszabb játékidő utazás közben gyorsabb akkumulátortöltéssel",
                     "line9": "<b>Érintőfelület zárolása </b><br> A véletlenszerű műveletek elkerülése az érintőfelület játék közbeni letiltásával",
                     "line10": "<b>Automatikus bezárás </b><br> A rendszer erőforrásainak maximalizálásához törölje a nem használt folyamatokat a játék megkezdése előtt",
-                    "line11": "<b>Termál mód </b><br> Preferált eszközprofil beállítása a ventilátorsebesség és hűtés vezérléséhez",
-                    "line12": "<b>Makróbillentyű</b><br>Billentyűzet műveleteinek testre szabása, hogy illeszkedjen játékstílusához"
+                    "line11": "<b>Termál mód </b><br> Preferált eszközprofil beállítása a ventilátorsebesség és hűtés vezérléséhez"
                 },
                 "systemInfo": {
                     "systenTooltip": "Vigye az egeret a CPU/GPU/RAM vagy a különböző meghajtók fölé, és láthatja a leírásukat, többek között a gyártmányukat és a típusukat"
@@ -749,10 +748,11 @@
                 "sub2": "Vírusirtó",
                 "sub3": "Biztonságos WiFi",
                 "sub4": "Jelszó állapota",
-                "sub5": "VPN-biztonság",
-                "sub6": "Ujjlenyomat"
+                "sub5": "Védelem az interneten",
+                "sub6": "Windows Hello"
             },
             "support": "Támogatás",
+            "privacy": "Adatvédelem",
             "beta": {
                 "title": "beta"
             },
@@ -763,8 +763,8 @@
             "subtitle": "ELLENŐRIZZE, HOGY BIZTONSÁGOS-E A KÉSZÜLÉK.",
             "antiVirus": "Vírusirtó",
             "wifi": "Biztonságos WiFi",
-            "pswdMgr": "Jelszó állapota",
-            "vpn": "VPN-Biztonság",
+            "pswdMgr": "Password Manager",
+            "vpn": "VPN",
             "enabled": "ENGEDÉLYEZETT",
             "disabled": "LETILTOTT",
             "partiallyProtected": "RÉSZLEGESEN VÉDETT",
@@ -775,11 +775,9 @@
             "notFound": "NEM TALÁLHATÓ",
             "registered": "REGISZTRÁLT",
             "notRegistered": "NEM REGISZTRÁLT",
-            "fingerPrint": "Ujjlenyomat",
+            "fingerPrint": "Fingerprint",
             "privacyPolicyAndTermsOfService": "<tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag>",
-            "windowsHello": "Windows Hello",
-            "enrolled": "REGISZTRÁLT",
-            "notEnrolled": "NEM REGISZTRÁLT"
+            "windowsHello": "Windows Hello"
         },
         "qAndA": {
             "title": "Kérdések és válaszok a gépedhez",
@@ -810,6 +808,11 @@
         },
         "offline": {
             "connectToUseFeature": "Csatlakozzon az internethez a funkció használatához"
+        }
+    },
+    "privacy": {
+        "headerMain": {
+            "title": "Adatvédelem"
         }
     },
     "tutorial": {
@@ -1236,7 +1239,7 @@
                     },
                     "airPlanePower": {
                         "title": "Repülőgépes energiaséma",
-                        "description": "Ez a funkció lehetővé teszi a szabványos elektromos csatlakozó használatát az olyan repülőgépeken, ahol bizonyos teljesítménykorlátozások érvényesek. Ebben az üzemmódban a számítógép az akkumulátortöltési sebesség és a rendszerteljesítémény korlátozásával biztonságos szintre csökkenti az energiafogyasztását.",
+                        "description": "A repülő elektromos csatlakozójának védelme a rendszer energiafogyasztásának szabályozásával.A Repülőgépes energiaséma engedélyezése esetén a számítógép az akkumulátortöltési ráta és a rendszerteljesítémény korlátozásával csökkenti az energiafogyasztást.",
                         "checkBoxDesc": "Automatikus észlelés",
                         "note": "Az automatikus észlelés bejelölésekor a számítógép automatikusan bekapcsolja a Repülőgépes energiamódot, amikor egy repülőgép fedélzeti környezetét észleli, és kikapcsolja, amikor Ön távozik onnan."
                     },
@@ -1269,7 +1272,7 @@
                             "ERROR_UNEXPECTED": "Sikertelen: Váratlan hiba történt."
                         },
                         "popup": {
-                            "description1": "A nullázási folyamat a következő:<br>Töltse fel teljesen az akkumulátort --> Süsse ki alacsony akkumulátortöltöttségig --> Töltse újra magas akkumulátortöltöttségig vagy teljes töltöttségig",
+                            "description1": "A nullázási folyamat a következő: <br> Töltse fel teljesen az akkumulátort  -->  Süsse ki teljesen az akkumulátort  -->  Töltse újra teljesen az akkumulátort",
                             "description2": "Megjegyzések: <br>1. A folyamat több órát is igénybe vehet. A számítógépet ezen idő alatt ne használja.<br>2. Zárja be az összes nyitott alkalmazást, és csatlakoztassa a számítógépet hálózati tápellátáshoz.<br>3. A folyamat során az akkumulátortöltési küszöbérték funkció le van tiltva.",
                             "continue": "Folytatás",
                             "cancel": "Mégse",
@@ -1356,14 +1359,14 @@
                     "warningtip": "Kérjük, válasszon legalább egy napot.",
                     "days": {
                         "shortName": {
-                            "sun": "Vas",
-                            "mon": "Hé",
-                            "tue": "Ke",
-                            "wed": "Sze",
-                            "thurs": "Csüt",
-                            "fri": "Pé",
-                            "sat": "Szo",
-                            "thu": "Csüt"
+                            "sun": "Vasárnap",
+                            "mon": "Hétfő",
+                            "tue": "Kedd",
+                            "wed": "Szerda",
+                            "thurs": "Csütörtök",
+                            "fri": "Péntek",
+                            "sat": "Szombat",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Vasárnap",
@@ -1384,7 +1387,7 @@
                     "subTitle": "Számítógép ütemezése",
                     "automaticMode": "Automatikus üzemmód",
                     "manualMode": "Manuális üzemmód",
-                    "subNote": "A számítógép a használatától függően gyorsabb visszaállásra van ütemezve.",
+                    "subNote": "A számítógép használati séma alapján Modern készenléti állapotra lett ütemezve.",
                     "graph": {
                         "graph1Tittle": "A számítógép használata",
                         "graph2Tittle": "Alkalmazott aktív idő",
@@ -1423,8 +1426,7 @@
                     },
                     "description2": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
                     "subTitle2": "Adja meg, hogy általában mikor használja a számítógépet",
-                    "oldTooltipText": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett KEZDÉSI idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időszakot a megadott ütemezés alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre; ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás.",
-                    "sectionTitle": "Készenléti állapot beállításai"
+                    "oldTooltipText": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett KEZDÉSI idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időszakot a megadott ütemezés alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre; ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás."
                 }
             },
             "audio": {
@@ -1528,8 +1530,7 @@
                         "note": {
                             "title": "Megjegyzés",
                             "description": "A napnyugta és a napkelte idejének kiszámításához a Lenovo Vantage-nek hozzá kell férnie a helyadatokhoz."
-                        },
-                        "tips": "Kérjük, futtassa a Windows Update szolgáltatást, vagy telepítse manuálisan a grafikus illesztőprogramot a Szemvédő mód helyreállításához"
+                        }
                     },
                     "dispColorTemp": {
                         "title": "A képernyő színhőmérséklete",
@@ -1574,14 +1575,14 @@
                         "displayDimmer": "KÉPERNYŐ ELSÖTÉTÍTÉSE"
                     },
                     "displayPriority": {
-                        "title": "Képernyőprioritás-szabályozó",
-                        "description": "A készüléke maximális számú külső kijelzőt támogat. Ha egynél több képernyőt csatlakoztat ezekkel az extra módszerekkel, csak az előnyben részesített képernyő működik.<br/>Válassza ki alább, hogy melyik extra megjelenítési módot részesíti előnyben:",
+                        "title": "Display Priority Control",
+                        "description": "Your device supports a maximum number of external displays. When connecting more than one display using these extra methods, only the prioritized one will work.<br/>Choose below which extra display output method to prioritize:",
                         "options": {
                             "hdmi": "HDMI",
-                            "dock": "Dokkolás",
+                            "dock": "Docking",
                             "usb_c_dp": "USB Type-C",
                             "wigig": "WiGig",
-                            "cartridge": "Opcionális modul"
+                            "cartridge": "Optional Module"
                         }
                     }
                 },
@@ -1611,8 +1612,7 @@
                         "caption": "Ez a funkció elhomályosítja a hátteret, ha a kamerát videohíváshoz vagy fényképezéshez használják. Az alábbi effektusok közül választhat.",
                         "blurMode": "Elmosás mód",
                         "comicMode": "Rajzfilm mód",
-                        "sketchMode": "Skicc mód",
-                        "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
+                        "sketchMode": "Skicc mód"
                     },
                     "cameraLoadingFailed": {
                         "inUseTitle": "A KAMERA HASZNÁLATBAN VAN",
@@ -1752,12 +1752,12 @@
                     "title": "Az Fn és a Ctrl billentyű felcserélése",
                     "description": "Ha rendszeresen az Fn billentyűt nyomja le, amikor a Ctrl billentyűt szeretné lenyomni, felcserélheti a két billentyű funkcióját.",
                     "restartNote": "A két billentyű funkciójának felcseréléséhez újra kell indítania a számítógépet. Biztosan újraindítja?",
-                    "title2": "Az Fn a Ctrl billentyűként működik a gyakori billentyűkombinációk esetében",
-                    "description2": "Az Fn a Ctrl billentyűként működik bizonyos gyakran használt billentyűkombinációk esetében. A Ctrl billentyű funkciója nem módosul.",
-                    "featureNote": "Ez a funkció, valamint az Fn és a Ctrl billentyű felcserélése funkció nem lehet egyszerre bekapcsolva. Ha az egyik be van kapcsolva, akkor a másik automatikusan kikapcsol.",
+                    "title2": "Fn works as Ctrl for frequently used key combinations",
+                    "description2": "The Fn key works as the Ctrl key for some frequently used key combinations. The function of the Ctrl key does not change.",
+                    "featureNote": "This function and Fn key and Ctrl key swap function can not be on at the same time. If one is on the other one will be turn off automatically.",
                     "tootTip": {
                         "fnKeys": {
-                            "heading": "Fn billentyűk",
+                            "heading": "Fn Keys",
                             "key1": "Fn + A",
                             "key2": "Fn + C",
                             "key3": "Fn + D",
@@ -1773,7 +1773,7 @@
                             "key13": "Fn + Z"
                         },
                         "ctrlKeys": {
-                            "heading": "Ctrl billentyűk",
+                            "heading": "Ctrl Keys",
                             "key1": "Ctrl + A",
                             "key2": "Ctrl + C",
                             "key3": "Ctrl + D",
@@ -1789,20 +1789,20 @@
                             "key13": "Ctrl + Z"
                         },
                         "action": {
-                            "heading": "Művelet",
-                            "action1": "Összes kijelölése",
-                            "action2": "Másolás",
-                            "action3": "Weboldal kedvencekhez adása",
-                            "action4": "Keresés",
-                            "action5": "Keresés és csere a Microsoft Wordben",
-                            "action6": "Balra és jobbra igazítás a Microsoft Wordben",
-                            "action7": "Kilépés (a támogatott alkalmazásokban)",
-                            "action8": "Aláhúzás hozzáadása",
-                            "action9": "Beillesztés",
-                            "action10": "Bezárás (alkalmazásonként)",
-                            "action11": "Kivágás",
-                            "action12": "Újbóli végrehajtás",
-                            "action13": "Visszavonás"
+                            "heading": "Action",
+                            "action1": "Select all",
+                            "action2": "Copy",
+                            "action3": "Add web page to my favorite",
+                            "action4": "Search",
+                            "action5": "Find and replace in Microsoft Word",
+                            "action6": "Align left and right in Microsoft Word",
+                            "action7": "Quit (in supported app)",
+                            "action8": "Add underline",
+                            "action9": "Paste",
+                            "action10": "close (per app)",
+                            "action11": "Cut",
+                            "action12": "Redo",
+                            "action13": "Undo"
                         }
                     }
                 },
@@ -1813,19 +1813,19 @@
                     "control3": "TRACKPOINT-VEZÉRLŐK",
                     "less": "KEVESEBB"
                 },
-                "backlight": {
-                    "title": "Billentyűzet-háttérvilágítás",
-                    "description": {
-                        "base": "Aktiválja a billentyűzet háttérvilágítását, hogy megkönnyítse a gépelést sötétben vagy rossz fényviszonyok között. Az Fn+szóköz billentyű megnyomásával megváltoztathatja a billentyűzet háttérvilágításának beállításait.",
-                        "auto": "Aktiválja a billentyűzet háttérvilágítását, hogy megkönnyítse a gépelést sötétben vagy rossz fényviszonyok között. Az Fn+szóköz billentyű megnyomásával, vagy az „Automata” mód beállításával is megváltoztathatja a billentyűzet háttérvilágításának beállításait. Az „Automata” opció automatikusan beállítja a billentyűzet háttérvilágítását a környezeti fénynek megfelelően."
-                    },
-                    "level": {
-                        "auto": "Automata",
-                        "low": "Alacsony",
-                        "high": "Magas",
-                        "off": "Ki"
-                    }
-                }
+				"backlight": {
+					"title": "Billentyűzet-háttérvilágítás",
+					"description": {
+						"base": "Aktiválja a billentyűzet háttérvilágítását, hogy megkönnyítse a gépelést sötétben vagy rossz fényviszonyok között. Az Fn+szóköz billentyű megnyomásával megváltoztathatja a billentyűzet háttérvilágításának beállításait.",
+						"auto": "Aktiválja a billentyűzet háttérvilágítását, hogy megkönnyítse a gépelést sötétben vagy rossz fényviszonyok között. Az Fn+szóköz billentyű megnyomásával, vagy az „Automata” mód beállításával is megváltoztathatja a billentyűzet háttérvilágításának beállításait. Az „Automata” opció automatikusan beállítja a billentyűzet háttérvilágítását a környezeti fénynek megfelelően."
+					},
+					"level": {
+						"auto": "Automata",
+						"low": "Alacsony",
+						"high": "Magas",
+						"off": "Ki"
+					}
+				}
             }
         },
         "smartAssist": {
@@ -2216,8 +2216,8 @@
     },
     "security": {
         "landing": {
-            "fully": "Ha jobb ajánlatot szeretne kapni eszköze védelmére, maradjon a következővel:",
-            "notFully": "Ha meg szeretné tudni, hogyan védheti meg jobban eszközeit, kezdje a következővel:",
+            "fully": "Teljesen védett",
+            "notFully": "Nem teljesen védett",
             "security101": "BIZTONSÁGI TANÁCSADÓ 101",
             "firewall": "Tűzfal",
             "pwdHealth": "Jelszó állapota",
@@ -2358,7 +2358,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Biztonságos WiFi",
+                "title": "WiFi és Biztonsági rendszer csatlakoztatott otthonhoz",
                 "back": "VISSZA"
             },
             "container": {
@@ -2374,7 +2374,7 @@
                 "showless": "Részletek elrejtése",
                 "button": "A Biztonságos WiFi engedélyezése",
                 "disableDescribe": "A Lenovo – Biztonságos WiFi egy fejlett, felhőalapú szoftverszolgáltatás, amely segít az eszköznek megkülönböztetni a biztonságos vezeték nélküli hálózatokat a potenciálisan rosszindulatú hálózatoktól.",
-                "enabledDescribe": "A Lenovo – Biztonságos WiFi jelenleg figyeli az Ön WiFi-hálózatát."
+                "enabledDescribe": "Lenovo WiFi Security is currently monitoring your WiFi network."
             },
             "threatlocator": {
                 "describe": "A veszélyészlelővel megállapíthatja, mennyire biztonságosak a közeli hálózatok.",
@@ -2542,7 +2542,6 @@
     "lenovoId": {
         "login": "Bejelentkezés",
         "logout": "Kijelentkezés",
-        "loggingOut": "Kijelentkezés...",
         "unlockExclusives": "Exkluzív ajánlatok",
         "user": "Felhasználó",
         "welcomeText1": "Ma energikusnak látszik, {{firstName}}!",
@@ -2587,7 +2586,7 @@
     "faq": {
         "footer": {
             "title": "Nem találja, amit keres?",
-            "description": "További támogatásra van szüksége? Lépjen kapcsolatba velünk a következő módon:",
+            "description": "KÜLÖNLEGES TÁMOGATÁS? NEM HESITÁLT KAPCSOLAT VIA:",
             "body": "Lenovo Közösség",
             "button": "TOVÁBB FORUM"
         },
@@ -2797,7 +2796,7 @@
         },
         "question4": {
             "title": "A gép akkumulátorhasználatának ellenőrzése",
-            "description": "<div class='faqInFs4Fb'>    A gép akkumulátorhasználatának ellenőrzése</div><hr><h3 class='faqInFs25FbP10'>Tünet</h3><p>A Windows 10 rendszer része az új <strong>Akkumulátorhasználat</strong> képernyő, amelyen látható, hogy mi meríti a laptop akkumulátorát. Ez azt jelenti, hogy pontosan megmutatja, hogy melyik alkalmazások – asztali vagy univerzális Windows 10-alkalmazások – használnak túl sok energiát.</p><h3 class='faqInFs25FbP10'>Érintett márkák</h3><ul>    <li>Lenovo laptopok, asztali számítógépek</li></ul><h3 class='faqInFs25FbP10'>Érintett rendszerek</h3><ul>    <li>Mind</li></ul><h3 class='faqInFs25FbP10'>Operációs rendszer</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Megoldás</h3><p>Ez a Windows 10 új szolgáltatása, ezért először meg kell találni a funkciót, mivel nem a hagyományos <strong>Vezérlőpult</strong> nézetből érhető el, hanem az új <strong>Gépház</strong> alkalmazásban</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Keresse meg az Akkumulátorhasználat képernyőt</h3></p><p>1. Kattintson vagy koppintson a <strong>Gépház</strong> lehetőségre a Start menüben</p><p>2. A <strong>Gépház </strong> alkalmazásban válassza a <strong>Rendszer</strong>, majd az <strong>Takarékos üzemmód lehetőséget.<br /></strong> <strong></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg'  /></p><p>3. További részletekért kattintson vagy koppintspn a <strong>Takarékos üzemmód</strong> hivatkozásra ez alatt fejléc alatt. </p><p> </p><h3 class='faqInFs25FbP10'>B. Elemezze ki az energiafelhasználást</h3><p>4. Az Akkumulátorhasználat képernyőt módosíthatja úgy, hogy az utolsó 24 óra, az utolsó 48 óra vagy a múlt hét akkumulátorhasználatát jelenítse meg</p><p>5. A <strong>Rendszer</strong>, a <strong>Kijelző</strong> és a <strong>Wi-Fi</strong> százalékos értékei. Ez azt mutatja, hogy mennyi energiát használtak a rendszerfolyamatok és a kijelző.</p><p>6. A <strong>Használatban</strong> és a <strong>Háttér</strong> lehetőség azt mutatja meg, hogy a háttérben futó alkalmazásokhoz képest az alkalmazások mennyi energiát igényelnek a használat közben.</p><p>7. Ha az alkalmazások energiát használnak a háttérben, kattintson vagy koppintson a <strong>Háttérben futó alkalmazások beállításainak módosítása</strong> hivatkozásra, és konfigurálja úgy az alkalmazásokat, hogy ne fussanak a háttérben. Ez csak az univerzális Windows 10 alkalmazások esetén működik.</p><p>8. Görgessen lejjebb, és megjelenik az alkalmazások listája – ez a funkció leghasznosabb része. Megjelenít egy listát azokról az alkalmazásokról, amelyek az adott időszakban használják az akkumulátort, és megmutatja, hogy az egyes alkalmazások százalékosan mekkora részét használják az akkumulátorok energiájának</p><p><img src='./../../../assets/images/qa/4.2.jpg'  /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    A gép akkumulátorhasználatának ellenőrzése</div><hr><h3 class='faqInFs25FbP10'>Tünet</h3><p>A Windows 10 rendszer része az új <strong>Akkumulátorhasználat</strong> képernyő, amelyen látható, hogy mi meríti a laptop akkumulátorát. Ez azt jelenti, hogy pontosan megmutatja, hogy melyik alkalmazások – asztali vagy univerzális Windows 10-alkalmazások – használnak túl sok energiát.</p><h3 class='faqInFs25FbP10'>Érintett márkák</h3><ul>    <li>Lenovo laptopok, asztali számítógépek</li></ul><h3 class='faqInFs25FbP10'>Érintett rendszerek</h3><ul>    <li>Mind</li></ul><h3 class='faqInFs25FbP10'>Operációs rendszer</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Megoldás</h3><p>Ez a Windows 10 új szolgáltatása, ezért először meg kell találni a funkciót, mivel nem a hagyományos <strong>Vezérlőpult</strong> nézetből érhető el, hanem az új <strong>Gépház</strong> alkalmazásban</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Keresse meg az Akkumulátorhasználat képernyőt</h3></p><p>1. Kattintson vagy koppintson a <strong>Gépház</strong> lehetőségre a Start menüben</p><p>2. A <strong>Gépház </strong> alkalmazásban válassza a <strong>Rendszer</strong>, majd az <strong>Takarékos üzemmód lehetőséget.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg'  /></p><p>3. További részletekért kattintson vagy koppintspn a <strong>Takarékos üzemmód</strong> hivatkozásra ez alatt fejléc alatt. </p><p> </p><h3 class='faqInFs25FbP10'>B. Elemezze ki az energiafelhasználást</h3><p>4. Az Akkumulátorhasználat képernyőt módosíthatja úgy, hogy az utolsó 24 óra, az utolsó 48 óra vagy a múlt hét akkumulátorhasználatát jelenítse meg</p><p>5. A <strong>Rendszer</strong>, a <strong>Kijelző</strong> és a <strong>Wi-Fi</strong> százalékos értékei. Ez azt mutatja, hogy mennyi energiát használtak a rendszerfolyamatok és a kijelző.</p><p>6. A <strong>Használatban</strong> és a <strong>Háttér</strong> lehetőség azt mutatja meg, hogy a háttérben futó alkalmazásokhoz képest az alkalmazások mennyi energiát igényelnek a használat közben.</p><p>7. Ha az alkalmazások energiát használnak a háttérben, kattintson vagy koppintson a <strong>Háttérben futó alkalmazások beállításainak módosítása</strong> hivatkozásra, és konfigurálja úgy az alkalmazásokat, hogy ne fussanak a háttérben. Ez csak az univerzális Windows 10 alkalmazások esetén működik.</p><p>8. Görgessen lejjebb, és megjelenik az alkalmazások listája – ez a funkció leghasznosabb része. Megjelenít egy listát azokról az alkalmazásokról, amelyek az adott időszakban használják az akkumulátort, és megmutatja, hogy az egyes alkalmazások százalékosan mekkora részét használják az akkumulátorok energiájának</p><p><img src='./../../../assets/images/qa/4.2.jpg'  /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2975,7 +2974,7 @@
         }
     },
     "settings": {
-        "preferenceSettings": "Előnyben Részesített Beállítások",
+        "preferenceSettings": "Előnyben részesített beállítások",
         "settings": "Beállítások",
         "settingsDescription": "Az előnyben részesített beállítások oldalán ki- és bekapcsolhatja az üzenetekről szóló értesítéseket a Vantage üzenetkategóriái alapján. Felhívjuk a figyelmét arra, hogy időnként még akkor is kaphat a rendszerrel kapcsolatos fontos üzeneteket a Vantage alkalmazástól, amikor minden üzenetkategória le van tiltva.",
         "messagesInLenovoVantage": "A Lenovo Vantage üzenetei",
@@ -3127,7 +3126,7 @@
                 "yes": "Igen",
                 "no": "Nem"
             },
-            "waitAvailability": "A gomb le van tiltva, ha a tárolóeszközök nem támogatják ezt a funkciót a hardverinformáció betöltése közben, vagy ha vizsgálat van folyamatban."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Professzionális diagnosztikai eszközök letöltése",
@@ -3164,8 +3163,7 @@
             "storage": "Tárolás",
             "wireless": "Vezeték nélküli"
         },
-        "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül",
-        "refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie"
+        "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3334,24 +3332,7 @@
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
                 "signupButton": "SIGN UP"
-            },
-            "tune": "{{tune}} ISSUES",
-            "boost": "{{boost}} ISSUES",
-            "secure": "{{secure}} ISSUES",
-            "tunepc": {
-                "accumulatedjunkscannedareas": {
-                    "OptimizingWindowssettings": "Optimizing Windows settings",
-                    "Preventingnon-essential": "Preventing non-essential service from running",
-                    "Applyingregistry": "Applying registry and shortcut fixes",
-                    "Removingunnecessary": "Removing unnecessary residual fies",
-                    "Scanningandfixing": "Scanning and fixing critical services",
-                    "RemovingOS": "Removing OS and application log files"
-                }
-            },
-            "Diskspace": "Disk Space Reclaimed :",
-            "Performanceimprovements": "Performance Improvements :",
-            "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week"
+            }
         },
         "subscriberScanHomePage": {
             "title": "All is well with your Ideapad 720s",
@@ -3436,11 +3417,10 @@
             "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
             "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
             "overviewTitle": "Overview",
-            "trialPeriod": "Trial period:",
-            "subscriptionPeriod": "Subscription period:",
-            "expired": "Expired",
-            "remainingDay": "{{remainingDay}} days remaining",
-            "lenovoId": "Lenovo ID:",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
             "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
             "familyMembers": "Family members",
@@ -3506,6 +3486,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
+            "privacy": "Most kiderítheti, hogy a személyes adataihoz online nyomkövetők illetéktelenül hozzáfértek-e vagy az Ön tudta nélkül felhasználták-e azokat.",
             "security": "Tudta ezt? Ha Ön semmilyen antivírus szoftvert nem telepített az eszközére, mi akkor is gondoskodunk egy alapvető biztonsági védelemről.",
             "connectedHomeSecurity": "Gondoskodjon otthoni hálózatának valós idejű felügyeletéről és az azonnali értesítésekről. Ön fog elsőként értesülni arról, ha valamelyik okos eszközének biztonságát valamilyen fenyegetés veszélyezteti."
         }
@@ -3561,8 +3542,5 @@
             "subtitle2": "All-in-One: Egyszerű",
             "body2": "Az all-in-one számítógépek a 9. generációs Intel® Core™ processzorral az asztali számítógépek minden előnyét biztosítják egy karcsú kijelzőbe csomagolva – kevesebb rendetlenséggel, hardver alapú biztonsággal és nagy felbontású kijelzővel."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }
