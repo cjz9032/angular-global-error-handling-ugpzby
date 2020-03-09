@@ -191,7 +191,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		try {
 			const newVal = event.target.value;
 			if (this.microOptimizeModeResponse.current == newVal) {
-				console.log('microphone already set');
+				this.logger.info('microphone already set');
 				return;
 			}
 			this.microOptimizeModeResponse.current = newVal;
@@ -199,7 +199,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.cacheFlag.currentMode = false;
 				this.audioService.setMicrophoneOpitimaztion(this.microOptimizeModeResponse.current)
 					.then((value) => {
-						console.log('onOptimizeModesRadioChange:', value);
+						this.logger.info('onOptimizeModesRadioChange:', value);
 					}).catch(error => {
 						this.logger.error('onOptimizeModesRadioChange', error.message);
 						return EMPTY;
@@ -401,7 +401,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.cacheFlag.autoOptimization = false;
 				this.audioService.setMicrophoneAutoOptimization(event.switchValue)
 					.then((value) => {
-						console.log('onToggleOfMicrophoneAutoOptimization:', value);
+						this.logger.info('onToggleOfMicrophoneAutoOptimization:', value);
 					}).catch(error => {
 						this.logger.error('onToggleOfMicrophoneAutoOptimization', error.message);
 						return EMPTY;
@@ -422,7 +422,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setMicrophoneVolume(volume)
 					.then((value) => {
-						console.log('setVolume', value);
+						this.logger.info('setVolume', value);
 					}).catch(error => {
 						this.logger.error('setVolume', error.message);
 						return EMPTY;
@@ -445,7 +445,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						const status: FeatureStatus = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardMicrophone);
 						status.status = event.switchValue;
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);
-						console.log('onToggleOfMicrophone', value);
+						this.logger.info('onToggleOfMicrophone', value);
 					}).catch(error => {
 						this.logger.error('onToggleOfMicrophone', error.message);
 						return EMPTY;
@@ -466,7 +466,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.cacheFlag.keyboardNoiseSuppression = false;
 				this.audioService.setSuppressKeyboardNoise(event.switchValue)
 					.then((value: boolean) => {
-						console.log('onToggleOfSuppressKbdNoise', value);
+						this.logger.info('onToggleOfSuppressKbdNoise', value);
 					}).catch(error => {
 						this.logger.error('onToggleOfSuppressKbdNoise', error.message);
 						return EMPTY;
@@ -487,7 +487,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.cacheFlag.AEC = false;
 				this.audioService.setMicrophoneAEC(event.switchValue)
 					.then((value: boolean) => {
-						console.log('setMicrophoneAEC', value);
+						this.logger.info('setMicrophoneAEC', value);
 					}).catch(error => {
 						this.logger.error('setMicrophoneAEC', error.message);
 						return EMPTY;
@@ -504,7 +504,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.startMicrophoneMonitor(this.startMonitorHandler.bind(this))
 					.then((value: boolean) => {
-						console.log('startMonitor', value);
+						this.logger.info('startMonitor', value);
 					}).catch(error => {
 						this.logger.error('startMonitor', error.message);
 						return EMPTY;
@@ -521,7 +521,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.stopMicrophoneMonitor()
 					.then((value: boolean) => {
-						console.log('stopMonitor', value);
+						this.logger.info('stopMonitor', value);
 					}).catch(error => {
 						this.logger.error('stopMonitor', error.message);
 						return EMPTY;
@@ -542,7 +542,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.microOptimizeModeResponse.current = this.microphoneProperties.currentMode;
 		}
 		this.microphoneLoader = false;
-		console.log('startMonitorHandler for microphone', JSON.stringify(microphone));
+		this.logger.info('startMonitorHandler for microphone', JSON.stringify(microphone));
 		this.updateMicrophoneCache();
 	}
 
@@ -621,7 +621,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.microphoneProperties.muteDisabled = msg.muteDisabled;
 		}
 		if (msg.hasOwnProperty('volume')) {
-			console.log('*****ready to change volume ' + msg.volume)
+			this.logger.info('*****ready to change volume ' + msg.volume)
 			this.microphoneProperties.volume = msg.volume;
 		}
 		if (msg.hasOwnProperty('permission')) {
@@ -663,7 +663,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.cacheFlag.keyboardNoiseSuppression = true;
 		}
 		
-		console.log('updateMicrophoneHandler ' + JSON.stringify(msg));
+		this.logger.info('updateMicrophoneHandler ' + JSON.stringify(msg));
 	}
 
 	updateMicrophoneCache() {
@@ -671,7 +671,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			data: this.microphoneProperties,
 			modes: this.microOptimizeModeResponse.modes
 		};
-		console.log('ready to update microhone cache');
+		this.logger.info('ready to update microhone cache');
 		this.commonService.setLocalStorageValue(LocalStorageKey.MicrohoneCapability, info);
 	}
 
