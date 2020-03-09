@@ -31,7 +31,7 @@ export class UserService {
 	public starter = false;
 	public silentlyLoginSuccess = false;
 	token = '';
-	public hasFirstName = true;
+	public hasFirstName = false;
 	public firstName = 'User';
 	lastName = '';
 	initials = 'U';
@@ -211,6 +211,7 @@ export class UserService {
 						self.setName(firstName, '');
 					}
 					self.lid.getUserProfile().then(profile => {
+						self.hasFirstName = !!profile.firstName;
 						if (profile.success && profile.status === 0) {
 							if (profile.firstName && profile.firstName !== firstName) {
 								self.setName(profile.firstName, profile.lastName);
@@ -363,7 +364,6 @@ export class UserService {
 	}
 
 	setName(firstName: string, lastName: string) {
-		this.hasFirstName = !!firstName;
 		if (!firstName && !lastName) {
 			this.translate.stream('lenovoId.user').subscribe((value) => {
 				this.firstName = value;
