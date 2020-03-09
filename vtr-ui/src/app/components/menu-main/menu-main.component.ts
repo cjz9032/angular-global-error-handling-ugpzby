@@ -463,14 +463,14 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	}
 
 	initInputAccessories() {
-		this.logger.info('MenuMainComponent.initInputAccessories before API call');
+		this.logger.error('MenuMainComponent.initInputAccessories before API call');
 		Promise.all([
 			this.keyboardService.GetAllCapability(),
 			this.keyboardService.GetKeyboardVersion()
 		])
 			.then((responses) => {
 				try {
-					this.logger.info('MenuMainComponent.initInputAccessories after API call'
+					this.logger.error('MenuMainComponent.initInputAccessories after API call'
 						, { GetAllCapability: responses[0], GetKeyboardVersion: responses[1] });
 					let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
 					if (inputAccessoriesCapability === undefined) {
