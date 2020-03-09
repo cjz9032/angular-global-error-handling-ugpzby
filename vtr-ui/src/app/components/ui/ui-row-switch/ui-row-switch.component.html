@@ -130,7 +130,6 @@
 						[ngbTooltip]="tooltipRef"
 						#rightToolTip1="ngbTooltip"
 						autoClose="true"
-						tabindex="0"
 						[icon]="rightIcon"
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
@@ -242,7 +241,6 @@
 <ng-template #tooltipRef>
 	<div [innerHTML]='tooltipText'
 		id="{{switchId}}-toolTip"
-		tabindex="0"
 		attr.aria-label="tooltipText">
 	</div>
 </ng-template>
