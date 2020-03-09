@@ -62,6 +62,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private windowsObj: any;
 	private audioClient: any;
 	private audioData: string;
+	private microphoneDevice: any;
+	private microphnePermissionHandler: any;
 	private cameraStatusChangeBySet = false;
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
@@ -87,6 +89,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.windowsObj.addEventListener('accesschanged', () => {
 				this.getCameraPrivacyStatus();
 			});
+
+			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
+				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
 		}
 	}
 
@@ -108,6 +113,26 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.initFeatures();
 		}
+
+		if (this.microphoneDevice) {
+			this.microphnePermissionHandler = (args: any) =>{
+				if(args && args.status) {
+					switch (args.status) {
+						case 1:
+							this.microphoneStatus.permission = true;
+							this.updateMicrophoneStatus();
+							break;
+						case 2:
+							this.microphoneStatus.permission = false;
+							break;
+						case 3:
+							this.microphoneStatus.permission = false;
+							break;
+					}
+				}
+			};
+			this.microphoneDevice.addEventListener('accesschanged', this.microphnePermissionHandler, false);
+		}
 	}
 
 	initDataFromCache() {
@@ -123,7 +148,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.cameraStatus.status = cameraState.status;
 			this.cameraStatus.isLoading = false;
 			this.cameraStatus.permission = cameraState.permission;
-		} 
+		}
 	}
 
 	ngOnDestroy() {
@@ -133,13 +158,19 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.audioClient) {
 			try {
                 this.audioClient.stopMonitor();
-            } catch (error) {}
+            } catch (error) {
+				this.logger.error('core audio stop moniotr error ' + error.message);
+			}
 		} else {
 			this.deviceService.stopMicrophoneMonitor();
 		}
 		this.stopMonitorForCamera();
 		this.deviceService.stopMicrophoneMonitor();
 		// this.stopEyeCareMonitor();
+
+		if (this.microphoneDevice) {
+			this.microphoneDevice.removeEventListener('accesschanged', this.microphnePermissionHandler, false);
+		}
 	}
 
 	//#region private functions
@@ -149,7 +180,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			const { type, payload } = notification;
 			switch (type) {
 				case DeviceMonitorStatus.MicrophoneStatus:
-                    this.ngZone.run(() => {
+					this.logger.info('DeviceMonitorStatus.MicrophoneStatus ' + JSON.stringify(payload));
+					this.ngZone.run(() => {
 						// microphone payload data is dynamic, need check one by one
 						if (payload.hasOwnProperty('muteDisabled')) {
 							this.microphoneStatus.status = payload.muteDisabled;
@@ -321,40 +353,48 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService.getMicrophoneStatus()
 				.then((featureStatus: FeatureStatus) => {
-				this.microphoneStatus = featureStatus;
-				this.microPhoneGreyOut = false;
-                if (featureStatus.available) {
-                    const win: any = window;
-                    if (win.VantageShellExtension && win.VantageShellExtension.AudioClient) {
-                        try {
-                            const a = performance.now();
-                            this.audioClient = win.VantageShellExtension.AudioClient.getInstance();
-                            const b = performance.now();
-                            if (this.audioClient) {
-                                this.audioClient.onchangecallback = (data: string) => {
-                                    if (data) {
-                                        if (this.audioData && this.audioData.toString() === data) {
-                                            return;
-                                        }
-                                        this.audioData = data;
-                                        const dic = data.split(',');
+					this.microphoneStatus = featureStatus;
+					this.microPhoneGreyOut = false;if (featureStatus.available) {
+						const win: any = window;
+						if (win.VantageShellExtension && win.VantageShellExtension.AudioClient) {
+							try {
+								const a = performance.now();
+								this.audioClient = win.VantageShellExtension.AudioClient.getInstance();
+								const b = performance.now();
+								this.logger.info('audioclient init ' + (b - a) + 'ms');
+								if (this.audioClient) {
+									this.audioClient.onchangecallback = (data: string) => {
+										if (data) {
+											if (this.audioData && this.audioData.toString() === data) {
+												return;
+											}
+											this.logger.info('data data, got it ' + data);
+											this.audioData = data;
+											const dic = data.split(',');
 
-                                        if (['1', '0'].includes(dic[0])) {
-                                            const muteDisabled = (dic[0] === '0');
+											if (['1', '0'].includes(dic[0])) {
+												const muteDisabled = (dic[0] === '0');
 
-                                            // if (/^\d+$/.test(dic[1])){
-                                            //   const volume = parseInt(dic[1]);
-                                            // }
-                                            this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, {muteDisabled});
-                                        } else {}
-                                    }
-                                };
-                            }
-                            this.audioClient.startMonitor();
-                        } catch (error) {}
-                    } else {}
-                }
-            })
+												// if (/^\d+$/.test(dic[1])){
+												//   const volume = parseInt(dic[1]);
+												// }
+												this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, {muteDisabled});
+											} else {
+												this.logger.info('core audio wrong data format');
+											}
+										}
+									};
+								}
+								this.audioClient.startMonitor();
+							} catch (error) {
+								this.logger.error('cannot init core audio for widget quick settings' + error.message);
+							}
+						} else {
+							this.logger.info('current shell version maybe not support core audio');
+							// this.deviceService.startMicrophoneMonitor();
+						}
+					}
+				})
 				.catch(error => {
 					this.logger.error('getMicrophoneStatus', error.message);
 					return EMPTY;
@@ -612,6 +652,19 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('WidgetQuicksettingsComponent.getVantageToolBarStatus: promise error ', error.message);
+		}
+	}
+
+	private updateMicrophoneStatus() {
+		if (this.dashboardService.isShellAvailable) {
+			this.dashboardService.getMicrophoneStatus()
+				.then((featureStatus: FeatureStatus) => {
+					this.microphoneStatus = featureStatus;
+				})
+				.catch(error => {
+					this.logger.error('getMicrophoneStatus', error.message);
+					return EMPTY;
+				});
 		}
 	}
 }
