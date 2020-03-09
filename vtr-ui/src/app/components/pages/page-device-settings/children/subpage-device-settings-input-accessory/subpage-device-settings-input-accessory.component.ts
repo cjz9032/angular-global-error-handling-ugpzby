@@ -188,19 +188,19 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	getAdditionalCapabilitiesFromCache() {
 		this.shortcutKeys = [];
 		if (this.additionalCapabilitiesObj.performance) {
-			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
+			this.shortcutKeys.push({text:'device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj',id:'FnQ',desc:'desc4'});
 		}
 
-		this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj');
+		this.shortcutKeys.push({text:'device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj',id:'Fn4',desc:'desc2'});
 
 		if (this.additionalCapabilitiesObj.privacy) {
-			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj');
+			this.shortcutKeys.push({text:'device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj',id:'FnD',desc:'desc3'});
 		}
 		if (this.additionalCapabilitiesObj.magnifier) {
-			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
+			this.shortcutKeys.push({text:'device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj',id:'FnTab',desc:'desc1'});
 		}
 		if (this.additionalCapabilitiesObj.backLight) {
-			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj');
+			this.shortcutKeys.push({text:'device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj',id:'FnSpace',desc:'desc5'});
 		}
 	}
 
@@ -282,18 +282,18 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				]).then((response: any[]) => {
 					if (response && response.length) {
 						if (response[0]) {
-							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
+							this.shortcutKeys.push({text:'device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj',id:'FnQ',desc:'desc4'});
 						}
-						this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj');
+						this.shortcutKeys.push({text:'device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj',id:'Fn4',desc:'desc2'});
 
 						if (response[1]) {
-							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj');
+							this.shortcutKeys.push({text:'device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj',id:'FnD',desc:'desc3'});
 						}
 						if (response[2]) {
-							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
+							this.shortcutKeys.push({text:'device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj',id:'FnTab',desc:'desc1'});
 						}
 						if (response[3]) {
-							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj');
+							this.shortcutKeys.push({text:'device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj',id:'FnSpace',desc:'desc5'});
 						}
 						this.additionalCapabilitiesObj = {
 							performance: response[0],
