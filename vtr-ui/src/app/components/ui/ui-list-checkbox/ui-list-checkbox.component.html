@@ -123,7 +123,7 @@
 </div>
 <ng-template #systemUpdateTooltip>
 	<div class="tooltip-container">
-		<ul dir="{{direction}}">
+		<ul dir="{{'dir' | translate}}">
 			<li>{{'systemUpdates.updateCheckbox.manufacturer' | translate}}<span>{{ manufacturer }}</span></li>
 			<li>{{'systemUpdates.updateCheckbox.version' | translate}}<span>{{ version }}</span></li>
 			<li *ngIf="installedVersionStatus === 0">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ installedVersion }}</span></li>
