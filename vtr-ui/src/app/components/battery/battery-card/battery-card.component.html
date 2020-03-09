@@ -105,17 +105,17 @@
 				<span role="text"
 					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
 					[innerHTML]="batteryConditionNote | translate:param"
-					id="battery-condition-tip-StoreLimitation"
+					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"
 					role="text"></span>
 				<span role="text"
 					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
 					[innerHTML]="batteryConditionNote | translate:acAdapterInfoParams"
-					id="battery-condition-tip-FullACAdapterSupport"
+					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"
 					role="text"></span>
 				<span role="text"
 					*ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport"
 					[innerHTML]="batteryConditionNote | translate"
-					id="battery-condition-tip-Good"
+					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"
 					role="text"></span>
 				<a *ngIf="batteryConditions[i].conditionStatus===batteryStatus.AcAdapterStatus && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport && shortAcErrNote"
 					class="link-label"
