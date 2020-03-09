@@ -16,7 +16,7 @@
 						role="text">
 						<div class="col px-5">
 							<div class="battery-text"
-								
+
 								role="text">
 								<span role="text"
 									*ngIf="batteryService.gaugeResetInfo?.length==1" id="deviceSettings-batteryGauge-subtitle">
@@ -96,11 +96,11 @@
 											{{battery.startTime | date : 'M/d/yyyy H:mm:ss '}}
 										</div>
 									</div>
-									<div class="row pt-3">
+									<!-- <div class="row pt-3">
 										<div class="col-12 percent-note" role="text" id="batterySettings-gaugeReset-percentNote" >
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.percentNote' | translate}}
 										</div>
-									</div>
+									</div> -->
 								</div>
 
 								<!-- Last Battery Gauge reset result -->
@@ -155,10 +155,10 @@
 										[tabIndex]="((batteryService.isGaugeResetRunning &&
 											(batteryService.gaugeResetInfo.length > 1 && !battery.isResetRunning)) ||
 											!batteryService.isAcAttached)?-1:0"
-										
-										linkId="myDevice-settings-battery-gauge-reset-stop-btn{{i+1}}" 
+
+										linkId="myDevice-settings-battery-gauge-reset-stop-btn{{i+1}}"
 										[label]="battery.isResetRunning? ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.stop'|translate): ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.reset' | translate)"
-										
+
 										(click)="onBatteryGaugeReset(i)"></vtr-ui-button>
 								</div>
 							</div>
@@ -169,7 +169,7 @@
 							*ngIf="!batteryService.isAcAttached"
 							class="note warning-note"
 							tabindex="0"
-							role="text" id="gaugeReset-warning-note"> 
+							role="text" id="gaugeReset-warning-note">
 							{{'device.deviceSettings.power.batterySettings.gaugeReset.note' | translate}}
 						</span>
 						<span role="text"
