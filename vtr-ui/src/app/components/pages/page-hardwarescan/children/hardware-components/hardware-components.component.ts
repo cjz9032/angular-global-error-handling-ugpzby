@@ -361,10 +361,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			for (const categoryInfo of modules.categoryList) {
 				for (let i = 0; i < categoryInfo.groupList.length; i++) {
 					const group = categoryInfo.groupList[i];
-					const info = categoryInfo.name + ' - ';
+					const info = categoryInfo.name;
 					if (!this.hardwareScanService.getIsDesktopMachine()) {
 						if (categoryInfo.id === 'pci_express') {
-							categoryInfo.id += '_laptop'	
+							categoryInfo.id += '_laptop'
 						}
 					}
 					devices.push({
@@ -716,13 +716,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		};
 
 		for (const module of this.modules) {
-			let module_id = module.id;			
+			let module_id = module.id;
 			if (!this.hardwareScanService.getIsDesktopMachine()) {
 				if (module_id === 'pci_express') {
 					module_id += '_laptop';
 				}
 			}
-			
+
 			const item = {
 				id: module.id,
 				module: module.module,
