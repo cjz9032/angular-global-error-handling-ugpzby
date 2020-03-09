@@ -122,8 +122,8 @@
 
 	<right-content>
 		<div class="container-fluid">
-			<div class="row">
-				*ngIf="!deviceService.isArm && !deviceService.isSMode"
+			<div class="row"
+				*ngIf="!deviceService.isArm && !deviceService.isSMode">
 				<div class="col-sm-12 col-md-12 pb-20 px-0">
 					<vtr-widget-system-update></vtr-widget-system-update>
 				</div>
