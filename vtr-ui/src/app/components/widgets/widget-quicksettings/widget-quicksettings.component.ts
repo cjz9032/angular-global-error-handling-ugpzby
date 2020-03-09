@@ -158,9 +158,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.audioClient) {
 			try {
 				this.audioClient.stopMonitor();
-				console.log('stop audio monitor success in widget');
+				this.logger.info('stop audio monitor success in widget');
 			} catch (error) {
-				console.log('core audio stop moniotr error ' + error.message);
+				this.logger.info('core audio stop moniotr error ' + error.message);
 			}
 		} else {
 			this.deviceService.stopMicrophoneMonitor();
@@ -181,7 +181,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			const { type, payload } = notification;
 			switch (type) {
 				case DeviceMonitorStatus.MicrophoneStatus:
-					console.log('DeviceMonitorStatus.MicrophoneStatus', JSON.stringify(payload));
+					this.logger.info('DeviceMonitorStatus.MicrophoneStatus', JSON.stringify(payload));
 					this.ngZone.run(() => {
 						// microphone payload data is dynamic, need check one by one
 						if (payload.hasOwnProperty('muteDisabled')) {
@@ -467,7 +467,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				this.dashboardService.setMicrophoneStatus($event)
 					.then((value: boolean) => {
 						this.microphoneStatus.isLoading = false;
-						console.log('setMicrophoneStatus.then', value, $event);
+						// console.log('setMicrophoneStatus.then', value, $event);
 						this.microphoneStatus.status = $event;
 						this.quickSettingsWidget[0].state = true;
 					}).catch(error => {
@@ -480,7 +480,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			this.microphoneStatus.isLoading = false;
 			this.quickSettingsWidget[0].state = true;
-			console.log('onMicrophoneStatusToggle', error.message);
+			this.logger.info('onMicrophoneStatusToggle', error.message);
 			return EMPTY;
 		}
 	}
